@@ -3,19 +3,26 @@ description: Cet article explique comment prendre en charge le contrat de partag
 title: "Partager des données"
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 554a2cd1db0f950b8a04a5d562f6a6ba43f1be23
-ms.openlocfilehash: 8b4f9ae45ed549ba5f10062e6bad25a4fb2e2a6f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 59039fbd2cc54c757acabba7f0c981059ef95c56
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Partager des données
+# <a name="share-data"></a>Partager des données
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 Cet article explique comment prendre en charge le contrat de partage dans une application de plateforme Windows universelle (UWP). Le contrat de partage constitue un moyen simple pour partager rapidement des données, telles que du texte, des liens, des photos et vidéos, entre les applications. Par exemple, un utilisateur peut partager une page web avec ses amis à l’aide d’une application de réseau social ou enregistrer un lien dans une application de prise de notes pour s’y référer plus tard.
 
-## Définir un gestionnaire d’événements
+## <a name="set-up-an-event-handler"></a>Définir un gestionnaire d’événements
 
 Ajoutez un gestionnaire d’événements [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) à appeler lorsque l’utilisateur appelle l’option Partager. Cela peut se produire lorsque l’utilisateur appuie sur un contrôle dans votre application (par exemple, une commande de barre d’application ou un bouton) ou automatiquement dans un scénario spécifique (par exemple, si l’utilisateur a terminé un niveau et obtient un score élevé).
 
@@ -25,7 +32,7 @@ Lorsqu’un événement [**DataRequested**](https://msdn.microsoft.com/library/w
 
 [!code-cs[Principal](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
-## Choisir les données
+## <a name="choose-data"></a>Choisir les données
 
 Vous pouvez partager différents types de données, notamment :
 
@@ -42,7 +49,7 @@ L’objet [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Wind
 
 [!code-cs[Principal](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
-## Définir des propriétés
+## <a name="set-properties"></a>Définir des propriétés
 
 Lorsque vous créez un package de données en vue de le partager, vous pouvez définir diverses propriétés qui fournissent des informations supplémentaires sur le contenu partagé. Ces propriétés aident les applications cibles à améliorer l’expérience utilisateur. Par exemple, une description se révèle utile lorsque l’utilisateur partage du contenu avec plusieurs applications. De même, un lien vers une page web ou une miniature ajoutée à une image partagée servent de référence visuelle à l’utilisateur. Pour plus d’informations, voir [**DataPackagePropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackagePropertySet).
 
@@ -50,17 +57,17 @@ Toutes les propriétés sont facultatives, à l’exception du titre. La propri�
 
 [!code-cs[Principal](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
-## Lancer l’interface utilisateur de partage
+## <a name="launch-the-share-ui"></a>Lancer l’interface utilisateur de partage
 
 Une interface utilisateur pour le partage est fournie par le système. Pour la lancer, appelez la méthode [**ShowShareUI**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI).
 
 [!code-cs[Principal](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
-## Gérer les erreurs
+## <a name="handle-errors"></a>Gérer les erreurs
 
 Dans la plupart des cas, le partage de contenu est un processus simple. Toutefois, un élément inattendu peut toujours se produire. Par exemple, l’application peut avoir besoin que l’utilisateur sélectionne du contenu à partager alors que l’utilisateur ne l’a pas fait. Pour gérer ces situations, utilisez la méthode [**FailWithDisplayText**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest.FailWithDisplayText(System.String)), qui affiche un message destiné à l’utilisateur en cas de problème.
 
-## Retarder le partage avec les délégués
+## <a name="delay-share-with-delegates"></a>Retarder le partage avec les délégués
 
 Parfois, il est dénué de sens de préparer les données que l’utilisateur veut partager sur le champ. Par exemple, si votre application prend en charge l’envoi d’un fichier image de grande taille dans différents formats possibles, il n’est pas efficace de créer toutes ces images avant que l’utilisateur effectue sa sélection.
 
@@ -91,7 +98,7 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 }
 ```
 
-## Voir également 
+## <a name="see-also"></a>Voir également 
 
 * [Communication entre les applications](index.md)
 * [Recevoir des données](receive-data.md)
@@ -102,10 +109,5 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 * [FailWithDisplayText](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext.aspx)
 * [ShowShareUi](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.showshareui.aspx)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

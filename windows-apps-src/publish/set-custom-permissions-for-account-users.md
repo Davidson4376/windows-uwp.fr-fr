@@ -2,14 +2,21 @@
 author: jnHs
 Description: "Définissez des autorisations personnalisées pour les utilisateurs de compte."
 title: "Définir des autorisations personnalisées pour les utilisateurs de compte"
-ms.assetid: 
+ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 7dab1bf03bfc0920230d8cc57f48ad4a4f83e4d2
-ms.openlocfilehash: 19874f940798e76a18b3377a295505f0aef201c7
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 23d8c14bfdbfc05a1397fa67cb831d38ec092233
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Définir des autorisations personnalisées pour les utilisateurs de compte
+# <a name="set-custom-permissions-for-account-users"></a>Définir des autorisations personnalisées pour les utilisateurs de compte
 
 Lorsque vous ajoutez des utilisateurs à votre compte, vous pouvez leur attribuer un [rôle standard](manage-account-users.md#roles-and-permissions), ou choisir de personnaliser leurs autorisations pour leur fournir un niveau d’accès approprié. Certaines de ces autorisations s’appliquent à l’ensemble du compte, tandis que d’autres peuvent être accordées à tous les produits ou limitées à certains produits. 
 
@@ -30,7 +37,7 @@ Pour certaines autorisations, telles que celles liées à l’affichage des donn
 
 Les informations spécifiques à chaque autorisation figurent dans les tableaux ci-dessous.
 
-## Autorisations au niveau du compte
+## <a name="account-level-permissions"></a>Autorisations au niveau du compte
 
 Les autorisations de cette section ne peuvent pas être limitées à des produits donnés. En ayant accès à ces autorisations, l’utilisateur peut bénéficier de cette autorisation pour l’ensemble du compte.
 
@@ -78,7 +85,7 @@ Les autorisations de cette section ne peuvent pas être limitées à des produit
 
 \* Les autorisations marquées d’un astérisque (*) accordent l’accès à des fonctionnalités qui ne sont pas disponibles pour tous les comptes. Si ces fonctionnalités n’ont pas été activées pour votre compte, vos sélections concernant ces autorisations n’auront aucun effet.   
 
-## Autorisations au niveau du produit
+## <a name="product-level-permissions"></a>Autorisations au niveau du produit
 
 Les autorisations de cette section peuvent être accordées à tous les produits du compte, ou personnalisées pour appliquer l’autorisation uniquement à un ou plusieurs produits spécifiques. Ces autorisations sont regroupées en quatre catégories : **Analytique**, **Monétisation**, **Publication** et **Xbox Live**. Vous pouvez développer chacune de ces catégories pour en afficher les autorisations individuelles. 
 
@@ -92,16 +99,16 @@ Chaque module complémentaire est répertorié dans une ligne distincte sous son
 
 Remarque : certaines autorisations ne peuvent pas être définies pour les modules complémentaires. Cela peut être parce qu’elles ne s’appliquent pas aux modules complémentaires (par exemple, l’autorisation **Retour d’expérience du client**) ou parce que l’autorisation accordée au niveau du produit parent s’applique à tous les modules complémentaires de ce produit (par exemple, **Codes promotionnels**). Notez toutefois que toutes les autorisations disponibles pour les modules complémentaires doivent être définies séparément ; les modules complémentaires n’héritent pas des sélections effectuées pour le produit parent. Par exemple, si vous souhaitez permettre à l’utilisateur d’effectuer des sélections de tarification et de disponibilité pour un module complémentaire, vous devez activer l’autorisation **Tarification et disponibilité** pour le module complémentaire (ou pour **Tous les modules complémentaires**), que vous ayez ou non accordé l’autorisation **Tarification et disponibilité** pour le produit parent. 
 
-### Analytique
+### <a name="analytics"></a>Analytique
 
 <table>
     <thead>
     <tr class="header">
-    <th align="left">Nom de l’autorisation</th>
-    <th align="left">Lecture seule</th>
+    <th align="left">Nom&nbsp;de l’autorisation</th>
+    <th align="left">Lecture&nbsp;seule</th>
     <th align="left">Lecture/écriture</th>
-    <th align="left">Lecture seule (module complémentaire) </th>
-    <th align="left">Lecture&#8209;écriture (module complémentaire)</th>
+    <th align="left">Lecture&nbsp;seule&nbsp;(module complémentaire) </th>
+    <th align="left">Lecture&#8209;écriture&nbsp;(module complémentaire)</th>
     </tr>
     </thead>
     <tbody>
@@ -114,16 +121,16 @@ Remarque : certaines autorisations ne peuvent pas être définies pour les modu
     </tbody>
     </table>
 
-### Monétisation
+### <a name="monetization"></a>Monétisation
 
 <table>
     <thead>
     <tr class="header">
-    <th align="left">Nom de l’autorisation</th>
-    <th align="left">Lecture seule</th>
+    <th align="left">Nom&nbsp;de l’autorisation</th>
+    <th align="left">Lecture&nbsp;seule</th>
     <th align="left">Lecture/écriture</th>
-    <th align="left">Lecture seule (module complémentaire) </th>
-    <th align="left">Lecture&#8209;écriture (module complémentaire)</th>
+    <th align="left">Lecture&nbsp;seule&nbsp;(module complémentaire) </th>
+    <th align="left">Lecture&#8209;écriture&nbsp;(module complémentaire)</th>
     </tr>
     </thead>
     <tbody>
@@ -133,16 +140,16 @@ Remarque : certaines autorisations ne peuvent pas être définies pour les modu
     </tbody>
     </table>
 
-### Publication 
+### <a name="publishing"></a>Publication 
 
 <table>
     <thead>
     <tr class="header">
-    <th align="left">Nom de l’autorisation</th>
-    <th align="left">Lecture seule</th>
+    <th align="left">Nom&nbsp;de l’autorisation</th>
+    <th align="left">Lecture&nbsp;seule</th>
     <th align="left">Lecture/écriture</th>
-    <th align="left">Lecture seule (module complémentaire) </th>
-    <th align="left">Lecture&#8209;écriture (module complémentaire)</th>
+    <th align="left">Lecture&nbsp;seule&nbsp;(module complémentaire) </th>
+    <th align="left">Lecture&#8209;écriture&nbsp;(module complémentaire)</th>
     </tr>
     </thead>
     <tbody>
@@ -158,16 +165,16 @@ Remarque : certaines autorisations ne peuvent pas être définies pour les modu
     </tbody>
     </table>
 
-### Xbox Live \*
+### <a name="xbox-live-"></a>Xbox Live \*
 
 <table>
     <thead>
     <tr class="header">
-    <th align="left">Nom de l’autorisation</th>
-    <th align="left">Lecture seule</th>
+    <th align="left">Nom&nbsp;de l’autorisation</th>
+    <th align="left">Lecture&nbsp;seule</th>
     <th align="left">Lecture/écriture</th>
-    <th align="left">Lecture seule (module complémentaire) </th>
-    <th align="left">Lecture&#8209;écriture (module complémentaire)</th>
+    <th align="left">Lecture&nbsp;seule&nbsp;(module complémentaire) </th>
+    <th align="left">Lecture&#8209;écriture&nbsp;(module complémentaire)</th>
     </tr>
     </thead>
     <tbody>
@@ -177,9 +184,4 @@ Remarque : certaines autorisations ne peuvent pas être définies pour les modu
 </table>
 
 \* Les autorisations marquées d’un astérisque (*) accordent l’accès à des fonctionnalités qui ne sont pas disponibles pour tous les comptes. Si ces fonctionnalités n’ont pas été activées pour votre compte, vos sélections concernant ces autorisations n’auront aucun effet.  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

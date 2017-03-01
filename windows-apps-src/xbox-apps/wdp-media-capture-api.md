@@ -2,13 +2,21 @@
 author: WilliamsJason
 title: "Informations de référence sur les API de capture multimédia"
 description: "Découvrez comment accéder à l’API de capture multimédia par programmation."
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: 3f92c8fd-4096-4972-97da-01ae5db6423c
 translationtype: Human Translation
-ms.sourcegitcommit: 4356bd2cfc7697905ed91d60b5829c06d850e109
-ms.openlocfilehash: 2f77c565acf272a1a8f147eb07ac6c7f08bf8ef0
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 9819e632ab6de58eee4358866d3186c0fa31f69f
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Informations de référence sur les API de capture multimédia #
+# <a name="media-capture-api-reference"></a>Informations de référence sur les API de capture multimédia #
 
 **Requête**
 
@@ -21,7 +29,7 @@ Vous pouvez capturer une représentation PNG de l’écran actuel en utilisant l
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 
 | Paramètre d’URI      | Description     | 
@@ -37,7 +45,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 
 * Aucun
 
-###Réponse###
+###<a name="response"></a>Réponse###
 
 **Code d’état**
 
@@ -52,10 +60,5 @@ Cette API comporte les codes d’état attendus suivants.
 **Familles d’appareils disponibles**
 
 * Windows Xbox
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,17 +3,26 @@ author: mcleanbyron
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
 description: "Utilisez ces méthodes dans l’API de soumission du Windows Store pour gérer les extensions des applications qui sont inscrites dans votre compte du Centre de développement Windows."
 title: "Gérer les extensions à l’aide de l’API de soumission du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, extensions, produit in-app"
 translationtype: Human Translation
-ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
-ms.openlocfilehash: 058d11938dd6efc961da58a9d937be76beac5978
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 55a6b548246e801c9fcc0392265263123f24de00
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="manage-add-ons-using-the-windows-store-submission-api"></a>Gérer les extensions à l’aide de l’API de soumission du Windows Store
 
-Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pour gérer les extensions (également connues sous le nom produits in-app ou PIA) pour vos applications. Pour obtenir une présentation de l’API de soumission du Windows Store, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
+Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pour gérer les extensions (également connues sous le nom produits in-app ou PIA) pour vos applications. Pour obtenir une présentation de l’API de soumission du Windows Store, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
 
->**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation. Ces méthodes peuvent uniquement être utilisées pour obtenir, créer ou supprimer des extensions. Pour créer des soumissions pour des extensions, voir les méthodes indiquées dans [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
+>**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. L’octroi de cette autorisation se fait en plusieurs étapes. Elle est accordée aux comptes de développeur, et tous les comptes n’en bénéficient pas pour le moment. Pour demander un accès anticipé, connectez-vous au tableau de bord du Centre de développement, cliquez sur **Commentaires** au bas du tableau de bord, sélectionnez **API de soumission** dans la zone de commentaires, puis soumettez votre demande. Vous recevrez un message électronique dès que cette autorisation sera accordée à votre compte.
+
+Ces méthodes peuvent uniquement être utilisées pour obtenir, créer ou supprimer des extensions. Pour créer des soumissions pour des extensions, voir les méthodes indiquées dans [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
 
 <table>
 <colgroup>
@@ -157,9 +166,4 @@ Cette ressource a les valeurs suivantes.
 * [Obtenir une extension](get-an-add-on.md)
 * [Créer une extension](create-an-add-on.md)
 * [Supprimer une extension](delete-an-add-on.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

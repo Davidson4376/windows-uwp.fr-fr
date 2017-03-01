@@ -1,36 +1,44 @@
 ---
 author: awkoren
-Description: "Cet article présente de manière plus approfondie le fonctionnement détaillé de Desktop to UWP Bridge."
-title: "Fonctionnement détaillé de Desktop Bridge"
+Description: "Cet article présente de manière approfondie le fonctionnement détaillé du kit de ressources Pont de plateforme Windows universelle (pont UWP) pour applications de bureau."
+title: "Fonctionnement détaillé de Pont du bureau"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 translationtype: Human Translation
-ms.sourcegitcommit: fe96945759739e9260d0cdfc501e3e59fb915b1e
-ms.openlocfilehash: c261f40734ab40475ca3a8e0b7c3bea7b64afacd
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e9a26e201d5059a0e5f7d41f6f11afbb41549596
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Fonctionnement détaillé de Desktop Bridge
+# <a name="behind-the-scenes-of-the-desktop-bridge"></a>Fonctionnement détaillé de Pont du bureau
 
-Cet article présente de manière plus approfondie le fonctionnement détaillé de Desktop to UWP Bridge.
+Cet article présente de manière approfondie le fonctionnement détaillé du kit de ressources Pont de plateforme Windows universelle (pont UWP) pour applications de bureau.
 
-L’objectif principal de Desktop to UWP Bridge (pont entre une application de bureau et UWP) est de séparer autant que possible l’état de l’application de l’état du système tout en conservant la compatibilité avec les autres applications. Pour ce faire, le pont place l’application dans un package de plateforme Windows universelle (UWP), puis détecte et redirige certaines modifications apportées au système de fichiers et au Registre lors de l’exécution.
+L’objectif principal de Desktop to UWP Bridge (pont entre une application de bureau et UWP) est de séparer autant que possible l’état de l’application de l’état du système tout en conservant la compatibilité avec les autres applications. Pour ce faire, le pont place l’application dans un package de plateforme Windows universelle (UWP), puis détecte et redirige certaines modifications qu’il apporte au système de fichiers et au Registre lors de l’exécution.
 
 Les packages d’application convertis sont des applications de bureau totalement approuvées qui ne sont pas virtualisées ni mises en mode Bac à sable. Ainsi, ils peuvent interagir avec d’autres applications comme le font les applications de bureau classiques.
 
-## Installation 
+## <a name="installation"></a>Installation 
 
 Les packages d’application sont installés sous *C:\Program Files\WindowsApps\nom_package*, avec le fichier exécutable intitulé *app_name.exe*. Chaque dossier du package comporte un manifeste (nommé AppxManifest.xml) qui contient un espace de noms XML spécial pour les applications converties. Ce fichier manifeste contient un élément ```<EntryPoint>``` qui fait référence à l’application totalement approuvée. Lorsque cette application est lancée, elle ne s’exécute pas à l’intérieur d’un conteneur d’applications, mais comme un utilisateur le ferait normalement.
 
 Après le déploiement, les fichiers du package sont marqués en lecture seule et fortement verrouillés par le système d’exploitation. Windows empêche le lancement des applications si ces fichiers sont falsifiés. 
 
-## Système de fichiers
+## <a name="file-system"></a>Système de fichiers
 
-Afin de contenir l’état de l’application, le pont tente de capturer les modifications apportées par l’application à AppData. Toutes les écritures effectuées dans le dossier AppData de l’utilisateur (par exemple, *C:\Users\user_name\AppData*), y compris la création, la suppression et la mise à jour, sont copiées au moment de l’écriture dans un emplacement privé par utilisateur, par application. Cela crée l’illusion que l’application convertie modifie vraiment AppData alors qu’elle modifie en fait une copie privée. En redirigeant les écritures de cette façon, le système peut suivre toutes les modifications de fichier effectuées par l’application. Ainsi le système peut nettoyer ces fichiers lorsque l’application est désinstallée, réduisant la «détérioration» du système et fournissant une meilleure expérience de suppression d’application à l’utilisateur. 
+Afin de contenir l’état de l’application, le pont tente de capturer les modifications apportées par l’application à AppData. Toutes les écritures effectuées dans le dossier AppData de l’utilisateur (par exemple, *C:\Users\user_name\AppData*), y compris la création, la suppression et la mise à jour, sont copiées au moment de l’écriture dans un emplacement privé par utilisateur, par application. Cela crée l’illusion que l’application convertie modifie vraiment AppData alors qu’elle modifie en fait une copie privée. En redirigeant les écritures de cette façon, le système peut suivre toutes les modifications de fichier effectuées par l’application. Ainsi le système peut nettoyer ces fichiers lorsque l’application est désinstallée, réduisant la « détérioration » du système et fournissant une meilleure expérience de suppression d’application à l’utilisateur. 
 
-En plus d’effectuer la redirection vers AppData, le pont fusionne dynamiquement les dossiers connus de Windows (System32, Program Files (x86), etc.) avec les répertoires correspondants dans le package de l’application. Chaque package convertit contient un dossier nommé «VFS» à sa racine. Toutes les lectures de répertoires ou de fichiers dans le répertoire VFS sont fusionnées à l’exécution avec leurs équivalents natifs respectifs. Par exemple, une application peut contenir *C:\Program Files\WindowsApps\nom_package\VFS\SystemX86\vc10.dll* dans son package d’application, tandis que le fichier semble être installé dans *C:\Windows\System32\vc10.dll*.  Cela permet de préserver la compatibilité avec les applications de bureau qui s’attendent à trouver les fichiers dans d’autres emplacements que les packages eux-mêmes. 
+En plus d’effectuer la redirection vers AppData, le pont fusionne dynamiquement les dossiers connus de Windows (System32, Program Files (x86), etc.) avec les répertoires correspondants dans le package de l’application. Chaque package convertit contient un dossier nommé « VFS » à sa racine. Toutes les lectures de répertoires ou de fichiers dans le répertoire VFS sont fusionnées à l’exécution avec leurs équivalents natifs respectifs. Par exemple, une application peut contenir *C:\Program Files\WindowsApps\nom_package\VFS\SystemX86\vc10.dll* dans son package d’application, tandis que le fichier semble être installé dans *C:\Windows\System32\vc10.dll*.  Cela permet de préserver la compatibilité avec les applications de bureau qui s’attendent à trouver les fichiers dans d’autres emplacements que les packages eux-mêmes. 
 
 Les écritures dans les fichiers/dossiers du package d’application converti ne sont pas autorisées. Les écritures dans les fichiers et dossiers qui ne font pas partie du package sont ignorées par le pont et sont autorisées dans la mesure où l’utilisateur a une autorisation.
 
-### Opérations courantes
+### <a name="common-operations"></a>Opérations courantes
 
 Le petit tableau de référence suivant présente les opérations courantes du système de fichiers et la manière dont le pont les gère. 
 
@@ -41,7 +49,7 @@ Lire ou énumérer un fichier ou un dossier Windows connu | Fusion dynamique de 
 Écrire à l’intérieur du package | Non autorisé. Le package est en lecture seule. | Les écritures sous *C:\Program Files\WindowsApps\nom_package* ne sont pas autorisées.
 Écrit en dehors du package | Ignoré par le pont. Autorisé si l’utilisateur a des autorisations. | Une écriture dans *C:\Windows\System32\foo.dll* est autorisée si le package ne contient pas *C:\Program Files\WindowsApps\nom_package\VFS\SystemX86\foo.dll* et si l’utilisateur a des autorisations.
 
-### Emplacements de VFS empaquetés
+### <a name="packaged-vfs-locations"></a>Emplacements de VFS empaquetés
 
 Le tableau suivant montre où les fichiers intégrés à votre package sont superposés sur le système de l’application. Votre application détectera ces fichiers comme se trouvant dans les emplacements système répertoriés, alors qu’en réalité, ils se trouvent dans les emplacements redirigés à l’intérieur de *C:\Program Files\WindowsApps\nom_package\VFS*. Les emplacements FOLDERID proviennent des constantes [**KNOWNFOLDERID**](https://msdn.microsoft.com/library/windows/desktop/dd378457.aspx).
 
@@ -62,9 +70,9 @@ FOLDERID_System\driverstore | AppVSystem32Driverstore | x86, amd64
 FOLDERID_System\logfiles | AppVSystem32Logfiles | x86, amd64 
 FOLDERID_System\spool | AppVSystem32Spool | x86, amd64 
 
-## Registre
+## <a name="registry"></a>Registre
 
-Le pont gère le Registre de la même manière que le système de fichiers. Les packages d’application convertis contiennent un fichier registry.dat, qui est l’équivalent logique de *HKLM\Software* dans le vrai Registre. À l’exécution, ce Registre virtuel fusionne le contenu de cette ruche dans la ruche du système natif afin de fournir un affichage unique des deux. Par exemple, si registry.dat contient une seule clé «Foo», la lecture de *HKLM\Software* à l’exécution semble également contenir «Foo» (en plus de toutes les clés système natives). 
+Le pont gère le Registre de la même manière que le système de fichiers. Les packages d’application convertis contiennent un fichier registry.dat, qui est l’équivalent logique de *HKLM\Software* dans le vrai Registre. À l’exécution, ce Registre virtuel fusionne le contenu de cette ruche dans la ruche du système natif afin de fournir un affichage unique des deux. Par exemple, si registry.dat contient une seule clé « Foo », la lecture de *HKLM\Software* à l’exécution semble également contenir « Foo » (en plus de toutes les clés système natives). 
 
 Seules les clés sous *HKLM\Software* font partie du package. Les touches sous *HKCU* ou d’autres parties du Registre n’en font pas partie. Les écritures dans les clés ou les valeurs du package ne sont pas autorisées. Les écritures dans les clés ou les valeurs qui ne font pas partie du package sont ignorées par le pont et sont autorisées dans la mesure où l’utilisateur a une autorisation.
 
@@ -72,23 +80,18 @@ Toutes les écritures sous HKCU sont copiées à l’écriture dans un emplaceme
 
 Toutes les écritures sont conservées pendant la mise à niveau du package et supprimées seulement lorsque l’application est entièrement supprimée. 
 
-### Opérations courantes
+### <a name="common-operations"></a>Opérations courantes
 
 Le petit tableau de référence suivant présente les opérations courantes du Registre et la manière dont le pont les gère. 
 
 Opération | Résultat | Exemple
 :--- | :--- | :---
-Lire ou énumérer *HKLM\Software* | Fusion dynamique de la ruche du package avec l’équivalent du système local. | Si registry.dat contient une seule clé «Foo», à l’exécution la lecture de *HKLM\Software* affiche le contenu de *HKLM\Software* et de *HKLM\Software\Foo*. 
+Lire ou énumérer *HKLM\Software* | Fusion dynamique de la ruche du package avec l’équivalent du système local. | Si registry.dat contient une seule clé « Foo », à l’exécution la lecture de *HKLM\Software* affiche le contenu de *HKLM\Software* et de *HKLM\Software\Foo*. 
 Écritures sous HKCU | Copie à l’écriture dans un emplacement privé par utilisateur, par application. | Identique à AppData pour les fichiers. 
 Écritures à l’intérieur du package. | Non autorisé. Le package est en lecture seule. | Les écritures sous *HKLM\Software* ne sont pas autorisées si un clé/valeur correspondante existe dans la ruche du package.
 Écrit en dehors du package | Ignoré par le pont. Autorisé si l’utilisateur a des autorisations. | Les écritures sous *HKLM\Software* sont autorisées dans la mesure où une clé/valeur correspondante n’existe pas dans la ruche du package et où l’utilisateur a les autorisations d’accès appropriées.
 
-## Désinstallation 
+## <a name="uninstallation"></a>Désinstallation 
 
 Lorsqu’un package est désinstallé par l’utilisateur, tous les fichiers et dossiers situés dans *C:\Program Files\WindowsApps\nom_package* sont supprimés, ainsi que les écritures redirigées vers AppData ou le Registre capturées par le pont. 
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -6,9 +6,16 @@ ms.assetid: BF42E810-CDC8-47D2-9C30-BAA19DCBE2DA
 label: Screen sizes and break points
 template: detail.hbs
 op-migration-status: ready
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 7189987209e894d81b2574aff576c64fb5f7a97a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7c992aa651069f6876aa920da88ada659480132e
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -100,9 +107,4 @@ Le tableau suivant décrit les différentes classes de taille et fournit des rec
 
 Avec [**Continuum pour téléphones**](http://go.microsoft.com/fwlink/p/?LinkID=699431), une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à un moniteur, une souris et un clavier pour les utiliser comme des ordinateurs portables. N’oubliez pas cette nouvelle fonctionnalité lorsque vous concevez des points d’arrêt spécifiques : un téléphone mobile ne reste pas toujours dans la classe de petite taille.
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

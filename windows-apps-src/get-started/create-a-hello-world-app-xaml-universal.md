@@ -3,9 +3,16 @@ author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "Créer une application « Hello World » (XAML)"
 description: "Ce didacticiel vous apprend à utiliser le langage XAML (Extensible Application Markup Language) avec C# pour créer une application « Hello World » simple ciblant la plateforme Windows universelle (UWP) sur Windows 10."
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 7e76c9abd4157c22b38d79b178f5f07827d336ca
-ms.openlocfilehash: e928b4bb116ad98ffe7c225ac1ef2306e56a13ea
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 16622dbd9914907f75c8392f8e4de6e1c10b049c
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -23,8 +30,7 @@ Vous allez apprendre à effectuer les opérations suivantes :
 ## <a name="before-you-start"></a>Avant de commencer...
 
 -   [Qu’est-ce qu’une application Windows universelle ?](whats-a-uwp.md)
--   [Nouveautés de Windows 10](https://dev.windows.com/whats-new-windows-10-dev-preview)
--   Pour suivre ce didacticiel, vous avez besoin de Windows 10 et de Visual Studio 2015. [Se préparer](get-set-up.md).
+-   Pour finaliser ce didacticiel, vous avez besoin de Windows 10 et de Visual Studio 2015. [Se préparer](get-set-up.md).
 -   Nous partons également du principe que vous utilisez la disposition de fenêtre par défaut de Visual Studio. Si vous modifiez la disposition par défaut, vous pouvez la réinitialiser dans le menu **Fenêtre** en choisissant la commande **Rétablir la disposition de fenêtre**.
 
 
@@ -161,7 +167,7 @@ L’écran de démarrage disparaît pour céder la place à votre application. C
 
 Appuyez sur la touche Windows pour ouvrir le menu **Démarrer**, puis affichez toutes les applications. Notez que le déploiement de l’application entraîne l’ajout local de sa vignette au menu **Démarrer**. Pour exécuter de nouveau l’application à un moment ultérieur (pas en mode débogage), appuyez ou cliquez sur sa vignette dans le menu **Démarrer**.
 
-Félicitations ! Vous venez de créer votre première application UWP, même si celle-ci ne propose pas (encore) beaucoup de fonctions.
+Félicitations ! Vous venez de générer votre première application UWP, même si celle-ci ne propose pas (encore) beaucoup de fonctions.
 
 **Pour arrêter le débogage**
 
@@ -255,10 +261,5 @@ Quand vous exécutez l’application et que vous cliquez sur le bouton, votre or
 
 Félicitations ! Vous venez de créer votre première application pour Windows 10 et l’application UWP.
 
-Pour apprendre à utiliser XAML et mettre en place les contrôles utilisés par votre application, essayez le [didacticiel de grille](../layout/grid-tutorial.md) ou passez directement à la section [Étape suivante](learn-more.md).
-
-
-
-<!--HONumber=Dec16_HO1-->
-
+Pour apprendre à utiliser XAML et mettre en place les contrôles utilisés par votre application, essayez le [didacticiel de grille](../layout/grid-tutorial.md) ou passez directement aux [étapes suivantes](learn-more.md).
 

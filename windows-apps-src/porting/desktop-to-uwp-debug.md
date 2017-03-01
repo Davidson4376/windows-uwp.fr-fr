@@ -1,17 +1,25 @@
 ---
 author: awkoren
-Description: "Déployez et déboguez une application de plateforme Windows universelle (UWP) convertie à partir d’une application de bureau Windows (Win32, WPF, Windows Forms) à l’aide de Desktop to UWP Bridge."
+Description: "Déployez et déboguez une application de plateforme Windows universelle (UWP) convertie à partir d’une application de bureau Windows (Win32, WPF, Windows Forms) à l’aide du kit de ressources Pont de plateforme Windows universelle (pont UWP) pour applications de bureau."
 Search.Product: eADQiWindows 10XVcnh
-title: "Déboguer des applications converties avec Desktop Bridge"
+title: "Déboguer des applications converties avec Pont du bureau"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 translationtype: Human Translation
-ms.sourcegitcommit: dba00371b29b3179a6dc3bdd96a092437331e61a
-ms.openlocfilehash: 537ac8e83d5f54bf83ec0e05b71be354651000f2
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 9660d14a1ca28929a213d4ed5a59cdcda73ccc39
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="debug-apps-converted-with-the-desktop-bridge"></a>Déboguer des applications converties avec Desktop Bridge
+# <a name="debug-apps-converted-with-the-desktop-bridge"></a>Déboguer des applications converties avec Pont du bureau
 
-Cette rubrique contient des informations pour vous aider à réussir le débogage de votre application après l’avoir convertie avec Desktop to UWP Bridge. Plusieurs options s’offrent à vous pour le débogage de votre application convertie.
+Cet article contient des informations pour vous aider à réussir le débogage de votre application après l’avoir convertie avec le kit de ressources Pont de plateforme Windows universelle (pont UWP) pour applications de bureau. Plusieurs options s’offrent à vous pour le débogage de votre application convertie.
 
 ## <a name="attach-to-process"></a>Attacher au processus
 
@@ -53,7 +61,7 @@ Voici comment faire :
 
     Définissez PackageLayout sur l’emplacement racine de l’AppX qui a été créé par le convertisseur (ci-dessus). Ensuite, choisissez la vignette à exécuter.
 
-8.  Ouvrez et modifiez AppXFileList.xml. Ce fichier définit la façon de copier la sortie de la build de débogage Win32 dans la disposition AppX conçue par le convertisseur. Par défaut, un espace réservé figure dans le fichier avec un exemple de balise et de commentaire :
+8.    Ouvrez et modifiez AppXFileList.xml. Ce fichier définit la façon de copier la sortie de la build de débogage Win32 dans la disposition AppX générée par le convertisseur. Par défaut, un espace réservé figure dans le fichier avec un exemple de balise et de commentaire :
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -118,9 +126,9 @@ Voici comment faire :
 
     ![alt](images/desktop-to-uwp/debug-5.png)
 
-10. Enfin, vous pouvez maintenant définir un point d’arrêt dans le code Win32 et appuyer sur F5 pour lancer le débogueur. Cela copiera toutes les mises à jour que vous avez apportées à votre application Win32 sur le package AppX, et vous permettra de déboguer directement depuis Visual Studio.
+10.    Enfin, vous pouvez maintenant définir un point d’arrêt dans le code Win32 et appuyer sur F5 pour lancer le débogueur. Cela copiera toutes les mises à jour que vous avez apportées à votre application Win32 sur le package AppX, et vous permettra de déboguer directement depuis Visual Studio.
 
-11. Si vous mettez à jour votre application, vous devrez utiliser MakeAppX pour remettre en package votre application. Pour plus d’informations, consultez [Outil de création de packages (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx). 
+11.    Si vous mettez à jour votre application, vous devrez utiliser MakeAppX pour remettre en package votre application. Pour plus d’informations, consultez [Outil de création de packages (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx). 
 
 Si vous disposez de plusieurs configurations de build (par exemple, pour la sortie et le débogage), vous pouvez ajouter ce qui suit au fichier AppXFileList.xml pour copier la version Win32 depuis différents emplacements :
 
@@ -134,7 +142,7 @@ Si vous disposez de plusieurs configurations de build (par exemple, pour la sort
 
 Vous pouvez également utiliser la compilation conditionnelle pour activer des chemins de code particuliers si vous mettez à jour votre application vers UWP mais que vous souhaitez également toujours la générer pour Win32. 
 
-1.  Dans l’exemple ci-dessous, le code sera compilé uniquement pour DesktopUWP et affichera une vignette à l’aide de l’API WinRT. 
+1.    Dans l’exemple ci-dessous, le code sera compilé uniquement pour DesktopUWP et affichera une vignette à l’aide de l’API WinRT. 
 
     ```C#
     [Conditional("DesktopUWP")]
@@ -148,17 +156,17 @@ Vous pouvez également utiliser la compilation conditionnelle pour activer des c
     }
     ```
 
-2.  Vous pouvez utiliser Configuration Manager pour ajouter la nouvelle configuration de build :
+2.    Vous pouvez utiliser Configuration Manager pour ajouter la nouvelle configuration de build :
 
     ![alt](images/desktop-to-uwp/debug-6.png)
 
     ![alt](images/desktop-to-uwp/debug-7.png)
 
-3.  Ensuite, sous les propriétés du projet, ajoutez la prise en charge des symboles de compilation conditionnelle :
+3.    Ensuite, sous les propriétés du projet, ajoutez la prise en charge des symboles de compilation conditionnelle :
 
     ![alt](images/desktop-to-uwp/debug-8.png)
 
-4.  Vous pouvez maintenant basculer la cible de build vers DesktopUWP si vous souhaitez créer pour cibler l’API UWP que vous avez ajoutée.
+4.    Vous pouvez maintenant basculer la cible de build vers DesktopUWP si vous souhaitez créer pour cibler l’API UWP que vous avez ajoutée.
 
 ## <a name="plmdebug"></a>PLMDebug 
 
@@ -174,9 +182,4 @@ Vous pouvez appeler des processus personnalisés à l’intérieur du conteneur 
 Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [-Command] <string> [[-Args]
     <string>]  [<CommonParameters>]
 ```
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

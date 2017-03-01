@@ -3,15 +3,22 @@ author: DelfCo
 description: "En tant que développeur d’applications de plateforme Windows universelles (UWP), vous pouvez utiliser tant Windows.Networking.Sockets que Winsock pour communiquer avec d’autres appareils."
 title: Sockets
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 4557fa59d377edc2ae5bf5a9be63516d152949bb
-ms.openlocfilehash: 49a9ae4d7d3994ad7fbb78fc9dc60cdd9dca07c3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0e9121dfc590a1a7f67be69b7dbce475e438dd08
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Sockets
+# <a name="sockets"></a>Sockets
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 **API importantes**
 
@@ -22,7 +29,7 @@ En tant que développeur d’applications de plateforme Windows universelles (UW
 
 >**Remarque** Dans le cadre de [l’isolement réseau](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx), le système refuse l’établissement de connexions de socket (Sockets ou WinSock) entre deux applications UWP qui s’exécutent sur le même ordinateur via soit l’adresse de bouclage locale (127.0.0.0) ou en spécifiant explicitement l’adresse IP locale. Cela signifie que vous ne pouvez pas utiliser des sockets pour faire communiquer deux applications UWP. UWP fournit d’autres mécanismes permettant de faire communiquer les applications. Voir [Communication entre les applications](https://msdn.microsoft.com/windows/uwp/app-to-app/index) pour plus d’informations.
 
-## Opérations de base d’un socket TCP
+## <a name="basic-tcp-socket-operations"></a>Opérations de base d’un socket TCP
 
 Un socket TCP fournit des transferts de données réseau de bas niveau dans chaque direction pour des connexions à durée de vie longue. Les sockets TCP sont la fonctionnalité sous-jacente utilisée par la plupart des protocoles réseau utilisés sur Internet. Cette section montre comment activer une application UWP pour envoyer et recevoir des données avec un socket de flux TCP à l’aide des classes [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) et [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) dans le cadre de l’espace de noms [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960). Dans cette section, nous allons créer une application très simple fonctionnant en tant que client et serveur echo afin d’illustrer les opérations TCP de base.
 
@@ -104,7 +111,7 @@ catch (Exception e)
 }
 ```
 
-## Opérations de base d’un socket UDP
+## <a name="basic-udp-socket-operations"></a>Opérations de base d’un socket UDP
 
 Un socket UDP assure les transferts de données réseau de bas niveau dans chaque direction pour les communications réseau qui ne nécessitent pas une connexion établie. Dans la mesure où les sockets UDP ne conservent pas de connexion sur les deux points de terminaison, ils offrent une solution simple et rapide de mise en réseau entre des ordinateurs distants. Toutefois, les sockets UDP ne garantissent pas l’intégrité des paquets réseau et ne s’assurent pas qu’ils atteignent effectivement la destination distante. Les sockets UDP sont par exemple utilisés par les clients de conversation locale et les clients de découverte de réseau local. Cette section montre comment utiliser la classe [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) pour envoyer et recevoir des messages UDP en créant un client et un serveur echo simples.
 
@@ -190,11 +197,11 @@ private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSoc
 }
 ```
 
-## Opérations en arrière-plan et broker de socket
+## <a name="background-operations-and-the-socket-broker"></a>Opérations en arrière-plan et broker de socket
 
 Si votre application reçoit des connexions ou des données sur des sockets, vous devez être prêt à effectuer ces opérations correctement quand votre application n’est pas au premier plan. Pour ce faire, vous utilisez le broker de socket. Pour plus d’informations concernant la manière d’utiliser le broker de socket, voir [Communications réseau en arrière-plan](network-communications-in-the-background.md).
 
-## Envois par lot
+## <a name="batched-sends"></a>Envois par lot
 
 À partir de Windows 10, Windows.Networking.Sockets prend en charge les envois par lot, qui vous permettent d’envoyer ensemble plusieurs tampons de données moyennant une surcharge de basculement entre contextes nettement moindre que celle qu’occasionnerait l’envoi de chaque tampon séparément. Cela est particulièrement utile si votre application effectue des tâches VoIP, VPN ou autres impliquant le déplacement d’un grand nombre de données aussi efficacement que possible.
 
@@ -255,7 +262,7 @@ foreach (IBuffer packet in packetsToSend)
 await outputStream.FlushAsync();
 ```
 
-Dans les versions antérieures de Windows, **FlushAsync** retournait immédiatement et ne garantissait pas que toutes les opérations sur le flux étaient terminées. Dans Windows10, le comportement a changé. Il est désormais garanti que **FlushAsync** retourne une fois toutes les opérations sur le flux de sortie terminées.
+Dans les versions antérieures de Windows, **FlushAsync** retournait immédiatement et ne garantissait pas que toutes les opérations sur le flux étaient terminées. Dans Windows 10, le comportement a changé. Il est désormais garanti que **FlushAsync** retourne une fois toutes les opérations sur le flux de sortie terminées.
 
 Certaines limitations importantes découlent de l’utilisation d’écritures par lot dans votre code.
 
@@ -264,15 +271,15 @@ Certaines limitations importantes découlent de l’utilisation d’écritures p
 -   Le modèle **FlushAsync** fonctionne uniquement à partir de Windows 10.
 -   Dans les autres cas, utilisez **Task.WaitAll** au lieu du modèle **FlushAsync**.
 
-## Partage de port pour DatagramSocket
+## <a name="port-sharing-for-datagramsocket"></a>Partage de port pour DatagramSocket
 
 Windows 10 introduit une nouvelle propriété [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190), [**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368), qui permet de spécifier que le **DatagramSocket** en question est en mesure de coexister avec d’autres sockets multidiffusion Win32 ou WinRT liés à la même adresse/au même port.
 
-## Fourniture d’un certificat client avec la classe StreamSocket
+## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>Fourniture d’un certificat client avec la classe StreamSocket
 
 La classe [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) prend en charge l’utilisation des protocoles SSL/TLS pour authentifier le serveur avec lequel l’application communique. Dans certains cas, l’application doit également s’authentifier auprès du serveur à l’aide d’un certificat client TLS. Dans Windows 10, vous pouvez prévoir un certificat client sur l’objet [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) (cela doit être défini avant le début de la négociation TLS). Si le serveur demande le certificat client, Windows répond avec le certificat fourni.
 
-Voici un extrait de code montrant comment implémenter cela:
+Voici un extrait de code montrant comment implémenter cela :
 
 ```csharp
 var socket = new StreamSocket();
@@ -281,7 +288,7 @@ socket.Control.ClientCertificate = certificate;
 await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ```
 
-## Exceptions dans Windows.Networking.Sockets
+## <a name="exceptions-in-windowsnetworkingsockets"></a>Exceptions dans Windows.Networking.Sockets
 
 Le constructeur pour la classe [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) utilisée avec des sockets peut lever une exception si la chaîne passée n’est pas un nom d’hôte valide (c’est-à-dire si elle contient des caractères non autorisés dans un nom d’hôte). Si une application obtient une entrée de l’utilisateur pour la classe **HostName**, le constructeur doit se trouver dans un bloc try/catch. Si une exception est levée, l’application peut notifier l’utilisateur et demander un nouveau nom d’hôte.
 
@@ -293,14 +300,9 @@ Une erreur rencontrée dans une opération [**MessageWebSocket**](https://msdn.m
 
 Pour les erreurs de validation de paramètre, une application peut également utiliser la valeur **HRESULT** à partir de l’exception pour obtenir des informations plus détaillées sur l’erreur à l’origine de l’exception. Les valeurs **HRESULT** possibles sont répertoriées dans le fichier d’en-tête *Winerror.h*. Pour la plupart des erreurs de validation de paramètre, la valeur **HRESULT** renvoyée est **E\_INVALIDARG**.
 
-## API Winsock
+## <a name="the-winsock-api"></a>API Winsock
 
-Vous pouvez également utiliser [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) dans votre application UWP. L’API Winsock prise en charge est basée sur celle de Microsoft Silverlight pour Windows Phone8.1 et continue de prendre en charge la plupart des types, propriétés et méthodes (certaines API jugées obsolètes ont été supprimées). Pour plus d’informations sur la programmation de Winsock, voir [ici](https://msdn.microsoft.com/library/windows/desktop/ms740673).
+Vous pouvez également utiliser [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) dans votre application UWP. L’API Winsock prise en charge est basée sur celle de Microsoft Silverlight pour Windows Phone 8.1 et continue de prendre en charge la plupart des types, propriétés et méthodes (certaines API jugées obsolètes ont été supprimées). Pour plus d’informations sur la programmation de Winsock, voir [ici](https://msdn.microsoft.com/library/windows/desktop/ms740673).
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

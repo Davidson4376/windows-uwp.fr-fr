@@ -3,19 +3,26 @@ author: Xansky
 description: Comment utiliser les informations relatives aux contacts et calendriers dans votre application UWP.
 title: Contacts et calendriers
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, contacts, calendrier, rendez-vous, messages électroniques"
 translationtype: Human Translation
-ms.sourcegitcommit: c21a5f0f859e3a80d01786caaf6941c3d0b11c18
-ms.openlocfilehash: 0b93ab3f5e0a622fb924a752ec581bbb9df32936
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f0e61f5c586ccd1225fb9e4edf5ab93580cfd043
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Contacts et calendriers
+# <a name="contacts-and-calendar"></a>Contacts et calendriers
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Vous pouvez permettre aux utilisateurs d’accéder à leurs contacts et rendez-vous afin de partager du contenu, des courriers électroniques, des informations de calendrier ou des messages, ou toute autre fonctionnalité de votre conception.
 
-Pour en savoir plus sur les différentes façons d’accéder aux contacts et aux rendez-vous dans votre application, voir les rubriques suivantes:
+Pour en savoir plus sur les différentes façons d’accéder aux contacts et aux rendez-vous dans votre application, voir les rubriques suivantes :
 
 | Rubrique | Description |
 |-------|-------------|
@@ -27,16 +34,11 @@ Pour en savoir plus sur les différentes façons d’accéder aux contacts et au
 
  
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Exemple d’API de rendez-vous](http://go.microsoft.com/fwlink/p/?linkid=309836)
 * [Exemple d’API du Gestionnaire de contacts](http://go.microsoft.com/fwlink/p/?LinkID=310079)
 * [Exemple d’application du sélecteur de contacts](http://go.microsoft.com/fwlink/p/?linkid=231575)
 * [Exemple de gestion des actions de contact](http://go.microsoft.com/fwlink/p/?LinkID=320151)
 * [Exemple d’intégration à une carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -1,17 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
-description: "Utilisez cette méthode dans l’API d’analyse du Windows Store pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs."
+description: "Utilisez cette méthode dans l’API d’analyse du Windows Store afin de récupérer les données agrégées de rapport d’erreurs pour une plage de dates donnée et en fonction d’autres filtres facultatifs."
 title: "Obtenir les données de rapport d’erreurs"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, services du Windows Store, API d’analyse du Windows Store, erreurs"
 translationtype: Human Translation
-ms.sourcegitcommit: dcf4c263ff3fd8df846d1d5620ba31a9da7a5e6c
-ms.openlocfilehash: 800405bcac9b05af0e0295c88c27cbe3d2387947
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0d99318a2a8deba78503163c76a425c132e7de01
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="get-error-reporting-data"></a>Obtenir les données de rapport d’erreurs
 
-Utilisez cette méthode dans l’API d’analyse du Windows Store pour récupérer le rapport complet des erreurs de votre application au format JSON, correspondant à une période donnée et à d’autres filtres facultatifs. Ces informations sont également disponibles dans la section **Échecs** du [rapport d’intégrité](../publish/health-report.md) dans le tableau de bord du Centre de développement Windows.
+Utilisez cette méthode dans l’API d’analyse du Windows Store pour récupérer les données agrégées de rapport d’erreurs de votre application au format JSON correspondant à une période donnée et à d’autres filtres facultatifs. Ces informations sont également disponibles dans la section **Échecs** du [rapport d’intégrité](../publish/health-report.md) dans le tableau de bord du Centre de développement Windows.
 
 Vous pouvez récupérer des informations d’erreur supplémentaires à l’aide des méthodes [Obtenir les informations sur une erreur de votre application](get-details-for-an-error-in-your-app.md) et [Obtenir la trace de pile concernant une erreur dans votre application](get-the-stack-trace-for-an-error-in-your-app.md).
 
@@ -169,9 +176,4 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 * [Obtenir des acquisitions d’extensions](get-in-app-acquisitions.md)
 * [Obtenir les classifications des applications](get-app-ratings.md)
 * [Obtenir les avis sur les applications](get-app-reviews.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

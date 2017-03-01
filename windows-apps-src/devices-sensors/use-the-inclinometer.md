@@ -3,35 +3,42 @@ author: DBirtolo
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: "Utiliser l’inclinomètre"
 description: "Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b8ebfaf4c294fccf61534203bce0326f9dbec977
+ms.lasthandoff: 02/07/2017
 
 ---
-# Utiliser l’inclinomètre
+# <a name="use-the-inclinometer"></a>Utiliser l’inclinomètre
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
-** API importantes **
+**API importantes**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766)
 
 Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet.
 
-Certaines jeux3D requièrent un inclinomètre en tant que périphérique d’entrée. Le simulateur de vol en est un exemple courant, qui mappe les troisaxes de l’inclinomètre (x, y et z) aux entrées de la gouverne de profondeur, de l’aileron et du volet de dérive.
+Certaines jeux 3D requièrent un inclinomètre en tant que périphérique d’entrée. Le simulateur de vol en est un exemple courant, qui mappe les trois axes de l’inclinomètre (x, y et z) aux entrées de la gouverne de profondeur, de l’aileron et du volet de dérive.
 
- ## Prérequis
+ ## <a name="prerequisites"></a>Prérequis
 
 Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un inclinomètre.
 
- ## Créer une application simple d’inclinomètre
+ ## <a name="create-a-simple-inclinometer-app"></a>Créer une application simple d’inclinomètre
 
-Cette section se divise en deuxsous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple d’inclinomètre. La sous-section suivante décrit l’application que vous venez de créer.
+Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple d’inclinomètre. La sous-section suivante décrit l’application que vous venez de créer.
 
-###  Instructions
+###  <a name="instructions"></a>Instructions
 
 -   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
 
@@ -65,7 +72,7 @@ Cette section se divise en deuxsous-sections. La première sous-section vous per
         {
             private Inclinometer _inclinometer;
 
-            // This event handler writes the current inclinometer reading to 
+            // This event handler writes the current inclinometer reading to
             // the three text blocks on the app' s main page.
 
             private async void ReadingChanged(object sender, InclinometerReadingChangedEventArgs e)
@@ -83,7 +90,7 @@ Cette section se divise en deuxsous-sections. La première sous-section vous per
             {
                 this.InitializeComponent();
                 _inclinometer = Inclinometer.GetDefault();
-     
+
 
                 if (_inclinometer != null)
                 {
@@ -134,7 +141,7 @@ Une fois l’application en cours d’exécution, vous pouvez modifier les valeu
 
 -   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
-###  Explication
+###  <a name="explanation"></a>Explication
 
 L’exemple précédent démontre la faible quantité de code que vous devrez écrire afin d’intégrer l’entrée de l’inclinomètre dans votre application.
 
@@ -144,7 +151,7 @@ L’application établit une connexion avec l’inclinomètre par défaut dans l
 _inclinometer = Inclinometer.GetDefault();
 ```
 
-L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16millisecondes (ce qui représente une fréquence de rafraîchissement de 60Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
+L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16 millisecondes (ce qui représente une fréquence de rafraîchissement de 60 Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
 
 ```csharp
 uint minReportInterval = _inclinometer.MinimumReportInterval;
@@ -155,7 +162,7 @@ _inclinometer.ReportInterval = reportInterval;
 Les nouvelles données de l’inclinomètre sont capturées dans la méthode **ReadingChanged**. Chaque fois que le pilote du capteur reçoit de nouvelles données du capteur, il transmet les valeurs à votre application à l’aide de ce gestionnaire d’événements. L’application inscrit ce gestionnaire d’événements sur la ligne suivante.
 
 ```csharp
-_inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer, 
+_inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer,
 InclinometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -170,13 +177,7 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
  <TextBlock x:Name="txtYaw" HorizontalAlignment="Left" Height="19" Margin="55,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" Foreground="#FFF6F2F2"/>
 ```
 
- ## Rubriques connexes
+ ## <a name="related-topics"></a>Rubriques connexes
 
 * [Exemple d’inclinomètre](http://go.microsoft.com/fwlink/p/?linkid=241380)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

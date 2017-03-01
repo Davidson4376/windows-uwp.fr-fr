@@ -1,18 +1,25 @@
 ---
 author: msatranjr
 title: Afficher des cartes avec des vues 2D, 3D et Streetside
-description: "Affichez des cartes personnalisables dans votre application en utilisant la classe MapControl. Cette rubrique présente également des vues 3D aériennes et Streetside."
+description: "Affichez des cartes personnalisables dans votre application en utilisant la classe MapControl. Cet article présente également des vues 3D aériennes et Streetside."
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, carte, emplacement, contrôle de carte, vues de carte"
 translationtype: Human Translation
-ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
-ms.openlocfilehash: 09f87f66802e5143c8eac7fce8fc2118f3d31340
+ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
+ms.openlocfilehash: 7a1687ceb188fdd28943f807b877b28e93ae6937
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="display-maps-with-2d-3d-and-streetside-views"></a>Afficher des cartes avec des vues 2D, 3D et Streetside
+# <a name="display-maps-with-2d-3d-and-streetside-views"></a>Afficher des cartes avec des vues 2D, 3D et Streetside
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Affichez des cartes personnalisables dans votre application en utilisant la classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Cette rubrique présente également des vues 3D aériennes et Streetside.
@@ -26,7 +33,7 @@ Affichez des cartes personnalisables dans votre application en utilisant la clas
 
 Affichez une carte sur une page XAML en ajoutant un élément [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Pour utiliser le **MapControl**, vous devez déclarer les espace de noms [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) dans la page XAML ou dans votre code. Si vous faites glisser le contrôle à partir de la boîte à outils, cette déclaration d’espace de noms est ajoutée automatiquement. Si vous ajoutez manuellement le **MapControl** à la page XAML, vous devez également ajouter manuellement la déclaration d’espace de noms en haut de la page.
 
-L’exemple suivant affiche un contrôle de carte de base et configure la carte pour afficher les contrôles de zoom et d’inclinaison en plus de l’acceptation des entrées tactiles. Pour plus d’informations sur la personnalisation de l’apparence de la carte, voir [Configurer la carte](#mapconfig).
+L’exemple suivant affiche un contrôle de carte de base et configure la carte pour afficher les contrôles de zoom et d’inclinaison en plus de l’acceptation des entrées tactiles. Pour plus d’informations sur la personnalisation de l’apparence de la carte, voir [Configurer la carte](#configure-the-map).
 
 ```xml
 <Page
@@ -46,7 +53,7 @@ L’exemple suivant affiche un contrôle de carte de base et configure la carte 
        ZoomInteractionMode="GestureAndControl"
        TiltInteractionMode="GestureAndControl"   
        MapServiceToken="EnterYourAuthenticationKeyHere"/>
-  
+
  </Grid>
 </Page>
 ```
@@ -137,7 +144,7 @@ Lorsque vous affichez l’emplacement de votre appareil sur une carte, songez à
 
 Pour modifier l’emplacement qui s’affiche sur une carte 2D, appelez l’une des surcharges de la méthode [**TrySetViewAsync**](https://msdn.microsoft.com/library/windows/apps/dn637060). Cette méthode permet de spécifier de nouvelles valeurs pour [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005), [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068), [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019) et [**Pitch**](https://msdn.microsoft.com/library/windows/apps/dn637044). Vous pouvez également spécifier une animation facultative à utiliser quand l’affichage est modifié en fournissant une constante de l’énumération [**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002).
 
-Pour modifier l’emplacement sur une carte 3D, utilisez plutôt la méthode [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296). Pour plus d’informations, voir [Afficher des vues 3D](#display3d).
+Pour modifier l’emplacement sur une carte 3D, utilisez plutôt la méthode [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296). Pour plus d’informations, voir [Afficher des vues 3D](#display-aerial-3d-views).
 
 Appelez la méthode [**TrySetViewBoundsAsync**](https://msdn.microsoft.com/library/windows/apps/dn637065) pour afficher le contenu d’une classe [**GeoboundingBox**](https://msdn.microsoft.com/library/windows/apps/dn607949) sur la carte. Utilisez cette méthode (par exemple) pour afficher un itinéraire ou une partie d’un itinéraire sur la carte. Pour plus d’informations, voir [Afficher des itinéraires et indications sur une carte](routes-and-directions.md).
 
@@ -316,11 +323,4 @@ Gérez les modifications qui se produisent lorsque l’utilisateur ou l’applic
 * [Vidéos de la build 2015 : utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Exemple d’application de trafic UWP](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)
-
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

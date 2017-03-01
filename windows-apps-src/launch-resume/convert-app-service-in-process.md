@@ -2,13 +2,21 @@
 author: TylerMSFT
 title: "Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte"
 description: "Convertissez un code de service d’application qui s’exécutait dans un processus distinct en arrière-plan en code qui s’exécute dans le même processus que votre fournisseur de service d’application."
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: 80402d12a51ea970f5927dc50cae587be8809b87
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 1fea72237a9ac7d18fb415d5957f959542a833e8
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte
+# <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte
 
 Une [AppServiceConnection](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceconnection.aspx) permet à une autre application de réactiver votre application en arrière-plan et de démarrer une ligne directe de communication avec celle-ci.
 
@@ -26,7 +34,7 @@ Supprimez l’attribut `EntryPoint`. Désormais, le rappel [OnBackgroundActivate
 
 La seconde modification consiste à déplacer la logique de service de son projet de tâche distinct en arrière-plan dans les méthodes qui peuvent être appelées à partir de **OnBackgroundActivated()**.
 
-À présent, votre application peut directement exécuter votre service d’application.  Par exemple:
+À présent, votre application peut directement exécuter votre service d’application.  Par exemple :
 
 > ``` cs
 > private AppServiceConnection appServiceconnection;
@@ -74,9 +82,4 @@ Dans le code ci-dessus, la méthode `OnBackgroundActivated` gère l’activation
 Lorsque l’application reçoit une demande, elle lit l’élément [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx) fourni pour voir si les chaînes `Key` et `Value` sont présentes. Si elles sont bien présentes, le service d’application renvoie alors une paire de valeurs de chaîne `Response` et `True` à l’application sur l’autre côté de la **AppServiceConnection**.
 
 Pour en savoir plus sur la connexion et la communication avec d’autres applications, consultez [Créer et utiliser un service d’application](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service?f=255&MSPPError=-2147217396).
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

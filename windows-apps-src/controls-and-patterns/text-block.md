@@ -1,11 +1,20 @@
 ---
 author: Jwmsft
 ms.assetid: DA562509-D893-425A-AAE6-B2AE9E9F8A19
+Description: "Le bloc de texte est le contrôle principalement utilisé pour afficher du texte en lecture seule dans les applications."
+title: Bloc de texte
 label: Text block
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 9f52252d1d6efb5f0b8b8bc39c1e048f767bc805
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 986c53ce5fa150e92a4b6d1b86da270ebde26fdf
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="text-block"></a>Bloc de texte
@@ -179,9 +188,4 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 - [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Classe PasswordBox Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

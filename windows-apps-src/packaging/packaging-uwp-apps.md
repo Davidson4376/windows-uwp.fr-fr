@@ -3,14 +3,21 @@ author: laurenhughes
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: "Création de packages d’application UWP"
 description: "Pour vendre ou distribuer votre application UWP à d’autres utilisateurs, vous devez créer un package d’application appxupload."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6decb122b56bb8835b4d0fc5178af61b59455876
-ms.openlocfilehash: 312c8fb0bbbb6231da91e7d477b800a797160e96
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ca57f50f4827ba5de7a140f1353ba864c5e2fb6c
+ms.lasthandoff: 02/07/2017
 
 ---
-# <a name="packaging-uwp-apps"></a>Création de packages d’application UWP
+# <a name="packaging-uwp-apps"></a>Création de packages d’applications UWP
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 Pour vendre ou distribuer votre application UWP à d’autres utilisateurs, vous devez créer un package d’application appxupload. Lorsque vous créez l’appxupload, un autre package appx est alors généré pour le test et le chargement indépendant. Vous pouvez distribuer votre application directement en chargeant de manière indépendante le package appx sur un appareil. Cet article décrit le processus de configuration, de création et de test d’un package d’application UWP. Pour plus d’informations sur le chargement indépendant, voir [Charger de manière indépendante des applications dans Windows 10](https://technet.microsoft.com/library/mt269549.aspx).
 
@@ -91,7 +98,7 @@ Pour distribuer une application via le Windows Store, vous devez créer un packa
 **Valider votre package d’application sur un appareil Windows 10 distant**
 
 1.  Activez votre appareil Windows 10 pour le développement en suivant les instructions [Activer votre appareil pour le développement](https://msdn.microsoft.com/library/windows/apps/Dn706236).
-    **Important** Vous ne pouvez pas valider votre package d’application sur un appareil ARM distant pour Windows 10.
+    **Important** Vous ne pouvez pas valider votre package d’application sur un appareil ARM distant pour Windows 10.
 2.  Téléchargez et installez les outils de contrôle à distance de Visual Studio. Ils sont utilisés pour exécuter le kit de certification des applications Windows à distance. Vous pouvez obtenir plus d’informations sur ces outils, y compris sur l’endroit où les télécharger, en consultant [Exécuter les applications du Windows Store sur un ordinateur distant](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor).
 3.  Téléchargez le [Kit de certification des applications Windows](http://go.microsoft.com/fwlink/p/?LinkID=309666) requis, puis installez-le sur votre appareil Windows 10 distant.
 4.  Sur la page **Package Creation Completed** de l’Assistant, choisissez la case d’option **Remote Machine**, puis choisissez le bouton de sélection en regard du bouton **Test Connection**.
@@ -128,10 +135,5 @@ La liste suivante fournit les conditions requises pour le chargement indépendan
 
     Une fois le package d’application installé, le message « Votre application a été correctement installée » s’affiche dans votre fenêtre PowerShell.
 
-    **Remarque** Pour ouvrir le menu contextuel sur une tablette, touchez l’écran dans lequel vous voulez cliquer avec le bouton droit, restez appuyé jusqu’à ce qu’apparaisse un cercle complet, puis levez le doigt. Le menu contextuel s’affiche quand vous levez le doigt.
+    **Remarque** Pour ouvrir le menu contextuel sur une tablette, touchez l’écran à l’endroit où vous désirez cliquer avec le bouton droit, restez appuyé jusqu’à ce qu’apparaisse un cercle complet, puis levez le doigt. Le menu contextuel s’affiche quand vous levez le doigt.
 4.  Cliquez sur le bouton Démarrer et tapez le nom de votre application pour la lancer.
-
-
-<!--HONumber=Dec16_HO1-->
-
-

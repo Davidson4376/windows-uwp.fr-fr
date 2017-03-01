@@ -3,17 +3,24 @@ author: mcleblanc
 title: "Choix d’un langage de programmation"
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: "Choix d’un langage de programmation"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c7d99923a0deac61e289d3a2796b8dd1720430b4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 440fb76aac128490366677278254a5f5b2e095ed
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Prise en main : Choix d’un langage de programmation
+# <a name="getting-started-choosing-a-programming-language"></a>Prise en main : Choix d’un langage de programmation
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-## Choix d’un langage de programmation
+## <a name="choosing-a-programming-language"></a>Choix d’un langage de programmation
 
 Avant d’aller plus loin, vous devez connaître les langages de programmation permettant de développer des applications pour la plateforme Windows universelle (UWP). Bien que les procédures pas à pas du présent article utilisent le langage C#, vous pouvez développer des applications pour la plateforme Windows universelle (UWP) à l’aide d’un ou de plusieurs langages de programmation (voir [Langages, outils et infrastructures](https://msdn.microsoft.com/library/windows/apps/dn465799)).
 
@@ -27,13 +34,13 @@ Bien que l’article se concentre ici sur C#, les autres langages offrent des av
 -   [Créer votre première application du Windows Phone Store en C# ou Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=397877)
 -   [WinJS sur Windows Phone 8.1](http://go.microsoft.com/fwlink/p/?LinkID=397879)
 
-**Remarque** Pour les applications avec des graphiques 3D, les normes OpenGL et OpenGL ES ne sont pas disponibles en mode natif pour les applications UWP. Si vous préférez ne pas réécrire votre code OpenGL ES dans Microsoft DirectX, vous pourriez être intéressé par **Angle**. Angle est un projet en cours conçu pour convertir OpenGL en DirectX en transformant des appels d’API OpenGL en appels d’API DirectX. Pour en savoir plus, consultez les rubriques suivantes :
+**Remarque**  Pour les applications utilisant des graphiques 3D, les normes OpenGL et OpenGL ES ne sont pas disponibles en mode natif pour les applications UWP. Si vous préférez ne pas réécrire votre code OpenGL ES dans Microsoft DirectX, vous pourriez être intéressé par **Angle**. Angle est un projet en cours conçu pour convertir OpenGL en DirectX en transformant des appels d’API OpenGL en appels d’API DirectX. Pour en savoir plus, consultez les rubriques suivantes :
 -   [Angle](https://code.google.com/p/angleproject/)
 -   [Créer votre première application du Windows Store à l’aide de DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
 -   [Exemples d’applications du Windows Store utilisant DirectX](http://go.microsoft.com/fwlink/p/?LinkId=263603)
 -   [Où est le Kit de développement logiciel (SDK) DirectX ?](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
-## Essayer C#
+## <a name="giving-c-a-go"></a>Essayer C#
 
 En tant que développeur iOS, vous êtes accoutumé à Objective-C et à Swift. Le langage de programmation Microsoft le plus proche des deux est C#. Pour la majorité des développeurs et des applications, nous pensons que C# est le langage le plus simple et le plus rapide à apprendre et à utiliser. C’est pourquoi les informations et procédures fournies dans cet article se concentrent sur ce langage. Pour en savoir plus sur le langage C#, voir les rubriques suivantes :
 
@@ -139,12 +146,7 @@ int result = mySampleClass.AddTwoNumbers(1, 2);
 
 C# est un langage facile à comprendre. Il est fourni avec les nombreuses classes et infrastructures de prise en charge de .NET. En un clin de œil, vous écrirez avec bonheur votre code sans le moindre crochet !
 
-## Étape suivante
+## <a name="next-step"></a>Étape suivante
 
 [Prise en main : Savoir maîtriser Visual Studio](getting-started-getting-around-in-visual-studio.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

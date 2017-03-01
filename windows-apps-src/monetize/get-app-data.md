@@ -1,19 +1,28 @@
 ---
 author: mcleanbyron
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
-description: "Utilisez ces méthodes de l’API de soumission du Windows Store pour récupérer des données pour les applications inscrites dans votre compte du Centre de développement Windows."
-title: "Obtenir des données d’application à l’aide de l’API de soumission du Windows Store"
+description: "Utilisez ces méthodes de l’API de soumission du Windows Store pour récupérer des données pour les applications inscrites dans votre compte du Centre de développement Windows."
+title: "Obtenir des données d’application à l’aide de l’API de soumission du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, données d’application"
 translationtype: Human Translation
-ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
-ms.openlocfilehash: 23839faca120976a07e666b9d6861aa8750898ad
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 756f11cdc440a891658c2311cc61199dec3d6d1f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="get-app-data-using-the-windows-store-submission-api"></a>Obtenir des données d’application à l’aide de l’API de soumission du Windows Store
+# <a name="get-app-data-using-the-windows-store-submission-api"></a>Obtenir des données d’application à l’aide de l’API de soumission du Windows Store
 
-Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pour obtenir des données pour vos applications. Pour obtenir une présentation de l’API de soumission du Windows Store, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
+Utilisez les méthodes ci-après de l’API de soumission du Windows Store afin d’obtenir des données pour les applications existantes dans votre compte du Centre de développement Windows. Pour découvrir une présentation de l’API de soumission du Windows Store, notamment les conditions préalables à l’utilisation de l’API, consultez l’article [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
 
->**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation. Ces méthodes peuvent uniquement être utilisées pour obtenir des données pour les applications. Pour créer ou gérer des soumissions pour des applications, voir les méthodes dans [Gérer les soumissions d’applications](manage-app-submissions.md).
+>**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. L’octroi de cette autorisation s’effectue en plusieurs étapes. Elle est accordée aux comptes de développeur, et tous les comptes n’en bénéficient pas pour le moment. Pour demander un accès anticipé, connectez-vous au tableau de bord du Centre de développement, cliquez sur **Commentaires** au bas du tableau de bord, sélectionnez **API de soumission** dans la zone de commentaires, puis soumettez votre demande. Dès que cette autorisation sera accordée à votre compte, vous en serez averti par e-mail.
+
+Pour que vous puissiez utiliser ces méthodes, l’application doit déjà exister dans votre compte du Centre de développement. Pour créer ou gérer des soumissions pour des applications, consultez les méthodes indiquées dans l’article [Gérer les soumissions d’applications](manage-app-submissions.md).
 
 <table>
 <colgroup>
@@ -185,9 +194,4 @@ Cette ressource a les valeurs suivantes.
 * [Obtenir une application](get-an-app.md)
 * [Obtenir des modules complémentaires pour une application](get-add-ons-for-an-app.md)
 * [Obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

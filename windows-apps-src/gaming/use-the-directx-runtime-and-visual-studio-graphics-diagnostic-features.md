@@ -3,18 +3,25 @@ author: mtoepke
 title: Outils Graphics Diagnostics
 description: "Découvrez comment obtenir et utiliser les fonctionnalités de diagnostic de graphiques, notamment le débogage graphique, l’analyse des frames graphiques et l’utilisation du processeur graphique (GPU) dans Visual Studio."
 ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, jeux, graphiques, diagnostics, outils, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 765cde8afe32cef6515ee6ca9750365aa35984a2
-ms.openlocfilehash: 5d8f7a8dbba2da76c6093d034c2ca8c2b4592c7e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 076020d88889a9cc8b417befa2dd54b41d688e5e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Outils Graphics Diagnostics
+# <a name="graphics-diagnostics-tools"></a>Outils Graphics Diagnostics
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Dans Windows10, les outils de diagnostic de graphiques sont désormais disponibles au sein même de Windows sous la forme d’une fonctionnalité facultative. Pour utiliser les fonctionnalités de diagnostic de graphiques fournies dans le runtime et dans Visual Studio afin de développer des applications ou des jeux DirectX, installez la fonctionnalité facultative Outils graphiques:
+Dans Windows 10, les outils de diagnostic de graphiques sont désormais disponibles au sein même de Windows sous la forme d’une fonctionnalité facultative. Pour utiliser les fonctionnalités de diagnostic de graphiques fournies dans le runtime et dans Visual Studio afin de développer des applications ou des jeux DirectX, installez la fonctionnalité facultative Outils graphiques :
 
 1.  Accédez à **Paramètres**, sélectionnez **Système**, sélectionnez **Applications et fonctionnalités**, puis cliquez sur **Gérer les fonctionnalités facultatives**.
 2.  Cliquez sur **Ajouter une fonctionnalité**.   
@@ -26,21 +33,16 @@ Les fonctionnalités de diagnostic de graphiques incluent la possibilité de cr�
 -   L’analyse des frames graphiques dans Visual Studio s’exécute sur un journal de débogage graphique et collecte le minutage de base pour les appels de dessin Direct3D. Puis elle effectue un ensemble d’expérimentations en modifiant divers paramètres de graphiques et génère un tableau présentant les résultats de minutage. Ces données peuvent vous aider à comprendre les problèmes de performances de rendu graphique dans votre application. Vous pouvez examiner les résultats de ces diverses expériences afin de trouver des moyens d’améliorer les performances.
 -   La fonctionnalité d’utilisation du GPU dans Visual Studio vous permet de surveiller l’utilisation du GPU en temps réel. Elle recueille et analyse les données de minutage des charges de travail gérées par l’UC et par le GPU afin de déterminer l’emplacement des goulots d’étranglement.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 
-[Vue d’ensemble de Graphics Diagnostics dans VisualStudio](http://go.microsoft.com/fwlink/p/?LinkID=526382)
-
- 
+[Vue d’ensemble de Graphics Diagnostics dans Visual Studio](http://go.microsoft.com/fwlink/p/?LinkID=526382)
 
  
 
+ 
 
 
 
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

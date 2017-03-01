@@ -1,18 +1,25 @@
 ---
 author: mtoepke
 title: "Prise en charge de l’orientation de l’écran (DirectX et C++)"
-description: "Dans cette rubrique, nous allons examiner les meilleures pratiques en matière de gestion de la rotation écran dans votre application DirectX UWP de manière à utiliser efficacement le matériel graphique de l’appareil Windows 10."
+description: "Dans cette rubrique, nous allons examiner les meilleures pratiques en matière de gestion de la rotation écran dans votre application DirectX UWP de manière à utiliser efficacement le matériel graphique de l’appareil Windows 10."
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, jeux, orientation de l’écran, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 101ee7a6d0760abfc40145b21478947c0563a346
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 606d32d16ad94e45cb63c73f1869735a9fbd7d25
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Prise en charge de l’orientation de l’écran (DirectX et C++)
+# <a name="supporting-screen-orientation-directx-and-c"></a>Prise en charge de l’orientation de l’écran (DirectX et C++)
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Votre application de plateforme Windows universelle (UWP) prend en charge plusieurs orientations d’écran lorsque vous gérez l’événement [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268). Dans cette rubrique, nous allons examiner les meilleures pratiques en matière de gestion de la rotation écran dans votre application DirectX UWP de manière à utiliser efficacement le matériel graphique de l’appareil Windows 10.
 
@@ -20,14 +27,14 @@ Avant de commencer, souvenez-vous que le matériel graphique génère toujours d
 
 Pour les applications DirectX UWP, l’objet [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/dn264258) fournit des données d’orientation de l’affichage de base qui peuvent être interrogées par votre application. L’orientation par défaut est *paysage*, où la largeur en pixels de l’affichage est supérieure à sa hauteur ; l’autre orientation est *portrait*, où l’affichage subit une rotation de 90 degrés dans l’un ou l’autre sens et la largeur devient inférieure à la hauteur.
 
-Windows10 définit quatre modes d’orientation d’affichage spécifique:
+Windows 10 définit quatre modes d’orientation d’affichage spécifique :
 
--   Paysage: il s’agit de l’orientation d’affichage par défaut de Windows10; elle est considérée comme l’angle de base ou d’identité pour la rotation (0degré).
--   Portrait: l’affichage a subi une rotation de 90degrés dans le sens des aiguilles d’une montre (ou de 270degrés dans le sens inverse).
--   Paysage (renversé): l’affichage a subi une rotation de 180degrés (retournement).
--   Portrait (renversé): l’affichage a subi une rotation de 270degrés dans le sens des aiguilles d’une montre (ou de 90degrés dans le sens inverse).
+-   Paysage : il s’agit de l’orientation d’affichage par défaut de Windows 10 ; elle est considérée comme l’angle de base ou d’identité pour la rotation (0 degré).
+-   Portrait : l’affichage a subi une rotation de 90 degrés dans le sens des aiguilles d’une montre (ou de 270 degrés dans le sens inverse).
+-   Paysage (renversé) : l’affichage a subi une rotation de 180 degrés (retournement).
+-   Portrait (renversé) : l’affichage a subi une rotation de 270 degrés dans le sens des aiguilles d’une montre (ou de 90 degrés dans le sens inverse).
 
-Lorsque l’affichage bascule d’une orientation à une autre, Windows10 effectue en interne une opération de rotation pour aligner l’image dessinée avec la nouvelle orientation et l’utilisateur voit une image à l’endroit à l’écran.
+Lorsque l’affichage bascule d’une orientation à une autre, Windows 10 effectue en interne une opération de rotation pour aligner l’image dessinée avec la nouvelle orientation et l’utilisateur voit une image à l’endroit à l’écran.
 
 De plus, Windows 10 affiche des animations de transition automatique afin de créer une expérience utilisateur fluide lors du basculement d’une orientation à une autre. Le changement d’orientation de l’affichage est présenté à l’utilisateur sous la forme d’une animation de rotation et de zoom fixe de l’image d’écran affichée. Un délai est accordé à l’application par Windows 10 pour la disposition dans la nouvelle orientation.
 
@@ -37,7 +44,7 @@ Globalement, voici le processus général de gestion des modifications de l’or
 2.  Informez Windows 10 de l’orientation de la chaîne d’échange à l’aide de [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801).
 3.  Modifiez le code de rendu pour générer des images alignées avec l’orientation de l’appareil choisie par l’utilisateur.
 
-## Redimensionnement de la chaîne d’échange et prérotation de son contenu
+## <a name="resizing-the-swap-chain-and-pre-rotating-its-contents"></a>Redimensionnement de la chaîne d’échange et prérotation de son contenu
 
 
 Pour effectuer un redimensionnement de base de l’affichage dans votre application DirectX UWP et une prérotation de son contenu, procédez comme suit :
@@ -329,13 +336,13 @@ Vous ajoutez 0,5f pour garantir un arrondi à la valeur entière la plus proche.
 
 Notez en passant que les coordonnées [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) sont toujours définies en DIP. Pour Windows 10 et les versions antérieures de Windows, un DIP est défini comme 1/96e de pouce et aligné à la définition de *vers le haut* du système d’exploitation. Lorsque l’orientation de l’affichage bascule en mode portrait, l’application inverse la hauteur et la largeur de l’objet **CoreWindow** et la taille (limites) de la cible de rendu doit changer en conséquence. Les coordonnées Direct3D étant toujours en pixels physiques, vous devez effectuer une conversion des valeurs DIP de **CoreWindow** en valeurs de pixels entières avant de passer ces valeurs à Direct3D pour configurer la chaîne d’échange.
 
-Du point de vue du traitement, vous effectuez un peu plus de travail que si vous redimensionniez simplement la chaîne d’échange: en fait, vous faites pivoter les composants Direct2D et Direct3D de votre image avant de les composer pour la présentation et vous signalez à la chaîne d’échange que vous avez rendu les résultats dans une nouvelle orientation. Voici quelques détails supplémentaires sur ce processus, comme illustré dans l’exemple de code pour **DX::DeviceResources::CreateWindowSizeDependentResources** :
+Du point de vue du traitement, vous effectuez un peu plus de travail que si vous redimensionniez simplement la chaîne d’échange : en fait, vous faites pivoter les composants Direct2D et Direct3D de votre image avant de les composer pour la présentation et vous signalez à la chaîne d’échange que vous avez rendu les résultats dans une nouvelle orientation. Voici quelques détails supplémentaires sur ce processus, comme illustré dans l’exemple de code pour **DX::DeviceResources::CreateWindowSizeDependentResources** :
 
 -   Déterminez la nouvelle orientation de l’affichage. Si l’affichage a basculé de paysage à portrait, ou inversement, permutez les valeurs de hauteur et de largeur (converties de valeurs DIP en pixels, bien entendu) pour les limites d’affichage.
 
 -   Ensuite, vérifiez si la chaîne d’échange a été créée. Si ce n’est pas le cas, créez-la en appelant [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559). Autrement, redimensionnez les mémoires tampons de la chaîne d’échange existante aux nouvelles dimensions d’affichage en appelant [**IDXGISwapchain:ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). Bien qu’il ne soit pas obligatoire de redimensionner la chaîne d’échange pour l’événement de rotation (après tout, vous générez le contenu déjà pivoté par votre pipeline de rendu), d’autres événements de changement de taille, tels que des événements d’alignement et de remplissage, exigent un redimensionnement.
 
--   Après cela, définissez la transformation matricielle 2D ou 3D appropriée à appliquer aux pixels ou vertex (respectivement) dans le pipeline graphique lors de leur rendu dans la chaîne d’échange. Nous avons quatre matrices de rotation possibles:
+-   Après cela, définissez la transformation matricielle 2D ou 3D appropriée à appliquer aux pixels ou vertex (respectivement) dans le pipeline graphique lors de leur rendu dans la chaîne d’échange. Nous avons quatre matrices de rotation possibles :
 
     -   Paysage (DXGI\_MODE\_ROTATION\_IDENTITY)
     -   Portrait (DXGI\_MODE\_ROTATION\_ROTATE270)
@@ -344,7 +351,7 @@ Du point de vue du traitement, vous effectuez un peu plus de travail que si vous
 
     La matrice correcte est sélectionnée en fonction des données fournies par Windows 10 (telles que les résultats de [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268)) pour déterminer l’orientation de l’affichage et elle sera multipliée par les coordonnées de chaque pixel (Direct2D) ou vertex (Direct3D) dans la scène, ce qui entraîne leur rotation en vue de leur alignement avec l’orientation de l’écran. (Notez que dans Direct2D, l’origine de l’écran est définie comme le coin supérieur gauche, alors que dans Direct3D, elle est définie comme le centre logique de la fenêtre.)
 
-> **Remarque** Pour plus d’informations sur les transformations 2D utilisées pour la rotation et sur la façon de les définir, voir [Définition de matrices pour la rotation de l’écran (2D)](#defining_matrices_2d). Pour plus d’informations sur les transformations 3D utilisées pour la rotation, voir [Définition de matrices pour la rotation de l’écran (3D)](#defining_matrices_3d).
+> **Remarque** Pour plus d’informations sur les transformations 2D utilisées pour la rotation et sur la façon de les définir, voir [Définition de matrices pour la rotation de l’écran (2D)](#appendix-a-applying-matrices-for-screen-rotation-2-d). Pour plus d’informations sur les transformations 3D utilisées pour la rotation, voir [Définition de matrices pour la rotation de l’écran (3D)](#appendix-b-applying-matrices-for-screen-rotation-3-d).
 
  
 
@@ -360,7 +367,7 @@ Pour finir, si vous avez des images 2D à faire pivoter ou à disposer, créez u
 
 Maintenant, présentez la chaîne d’échange.
 
-## Réduire le délai de rotation à l’aide de CoreWindowResizeManager
+## <a name="reduce-the-rotation-delay-by-using-corewindowresizemanager"></a>Réduire le délai de rotation à l’aide de CoreWindowResizeManager
 
 
 Par défaut, Windows 10 fournit à toute application, quel que soit le langage ou le modèle, un laps de temps bref mais remarquable pour effectuer la rotation de l’image. Il est toutefois probable que si votre application effectue le calcul de rotation à l’aide de l’une des techniques décrites ici, cette rotation sera terminée bien avant la fin de ce laps de temps. Vous souhaiteriez récupérer ce temps et terminer l’animation de rotation, n’est-ce pas ? C’est ici que [**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) entre en jeu.
@@ -385,10 +392,10 @@ Lorsqu’un utilisateur fait pivoter l’orientation de l’affichage, Windows 1
 
 Comme il est suggéré dans la troisième puce, lorsqu’une application appelle [**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605), Windows 10 arrête la fenêtre de délai, effectue l’animation de rotation et redonne le contrôle à votre application qui dessine maintenant dans la nouvelle orientation d’affichage. L’effet global est que votre application semble maintenant un peu plus fluide et réceptive et qu’elle fonctionne un peu plus efficacement !
 
-## Annexe A : application de matrices pour la rotation de l’écran (2D)
+## <a name="appendix-a-applying-matrices-for-screen-rotation-2-d"></a>Annexe A : application de matrices pour la rotation de l’écran (2D)
 
 
-Dans l’exemple fourni dans [Optimisation du processus de rotation](#rotation) (et dans l’ [exemple de rotation de chaîne d’échange DXGI](http://go.microsoft.com/fwlink/p/?linkid=257600)), vous aurez peut-être remarqué que nous avions des matrices de rotation distinctes pour la sortie Direct2D et la sortie Direct3D. Examinons tout d’abord les matrices 2D.
+Dans l’exemple de code fourni dans [Redimensionnement de la chaîne d’échange et prérotation de son contenu](#resizing-the-swap-chain-and-pre-rotating-its-contents) (et dans l'[exemple de rotation de chaîne d’échange DXGI](http://go.microsoft.com/fwlink/p/?linkid=257600)), vous aurez peut-être remarqué que nous avions des matrices de rotation distinctes pour la sortie Direct2D et la sortie Direct3D. Examinons tout d’abord les matrices 2D.
 
 Il existe deux raisons pour lesquelles nous ne pouvons pas appliquer les mêmes matrices de rotation au contenu Direct2D et Direct3D :
 
@@ -482,12 +489,12 @@ Une fois que vous avez la matrice de rotation et l’origine correctes pour l’
 
 La prochaine fois que vous présenterez la chaîne d’échange, votre image 2D subira une rotation afin de correspondre à la nouvelle orientation de l’affichage.
 
-## Annexe B : application de matrices pour la rotation de l’écran (3D)
+## <a name="appendix-b-applying-matrices-for-screen-rotation-3-d"></a>Annexe B : application de matrices pour la rotation de l’écran (3D)
 
 
-Dans l’exemple fourni dans [Optimisation du processus de rotation](#rotation) (et dans l’[exemple de rotation de chaîne d’échange DXGI](http://go.microsoft.com/fwlink/p/?linkid=257600)), nous avons défini une matrice de transformation spécifique pour chaque orientation d’écran possible. Examinons maintenant les matrices pour la rotation de scènes en 3D. Comme précédemment, vous créez un ensemble de matrices pour chacune des quatre orientations possibles. Pour éviter toute erreur d’arrondi et par conséquent les artefacts visuels mineurs, déclarez les matrices de manière explicite dans votre code.
+Dans l’exemple de code fourni dans [Redimensionnement de la chaîne d’échange et prérotation de son contenu](#resizing-the-swap-chain-and-pre-rotating-its-contents) (et dans l’[exemple de rotation de chaîne d’échange DXGI](http://go.microsoft.com/fwlink/p/?linkid=257600)), nous avons défini une matrice de transformation spécifique pour chaque orientation d’écran possible. Examinons maintenant les matrices pour la rotation de scènes en 3D. Comme précédemment, vous créez un ensemble de matrices pour chacune des quatre orientations possibles. Pour éviter toute erreur d’arrondi et par conséquent les artefacts visuels mineurs, déclarez les matrices de manière explicite dans votre code.
 
-La configuration de ces matrices de rotation 3D s’effectue comme suit. Les matrices illustrées dans l’exemple de code suivant sont des matrices de rotation standard pour des rotations de 0, 90, 180 et 270degrés des vertex qui définissent des points dans l’espace de scène 3D de la caméra. La valeur de coordonnées [x, y, z] de chaque vertex dans la scène est multipliée par cette matrice de rotation lorsque la projection 2D de la scène est calculée.
+La configuration de ces matrices de rotation 3D s’effectue comme suit. Les matrices illustrées dans l’exemple de code suivant sont des matrices de rotation standard pour des rotations de 0, 90, 180 et 270 degrés des vertex qui définissent des points dans l’espace de scène 3D de la caméra. La valeur de coordonnées [x, y, z] de chaque vertex dans la scène est multipliée par cette matrice de rotation lorsque la projection 2D de la scène est calculée.
 
 ```cpp
    
@@ -529,7 +536,7 @@ Vous pouvez définir le type de rotation sur la chaîne d’échange à l’aide
 
 `   m_swapChain->SetRotation(rotation);`
 
-Maintenant, dans votre méthode de rendu, mettez en œuvre du code semblable au suivant:
+Maintenant, dans votre méthode de rendu, mettez en œuvre du code semblable au suivant :
 
 ``` syntax
 struct ConstantBuffer // This struct is provided for illustration.
@@ -554,10 +561,5 @@ Désormais, lorsque vous appelez votre méthode de rendu, elle multiplie la matr
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

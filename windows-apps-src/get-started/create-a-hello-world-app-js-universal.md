@@ -1,11 +1,18 @@
 ---
 author: GrantMeStrength
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-title: Create a "Hello, world" app (JS)
+title: "Créer une application « Hello World » (JS)"
 description: "Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple application &amp;\\#0034;Hello, world&amp;\\#0034; ciblant la plateforme Windows universelle (UWP) sur Windows 10."
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4aea3d31bad97fa0933e1274c037a4bb8d81bb
-ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 915f77e308d6384aa539f78cc307842dd51cd9f4
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="create-a-hello-world-app-js"></a>Créer une application « Hello World » (JS)
@@ -122,7 +129,7 @@ Outre les options de débogage sur un ordinateur de bureau, Visual Studio offre 
 -   **Émulateur <SDK version> WVGA 4 pouces 1 Go**
 -   etc. (Divers émulateurs associés à d’autres configurations)
 
-(Si vous ne voyez pas les émulateurs, assurez-vous que vous avez installé les outils de développement d’applications Windows universelles. Pour plus d’informations, consultez [Se préparer](get-set-up.md).)
+(Si vous ne voyez pas les émulateurs, assurez-vous que vous avez installé les outils de développement d’applications Windows universelles. Pour plus d’informations, voir [Se préparer](get-set-up.md).)
 
 Il est judicieux de tester votre application sur un appareil doté d’un petit écran et d’une mémoire limitée. Par conséquent, choisissez l’option **Émulateur 10.0.14393.0 WVGA 4 pouces 512 Mo**.
 
@@ -493,10 +500,5 @@ En ajoutant votre code à une fonction « completed » et en la passant à la 
 
 Félicitations, vous avez créé votre première application pour Windows 10 et l’application UWP en JavaScript et HTML.
 
-Et après ? Les documents [WinJS](https://developer.microsoft.com/en-us/windows/develop/winjs) vous permettent d’utiliser la bibliothèque Windows pour JavaScript.
-
-
-
-<!--HONumber=Dec16_HO1-->
-
+Et après ? Les documents [WinJS](https://developer.microsoft.com/windows/develop/winjs) vous permettent d’utiliser la bibliothèque Windows pour JavaScript ; sinon, passez directement aux [étapes suivantes](learn-more.md).
 

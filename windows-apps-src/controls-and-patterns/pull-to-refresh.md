@@ -1,29 +1,37 @@
 ---
 author: Jwmsft
-Description: "Utilisez le modèle Tirer pour actualiser un affichage Liste."
+Description: "Utilisez le modèle Tirer pour actualiser avec un affichage Liste."
 title: Tirer pour actualiser
 label: Pull-to-refresh
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
 translationtype: Human Translation
-ms.sourcegitcommit: 508a09e0c12006c00dbdf7675516b41119eab8a6
-ms.openlocfilehash: ef5773f9885a5286ac7ca7c256e6a83167316389
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e062ed2910e20ba187b8a0726a0061f0dd4b07f8
+ms.lasthandoff: 02/08/2017
 
 ---
-# Tirer pour actualiser
+# <a name="pull-to-refresh"></a>Tirer pour actualiser
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Le modèle Tirer pour actualiser permet à l’utilisateur de dérouler une liste de données à l’aide de la fonction tactile afin de récupérer des données supplémentaires. Tirer pour actualiser est largement utilisé sur les applications mobiles, mais est utile sur n’importe quel appareil doté d’un écran tactile. Vous pouvez gérer des [les événements de manipulation](../input-and-devices/touch-interactions.md#manipulation-events) afin d’implémenter le modèle Tirer pour actualiser dans votre application.
+Le modèle Tirer pour actualiser permet à l’utilisateur de dérouler une liste de données à l’aide de la fonction tactile pour récupérer plus de données. Tirer pour actualiser est largement utilisé sur les applications mobiles, mais est utile sur n’importe quel appareil doté d’un écran tactile. Vous pouvez gérer des [les événements de manipulation](../input-and-devices/touch-interactions.md#manipulation-events) afin d’implémenter le modèle Tirer pour actualiser dans votre application.
 
 L’[exemple Tirer pour actualiser](http://go.microsoft.com/fwlink/p/?LinkId=620635) montre comment étendre le contrôle [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) pour prendre en charge ce modèle. Dans cet article, nous utilisons cet exemple pour expliquer les points clés de l’implémentation du modèle Tirer pour actualiser.
 
 ![Exemple de Tirer pour actualiser](images/ptr-phone-1.png)
 
-## Est-ce le modèle approprié ?
+## <a name="is-this-the-right-pattern"></a>Est-ce le modèle approprié ?
 
 Utilisez le modèle Tirer pour actualiser lorsque vous avez une liste ou une grille de données que l’utilisateur est susceptible de vouloir actualiser régulièrement et si votre application est susceptible de s’exécuter sur des appareils tactiles mobiles.
 
-## Implémenter Tirer pour actualiser
+## <a name="implement-pull-to-refresh"></a>Implémenter Tirer pour actualiser
 
 Pour implémenter Tirer pour actualiser, vous avez besoin de gérer des événements de manipulation pour détecter lorsqu’un utilisateur a déroulé la liste, fournir un retour visuel et actualiser les données. L’[exemple Tirer pour actualiser](http://go.microsoft.com/fwlink/p/?LinkId=620635) nous montre ici comment procéder. Tout le code n’est pas affiché ici. Vous devez télécharger l’exemple ou afficher le code sur GitHub.
 
@@ -33,9 +41,9 @@ RefreshableListView propose un mode d’actualisation automatique qui détermine
 - Désactivé : une actualisation est demandée uniquement si la liste est relâchée en cas de dépassement du seuil `PullThreshold`. L’indicateur s’anime en dehors de la vue lorsque l’utilisateur relâche le défilement. L’indicateur de barre d’état s’affiche s’il est disponible (sur le téléphone).
 - Activé : une actualisation est demandée dès que le seuil `PullThreshold` est dépassé en cas de relâchement ou non. L’indicateur reste en vue jusqu’à ce que les nouvelles données soient récupérées, puis s’anime hors vue. Une méthode **Deferral** est utilisée pour notifier l’application une fois la recherche de données terminée.
 
-> **Remarque**  Le code de l’exemple est également applicable à un élément [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). Pour modifier un contrôle GridView, dérivez la classe personnalisée du contrôle GridView au lieu de ListView et modifiez le modèle GridView par défaut.
+> **Remarque**&nbsp;&nbsp;Le code de l’exemple est également applicable à un élément [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). Pour modifier un contrôle GridView, dérivez la classe personnalisée du contrôle GridView au lieu de ListView et modifiez le modèle GridView par défaut.
 
-## Ajouter un indicateur d’actualisation
+## <a name="add-a-refresh-indicator"></a>Ajouter un indicateur d’actualisation
 
 Il est important de fournir un retour visuel pour l’utilisateur afin de l’informer que votre application prend en charge le modèle Tirer pour actualiser. RefreshableListView a une propriété `RefreshIndicatorContent` qui vous permet de définir l’indicateur visuel dans votre code XAML. Il inclut également un indicateur de texte par défaut auquel vous revenez si vous ne définissez pas l’élément `RefreshIndicatorContent`.
 
@@ -47,7 +55,7 @@ Voici les instructions recommandées pour l’indicateur d’actualisation.
 
 Dans l’exemple Tirer pour actualiser, le modèle de contrôle `RefreshableListView` modifie le modèle **ListView** standard en ajoutant un indicateur d’actualisation. L’indicateur d’actualisation est placé dans une [**grille**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) au-dessus de l’élément [**ItemsPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx), qui est la partie affichant les éléments de liste.
 
-> **Remarque**  La `DefaultRefreshIndicatorContent` zone de texte fournit un indicateur de texte de secours affiché uniquement si la propriété `RefreshIndicatorContent` n’est pas définie.
+> **Remarque**&nbsp;&nbsp;La `DefaultRefreshIndicatorContent` zone de texte fournit un indicateur de texte de secours affiché uniquement si la propriété `RefreshIndicatorContent` n’est pas définie.
 
 Voici la partie du modèle de contrôle modifiée à partir du modèle ListView par défaut.
 
@@ -134,7 +142,7 @@ Lorsque la liste est extraite vers le bas, l’événement de RefreshableListVie
 </Storyboard>
 ```
 
-## Gérer les événements de manipulation de la visionneuse à défilement
+## <a name="handle-scroll-viewer-manipulation-events"></a>Gérer les événements de manipulation de la visionneuse à défilement
 
 Le modèle de contrôle d’affichage Liste intègre un élément [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) qui permet à un utilisateur de faire défiler les éléments de liste. Pour implémenter le modèle Tirer pour actualiser, vous devez gérer les événements de manipulation sur la visionneuse à défilement intégrée, ainsi que plusieurs événements connexes. Pour plus d’informations sur les événements de manipulation, voir [Interactions tactiles](../input-and-devices/touch-interactions.md).
 
@@ -192,7 +200,7 @@ Ensuite, si le contenu a fini de s’animer vers le haut à la fin d’une actua
 
 L’action Tirer pour actualiser se produit uniquement lorsque la liste est tirée vers le bas par une manipulation tactile. Dans le gestionnaire d’événements PointerPressed, le code vérifie quel type de pointeur a entraîné l’événement et définit une variable (`m_pointerPressed`) pour indiquer s’il s’agissait d’un pointeur tactile. Cette variable est utilisée dans le gestionnaire DirectManipulationStarted. S’il ne s’agit pas d’un pointeur tactile, le gestionnaire DirectManipulationStarted revient sans avoir effectué d’action.
 
-## Ajouter des événements de tirage et d’actualisation
+## <a name="add-pull-and-refresh-events"></a>Ajouter des événements de tirage et d’actualisation
 
 RefreshableListView ajoute 2 événements que vous pouvez gérer dans votre application pour actualiser les données et gérer l’indicateur d’actualisation.
 
@@ -224,21 +232,16 @@ private async void listView_RefreshRequested(object sender, RefreshableListView.
 
 Dans l’exemple, le contenu de l’indicateur d’actualisation est fourni et contrôlé par l’application. L’événement « PullProgressChanged » notifie votre application lorsque l’utilisateur tire la liste afin de pouvoir démarrer, arrêter et réinitialiser l’indicateur d’actualisation. 
 
-## Animations de composition
+## <a name="composition-animations"></a>Animations de composition
 
 Par défaut, le contenu d’une visionneuse à défilement s’arrête lorsque la barre de défilement atteint le haut. Pour permettre à l’utilisateur de continuer à tirer la liste vers le bas, vous devez accéder à la couche visuelle et animer le contenu de la liste. Pour ce faire, l’exemple utilise des [animations composition](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation) et plus précisément des [animations par expressions](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations).
 
 Dans l’exemple, ce travail s’effectue principalement dans le gestionnaire d’événements `CompositionTarget_Rendering` et la méthode `UpdateCompositionAnimations`.
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 - [Application de styles aux contrôles](styling-controls.md)
 - [Interactions tactiles](../input-and-devices/touch-interactions.md)
 - [Affichage Liste et affichage Grille](listview-and-gridview.md)
 - [Modèles d’élément d’affichage Liste](listview-item-templates.md)
 - [Animations par expressions](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)
-
-
-<!--HONumber=Aug16_HO3-->
-
-

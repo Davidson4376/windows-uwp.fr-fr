@@ -1,18 +1,25 @@
 ---
 author: PatrickFarley
 title: "Effectuer un géocodage et un géocodage inverse"
-description: "Convertissez des adresses en emplacements géographiques et vice versa (géocod. ou géocod. inverse) à l’aide de MapLocationFinder dans Windows.Services.Maps."
+description: "Convertissez des adresses en emplacements géographiques et vice versa (géocodage ou géocodage inverse) en appelant les méthodes de la classe MapLocationFinder dans l’espace de noms Windows.Services.Maps."
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, géocodage, carte, emplacement"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d42708a82f99e345183b6cbcb87cfdd136b10e52
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 16be7bcafaf286a71e79fb4bca01511ddc7a1ae0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Effectuer un géocodage et un géocodage inverse
+# <a name="perform-geocoding-and-reverse-geocoding"></a>Effectuer un géocodage et un géocodage inverse
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Convertissez des adresses en emplacements géographiques (géocodage) et des emplacements géographiques en adresses (géocodage inverse) en appelant les méthodes de la classe [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) dans l’espace de noms [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979).
@@ -28,11 +35,11 @@ Les classes pour le géocodage et le géocodage inverse sont associées comme su
 -   La classe [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) contient une collection d’objets [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549). Accédez à cette collection via la propriété [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) du **MapLocationFinderResult**.
 -   Chaque objet [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) contient un objet [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533). Accédez à cet objet via la propriété [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) de chaque classe **MapLocation**.
 
-**Important** Vous devez spécifier une clé d’authentification pour Cartes avant de pouvoir utiliser les services de carte. Pour plus d’informations, voir [Demander une clé d’authentification pour Cartes](authentication-key.md).
+**Important**  Vous devez spécifier une clé d’authentification pour Cartes avant de pouvoir utiliser les services de carte. Pour plus d’informations, voir [Demander une clé d’authentification pour Cartes](authentication-key.md).
 
  
 
-## Obtenir un emplacement (géocode)
+## <a name="get-a-location-geocode"></a>Obtenir un emplacement (géocode)
 
 
 Convertissez une adresse ou un nom de lieu en emplacement géographique (géocodage) en suivant les étapes ci-dessous.
@@ -81,7 +88,7 @@ Ce code affiche les résultats suivants dans la zone de texte `tbOutputText`.
 result = (47.6406099647284,-122.129339994863)
 ```
 
-## Obtenir une adresse (géocode inverse)
+## <a name="get-an-address-reverse-geocode"></a>Obtenir une adresse (géocode inverse)
 
 
 Convertissez un emplacement géographique en adresse (géocodage inverse) en procédant aux étapes suivantes.
@@ -123,21 +130,14 @@ Ce code affiche les résultats suivants dans la zone de texte `tbOutputText`.
 town = Redmond
 ```
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)
 * [Exemple de carte UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Vidéos de la build 2015: utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Vidéos de la build 2015 : utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Exemple d’application de trafic UWP](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)
 * [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)
 * [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

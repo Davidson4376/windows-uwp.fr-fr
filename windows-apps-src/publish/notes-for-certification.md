@@ -1,18 +1,25 @@
 ---
 author: jnHs
 Description: "Lorsque vous soumettez votre application, vous avez la possibilité d’utiliser la page Remarques pour la certification pour fournir des informations supplémentaires aux testeurs de certification. Ces informations peuvent aider à garantir que votre application est testée correctement."
-title: Remarques pour la certification
+title: Notes de certification
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9f8bc1fc435c0ee25220c60d68a5adaa34ff6214
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 92a110879f6ff92b3e1e41964ff6acea6b7cb5ec
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Remarques pour la certification
+# <a name="notes-for-certification"></a>Notes de certification
 
 
-Lorsque vous soumettez votre application, vous avez la possibilité d’utiliser la pages **Remarques pour la certification** pour fournir des informations supplémentaires aux testeurs de certification. Ces informations peuvent aider à garantir que votre application est testée correctement.
+Lorsque vous soumettez votre application, vous avez la possibilité d’utiliser la page **Remarques pour la certification** pour fournir des informations supplémentaires aux testeurs de certification. Ces informations peuvent aider à garantir que votre application est testée correctement.
 
 Prenez soin d’inclure les éléments suivants (s’ils sont applicables à votre application) :
 
@@ -32,7 +39,7 @@ Prenez soin d’inclure les éléments suivants (s’ils sont applicables à vot
 
     Pour les mises à jour d'applications déjà publiées, il est bon de signaler aux testeurs ce qui a changé, notamment si vos packages sont les mêmes et que vous modifiez simplement la description de votre application (ajout de captures d'écran, changement de catégorie de l'application ou modification de la description, par exemple).
 
-Prenez en considération les points suivants lors de la rédaction des remarques:
+Prenez en considération les points suivants lors de la rédaction des remarques :
 
 -   **Une personne réelle lira ces remarques.** Les testeurs apprécieront des remarques polies et claires ainsi que des instructions utiles.
 -   **Soyez succinct et donnez des instructions simples.** Si vous devez vraiment fournir des instructions supplémentaires, vous pouvez indiquer un lien vers une page contenant d’autres informations. Gardez à l’esprit que les clients de votre application ne verront pas ces remarques. Si vous avez besoin de fournir des instructions complexes pour le test de votre application, peut-être devez-vous envisager de simplifier l’utilisation de votre application pour les clients.
@@ -44,10 +51,5 @@ Prenez en considération les points suivants lors de la rédaction des remarques
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

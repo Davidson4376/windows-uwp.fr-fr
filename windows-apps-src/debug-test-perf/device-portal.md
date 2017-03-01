@@ -3,9 +3,16 @@ author: mcleblanc
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: "Vue d’ensemble de Windows Device Portal"
 description: "Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
-ms.openlocfilehash: 6c697782683bca6671c01aa0941a78bc66fb052a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8dfbdad7604e3aa7fad60ed777d16b4acd56b5ab
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="windows-device-portal-overview"></a>Vue d’ensemble de Windows Device Portal
@@ -73,21 +80,21 @@ Propose des fonctionnalités d’installation/de désinstallation et de gestion 
 
 **Pour installer une application**
 
-1.  Lorsque vous avez [créé un package d’application](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx), vous pouvez l’installer à distance sur votre appareil. Une fois créé dans Visual Studio, un dossier de sortie est généré.
+1.    Lorsque vous avez [créé un package d’application](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx), vous pouvez l’installer à distance sur votre appareil. Une fois créé dans Visual Studio, un dossier de sortie est généré.
 
     ![Installation d’applications](images/device-portal/iot-installapp0.png)
-2.  Cliquez sur Parcourir et recherchez votre package d’application (.appx).
-3.  Cliquez sur Parcourir et recherchez le fichier de certificat (.cer). (Non requis sur tous les appareils.)
-4.  Ajoutez des dépendances. Si vous avez plusieurs objets, ajoutez chacun d’eux individuellement.     
-5.  Sous **Déployer**, cliquez sur **OK**. 
-6.  Pour installer une autre application, cliquez sur le bouton **Réinitialiser** pour effacer les champs.
+2.    Cliquez sur Parcourir et recherchez votre package d’application (.appx).
+3.    Cliquez sur Parcourir et recherchez le fichier de certificat (.cer). (Non requis sur tous les appareils.)
+4.    Ajoutez des dépendances. Si vous avez plusieurs objets, ajoutez chacun d’eux individuellement.     
+5.    Sous **Déployer**, cliquez sur **OK**. 
+6.    Pour installer une autre application, cliquez sur le bouton **Réinitialiser** pour effacer les champs.
 
 
 **Pour désinstaller une application**
 
-1.  Assurez-vous que votre application n’est pas en cours d’exécution. 
-2.  Si c’est le cas, passez à Applications en cours d’exécution et fermez l’application en question. Si vous essayez de désinstaller une application en cours d’exécution, celle-ci provoquera des problèmes lors de sa réinstallation. 
-3.  Dès que vous êtes prêt, cliquez sur **Désinstaller**.
+1.    Assurez-vous que votre application n’est pas en cours d’exécution. 
+2.    Si c’est le cas, passez à Applications en cours d’exécution et fermez l’application en question. Si vous essayez de désinstaller une application en cours d’exécution, celle-ci provoquera des problèmes lors de sa réinstallation. 
+3.    Dès que vous êtes prêt, cliquez sur **Désinstaller**.
 
 ### <a name="processes"></a>Processus
 
@@ -161,7 +168,7 @@ Gère les connexions réseau sur l’appareil.  Sauf si vous êtes connecté à 
 
 ### <a name="app-file-explorer"></a>Explorateur de fichiers de l’application
 
-Permet d’afficher et de manipuler les fichiers stockés par vos applications chargées de manière indépendante.  Il s’agit d’une nouvelle version interplateforme de l’[outil d’exploration des stockages isolés](https://msdn.microsoft.com/library/windows/apps/hh286408(v=vs.105).aspx) de Windows Phone 8.1. Pour en savoir plus sur l’explorateur de fichiers de l’application, voir [ce billet de blog](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/). 
+Permet d’afficher et de manipuler les fichiers stockés par vos applications chargées de manière indépendante.  Il s’agit d’une nouvelle version multiplateforme de l’[outil d’exploration des stockages isolés](https://msdn.microsoft.com/library/windows/apps/hh286408(v=vs.105).aspx) de Windows Phone 8.1. Pour plus d’informations sur l’Explorateur de fichiers de l’application et sur son utilisation, consultez [ce billet de blog](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/). 
 
 ![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-AppFileExplorer.png)
 
@@ -197,9 +204,4 @@ Afin d’offrir une protection contre les [attaques CSRF](https://wikipedia.org
 #### <a name="cross-site-websocket-hijacking-cswsh-protection"></a>Protection CSWSH (Cross-Site WebSocket Hijacking)
 
 Afin d’éliminer les risques d’[attaques CSWSH](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html), tous les clients ouvrant une connexion WebSocket à Device Portal doivent également fournir un en-tête Origin correspondant à l’en-tête Host.  Cela prouve à Device Portal que la requête provient soit de l’interface utilisateur de Device Portal, soit d’une application cliente valide.  Si la requête ne présente pas d’en-tête Origin, elle sera rejetée. 
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

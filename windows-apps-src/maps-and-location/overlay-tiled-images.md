@@ -1,18 +1,25 @@
 ---
 author: msatranjr
 title: Superposer des images sous forme de vignettes sur une carte
-description: "Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...) ou pour remplacer entièrement la carte par défaut."
+description: "Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...), ou pour remplacer entièrement la carte par défaut."
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, carte, emplacement, images, superposition"
 translationtype: Human Translation
-ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: a00d3d27161310077a0690cef7e4d11a5209bee7
+ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
+ms.openlocfilehash: dd52df5f95b25e26ddb0fb8db50c9faf27df02ee
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Superposer des images sous forme de vignettes sur une carte
+# <a name="overlay-tiled-images-on-a-map"></a>Superposer des images sous forme de vignettes sur une carte
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...), ou pour remplacer entièrement la carte par défaut.
@@ -21,7 +28,7 @@ Superposez des images sous forme de vignettes tierces ou personnalisées sur une
 
 -   [Exemple de carte pour la plateforme Windows universelle (UWP, Universal Windows Platform)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## Vue d’ensemble des images sous forme de vignettes
+## <a name="tiled-image-overview"></a>Vue d’ensemble des images sous forme de vignettes
 
 
 Les différents services de carte (cartes Nokia et cartes Bing, par exemple) découpent les cartes en vignettes de forme carrée, afin de permettre une récupération et un affichage rapides. Ces vignettes sont au format 256 x 256 pixels et font l’objet d’un rendu préalable, selon différents niveaux de détail. De nombreux services tiers fournissent également des données cartographiques divisées en vignettes. Utilisez des sources de vignette pour récupérer des vignettes tierces ou pour créer vos propres vignettes personnalisées, avant de les superposer sur la carte affichée dans la classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
@@ -29,7 +36,7 @@ Les différents services de carte (cartes Nokia et cartes Bing, par exemple) dé
 **Important**  
 Lorsque vous utilisez des sources de vignette, il est inutile d’écrire du code pour demander ou positionner des vignettes. La classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) demande les vignettes dont elle a besoin. Chaque demande spécifie les coordonnées X et Y et le niveau de zoom de la vignette individuelle. Il vous suffit de spécifier le format de l’URI ou le nom de fichier à utiliser pour récupérer les vignettes dans la propriété **UriFormatString**. Ainsi, vous insérez des paramètres remplaçables dans l’URI ou le nom de fichier de base afin d’indiquer où transmettre les coordonnées X et Y et le niveau de zoom de chaque vignette.
 
-Voici un exemple de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) pour une classe [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) qui affiche les paramètres remplaçables des coordonnéesX etY et le niveau de zoom.
+Voici un exemple de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) pour une classe [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) qui affiche les paramètres remplaçables des coordonnées X et Y et le niveau de zoom.
 
 ``` syntax
     http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
@@ -39,13 +46,13 @@ Voici un exemple de la propriété [**UriFormatString**](https://msdn.microsoft.
 
 (Les coordonnées X et Y représentent l’emplacement de la vignette individuelle au sein de la carte du monde, au niveau de détail spécifié. Le système de numérotation des vignettes démarre à partir de la valeur {0, 0}, dans le coin supérieur gauche de la carte. Par exemple, la vignette située à {1, 2} se trouve dans la deuxième colonne de la troisième ligne de la grille de vignettes.)
 
-Pour plus d’informations sur le système de vignettes utilisé par les services cartographiques, voir [Système de vignette CartesBing](http://go.microsoft.com/fwlink/p/?LinkId=626692).
+Pour plus d’informations sur le système de vignettes utilisé par les services cartographiques, voir [Système de vignette Cartes Bing](http://go.microsoft.com/fwlink/p/?LinkId=626692).
 
-### Superposer des vignettes à partir d’une source de vignette
+### <a name="overlay-tiles-from-a-tile-source"></a>Superposer des vignettes à partir d’une source de vignette
 
 Superposez des images sous forme de vignettes à partir d’une source de vignette sur une carte, à l’aide de la [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
 
-1.  Instanciez l’une des troisclasses de source de données de vignette qui héritent des données de la classe [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
+1.  Instanciez l’une des trois classes de source de données de vignette qui héritent des données de la classe [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
 
     -   [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)
     -   [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994)
@@ -81,21 +88,21 @@ Superposez des images sous forme de vignettes à partir d’une source de vignet
          MapControl1.TileSources.Add(tileSource);
     ```
 
-## Superposer des vignettes provenant d’un service web
+## <a name="overlay-tiles-from-a-web-service"></a>Superposer des vignettes provenant d’un service web
 
 
 Superposez des images sous forme de vignettes récupérées à partir d’un service web via la [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
 
 1.  Instanciez une [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
-2.  Spécifiez le format de l’URI que le service web attend, en tant que valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992). Pour créer cette valeur, insérez les paramètres remplaçables dans l’URI de base. Par exemple, dans l’exemple de code suivant, la valeur de l’élément **UriFormatString** est la suivante:
+2.  Spécifiez le format de l’URI que le service web attend, en tant que valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992). Pour créer cette valeur, insérez les paramètres remplaçables dans l’URI de base. Par exemple, dans l’exemple de code suivant, la valeur de l’élément **UriFormatString** est la suivante :
 
     ``` syntax
         http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
     ```
 
-    Le service web doit prendre en charge un URI qui contient les paramètres remplaçables {zoomlevel}, {x} et {y}. La plupart des services web (par exemple ceux de Nokia, Bing et Google) prennent en charge les URI dans ce format. Si le service web requiert des arguments supplémentaires qui ne sont pas disponibles avec la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992), vous devez créer un URI personnalisé. Créez et renvoyez un URI personnalisé en gérant l’événement [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993). Pour plus d’informations, voir la section [Fournir un URI personnalisé](#customuri) plus loin dans cette rubrique.
+    Le service web doit prendre en charge un URI qui contient les paramètres remplaçables {zoomlevel}, {x} et {y}. La plupart des services web (par exemple ceux de Nokia, Bing et Google) prennent en charge les URI dans ce format. Si le service web requiert des arguments supplémentaires qui ne sont pas disponibles avec la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992), vous devez créer un URI personnalisé. Créez et renvoyez un URI personnalisé en gérant l’événement [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993). Pour plus d’informations, voir la section [Fournir un URI personnalisé](#provide-a-custom-uri) plus loin dans cette rubrique.
 
-3.  Suivez ensuite les étapes restantes décrites précédemment dans [Vue d’ensemble des images sous forme de vignettes](#tileintro).
+3.  Suivez ensuite les étapes restantes décrites précédemment dans [Vue d’ensemble des images sous forme de vignettes](#tiled-image-overview).
 
 L’exemple suivant illustre la superposition de vignettes provenant d’un service web fictif sur une carte représentant l’Amérique du Nord. La valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) est spécifiée dans le constructeur de la classe [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). Dans cet exemple, les vignettes sont uniquement affichées dans les limites géographiques spécifiées par la propriété facultative [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147).
 
@@ -144,21 +151,21 @@ void MainPage::AddHttpMapTileSource()
 }
 ```
 
-## Superposer des vignettes provenant d’un stockage local
+## <a name="overlay-tiles-from-local-storage"></a>Superposer des vignettes provenant d’un stockage local
 
 
 Superposez des images sous forme de vignettes stockées en tant que fichiers dans le stockage local, à l’aide de la [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). En règle générale, vous placez ces fichiers dans un package, puis vous les distribuez avec votre application.
 
 1.  Instanciez une [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994).
-2.  Spécifiez le format des noms de fichier en tant que valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998). Pour créer cette valeur, insérez les paramètres remplaçables dans le nom de fichier de base. Par exemple, dans l’exemple de code suivant, la valeur de l’élément [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) est la suivante:
+2.  Spécifiez le format des noms de fichier en tant que valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998). Pour créer cette valeur, insérez les paramètres remplaçables dans le nom de fichier de base. Par exemple, dans l’exemple de code suivant, la valeur de l’élément [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) est la suivante :
 
     ``` syntax
         Tile_{zoomlevel}_{x}_{y}.png
     ```
 
-    Si le format de nom de fichiers nécessite des arguments supplémentaires qui ne sont pas fournis avec la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998), vous devez créer un URI personnalisé. Créez et renvoyez un URI personnalisé en gérant l’événement [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001). Pour plus d’informations, voir la section [Fournir un URI personnalisé](#customuri) plus loin dans cette rubrique.
+    Si le format de nom de fichiers nécessite des arguments supplémentaires qui ne sont pas fournis avec la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998), vous devez créer un URI personnalisé. Créez et renvoyez un URI personnalisé en gérant l’événement [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001). Pour plus d’informations, voir la section [Fournir un URI personnalisé](#provide-a-custom-uri) plus loin dans cette rubrique.
 
-3.  Suivez ensuite les étapes restantes décrites précédemment dans [Vue d’ensemble des images sous forme de vignettes](#tileintro).
+3.  Suivez ensuite les étapes restantes décrites précédemment dans [Vue d’ensemble des images sous forme de vignettes](#tiled-image-overview).
 
 Vous pouvez utiliser les protocoles et les emplacements suivants pour charger les vignettes à partir du stockage local :
 
@@ -195,7 +202,7 @@ L’exemple suivant illustre le chargement de vignettes stockées en tant que fi
         }
 ```
 
-## Fournir un URI personnalisé
+## <a name="provide-a-custom-uri"></a>Fournir un URI personnalisé
 
 
 Si les paramètres remplaçables fournis avec la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) de la classe [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) ou la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) de la classe [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) ne sont pas suffisants pour récupérer vos vignettes, vous devez créer un URI personnalisé. Créez et renvoyez un URI personnalisé en proposant un gestionnaire personnalisé pour l’événement **UriRequested**. L’événement **UriRequested** est déclenché pour chaque vignette individuelle.
@@ -241,7 +248,7 @@ using System.Threading.Tasks;
         }
 ```
 
-## Superposer des vignettes provenant d’une source personnalisée
+## <a name="overlay-tiles-from-a-custom-source"></a>Superposer des vignettes provenant d’une source personnalisée
 
 
 Superposez des vignettes personnalisées à l’aide de la [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983). Créez des vignettes par programme en mémoire, à la volée, ou écrivez votre propre code pour charger les vignettes existantes à partir d’une autre source.
@@ -317,16 +324,16 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
        int pixelHeight = 256;
        int pixelWidth = 256;
        int bpp = 4;
- 
+
        Array<byte>^ bytes = ref new Array<byte>(pixelHeight * pixelWidth * bpp);
-       
+
        for (int y = 0; y < pixelHeight; y++)
        {
               for (int x = 0; x < pixelWidth; x++)
               {
                      int pixelIndex = y * pixelWidth + x;
                      int byteIndex = pixelIndex * bpp;
- 
+
                      // Set the current pixel bytes.
                      bytes[byteIndex] = (byte)(std::rand() % 256);        // Red
                      bytes[byteIndex + 1] = (byte)(std::rand() % 256);    // Green
@@ -334,41 +341,35 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
                      bytes[byteIndex + 3] = (byte)((std::rand() % 56) + 200);    // Alpha (0xff = fully opaque)
               }
        }
- 
+
        // Create RandomAccessStream from byte array.
        InMemoryRandomAccessStream^ randomAccessStream = ref new InMemoryRandomAccessStream();
        IOutputStream^ outputStream = randomAccessStream->GetOutputStreamAt(0);
        DataWriter^ writer = ref new DataWriter(outputStream);
        writer->WriteBytes(bytes);
- 
+
        create_task(writer->StoreAsync()).then([writer](unsigned int)
        {
               create_task(writer->FlushAsync());
        });
- 
+
        return randomAccessStream;
 }
 ```
 
-## Remplacer la carte par défaut
+## <a name="replace-the-default-map"></a>Remplacer la carte par défaut
 
 
-Pour remplacer entièrement la carte par défaut par des vignettes personnalisées ou tierces, procédez comme suit:
+Pour remplacer entièrement la carte par défaut par des vignettes personnalisées ou tierces, procédez comme suit :
 
 -   Spécifiez [**MapTileLayer**](https://msdn.microsoft.com/library/windows/apps/dn637143).**BackgroundReplacement** en tant que valeur de la propriété [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157) de la classe [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
 -   Spécifiez [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** en tant que valeur de la propriété [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) de la classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)
 * [Exemple de carte UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Vidéos de la build 2015: utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Vidéos de la build 2015 : utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Exemple d’application de trafic UWP](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

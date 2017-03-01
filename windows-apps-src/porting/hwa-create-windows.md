@@ -1,20 +1,28 @@
 ---
 author: seksenov
 title: "Apps web hébergées - Convertir une app web en app Windows avec Visual Studio"
-description: "Utilisez Visual Studio pour transformer votre site web en application de plateforme Windows universelle (UWP) pour Windows 10."
+description: "Utilisez Visual Studio pour transformer votre site web en application de plateforme Windows universelle (UWP) pour Windows 10."
 kw: Hosted Web Apps tutorial, Porting to Windows 10 with Visual Studio, How to convert website to Windows, How to add website to Windows Store, Packaging web application for Microsoft Store, Test Windows 10 native features and runtime APIs with CodePen, How to use Windows Cortana Live Tiles Built-in Camera on my Website with remote JavaScript
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "applications web hébergées, porter des applications web vers Windows 10, convertir un site web vers Windows, empaquetage d’applications web pour le Windows Store"
+ms.assetid: a58d2c67-77f8-4d01-bea3-a6ebce2d73b9
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 1cb4757896c9fecf05224a26949cd6e2ddffdb45
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b6781883a3e48d35a558798f369e91c4a7ea3bec
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="convert-your-web-application-to-a-universal-windows-platform-uwp-app"></a>Convertir votre application web en une application UWP (plateforme Windows universelle)
+# <a name="convert-your-web-application-to-a-universal-windows-platform-uwp-app"></a>Convertir votre application web en une application de plateforme Windows universelle (UWP)
 
 Découvrez comment créer rapidement une application de plateforme Windows universelle pour Windows 10 à partir d’une simple URL de site web. 
 
 > [!NOTE]
-> Les instructions suivantes sont à utiliser avec une plateforme de développement Windows. Les utilisateurs de Mac peuvent consulter la page relative aux [instructions sur l’utilisation d’une plateforme de développement Mac](/hwa-create-mac.md).
+> Les instructions suivantes sont à utiliser avec une plateforme de développement Windows. Les utilisateurs de Mac peuvent consulter la page relative aux [instructions sur l’utilisation d’une plateforme de développement Mac](./hwa-create-mac.md).
 
 ## <a name="what-you-need-to-develop-on-windows"></a>Éléments nécessaires au développement sur Windows
 
@@ -96,9 +104,4 @@ function cameraCapture() {
 - [Améliorer votre application web en accédant aux fonctionnalités de plateforme Windows universelle (UWP)](hwa-access-features.md)
 - [Guide des applications de plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 - [Télécharger des ressources de conception pour les applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

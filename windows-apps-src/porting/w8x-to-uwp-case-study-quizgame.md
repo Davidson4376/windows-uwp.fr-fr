@@ -3,9 +3,16 @@ author: mcleblanc
 ms.assetid: 88e16ec8-deff-4a60-bda6-97c5dabc30b8
 description: "Cette rubrique présente une étude de cas illustrant le portage d’un exemple d’application de jeu-questionnaire WinRT 8.1 d’homologue à homologue vers une application de plateforme Windows universelle (UWP) Windows 10."
 title: "Étude de cas de portage d’application Windows Runtime 8.x vers UWP : exemple d’application d’homologue à homologue QuizGame"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 62d747a06f26bd2d069d2f23f36f48249fd11e95
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2756fc75b7a780ae0361671127423dcb898cae4b
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -23,11 +30,11 @@ Une adaptation personnalisée de ces deux composantes pour un PC et un télépho
 
 L’application utilise des modèles qui exploitent des affichages et des modèles d’affichage. Grâce à cette séparation nette, le processus de portage de cette application est très direct, comme vous allez le constater.
 
-**Remarque** Cet exemple suppose que votre réseau est configuré pour envoyer et recevoir des paquets de multidiffusion de groupe UDP personnalisés (la plupart des réseaux domestiques le sont, mais le réseau de votre entreprise ne l’est peut-être pas). Cet exemple envoie et reçoit également des paquets TCP.
+**Remarque**  Cet exemple suppose que votre réseau est configuré pour envoyer et recevoir des paquets de multidiffusion de groupe UDP personnalisés (la plupart des réseaux domestiques le sont, mais le réseau de votre entreprise ne l’est peut-être pas). Cet exemple envoie et reçoit également des paquets TCP.
 
  
 
-**Remarque** Lorsque vous ouvrez QuizGame10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », vous devez suivre les étapes de la section [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md).
+**Remarque**   Lorsque vous ouvrez QuizGame10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », vous devez suivre les étapes de la section [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md).
 
  
 
@@ -193,9 +200,4 @@ Grâce à ce dernier ajustement, l’application se comportera comme auparavant 
 ## <a name="conclusion"></a>Conclusion
 
 L’application que nous avons portée dans le cadre de cette étude de cas était relativement complexe, car elle impliquait plusieurs projets, une bibliothèque de classes, une interface utilisateur assez volumineuse et une grande quantité de code. Pourtant, son portage s’est révélé très simple. La simplicité de ce portage repose en partie sur la similarité entre la plate-forme de développement Windows 10 et les plates-formes Windows 8.1 et Windows Phone 8.1. Le mode de conception de l’application d’origine, qui séparait les modèles, les modèles d’affichage et les affichages, contribue également à simplifier cette opération.
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

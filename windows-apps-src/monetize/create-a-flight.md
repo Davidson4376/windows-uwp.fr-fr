@@ -3,31 +3,38 @@ author: mcleanbyron
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
 description: "Utilisez cette méth. dans l’API de soum. du Windows Store pour créer une version d’éval. de package pour une app. inscrite dans le cpte du Ctre de dév. Windows."
 title: "Créer une version d’éval. de pack. av l’API de soum. du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, créer une version d’évaluation"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 35823bd1fd0c059ebc9b2107c31400a7ad788a1e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2b2b8acb1cfa2a1eaa0ce586cace250cedb5cf71
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Créer une version d’éval. de pack. av l’API de soum. du Windows Store
+# <a name="create-a-package-flight-using-the-windows-store-submission-api"></a>Créer une version d’éval. de pack. av l’API de soum. du Windows Store
 
 
 
 
 Utilisez cette méth. dans l’API de soum. du Windows Store pour créer une version d’éval. de package pour une app. inscrite dans le cpte du Ctre de dév. Windows.
 
->**Remarque**  Cette méthode permet de créer une version d’évaluation de package sans soumission. Pour créer une soumission pour une version d’évaluation de package, voir les méthodes présentées dans l’article [Gérer les soumissions de version d’évaluation de package](manage-flight-submissions.md).
+>**Remarque**&nbsp;&nbsp;Cette méthode permet de créer une version d’évaluation de package sans soumission. Pour créer une soumission pour une version d’évaluation de package, voir les méthodes présentées dans l’article [Gérer les soumissions de version d’évaluation de package](manage-flight-submissions.md).
 
-## Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
->**Remarque**  Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+>**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
-## Requête
+## <a name="request"></a>Requête
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
@@ -38,7 +45,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 <span/>
  
 
-### En-tête de requête
+### <a name="request-header"></a>En-tête de requête
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -46,7 +53,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Paramètres de la requête
+### <a name="request-parameters"></a>Paramètres de la requête
 
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -54,7 +61,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Corps de la requête
+### <a name="request-body"></a>Corps de la requête
 
 Le corps de la requête contient les paramètres suivants.
  
@@ -66,7 +73,7 @@ Le corps de la requête contient les paramètres suivants.
 
 <span/>
 
-### Exemple de requête
+### <a name="request-example"></a>Exemple de requête
 
 L’exemple suivant montre comment créer une nouvelle version d’évaluation de package pour une application ayant l’ID Windows Store 9WZDNCRD911W.
 
@@ -84,7 +91,7 @@ Content-Type: application/json
 
 ```
 
-## Réponse
+## <a name="response"></a>Réponse
 
 L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à cette méthode. Pour plus d’informations sur les valeurs figurant dans le corps de réponse, voir les sections suivantes.
 
@@ -99,7 +106,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 }
 ```
 
-### Corps de la réponse
+### <a name="response-body"></a>Corps de la réponse
 
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -110,7 +117,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 <span/>
 
-## Codes d’erreur
+## <a name="error-codes"></a>Codes d’erreur
 
 Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
@@ -120,14 +127,9 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | 409  | La version d’évaluation de package n’a pas pu être créée en raison de son état actuel, ou l’application utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission du Windows Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 <span/>
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Obtenir une version d’évaluation de package](get-a-flight.md)
 * [Supprimer une version d’évaluation de package](delete-a-flight.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

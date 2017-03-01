@@ -1,25 +1,32 @@
 ---
 author: mcleblanc
 description: "Quels sont les choix possibles lors du développement d’applications multiplateformes ?"
-title: "Sélection d’une approche d’iOS et développement d’applications UWP"
+title: "Sélection d’une approche pour le développement d’applications pour UWP et iOS"
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 53e6c50b7a1b4262f738cd798aa2bd02291512fe
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9317ea8690d5696d4a9e55b3a88f1a2ff83d8bfd
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Sélection d’une approche d’iOS et développement d’applications UWP
+# <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>Sélection d’une approche pour le développement d’applications pour UWP et iOS
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Quels sont les choix possibles lors du développement d’applications multiplateformes?
+Quels sont les choix possibles lors du développement d’applications multiplateformes ?
 
-## Quel est le meilleur moyen de prise en charge des applications iOS et Windows ?
+## <a name="whats-the-best-way-to-support-both-ios-and-windows"></a>Quel est le meilleur moyen de prise en charge des applications iOS et Windows ?
 
 Windows et iOS peuvent sembler très différents, mais de plus en plus d'outils et de techniques peuvent vraiment vous aider pour l’écriture d’applications qui prennent en charge les deux plateformes (et même Android). La meilleure solution dépend du type d'application que vous écrivez et du mode de création : à partir de zéro ou par le portage d’un projet existant.
 
-## Écriture d’une nouvelle application
+## <a name="writing-a-new-app"></a>Écriture d’une nouvelle application
 
 Avec une nouvelle tablette, vous disposez de nombreuses options à votre disposition, notamment :
 
@@ -39,7 +46,7 @@ Avec une nouvelle tablette, vous disposez de nombreuses options à votre disposi
 
     Le successeur spirituel de XNA. C’est maintenant une infrastructure multiplateforme open source, ce qui signifie que vous pouvez écrire des applications en C# pour de nombreuses plateformes avec prise en charge des moteurs physiques et des graphismes 2D et 3D.
 
-## Adaptation d’une application existante
+## <a name="adapting-an-existing-app"></a>Adaptation d’une application existante
 
 Avec une application iOS existante, les options sont un peu plus limitées. Néanmoins, tout n’est pas perdu.
 
@@ -55,7 +62,7 @@ Avec une application iOS existante, les options sont un peu plus limitées. Néa
 
     Une étape intermédiaire pour le portage de votre projet OpenGL ES 2.0 consiste à utiliser ANGLE. ANGLE pour Windows Store vous permet d’exécuter le contenu OpenGL ES sous Windows en convertissant les appels d’API OpenGL ES en appels d’API DirectX 11.
 
-## Autres outils de création multiplateformes
+## <a name="other-cross-platform-authoring-tools"></a>Autres outils de création multiplateformes
 
 -   [GameSalad](http://go.microsoft.com/fwlink/p/?LinkID=320480)
 
@@ -92,10 +99,5 @@ Avec une application iOS existante, les options sont un peu plus limitées. Néa
 -   [PlayCanvas](http://go.microsoft.com/fwlink/p/?LinkID=394061)
 
     Outil de développement de jeux HTML.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

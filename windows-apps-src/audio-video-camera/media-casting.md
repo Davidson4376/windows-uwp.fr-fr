@@ -1,17 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
-description: "Cet article vous montre comment procéder à une diffusion multimédia sur des appareils distants à partir d’une application Windows universelle."
+description: "Cet article vous montre comment effectuer une diffusion multimédia sur des appareils distants à partir d’une application Windows universelle."
 title: "Diffusion multimédia"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: ebcd2f2b28a7cd2a8a9dad16c30239b06e147ec3
-ms.openlocfilehash: fc69e3b5bb814752480fa0151c36ae0a8c783c4e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f399007426f5a973a06d473ef98a9eb7e24184dd
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="media-casting"></a>Diffusion multimédia
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article vous montre comment effectuer une diffusion multimédia sur des appareils distants à partir d’une application Windows universelle.
@@ -156,10 +163,5 @@ Enfin, implémentez le gestionnaire pour le bouton de déconnexion. Arrêtez la 
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

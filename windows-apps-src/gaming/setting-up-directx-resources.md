@@ -1,35 +1,42 @@
 ---
 author: mtoepke
 title: Configurer des ressources DirectX et afficher une image
-description: "Voici comment créer un périphérique Direct3D, une chaîne d’échange et un affichage de cible de rendu, et comment présenter l’image rendue à l’écran."
+description: "Nous vous montrons ici comment créer un périphérique Direct3D, une chaîne d’échange et un affichage de cible de rendu, puis comment présenter l’image rendue à l’écran."
 ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp, jeux, directx, ressources, images
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: af52969011a90f0c665dc8a5508c213d3a73b5b7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1aeb4ef581254ae914efae4bc38853611dbde488
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Configurer des ressources DirectX et afficher une image
+# <a name="set-up-directx-resources-and-display-an-image"></a>Configurer des ressources DirectX et afficher une image
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Nous vous montrons ici comment créer un périphérique Direct3D, une chaîne d’échange et un affichage de cible de rendu, puis comment présenter l’image rendue à l’écran.
 
 **Objectif :** configurer des ressources DirectX dans une application de plateforme Windows universelle (UWP) en C++ et afficher une couleur unie.
 
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 
 Nous partons du principe que vous êtes familiarisé avec C++. Vous avez également besoin d’une expérience de base dans les concepts de programmation graphique.
 
 **Durée de réalisation :** 20 minutes.
 
-## Instructions
+## <a name="instructions"></a>Instructions
 
-### 1. Déclaration de variables d’interface Direct3D à l’aide de ComPtr
+### <a name="1-declaring-direct3d-interface-variables-with-comptr"></a>1. Déclaration de variables d’interface Direct3D à l’aide de ComPtr
 
-Nous déclarons les variables d’interface Direct3D à l’aide du modèle de [pointeur intelligent](https://msdn.microsoft.com/library/windows/apps/hh279674.aspx) ComPtr issu de la bibliothèque de modèles C++ Windows Runtime (WRL) afin de pouvoir gérer la durée de vie de ces variables en parant à toute exception. Nous pouvons ensuite utiliser ces variables pour accéder à la classe [**ComPtr class**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) et à ses membres. Par exemple:
+Nous déclarons les variables d’interface Direct3D à l’aide du modèle de [pointeur intelligent](https://msdn.microsoft.com/library/windows/apps/hh279674.aspx) ComPtr issu de la bibliothèque de modèles C++ Windows Runtime (WRL) afin de pouvoir gérer la durée de vie de ces variables en parant à toute exception. Nous pouvons ensuite utiliser ces variables pour accéder à la classe [**ComPtr class**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) et à ses membres. Par exemple :
 
 ```cpp
     ComPtr<ID3D11RenderTargetView> m_renderTargetView;
@@ -44,7 +51,7 @@ Si vous déclarez [**ID3D11RenderTargetView**](https://msdn.microsoft.com/librar
 
 Après le démarrage de l’exemple d’application, celui-ci s’initialise et se charge, puis est ensuite prêt à s’exécuter.
 
-### 2. Création du périphérique Direct3D
+### <a name="2-creating-the-direct3d-device"></a>2. Création du périphérique Direct3D
 
 Pour utiliser l’API Direct3D pour effectuer le rendu d’une scène, nous devons créer tout d’abord un périphérique Direct3D qui représente la carte graphique. Pour créer le périphérique Direct3D, nous devons appeler la fonction [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082). Nous précisons les niveaux 9.1 à 11.1 dans le tableau de valeurs [**D3D\_FEATURE\_LEVEL**](https://msdn.microsoft.com/library/windows/desktop/ff476329). Direct3D parcourt le tableau dans l’ordre et retourne le niveau de fonctionnalité le plus élevé pris en charge. Pour obtenir par conséquent le niveau de fonctionnalité le plus élevé disponible, nous devons répertorier les entrées du tableau **D3D\_FEATURE\_LEVEL** des valeurs supérieures à celles inférieures. Nous passons l’indicateur [**D3D11\_CREATE\_DEVICE\_BGRA\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_BGRA_SUPPORT) au paramètre *Flags* pour que l’interopération des ressources Direct3D avec Direct2D puisse se faire. Si nous utilisons la version de débogage, nous devons passer également l’indicateur [**D3D11\_CREATE\_DEVICE\_DEBUG**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_DEBUG). Pour plus d’informations sur le débogage d’applications, voir [Utilisation de la couche de débogage pour déboguer des applications](https://msdn.microsoft.com/library/windows/desktop/jj200584).
 
@@ -99,7 +106,7 @@ Nous obtenons le périphérique Direct3D 11.1 ([**ID3D11Device1**](https://msdn.
             );
 ```
 
-### 3. Création de la chaîne d’échange
+### <a name="3-creating-the-swap-chain"></a>3. Création de la chaîne d’échange
 
 Nous créons ensuite une chaîne d’échange que le périphérique utilise pour le rendu et l’affichage. Nous déclarons et initialisons une structure [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) pour décrire la chaîne d’échange. Nous configurons ensuite la chaîne comme modèle de retournement (en d’autres termes, une chaîne d’échange dont la valeur [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077#DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL) correspond au membre **SwapEffect**) et attribuons au membre **Format** la valeur [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059#DXGI_FORMAT_B8G8R8A8_UNORM). Nous attribuons la valeur 1 au membre **Count** de la structure [**DXGI\_SAMPLE\_DESC**](https://msdn.microsoft.com/library/windows/desktop/bb173072) que le membre **SampleDesc** spécifie, et la valeur zéro au membre **Quality** de **DXGI\_SAMPLE\_DESC**, car le modèle de retournement ne prend pas en charge plusieurs anticrénelages d’échantillons (MSAA). Nous attribuons au membre **BufferCount** la valeur 2 afin que la chaîne d’échange puisse utiliser un tampon d’affichage à présenter au périphérique d’affichage et une mémoire tampon d’arrière-plan qui sert de cible de rendu.
 
@@ -174,7 +181,7 @@ Pour créer enfin la chaîne d’échange, nous devons obtenir la fabrique paren
                 );
 ```
 
-### 4. Création de l’affichage de cible de rendu
+### <a name="4-creating-the-render-target-view"></a>4. Création de l’affichage de cible de rendu
 
 Pour effectuer le rendu de graphismes dans la fenêtre, nous devons créer un affichage de cible de rendu. Nous appelons [**IDXGISwapChain::GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb174570) pour obtenir la mémoire tampon d’arrière-plan de la chaîne d’échange à utiliser lorsque nous créons l’affichage de cible de rendu. Nous spécifions la mémoire tampon d’arrière-plan en tant que texture 2D ([**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)). Pour créer l’affichage de cible de rendu, nous appelons [**ID3D11Device::CreateRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476517) avec la mémoire tampon d’arrière-plan de la chaîne d’échange. Nous devons préciser de dessiner l’intégralité de la fenêtre principale en indiquant pour la fenêtre d’affichage ([**D3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/ff476260)) la taille complète de la mémoire tampon d’arrière-plan de la chaîne d’échange. Nous utilisons la fenêtre d’affichage dans un appel à [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) pour lier la fenêtre d’affichage à l’[étape du module de rastérisation](https://msdn.microsoft.com/library/windows/desktop/bb205125) du pipeline. L’étape du module de rastérisation convertit les informations sur les vecteurs en une image raster. Dans ce cas, nous n’avons pas besoin de conversion, car nous cherchons simplement à afficher une couleur unie.
 
@@ -214,7 +221,7 @@ Pour effectuer le rendu de graphismes dans la fenêtre, nous devons créer un af
         m_d3dDeviceContext->RSSetViewports(1, &viewport);
 ```
 
-### 5. Présentation de l’image rendue
+### <a name="5-presenting-the-rendered-image"></a>5. Présentation de l’image rendue
 
 L’exécution du code entre dans une boucle sans fin pour effectuer le rendu de façon continue et afficher la scène.
 
@@ -256,7 +263,7 @@ Dans cette boucle, nous appelons :
         }
 ```
 
-### 6. Redimensionnement de la fenêtre d’application et du tampon de la chaîne d’échange
+### <a name="6-resizing-the-app-window-and-the-swap-chains-buffer"></a>6. Redimensionnement de la fenêtre d’application et du tampon de la chaîne d’échange
 
 Si la taille de la fenêtre de l’application change, l’application doit redimensionner les tampons de la chaîne d’échange, recréer l’affichage de cible de rendu, puis présenter l’image rendue redimensionnée. Pour redimensionner les tampons de la chaîne d’échange, nous appelons [**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). Lors de cet appel, nous laissons le nombre de tampons et leur format inchangés (le paramètre *BufferCount* a la valeur 2 et le paramètre *NewFormat* la valeur [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059#DXGI_FORMAT_B8G8R8A8_UNORM)). Nous calquons la taille de la mémoire tampon d’arrière-plan de la chaîne d’échange sur la taille de la fenêtre redimensionnée. Après le redimensionnement des tampons, nous devons créer la nouvelle cible de rendu et présenter la nouvelle image rendue de façon similaire à l’initialisation de l’application.
 
@@ -273,7 +280,7 @@ Si la taille de la fenêtre de l’application change, l’application doit redi
                 );
 ```
 
-## Récapitulatif et étapes suivantes
+## <a name="summary-and-next-steps"></a>Récapitulatif et étapes suivantes
 
 
 Nous avons créé un périphérique Direct3D, une chaîne d’échange et un affichage de cible de rendu, puis avons présenté l’image rendue à l’écran.
@@ -288,10 +295,5 @@ Nous avons créé un périphérique Direct3D, une chaîne d’échange et un aff
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

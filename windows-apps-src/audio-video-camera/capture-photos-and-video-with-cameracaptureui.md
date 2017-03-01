@@ -1,17 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
-description: "Cet article décrit comment utiliser la classe CameraCaptureUI pour capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows."
+description: "Cet article décrit comment utiliser la classe CameraCaptureUI afin de capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows."
 title: "Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 65508d32995f57672f94dffa4866a86d57903d00
-ms.openlocfilehash: 10ac3f53f0f8128985c39154f74a9348a40641b5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7ddd659bc32eb8328f993fba4bfd4f137ea99d0f
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article décrit comment utiliser la classe CameraCaptureUI afin de capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows. Cette fonctionnalité est facile à utiliser et permet à votre application d’obtenir une photo ou une vidéo capturée par l’utilisateur avec seulement quelques lignes de code.
@@ -118,10 +125,5 @@ Vous pouvez continuer à capturer des clips vidéo et les ajouter à la composit
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

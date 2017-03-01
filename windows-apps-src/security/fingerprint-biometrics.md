@@ -3,21 +3,28 @@ title: "Empreinte digitale biométrique"
 description: "Cet article explique comment ajouter des empreintes digitales biométriques à votre application de plateforme Windows universelle (UWP)."
 ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: d2dfbc6c69e8ee97a01bbf0d7ae82488ca62e3cb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 84e191df23f10f81a3588662f9ba1505cee12e21
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Empreinte digitale biométrique
+# <a name="fingerprint-biometrics"></a>Empreinte digitale biométrique
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article explique comment ajouter des empreintes digitales biométriques à votre application de plateforme Windows universelle (UWP). L’inclusion d’une demande d’authentification par empreinte digitale (biométrique) lorsque l’utilisateur doit valider une action particulière renforce la sécurité de votre application. Par exemple, vous pouvez exiger une authentification par empreinte digitale avant d’autoriser un achat in-app ou avant l’accès à des ressources restreintes. L’authentification par empreinte digitale est gérée par l’intermédiaire de la classe [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) dans l’espace de noms [**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356).
 
-## Déterminer si l’appareil est doté d’un lecteur d’empreintes digitales
+## <a name="check-the-device-for-a-fingerprint-reader"></a>Déterminer si l’appareil est doté d’un lecteur d’empreintes digitales
 
 
 Pour savoir si l’appareil dispose d’un lecteur d’empreintes digitales, appelez la méthode [**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138). Même si un appareil prend en charge l’authentification par empreinte digitale, votre application doit fournir aux utilisateurs une option dans Paramètres pour activer ou désactiver l’authentification des empreintes digitales.
@@ -64,7 +71,7 @@ public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
 }
 ```
 
-## Demander le consentement et retourner des résultats
+## <a name="request-consent-and-return-results"></a>Demander le consentement et retourner des résultats
 
 
 Pour demander à l’utilisateur son consentement par le biais d’une analyse de son empreinte digitale, appelez la méthode [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139). Pour que l’authentification par empreinte digitale fonctionne, l’utilisateur doit avoir au préalable ajouté une « signature par empreinte digitale » à la base de données d’empreintes digitales.
@@ -123,8 +130,3 @@ private async System.Threading.Tasks.Task<string> RequestConsent(string userMess
     return returnMessage;
 }
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

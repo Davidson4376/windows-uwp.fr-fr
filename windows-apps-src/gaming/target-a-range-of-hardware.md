@@ -3,24 +3,31 @@ author: mtoepke
 title: "Prendre en charge les mappages d’ombre sur une gamme de matériel"
 description: "Générez le rendu des ombres en haute fidélité sur des appareils plus rapides et celui d’ombres plus rapides sur des appareils moins puissants."
 ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, jeux, les mappages d’ombre, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: a2e2ed02025352bd5583abeed8856a216eab4ead
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e4cffcf1e9655d5bc5dacbfc17cb64b5671d7551
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Prendre en charge les mappages d’ombre sur une gamme de matériel
+# <a name="support-shadow-maps-on-a-range-of-hardware"></a>Prendre en charge les mappages d’ombre sur une gamme de matériel
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Générez le rendu des ombres en haute fidélité sur des appareils plus rapides et celui d’ombres plus rapides sur des appareils moins puissants. Partie 4 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
-## Types de filtres de comparaison
+## <a name="comparison-filter-types"></a>Types de filtres de comparaison
 
 
-Utilisez uniquement le filtrage linéaire si l’appareil peut en supporter la pénalité en termes de performances. En règle générale, les appareils de niveau de fonctionnalité Direct3D9\_1 ne possèdent pas suffisamment d’énergie disponible pour le filtrage linéaire sur les ombres. Utilisez plutôt le filtrage des points sur ces appareils. Quand vous utilisez le filtrage linéaire, ajustez le nuanceur de pixels de sorte à ce qu’il fusionne les bords de l’ombre.
+Utilisez uniquement le filtrage linéaire si l’appareil peut en supporter la pénalité en termes de performances. En règle générale, les appareils de niveau de fonctionnalité Direct3D 9\_1 ne possèdent pas suffisamment d’énergie disponible pour le filtrage linéaire sur les ombres. Utilisez plutôt le filtrage des points sur ces appareils. Quand vous utilisez le filtrage linéaire, ajustez le nuanceur de pixels de sorte à ce qu’il fusionne les bords de l’ombre.
 
 Créez l’échantillon de comparaison pour le filtrage des points :
 
@@ -102,22 +109,22 @@ float3 shadow = (1.0f - lighting) * ambient;
 return float4(input.color * (light + shadow), 1.f);
 ```
 
-## Taille du tampon de l’ombre
+## <a name="shadow-buffer-size"></a>Taille du tampon de l’ombre
 
 
 Les mappages d’ombre plus larges ne semblent pas plus pixellisés mais ils occupent davantage d’espace dans la mémoire graphique. Testez différentes tailles de mappages d’ombre dans votre jeu et observez les résultats dans différents types de périphériques et différentes tailles d’affichage. Envisagez une optimisation comme des mappages d’ombre en cascade pour obtenir de meilleurs résultats avec moins de mémoire graphique. Voir [Techniques courantes pour améliorer les mappages de profondeur d’ombre](https://msdn.microsoft.com/library/windows/desktop/ee416324).
 
-## Profondeur du tampon de l’ombre
+## <a name="shadow-buffer-depth"></a>Profondeur du tampon de l’ombre
 
 
-Une plus grande précision dans le tampon de l’ombre vous permet d’obtenir des résultats de test de profondeur plus exacts, ce qui permet d’éviter les problèmes comme les conflits de tampon z. Mais à l’instar des mappages d’ombre plus larges, une plus grande précision requiert davantage de mémoire. Testez différents types de précision de profondeur dans votre jeu: DXGI\_FORMAT\_R24G8\_TYPELESS par rapport à DXGI\_FORMAT\_R16\_TYPELESS, puis observez la vitesse et la qualité sur différents niveaux de fonctionnalités.
+Une plus grande précision dans le tampon de l’ombre vous permet d’obtenir des résultats de test de profondeur plus exacts, ce qui permet d’éviter les problèmes comme les conflits de tampon z. Mais à l’instar des mappages d’ombre plus larges, une plus grande précision requiert davantage de mémoire. Testez différents types de précision de profondeur dans votre jeu : DXGI\_FORMAT\_R24G8\_TYPELESS par rapport à DXGI\_FORMAT\_R16\_TYPELESS, puis observez la vitesse et la qualité sur différents niveaux de fonctionnalités.
 
-## Optimisation de nuanceurs précompilés
+## <a name="optimizing-precompiled-shaders"></a>Optimisation de nuanceurs précompilés
 
 
-Les applications de plateforme Windows universelle (UWP) peuvent utiliser la compilation de nuanceur dynamique, mais il est plus rapide d’utiliser la liaison de nuanceur dynamique. Vous pouvez également utiliser des directives de compilateur et des blocs `#ifdef` pour créer différentes versions des nuanceurs. Ce résultat est obtenu en ouvrant le fichier de projet Visual Studio dans un éditeur de texte et en ajoutant plusieurs entrées `<FxcCompiler>` pour le HLSL (chacune avec les définitions de préprocesseur appropriées). Notez que cela nécessite différents noms de fichiers; dans ce cas, Visual Studio ajoute \_point et \_linear aux différentes versions du nuanceur.
+Les applications de plateforme Windows universelle (UWP) peuvent utiliser la compilation de nuanceur dynamique, mais il est plus rapide d’utiliser la liaison de nuanceur dynamique. Vous pouvez également utiliser des directives de compilateur et des blocs `#ifdef` pour créer différentes versions des nuanceurs. Ce résultat est obtenu en ouvrant le fichier de projet Visual Studio dans un éditeur de texte et en ajoutant plusieurs entrées `<FxcCompiler>` pour le HLSL (chacune avec les définitions de préprocesseur appropriées). Notez que cela nécessite différents noms de fichiers ; dans ce cas, Visual Studio ajoute \_point et \_linear aux différentes versions du nuanceur.
 
-L’entrée du fichier de projet pour la version filtrée linéaire du nuanceur définit LINEAR:
+L’entrée du fichier de projet pour la version filtrée linéaire du nuanceur définit LINEAR :
 
 ```xml
 <FxCompile Include="Content\ShadowPixelShader.hlsl">
@@ -175,10 +182,5 @@ L’entrée du fichier de projet pour la version filtrée linéaire du nuanceur 
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

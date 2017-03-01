@@ -3,27 +3,34 @@ author: mtoepke
 title: "Modèles de projet de jeu DirectX"
 description: "Découvrez les modèles pour la création d’un jeu pour la plateforme Windows universelle (UWP) et DirectX."
 ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, jeux, directx, modèles"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1e91814825a0944f9a70fdc7bbc6e8ef78215f29
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8b25dcd0de8d82e8bf8b6bf651ac6c264ade48c9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Modèles de projet de jeu DirectX
+# <a name="directx-game-project-templates"></a>Modèles de projet de jeu DirectX
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Les modèles DirectX et de plateforme Windows universelle (UWP) vous permettent de créer rapidement un projet en tant que point de départ pour votre jeu.
 
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 
 Pour créer le projet, procédez comme suit :
 
--   [Téléchargez Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions). Visual Studio2015 comprend des outils de programmation graphique, tels que des outils de débogage. Pour obtenir une vue d’ensemble des fonctionnalités et outils graphiques et de jeux DirectX, voir [Outils Visual Studio pour le développement de jeux DirectX](set-up-visual-studio-for-game-development.md).
+-   [Téléchargez Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions). Visual Studio 2015 comprend des outils de programmation graphique, tels que des outils de débogage. Pour obtenir une vue d’ensemble des fonctionnalités et outils graphiques et de jeux DirectX, voir [Outils Visual Studio pour le développement de jeux DirectX](set-up-visual-studio-for-game-development.md).
 
-## Choix d’un modèle
+## <a name="choosing-a-template"></a>Choix d’un modèle
 
 
 Visual Studio 2015 comprend trois modèles DirectX et UWP :
@@ -34,17 +41,17 @@ Visual Studio 2015 comprend trois modèles DirectX et UWP :
 
 Le modèle que vous choisissez dépend des performances et des technologies que vous souhaitez utiliser.
 
-## Structure du modèle
+## <a name="template-structure"></a>Structure du modèle
 
 
 Les modèles Windows universels DirectX contiennent les fichiers suivants :
 
 -   pch.h et pch.cpp : prise en charge de l’en-tête précompilé.
--   Package.appxmanifest: propriétés du package de déploiement de l’application.
--   \*.pfx: certificats de l’application.
--   Dépendances externes: liens vers des fichiers externes que le projet utilise.
--   \*Main.h et \*Main.cpp: méthodes pour la gestion des ressources d’application, la mise à jour d’état de l’application et le rendu de l’image.
--   App.h et App.cpp: point d’entrée principal de l’application. Connecte l’application avec l’interpréteur de commandes Windows et gère les événements de cycle de vie de l’application. Ces fichiers s’affichent uniquement dans les modèles d’application DirectX 11 (Windows universelle) et les modèles d’application DirectX 12 (Windows universelle).
+-   Package.appxmanifest : propriétés du package de déploiement de l’application.
+-   \*.pfx : certificats de l’application.
+-   Dépendances externes : liens vers des fichiers externes que le projet utilise.
+-   \*Main.h et \*Main.cpp : méthodes pour la gestion des ressources d’application, la mise à jour d’état de l’application et le rendu de l’image.
+-   App.h et App.cpp : point d’entrée principal de l’application. Connecte l’application avec l’interpréteur de commandes Windows et gère les événements de cycle de vie de l’application. Ces fichiers s’affichent uniquement dans les modèles d’application DirectX 11 (Windows universelle) et les modèles d’application DirectX 12 (Windows universelle).
 -   App.xaml, App.xaml.cpp et App.xaml.h : point d’entrée principal pour l’application. Connecte l’application avec l’interpréteur de commandes Windows et gère les événements de cycle de vie de l’application. Ces fichiers s’affichent uniquement dans le modèle d’application Direct 11 et XAML (Windows universelle).
 -   DirectXPage.xaml, DirectXPage.xaml.cpp et DirectXPage.xaml.h : page qui héberge un SwapChainPanel DirectX. Ces fichiers s’affichent uniquement dans le modèle d’application Direct 11 et XAML (Windows universelle).
 -   Contenu
@@ -60,7 +67,7 @@ Les modèles Windows universels DirectX contiennent les fichiers suivants :
     -   d3dx12.h : contient la bibliothèque d’utilitaires D3DX12. Ce fichier s’affiche uniquement dans l’application DirectX 12 (Windows universelle).
 -   Ressources : images de logo et d’élément SplashScreen utilisées par l’application.
 
-## Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes
 
 
 Vous disposez à présent d’un point de départ. Apportez-y vos connaissances et vos compétences de développeur de jeux, notamment en matière de jeux pour le Windows Store.
@@ -76,7 +83,7 @@ Si vous créez un jeu DirectX, voir les rubriques suivantes.
 -   [Développement de Marble Maze, jeu pour la plateforme Windows universelle en C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -86,10 +93,5 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

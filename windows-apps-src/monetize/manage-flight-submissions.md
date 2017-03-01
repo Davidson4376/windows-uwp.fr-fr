@@ -2,10 +2,17 @@
 author: mcleanbyron
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: "Utilisez ces méthodes dans l’API de soumission du Windows Store pour gérer les soumissions de versions d’évaluation de package pour les applications qui sont inscrites dans votre compte du Centre de développement Windows."
-title: "Gérer les soumissions de versions d’évaluation de package à l’aide de l’API de soumission du Windows Store"
+title: "Gérer les soumissions de versions d’évaluation de package à l’aide de l’API de soumission du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, soumissions de version d’évaluation"
 translationtype: Human Translation
-ms.sourcegitcommit: 41203bffb65de3d4d6cc0fec2c7436e0b9d5821b
-ms.openlocfilehash: 9fc42f3abf1d876f271d18c1747ed7462dd20bd6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 71e759773beedef302a78a439b1a2a77a72dc85f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -13,12 +20,14 @@ ms.openlocfilehash: 9fc42f3abf1d876f271d18c1747ed7462dd20bd6
 
 L’API de soumission du Windows Store fournit des méthodes qui permettent de gérer les soumissions de versions d’évaluation de package, notamment les lancements de packages progressifs. Pour obtenir une présentation de l’API de soumission du Windows Store, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
 
->**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation. Avant de pouvoir utiliser ces méthodes pour créer ou gérer les soumissions de version d’évaluation de package, la version d’évaluation de package doit déjà exister dans votre compte du Centre de développement. Vous pouvez créer une version d’évaluation du package en [utilisant le tableau de bord du Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/package-flights) ou en utilisant les méthodes de l’API de soumission du Windows Store décrites dans [Gérer les versions d’évaluation de package](manage-flights.md).
+>**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. L’octroi de cette autorisation se fait en plusieurs étapes. Elle est accordée aux comptes de développeur, et tous les comptes n’en bénéficient pas pour le moment. Pour demander un accès anticipé, connectez-vous au tableau de bord du Centre de développement, cliquez sur **Commentaires** au bas du tableau de bord, sélectionnez **API de soumission** dans la zone de commentaires, puis soumettez votre demande. Vous recevrez un message électronique dès que cette autorisation sera accordée à votre compte.
+
+>**Important**&nbsp;&nbsp;Si vous utilisez l’API de soumission du Windows Store pour créer une version d’évaluation de package, assurez-vous d’utiliser exclusivement l’API pour apporter d’autres modifications à la soumission, sans passer par le tableau de bord du Centre de développement. Si vous passez par le tableau de bord pour modifier une soumission initialement créée via l’API, vous ne pourrez plus modifier ou valider cette soumission à l’aide de l’API. Dans certains cas, la soumission non validée peut rester définie sur l’état d’erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
 
 <span id="methods-for-package-flight-submissions" />
 ## <a name="methods-for-managing-package-flight-submissions"></a>Méthodes de gestion des soumissions de versions d’évaluation de package
 
-Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission de version d’évaluation du package, utilisez les méthodes ci-dessous.
+Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission de version d’évaluation du package, utilisez les méthodes ci-dessous. Pour pouvoir utiliser ces méthodes, vous devez disposer de la version d’évaluation du package dans votre compte du Centre de développement. Vous pouvez créer une version d’évaluation du package en [utilisant le tableau de bord du Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/package-flights) ou en utilisant les méthodes de l’API de soumission du Windows Store décrites dans [Gérer les versions d’évaluation de package](manage-flights.md).
 
 <table>
 <colgroup>
@@ -37,7 +46,7 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission de ver
 <tr>
 <td align="left">GET</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}```</td>
-<td align="left">[Obtient une soumission existante de version d’évaluation du package](get-a-flight-submission.md)</td>
+<td align="left">[Obtient une soumission existante de version d’évaluation du package.](get-a-flight-submission.md)</td>
 </tr>
 <tr>
 <td align="left">GET</td>
@@ -143,6 +152,8 @@ Les articles suivants fournissent des exemples de code détaillés qui montrent 
 * [Exemples de code C#](csharp-code-examples-for-the-windows-store-submission-api.md)
 * [Exemples de code Java](java-code-examples-for-the-windows-store-submission-api.md)
 * [Exemples de code Python](python-code-examples-for-the-windows-store-submission-api.md)
+
+>**Remarque**&nbsp;&nbsp;En complément des exemples de code répertoriés ci-dessus, nous fournissons également un module PowerShell Open Source qui implémente une interface de ligne de commande sur l’API de soumission du Windows Store. Ce module est appelé [StoreBroker](https://aka.ms/storebroker). Vous pouvez utiliser ce module pour gérer les soumissions de votre application, de votre version et de vos modules complémentaires à partir de la ligne de commande, en lieu et place de l’appel direct de l’API de soumission du Windows Store. Sinon, vous pouvez simplement parcourir la source pour consulter des exemples supplémentaires d’appel de cette API. Le module StoreBroker est activement utilisé au sein de Microsoft en tant que vecteur principal de soumission de nombreuses applications internes dans le Windows Store. Pour plus d’informations, consultez notre [page StoreBroker sur GitHub](https://aka.ms/storebroker).
 
 <span id="manage-gradual-package-rollout">
 ## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>Gérer un lancement de packages progressif pour une soumission de version d’évaluation du package
@@ -411,9 +422,4 @@ Les codes suivants représentent l’état d’une soumission.
 * [Valider une soumission de version d’évaluation du package](commit-a-flight-submission.md)
 * [Supprimer une soumission de version d’évaluation du package](delete-a-flight-submission.md)
 * [Obtenir l’état d’une soumission de version d’évaluation du package](get-status-for-a-flight-submission.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -2,9 +2,17 @@
 author: jnHs
 Description: "Le temps estimé de transfert des paiements, les seuils de paiement applicables et les places de marché Microsoft permettant de recevoir des paiements peuvent varier en fonction de votre pays/région et de votre type de compte de paiement."
 title: "Délais, méthodes et seuils de paiement"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 translationtype: Human Translation
-ms.sourcegitcommit: d5ec64bbd1e8b10c17ff5c43d89e6652eadb2367
-ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 7da8727d3f901cfbab7c68d0b7f7362438d3fc65
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -24,7 +32,7 @@ Tout paiement dû au cours d’un mois donné sera généralement effectué le 1
 
 | Moyen de paiement | Nombre de jours d’attente avant que le compte de revenu soit crédité |
 |--------------------|--------------------------------------------|
-| PayPal | 1 jour ouvrable | 
+| PayPal | 1 jour ouvrable |    
 | ACH/SEPA |2 à 3 jours ouvrables |
 | Virement bancaire | 7 à 10 jours ouvrables |
 
@@ -4161,9 +4169,4 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>Non applicable</td>
   </tr>
 </table>
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

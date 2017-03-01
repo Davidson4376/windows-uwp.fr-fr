@@ -5,16 +5,23 @@ title: Interactions avec le clavier
 ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
+keywords: "clavier, accessibilité, navigation, focus, texte, saisie, interactions utilisateur"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 1226d097e911e79c800a16c33fcbb9bd524bd17a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 53ee08b33bcbbd895d0c6ea6cd621eeec2af40f5
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="keyboard-interactions"></a>Interactions avec le clavier
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Les entrées via le clavier représentent une part importante de l’expérience d’interaction utilisateur globale pour les applications. Le clavier est indispensable pour certaines personnes souffrant d’un handicap et les utilisateurs qui le considèrent simplement comme un moyen plus efficace d’interaction avec une application. Par exemple, les utilisateurs doivent pouvoir naviguer dans votre application à l’aide des touches de direction et de tabulation, activer les éléments d’interface utilisateur à l’aide de la barre d’espace et des touches Entrée, et accéder aux commandes à l’aide de raccourcis clavier.  
+Les saisies au clavier représentent une part importante de l’expérience d’interaction utilisateur globale pour les applications. Le clavier est indispensable pour certaines personnes souffrant d’un handicap et les utilisateurs qui le considèrent simplement comme un moyen plus efficace d’interaction avec une application. Par exemple, les utilisateurs doivent pouvoir naviguer dans votre application à l’aide des touches de direction et de tabulation, activer les éléments d’interface utilisateur à l’aide de la barre d’espace et des touches Entrée, et accéder aux commandes à l’aide de raccourcis clavier.  
 
 ![image Hero du clavier](images/input-patterns/input-keyboard-small.jpg)
 
@@ -731,9 +738,4 @@ Vous pouvez nettement faciliter et accélérer la saisie de données par les uti
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

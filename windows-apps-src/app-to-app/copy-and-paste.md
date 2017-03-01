@@ -3,23 +3,30 @@ description: Cet article explique comment prendre en charge le copier-coller dan
 title: Copier et coller
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 0dceeb53737cc790e1c3810b0487e0a839968bef
-ms.openlocfilehash: 2655dc67b14ba665deabc879f13340202d97c494
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c9cef41c5c4671d85854f3daf79cb7d6fd51a6f8
+ms.lasthandoff: 02/07/2017
 
 ---
-#Copier et coller
+#<a name="copy-and-paste"></a>Copier et coller
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 
 Cet article explique comment prendre en charge le copier-coller dans les applications UWP en utilisant le Presse-papiers. Le copier-coller est la méthode classique d’échanger des données entre les applications, ou dans une application, et presque chaque application peut prendre en charge les opérations du Presse-papiers dans une certaine mesure.
 
-## Rechercher la prise en charge intégrée du Presse-papiers
+## <a name="check-for-built-in-clipboard-support"></a>Rechercher la prise en charge intégrée du Presse-papiers
 
 Le plus souvent, vous n’avez pas besoin d’écrire de code supplémentaire pour fournir une prise en charge des opérations du Presse-papiers. De nombreux contrôles XAML par défaut disponibles pour créer les applications offrent déjà une prise en charge des opérations du Presse-papiers. 
 
-## Préparation
+## <a name="get-set-up"></a>Préparation
 
 Tout d’abord, incluez l’espace de noms [**Windows.ApplicationModel.DataTransfer**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer) dans votre application. Ensuite, ajoutez une instance à l’objet [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage). Cet objet contient les données que l’utilisateur souhaite copier ainsi que les propriétés (telles qu’une description) que vous voulez ajouter.
 
@@ -30,7 +37,7 @@ DataPackage dataPackage = new DataPackage();
 
 <!-- AuthenticateAsync-->
 
-## Copier et Couper
+## <a name="copy-and-cut"></a>Copier et Couper
 
 Copier et Couper (également appelé *déplacement*) fonctionne presque exactement de la même manière. Choisissez l’opération que vous souhaitez effectuer à l’aide de la propriété [**RequestedOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage.RequestedOperation).
 
@@ -40,9 +47,9 @@ dataPackage.RequestedOperation = DataPackageOperation.Copy;
 // or cut
 dataPackage.RequestedOperation = DataPackageOperation.Move;
 ```
-## Glisser-déplacer
+## <a name="drag-and-drop"></a>Glisser-déplacer
 
-Vous pouvez ensuite ajouter les données sélectionnées par l’utilisateur dans l’objet [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage). Si les données sont prises en charge par la classe **DataPackage**, utilisez l’une des méthodes correspondantes dans l’objet **DataPackage**. Voici comment ajouter du texte:
+Vous pouvez ensuite ajouter les données sélectionnées par l’utilisateur dans l’objet [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage). Si les données sont prises en charge par la classe **DataPackage**, utilisez l’une des méthodes correspondantes dans l’objet **DataPackage**. Voici comment ajouter du texte :
 
 ```cs
 dataPackage.SetText("Hello World!");
@@ -53,7 +60,7 @@ La dernière étape consiste à ajouter l’objet [**DataPackage**](https://msdn
 ```cs
 Clipboard.SetContent(dataPackage);
 ```
-## Coller
+## <a name="paste"></a>Coller
 
 Pour obtenir le contenu du Presse-papiers, appelez la méthode statique [**GetContent**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.GetContent). Cette méthode renvoie un objet [**DataPackageView**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView) avec son contenu. Cet objet est identique à l’objet [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage), sauf qu’il est en lecture seule. Avec cet objet, vous pouvez utiliser la propriété [**AvailableFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.AvailableFormats) ou la méthode [**Contains**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.Contains(System.String)) pour identifier les formats disponibles. Ensuite, appelez la méthode [**DataPackageView**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView) correspondante pour obtenir les données.
 
@@ -67,7 +74,7 @@ if (dataPackageView.Contains(StandardDataFormats.Text))
 }
 ```
 
-## Suivi des modifications dans le Presse-papiers
+## <a name="track-changes-to-the-clipboard"></a>Suivi des modifications dans le Presse-papiers
 
 En plus des commandes copier et coller, vous pouvez également effectuer le suivi des modifications dans le Presse-papiers. Vous pouvez le faire en gérant l’événement [**ContentChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.ContentChanged) du Presse-papiers.
 
@@ -84,7 +91,7 @@ Clipboard.ContentChanged += (s, e) =>
 }
 ```
 
-## Voir également
+## <a name="see-also"></a>Voir également
 
 * [Communication entre les applications](index.md)
 * [DataTransfer](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.aspx)
@@ -102,10 +109,5 @@ Clipboard.ContentChanged += (s, e) =>
 * [AvailableFormats](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackageview.availableformats.aspx)
 * [Contains](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackageview.contains.aspx)
 * [ContentChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.clipboard.contentchanged.aspx)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

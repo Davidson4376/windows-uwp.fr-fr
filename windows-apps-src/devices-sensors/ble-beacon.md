@@ -2,15 +2,23 @@
 author: msatranjr
 title: Annonces publicitaires Bluetooth
 description: "Cette section contient des articles expliquant comment intégrer des annonces Bluetooth Low Energy (LE) dans les applications de plateforme Windows universelle (UWP) par le biais de l’utilisation des API AdvertisementWatcher et AdvertisementPublisher."
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 translationtype: Human Translation
-ms.sourcegitcommit: b454e08015ea9bd6240c836563b1fec78e38dc2c
-ms.openlocfilehash: e21567bf2ffa5b05861cf96099290e1bb66dbf03
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: bfdb1b218676503699674c97fc962ad8161769dd
+ms.lasthandoff: 02/08/2017
 
 ---
 
 # <a name="bluetooth-le-advertisements"></a>Annonces publicitaires Bluetooth LE
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -85,7 +93,7 @@ Le code suivant montre comment créer un observateur d’annonces Bluetooth LE,
 BluetoothLEAdvertisementWatcher watcher = new BluetoothLEAdvertisementWatcher();
 watcher.Received += OnAdvertisementReceived;
 watcher.Start();
-``` 
+```    
 
 ```csharp
 private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watcher, BluetoothLEAdvertisementReceivedEventArgs eventArgs)
@@ -153,8 +161,3 @@ private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watch
 Cette valeur peut être convertie en une distance, mais ne doit pas servir à mesurer des distances réelles, car chaque radio est différente. Différents facteurs environnementaux peuvent compliquer l’évaluation de la distance (comme les murs, le boîtier de la radio et même l’humidité ambiante).
 
 Une autre solution permettant d’évaluer une distance consiste à définir des « compartiments ». Les radios ont tendance à émettre entre 0 et 50 dBm quand elles sont très proches, entre -50 et -90 lorsqu’elles sont à moyenne distance, et au-dessous de -90 lorsqu’elles sont éloignées. La méthode d’ajustement par tâtonnements est la meilleure pour déterminer les compartiments idéaux pour votre application.
-
-
-<!--HONumber=Dec16_HO3-->
-
-

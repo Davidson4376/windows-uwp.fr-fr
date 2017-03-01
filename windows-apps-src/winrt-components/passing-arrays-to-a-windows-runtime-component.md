@@ -3,19 +3,26 @@ author: msatranjr
 title: "Transmission de tableaux à un composant Windows Runtime"
 description: "Dans la plateforme universelle Windows (UWP), les paramètres sont destinés à l’entrée ou à la sortie, jamais aux deux. Cela signifie que le contenu d’un tableau qui est transmis à une méthode, ainsi que le tableau lui-même, sont destinés à l’entrée ou à la sortie."
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 8ced5e6a4411554fcf82a54b57de64562a305619
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 04ecb16faf39e5dfc2f8ad8c5049c696615a449a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Transmission de tableaux à un composant Windows Runtime
+# <a name="passing-arrays-to-a-windows-runtime-component"></a>Transmission de tableaux à un composant Windows Runtime
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Dans la plateforme universelle Windows (UWP), les paramètres sont destinés à l’entrée ou à la sortie, jamais aux deux. Cela signifie que le contenu d’un tableau qui est transmis à une méthode, ainsi que le tableau lui-même, sont destinés à l’entrée ou à la sortie. Si le contenu du tableau est destiné à l’entrée, la méthode lit dans le tableau mais n’écrit pas dans celui-ci. Si le contenu du tableau est destiné à la sortie, la méthode écrit dans le tableau mais ne lit pas dans celui-ci. Cela pose un problème pour les paramètres de tableau, car les tableaux de .NET Framework sont des types de référence et le contenu d’un tableau est mutable même si la référence du tableau est transmise par valeur (**ByVal** en Visual Basic). L’[outil d’exportation de métadonnées Windows Runtime (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) requiert de spécifier l’utilisation prévue pour le tableau si elle n’est pas claire d’après le contexte en appliquant l’attribut ReadOnlyArrayAttribute ou WriteOnlyArrayAttribute au paramètre. L’utilisation du tableau est déterminée comme suit:
+Dans la plateforme universelle Windows (UWP), les paramètres sont destinés à l’entrée ou à la sortie, jamais aux deux. Cela signifie que le contenu d’un tableau qui est transmis à une méthode, ainsi que le tableau lui-même, sont destinés à l’entrée ou à la sortie. Si le contenu du tableau est destiné à l’entrée, la méthode lit dans le tableau mais n’écrit pas dans celui-ci. Si le contenu du tableau est destiné à la sortie, la méthode écrit dans le tableau mais ne lit pas dans celui-ci. Cela pose un problème pour les paramètres de tableau, car les tableaux de .NET Framework sont des types de référence et le contenu d’un tableau est mutable même si la référence du tableau est transmise par valeur (**ByVal** en Visual Basic). L’[outil d’exportation de métadonnées Windows Runtime (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) requiert de spécifier l’utilisation prévue pour le tableau si elle n’est pas claire d’après le contexte en appliquant l’attribut ReadOnlyArrayAttribute ou WriteOnlyArrayAttribute au paramètre. L’utilisation du tableau est déterminée comme suit :
 
 -   Pour la valeur de retour ou un paramètre out (un paramètre **ByRef** avec l’attribut [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) en Visual Basic), le tableau est toujours destiné à la sortie. N’appliquez pas l’attribut ReadOnlyArrayAttribute. L’attribut WriteOnlyArrayAttribute est autorisé sur les paramètres de sortie, mais il est redondant.
 
@@ -24,7 +31,7 @@ Dans la plateforme universelle Windows (UWP), les paramètres sont destinés à 
 -   Les paramètres qui présentent le modificateur **ref** (**ByRef** en Visual Basic) ne sont pas autorisés. Winmdexp.exe génère une erreur.
 -   Pour un paramètre transmis par valeur, vous devez indiquer si le contenu du tableau est destiné à l’entrée ou à la sortie en appliquant l’attribut [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) ou [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx). La spécification des deux attributs génère une erreur.
 
-Si une méthode doit accepter un tableau pour l’entrée, modifier le contenu du tableau et retourner le tableau à l’appelant, utilisez un paramètre en lecture seule pour l’entrée et un paramètre en écriture seule (ou la valeur de retour) pour la sortie. Le code suivant montre un moyen d’implémenter ce modèle:
+Si une méthode doit accepter un tableau pour l’entrée, modifier le contenu du tableau et retourner le tableau à l’appelant, utilisez un paramètre en lecture seule pour l’entrée et un paramètre en écriture seule (ou la valeur de retour) pour la sortie. Le code suivant montre un moyen d’implémenter ce modèle :
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -47,7 +54,7 @@ Si une méthode doit accepter un tableau pour l’entrée, modifier le contenu d
 
 Nous vous conseillons d’effectuer une copie du tableau d’entrée immédiatement et de manipuler celle-ci. Cela permet de garantir que la méthode se comporte de la même façon que votre composant soit appelé ou non par du code .NET Framework.
 
-## Utilisation des composants depuis du code managé et non managé
+## <a name="using-components-from-managed-and-unmanaged-code"></a>Utilisation des composants depuis du code managé et non managé
 
 
 Les paramètres qui présentent l’attribut ReadOnlyArrayAttribute ou WriteOnlyArrayAttribute se comportent différemment selon que l’appelant est écrit en code natif ou en code managé. Si l’appelant est du code natif (JavaScript ou extensions des composants Visual C++), le contenu du tableau est traité comme suit :
@@ -57,14 +64,9 @@ Les paramètres qui présentent l’attribut ReadOnlyArrayAttribute ou WriteOnly
 
 Si l’appelant est du code managé, le tableau d’origine est disponible pour la méthode appelée, comme il l’est dans un appel de méthode dans .NET Framework. Le contenu du tableau est mutable dans le code .NET Framework, de sorte que toutes les modifications que la méthode apporte au tableau sont visibles pour l’appelant. Il importe d’en tenir compte, car cela affecte les tests d’unité écrits pour un composant Windows Runtime. Si les tests sont écrits en code managé, le contenu d’un tableau apparaîtra mutable pendant le test.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
 * [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
-* [Création de composants Windows Runtime enC# et VisualBasic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+* [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 

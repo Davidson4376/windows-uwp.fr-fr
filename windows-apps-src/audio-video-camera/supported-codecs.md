@@ -3,22 +3,29 @@ author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: "Cet article répertorie la prise en charge des codecs et formats audio et vidéo pour les applications UWP."
 title: Codecs pris en charge
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 7bd0002d62519757cf582d6070a22890a0e1837e
-ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2c477e9dc0cc86534a179edb8e3a9415f4872d93
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Codecs pris en charge
+# <a name="supported-codecs"></a>Codecs pris en charge
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir [l’archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 
 Cet article répertorie les codecs et formats audio, vidéo et d’image pris en charge dans les applications UWP.
 
-Dans les tableaux ci-dessous, la lettre «D» indique la prise en charge de décodeurs et la lettre «E» la prise en charge d’encodeurs.
+Dans les tableaux ci-dessous, la lettre « D » indique la prise en charge de décodeurs et la lettre « E » la prise en charge d’encodeurs.
 
-## Prise en charge des codecs et formats audio
+## <a name="audio-codec--format-support"></a>Prise en charge des codecs et formats audio
 
 Les tableaux suivants indiquent la prise en charge des codecs et formats audio pour chaque famille d’appareils.
 
@@ -27,7 +34,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 
  
 
-### Bureau
+### <a name="desktop"></a>Bureau
 
 <table>
 <colgroup>
@@ -338,7 +345,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 
  
 
-### Mobile
+### <a name="mobile"></a>Mobile
 
 <table>
 <colgroup>
@@ -649,7 +656,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 
  
 
-### IoT Core (x86)
+### <a name="iot-core-x86"></a>IoT Core (x86)
 
 <table>
 <colgroup>
@@ -960,7 +967,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 
  
 
-### IoT Core (ARM)
+### <a name="iot-core-arm"></a>IoT Core (ARM)
 
 <table>
 <colgroup>
@@ -1271,7 +1278,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 
  
 
-### Xbox
+### <a name="xbox"></a>Xbox
 
 <table>
 <colgroup>
@@ -1582,7 +1589,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 
  
 
-## Prise en charge des codecs et formats vidéo
+## <a name="video-codec--format-support"></a>Prise en charge des codecs et formats vidéo
 
 Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo pour chaque famille d’appareils.
 
@@ -1592,7 +1599,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 
  
 
-### Bureau
+### <a name="desktop"></a>Bureau
 
 <table>
 <colgroup>
@@ -1811,7 +1818,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 
  
 
-### Mobile
+### <a name="mobile"></a>Mobile
 
 <table>
 <colgroup>
@@ -2030,7 +2037,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 
  
 
-### IoT Core (x86)
+### <a name="iot-core-x86"></a>IoT Core (x86)
 
 <table>
 <colgroup>
@@ -2249,7 +2256,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 
  
 
-### IoT (ARM)
+### <a name="iot-arm"></a>IoT (ARM)
 
 <table>
 <colgroup>
@@ -2468,7 +2475,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 
  
 
-### Xbox
+### <a name="xbox"></a>Xbox
 
 <table>
 <colgroup>
@@ -2685,7 +2692,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 </tbody>
 </table>
 
-## Prise en charge des codecs et formats d’image 
+## <a name="image-codec--format-support"></a>Prise en charge des codecs et formats d’image 
 
 <table>
 <colgroup>
@@ -2757,8 +2764,3 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 <sup>3</sup> Seuls certains formats RAW d’appareil photo sont pris en charge.  
 
 Pour plus d’informations sur les codecs d’image, voir [Codecs WIC natifs](https://msdn.microsoft.com/library/windows/desktop/gg430027.aspx).
-
-
-<!--HONumber=Nov16_HO1-->
-
-

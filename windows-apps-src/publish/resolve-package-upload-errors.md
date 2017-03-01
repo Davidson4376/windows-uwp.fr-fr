@@ -3,9 +3,16 @@ author: jnHs
 Description: "Si vous rencontrez des erreurs de chargement des packages d’application au cours du processus de soumission d’application, vous devez les corriger avant de soumettre votre application au Windows Store."
 title: "Résolution des erreurs de chargement de package"
 ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 2ff09d43cd39967028b39b4f602f4dfdf2cbcdcc
-ms.openlocfilehash: 4f7f9698d8b8b17654b6f2e0420c7cdc6031f018
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 92a46c556303b88f8d506f5315e23d4e2b2edf5f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -27,7 +34,7 @@ Pour plus d’informations sur la résolution d’erreurs liées aux numéros de
 
 Sachez en outre que, si votre soumission comprend plusieurs XAP Windows Phone 8.1, ceux-ci doivent avoir le même numéro de version.
 
-**Remarque** Pour des questions supplémentaires sur d’autres messages d’erreur et une aide pour les résoudre, veuillez visiter nos [forums](http://go.microsoft.com/fwlink/p/?LinkId=224196).
+**Remarque** Pour poser des questions supplémentaires sur d’autres messages d’erreur et obtenir une aide pour les résoudre, veuillez visiter nos [forums](http://go.microsoft.com/fwlink/p/?LinkId=224196).
 
  
 
@@ -37,10 +44,5 @@ Sachez en outre que, si votre soumission comprend plusieurs XAP Windows Phone 8
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

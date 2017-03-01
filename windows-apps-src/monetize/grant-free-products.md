@@ -1,35 +1,40 @@
 ---
 author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
-description: "Utilisez cette méthode dans l’API d’achat du WindowsStore pour octroyer une application ou extension gratuite à un utilisateur donné."
+description: "Utilisez cette méthode dans l’API d’achat du Windows Store pour octroyer une application ou extension gratuite à un utilisateur donné."
 title: Octroyer des produits gratuits
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API d’achat du Windows Store, octroyer des produits"
 translationtype: Human Translation
-ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
-ms.openlocfilehash: 2eca8712075ce1f9d876f3ae441381734bd52370
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f7509be016f32282478d6ebf0e373b2540537d3d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Octroyer des produits gratuits
+# <a name="grant-free-products"></a>Octroyer des produits gratuits
 
-
-
-Utilisez cette méthode dans l’API d’achat du WindowsStore pour octroyer une application ou extension gratuite (également connue sous le nom de produit in-app ou PIA) à un utilisateur donné.
+Utilisez cette méthode dans l’API d’achat du Windows Store pour octroyer une application ou extension gratuite à un utilisateur donné.
 
 Actuellement, vous ne pouvez octroyer que des produits gratuits. Si votre service tente d’utiliser cette méthode pour octroyer un produit qui n’est pas gratuit, cette méthode retourne une erreur.
 
-## Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez disposer des éléments suivants:
+Pour utiliser cette méthode, vous devez disposer des éléments suivants :
 
-* un jeton d’accès AzureAD créé avec l’URI d’audience `https://onestore.microsoft.com`;
-* une clé d’ID du Windows Store [générée à partir du code côté client de votre application](view-and-grant-products-from-a-service.md#step-4).
+* un jeton d’accès Azure AD créé avec l’URI d’audience `https://onestore.microsoft.com` ;
+* une clé d’ID du Windows Store représentant l’identité de l’utilisateur auquel vous souhaitez octroyer un produit gratuit.
 
-Pour plus d’informations, voir [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md).
+Pour plus d’informations, consultez l’article [Gérer les droits sur les produits à partir d’un service](view-and-grant-products-from-a-service.md).
 
-## Requête
+## <a name="request"></a>Requête
 
 
-### Syntaxe de la requête
+### <a name="request-syntax"></a>Syntaxe de la requête
 
 | Méthode | URI de la requête                                            |
 |--------|--------------------------------------------------------|
@@ -37,34 +42,34 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
 <span/> 
 
-### En-tête de requête
+### <a name="request-header"></a>En-tête de requête
 
 | En-tête         | Type   | Description                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;.                           |
-| Host           | chaîne | Doit être défini sur la valeur **collections.mp.microsoft.com**.                                            |
+| Authorization  | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;.                           |
+| Host           | chaîne | Doit être défini sur la valeur **purchase.mp.microsoft.com**.                                            |
 | Content-Length | nombre | Longueur du corps de la requête.                                                                       |
 | Content-Type   | chaîne | Spécifie le type de requête et de réponse. Actuellement, la seule valeur prise en charge est **application/json**. |
 
 <span/>
 
-### Corps de la requête
+### <a name="request-body"></a>Corps de la requête
 
-| Paramètre      | Type   | Description                                                                                                                                                                                                                                                                                                            | Obligatoire |
-|----------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| availabilityId | chaîne | ID de disponibilité du produit à acheter dans le catalogue du Windows Store.                                                                                                                                                                                                                                     | Oui      |
-| b2bKey         | chaîne | La clé d’ID du Windows Store [générée à partir du code côté client de votre application](view-and-grant-products-from-a-service.md#step-4).                                                                                                                                                                                                                                                        | Oui      |
-| devOfferId     | chaîne | ID d’offre spécifié par le développeur qui s’affiche dans l’élément de collection après l’achat.                                                                                                                                                                                                                                 | Non       |
-| language       | chaîne | Langue de l’utilisateur.                                                                                                                                                                                                                                                                                              | Oui      |
-| market         | chaîne | Marché de l’utilisateur.                                                                                                                                                                                                                                                                                                | Oui      |
-| orderId        | GUID   | GUID généré pour la commande. Cette valeur doit être propre à l’utilisateur, mais il n’est pas impératif qu’elle soit unique dans toutes les commandes.                                                                                                                                                                                              | Oui      |
-| productId      | chaîne | ID WindowsStore issue du catalogue du WindowsStore. Pour une application, l’ID WindowsStore est disponible dans la [page Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Pour une extension, l’ID Windows Store est disponible dans l’URL de la page de la vue d’ensemble de l’extension dans le tableau de bord du Centre de développement Windows. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8. | Oui      |
-| quantity       | entier    | Quantité à acheter. Actuellement, la seule valeur prise en charge est 1. Si aucune valeur n’est spécifiée, la valeur par défaut est 1.                                                                                                                                                                                                                | Non       |
-| skuId          | chaîne | ID de référence du catalogue du Windows Store. Exemple d’ID de référence : 0010.                                                                                                                                                                                                                                                | Oui      |
+| Paramètre      | Type   | Description        | Obligatoire |
+|----------------|--------|---------------------|----------|
+| availabilityId | chaîne | ID de disponibilité du produit à octroyer dans le catalogue du Windows Store.         | Oui      |
+| b2bKey         | chaîne | [Clé d’ID du Windows Store](view-and-grant-products-from-a-service.md#step-4) représentant l’identité de l’utilisateur auquel vous souhaitez octroyer un produit.    | Oui      |
+| devOfferId     | chaîne | ID d’offre spécifié par le développeur qui s’affiche dans l’élément de collection après l’achat.        |
+| language       | chaîne | Langue de l’utilisateur.  | Oui      |
+| market         | chaîne | Marché de l’utilisateur.       | Oui      |
+| orderId        | GUID   | GUID généré pour la commande. Cette valeur doit être propre à l’utilisateur, mais il n’est pas impératif qu’elle soit unique dans toutes les commandes.    | Oui      |
+| productId      | chaîne | [ID Windows Store](in-app-purchases-and-trials.md#store-ids) pour le [produit](in-app-purchases-and-trials.md#products-skus-and-availabilities) dans le catalogue du Windows Store. Exemple d’ID Windows Store pour un produit : 9NBLGGH42CFD. | Oui      |
+| quantity       | int    | Quantité à acheter. Actuellement, la seule valeur prise en charge est 1. Si aucune valeur n’est spécifiée, la valeur par défaut est 1.   | Non       |
+| skuId          | chaîne | [ID Windows Store](in-app-purchases-and-trials.md#store-ids) pour la [référence (SKU)](in-app-purchases-and-trials.md#products-skus-and-availabilities) du produit dans le catalogue du Windows Store. Exemple d’ID Windows Store pour une référence (SKU) : 0010.     | Oui      |
 
 <span/>
 
-### Exemple de requête
+### <a name="request-example"></a>Exemple de requête
 
 ```syntax
 POST https://purchase.mp.microsoft.com/v6.0/purchases/grant HTTP/1.1
@@ -83,30 +88,30 @@ Content-Type: application/json
 }
 ```
 
-## Réponse
+## <a name="response"></a>Réponse
 
 
-### Corps de la réponse
+### <a name="response-body"></a>Corps de la réponse
 
-| Paramètre                 | Type                        | Description                                                                                                                                              | Obligatoire |
-|---------------------------|-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| clientContext             | ClientContextV6             | Informations contextuelles client de cette commande. Ce paramètre est affecté à la valeur *clientID* du jeton AzureAD.                                     | Oui      |
-| createdtime               | datetimeoffset              | Heure de création de la commande.                                                                                                                          | Oui      |
-| currencyCode              | chaîne                      | Code devise pour *totalAmount* et *totalTaxAmount*. Non applicable pour les articles gratuits.                                                                                | Oui      |
-| friendlyName              | chaîne                      | Nom convivial de la commande. Non applicable pour les commandes passées à l’aide de l’API d’achat du Windows Store.                                                               | Oui      |
-| isPIRequired              | booléen                     | Indique si un instrument de paiement (PI) est nécessaire dans le cadre de la commande d’achat.                                                                   | Oui      |
-| language                  | chaîne                      | ID de langue de la commande (par exemple, « fr »).                                                                                                       | Oui      |
-| market                    | chaîne                      | ID de marché de la commande (par exemple, « FR »).                                                                                                         | Oui      |
-| orderId                   | chaîne                      | ID qui identifie la commande d’un utilisateur particulier.                                                                                                   | Oui      |
-| orderLineItems            | list&lt;OrderLineItemV6&gt; | Liste des articles de la commande. En règle générale, il y a un article par commande.                                                                          | Oui      |
+| Paramètre                 | Type                        | Description             | Obligatoire |
+|---------------------------|-----------------------------|-----------------------|----------|
+| clientContext             | ClientContextV6             | Informations contextuelles client de cette commande. Ce paramètre est affecté à la valeur *clientID* du jeton Azure AD.    | Oui      |
+| createdtime               | datetimeoffset              | Heure de création de la commande.         | Oui      |
+| currencyCode              | chaîne                      | Code devise pour *totalAmount* et *totalTaxAmount*. Non applicable pour les articles gratuits.     | Oui      |
+| friendlyName              | chaîne                      | Nom convivial de la commande. Non applicable pour les commandes passées à l’aide de l’API d’achat du Windows Store. | Oui      |
+| isPIRequired              | booléen                     | Indique si un instrument de paiement (PI) est nécessaire dans le cadre de la commande d’achat.  | Oui      |
+| language                  | chaîne                      | ID de langue de la commande (par exemple, « fr »).       | Oui      |
+| market                    | chaîne                      | ID de marché de la commande (par exemple, « FR »).  | Oui      |
+| orderId                   | chaîne                      | ID qui identifie la commande d’un utilisateur particulier.                | Oui      |
+| orderLineItems            | list&lt;OrderLineItemV6&gt; | Liste des articles de la commande. En règle générale, il y a un article par commande.       | Oui      |
 | orderState                | chaîne                      | État de la commande. Les états valides sont **Editing**, **CheckingOut**, **Pending**, **Purchased**, **Refunded**, **ChargedBack** et **Cancelled**. | Oui      |
-| orderValidityEndTime      | chaîne                      | Dernière fois que la tarification de la commande a été valide avant sa soumission. Non applicable pour les applications gratuites.                                                                      | Oui      |
-| orderValidityStartTime    | chaîne                      | Première fois que la tarification de la commande a été valide avant sa soumission. Non applicable pour les applications gratuites.                                                                     | Oui      |
-| purchaser                 | IdentityV6                  | Objet qui décrit l’identité de l’acheteur.                                                                                                  | Oui      |
-| totalAmount               | décimal                     | Montant total d’achat TTC de tous les articles de la commande.                                                                                       | Oui      |
-| totalAmountBeforeTax      | décimal                     | Montant total d’achat HT de tous les articles de la commande.                                                                                              | Oui      |
-| totalChargedToCsvTopOffPI | décimal                     | Si vous utilisez un instrument de paiement (PI) et une valeur de stockage (CSV) distincts, le montant est facturé au format CSV.                                                                | Oui      |
-| totalTaxAmount            | décimal                     | Montant total des taxes de tous les articles.                                                                                                              | Oui      |
+| orderValidityEndTime      | chaîne                      | Dernière fois que la tarification de la commande a été valide avant sa soumission. Non applicable pour les applications gratuites.      | Oui      |
+| orderValidityStartTime    | chaîne                      | Première fois que la tarification de la commande a été valide avant sa soumission. Non applicable pour les applications gratuites.          | Oui      |
+| purchaser                 | IdentityV6                  | Objet qui décrit l’identité de l’acheteur.       | Oui      |
+| totalAmount               | décimal                     | Montant total d’achat TTC de tous les articles de la commande.       | Oui      |
+| totalAmountBeforeTax      | décimal                     | Montant total d’achat HT de tous les articles de la commande.      | Oui      |
+| totalChargedToCsvTopOffPI | décimal                     | Si vous utilisez un instrument de paiement (PI) et une valeur de stockage (CSV) distincts, le montant est facturé au format CSV.            | Oui      |
+| totalTaxAmount            | décimal                     | Montant total des taxes de tous les articles.    | Oui      |
 
 <span/>
 
@@ -137,12 +142,12 @@ L’objet OrderLineItemV6 contient les paramètres ci-dessous.
 | legacyBillingOrderId    | chaîne         | ID de facturation hérité.                                                                                       | Non       |
 | lineItemId              | chaîne         | ID de l’article de cette commande.                                                                 | Oui      |
 | listPrice               | décimal        | Prix catalogue de l’article de cette commande.                                                                    | Oui      |
-| productId               | chaîne         | ID Windows Store de l’article.                                                               | Oui      |
+| productId               | chaîne         | [ID Windows Store](in-app-purchases-and-trials.md#store-ids) pour le [produit](in-app-purchases-and-trials.md#products-skus-and-availabilities) qui représente l’article dans le catalogue du Windows Store. Exemple d’ID Windows Store pour un produit : 9NBLGGH42CFD.   | Oui      |
 | productType             | chaîne         | Type du produit. Les valeurs prises en charge sont **Durable**, **Application** et **UnmanagedConsumable**. | Oui      |
 | quantity                | entier            | Quantité de l’article commandé.                                                                            | Oui      |
 | retailPrice             | décimal        | Prix de vente au détail de l’article commandé.                                                                        | Oui      |
 | revenueRecognitionState | chaîne         | État de prise en compte de revenu.                                                                               | Oui      |
-| skuId                   | chaîne         | ID de référence du Windows Store de l’article.                                                                   | Oui      |
+| skuId                   | chaîne         | [ID Windows Store](in-app-purchases-and-trials.md#store-ids) pour la [référence (SKU)](in-app-purchases-and-trials.md#products-skus-and-availabilities) de l’article dans le catalogue du Windows Store. Exemple d’ID Windows Store pour une référence (SKU) : 0010.                                                                   | Oui      |
 | taxAmount               | décimal        | Montant des taxes de l’article.                                                                            | Oui      |
 | taxType                 | chaîne         | Type de taxe pour les taxes applicables.                                                                       | Oui      |
 | Title                   | chaîne         | Titre localisé de l’article.                                                                        | Oui      |
@@ -155,11 +160,11 @@ L’objet IdentityV6 contient les paramètres ci-dessous.
 | Paramètre     | Type   | Description                                                                        | Obligatoire |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
 | identityType  | chaîne | Contient la valeur **"pub"**.                                                      | Oui      |
-| identityValue | chaîne | Valeur chaîne du paramètre *publisherUserId* dans la clé d’ID du WindowsStore. | Oui      |
+| identityValue | chaîne | Valeur chaîne du paramètre *publisherUserId* dans la clé d’ID du Windows Store. | Oui      |
 
 <span/> 
 
-### Exemple de réponse
+### <a name="response-example"></a>Exemple de réponse
 
 ```syntax
 Content-Length: 1203
@@ -220,31 +225,23 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 }
 ```
 
-## Codes d’erreur
+## <a name="error-codes"></a>Codes d’erreur
 
 
-| Code | Erreur        | Code d’erreur interne           | Description                                                                                                                                                                           |
-|------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Code | Erreur        | Code d’erreur interne           | Description   |
+|------|--------------|----------------------------|----------------|
 | 401  | Non autorisé | AuthenticationTokenInvalid | Le jeton d’accès Azure AD n’est pas valide. Dans certains cas, les détails de l’erreur ServiceError contiennent plus d’informations, par exemple lorsque le jeton est arrivé à expiration ou que la revendication *appid* est manquante. |
-| 401  | Non autorisé | PartnerAadTicketRequired   | Un jeton d’accès Azure AD n’a pas été transmis au service dans l’en-tête d’autorisation.                                                                                                   |
-| 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du WindowsStore du corps de la demande et la revendication *appid* du jeton d’accès AzureAD de l’en-tête d’autorisation ne correspondent pas.                     |
-| 400  | BadRequest   | InvalidParameter           | Les détails contiennent des informations relatives au corps de la requête et aux champs comprenant une valeur non valide.                                                                                    |
+| 401  | Non autorisé | PartnerAadTicketRequired   | Un jeton d’accès Azure AD n’a pas été transmis au service dans l’en-tête d’autorisation.   |
+| 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du Windows Store du corps de la demande et la revendication *appid* du jeton d’accès Azure AD de l’en-tête d’autorisation ne correspondent pas.       |
+| 400  | BadRequest   | InvalidParameter           | Les détails contiennent des informations relatives au corps de la requête et aux champs comprenant une valeur non valide.           |
 
 <span/> 
 
-## Rubriques connexes
+## <a name="related-topics"></a>Articles connexes
 
 
-* [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md)
+* [Gérer les droits sur les produits à partir d’un service](view-and-grant-products-from-a-service.md)
 * [Demander des produits](query-for-products.md)
 * [Signaler le traitement de la commande d’un produit consommable](report-consumable-products-as-fulfilled.md)
 * [Renouveler une clé d’ID du Windows Store](renew-a-windows-store-id-key.md)
- 
-
- 
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

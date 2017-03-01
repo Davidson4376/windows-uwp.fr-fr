@@ -1,22 +1,29 @@
 ---
 author: laurenhughes
 ms.assetid: D5D98044-7221-4C2A-9724-56E59F341AB0
-description: "Vous saurez comment lire et écrire des propriétés de métadonnées d’image et indiquer la position géographique de fichiers à l’aide de la classe GeotagHelper."
+description: "Cet article indique comment lire et écrire des propriétés de métadonnées d’image et comment indiquer la position géographique de fichiers à l’aide de la classe utilitaire GeotagHelper."
 title: "Métadonnées d’image"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
-ms.openlocfilehash: 958033bc054da292c85f8df0a57cf964696c82bd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: af9a4c243c939ddc04e5d0763b58df00e70d7017
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Métadonnées d’image
+# <a name="image-metadata"></a>Métadonnées d’image
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 
 Cet article montre comment lire et écrire des propriétés de métadonnées d’image et indiquer la position géographique de fichiers à l’aide de la classe utilitaire [**GeotagHelper**](https://msdn.microsoft.com/library/windows/apps/dn903683).
 
-## Propriétés d’image
+## <a name="image-properties"></a>Propriétés d’image
 
 La propriété [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) renvoie un objet [**StorageItemContentProperties**](https://msdn.microsoft.com/library/windows/apps/hh770642) qui donne accès aux informations relatives au contenu du fichier. Obtenez les propriétés spécifiques de l’image en appelant [**GetImagePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770646). L’objet [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/br207718) renvoyé indique les membres qui contiennent des champs de métadonnées d’image de base, tels que le titre de l’image et la date de capture.
 
@@ -32,7 +39,7 @@ Pour accéder à un plus vaste ensemble de métadonnées de fichier, utilisez le
 
 -   Étant donné que les propriétés qui ne sont pas prises en charge peuvent renvoyer une valeur null une fois récupérées, vérifiez toujours la présence d’une telle valeur avant d’utiliser une valeur de métadonnées renvoyée.
 
-## Assistance d’indication de position géographique
+## <a name="geotag-helper"></a>Assistance d’indication de position géographique
 
 GeotagHelper est une classe utilitaire qui facilite le balisage d’images à l’aide de données géographiques en utilisant directement les API [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603), sans nécessiter l’analyse ou la construction manuelle du format des métadonnées.
 
@@ -54,7 +61,7 @@ Pour obtenir un GeoPoint indiquant la position géographique d’un fichier imag
 
 [!code-cs[GetGeoData](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetGeoData)]
 
-## Décoder et encoder des métadonnées d’image
+## <a name="decode-and-encode-image-metadata"></a>Décoder et encoder des métadonnées d’image
 
 La manière la plus avancée de travailler avec des données d’image consiste à lire et à écrire les propriétés au niveau de flux à l’aide d’une classe [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) ou d’un [BitmapEncoder](bitmapencoder-options-reference.md). Pour ces opérations, vous pouvez utiliser les propriétés de Windows pour spécifier les données en cours de lecture ou d’écriture, et également le langage de requête de métadonnées fourni par le composant Imagerie Windows (WIC) pour spécifier le chemin d’accès à une propriété demandée.
 
@@ -79,7 +86,7 @@ Créez un objet [**BitmapPropertySet**](https://msdn.microsoft.com/library/windo
 
 -   [**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) échoue avec le code d’erreur 0x88982F41 si l’une des propriétés demandées n’est pas prise en charge par l’image associée à l’encodeur.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Imagerie](imaging.md)
  
@@ -88,10 +95,5 @@ Créez un objet [**BitmapPropertySet**](https://msdn.microsoft.com/library/windo
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

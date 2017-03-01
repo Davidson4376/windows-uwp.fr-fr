@@ -1,17 +1,24 @@
 ---
 author: mcleblanc
-description: "Si vous êtes un développeur disposant d’une application Silverlight pour Windows Phone, vous pouvez tirer parti de vos compétences et de votre code source pour le passage à Windows 10."
+description: "Si vous êtes un développeur disposant d’une application Silverlight pour Windows Phone, vous pouvez tirer parti de vos compétences et de votre code source pour le passage à Windows 10."
 title: "Passer de Silverlight pour Windows Phone à UWP"
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 05831f3e357086b338d32e83146d380ca9c78a74
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 06409936f37368351f6c8ad47e50a7d980d522f4
+ms.lasthandoff: 02/07/2017
 
 ---
 
 #  <a name="move-from-windows-phone-silverlight-to-uwp"></a>Passer de Silverlight pour Windows Phone à UWP
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Si vous êtes un développeur disposant d’une application Silverlight pour Windows Phone, vous pouvez tirer parti de vos compétences et de votre code source pour le passage à Windows 10. Grâce à Windows 10, vous pouvez créer une application de plateforme Windows universelle (UWP), à savoir un package d’application unique que vos clients peuvent installer sur tout type d’appareil. Pour plus d’informations sur Windows 10, sur les applications UWP et sur les concepts de code adaptatif et d’interface utilisateur adaptative que nous mentionnerons dans ce guide de portage, consultez le [Guide des applications pour la plateforme Windows universelle (UWP)](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
@@ -19,7 +26,7 @@ Lorsque vous portez votre application Silverlight pour Windows Phone vers une ap
 
 Si vous le souhaitez, vous pouvez mettre à disposition des clients les versions Silverlight pour Windows Phone et Windows 10 de votre application.
 
-**Remarque** Ce guide est conçu pour vous aider à porter manuellement votre application Silverlight pour Windows Phone vers Windows 10. Outre l’utilisation du présent guide pour porter votre application, vous pouvez tester la version préliminaire pour développeurs de **Mobilize.NET Silverlight Bridge**, conçue pour faciliter l’automatisation du processus de portage. Cet outil analyse le code source de votre application et convertit les références aux API et aux contrôles Silverlight pour Windows Phone en leurs équivalents UWP. Étant donné que cet outil est toujours en version préliminaire, il ne gère pas encore tous les scénarios de conversion. Toutefois, il devrait permettre à la plupart des développeurs de gagner du temps et leur simplifier la tâche. Pour tester la version préliminaire pour développeurs, visitez le [site web Mobilize.NET](http://go.microsoft.com/fwlink/p/?LinkId=624546).
+**Remarque**  Ce guide est conçu pour vous aider à porter manuellement votre application Silverlight pour Windows Phone vers Windows 10. Outre l’utilisation du présent guide pour porter votre application, vous pouvez tester la version préliminaire pour développeurs de **Mobilize.NET Silverlight Bridge**, conçue pour faciliter l’automatisation du processus de portage. Cet outil analyse le code source de votre application et convertit les références aux API et aux contrôles Silverlight pour Windows Phone en leurs équivalents UWP. Étant donné que cet outil est toujours en version préliminaire, il ne gère pas encore tous les scénarios de conversion. Toutefois, il devrait permettre à la plupart des développeurs de gagner du temps et leur simplifier la tâche. Pour tester la version préliminaire pour développeurs, visitez le [site web Mobilize.NET](http://go.microsoft.com/fwlink/p/?LinkId=624546).
 
 ## <a name="xaml-and-net-or-html"></a>XAML et .NET ou HTML ?
 
@@ -27,7 +34,7 @@ Silverlight pour Windows Phone comporte une infrastructure d’interface utilisa
 
 Voir [Feuille de route pour les applications de plateforme Windows universelle (UWP) en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/br229583).
 
-**Remarque** Windows 10 prend en charge .NET Framework dans une bien plus large mesure qu’une application du Windows Phone Store. Par exemple, Windows 10 comporte plusieurs espaces de noms System.ServiceModel.\*, ainsi que System.Net, System.Net.NetworkInformation et System.Net.Sockets. Le moment est donc bien choisi pour porter votre application Silverlight pour Windows Phone et pour compiler et faire fonctionner votre code .NET en toute facilité sur la nouvelle plateforme. Voir [Mappages des espaces de noms et des classes](wpsl-to-uwp-namespace-and-class-mappings.md).
+**Remarque**  Windows 10 prend en charge .NET Framework dans une bien plus large mesure qu’une application du Windows Phone Store. Par exemple, Windows 10 comporte plusieurs espaces de noms System.ServiceModel.\*, ainsi que System.Net, System.Net.NetworkInformation et System.Net.Sockets. Le moment est donc bien choisi pour porter votre application Silverlight pour Windows Phone et pour compiler et faire fonctionner votre code .NET en toute facilité sur la nouvelle plateforme. Voir [Mappages des espaces de noms et des classes](wpsl-to-uwp-namespace-and-class-mappings.md).
 Une autre excellente raison de recompiler votre code source .NET existant dans une application Windows 10 réside dans le fait que vous pourrez bénéficier du code natif .NET, dont une technologie de compilation d’avant-garde qui convertit le MSIL en code machine exécutable en mode natif. Les applications .NET natives démarrent plus vite, utilisent moins de mémoire et consomment moins de batterie que leurs équivalents MSIL.
 
 Ce guide de portage est axé sur XAML, mais vous pouvez également développer une application proposant des fonctionnalités équivalentes (en appelant la plupart des mêmes API UWP) à l’aide de JavaScript, des feuilles de style en cascade (CSS) et de HTML5 avec la Bibliothèque Windows pour JavaScript. Bien que les infrastructures d’interface utilisateur Windows Runtime des langages XAML et HTML soient différentes l’une de l’autre, celle que vous choisirez fonctionnera de façon universelle dans toute la gamme des appareils Windows.
@@ -43,7 +50,7 @@ L’option que vous avez choisie à la section précédente détermine la gamme 
 ## <a name="approaching-porting-layer-by-layer"></a>Méthode de portage couche par couche
 
 -   **Affichage**. L’affichage (ainsi que le modèle d’affichage) constitue l’interface utilisateur de votre application. Dans l’idéal, l’affichage se compose de balises liées aux propriétés observables d’un modèle d’affichage. Une autre méthode (courante et pratique, mais uniquement sur le court terme) consiste à faire en sorte que le code impératif d’un fichier code-behind manipule directement des éléments de l’interface utilisateur. Dans les deux cas, la majeure partie du balisage et de la conception de votre interface utilisateur (et même du code impératif qui manipule les éléments de l’interface utilisateur) se révèlera simple à porter.
--   **Modèles d’affichage et modèles de données**. Même si vous n’adoptez pas pleinement les modèles avec séparation des responsabilités (comme MVVM), il existe inévitablement du code dans votre application, qui joue le rôle de modèle d’affichage et de modèle de données. Le code du modèle d’affichage utilise des types dans les espaces de noms de l’infrastructure d’interface utilisateur. Le code du modèle de données et celui du modèle d’affichage utilisent également un système d’exploitation non visuel, ainsi que des API .NET (y compris les API d’accès aux données). La grande majorité de ces éléments sont [disponibles pour une application UWP](https://msdn.microsoft.com/library/windows/apps/br211369). Vous devriez donc être en mesure de porter la plus grande partie de ce code sans avoir à le modifier. N’oubliez pas : un modèle d’affichage correspond à un modèle, ou une *abstraction*, d’un affichage. Un modèle d’affichage fournit l’état et le comportement de l’interface utilisateur, tandis que l’affichage lui-même fournit les éléments visuels. Par conséquent, pour toute interface utilisateur que vous adaptez aux différents facteurs de forme sur lesquels UWP autorise l’exécution, vous devrez sans doute modifier le modèle d’affichage correspondant. Pour la mise en réseau et l’appel de services cloud, vous pouvez généralement choisir d’utiliser des API .NET ou UWP. Pour connaître les facteurs qui entrent en jeu dans cette décision, voir [Services cloud, mise en réseau et bases de données](wpsl-to-uwp-business-and-data.md).
+-   **Modèles d’affichage et modèles de données**. Même si vous n’adoptez pas pleinement les modèles avec séparation des responsabilités (comme MVVM), il existe inévitablement du code dans votre application, qui joue le rôle de modèle d’affichage et de modèle de données. Le code du modèle d’affichage utilise des types dans les espaces de noms de l’infrastructure de l’interface utilisateur. Le code du modèle de données et celui du modèle d’affichage utilisent également un système d’exploitation non visuel, ainsi que des API .NET (y compris les API d’accès aux données). La grande majorité de ces éléments sont [disponibles pour une application UWP](https://msdn.microsoft.com/library/windows/apps/br211369). Vous devriez donc être en mesure de porter la plus grande partie de ce code sans avoir à le modifier. N’oubliez pas : un modèle d’affichage correspond à un modèle, ou une *abstraction*, d’un affichage. Un modèle d’affichage fournit l’état et le comportement de l’interface utilisateur, tandis que l’affichage lui-même fournit les éléments visuels. Par conséquent, pour toute interface utilisateur que vous adaptez aux différents facteurs de forme sur lesquels UWP autorise l’exécution, vous devrez sans doute modifier le modèle d’affichage correspondant. Pour la mise en réseau et l’appel de services cloud, vous pouvez généralement choisir d’utiliser des API .NET ou UWP. Pour connaître les facteurs qui entrent en jeu dans cette décision, voir [Services cloud, mise en réseau et bases de données](wpsl-to-uwp-business-and-data.md).
 -   **Services cloud**. Il est probable que certains éléments de votre application (peut-être la plus grande partie) s’exécutent sur le cloud, sous la forme de services. La partie de l’application qui s’exécute sur l’appareil du client se connecte à ces services. Il s’agit de la partie d’une application distribuée qui a de grandes chances de rester intacte lors du portage de la partie destinée au client. Si vous n’avez pas encore envisagé cette possibilité, nous vous recommandons d’opter pour des services cloud pour votre application UWP. Ainsi, [Microsoft Azure Mobile Services](http://azure.microsoft.com/services/mobile-services/) propose des composants principaux puissants et efficaces, que les applications Windows universelles peuvent appeler pour bénéficier de services allant de la simple notification de mise à jour des vignettes dynamiques aux différentes fonctions d’évolutivité ultra-puissantes que peut offrir une batterie de serveurs.
 
 Avant ou pendant le portage, vérifiez si vous pouvez améliorer votre application en la refactorisant de manière à regrouper l’ensemble du code présentant un objectif similaire sous forme de couches afin d’éviter toute répartition arbitraire. La factorisation de votre application UWP en couches comme celles que nous venons de décrire vous permet de vous assurer que votre application est correcte, de la tester, puis de l’exécuter et de l’entretenir en toute simplicité. Vous pouvez faire en sorte que certaines fonctionnalités soient davantage réutilisables et éviter ainsi certains problèmes de différences d’API d’interface utilisateur d’une plateforme à l’autre en suivant le modèle MVVM ([Model-View-ViewModel](http://msdn.microsoft.com/magazine/dd419663.aspx)). Ce modèle gère de manière séparée les éléments de l’interface utilisateur, les composants professionnels et les données. Même au sein de l’interface utilisateur, ce modèle peut séparer les états et les comportements des éléments visuels, qui seront testés séparément. Grâce au modèle MVVM, vous pouvez écrire vos données et votre logique métier une seule fois et l’utiliser sur tous les appareils, quelle que soit l’interface utilisateur. En outre, ce modèle vous permettra probablement de réutiliser la majeure partie du modèle d’affichage et des zones d’affichage sur l’ensemble des appareils.
@@ -79,16 +86,13 @@ Concernant les fonctionnalités, il est bon de noter qu’UWP en prend en charge
 * [Nouveautés pour les développeurs dans Windows 10](https://dev.windows.com/getstarted/whats-new-windows-10)
 * [Guide des applications de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/library/windows/apps/dn894631)
 * [Feuille de route pour les applications de plateforme Windows universelle (UWP) en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/br229583)
-* [Étapes suivantes pour les développeurs Windows Phone 8](https://msdn.microsoft.com/library/windows/apps/xaml/dn655121.aspx)
+* [Nouveautés pour les développeurs Windows Phone 8](https://msdn.microsoft.com/library/windows/apps/xaml/dn655121.aspx)
+
 **Articles de magazine**
-* [Visual Studio Magazine: Windows Phone 8.1: A Giant Leap Forward for Convergence](http://go.microsoft.com/fwlink/p/?LinkID=398541)
+* [Visual Studio Magazine : Windows Phone 8.1: A Giant Leap Forward for Convergence](http://go.microsoft.com/fwlink/p/?LinkID=398541)
+
 **Presentations**
 * [Le passage de Nokia Musique de Windows Phone à Windows 8](http://go.microsoft.com/fwlink/p/?LinkId=321521)
  
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

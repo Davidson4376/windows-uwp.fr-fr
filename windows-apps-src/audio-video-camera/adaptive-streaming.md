@@ -3,15 +3,22 @@ author: drewbatgit
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
 description: "Cet article décrit comment ajouter la lecture de contenu multimédia en streaming adaptatif à une application de plateforme Windows universelle (UWP). Cette fonctionnalité prend actuellement en charge la lecture de contenu vidéo en streaming HTTP (HLS) et de contenu en streaming dynamique sur HTTP (DASH)."
 title: Streaming adaptatif
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: d0941887ebc17f3665302fae6c7b0a124dfb5a0b
-ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3afd0440d8e552ebc3459c5fe30dd766db3ae8b9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Streaming adaptatif
+# <a name="adaptive-streaming"></a>Streaming adaptatif
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 Cet article décrit comment ajouter la lecture de contenu multimédia en streaming adaptatif à une application de plateforme Windows universelle (UWP). Cette fonctionnalité prend actuellement en charge la lecture de contenu vidéo en streaming HTTP (HLS) et de contenu en streaming dynamique sur HTTP (DASH).
 
@@ -20,7 +27,7 @@ Pour obtenir la liste des balises de protocole HLS prises en charge, voir [Prise
 > [!NOTE] 
 > Le code de cet article a été adapté à partir de l’[exemple de streaming adaptatif](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/AdaptiveStreaming) UWP.
 
-## Streaming adaptatif avec MediaPlayer et MediaPlayerElement
+## <a name="simple-adaptive-streaming-with-mediaplayer-and-mediaplayerelement"></a>Streaming adaptatif avec MediaPlayer et MediaPlayerElement
 
 Pour lire du contenu multimédia en streaming adaptatif dans une application UWP, créez un objet **URI** pointant sur un fichier manifeste HLS ou DASH. Créez une instance de la classe [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer). Appelez [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912) pour créer un objet **MediaSource**, puis définissez-le sur la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) de **MediaPlayer**. Appelez [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play) pour démarrer la lecture du contenu multimédia.
 
@@ -37,9 +44,9 @@ Appelez [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windo
 [!code-cs[ManifestSource](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetManifestSource)]
 
 > [!NOTE] 
-> À compter de Windows10, version1607, nous vous recommandons d’utiliser la classe **MediaPlayer** pour lire des éléments multimédias. **MediaPlayerElement** est un contrôle XAML léger utilisé pour afficher le contenu d’un **MediaPlayer** dans une page XAML. Le contrôle **MediaElement** continue d’être pris en charge pour la compatibilité descendante. Pour plus d’informations sur l’utilisation de **MediaPlayer** et **MediaPlayerElement** pour lire du contenu multimédia, voir [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md). Pour plus d’informations sur l’utilisation de **MediaSource** et des API associées pour utiliser du contenu multimédia, voir [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md).
+> À compter de Windows 10, version 1607, nous vous recommandons d’utiliser la classe **MediaPlayer** pour lire des éléments multimédias. **MediaPlayerElement** est un contrôle XAML léger utilisé pour afficher le contenu d’un **MediaPlayer** dans une page XAML. Le contrôle **MediaElement** continue d’être pris en charge pour la compatibilité descendante. Pour plus d’informations sur l’utilisation de **MediaPlayer** et **MediaPlayerElement** pour lire du contenu multimédia, voir [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md). Pour plus d’informations sur l’utilisation de **MediaSource** et des API associées pour utiliser du contenu multimédia, voir [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md).
 
-## Streaming adaptatif avec AdaptiveMediaSource
+## <a name="adaptive-streaming-with-adaptivemediasource"></a>Streaming adaptatif avec AdaptiveMediaSource
 
 Si votre application requiert des fonctionnalités de streaming adaptatif plus avancées, telles que la fourniture d’en-têtes HTTP personnalisés, la surveillance des débits de téléchargement et de lecture en cours ou l’ajustement des ratios qui déterminent le moment où le système change les débits du flux adaptatif, utilisez l’objet [**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912).
 
@@ -67,7 +74,7 @@ L’objet **AdaptiveMediaSource** fournit des événements qui vous permettent d
 
 [!code-cs[AMSBitrateEvents](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSBitrateEvents)]
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 * [Lecture de contenu multimédia](media-playback.md)
 * [Prise en charge des balises HLS](hls-tag-support.md) 
 * [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md)
@@ -76,10 +83,5 @@ L’objet **AdaptiveMediaSource** fournit des événements qui vous permettent d
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

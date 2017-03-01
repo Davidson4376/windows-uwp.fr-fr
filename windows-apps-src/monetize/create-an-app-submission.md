@@ -3,13 +3,20 @@ author: mcleanbyron
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
 description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour créer une soumission pour une app. inscrite dans votre compte du Centre de dév. Windows."
 title: "Créer une soumission d’app. avec l’API de soumission du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, créer une soumission d&quot;application"
 translationtype: Human Translation
-ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
-ms.openlocfilehash: dc5fcdd7a3181e07874b761c7183c6c539591704
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: ecc701016ff37e7cc7de0723793efdfe89118c48
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Créer une soumission d’app. avec l’API de soumission du Windows Store
+# <a name="create-an-app-submission-using-the-windows-store-submission-api"></a>Créer une soumission d’app. avec l’API de soumission du Windows Store
 
 
 
@@ -19,7 +26,7 @@ Utilisez cette méthode dans l’API de soumission du Windows Store pour créer 
 Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le processus de création d’une soumission d’application à l’aide de l’API de soumission du Windows Store, voir [Gérer les soumissions d’applications](manage-app-submissions.md).
 
 
-## Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
@@ -27,9 +34,9 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Vérifiez que l’application a déjà fait l’objet d’au moins une soumission avec les informations de [classification par âge](https://msdn.microsoft.com/windows/uwp/publish/age-ratings) spécifiées.
 
->**Remarque**  Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+>**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
-## Requête
+## <a name="request"></a>Requête
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
@@ -40,7 +47,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 <span/>
  
 
-### En-tête de requête
+### <a name="request-header"></a>En-tête de requête
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -48,7 +55,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Paramètres de la requête
+### <a name="request-parameters"></a>Paramètres de la requête
 
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -56,11 +63,11 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Corps de la requête
+### <a name="request-body"></a>Corps de la requête
 
 Ne fournissez pas de corps de requête pour cette méthode.
 
-### Exemple de requête
+### <a name="request-example"></a>Exemple de requête
 
 L’exemple suivant montre comment créer une soumission pour une application.
 
@@ -69,7 +76,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/su
 Authorization: Bearer <your access token>
 ```
 
-## Réponse
+## <a name="response"></a>Réponse
 
 L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à cette méthode. Le corps de la réponse contient des informations sur la nouvelle soumission. Pour plus d’informations sur les valeurs figurant dans le corps de la réponse, voir [Ressource de soumission d’application](manage-app-submissions.md#app-submission-object).
 
@@ -81,7 +88,8 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
     "trialPeriod": "FifteenDays",
     "marketSpecificPricings": {},
     "sales": [],
-    "priceId": "Tier2"
+    "priceId": "Tier2",
+    "isAdvancedPricingModel": "true"
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -173,7 +181,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 }
 ```
 
-## Codes d’erreur
+## <a name="error-codes"></a>Codes d’erreur
 
 Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
@@ -185,7 +193,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 <span/>
 
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Obtenir une soumission d’application](get-an-app-submission.md)
@@ -193,9 +201,4 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Mettre à jour une soumission d’application](update-an-app-submission.md)
 * [Supprimer une soumission d’application](delete-an-app-submission.md)
 * [Obtenir l’état d’une soumission d’application](get-status-for-an-app-submission.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

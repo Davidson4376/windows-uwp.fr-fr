@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "Exécuter une tâche en arrière-plan en fonction d’un minuteur"
 description: "Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une tâche en arrière-plan périodique."
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 488bbbf1dbe99d653dded0af78a8fd22c7429cde
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3708a9b7768d4fb7fbb6af0e55836471a2ba29ed
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="run-a-background-task-on-a-timer"></a>Exécuter une tâche en arrière-plan en fonction d’un minuteur
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -120,9 +127,4 @@ Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une
 * [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

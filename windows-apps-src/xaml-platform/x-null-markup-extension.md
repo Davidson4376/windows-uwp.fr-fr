@@ -3,25 +3,32 @@ author: jwmsft
 description: "En XAML, un balisage spécifie une valeur null pour une propriété."
 title: Extension de balisage xNull
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c81acb985c54a8dc799df5ad9c811577777dbf9b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7be1caeca3427f75263019dbdba92c8695b6dde3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Extension de balisage {x:Null}
+# <a name="xnull-markup-extension"></a>Extension de balisage {x:Null}
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 En XAML, un balisage spécifie une valeur **null** pour une propriété.
 
-## Utilisation des attributs XAML
+## <a name="xaml-attribute-usage"></a>Utilisation des attributs XAML
 
 ``` syntax
 <object property="{x:Null}" .../>
 ```
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 **null** est le mot clé de référence Null pour C# et C++. Le mot clé Microsoft Visual Basic pour une référence Null est **Nothing**.
 
@@ -29,15 +36,10 @@ La valeur par défaut initiale peut varier selon les propriétés de dépendance
 
 Certains types Windows Runtime ont la valeur Nullable. Quand un type Nullable n’a pas déjà la valeur **null** comme valeur par défaut, vous pouvez utiliser **{x:Null}** pour définir la valeur **null** en XAML. Si vous utilisez des extensions de composant Visual C++ (C++/CX), les types Nullable sont représentés par [**Platform::IBox<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/jj606120.aspx). Si vous utilisez des langages Microsoft .NET, les types Nullable sont représentés par [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx).
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)
 * [**IReference<T>**](https://msdn.microsoft.com/library/windows/apps/br225864)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

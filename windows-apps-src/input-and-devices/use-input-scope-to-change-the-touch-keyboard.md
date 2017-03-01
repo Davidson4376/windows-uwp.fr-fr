@@ -14,8 +14,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
-ms.openlocfilehash: caaa6228f2d5b2bb6566ccb285d90a396a1caf01
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 43cbc8999d21d0534c4b6e557822345a69f66007
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -262,9 +263,4 @@ Inclut la touche **=**.
 |------------------------------------------------------------|------------------------------------------------------------------|
 | ![Clavier tactile Windows par défaut](images/input-scopes/kbdpcdefault.png)<br>Même disposition que **Default**.| ![Clavier tactile Windows Phone pour les noms ou les numéros de téléphone](images/input-scopes/kbdwpnameorphonenumber.png)<br>Inclut les touches **;** et **@**. La touche **&amp;123** est remplacée par la touche **123**, qui permet d’ouvrir le clavier du téléphone (voir **TelephoneNumber**).|
 |Disponibilité des fonctionnalités :<ul><li>Vérification orthographique : activée par défaut ; peut être désactivée</li><li>Correction automatique : toujours désactivée</li><li>Mise en majuscules automatique : toujours activée</li><li>Prédiction de texte : toujours désactivée</li></ul> | Disponibilité des fonctionnalités :<ul><li>Vérification orthographique : désactivée par défaut ; peut être activée</li><li>Correction automatique : désactivée par défaut ; peut être activée</li><li>Mise en majuscules automatique : désactivée par défaut ; peut être activée La première lettre de chaque mot est en majuscule.</li><li>Prédiction de texte : désactivée par défaut ; peut être activée</li></ul> |
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

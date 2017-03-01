@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
 title: Utiliser la boussole
 description: "Découvrez comment utiliser la boussole pour déterminer l’orientation actuelle."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 05c13ff71e1c6dcfb84d46e37445c1699211951a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 07c6447a2f28c087c18e37e0036b43e7d7b312e5
+ms.lasthandoff: 02/07/2017
 
 ---
-# Utiliser la boussole
+# <a name="use-the-compass"></a>Utiliser la boussole
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
-** API importantes **
+**API importantes**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705)
@@ -23,17 +30,17 @@ Découvrez comment utiliser la boussole pour déterminer l’orientation actuell
 
 Une application peut récupérer l’orientation actuelle par rapport au nord magnétique ou géographique. Les applications de navigation utilisent la boussole pour déterminer la direction à laquelle un appareil fait face, puis pour orienter la carte de façon appropriée.
 
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge une boussole.
 
-## Créer une application de boussole simple
+## <a name="create-a-simple-compass-app"></a>Créer une application de boussole simple
 
-Cette section se divise en deuxsous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple de boussole. La sous-section suivante décrit l’application que vous venez de créer.
+Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple de boussole. La sous-section suivante décrit l’application que vous venez de créer.
 
-### Instructions
+### <a name="instructions"></a>Instructions
 
 -   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
 
@@ -66,8 +73,8 @@ Cette section se divise en deuxsous-sections. La première sous-section vous per
         public sealed partial class MainPage : Page
         {
             private Compass _compass; // Our app' s compass object
-     
-            // This event handler writes the current compass reading to 
+
+            // This event handler writes the current compass reading to
             // the textblocks on the app' s main page.
 
             private async void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
@@ -134,7 +141,7 @@ Une fois l’application en cours d’exécution, vous pouvez modifier les valeu
 
 -   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
-### Explication
+### <a name="explanation"></a>Explication
 
 L’exemple précédent démontre la faible quantité de code que vous devrez écrire afin d’intégrer l’entrée de la boussole dans votre application.
 
@@ -144,7 +151,7 @@ L’application établit une connexion avec la boussole par défaut dans la mét
 _compass = Compass.GetDefault(); // Get the default compass object
 ```
 
-L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16millisecondes (ce qui représente une fréquence de rafraîchissement de 60Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
+L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16 millisecondes (ce qui représente une fréquence de rafraîchissement de 60 Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
 
 ```csharp
 uint minReportInterval = _compass.MinimumReportInterval;
@@ -155,7 +162,7 @@ _compass.ReportInterval = reportInterval;
 Les nouvelles données de la boussole sont capturées dans la méthode **ReadingChanged**. Chaque fois que le pilote du capteur reçoit de nouvelles données du capteur, il transmet les valeurs à votre application à l’aide de ce gestionnaire d’événements. L’application inscrit ce gestionnaire d’événements sur la ligne suivante.
 
 ```csharp
-_compass.ReadingChanged += new TypedEventHandler<Compass, 
+_compass.ReadingChanged += new TypedEventHandler<Compass,
 CompassReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -164,23 +171,14 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
 ```xml
  <TextBlock HorizontalAlignment="Left" Height="22" Margin="8,18,0,0" TextWrapping="Wrap" Text="Magnetic Heading:" VerticalAlignment="Top" Width="104" Foreground="#FFFBF9F9"/>
  <TextBlock HorizontalAlignment="Left" Height="18" Margin="8,58,0,0" TextWrapping="Wrap" Text="True North Heading:" VerticalAlignment="Top" Width="104" Foreground="#FFF3F3F3"/>
- <TextBlock x:Name="txtMagnetic" HorizontalAlignment="Left" Height="22" Margin="130,18,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFFBF6F6"/> 
+ <TextBlock x:Name="txtMagnetic" HorizontalAlignment="Left" Height="22" Margin="130,18,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFFBF6F6"/>
  <TextBlock x:Name="txtNorth" HorizontalAlignment="Left" Height="18" Margin="130,58,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFF5F1F1"/>
 ```
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Exemple de boussole](http://go.microsoft.com/fwlink/p/?linkid=241378)
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

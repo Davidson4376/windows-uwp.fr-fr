@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "Créer et inscrire une tâche en arrière-plan hors processus"
 description: "Créez une classe de tâche en arrière-plan hors processus et inscrivez-la pour permettre son exécution lorsque votre application ne se trouve pas au premier plan."
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: b052e84d284c173b21be1759e2645f4f99589c5e
-ms.openlocfilehash: 868fb7f1285ddd4f3e5120779ccf81a9ba55f8db
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ba9c5c1a59452295a07efd371ccfd632f290c837
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="create-and-register-an-out-of-process-background-task"></a>Créer et inscrire une tâche en arrière-plan hors processus
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -348,9 +355,4 @@ Consultez les rubriques connexes suivantes pour obtenir des informations de réf
 **Informations de référence d’API de tâche en arrière-plan**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

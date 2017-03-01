@@ -1,21 +1,28 @@
 ---
 author: Jwmsft
-Description: "Une zone de mot de passe (PasswordBox) est une zone d’entrée de texte qui masque les caractères saisis, pour des raisons de confidentialité."
+Description: "Une zone de mot de passe (PasswordBox) est une zone de saisie de texte qui masque les caractères saisis, pour des raisons de confidentialité."
 title: "Recommandations en matière de zones de mot de passe"
 ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
 label: Password box
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 1addc6eee8ae4819fa388332998ac8a69e01cdf3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1f4af88235615226954f5a8ca7fd038568d08012
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="password-box"></a>Zone de mot de passe
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Une zone de mot de passe (PasswordBox) est une zone d’entrée de texte qui masque les caractères saisis, pour des raisons de confidentialité. Une zone de mot de passe ressemble à une zone de texte, mais elle affiche des caractères espace réservé à la place du texte qui a été saisi. Vous pouvez configurer le caractère espace réservé.
+Une zone de mot de passe (PasswordBox) est une zone de saisie de texte qui masque les caractères saisis, pour des raisons de confidentialité. Une zone de mot de passe ressemble à une zone de texte, mais elle affiche des caractères espace réservé à la place du texte qui a été saisi. Vous pouvez configurer le caractère espace réservé.
 
 Par défaut, la zone de mot de passe permet à l’utilisateur d’afficher son mot de passe en appuyant sur un bouton d’affichage. Vous pouvez désactiver ce bouton, ou proposer un autre mécanisme pour faire apparaître le mot de passe, par exemple une case à cocher.
 
@@ -186,12 +193,7 @@ Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utilis
 - [Recommandations en matière de vérification orthographique](spell-checking-and-prediction.md)
 - [Ajout de la fonctionnalité de recherche](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [Recommandations en matière de saisie de texte](text-controls.md)
-- [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Classe PasswordBox Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [**Classe PasswordBox Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

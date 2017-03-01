@@ -3,9 +3,16 @@ author: mithom
 title: "Entrées pour les jeux"
 description: "Cette section indique comment utiliser des boîtiers de commande et d’autres périphériques d’entrée pour les jeux de plateforme Windows universelle (UWP)."
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, jeux, entrée"
 translationtype: Human Translation
-ms.sourcegitcommit: 858bf6a0862d6459b2bac22d8ab9431b51332fef
-ms.openlocfilehash: 8d1cfa840e359ad1f6a890ed7e7425d387393e15
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ee6017648974d5283f59708550092f26d88388ce
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -61,9 +68,4 @@ Pour en savoir plus sur la gestion des utilisateurs et de leurs périphériques 
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
 [Windows.Gaming.Input.Custom]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.gaming.input.custom.aspx
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

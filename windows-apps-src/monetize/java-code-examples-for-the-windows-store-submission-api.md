@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
 description: "Servez-vous des exemples de code Java présentés dans cette section pour en apprendre un peu plus sur l’utilisation de l’API de soumission du Windows Store."
 title: "Exemples de code Java pour l’API de soumission du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, exemples de code"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: 7f7de7c7d9fa9131d38da48e13ce449f4440962d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9bf6885129176a75265d073c3f92b9f899bc265d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -66,10 +73,10 @@ L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de
 
 1. Pour commencer, la méthode [récupère les données de l’application indiquée](get-an-app.md).
 2. Ensuite, elle [supprime la soumission en attente de l’application](delete-an-app-submission.md), s’il en existe une.
-3. Après cela, elle [crée une soumission pour l’application](create-an-app-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
-4. Elle modifie certains détails de la nouvelle soumission, puis charge un nouveau package associé à cette dernière dans le stockage d’objets blob Azure.
-5. Ensuite, elle [met à jour](update-an-app-submission.md) et [valide](commit-an-app-submission.md) la nouvelle soumission dans le Centre de développement Windows.
-6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-app-submission.md) jusqu’à ce que sa validation aboutisse.
+3. Cela fait, il [crée une soumission pour l’application](create-an-app-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
+4. Il modifie certains détails de cette soumission, puis charge un nouveau package associé à cette dernière dans le stockage Blob Azure.
+5. Ensuite, il [met à jour](update-an-app-submission.md) et [valide](commit-an-app-submission.md) la nouvelle soumission dans le Centre de développement Windows.
+6. Pour finir, il [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-app-submission.md), jusqu’à ce que sa validation aboutisse.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L97-L183)]
 
@@ -80,10 +87,10 @@ L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de
 
 1. Pour commencer, la méthode [récupère les données de l’extension indiquée](get-an-add-on.md).
 2. Ensuite, elle [supprime la soumission en attente de l’extension](delete-an-add-on-submission.md), s’il en existe une.
-3. Cela fait, elle [crée une soumission pour l’extension](create-an-add-on-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
+3. Cela fait, il [crée une soumission pour l’extension](create-an-add-on-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
 4. Elle charge une archive ZIP contenant des icônes associées à la soumission dans le stockage d’objets blob Azure.
 5. Ensuite, elle [met à jour](update-an-add-on-submission.md) et [valide](commit-an-add-on-submission.md) la nouvelle soumission dans le Centre de développement Windows.
-6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-add-on-submission.md) jusqu’à ce que sa validation aboutisse.
+6. Pour finir, il [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-add-on-submission.md) jusqu’à ce que sa validation aboutisse.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L347-L431)]
 
@@ -94,7 +101,7 @@ L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de
 
 1. Pour commencer, la méthode [récupère les données de la version d’évaluation du package indiquée](get-a-flight.md).
 2. Ensuite, elle [supprime la soumission en attente de la version d’évaluation du package](delete-a-flight-submission.md), s’il en existe une.
-3. Après cela, elle [crée une soumission pour la version d’évaluation du package](create-a-flight-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
+3. Cela fait, il [crée une soumission pour la version d’évaluation du package](create-a-flight-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
 4. Elle charge un nouveau package associé à la soumission dans le stockage d’objets blob Azure.
 5. Ensuite, elle [met à jour](update-a-flight-submission.md) et [valide](commit-a-flight-submission.md) la nouvelle soumission dans le Centre de développement Windows.
 6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-a-flight-submission.md) jusqu’à ce que celle-ci soit validée.
@@ -121,9 +128,4 @@ Le listing du code suivant contient tous les exemples précédents organisés da
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -3,14 +3,21 @@ author: scottmill
 ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
 title: Pinceaux de composition
 description: "Un pinceau peint la zone d’un Visual avec sa sortie. Des pinceaux différents ont différents types de sortie."
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 11989aafb86d280b93eed7c2e3f016b5914b15ab
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9affb4fab1931c7584d86bfb07797345788c28f9
+ms.lasthandoff: 02/07/2017
 
 ---
-# Pinceaux de composition
+# <a name="composition-brushes"></a>Pinceaux de composition
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 Un pinceau peint la zone d’un [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) avec sa sortie. Des pinceaux différents ont différents types de sortie. L’API Composition fournit trois types de pinceau :
 
@@ -27,19 +34,19 @@ Tous les pinceaux héritent de [**CompositionBrush**](https://msdn.microsoft.com
 -   [Utilisation d’un pinceau de surface](./composition-brushes.md#using-surface-brush)
 -   [Configuration de l’étirement et de l’alignement](./composition-brushes.md#configuring-stretch-and-alignment)
 
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 Cette vue d’ensemble suppose que vous êtes familiarisé avec la structure d’une application Composition de base, comme décrit dans [Interface utilisateur de composition](visual-layer.md).
 
-## Notions de base des couleurs
+## <a name="color-basics"></a>Notions de base des couleurs
 
 Avant de peindre avec un [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399), vous devez choisir les couleurs. L’API Composition utilise la structure Windows Runtime, Color, pour représenter une couleur. La structure Color utilise le codage sRVB. Ce codage répartit les couleurs en quatre canaux : alpha, rouge, vert et bleu. Chaque composant est représenté par une valeur de virgule flottante comprise dans une plage standard de 0 à 1. La valeur 0 indique l’absence complète de cette couleur, tandis que la valeur 1 indique que cette couleur est entièrement présente. Pour le composant alpha, 0 représente une couleur totalement transparente, et 1 une couleur totalement opaque.
 
-### Modes alpha
+### <a name="alpha-modes"></a>Modes alpha
 
 Les valeurs de couleur de [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) sont toujours interprétées comme un paramètre alpha direct.
 
-## Utilisation d’un pinceau couleur
+## <a name="using-color-brush"></a>Utilisation d’un pinceau couleur
 
 Pour créer un pinceau couleur, appelez la méthode Compositor.[**CreateColorBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositor.createcolorbrush.aspx), qui retourne un [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399). La couleur par défaut de **CompositionColorBrush** est \#00000000. L’illustration et le code suivants montrent une petite arborescence d’éléments visuels, et créent un rectangle tracé avec un pinceau de couleur noire et peint à l’aide d’un pinceau de couleur unie, dont la valeur de couleur est 0x9ACD32.
 
@@ -68,7 +75,7 @@ Visual2.Offset = new Vector3(3, 3, 0);
 
 Contrairement aux autres pinceaux, la création d’un [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) est une opération relativement peu coûteuse. Vous pouvez créer des objets **CompositionColorBrush** à chaque fois que vous effectuez un rendu avec peu ou pas d’impact sur les performances.
 
-## Utilisation d’un pinceau de surface
+## <a name="using-surface-brush"></a>Utilisation d’un pinceau de surface
 
 Un [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) peint un élément visuel avec une surface de composition (représentée par un objet [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819)). L’illustration suivante présente un carré visuel peint avec une image bitmap de réglisse affichée sur une **ICompositionSurface** en D2D.
 
@@ -92,7 +99,7 @@ LoadImage(_surfaceBrush, "ms-appx:///Assets/liqorice.png");
 visual.Brush = _surfaceBrush;
 ```
 
-## Configuration de l’étirement et de l’alignement
+## <a name="configuring-stretch-and-alignment"></a>Configuration de l’étirement et de l’alignement
 
 Il arrive que le contenu de la [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) d’un [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) ne remplisse pas complètement les zones de l’élément visuel qui est peint. Le cas échéant, l’API Composition utilise les paramètres de mode [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx), [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) et [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) du pinceau pour déterminer comment remplir l’espace restant.
 
@@ -108,14 +115,10 @@ Il arrive que le contenu de la [**ICompositionSurface**](https://msdn.microsoft.
 
  
 
- 
+## <a name="related-topics"></a>Rubriques connexes
+[Interopération DirectX et Direct2D de composition en mode natif avec BeginDraw et EndDraw](composition-native-interop.md)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

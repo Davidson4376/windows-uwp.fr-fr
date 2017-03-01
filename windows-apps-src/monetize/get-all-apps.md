@@ -1,31 +1,38 @@
 ---
 author: mcleanbyron
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
-description: "Utilisez cette méthode de l’API de soumission du Windows Store pour récupérer des informations sur toutes les applications inscrites dans votre compte du Centre de développement Windows."
-title: "Obtenir toutes les applications à l’aide de l’API de soumission du Windows Store"
+description: "Utilisez cette méthode de l’API de soumission du Windows Store pour récupérer des informations sur toutes les applications inscrites dans votre compte du Centre de développement Windows."
+title: "Obtenir toutes les applications à l’aide de l’API de soumission du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, applications"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 6180cc4ef94df3e28af4843685e16f2d1fdfa7ac
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 12466a50c6cabe5ceca907cdd2f0d600ec95121f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Obtenir toutes les applications à l’aide de l’API de soumission du Windows Store
+# <a name="get-all-apps-using-the-windows-store-submission-api"></a>Obtenir toutes les applications à l’aide de l’API de soumission du Windows Store
 
 
 
 
-Utilisez cette méthode de l’API de soumission du Windows Store pour récupérer des données pour toutes les applications inscrites dans votre compte du Centre de développement Windows.
+Utilisez cette méthode de l’API de soumission du Windows Store afin de récupérer des données pour toutes les applications inscrites dans votre compte du Centre de développement Windows.
 
-## Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
->**Remarque**  Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+>**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
-## Requête
+## <a name="request"></a>Requête
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
@@ -36,7 +43,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 <span/>
  
 
-### En-tête de requête
+### <a name="request-header"></a>En-tête de requête
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -44,7 +51,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Paramètres de la requête
+### <a name="request-parameters"></a>Paramètres de la requête
 
 Tous les paramètres de la requête sont facultatifs pour cette méthode. Si vous appelez cette méthode sans paramètre, la réponse contient les données pour toutes les applications inscrites dans votre compte.
  
@@ -55,11 +62,11 @@ Tous les paramètres de la requête sont facultatifs pour cette méthode. Si vou
 
 <span/>
 
-### Corps de la requête
+### <a name="request-body"></a>Corps de la requête
 
 Ne fournissez pas de corps de requête pour cette méthode.
 
-### Exemples de requête
+### <a name="request-examples"></a>Exemples de requête
 
 L’exemple suivant montre comment récupérer des informations sur toutes les applications inscrites dans votre compte.
 
@@ -75,7 +82,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/applications?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## Réponse
+## <a name="response"></a>Réponse
 
 L’exemple suivant montre le corps de réponse JSON renvoyé par une requête réussie sur les 10 premières applications inscrites dans un compte de développeur qui en possède 21 au total. Pour des raisons de concision, cet exemple affiche uniquement les données des deux premières applications retournées par la requête. Pour plus d’informations sur les valeurs figurant dans le corps de réponse, voir la section suivante.
 
@@ -113,7 +120,7 @@ L’exemple suivant montre le corps de réponse JSON renvoyé par une requête r
 }
 ```
 
-### Corps de la réponse
+### <a name="response-body"></a>Corps de la réponse
 
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -123,7 +130,7 @@ L’exemple suivant montre le corps de réponse JSON renvoyé par une requête r
 
 <span/>
 
-## Codes d’erreur
+## <a name="error-codes"></a>Codes d’erreur
 
 Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
@@ -134,15 +141,10 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 
 <span/>
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Obtenir une application](get-an-app.md)
 * [Obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md)
 * [Obtenir des extensions pour une application](get-add-ons-for-an-app.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

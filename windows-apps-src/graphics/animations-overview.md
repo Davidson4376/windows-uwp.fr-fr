@@ -3,19 +3,26 @@ author: Jwmsft
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: "Vue d’ensemble des animations"
 description: "Utilisez les animations de la bibliothèque d’animations du Windows Runtime pour intégrer l’apparence de Windows dans votre application."
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 2a08d1def7c4d2fde0ae08eb26076526058e8aae
-ms.openlocfilehash: e3e21c55ea8ddeab0969e304080394b940da010d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8f7e56f1bca5ecea6078dd70840d083eab6e30dd
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="animations-overview"></a>Vue d’ensemble des animations
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 
 Dans Windows Runtime, les animations peuvent améliorer votre application en la rendant plus vivante et interactive. À l’aide des animations de la bibliothèque d’animations du Windows Runtime, vous pouvez intégrer l’apparence de Windows dans votre application. Cette rubrique présente les animations et des exemples de situations classiques où chacune d’elles est utilisée.
 
-**Conseil** Les contrôles Windows Runtime pour XAML incluent certains types d’animations en tant que comportements intégrés qui proviennent d’une bibliothèque d’animations. En utilisant ces contrôles dans votre application, vous pouvez obtenir l’apparence des animations sans aucune programmation préalable.
+**Conseil**  Les contrôles Windows Runtime pour XAML incluent certains types d’animations en tant que comportements intégrés qui proviennent d’une bibliothèque d’animations. En utilisant ces contrôles dans votre application, vous pouvez obtenir l’apparence des animations sans aucune programmation préalable.
 
 Les animations de la bibliothèque d’animations Windows Runtime offrent les avantages suivants :
 
@@ -341,7 +348,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 Contrairement aux animations de transition, une animation de thème n’a pas de déclencheur intégré (la transition) qui l’exécute automatiquement. Vous devez utiliser un objet [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) pour contenir une animation thématique quand vous la définissez en XAML. Vous pouvez aussi changer le comportement par défaut de l’animation. Par exemple, il vous est possible de ralentir la disparition progressive en augmentant la valeur de temps [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) de l’objet [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302).
 
-**Remarque** Pour illustrer les techniques d’animation de base, nous utilisons du code d’application pour lancer l’animation en appelant des méthodes de [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490). Vous pouvez contrôler la façon dont les animations d’objet **Storyboard** s’exécutent à l’aide des méthodes [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491), [**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop), [**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx), et [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) **Storyboard**. Toutefois, ça n’est pas comme cela qu’on inclut normalement des animations de la bibliothèque dans des applications. En général, on intègre plutôt les animations de la bibliothèque dans les modèles et styles XAML appliqués aux contrôles ou aux éléments. L’apprentissage des modèles et des états visuels est un peu plus compliqué. Vous trouverez cependant une description de l’utilisation des animations de la bibliothèque dans les états visuels dans la rubrique [Animations dans une table de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
+**Remarque**  Pour illustrer les techniques d’animation de base, nous utilisons du code d’application pour lancer l’animation en appelant des méthodes de [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490). Vous pouvez contrôler la façon dont les animations d’objet **Storyboard** s’exécutent à l’aide des méthodes [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491), [**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop), [**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx), et [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) **Storyboard**. Toutefois, ça n’est pas comme cela qu’on inclut normalement des animations de la bibliothèque dans des applications. En général, on intègre plutôt les animations de la bibliothèque dans les modèles et styles XAML appliqués aux contrôles ou aux éléments. L’apprentissage des modèles et des états visuels est un peu plus compliqué. Vous trouverez cependant une description de l’utilisation des animations de la bibliothèque dans les états visuels dans la rubrique [Animations dans une table de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
 
  
 
@@ -380,10 +387,5 @@ Le scénario de définition d’interface utilisateur d’application le plus co
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

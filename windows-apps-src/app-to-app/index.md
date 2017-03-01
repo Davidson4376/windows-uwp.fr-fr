@@ -1,17 +1,24 @@
 ---
 ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
-description: "Cette section explique comment partager des données entre des applications UWP, notamment comment utiliser le contrat de partage, copier et coller, et glisser-déplacer."
+description: "Cette section explique comment partager des données entre des applications de plateforme Windows universelle (UWP), notamment comment utiliser le contrat de partage, copier et coller, et glisser-déplacer."
 title: Communication entre les applications
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: ea67ae5b568d1c51af3bb951fe3a68a8def8a556
-ms.openlocfilehash: 951e2ea29a47e362d9fdee0f597d2e7c808212b6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4e8c90996324e7481a7a4dab5a1ff3f30b139276
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="app-to-app-communication"></a>Communication entre les applications
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette section explique comment partager des données entre des applications de plateforme Windows universelle (UWP), notamment comment utiliser le contrat de partage, copier et coller, et glisser-déplacer.
 
@@ -20,6 +27,8 @@ Le contrat de partage permet aux utilisateurs d’échanger rapidement des donn�
 Une application peut prendre en charge la fonctionnalité de partage de deux manières. En premier lieu, il peut s’agir d’une application source qui fournit le contenu que l’utilisateur veut partager. En second lieu, l’application peut être une application cible que l’utilisateur sélectionne en tant que destination du contenu partagé. Notez qu’une application peut à la fois être une application source ou une application cible. Si vous voulez que votre application partage du contenu en tant qu’application source, vous devez déterminer quels formats de données votre application peut fournir.
 
 Outre le contrat de partage, les applications peuvent également intégrer des techniques classiques de transfert de données, comme glisser-déplacer ou copier-coller. Outre la communication entre les applications UWP, ces méthodes prennent également en charge le partage vers et depuis des applications de bureau.
+
+
 
 ## <a name="in-this-section"></a>Dans cette section
 
@@ -32,9 +41,4 @@ Outre le contrat de partage, les applications peuvent également intégrer des t
 
 ## <a name="see-also"></a>Voir également
 - [Développer des applications UWP](https://developer.microsoft.com/windows/develop)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

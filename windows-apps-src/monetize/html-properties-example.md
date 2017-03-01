@@ -3,15 +3,22 @@ author: mcleanbyron
 ms.assetid: 5fa16a27-fdc0-43b2-84cd-8547fd4915de
 description: "Découvrez comment affecter les propriétés **AdControl** au format HTML."
 title: "Exemple de propriétés AdControl HTML"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, annonces publicitaires, publicité, AdControl, HTML, propriétés"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: 741cf19ee0310c84d1a85f4a1e82b353d88d1b9e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a879944dc14ca161c3e52a49ffe4a8cebfa7d69f
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="adcontrol-html-properties-example"></a>Exemple de propriétés AdControl HTML
 
-L’exemple suivant montre comment affecter les propriétés [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) au format HTML. Les propriétés **applicationId** et **adUnitId** sont requises. Les autres propriétés et événements sont facultatifs. Si vous n’indiquez pas les valeurs des propriétés facultatives, le contrôle utilise les valeurs par défaut qui créent une publicité en harmonie avec l’expérience utilisateur de l’application.
+L’exemple suivant indique comment affecter les propriétés [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) au format HTML. Les propriétés **applicationId** et **adUnitId** sont requises. Les autres propriétés et événements sont facultatifs. Si vous n’indiquez pas les valeurs des propriétés facultatives, le contrôle utilise les valeurs par défaut qui créent une publicité en harmonie avec l’expérience utilisateur de l’application.
 
 Les cinq dernières lignes sont un exemple d’inscription des fonctions dans les événements **AdControl**. Vous ne pouvez inscrire que les fonctions que vous avez définies dans votre code JavaScript.
 
@@ -37,9 +44,4 @@ Les valeurs indiquées sont des exemples. Dans votre code, vous allez définir l
 * [Exemples de publicité sur GitHub](http://aka.ms/githubads)
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

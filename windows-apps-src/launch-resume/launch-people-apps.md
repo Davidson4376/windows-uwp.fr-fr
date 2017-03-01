@@ -1,23 +1,30 @@
 ---
 author: TylerMSFT
 title: "Lancer l’application Contacts"
-description: "Cette rubrique décrit le schéma d’URI ms-people. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour des actions spécifiques."
+description: "Cette rubrique décrit le schéma d’URI ms-people. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour effectuer des actions spécifiques."
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 25abea87eaf374a1a8b5432c522d51bd7bbc1c1e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Lancer l’application Contacts
+# <a name="launch-the-people-app"></a>Lancer l’application Contacts
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour des actions spécifiques.
 
-## Référence de schéma d’URI ms-people:
+## <a name="ms-people-uri-scheme-reference"></a>Référence de schéma d’URI ms-people:
 
 
 <table>
@@ -82,7 +89,7 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 
  
 
-## Référence de paramètre ms-people:search:
+## <a name="ms-peoplesearch-parameter-reference"></a>Référence de paramètre ms-people:search:
 
 
 <table>
@@ -111,7 +118,7 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 
  
 
-## Référence de paramètre ms-people:viewcontact:
+## <a name="ms-peopleviewcontact-parameter-reference"></a>Référence de paramètre ms-people:viewcontact:
 
 
 <table>
@@ -163,7 +170,7 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 
  
 
-## Référence de paramètre ms-people:savetocontact:
+## <a name="ms-peoplesavetocontact-parameter-reference"></a>Référence de paramètre ms-people:savetocontact:
 
 
 <table>
@@ -206,9 +213,4 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

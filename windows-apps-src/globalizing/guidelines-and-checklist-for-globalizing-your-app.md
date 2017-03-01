@@ -1,21 +1,28 @@
 ---
 author: DelfCo
-Description: "Suivez ces meilleures pratiques en globalisant vos applications pour un public plus large, et en localisant vos applications pour un marché spécifique."
+Description: "Suivez ces meilleures pratiques lorsque vous globalisez vos applications pour un public plus large et que vous localisez vos applications pour un marché spécifique."
 Search.Refinement.TopicID: 180
-title: Indications de globalisation et de localisation
+title: "Recommandations en matière de globalisation et de localisation"
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 72849c304d2150fd7fe6768181a504f94ef98d5f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a5b3945f67ec1aa52b588b6364dbd04533968d24
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="globalization-and-localization-dos-and-donts"></a>Pratiques conseillées et déconseillées en matière de globalisation et de localisation
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Suivez ces meilleures pratiques en globalisant vos applications pour un public plus large, et en localisant vos applications pour un marché spécifique.
+Suivez ces meilleures pratiques lorsque vous globalisez vos applications pour un public plus large et que vous localisez vos applications pour un marché spécifique.
 
 <div class="important-apis" >
 <b>API importantes</b><br/>
@@ -189,10 +196,5 @@ Préparez votre application pour l’adapter simplement à différents marchés.
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

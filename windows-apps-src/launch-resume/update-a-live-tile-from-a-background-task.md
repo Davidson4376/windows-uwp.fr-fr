@@ -4,17 +4,24 @@ title: "Mettre à jour une vignette dynamique à partir d’une tâche en arriè
 description: "Utilisez une tâche en arrière-plan pour mettre à jour une vignette dynamique de votre application avec du contenu actualisé."
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: d651a5dbf8478de238944cac36ea13429b0f1849
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 76521772e4f93ee143ad698ad798f4b88ebcf3a7
+ms.lasthandoff: 02/07/2017
 
 ---
 
 
-# Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan
+# <a name="update-a-live-tile-from-a-background-task"></a>Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -28,7 +35,7 @@ La vidéo suivante montre comment ajouter des vignettes dynamiques à vos applic
 
 <iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/afb47cc5-edd3-4262-ae45-8f0e3ae664ac/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">La minute du développeur - Mise à jour d’une vignette dynamique à partir d’une tâche en arrière-plan</iframe>
 
-## Créer le projet de tâche en arrière-plan
+## <a name="create-the-background-task-project"></a>Créer le projet de tâche en arrière-plan
 
 
 Pour activer une vignette dynamique pour votre application, ajoutez un nouveau projet de composant Windows Runtime à votre solution. Il s’agit d’un assembly distinct que le système d’exploitation charge et exécute en arrière-plan lorsqu’un utilisateur installe votre application.
@@ -38,7 +45,7 @@ Pour activer une vignette dynamique pour votre application, ajoutez un nouveau p
 3.  Nommez le projet BackgroundTasks, puis cliquez ou appuyez sur **OK**. Microsoft Visual Studio ajoute le nouveau projet à la solution.
 4.  Dans le projet principal, ajoutez une référence au projet BackgroundTasks.
 
-## Implémenter la tâche en arrière-plan
+## <a name="implement-the-background-task"></a>Implémenter la tâche en arrière-plan
 
 
 Implémentez l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) pour créer une classe qui met à jour la vignette dynamique de votre application. Votre tâche en arrière-plan va dans la méthode Run. Dans ce cas, la tâche obtient un flux de syndication pour les blogs MSDN. Pour éviter la fermeture prématurée de la tâche lorsque du code asynchrone est encore en cours d’exécution, obtenez un report.
@@ -141,29 +148,29 @@ namespace BackgroundTasks
 }
 ```
 
-## Configurer le manifeste du package
+## <a name="set-up-the-package-manifest"></a>Configurer le manifeste du package
 
 
 Pour configurer le manifeste du package, ouvrez-le et ajoutez une nouvelle déclaration de tâche en arrière-plan. Affectez au point d’entrée de la tâche le nom de la classe, y compris son espace de noms.
 
 1.  Dans l’Explorateur de solutions, ouvrez Package.appxmanifest.
 2.  Cliquez ou appuyez sur l’onglet **Déclarations**.
-3.  Sous **Déclarations disponibles**, sélectionnez **BackgroundTasks**, puis cliquez sur **Ajouter**. VisualStudio ajoute **BackgroundTasks** sous **Déclarations prises en charge**.
+3.  Sous **Déclarations disponibles**, sélectionnez **BackgroundTasks**, puis cliquez sur **Ajouter**. Visual Studio ajoute **BackgroundTasks** sous **Déclarations prises en charge**.
 4.  Sous **Types de tâches pris en charge**, vérifiez que la case **Minuterie** est cochée.
 5.  Sous **Paramètres de l’application**, affectez **BackgroundTasks.BlogFeedBackgroundTask** au point d’entrée.
 6.  Cliquez ou appuyez sur l’onglet **Interface utilisateur de l’application**.
 7.  Affectez à **Notifications de verrouillage de l’écran** la valeur **Badge et texte de mosaïque**.
-8.  Définissez un chemin d’accès à une icône de 24x24pixels dans le champ **Logo du badge**.
-    **Important** Cette icône doit uniquement utiliser des pixels monochromes et transparents.
-9.  Dans le champ **Petit logo**, définissez un chemin d’accès à une icône de 30x30pixels.
-10. Dans le champ **Logo large**, définissez un chemin d’accès vers une icône de 310x150pixels.
+8.  Définissez un chemin d’accès à une icône de 24x24 pixels dans le champ **Logo du badge**.
+    **Important**  Cette icône doit uniquement utiliser des pixels monochromes et transparents.
+9.  Dans le champ **Petit logo**, définissez un chemin d’accès à une icône de 30x30 pixels.
+10. Dans le champ **Logo large**, définissez un chemin d’accès vers une icône de 310x150 pixels.
 
-## Inscrire la tâche en arrière-plan
+## <a name="register-the-background-task"></a>Inscrire la tâche en arrière-plan
 
 
 Créez un élément [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) pour inscrire votre tâche.
 
-> **Remarque** Depuis Windows8.1, les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Votre application doit être en mesure de gérer les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. Par exemple utilisez une instruction conditionnelle pour rechercher les erreurs d’inscription, puis retentez l’inscription qui a échoué avec d’autres valeurs de paramètre.
+> **Remarque**  Depuis Windows 8.1, les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Votre application doit être en mesure de gérer les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. Par exemple utilisez une instruction conditionnelle pour rechercher les erreurs d’inscription, puis retentez l’inscription qui a échoué avec d’autres valeurs de paramètre.
  
 
 Dans la page principale de votre application, ajoutez la méthode **RegisterBackgroundTask** et appelez-la dans le gestionnaire d’événements **OnNavigatedTo**.
@@ -240,22 +247,22 @@ namespace ContosoApp
 }
 ```
 
-## Déboguer la tâche en arrière-plan
+## <a name="debug-the-background-task"></a>Déboguer la tâche en arrière-plan
 
 
 Pour déboguer la tâche en arrière-plan, définissez un point d’arrêt dans la méthode Run de la tâche. Dans la barre d’outils **Emplacement de débogage**, sélectionnez votre tâche en arrière-plan. Le système appelle immédiatement la méthode Run.
 
 1.  Définissez un point d’arrêt dans la méthode Run de la tâche.
 2.  Appuyez sur F5 ou sur **Déboguer &gt; Démarrer le débogage** pour déployer et exécuter l’application.
-3.  Une fois l’application lancée, revenez à VisualStudio.
+3.  Une fois l’application lancée, revenez à Visual Studio.
 4.  Vérifiez que la barre d’outils **Emplacement de débogage** est visible. Elle se trouve dans le menu **Affichage &gt; Barres d’outils**.
 5.  Dans la barre d’outils **Emplacement de débogage**, cliquez sur la liste déroulante **Interrompre** et sélectionnez **BlogFeedBackgroundTask**.
-6.  VisualStudio interrompt l’exécution au niveau du point d’arrêt.
+6.  Visual Studio interrompt l’exécution au niveau du point d’arrêt.
 7.  Appuyez sur F5 ou sur **Déboguer &gt; Continuer** pour continuer à exécuter l’application.
 8.  Appuyez sur Maj+F5 ou sur **Déboguer &gt; Arrêter le débogage** pour arrêter le débogage.
 9.  Revenez à la vignette de l’application sur l’écran d’accueil. Après quelques secondes, les notifications par vignette apparaissent sur la vignette de votre application.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 
 * [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
@@ -267,9 +274,4 @@ Pour déboguer la tâche en arrière-plan, définissez un point d’arrêt dans 
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

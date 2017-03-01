@@ -1,23 +1,30 @@
 ---
 author: msatranjr
 title: "Distribution d’un composant Windows Runtime managé"
-description: Vous pouvez distribuer votre composant Windows Runtime par copie des fichiers.
+description: "Vous pouvez distribuer votre composant Windows Runtime par copie de fichiers."
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 3a82ee44b748c2c8748ed063cbc67e02200a4e31
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9ce20fbfc1289eb02faf8868415feda054d6f691
+ms.lasthandoff: 02/07/2017
 
 ---
 
 
-# Distribution d’un composant Windows Runtime managé
+# <a name="distributing-a-managed-windows-runtime-component"></a>Distribution d’un composant Windows Runtime managé
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Vous pouvez distribuer votre composant Windows Runtime par copie des fichiers. Toutefois, si votre composant comporte de nombreux fichiers, l’installation peut être fastidieuse pour vos utilisateurs. En outre, des erreurs de placement des fichiers ou l’impossibilité de définir les références peuvent leur occasionner des problèmes. Vous pouvez empaqueter un composant complexe sous la forme d’un kit de développement logiciel (SDK) d’extension Visual Studio pour en faciliter l’installation et l’utilisation. Les utilisateurs doivent uniquement définir une référence pour le package entier. Ils peuvent facilement localiser et installer votre composant à l’aide de la boîte de dialogue **Extensions et mises à jour**, comme indiqué dans l’article [Recherche et utilisation des extensions Visual Studio](https://msdn.microsoft.com/library/vstudio/dd293638.aspx) de MSDN Library.
 
-## Planification d’un composant Windows Runtime distribuable
+## <a name="planning-a-distributable-windows-runtime-component"></a>Planification d’un composant Windows Runtime distribuable
 
 Choisissez des noms uniques pour les fichiers binaires, tels que vos fichiers .winmd. Nous recommandons le format suivant pour en garantir l’unicité :
 
@@ -37,15 +44,15 @@ Pour décider du mode de distribution de votre composant, tenez compte de sa com
 
 Un SDK d’extension est particulièrement utile si plusieurs des conditions ci-dessus s’appliquent.
 
-> **Remarque** Pour les composants complexes, le système de gestion des packages NuGet offre une alternative open source aux SDK d’extension. Tout comme les SDK d’extension, NuGet permet de créer des packages qui simplifient l’installation des composants complexes. Pour une comparaison des packages NuGet et des SDK d’extension Visual Studio, consultez l’article [Comparaison de l’ajout de références à l’aide de NuGet et à l’aide d’un kit de développement logiciel (SDK) d’extension](https://msdn.microsoft.com/library/jj161096.aspx) de MSDN Library.
+> **Remarque**  Pour les composants complexes, le système de gestion des packages NuGet offre une alternative open source aux SDK d’extension. Tout comme les SDK d’extension, NuGet permet de créer des packages qui simplifient l’installation des composants complexes. Pour une comparaison des packages NuGet et des SDK d’extension Visual Studio, consultez l’article [Comparaison de l’ajout de références à l’aide de NuGet et à l’aide d’un kit de développement logiciel (SDK) d’extension](https://msdn.microsoft.com/library/jj161096.aspx) de MSDN Library.
 
-## Distribution par copie des fichiers
+## <a name="distribution-by-file-copy"></a>Distribution par copie des fichiers
 
 Si votre composant comporte un seul fichier .winmd ou un fichier .winmd et un fichier d’index de ressource (.pri), vous pouvez simplement mettre le fichier .winmd à la disposition des utilisateurs à des fins de copie. Les utilisateurs pourront placer le fichier où ils souhaitent dans un projet, utiliser la boîte de dialogue **Ajouter un élément existant** pour ajouter le fichier .winmd au projet, puis utiliser la boîte de dialogue Gestionnaire de références pour créer une référence. Si vous incluez un fichier .pri ou un fichier .xml, demandez aux utilisateurs de placer ces fichiers avec le fichier .winmd.
 
-> **Remarque** Visual Studio produit toujours un fichier .pri lorsque vous générez votre composant Windows Runtime, même si votre projet ne comprend pas de ressources. Si vous avez une application test pour votre composant, vous pouvez déterminer si le fichier .pri est utilisé en examinant le contenu du package d’application dans le dossier bin\debug\AppX. Si le fichier .pri de votre composant n’apparaît pas à cet emplacement, vous n’avez pas besoin de le distribuer. Vous pouvez également utiliser l’outil [MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx) pour vider le fichier de ressources de votre projet de composant Windows Runtime. Par exemple, dans la fenêtre d’invite de commandes Visual Studio, tapez : makepri dump /if MyComponent.pri /of MyComponent.pri.xml Pour en savoir plus sur les fichiers .pri, consultez l’article [Système de gestion des ressources (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx).
+> **Remarque**  Visual Studio produit toujours un fichier .pri lorsque vous générez votre composant Windows Runtime, même si votre projet ne comprend pas de ressources. Si vous avez une application test pour votre composant, vous pouvez déterminer si le fichier .pri est utilisé en examinant le contenu du package d’application dans le dossier bin\debug\AppX. Si le fichier .pri de votre composant n’apparaît pas à cet emplacement, vous n’avez pas besoin de le distribuer. Vous pouvez également utiliser l’outil [MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx) pour vider le fichier de ressources de votre projet de composant Windows Runtime. Par exemple, dans la fenêtre d’invite de commandes Visual Studio, tapez : makepri dump /if MyComponent.pri /of MyComponent.pri.xml Pour en savoir plus sur les fichiers .pri, consultez l’article [Système de gestion des ressources (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx).
 
-## Distribution par kit de développement logiciel (SDK) d’extension
+## <a name="distribution-by-extension-sdk"></a>Distribution par kit de développement logiciel (SDK) d’extension
 
 Un composant complexe inclut généralement des ressources Windows, mais reportez-vous à la remarque concernant la détection des fichiers .pri vides à la section précédente.
 
@@ -66,16 +73,11 @@ Un composant complexe inclut généralement des ressources Windows, mais reporte
 4.  Créez un fichier de manifeste SDK. Le manifeste spécifie les informations sur le nom et la version, les architectures prises en charge par votre SDK, les versions de .NET Framework et d’autres informations sur le mode d’utilisation de votre SDK par Visual Studio. Vous trouverez plus d’informations et un exemple dans l’article [Création d’un kit de développement logiciel (SDK)](https://msdn.microsoft.com/library/hh768146.aspx).
 5.  Générez et distribuez le kit de développement logiciel de l’extension. Pour des informations plus détaillées, notamment sur la recherche et la signature du package VSIX, consultez l’article Déploiement VSIX de MSDN Library.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Création d’un kit de développement logiciel (SDK)](https://msdn.microsoft.com/library/hh768146.aspx)
 * [Système de gestion des packages NuGet](https://github.com/NuGet/Home)
 * [Système de gestion des ressources (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx)
 * [Recherche et utilisation des extensions Visual Studio](https://msdn.microsoft.com/library/dd293638.aspx)
 * [Options de commande de MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

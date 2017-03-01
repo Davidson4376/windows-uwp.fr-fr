@@ -3,15 +3,22 @@ author: DelfCo
 description: "Les WebSockets fournissent un mécanisme de communication bidirectionnelle sécurisée et rapide entre un client et un serveur sur le web à l’aide du protocole HTTP(S)."
 title: WebSockets
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ff2429e1e9ea56c414978c126497551b1e1864b8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 203face64ddb925601d23274c4e9cf9ab6d7c6f8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# WebSockets
+# <a name="websockets"></a>WebSockets
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 **API importantes**
 
@@ -36,13 +43,13 @@ Dans la plupart des cas, vous devez utiliser une connexion WebSocket sécurisée
 
 Pour chiffrer une connexion WebSocket, utilisez le schéma d’URI wss:, par exemple, `wss://www.contoso.com/mywebservice`.
 
-## Utilisation de MessageWebSocket
+## <a name="using-messagewebsocket"></a>Utilisation de MessageWebSocket
 
 Le [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) permet la lecture de sections d’un message à chaque opération de lecture. Un **MessageWebSocket** est généralement utilisé dans des cas où les messages ne sont pas très volumineux. Les fichiers UTF-8 et binaires sont pris en charge.
 
 Le code de cette section crée un objet [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842), se connecte à un serveur WebSocket et envoie des données à celui-ci. Une fois qu’une connexion a été correctement établie, l’application attend le déclenchement de l’événement [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358), qui indique que des données ont été reçues.
 
-Cet exemple utilise le serveur echo WebSocket.org, service qui renvoie simplement à l’expéditeur l’écho de toute chaîne qui lui est envoyée. Cet exemple utilise une connexion sécurisée pour envoyer et recevoir des messages à l’aide du spécificateur de protocole «wss:».
+Cet exemple utilise le serveur echo WebSocket.org, service qui renvoie simplement à l’expéditeur l’écho de toute chaîne qui lui est envoyée. Cet exemple utilise une connexion sécurisée pour envoyer et recevoir des messages à l’aide du spécificateur de protocole « wss: ».
 
 > [!div class="tabbedCodeSnippets"]
 > ```cpp
@@ -114,7 +121,7 @@ Cet exemple utilise le serveur echo WebSocket.org, service qui renvoie simplemen
 
 Une fois que vous avez initialisé la connexion WebSocket, votre code doit effectuer les activités suivantes pour envoyer et recevoir des données correctement.
 
-### Implémenter un rappel pour l’événement MessageWebSocket.MessageReceived
+### <a name="implement-a-callback-for-the-messagewebsocketmessagereceived-event"></a>Implémenter un rappel pour l’événement MessageWebSocket.MessageReceived
 
 Avant d’établir une connexion et d’envoyer des données avec WebSocket, votre application doit inscrire un rappel d’événement pour recevoir une notification lors de la réception de données. Quand l’événement [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) se produit, le rappel inscrit est appelé et reçoit des données de [**MessageWebSocketMessageReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br226852). Cet exemple est écrit en supposant que les messages envoyés sont au format UTF-8.
 
@@ -145,7 +152,7 @@ L’exemple de fonction suivant reçoit d’un serveur WebSocket connecté une c
 >}
 >```
 
-###  Implémenter un rappel pour l’événement MessageWebSocket.Closed
+###  <a name="implement-a-callback-for-the-messagewebsocketclosed-event"></a>Implémenter un rappel pour l’événement MessageWebSocket.Closed
 
 Avant d’établir une connexion et d’envoyer des données avec un WebSocket, votre application doit inscrire un rappel d’événement pour recevoir une notification lors de la fermeture du WebSocket par le serveur WebSocket. Quand l’événement [**MessageWebSocket.Closed**](https://msdn.microsoft.com/library/windows/apps/hh701364) se produit, le rappel inscrit est appelé pour indiquer que le serveur WebSocket a fermé la connexion.
 
@@ -172,11 +179,11 @@ Avant d’établir une connexion et d’envoyer des données avec un WebSocket, 
 >}
 >```
 
-###  Envoyer un message sur un WebSocket
+###  <a name="send-a-message-on-a-websocket"></a>Envoyer un message sur un WebSocket
 
 Une fois qu’une connexion est établie, le client WebSocket peut envoyer des données au serveur. La méthode [**DataWriter.StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) retourne un paramètre qui correspond à une valeur int non signée. Cela modifie la manière dont nous définissons la tâche d’envoi du message par rapport à la tâche d’établissement de la connexion.
 
-**Remarque** Lorsque vous créez un objet DataWriter à l’aide de l’OutputStream du MessageWebSocket, le DataWriter prend possession de l’OutputStream et libère celui-ci quand le DataWriter est hors de portée. Ainsi, toute tentative ultérieure d’utilisation de l’OutputStream échoue avec une valeur HRESULT de 0x80000013. Pour éviter la libération de l’OutputStream, ce code appelle la méthode DetachStream du DataWriter, qui retourne la propriété du flux à l’objet WebSocket.
+**Remarque**   Lorsque vous créez un objet DataWriter à l’aide de l’OutputStream du MessageWebSocket, le DataWriter prend possession de l’OutputStream et libère celui-ci quand le DataWriter est hors de portée. Ainsi, toute tentative ultérieure d’utilisation de l’OutputStream échoue avec une valeur HRESULT de 0x80000013. Pour éviter la libération de l’OutputStream, ce code appelle la méthode DetachStream du DataWriter, qui retourne la propriété du flux à l’objet WebSocket.
 
 La fonction suivante envoie la chaîne donnée à un WebSocket connecté, et imprime un message de vérification dans la fenêtre Sortie du débogueur.
 
@@ -224,7 +231,7 @@ La fonction suivante envoie la chaîne donnée à un WebSocket connecté, et imp
 >}
 >```
 
-## Utilisation de contrôles avancés avec des WebSockets
+## <a name="using-advanced-controls-with-websockets"></a>Utilisation de contrôles avancés avec des WebSockets
 
 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) et [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) suivent le même modèle pour l’utilisation de contrôles avancés. Aux classes principales ci-dessus correspondent des classes associées permettant d’accéder à des contrôles avancés.
 
@@ -241,7 +248,7 @@ Tant [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226
 -   Pour tous les contrôles avancés sur le [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), l’application doit toujours définir la propriété avant de lancer une opération de connexion. Pour cette raison, il est préférable de définir toutes les propriétés de contrôle immédiatement après la création de l’objet **StreamWebSocket**. N’essayez pas de définir une propriété de contrôle après l’appel de la méthode [**StreamWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226933).
 -   Pour tous les contrôles avancés sur le [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) à l’exception du type de message, vous devez définir la propriété avant de lancer une opération de connexion. Il est recommandé de définir toutes les propriétés de contrôle immédiatement après la création de l’objet **MessageWebSocket**. À l’exception du type de message, n’essayez pas de modifier une propriété de contrôle après l’appel de [**MessageWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226859).
 
-## Classes d’informations WebSocket
+## <a name="websocket-information-classes"></a>Classes d’informations WebSocket
 
 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) et [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) ont une classe correspondante qui fournit des informations supplémentaires sur une instance WebSocket.
 
@@ -251,13 +258,13 @@ Tant [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226
 
 Notez que toutes les propriétés des deux classes d’informations sont en lecture seule, et que vous pouvez récupérer les informations actuelles à tout moment pendant la durée de vie d’un objet socket web.
 
-## Gestion des exceptions réseau
+## <a name="handling-network-exceptions"></a>Gestion des exceptions réseau
 
 Une erreur rencontrée dans une opération [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) ou [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) est renvoyée sous forme de valeur **HRESULT**. La méthode [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) sert à convertir une erreur réseau résultant d’une opération WebSocket en valeur d’énumération [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818). La plupart des valeurs d’énumération **WebErrorStatus** correspondent à une erreur renvoyée par l’opération cliente HTTP native. Votre application peut filtrer des valeurs d’énumération **WebErrorStatus** spécifiques pour modifier son comportement en fonction de la cause de l’exception.
 
 Pour les erreurs de validation de paramètre, une application peut également utiliser la valeur **HRESULT** à partir de l’exception pour obtenir des informations plus détaillées sur l’erreur à l’origine de l’exception. Les valeurs **HRESULT** possibles sont répertoriées dans le fichier d’en-tête *Winerror.h*. Pour la plupart des erreurs de validation de paramètre, la valeur **HRESULT** renvoyée est **E\_INVALIDARG**.
 
-## Définition de délais d’attente sur des opérations de WebSocket
+## <a name="setting-timeouts-on-websocket-operations"></a>Définition de délais d’attente sur des opérations de WebSocket
 
 Les classes MessageWebSocket et StreamWebSocket utilisent un service système interne pour envoyer des demandes de client WebSocket et recevoir des réponses d’un serveur. La valeur de délai d’expiration par défaut utilisée pour une opération de connexion de WebSocket est de 60 secondes. Si le serveur HTTP qui prend en charge les WebSocket est momentanément arrêté ou bloqué par une panne réseau, et si le serveur ne répond pas ou ne peut pas répondre à la demande de connexion de WebSocket, le service système interne patiente pendant les 60 secondes par défaut avant de retourner une erreur qui entraîne la levée d’une exception sur la méthode ConnectAsync du WebSocket. Si la requête de nom pour un nom de serveur HTTP dans l’URI renvoie plusieurs adresses IP, le service système interne essaie jusqu’à 5 adresses IP pour le site, chacune avec un délai d’expiration de 60 secondes par défaut avant d’échouer. Une application effectuant une demande de connexion de WebSocket peut essayer pendant quelques minutes de se connecter à plusieurs adresses IP avant qu’une erreur soit retournée et une exception levée. Ce comportement pourrait faire croire à l’utilisateur que l’application a cessé de fonctionner. Le délai d’expiration par défaut utilisé pour les opérations d’envoi et de réception après l’établissement d’une connexion de WebSocket est de 30 secondes.
 
@@ -341,10 +348,5 @@ L’exemple suivant crée une tâche qui se termine après un délai spécifié,
         });
     }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

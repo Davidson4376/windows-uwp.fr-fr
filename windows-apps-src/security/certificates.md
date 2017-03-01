@@ -3,33 +3,40 @@ title: "Présentation de certificats"
 description: "Cet article traite de l’utilisation de certificats dans les applications de plateforme Windows universelle (UWP)."
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: e46d31e2f90b9336ea19632099741c1957521578
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 84187230ee8e10c5e9a1a75f67065e202c4bff00
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Présentation des certificats
+# <a name="intro-to-certificates"></a>Présentation des certificats
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article traite de l’utilisation de certificats dans les applications de plateforme Windows universelle (UWP). Les certificats numériques sont utilisés dans le chiffrement à clé publique pour lier une clé publique à une personne, un ordinateur ou une organisation. Les identités liées sont le plus souvent utilisées pour authentifier une entité auprès d’une autre. Par exemple, les certificats sont souvent utilisés pour authentifier un serveur Web auprès d’un utilisateur ou vice versa. Vous pouvez créer des demandes de certificat et installer ou importer des certificats émis. Vous pouvez aussi inscrire un certificat dans une hiérarchie de certificats.
 
-### Magasins de certificats partagés
+### <a name="shared-certificate-stores"></a>Magasins de certificats partagés
 
 Les applications UWP utilisent le nouveau modèle d’application « isolationniste » introduit dans Windows 8. Selon ce modèle, une application de s’exécuter dans une construction de système d’exploitation de bas niveau, appelée « conteneur d’application », qui empêche l’application d’accéder à des ressources ou des fichiers extérieurs, sauf autorisation explicite de le faire. Les sections suivantes décrivent les conséquences de ce modèle sur l’infrastructure à clé publique (PKI).
 
-### Stockage de certificats par conteneur d’application
+### <a name="certificate-storage-per-app-container"></a>Stockage de certificats par conteneur d’application
 
 Les certificats qui sont destinés à être utilisés dans un conteneur d’application spécifique sont stockés dans des emplacements de conteneurs par utilisateur et par application. Une application s’exécutant dans un conteneur d’application ne dispose d’un accès en écriture que pour son propre magasin de certificats. Si l’application ajoute des certificats à n’importe quel de ses magasins, ces certificats ne peuvent pas être lus par d’autres applications. Si une application est désinstallée, tout certificat qui lui est spécifique est également supprimé. De même, une application ne dispose d’un accès en lecture que pour les magasins de certificats de l’ordinateur local autres que le magasin MY et REQUEST.
 
-### Cache
+### <a name="cache"></a>Cache
 
 Chaque conteneur d’application a un cache isolé dans lequel il peut stocker les certificats d’émetteur nécessaires pour la validation, les listes de révocation de certificats et les réponses OSCP (Online Certificate Status Protocol).
 
-### Certificats et clés partagés
+### <a name="shared-certificates-and-keys"></a>Certificats et clés partagés
 
 Lorsqu’une carte à puce est insérée dans un lecteur, les certificats et clés contenus sur la carte sont propagés au magasin MY de l’utilisateur où ils peuvent être partagés par toute application de confiance totale que l’utilisateur exécute. Par défaut, toutefois, les conteneurs d’applications n’ont pas accès au magasin MY par utilisateur.
 
@@ -43,7 +50,7 @@ Vous devez spécifier la fonctionnalité sharedUserCertificates dans le manifest
 </Capabilities>
 ```
 
-## Champs Certificat
+## <a name="certificate-fields"></a>Champs Certificat
 
 
 La norme de certificat de clé publique X.509 a été révisée au fil du temps. Chaque version successive de la structure de données a conservé les champs existants dans les versions précédentes et en a ajouté plusieurs, tel qu’illustré ci-dessous.
@@ -52,7 +59,7 @@ La norme de certificat de clé publique X.509 a été révisée au fil du temps.
 
 Certains de ces champs et extensions peuvent être spécifiés directement lorsque vous utilisez la classe [**CertificateRequestProperties**](https://msdn.microsoft.com/library/windows/apps/br212079) pour créer une demande de certificat. La plupart ne peuvent pas. Ces champs peuvent être complétés par l’autorité émettrice ou rester vides. Pour plus d’informations sur les champs, voir les sections suivantes :
 
-### Champs version 1
+### <a name="version-1-fields"></a>Champs version 1
 
 | Champ               | Description                                                                                                                                                                                                                                                                 |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -66,7 +73,7 @@ Certains de ces champs et extensions peuvent être spécifiés directement lorsq
 
  
 
-### Champs version 2
+### <a name="version-2-fields"></a>Champs version 2
 
 Un certificat X.509 version 2 contient les champs de base définis dans la version 1, ainsi que les champs supplémentaires suivants.
 
@@ -76,7 +83,7 @@ Un certificat X.509 version 2 contient les champs de base définis dans la versi
 | Identificateur unique du sujet | Contient une valeur unique pouvant être utilisée pour rendre le nom X.500 du sujet du certificat non ambigu lorsqu’il est réutilisé par différentes entités au fil du temps. |
  
 
-### Extensions version 3
+### <a name="version-3-extensions"></a>Extensions version 3
 
 Un certificat X.509 version 3 contient les champs définis dans les versions 1 et 2 et ajoute des extensions de certificat.
 
@@ -96,10 +103,5 @@ Un certificat X.509 version 3 contient les champs définis dans les versions 1 e
 | Autre nom de l’objet     | Indique une ou plusieurs autres formes de noms pour le sujet de la demande de certificat. Parmi les autres formes, citons : adresses de messagerie, noms DNS, adresses IP et URI.                           |
 | Attributs d’annuaire du sujet | Véhicule des attributs d’identification tels que la nationalité du sujet du certificat. La valeur de l’extension est une séquence de paires OID-valeur.                                                              |
 | Identificateur de clé du sujet       | Fait la distinction entre plusieurs clés publiques détenues par le sujet du certificat. La valeur de l’extension est généralement un hachage SHA-1 de la clé.                                                                   |
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

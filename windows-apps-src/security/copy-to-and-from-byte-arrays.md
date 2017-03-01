@@ -3,16 +3,23 @@ title: "Copier des tableaux d’octets"
 description: "Cet exemple de code indique comment copier des tableaux d’octets dans une application de plateforme Windows universelle (UWP)."
 ms.assetid: C343B08C-1FA1-40FD-8CA5-7FC9B707C5E3
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: f700d3d9c09424ef8fffd73a08e12563acbbc497
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9183ca237709100e16afd9ce2f8387ff464021ce
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Copier des tableaux d’octets
+# <a name="copy-to-and-from-byte-arrays"></a>Copier des tableaux d’octets
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cet exemple de code indique comment copier des tableaux d’octets dans une application de plateforme Windows universelle (UWP).
 
@@ -33,8 +40,3 @@ public void ByteArrayCopy()
     CryptographicBuffer.CopyToByteArray(buffer, out newByteArray);
 }
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

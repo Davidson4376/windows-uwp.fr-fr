@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
 title: "Utiliser le gyromètre"
 description: "Découvrez comment utiliser le gyromètre pour détecter les changements de mouvements de l’utilisateur."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: f53ae8de70ddca0d8293283012bedb8a39ac7ac1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c5e02bcd4912a5db5d691f4172baeff2378433e4
+ms.lasthandoff: 02/07/2017
 
 ---
-# Utiliser le gyromètre
+# <a name="use-the-gyrometer"></a>Utiliser le gyromètre
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
-** API importantes **
+**API importantes**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718)
@@ -23,17 +30,17 @@ Découvrez comment utiliser le gyromètre pour détecter les changements de mouv
 
 Les gyromètres viennent compléter les accéléromètres en tant que contrôleurs de jeu. Tandis que l’accéléromètre peut mesurer le déplacement linéaire, le gyromètre mesure la vitesse angulaire ou déplacement rotatoire.
 
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un gyromètre.
 
-## Créer une application simple de gyromètre
+## <a name="create-a-simple-gyrometer-app"></a>Créer une application simple de gyromètre
 
-Cette section se divise en deuxsous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple de gyromètre. La sous-section suivante décrit l’application que vous venez de créer.
+Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple de gyromètre. La sous-section suivante décrit l’application que vous venez de créer.
 
-###  Instructions
+###  <a name="instructions"></a>Instructions
 
 -   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
 
@@ -66,8 +73,8 @@ Cette section se divise en deuxsous-sections. La première sous-section vous per
         public sealed partial class MainPage : Page
         {
             private Gyrometer _gyrometer; // Our app' s gyrometer object
-     
-            // This event handler writes the current gyrometer reading to 
+
+            // This event handler writes the current gyrometer reading to
             // the three textblocks on the app' s main page.
 
             private async void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
@@ -85,7 +92,7 @@ Cette section se divise en deuxsous-sections. La première sous-section vous per
             {
                 this.InitializeComponent();
                 _gyrometer = Gyrometer.GetDefault(); // Get the default gyrometer sensor object
-                
+
                 if (_gyrometer != null)
                 {
                     // Establish the report interval for all scenarios
@@ -106,7 +113,7 @@ Vous devez remplacer le nom de l’espace de noms dans l’extrait de code préc
 
 -   Ouvrez le fichier MainPage.xaml et remplacez le contenu d’origine par le code XML suivant.
 
-```xml 
+```xml
         <Page
         x:Class="App1.MainPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -136,7 +143,7 @@ Une fois l’application en cours d’exécution, vous pouvez modifier les valeu
 
 -   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
-###  Explication
+###  <a name="explanation"></a>Explication
 
 L’exemple précédent démontre la faible quantité de code que vous devrez écrire afin d’intégrer l’entrée du gyromètre dans votre application.
 
@@ -146,7 +153,7 @@ L’application établit une connexion avec le gyromètre par défaut dans la m�
 _gyrometer = Gyrometer.GetDefault(); // Get the default gyrometer sensor object
 ```
 
-L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16millisecondes (ce qui représente une fréquence de rafraîchissement de 60Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
+L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16 millisecondes (ce qui représente une fréquence de rafraîchissement de 60 Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
 
 ```csharp
 uint minReportInterval = _gyrometer.MinimumReportInterval;
@@ -157,7 +164,7 @@ _gyrometer.ReportInterval = reportInterval;
 Les nouvelles données du gyromètre sont capturées dans la méthode **ReadingChanged**. Chaque fois que le pilote du capteur reçoit de nouvelles données du capteur, il transmet les valeurs à votre application à l’aide de ce gestionnaire d’événements. L’application inscrit ce gestionnaire d’événements sur la ligne suivante.
 
 ```csharp
-_gyrometer.ReadingChanged += new TypedEventHandler<Gyrometer, 
+_gyrometer.ReadingChanged += new TypedEventHandler<Gyrometer,
 GyrometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -172,13 +179,7 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
         <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="21" Margin="54,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Foreground="#FFF8F3F3"/>
 ```
 
- ## Rubriques connexes
+ ## <a name="related-topics"></a>Rubriques connexes
 
 * [Exemple de gyromètre](http://go.microsoft.com/fwlink/p/?linkid=241379)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

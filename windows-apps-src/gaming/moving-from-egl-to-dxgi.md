@@ -1,18 +1,25 @@
 ---
 author: mtoepke
 title: Comparer le code EGL avec DXGI et Direct3D
-description: "L’interface graphique DirectX(DXGI) et certaines APIDirect3D jouent le même rôle qu’EGL. Cette rubrique vous aidera à comprendre le fonctionnement de DXGI et Direct3D 11 sous l’ange d’EGL."
+description: "L’interface graphique DirectX (DXGI) et certaines API Direct3D jouent le même rôle qu’EGL. Cette rubrique vous aidera à comprendre le fonctionnement de DXGI et Direct3D 11 sous l’angle d’EGL."
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp, egl, dxgi, direct3d
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 599196300a393352540abf1154d1508af7b4caa1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7d7e4058eccd39911bd84d3967ef07b93b6ee89d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Comparer le code EGL avec DXGI et Direct3D
+# <a name="compare-egl-code-to-dxgi-and-direct3d"></a>Comparer le code EGL avec DXGI et Direct3D
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -25,14 +32,14 @@ L’interface graphique DirectX (DXGI) et certaines API Direct3D jouent le même
 
 À l’instar d’EGL, DXGI et Direct3D fournissent diverses méthodes qui vous permettent de configurer des ressources graphiques, d’obtenir un contexte de rendu pour le dessin des nuanceurs et d’afficher les résultats dans une fenêtre. Toutefois, DXGI et Direct3D comportent quelques options supplémentaires qui nécessitent une configuration particulière dans le cadre du portage à partir d’EGL.
 
-> **Remarque** Cette rubrique s’appuie sur la spécification ouverte de Khronos Group pour EGL 1.4. Pour plus d’informations, voir le document PDF [Khronos Native Platform Graphics Interface (EGL Version 1.4 - April 6, 2011)](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Les variantes de syntaxe propres à d’autres plateformes et langages de développement ne sont pas traitées dans cette rubrique.
+> **Remarque**   Cette rubrique s’appuie sur la spécification ouverte de Khronos Group pour EGL 1.4. Pour plus d’informations, voir le document PDF [Khronos Native Platform Graphics Interface (EGL Version 1.4 - April 6, 2011)](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Les variantes de syntaxe propres à d’autres plateformes et langages de développement ne sont pas traitées dans cette rubrique.
 
  
 
-## Comparaison avec DXGI et Direct3D
+## <a name="how-does-dxgi-and-direct3d-compare"></a>Comparaison avec DXGI et Direct3D
 
 
-Avec EGL, il est relativement facile de commencer à dessiner dans une surface de fenêtre. C’est l’un des atouts d’EGL par rapport à DXGI et Direct3D. Cela s’explique par le fait qu’OpenGLES2.0 (et donc EGL) est une spécification implémentée par de nombreux fournisseurs de plateforme, alors que DXGI et Direct3D constituent une référence unique à laquelle les pilotes des fournisseurs de matériel doivent se conformer. Microsoft doit donc implémenter un ensemble d’API capables de prendre en charge le plus de fonctionnalités tierces possibles, au lieu de se limiter à un groupe de fonctionnalités d’un fournisseur donné ou encore de combiner des commandes d’installation propres à un fournisseur dans des API plus simples. À l’inverse, Direct3D offre un ensemble unique d’API capables de prendre en charge une très grande variété de plateformes matérielles vidéo et de niveaux de fonctionnalité. En cela, Direct3D se montre plus flexible pour les développeurs sachant parfaitement utiliser la plateforme en question.
+Avec EGL, il est relativement facile de commencer à dessiner dans une surface de fenêtre. C’est l’un des atouts d’EGL par rapport à DXGI et Direct3D. Cela s’explique par le fait qu’OpenGL ES 2.0 (et donc EGL) est une spécification implémentée par de nombreux fournisseurs de plateforme, alors que DXGI et Direct3D constituent une référence unique à laquelle les pilotes des fournisseurs de matériel doivent se conformer. Microsoft doit donc implémenter un ensemble d’API capables de prendre en charge le plus de fonctionnalités tierces possibles, au lieu de se limiter à un groupe de fonctionnalités d’un fournisseur donné ou encore de combiner des commandes d’installation propres à un fournisseur dans des API plus simples. À l’inverse, Direct3D offre un ensemble unique d’API capables de prendre en charge une très grande variété de plateformes matérielles vidéo et de niveaux de fonctionnalité. En cela, Direct3D se montre plus flexible pour les développeurs sachant parfaitement utiliser la plateforme en question.
 
 Comme EGL, DXGI et Direct3D fournissent des API pour les opérations suivantes :
 
@@ -69,11 +76,11 @@ Voici maintenant la procédure générale pour créer un affichage graphique sim
 6.  Après l’exécution du pipeline et le dessin d’une trame dans la mémoire tampon d’arrière-plan, présentez la chaîne à l’écran avec la méthode [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797).
 
 Pour plus d’informations sur ce processus, consultez [Prise en main de DirectX Graphics](https://msdn.microsoft.com/library/windows/desktop/hh309467). La suite du présent article couvre la plupart des étapes que vous aurez généralement à effectuer pour configurer et gérer un pipeline graphique de base.
-> **Remarque** Les applications de bureau Windows se servent de différentes API pour obtenir une chaîne de permutation Direct3D [**(telle que D3D11Device::CreateDeviceAndSwapChain)**](https://msdn.microsoft.com/library/windows/desktop/ff476083) et elles n’utilisent pas l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225).
+> **Remarque**   Les applications de bureau Windows se servent de différentes API pour obtenir une chaîne de permutation Direct3D [**telle que D3D11Device::CreateDeviceAndSwapChain)**](https://msdn.microsoft.com/library/windows/desktop/ff476083) et elles n’utilisent pas l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225).
 
  
 
-## Obtention d’une fenêtre d’affichage
+## <a name="obtaining-a-window-for-display"></a>Obtention d’une fenêtre d’affichage
 
 
 Dans l’exemple ci-dessous, un HWND est transmis à eglGetDisplay pour obtenir une ressource de fenêtre adaptée à la plateforme Microsoft Windows. D’autres plateformes, comme iOS d’Apple (Cocoa) et Android de Google, utilisent des handles ou références différents vers les ressources de fenêtre. La syntaxe d’appel requise peut donc varier. Une fois que vous avez obtenu un affichage, vous devez l’initialiser, définir la configuration par défaut, puis créer une surface avec une mémoire tampon d’arrière-plan destinée au dessin.
@@ -116,7 +123,7 @@ if (surface == EGL_NO_SURFACE)
 
 Dans Direct3D, la fenêtre principale d’une application UWP est représentée par l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225), qui peut être obtenu à partir de l’objet application en appelant [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) dans le cadre du processus d’initialisation du « fournisseur d’affichage » créé pour Direct3D. (Avec l’interopérabilité Direct3D-XAML, vous utilisez le fournisseur d’affichage de l’infrastructure XAML.) Pour plus d’informations sur la création d’un fournisseur d’affichage Direct3D, voir la rubrique [Comment configurer votre application pour présenter un affichage](https://msdn.microsoft.com/library/windows/apps/hh465077).
 
-Obtention d’un objet CoreWindow pour Direct3D:
+Obtention d’un objet CoreWindow pour Direct3D :
 
 ``` syntax
 CoreWindow::GetForCurrentThread();
@@ -124,7 +131,7 @@ CoreWindow::GetForCurrentThread();
 
 Après avoir obtenu la référence [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225), activez la fenêtre afin que celle-ci exécute la méthode **Run** de votre objet principal et commence le traitement de l’événement fenêtre. Ensuite, créez un objet [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) et un objet [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598), et utilisez-les pour obtenir les objets [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/ff471331) et [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) sous-jacents. Ces derniers vous serviront à obtenir l’objet [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) requis pour créer une ressource de chaîne de permutation basée sur la configuration de votre objet [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528).
 
-Configuration et définition de la chaîne de permutation DXGI sur l’objet CoreWindow pour Direct3D:
+Configuration et définition de la chaîne de permutation DXGI sur l’objet CoreWindow pour Direct3D :
 
 ``` syntax
 // Called when the CoreWindow object is created (or re-created).
@@ -175,9 +182,9 @@ void SimpleDirect3DApp::SetWindow(CoreWindow^ window)
 
 Appelez la méthode [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) après avoir préparé la trame à afficher.
 
-Notez que Direct3D11 ne propose pas d’abstraction identique à EGLSurface. ([**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) existe, mais son utilisation diffère.) La représentation conceptuelle la plus proche est l’objet [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582), qui permet de définir une texture ([**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)) en tant que mémoire tampon d’arrière-plan dans laquelle le pipeline de nuanceurs pourra dessiner.
+Notez que Direct3D 11 ne propose pas d’abstraction identique à EGLSurface. ([**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) existe, mais son utilisation diffère.) La représentation conceptuelle la plus proche est l’objet [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582), qui permet de définir une texture ([**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)) en tant que mémoire tampon d’arrière-plan dans laquelle le pipeline de nuanceurs pourra dessiner.
 
-Configuration de la mémoire tampon d’arrière-plan pour la chaîne de permutation dans Direct3D11:
+Configuration de la mémoire tampon d’arrière-plan pour la chaîne de permutation dans Direct3D 11 :
 
 ``` syntax
 ComPtr<ID3D11RenderTargetView>    m_d3dRenderTargetViewWin; // scoped to renderer object
@@ -204,7 +211,7 @@ m_d3dContext->OMSetRenderTargets(
         nullptr);
 ```
 
-## Création d’un contexte de rendu
+## <a name="creating-a-rendering-context"></a>Création d’un contexte de rendu
 
 
 Dans EGL 1.4, un « affichage » représente un ensemble de ressources de fenêtre. En règle générale, vous configurez une « surface » d’affichage en affectant un ensemble d’attributs à l’objet d’affichage et en obtenant une surface en retour. Pour afficher le contenu de la surface, vous devez créer un contexte, puis le lier à la surface et à l’affichage.
@@ -282,7 +289,7 @@ D3D11CreateDevice(
 );
 ```
 
-## Dessin dans une ressource de type texture ou pixmap
+## <a name="drawing-into-a-texture-or-pixmap-resource"></a>Dessin dans une ressource de type texture ou pixmap
 
 
 Pour dessiner dans une texture avec OpenGL ES 2.0, configurez une mémoire tampon de pixels (PBuffer). Après avoir créé et configuré un EGLSurface pour cette mémoire tampon, affectez-lui un contexte de rendu, puis exécutez le pipeline de nuanceurs qui dessinera dans la texture.
@@ -305,7 +312,7 @@ EGLSurface pBuffer = eglCreatePbufferSurface(eglDisplay, pBufConfig, EGL_TEXTURE
 
 Dans Direct3D 11, créez une ressource [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635), puis définissez-la en tant que cible de rendu. Configurez la cible de rendu avec [**D3D11\_RENDER\_TARGET\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476201). Lorsque vous appelez la méthode [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) (ou une opération Draw\* similaire sur le contexte de périphérique) avec cette cible de rendu, les résultats sont présentés sous forme de dessin dans une texture.
 
-Dessin dans une texture avec Direct3D11:
+Dessin dans une texture avec Direct3D 11 :
 
 ``` syntax
 ComPtr<ID3D11Texture2D> renderTarget1;
@@ -329,7 +336,7 @@ m_d3dContext->OMSetRenderTargets(
 
 Cette texture peut être transmise à un nuanceur si elle est associée à un objet [**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628).
 
-## Dessin à l’écran
+## <a name="drawing-to-the-screen"></a>Dessin à l’écran
 
 
 Une fois que vous avez configuré vos mémoires tampons et mis à jour vos données à l’aide de votre objet EGLContext, exécutez les nuanceurs liés à ce dernier, puis dessinez les résultats dans la mémoire tampon d’arrière-plan avec glDrawElements. Appelez eglSwapBuffers pour afficher la mémoire tampon d’arrière-plan.
@@ -344,7 +351,7 @@ eglSwapBuffers(drawContext->eglDisplay, drawContext->eglSurface);
 
 Dans Direct3D 11, vous configurez vos mémoires tampons et liez les nuanceurs à l’aide de la méthode [**IDXGISwapChain::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797). Vous appelez ensuite l’une des méthodes [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407)\* pour exécuter les nuanceurs et dessiner les résultats sur la cible de rendu configurée en tant que mémoire tampon d’arrière-plan pour la chaîne de permutation. Enfin, vous présentez la mémoire tampon d’arrière-plan à l’affichage en appelant la méthode **IDXGISwapChain::Present1**.
 
-Dessin à l’écran avec Direct3D11:
+Dessin à l’écran avec Direct3D 11 :
 
 ``` syntax
 
@@ -358,7 +365,7 @@ m_d3dContext->DrawIndexed(
 m_swapChainCoreWindow->Present1(1, 0, &parameters);
 ```
 
-## Libération des ressources graphiques
+## <a name="releasing-graphics-resources"></a>Libération des ressources graphiques
 
 
 Dans EGL, vous libérez les ressources de fenêtre en transmettant EGLDisplay à eglTerminate.
@@ -371,7 +378,7 @@ EGLBoolean eglTerminate(eglDisplay);
 
 Dans une application UWP, vous pouvez fermer le CoreWindow avec [**CoreWindow::Close**](https://msdn.microsoft.com/library/windows/apps/br208260). Cela n’est possible que pour les fenêtres d’interface utilisateur secondaires. Le thread d’interface utilisateur principal et le CoreWindow associé ne peuvent pas être fermés de la sorte. C’est le système d’exploitation qui les classe comme ayant expiré. En revanche, la fermeture d’un CoreWindow secondaire déclenche l’événement [**CoreWindow::Closed**](https://msdn.microsoft.com/library/windows/apps/br208261).
 
-## Index de mappage des API EGL et Direct3D11
+## <a name="api-reference-mapping-for-egl-to-direct3d-11"></a>Index de mappage des API EGL et Direct3D 11
 
 
 | API EGL                          | API ou comportement Direct3D 11 similaire                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -412,10 +419,5 @@ Dans une application UWP, vous pouvez fermer le CoreWindow avec [**CoreWindow::C
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,15 +1,22 @@
 ---
 author: mcleblanc
 description: Lorsque vous commencez le processus de portage, vous avez le choix entre deux options.
-title: "Portage d’un projet Windows Runtime 8.x vers un projet UWP"
+title: "Portage d’un projet Windows Runtime 8.x vers un projet UWP"
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: bd0526404f7e8f7fb87a0798c4e0c06bd9305c19
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d711d981a674d1516b12ee11c379e679c45dcb60
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="porting-a-windows-runtime-8x-project-to-a-uwp-project"></a>Portage d’un projet Windows Runtime 8.x vers un projet UWP
+# <a name="porting-a-windows-runtime-8x-project-to-a-uwp-project"></a>Portage d’un projet Windows Runtime 8.x vers un projet UWP
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -33,9 +40,9 @@ Vous constaterez qu’une légère refactorisation et/ou l’ajout de code adapt
 -   Les fichiers communs à toutes les familles d’appareils ne requièrent aucune considération particulière. Ces fichiers seront utilisés par l’application sur toutes les familles d’appareils sur lesquelles elle est exécutée. Cela inclut les fichiers de balisage XAML, les fichiers de code source impératif et les fichiers de ressources.
 -   Il est possible de faire en sorte que votre application détecte la famille d’appareils sur laquelle elle est exécutée et navigue vers une vue spécialement conçue pour cette famille d’appareils. Pour plus d’informations, voir [Détection de la plateforme d’exécution de votre application](w8x-to-uwp-input-and-sensors.md).
 -   Une technique similaire qui peut se révéler utile s’il n’existe aucune autre solution consiste à donner à un fichier de balisage ou à un fichier **ResourceDictionary** (ou au dossier contenant le fichier) un nom spécifique, de manière qu’il soit chargé automatiquement à l’exécution uniquement lorsque votre application est exécutée sur une famille d’appareils particulière. Cette technique est illustrée dans l’étude de cas [Bookstore1](w8x-to-uwp-case-study-bookstore1.md).
--   Vous devriez être en mesure de supprimer une grande partie des directives de compilation conditionnelle du code source de votre application 8.1 universelle si vous avez uniquement besoin de prendre en charge Windows 10. Voir [Compilation conditionnelle et code adaptatif](#reviewing-conditional-compilation) dans cette rubrique.
--   Pour utiliser des fonctionnalités qui ne sont pas disponibles sur toutes les familles d’appareils (imprimantes, scanneurs, bouton de l’appareil photo, etc.), vous pouvez écrire du code adaptatif. Voir le troisième exemple de la section [Compilation conditionnelle et code adaptatif](#reviewing-conditional-compilation) dans cette rubrique.
--   Si vous souhaitez prendre en charge Windows 8.1, Windows Phone 8.1 et Windows 10, vous pouvez conserver trois projets dans la même solution et partager le code à l’aide d’un projet partagé. Vous pouvez également partager des fichiers de code source entre des projets. Pour ce faire, procédez comme suit : dans Visual Studio, cliquez avec le bouton droit sur le projet dans l’**Explorateur de solutions**, sélectionnez **Ajouter un élément existant**, sélectionnez les fichiers à partager, puis cliquez sur **Ajouter en tant que lien**. Stockez vos fichiers de code source dans un dossier commun sur le système de fichiers sur lequel les projets liés peuvent les voir. N’oubliez pas de les ajouter dans le contrôle de code source.
+-   Vous devriez être en mesure de supprimer une grande partie des directives de compilation conditionnelle du code source de votre application 8.1 universelle si vous avez uniquement besoin de prendre en charge Windows 10. Voir [Compilation conditionnelle et code adaptatif](#conditional-compilation-and-adaptive-code) dans cette rubrique.
+-   Pour utiliser des fonctionnalités qui ne sont pas disponibles sur toutes les familles d’appareils (imprimantes, scanneurs, bouton de l’appareil photo, etc.), vous pouvez écrire du code adaptatif. Voir le troisième exemple de la section [Compilation conditionnelle et code adaptatif](#conditional-compilation-and-adaptive-code) dans cette rubrique.
+-   Si vous souhaitez prendre en charge Windows 8.1, Windows Phone 8.1 et Windows 10, vous pouvez conserver trois projets dans la même solution et partager le code à l’aide d’un projet partagé. Vous pouvez également partager des fichiers de code source entre des projets. Pour ce faire, procédez comme suit : dans Visual Studio, cliquez avec le bouton droit sur le projet dans l’**Explorateur de solutions**, sélectionnez **Ajouter un élément existant**, sélectionnez les fichiers à partager, puis cliquez sur **Ajouter en tant que lien**. Stockez vos fichiers de code source dans un dossier commun sur le système de fichiers sur lequel les projets liés peuvent les voir. N’oubliez pas de les ajouter dans le contrôle de code source.
 -   Pour effectuer une réutilisation au niveau binaire plutôt qu’au niveau du code source, consultez l’article [Création de composants Windows Runtime en C# et Visual Basic](http://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx). Il existe également des bibliothèques de classes portables, qui prennent en charge le sous-ensemble d’API .NET disponibles dans .NET Framework pour les applications Windows 8.1, Windows Phone 8.1 et Windows 10 (.NET Core), ainsi que .NET Framework dans son ensemble. Les assemblies des bibliothèques de classes portables sont des fichiers binaires compatibles avec toutes ces plateformes. Utilisez Visual Studio pour créer un projet qui cible une bibliothèque de classes portable. Voir [Développement interplateforme avec la bibliothèque de classes portable](http://msdn.microsoft.com/library/gg597391.aspx).
 
 ## <a name="extension-sdks"></a>Kits de développement logiciel (SDK) d’extension
@@ -62,13 +69,13 @@ Le nom et le numéro de version correspondent à ceux des dossiers dans l’empl
 
 À moins que votre application cible la famille d’appareils qui implémente l’API, vous devez utiliser la classe [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) pour vérifier la présence de l’API avant de l’appeler (on parle alors de « code adaptatif »). Cette condition sera ensuite évaluée chaque fois que votre application est exécutée, mais elle renverra la valeur « true » uniquement sur les appareils où l’API est présente et peut donc être appelée. Utilisez uniquement des SDK d’extension et du code adaptatif après avoir vérifié si une API universelle existe. Quelques exemples sont fournis dans la section ci-dessous.
 
-Voir également [Manifeste du package de l’application](#appxpackage).
+Voir également [Manifeste du package de l’application](#app-package-manifest).
 
 ## <a name="conditional-compilation-and-adaptive-code"></a>Compilation conditionnelle et code adaptatif
 
-Si vous utilisez la compilation conditionnelle (avec des directives de préprocesseur C#) afin que vos fichiers de code fonctionnent à la fois sur Windows 8.1 et sur Windows Phone 8.1, vous pouvez à présent revoir cette compilation conditionnelle à la lumière du travail de convergence effectué dans Windows 10. Cette convergence signifie que certaines conditions peuvent être complètement supprimées de votre application Windows 10. D’autres sont remplacées par des vérifications à l’exécution, comme illustré dans les exemples ci-dessous.
+Si vous utilisez la compilation conditionnelle (avec des directives de préprocesseur C#) afin que vos fichiers de code fonctionnent à la fois sur Windows 8.1 et sur Windows Phone 8.1, vous pouvez à présent revoir cette compilation conditionnelle à la lumière du travail de convergence effectué dans Windows 10. Cette convergence signifie que certaines conditions peuvent être complètement supprimées de votre application Windows 10. D’autres sont remplacées par des vérifications à l’exécution, comme illustré dans les exemples ci-dessous.
 
-**Remarque** Si vous le souhaitez, vous pouvez également prendre en charge Windows 8.1, Windows Phone 8.1 et Windows 10 dans un seul fichier de code. Si vous examinez les pages de propriétés de votre projet Windows 10, vous verrez que le projet définit WINDOWS\_UAP en tant que symbole de compilation conditionnelle. Par conséquent, vous pouvez l’utiliser en association avec WINDOWS\_APP et WINDOWS\_PHONE\_APP. Les exemples suivants illustrent le cas de figure plus simple impliquant la suppression de la compilation conditionnelle d’une application 8.1 universelle et le remplacement par le code équivalent pour une application Windows 10.
+**Remarque**   Si vous le souhaitez, vous pouvez également prendre en charge Windows 8.1, Windows Phone 8.1 et Windows 10 dans un seul fichier de code. Si vous examinez les pages de propriétés de votre projet Windows 10, vous verrez que le projet définit WINDOWS\_UAP en tant que symbole de compilation conditionnelle. Par conséquent, vous pouvez l’utiliser en association avec WINDOWS\_APP et WINDOWS\_PHONE\_APP. Les exemples suivants illustrent le cas de figure plus simple impliquant la suppression de la compilation conditionnelle d’une application 8.1 universelle et le remplacement par le code équivalent pour une application Windows 10.
 
 Le premier exemple illustre le modèle d’utilisation pour l’API **PickSingleFileAsync** (qui s’applique uniquement à Windows 8.1) et l’API **PickSingleFileAndContinue** (qui concerne uniquement Windows Phone 8.1).
 
@@ -159,7 +166,7 @@ Voir également [Détection de la plateforme d’exécution de votre application
 
 ## <a name="app-package-manifest"></a>Manifeste du package de l’application
 
-La rubrique [Nouveautés de Windows 10](https://msdn.microsoft.com/library/windows/apps/dn705793) répertorie les modifications apportées à la référence du schéma de manifeste de package pour Windows 10, y compris les éléments qui ont été ajoutés, supprimés et modifiés. Pour consulter des informations de référence sur l’ensemble des éléments, attributs et types du schéma, voir [Hiérarchie d’éléments](https://msdn.microsoft.com/library/windows/apps/dn934819). Si vous portez une application du Windows Phone Store, assurez-vous que l’élément **pm:PhoneIdentity** du manifeste de l’application portée correspond au contenu du manifeste de l’application que vous portez (pour plus de détails, voir la rubrique [**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763)).
+La rubrique [Nouveautés de Windows 10](https://msdn.microsoft.com/library/windows/apps/dn705793) répertorie les modifications apportées à la référence du schéma de manifeste de package pour Windows 10, y compris les éléments qui ont été ajoutés, supprimés et modifiés. Pour consulter des informations de référence sur l’ensemble des éléments, attributs et types du schéma, voir [Hiérarchie d’éléments](https://msdn.microsoft.com/library/windows/apps/dn934819). Si vous portez une application du Windows Phone Store, ou si votre application est une mise à jour vers une application à partir du Windows Phone Store, vérifiez que l'élément **pm:PhoneIdentity** correspond au contenu du manifeste de votre application précédente (utilisez les mêmes GUID que ceux qui ont été affectés à l’application par le Windows Store). Cela permet de garantir que les utilisateurs de votre application qui effectuent la mise à niveau vers Windows 10 reçoivent votre nouvelle application comme une mise à jour, non comme un doublon. Pour plus d'informations, voir la rubrique de référence [**pm:PhoneIdentity****](https://msdn.microsoft.com/library/windows/apps/dn934763).
 
 Les paramètres de votre projet (y compris les références aux SDK d’extension) déterminent la surface d’exposition d’API que votre application peut appeler. Mais le manifeste de votre package d’application est ce qui détermine l’ensemble réel d’appareils sur lesquels vos clients peuvent installer votre application à partir du Windows Store. Pour plus d’informations, voir la section d’exemples de [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903).
 
@@ -173,10 +180,5 @@ Rubrique suivante : [Résolution des problèmes](w8x-to-uwp-troubleshooting.md).
 * [Modèles de projet en C#, VB et C++ pour les applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [Création de composants Windows Runtime](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [Développement interplateforme avec la bibliothèque de classes portable](http://msdn.microsoft.com/library/gg597391.aspx)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

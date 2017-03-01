@@ -1,13 +1,20 @@
 ---
 author: Jwmsft
-Description: "Un contrôle de progression offre un retour à l’utilisateur lorsqu’une longue opération est en cours."
+Description: "Un contrôle de progression indique à l’utilisateur qu’une opération de longue durée est en cours."
 title: "Recommandations en matière de contrôles de progression"
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 5679c2bb8e8b3fff205f8071fcf52a52e0c939cd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6ff820d49ef6fe788a44822d8f966ce54b2730ae
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="progress-controls"></a>Contrôles de progression
@@ -173,9 +180,4 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 **Pour les développeurs (XAML)**
 - [Ajout de contrôles de progression](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
 - [Comment créer une barre de progression indéterminée personnalisée pour Windows Phone](http://go.microsoft.com/fwlink/p/?LinkID=392426)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

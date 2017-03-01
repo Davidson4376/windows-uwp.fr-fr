@@ -3,13 +3,20 @@ author: msatranjr
 title: "Création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript"
 description: "Cette procédure pas à pas montre comment utiliser .NET Framework avec Visual Basic ou C# pour créer vos propres types Windows Runtime, empaquetés dans un composant Windows Runtime, et comment appeler le composant à partir de votre application Windows universelle générée pour Windows à l’aide de JavaScript."
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 56fbc32ee9b75688aa3dec498eb51e8bd533a4ee
-ms.openlocfilehash: 16502dbda2495333d512d9d7a3e0a7f8a8f98562
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6f1bfc96416febdf531dec52c14bcaee13de9f14
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>Procédure pas à pas : création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript
+# <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>Procédure pas à pas : création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript
 
 
 \[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
@@ -735,9 +742,4 @@ Pour exécuter l’application, appuyez sur la touche F5. Pour démarrer l’op�
 * [Vue d’ensemble du .NET pour les applications Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [.NET pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [Procédure pas à pas : création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
-
-
-
-<!--HONumber=Dec16_HO4-->
-
 

@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 4a311d20-ba8c-4816-8091-35726428dc94
 description: "Obtenez des exemples supplémentaires qui montrent comment utiliser les propriétés, méthodes et événements des classes AdControl et InterstitialAd dans les bibliothèques de publicités Microsoft."
 title: Exemples de code
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, annonces, publicité, exemples de code"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: a8f18048915927f9e93d4469e7288e5a06a69070
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ae6e806f8aead387afe55dec2d70c04b7fc21284
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -38,9 +45,4 @@ Pour obtenir des exemples complets de projets qui montrent comment ajouter des b
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

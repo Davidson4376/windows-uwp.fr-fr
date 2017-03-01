@@ -2,23 +2,30 @@
 author: mcleblanc
 ms.assetid: 089660A2-7CAE-4911-9994-F619C5D22287
 title: "Exemples de données sur l’aire de conception et pour la création d’un prototype"
-description: "Il peut être impossible ou non souhaitable (peut-être pour des raisons de confidentialité ou de performances) pour votre application d’afficher des données actives sur la surface de conception dans Microsoft Visual Studio ou Blend pour Visual Studio."
+description: "Il peut être impossible ou non souhaitable (peut-être pour des raisons de confidentialité ou de performances) pour votre application d’afficher des données actives sur l’aire de conception dans Microsoft Visual Studio ou Blend pour Visual Studio."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 53e807c0d9de8faf2d0b5dc0e1c8e9c380e42d86
-ms.openlocfilehash: 6f157688cba014ffc1f8d09c2a291d62c564c8c9
+ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
+ms.openlocfilehash: 35df3de9b56b9539a559e161e80658c23a9d0480
+ms.lasthandoff: 01/19/2017
 
 ---
-Exemples de données sur l’aire de conception et pour la création d’un prototype
+<a name="sample-data-on-the-design-surface-and-for-prototyping"></a>Exemples de données sur l’aire de conception et pour la création d’un prototype
 =============================================================================================
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Remarque** Le degré auquel vous avez besoin d’exemples de données et auquel il vous aidera dépend du fait que vos liaisons utilisent [l’extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) ou [{x:lier}](https://msdn.microsoft.com/library/windows/apps/Mt204783). Les techniques décrites dans cette rubrique sont basées sur l’utilisation d’une [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713), afin qu’elles soient appropriées uniquement pour **{Binding}**. Si vous utilisez **{x:Bind}**, vos liaisons affichent au moins les valeurs d’espace réservé sur la surface de conception (même pour les contrôles d’éléments), si bien que vous n’avez pas tout à fait le même besoin d’exemples de données.
+**Remarque**  La mesure dans laquelle vous avez besoin d’exemples de données et dans laquelle ces exemples vous aideront dépend de si vos liaisons utilisent l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) ou l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783). Les techniques décrites dans cette rubrique sont basées sur l’utilisation d’une [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713), afin qu’elles soient appropriées uniquement pour **{Binding}**. Si vous utilisez **{x:Bind}**, vos liaisons affichent au moins les valeurs d’espace réservé sur la surface de conception (même pour les contrôles d’éléments), si bien que vous n’avez pas tout à fait le même besoin d’exemples de données.
 
 Il peut être impossible ou non souhaitable (peut-être pour des raisons de confidentialité ou de performances) pour votre application d’afficher des données actives sur la surface de conception dans Microsoft Visual Studio ou Blend pour Visual Studio. Pour que vos contrôles soient remplis avec les données (de sorte que vous puissiez travailler sur la disposition de votre application, les modèles et les autres propriétés visuelles), vous pouvez utiliser vos exemples de données au moment de la conception de diverses manières. Les exemples de données peuvent également être vraiment utiles et permettre de gagner du temps si vous créez une application de croquis (ou de prototype). Vous pouvez utiliser des exemples de données dans votre croquis ou prototype au moment de l’exécution pour illustrer vos idées sans avoir à vous connecter aux données actives/réelles.
 
-Configuration de DataContext dans le balisage
+<a name="setting-datacontext-in-markup"></a>Configuration de DataContext dans le balisage
 -----------------------------
 
 Il est assez courant pour un développeur d’utiliser le code impératif (en code-behind) pour définir la propriété [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) d’un contrôle utilisateur ou de page pour afficher une instance de modèle.
@@ -31,7 +38,7 @@ public MainPage()
 }
 ```
 
-En procédant ainsi, votre page n’est plus aussi «configurable» qu’elle pourrait l’être. Cela s’explique par le fait que votre page XAML est ouverte dans Visual Studio ou Blend pour Visual Studio et que le code impératif qui affecte la valeur de **DataContext** n’est jamais exécuté (en fait, aucun code-behind ne l’est). Les outils XAML analysent bien évidemment votre balisage et instancient les objets déclarés dans celui-ci, mais pas réellement le type de page en lui-même. Par conséquent, les données ne s’afficheront pas dans vos contrôles ou dans la boîte de dialogue **Créer une liaison de données** et le façonnage et la disposition de votre page seront plus difficile à réaliser.
+En procédant ainsi, votre page n’est plus aussi « configurable » qu’elle pourrait l’être. Cela s’explique par le fait que votre page XAML est ouverte dans Visual Studio ou Blend pour Visual Studio et que le code impératif qui affecte la valeur de **DataContext** n’est jamais exécuté (en fait, aucun code-behind ne l’est). Les outils XAML analysent bien évidemment votre balisage et instancient les objets déclarés dans celui-ci, mais pas réellement le type de page en lui-même. Par conséquent, les données ne s’afficheront pas dans vos contrôles ou dans la boîte de dialogue **Créer une liaison de données** et le façonnage et la disposition de votre page seront plus difficile à réaliser.
 
 ![Interface utilisateur de conception partiellement allouée.](images/displaying-data-in-the-designer-01.png)
 
@@ -67,7 +74,7 @@ else
 
 Vous pourriez utiliser un localisateur de modèle d’affichage si vous avez besoin de transmettre des paramètres à votre code d’initialisation. Un localisateur de modèle d’affichage est une classe que vous pouvez placer dans les ressources d’application. Il possède une propriété qui expose le modèle d’affichage et la propriété **DataContext** s’associe à cette propriété. Le localisateur ou le modèle d’affichage peut également utiliser l’injection de dépendances, qui peut créer un fournisseur de données au moment de la conception ou de l’exécution (qui implémente une interface commune), le cas échéant.
 
-« Exemple de données à partir de la classe » et attributs au moment de la conception
+<a name="sample-data-from-class-and-design-time-attributes"></a>« Exemple de données à partir de la classe » et attributs au moment de la conception
 ---------------------------------------------------------------------------------------
 
 Si pour une raison quelconque, aucune des options de la section précédente ne fonctionne, vous disposez encore d’un grand nombre d’options de données au moment de la conception disponibles à partir des fonctionnalités et des attributs au moment de la conception des outils XAML. **Créer un exemple de données à partir de la classe** est une fonctionnalité utile de Blend pour Visual Studio. Vous pouvez trouver cette commande sur l’un des boutons situés en haut du panneau **Données**.
@@ -123,7 +130,7 @@ Si vous utilisez un fichier d’exemple de données JSON au lieu d’un fichier 
     d:Source="{d:DesignData /SampleData/RecordingsSampleData.json, Type=local:Recordings}"
 ```
 
-Jusqu’ici, nous avons utilisé **d:DesignData** pour charger les exemples de données au moment de la conception à partir d’un fichier XAML ou JSON. Vous pouvez également utiliser l’extension de balisage **d:DesignInstance**, qui indique que la source au moment de la conception repose sur la classe définie par la propriété **Type**. Voici un exemple:
+Jusqu’ici, nous avons utilisé **d:DesignData** pour charger les exemples de données au moment de la conception à partir d’un fichier XAML ou JSON. Vous pouvez également utiliser l’extension de balisage **d:DesignInstance**, qui indique que la source au moment de la conception repose sur la classe définie par la propriété **Type**. Voici un exemple :
 
 ``` xaml
     <CollectionViewSource x:Name="RecordingsCollection" Source="{Binding Recordings}"
@@ -132,19 +139,14 @@ Jusqu’ici, nous avons utilisé **d:DesignData** pour charger les exemples de d
 
 La propriété **IsDesignTimeCreatable** indique que l’outil de conception doit réellement créer une instance de la classe, qui implique que la classe possède un constructeur public par défaut, et qu’il se remplit lui-même de données (données réelles ou exemple de données). Si vous ne définissez pas **IsDesignTimeCreatable** (ou si vous le définissez sur **False**), les exemples de données ne s’afficheront pas sur la surface de conception. Dans ce cas, l’outil de conception se contente d’analyser les propriétés pouvant être liées de la classe et de les afficher dans le panneau **Données** et la boîte de dialogue **Créer une liaison de données**.
 
-Exemple de données pour créer un prototype
+<a name="sample-data-for-prototyping"></a>Exemple de données pour créer un prototype
 --------------------------------------------------------
 
 Pour créer un prototype, vous voulez des exemples de données au moment de la conception et de l’exécution. Pour ce cas d’utilisation, Blend pour Visual Studio dispose de la fonctionnalité **Nouvel exemple de données**. Vous pouvez trouver cette commande sur l’un des boutons situés en haut du panneau **Données**.
 
-Au lieu de spécifier une classe, vous pouvez concevoir le schéma de votre source d’exemples de données directement dans le panneau **Données**. Vous pouvez également modifier les valeurs des exemples de données dans le panneau **Données**: il est inutile d’ouvrir et de modifier un fichier (bien que vous puissiez procéder ainsi si vous préférez).
+Au lieu de spécifier une classe, vous pouvez concevoir le schéma de votre source d’exemples de données directement dans le panneau **Données**. Vous pouvez également modifier les valeurs des exemples de données dans le panneau **Données** : il est inutile d’ouvrir et de modifier un fichier (bien que vous puissiez procéder ainsi si vous préférez).
 
 La fonctionnalité **Nouvel exemple de données** utilise [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713), et non **d:DataContext**, afin que l’exemple de données soit disponible lors de la conception et l’exécution de votre croquis ou prototype. Le panneau **Données** accélère vraiment vos tâches de conception et de liaison. Par exemple, le simple fait de glisser une propriété de collection à partir du panneau **Données** sur la surface de conception génère un contrôle d’éléments liés aux données et les modèles nécessaires, le tout prêt à être généré et exécuté.
 
 ![Exemple de données pour créer un prototype.](images/displaying-data-in-the-designer-04.png)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

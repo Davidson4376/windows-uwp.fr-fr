@@ -3,15 +3,22 @@ author: mcleanbyron
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: "Découvrez les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications JavaScript/HTML."
 title: "Guide de résolution des problèmes pour HTML et JavaScript"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, annonces publicitaires, publicité, AdControl, résolution des problèmes, HTML, javascript"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: 4bb959174ec158e7852cd447d9cd164ec2cd5bff
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fe06749583dc42ec84dc4acd876ea96c70c916db
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="html-and-javascript-troubleshooting-guide"></a>Guide de résolution des problèmes pour HTML et JavaScript
 
-Cette rubrique contient des solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications JavaScript/HTML.
+Cet article contient des solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications JavaScript/HTML.
 
 * [HTML](#html)
   * [AdControl invisible](#html-notappearing)
@@ -229,7 +236,7 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
 
 1.  Assurez-vous que la fonctionnalité **Internet (client)** est sélectionnée dans le fichier Package.appxmanifest.
 
-2.  Vérifiez que le contrôle **AdControl** est instancié. S’il ne l’est pas, c’est qu’il n’est pas disponible.
+2.  Vérifiez que le contrôle **AdControl** est instancié. Si le contrôle **AdControl** n’est pas instancié, c’est qu’il n’est pas disponible.
 
     Les extraits de code suivants illustrent un exemple d’instanciation du contrôle **AdControl**. Le code HTML suivant montre un exemple de configuration de l’interface utilisateur pour le contrôle **AdControl**
 
@@ -380,9 +387,4 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

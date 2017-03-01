@@ -2,15 +2,23 @@
 author: laurenhughes
 title: "Créer un package d’application avec l’outil MakeAppx.exe"
 description: "MakeAppx.exe crée, chiffre, déchiffre et extrait les fichiers des packages d’application et des ensembles d’applications."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 translationtype: Human Translation
-ms.sourcegitcommit: 28cd2b2a922a20e0b9ffc4d1ca65f6a55e92aa8f
-ms.openlocfilehash: c99c76fac9303e174b5d804c2f1b99856be25006
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 616340bcc5159dce12d3b888697ac4f60d30f175
+ms.lasthandoff: 02/08/2017
 
 ---
 
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>Créer un package d’application avec l’outil MakeAppx.exe
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 **MakeAppx.exe** crée des packages d’application et des ensembles de packages d’application. **MakeAppx.exe** extrait également les fichiers d’un package d’application ou d’un ensemble d’applications, et chiffre ou déchiffre les packages d’application et les ensembles d’applications. Cet outil est inclus dans le Kit de développement logiciel (SDK) Windows 10 et peut s’utiliser à partir d’une invite de commandes ou d’un fichier de script.
 
@@ -269,8 +277,3 @@ Cette validation vérifie que :
 - une application n’utilise pas un protocole interdit figurant dans cette liste : SMB, FILE, MS-WWA-WEB, MS-WWA. 
 
 Cette validation sémantique n’est pas complète. Elle ne vise qu’à détecter les erreurs courantes. **MakeAppx.exe** ne garantit pas l’installation correcte des packages qu’il crée.
-
-
-<!--HONumber=Dec16_HO1-->
-
-

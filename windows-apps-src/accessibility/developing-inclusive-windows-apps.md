@@ -5,15 +5,22 @@ ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: "Développement d’applications Windows 10 inclusives"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 91f6a9d50b66064da7023599adbb058656fb1007
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 47c28e0629150ccbdf532afc645fe973c3dc8804
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="developing-inclusive-windows-apps"></a>Développement d’applications Windows inclusives  
 
-Cet article traite du développement d’applications de plateforme Windows universelle (UWP). Plus précisément, il part du principe que vous comprenez comment concevoir la hiérarchie logique de votre application. Apprenez à développer des applications UWP Windows 10 accessibles qui incluent la navigation au clavier, les paramètres de couleur et de contraste et la prise en charge des technologies d’assistance.
+Cet article traite du développement d’applications de plateforme Windows universelle (UWP) accessibles. Plus précisément, il part du principe que vous comprenez comment concevoir la hiérarchie logique de votre application. Apprenez à développer des applications UWP Windows 10 accessibles qui incluent la navigation au clavier, les paramètres de couleur et de contraste et la prise en charge des technologies d’assistance.
 
 Si vous ne l’avez pas encore fait, commencez par lire [Conception de logiciels inclusifs](designing-inclusive-software.md).
 
@@ -37,7 +44,7 @@ Lors de la conception de la navigation au clavier, examinez votre interface util
 * Comment les contrôles sont-ils disposés ou regroupés dans l’interface utilisateur ?
 * Existe-t-il plusieurs groupes de contrôles importants ?
     * Si oui, ces groupes contiennent-ils un autre niveau de groupes ?
-*   La navigation dans les contrôles de l’homologue s’effectue-t-elle en utilisant la touche TAB ou par le biais d’une navigation spéciale (via les touches de direction), ou les deux ?
+*     La navigation dans les contrôles de l’homologue s’effectue-t-elle en utilisant la touche TAB ou par le biais d’une navigation spéciale (via les touches de direction), ou les deux ?
 
 L’objectif est d’aider l’utilisateur à comprendre la façon dont l’interface utilisateur est disposée et à identifier les contrôles exploitables. Si vous trouvez que l’utilisateur se trouve confronté à un trop grand nombre de taquets de tabulation lors de la boucle de navigation, envisagez de regrouper les contrôles. Certains contrôles associés, tel qu’un contrôle hybride, doivent être traités à ce stade précoce. Il est difficile de reconcevoir la navigation au clavier une fois que vous avez commencé à développer votre produit, c’est pourquoi vous devez veiller à la planifier de manière rigoureuse, et ce dès le début !  
 
@@ -83,9 +90,4 @@ Pour en savoir plus, consultez la rubrique [Liste de vérification de l’access
 * [Conception de logiciels accessibles](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Hub de développeurs axés sur l’accessibilité Microsoft](https://msdn.microsoft.com/enable)
 * [Accessibilité](accessibility.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -2,15 +2,23 @@
 author: Mtoepke
 title: Forum Aux Questions
 description: Forum aux questions concernant UWP sur Xbox.
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 translationtype: Human Translation
-ms.sourcegitcommit: 1ee75d73cc42455677bc2c0df08b41f33fc4f7b0
-ms.openlocfilehash: a6d410e3a4873bb96fba46789b28185c392a7492
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 059fac41c0c0557dbc3d4739c1da78f794505839
+ms.lasthandoff: 02/08/2017
 
 ---
 
 # <a name="frequently-asked-questions"></a>Forum Aux Questions
 
-Vous n’obtenez pas les résultats escomptés ? Parcourez cette page répertoriant les questions fréquemment posées. Consultez également la rubrique [Problèmes connus](known-issues.md) et le forum [Développement d’applications Windows universelles](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop). 
+Vous n’obtenez pas les résultats escomptés ? Parcourez cette page répertoriant les questions fréquemment posées. Consultez également la rubrique [Problèmes connus](known-issues.md) et le forum [Développement d’applications Windows universelles](https://go.microsoft.com/fwlink/?linkid=839446). 
 
 ### <a name="why-are-my-games-and-apps-not-working"></a>Pourquoi mes jeux et applications ne fonctionnent-ils pas ?
 
@@ -37,11 +45,14 @@ Pour connaître le mode actif, il vous suffit d’appuyer sur le bouton **Accuei
 
 ### <a name="will-my-games-and-apps-still-work-if-i-activate-developer-mode"></a>Mes jeux et applications continueront-ils de fonctionner si j’active le mode développeur ?
 
-Oui. Lorsque vous vous trouvez en mode développeur, vous pouvez basculer vers le mode commercial qui vous permet de jouer à vos jeux. Pour plus d’informations, voir la page [Activation du Mode développeur Xbox One](devkit-activation.md). 
+Oui. Lorsque vous vous trouvez en mode développeur, vous pouvez basculer vers le mode commercial qui vous permet de jouer à vos jeux. Pour plus d’informations, consultez la page [Activation du mode développeur Xbox One](devkit-activation.md). 
+
+### <a name="can-i-develop-and-publish-x86-apps-for-xbox"></a>Puis-je développer et publier des applications x86 pour Xbox ?
+Xbox ne prend plus en charge le développement d’applications x86 ni les soumissions d’applications x86 dans le Windows Store. 
 
 ### <a name="will-i-lose-my-games-and-apps-or-saved-changes"></a>Vais-je perdre mes jeux et applications ou les modifications que j’ai enregistrées ?
 
-Si vous décidez de quitter le programme pour les développeurs, vous ne perdrez pas les applications et les jeux que vous avez installés. De plus, si vous avez joué en ligne, tous vos jeux ont été enregistrés sur votre profil cloud de compte Live. Vous ne pouvez donc pas les perdre.
+Si vous décidez de quitter le programme pour les développeurs, vous ne perdrez pas les applications et jeux que vous avez installés. De plus, si vous avez joué en ligne, tous vos jeux ont été enregistrés sur votre profil cloud de compte Live. Vous ne pouvez donc pas les perdre.
 
 ### <a name="how-do-i-leave-the-developer-program"></a>Comment quitter le programme pour les développeurs ?
 
@@ -131,9 +142,4 @@ Pour plus d’informations, voir le projet [TVHelpers](https://github.com/Micros
 ## <a name="see-also"></a>Voir également
 - [Problèmes connus avec UWP sur Xbox One](known-issues.md)
 - [UWP sur Xbox One](index.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

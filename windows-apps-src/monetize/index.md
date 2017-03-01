@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
 description: "Le SDK Windows, Microsoft Store Services SDK et le Windows Store fournissent de nombreuses fonctionnalités qui vous permettent de générer plus de revenus avec vos applications et de conquérir des clients en engageant les utilisateurs."
 title: "Monétisation, implication des clients et services du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, monétiser, entrer en contact, promouvoir, services du Windows Store"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: e8a4c40dbc715d82d6f41fef8a49df5bfdfa79ae
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5a3497d5aa1c8a4415b7b4fb9f7888448ae74f9f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -35,9 +42,4 @@ Pour plus d’informations sur les frais facturés par le Windows Store et la f
 * [Créer des segments de clients](../publish/create-customer-segments.md)
 * [Rapport sur les commentaires](../publish/feedback-report.md)
 * [Rapport sur l’utilisation](../publish/usage-report.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -1,13 +1,21 @@
 ---
-title: "Connexion à un fournisseur d’identité avec Gestionnaire de compte web"
+title: Gestionnaire de comptes web
 description: "Cet article explique comment utiliser la classe AccountsSettingsPane pour connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des nouvelles API du Gestionnaire de comptes web de Windows 10."
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 translationtype: Human Translation
-ms.sourcegitcommit: 0aef3cc9a3312a647197d8b2a7b815ed42d54fa3
-ms.openlocfilehash: 10851432b6e28934ab60041d23a5cf319671f704
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: c3d1cdab94fc8b4f693ef9294cbb12580a9e199b
+ms.lasthandoff: 02/08/2017
 
 ---
-# <a name="connect-to-identity-providers-with-web-account-manager"></a>Connexion à un fournisseur d’identité avec Gestionnaire de compte web
+# <a name="web-account-manager"></a>Gestionnaire de comptes web
 
 Cet article explique comment afficher la classe AccountsSettingsPane et connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des nouvelles API du Gestionnaire de comptes web de Windows 10. Vous découvrirez comment demander l’autorisation d’un utilisateur pour utiliser son compte Microsoft, obtenir un jeton d’accès et l’utiliser pour effectuer des opérations de base (par exemple, obtenir des données de profil ou télécharger des fichiers dans OneDrive). Pour obtenir l’autorisation et l’accès utilisateur, les étapes sont similaires quel que soit le fournisseur d’identité, à condition qu’il prenne en charge le Gestionnaire de compte web.
 
@@ -33,7 +41,7 @@ Reliez un gestionnaire d’événements à votre bouton dans le code-behind :
 
 ```C#
 private void LoginButton_Click(object sender, RoutedEventArgs e)
-{   
+{    
 }
 ```
 
@@ -328,7 +336,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
     var twitterProvider = new WebAccountProvider("twitter", "Twitter", new Uri(@"ms-appx:///Assets/twitter-auth-icon.png")); 
     var twitterCmd = new WebAccountProviderCommand(twitterProvider, GetTwitterTokenAsync);
-    e.WebAccountProviderCommands.Add(twitterCmd);   
+    e.WebAccountProviderCommands.Add(twitterCmd);    
     
     // other code here
 }
@@ -351,7 +359,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 {
     // other code here 
     
-    args.HeaderText = "MyAwesomeApp works best if you're signed in.";   
+    args.HeaderText = "MyAwesomeApp works best if you're signed in.";     
     
     // other code here
 }
@@ -398,9 +406,4 @@ En théorie, vous pouvez utiliser les commandes de paramètres pour tout. Toutef
 [Service Broker d’authentification web](web-authentication-broker.md)
 
 [Exemple de WebAccountManagement](http://go.microsoft.com/fwlink/p/?LinkId=620621)
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

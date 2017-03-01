@@ -5,12 +5,19 @@ title: "Vue d’ensemble des notifications périodiques"
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 label: TBD
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 37858532004f477672f2c19adad93a22ca989f39
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f77bdb61fdb596720a857960094c959b344db9af
+ms.lasthandoff: 02/07/2017
 
 ---
-# Vue d’ensemble des notifications périodiques
+# <a name="periodic-notification-overview"></a>Vue d’ensemble des notifications périodiques
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
@@ -25,21 +32,21 @@ Les notifications périodiques permettent à votre application d’obtenir des m
 
  
 
-## Fonctionnement
+## <a name="how-it-works"></a>Fonctionnement
 
 
 Les notifications périodiques nécessitent que votre application héberge un service cloud. Le service est interrogé périodiquement par tous les utilisateurs qui disposent de l’application. À chaque intervalle d’interrogation, par exemple une fois par heure, Windows envoie une requête HTTP GET à l’URI, télécharge le contenu demandé pour la vignette ou le badge (contenu XML par exemple), qui est fourni en réponse à la requête, puis affiche ce contenu dans la vignette de l’application.
 
 Notez que les mises à jour périodiques ne peuvent pas être utilisées avec les notifications toast. Pour la remise des toasts, il est préférable de recourir aux notifications [planifiées](https://msdn.microsoft.com/library/windows/apps/hh465417) ou aux notifications [Push](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252).
 
-## Emplacement d’URI et contenu XML
+## <a name="uri-location-and-xml-content"></a>Emplacement d’URI et contenu XML
 
 
 Toute adresse Web HTTP ou HTTPS valide peut être utilisée comme URI interrogeable.
 
 La réponse du serveur cloud comprend le contenu téléchargé. Le contenu renvoyé à partir de l’URI doit être conforme à la spécification de schéma XML de la [vignette](tiles-and-notifications-adaptive-tiles-schema.md) ou du [badge](https://msdn.microsoft.com/library/windows/apps/br212851). De plus, il doit être au format UTF-8. Vous pouvez utiliser des en-têtes HTTP définis pour spécifier l’[heure d’expiration](#expiry) ou la [balise](#taggo) de la notification.
 
-## Comportement de l’interrogation
+## <a name="polling-behavior"></a>Comportement de l’interrogation
 
 
 Appelez l’une de ces méthodes pour lancer l’interrogation :
@@ -50,21 +57,25 @@ Appelez l’une de ces méthodes pour lancer l’interrogation :
 
 Quand vous appelez l’une de ces méthodes, l’URI est immédiatement interrogé et la vignette ou le badge est mis à jour à l’aide du contenu reçu. Après cette interrogation initiale, Windows continue de fournir des mises à jour en fonction de l’intervalle demandé. L’interrogation se poursuit jusqu’à ce que vous l’arrêtiez explicitement (avec [**TileUpdater.StopPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701697)), jusqu’à ce que votre application soit désinstallée, ou, dans le cas d’une vignette secondaire, jusqu’à ce que la vignette soit supprimée. Dans le cas contraire, Windows continue à rechercher des mises à jour pour votre vignette ou votre badge, même si votre application n’est jamais relancée.
 
-### Intervalle de récurrence
+### <a name="the-recurrence-interval"></a>Intervalle de récurrence
 
-Vous devez définir l’intervalle de récurrence sous forme de paramètre des méthodes indiquées ci-dessus. Note que même si Windows effectue l’interrogation en respectant au mieux ce qui est indiqué, l’intervalle n’est pas précis. L’intervalle d’interrogation demandé peut être retardé de 15minutes au maximum en fonction de Windows.
+Vous devez définir l’intervalle de récurrence sous forme de paramètre des méthodes indiquées ci-dessus. Note que même si Windows effectue l’interrogation en respectant au mieux ce qui est indiqué, l’intervalle n’est pas précis. L’intervalle d’interrogation demandé peut être retardé de 15 minutes au maximum en fonction de Windows.
 
-### Heure de début
+### <a name="the-start-time"></a>Heure de début
 
 Vous pouvez indiquer une heure particulière de la journée pour le lancement de l’interrogation. Prenons l’exemple d’une application qui change son contenu de vignette une seule fois par jour. Dans ce cas précis, nous vous recommandons d’effectuer l’interrogation peu de temps avant de mettre à jour votre service cloud. Par exemple, si un site propose quotidiennement des offres d’achat et s’il publie les offres du jour à 8 h 00, effectuez la recherche de nouvelles vignettes de contenu juste après 8 h 00.
 
 Si vous indiquez une heure de début, le premier appel de la méthode entraîne immédiatement une recherche de contenu. Puis, une interrogation à intervalles réguliers démarre moins de 15 minutes après l’heure de début indiquée.
 
-### Comportement des nouvelles tentatives automatiques
+### <a name="automatic-retry-behavior"></a>Comportement des nouvelles tentatives automatiques
 
 L’URI est interrogé seulement si l’appareil est en ligne. Si le réseau est disponible, mais que l’URI ne peut pas être contacté pour une raison quelconque, cette itération de l’intervalle d’interrogation est ignorée et l’URI est réinterrogé lors du prochain intervalle. Si l’appareil est dans un état d’arrêt, de veille ou de veille prolongée quand un intervalle d’interrogation est atteint, l’URI est interrogé quand l’appareil quitte son état d’arrêt ou de veille.
 
-## Expiration des notifications par vignette et par badge
+### <a name="handling-app-updates"></a>Gestion des mises à jour des applications
+
+Si vous publiez une mise à jour d’application qui modifie votre URI d’interrogation, vous devez ajouter une [tâche en arrière-plan TimeTrigger](../launch-resume/run-a-background-task-on-a-timer-.md) quotidienne qui appelle StartPeriodicUpdate avec le nouveau URI pour vérifier que vos vignettes utilisent le nouvel URI. Sinon, si les utilisateurs reçoivent la mise à jour de votre application, mais ne lancent pas votre application, les vignettes utiliseront encore l’ancien URI, ce qui risque d’entraîner un échec de l’affichage si l’URI n’est plus valide ou si la charge utile renvoyée fait référence à des images locales qui n’existent plus.
+
+## <a name="expiration-of-tile-and-badge-notifications"></a>Expiration des notifications par vignette et par badge
 
 
 Par défaut, les notifications périodiques par vignette et par badge expirent trois jours après avoir été téléchargées. Quand une notification expire, le contenu est supprimé du badge, de la vignette ou de la file d’attente, et n’est plus présenté à l’utilisateur. Il est conseillé de définir un délai d’expiration explicite pour toutes les notifications périodiques par vignette et par badge en utilisant un délai approprié pour votre application ou notification, afin de vous assurer que le contenu ne persiste pas plus longtemps que nécessaire. Un délai d’expiration explicite est essentiel pour les contenus dont la durée de vie est limitée. Cette approche assure également la suppression du contenu périmé si votre service cloud n’est plus accessible, ou que l’utilisateur se déconnecte du réseau pour une période prolongée.
@@ -73,7 +84,7 @@ Votre service cloud définit une date et une heure d’expiration pour une notif
 
 Par exemple, au cours d’une journée active d’échanges sur le marché boursier, vous pouvez doubler le délai d’expiration de la mise à jour du cours d’une action par rapport à l’intervalle d’interrogation (par exemple, une heure après la réception du contenu, si vous effectuez l’interrogation chaque demi-heure). Autre exemple, dans une application d’infos, le délai d’expiration approprié pour la mise à jour quotidienne des vignettes d’infos est d’une journée.
 
-## Notifications périodiques dans la file d’attente de notifications
+## <a name="periodic-notifications-in-the-notification-queue"></a>Notifications périodiques dans la file d’attente de notifications
 
 
 Vous pouvez utiliser des mises à jour périodiques de vignettes avec le [cycle des notifications](https://msdn.microsoft.com/library/windows/apps/hh781199). Par défaut, une vignette de l’écran d’accueil affiche le contenu d’une seule notification jusqu’à ce qu’elle soit remplacée par une nouvelle notification. Lorsque vous activez le cycle, une file d’attente peut comporter jusqu’à cinq notifications que la vignette affiche à tour de rôle.
@@ -84,30 +95,18 @@ Vous pouvez utiliser la mise en file d’attente des notifications et les balise
 
 Pour plus d’informations, voir [Utilisation de la file d’attente de notifications](https://msdn.microsoft.com/library/windows/apps/hh781199).
 
-### Activation de la file d’attente de notifications
+### <a name="enabling-the-notification-queue"></a>Activation de la file d’attente de notifications
 
 Pour implémenter une file d’attente de notifications, activez d’abord la file d’attente pour votre vignette (voir [Comment utiliser la file d’attente de notifications avec des notifications locales](https://msdn.microsoft.com/library/windows/apps/hh465429)). L’appel qui permet d’activer la file d’attente doit être effectué une et une seule fois. Cependant, cela ne pose aucun problème d’effectuer l’appel chaque fois que votre application est lancée.
 
-### Interrogation de plusieurs notifications à la fois
+### <a name="polling-for-more-than-one-notification-at-a-time"></a>Interrogation de plusieurs notifications à la fois
 
 Vous devez fournir un URI unique pour chaque notification que Windows doit télécharger pour votre vignette. À l’aide de la méthode [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945), vous pouvez fournir jusqu’à cinq URI à la fois utilisables par la file d’attente de notifications. Chaque URI fait l’objet d’une interrogation pour une seule charge utile de notification, plus ou moins au même moment. Chaque URI interrogé peut renvoyer son propre délai d’expiration et sa propre valeur de balise.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 
 * [Recommandations en matière de notifications périodiques](https://msdn.microsoft.com/library/windows/apps/hh761461)
 * [Comment configurer des notifications périodiques pour les badges](https://msdn.microsoft.com/library/windows/apps/hh761476)
 * [Comment configurer des notifications périodiques pour des vignettes](https://msdn.microsoft.com/library/windows/apps/hh761476)
  
-
- 
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

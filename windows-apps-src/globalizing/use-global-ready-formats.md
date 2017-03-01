@@ -1,13 +1,20 @@
 ---
 author: DelfCo
-Description: "Développez une app. dans une perspective de globalisation en mettant correctement en forme dates, heures, nombres, numéros de téléphone et devises."
+Description: "Développez une application dans une perspective de globalisation en mettant correctement en forme dates, heures, nombres, numéros de téléphone et devises."
 title: Utiliser des formats compatibles avec la globalisation
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 label: Use global-ready formats
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: eb524ae7369874e8a2f81cd4a8cbb112829387c8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a733f3d87f2e6598e49d8926a7b10797e335c79c
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -15,7 +22,7 @@ ms.openlocfilehash: eb524ae7369874e8a2f81cd4a8cbb112829387c8
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Développez une app. dans une perspective de globalisation en mettant correctement en forme dates, heures, nombres, numéros de téléphone et devises. Cela vous permet d’adapter ultérieurement votre application à d’autres cultures, à d’autres régions et à d’autres langues pour le marché international.
+Développez une application dans une perspective de globalisation en mettant correctement en forme dates, heures, nombres, numéros de téléphone et devises. Cela vous permet d’adapter ultérieurement votre application à d’autres cultures, à d’autres régions et à d’autres langues pour le marché international.
 
 <div class="important-apis" >
 <b>API importantes</b><br/>
@@ -166,9 +173,4 @@ Pour les scénarios dans lesquels les fonctionnalités offertes varient en fonct
 * [Exemple de mise en forme des dates et heures](http://go.microsoft.com/fwlink/p/?linkid=231618)
 * [Exemple de préférences de globalisation](http://go.microsoft.com/fwlink/p/?linkid=231608)
 * [Exemple de mise en forme et d’analyse des nombres](http://go.microsoft.com/fwlink/p/?linkid=231620)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

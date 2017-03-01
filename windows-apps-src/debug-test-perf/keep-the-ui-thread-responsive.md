@@ -3,14 +3,21 @@ author: mcleblanc
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
 title: "Assurer la réactivité du thread de l’interface utilisateur"
 description: "Les utilisateurs attendent de leurs applications qu’elles restent réactives pendant les opérations de calcul, et ce sur n’importe quel type d’ordinateur."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
-ms.openlocfilehash: 2a215264db018dfecff897b13b24ba535e7483ec
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: eae6c26979f3aa6b1c9fabf217f6a49ed89dd38b
+ms.lasthandoff: 02/07/2017
 
 ---
-# Assurer la réactivité du thread de l’interface utilisateur
+# <a name="keep-the-ui-thread-responsive"></a>Assurer la réactivité du thread de l’interface utilisateur
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Les utilisateurs attendent de leurs applications qu’elles restent réactives pendant les opérations de calcul, et ce sur n’importe quel type d’ordinateur. Les implications sont différentes selon les applications. Pour certaines applications, cela implique de fournir des propriétés physiques plus réalistes, d’accélérer le chargement des données à partir d’un disque ou du Web, de représenter des scènes complexes et naviguer entre les pages plus vite, de trouver un itinéraire en un clin d’œil ou encore de traiter rapidement les données. Quel que soit le type de calcul effectué, les utilisateurs veulent que leur application continue de réagir à leurs interactions et qu’elle ne donne pas l’impression de ne plus répondre pendant l’opération de calcul.
 
@@ -18,9 +25,9 @@ Votre application est pilotée par les événements, ce qui signifie que votre c
 
 Vous devez utiliser le thread d’interface utilisateur pour apporter la quasi-totalité des modifications au thread d’interface utilisateur, notamment la création de types d’interface utilisateur et l’accès à leurs membres. Vous ne pouvez pas mettre à jour l’interface utilisateur à partir d’un thread en arrière-plan, mais vous pouvez y publier un message avec la méthode [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour que le code soit exécuté sur ce thread.
 
-> **Remarque** La seule exception est qu’il existe un thread de rendu distinct capable d’appliquer les modifications d’interface utilisateur qui n’affecteront pas la façon dont l’entrée est gérée ni la disposition de base. Par exemple, de nombreuses animations et transitions qui n’affectent pas la disposition peuvent être exécutées sur ce thread de rendu.
+> **Remarque**  La seule exception est qu’il existe un thread de rendu distinct capable d’appliquer les modifications d’interface utilisateur qui n’affecteront pas la façon dont l’entrée est gérée ni la disposition de base. Par exemple, de nombreuses animations et transitions qui n’affectent pas la disposition peuvent être exécutées sur ce thread de rendu.
 
-## Retarder l’instanciation des éléments
+## <a name="delay-element-instantiation"></a>Retarder l’instanciation des éléments
 
 Certaines des étapes les plus lentes dans une application incluent le démarrage et le changement d’affichage. N’obligez pas l’application à faire plus de travail que nécessaire pour afficher l’interface utilisateur que l’utilisateur voit initialement. Par exemple, ne créez pas l’interface utilisateur de manière à révéler progressivement des éléments d’interface et le contenu des fenêtres contextuelles.
 
@@ -29,11 +36,11 @@ Certaines des étapes les plus lentes dans une application incluent le démarrag
 
 Les files d’attente [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) fonctionnent pour le traitement par le thread d’interface utilisateur lorsque ce dernier n’est pas occupé.
 
-## Utiliser des API asynchrones
+## <a name="use-asynchronous-apis"></a>Utiliser des API asynchrones
 
 Pour que l’application reste réactive, la plateforme fournit des versions asynchrones de plusieurs de ses API. Une API asynchrone permet de garantir que votre thread d’exécution actif n’est jamais bloqué pendant un laps de temps significatif. Si vous appelez une API à partir du thread d’interface utilisateur, utilisez la version asynchrone si elle est disponible. Pour plus d’informations sur la programmation avec des modèles **async**, voir [Programmation asynchrone](https://msdn.microsoft.com/library/windows/apps/Mt187335) ou [Appel d’API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337).
 
-## Décharger les tâches sur les threads en arrière-plan
+## <a name="offload-work-to-background-threads"></a>Décharger les tâches sur les threads en arrière-plan
 
 Codez les gestionnaires d’événements de sorte qu’ils effectuent rapidement leur retour. Dans les cas où une quantité considérable de tâches doivent être effectuées, planifiez-les sur un thread en arrière-plan et revenez.
 
@@ -97,15 +104,10 @@ public class AsyncExample
 
 Dans cet exemple, le gestionnaire `NextMove-Click` effectue son retour lorsqu’il reçoit l’instruction **await** afin d’assurer la réactivité du thread d’interface utilisateur. Toutefois, l’exécution reprend dans ce gestionnaire à la fin de l’opération `ComputeNextMove` (qui est exécutée sur un thread en arrière-plan). Le reste du code du gestionnaire permet de mettre à jour l’interface utilisateur avec les résultats.
 
-> **Remarque** Il existe également des API [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621) et [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.aspx) pour UWP qui peuvent être utilisées pour des scénarios similaires. Pour plus d’informations, voir [Threads et programmation asynchrone](https://msdn.microsoft.com/library/windows/apps/Mt187340).
+> **Remarque**  Il existe également des API [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621) et [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.aspx) pour UWP qui peuvent être utilisées pour des scénarios similaires. Pour plus d’informations, voir [Threads et programmation asynchrone](https://msdn.microsoft.com/library/windows/apps/Mt187340).
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Interactions utilisateur personnalisées](https://msdn.microsoft.com/library/windows/apps/Mt185599)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

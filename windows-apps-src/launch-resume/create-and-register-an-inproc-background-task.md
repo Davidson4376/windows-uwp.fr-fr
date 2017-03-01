@@ -2,9 +2,17 @@
 author: TylerMSFT
 title: "Créer et inscrire une tâche en arrière-plan in-process"
 description: "Créez et inscrivez une tâche in-process qui s’exécute dans le même processus que votre application au premier plan."
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 translationtype: Human Translation
-ms.sourcegitcommit: b9acb35645ee4f069f2ddb999865c3fd087fb792
-ms.openlocfilehash: 2ab02b8edda9aeadc9962464a63e08f1fb407777
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 1955f4981f09c2632fe2236ebd6a772e7b0ed8a1
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -18,7 +26,7 @@ ms.openlocfilehash: 2ab02b8edda9aeadc9962464a63e08f1fb407777
 
 Cette rubrique explique comment créer et inscrire une tâche en arrière-plan qui s’exécute dans le même processus que votre application.
 
-Les tâches en arrière-plan in-process sont plus faciles à implémenter que les tâches en arrière-plan hors processus. Toutefois, elles sont moins résilientes. Un blocage du code en cours d’exécution dans une tâche en arrière-plan in-process entraînera le blocage de votre application. Notez également que les déclencheurs [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396), [DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) et **IoTStartupTask** ne peuvent pas être utilisés avec le modèle in-process. Vous ne pourrez pas non plus activer une tâche VoIP en arrière-plan au sein de votre application. Ces tâches et ces déclencheurs peuvent néanmoins être utilisés avec le modèle de tâche en arrière-plan hors processus.
+Les tâches en arrière-plan in-process sont plus faciles à implémenter que les tâches en arrière-plan hors processus. Toutefois, elles sont moins résilientes. Un blocage du code en cours d’exécution dans une tâche en arrière-plan in-process entraînera le blocage de votre application. Notez également que les déclencheurs [DeviceUseTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx), [DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) et **IoTStartupTask** ne peuvent pas être utilisés avec le modèle in-process. Vous ne pourrez pas non plus activer une tâche VoIP en arrière-plan au sein de votre application. Ces tâches et ces déclencheurs peuvent néanmoins être utilisés avec le modèle de tâche en arrière-plan hors processus.
 
 N’oubliez pas que l’activité en arrière-plan peut être arrêtée, même en cas d’exécution au sein du processus au premier plan de l’application, si elle s’exécute au-delà des limites de durée d’exécution. La résilience obtenue grâce à la répartition des tâches dans une tâche en arrière-plan qui s’exécute dans un processus distinct reste utile pour plusieurs raisons. Dissocier la tâche en arrière-plan de l’application au premier plan peut être la meilleure option pour les tâches pour lesquelles aucune communication avec l’application au premier plan n’est requise.
 
@@ -107,9 +115,4 @@ Consultez les rubriques connexes suivantes pour obtenir des informations de réf
 **Informations de référence d’API de tâche en arrière-plan**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

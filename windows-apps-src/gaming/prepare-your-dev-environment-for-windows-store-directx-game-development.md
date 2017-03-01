@@ -3,23 +3,30 @@ author: mtoepke
 title: "Modèles de projet et outils pour les jeux"
 description: "Cette rubrique montre ce dont vous avez besoin pour commencer à programmer des jeux DirectX pour la plateforme Windows universelle (UWP)."
 ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, jeux, modèles, outils, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 360ffe86a6b2033510cb7d4b790477c80d5d1205
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2991efd40862eb1cd8842432b3eed3bbe49c8eb2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Modèles de projet et outils pour les jeux
+# <a name="project-templates-and-tools-for-games"></a>Modèles de projet et outils pour les jeux
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cette rubrique montre ce dont vous avez besoin pour commencer à programmer des jeux DirectX pour la plateforme Windows universelle (UWP).
 
 Pour commencer, vous devez disposer de Visual Studio.
 
-## Obtenir Visual Studio
+## <a name="get-visual-studio"></a>Obtenir Visual Studio
 
 
 [Téléchargez et installez Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions).
@@ -53,7 +60,7 @@ Pour commencer, vous devez disposer de Visual Studio.
 
  
 
-## Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes
 
 
 Si vous portez un jeu existant, voir les rubriques suivantes.
@@ -67,7 +74,7 @@ Si vous créez un jeu DirectX, voir les rubriques suivantes.
 -   [Développement de Marble Maze, jeu pour la plateforme Windows universelle en C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -77,10 +84,5 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

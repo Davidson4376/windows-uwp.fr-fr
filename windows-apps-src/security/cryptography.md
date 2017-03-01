@@ -3,21 +3,28 @@ title: Chiffrement
 description: "L’article fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications de plateforme Windows universelle (UWP). Pour plus d’informations sur des tâches particulières, voir le tableau à la fin de cet article."
 ms.assetid: 9C213036-47FD-4AA4-99E0-84006BE63F47
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: c5feae97563277dc14a64d5c96cb6229b6cfb8b1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3329a873b0e86a606d6e8899dcaca62c2e127c29
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Chiffrement
+# <a name="cryptography"></a>Chiffrement
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 
 L’article fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications de plateforme Windows universelle (UWP). Pour plus d’informations sur des tâches particulières, voir le tableau à la fin de cet article.
 
-## Terminology
+## <a name="terminology"></a>Terminology
 
 
 The following terminology is commonly used in cryptography and public key infrastructure (PKI).
@@ -40,11 +47,11 @@ The following terminology is commonly used in cryptography and public key infras
 | X.509 Certificate           | A digital document, typically issued by a certification authority, to verify the identity of an individual, system, or entity to other interested parties.                                            |
 
  
-## Namespaces
+## <a name="namespaces"></a>Namespaces
 
 The following namespaces are available for use in apps.
 
-### Windows.Security.Cryptography
+### <a name="windowssecuritycryptography"></a>Windows.Security.Cryptography
 
 Contains the CryptographicBuffer class and static methods that enable you to:
 
@@ -53,7 +60,7 @@ Contains the CryptographicBuffer class and static methods that enable you to:
 -   Encode messages for network transport
 -   Decode messages after transport
 
-### Windows.Security.Cryptography.Certificates
+### <a name="windowssecuritycryptographycertificates"></a>Windows.Security.Cryptography.Certificates
 
 Contains classes, interfaces, and enumeration types that enable you to:
 
@@ -62,7 +69,7 @@ Contains classes, interfaces, and enumeration types that enable you to:
 -   Import a certificate in a PFX file
 -   Specify and retrieve certificate request properties
 
-### Windows.Security.Cryptography.Core
+### <a name="windowssecuritycryptographycore"></a>Windows.Security.Cryptography.Core
 
 Contains classes and enumeration types that enable you to:
 
@@ -76,19 +83,19 @@ Contains classes and enumeration types that enable you to:
 -   Work with machine authentication code (MAC) algorithm providers
 -   Work with key derivation algorithm providers
 
-### Windows.Security.Cryptography.DataProtection
+### <a name="windowssecuritycryptographydataprotection"></a>Windows.Security.Cryptography.DataProtection
 
 Contains classes that enable you to:
 
 -   Asynchronously encrypt and decrypt static data
 -   Asynchronously encrypt and decrypt data streams
 
-## Crypto and PKI application capabilities
+## <a name="crypto-and-pki-application-capabilities"></a>Crypto and PKI application capabilities
 
 
 The simplified application programming interface available for apps enables the following cryptographic and public key infrastructure (PKI) capabilities.
 
-### Cryptography support
+### <a name="cryptography-support"></a>Cryptography support
 
 Vous pouvez effectuer les tâches de chiffrement suivantes. Pour plus d’informations, voir l’espace de noms [**Windows.Security.Cryptography.Core**](https://msdn.microsoft.com/library/windows/apps/br241547).
 
@@ -106,11 +113,11 @@ The SDK also provides a simplified interface for password-based data protection.
 -   Protection asynchrone des données statiques
 -   Asynchronous protection of a data stream
 
-### Prise en charge du codage
+### <a name="encoding-support"></a>Prise en charge du codage
 
 Une application permet de coder les données de chiffrement avant leur transfert via un réseau et de décoder les données provenant d’une source réseau. Pour plus d’informations, voir les méthodes statiques disponibles dans l’espace de noms [**Windows.Security.Cryptography**](https://msdn.microsoft.com/library/windows/apps/br241404).
 
-### Prise en charge de l’infrastructure à clé publique (PKI)
+### <a name="pki-support"></a>Prise en charge de l’infrastructure à clé publique (PKI)
 
 Les applications pouvez effectuer les tâches PKI suivantes. Pour plus d’informations, voir l’espace de noms [**Windows.Security.Cryptography.Certificates**](https://msdn.microsoft.com/library/windows/apps/br241476).
 
@@ -131,10 +138,10 @@ Additionally, you can use the manifest to perform the following actions:
     -   Certificates that chain through a specified set of issuers
     -   Sélectionner automatiquement un certificat dans le magasin d’applications
 
-## Articles détaillés
+## <a name="detailed-articles"></a>Articles détaillés
 
 
-Les articles suivants fournissent plus de détails sur la sécurité:
+Les articles suivants fournissent plus de détails sur la sécurité :
 
 | Rubrique                                                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |-------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -146,8 +153,3 @@ Les articles suivants fournissent plus de détails sur la sécurité:
 | [Tâches courantes de chiffrement](common-cryptography-tasks.md)                     | Ces articles fournissent des exemples de code pour les tâches de chiffrement UWP courantes, telles que la création de nombres aléatoires, la comparaison de mémoires tampon, la conversion entre chaînes et données binaires, la copie de tableaux d’octets, et le codage/décodage de données.                                                                                                                                                                                                                                                                                    |
 
  
-
-
-<!--HONumber=Aug16_HO3-->
-
-

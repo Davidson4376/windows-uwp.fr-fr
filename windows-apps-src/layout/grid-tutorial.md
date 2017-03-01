@@ -2,9 +2,17 @@
 author: mukin
 Description: "Cet article se présente sous forme de didacticiel conçu pour guider le lecteur tout au long des étapes nécessaires pour créer l’interface utilisateur d’une application simple. Il explique et montre comment utiliser Grid et StackPanel, deux des éléments XAML les plus courants."
 title: "Créer une application Météo simple à l’aide de Grid et de StackPanel"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 translationtype: Human Translation
-ms.sourcegitcommit: c30aed9681d7c091e9831df3f53d8779dfacce38
-ms.openlocfilehash: 1990a3ad4e56fa039d024c53a04b021e60bed145
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 87947b5bd1c1db008a21828c3940475c2b53fd6d
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -14,7 +22,7 @@ Utilisez XAML pour créer la disposition d’une application Météo simple à l
 
 ## <a name="prerequisites"></a>Conditions préalables
 - Windows 10 et Microsoft Visual Studio 2015. [Cliquez ici pour savoir comment prendre en main Visual Studio](../get-started/get-set-up.md).
-- Savoir créer une application « Hello World » de base à l’aide de XAML et de C#. En cas de besoin, [cliquez ici pour savoir comment créer une application « Hello World »](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
+- Savoir créer une application « Hello World » de base à l’aide de XAML et de C#. Le cas échéant, [cliquez ici pour apprendre à créer une application « Hello World »](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="step-1-create-a-blank-app"></a>Étape 1 : Créer une application vide
 1. Dans Visual Studio, sélectionnez **Fichier** > **Nouveau projet**.
@@ -115,9 +123,4 @@ Si vous le souhaitez, testez la disposition ci-dessus et explorez les différent
 Pour une introduction à la conception de dispositions d’application UWP, consultez [Introduction à la conception d’une application UWP](https://msdn.microsoft.com/windows/uwp/layout/design-and-ui-intro).
 
 Pour apprendre à créer des dispositions réactives adaptables à différentes tailles d’écran, consultez [Définir des dispositions de pages avec XAML](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml).
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

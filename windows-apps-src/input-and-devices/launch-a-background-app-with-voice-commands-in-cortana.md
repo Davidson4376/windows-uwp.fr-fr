@@ -6,20 +6,22 @@ ms.assetid: DF5B530C-57DD-4CA5-B3BE-1A0B3695C9C6
 label: Launch a background app
 template: detail.hbs
 redirect_url: https://msdn.microsoft.com/en-us/cortana/voicecommands/launch-a-background-app-with-voice-commands-in-cortana
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: f80678865c1dbdf84dbcfd44ae6b98b7eadc9446
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f3c05105dc1415ccb2a7c1671f9021b84c997e91
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Activer une application en arrière-plan avec les commandes vocales de Cortana
+# <a name="activate-a-background-app-with-voice-commands-through-cortana"></a>Activer une application en arrière-plan avec les commandes vocales de Cortana
 
 Cette rubrique a été déplacée vers https&#58;//msdn.microsoft.com/fr-fr/cortana/voicecommands/launch-a-background-app-with-voice-commands-in-cortana.
 
-Github: https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/launch-a-background-app-with-voice-commands-in-cortana.md (en anglais)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+Github : https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/launch-a-background-app-with-voice-commands-in-cortana.md (en anglais)
 

@@ -8,9 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: d18696de51451552aef14c55d2a1b62c6037fb59
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 57c29414deadcf4f1ba5c462b8fe81faa0b38d49
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="design-downloads-for-uwp-apps"></a>Téléchargements de conceptions pour les applications UWP
@@ -98,8 +100,3 @@ Cet exemple intègre des fonctionnalités Windows avec une automatisation domest
 </div>
 </div>
 <b>Vous voulez plus de code ?</b> Consultez la page d’exemples Windows pour obtenir la liste complète de tous nos exemples d’applications UWP. [Accédez au portail d’exemples](https://developer.microsoft.com/samples)
-
-
-<!--HONumber=Dec16_HO2-->
-
-

@@ -3,9 +3,16 @@ author: TylerMSFT
 title: "Noms de schéma d’URI et de fichier réservés"
 description: "Cette rubrique répertorie les noms de schéma d’URI et de fichier réservés, indisponibles pour votre application."
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6f46f5973b9c18ffd7c38bd27cee0a0a21be50e5
-ms.openlocfilehash: c514ae4831f21b4c471b0445b3cf54a6a08ff92a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a0c0b2cee4512bdd6dd888aceae53eec061dac72
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a>Noms de schéma d’URI et de fichier réservés
@@ -115,9 +122,4 @@ Les types de fichiers suivants sont réservés au système d’exploitation
 <tr><td>inffile</td><td>ms-settings:network-dialup</td><td>scrfile</td><td></td></tr>
 <tr><td>insfile</td><td>ms-settings:network-ethernet</td><td>scriptletfile</td><td></td></tr>
 </table>
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

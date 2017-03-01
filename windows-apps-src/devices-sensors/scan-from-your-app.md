@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
 title: "Numériser à partir de votre application"
 description: "Découvrez ici comment numériser du contenu à partir de votre application à l’aide d’un scanneur à plat, à chargeur ou configuré automatiquement."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 9f06f774fd1ed3a13386a4403f98336babeb1506
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2dc8ef975c58ba5eb1d8b59bee773c7b6219a03c
+ms.lasthandoff: 02/07/2017
 
 ---
-# Numériser à partir de votre application
+# <a name="scan-from-your-app"></a>Numériser à partir de votre application
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
-** API importantes **
+**API importantes**
 
 -   [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250)
 -   [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393)
@@ -20,13 +27,13 @@ ms.openlocfilehash: 9f06f774fd1ed3a13386a4403f98336babeb1506
 
 Découvrez ici comment numériser du contenu à partir de votre application à l’aide d’un scanneur à plat, à chargeur ou configuré automatiquement.
 
-**Important** Les API [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) font partie de la [famille d’appareils](https://msdn.microsoft.com/library/windows/apps/Dn894631) bureautiques. Les applications peuvent utiliser ces API uniquement sur la version bureau de Windows10.
+**Important** Les API [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) font partie de la [famille d’appareils](https://msdn.microsoft.com/library/windows/apps/Dn894631) bureautiques. Les applications peuvent utiliser ces API uniquement sur la version bureau de Windows 10.
 
 Pour numériser à partir de votre application, vous devez d’abord répertorier les scanneurs disponibles en déclarant un nouvel objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) et en récupérant le type [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381). Seuls les scanneurs installés localement avec des pilotes WIA sont répertoriés et disponibles pour votre application.
 
 Une fois que votre application a répertorié les scanneurs disponibles, elle peut utiliser les paramètres de numérisation configurés automatiquement en fonction du type de scanneur, ou numériser en utilisant simplement le scanneur à plat ou à chargeur disponible. Pour utiliser les paramètres configurés automatiquement, le scanneur doit être activé pour la configuration automatique et ne doit pas posséder à la fois un dispositif de numérisation à plat et un dispositif de numérisation à chargeur. Pour plus d’informations, consultez [Numérisation configurée automatiquement](https://msdn.microsoft.com/library/windows/hardware/Ff539393).
 
-## Énumérer les scanneurs disponibles
+## <a name="enumerate-available-scanners"></a>Énumérer les scanneurs disponibles
 
 Windows ne détecte pas les scanneurs automatiquement. Vous devez effectuer cette étape pour que votre application communique avec le scanneur. Dans cet exemple, l’énumération des périphériques de numérisation est effectuée à l’aide de l’espace de noms [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459).
 
@@ -80,7 +87,7 @@ Windows ne détecte pas les scanneurs automatiquement. Vous devez effectuer cett
     }
 ```
 
-## Numériser
+## <a name="scan"></a>Numériser
 
 1.  **Obtenir un objet ImageScanner**
 
@@ -97,7 +104,7 @@ Pour une numérisation avec les paramètres par défaut, votre application s’a
 **Remarque** Si l’utilisateur place le document à numériser dans le chargeur, le scanneur effectue la numérisation à partir du dispositif à plat. S’il essaie de numériser à partir d’un chargeur vide, la numérisation ne génère aucun fichier numérisé.
  
 ```csharp
-    var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default, 
+    var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default,
         folder).AsTask(cancellationToken.Token, progress);
 ```
 
@@ -113,14 +120,14 @@ Dans cet exemple, l’application vérifie si le scanneur prend en charge la con
     if (myScanner.IsScanSourceSupported(ImageScannerScanSource.AutoConfigured))
     {
         ...
-        // Scan API call to start scanning with Auto-Configured settings. 
+        // Scan API call to start scanning with Auto-Configured settings.
         var result = await myScanner.ScanFilesToFolderAsync(
             ImageScannerScanSource.AutoConfigured, folder).AsTask(cancellationToken.Token, progress);
         ...
     }
 ```
 
-## Obtenir un aperçu de la numérisation
+## <a name="preview-the-scan"></a>Obtenir un aperçu de la numérisation
 
 Vous pouvez ajouter du code pour obtenir un aperçu de la numérisation avant de l’enregistrer dans un dossier. Dans l’exemple ci-après, l’application vérifie si le scanneur **Flatbed** prend en charge la fonctionnalité d’aperçu, puis génère un aperçu de la numérisation.
 
@@ -133,7 +140,7 @@ if (myScanner.IsPreviewSupported(ImageScannerScanSource.Flatbed))
                     ImageScannerScanSource.Flatbed, stream);
 ```
 
-## Annuler la numérisation
+## <a name="cancel-the-scan"></a>Annuler la numérisation
 
 Vous pouvez permettre aux utilisateurs d’annuler un travail de numérisation en cours comme ceci.
 
@@ -153,7 +160,7 @@ void CancelScanning()
 }
 ```
 
-## Numériser avec indication de la progression
+## <a name="scan-with-progress"></a>Numériser avec indication de la progression
 
 1.  Créez un objet **System.Threading.CancellationTokenSource**.
 
@@ -168,13 +175,7 @@ cancellationToken = new CancellationTokenSource();
     var progress = new Progress<UInt32>(ScanProgress);
 ```
 
-## Numériser vers la bibliothèque d’images
+## <a name="scanning-to-the-pictures-library"></a>Numériser vers la bibliothèque d’images
 
 Grâce à la classe [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/BR207881), les utilisateurs peuvent numériser dynamiquement vers n’importe quel dossier, mais vous devez déclarer la fonctionnalité *Bibliothèque d’images* dans le manifeste pour qu’ils puissent numériser dans ce dossier. Pour plus d’informations sur les fonctionnalités d’application, voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/library/windows/apps/Mt270968).
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

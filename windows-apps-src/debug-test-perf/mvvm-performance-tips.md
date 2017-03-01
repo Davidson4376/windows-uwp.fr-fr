@@ -1,20 +1,27 @@
 ---
 author: mcleblanc
 ms.assetid: 159681E4-BF9E-4A57-9FEE-EC7ED0BEFFAD
-title: "Conseils relatifs aux performances du langage de programmation et du modèleMVVM"
+title: "Conseils relatifs aux performances du langage de programmation et du modèle MVVM"
 description: "Cette rubrique décrit certaines considérations en matière de performances liées à vos choix de modèles de conception de logiciel et de langage de programmation."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4be8fd69752dac70c316164fca79bb73c6666c43
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5833422a3074ddfa581011d91c8364bddb3c3088
+ms.lasthandoff: 02/07/2017
 
 ---
-# Conseils relatifs aux performances du langage de programmation et du modèle MVVM
+# <a name="mvvm-and-language-performance-tips"></a>Conseils relatifs aux performances du langage de programmation et du modèle MVVM
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique décrit certaines considérations en matière de performances liées à vos choix de modèles de conception de logiciel et de langage de programmation.
 
-## Modèle MVVM (Model-View-ViewModel)
+## <a name="the-model-view-viewmodel-mvvm-pattern"></a>Modèle MVVM (Model-View-ViewModel)
 
 Le modèle MVVM est courant dans de nombreuses applications XAML. (Le modèle MVVM est très similaire à la description de Fowler du modèle Model-View-Presenter, mais il est adapté au langage XAML.) Le problème du modèle MVVM est qu’il peut, par inadvertance, entraîner un trop grand nombre de couches et d’allocations dans les applications. Les points motivant l’adoption du modèle MVVM sont les suivants.
 
@@ -28,7 +35,7 @@ Il existe plusieurs définitions concrètes du modèle MVVM, et des infrastructu
 -   Dans MVVM, il est courant de connecter Button.Click au modèle d’affichage à l’aide d'une ICommand, par exemple les applications auxiliaires DelegateCommand ou RelayCommand courantes. Ces commandes sont des allocations supplémentaires, qui incluent cependant le détecteur d’événements CanExecuteChanged, s’ajoutent à la plage de travail et au temps de démarrage/navigation de la page. **Recommandation :** comme alternative à l’utilisation de l’interface ICommand pratique, pensez à placer des gestionnaires d’événements dans votre code-behind, à les attacher aux événements d’affichage et à appeler une commande dans votre modèle d’affichage lorsque ces événements sont déclenchés. Vous devez également ajouter du code supplémentaire pour désactiver le bouton lorsque la commande n’est pas disponible.
 -   Dans le modèle MVVM, il est courant de créer une Page avec toutes les configurations possibles de l’interface utilisateur, puis de réduire les parties de l’arborescence en liant la propriété Visibility aux propriétés de l’ordinateur virtuel. Cela s’ajoute inutilement au temps de démarrage et éventuellement à la plage de travail (car certaines parties de l’arborescence peuvent ne jamais devenir visibles). **Recommandations :** utilisez la fonctionnalité x:DeferLoadStrategy pour différer des parties superflues de l’arborescence hors du démarrage. Vous pouvez également créer des contrôles utilisateur pour les différents modes de la page et utiliser code-behind pour ne conserver que les contrôles nécessaires chargés.
 
-## Recommandations liées à C++/CX
+## <a name="ccx-recommendations"></a>Recommandations liées à C++/CX
 
 -   **Utilisez la dernière version**. Des améliorations sont apportées en continu aux performances du compilateur C++/CX. Vérifiez que votre application est générée à l’aide du dernier ensemble d’outils.
 -   **Désactivez l’option RTTI (/GR-)**. L’option RTTI est activée par défaut dans le compilateur. À moins que votre environnement de génération ne l’ait désactivée, vous l’utilisez donc probablement. La surcharge de l’option RTTI est importante, et vous devez donc désactiver cette option à moins que votre code n’ait une dépendance approfondie avec elle. L’infrastructure XAML n’impose nullement que votre code utilise l’option RTTI.
@@ -41,10 +48,5 @@ Il existe plusieurs définitions concrètes du modèle MVVM, et des infrastructu
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,9 +3,16 @@ author: TylerMSFT
 title: "Inscrire une tâche en arrière-plan"
 description: "Découvrez comment créer une fonction que vous pouvez réutiliser pour inscrire la plupart des tâches en arrière-plan en toute sécurité."
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: d65b8d3312e49469bd99d458b45bf5a46f345e6a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: eb3ab08cd26cd39ada38a1428b221157ebf55558
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -394,9 +401,4 @@ Cet exemple montre la fonction d’inscription des tâches en arrière-plan parv
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

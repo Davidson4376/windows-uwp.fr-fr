@@ -1,19 +1,26 @@
 ---
 author: GrantMeStrength
 title: Planifier votre application de plateforme Windows universelle (UWP)
-description: "Les équipes de conception Microsoft suivent un processus de création d’applications en cinqétapes distinctes: concept, structure, dynamique, visuels et prototype. Nous vous encourageons à adopter un processus similaire en prenant plaisir à créer des expériences novatrices dont tout le monde pourra profiter."
+description: "Les équipes de conception Microsoft suivent un processus de création d’applications en cinq étapes distinctes : concept, structure, dynamique, visuels et prototype. Nous vous encourageons à adopter un processus similaire en prenant plaisir à créer des expériences novatrices dont tout le monde pourra profiter."
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 43214b9e2c786a007b8d9cdef7700e275101aba5
-ms.openlocfilehash: 4d17f7da6969910d2738377174cec9f1c1517dde
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 21e08e22e6c6ebada4445a05f32d2bd37244758f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-#  Planifier votre application de plateforme Windows universelle (UWP)
+#  <a name="plan-your-universal-windows-platform-uwp-app"></a>Planifier votre application de plateforme Windows universelle (UWP)
 
-Les équipes de conception Microsoft suivent un processus de création d’applications en cinq étapes distinctes : concept, structure, dynamique, visuels et prototype. Nous vous encourageons à adopter un processus similaire en prenant plaisir à créer des expériences novatrices dont tout le monde pourra profiter.
+Les équipes de conception Microsoft suivent un processus de création d’applications en cinq étapes distinctes : concept, structure, dynamique, visuels et prototype. Nous vous encourageons à adopter un processus similaire en prenant plaisir à créer des expériences novatrices dont tout le monde pourra profiter.
 
-## Concept
+## <a name="concept"></a>Concept
 
 **Se concentrer sur l’application**
 
@@ -21,7 +28,7 @@ Durant la planification de votre application de plateforme Windows universelle (
 
 Supposons que vous souhaitiez créer une application de photographie. En cherchant les raisons qui pousseraient quelqu’un à utiliser votre application, à l’enregistrer et à partager ses photos, vous arrivez à la conclusion que ses objectifs seraient de faire revivre des souvenirs, de rester en contact avec des proches grâce aux photos et de conserver celles-ci en lieu sûr. Voilà en quoi votre application doit exceller. Ces objectifs doivent vous guider tout au long du processus de conception.
 
-**Quel est l’objet de votre application?** Commencez avec un concept élargi et faites l’inventaire des tâches que votre application peut aider à effectuer.
+**Quel est l’objet de votre application ?** Commencez avec un concept élargi et faites l’inventaire des tâches que votre application peut aider à effectuer.
 
 Par exemple, imaginons que vous souhaitiez créer une application qui aide les utilisateurs à planifier leurs voyages. Voici quelques idées que vous pourriez commencer par noter :
 
@@ -34,7 +41,7 @@ Par exemple, imaginons que vous souhaitiez créer une application qui aide les u
 
 ![Conception d’une application de voyage](images/ux-triptracker-tab-phone-700.png)
 
-**Quels sont les points forts de votre application?** Prenez du recul et analysez votre liste d’idées pour voir s’il en ressort un scénario particulier. Obligez-vous à réduire cette liste pour arriver à un seul scénario sur lequel vous concentrer. En cours de processus, vous serez peut-être amené à supprimer de nombreuses bonnes idées, mais, pour aboutir à un excellent scénario unique, vous devez être rigoureux.
+**Quels sont les points forts de votre application ?** Prenez du recul et analysez votre liste d’idées pour voir s’il en ressort un scénario particulier. Obligez-vous à réduire cette liste pour arriver à un seul scénario sur lequel vous concentrer. En cours de processus, vous serez peut-être amené à supprimer de nombreuses bonnes idées, mais, pour aboutir à un excellent scénario unique, vous devez être rigoureux.
 
 Lorsque vous avez choisi un scénario unique, décidez comment vous expliqueriez les capacités de votre application à une personne lambda, par écrit, en une phrase. Par exemple :
 
@@ -50,22 +57,22 @@ Cette liste de points forts peut orienter un grand nombre de décisions et d’a
 
 Il est très tentant (après avoir eu une idée intéressante) de se lancer et de la développer, et peut-être même de l’amener à un stade avancé en matière de production. Mais admettons que les choses se passent ainsi, quand soudain une autre idée intéressante se présente. Il est naturel que vous soyez tenté de vous en tenir à l’idée dans laquelle vous vous êtes investi, indépendamment des mérites que peuvent avoir ces deux idées. Si seulement vous aviez pensé plus tôt à cette autre idée au cours du processus ! Justement, l’entonnoir de conception est une technique qui vous aide à découvrir vos meilleures idées le plus tôt possible.
 
-Le terme « entonnoir » provient de la forme de cette technique. À l’extrémité large de l’entonnoir, de nombreuses idées sont injectées, chacune étant représentée par un artefact de conception peu précis (via un croquis, peut-être, ou un paragraphe de texte). Au fur et à mesure que cet ensemble d’idées circule jusqu’à l’extrémité étroite de l’entonnoir, le nombre d’idées baisse alors que la précision des artefacts qui représentent ces idées augmente. Chaque artefact doit cibler uniquement les informations nécessaires pour comparer les idées ou pour répondre à une question particulière telle que «est-ce utilisable?» ou «est-ce intuitif?». *N’y consacrez pas plus de temps et d’efforts que nécessaire*. Vous abandonnerez certaines idées en les testant, ce qui est une bonne chose, car vous n’aurez pas à vous investir davantage dans ces dernières. Les idées qui continuent leur chemin dans l’entonnoir seront prises en considération de manière plus fine. Au final, il restera un seul artefact de conception qui représentera l’idée gagnante. Il s’agit de l’idée qui gagne en raison de ses mérites, et pas simplement parce qu’elle vous est venue en premier. Ainsi, vous concevrez la meilleure application possible.
+Le terme « entonnoir » provient de la forme de cette technique. À l’extrémité large de l’entonnoir, de nombreuses idées sont injectées, chacune étant représentée par un artefact de conception peu précis (via un croquis, peut-être, ou un paragraphe de texte). Au fur et à mesure que cet ensemble d’idées circule jusqu’à l’extrémité étroite de l’entonnoir, le nombre d’idées baisse alors que la précision des artefacts qui représentent ces idées augmente. Chaque artefact doit cibler uniquement les informations nécessaires pour comparer les idées ou pour répondre à une question particulière telle que « est-ce utilisable ? » ou « est-ce intuitif ? ». *N’y consacrez pas plus de temps et d’efforts que nécessaire*. Vous abandonnerez certaines idées en les testant, ce qui est une bonne chose, car vous n’aurez pas à vous investir davantage dans ces dernières. Les idées qui continuent leur chemin dans l’entonnoir seront prises en considération de manière plus fine. Au final, il restera un seul artefact de conception qui représentera l’idée gagnante. Il s’agit de l’idée qui gagne en raison de ses mérites, et pas simplement parce qu’elle vous est venue en premier. Ainsi, vous concevrez la meilleure application possible.
 
-## Structure
+## <a name="structure"></a>Structure
 
 
 **L’organisation rend tout plus facile**
 
 ![L’organisation rend tout plus facile](images/ux-vision-and-process-organization.png)
 
-Quand vous êtes satisfait de votre concept, vous êtes prêt pour la prochaine étape: la création du plan de votre application. L’architecture de l’information donne à votre contenu l’intégrité structurelle dont il a besoin. Il permet de définir le modèle de navigation de votre application et, en fin de compte, son identité. En planifiant l’organisation de votre contenu et la façon dont vos utilisateurs vont le découvrir, vous pouvez vous faire une meilleure idée du ressenti des utilisateurs face à votre application.
+Quand vous êtes satisfait de votre concept, vous êtes prêt pour la prochaine étape : la création du plan de votre application. L’architecture de l’information donne à votre contenu l’intégrité structurelle dont il a besoin. Il permet de définir le modèle de navigation de votre application et, en fin de compte, son identité. En planifiant l’organisation de votre contenu et la façon dont vos utilisateurs vont le découvrir, vous pouvez vous faire une meilleure idée du ressenti des utilisateurs face à votre application.
 
 Une bonne architecture de l’information facilite les scénarios d’utilisation et vous aide à envisager les écrans principaux. L’application [Audible](http://go.microsoft.com/fwlink/p/?LinkID=268089), par exemple, se lance directement dans une page Hub, qui permet d’accéder à la bibliothèque, au magasin, aux informations et aux statistiques de l’utilisateur. L’expérience est ciblée, pour permettre aux utilisateurs d’obtenir rapidement des livres audio et d’en profiter. À des niveaux plus profonds, l’application se concentre sur des tâches plus spécifiques.
 
 Pour obtenir des recommandations à ce sujet, voir [Informations de base relatives à la conception de la navigation](../layout/navigation-basics.md).
 
-## Dynamique
+## <a name="dynamics"></a>Dynamique
 
 **Exécuter votre concept**
 
@@ -77,9 +84,9 @@ Techniques courantes :
 
 -   Présentez le flux : qu’est-ce qui arrive en premier, et ensuite ?
 -   Détaillez le flux : comment les utilisateurs doivent-ils progresser au niveau de l’interface pour réaliser le flux ?
--   Prototype: testez le flux avec un prototype rapide.
+-   Prototype : testez le flux avec un prototype rapide.
 
-**Que doivent pouvoir faire les utilisateurs?** Par exemple, l’application de voyage est «excellente pour aider des amis à créer ensemble des itinéraires pour des voyages en groupe». Établissons la liste des flux à activer:
+**Que doivent pouvoir faire les utilisateurs ?** Par exemple, l’application de voyage est « excellente pour aider des amis à créer ensemble des itinéraires pour des voyages en groupe ». Établissons la liste des flux à activer :
 
 -   Créer un voyage en utilisant des informations générales.
 -   Inviter des amis à se joindre à un voyage.
@@ -89,7 +96,7 @@ Techniques courantes :
 -   Modifier et commenter les destinations et les activités ajoutées par les amis.
 -   Permettre à des amis et à la famille de suivre les itinéraires partagés.
 
-## Éléments visuels
+## <a name="visual"></a>Éléments visuels
 
 **Parler sans mots**
 
@@ -99,7 +106,7 @@ Une fois que vous avez créé la dynamique de votre application, vous pouvez met
 
 Chaque application possède sa propre identité, explorez donc les directions visuelles que vous pouvez prendre avec votre application. Laissez le contenu guider l’apparence de votre application, et non l’inverse.
 
-## Prototype
+## <a name="prototype"></a>Prototype
 
 **Peaufiner votre chef-d’œuvre**
 
@@ -107,16 +114,16 @@ Le prototypage est une étape de l’*entonnoir de conception* (technique dont n
 
 À l’attention des nouveaux développeurs : n’oubliez pas que la conception d’applications réussies est un processus itératif. Nous vous recommandons de prototyper le plus tôt possible et souvent. Comme toute activité créatrice, les meilleures applications sont le fruit d’un processus intensif d’essais et d’erreurs.
 
-## Identifier les fonctionnalités à inclure
+## <a name="decide-what-features-to-include"></a>Identifier les fonctionnalités à inclure
 
-Une fois que vous savez ce que veulent vos utilisateurs et comment les aider à y parvenir, vous pouvez étudier les outils spécifiques de votre boîte à outils. Passez la plateforme Windows universelle (UWP) en revue et associez des fonctionnalités pour répondre aux besoins de votre application. Veillez à suivre les [recommandations relatives à l’expérience utilisateur](https://msdn.microsoft.com/library/windows/apps/hh465424.aspx) pour chaque fonctionnalité.
+Une fois que vous savez ce que veulent vos utilisateurs et comment les aider à y parvenir, vous pouvez étudier les outils spécifiques de votre boîte à outils. Passez la plateforme Windows universelle (UWP) en revue et associez des fonctionnalités pour répondre aux besoins de votre application. Veillez à suivre les [recommandations relatives à l’expérience utilisateur](https://developer.microsoft.com/windows/apps/design) pour chaque fonctionnalité.
 <!--need URL for landing page -->
 
-Techniques courantes:
+Techniques courantes :
 
--   Recherche au niveau de la plateforme: recherchez les fonctionnalités de la plateforme et comment vous pouvez les utiliser.
--   Diagrammes d’association: mettez en relation vos flux et les fonctionnalités.
--   Prototype: testez les fonctionnalités pour vérifier qu’elles répondent à vos besoins.
+-   Recherche au niveau de la plateforme : recherchez les fonctionnalités de la plateforme et comment vous pouvez les utiliser.
+-   Diagrammes d’association : mettez en relation vos flux et les fonctionnalités.
+-   Prototype : testez les fonctionnalités pour vérifier qu’elles répondent à vos besoins.
 
 **Contrats d’application** Votre application peut participer à des contrats d’application qui autorisent les flux d’utilisateurs importants entre applications et fonctionnalités.
 
@@ -135,7 +142,7 @@ Par exemple, le zoom sémantique permet de naviguer dans un grand volume de cont
 
 Vous pouvez évidemment tirer parti d’un certain nombre d’interactions tactiles permettant de faire pivoter, d’effectuer un mouvement panoramique, un balayage, etc. En savoir plus sur les [interactions tactiles et les autres interactions avec l’utilisateur](../input-and-devices/input-primer.md).
 
-**Attrayante et d’actualité** Votre application sera moderne et attrayante avec ces expériences utilisateur proposées en standard:
+**Attrayante et d’actualité** Votre application sera moderne et attrayante avec ces expériences utilisateur proposées en standard :
 
 -   **Animations** Utilisez notre bibliothèque d’animations pour rendre votre application rapide et fluide pour vos utilisateurs. Permet aux utilisateurs de comprendre les changements de contexte et assure l’homogénéité des expériences par des transitions visuelles. Découvrez tout ce qu’il faut savoir sur l’[animation de votre interface utilisateur](../graphics/animations-overview.md).
 -   **Notifications toast** Permet aux utilisateurs d’identifier le contenu limité dans le temps ou qui peut les intéresser grâce à des notifications. Permet également d’inviter les utilisateurs à revenir dans votre application quand elle est fermée. En savoir plus sur les [vignettes, badges et notifications toast](../controls-and-patterns/tiles-badges-notifications.md).
@@ -152,7 +159,7 @@ Vous pouvez évidemment tirer parti d’un certain nombre d’interactions tacti
 -   **Mouvements de proximité** Permettez aux utilisateurs de connecter leurs appareils avec ceux des autres utilisateurs à proximité en appuyant ces appareils l’un contre l’autre (jeux multijoueur). En savoir plus sur [les mouvements de proximité et le contact](https://msdn.microsoft.com/library/windows/apps/hh465229).
 -   **Caméras et dispositifs de stockage externes** Connectez vos utilisateurs grâce aux caméras intégrées ou reliées à leur ordinateur pour qu’ils puissent discuter, participer à des conférences, enregistrer des vidéoblogues, prendre des photos pour leur profil, parler du monde qui les entoure ou participer à toute autre activité entrant dans le domaine de l’application. Découvrez tout ce qu’il faut savoir sur l’[accès à du contenu de stockage amovible](https://msdn.microsoft.com/library/windows/apps/hh465189).
 -   **Accéléromètres et autres capteurs** De nos jours, les appareils intègrent un certain nombre de capteurs. Votre application peut assombrir ou éclaircir l’affichage en fonction de la lumière ambiante, réorganiser l’interface utilisateur si l’utilisateur fait pivoter l’affichage ou réagir à un mouvement. En savoir plus sur les [capteurs](../devices-sensors/sensors.md).
--   **Géolocalisation** Utilisez les informations de géolocalisation des données du web ou des capteurs de géolocalisation standard pour aider les utilisateurs à circuler, à repérer leur emplacement sur une carte ou à recevoir des renseignements sur les personnes, les activités et les destinations à proximité. En savoir plus sur la [géolocalisation](https://msdn.microsoft.com/library/windows/apps/hh465139).
+-   **Géolocalisation** Utilisez les informations de géolocalisation des données du Web ou des capteurs de géolocalisation standard pour aider les utilisateurs à circuler, à repérer leur emplacement sur une carte ou à recevoir des renseignements sur les personnes, les activités et les destinations à proximité. En savoir plus sur la [géolocalisation](https://msdn.microsoft.com/library/windows/apps/hh465139).
 
 Reprenons l’exemple de l’application de voyage. Pour réellement aider des amis à créer ensemble des itinéraires pour les voyages en groupe, vous pouvez utiliser quelques fonctionnalités, comme les suivantes pour n’en citer que certaines :
 
@@ -163,21 +170,21 @@ Reprenons l’exemple de l’application de voyage. Pour réellement aider des a
 -   Zoom sémantique : les utilisateurs naviguent dans toutes les étapes de leur itinéraire et peuvent zoomer pour afficher plus de détails dans la longue liste d’activités qu’ils ont planifiées.
 -   Vignettes des utilisateurs : les utilisateurs choisissent l’avatar qu’ils souhaitent afficher lorsqu’ils partagent leur voyage avec leurs amis.
 
-## Choisir le mode de monétisation de votre application
+## <a name="decide-how-to-monetize-your-app"></a>Choisir le mode de monétisation de votre application
 
 Il existe un grand nombre d’options vous permettant de gagner de l’argent avec votre application. Si vous décidez d’utiliser des publicités ou des ventes intégrées à l’application, vous devez concevoir une interface utilisateur adaptée. Pour plus d’informations, voir [Planifier la monétisation](../monetize/index.md).
 
-## Concevoir l’expérience utilisateur de votre application
+## <a name="design-the-ux-for-your-app"></a>Concevoir l’expérience utilisateur de votre application
 
 Il s’agit de partir sur la bonne base. Maintenant que vous connaissez les points forts de votre application et les flux à prendre en charge, vous pouvez réfléchir aux principes de base de la conception de l’expérience utilisateur.
 
-**Comment organiser le contenu de l’interface utilisateur?**   La plupart du contenu de l’application peut être organisé sous forme de regroupements ou de hiérarchies. Ce que vous choisissez comme groupe de premier niveau pour votre contenu doit correspondre à votre liste de points forts.
+**Comment organiser le contenu de l’interface utilisateur ?**   La plupart du contenu de l’application peut être organisé sous forme de regroupements ou de hiérarchies. Ce que vous choisissez comme groupe de premier niveau pour votre contenu doit correspondre à votre liste de points forts.
 
 Pour reprendre l’exemple de l’application de voyage, il existe de nombreuses façons de regrouper des itinéraires. Si l’objet principal de l’application est de découvrir des destinations intéressantes, vous pouvez les regrouper par centre d’intérêt : aventure, plaisirs ensoleillés ou destinations romantiques. Si votre application sert cependant à planifier des voyages avec des amis, il est plus sensé d’organiser des itinéraires en fonction des cercles sociaux, comme la famille, les amis ou les collègues.
 
 Choisir le mode de regroupement de votre contenu vous permet de décider des pages ou des vues nécessaires dans votre application. Reportez-vous aux notions de base sur l’interface utilisateur pour plus d’informations.
 
-**Comment présenter le contenu de l’interface utilisateur?** Une fois que vous avez décidé de l’organisation de votre interface utilisateur, vous pouvez définir les objectifs de l’expérience utilisateur qui spécifient la création et la présentation de cette interface à vos utilisateurs. Quel que soit le scénario, assurez-vous que vos utilisateurs peuvent continuer à profiter de votre application aussi rapidement que possible. Pour ce faire, déterminez les parties de votre interface utilisateur qui doivent être présentées en premier, puis vérifiez qu’elles sont complètes avant de passer du temps à générer les parties non essentielles.
+**Comment présenter le contenu de l’interface utilisateur ?** Une fois que vous avez décidé de l’organisation de votre interface utilisateur, vous pouvez définir les objectifs de l’expérience utilisateur qui spécifient la création et la présentation de cette interface à vos utilisateurs. Quel que soit le scénario, assurez-vous que vos utilisateurs peuvent continuer à profiter de votre application aussi rapidement que possible. Pour ce faire, déterminez les parties de votre interface utilisateur qui doivent être présentées en premier, puis vérifiez qu’elles sont complètes avant de passer du temps à générer les parties non essentielles.
 
 Dans l’application de voyage, l’utilisateur souhaitera probablement trouver en premier un itinéraire de voyage. Pour présenter ces informations le plus rapidement possible, affichez la liste des voyages en premier à l’aide d’un contrôle **ListView**.
 
@@ -185,7 +192,7 @@ Dans l’application de voyage, l’utilisateur souhaitera probablement trouver 
 
 Une fois la liste des voyages affichée, vous pouvez charger d’autres fonctionnalités, par exemple un flux d’actualités relatif aux voyages des amis.
 
-**De quelle interface utilisateur et de quelles commandes avez-vous besoin?**   Passez en revue les flux identifiés précédemment. Pour chaque flux, créez une ébauche des étapes entreprises par les utilisateurs.
+**De quelle interface utilisateur et de quelles commandes avez-vous besoin ?**   Passez en revue les flux identifiés précédemment. Pour chaque flux, créez une ébauche des étapes entreprises par les utilisateurs.
 
 Analysons le flux « Permettre à des amis et à la famille de suivre les itinéraires ». Supposons que l’utilisateur a déjà créé un voyage. Pour partager l’itinéraire d’un voyage, les étapes suivantes sont nécessaires :
 
@@ -201,16 +208,16 @@ Au cours de ce processus, vous entrevoyez le type d’interface utilisateur que 
 
 Pour en savoir plus sur l’utilisation des différentes surfaces, voir <!--[Command design basics](../layout/commanding-basics.md)-->.
 
-**À quoi doit ressembler le flux?** Une fois les étapes de l’utilisateur définies, vous pouvez transformer ce flux en objectifs de performances. Pour plus d’informations, voir [Planifier les performances](../debug-test-perf/planning-and-measuring-performance.md).
+**À quoi doit ressembler le flux ?** Une fois les étapes de l’utilisateur définies, vous pouvez transformer ce flux en objectifs de performances. Pour plus d’informations, voir [Planifier les performances](../debug-test-perf/planning-and-measuring-performance.md).
 
-**Comment organiser les commandes?**  Utilisez votre esquisse des étapes du flux pour identifier les commandes pour lesquelles vous devez effectuer la conception. Cherchez ensuite où ces commandes doivent être utilisées dans votre application.
+**Comment organiser les commandes ?**  Utilisez votre esquisse des étapes du flux pour identifier les commandes pour lesquelles vous devez effectuer la conception. Cherchez ensuite où ces commandes doivent être utilisées dans votre application.
 
 -   **Essayez toujours d’utiliser le contenu.**  Laissez les utilisateurs manipuler directement, autant que possible, le contenu sur la zone de dessin, au lieu d’ajouter des commandes qui agissent sur le contenu. Par exemple, dans l’application de voyage, permettez aux utilisateurs de réorganiser leur itinéraire en faisant glisser et en déplaçant des activités d’une liste de la zone de dessin, plutôt qu’en sélectionnant l’activité et en utilisant les boutons haut et bas de la barre de commandes.
--   **Si vous ne pouvez pas utiliser le contenu.** Placez les commandes sur l’une des surfaces suivantes de l’interface utilisateur:
+-   **Si vous ne pouvez pas utiliser le contenu.** Placez les commandes sur l’une des surfaces suivantes de l’interface utilisateur :
 
-    -   Dans la [barre de commandes](https://msdn.microsoft.com/library/windows/apps/hh465302): placez la majorité des commandes sur la barre de commandes, généralement masquée jusqu’à ce que l’utilisateur appuie sur celle-ci pour la rendre visible.
+    -   Dans la [barre de commandes](https://msdn.microsoft.com/library/windows/apps/hh465302) : placez la majorité des commandes sur la barre de commandes, généralement masquée jusqu’à ce que l’utilisateur appuie sur celle-ci pour la rendre visible.
     -   Sur la zone de dessin de l’application : si l’utilisateur consulte une page ou une vue avec un objectif unique, vous pouvez placer les commandes adéquates directement sur cette zone. Il doit y avoir très peu de commandes de ce type.
-    -   Dans un [menu contextuel](https://msdn.microsoft.com/library/windows/apps/hh465308): vous pouvez utiliser des menus contextuels pour les actions du Presse-papiers (comme couper, copier et coller) ou pour les commandes qui concernent le contenu qui ne peut pas être sélectionné (ajouter une punaise pour localiser un lieu sur une carte, par exemple).
+    -   Dans un [menu contextuel](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/menus) : vous pouvez utiliser des menus contextuels pour les actions du Presse-papiers (comme couper, copier et coller) ou pour les commandes qui concernent le contenu qui ne peut pas être sélectionné (ajouter une punaise pour localiser un lieu sur une carte, par exemple).
 
 **Déterminez la disposition de votre application dans chaque affichage.**  Windows prend en charge les orientations paysage et portrait et le redimensionnement des applications à n’importe quelle largeur, du plein écran jusqu’à la largeur minimale. Vous devez faire en sorte que votre application fonctionne correctement et soit visuellement plaisante dans n’importe quelle taille, sur n’importe quel écran et dans n’importe quelle orientation. Cela signifie que vous devez planifier la disposition des éléments de votre interface utilisateur pour différentes tailles et affichages. Ainsi, l’interface utilisateur de l’application s’adapte de façon fluide pour répondre aux besoins et aux préférences de l’utilisateur.
 
@@ -218,26 +225,21 @@ Pour en savoir plus sur l’utilisation des différentes surfaces, voir <!--[Com
 
 Pour plus d’informations sur la conception d’applications dédiées à des tailles d’écran différentes, voir <!--[Responsive design 101](designing-in-effective-pixels.md)-->.
 
-## Faire une bonne première impression
+## <a name="make-a-good-first-impression"></a>Faire une bonne première impression
 
-Gardez à l’esprit ce que vous voulez que vos utilisateurs pensent, ressentent ou fassent au moment où ils lancent votre application pour la première fois. Reportez-vous à votre liste de points forts. Même si vous n’aurez pas l’occasion de dire personnellement à vos utilisateurs quels sont les points forts de votre application, vous pouvez leur faire passer le message en donnant une bonne première impression. Utilisez les possibilités suivantes:
+Gardez à l’esprit ce que vous voulez que vos utilisateurs pensent, ressentent ou fassent au moment où ils lancent votre application pour la première fois. Reportez-vous à votre liste de points forts. Même si vous n’aurez pas l’occasion de dire personnellement à vos utilisateurs quels sont les points forts de votre application, vous pouvez leur faire passer le message en donnant une bonne première impression. Utilisez les possibilités suivantes :
 
-**Vignette et notifications** La vignette représente le visage de votre application. Pour quelles raisons les utilisateurs choisiront-ils de lancer votre application, présentée parmi d’autres sur leur écran de démarrage? Votre vignette doit mettre en valeur la marque et les capacités de votre application. Utilisez les notifications par vignette pour garder votre application à jour et d’actualité, et pour ramener constamment l’utilisateur à votre application.
+**Vignette et notifications** La vignette représente le visage de votre application. Pour quelles raisons les utilisateurs choisiront-ils de lancer votre application, présentée parmi d’autres sur leur écran de démarrage ? Votre vignette doit mettre en valeur la marque et les capacités de votre application. Utilisez les notifications par vignette pour garder votre application à jour et d’actualité, et pour ramener constamment l’utilisateur à votre application.
 
 **Écran de démarrage** L’écran de démarrage doit se charger aussi vite que possible et ne rester affiché que pendant la phase d’initialisation de votre application. Ce que vous affichez sur cet écran de démarrage doit exprimer la personnalité de votre application.
 
-**Premier démarrage** Que voient les utilisateurs avant de s’abonner à votre service, de se connecter à leur compte ou d’ajouter leur contenu? Essayez de montrer la valeur de votre application avant de demander des informations aux utilisateurs. Pensez à donner des exemples de contenu pour permettre aux utilisateurs de les manipuler et de comprendre l’objet de votre application avant de leur demander de s’engager.
+**Premier démarrage** Que voient les utilisateurs avant de s’abonner à votre service, de se connecter à leur compte ou d’ajouter leur contenu ? Essayez de montrer la valeur de votre application avant de demander des informations aux utilisateurs. Pensez à donner des exemples de contenu pour permettre aux utilisateurs de les manipuler et de comprendre l’objet de votre application avant de leur demander de s’engager.
 
 **Page d’accueil** La page d’accueil est celle vers laquelle vous dirigez les utilisateurs chaque fois qu’ils lancent votre application. Son contenu doit être évident et doit indiquer immédiatement ce pour votre application est conçue. Faites une excellente page et comptez sur les gens pour explorer le reste de votre application. Éliminez à tout prix les distractions sur la page d’accueil au lieu de miser sur la découverte.
 
-## Valider votre conception
+## <a name="validate-your-design"></a>Valider votre conception
 
-Pour éviter d’avoir à effectuer trop de changements plus tard, validez votre conception ou votre prototype par rapport aux recommandations, impressions des utilisateurs et exigences avant de pousser le développement trop loin. À chaque fonctionnalité correspondent des recommandations d’expérience utilisateur pour vous aider à perfectionner votre application, et des conditions à remplir pour la publication de votre application dans le Windows Store. Vous pouvez utiliser le [Kit de certification des applications Windows](https://dev.windows.com/develop/app-certification-kit) pour tester la conformité technique aux exigences du WindowsStore. Vous pouvez également utiliser les outils d’analyse des performances de Microsoft Visual Studio pour proposer à vos utilisateurs la meilleure expérience possible, quel que soit le scénario.
+Pour éviter d’avoir à effectuer trop de changements plus tard, validez votre conception ou votre prototype par rapport aux recommandations, impressions des utilisateurs et exigences avant de pousser le développement trop loin. À chaque fonctionnalité correspondent des recommandations d’expérience utilisateur pour vous aider à perfectionner votre application, et des conditions à remplir pour la publication de votre application dans le Windows Store. Vous pouvez utiliser le [Kit de certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) pour tester la conformité technique aux exigences du Windows Store. Vous pouvez également utiliser les outils d’analyse des performances de Microsoft Visual Studio pour proposer à vos utilisateurs la meilleure expérience possible, quel que soit le scénario.
 
-Utilisez la liste de [recommandations détaillées relatives à l’expérience utilisateur pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh465424) afin de ne pas oublier de fonctionnalités importantes. Utilisez les [outils de performances VisualStudio](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx) pour analyser les performances de chacun des scénarios de votre application.
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+Utilisez la liste de [recommandations détaillées relatives à l’expérience utilisateur pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh465424) afin de ne pas oublier de fonctionnalités importantes. Utilisez les [outils de performances Visual Studio](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx) pour analyser les performances de chacun des scénarios de votre application.
 

@@ -3,27 +3,33 @@ author: mcleanbyron
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: "Découvrez comment installer les bibliothèques de publicités Microsoft."
 title: "Installer les bibliothèques de publicités Microsoft"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, pub, publicités, installer, SDK, bibliothèques"
 translationtype: Human Translation
-ms.sourcegitcommit: 126fee708d82f64fd2a49b844306c53bb3d4cc86
-ms.openlocfilehash: c717fa693c6edf8757c3eef79d60193434104bd8
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 034b597c945f9f12700ac442e4b3014b0bc84c78
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Installer les bibliothèques de publicités Microsoft
+# <a name="install-the-microsoft-advertising-libraries"></a>Installer les bibliothèques de publicités Microsoft
 
 
 
 
 Pour les applications de plateforme Windows universelle (UWP) pour Windows 10, les bibliothèques de publicités Microsoft sont incluses dans [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). Ce kit de développement logiciel (SDK) est une extension de Visual Studio 2015 et des versions ultérieures. Pour plus d’informations sur l’installation de ce SDK, consultez [cet article](microsoft-store-services-sdk.md).
 
-> **Remarque**  Si vous avez installé le SDK Windows 10 (14393) ou version ultérieure, vous devez également installer la bibliothèque WinJS si vous voulez ajouter des publicités à une application UWP JavaScript/HTML. Cette bibliothèque était incluse dans les versions précédentes du SDK Windows 10, mais à partir du SDK Windows 10 (14393), vous devez l’installer séparément. Pour installer WinJS, voir [Obtenir WinJS](http://try.buildwinjs.com/download/GetWinJS/).
+> **Remarque**&nbsp;&nbsp;Si vous avez installé le SDK Windows 10 (14393) ou version ultérieure, vous devez également installer la bibliothèque WinJS si vous voulez ajouter des publicités à une application UWP JavaScript/HTML. Cette bibliothèque était incluse dans les versions précédentes du SDK Windows 10, mais à partir du SDK Windows 10 (14393), vous devez l’installer séparément. Pour installer WinJS, voir [Obtenir WinJS](http://try.buildwinjs.com/download/GetWinJS/).
 
 Pour les applications XAML et JavaScript/HTML pour Windows 8.1 et Windows Phone 8.x, les bibliothèques de publicités Microsoft sont incluses dans [Microsoft Advertising SDK pour Windows et Windows Phone 8.x](http://aka.ms/store-8-sdk). Ce kit de développement logiciel (SDK) est une extension de Visual Studio 2015 et de Visual Studio 2013.
 
 Pour les applications Silverlight Windows Phone 8.x, les bibliothèques de publicités Microsoft sont disponibles dans un package NuGet que vous pouvez télécharger et installer dans votre projet. Pour plus d’informations, voir [AdControl dans Silverlight Windows Phone](adcontrol-in-windows-phone-silverlight.md).
 
-## Noms des bibliothèques de publicités
+## <a name="library-names-for-advertising"></a>Noms des bibliothèques de publicités
 
 
 Il existe plusieurs bibliothèques de publicités différentes disponibles dans Microsoft Store Services SDK et Microsoft Advertising SDK pour Windows et Windows Phone 8.x :
@@ -34,7 +40,7 @@ Il existe plusieurs bibliothèques de publicités différentes disponibles dans 
 
 Cette documentation décrit l’utilisation des classes **AdControl** et **InterstitialAd** des bibliothèques de publicités Microsoft pour afficher des bannières et des spots vidéo publicitaires. Pour plus d’informations sur l’utilisation de la médiation publicitaire pour les applications Windows 8.1 et Windows Phone 8.x, voir [Utiliser la médiation publicitaire pour optimiser les revenus](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx).
 
->**Remarque**  La médiation publicitaire à l’aide de la classe **AdMediatorControl** n’est actuellement pas prise en charge pour les applications UWP pour Windows 10. La médiation côté serveur sera disponible très prochainement pour les applications UWP à l’aide des API dédiées aux bannières publicitaires (**AdControl**) et aux spots vidéo publicitaires (**InterstitialAd**).
+>**Remarque**&nbsp;&nbsp;La médiation publicitaire à l’aide de la classe **AdMediatorControl** n’est actuellement pas prise en charge pour les applications UWP pour Windows 10. La médiation côté serveur sera disponible très prochainement pour les applications UWP à l’aide des API dédiées aux bannières publicitaires (**AdControl**) et aux spots vidéo publicitaires (**InterstitialAd**).
 
 Pour pouvoir utiliser les contrôles de publicité dans le code de votre application, vous devez référencer la bibliothèque appropriée dans votre projet. Le tableau suivant répertorie les noms de chacune des bibliothèques comme ils figurent dans la boîte de dialogue **Gestionnaire de références** de Visual Studio.
 
@@ -100,9 +106,4 @@ Pour pouvoir utiliser les contrôles de publicité dans le code de votre applica
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

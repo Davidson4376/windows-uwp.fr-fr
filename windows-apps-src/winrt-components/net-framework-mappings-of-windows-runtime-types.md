@@ -3,20 +3,27 @@ author: msatranjr
 title: Mappages .NET Framework des types Windows Runtime
 description: "Le tableau suivant répertorie les mappages que .NET Framework effectue entre les types de plateforme Windows universelle (UWP) et les types .NET Framework."
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 1367664cc4278bb555764cbfdf13ce6653f94920
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ab2c2307376f3fad8cd404f7ddf8056f1ef2e8d3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Mappages .NET Framework des types Windows Runtime
+# <a name="net-framework-mappings-of-windows-runtime-types"></a>Mappages .NET Framework des types Windows Runtime
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Le tableau suivant répertorie les mappages que .NET Framework effectue entre les types de plateforme Windows universelle (UWP) et les types .NET Framework. Dans une application Windows universelle écrite en code managé, IntelliSense affiche le type .NET Framework plutôt que le type UWP. Par exemple, si une méthode Windows Runtime prend un paramètre de type IVector&lt;string&gt;, IntelliSense affiche un paramètre de type IList&lt;string&gt;. De même, dans un composant Windows Runtime écrit en code managé, vous devez utiliser le type .NET Framework dans les signatures de membre. Lorsque l’[outil d’exportation de métadonnées Windows Runtime (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) génère votre composant Windows Runtime, le type .NET Framework devient le type UWP correspondant.
 
-## Tableaux des mappages
+## <a name="mapping-tables"></a>Tableaux des mappages
 
 
 La plupart des types qui présentent le même nom d’espace de noms et le même nom de type dans UWP et .NET Framework sont des structures (ou des types associés à des structures, tels que les énumérations). Dans UWP, les structures ont pour seuls membres des champs et requièrent des types d’assistance, masqués par .NET Framework. Les versions de .NET Framework de ces structures présentent des propriétés et des méthodes qui fournissent les fonctionnalités des types d’assistance masqués.
@@ -80,12 +87,7 @@ Tableau 2 : types UWP correspondants aux types .NET Framework avec un nom et un 
 
  
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

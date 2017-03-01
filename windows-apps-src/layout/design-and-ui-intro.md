@@ -1,14 +1,21 @@
 ---
 author: mijacobs
 Description: "Cet article décrit les fonctionnalités, avantages et configurations requises de la plateforme Windows universelle (UWP, Universal Windows Platform) du point de vue de la conception. Découvrez ce que la plateforme met gratuitement à votre disposition, ainsi que les outils qu’elle propose."
-title: "$$$Présentation de la conception des applications Windows pour la plateforme Windows universelle (UWP)"
+title: "Présentation de la conception des applications de plateforme Windows universelle (UWP) (applications Windows)"
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 label: Intro to UWP app design
 template: detail.hbs
 op-migration-status: ready
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: e6169f033a224c6ad9c3ba47ef1fd0a80e137dff
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 90096443a0b67b816869e6c9e607ccfd43f0cea1
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -220,10 +227,5 @@ Voici un exemple de cette technique appliquée à la conception d’une applicat
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

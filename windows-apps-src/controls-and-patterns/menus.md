@@ -4,9 +4,17 @@ Description: "Un menu volant est une fenêtre contextuelle légère utilisée po
 title: Menus et menus contextuels
 label: Menus and context menus
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
 translationtype: Human Translation
-ms.sourcegitcommit: 5f50e490caa5d1d88c2f8315dc47e15b0ae22a05
-ms.openlocfilehash: badb03c97ae0f2350e5d7592f10168bb7d6e7d1a
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 515c63d5612358cf90684427f8f747e19384c6ff
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="menus-and-context-menus"></a>Menus et menus contextuels
@@ -153,7 +161,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 > Les contrôles permettant de faire disparaître les contrôles, tels que des menus, des menus contextuels et des menus volants, interceptent le focus du clavier et du boîtier de commande à l’intérieur de l’interface utilisateur temporaire jusqu’à le faire disparaître. Pour fournir une indication visuelle de ce comportement, les contrôles de la Xbox permettant de faire disparaître la luminosité dessinent une superposition qui assombrit l’interface utilisateur hors de portée. Ce comportement peut être modifié à l’aide de la nouvelle propriété [LightDismissOverlayMode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx). Par défaut, les interfaces utilisateur temporaires dessinent la superposition permettant de faire disparaître la luminosité sur la Xbox, mais pas sur d’autres familles d’appareils. Toutefois, les applications peuvent choisir de forcer la superposition afin d’être toujours **activées** ou **désactivées**.
 
 > ```xaml
-> <MenuFlyout LightDismissOverlayMode="Off">
+> <MenuFlyout LightDismissOverlayMode=\"Off\">
 > ```
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
@@ -163,9 +171,4 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ## <a name="related-articles"></a>Articles connexes
 
 - [**Classe MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

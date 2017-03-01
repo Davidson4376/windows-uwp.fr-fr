@@ -3,23 +3,30 @@ author: msatranjr
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
 title: RFCOMM Bluetooth
 description: "Cet article fournit une vue d’ensemble de RFCOMM Bluetooth dans les applications de plateforme Windows universelle (UWP), ainsi qu’un exemple de code illustrant la façon d’envoyer ou de recevoir un fichier."
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 97b5128f8543ea8eab24be5aa8c6a71811e97896
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8342d53c5d53e06f6793ce1d125c26f0e3880c07
+ms.lasthandoff: 02/07/2017
 
 ---
-# RFCOMM Bluetooth
+# <a name="bluetooth-rfcomm"></a>Bluetooth RFCOMM
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
-** API importantes **
+**API importantes**
 
 -   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
 -   [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529)
 
 Cet article fournit une vue d’ensemble de RFCOMM Bluetooth dans les applications de plateforme Windows universelle (UWP), ainsi qu’un exemple de code illustrant la façon d’envoyer ou de recevoir un fichier.
 
-## Vue d’ensemble
+## <a name="overview"></a>Vue d’ensemble
 
 Les API de l’espace de noms [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) s’appuient sur des schémas existants pour Windows.Devices, notamment [**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) et [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654). La lecture et l’écriture de données tirent parti des [**schémas de flux de données établis**](https://msdn.microsoft.com/library/windows/apps/BR208119) et des objets dans [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791). Les attributs de protocole SDP (Service Discovery Protocol) possèdent une valeur et un type attendu. Toutefois, pour certains appareils communs, les implémentations des attributs SDP sont défectueuses, car le type de la valeur ne correspond pas au type attendu. En outre, de nombreuses utilisations de RFCOMM ne nécessitent aucun attribut SDP supplémentaire. Cette API permet donc d’accéder aux données SDP non analysées, à partir desquelles les développeurs peuvent obtenir les informations dont ils ont besoin.
 
@@ -27,10 +34,10 @@ Les API RFCOMM utilisent le concept d’identificateurs de service. Bien qu’un
 
 L’application peut effectuer des opérations d’appareil en plusieurs étapes dans le cadre d’une tâche en arrière-plan, si bien qu’elle peut s’exécuter jusqu’au bout, même si elle est déplacée vers l’arrière-plan et suspendue. Cela permet d’effectuer des opérations de maintenance fiables pour les appareils telles que la modification de paramètres persistants ou de microprogrammes et la synchronisation du contenu, sans obliger l’utilisateur à observer une barre de progression pour patienter. Utilisez [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297315) pour la maintenance de l’appareil et [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297337) pour la synchronisation du contenu. Ces tâches en arrière-plan limitent la durée pendant laquelle l’application peut s’exécuter en arrière-plan et ne sont pas conçues pour autoriser une opération ou synchronisation illimitée.
 
-Pour un exemple de code complet détaillant l’opérationRFCOMM, voir l’[**exemple de conversation RFCOMM Bluetooth**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothRfcommChat) sur Github.  
-## Envoyer un fichier en tant que client
+Pour un exemple de code complet détaillant l’opération RFCOMM, voir l’[**exemple de conversation RFCOMM Bluetooth**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothRfcommChat) sur Github.  
+## <a name="send-a-file-as-a-client"></a>Envoyer un fichier en tant que client
 
-Lors de l’envoi d’un fichier, le scénario d’application de base consiste à se connecter à un périphérique couplé en fonction d’un service souhaité. Les étapes à accomplir sont les suivantes:
+Lors de l’envoi d’un fichier, le scénario d’application de base consiste à se connecter à un périphérique couplé en fonction d’un service souhaité. Les étapes à accomplir sont les suivantes :
 
 -   Utilisez les fonctions **RfcommDeviceService.GetDeviceSelector\*** pour générer une requête AQS permettant d’énumérer les instances d’appareil couplé du service souhaité.
 -   Sélectionnez un appareil énuméré, créez un [**RfcommDeviceService**](https://msdn.microsoft.com/library/windows/apps/Dn263463), puis lisez les attributs SDP selon les besoins (en utilisant [**established data helpers**](https://msdn.microsoft.com/library/windows/apps/BR208119) pour analyser les données de l’attribut).
@@ -49,7 +56,7 @@ async void Initialize()
             RfcommDeviceService.GetDeviceSelector(
                 RfcommServiceId.ObexObjectPush));
 
-    if (services.Count > 0) 
+    if (services.Count > 0)
     {
         // Initialize the target Bluetooth BR device
         auto service = await RfcommDeviceService.FromIdAsync(services[0].Id);
@@ -143,7 +150,7 @@ void Initialize()
                 RfcommServiceId::ObexObjectPush)))
     .then([](DeviceInformationCollection^ services)
     {
-        if (services->Size > 0) 
+        if (services->Size > 0)
         {
             // Initialize the target Bluetooth BR device
             create_task(RfcommDeviceService::FromIdAsync(services[0]->Id))
@@ -232,7 +239,7 @@ bool IsCompatibleVersion(RfcommDeviceService^ service)
 }
 ```
 
-## Recevoir un fichier en tant que serveur
+## <a name="receive-file-as-a-server"></a>Recevoir un fichier en tant que serveur
 
 Un autre scénario d’application RFCOMM courant consiste à héberger un service sur le PC et à l’exposer pour d’autres périphériques.
 
@@ -277,7 +284,7 @@ void InitializeServiceSdpAttributes(RfcommServiceProvider provider)
     writer.WriteByte(SERVICE_VERSION_ATTRIBUTE_TYPE)
     // Then write the data
     writer.WriteUint32(SERVICE_VERSION);
-    
+
     auto data = writer.DetachBuffer();
     provider.SdpRawAttributes.Add(SERVICE_VERSION_ATTRIBUTE_ID, data);
 }
@@ -340,7 +347,7 @@ void InitializeServiceSdpAttributes(RfcommServiceProvider^ provider)
     writer->WriteByte(SERVICE_VERSION_ATTRIBUTE_TYPE)
     // Then write the data
     writer->WriteUint32(SERVICE_VERSION);
-    
+
     auto data = writer->DetachBuffer();
     provider->SdpRawAttributes->Add(SERVICE_VERSION_ATTRIBUTE_ID, data);
 }
@@ -364,10 +371,4 @@ void OnConnectionReceived(
     });
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

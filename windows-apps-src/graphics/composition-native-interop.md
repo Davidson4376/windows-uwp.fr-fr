@@ -1,40 +1,47 @@
 ---
 author: scottmill
 ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
-title: "InteropérationDirectX et Direct2D de composition en mode natif avec BeginDraw et EndDraw"
+title: "Interopération de la composition en mode natif avec DirectX et Direct2D"
 description: "L’API Windows.UI.Composition fournit des interfaces pour interopération en mode natif, permettant ainsi de déplacer directement le contenu dans le compositeur."
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 4d1bf75fee06c8f4c31ce23c89bf6267ab9e6394
+ms.sourcegitcommit: 3a929e044a6edaa4a6e2393c80d6de6d54875a9e
+ms.openlocfilehash: 8be1827350e8489106ff29bd2a1f310fd06dea38
+ms.lasthandoff: 02/06/2017
 
 ---
-# Interopération DirectX et Direct2D de composition en mode natif avec BeginDraw et EndDraw
+# <a name="composition-native-interoperation-with-directx-and-direct2d"></a>Interopération de la composition en mode natif avec DirectX et Direct2D
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 L’API Windows.UI.Composition fournit les interfaces pour interopération en mode natif [**ICompositorInterop**](https://msdn.microsoft.com/library/windows/apps/Mt620068), [**ICompositionDrawingSurfaceInterop**](https://msdn.microsoft.com/library/windows/apps/Mt620058) et [**ICompositionGraphicsDeviceInterop**](https://msdn.microsoft.com/library/windows/apps/Mt620065), permettant ainsi de déplacer directement le contenu dans le compositeur.
 
 L’interopération en mode natif est structurée autour des objets surface qui sont soutenus par les textures de DirectX. Les surfaces sont créées à partir d’un objet usine appelé [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749). Cet objet est soutenu par un objet périphérique Direct2D ou Direct3D sous-jacent, qu’il utilise pour allouer de la mémoire vidéo pour les surfaces. L’API composition ne crée jamais le périphérique DirectX sous-jacent. Il incombe à l’application d’en créer un et de le transmettre à l’objet **CompositionGraphicsDevice**. Une application peut créer plusieurs objets **CompositionGraphicsDevice** à la fois. Elle peut également utiliser le même périphérique DirectX en tant que périphérique de rendu pour plusieurs objets **CompositionGraphicsDevice**.
 
-## Création d’une surface
+## <a name="creating-a-surface"></a>Création d’une surface
 
-Chaque [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749) fait office d’usine de surfaces. Chaque surface est créée avec une taille initiale (qui peut être égale à 0,0), mais pas de pixels valides. Dans son état initial, une surface peut être consommée immédiatement dans une arborescence visuelle, par exemple, via un [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) et un [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433), mais dans cet état initial, la surface n’a aucun effet sur la sortie de l’écran. En fait, elle est entièrement transparente même si le mode alpha spécifié est «opaque».
+Chaque [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749) fait office d’usine de surfaces. Chaque surface est créée avec une taille initiale (qui peut être égale à 0,0), mais pas de pixels valides. Dans son état initial, une surface peut être consommée immédiatement dans une arborescence visuelle, par exemple, via un [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) et un [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433), mais dans cet état initial, la surface n’a aucun effet sur la sortie de l’écran. En fait, elle est entièrement transparente même si le mode alpha spécifié est « opaque ».
 
 Il arrive que les périphériques DirectX puissent être inutilisables. Cela peut se produire, entre autres, si l’application transmet des arguments non valides à certaines API DirectX, si la carte graphique est réinitialisée par le système ou si le pilote est mis à jour. Direct3D possède une API qu’une application peut utiliser pour détecter de façon asynchrone si le périphérique est perdu pour une raison quelconque. Si un périphérique DirectX est perdu, l’application doit l’ignorer, en créer un et le transmettre à tous les objets [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749) précédemment associés au périphérique DirectX incorrect.
 
-## Chargement des pixels dans une surface
+## <a name="loading-pixels-into-a-surface"></a>Chargement des pixels dans une surface
 
 Pour charger des pixels dans la surface, l’application doit appeler la méthode [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx), qui retourne une interface DirectX représentant une texture ou un contexte Direct2D, en fonction des demandes de l’application. L’application doit ensuite effectuer le rendu ou charger des pixels dans cette texture. Quand l’application a terminé, elle doit appeler la méthode [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060). C’est seulement à ce stade que les nouveaux pixels sont disponibles pour une composition, mais ils n’apparaissent pas à l’écran tant que toutes les modifications apportées à l’arborescence d’éléments visuels n’ont pas été validées. Si l’arborescence d’éléments visuels est validée avant l’appel de **EndDraw**, la mise à jour en cours d’exécution n’est pas visible à l’écran, et la surface continue d’afficher le contenu qu’elle avait avant de **BeginDraw**. À l’appel de **EndDraw**, le pointeur contexte Direct2D ou texture retourné par BeginDraw est invalidé. Une application ne doit jamais mettre en cache ce pointeur au-delà de l’appel de **EndDraw**.
 
-L’application peut appeler uniquement BeginDraw sur une seule surface à la fois pour tout [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749) donné. Après avoir appelé [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx), l’application doit appeler [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) sur cette surface avant d’appeler **BeginDraw** sur une autre. Comme l’API est agile, l’application est chargée de synchroniser ces appels s’il souhaite effectuer le rendu à partir de plusieurs threads de travail. Si une application souhaite interrompre le rendu d’une surface et basculer vers une autre de manière temporaire, l’application peut utiliser la méthode [**SuspendDraw**](https://msdn.microsoft.com/library/windows/apps/mt620064.aspx). Cela permet à une autre **BeginDraw** de réussir, mais ne rend pas la première mise à jour de surface disponible pour la composition à l’écran. Ce faisant, l’application peut effectuer plusieurs mises à jour de manière transactionnelle. Lorsqu’une surface est suspendue, l’application peut continuer la mise à jour en appelant la méthode [**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062). Elle peut également déclarer que la mise à jour est terminée en appelant **EndDraw**. Cela signifie qu’une seule surface peut être mise à jour activement à la fois pour tout **CompositionGraphicsDevice** donné. Chaque périphérique graphique conserve cet état indépendamment des autres; une application peut donc être affichée simultanément sur deux surfaces si elles appartiennent à des périphériques graphiques différents. Toutefois, cela empêche le regroupement de la mémoire vidéo de ces deux surfaces et diminue donc l’efficacité de la mémoire.
+L’application peut appeler uniquement BeginDraw sur une seule surface à la fois pour tout [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749) donné. Après avoir appelé [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx), l’application doit appeler [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) sur cette surface avant d’appeler **BeginDraw** sur une autre. Comme l’API est agile, l’application est chargée de synchroniser ces appels s’il souhaite effectuer le rendu à partir de plusieurs threads de travail. Si une application souhaite interrompre le rendu d’une surface et basculer vers une autre de manière temporaire, l’application peut utiliser la méthode [**SuspendDraw**](https://msdn.microsoft.com/library/windows/apps/mt620064.aspx). Cela permet à une autre **BeginDraw** de réussir, mais ne rend pas la première mise à jour de surface disponible pour la composition à l’écran. Ce faisant, l’application peut effectuer plusieurs mises à jour de manière transactionnelle. Lorsqu’une surface est suspendue, l’application peut continuer la mise à jour en appelant la méthode [**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062). Elle peut également déclarer que la mise à jour est terminée en appelant **EndDraw**. Cela signifie qu’une seule surface peut être mise à jour activement à la fois pour tout **CompositionGraphicsDevice** donné. Chaque périphérique graphique conserve cet état indépendamment des autres ; une application peut donc être affichée simultanément sur deux surfaces si elles appartiennent à des périphériques graphiques différents. Toutefois, cela empêche le regroupement de la mémoire vidéo de ces deux surfaces et diminue donc l’efficacité de la mémoire.
 
 Les méthodes [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx), [**SuspendDraw**](https://msdn.microsoft.com/library/windows/apps/mt620064.aspx), [**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062) et [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) renvoient des échecs si l’application effectue une opération incorrecte (par exemple, si elle passe des arguments non valides ou si elle appelle **BeginDraw** sur une surface avant d’appeler **EndDraw** sur une autre). Ces types d’échec représentent des bogues d’application et sont censés être gérés par un échec rapide. **BeginDraw** peut également renvoyer un échec si le périphérique DirectX sous-jacent est perdu. Cet échec n’est pas fatal, car l’application peut recréer son périphérique DirectX et réessayer. L’application est censée gérer la perte du périphérique en ignorant simplement le rendu. Si **BeginDraw** échoue pour une raison quelconque, l’application ne doit pas non plus appeler **EndDraw**, car le début n’a jamais eu lieu au préalable.
 
-## Défilement
+## <a name="scrolling"></a>Défilement
 
 Pour des raisons de performances, lorsqu’une application appelle [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx), il n’est pas garanti que le contenu de la texture retournée soit le contenu précédent de la surface. L’application doit supposer que le contenu est aléatoire et elle doit s’assurer que tous les pixels sont touchés, soit en effaçant la surface avant le rendu, soit en dessinant un contenu suffisamment opaque pour couvrir la totalité du rectangle mis à jour. Combiné au fait que le pointeur texture est uniquement valide entre les appels de **BeginDraw** et [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060), cela empêche l’application de copier le contenu précédent en dehors de la surface. C’est pourquoi, nous fournissons une méthode [**Scroll**](https://msdn.microsoft.com/library/windows/apps/mt620063), qui permet à l’application d’effectuer une copie de pixels de même surface.
 
-## Exemple d’utilisation
+## <a name="usage-example"></a>Exemple d’utilisation
 
 L’exemple suivant illustre un scénario très simple, où une application crée des surfaces de dessin et utilise [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) et [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) pour remplir les surfaces avec du texte. L’application utilise DirectWrite pour disposer le texte (détails non affichés), puis utilise Direct2D pour en effectuer le rendu. Le périphérique graphique de composition accepte directement le périphérique Direct2D au moment de l’initialisation. Cela permet à **BeginDraw** de retourner un pointeur d’interface ID2D1DeviceContext, ce qui est beaucoup plus efficace que de créer un contexte Direct2D via l’application pour encapsuler une interface ID3D11Texture2D retournée à chaque opération de dessin.
 
@@ -266,10 +273,5 @@ private:
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

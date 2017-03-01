@@ -2,9 +2,17 @@
 author: mcleanbyron
 Description: "Découvrez comment inscrire votre application UWP pour la réception de notifications Push envoyées depuis le Centre de développement Windows."
 title: "Configurer votre application pour recevoir des notifications Push du Centre de développement"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, SDK Microsoft Store Services, notifications push ciblées, centre de développement"
+ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: d840fbe66e5ccb439148c7849e44b923a5586740
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: a7a4c9800d5053e4b20cea578ff03a970179c7bf
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -42,9 +50,9 @@ Pour inscrire votre application pour la réception de notifications Push ciblé
     [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync1)]
 
     <span/>
-    >**Important**  Si votre application appelle également [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) pour créer un canal de notification pour WNS, vérifiez que votre code n’appelle pas simultanément les surcharges [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) et [RegisterNotificationChannelAsync()](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx). Si vous devez appeler les deux méthodes, assurez-vous de les appeler séquentiellement et d’attendre le retour d’une méthode avant d’appeler l’autre.
+    >**Important**&nbsp;&nbsp;Si votre application appelle également [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) pour créer un canal de notification pour WNS, vérifiez que votre code n’appelle pas simultanément les surcharges [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) et [RegisterNotificationChannelAsync()](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx). Si vous devez appeler les deux méthodes, assurez-vous de les appeler séquentiellement et d’attendre le retour d’une méthode avant d’appeler l’autre.
 
-  * Si vous souhaitez spécifier l’URI de canal à utiliser pour les notifications Push ciblées du Centre de développement, appelez la surcharge [RegisterNotificationChannelAsync(StoreServicesNotificationChannelParameters)](https://msdn.microsoft.com/library/windows/apps/mt771191.aspx). Par exemple, vous pouvez procéder ainsi si votre application utilise déjà les services de notifications Push Windows (WNS) et que vous souhaitez utiliser le même URI de canal. Vous devez dans un premier temps créer l’objet [StoreServicesNotificationChannelParameters](https://msdns.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.aspx) et affecter la propriété [CustomNotificationChannelUri](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri.aspx) à votre URI de canal.
+  * Si vous souhaitez spécifier l’URI de canal à utiliser pour les notifications Push ciblées du Centre de développement, appelez la surcharge [RegisterNotificationChannelAsync(StoreServicesNotificationChannelParameters)](https://msdn.microsoft.com/library/windows/apps/mt771191.aspx). Par exemple, vous pouvez procéder ainsi si votre application utilise déjà les services de notifications Push Windows (WNS) et que vous souhaitez utiliser le même URI de canal. Vous devez dans un premier temps créer l’objet [StoreServicesNotificationChannelParameters](https://msdn.microsoft.com/en-us/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.aspx) et affecter la propriété [CustomNotificationChannelUri](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri.aspx) à votre URI de canal.
 
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync2)]
@@ -90,11 +98,6 @@ Notez que cette méthode invalide le canal utilisé pour les notifications et do
 
 * [Envoyer des notifications push ciblées aux clients de votre application](../publish/send-push-notifications-to-your-apps-customers.md)
 * [Vue d’ensemble des services de notifications Push Windows (WNS)](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
-* [Comment demander, créer et enregistrer un canal de notification](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh868221)
+* [Comment demander, créer et enregistrer un canal de notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868221)
 * [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

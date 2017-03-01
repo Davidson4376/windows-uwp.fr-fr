@@ -5,9 +5,16 @@ title: "Recommandations en matière de conception d’entrées multiples"
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: a433660665eeaa0caad3f380a587de89b8c74441
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4311ab1c817beaac5a57b12a4426f26ac8710fdf
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -42,10 +49,5 @@ Reconnaissance vocale + interface tactile
 L’utilisateur sélectionne une photo en appuyant de façon prolongée dessus, puis dit « Envoyer photo ».
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

@@ -3,37 +3,44 @@ author: jnHs
 Description: "Découvrez comment promouvoir vos applications et vos contenus dans le Windows Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique."
 title: "Recommandations en matière de marketing adapté aux applications du Windows Store"
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b6662344996a83c3f1460af8b7387bf7cfd4b087
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 518631e791746259dc4ee6f23184c8fc01ace427
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Recommandations en matière de marketing adapté aux applications du Windows Store
+# <a name="windows-store-app-marketing-guidelines"></a>Recommandations en matière de marketing adapté aux applications du Windows Store
 
 Découvrez comment promouvoir vos applications et vos contenus dans le Windows Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique.
 
-## Badges Windows Store
+## <a name="store-badges"></a>Badges Windows Store
 
 Nous avons créé des badges promotionnels spéciaux pour attirer davantage de clients vers la description de votre application dans le Windows Store. Ces badges sont disponibles en 44 langues. N’oubliez pas que vous devez respecter certains critères lorsque vous utilisez ces images. Ces critères, ainsi que des exemples d’utilisation et les recommandations, sont disponibles dans un fichier PDF.
 
 [![Bouton Télécharger](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) Recommandations en matière de marketing adapté aux applications du Windows Store (PDF, anglais)
 
-## Images et générateur de badge
+## <a name="badge-generator-and-images"></a>Images et générateur de badge
 
 Vous pouvez utiliser notre [Générateur de badge](http://go.microsoft.com/fwlink/p/?LinkID=534236) pour générer le code HTML qui affiche le badge Windows Store (dans la langue de votre choix) et les liens d’accès direct à la description de votre application dans le Windows Store. Vous pouvez également télécharger l’ensemble des images de badge (aux formats PNG et PDF) à partir du lien ci-dessous.
 
 [![Bouton Télécharger](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) Toutes les images de badge
 
-## Images d’appareil
+## <a name="device-images"></a>Images d’appareil
 
 Pour promouvoir votre application, vous pouvez afficher son aspect lors de son exécution sur un appareil Windows. Nous avons différentes images de châssis d'appareil que vous pouvez sélectionner, notamment des téléphones, des tablettes, des ordinateurs portables et des PC. Les meilleures pratiques et les spécifications techniques relatives à l’utilisation de ces images se trouvent dans les [Recommandations en matière de marketing adapté aux applications du Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=529769).
 
 [![Bouton Télécharger](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) Image d’appareil Windows
 
-## Licence d’utilisation des marques Microsoft
+## <a name="license-to-microsoft-marks"></a>Licence d’utilisation des marques Microsoft
 
-*Marques Microsoft* désigne le *badge Microsoft* et la *vignette du Windows Store* décrits dans la page [Générateur de badge](http://go.microsoft.com/fwlink/p/?LinkID=534236). Pour utiliser ces badges, vous devez:
+*Marques Microsoft* désigne le *badge Microsoft* et la *vignette du Windows Store* décrits dans la page [Générateur de badge](http://go.microsoft.com/fwlink/p/?LinkID=534236). Pour utiliser ces badges, vous devez :
 
 -   avoir votre application ou d’autres contenus disponibles dans le Windows Store, ou faire partie du [programme d’affiliation Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=624463) ;
 
@@ -51,10 +58,5 @@ Microsoft est l’unique propriétaire des Marques Microsoft et de son actif inc
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

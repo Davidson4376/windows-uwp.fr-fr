@@ -3,39 +3,46 @@ author: jwmsft
 title: Attribut xPhase
 description: "Utilisez xPhase avec l’extension de balisage {x:Bind} pour rendre les éléments ListView et GridView de façon incrémentielle et améliorer l’expérience de mouvement panoramique."
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: c6100f59bb91bc3c6451fc2167d914b0a4a36ded
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 873da2adeea277e0f8f869703aac782c21b0419e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Attribut x:Phase
+# <a name="xphase-attribute"></a>Attribut x:Phase
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 Utilisez **x:Phase** avec l’[extension de balisage {x:Bind}](x-bind-markup-extension.md) pour rendre les éléments [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) de façon incrémentielle et améliorer l’expérience de mouvement panoramique. **x:Phase** offre un moyen déclaratif d’obtenir le même effet que l’utilisation de l’événement [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) pour contrôler manuellement le rendu des éléments de liste. Voir aussi [Mettre à jour les éléments ListView et GridView de façon incrémentielle](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally).
 
-## Utilisation des attributs XAML
+## <a name="xaml-attribute-usage"></a>Utilisation des attributs XAML
 
 
 ``` syntax
 <object x:Phase="PhaseValue".../>
 ```
 
-## Valeurs XAML
+## <a name="xaml-values"></a>Valeurs XAML
 
 
 | Terme | Description |
 |------|-------------|
 | PhaseValue | Valeur numérique indiquant la phase dans laquelle l’élément sera traité. La valeur par défaut est 0. | 
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 Si une liste est rapidement panomariquée avec une interaction tactile ou à l’aide de la roulette de la souris, selon la complexité du modèle de données, la liste peut ne pas être pas en mesure de rendre des éléments assez rapidement pour suivre la vitesse de défilement. Cela est particulièrement vrai pour un appareil mobile doté d’un processeur économe en énergie, tel qu’un téléphone ou une tablette.
 
 L’exécution par phases permet un rendu incrémentiel du modèle de données afin que le contenu puisse être hiérarchisé, et les éléments les plus importants rendus en priorité. La liste peut ainsi afficher du contenu pour chaque élément en cas de mouvement panoramique rapide, et rendre davantage d’éléments de chaque modèle si le temps le permet.
 
-## Exemple
+## <a name="example"></a>Exemple
 
 ```xml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
@@ -77,10 +84,5 @@ Les numéros de phase ne doivent pas nécessairement être contigus, et sont ide
 L’exécution par phases affecte uniquement les liaisons [{x:Bind}](x-bind-markup-extension.md), pas les liaisons [{Binding}](binding-markup-extension.md).
 
 L’exécution par phases s’applique uniquement quand le modèle d’élément est rendu à l’aide d’un contrôle qui la prend en charge. Dans Windows 10, cela signifie [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). L’exécution par phases ne s’applique pas aux modèles de données utilisés dans d’autres contrôles d’élément, ou pour d’autres cas de figure tels que [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) ou des sections de [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843). Dans ces situations, tous les éléments d’interface utilisateur sont liés aux données en une fois.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

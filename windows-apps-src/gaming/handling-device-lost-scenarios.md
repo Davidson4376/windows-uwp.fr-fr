@@ -1,18 +1,25 @@
 ---
 author: mtoepke
 title: "Gérer des scénarios de suppression de périphériques dans Direct3D 11"
-description: "Cette rubrique explique comment recréer la chaîne d’interface d’appareils Direct3D et DXGI quand la carte graphique est supprimée ou réinitialisée."
+description: "Cet article explique comment recréer la chaîne d’interface de périphériques Direct3D et DXGI quand la carte graphique est supprimée ou réinitialisée."
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, jeux, directx 11, périphérique perdu"
 translationtype: Human Translation
-ms.sourcegitcommit: 5ed3815397b076ab3ee14fd3c22b235b46da5f09
-ms.openlocfilehash: b88d85c78ba5d08718b7e2c844f94beb71e5134a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2202d8ea4584f7755464fd3035829d348cfbff8d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>Gérer des scénarios de suppression d’appareils dans Direct3D 11
+# <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>Gérer des scénarios de suppression de périphériques dans Direct3D 11
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x articles, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x articles, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique explique comment recréer la chaîne d’interface de périphériques Direct3D et DXGI quand la carte graphique est supprimée ou réinitialisée.
 
@@ -163,7 +170,7 @@ Pour plus d’informations, voir [**GetDeviceRemovedReason**](https://msdn.micro
 
 L’invite de commandes de développeur de Visual Studio prend en charge un outil de ligne de commande « dxcap » pour la capture et la lecture d’événement Direct3D en rapport avec les diagnostics des graphiques Visual Studio. Vous pouvez utiliser l’option de ligne de commande « -forcetdr » pendant que votre application est en cours d’exécution pour forcer un événement de récupération et de détection de délai d’expiration GPU, déclenchant par conséquent DXGI_ERROR_DEVICE_REMOVED et vous permettant de tester votre code de gestion des erreurs.
 
-> **Remarque** DXCap et ses DLL de prise en charge sont installés sur system32/syswow64 en tant qu’outils graphiques pour Windows 10, qui ne sont plus distribués via le Kit de développement logiciel (SDK) Windows. Ils sont désormais fournis via la fonctionnalité Outils graphiques à la demande, un composant facultatif de système d’exploitation qui doit être installé afin d’activer et d’utiliser les outils graphiques sous Windows 10. Pour plus d’informations sur la façon d’installer les outils graphiques sous Windows 10, voir <https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools>
+> **Remarque**  DXCap et ses DLL de prise en charge sont installés dans system32/syswow64 en tant qu’outils graphiques pour Windows 10 qui ne sont plus distribués par le biais du SDK Windows. Ils sont désormais fournis via la fonctionnalité Outils graphiques à la demande, un composant facultatif de système d’exploitation qui doit être installé afin d’activer et d’utiliser les outils graphiques sous Windows 10. Pour plus d’informations sur la façon d’installer les outils graphiques sous Windows 10, voir <https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools>
 
  
 
@@ -173,10 +180,5 @@ L’invite de commandes de développeur de Visual Studio prend en charge un outi
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

@@ -3,19 +3,26 @@ author: mcleblanc
 ms.assetid: A37ADD4A-2187-4767-9C7D-EDE8A90AA215
 title: Planification des performances
 description: "Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: a53434223585d2c36fe30f4c2a49f019c7552662
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f66617e3131399a1cfcac17f258cc3b42c6810d2
+ms.lasthandoff: 02/07/2017
 
 ---
-# Planification des performances
+# <a name="planning-for-performance"></a>Planification des performances
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie. Techniquement, la performance est une exigence non fonctionnelle mais le fait de considérer les performances comme une fonctionnalité vous aidera à répondre aux attentes de vos utilisateurs. La spécification des objectifs et la mesure sont des facteurs essentiels. Déterminez quels sont les scénarios pour lesquels les performances sont essentielles et définissez ce que vous entendez par bonnes performances. Effectuez ensuite des mesures précoces et régulières tout au long du cycle de vie de votre projet pour être sûr d’atteindre vos objectifs.
 
-## Spécification des objectifs
+## <a name="specifying-goals"></a>Spécification des objectifs
 
 L’expérience utilisateur est l’une des façons les plus simples de définir ce que l’on appelle « bonnes performances ». Le temps de démarrage de votre application peut être un facteur déterminant de la façon dont un utilisateur perçoit ses performances. Il peut envisager un temps de démarrage inférieur à une seconde comme excellent, inférieur à 5 secondes comme bon et supérieur à 5 secondes comme insatisfaisant.
 
@@ -23,7 +30,7 @@ D’autres facteurs, tels que la mémoire, ont moins d’impact sur l’expérie
 
 Il est préférable de définir un objectif initial et de le modifier ultérieurement, plutôt que de ne pas avoir d’objectif du tout. Les objectifs de performances de votre application doivent être précis et mesurables, et respecter trois grands critères : le temps nécessaire aux utilisateurs, ou à l’application, pour effectuer les tâches (temps) ; la vitesse et la facilité avec lesquelles elle se redessine en réponse à l’interaction utilisateur (fluidité) ; et la conservation des ressources système, y compris la batterie (efficacité).
 
-## Temps
+## <a name="time"></a>Temps
 
 Pensez à la durée acceptable (*classes d’interaction*) nécessaire pour que les utilisateurs effectuent leurs tâches dans votre application. Pour chaque classe d’interaction, attribuez une étiquette et définissez la perception de l’utilisateur ainsi que les durées idéales et maximum. Voici quelques suggestions.
 
@@ -55,23 +62,23 @@ Si votre application contient du contenu dynamique, pensez également aux object
 
 Une fois vos objectifs spécifiés, vous pouvez désormais mieux tester, analyser et optimiser votre application.
 
-## Fluidité
+## <a name="fluidity"></a>Fluidité
 
-Voici quelques exemples d’objectifs de fluidité mesurables:
+Voici quelques exemples d’objectifs de fluidité mesurables :
 
 -   Pas d’arrêt et de redémarrage du dessin à l’écran (problèmes).
 -   Rendu des animations à 60 images par seconde (FPS).
 -   Lorsque l’utilisateur effectue un panoramique/fait défiler l’écran, l'application affiche 3 à 6 pages de contenu par seconde.
 
-## Efficacité
+## <a name="efficiency"></a>Efficacité
 
-Voici quelques exemples d’objectifs d’efficacité mesurables:
+Voici quelques exemples d’objectifs d’efficacité mesurables :
 
 -   Concernant la capacité de traitement de votre application, le pourcentage du processeur est égal ou inférieur à *N* et l’utilisation de la mémoire (en Mo) est égale ou inférieure à *M* à tout moment.
 -   Lorsque l’application est inactive, les valeurs *N* et *M* sont égales à zéro pour la capacité de traitement de votre application.
 -   Votre application peut fonctionner de manière active pendant *X* heures sur la batterie. En cas d’inactivité, l'appareil conserve sa charge pendant *Y* heures.
 
-## Conception de votre application dans un objectif de performances
+## <a name="design-your-app-for-performance"></a>Conception de votre application dans un objectif de performances
 
 Vous pouvez désormais utiliser vos objectifs de performances pour déterminer la façon dont vous allez concevoir votre application. Reprenons l’exemple de l’application de cuisine et restauration. Lorsque l’utilisateur accède à la page d’une recette, vous pouvez décider de [mettre à jour les différents éléments de manière incrémentielle](optimize-gridview-and-listview.md#update-items-incrementally) de telle sorte que le nom de la recette s’affiche en premier, puis les ingrédients et enfin les photos du plat. Ce procédé permet de conserver la réactivité et la fluidité de l’interface utilisateur lors du panoramique/défilement, en affichant le rendu d’une totale fidélité après le ralentissement de l’interaction afin de permettre au thread de l’interface utilisateur de rattraper le retard. Voici quelques éléments à prendre en compte.
 
@@ -106,11 +113,11 @@ Vous pouvez désormais utiliser vos objectifs de performances pour déterminer l
 **Interface utilisateur adaptative et orientation**
 
 -   Utilisez la classe [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021).
--   Effectuez uniquement les tâches requises immédiatement, en différant les tâches d’application intensives pour plus tard. Votre application dispose de 200 à 800millisecondes pour effectuer les tâches avant que l’interface utilisateur de votre application n’apparaisse rognée pour l’utilisateur.
+-   Effectuez uniquement les tâches requises immédiatement, en différant les tâches d’application intensives pour plus tard. Votre application dispose de 200 à 800 millisecondes pour effectuer les tâches avant que l’interface utilisateur de votre application n’apparaisse rognée pour l’utilisateur.
 
 Une fois la conception liée aux performances en place, vous pouvez commencer à coder votre application.
 
-## Instrumenter des applications performantes
+## <a name="instrument-for-performance"></a>Instrumenter des applications performantes
 
 Lorsque vous développez du code, ajoutez du code qui enregistre les messages et les événements à différents moments lors de l’exécution de votre application. Ensuite, lors du test de votre application, vous pouvez utiliser des outils de profilage tels que l’Enregistreur de performance Windows et Windows Performance Analyzer (inclus dans le [Windows Performance Toolkit](https://msdn.microsoft.com/library/windows/apps/xaml/hh162945.aspx)) pour créer et afficher un rapport sur les performances de votre application. Dans ce rapport, vous pouvez rechercher ces messages et événements qui vous permettent une meilleure analyse des résultats du rapport.
 
@@ -152,11 +159,11 @@ Reportez-vous également à l’[exemple de journalisation](http://go.microsoft.
 
 Une fois votre application instrumentée, vous pouvez tester et mesurer les performances de l’application.
 
-## Tester et mesurer les performances par rapport aux objectifs
+## <a name="test-and-measure-against-performance-goals"></a>Tester et mesurer les performances par rapport aux objectifs
 
 Lorsque vous planifiez les performances, vous devez définir les points du cycle de développement qui feront l’objet d’une mesure des performances. Selon que vous effectuiez les mesures lors du cycle de prototypage, de développement ou de déploiement, les valeurs relevées n’auront pas le même usage. Il peut être extrêmement utile de mesurer les performances dès les premières phases de prototypage. C’est pourquoi nous vous recommandons de le faire dès que vous utilisez du code pour effectuer des tâches importantes. Les premières mesures vous donnent une bonne idée des points où se concentrent les principaux coûts dans votre application, et peuvent orienter vos décisions de conception. Au final, vos applications gagneront en performances et en évolutivité. Plus les conceptions sont modifiées tardivement et plus cela coûte cher. Mesurer les performances tardivement dans le cycle du projet peut occasionner des modifications de dernière minute et nuire aux performances.
 
-Utilisez les techniques et les outils suivants pour tester les performances de l’application par rapport aux objectifs définis:
+Utilisez les techniques et les outils suivants pour tester les performances de l’application par rapport aux objectifs définis :
 
 -   Effectuez des tests sur différentes configurations matérielles, notamment des PC de bureau et tout-en-un, des ordinateurs portables et ultraportables, des tablettes et d’autres appareils mobiles.
 -   Effectuez des tests sur différentes tailles d’écran. Si des tailles d’écran plus larges permettent d’afficher beaucoup plus de contenu, tout ce contenu supplémentaire peut avoir un impact négatif sur les performances.
@@ -165,9 +172,9 @@ Utilisez les techniques et les outils suivants pour tester les performances de l
     -   Compilez votre application en code natif en l’intégrant dans la configuration de mise sur le marché avant de la déployer sur l’appareil de test.
     -   Pour vous assurer que la maintenance automatique n’affecte pas les performances de l’appareil de test, déclenchez-la manuellement et attendez qu’elle se termine. Sous Windows, dans le menu Démarrer, recherchez **Sécurité et maintenance**. Dans la zone **Maintenance**, sous **Maintenance automatique**, sélectionnez **Commencer la maintenance** et attendez que l’état passe à **Maintenance en cours**.
     -   Exécutez l’application plusieurs fois pour mieux éliminer les variables de test aléatoires et garantir des mesures cohérentes.
--   Effectuez des tests en condition de faible alimentation électrique. Il se peut que l’appareil de vos utilisateurs ne bénéficie pas d’une alimentation aussi puissante que votre ordinateur de développement. Windows a été conçu pour fonctionner de manière optimale avec des appareils à faible consommation, tels que des appareils mobiles. Vous devez vous assurer que les applications qui s’exécutent sur la plateforme fonctionnent correctement sur ces périphériques. Pour bien définir vos objectifs, gardez à l’esprit qu’un appareil à faible consommation d’énergie est environ 4fois plus lent qu’un ordinateur de bureau.
+-   Effectuez des tests en condition de faible alimentation électrique. Il se peut que l’appareil de vos utilisateurs ne bénéficie pas d’une alimentation aussi puissante que votre ordinateur de développement. Windows a été conçu pour fonctionner de manière optimale avec des appareils à faible consommation, tels que des appareils mobiles. Vous devez vous assurer que les applications qui s’exécutent sur la plateforme fonctionnent correctement sur ces périphériques. Pour bien définir vos objectifs, gardez à l’esprit qu’un appareil à faible consommation d’énergie est environ 4 fois plus lent qu’un ordinateur de bureau.
 -   Utilisez plusieurs outils, tels que Microsoft Visual Studio et Windows Performance Analyzer pour mesurer les performances de l’application. Visual Studio est conçu pour fournir des analyses sur l’application, par exemple les liaisons de code source. Windows Performance Analyzer est conçu pour fournir des analyses sur le système, par exemple des informations sur le système, des informations sur les événements de manipulation tactile, des informations sur les entrées/sorties disque et le coût de l’unité centrale graphique. Ces deux outils permettent de capturer et d’exporter les résultats, et peuvent rouvrir des suivis post-mortem et partagés.
--   Avant de soumettre votre application sur le Store pour certification, incorporez dans vos plans de test les tests liés aux performances décrits dans la section «Tests de performances» des [tests du Kit de certification des applications Windows](windows-app-certification-kit-tests.md) et dans la section «Performances et stabilité» des [cas de test des applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/Dn275879).
+-   Avant de soumettre votre application sur le Store pour certification, incorporez dans vos plans de test les tests liés aux performances décrits dans la section « Tests de performances » des [tests du Kit de certification des applications Windows](windows-app-certification-kit-tests.md) et dans la section « Performances et stabilité » des [cas de test des applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/Dn275879).
 
 Pour en savoir plus, consultez ces ressources et outils de profilage.
 
@@ -177,23 +184,18 @@ Pour en savoir plus, consultez ces ressources et outils de profilage.
 -   La session //build/ [Performances XAML](https://channel9.msdn.com/Events/Build/2015/3-698)
 -   La session //build/ [Nouveaux outils XAML dans Visual Studio 2015](https://channel9.msdn.com/Events/Build/2015/2-697)
 
-## Actions suite aux résultats du test de performances
+## <a name="respond-to-the-performance-test-results"></a>Actions suite aux résultats du test de performances
 
-Après avoir analysé les résultats des tests de performances, déterminez si des modifications sont nécessaires, par exemple:
+Après avoir analysé les résultats des tests de performances, déterminez si des modifications sont nécessaires, par exemple :
 
--   Devez-vous modifier l’une de vos conceptions d'application ou bien optimiser votre code?
--   L’instrumentation dans le code doit-elle être ajoutée, supprimée ou modifiée?
--   Devez-vous revoir l’un de vos objectifs de performances?
+-   Devez-vous modifier l’une de vos conceptions d'application ou bien optimiser votre code ?
+-   L’instrumentation dans le code doit-elle être ajoutée, supprimée ou modifiée ?
+-   Devez-vous revoir l’un de vos objectifs de performances ?
 
 Si des modifications sont nécessaires, faites-les, puis revenez à l’instrumentation ou au test et répétez l’opération.
 
-## Optimisation
+## <a name="optimizing"></a>Optimisation
 
 Optimisez uniquement les chemins de code critiques en termes de performances, c’est-à-dire ceux qui occupent le plus de temps. Le profilage vous indiquera quels sont ces chemins. Il y a souvent un compromis à faire entre créer une application respectueuse des meilleures pratiques de conception et écrire du code qui s’exécute de façon optimale. En règle générale, il vaut mieux privilégier la productivité du développeur et la qualité de la conception pour les aspects de l’application où les performances ne sont pas essentielles.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

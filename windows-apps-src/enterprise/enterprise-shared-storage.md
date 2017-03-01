@@ -2,21 +2,28 @@
 author: mcleblanc
 ms.assetid: B48E21AB-0EA5-444B-8333-393DD8D1B76D
 title: "Stockage partagé d’entreprise"
-description: "Le stockage d’entreprise partagé définit des emplacements de données locaux pour les applications métier afin de partager des données."
+description: "Le stockage partagé d’entreprise définit des emplacements de données locaux pour les applications cœur de métier afin de partager des données."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: bd4663b25c351551cd2f4e1e780a76431d1c3a19
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6a6ad55a134a45bf3feb7092cdad78d9f6ee196b
+ms.lasthandoff: 02/07/2017
 
 ---
-# Stockage partagé d’entreprise
+# <a name="enterprise-shared-storage"></a>Stockage partagé d’entreprise
 
 Le stockage partagé se compose de deux emplacements où les applications dotées de la fonctionnalité restreinte **enterpriseDeviceLockdown** et d’un certificat d’entreprise disposent d’un accès complet en lecture et écriture. Notez que la fonctionnalité **enterpriseDeviceLockdown** permet aux applications d’utiliser l’API de verrouillage de l’appareil et d’accéder aux dossiers de stockage partagés de l’entreprise. Pour plus d’informations sur l’API, voir l’espace de noms [**Windows.Embedded.DeviceLockdown**](http://go.microsoft.com/fwlink/?LinkId=699331).  
 
-Ces emplacements sont définis sur le disque local:
+Ces emplacements sont définis sur le disque local :
 - \Data\SharedData\Enterprise\Persistent
 - \Data\SharedData\Enterprise\Non-Persistent
 
-## Scénarios
+## <a name="scenarios"></a>Scénarios
 
 Stockage partagé d’entreprise prend en charge les scénarios suivants.
 
@@ -24,11 +31,11 @@ Stockage partagé d’entreprise prend en charge les scénarios suivants.
 - Vous pouvez stocker des données sur le disque dur local dans le dossier \Data\SharedData\Enterprise\Persistent qui seront conservées même après la réinitialisation de l’appareil.
 - Vous pouvez manipuler des fichiers (lecture, écriture, suppression) sur un appareil via le service de gestion des périphériques mobiles (GPM). Pour plus d’informations sur l’utilisation du stockage partagé d’entreprise, voir [Fournisseur de services de configuration (CSP) EnterpriseExtFileSystem](http://go.microsoft.com/fwlink/?LinkId=699333).
 
-## Accéder au stockage partagé d’entreprise
+## <a name="access-enterprise-shared-storage"></a>Accéder au stockage partagé d’entreprise
 
 L’exemple suivant montre comment déclarer la fonctionnalité pour accéder au stockage d’entreprise partagé dans le manifeste du package et comment accéder aux dossiers de stockage partagé à l’aide de la classe Windows.Storage.StorageFolder.
 
-Incluez la fonctionnalité suivante dans le manifeste de package de votre application:
+Incluez la fonctionnalité suivante dans le manifeste de package de votre application :
 
 ```xml
 <Package
@@ -70,10 +77,5 @@ IReadOnlyList<StorageFile> sortedItems =
 foreach (StorageFile file in sortedItems)
     Debug.WriteLine(file.Name + ", " + file.DateCreated);
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,20 +1,26 @@
 ---
 author: mcleanbyron
 ms.assetid: FD381669-F962-465E-940B-AED9C8D19C90
-description: "Découvrez comment utiliser l’espace de noms Windows.Services.Store pour utiliser les modules complémentaires consommables."
-title: "Activer les achats de modules complémentaires consommables"
-keywords: "exemple de code d’une offre intégrée à l’application"
+description: "Découvrez comment utiliser l’espace de noms Windows.Services.Store pour utiliser les extensions consommables."
+title: "Activer les achats d’extensions consommables"
+keywords: "windows 10, uwp, consommable, extensions, achats dans l’application, Windows.Services.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 12191a946ec080c8e386191363617a9c437671c5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d4cc4d526dfbfb2a120bc0a214b5b9287ec1acb3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="enable-consumable-add-on-purchases"></a>Activer les achats de modules complémentaires consommables
+# <a name="enable-consumable-add-on-purchases"></a>Activer les achats d’extensions consommables
 
-Les applications qui ciblent Windows 10 version 1607 ou ultérieure peuvent utiliser les méthodes de la classe [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) dans l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour gérer la consommation par l’utilisateur de modules complémentaires consommables dans vos applications UWP (également appelés produits dans l’application ou produits in-app). Utilisez les modules complémentaires consommables pour les éléments qu’il est possible d’acheter, d’utiliser et d’acheter à nouveau. Cette fonction est particulièrement utile pour différents aspects du jeu, comme les devises (or, pièces, etc.) susceptibles d’être achetées, puis utilisées pour obtenir des pouvoirs spécifiques.
+Les applications qui ciblent Windows 10 version 1607 ou ultérieure peuvent utiliser les méthodes de la classe [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) dans l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour gérer la consommation par l’utilisateur d’extensions consommables (également appelées achats dans l’application) dans vos applications UWP. Utilisez les modules complémentaires consommables pour les éléments qu’il est possible d’acheter, d’utiliser et d’acheter à nouveau. Cette fonction est particulièrement utile pour différents aspects du jeu, comme les devises (or, pièces, etc.) susceptibles d’être achetées, puis utilisées pour obtenir des pouvoirs spécifiques.
 
->**Remarque**  Cet article concerne les applications ciblant Windows 10 version 1607 ou ultérieure. Si votre application cible une version antérieure de Windows 10, vous devez utiliser l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) à la place de l’espace de noms **Windows.Services.Store**. Pour plus d’informations, consultez [Versions d’évaluation et achats in-app utilisant l’espace de noms Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+>**Remarque**&nbsp;&nbsp;Cet article concerne les applications ciblant Windows 10 version 1607 ou ultérieure. Si votre application cible une version antérieure de Windows 10, vous devez utiliser l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) à la place de l’espace de noms **Windows.Services.Store**. Pour plus d’informations, consultez [Versions d’évaluation et achats in-app utilisant l’espace de noms Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
 ## <a name="overview-of-consumable-add-ons"></a>Présentation des modules complémentaires consommables
 
@@ -28,7 +34,7 @@ Les applications qui ciblent Windows 10 version 1607 ou ultérieure peuvent pr
 
   Par exemple, si votre module complémentaire représente une quantité initiale de 100 pièces dans un jeu et que l’utilisateur consomme 10 pièces, votre application signale au Store que 10 unités du module complémentaire ont été consommées, et le Windows Store met à jour le solde restant. Une fois que l’utilisateur a consommé les 100 pièces, l’utilisateur peut à nouveau acheter le module complémentaire de 100 pièces.
 
-  >**Remarque**  Les consommables gérés par le Windows Store sont disponibles à partir de Windows 10 version 1607. Il sera bientôt possible de créer un consommable géré par le Windows Store dans le tableau de bord du Centre de développement Windows.
+  >**Remarque**&nbsp;&nbsp;Les consommables gérés par le Windows Store sont disponibles à partir de Windows 10 version 1607. Il sera bientôt possible de créer un consommable géré par le Windows Store dans le tableau de bord du Centre de développement Windows.
 
 Pour offrir un module complémentaire consommable à un utilisateur, suivez cette procédure générale :
 
@@ -50,7 +56,7 @@ Le code de ces exemples respecte les présupposés suivants :
 
 Pour obtenir un exemple d’application complète, voir l’[exemple du Windows Store](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
->**Remarque**  Si vous disposez d’une application de bureau qui utilise [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), vous devrez peut-être ajouter du code supplémentaire non affiché dans ces exemples pour configurer l’objet [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Pour plus d’informations, voir [Utilisation de la classe StoreContext dans une application de bureau qui utilise Desktop Bridge](in-app-purchases-and-trials.md#desktop).
+>**Remarque**&nbsp;&nbsp;Si vous disposez d’une application de bureau qui utilise [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), vous devrez peut-être ajouter du code supplémentaire non affiché dans ces exemples pour configurer l’objet [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Pour plus d’informations, voir [Utilisation de la classe StoreContext dans une application de bureau qui utilise Desktop Bridge](in-app-purchases-and-trials.md#desktop).
 
 <span id="report_fulfilled" />
 ## <a name="report-a-consumable-add-on-as-fulfilled"></a>Signaler un composant additionnel consommable comme épuisé
@@ -84,9 +90,4 @@ Cet exemple montre comment utiliser la méthode [GetConsumableBalanceRemainingAs
 * [Activer les achats in-app d’applications et de modules complémentaires](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [Implémenter une version d’évaluation de votre application](implement-a-trial-version-of-your-app.md)
 * [Exemple Store](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

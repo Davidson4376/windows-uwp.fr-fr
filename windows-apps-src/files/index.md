@@ -3,14 +3,21 @@ author: laurenhughes
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
 title: "Fichiers, dossiers et bibliothèques"
 description: "Découvrez la lecture et l’écriture de paramètres d’application, les sélecteurs de fichiers et de dossiers, et les emplacements de bac à sable « sandbox » tels que la bibliothèque de musique/vidéos."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: e248a0898772f1fde38e312b1cbd24da5b2946a7
+ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
+ms.openlocfilehash: 0baa58915bfac91d618a6da84f37174e41f7377f
+ms.lasthandoff: 01/19/2017
 
 ---
  # <a name="files-folders-and-libraries"></a>Fichiers, dossiers et bibliothèques
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Vous utilisez les API dans les espaces de noms [Windows.Storage](https://msdn.microsoft.com/library/windows/apps/br227346), [Windows.Storage.Streams](https://msdn.microsoft.com/library/windows/apps/br241791) et [Windows.Storage.Pickers](https://msdn.microsoft.com/library/windows/apps/br207928) pour lire et écrire du texte et d’autres formats de données dans des fichiers, et gérer les fichiers et dossiers. Cette section traite également de la lecture et de l’écriture de paramètres d’application, des sélecteurs de fichiers et de dossiers, et des emplacements bac à sable (sandbox) tels que la bibliothèque de musique/vidéos.
 
@@ -18,7 +25,7 @@ Vous utilisez les API dans les espaces de noms [Windows.Storage](https://msdn.mi
 |-------|--------------|
 | [Énumérer et interroger des fichiers et dossiers](quickstart-listing-files-and-folders.md) | Accédez aux fichiers et dossiers dans un dossier, une bibliothèque, un appareil ou un emplacement réseau. Vous pouvez également interroger les fichiers et dossiers situés dans un emplacement en créant des requêtes de fichiers et de dossiers. |
 | [Créer, écrire et lire un fichier](quickstart-reading-and-writing-files.md) | Lisez et écrivez un fichier à l’aide d’un objet [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171). |
-| [Obtenir les propriétés du fichier](quickstart-getting-file-properties.md) | Obtenez les propriétés (de haut niveau, de base et étendues) d’un fichier représenté par un objet [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171). |
+| [Obtenir les propriétés du fichier](quickstart-getting-file-properties.md) | Obtenez les propriétés (de niveau supérieur, de base et étendues) d’un fichier représenté par un objet [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171). |
 | [Ouvrir des fichiers et dossiers à l’aide d’un sélecteur](quickstart-using-file-and-folder-pickers.md) | Accédez aux fichiers et dossiers en permettant à l’utilisateur d’interagir avec ceux-ci à l’aide d’un sélecteur. Vous pouvez utiliser [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881) pour accéder à un dossier. |
 | [Enregistrer un fichier avec un sélecteur](quickstart-save-a-file-with-a-picker.md) | Utilisez [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871) pour permettre aux utilisateurs de spécifier le nom et l’emplacement où ils souhaitent que votre application enregistre un fichier. |
 | [Accès au contenu du Groupement résidentiel](quickstart-accessing-homegroup-content.md) | Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utilisateur, qui contient des images, de la musique et des vidéos. |
@@ -37,9 +44,4 @@ Vous utilisez les API dans les espaces de noms [Windows.Storage](https://msdn.mi
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -1,15 +1,22 @@
 ---
 author: mcleblanc
 description: "Nous vous recommandons vivement de lire ce guide de portage jusqu’à la fin, mais nous comprenons également que vous soyez impatient d’avancer et de passer à l’étape de développement et d’exécution de votre projet."
-title: "Résolution des problèmes de portage de Windows Runtime 8.x vers UWP"
+title: "Résolution des problèmes de portage de Windows Runtime 8.x vers UWP"
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 6bb6035757c2629c5cbcc3e773703b4f659c5237
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6c10376854656abe276c53a9b6778665c1d47a4b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="troubleshooting-porting-windows-runtime-8x-to-uwp"></a>Résolution des problèmes de portage de Windows Runtime 8.x vers UWP
+# <a name="troubleshooting-porting-windows-runtime-8x-to-uwp"></a>Résolution des problèmes de portage de Windows Runtime 8.x vers UWP
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -29,8 +36,8 @@ En dernier recours, vous pouvez effectuer un fractionnement binaire. Supprimez e
 
 Cette section explique comment procéder si, lorsque vous ouvrez un projet Windows 10 dans Visual Studio, vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise. Un ou plusieurs projets nécessitent un Kit de développement de plate-forme <version> qui n’est pas installé ou qui est inclus comme élément d’une prochaine mise à jour de Visual Studio. »
 
--   Commencez par déterminer le numéro de version du Kit de développement logiciel (SDK) pour Windows 10 que vous avez installé. Accédez à **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\<versionfoldername>** et notez la valeur de  à quatre éléments, « Major.Minor.Build.Revision ».
--   Ouvrez le fichier de votre projet à des fins de modification, puis recherchez les éléments `TargetPlatformVersion` et `TargetPlatformMinVersion`. Modifiez-les comme suit, en remplaçant  par le numéro de version à quatre éléments que vous avez trouvé sur le disque :
+-   Commencez par déterminer le numéro de version du Kit de développement logiciel (SDK) pour Windows 10 que vous avez installé. Accédez à **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\<versionfoldername>** et notez la valeur de *<versionfoldername>*, à quatre éléments, « Major.Minor.Build.Revision ».
+-   Ouvrez le fichier de votre projet à des fins de modification, puis recherchez les éléments `TargetPlatformVersion` et `TargetPlatformMinVersion`. Modifiez-les comme suit, en remplaçant *<versionfoldername>* par le numéro de version à quatre éléments que vous avez trouvé sur le disque :
 
 ```xml
    <TargetPlatformVersion><versionfoldername></TargetPlatformVersion>
@@ -50,10 +57,5 @@ Les informations sur les solutions contenues dans le tableau sont destinées à 
 | Le compilateur C# indique l’erreur « *Le nom de type ou d’espace de noms « <name> » est introuvable \[...\]* » ou « *Le nom de type ou d’espace de noms « <name> » n’existe pas dans l’espace de noms \[...\]* » ou « *Le nom de type ou de l’espace de noms « <name> » n’existe pas dans le contexte actuel* ». | Cela signifie probablement que le type est implémenté dans un SDK d’extension (même si dans certains cas, la solution n’est pas aussi simple). Utilisez le contenu de référence des [API Windows](https://msdn.microsoft.com/library/windows/apps/bg124285) pour déterminer le SDK d’extension qui implémente l’API, puis la commande **Ajouter** > **Référence** de Visual Studio pour ajouter une référence à ce SDK dans votre projet. Si votre application cible l’ensemble d’API désigné sous le terme de famille d’appareils universels, vous devez impérativement utiliser la classe [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) pour vérifier la présence du SDK d’extension lors de l’exécution avant de les appeler (on parle de « code adaptatif »). S’il existe une API universelle, elle sera toujours préférable à une API figurant dans un SDK d’extension. Pour plus d’informations, voir [Kits de développement logiciel (SDK) d’extension](w8x-to-uwp-porting-to-a-uwp-project.md). |
 
 Rubrique suivante : [Portage du balisage XAML et de la couche interface utilisateur](w8x-to-uwp-porting-xaml-and-ui.md).
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

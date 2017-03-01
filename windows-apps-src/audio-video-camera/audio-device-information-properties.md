@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: 3b75d881-bdcf-402b-a330-23cd29d68e53
 description: "Cet article répertorie les propriétés DeviceInformation liées aux appareils audio"
 title: "Propriétés d’informations des appareils audio"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 0745e96715ba49582ab762d4b25f1b8e681116f5
-ms.openlocfilehash: 08ebb37679d1dd93458a3ffe846d8bd33574635d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 647a0228299e90026307fdd516ac71da2473ff0d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Propriétés d’informations des appareils audio
+# <a name="audio-device-information-properties"></a>Propriétés d’informations des appareils audio
 
 Cet article répertorie les propriétés d’informations liées aux appareils audio Dans Windows, chaque périphérique matériel dispose de propriétés [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) fournissant des informations détaillées sur l’appareil. Vous pouvez les consulter quand vous avez besoin d’informations spécifiques sur l’appareil ou quand vous créez un sélecteur d’appareil. Pour obtenir des informations générales sur l’énumération des appareils sur Windows, voir [Énumérer les appareils](../devices-sensors/enumerate-devices.md) et [Propriétés d’informations d’appareil](../devices-sensors/device-information-properties.md).
 
@@ -22,7 +29,7 @@ Cet article répertorie les propriétés d’informations liées aux appareils a
 |**System.Devices.AudioDevice.RawProcessingSupported**|Booléen|Indique si l’appareil audio prend en charge le traitement des fichiers bruts.|
 |**System.Devices.MicrophoneArray.Geometry**|unsigned char[]|Données géométriques pour un réseau de microphones.|
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Énumérer les appareils](../devices-sensors/enumerate-devices.md)
 * [Propriétés d’informations de périphérique](../devices-sensors/device-information-properties.md)
@@ -31,10 +38,5 @@ Cet article répertorie les propriétés d’informations liées aux appareils a
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

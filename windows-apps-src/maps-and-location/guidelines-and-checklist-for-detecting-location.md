@@ -1,18 +1,25 @@
 ---
 author: msatranjr
-Description: "Cette rubrique décrit les recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur."
-title: "Recommandations pour les applications avec la géolocalisation"
+Description: "Cet article décrit les recommandations en matière de performances des applications qui nécessitent un accès à l’emplacement d’un utilisateur."
+title: "Recommandations pour les applications prenant en charge l’emplacement"
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, emplacement, carte, géolocalisation"
 translationtype: Human Translation
-ms.sourcegitcommit: 7159aea3feef96781575825d019a379e0eadc603
-ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f52f2f7a33edcbb0bd360c7b336cc3988abb80f5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Recommandations pour les applications avec la géolocalisation
+# <a name="guidelines-for-location-aware-apps"></a>Recommandations pour les applications prenant en charge l’emplacement
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -22,7 +29,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
 Cette rubrique décrit les recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur.
 
-## Recommandations
+## <a name="recommendations"></a>Recommandations
 
 
 -   Commencez à utiliser l’objet localisation seulement lorsque l’application requiert des données de localisation.
@@ -72,7 +79,7 @@ Cette rubrique décrit les recommandations en matière de performance des applic
 
         Les appareils qui fournissent des données de géolocalisation peuvent suivre l’intervalle de rapport demandé par différentes applications et fournir des rapports de données au plus petit intervalle demandé. L’application qui a le plus besoin de précision reçoit ainsi les données dont elle a besoin. Par conséquent, il est possible que le service de géolocalisation génère des mises à jour à une fréquence plus élevée que celle demandée par votre application, si une autre application a demandé des mises à jour plus fréquentes.
 
-        **Remarque** Il n’est pas garanti que la source de géolocalisation honore la demande correspondant à l’intervalle de rapport en question. Bien que certains services de géolocalisation ne tiennent pas compte de l’intervalle de rapport, vous avez quand même intérêt à le définir pour ceux qui le prennent en compte.
+        **Remarque**  Il n’est pas garanti que la source de localisation honore la demande correspondant à l’intervalle de rapport en question. Bien que certains services de géolocalisation ne tiennent pas compte de l’intervalle de rapport, vous avez quand même intérêt à le définir pour ceux qui le prennent en compte.
 
     -   Dans un souci d’économie d’énergie, définissez la propriété [**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) pour indiquer à la plateforme de géolocalisation si votre application a besoin ou non de données de grande précision. Si aucune application n’a besoin de données de grande précision, le système peut économiser de l’énergie en n’activant pas les services GPS.
 
@@ -100,38 +107,38 @@ Cette rubrique décrit les recommandations en matière de performance des applic
 
     Les API Windows Runtime peuvent accéder à tous ces capteurs à l’exception du magnétomètre. Les capteurs de fusion sont plus précis et stables que les capteurs bruts, mais ils consomment plus. Utilisez le capteur adapté à vos besoins. Pour plus d’informations, voir [Capteurs](https://msdn.microsoft.com/library/windows/apps/mt187358).
 
-**Veille connectée** 
-- Quand le PC est à l’état de veille connectée, les objets [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) peuvent toujours être instanciés. Cependant, l’objet **Geolocator** ne trouvera aucun capteur à agréger et, par conséquent, les appels à [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) expireront au bout de 7secondes, les détecteurs d’événements [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) ne seront jamais appelés et les détecteurs d’événements [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) seront appelés une fois avec l’état **NoData**.
+**Veille connectée**
+- Quand le PC est à l’état de veille connectée, les objets [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) peuvent toujours être instanciés. Cependant, l’objet **Geolocator** ne trouvera aucun capteur à agréger et, par conséquent, les appels à [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) expireront au bout de 7 secondes, les détecteurs d’événements [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) ne seront jamais appelés et les détecteurs d’événements [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) seront appelés une fois avec l’état **NoData**.
 
-## Indications d’utilisation supplémentaires
+## <a name="additional-usage-guidance"></a>Indications d’utilisation supplémentaires
 
 
-### Détection des modifications dans les paramètres de géolocalisation
+### <a name="detecting-changes-in-location-settings"></a>Détection des modifications dans les paramètres de géolocalisation
 
 L’utilisateur peut désactiver la fonctionnalité de géolocalisation en définissant les **paramètres de confidentialité de l’emplacement** dans l’application **Paramètres**.
 
 -   Pour détecter à quel moment l’utilisateur désactive ou réactive les services de localisation :
     -   Gérez l’événement [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542). La propriété [**Status**](https://msdn.microsoft.com/library/windows/apps/br225601) de l’argument de l’événement **StatusChanged** a la valeur **Disabled** si l’utilisateur désactive les services de localisation.
     -   Vérifiez les codes d’erreur retournés par [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536). Si l’utilisateur a désactivé les services de localisation, les appels à **GetGeopositionAsync** se soldent par un échec avec une erreur **ACCESS\_DENIED** et la propriété [**LocationStatus**](https://msdn.microsoft.com/library/windows/apps/br225538) a la valeur **Disabled**.
--   Si vous disposez d’une application pour laquelle des données de géolocalisation sont primordiales, par exemple une application de cartographie, veillez à effectuer les tâches suivantes:
+-   Si vous disposez d’une application pour laquelle des données de géolocalisation sont primordiales, par exemple une application de cartographie, veillez à effectuer les tâches suivantes :
     -   Gérez l’événement [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) pour obtenir des mises à jour si l’emplacement de l’utilisateur change.
     -   Gérez l’événement [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) tel que décrit ci-avant afin de détecter les modifications apportées aux paramètres de géolocalisation.
 
 Notez que le service de localisation renvoie les données à mesure de leur disponibilité. Elle peut d’abord renvoyer une localisation avec un rayon d’erreur important, puis la mettre à jour à mesure que des informations plus précises se feront disponibles. Les applications qui affichent la localisation de l’utilisateur doivent normalement souhaiter la mettre à jour à mesure que des informations plus précises sont disponibles.
 
-### Représentations graphiques de localisation
+### <a name="graphical-representations-of-location"></a>Représentations graphiques de localisation
 
-Faites en sorte que votre application utilise [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) pour indiquer précisément l’emplacement actuel de l’utilisateur sur la carte. Il existe trois principales bandes de précision: un rayon d’erreur d’environ 10 mètres, un rayon d’erreur d’environ 100 mètres et un rayon d’erreur de plus d’un kilomètre. En utilisant les informations de précision, vous pouvez vous assurer que votre application affiche l’emplacement de façon exacte dans le contexte des données disponibles. Pour plus d’informations générales sur l’utilisation du contrôle de carte, voir [Afficher des cartes avec des vues 2D, 3D et Streetside](https://msdn.microsoft.com/library/windows/apps/mt219695).
+Faites en sorte que votre application utilise [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) pour indiquer précisément l’emplacement actuel de l’utilisateur sur la carte. Il existe trois principales bandes de précision : un rayon d’erreur d’environ 10 mètres, un rayon d’erreur d’environ 100 mètres et un rayon d’erreur de plus d’un kilomètre. En utilisant les informations de précision, vous pouvez vous assurer que votre application affiche l’emplacement de façon exacte dans le contexte des données disponibles. Pour plus d’informations générales sur l’utilisation du contrôle de carte, voir [Afficher des cartes avec des vues 2D, 3D et Streetside](https://msdn.microsoft.com/library/windows/apps/mt219695).
 
 -   Pour une précision égale à peu près à 10 mètres (résolution GPS), l’emplacement peut être indiqué par un point ou une épingle sur la carte. Avec cette précision, les coordonnées de latitude et de longitude ainsi que l’adresse peuvent également être affichées.
 
     ![exemple de carte affichée avec une précision de GPS d’environ 10 mètres.](images/10metererrorradius.png)
 
--   Pour une précision entre 10 et 500mètres (environ 100mètres), la localisation est généralement reçue via une résolution Wi-Fi. La localisation obtenue à partir du signal cellulaire offre une précision d’environ 300 mètres. Dans ce cas, il est conseillé que votre application affiche un rayon d’erreur. Pour les applications qui affichent des directions où un point de centrage est requis, un tel point peut être affiché avec un rayon d’erreur qui l’entoure.
+-   Pour une précision entre 10 et 500 mètres (environ 100 mètres), la localisation est généralement reçue via une résolution Wi-Fi. La localisation obtenue à partir du signal cellulaire offre une précision d’environ 300 mètres. Dans ce cas, il est conseillé que votre application affiche un rayon d’erreur. Pour les applications qui affichent des directions où un point de centrage est requis, un tel point peut être affiché avec un rayon d’erreur qui l’entoure.
 
     ![exemple de carte affichée avec une précision Wi-Fi d’environ 100 mètres.](images/100metererrorradius.png)
 
--   Si la précision retournée est supérieure à 1kilomètre, vous recevez probablement les informations de géolocalisation avec une résolution de niveau IP. Ce niveau de précision est souvent trop faible pour localiser avec exactitude un endroit spécifique sur une carte. Votre application doit zoomer au niveau ville sur la carte, ou sur la zone appropriée en fonction du rayon d’erreur (par exemple, le niveau région).
+-   Si la précision retournée est supérieure à 1 kilomètre, vous recevez probablement les informations de géolocalisation avec une résolution de niveau IP. Ce niveau de précision est souvent trop faible pour localiser avec exactitude un endroit spécifique sur une carte. Votre application doit zoomer au niveau ville sur la carte, ou sur la zone appropriée en fonction du rayon d’erreur (par exemple, le niveau région).
 
     ![exemple de carte affichée avec une précision Wi-Fi d’environ 1 kilomètre.](images/1000metererrorradius.png)
 
@@ -140,7 +147,7 @@ Lorsque la précision de localisation passe d’une bande de précision à une a
 -   Rendez l’animation de transition fluide et maintenez la transition rapide et aisée.
 -   Attendez quelques rapports consécutifs pour confirmer le changement de précision, pour mieux empêcher les zooms indésirables et trop fréquents.
 
-### Représentations textuelles de localisation
+### <a name="textual-representations-of-location"></a>Représentations textuelles de localisation
 
 Certains types d’applications, par exemple une application météo ou d’informations locales, ont besoin de moyens de représenter la localisation de façon textuelle sur les différentes bandes de précision. Assurez-vous d’afficher l’emplacement clairement et uniquement jusqu’au niveau de précision fourni dans les données.
 
@@ -148,7 +155,7 @@ Certains types d’applications, par exemple une application météo ou d’info
 -   Pour une précision égale à peu près à 100 mètres (résolution Wi-Fi), les données de géolocalisation reçues sont moyennement précises et nous vous conseillons donc d’afficher les informations jusqu’au nom de la ville. Évitez d’utiliser le nom du voisinage.
 -   Pour une précision supérieure à 1 kilomètre (résolution IP), affichez uniquement le département ou la province, ou le nom du pays/de la région.
 
-### Considérations de confidentialité
+### <a name="privacy-considerations"></a>Considérations de confidentialité
 
 La géolocalisation d’un utilisateur correspond à des informations d’identification personnelle. Le site Web suivant fournit des recommandations concernant la protection de la vie privé des utilisateurs.
 
@@ -156,7 +163,7 @@ La géolocalisation d’un utilisateur correspond à des informations d’identi
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Configurer une clôture virtuelle](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [Obtenir l’emplacement actuel](https://msdn.microsoft.com/library/windows/apps/mt219698)
@@ -166,13 +173,4 @@ La géolocalisation d’un utilisateur correspond à des informations d’identi
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

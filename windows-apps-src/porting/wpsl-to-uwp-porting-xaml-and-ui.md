@@ -1,17 +1,24 @@
 ---
 author: mcleblanc
-description: "La pratique de définition de l’interface utilisateur sous la forme de balisage XAML déclaratif se transpose extrêmement bien entre les applications Silverlight pour Windows Phone et les applications de plateforme Windows universelle (UWP)."
+description: "La pratique de définition de l’interface utilisateur sous la forme de balisage XAML déclaratif convertit extrêmement bien des applications Silverlight pour Windows Phone en applications de plateforme Windows universelle (UWP)."
 title: Portage du balisage XAML et de la couche interface utilisateur de Silverlight pour Windows Phone vers UWP
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 3aa68943724c008e18df63d8b0ae20f448146303
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1ec72aec1e94ff92ef30fcc206456c7614107c98
+ms.lasthandoff: 02/07/2017
 
 ---
 
 #  <a name="porting-windows-phone-silverlight-xaml-and-ui-to-uwp"></a>Portage du balisage XAML et de la couche interface utilisateur de Silverlight pour Windows Phone vers UWP
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Rubrique précédente : [Résolution des problèmes](wpsl-to-uwp-troubleshooting.md).
@@ -196,7 +203,7 @@ Les applications Silverlight pour Windows Phone utilisent les contrôles défini
 | Panorama | Le contrôle Panorama de Silverlight pour Windows Phone correspond au contrôle Hub dans UWP (voir les [Recommandations en matière de contrôles Hub dans les applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn449149) et les Recommandations en matière de contrôle Hub. <br/> Notez qu’un contrôle Panorama exécute une boucle entre la dernière section et la première, et que son image d’arrière-plan se déplace en parallaxe par rapport aux sections. Les sections de [Hub](https://msdn.microsoft.com/library/windows/apps/dn251843) n’exécutent aucune boucle, et l’effet parallaxe n’est pas utilisé. |
 | Pivot | L’équivalent UWP du contrôle Pivot de Silverlight pour Windows Phone est [Windows.UI.Xaml.Controls.Pivot](https://msdn.microsoft.com/library/windows/apps/dn608241). Il est disponible pour toutes les familles d’appareils. |
 
-**Remarque** L’état visuel PointerOver est adapté aux styles/modèles personnalisés dans les applications Windows 10, mais non dans les applications Silverlight pour Windows Phone. Il existe d’autres raisons pour lesquelles vos styles/modèles personnalisés existants peuvent ne pas convenir pour les applications Windows 10, notamment les clés de ressources système que vous utilisez, les modifications apportées aux jeux d’états visuels utilisés et les améliorations de performances appliquées aux styles/modèles par défaut de Windows 10. Nous vous recommandons de modifier une nouvelle copie d’un modèle de contrôle par défaut pour Windows 10, puis de lui réappliquer votre style et votre personnalisation de modèle.
+**Remarque**   L’état visuel PointerOver est adapté aux styles/modèles personnalisés dans les applications Windows 10, mais non dans les applications Silverlight pour Windows Phone. Il existe d’autres raisons pour lesquelles vos styles/modèles personnalisés existants peuvent ne pas convenir pour les applications Windows 10, notamment les clés de ressources système que vous utilisez, les modifications apportées aux jeux d’états visuels utilisés et les améliorations de performances appliquées aux styles/modèles par défaut de Windows 10. Nous vous recommandons de modifier une nouvelle copie d’un modèle de contrôle par défaut pour Windows 10, puis de lui réappliquer votre style et votre personnalisation de modèle.
 
 Pour plus d’informations sur les contrôles UWP, voir [Contrôles par fonction](https://msdn.microsoft.com/library/windows/apps/mt185405), [Liste des contrôles](https://msdn.microsoft.com/library/windows/apps/mt185406) et [Recommandations relatives aux contrôles](https://msdn.microsoft.com/library/windows/apps/dn611856).
 
@@ -238,7 +245,7 @@ La façon la plus simple de porter celui-ci vers une application UWP consiste à
     <BitmapIcon UriSource="Assets/winrt_check.png" Width="21" Height="21"/>
 ```
 
-Ici, winrt\_check.png est un masque alpha sous la forme d’une image bitmap comme l’est wpsl\_check.png et peut très bien être le même fichier. Toutefois, il peut être judicieux de fournir différentes tailles de winrt\_check.png à utiliser pour différents facteurs d’échelle. Pour plus d’informations à ce sujet et pour obtenir une explication des modifications apportées aux valeurs **Width** et **Height**, voir la section [Pixels d’affichage/effectifs, distance d’affichage et facteurs d’échelle](#view-effective-pixels-viewing-distance-and-scale-factors) dans cette rubrique.
+Ici, winrt\_check.png est un masque alpha sous la forme d’une image bitmap comme l’est wpsl\_check.png et peut très bien être le même fichier. Toutefois, il peut être judicieux de fournir différentes tailles de winrt\_check.png à utiliser pour différents facteurs d’échelle. Pour plus d’informations à ce sujet et pour obtenir une explication des modifications apportées aux valeurs **Width** et **Height**, voir la section [Pixels d’affichage ou effectifs, distance d’affichage et facteurs d’échelle](#view-or-effective-pixels-viewing-distance-and-scale-factors) dans cette rubrique.
 
 Une approche plus générale, qui est appropriée en cas de différences entre les thèmes clair et foncé d’une image bitmap, consiste à utiliser deux composants d’image : l’un avec un premier plan foncé (pour le thème clair) et l’autre avec un premier plan clair (pour le thème foncé). Pour plus d’informations sur l’appellation de cet ensemble de composants d’image bitmap, voir [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324). Une fois qu’un ensemble de fichiers image a été correctement nommé, vous pouvez le désigner dans le résumé, à l’aide de son nom racine, comme ceci :
 
@@ -355,9 +362,9 @@ Le code qui affiche un toast avec la classe **Microsoft.Phone.Shell.ShellToast**
 
 Voir [Utilisation de vignettes, de badges et de notifications toast](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259).
 
-## <a name="vieweffective-pixels-viewing-distance-and-scale-factors"></a>Pixels d’affichage/effectifs, distance d’affichage et facteurs d’échelle
+## <a name="view-or-effective-pixels-viewing-distance-and-scale-factors"></a>Pixels d’affichage ou effectifs, distance d’affichage et facteurs d’échelle
 
-Les applications Silverlight pour Windows Phone n’appliquent pas la même méthode que les applications Windows 10 pour abstraire la taille et la disposition des éléments d’interface utilisateur de la taille physique et de la résolution réelles des appareils. Pour ce faire, une application Silverlight pour Windows Phone utilise des pixels d’affichage. Avec Windows 10, le concept de pixels d’affichage a été affiné en pixels effectifs. Voici une explication de ce terme, sa signification et la valeur supplémentaire qu’il offre.
+Les applications Silverlight pour Windows Phone n’appliquent pas la même méthode que les applications Windows 10 pour abstraire la taille et la disposition des éléments d’interface utilisateur de la taille physique et de la résolution réelles des appareils. Pour ce faire, une application Silverlight pour Windows Phone utilise des pixels d’affichage. Avec Windows 10, le concept de pixels d’affichage a été affiné en pixels effectifs. Voici une explication de ce terme, sa signification et la valeur supplémentaire qu’il offre.
 
 Le terme « résolution » fait référence à la mesure de la densité des pixels et non, comme on le pense souvent, au nombre de pixels. La « résolution effective » est la façon dont les pixels physiques qui composent une image ou un glyphe apparaissent à l’œil, étant donné les différences liées à la distance de visualisation et à la taille des pixels physiques sur l’appareil (la densité de pixels étant l’inverse de la taille des pixels physiques). La résolution effective est une bonne unité de mesure pour créer une expérience, car elle est centrée sur l’utilisateur. La compréhension de tous ces facteurs et le contrôle de la taille des éléments d’interface utilisateur vous permettent d’optimiser l’expérience utilisateur.
 
@@ -369,7 +376,7 @@ Pour une application Windows 10, les écrans des appareils ne présentent *pas* 
 
 Pour que votre application offre une expérience optimale sur tous les écrans, nous vous recommandons de créer chaque ressource bitmap dans différentes tailles, chacune étant adaptée à un facteur d’échelle spécifique. Fournir des ressources aux échelles 100 %, 200 % et 400 % (dans cet ordre de priorité) produit d’excellents résultats dans la plupart des cas à tous les facteurs d’échelle intermédiaires.
 
-**Remarque** Si, pour une raison quelconque, vous ne pouvez pas créer de ressources dans plusieurs tailles, créez des ressources à l’échelle 100 %. Dans Microsoft Visual Studio, le modèle de projet par défaut pour les applications UWP fournit des ressources de personnalisation (vignettes et logos) dans une seule taille, mais elles ne sont pas à l’échelle 100 %. Lorsque vous créez des ressources pour votre propre application, suivez les recommandations de cette section, fournissez des tailles 100 %, 200 % et 400 %, et utilisez des packs de ressources.
+**Remarque**  Si, pour une raison quelconque, vous ne pouvez pas créer de ressources dans plusieurs tailles, créez des ressources à l’échelle 100 %. Dans Microsoft Visual Studio, le modèle de projet par défaut pour les applications UWP fournit des ressources de personnalisation (vignettes et logos) dans une seule taille, mais elles ne sont pas à l’échelle 100 %. Lorsque vous créez des ressources pour votre propre application, suivez les recommandations de cette section, fournissez des tailles 100 %, 200 % et 400 %, et utilisez des packs de ressources.
 
 Si vous disposez d’illustrations complexes, vous serez peut-être amené à fournir vos ressources dans un plus grand nombre de tailles. Si vous débutez avec une image vectorielle, il est relativement aisé de générer des ressources de haute qualité à n’importe quel facteur d’échelle.
 
@@ -391,10 +398,5 @@ Rubrique suivante : [Portage pour le modèle d’E/S, d’appareil et d’applic
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Mappages des espaces de noms et des classes](wpsl-to-uwp-namespace-and-class-mappings.md)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

@@ -3,22 +3,29 @@ author: mcleblanc
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
 title: "Meilleures pratiques en matière de performances lors du démarrage de votre application"
 description: "Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 5411faa3af685e1a285119ba456a440725845711
-ms.openlocfilehash: 2224c6c2ca0a606492d381af85e665170601f054
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b59a4eb056e36156b847c769778b2609863ec1fc
+ms.lasthandoff: 02/07/2017
 
 ---
-# Meilleures pratiques en matière de performances lors du démarrage de votre application
+# <a name="best-practices-for-your-apps-startup-performance"></a>Meilleures pratiques en matière de performances lors du démarrage de votre application
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation.
 
-## Meilleures pratiques en matière de performances lors du démarrage de votre application
+## <a name="best-practices-for-your-apps-startup-performance"></a>Meilleures pratiques en matière de performances lors du démarrage de votre application
 
 Les utilisateurs jugent les performances d’une application en partie sur le temps nécessaire à son démarrage. Pour les besoins de cette rubrique, le démarrage d’une application commence lorsque l’utilisateur démarre l’application et il se termine lorsque l’utilisateur peut commencer à interagir véritablement avec l’application. Cette section fournit des suggestions pour améliorer les performances de votre application au démarrage.
 
-### Évaluation du temps nécessaire au démarrage de votre application
+### <a name="measuring-your-apps-startup-time"></a>Évaluation du temps nécessaire au démarrage de votre application
 
 Démarrez l’application plusieurs fois avant de pouvoir évaluer son temps de démarrage. Cela vous servira de référence afin d’estimer un temps de démarrage aussi court que possible, tout en restant dans la mesure du raisonnable.
 
@@ -48,11 +55,11 @@ Ngen.exe précompile toutes les applications de l’ordinateur qui ont été uti
 
 Lorsque vous recompilez votre application, l’image native n’est plus utilisée. L’application est alors compilée juste-à-temps, c’est-à-dire qu’elle est compilée en cours d’exécution. Vous devez réexécuter Ngen.exe pour obtenir une nouvelle image native.
 
-### Différer le travail aussi longtemps que possible
+### <a name="defer-work-as-long-as-possible"></a>Différer le travail aussi longtemps que possible
 
 Pour réduire le temps de démarrage de votre application, n’effectuez que le travail qui est absolument nécessaire pour permettre à l’utilisateur de commencer à interagir avec l’application. Cela peut être particulièrement utile si vous pouvez retarder le chargement d’assemblys supplémentaires. Le Common Language Runtime charge un assembly la première fois qu’il est utilisé. Si vous pouvez réduire le nombre d’assemblys qui sont chargés, vous pourrez sans doute améliorer le temps nécessaire au démarrage de votre application et sa consommation de mémoire.
 
-### Effectuer le travail demandant du temps séparément
+### <a name="do-long-running-work-independently"></a>Effectuer le travail demandant du temps séparément
 
 Votre application peut être interactive même si certaines de ses parties ne sont pas totalement fonctionnelles. Par exemple, si votre application affiche des données qui sont longues à récupérer, vous pouvez faire en sorte que le code chargé de récupérer ces données s’exécute indépendamment du code de démarrage de l’application en récupérant les données de façon asynchrone. Lorsque les données sont disponibles, fournissez-les à l’interface utilisateur de l’application.
 
@@ -60,13 +67,13 @@ De nombreuses API de plateforme Windows universelle (UWP) qui récupèrent les d
 
 Si le chargement d’une partie de l’interface utilisateur de l’application est particulièrement long, nous vous conseillons d’ajouter une ligne à cet égard, en indiquant quelque chose comme « Obtention des dernières données en cours » afin que les utilisateurs sachent que l’application est toujours en cours de traitement.
 
-## Réduire le temps de démarrage
+## <a name="minimize-startup-time"></a>Réduire le temps de démarrage
 
 Hormis les plus simples d’entre elles, les applications nécessitent un laps de temps, perceptible par l’utilisateur, pour charger les ressources, analyser le code XAML, configurer les structures de données et exécuter la logique au moment de l’activation. Dans cette rubrique, nous allons analyser le processus d’activation en le décomposant en trois phases. Nous vous donnerons également des conseils pour réduire la durée de chaque phase, ainsi que quelques techniques pour rendre chaque phase du démarrage de votre application plus agréable pour l’utilisateur.
 
 La période d’activation désigne le laps de temps s’écoulant entre le démarrage de l’application par l’utilisateur et le moment où l’application est opérationnelle. Ce laps de temps a une grande importance, car il conditionne la première impression qu’un utilisateur se fait de votre application. Les utilisateurs s’attendent à pouvoir interagir instantanément et sans interruption avec le système et leurs applications. Ils jugeront que le système et les applications ne sont pas fiables ou qu’ils sont mal conçus si les applications ne démarrent pas assez vite. Pire encore, si une application met trop de temps à s’activer, le Gestionnaire de durée de vie d’un processus (PLM) risque de l’arrêter ou l’utilisateur de la désinstaller.
 
-### Présentation des étapes de démarrage
+### <a name="introduction-to-the-stages-of-startup"></a>Présentation des étapes de démarrage
 
 Le démarrage implique un certain nombre d’éléments mobiles devant être correctement coordonnés pour optimiser l’expérience utilisateur. Les étapes suivantes se déroulent entre le moment où l’utilisateur clique sur la vignette de votre application et celui où le contenu de l’application s’affiche.
 
@@ -82,7 +89,7 @@ Le démarrage implique un certain nombre d’éléments mobiles devant être cor
 -   Render est appelé pour créer des effets visuels pour tous les contenus de fenêtre.
 -   Frame est présenté au gestionnaire de fenêtrage (DWM).
 
-### Effectuer un moins grand nombre d’opérations dans votre chemin de démarrage
+### <a name="do-less-in-your-startup-path"></a>Effectuer un moins grand nombre d’opérations dans votre chemin de démarrage
 
 Retirez de votre code de démarrage tout ce qui n’est pas nécessaire à votre première image.
 
@@ -91,7 +98,7 @@ Retirez de votre code de démarrage tout ce qui n’est pas nécessaire à votre
 -   Afficher la progression de l’interface utilisateur si votre interface utilisateur est en attente de données.
 -   Soyez vigilant à l’égard des conceptions d’applications impliquant une quantité importante d’analyses de fichiers de configuration ou une interface utilisateur générée de manière dynamique par du code.
 
-### Réduire le nombre d’éléments
+### <a name="reduce-element-count"></a>Réduire le nombre d’éléments
 
 Les performances de démarrage d’une application XAML sont en corrélation directe avec le nombre d’éléments créés lors du démarrage. Moins vous créez d’éléments et plus le démarrage de votre application est rapide. À titre de référence, la création de chaque élément doit prendre environ 1 ms.
 
@@ -111,7 +118,7 @@ Les performances d’une application reposent non seulement sur les performances
 
 Cette rubrique traite de la « première image » qui provient de l’animation/de la télévision, et qui est une mesure du temps que met un contenu avant d’être visible à l’utilisateur final.
 
-### Améliorer la perception du démarrage
+### <a name="improve-startup-perception"></a>Améliorer la perception du démarrage
 
 Prenons l’exemple d’un jeu en ligne simple pour nous aider à identifier chaque phase du démarrage et les différentes techniques garantissant à l’utilisateur une réactivité optimale pendant tout le processus. Pour cet exemple, la première phase d’activation est le temps écoulé entre le moment où l’utilisateur appuie sur la vignette du jeu et celui où le jeu commence à exécuter son code. Pendant cette phase, le système ne dispose d’aucune information à afficher pour indiquer à l’utilisateur que le jeu sélectionné a démarré. L’affichage d’un écran de démarrage permet au système de fournir ce contenu. Le jeu informe ensuite l’utilisateur que la première phase d’activation est terminée. Pour cela, il remplace l’écran de démarrage statique par sa propre interface utilisateur dès qu’il commence à exécuter le code.
 
@@ -123,7 +130,7 @@ La troisième et dernière phase intervient une fois que le jeu dispose des info
 
 Après avoir identifié les trois phases d’activation du jeu en ligne, nous allons maintenant examiner le code associé.
 
-### Phase 1
+### <a name="phase-1"></a>Phase 1
 
 Avant de démarrer, l’application doit indiquer au système quel contenu elle souhaite afficher dans l’écran de démarrage. Pour cela, elle transmet une image et une couleur d’arrière-plan à l’élément SplashScreen dans un manifeste de l’application, tel que décrit dans l’exemple. Windows affiche l’écran de démarrage aussitôt après que l’application a lancé le processus d’activation.
 
@@ -146,7 +153,7 @@ Pour plus d’informations, voir [Ajouter un écran de démarrage](https://msdn.
 
 Utilisez le constructeur de l’application uniquement pour initialiser les structures de données qui sont essentielles pour l’application. Le constructeur n’est appelé que la première fois où l’application est exécutée et pas forcément à chaque activation de l’application. Par exemple, le constructeur n’est pas appelé si l’application a déjà été exécutée, placée en arrière-plan, puis activée par le biais du contrat de recherche.
 
-### Phase 2
+### <a name="phase-2"></a>Phase 2
 
 Une application peut être activée pour plusieurs raisons, chacune pouvant être gérée différemment si vous le souhaitez. Vous pouvez substituer les méthodes [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/BR242330), [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701797), [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/BR242331), [**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701799), [**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701801), [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/BR242335), [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/BR242336) et [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701806) pour gérer chaque raison de l’activation. Dans ces méthodes, l’application doit notamment créer une interface utilisateur, affecter cette dernière à [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/BR209051), puis appelez [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046). À ce stade, l’écran de démarrage est remplacé par l’interface utilisateur que l’application a créée. Le contenu affiché peut être la page de chargement, ou l’interface utilisateur actuelle de l’application si toutes les informations nécessaires à sa création sont disponibles au moment de l’activation.
 
@@ -265,7 +272,7 @@ Une application peut être activée pour plusieurs raisons, chacune pouvant êtr
 
 Les applications affichant une page de chargement dans le gestionnaire d’activation commencent à créer l’interface utilisateur en arrière-plan. Une fois que cet élément a été créé, l’événement [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) associé est déclenché. Dans le gestionnaire d’événements, vous remplacez le contenu de la fenêtre, à savoir la page de chargement, par la nouvelle page d’accueil.
 
-Il est essentiel de prévoir l’affichage d’une page de chargement dans toute application qui nécessite une période d’initialisation plus longue. En plus d’informer l’utilisateur sur la progression du processus d’activation, cette page empêche que le processus ne soit arrêté si [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) n’est pas appelé dans les 15secondes suivant son lancement.
+Il est essentiel de prévoir l’affichage d’une page de chargement dans toute application qui nécessite une période d’initialisation plus longue. En plus d’informer l’utilisateur sur la progression du processus d’activation, cette page empêche que le processus ne soit arrêté si [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) n’est pas appelé dans les 15 secondes suivant son lancement.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -321,7 +328,7 @@ Il est essentiel de prévoir l’affichage d’une page de chargement dans toute
 
 Pour obtenir un exemple d’utilisation d’un écran de démarrage étendu, voir cet [exemple d’écran de démarrage](http://go.microsoft.com/fwlink/p/?linkid=234889).
 
-### Phase 3
+### <a name="phase-3"></a>Phase 3
 
 Bien que l’application affiche maintenant l’interface utilisateur, elle n’est pas encore totalement opérationnelle. Dans notre exemple de jeu, l’interface utilisateur est affichée avec des espaces réservés pour les fonctionnalités ayant besoin de récupérer des données sur Internet. Le jeu va donc télécharger les données supplémentaires requises pour rendre l’application pleinement opérationnelle et activer les fonctionnalités les unes après les autres à mesure qu’elle dispose des données requises.
 
@@ -331,17 +338,17 @@ Si vous affichez une page de chargement ou pire un écran de démarrage pendant 
 
 C’est vous qui définissez le comportement de l’application à chaque phase du démarrage, mais gardez à l’esprit que, si vous fournissez des informations précises sur la progression du processus (par un écran de démarrage, une page de chargement ou une interface utilisateur pendant le chargement des données), l’utilisateur aura une meilleure perception de votre application, et du système en général, en termes de rapidité.
 
-### Limiter l’utilisation des assemblys managés dans le chemin de démarrage
+### <a name="minimize-managed-assemblies-in-the-startup-path"></a>Limiter l’utilisation des assemblys managés dans le chemin de démarrage
 
 Le code réutilisable prend souvent la forme de modules (DLL) inclus dans un projet. Le chargement de ces modules nécessite des accès au disque, ce qui peut évidemment être coûteux en ressources. Cela peut avoir un impact sur les démarrages à chaud, même si c’est dans une moindre mesure que lors des démarrages à froid. En C# et Visual Basic, le CLR essaie le plus possible de différer ce coût en chargeant les assemblys à la demande : il ne charge un module que si celui-ci est référencé par une méthode exécutée. Par conséquent, dans le code de démarrage, référencez uniquement les assemblys nécessaires au lancement de votre application afin que le CLR ne charge pas de modules inutiles. Si le chemin de démarrage comporte des chemins de code inutilisés avec des références superflues, vous pouvez déplacer ces chemins de code vers d’autres méthodes pour éviter les chargements non nécessaires.
 
 Pour réduire les chargements de modules, vous pouvez aussi combiner les modules de votre application. En effet, le chargement d’un assembly volumineux est généralement plus rapide que celui de deux assemblys plus petits. Notez que la combinaison des modules n’est pas toujours possible. Par ailleurs, optez pour cette solution seulement si elle n’a pas d’impact significatif sur la productivité du développeur ni sur la réutilisation du code. Utilisez des outils tels que [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) ou l’[Analyseur de performance Windows](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx) pour identifier les modules chargés au démarrage.
 
-### Effectuer des requêtes Web intelligentes
+### <a name="make-smart-web-requests"></a>Effectuer des requêtes Web intelligentes
 
 Vous pouvez améliorer considérablement le temps de chargement d’une application en empaquetant son contenu localement, y compris le code XAML, les images et tout autre fichier important pour l’application. Les opérations sur disque sont plus rapides que les opérations réseau. Lorsqu’une application nécessite un fichier particulier lors de l’initialisation, vous pouvez réduire le temps de démarrage global en chargeant ce fichier directement du disque au lieu de le récupérer sur un serveur distant.
 
-## Journaliser des pages et les mettre en cache efficacement
+## <a name="journal-and-cache-pages-efficiently"></a>Journaliser des pages et les mettre en cache efficacement
 
 Le contrôle Frame propose des fonctionnalités de navigation. Il offre des possibilités de navigation vers une page (méthode Navigate), de journalisation de la navigation (propriétés BackStack/ForwardStack, méthode GoForward/GoBack), de mise en cache de pages (méthode Page.NavigationCacheMode) et de prise en charge de la sérialisation (méthode GetNavigationState).
 
@@ -360,10 +367,5 @@ Frame, cependant, propose un cache de pages facultatif permettant d’éviter le
 La mise en cache de pages peut améliorer les performances en évitant les instanciations, et par conséquent, la navigation. L’utilisation excessive de la mise en cache de pages peut avoir un effet néfaste sur les performances et par là même sur la plage de travail.
 
 C’est la raison pour laquelle nous vous conseillons d’utiliser la mise en cache de pages en fonction des besoins de votre application. Supposons par exemple que vous disposez d’une application affichant une liste d’éléments d’un contrôle Frame, et que le fait de cliquer sur un élément implique la navigation dans Frame vers une page de détails correspondant à cet élément. La page de liste devrait probablement être mise en cache. Si la page de détails est identique pour tous les éléments, elle devrait probablement être mise en cache également. Toutefois, si la page de détails est plus hétérogène, il peut être préférable d’abandonner la mise en cache.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

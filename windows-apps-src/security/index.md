@@ -1,18 +1,25 @@
 ---
 title: "Sécurité"
-description: "Cette section contient des articles sur la création d’applications de plateforme Windows universelle (UWP) sécurisées pour Windows 10."
+description: "Cette section contient des articles sur la création d’applications de plateforme Windows universelle (UWP) sécurisées pour Windows 10."
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 82f6e2decde2d332bd08b0b9798350b973860f21
-ms.openlocfilehash: b30492c3c74b19d5ce306829302be17ff303723f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e769a9aa7d381a527c1e1504efc52c2ead031c70
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="security"></a>Sécurité
 
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette section contient des articles sur la création d’applications de plateforme Windows universelle (UWP) sécurisées pour Windows 10.
 
@@ -48,12 +55,7 @@ La section sur le chiffrement contient des informations sur des sujets plus comp
 | [Présentation de certificats](certificates.md)                                      | Cet article traite de l’utilisation des certificats dans les applications. Les certificats numériques sont utilisés dans le chiffrement à clé publique pour lier une clé publique à une personne, un ordinateur ou une organisation. Les identités liées sont le plus souvent utilisées pour authentifier une entité auprès d’une autre. Par exemple, les certificats sont souvent utilisés pour authentifier un serveur Web auprès d’un utilisateur ou vice versa. Vous pouvez créer des demandes de certificat et installer ou importer des certificats émis. Vous pouvez aussi inscrire un certificat dans une hiérarchie de certificats. |
 | [Clés de chiffrement](cryptographic-keys.md)                                   | Cet article montre comment utiliser les fonctions de dérivation de clés standard, et chiffrer du contenu à l’aide de clés symétriques et asymétriques.                                                                                                                                                                                                                                                                                                                                                                         |
 | [Protection des données](data-protection.md)                                         | Cet article explique comment utiliser la classe [DataProtectionProvider](https://msdn.microsoft.com/library/windows/apps/br241559) dans l’espace de noms [Windows.Security.Cryptography.DataProtection](https://msdn.microsoft.com/library/windows/apps/br241585) pour chiffrer et déchiffrer des données numériques dans une application UWP.                                                                                                                                                                                                              |
-| [Codes d’authentification de message (MAC), codes de hachage et signatures](macs-hashes-and-signatures.md)               | Cet article explique comment les codes d’authentification des messages, les hachages et les signatures peuvent être utilisés dans les applications pour détecter une falsification des messages.                                                                                                                                                                                                                                                                                                                                                                                |
+| [Codes d’authentification des messages, hachages et signatures](macs-hashes-and-signatures.md)               | Cet article explique comment les codes d’authentification des messages, les hachages et les signatures peuvent être utilisés dans les applications pour détecter une falsification des messages.                                                                                                                                                                                                                                                                                                                                                                                |
 | [Restrictions à l’exportation liées à l’utilisation du chiffrement](export-restrictions-on-cryptography.md) | Utilisez ces informations pour déterminer si votre application emploie un type de chiffrement qui pourrait l’empêcher de figurer dans le .                                                                                                                                                                                                                                                                                                                                                                                                     |
 | [Tâches courantes de chiffrement](common-cryptography-tasks.md)                     | Ces articles fournissent des exemples de code pour les tâches de chiffrement courantes, telles que la création de nombres aléatoires, la comparaison de mémoires tampons, la conversion entre chaînes et données binaires, la copie de tableaux d’octets, et le codage/décodage de données.                                                                                                                                                                                                                                                                                    |
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

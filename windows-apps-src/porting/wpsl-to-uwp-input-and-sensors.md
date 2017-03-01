@@ -3,9 +3,16 @@ author: mcleblanc
 description: "Le code qui s’intègre à l’appareil proprement dit et à ses capteurs implique des entrées de l’utilisateur et des sorties vers ce dernier."
 title: "Portage d’une application Silverlight pour Windows Phone vers UWP pour le modèle d’E/S, d’appareil et d’application"
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: fedba87189e6ee5b6f8f81dfa06703b2011adf6a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 975f364fec4edfcf90ee65912f509741bd1f80dd
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -21,7 +28,7 @@ Le code qui s’intègre à l’appareil proprement dit et à ses capteurs impli
 
 Votre application Silverlight pour Windows Phone contient du code permettant d’enregistrer et de restaurer l’état de l’application et son état d’affichage, afin qu’elle puisse être désactivée, puis réactivée. Le cycle de vie des applications de plateforme Windows universelle (UWP) présente de nombreuses similitudes avec celui des applications Silverlight pour Windows Phone. En effet, elles sont dans les deux cas conçues avec le même objectif : l’optimisation des ressources disponibles pour l’application que l’utilisateur a choisi de mettre au premier plan, à un moment donné. Vous constaterez que votre code s’adapte assez facilement au nouveau système.
 
-**Remarque** Si vous appuyez sur le bouton matériel **Précédent**, l’application Silverlight pour Windows Phone s’arrête automatiquement. Si vous appuyez sur le bouton matériel **Précédent** d’un appareil mobile, une application UWP *ne s’arrête pas* automatiquement. Au lieu de cela, l’application est suspendue, puis peut être arrêtée par la suite. Toutefois, ces détails sont transparents pour une application qui réagit de façon appropriée aux événements touchant le cycle de vie de l’application.
+**Remarque**   Si vous appuyez sur le bouton matériel **Précédent**, l’application Silverlight pour Windows Phone s’arrête automatiquement. Si vous appuyez sur le bouton matériel **Précédent** d’un appareil mobile, une application UWP *ne s’arrête pas* automatiquement. Au lieu de cela, l’application est suspendue, puis peut être arrêtée par la suite. Toutefois, ces détails sont transparents pour une application qui réagit de façon appropriée aux événements touchant le cycle de vie de l’application.
 
 Une « fenêtre de réponse » correspond au laps de temps qui s’écoule entre le moment où l’application devient inactive et le moment où le système déclenche l’événement de suspension. Dans le cas d’une application UWP, ce type de fenêtre n’existe pas : l’événement de suspension est déclenché dès que l’application devient inactive.
 
@@ -39,7 +46,7 @@ Les applications de filtre ne sont pas prises en charge pour les applications UW
 
 La façon d’envisager le ciblage d’application change avec Windows 10. Selon le nouveau modèle conceptuel, une application cible la plateforme Windows universelle (UWP) et s’exécute sur tous les appareils Windows. Elle peut ensuite choisir d’activer des fonctionnalités exclusives à certaines familles d’appareils. Si nécessaire, l’application a également la possibilité de restreindre son ciblage à une ou plusieurs familles d’appareils spécifiques. Pour plus d’informations sur les familles d’appareils et savoir comment déterminer les familles d’appareils à cibler, voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
-**Remarque** Nous vous recommandons de ne pas utiliser le système d’exploitation ou la famille d’appareils pour détecter la présence de fonctionnalités. En règle générale, l’identification de la famille d’appareils ou du système d’exploitation actuel ne constitue pas le meilleur moyen de déterminer si une fonctionnalité particulière du système d’exploitation ou de la famille d’appareils est présente. Plutôt que de détecter le système d’exploitation ou la famille d’appareils (et le numéro de version), vérifiez directement la présence de la fonctionnalité à l’aide d’un test (voir [Compilation conditionnelle et code adaptatif](wpsl-to-uwp-porting-to-a-uwp-project.md)). Si vous devez exiger un système d’exploitation ou une famille d’appareils spécifique, veillez à l’utiliser comme une version minimale prise en charge plutôt que de concevoir le test pour cette version particulière.
+**Remarque**   Nous vous recommandons de ne pas utiliser le système d’exploitation ou la famille d’appareils pour détecter la présence de fonctionnalités. En règle générale, l’identification de la famille d’appareils ou du système d’exploitation actuel ne constitue pas le meilleur moyen de déterminer si une fonctionnalité particulière du système d’exploitation ou de la famille d’appareils est présente. Plutôt que de détecter le système d’exploitation ou la famille d’appareils (et le numéro de version), vérifiez directement la présence de la fonctionnalité à l’aide d’un test (voir [Compilation conditionnelle et code adaptatif](wpsl-to-uwp-porting-to-a-uwp-project.md)). Si vous devez exiger un système d’exploitation ou une famille d’appareils spécifique, veillez à l’utiliser comme une version minimale prise en charge plutôt que de concevoir le test pour cette version particulière.
 
 Pour adapter l’interface utilisateur à différents appareils, plusieurs techniques sont recommandées. Continuez à utiliser les éléments à dimensionnement automatique et les panneaux à disposition dynamique que vous utilisez depuis toujours. Dans le balisage XAML, continuez à utiliser les tailles en pixels effectifs (auparavant appelés « pixels d’affichage ») afin que votre interface utilisateur s’adapte à différentes résolutions et différents facteurs d’échelle (voir [Pixels d’affichage/effectifs, distance d’affichage et facteurs d’échelle](wpsl-to-uwp-porting-xaml-and-ui.md)). Utilisez également les déclencheurs adaptatifs et les méthodes setter du Gestionnaire d’état visuel pour adapter votre interface utilisateur à la taille de la fenêtre (voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631)).
 
@@ -92,10 +99,5 @@ L’équivalent d’application UWP des propriétés **PhoneApplicationPage.Supp
 Toutefois, vous êtes invité à concevoir l’interface utilisateur de votre application UWP de façon à en optimiser l’apparence indépendamment de l’orientation de l’appareil et de la taille de l’écran. Pour plus d’informations, voir la rubrique [Portage pour différents facteurs de forme et expériences utilisateur](wpsl-to-uwp-form-factors-and-ux.md).
 
 Rubrique suivante : [Portage des couches métier et des couches de données](wpsl-to-uwp-business-and-data.md).
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

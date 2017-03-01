@@ -1,22 +1,28 @@
 ---
 author: mcleanbyron
 Description: "Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application."
-title: Activer les achats de produits in-app
+title: "Activer les achats d’extensions dans l’application"
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
-keywords: "exemple de code d’une offre intégrée à l’application"
+keywords: "uwp, extensions, achats dans l’application, Windows.ApplicationModel.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 1cd748cd1b6ca7e85cfb86daba367540af25db88
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b7cd3f5d2c566958aaf83b8f633418ce444a2eaa
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="enable-in-app-product-purchases"></a>Activer les achats de produits in-app
+# <a name="enable-in-app-product-purchases"></a>Activer les achats d’extensions dans l’application
 
->**Remarque**  Cet article montre comment utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows 10, version 1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour gérer les extensions (également appelées produits in-app ou PIA) plutôt que l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
+>**Remarque**&nbsp;&nbsp;Cet article explique comment utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows 10, version 1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour gérer les extensions (également appelées produits in-app ou PIA) plutôt que l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
 
 Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application.
 
-> **Remarque**  Les produits in-app ne peuvent pas être offerts dans le cadre d’une version d’évaluation d’une application. Les clients qui utilisent une version d’évaluation de votre application ne peuvent acheter un produit in-app que s’ils achètent une version complète de votre application.
+> **Remarque**&nbsp;&nbsp;Les produits in-app ne peuvent pas être offerts dans le cadre d’une version d’évaluation d’une application. Les clients qui utilisent une version d’évaluation de votre application ne peuvent acheter un produit in-app que s’ils achètent une version complète de votre application.
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -35,7 +41,7 @@ Lors de l’initialisation de votre application, obtenez l’objet [LicenseInfor
 
 Pour chaque fonctionnalité que vous voulez proposer par le biais d’un produit dans l’application, créez une offre et ajoutez-la à votre application.
 
-> **Important**  Vous devez ajouter dans l’application tous les produits in-app que vous voulez proposer à vos clients avant de la soumettre au Windows Store. Pour ajouter ultérieurement de nouveaux produits dans l’application, vous devez mettre à jour votre application et en soumettre une nouvelle version.
+> **Important**&nbsp;&nbsp;Vous devez ajouter dans l’application tous les produits in-app que vous voulez proposer à vos clients avant de la soumettre au Windows Store. Pour ajouter ultérieurement de nouveaux produits dans l’application, vous devez mettre à jour votre application et en soumettre une nouvelle version.
 
 1.  **Création d’un jeton d’offre dans l’application**
 
@@ -86,9 +92,4 @@ Si vous avez besoin de reçus pour vérifier que l’utilisateur a bien effectu�
 * [Gérer un grand catalogue de produits in-app](manage-a-large-catalog-of-in-app-products.md)
 * [Utiliser des reçus pour vérifier les achats de produits](use-receipts-to-verify-product-purchases.md)
 * [Exemple du Windows Store (montre des versions d’évaluation et des achats in-app)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

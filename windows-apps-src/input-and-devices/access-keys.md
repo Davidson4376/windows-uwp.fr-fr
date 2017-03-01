@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 76b012ab4cf737f00fc986c81c88fd48339867fc
-ms.openlocfilehash: 34cce6acc786fe34b3d94faaec57011474e029ff
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e866c3afc551cf9604809cf7fec36efd7bfa439c
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -69,18 +70,18 @@ Pour comprendre les API de touche d’accès rapide, il est d’abord nécessair
     - L’utilisateur peut appuyer sur Alt pour quitter une séquence de touches d’accès rapide en cours d’exécution. N’oubliez pas qu’en appuyant sur Alt, vous initiez également la séquence de touches accès rapide.
     - La touche Échap permet de quitter la séquence de touches d’accès rapide si elle se trouve dans l’étendue principale et qu’elle n’est pas filtrée.
         > [!NOTE]
-        > La frappe de la touche Échap est transmise à la couche d’interface utilisateur pour y être traitée également.
-- La touche de tabulation permet de quitter la séquence de touches d’accès rapide et renvoie à la navigation par onglets.
-- La touche Entrée permet de quitter la séquence de touches d’accès rapide et envoie la séquence de touches à l’élément qui a le focus.
-- Les touches de flèches permettent de quitter la séquence de touches d’accès rapide et envoient la séquence de touches à l’élément qui a le focus.
-- Un événement de pointeur appuyé tel qu’un clic de souris ou une entrée tactile permet de quitter la séquence de touches d’accès rapide.
-- Par défaut, appeler une touche d’accès rapide permet de quitter la séquence de touches d’accès rapide.  Toutefois, vous pouvez remplacer ce comportement en définissant la propriété [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) sur **false**.
+        > La frappe de la touche Échap est transmise à la couche d’interface utilisateur pour y être également traitée.
+    - La touche de tabulation permet de quitter la séquence de touches d’accès rapide et renvoie à la navigation par onglets.
+    - La touche Entrée permet de quitter la séquence de touches d’accès rapide et envoie la séquence de touches à l’élément qui a le focus.
+    - Les touches fléchées permettent de quitter la séquence de touches d’accès rapide et envoient la séquence de touches à l’élément qui a le focus.
+    - Un événement de pointeur appuyé tel qu’un clic de souris ou une entrée tactile permet de quitter la séquence de touches d’accès rapide.
+    - Par défaut, appeler une touche d’accès rapide permet de quitter la séquence de touches d’accès rapide.  Toutefois, vous pouvez remplacer ce comportement en définissant la propriété [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) sur **false**.
 - Des conflits de touches d’accès rapide se produisent lorsque l’utilisation d’un automate fini déterministe n’est pas possible. Les conflits de touches d’accès rapide sont déconseillés, mais peuvent se produire en raison d’un grand nombre de commandes, de problèmes de localisation ou de générations d’exécution de touches d’accès rapides.
 
  Il existe deux cas pour lesquels des conflits se produisent :
  - Lorsque deux éléments d’interface utilisateur ont la même valeur de touche d’accès rapide et font partie de la même étendue de touche d’accès rapide. Par exemple, une touche d’accès rapide _A1_ pour un `button1` et une touche d’accès rapide _A1_ pour un `button2` qui fait partie de l’étendue par défaut. Dans ce cas, le système résout le conflit en traitant la touche d’accès rapide du premier élément ajouté à l’arborescence visuelle. Le reste est ignoré.
  - Quand il existe plusieurs options de calcul dans la même étendue de touches d’accès rapide. Par exemple, _A_ et _A1_. Lorsque l’utilisateur appuie sur _A_, le système propose deux options : appeler la touche d’accès rapide _A_ ou continuer et utiliser le caractère A à partir de la touche d’accès rapide _A1_. Dans ce cas, le système traite uniquement le premier appel de touche d’accès rapide atteint par l’automate. Dans l’exemple avec _A_ et _A1_, le système appelle uniquement la touche d’accès rapide_A_.
--   Lorsque l’utilisateur appuie sur une touche d’accès rapide non valide dans une séquence de touches d’accès rapide, rien ne se produit. Il existe deux catégories de touches considérées comme des touches d’accès rapide valides dans une séquence de touches d’accès rapide :
+-     Lorsque l’utilisateur appuie sur une touche d’accès rapide non valide dans une séquence de touches d’accès rapide, rien ne se produit. Il existe deux catégories de touches considérées comme des touches d’accès rapide valides dans une séquence de touches d’accès rapide :
  - Les touches spéciales pour quitter la séquence de touches d’accès rapide : il s’agit des touches Échap, Alt, de flèches, Entrée et de tabulation.
  - Les caractères alphanumériques affectés aux touches d’accès rapide.
 
@@ -134,10 +135,10 @@ Les touches d’accès rapide peuvent être localisées en plusieurs langues et 
 
 Les modèles de contrôle sont les implémentations d’interface qui exposent les fonctionnalités des contrôles courants ; par exemple, les boutons implémentent le modèle de contrôle **Invoke** et cela déclenche l’événement **Click**. Lorsqu’une touche d’accès rapide est appelée, l’infrastructure XAML recherche si l’élément appelé implémente un modèle de contrôle et l’exécute le cas échéant. Si l’élément comporte plusieurs modèles de contrôle, un seul est appelé et les autres sont ignorés. Les modèles de contrôle sont recherchés dans l’ordre suivant :
 
-1.  Invoke. Par exemple, un élément Button.
-2.  Toggle. Par exemple, un élément Checkbox.
-3.  Selection. Par exemple, un élément RadioButton.
-4.  Expand/Collapse. Par exemple, un élément ComboBox.
+1.    Invoke. Par exemple, un élément Button.
+2.    Toggle. Par exemple, un élément Checkbox.
+3.    Selection. Par exemple, un élément RadioButton.
+4.    Expand/Collapse. Par exemple, un élément ComboBox.
 
 Si un modèle de contrôle n’est pas trouvé, l’appel de touche d’accès rapide apparaît sous la forme d’un no-op, et un message de débogage est enregistré pour vous aider à résoudre cette situation : « Aucun modèle d’automation pour ce composant n’a été trouvé. Implémentez le comportement souhaité dans le gestionnaire d’événements pour AccessKeyInvoked. Définir la propriété Handled sur true dans votre gestionnaire d’événements supprime ce message. »
 
@@ -387,9 +388,4 @@ public sealed partial class ScopedAccessKeys : Page
         }
     }
 ```
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

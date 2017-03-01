@@ -5,22 +5,29 @@ ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: "Accessibilité du clavier"
 label: Keyboard accessibility
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 2215aeae041ff975d99d29ea42350f6ce0f2a681
-ms.openlocfilehash: 112c7be4cb5418332a19565be9b739e7032ba834
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9b1261de60bf0a45940fe9a284d8a5276b42e0a3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Accessibilité du clavier  
+# <a name="keyboard-accessibility"></a>Accessibilité du clavier  
 
 
 
-Si votre application ne fournit pas un bon accès par le clavier, les utilisateurs aveugles ou ayant des problèmes de mobilité peuvent rencontrer des difficultés à utiliser votre application ou risquent de ne pas pouvoir l’utiliser du tout.
+Si votre application ne fournit pas un bon accès par le clavier, les non-voyants ou les utilisateurs ayant des problèmes de mobilité peuvent rencontrer des difficultés à utiliser votre application ou risquent de ne pas pouvoir l’utiliser du tout.
 
 <span id="keyboard_navigation_among_UI_elements"/>
 <span id="keyboard_navigation_among_ui_elements"/>
 <span id="KEYBOARD_NAVIGATION_AMONG_UI_ELEMENTS"/>
-## Navigation au clavier parmi les éléments d’interface utilisateur  
+## <a name="keyboard-navigation-among-ui-elements"></a>Navigation au clavier parmi les éléments d’interface utilisateur  
 Pour utiliser le clavier avec un contrôle, celui-ci doit avoir le focus, et pour recevoir le focus (sans utiliser de pointeur), il doit être accessible dans une conception d’interface utilisateur via la navigation par tabulation. Par défaut, l’ordre de tabulation des contrôles est identique à l’ordre dans lequel ils ont été ajoutés à l’aire de conception, répertoriés en XAML ou ajoutés par programme à un conteneur.
 
 Dans la plupart des cas, l’ordre par défaut (basé sur la façon dont vous avez défini les contrôles en XAML) est le plus approprié, en particulier parce qu’il s’agit de l’ordre dans lequel les contrôles sont lus par les lecteurs d’écran. Toutefois, l’ordre par défaut ne correspond pas nécessairement à l’ordre visuel. La position d’affichage réelle peut dépendre du conteneur de disposition parent et de certaines propriétés que vous pouvez définir sur les éléments enfants pour influencer la disposition. Pour vous assurer que votre application a un bon ordre de tabulation, testez ce comportement vous-même. En particulier, si vous utilisez une métaphore de grille ou de tableau comme disposition, l’ordre de lecture des utilisateurs peut être différent de l’ordre de tabulation. Ce n’est pas toujours un problème en soi. Veillez simplement à tester l’interface utilisateur tactile et l’interface utilisateur accessible au clavier de votre application afin de vérifier son bon fonctionnement et sa logique dans les deux cas.
@@ -60,12 +67,12 @@ Que vous ajustiez les valeurs [**TabIndex**](https://msdn.microsoft.com/library/
 <span id="keyboard_navigation_within_a_UI_element"/>
 <span id="keyboard_navigation_within_a_ui_element"/>
 <span id="KEYBOARD_NAVIGATION_WITHIN_A_UI_ELEMENT"/>
-## Navigation au clavier à l’intérieur d’un élément d’interface utilisateur  
+## <a name="keyboard-navigation-within-a-ui-element"></a>Navigation au clavier à l’intérieur d’un élément d’interface utilisateur  
 Pour les éléments composites, il est important de garantir une navigation interne correcte entre les éléments contenus. Un élément composite peut gérer son enfant actif actuel pour réduire la surcharge que représenterait le fait que tous les éléments enfants puissent avoir le focus. Un tel élément composite est inclus dans l’ordre de tabulation et il gère les événements de navigation au clavier lui-même. Une grande partie des contrôles composites ont déjà une logique de navigation interne intégrée à la gestion des événements du contrôle. Par exemple, la navigation à travers les éléments via les touches de direction est activée par défaut sur les contrôles [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878), [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview), [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) et [**FlipView**](https://msdn.microsoft.com/library/windows/apps/BR242678).
 
 <span id="keyboard_activation"/>
 <span id="KEYBOARD_ACTIVATION"/>
-## Alternatives au clavier pour les actions de pointeur et événements pour des éléments de contrôle spécifiques  
+## <a name="keyboard-alternatives-to-pointer-actions-and-events-for-specific-control-elements"></a>Alternatives au clavier pour les actions de pointeur et événements pour des éléments de contrôle spécifiques  
 Assurez-vous que les éléments d’interface utilisateur sur lesquels il est possible de cliquer peuvent également être appelés à l’aide du clavier. Pour utiliser le clavier avec un élément d’interface utilisateur, l’élément doit avoir le focus. Seules les classes qui dérivent de l’objet [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) prennent en charge le focus et la navigation par tabulation.
 
 Pour les éléments d’interface utilisateur qui peuvent être appelés, mettez en œuvre des gestionnaires d’événements de clavier pour les touches Espace et Entrée. Cela rend la prise en charge de l’accessibilité du clavier de base complète et permet aux utilisateurs d’accomplir des scénarios d’application de base en utilisant uniquement le clavier ; en d’autres termes, les utilisateurs peuvent atteindre tous les éléments d’interface utilisateur interactifs et activer les fonctionnalités par défaut.
@@ -85,7 +92,7 @@ XAML
 
 <span id="keyboard_shortcuts"/>
 <span id="KEYBOARD_SHORTCUTS"/>
-## Raccourcis clavier  
+## <a name="keyboard-shortcuts"></a>Raccourcis clavier  
 Outre l’implémentation de la navigation au clavier et l’activation du clavier pour votre application, il est recommandé de mettre en œuvre des raccourcis pour les fonctionnalités de votre application. La navigation par tabulation fournit un bon niveau de prise en charge de base du clavier, mais avec des formulaires complexes vous souhaiterez peut-être ajouter une prise en charge de raccourcis clavier. Cela peut rendre l’utilisation de votre application plus efficace, même pour les personnes qui utilisent à la fois un clavier et des appareils de pointage.
 
 Un *raccourci* est une combinaison de touches qui améliore la productivité en fournissant à l’utilisateur un moyen efficace d’accéder aux fonctionnalités de l’application. Il existe deux types de raccourcis :
@@ -145,7 +152,7 @@ Pour obtenir de l’aide supplémentaire sur l’implémentation de touches de r
 <span id="Implementing_a_key_event_handler"/>
 <span id="implementing_a_key_event_handler"/>
 <span id="IMPLEMENTING_A_KEY_EVENT_HANDLER"/>
-### Implémentation d’un gestionnaire d’événements de touche  
+### <a name="implementing-a-key-event-handler"></a>Implémentation d’un gestionnaire d’événements de touche  
 Les événements d’entrée tels que les événements de touche utilisent un concept d’événement appelé *événements routés*. Un événement routé peut se propager à travers les éléments enfants d’un contrôle composite, de telle sorte qu’un parent de contrôle commun peut gérer des événements pour plusieurs éléments enfants. Ce modèle d’événement est pratique pour définir des actions de touches de raccourci pour un contrôle qui contient plusieurs parties composites qui, de par leur conception, ne peuvent pas avoir le focus ou faire partie de l’ordre de tabulation.
 
 Pour obtenir un exemple de code qui illustre l’écriture d’un gestionnaire d’événements de touche incluant la vérification de modificateurs tels que la touche Ctrl, voir [Interactions avec le clavier](https://msdn.microsoft.com/library/windows/apps/Mt185607).
@@ -153,7 +160,7 @@ Pour obtenir un exemple de code qui illustre l’écriture d’un gestionnaire d
 <span id="Keyboard_navigation_for_custom_controls"/>
 <span id="keyboard_navigation_for_custom_controls"/>
 <span id="KEYBOARD_NAVIGATION_FOR_CUSTOM_CONTROLS"/>
-## Navigation au clavier pour les contrôles personnalisés  
+## <a name="keyboard-navigation-for-custom-controls"></a>Navigation au clavier pour les contrôles personnalisés  
 Nous recommandons l’utilisation des touches de direction comme raccourcis clavier pour la navigation parmi les éléments enfants, dans les cas où ceux-ci entretiennent une relation spatiale. Si les nœuds de l’arborescence ont des sous-éléments distincts pour la gestion de la fonctionnalité développer-réduire et l’activation des nœuds, utilisez les touches de direction Gauche et Droite pour fournir au clavier la fonctionnalité développer-réduire. Si vous avez un contrôle orienté qui prend en charge la traversée directionnelle dans le contenu du contrôle, utilisez les touches de direction appropriées.
 
 En règle générale, on met en œuvre la gestion des touches personnalisée pour des contrôles personnalisés en incluant une substitution des méthodes [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982.aspx) et [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/hh967983.aspx) dans le cadre de la logique de classe.
@@ -161,7 +168,7 @@ En règle générale, on met en œuvre la gestion des touches personnalisée pou
 <span id="An_example_of_a_visual_state_for_a_focus_indicator"/>
 <span id="an_example_of_a_visual_state_for_a_focus_indicator"/>
 <span id="AN_EXAMPLE_OF_A_VISUAL_STATE_FOR_A_FOCUS_INDICATOR"/>
-## Exemple d’un état visuel pour un indicateur de focus  
+## <a name="an-example-of-a-visual-state-for-a-focus-indicator"></a>Exemple d’un état visuel pour un indicateur de focus  
 Nous avons précédemment indiqué que tout contrôle personnalisé qui permet à l’utilisateur d’ajouter un focus doit être doté d’un indicateur de focus visuel. Généralement, cet indicateur de focus se matérialise simplement par le dessin d’une forme rectangulaire dans le proche contour du rectangle de délimitation normal du contrôle. L’élément [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) du focus visuel est un élément homologue par rapport au reste de la composition du contrôle dans un modèle de contrôle, mais à l’origine, la valeur **Collapsed** est affectée à la propriété [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) car le contrôle n’a pas encore le focus. Ensuite, lorsque le contrôle reçoit le focus, un état visuel est appelé. Ce dernier affecte **Visible** spécifiquement à la propriété **Visibility** de l’état visuel du focus. Une fois que le focus est déplacé ailleurs, un autre état visuel est appelé, et la propriété **Visibility** devient **Collapsed**.
 
 Les contrôles XAML par défaut affichent tous un indicateur de focus visuel approprié lorsqu’ils ont le focus (s’ils peuvent recevoir le focus). Ils peuvent aussi avoir des apparences différentes selon le thème sélectionné par l’utilisateur (en particulier si ce dernier utilise un mode de contraste élevé). Si vous utilisez les contrôles XAML dans votre interface utilisateur et que vous ne remplacez pas les modèles de contrôle, aucune opération supplémentaire n’est requise pour obtenir les indicateurs de focus visuels sur les contrôles qui se comportent et qui s’affichent correctement. Mais si vous avez l’intention de redéfinir le modèle d’un contrôle ou si vous souhaitez savoir comment les contrôles XAML fournissent leurs indicateurs de focus visuels, le reste de cette section examine ce qui se passe dans le code XAML et dans la logique des contrôles.
@@ -226,22 +233,17 @@ Notez que seul l’un des états nommés règle la propriété [**Visibility**](
 <span id="Keyboard_accessibility_and_Windows_Phone"/>
 <span id="keyboard_accessibility_and_windows_phone"/>
 <span id="KEYBOARD_ACCESSIBILITY_AND_WINDOWS_PHONE"/>
-## Accessibilité du clavier et Windows Phone
+## <a name="keyboard-accessibility-and-windows-phone"></a>Accessibilité du clavier et Windows Phone
 En règle générale, un appareil Windows Phone ne possède pas de clavier matériel dédié. Toutefois, un clavier virtuel (SIP, Soft Input Panel) peut prendre en charge plusieurs scénarios d’accessibilité du clavier. Les lecteurs d’écran peuvent lire une entrée texte à partir du clavier virtuel **texte**, y compris les annonces de suppressions. Les utilisateurs peuvent savoir à quel endroit se trouvent leurs doigts, car le lecteur d’écran peut détecter la navigation de l’utilisateur parmi les touches, qu’il lit à haute voix une à une. En outre, certains concepts d’accessibilité orientée clavier peuvent être associés à des comportements de technologies d’assistance connexes qui n’utilisent pas du tout de clavier. Par exemple, même si un clavier virtuel ne comprend pas de touche Tabulation, le Narrateur prend en charge un mouvement tactile équivalent à l’appui de la touche Tabulation. Ainsi, le fait de disposer d’un ordre de tabulation pratique dans les contrôles d’une interface utilisateur est un principe d’accessibilité important. L’utilisation des touches de direction pour naviguer entre les parties de contrôles complexes est également prise en charge via les mouvements tactiles du Narrateur. Une fois que le focus a atteint un contrôle qui ne sert pas à entrer du texte, le Narrateur prend en charge un mouvement qui appelle l’action de ce contrôle.
 
 En règle générale, les raccourcis clavier ne concernent pas les applications Windows Phone, car un clavier virtuel ne comporte pas de touche Ctrl ou Alt.
 
 <span id="related_topics"/>
-## Rubriques connexes  
+## <a name="related-topics"></a>Rubriques connexes  
 * [Accessibilité](accessibility.md)
 * [Interactions avec le clavier](https://msdn.microsoft.com/library/windows/apps/Mt185607)
 * [Entrée : exemple de clavier tactile](http://go.microsoft.com/fwlink/p/?linkid=246019)
 * [Exemple de réponse à l’apparition du Clavier visuel](http://go.microsoft.com/fwlink/p/?linkid=231633)
 * [Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

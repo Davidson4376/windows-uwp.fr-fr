@@ -1,18 +1,25 @@
 ---
 author: mijacobs
-Description: "Cet article décrit les meilleures pratiques pour créer et afficher des paramètres d’application."
-title: "Recommandations en matière de paramètres de l’application"
+Description: "Cet article décrit les meilleures pratiques en matière de création et d’affichage des paramètres d’application."
+title: "Recommandations en matière de paramètres d’application"
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e995023cd8a4216c60d5691f9f87be3aff9d8498
+ms.lasthandoff: 02/07/2017
 
 ---
 
 
-# <a name="guidelines-for-app-settings"></a>Recommandations en matière de paramètres de l’application
+# <a name="guidelines-for-app-settings"></a>Recommandations en matière de paramètres d’application
 
 Les paramètres d’application sont les parties de votre application qui sont personnalisables par l’utilisateur. Ces paramètres figurent dans une page qui leur est spécialement dédiée. Par exemple, les paramètres d’une application de lecteur de flux d’actualités peuvent permettre à l’utilisateur de spécifier les sources d’informations à afficher ou le nombre de colonnes à présenter à l’écran, tandis que les paramètres d’une application météo peuvent offrir à l’utilisateur la possibilité de choisir entre les unités Celsius et Fahrenheit comme unité de mesure par défaut. Cet article décrit les meilleures pratiques pour créer et afficher des paramètres d’application.
 
@@ -20,7 +27,7 @@ Les paramètres d’application sont les parties de votre application qui sont p
 
 ## <a name="should-i-include-a-settings-page-in-my-app"></a>Dois-je inclure une page de paramètres dans mon application ?
 
-Voici des exemples d’options d’application qui figurent dans une page de paramètres d’application : 
+Voici des exemples d’options d’application qui figurent dans une page de paramètres d’application :
 
 -   Les options de configuration qui affectent le comportement de l’application et qui sont rarement modifiées, comme le choix de l’unité Celsius ou Fahrenheit comme unité de température par défaut dans une application météo, le changement de paramètres de compte dans une application de messagerie, les paramètres des notifications ou les options d’accessibilité.
 -   Les options qui dépendent des préférences de l’utilisateur, comme la musique, les effets sonores ou les thèmes de couleur.
@@ -51,17 +58,17 @@ Pour une disposition de volet de navigation, les paramètres d’application doi
 
 **Barre de l’application**
 
-Si vous utilisez une barre d’application ou une barre d’outils, qui font généralement partie intégrante d’une disposition de navigation de type hub ou onglets/sélecteurs de vue, placez le point d’entrée en dernier dans le menu volant « Plus ». Si vous avez besoin d’améliorer la détectabilité du point d’entrée des paramètres pour votre application, placez le point d’entrée directement dans la barre d’application plutôt que dans le menu volant « Plus ».
+Si vous utilisez une [barre de l’application](../controls-and-patterns/app-bars.md) ou une barre d’outils, placez le point d’entrée des paramètres en tant que dernier élément du sous-menu « Plus ». Si vous avez besoin d’améliorer la détectabilité du point d’entrée des paramètres pour votre application, placez le point d’entrée directement dans la barre de l’application plutôt que dans le sous-menu.
 
 ![point d’entrée des paramètres d’application pour une barre d’application](images/appsettings-entrypoint-tabs.png)
 
-**Hub**
+**Concentrateur**
 
-Si vous utilisez une disposition de type hub, le point d’entrée des paramètres d’application doit être placé dans le menu volant « Plus » d’une barre d’application.
+Si vous utilisez une disposition de type concentrateur, le point d’entrée des paramètres d’application doit être placé dans le sous-menu « Plus » d’une barre d’application.
 
 **Onglets/sélecteurs de vue**
 
-Dans le cas d’une disposition d’onglets ou de sélecteurs de vue, nous vous déconseillons de placer le point d’entrée des paramètres d’application parmi l’un des premiers éléments de la navigation. Insérez plutôt le point d’entrée des paramètres d’application dans le menu volant « Plus » d’une barre d’application.
+Dans le cas d’une disposition d’onglets ou de sélecteurs de vue, nous vous déconseillons de placer le point d’entrée des paramètres d’application parmi l’un des premiers éléments de la navigation. Insérez plutôt le point d’entrée des paramètres d’application dans le sous-menu « Plus » d’une barre d’application.
 
 **Maître/détails**
 
@@ -80,6 +87,22 @@ Mobile :
 
 ![disposition d’une page de paramètres d’application sur un téléphone](images/appsettings-layout-navpane-mobile.png)
 
+## <a name="color-mode-settings"></a>Paramètres du « Mode couleur »
+
+
+Si votre application permet aux utilisateurs de choisir le mode couleur de l’application, présentez ces options à l’aide de [cases d’option](../controls-and-patterns/radio-button.md) ou d’une [zone de liste modifiable](../controls-and-patterns/lists.md#drop-down-lists) avec l’en-tête « Choisir un mode ». Les options doivent être les suivantes :
+- Clair
+- Sombre
+- Windows par défaut
+
+Nous vous recommandons également d’ajouter un lien hypertexte à la page Couleurs de l’application Paramètres Windows permettant aux utilisateurs de sélectionner le thème Windows par défaut. Utilisez la chaîne « Paramètres couleur Windows » pour le texte du lien hypertexte.
+
+![Section « Choisir un mode »](images/appsettings_mode.png)
+
+<div class=”microsoft-internal-note”>
+Des recommandations détaillées présentant les chaînes de texte favorites pour la section « Choisir un mode » sont disponibles sur le site [UNI](http://uni/DesignDepot.FrontEnd/#/ProductNav/2543/0/dv/?t=Windows%7CControls%7CColorMode&f=RS2).
+</div>
+
 ## <a name="about-section-and-give-feedback-button"></a>Section « À propos de » et bouton « Envoyer des commentaires »
 
 
@@ -89,10 +112,8 @@ Les sections « Conditions d’utilisation » et « Déclaration de confident
 
 ![section « à propos de cette application » avec bouton « envoyer des commentaires »](images/appsettings-about.png)
 
-## <a name="recommendations"></a>Recommandations
 
-
-## <a name="app-settings-page-content"></a>Contenu d’une page de paramètres d’application
+## <a name="recommended-page-content"></a>Contenu de page recommandé
 
 
 Une fois que vous avez répertorié les éléments à inclure dans votre page de paramètres d’application, tenez compte des recommandations suivantes :
@@ -105,9 +126,7 @@ Une fois que vous avez répertorié les éléments à inclure dans votre page de
 -   Combinez les paramètres peu utilisés dans une même entrée afin que chaque paramètre plus courant puisse disposer de sa propre entrée. Placez le contenu ou les liens qui contiennent uniquement des informations dans un paramètre « À propos de ».
 -   Ne dupliquez pas la fonctionnalité du volet « Autorisations ». Windows fournit ce volet par défaut et ne vous permet pas de le modifier.
 
-##  <a name="add-settings-content-to-settings-flyouts"></a>Ajouter le contenu des paramètres aux menus volants des paramètres
-
-
+-   Ajouter le contenu des paramètres aux menus volants des paramètres
 -   Présentez le contenu de haut en bas dans une seule colonne que l’utilisateur pourra faire défiler, si nécessaire. Limitez le défilement à un maximum de deux fois la hauteur de l’écran.
 -   Utilisez les contrôles suivants pour les paramètres d’application :
 
@@ -131,10 +150,4 @@ Une fois que vous avez répertorié les éléments à inclure dans votre page de
 * [Recommandations en matière de contrôles de progression](https://msdn.microsoft.com/library/windows/apps/hh465469)
 * [Stocker et récupérer des données d’application](https://msdn.microsoft.com/library/windows/apps/mt299098)
 * [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
-
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

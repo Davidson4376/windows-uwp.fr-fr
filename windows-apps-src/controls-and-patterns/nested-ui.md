@@ -4,12 +4,20 @@ Description: "Utilisez l’interface utilisateur imbriquée pour permettre plusi
 title: "Interface utilisateur imbriquée dans des éléments de liste"
 label: Nested UI in list items
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: cfda479d2a05dfac4125688d3666abfb23bc45a2
+ms.lasthandoff: 02/08/2017
 
 ---
-# Interface utilisateur imbriquée dans des éléments de liste
+# <a name="nested-ui-in-list-items"></a>Interface utilisateur imbriquée dans des éléments de liste
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -26,9 +34,9 @@ Dans cet article, nous utilisons les termes *liste*, *élément de liste*, et *i
 
 ![Parties de l’interface utilisateur imbriquée](images/nested-ui-example-1.png)
 
-> REMARQUE  Les contrôles ListView et GridView proviennent de la classe [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) ; ils possèdent donc les mêmes fonctionnalités mais affichent les données différemment. Dans cet article, lorsque nous parlons de listes, les informations s’appliquent aux contrôles ListView et GridView.
+> REMARQUE&nbsp;&nbsp;Les contrôles ListView et GridView proviennent de la classe [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) ; ils possèdent donc les mêmes fonctionnalités mais affichent les données différemment. Dans cet article, lorsque nous parlons de listes, les informations s’appliquent aux contrôles ListView et GridView.
 
-## Actions principales et secondaires
+## <a name="primary-and-secondary-actions"></a>Actions principales et secondaires
 
 Lorsque vous créez une interface utilisateur avec une liste, envisagez les actions que l’utilisateur peut entreprendre à partir de ces éléments de liste.  
 
@@ -43,7 +51,7 @@ L’*action principale* est ce à quoi l’utilisateur s’attend qu’il se pro
 
 Les *actions secondaires* sont généralement des accélérateurs associés à des éléments de liste. Ces accélérateurs peuvent être destinés à la gestion des listes ou aux actions associées à l’élément de liste.
 
-## Options pour les actions secondaires
+## <a name="options-for-secondary-actions"></a>Options pour les actions secondaires
 
 Quand vous créez l’interface utilisateur de la liste, vous devez d’abord veiller à prendre en compte toutes les méthodes de saisie prises en charge par la plateforme Windows universelle. Pour plus d’informations sur les différents types d’entrée, voir [Notions fondamentales sur la saisie](../input-and-devices/input-primer.md).
 
@@ -53,13 +61,13 @@ Vous pouvez envisager de faire figurer des actions supplémentaires dans l’int
 
 Si vous décidez qu’il n’est pas nécessaire de faire figurer des actions secondaires dans l’interface utilisateur de la liste principale, il existe plusieurs autres façons de les exposer à l’utilisateur. Voici quelques options que vous pouvez prendre en considération pour décider de l’endroit où placer des actions secondaires.
 
-### Placer les actions secondaires sur la page des détails
+### <a name="put-secondary-actions-on-the-detail-page"></a>Placer les actions secondaires sur la page des détails
 
 Placez les actions secondaires sur la page à laquelle l’élément de liste accède lorsque l’on appuie dessus. Lorsque vous utilisez le modèle maître/détails, la page des détails est souvent l’endroit approprié pour placer les actions secondaires.
 
 Pour plus d’informations, voir le [modèle Maître/Détails](master-details.md).
 
-### Placer les actions secondaires dans un menu contextuel
+### <a name="put-secondary-actions-in-a-context-menu"></a>Placer les actions secondaires dans un menu contextuel
 
 Placez les actions secondaires dans un menu contextuel auquel l’utilisateur peut accéder par le biais d’un clic droit ou d’un appui prolongé. Cela offre l’avantage de permettre à l’utilisateur d’effectuer une action, telle que la suppression d’un e-mail, sans avoir à charger la page des détails. Il est également recommandé de rendre ces options disponibles sur la page des détails, dans la mesure où les menus contextuels sont destinés à être accélérateurs plutôt qu’une interface utilisateur principale.
 
@@ -67,7 +75,7 @@ Nous recommandons d’utiliser un menu contextuel pour faire figurer des actions
 
 Pour plus d’informations, voir [Menus contextuels et menus volants](menus.md).
 
-### Placez les actions secondaires dans l’interface utilisateur de pointage pour optimiser les entrées du pointeur
+### <a name="put-secondary-actions-in-hover-ui-to-optimize-for-pointer-input"></a>Placez les actions secondaires dans l’interface utilisateur de pointage pour optimiser les entrées du pointeur
 
 Si vous pensez que le mode d’utilisation le plus fréquent de votre application sera la souris et le stylet et si vous souhaitez mettre des actions secondaires à disposition uniquement pour ce mode de saisie, ces dernières seront accessibles uniquement au pointage. Cet accélérateur est visible uniquement lorsqu’une saisie par pointeur est utilisée. Par conséquent, veillez à utiliser les autres options pour prendre en charge d’autres types de saisie.
 
@@ -76,7 +84,7 @@ Si vous pensez que le mode d’utilisation le plus fréquent de votre applicatio
 
 Pour plus d’informations, voir [Interactions avec la souris](../input-and-devices/mouse-interactions.md).
 
-## Positionnement de l’interface utilisateur pour les actions principales et secondaires
+## <a name="ui-placement-for-primary-and-secondary-actions"></a>Positionnement de l’interface utilisateur pour les actions principales et secondaires
 
 Si vous décidez que les actions secondaires doivent figurer dans l’interface utilisateur de la liste principale, nous vous recommandons de vous conformer aux instructions suivantes.
 
@@ -84,15 +92,15 @@ Lorsque vous créez un élément de liste comportant des actions principales et 
 
 Dans ces exemples, il s’agit de l’interface utilisateur de liste dans laquelle l’élément se déroule de manière horizontale (plus en largeur qu’en hauteur). Toutefois, vous pouvez avoir des éléments de forme plus carrée ou plus haut que large. En règle générale, il s’agit d’éléments utilisés dans une grille. Pour ces éléments, si la liste ne défile pas verticalement, vous pouvez placer les actions secondaires au bas de l’élément de liste, et non à droite.
 
-## Prenez en considération toutes les saisies.
+## <a name="consider-all-inputs"></a>Prenez en considération toutes les saisies.
 
 Lorsque vous décidez d’utiliser l’interface utilisateur imbriquée, évaluez également l’expérience utilisateur avec tous les types de saisie. Comme mentionné précédemment, l’interface utilisateur imbriquée fonctionne bien pour certains types de saisie. Toutefois, elle ne fonctionne pas toujours parfaitement pour d’autres. Notamment, l’accès aux éléments de l’interface utilisateur imbriquée peut être difficile via une saisie au clavier, à distance ou par le biais d’une télécommande. Veillez à suivre les instructions ci-dessous pour vous assurer que votre plateforme Windows universelle fonctionne avec tous les types de saisie.
 
-## Navigation dans l’interface utilisateur imbriquée
+## <a name="nested-ui-handling"></a>Navigation dans l’interface utilisateur imbriquée
 
 Lorsque plusieurs actions sont imbriquées dans l’élément de liste, nous recommandons de suivre ces instructions pour gérer la navigation avec un clavier, un boîtier de commande, une télécommande ou tout autre mode de saisie autre que par pointage.
 
-### Interface utilisateur imbriquée dans laquelle les éléments de liste effectuent une action
+### <a name="nested-ui-where-list-items-perform-an-action"></a>Interface utilisateur imbriquée dans laquelle les éléments de liste effectuent une action
 
 Si votre interface utilisateur de liste comportant des éléments imbriqués prend en charge des actions telles que l’appel, la sélection (d’un ou de plusieurs éléments), ou des opérations de glisser-déplacer, nous vous recommandons ces techniques de navigation à l’aide des flèches pour vous déplacer dans vos éléments d’interface imbriquée.
 
@@ -130,7 +138,7 @@ Pour obtenir cette interface utilisateur, définissez [IsItemClickEnabled](https
 
 Pour obtenir le code permettant d’implémenter ceci, reportez-vous à la section [Exemple](#example) de cet article.
 
-### Interface utilisateur imbriquée dans laquelle les éléments de liste n’effectuent aucune action
+### <a name="nested-ui-where-list-items-do-not-perform-an-action"></a>Interface utilisateur imbriquée dans laquelle les éléments de liste n’effectuent aucune action
 
 Vous pouvez utiliser un affichage Liste permettant la virtualisation et l’optimisation du comportement de défilement sans avoir d’action associée à un élément de liste. Ces interfaces utilisateur utilisent en règle générale l’élément de liste uniquement pour grouper des éléments et s’assurer qu’ils défilent comme prévu.
 
@@ -175,7 +183,7 @@ Lorsque la saisie s’effectue à partir d’un clavier, voici ce qu’obtient u
 - À partir d’un des éléments de l’interface utilisateur imbriquée, la touche TABULATION permet de se déplacer dans l’ordre de tabulation.  Après avoir parcouru tous les éléments de l’interface utilisateur imbriquée, la commande suivante dans l’ordre de tabulation après ListView fait l’objet du focus.
 - La combinaison de touches Maj + Tab permet un déplacement en sens inverse de l’ordre de tabulation.
 
-## Exemple
+## <a name="example"></a>Exemple
 
 Cet exemple montre comment implémenter une [interface utilisateur imbriquée dans laquelle des éléments de liste effectuent une action](#nested-ui-where-list-items-perform-an-action).
 
@@ -302,9 +310,4 @@ public static class DependencyObjectExtensions
     }
 }
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

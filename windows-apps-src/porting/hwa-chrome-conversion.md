@@ -1,11 +1,19 @@
 ---
 author: seksenov
 title: "Apps web hébergées – Convertir votre application Chrome en app UWP"
-description: Convertissez votre application Chrome ou votre extension Chrome en application de plateforme Windows universelle (UWP) pour le Windows Store.
+description: "Convertissez votre application Chrome ou votre extension Chrome en application de plateforme Windows universelle (UWP) pour le Windows Store."
 kw: Package Chrome Extension for Windows Store tutorial, Port Chrome Extension to Windows 10, How to convert Chrome App to Windows, How to add Chrome Extension to Windows Store, hwa-cli, Hosted Web Apps Command Line Interface CLI Tool, Install Chrome Extension on Windows 10 Device, convert .crx to .AppX
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: extensions Chrome pour Windows, applications Chrome pour Windows, hwa-cli, convertir .crx en .AppX
+ms.assetid: 04f37333-48ba-441b-875e-246fbc3e1a4d
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 84cdd12e2a38aafeb989c0f33b1212077dc1d98e
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 84d8875cc7b1c8540f54fec78cd675bd96919fd2
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -41,16 +49,17 @@ Pour charger votre application, consultez le tableau de bord dans le [Centre de 
 
 Chargez votre package `AppX` en accédant à la page « Packages » dans la section Soumissions.
 
-Renseignez les invites du Windows Store.
+Renseignez les invites du Windows Store.
 
     During the conversion process, you will be prompted for an Identity Name, Publisher Identity, and Publisher Display Name. To retrieve these values, visit the Dashboard in the [Windows Dev Center](https://developer.microsoft.com/windows).
     - Click on "[Create a new app](https://developer.microsoft.com/dashboard/Application/New)" and reserve your app name.
 ![Réservation d’un nom dans le tableau de bord du Centre de développement Windows](images/hwa-to-uwp/reserve_a_name.png)
- Ensuite, cliquez sur « Identité de l’application » dans le menu situé à gauche, sous la section « Gestion des applications ».
+    - Ensuite, cliquez sur « Identité de l’application » dans le menu de gauche sous la section « Gestion des applications ».
     ![Identité de l’application dans le tableau de bord du Centre de développement Windows](images/hwa-to-uwp/app_identity.png)
- Vous devriez voir les trois valeurs que vous êtes invité à renseigner sur la page : 1. Nom d’identité : `Package/Identity/Name`
- 2. Identité de l’éditeur : `Package/Identity/Publisher`
- 3. Nom complet de l’éditeur : `Package/Properties/PublisherDisplayName`
+    - La page devrait afficher trois valeurs que vous êtes invité à renseigner : 
+        1. Nom de l’identité : `Package/Identity/Name`
+        2. Identité de l’éditeur : `Package/Identity/Publisher`
+        3. Nom complet de l’éditeur : `Package/Properties/PublisherDisplayName`
 
 
 ## <a name="guide-for-migrating-your-hosted-web-app"></a>Guide pour la migration de votre application web hébergée
@@ -59,13 +68,13 @@ Après avoir créé le package de votre application web pour le Windows Store, p
 
 ### <a name="application-content-uri-rules"></a>Règles URI de contenu de l’application
 
-Les [règles URI de contenu de l’application (ACUR)](/hwa-access-features.md) ou les URI de contenu définissent la portée de votre application web hébergée par le biais d’une liste d’URL autorisées dans le manifeste du package de votre application. Afin de contrôler les communications vers et depuis du contenu distant, vous devez définir les URL incluses dans et/ou exclues de cette liste. Si un utilisateur clique sur une URL qui n’est pas explicitement incluse, Windows ouvre le chemin d’accès cible dans le navigateur par défaut. Avec les règles ACUR, vous êtes en mesure d’accorder un accès URL aux [API Windows universelles](https://msdn.microsoft.com/library/windows/apps/br211377.aspx).
+Les [règles URI de contenu de l’application (ACUR)](./hwa-access-features.md) ou les URI de contenu définissent la portée de votre application web hébergée par le biais d’une liste d’URL autorisées dans le manifeste du package de votre application. Afin de contrôler les communications vers et depuis du contenu distant, vous devez définir les URL incluses dans et/ou exclues de cette liste. Si un utilisateur clique sur une URL qui n’est pas explicitement incluse, Windows ouvre le chemin d’accès cible dans le navigateur par défaut. Avec les règles ACUR, vous êtes en mesure d’accorder un accès URL aux [API Windows universelles](https://msdn.microsoft.com/library/windows/apps/br211377.aspx).
 
 Vos règles doivent, au minimum, inclure la page de démarrage de votre application. L’outil de conversion créera automatiquement un ensemble de règles ACUR pour vous, en fonction de votre page de démarrage et de son domaine. Toutefois, en cas de redirection par programme, que ce soit sur le serveur ou sur le client, ces destinations devront être ajoutées à la liste autorisée.
 
 *Remarque : les règles ACUR s’appliquent uniquement à la navigation entre les pages. Les images, bibliothèques JavaScript et autres ressources similaires ne sont pas affectées par ces restrictions.*
 
-De nombreuses applications utilisent des sites tiers pour leurs flux de connexion, par exemple, Facebook et Google. L’outil de conversion créera automatiquement un ensemble de règles ACUR pour vous, en fonction des sites les plus populaires. Si votre méthode d’authentification n’est pas incluse dans cette liste, et s’il s’agit d’un flux de redirection, vous devrez ajouter son ou ses chemins d’accès sous forme de règles ACUR. Vous pouvez également envisager d’utiliser un [service Broker d’authentification web](/hwa-access-features.md).
+De nombreuses applications utilisent des sites tiers pour leurs flux de connexion, par exemple, Facebook et Google. L’outil de conversion créera automatiquement un ensemble de règles ACUR pour vous, en fonction des sites les plus populaires. Si votre méthode d’authentification n’est pas incluse dans cette liste, et s’il s’agit d’un flux de redirection, vous devrez ajouter son ou ses chemins d’accès sous forme de règles ACUR. Vous pouvez également envisager d’utiliser un [service Broker d’authentification web](./hwa-access-features.md).
 
 ### <a name="flash"></a>Flash
 
@@ -95,12 +104,7 @@ Chrome fournit des applications avec des [API à usage spécifique](https://deve
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-- [Améliorer votre application web en accédant aux fonctionnalités de plateforme Windows universelle (UWP)](/hwa-access-features.md)
+- [Améliorer votre application web en accédant aux fonctionnalités de plateforme Windows universelle (UWP)](./hwa-access-features.md)
 - [Guide des applications de plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 - [Télécharger des ressources de conception pour les applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

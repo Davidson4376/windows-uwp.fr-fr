@@ -1,17 +1,24 @@
 ---
 author: mcleblanc
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
-description: "Cette rubrique présente une étude de cas de portage d’une application Silverlight pour Windows Phone très simple vers une application de plateforme Windows universelle (UWP)Windows 10."
+description: "Cette rubrique présente une étude de cas de portage d’une application Silverlight pour Windows Phone très simple vers une application de plateforme Windows universelle (UWP) Windows 10."
 title: "Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore1"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 631dab52c1d8f5745179d79182d299688be05d05
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 14003238ead3af2d796bab4f96dadfb050f7d595
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore1"></a>Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP : Bookstore1
+# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore1"></a>Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP : Bookstore1
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique présente une étude de cas de portage d’une application Silverlight pour Windows Phone très simple vers une application de plateforme Windows universelle (UWP) Windows 10. Grâce à Windows 10, vous pouvez créer un package d’application unique que vos clients peuvent installer sur un large éventail d’appareils. C’est ce que nous allons faire dans la présente étude de cas. Voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
@@ -19,7 +26,7 @@ L’application que nous porterons se compose d’une classe **ListBox** liée �
 
 Les rubriques précédentes de cette section décrivent les différences entre les plateformes et fournissent des détails et des recommandations sur le processus de portage des différents aspects d’une application dans le balisage XAML, de la liaison à un modèle d’affichage à l’accès aux données. Une étude de cas vise à compléter ces recommandations en les appliquant à un exemple concret. Elle part du principe que vous avez lu les recommandations, qui ne sont donc pas répétées.
 
-**Remarque** Lorsque vous ouvrez Bookstore1Universal\_10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », suivez les étapes de la section [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md) pour sélectionner une version de plateforme cible.
+**Remarque**   Lorsque vous ouvrez Bookstore1Universal\_10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », suivez les étapes de la section [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md) pour sélectionner une version de plateforme cible.
 
 ## <a name="downloads"></a>Téléchargements
 
@@ -126,16 +133,11 @@ Application Windows 10 portée, exécutée sur un appareil mobile
 
 ## <a name="an-optional-adjustment-to-the-list-box-for-mobile-devices"></a>Ajustement facultatif de la zone de liste pour les appareils mobiles
 
-Lorsque l’application s’exécute sur un appareil mobile, l’arrière-plan d’une zone de liste est clair par défaut dans les deux thèmes. S’il s’agit de votre thème de prédilection, vous n’avez rien d’autre à faire. Toutefois, les contrôles sont conçus pour que vous puissiez personnaliser leur apparence tout en préservant leur comportement. Donc, si vous souhaitez que la zone de liste soit sombre dans le thème foncé (apparence de l’application d’origine), suivez [ces instructions](w8x-to-uwp-case-study-bookstore1.md) sous « Ajustement facultatif ».
+Lorsque l’application s’exécute sur un périphérique mobile, l’arrière-plan d’une zone de liste est clair par défaut dans les deux thèmes. S’il s’agit de votre thème de prédilection, vous n’avez rien d’autre à faire. Toutefois, les contrôles sont conçus pour que vous puissiez personnaliser leur apparence tout en préservant leur comportement. Donc, si vous souhaitez que la zone de liste soit sombre dans le thème foncé (apparence de l’application d’origine), suivez [ces instructions](w8x-to-uwp-case-study-bookstore1.md) sous « Ajustement facultatif ».
 
 ## <a name="conclusion"></a>Conclusion
 
-Cette étude de cas vous a décrit le processus de portage d’une application très simple, probablement non réaliste. Par exemple, il est possible d’utiliser des contrôles de liste pour la sélection ou pour la création d’un contexte de navigation. L’application accède alors à une page contenant plus de détails sur l’élément sélectionné. Cette application spécifique ne fait rien avec la sélection de l’utilisateur et est dépourvue de navigation. Malgré tout, l’étude de cas a servi à briser la glace, afin d’introduire le processus de portage et d’illustrer les techniques importantes que vous pouvez utiliser dans les applications UWP réelles.
+Cette étude de cas vous a décrit le processus de portage d’une application très simple, probablement non réaliste. Par exemple, il est possible d’utiliser des contrôles de liste pour la sélection ou pour la création d’un contexte de navigation. L’application accède alors à une page contenant plus de détails sur l’élément sélectionné. Cette application particulière ne fait rien avec la sélection de l’utilisateur et est dépourvue de navigation. Malgré tout, l’étude de cas a servi à briser la glace, afin d’introduire le processus de portage et d’illustrer les techniques importantes que vous pouvez utiliser dans les applications UWP réelles.
 
 Dans l’étude de cas suivante, [Bookstore2](wpsl-to-uwp-case-study-bookstore2.md), nous examinons l’accès aux données groupées et l’affichage de ces dernières.
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

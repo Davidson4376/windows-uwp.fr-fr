@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 8C63D33B-557D-436E-9DDA-11F7A5BFA2D7
 description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour mettre à jour une soumission d’extension existante."
 title: "Mettre à jour une soumission d’extension à l’aide de l’API de soumission du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, soumission d&quot;extensions, mise à jour, produit in-app"
 translationtype: Human Translation
-ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
-ms.openlocfilehash: ac126d8e8cf8301399a3248a1d65e19805e70255
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8b06973c7c6949851bf786b1fb37026eee4b5fad
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -24,7 +31,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créez une soumission d’extension pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission d’extension](create-an-add-on-submission.md).
 
->**Remarque**  Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+>**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
 ## <a name="request"></a>Requête
 
@@ -206,9 +213,4 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Valider une soumission d’extension](commit-an-add-on-submission.md)
 * [Supprimer une soumission d’extension](delete-an-add-on-submission.md)
 * [Obtenir l’état d’une soumission d’extension](get-status-for-an-add-on-submission.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

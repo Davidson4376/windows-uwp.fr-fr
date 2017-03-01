@@ -1,27 +1,34 @@
 ---
 author: mtoepke
 title: "Ajouter des contrôles"
-description: "Examinons maintenant la façon dont l’exemple de jeu implémente des contrôles de déplacement/vue dans un jeu 3D et développe des contrôles tactiles, de souris et de manette de jeu de base."
+description: "Examinons maintenant la façon dont l’exemple de jeu implémente des contrôles de déplacement/vue dans un jeu 3D et développe des contrôles tactiles, de souris et de manette de jeu de base."
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, jeux, contrôles, entrée"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 49214f3bc14b6a475a77c5dbb7c0f08bb0818df6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d70e9ef8efffd2a78f6c49596e716770a9162b5c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Ajouter des contrôles
+# <a name="add-controls"></a>Ajouter des contrôles
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 Examinons maintenant la façon dont l’exemple de jeu implémente des contrôles de déplacement/vue dans un jeu 3D et développe des contrôles tactiles, de souris et de manette de jeu de base.
 
-## Objectif
+## <a name="objective"></a>Objectif
 
 
 -   Implémenter des contrôles tactiles, de souris/clavier et de manette Xbox, dans un jeu de plateforme Windows universelle (UWP) avec DirectX.
 
-## Contrôles et applications de jeu UWP
+## <a name="uwp-game-apps-and-controls"></a>Contrôles et applications de jeu UWP
 
 
 Un jeu UWP de qualité prend en charge des interfaces très diverses. Un joueur potentiel peut disposer de Windows 10 sur une tablette sans aucun bouton physique, d’un ordinateur multimédia équipé d’une manette Xbox 360 ou de la dernière plateforme de jeu pour PC avec une souris et un clavier de jeu très performants. Votre jeu doit prendre en charge tous ces périphériques si sa conception le permet.
@@ -30,7 +37,7 @@ Cet exemple prend en charge les trois. Il s’agit d’un simple jeu de tir subj
 
 Pour plus d’informations sur les contrôles, et plus particulièrement sur les contrôles de déplacement/vue, voir [Contrôles de déplacement/vue pour les jeux](tutorial--adding-move-look-controls-to-your-directx-game.md) et [Contrôles tactiles pour les jeux](tutorial--adding-touch-controls-to-your-directx-game.md).
 
-## Comportements de contrôles communs
+## <a name="common-control-behaviors"></a>Comportements de contrôles communs
 
 
 Les contrôles tactiles et les contrôles de souris/clavier ont une implémentation de base très semblable. Dans une application UWP, un pointeur est simplement un point sur l’écran. Vous pouvez le déplacer en faisant glisser la souris ou votre doigt sur l’écran tactile. Par conséquent, vous pouvez opter pour un seul ensemble d’événements sans vous demander si le joueur utilise une souris ou un écran tactile pour déplacer le pointeur et appuyer dessus.
@@ -197,11 +204,11 @@ bool MoveLookController::IsFiring()
 
 Si le joueur déplace le pointeur hors de la fenêtre principale du jeu, ou appuie sur le bouton de pause (la touche P ou le bouton de démarrage de la manette Xbox), le jeu doit être suspendu. **MoveLookController** enregistre cette dernière action et informe la boucle de jeu lors de l’appel de la méthode **IsPauseRequested**. À ce stade, si **IsPauseRequested** renvoie la valeur **true**, la boucle de jeu appelle alors **WaitForPress** sur **MoveLookController** pour placer la manette dans l’état **WaitForInput**. Ensuite, **MoveLookController** attend que le joueur sélectionne l’un des éléments de menu à charger, continue ou quitte le jeu, puis arrête le traitement des événements d’entrée du jeu jusqu’à ce que son état redevienne **Active**.
 
-Consultez l’[exemple de code complet pour cette section](#code_sample).
+Consultez l’[exemple de code complet pour cette section](#complete-sample-code-for-this-section).
 
 Examinons à présent l’implémentation de chacun des trois types de contrôles un peu plus en détail.
 
-## Implémentation des contrôles de souris relatifs
+## <a name="implementing-relative-mouse-controls"></a>Implémentation des contrôles de souris relatifs
 
 
 Si le déplacement de la souris est détecté, nous souhaitons utiliser ce déplacement pour déterminer les nouveaux tangage et lacet de la caméra. Nous y parvenons en implémentant les contrôles de souris relatifs, avec lesquels nous gérons la distance relative parcourue par la souris (écart entre le début et la fin du déplacement) par opposition à l’enregistrement des coordonnées des pixels x-y absolues du mouvement.
@@ -250,7 +257,7 @@ void MoveLookController::OnMouseMoved(
 }
 ```
 
-## Implémentation des contrôles tactiles
+## <a name="implementing-touch-controls"></a>Implémentation des contrôles tactiles
 
 
 Les contrôles tactiles sont les plus difficiles à développer, car ce sont les plus complexes et ils nécessitent le plus de réglages de précision pour être efficaces. Dans l’exemple de jeu, un rectangle dans le quadrant inférieur gauche de l’écran est utilisé comme bouton multidirectionnel, où le glissement de votre pouce vers la gauche et la droite dans cet espace fait glisser la caméra vers la gauche et la droite, et le glissement de votre pouce vers le haut et le bas fait glisser la caméra vers l’avant et l’arrière. Appuyer sur un rectangle dans le quadrant inférieur droit permet de tirer des sphères. La visée (tangage et lacet) est contrôlée en faisant glisser votre doigt sur les parties de l’écran qui ne sont pas réservées au déplacement et au tir ; lorsque votre doigt se déplace, la caméra (avec réticule fixe) se déplace de la même manière.
@@ -465,13 +472,13 @@ void MoveLookController::OnPointerReleased(
 }
 ```
 
-Si l’ID du pointeur qui a déclenché l’événement [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) est l’ID du pointeur de déplacement précédemment enregistré, **MoveLookController** affecte la valeur 0 à la vitesse, car le joueur a cessé de toucher le rectangle de déplacement. Si la valeur0 n’était pas affectée à la vitesse, le joueur continuerait de se déplacer! Si vous voulez implémenter une certaine forme d’inertie, ajoutez ici la méthode qui commence à redéfinir la vitesse sur 0 lors des futurs appels de la méthode **Update** à partir de la boucle de jeu.
+Si l’ID du pointeur qui a déclenché l’événement [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) est l’ID du pointeur de déplacement précédemment enregistré, **MoveLookController** affecte la valeur 0 à la vitesse, car le joueur a cessé de toucher le rectangle de déplacement. Si la valeur 0 n’était pas affectée à la vitesse, le joueur continuerait de se déplacer ! Si vous voulez implémenter une certaine forme d’inertie, ajoutez ici la méthode qui commence à redéfinir la vitesse sur 0 lors des futurs appels de la méthode **Update** à partir de la boucle de jeu.
 
 Sinon, si l’événement [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) s’est déclenché dans le rectangle de tir ou la zone de vue, **MoveLookController** réinitialise les ID de pointeur spécifiques.
 
 Ce sont les éléments de base de l’implémentation des contrôles d’écran tactile dans l’exemple de jeu. Passons aux contrôles de souris et de clavier.
 
-## Implémentation des contrôles de souris et de clavier
+## <a name="implementing-mouse-and-keyboard-controls"></a>Implémentation des contrôles de souris et de clavier
 
 
 L’exemple de jeu implémente les contrôles de souris et de clavier suivants :
@@ -491,7 +498,7 @@ window->KeyUp +=
         ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &MoveLookController::OnKeyUp);
 ```
 
-La souris est traitée un peu différemment des contrôles tactiles, même si elle utilise un pointeur. Bien évidemment, elle n’utilise pas les rectangles de déplacement ni de tir, car le joueur serait très embarrassé: comment pourrait-il appuyer en même temps sur les contrôles de déplacement et de tir? Comme mentionné plus tôt, le contrôleur **MoveLookController** lance les contrôles de vue chaque fois que la souris est déplacée, et les contrôles de tir chaque fois que le bouton gauche de la souris est enfoncé, comme illustré ici.
+La souris est traitée un peu différemment des contrôles tactiles, même si elle utilise un pointeur. Bien évidemment, elle n’utilise pas les rectangles de déplacement ni de tir, car le joueur serait très embarrassé : comment pourrait-il appuyer en même temps sur les contrôles de déplacement et de tir ? Comme mentionné plus tôt, le contrôleur **MoveLookController** lance les contrôles de vue chaque fois que la souris est déplacée, et les contrôles de tir chaque fois que le bouton gauche de la souris est enfoncé, comme illustré ici.
 
 ```cpp
 void MoveLookController::OnPointerPressed(
@@ -664,7 +671,7 @@ Lorsque le joueur arrête d’appuyer sur l’un des boutons de la souris, l’a
 
 Examinons maintenant le dernier des types de contrôles : la manette Xbox. Elle est gérée séparément des contrôles tactiles et de souris, car elle n’utilise pas l’objet pointeur.
 
-## Implémentation des contrôles de la manette Xbox
+## <a name="implementing-xbox-controller-controls"></a>Implémentation des contrôles de la manette Xbox
 
 
 Dans l’exemple de jeu, la prise en charge de la manette Xbox est ajoutée par des appels aux API [XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053), qui sont un ensemble d’API conçues pour simplifier la programmation des manettes de jeu. Dans l’exemple de jeu, nous utilisons le stick analogique gauche de la manette Xbox pour les déplacements du joueur, le stick analogique droit pour les contrôles de vue et la gâchette droite pour tirer. Nous utilisons le bouton de démarrage pour suspendre et reprendre le jeu.
@@ -797,7 +804,7 @@ void MoveLookController::UpdateGameController()
 }
 ```
 
-Si la manette de jeu présente l’état **Active**, cette méthode vérifie si un utilisateur a bougé le stick analogique gauche dans une direction spécifique. Toutefois, le mouvement effectué dans une direction spécifique sur le stick doit dépasser le rayon de la zone morte; sinon, rien ne se produit. Cette zone morte est nécessaire pour gérer les « effleurements », c’est-à-dire lorsque la manette détecte des mini-mouvements effectués par le pouce du joueur lorsqu’il repose sur le stick. En l’absence de cette zone morte, le joueur peut s’énerver très rapidement, car les contrôles ne sont pas du tout stables.
+Si la manette de jeu présente l’état **Active**, cette méthode vérifie si un utilisateur a bougé le stick analogique gauche dans une direction spécifique. Toutefois, le mouvement effectué dans une direction spécifique sur le stick doit dépasser le rayon de la zone morte ; sinon, rien ne se produit. Cette zone morte est nécessaire pour gérer les « effleurements », c’est-à-dire lorsque la manette détecte des mini-mouvements effectués par le pouce du joueur lorsqu’il repose sur le stick. En l’absence de cette zone morte, le joueur peut s’énerver très rapidement, car les contrôles ne sont pas du tout stables.
 
 La méthode **Update** effectue alors la même vérification sur le stick droit pour voir si le joueur a modifié la direction de la vue de la caméra, à condition que le mouvement sur le stick dépasse le rayon d’une autre zone morte.
 
@@ -805,12 +812,12 @@ La méthode **Update** effectue alors la même vérification sur le stick droit 
 
 Et voici comment cet exemple implémente tout un ensemble d’options de contrôle. Encore une fois, gardez à l’esprit qu’une application du Windows Store de qualité prend en charge un large éventail d’options de contrôle. Ainsi, les utilisateurs avec différents périphériques et facteurs de forme peuvent jouer de la façon qu’ils préfèrent !
 
-## Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes
 
 
 Nous avons passé en revue chaque composant majeur d’un jeu WUP DirectX, sauf un : le composant audio ! La musique et les effets sonores étant un élément essentiel dans tout jeu, abordons l’[ajout de son](tutorial--adding-sound.md) !
 
-## Exemple de code complet pour cette section
+## <a name="complete-sample-code-for-this-section"></a>Exemple de code complet pour cette section
 
 
 MoveLookController.h
@@ -1901,11 +1908,11 @@ void MoveLookController::UpdateGameController()
 ```
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 
 [Créer un jeu UWP simple avec DirectX](tutorial--create-your-first-metro-style-directx-game.md)
@@ -1916,10 +1923,5 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

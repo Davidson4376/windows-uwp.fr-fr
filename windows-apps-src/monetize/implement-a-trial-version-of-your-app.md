@@ -3,20 +3,26 @@ author: mcleanbyron
 ms.assetid: 571697B7-6064-4C50-9A68-1374F2C3F931
 description: "Découvrez comment utiliser l’espace de noms Windows.Services.Store pour implémenter une version d’évaluation de votre application."
 title: "Implémenter une version d’évaluation de votre application"
-keywords: "exemple de code d’évaluation gratuit"
+keywords: "windows 10, uwp, évaluation, achats dans l’application, Windows.Services.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: ea4c5637a970a63938da2b1bea9f11fd39de9cc8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dc5e67823521db455e12fa4b16d8204c20bff621
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="implement-a-trial-version-of-your-app"></a>Implémenter une version d’évaluation de votre application
 
-Si vous configurez votre application en tant que [version d’évaluation gratuite dans le tableau de bord du Centre de développement Windows](../publish/set-app-pricing-and-availability.md#free-trial) afin que vos clients puissent utiliser gratuitement votre application durant une période d’évaluation, vous pouvez encourager vos client à mettre à niveau vers une version complète de votre application en excluant ou en limitant certaines fonctionnalités durant la période d’évaluation. Choisissez les fonctionnalités à limiter avant de commencer à coder, puis faites en sorte que votre application ne les rende disponibles qu’à l’achat de la licence complète. Vous pouvez également activer certaines fonctionnalités, telles que des bannières ou des filigranes, qui ne s’afficheront que pendant la période d’évaluation, avant l’achat de votre application par un client.
+Si vous configurez votre application en tant qu’[essai gratuit dans le tableau de bord du Centre de développement Windows](../publish/set-app-pricing-and-availability.md#free-trial) afin que vos clients puissent utiliser gratuitement votre application durant une période d’évaluation, vous pouvez encourager vos clients à effectuer une mise à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation. Choisissez les fonctionnalités à limiter avant de commencer à coder, puis faites en sorte que votre application ne les rende disponibles qu’à l’achat de la licence complète. Vous pouvez également activer certaines fonctionnalités, telles que des bannières ou des filigranes, qui ne s’afficheront que pendant la période d’évaluation, avant l’achat de votre application par un client.
 
 Les applications qui ciblent Windows 10 version 1607 ou ultérieure, peuvent utiliser des membres de la classe [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) dans l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour déterminer si l’utilisateur possède une licence de version d’évaluation pour votre application et être averti si l’état de cette licence change pendant l’exécution de votre application.
 
->**Remarque**  Cet article concerne les applications ciblant Windows 10 version 1607 ou ultérieure. Si votre application cible une version antérieure de Windows 10, vous devez utiliser l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) à la place de l’espace de noms **Windows.Services.Store**. Pour plus d’informations, voir [Versions d’évaluation et achats in-app utilisant l’espace de noms Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+>**Remarque**&nbsp;&nbsp;Cet article concerne les applications ciblant Windows 10 version 1607 ou ultérieure. Si votre application cible une version antérieure de Windows 10, vous devez utiliser l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) à la place de l’espace de noms **Windows.Services.Store**. Pour plus d’informations, voir [Versions d’évaluation et achats in-app utilisant l’espace de noms Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
 ## <a name="guidelines-for-implementing-a-trial-version"></a>Recommandations en matière d’implémentation d’une version d’évaluation
 
@@ -64,7 +70,7 @@ Le code de cet exemple se base sur les hypothèses suivantes :
 * Le fichier de code contient une instruction **using** pour l’espace de noms **Windows.Services.Store**.
 * Cette application mono-utilisateur ne s’exécute que dans le contexte de l’utilisateur qui l’a lancée. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md#api_intro).
 
->**Remarque**  Si vous disposez d’une application de bureau qui utilise [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), vous devrez peut-être ajouter du code supplémentaire non affiché dans cet exemple pour configurer l’objet [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Pour plus d’informations, voir [Utilisation de la classe StoreContext dans une application de bureau qui utilise Desktop Bridge](in-app-purchases-and-trials.md#desktop).
+>**Remarque**&nbsp;&nbsp;Si vous disposez d’une application de bureau qui utilise [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), vous devrez peut-être ajouter du code supplémentaire non affiché dans cet exemple pour configurer l’objet [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Pour plus d’informations, voir [Utilisation de la classe StoreContext dans une application de bureau qui utilise Desktop Bridge](in-app-purchases-and-trials.md#desktop).
 
 ## <a name="code-example"></a>Exemple de code
 
@@ -85,9 +91,4 @@ Pour obtenir un exemple d’application complète, consultez [Exemple Windows S
 * [Activer les achats in-app d’applications et de modules complémentaires](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [Activer les achats d’extensions consommables](enable-consumable-add-on-purchases.md)
 * [Exemple Windows Store](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

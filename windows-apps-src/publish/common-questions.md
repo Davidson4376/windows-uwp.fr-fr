@@ -1,17 +1,24 @@
 ---
-author: jnHs
+author: shawjohn
 Description: "Questions courantes sur les campagnes de publicité"
 title: "Questions courantes sur les campagnes de publicité"
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
+ms.author: johnshaw
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 584407ea0e0fee4ec74dac0b656db59b7f694391
-ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 20a05337052392446d733af7da180f9466fef05f
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="common-questions-about-ad-campaigns"></a>Questions courantes sur les campagnes de publicité
 
-## <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>Combien coûte l’exécution d’une publicité pour mon application ?
+## <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>Combien coûte l’exécution d’une publicité pour mon application ?
 
 Cela dépend de vous, mais n’oubliez pas : plus vous dépensez, plus le nombre de personnes qui voient votre publicité est important. Plus le nombre de personnes qui voient votre publicité est important, plus vous obtenez de clics et d’installations. Pour plus d’informations sur la création d’une campagne de publicité pour votre application, lisez [cet article](create-an-ad-campaign-for-your-app.md).
 
@@ -33,9 +40,9 @@ Si vous utilisez un des modèles de publicité par défaut, vous pouvez choisir 
 
 ## <a name="where-will-my-ad-appear"></a>Où apparaît ma publicité ?
 
-Votre publicité apparaît dans les applications qui utilisent la même évaluation de l'âge et la même version de système d'exploitation que votre application. Vous définissez ces propriétés lorsque vous publiez votre application dans le Windows Store.
+Votre publicité apparaît dans les applications qui utilisent la même évaluation de l'âge et la même version de système d'exploitation que votre application. Vous définissez ces propriétés lorsque vous publiez votre application dans le Windows Store. Pour les campagnes « universelles », vos annonces apparaîtront également dans MSN.com, Outlook.com, Skype et d'autres propriétés premium de Microsoft.
 
-Les campagnes de publicité sont actuellement prises en charge dans les pays et régions suivants :
+Les campagnes de publicité sont actuellement prises en charge dans les pays et régions suivants :
 
 Afrique du Sud, Algérie, Allemagne, Arabie saoudite, Argentine, Australie, Autriche, Bahamas, Bahreïn, Barbade, Belgique, Belize, Bolivie, Brésil, Canada, Chili, Chine, Colombie, Danemark, Égypte, El Salvador, Émirats arabes unis, Équateur, Espagne, États-Unis, Finlande, France, Guatemala, Haïti, Honduras, Hong Kong (R.A.S.), Inde, Indonésie, Irak, Irlande, Italie, Jamaïque, Jordanie, Koweït, Liban, Malaisie, Maroc, Mexique, Nicaragua, Norvège, Nouvelle-Zélande, Oman, Panama, Paraguay, Pays-Bas, Pérou, Philippines, Porto Rico, Qatar, République dominicaine, Royaume-Uni, Singapour, Suède, Suisse, Taïwan, Thaïlande, Trinité-et-Tobago, Tunisie, Uruguay, Venezuela, Vietnam.
 
@@ -64,9 +71,4 @@ Accédez à <http://commerce.microsoft.com>, ouvrez une session avec vos informa
 * [À propos des publicités maison](about-house-ads.md)
 * [À propos des annonces de la communauté](about-community-ads.md)
 * [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

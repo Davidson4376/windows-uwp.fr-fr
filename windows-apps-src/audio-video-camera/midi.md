@@ -1,22 +1,29 @@
 ---
 author: drewbatgit
 ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
-description: "Cet article montre comment énumérer des périphériques MIDI et envoyer et recevoir des messages MIDI à partir d’une application Windows universelle."
+description: "Cet article vous montre comment énumérer des périphériques MIDI (Musical Instrument Digital Interface) et envoyer et recevoir des messages MIDI à partir d’une application Windows universelle."
 title: MIDI
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: bd494a814155d72642bb721a939fcc8c50668a2d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# MIDI
+# <a name="midi"></a>MIDI
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article vous montre comment énumérer des périphériques MIDI (Musical Instrument Digital Interface) et envoyer et recevoir des messages MIDI à partir d’une application Windows universelle.
 
-## Énumérer des périphériques MIDI
+## <a name="enumerate-midi-devices"></a>Énumérer des périphériques MIDI
 
 Avant d’énumérer et d’utiliser des périphériques MIDI, ajoutez les espaces de noms suivants à votre projet.
 
@@ -26,7 +33,7 @@ Ajoutez un contrôle [**ListBox**](https://msdn.microsoft.com/library/windows/ap
 
 [!code-xml[MidiListBoxes](./code/MIDIWin10/cs/MainPage.xaml#SnippetMidiListBoxes)]
 
-La classe [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) de la méthode [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) sert à énumérer les nombreux types de périphériques différents qui sont reconnus par Windows. Pour indiquer que vous voulez seulement que la méthode recherche des périphériques d’entrée MIDI, utilisez la chaîne de sélecteur renvoyée par [**MidiInPort.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894779). **FindAllAsync** renvoie une classe [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) qui contient une classe **DeviceInformation** pour chaque périphérique d’entrée MIDI enregistré auprès du système. Si la collection renvoyée ne contient aucun élément, cela signifie qu’il n’y a aucun périphérique d’entrée MIDI disponible. Si la collection comporte des éléments, parcourez les objets **DeviceInformation** et ajoutez le nom de chaque périphérique au périphérique d’entrée MIDI **ListBox**.
+La classe [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225432) de la méthode [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225393) sert à énumérer les nombreux types de périphériques différents qui sont reconnus par Windows. Pour indiquer que vous voulez seulement que la méthode recherche des périphériques d’entrée MIDI, utilisez la chaîne de sélecteur renvoyée par [**MidiInPort.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894779). **FindAllAsync** renvoie une classe [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) qui contient une classe **DeviceInformation** pour chaque périphérique d’entrée MIDI enregistré auprès du système. Si la collection renvoyée ne contient aucun élément, cela signifie qu’il n’y a aucun périphérique d’entrée MIDI disponible. Si la collection comporte des éléments, parcourez les objets **DeviceInformation** et ajoutez le nom de chaque périphérique au périphérique d’entrée MIDI **ListBox**.
 
 [!code-cs[EnumerateMidiInputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiInputDevices)]
 
@@ -34,7 +41,7 @@ L’énumération des appareils de sortie MIDI fonctionne exactement comme l’�
 
 [!code-cs[EnumerateMidiOutputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiOutputDevices)]
 
-## Créer une classe d’assistance d’observateur de périphériques
+## <a name="create-a-device-watcher-helper-class"></a>Créer une classe d’assistance d’observateur de périphériques
 
 L’espace de noms [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) fournit la classe [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446) qui permet de signaler à votre application si des périphériques ont été ajoutés au système ou supprimés de celui-ci ou si les informations d’un périphérique sont mises à jour. Étant donné que les applications compatibles MIDI sont généralement intéressées par les périphériques d’entrée et de sortie, cet exemple crée une classe d’assistance qui implémente le modèle **DeviceWatcher**, afin que le même code puisse être utilisé sur ces deux types de périphériques sans avoir besoin d’être dupliqué.
 
@@ -61,7 +68,7 @@ Enregistrez des gestionnaires pour les gestionnaires d’événements de l’obs
 
 [!code-cs[WatcherConstructor](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherConstructor)]
 
-L’élément **DeviceWatcher** présente les événements suivants:
+L’élément **DeviceWatcher** présente les événements suivants :
 
 -   [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450) - Déclenché lorsqu’un nouveau périphérique est ajouté au système.
 -   [**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453) - Déclenché lorsqu’un périphérique est supprimé du système.
@@ -84,7 +91,7 @@ Fournissez un destructeur pour annuler l’enregistrement des gestionnaires d’
 
 [!code-cs[WatcherDestructor](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherDestructor)]
 
-## Créer des ports MIDI pour envoyer et recevoir des messages
+## <a name="create-midi-ports-to-send-and-receive-messages"></a>Créer des ports MIDI pour envoyer et recevoir des messages
 
 Dans le code-behind de votre page, déclarez des variables de membre destinées à contenir deux instances de la classe d’assistance **MyMidiDeviceWatcher**, une pour les périphériques d’entrée et une autre pour les périphériques de sortie.
 
@@ -122,9 +129,9 @@ Lorsque votre application est désactivée, veillez à nettoyer les ressources d
 
 [!code-cs[CleanUp](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetCleanUp)]
 
-## Utilisation du synthétiseur General MIDI Windows intégré
+## <a name="using-the-built-in-windows-general-midi-synth"></a>Utilisation du synthétiseur General MIDI Windows intégré
 
-Lors de l’énumération des périphériques de sortie MIDI à l’aide de la technique décrite ci-dessus, votre application détecte un périphérique MIDI appelé «Synthé. de table de sons Microsoft GS». Il s’agit d’un synthétiseur General MIDI intégré que vous pouvez utiliser à partir de votre application. Toutefois, toute tentative de création d’un port de sortie MIDI pour ce périphérique échouera, sauf si vous avez inclus l’extension du Kit de développement logiciel (SDK) pour le synthétiseur intégré dans votre projet.
+Lors de l’énumération des périphériques de sortie MIDI à l’aide de la technique décrite ci-dessus, votre application détecte un périphérique MIDI appelé « Synthé. de table de sons Microsoft GS ». Il s’agit d’un synthétiseur General MIDI intégré que vous pouvez utiliser à partir de votre application. Toutefois, toute tentative de création d’un port de sortie MIDI pour ce périphérique échouera, sauf si vous avez inclus l’extension du Kit de développement logiciel (SDK) pour le synthétiseur intégré dans votre projet.
 
 **Pour inclure l’extension du Kit de développement logiciel (SDK) pour le synthétiseur General MIDI dans votre projet d’application**
 
@@ -141,10 +148,5 @@ Lors de l’énumération des périphériques de sortie MIDI à l’aide de la t
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

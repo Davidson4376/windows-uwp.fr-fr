@@ -3,16 +3,23 @@ author: mtoepke
 title: "Structure de l’application Marble Maze"
 description: "La structure d’une application de plateforme Windows universelle (UWP) en DirectX diffère de celle d’une application de bureau classique."
 ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp, jeux, exemple, directx, structure
 translationtype: Human Translation
-ms.sourcegitcommit: 931d790ea54ff9ff27202f6c92d415b17e2215ed
-ms.openlocfilehash: 696d4227bcd3ff4238d81e6f951a61e098fbc2f6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1045bed8d7e4e8f9ead1c144dda02f900d0eb996
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="marble-maze-application-structure"></a>Structure de l’application Marble Maze
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 La structure d’une application de plateforme Windows universelle (UWP) en DirectX diffère de celle d’une application de bureau classique. Au lieu de fonctionner avec des types de handle tels que **HWND** et des fonctions telles que **CreateWindow**, Windows Runtime fournit des interfaces comme [**Windows::UI::Core::ICoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208296). Vous pouvez ainsi développer des applications pour UWP grâce à une approche orientée objet plus moderne. Cette section montre comment le code de l’application Marble Maze est structuré.
@@ -374,10 +381,5 @@ Pour plus d’informations sur certaines pratiques importantes à garder à l’
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

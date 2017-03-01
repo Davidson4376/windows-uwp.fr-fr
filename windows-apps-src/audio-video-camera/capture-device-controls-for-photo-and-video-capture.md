@@ -3,15 +3,22 @@ author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
 description: "Cet article vous montre comment utiliser les contrôles des appareils manuels pour activer les scénarios de capture photo et vidéo, y compris la stabilisation d’image optique et le zoom fluide."
 title: "Contrôles d’appareil photo manuel pour la capture photo et vidéo"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 4c6a7aabb39b3835e042481ccae7da60e899e7cf
-ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: be3c421c2b8d7b4bb71ddaa984ff925f0563f1f6
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Contrôles d’appareil photo manuel pour la capture photo et vidéo
+# <a name="manual-camera-controls-for-photo-and-video-capture"></a>Contrôles d’appareil photo manuel pour la capture photo et vidéo
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous montre comment utiliser les contrôles des appareils manuels pour activer les scénarios de capture photo et vidéo, y compris la stabilisation d’image optique et le zoom fluide.
@@ -27,7 +34,7 @@ Toutes les API de contrôle des appareils mentionnées dans cet article sont mem
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
-## Exposition
+## <a name="exposure"></a>Exposition
 
 [**ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) vous permet de définir la vitesse d’obturation utilisée pendant la capture photo ou vidéo.
 
@@ -54,7 +61,7 @@ Dans le gestionnaire d’événements **CheckedChanged** de la case à cocher d�
 > [!IMPORTANT]
 > Le mode d’exposition automatique est uniquement pris en charge pendant l’exécution du flux d’aperçu. Vérifiez que le flux d’aperçu est en cours d’exécution avant d’activer l’exposition automatique.
 
-## Compensation de l’exposition
+## <a name="exposure-compensation"></a>Compensation de l’exposition
 
 [**ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) vous permet de définir la compensation d’exposition utilisée pendant la capture photo ou vidéo.
 
@@ -74,7 +81,7 @@ Dans le gestionnaire d’événements **ValueChanged**, obtenez la valeur actuel
 
 [!code-cs[EvValueChanged](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetEvValueChanged)]
 
-## Flash
+## <a name="flash"></a>Flash
 
 [**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) vous permet d’activer ou de désactiver le flash ou d’activer le flash automatique, auquel cas le système détermine de manière dynamique l’utilisation ou non du flash. Ce contrôle vous permet également d’activer la réduction automatique des yeux rouges sur les appareils la prenant en charge. Ces paramètres s’appliquent tous à la capture de photos. [**TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) est un autre contrôle d’activation ou de désactivation de la torche pour la capture vidéo.
 
@@ -101,11 +108,11 @@ Enfin, dans le gestionnaire de la case à cocher de la torche vidéo, définisse
 > [!NOTE] 
 >  Sur certains appareils, la torche n’émettra pas de lumière, même si [**TorchControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) est défini sur true, sauf si un flux d’aperçu est en cours d’exécution sur l’appareil et qu’il capture activement des vidéo. L’ordre des opérations recommandé consiste à activer l’aperçu vidéo, à activer la torche en définissant **Enabled** sur true, puis à lancer la capture vidéo. Sur certains appareils, la torche s’allume après le démarrage de l’aperçu. Sur d’autres appareils, la torche peut ne pas s’allumer tant qu’une capture vidéo n’est pas démarrée.
 
-## Mise au point
+## <a name="focus"></a>Mise au point
 
 Trois méthodes couramment utilisées pour le réglage de la mise au point de l’appareil photo sont prises en charge par l’objet [**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) : l’autofocus en continu, appuyer pour mettre au point la mise au point manuelle. Une application d’appareil photo peut prendre en charge ces méthodes, mais pour une meilleure lisibilité, cet article traite de chaque technique séparément. Cette section décrit également comment activer la lumière d’aide à la mise au point.
 
-### Autofocus en continu
+### <a name="continuous-autofocus"></a>Autofocus en continu
 
 L’activation de l’autofocus en continu indique à l’appareil photo qu’il doit régler la mise au point de manière dynamique afin de maintenir la mise au point sur le sujet de la photo ou vidéo. Cet exemple utilise une case d’option d’activation/de désactivation de l’autofocus en continu.
 
@@ -124,7 +131,7 @@ Créez un nouvel objet [**FocusSettings**](https://msdn.microsoft.com/library/wi
 > [!IMPORTANT]
 > Le mode d’autofocus est uniquement pris en charge pendant l’exécution du flux d’aperçu. Vérifiez que le flux d’aperçu est en cours d’exécution avant d’activer l’autofocus en continu.
 
-### Appuyer pour mettre au point
+### <a name="tap-to-focus"></a>Appuyer pour mettre au point
 
 La technique appuyer pour mettre au point utilise [**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) et [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064) pour spécifier une sous-région de la trame de capture dans laquelle l’appareil de capture doit mettre au point. La région de mise au point est déterminée par l’utilisateur lorsqu’il appuie sur l’écran affichant le flux d’aperçu.
 
@@ -167,7 +174,7 @@ Obtenez ensuite le [**RegionsOfInterestControl**](https://msdn.microsoft.com/lib
 Enfin, appelez [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) sur **FocusControl** pour démarrer la mise au point.
 
 > [!IMPORTANT]
-> Quand vous implémentez la technique appuyer pour mettre au point, l’ordre des opérations est important. Vous devez appeler ces API dans l’ordre suivant:
+> Quand vous implémentez la technique appuyer pour mettre au point, l’ordre des opérations est important. Vous devez appeler ces API dans l’ordre suivant :
 >
 > 1. [**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067)
 > 2. [**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070)
@@ -187,7 +194,7 @@ La méthode d’assistance **ConvertUiTapToPreviewRect** utilise en tant qu’ar
 
 [!code-cs[ConvertUiTapToPreviewRect](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetConvertUiTapToPreviewRect)]
 
-### Mise au point manuelle
+### <a name="manual-focus"></a>Mise au point manuelle
 
 La technique de mise au point manuelle utilise un contrôle **Slider** pour définir la profondeur de mise au point actuelle de l’appareil de capture. Une case d’option est utilisée pour activer/désactiver la mise au point manuelle.
 
@@ -209,7 +216,7 @@ Dans le gestionnaire d’événements **ValueChanged** du curseur de mise au poi
 
 [!code-cs[FocusSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusSlider)]
 
-### Activer la lumière de mise au point
+### <a name="enable-the-focus-light"></a>Activer la lumière de mise au point
 
 Sur les appareils qui la prennent en charge, vous pouvez activer une lumière d’aide à la mise au point pour faciliter la mise au point de l’appareil. Cet exemple utilise une case à cocher pour activer ou désactiver la lumière d’aide à la mise au point.
 
@@ -223,7 +230,7 @@ Dans le gestionnaire d’événements **CheckedChanged**, obtenez l’objet [**F
 
 [!code-cs[FocusLightCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusLightCheckBox)]
 
-## Sensibilité ISO
+## <a name="iso-speed"></a>Sensibilité ISO
 
 [**IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) vous permet de définir la sensibilité ISO utilisée pendant la capture photo ou vidéo.
 
@@ -247,7 +254,7 @@ Dans le gestionnaire d’événements **CheckedChanged** de la case à cocher de
 
 [!code-cs[IsoCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsoCheckBox)]
 
-## Stabilisation d’image optique
+## <a name="optical-image-stabilization"></a>Stabilisation d’image optique
 
 La stabilisation d’image optique (OIS, Optical image stabilization) stabilise le flux vidéo capturé en manipulant mécaniquement l’appareil de capture matérielle, et offre un résultat supérieur à celui de la stabilisation numérique. Sur les appareils qui ne prennent pas en charge OIS, vous pouvez utiliser l’effet VideoStabilizationEffect pour stabiliser numériquement la vidéo capturée. Pour plus d’informations, voir [Effets de capture vidéo](effects-for-video-capture.md).
 
@@ -259,14 +266,14 @@ Activez ou désactivez la fonctionnalité OIS en définissant le [**OpticalImage
 
 [!code-cs[SetOpticalImageStabilizationMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetOpticalImageStabilizationMode)]
 
-## Fréquence du courant
+## <a name="powerline-frequency"></a>Fréquence du courant
 Certains appareils photo prennent en charge le traitement anti scintillement qui implique de connaître la fréquence du courant alternatif (CA) dans l’environnement actuel. Certains appareils prennent en charge la détermination automatique de la fréquence du courant, tandis que d’autres nécessitent que la fréquence soit définie manuellement. L’exemple de code suivant montre comment déterminer la prise en charge de la fréquence du courant sur l’appareil et, si nécessaire, comment définir la fréquence manuellement. 
 
 Tout d’abord, appelez la méthode [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898) de **VideoDeviceController**, en transmettant un paramètre de sortie de type [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency). Si cet appel échoue, le contrôle de la fréquence du courant n’est pas pris en charge sur l’appareil actuel. Si la fonctionnalité est prise en charge, vous pouvez déterminer si le mode automatique est disponible sur l’appareil en essayant de définir ce mode. Pour ce faire, appelez [**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899) et transmettez la valeur **Auto**. Si l’appel aboutit, votre fréquence de courant automatique est prise en charge. Si le contrôleur de fréquence du courant est pris en charge sur l’appareil, mais que la détection de fréquence automatique ne l’est pas, vous pouvez définir manuellement la fréquence à l’aide de **TrySetPowerlineFrequency**. Dans cet exemple, **MyCustomFrequencyLookup** est une méthode personnalisée que vous implémentez pour déterminer la fréquence appropriée pour l’emplacement actuel de l’appareil. 
 
 [!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
 
-## Balance des blancs
+## <a name="white-balance"></a>Balance des blancs
 
 [**WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) vous permet de définir la balance des blancs utilisée pendant la capture photo ou vidéo.
 
@@ -296,7 +303,7 @@ Dans le gestionnaire d’événements **ValueChanged**, obtenez la valeur actuel
 > [!IMPORTANT]
 > La valeur prédéfinie **ColorTemperaturePreset.Auto** indique au système de régler automatiquement le niveau de balance des blancs. Dans certains scénarios, comme la capture d’une séquence de photos où les niveaux de balance des blancs doivent être identiques pour chaque cliché, vous pouvez verrouiller le contrôle sur la valeur automatique actuelle. Pour ce faire, appelez [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) et spécifiez le **Manual** prédéfini et ne définissez pas de valeur sur le contrôle à l’aide de [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn279114). Ceci entraînera un verrouillage de l’appareil sur la valeur actuelle. Ne tentez pas de lire la valeur du contrôle actuelle et de transmettre la valeur retournée à **SetValueAsync** car l’exactitude de cette valeur n’est pas garantie.
 
-## Zoom
+## <a name="zoom"></a>Zoom
 
 [**ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) vous permet de définir le niveau de zoom utilisé pendant la capture photo ou vidéo.
 
@@ -318,7 +325,7 @@ Enfin, modifiez les paramètres de zoom actuel en transmettant votre objet **Zoo
 
 [!code-cs[ZoomSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetZoomSlider)]
 
-### Zoom fluide à l’aide du mouvement de pincement
+### <a name="smooth-zoom-using-pinch-gesture"></a>Zoom fluide à l’aide du mouvement de pincement
 
 Comme indiqué dans la section précédente, lorsqu’il est pris en charge, le mode de zoom fluide offre à l’appareil de capture une transition aisée entre les niveaux de zoom numérique, permettant à l’utilisateur d’ajuster dynamiquement le niveau de zoom pendant l’opération de capture sans secousse et en toute discrétion. Cette section décrit comment ajuster le niveau de zoom suite à un mouvement de pincement.
 
@@ -338,13 +345,8 @@ Définissez le niveau de zoom sur l’appareil de capture en créant un objet [*
 
 [!code-cs[ManipulationDelta](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Appareil photo](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

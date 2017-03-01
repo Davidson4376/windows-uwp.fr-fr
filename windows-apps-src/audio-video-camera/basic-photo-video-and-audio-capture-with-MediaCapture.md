@@ -1,17 +1,24 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: 66d0c3dc-81f6-4d9a-904b-281f8a334dd0
 description: "Cet article vous présente le moyen le plus simple de capturer des photos et des vidéos à l’aide de la classe MediaCapture."
 title: "Capture photo, vidéo et audio de base à l’aide de MediaCapture"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 9cbe7948767ba45e8ef495a9349621969957ab04
-ms.openlocfilehash: 98f71104b5a95f9327a0b3f879e4dbb91b74b581
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 8918b120394def3ba12d5932dc66cb38279cc124
+ms.lasthandoff: 02/08/2017
 
 ---
 
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>Capture photo, vidéo et audio de base à l’aide de MediaCapture
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cet article vous présente le moyen le plus simple de capturer des photos et des vidéos à l’aide de la classe [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture). La classe **MediaCapture** expose un jeu robuste d’API qui fournit un contrôle de niveau inférieur sur le pipeline de capture et prend en charge des scénarios de capture avancés, mais cet article est destiné à vous aider à ajouter rapidement et facilement la capture multimédia à votre application. Pour en savoir plus sur les fonctions fournies par **MediaCapture**, consultez la section [**Caméra**](camera.md).
 
@@ -59,7 +66,7 @@ La technique décrite dans cet exemple capture la photo dans un flux en mémoire
 
 Créez une classe [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.InMemoryRandomAccessStream), puis appelez [**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.CapturePhotoToStreamAsync) pour capturer une photo dans le flux, en passant le flux et un objet [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties) spécifiant le format d’image à utiliser. Vous pouvez créer des propriétés d’encodage personnalisées en initialisant vous-même l’objet, mais la classe fournit des méthodes statiques, comme [**ImageEncodingProperties.CreateJpeg**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties.CreateJpeg), pour les formats d’encodage courants. Ensuite, créez un flux de fichiers sur le fichier de sortie en appelant [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile.OpenAsync). Créez une classe [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder) pour décoder l’image du flux en mémoire, puis créez une classe [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder) afin d’encoder l’image sur un fichier en appelant [**CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder.CreateForTranscodingAsync).
 
-Vous pouvez éventuellement créer un objet [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapPropertySet), puis appeler [**SetPropertiesAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/br226252.aspx) sur l’encodeur d’image afin d’inclure les métadonnées sur la photo dans le fichier image. Pour plus d’informations sur les propriétés d’encodage, consultez la section [**Métadonnées d’image**](image-metadata.md). Pour la plupart des applications de photographie, une bonne gestion de l’orientation de l’appareil est essentielle. Pour plus d’informations, consultez la section [**Gérer l’orientation de l’appareil à l’aide de MediaCapture**](handle-device-orientation-with-mediacapture.md).
+Vous pouvez éventuellement créer un objet [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapPropertySet), puis appeler [**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252.aspx) sur l’encodeur d’image afin d’inclure les métadonnées sur la photo dans le fichier image. Pour plus d’informations sur les propriétés d’encodage, consultez la section [**Métadonnées d’image**](image-metadata.md). Pour la plupart des applications de photographie, une bonne gestion de l’orientation de l’appareil est essentielle. Pour plus d’informations, consultez la section [**Gérer l’orientation de l’appareil à l’aide de MediaCapture**](handle-device-orientation-with-mediacapture.md).
 
 Enfin, appelez [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder.FlushAsync) sur l’objet d’encodeur afin de procéder au transcodage de la photo du flux en mémoire sur le fichier.
 
@@ -133,10 +140,5 @@ Vous pouvez appeler **StartAsync** et **StopAsync** à plusieurs reprises pour e
 * [Gérer l’orientation de l’appareil à l’aide de MediaCapture](handle-device-orientation-with-mediacapture.md)
 * [Créer, modifier et enregistrer des images bitmap](imaging.md)
 * [Fichiers, dossiers et bibliothèques](https://msdn.microsoft.com/windows/uwp/files/index)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

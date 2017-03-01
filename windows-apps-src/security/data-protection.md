@@ -3,16 +3,23 @@ title: "Protection des données"
 description: "Cet article explique comment utiliser la classe DataProtectionProvider dans l’espace de noms Windows.Security.Cryptography.DataProtection pour chiffrer et déchiffrer des données numériques dans une application UWP."
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 2a3be202f6754c452185aecbae3b259e09bd3fd3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b023cdc0671195f7c32d2e65568d5f947ecf4144
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Protection des données
+# <a name="data-protection"></a>Protection des données
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 Cet article explique comment utiliser la classe [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) dans l’espace de noms [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) pour chiffrer et déchiffrer des données numériques dans une application UWP.
 
@@ -25,7 +32,7 @@ Vous pouvez utiliser l’API de protection des données de plusieurs manières :
 
 Pour protéger des données, lorsque vous créez un objet [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559), vous devez spécifier un descripteur de protection avant d’appeler [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) ou [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564). L’exemple suivant présente des exemples de descripteurs de protection.
 
-## Protection des données statiques
+## <a name="protecting-static-data"></a>Protection des données statiques
 
 
 L’exemple suivant montre comment utiliser les méthodes [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) et [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) pour protéger de manière asynchrone les données statiques du SID de l’utilisateur actuel.
@@ -110,7 +117,7 @@ namespace SampleProtectAsync
 }
 ```
 
-## Protection des données de flux
+## <a name="protecting-stream-data"></a>Protection des données de flux
 
 
 L’exemple suivant montre comment utiliser les méthodes [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) et [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) pour protéger de manière asynchrone le flux de données du SID de l’utilisateur actuel.
@@ -262,8 +269,3 @@ namespace SampleProtectStreamAsync
     }
 }
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

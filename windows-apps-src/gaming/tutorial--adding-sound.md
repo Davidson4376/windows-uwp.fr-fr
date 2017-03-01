@@ -3,34 +3,41 @@ author: mtoepke
 title: Ajouter du son
 description: "Au cours de cette étape, nous étudions comment l’exemple de jeu de tir crée un objet pour la lecture audio avec les API XAudio2."
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, jeux, son"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e44bc1046310b57cffa3eb4009e91885c61470eb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 11553a22274a36094a3e839e8fda648f78cfaaf8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Ajouter du son
+# <a name="add-sound"></a>Ajouter du son
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 Au cours de cette étape, nous étudions comment l’exemple de jeu de tir crée un objet pour la lecture audio avec les API [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813).
 
-## Objectif
+## <a name="objective"></a>Objectif
 
 
 -   Ajouter une sortie audio avec [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813).
 
-Dans l’exemple de jeu, les comportements et objets audio sont définis dans trois fichiers:
+Dans l’exemple de jeu, les comportements et objets audio sont définis dans trois fichiers :
 
 -   **Audio.h/.cpp**. Ce fichier de code définit l’objet **Audio**, qui contient les ressources XAudio2 pour la lecture audio. Il définit également une méthode pour interrompre et reprendre la lecture audio si le jeu est en pause ou désactivé.
--   **MediaReader.h/.cpp**. Ce code définit les méthodes permettant de lire des fichiers.wav audio à partir du stockage local.
+-   **MediaReader.h/.cpp**. Ce code définit les méthodes permettant de lire des fichiers .wav audio à partir du stockage local.
 -   **SoundEffect.h/.cpp**. Ce code définit un objet pour la lecture audio dans le jeu.
 
-## Définition du moteur audio
+## <a name="defining-the-audio-engine"></a>Définition du moteur audio
 
 
-Lorsque l’exemple de jeu démarre, il crée un objet **Audio** qui alloue les ressources audio pour le jeu. Le code qui déclare cet objet se présente comme suit:
+Lorsque l’exemple de jeu démarre, il crée un objet **Audio** qui alloue les ressources audio pour le jeu. Le code qui déclare cet objet se présente comme suit :
 
 ```cpp
 public:
@@ -54,7 +61,7 @@ protected:
 
 Les méthodes **Audio::MusicEngine** et **Audio::SoundEffectEngine** renvoient des références aux objets [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) qui définissent la voix de contrôle pour chaque type audio. Une voix de contrôle est le périphérique audio utilisé pour la lecture. Les tampons de données audio peuvent être envoyés directement aux voix de contrôle, mais les données envoyées à d’autres types de voix doivent être dirigées vers une voix de contrôle pour être entendues.
 
-## Initialisation des ressources audio
+## <a name="initializing-the-audio-resources"></a>Initialisation des ressources audio
 
 
 L’exemple initialise les objets [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) pour les moteurs de musique et d’effets sonores avec des appels de [**XAudio2Create**](https://msdn.microsoft.com/library/windows/desktop/ee419212). Une fois que les moteurs ont été instanciés, il crée une voix de contrôle pour chacun avec des appels à [**IXAudio2::CreateMasteringVoice**](https://msdn.microsoft.com/library/windows/desktop/hh405048), comme ici :
@@ -91,7 +98,7 @@ void Audio::CreateDeviceIndependentResources()
 
 Lorsqu’un fichier audio d’effet sonore ou de musique est chargé, cette méthode appelle [**IXAudio2::CreateSourceVoice**](https://msdn.microsoft.com/library/windows/desktop/ee418607) sur la voix de contrôle, ce qui crée une instance de voix source pour la lecture. Nous regarderons le code pour cela dès que nous aurons fini d’examiner la façon dont l’exemple de jeu charge les fichiers audio.
 
-## Lecture d’un fichier audio
+## <a name="reading-an-audio-file"></a>Lecture d’un fichier audio
 
 
 Dans l’exemple de jeu, le code pour la lecture des fichiers au format audio est défini dans **MediaReader.cpp**. La méthode spécifique qui lit un fichier audio .wav codé, **MediaReader::LoadMedia**, se présente comme suit :
@@ -262,9 +269,9 @@ myTarget->HitSound()->Initialize(
 
 **SoundEffect::Initialize** est appelé à partir de la méthode **Simple3DGame:Initialize** qui initialise l’objet jeu principal.
 
-Maintenant que l’exemple de jeu a un fichier audio en mémoire, voyons comment il le lit pendant le jeu!
+Maintenant que l’exemple de jeu a un fichier audio en mémoire, voyons comment il le lit pendant le jeu !
 
-## Lecture d’un fichier audio
+## <a name="playing-back-an-audio-file"></a>Lecture d’un fichier audio
 
 
 ```cpp
@@ -306,14 +313,14 @@ Pour lire le fichier audio, cette méthode utilise l’objet voix source **m\_so
 
 Maintenant, chaque fois qu’une collision se produit entre les munitions et une cible, un appel de **SoundEffect::PlaySound** entraîne la lecture d’un bruit.
 
-## Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes
 
 
 Nous avons fait un tour rapide du développement de jeux de Universal Windows Platform (UWP) DirectX ! À ce stade, vous avez une idée de ce que vous devez faire pour profiter au maximum de votre jeu sur Windows 8. Comme vous pouvez jouer sur une multitude de plateformes et d’appareils Windows 8, pensez à concevoir vos composants (graphiques, contrôles, interface utilisateur et système audio) pour autant de configurations que possible !
 
 Pour plus d’informations sur les façons de modifier l’exemple de jeu fourni dans ces documents, voir [Extension de l’exemple de jeu](tutorial-resources.md).
 
-## Exemple de code complet pour cette section
+## <a name="complete-sample-code-for-this-section"></a>Exemple de code complet pour cette section
 
 
 Audio.h
@@ -560,10 +567,5 @@ void SoundEffect::PlaySound(_In_ float volume)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -2,9 +2,17 @@
 author: shawjohn
 Description: "Découvrez comment créer des segments de clients afin de cibler un sous-ensemble de votre clientèle à des fins de promotion ou d’engagement."
 title: "Créer des segments de clients"
+ms.author: johnshaw
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 translationtype: Human Translation
-ms.sourcegitcommit: eed71b2fc06db71fd105df37a73bd0cd0832931f
-ms.openlocfilehash: 28906c98d2826f5312e01713e2621159c6b24923
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 1c1aa77ee989344f5e09ddaeb864d5ddceb03660
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -18,13 +26,13 @@ Par exemple, vous pouvez créer un segment incluant uniquement les clients âgé
 
 ## <a name="to-create-a-customer-segment"></a>Pour créer un segment de clients
 
-1.  Dans le menu supérieur du [tableau de bord du Centre de développement Windows](https://developer.microsoft.com/dashboard/overview), sélectionnez **Clients**.
-2.  Sur la page **Groupes de clients**, effectuez l’une des opérations suivantes :
+1.    Dans le menu supérieur du [tableau de bord du Centre de développement Windows](https://developer.microsoft.com/dashboard/overview), sélectionnez **Clients**.
+2.    Sur la page **Groupes de clients**, effectuez l’une des opérations suivantes :
  - Dans la section **Mes groupes de clients**, sélectionnez **Créer un groupe** pour définir entièrement un segment. Assurez-vous que **Segment** est sélectionné dans la liste déroulante **Type de groupe**.
  - Dans la section **Modèles de segment**, sélectionnez **Copier pour utiliser un segment prédéfini** que vous pouvez utiliser en l’état ou modifier selon vos besoins.
-3.  Dans la liste **Inclure des clients à partir de cette application**, sélectionnez l’une de vos applications à cibler.
-4.  Dans la zone **Nom du segment**, choisissez un nom pour votre segment.
-5.  Dans la section **Définir des conditions d’inclusion**, choisissez les critères de filtre du segment.
+3.    Dans la liste **Inclure des clients à partir de cette application**, sélectionnez l’une de vos applications à cibler.
+4.    Dans la zone **Nom du segment**, choisissez un nom pour votre segment.
+5.    Dans la section **Définir des conditions d’inclusion**, choisissez les critères de filtre du segment.
 
     Vous pouvez choisir parmi différents critères de filtre, dont **Source d’acquisition**, **Acquisitions**, **Démographie**, **Évaluation**, **Acquisitions dans Windows Store**, **Achats dans Windows Store** et **Dépenses dans Windows Store**.
 
@@ -57,9 +65,4 @@ Si das les résultats, le champ **Clients dans ce segment** indique **Peu**, le 
 
 - Dans la section **Définir des conditions d’inclusion**, ajustez les critères de filtre pour que le segment inclut davantage de clients.
 - Sur la page **Groupes de clients**, dans la section **Segments inactifs**, sélectionnez **Actualiser** pour voir si le segment contient actuellement suffisamment clients. Cette méthode peut fonctionner, par exemple, si les clients satisfaisant vos critères de segment qui téléchargent votre application sont plus nombreux depuis que vous avez créé le segment pour la première fois.
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

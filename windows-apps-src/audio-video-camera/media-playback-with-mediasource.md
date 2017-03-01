@@ -3,20 +3,27 @@ author: drewbatgit
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
 description: "Cet article vous montre comment utiliser MediaSource, qui offre une méthode courante de référencement et de lecture de contenu multimédia à partir de différentes sources telles que des fichiers locaux ou distants, et présente un modèle commun d’accès aux données multimédias, quel que soit le format multimédia sous-jacent."
 title: "Éléments, playlists et pistes multimédias"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 9999805c8a3bf946aa323b921cea6d63f9a48789
-ms.openlocfilehash: 4c4c6fdb1ea2d42d5bda1034df082bf836d8b803
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1bab50aba53c96907151351c3b0fa81749ff2f88
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Éléments, playlists et pistes multimédias
+# <a name="media-items-playlists-and-tracks"></a>Éléments, playlists et pistes multimédias
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
  Cet article vous montre comment utiliser la classe [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource), qui offre une méthode courante de référencement et de lecture de contenu multimédia à partir de différentes sources telles que des fichiers locaux ou distants, et présente un modèle commun d’accès aux données multimédias, quel que soit le format multimédia sous-jacent. La classe [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) étend les fonctionnalités de **MediaSource**, vous permettant ainsi de gérer et de sélectionner à partir de plusieurs pistes audio, vidéo et de métadonnées contenues dans un élément multimédia. [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) vous permet de créer des listes de lecture à partir d’un ou plusieurs éléments de la lecture multimédia.
 
 
-## Créer et lire un MediaSource
+## <a name="create-and-play-a-mediasource"></a>Créer et lire un MediaSource
 
 Créez une instance de **MediaSource** en appelant l’une des méthodes de fabrique exposées par la classe :
 
@@ -29,7 +36,7 @@ Créez une instance de **MediaSource** en appelant l’une des méthodes de fabr
 -   [**CreateFromStreamReference**](https://msdn.microsoft.com/library/windows/apps/dn930911)
 -   [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912)
 
-Après avoir créé un **MediaSource**, vous pouvez le lire avec un [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) en définissant la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010). À compter de Windows10, version1607, vous pouvez attribuer un **MediaPlayer** à un [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) en appelant [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764) pour afficher le contenu du lecteur multimédia dans une page XAML. Cette méthode est préférée à l’utilisation de **MediaElement**. Pour plus d’informations sur l’utilisation de **MediaPlayer**, voir [**Lire du contenu audio et vidéo avec MediaPlayer**](play-audio-and-video-with-mediaplayer.md).
+Après avoir créé un **MediaSource**, vous pouvez le lire avec un [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) en définissant la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010). À compter de Windows 10, version 1607, vous pouvez attribuer un **MediaPlayer** à un [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) en appelant [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764) pour afficher le contenu du lecteur multimédia dans une page XAML. Cette méthode est préférée à l’utilisation de **MediaElement**. Pour plus d’informations sur l’utilisation de **MediaPlayer**, voir [**Lire du contenu audio et vidéo avec MediaPlayer**](play-audio-and-video-with-mediaplayer.md).
 
 L’exemple suivant montre comment lire un fichier multimédia sélectionné par l’utilisateur dans un **MediaPlayer** à l’aide de **MediaSource**.
 
@@ -59,7 +66,7 @@ Vous pouvez également définir la propriété [**AutoPlay**](https://msdn.micro
 
 [!code-cs[AutoPlay](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAutoPlay)]
 
-## Gérer plusieurs pistes audio, vidéo et de métadonnées avec MediaPlaybackItem
+## <a name="handle-multiple-audio-video-and-metadata-tracks-with-mediaplaybackitem"></a>Gérer plusieurs pistes audio, vidéo et de métadonnées avec MediaPlaybackItem
 
 L’utilisation d’un objet [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) pour la lecture est pratique car il offre une méthode courante de lecture multimédia à partir de différents types de sources. Un comportement plus avancé est toutefois disponible en créant un [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) à partir de **MediaSource**. Il inclut la possibilité d’accéder et de gérer plusieurs pistes audio, vidéo et de données pour un élément multimédia.
 
@@ -114,10 +121,10 @@ Comme les pistes audio et vidéo, les pistes de métadonnées synchronisées d�
 
 Comme vous traitez les pistes de métadonnées, vous pouvez accéder à l’ensemble des repères de la piste avec les propriétés [**Cues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.Cues) ou [**ActiveCues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.ActiveCues). Pour ce faire, mettez à jour votre interface utilisateur pour afficher les emplacements de repère d’un élément multimédia.
 
-## Gérer les codecs non pris en charge et les erreurs inconnues à l’ouverture des éléments multimédias
-À compter de Windows10, version1607, vous pouvez vérifier si le codec nécessaire pour lire un élément multimédia est pris en charge entièrement ou partiellement sur l’appareil sur lequel s’exécute votre application. Dans le gestionnaire des événements de modification de pistes **MediaPlaybackItem**, comme [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracksChanged), vérifiez d’abord si la modification de la piste consiste en l’insertion d’une nouvelle piste. Auquel cas, vous pouvez obtenir une référence à la piste insérée à l’aide de l’index transmis dans le paramètre **IVectorChangedEventArgs.Index** avec la collection de pistes appropriée du paramètre **MediaPlaybackItem**, comme la collection [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracks).
+## <a name="handle-unsupported-codecs-and-unknown-errors-when-opening-media-items"></a>Gérer les codecs non pris en charge et les erreurs inconnues à l’ouverture des éléments multimédias
+À compter de Windows 10, version 1607, vous pouvez vérifier si le codec nécessaire pour lire un élément multimédia est pris en charge entièrement ou partiellement sur l’appareil sur lequel s’exécute votre application. Dans le gestionnaire des événements de modification de pistes **MediaPlaybackItem**, comme [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracksChanged), vérifiez d’abord si la modification de la piste consiste en l’insertion d’une nouvelle piste. Auquel cas, vous pouvez obtenir une référence à la piste insérée à l’aide de l’index transmis dans le paramètre **IVectorChangedEventArgs.Index** avec la collection de pistes appropriée du paramètre **MediaPlaybackItem**, comme la collection [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracks).
 
-Une fois que vous avez une référence à la piste insérée, vérifiez le [**DecoderStatus**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrackSupportInfo.DecoderStatus) de la propriété [**SupportInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.SupportInfo) de la piste. Si la valeur est [**FullySupported**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), le codec approprié nécessaire pour lire la piste est présent sur l’appareil. Si la valeur est [**Degraded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), la piste peut être lue par le système, mais la lecture est détériorée d’une certaine façon. Par exemple, une piste audio5.1 peut être lue à la place comme une piste stéréo bicanale. Si c’est le cas, vous pouvez mettre à jour votre interface utilisateur pour alerter l’utilisateur de la détérioration. Si la valeur est [**UnsupportedSubtype**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) ou [**UnsupportedEncoderProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), la piste ne peut pas être lue du tout avec les codecs actuels de l’appareil. Vous pouvez alerter l’utilisateur et ignorez la lecture de l’élément ou implémenter une interface utilisateur pour permettre à l’utilisateur de télécharger le codec correct. La méthode [**GetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.GetEncodingProperties) de la piste peut être utilisée pour déterminer le codec nécessaire pour la lecture.
+Une fois que vous avez une référence à la piste insérée, vérifiez le [**DecoderStatus**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrackSupportInfo.DecoderStatus) de la propriété [**SupportInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.SupportInfo) de la piste. Si la valeur est [**FullySupported**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), le codec approprié nécessaire pour lire la piste est présent sur l’appareil. Si la valeur est [**Degraded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), la piste peut être lue par le système, mais la lecture est détériorée d’une certaine façon. Par exemple, une piste audio 5.1 peut être lue à la place comme une piste stéréo bicanale. Si c’est le cas, vous pouvez mettre à jour votre interface utilisateur pour alerter l’utilisateur de la détérioration. Si la valeur est [**UnsupportedSubtype**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) ou [**UnsupportedEncoderProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), la piste ne peut pas être lue du tout avec les codecs actuels de l’appareil. Vous pouvez alerter l’utilisateur et ignorez la lecture de l’élément ou implémenter une interface utilisateur pour permettre à l’utilisateur de télécharger le codec correct. La méthode [**GetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.GetEncodingProperties) de la piste peut être utilisée pour déterminer le codec nécessaire pour la lecture.
 
 Enfin, vous pouvez vous inscrire à l’événement [**OpenFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.OpenFailed) de la piste, qui est déclenché si la piste est prise en charge sur l’appareil, mais qu’elle ne peut pas s’ouvrir en raison d’une erreur inconnue dans le pipeline.
 
@@ -127,14 +134,14 @@ Dans le gestionnaire d’événements [**OpenFailed**](https://msdn.microsoft.co
 
 [!code-cs[OpenFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetOpenFailed)]
 
-## Définir les propriétés d’affichage utilisées par les contrôles de transport de média système
-À compter de Windows10, version1607, le contenu multimédia lu dans un [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) est automatiquement intégré aux contrôles de transport de média système par défaut. Vous pouvez spécifier les métadonnées que les contrôles de transport de média système doivent afficher en mettant à jour les propriétés d’affichage d’un **MediaPlaybackItem**. Obtenez un objet qui représente les propriétés d’affichage d’un élément en appelant [**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties). Déterminez si l’élément de lecture est de la musique ou une vidéo en définissant la propriété [**Type**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type). Ensuite, définissez les propriétés [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) ou [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties) de l’objet. Appelez [**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923) pour mettre à jour les propriétés de l’élément sur les valeurs que vous avez indiquées. En règle générale, une application récupère les valeurs d’affichage de manière dynamique à partir d’un service web, mais l’exemple suivant illustre ce processus avec des valeurs codées en dur.
+## <a name="set-display-properties-used-by-the-system-media-transport-controls"></a>Définir les propriétés d’affichage utilisées par les contrôles de transport de média système
+À compter de Windows 10, version 1607, le contenu multimédia lu dans un [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) est automatiquement intégré aux contrôles de transport de média système par défaut. Vous pouvez spécifier les métadonnées que les contrôles de transport de média système doivent afficher en mettant à jour les propriétés d’affichage d’un **MediaPlaybackItem**. Obtenez un objet qui représente les propriétés d’affichage d’un élément en appelant [**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties). Déterminez si l’élément de lecture est de la musique ou une vidéo en définissant la propriété [**Type**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type). Ensuite, définissez les propriétés [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) ou [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties) de l’objet. Appelez [**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923) pour mettre à jour les propriétés de l’élément sur les valeurs que vous avez indiquées. En règle générale, une application récupère les valeurs d’affichage de manière dynamique à partir d’un service web, mais l’exemple suivant illustre ce processus avec des valeurs codées en dur.
 
 [!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
 
 [!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
 
-## Ajouter du texte synchronisé externe avec TimedTextSource
+## <a name="add-external-timed-text-with-timedtextsource"></a>Ajouter du texte synchronisé externe avec TimedTextSource
 
 Dans certains scénarios, vous pouvoir disposer de fichiers externes contenant du texte synchronisé associé à un élément multimédia, des fichiers distincts contenant des sous-titres pour différents paramètres régionaux par exemple. Utilisez la classe [**TimedTextSource**](https://msdn.microsoft.com/library/windows/apps/dn956679) pour charger les fichiers de texte synchronisé externe à partir d’un flux ou d’une URI.
 
@@ -152,7 +159,7 @@ Dans le gestionnaire de l’événement [**TimedTextSource.Resolved**](https://m
 
 [!code-cs[TimedTextSourceResolved](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSourceResolved)]
 
-## Ajouter des pistes de métadonnées supplémentaires
+## <a name="add-additional-metadata-tracks"></a>Ajouter des pistes de métadonnées supplémentaires
 
 Vous pouvez créer des pistes de métadonnées personnalisées de manière dynamique dans le code et les associer à une source de média. Les pistes que vous créez peuvent contenir du texte de sous-titre. Elles peuvent également contenir vos données d’application propriétaires.
 
@@ -172,11 +179,11 @@ Cet exemple ajoute une piste de texte personnalisé en spécifiant **TimedMetada
 
 [!code-cs[TextCueEntered](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTextCueEntered)]
 
-## Lire une liste d’éléments multimédias avec MediaPlaybackList
+## <a name="play-a-list-of-media-items-with-mediaplaybacklist"></a>Lire une liste d’éléments multimédias avec MediaPlaybackList
 
 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) vous permet de créer une playlist d’éléments multimédias, qui sont représentés par des objets **MediaPlaybackItem**.
 
-**Remarque** Les éléments figurant dans [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) sont rendus à l’aide de la lecture sans blanc. Le système utilise les métadonnées fournies dans les fichiers codés MP3 ou AAC pour déterminer la compensation de délai ou de remplissage nécessaire pour la lecture sans blanc. Si les fichiers codés MP3 ou AAC ne fournissent pas ces métadonnées, le système détermine alors le délai ou le remplissage de manière heuristique. Pour les formats sans perte, tels que PCM, FLAC ou ALAC, le système n’exécute aucune action, car ces encodeurs n’introduisent ni retard ni remplissage.
+**Remarque**  Les éléments figurant dans [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) sont rendus à l’aide de la lecture sans blanc. Le système utilise les métadonnées fournies dans les fichiers codés MP3 ou AAC pour déterminer la compensation de délai ou de remplissage nécessaire pour la lecture sans blanc. Si les fichiers codés MP3 ou AAC ne fournissent pas ces métadonnées, le système détermine alors le délai ou le remplissage de manière heuristique. Pour les formats sans perte, tels que PCM, FLAC ou ALAC, le système n’exécute aucune action, car ces encodeurs n’introduisent ni retard ni remplissage.
 
 Pour commencer, déclarez une variable pour stocker votre **MediaPlaybackList**.
 
@@ -212,20 +219,15 @@ Définissez la propriété [**AutoRepeatEnabled**](https://msdn.microsoft.com/li
 [!code-cs[RepeatButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetRepeatButton)]
 
 
-###Gérer l’échec d’éléments multimédias dans une liste de lecture
+###<a name="handle-the-failure-of-media-items-in-a-playback-list"></a>Gérer l’échec d’éléments multimédias dans une liste de lecture
 L’événement [**ItemFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.ItemFailed) est déclenché quand un élément dans la liste ne parvient pas à s’ouvrir. La propriété [**ErrorCode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItemError.ErrorCode) de l’objet [**MediaPlaybackItemError**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItemError) transmis au gestionnaire énumère la cause spécifique de l’échec dans la mesure du possible, y compris les erreurs réseau, les erreurs de décodage ou les erreurs de chiffrement.
 
 [!code-cs[ItemFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetItemFailed)]
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 * [Lecture de contenu multimédia](media-playback.md)
 * [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md)
 * [Intégrer aux contrôles de transport de média système](integrate-with-systemmediatransportcontrols.md)
 * [Lire du contenu multimédia en arrière-plan](background-audio.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

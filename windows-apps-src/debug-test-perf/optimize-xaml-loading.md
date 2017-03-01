@@ -2,15 +2,22 @@
 author: mcleblanc
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
 title: Optimiser votre balisage XAML
-description: "L’analyse du balisage XAML pour la construction d’objets en mémoire est chronophage pour une interface utilisateur complexe. Voici quelques astuces pour améliorer l’analyse du balisage XAML, ainsi que l’efficacité du temps de chargement et de la mémoire de votre application."
+description: "L’analyse du balisage XAML pour la construction d’objets en mémoire est chronophage pour une interface utilisateur complexe. Voici quelques astuces pour améliorer l’analyse du balisage XAML ainsi que l’efficacité du temps de chargement et de la mémoire de votre application."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 655603e7fa8687480b5376806bc199afecd425fd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 24a5696a6e835a40b9b4e800677596514b56d53b
+ms.lasthandoff: 02/07/2017
 
 ---
-# Optimiser votre balisage XAML
+# <a name="optimize-your-xaml-markup"></a>Optimiser votre balisage XAML
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 L’analyse du balisage XAML pour la construction d’objets en mémoire est chronophage pour une interface utilisateur complexe. Voici quelques astuces pour améliorer l’analyse du balisage XAML ainsi que l’efficacité du temps de chargement et de la mémoire de votre application.
 
@@ -84,7 +91,7 @@ Si vous utilisez une ressource sur plusieurs pages au sein de votre application,
 
 Afin de rendre le contre-exemple présenté ci-dessus plus efficace, il convient de déplacer `SecondPageTextBrush` dans SecondPage.xaml et `ThirdPageTextBrush` dans ThirdPage.xaml. `InitialPageTextBrush` peut rester dans App.xaml car les ressources de l’application doivent, dans tous les cas, être analysées au démarrage de l’application.
 
-## Limiter le nombre d’éléments
+## <a name="minimize-element-count"></a>Limiter le nombre d’éléments
 
 Bien que la plateforme XAML soit capable d’afficher un grand nombre d’éléments, vous pouvez accélérer la disposition et le rendu de votre application en utilisant le moins d’éléments possible pour obtenir les effets visuels recherchés.
 
@@ -106,7 +113,7 @@ Bien que la plateforme XAML soit capable d’afficher un grand nombre d’élém
 
 -   Si vous réutilisez suffisamment souvent le même élément vectoriel, il est alors plus efficace d’utiliser à la place un élément [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752). Les éléments vectoriel peuvent être plus onéreux car l’unité centrale doit créer chaque élément séparément. Le fichier image ne doit être décodé qu’une seule fois.
 
-## Consolider plusieurs pinceaux ayant la même apparence dans une même ressource
+## <a name="consolidate-multiple-brushes-that-look-the-same-into-one-resource"></a>Consolider plusieurs pinceaux ayant la même apparence dans une même ressource
 
 La plateforme XAML essaie de mettre en cache les objets couramment utilisés afin qu’ils puissent l’être aussi souvent que possible. Toutefois, le code XAML ne peut pas facilement identifier si un pinceau déclaré dans un balisage est le même qu’un pinceau déclaré dans un balisage différent. L’exemple ci-dessous utilise [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962), mais c’est encore plus probable et important avec [**GradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210068).
 
@@ -146,12 +153,12 @@ Recherchez également les pinceaux utilisant des couleurs prédéfinies : `"Oran
 </Page>
 ```
 
-## Limiter le surdessin
+## <a name="minimize-overdrawing"></a>Limiter le surdessin
 
 Le surdessin désigne le fait de dessiner plusieurs objets dans les mêmes pixels d’un écran. Il est parfois nécessaire de trouver un compromis entre ces instructions et la volonté de réduire le nombre d’éléments.
 
--   Si un élément est invisible, car il est transparent ou masqué derrière d’autres éléments, et qu’il n’est pas utilisé pour la disposition, alors supprimez-le. Si l’élément n’est pas visible dans l’état visuel initial mais qu’il apparaît dans d’autres états visuels, alors définissez [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) sur **Collapsed** sur l’élément lui-même et modifiez la valeur sur **Visible** dans les états appropriés. Il y a toutefois des exceptions: en règle générale, la valeur d’une propriété dans la plupart des états visuels est mieux définie localement sur l’élément.
--   Utilisez un élément composite au lieu de disposer en couches les différents éléments pour créer un effet. Dans cet exemple, le résultat est une forme bicolore dans laquelle la moitié supérieure est noire (depuis l’arrière-plan de la [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)) et la moitié inférieure est grise (depuis le [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) blanc semi-transparent fusionné à l’aide du canal alpha sur l’arrière-plan noir de la **Grid**). Ici, 150% des pixels nécessaires pour obtenir le résultat sont remplis.
+-   Si un élément est invisible, car il est transparent ou masqué derrière d’autres éléments, et qu’il n’est pas utilisé pour la disposition, alors supprimez-le. Si l’élément n’est pas visible dans l’état visuel initial mais qu’il apparaît dans d’autres états visuels, alors définissez [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) sur **Collapsed** sur l’élément lui-même et modifiez la valeur sur **Visible** dans les états appropriés. Il y a toutefois des exceptions : en règle générale, la valeur d’une propriété dans la plupart des états visuels est mieux définie localement sur l’élément.
+-   Utilisez un élément composite au lieu de disposer en couches les différents éléments pour créer un effet. Dans cet exemple, le résultat est une forme bicolore dans laquelle la moitié supérieure est noire (depuis l’arrière-plan de la [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)) et la moitié inférieure est grise (depuis le [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) blanc semi-transparent fusionné à l’aide du canal alpha sur l’arrière-plan noir de la **Grid**). Ici, 150 % des pixels nécessaires pour obtenir le résultat sont remplis.
 
 **Inefficace.**
     
@@ -240,7 +247,7 @@ Si la [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) doit 
 
 Utilisez [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/Hh701823) pour effectuer un diagnostic visuel. Vous verrez peut-être apparaître dans la scène des objets dont vous ne soupçonniez pas l’existence.
 
-## Contenu statique du cache
+## <a name="cache-static-content"></a>Contenu statique du cache
 
 Une forme constituée de nombreux éléments qui se chevauchent peut également occasionner un surdessin. Si vous configurez [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) sur **BitmapCache** sur l’[**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) contenant la forme composite, la plateforme affiche alors l’élément dans une image bitmap une seule fois, puis utilise cette image bitmap dans chaque image au lieu d’avoir recours au surdessin.
 
@@ -272,7 +279,7 @@ L'image ci-dessus présente le résultat, mais voici une carte indiquant les zon
 
 Notez l’utilisation du [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084). N’utilisez pas cette technique si l’une des formes secondaires est animée, car le cache d’images bitmap devra probablement être régénéré à chaque image, ce qui irait à l’encontre de l’intention souhaitée.
 
-## ResourceDictionaries
+## <a name="resourcedictionaries"></a>ResourceDictionaries
 
 Les ResourceDictionaries sont généralement utilisés pour stocker vos ressources à un niveau global. Les ressources que votre application souhaite référencer sont stockées dans plusieurs endroits. Il s’agit par exemple, des styles, des pinceaux, des modèles et ainsi de suite. En règle générale, nous optimisons les ResourceDictionaries pour ne pas instancier de ressources sauf demande contraire. Cependant, vous devez être prudent dans quelques emplacements.
 
@@ -280,17 +287,12 @@ Les ResourceDictionaries sont généralement utilisés pour stocker vos ressourc
 
 **ResourceDictionaries dans un UserControl**. Les ResourceDictionaries définis dans un UserControl entraînent une pénalité. La plateforme crée une copie d’un tel ResourceDictionary pour chaque instance du UserControl. Si le UserControl est énormément utilisé, déplacez le ResourceDictionary en dehors du UserControl et placez-le au niveau de la page.
 
-## Utiliser XBF2
+## <a name="use-xbf2"></a>Utiliser XBF2
 
 XBF2 est une représentation binaire du balisage XAML, qui permet d’éviter les coûts liés à l’analyse du texte lors de l’exécution. Elle optimise également votre binaire pour la création de charge et d’arborescence, et permet des types XAML « fast-path » pour améliorer les coûts de création de tas et d’objet, par exemple VSM, ResourceDictionary, Styles, etc. Elle est complètement mappée en mémoire. Il n’existe donc pas d’encombrement du tas pour le chargement et la lecture d’une page XAML. En outre, elle permet de réduire l’encombrement disque des pages XAML stockées dans un appx. XBF2 est une représentation plus compacte, et elle peut réduire l’encombrement disque des fichiers XAML/XBF1 comparatifs jusqu’à 50 %. Par exemple, l’application Photos intégrée présente une réduction d’environ 60 % après la conversion en XBF2, en passant d’1 Mo de ressources XBF1 à environ 400 Ko de ressources XBF2. Nous constatons également que les applications passent de 15 à 20 % dans le processeur, et de 10 à 15 % dans le tas Win32.
 
 Les contrôles et dictionnaires intégrés dans XAML, qui sont fournis par l’infrastructure sont déjà entièrement compatibles XBF2. Pour votre propre application, vérifiez que votre fichier projet déclare TargetPlatformVersion 8.2 ou ultérieur.
 
 Pour vérifier si vous possédez XBF2, ouvrez votre application dans un éditeur binaire ; les 12e et 13e octets correspondent à 00 02 si vous possédez XBF2.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

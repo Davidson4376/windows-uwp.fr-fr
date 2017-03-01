@@ -2,9 +2,17 @@
 author: PatrickFarley
 title: "Écrans de démarrage"
 description: "Cette section explique comment définir et configurer l’écran de démarrage de votre application."
+ms.assetid: 6b954bb3-e5b0-46d1-8afc-fb805536cf6d
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 023e37bb6f9b8d8d780bb0a536cb469c87a31ed4
-ms.openlocfilehash: bb0f3ff68b7dc15623e4f337e589989354e08b65
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 51add4631b807940e051a8f4cbaca92063e41d4a
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -28,8 +36,3 @@ De plus, vous pouvez utiliser la classe [**SplashScreen**](https://msdn.microsof
 |-------|-------------|
 | [Ajouter un écran de démarrage](add-a-splash-screen.md) | Définissez l’image et la couleur d’arrière-plan de l’écran de démarrage de votre application. |
 | [Afficher un écran de démarrage plus longtemps](create-a-customized-splash-screen.md) | Affichez un écran de démarrage plus longtemps en créant et en affichant un écran de démarrage étendu pour votre application. Cet écran étendu imite l’écran de démarrage affiché quand votre application est lancée. Il peut être personnalisé. |
-
-
-<!--HONumber=Dec16_HO1-->
-
-

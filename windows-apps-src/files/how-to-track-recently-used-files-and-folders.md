@@ -2,10 +2,17 @@
 author: laurenhughes
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: "Suivre les fichiers et dossiers récemment utilisés"
-description: "Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste Utilisés récemment de votre application."
+description: "Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste des fichiers utilisés récemment de votre application."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: fc873da2d0b48cdc614fa319a294e67642440cdf
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c8f8cd6681b4e00e8430d7ddfacdd8fad395365c
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="track-recently-used-files-and-folders"></a>Suivre les fichiers et dossiers récemment utilisés
@@ -13,7 +20,7 @@ ms.openlocfilehash: fc873da2d0b48cdc614fa319a294e67642440cdf
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-** API importantes **
+**API importantes**
 
 - [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458)
 - [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369)
@@ -22,7 +29,7 @@ Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en
 
 Les éléments récents de votre application sont représentés par la classe [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475), que vous pouvez obtenir à partir de la propriété [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) statique. Les éléments récents sont stockés en tant qu’objets [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129), ce qui signifie que des objets [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (qui représentent des fichiers) et [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) (qui représentent des dossiers) peuvent être ajoutés aux éléments récents.
 
-**Remarque** Voir aussi l’[exemple de sélecteur de fichiers](http://go.microsoft.com/fwlink/p/?linkid=619994) et l’[exemple d’accès aux fichiers](http://go.microsoft.com/fwlink/p/?linkid=619995).
+**Remarque**  Consultez également l’[exemple de sélecteur de fichiers](http://go.microsoft.com/fwlink/p/?linkid=619994) et l’[exemple d’accès aux fichiers](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
  
 
@@ -55,7 +62,7 @@ Les éléments récents de votre application sont représentés par la classe [*
 
     [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) est surchargé. Dans l’exemple, nous utilisons [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481) afin de pouvoir associer des métadonnées au fichier. La définition des métadonnées vous permet d’enregistrer la finalité de l’élément, par exemple, « image du profil ». Vous pouvez également ajouter le fichier à la liste Utilisés récemment sans métadonnées en appelant [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480). Chaque fois que vous ajoutez un élément aux éléments récents, la méthode retourne une chaîne d’identification unique, ou jeton, qui est utilisée pour récupérer l’élément.
 
-    **Conseil** Le jeton étant nécessaire pour récupérer un élément de la liste Utilisés récemment, il convient de le conserver quelque part. Pour plus d’informations sur les données d’application, consultez [Gestion des données d’application](https://msdn.microsoft.com/library/windows/apps/hh465109).
+    **Conseil**   Le jeton étant nécessaire pour récupérer un élément de la liste des fichiers utilisés récemment, il convient de le conserver quelque part. Pour plus d’informations sur les données d’application, consultez [Gestion des données d’application](https://msdn.microsoft.com/library/windows/apps/hh465109).
 
      
 
@@ -103,9 +110,4 @@ Quand un utilisateur sélectionne un élément, songez à ajouter celui-ci à vo
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

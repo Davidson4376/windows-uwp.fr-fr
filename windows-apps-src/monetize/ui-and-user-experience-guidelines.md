@@ -3,21 +3,28 @@ author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "En savoir plus sur les recommandations en matière d’expérience utilisateur et d’interface utilisateur pour les publicités dans les applications."
 title: "Recommandations en matière d’expérience utilisateur et d’interface utilisateur pour les publicités dans les applications"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, pubs, publicité, instructions, meilleures pratiques"
 translationtype: Human Translation
-ms.sourcegitcommit: e44392a1dc69a98655ba7e576d2af102a608acaa
-ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e1c3fef6e8cc7cc483b72b6ba142d323055c960c
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="ui-and-user-experience-guidelines-for-ads-in-apps"></a>Recommandations en matière d’expérience utilisateur et d’interface utilisateur pour les publicités dans les applications
 
-Cet article fournit des recommandations pour concevoir des expériences exceptionnelles avec les bannières et spots publicitaires affichés dans vos applications. Pour obtenir des conseils généraux sur la conception de l’apparence et du style des applications, consultez [Conception et interface utilisateur](https://developer.microsoft.com/windows/design).
+Cet article fournit des recommandations pour concevoir des expériences exceptionnelles avec les bannières et spots publicitaires affichés dans vos applications. Pour obtenir des conseils généraux sur la conception de l’apparence et du style des applications, consultez [Conception et interface utilisateur](https://developer.microsoft.com/windows/apps/design).
 
->**Important**&nbsp;&nbsp;Toute utilisation de publicité dans votre application doit se conformer aux Politiques du Windows Store, y compris et sans s’y limiter, à la [politique 10.10](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) (Conduite en matière de publicité et contenu publicitaire). En particulier, l’implémentation de bannières ou spots publicitaires dans votre application doit respecter les règles stipulées dans la [politique 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) des Politiques du Windows Store. Cet article fournit des exemples d’implémentations qui ne respectent pas cette politique. Ces exemples sont fournis à titre d’information uniquement, pour vous aider à comprendre comment respecter la politique. Ces exemples ne sont pas exhaustifs. Il existe beaucoup d’autres cas possibles de non-respect des Politiques du Windows Store qui ne sont pas répertoriés dans le présent article.
+>**Important**&nbsp;&nbsp;Toute utilisation de publicité dans votre application doit se conformer aux Politiques du Windows Store, y compris et sans s’y limiter, à la [politique 10.10](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) (Conduite en matière de publicité et contenu publicitaire). En particulier, l’implémentation de bannières ou spots publicitaires dans votre application doit respecter les règles stipulées dans la [politique 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) des Politiques du Windows Store. Cet article fournit des exemples d’implémentations qui ne respectent pas cette politique. Ces exemples sont fournis à titre d’information uniquement, pour vous aider à comprendre comment respecter la politique. Ces exemples ne sont pas exhaustifs. Il existe beaucoup d’autres cas possibles de non-respect des Politiques du Windows Store qui ne sont pas répertoriés dans le présent article.
 
 ## <a name="guidelines-for-banner-ads"></a>Recommandations pour les bannières publicitaires
 
-Les sections suivantes fournissent des recommandations sur la façon d’implémenter des bannières publicitaires dans votre application à l’aide d’objets [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx). Elles donnent également des exemples d’implémentations qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) des Politiques du Windows Store.
+Les sections suivantes fournissent des recommandations sur la façon d’implémenter des bannières publicitaires dans votre application à l’aide d’objets [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx). Elles donnent également des exemples d’implémentations qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) des Politiques du Windows Store.
 
 ### <a name="best-practices"></a>Bonnes pratiques
 
@@ -49,7 +56,7 @@ Nous vous recommandons d’éviter ces pratiques quand vous implémentez des ban
 <span />
 ### <a name="examples-of-policy-violations"></a>Exemples de non-respect de la politique
 
-Cette section donne des exemples d’implémentations de bannières publicitaires qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) des Politiques du Windows Store. Ces exemples sont fournis à titre d’information uniquement, pour vous aider à comprendre comment respecter la politique. Ces exemples ne sont pas exhaustifs. Il existe beaucoup d’autres cas possibles de non-respect de la politique 10.10.1 qui ne sont pas répertoriés ici.
+Cette section donne des exemples d’implémentations de bannières publicitaires qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) des Politiques du Windows Store. Ces exemples sont fournis à titre d’information uniquement, pour vous aider à comprendre comment respecter la politique. Ces exemples ne sont pas exhaustifs. Il existe beaucoup d’autres cas possibles de non-respect de la politique 10.10.1 qui ne sont pas répertoriés ici.
 
 * Empêcher d’une façon ou d’une autre l’utilisateur d’afficher la bannière publicitaire, comme modifier l’opacité de l’objet [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) ou placer un autre contrôle sur **AdControl** (sans appeler au préalable [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx)).
 
@@ -68,7 +75,7 @@ Cette section donne des exemples d’implémentations de bannières publicitaire
 
 Quand ils sont utilisés de façon élégante, les spots publicitaires peuvent augmenter considérablement vos revenus issus de l’application, sans impact négatif sur la satisfaction des utilisateurs. En cas d’utilisation incorrecte, ils peuvent produire l’effet inverse exact.
 
-Les sections suivantes fournissent des recommandations sur la façon d’implémenter des spots publicitaires dans votre application à l’aide d’objets [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx). Elles donnent également des exemples d’implémentations qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) des Politiques du Windows Store. Étant donné que vous connaissez votre application mieux que quiconque, sauf en matière de stratégie, nous vous laissons prendre la meilleure décision finale. Ce qu’il faut absolument retenir c’est que les évaluations de vos applications et le montant de vos recettes sont étroitement liés.
+Les sections suivantes fournissent des recommandations sur la façon d’implémenter des spots publicitaires dans votre application à l’aide d’objets [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx). Elles donnent également des exemples d’implémentations qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) des Politiques du Windows Store. Étant donné que vous connaissez votre application mieux que quiconque, sauf en matière de stratégie, nous vous laissons prendre la meilleure décision finale. Ce qu’il faut absolument retenir c’est que les évaluations de vos applications et le montant de vos recettes sont étroitement liés.
 
 ### <a name="best-practices"></a>Bonnes pratiques
 
@@ -132,7 +139,7 @@ Nous vous recommandons d’éviter ces pratiques quand vous implémentez des spo
 <span />
 ### <a name="examples-of-policy-violations"></a>Exemples de non-respect de la politique
 
-Cette section donne des exemples d’implémentations de spots publicitaires qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) des Politiques du Windows Store. Ces exemples sont fournis à titre d’information uniquement, pour vous aider à comprendre comment respecter la politique. Ces exemples ne sont pas exhaustifs. Il existe beaucoup d’autres cas possibles de non-respect de la politique 10.10.1 qui ne sont pas répertoriés ici.
+Cette section donne des exemples d’implémentations de spots publicitaires qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) des Politiques du Windows Store. Ces exemples sont fournis à titre d’information uniquement, pour vous aider à comprendre comment respecter la politique. Ces exemples ne sont pas exhaustifs. Il existe beaucoup d’autres cas possibles de non-respect de la politique 10.10.1 qui ne sont pas répertoriés ici.
 
 * Placer un élément d’interface utilisateur sur le conteneur de spot publicitaire.
 
@@ -153,9 +160,4 @@ Cette section donne des exemples d’implémentations de spots publicitaires qui
  
 
  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

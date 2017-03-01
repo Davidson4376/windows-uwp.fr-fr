@@ -3,9 +3,16 @@ author: mcleblanc
 description: "Les applications Windows présentent le même aspect, que ce soit sur PC, sur appareil mobile ou sur tout autre type d’appareil. Les modèles d’interaction, d’entrée et d’interface utilisateur sont similaires ; un utilisateur passant d’un type d’appareil à un autre ne pourra que se féliciter de ces similitudes."
 title: "Portage d’une application Silverlight pour Windows Phone vers UWP pour différents facteurs de forme et expériences utilisateur"
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 71e762410b1c7dbf416e3bb81310d74115938102
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 301f1b55644842225f1b8d040d5b02a035d1940b
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -68,10 +75,5 @@ Reportez-vous à la liste [Valorisation de la réutilisation du code et du balis
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Mappages des espaces de noms et des classes](wpsl-to-uwp-namespace-and-class-mappings.md)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

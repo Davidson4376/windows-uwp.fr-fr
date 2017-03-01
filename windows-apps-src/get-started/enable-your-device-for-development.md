@@ -10,17 +10,21 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
-ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dc1bf476c93ef9843c20244f24a199c7888eb4a5
+ms.lasthandoff: 02/07/2017
 
 ---
+
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
-Avant d’écrire des applications, vous devez activer le mode développeur sur votre PC de développement et sur les appareils sur lesquels vous entendez tester votre code.
+Avant d’écrire des applications, vous devez activer le mode développeur sur votre PC de développement et sur les appareils sur lesquels vous entendez tester votre code. 
+
+![Activer vos appareils pour le développement](images/developer-poster.png)
 
 ## <a name="use-developer-features"></a>Utiliser les fonctionnalités de développement
 
-### <a name="develop-your-app-with-microsoft-visual-studio"></a>Développer votre application avec Microsoft Visual Studio
+### <a name="develop-your-app-with-microsoft-visual-studio"></a>Développer votre application avec Microsoft Visual Studio
 
 Vous devez activer le mode développeur sur votre PC avant de pouvoir ouvrir un projet d’application UWP dans Visual Studio. Si vous ouvrez un projet UWP et que le mode développeur n’est pas activé, la page de paramètres **Pour les développeurs** s’ouvre automatiquement. Pour activer le mode développeur, suivez les instructions de la section suivante.
 
@@ -77,7 +81,7 @@ Pour en savoir plus sur la découverte d’appareils et sur Device Portal, cons
 
 Pour obtenir des instructions d’installation spécifiques pour l’appareil, voir :
 - [Device Portal pour Bureau](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [Device Portal pour HoloLens](https://dev.windows.com/holographic/using_the_windows_device_portal)
+- [Device Portal pour HoloLens](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
 - [Device Portal pour IoT](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [Device Portal pour appareils mobiles](../debug-test-perf/device-portal-mobile.md)
 - [Device Portal pour Xbox](../debug-test-perf/device-portal-xbox.md)
@@ -215,9 +219,4 @@ Après avoir créé des applications ou effectué un chargement indépendant d�
 Après cela, vous devez activer votre appareil pour le développement, comme décrit dans cette rubrique, afin de pouvoir continuer à développer dessus. Si vous ne le faites, vous risquez d’obtenir une erreur quand vous déboguez votre application ou tentez de créer un package pour celle-ci. Voici un exemple de cette erreur :
 
 Erreur : DEP0700 : Échec de l’inscription de l’application.
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

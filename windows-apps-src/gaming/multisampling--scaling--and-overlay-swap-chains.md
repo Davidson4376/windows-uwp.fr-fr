@@ -3,27 +3,34 @@ author: mtoepke
 title: "Mise à l’échelle et superpositions de chaînes d’échange"
 description: "Apprenez à créer des chaînes d’échange mises à l’échelle pour accélérer le rendu sur les appareils mobiles, et utilisez la superposition des chaînes d’échange (quand cela est possible) pour améliorer la qualité visuelle."
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, jeux, mise à l’échelle de chaînes d’échange, superpositions, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: 1eea87b2175872e5a3bc7c41e82cda47bb555f82
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 02088fce03c88b4166d49cd36754ac956f254199
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Mise à l’échelle et superpositions de chaînes d’échange
+# <a name="swap-chain-scaling-and-overlays"></a>Mise à l’échelle et superpositions de chaînes d’échange
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Apprenez à créer des chaînes d’échange mises à l’échelle pour accélérer le rendu sur les appareils mobiles, et utilisez la superposition des chaînes d’échange (quand cela est possible) pour améliorer la qualité visuelle.
 
-## Chaînes d’échange dans DirectX 11.2
+## <a name="swap-chains-in-directx-112"></a>Chaînes d’échange dans DirectX 11.2
 
 
 Direct3D 11.2 vous permet de créer des applications de plateforme Windows universelle (UWP) avec des chaînes de permutation mises à l’échelle à partir de résolutions non natives (réduites), ce qui permet d’accélérer les taux de remplissage. Direct3D 11.2 inclut également des API de rendu avec des surcouches vidéo matérielles afin que vous puissiez présenter une interface utilisateur dans une autre chaîne de permutation à une résolution native. Ainsi, votre jeu peut afficher l’interface utilisateur à une résolution native maximale tout en conservant une grande fluidité, ce qui permet de tirer parti des appareils mobiles et des affichages haute résolution (par exemple 3840 x 2160). Cet article explique comment utiliser la superposition des chaînes de permutation.
 
 Direct3D 11.2 introduit également une nouvelle fonctionnalité qui permet de réduire la latence avec les chaînes de permutation d’un modèle de retournement. Voir [Réduire la latence avec des chaînes de permutation DXGI 1.3](reduce-latency-with-dxgi-1-3-swap-chains.md).
 
-## Utiliser la mise à l’échelle des chaînes de permutation
+## <a name="use-swap-chain-scaling"></a>Utiliser la mise à l’échelle des chaînes de permutation
 
 
 Quand votre jeu s’exécute sur du matériel de bas niveau ou sur du matériel optimisé pour l’économie d’énergie, il est préférable d’effectuer le rendu du contenu du jeu en temps réel à une résolution inférieure à la résolution native de l’écran. Pour ce faire, la chaîne d’échange qui est utilisée pour le rendu du contenu du jeu doit être inférieure à la résolution native. Sinon, une sous-région de la chaîne d’échange doit être utilisée.
@@ -113,7 +120,7 @@ Quand votre jeu s’exécute sur du matériel de bas niveau ou sur du matériel 
 
 4.  Si Direct2D est utilisé, la transformation de la rotation doit être modifiée pour compenser la région source.
 
-## Créer une chaîne de permutation de surcouche vidéo matérielle pour les éléments d’interface utilisateur
+## <a name="create-a-hardware-overlay-swap-chain-for-ui-elements"></a>Créer une chaîne de permutation de surcouche vidéo matérielle pour les éléments d’interface utilisateur
 
 
 Quand vous effectuez une mise à l’échelle d’une chaîne de permutation, tenez compte de l’inconvénient suivant : la mise à l’échelle de l’interface utilisateur est réduite également, ce qui peut la rendre floue et difficile à utiliser. Sur les appareils qui prennent en charge les chaînes de permutation de surcouche vidéo matérielle, ce problème peut être résolu. Pour ce faire, il suffit d’effectuer le rendu de l’interface utilisateur à la résolution native dans une chaîne de permutation distincte du contenu de jeu en temps réel. Notez que cette technique ne s’applique qu’aux chaînes de permutation [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Elle ne peut pas être utilisée avec l’interopérabilité XAML.
@@ -145,7 +152,7 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
     m_overlaySupportExists = dxgiOutput2->SupportsOverlays() ? true : false;
     ```
     
-    > **Remarque** Si l’adaptateur DXGI prend en charge les superpositions, passez à l’étape suivante. Si l’appareil ne prend pas en charge les superpositions, le rendu avec plusieurs chaînes d’échange ne sera pas efficace. À la place, effectuez un rendu de l’interface utilisateur à une résolution réduite dans la même chaîne de permutation que le contenu de jeu en temps réel.
+    > **Remarque**   Si l’adaptateur DXGI prend en charge les superpositions, passez à l’étape suivante. Si l’appareil ne prend pas en charge les superpositions, le rendu avec plusieurs chaînes d’échange ne sera pas efficace. À la place, effectuez un rendu de l’interface utilisateur à une résolution réduite dans la même chaîne de permutation que le contenu de jeu en temps réel.
 
      
 
@@ -161,7 +168,7 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
      foregroundSwapChainDesc.AlphaMode = DXGI_ALPHA_MODE_PREMULTIPLIED; // Foreground swap chain alpha values must be premultiplied.
     ```
 
-    > **Remarque** Redéfinissez [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) chaque fois que la chaîne d’échange est redimensionnée.
+    > **Remarque**   Redéfinissez [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) chaque fois que la chaîne d’échange est redimensionnée.
 
     ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
@@ -194,7 +201,7 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
     }
     ```
 
-4.  Les chaînes de permutation de premier plan utilisent toujours un alpha prémultiplié. Les valeurs de couleur de chaque pixel sont censées être déjà multipliées par la valeur alpha avant la présentation de l’image. Par exemple, un pixel BVRA (bleu/vert/rouge/alpha) 100% blanc, ayant 50% d’alpha, a la valeur (0.5, 0.5, 0.5, 0.5).
+4.  Les chaînes de permutation de premier plan utilisent toujours un alpha prémultiplié. Les valeurs de couleur de chaque pixel sont censées être déjà multipliées par la valeur alpha avant la présentation de l’image. Par exemple, un pixel BVRA (bleu/vert/rouge/alpha) 100 % blanc, ayant 50 % d’alpha, a la valeur (0.5, 0.5, 0.5, 0.5).
 
     L’étape de prémultiplication alpha peut être effectuée à l’étape de fusion/sortie en appliquant un état de fusion d’application (voir [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)) avec le champ **SrcBlend** de la structure [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) défini à **D3D11\_SRC\_ALPHA**. Il est également possible d’utiliser des valeurs alpha prémultipliées.
 
@@ -325,10 +332,5 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

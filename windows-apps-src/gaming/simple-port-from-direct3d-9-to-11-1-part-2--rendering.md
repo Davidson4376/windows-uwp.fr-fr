@@ -1,29 +1,36 @@
 ---
 author: mtoepke
 title: "Convertir l’infrastructure de rendu"
-description: "Montre comment convertir une infrastructure de rendu simple de Direct3D9 à Direct3D11, notamment comment porter des tampons de géométrie, comment compiler et charger des programmes de nuanceurs HLSL et comment implémenter la chaîne de rendu dans Direct3D11."
+description: "Montre comment convertir une infrastructure de rendu simple de Direct3D 9 à Direct3D 11, notamment comment porter des tampons de géométrie, comment compiler et charger des programmes de nuanceurs HLSL et comment implémenter la chaîne de rendu dans Direct3D 11."
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp, jeux, infrastructure de rendu, conversion, direct3d 9, direct3d 11
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c5cdddbf2bf75da761f4439ef2d890170c6681c5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d33a694cf835ba3d997a7c4a111349c117e2493e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Convertir l’infrastructure de rendu
+# <a name="convert-the-rendering-framework"></a>Convertir l’infrastructure de rendu
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **Récapitulatif**
 
--   [Partie1: initialiser Direct3D11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
+-   [Partie 1 : initialiser Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
 -   Partie 2 : convertir l’infrastructure de rendu
--   [Partie3: porter la boucle de jeu](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
+-   [Partie 3 : porter la boucle de jeu](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
-Montre comment convertir une infrastructure de rendu simple de Direct3D9 à Direct3D11, notamment comment porter des tampons de géométrie, comment compiler et charger des programmes de nuanceurs HLSL et comment implémenter la chaîne de rendu dans Direct3D11. Partie2 de la procédure pas à pas [Porter une application Direct3D9 simple vers DirectX11 et la plateforme Windows universelle (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
+Montre comment convertir une infrastructure de rendu simple de Direct3D 9 à Direct3D 11, notamment comment porter des tampons de géométrie, comment compiler et charger des programmes de nuanceurs HLSL et comment implémenter la chaîne de rendu dans Direct3D 11. Partie 2 de la procédure pas à pas [Porter une application Direct3D 9 simple vers DirectX 11 et la plateforme Windows universelle (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
-## Convertir des effets en nuanceurs HLSL
+## <a name="convert-effects-to-hlsl-shaders"></a>Convertir des effets en nuanceurs HLSL
 
 
 L’exemple suivant est une technique D3DX simple, écrite pour l’API Effets héritée, pour la transformation de vertex matériel et les données de couleurs directes.
@@ -90,12 +97,12 @@ technique RenderSceneSimple
 }
 ```
 
-Dans Direct3D 11, nous pouvons toujours utiliser nos nuanceurs HLSL. Nous mettons chaque nuanceur dans son propre fichier HLSL afin que Visual Studio les compile dans des fichiers distincts et que nous les chargions plus tard en tant que ressources Direct3D distinctes. Nous définissons le niveau cible sur [Modèle de nuanceur4 niveau 9\_1 (/4\_0\_level\_9\_1)](https://msdn.microsoft.com/library/windows/desktop/ff476876), car ces nuanceurs sont écrits pour les GPU DirectX9.1.
+Dans Direct3D 11, nous pouvons toujours utiliser nos nuanceurs HLSL. Nous mettons chaque nuanceur dans son propre fichier HLSL afin que Visual Studio les compile dans des fichiers distincts et que nous les chargions plus tard en tant que ressources Direct3D distinctes. Nous définissons le niveau cible sur [Modèle de nuanceur 4 niveau 9\_1 (/4\_0\_level\_9\_1)](https://msdn.microsoft.com/library/windows/desktop/ff476876), car ces nuanceurs sont écrits pour les GPU DirectX 9.1.
 
 Quand nous avons défini le schéma d’entrée, nous avons vérifié qu’il représentait la même structure de données que celle que nous utilisons pour stocker les données par vertex dans la mémoire système et la mémoire GPU. De même, la sortie d’un nuanceur de vertex doit correspondre à la structure utilisée en tant qu’entrée du nuanceur de pixels. Les règles ne sont pas les mêmes que pour passer des données d’une fonction à une autre en C++ ; vous pouvez omettre les variables inutilisées à la fin de la structure. Mais il n’est pas possible de réorganiser l’ordre et vous ne pouvez pas ignorer le contenu du milieu de la structure de données.
 
 > **Remarque**  
-Les règles de Direct3D9 pour lier des nuanceurs de vertex à des nuanceurs de pixels étaient plus souples que celles de Direct3D11. La disposition Direct3D9 était flexible, mais inefficace.
+Les règles de Direct3D 9 pour lier des nuanceurs de vertex à des nuanceurs de pixels étaient plus souples que celles de Direct3D 11. La disposition Direct3D 9 était flexible, mais inefficace.
 
  
 
@@ -150,11 +157,11 @@ VS_OUTPUT main(VS_INPUT input) // main is the default function name
 
 C’est tout ce dont nous avons besoin pour notre nuanceur de pixels direct. Même si nous l’appelons direct, il obtient en fait des données de couleurs interpolées de perspective correcte pour chaque pixel. Notez que la sémantique des valeurs système SV\_TARGET est appliquée à la sortie des valeurs de couleurs par notre nuanceur de pixels comme exigé par l’API.
 
-> **Remarque** Les nuanceurs de pixels de niveau 9\_x ne peuvent pas lire à partir de la sémantique des valeurs système SV\_POSITION. Les nuanceurs de pixels du modèle4.0 (et ultérieur) peuvent utiliser SV\_POSITION pour récupérer l’emplacement des pixels sur l’écran, où x est compris entre 0 et la largeur cible de rendu et y est compris entre 0 et la hauteur cible de rendu (par décalage de 0,5).
+> **Remarque** Les nuanceurs de pixels de niveau 9\_x ne peuvent pas lire à partir de la sémantique des valeurs système SV\_POSITION. Les nuanceurs de pixels du modèle 4.0 (et ultérieur) peuvent utiliser SV\_POSITION pour récupérer l’emplacement des pixels sur l’écran, où x est compris entre 0 et la largeur cible de rendu et y est compris entre 0 et la hauteur cible de rendu (par décalage de 0,5).
 
  
 
-La plupart des nuanceurs de pixels sont beaucoup plus complexes qu’un nuanceur de pixels direct; notez que les niveaux de fonctionnalité Direct3D plus élevés permettent d’effectuer beaucoup plus de calculs par programme de nuanceur.
+La plupart des nuanceurs de pixels sont beaucoup plus complexes qu’un nuanceur de pixels direct ; notez que les niveaux de fonctionnalité Direct3D plus élevés permettent d’effectuer beaucoup plus de calculs par programme de nuanceur.
 
 Nuanceur de pixels HLSL (niveau de fonctionnalité 9.1)
 
@@ -180,7 +187,7 @@ PS_OUTPUT main(PS_INPUT In)
 }
 ```
 
-## Compiler et charger des nuanceurs
+## <a name="compile-and-load-shaders"></a>Compiler et charger des nuanceurs
 
 
 Les jeux Direct3D 9 ont souvent utilisé la bibliothèque d’effets pour implémenter des pipelines programmables. Il était possible de compiler les effets au moment de l’exécution à l’aide de la méthode [**D3DXCreateEffectFromFile function**](https://msdn.microsoft.com/library/windows/desktop/bb172768).
@@ -232,7 +239,7 @@ m_d3dDevice->CreateVertexShader(
     );
 ```
 
-Pour inclure le bytecode de nuanceur dans votre package d’application compilé, il suffit d’ajouter le fichier HLSL au projet Visual Studio. VisualStudio va utiliser l’[Outil compilateur d’effet](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC) pour compiler les fichiers HLSL dans des objets de nuanceur compilés (fichiers .CSO) et les inclure dans le package d’application.
+Pour inclure le bytecode de nuanceur dans votre package d’application compilé, il suffit d’ajouter le fichier HLSL au projet Visual Studio. Visual Studio va utiliser l’[Outil compilateur d’effet](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC) pour compiler les fichiers HLSL dans des objets de nuanceur compilés (fichiers .CSO) et les inclure dans le package d’application.
 
 > **Remarque** Veillez à définir le niveau de fonctionnalité cible correct pour le compilateur HLSL : cliquez avec le bouton droit sur le fichier source HLSL dans Visual Studio, sélectionnez Propriétés, puis modifiez le paramètre **Modèle de nuanceur** sous **Compilateur HLSL -&gt; Général**. Direct3D vérifie cette propriété par rapport aux fonctionnalités matérielles quand votre application crée la ressource de nuanceur Direct3D.
 
@@ -240,11 +247,11 @@ Pour inclure le bytecode de nuanceur dans votre package d’application compilé
 
 ![Propriétés de nuanceur HLSL](images/hlslshaderpropertiesmenu.png)![Type de nuanceur HLSL](images/hlslshadertypeproperties.png)
 
-Voici un bon endroit pour créer le schéma d’entrée, qui correspond à la déclaration de flux de vertex dans Direct3D9. La structure de données par vertex a besoin de correspondre à ce que le nuanceur de vertex utilise; dans Direct3D11, nous avons plus de contrôle sur le schéma d’entrée. Nous pouvons définir la taille du tableau et la longueur en bits des vecteurs à virgule flottante et spécifier la sémantique pour le nuanceur de vertex. Nous créons une structure [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) et l’utilisons pour informer Direct3D sur l’aspect des données par vertex. Nous avons attendu la fin du chargement du nuanceur de vertex pour définir le schéma d’entrée car l’API valide ce dernier par rapport à la ressource de nuanceur de vertex. Si le nuanceur de vertex n’est pas compatible, alors Direct3D lève une exception.
+Voici un bon endroit pour créer le schéma d’entrée, qui correspond à la déclaration de flux de vertex dans Direct3D 9. La structure de données par vertex a besoin de correspondre à ce que le nuanceur de vertex utilise ; dans Direct3D 11, nous avons plus de contrôle sur le schéma d’entrée. Nous pouvons définir la taille du tableau et la longueur en bits des vecteurs à virgule flottante et spécifier la sémantique pour le nuanceur de vertex. Nous créons une structure [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) et l’utilisons pour informer Direct3D sur l’aspect des données par vertex. Nous avons attendu la fin du chargement du nuanceur de vertex pour définir le schéma d’entrée car l’API valide ce dernier par rapport à la ressource de nuanceur de vertex. Si le nuanceur de vertex n’est pas compatible, alors Direct3D lève une exception.
 
 Les données par vertex doivent être stockées dans des types compatibles dans la mémoire système. Les types de données DirectXMath peuvent s’avérer utiles. Par exemple, DXGI\_FORMAT\_R32G32B32\_FLOAT correspond à [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475).
 
-> **Remarque** Les tampons constants utilisent un schéma d’entrée fixe qui s’aligne sur quatrenombres à virgule flottante à la fois. [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (et ses dérivés) sont recommandés pour les données de mémoires tampons constantes.
+> **Remarque** Les mémoires tampons constantes utilisent un schéma d’entrée fixe qui s’aligne sur quatre nombres à virgule flottante à la fois. [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (et ses dérivés) sont recommandés pour les données de mémoires tampons constantes.
 
  
 
@@ -262,7 +269,7 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 };
 ```
 
-## Créer des ressources de géométrie
+## <a name="create-geometry-resources"></a>Créer des ressources de géométrie
 
 
 Dans Direct3D 9, nous stockions les ressources de géométrie en créant des tampons sur le périphérique Direct3D, en verrouillant la mémoire et en copiant les données depuis la mémoire du processeur vers la mémoire GPU.
@@ -315,7 +322,7 @@ m_d3dDevice->CreateBuffer(
     );
 ```
 
-## Implémenter la chaîne de rendu
+## <a name="implement-the-rendering-chain"></a>Implémenter la chaîne de rendu
 
 
 Les jeux Direct3D 9 utilisaient souvent une chaîne de rendu basée sur un effet. Ce type de chaîne de rendu configure l’objet de l’effet, le fournit avec les ressources dont il a besoin, puis le laisse générer le rendu de chaque passage.
@@ -481,7 +488,7 @@ Présentation d’une image à l’écran avec DirectX 11
 m_swapChain->Present(1, 0);
 ```
 
-La chaîne de rendu que nous venons de créer sera appelée à partir d’une boucle de jeu implémentée dans la méthode [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505). Une illustration est proposée dans la [Partie3: Fenêtre d’affichage et boucle de jeu](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md).
+La chaîne de rendu que nous venons de créer sera appelée à partir d’une boucle de jeu implémentée dans la méthode [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505). Une illustration est proposée dans la [Partie 3 : Fenêtre d’affichage et boucle de jeu](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md).
 
  
 
@@ -489,10 +496,5 @@ La chaîne de rendu que nous venons de créer sera appelée à partir d’une bo
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -2,10 +2,17 @@
 author: msatranjr
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
 title: "Créer une application de carte à puce NFC"
-description: "Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation de carte NFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage fort d’applications de paiement sécurisé avec les opérateurs de réseau mobile."
+description: "Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation de carte NFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage étroit d’applications de paiement sécurisé avec les opérateurs de réseau mobile."
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
-ms.openlocfilehash: c5a7293874bd71b50aa31d6af9a687d289d07ce5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ee62e0d1ddd41ce1cce61bc854168f0cac6ad038
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="create-an-nfc-smart-card-app"></a>Créer une application de carte à puce NFC
@@ -36,7 +43,7 @@ Windows 10 prend en charge l’émulation de cartes à puce utilisant le protoco
 
 Seuls les appareils Windows 10 Mobile sont activés avec la fonction d’émulation de carte. L’émulation de carte HCE et SIM n’est pas disponible sur les autres versions de Windows 10.
 
-L’architecture de la prise en charge de l’émulation de cartes HCE et SIM est indiquée dans le diagramme ci-dessous. 
+L’architecture de la prise en charge de l’émulation de cartes HCE et SIM est indiquée dans le diagramme ci-dessous.
 
 ![Architecture pour l’émulation de cartes HCE et SIM](./images/nfc-architecture.png)
 
@@ -220,7 +227,7 @@ public static byte[] AID_PPSE =
         };
 
 var appletIdGroup = new SmartCardAppletIdGroup(
-                        "Example DisplayName", 
+                        "Example DisplayName",
                                 new List<IBuffer> {AID_PPSE.AsBuffer()},
                                 SmartCardEmulationCategory.Payment,
                                 SmartCardEmulationType.Host);
@@ -237,7 +244,7 @@ public static byte[] AID_OTHER =
         };
 
 var appletIdGroup = new SmartCardAppletIdGroup(
-                        "Example DisplayName", 
+                        "Example DisplayName",
                                 new List<IBuffer> {AID_OTHER.AsBuffer()},
                                 SmartCardEmulationCategory.Other,
                                 SmartCardEmulationType.Host);
@@ -296,7 +303,7 @@ public static byte[] AID_Foreground =
         {};
 
 var appletIdGroup = new SmartCardAppletIdGroup(
-                        "Example DisplayName", 
+                        "Example DisplayName",
                                 new List<IBuffer> {AID_Foreground.AsBuffer()},
                                 SmartCardEmulationCategory.Other,
                                 SmartCardEmulationType.Host);
@@ -341,15 +348,15 @@ case Never:
 // you can take the user to the NFC settings to turn "tap and pay" on
 await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings-nfctransactions:"));
 break;
- 
- case Always: 
+
+ case Always:
 return "Card emulation always on";
 
  case ScreenOn:
  return "Card emulation on only when screen is on";
 
  case ScreenUnlocked:
- return "Card emulation on only when screen unlocked"; 
+ return "Card emulation on only when screen unlocked";
 }
 ```
 
@@ -363,7 +370,7 @@ Votre tâche en arrière-plan d’application est lancée, même si le télépho
         {
             // Launch above the lock with some arguments
             var result = await eventDetails.TryLaunchSelfAsync("app-specific arguments", SmartCardLaunchBehavior.AboveLock);
-        } 
+        }
 ```
 
 ## <a name="aid-registration-and-other-updates-for-sim-based-apps"></a>Inscription d’identificateur d’applet et autres mises à jour pour les applications sur carte SIM
@@ -372,7 +379,7 @@ Les applications d’émulation de cartes qui utilisent la carte SIM en tant qu�
 
 ```csharp
 var appletIdGroup = new SmartCardAppletIdGroup(
-                        "Example DisplayName", 
+                        "Example DisplayName",
                                 new List<IBuffer> {AID_PPSE.AsBuffer()},
                                 SmartCardEmulationCategory.Payment,
                                 SmartCardEmulationType.Uicc);
@@ -380,12 +387,4 @@ var appletIdGroup = new SmartCardAppletIdGroup(
 
 ** Important **  
 La prise en charge héritée de l’interception des SMS binaires de Windows Phone 8.1 a été supprimée et remplacée par une nouvelle prise en charge élargie des SMS dans Windows 10 Mobile, mais l’ensemble des applications Windows Phone 8.1 héritées utilisant cette fonctionnalité doivent être mises à jour pour prendre en charge les nouvelles API SMS Windows 10 Mobile.
-
-
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

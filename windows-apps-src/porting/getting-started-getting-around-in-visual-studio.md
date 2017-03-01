@@ -1,19 +1,26 @@
 ---
 author: mcleblanc
-description: "Savoir maîtriser Visual Studio"
-title: "Savoir maîtriser Visual Studio"
+description: "Apprentissage de Visual Studio"
+title: "Apprentissage de Visual Studio"
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3f23745d161965d08a35abbef31b8e4342cf1ff6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 57341e52ad51e446e6828e5b4ba6228094152d7f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Prise en main : Savoir maîtriser Visual Studio
+# <a name="getting-started-getting-around-in-visual-studio"></a>Prise en main : Apprentissage de Visual Studio
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-## Savoir maîtriser Microsoft Visual Studio
+## <a name="getting-around-in-microsoft-visual-studio"></a>Savoir maîtriser Microsoft Visual Studio
 
 Revenons au projet que nous avons créé précédemment et voyons comment s’y retrouver dans l’environnement de développement intégré (IDE) de Microsoft Visual Studio.
 
@@ -27,7 +34,7 @@ L’apparence de Microsoft Visual Studio est similaire mais, dans l’affichage 
 
 Même si cela peut sembler un peu surprenant, vous serez peut-être heureux d’apprendre que, dans Visual Studio, vous pouvez réorganiser les volets de façon à placer les fichiers sources à gauche, et la boîte à outils à droite. En fait, vous pouvez cliquer sur la barre de titre d’un volet, puis la faire glisser pour repositionner celui-ci. Visual Studio affiche une zone ombrée, indiquant où le volet sera ancré quand vous aurez relâché le bouton. De nombreux volets affichent également une icône de punaise dans la barre de titre. Celle-ci vous permet d’épingler le volet là où il se trouve. En le désépinglant, vous pouvez le réduire pour économiser de l’espace, ce qui est utile si votre moniteur est de taille relativement petite. Si vous faites une fausse manœuvre (ne vous inquiétez pas, nous sommes tous passés par là), sélectionnez **Rétablir la disposition de fenêtre** dans le menu **Fenêtre** pour remettre de l’ordre.
 
-## Ajout de contrôles, définition de leurs propriétés et réponse aux événements
+## <a name="adding-controls-setting-their-properties-and-responding-to-events"></a>Ajout de contrôles, définition de leurs propriétés et réponse aux événements
 
 À présent, ajoutons quelques contrôles à votre projet. Nous allons ensuite changer certaines de leurs propriétés et écrire un code pour répondre à l’un des événements du contrôle.
 
@@ -51,7 +58,7 @@ Lorsque vous utilisez Visual Studio vous procédez de manière très similaire. 
 
 Écrivons maintenant un code pour changer le contenu du contrôle **TextBlock** en « Hello, World! » après que l’utilisateur a appuyé sur le bouton.
 
-Dans Xcode, vous pouvez associer un événement à un contrôle en écrivant un code, puis en associant celui-ci au contrôle, souvent en faisant glisser le bouton dans le code source en maintenant la touche Contrôle appuyée, comme suit:
+Dans Xcode, vous pouvez associer un événement à un contrôle en écrivant un code, puis en associant celui-ci au contrôle, souvent en faisant glisser le bouton dans le code source en maintenant la touche Contrôle appuyée, comme suit :
 
 ![connexion d’un bouton avec un événement dans xcode](images/ios-to-uwp/xcode-add-button-event.png)
 
@@ -63,7 +70,7 @@ Dans Xcode, vous pouvez associer un événement à un contrôle en écrivant un 
 }
 ```
 
-Visual Studio est très semblable. En haut de la fenêtre **Propriétés** se trouve un bouton reconnaissable par un éclair. C’est ici que sont répertoriés les événements possibles associés au contrôle sélectionné, comme suit:
+Visual Studio est très semblable. En haut de la fenêtre **Propriétés** se trouve un bouton reconnaissable par un éclair. C’est ici que sont répertoriés les événements possibles associés au contrôle sélectionné, comme suit :
 
 ![liste des événements du bouton dans visual studio](images/ios-to-uwp/vs-button-event.png)
 
@@ -86,7 +93,7 @@ Accrochons à présent le contrôle **TextBlock**. Dans Xcode, vous feriez gliss
 @IBOutlet weak var myLabel : UILabel
 ```
 
-Dans Visual Studio, vous n’avez pas besoin d’associer le contrôle, car cela est toujours fait pour vous. Modifions certaines des propriétés:
+Dans Visual Studio, vous n’avez pas besoin d’associer le contrôle, car cela est toujours fait pour vous. Modifions certaines des propriétés :
 
 1.  Appuyez sur l’onglet du fichier MainPage.xaml.
 2.  Dans le volet **Conception**, appuyez sur le contrôle **TextBlock**.
@@ -105,7 +112,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Cela est similaire à ce que vous écririez dans Swift:
+Cela est similaire à ce que vous écririez dans Swift :
 
 ```swift
 @IBAction func buttonPressed(sender: UIButton) {
@@ -113,19 +120,14 @@ Cela est similaire à ce que vous écririez dans Swift:
 }
 ```
 
-Enfin, pour exécuter l’application, sélectionnez le menu **Déboguer**, puis sélectionnez **Démarrer le débogage** (ou appuyez sur F5). Une fois l’application démarrée, cliquez sur le bouton «Appuyez ici». Le contenu de l’étiquette «TextBlock» est remplacé par «Hello, World!» comme le montre la figure suivante.
+Enfin, pour exécuter l’application, sélectionnez le menu **Déboguer**, puis sélectionnez **Démarrer le débogage** (ou appuyez sur F5). Une fois l’application démarrée, cliquez sur le bouton « Appuyez ici ». Le contenu de l’étiquette « TextBlock » est remplacé par « Hello, World! » comme le montre la figure suivante.
 
-![résultats de l’exécution de la première procédure: Hello, World!](images/ios-to-uwp/vs-hello-world.png)
+![résultats de l’exécution de la première procédure : Hello, World!](images/ios-to-uwp/vs-hello-world.png)
 
 Pour quitter l’application, revenez à Visual Studio, appuyez sur le menu **Déboguer**, puis sur **Arrêter le débogage** (ou appuyez simplement sur Maj+F5). Notez que Visual Studio vous permet d’essayer l’application sur différents appareils pour vérifier la manière dont elle s’exécute.
 
-## Étape suivante
+## <a name="next-step"></a>Étape suivante
 
 [Prise en main : Contrôles courants](getting-started-common-controls.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

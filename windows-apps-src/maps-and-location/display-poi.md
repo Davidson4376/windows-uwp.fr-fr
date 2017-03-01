@@ -1,15 +1,22 @@
 ---
 author: msatranjr
 title: "Afficher les points d’intérêt sur une carte"
-description: "Ajoutez des points d’intérêt à une carte à l’aide des punaises, des images, des formes et des éléments d’interface utilisateur XAML."
+description: "Ajoutez des points d’intérêt à une carte à l’aide des clics-infos, des images, des formes et des éléments d’interface utilisateur XAML."
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, carte, emplacement, clics-infos"
 translationtype: Human Translation
-ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
-ms.openlocfilehash: 8afdb41d6790bb9647a6b89086c4b86872940c51
+ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
+ms.openlocfilehash: c8fdc16b99a9d2d57f71e32e008fa668c3404835
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="display-points-of-interest-poi-on-a-map"></a>Afficher des centres d’intérêt sur une carte
+# <a name="display-points-of-interest-poi-on-a-map"></a>Afficher les points d’intérêt sur une carte
 
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
@@ -27,10 +34,10 @@ Affichez des éléments de l’interface utilisateur XAML ([**Button**](https://
 
 En résumé :
 
--   [Ajoutez un élément MapIcon à la carte](#mapicon) pour afficher une image telle qu’une punaise avec un texte facultatif.
--   [Ajoutez un élément MapPolygon à la carte](#mappolygon) pour afficher une forme multipoint.
--   [Ajoutez un élément MapPolyline à la carte](#mappolyline) pour afficher des lignes sur la carte.
--   [Ajoutez du code XAML à la carte](#mapxaml) pour afficher des éléments d’interface utilisateur personnalisés.
+-   [Ajoutez un élément MapIcon à la carte](#add-a-mapicon) pour afficher une image telle qu’une punaise avec un texte facultatif.
+-   [Ajoutez un élément MapPolygon à la carte](#add-a-mappolygon) pour afficher une forme multipoint.
+-   [Ajoutez un élément MapPolyline à la carte](#add-a-mappolyline) pour afficher des lignes sur la carte.
+-   [Ajoutez du code XAML à la carte](#add-xaml) pour afficher des éléments d’interface utilisateur personnalisés.
 
 Si vous avez un grand nombre d’éléments à placer sur la carte, songez à [superposer des images sous forme de vignettes à la carte](overlay-tiled-images.md). Pour afficher des routes sur la carte, voir [Afficher des itinéraires et indications](routes-and-directions.md).
 
@@ -104,7 +111,7 @@ private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEven
          new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
 
    });
-           
+
    mapPolygon.ZIndex = 1;
    mapPolygon.FillColor = Colors.Red;
    mapPolygon.StrokeColor = Colors.Blue;
@@ -129,7 +136,7 @@ private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEve
          new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },                
          new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
    });
-              
+
    mapPolyline.StrokeColor = Colors.Black;
    mapPolyline.StrokeThickness = 3;
    mapPolyline.StrokeDashed = true;
@@ -226,11 +233,4 @@ Cet exemple affiche une collection d’éléments XAML liés à un [**MapItemsCo
 * [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
 * [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
 * [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)
-
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

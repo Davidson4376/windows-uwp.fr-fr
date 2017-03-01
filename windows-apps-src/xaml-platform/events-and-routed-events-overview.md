@@ -1,17 +1,24 @@
 ---
 author: jwmsft
-description: "Nous décrivons le concept de programmation des événements dans une application Windows Runtime, quand vous utilisez C#, Visual Basic ou les extensions de composants Visual C++ (C++/CX) comme langage de programmation et le langage XAML pour la définition de votre interface utilisateur."
+description: "Nous décrivons le concept de programmation des événements dans une application Windows Runtime lorsque vous utilisez C#, Visual Basic ou les extensions de composant Visual C++ (C++/CX) comme langage de programmation et le langage XAML pour la définition de votre interface utilisateur."
 title: "Vue d’ensemble des événements et des événements routés"
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 1debd0c60fbfb12ff63e27140c4a769565d98f2a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f3bb487619d7ab1a800224f40ce5eb63ae5d915b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Vue d’ensemble des événements et des événements routés
+# <a name="events-and-routed-events-overview"></a>Vue d’ensemble des événements et des événements routés
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
@@ -19,15 +26,15 @@ ms.openlocfilehash: 1debd0c60fbfb12ff63e27140c4a769565d98f2a
 
 Nous décrivons le concept de programmation des événements dans une application Windows Runtime, quand vous utilisez C#, Visual Basic ou les extensions de composants Visual C++ (C++/CX) comme langage de programmation et le langage XAML pour la définition de votre interface utilisateur. Vous pouvez assigner des gestionnaires pour les événements dans le cadre des déclarations des éléments d’interface utilisateur en XAML, ou vous pouvez ajouter les gestionnaires dans le code. Windows Runtime prend en charge les *événements routés* : certains événements d’entrée et événements de données peuvent être gérés par des objets autres que l’objet ayant déclenché l’événement. Les événements routés s’avèrent utiles quand vous définissez des modèles de contrôles ou utilisez des pages ou conteneurs de disposition.
 
-## Événements en tant que concept de programmation
+## <a name="events-as-a-programming-concept"></a>Événements en tant que concept de programmation
 
 En règle générale, les concepts d’événement dans le cadre de la programmation d’une application Windows Runtime s’apparentent au modèle d’événement dans les langages de programmation les plus répandus. Le fait de savoir déjà utiliser des événements Microsoft .NET ou C++ procure un certain avantage, mais vous n’avez pas besoin d’en savoir énormément sur les concepts de modèle d’événement pour effectuer certaines tâches de base, comme l’attachement des gestionnaires.
 
 Quand vous utilisez C#, Visual Basic ou C++/CX comme langage de programmation, l’interface utilisateur est définie dans le balisage (XAML). Dans la syntaxe du balisage XAML, certains des principes de connexion des événements entre les éléments de balisage et les entités de code d’exécution sont similaires à d’autres technologies Web, comme ASP.NET ou HTML5.
 
-**Remarque** Le code qui fournit la logique d’exécution d’une interface utilisateur XAML est souvent désigné par *code-behind* ou fichier code-behind. Dans les affichages de solutions Microsoft Visual Studio, cette relation est représentée graphiquement, avec le fichier code-behind en tant que fichier dépendant et incorporé par rapport à la page XAML auquel il se réfère.
+**Remarque**  Le code qui fournit la logique d’exécution d’une interface utilisateur XAML est souvent désigné par *code-behind* ou fichier code-behind. Dans les affichages de solutions Microsoft Visual Studio, cette relation est représentée graphiquement, avec le fichier code-behind en tant que fichier dépendant et incorporé par rapport à la page XAML auquel il se réfère.
 
-## Button.Click : présentation des événements et de XAML
+## <a name="buttonclick-an-introduction-to-events-and-xaml"></a>Button.Click : présentation des événements et de XAML
 
 L’une des tâches de programmation courante pour une application Windows Runtime consiste à capturer une entrée utilisateur dans l’interface utilisateur. Par exemple, votre interface utilisateur peut comporter un bouton sur lequel l’utilisateur doit cliquer pour envoyer des informations ou modifier un état.
 
@@ -41,7 +48,7 @@ Pour connecter les événements en XAML, vous spécifiez le nom sous forme de ch
   Click="showUpdatesButton_Click"/>
 ```
 
-**Conseil** La *connexion d’événements* est un terme de programmation. Il fait référence au processus ou au code par lequel vous indiquez que les occurrences d’un événement doivent invoquer une méthode de gestionnaire nommé. Dans la plupart des modèles de code procédural, la connexion d’événements est le code « AddHandler » implicite ou explicite qui nomme l’événement et la méthode, et qui implique généralement une instance d’objet cible. En XAML, le code « AddHandler » est implicite. La connexion d’événements consiste exclusivement à nommer l’événement en tant que nom d’attribut d’un élément d’objet, et à nommer le gestionnaire en tant que valeur de cet attribut.
+**Conseil**  La *connexion d’événements* est un terme de programmation. Il fait référence au processus ou au code par lequel vous indiquez que les occurrences d’un événement doivent invoquer une méthode de gestionnaire nommé. Dans la plupart des modèles de code procédural, la connexion d’événements est le code « AddHandler » implicite ou explicite qui nomme l’événement et la méthode, et qui implique généralement une instance d’objet cible. En XAML, le code « AddHandler » est implicite. La connexion d’événements consiste exclusivement à nommer l’événement en tant que nom d’attribut d’un élément d’objet, et à nommer le gestionnaire en tant que valeur de cet attribut.
 
 Vous écrivez le gestionnaire réel dans le langage de programmation que vous utilisez pour tout le code et le code-behind de votre application. Avec l’attribut `Click="showUpdatesButton_Click"`, vous avez créé un contrat qui veut que lorsque le balisage XAML est compilé et analysé, l’étape de compilation du balisage XAML dans l’action de génération de votre IDE et l’analyse XAML finale lors du chargement de l’application peuvent trouver une méthode nommée `showUpdatesButton_Click` dans le code de l’application. `showUpdatesButton_Click` doit être une méthode qui implémente une signature de méthode compatible (basée sur un délégué) pour tout gestionnaire de l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737). Par exemple, ce code définit le gestionnaire `showUpdatesButton_Click`.
 
@@ -67,15 +74,15 @@ void MyNamespace::BlankPage::showUpdatesButton_Click(Platform::Object^ sender, W
 
 Dans cet exemple, la méthode `showUpdatesButton_Click` est basée sur le délégué [**RoutedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br208812). Vous comprenez qu’il s’agit du délégué à utiliser car il est nommé dans la syntaxe de la méthode [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) dans la page de référence MSDN.
 
-**Conseil** Visual Studio offre un moyen pratique de nommer le gestionnaire d’événements et de définir la méthode de gestionnaire quand vous modifiez du code XAML. Quand vous fournissez le nom d’attribut de l’événement dans l’éditeur de texte XAML, patientez jusqu’à ce qu’une liste Microsoft IntelliSense s’affiche. Si vous cliquez sur **&lt;Nouveau gestionnaire d’événements&gt;** dans la liste, Microsoft Visual Studio suggère un nom de méthode en fonction du **x:Name** de l’élément (ou nom de type), le nom de l’événement et un suffixe numérique. Vous pouvez ensuite cliquer avec le bouton droit sur le nom du gestionnaire d’événements sélectionné et cliquer sur **Naviguer vers le gestionnaire d’événements**. Vous accéderez alors directement à la définition de gestionnaire d’événements nouvellement insérée, comme illustré dans l’affichage de l’éditeur de code de votre fichier code-behind pour la page XAML. Le gestionnaire d’événements a déjà la signature correcte, y compris le paramètre *sender* et la classe de données d’événements utilisée par l’événement. Par ailleurs, s’il existe déjà une méthode de gestionnaire avec la signature correcte dans votre code-behind, le nom de cette méthode apparaît dans le menu déroulant à saisie semi-automatique avec l’option **&lt;Nouveau gestionnaire d’événements&gt;**. Vous pouvez aussi appuyer sur la touche Tab, pour aller plus vite, au lieu de cliquer sur les éléments de liste IntelliSense.
+**Conseil**  Visual Studio offre un moyen pratique de nommer le gestionnaire d’événements et de définir la méthode de gestionnaire quand vous modifiez du code XAML. Quand vous fournissez le nom d’attribut de l’événement dans l’éditeur de texte XAML, patientez jusqu’à ce qu’une liste Microsoft IntelliSense s’affiche. Si vous cliquez sur **&lt;Nouveau gestionnaire d’événements&gt;** dans la liste, Microsoft Visual Studio suggère un nom de méthode en fonction du **x:Name** de l’élément (ou nom de type), le nom de l’événement et un suffixe numérique. Vous pouvez ensuite cliquer avec le bouton droit sur le nom du gestionnaire d’événements sélectionné et cliquer sur **Naviguer vers le gestionnaire d’événements**. Vous accéderez alors directement à la définition de gestionnaire d’événements nouvellement insérée, comme illustré dans l’affichage de l’éditeur de code de votre fichier code-behind pour la page XAML. Le gestionnaire d’événements a déjà la signature correcte, y compris le paramètre *sender* et la classe de données d’événements utilisée par l’événement. Par ailleurs, s’il existe déjà une méthode de gestionnaire avec la signature correcte dans votre code-behind, le nom de cette méthode apparaît dans le menu déroulant à saisie semi-automatique avec l’option **&lt;Nouveau gestionnaire d’événements&gt;**. Vous pouvez aussi appuyer sur la touche Tab, pour aller plus vite, au lieu de cliquer sur les éléments de liste IntelliSense.
 
-## Définition d’un gestionnaire d’événements
+## <a name="defining-an-event-handler"></a>Définition d’un gestionnaire d’événements
 
 Pour les objets qui sont des éléments d’interface utilisateur déclarés en XAML, le code de gestionnaire d’événements est défini dans la classe partielle qui sert de code-behind pour une page XAML. Les gestionnaires d’événements sont des méthodes que vous écrivez dans le cadre de la classe partielle associée à votre code XAML. Ces gestionnaires d’événements sont basés sur les délégués utilisés par un événement particulier. Vos méthodes de gestionnaires d’événements peuvent être publiques ou privées. L’accès privé fonctionne car le gestionnaire et l’instance créés par le code XAML sont finalement associés par la génération de code. En général, il est recommandé de rendre privées vos méthodes de gestionnaires d’événements dans la classe.
 
-**Remarque** Les gestionnaires d’événements pour C++ ne font pas l’objet d’une définition dans les classes partielles, ils sont déclarés dans l’en-tête sous forme de membre de classe privé. Les actions de génération pour un projet C++ se chargent de générer le code qui prend en charge le système de types XAML et le modèle code-behind pour C++.
+**Remarque**  Les gestionnaires d’événements pour C++ ne font pas l’objet d’une définition dans les classes partielles, mais sont déclarés dans l’en-tête sous forme de membre de classe privé. Les actions de génération pour un projet C++ se chargent de générer le code qui prend en charge le système de types XAML et le modèle code-behind pour C++.
 
-### Paramètre *sender* et données d’événement
+### <a name="the-sender-parameter-and-event-data"></a>Paramètre *sender* et données d’événement
 
 Le gestionnaire que vous écrivez pour l’événement peut accéder à deux valeurs disponibles en tant qu’entrée chaque fois que votre gestionnaire est invoqué. La première valeur est *sender*, laquelle est une référence à l’objet auquel le gestionnaire est attaché. Le paramètre *sender* est typé en tant que type **Object** de base. Une technique courante consiste à effectuer un transtypage de *sender* vers un type plus précis. Cette technique s’avère utile si vous prévoyez de vérifier ou modifier l’état sur l’objet *sender* lui-même. En fonction de la conception de votre propre application, vous connaissez généralement un type vers lequel il est sûr d’effectuer un transtypage de *sender*, selon l’élément auquel le gestionnaire est attaché ou d’autres caractéristiques de conception.
 
@@ -83,13 +90,13 @@ La seconde valeur correspond aux données d’événement, qui apparaissent gén
 
 Pour certains événements, les valeurs de propriétés spécifiques des données d’événements sont aussi importantes que le fait de savoir que l’événement s’est produit. Ceci est particulièrement vrai pour les événements d’entrée. Pour les événements de pointeur, la position du pointeur lorsque l’événement s’est produit peut s’avérer importante. Pour les événements de clavier, toutes les pressions de touches possibles déclenchent un événement [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) et [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942). Pour déterminer quelle touche a été enfoncée par l’utilisateur, vous devez accéder au [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072) disponible pour le gestionnaire d’événements. Pour plus d’informations sur la gestion des événements d’entrée, voir [Interactions avec le clavier](https://msdn.microsoft.com/library/windows/apps/mt185607) et [Gérer les entrées du pointeur](https://msdn.microsoft.com/library/windows/apps/mt404610). Les événements et scénarios d’entrée induisent souvent d’autres considérations qui ne sont pas décrites dans cette rubrique, comme la capture du pointeur pour les événements de pointeur, ainsi que les touches de modification et les codes de touche de plateforme pour les événements de clavier.
 
-### Gestionnaires d’événements qui utilisent le modèle **async**
+### <a name="event-handlers-that-use-the-async-pattern"></a>Gestionnaires d’événements qui utilisent le modèle **async**
 
 Dans certains cas, vous pouvez utiliser des API qui emploient un modèle **async** dans un gestionnaire d’événements. Par exemple, vous pouvez utiliser un objet [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) dans un objet [**AppBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) pour afficher un sélecteur de fichiers et interagir avec celui-ci. Toutefois, un grand nombre des API de sélecteur de fichiers sont asynchrones. Elles doivent être appelées dans une étendue **async**/awaitable, et le compilateur se charge de l’opération. Ainsi, vous pouvez ajouter le mot clé **async** à votre gestionnaire d’événements pour que le gestionnaire soit désormais **async** **void**. Votre gestionnaire d’événements est à présent autorisé à effectuer des appels **async**/awaitable.
 
 Pour obtenir un exemple de gestion des événements d’interaction utilisateur à l’aide du modèle **async**, consultez [Accès aux fichiers et sélecteurs](https://msdn.microsoft.com/library/windows/apps/jj655411) (partie de la série de didacticiels [Créer votre première application Windows Runtime en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh974581)). Voir aussi [Appeler des API asynchrones en C].
 
-## Ajout de gestionnaires d’événements dans le code
+## <a name="adding-event-handlers-in-code"></a>Ajout de gestionnaires d’événements dans le code
 
 Le langage XAML ne constitue pas la seule manière d’assigner un gestionnaire d’événements à un objet. Pour ajouter des gestionnaires d’événements à un objet donné dans du code, notamment un objet inutilisable en XAML, vous pouvez utiliser la syntaxe propre au langage.
 
@@ -114,7 +121,7 @@ void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-**Remarque** Il existe une syntaxe plus détaillée. En 2005, C# a ajouté une fonctionnalité appelée inférence de délégué, qui permet à un compilateur d’inférer la nouvelle instance de délégué et permet d’activer la syntaxe précédente plus simple. La syntaxe détaillée est identique d’un point de vue fonctionnel à l’exemple précédent, mais elle permet de créer explicitement une instance de délégué avant de l’inscrire, en tirant ainsi parti de l’inférence de délégué. Cette syntaxe explicite est moins courante, mais il se peut que vous la rencontriez dans certains exemples de code.
+**Remarque**  Il existe une syntaxe plus détaillée. En 2005, C# a ajouté une fonctionnalité appelée inférence de délégué, qui permet à un compilateur d’inférer la nouvelle instance de délégué et permet d’activer la syntaxe précédente plus simple. La syntaxe détaillée est identique d’un point de vue fonctionnel à l’exemple précédent, mais elle permet de créer explicitement une instance de délégué avant de l’inscrire, en tirant ainsi parti de l’inférence de délégué. Cette syntaxe explicite est moins courante, mais il se peut que vous la rencontriez dans certains exemples de code.
 
 ```csharp
 void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
@@ -134,7 +141,7 @@ Private Sub textBlock1_PointerEntered(ByVal sender As Object, ByVal e As Pointer
 End Sub
 ```
 
-**Remarque** Visual Studio et son aire de conception XAML promeuvent généralement la technique de gestion d’instance plutôt que le mot-clé **Handles**. Cela est dû au fait que l’établissement de la connexion des gestionnaires d’événements en XAML fait partie du flux de travail concepteur-développeur habituel et que la technique du mot-clé **Handles** est incompatible avec cette connexion des gestionnaires d’événements en XAML.
+**Remarque**  Visual Studio et son aire de conception XAML promeuvent généralement la technique de gestion d’instance plutôt que le mot clé **Handles**. Cela est dû au fait que l’établissement de la connexion des gestionnaires d’événements en XAML fait partie du flux de travail concepteur-développeur habituel et que la technique du mot-clé **Handles** est incompatible avec cette connexion des gestionnaires d’événements en XAML.
 
 En C++, vous utilisez également la syntaxe **+=**, mais il existe quelques différences par rapport au formulaire C# de base :
 
@@ -147,14 +154,14 @@ textBlock1->PointerEntered +=
 ref new PointerEventHandler(this,&BlankPage::textBlock1_PointerExited);
 ```
 
-### Suppression de gestionnaires d’événements dans le code
+### <a name="removing-event-handlers-in-code"></a>Suppression de gestionnaires d’événements dans le code
 
 Il n’est généralement pas nécessaire de supprimer les gestionnaires d’événements du code, même si vous les avez ajoutés dans le code. Le comportement de la durée de vie de la plupart des objets Windows Runtime tels que les pages et les contrôles fait que les objets sont détruits lorsqu’ils sont déconnectés de l’objet [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) principal et de son arborescence d’éléments visuels. Toutes les références de délégués sont également détruites. .NET effectue cette opération via un nettoyage de la mémoire et Windows Runtime avec C++/CX utilise des références faibles par défaut.
 
 Il existe de rares cas où vous voulez supprimer explicitement des gestionnaires d’événements. Ces situations sont les suivantes :
 
 -   les gestionnaires que vous avez ajoutés pour des événements statiques, lesquels ne peuvent pas être nettoyés de la mémoire de manière conventionnelle. Les événements des classes [**CompositionTarget**](https://msdn.microsoft.com/library/windows/apps/br228126) et [**Clipboard**](https://msdn.microsoft.com/library/windows/apps/br205867) sont des exemples d’événements statiques dans l’API Windows Runtime ;
--   le code de test pour lequel vous voulez une suppression immédiate des gestionnaires, ou le code pour lequel vous voulez permuter les anciens et les nouveaux gestionnaires d’événements pour un événement au moment de l’exécution;
+-   le code de test pour lequel vous voulez une suppression immédiate des gestionnaires, ou le code pour lequel vous voulez permuter les anciens et les nouveaux gestionnaires d’événements pour un événement au moment de l’exécution ;
 -   l’implémentation d’un accesseur **remove** personnalisé ;
 -   les événements statiques personnalisés.
 -   Gestionnaires des navigations au sein des pages.
@@ -173,11 +180,11 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 Vous pouvez également supprimer des gestionnaires dans les cas où l’événement a été ajouté via un attribut XAML, ce qui signifie que le gestionnaire a été ajouté dans du code généré. Cette opération est plus simple si vous avez fourni une valeur**Name** pour l’élément auquel le gestionnaire était attaché, car cela fournit une référence d’objet pour le code ultérieurement ; toutefois, vous pouvez également parcourir l’arborescence d’objets afin de trouver la référence d’objet nécessaire dans les cas où l’objet n’a pas de valeur **Name**.
 
-Si vous devez supprimer un gestionnaire d’événements en C++/CX, vous avez besoin d’un jeton d’inscription, que vous devez avoir reçu de la valeur de retour de l’inscription du gestionnaire d’événements `+=`. Eneffet, la valeur que vous utilisez pour le côté droit de l’annulation de l’inscription`-=` dans la syntaxeC++/CX est le jeton, et non le nom de la méthode. PourC++/CX, vous ne pouvez pas supprimer des gestionnaires qui ont été ajoutés en tant qu’attributXAML, car le code généréC++/CX n’enregistre pas de jeton.
+Si vous devez supprimer un gestionnaire d’événements en C++/CX, vous avez besoin d’un jeton d’inscription, que vous devez avoir reçu de la valeur de retour de l’inscription du gestionnaire d’événements `+=`. En effet, la valeur que vous utilisez pour le côté droit de l’annulation de l’inscription `-=` dans la syntaxe C++/CX est le jeton, et non le nom de la méthode. Pour C++/CX, vous ne pouvez pas supprimer des gestionnaires qui ont été ajoutés en tant qu’attribut XAML, car le code généré C++/CX n’enregistre pas de jeton.
 
-## Événements routés
+## <a name="routed-events"></a>Événements routés
 
-Windows Runtime avec C#, Microsoft Visual Basic ou C++/CX prend en charge le concept d’événement routé pour un ensemble d’événements présents sur la plupart des éléments d’interface utilisateur. Ces événements sont destinés à des scénarios d’entrée et d’interaction de l’utilisateur, et sont implémentés sur la classe de base [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911). Voici une liste des événements d’entrée qui sont des événements routés:
+Windows Runtime avec C#, Microsoft Visual Basic ou C++/CX prend en charge le concept d’événement routé pour un ensemble d’événements présents sur la plupart des éléments d’interface utilisateur. Ces événements sont destinés à des scénarios d’entrée et d’interaction de l’utilisateur, et sont implémentés sur la classe de base [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911). Voici une liste des événements d’entrée qui sont des événements routés :
 
 -   [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922)
 -   [**DragEnter**](https://msdn.microsoft.com/library/windows/apps/br208923)
@@ -211,44 +218,44 @@ Si vous connaissez des technologies Web telles que Dynamic HTML (DHTML) ou HTML5
 
 Quand un événement routé se propage le long de son itinéraire d’événement, tout gestionnaire d’événement attaché accède à une instance partagée des données d’événements. Par conséquent, si l’une des données d’événement est accessible en écriture par un gestionnaire, toute modification apportée aux données d’événement est transmise au gestionnaire suivant et risque de ne plus représenter les données d’événement d’origine de l’événement. Quand un événement a un comportement d’événement routé, la documentation de référence inclut des remarques ou d’autres indications sur le comportement routé.
 
-### Propriété **OriginalSource** de **RoutedEventArgs**
+### <a name="the-originalsource-property-of-routedeventargs"></a>Propriété **OriginalSource** de **RoutedEventArgs**
 
 Lorsqu’un événement se propage sur un itinéraire d’événement, *sender* n’est plus le même objet que celui qui a déclenché l’événement. En effet, *sender* est plutôt l’objet auquel le gestionnaire qui est invoqué est attaché.
 
 Dans certains cas, *sender* n’est pas intéressant et ce que vous voulez savoir, c’est plutôt sur quel objet enfant le pointeur se trouve quand un événement de pointeur se déclenche ou quel objet dans une interface utilisateur plus grande a le focus quand l’utilisateur appuie sur une touche du clavier. Dans ces cas-là, vous pouvez utiliser la valeur de la propriété [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810). À tous les stades de l’itinéraire, **OriginalSource** signale l’objet d’origine qui a déclenché l’événement, plutôt que l’objet auquel le gestionnaire est attaché. Toutefois, pour les événements d’entrée [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911), cet objet d’origine est souvent un objet qui n’est pas immédiatement visible dans le code XAML de définition de l’interface utilisateur au niveau de la page. Au lieu de cela, cet objet source d’origine peut être une partie basée sur un modèle d’un contrôle. Par exemple, si l’utilisateur passe le pointeur au-dessus du bord d’un objet [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), pour la plupart des événements de pointeur, l’objet **OriginalSource** est une partie de modèle [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) dans la propriété [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465), et non l’objet **Button** lui-même.
 
-**Conseil** La propagation d’événements d’entrée est particulièrement utile si vous créez un contrôle basé sur un modèle. Tout contrôle qui possède un modèle peut se voir appliquer un nouveau modèle par son consommateur. Le consommateur qui essaie de recréer un modèle de travail peut involontairement éliminer une gestion des événements déclarée dans le modèle par défaut. Vous pouvez quand même fournir une gestion des événements au niveau du contrôle en attachant des gestionnaires dans le cadre du remplacement de la méthode [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737) dans la définition de classe. Vous pouvez ensuite intercepter les événements d’entrée qui se propagent à la racine du contrôle lors de l’instanciation.
+**Conseil**  La propagation d’événements d’entrée est particulièrement utile si vous créez un contrôle basé sur un modèle. Tout contrôle qui possède un modèle peut se voir appliquer un nouveau modèle par son consommateur. Le consommateur qui essaie de recréer un modèle de travail peut involontairement éliminer une gestion des événements déclarée dans le modèle par défaut. Vous pouvez quand même fournir une gestion des événements au niveau du contrôle en attachant des gestionnaires dans le cadre du remplacement de la méthode [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737) dans la définition de classe. Vous pouvez ensuite intercepter les événements d’entrée qui se propagent à la racine du contrôle lors de l’instanciation.
 
-### Propriété **Handled**
+### <a name="the-handled-property"></a>Propriété **Handled**
 
 Plusieurs classes de données d’événement pour des événements routés spécifiques contiennent une propriété nommée **Handled**. Pour obtenir des exemples, voir [**PointerRoutedEventArgs.Handled**](https://msdn.microsoft.com/library/windows/apps/hh943079), [**KeyRoutedEventArgs.Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073), [**DragEventArgs.Handled**](https://msdn.microsoft.com/library/windows/apps/br242375). Dans tous les cas, **Handled** est une propriété booléenne définissable.
 
-L’affectation à la propriété **Handled** de la valeur **true** influence le comportement du système d’événements. Quand **Handled** a la valeur **true**, le routage s’arrête pour la plupart des gestionnaires d’événements ; l’événement ne poursuit pas l’itinéraire pour informer les autres gestionnaires attachés de ce cas d’événement particulier. Il vous appartient de déterminer ce que signifie la propriété «handled» dans le contexte de l’événement et comment votre application y répond. En fait, **Handled** est un protocole simple qui permet au code d’application d’indiquer qu’une occurrence d’un événement ne doit pas être propagée vers des conteneurs. La logique de votre application a effectué les opérations requises. En revanche, vous devez veiller à ne pas gérer des événements qui doivent probablement être propagés afin que les comportements de contrôle ou système intégrés puissent agir. Par exemple, la gestion des événements de bas niveau dans les parties ou éléments d’un contrôle de sélection peut être néfaste. Le contrôle de sélection peut être à la recherche d’événements d’entrée pour savoir que la sélection doit changer.
+L’affectation à la propriété **Handled** de la valeur **true** influence le comportement du système d’événements. Quand **Handled** a la valeur **true**, le routage s’arrête pour la plupart des gestionnaires d’événements ; l’événement ne poursuit pas l’itinéraire pour informer les autres gestionnaires attachés de ce cas d’événement particulier. Il vous appartient de déterminer ce que signifie la propriété « handled » dans le contexte de l’événement et comment votre application y répond. En fait, **Handled** est un protocole simple qui permet au code d’application d’indiquer qu’une occurrence d’un événement ne doit pas être propagée vers des conteneurs. La logique de votre application a effectué les opérations requises. En revanche, vous devez veiller à ne pas gérer des événements qui doivent probablement être propagés afin que les comportements de contrôle ou système intégrés puissent agir. Par exemple, la gestion des événements de bas niveau dans les parties ou éléments d’un contrôle de sélection peut être néfaste. Le contrôle de sélection peut être à la recherche d’événements d’entrée pour savoir que la sélection doit changer.
 
 Les événements routés ne peuvent pas tous annuler un itinéraire de cette façon et vous pouvez le savoir car ils n’ont pas de propriété **Handled**. Par exemple, [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927) et [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943) se propagent, mais toujours jusqu’à la racine et leurs classes de données d’événements n’ont pas de propriété **Handled** capable d’influencer ce comportement.
 
-##  Gestionnaires d’événements d’entrée dans les contrôles
+##  <a name="input-event-handlers-in-controls"></a>Gestionnaires d’événements d’entrée dans les contrôles
 
 Parfois, des contrôles Windows Runtime spécifiques utilisent le concept **Handled** pour les événements d’entrée en interne. Cela peut donner l’impression qu’un événement d’entrée ne s’est jamais produit, car votre code utilisateur ne peut pas le gérer. Par exemple, la classe [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) inclut une logique qui permet de gérer délibérément l’événement d’entrée général [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971). Il en est ainsi car les boutons déclenchent un événement [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) qui est initialisé par une entrée par appui du pointeur, ainsi que par d’autres modes d’entrée tels que la gestion de touches comme la touche Entrée capables d’appeler un bouton lorsqu’il a le focus. À des fins de conception de la classe de **Button**, l’événement d’entrée brute est géré de manière conceptuelle et les consommateurs de la classe tels que votre code utilisateur peuvent plutôt interagir avec l’événement **Click** propre au contrôle. Les rubriques sur les classes de contrôles spécifiques dans la documentation de référence d’API Windows Runtime indiquent souvent le comportement de gestion des événements implémenté par la classe. Dans certains cas, vous pouvez changer le comportement en substituant les méthodes **On***Event*. Par exemple, vous pouvez modifier la manière dont votre classe dérivée [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) réagit à la saisie au clavier en substituant [**Control.OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982).
 
-##  Inscription de gestionnaires d’événements pour des événements routés déjà gérés
+##  <a name="registering-handlers-for-already-handled-routed-events"></a>Inscription de gestionnaires d’événements pour des événements routés déjà gérés
 
 Nous avons indiqué précédemment que l’affectation à **Handled** de la valeur **true** permettait d’empêcher l’appel de la plupart des gestionnaires d’événements. Toutefois, la méthode [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) propose une technique qui permet d’attacher un gestionnaire qui est toujours invoqué pour l’itinéraire, même si un autre gestionnaire antérieur dans l’itinéraire a affecté à **Handled** la valeur **true** dans les données d’événement partagées. Cette technique s’avère utile si un contrôle que vous utilisez a géré l’événement dans sa composition interne ou pour une logique propre à un contrôle, mais que vous avez quand même besoin d’y répondre sur une instance de contrôle, ou l’interface utilisateur de votre application. Vous devez toutefois l’utiliser avec précaution, car elle peut entrer en contradiction avec l’objectif de **Handled** et éventuellement interrompre les interactions prévues d’un contrôle.
 
 Seuls les événements routés qui ont un identificateur d’événement routé correspondant peuvent utiliser la technique de gestion des événements [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399), car l’identificateur est une entrée requise de la méthode **AddHandler**. Voir la documentation de référence de [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) pour obtenir la liste des événements qui disposent d’identificateurs d’événements routés. Il s’agit, en grande partie, de la même liste d’événements routés que celle présentée précédemment. La différence réside dans les deux dernières lignes de la liste, [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927) et [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943), qui ne possèdent pas d’identificateur d’événement routé. De ce fait, vous ne pouvez pas utiliser **AddHandler** pour ces événements.
 
-## Événements routés en dehors de l’arborescence visuelle
+## <a name="routed-events-outside-the-visual-tree"></a>Événements routés en dehors de l’arborescence visuelle
 
 Certains objets participent à une relation avec l’arborescence visuelle principale, ce qui, de façon conceptuelle, revient à avoir une superposition des principaux visuels. Ces objets ne font pas partie des relations parent-enfant habituelles qui relient tous les éléments de l’arborescence à la racine visuelle. C’est le cas pour toutes les classes [**Popup**](https://msdn.microsoft.com/library/windows/apps/br227842) ou [**ToolTip**](https://msdn.microsoft.com/library/windows/apps/br227608) affichées. Si vous voulez gérer des événements routés à partir d’une classe **Popup** ou **ToolTip**, placez les gestionnaires sur des éléments d’interface utilisateur spécifiques qui se trouvent au sein des classes **Popup** ou **ToolTip** et non sur les éléments **Popup** ou **ToolTip** eux-mêmes. Ne comptez pas sur le routage dans une composition effectuée pour du contenu **Popup** ou **ToolTip**, car le routage des événements routés fonctionne uniquement le long de l’arborescence visuelle principale. Une classe **Popup** ou **ToolTip** n’est pas considérée comme parent des éléments d’interface utilisateur secondaires et ne reçoit jamais l’événement routé, même si elle essaie d’utiliser par exemple l’arrière-plan par défaut de la classe **Popup** en tant que zone de capture des événements d’entrée.
 
-## Test de positionnement et événements d’entrée
+## <a name="hit-testing-and-input-events"></a>Test de positionnement et événements d’entrée
 
 Le *test de positionnement* est l’action qui consiste à déterminer si et où un élément est visible dans l’interface utilisateur durant l’entrée tactile, l’entrée à l’aide de la souris ou l’entrée à l’aide du stylet. Pour les actions tactiles et pour les événements de manipulation ou spécifiques à l’interaction qui sont des conséquences d’une action tactile, un élément doit être visible au test de positionnement pour pouvoir être la source d’événement et déclencher l’événement associé à l’action. Sinon, l’action passe à travers l’élément et atteint tout élément sous-jacent ou élément parent dans l’arborescence visuelle pouvant interagir avec cette entrée. Plusieurs facteurs affectent le test de positionnement, mais vous pouvez déterminer si un élément donné peut déclencher des événements d’entrée en vérifiant sa propriété [**IsHitTestVisible**](https://msdn.microsoft.com/library/windows/apps/br208933). Cette propriété renvoie la valeur **true** uniquement si l’élément remplit les critères suivants :
 
 -   La propriété [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) de l’élément a la valeur [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006).
 -   La valeur de propriété **Background** ou **Fill** de l’élément n’est pas **null**. Une valeur [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) **null** a pour conséquence la transparence et l’invisibilité au test de positionnement. (Pour rendre un élément transparent mais disponible pour le test de positionnement, utilisez un pinceau [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) plutôt que **null**.)
 
-**Remarque** **Background** et **Fill** ne sont pas définis par [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911), mais plutôt par différentes classes dérivées telles que [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) et [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377). Mais les implications des pinceaux que vous utilisez pour les propriétés de premier plan et d’arrière-plan sont les mêmes pour le test de positionnement et les événements d’entrée, quelle que soit la sous-classe qui implémente les propriétés.
+**Remarque**  **Background** et **Fill** ne sont pas définis par [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911), mais plutôt par différentes classes dérivées telles que [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) et [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377). Mais les implications des pinceaux que vous utilisez pour les propriétés de premier plan et d’arrière-plan sont les mêmes pour le test de positionnement et les événements d’entrée, quelle que soit la sous-classe qui implémente les propriétés.
 
 -   Si l’élément est un contrôle, sa propriété [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) doit avoir la valeur **true**.
 -   L’élément doit avoir des dimensions réelles dans la disposition. Un élément dont la propriété [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) ou [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) a la valeur 0 ne déclenche pas d’événement d’entrée.
@@ -259,15 +266,15 @@ La plupart des classes [**Panel**](https://msdn.microsoft.com/library/windows/ap
 
 Vous pouvez déterminer les éléments qui se trouvent à la même position qu’un événement d’entrée utilisateur, que les éléments soient ou non soumis à des tests de positionnement. Pour cela, appelez la méthode [**FindElementsInHostCoordinates**](https://msdn.microsoft.com/library/windows/apps/br243039). Comme son nom l’indique, cette méthode recherche les éléments à un emplacement relatif à un élément hôte spécifié. Néanmoins, les transformations appliquées et les modifications de disposition peuvent ajuster le système de coordonnées relatives d’un élément et par conséquent avoir un impact sur les éléments qui sont trouvés à un emplacement donné.
 
-## Commandes
+## <a name="commanding"></a>Commandes
 
 Un petit nombre d’éléments d’interface utilisateur prend en charge les *commandes*. Les commandes utilisent les événements routés associés à une entrée dans leur implémentation sous-jacente et permettent de traiter l’entrée d’interface utilisateur associée (une certaine action du pointeur, une touche d’accès rapide spécifique) en invoquant un seul gestionnaire de commandes. Si les commandes sont disponibles pour un élément d’interface utilisateur, envisagez d’utiliser ses API de commandes plutôt que les événements d’entrée discrets. Vous utilisez généralement une référence **Binding** dans les propriétés d’une classe qui définit le modèle d’affichage pour les données. Les propriétés contiennent des commandes nommées qui implémentent le modèle de commandes **ICommand** spécifique au langage. Pour plus d’informations, voir [**ButtonBase.Command**](https://msdn.microsoft.com/library/windows/apps/br227740).
 
-## Événements personnalisés dans Windows Runtime
+## <a name="custom-events-in-the-windows-runtime"></a>Événements personnalisés dans Windows Runtime
 
 Dans le cadre de la définition d’événements personnalisés, la façon dont vous ajoutez l’événement et ce qu’il signifie pour votre conception de classe dépendent beaucoup du langage de programmation utilisé.
 
--   Pour C# et Visual Basic, vous définissez un événement CLR. Vous pouvez utiliser le modèle d’événement .NET standard, pourvu que vous n’utilisiez pas d’accesseurs personnalisés (**add**/**remove**). Conseils supplémentaires:
+-   Pour C# et Visual Basic, vous définissez un événement CLR. Vous pouvez utiliser le modèle d’événement .NET standard, pourvu que vous n’utilisiez pas d’accesseurs personnalisés (**add**/**remove**). Conseils supplémentaires :
     -   Pour le gestionnaire d’événements, il est conseillé d’utiliser [**System.EventHandler<TEventArgs>**](https://msdn.microsoft.com/library/windows/apps/xaml/db0etb8x.aspx), car il possède une traduction intégrée vers le délégué d’événement générique Windows Runtime [**EventHandler<T>**](https://msdn.microsoft.com/library/windows/apps/br206577).
     -   Ne basez pas votre classe de données d’événements sur la classe [**System.EventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/system.eventargs.aspx), car elle n’effectue pas de traduction vers Windows Runtime. Utilisez une classe de données d’événements existante ou aucune classe de base.
     -   Si vous utilisez des accesseurs personnalisés, voir [Événements personnalisés et accesseurs d’événement dans les composants Windows Runtime](https://msdn.microsoft.com/library/windows/apps/xaml/hh972883.aspx).
@@ -279,7 +286,7 @@ Vous ne pouvez pas déclarer un événement routé personnalisé pour Windows Ru
 
 La définition d’un événement personnalisé s’effectue généralement dans le cadre de l’exercice de définition d’un contrôle personnalisé. Il est courant d’avoir une propriété de dépendance ayant un rappel de propriété modifiée, et de définir également un événement personnalisé qui est déclenché par ce rappel de propriété modifiée dans certains ou tous les cas. Les consommateurs de votre contrôle n’ont pas accès au rappel de propriété modifiée défini, mais avoir un événement de notification disponible est la prochaine meilleure mesure à prendre. Pour plus d’informations, voir [Propriétés de dépendance personnalisées](custom-dependency-properties.md).
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Vue d’ensemble du langage XAML](xaml-overview.md)
 * [Démarrage rapide : entrée tactile](https://msdn.microsoft.com/library/windows/apps/xaml/hh465387)
@@ -288,10 +295,5 @@ La définition d’un événement personnalisé s’effectue généralement dans
 * [Création de composants Windows Runtime](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

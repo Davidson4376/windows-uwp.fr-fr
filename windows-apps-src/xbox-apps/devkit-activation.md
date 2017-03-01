@@ -1,16 +1,24 @@
 ---
 author: Mtoepke
 title: "Activation du Mode développeur Xbox One"
-description: "Comment activer le Mode développeur afin de pouvoir basculer du Mode commercial au Mode développeur et inversement."
+description: "Procédure d’activation du mode développeur de façon à pouvoir basculer du mode commercial vers le mode développeur et inversement."
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 translationtype: Human Translation
-ms.sourcegitcommit: 1e9abda6e2b505860bfbdbdc1e19193f0ebc8a6b
-ms.openlocfilehash: 903b291ab114298ec556e812f90c3fe27db37215
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 12022ad5ca1b70307b3d5b780ffbc366172113e3
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="xbox-one-developer-mode-activation"></a>Activation du Mode développeur Xbox One
+# <a name="xbox-one-developer-mode-activation"></a>Activation du mode développeur Xbox One
 
-* [Fonctionnement du Mode développeur](#how-developer-mode-works)
+* [Fonctionnement du mode développeur](#how-developer-mode-works)
 * [Activer le Mode développeur sur votre console Xbox One commerciale](#activate-developer-mode-on-your-retail-xbox-one-console)  
 * [Basculer entre le Mode commercial et développeur](#switch-between-retail-and-developer-mode)
 
@@ -25,12 +33,12 @@ Ce mode peut être activé sur n’importe quelle console Xbox One commerciale. 
 
 ## <a name="activate-developer-mode-on-your-retail-xbox-one-console"></a>Activer le Mode développeur sur votre console Xbox One commerciale
 
-1.  Démarrez votre console Xbox One.
+1.    Démarrez votre console Xbox One.
 
-2.  Recherchez l’application Dev Mode Activation dans le Marché Xbox et installez-la.  
+2.    Recherchez l’application Dev Mode Activation dans le Marché Xbox et installez-la.  
     ![Installer l’application Dev Mode Activation](images/activation-store-search.png)
 
-3.  Accédez à **Mes jeux et applications** > **Applications**.
+3.    Accédez à **Mes jeux et applications** > **Applications**.
 
     ![Application Dev Mode Activation](images/activation-step-3.png)
 4. Ouvrez l’application Dev Mode Activation.    
@@ -38,27 +46,27 @@ Ce mode peut être activé sur n’importe quelle console Xbox One commerciale. 
     > [!NOTE]
     > Pour jouer à des jeux et utiliser des applications, vous devez passer en mode commercial. Les applications chargées de manière indépendante fonctionnent uniquement en mode développeur.
 
-5.  Notez le code affiché dans l’application Dev Mode Activation.  
+5.    Notez le code affiché dans l’application Dev Mode Activation.  
 
     ![Activation - Étape 5](images/activation-step-5.png)  
     
-6.  Accédez à [developer.microsoft.com/xboxactivate](https://developer.microsoft.com/xboxactivate).
-7.  Connectez-vous au Centre de développement à l’aide du compte correspondant.  
-8.  Entrez le code d’activation affiché dans l’application Dev Mode Activation.   
+6.    Accédez à [developer.microsoft.com/xboxactivate](https://developer.microsoft.com/xboxactivate).
+7.    Connectez-vous au Centre de développement à l’aide du compte correspondant.  
+8.    Entrez le code d’activation affiché dans l’application Dev Mode Activation.   
    
     > [!NOTE]
     > Vous disposez d’un nombre limité d’activations associées à votre compte. Une fois le Mode développeur activé, le Centre de développement indique que vous avez utilisé une des activations associées à votre compte. 
     
     ![Activation - Étape 8](images/activation-step-8.png)    
     
-9.  Cliquez sur **Accepter et activer**. La page sera rechargée et votre appareil apparaîtra dans le tableau.
+9.    Cliquez sur **Accepter et activer**. La page sera rechargée et votre appareil apparaîtra dans le tableau.
     
     > [!NOTE]
     > Pour plus d’informations, voir [Programme d’activation du mode développeur Xbox One](http://go.microsoft.com/fwlink/p/?LinkId=760399).
 
-10. Après avoir saisi votre code d’activation, votre console affiche un écran de progression pour le processus d’activation.  
+10.    Après avoir saisi votre code d’activation, votre console affiche un écran de progression pour le processus d’activation.  
     
-11. Une fois l’activation est terminée, ouvrez l’application Dev Mode Activation, puis cliquez sur **Basculer et redémarrer** pour accéder au Mode développeur. Notez que cette opération peut être plus longue que d’habitude.  
+11.    Une fois l’activation est terminée, ouvrez l’application Dev Mode Activation, puis cliquez sur **Basculer et redémarrer** pour accéder au Mode développeur. Notez que cette opération peut être plus longue que d’habitude.  
 
     ![Activation - Étape 12](images/activation-step-12.png)   
     
@@ -78,9 +86,4 @@ Une fois le Mode développeur activé sur votre console, utilisez **Dev Home** p
 ## <a name="see-also"></a>Voir aussi
 - [Désactivation du Mode développeur Xbox One](devkit-deactivation.md)
 - [UWP sur Xbox One](index.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

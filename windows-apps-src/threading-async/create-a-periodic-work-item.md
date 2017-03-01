@@ -3,14 +3,21 @@ author: TylerMSFT
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
 title: "Créer un élément de travail périodique"
 description: "Découvrez comment créer un élément de travail qui se reproduit régulièrement."
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, élément de travail périodique, threads, minuteurs"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 11e4c5d2ece918854620a89062e164fba7f48953
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 66e8b283631e6a74aa1dabeb53bfc86c304a642c
+ms.lasthandoff: 02/07/2017
 
 ---
-# Créer un élément de travail périodique
+# <a name="create-a-periodic-work-item"></a>Créer un élément de travail périodique
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -19,168 +26,168 @@ ms.openlocfilehash: 11e4c5d2ece918854620a89062e164fba7f48953
 
 Découvrez comment créer un élément de travail qui se reproduit régulièrement.
 
-## Créer l’élément de travail périodique
+## <a name="create-the-periodic-work-item"></a>Créer l’élément de travail périodique
 
-Utilisez la méthode [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) pour créer un élément de travail périodique. Fournissez une expression lambda qui effectue la tâche, puis utilisez le paramètre *period* pour spécifier l’intervalle entre les envois. La période est spécifiée à l’aide d’une structure [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996). L’élément de travail est renvoyé chaque fois que la période est écoulée; vérifiez donc que la période est suffisamment longue pour que la tâche s’accomplisse.
+Utilisez la méthode [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) pour créer un élément de travail périodique. Fournissez une expression lambda qui effectue la tâche, puis utilisez le paramètre *period* pour spécifier l’intervalle entre les envois. La période est spécifiée à l’aide d’une structure [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996). L’élément de travail est renvoyé chaque fois que la période est écoulée ; vérifiez donc que la période est suffisamment longue pour que la tâche s’accomplisse.
 
 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) retourne un objet [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587). Stockez cet objet au cas où le minuteur devrait être annulé.
 
 > **Remarque** Évitez de spécifier la valeur zéro (ou toute valeur inférieure à une milliseconde) pour l’intervalle. Sinon, cela amène le minuteur périodique à se comporter comme un minuteur à déclenchement unique.
 
-> **Remarque** Vous pouvez utiliser [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
+> **Remarque**  Vous pouvez utiliser [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
-L’exemple suivant crée un élément de travail qui s’exécute une fois toutes les 60 secondes:
+L’exemple suivant crée un élément de travail qui s’exécute une fois toutes les 60 secondes :
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
 > TimeSpan period = TimeSpan.FromSeconds(60);
-> 
+>
 > ThreadPoolTimer PeriodicTimer = ThreadPoolTimer.CreatePeriodicTimer((source) =>
 >     {
->         // 
+>         //
 >         // TODO: Work
->         // 
+>         //
 >         
->         // 
+>         //
 >         // Update the UI thread by using the UI core dispatcher.
->         // 
+>         //
 >         Dispatcher.RunAsync(CoreDispatcherPriority.High,
 >             () =>
 >             {
->                 // 
+>                 //
 >                 // UI components can be accessed within this scope.
->                 // 
-> 
+>                 //
+>
 >             });
-> 
+>
 >     }, period);
 > ```
 > ``` cpp
 > TimeSpan period;
 > period.Duration = 60 * 10000000; // 10,000,000 ticks per second
-> 
+>
 > ThreadPoolTimer ^ PeriodicTimer = ThreadPoolTimer::CreatePeriodicTimer(
 >         ref new TimerElapsedHandler([this](ThreadPoolTimer^ source)
 >         {
->             // 
+>             //
 >             // TODO: Work
->             // 
+>             //
 >             
->             // 
+>             //
 >             // Update the UI thread by using the UI core dispatcher.
->             // 
+>             //
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
 >                 ref new DispatchedHandler([this]()
 >                 {
->                     // 
+>                     //
 >                     // UI components can be accessed within this scope.
->                     // 
+>                     //
 >                         
 >                 }));
-> 
+>
 >         }), period);
 > ```
 
-## Gérer l’annulation de l’élément périodique (facultatif)
+## <a name="handle-cancellation-of-the-periodic-work-item-optional"></a>Gérer l’annulation de l’élément périodique (facultatif)
 
 Si nécessaire, vous pouvez gérer l’annulation du minuteur périodique avec un objet [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Utilisez la surcharge [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) pour fournir une expression lambda supplémentaire qui gère l’annulation de l’élément de travail périodique.
 
-L’exemple suivant crée un élément de travail périodique qui se reproduit toutes les 60secondes et fournit également un gestionnaire d’annulation:
+L’exemple suivant crée un élément de travail périodique qui se reproduit toutes les 60 secondes et fournit également un gestionnaire d’annulation :
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
 > using Windows.System.Threading;
-> 
+>
 >     TimeSpan period = TimeSpan.FromSeconds(60);
-> 
+>
 >     ThreadPoolTimer PeriodicTimer = ThreadPoolTimer.CreatePeriodicTimer((source) =>
 >     {
->         // 
+>         //
 >         // TODO: Work
->         // 
+>         //
 >         
->         // 
+>         //
 >         // Update the UI thread by using the UI core dispatcher.
->         // 
+>         //
 >         Dispatcher.RunAsync(CoreDispatcherPriority.High,
 >             () =>
 >             {
->                 // 
+>                 //
 >                 // UI components can be accessed within this scope.
->                 // 
-> 
+>                 //
+>
 >             });
 >     },
 >     period,
 >     (source) =>
 >     {
->         // 
+>         //
 >         // TODO: Handle periodic timer cancellation.
->         // 
-> 
->         // 
+>         //
+>
+>         //
 >         // Update the UI thread by using the UI core dispatcher.
->         // 
+>         //
 >         Dispatcher->RunAsync(CoreDispatcherPriority.High,
 >             ()=>
 >             {
->                 // 
+>                 //
 >                 // UI components can be accessed within this scope.
 >                 //                 
-> 
+>
 >                 // Periodic timer cancelled.
-> 
+>
 >             }));
 >     });
 > ```
 > ``` cpp
 > using namespace Windows::System::Threading;
 > using namespace Windows::UI::Core;
-> 
+>
 > TimeSpan period;
 > period.Duration = 60 * 10000000; // 10,000,000 ticks per second
-> 
+>
 > ThreadPoolTimer ^ PeriodicTimer = ThreadPoolTimer::CreatePeriodicTimer(
 >         ref new TimerElapsedHandler([this](ThreadPoolTimer^ source)
 >         {
->             // 
+>             //
 >             // TODO: Work
->             // 
+>             //
 >                 
->             // 
+>             //
 >             // Update the UI thread by using the UI core dispatcher.
->             // 
+>             //
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
 >                 ref new DispatchedHandler([this]()
 >                 {
->                     // 
+>                     //
 >                     // UI components can be accessed within this scope.
->                     // 
-> 
+>                     //
+>
 >                 }));
-> 
+>
 >         }),
 >         period,
 >         ref new TimerDestroyedHandler([&](ThreadPoolTimer ^ source)
 >         {
->             // 
+>             //
 >             // TODO: Handle periodic timer cancellation.
->             // 
-> 
+>             //
+>
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
 >                 ref new DispatchedHandler([&]()
 >                 {
->                     // 
+>                     //
 >                     // UI components can be accessed within this scope.
->                     // 
-> 
+>                     //
+>
 >                     // Periodic timer cancelled.
-> 
+>
 >                 }));
 >         }));
 > ```
 
-## Annuler le minuteur
+## <a name="cancel-the-timer"></a>Annuler le minuteur
 
 Si nécessaire, appelez la méthode [**Cancel**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) pour mettre fin à la répétition de l’élément de travail périodique. Si l’élément de travail est en cours d’exécution lorsque le minuteur périodique est annulé, il est autorisé à se terminer. L’objet [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (s’il est fourni) est appelé lorsque toutes les instances de l’élément de travail périodique sont terminées.
 
@@ -192,20 +199,14 @@ Si nécessaire, appelez la méthode [**Cancel**](https://msdn.microsoft.com/libr
 > PeriodicTimer->Cancel();
 > ```
 
-## Notes
+## <a name="remarks"></a>Notes
 
 Pour obtenir des informations sur les minuteurs à déclenchement unique, voir [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md).
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Envoyer un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
 * [Meilleures pratiques pour l’utilisation du pool de threads](best-practices-for-using-the-thread-pool.md)
 * [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

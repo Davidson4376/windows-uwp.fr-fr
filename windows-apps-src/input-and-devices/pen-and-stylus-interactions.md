@@ -5,15 +5,16 @@ title: "Interactions avec le stylet et Windows Ink dans les applications UWP"
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in UWP apps
 template: detail.hbs
-keywords: "Windows Ink, entrée manuscrite Windows, DirectInk, InkPresenter, InkCanvas"
+keywords: "Windows Ink, entrée manuscrite Windows, DirectInk, InkPresenter, InkCanvas, reconnaissance de l’écriture manuscrite, interaction utilisateur, entrées"
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: c5e42f812cc0ed128ebb5c533ef72539baeef93d
-ms.openlocfilehash: f2de946ca7210cf3f4c170c73902c1a727067e7c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fd65e2ea02ea52425656e584b3fa495512030c76
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -30,7 +31,7 @@ ms.openlocfilehash: f2de946ca7210cf3f4c170c73902c1a727067e7c
 -->
 
 ![Stylet Surface](images/ink/hero-small.png)  
-*Stylet Surface* (disponible à l’achat dans la [Boutique Microsoft](https://aka.ms/purchasesurfacepen)).
+*Stylet Surface* (disponible à l’achat dans le [Microsoft Store](https://aka.ms/purchasesurfacepen)).
 
 ## <a name="overview"></a>Vue d’ensemble
 
@@ -494,9 +495,4 @@ Pour obtenir un exemple complet de cette fonctionnalité, consultez [l’exemple
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

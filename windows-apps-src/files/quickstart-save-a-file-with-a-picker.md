@@ -3,9 +3,16 @@ author: laurenhughes
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
 title: "Enregistrer un fichier avec un sélecteur"
 description: "Utilisez FileSavePicker pour permettre aux utilisateurs de spécifier le nom et l’emplacement où ils souhaitent que votre application enregistre un fichier."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: ae6a9806e982a866834371a60788f7a788b04e47
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 46f79b34762eeb3424b887662418105e2e8a3ec2
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -22,7 +29,7 @@ ms.openlocfilehash: ae6a9806e982a866834371a60788f7a788b04e47
 
 Utilisez [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) pour permettre aux utilisateurs de spécifier le nom et l’emplacement où ils souhaitent que votre application enregistre un fichier.
 
-> **Remarque** Consultez aussi l’[exemple de sélecteur de fichiers](http://go.microsoft.com/fwlink/p/?linkid=619994).
+> **Remarque** Consultez également l’[exemple de sélecteur de fichiers](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
  
 
@@ -111,9 +118,4 @@ L’exemple vérifie que le fichier est valide et y écrit son propre nom de fic
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

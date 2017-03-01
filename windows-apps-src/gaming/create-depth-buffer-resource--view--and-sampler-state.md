@@ -3,21 +3,28 @@ author: mtoepke
 title: "Créer des ressources de périphérique pour un tampon de profondeur"
 description: "Découvrez comment créer les ressources de périphérique Direct3D nécessaires pour prendre en charge le test de profondeur des volumes d’ombre."
 ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, jeux, direct3d, tampon de profondeur"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 85fb020e7d476d3b2095875376903c5e28f08d94
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 87e4248545288f4725e0cf0b104a75f1925ad3a3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Créer des ressources de périphérique pour un tampon de profondeur
+# <a name="create-depth-buffer-device-resources"></a>Créer des ressources de périphérique pour un tampon de profondeur
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Découvrez comment créer les ressources de périphérique Direct3D nécessaires pour prendre en charge le test de profondeur des volumes d’ombre. Partie 1 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
-## Ressources nécessaires
+## <a name="resources-youll-need"></a>Ressources nécessaires
 
 
 Le rendu d’un plan de profondeur pour les volumes d’ombre nécessite les ressources suivantes liées aux périphériques Direct3D :
@@ -32,7 +39,7 @@ Le rendu d’un plan de profondeur pour les volumes d’ombre nécessite les res
 
 Notez que la création de ces ressources doit être incluse dans une routine de création de ressources liées au périphérique. De cette façon, votre convertisseur peut les recréer si (par exemple) un nouveau pilote de périphérique est installé ou si l’utilisateur déplace votre application sur un moniteur associé à une autre carte graphique.
 
-## Vérifier la prise en charge des fonctionnalités
+## <a name="check-feature-support"></a>Vérifier la prise en charge des fonctionnalités
 
 
 Avant de créer le plan de profondeur, appelez la méthode [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) sur le périphérique Direct3D, demandez **D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT** et fournissez une structure [**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569).
@@ -54,7 +61,7 @@ if (isD3D9ShadowSupported.SupportsDepthAsTextureWithLessEqualComparisonFilter)
 
 Si cette fonctionnalité n’est pas prise en charge, n’essayez pas de charger des nuanceurs compilés pour le modèle de nuanceur 4 niveau 9\_x, lesquels appellent des fonctions de comparaison d’exemples. Dans de nombreux cas, l’absence de prise en charge de cette fonctionnalité signifie que le GPU est un périphérique hérité doté d’un pilote qui n’est pas mis à jour pour prendre en charge au moins WDDM 1.2. Si le périphérique prend en charge au moins le niveau de fonctionnalité 10\_0, alors vous pouvez charger un nuanceur de comparaison d’exemples compilé pour le modèle de nuanceur 4\_0 à la place.
 
-## Créer un tampon de profondeur
+## <a name="create-depth-buffer"></a>Créer un tampon de profondeur
 
 
 Pour commencer, essayez de créer le plan de profondeur dans un format de profondeur haute précision. Configurez d’abord les propriétés de la vue de ressource de nuanceur correspondantes. Si la création de ressource échoue, par exemple en raison d’un manque de mémoire du périphérique ou d’un format non pris en charge par le matériel, essayez un format de moindre précision et modifiez la correspondance des propriétés.
@@ -107,7 +114,7 @@ hr = pD3DDevice->CreateShaderResourceView(
     );
 ```
 
-## Créer un état de comparaison
+## <a name="create-comparison-state"></a>Créer un état de comparaison
 
 
 À présent, créez l’objet d’état de l’échantillonneur de comparaison. Le niveau de fonctionnalité 9\_1 prend uniquement en charge D3D11\_COMPARISON\_LESS\_EQUAL. Les options de filtre sont expliquées plus en détail dans [Prise en charge des plans d’ombres sur une gamme de matériels](target-a-range-of-hardware.md) ou vous pouvez choisir le filtrage de points pour des plans d’ombres plus rapides.
@@ -146,7 +153,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-## Créer des états de rendu
+## <a name="create-render-states"></a>Créer des états de rendu
 
 
 Créez maintenant un état de rendu servant à activer l’élimination des faces avant. Notez que les périphériques de niveau de fonctionnalité 9\_1 requièrent que **DepthClipEnable** soit défini sur **true**.
@@ -182,7 +189,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-## Créer des tampons constants
+## <a name="create-constant-buffers"></a>Créer des tampons constants
 
 
 N’oubliez pas de créer un tampon constant pour le rendu du point de vue de la lumière. Vous pouvez aussi l’utiliser pour spécifier au nuanceur la position de la lumière. Utilisez une matrice de perspective pour les lumières à points et une matrice orthogonale pour les lumières directionnelles (comme les rayons du soleil).
@@ -239,7 +246,7 @@ context->UpdateSubresource(
     );
 ```
 
-## Créer une fenêtre d’affichage
+## <a name="create-a-viewport"></a>Créer une fenêtre d’affichage
 
 
 Vous avez besoin d’une fenêtre d’affichage distincte pour restituer un plan d’ombres. La fenêtre d’affichage n’est pas une ressource basée sur un périphérique, vous êtes donc libre de la créer ailleurs dans votre code. La création de la fenêtre d’affichage avec le plan d’ombres peut faciliter la mise en relation de leurs dimensions respectives.
@@ -261,10 +268,5 @@ Dans la suite de cette procédure pas à pas, vous allez découvrir comment cré
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

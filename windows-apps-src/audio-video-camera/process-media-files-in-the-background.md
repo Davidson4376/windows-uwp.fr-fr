@@ -3,15 +3,22 @@ author: drewbatgit
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
 description: "Cet article vous montre comment utiliser MediaProcessingTrigger et une tâche en arrière-plan pour traiter des fichiers multimédias en arrière-plan."
 title: "Traiter des fichiers multimédias en arrière-plan"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: fb0e8a535ff4e27530fa45aca80b21f17a523c7b
-ms.openlocfilehash: 8a65ce9ed9de050bbcee2612bf53c5bfd44ffc72
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c7f3262c30797c8ce447b3e97a5cb7dd6d2ea025
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Traiter des fichiers multimédias en arrière-plan
+# <a name="process-media-files-in-the-background"></a>Traiter des fichiers multimédias en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous montre comment utiliser [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) et une tâche en arrière-plan pour traiter des fichiers multimédias en arrière-plan.
@@ -24,7 +31,7 @@ Pour obtenir des informations plus détaillées sur les différentes fonctionnal
 -   [Lancement de tâches de reprise et en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt227652)
 -   [Vignettes, badges et notifications](https://msdn.microsoft.com/library/windows/apps/mt185606)
 
-## Créer une tâche de traitement multimédia en arrière-plan
+## <a name="create-a-media-processing-background-task"></a>Créer une tâche de traitement multimédia en arrière-plan
 
 Pour ajouter une tâche en arrière-plan à votre solution existante dans Microsoft Visual Studio, entrez un nom pour votre composition.
 
@@ -33,7 +40,7 @@ Pour ajouter une tâche en arrière-plan à votre solution existante dans Micros
 3.  Entrez un nom pour votre nouveau projet de composant. Cet exemple utilise le nom de projet **MediaProcessingBackgroundTask**.
 4.  Cliquez sur OK.
 
-Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur l’icône du fichier « Class1.cs » qui est créé par défaut et sélectionnez **Renommer**. Renommez le fichier «MediaProcessingTask.cs». Lorsque Visual Studio vous demande si vous souhaitez renommer toutes les références à cette classe, cliquez sur **Oui**.
+Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur l’icône du fichier « Class1.cs » qui est créé par défaut et sélectionnez **Renommer**. Renommez le fichier « MediaProcessingTask.cs ». Lorsque Visual Studio vous demande si vous souhaitez renommer toutes les références à cette classe, cliquez sur **Oui**.
 
 Dans le fichier de classe renommé, ajoutez les directives **using** suivantes pour inclure ces espaces de noms dans votre projet.
                                   
@@ -43,7 +50,7 @@ Mettez à jour votre déclaration de classe pour faire en sorte que votre classe
 
 [!code-cs[BackgroundClass](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundClass)]
 
-Ajoutez les variables membres suivantes à votre classe:
+Ajoutez les variables membres suivantes à votre classe :
 
 -   Un objet [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797) qui sera utilisé pour mettre à jour l’application au premier plan avec la progression de la tâche en arrière-plan.
 -   Un objet [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) qui empêche le système d’arrêter votre tâche en arrière-plan pendant que le transcodage multimédia est exécuté en mode asynchrone.
@@ -82,7 +89,7 @@ Dans le gestionnaire de l’événement [**Canceled**](https://msdn.microsoft.co
 
 [!code-cs[OnCanceled](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetOnCanceled)]
 
-## Enregistrer et lancer la tâche en arrière-plan
+## <a name="register-and-launch-the-background-task"></a>Enregistrer et lancer la tâche en arrière-plan
 
 Avant de pouvoir lancer la tâche en arrière-plan à partir de votre application au premier plan, vous devez mettre à jour le fichier Package.appmanifest de votre application au premier plan pour indiquer au système que votre application utilise une tâche en arrière-plan.
 
@@ -90,7 +97,7 @@ Avant de pouvoir lancer la tâche en arrière-plan à partir de votre applicatio
 2.  Sélectionnez l’onglet **Déclarations**.
 3.  Dans **Déclarations disponibles**, sélectionnez **Tâches en arrière-plan**, puis cliquez sur **Ajouter**.
 4.  Sous **Déclarations prises en charge**, vérifiez que l’élément **Tâches en arrière-plan** est sélectionné. Sous **Propriétés**, cochez la case **Traitement multimédia**.
-5.  Dans la zone de texte **Point d’entrée**, spécifiez l’espace de noms et le nom de classe de votre test en arrière-plan, séparés par un point. Pour cet exemple, l’entrée est:
+5.  Dans la zone de texte **Point d’entrée**, spécifiez l’espace de noms et le nom de classe de votre test en arrière-plan, séparés par un point. Pour cet exemple, l’entrée est :
    ```csharp
    MediaProcessingBackgroundTask.MediaProcessingTask
    ```
@@ -140,10 +147,5 @@ Le gestionnaire d’événements **OnCompleted** est appelé lorsque l’exécut
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

@@ -3,15 +3,22 @@ author: DelfCo
 description: "Ce que vous devez faire pour toute application réseau."
 title: "Notions de base en matière de réseau"
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 28cf7084fd7ea6ad41c7c2817522891617928abb
-ms.openlocfilehash: 13457b7da3472f3530805198a74b3a6b2ff78f50
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d24d1ff9408585246aae4c4849d3af5e8f4846be
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="networking-basics"></a>Notions de base en matière de réseau
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Ce que vous devez faire pour toute application réseau.
 
@@ -70,7 +77,7 @@ Il existe deux manières de sécuriser une connexion [**StreamSocket**](https://
 
 La valeur SocketProtectionLevel que vous fournissez définit le niveau de protection minimal que vous êtes disposé à autoriser. Toutefois, le niveau de protection éventuelle de la connexion établie est déterminé dans un processus de négociation entre deux points de terminaison de la connexion. Le résultat peut être un niveau de protection plus sécurisé que celui que vous avez spécifié si l’autre point de terminaison requiert un niveau supérieur. La force SSL réellement négociée à l’aide de [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) ou [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) peut être déterminée en obtenant la propriété [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) après le déroulement correct de l’opération asynchrone.
 
-> **Remarque** Votre code ne doit jamais dépendre implicitement d’un niveau de protection spécifique ou d’une hypothèse selon laquelle un niveau de sécurité donné est utilisé par défaut. Le paysage de sécurité change constamment, et les protocoles et les niveaux de protection par défaut seront modifiés au fil du temps pour éviter l’utilisation de protocoles présentant des faiblesses connues. Les valeurs par défaut peuvent varier en fonction de la configuration de chaque ordinateur ou en fonction des logiciels installés et des correctifs appliqués. Si votre application repose sur l’utilisation d’un niveau de sécurité particulier, vous devez explicitement spécifier ce niveau, puis effectuez une vérification pour vous assurer qu’il est réellement utilisé sur la connexion établie.
+> **Remarque**  Votre code ne doit jamais dépendre implicitement d’un niveau de protection spécifique ou d’une hypothèse selon laquelle un niveau de sécurité donné est utilisé par défaut. Le paysage de sécurité change constamment, et les protocoles et les niveaux de protection par défaut seront modifiés au fil du temps pour éviter l’utilisation de protocoles présentant des faiblesses connues. Les valeurs par défaut peuvent varier en fonction de la configuration de chaque ordinateur ou en fonction des logiciels installés et des correctifs appliqués. Si votre application repose sur l’utilisation d’un niveau de sécurité particulier, vous devez explicitement spécifier ce niveau, puis effectuez une vérification pour vous assurer qu’il est réellement utilisé sur la connexion établie.
 
 ### <a name="use-connectasync"></a>Utiliser ConnectAsync
 
@@ -418,10 +425,5 @@ Les API de réseau prennent en charge différentes méthodes permettant de récu
 
 * [Améliorations de l’API de réseau dans Windows 10](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
  
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

@@ -3,45 +3,52 @@ author: jwmsft
 description: "Explique comment implémenter une propriété jointe XAML en tant que propriété de dépendance et comment définir la convention d’accesseur nécessaire pour que votre propriété jointe soit utilisable en XAML."
 title: "Propriétés jointes personnalisées"
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 21ca5391fc4f29c33b3501d05d5ebed986188a3e
-ms.openlocfilehash: 77858a864929c99425f9c008e8f6fb8dfbad0b44
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e05c1b2e8c8391901c28c12b57415ec0e599859d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Propriétés jointes personnalisées
+# <a name="custom-attached-properties"></a>Propriétés jointes personnalisées
 
-\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Une *propriété jointe* est un concept XAML. Les propriétés jointes sont généralement définies comme une forme spécialisée de propriété de dépendance. Cette rubrique explique comment implémenter une propriété jointe en tant que propriété de dépendance et comment définir la convention d’accesseur nécessaire pour que votre propriété jointe soit utilisable en XAML.
 
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 Nous supposons que vous comprenez les propriétés de dépendance du point de vue d’un consommateur de propriétés de dépendance existantes et que vous avez lu la [vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md). Vous devez aussi avoir lu la [vue d’ensemble des propriétés jointes](attached-properties-overview.md). Pour suivre les exemples de cette rubrique, vous devez également comprendre le langage XAML et savoir comment écrire une application Windows Runtime de base en C++, C# ou Visual Basic.
 
-## Scénarios de propriétés jointes
+## <a name="scenarios-for-attached-properties"></a>Scénarios de propriétés jointes
 
 Vous pourriez créer une propriété jointe quand il y a une raison de disposer d’un mécanisme de définition de propriété pour les classes autres que la classe de définition. Les scénarios les plus courants concernent la prise en charge des services et de la disposition. [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) et [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) sont des exemples de propriétés de disposition existantes. Dans un scénario de disposition, les éléments qui existent en tant qu’éléments enfants d’éléments de contrôle de disposition peuvent exprimer des exigences de disposition à leurs éléments parents individuellement, chacun définissant une valeur de propriété que le parent définit comme une propriété jointe. Un exemple de scénario de prise en charge de services dans l’API Windows Runtime est l’ensemble de propriétés jointes de [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527), tel que [**ScrollViewer.IsZoomChainingEnabled**](https://msdn.microsoft.com/library/windows/apps/br209561).
 
 **Attention** Une limitation actuelle de l’implémentation Windows Runtime XAML fait que vous ne pouvez pas animer votre propriété jointe personnalisée.
 
-## Inscription d’une propriété jointe personnalisée
+## <a name="registering-a-custom-attached-property"></a>Inscription d’une propriété jointe personnalisée
 
 Si vous définissez la propriété jointe pour une utilisation strictement sur d’autres types, il n’est pas obligatoire que la classe dans laquelle la propriété est inscrite dérive de [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). En revanche, vous devez faire en sorte que le paramètre cible des accesseurs utilise **DependencyObject** si vous suivez le modèle ordinaire selon lequel votre propriété jointe est également une propriété de dépendance, de manière à pouvoir utiliser la banque de propriétés de stockage.
 
-Définissez votre propriété jointe en tant que propriété de dépendance en déclarant une propriété **public** **static** **readonly** de type [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362). Vous définissez cette propriété à l’aide de la valeur de retour de la méthode [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833). Le nom de la propriété doit correspondre à celui de la propriété jointe que vous spécifiez comme paramètre **RegisterAttached** *name*, avec la chaîne «Property» ajoutée à la fin. Il s’agit de la convention établie pour l’affectation de noms aux identificateurs de propriétés de dépendance en fonction des propriétés qu’ils représentent.
+Définissez votre propriété jointe en tant que propriété de dépendance en déclarant une propriété **public** **static** **readonly** de type [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362). Vous définissez cette propriété à l’aide de la valeur de retour de la méthode [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833). Le nom de la propriété doit correspondre à celui de la propriété jointe que vous spécifiez comme paramètre **RegisterAttached** *name*, avec la chaîne « Property » ajoutée à la fin. Il s’agit de la convention établie pour l’affectation de noms aux identificateurs de propriétés de dépendance en fonction des propriétés qu’ils représentent.
 
 La définition d’une propriété jointe personnalisée et d’une propriété de dépendance personnalisée diffèrent principalement dans la manière dont vous définissez les accesseurs ou wrappers. Au lieu d’utiliser la technique d’enveloppement décrite dans [Propriétés de dépendance personnalisées](custom-dependency-properties.md), vous devez également fournir des méthodes **Get***PropertyName* et **Set***PropertyName* statiques en tant qu’accesseurs pour la propriété jointe. Les accesseurs sont utilisés principalement par l’analyseur XAML, bien que n’importe quel autre appelant puisse aussi les utiliser pour définir des valeurs dans les scénarios non-XAML.
 
-**Important** Si vous ne définissez pas les accesseurs correctement, le processeur XAML ne peut pas accéder à votre propriété jointe et toute personne essayant de l’utiliser obtiendra probablement une erreur d’analyse XAML. De plus, les outils de conception et de codage reposent souvent sur les conventions «\*Property» pour l’affectation de noms aux identificateurs lorsqu’ils rencontrent une propriété de dépendance personnalisée dans un assembly référencé.
+**Important** Si vous ne définissez pas les accesseurs correctement, le processeur XAML ne peut pas accéder à votre propriété jointe et toute personne essayant de l’utiliser obtiendra probablement une erreur d’analyse XAML. De plus, les outils de conception et de codage reposent souvent sur les conventions « \*Property » pour l’affectation de noms aux identificateurs lorsqu’ils rencontrent une propriété de dépendance personnalisée dans un assembly référencé.
 
-## Accesseurs
+## <a name="accessors"></a>Accesseurs
 
 La signature de l’accesseur **Get**_PropertyName_ doit être la suivante.
 
 `public static` _valueType_ **Get**_PropertyName_ `(DependencyObject target)`
 
-Pour MicrosoftVisualBasic, il s’agit de ceci.
+Pour Microsoft Visual Basic, il s’agit de ceci.
 
 ` Public Shared Function Get`_PropertyName_`(ByVal target As DependencyObject) As `_valueType_`)`
 
@@ -59,7 +66,7 @@ L’objet *target* peut être d’un type plus spécifique dans votre implément
 
 **Remarque** Vous pouvez aussi définir une propriété jointe en indiquant l’utilisation prévue dans la syntaxe des éléments de la propriété. Dans ce cas, vous n’avez pas besoin de conversion de type pour les valeurs, mais vous devez vous assurer que les valeurs envisagées peuvent être construites en XAML. [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) est un exemple de propriété jointe existante qui ne prend en charge que l’utilisation des éléments de propriété.
 
-## Exemple de code
+## <a name="code-example"></a>Exemple de code
 
 Cet exemple illustre l’inscription de propriété de dépendance (à l’aide de la méthode [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833)), ainsi que les accesseurs **Get** et **Set**, pour une propriété jointe personnalisée. Dans l’exemple, la propriété jointe se nomme `IsMovable`. Par conséquent, les accesseurs doivent se nommer `GetIsMovable` et `SetIsMovable`. Le propriétaire de la propriété jointe est une classe de service nommée `GameService` qui ne possède pas sa propre interface utilisateur. Son seul objectif est de fournir les services de propriété jointe lorsque la propriété jointe **GameService.IsMovable** est utilisée.
 
@@ -174,7 +181,7 @@ GameService::RegisterDependencyProperties() {
 }
 ```
 
-## Utilisation de votre propriété jointe personnalisée en XAML
+## <a name="using-your-custom-attached-property-in-xaml"></a>Utilisation de votre propriété jointe personnalisée en XAML
 
 Après avoir défini votre propriété jointe et inclus ses membres de prise en charge dans le cadre d’un type personnalisé, vous devez rendre les définitions accessibles pour l’utilisation XAML. Pour cela, vous devez mapper un espace de noms XAML qui fera référence à l’espace de noms de code qui contient la classe pertinente. Dans les cas où vous avez défini la propriété jointe dans le cadre d’une bibliothèque, vous devez inclure cette dernière dans le package de l’application.
 
@@ -202,16 +209,16 @@ Si vous définissez la propriété sur un élément qui se trouve également dan
 
 **Remarque** Si vous écrivez une interface utilisateur XAML en C++, vous devez inclure l’en-tête du type personnalisé qui définit la propriété jointe chaque fois qu’une page XAML utilise ce type. Chaque page XAML a un en-tête code-behind .xaml.h associé. C’est là que vous devez inclure (à l’aide de **\#include**) l’en-tête pour la définition du type de propriétaire de la propriété jointe.
 
-## Type de valeur d’une propriété jointe personnalisée
+## <a name="value-type-of-a-custom-attached-property"></a>Type de valeur d’une propriété jointe personnalisée
 
 Le type utilisé comme type de valeur d’une propriété jointe personnalisée affecte l’utilisation, la définition ou les deux à la fois. Le type de valeur de la propriété jointe est déclaré à plusieurs endroits : dans les signatures des méthodes d’accesseur **Get** et **Set**, et également comme paramètre *propertyType* de l’appel [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833).
 
-Le type de valeur le plus courant pour les propriétés jointes (personnalisées ou autres) est une chaîne simple. En effet, les propriétés jointes sont généralement destinées à des attributs XAML et l’utilisation d’une chaîne comme type de valeur garantit la légèreté des propriétés. D’autres primitives qui offrent une méthode de conversion native en chaînes, telles qu’entier, double ou valeur d’énumération, sont également des types de valeurs courants pour les propriétés jointes. Vous pouvez utiliser d’autres types de valeurs (qui ne prennent pas en charge la conversion de chaîne native) comme valeur de propriété jointe. Toutefois, cela implique de faire un choix en matière d’utilisation ou d’implémentation:
+Le type de valeur le plus courant pour les propriétés jointes (personnalisées ou autres) est une chaîne simple. En effet, les propriétés jointes sont généralement destinées à des attributs XAML et l’utilisation d’une chaîne comme type de valeur garantit la légèreté des propriétés. D’autres primitives qui offrent une méthode de conversion native en chaînes, telles qu’entier, double ou valeur d’énumération, sont également des types de valeurs courants pour les propriétés jointes. Vous pouvez utiliser d’autres types de valeurs (qui ne prennent pas en charge la conversion de chaîne native) comme valeur de propriété jointe. Toutefois, cela implique de faire un choix en matière d’utilisation ou d’implémentation :
 
 - vous pouvez laisser la propriété jointe telle quelle, mais elle peut prendre en charge l’utilisation uniquement quand il s’agit d’un élément de propriété, et la valeur est déclarée en tant qu’élément objet. Dans ce cas, le type de propriété doit prendre en charge l’utilisation de XAML en tant qu’élément objet. Pour les références existantes au Windows Runtime, vérifiez la syntaxe XAML pour vous assurer que le type prend en charge l’utilisation des éléments objets XAML.
 - Vous pouvez laisser la propriété jointe telle quelle, mais utilisez-la uniquement dans le cadre d’un attribut par le biais d’une technique de référence XAML telle que **Binding** ou **StaticResource** qui peut être exprimée sous forme de chaîne.
 
-## En savoir plus sur l’exemple de **Canvas.Left**
+## <a name="more-about-the-canvasleft-example"></a>En savoir plus sur l’exemple de **Canvas.Left**
 
 Dans les précédents exemples d’utilisations de propriétés jointes, nous avons vu différentes façons de définir la propriété jointe [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771). Mais qu’est-ce que cela change à la façon dont une classe [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) interagit avec votre objet, et quand cela se produit-il ? Nous examinerons plus en détail cet exemple particulier, car si vous implémentez une propriété jointe, il est intéressant de voir ce qu’une classe propriétaire de propriété jointe classique a l’intention de faire d’autre avec les valeurs de sa propriété jointe si elle les trouve sur d’autres objets.
 
@@ -219,7 +226,7 @@ La fonction principale d’une classe [**Canvas**](https://msdn.microsoft.com/li
 
 Pour être un panneau pratique, [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) a un comportement qui remplace les méthodes [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) et [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) au niveau de l’infrastructure. C’est en fait l’endroit où **Canvas** recherche les valeurs de propriétés jointes sur ses enfants. Une partie des deux modèles **Measure** et **Arrange** est une boucle qui effectue une itération sur n’importe quel contenu, et un panneau a la propriété [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) qui rend explicite ce qui est supposé être considéré comme l’enfant d’un panneau. Ainsi, le comportement de la disposition de **Canvas** procède à une itération dans ces enfants, et effectue des appels des méthodes [**Canvas.GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) et [**Canvas.GetTop**](https://msdn.microsoft.com/library/windows/apps/br209270) statiques sur chaque enfant pour voir si ces propriétés jointes contiennent une valeur autre que la valeur par défaut (la valeur par défaut est 0). Ces valeurs sont alors utilisées pour positionner de façon absolue chaque enfant dans l’espace réservé à la disposition disponible dans l’objet **Canvas** en fonction des valeurs spécifiques fournies par chaque enfant, et validées à l’aide de la méthode **Arrange**.
 
-Le code ressemble au pseudo-code suivant:
+Le code ressemble au pseudo-code suivant :
 
 ``` syntax
     protected override Size ArrangeOverride(Size finalSize)
@@ -237,16 +244,11 @@ Le code ressemble au pseudo-code suivant:
 
 **Remarque** Pour plus d’informations sur le fonctionnement des panneaux, voir [Vue d’ensemble des panneaux personnalisés XAML](https://msdn.microsoft.com/library/windows/apps/mt228351).
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833)
 * [Vue d’ensemble des propriétés jointes](attached-properties-overview.md)
 * [Propriétés de dépendance personnalisées](custom-dependency-properties.md)
 * [Vue d’ensemble du langage XAML](xaml-overview.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

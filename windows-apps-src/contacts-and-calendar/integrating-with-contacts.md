@@ -3,13 +3,21 @@ author: normesta
 description: Cet article vous explique comment ajouter votre application en regard des actions dans une carte de visite
 MSHAttr: PreferredLib:/library/windows/apps
 title: "Connecter votre application à des actions sur une carte de visite"
+ms.author: normesta
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, contacts, carte de visite, annotation"
+ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 translationtype: Human Translation
-ms.sourcegitcommit: 5c0f6ef1f1a346a66ca554a415d9f24c8a314ae1
-ms.openlocfilehash: 034dc2b7be69763416192014abe24b9bf924c443
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: da64e23714035b6763104d48430371469272a939
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Connecter votre application à des actions sur une carte de visite
+# <a name="connect-your-app-to-actions-on-a-contact-card"></a>Connecter votre application à des actions sur une carte de visite
 
 Votre application peut apparaître en regard des actions sur une carte de visite ou une mini carte de visite. Les utilisateurs peuvent choisir votre application pour effectuer une action telle qu’ouvrir une page de profil, effectuer un appel ou envoyer un message.
 
@@ -19,11 +27,11 @@ Pour commencer, recherchez des contacts existants ou créez-en de nouveaux. Ensu
 
 Pour un exemple plus complet, consultez l’[exemple d’intégration de carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration).
 
-## Rechercher ou créer un contact
+## <a name="find-or-create-a-contact"></a>Rechercher ou créer un contact
 
 Si votre application aide les personnes à interagir, recherchez les contacts dans Windows, puis annotez-les. Si votre application gère les contacts, vous pouvez les ajouter à une liste de contacts Windows, puis les annoter.
 
-### Rechercher un contact
+### <a name="find-a-contact"></a>Rechercher un contact
 
 Recherchez les contacts à l’aide d’un nom, d’une adresse de messagerie ou d’un numéro de téléphone.
 
@@ -37,7 +45,7 @@ contacts = await contactStore.FindContactsAsync(emailAddress);
 Contact contact = contacts[0];
 ```
 
-### Créer un contact
+### <a name="create-a-contact"></a>Créer un contact
 
 Si votre application ressemble davantage à un carnet d’adresses, créez les contacts et ajoutez-les à une liste de contacts.
 
@@ -71,9 +79,9 @@ await contactList.SaveContactAsync(contact);
 
 ```
 
-## Identifier chaque contact avec une annotation
+## <a name="tag-each-contact-with-an-annotation"></a>Identifier chaque contact avec une annotation
 
-Identifiez chaque contact avec une liste des actions (opérations) que votre application peut effectuer (par exemple: appels vidéo et messagerie).
+Identifiez chaque contact avec une liste des actions (opérations) que votre application peut effectuer (par exemple : appels vidéo et messagerie).
 
 Ensuite, associez l’identifiant d’un contact à un identifiant que votre application utilise en interne pour identifier cet utilisateur.
 
@@ -101,7 +109,7 @@ annotation.SupportedOperations = ContactAnnotationOperations.Message |
 await annotationList.TrySaveAnnotationAsync(annotation);
 ```
 
-## S’inscrire pour chaque opération
+## <a name="register-for-each-operation"></a>S’inscrire pour chaque opération
 
 Dans le manifeste de package, inscrivez-vous pour chaque opération répertoriée dans votre annotation.
 
@@ -135,7 +143,7 @@ Vous pouvez également les ajouter dans l’onglet **Declarations** du concepteu
 
 ![Onglet Déclaration du concepteur de manifeste](images/manifest-designer-protocols.png)
 
-## Rechercher votre application en regard des actions d’une carte de visite
+## <a name="find-your-app-next-to-actions-in-a-contact-card"></a>Rechercher votre application en regard des actions d’une carte de visite
 
 Ouvrez l’application Contacts. Votre application s’affiche en regard de chaque action (opération) spécifiée dans votre annotation et votre manifeste de package.
 
@@ -143,7 +151,7 @@ Ouvrez l’application Contacts. Votre application s’affiche en regard de chaq
 
 Si les utilisateurs choisissent votre application pour une action, elle apparaît en tant qu’application par défaut pour cette action à l’ouverture suivante d’une carte de visite par l’utilisateur.
 
-## Rechercher votre application en regard des actions d’une mini carte de visite
+## <a name="find-your-app-next-to-actions-in-a-mini-contact-card"></a>Rechercher votre application en regard des actions d’une mini carte de visite
 
 Dans les mini cartes de visite, votre application apparaît dans les onglets représentant les actions.
 
@@ -174,13 +182,13 @@ Pour découvrir davantage d’exemples avec des mini cartes de visite, consultez
 
 Tout comme avec la carte de visite, chaque onglet enregistre la dernière application utilisée, ce qui facilite l’action de l’utilisateur la fois suivante.
 
-## Effectuer des opérations au cours desquelles les utilisateurs sélectionnent votre application dans une carte de visite
+## <a name="perform-operations-when-users-select-your-app-in-a-contact-card"></a>Effectuer des opérations au cours desquelles les utilisateurs sélectionnent votre application dans une carte de visite
 
 Remplacez la méthode [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) dans votre fichier **App.cs**, puis dirigez les utilisateurs vers une page de votre application. L’[exemple d’intégration de carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration) vous présente une façon de procéder.
 
 Dans le fichier code-behind de la page, remplacez la méthode [Page.OnNavigatedTo](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx). La carte de visite transmet à cette méthode le nom de l’opération et l’identifiant de l’utilisateur.
 
-Pour démarrer une vidéo ou un appel audio, consultez cet exemple: [exemple VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Vous trouverez l’API complète dans l’espace de noms [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx).
+Pour démarrer une vidéo ou un appel audio, consultez cet exemple : [exemple VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Vous trouverez l’API complète dans l’espace de noms [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx).
 
 Pour simplifier la messagerie, consultez l’espace de noms [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.chat.aspx).
 
@@ -209,9 +217,4 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 ```
 
 La propriété ```args.uri.scheme``` comporte le nom de l’opération, et la propriété ```args.uri.Query``` comporte l’identifiant de l’utilisateur.
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

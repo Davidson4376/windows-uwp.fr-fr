@@ -1,22 +1,29 @@
 ---
 author: mtoepke
 title: Comment suspendre une application (DirectX et C++)
-description: "Cette rubrique montre comment enregistrer des données importantes relatives à l’état du système et aux applications lorsque le système interrompt l’exécution de votre application DirectX de plateforme UWP."
+description: "Cet article indique comment enregistrer des données importantes relatives à l’état du système et aux applications lorsque le système suspend votre application DirectX de plateforme Windows universelle (UWP)."
 ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, jeux, suspendre, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: dd7319b254dcaaa5da7a7055bbde299f5e7e62a3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 028350f3e4bf6bda5a72663c009e8117c9311b3e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Comment suspendre une application (DirectX et C++)
+# <a name="how-to-suspend-an-app-directx-and-c"></a>Suspension d’une application (DirectX et C++)
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette rubrique montre comment enregistrer des données importantes relatives à l’état du système et aux applications lorsque le système interrompt l’exécution de votre application DirectX de plateforme Windows universelle.
 
-## Enregistrer le gestionnaire d’événements de suspension
+## <a name="register-the-suspending-event-handler"></a>Enregistrer le gestionnaire d’événements de suspension
 
 
 Tout d’abord, effectuez un enregistrement pour gérer l’événement [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860), qui est déclenché lorsque votre application bascule à l’état « suspendue » suite à une action de l’utilisateur ou du système.
@@ -35,7 +42,7 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## Enregistrer les données d’application avant la suspension
+## <a name="save-any-app-data-before-suspending"></a>Enregistrer les données d’application avant la suspension
 
 
 Lorsque votre application traite l’événement [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860), elle a la possibilité d’enregistrer ses données d’application importantes dans la fonction du gestionnaire. L’application doit utiliser l’API de stockage [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) pour enregistrer les données d’application simples de manière synchrone. Si vous développez un jeu, enregistrez les informations critiques relatives à l’état du jeu. N’oubliez pas de mettre en suspens le traitement audio !
@@ -91,7 +98,7 @@ void App::Run()
 }
 ```
 
-## Appeler Trim()
+## <a name="call-trim"></a>Appeler Trim()
 
 
 À compter de Windows 8.1, toutes les applications du Windows Store DirectX doivent appeler [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) quand elles sont mises en suspens. Cet appel donne instruction au pilote graphique de libérer toutes les mémoires tampons temporaires allouées pour l’application, ce qui limite les chances de voir l’application se terminer pour cause de récupération des ressources de mémoire pendant qu’elle est à l’état de suspension. Il s’agit d’une condition de certification pour Windows 8.1.
@@ -126,12 +133,12 @@ void DX::DeviceResources::Trim()
 }
 ```
 
-## Libérer les ressources exclusives et les descripteurs de fichiers
+## <a name="release-any-exclusive-resources-and-file-handles"></a>Libérer les ressources exclusives et les descripteurs de fichiers
 
 
 Lorsque votre application traite l’événement [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860), elle a également la possibilité de libérer les ressources exclusives et les descripteurs de fichiers. En libérant explicitement les ressources exclusives et les descripteurs de fichiers, vous permettez aux autres applications d’y accéder pendant que votre application ne les utilise pas. Lorsque l’application est activée après un arrêt, elle doit ouvrir ses ressources exclusives et descripteurs de fichiers.
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 
 Le système suspend votre application chaque fois que l’utilisateur bascule vers une autre application ou vers le Bureau. Le système en reprend l’exécution lorsque l’utilisateur revient à votre application. Dès lors, le contenu de vos variables et structures de données restent identiques à ce qu’elles étaient avant que le système ne suspende l’application. Le système rétablit l’application exactement dans l’état où il l’a laissée, de sorte qu’elle semble s’être exécutée en arrière-plan.
@@ -140,7 +147,7 @@ Le système tente de conserver votre application et ses données en mémoire pen
 
 Le système ne vous notifie pas de l’arrêt d’une application. Celle-ci doit donc enregistrer ses données d’application et libérer les ressources exclusives et descripteurs de fichiers au moment où elle est mise en suspens pour ensuite les restaurer lorsque l’application est activée après avoir été arrêtée.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Comment relancer une application (DirectX et C++)](how-to-resume-an-app-directx-and-cpp.md)
 * [Comment activer une application (DirectX et C++)](how-to-activate-an-app-directx-and-cpp.md)
@@ -151,10 +158,5 @@ Le système ne vous notifie pas de l’arrêt d’une application. Celle-ci doit
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

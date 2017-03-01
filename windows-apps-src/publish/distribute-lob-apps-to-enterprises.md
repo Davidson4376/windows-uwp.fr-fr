@@ -1,38 +1,45 @@
 ---
 author: jnHs
-Description: "Vous pouvez publier des applications métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans mettre vos applications à disposition sur le Store de façon étendue."
-title: "Distribuer des applications métier aux entreprises"
+Description: "Vous pouvez publier des applications cœur de métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans rendre vos applications disponibles à grande échelle sur le Windows Store."
+title: "Distribuer des applications cœur de métier aux entreprises"
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 44485b32a7c5580e1a7a0ca9ca7c642e0b9b29d2
-ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 94d12656a122f623240463886297c2378753924b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Distribuer des applications métier aux entreprises
+# <a name="distribute-lob-apps-to-enterprises"></a>Distribuer des applications cœur de métier aux entreprises
 
 
-Vous pouvez publier des applications métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans mettre vos applications à disposition sur le Windows Store de façon étendue.
+Vous pouvez publier des applications cœur de métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans rendre vos applications disponibles à grande échelle sur le Windows Store.
 
-> **Important** Actuellement, seules les applications gratuites peuvent être distribuées exclusivement aux entreprises par le biais du Windows Store pour Entreprises. Si vous soumettez une application payante en tant qu’application métier, elle ne sera pas disponible pour l’entreprise à ce stade. 
+> **Important**  Pour l’instant, seules les applications gratuites peuvent être distribuées exclusivement aux entreprises par le biais du Windows Store pour Entreprises. Si vous soumettez une application payante en tant qu’application métier, elle ne sera pas disponible pour l’entreprise à ce stade. 
 
-## Configuration de l’association d’entreprise
+## <a name="setting-up-the-enterprise-association"></a>Configuration de l’association d’entreprise
 
 
 Lorsque vous envisagez de publier des applications métier exclusivement à l’attention d’une entreprise, la première étape consiste à établir l’association entre votre compte et le magasin privé de l’entreprise.
 
-> **Important** Ce processus d’association doit être initié par l’entreprise et doit être envoyé à l’adresse de messagerie figurant dans les **Coordonnées** de votre compte. Pour plus d’informations, voir [Utilisation des applications métier](http://go.microsoft.com/fwlink/p/?LinkId=698846).
+> **Important**  Ce processus d’association doit être initié par l’entreprise et doit être envoyé à l’adresse e-mail figurant dans les **Coordonnées** de votre compte. Pour plus d’informations, voir [Utilisation des applications métier](http://go.microsoft.com/fwlink/p/?LinkId=698846).
 
 Lorsqu'une entreprise vous invite à publier des applications destinées à son utilisation exclusive, vous recevez un e-mail contenant un lien pour confirmer l'association. Vous pouvez également confirmer ces associations dans la section **Associations d'entreprise**, sous **Paramètres de compte**.
 
 Pour confirmer l'association, cliquez sur **Accepter**. Votre compte pourra désormais publier des applications destinées à une utilisation exclusive par l'entreprise.
 
-## Soumission d'une application métier
+## <a name="submitting-an-lob-app"></a>Soumission d'une application métier
 
 
 Lorsque vous êtes prêt à publier une application destinée à une utilisation exclusive par une entreprise, vous suivez un processus similaire au processus de soumission d'application. L’application est soumise au même processus de certification et doit être conforme à l’ensemble des [stratégies du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944). Seuls quelques aspects du processus sont différents.
 
-### Distribution et visibilité
+### <a name="distribution-and-visibility"></a>Distribution et visibilité
 
 Une fois que vous avez configuré une association d’entreprise, dès lors que vous soumettez une application, une liste déroulante s’affiche dans la section **Distribution et visibilité** de la page **Tarification et disponibilité** relative à la soumission. La sélection par défaut est **Vente au détail**. Pour mettre l’application à la disposition exclusive d’une entreprise, vous devez choisir **Distribution d’applications métier**.
 
@@ -40,9 +47,9 @@ Une fois l’option **Distribution d’applications métier** sélectionnée, le
 
 Sélectionnez les entreprises qui doivent pouvoir accéder à l'application. Elle ne sera accessible à personne d’autre.
 
-> **Remarque** Vous devez sélectionner au moins une entreprise pour publier une application en tant qu’application métier.
+> **Remarque**  Vous devez sélectionner au moins une entreprise pour publier une application en tant qu’application cœur de métier.
 
-### Gestion des licences organisationnelles
+### <a name="organizational-licensing"></a>Gestion des licences organisationnelles
 
 Par défaut, la case **Proposer mon application aux organisations via le service de gestion de licences en volume (en ligne) du Store** est cochée lorsque vous soumettez une application. Lorsque vous soumettez des applications métier, cette case doit être cochée, de sorte que l’entreprise puisse acquérir votre application en volume. Personne ne pourra y accéder, hormis les entreprises que vous avez sélectionnées dans la section **Distribution et visibilité**.
 
@@ -50,10 +57,10 @@ Si vous souhaitez mettre l’application à disposition de l’entreprise à l�
 
 Pour plus d’informations, voir [Options de gestion des licences organisationnelles](organizational-licensing.md).
 
-### Classification par âge
+### <a name="age-ratings"></a>Classification par âge
 Pour les applications métier, la [classification par âge](age-ratings.md) du processus de soumission fonctionne comme pour les applications commerciales. Toutefois, une option supplémentaire vous permet d’indiquer manuellement la classification par âge de votre application dans le Windows Store au lieu de remplir le questionnaire ou d’importer un identificateur de classification IARC existant. Cette classification manuelle ne peut être utilisée qu’avec la distribution métier, donc si vous changez le paramètre **Distribution et visibilité** de l’application en **Vente au détail**, vous devrez répondre au questionnaire de classification par âge avant de pouvoir publier la soumission.
 
-### Déploiement d’applications métier dans les entreprises
+### <a name="enterprise-deployment-of-lob-apps"></a>Déploiement d’applications métier dans les entreprises
 
 Lorsque vous cliquez sur **Envoyer au Store**, le processus de certification de l'application s'exécute. À l'issue de ce processus, un administrateur de l'entreprise doit l'ajouter à son magasin privé dans le portail Windows Store pour Entreprises. L'entreprise peut alors déployer l'application à l'attention de ses utilisateurs.
 
@@ -61,7 +68,7 @@ Lorsque vous cliquez sur **Envoyer au Store**, le processus de certification de 
 
 Pour plus d'informations, voir [Utilisation des applications métier](http://go.microsoft.com/fwlink/p/?LinkId=698846) et [Distribuer des applications à l'aide de votre magasin privé](http://go.microsoft.com/fwlink/p/?LinkId=698847).
 
-### Mise à jour des applications métier
+### <a name="updating-lob-apps"></a>Mise à jour des applications métier
 
 Pour publier les mises à jour d'une application que vous avez déjà publiée en tant qu'application métier, il vous suffit de créer une soumission. Vous pouvez transférer de nouveaux packages ou apporter des modifications, puis cliquer sur **Envoyer au Store** pour mettre à disposition la version mise à jour. Veillez à ce que les sélections d'entreprises sous **Distribution et visibilité** restent les mêmes (sauf si vous souhaitez les modifier, par exemple pour sélectionner une autre entreprise pouvant acquérir l'application ou supprimer l'une des entreprises auxquelles vous l'avez déjà distribuée).
 
@@ -69,7 +76,7 @@ Si vous souhaitez ne plus offrir une application que vous avez déjà publiée e
 
 > **Remarque** Lors de la modification du paramètre d’une application en **Vente au détail**, vous devez répondre au [questionnaire de classification par âge](age-ratings.md) si vous ne l’avez pas déjà fait (même si l’application n’est pas disponible pour de nouvelles acquisitions).
 
-### Distribution d’applications métier par chargement indépendant
+### <a name="distributing-lob-apps-through-sideloading"></a>Distribution d’applications métier par chargement indépendant
 
 En mettant votre application à disposition par le biais du Windows Store pour Entreprises, vous vous assurez qu'elle a été signée par le Store et qu'elle est conforme aux stratégies standard du Store.
 
@@ -83,10 +90,5 @@ Pour plus d'informations, voir [Charger la version test d'applications métier d
 
 
 
-
-
-
-
-<!--HONumber=Sep16_HO1-->
 
 
