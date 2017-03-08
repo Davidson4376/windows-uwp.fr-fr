@@ -1,11 +1,18 @@
 ---
 author: mcleanbyron
 ms.assetid: 2ed21281-f996-402d-a968-d1320a4691df
-description: "Utilisez les valeurs de test d’ID d’application et d’ID d’unité publicitaire pour voir comment votre application restitue les publicités au cours du test."
+description: "Utilisez les valeurs d’ID d’application test et d’ID d’unité publicitaire de cet article pour voir comment votre application restitue les publicités au cours du test."
 title: Valeurs du mode test
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, publicités, publicité, test"
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: dcc83c3d654cfb290981f27ec2923fd3b37c5a8f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 89818e91ff1c1b8fee2ca82951742ed7e55a2a5a
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -69,9 +76,4 @@ Voici les valeurs de test à utiliser pour les bannières et les spots vidéo pu
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

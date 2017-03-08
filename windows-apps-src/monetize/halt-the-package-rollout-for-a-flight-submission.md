@@ -1,30 +1,38 @@
 ---
 author: mcleanbyron
 description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour arrêter un lancement de package pour une version d’évaluation de package."
-title: "Arrêter le lancement du package pour une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store"
+title: "Arrêter le lancement de package pour une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, lancement de package, soumission de version d’évaluation, arrêter"
+ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 translationtype: Human Translation
-ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
-ms.openlocfilehash: d51c2fa2babb78a35317ab846685530f5c3b4a16
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ad63a543027ca0a1927eb72c1a7a227788770998
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Arrêter le lancement du package pour une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store
+# <a name="halt-the-package-rollout-for-a-package-flight-using-the-windows-store-submission-api"></a>Arrêter le lancement de package pour une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store
 
 
 Appliquez cette méthode dans l’API de soumission du Windows Store pour [arrêter le lancement du package](../publish/gradual-package-rollout.md#completing-the-rollout) pour une soumission de version d’évaluation de package. Pour plus d’informations sur le processus de création d’une soumission de version d’évaluation de package à l’aide de l’API de soumission du Windows Store, voir [Gérer les soumissions de versions d’évaluation du package](manage-flight-submissions.md).
 
-## Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créez une soumission pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission d’application](create-an-app-submission.md).
-* Autorisez un lancement de package progressif pour la soumission. Pour cela, vous pouvez utiliser le [tableau de bord du Centre de développement](manage-flight-submissions.md#manage-gradual-package-rollout) ou [l’API de soumission du Windows Store](../publish/gradual-package-rollout.md).
+* Autorisez un lancement de package progressif pour la soumission. Pour cela, vous pouvez utiliser le [tableau de bord du Centre de développement](../publish/gradual-package-rollout.md) ou [l’API de soumission du Windows Store](manage-flight-submissions.md#manage-gradual-package-rollout).
 
->**Remarque**  Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+>**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
-## Requête
+## <a name="request"></a>Requête
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et des paramètres de la requête.
 
@@ -35,7 +43,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 <span/>
  
 
-### En-tête de requête
+### <a name="request-header"></a>En-tête de requête
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -43,7 +51,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Paramètres de la requête
+### <a name="request-parameters"></a>Paramètres de la requête
 
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -53,11 +61,11 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Corps de la requête
+### <a name="request-body"></a>Corps de la requête
 
 Ne fournissez pas de corps de requête pour cette méthode.
 
-### Exemple de requête
+### <a name="request-example"></a>Exemple de requête
 
 L’exemple suivant montre comment arrêter le lancement du package d’une soumission de version d’évaluation de package.
 
@@ -66,7 +74,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/fl
 Authorization: Bearer <your access token>
 ```
 
-## Réponse
+## <a name="response"></a>Réponse
 
 L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à cette méthode. Pour plus d’informations sur les valeurs figurant dans le corps de la réponse, voir la [ressource de lancement du package](manage-flight-submissions.md#package-rollout-object).
 
@@ -79,7 +87,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 }
 ```
 
-## Codes d’erreur
+## <a name="error-codes"></a>Codes d’erreur
 
 Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
@@ -91,14 +99,9 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 <span/>
 
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Lancement de package progressif](../publish/gradual-package-rollout.md)
 * [Gérer les soumissions de versions d’évaluation de package à l’aide de l’API de soumission du Windows Store](manage-flight-submissions.md)
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

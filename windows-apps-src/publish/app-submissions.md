@@ -4,13 +4,19 @@ Description: "Après avoir créé votre application en réservant un nom, vous p
 title: "Soumissions d’application"
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: "liste de vérification"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: df66981ae8355ea62128a881f02fd6fb891ffb30
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Soumissions d’application
+# <a name="app-submissions"></a>Soumissions d’application
 
 
 Après avoir [créé votre application en réservant un nom](create-your-app-by-reserving-a-name.md), vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une **soumission**.
@@ -19,16 +25,16 @@ Vous pouvez démarrer votre soumission lorsque votre application est terminée e
 
 Une fois votre application publiée, vous pouvez publier une version mise à jour en créant une autre soumission dans le tableau de bord. Le fait de créer une soumission vous permet d'introduire et de publier tous les changements nécessaires, que vous chargiez d'autres packages ou que vous changiez juste des détails comme le prix ou la catégorie. Pour créer une soumission pour une application, cliquez sur **Mettre à jour** en regard de la soumission plus récente affichée sur la page de présentation de l’application.
 
-> **Remarque**  Cette section de la documentation explique comment créer une soumission d’application sur le tableau de bord du Centre de développement. Sinon, vous pouvez utiliser [l’API de soumission du Windows Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour automatiser les soumissions d’application.
+> **Remarque**&nbsp;&nbsp;Cette section de la documentation explique comment créer une soumission d’application sur le tableau de bord du Centre de développement. Sinon, vous pouvez utiliser [l’API de soumission du Windows Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour automatiser les soumissions d’application.
 
-## Liste de vérification relative à la soumission d’une application
+## <a name="app-submission-checklist"></a>Liste de vérification relative à la soumission d’une application
 
 
 Voici la liste des informations que vous pouvez fournir quand vous soumettez votre application, avec des liens vers des informations complémentaires.
 
 Les éléments que vous devez obligatoirement fournir ou spécifier sont signalés ci-dessous. Certains sont facultatifs ou ont des valeurs par défaut que vous pouvez modifier selon vos besoins.
 
-### Page Tarification et disponibilité
+### <a name="pricing-and-availability-page"></a>Page Tarification et disponibilité
 | Nom du champ                    | Remarques                                       | Informations supplémentaires                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **Prix de base**                | Obligatoire                                    | [Prix de base](set-app-pricing-and-availability.md#base-price)              |
@@ -41,7 +47,7 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 
 <span/>
 
-### Page Propriétés de l’application
+### <a name="app-properties-page"></a>Page Propriétés de l’application
 
 | Nom du champ                    | Remarques                                       | Informations supplémentaires                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
@@ -51,7 +57,7 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 
 <span/>
 
-### Page Classification par âge
+### <a name="age-ratings-page"></a>Page Classification par âge
 
 | Nom du champ                    | Remarques                                       | Informations supplémentaires                          |
 |-------------------------------|---------------------------------------------|----------------------------------------|
@@ -59,7 +65,7 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 
 <span/>
 
-### Page Packages
+### <a name="packages-page"></a>Page Packages
 
 | Nom du champ                    | Remarques                                  | Informations supplémentaires                          |
 |-------------------------------|----------------------------------------|----------------------------------------|
@@ -70,7 +76,7 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 
 <span/>
 
-### Descriptions dans le Windows Store
+### <a name="store-listings"></a>Descriptions dans le Windows Store
 
 Vous devez indiquer toutes les informations requises pour au moins l’une des langues prises en charge par votre application. Nous vous recommandons de fournir des [descriptions dans le Windows Store](create-app-store-listings.md) dans toutes les langues prises en charge de votre application, et vous pouvez également [fournir des descriptions dans le Windows Store dans d’autres langues](create-app-store-listings.md#store-listing-languages).
 
@@ -93,7 +99,7 @@ Vous devez indiquer toutes les informations requises pour au moins l’une des l
 
 <span/>
 
-### Remarques pour la page de certification
+### <a name="notes-for-certification-page"></a>Remarques pour la page de certification
 
 | Nom du champ                    | Remarques                                       | Informations supplémentaires                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
@@ -101,10 +107,5 @@ Vous devez indiquer toutes les informations requises pour au moins l’une des l
 
 <span/>
 
-**Remarque**  Pour plus d’informations sur la publication d’applications métier directement à l’attention des entreprises, voir [Distribuer des applications métier aux entreprises](distribute-lob-apps-to-enterprises.md).
-
-
-
-<!--HONumber=Aug16_HO5-->
-
+**Remarque**&nbsp;&nbsp;Pour plus d’informations sur la publication d’applications métier directement à l’attention des entreprises, voir [Distribuer des applications métier aux entreprises](distribute-lob-apps-to-enterprises.md).
 

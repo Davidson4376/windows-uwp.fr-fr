@@ -1,22 +1,29 @@
 ---
 author: mtoepke
 title: Comment relancer une application (DirectX et C++)
-description: "Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX de plateforme UWP."
+description: "Cet article indique comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX de plateforme Windows universelle (UWP)."
 ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, reprise, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 978f779eaeb732b549657751c11cd2192728999b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0ef4617417526cd2e39ce968e4d682b4015e22d3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Comment relancer une application (DirectX et C++)
+# <a name="how-to-resume-an-app-directx-and-c"></a>Reprise d’une application (DirectX et C++)
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX de plateforme Windows universelle.
 
-## Enregistrer le gestionnaire d’événements de reprise
+## <a name="register-the-resuming-event-handler"></a>Enregistrer le gestionnaire d’événements de reprise
 
 
 Enregistrez-vous pour traiter l’événement [**CoreApplication::Resuming**](https://msdn.microsoft.com/library/windows/apps/br205859), qui indique que l’utilisateur revient vers votre application après s’en être éloigné.
@@ -37,7 +44,7 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## Actualiser le contenu affiché après la suspension
+## <a name="refresh-displayed-content-after-suspension"></a>Actualiser le contenu affiché après la suspension
 
 
 Lorsque votre application gère l’événement de reprise, elle a la possibilité d’actualiser son contenu à l’écran. Restaurez les applications que vous avez enregistrées avec votre gestionnaire pour [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860), puis redémarrez le traitement. Développeurs de jeux : si vous avez suspendu votre moteur audio, il est temps de le redémarrer.
@@ -80,12 +87,12 @@ void App::Run()
 }
 ```
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 
 Le système suspend votre application chaque fois que l’utilisateur bascule vers une autre application ou vers le Bureau. Le système en reprend l’exécution lorsque l’utilisateur revient à votre application. Dès lors, le contenu de vos variables et structures de données restent identiques à ce qu’elles étaient avant que le système ne suspende l’application. Le système rétablit l’application exactement dans l’état où il l’a laissée, de sorte qu’elle semble s’être exécutée en arrière-plan. Cependant, il se peut que l’application ait été suspendue pendant une durée significative. Elle doit dans ce cas actualiser le contenu affiché susceptible d’avoir changé pendant l’inactivité et redémarrer les threads de traitement audio ou de rendu. Si vous avez enregistré des données d’état de jeu durant un événement de suspension précédent, restaurez-les maintenant.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Comment suspendre une application (DirectX et C++)](how-to-suspend-an-app-directx-and-cpp.md)
 * [Comment activer une application (DirectX et C++)](how-to-activate-an-app-directx-and-cpp.md)
@@ -96,10 +103,5 @@ Le système suspend votre application chaque fois que l’utilisateur bascule ve
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

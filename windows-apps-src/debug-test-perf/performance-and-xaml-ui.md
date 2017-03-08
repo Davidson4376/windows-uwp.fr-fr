@@ -3,18 +3,25 @@ author: mcleblanc
 ms.assetid: 64F7FC51-E8AC-4098-9C5F-0172E4724B5C
 title: Performances
 description: "Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 73b19e54b863693aece045e5b653bc0583a676bb
-ms.openlocfilehash: b9395e80bca7a46076e20e42fa7ceee5df7cc0d5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 38a78b8af1555bdb4409c967bd27e5967b5c40aa
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="performance"></a>Performances
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie. Techniquement, la performance est une exigence non fonctionnelle mais le fait de considérer les performances comme une fonctionnalité vous aidera à répondre aux attentes de vos utilisateurs. La spécification des objectifs et la mesure sont des facteurs essentiels. Déterminez quels sont les scénarios pour lesquels les performances sont essentielles et définissez ce que vous entendez par bonnes performances. Effectuez ensuite des mesures précoces et régulières tout au long du cycle de vie de votre projet pour être sûr d’atteindre vos objectifs. Cette section vous montre comment organiser votre flux de travail de performances, corriger les problèmes d’animation et de fréquence d’images, et régler le temps de démarrage, la durée de navigation par page et l’utilisation de la mémoire.
 
-Si vous ne l’avez pas encore fait, nous vous conseillons de porter votre application vers Windows 10 ; vous devriez constater une amélioration significative des performances. Certaines optimisations XAML (par exemple, [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)) sont uniquement disponibles dans les applications Windows 10. Voir [Portage d’applications vers Windows 10](https://msdn.microsoft.com/library/windows/apps/Mt238321) et la session //build/ [Déplacement vers la plateforme Windows universelle](http://channel9.msdn.com/Events/Build/2015/3-741).
+Si vous ne l’avez pas encore fait, nous vous conseillons de porter votre application vers Windows 10 ; vous devriez constater une amélioration significative des performances. Certaines optimisations XAML (par exemple, [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)) sont uniquement disponibles dans les applications Windows 10. Voir [Portage d’applications vers Windows 10](https://msdn.microsoft.com/library/windows/apps/Mt238321)et la session //build/ [Déplacement vers la plateforme Windows universelle](http://channel9.msdn.com/Events/Build/2015/3-741).
 
 | Rubrique | Description |
 |-------|-------------|
@@ -33,10 +40,5 @@ Si vous ne l’avez pas encore fait, nous vous conseillons de porter votre appli
 | [Optimiser l’accès aux fichiers](optimize-file-access.md) | Créez des applications UWP qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur. |
 | [Composants Windows Runtime et optimisation de l’interopérabilité](windows-runtime-components-and-optimizing-interop.md) | Créez des applications UWP qui utilisent des composants UWP et l’interopérabilité entre les types natifs et managés, tout en évitant les problèmes de performance d’interopérabilité. |
 | [Outils de profilage et de performances](tools-for-profiling-and-performance.md) | Microsoft fournit plusieurs outils pour vous aider à améliorer les performances de votre application UWP.|
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

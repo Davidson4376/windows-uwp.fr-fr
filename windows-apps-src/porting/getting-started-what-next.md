@@ -2,18 +2,25 @@
 author: mcleblanc
 title: 'Prise en main : Et ensuite ?'
 ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
-description: "Avec ces informations de base, vous pouvez commencer à écrire des applications UWP plus intéressantes."
+description: "En disposant de ces informations de base, vous pouvez commencer à écrire des applications de plateforme Windows universelle (UWP) plus intéressantes."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d71c0026c8658e8aa88827915b8f2d815f10c6ef
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2ca600085c14c43d9d9d37e80efbae30bae650ef
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Prise en main : Et ensuite ?
+# <a name="getting-started-what-next"></a>Prise en main : Et ensuite ?
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-## Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes
 
 Avec ces informations de base, vous pouvez commencer à écrire des applications de plateforme Windows universelle (UWP, Universal Windows Platform) plus intéressantes. Pour les étapes suivantes, lisez les rubriques qui suivent, démarrez Microsoft Visual Studio, puis commencez à écrire du code.
 
@@ -24,20 +31,15 @@ Avec ces informations de base, vous pouvez commencer à écrire des applications
 -   [Créer votre première application Windows Runtime en C# ou Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=394138) : rubrique traitant du développement Windows Phone.
 -   [Vidéos pour développeurs iOS et Android](https://msdn.microsoft.com/library/windows/apps/dn393982) : aide supplémentaire, cette fois dans un format visuel.
 
-Pensez aussi surtout à consulter nos [ressources de communauté](http://go.microsoft.com/fwlink/p/?LinkId=263513) pour savoir comment obtenir de l’aide et accéder des forums des développeurs, des blogs, des séminaires (Devcamps) et des ateliers pour développeurs, et des événements et contacts Microsoft locaux.
+Pensez aussi surtout à consulter nos [ressources de communauté](https://developer.microsoft.com/en-us/windows/support) pour savoir comment obtenir de l’aide et accéder des forums des développeurs, des blogs, des séminaires (Devcamps) et des ateliers pour développeurs, et des événements et contacts Microsoft locaux.
 
-Nous pensons que Windows 10 vous ouvrira un vaste champ de nouvelles opportunités pour la création de vos applications. Et nous attendons avec impatience de découvrir toutes les applications que vous créerez!
+Nous pensons que Windows 10 vous ouvrira un vaste champ de nouvelles opportunités pour la création de vos applications. Et nous attendons avec impatience de découvrir toutes les applications que vous créerez !
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 **Rubriques pour les développeurs iOS**
 * [Ressources pour les développeurs iOS](https://msdn.microsoft.com/library/windows/apps/jj945493)
 * [Contrôles Windows pour les développeurs iOS](https://msdn.microsoft.com/library/windows/apps/dn263255)
 * [Guide de référence Windows pour les développeurs iOS](https://msdn.microsoft.com/library/windows/apps/dn263256)
 * [Blog de création d’applications pour Windows](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

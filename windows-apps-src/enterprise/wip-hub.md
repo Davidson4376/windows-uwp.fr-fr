@@ -1,13 +1,21 @@
 ---
 author: normesta
-Description: "Il s’agit d’une rubrique de hub destinée aux développeurs abordant de manière exhaustive la relation de la Protection des informations Windows avec les fichiers, les mémoires tampons, le Presse-papiers, la mise en réseau, les tâches en arrière-plan et la protection des données verrouillées."
+Description: "Il s’agit d’une rubrique de hub destinée aux développeurs qui aborde de manière exhaustive la relation de la protection des informations Windows (WIP) avec les fichiers, les mémoires tampons, le Presse-papiers, la mise en réseau, les tâches en arrière-plan et la protection des données verrouillées."
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Protection des informations Windows (WIP)
+ms.author: normesta
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, Protection des informations Windows, données d’entreprise, protection des données d’entreprise, PDE, applications compatibles"
+ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 translationtype: Human Translation
-ms.sourcegitcommit: 8a0ce7282ffaf76bcea94eec5ec3e3ceb99aa5ac
-ms.openlocfilehash: 81bd77d0153c17c80ccdce77332ed57fb751c8ec
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b9bde047a70d31105680361d34cf71b33f708f93
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -16,6 +24,7 @@ ms.openlocfilehash: 81bd77d0153c17c80ccdce77332ed57fb751c8ec
 __Remarque__ La stratégie de Protection des informations Windows peut être appliquée à Windows 10, version 1607.
 
 Cette stratégie protège les données qui appartiennent à une organisation en appliquant des stratégies qui sont définies par l’organisation. Si votre application est incluse dans ces stratégies, toutes les données générées par votre application sont soumises aux restrictions de stratégie. Cette rubrique vous aide à créer des applications qui appliquent ces stratégies plus en douceur sans avoir d’impact sur les données personnelles de l’utilisateur.
+<iframe src="https://channel9.msdn.com/Blogs/Windows-Development-for-the-Enterprise/Securing-Enterprise-Data-with-Windows-Information-Protection/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="first-what-is-wip"></a>Tout d’abord, qu’est-ce que la Protection des informations Windows ?
 
@@ -91,9 +100,4 @@ Si vous prévoyez d’inclure votre application dans une stratégie de gestion d
 
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

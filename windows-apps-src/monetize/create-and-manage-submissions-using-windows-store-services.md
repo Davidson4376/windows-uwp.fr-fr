@@ -2,14 +2,21 @@
 author: mcleanbyron
 ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: "L’API de soumission du Windows Store permet de créer et de gérer par programmation les soumissions d’app. inscrites dans le compte du Centre de dév. Windows."
-title: "Créer et gérer des soumissions à l’aide des services du Windows Store"
+title: "Créer et gérer des soumissions à l’aide des services du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, API de soumission du Windows Store"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: 8467cddd5eec2348cd35f4f5dc1564b47813a6ca
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f73470c456bf59544bc702b137da64f57c6a6943
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="create-and-manage-submissions-using-windows-store-services"></a>Créer et gérer des soumissions à l’aide des services du Windows Store
+# <a name="create-and-manage-submissions-using-windows-store-services"></a>Créer et gérer des soumissions à l’aide des services du Windows Store
 
 
 L’*API de soumission du Windows Store* vous permet d’interroger et de créer par programmation des soumissions pour des applications, des extensions (également connue sous le nom PIA, produit in-app) et des versions d’évaluation de package pour votre compte Centre de développement Windows ou celui de votre organisation. Cette API est utile si votre compte gère beaucoup d’applications ou d’extensions et que vous voulez automatiser et optimiser le processus de soumission de ces ressources. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
@@ -22,9 +29,11 @@ Les étapes suivantes décrivent le processus complet d’utilisation de l’API
 
 
 <span id="not_supported" />
->**Important**
+>**Remarques importantes**
 
 > * Cette API ne peut être utilisée que pour les comptes du Centre de développement Windows qui en ont l’autorisation. L’octroi de cette autorisation se fait en plusieurs étapes. Elle est accordée aux comptes de développeur, et tous les comptes n’en bénéficient pas pour le moment. Pour demander un accès anticipé, connectez-vous au tableau de bord du Centre de développement, cliquez sur **Commentaires** au bas du tableau de bord, sélectionnez **API de soumission** dans la zone de commentaires, puis soumettez votre demande. Vous recevrez un message électronique dès que cette autorisation sera accordée à votre compte.
+<br/><br/>
+>* Si vous utilisez cette API pour créer une soumission pour une application, une version d'évaluation d'un package ou un module complémentaire, assurez-vous d'utiliser exclusivement l'API pour apporter d'autres modifications à la soumission, sans passer par le tableau de bord du Centre de développement. Si vous passez par le tableau de bord pour modifier une soumission initialement créée via l'API, vous ne pourrez plus modifier ou valider cette soumission à l'aide de l'API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
 <br/><br/>
 > * Cette API ne peut pas être utilisée avec les applications ou les extensions qui utilisent certaines des fonctionnalités introduites au tableau de bord du Centre de développement en août 2016, comme notamment les mises à jour d’applications obligatoires et les extensions consommables gérées par le Store. Si vous utilisez l’API de soumission du Windows Store avec une application ou une extension qui utilise l’une de ces fonctionnalités, l’API retourne le code d’erreur 409. Dans ce cas, vous devez utiliser le tableau de bord pour gérer les soumissions pour l’application ou l’extension.
 
@@ -111,17 +120,19 @@ Les articles suivants fournissent des exemples de code détaillés qui montrent 
 * [Exemples de code Java](java-code-examples-for-the-windows-store-submission-api.md)
 * [Exemples de code Python](python-code-examples-for-the-windows-store-submission-api.md)
 
+>**Remarque**&nbsp;&nbsp;En complément des exemples de code répertoriés ci-dessus, nous fournissons également un module PowerShell Open Source qui implémente une interface de ligne de commande sur l'API de soumission du Windows Store. Ce module est appelé [StoreBroker](https://aka.ms/storebroker). Vous pouvez utiliser ce module pour gérer les soumissions de votre application, de votre version et de vos modules complémentaires à partir de la ligne de commande, en lieu et place de l'appel direct de l'API de soumission du Windows Store. Sinon, vous pouvez simplement parcourir la source pour consulter des exemples supplémentaires d'appel de cette API. Le module StoreBroker est activement utilisé au sein de Microsoft en tant que vecteur principal de soumission de nombreuses applications internes dans le Windows Store. Pour plus d'informations, consultez notre [page StoreBroker sur GitHub](https://aka.ms/storebroker).
+
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
 | Problème      | Résolution                                          |
 |---------------|---------------------------------------------|
-| Après avoir appelé l’API de soumission du Windows Store à partir de PowerShell, les données de réponse destinées à l’API sont altérées si vous les convertissez du format JSON en objet PowerShell à l’aide de l’applet de commande [ConvertFrom Json](https://technet.microsoft.com/en-us/library/hh849898.aspx) et les rétablissez ensuite au format JSON à l’aide de l’applet de commande [ConvertTo Json](https://technet.microsoft.com/en-us/library/hh849922.aspx). |  Par défaut, le paramètre *-Depth* de l’applet de commande [ConvertTo Json](https://technet.microsoft.com/en-us/library/hh849922.aspx) est défini à 2 niveaux d’objets, ce qui est trop superficiel pour la plupart des objets JSON retournées par l’API de soumission du Windows Store. Quand vous appelez l’applet de commande [ConvertTo Json](https://technet.microsoft.com/en-us/library/hh849922.aspx), attribuez au paramètre *-Depth* une valeur supérieure, par exemple 20. |
+| Après avoir appelé l’API de soumission du Windows Store à partir de PowerShell, les données de réponse destinées à l’API sont altérées si vous les convertissez du format JSON en objet PowerShell à l’aide de l’applet de commande [ConvertFrom Json](https://technet.microsoft.com/library/hh849898.aspx) et les rétablissez ensuite au format JSON à l’aide de l’applet de commande [ConvertTo Json](https://technet.microsoft.com/library/hh849922.aspx). |  Par défaut, le paramètre *-Depth* de l’applet de commande [ConvertTo Json](https://technet.microsoft.com/library/hh849922.aspx) est défini à 2 niveaux d’objets, ce qui est trop superficiel pour la plupart des objets JSON retournées par l’API de soumission du Windows Store. Quand vous appelez l’applet de commande [ConvertTo Json](https://technet.microsoft.com/library/hh849922.aspx), attribuez au paramètre *-Depth* une valeur supérieure, par exemple 20. |
 
 ## <a name="additional-help"></a>Aide supplémentaire
 
 Si vous avez des questions sur l’API de soumission du Windows Store ou si vous avez besoin d’aide pour gérer vos soumissions avec cette API, utilisez les ressources suivantes :
 
-* Posez vos questions sur nos [forums](https://social.msdn.microsoft.com/Forums/windowsapps/en-us/home?forum=wpsubmit).
+* Posez vos questions sur nos [forums](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=wpsubmit).
 * Consultez notre [page de support](https://developer.microsoft.com/windows/support) et choisissez l’une des options de support assisté pour le tableau de bord du Centre de développement. Si vous êtes invité à choisir un type de problème et une catégorie, choisissez respectivement **Soumission d’application et certification** et **Soumission d’une application**.  
 
 ## <a name="related-topics"></a>Rubriques connexes
@@ -133,9 +144,4 @@ Si vous avez des questions sur l’API de soumission du Windows Store ou si vous
 * [Gérer les versions d’évaluation de package](manage-flights.md)
 * [Gérer les soumissions de versions d’évaluation de package](manage-flight-submissions.md)
  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

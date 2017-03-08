@@ -8,9 +8,16 @@ title: "Ressources de thème XAML"
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
 label: XAML theme resources
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 9ee42532cb7f13d611e2365d7c9cf8f0532dd1c5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 51e5a3dac6ab8682cd9d10efafb7e1e38f9d53d4
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="xaml-theme-resources"></a>Ressources de thème XAML
@@ -440,10 +447,5 @@ Pour résoudre ce problème, utilisez l’extension de balisage [{StaticResource
 
 Notez que l’[extension de balisage {ThemeResource}](../xaml-platform/themeresource-markup-extension.md) est toujours utilisée à la place de l’[extension de balisage {StaticResource}](../xaml-platform/staticresource-markup-extension.md) dans le dictionnaire « HighContrast ». Cette situation correspond à l’exception citée précédemment dans les recommandations. La plupart des valeurs de pinceau utilisées pour le thème « HighContrast » utilisent des choix de couleur qui sont contrôlés globalement par le système, mais exposés au code XAML sous forme d’une ressource spécialement nommée (ceux dont le nom comporte le préfixe SystemColor). Le système permet à l’utilisateur de définir les couleurs spécifiques qui doivent être utilisées pour les paramètres de contraste élevé par l’intermédiaire des Options d’ergonomie. Ces choix de couleur sont appliqués aux ressources spécialement nommées. L’infrastructure XAML utilise le même événement de modification de thème pour mettre également à jour ces pinceaux lorsqu’elle détecte une modification au niveau du système. C’est pourquoi l’extension de balisage {ThemeResource} est utilisée ici.
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

@@ -1,13 +1,20 @@
 ---
 author: mijacobs
-Description: "Découvrez comment stocker et récupérer des données d’application locale, itinérantes et temporaires."
+Description: "Découvrez comment stocker et récupérer des données d’applications locales, itinérantes et temporaires."
 title: "Stocker et récupérer des paramètres et autres données d’application"
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f50e490caa5d1d88c2f8315dc47e15b0ae22a05
-ms.openlocfilehash: 08ad1fbddc3db2c8329594419fefdc1aa0659092
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1e615e989a25520cff86c53e383d0cc5e87956d1
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -44,11 +51,13 @@ Il existe deux types de données d’application : les fichiers et les paramèt
 
 ## <a name="storing-app-data-in-the-app-data-stores"></a>Stockage des données d’application dans les magasins de données d’application
 
+
 Quand une application est installée, le système lui attribue ses propres magasins de données par utilisateur pour y stocker des paramètres et des fichiers. Vous n’avez pas besoin de savoir où et comment ces données existent, car le système est responsable de la gestion du stockage physique, en veillant à ce que les données soient conservées isolément d’autres applications et utilisateurs. De même, le système préserve le contenu de ces magasins de données lorsque l’utilisateur installe une mise à jour de votre application et supprime intégralement l’ensemble du contenu de ces magasins de données lorsque votre application est désinstallée.
 
 Le magasin de données de chaque application comprend des répertoires racines définis par le système : un pour les fichiers locaux, un pour les fichiers itinérants et un pour les fichiers temporaires. Votre application peut ajouter de nouveaux fichiers et conteneurs à chacun de ces répertoires racines.
 
 ## <a name="local-app-data"></a>Données d’application locale
+
 
 Les données d’application locale doivent être utilisées pour toutes les informations à préserver entre les sessions d’application. Elles ne conviennent pas pour les données d’application itinérantes. Les données non applicables à d’autres appareils doivent également y être conservées. Il n’existe pas de limitation générale de taille sur les données locales stockées. Utilisez le magasin de données d’application local pour les données qui n’ont pas lieu d’utiliser un profil itinérant et pour les jeux de données volumineux.
 
@@ -451,10 +460,5 @@ Vous pouvez éventuellement créer différentes versions des données d’applic
 * [**Windows.Storage.ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625)
 * [**Windows.Storage.ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588)
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

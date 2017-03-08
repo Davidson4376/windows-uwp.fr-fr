@@ -3,16 +3,23 @@ author: mcleblanc
 ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
 title: "Virtualisation des données ListView et GridView"
 description: "Améliorez les performances et le délai de démarrage des éléments ListView et GridView via la virtualisation des données."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: e44dd5c2c3c9fb252062af3a6a9f409e1777a878
-ms.openlocfilehash: 0a16dc27db6fb1e04e1ab0c575077ca10b97f12d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0b1dfaeb098ac4b73c89f4d1a51ec658312aee4e
+ms.lasthandoff: 02/07/2017
 
 ---
-# Virtualisation des données ListView et GridView
+# <a name="listview-and-gridview-data-virtualization"></a>Virtualisation des données ListView et GridView
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Remarque** Pour plus d’informations, voir la session //build/ [Accroître considérablement les performances lors de l’interaction des utilisateurs avec de grandes quantités de données dans GridView et ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
+**Remarque**  Pour plus d’informations, voir la session //build/ [Accroître considérablement les performances lors de l’interaction des utilisateurs avec de grandes quantités de données dans GridView et ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
 
 Améliorez les performances et le délai de démarrage des éléments [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) via la virtualisation des données. Pour la virtualisation de l’interface utilisateur, la réduction d’un élément et la mise à jour progressive des éléments, voir [Optimisation des options d’interface ListView et GridView](optimize-gridview-and-listview.md).
 
@@ -23,11 +30,11 @@ Une méthode de virtualisation des données est requise pour tout jeu de donnée
 -   la source du jeu de données (disque local, réseau ou cloud) ;
 -   la consommation de mémoire totale de votre application.
 
-**Remarque** N’oubliez pas qu’une fonctionnalité, qui affiche les éléments visuels d’espace réservé temporaire lorsque l’utilisateur effectue un mouvement panoramique/de défilement rapide, est activée par défaut pour ListView et GridView. Ces éléments visuels d’espace réservé sont remplacés par votre modèle d’élément lors du chargement des données. Vous pouvez désactiver la fonctionnalité en définissant [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) sur false. Toutefois, si vous procédez ainsi, nous vous recommandons d’utiliser l’attribut x:Phase pour restituer progressivement les éléments dans votre modèle d’élément. Voir [Mettre à jour les éléments ListView et GridView de façon progressive](optimize-gridview-and-listview.md#update-items-incrementally).
+**Remarque**  N’oubliez pas qu’une fonctionnalité, qui affiche les éléments visuels d’espace réservé temporaire lorsque l’utilisateur effectue un mouvement panoramique/de défilement rapide, est activée par défaut pour ListView et GridView. Ces éléments visuels d’espace réservé sont remplacés par votre modèle d’élément lors du chargement des données. Vous pouvez désactiver la fonctionnalité en définissant [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) sur false. Toutefois, si vous procédez ainsi, nous vous recommandons d’utiliser l’attribut x:Phase pour restituer progressivement les éléments dans votre modèle d’élément. Voir [Mettre à jour les éléments ListView et GridView de façon progressive](optimize-gridview-and-listview.md#update-items-incrementally).
 
 Voici plus d’informations sur les techniques de virtualisation des données incrémentielles et à accès aléatoire.
 
-## Virtualisation incrémentielle des données
+## <a name="incremental-data-virtualization"></a>Virtualisation incrémentielle des données
 
 La virtualisation incrémentielle des données assure le chargement séquentiel des données. Un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) faisant appel à la virtualisation incrémentielle des données peut être utilisé pour afficher une collection d’un million d’éléments, mais seulement 50 éléments sont chargés initialement. À mesure que l’utilisateur parcourt la collection, les 50 éléments suivants sont chargés. Au fil du chargement des éléments, la taille curseur de la barre de défilement diminue. Pour appliquer ce type de virtualisation des données, vous devez écrire une classe de source de données qui implémente ces interfaces.
 
@@ -39,9 +46,9 @@ Une source de données de ce type constitue une liste en mémoire qui peut être
 
 Lorsque le contrôle d’éléments approche de la fin des données existantes, il appelle [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems). Si vous renvoyez **true**, il appellera [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync) en transmettant un nombre conseillé d’éléments à charger. Selon la source des données chargées (disque local, réseau ou cloud), vous pouvez choisir de charger un nombre d’éléments différent de celui recommandé. Par exemple, si votre service prend en charge les lots de 50 éléments, mais que le contrôle d’éléments en demande seulement 10, vous pouvez en charger 50. Chargez les données depuis votre back end, ajoutez-les à votre liste et déclenchez une notification de modification via [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) ou [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) afin que le contrôle d’éléments soit informé des nouveaux éléments. Renvoyez également le nombre d’éléments que vous avez effectivement chargés. Si vous chargez moins d’éléments que le nombre recommandé ou que l’utilisateur a parcouru le contrôle d’éléments encore plus loin entre-temps, de nouveaux éléments sont demandés à votre source de données et le cycle se poursuit. Pour en savoir plus, téléchargez l’[exemple de liaison de données XAML](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5) pour Windows 8.1, et réutilisez le code source dans votre application Windows 10.
 
-## Virtualisation des données par accès aléatoire
+## <a name="random-access-data-virtualization"></a>Virtualisation des données par accès aléatoire
 
-La virtualisation des données par accès aléatoire permet le chargement à partir d’un point arbitraire du jeu de données. Un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) faisant appel à la virtualisation des données par accès aléatoire et utilisé pour afficher une collection d’un million d’éléments peut charger les éléments 100 000 à 100 050. Si l’utilisateur affiche ensuite le début de la liste, le contrôle charge les 50 premiers éléments. À tout moment, le curseur de la barre de défilement indique que le contrôle **ListView** contient un million d’éléments. La position du curseur de la barre de défilement est déterminée par rapport à l’emplacement des éléments visibles dans le jeu de données de la collection. Ce type de virtualisation des données peut considérablement réduire les besoins en mémoire et les temps de chargement pour la collection. Pour l’appliquer, vous devez écrire une classe de source de données qui récupère les données à la demande, gère un cache local et implémente les interfaces suivantes:
+La virtualisation des données par accès aléatoire permet le chargement à partir d’un point arbitraire du jeu de données. Un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) faisant appel à la virtualisation des données par accès aléatoire et utilisé pour afficher une collection d’un million d’éléments peut charger les éléments 100 000 à 100 050. Si l’utilisateur affiche ensuite le début de la liste, le contrôle charge les 50 premiers éléments. À tout moment, le curseur de la barre de défilement indique que le contrôle **ListView** contient un million d’éléments. La position du curseur de la barre de défilement est déterminée par rapport à l’emplacement des éléments visibles dans le jeu de données de la collection. Ce type de virtualisation des données peut considérablement réduire les besoins en mémoire et les temps de chargement pour la collection. Pour l’appliquer, vous devez écrire une classe de source de données qui récupère les données à la demande, gère un cache local et implémente les interfaces suivantes :
 
 -   [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)
 -   [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) ou [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
@@ -79,10 +86,5 @@ En outre, la stratégie permettant de déterminer à quel moment charger les él
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO4-->
 
 

@@ -3,15 +3,22 @@ author: mcleanbyron
 ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
 description: "Découvrez comment gérer les erreurs générées par la classe AdControl dans les bibliothèques de publicités Microsoft."
 title: "Gestion des erreurs liées aux bibliothèques de publicités Microsoft"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, annonces publicitaires, publicité, gestion des erreurs, javascript, XAML, c#"
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: 56df2b0f0a41d128f02aa5e2aa0ce11e6f6ca16a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f979a250872f19a54c6b638d44624ff2e1840c91
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="error-handling-with-the-microsoft-advertising-libraries"></a>Gestion des erreurs liées aux bibliothèques de publicités Microsoft
 
-Cette rubrique fournit des informations de base sur la gestion des erreurs générées par la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) dans les bibliothèques de publicités Microsoft.
+Cet article fournit des informations de base sur la gestion des erreurs générées par la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) dans les bibliothèques de publicités Microsoft.
 
 <span id="bkmk-javascript"/>
 ## <a name="javascripthtml-apps"></a>Applications JavaScript/HTML
@@ -81,9 +88,4 @@ Voir [Gestion des erreurs dans la procédure pas à pas pour XAML/C#](error-hand
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

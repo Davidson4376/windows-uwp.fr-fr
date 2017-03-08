@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "Gérer la reprise d’une application"
 description: "Apprenez à actualiser le contenu à l’écran lorsque le système reprend l’exécution de votre application."
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 231161ba576a140859952a7e9a4e8d3bd0ba4596
-ms.openlocfilehash: 2813a112f9d60c5b133284903c98a152bd027bee
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 113f0ce8e59bab716443c0a74ca39649a1bb83ac
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Gérer la reprise d’une application
+# <a name="handle-app-resume"></a>Gérer la reprise d’une application
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 **API importantes**
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: 2813a112f9d60c5b133284903c98a152bd027bee
 
 Découvrez à quel endroit vous devez actualiser votre interface utilisateur lorsque le système reprend l’exécution de votre application. L’exemple présenté dans cette rubrique enregistre un gestionnaire d’événements pour l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339).
 
-## Enregistrer le gestionnaire d’événement de reprise
+## <a name="register-the-resuming-event-handler"></a>Enregistrer le gestionnaire d’événement de reprise
 
 Enregistrez-vous pour gérer l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339), qui indique que l’utilisateur revient vers votre application après s’en être éloigné.
 
@@ -53,7 +60,7 @@ Enregistrez-vous pour gérer l’événement [**Resuming**](https://msdn.microso
 > }
 > ```
 
-## Actualiser le contenu affiché et récupérer les ressources
+## <a name="refresh-displayed-content-and-reacquire-resources"></a>Actualiser le contenu affiché et récupérer les ressources
 
 Le système suspend votre application quelques secondes après que l’utilisateur bascule vers une autre application ou vers le Bureau. Le système en reprend l’exécution lorsque l’utilisateur revient à votre application. Dès lors, le contenu de vos variables et structures de données restent identiques à ce qu’elles étaient avant que le système ne suspende l’application. Le système restaure l’application là où elle s’était arrêtée. Pour l’utilisateur, c’est comme si l’application était exécutée en arrière-plan.
 
@@ -91,20 +98,15 @@ C’est également le moment idéal pour restaurer toutes les ressources exclusi
 
 > **Remarque** Dans la mesure où l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) n’est pas déclenché à partir du thread d’interface utilisateur, il convient d’utiliser un répartiteur dans votre gestionnaire pour transférer les appels vers votre interface utilisateur.
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 Une application jointe au débogueur Visual Studio ne sera pas suspendue. Toutefois, vous pouvez la suspendre à partir du débogueur et lui envoyer un événement **Resume** afin de déboguer votre code. Assurez-vous que la **barre d’outils Emplacement de débogage** est visible et cliquez sur la liste déroulante à côté de l’icône **Suspendre**. Ensuite, sélectionnez **Reprendre**.
 
 Dans les applications du Windows Phone Store, l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) est toujours suivi de l’événement [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), même lorsque votre application est suspendue et que l’utilisateur relance votre application à partir d’une vignette principale ou d’une liste d’applications. Les applications peuvent ignorer l’initialisation si un contenu est déjà défini sur la fenêtre active. Vous pouvez vérifier la propriété [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) pour déterminer si l’application a été lancée à partir d’une vignette principale ou secondaire et, en fonction de l’information obtenue, décider si vous devez présenter une expérience de nouvelle exécution ou de reprise d’exécution de l’application.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Cycle de vie de l’application](app-lifecycle.md)
 * [Gérer l’activation d’une application](activate-an-app.md)
 * [Gérer la suspension d’une application](suspend-an-app.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -3,15 +3,22 @@ author: drewbatgit
 ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
 description: "Cette rubrique montre comment utiliser FaceDetector pour détecter des visages dans une images. FaceTracker est optimisé pour suivre les visages au fil du temps dans une séquence d’images vidéo."
 title: "Détecter les visages dans des images ou des vidéos"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 7526d5ddfbaa6f5128ef5775bc75cc48768f647d
-ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 72e5804ea592dc2a9478cba766decaadf611e88e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Détecter les visages dans des images ou des vidéos
+# <a name="detect-faces-in-images-or-videos"></a>Détecter les visages dans des images ou des vidéos
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
@@ -22,7 +29,7 @@ Pour une autre méthode de suivi des visages à l’aide de [**FaceDetectionEffe
 
 Le code contenu dans cet article a été adapté à partir des exemples [Détection des visages de base](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409) et [Suivi des visages de base](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409). Vous pouvez télécharger ces exemples pour voir le code utilisé en contexte ou pour vous en servir comme point de départ pour votre propre application.
 
-## Détecter des visages dans une seule image
+## <a name="detect-faces-in-a-single-image"></a>Détecter des visages dans une seule image
 
 La classe [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) vous permet de détecter un ou plusieurs visages dans une image fixe.
 
@@ -68,7 +75,7 @@ Si la liste des visages transmise à la méthode d’assistance n’est pas vide
 
 [!code-cs[ShowDetectedFaces](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetShowDetectedFaces)]
 
-## Suivre les visages dans une séquence d’images
+## <a name="track-faces-in-a-sequence-of-frames"></a>Suivre les visages dans une séquence d’images
 
 Si vous voulez détecter les visages d’une vidéo, il est plus efficace d’utiliser la classe [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) que la classe [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129), bien que les étapes d’implémentation soient très similaires. **FaceTracker** utilise les informations d’images traitées précédemment pour optimiser le processus de détection.
 
@@ -92,7 +99,7 @@ Appelez [**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/a
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Analyse de scène de capture multimédia](scene-analysis-for-media-capture.md)
 * [Exemple de détection des visages de base](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
@@ -100,9 +107,4 @@ Appelez [**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/a
 * [Camera](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Lecture de contenu multimédia](media-playback.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

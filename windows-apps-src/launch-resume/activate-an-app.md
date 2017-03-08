@@ -3,21 +3,28 @@ author: TylerMSFT
 title: "Gérer l’activation d’une application"
 description: "Découvrez comment gérer l’activation d’une application en remplaçant la méthode OnLaunched."
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a1bb0d5d24291fad1acab41c149dd9d763610907
-ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b6d41cc48ccf43e343aba9c844c2d74b49b1496e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Gérer l’activation d’une application
+# <a name="handle-app-activation"></a>Gérer l’activation d’une application
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Découvrez comment gérer l’activation d’une application en remplaçant la méthode [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
 
-## Remplacer le gestionnaire de lancement
+## <a name="override-the-launch-handler"></a>Remplacer le gestionnaire de lancement
 
 Lorsqu’une application est activée, pour quelque raison que ce soit, le système envoie l’événement [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018). Pour obtenir la liste des types d’activation, voir l’énumération [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693).
 
@@ -33,7 +40,7 @@ Définissez la classe pour votre application.
 
 Remplacez la méthode [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335). Cette méthode est appelée chaque fois que l’utilisateur lance l’application. Le paramètre [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) contient l’état précédent de votre application et les arguments d’activation.
 
-**Remarque** Dans les applications du Windows Phone Store, cette méthode est appelée chaque fois que l’utilisateur lance l’application à partir de la vignette d’accueil ou de la liste d’applications, même lorsque l’application est actuellement suspendue en mémoire. Sous Windows, le lancement d’une application suspendue à partir de la vignette d’accueil ou de la liste d’applications n’appelle pas cette méthode.
+**Remarque**  Dans les applications du Windows Phone Store, cette méthode est appelée chaque fois que l’utilisateur lance l’application à partir de la vignette d’accueil ou de la liste d’applications, même lorsque l’application est actuellement suspendue en mémoire. Sous Windows, le lancement d’une application suspendue à partir de la vignette d’accueil ou de la liste d’applications n’appelle pas cette méthode.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -97,7 +104,7 @@ Remplacez la méthode [**OnLaunched**](https://msdn.microsoft.com/library/window
 > }
 > ```
 
-## Restaurer les données d’application en cas de suspension puis d’arrêt de l’application
+## <a name="restore-application-data-if-app-was-suspended-then-terminated"></a>Restaurer les données d’application en cas de suspension puis d’arrêt de l’application
 
 
 Lorsque l’utilisateur bascule vers votre application arrêtée, le système envoie l’événement [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018), avec [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) défini sur **Launch** et [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) sur **Terminated** ou **ClosedByUser**. L’application doit charger ses données d’application enregistrées et actualiser son contenu à l’écran.
@@ -157,11 +164,11 @@ Lorsque l’utilisateur bascule vers votre application arrêtée, le système en
 
 Si la valeur de [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) est **NotRunning**, l’application n’a pas réussi à enregistrer ses données d’application et doit redémarrer de zéro.
 
-## Notes
+## <a name="remarks"></a>Notes
 
-> **Remarque** Dans les applications du Windows Phone Store, l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) est toujours suivi de l’événement [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), même lorsque votre application est suspendue et que l’utilisateur relance votre application à partir d’une vignette principale ou d’une liste d’applications. Les applications peuvent ignorer l’initialisation si un contenu est déjà défini sur la fenêtre active. Vous pouvez vérifier la propriété [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) pour déterminer si l’application a été lancée à partir d’une vignette principale ou secondaire et, en fonction de l’information obtenue, décider si vous devez présenter une expérience de nouvelle exécution ou de reprise d’exécution de l’application.
+> **Remarque**  Dans les applications du Windows Phone Store, l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) est toujours suivi de l’événement [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), même lorsque votre application est suspendue et que l’utilisateur relance votre application à partir d’une vignette principale ou d’une liste d’applications. Les applications peuvent ignorer l’initialisation si un contenu est déjà défini sur la fenêtre active. Vous pouvez vérifier la propriété [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) pour déterminer si l’application a été lancée à partir d’une vignette principale ou secondaire et, en fonction de l’information obtenue, décider si vous devez présenter une expérience de nouvelle exécution ou de reprise d’exécution de l’application.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Gérer la suspension d’une application](suspend-an-app.md)
 * [Gérer la reprise d’une application](resume-an-app.md)
@@ -176,9 +183,4 @@ Si la valeur de [**PreviousExecutionState**](https://msdn.microsoft.com/library/
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

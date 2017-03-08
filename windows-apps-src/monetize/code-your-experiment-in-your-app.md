@@ -1,11 +1,18 @@
 ---
 author: mcleanbyron
-Description: "Pour exécuter une expérience dans votre app. de plateforme Windows universelle (UWP) avec des tests A/B, vous devez code l’expérience dans votre application."
+Description: "Pour exécuter une expérience dans votre application de plateforme Windows universelle (UWP) avec des tests A/B, vous devez code l’expérience dans votre application."
 title: "Coder votre application à des fins d’expérimentation"
 ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Microsoft Store Services SDK, tests A/B, expériences"
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: cc32e2688bce636e1f4bda02aade4ed1d94f3e28
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d5c46c896aad3dfbc0f6f9bdb010652507654cb0
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -20,7 +27,7 @@ Pour ajouter ce comportement à votre application, vous allez utiliser les API f
 
 Les sections suivantes décrivent le processus général d’obtention de variantes pour votre expérience et de consignation des événements dans le Centre de développement. Après avoir codé votre application à des fins d’expérimentation, vous pouvez [définir une expérience dans le tableau de bord du Centre de développement](define-your-experiment-in-the-dev-center-dashboard.md). Pour découvrir une procédure pas à pas illustrant le processus de création et d’exécution d’une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
->**Remarque**  Certaines des API d’expérimentation dans le Kit de développement logiciel (SDK) Windows Store Services utilisent le [modèle asynchrone](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) pour récupérer les données à partir du Centre de développement. Cela signifie qu’une partie de l’exécution de ces méthodes peut avoir lieu après l’appel des méthodes, afin que l’interface utilisateur de votre application puisse rester réactive pendant que les opérations se terminent. Le modèle asynchrone exige que votre application utilise le mot-clé **async** et l’opérateur **await** pour appeler les API, comme illustré par les exemples de code dans cet article. Par convention, les méthodes asynchrones se terminent par **Async**.
+>**Remarque**&nbsp;&nbsp;Certaines des API d’expérimentation dans le Kit de développement logiciel (SDK) Windows Store Services utilisent le [modèle asynchrone](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) pour récupérer les données à partir du Centre de développement. Cela signifie qu’une partie de l’exécution de ces méthodes peut avoir lieu après l’appel des méthodes, afin que l’interface utilisateur de votre application puisse rester réactive pendant que les opérations se terminent. Le modèle asynchrone exige que votre application utilise le mot-clé **async** et l’opérateur **await** pour appeler les API, comme illustré par les exemples de code dans cet article. Par convention, les méthodes asynchrones se terminent par **Async**.
 
 ## <a name="configure-your-project"></a>Configurer votre projet
 
@@ -32,7 +39,7 @@ Pour commencer, installez le Kit de développement logiciel Microsoft Store Serv
 3. Dans le **Gestionnaire de références**, développez **Windows universel**, puis cliquez sur **Extensions**.
 4. Dans la liste des kits de développement logiciel (SDK), cochez la case en regard de **Microsoft Engagement Framework** et cliquez sur **OK**.
 
->**Remarque**  Les exemples de code dans cet article supposent que votre fichier de code disposent d’instructions **using** pour les espaces de noms **System.Threading.Tasks** et **Microsoft.Services.Store.Engagement**.
+>**Remarque**&nbsp;&nbsp;Les exemples de code dans cet article supposent que votre fichier de code disposent d’instructions **using** pour les espaces de noms **System.Threading.Tasks** et **Microsoft.Services.Store.Engagement**.
 
 ## <a name="get-variation-data-and-log-the-view-event-for-your-experiment"></a>Obtenir des données de variante et consigner l’événement d’affichage pour votre expérience
 
@@ -51,7 +58,7 @@ Les étapes suivantes décrivent les éléments importants de ce processus en d�
   [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet1)]
 
 1. Déclarez une variable de chaîne affectée à l’[ID de projet](run-app-experiments-with-a-b-testing.md#terms) de l’expérience que vous souhaitez récupérer.
-  >**Remarque**  Vous obtenez un ID de projet au moment de [créer un projet dans le tableau de bord du Centre de développement](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). L’ID de projet présenté ci-dessous n’est fourni qu’à titre d’exemple.
+  >**Remarque**&nbsp;&nbsp;Vous obtenez un ID de projet au moment de [créer un projet dans le tableau de bord du Centre de développement](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). L’ID de projet présenté ci-dessous n’est fourni qu’à titre d’exemple.
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
@@ -110,9 +117,4 @@ Dès lors que vous avez codé l’expérience dans votre application, vous êtes
 * [Gérer votre expérience dans le tableau de bord du Centre de développement](manage-your-experiment.md)
 * [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

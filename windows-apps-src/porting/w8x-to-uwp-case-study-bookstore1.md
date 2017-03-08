@@ -2,14 +2,21 @@
 author: mcleblanc
 title: "Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore1"
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
-description: "Cette rubrique présente une étude de cas de portage d’une application 8.1 universelle très simple vers une application de plateforme Windows universelle (UWP) Windows 10."
+description: "Cette rubrique présente une étude de cas de portage d’une application 8.1 universelle très simple vers une application de plateforme Windows universelle (UWP) Windows 10."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 348012b4a23e60e24d2185baf71cbe147e30053a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7299138cb45e9eb5e0e1b7eb349a68034e66ee3b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore1
+# <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore1
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -19,7 +26,7 @@ L’application que nous porterons se compose d’une classe **ListBox** liée �
 
 Les rubriques précédentes de cette section décrivent les différences entre les plateformes et fournissent des détails et des recommandations sur le processus de portage des différents aspects d’une application dans le balisage XAML, de la liaison à un modèle d’affichage à l’accès aux données. Une étude de cas vise à compléter ces recommandations en les appliquant à un exemple concret. Elle part du principe que vous avez lu les recommandations, qui ne sont donc pas répétées.
 
-**Remarque** Lorsque vous ouvrez Bookstore1Universal\_10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », suivez les étapes de la section [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md).
+**Remarque**   Lorsque vous ouvrez Bookstore1Universal\_10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », suivez les étapes de la section [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md).
 
 ## <a name="downloads"></a>Téléchargements
 
@@ -126,9 +133,4 @@ Cette étude de cas vous a décrit le processus de portage d’une application t
 Nous avons également pu constater que le processus de portage des modèles d’affichage était généralement fluide. Cependant, la prise en charge du facteur de forme et l’interface utilisateur risquent fort de nécessiter une certaine attention lors du portage.
 
 Dans l’étude de cas suivante, [Bookstore2](w8x-to-uwp-case-study-bookstore2.md), nous examinons l’accès aux données groupées et leur affichage.
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

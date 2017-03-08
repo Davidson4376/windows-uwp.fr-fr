@@ -2,22 +2,29 @@
 author: mcleblanc
 title: "Prise en main de l’application Animation"
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
-description: "Dans ce projet, nous allons déplacer un rectangle, luis appliquer un effet de fondu, puis de nouveau l’afficher."
+description: "Dans ce projet, nous allons déplacer un rectangle, lui appliquer un effet de fondu, puis l’afficher de nouveau."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: ae08bb25d8ac56ca6e03a5c200e8a0d4e05fbfe3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9dcf81c0c0aee42d6278a3e1eeccc6dd4da61010
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Prise en main : Animation
+# <a name="getting-started-animation"></a>Prise en main : Animation
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-## Ajout d’animations
+## <a name="adding-animations"></a>Ajout d’animations
 
 Dans iOS, vous créez le plus souvent des effets d’animation par programme. Par exemple, vous pouvez utiliser des animations fournies par les méthodes **animateWithDuration** de classe **UIView**, basées sur des blocs, ou les méthodes plus anciennes non basées sur des blocs. Vous pouvez également utiliser explicitement la classe **CALayer** pour animer des couches. Les animations dans les applications Windows peuvent être créées par programme, mais aussi être définies de manière déclarative avec XAML (Extensible Application Markup Language). Vous pouvez utiliser Microsoft Visual Studio pour modifier directement du code XAML, mais Visual Studio inclut également un outil appelé **Blend**, qui génère du code XAML à votre place lorsque vous travaillez sur des animations dans un concepteur. En fait, Blend vous permet d’ouvrir, de concevoir, de générer et d’exécuter des projets Visual Studio complets sous forme graphique. La procédure qui suit vous offre l’occasion de tester et mettre en pratique cette opération.
 
-Créez une application de plateforme Windows universelle (UWP) et appelez-la, par exemple, «SimpleAnimation». Dans ce projet, nous allons déplacer un rectangle, luis appliquer un effet de fondu, puis de nouveau l’afficher. Les animations en XAML sont basées sur le concept des *tables de montage* (à ne pas confondre avec les tables de montage iOS). Les tables de montage séquentiel utilisent des *images clés* pour animer les changements de propriétés.
+Créez une application de plateforme Windows universelle (UWP) et appelez-la, par exemple, « SimpleAnimation ». Dans ce projet, nous allons déplacer un rectangle, luis appliquer un effet de fondu, puis de nouveau l’afficher. Les animations en XAML sont basées sur le concept des *tables de montage* (à ne pas confondre avec les tables de montage iOS). Les tables de montage séquentiel utilisent des *images clés* pour animer les changements de propriétés.
 
 Après avoir ouvert votre projet, dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **Ouvrir dans Blend** ou **Configurer dans Blend**, comme illustré dans la figure ci-dessous. Visual Studio poursuit son exécution en arrière-plan.
 
@@ -63,7 +70,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-Exécutez de nouveau le projet et regardez le rectangle s’animer. Hourra!
+Exécutez de nouveau le projet et regardez le rectangle s’animer. Hourra !
 
 Si vous ouvrez le fichier MainPage.xaml, dans la vue **XAML**, vous verrez le code XAML ajouté par Blend tandis que vous travaillez dans le concepteur. Examinez surtout le code dans les éléments `<Storyboard>` et `<Rectangle>`. Le code qui suit montre un exemple. Les points de suspension représentent du code sans rapport omis par souci de concision et des sauts de line ont été ajoutés pour rendre le code plus lisible.
 
@@ -123,14 +130,9 @@ Si vous ouvrez le fichier MainPage.xaml, dans la vue **XAML**, vous verrez le co
 
 Vous pouvez modifier ce code XAML manuellement, ou retourner à Blend pour continuer à travailler dessus. Blend permet de créer aisément des interfaces utilisateur intéressantes, et la possibilité de les animer à l’aide d’un outil graphique peut accélérer considérablement le temps de développement. Pour plus d’informations sur les animations, voir [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350).
 
-**Remarque** Pour plus d’informations sur les animations pour les applications du Windows Store en JavaScript et HTML, voir [Animation de votre interface utilisateur (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
+**Remarque**  Pour plus d’informations sur les animations pour les applications du Windows Store en JavaScript et HTML, consultez l’article [Animation de votre interface utilisateur (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
 
-### Étape suivante
+### <a name="next-step"></a>Étape suivante
 
 [Prise en main : Et ensuite ?](getting-started-what-next.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

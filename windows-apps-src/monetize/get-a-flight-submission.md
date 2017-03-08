@@ -2,21 +2,28 @@
 author: mcleanbyron
 ms.assetid: A0DFF26B-FE06-459B-ABDC-3EA4FEB7A21E
 description: "Utilisez cette méthode de l’API de soumission du Windows Store pour obtenir des données pour une soumission de version d’évaluation du package existante."
-title: "Obtenir une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store"
+title: "Obtenir une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, soumission de version d’évaluation"
 translationtype: Human Translation
-ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
-ms.openlocfilehash: e2929ad3e2bb71ba3de5f74a82c4b0a43504dbd6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a989e9d081ec9cb709b59e1ff4ceff2d517ae48f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Obtenir une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store
+# <a name="get-a-package-flight-submission-using-the-windows-store-submission-api"></a>Obtenir une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store
 
 
 
 
 Utilisez cette méthode de l’API de soumission du Windows Store pour obtenir des données pour une soumission de version d’évaluation du package existante. Pour plus d’informations sur le processus de création d’une soumission de version d’évaluation de package à l’aide de l’API de soumission du Windows Store, voir [Gérer les soumissions de versions d’évaluation du package](manage-flight-submissions.md).
 
-## Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
@@ -24,9 +31,9 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créez une soumission de version d’évaluation du package pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission de version d’évaluation du package](create-a-flight-submission.md).
 
->**Remarque**  Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+>**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
-## Requête
+## <a name="request"></a>Requête
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
@@ -37,7 +44,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 <span/>
  
 
-### En-tête de requête
+### <a name="request-header"></a>En-tête de requête
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -45,7 +52,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Paramètres de la requête
+### <a name="request-parameters"></a>Paramètres de la requête
 
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -55,11 +62,11 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Corps de la requête
+### <a name="request-body"></a>Corps de la requête
 
 Ne fournissez pas de corps de requête pour cette méthode.
 
-### Exemple de requête
+### <a name="request-example"></a>Exemple de requête
 
 L’exemple suivant montre comment obtenir une soumission de version d’évaluation du package pour une application dont l’ID Windows Store est 9WZDNCRD91MD.
 
@@ -68,7 +75,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/fl
 Authorization: Bearer <your access token>
 ```
 
-## Réponse
+## <a name="response"></a>Réponse
 
 L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à cette méthode. Le corps de la réponse contient des informations sur la soumission spécifiée. Pour plus d’informations sur les valeurs figurant dans le corps de la réponse, voir la [ressource de soumission de version d’évaluation du package](manage-flight-submissions.md#flight-submission-object).
 
@@ -111,7 +118,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 }
 ```
 
-## Codes d’erreur
+## <a name="error-codes"></a>Codes d’erreur
 
 Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
@@ -123,7 +130,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 <span/>
 
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Gérer les soumissions de versions d’évaluation du package](manage-flight-submissions.md)
@@ -131,9 +138,4 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Valider une soumission de version d’évaluation de package](commit-a-flight-submission.md)
 * [Mettre à jour une soumission de version d’évaluation de package](update-a-flight-submission.md)
 * [Supprimer une soumission de version d’évaluation du package](delete-a-flight-submission.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

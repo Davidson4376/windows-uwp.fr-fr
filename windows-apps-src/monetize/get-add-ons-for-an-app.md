@@ -2,30 +2,37 @@
 author: mcleanbyron
 ms.assetid: E59FB6FE-5318-46DF-B050-73F599C3972A
 description: "Utilisez cette méthode de l’API de soumission du Windows Store pour récupérer des informations sur les achats in-app d’une application inscrite dans votre compte du Centre de développement Windows."
-title: "Obtenir des extensions pour une application à l’aide de l’API de soumission du Windows Store"
+title: "Obtenir des extensions pour une application à l’aide de l’API de soumission du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, extensions"
 translationtype: Human Translation
-ms.sourcegitcommit: ef90390fcf7d4aa2e040eae65119ac7959f3423f
-ms.openlocfilehash: 5a2dc318509b99c4d58632d5eedaeb3e465c524d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 73ce08bfa72a8508d71811267f8cd8e2377a3613
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Obtenir des extensions pour une application à l’aide de l’API de soumission du Windows Store
+# <a name="get-add-ons-for-an-app-using-the-windows-store-submission-api"></a>Obtenir des extensions pour une application à l’aide de l’API de soumission du Windows Store
 
 
 
 
 Utilisez cette méthode dans l’API de soumission du Windows Store pour répertorier les extensions (également connues sous le nom PIA ou produits in-app) pour une application inscrite dans votre compte du Centre de développement Windows.
 
-## Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
->**Remarque**  Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+>**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
-## Requête
+## <a name="request"></a>Requête
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
@@ -35,7 +42,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
  
-### En-tête de requête
+### <a name="request-header"></a>En-tête de requête
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -43,7 +50,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Paramètres de la requête
+### <a name="request-parameters"></a>Paramètres de la requête
 
 
 |  Nom  |  Type  |  Description  |  Requis  |
@@ -54,11 +61,11 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Corps de la requête
+### <a name="request-body"></a>Corps de la requête
 
 Ne fournissez pas de corps de requête pour cette méthode.
 
-### Exemples de requête
+### <a name="request-examples"></a>Exemples de requête
 
 L’exemple suivant montre comment répertorier toutes les extensions pour une application.
 
@@ -74,7 +81,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/lis
 Authorization: Bearer <your access token>
 ```
 
-## Réponse
+## <a name="response"></a>Réponse
 
 L’exemple suivant montre le corps de réponse JSON renvoyé par une requête réussie sur les 10 premières extensions d’une application qui en possède 53 au total. Pour des raisons de concision, cet exemple affiche uniquement les données des trois premières extensions retournées par la requête. Pour plus d’informations sur les valeurs figurant dans le corps de réponse, voir la section suivante.
 
@@ -97,7 +104,7 @@ L’exemple suivant montre le corps de réponse JSON renvoyé par une requête r
 }
 ```
 
-### Corps de la réponse
+### <a name="response-body"></a>Corps de la réponse
 
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -107,7 +114,7 @@ L’exemple suivant montre le corps de réponse JSON renvoyé par une requête r
 
 <span/>
 
-## Codes d’erreur
+## <a name="error-codes"></a>Codes d’erreur
 
 Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
@@ -118,15 +125,10 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 
 <span/>
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Obtenir toutes les applications](get-all-apps.md)
 * [Obtenir une application](get-an-app.md)
 * [Obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

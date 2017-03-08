@@ -3,9 +3,16 @@ author: mcleblanc
 description: "Nous vous recommandons vivement de lire ce guide de portage jusqu’à la fin, mais nous comprenons également que vous soyez impatient d’avancer et de passer à l’étape de développement et d’exécution de votre projet."
 title: "Résolution des problèmes de portage de Windows Phone Silverlight vers UWP"
 ms.assetid: d9a9a2a7-9401-4990-a992-4b13887f2661
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 3b7e68803a0391ea850b513014aa56a380df4d5c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ae120cedbf0ab42fcb091ba5b01b58e8796d6a4a
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -19,7 +26,7 @@ Nous vous recommandons vivement de lire ce guide de portage jusqu’à la fin, m
 
 ## <a name="tracking-down-issues"></a>Suivi des problèmes
 
-Les exceptions d’analyse XAML peuvent être difficiles à diagnostiquer, en particulier si l’exception ne présente aucun message d’erreur explicite. Assurez-vous que le débogueur est configuré pour intercepter les exceptions de première chance (pour essayer d’intercepter l’exception d’analyse le plus tôt possible). Vous pourrez peut-être inspecter la variable d’exception dans le débogueur pour déterminer si la valeur HRESULT ou le message comportent des informations utiles. Vérifiez également la fenêtre de sortie de Visual Studio pour voir si elle contient des messages d’erreur de l’analyseur XAML.
+Les exceptions d’analyse XAML peuvent être difficiles à diagnostiquer, en particulier si l’exception ne présente aucun message d’erreur explicite. Assurez-vous que le débogueur est configuré pour intercepter les exceptions de première chance (pour essayer d’intercepter l’exception d’analyse le plus tôt possible). Vous pourrez peut-être inspecter la variable d’exception dans le débogueur pour déterminer si la valeur HRESULT ou le message comportent des informations utiles. Vérifiez également la fenêtre de sortie de Visual Studio pour voir si elle contient des messages d’erreur de l’analyseur XAML.
 
 Si votre application s’arrête et que tout ce vous savez, c’est qu’une exception non gérée a été levée pendant l’analyse du balisage XAML, ce peut être le résultat d’une référence à une ressource manquante (c’est-à-dire à une ressource dont la clé existe pour les applications Silverlight pour Windows Phone, mais non pour les applications Windows 10, par exemple certaines clés de style **TextBlock** système). Il peut également s’agir d’une exception levée à l’intérieur d’une classe **UserControl**, d’un contrôle personnalisé ou d’un panneau de disposition personnalisé.
 
@@ -58,10 +65,5 @@ Les informations sur les solutions contenues dans le tableau sont destinées à 
 | Une exception System.InvalidCastException est levée lorsque le paramètre InitializeComponent est appelé dans un fichier xaml.cs. | Cela peut se produire lorsque vous disposez de plusieurs fichiers xaml (dont l’un est qualifié pour MRT, au minimum) qui partagent le même fichier xaml.cs et que les éléments présentent des attributs x: Name qui ne correspondent pas d’un fichier xaml à l’autre. Essayez d’ajouter le même nom à ces éléments identiques dans les deux fichiers xaml, ou omettez-les complètement. | 
 
 Rubrique suivante : [Portage du balisage XAML et de la couche interface utilisateur](wpsl-to-uwp-porting-xaml-and-ui.md).
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

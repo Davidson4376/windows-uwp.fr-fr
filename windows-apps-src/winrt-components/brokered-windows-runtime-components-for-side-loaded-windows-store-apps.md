@@ -2,9 +2,17 @@
 author: msatranjr
 title: Composants Windows Runtime
 description: "Ce livre blanc présente une fonctionnalité prise en charge par Windows 10, destinée aux entreprises, qui permet aux applications .NET tactiles d’utiliser le code responsable des opérations d’entreprise stratégiques."
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 translationtype: Human Translation
-ms.sourcegitcommit: 019d3d256becb06ad88cc87962c86829fcfb80cf
-ms.openlocfilehash: 2ac22675f44fab8ff123c26151efc25aad01b3a0
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 8844196503c45e9488d3fa2a543d588229d01cdd
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -575,10 +583,5 @@ Pour un serveur du service Broker, *clrhost.dll* doit figurer dans la liste des 
 
 -   [Déploiement d’applications du Windows Store pour les entreprises](http://go.microsoft.com/fwlink/p/?LinkID=264770)
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

@@ -2,13 +2,21 @@
 author: WilliamsJason
 title: "Infos de référence sur les API de chargement du dossier Device Portal"
 description: "Découvrez comment accéder par programme aux API de chargement des dossiers."
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 translationtype: Human Translation
-ms.sourcegitcommit: fdc25fa4bd7bd5bfa598b993f23cd0ae9783dd0e
-ms.openlocfilehash: 6c3eeccdbb2bca315dc84293a36d0923f46e746d
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 8c2251c5c78fed10959b89de0d81ff563d0fa3e3
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Télécharger un dossier dans le répertoire de développement
+# <a name="upload-a-folder-to-the-development-directory"></a>Télécharger un dossier dans le répertoire de développement
 
 **Requête**
 
@@ -20,11 +28,11 @@ POST | /api/app/packagemanager/upload
 <br />
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI      | Description
 :------     | :-----
-destinationFolder (obligatoire) | Le nom du dossier de destination du dossier à charger. Ce dossier sera placé sous d:\developmentfiles\LooseApps sur la console. Ce nom de dossier doit être codé en base64, dans la mesure où il peut contenir des séparateurs de chemin d’accès si le dossier est un sous-dossier de LooseApps.
+destinationFolder (obligatoire) | Le nom du dossier de destination du dossier à charger. Ce dossier sera placé sous d:\developmentfiles\LooseApps sur la console. Ce nom de dossier doit être codé en base 64, dans la mesure où il peut contenir des séparateurs de chemin d’accès si le dossier est un sous-dossier de LooseApps.
 <br />
 
 **En-têtes de requête**
@@ -50,10 +58,5 @@ Code d’état HTTP      | Description
 **Familles d’appareils disponibles**
 
 * Windows Xbox
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

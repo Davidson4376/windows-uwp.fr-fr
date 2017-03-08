@@ -2,9 +2,17 @@
 author: jnHs
 Description: "Prenez connaissance des déclarations fiscales envoyées par Microsoft, notamment à qui elles sont envoyées et à quelle date."
 title: "Présentation des déclarations fiscales de l’IRS envoyées par Microsoft"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 translationtype: Human Translation
-ms.sourcegitcommit: 684a76a503a0adefb1754059ffa6aa8d4d8d940b
-ms.openlocfilehash: 2927588bc096ef1ed9e8451cea73ba78efa9d7c0
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 5f51e1c5a44767e49b5c3dc5f578c2532da11008
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -54,10 +62,10 @@ Numéro EIN : \*\*\*\*\*4442<br>
     <td valign="top">Aucun des deux ne s’applique.</td>
     <td valign="top">Aucune</td>
   </tr>
-</table>
-
-
-<table>
+  <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
   <tr>
      <th>Je suis un développeur résidant aux États-Unis qui vend des applications payantes et ... </th>
      <th> Je dois recevoir cette déclaration</th>
@@ -119,9 +127,4 @@ Numéro EIN : \*\*\*\*\*0505<br>
 
 
 > **Remarque** Si vous avez une question ou un problème concernant les **déclarations fiscales de l’IRS**, créez un [ticket de support](http://aka.ms/storesupport). Microsoft n’est pas en mesure de répondre aux questions relatives à votre situation fiscale spécifique. Pour les questions de cet ordre, consultez votre conseiller fiscal.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

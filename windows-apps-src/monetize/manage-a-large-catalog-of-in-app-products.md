@@ -1,20 +1,27 @@
 ---
 author: mcleanbyron
 ms.assetid: 5E722AFF-539D-456E-8C4A-ADE90CF7674A
-description: "Si votre application propose un vaste catalogue de produits intégrés à l’application, vous pouvez éventuellement suivre la procédure décrite dans cette rubrique pour faciliter la gestion de votre catalogue."
-title: "Gérer un vaste catalogue de produits intégrés à l’application"
+description: "Si votre application propose un vaste catalogue de produits in-app, vous pouvez éventuellement suivre la procédure décrite dans cette rubrique pour faciliter la gestion de votre catalogue."
+title: "Gérer un grand catalogue de produits in-app"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, achats dans l’application, produits in-app, modules complémentaires, catalogue, Windows.ApplicationModel.Store"
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: ccbf6f99820ebc9a9245066899b2bd3be69319e7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e8e4e55ab08900457e4f847ccea705838169c39c
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="manage-a-large-catalog-of-in-app-products"></a>Gérer un grand catalogue de produits in-app
 
 
->**Remarque**  Cet article montre comment utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows 10, version 1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour gérer les extensions (également appelées produits in-app ou PIA) plutôt que l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
+>**Remarque**&nbsp;&nbsp;Cet article montre comment utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows 10, version 1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour gérer les extensions (également appelées produits in-app ou PIA) plutôt que l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
 
-Si votre application propose un vaste catalogue de produits in-app, vous pouvez éventuellement suivre la procédure décrite dans cette rubrique pour faciliter la gestion de votre catalogue. Avant Windows 10, le Windows Store avait une limite de 200 produits par compte de développeur et la procédure décrite dans cette rubrique permettait de contourner cette limite. Depuis Windows 10, le Windows Store n’a aucune limite quant au nombre de produits listés par compte de développeur. La procédure décrite dans cette rubrique n’est donc plus nécessaire. 
+Si votre application propose un vaste catalogue de produits in-app, vous pouvez éventuellement suivre la procédure décrite dans cette rubrique pour faciliter la gestion de votre catalogue. Avant Windows 10, le Windows Store avait une limite de 200 produits par compte de développeur et la procédure décrite dans cette rubrique permettait de contourner cette limite. Depuis Windows 10, le Windows Store n’a aucune limite quant au nombre de produits listés par compte de développeur. La procédure décrite dans cette rubrique n’est donc plus nécessaire.
 
 Pour activer cette fonctionnalité, vous allez créer plusieurs entrées pour certaines fourchettes de prix, chacune d’elles pouvant représenter des centaines de produits dans un catalogue. Utilisez la surcharge de la méthode [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263382) qui spécifie une offre définie par une application et associée à un produit in-app répertorié dans le Windows Store. En plus de spécifier une association entre une offre et un produit pendant l’appel, votre application doit transférer un objet [ProductPurchaseDisplayProperties](https://msdn.microsoft.com/library/windows/apps/dn263384) qui contient les détails de l’offre du grand catalogue. Si ces informations ne sont pas fournies, elles sont remplacées par celles du produit listé.
 
@@ -51,9 +58,4 @@ Le code suivant illustre l’appel d’acquisition et un schéma de message d’
 * [Exemple du Windows Store (montre des versions d’évaluation et des achats in-app)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263382)
 * [ProductPurchaseDisplayProperties](https://msdn.microsoft.com/library/windows/apps/dn263384)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

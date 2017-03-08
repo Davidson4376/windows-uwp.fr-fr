@@ -3,15 +3,22 @@ author: jwmsft
 description: "Cette rubrique fournit des explications sur les mappages d’espaces de noms XML/XAML (xmlns) tels qu’ils existent dans l’élément racine de la plupart des fichiers XAML. Elle explique également comment produire des mappages similaires pour les assemblys et les types personnalisés."
 title: "Espaces de noms XAML et mappage d’espaces de noms"
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
-ms.openlocfilehash: 626af2ba6e1b8616f8d23419d94e621f3ce7d043
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 11a99a1a68a37b8c60974193c8cab51247a25711
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="xaml-namespaces-and-namespace-mapping"></a>Espaces de noms XAML et mappage d’espaces de noms
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique fournit des explications sur les mappages d’espaces de noms XML/XAML (**xmlns**) tels qu’ils existent dans l’élément racine de la plupart des fichiers XAML. Elle explique également comment produire des mappages similaires pour les assemblys et les types personnalisés.
 
@@ -57,7 +64,7 @@ L’espace de noms XAML « d: » est destiné à la prise en charge de concept
 
 -   **d:DesignHeight and d:DesignWidth attributes :** ces attributs sont parfois appliqués à la racine d’un fichier XAML créé automatiquement par Visual Studio ou tout autre concepteur XAML. Par exemple, ces attributs sont définis sur la racine [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) du code XAML qui est créé si vous ajoutez un nouvel objet **UserControl** à votre projet d’application. Ils facilitent la conception de la composition du contenu XAML, afin que vous ayez une certaine anticipation des contraintes de disposition qui peuvent exister une fois que le contenu XAML est utilisé pour une instance de contrôle ou une autre partie d’une page d’interface utilisateur plus grande.
 
-   **Remarque** Si vous migrez du code XAML à partir de Microsoft Silverlight, vous pouvez voir ces attributs sur les éléments racines qui représentent la totalité d’une page d’interface utilisateur. Dans ce cas, vous pouvez supprimer les attributs. D’autres fonctionnalités des concepteurs XAML, telles que le simulateur, sont probablement plus utiles pour la conception de dispositions de pages qui gèrent correctement la mise à l’échelle et les états d’affichage qu’une disposition de page de taille fixe utilisant **d:DesignHeight** et **d:DesignWidth**.
+   **Remarque**  Si vous migrez du code XAML à partir de Microsoft Silverlight, vous pouvez voir ces attributs sur les éléments racines qui représentent la totalité d’une page d’interface utilisateur. Dans ce cas, vous pouvez supprimer les attributs. D’autres fonctionnalités des concepteurs XAML, telles que le simulateur, sont probablement plus utiles pour la conception de dispositions de pages qui gèrent correctement la mise à l’échelle et les états d’affichage qu’une disposition de page de taille fixe utilisant **d:DesignHeight** et **d:DesignWidth**.
 
 -   **Attribut d:DataContext :** vous pouvez définir cet attribut sur une racine de page ou un contrôle pour remplacer tout [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) explicite ou hérité que cet objet a sans cela.
 -   **Attribut d:DesignSource :** spécifie une source de données au moment de la conception pour un [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833), en remplacement de [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835).
@@ -111,10 +118,5 @@ Si vous référencez des propriétés jointes, la partie du type de propriétair
 * [Modèles de projet en C#, VB et C++ pour les applications Windows Runtime](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [Migration de code Silverlight ou XAML WPF vers une application Windows Runtime](https://msdn.microsoft.com/library/windows/apps/br229571)
  
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

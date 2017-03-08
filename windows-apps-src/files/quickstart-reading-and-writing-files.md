@@ -3,9 +3,16 @@ author: laurenhughes
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: "Créer, écrire et lire un fichier"
 description: "Lisez et écrivez un fichier à l’aide d’un objet StorageFile."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: 0709d9c9126dc4523eae58d5db8d9037a2fb618e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ae2754f543a3bc799b3d5af4c5c3c46f654c1ed7
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -23,7 +30,7 @@ ms.openlocfilehash: 0709d9c9126dc4523eae58d5db8d9037a2fb618e
 
 Lisez et écrivez un fichier à l’aide d’un objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
 
-> **Remarque** Consultez aussi l’[exemple d’accès aux fichiers](http://go.microsoft.com/fwlink/p/?linkid=619995).
+> **Remarque** Consultez également l’[exemple d’accès aux fichiers](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -256,9 +263,4 @@ Dim dataReader As New DataReader(inputStream)
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

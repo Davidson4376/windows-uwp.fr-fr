@@ -3,32 +3,39 @@ author: mtoepke
 title: Jeux et DirectX
 description: "La plateforme Windows universelle (UWP) offre de nouvelles opportunités sur le plan de la création, de la distribution et de la monétisation des jeux. Découvrez comment créer un jeu ou porter un jeu existant."
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, jeux, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 708e998e414f01bc6544d7f2435e7145ac84902b
-ms.openlocfilehash: 6437f3620afadd0b421bf11f1aa4f86558d50de1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c3a24c15f61204f3ecbc0587cf54e1da69ee712c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Jeux et DirectX
+# <a name="games-and-directx"></a>Jeux et DirectX
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 La plateforme Windows universelle (UWP) offre de nouvelles opportunités sur le plan de la création, de la distribution et de la monétisation de jeux. Découvrez comment créer un nouveau jeu ou porter un jeu existant.
 
 | Rubrique | Description |
 |---------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Guide de développement de jeux Windows10](e2e.md) | Guide complet sur les ressources et les informations nécessaires au développement de jeux UWP. |
+| [Guide de développement de jeux Windows 10](e2e.md) | Guide complet sur les ressources et les informations nécessaires au développement de jeux UWP. |
 | [Technologies de jeu pour les applications de plateforme Windows universelle](game-development-platform-guide.md) | Ce guide décrit les technologies disponibles pour le développement de jeux UWP. |
 | [Modèles de projet et outils pour les jeux](prepare-your-dev-environment-for-windows-store-directx-game-development.md) | Décrit ce dont vous avez besoin pour commencer à programmer des jeux DirectX pour UWP. |
-| [Objet application et DirectX](about-the-metro-style-user-interface-and-directx.md) | Les applications UWP intégrant des jeux DirectX n’utilisent pas beaucoup d’éléments et d’objets d’interface utilisateur Windows. En effet, comme elles s’exécutent à un niveau inférieur de la pile Windows Runtime, elles doivent interopérer avec l’infrastructure d’interface utilisateur d’une manière plus basique, c’est-à-dire en accédant directement à l’objet application et en interopérant avec lui. Découvrez quand et comment cette interopération se produit et comment vous pouvez, en tant que développeur DirectX, exploiter efficacement ce modèle dans le cadre du développement de vos applications UWP. |
+| [Objet application et DirectX](about-the-metro-style-user-interface-and-directx.md) | Les applications UWP intégrant des jeux DirectX n’utilisent pas beaucoup d’éléments et d’objets d’interface utilisateur Windows. En effet, comme elles s’exécutent à un niveau inférieur de la pile Windows Runtime, elles doivent interopérer avec l’infrastructure d’interface utilisateur d’une manière plus basique : en accédant directement à l’objet application et en interopérant avec lui. Découvrez quand et comment cette interopération se produit et comment vous pouvez, en tant que développeur DirectX, exploiter efficacement ce modèle dans le cadre du développement de vos applications UWP. |
 | [Lancement et reprise des applications](launching-and-resuming-apps-directx-and-cpp.md) | Découvrez comment lancer, suspendre et reprendre votre application DirectX UWP. |
 | [Graphismes 2D pour jeux DirectX](working-with-2d-graphics-in-your-directx-game.md) | Nous allons découvrir comment utiliser les effets et les graphismes bitmap 2D, puis comment vous en servir dans votre jeu. |
 | [Graphismes 3D de base pour jeux DirectX](an-introduction-to-3d-graphics-with-directx.md) | Nous vous expliquons comment utiliser la programmation DirectX pour implémenter les concepts fondamentaux des graphismes 3D. |
 | [Charger des ressources dans votre jeu DirectX](load-a-game-asset.md) | La plupart des jeux, à un moment donné, chargent des ressources et des éléments multimédias (comme les nuanceurs, les textures, les maillages prédéfinis ou d’autres données graphiques) à partir d’un stockage local ou d’autres flux de données. Cette rubrique offre une vue d’ensemble des éléments à prendre en compte lors du chargement de ces fichiers en vue de leur utilisation dans votre jeu UWP. |
 | [Créer un jeu UWP simple avec DirectX](tutorial--create-your-first-metro-style-directx-game.md) | Dans cet ensemble de didacticiels, vous allez apprendre à créer un jeu UWP de base avec DirectX et C++. Nous abordons toutes les principales parties d’un jeu, y compris les processus de chargement d’éléments multimédias tels que les illustrations et maillages, de création d’une boucle de jeu principale, d’implémentation d’un pipeline de rendu simple et d’ajout de son et de contrôles. |
 | [Développement de Marble Maze, jeu pour la plateforme Windows universelle en C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md) | Cette section de la documentation décrit comment utiliser DirectX et Visual C++ pour créer un jeu UWP en 3D. Cette documentation indique comment créer un jeu en 3D appelé Marble Maze qui tient compte des nouveaux facteurs de formes pour s’adapter aux tablettes, mais qui fonctionne également sur les ordinateurs de bureau et les ordinateurs portables classiques. |
-| [Prise en charge de l’orientation de l’écran](supporting-screen-rotation-directx-and-cpp.md) | Dans cette rubrique, nous allons examiner les meilleures pratiques en matière de gestion de la rotation écran dans votre application DirectX UWP de manière à utiliser efficacement le matériel graphique de l’appareil Windows10. |
+| [Prise en charge de l’orientation de l’écran](supporting-screen-rotation-directx-and-cpp.md) | Dans cette rubrique, nous allons examiner les meilleures pratiques en matière de gestion de la rotation écran dans votre application DirectX UWP de manière à utiliser efficacement le matériel graphique de l’appareil Windows 10. |
 | [Audio pour les jeux](working-with-audio-in-your-directx-game.md) | Apprenez à développer et à incorporer de la musique et des sons dans votre jeu DirectX, et à traiter les signaux audio afin de créer des sons dynamiques et positionnels. |
 | [Contrôles tactiles pour les jeux](tutorial--adding-touch-controls-to-your-directx-game.md) | Découvrez comment ajouter des contrôles tactiles de base à votre jeu UWP en C++ avec DirectX. Nous allons vous montrer comment ajouter des contrôles tactiles pour déplacer une caméra de plan fixe dans un environnement Direct3D, où le glissement avec un doigt ou un stylet décale la perspective de la caméra. |
 | [Contrôles de déplacement/vue pour les jeux](tutorial--adding-move-look-controls-to-your-directx-game.md) | Découvrez comment ajouter des contrôles de déplacement/vue de souris et de clavier classiques (aussi appelés contrôles de vue à la souris) à votre jeu DirectX. |
@@ -46,13 +53,13 @@ La plateforme Windows universelle (UWP) offre de nouvelles opportunités sur le 
 | [Technologie interop DirectX et XAML](directx-and-xaml-interop.md) | Vous pouvez utiliser XAML (Extensible Application Markup Language) et Microsoft DirectX conjointement dans votre jeu UWP. |
 | [Créer un package de votre jeu](package-your-windows-store-directx-game.md) | Certains jeux UWP qui prennent notamment en charge plusieurs langues et comprennent des éléments multimédias spécifiques à la région ou des éléments multimédias haute définition facultatifs peuvent facilement devenir très volumineux. Dans cette rubrique, découvrez comment utiliser les packages et ensembles d’applications pour personnaliser votre application afin que vos clients ne reçoivent que les ressources dont ils ont réellement besoin. |
 | [Approbation de concept](concept-approval.md) | Découvrez comment soumettre votre produit pour approbation de concept, ce dont vous aurez besoin si votre produit s’exécute sur Xbox ou utilise Xbox Live. |
-| [Guides en matière de portage de jeu](porting-guides.md) | Fournit des guides relatifs au portage de vos jeux existants vers Direct3D 11, UWP et Windows10. |
+| [Guides en matière de portage de jeu](porting-guides.md) | Fournit des guides relatifs au portage de vos jeux existants vers Direct3D 11, UWP et Windows 10. |
 | [Ressources de programmation de jeux](additional-directx-game-programming-resources.md) | Pour plus d’informations sur la programmation des jeux sur Windows, consultez les ressources suivantes. |
 
  
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -69,10 +76,5 @@ Pour utiliser au mieux les vues d’ensemble du développement de jeux et des di
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

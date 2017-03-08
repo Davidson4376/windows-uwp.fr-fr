@@ -1,11 +1,18 @@
 ---
 author: mcleanbyron
-ms.assetid: 
+ms.assetid: b556a245-6359-4ddc-a4bd-76f9873ab694
 description: "Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir la trace de pile concernant une erreur dans votre application."
 title: Obtenir la trace de pile concernant une erreur dans votre application
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, services du Windows Store, API d’analyse du Windows Store, trace de pile, erreur"
 translationtype: Human Translation
-ms.sourcegitcommit: 767097f068630e5ec171415c05d6dc395c8b26b3
-ms.openlocfilehash: 90481b5f85d010a142e86ca67ac94c3ec25d89c6
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 8b10c7f9e2de962aca719055a26d8c3954ea052f
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -125,9 +132,4 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 * [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
 * [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
 * [Obtenir les informations sur une erreur de votre application](get-details-for-an-error-in-your-app.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

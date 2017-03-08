@@ -1,22 +1,31 @@
 ---
 author: mcleanbyron
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
-description: "Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir les avis relatifs à une plage de dates donnée, et suivant d’autres filtres facultatifs."
+description: "Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir les avis relatifs à une plage de dates donnée et en fonction d’autres filtres facultatifs."
 title: Obtenir les avis sur les applications
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, services du Windows Store, API d’analyse du Windows Store, avis"
 translationtype: Human Translation
-ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
-ms.openlocfilehash: 49d3f3cb608f3207306af443c67b684a0ae9f319
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 68ad995341d0d4bedbe566e8a491a80b9b0a8ed2
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="get-app-reviews"></a>Obtenir les avis sur les applications
 
 
-Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir, au format JSON, les avis relatifs à une plage de dates donnée, et suivant d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport Avis](../publish/reviews-report.md) du tableau de bord du Centre de développement Windows.
+Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir, au format JSON, les avis relatifs à une plage de dates donnée et en fonction d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport Avis](../publish/reviews-report.md) du tableau de bord du Centre de développement Windows.
 
-## <a name="prerequisites"></a>Prérequis
+Une fois que vous avez récupéré des avis, vous pouvez utiliser les méthodes [Obtenir des informations de réponse pour les avis sur les applications](get-response-info-for-app-reviews.md) et [Envoyer des réponses aux avis concernant l’application](submit-responses-to-app-reviews.md) dans l’API d’avis du Windows Store pour répondre par programmation aux avis.
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
+## <a name="prerequisites"></a>Conditions préalables
+
+Pour utiliser cette méthode, vous devez commencer par effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) relatives à l’API d’analyse du Windows Store.
 * [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
@@ -82,13 +91,13 @@ Pour obtenir une liste des champs pris en charge et des opérateurs associés à
 | notHelpfulCount  | eq, ne  | Nombre d’occurrences où l’avis a été signalé comme inutile.  |
 | responseDate  | eq, ne  | Date à laquelle la réponse a été soumise.  |
 | responseText  | eq, ne, contains  | Texte de la réponse.  |
-
+| id  | eq, ne  | ID de l’avis (il s’agit d’un GUID).        |
 
 <span/> 
 
 ### <a name="request-example"></a>Exemple de requête
 
-Les exemples suivants illustrent plusieurs requêtes de récupération des avis. Remplacez la valeur *applicationId* par l’ID Windows Store de votre application.
+Les exemples ci-après illustrent plusieurs requêtes de récupération des avis. Remplacez la valeur *applicationId* par l’ID Windows Store de votre application.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -137,14 +146,15 @@ Les éléments du tableau *Value* comportent les valeurs suivantes :
 | reviewText             | chaîne  | Texte de l’avis.     |
 | helpfulCount           | nombre  | Le nombre d’occurrences où l’avis a été marqué comme utile.     |
 | notHelpfulCount        | nombre  | Nombre d’occurrences où l’avis a été signalé comme inutile.               |
-| responseDate           | chaîne  | Date de soumission d’une réponse.                 |
+| responseDate           | chaîne  | Date d’envoi d’une réponse.                 |
 | responseText           | chaîne  | Texte de la réponse.        |
+| id                     | chaîne  | ID de l’avis (il s’agit d’un GUID). Vous pouvez utiliser cet ID dans les méthodes [Obtenir des informations de réponse pour les avis sur les applications](get-response-info-for-app-reviews.md) et [Envoyer des réponses aux avis concernant l’application](submit-responses-to-app-reviews.md)       |
 
 <span/> 
 
 ### <a name="response-example"></a>Exemple de réponse
 
-L’exemple suivant représente un corps de réponse JSON pour cette requête.
+L’exemple ci-après présente un corps de réponse JSON pour cette requête.
 
 ```json
 {
@@ -171,7 +181,8 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
       "helpfulCount": 0,
       "notHelpfulCount": 0,
       "responseDate": "2015-08-07T01:50:22.9874488Z",
-      "responseText": "1"
+      "responseText": "1",
+      "id": "6be543ff-1c9c-4534-aced-af8b4fbe0316"
     }
   ],
   "@nextLink": null,
@@ -182,14 +193,11 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Rapport Avis](../publish/reviews-report.md)
-* [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
+* [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
+* [Obtenir des informations de réponse pour les avis sur les applications](get-response-info-for-app-reviews.md)
+* [Envoyer des réponses aux avis concernant l’application](submit-responses-to-app-reviews.md)
 * [Obtenir des acquisitions d’applications](get-app-acquisitions.md)
 * [Obtenir des acquisitions d’extensions](get-in-app-acquisitions.md)
 * [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
 * [Obtenir les classifications des applications](get-app-ratings.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

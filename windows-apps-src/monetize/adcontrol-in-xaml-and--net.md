@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: "Découvrez comment utiliser la classe AdControl pour afficher des bannières publicitaires dans une application XAML pour Windows 10 (UWP), Windows 8.1 ou Windows Phone 8.1."
 title: AdControl en XAML et .NET
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, annonces, publicité, AdControl, XAML, .net, procédure pas à pas"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: f68171524fc535c5c4b855305898d56b1731182d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: db84e03d0cefb4692689ed901f25930a064f9a31
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -148,9 +155,4 @@ Pour un exemple de projet complet illustrant l’ajout de bannières publicitair
 * [Exemples de publicité sur GitHub](http://aka.ms/githubads)
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

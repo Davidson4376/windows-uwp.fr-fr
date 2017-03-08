@@ -2,14 +2,21 @@
 author: mcleanbyron
 ms.assetid: 4804e371-065e-4d5a-ab1a-9c5732f52a9e
 description: "En savoir plus sur les pays et régions pris en charge pour les spots et bannières publicitaires."
-title: "Marchés pris en charge par MicrosoftAdvertising"
+title: "Marchés pris en charge par Microsoft Advertising"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, publicités, publicité, marchés"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6150c885c4159911932bf8d7c3848b1e182b2f61
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Marchés pris en charge par MicrosoftAdvertising
+# <a name="supported-markets-for-microsoft-advertising"></a>Marchés pris en charge par Microsoft Advertising
 
 
 
@@ -17,7 +24,7 @@ ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 Les spots et bannières publicitaires sont pris en charge dans les régions et pays suivants.
 
 <span id="interstitialads"/>
-## Spots publicitaires
+## <a name="interstitial-ads"></a>Spots publicitaires
 
 -   Australie
 
@@ -40,7 +47,7 @@ Les spots et bannières publicitaires sont pris en charge dans les régions et p
 -   États-Unis
 
 <span id="bannerads"/>
-## Bannières publicitaires
+## <a name="banner-ads"></a>Bannières publicitaires
 
 
 -   Afghanistan
@@ -312,9 +319,4 @@ Les spots et bannières publicitaires sont pris en charge dans les régions et p
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

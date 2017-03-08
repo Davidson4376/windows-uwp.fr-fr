@@ -3,17 +3,24 @@ author: laurenhughes
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: "Obtenir les propriétés du fichier"
 description: "Obtenez les propriétés (de niveau supérieur, de base et étendues) d’un fichier représenté par un objet StorageFile."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: 464548664f8065e4dba45d23ccbb71a68d0b6b17
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 89dee43da35e9a31bb7a795324119cb429d3734e
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="get-file-properties"></a>Obtenir les propriétés du fichier
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 
-** API importantes **
+**API importantes**
 
 -   [**StorageFile.GetBasicPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh701737)
 -   [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225)
@@ -21,7 +28,7 @@ ms.openlocfilehash: 464548664f8065e4dba45d23ccbb71a68d0b6b17
 
 Obtenez les propriétés (de niveau supérieur, de base et étendues) d’un fichier représenté par un objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
 
-**Remarque** Consultez aussi l’[exemple d’accès aux fichiers](http://go.microsoft.com/fwlink/p/?linkid=619995).
+**Remarque** Consultez également l’[exemple d’accès aux fichiers](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
  
 
@@ -134,9 +141,4 @@ foreach (Windows.Storage.StorageFile file in files)
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

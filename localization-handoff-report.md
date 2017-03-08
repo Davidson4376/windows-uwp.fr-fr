@@ -1,19 +1,20 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\porting\desktop-to-uwp-extensions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/017addc68ab9bf49d1cbb400b6b62732837bb242?path=windows-apps-src%2Fporting%2Fdesktop-to-uwp-extensions.md&_a=contents) | HandedOffSuccess | [Details](#cc55f7041587f444abebbe9a062b2a9de6623a954655)
+ [windows-apps-src\publish\create-a-custom-app-promotion-campaign.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/caa9919fc0cb9779342a533541fc877071e2dc87?path=windows-apps-src%2Fpublish%2Fcreate-a-custom-app-promotion-campaign.md&_a=contents) | HandedOffSuccess | [Details](#2016d8ce3b3afe116ff44aeb17047d93257c17a24844)
+ [windows-apps-src\whats-new\windows-10-build-15021-api-diff.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/caa9919fc0cb9779342a533541fc877071e2dc87?path=windows-apps-src%2Fwhats-new%2Fwindows-10-build-15021-api-diff.md&_a=contents) | HandedOffSuccess | [Details](#aa9d4f0e3724e8490777d3e1893297d3c89bc2be7854)
 
 ## Item Details
-##### <a name='cc55f7041587f444abebbe9a062b2a9de6623a954655'></a> Source: [windows-apps-src\porting\desktop-to-uwp-extensions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/017addc68ab9bf49d1cbb400b6b62732837bb242?path=windows-apps-src%2Fporting%2Fdesktop-to-uwp-extensions.md&_a=contents)
+##### <a name='2016d8ce3b3afe116ff44aeb17047d93257c17a24844'></a> Source: [windows-apps-src\publish\create-a-custom-app-promotion-campaign.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/caa9919fc0cb9779342a533541fc877071e2dc87?path=windows-apps-src%2Fpublish%2Fcreate-a-custom-app-promotion-campaign.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [desktop-to-uwp-extensions.b85d42a8c8cdbc820d413ec030cc4afe93550f53.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/3483946ba0e459fcb521debb7e356f28793aa2f3?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fdesktop-to-uwp-extensions.b85d42a8c8cdbc820d413ec030cc4afe93550f53.fr-fr.xlf&_a=contents)
-* Handoff Datetime: 2017-02-21 19:28:18
+* Handoff File: [create-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/4178f1d0edf9a134ec249d1633d8761270e167ec?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fcreate-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.fr-fr.xlf&_a=contents)
+* Handoff Datetime: 2017-03-08 02:17:08
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,11 +22,25 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\porting\desktop-to-uwp-extensions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/b499722b387bb5bf9961078746547751e280aace?path=windows-apps-src%2Fporting%2Fdesktop-to-uwp-extensions.md&_a=contents)
-* Current Handback File: [desktop-to-uwp-extensions.b85d42a8c8cdbc820d413ec030cc4afe93550f53.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/a2b58f321961fe8e5a80c86cd6d53f983c3d6f0e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fdesktop-to-uwp-extensions.b85d42a8c8cdbc820d413ec030cc4afe93550f53.fr-fr.xlf&_a=contents)
-* Current Handback Datetime: 2016-11-21 16:54:33
-* Bilingual File: [desktop-to-uwp-extensions.b85d42a8c8cdbc820d413ec030cc4afe93550f53.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/a2b58f321961fe8e5a80c86cd6d53f983c3d6f0e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fdesktop-to-uwp-extensions.b85d42a8c8cdbc820d413ec030cc4afe93550f53.fr-fr.xlf&_a=contents)
-* Bilingual Datetime: 2016-11-21 17:10:43
+* Current Target File: [windows-apps-src\publish\create-a-custom-app-promotion-campaign.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/27921007870483d99d674a8f8bb14d6548e54ec7?path=windows-apps-src%2Fpublish%2Fcreate-a-custom-app-promotion-campaign.md&_a=contents)
+* Current Handback File: [create-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/30928a70c7635f46c1585af446479dbfb1fb6240?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fcreate-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.fr-fr.xlf&_a=contents)
+* Current Handback Datetime: 2017-03-01 15:58:37
+* Bilingual File: [create-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/30928a70c7635f46c1585af446479dbfb1fb6240?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fcreate-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.fr-fr.xlf&_a=contents)
+* Bilingual Datetime: 2017-03-01 16:21:52
+* [Back to Top](#report-top)
+
+##### <a name='aa9d4f0e3724e8490777d3e1893297d3c89bc2be7854'></a> Source: [windows-apps-src\whats-new\windows-10-build-15021-api-diff.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/caa9919fc0cb9779342a533541fc877071e2dc87?path=windows-apps-src%2Fwhats-new%2Fwindows-10-build-15021-api-diff.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [windows-10-build-15021-api-diff.37f72fc4bf8c828e205f3cc1c4c20ea6381e2883.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/4178f1d0edf9a134ec249d1633d8761270e167ec?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fwindows-10-build-15021-api-diff.37f72fc4bf8c828e205f3cc1c4c20ea6381e2883.fr-fr.xlf&_a=contents)
+* Handoff Datetime: 2017-03-08 02:17:08
+* Handoff Reason: Include
+* Handoff Name: 
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Handback Name: 
 * [Back to Top](#report-top)
 
 

@@ -1,19 +1,25 @@
 ---
 author: mcleanbyron
-Description: "Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie de mettre à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation."
+Description: "Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez les inciter à effectuer une mise à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation."
 title: "Exclure ou limiter des fonctionnalités de la version d’évaluation"
 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
-keywords: "exemple de code d’évaluation gratuit"
+keywords: "windows 10, uwp, évaluation, achat dans l’application, Windows.ApplicationModel.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 0d377677237264e2dad290c7d49c47800c255138
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8b55c837e63792e6da4e684602e79d99ad7cff1e
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>Exclure ou limiter des fonctionnalités de la version d’évaluation
 
 
->**Remarque**  Cet article montre comment utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows 10, version 1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour implémenter une version d’évaluation, plutôt que l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, voir [Implémenter une version d’évaluation de votre application](implement-a-trial-version-of-your-app.md).
+>**Remarque**&nbsp;&nbsp;Cet article explique comment utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows 10, version 1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour implémenter une version d’évaluation, plutôt que l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, voir [Implémenter une version d’évaluation de votre application](implement-a-trial-version-of-your-app.md).
 
 Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie de mettre à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation. Choisissez les fonctionnalités à limiter avant de commencer à coder, puis faites en sorte que votre application ne les rende disponibles qu’à l’achat de la licence complète. Vous pouvez également activer certaines fonctionnalités, telles que des bannières ou des filigranes, qui ne s’afficheront que pendant la période d’évaluation, avant l’achat de votre application par un client.
 
@@ -100,7 +106,7 @@ Si ce chemin d’accès et ce fichier n’existent pas, vous devez les créer lo
 
 Après avoir testé votre application à l’aide du serveur de licences simulées et avant d’envoyer votre application à un Windows Store à des fins de certification, remplacez **CurrentAppSimulator** par **CurrentApp**, comme indiqué dans l’exemple de code suivant.
 
->**Important**  Votre application doit utiliser l’objet **CurrentApp** quand vous la soumettez au Windows Store. Dans le cas contraire, elle ne sera pas certifiée.
+>**Important**&nbsp;&nbsp;Votre application doit utiliser l’objet **CurrentApp** quand vous la soumettez au Windows Store. Dans le cas contraire, elle ne sera pas certifiée.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
@@ -120,9 +126,4 @@ Pour plus d’informations sur la description de votre application, voir [Créer
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -3,16 +3,23 @@ author: mtoepke
 title: "Dessiner à l’écran"
 description: "Pour finir, nous portons le code qui trace le cube tournant à l’écran."
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, jeux, directx, graphismes"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1e2039743ba45d577c08c0a6d9c17c7f923b2d86
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1fe28d17aa8c943de9a2bcf6c2230237e0c931d0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Dessiner à l’écran
+# <a name="draw-to-the-screen"></a>Dessiner à l’écran
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 
 **API importantes**
@@ -66,9 +73,9 @@ L’initialisation et la configuration du périphérique et du contexte de péri
 
 Pour plus d’informations sur le contexte de périphérique Direct3D par rapport au code EGL et au type EGLContext, voir [Porter du code EGL vers DXGI et Direct3D](moving-from-egl-to-dxgi.md).
 
-## Instructions
+## <a name="instructions"></a>Instructions
 
-### Étape1: Rendu de la scène et affichage
+### <a name="step-1-rendering-the-scene-and-displaying-it"></a>Étape 1 : Rendu de la scène et affichage
 
 Après la mise à jour des données de cube (dans cet exemple, en le faisant pivoter légèrement autour de l’axe y), la méthode Render définit la fenêtre d’affichage sur les dimensions du contexte de dessin (EGLContext). Ce contexte contient le tampon de couleur qui sera affiché à la surface de la fenêtre (EGLSurface) sur l’écran configuré (EGLDisplay). À ce stade, l’exemple met à jour les attributs des données de vertex, relie le tampon d’index, dessine le cube et permute le tampon de couleur dessiné par le pipeline d’ombrage sur la surface de la fenêtre.
 
@@ -195,19 +202,19 @@ void RenderObject::Render()
 
 Dès que [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) est appelée, votre trame est envoyée à l’écran configuré.
 
-## Étape précédente
+## <a name="previous-step"></a>Étape précédente
 
 
 [Porter le langage GLSL](port-the-glsl.md)
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 Cet exemple ne s’attarde pas sur la grande complexité de la configuration des ressources de périphérique, en particulier pour les applications DirectX de plateforme Windows universelle (UWP). Nous vous conseillons de revoir l’intégralité du code du modèle, notamment les parties correspondant à la configuration et à la gestion des fenêtres et des ressources de périphérique. Les applications UWP doivent aussi prendre en charge les événements de rotation et les événements de suspension/reprise. Le modèle démontre les meilleures pratiques pour gérer la perte d’une interface ou une modification des paramètres d’affichage.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Procédure: portage d’un convertisseur simple OpenGL ES2.0 sur Direct3D11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+* [Procédure : portage d’un convertisseur simple OpenGL ES 2.0 sur Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
 * [Porter les objets nuanceur](port-the-shader-config.md)
 * [Porter le GLSL](port-the-glsl.md)
 * [Dessiner à l’écran](draw-to-the-screen.md)
@@ -218,10 +225,5 @@ Cet exemple ne s’attarde pas sur la grande complexité de la configuration des
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

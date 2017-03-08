@@ -3,9 +3,16 @@ author: TylerMSFT
 title: "Déboguer une tâche en arrière-plan"
 description: "Découvrez comment déboguer une tâche en arrière-plan, notamment dans le cadre de son activation et du suivi de débogage dans le journal des événements Windows."
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 6e1184729af929b771f21112083593e321cacc38
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6200a8363c8a638f2ee44bdad6902748fb9adf45
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -42,7 +49,7 @@ Les tâches en arrière-plan peuvent être déclenchées manuellement par le bia
     Pour que cette opération fonctionne, la tâche en arrière-plan, doit déjà être inscrite et doit toujours attendre le déclencheur. Par exemple, si une tâche en arrière-plan a été inscrite avec un TimeTrigger à déclenchement unique qui a déjà été déclenché, le lancement de la tâche via Visual Studio n’aura aucun effet.
 
 > [!Note]
-> Les tâches en arrière-plan qui utilisent les déclencheurs suivants ne peuvent pas être activées de cette manière : [**ApplicationTrigger**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.applicationtrigger.aspx), [**MediaProcessingTrigger**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.mediaprocessingtrigger.aspx), [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) et les tâches en arrière-plan utilisant un déclencheur [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) de type [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839).  
+> Les tâches en arrière-plan qui utilisent les déclencheurs suivants ne peuvent pas être activées de cette manière : [**ApplicationTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.applicationtrigger.aspx), [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.mediaprocessingtrigger.aspx), [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) et les tâches en arrière-plan utilisant un déclencheur [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) de type [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839).  
 > Les déclencheurs **ApplicationTrigger** et **MediaProcessingTrigger** peuvent être déclarés manuellement dans le code avec `trigger.RequestAsync()`.     
 
     ![debugging background tasks](images/debugging-activation.png)
@@ -113,9 +120,4 @@ Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer u
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -3,9 +3,16 @@ author: laurenhughes
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: "Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos"
 description: "Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothèques correspondantes. Vous pouvez également supprimer des dossiers de bibliothèques, obtenir la liste des dossiers d’une bibliothèque et découvrir des photos, de la musique et des vidéos."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: 4e2b7d10e1d24427aede21ccae176d7cd55f9de8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 18acfda780211a008a3c5febdcbff2bf007ff379
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -243,9 +250,4 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

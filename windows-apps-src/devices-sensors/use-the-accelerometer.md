@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: "Utiliser l’accéléromètre"
 description: "Découvrez comment utiliser l’accéléromètre pour répondre aux mouvements de l’utilisateur."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8f8236a68fd7628f1f53eebc13731a72414e3217
+ms.lasthandoff: 02/07/2017
 
 ---
-# Utiliser l’accéléromètre
+# <a name="use-the-accelerometer"></a>Utiliser l’accéléromètre
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-** API importantes **
+**API importantes**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)
@@ -23,17 +30,17 @@ Découvrez comment utiliser l’accéléromètre pour répondre aux mouvements d
 
 Une application de jeu simple repose sur un capteur unique, l’accéléromètre, comme périphérique d’entrée. Ces applications utilisent généralement un ou deux axes pour l’entrée, mais elles peuvent aussi utiliser l’événement poignée comme autre source d’entrée.
 
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un accéléromètre.
 
-## Créer une application simple d’accéléromètre
+## <a name="create-a-simple-accelerometer-app"></a>Créer une application simple d’accéléromètre
 
-Cette section se divise en deuxsous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple d’accéléromètre. La sous-section suivante décrit l’application que vous venez de créer.
+Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple d’accéléromètre. La sous-section suivante décrit l’application que vous venez de créer.
 
-### Instructions
+### <a name="instructions"></a>Instructions
 
 -   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
 
@@ -67,7 +74,7 @@ Cette section se divise en deuxsous-sections. La première sous-section vous per
             // Sensor and dispatcher variables
             private Accelerometer _accelerometer;
 
-            // This event handler writes the current accelerometer reading to 
+            // This event handler writes the current accelerometer reading to
             // the three acceleration text blocks on the app' s main page.
 
             private async void ReadingChanged(object sender, AccelerometerReadingChangedEventArgs e)
@@ -136,7 +143,7 @@ Une fois l’application en cours d’exécution, vous pouvez modifier les valeu
 
 -   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+F5, ou sélectionnez **Déboguer** &gt; **Arrêter le débogage**.
 
-### Explication
+### <a name="explanation"></a>Explication
 
 L’exemple précédent démontre la faible quantité de code que vous devrez écrire afin d’intégrer l’entrée de l’accéléromètre dans votre application.
 
@@ -146,7 +153,7 @@ L’application établit une connexion avec l’accéléromètre par défaut dan
 _accelerometer = Accelerometer.GetDefault();
 ```
 
-L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16millisecondes (ce qui représente une fréquence de rafraîchissement de 60Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
+L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16 millisecondes (ce qui représente une fréquence de rafraîchissement de 60 Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
 
 ```csharp
 uint minReportInterval = _accelerometer.MinimumReportInterval;
@@ -157,7 +164,7 @@ _accelerometer.ReportInterval = reportInterval;
 Les nouvelles données de l’accéléromètre sont capturées dans la méthode **ReadingChanged**. Chaque fois que le pilote du capteur reçoit de nouvelles données du capteur, il transmet les valeurs à votre application à l’aide de ce gestionnaire d’événements. L’application inscrit ce gestionnaire d’événements sur la ligne suivante.
 
 ```csharp
-_accelerometer.ReadingChanged += new TypedEventHandler<Accelerometer, 
+_accelerometer.ReadingChanged += new TypedEventHandler<Accelerometer,
 AccelerometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -168,13 +175,7 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
  <TextBlock x:Name="txtYAxis" HorizontalAlignment="Left" Height="15" Margin="70,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFF2EEEE"/>
  <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="15" Margin="70,80,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFFFF8F8"/>
 ```
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Exemple d’accéléromètre](http://go.microsoft.com/fwlink/p/?linkid=241377)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

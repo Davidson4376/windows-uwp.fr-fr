@@ -1,15 +1,22 @@
 ---
 author: mcleblanc
-description: "La pratique de définition de l’interface utilisateur sous la forme de balisage XAML déclaratif convertit extrêmement bien des applications 8.1 universelles en applications UWP."
-title: Portage du balisage XAML et de la couche interface utilisateur de Windows Runtime 8.x vers UWP
+description: "La pratique de définition de l’interface utilisateur sous la forme de balisage XAML déclaratif convertit extrêmement bien des applications 8.1 universelles aux applications de plateforme Windows universelle (UWP)."
+title: "Portage du balisage XAML et de la couche interface utilisateur de Windows Runtime 8.x vers UWP"
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: ea8844925cc227d9f082595b039dd68164ad1228
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 19a6ef29265c22d1bb02464a76ab20e487c67ce4
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Portage du balisage XAML et de la couche interface utilisateur de Windows Runtime 8.x vers UWP
+# <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Portage du balisage XAML et de la couche interface utilisateur de Windows Runtime 8.x vers UWP
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -79,13 +86,13 @@ Il existe également une approche unique pour toutes les familles d’appareils 
 
 ## <a name="charms"></a>Icônes
 
-Vous n’avez pas besoin de modifier les parties de votre code qui s’intègrent à des icônes, mais vous devez ajouter certains éléments d’interface utilisateur à votre application afin de remplacer la barre Icônes, absente de l’environnement de Windows 10. Une application 8.1 universelle s’exécutant sur Windows 10 possède sa propre interface utilisateur de remplacement, fournie par le chrome rendu par le système dans la barre de titre de l’application.
+Vous n’avez pas besoin de modifier les parties de votre code qui s’intègrent à des icônes, mais vous devez ajouter certains éléments d’interface utilisateur à votre application afin de remplacer la barre Icônes, absente de l’environnement de Windows 10. Une application 8.1 universelle s’exécutant sur Windows 10 possède sa propre interface utilisateur de remplacement, fournie par le chrome rendu par le système dans la barre de titre de l’application.
 
-## <a name="controls-and-control-stylestemplates"></a>Contrôles et styles/modèles de contrôle
+## <a name="controls-and-control-styles-and-templates"></a>Contrôles et styles et modèles de contrôle
 
-Une application universelle 8.1 s’exécutant sur Windows 10 conserve l’apparence et le comportement de la version 8.1 pour les contrôles. Toutefois, lorsque vous portez cette application vers une application Windows 10, certaines différences dans l’apparence et le comportement sont à prendre en compte. L’architecture et la conception des contrôles restant essentiellement inchangées pour les applications Windows 10, les modifications portent principalement sur des améliorations en matière de [langage de conception](#design-language), de simplification et d’utilisation.
+Une application universelle 8.1 s’exécutant sur Windows 10 conserve l’apparence et le comportement de la version 8.1 pour les contrôles. Toutefois, lorsque vous portez cette application vers une application Windows 10, certaines différences dans l’apparence et le comportement sont à prendre en compte. L’architecture et la conception des contrôles restant essentiellement inchangées pour les applications Windows 10, les modifications portent principalement sur des améliorations en matière de [langage de conception](#design-language-in-windows-10), de simplification et d’utilisation.
 
-**Remarque** L’état visuel PointerOver est adapté aux styles/modèles personnalisés dans les applications Windows 10 et les applications du Windows Store, mais non dans les applications du Windows Phone Store. Pour cette raison (et à cause des clés de ressources système qui sont prises en charge pour les applications Windows 10), nous vous recommandons de réutiliser les styles/modèles personnalisés de vos applications du Windows Store quand vous portez votre application vers Windows 10.
+**Remarque**   L’état visuel PointerOver est adapté aux styles/modèles personnalisés dans les applications Windows 10 et les applications du Windows Store, mais non dans les applications du Windows Phone Store. Pour cette raison (et à cause des clés de ressources système qui sont prises en charge pour les applications Windows 10), nous vous recommandons de réutiliser les styles/modèles personnalisés de vos applications du Windows Store quand vous portez votre application vers Windows 10.
 Si vous voulez avoir l’assurance que vos styles/modèles personnalisés utilisent le dernier jeu d’états visuels et bénéficient des améliorations de performances apportées aux styles/modèles par défaut, modifiez une copie du nouveau modèle par défaut de Windows 10 et réappliquez votre personnalisation à ce dernier. Un exemple d’amélioration des performances correspond à la suppression de tous les éléments **Border** qui délimitaient précédemment un élément **ContentPresenter** ou Panel et au rendu de la bordure par un élément enfant.
 
 Voici quelques exemples plus spécifiques de modifications apportées aux contrôles.
@@ -99,7 +106,7 @@ Voici quelques exemples plus spécifiques de modifications apportées aux contr�
 | [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | Dans une application Windows 10, l’élément [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) ne gère pas les événements [**EdgeGesture.Completed**](https://msdn.microsoft.com/library/windows/apps/hh701622) ni [**UIElement.RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984). Il ne réagit pas non plus à un appui ni à un balayage vers le haut. Vous avez toujours la possibilité de gérer ces événements et de définir [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/hh701939). |
 | [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584), [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | Passez en revue l’apparence de votre application avec les changements visuels apportés à [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) et [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280). Pour une application Windows 10 s’exécutant sur un appareil mobile, ces contrôles n’accèdent plus à une page de sélection, mais à une fenêtre contextuelle révocable à l’aide d’un léger mouvement. |
 | [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584),[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | Dans une application Windows 10, vous ne pouvez pas placer [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) ni [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) à l’intérieur d’un menu volant. Si vous souhaitez que ces contrôles s’affichent dans un contrôle de type fenêtre contextuelle, vous pouvez utiliser [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) et [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313). |
-| **GridView**, **ListView** | Pour **GridView**/**ListView**, voir la section [Modifications GridView/ListView](#gridview). |
+| **GridView**, **ListView** | Pour **GridView**/**ListView**, voir la section [Modifications GridView et ListView](#gridview-and-listview-changes). |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | Dans une application du Windows Phone Store, un contrôle [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) exécute une boucle entre la dernière section et la première. Dans une application du Windows Store et dans une application Windows 10, les sections de hub n’exécutent aucune boucle. |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | Dans une application du Windows Phone Store, l’image d’arrière-plan d’un contrôle [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) se déplace en parallaxe par rapport aux sections de hub. Dans une application du Windows Store et dans une application Windows 10, l’effet parallaxe n’est pas utilisé. |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843)  | Dans une application 8.1 universelle, la propriété [**HubSection.IsHeaderInteractive**](https://msdn.microsoft.com/library/windows/apps/dn251917) rend interactifs l’en-tête de section et le glyphe de chevron rendu en regard de ce dernier. Dans une application Windows 10, il existe une affordance interactive « Voir plus » à côté de l’en-tête, mais l’en-tête proprement dit n’est pas interactif. **IsHeaderInteractive** détermine toujours si l’interaction déclenche l’événement [**Hub.SectionHeaderClick**](https://msdn.microsoft.com/library/windows/apps/dn251953). |
@@ -107,8 +114,8 @@ Voici quelques exemples plus spécifiques de modifications apportées aux contr�
 | **ListPickerFlyout**, **PickerFlyout**  | **ListPickerFlyout** et **PickerFlyout** sont déconseillés pour une application Windows 10. Dans le cas d’un menu volant à sélection unique, utilisez [**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030) ; pour des expériences plus complexes, préférez [**Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496). |
 | [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) | La propriété [**PasswordBox.IsPasswordRevealButtonEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702579) est déconseillée dans une application Windows 10, et sa configuration n’a aucun effet. Utilisez plutôt la propriété [**PasswordBox.PasswordRevealMode**](https://msdn.microsoft.com/library/windows/apps/dn890867), définie par défaut sur **Peek** (qui affiche un glyphe d’œil, comme dans une application du Windows Store). Voir également l’article [Recommandations en matière de zones de mot de passe](https://msdn.microsoft.com/library/windows/apps/dn596103). |
 | [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) | Le contrôle [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) est désormais universel et n’est plus limité aux appareils mobiles. |
-| [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252771) | Bien que la méthode [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) soit implémentée dans la famille d’appareils universelle, elle n’est pas entièrement fonctionnelle sur des appareils mobiles. Voir [Remplacement de SearchBox par AutoSuggestBox](#searchbox). |
-| **SemanticZoom** | Pour **SemanticZoom**, voir [Modifications SemanticZoom](#semantic-zoom). |
+| [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252771) | Bien que la méthode [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) soit implémentée dans la famille d’appareils universelle, elle n’est pas entièrement fonctionnelle sur des appareils mobiles. Voir [Remplacement de SearchBox par AutoSuggestBox](#searchbox-deprecated-in-favor-of-autosuggestbox). |
+| **SemanticZoom** | Pour **SemanticZoom**, voir [Modifications SemanticZoom](#semanticzoom-changes). |
 | [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)  | Certaines propriétés par défaut de [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) ont changé. [**HorizontalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209549) présente la valeur **Auto**, [**VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) la valeur **Auto**, et [**ZoomMode**](https://msdn.microsoft.com/library/windows/apps/br209601) la valeur **Disabled**. Si les nouvelles valeurs par défaut ne sont pas adaptées à votre application, vous pouvez les modifier dans un style ou sous forme de valeurs locales sur le contrôle proprement dit.  |
 | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | Dans une application du Windows Store, la vérification de l’orthographe est désactivée par défaut pour un élément [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683). Dans une application du Windows Phone Store et dans une application Windows 10, cette vérification est activée par défaut. |
 | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | La taille de police par défaut d’un élément [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) est passée de 11 à 15. |
@@ -131,7 +138,7 @@ Les différents appareils utilisés présentent une largeur variable (en pixels 
 
 Pour que votre application offre une expérience optimale sur tous les écrans, nous vous recommandons de créer chaque ressource bitmap dans différentes tailles, chacune étant adaptée à un facteur d’échelle spécifique. Fournir des ressources aux échelles 100 %, 200 % et 400 % (dans cet ordre de priorité) produit d’excellents résultats dans la plupart des cas à tous les facteurs d’échelle intermédiaires.
 
-**Remarque** Si, pour une raison quelconque, vous ne pouvez pas créer de ressources dans plusieurs tailles, créez des ressources à l’échelle 100 %. Dans Microsoft Visual Studio, le modèle de projet par défaut pour les applications UWP fournit des ressources de personnalisation (vignettes et logos) dans une seule taille, mais elles ne sont pas à l’échelle 100 %. Lorsque vous créez des ressources pour votre propre application, suivez les recommandations de cette section, fournissez des tailles 100 %, 200 % et 400 %, et utilisez des packs de ressources.
+**Remarque**  Si, pour une raison quelconque, vous ne pouvez pas créer de ressources dans plusieurs tailles, créez des ressources à l’échelle 100 %. Dans Microsoft Visual Studio, le modèle de projet par défaut pour les applications UWP fournit des ressources de personnalisation (vignettes et logos) dans une seule taille, mais elles ne sont pas à l’échelle 100 %. Lorsque vous créez des ressources pour votre propre application, suivez les recommandations de cette section, fournissez des tailles 100 %, 200 % et 400 %, et utilisez des packs de ressources.
 
 Si vous disposez d’illustrations complexes, vous serez peut-être amené à fournir vos ressources dans un plus grand nombre de tailles. Si vous débutez avec une image vectorielle, il est relativement aisé de générer des ressources de haute qualité à n’importe quel facteur d’échelle.
 
@@ -139,7 +146,7 @@ Nous ne vous recommandons pas d’essayer de prendre en charge tous les facteurs
 
 Vous réutilisez peut-être le balisage XAML d’une application du Windows Store dans laquelle des valeurs de dimensions littérales sont exploitées dans le balisage (pour le dimensionnement de formes ou d’autres éléments, à des fins de typographie, par exemple). Mais dans certains cas, le facteur d’échelle utilisé sur un appareil pour une application Windows 10 est plus élevé que pour une application universelle 8.1 (par exemple, utilisation du facteur 150 % contre 140 % auparavant, et du facteur 200 % plutôt que 180 %). Si vous pensez que ces valeurs littérales sont trop élevées dans Windows 10, essayez de les multiplier par 0,8. Pour plus d’informations, voir [Conception réactive 101 pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn958435).
 
-## <a name="gridviewlistview-changes"></a>Modifications GridView/ListView
+## <a name="gridview-and-listview-changes"></a>Modifications GridView et ListView
 
 Plusieurs modifications ont été apportées aux méthodes Style Setters par défaut associées à l’élément [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705), afin de permettre le défilement vertical du contrôle (auparavant, le défilement était effectué horizontalement par défaut). Si vous avez modifié une copie du style par défaut dans votre projet, votre copie ne comportera pas ces modifications. Vous devrez donc les effectuer manuellement. Voici une liste des modifications apportées.
 
@@ -457,7 +464,7 @@ Dans les applications du Windows Store et du Windows Phone Store, la famille de 
 
 Dans les applications du Windows Store et du Windows Phone Store, la langue par défaut du texte est définie sur la langue de la build, ou sur en-us. Dans une application Windows 10, la langue par défaut est définie sur la langue de l’application supérieure (substitution des polices). Vous pouvez définir explicitement la propriété [**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066), mais le comportement de substitution des polices se révélera plus efficace si vous ne définissez aucune valeur pour cette propriété.
 
-Pour plus d’informations, voir [Recommandations en matière de polices](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) et [Concevoir des applications UWP](http://go.microsoft.com/fwlink/p/?LinkID=533896). Voir également la section [Contrôles](#controls) ci-dessus relative aux modifications apportées aux contrôles de texte.
+Pour plus d’informations, voir [Recommandations en matière de polices](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) et [Concevoir des applications UWP](http://go.microsoft.com/fwlink/p/?LinkID=533896). Voir également la section [Contrôles](#controls-and-control-styles-and-templates) ci-dessus relative aux modifications apportées aux contrôles de texte.
 
 ## <a name="theme-changes"></a>Modifications de thème
 
@@ -481,10 +488,5 @@ Pour une application universelle 8.1, l’élément de manifeste d’application
 ```
 
 Rubrique suivante : [Portage pour le modèle d’E/S, d’appareil et d’application](w8x-to-uwp-input-and-sensors.md).
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

@@ -3,14 +3,21 @@ author: scottmill
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: Couche visuelle
 description: "L’API Windows.UI.Composition vous donne accès à la couche de composition comprise entre la couche d’infrastructure (XAML) et la couche graphique (DirectX)."
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 9ea05f7ba76c7813b200a4c8cd021613f980355d
-ms.openlocfilehash: de6fe0688bec196fc90433ab9274f2e4c4fd9b90
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d1c676808b8b63f42b89a22862eaab63ddc94141
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="visual-layer"></a>Couche visuelle
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 Dans Windows 10, un travail considérable a été effectué pour créer un compositeur unifié et un moteur de rendu pour toutes les applications Windows, qu’elles soient pour ordinateurs de bureau ou pour appareils mobiles. Conséquence de ce travail, l’API WinRT Composition unifiée, appelée Windows.UI.Composition, qui permet d’accéder à de nouveaux objets de composition légers et aux animations et effets du nouveau compositeur.
 
@@ -30,7 +37,7 @@ Les éléments visuels peuvent être des conteneurs d’autres éléments visuel
 -   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) : objet de base. La plupart des propriétés sont répertoriées ici et héritées par les autres objets visuels.
 -   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) : dérive de [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858), et ajoute la possibilité d’insérer des éléments visuels enfants.
 -   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) : dérive de [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810), et contient des images, des effets et des chaînes de permutation.
--   [**LayerVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.layervisual.aspx) : ContainerVisual dont les enfants sont aplatis en une seule couche.  
+-   [**LayerVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.layervisual.aspx) : ContainerVisual dont les enfants sont aplatis en une seule couche.  
 -   [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) : fabrique d’objet qui gère la relation entre une application et le processus de composition du système.
 
 Le compositeur est également une fabrique pour plusieurs autres objets de composition utilisés pour découper ou transformer des éléments visuels dans l’arborescence, ainsi qu’un riche ensemble d’animations et d’effets.
@@ -66,7 +73,7 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 -   Lisez l’article MSDN de Kenny Kerr sur cette API : [Graphismes et animation : l’API Composition Windows passe à Windows 10](https://msdn.microsoft.com/magazine/mt590968)
 -   Exemples d’interface utilisateur et de composition avancés dans le [GitHub WindowsUIDevLabs](https://github.com/microsoft/windowsuidevlabs).
 -   [**Documentation de référence complète pour l’API**](https://msdn.microsoft.com/library/windows/apps/Dn706878).
--   [Problèmes connus](http://go.microsoft.com/fwlink/?LinkId=823237).
+
 
  
 
@@ -74,10 +81,5 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

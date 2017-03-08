@@ -1,12 +1,19 @@
 ---
 author: mijacobs
-description: "En tant que représentation visuelle du langage, la typographie a pour mission principale d’être claire. Son style doit toujours être aligné sur cet objectif. Mais la typographie joue également un rôle important en tant que composant de la disposition, grâce à son puissant effet sur la densité et la complexité de la conception, ainsi que sur l’expérience de l’utilisateur concernant cette conception."
+description: "En tant que représentation visuelle du langage, la typographie a pour mission principale d’être claire. Son style doit toujours être aligné sur cet objectif. Parallèlement, la typographie a un rôle important en tant que composant de disposition, en affectant considérablement la densité et la complexité de la conception, ainsi que l’expérience vécue par l’utilisateur de cette conception."
 title: Typographie
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: e13e9c8b559c16676628ab6e77ddad019a4c22e0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a10d1b164513f9abce48c51bdfe5f6e4c3bdf79d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -211,9 +218,4 @@ Green shows where all caps should be used. Red shows where it should not.
 * [Contrôles de texte](../controls-and-patterns/text-controls.md)
 * [Polices](fonts.md)
 * [Icônes Segoe MDL2](segoe-ui-symbol-font.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

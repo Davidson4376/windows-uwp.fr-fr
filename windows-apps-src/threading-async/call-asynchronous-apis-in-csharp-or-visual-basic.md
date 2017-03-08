@@ -2,15 +2,22 @@
 author: TylerMSFT
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
 title: Appeler des API asynchrones en C# ou Visual Basic
-description: "La plateforme UWP comporte de nombreuses API asynchrones qui permettent à votre application de rester réactive lorsqu’elle exécute des opérations potentiellement longues."
+description: "La plateforme Windows universelle (UWP) comporte de nombreuses API asynchrones qui permettent à votre application de rester réactive lorsqu’elle exécute des opérations potentiellement longues."
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, C#, Visual Basic, asynchrone"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: da2c6eddcc842e176e31b1a1628c91994efb1969
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0bafeaf66ec95732d2444debcfdca7b9406ddc4e
+ms.lasthandoff: 02/07/2017
 
 ---
-# Appeler des API asynchrones en C# ou Visual Basic
+# <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>Appeler des API asynchrones en C# ou Visual Basic
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 La plateforme Windows universelle (UWP) comporte de nombreuses API asynchrones qui permettent à votre application de rester réactive lorsqu’elle exécute des opérations potentiellement longues. Cette rubrique décrit comment utiliser les méthodes asynchrones de l’UWP, en C# ou Microsoft Visual Basic.
@@ -19,10 +26,10 @@ Les API asynchrones évitent à votre application d’attendre la fin d’opéra
 
 La plupart des API asynchrones UWP n’ayant pas d’équivalents synchrones, vous devez être certain de savoir comment utiliser les API asynchrones avec C# ou Visual Basic dans votre application de plateforme Windows universelle (UWP). Nous allons vous montrer comment appeler des API asynchrones de l’UWP.
 
-## Utilisation d’API asynchrones
+## <a name="using-asynchronous-apis"></a>Utilisation d’API asynchrones
 
 
-Par convention, les noms attribués aux méthodes asynchrones se terminent par «Async». Vous appelez généralement des API asynchrones en réponse à une action de l’utilisateur, par exemple quand l’utilisateur clique sur un bouton. L’appel d’une méthode asynchrone dans un gestionnaire d’événements est l’une des façons les plus simples d’utiliser des API asynchrones. Prenons comme exemple l’opérateur **await**.
+Par convention, les noms attribués aux méthodes asynchrones se terminent par « Async ». Vous appelez généralement des API asynchrones en réponse à une action de l’utilisateur, par exemple quand l’utilisateur clique sur un bouton. L’appel d’une méthode asynchrone dans un gestionnaire d’événements est l’une des façons les plus simples d’utiliser des API asynchrones. Prenons comme exemple l’opérateur **await**.
 
 Supposons que votre application affiche la liste des titres de billets de blog publiés sur un site donné. L’application comporte un bouton ([**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)) sur lequel l’utilisateur doit cliquer pour obtenir la liste des titres. Les titres s’affichent dans un bloc de texte ([**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)). Lorsque l’utilisateur clique sur le bouton, il est important que l’application reste réactive pendant le téléchargement des informations provenant du site web du blog. Pour maintenir cette réactivité, l’UWP fournit la méthode asynchrone [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) qui télécharge le flux.
 
@@ -40,12 +47,12 @@ En revanche, si vous appelez `client.RetrieveFeedAsync`, la méthode initie la r
 
 Vous pouvez constater que le code obtenu avec l’opérateur **await** se présente à peu près de la même façon que le code obtenu avec la méthode fictive `RetrieveFeed`. Il est possible d’écrire du code asynchrone en C# ou Visual Basic sans utiliser l’opérateur **await**, mais le code obtenu a tendance à mettre en évidence les mécanismes de l’exécution de code asynchrone. Cela rend l’écriture, la compréhension et la gestion du code asynchrone difficiles. En utilisant l’opérateur **await**, vous bénéficiez des avantages d’une application asynchrone, sans avoir l’inconvénient de voir votre code devenir plus complexe.
 
-## Types de retour et résultats des API asynchrones
+## <a name="return-types-and-results-of-asynchronous-apis"></a>Types de retour et résultats des API asynchrones
 
 
 Si vous avez suivi le lien vers [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460), vous avez peut-être constaté que le type de retour de **RetrieveFeedAsync** n’est pas [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485), À la place, le type de retour est `IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress>`. Du point de vue de la syntaxe brute, une API asynchrone retourne un objet qui contient le résultat. Même s’il est courant, et parfois utile, de traiter une méthode asynchrone comme un élément « awaitable », l’opérateur **await** s’applique à la valeur renvoyée de la méthode, et pas à la méthode proprement dite. Lorsque vous appliquez l’opérateur **await**, vous obtenez le résultat de l’appel à **GetResult** sur l’objet renvoyé par la méthode. Dans l’exemple, **SyndicationFeed** est le résultat de **RetrieveFeedAsync.GetResult()**.
 
-Lorsque vous utilisez une méthode asynchrone, vous pouvez examiner la signature pour voir ce que vous obtiendrez après avoir attendu la valeur renvoyée par la méthode. Toutes les API asynchrones de l’UWP renvoient l’un des types suivants:
+Lorsque vous utilisez une méthode asynchrone, vous pouvez examiner la signature pour voir ce que vous obtiendrez après avoir attendu la valeur renvoyée par la méthode. Toutes les API asynchrones de l’UWP renvoient l’un des types suivants :
 
 -   [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)
 -   [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206594)
@@ -68,22 +75,22 @@ Le tableau ci-dessous donne quelques exemples de méthodes asynchrones, en indiq
 
 Les méthodes asynchrones définies dans [**.NET for UWP apps**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) ont le type de retour [**Task**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.aspx) ou [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/dd321424.aspx). Les méthodes qui renvoient **Task** sont similaires aux méthodes asynchrones dans l’UWP qui renvoient [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx). Dans chaque cas, le résultat de la méthode asynchrone est de type **void**. Le type de retour **Task&lt;TResult&gt;** est similaire à [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) dans la mesure où le résultat de la méthode asynchrone lors de l’exécution de la tâche est du même type que le paramètre de type `TResult`. Pour plus d’informations sur l’utilisation de **.NET for UWP apps** et des tâches, voir [Présentation de .NET pour les applications Windows Runtime](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx).
 
-## Gestion des erreurs
+## <a name="handling-errors"></a>Gestion des erreurs
 
 
 Quand vous utilisez l’opérateur **await** pour récupérer les résultats d’une méthode asynchrone, vous pouvez utiliser un bloc **try/catch** pour gérer les erreurs qui se produisent dans des méthodes asynchrones, exactement comme vous le faites pour les méthodes synchrones. L’exemple précédent encapsule la méthode **RetrieveFeedAsync** et l’opération **await** dans un bloc **try/catch** pour gérer les erreurs quand une exception est levée.
 
 Quand des méthodes asynchrones appellent d’autres méthodes asynchrones, toute méthode asynchrone qui entraîne une exception est propagée aux méthodes externes. Cela signifie que vous pouvez placer un bloc **try/catch** dans la méthode la plus externe pour détecter les erreurs relatives aux méthodes asynchrones imbriquées. À nouveau, cette opération est similaire à la façon dont vous détectez les exceptions pour les méthodes synchrones. Toutefois, vous ne pouvez pas utiliser **await** dans le bloc **catch**.
 
-**Conseil** À compter de C# dans Microsoft Visual Studio 2005, vous pouvez utiliser **await** dans le bloc **catch**.
+**Conseil**  À compter de C# dans Microsoft Visual Studio 2005, vous pouvez utiliser **await** dans le bloc **catch**.
 
-## Récapitulatif et étapes suivantes
+## <a name="summary-and-next-steps"></a>Récapitulatif et étapes suivantes
 
 Le modèle qui a été utilisé dans cette rubrique pour appeler une méthode asynchrone est le modèle le plus simple permettant d’appeler des API asynchrones dans un gestionnaire d’événements. Vous pouvez également utiliser ce modèle pour appeler une méthode asynchrone dans une méthode remplacée qui renvoie **void**, ou **Sub** en Visual Basic.
 
-En ce qui concerne les méthodes asynchrones fournies dans l’UWP, il est important de garder à l’esprit les points suivants:
+En ce qui concerne les méthodes asynchrones fournies dans l’UWP, il est important de garder à l’esprit les points suivants :
 
--   Par convention, les noms attribués aux méthodes asynchrones se terminent par «Async».
+-   Par convention, les noms attribués aux méthodes asynchrones se terminent par « Async ».
 -   Toute méthode qui utilise l’opérateur **await** doit avoir sa déclaration marquée avec le mot clé**async**.
 -   Lorsqu’une application trouve l’opérateur **await**, elle demeure réactive aux interactions utilisateur pendant la durée d’exécution de la méthode asynchrone.
 -   L’attente de la valeur renvoyée par une méthode asynchrone renvoie un objet contenant le résultat. Dans la plupart des cas, le résultat contenu dans la valeur renvoyée correspond à des informations utiles, pas à la valeur renvoyée proprement dite. Vous pouvez déterminer le type de la valeur contenue dans le résultat en observant le type de retour de la méthode asynchrone.
@@ -109,9 +116,4 @@ Tech Tuesdays Live Twitter Chats: Photography Tips, Tricks and Essentials, 7/25/
 How to: Buy a Green PC, 7/22/2011 9:13:22 AM -07:00
 Windows 7 themes: the distinctive artwork of Cheng Ling, 7/20/2011 9:53:07 AM -07:00
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

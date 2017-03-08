@@ -3,13 +3,20 @@ author: dbirtolo
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "Informations de référence sur les API principales Device Portal"
 description: "Découvrez les API REST principales Windows Device Portal que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: b4222774dc4b0f9cdcac871311f5ead69c1e70a9
-ms.openlocfilehash: 3bacb9ac42e157afaed5e9e0e6438654db03ff28
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 10d8799b73a941a4a0eb89fd369d67b2fc6a68c2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="device-portal-core-api-reference"></a>Référence sur les API principales Device Portal
+# <a name="device-portal-core-api-reference"></a>Informations de référence sur les API principales Device Portal
 
 Dans Windows Device Portal, tout repose sur les API REST que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation.
 
@@ -215,14 +222,14 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="device-manager"></a>Gestionnaire de périphériques
+## Device manager
 ---
 ### <a name="get-the-installed-devices-on-the-machine"></a>Obtenir les périphériques installés sur l’ordinateur
 
@@ -276,12 +283,12 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * IoT
 
 ---
-## <a name="dump-collection"></a>Collection de vidages
+## Dump collection
 ---
 ### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>Obtenir la liste de tous les vidages sur incident pour les applications
 
@@ -865,9 +872,9 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## <a name="etw"></a>ETW
+## ETW
 ---
-### <a name="create-a-realtime-etw-session-over-a-websocket"></a>Créer une session ETW en temps réel via un websocket
+### <a name="create-a-realtime-etw-session-over-a-websocket"></a>Créer une session de suivi d’événements pour Windows (ETW) en temps réel par le biais d’un WebSocket
 
 **Requête**
 
@@ -925,7 +932,7 @@ Cette réponse est envoyée du serveur vers le client. Elle est envoyée sous fo
     "Events":[
         {
             "Timestamp": int,
-            "Provider": string,
+            "ProviderName": string,
             "ID": int, 
             "TaskName": string,
             "Keyword": int,
@@ -1054,13 +1061,13 @@ GET | /api/etw/customproviders
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-## <a name="os-information"></a>Informations sur le système d’exploitation
+## OS information
 ---
 ### <a name="get-the-machine-name"></a>Obtenir le nom de l’ordinateur
 
@@ -1261,14 +1268,14 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="performance-data"></a>Données relatives aux performances
+## Performance data
 ---
 ### <a name="get-the-list-of-running-processes"></a>Obtenir la liste des processus en cours d’exécution
 
@@ -1403,14 +1410,14 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="power"></a>Alimentation
+## Power
 ---
 ### <a name="get-the-current-battery-state"></a>Obtenir l’état actuel de la batterie
 
@@ -1523,7 +1530,7 @@ Vous pouvez obtenir la sous-valeur pour un schéma d’alimentation actif en uti
  
 Méthode      | URI de la requête
 :------     | :-----
-GET | /api/power/cfg/
+GET | /api/power/cfg/*<power scheme path>*
 <br />
 Options :
 - SCHEME_CURRENT
@@ -1658,7 +1665,7 @@ Vous pouvez obtenir la sous-valeur pour un schéma d’alimentation en utilisant
  
 Méthode      | URI de la requête
 :------     | :-----
-POST | /api/power/cfg/
+POST | /api/power/cfg/*<power scheme path>*
 <br />
 
 **Paramètres d’URI**
@@ -1831,9 +1838,9 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## <a name="remote-control"></a>Contrôle à distance
+## Remote control
 ---
-### <a name="restart-the-target-computer"></a>Redémarrer l’ordinateur cible.
+### <a name="restart-the-target-computer"></a>Redémarrer l’ordinateur cible
 
 **Requête**
 
@@ -1912,14 +1919,14 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="task-manager"></a>Gestionnaire des tâches
+## Task manager
 ---
 ### <a name="start-a-modern-app"></a>Démarrer une application moderne
 
@@ -2012,14 +2019,14 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="networking"></a>Mise en réseau
+## Networking
 ---
 ### <a name="get-the-current-ip-configuration"></a>Obtenir la configuration IP actuelle
 
@@ -2329,20 +2336,20 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="windows-error-reporting-wer"></a>Rapport d’erreurs Windows
+## Windows Error Reporting (WER)
 ---
-### <a name="download-a-windows-error-reporting-wer-file"></a>Télécharger un fichier de rapport d’erreurs Windows
+### <a name="download-a-windows-error-reporting-wer-file"></a>Télécharger un fichier de Rapport d’erreurs Windows
 
 **Requête**
 
-Vous pouvez télécharger un fichier associé à un rapport d’erreurs Windows en utilisant le format de requête suivant.
+Vous pouvez télécharger un fichier associé à un Rapport d’erreurs Windows en utilisant le format de requête suivant.
  
 Méthode      | URI de la requête
 :------     | :-----
@@ -2502,7 +2509,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## <a name="windows-performance-recorder-wpr"></a>Enregistreur de performance Windows (WPR) 
+## Windows Performance Recorder (WPR) 
 ---
 ### <a name="start-tracing-with-a-custom-profile"></a>Démarrer le suivi avec un profil personnalisé
 
@@ -2959,13 +2966,13 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-## <a name="dns-sd-tags"></a>Balises DNS-SD 
+## DNS-SD Tags 
 ---
 ### <a name="view-tags"></a>Afficher les balises
 
@@ -3465,8 +3472,3 @@ Code d’état HTTP      | Description
 * HoloLens
 * Xbox
 * IoT
-
-
-<!--HONumber=Dec16_HO1-->
-
-

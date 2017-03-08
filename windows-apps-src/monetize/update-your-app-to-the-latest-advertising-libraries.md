@@ -2,28 +2,42 @@
 author: mcleanbyron
 description: "Découvrez comment mettre à jour votre application afin d’utiliser les bibliothèques de publicités Microsoft les plus récentes prises en charge et assurez-vous que votre application continue à recevoir des bannières publicitaires."
 title: "Mettre à jour votre application avec les bibliothèques de publicités Microsoft les plus récentes"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, pub, publicités, AdControl, AdMediatorControl, migrer"
+ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: 5333c3f8ab834a4646c63499565ef28a634f850d
-
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 3cdb1f41fda7bd4e4af1ce9e5f8fb4396da53f63
+ms.lasthandoff: 02/08/2017
 
 ---
 
 # <a name="update-your-app-to-the-latest-microsoft-advertising-libraries"></a>Mettre à jour votre application avec les bibliothèques de publicités Microsoft les plus récentes
 
-À compter de janvier 2017, nous ne livrerons plus de bannières publicitaires aux applications qui utilisent des versions plus anciennes du Kit de développement logiciel (SDK) Microsoft Advertising. Si vous disposez d’une application existante (déjà dans le Windows Store ou toujours en cours de développement) qui affiche des bannières publicitaires à l’aide de **AdControl** ou **AdMediatorControl**, vous devrez peut-être mettre à jour votre application pour utiliser la dernière version du SDK Microsoft Advertising pour que votre application continue à recevoir des bannières publicitaires en janvier 2017. Suivez les instructions fournies dans cet article pour déterminer si votre application est concernée par ce changement et savoir comment la mettre à jour si nécessaire.
+Seuls les kits de développement suivants sont pris en charge pour afficher des bannières publicitaires de Microsoft Advertising dans vos applications à l’aide un **AdControl** ou **AdMediatorControl** :
 
-Si votre application est concernée par ce changement et que vous ne mettez pas à jour votre application pour utiliser le dernier SDK Microsoft Advertising, vous verrez le comportement suivant à partir de janvier 2017 :
+* [Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (pour les applications UWP)
+* [Kit SDK Microsoft Advertising pour Windows et Windows Phone 8.x](http://aka.ms/store-8-sdk) (pour applications sous Windows 8.1 et Windows Phone 8.x)
+
+Avant la mise à disposition de ces kits de développement logiciel, nous avons déjà publié plusieurs versions plus anciennes de SDK de publicités pour les applications Windows et Windows Phone. Ces anciennes versions de Kit de développement logiciel publicitaire ne sont plus prises en charge. À l’avenir, nous prévoyons de cesser de servir des bannières publicitaires aux applications qui utilisent ces anciens kits de développement.
+
+Si vous disposez d’une application existante (déjà dans le Windows Store ou toujours en cours de développement) qui affiche des bannières publicitaires à l’aide de **AdControl** ou **AdMediatorControl**, vous devrez peut-être mettre à jour votre application pour pouvoir utiliser la dernière version du SDK Microsoft Advertising pour votre plateforme cible afin que votre application continue à recevoir des bannières publicitaires à l'avenir. Suivez les instructions fournies dans cet article pour déterminer si votre application est concernée par ce changement et savoir comment la mettre à jour si nécessaire.
+
+Si votre application est concernée par ce changement et que vous ne mettez pas à jour votre application de manière à utiliser le dernier SDK Microsoft Advertising, le comportement suivant se produira si nous cessons de servir des bannières publicitaires aux applications qui utilisent des versions de SDK publicitaire non prises en charge :
 
 * Les bannières publicitaires ne seront plus fournies aux contrôles **AdControl** ou **AdMediatorControl** dans votre application, et vous ne gagnerez plus de revenus publicitaires à partir de ces contrôles.
 
 * Lorsque le contrôle **AdControl** ou **AdMediatorControl** de votre application demande une nouvelle publicité, l’événement **ErrorOccurred** du contrôle est déclenché et la propriété **ErrorCode** des arguments d’événement prend la valeur **NoAdAvailable**.
 
-Concernant cette modification, voici plus de contexte : nous supprimons la prise en charge des versions antérieures du SDK Microsoft Advertising ne prenant pas en charge un ensemble minimal de fonctionnalités, telles que la capacité à fournir des médias enrichis HTML5 par le biais de la [spécification MRAID (Mobile Rich-media Ad Interface Definitions) 1.0](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf) de l’Interactive Advertising Bureau (IAB). La plupart de nos annonceurs veulent profiter de ces fonctionnalités. Nous apportons donc cette modification pour rendre notre écosystème d’applications plus attrayant pour eux, ce qui par ailleurs augmentera vos revenus.
+Concernant cette modification, voici plus de contexte : nous ne prenons plus en charge les versions antérieures du SDK Microsoft Advertising ne prenant pas en charge un ensemble minimal de fonctionnalités, telles que la capacité à fournir des médias enrichis HTML5 par le biais de la [spécification MRAID (Mobile Rich-media Ad Interface Definitions) 1.0](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf) de l’Interactive Advertising Bureau (IAB). La plupart de nos annonceurs veulent profiter de ces fonctionnalités. Nous apportons donc cette modification pour rendre notre écosystème d’applications plus attrayant pour eux, ce qui par ailleurs augmentera vos revenus.
 
 Si vous rencontrez des problèmes ou si vous avez besoin d’une assistance, [contactez le support](http://go.microsoft.com/fwlink/?LinkId=393643).
 
->**Remarque**&nbsp;&nbsp;Si vous avez précédemment mis à jour votre application pour utiliser [Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (pour les applications UWP) ou le [SDK Microsoft Advertising pour Windows et Windows Phone 8.x](http://aka.ms/store-8-sdk) (pour les applications Windows 8.1 et Windows Phone 8.x), votre application utilise déjà le dernier SDK Microsoft Advertising disponible et vous n’avez pas besoin d’apporter d’autres modifications à votre application.
+>**Remarque**&nbsp;&nbsp;Si votre application utilise déjà [Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (pour les applications UWP) ou le [SDK Microsoft Advertising pour Windows et Windows Phone 8.x](http://aka.ms/store-8-sdk) (pour les applications Windows 8.1 et Windows Phone 8.x) ou si vous avez précédemment mis à jour votre application pour utiliser l'un de ces SDK, votre application utilise déjà le dernier SDK Microsoft Advertising disponible et vous n’avez pas besoin de lui apporter d’autres modifications.
 
 ## <a name="prerequisites"></a>Éléments prérequis
 
@@ -123,13 +137,13 @@ Si votre application utilise **AdControl** pour afficher des bannières publicit
 
 **Applications Windows 8.0**
 
-* Les applications qui ciblent Windows 8.0 ne recevront plus de bannières publicitaires à partir de janvier 2017. Pour éviter les pertes d’exposition, nous vous recommandons de convertir votre projet en application UWP ciblant Windows 10. La plupart du trafic d’applications Windows 8.0 s’exécute maintenant sur des appareils dotés de Windows 10.
+* Les applications qui ciblent Windows 8.0 ne pourront plus recevoir plus de bannières publicitaires à l'avenir. Pour éviter les pertes d’exposition, nous vous recommandons de convertir votre projet en application UWP ciblant Windows 10. L'essentiel du trafic d’applications Windows 8.0 s’exécute maintenant sur des appareils dotés de Windows 10.
 
 <span/>
 
 **Applications Windows Phone 7.x**
 
-* Les applications qui ciblent Windows Phone 7.x ne recevront plus de bannières publicitaires à partir de janvier 2017. Pour éviter les pertes d’exposition, nous vous recommandons de convertir votre projet pour cibler en application Windows Phone 8.1 cible ou en application UWP ciblant Windows 10. La plupart du trafic d’applications Windows 7.x s’exécute maintenant sur des appareils dotés de Windows 8.1 ou Windows 10.
+* Les applications qui ciblent Phone 7.x ne pourront plus recevoir plus de bannières publicitaires à l'avenir. Pour éviter les pertes d’exposition, nous vous recommandons de convertir votre projet pour cibler en application Windows Phone 8.1 cible ou en application UWP ciblant Windows 10. La plupart du trafic d’applications Windows 7.x s’exécute maintenant sur des appareils dotés de Windows 8.1 ou Windows 10.
 
 <span/>
 
@@ -167,9 +181,9 @@ Si votre application utilise une ancienne version du SDK, suivez ces instruction
 
   >**Remarque**&nbsp;&nbsp;Si Visual Studio est ouvert sur votre ordinateur de développement, fermez-le avant de passer aux étapes suivantes.
 
-1.  Désinstallez toutes les versions précédentes du SDK Microsoft Advertising et du SDK médiateur de publicités sur votre ordinateur de développement.
+1.    Désinstallez toutes les versions précédentes du SDK Microsoft Advertising et du SDK médiateur de publicités sur votre ordinateur de développement.
 
-2.  Ouvrez une fenêtre **Invite de commandes** et exécutez ces commandes pour nettoyer les versions de SDK qui peuvent avoir été installées avec Visual Studio, mais qui n’apparaissent peut-être pas dans la liste des programmes installés sur votre ordinateur :
+2.    Ouvrez une fenêtre **Invite de commandes** et exécutez ces commandes pour nettoyer les versions de SDK qui peuvent avoir été installées avec Visual Studio, mais qui n’apparaissent peut-être pas dans la liste des programmes installés sur votre ordinateur :
 
   > [!div class="tabbedCodeSnippets"]
   ```syntax
@@ -178,7 +192,7 @@ Si votre application utilise une ancienne version du SDK, suivez ces instruction
   MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
   ```
 
-3.  Installez le SDK le plus récent pour votre application :
+3.    Installez le SDK le plus récent pour votre application :
   * Pour les applications UWP sur Windows 10, installez [Microsoft Store Services SDK](http://aka.ms/store-services-sdk).
   * Pour les applications qui ciblent une version antérieure du système d’exploitation, installez le [SDK Microsoft Advertising pour Windows et Windows Phone 8.x](http://aka.ms/store-8-sdk).
 
@@ -238,16 +252,11 @@ Points à prendre en considération :
 
 Testez votre application pour vous assurer qu’elle affiche les bannières publicitaires comme prévu.
 
-Si la version précédente de votre application est déjà disponible dans le Windows Store, [créez une nouvelle soumission](https://msdns.microsoft.com/windows/uwp/publish/app-submissions) pour votre application mise à jour dans le tableau de bord du Centre de développement Windows pour republier votre application.
+Si la version précédente de votre application est déjà disponible dans le Windows Store, [créez une nouvelle soumission](../publish/app-submissions.md) pour votre application mise à jour dans le tableau de bord du Centre de développement Windows pour republier votre application.
 
 
 
 
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

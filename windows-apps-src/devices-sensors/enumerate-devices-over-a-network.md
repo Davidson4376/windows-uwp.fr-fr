@@ -2,24 +2,31 @@
 author: DBirtolo
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
 title: "Énumérer les appareils sur un réseau"
-description: "Outre la découverte d’appareils connectés localement, vous pouvez utiliser les API Windows.Devices.Enumeration pour énumérer les appareils sur protocoles sans fil et réseau."
+description: "Outre la détection d’appareils connectés localement, vous pouvez utiliser les API Windows.Devices.Enumeration pour énumérer les appareils sur protocoles sans fil et réseau."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6eca7156c8f81a9a89e006c09a232a255f3a8725
-ms.openlocfilehash: 5f62063a7b9c80b8c3715b539a9ebe2505dc9ae0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 70362ebd77f62aea3bba694b9f6592771d4ad273
+ms.lasthandoff: 02/07/2017
 
 ---
-# Énumérer les appareils sur un réseau
+# <a name="enumerate-devices-over-a-network"></a>Énumérer les appareils sur un réseau
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-** API importantes **
+**API importantes**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 Outre la découverte d’appareils connectés localement, vous pouvez utiliser les API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) pour énumérer les appareils sur protocoles sans fil et réseau.
 
-## Énumération d’appareils sur protocoles réseau ou sans fil
+## <a name="enumerating-devices-over-networked-or-wireless-protocols"></a>Énumération d’appareils sur protocoles réseau ou sans fil
 
 Parfois, vous devez énumérer des appareils qui ne sont pas connectés localement et peuvent uniquement être détectés via des protocoles sans fil ou réseau. Pour ce faire, les API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) possèdent trois genres différents d’objets appareil : **AssociationEndpoint** (AEP), **AssociationEndpointContainer** (conteneur AEP) et **AssociationEndpointService** (service AEP). En tant que groupe, ils sont appelés AEP ou objets AEP.
 
@@ -45,7 +52,7 @@ Lorsque vous créez votre propre sélecteur, il est fortement recommandé de lim
 
  
 
-## Exemples de requêtes AQS
+## <a name="aqs-examples"></a>Exemples de requêtes AQS
 
 Chaque genre d’AEP possède une propriété que vous pouvez utiliser pour limiter votre énumération à un protocole spécifique. Gardez à l’esprit que vous pouvez utiliser l’opérateur OR dans un filtre AQS pour combiner plusieurs protocoles. Voici quelques exemples de chaînes de filtrage AQS qui montrent comment effectuer une requête pour les appareils AEP.
 
@@ -58,7 +65,7 @@ System.Devices.Aep.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
 Cette requête AQS interroge tous les objets **AssociationEndpoint** UPnP et WSD lorsque [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) est défini sur **AsssociationEndpoint**.
 
 ``` syntax
-System.Devices.Aep.ProtocolId:="{782232aa-a2f9-4993-971b-aedc551346b0}" OR 
+System.Devices.Aep.ProtocolId:="{782232aa-a2f9-4993-971b-aedc551346b0}" OR
 System.Devices.Aep.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
 ```
 
@@ -77,13 +84,4 @@ System.Devices.AepContainer.ProtocolIds:~~"{0e261de4-12f0-46e6-91ba-428607ccef64
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

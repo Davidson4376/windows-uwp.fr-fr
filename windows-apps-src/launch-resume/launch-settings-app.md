@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "Lancer l’application Paramètres Windows"
 description: "Découvrez comment lancer l’application Paramètres Windows à partir de votre application. Cette rubrique décrit le schéma d’URI ms-settings. Utilisez ce schéma d’URI pour lancer l’application Paramètres Windows en ouvrant des pages de paramètres spécifiques."
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 1135feec72510e6cbe955161ac169158a71097b9
-ms.openlocfilehash: f762d7eb70a0e9119f32350a815691109f994c75
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e4cc17bf268ddb470c3c64dfe3e471053d8fca55
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="launch-the-windows-settings-app"></a>Lancer l’application Paramètres Windows
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -376,9 +383,4 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
         <td>ms-settings:developers</td>
     </tr>
 </table><br/>
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

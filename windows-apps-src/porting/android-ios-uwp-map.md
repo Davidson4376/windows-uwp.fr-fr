@@ -1,21 +1,29 @@
 ---
 author: GrantMeStrength
-Description: "Comparez les fonctionnalités de la plateforme sous iOS, Android et Windows10."
+Description: "Comparez les fonctionnalités de la plateforme sous iOS, Android et Windows 10."
 Search.Product: eADQiWindows 10XVcnh
 title: "Mappage de concepts d’applications Windows pour développeurs iOS et Android"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 translationtype: Human Translation
-ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
-ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e5cf0a75515458a558e94a9f8bb54913e7df4a14
+ms.lasthandoff: 02/08/2017
 
 ---
 
-#Mappage de concepts d’applications Windows pour développeurs iOS et Android
+#<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Mappage de concepts d’applications Windows pour développeurs iOS et Android
 
-Si vous êtes un développeur doté de compétences relatives aux systèmes d’exploitation Android ou iOS et au code et que vous souhaitez migrer vers Windows10 et la plateforme Windows universelle (UWP), cette ressource vous permettra de mapper les fonctionnalités de la plateforme, et vos connaissances, entre les trois plateformes.
+Si vous êtes un développeur doté de compétences relatives aux systèmes d’exploitation Android ou iOS et au code et que vous souhaitez migrer vers Windows 10 et la plateforme Windows universelle (UWP), cette ressource vous permettra de mapper les fonctionnalités de la plateforme, et vos connaissances, entre les trois plateformes.
 
 Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-root.md). Ce document est également disponible en [téléchargement](https://www.microsoft.com/download/details.aspx?id=52041).
 
-## Interface utilisateur (UI)
+## <a name="user-interface-ui"></a>Interface utilisateur (UI)
 
 
 <table style="width:100%">
@@ -30,7 +38,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <th align="left"><strong>Concept général</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Plateforme Windows universelle Windows 10</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -80,13 +88,13 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <td align="left"><strong>Styles visuels réutilisables.</strong> <br><br>Application de modifications visuelles à un certain nombre de contrôles, dans un format réutilisable.</td>
 <td align="left"><strong>Les styles XML</strong> sont des ensembles de propriétés appliqués à un ou plusieurs contrôles.</td>
 <td align="left">iOS ne prend pas en charge les styles visuels réutilisables fournis, toutefois le protocole UIAppearance permet à plusieurs contrôles de partager des attributs communs.</td>
-<td align="left">Vous pouvez créer des <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx">styles</a></strong> réutilisables, qui peuvent être appliqués à plusieurs contrôles et stockés dans un <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx">ResourceDictionary</a></strong> pour faciliter leur réutilisation.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465381.aspx">Démarrage rapide: application de styles aux contrôles (XAML)</a></td>
+<td align="left">Vous pouvez créer des <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx">styles</a></strong> réutilisables, qui peuvent être appliqués à plusieurs contrôles et stockés dans un <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx">ResourceDictionary</a></strong> pour faciliter leur réutilisation.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465381.aspx">Démarrage rapide : application de styles aux contrôles (XAML)</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Modification de la structure visuelle des contrôles.</strong> <br><br>Personnalisation de la structure visuelle d’un contrôle au-delà de la simple modification des propriétés ou des attributs, par exemple, déplacement d’un texte de case à cocher sous cette dernière.</td>
 <td align="left">Il n’existe aucune méthode de modification simple de la structure visuelle des contrôles dans Android.</td>
 <td align="left">Il n’existe aucune méthode de modification simple de la structure visuelle des contrôles dans iOS.</td>
-<td align="left">Pour personnaliser la structure visuelle d’un contrôle, vous pouvez copier et modifier son <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx">modèle de contrôle</a></strong> dans le balisage XAML.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465374.aspx">Démarrage rapide: modèles de contrôle (XAML)</a></td>
+<td align="left">Pour personnaliser la structure visuelle d’un contrôle, vous pouvez copier et modifier son <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx">modèle de contrôle</a></strong> dans le balisage XAML.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465374.aspx">Démarrage rapide : modèles de contrôle (XAML)</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Mouvements tactiles intégrés.</strong> <br><br>Prise en charge personnalisée de la fonctionnalité tactile par la gestion des événements de mouvement abstraits de niveau élevé, tels que l’appui et le double appui dans les vues et les contrôles.</td>
@@ -109,7 +117,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <th align="left"><strong>Concept général</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Plateforme Windows universelle Windows 10</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -158,7 +166,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <th align="left"><strong>Concept général</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Plateforme Windows universelle Windows 10</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -189,7 +197,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <th align="left"><strong>Concept général</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Plateforme Windows universelle Windows 10</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -221,19 +229,19 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <td align="left"><strong>Téléchargements de fichiers sur HTTP.</strong> <br><br>Téléchargement de fichiers de petite et grande taille sur HTTP.</td>
 <td align="left"><strong>URLConnection</strong> et <strong>HTTPURLConnection</strong> sont utilisés pour effectuer des téléchargements sur HTTP et FTP. Il est également possible d’utiliser le <strong>gestionnaire de téléchargement</strong> système à télécharger en arrière-plan.</td>
 <td align="left"><strong>NSURLSession</strong> et <strong>NSURLConnection</strong> peuvent être utilisés pour télécharger des fichiers sur HTTP et FTP.</td>
-<td align="left">L’<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.backgroundtransfer.aspx">API de transfert en arrière-plan</a></strong> vous permet de transférer de manière fiable des fichiers sur HTTP(S) et FTP en prenant en compte la suspension d’une application, la perte de connectivité et le réglage en fonction de l’autonomie de la batterie et de la connectivité. Vous pouvez également utiliser <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.web.http.httpclient.aspx">HttpClient</a></strong> qui est idéal pour les fichiers de plus petite taille.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Quelle technologie de réseau?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280377.aspx">Transferts en arrière-plan</a></td>
+<td align="left">L’<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.backgroundtransfer.aspx">API de transfert en arrière-plan</a></strong> vous permet de transférer de manière fiable des fichiers sur HTTP(S) et FTP en prenant en compte la suspension d’une application, la perte de connectivité et le réglage en fonction de l’autonomie de la batterie et de la connectivité. Vous pouvez également utiliser <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.web.http.httpclient.aspx">HttpClient</a></strong> qui est idéal pour les fichiers de plus petite taille.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Quelle technologie de réseau ?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280377.aspx">Transferts en arrière-plan</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Sockets.</strong> <br><br>Création de datagrammes UDP et de sockets TCP de faible niveau pour communiquer avec d’autres appareils à l’aide de votre propre protocole.</td>
 <td align="left"><strong>La classe Socket</strong> fournit des sockets TCP. La classe <strong>DatagramSocket</strong> fournit un socket UDP.</td>
 <td align="left"><strong>NSStream</strong> et <strong>CFStream</strong> fournissent des sockets TCP. <strong>CFSocket</strong> fournit des sockets UDP.</td>
-<td align="left">Vous pouvez utiliser la classe <strong><a href="https://msdn.microsoft.com/library/windows/apps/br241319">DatagramSocket</a></strong> pour communiquer à l’aide d’un socket de datagramme UDP et la classe <strong><a href="https://msdn.microsoft.com/library/windows/apps/br226882">StreamSocket</a></strong> pour communiquer sur TCP ou Bluetooth RFCOMM.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">Notions de base en matière de réseau</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Quelle technologie de réseau?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280234.aspx">Vue d’ensemble de sockets</a></td>
+<td align="left">Vous pouvez utiliser la classe <strong><a href="https://msdn.microsoft.com/library/windows/apps/br241319">DatagramSocket</a></strong> pour communiquer à l’aide d’un socket de datagramme UDP et la classe <strong><a href="https://msdn.microsoft.com/library/windows/apps/br226882">StreamSocket</a></strong> pour communiquer sur TCP ou Bluetooth RFCOMM.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">Notions de base en matière de réseau</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Quelle technologie de réseau ?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280234.aspx">Vue d’ensemble de sockets</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>WebSockets.</strong> <br><br>Assurer une communication bidirectionnelle entre un client et un serveur, ce qui permet le transfert de données en temps réel.</td>
 <td align="left">Aucune bibliothèque WebSockets intégrée n’existe sur Android.</td>
 <td align="left">Aucune bibliothèque WebSockets intégrée n’existe sur iOS.</td>
-<td align="left">Des connexions sécurisées aux serveurs prenant en charge WebSockets peuvent être mises en place à l’aide de la classe <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.messagewebsocket.aspx">MessageWebSocket</a></strong> pour les messages de plus petite taille avec des notifications de réception et <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamwebsocket.aspx">StreamWebSocket</a></strong> pour les transferts de fichiers binaires de plus grande taille pouvant être lus en sections.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">Notions de base en matière de réseau</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Quelle technologie de réseau?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt186447.aspx">Vue d’ensemble de WebSockets</a></td>
+<td align="left">Des connexions sécurisées aux serveurs prenant en charge WebSockets peuvent être mises en place à l’aide de la classe <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.messagewebsocket.aspx">MessageWebSocket</a></strong> pour les messages de plus petite taille avec des notifications de réception et <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamwebsocket.aspx">StreamWebSocket</a></strong> pour les transferts de fichiers binaires de plus grande taille pouvant être lus en sections.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">Notions de base en matière de réseau</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Quelle technologie de réseau ?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt186447.aspx">Vue d’ensemble de WebSockets</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Bibliothèques OAuth.</strong> <br><br>Bibliothèques OAuth permettant d’accéder à des fournisseurs OAuth tiers et à toute gestion de compte intégrée à la plateforme.</td>
@@ -256,7 +264,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <th align="left"><strong>Concept général</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Plateforme Windows universelle Windows 10</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -287,7 +295,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <th align="left"><strong>Concept général</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Plateforme Windows universelle Windows 10</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -318,7 +326,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <th align="left"><strong>Concept général</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Plateforme Windows universelle Windows 10</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -367,7 +375,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <th align="left"><strong>Concept général</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Plateforme Windows universelle Windows 10</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -410,27 +418,27 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <th align="left"><strong>Concept général</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Plateforme Windows universelle Windows 10</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Interface utilisateur adaptative: dispositions flexibles.</strong> <br><br>Prise en charge de différentes tailles d’écran avec une hauteur et une largeur flexibles.</td>
+<td align="left"><strong>Interface utilisateur adaptative : dispositions flexibles.</strong> <br><br>Prise en charge de différentes tailles d’écran avec une hauteur et une largeur flexibles.</td>
 <td align="left">Des dispositions flexibles peuvent être obtenues à l’aide des valeurs <strong>wrap_content</strong> et <strong>match_parent</strong> des objets LinearLayout, ou en utilisant des objets RelativeLayout pour l’alignement.</td>
 <td align="left">Des dispositions flexibles peuvent être obtenues à l’aide du <strong>modèle adaptatif</strong> avec des tables de montage séquentiel universelles, en utilisant la <strong>Disposition automatique</strong> avec des <strong>contraintes</strong> et des <strong>caractéristiques</strong> telles que horizontalSizeClass et displayScale qui sont appliquées aux contrôleurs d’affichage.</td>
-<td align="left">Vous pouvez créer une disposition fluide à l’aide de <strong>propriétés</strong> et de <strong>panneaux de disposition</strong> avec une combinaison de dimensionnement fixe et dynamique.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#layout_overview">Définir des dispositions avec XAML - Propriétés et panneaux de disposition</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn958435.aspx">Conception dynamique101</a></td>
+<td align="left">Vous pouvez créer une disposition fluide à l’aide de <strong>propriétés</strong> et de <strong>panneaux de disposition</strong> avec une combinaison de dimensionnement fixe et dynamique.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#layout_overview">Définir des dispositions avec XAML - Propriétés et panneaux de disposition</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn958435.aspx">Conception dynamique 101</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Interface utilisateur adaptative: dispositions adaptées.</strong> <br><br>Prise en charge de différentes tailles d’écran avec des dispositions ciblées distinctes.</td>
+<td align="left"><strong>Interface utilisateur adaptative : dispositions adaptées.</strong> <br><br>Prise en charge de différentes tailles d’écran avec des dispositions ciblées distinctes.</td>
 <td align="left">Le fait de fournir d’autres fichiers de disposition pour différentes configurations d’écran dans le répertoire de ressources utilisant des <strong>qualificateurs de configuration</strong> tels que <strong>small</strong>, <strong>large</strong>, <strong>ldpi</strong> et <strong>hdpi</strong> vous permet de cibler des dispositions personnalisées pour les écrans de différentes tailles et densités.</td>
 <td align="left">Définissez une <strong>table de montage séquentiel pour iPhone et iPad distincte</strong> afin d’adapter les dispositions à différentes familles d’appareils dans une application universelle.</td>
 <td align="left">Vous pouvez créer une disposition personnalisée en définissant <strong>différents fichiers de balisage XAML</strong> par famille d’appareils.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#tailored_layouts">Définir des dispositions avec XAML - Dispositions personnalisées</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Interface utilisateur adaptative: dispositions dynamiques.</strong> <br><br>Réponse aux changements de taille d’écran, par exemple, à la rotation, ou à une modification de la taille d’une fenêtre.</td>
+<td align="left"><strong>Interface utilisateur adaptative : dispositions dynamiques.</strong> <br><br>Réponse aux changements de taille d’écran, par exemple, à la rotation, ou à une modification de la taille d’une fenêtre.</td>
 <td align="left">L’utilisation de dispositions flexibles avec <strong>LinearLayout</strong> et <strong>RelativeLayout</strong>, ou le fait de proposer d’autres fichiers de disposition pour différentes orientations offre des dispositions dynamiques.</td>
 <td align="left">Lors du changement de la <strong>taille</strong> ou des <strong>caractéristiques</strong> d’une vue, les <strong>contraintes</strong> spécifiées dans les tables de montage séquentiel s’appliquent.</td>
-<td align="left">Vous pouvez facilement réorganiser, repositionner, redimensionner, faire apparaître ou remplacer des sections de votre interface utilisateur lors de l’exécution en réponse aux changements de taille de fenêtre à l’aide de <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstate.aspx">VisualState</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager.aspx">VisualStateManager</a></strong> et <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.aspx">AdaptiveTrigger</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#visual_states_and_state_triggers">Définir des dispositions avec XAML - États visuels et déclencheurs d’état</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn958435.aspx">Conception dynamique101</a></td>
+<td align="left">Vous pouvez facilement réorganiser, repositionner, redimensionner, faire apparaître ou remplacer des sections de votre interface utilisateur lors de l’exécution en réponse aux changements de taille de fenêtre à l’aide de <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstate.aspx">VisualState</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager.aspx">VisualStateManager</a></strong> et <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.aspx">AdaptiveTrigger</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#visual_states_and_state_triggers">Définir des dispositions avec XAML - États visuels et déclencheurs d’état</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn958435.aspx">Conception dynamique 101</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Prise en charge de différentes fonctionnalités d’appareils.</strong> <br><br>Exploitation des fonctionnalités matérielles avancées tout en assurant la prise en charge des appareils qui n’en sont pas dotés.</td>
@@ -459,7 +467,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <th align="left"><strong>Concept général</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Plateforme Windows universelle Windows 10</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -496,7 +504,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <th align="left"><strong>Concept général</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Plateforme Windows universelle Windows 10</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -533,7 +541,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <th align="left"><strong>Concept général</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Plateforme Windows universelle Windows 10</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -558,7 +566,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <th align="left"><strong>Concept général</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Plateforme Windows universelle Windows 10</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -607,7 +615,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <th align="left"><strong>Concept général</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Plateforme Windows universelle Windows 10</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -650,7 +658,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <th align="left"><strong>Concept général</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Plateforme Windows universelle Windows 10</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -658,13 +666,8 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <td align="left"><strong>Modèles de conception de logiciels.</strong> <br><br>Modèles recommandés ou bien adaptés pour la plateforme.</td>
 <td align="left">Aucun modèle officiel n’a été recommandé ou fourni pour le développement Android, bien que la version bêta de l’infrastructure de liaison de données puisse permettre une utilisation plus généralisée du modèle <strong>Model-View-ViewModel (MVVM)</strong>. Un certain nombre d’articles et d’infrastructures tiers recommandent les approches <strong>Model-View-Presenter (MVP)</strong> et <strong>MVVM</strong>.</td>
 <td align="left"><strong>Model-View-Controller (MVC)</strong> est un modèle commun utilisé avec iOS et intégré à la plateforme.</td>
-<td align="left">Vous n’êtes pas limité à un modèle spécifique lorsque vous créez des logiciels pour UWP.<br/><br/>Vous pouvez utiliser le modèle de <a href="https://msdn.microsoft.com/library/windows/apps/mt210947.aspx">liaison de données</a> intégré pour garantir une séparation nette des problèmes liés aux données et de ceux liés à l’interface utilisateur et éviter d’avoir à coder les gestionnaires d’événements de l’interface utilisateur qui mettent ensuite à jour les valeurs des propriétés.<br/><br/>Vous pouvez étendre la liaison de données de manière à suivre le modèle <strong>Model-View-ViewModel (MVVM)</strong> soit en utilisant des bibliothèques MVVM tierces, telles que le <a href="https://mvvmlight.codeplex.com/">Kit de ressources MVVM Light</a>, ou en déployant votre propre liaison et en maintenant la logique en dehors de code-behind.<br/><br/><a href="https://msdn.microsoft.com/library/hh848246.aspx">Le modèle MVVM</a><br/><br/><a href="https://github.com/Windows-XAML/Template10/wiki">Modèles de projet Visual Studio Template10</a></td>
+<td align="left">Vous n’êtes pas limité à un modèle spécifique lorsque vous créez des logiciels pour UWP.<br/><br/>Vous pouvez utiliser le modèle de <a href="https://msdn.microsoft.com/library/windows/apps/mt210947.aspx">liaison de données</a> intégré pour garantir une séparation nette des problèmes liés aux données et de ceux liés à l’interface utilisateur et éviter d’avoir à coder les gestionnaires d’événements de l’interface utilisateur qui mettent ensuite à jour les valeurs des propriétés.<br/><br/>Vous pouvez étendre la liaison de données de manière à suivre le modèle <strong>Model-View-ViewModel (MVVM)</strong> soit en utilisant des bibliothèques MVVM tierces, telles que le <a href="https://mvvmlight.codeplex.com/">Kit de ressources MVVM Light</a>, ou en déployant votre propre liaison et en maintenant la logique en dehors de code-behind.<br/><br/><a href="https://msdn.microsoft.com/library/hh848246.aspx">Le modèle MVVM</a><br/><br/><a href="https://github.com/Windows-XAML/Template10/wiki">Modèles de projet Visual Studio Template 10</a></td>
 </tr>
 </tbody>
 </table>
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

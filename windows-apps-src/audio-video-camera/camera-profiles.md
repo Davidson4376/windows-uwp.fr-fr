@@ -2,16 +2,23 @@
 author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
 description: "Cet article explique comment utiliser les profils d’appareil photo pour découvrir et gérer les capacités des différents appareils de capture vidéo. Cela inclut les tâches telles que la sélection des profils qui prennent en charge des résolutions ou des fréquences d’images spécifiques, des profils qui prennent en charge un accès simultané à plusieurs appareils photos et des profils qui prennent en charge la capture HDR."
-title: "Découvrir et sélectionner des capacités d’appareil photo avec des profils d’appareil photo"
+title: "Découvrir et sélectionner des capacités de caméra avec des profils de caméra"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 625cf715a88837cb920433fa34e47a1e1828a4c8
-ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4e37c2e3bd2ed8738ebba88c55ceaf795e6ca084
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Découvrir et sélectionner des capacités d’appareil photo avec des profils d’appareil photo
+# <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>Découvrir et sélectionner des capacités de caméra avec des profils de caméra
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article explique comment utiliser les profils d’appareil photo pour découvrir et gérer les capacités des différents appareils de capture vidéo. Cela inclut les tâches telles que la sélection des profils qui prennent en charge des résolutions ou des fréquences d’images spécifiques, des profils qui prennent en charge un accès simultané à plusieurs appareils photos et des profils qui prennent en charge la capture HDR.
@@ -21,7 +28,7 @@ Cet article explique comment utiliser les profils d’appareil photo pour décou
 
  
 
-## À propos des profils d’appareil photo
+## <a name="about-camera-profiles"></a>À propos des profils d’appareil photo
 
 Les appareils photo offrent différentes fonctionnalités, notamment l’ensemble des résolutions de capture, la fréquence d’images pour la capture vidéo, et si les vidéos HDR ou les captures de fréquence d’images variable sont prises en charge. L’infrastructure de capture multimédia de plateforme Windows universelle (UWP) stocke cet ensemble de fonctionnalités dans une [**MediaCaptureVideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695). Un profil d’appareil photo, représenté par un objet [**MediaCaptureVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926694), comporte trois ensembles de descriptions du média : un premier pour la capture photo, un deuxième pour la capture vidéo et un dernier pour l’aperçu vidéo.
 
@@ -31,7 +38,7 @@ Avant d’initialiser votre objet [MediaCapture](capture-photos-and-video-with-m
 
 Les exemples de code dans cet article remplacent cette initialisation minimale par la découverte de profils d’appareil photo prenant en charge différentes fonctionnalités, qui sont ensuite utilisées pour initialiser l’appareil de capture multimédia.
 
-## Trouver un appareil vidéo prenant en charge des profils d’appareil photo
+## <a name="find-a-video-device-that-supports-camera-profiles"></a>Trouver un appareil vidéo prenant en charge des profils d’appareil photo
 
 Avant de rechercher des profils d’appareil photo pris en charge, vous devez trouver un appareil de capture qui prend en charge l’utilisation de profils d’appareil photo. La méthode d’assistance **GetVideoProfileSupportedDeviceIdAsync** définie dans l’exemple ci-dessous utilise la méthode [**DeviceInformaion.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) pour récupérer la liste de tous les appareils de capture vidéo disponibles. Elle parcourt tous les appareils de la liste en appelant la méthode statique [**IsVideoProfileSupported**](https://msdn.microsoft.com/library/windows/apps/dn926714) pour chaque appareil afin de déterminer s’il prend en charge les profils vidéo. En outre, la propriété [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) vous permet de spécifier pour chaque appareil si vous préférez que l’appareil photo se situe à l’avant ou à l’arrière.
 
@@ -43,7 +50,7 @@ Si l’ID d’appareil renvoyé par la méthode d’assistance **GetVideoProfile
 
 [!code-cs[GetDeviceWithProfileSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetDeviceWithProfileSupport)]
 
-## Sélectionner un profil en fonction de la résolution et de la fréquence d’images prises en charge
+## <a name="select-a-profile-based-on-supported-resolution-and-frame-rate"></a>Sélectionner un profil en fonction de la résolution et de la fréquence d’images prises en charge
 
 Pour sélectionner un profil avec des fonctionnalités particulières, comme la possibilité d’atteindre une résolution et une fréquence d’images données, vous devez d’abord appeler la méthode d’assistance définie ci-dessus pour obtenir l’ID d’un appareil de capture qui prend en charge l’utilisation des profils de l’appareil photo.
 
@@ -57,7 +64,7 @@ Une fois que vous avez rempli **MediaCaptureInitializationSettings** avec le pro
 
 [!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
 
-## Sélectionner un profil prenant en charge la simultanéité
+## <a name="select-a-profile-that-supports-concurrence"></a>Sélectionner un profil prenant en charge la simultanéité
 
 Vous pouvez utiliser des profils d’appareil photo pour déterminer si un appareil prend en charge la capture vidéo à partir de plusieurs appareils photo simultanément. Pour ce scénario, vous devez créer deux jeux d’objets de capture, un pour l’appareil photo avant et l’autre pour l’appareil photo arrière. Pour chaque appareil photo, créez une **MediaCapture**, un **MediaCaptureInitializationSettings** et une chaîne contenant l’ID d’appareil de capture. Ajoutez aussi une variable booléenne qui déterminera si la simultanéité est prise en charge.
 
@@ -71,7 +78,7 @@ Appelez **MediaCapture.InitializeAsync** pour l’appareil photo principal de vo
 
 [!code-cs[InitConcurrentMediaCaptures](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitConcurrentMediaCaptures)]
 
-## Utiliser des profils connus pour rechercher un profil qui prend en charge la vidéo HDR
+## <a name="use-known-profiles-to-find-a-profile-that-supports-hdr-video"></a>Utiliser des profils connus pour rechercher un profil qui prend en charge la vidéo HDR
 
 La sélection d’un profil prenant en charge la vidéo HDR commence comme tous les autres scénarios. Créez un **MediaCaptureInitializationSettings** et une chaîne contenant l’ID d’appareil de capture. Ajoutez une variable booléenne qui déterminera si la vidéo HDR est prise en charge.
 
@@ -87,7 +94,7 @@ Parcourez la liste renvoyée des profils d’appareil photo. Pour chaque profil 
 
 [!code-cs[FindHDRProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindHDRProfile)]
 
-## Déterminer si un appareil prend en charge la capture simultanée de photo et de vidéo
+## <a name="determine-if-a-device-supports-simultaneous-photo-and-video-capture"></a>Déterminer si un appareil prend en charge la capture simultanée de photo et de vidéo
 
 De nombreux appareils prennent en charge la capture simultanée de photos et de vidéos. Pour déterminer si un appareil de capture prend cette fonctionnalité en charge, appelez [**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708) pour obtenir tous les profils d’appareil photo pris en charge. Utilisez une requête Linq pour rechercher un profil comportant au moins une entrée pour [**SupportedPhotoMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926703) et pour [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705), ce qui indiquera que le profil prend en charge la capture simultanée.
 
@@ -95,7 +102,7 @@ De nombreux appareils prennent en charge la capture simultanée de photos et de 
 
 Vous pouvez affiner la requête pour rechercher des profils qui prennent en charge des résolutions spécifiques ou autres fonctionnalités en plus de l’enregistrement vidéo simultané. Vous pouvez également utiliser le [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) et spécifier la valeur [**BalancedVideoAndPhoto**](https://msdn.microsoft.com/library/windows/apps/dn948843) pour récupérer les profils prenant en charge la capture simultanée, mais vous obtiendrez des résultats plus complets en interrogeant tous les profils.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Appareil photo](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -105,10 +112,5 @@ Vous pouvez affiner la requête pour rechercher des profils qui prennent en char
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

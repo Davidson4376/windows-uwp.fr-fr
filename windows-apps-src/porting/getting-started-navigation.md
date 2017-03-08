@@ -1,19 +1,26 @@
 ---
 author: mcleblanc
-title: 'Prise en main : Navigation'
-description: 'Prise en main : Navigation'
+title: "Prise en main : Navigation"
+description: "Prise en main : Navigation"
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: daf56299b3a5e81bb756bc9fcb8112da044b00f3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: febafd9a36f021bdbf06692a34c8691d1008018f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Prise en main : Navigation
+# <a name="getting-started-navigation"></a>Prise en main : Navigation
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-## Ajout de la navigation
+## <a name="adding-navigation"></a>Ajout de la navigation
 
 iOS fournit la classe **UINavigationController** pour faciliter la navigation : vous pouvez pousser et faire apparaître des affichages pour créer une hiérarchie de **UIViewControllers** qui définissent votre application.
 
@@ -59,7 +66,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Exécutez le programme à présent. Appuyez sur le bouton «Go To Page» (Atteindre la page) pour accéder à l’autre page, puis appuyez sur le bouton doté de la flèche Précédent pour revenir à la page précédente.
+Exécutez le programme à présent. Appuyez sur le bouton « Go To Page » (Atteindre la page) pour accéder à l’autre page, puis appuyez sur le bouton doté de la flèche Précédent pour revenir à la page précédente.
 
 La navigation entre les pages est gérée par la classe [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682). Tout comme la classe **UINavigationController** dans iOS utilise les méthodes **pushViewController** et **popViewController**, la classe **Frame** pour les applications du Windows Store fournit les méthodes [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) et [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568). La classe **Frame** possède également une méthode appelée [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), qui comblera vos attentes.
 
@@ -78,15 +85,10 @@ Vous pouvez également vous procurer ou définir la propriété [**CacheSize**](
 
 Pour plus d’informations sur la navigation, voir [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) et [Exemple d’animations de personnages XAML](http://go.microsoft.com/fwlink/p/?LinkID=242401).
 
-**Remarque** Pour plus d’informations sur la navigation pour les applications du Windows Store en JavaScript et HTML, voir [Démarrage rapide : utilisation de la navigation sur une seule page](https://msdn.microsoft.com/library/windows/apps/hh452768).
+**Remarque**  Pour plus d’informations sur la navigation pour les applications du Windows Store en JavaScript et HTML, consultez l’article [Démarrage rapide : utilisation de la navigation sur une seule page](https://msdn.microsoft.com/library/windows/apps/hh452768).
  
-### Étape suivante
+### <a name="next-step"></a>Étape suivante
 
 [Prise en main : Animation](getting-started-animation.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

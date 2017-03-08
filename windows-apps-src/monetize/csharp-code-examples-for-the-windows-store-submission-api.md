@@ -1,11 +1,18 @@
 ---
 author: mcleanbyron
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
-description: "Utilisez les exemples de code C# indiqués dans cette section pour en savoir plus sur l’utilisation de l’API de soumission du Windows Store."
+description: "Servez-vous des exemples de code C# présentés dans cette section pour en savoir plus sur l’utilisation de l’API de soumission du Windows Store."
 title: "Exemples de code C# pour l’API de soumission du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, exemples de code"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c71555eb854e5dcf6cbccf89e9b0b8ffe35ab0e4
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -54,9 +61,9 @@ L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans 
 
 1. Pour commencer, la méthode [récupère les données de l’application indiquée](get-an-app.md).
 2. Ensuite, elle [supprime la soumission en attente de l’application](delete-an-app-submission.md), s’il en existe une.
-3. Après cela, elle crée [une soumission pour l’application](create-an-app-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
-4. Elle modifie certains détails de la nouvelle soumission, puis charge un nouveau package associé à cette dernière dans le stockage Blob Azure.
-5. Ensuite, elle [met à jour](update-an-app-submission.md) et [valide](commit-an-app-submission.md) la nouvelle soumission dans le Centre de développement Windows.
+3. Cela fait, il [crée une soumission pour l’application](create-an-app-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
+4. Il modifie certains détails de cette soumission, puis charge un nouveau package associé à cette dernière dans le stockage Blob Azure.
+5. Ensuite, il [met à jour](update-an-app-submission.md) et [valide](commit-an-app-submission.md) la nouvelle soumission dans le Centre de développement Windows.
 6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-app-submission.md) jusqu’à ce que celle-ci soit validée.
 
 > [!div class="tabbedCodeSnippets"]
@@ -95,10 +102,10 @@ L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans 
 
 L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans l’API de soumission du Windows Store pour mettre à jour une soumission de version d’évaluation de package. La méthode ```RunFlightSubmissionUpdateSample``` fournie dans cette classe crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développement Windows. Plus précisément, la méthode ```RunFlightSubmissionUpdateSample``` effectue les tâches suivantes :
 
-1. Pour commencer, la méthode [récupère les données de la version d’évaluation de package indiquée](get-a-flight.md).
+1. Pour commencer, la méthode [récupère les données de la version d’évaluation du package indiquée](get-a-flight.md).
 2. Ensuite, elle [supprime la soumission en attente de la version d’évaluation du package](delete-a-flight-submission.md), s’il en existe une.
-3. Après cela, elle [crée une soumission pour la version d’évaluation du package](create-a-flight-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
-4. Elle charge un nouveau package associé à la soumission dans le stockage Blob Azure.
+3. Cela fait, il [crée une soumission pour la version d’évaluation du package](create-a-flight-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
+4. Elle charge un nouveau package associé à la soumission dans le stockage d’objets blob Azure.
 5. Ensuite, elle [met à jour](update-a-flight-submission.md) et [valide](commit-a-flight-submission.md) la nouvelle soumission dans le Centre de développement Windows.
 6. Pour finir, elle [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-a-flight-submission.md) jusqu’à ce que celle-ci soit validée.
 
@@ -120,9 +127,4 @@ La classe ```IngestionClient``` fournit des méthodes d’assistance qui sont ut
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

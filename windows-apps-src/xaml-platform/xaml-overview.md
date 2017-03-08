@@ -1,21 +1,28 @@
 ---
 author: jwmsft
-description: "Nous présentons le langage XAML et les concepts XAML aux développeurs d’applications Windows Runtime, puis nous décrivons les différentes manières de déclarer des objets et de définir des attributs en langage XAML tel qu’il est utilisé pour créer une application du Windows Store."
+description: "Nous présentons le langage XAML et les concepts XAML aux développeurs d’applications Windows Runtime, puis nous décrivons les différentes manières de déclarer des objets et de définir des attributs en langage XAML tel qu’il est utilisé pour créer une application Windows Runtime."
 title: "Vue d’ensemble du langage XAML"
 ms.assetid: 48041B37-F1A8-44A4-BB8E-1D4DE30E7823
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 57b406f8210a9de729deec1fd2003973ac91f9cd
-ms.openlocfilehash: b32ff4bd37a86b991a0bdfe16328304827eb01a0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 12cb0c8b911c0ddb3a45e49568c5846d4359eeba
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Vue d’ensemble du langage XAML
+# <a name="xaml-overview"></a>Vue d’ensemble du langage XAML
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 Nous présentons le langage XAML et les concepts XAML aux développeurs d’applications Windows Runtime, puis nous décrivons les différentes manières de déclarer des objets et de définir des attributs en langage XAML tel qu’il est utilisé pour créer une application du Windows Store.
 
-## Qu’est-ce que le XAML ?
+## <a name="what-is-xaml"></a>Qu’est-ce que le XAML ?
 
 Le langage XAML (Extensible Application Markup Language) est un langage déclaratif. Plus précisément, le langage XAML permet d’initialiser des objets et de définir des propriétés d’objets, à l’aide d’une structure de langage qui montre les relations hiérarchiques entre plusieurs objets et en utilisant une convention des types de stockage qui prend en charge l’extension des types. Vous pouvez créer des éléments d’interface utilisateur visibles dans le balisage XAML déclaratif. Vous pouvez alors associer un fichier code-behind distinct pour chaque fichier XAML pouvant répondre à des événements et manipuler les objets que vous déclarez à l’origine en XAML.
 
@@ -23,17 +30,17 @@ Le langage XAML prend en charge l’échange de sources entre différents outils
 
 Les fichiers XAML que vous découvrez dans le cadre de vos projets d’applications Windows Runtime sont en réalité des fichiers XML avec l’extension de nom de fichier .xaml.
 
-## Syntaxe XAML de base
+## <a name="basic-xaml-syntax"></a>Syntaxe XAML de base
 
 La syntaxe de base du langage XAML s’appuie sur le langage XML. Par définition, un code XAML valide doit également être un code XML valide. Toutefois, le code XAML possède également des concepts de syntaxe auxquels une autre signification plus complète est attribuée, tout en restant valides dans XML selon la spécification XML 1.0. Par exemple, le code XAML prend en charge la *syntaxe de l’élément de propriété*, qui implique la possibilité de définir des valeurs de propriété au sein d’éléments plutôt qu’en tant que valeurs de chaîne dans les attributs ou en tant que contenu. Pour le langage XML ordinaire, l’élément de propriété XAML constitue un élément dont le nom contient un point. Il est donc valide en langage XML brut, mais n’a pas la même signification.
 
-## Langage XAML et Microsoft Visual Studio
+## <a name="xaml-and-microsoft-visual-studio"></a>Langage XAML et Microsoft Visual Studio
 
 Microsoft Visual Studio vous aide à produire une syntaxe XAML valide, à la fois dans l’éditeur de texte XAML et dans l’aire de conception XAML, plus orientée vers les graphiques. Lorsque vous écrivez du code XAML pour votre application à l’aide de Visual Studio, ne vous préoccupez donc pas trop de la syntaxe à chaque séquence de touches. L’IDE vous aide souvent à écrire une syntaxe XAML valide en fournissant des conseils de saisie semi-automatique, en proposant des suggestions dans les listes et menus déroulants Microsoft IntelliSense, en affichant des bibliothèques d’éléments d’interface utilisateur dans la boîte à outils, ou par d’autres techniques. S’il s’agit de votre première expérience avec le langage XAML, il peut quand même s’avérer utile de connaître les règles de syntaxe et plus particulièrement la terminologie parfois utilisée pour décrire les restrictions ou les choix lorsque nous décrivons la syntaxe XAML dans les rubriques de référence ou dans d’autres rubriques. Nous abordons ces points détaillés de la syntaxe XAML dans une autre rubrique intitulée [Guide de la syntaxe XAML](xaml-syntax-guide.md).
 
-## Espaces de noms XAML
+## <a name="xaml-namespaces"></a>Espaces de noms XAML
 
-En programmation au sens large, un espace de noms est un concept d’organisation qui détermine la façon dont les identificateurs pour les entités de programmation sont interprétés. Grâce aux espaces de noms, une infrastructure de programmation peut séparer les identificateurs déclarés par l’utilisateur de ceux déclarés par l’infrastructure, éliminer l’ambiguïté des identificateurs par le biais des qualifications d’espaces de noms, appliquer des règles de création d’étendue de noms, etc. XAML a son propre concept d’espace de noms XAML qui assume cette fonction pour le langage XAML. Voici comment XAML applique et étend les concepts d’espaces de noms du langage XML:
+En programmation au sens large, un espace de noms est un concept d’organisation qui détermine la façon dont les identificateurs pour les entités de programmation sont interprétés. Grâce aux espaces de noms, une infrastructure de programmation peut séparer les identificateurs déclarés par l’utilisateur de ceux déclarés par l’infrastructure, éliminer l’ambiguïté des identificateurs par le biais des qualifications d’espaces de noms, appliquer des règles de création d’étendue de noms, etc. XAML a son propre concept d’espace de noms XAML qui assume cette fonction pour le langage XAML. Voici comment XAML applique et étend les concepts d’espaces de noms du langage XML :
 
 -   XAML utilise l’attribut XML **xmlns** réservé pour les déclarations d’espaces de noms. La valeur de l’attribut est généralement un URI (Uniform Resource Identifier), qui est une convention héritée de XML.
 -   Les déclarations de préfixes en XAML servent à déclarer les espaces de noms différents de l’espace de noms par défaut, et les utilisations de préfixe dans des éléments et attributs font référence à ces espaces de noms.
@@ -53,23 +60,23 @@ Voici un extrait de code illustrant une racine [**Page**](https://msdn.microsoft
 >
 ```
 
-## Espace de noms XAML de langage XAML
+## <a name="the-xaml-language-xaml-namespace"></a>Espace de noms XAML de langage XAML
 
-Un espace de noms XAML particulier qui est déclaré dans presque tous les fichiers XAML Windows Runtime est l’espace de noms de langage XAML. Cet espace de noms inclut des éléments et des concepts définis par le langage XAML, par sa spécification du langage. Par convention, l’espace de noms XAML de langage XAML est mappé au préfixe «x». Les modèles de projet et de fichier par défaut des projets d’applications Windows Runtime définissent toujours à la fois l’espace de noms XAML par défaut (sans préfixe, juste `xmlns=`) et l’espace de noms XAML de langage XAML (préfixe « x ») dans le cadre de l’élément racine.
+Un espace de noms XAML particulier qui est déclaré dans presque tous les fichiers XAML Windows Runtime est l’espace de noms de langage XAML. Cet espace de noms inclut des éléments et des concepts définis par le langage XAML, par sa spécification du langage. Par convention, l’espace de noms XAML de langage XAML est mappé au préfixe « x ». Les modèles de projet et de fichier par défaut des projets d’applications Windows Runtime définissent toujours à la fois l’espace de noms XAML par défaut (sans préfixe, juste `xmlns=`) et l’espace de noms XAML de langage XAML (préfixe « x ») dans le cadre de l’élément racine.
 
-Le préfixe «x»/l’espace de noms XAML de langage XAML contient plusieurs constructions de programmation que vous utilisez souvent dans votre code XAML. Voici les plus couramment employées:
+Le préfixe « x »/l’espace de noms XAML de langage XAML contient plusieurs constructions de programmation que vous utilisez souvent dans votre code XAML. Voici les plus couramment employées :
 
 | Terme | Description |
 |------|-------------|
 | [x:Key](x-key-attribute.md) | Définit une clé unique définie par l’utilisateur pour chaque ressource dans un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) XAML. La chaîne du jeton de la clé est l’argument de l’extension de balisage **StaticResource**. Vous utiliserez cette clé ultérieurement pour récupérer la ressource XAML d’une autre utilisation XAML à un autre endroit du code XAML de votre application. |
 | [x:Class](x-class-attribute.md) | Indique l’espace de noms de code et le nom de la classe de code qui fournit le code-behind pour une page XAML. Nomme ainsi la classe créée ou jointe par des actions de génération lorsque vous générez votre application. Ces actions de génération prennent en charge le compilateur de balisage XAML, et combinent le balisage et le code-behind lorsque l’application est compilée. Vous devez avoir une telle classe pour prendre en charge le code-behind pour une page XAML. [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/br209051) dans le modèle d’activation Windows Runtime par défaut. |
-| [x:Name](x-name-attribute.md) | Spécifie un nom d’objet au moment de l’exécution pour l’instance qui existe dans le code d’exécution après le traitement d’un élément objet défini en XAML. La définition de **x:Name** en XAML s’apparente à la déclaration d’une variable nommée dans le code. Comme vous l’apprendrez plus tard, c’est exactement ce qui se produit lorsque votre code XAML est chargé en tant que composant d’une application Windows Runtime. <br/><div class="alert">**Remarque** [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) est une propriété similaire dans l’infrastructure, mais tous les éléments ne la prennent pas en charge. Vous devez donc utiliser **x:Name** pour l’identification d’élément chaque fois que **FrameworkElement.Name** n’est pas pris en charge sur ce type d’élément. |
+| [x:Name](x-name-attribute.md) | Spécifie un nom d’objet au moment de l’exécution pour l’instance qui existe dans le code d’exécution après le traitement d’un élément objet défini en XAML. La définition de **x:Name** en XAML s’apparente à la déclaration d’une variable nommée dans le code. Comme vous l’apprendrez plus tard, c’est exactement ce qui se produit lorsque votre code XAML est chargé en tant que composant d’une application Windows Runtime. <br/><div class="alert">**Remarque**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) est une propriété similaire dans l’infrastructure, mais tous les éléments ne la prennent pas en charge. Vous devez donc utiliser **x:Name** pour l’identification d’élément chaque fois que **FrameworkElement.Name** n’est pas pris en charge sur ce type d’élément. |
 | [x:Uid](x-uid-directive.md) | Identifie les éléments qui doivent utiliser des ressources localisées pour certaines de leurs valeurs de propriétés. Pour plus d’informations sur l’utilisation de **x:Uid**, voir [Démarrage rapide : traduction des ressources de l’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329). |
-| [Types de données intrinsèques XAML](xaml-intrinsic-data-types.md) | Ces types peuvent spécifier des valeurs pour des types à valeur simples lorsqu’un attribut ou une ressource l’exige. Ces types intrinsèques correspondent aux types à valeur simples habituellement définies dans le cadre des définitions intrinsèques de chaque langage de programmation. Par exemple, vous pouvez avoir besoin d’un objet représentant une valeur booléenne **true** afin de l’utiliser dans un état visuel dans une table de montage séquentiel [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320). Pour cette valeur en XAML, vous allez utiliser le type intrinsèque **x:Boolean** en tant qu’élément objet, comme ceci: <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
+| [Types de données intrinsèques XAML](xaml-intrinsic-data-types.md) | Ces types peuvent spécifier des valeurs pour des types à valeur simples lorsqu’un attribut ou une ressource l’exige. Ces types intrinsèques correspondent aux types à valeur simples habituellement définies dans le cadre des définitions intrinsèques de chaque langage de programmation. Par exemple, vous pouvez avoir besoin d’un objet représentant une valeur booléenne **true** afin de l’utiliser dans un état visuel dans une table de montage séquentiel [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320). Pour cette valeur en XAML, vous allez utiliser le type intrinsèque **x:Boolean** en tant qu’élément objet, comme ceci : <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
 
 Il existe d’autres constructions de programmation dans l’espace de noms XAML de langage XAML, mais elles ne sont pas aussi courantes.
 
-## Mappage de types personnalisés à des espaces de noms XAML
+## <a name="mapping-custom-types-to-xaml-namespaces"></a>Mappage de types personnalisés à des espaces de noms XAML
 
 La simplicité avec laquelle vous pouvez étendre le vocabulaire XAML des applications Windows Runtime représente l’un des aspects les plus puissants du langage XAML. Vous pouvez définir vos propres types personnalisés dans le langage de programmation de votre application, puis référencer vos types personnalisés dans le balisage XAML. La prise en charge de l’extension via des types personnalisés est fondamentalement intégrée au mode de fonctionnement du langage XAML. Les infrastructures ou les développeurs d’applications sont chargés de créer les objets de stockage référencés par le langage XAML. Ni les infrastructures ni le développeur de l’application ne sont liés par des spécifications sur la représentation de ces objets dans leur vocabulaire ou leur action au-delà des règles de syntaxe XAML de base (il est attendu que les types d’espace de noms XAML en langage XAML accomplissent certaines actions, mais Windows Runtime assure toute la prise en charge nécessaire).
 
@@ -83,15 +90,15 @@ Par exemple, la syntaxe d’attribut pour mapper un préfixe `myTypes` à l’es
 
 Pour plus d’informations sur le mappage des espaces de noms XAML pour les types personnalisés, y compris les considérations spéciales pour les extensions de composant Visual C++ (C++/CX), voir [Espaces de noms XAML et mappage d’espaces de noms](xaml-namespaces-and-namespace-mapping.md).
 
-## Autres espaces de noms XAML
+## <a name="other-xaml-namespaces"></a>Autres espaces de noms XAML
 
-On voit souvent des fichiers XAML qui définissent les préfixes «d» (pour l’espace de noms du concepteur) et «mc» (pour la compatibilité du balisage). En général, ils sont destinés à la prise en charge de l’infrastructure ou de scénarios dans un outil au moment de la conception. Pour plus d’informations, voir la [section « Autres espaces de noms XAML » de la rubrique sur les espaces de noms XAML](xaml-namespaces-and-namespace-mapping.md#other-XAML-namespaces).
+On voit souvent des fichiers XAML qui définissent les préfixes « d » (pour l’espace de noms du concepteur) et « mc » (pour la compatibilité du balisage). En général, ils sont destinés à la prise en charge de l’infrastructure ou de scénarios dans un outil au moment de la conception. Pour plus d’informations, voir la [section « Autres espaces de noms XAML » de la rubrique sur les espaces de noms XAML](xaml-namespaces-and-namespace-mapping.md#other-XAML-namespaces).
 
-## Extensions de balisage
+## <a name="markup-extensions"></a>Extensions de balisage
 
 Les extensions de balisage constituent un concept du langage XAML qui est souvent utilisé dans l’implémentation XAML Windows Runtime. Les extensions de balisage constituent souvent un type de raccourci permettant à un fichier XAML d’accéder à une valeur ou à un comportement qui ne se contente pas de déclarer les éléments en fonction des types de stockage. Certaines extensions de balisage peuvent définir des propriétés avec des chaînes brutes ou avec d’autres éléments imbriqués, le but étant de simplifier la syntaxe ou la refactorisation entre différents fichiers XAML.
 
-Dans la syntaxe d’attribut XAML, les accolades «{» et «}» indiquent l’utilisation d’une extension de balisage XAML. Cette utilisation ordonne au traitement XAML d’éviter le traitement général consistant à traiter les valeurs d’attributs en tant que chaîne littérale ou valeur directement convertible en chaîne. À la place, un analyseur XAML appelle le code qui fournit le comportement pour cette extension de balisage particulière, et ce code fournit un autre objet ou résultat de comportement exigé par l’analyseur XAML. Les extensions de balisage peuvent posséder des arguments qui suivent le nom de l’extension de balisage et qui sont également contenus dans les accolades. En général, une extension de balisage évaluée fournit une valeur de retour de type objet. Pendant l’analyse, cette valeur de retour est insérée à l’emplacement de l’arborescence d’objets où l’utilisation de l’extension de balisage se situait dans le code XAML source.
+Dans la syntaxe d’attribut XAML, les accolades « { » et « } » indiquent l’utilisation d’une extension de balisage XAML. Cette utilisation ordonne au traitement XAML d’éviter le traitement général consistant à traiter les valeurs d’attributs en tant que chaîne littérale ou valeur directement convertible en chaîne. À la place, un analyseur XAML appelle le code qui fournit le comportement pour cette extension de balisage particulière, et ce code fournit un autre objet ou résultat de comportement exigé par l’analyseur XAML. Les extensions de balisage peuvent posséder des arguments qui suivent le nom de l’extension de balisage et qui sont également contenus dans les accolades. En général, une extension de balisage évaluée fournit une valeur de retour de type objet. Pendant l’analyse, cette valeur de retour est insérée à l’emplacement de l’arborescence d’objets où l’utilisation de l’extension de balisage se situait dans le code XAML source.
 
 Le langage XAML Windows Runtime prend en charge ces extensions de balisage qui sont définies sous l’espace de noms XAML par défaut et comprises par son analyseur XAML :
 
@@ -128,9 +135,9 @@ En guise d’illustration, l’exemple de code XAML suivant définit la valeur d
 
 Vous pouvez imbriquer des extensions de balisage. L’extension de balisage la plus profonde est évaluée en premier.
 
-En raison des extensions de balisage, vous devez utiliser une syntaxe spéciale pour une valeur «{» littérale dans un attribut. Pour plus d’informations, voir [Guide de la syntaxe XAML](xaml-syntax-guide.md).
+En raison des extensions de balisage, vous devez utiliser une syntaxe spéciale pour une valeur « { » littérale dans un attribut. Pour plus d’informations, voir [Guide de la syntaxe XAML](xaml-syntax-guide.md).
 
-## Événements
+## <a name="events"></a>Événements
 
 Le langage XAML est un langage déclaratif pour les objets et leurs propriétés, mais il inclut également une syntaxe pour attacher des gestionnaires d’événements aux objets dans le balisage. La syntaxe d’événement XAML peut alors intégrer les événements déclarés en XAML via le modèle de programmation Windows Runtime. Vous spécifiez le nom de l’événement sous forme de nom d’attribut sur l’objet dans lequel l’événement est géré. Pour la valeur de l’attribut, vous spécifiez le nom d’une fonction de gestionnaire d’événements que vous définissez dans le code. Le processeur XAML utilise ce nom pour créer une représentation déléguée dans l’arborescence d’objets chargée, puis ajoute le gestionnaire spécifié à une liste de gestionnaires internes. Presque toutes les applications Windows Runtime sont définies à la fois par un balisage et des sources code-behind.
 
@@ -179,25 +186,25 @@ namespace App1
 
 Au sein d’un projet, le code XAML est écrit sous forme de fichier .xaml et vous utilisez le langage de votre choix (C#, Visual Basic, C++/CX) pour écrire un fichier code-behind. Lorsque le balisage d’un fichier XAML est compilé dans le cadre d’une action de génération du projet, l’emplacement du fichier XAML code-behind de chaque page XAML est identifié en spécifiant un espace de noms et une classe sous forme d’attribut [x:Class](x-class-attribute.md) de l’élément racine de la page XAML. Pour plus d’informations sur le fonctionnement de ces mécanismes en XAML et sur leur relation avec les modèles de programmation et d’application, voir [Vue d’ensemble des événements et des événements routés](events-and-routed-events-overview.md).
 
-**Remarque** Pour les langages C++/CX, il existe deux fichiers code-behind, l’un correspond à l’en-tête (.xaml.h) et l’autre à l’implémentation (.xaml.cpp). L’implémentation fait référence à l’en-tête. D’un point de vue technique, c’est l’en-tête qui représente le point d’entrée de la connexion code-behind.
+**Remarque**  Pour les langages C++/CX, il existe deux fichiers code-behind, l’un correspond à l’en-tête (.xaml.h) et l’autre à l’implémentation (.xaml.cpp). L’implémentation fait référence à l’en-tête. D’un point de vue technique, c’est l’en-tête qui représente le point d’entrée de la connexion code-behind.
 
-## Dictionnaires de ressources
+## <a name="resource-dictionaries"></a>Dictionnaires de ressources
 
 La création d’un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) est une tâche courante généralement accomplie en créant un dictionnaire de ressources en tant que zone d’une page XAML ou d’un fichier XAML distinct. Les dictionnaires de ressources et leur mode d’utilisation représentent un domaine conceptuel plus important qui sort du cadre de cette rubrique. Pour plus d’informations, voir [Références aux ressources ResourceDictionary et XAML](https://msdn.microsoft.com/library/windows/apps/mt187273).
 
-## XAML et XML
+## <a name="xaml-and-xml"></a>XAML et XML
 
 Le langage XAML se base fondamentalement sur le langage XML. Mais il étend considérablement le langage XML. Plus précisément, il traite le concept de schéma légèrement différemment en raison de sa relation au concept de type de stockage et il ajoute des éléments de langage tels que les membres attachés et les extensions de balisage. L’attribut **xml:lang** est valide en langage XAML, mais il influence l’exécution au lieu du comportement d’analyse et dispose d’un alias qui est une propriété au niveau de l’infrastructure. Pour plus d’informations, voir [**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066). **xml:base** est valide dans le balisage, mais les analyseurs l’ignorent. L’attribut **xml:space** est valide, mais il est uniquement pertinent pour les scénarios décrits dans la rubrique [XAML et espace blanc](xaml-and-whitespace.md). L’attribut **encoding** est valide en langage XAML. Seuls les codages UTF-8 et UTF-16 sont pris en charge. Le codage UTF-32 n’est pas pris en charge.
 
-###  Respect de la casse en langage XAML
+###  <a name="case-sensitivity-in-xaml"></a>Respect de la casse en langage XAML
 
 Le langage XAML respecte la casse. Il s’agit d’une autre conséquence du fait que le langage XAML soit basé sur le langage XML, lequel respecte la casse. Les noms des éléments et attributs XAML respectent la casse. La valeur d’un attribut respecte potentiellement la casse ; cela dépend de la manière dont la valeur d’attribut est gérée pour des propriétés particulières. Par exemple, si la valeur d’attribut déclare un nom de membre d’une énumération, le comportement intégré qui convertit le type d’une chaîne de nom de membre afin de renvoyer la valeur du membre de l’énumération ne tient pas compte de la casse. Par opposition, la valeur de la propriété **Name** et les méthodes utilitaires permettant d’utiliser des objets en fonction du nom que la propriété **Name** déclare traitent la chaîne du nom en tenant compte de la casse.
 
-## Namescopes XAML
+## <a name="xaml-namescopes"></a>Namescopes XAML
 
 Le langage XAML définit un concept de namescope XAML. Le concept de namescope XAML influence la manière dont les processeurs XAML doivent traiter la valeur de **x:Name** ou **Name** appliquée aux éléments XAML, en particulier les étendues dans lesquelles les noms doivent être des identificateurs uniques fiables. Pour plus d’informations sur les namescopes XAML, voir [Namescopes XAML](xaml-namescopes.md).
 
-## Rôle du langage XAML dans le processus de développement
+## <a name="the-role-of-xaml-in-the-development-process"></a>Rôle du langage XAML dans le processus de développement
 
 Le langage XAML assume plusieurs rôles importants dans le processus de développement d’application.
 
@@ -211,7 +218,7 @@ Le langage XAML assume plusieurs rôles importants dans le processus de dévelop
 
 Votre degré d’interaction avec les fichiers XAML dépendra de votre propre rôle dans le processus de développement Le degré de votre interaction avec les fichiers XAML dépend également de votre environnement de développement, de l’utilisation éventuelle de fonctionnalités d’environnement de conception interactives telles que les boîtes à outils et les éditeurs de propriétés, ainsi que de l’étendue et de la finalité de votre application Windows Runtime. Néanmoins, il est probable que durant le développement de l’application vous modifierez un fichier XAML au niveau élément à l’aide d’un éditeur de texte ou d’un éditeur XAML. Grâce à ces informations, vous pourrez en toute confiance modifier du code XAML dans une représentation texte ou XML et conserver la validité et la finalité des déclarations de ce fichier XAML quand il sera consommé par des outils, des opérations de compilation de balisage ou la phase d’exécution de votre application Windows Runtime.
 
-## Optimiser le chargement du code XAML
+## <a name="optimize-your-xaml-for-load-performance"></a>Optimiser le chargement du code XAML
 
 Voici certains conseils pour définir des éléments d’interface utilisateur en XAML dans un souci de performance. Nombreux de ces conseils concernent l’utilisation de ressources XAML, mais sont répertoriés ici dans la vue d’ensemble du langage XAML pour des raisons pratiques. Pour plus d’informations sur les ressources XAML, voir [Références aux ressources ResourceDictionary et XAML](https://msdn.microsoft.com/library/windows/apps/mt187273). Pour obtenir d’autres conseils relatifs aux performances, notamment sur XAML qui affiche délibérément certaines mauvaises pratiques en termes de performance que vous devrez éviter dans votre code XAML, voir [Optimiser votre balisage XAML](https://msdn.microsoft.com/library/windows/apps/mt204779).
 
@@ -223,7 +230,7 @@ Voici certains conseils pour définir des éléments d’interface utilisateur e
 -   Utilisez des conteneurs tels que [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) afin d’éviter une présence excessive d’éléments d’interface utilisateur. En fait, ne dessinez pas le même pixel plusieurs fois. Pour plus d’informations sur les excès et savoir comment les détecter, voir [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/hh701823).
 -   Utilisez les modèles d’éléments par défaut pour [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) ou [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) ; ceux-ci présentent une logique **Presenter** spéciale qui permet de résoudre les problèmes de performances lors de la construction de l’arborescence visuelle pour un grand nombre d’éléments de liste.
 
-## Débogage de XAML
+## <a name="debugging-xaml"></a>Débogage de XAML
 
 XAML étant un langage de balisage, certaines des stratégies ordinairement utilisées à des fins de débogage dans Microsoft Visual Studio ne sont pas disponibles. Par exemple, il est impossible de définir un point d’arrêt dans un fichier XAML. Toutefois, vous pouvez recourir à d’autres techniques pour résoudre les problèmes liés aux définitions de l’interface utilisateur ou à un autre balisage XAML pendant la phase de développement de votre application.
 
@@ -233,13 +240,8 @@ Le XAML est souvent modifié dans un IDE tel que Visual Studio et l’une de ses
 
 Une fois que l’application s’exécute pour de bon, les erreurs d’analyse XAML éventuelles qui n’ont pas été détectées au moment de la conception sont signalées par le Common Language Runtime (CLR) en tant qu’objet [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774). Pour plus d’informations sur ce que vous pouvez effectuer avec **XamlParseException** au moment de l’exécution, voir [Gestion des exceptions pour les applications Windows Runtime en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194).
 
-**Remarque** Les applications qui utilisent C++/CX pour le code n’obtiennent pas l’objet [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774) à proprement parler. Toutefois, le message dans l’exception est explicite quant au fait que la source de l’erreur est liée à XAML et comprend des informations contextuelles telles que les numéros de ligne d’un fichier XAML, à l’image de l’objet **XamlParseException**.
+**Remarque**  Les applications qui utilisent C++/CX pour le code n’obtiennent pas l’objet [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774) à proprement parler. Toutefois, le message dans l’exception est explicite quant au fait que la source de l’erreur est liée à XAML et comprend des informations contextuelles telles que les numéros de ligne d’un fichier XAML, à l’image de l’objet **XamlParseException**.
 
 Pour plus d’informations sur le débogage d’une application Windows Runtime, voir [Démarrer une session de débogage](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx).
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

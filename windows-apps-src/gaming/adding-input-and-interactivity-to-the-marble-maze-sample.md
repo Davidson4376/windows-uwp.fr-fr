@@ -1,26 +1,33 @@
 ---
 author: mtoepke
 title: "Ajout d’entrées et d’interactivité à l’exemple Marble Maze"
-description: "Les jeux d’application de plateforme UWP s’exécutent sur différents appareils, tels que des ordinateurs de bureau, des ordinateurs portables et des tablettes."
+description: "Les jeux d’application de plateforme Windows universelle (UWP) s’exécutent sur différents appareils, tels que des ordinateurs de bureau, des ordinateurs portables et des tablettes."
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, jeux, entrée, exemple"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ddaa13c6bf7d1bcf5a01d7525389a893a077f4f4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dc667be326950151b08bbaded6d4e9a0b109523b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Ajout d’entrées et d’interactivité à l’exemple Marble Maze
+# <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>Ajout d’entrées et d’interactivité à l’exemple Marble Maze
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Les jeux d’application de plateforme Windows universelle (UWP) s’exécutent sur différents appareils, tels que des ordinateurs de bureau, des ordinateurs portables et des tablettes. Un appareil peut utiliser différents types de mécanismes de contrôle et d’entrée. Il est important de prendre en charge plusieurs périphériques d’entrée afin que votre jeu puisse fonctionner avec un plus grand nombre de préférences et de fonctionnalités choisies par vos utilisateurs. Ce document décrit les pratiques clés à prendre en compte quand vous utilisez des périphériques d’entrée et comment appliquer ces pratiques à l’exemple Marble Maze.
 
-> **Remarque** L’exemple de code correspondant à ce document est disponible dans l’[exemple de jeu Marble Maze en DirectX](http://go.microsoft.com/fwlink/?LinkId=624011).
+> **Remarque**   L’exemple de code correspondant à ce document est disponible dans l’[exemple de jeu Marble Maze en DirectX](http://go.microsoft.com/fwlink/?LinkId=624011).
 
  
-Voici quelques éléments clés présentés dans ce document que vous devez prendre en compte quand vous travaillez avec les entrées dans votre jeu:
+Voici quelques éléments clés présentés dans ce document que vous devez prendre en compte quand vous travaillez avec les entrées dans votre jeu :
 
 -   Quand cela est possible, il est important de prendre en charge différents périphériques d’entrée afin que votre jeu puisse fonctionner avec un plus grand nombre de préférences et fonctionnalités choisies par vos utilisateurs. Bien que l’utilisation d’un contrôleur de jeu et d’un capteur soit facultative, nous recommandons cette utilisation pour améliorer l’expérience des joueurs. Nous avons conçu l’API du contrôleur de jeu et du capteur pour vous aider à intégrer ces périphériques d’entrée.
 -   Pour initialiser les entrées tactiles, vous devez enregistrer des événements de fenêtre, par exemple quand le pointeur est activé, libéré et déplacé. Pour initialiser l’accéléromètre, créez un objet [**Windows::Devices::Sensors::Accelerometer**](https://msdn.microsoft.com/library/windows/apps/br225687) quand vous initialisez l’application. La manette Xbox 360 ne nécessite pas cette initialisation.
@@ -29,20 +36,20 @@ Voici quelques éléments clés présentés dans ce document que vous devez pren
 -   La manette Xbox 360 et l’accéléromètre prennent en charge l’interrogation (polling). C’est-à-dire que vous pouvez demander les données dont vous avez besoin. Pour les entrées tactiles, enregistrez les événements tactiles dans des structures de données disponibles à votre code de traitement des entrées.
 -   Envisagez de normaliser les valeurs d’entrée pour utiliser un format unique. Cela permet de simplifier l’interprétation des entrées par d’autres composants de votre jeu, par exemple des simulations physiques, et de faciliter l’écriture de jeux qui fonctionnent sur différentes résolutions d’écran.
 
-## Périphériques d’entrée pris en charge par Marble Maze
+## <a name="input-devices-supported-by-marble-maze"></a>Périphériques d’entrée pris en charge par Marble Maze
 
 
 Marble Maze prend en charge les périphériques de manette Xbox 360 standard, la souris et les entrées tactiles pour sélectionner des éléments de menu, et la manette Xbox 360, la souris et les entrées tactiles et l’accéléromètre pour le contrôle du jeu. Marble Maze utilise l’API XInput pour interroger la manette sur les entrées. Les fonctions tactiles permettent aux applications de suivre et de répondre aux entrées tactiles. Un accéléromètre est un capteur qui mesure la force appliquée le long des axes x, y et z. En utilisant Windows Runtime, vous pouvez interroger l’état actuel de l’accéléromètre, et recevoir des événements tactiles via le mécanisme de gestion des événements du Windows Runtime.
 
-> **Remarque** Ce document utilise l’interaction tactile pour faire référence à la fois aux entrées tactiles et aux entrées de la souris, et le pointeur pour faire référence à tous les appareils qui utilisent des événements de pointeur. Dans la mesure où l’interaction tactile et la souris utilisent des événements de pointeur standards, vous pouvez utiliser l’un ou l’autre périphérique pour sélectionner les éléments de menu et contrôler le jeu.
+> **Remarque**  Ce document utilise l’interaction tactile pour faire référence à la fois aux entrées tactiles et aux entrées de la souris, et le pointeur pour faire référence à tous les appareils qui utilisent des événements de pointeur. Dans la mesure où l’interaction tactile et la souris utilisent des événements de pointeur standards, vous pouvez utiliser l’un ou l’autre périphérique pour sélectionner les éléments de menu et contrôler le jeu.
 
  
 
-> **Remarque** Le manifeste du package définit Paysage comme la rotation prise en charge pour le jeu afin d’empêcher un changement d’orientation quand vous faites pivoter le périphérique pour faire rouler la bille.
+> **Remarque**  Le manifeste du package définit Paysage comme la rotation prise en charge pour le jeu afin d’empêcher un changement d’orientation quand vous faites pivoter le périphérique pour faire rouler la bille.
 
  
 
-## Initialisation des périphériques d’entrée
+## <a name="initializing-input-devices"></a>Initialisation des périphériques d’entrée
 
 
 La manette Xbox 360 ne nécessite pas cette initialisation. Pour initialiser l’interaction tactile, vous devez enregistrer les événements de fenêtre : l’activation du pointeur (par exemple, un utilisateur appuie sur le bouton de la souris ou touche l’écran), la libération du pointeur ou le déplacement. Pour initialiser l’accéléromètre, vous devez créer un objet [**Windows::Devices::Sensors::Accelerometer**](https://msdn.microsoft.com/library/windows/apps/br225687) quand vous initialisez l’application.
@@ -79,10 +86,10 @@ L’objet Accelerometer est initialisé dans la méthode MarbleMaze::Initialize,
 m_accelerometer = Windows::Devices::Sensors::Accelerometer::GetDefault();
 ```
 
-##  Navigation dans les menus
+##  <a name="navigating-the-menus"></a>Navigation dans les menus
 
 
-###  Suivi des entrées de la manette Xbox 360
+###  <a name="tracking-xbox-360-controller-input"></a>Suivi des entrées de la manette Xbox 360
 
 Vous pouvez utiliser la souris, les entrées tactiles ou la manette Xbox 360 pour naviguer dans les menus, comme indiqué ci-dessous :
 
@@ -91,7 +98,7 @@ Vous pouvez utiliser la souris, les entrées tactiles ou la manette Xbox 360 pou
 -   Utilisez le bouton Démarrer pour interrompre ou reprendre le jeu.
 -   Cliquez sur un élément de menu avec la souris pour choisir cette action.
 
-###  Suivi des entrées tactiles et de la souris
+###  <a name="tracking-touch-and-mouse-input"></a>Suivi des entrées tactiles et de la souris
 
 Pour suivre les entrées de la manette Xbox 360, la méthode **MarbleMaze::Update** définit un tableau de boutons qui définit les comportements d’entrée. XInput fournit uniquement l’état actuel de la manette. C’est pourquoi **MarbleMaze::Update** définit également deux tableaux qui indiquent, pour chaque manette Xbox 360 possible, quel bouton a été actionné lors de la précédente image et quel bouton est actuellement actionné.
 
@@ -243,7 +250,7 @@ Une fois que la méthode **MarbleMaze::Update** a traité les entrées de la man
 memcpy(wasButtonDown, isButtonDown, sizeof(wasButtonDown));
 ```
 
-### Suivi des entrées tactiles et de la souris
+### <a name="tracking-touch-and-mouse-input"></a>Suivi des entrées tactiles et de la souris
 
 Pour les entrées tactiles et de la souris, un élément de menu est choisi quand l’utilisateur le touche ou clique dessus. L’exemple suivant montre comment la méthode **MarbleMaze::Update** traite les entrées de pointeur pour sélectionner des éléments de menu. La variable membre **m_pointQueue** relève les emplacements que l’utilisateur a touchés ou sur lesquels il a cliqué. La façon dont Marble Maze collecte les entrées de pointeur est décrite en détail plus loin dans ce document, dans la section Traitement des entrées de pointeur.
 
@@ -277,7 +284,7 @@ void UserInterface::HitTest(D2D1_POINT_2F point)
 }
 ```
 
-### Mise à jour de l’état du jeu
+### <a name="updating-the-game-state"></a>Mise à jour de l’état du jeu
 
 Une fois que la méthode **MarbleMaze::Update** a traité les entrées de la manette et les entrées tactiles, elle met à jour l’état du jeu si un bouton a été actionné.
 
@@ -295,7 +302,7 @@ if (m_highScoreButton.IsPressed())
 }
 ```
 
-##  Contrôle du jeu
+##  <a name="controlling-game-play"></a>Contrôle du jeu
 
 
 La boucle du jeu et la méthode **MarbleMaze::Update** permettent, ensemble, de mettre à jour l’état des objets du jeu. Si votre jeu accepte des entrées de plusieurs périphériques, vous pouvez cumuler les entrées de tous ces périphériques dans un ensemble unique de variables, ce qui vous permet d’écrire du code plus facile à mettre à jour. La méthode **MarbleMaze::Update** définit un ensemble de variables qui accumulent le mouvement de tous les périphériques.
@@ -307,7 +314,7 @@ float combinedTiltY = 0.0f;
 
 Le mécanisme d’entrée n’est pas toujours le même d’un périphérique à l’autre. Par exemple, l’entrée de pointeur est gérée en utilisant le modèle de gestion des événements du Windows Runtime. Inversement, vous interrogez les données d’entrée à partir de la manette Xbox 360 quand vous en avez besoin. Nous recommandons de toujours suivre le mécanisme d’entrée conseillé pour un périphérique donné. Cette section décrit comment Marble Maze lit les entrées de chaque périphérique, comment il met à jour les valeurs d’entrée combinées et comment il utilise ces valeurs pour mettre à jour l’état du jeu.
 
-###  Traitement des entrées de pointeur
+###  <a name="processing-pointer-input"></a>Traitement des entrées de pointeur
 
 Quand vous utilisez des entrées de pointeur, appelez la méthode [**Windows::UI::Core::CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208217) pour traiter les événements de fenêtre. Appelez cette méthode dans la boucle de votre jeu avant de mettre à jour ou de générer le rendu de la scène. Marble Maze transmet **CoreProcessEventsOption::ProcessAllIfPresent** à cette méthode pour traiter tous les événements en attente, puis renvoie immédiatement une valeur. Une fois tous les événements traités, Marble Maze génère un rendu de l’image suivante et la dévoile.
 
@@ -391,7 +398,7 @@ for (TouchMap::const_iterator iter = m_touches.cbegin(); iter != m_touches.cend(
 }
 ```
 
-### Traitement des entrées d’accéléromètre
+### <a name="processing-accelerometer-input"></a>Traitement des entrées d’accéléromètre
 
 Pour traiter les entrées d’accéléromètre, la méthode **MarbleMaze::Update** appelle la méthode [**Windows::Devices::Sensors::Accelerometer::GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/br225699). Cette méthode renvoie un objet [**Windows::Devices::Sensors::AccelerometerReading**](https://msdn.microsoft.com/library/windows/apps/br225688), qui représente une lecture de l’accéléromètre. Les propriétés **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** et **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** contiennent respectivement l’accélération de la force g le long des axes x et y.
 
@@ -415,7 +422,7 @@ if (m_accelerometer != nullptr)
 
 Dans la mesure où vous ne pouvez pas savoir si un accéléromètre est présent sur l’ordinateur de l’utilisateur, vérifiez toujours qu’un objet Accelerometer valide existe avant d’interroger l’accéléromètre.
 
-### Traitement des entrées de la manette Xbox 360
+### <a name="processing-xbox-360-controller-input"></a>Traitement des entrées de la manette Xbox 360
 
 L’exemple suivant montre comment la méthode **MarbleMaze::Update** lit les entrées de la manette Xbox 360 et met à jour les valeurs d’entrée combinées. La méthode **MarbleMaze::Update** utilise une boucle for pour permettre la réception des entrées provenant d’une manette connectée. La méthode **XInputGetState** remplit un objet XINPUT_STATE avec l’état actuel de la manette. Les valeurs **combinedTiltX** et **combinedTiltY** sont mises à jour en fonction des valeurs x et y du stick gauche.
 
@@ -446,15 +453,15 @@ for (DWORD userIndex = 0; userIndex < XUSER_MAX_COUNT; ++userIndex)
 
 XInput définit la constante **XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE** pour le stick gauche. Il s’agit du seuil de zone morte approprié pour la plupart des jeux.
 
-> **Important** Quand vous utilisez la manette Xbox 360, n’oubliez pas la zone morte. La zone morte fait référence aux différences de sensibilité au mouvement initial des boîtiers de commande. Pour certaines manettes, un mouvement léger peut ne pas générer de lecture, pour d’autres, une lecture mesurable peut être obtenue. Pour tenir compte de cela dans votre jeu, créez une zone de non-mouvement pour le mouvement initial du stick. Pour plus d’informations sur la zone morte, voir [Prise en main de XInput.](https://msdn.microsoft.com/library/windows/desktop/ee417001)
+> **Important**  Quand vous utilisez la manette Xbox 360, n’oubliez pas la zone morte. La zone morte fait référence aux différences de sensibilité au mouvement initial des boîtiers de commande. Pour certaines manettes, un mouvement léger peut ne pas générer de lecture, pour d’autres, une lecture mesurable peut être obtenue. Pour tenir compte de cela dans votre jeu, créez une zone de non-mouvement pour le mouvement initial du stick. Pour plus d’informations sur la zone morte, voir [Prise en main de XInput.](https://msdn.microsoft.com/library/windows/desktop/ee417001)
 
  
 
-###  Application des entrées à l’état du jeu
+###  <a name="applying-input-to-the-game-state"></a>Application des entrées à l’état du jeu
 
-Les périphériques indiquent les valeurs d’entrée de différentes manières. Par exemple, les entrées du pointeur peuvent être des coordonnées d’écran, tandis que les entrées de manette peuvent être dans un format complètement différent. L’un des problèmes liés à la combinaison des entrées de plusieurs périphériques en un ensemble de valeurs d’entrée est la normalisation, c’est-à-dire la conversion de valeurs dans un format commun. Marble Maze normalise les valeurs en les mettant à l’échelle dans la plage [-1,0, 1,0]. Pour normaliser les entrées de la manette Xbox 360, Marble Maze divise les valeurs d’entrée par 32768, car les valeurs d’entrée du stick sont toujours comprises entre -32768 et 32767. La fonction **PointToTouch**, décrite précédemment dans cette section, donne des résultats similaires, en convertissant les coordonnées écran en valeurs normalisées comprises dans la plage -1,0 et +1,0.
+Les périphériques indiquent les valeurs d’entrée de différentes manières. Par exemple, les entrées du pointeur peuvent être des coordonnées d’écran, tandis que les entrées de manette peuvent être dans un format complètement différent. L’un des problèmes liés à la combinaison des entrées de plusieurs périphériques en un ensemble de valeurs d’entrée est la normalisation, c’est-à-dire la conversion de valeurs dans un format commun. Marble Maze normalise les valeurs en les mettant à l’échelle dans la plage [-1,0, 1,0]. Pour normaliser les entrées de la manette Xbox 360, Marble Maze divise les valeurs d’entrée par 32 768, car les valeurs d’entrée du stick sont toujours comprises entre -32 768 et 32 767. La fonction **PointToTouch**, décrite précédemment dans cette section, donne des résultats similaires, en convertissant les coordonnées écran en valeurs normalisées comprises dans la plage -1,0 et +1,0.
 
-> **Conseil** Même si votre application utilise une méthode d’entrée, nous recommandons toujours de normaliser les valeurs d’entrée. Cela permet de simplifier l’interprétation des entrées par d’autres composants de votre jeu, par exemple des simulations physiques, et de faciliter l’écriture de jeux qui fonctionnent sur différentes résolutions d’écran.
+> **Conseil**  Même si votre application utilise une méthode d’entrée, nous recommandons toujours de normaliser les valeurs d’entrée. Cela permet de simplifier l’interprétation des entrées par d’autres composants de votre jeu, par exemple des simulations physiques, et de faciliter l’écriture de jeux qui fonctionnent sur différentes résolutions d’écran.
 
  
 
@@ -505,12 +512,12 @@ if (marblePosition.z >= resetDepth)
 
 Cette section ne décrit pas le fonctionnement de la simulation physique. Pour plus d’informations, voir Physics.h et Physics.cpp dans les sources Marble Maze.
 
-## Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes
 
 
 Consultez [Ajout d’audio à l’exemple Marble Maze](adding-audio-to-the-marble-maze-sample.md) pour obtenir des informations sur les pratiques clés en matière d’audio. Ce document décrit comment Marble Maze utilise Microsoft Media Foundation et XAudio2 pour charger, mixer et lire des ressources audio.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 
 * [Ajout de son à l’exemple Marble Maze](adding-audio-to-the-marble-maze-sample.md)
@@ -523,10 +530,5 @@ Consultez [Ajout d’audio à l’exemple Marble Maze](adding-audio-to-the-marbl
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

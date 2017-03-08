@@ -3,9 +3,16 @@ author: mcleanbyron
 Description: "Dans cette procédure pas à pas, vous allez créer, exécuter et gérer votre première expérience avec des tests A/B."
 title: "Créer et exécuter votre première expérience avec des tests A/B"
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Microsoft Store Services SDK, tests A/B, expériences"
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 65785e53b2e5ba788dbda533373737e193e1c792
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fb9e93747fa77031fe906d9ab7463fc41b73cdeb
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -72,7 +79,7 @@ Pour suivre cette procédure pas à pas, vous devez posséder un compte du Centr
   9. Cliquez une nouvelle fois sur le contrôle de liste déroulante, choisissez **b**, puis cliquez sur **Ajouter une variable**. La chaîne **128** doit apparaître automatiquement dans la colonne **Variante A**. Dans la colonne **Variante B**, tapez **255**.  
 10. Cliquez sur **Enregistrer**, puis sur **Activer**.
 
-> **Important**  Une fois que vous avez activé une expérience, vous ne pouvez plus en modifier les paramètres, sauf si vous avez coché la case **Editable experiment** (Expérience modifiable) quand vous avez créé l’expérience. D’habitude, nous vous recommandons de coder l’expérience dans votre application avant de l’activer.
+> **Important**&nbsp;&nbsp;Une fois que vous avez activé une expérience, vous ne pouvez plus en modifier les paramètres, sauf si vous avez coché la case **Editable experiment** (Expérience modifiable) quand vous avez créé l’expérience. D’habitude, nous vous recommandons de coder l’expérience dans votre application avant de l’activer.
 
 ## <a name="run-the-app-to-gather-experiment-data"></a>Exécuter l’application pour collecter des données d’expérience
 
@@ -84,13 +91,13 @@ Pour suivre cette procédure pas à pas, vous devez posséder un compte du Centr
 
 Laissez s’écouler plusieurs heures après avoir terminé la section précédente, puis suivez ces étapes pour passer en revue les résultats de votre expérience et terminer l’expérience.
 
-> **Remarque**  Dès que vous activez une expérience, le Centre de développement lance immédiatement la collecte de données de toutes les applications consignant des données pour votre expérience. L’apparition des données de l’expérience dans le tableau de bord peut cependant prendre plusieurs heures.
+> **Remarque**&nbsp;&nbsp;Dès que vous activez une expérience, le Centre de développement lance immédiatement la collecte de données de toutes les applications consignant des données pour votre expérience. L’apparition des données de l’expérience dans le tableau de bord peut cependant prendre plusieurs heures.
 
 1. Dans le Centre de développement, revenez à la page **Expérimentation** de votre application.
 2. Dans la section **Active experiments** (Expériences actives), cliquez sur **Optimize Button Clicks** (Optimiser les clics de bouton) pour accéder à la page de cette expérience.
 3. Vérifiez que les résultats affichés dans les sections **Résumé des résultats** et **Détails des résultats** correspondent à ce que vous attendez. Pour en savoir plus sur ces sections, voir [Gérer votre expérience dans le tableau de bord du Centre de développement](manage-your-experiment.md#review-the-results-of-your-experiment).
 
-  >**Remarque**  Le Centre de développement signale uniquement le premier événement de conversion pour chaque utilisateur sur une période de 24 heures. Si un utilisateur déclenche plusieurs événements de conversion dans votre application au cours d’une période de 24 heures, seul le premier événement de conversion est signalé. Ceci est conçu pour empêcher le fait qu’un utilisateur unique avec plusieurs événements de conversion fausse les résultats de l’expérience pour un groupe représentatif d’utilisateurs.
+  >**Remarque**&nbsp;&nbsp;Le Centre de développement signale uniquement le premier événement de conversion pour chaque utilisateur sur une période de 24 heures. Si un utilisateur déclenche plusieurs événements de conversion dans votre application au cours d’une période de 24 heures, seul le premier événement de conversion est signalé. Ceci est conçu pour empêcher le fait qu’un utilisateur unique avec plusieurs événements de conversion fausse les résultats de l’expérience pour un groupe représentatif d’utilisateurs.
 4. Vous êtes désormais prêt à terminer l’expérience. Dans la section **Résumé des résultats**, cliquez sur **Basculer** dans la colonne **Variante B**. Cela permet de basculer tous les utilisateurs de votre application sur le bouton bleu.
 5. Cliquez sur **OK** pour confirmer que vous souhaitez mettre fin à l’expérience.
 6. Exécutez l’application **SampleExperiment** que vous avez créée dans la section précédente.
@@ -103,9 +110,4 @@ Laissez s’écouler plusieurs heures après avoir terminé la section précéde
 * [Définir votre expérience dans le tableau de bord du Centre de développement](define-your-experiment-in-the-dev-center-dashboard.md)
 * [Gérer votre expérience dans le tableau de bord du Centre de développement](manage-your-experiment.md)
 * [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

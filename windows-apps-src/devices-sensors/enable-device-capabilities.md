@@ -2,20 +2,27 @@
 author: DBirtolo
 ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
 title: "Activer les fonctionnalités d’un appareil"
-description: "Ce didacticiel décrit comment déclarer des fonctionnalités d’appareil dans Microsoft Visual Studio. Votre application peut ainsi utiliser des caméras, des microphones, des capteurs de localisation et d’autres appareils."
+description: "Ce didacticiel décrit comment déclarer des fonctionnalités d’appareil dans Microsoft Visual Studio. Votre application peut ainsi utiliser des appareils photo, des microphones, des capteurs d’emplacement et d’autres appareils."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b36dd4d77821a65b1f435d755f7bb415b2e386ee
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 15b12bfafea71705a9c18464461a73e3e2f05563
+ms.lasthandoff: 02/07/2017
 
 ---
-# Activer les fonctionnalités d’un appareil
+# <a name="enable-device-capabilities"></a>Activer les fonctionnalités d’un appareil
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Ce didacticiel décrit comment déclarer des fonctionnalités d’appareil dans Microsoft Visual Studio. Votre application peut ainsi utiliser des appareils photo, des microphones, des capteurs de localisation et d’autres appareils.
 
-## Spécifier les fonctionnalités d’appareil que votre application utilisera
+## <a name="specify-the-device-capabilities-your-app-will-use"></a>Spécifier les fonctionnalités d’appareil que votre application utilisera
 
 
 Avec des applications Windows , vous êtes tenu de spécifier dans le manifeste du package d’application quand vous utilisez certains types d’appareils. Dans Visual Studio, vous pouvez déclarer la plupart des fonctionnalités à l’aide du [concepteur du manifeste](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx) ou vous pouvez les ajouter manuellement comme indiqué dans [Comment spécifier des fonctionnalités de périphérique dans un manifeste de package (manuellement)](https://msdn.microsoft.com/library/windows/apps/Dn263092). Ce didacticiel suppose que vous utilisez le concepteur du manifeste.
@@ -40,7 +47,7 @@ Certains types d’appareils, tels que les imprimantes, les lecteurs et les capt
 | Microphone | ![Disponible dans le concepteur de manifeste](images/ap-tools.png) | Donne accès au flux audio du microphone. Cela permet à l’application d’enregistrer à partir des microphones connectés. | 
 | Médiathèque | ![Disponible dans le concepteur de manifeste](images/ap-tools.png) | Permet d’ajouter, de modifier ou de supprimer des fichiers dans la **médiathèque** pour le PC local et des PC de **groupe résidentiel**. | 
 | Objets 3D | ![Disponible dans le concepteur de manifeste](images/ap-tools.png) | Fournit un accès par programme aux **objets 3D** de l’utilisateur, permettant à l’application d’énumérer tous les fichiers dans la bibliothèque et d’y accéder sans interaction de l’utilisateur. Cette fonctionnalité est généralement utilisée dans les applications et les jeux 3D qui ont besoin d’accéder à l’intégralité de la bibliothèque d’**objets 3D**. | 
-| Appel téléphonique | ![Disponible dans le concepteur de manifeste](images/ap-tools.png) | Permet aux applications d’accéder à toutes les lignes téléphoniques sur l’appareil, et d’exécuter les fonctions suivantes: passer un appel sur le téléphone et afficher le numéroteur système sans intervention de l’utilisateur; accéder aux métadonnées liées à la ligne; accéder à des déclencheurs liés à la ligne. Autoriser l’application de filtre antispam sélectionnée par l’utilisateur à définir et à vérifier la liste rouge et les informations sur l’origine des appels. | 
+| Appel téléphonique | ![Disponible dans le concepteur de manifeste](images/ap-tools.png) | Permet aux applications d’accéder à toutes les lignes téléphoniques sur l’appareil, et d’exécuter les fonctions suivantes : passer un appel sur le téléphone et afficher le numéroteur système sans intervention de l’utilisateur ; accéder aux métadonnées liées à la ligne ; accéder à des déclencheurs liés à la ligne. Autoriser l’application de filtre antispam sélectionnée par l’utilisateur à définir et à vérifier la liste rouge et les informations sur l’origine des appels. | 
 | Bibliothèque d’images | ![Disponible dans le concepteur de manifeste](images/ap-tools.png) | Permet d’ajouter, de modifier ou de supprimer des fichiers dans la **bibliothèque d’images** pour le PC local et des PC de **groupe résidentiel**. | 
 | Réseaux privés (client &amp; serveur) | ![Disponible dans le concepteur de manifeste](images/ap-tools.png) | Fournit l’accès entrant et sortant aux réseaux intranet qui ont un contrôleur de domaine authentifié, ou que l’utilisateur a désignés comme réseaux domestiques ou professionnels. L’accès entrant aux ports critiques est toujours bloqué. | 
 | Proximité | ![Disponible dans le concepteur de manifeste](images/ap-tools.png) | Permet de se connecter à des périphériques proches du PC via la communication en champ proche (NFC, Near-Field Communication). La proximité en champ proche peut être utilisée pour envoyer des fichiers ou communiquer avec une application sur l’appareil proche. | 
@@ -56,7 +63,7 @@ Certains types d’appareils, tels que les imprimantes, les lecteurs et les capt
 | Bluetooth RFCOMM |  | Donne accès à des API qui prennent en charge le transport BR/EDR (Basic Rate/Extended Data Rate) et permet également à votre application du Windows Store d’accéder à un périphérique qui implémente SPP (Serial Port Profile). Cette fonctionnalité nécessite des éléments enfants. Pour plus d’informations, voir [Comment spécifier des fonctionnalités de périphérique pour Bluetooth](https://msdn.microsoft.com/library/windows/apps/Dn263090). |
 | pointOfService |  | Donne accès aux lecteurs de code-barres et de bandes magnétiques des points de service (POS). Cette fonctionnalité n’est pas prise en charge sur Windows Phone. | 
 
-## Utiliser l’API Windows Runtime pour communiquer avec votre appareil
+## <a name="use-the-windows-runtime-api-for-communicating-with-your-device"></a>Utiliser l’API Windows Runtime pour communiquer avec votre appareil
 
 Le tableau suivant connecte certaines fonctionnalités à des API de Windows Runtime.
 
@@ -73,10 +80,5 @@ Le tableau suivant connecte certaines fonctionnalités à des API de Windows Run
 | Bluetooth GATT           | [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) | 
 | Bluetooth RFCOMM         | [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) | 
 | Point de service (POS)   | [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) |
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

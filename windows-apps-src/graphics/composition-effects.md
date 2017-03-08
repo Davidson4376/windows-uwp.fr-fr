@@ -3,14 +3,21 @@ author: scottmill
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: Effets de composition
 description: "Les API d’effet permettent aux développeurs de personnaliser l’affichage de leur interface utilisateur."
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 7330af081021788a17bf6ec320267b4ea2fc3115
-ms.openlocfilehash: 197a4b32afc82724803fb93949b288b38de52cc4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ecf1c8a35838c1a05fabb5d76a2d0574c90a98db
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="composition-effects"></a>Effets de composition
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 L’API WinRT [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) autorise l’application d’effets en temps réel à des images et à l’interface utilisateur avec des propriétés d’effet animables. Dans cette vue d’ensemble, nous allons parcourir les fonctionnalités disponibles, qui permettent d’appliquer des effets à un élément visuel de composition.
 
@@ -244,10 +251,5 @@ brush.Surface = imageSource.Surface;
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

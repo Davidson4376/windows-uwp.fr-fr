@@ -2,15 +2,22 @@
 author: mcleblanc
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "Présentation détaillée de la liaison de données"
-description: "La liaison est un moyen dont dispose l’interface de votre application pour afficher des données et éventuellement rester synchronisée avec ces données."
+description: "La liaison de données est un moyen dont dispose l’interface utilisateur de votre application pour afficher des données et éventuellement rester synchronisée avec ces données."
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: fa3a3cf6194f04a05301ae4dfb75a7a21ff22e73
-ms.openlocfilehash: fca2c9a795e38983f439d6df5c5a7394c29c1217
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d96565479d970bca724614768361ba390ab9d668
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="data-binding-in-depth"></a>Présentation détaillée de la liaison de données
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 
 **API importantes**
@@ -649,10 +656,5 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | Mode | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode peut être défini sur OneTime (liaison ponctuelle), OneWay (liaison à sens unique) ou TwoWay (liaison bidirectionnelle). La valeur par défaut est OneTime pour {x:Bind} et OneWay pour {Binding}. | 
 | UpdateSourceTrigger | Non pris en charge | `<Binding UpdateSourceTrigger="Default [or] PropertyChanged [or] Explicit"/>` | {x:Bind} utilise le comportement PropertyChanged dans tous les cas, sauf pour TextBox.Text, où il attend la perte de focus mettre à jour la source. | 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

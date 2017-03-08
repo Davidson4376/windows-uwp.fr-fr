@@ -1,11 +1,20 @@
 ---
 author: Jwmsft
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
+Description: "Le contrôle TextBox permet à un utilisateur de saisir du texte dans une application."
+title: Zone de texte
 label: Text box
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 3cbfa4a2896e5e7453d9fe1793f422d2f7b60c79
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 205903636b6486d80ccffde9b32818e02e5ac7ea
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="text-box"></a>Zone de texte
@@ -278,9 +287,4 @@ Pour plus d’informations et d’exemples, voir [Utiliser l’étendue des entr
 - [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Classe PasswordBox Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

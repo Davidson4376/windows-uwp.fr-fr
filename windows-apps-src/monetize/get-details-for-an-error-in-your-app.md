@@ -1,17 +1,24 @@
 ---
 author: mcleanbyron
-ms.assetid: 
-description: "Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir les informations concernant une erreur spécifique de votre application."
+ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
+description: "Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir des informations détaillées concernant une erreur spécifique de votre application."
 title: Obtenir les informations sur une erreur de votre application
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, services du Windows Store, API d’analyse du Windows Store, erreurs, détails"
 translationtype: Human Translation
-ms.sourcegitcommit: 767097f068630e5ec171415c05d6dc395c8b26b3
-ms.openlocfilehash: cd72e58ec252c556cf0f2e5ce071744e8fac6c9e
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 1aaf5b6864c678d26289270be6a9ad96f5b5e004
+ms.lasthandoff: 02/08/2017
 
 ---
 
 # <a name="get-details-for-an-error-in-your-app"></a>Obtenir les informations sur une erreur de votre application
 
-Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir les informations concernant une erreur spécifique de votre application, au format JSON. Cette méthode ne récupère que les informations concernant les erreurs survenues dans les 30 derniers jours. Ces informations sont également disponibles dans la section **Échecs** du [rapport d’intégrité](../publish/health-report.md) dans le tableau de bord du Centre de développement Windows.
+Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir des informations détaillées concernant une erreur spécifique de votre application au format JSON. Cette méthode ne récupère que les informations concernant les erreurs survenues dans les 30 derniers jours. Ces informations sont également disponibles dans la section **Échecs** du [rapport d’intégrité](../publish/health-report.md) dans le tableau de bord du Centre de développement Windows.
 
 Pour utiliser cette méthode, vous devez d’abord utiliser la méthode [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md) afin de récupérer l’ID de l’erreur sur laquelle vous souhaitez des informations détaillées.
 
@@ -160,9 +167,4 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 * [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
 * [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
 * [Obtenir la trace de pile concernant une erreur dans votre application](get-the-stack-trace-for-an-error-in-your-app.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

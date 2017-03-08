@@ -1,17 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
-description: "Cette section fournit des informations sur la création d’une application Windows universelle (UWP) qui capture, lit ou modifie des photos, des vidéos ou des fichiers audio."
+description: "Cette section fournit des informations sur la création d’applications de plateforme Windows universelle (UWP) qui capturent, lisent ou modifient des photos, des vidéos ou des fichiers audio."
 title: "Audio, vidéo et appareil photo"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 77f47bce2a4be3f7c5ee3d320ff6c68e8c7ce6b0
-ms.openlocfilehash: d1aad0800bfe4982a316aa5da719db005b687fa1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2d3b61b35307536bc54f19b5857acfe946a010ce
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="audio-video-and-camera"></a>Audio, vidéo et appareil photo
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette section fournit des informations sur la création d’une application Windows universelle (UWP) qui capture, lit ou modifie des photos, des vidéos ou des fichiers audio.
  
@@ -35,7 +42,7 @@ Cette section fournit des informations sur la création d’une application Wind
 
 
 ## <a name="see-also"></a>Voir aussi
-- [Développer des applications UWP](https://developer.microsoft.com/en-us/windows/develop)
+- [Développer des applications UWP](https://developer.microsoft.com/windows/develop)
 
  
 
@@ -45,10 +52,5 @@ Cette section fournit des informations sur la création d’une application Wind
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

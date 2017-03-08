@@ -1,23 +1,30 @@
 ---
 author: msatranjr
 title: "Création de composants Windows Runtime en C++"
-description: "Cet article explique comment utiliser C++ pour créer un composant Windows Runtime, qui est une DLL qui peut être appelée depuis une application UWP générée à l’aide de JavaScript, ou encore de C#, Visual Basic ou C++."
+description: "Cet article explique comment utiliser C++ pour créer un composant Windows Runtime, qui est une DLL qui peut être appelée depuis une application Windows universelle générée à l’aide de JavaScript, ou encore de C#, Visual Basic ou C++."
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 65114d476da1a7f9113987ebccc8bdbaca6381a7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 28d03486f6fb2f7a249af82d2c3be6006c9d80ed
+ms.lasthandoff: 02/07/2017
 
 ---
 
 
-# Création de composants Windows Runtime en C++
+# <a name="creating-windows-runtime-components-in-c"></a>Création de composants Windows Runtime en C++
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cet article explique comment utiliser C++ pour créer un composant WindowsRuntime, qui est une DLL qui peut être appelée depuis une application Windows universelle générée à l’aide de JavaScript, ou encore de C#, Visual Basic ou C++.
+Cet article explique comment utiliser C++ pour créer un composant Windows Runtime, qui est une DLL qui peut être appelée depuis une application Windows universelle générée à l’aide de JavaScript, ou encore de C#, Visual Basic ou C++.
 
-Voici plusieurs raisons pour la création d’un tel composant:
+Voici plusieurs raisons pour la création d’un tel composant :
 
 -   obtenir les avantages en termes de performances qu’offre C++ dans les opérations complexes ou nécessitant de nombreuses ressources de calcul ;
 
@@ -27,10 +34,10 @@ Lorsque vous générez une solution qui contient un projet JavaScript ou .NET et
 
 En général, lorsque vous codez votre composant C++, utilisez la bibliothèque C++ standard et les types intégrés, sauf à la limite ABI (Abstract Binary Interface) où les données sont passées vers et depuis du code dans un autre package .winmd. À la limite ABI, utilisez les types Windows Runtime et la syntaxe spéciale prise en charge par Visual C++ pour créer et manipuler ces types. De plus, dans votre code Visual C++, utilisez des types tels que delegate et event pour implémenter des événements qui peuvent être déclenchés depuis votre composant et gérés dans JavaScript, Visual Basic ou C#. Pour plus d’informations sur la nouvelle syntaxe Visual C++, voir [Référence du langage Visual C++ (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
 
-## Règles de casse et d’appellation
+## <a name="casing-and-naming-rules"></a>Règles de casse et d’appellation
 
 
-### JavaScript
+### <a name="javascript"></a>JavaScript
 
 JavaScript respecte la casse. Par conséquent, vous devez suivre les conventions de casse indiquées ci-dessous :
 
@@ -38,11 +45,11 @@ JavaScript respecte la casse. Par conséquent, vous devez suivre les conventions
 -   Lorsque vous appelez des méthodes, utilisez la casse mixte même si le nom de la méthode est en majuscules du côté C++. Par exemple, une méthode GetDate() C++ doit être appelée depuis JavaScript sous la forme getDate().
 -   Les noms de classe et les noms d’espace de noms activables ne peuvent pas contenir de caractères UNICODE.
 
-### .NET
+### <a name="net"></a>.NET
 
 Les langages .NET suivent leurs règles de casse normales.
 
-## Instanciation de l’objet
+## <a name="instantiating-the-object"></a>Instanciation de l’objet
 
 
 Seuls les types Windows Runtime peuvent franchir la limite ABI. Le compilateur déclenche une erreur si le composant a un type tel que std::wstring comme type de retour ou paramètre dans une méthode publique. Les types intégrés Extensions de composant Visual C++ (C++/CX) incluent les scalaires habituels, tels que int et double, ainsi que leurs équivalents typedef int32, float64, etc. Pour plus d’informations, voir [Système de type (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
@@ -75,7 +82,7 @@ var num = nativeObject.LogCalc(21.5);
 ResultText.Text = num.ToString();
 ```
 
-## Types intégrés C++, types de bibliothèques et types Windows Runtime
+## <a name="c-built-in-types-library-types-and-windows-runtime-types"></a>Types intégrés C++, types de bibliothèques et types Windows Runtime
 
 
 Une classe activable (appelée également classe ref) est une classe qui peut être instanciée depuis un autre langage comme JavaScript, C# ou Visual Basic. Pour être utilisable à partir d’un autre langage, un composant doit contenir au moins une classe activable.
@@ -86,11 +93,11 @@ Toutes les classes publiques doivent résider dans le même espace de noms racin
 
 Le code client crée une instance du composant à l’aide du mot clé **new** (**New** en Visual Basic) comme pour n’importe quelle classe.
 
-Une classe activable doit être déclarée comme **public ref class sealed**. Le mot clé **ref class** indique au compilateur de créer la classe comme un type compatible Windows Runtime, et le mot clé sealed spécifie que la classe ne peut pas être héritée. Windows Runtime ne prend pas en charge de modèle d’héritage généralisé actuellement; un modèle d’héritage limité prend en charge la création de contrôles XAML personnalisés. Pour plus d’informations, voir [Classes et structures de référence (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx).
+Une classe activable doit être déclarée comme **public ref class sealed**. Le mot clé **ref class** indique au compilateur de créer la classe comme un type compatible Windows Runtime, et le mot clé sealed spécifie que la classe ne peut pas être héritée. Windows Runtime ne prend pas en charge de modèle d’héritage généralisé actuellement ; un modèle d’héritage limité prend en charge la création de contrôles XAML personnalisés. Pour plus d’informations, voir [Classes et structures de référence (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx).
 
 Pour C++, toutes les primitives numériques sont définies dans l’espace de noms par défaut. L’espace de noms [Platform](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) contient des classes C++ spécifiques au système de type Windows Runtime. Il s’agit des classes [Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) et [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx). Les types de collection concrets tels que les classes [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) et [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) sont définis dans l’espace de noms [Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx). Les interfaces publiques implémentées par ces types sont définies dans [Windows::Foundation::Collections (espace de noms) (C++ /CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx). Il s’agit des types d’interfaces qui sont utilisés par JavaScript, C# et Visual Basic. Pour plus d’informations, voir [Système de types (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
 
-## Méthode qui retourne une valeur de type intégré
+## <a name="method-that-returns-a-value-of-built-in-type"></a>Méthode qui retourne une valeur de type intégré
 
 ```cpp
     // #include <valarray>
@@ -109,7 +116,7 @@ var num = nativeObject.logCalc(21.5);
 document.getElementById('P2').innerHTML = num;
 ```
 
-## Méthode qui retourne une structure de valeur personnalisée
+## <a name="method-that-returns-a-custom-value-struct"></a>Méthode qui retourne une structure de valeur personnalisée
 
 ```cpp
 namespace CppComponent
@@ -180,7 +187,7 @@ private void GetAndSetPlayerData()
 }
 ```
 
-## Méthodes surchargées
+## <a name="overloaded-methods"></a>Méthodes surchargées
 
 
 La classe ref publique C++ peut contenir des méthodes surchargées, mais la capacité de JavaScript de différencier les méthodes surchargées est limitée. Par exemple, il peut faire la différence entre les signatures suivantes :
@@ -212,12 +219,12 @@ var num = nativeObject.getNumber(9);
 document.getElementById('P4').innerHTML = num;
 ```
 
-## .NET
+## <a name="net"></a>.NET
 
 
 Les langages .NET reconnaissent les surcharges dans une classe ref C++ comme dans toute classe .NET Framework.
 
-## DateTime
+## <a name="datetime"></a>DateTime
 
 Dans le Windows Runtime, un objet [Windows::Foundation::DateTime](https://msdn.microsoft.com/library/windows/apps/windows.foundation.datetime.aspx) est un entier signé 64 bits qui représente le nombre d’intervalles de 100 nanosecondes avant ou après le 1er janvier 1601. Il n’existe aucune méthode sur un objet Windows:Foundation::DateTime. À la place, chaque langage projette le contrôle DateTime de la manière qui lui est native : l’objet Date en JavaScript et les types System.DateTime et System.DateTimeOffset dans le .NET Framework.
 
@@ -272,12 +279,12 @@ private void DateTimeExample()
 }
 ```
 
-## Collections et tableaux
+## <a name="collections-and-arrays"></a>Collections et tableaux
 
 
 Les collections sont toujours passées à travers la limite ABI sous forme de handles aux types Windows Runtime tels que Windows::Foundation::Collections::IVector^ et Windows::Foundation::Collections::IMap^. Par exemple, si vous retournez un handle à une Platform::Collections::Map, il convertit implicitement en Windows::Foundation::Collections::IMap^. Les interfaces de collection sont définies dans un espace de noms distinct à partir des classes C++ qui fournissent des implémentations concrètes. Les langages JavaScript et .NET utilisent les interfaces. Pour plus d’informations, voir [Collections (C++/CX)](https://msdn.microsoft.com//library/windows/apps/hh700103.aspx) et [Array et WriteOnlyArray (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh700131.aspx).
 
-## Passage d’IVector
+## <a name="passing-ivector"></a>Passage d’IVector
 
 
 ```cpp
@@ -326,7 +333,7 @@ private void SortListItems()
 }
 ```
 
-## Passage d’IMAP
+## <a name="passing-imap"></a>Passage d’IMAP
 
 
 ```cpp
@@ -364,10 +371,10 @@ private void GetDictionary()
 }
 ```
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
-Une classe ref publique dans les extensions de composant Visual C++ expose les données membres publiques sous forme de propriétés en utilisant le mot clé property. Le concept est identique aux propriétés .NET Framework. Une propriété triviale ressemble à des données membres, car ses fonctionnalités sont implicites. Une propriété non triviale a des accesseurs get et set explicites et une variable privée nommée qui est le «magasin de stockage» de la valeur. Dans cet exemple, le membre privé variable \_propertyAValue est le magasin de stockage de PropertyA. Une propriété peut déclencher un événement lorsque sa valeur change. Une application cliente peut s’inscrire pour recevoir cet événement.
+Une classe ref publique dans les extensions de composant Visual C++ expose les données membres publiques sous forme de propriétés en utilisant le mot clé property. Le concept est identique aux propriétés .NET Framework. Une propriété triviale ressemble à des données membres, car ses fonctionnalités sont implicites. Une propriété non triviale a des accesseurs get et set explicites et une variable privée nommée qui est le « magasin de stockage » de la valeur. Dans cet exemple, le membre privé variable \_propertyAValue est le magasin de stockage de PropertyA. Une propriété peut déclencher un événement lorsque sa valeur change. Une application cliente peut s’inscrire pour recevoir cet événement.
 
 ```cpp
 //Properties
@@ -434,12 +441,12 @@ private void GetAProperty()
 }
 ```
 
-## Délégués et événements
+## <a name="delegates-and-events"></a>Délégués et événements
 
 
 Un délégué est un type Windows Runtime qui représente un objet de fonction. Les délégués peuvent être utilisés en liaison avec des événements, des rappels et des appels de méthode asynchrones pour spécifier une action à exécuter ultérieurement. Tout comme un objet de fonction, le délégué fournit la sécurité de type en permettant au compilateur de vérifier le type de retour et les types de paramètre de la fonction. La déclaration d’un délégué ressemble à une signature de fonction, son implémentation ressemble à une définition de classe et son appel ressemble à un appel de fonction.
 
-## Ajout d’un écouteur d’événements
+## <a name="adding-an-event-listener"></a>Ajout d’un écouteur d’événements
 
 
 Vous pouvez utiliser le mot clé event pour déclarer un membre public d’un type de délégué spécifié. Le code client s’abonne à l’événement à l’aide des mécanismes standard fournis dans le langage particulier.
@@ -489,7 +496,7 @@ private void objWithEvent_PropertyChangedEvent(object __param0, int __param1)
 }
 ```
 
-## Ajout de plusieurs écouteurs d’événements pour un événement
+## <a name="adding-multiple-event-listeners-for-one-event"></a>Ajout de plusieurs écouteurs d’événements pour un événement
 
 
 JavaScript comporte une méthode addEventListener qui permet à plusieurs gestionnaires de s’abonner à un événement unique.
@@ -534,7 +541,7 @@ nativeObject.fireEvent("The answer is ");
 
 En C#, un nombre quelconque de gestionnaires d’événements peuvent s’abonner à l’événement à l’aide de l’opérateur +=, comme indiqué dans l’exemple précédent.
 
-## Énumérations
+## <a name="enums"></a>Énumérations
 
 
 Une énumération Windows Runtime en C++ est déclarée à l’aide de public class enum. Elle ressemble à une énumération limitée en C++ standard.
@@ -569,19 +576,19 @@ Direction[curDirection];
 
 C# et Visual Basic disposent tous les deux de la prise en charge des langages pour les énumérations. Ces langages considèrent une classe enum publique C++ de la même manière qu’une énumération .NET Framework.
 
-## Méthodes asynchrones
+## <a name="asynchronous-methods"></a>Méthodes asynchrones
 
 
 Pour utiliser des méthodes asynchrones exposées par d’autres objets Windows Runtime, utilisez la [classe de tâche (runtime d’accès concurrentiel)](https://msdn.microsoft.com/library/hh750113.aspx). Pour plus d’informations, voir [Parallélisme des tâches (runtime d’accès concurrentiel)](https://msdn.microsoft.com/library/dd492427.aspx).
 
 Pour implémenter des méthodes asynchrones en C++, utilisez la fonction [create\_async](https://msdn.microsoft.com/library/hh750102.aspx) définie dans ppltasks.h. Pour plus d’informations, voir [Création d’opérations asynchrones en C++ pour les applications Windows Store.](https://msdn.microsoft.com/library/vstudio/hh750082.aspx). Pour obtenir un exemple, voir [Procédure pas à pas : création d’un composant Windows Runtime de base en C++ et appel de ce composant à partir de JavaScript ou C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). Les langages .NET utilisent des méthodes asynchrones C++ de la même manière que n’importe quelle méthode asynchrone définie dans le .NET Framework.
 
-## Exceptions
+## <a name="exceptions"></a>Exceptions
 
 
 Vous pouvez lever n’importe quel type d’exception défini par Windows Runtime. Vous ne pouvez pas dériver des types personnalisés d’un type d’exception Windows Runtime. Toutefois, vous pouvez lever une exception COMException et fournir un HRESULT personnalisé, accessible par le code qui intercepte l’exception. Il n’existe aucun moyen de spécifier un message personnalisé dans une COMException.
 
-## Conseils de débogage
+## <a name="debugging-tips"></a>Conseils de débogage
 
 
 Lorsque vous déboguez une solution JavaScript qui contient une DLL de composant, vous pouvez configurer le débogueur de manière à activer l’exécution pas à pas du script ou du code natif du composant, mais pas les deux à la fois. Pour changer ce paramètre, sélectionnez le projet JavaScript dans l’Explorateur de solutions, puis sélectionnez Propriétés, Débogage, Type de débogueur.
@@ -592,12 +599,7 @@ Si votre code JavaScript ne semble pas reconnaître les propriétés ou méthode
 
 Si vous supprimez un projet de composant Windows Runtime C++ dans une solution, vous devez également supprimer manuellement la référence de ce projet dans le projet JavaScript. Sinon, il ne sera plus possible d’effectuer d’opérations de débogage ou de génération. Si nécessaire, ajoutez ensuite une référence d’assembly à la DLL.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Procédure pas à pas: création d’un composant WindowsRuntime de base en C++ et appel de ce composant à partir de JavaScript ou C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+* [Procédure pas à pas : création d’un composant Windows Runtime de base en C++ et appel de ce composant à partir de JavaScript ou C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
 

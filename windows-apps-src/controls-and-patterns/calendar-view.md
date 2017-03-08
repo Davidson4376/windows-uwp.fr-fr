@@ -5,9 +5,16 @@ title: Affichage Calendrier
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 86062f744efa487cc70adb9648ff3f3584226000
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c3779262c24ef1bd124330fc7709b38abead1a7a
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="calendar-view"></a>Affichage Calendrier
@@ -200,9 +207,4 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 - [Sélecteur de dates du calendrier](calendar-date-picker.md)
 - [Sélecteur de dates](date-picker.md)
 - [Sélecteur d’heure](time-picker.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -1,17 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
-description: "Utilisez cette méthode dans l’API d’analyse du Windows Store pour récupérer les données de classification agrégées pour une plage de dates donnée, et suivant d’autres filtres facultatifs."
-title: Obtenir les classifications des applications
+description: "Utilisez cette méthode dans l’API d’analyse du Windows Store afin de récupérer les données d’évaluation agrégées pour une plage de dates donnée et en fonction d’autres filtres facultatifs."
+title: "Obtenir les évaluations des applications"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, services du Windows Store, API d’analyse du Windows Store, évaluations"
 translationtype: Human Translation
-ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
-ms.openlocfilehash: 86685984256459e0bb125340daa1616b09982429
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 25f057eba5827be34b4fcf9d31a6e0ae71dc9893
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="get-app-ratings"></a>Obtenir les classifications des applications
+# <a name="get-app-ratings"></a>Obtenir les évaluations des applications
 
-Utilisez cette méthode dans l’API d’analyse du Windows Store pour récupérer les données de classification agrégées au format JSON pour une plage de dates donnée, et suivant d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport Acquisitions](../publish/ratings-report.md) du tableau de bord du Centre de développement.
+Utilisez cette méthode dans l’API d’analyse du Windows Store afin de récupérer les données d’évaluation agrégées au format JSON pour une plage de dates donnée et en fonction d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport Acquisitions](../publish/ratings-report.md) du tableau de bord du Centre de développement.
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -156,9 +163,4 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 * [Obtenir des acquisitions d’extensions](get-in-app-acquisitions.md)
 * [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
 * [Obtenir les avis sur les applications](get-app-reviews.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

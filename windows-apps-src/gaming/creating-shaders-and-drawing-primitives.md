@@ -1,18 +1,25 @@
 ---
 author: mtoepke
 title: "Créer des nuanceurs et tracer des primitives"
-description: "Nous vous montrons ici comment utiliser les fichiers HLSL sources pour compiler et créer des nuanceurs que vous pouvez utiliser ensuite pour tracer des primitives à l’écran."
+description: "Nous vous montrons ici comment utiliser les fichiers HLSL sources pour compiler et créer des nuanceurs que vous pouvez ensuite utiliser pour tracer des primitives à l’écran."
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, jeux, nuanceurs, primitives, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 36ce1c3c0df0dd9dd4f5cf3d31282d5b15050f5c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 62f4b9b641a3c365659e44893a8a7801f2c1f6c0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Créer des nuanceurs et tracer des primitives
+# <a name="create-shaders-and-drawing-primitives"></a>Créer des nuanceurs et tracer des primitives
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Nous vous montrons ici comment utiliser les fichiers HLSL sources pour compiler et créer des nuanceurs que vous pouvez ensuite utiliser pour tracer des primitives à l’écran.
 
@@ -20,7 +27,7 @@ Nous créons et traçons un triangle jaune à l’aide de nuanceurs de vertex et
 
 **Objectif :** créer les nuanceurs et tracer des primitives.
 
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 
 Nous partons du principe que vous êtes familiarisé avec C++. Vous avez également besoin d’une expérience de base dans les concepts de programmation graphique.
@@ -29,13 +36,13 @@ Nous supposons en outre que vous avez suivi la rubrique [Démarrage rapide : con
 
 **Durée de réalisation :** 20 minutes
 
-## Instructions
+## <a name="instructions"></a>Instructions
 
-### 1. Compilation de fichiers sources HLSL
+### <a name="1-compiling-hlsl-source-files"></a>1. Compilation de fichiers sources HLSL
 
 Microsoft Visual Studio utilise le compilateur de code HLSL [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) pour compiler les fichiers sources .hlsl (SimpleVertexShader.hlsl et SimplePixelShader.hlsl) en fichiers objets .cso de nuanceur binaire (SimpleVertexShader.cso et SimplePixelShader.cso). Pour plus d’informations sur le compilateur de code HLSL, voir Outil compilateur d’effet. Pour plus d’informations sur la compilation de code de nuanceurs, voir [Compilation de nuanceurs](https://msdn.microsoft.com/library/windows/desktop/bb509633).
 
-Le code suivant correspond au fichier SimpleVertexShader.hlsl:
+Le code suivant correspond au fichier SimpleVertexShader.hlsl :
 
 ```hlsl
 struct VertexShaderInput
@@ -59,7 +66,7 @@ PixelShaderInput SimpleVertexShader(VertexShaderInput input)
 }
 ```
 
-Le code suivant correspond au fichier SimplePixelShader.hlsl:
+Le code suivant correspond au fichier SimplePixelShader.hlsl :
 
 ```hlsl
 struct PixelShaderInput
@@ -74,11 +81,11 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-### 2. Lecture de données sur disque
+### <a name="2-reading-data-from-disk"></a>2. Lecture de données sur disque
 
 Nous utilisons la fonction DX::ReadDataAsync de DirectXHelper.h dans le modèle d’application DirectX 11 (Windows universel) pour lire de façon asynchrone des données à partir d’un fichier sur le disque.
 
-### 3. Création de nuanceurs de vertex et de pixels
+### <a name="3-creating-vertex-and-pixel-shaders"></a>3. Création de nuanceurs de vertex et de pixels
 
 Nous effectuons la lecture des données du fichier SimpleVertexShader.cso et les attribuons au tableau d’octets *vertexShaderBytecode*. Nous appelons [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) avec un tableau d’octets pour créer le nuanceur de vertex ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641)). Nous attribuons la valeur 0,5 à la profondeur du vertex dans le code source SimpleVertexShader.hlsl pour nous assurer que notre triangle se trace bien. Nous remplissons un tableau de structures [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) pour décrire la disposition du code du nuanceur de vertex, puis nous appelons [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) pour créer la disposition. Le tableau possède un élément de disposition qui définit la position du vertex. Nous effectuons la lecture des données du fichier SimplePixelShader.cso et les attribuons au tableau d’octets *pixelShaderBytecode*. Nous appelons [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) avec un tableau d’octets pour créer le nuanceur de pixels ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576)). Nous définissons la valeur de pixel sur (1,1,1,1) dans le code source SimplePixelShader.hlsl pour changer la couleur de notre triangle au jaune. Vous pouvez changer la couleur en modifiant cette valeur.
 
@@ -197,7 +204,7 @@ Nous créons des tampons de vertex et d’index qui définissent un simple trian
 
 Nous faisons appel aux nuanceurs de vertex et aux nuanceurs de pixels, à la disposition des nuanceurs de vertex et aux tampons de vertex et d’index pour tracer un triangle jaune.
 
-### 4. Traçage du triangle et présentation de l’image rendue
+### <a name="4-drawing-the-triangle-and-presenting-the-rendered-image"></a>4. Traçage du triangle et présentation de l’image rendue
 
 L’exécution du code entre dans une boucle sans fin pour effectuer le rendu de façon continue et afficher la scène. Nous appelons [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) pour préciser que la cible de sortie correspond à la cible de rendu. Nous appelons [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) avec { 0.071f, 0.04f, 0.561f, 1.0f } pour remplacer la cible de rendu par une couleur bleue unie.
 
@@ -277,7 +284,7 @@ Nous appelons [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/w
                 );
 ```
 
-## Récapitulatif et étapes suivantes
+## <a name="summary-and-next-steps"></a>Récapitulatif et étapes suivantes
 
 
 Nous avons créé et tracé un triangle jaune à l’aide de nuanceurs de vertex et de pixels.
@@ -292,10 +299,5 @@ Nous allons à présent créer un cube 3D en orbite et lui appliquer des effets 
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

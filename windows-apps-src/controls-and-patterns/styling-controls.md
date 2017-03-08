@@ -8,22 +8,29 @@ title: "Application de styles aux contrôles"
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
 label: Styling controls
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 2386ccbc89cad5514c0b1a4879af6d0df328263e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 60eb44ab45873b638181bb4b3194e443d21356bc
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Application de styles aux contrôles
+# <a name="styling-controls"></a>Application de styles aux contrôles
 
 
 
 Vous pouvez personnaliser l’apparence de vos applications de nombreuses manières à l’aide de l’infrastructure XAML. Les styles permettent de définir les propriétés des contrôles et de réutiliser ces paramètres pour uniformiser l’apparence de plusieurs contrôles.
 
-## Bases des styles
+## <a name="style-basics"></a>Bases des styles
 
 
-Les styles permettent d’extraire des paramètres de propriété visuels afin de disposer de ressources réutilisables. Voici un exemple représentant 3boutons avec un style définissant les propriétés [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397), [**BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209399) et [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414). Lorsque vous appliquez un style, vous pouvez faire en sorte que les contrôles aient la même apparence sans définir ces propriétés pour chaque contrôle individuellement.
+Les styles permettent d’extraire des paramètres de propriété visuels afin de disposer de ressources réutilisables. Voici un exemple représentant 3 boutons avec un style définissant les propriétés [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397), [**BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209399) et [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414). Lorsque vous appliquez un style, vous pouvez faire en sorte que les contrôles aient la même apparence sans définir ces propriétés pour chaque contrôle individuellement.
 
 ![Boutons stylés](images/styles-rainbow-buttons.png)
 
@@ -58,7 +65,7 @@ Chaque élément [**Setter**](https://msdn.microsoft.com/library/windows/apps/br
 </StackPanel>
 ```
 
-## Appliquer un style de manière implicite ou explicite
+## <a name="apply-an-implicit-or-explicit-style"></a>Appliquer un style de manière implicite ou explicite
 
 Si vous définissez un style en tant que ressource, vous pouvez l’appliquer à vos contrôles de deux façons :
 
@@ -71,7 +78,7 @@ Voici deux boutons illustrant les styles implicite et explicite.
 
 ![Boutons aux styles implicite et explicite](images/styles-buttons-implicit-explicit.png)
 
-Dans cet exemple, l’[attribut x:Key](../xaml-platform/x-key-attribute.md) est associé au premier style et le type cible de ce dernier est [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265). La propriété [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) du premier bouton est définie sur cette clé: le style est donc appliqué explicitement. Le type cible du deuxième style est **Button** et aucun attribut x:Key n’est associé à ce dernier: le style est donc appliqué implicitement au deuxième bouton.
+Dans cet exemple, l’[attribut x:Key](../xaml-platform/x-key-attribute.md) est associé au premier style et le type cible de ce dernier est [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265). La propriété [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) du premier bouton est définie sur cette clé : le style est donc appliqué explicitement. Le type cible du deuxième style est **Button** et aucun attribut x:Key n’est associé à ce dernier : le style est donc appliqué implicitement au deuxième bouton.
 
 ```XAML
 <Page.Resources>
@@ -103,7 +110,7 @@ Dans cet exemple, l’[attribut x:Key](../xaml-platform/x-key-attribute.md) est 
 </Grid>
 ```
 
-## Utiliser des styles basés sur d’autres styles
+## <a name="use-based-on-styles"></a>Utiliser des styles basés sur d’autres styles
 
 Pour faciliter la gestion des styles et optimiser leur réutilisation, vous pouvez créer des styles héritant d’autres styles. Pour créer des styles hérités, vous devez utiliser la propriété [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852). Les styles héritant d’autres styles doivent cibler le même type de contrôle ou un contrôle dérivé du type ciblé par le style de référence. Par exemple, si le contrôle cible du style de référence est [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/br209365), les styles basés sur ce style peuvent cibler également **ContentControl** ou des types dérivés de **ContentControl**, tels que [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) et [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527). Si vous ne définissez aucune valeur dans le style qui hérite, celle du style de référence est utilisée. Pour modifier une valeur issue du style de référence, le style qui hérite écrase cette valeur. L’exemple suivant présente un type **Button** et un type [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) avec des styles basés sur le même style de référence.
 
@@ -139,21 +146,16 @@ Le type cible du style de référence est [**ContentControl**](https://msdn.micr
 </StackPanel>
 ```
 
-## Utilisation de styles en toute simplicité à l’aide d’outils
+## <a name="use-tools-to-work-with-styles-easily"></a>Utilisation de styles en toute simplicité à l’aide d’outils
 
 Pour appliquer rapidement des styles à vos contrôles, cliquez avec le bouton droit sur un contrôle dans l’aire de conception XAML de Microsoft Visual Studio et sélectionnez **Modifier le style** ou **Modifier le modèle** (selon le contrôle concerné). Vous pouvez ensuite appliquer un style existant en sélectionnant **Appliquer la ressource** ou en définir un nouveau en sélectionnant **Créer vide**. Si vous créez un style vide, vous avez l’option de le définir dans la page, dans le fichier App.xaml ou dans un dictionnaire de ressources distinct.
 
-## Modifier les styles système par défaut
+## <a name="modify-the-default-system-styles"></a>Modifier les styles système par défaut
 
 Lorsque vous le pouvez, vous devez utiliser les styles provenant des ressources XAML Windows Runtime par défaut. Quand vous devez définir vos propres styles, essayez de les baser sur les styles par défaut lorsque cela est possible (en utilisant des styles basés sur d’autres styles, comme expliqué précédemment, ou en commençant par modifier une copie du style par défaut d’origine).
 
-## Propriété Template
+## <a name="the-template-property"></a>Propriété Template
 
 Il est possible d’utiliser un setter de style pour la propriété [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) d’un élément [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390). En réalité, cela constitue la majorité d’un style XAML classique et des ressources XAML d’une application . Ce sujet est abordé de manière plus détaillée dans la rubrique [Modèles de contrôles](control-templates.md).
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

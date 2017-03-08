@@ -3,16 +3,23 @@ author: msatranjr
 title: "Afficher des itinéraires et indications sur une carte"
 description: "Demandez des itinéraires et indications, et affichez-les dans votre application."
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, itinéraire, carte, localisation, indications"
 translationtype: Human Translation
-ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: eb3596236e7de29473635b26f48f0c7e4fa1d49f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 11519df0c6655d663b31759e9064337a706bbc53
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Afficher des itinéraires et indications sur une carte
+# <a name="display-routes-and-directions-on-a-map"></a>Afficher des itinéraires et indications sur une carte
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Demandez des itinéraires et indications, et affichez-les dans votre application.
@@ -25,7 +32,7 @@ Demandez des itinéraires et indications, et affichez-les dans votre application
 
  
 
-## Introduction aux résultats de MapRouteFinder
+## <a name="an-intro-to-maproutefinder-results"></a>Introduction aux résultats de MapRouteFinder
 
 
 Les classes pour les itinéraires et les indications sont associées comme suit :
@@ -36,12 +43,12 @@ Les classes pour les itinéraires et les indications sont associées comme suit 
 -   La classe [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) contient une collection d’objets [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955). Accédez à cette collection via la propriété [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) de la classe **MapRoute**.
 -   Chaque classe [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) contient une collection d’objets [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961). Accédez à cette collection via la propriété [**Maneuvers**](https://msdn.microsoft.com/library/windows/apps/dn636959) de la classe **MapRouteLeg**.
 
-## Afficher des indications
+## <a name="display-directions"></a>Afficher des indications
 
 
 Obtenez des itinéraires et des indications pour des déplacements en voiture ou à pied en appelant les méthodes de la classe [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938), par exemple [**GetDrivingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636943) ou [**GetWalkingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636953). L’objet [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) contient un objet [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) accessible via sa propriété [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940).
 
-Lorsque vous demandez un itinéraire:
+Lorsque vous demandez un itinéraire :
 
 -   Vous pouvez indiquer uniquement un point de départ et un point d’arrivée, ou une série de positions pour calculer l’itinéraire.
 -   Vous pouvez indiquer des paramètres d’optimisation (par exemple, réduction de la distance).
@@ -49,7 +56,7 @@ Lorsque vous demandez un itinéraire:
 
 L’objet [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) calculé a des propriétés qui indiquent le temps pour parcourir l’itinéraire, la longueur de celui-ci et la collection d’objets [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) qui contiennent les étapes de l’itinéraire. Chaque objet **MapRouteLeg** contient une collection d’objets [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961). L’objet **MapRouteManeuver** contient des indications accessibles via sa propriété [**InstructionText**](https://msdn.microsoft.com/library/windows/apps/dn636964).
 
-**Important** Vous devez spécifier une clé d’authentification de cartes avant de pouvoir utiliser les services de carte. Pour plus d’informations, voir [Demander une clé d’authentification de cartes](authentication-key.md).
+**Important**  Vous devez spécifier une clé d’authentification pour Cartes avant de pouvoir utiliser les services de carte. Pour plus d’informations, voir [Demander une clé d’authentification de cartes](authentication-key.md).
 
  
 
@@ -126,7 +133,7 @@ Turn right onto James St.
 You have reached your destination.
 ```
 
-## Afficher des itinéraires
+## <a name="display-routes"></a>Afficher des itinéraires
 
 
 Pour afficher un [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) sur un [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), créez un [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) avec **MapRoute**. Ajoutez ensuite **MapRouteView** à la collection [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) de **MapControl**.
@@ -184,17 +191,11 @@ Cet exemple affiche ce qui suit sur un [**MapControl**](https://msdn.microsoft.c
 
 ![Contrôle de carte avec l’itinéraire affiché.](images/routeonmap.png)
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)
 * [Exemple de carte UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Vidéos de la build 2015: utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Vidéos de la build 2015 : utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Exemple d’application de trafic UWP](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

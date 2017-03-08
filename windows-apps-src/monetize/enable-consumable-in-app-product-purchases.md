@@ -1,19 +1,25 @@
 ---
 author: mcleanbyron
-Description: "Proposez des produits consommables dans l’application&amp;\\#8212; qui peuvent être achetés, utilisés et rachetés&amp;\\#8212;via la plateforme commerciale du Windows Store, afin d’offrir à vos clients une expérience d’achat à la fois solide et fiable au sein de l’application."
-title: Activer les achats de produits consommables in-app
+Description: "Proposez des produits consommables dans l’application&amp;\\#8212; qui peuvent être achetés, utilisés et rachetés&amp;\\#8212;par le biais de la plateforme commerciale du Windows Store, afin d’offrir à vos clients une expérience d’achat à la fois solide et fiable au sein de l’application."
+title: "Activer les achats d’extensions consommables dans l’application"
 ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
-keywords: "exemple de code d’une offre intégrée à l’application"
+keywords: "uwp, consommable, extensions, achats dans l’application, Windows.ApplicationModel.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: acb7218bed287f430950d4f8d3621831b269ae18
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7395cf28f96b2f7aa9bc6a1d4c461385d50fcbf6
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="enable-consumable-in-app-product-purchases"></a>Activer les achats de produits consommables in-app
+# <a name="enable-consumable-in-app-product-purchases"></a>Activer les achats d’extensions consommables dans l’application
 
 
->**Remarque**  Cet article montre comment utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows 10, version 1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour gérer les extensions (également appelées produits in-app ou PIA) plutôt que l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
+>**Remarque**&nbsp;&nbsp;Cet article explique comment utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows 10, version 1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour gérer les extensions (également appelées produits in-app ou PIA) plutôt que l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
 
 Proposez des produits consommables dans l’application qui peuvent être achetés, utilisés et rachetés via la plateforme commerciale du Windows Store, afin d’offrir à vos clients une expérience d’achat à la fois solide et fiable au sein de l’application. Cette fonction est particulièrement utile pour différents aspects du jeu, comme les devises (or, pièces, etc.) susceptibles d’être achetées, puis utilisées pour acheter des améliorations spécifiques.
 
@@ -36,7 +42,7 @@ L’exemple suivant représente une demande d’achat de produits consommables d
 
 Quand vous accordez à votre client un accès au produit in-app consommable, il est important de garder une trace du produit acquis (*productId*) et de chaque transaction associée à cette acquisition (*transactionId*).
 
->**Important**  Votre application doit signaler correctement la finalisation de l’acquisition au Windows Store. Cette étape est essentielle pour assurer une expérience d’achat fiable et juste à vos clients.
+>**Important**&nbsp;&nbsp;Votre application doit signaler correctement la finalisation de l’acquisition au Windows Store. Cette étape est essentielle pour assurer une expérience d’achat fiable et juste à vos clients.
 
 L’exemple suivant illustre l’utilisation des propriétés [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) de l’appel [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381) à l’étape précédente, pour identifier le produit acheté à acquérir. Un tableau est utilisé pour stocker les informations du produit à un emplacement référençable ultérieurement et permettant de confirmer que l’acquisition locale a abouti.
 
@@ -45,7 +51,7 @@ L’exemple suivant illustre l’utilisation des propriétés [PurchaseResults](
 
 L’exemple qui suit montre comment utiliser le tableau de l’exemple précédent pour accéder à l’ID du produit et à l’ID de transaction, deux informations qui sont utilisées plus tard pour signaler la finalisation de l’opération au Windows Store.
 
->**Important**  Quelle que soit la méthodologie utilisée pour suivre et confirmer l’acquisition, votre application doit faire le maximum pour garantir que les clients ne paient pas des articles qu’ils n’ont pas reçus.
+>**Important**&nbsp;&nbsp;Quelle que soit la méthodologie utilisée pour suivre et confirmer l’acquisition, votre application doit faire le maximum pour garantir que les clients ne paient pas des articles qu’ils n’ont pas reçus.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#IsLocallyFulfilled)]
@@ -54,7 +60,7 @@ L’exemple qui suit montre comment utiliser le tableau de l’exemple précéde
 
 Une fois l’acquisition locale effectuée, votre application doit passer un appel [ReportConsumableFulfillmentAsync](https://msdn.microsoft.com/library/windows/apps/dn263380) incluant l’élément *productId* et la transaction comprenant l’achat du produit.
 
->**Important**  Tant que vous ne signalez pas au Windows Store l’acquisition des produits in-app consommables, l’utilisateur ne peut pas racheter ce produit.
+>**Important**&nbsp;&nbsp;Tant que vous ne signalez pas au Windows Store l’acquisition des produits in-app consommables, l’utilisateur ne peut pas racheter ce produit.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#ReportFulfillment)]
@@ -76,9 +82,4 @@ L’exemple suivant montre comment la méthode [GetUnfulfilledConsumablesAsync](
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

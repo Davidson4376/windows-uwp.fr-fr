@@ -2,15 +2,23 @@
 author: QuinnRadich
 title: Choisir une version UWP
 description: "Lors de l’écriture d’applications UWP dans Microsoft Visual Studio, vous pouvez choisir la version à cibler. Découvrez ce qui distingue les différentes versions d’UWP et apprenez à configurer vos choix dans les projets nouveaux et existants."
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 translationtype: Human Translation
-ms.sourcegitcommit: 7e59551f528e23e497122f822fbfc09ec3086cdc
-ms.openlocfilehash: 58e58c212cb6efd76f4afb8d3b6c7a3c5ddf215e
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e2bc7b4a12aed40093985000486b9f3f78967524
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="choose-a-uwp-version"></a>Choisir une version UWP
+# <a name="choose-a-uwp-version"></a>Choisir une version d’UWP
 
-Lors de l’écriture d’applications UWP dans Microsoft Visual Studio, vous pouvez choisir la version à cibler. Actuellement, trois versions seulement sont possibles.
+Quand vous écrivez une application UWP dans Microsoft Visual Studio, vous pouvez choisir la version que vous ciblez. Actuellement, trois versions seulement sont possibles.
 
 | Version | Description |
 | --- | --- |
@@ -38,9 +46,4 @@ Sachez que vous déclarez que votre application fonctionne sur n’importe quell
 * Dans votre code, vous pouvez appeler librement (autrement dit, sans contrôles conditionnels) toute API existant dans la version spécifiée par **Version minimale**.
 * Veillez à tester votre code sur un appareil exécutant la **Version minimale** pour vous assurer qu’il fonctionne sans avoir besoin d’API présentes uniquement dans la **Version cible**.
 * La valeur de **Version cible** permet d’identifier toutes les références (contrat winmds) utilisées pour compiler votre projet. Mais ces références vous permettront de compiler votre code avec des appels à des API qui n’existeront pas nécessairement sur les appareils que vous avez déclaré prendre en charge (via **Version minimale**). Par conséquent, toute API introduite après la **Version minimale** doit être appelée via un code adaptatif. Pour plus d’informations sur le code adaptatif, voir [Guide des applications de plateforme Windows universelle (UWP)](../get-started/universal-application-platform-guide.md).
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

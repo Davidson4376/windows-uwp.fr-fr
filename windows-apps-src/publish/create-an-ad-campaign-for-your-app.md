@@ -1,15 +1,22 @@
 ---
-author: jnHs
+author: shawjohn
 Description: "Vous pouvez créer une campagne de publicité à l’aide du tableau de bord du Centre de développement pour vous aider à promouvoir votre application et à développer la base des utilisateurs de votre application."
-title: "Création d’une campagne de publicité pour votre application"
+title: "Créer une campagne de publicité pour votre application - Développer des applications UWP"
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
+ms.author: johnshaw
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, Active Directory, de campagne, promouvoir"
 translationtype: Human Translation
-ms.sourcegitcommit: 65b82f422e602515e9531664e35f1e1c1e9f5932
-ms.openlocfilehash: 3ea67f9e4f0d834bd77ef116c5e0b16008f4ae5f
+ms.sourcegitcommit: b01924366a0bc2afabe2f381e72e45862f0dd682
+ms.openlocfilehash: a4cee4bd81088fc47ee4d11525297a06381e21b8
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="create-an-ad-campaign-for-your-app"></a>Création d’une campagne de publicité pour votre application
+# <a name="create-an-ad-campaign-for-your-app"></a>Créer une campagne de publicité pour votre application
 
 
 Vous pouvez créer une campagne de publicité à l’aide du tableau de bord du Centre de développement pour vous aider à promouvoir votre application et à développer la base des utilisateurs de votre application. Par défaut, nous allons choisir le public cible de vos publicités d’après les paramètres de votre application dans le tableau de bord du Centre de développement. Vous avez toutefois la possibilité de définir votre propre public. Vous pouvez également utiliser un ensemble de modèles de publicité par défaut ou charger vers le serveur vos propres conceptions d’annonces. Pour plus d’informations sur les campagnes de publicité, voir [Questions courantes sur les campagnes de publicité](common-questions.md).
@@ -30,7 +37,7 @@ Voici comment créer une campagne de publicité pour promouvoir votre applicatio
 4.  Dans la section **Détails de la campagne**, définissez les paramètres globaux de votre campagne.
     -   Donnez un nom à votre campagne de publicité dans le champ **Nom de la campagne**.
     -   Sous **Type de campagne**, choisissez l’une des options suivantes :
-        -   **Payé** : ces publicités s’exécutent dans n’importe quelle application correspondant à l’appareil et à la catégorie de votre application.
+        -   **Payé** : ces publicités s’exécutent dans n’importe quelle application correspondant à l’appareil et à la catégorie de votre application. Pour les nouvelles campagnes créées après le 9 janvier 2017, ces publicités apparaîtront également dans MSN.com, Outlook.com, Skype et les autres propriétés premium de Microsoft. Les campagnes de promotion d’applications qui ciblent les applications et les propriétés premium de Microsoft sont appelés campagnes *universelles*.
         -   **Annonces de la communauté (gratuites)** : ces publicités s’exécutent dans les applications publiées par d’autres développeurs, qui créent également des campagnes de publicité à base d’annonces de la communauté. Avant de sélectionner cette option, cochez la case **Afficher des annonces de la communauté dans mon application** de la page **Monétiser avec des publicités** du tableau de bord. Pour en savoir plus, voir [À propos des annonces de la communauté](about-community-ads.md).
         -   **Publicités maison (gratuites)** : ces publicités s’exécutent uniquement dans vos applications (correspondant à l’appareil de l’application publiée). Les publicités maison sont gratuites. Pour plus d’informations, consultez [À propos des publicités maison](about-house-ads.md).
     -   Sous **Durée de la campagne**, choisissez l’une des options suivantes :
@@ -45,6 +52,7 @@ Voici comment créer une campagne de publicité pour promouvoir votre applicatio
 
     -   Choisissez les pays ou les régions dans lesquels vous souhaitez que ces publicités apparaissent. Vous pouvez en choisir jusqu’à 5. Pour obtenir la liste des régions ou des pays pris en charge, consultez [Questions courantes sur les campagnes de publicité](common-questions.md#where-will-my-ad-appear).
     -   Choisissez les types d’appareil sur lesquels vous voulez que ces publicités apparaissent. Seuls les types d’appareils pris en charge par votre application sont affichés.
+    -   Choisissez les surfaces sur lesquelles vous voulez que ces publicités apparaissent. Si vous choisissez **universelle**, votre publicité s’affichera dans les applications, ainsi que dans MSN.com, Outlook.com, Skype et les autres propriétés premium de Microsoft.
     -   Choisissez le système d’exploitation. Seuls les systèmes d’exploitation pris en charge par votre application sont affichés.
     -   Choisissez le sexe et la tranche d’âge de l’audience ciblée.
 
@@ -88,7 +96,7 @@ Voici comment créer une campagne de publicité pour promouvoir votre applicatio
 
     -   Définissez un instrument de paiement pour votre campagne de publicité en cliquant sur **Ajouter un nouvel instrument de paiement**, puis renseignez les détails de votre compte.
         > **Important** Le pays ou la région de l’adresse de facturation de votre instrument de paiement doit correspondre au pays ou à la région associée à votre compte du Centre de développement.
-Si vous avez reçu un coupon d’un représentant Microsoft pour payer une campagne de publicité, cliquez sur **Utiliser un coupon**, entrez le code du coupon, puis cliquez sur **Appliquer** pour appliquer le coupon à la campagne.
+    -   Si vous avez reçu un coupon d’un représentant Microsoft pour payer une campagne de publicité, cliquez sur **Utiliser un coupon**, entrez le code du coupon, puis cliquez sur **Appliquer** pour appliquer le coupon à la campagne.
 
 10.  Enfin, cliquez sur **Révision** pour vérifier les paramètres de votre campagne de publicité et pour vérifier son budget et les informations de paiement s’il s’agit d’une campagne de publicité payante. Cliquez sur **Confirmer**. Dans les heures qui suivent, vos annonces s’afficheront progressivement sur les appareils.
    > **Conseil** Pour visualiser les performances de vos campagnes, dans le menu de navigation en haut du tableau de bord, sélectionnez **Promotions**. Sélectionnez **Filtres de section** pour limiter les éléments inclus dans le rapport par **Date**, **Objectif de campagne**, **Nom d’application**, **Type de campagne** ou **État**. Outre l’accès à des informations sur les **impressions**, les **clics**, les **conversions** et les **dépenses** de votre campagne, vous pouvez utiliser le rapport pour **interrompre** ou **reprendre** une campagne. Pour modifier une campagne, sélectionnez son nom dans la liste.
@@ -97,14 +105,6 @@ Si vous avez reçu un coupon d’un représentant Microsoft pour payer une campa
 
 * [Gestion de votre campagne de publicité](managing-your-ad-campaign.md)
 * [À propos des publicités maison](about-house-ads.md)
-* [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md)
+* [Rapport Promouvoir votre application](promote-your-app-report.md)
 * [Questions courantes sur les campagnes de publicité](common-questions.md)
- 
-
- 
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

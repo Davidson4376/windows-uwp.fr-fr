@@ -3,15 +3,22 @@ author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "Utilisez l’API d’analyse du Windows Store pour récupérer par programmation les données d’analyse pour les applications qui sont enregistrées sur votre compte personnel ou compte d’organisation du Centre de développement Windows."
 title: "Accéder aux données d’analyse à l’aide des services du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, services du Windows Store, API d’analyse du Windows Store"
 translationtype: Human Translation
-ms.sourcegitcommit: 1a2e856cddf9998eeb8b0132c2fb79f5188c218b
-ms.openlocfilehash: 596cc5054367acf0d3609a34b764bc7fcf33ea0b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1538f06b09bd4143750c10a2774137f87359ebce
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="access-analytics-data-using-windows-store-services"></a>Accéder aux données d’analyse à l’aide des services du Windows Store
 
-Utilisez l’*API d’analyse du Windows Store* pour récupérer par programmation les données d’analyse des applications inscrites dans votre compte, ou celui de votre organisation, du Centre de développement Windows. Cette API permet de récupérer des données sur les acquisitions, les erreurs, les évaluations et les avis sur les applications et les extensions (également connues sous le nom PIA, produit in-app). Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
+Utilisez l’*API d’analyse du Windows Store* pour récupérer par programmation les données d’analyse pour les applications qui sont inscrites sur votre compte personnel du Centre de développement Windows ou sur celui de votre d’organisation. Cette API permet de récupérer des données sur les acquisitions, les erreurs, les évaluations et les avis sur les applications et les extensions (également connues sous le nom PIA, produit in-app). Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
 
 Les étapes suivantes décrivent le processus de bout en bout :
 
@@ -67,15 +74,12 @@ Une fois votre jeton d’accès arrivé à expiration, vous pouvez l’actualise
 
 Une fois que vous disposez d’un jeton d’accès Azure AD, vous pouvez appeler l’API d’analyse du Windows Store. Pour plus d’informations sur la syntaxe de chacune de ces méthodes, voir les articles suivants. Vous devez transmettre le jeton d’accès à l’en-tête **Authorization** de chaque méthode.
 
-* [Obtenir des acquisitions d’applications](get-app-acquisitions.md)
-* [Obtenir des acquisitions d’extensions](get-in-app-acquisitions.md)
-* [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
-* [Obtenir les informations sur une erreur de votre application](get-details-for-an-error-in-your-app.md)
-* [Obtenir la trace de pile concernant une erreur dans votre application](get-the-stack-trace-for-an-error-in-your-app.md)
-* [Obtenir les classifications des applications](get-app-ratings.md)
-* [Obtenir les avis sur les applications](get-app-reviews.md)
-* [Obtenir les données relatives aux performances publicitaires](get-ad-performance-data.md)
-* [Obtenir les données relatives aux performances de la campagne publicitaire](get-ad-campaign-performance-data.md)
+| Scénario       | Description      |
+|---------------|--------------------|
+| Acquisitions |  Obtenez les données d’acquisition pour vos applications et modules complémentaires. Pour plus d’informations sur ces méthodes, voir les articles suivants : <ul><li>[Obtenir des acquisitions d’applications](get-app-acquisitions.md)</li><li>[Obtenir des acquisitions d’extensions](get-in-app-acquisitions.md)</li></ul> |
+| Erreurs | Obtenez des informations sur les erreurs contenues dans vos applications. Pour plus d’informations sur ces méthodes, voir les articles suivants : <ul><li>[Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)</li><li>[Obtenir les informations sur une erreur de votre application](get-details-for-an-error-in-your-app.md)</li><li>[Obtenir la trace de pile concernant une erreur dans votre application](get-the-stack-trace-for-an-error-in-your-app.md)</li></ul> |
+| Évaluations et avis | Obtenez des évaluations et des avis sur vos applications. Pour plus d’informations sur ces méthodes, voir les articles suivants : <ul><li>[Obtenir les classifications des applications](get-app-ratings.md)</li><li>[Obtenir les avis sur les applications](get-app-reviews.md)</li></ul> |
+| Publicités in-app et campagnes de publicité | Obtenez des données de performances pour les publicités contenues dans vos applications et vos campagnes de publicité. Pour plus d’informations sur ces méthodes, voir les articles suivants : <ul><li>[Obtenir les données relatives aux performances publicitaires](get-ad-performance-data.md)</li><li>[Obtenir les données relatives aux performances de la campagne publicitaire](get-ad-campaign-performance-data.md)</li></ul> |
 
 ## <a name="code-example"></a>Exemple de code
 
@@ -117,11 +121,5 @@ L’API d’analyse du Windows Store renvoie les réponses d’erreur dans un ob
 * [Obtenir les classifications des applications](get-app-ratings.md)
 * [Obtenir les avis sur les applications](get-app-reviews.md)
 * [Obtenir les données relatives aux performances publicitaires](get-ad-performance-data.md)
-* [Obtenir les données relatives aux performances de la campagne publicitaire](get-ad-campaign-performance-data.md)
- 
-
-
-
-<!--HONumber=Dec16_HO4-->
-
+* [Obtenir des données relatives aux performances de la campagne promotionnelle](get-ad-campaign-performance-data.md)
 

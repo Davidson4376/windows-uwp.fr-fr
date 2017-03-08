@@ -1,49 +1,56 @@
 ---
 author: mtoepke
 title: Code complet de DDSTextureLoader
-description: "Code complet pour une classe et la méthode permettant de charger une texture DDS à partir de la mémoire."
+description: "Code complet pour une classe et la méthode qui charge une texture DDS à partir de la mémoire."
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, jeux, ddstextureloader"
 translationtype: Human Translation
-ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: edcddb162d58b5f05248c7cd94b6079207e4a318
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7daf10ad577b2b67c6ca5554f6555deb89f16229
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Code complet de DDSTextureLoader
+# <a name="complete-code-for-ddstextureloader"></a>Code complet de DDSTextureLoader
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Code complet pour une classe et la méthode qui charge une texture DDS à partir de la mémoire.
 
-Cette rubrique contient les sections suivantes:
+Cette rubrique contient les sections suivantes :
 
 -   [Technologies](#technologies)
 -   [Configuration requise](#requirements)
 -   [Afficher le code (C++)](#view-the-code-c)
 
 
-## Emplacement de téléchargement
+## <a name="download-location"></a>Emplacement de téléchargement
 
 
 Cet exemple n’est pas disponible en téléchargement.
 
-## Technologies
+## <a name="technologies"></a>Technologies
 
-**Langages de programmation**: C++    
-**Modèles de programmation**: Windows Runtime
+**Langages de programmation** : C++    
+**Modèles de programmation** : Windows Runtime
 
-## Conditions requises
+## <a name="requirements"></a>Conditions requises
 
-**Client minimal pris en charge**: Windows10                               
-**Serveur minimal pris en charge**: Windows Server2016 Technical Preview
-
-
-
-## Afficher le code (C++)
+**Client minimal pris en charge** : Windows 10                               
+**Serveur minimal pris en charge** : Windows Server 2016 Technical Preview
 
 
-## DDSTextureLoader.h
+
+## <a name="view-the-code-c"></a>Afficher le code (C++)
+
+
+## <a name="ddstextureloaderh"></a>DDSTextureLoader.h
 
 
 ```cpp
@@ -76,7 +83,7 @@ void CreateDDSTextureFromMemory(
     );
 ```
 
-## DDSTextureLoader.cpp
+## <a name="ddstextureloadercpp"></a>DDSTextureLoader.cpp
 
 
 ```cpp
@@ -1222,10 +1229,5 @@ void CreateDDSTextureFromMemory(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

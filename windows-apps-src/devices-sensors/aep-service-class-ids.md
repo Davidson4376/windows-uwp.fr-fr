@@ -3,25 +3,32 @@ author: DBirtolo
 ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
 title: ID de classe de service AEP
 description: "Les services de point de terminaison d’association (AEP) offrent un contrat de programmation pour les services qu’un appareil prend en charge sur un protocole donné. Plusieurs de ces services ont des identificateurs établis qui doivent être utilisés lors de leur référencement."
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 61d8891a97403057fe34c66dbecc6962b05e087e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d2259c82acf700d21f4c3f51a367180bb976f636
+ms.lasthandoff: 02/07/2017
 
 ---
-# ID de classe de service AEP
+# <a name="aep-service-class-ids"></a>ID de classe de service AEP
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+**API importantes**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 Les services de point de terminaison d’association (AEP) offrent un contrat de programmation pour les services qu’un appareil prend en charge sur un protocole donné. Plusieurs de ces services ont des identificateurs établis qui doivent être utilisés lors de leur référencement. Ces contrats sont identifiés à l’aide de la propriété **System.Devices.AepService.ServiceClassId**. Cette rubrique répertorie plusieurs ID de classe de service AEP bien connus. L’ID de classe de service AEP est également applicable aux protocoles dont l’ID de classe est personnalisé.
 
 Un développeur d’application doit utiliser des filtres de syntaxe de recherche avancée (AQS) basés sur les ID de classe afin de limiter les requêtes aux services AEP qu’ils prévoient d’utiliser. Cela limite les résultats de requête aux services pertinents et augmente considérablement les performances, l’autonomie de la batterie et la qualité de service de l’appareil. Par exemple, une application peut se servir de ces ID de classe de service pour utiliser un appareil tel qu’un synchroniseur Miracast ou un appareil multimédia de rendu numérique (DMR) DLNA. Pour plus d’informations sur l’interaction entre les appareils et les services, voir [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991).
 
-## Services Bluetooth et Bluetooth LE
+## <a name="bluetooth-and-bluetooth-le-services"></a>Services Bluetooth et Bluetooth LE
 
 Les services Bluetooth utilisent le protocole Bluetooth ou le protocole Bluetooth LE. Les identificateurs de ces protocoles sont les suivants :
 
@@ -70,13 +77,13 @@ Le protocole Bluetooth prend en charge plusieurs services présentant tous le m�
 
 Pour une liste plus complète des services Bluetooth disponibles, voir les pages relatives au protocole et au service Bluetooth [ici](http://go.microsoft.com/fwlink/p/?LinkID=619586) et [ici](http://go.microsoft.com/fwlink/p/?LinkID=619587). Vous pouvez également utiliser l’API [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571) pour obtenir des services GATT communs.
 
-## Services Bluetooth LE personnalisés
+## <a name="custom-bluetooth-le-services"></a>Services Bluetooth LE personnalisés
 
 Les services Bluetooth LE personnalisés utilisent l’identificateur de protocole suivant : {bb7bb05e-5972-42b5-94fc76eaa7084d49}
 
 Les profils personnalisés sont définis avec leurs propres GUID. Ce GUID personnalisé doit être utilisé pour **System.Devices.AepService.ServiceClassId**.
 
-## Services UPnP
+## <a name="upnp-services"></a>Services UPnP
 
 Les services UPnP utilisent l’identificateur de protocole suivant : {0e261de4-12f0-46e6-91ba428607ccef64}
 
@@ -99,7 +106,7 @@ En règle générale, tous les services UPnP ont leur nom haché dans un GUID à
 
  
 
-## Services WSD
+## <a name="wsd-services"></a>Services WSD
 
 Les services WSD utilisent l’identificateur de protocole suivant : {782232aa-a2f9-4993-971baedc551346b0}
 
@@ -112,25 +119,16 @@ En règle générale, tous les services WSD ont leur nom haché dans un GUID à 
 
  
 
-## Exemple AQS
+## <a name="aqs-sample"></a>Exemple AQS
 
 Cette AQS filtre tous les objets **AssociationEndpointService** UPnP qui prennent en charge la commande NUMÉROTER. Dans ce cas, le paramètre [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) est défini sur **AsssociationEndpointService**.
 
 ``` syntax
-System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND 
+System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND
 System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D716D8EC26B29B}"
 ```
 
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

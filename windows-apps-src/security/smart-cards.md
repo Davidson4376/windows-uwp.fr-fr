@@ -3,26 +3,33 @@ title: "Cartes à puce"
 description: "Cette rubrique explique comment les applications de plateforme Windows universelle (UWP) peuvent utiliser des cartes à puce pour connecter des utilisateurs à des services réseau sécurisés, notamment comment accéder aux lecteurs de carte à puce physiques, créer des cartes à puce virtuelles, communiquer avec des cartes à puce, authentifier des utilisateurs, réinitialiser des PIN d’utilisateur et supprimer ou déconnecter des cartes à puce."
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea21aeee5dd93bb44de3a1793b352d2046b3839
-ms.openlocfilehash: d0646aca9863f3f326df9b3a86adb2481fdcda70
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 42062dc9dcc11e3db6ddbb761e158d75e1259950
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Cartes à puce
+# <a name="smart-cards"></a>Cartes à puce
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 
 Cette rubrique explique comment les applications de plateforme Windows universelle (UWP) peuvent utiliser des cartes à puce pour connecter des utilisateurs à des services réseau sécurisés, notamment comment accéder aux lecteurs de carte à puce physiques, créer des cartes à puce virtuelles, communiquer avec des cartes à puce, authentifier des utilisateurs, réinitialiser des PIN d’utilisateur et supprimer ou déconnecter des cartes à puce. 
 
-## Configurer le manifeste de l’application
+## <a name="configure-the-app-manifest"></a>Configurer le manifeste de l’application
 
 
 Pour que votre application puisse authentifier des utilisateurs à l’aide de cartes à puce ou de cartes à puce virtuelles, vous devez configurer la fonction **Certificats utilisateur partagés** dans le fichier Package.appxmanifest du projet.
 
-## Accéder à des lecteurs de cartes et à des cartes à puce connectés
+## <a name="access-connected-card-readers-and-smart-cards"></a>Accéder à des lecteurs de cartes et à des cartes à puce connectés
 
 
 Vous pouvez rechercher des lecteurs et des cartes à puce attachées en passant l’ID de l’appareil (spécifié dans [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393)) à la méthode [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890). Pour accéder aux cartes à puce actuellement attachées à l’appareil de lecture retourné, appelez [**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887).
@@ -56,7 +63,7 @@ private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
 
 Vous pouvez ensuite passer chaque objet [**SmartCard**](https://msdn.microsoft.com/library/windows/apps/dn297565) retourné à [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) pour accéder aux méthodes permettant à votre application d’accéder à sa configuration et de la personnaliser.
 
-## Créer une carte à puce virtuelle
+## <a name="create-a-virtual-smart-card"></a>Créer une carte à puce virtuelle
 
 
 Pour créer une carte à puce virtuelle à l’aide de [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801), votre application doit d’abord fournir un nom convivial, une clé d’administration et un [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642). Le nom convivial est généralement fourni à l’application, mais votre application doit fournir une clé d’administration et générer une instance du **SmartCardPinPolicy** actuel avant de passer les trois valeurs à [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830).
@@ -80,7 +87,7 @@ SmartCardProvisioning provisioning = await
 
 Une fois que la méthode [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) retourne l’objet [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) associé, la carte à puce virtuelle est mise en service et prête à l’emploi.
 
-## Gérer les demandes d’authentification
+## <a name="handle-authentication-challenges"></a>Gérer les demandes d’authentification
 
 
 Pour authentifier des utilisateurs au moyen de cartes à puce ou de cartes à puce virtuelles, votre application doit être en mesure de répondre aux demandes entre les données des clés d’administration stockées sur la carte et les données des clés d’administration gérées par le serveur d’authentification ou l’outil de gestion.
@@ -107,7 +114,7 @@ static class ChallengeResponseAlgorithm
 
 Ce code est référencé dans le reste de cette rubrique pour illustrer comment remplir une action d’authentification et comment appliquer des modifications aux informations d’une carte à puce et d’une carte à puce virtuelle.
 
-## Vérifier la réponse d’authentification par carte à puce ou carte à puce virtuelle
+## <a name="verify-smart-card-or-virtual-smart-card-authentication-response"></a>Vérifier la réponse d’authentification par carte à puce ou carte à puce virtuelle
 
 
 Maintenant que nous avons défini la logique pour les demandes d’authentification, nous pouvons soit communiquer avec le lecteur pour accéder à la carte à puce, soit accéder à une carte à puce virtuelle à des fins d’authentification.
@@ -135,7 +142,7 @@ using (SmartCardChallengeContext context =
 }
 ```
 
-## Modifier ou réinitialiser un code PIN d’utilisateur
+## <a name="change-or-reset-a-user-pin"></a>Modifier ou réinitialiser un code PIN d’utilisateur
 
 
 Pour modifier le code PIN associé à une carte à puce :
@@ -151,7 +158,7 @@ SmartCardProvisioning provisioning =
 bool result = await provisioning.RequestPinChangeAsync();
 ```
 
-Pour demander une réinitialisation du code PIN:
+Pour demander une réinitialisation du code PIN :
 
 1.  Appelez [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) pour initier l’opération. Cet appel comprend une méthode [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) qui représente la carte à puce et la demande de réinitialisation du code PIN.
 2.  [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) fournit des informations utilisées par **ChallengeResponseAlgorithm**, encapsulé dans un appel [**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693), pour comparer la valeur de demande de la carte et la clé d’administration fournie par le service ou l’outil de gestion pour authentifier la demande.
@@ -184,7 +191,7 @@ bool result = await provisioning.RequestPinResetAsync(
 }
 ```
 
-## Supprimer une carte à puce ou une carte à puce virtuelle
+## <a name="remove-a-smart-card-or-virtual-smart-card"></a>Supprimer une carte à puce ou une carte à puce virtuelle
 
 
 Quand une carte à puce physique est retirée, un événement [**CardRemoved**](https://msdn.microsoft.com/library/windows/apps/dn263875) est déclenché lorsque la carte est supprimée.
@@ -202,8 +209,3 @@ Le retrait d’une carte à puce virtuelle est géré par programme. Pour cela, 
 bool result = await SmartCardProvisioning
     .RequestVirtualSmartCardDeletionAsync(card);
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

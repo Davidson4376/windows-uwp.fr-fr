@@ -1,11 +1,18 @@
 ---
 author: mcleanbyron
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
-description: "Servez-vous des exemples de code Python présentés dans cette section pour en apprendre un peu plus sur l’utilisation de l’API de soumission du Windows Store."
+description: "Servez-vous des exemples de code Python présentés dans cette section pour en savoir plus sur l’utilisation de l’API de soumission du Windows Store."
 title: "Exemples de code Python pour l’API de soumission du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, exemples de code"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: 1f8d415744d53120191f02a17aed4b7b04fa2f57
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f787fd042982e4e5a965c9bb77ef72a8dabb6ae9
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -88,9 +95,4 @@ L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

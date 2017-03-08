@@ -1,18 +1,25 @@
 ---
 author: mcleanbyron
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
-description: "Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction."
+description: "Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction."
 title: "Utiliser des reçus pour vérifier les achats de produits"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, achats in-app, produits in-app, accusés de réception, Windows.ApplicationModel.Store"
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 55631d364ca6f2d76d214eca6d00fbdd969c0e15
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2ada9038f9bd355bb4ab9f81967ebb2d47701cd8
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="use-receipts-to-verify-product-purchases"></a>Utiliser des reçus pour vérifier les achats de produits
 
 
->**Remarque**  Cet article montre comment utiliser des membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) pour obtenir et valider un reçu pour un achat in-app. Si vous utilisez l’espace de noms alternatif [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour les achats in-app (nouveauté de Windows 10 version 1607), cet espace de noms ne fournit pas une API permettant d’obtenir des reçus d’achat in-app. Toutefois, vous pouvez utiliser une méthode REST dans l’API de collection du Windows Store pour obtenir les données d’une transaction d’achat. Pour plus d’informations, consultez [Reçus d’achats in-app](in-app-purchases-and-trials.md#receipts).
+>**Remarque**&nbsp;&nbsp;Cet article montre comment utiliser des membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) pour obtenir et valider un reçu pour un achat in-app. Si vous utilisez l’espace de noms alternatif [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour les achats in-app (nouveauté de Windows 10 version 1607), cet espace de noms ne fournit pas une API permettant d’obtenir des reçus d’achat in-app. Toutefois, vous pouvez utiliser une méthode REST dans l’API de collection du Windows Store pour obtenir les données d’une transaction d’achat. Pour plus d’informations, consultez [Reçus d’achats in-app](in-app-purchases-and-trials.md#receipts).
 
 
 Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction. Ce reçu fournit des informations sur le produit et le coût monétaire pour le client.
@@ -141,9 +148,4 @@ L’élément **ProductReceipt** a les attributs suivants :
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -3,9 +3,16 @@ author: jnHs
 Description: "Pour comprendre vos considérations fiscales pour la sélection des prix, les implications de paiement et la responsabilité fiscale, consultez vos pays/régions de distribution dans les tableaux ci-dessous."
 title: Informations fiscales pour les applications payantes
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 56421bc1ce426310189ddcb1c9893437469c075a
-ms.openlocfilehash: 69ae8d29df626f6a1e2ce1bb4a8a09e99353a0ac
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: beaf73f0bf4709bcda2edda4afb97869eaccc27b
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -161,9 +168,9 @@ Pour comprendre vos considérations fiscales pour la sélection des prix, les im
 | Philippines                      | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. [En savoir plus sur les considérations fiscales de ce pays ou de cette région.](#mixed-remittance-countriesregions)                                                                  | 70 % du prix sélectionné                 | Développeur          |
 | Pologne                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70 % du (prix sélectionné moins 23% de taxe) | Microsoft          |
 | Portugal                         | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70 % du (prix sélectionné moins 23% de taxe) | Microsoft          |
-| Puerto Rico                      | Les taxes sont ajoutées au prix sélectionné. [En savoir plus sur les considérations fiscales de ce pays ou de cette région.](#mixed-remittance-countries-regions)                                                                                                     | 70 % du prix sélectionné                 | Microsoft          |
+| Puerto Rico                      | Les taxes sont ajoutées au prix sélectionné. [En savoir plus sur les considérations fiscales de ce pays ou de cette région.](#mixed-remittance-countriesregions)                                                                                                     | 70 % du prix sélectionné                 | Microsoft          |
 | Qatar                            | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
-| Roumanie                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70 % du (prix sélectionné moins 24% de taxe) | Microsoft          |
+| Roumanie                          | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70 % du (prix sélectionné moins 19 % de taxe) | Microsoft          |
 | Russie                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables. Les taxes sont soustraites du prix avant paiement.              | 70 % du (prix sélectionné moins 18 % de taxe) | Microsoft          |
 | Rwanda                           | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
 | Saint-Kitts-et-Nevis            | Le prix sélectionné est le prix de vente final et inclut toutes les taxes applicables.                                                                   | 70 % du prix sélectionné                 | Développeur          |
@@ -220,7 +227,7 @@ Pour comprendre vos considérations fiscales pour la sélection des prix, les im
 ## <a name="mixed-remittance-countriesregions"></a>Pays/régions de versement mixte
 
 
-Certains partenaires de facturation Microsoft peuvent recueillir et verser les taxes sur les ventes, l’utilisation, les biens et services, la valeur ajoutée ou des taxes similaires éventuellement applicables à l’acquisition par les Clients de vos Applications ou Produits in-app par l’intermédiaire du Windows Store dans les pays/régions ci-dessous. Les rapports que Microsoft met à votre disposition identifieront les transactions pour lesquelles un partenaire de facturation a recueilli les taxes sur les ventes, l’utilisation, les biens et services, la valeur ajoutée ou des taxes similaires applicables à l’acquisition par les Clients de vos Applications ou Produits in-app par l’intermédiaire du Windows Store. À l’exception des transactions décrites dans ces rapports, ni Microsoft, ni ses fournisseurs de services de facturation ne pourront verser des taxes sur les ventes, l’utilisation, les biens et services, la valeur ajoutée ou des taxes similaires liées à l’acquisition par les Clients de vos Applications ou Produits in-app dans ces pays. Il vous appartient de réviser les rapports qui vous sont fournis et de déterminer et d’honorer vos obligations éventuelles en matière d’enregistrement, de collecte et de versement de taxes liées aux transactions impliquant vos Applications ou Produits in-app.
+Certains partenaires de facturation Microsoft peuvent recueillir et verser les taxes sur les ventes, l’utilisation, les biens et services, la valeur ajoutée ou des taxes similaires éventuellement applicables à l’acquisition par les Clients de vos Applications ou Produits in-app par l’intermédiaire du Windows Store dans les pays/régions ci-dessous. Les [rapports](payout-summary.md#downloading-payment-transactions) que Microsoft met à votre disposition identifieront les transactions pour lesquelles un partenaire de facturation a recueilli les taxes sur les ventes, l’utilisation, les biens et services, la valeur ajoutée ou des taxes similaires applicables à l’acquisition par les Clients de vos Applications ou Produits in-app par l’intermédiaire du Windows Store. À l’exception des transactions décrites dans ces rapports, ni Microsoft, ni ses fournisseurs de services de facturation ne pourront verser des taxes sur les ventes, l’utilisation, les biens et services, la valeur ajoutée ou des taxes similaires liées à l’acquisition par les Clients de vos Applications ou Produits in-app dans ces pays. Il vous appartient de réviser les rapports qui vous sont fournis et de déterminer et d’honorer vos obligations éventuelles en matière d’enregistrement, de collecte et de versement de taxes liées aux transactions impliquant vos Applications ou Produits in-app.
 
 | Pays/régions de versement mixte |
 |------------------------------------|
@@ -279,10 +286,5 @@ Chaque ligne du rapport contient la date et l’heure de la transaction et, le c
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO5-->
 
 

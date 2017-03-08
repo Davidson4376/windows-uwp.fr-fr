@@ -5,9 +5,16 @@ title: "Paramètres et données d’application"
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 52bf5b65412918e522b57ba06d83c67771086a93
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cdb1035d3d035c92c29e84bdd04ca7692c7e19de
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -16,7 +23,7 @@ ms.openlocfilehash: 52bf5b65412918e522b57ba06d83c67771086a93
 
 
 
-Cette section contient des recommandations d’expérience utilisateur pour présenter des paramètres d’application et les stocker en tant que données de l’application.
+Cette section contient des recommandations en matière d’expérience utilisateur en rapport avec la présentation de paramètres d’application et leur stockage en tant que données d’application.
 
 Les paramètres de l’application sont les parties de votre application de plateforme Windows universelle (UWP) que l’utilisateur peut personnaliser. Par exemple, une application de lecteur de news peut permettre à l’utilisateur de spécifier les sources de news à afficher ou le nombre de colonnes à afficher à l’écran.
 
@@ -46,10 +53,5 @@ Les données de l’application sont les données que l’application crée et g
 </table>
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

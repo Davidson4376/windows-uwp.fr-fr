@@ -1,24 +1,31 @@
 ---
 author: jnHs
-Description: "Vous pouvez indiquer si et comment votre application peut être proposée pour les achats en volume par le biais du Windows Store pour Entreprises dans la section Clés de produit réservées aux entreprises de la page Tarification et disponibilité relative à la soumission d’une application."
-title: Options de gestion des licences organisationnelles
+Description: "Vous pouvez indiquer si (et comment) votre application peut être proposée pour les achats en volume par le biais du Windows Store pour Entreprises dans la section Clés de produit réservées aux entreprises de la page Tarification et disponibilité relative à la soumission d’une application."
+title: "Options de clés de produit réservées aux entreprises"
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 4a297b7a2a2383a825a848ed6939f9743733253f
-ms.openlocfilehash: f3c1ee23e53e3c31a577eb3be03e3fc3055f1ec2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0fb906dc84085d3006be7f5f25d895e1150f9265
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Options de gestion des licences organisationnelles
+# <a name="organizational-licensing-options"></a>Options de clés de produit réservées aux entreprises
 
 
-Vous pouvez indiquer si et comment votre application peut être proposée pour les achats en volume par le biais du Windows Store pour Entreprises dans la section **Clés de produit réservées aux entreprises** de la page [Tarification et disponibilité](set-app-pricing-and-availability.md#organizational-licensing) relative à la soumission d'une application.
+Vous pouvez indiquer si (et comment) votre application peut être proposée pour les achats en volume par le biais du Windows Store pour Entreprises dans la section **Clés de produit réservées aux entreprises** de la page [Tarification et disponibilité](set-app-pricing-and-availability.md#organizational-licensing) relative à la soumission d’une application.
 
 Ces paramètres vous permettent d'autoriser que votre application soit disponible pour les organisations qui acquièrent et déploient plusieurs licences pour leurs utilisateurs, ce qui offre une opportunité d'élargir votre couverture aux entreprises qui utilisent Windows 10 sur différents types d'appareils tels que PC, tablettes et téléphones. Vous devrez également autoriser la gestion des licences organisationnelles pour les [applications métier](distribute-lob-apps-to-enterprises.md) que vous publiez directement à l’attention des entreprises.
 
 > **Remarque** Les sélections pour chacune de vos applications sont configurées indépendamment les unes des autres. Vous pouvez modifier vos préférences concernant une application à tout moment en créant une nouvelle soumission. Vos modifications prennent effet dès la fin du [processus de certification](the-app-certification-process.md) de la soumission.
 
-## Autorisation de l’offre de votre application aux organisations
+## <a name="allowing-your-app-to-be-offered-to-organizations"></a>Autorisation de l’offre de votre application aux organisations
 
 Par défaut, la case à cocher **Proposer mon application aux organisations via le service de gestion de licences et de distribution (en ligne) du Store** est activée. Cela signifie que vous souhaitez que votre application puisse être incluse dans les catalogues d’applications que nous mettons à la disposition des organisations pour l’acquisition en volume, avec des licences d’application gérées par le biais du système de gestion de licences en ligne du Windows Store.
 
@@ -28,7 +35,7 @@ Si vous ne souhaitez pas nous autoriser à proposer votre application à l’acq
 
 > **Conseil** Pour publier des applications métier exclusivement à l’attention d’une organisation spécifique, vous pouvez configurer une association d’entreprise et autoriser l’organisation à ajouter les applications directement à son magasin privé. Pour plus d’informations, voir [Distribuer des applications métier aux entreprises](distribute-lob-apps-to-enterprises.md).
 
-## Autorisation de l’achat de licences en mode hors connexion
+## <a name="allowing-disconnected-offline-licensing"></a>Autorisation de l’achat de licences en mode hors connexion
 
 
 De nombreuses organisations ont besoin d’applications dont la licence peut être achetée hors connexion. Par exemple, certaines organisations doivent déployer des applications sur des appareils qui se connectent rarement ou jamais à Internet. Si vous souhaitez autoriser que votre application soit disponible pour ces clients, activez la case à cocher **Autoriser la gestion et la distribution des licences aux organisations en mode hors connexion**.
@@ -40,7 +47,7 @@ L’achat de licences en mode hors connexion permet aux organisations d’acqué
 > **Important** La gestion de licences en mode hors connexion n’est pas prise en charge pour les packages .xap.  
 
  
-## Support de l’application payante
+## <a name="paid-app-support"></a>Support de l’application payante
 
 Sur certains marchés, les comptes de développeur sont actuellement en mesure de proposer des applications payantes pour l’acquisition de volume via le Windows Store pour Entreprises. 
 
@@ -48,7 +55,7 @@ Sur certains marchés, les comptes de développeur sont actuellement en mesure d
 
 Si votre pays ou votre région n’est pas répertorié ci-dessous, vos applications payantes ne seront pour le moment pas proposées dans le Windows Store pour Entreprises. Si tel est le cas, les choix de licences organisationnelles que vous faites pour vos applications payantes pourront être appliquées ultérieurement, au fur et à mesure que le Windows Store pour Entreprises prendra en charge les soumissions d’applications payantes pour de nouveaux marchés de compte de développeur.
 
-À ce stade, les développeurs des pays et régions suivants peuvent distribuer des applications payantes aux clients professionnels via le Windows Store pour Entreprises:
+À ce stade, les développeurs des pays et régions suivants peuvent distribuer des applications payantes aux clients professionnels via le Windows Store pour Entreprises :
 
 - Autriche
 - Belgique
@@ -85,9 +92,4 @@ Si votre pays ou votre région n’est pas répertorié ci-dessous, vos applicat
 - Suisse
 - Royaume-Uni
 - France
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

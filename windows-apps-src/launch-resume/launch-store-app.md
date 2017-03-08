@@ -1,22 +1,29 @@
 ---
 author: TylerMSFT
-title: "Lancer l’application du WindowsStore"
-description: "Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application du WindowsStore sur des pages spécifiques du WindowsStore."
+title: "Lancer l’application du Windows Store"
+description: "Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application du Windows Store sur des pages spécifiques du Windows Store."
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: b66ae37adec1b68653c0fe7d552a84f61d57acd9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d80055e8c8ca1e8586cb8f2a54612206301282a1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Lancer l’application du WindowsStore
+# <a name="launch-the-windows-store-app"></a>Lancer l’application du Windows Store
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique décrit le schéma d’URI **ms-windows-store:**. Votre application peut utiliser ce schéma d’URI pour lancer l’application du Windows Store en ouvrant des pages spécifiques dans le Windows Store.
 
-## Référence de schéma d’URI ms-windows-store:
+## <a name="ms-windows-store-uri-scheme-reference"></a>Référence de schéma d’URI ms-windows-store:
 
 <table>
 <tr><th>Description</th><th></th><th>Schéma d’URI</th></tr>
@@ -31,11 +38,11 @@ Cette rubrique décrit le schéma d’URI **ms-windows-store:**. Votre applicati
 </td>
 </tr>
 <tr>
-<td rowspan="4">Lance la page de détails d’un produit (PDP). <p>L’ID WindowsStore est recommandé pour les clients Windows10 et fonctionne sur toutes les versions du système d’exploitation, mais les méthodes antérieures de lancement (ex: PFN) sont toujours prises en charge.</p>
+<td rowspan="4">Lance la page de détails d’un produit (PDP). <p>L’ID Windows Store est recommandé pour les clients Windows 10 et fonctionne sur toutes les versions du système d’exploitation, mais les méthodes antérieures de lancement (ex : PFN) sont toujours prises en charge.</p>
 <p>Ces valeurs sont disponibles dans le tableau de bord du Centre de développement Windows à la page <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">Identité de l’application</a> de la section Gestion des applications de chaque application.</p>
 </td>
 <td>
-ID WindowsStore <p>(recommandé)</p>
+ID Windows Store <p>(recommandé)</p>
 </td>
 <td>
 <p>ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL</p>
@@ -57,7 +64,7 @@ ID WindowsStore <p>(recommandé)</p>
 </tr>
 <tr>
 <td rowspan="4">Lance la procédure d’écriture d’un avis pour un produit.</td>
-<td>ID WindowsStore <p>(recommandé)</p></td>
+<td>ID Windows Store <p>(recommandé)</p></td>
 <td>ms-windows-store://review/?ProductId=9WZDNCRFHVJL </td>
 </tr>
 <tr>
@@ -129,9 +136,4 @@ Lance une recherche pour la requête spécifiée. Les espaces sont autorisées d
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

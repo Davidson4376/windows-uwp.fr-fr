@@ -3,21 +3,28 @@ author: jwmsft
 description: "Classes de paramètres du modèle"
 title: "Classes de paramètres du modèle"
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 8a52535e54a321bab6b34b6a73c53222e88d2151
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 983158dfa258eeac6305a7aa000afba7311500d3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Classes de paramètres du modèle
+# <a name="template-settings-classes"></a>Classes de paramètres du modèle
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 Il est supposé que vous savez ajouter des contrôles à une interface utilisateur, définir leurs propriétés et joindre des gestionnaires d’événements. Pour obtenir des instructions sur l’ajout de contrôles à une application, voir [Ajouter des contrôles et gérer les événements](https://msdn.microsoft.com/library/windows/apps/mt228345). Nous partons également du principe que vous connaissez les bases de la définition d’un modèle personnalisé d’un contrôle en modifiant une copie du modèle par défaut. Pour plus d’informations, voir [Démarrage rapide : modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
 
-## Scénario relatif aux classes **TemplateSettings**
+## <a name="the-scenario-for-templatesettings-classes"></a>Scénario relatif aux classes **TemplateSettings**
 
 Les classes **TemplateSettings** fournissent un ensemble de propriétés qui sont utilisées lorsque vous définissez un nouveau modèle pour un contrôle. Les propriétés possèdent des valeurs, par exemple des mesures en pixels, correspondant à la taille de certains éléments d’interface utilisateur. Ces valeurs sont parfois des valeurs calculées qui proviennent de la logique de contrôle qui n’est généralement pas facile à remplacer ni même accessible. Certaines propriétés se veulent des valeurs **From** et **To** qui contrôlent les transitions et les animations des parties. Les propriétés **TemplateSettings** appropriées sont donc fournies par paires.
 
@@ -34,7 +41,7 @@ Voici plusieurs classes **TemplateSettings**. Elles figurent toutes dans l’esp
 
 Les propriétés **TemplateSettings** sont toujours destinées à être utilisées en XAML. Ce sont des sous-propriétés en lecture seule d’une propriété **TemplateSettings** en lecture seule d’un contrôle parent. Pour un scénario de contrôle personnalisé avancé, lorsque vous créez une classe basée sur [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) et pouvez donc influer sur la logique de contrôle, pensez à définir une propriété **TemplateSettings** personnalisée sur le contrôle pour communiquer des informations pouvant être utiles à toute personne qui recrée le modèle du contrôle. Pour la valeur de cette propriété en lecture seule, définissez une nouvelle classe **TemplateSettings** liée à votre contrôle qui possède des propriétés en lecture seule pour chacune des informations qui sont pertinentes pour les mesures de modèle, le positionnement d’animation, etc. et qui donnent aux appelants l’instance d’exécution de cette classe, qui est initialisée à l’aide de votre logique de contrôle. Les classes **TemplateSettings** sont dérivées de [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) afin que les propriétés puissent utiliser le système de propriétés de dépendance pour les rappels de modification de propriété. Mais les identificateurs de propriété de dépendance pour les propriétés ne sont pas exposés comme API publique, car les propriétés **TemplateSettings** sont censées être en lecture seule pour les appelants.
 
-## Comment utiliser **TemplateSettings** dans un modèle de contrôle
+## <a name="how-to-use-templatesettings-in-a-control-template"></a>Comment utiliser **TemplateSettings** dans un modèle de contrôle
 
 Voici un exemple qui provient des modèles de contrôles XAML par défaut de départ. Cet exemple particulier provient du modèle par défaut [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) :
 
@@ -95,13 +102,8 @@ Voici un autre exemple d’utilisation des modèles de contrôles XAML par défa
 **Remarque**  
 Si vous utilisez les valeurs **TemplateSettings** dans le cadre de votre modèle de contrôle, assurez-vous de définir des propriétés qui correspondent au type de la valeur. Sinon, vous devrez peut-être créer un convertisseur de valeur pour la liaison afin que le type cible de la liaison puisse être converti à partir d’un type de source différent de la valeur **TemplateSettings**. Pour plus d’informations, voir [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Démarrage rapide: modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
+* [Démarrage rapide : modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 
 

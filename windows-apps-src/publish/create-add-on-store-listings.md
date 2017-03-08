@@ -1,20 +1,27 @@
 ---
 author: jnHs
 Description: "Quand vous soumettez un module complémentaire, les informations que vous entrez à l’étape Descriptions dans le Windows Store sont visibles par vos clients."
-title: "Créer des descriptions de module complémentaire dans le WindowsStore"
+title: "Créer des descriptions de module complémentaire dans le Windows Store"
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
-ms.openlocfilehash: 607dab75b8e446109cbb60c6c149732501f5b43c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ecf24a0a51734d159a412824d6b43d76d92b3002
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Créer des descriptions de module complémentaire dans le WindowsStore
+# <a name="create-add-on-store-listings"></a>Créer des descriptions de module complémentaire dans le Windows Store
 
 
 Quand vous soumettez un module complémentaire, les informations que vous entrez à l’étape **Descriptions dans le Windows Store** sont visibles par vos clients lorsque l’option d’acquisition de votre module complémentaire s’affiche. Formulez avec soin les informations de la description dans le Windows Store pour qu’elle donne du module complémentaire une image à la fois fidèle et attrayante aux yeux des clients. Vous pouvez fournir des descriptions personnalisées dans le Windows Store pour chaque langue.
 
-## Langues
+## <a name="languages"></a>Langues
 
 
 Avant d’entrer les informations de la description dans le Windows Store, vous devez spécifier une ou plusieurs [langues](supported-languages.md). Nous vous recommandons de fournir une description dans le Windows Store pour chaque langue prise en charge par votre application.
@@ -25,28 +32,23 @@ Sous la section **Description dans le Windows Store** de la soumission de votre 
 
 Pour modifier une description dans le Windows Store, cliquez sur le nom de la langue dans la vue d’ensemble de la soumission du module complémentaire. Les informations que vous pouvez entrer pour chaque langue sont décrites ci-dessous.
 
-## Titre
+## <a name="title"></a>Titre
 
-Vous devez fournir un titre ici, qui sera le nom du module complémentaire que verront vos clients. La longueur du titre ne doit pas dépasser 100caractères.
+Vous devez fournir un titre ici, qui sera le nom du module complémentaire que verront vos clients. La longueur du titre ne doit pas dépasser 100 caractères.
 
-## Description
+## <a name="description"></a>Description
 
 Si vous souhaitez afficher plus qu'un simple titre, ce champ vous permet d'entrer jusqu'à 200 caractères. Il est obligatoire.
 
-## Icône
+## <a name="icon"></a>Icône
 
-Vous pouvez également fournir une image qui sera visible du client. Cette icône doit prendre la forme d’un fichier PNG de 300x300pixels exactement.
-
- 
+Vous pouvez également fournir une image qui sera visible du client. Cette icône doit prendre la forme d’un fichier PNG de 300 x 300 pixels exactement.
 
  
 
+ 
 
 
 
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

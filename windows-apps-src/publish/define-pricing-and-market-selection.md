@@ -1,56 +1,63 @@
 ---
 author: jnHs
-Description: "Le Windows Store touche des clients dans plus de 200 pays et régions du monde."
+Description: "Le Windows Store touche des clients dans plus de 200 pays et régions du monde."
 title: "Définition des prix et sélection du marché"
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: 3fb8594748d303216a4437983604b5d78c993934
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: acf14f886f36d74941769954041325514a386e86
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Définition des prix et sélection du marché
+# <a name="define-pricing-and-market-selection"></a>Définition des prix et sélection du marché
 
 
-Le Windows Store touche des clients dans plus de 200 pays et régions du monde. Vous pouvez choisir les marchés dans lesquels proposer votre application, et déterminer le prix à facturer aux clients, avec la possibilité de personnaliser les prix en fonction des marchés.
+Le Windows Store touche des clients dans plus de 200 pays et régions du monde. Vous pouvez choisir les marchés dans lesquels proposer votre application, et déterminer le prix à facturer aux clients, avec la possibilité de personnaliser les prix en fonction des marchés.
 
-**Remarque** Tenez compte de nos [recommandations pour globaliser votre application](https://msdn.microsoft.com/library/windows/apps/hh969150).
+**Remarque**  Tenez compte de nos [recommandations pour globaliser votre application](https://msdn.microsoft.com/library/windows/apps/hh969150).
 
  
 
-## Prix de base
+## <a name="base-price"></a>Prix de base
 
 
 Une fois que vous avez sélectionné le **prix de base** de votre application, ce prix est utilisé dans tous les marchés où votre application est vendue, sauf si vous spécifiez un prix personnalisé pour un marché spécifique.
 
-Vous pouvez définir le champ **Prix de base** sur **Gratuit** ou choisir un niveau de prix disponible. Le niveau de prix fixe le prix de vente dans tous les pays où vous souhaitez distribuer votre application. Les niveaux de prix commencent à 0,99 USD, avec des incréments supplémentaires (1,29 USD, 1,49 USD, 1,99 USD, etc.). Les incréments augmentent avec le niveau du prix.
+Vous pouvez définir le champ **Prix de base** sur **Gratuit** ou choisir un niveau de prix disponible. Le niveau de prix fixe le prix de vente dans tous les pays où vous souhaitez distribuer votre application. Les niveaux de prix commencent à 0,99 USD, avec des niveaux supplémentaires disponibles par incréments croissants (1,10 USD, 1,29 USD, etc.). Les incréments augmentent généralement à mesure que le prix devient plus élevé.
 
-> **Remarque** Ces niveaux de prix s’appliquent également aux [modules complémentaires](add-on-submissions.md).
+> **Remarque**  Ces niveaux de prix s’appliquent également aux [extensions](add-on-submissions.md).
 
-Chaque niveau de prix a une valeur correspondante dans chacune des devises du Windows Store, qui en compte plus de60. Ces valeurs vous aident à vendre vos applications à un prix comparable dans le monde entier. Cependant, en raison des fluctuations des taux de change, le montant exact des ventes peut varier légèrement d’une devise à l’autre.
+Chaque niveau de prix a une valeur correspondante dans chacune des devises du Windows Store, qui en compte plus de 60. Ces valeurs vous aident à vendre vos applications à un prix comparable dans le monde entier. Cependant, en raison des fluctuations des taux de change, le montant exact des ventes peut varier légèrement d’une devise à l’autre.
 
 N’oubliez pas que le niveau de prix que vous sélectionnez peut inclure la taxe de vente ou la taxe sur la valeur ajoutée que vos clients doivent payer. Pour plus d’informations sur les implications fiscales de votre application dans les marchés sélectionnés, voir l’article [Informations fiscales pour les applications payantes](tax-details-for-paid-apps.md). Consultez également l’article [Considérations de prix pour des marchés spécifiques](#price-considerations-for-specific-markets) ci-dessous.
 
-## Marchés et prix personnalisés
+## <a name="markets-and-custom-prices"></a>Marchés et prix personnalisés
 
 
 Par défaut, votre application sera indiquée à son prix de base dans tous les marchés possibles, y compris dans les éventuels marchés que nous ajouterons par la suite.
 
 Pour modifier ce paramétrage, développez la section **Marchés et prix personnalisés** sur la page **Tarification et disponibilité** de la soumission de votre application. Vous pouvez désélectionner des marchés spécifiques pour les exclure, ou cliquer sur **Désélectionner tout**, puis ajouter les marchés de votre choix.
 
-> **Important** Il est de votre responsabilité de vous conformer à toute obligation juridique locale, même si ces obligations ne sont pas répertoriées ici ni dans le tableau de bord du Centre de développement Windows.
+> **Important**   Il est de votre responsabilité de vous conformer à toute obligation légale locale, même si ces obligations ne sont pas répertoriées ici ni dans le tableau de bord du Centre de développement Windows.
 
-Si vous souhaitez définir des prix personnalisés pour votre application dans des marchés spécifiques, vous pouvez également effectuer cette opération à partir de cette section; dans le cas contraire, votre application sera indiquée par défaut à son prix de base (dans la devise locale de ce marché).
+Si vous souhaitez définir des prix personnalisés pour votre application dans des marchés spécifiques, vous pouvez également effectuer cette opération à partir de cette section ; dans le cas contraire, votre application sera indiquée par défaut à son prix de base (dans la devise locale de ce marché).
 
-> **Remarque** En outre, vous pouvez définir des prix personnalisés pour des marchés spécifiques dans les [soumissions de modules complémentaires](add-on-submissions.md).
+> **Remarque**  En outre, vous pouvez définir des prix personnalisés pour des marchés spécifiques dans les [soumissions d’extensions](add-on-submissions.md).
 
 Tenez compte du fait que même si vous sélectionnez tous les marchés, la législation et les restrictions locales ou d’autres facteurs peuvent empêcher certaines applications d’être référencées dans des pays ou régions spécifiques. Par ailleurs, certains marchés peuvent avoir établi des conditions spécifiques relatives à la classification par âge. Si votre application ne satisfait pas ces conditions, nous ne pourrons pas proposer votre application dans ce marché. Pour plus d’informations, consultez la section [Classification par âge](age-ratings.md).
 
-> **Remarque** Pour les applications destinées à Windows 8 ou Windows 8.1, certains marchés individuels sont traités comme un seul marché « Rest of World ». Pour plus d’informations, voir [Marchés « Rest of World » pour Windows 8.x](#rest-of-world-markets-for-windows-8-x). N’oubliez pas non plus que sur Windows 8 ou Windows 8.1, les clients verront uniquement l’application répertoriée avec son prix de base, même si vous avez changé le prix pour leur marché.
+> **Remarque**  Pour les applications destinées à Windows 8 ou Windows 8.1, certains marchés spécifiques sont traités comme un seul marché « Reste du monde ». Pour plus d’informations, voir [Marchés « Rest of World » pour Windows 8.x](#rest-of-world-markets-for-windows-8-x). N’oubliez pas non plus que sur Windows 8 ou Windows 8.1, les clients verront uniquement l’application répertoriée avec son prix de base, même si vous avez changé le prix pour leur marché.
 
  
 
-## Marchés grand public du Windows Store
+## <a name="windows-store-consumer-markets"></a>Marchés grand public du Windows Store
 
 
 Vous pouvez choisir de répertorier votre application (ou module complémentaire) dans un ou plusieurs des marchés suivants.
@@ -298,7 +305,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
 -   Zambie
 -   Zimbabwe
 
-## Considérations de prix pour des marchés spécifiques
+## <a name="price-considerations-for-specific-markets"></a>Considérations de prix pour des marchés spécifiques
 
 
 Les moyens de paiement tels que la facturation d’opérateur mobile peuvent aider à augmenter les ventes d’applications payantes et d’articles in-app. En raison des coûts plus élevés engendrés pour autoriser ces moyens de paiement, un Ajustement du développement commercial est ajouté à la redevance du Store pour calculer les revenus de l’application à payer pour des transactions d’applications payantes et d’achats in-app dans les pays/régions et en utilisant les moyens de paiement du tableau ci-dessous. Vous pouvez analyser si l’Ajustement du développement commercial s’applique dans un pays/région où votre application est disponible et en tenir compte dans votre stratégie de fixation des prix du marché. Vous pouvez trouver des détails sur l’Ajustement du développement commercial dans le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058).
@@ -375,7 +382,7 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 
  
 
-## Marchés « Rest of World » pour Windows 8.x
+## <a name="rest-of-world-markets-for-windows-8x"></a>Marchés « Rest of World » pour Windows 8.x
 
 
 Si votre application contient des packages destinés à Windows 8.x, n’oubliez pas que certains marchés sont traités comme un seul marché « Rest of World » pour les clients qui utilisent le Store sur Windows 8.x, même s’ils sont désormais affichés comme des marchés individuels dans le tableau de bord du Centre de développement Windows (contrairement au tableau de bord Windows Store précédent, qui contenait une seule option de marché « Rest of World » sélectionnable).
@@ -551,10 +558,5 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
 -   Zambie
 -   Zimbabwe
 
-> **Remarque** Pour obtenir la liste des pays et régions dans lesquels vous pouvez vous inscrire en vue d’obtenir un compte de développeur, voir [Types de compte, emplacements et frais](https://msdn.microsoft.com/library/windows/apps/jj863494).
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+> **Remarque**  Pour obtenir la liste des pays et régions dans lesquels vous pouvez vous inscrire en vue d’obtenir un compte de développeur, consultez l’article [Types de compte, emplacements et frais](https://msdn.microsoft.com/library/windows/apps/jj863494).
 

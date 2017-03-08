@@ -2,10 +2,17 @@
 author: mcleanbyron
 ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: "Utilisez ces méthodes dans l’API de soumission du Windows Store pour gérer les soumissions d’extensions des applications qui sont inscrites dans votre compte du Centre de développement Windows."
-title: "Gérer les soumissions d’extensions à l’aide de l’API de soumission du Windows Store"
+title: "Gérer les soumissions d’extensions à l’aide de l’API de soumission du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, soumissions d’extensions, produit in-app"
 translationtype: Human Translation
-ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
-ms.openlocfilehash: 1a1ace9d456089d4bed2dd4ac4f39479dc8faa52
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: 589946e159202c3ed5d13057642c808d5df4f738
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -13,9 +20,14 @@ ms.openlocfilehash: 1a1ace9d456089d4bed2dd4ac4f39479dc8faa52
 
 L’API de soumission du Windows Store fournit des méthodes qui permettent de gérer les soumissions d’extensions (également connues sous le nom PIA ou produits in-app) pour vos applications. Pour obtenir une présentation de l’API de soumission du Windows Store, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
 
->**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation. Pour pouvoir utiliser ces méthodes pour créer ou gérer des soumissions pour une extension, l’extension doit déjà exister dans votre compte du Centre de développement. Vous pouvez créer une extension [à l’aide du tableau de bord du Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions) ou en utilisant les méthodes de l’API de soumission du Windows Store décrites dans [Gérer les extensions](manage-add-ons.md).
+>**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. L’octroi de cette autorisation se fait en plusieurs étapes. Elle est accordée aux comptes de développeur, et tous les comptes n’en bénéficient pas pour le moment. Pour demander un accès anticipé, connectez-vous au tableau de bord du Centre de développement, cliquez sur **Commentaires** au bas du tableau de bord, sélectionnez **API de soumission** dans la zone de commentaires, puis soumettez votre demande. Vous recevrez un message électronique dès que cette autorisation sera accordée à votre compte.
 
-Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’extension, utilisez les méthodes ci-dessous.
+>**Important**&nbsp;&nbsp;Si vous utilisez l’API de soumission du Windows Store pour créer une soumission pour un module complémentaire, assurez-vous d’utiliser exclusivement l’API pour apporter d’autres modifications à la soumission, sans passer par le tableau de bord du Centre de développement. Si vous passez par le tableau de bord pour modifier une soumission initialement créée via l’API, vous ne pourrez plus modifier ou valider cette soumission à l’aide de l’API. Dans certains cas, la soumission non validée peut rester définie sur l’état d’erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
+
+<span id="methods-for-add-on-submissions" />
+## <a name="methods-for-managing-add-on-submissions"></a>Méthodes de gestion des soumissions d’extensions
+
+Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’extension, utilisez les méthodes ci-dessous. Pour pouvoir utiliser ces méthodes, vous devez disposer de l’extension dans votre compte du Centre de développement. Vous pouvez créer une extension dans le tableau de bord, en [définissant son type et son ID de produit](../publish/set-your-add-on-product-id.md) ou en utilisant les méthodes de l’API de soumission du Windows Store, tel que décrit sur la page [Gérer les extensions](manage-add-ons.md).
 
 <table>
 <colgroup>
@@ -34,7 +46,7 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’ex
 <tr>
 <td align="left">GET</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}```</td>
-<td align="left">[Obtient une soumission d’extension existante](get-an-add-on-submission.md)</td>
+<td align="left">[Obtient une soumission d’extension existante.](get-an-add-on-submission.md)</td>
 </tr>
 <tr>
 <td align="left">GET</td>
@@ -141,6 +153,8 @@ Les articles suivants fournissent des exemples de code détaillés qui montrent 
 * [Exemples de code Java](java-code-examples-for-the-windows-store-submission-api.md)
 * [Exemples de code Python](python-code-examples-for-the-windows-store-submission-api.md)
 
+>**Remarque**&nbsp;&nbsp;En complément des exemples de code répertoriés ci-dessus, nous fournissons également un module PowerShell Open Source qui implémente une interface de ligne de commande sur l’API de soumission du Windows Store. Ce module est appelé [StoreBroker](https://aka.ms/storebroker). Vous pouvez utiliser ce module pour gérer les soumissions de votre application, de votre version et de vos modules complémentaires à partir de la ligne de commande, en lieu et place de l’appel direct de l’API de soumission du Windows Store. Sinon, vous pouvez simplement parcourir la source pour consulter des exemples supplémentaires d’appel de cette API. Le module StoreBroker est activement utilisé au sein de Microsoft en tant que vecteur principal de soumission de nombreuses applications internes dans le Windows Store. Pour plus d’informations, consultez notre [page StoreBroker sur GitHub](https://aka.ms/storebroker).
+
 <span/>
 ## <a name="data-resources"></a>Ressources de données
 
@@ -183,7 +197,8 @@ Cette ressource décrit une soumission d’extension.
       "US": "Tier4",
     },
     "sales": [],
-    "priceId": "Free"
+    "priceId": "Free",
+    "isAdvancedPricingModel": "true"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -229,8 +244,8 @@ Cette ressource a les valeurs suivantes.
 | visibility  | chaîne  |  Visibilité de l’extension. Les valeurs possibles sont les suivantes : <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
 | status  | chaîne  |  État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | objet  |  [Ressource des détails d’état](#status-details-object) qui contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs. |
-| fileUploadUrl           | chaîne  | URI de la signature d’accès partagé (SAS) pour le chargement des packages de la soumission. Si vous ajoutez de nouveaux packages à la soumission, chargez l’archive ZIP contenant les packages vers cet URI. Pour plus d’informations, voir [Créer une soumission d’extension](#create-an-add-on-submission).  |
-| friendlyName  | chaîne  |  Nom convivial de l’extension, utilisé à des fins d’affichage.  |
+| fileUploadUrl           | chaîne  | URI de la signature d’accès partagé (SAS) pour le chargement des packages de la soumission. Si vous ajoutez de nouveaux packages à la soumission, chargez l’archive ZIP contenant les packages vers cet URI. Pour plus d’informations, consultez la page [Créer une soumission d’extension](#create-an-add-on-submission).  |
+| friendlyName  | chaîne  |  Le nom convivial de la soumission, tel que représenté dans le tableau de bord du Centre de développement. La valeur est générée pour vous lorsque vous créez la soumission.  |
 
 <span id="listing-object" />
 ### <a name="listing-resource"></a>Ressource de référencement
@@ -262,7 +277,8 @@ Cette ressource contient des informations de tarification pour l’extension. Ce
 |-----------------|---------|------|
 |  marketSpecificPricings               |    objet     |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre extension sur des marchés spécifiques](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-prices). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *priceId* du marché spécifié.     |     
 |  sales               |   tableau      |  **Deprecated**. Tableau des [ressources de ventes](#sale-object) qui contiennent des informations commerciales pour l’extension.     |     
-|  priceId               |   chaîne      |  [Niveau de prix](#price-tiers) qui spécifie le [prix de base](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price) de l’extension.    |
+|  priceId               |   chaîne      |  [Niveau de prix](#price-tiers) spécifiant le [prix de base](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price) de l’extension.    |    
+|  isAdvancedPricingModel               |   valeur booléenne      |  Si la valeur **true** est définie, votre compte de développeur dispose d’un accès à la plage étendue de tarification, de 0,99 à 1999,99 dollars. Si la valeur **false** est définie, votre compte de développeur dispose d’un accès à la plage initiale de tarification, de 0,99 à 999,99 dollars. Pour plus d’informations sur les différents niveaux, voir [Niveaux de prix](#price-tiers).<br/><br/>**Remarque**&nbsp;&nbsp;Ce champ est en lecture seule.   |
 
 
 <span id="sale-object" />
@@ -325,15 +341,14 @@ Ces méthodes utilisent les énumérations suivantes.
 <span id="price-tiers" />
 ### <a name="price-tiers"></a>Niveaux de prix
 
-Les valeurs suivantes représentent les niveaux de prix disponibles pour une soumission d’extension.
+Les valeurs suivantes représentent les niveaux de prix disponibles dans la [ressource de tarification](#pricing-object) d’une soumission d’extension.
 
 | Valeur           | Description       |
 |-----------------|------|
 |  Base               |   Le niveau de prix n’est pas défini ; utilisez le prix de base de l’extension.      |     
 |  NotAvailable              |   L’extension n’est pas disponible dans la région spécifiée.    |     
 |  Free              |   L’extension est gratuite.    |    
-|  Tier2 à Tier194               |   Tier2 représente le niveau de prix 0,99 USD. Chaque niveau supplémentaire représente des incréments supplémentaires (1,29 USD, 1,49 USD, 1,99 USD, etc.).    |
-
+|  Tier*xxxx*               |   Une chaîne spécifiant le niveau de prix d’une extension, au format **Tier<em>xxxx</em>**. Actuellement, les plages suivantes de tarification sont prises en charge :<br/><br/><ul><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **true**, les valeurs de tarification disponibles pour votre compte sont **Tier1012** - **Tier1424**.</li><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **false**, les valeurs de tarification disponibles pour votre compte sont **Tier2** - **Tier96**.</li></ul>Pour consulter le tableau complet des niveaux de prix disponibles pour votre compte de développeur, notamment les prix du marché associés à chaque niveau, accédez à la page **Tarification et disponibilité** des soumissions d’applications dans le tableau de bord du Centre de développement, puis cliquez sur le lien d’**affichage de table** de la section **Marchés et prix personnalisés** (pour certains comptes développeur, ce lien se trouve dans la section **Tarification**).     |
 
 <span id="submission-status-code" />
 ### <a name="submission-status-code"></a>Code d’état de soumission
@@ -364,9 +379,4 @@ Les valeurs suivantes représentent le code d’état d’une soumission.
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Gérer les extensions à l’aide de l’API de soumission du Windows Store](manage-add-ons.md)
 * [Soumissions d’extensions dans le tableau de bord du Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

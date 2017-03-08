@@ -3,16 +3,23 @@ author: TylerMSFT
 title: "Surveiller la progression et l’achèvement des tâches en arrière-plan"
 description: "Découvrez comment votre application peut reconnaître la progression et l’achèvement signalés par une tâche en arrière-plan."
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: c7b6062a624b194b2806788c5f498d87aaa209a2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 709f3da69e95985512835994a9bb7cf5e0e91a7f
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="monitor-background-task-progress-and-completion"></a>Surveiller la progression et l’achèvement des tâches en arrière-plan
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -210,9 +217,4 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
 * [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

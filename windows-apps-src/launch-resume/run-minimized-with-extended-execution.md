@@ -2,9 +2,17 @@
 author: TylerMSFT
 description: "Découvrir comment utiliser l’exécution étendue pour que votre application continue de s’exécuter lorsqu’elle est en mode réduit"
 title: "Lancer une application en mode réduit avec exécution étendue"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 translationtype: Human Translation
-ms.sourcegitcommit: e9fcb1f0d1248de25d576029d50070792ad72182
-ms.openlocfilehash: 40b2a15379129142a84c4a5caf4317dc50041e06
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b7bda3b25e2c268926223da429abf559524ad38c
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -241,9 +249,4 @@ Utilisez la méthode [BackgroundExecutionManager.RequestAccessAsync](https://msd
 [Transferts en arrière-plan](https://msdn.microsoft.com/en-us/windows/uwp/networking/background-transfers)  [Activité en arrière-plan et prise en charge de la batterie](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
 [Classe MemoryManager](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.aspx)  
 [Lire du contenu multimédia en arrière-plan](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

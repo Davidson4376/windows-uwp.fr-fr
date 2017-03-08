@@ -5,13 +5,20 @@ ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: "Liste de vérification de l’accessibilité"
 label: Accessibility checklist
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 1c569df0684506f703d3ca5707314a96b035fcf6
-ms.openlocfilehash: 5220255a29da9a42bb82df5f450961b5c1b34942
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c5db2b89c52f77cb92da06c246e07a215fd2d02d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Liste de vérification de l’accessibilité
+# <a name="accessibility-checklist"></a>Liste de vérification de l’accessibilité
 
 
 
@@ -54,20 +61,15 @@ Nous fournissons ici une liste de vérification qui vous permet de vous assurer 
 
 5.  Assurez-vous que vos paramètres de manifeste d’application respectent les recommandations en matière d’accessibilité.
 
-6.  Déclarez votre application comme accessible dans le WindowsStore.
+6.  Déclarez votre application comme accessible dans le Windows Store.
 
     Si vous avez implémenté la prise en charge de l’accessibilité de base, le fait de marquer votre application comme accessible dans le Windows Store peut vous permettre d’atteindre davantage de clients et d’obtenir davantage de bonnes évaluations.
 
     Pour plus d’informations, voir [Accessibilité dans le Windows Store](accessibility-in-the-store.md).
 
 <span id="related_topics"/>
-## Rubriques connexes  
+## <a name="related-topics"></a>Rubriques connexes  
 * [Accessibilité](accessibility.md)
 * [Concevoir des applications pour l’accessibilité](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [Pratiques à éviter](practices-to-avoid.md) 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

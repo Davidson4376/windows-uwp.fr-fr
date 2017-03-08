@@ -1,29 +1,36 @@
 ---
 author: mtoepke
-title: "Réduire la latence avec des chaînes d’échange DXGI1.3"
-description: "Utilisez DXGI 1.3 pour réduire la latence d’image effective en attendant que la chaîne d’échange indique le moment approprié pour débuter le rendu d’une nouvelle image."
+title: "Réduire la latence avec des chaînes d’échange DXGI 1.3"
+description: "Utilisez DXGI 1.3 pour réduire la latence d’image effective en attendant que la chaîne d’échange indique le moment approprié pour débuter le rendu d’une nouvelle image."
 ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, jeux, latence, dxgi, chaînes d’échange"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7eb0eab864c58b07e29803895423998dd647a87e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9f2babdac40e3baf27bec9b2e214e9350d1f2539
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Réduire la latence avec des chaînes d’échange DXGI 1.3
+# <a name="reduce-latency-with-dxgi-13-swap-chains"></a>Réduire la latence avec des chaînes d’échange DXGI 1.3
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Utilisez DXGI1.3 pour réduire la latence d’image effective en attendant que la chaîne d’échange indique le moment approprié pour débuter le rendu d’une nouvelle image. Normalement, les jeux doivent offrir la latence la plus faible possible entre le moment où l’entrée du joueur est reçue et le moment où le jeu répond à cette entrée en mettant à jour l’affichage. Cette rubrique décrit une technique disponible à partir de Direct3D 11.2, qui vous permet de réduire la latence d’image effective dans votre jeu.
+Utilisez DXGI 1.3 pour réduire la latence d’image effective en attendant que la chaîne d’échange indique le moment approprié pour débuter le rendu d’une nouvelle image. Normalement, les jeux doivent offrir la latence la plus faible possible entre le moment où l’entrée du joueur est reçue et le moment où le jeu répond à cette entrée en mettant à jour l’affichage. Cette rubrique décrit une technique disponible à partir de Direct3D 11.2, qui vous permet de réduire la latence d’image effective dans votre jeu.
 
-## Comment la mise en file d’attente en mémoire tampon d’arrière-plan peut-elle réduire la latence ?
+## <a name="how-does-waiting-on-the-back-buffer-reduce-latency"></a>Comment la mise en file d’attente en mémoire tampon d’arrière-plan peut-elle réduire la latence ?
 
 
 Avec la chaîne de permutation de modèle de retournement, les « retournements » de la mémoire tampon d’arrière-plan sont placés en file d’attente chaque fois que votre jeu appelle [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576). Quand la boucle de rendu appelle Present(), le système bloque le thread jusqu’à ce qu’il ait fini de présenter une image précédente, ce qui libère de l’espace pour la mise en file d’attente de la nouvelle image, avant la présentation réelle. Cela entraîne une latence supplémentaire entre le moment où le jeu dessine une image et le moment où le système lui permet d’afficher cette image. Bien souvent, le système atteint un état d’équilibre quand le jeu attend une image supplémentaire complète entre le moment du rendu et la présentation de chaque image. Il est préférable d’attendre que le système soit prêt à accepter une nouvelle image, puis d’effectuer le rendu en fonction des données actuelles et de mettre immédiatement l’image en file d’attente.
 
 Créez une chaîne d’échange d’attente avec l’indicateur [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076). Les chaînes d’échange créées de cette manière peuvent informer votre boucle de rendu, une fois que le système est prêt à accepter une nouvelle image. Cela permet à votre jeu d’effectuer le rendu en fonction des données actuelles, puis de placer le résultat immédiatement en file d’attente de présentation.
 
-## Étape1: Créer une chaîne d’échange d’attente
+## <a name="step-1-create-a-waitable-swap-chain"></a>Étape 1 : Créer une chaîne d’échange d’attente
 
 
 Spécifiez l’indicateur [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076) quand vous appelez [**CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559).
@@ -32,7 +39,7 @@ Spécifiez l’indicateur [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **Remarque** Contrairement à certains indicateurs, cet indicateur ne peut pas être ajouté ou retiré avec [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). DXGI renvoie un code d’erreur si cet indicateur n’est pas le même qu’au moment de la création de la chaîne d’échange.
+> **Remarque**  Contrairement à certains indicateurs, cet indicateur ne peut pas être ajouté ou retiré avec [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). DXGI renvoie un code d’erreur si cet indicateur n’est pas le même qu’au moment de la création de la chaîne d’échange.
 
  
 
@@ -47,12 +54,12 @@ HRESULT hr = m_swapChain->ResizeBuffers(
     );
 ```
 
-## Étape 2 : définir la latence d’image
+## <a name="step-2-set-the-frame-latency"></a>Étape 2 : définir la latence d’image
 
 
 Définissez la latence d’image avec l’API [**IDXGISwapChain2::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/dn268313), au lieu d’appeler [**IDXGIDevice1::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/ff471334).
 
-Par défaut, la valeur de latence d’image pour les chaînes d’échange d’attente est égale à 1, ce qui correspond à la latence la plus faible. Toutefois, cela réduit également le parallélisme entre l’UC et le processeur graphique. Si vous avez besoin d’un parallélisme plus important entre l’UC et le processeur graphique afin d’atteindre 60FPS (en d’autres termes, si l’UC et le processeur graphique consacrent chacun moins de 16,7ms au rendu d’une image, mais qu’ils consacrent à eux deux plus de 16,7ms), affectez la valeur2 à la latence d’image. Cela permet au processeur graphique de traiter les travaux mis en file d’attente par l’UC durant le traitement de l’image précédente, tout en permettant à l’UC d’envoyer les commandes de rendu de l’image actuelle de façon indépendante.
+Par défaut, la valeur de latence d’image pour les chaînes d’échange d’attente est égale à 1, ce qui correspond à la latence la plus faible. Toutefois, cela réduit également le parallélisme entre l’UC et le processeur graphique. Si vous avez besoin d’un parallélisme plus important entre l’UC et le processeur graphique afin d’atteindre 60 FPS (en d’autres termes, si l’UC et le processeur graphique consacrent chacun moins de 16,7 ms au rendu d’une image, mais qu’ils consacrent à eux deux plus de 16,7 ms), affectez la valeur 2 à la latence d’image. Cela permet au processeur graphique de traiter les travaux mis en file d’attente par l’UC durant le traitement de l’image précédente, tout en permettant à l’UC d’envoyer les commandes de rendu de l’image actuelle de façon indépendante.
 
 ```cpp
 // Swapchains created with the DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT flag use their
@@ -65,7 +72,7 @@ Par défaut, la valeur de latence d’image pour les chaînes d’échange d’a
 //    );
 ```
 
-## Étape 3 : obtenir l’objet d’attente de la chaîne de permutation
+## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>Étape 3 : obtenir l’objet d’attente de la chaîne de permutation
 
 
 Appelez [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309) pour récupérer le handle d’attente. Le handle d’attente est un pointeur vers l’objet d’attente. Conservez ce handle afin qu’il soit utilisé par votre boucle de rendu.
@@ -77,7 +84,7 @@ Appelez [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.micros
 m_frameLatencyWaitableObject = swapChain2->GetFrameLatencyWaitableObject();
 ```
 
-## Étape 4 : attendre avant d’effectuer le rendu de chaque image
+## <a name="step-4-wait-before-rendering-each-frame"></a>Étape 4 : attendre avant d’effectuer le rendu de chaque image
 
 
 Votre boucle de rendu doit attendre le signal de la chaîne de permutation via l’objet d’attente avant de commencer à effectuer le rendu de chaque image. Cela inclut la première image rendue avec la chaîne d’échange. Utilisez [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036), en fournissant le handle d’attente récupéré à l’étape 2, pour signaler le début de chaque image.
@@ -128,7 +135,7 @@ void DX::DeviceResources::WaitOnSwapChain()
 }
 ```
 
-## Que doit faire mon jeu pendant qu’il attend la présentation de la chaîne de permutation ?
+## <a name="what-should-my-game-do-while-it-waits-for-the-swap-chain-to-present"></a>Que doit faire mon jeu pendant qu’il attend la présentation de la chaîne de permutation ?
 
 
 Si votre jeu n’a aucune tâche qui bloque la boucle de rendu, il peut être judicieux de le laisser attendre la présentation de la chaîne de permutation, car cela permet d’économiser de l’énergie, ce qui est particulièrement important sur les appareils mobiles. Sinon, utilisez le multithreading pour exécuter le travail pendant que votre jeu attend la présentation de la chaîne de permutation. Voici quelques tâches que votre jeu peut effectuer :
@@ -141,7 +148,7 @@ Si votre jeu n’a aucune tâche qui bloque la boucle de rendu, il peut être ju
 
 Pour plus d’informations sur la programmation multithread dans Windows, voir les rubriques connexes suivantes.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 
 * [Exemple DirectXLatency](http://go.microsoft.com/fwlink/p/?LinkID=317361)
@@ -159,10 +166,5 @@ Pour plus d’informations sur la programmation multithread dans Windows, voir l
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

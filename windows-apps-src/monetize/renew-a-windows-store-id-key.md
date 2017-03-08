@@ -3,30 +3,37 @@ author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: "Utilisez cette méthode pour renouveler une clé du Windows Store."
 title: "Renouveler une clé d’ID du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de collection du Windows Store, API d’achat du Windows Store, clé d’ID du Windows Store, renouveler"
 translationtype: Human Translation
-ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
-ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b740cf431607f1748a8513a02746a70560d09da2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Renouveler une clé d’ID du WindowsStore
+# <a name="renew-a-windows-store-id-key"></a>Renouveler une clé d’ID du Windows Store
 
 
-Utilisez cette méthode pour renouveler une clé du Windows Store. Lorsque vous [générez une clé d’ID du Windows Store](view-and-grant-products-from-a-service.md#step-4), la clé est valide pendant 90jours. Après l’expiration de la clé, vous pouvez utiliser la clé arrivée à expiration pour en renégocier une nouvelle à l’aide de cette méthode.
+Utilisez cette méthode pour renouveler une clé du Windows Store. Lorsque vous [générez une clé d’ID du Windows Store](view-and-grant-products-from-a-service.md#step-4), la clé est valide pendant 90 jours. Après l’expiration de la clé, vous pouvez utiliser la clé arrivée à expiration pour en renégocier une nouvelle à l’aide de cette méthode.
 
-## Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables
 
 
-Pour utiliser cette méthode, vous devez disposer des éléments suivants:
+Pour utiliser cette méthode, vous devez disposer des éléments suivants :
 
-* un jeton d’accès AzureAD créé avec l’URI d’audience `https://onestore.microsoft.com`;
-* La clé expirée d’ID du WindowsStore [générée à partir du code côté client de votre application](view-and-grant-products-from-a-service.md#step-4).
+* un jeton d’accès Azure AD créé avec l’URI d’audience `https://onestore.microsoft.com` ;
+* une clé d’ID du Windows Store expirée qui a été [générée à partir du code côté client de votre application](view-and-grant-products-from-a-service.md#step-4).
 
-Pour plus d’informations, voir [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md).
+Pour plus d’informations, voir [Gérer les droits sur les produits à partir d’un service](view-and-grant-products-from-a-service.md).
 
-## Requête
+## <a name="request"></a>Requête
 
-### Syntaxe de la requête
+### <a name="request-syntax"></a>Syntaxe de la requête
 
 | Type de clé    | Méthode | URI de la requête                                              |
 |-------------|--------|----------------------------------------------------------|
@@ -35,7 +42,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
 <span/>
 
-### En-tête de requête
+### <a name="request-header"></a>En-tête de requête
 
 | En-tête         | Type   | Description                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
@@ -45,7 +52,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
 <span/>
 
-### Corps de la requête
+### <a name="request-body"></a>Corps de la requête
 
 | Paramètre     | Type   | Description                       | Obligatoire |
 |---------------|--------|-----------------------------------|----------|
@@ -54,7 +61,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
 <span/> 
 
-### Exemple de requête
+### <a name="request-example"></a>Exemple de requête
 
 ```syntax
 POST https://collections.mp.microsoft.com/v6.0/b2b/keys/renew HTTP/1.1
@@ -68,10 +75,10 @@ Host: collections.mp.microsoft.com
 }
 ```
 
-## Réponse
+## <a name="response"></a>Réponse
 
 
-### Corps de la réponse
+### <a name="response-body"></a>Corps de la réponse
 
 | Paramètre | Type   | Description                                                                                                            | Obligatoire |
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
@@ -79,7 +86,7 @@ Host: collections.mp.microsoft.com
 
 <span/>
 
-### Exemple de réponse
+### <a name="response-example"></a>Exemple de réponse
 
 ```syntax
 HTTP/1.1 200 OK
@@ -96,26 +103,21 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 }
 ```
 
-## Codes d’erreur
+## <a name="error-codes"></a>Codes d’erreur
 
 
 | Code | Erreur        | Code d’erreur interne           | Description                                                                                                                                                                           |
 |------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 401  | Non autorisé | AuthenticationTokenInvalid | Le jeton d’accès Azure AD n’est pas valide. Dans certains cas, les détails de l’erreur ServiceError contiennent plus d’informations, par exemple lorsque le jeton est arrivé à expiration ou que la revendication *appid* est manquante. |
-| 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du Windows Store et la revendication *appid* dans le jeton d’accès Azure AD ne correspondent pas.                                                                     |
+| 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du Windows Store et la revendication *appid* dans le jeton d’accès Azure AD ne correspondent pas.                                                                     |
 
 <span/>
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md)
+* [Gérer les droits sur les produits à partir d’un service](view-and-grant-products-from-a-service.md)
 * [Demander des produits](query-for-products.md)
 * [Signaler le traitement de la commande d’un produit consommable](report-consumable-products-as-fulfilled.md)
 * [Octroyer des produits gratuits](grant-free-products.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

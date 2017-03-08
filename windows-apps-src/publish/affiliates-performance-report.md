@@ -3,9 +3,16 @@ author: jnHs
 Description: "Pour afficher les données de performances pour les annonces des affiliés dans vos applications, utilisez les rapports de performances des annonces des affiliés au niveau du compte et de l’application dans le tableau de bord du Centre de développement Windows."
 title: "Rapport de performances des annonces des affiliés"
 ms.assetid: 38AD494C-0F85-4FED-8732-9064D1FC503D
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 9646b9614bb2935db5880cad9bf1a58648330671
-ms.openlocfilehash: 76bb607fb0abf11c863be24489a4eea0747a4e40
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3b85abb11049a1e52e9d6a9cc61aebab407207a4
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -34,7 +41,7 @@ Les données sont obtenues à partir des sept métriques de performances suivant
 -   **Achats (approuvés)** : le nombre d’achats approuvés effectués par les utilisateurs ayant cliqué sur les annonces des affiliés dans votre application.
 -   **Achats (en attente d’approbation)** : le nombre d’achats en attente d’approbation effectués par les utilisateurs ayant cliqué sur les annonces des affiliés dans votre application.
 
-> **Remarque** Après qu’un utilisateur achète un produit dans le Windows Store, il existe un délai d’attente de 45 jours avant l’approbation de l’achat pour le programme d’annonce des affiliés. En raison de ce délai d’attente, les données **Revenus estimés (approuvés)**, **Revenus estimés (en attente d’approbation)**, **Achats (approuvés)** et **Achats (en attente d’approbation)** pour un jour donné peuvent changer après l’approbation ou le rejet des achats.
+> **Remarque**  Après qu’un utilisateur achète un produit dans le Windows Store, il existe un délai d’attente de 45 jours avant l’approbation de l’achat pour le programme d’annonce des affiliés. En raison de ce délai d’attente, les données **Revenus estimés (approuvés)**, **Revenus estimés (en attente d’approbation)**, **Achats (approuvés)** et **Achats (en attente d’approbation)** pour un jour donné peuvent changer après l’approbation ou le rejet des achats.
 
 ## <a name="dashboard-level-affiliate-ads-performance-report"></a>Rapport de performances des annonces des affiliés au niveau du tableau de bord.
 
@@ -47,9 +54,4 @@ La section **Performance des annonces des affiliés** sur la page de **présenta
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

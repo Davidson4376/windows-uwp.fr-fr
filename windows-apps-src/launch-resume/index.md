@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "Lancement, reprise et tâches en arrière-plan"
 description: "Cette section décrit ce qui se produit en cas de démarrage, de suspension, de reprise et d’arrêt d’une application de plateforme Windows universelle (UWP)."
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 32737991b31eaceb33fc2ecb5152def167c36fdd
-ms.openlocfilehash: 6b350ef65f381d18585c8b080c6259f7607c7bf9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 40400b8b17da9b010c0f03e9976201a1def025f8
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="launching-resuming-and-background-tasks"></a>Lancement, reprise et tâches en arrière-plan
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 Cette section contient des informations sur ce qui suit :
 
@@ -116,9 +123,4 @@ La section [Écrans de démarrage](splash-screens.md) explique comment définir 
 |-------|-------------|
 | [Ajouter un écran de démarrage](add-a-splash-screen.md) | Définissez l’image et la couleur d’arrière-plan de l’écran de démarrage de votre application. |
 | [Afficher un écran de démarrage plus longtemps](create-a-customized-splash-screen.md) | Affichez un écran de démarrage plus longtemps en créant et en affichant un écran de démarrage étendu pour votre application. Cet écran étendu imite l’écran de démarrage affiché quand votre application est lancée. Il peut être personnalisé. |
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -3,9 +3,16 @@ author: laurenhughes
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: "Ouvrir des fichiers et dossiers à l’aide d’un sélecteur"
 description: "Accédez aux fichiers et dossiers en permettant à l’utilisateur d’interagir avec ceux-ci à l’aide d’un sélecteur. Vous pouvez utiliser les classes FileOpenPicker et FileSavePicker pour accéder à des fichiers et la classe FolderPicker pour accéder à un dossier."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 99a21818fc3b8552de18792f408da860bf6dea22
-ms.openlocfilehash: 08782286228fa25dc492b0e7ccc90958bdec5a7f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 96a1cdbf5420978ae8889c86eeafd7825d568261
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -175,8 +182,3 @@ else
 ```
 
 **Conseil** Chaque fois que votre application accède à un fichier ou à un dossier par le biais d’un sélecteur, ajoutez-le aux listes [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) ou [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) de votre application pour en garder la trace. Pour plus d’informations sur l’utilisation de ces listes, consultez [Comment suivre les fichiers et les dossiers récemment utilisés](how-to-track-recently-used-files-and-folders.md).
-
-
-<!--HONumber=Jan17_HO1-->
-
-

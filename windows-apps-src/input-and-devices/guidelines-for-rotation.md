@@ -1,13 +1,20 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Cette rubrique décrit la nouvelle interface utilisateur Windows pour la rotation et fournit des recommandations en matière d’expérience utilisateur à prendre en compte lors de l’utilisation de ce nouveau mécanisme d’interaction dans votre application du Windows Store."
+Description: "Cet article décrit la nouvelle interface utilisateur Windows pour la rotation et fournit des recommandations en matière d’expérience utilisateur à prendre en compte lors de l’utilisation de ce nouveau mécanisme d’interaction dans votre application du Windows Store."
 title: Rotation
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 3217dd6bda6d9692ff450133af23002a7040347b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6b5d2e6a41c1566c7c03b61b91bf9c641f674cea
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -126,10 +133,5 @@ Windows 8 prend en charge trois types de rotations : libre, contrainte et combi
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

@@ -1,17 +1,24 @@
 ---
 author: QuinnRadich
-title: "Modifications apportées aux API Windows10 version1607"
-description: "Les développeurs peuvent utiliser la liste suivante pour identifier les nouveaux espaces de noms ou les espaces de noms modifiés dans Windows10 version1607"
-keywords: "nouveautés, nouveauté, mise à jour, mises à jour, nouveau, Windows10, 1607, api"
+title: "Modifications apportées aux API Windows 10 version 1607"
+description: "Les développeurs peuvent utiliser la liste suivante pour identifier les nouveaux espaces de noms ou les espaces de noms modifiés dans Windows 10 version 1607"
+keywords: "nouveautés, nouveauté, mise à jour, mises à jour, nouveau, Windows 10, 1607, api"
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+ms.assetid: 40335c70-46cc-40fd-9fe0-3cc8e6200482
 translationtype: Human Translation
-ms.sourcegitcommit: 8d7ea8adcff944a9be58f164e88623861e4cf8ad
-ms.openlocfilehash: 7ab2c9f1054509f816ef9647f340e61b6a281d8a
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 18d4bac980592b41479e01b8644f9bb9bf291575
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Modifications apportées aux API de Windows10
+# <a name="windows-10-api-changes"></a>Modifications apportées aux API de Windows 10
 
-De nombreuses API de runtime ont été ajoutées ou modifiées dans Windows10 version1607. Le tableau ci-dessous répertorie les espaces de noms qui ont été ajoutés ou modifiés dans cette version.
+De nombreuses API de runtime ont été ajoutées ou modifiées dans Windows 10 version 1607. Le tableau ci-dessous répertorie les espaces de noms qui ont été ajoutés ou modifiés dans cette version.
 
 
 **Élément**
@@ -5153,10 +5160,5 @@ Windows.Services.Store.StoreSubscriptionInfo <br /> Windows.Services.Store.Store
 
 Windows.Services.Store.StoreVideo <br /> Windows.Services.Store.StoreVideo.Caption <br /> Windows.Services.Store.StoreVideo.Height <br /> Windows.Services.Store.StoreVideo.PreviewImage <br /> Windows.Services.Store.StoreVideo.Uri <br /> Windows.Services.Store.StoreVideo.VideoPurposeTag <br /> Windows.Services.Store.StoreVideo.Width
 <hr>
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

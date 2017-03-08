@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: "Découvrez comment utiliser les bibliothèques de publicités Microsoft de Microsoft Store Services SDK pour insérer des spots publicitaires dans une application pour Windows 10, Windows 8.1 ou Windows Phone 8.1."
 title: Spots publicitaires
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, pubs, publicités, spots"
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: fae0fc57eca3477bf46a6f3ac43ec35781241a6e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fb1cdd018ed496b59290825ee84d10ac70a0e46d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -230,9 +237,4 @@ Lorsque vous utilisez les bibliothèques de publicités Microsoft, vous ne pouve
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

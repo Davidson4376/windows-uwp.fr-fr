@@ -3,14 +3,21 @@ author: laurenhughes
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: "Installer des applications avec l’outil WinAppDeployCmd.exe"
 description: "Le déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de ligne de commande qui permet de déployer une application de plateforme Windows universelle (UWP) à partir d’un PC Windows 10 et vers tout appareil Windows 10."
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: f467bd83c2f700d94a232c99a06f86f1f1b1a0ac
-ms.openlocfilehash: 37028e1e119f27a8c82bc024e52f939a89243244
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9148a26b813d99ca04ae2e5a050bbc9b590d5f6e
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>Installer des applications avec l’outil WinAppDeployCmd.exe
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Le déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de ligne de commande qui permet de déployer une application de plateforme Windows universelle (UWP) à partir d’un PC Windows 10 et vers tout appareil Windows 10. Vous pouvez utiliser cet outil pour déployer un package .appx lorsque l’appareil Windows 10 est connecté via un port USB ou disponible sur le même sous-réseau, sans avoir besoin de Microsoft Visual Studio ni de la solution pour cette application. Vous pouvez également déployer l’application sans créer de package au préalable vers un ordinateur distant ou une Xbox One. Cet article décrit comment installer des applications UWP à l’aide de cet outil.
 
@@ -149,9 +156,4 @@ WinAppDeployCmd registerfiles -ip <Xbox One IP> -remotedeploydir <location of ap
 
 ex. WinAppDeployCmd register files -ip 192.168.0.1 -remotedeploydir \\driveA\myAppLocation -username admin -password A1B2C3
 ```
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

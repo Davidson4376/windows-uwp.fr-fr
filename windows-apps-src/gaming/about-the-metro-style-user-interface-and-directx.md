@@ -1,22 +1,29 @@
 ---
 author: mtoepke
 title: Objet application et DirectX
-description: "Les applications UWP intégrant des jeux DirectX n’utilisent pas beaucoup d’éléments et d’objets d’interface utilisateur Windows Store."
+description: "Les applications de la plateforme Windows universelle (UWP) intégrant des jeux DirectX n’utilisent pas beaucoup d’éléments et d’objets d’interface utilisateur Windows Store."
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, directx, objet d&quot;application"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7d3290633ead698a6c42c3accdbd2012ccfd7065
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Objet application et DirectX
+# <a name="the-app-object-and-directx"></a>Objet application et DirectX
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Les applications de la plateforme Windows universelle (UWP) intégrant des jeux DirectX n’utilisent pas beaucoup d’éléments et d’objets d’interface utilisateur Windows Store. En effet, comme elles s’exécutent à un niveau inférieur de la pile Windows Runtime, elles doivent interopérer avec l’infrastructure d’interface utilisateur d’une manière plus basique: en accédant directement à l’objet application et en interopérant avec lui. Découvrez quand et comment cette interopération se produit et comment vous, en tant que développeur DirectX, vous pouvez exploiter efficacement ce modèle dans le cadre du développement de vos applications de la plateforme Windows universelle.
+Les applications de la plateforme Windows universelle (UWP) intégrant des jeux DirectX n’utilisent pas beaucoup d’éléments et d’objets d’interface utilisateur Windows Store. En effet, comme elles s’exécutent à un niveau inférieur de la pile Windows Runtime, elles doivent interopérer avec l’infrastructure d’interface utilisateur d’une manière plus basique : en accédant directement à l’objet application et en interopérant avec lui. Découvrez quand et comment cette interopération se produit et comment vous, en tant que développeur DirectX, vous pouvez exploiter efficacement ce modèle dans le cadre du développement de vos applications de la plateforme Windows universelle.
 
-## Principaux espaces de noms d’interface utilisateur
+## <a name="the-important-core-user-interface-namespaces"></a>Principaux espaces de noms d’interface utilisateur
 
 
 Pour commencer, intéressons-nous aux espaces de noms Windows Runtime que vous devez inclure (à l’aide de **using**) dans vos applications de la plateforme Windows universelle. Entrons un peu dans les détails.
@@ -27,11 +34,11 @@ Pour commencer, intéressons-nous aux espaces de noms Windows Runtime que vous d
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **Remarque** Si vous ne développez pas une application UWP, utilisez les composants d’interface utilisateur fournis par les bibliothèques et les espaces de noms spécifiques à JavaScript (ou XAML) au lieu des types fournis par ces espaces de noms.
+> **Remarque**   Si vous ne développez pas une application UWP, utilisez les composants d’interface utilisateur fournis par les bibliothèques et les espaces de noms spécifiques à JavaScript (ou XAML) au lieu des types fournis par ces espaces de noms.
 
  
 
-## Objet application Windows Runtime
+## <a name="the-windows-runtime-app-object"></a>Objet application Windows Runtime
 
 
 Dans votre application UWP, vous souhaitez obtenir une fenêtre et un fournisseur de vues à partir duquel vous pouvez obtenir une vue et auquel vous pouvez connecter votre chaîne d’échange (vos mémoires tampons d’affichage). Vous pouvez également « établir un hook » avec cette vue dans les événements spécifiques à la fenêtre pour votre application en cours d’exécution. Pour obtenir la fenêtre parente pour l’objet application, qui est définie par le type [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225), créez un type qui implémente [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482), comme nous l’avons fait dans l’extrait de code précédent.
@@ -58,10 +65,10 @@ Pour faire en sorte qu’une fenêtre utilise l’infrastructure d’interface u
 
 Maintenant que nous avons vu les principes de base, examinons les autres options permettant de développer cette approche.
 
-## Principaux types d’interface utilisateur
+## <a name="core-user-interface-types"></a>Principaux types d’interface utilisateur
 
 
-Voici d’autres types principaux d’interface utilisateur figurant dans Windows Runtime et qui peuvent s’avérer utiles:
+Voici d’autres types principaux d’interface utilisateur figurant dans Windows Runtime et qui peuvent s’avérer utiles :
 
 -   [**Windows.ApplicationModel.Core.CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017)
 -   [**Windows.UI.Core.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
@@ -79,12 +86,12 @@ La vue de votre application est générée par le fournisseur de vues de la fen�
 
 Pour résumer, l’objet application fournit une fabrique de fournisseurs de vues. Elle crée un fournisseur de vues et instancie une fenêtre parente pour l’application. Le fournisseur de vues définit la vue de l’application pour la fenêtre parente de l’application. À présent, examinons les spécificités de la vue et de la fenêtre parente.
 
-## Comportements et propriétés de CoreApplicationView
+## <a name="coreapplicationview-behaviors-and-properties"></a>Comportements et propriétés de CoreApplicationView
 
 
 [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) représente la vue d’application active. Le singleton de l’application crée la vue de l’application pendant l’initialisation, mais la vue reste dormante jusqu’à ce qu’elle soit activée. Vous pouvez obtenir le [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) qui affiche la vue en accédant à sa propriété [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019), et vous pouvez gérer les événements d’activation et de désactivation de la vue en inscrivant des délégués avec l’événement [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018).
 
-## Comportements et propriétés de CoreWindow
+## <a name="corewindow-behaviors-and-properties"></a>Comportements et propriétés de CoreWindow
 
 
 La fenêtre parente, qui est une instance de [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225), est créée et passée au fournisseur de vues lors de l’initialisation de l’objet application. Si l’application a une fenêtre à afficher, elle l’affiche ; sinon, elle ne fait qu’initialiser la vue.
@@ -93,7 +100,7 @@ La fenêtre parente, qui est une instance de [**CoreWindow**](https://msdn.micro
 
 Vous pouvez également obtenir le répartiteur d’événements de fenêtre pour la fenêtre en accédant à la propriété [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264), qui fournit une instance de [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211).
 
-## Comportements et propriétés de CoreDispatcher
+## <a name="coredispatcher-behaviors-and-properties"></a>Comportements et propriétés de CoreDispatcher
 
 
 Vous pouvez déterminer le comportement de thread de la distribution d’événements pour une fenêtre avec le type [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211). Dans ce type, il existe une méthode particulièrement importante : la méthode [**CoreDispatcher.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215), qui démarre le traitement des événements de fenêtre. Le fait d’appeler cette méthode avec une option non appropriée peut entraîner toutes sortes de comportements de traitement d’événements inattendus.
@@ -109,7 +116,7 @@ Vous pouvez déterminer le comportement de thread de la distribution d’événe
 
 Les applications DirectX UWP doivent utiliser l’option [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217) pour empêcher les comportements de blocage qui pourraient interrompre les mises à jour graphiques.
 
-## Considérations relatives aux threads ASTA pour les développeurs DirectX
+## <a name="asta-considerations-for-directx-devs"></a>Considérations relatives aux threads ASTA pour les développeurs DirectX
 
 
 L’objet application qui définit la représentation au moment de l’exécution de votre application UWP basée sur DirectX utilise un modèle de thread appelé modèle de thread unique cloisonné d’application (ASTA) pour héberger les affichages d’interface utilisateur de votre application. Si vous développez une application UWP basée sur DirectX, vous connaissez déjà les propriétés d’un thread ASTA, car tout thread que vous distribuez à partir de votre application UWP basée sur DirectX doit utiliser les API [**Windows::System::Threading**](https://msdn.microsoft.com/library/windows/apps/br229642), ou recourir à [**CoreWindow::CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211). (Vous pouvez obtenir l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) pour le thread ASTA en appelant [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) à partir de votre application.)
@@ -138,7 +145,7 @@ Si vous portez du code existant afin qu’il s’exécute sur le thread ASTA, n�
     2.  Le thread ASTA appelle plus tard le même objet MTA. L’objet MTA appelle P1 avant son retour au thread ASTA.
     3.  P1 ne peut pas entrer dans le thread ASTA, car il est bloqué en tentant d’effectuer un appel sans rapport. Toutefois, le thread MTA est bloqué, car il tente d’effectuer l’appel vers P1.
 
-    Vous pouvez résoudre ce problème en:
+    Vous pouvez résoudre ce problème en :
     -   utilisant le modèle **async** défini dans la Bibliothèque de modèles parallèles (PPLTasks.h) ;
     -   appelant [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) à partir du thread ASTA de votre application (thread principal de votre application) dès que possible pour autoriser les appels arbitraires.
 
@@ -152,10 +159,5 @@ Globalement, lors de la conception de votre application UWP basée sur DirectX, 
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

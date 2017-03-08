@@ -4,9 +4,17 @@ Description: "Utilisez une liste inversée pour ajouter de nouveaux éléments d
 title: "Listes inversées"
 label: Inverted lists
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: 52c1d63d-69c1-48d6-a234-6f39296e4bfd
 translationtype: Human Translation
-ms.sourcegitcommit: 5f50e490caa5d1d88c2f8315dc47e15b0ae22a05
-ms.openlocfilehash: de90c49dfc961241c1da028c8f7278e370a810bd
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 0a33aaf71dbf23e991591f790f7327d812b060ef
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="inverted-lists"></a>Listes inversées
@@ -39,7 +47,7 @@ Pour créer une liste inversée, utilisez un affichage de liste avec un objet [*
 Cet exemple montre comment aligner les éléments de l’affichage de liste sur la partie inférieure et indiquer que le dernier élément doit rester affiché en cas de modification des éléments.
  
  **XAML**
-```xaml
+ ```xaml
 <ListView>
     <ListView.ItemsPanel>
         <ItemsPanelTemplate>
@@ -55,9 +63,4 @@ Cet exemple montre comment aligner les éléments de l’affichage de liste sur 
 - Alignez les messages de l’expéditeur/du destinataire sur des côtés opposés afin de clarifier le flux de conversation pour les utilisateurs.
 - Animez les messages existants à l’écart afin d’afficher le dernier message si l’utilisateur est déjà positionné en fin de conversation en attente du message suivant.
 - S’il n’est pas positionné en fin de conversation, ne perturbez pas l’utilisateur en déplaçant des éléments.
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

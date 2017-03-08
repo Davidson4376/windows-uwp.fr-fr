@@ -3,27 +3,34 @@ author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: "Ouverture d’un compte de développeur"
 description: "Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un compte de développeur pour le Windows Store et d’autres programmes Microsoft, vous aidera à comprendre le processus de configuration de votre compte."
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 323577311d328da6ad1e7bf0a976d3cea099816a
-ms.openlocfilehash: 19096e3f1f94fb4eb98646163c6542a94f8612d4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 26329304df64689ea7938d4fc838bd730696e4a2
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="opening-a-developer-account"></a>Ouverture d’un compte de développeur
 
 Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un compte de développeur pour le Windows Store et d’autres programmes Microsoft, vous aidera à comprendre le processus de configuration de votre compte.
 
-> **Remarque** Lorsque vous vous inscrivez pour obtenir un compte de développeur, nous utilisons l’adresse e-mail que vous fournissez dans vos informations de contact pour vous envoyer des communications par courrier électronique concernant votre compte. Parfois, ces communications peuvent inclure des messages d’information sur nos programmes. Si vous choisissez de ne pas recevoir ces messages d’information (en ne les [acceptant pas](http://go.microsoft.com/fwlink/p/?LinkId=533280)), sachez que nous vous enverrons des messages électroniques sur les transactions (pour vous signaler que votre application a été certifiée ou qu’un versement est en cours, par exemple). Ces messages sur les transactions sont un aspect nécessaire de la gestion de votre compte. Tant que vous n’aurez pas fermé ce dernier, vous continuerez à en recevoir.
+> **Remarque**  Lorsque vous vous inscrivez pour obtenir un compte de développeur, nous utilisons l’adresse e-mail que vous fournissez dans vos informations de contact pour vous envoyer des communications par courrier électronique concernant votre compte. Parfois, ces communications peuvent inclure des messages d’information sur nos programmes. Si vous choisissez de ne pas recevoir ces messages d’information (en ne les [acceptant pas](http://go.microsoft.com/fwlink/p/?LinkId=533280)), sachez que nous vous enverrons des messages électroniques sur les transactions (pour vous signaler que votre application a été certifiée ou qu’un versement est en cours, par exemple). Ces messages sur les transactions sont un aspect nécessaire de la gestion de votre compte. Tant que vous n’aurez pas fermé ce dernier, vous continuerez à en recevoir.
 
 ## <a name="the-account-signup-process"></a>Le processus d’ouverture de compte
 
-> **Remarque** Dans certains cas, les écrans et les champs que vous voyez au moment de vous inscrire à un compte de développeur peuvent varier légèrement de ce qui est indiqué ci-dessous, même si les informations de base et processus restent les mêmes.
+> **Remarque**  Dans certains cas, les écrans et les champs que vous voyez au moment de vous inscrire à un compte de développeur peuvent varier légèrement de ce qui est indiqué ci-dessous, même si les informations de base et processus restent les mêmes.
 
 1.  Accédez à la [page d’inscription](http://go.microsoft.com/fwlink/p/?LinkId=615100), puis cliquez sur **S’inscrire**.
 2.  Choisissez le [pays/région](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) dans lequel vous vivez ou dans lequel se situe votre entreprise. Vous ne pourrez pas faire de changements par la suite.
 3.  Sélectionnez votre [type de compte de développeur](account-types-locations-and-fees.md) (individuel ou d’entreprise). Vous ne pourrez pas le changer par la suite. Soyez donc sûr de votre choix. S’il s’agit d’un compte d’entreprise, veillez à bien lire les [recommandations](#additional-guidelines-for-company-accounts) ci-dessous.
 4.  Entrez les coordonnées à utiliser pour votre compte de développeur.
 
-  > **Remarque** Nous n’utilisons ces informations que pour des questions concernant votre compte. Par exemple, vous recevrez un message électronique de confirmation une fois votre inscription terminée. Après cela, nous vous enverrons des messages au moment du règlement ou en cas de problème avec votre compte. Comme décrit ci-dessus, nous pouvons également envoyer des messages d’information, sauf si vous ne souhaitez plus recevoir de messages électroniques non transactionnels.
+  > **Remarque**  Nous n’utilisons ces informations que pour des questions concernant votre compte. Par exemple, vous recevrez un message électronique de confirmation une fois votre inscription terminée. Après cela, nous vous enverrons des messages au moment du règlement ou en cas de problème avec votre compte. Comme décrit ci-dessus, nous pouvons également envoyer des messages d’information, sauf si vous ne souhaitez plus recevoir de messages électroniques non transactionnels.
 
    Si vous vous inscrivez en tant qu’entreprise, vous devez également entrer le nom, l’adresse de messagerie et le numéro de téléphone de la personne qui approuvera le compte de votre société.
 
@@ -33,7 +40,7 @@ Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un co
     
     Si vous entrez un nom déjà sélectionné, ou s’il apparaît que quelqu’un d’autre dispose des droits d’utilisation de ce nom, vous n’êtes pas autorisé à utiliser ce nom. 
 
-  >  **Remarque** Vérifiez que vous disposez des droits d’utilisation du nom entré ici. Si quelqu’un d’autre a déposé la marque ou protégé par copyright le nom que vous avez choisi, votre compte risque d’être fermé. Pour plus d’informations, voir votre [Contrat du développeur d’applications](https://msdn.microsoft.com/library/windows/apps/Hh694058). Si une autre personne utilise un nom d’éditeur pour lequel vous détenez un quelconque droit, [contactez Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).    
+  >  **Remarque**  Vérifiez que vous disposez des droits d’utilisation du nom entré ici. Si quelqu’un d’autre a déposé la marque ou protégé par copyright le nom que vous avez choisi, votre compte risque d’être fermé. Pour plus d’informations, voir votre [Contrat du développeur d’applications](https://msdn.microsoft.com/library/windows/apps/Hh694058). Si une autre personne utilise un nom d’éditeur pour lequel vous détenez un quelconque droit, [contactez Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).    
 
 6.  Entrez les coordonnées associées au compte. S’il s’agit d’un compte d’entreprise, vous devrez également fournir les coordonnées de la personne habilitée à vérifier que vous êtes autorisé à créer le compte pour le compte de votre société. Quand vous avez terminé, cliquez sur **Suivant** afin d’accéder à la section **Paiement**.
 
@@ -84,10 +91,5 @@ Lorsque vous fermez votre compte, il est important que vous en compreniez les r�
 -   Le nom de votre application deviendra potentiellement utilisable par un autre développeur.
 -   Si un solde provenant des ventes d’une précédente application vous est dû, ce solde vous sera réglé, même si la somme due n’atteint pas le seuil de paiement habituel.
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

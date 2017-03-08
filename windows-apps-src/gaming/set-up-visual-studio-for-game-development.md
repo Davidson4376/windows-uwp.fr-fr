@@ -3,16 +3,23 @@ author: mtoepke
 title: Visual Studio Tools pour la programmation de jeux
 description: "Vue d’ensemble des outils propres à DirectX disponibles dans Visual Studio."
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp, jeux, visual studio, outils, directx
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 59fe007601d16f6586ec52c0026e161ad6350a1e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5f5c1ef45dd476565d302ef10f8d47ab2b819993
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Visual Studio Tools pour la programmation de jeux
+# <a name="visual-studio-tools-for-game-programming"></a>Outils Visual Studio pour la programmation de jeux
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **Récapitulatif**
 
@@ -24,7 +31,7 @@ Si vous utilisez Visual Studio Ultimate pour développer des applications Direct
 
 Cette rubrique donne une vue d’ensemble de ces fonctionnalités.
 
-## Éditeur d’images
+## <a name="image-editor"></a>Éditeur d’images
 
 
 Utilisez l’Éditeur d’images pour exploiter les types de formats de texture et d’image enrichis que DirectX utilise. L’Éditeur d’images prend en charge les formats suivants :
@@ -38,7 +45,7 @@ Utilisez l’Éditeur d’images pour exploiter les types de formats de texture 
 -   .tif, .tiff
 -   .tga
 
-Créez des [fichiers de personnalisations de la build](#custom) pour les convertir en fichiers .dds au moment de la création.
+Créez des [fichiers de personnalisations de la build](#build-customizations-for-3d-assets) pour les convertir en fichiers .dds au moment de la création.
 
 Pour plus d’informations, voir [Utilisation de textures et d’images](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx).
 
@@ -46,10 +53,10 @@ Pour plus d’informations, voir [Utilisation de textures et d’images](https:/
 
  
 
-## Éditeur de modèles
+## <a name="model-editor"></a>Éditeur de modèles
 
 
-Vous pouvez utiliser l’Éditeur de modèles pour créer des modèles en 3D de base ex nihilo ou pour afficher et modifier des modèles en 3D plus complexes à partir d’outils de modélisation en 3D complets. L’Éditeur de modèles prend en charge plusieurs formats de modèles en 3D qui sont utilisés dans le cadre du développement d’applications DirectX. Vous pouvez créer des [fichiers de personnalisations de la build](#custom) pour les convertir en fichiers .cmo au moment de la création.
+Vous pouvez utiliser l’Éditeur de modèles pour créer des modèles en 3D de base ex nihilo ou pour afficher et modifier des modèles en 3D plus complexes à partir d’outils de modélisation en 3D complets. L’Éditeur de modèles prend en charge plusieurs formats de modèles en 3D qui sont utilisés dans le cadre du développement d’applications DirectX. Vous pouvez créer des [fichiers de personnalisations de la build](#build-customizations-for-3d-assets) pour les convertir en fichiers .cmo au moment de la création.
 
 -   .fbx
 -   .dae
@@ -65,7 +72,7 @@ Pour plus d’informations, voir [Utilisation de modèles en 3D](https://msdn.mi
 
  
 
-## Concepteur de nuanceurs
+## <a name="shader-designer"></a>Concepteur de nuanceurs
 
 
 Utilisez le Concepteur de nuanceurs pour créer des effets visuels personnalisés pour votre jeu ou application, même si vous ne connaissez pas la programmation HLSL.
@@ -80,7 +87,7 @@ Utilisez l’Éditeur de nuanceurs pour concevoir, modifier et enregistrer des n
 -   .cso (bytecode)
 -   .h (tableau de bytecode HLSL)
 
-Créez des [fichiers de personnalisations de la build](#custom) pour convertir ces formats en fichiers .cso au moment de la création.
+Créez des [fichiers de personnalisations de la build](#build-customizations-for-3d-assets) pour convertir ces formats en fichiers .cso au moment de la création.
 
 Voici une partie du code HLSL exporté par l’Éditeur de nuanceurs. Il s’agit uniquement du code pour le nœud de l’éclairage lambertien.
 
@@ -108,7 +115,7 @@ float3 LambertLighting(
 
 Pour plus d’informations, voir [Utilisation de nuanceurs](https://msdn.microsoft.com/library/windows/apps/hh873117.aspx).
 
-## Personnalisations de la build pour les ressources 3D
+## <a name="build-customizations-for-3d-assets"></a>Personnalisations de la build pour les ressources 3D
 
 
 Vous pouvez ajouter des personnalisations de la build à votre projet afin que Visual Studio convertisse les ressources en formats utilisables. Après cela, vous pouvez charger les ressources dans votre application et les utiliser en créant et remplissant des ressources DirectX comme vous le feriez dans toute autre application DirectX.
@@ -121,7 +128,7 @@ Pour ajouter une personnalisation de la build, cliquez avec le bouton droit sur 
 
 Pour plus d’informations, voir [Utilisation de ressources 3D dans vos jeux et applications](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx).
 
-## Débogage de graphiques DirectX
+## <a name="debugging-directx-graphics"></a>Débogage de graphiques DirectX
 
 
 Visual Studio fournit des outils de débogage propres aux graphiques. Utilisez ces outils pour déboguer les éléments suivants :
@@ -138,7 +145,7 @@ Visual Studio fournit des outils de débogage propres aux graphiques. Utilisez c
 
 Pour plus d’informations, voir [Débogage de graphiques DirectX](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
 
-> **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -148,10 +155,5 @@ Pour plus d’informations, voir [Débogage de graphiques DirectX](https://msdn.
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

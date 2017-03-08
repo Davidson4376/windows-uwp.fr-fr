@@ -1,0 +1,77 @@
+---
+title: Primitives
+description: "Une primitive 3D est un ensemble de sommets qui forme une entité 3D unique."
+ms.assetid: A1FE6F49-B0D4-4665-90E1-40AD98E668B1
+keywords:
+- Primitives
+author: PeterTurcan
+ms.author: pettur
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+translationtype: Human Translation
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e6734ff8534302d3866374adba45c34d70ae440a
+ms.lasthandoff: 02/07/2017
+
+---
+
+# <a name="primitives"></a>Primitives
+
+
+Une *primitive* 3D est un ensemble de sommets qui forme une entité 3D unique.
+
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Dans cette section
+
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Article</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>[Listes de points](point-lists.md)</p></td>
+<td align="left"><p>Une liste de points est un ensemble de sommets qui sont rendus sous forme de points isolés. Votre application peut utiliser des listes de points dans les scènes 3D pour les champs d’étoiles, ou encore des lignes en pointillé sur la surface d’un polygone.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[Listes de lignes](line-lists.md)</p></td>
+<td align="left"><p>Une liste de lignes est une liste de segments de ligne rectilignes et isolés. Les listes de lignes sont utiles pour certaines tâches telles que l’ajout de neige fondue ou de pluie abondante dans une scène 3D. Les applications créent une liste de lignes en remplissant un tableau de sommets.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[Bandes de lignes](line-strips.md)</p></td>
+<td align="left"><p>Une bande de lignes est une primitive composée de segments de ligne connectés. Votre application peut utiliser des bandes de lignes pour créer des polygones non fermés. Un polygone fermé est un polygone dont le dernier sommet est connecté au premier sommet par un segment de ligne.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[Listes de triangles](triangle-lists.md)</p></td>
+<td align="left"><p>Une liste de triangles est une liste de triangles isolés. Les triangles isolés peuvent être proches ou non. Une liste de triangles doit avoir au moins trois sommets, et le nombre total de sommets doit être divisible par trois.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[Bandes de triangles](triangle-strips.md)</p></td>
+<td align="left"><p>Une bande de triangles est une série de triangles connectés. Les triangles étant connectés, l’application n’a pas besoin de spécifier plusieurs fois les trois sommets pour chaque triangle.</p></td>
+</tr>
+</tbody>
+</table>
+
+ 
+
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
+
+
+[Systèmes de coordonnées et géométrie](coordinate-systems-and-geometry.md)
+
+ 
+
+ 
+
+
+
+
+

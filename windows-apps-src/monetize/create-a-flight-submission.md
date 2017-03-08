@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: "Utilisez cette méth. ds l’API de soum. du Windows Store pr créer une soum. de version d’éval. de pack. pr une app. inscrite ds le cpte du Ctre de dév. Windows."
 title: "Créer soum. de vers. d’éval. de pack. av API de soum. du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, créer une soumission de version d&quot;évaluation"
 translationtype: Human Translation
-ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
-ms.openlocfilehash: 2ca6824039077d5d3ceba2c643d52a62c77104e4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d3e3c74d8afcd3b9055b64a0d06f207b1e02d598
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -131,9 +138,4 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Mettre à jour une soumission de version d’évaluation de package](update-a-flight-submission.md)
 * [Supprimer une soumission de version d’évaluation de package](delete-a-flight-submission.md)
 * [Obtenir l’état d’une soumission de version d’évaluation du package](get-status-for-a-flight-submission.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

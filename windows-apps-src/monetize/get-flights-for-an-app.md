@@ -2,30 +2,37 @@
 author: mcleanbyron
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
 description: "Utilisez cette méthode de l’API de soumission du Windows Store pour récupérer des informations sur une version d’évaluation du package pour une application inscrite dans votre compte du Centre de développement Windows."
-title: "Obtenir des versions d’évaluation du package pour une application à l’aide de l’API de soumission du Windows Store"
+title: "Obtenir des versions d’évaluation du package pour une application à l’aide de l’API de soumission du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, versions d’évaluation, versions d’évaluation du package"
 translationtype: Human Translation
-ms.sourcegitcommit: ef90390fcf7d4aa2e040eae65119ac7959f3423f
-ms.openlocfilehash: eddac4b37f6f00bad33f543f0e55415a5dcea887
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ee49b494f3b0dd88229e3f40fd2c5cedb57ffe7c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Obtenir des versions d’évaluation du package pour une application à l’aide de l’API de soumission du Windows Store
+# <a name="get-package-flights-for-an-app-using-the-windows-store-submission-api"></a>Obtenir des versions d’évaluation du package pour une application à l’aide de l’API de soumission du Windows Store
 
 
 
 
 Utilisez cette méthode dans l’API de soumission du Windows Store pour répertorier les versions d’évaluation du package pour une application inscrite dans votre compte du Centre de développement Windows. Pour plus d’informations sur les versions d’évaluation du package, voir [Versions d’évaluation du package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).
 
-## Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
->**Remarque**  Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+>**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
-## Requête
+## <a name="request"></a>Requête
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
@@ -35,7 +42,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
  
-### En-tête de requête
+### <a name="request-header"></a>En-tête de requête
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -43,7 +50,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Paramètres de la requête
+### <a name="request-parameters"></a>Paramètres de la requête
 
 |  Nom  |  Type  |  Description  |  Requis  |
 |------|------|------|------|
@@ -53,11 +60,11 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Corps de la requête
+### <a name="request-body"></a>Corps de la requête
 
 Ne fournissez pas de corps de requête pour cette méthode.
 
-### Exemples de requête
+### <a name="request-examples"></a>Exemples de requête
 
 L’exemple suivant montre comment répertorier toutes les versions d’évaluation du package pour une application.
 
@@ -73,7 +80,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/lis
 Authorization: Bearer <your access token>
 ```
 
-## Réponse
+## <a name="response"></a>Réponse
 
 L’exemple suivant illustre le corps de réponse JSON renvoyé par une requête réussie de la première version d’évaluation du package pour une application qui en comporte trois au total. Pour plus d’informations sur les valeurs figurant dans le corps de réponse, voir la section suivante.
 
@@ -101,7 +108,7 @@ L’exemple suivant illustre le corps de réponse JSON renvoyé par une requête
 }
 ```
 
-### Corps de la réponse
+### <a name="response-body"></a>Corps de la réponse
 
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -111,7 +118,7 @@ L’exemple suivant illustre le corps de réponse JSON renvoyé par une requête
 
 <span/>
 
-## Codes d’erreur
+## <a name="error-codes"></a>Codes d’erreur
 
 Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
@@ -122,15 +129,10 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 
 <span/>
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Obtenir toutes les applications](get-all-apps.md)
 * [Obtenir une application](get-an-app.md)
 * [Obtenir des extensions pour une application](get-add-ons-for-an-app.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

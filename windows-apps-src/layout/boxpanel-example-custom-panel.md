@@ -9,9 +9,16 @@ ms.assetid: 981999DB-81B1-4B9C-A786-3025B62B74D6
 label: BoxPanel, an example custom panel
 template: detail.hbs
 op-migration-status: ready
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 9f711fbd6f3562fb05fee70f42304204e602bc0b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a46e26491e909d825ceaff04d008b8cb56c9aff3
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -236,9 +243,4 @@ Vous vous demandez peut-être pourquoi le panneau ne choisirait pas plutôt un r
 **Concepts**
 
 * [Alignement, marge et espacement](alignment-margin-padding.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

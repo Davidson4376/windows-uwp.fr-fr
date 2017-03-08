@@ -4,15 +4,21 @@ description: "Montre comment lancer la boîte de dialogue de rédaction d’un m
 title: Envoyer un e-mail
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: contacts, e-mail, envoi
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 252e144b2436f047f7b0849bb6e5aee87b2e3464
-ms.openlocfilehash: ff09393af072eb8aee8c3001e7323cc20201da70
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b14f1a0fc77a8b7df241afbb92f4db223545d81f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Envoyer un e-mail
+# <a name="send-email"></a>Envoyer un e-mail
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Montre comment lancer la boîte de dialogue de rédaction d’un message électronique pour permettre à l’utilisateur d’envoyer un message électronique. Vous pouvez préremplir les champs de l’e-mail avec des données avant d’afficher la boîte de dialogue. The message will not be sent until the user taps the send button.
@@ -23,7 +29,7 @@ Montre comment lancer la boîte de dialogue de rédaction d’un message électr
 -   [Récapitulatif et étapes suivantes](#summary-and-next-steps)
 -   [Rubriques connexes](#related-topics)
 
-## Lancer la boîte de dialogue de rédaction d’un message électronique
+## <a name="launch-the-compose-email-dialog"></a>Lancer la boîte de dialogue de rédaction d’un message électronique
 
 Créez un objet [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) et définissez les données à préremplir dans la boîte de dialogue de rédaction d’un message électronique. Appelez [**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) pour afficher la boîte de dialogue.
 
@@ -58,11 +64,11 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 }
 ```
 
-## Récapitulatif et étapes suivantes
+## <a name="summary-and-next-steps"></a>Récapitulatif et étapes suivantes
 
 Cette rubrique vous a montré comment lancer la boîte de dialogue de rédaction d’un message électronique. Pour plus d’informations sur la sélection de contacts en tant que destinataires d’un message électronique, voir [Sélectionner des contacts](selecting-contacts.md). Voir [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) pour sélectionner un fichier à utiliser en pièce jointe d’un message électronique.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Sélection de contacts](selecting-contacts.md)
 * [How to continue your Windows Phone app after calling a file picker](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
@@ -72,10 +78,5 @@ Cette rubrique vous a montré comment lancer la boîte de dialogue de rédaction
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

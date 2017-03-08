@@ -1,11 +1,18 @@
 ---
 author: drewbatgit
-ms.assetid: 
-description: "Utiliser une instance MediaFrameReader avec MediaCapture pour récupérer des images à partir d’appareils photos couleur, de profondeur et infrarouges, de périphériques audio ou même de sources d’images personnalisés telles que celles qui produisent des images de suivi des squelettes."
+ms.assetid: a128edc8-8a80-4645-ac29-908ede2d1c72
+description: "Cet article vous explique comment utiliser une instance MediaFrameReader avec MediaCapture pour récupérer des images multimédias à partir d’une ou de plusieurs sources disponibles, y compris les caméras couleur, de profondeur et infrarouge, les appareils audio ou même les sources d’images personnalisées telles que celles qui produisent des images de suivi des squelettes."
 title: "Traiter des images multimédias avec MediaFrameReader"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: e6ab1fc16f150de2fed3797d89375a52b3965182
-ms.openlocfilehash: 11e09d9b447e9daa0498377a67ef235bdab168dd
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 7646cce8c8aafcb881e825be1ad134ad682c362a
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -163,10 +170,5 @@ La classe d’assistance **FrameRenderer** implémente les méthodes suivantes.
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

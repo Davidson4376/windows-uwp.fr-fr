@@ -1,17 +1,24 @@
 ---
 author: DelfCo
-description: "Utilisez HttpClient et le reste de l’API d’espace de noms Windows.Web.Http pour envoyer et recevoir des informations à l’aide des protocoles HTTP 2.0 et HTTP 1.1."
+description: "Utilisez HttpClient et le reste de l’API d’espace de noms Windows.Web.Http pour envoyer et recevoir des informations à l’aide des protocoles HTTP 2.0 et HTTP 1.1."
 title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a3d63f7bd090d9afe92813133503997b98502683
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fad4c4c215c209971d2a76b4c1ac6f160f8ebced
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# HttpClient
+# <a name="httpclient"></a>HttpClient
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 **API importantes**
 
@@ -21,7 +28,7 @@ ms.openlocfilehash: a3d63f7bd090d9afe92813133503997b98502683
 
 Utilisez [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) et le reste de l’API d’espace de noms [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) pour envoyer et recevoir des informations à l’aide des protocoles HTTP 2.0 et HTTP 1.1.
 
-## Vue d’ensemble de HttpClient et de l’espace de noms Windows.Web.Http
+## <a name="overview-of-httpclient-and-the-windowswebhttp-namespace"></a>Vue d’ensemble de HttpClient et de l’espace de noms Windows.Web.Http
 
 Les classes dans l’espace de noms [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) et les espaces de noms [**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) et [**Windows.Web.Http.Filters**](https://msdn.microsoft.com/library/windows/apps/dn298623) associés fournissent une interface de programmation pour les applications de plateforme Windows universelle (UWP) qui agissent en tant que clients HTTP pour effectuer des requêtes GET de base, ou implémenter des fonctionnalités HTTP plus avancées répertoriées ci-dessous :
 
@@ -53,7 +60,7 @@ L’extrait de code dans la section « Envoyer une requête GET simple sur HTTP 
 
 L’espace de noms [**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) prend en charge la création de cookies et d’en-têtes HTTP, qui sont ensuite associés comme propriétés aux objets [**HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) et [**HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631).
 
-## Envoyer une requête GET simple sur HTTP
+## <a name="send-a-simple-get-request-over-http"></a>Envoyer une requête GET simple sur HTTP
 
 Comme mentionné plus haut dans cet article, l’espace de noms [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) permet aux applications UWP d’envoyer des requêtes GET. L’extrait de code suivant montre comment envoyer une requête GET à http://www.contoso.com à l’aide de la classe [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) et de la classe [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) pour lire la réponse de la requête GET.
 
@@ -97,11 +104,11 @@ catch (Exception ex)
 }
 ```
 
-## Exceptions dans Windows.Web.Http
+## <a name="exceptions-in-windowswebhttp"></a>Exceptions dans Windows.Web.Http
 
 Une exception est levée quand une chaîne d’URI non valide est transmise au constructeur pour l’objet [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998).
 
-**.NET:** le type [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) apparaît en tant que [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) en C# et VB.
+**.NET :** le type [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) apparaît sous la forme [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) en C# et VB.
 
 En C# et Visual Basic, cette erreur peut être évitée en utilisant la classe [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) dans .NET 4.5 et l’une des méthodes [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) pour tester la chaîne envoyée par un utilisateur avant la construction de l’URI.
 
@@ -114,10 +121,5 @@ Quand une exception se produit dans une application utilisant .NET Framework 4.5
 Quand une exception se produit dans une application utilisant le C++ managé et que cette application est en cours d’exécution, [Platform::Exception](http://msdn.microsoft.com/library/windows/apps/hh755825.aspx) représente une erreur. La propriété [Platform::Exception::HResult](http://msdn.microsoft.com/library/windows/apps/hh763371.aspx) renvoie la valeur **HRESULT** affectée à l’exception spécifique. La propriété [Platform::Exception::Message](http://msdn.microsoft.com/library/windows/apps/hh763375.aspx) renvoie la chaîne fournie par le système associée à la valeur **HRESULT**. Les valeurs **HRESULT** possibles sont répertoriées dans le fichier d’en-tête *Winerror.h*. Une application peut effectuer un filtrage sur des valeurs **HRESULT** spécifiques pour modifier son comportement en fonction de la cause de l’exception.
 
 Pour la plupart des erreurs de validation de paramètre, la valeur **HRESULT** renvoyée est **E\_INVALIDARG**. Pour certains appels de méthodes non conformes, la valeur **HRESULT** renvoyée est **E\_ILLEGAL\_METHOD\_CALL**.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,17 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
-description: "Découvrez comment activer les versions d’évaluation et achats in-app dans les applications UWP."
-title: "Versions d’évaluation et achats in-app"
+description: "Découvrez comment activer les achats dans l’application et les versions d’évaluation dans les applications UWP."
+title: "Achats dans l’application et versions d’évaluation"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, achats dans l’application, extensions, versions d’évaluation, consommables, durables"
 translationtype: Human Translation
-ms.sourcegitcommit: ebac7d8edf9787ad810b84f3855fe23ae3007dcf
-ms.openlocfilehash: 33004b5229167bedd4cbafe5279709f1225ed02c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ade314f79edf73527f29e937f8eab987c902802f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="in-app-purchases-and-trials"></a>Achats in-app et versions d’évaluation
+# <a name="in-app-purchases-and-trials"></a>Achats dans l’application et versions d’évaluation
 
-Le Windows SDK fournit des API que vous pouvez utiliser pour implémenter les fonctionnalités suivantes afin de générer davantage de revenus avec votre application UWP :
+Le SDK Windows fournit des API que vous pouvez utiliser pour implémenter les fonctionnalités suivantes afin de générer davantage de revenus grâce à votre application de plateforme Windows universelle (UWP) :
 
 * **Achats in-app**&nbsp;&nbsp;Que votre application soit gratuite ou non, vous pouvez vendre du contenu ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application.
 
@@ -218,9 +225,4 @@ Chaque application ou module complémentaire dans le Windows Store a un **ID Wi
 * [Activer les achats de modules complémentaires consommables](enable-consumable-add-on-purchases.md)
 * [Implémenter une version d’évaluation de votre application](implement-a-trial-version-of-your-app.md)
 * [Versions d’évaluation et achats in-app utilisant l’espace de noms Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
-
-
-
-<!--HONumber=Dec16_HO4-->
-
 

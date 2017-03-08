@@ -3,9 +3,16 @@ author: PatrickFarley
 ms.assetid: 24351dad-2ee3-462a-ae78-2752bb3374c2
 title: "Utiliser des fonctionnalités d’économie d’énergie"
 description: "Créez des applications UWP qui fonctionnent avec le système pour utiliser des tâches en arrière-plan de manière économe en énergie."
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 73b19e54b863693aece045e5b653bc0583a676bb
-ms.openlocfilehash: 854ec43d075f8adc1f875d3b9e5e2d818434edb9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 045dfeb4696a4854b114d88da2a2cbb75d621a58
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -13,7 +20,7 @@ ms.openlocfilehash: 854ec43d075f8adc1f875d3b9e5e2d818434edb9
 
 Les applications Windows universelles doivent fonctionner correctement sur toutes les familles d’appareils. Sur les appareils alimentés par batterie, la consommation d’énergie est un facteur critique dans l’expérience globale de l’utilisateur avec votre application. Une autonomie d’une journée est souhaitable pour les utilisateurs, mais elle nécessite une efficacité énergétique de tous les logiciels installés sur l’appareil, y compris du vôtre. 
 
-Le comportement des tâches en arrière-plan est sans doute le facteur le plus important dans le coût d’énergie total d’une application. Une tâche en arrière-plan correspond à une activité d’un programme exécutée par le système, lorsque l’application n’est pas ouverte. Pour plus d’informations, consultez [Créer et inscrire une tâche en arrière-plan hors processus](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-an-outofproc-background-task).
+Le comportement des tâches en arrière-plan est sans doute le facteur le plus important dans le coût d’énergie total d’une application. Une tâche en arrière-plan correspond à une activité d’un programme exécutée par le système, lorsque l’application n’est pas ouverte. Pour plus d’informations, consultez [Créer et inscrire une tâche en arrière-plan hors processus](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task).
 
 ## <a name="background-activity-allowance"></a>Allocation des activités en arrière-plan
 
@@ -47,12 +54,7 @@ Veillez à tester votre application sur des appareils réels pour tous les scén
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Créer et inscrire une tâche en arrière-plan hors processus](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-an-outofproc-background-task)  
+* [Créer et inscrire une tâche en arrière-plan hors processus](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
 * [Planification des performances](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

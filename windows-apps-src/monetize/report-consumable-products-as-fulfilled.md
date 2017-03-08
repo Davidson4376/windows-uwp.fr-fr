@@ -1,40 +1,44 @@
 ---
 author: mcleanbyron
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
-description: "Utilisez cette méthode dans l’API de collection du WindowsStore pour indiquer le traitement de la commande d’un produit consommable pour un client donné. Pour qu’un utilisateur puisse racheter un produit consommable, votre application ou votre service doit indiquer que la commande de ce produit a été traitée pour cet utilisateur."
+description: "Utilisez cette méthode dans l’API de collection du Windows Store pour indiquer le traitement de la commande d’un produit consommable pour un client donné. Pour qu’un utilisateur puisse racheter un produit consommable, votre application ou votre service doit indiquer que la commande de ce produit a été traitée pour cet utilisateur."
 title: "Signaler le traitement de la commande d’un produit consommable"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de collection du Windows Store, traiter, produit consommable"
 translationtype: Human Translation
-ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
-ms.openlocfilehash: 54095c7fd3c29fe7596be4c4b5a7148d078a7091
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 201e4fedc5f36202cba4c495ae9344d5a7975d62
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Signaler le traitement de la commande d’un produit consommable
+# <a name="report-consumable-products-as-fulfilled"></a>Signaler le traitement de la commande d’un produit consommable
 
+Utilisez cette méthode dans l’API de collection du Windows Store pour indiquer le traitement de la commande d’un produit consommable pour un client donné. Pour qu’un utilisateur puisse racheter un produit consommable, votre application ou votre service doit indiquer que la commande de ce produit a été traitée pour cet utilisateur.
 
-
-
-Utilisez cette méthode dans l’API de collection du Windows Store pour indiquer le traitement de la commande d’un produit consommable pour un client donné. Pour qu’un utilisateur puisse racheter un produit consommable, votre application ou votre service doit indiquer que la commande de ce produit a été traitée pour cet utilisateur.
-
-Vous pouvez utiliser cette méthode pour indiquer que la commande d’un produit consommable a été traitée de deux façons:
+Vous pouvez utiliser cette méthode pour indiquer que la commande d’un produit consommable a été traitée de deux façons :
 
 * Indiquez l’ID d’article du produit consommable (tel qu’il est retourné dans le paramètre **itemId** d’une [demande de produits](query-for-products.md)) et un ID de suivi unique que vous fournissez. Si le même ID de suivi est utilisé pour plusieurs tentatives, le même résultat est retourné, même si l’article est déjà consommé. Si vous ne savez pas si une demande de consommation a abouti, votre service doit de nouveau la soumettre avec le même ID de suivi. L’ID de suivi sera toujours lié à cette demande de consommation et peut être soumis indéfiniment.
 * Indiquez l’ID produit (tel qu’il est retourné dans le paramètre **productId** d’une [demande de produits](query-for-products.md)) et un ID de transaction qui est obtenu à partir de l’une des sources indiquées dans la description du paramètre **transactionId** dans la section Corps de la requête ci-dessous.
 
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 
-Pour utiliser cette méthode, vous devez disposer des éléments suivants:
+Pour utiliser cette méthode, vous devez disposer des éléments suivants :
 
-* un jeton d’accès AzureAD créé avec l’URI d’audience `https://onestore.microsoft.com`;
-* une clé d’ID du Windows Store [générée à partir du code côté client de votre application](view-and-grant-products-from-a-service.md#step-4).
+* un jeton d’accès Azure AD créé avec l’URI d’audience `https://onestore.microsoft.com` ;
+* une clé d’ID du Windows Store, qui représente l’identité de l’utilisateur pour lequel vous souhaitez indiquer le traitement de la commande d’un produit consommable.
 
-Pour plus d’informations, voir [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md).
+Pour plus d’informations, voir [Gérer les droits sur les produits à partir d’un service](view-and-grant-products-from-a-service.md).
 
-## Requête
+## <a name="request"></a>Requête
 
 
-### Syntaxe de la requête
+### <a name="request-syntax"></a>Syntaxe de la requête
 
 | Méthode | URI de la requête                                                   |
 |--------|---------------------------------------------------------------|
@@ -42,7 +46,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
 <span/> 
 
-### En-tête de requête
+### <a name="request-header"></a>En-tête de requête
 
 | En-tête         | Type   | Description                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
@@ -53,30 +57,30 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
 <span/>
 
-### Corps de la requête
+### <a name="request-body"></a>Corps de la requête
 
 | Paramètre     | Type         | Description         | Obligatoire |
 |---------------|--------------|---------------------|----------|
-| beneficiary   | UserIdentity | L’utilisateur pour lequel cet élément est utilisé.                                                                                                                                                                                                                                                                 | Oui      |
-| itemId        | Chaîne       | Valeur itemId retournée par une [demande de produits](query-for-products.md). Utilisez ce paramètre avec trackingId.                                                                                                                                                                                                  | Non       |
-| trackingId    | GUID         | ID de suivi unique fourni par le développeur. Utilisez ce paramètre avec itemId.                                                                                                                                                                                                                                     | Non       |
-| productId     | Chaîne       | Valeur productId retournée par une [demande de produits](query-for-products.md). Utilisez ce paramètre avec transactionId.                                                                                                                                                                                            | Non       |
-| transactionId | GUID         | Valeur d’ID de transaction qui est obtenue à partir de l’une des sources suivantes. Utilisez ce paramètre avec productId.  <br/><br/><ul><li>Propriété [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) de la classe [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392).</li><li>Accusé de réception de l’application ou du produit retourné par [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381), [RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) ou [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811).</li><li>Paramètre transactionId retourné par une [demande de produits](query-for-products.md).</li></ul>                                                                                                                                                                                                                                   | Non       |
+| beneficiary   | UserIdentity | L’utilisateur pour lequel cet élément est utilisé. Pour plus d’informations, voir le tableau suivant.        | Oui      |
+| itemId        | chaîne       | La valeur *itemId* renvoyée par une [demande de produits](query-for-products.md). Utilisez ce paramètre avec *trackingId*      | Non       |
+| trackingId    | guid         | ID de suivi unique fourni par le développeur. Utilisez ce paramètre avec *itemId*.         | Non       |
+| productId     | chaîne       | la valeur *productId* renvoyée par une [demande de produits](query-for-products.md). Utilisez ce paramètre avec *transactionId*   | Non       |
+| transactionId | guid         | Valeur d’ID de transaction qui est obtenue à partir de l’une des sources suivantes. Utilisez ce paramètre avec *productId*.  <br/><br/><ul><li>Propriété [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) de la classe [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392).</li><li>Accusé de réception de l’application ou du produit retourné par [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381), [RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) ou [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811).</li><li>Le paramètre *transactionId* renvoyé par une [demande de produits](query-for-products.md).</li></ul>   | Non       |
 
  
 <span/>
 
 L’objet UserIdentity contient les paramètres ci-dessous.
 
-| Paramètre            | Type   | Description                                                                                                                                 | Obligatoire |
-|----------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| identityType         | chaîne | Spécifiez la valeur chaîne **b2b**.                                                                                                           | Oui      |
-| identityValue        | chaîne | La clé d’ID du Windows Store [générée à partir du code côté client de votre application](view-and-grant-products-from-a-service.md#step-4).                                                                                                   | Oui      |
-| localTicketReference | chaîne | Identificateur demandé pour la réponse retournée. Nous vous recommandons d’utiliser la même valeur que la revendication *userId* dans la clé d’ID du WindowsStore. | Oui      |
+| Paramètre            | Type   | Description       | Obligatoire |
+|----------------------|--------|-------------------|----------|
+| identityType         | chaîne | Spécifiez la valeur de chaîne **b2b**.    | Oui      |
+| identityValue        | chaîne | La [clé d’ID du Windows Store](view-and-grant-products-from-a-service.md#step-4) qui représente l’identité de l’utilisateur pour lequel vous souhaitez indiquer le traitement de la commande d’un produit consommable.      | Oui      |
+| localTicketReference | chaîne | Identificateur demandé pour la réponse retournée. Nous vous recommandons d’utiliser la même valeur que la [revendication](view-and-grant-products-from-a-service.md#claims-in-a-windows-store-id-key) *userId* dans la clé d’ID du Windows Store. | Oui      |
 
 <span/> 
 
-### Exemples de demande
+### <a name="request-examples"></a>Exemples de demande
 
 L’exemple suivant utilise les paramètres *itemId* et *trackingId*.
 
@@ -118,12 +122,12 @@ Host: collections.md.mp.microsoft.com
 }
 ```
 
-## Réponse
+## <a name="response"></a>Réponse
 
 
 Aucun contenu n’est retourné si l’utilisation a été exécutée correctement.
 
-### Exemple de réponse
+### <a name="response-example"></a>Exemple de réponse
 
 ```syntax
 HTTP/1.1 204 No Content
@@ -135,29 +139,21 @@ MS-ServerId: 030011326
 Date: Tue, 22 Sep 2015 20:40:55 GMT
 ```
 
-## Codes d’erreur
+## <a name="error-codes"></a>Codes d’erreur
 
 
-| Code | Erreur        | Code d’erreur interne           | Description                                                                                                                                                                           |
-|------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Code | Erreur        | Code d’erreur interne           | Description           |
+|------|--------------|----------------------------|-----------------------|
 | 401  | Non autorisé | AuthenticationTokenInvalid | Le jeton d’accès Azure AD n’est pas valide. Dans certains cas, les détails de l’erreur ServiceError contiennent plus d’informations, par exemple lorsque le jeton est arrivé à expiration ou que la revendication *appid* est manquante. |
 | 401  | Non autorisé | PartnerAadTicketRequired   | Un jeton d’accès Azure AD n’a pas été transmis au service dans l’en-tête d’autorisation.                                                                                                   |
-| 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du WindowsStore du corps de la requête et la revendication *appid* du jeton d’accès AzureAD de l’en-tête d’autorisation ne correspondent pas.                     |
+| 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du Windows Store du corps de la demande et la revendication *appid* du jeton d’accès Azure AD de l’en-tête d’autorisation ne correspondent pas.                     |
 
 <span/> 
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md)
+* [Gérer les droits sur les produits à partir d’un service](view-and-grant-products-from-a-service.md)
 * [Demander des produits](query-for-products.md)
 * [Octroyer des produits gratuits](grant-free-products.md)
-* [Renouveler une clé d’ID du Windows Store](renew-a-windows-store-id-key.md)
- 
-
- 
-
-
-
-<!--HONumber=Nov16_HO1-->
-
+* [Renouveler une clé d’ID du Windows Store](renew-a-windows-store-id-key.md)
 

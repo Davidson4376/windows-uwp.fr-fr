@@ -3,22 +3,29 @@ author: mtoepke
 title: Appliquer des textures aux primitives
 description: "Nous chargeons des données brutes, appliquées à une primitive 3D avec le cube créé à la rubrique Utilisation de la profondeur et d’effets sur des primitives."
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, jeux, textures, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5533b086557be44b27e4e371c0d71bc8bc6310b0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cc25d7bcc5809dd10b43418ccd42f78c10d1336e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Appliquer des textures aux primitives
+# <a name="apply-textures-to-primitives"></a>Appliquer des textures aux primitives
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Dans cette rubrique, nous chargeons des données de texture brutes et les appliquons à une primitive 3D à l’aide du cube que nous avons créé à la rubrique [Utilisation de la profondeur et d’effets sur des primitives](using-depth-and-effects-on-primitives.md). Nous introduisons aussi un modèle simple de produits/points d’éclairage, où la tonalité (plus clair ou plus sombre) des surfaces du cube se détermine en fonction de leur distance et de l’angle relatifs à une source de lumière.
 
 **Objectif :** appliquer des textures aux primitives.
 
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 
 Nous partons du principe que vous êtes familiarisé avec C++. Vous avez également besoin d’une expérience de base dans les concepts de programmation graphique.
@@ -27,10 +34,10 @@ Nous supposons en outre que vous avez suivi la rubrique [Démarrage rapide : con
 
 **Durée de réalisation :** 20 minutes.
 
-Instructions
+<a name="instructions"></a>Instructions
 ------------
 
-### 1. Définition de variables pour un cube avec texture
+### <a name="1-defining-variables-for-a-textured-cube"></a>1. Définition de variables pour un cube avec texture
 
 Tout d’abord, nous devons définir les structures **BasicVertex** et **ConstantBuffer** pour le cube auquel est appliquée une texture. Ces structures spécifient les positions, les orientations et les textures de vertex pour le cube et le type d’affichage de ce dernier. À défaut, nous déclarons des variables comme nous l’avons fait dans le didacticiel précédent, [Utilisation de la profondeur et d’effets sur des primitives](using-depth-and-effects-on-primitives.md).
 
@@ -63,7 +70,7 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### 2. Création de nuanceurs de vertex et de nuanceurs de pixels par le biais d’éléments de surface et de texture
+### <a name="2-creating-vertex-and-pixel-shaders-with-surface-and-texture-elements"></a>2. Création de nuanceurs de vertex et de nuanceurs de pixels par le biais d’éléments de surface et de texture
 
 Nous créons ici des nuanceurs de vertex et nuanceurs de pixels plus complexes que ceux du didacticiel précédent, [Utilisation de la profondeur et d’effets sur des primitives](using-depth-and-effects-on-primitives.md). Le nuanceur de vertex de l’application transforme chaque position de vertex en espace de projection et passe la coordonnée de texture du vertex à travers le nuanceur de pixels.
 
@@ -267,7 +274,7 @@ Nous créons les tampons de vertex, d’index et constant qui définissent un cu
        });
 ```
 
-### 3. Création de textures et d’échantillons
+### <a name="3-creating-textures-and-samplers"></a>3. Création de textures et d’échantillons
 
 Dans cette rubrique, nous appliquons les données de texture à un cube plutôt que des couleurs comme dans le didacticiel précédent, [Utilisation de la profondeur et d’effets sur des primitives](using-depth-and-effects-on-primitives.md).
 
@@ -391,7 +398,7 @@ Nous exploitons les données de texture brutes pour créer des textures.
         float degree = 0.0f;
 ```
 
-### 4. Rotation et dessin du cube avec texture, et présentation de l’image rendue
+### <a name="4-rotating-and-drawing-the-textured-cube-and-presenting-the-rendered-image"></a>4. Rotation et dessin du cube avec texture, et présentation de l’image rendue
 
 Comme dans les didacticiels précédents, l’exécution du code entre dans une boucle sans fin pour effectuer le rendu de façon continue et afficher la scène. Nous appelons la fonction inline **rotationY** (BasicMath.h) en indiquant une valeur de rotation pour définir les valeurs chargées de faire pivoter la matrice de modèle du cube sur l’axe Y. Nous appelons ensuite [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) pour mettre à jour le tampon constant et faire pivoter le modèle du cube. Ensuite, nous appelons [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) pour préciser la cible de sortie et la vue de profondeur/gabarit. Nous appelons [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) pour effacer la cible de rendu et lui attribuer une couleur unie bleue, puis appelons [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) pour effacer le tampon de profondeur.
 
@@ -512,21 +519,16 @@ Comme nous l’avons vu dans les didacticiels précédents, nous appelons [**IDX
                 );
 ```
 
-## Récapitulatif
+## <a name="summary"></a>Récapitulatif
 
 
-Nous avons chargé les données de texture brutes et les avons appliquées à une primitive3D.
-
- 
+Nous avons chargé les données de texture brutes et les avons appliquées à une primitive 3D.
 
  
 
+ 
 
 
 
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

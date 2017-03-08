@@ -1,20 +1,27 @@
 ---
 author: Jwmsft
-Description: "Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte."
+Description: "Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou vers une autre application, ou lancent un URI spécifique dans une application de navigateur distincte."
 title: Liens hypertexte
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 4d474af6930354482f9f8b6e7754ddaf6fe65dac
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9af0a58478bbbb0dfc46bb18851ae78735e2c9b1
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="hyperlinks"></a>Liens hypertexte
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte. Vous pouvez ajouter un lien hypertexte à une application XAML de deux façons : à l’aide d’un élément de texte **Hyperlink** ou d’un contrôle **HyperlinkButton**.
+Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou vers une autre application, ou lancent un URI spécifique dans une application de navigateur distincte. Vous pouvez ajouter un lien hypertexte à une application XAML de deux façons : à l’aide d’un élément de texte **Hyperlink** ou d’un contrôle **HyperlinkButton**.
 
 ![Bouton Lien hypertexte](images/controls/hyperlink-button.png)
 
@@ -157,9 +164,4 @@ La couleur par défaut du lien hypertexte est la couleur d’accentuation du sys
 **Pour les développeurs (XAML)**
 - [**Classe Windows.UI.Xaml.Documents.Hyperlink**](https://msdn.microsoft.com/library/windows/apps/dn279356)
 - [**Classe Windows.UI.Xaml.Controls.HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

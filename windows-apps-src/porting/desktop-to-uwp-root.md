@@ -2,14 +2,22 @@
 author: awkoren
 Description: Prise en main de Desktop to UWP Bridge et conversion de votre application de bureau Windows (Win32, WPF, Windows Forms) en application de plateforme Windows universelle (UWP).
 Search.Product: eADQiWindows 10XVcnh
-title: Porter votre application de bureau vers la plateforme Windows universelle (UWP) avec Desktop Bridge
+title: Porter votre application de bureau vers la plateforme Windows universelle (UWP) avec Pont du bureau
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 translationtype: Human Translation
-ms.sourcegitcommit: 462d2b13cefc6abb4d7c6f814ec4ee659e4afde8
-ms.openlocfilehash: 1ef54c3c45113e434333058d0f039e213ea8eed2
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: dd9f45b0ddcc201053ed8e35908da66443e47d72
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="bring-your-desktop-app-to-the-universal-windows-platform-uwp-with-the-desktop-bridge"></a>Porter votre application de bureau vers la plateforme Windows universelle (UWP) avec Desktop Bridge
+# <a name="bring-your-desktop-app-to-the-universal-windows-platform-uwp-with-the-desktop-bridge"></a>Porter votre application de bureau vers la plateforme Windows universelle (UWP) avec Pont du bureau
 
 Prise en main de Desktop to UWP Bridge et conversion de votre application de bureau Windows en application de plateforme Windows universelle (UWP).
 
@@ -86,15 +94,11 @@ Pour transmettre des commentaires ou faire des suggestions sur les fonctionnalit
 | [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md) | Montre comment exécuter Desktop App Converter. |
 | [Convertir manuellement votre application en UWP à l’aide de Desktop Bridge](desktop-to-uwp-manual-conversion.md) | Découvrez comment créer un package et un manifeste d’application manuellement. |
 | [Extensions d’application Desktop Bridge](desktop-to-uwp-extensions.md) | Améliorez votre application de bureau convertie avec des extensions pour activer des fonctionnalités telles que les tâches de démarrage et l’intégration dans l’Explorateur de fichiers. |
-| [API UWP prises en charge pour les applications converties avec Desktop Bridge](desktop-to-uwp-supported-api.md) | Découvrez quelles API UWP peuvent être utilisées pour votre application de bureau convertie. |
-| [Déboguer des applications converties avec Desktop Bridge](desktop-to-uwp-debug.md) | Explique les options de débogage de votre application convertie. | 
+| [API UWP prises en charge pour les applications converties avec Desktop Bridge](desktop-to-uwp-supported-api.md) | Découvrez les API UWP qui sont utilisables pour votre application de bureau convertie. |
+| [Guide d’empaquetage Pont du bureau pour les applications de bureau .NET avec Visual Studio](desktop-to-uwp-packaging-dot-net.md) | Configurez votre solution Visual Studio de façon à pouvoir modifier, déboguer et empaqueter votre application .NET. | 
+| [Déboguer des applications converties avec Pont du bureau](desktop-to-uwp-debug.md) | Explique les options de débogage de votre application convertie. | 
 | [Signer une application convertie avec Desktop Bridge](desktop-to-uwp-signing.md) | Découvrez comment signer votre package d’application converti avec un certificat. |
 | [Distribuer des applications converties avec Desktop Bridge](desktop-to-uwp-distribute.md) | Découvrez comment distribuer votre application convertie aux utilisateurs.  |
 | [Fonctionnement détaillé de Desktop Bridge](desktop-to-uwp-behind-the-scenes.md) | Découvrez de manière plus approfondie le fonctionnement interne de Desktop to UWP Bridge. | 
 | [Problèmes connus avec Desktop Bridge](desktop-to-uwp-known-issues.md) | Répertorie les problèmes connus avec Desktop to UWP Bridge. | 
 | [Exemples de code de pont d’application de bureau en UWP](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | Exemples de code sur GitHub illustrant les fonctionnalités d’applications converties. |
-
-
-<!--HONumber=Dec16_HO3-->
-
-

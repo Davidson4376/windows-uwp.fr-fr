@@ -3,19 +3,26 @@ author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: "Cette étude de cas, qui repose sur les informations fournies dans Bookstore, commence par une application Silverlight pour Windows Phone qui affiche des données groupées dans un élément LongListSelector."
 title: "Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore2"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: c85473d8c3267e4f0ccd6018fe5ee349fdf39284
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7fbe63cba4a825641ea96b39c39d5845758051cb
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore2"></a>Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP : Bookstore2
+# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore2"></a>Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP : Bookstore2
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette étude de cas, qui repose sur les informations fournies dans [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md), commence par une application Silverlight pour Windows Phone qui affiche des données groupées dans un élément **LongListSelector**. Dans le modèle d’affichage, chaque instance de la classe **Author** représente l’ensemble des livres écrits par l’auteur en question ; dans l’élément **LongListSelector**, nous pouvons visualiser la liste des livres regroupés par auteur ou nous pouvons effectuer un zoom arrière pour afficher une liste de raccourcis relatifs aux auteurs. Grâce à cette liste, vous pouvez vous déplacer beaucoup plus rapidement que si vous faisiez défiler la liste des ouvrages. Nous suivons la procédure de portage de l’application vers une application de plateforme Windows universelle (UWP) Windows 10.
 
-**Remarque** Lorsque vous ouvrez Bookstore2Universal\_10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », suivez les étapes de la section [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md) pour définir une version de plateforme cible.
+**Remarque**   Lorsque vous ouvrez Bookstore2Universal\_10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », suivez les étapes de la section [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md) pour définir une version de plateforme cible.
 
 ## <a name="downloads"></a>Téléchargements
 
@@ -299,9 +306,4 @@ Nous pouvons désormais décider de supprimer l’élément `ItemsPath="BookSkus
 ## <a name="conclusion"></a>Conclusion
 
 Cette étude de cas reposait sur une interface utilisateur plus ambitieuse que celle de l’étude précédente. L’ensemble des fonctions et concepts de l’élément  **LongListSelector** de l’application Silverlight pour Windows Phone et d’autres informations utiles se sont révélés disponibles pour une application UWP, sous la forme d’éléments **SemanticZoom**, **ListView**, **GridView** et **CollectionViewSource**. Nous vous avons montré comment réutiliser (ou copier et modifier) le code impératif et le balisage dans une application UWP, afin d’obtenir les fonctionnalités, l’interface utilisateur et les interactions adaptées à tous les facteurs de forme des appareils Windows, des plus étroits aux plus larges, en passant par toutes les tailles intermédiaires.
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

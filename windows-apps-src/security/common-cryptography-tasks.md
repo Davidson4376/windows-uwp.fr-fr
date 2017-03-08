@@ -1,20 +1,27 @@
 ---
 title: "Tâches courantes de chiffrement"
-description: "Ces articles fournissent des exemples de code pour les tâches de chiffrement de plateforme UWP courantes, telles que la création de nombres aléatoires, la comparaison de mémoires tampon, la conversion entre chaînes et données binaires, la copie de tableaux d’octets, ainsi que le codage/décodage de données."
+description: "Ces articles fournissent des exemples de code pour les tâches de chiffrement de plateforme Windows universelle (UWP) courantes, telles que la création de nombres aléatoires, la comparaison de mémoires tampon, la conversion entre chaînes et données binaires, la copie de tableaux d’octets, ainsi que le codage/décodage de données."
 ms.assetid: 2DE094F4-28E2-4C5D-BF8C-617BD90AB119
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 5122c7d9750a9f37582b27752926da1c9f44b321
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3ce185e4bdd247c8b0ac71401a2ff863c64f880a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Tâches courantes de chiffrement
+# <a name="common-cryptography-tasks"></a>Tâches courantes de chiffrement
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Ces articles fournissent des exemples de code pour les tâches de chiffrement de plateformeWindows universelle (UWP) courantes, telles que la création de nombres aléatoires, la comparaison de mémoires tampon, la conversion entre chaînes et données binaires, la copie de tableaux d’octets, ainsi que le codage/décodage de données.
+Ces articles fournissent des exemples de code pour les tâches de chiffrement de plateforme Windows universelle (UWP) courantes, telles que la création de nombres aléatoires, la comparaison de mémoires tampon, la conversion entre chaînes et données binaires, la copie de tableaux d’octets, ainsi que le codage/décodage de données.
 
  
 | Rubrique                                                                                 | Description                                                                                            |
@@ -25,9 +32,4 @@ Ces articles fournissent des exemples de code pour les tâches de chiffrement de
 | [Copier des tableaux d’octets](copy-to-and-from-byte-arrays.md)                       | Cet exemple de code indique comment copier des tableaux d’octets dans une application UWP.                             |
 | [Encoder et décoder des données](encode-and-decode-data.md)                                   | Cet exemple de code indique comment encoder et décoder des données base64 et hexadécimales dans une application UWP.            |
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -1,22 +1,29 @@
 ---
 author: jnHs
-Description: "Le rapport Évaluations disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser la répartition des évaluations de votre application par les clients dans le Windows Store."
+Description: "Le rapport Évaluations disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser la répartition des évaluations de votre application par les clients dans le Windows Store."
 title: "Rapport Évaluations"
 ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
-ms.openlocfilehash: 45d22b46a750655cc723658b476ba40d18b4f745
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 19364d7d3e8e29364f527c09f931ef637cbf03d9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Rapport Évaluations
+# <a name="ratings-report"></a>Rapport Évaluations
 
 
 Le rapport **Évaluations** disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser la répartition des évaluations de votre application par les clients dans le Windows Store. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de la méthode [obtenir les classifications des applications](../monetize/get-app-ratings.md) dans [l’API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
 
-Dans ce rapport, une évaluation correspond au nombre d’étoiles (compris entre 1 et 5) qu’un client a attribué à votre application dans le WindowsStore. Le rapport **Évaluations** ne fournit aucune information sur les commentaires formulés sous forme d’avis ; ces derniers sont consultables dans le [rapport sur les avis](reviews-report.md).
+Dans ce rapport, une évaluation correspond au nombre d’étoiles (compris entre 1 et 5) qu’un client a attribué à votre application dans le Windows Store. Le rapport **Évaluations** ne fournit aucune information sur les commentaires formulés sous forme d’avis ; ces derniers sont consultables dans le [rapport sur les avis](reviews-report.md).
 
-## Appliquer les filtres
+## <a name="apply-filters"></a>Appliquer les filtres
 
 
 Dans la zone supérieure de la page, vous pouvez développer l'option **Appliquer les filtres** pour filtrer toutes les données de cette page par plage de dates et/ou par marché.
@@ -27,17 +34,17 @@ Dans la zone supérieure de la page, vous pouvez développer l'option **Applique
 
 Les informations figurant dans tous les graphiques répertoriés ci-après refléteront la période sélectionnée dans la section **Appliquer des filtres**, ainsi que d’autres filtres que vous avez choisi ici.
 
-## Évaluation moyenne
+## <a name="average-rating"></a>Évaluation moyenne
 
 
 Le graphique **Évaluation moyenne** affiche l'évaluation moyenne de votre application sur la période sélectionnée.
 
-## Nombre d'évaluations
+## <a name="number-of-ratings"></a>Nombre d'évaluations
 
 
 Le graphique **Nombre d'évaluations** affiche le nombre total d'évaluations de votre application au cours de la période sélectionnée.
 
-## Évaluations nouvelles et révisées
+## <a name="new-and-revised-ratings"></a>Évaluations nouvelles et révisées
 
 
 Le graphique **Évaluations nouvelles et révisées** présente le nombre d'évaluations de chaque type (nouvelles ou révisées) effectuées au cours de la période sélectionnée.
@@ -47,7 +54,7 @@ Le graphique **Évaluations nouvelles et révisées** présente le nombre d'éva
 
 >**Remarque** Une évaluation est signalée comme révisée même dans les cas où le client s’est contenté de changer ou d’ajouter un texte ou un titre dans son avis sans modifier son évaluation proprement dite.
 
-## Évaluation moyenne dans le temps
+## <a name="average-rating-over-time"></a>Évaluation moyenne dans le temps
 
 
 Le graphique **Évaluation moyenne dans le temps** illustre l'évolution de l'évaluation moyenne de l'application au cours de la période sélectionnée.
@@ -56,7 +63,7 @@ Au lieu de calculer la moyenne de toutes les évaluations laissées au cours de 
 
 Si vous avez filtré les informations sur les **30 derniers jours** ou les **3 derniers mois**, le graphique affiche votre évaluation moyenne par jour. Si vous les avez filtrées sur les **6 derniers mois** ou les **12 derniers mois**, le graphique affiche votre évaluation moyenne par semaine (le lundi marquant le début de chaque nouvelle semaine ; l'évaluation moyenne indiquée concerne la semaine précédente).
 
-## Marchés
+## <a name="markets"></a>Marchés
 
 
 Le graphique **Marchés** présente l’évaluation moyenne et le nombre d’évaluations par marché au cours de la période sélectionnée.
@@ -65,14 +72,9 @@ Le graphique **Marchés** présente l’évaluation moyenne et le nombre d’év
 
 Par défaut, les marchés ayant fait l’objet du plus grand nombre d’évaluations apparaissent en premier dans le graphique, mais vous pouvez inverser cet ordre en cliquant sur la flèche dans la colonne **Nombre d’évaluations** de ce graphique. Vous pouvez également trier les données par **Évaluation moyenne** ou par **Marché** en cliquant sur ces colonnes.
 
-> **Remarque** Vous constaterez probablement une différence dans le nombre d’évaluations si vous comparez le rapport **Évaluations** dans le Centre de développement Windows avec le rapport Avis dans l’application mobile de l’ancien Centre de développement. Cela s’explique par le fait que l’application affiche uniquement les avis laissés par les clients utilisant Windows Phone8.1 et antérieur. Ce peut être également la conséquence du travail effectué par Microsoft pour supprimer les avis du Windows Store, qui ont été identifiés comme indésirables, inappropriés, offensants ou comme violant la politique. Nous pensons que cette action va améliorer l’expérience utilisateur.
+> **Remarque** Vous constaterez probablement une différence dans le nombre d’évaluations si vous comparez le rapport **Évaluations** dans le Centre de développement Windows avec le rapport Avis dans l’application mobile de l’ancien Centre de développement. Cela s’explique par le fait que l’application affiche uniquement les avis laissés par les clients utilisant Windows Phone 8.1 et antérieur. Ce peut être également la conséquence du travail effectué par Microsoft pour supprimer les avis du Windows Store, qui ont été identifiés comme indésirables, inappropriés, offensants ou comme violant la politique. Nous pensons que cette action va améliorer l’expérience utilisateur.
 
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

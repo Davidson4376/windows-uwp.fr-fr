@@ -1,13 +1,20 @@
 ---
 author: Jwmsft
 Description: "Un contrôle d’affichage web incorpore dans votre application une vue qui affiche le contenu web à l’aide du moteur de rendu Microsoft Edge. Des liens hypertexte peuvent également apparaître et fonctionner dans un contrôle d’affichage web."
-title: Affichage Web
+title: Affichage web
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 9fa226beed09e79ef3e5a294e36f615fa179c470
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9f7f786007a6e251a76fe5c4fcbad5c81b879c53
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="web-view"></a>Affichage web
@@ -330,10 +337,5 @@ Un affichage web qui héberge le contenu en dehors du thread d’interface utili
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

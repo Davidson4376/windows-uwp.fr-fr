@@ -1,8 +1,18 @@
 ---
 layout: HubPage
 hide_bc: true
-title: "Documentation Windows"
+title: Documentation Windows
 description: "Trouvez les documents dédiés aux développeurs, au matériel et aux professionnels de l’informatique qui vous aideront à créer et gérer votre solution Windows."
+ms.assetid: 56bbc230-b855-426e-b849-4f65a747b944
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: hub-page
+ms.prod: windows
+translationtype: Human Translation
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: cb15f417c4254776af4548a5b962392431c9a75b
+ms.lasthandoff: 02/08/2017
+
 ---
 <div id="main" class="v2">
   <div class="container">
@@ -529,7 +539,4 @@ description: "Trouvez les documents dédiés aux développeurs, au matériel et 
         </li>
     </ul>
 </div>
-
-
-<!--HONumber=Jan17_HO5-->
 

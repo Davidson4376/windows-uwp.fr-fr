@@ -1,37 +1,44 @@
 ---
 author: PatrickFarley
-title: "Impression3D à partir de votre application"
-description: "Découvrez comment ajouter des fonctionnalités d’impression3D à votre application Windows universelle. Cette rubrique explique comment lancer la boîte de dialogue d’impression3D après s’être assuré que votre modèle3D est imprimable et au format qui convient."
+title: "Impression 3D à partir de votre application"
+description: "Découvrez comment ajouter des fonctionnalités d’impression 3D à votre application Windows universelle. Cette rubrique explique comment lancer la boîte de dialogue d’impression 3D après s’être assuré que votre modèle 3D est imprimable et au format qui convient."
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: e2b88b0eb88d0a3d8d1a5fb944bd4d00a50012e0
-ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 89ab7a65df0a8415d508e5831a22b2c522308f95
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Impression3D à partir de votre application
+# <a name="3d-printing-from-your-app"></a>Impression 3D à partir de votre application
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
 
 -   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/dn998169)
 
-Découvrez comment ajouter des fonctionnalités d’impression3D à votre application Windows universelle. Cette rubrique explique comment charger des données de géométrie3D dans votre application et lancer la boîte de dialogue d’impression3D après avoir vérifié que votre modèle3D est imprimable et au format correct. Pour obtenir un exemple de mise en pratique de ces procédures, voir l’[Exemple d’impression3D UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting).
+Découvrez comment ajouter des fonctionnalités d’impression 3D à votre application Windows universelle. Cette rubrique explique comment charger des données de géométrie 3D dans votre application et lancer la boîte de dialogue d’impression 3D après avoir vérifié que votre modèle 3D est imprimable et au format correct. Pour obtenir un exemple de mise en pratique de ces procédures, voir l’[Exemple d’impression 3D UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting).
 
 > [!NOTE]
 > Dans l’exemple de code de ce guide, le signalement et le traitement des erreurs sont grandement simplifiés par souci de concision.
 
-## Configuration de la classe
+## <a name="class-setup"></a>Configuration de la classe
 
 
 Dans la classe devant recevoir les fonctionnalités d’impression 3D, ajoutez l’espace de noms [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/dn998169).
 
 [!code-cs[3DPrintNamespace](./code/3dprinthowto/cs/MainPage.xaml.cs#Snippet3DPrintNamespace)]
 
-Les espaces de noms supplémentaires suivants sont utilisés dans ce guide:
+Les espaces de noms supplémentaires suivants sont utilisés dans ce guide :
 
 [!code-cs[OtherNamespaces](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetOtherNamespaces)]
 
@@ -39,9 +46,9 @@ Ensuite, attribuez à votre classe quelques champs de membre utiles. Déclarez u
 
 [!code-cs[DeclareVars](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeclareVars)]
 
-## Créer une interface utilisateur simple
+## <a name="create-a-simple-ui"></a>Créer une interface utilisateur simple
 
-Cet exemple utilise trois contrôles utilisateur: un bouton de chargement qui place un fichier dans la mémoire du programme, un bouton de correction qui modifie le fichier si nécessaire et un bouton d’impression qui lance une tâche d’impression. Le code suivant permet de créer ces boutons (avec leurs gestionnaires d’événements Click) dans le fichierXAML de votre classe.
+Cet exemple utilise trois contrôles utilisateur : un bouton de chargement qui place un fichier dans la mémoire du programme, un bouton de correction qui modifie le fichier si nécessaire et un bouton d’impression qui lance une tâche d’impression. Le code suivant permet de créer ces boutons (avec leurs gestionnaires d’événements Click) dans le fichier XAML de votre classe.
 
 [!code-xml[Boutons](./code/3dprinthowto/cs/MainPage.xaml#SnippetButtons)]
 
@@ -51,34 +58,34 @@ Ajoutez un **TextBlock** pour le commentaire de l’interface utilisateur.
 
 
 
-## Obtenir les données3D
+## <a name="get-the-3d-data"></a>Obtenir les données 3D
 
 
-La méthode par laquelle votre application acquiert les données de géométrie3D à imprimer varie. Votre application peut récupérer les données à partir d’une analyse 3D, télécharger les données du modèle à partir d’une ressource web ou générer un maillage3D par programmation à l’aide d’équations ou de l’entrée utilisateur. Par souci de simplicité, ce guide montre comment charger un fichier de données3D (d’un type de fichier courant) dans la mémoire du programme à partir d’un stockage de fichiers. La [bibliothèque de modèles 3D Builder](https://developer.microsoft.com/windows/hardware/3d-builder-model-library) fournit plusieurs modèles que vous pouvez facilement télécharger sur votre appareil.
+La méthode par laquelle votre application acquiert les données de géométrie 3D à imprimer varie. Votre application peut récupérer les données à partir d’une analyse 3D, télécharger les données du modèle à partir d’une ressource web ou générer un maillage 3D par programmation à l’aide d’équations ou de l’entrée utilisateur. Par souci de simplicité, ce guide montre comment charger un fichier de données 3D (d’un type de fichier courant) dans la mémoire du programme à partir d’un stockage de fichiers. La [bibliothèque de modèles 3D Builder](https://developer.microsoft.com/windows/hardware/3d-builder-model-library) fournit plusieurs modèles que vous pouvez facilement télécharger sur votre appareil.
 
 Dans votre méthode `OnLoadClick`, utilisez la classe [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) pour charger un seul fichier dans la mémoire de votre application.
 
 [!code-cs[FileLoad](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileLoad)]
 
-## Utiliser 3DBuilder pour une conversion au format3DManufacturingFormat (.3mf)
+## <a name="use-3d-builder-to-convert-to-3d-manufacturing-format-3mf"></a>Utiliser 3D Builder pour une conversion au format 3D Manufacturing Format (.3mf)
 
-À ce stade, vous êtes en mesure de charger un fichier de données3D dans la mémoire de votre application. Il existe de nombreux formats de données de géométrie 3D, mais ils ne sont pas tous adaptés à l’impression3D. Windows10 utilise le type de fichier 3D Manufacturing Format (.3mf) pour toutes les tâches d’impression3D.
-
-> [!NOTE]  
-> Le type de fichier.3mf offre de nombreuses fonctionnalités non abordées dans ce tutoriel. Pour en savoir plus sur le format3MF et les fonctionnalités proposées aux fabricants et clients de produits3D, reportez-vous à la [Spécification 3MF](http://3mf.io/what-is-3mf/3mf-specification/). Pour savoir comment tirer parti de ces fonctionnalités à l’aide des API Windows10, consultez le didacticiel [Générer un package3MF](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf).
-
-Heureusement, l’application [3DBuilder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) peut ouvrir les formats de fichier3D les plus courants et les enregistrer sous forme de fichiers.3mf. Dans cet exemple, où le type de fichier peut varier, une solution très simple consiste à ouvrir 3D Builder et à inviter l’utilisateur à enregistrer les données importées dans un fichier .3mf, puis à le recharger.
+À ce stade, vous êtes en mesure de charger un fichier de données 3D dans la mémoire de votre application. Il existe de nombreux formats de données de géométrie 3D, mais ils ne sont pas tous adaptés à l’impression 3D. Windows 10 utilise le type de fichier 3D Manufacturing Format (.3mf) pour toutes les tâches d’impression 3D.
 
 > [!NOTE]  
-> En plus de convertir les formats de fichier, 3DBuilder offre des outils simples pour modifier vos modèles, ajouter des données de couleur et effectuer d’autres opérations spécifiques de l’impression. C’est pourquoi il est souvent recommandé de l’intégrer à une application qui prend en charge l’impression3D.
+> Le type de fichier .3mf offre de nombreuses fonctionnalités non abordées dans ce tutoriel. Pour en savoir plus sur le format 3MF et les fonctionnalités proposées aux fabricants et clients de produits 3D, reportez-vous à la [Spécification 3MF](http://3mf.io/what-is-3mf/3mf-specification/). Pour savoir comment tirer parti de ces fonctionnalités à l’aide des API Windows 10, consultez le didacticiel [Générer un package 3MF](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf).
+
+Heureusement, l’application [3D Builder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) peut ouvrir les formats de fichier 3D les plus courants et les enregistrer sous forme de fichiers .3mf. Dans cet exemple, où le type de fichier peut varier, une solution très simple consiste à ouvrir 3D Builder et à inviter l’utilisateur à enregistrer les données importées dans un fichier .3mf, puis à le recharger.
+
+> [!NOTE]  
+> En plus de convertir les formats de fichier, 3D Builder offre des outils simples pour modifier vos modèles, ajouter des données de couleur et effectuer d’autres opérations spécifiques de l’impression. C’est pourquoi il est souvent recommandé de l’intégrer à une application qui prend en charge l’impression 3D.
 
 [!code-cs[FileCheck](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileCheck)]
 
-## Réparer des données de modèle pour l’impression3D
+## <a name="repair-model-data-for-3d-printing"></a>Réparer des données de modèle pour l’impression 3D
 
-Les données de modèle 3D ne sont pas toutes imprimables, même dans le type .3mf. Afin que l’imprimante puisse correctement déterminer les espaces à remplir et à laisser vides, le ou les modèles à imprimer doivent (chacun) constituer un ensemble unique et homogène, disposer de normales de surface orientées vers l’extérieur et d’une géométrie de collection. Les problèmes dans ces zones peuvent survenir sous diverses formes et peuvent être difficiles à repérer dans des formes complexes. Heureusement, les solutions logicielles actuelles sont souvent adaptées à la conversion de la géométrie brute en formes3D imprimables. C’est ce qu’on appelle la *réparation* du modèle, qui est effectuée dans la méthode `OnFixClick`.
+Les données de modèle 3D ne sont pas toutes imprimables, même dans le type .3mf. Afin que l’imprimante puisse correctement déterminer les espaces à remplir et à laisser vides, le ou les modèles à imprimer doivent (chacun) constituer un ensemble unique et homogène, disposer de normales de surface orientées vers l’extérieur et d’une géométrie de collection. Les problèmes dans ces zones peuvent survenir sous diverses formes et peuvent être difficiles à repérer dans des formes complexes. Heureusement, les solutions logicielles actuelles sont souvent adaptées à la conversion de la géométrie brute en formes 3D imprimables. C’est ce qu’on appelle la *réparation* du modèle, qui est effectuée dans la méthode `OnFixClick`.
 
-Le fichier de données3D doit être converti pour implémenter [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731), qui peut ensuite être utilisé pour générer un objet [**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/mt203679).
+Le fichier de données 3D doit être converti pour implémenter [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731), qui peut ensuite être utilisé pour générer un objet [**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/mt203679).
 
 [!code-cs[RepairModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetRepairModel)]
 
@@ -86,16 +93,16 @@ L’objet **Printing3DModel** est maintenant réparé et imprimable. Utilisez [*
 
 [!code-cs[SaveModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSaveModel)]
 
-## Exécuter la tâche d’impression: créer un gestionnaire TaskRequested
+## <a name="execute-printing-task-create-a-taskrequested-handler"></a>Exécuter la tâche d’impression : créer un gestionnaire TaskRequested
 
 
-Par la suite, lorsque la boîte de dialogue d’impression 3D s’affiche et que l’utilisateur choisit de commencer l’impression, votre application doit transmettre les paramètres souhaités au pipeline d’impression3D. L’API d’impression3D déclenche l’événement **TaskRequested**. Vous devez écrire une méthode pour gérer cet événement de manière appropriée. Comme toujours, la méthode de gestionnaire doit être du même type que son événement: l’événement **TaskRequested** a un paramètre [**Print3DManager**](https://msdn.microsoft.com/library/windows/apps/dn998029) (une référence à son objet d’expéditeur) et un objet [**Print3DTaskRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn998051), qui contient la plupart des informations pertinentes. Son type de retour est **void**.
+Par la suite, lorsque la boîte de dialogue d’impression 3D s’affiche et que l’utilisateur choisit de commencer l’impression, votre application doit transmettre les paramètres souhaités au pipeline d’impression 3D. L’API d’impression 3D déclenche l’événement **TaskRequested**. Vous devez écrire une méthode pour gérer cet événement de manière appropriée. Comme toujours, la méthode de gestionnaire doit être du même type que son événement : l’événement **TaskRequested** a un paramètre [**Print3DManager**](https://msdn.microsoft.com/library/windows/apps/dn998029) (une référence à son objet d’expéditeur) et un objet [**Print3DTaskRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn998051), qui contient la plupart des informations pertinentes. Son type de retour est **void**.
 
 [!code-cs[MyTaskTitle](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetMyTaskTitle)]
 
-L’objectif principal de cette méthode est d’utiliser le paramètre *args* pour envoyer un **Printing3D3MFPackage** dans le pipeline. Le type **Print3DTaskRequestedEventArgs** a une propriété: [**Request**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequestedeventargs.request.aspx). Elle est de type [**Print3DTaskRequest**](https://msdn.microsoft.com/library/windows/apps/dn998050) et représente une demande de travail d’impression. Sa méthode [**CreateTask**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequest.createtask.aspx) permet au programme d’envoyer les informations appropriées relatives à votre travail d’impression, et renvoie une référence à l’objet **Print3DTask** qui a été envoyé dans le pipeline d’impression3D.
+L’objectif principal de cette méthode est d’utiliser le paramètre *args* pour envoyer un **Printing3D3MFPackage** dans le pipeline. Le type **Print3DTaskRequestedEventArgs** a une propriété : [**Request**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequestedeventargs.request.aspx). Elle est de type [**Print3DTaskRequest**](https://msdn.microsoft.com/library/windows/apps/dn998050) et représente une demande de travail d’impression. Sa méthode [**CreateTask**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequest.createtask.aspx) permet au programme d’envoyer les informations appropriées relatives à votre travail d’impression, et renvoie une référence à l’objet **Print3DTask** qui a été envoyé dans le pipeline d’impression 3D.
 
-**CreateTask** a les paramètres d’entrée suivants: une **chaîne** pour le nom du travail d’impression, une **chaîne** pour l’ID de l’imprimante à utiliser, ainsi qu’un délégué [**Print3DTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedhandler.aspx). Le délégué est automatiquement appelé quand l’événement **3DTaskSourceRequested** est déclenché (cette opération est effectuée par l’API elle-même). Il est important de noter que ce délégué est appelé lorsqu’un travail d’impression est lancé et qu’il est responsable de la fourniture du package d’impression3D approprié.
+**CreateTask** a les paramètres d’entrée suivants : une **chaîne** pour le nom du travail d’impression, une **chaîne** pour l’ID de l’imprimante à utiliser, ainsi qu’un délégué [**Print3DTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedhandler.aspx). Le délégué est automatiquement appelé quand l’événement **3DTaskSourceRequested** est déclenché (cette opération est effectuée par l’API elle-même). Il est important de noter que ce délégué est appelé lorsqu’un travail d’impression est lancé et qu’il est responsable de la fourniture du package d’impression 3D approprié.
 
 **Print3DTaskSourceRequestedHandler** prend un paramètre, un objet [**Print3DTaskSourceRequestedArgs**](https://msdn.microsoft.com/library/windows/apps/dn998056) qui fournit les données à envoyer. [**SetSource**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedargs.setsource.aspx), l’une des méthodes publiques de cette classe, accepte le package à imprimer. Implémentez un délégué **Print3DTaskSourceRequestedHandler** comme suit.
 
@@ -112,16 +119,16 @@ L’objet **Print3DTask** renvoyé est attribué à la variable de classe décla
 > [!NOTE]  
 > Vous devez implémenter des méthodes `Task_Submitting` et `Task_Completed` si vous voulez les inscrire à ces événements.
 
-## Exécuter la tâche d’impression: ouvrir la boîte de dialogue d’impression3D
+## <a name="execute-printing-task-open-3d-print-dialog"></a>Exécuter la tâche d’impression : ouvrir la boîte de dialogue d’impression 3D
 
 
-L’élément de code final nécessaire est celui qui lance la boîte de dialogue d’impression3D. Comme une fenêtre de boîte de dialogue d’impression classique, la boîte de dialogue d’impression3D fournit un certain nombre d’options d’impression de dernière minute et permet à l’utilisateur de choisir l’imprimante à utiliser (qu’elle soit connectée via USB ou le réseau).
+L’élément de code final nécessaire est celui qui lance la boîte de dialogue d’impression 3D. Comme une fenêtre de boîte de dialogue d’impression classique, la boîte de dialogue d’impression 3D fournit un certain nombre d’options d’impression de dernière minute et permet à l’utilisateur de choisir l’imprimante à utiliser (qu’elle soit connectée via USB ou le réseau).
 
 Inscrivez votre méthode `MyTaskRequested` à l’événement **TaskRequested**.
 
 [!code-cs[RegisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetRegisterMyTaskRequested)]
 
-Après avoir inscrit votre gestionnaire d’événements **TaskRequested**, vous pouvez appeler la méthode [**ShowPrintUIAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dmanager.showprintuiasync.aspx), qui fait apparaître la boîte de dialogue d’impression3D dans la fenêtre d’application active.
+Après avoir inscrit votre gestionnaire d’événements **TaskRequested**, vous pouvez appeler la méthode [**ShowPrintUIAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dmanager.showprintuiasync.aspx), qui fait apparaître la boîte de dialogue d’impression 3D dans la fenêtre d’application active.
 
 [!code-cs[ShowDialog](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetShowDialog)]
 
@@ -129,20 +136,11 @@ Enfin, il est conseillé de désinscrire vos gestionnaires d’événements une 
 
 [!code-cs[DeregisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeregisterMyTaskRequested)]
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 [Générer un package 3MF](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)  
-[Exemple d’impression3DUWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
+[Exemple d’impression 3D UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

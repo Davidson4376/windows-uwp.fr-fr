@@ -2,14 +2,21 @@
 author: mcleanbyron
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
 description: "Découvrez comment activer les achats in-app et les versions d’évaluation dans les applications UWP qui ciblent les versions antérieures à Windows 10 version 1607."
-title: "Versions d’évaluation et achats in-app utilisant l’espace de noms Windows.ApplicationModel.Store"
+title: "Versions d’évaluation et achats dans l’application à l’aide de l’espace de noms Windows.ApplicationModel.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "uwp, achats dans l’application, extensions, versions d’évaluation, Windows.ApplicationModel.Store"
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: ee2a52a54be8510b962f1ef5c40570f3836d28c3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 787007b870675749d96afa59a6e9cb5f3be68991
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Versions d’évaluation et achats in-app utilisant l’espace de noms Windows.ApplicationModel.Store
+# <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Versions d’évaluation et achats dans l’application à l’aide de l’espace de noms Windows.ApplicationModel.Store
 
 Vous pouvez utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) pour ajouter des achats in-app, et la fonctionnalité d’évaluation dans votre application de plateforme Windows universelle (UWP) pour monétiser votre application. Ces API offrent également l’accès aux informations de licence de votre application.
 
@@ -50,7 +57,7 @@ Un fichier WindowsStoreProxy.xml est créé par défaut à l’emplacement suiva
 
 Si vous pouvez modifier les valeurs dans ce fichier, nous vous recommandons de créer votre propre fichier WindowsStoreProxy.xml (dans un dossier de données de votre projet Visual Studio) pour **CurrentAppSimulator** et de l’utiliser à la place de l’autre. Lors de la simulation de la transaction, appelez [ReloadSimulatorAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync.aspx) pour charger votre fichier. Si vous n’appelez pas **ReloadSimulatorAsync** pour charger votre propre fichier WindowsStoreProxy.xml, **CurrentAppSimulator** crée/charge (mais ne remplace pas) le fichier WindowsStoreProxy.xml par défaut.
 
->**Remarque**  N’oubliez pas que **CurrentAppSimulator** ne s’initialise pleinement qu’une fois **ReloadSimulatorAsync** exécuté. Et, dans la mesure où **ReloadSimulatorAsync** est une méthode asynchrone, veillez à éviter la condition de concurrence avec l’interrogation de **CurrentAppSimulator** sur un thread pendant son initialisation sur un autre. Une technique consiste à utiliser un indicateur pour signaler la fin de l’initialisation. Une application installée à partir du Windows Store doit utiliser **CurrentApp** à la place de **CurrentAppSimulator**. Dans ce cas, **ReloadSimulatorAsync** n’est pas appelé et la condition de concurrence mentionnée auparavant ne s’applique pas. Pour cette raison, concevez votre code afin qu’il fonctionne dans les deux cas de figure (asychrone et synchrone).
+>**Remarque**&nbsp;&nbsp;N’oubliez pas que **CurrentAppSimulator** ne s’initialise pleinement qu’une fois **ReloadSimulatorAsync** exécuté. Et, dans la mesure où **ReloadSimulatorAsync** est une méthode asynchrone, veillez à éviter la condition de concurrence avec l’interrogation de **CurrentAppSimulator** sur un thread pendant son initialisation sur un autre. Une technique consiste à utiliser un indicateur pour signaler la fin de l’initialisation. Une application installée à partir du Windows Store doit utiliser **CurrentApp** à la place de **CurrentAppSimulator**. Dans ce cas, **ReloadSimulatorAsync** n’est pas appelé et la condition de concurrence mentionnée auparavant ne s’applique pas. Pour cette raison, concevez votre code afin qu’il fonctionne dans les deux cas de figure (asychrone et synchrone).
 
 
 <span id="proxy-examples" />
@@ -537,9 +544,4 @@ Cet élément décrit un module complémentaire consommable. **Product** est un 
 |  **TransactionId**  |     Oui       |   Contient un GUID (sous forme de chaîne) utilisé pour suivre la transaction d’achat d’un consommable via le processus d’acquisition. Consultez [Activer l’achat de produits in-app consommables](enable-consumable-in-app-product-purchases.md).            |
 |  **Status**  |      Oui      |  Contient la chaîne utilisée par l’application pour indiquer l’état d’acquisition d’un consommable. La valeur peut être **Active**, **PurchaseReverted**, **PurchasePending** ou **ServerError**.             |
 |  **OfferId**  |     Non       |    Contient la chaîne utilisée par l’application pour identifier la catégorie à laquelle appartient le consommable. Il permet de prendre en charge des catalogues volumineux, comme indiqué dans [Gérer un vaste catalogue de produits intégrés à l'application](manage-a-large-catalog-of-in-app-products.md).           |
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

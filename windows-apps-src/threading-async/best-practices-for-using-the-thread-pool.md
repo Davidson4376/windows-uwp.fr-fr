@@ -3,19 +3,26 @@ author: TylerMSFT
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
 title: "Meilleures pratiques pour l’utilisation du pool de threads"
 description: "Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du pool de threads."
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, thread, pool de threads"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 796625fe5c1892ac99195a4920dbc7e539aebf76
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d3b45da6a11bab926812682c209207bbbb436bf1
+ms.lasthandoff: 02/07/2017
 
 ---
-# Meilleures pratiques pour l’utilisation du pool de threads
+# <a name="best-practices-for-using-the-thread-pool"></a>Meilleures pratiques pour l’utilisation du pool de threads
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du pool de threads.
 
-## Pratiques conseillées
+## <a name="dos"></a>Pratiques conseillées
 
 
 -   Utilisez le pool de threads pour effectuer des tâches parallèles dans votre application.
@@ -34,7 +41,7 @@ Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du 
 
 -   Utilisez des éléments de travail préalloués si vous ne pouvez pas tolérer d’échec d’allocation de ressources au moment de l’utilisation.
 
-## Pratiques déconseillées
+## <a name="donts"></a>Pratiques déconseillées
 
 
 -   Ne créez pas de minuteurs périodiques avec une valeur *period* inférieure à &lt;1 milliseconde (y compris 0). Cela amène l’élément de travail à se comporter comme un minuteur à déclenchement unique.
@@ -47,16 +54,10 @@ Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du 
 
 -   N’essayez pas d’exécuter plusieurs fois un élément de travail préalloué sans le réinitialiser. [Créer un élément de travail périodique](create-a-periodic-work-item.md)
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 
 * [Créer un élément de travail périodique](create-a-periodic-work-item.md)
 * [Envoyer un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
 * [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

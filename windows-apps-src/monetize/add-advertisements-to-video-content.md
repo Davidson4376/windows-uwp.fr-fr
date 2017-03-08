@@ -2,14 +2,21 @@
 author: mcleanbyron
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
 description: "Apprenez à utiliser la classe AdScheduler pour ajouter des annonces à du contenu vidéo."
-title: "Ajouter des annonces à du contenu vidéo en HTML 5 et JavaScript"
+title: "Ajouter des publicités à du contenu vidéo en HTML 5 et JavaScript"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, annonces, publicité, vidéo, planificateur, javascript"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: 5573d37068a6b6c10ff9e380bb8b34bb83516c35
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b42b57f385857301bb74037dbb5c0c7200653316
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="add-advertisements-to-video-content-in-html-5-and-javascript"></a>Ajouter des annonces à du contenu vidéo en HTML 5 et JavaScript
+# <a name="add-advertisements-to-video-content-in-html-5-and-javascript"></a>Ajouter des publicités à du contenu vidéo en HTML 5 et JavaScript
 
 
 Cette procédure pas à pas montre comment utiliser la classe [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) pour ajouter des publicités à du contenu vidéo dans une application de plateforme Windows universelle (UWP) écrite en JavaScript avec HTML.
@@ -96,9 +103,4 @@ La publicité pour contenu vidéo varie selon que le programme dure moins de dix
 
   > [!div class="tabbedCodeSnippets"]
   [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

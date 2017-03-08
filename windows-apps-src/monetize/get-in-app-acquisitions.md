@@ -1,11 +1,18 @@
 ---
 author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
-description: "Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir les données d’acquisition agrégées d’une extension pour une plage de dates données, et en fonction de filtres facultatifs."
+description: "Utilisez cette méthode dans l’API d’analyse du Windows Store afin d’obtenir les données d’acquisition agrégées d’une extension pour une plage de dates donnée et en fonction d’autres filtres facultatifs."
 title: "Obtenir des acquisitions d’extensions"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, services du Windows Store, API d’analyse du Windows Store, acquisitions d’extension"
 translationtype: Human Translation
-ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
-ms.openlocfilehash: a79cd324d57151318445df0dedd35a98d9c9f915
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: be69a45586f4b7d66740d141dcc350eafd16bb53
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -14,7 +21,7 @@ ms.openlocfilehash: a79cd324d57151318445df0dedd35a98d9c9f915
 
 
 
-Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir les données d’acquisition agrégées des extensions (également connue sous le nom produit in-app ou PIA) au format JSON pour votre application, pour une plage de dates données, et en fonction de filtres facultatifs. Ces informations sont également disponibles dans le [rapport sur les acquisitions des extensions](../publish/add-on-acquisitions-report.md) du tableau de bord du Centre de développement.
+Utilisez cette méthode dans l’API d’analyse du Windows Store afin d’obtenir les données d’acquisition agrégées des extensions au format JSON pour votre application correspondant à une plage de dates donnée et en fonction d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport sur les acquisitions des extensions](../publish/add-on-acquisitions-report.md) du tableau de bord du Centre de développement.
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -177,9 +184,4 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

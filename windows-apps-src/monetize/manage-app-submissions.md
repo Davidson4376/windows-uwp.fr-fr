@@ -2,10 +2,17 @@
 author: mcleanbyron
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: "Utilisez ces méthodes dans l’API de soumission du Windows Store pour gérer les soumissions des applications qui sont inscrites dans votre compte du Centre de développement Windows."
-title: "Gérer les soumissions d’applications à l’aide de l’API de soumission du Windows Store"
+title: "Gérer les soumissions d’applications à l’aide de l’API de soumission du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, soumissions d’applications"
 translationtype: Human Translation
-ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
-ms.openlocfilehash: ef7727befa20606800fb9747f9402be9be5cc9e4
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: 21a421b057a55120865c01cc3dffb80318ab38ed
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -13,12 +20,14 @@ ms.openlocfilehash: ef7727befa20606800fb9747f9402be9be5cc9e4
 
 L’API de soumission du Windows Store fournit des méthodes qui permettent de gérer les soumissions de vos applications, notamment les lancements de packages progressifs. Pour obtenir une présentation de l’API de soumission du Windows Store, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
 
->**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+>**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. L’octroi de cette autorisation se fait en plusieurs étapes. Elle est accordée aux comptes de développeur, et tous les comptes n’en bénéficient pas pour le moment. Pour demander un accès anticipé, connectez-vous au tableau de bord du Centre de développement, cliquez sur **Commentaires** au bas du tableau de bord, sélectionnez **API de soumission** dans la zone de commentaires, puis soumettez votre demande. Vous recevrez un message électronique dès que cette autorisation sera accordée à votre compte.
+
+>**Important**&nbsp;&nbsp;Si vous utilisez l’API de soumission du Windows Store pour créer une soumission pour une application, assurez-vous d’utiliser exclusivement l’API pour apporter d’autres modifications à la soumission, sans passer par le tableau de bord du Centre de développement. Si vous passez par le tableau de bord pour modifier une soumission initialement créée via l’API, vous ne pourrez plus modifier ou valider cette soumission à l’aide de l’API. Dans certains cas, la soumission non validée peut rester définie sur l’état d’erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
 
 <span id="methods-for-app-submissions" />
 ## <a name="methods-for-managing-app-submissions"></a>Méthodes de gestion des soumissions d’applications
 
-Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’applications, procédez comme suit.
+Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’applications, procédez comme suit. Pour que vous puissiez utiliser ces méthodes, l’application doit exister dans votre compte du Centre de développement. Par ailleurs, vous devez avoir créé une soumission associée à l’application dans le tableau de bord. Pour plus d’informations, consultez les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites).
 
 <table>
 <colgroup>
@@ -37,7 +46,7 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission d’ap
 <tr>
 <td align="left">GET</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}```</td>
-<td align="left">[Obtient une soumission d’applications existante](get-an-app-submission.md)</td>
+<td align="left">[Obtient une soumission d’applications existante.](get-an-app-submission.md)</td>
 </tr>
 <tr>
 <td align="left">GET</td>
@@ -146,6 +155,8 @@ Les articles suivants fournissent des exemples de code détaillés qui montrent 
 * [Exemples de code Java](java-code-examples-for-the-windows-store-submission-api.md)
 * [Exemples de code Python](python-code-examples-for-the-windows-store-submission-api.md)
 
+>**Remarque**&nbsp;&nbsp;En complément des exemples de code répertoriés ci-dessus, nous fournissons également un module PowerShell Open Source qui implémente une interface de ligne de commande sur l’API de soumission du Windows Store. Ce module est appelé [StoreBroker](https://aka.ms/storebroker). Vous pouvez utiliser ce module pour gérer les soumissions de votre application, de votre version et de vos modules complémentaires à partir de la ligne de commande, en lieu et place de l’appel direct de l’API de soumission du Windows Store. Sinon, vous pouvez simplement parcourir la source pour consulter des exemples supplémentaires d’appel de cette API. Le module StoreBroker est activement utilisé au sein de Microsoft en tant que vecteur principal de soumission de nombreuses applications internes dans le Windows Store. Pour plus d’informations, consultez notre [page StoreBroker sur GitHub](https://aka.ms/storebroker).
+
 <span id="manage-gradual-package-rollout">
 ## <a name="methods-for-managing-a-gradual-package-rollout"></a>Méthodes de gestion d’un lancement de packages progressif
 
@@ -212,7 +223,8 @@ Cette ressource décrit une soumission d’applications.
     "trialPeriod": "FifteenDays",
     "marketSpecificPricings": {},
     "sales": [],
-    "priceId": "Tier2"
+    "priceId": "Tier2",
+    "isAdvancedPricingModel": "true"
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -330,7 +342,7 @@ Cette ressource a les valeurs suivantes.
 | enterpriseLicensing           |  chaîne  |  Une des [valeurs de gestion des licences d’entreprise](#enterprise-licensing) qui indiquent le comportement de la gestion des licences d’entreprise pour l’application.  |    
 | allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  booléen   |  Indique si Microsoft est autorisé à [rendre l’application disponible pour les futures familles d’appareils Windows 10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
 | allowTargetFutureDeviceFamilies           | objet   |  Dictionnaire de paires clé/valeur, où chaque clé est une [famille d’appareils Windows 10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) et chaque valeur est une valeur booléenne qui indique si votre application est autorisée à cibler la famille d’appareils spécifiée.     |    
-| friendlyName           |   chaîne  |  Nom convivial de l’application, utilisé à des fins d’affichage.       |  
+| friendlyName           |   chaîne  |  Le nom convivial de la soumission, tel que représenté dans le tableau de bord du Centre de développement. La valeur est générée pour vous lorsque vous créez la soumission.       |  
 
 
 <span id="listing-object" />
@@ -353,8 +365,8 @@ Cette ressource contient des informations de référencement de base pour une ap
 |  copyrightAndTrademarkInfo                |   chaîne      |  [Informations de copyright et/ou de marque](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info) facultatives.  |
 |  keywords                |  tableau       |  Tableau de [mots clés](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords) facilitant l’apparition de l’application dans les résultats de recherche.    |
 |  licenseTerms                |    chaîne     | [Termes du contrat de licence](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms) facultatifs de votre application.     |
-|  privacyPolicy                |   chaîne      |   URL de la [politique de confidentialité](https://msdn.microsoft.com/windows/uwp/publish/privacy-policy) de votre application.    |
-|  supportContact                |   chaîne      |  URL ou adresse e-mail de l’[assistance technique](https://msdn.microsoft.com/windows/uwp/publish/support-contact-info) de votre application.     |
+|  privacyPolicy                |   chaîne      |   URL de la [politique de confidentialité](../publish/create-app-store-listings.md#privacy-policy) de votre application.    |
+|  supportContact                |   chaîne      |  URL ou adresse e-mail de l’[assistance technique](../publish/create-app-store-listings.md#support-contact-info) de votre application.     |
 |  websiteUrl                |   chaîne      |  URL de la [page web](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#website) de votre application.    |    
 |  description               |    chaîne     |   [Description](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description) du listing de l’application.   |     
 |  fonctionnalités               |    tableau     |  Tableau contenant 20 chaînes au maximum qui répertorient les [fonctionnalités](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features) de votre application.     |
@@ -387,7 +399,8 @@ Cette ressource contient des informations de tarification pour l’application. 
 |  trialPeriod               |    chaîne     |  Chaîne qui spécifie la période d’évaluation de l’application. Les valeurs possibles sont les suivantes : <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
 |  marketSpecificPricings               |    objet     |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre application sur des marchés spécifiques](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *priceId* du marché spécifié.      |     
 |  sales               |   tableau      |  **Deprecated**. Tableau des [ressources de ventes](#sale-object) qui contiennent des informations commerciales pour l’application.   |     
-|  priceId               |   chaîne      |  [Niveau de prix](#price-tiers) qui spécifie le [prix de base](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price) de l’application.   |
+|  priceId               |   chaîne      |  [Niveau de prix](#price-tiers), spécifiant le [prix de base](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price) de l’application.   |     
+|  isAdvancedPricingModel               |   valeur booléenne      |  Si la valeur **true** est définie, votre compte de développeur dispose d’un accès à la plage étendue de tarification, de 0,99 à 1999,99 dollars. Si la valeur **false** est définie, votre compte de développeur dispose d’un accès à la plage initiale de tarification, de 0,99 à 999,99 dollars. Pour plus d’informations sur les différents niveaux, voir [Niveaux de prix](#price-tiers).<br/><br/>**Remarque**&nbsp;&nbsp;Ce champ est en lecture seule.   |
 
 
 <span id="sale-object" />
@@ -529,7 +542,7 @@ Cette ressource a les valeurs suivantes.
 <span id="package-rollout-object" />
 ### <a name="package-rollout-resource"></a>Ressource de lancement de packages
 
-Cette ressource contient les [paramètres de lancement de packages](#manage-gradual-package-rollout) de la soumission. Cette ressource a les valeurs suivantes.
+Cette ressource contient les [paramètres de lancement de packages](#manage-gradual-package-rollout) progressif de la soumission. Cette ressource a les valeurs suivantes.
 
 | Valeur           | Type    | Description        |
 |-----------------|---------|------|
@@ -547,14 +560,14 @@ Ces méthodes utilisent les énumérations suivantes.
 <span id="price-tiers" />
 ### <a name="price-tiers"></a>Niveaux de prix
 
-Les valeurs suivantes représentent les niveaux de prix disponibles pour une soumission d’application.
+Les valeurs suivantes représentent les niveaux de prix disponibles dans la [ressource de tarification](#pricing-object) d’une soumission d’application.
 
 | Valeur           | Description        |
 |-----------------|------|
 |  Base               |   Le niveau de prix n’est pas défini ; utilisez le prix de base de l’application.      |     
 |  NotAvailable              |   L’application n’est pas disponible dans la région spécifiée.    |     
 |  Free              |   L’application est gratuite.    |    
-|  Tier2 à Tier194               |   Tier2 représente le niveau de prix 0,99 USD. Chaque niveau supplémentaire représente des incréments supplémentaires (1,29 USD, 1,49 USD, 1,99 USD, etc.).    |
+|  Tier*xxxx*               |   Une chaîne spécifiant le niveau de prix d’une application, au format **Tier<em>xxxx</em>**. Actuellement, les plages suivantes de tarification sont prises en charge :<br/><br/><ul><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **true**, les valeurs de tarification disponibles pour votre compte sont **Tier1012** - **Tier1424**.</li><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **false**, les valeurs de tarification disponibles pour votre compte sont **Tier2** - **Tier96**.</li></ul>Pour consulter le tableau complet des niveaux de prix disponibles pour votre compte de développeur, notamment les prix du marché associés à chaque niveau, accédez à la page **Tarification et disponibilité** des soumissions d’applications dans le tableau de bord du Centre de développement, puis cliquez sur le lien d’**affichage de table** de la section **Marchés et prix personnalisés** (pour certains comptes développeur, ce lien se trouve dans la section **Tarification**).    |
 
 
 <span id="enterprise-licensing" />
@@ -598,9 +611,4 @@ Les valeurs suivantes représentent le code d’état d’une soumission.
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Obtenir des données d’application à l’aide de l’API de soumission du Windows Store](get-app-data.md)
 * [Soumissions d’applications dans le tableau de bord du Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

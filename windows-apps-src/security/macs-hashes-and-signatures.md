@@ -1,33 +1,40 @@
 ---
 title: "Codes d’authentification des messages, hachages et signatures"
-description: "Cet article explique comment les codes d’authentification de message (MAC), les codes de hachage et les signatures peuvent être utilisés dans les applications UWP pour détecter une falsification des messages."
+description: "Cet article explique comment les codes d’authentification de message (MAC), les codes de hachage et les signatures peuvent être utilisés dans les applications de plateforme Windows universelle (UWP) pour détecter une falsification des messages."
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 2c43e8ea726827d263fd397ea28058c04d30a7aa
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f29b77317e0b03aff7e56087aa3a882720170b29
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Codes d’authentification des messages, hachages et signatures
+# <a name="macs-hashes-and-signatures"></a>Codes d’authentification des messages, hachages et signatures
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article explique comment les codes d’authentification de message (MAC), les codes de hachage et les signatures peuvent être utilisés dans les applications de plateforme Windows universelle (UWP) pour détecter une falsification des messages.
 
-## Codes d’authentification des messages
+## <a name="message-authentication-codes-macs"></a>Codes d’authentification des messages
 
 
-Le chiffrement permet d’empêcher un individu nonautorisé de lire un message, mais il n’empêche pas cet individu de le falsifier. Un message altéré, même si l’altération ne produit rien d’autre qu’une absurdité, peut avoir des coûts réels. Un code d’authentification des messages (MAC) permet d’empêcher la falsification des messages. Prenons, parexemple, le scénario suivant:
+Le chiffrement permet d’empêcher un individu non autorisé de lire un message, mais il n’empêche pas cet individu de le falsifier. Un message altéré, même si l’altération ne produit rien d’autre qu’une absurdité, peut avoir des coûts réels. Un code d’authentification des messages (MAC) permet d’empêcher la falsification des messages. Prenons, par exemple, le scénario suivant :
 
 -   Bob et Alice partagent une clé secrète et conviennent d’une fonction MAC à utiliser.
 -   Bob crée un message, puis entre le message et la clé secrète dans une fonction MAC pour récupérer une valeur MAC.
 -   Bob envoie le message \[unencrypted\] et la valeur MAC à Alice via un réseau.
 -   Alice utilise la clé secrète et le message comme entrée pour la fonction MAC. Elle compare la valeur MAC générée à la valeur MAC envoyée par Bob. Si elles sont identiques, cela indique que le message n’a pas été modifié lors du transit.
 
-Notez qu’Eve, une tierce personne effectuant une écoute clandestine de la conversation entre Bob et Alice, ne peut effectivement pas manipuler le message. Eve n’a pas accès à la clé privée et, parconséquent, ne peut pas créer de valeur MAC qui ferait apparaître le message falsifié comme légitime à Alice.
+Notez qu’Eve, une tierce personne effectuant une écoute clandestine de la conversation entre Bob et Alice, ne peut effectivement pas manipuler le message. Eve n’a pas accès à la clé privée et, par conséquent, ne peut pas créer de valeur MAC qui ferait apparaître le message falsifié comme légitime à Alice.
 
 La création d’un code d’authentification des messages garantit que le message d’origine n’a pas été altéré et, en utilisant une clé secrète partagée, que le hachage du message a été signé par une personne ayant accès à cette clé privée.
 
@@ -122,10 +129,10 @@ namespace SampleMacAlgorithmProvider
 }
 ```
 
-## Hachages
+## <a name="hashes"></a>Hachages
 
 
-Une fonction de hachage de chiffrement prend un long bloc de données au hasard et renvoie une chaîne de bits de taille fixe. Les fonctions de hachage sont généralement utilisées dans le cadre de la signature de données. Comme la plupart des opérations de signature de clé publique sont gourmandes en calcul, il est plus efficace de signer (chiffrer) un hachage de message plutôt que le message d’origine. La procédure suivante représente un cas courant, bien que simplifié:
+Une fonction de hachage de chiffrement prend un long bloc de données au hasard et renvoie une chaîne de bits de taille fixe. Les fonctions de hachage sont généralement utilisées dans le cadre de la signature de données. Comme la plupart des opérations de signature de clé publique sont gourmandes en calcul, il est plus efficace de signer (chiffrer) un hachage de message plutôt que le message d’origine. La procédure suivante représente un cas courant, bien que simplifié :
 
 -   Bob et Alice partagent une clé secrète et conviennent d’une fonction MAC à utiliser.
 -   Bob crée un message, puis entre le message et la clé secrète dans une fonction MAC pour récupérer une valeur MAC.
@@ -179,7 +186,7 @@ public void SampleReusableHash()
 
 ```
 
-## Signatures numériques
+## <a name="digital-signatures"></a>Signatures numériques
 
 
 Les signatures numériques sont l’équivalent, pour les clés publiques, des codes d’authentification de message (MAC) des clés privées. Alors que les codes MAC utilisent des clés privées pour permettre au destinataire d’un message de vérifier que celui-ci n’a pas été modifié au cours de transmission, les signatures utilisent une paire de clés privée/publique.
@@ -189,8 +196,3 @@ Comme la plupart des opérations de signature de clé publique sont gourmandes e
 La signature permet uniquement de s’assurer que le message d’origine n’a pas été modifié et, à l’aide de la clé publique de l’expéditeur, que le hachage du message a été signé par quelqu’un qui a accès à la clé privée.
 
 Vous pouvez utiliser un objet [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) pour énumérer les algorithmes de signature disponibles et générer ou importer une paire de clés. Vous pouvez utiliser des méthodes statiques sur la classe [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) pour signer un message ou vérifier une signature.
-
-
-<!--HONumber=Aug16_HO3-->
-
-

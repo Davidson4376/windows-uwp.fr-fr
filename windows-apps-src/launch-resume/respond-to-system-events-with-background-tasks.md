@@ -3,9 +3,16 @@ author: TylerMSFT
 title: "Répondre aux événements système avec des tâches en arrière-plan"
 description: "Découvrez comment créer une tâche en arrière-plan qui répond aux événements SystemTrigger."
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 1774b853839e65fd08acb9eb8f9cbb1735cd9bee
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 797ee8930a01f9934692067139a3fd5321ae36df
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -92,9 +99,4 @@ Les applications peuvent inscrire des tâches en arrière-plan qui répondent au
 * [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

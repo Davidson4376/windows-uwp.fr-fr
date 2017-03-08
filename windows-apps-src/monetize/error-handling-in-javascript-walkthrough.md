@@ -3,10 +3,16 @@ author: mcleanbyron
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
 description: "Découvrez comment intercepter les erreurs AdControl dans votre application."
 title: "Gestion des erreurs dans la procédure pas à pas pour JavaScript"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, annonces publicitaires, publicité, gestion des erreurs, javascript"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: ad177c964f2a01640d33fc09f1789fc857801792
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 935ce9ca17d2b9d4a63496ab0b254960bd68e23d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -15,7 +21,7 @@ ms.openlocfilehash: ad177c964f2a01640d33fc09f1789fc857801792
 
 
 
-Cette rubrique montre comment intercepter les erreurs [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) dans votre application.
+Cet article indique comment intercepter les erreurs [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) dans votre application.
 
 Ces exemples partent du principe que vous disposez d’une application JavaScript/HTML qui contient un **AdControl**. Pour obtenir des instructions pas à pas qui montrent comment ajouter un **AdControl** à votre application, voir [AdControl en HTML 5 JavaScript](adcontrol-in-html-5-and-javascript.md). Pour un exemple de projet complet illustrant l’ajout de bannières publicitaires à une application HTML/JavaScript, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
@@ -80,9 +86,4 @@ Ces exemples partent du principe que vous disposez d’une application JavaScrip
 * [Exemples de publicité sur GitHub](http://aka.ms/githubads)
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

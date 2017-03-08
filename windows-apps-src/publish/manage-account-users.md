@@ -3,30 +3,37 @@ author: jnHs
 Description: "Ajoutez des utilisateurs à votre compte du Centre de développement, affectez-leur des rôles avec des autorisations spécifiques."
 title: "Gérer des utilisateurs de compte"
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 8df29888a70638de41cc5874d9469b047b971e97
-ms.openlocfilehash: 2beba2cd6f818782750c812829bc04a9297048a1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 83c7f52f0d55773c3bb0d5802eb1166aa6cf40a7
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Gérer des utilisateurs de compte
+# <a name="manage-account-users"></a>Gérer des utilisateurs de compte
 
 
 Vous pouvez utiliser Azure Active Directory pour ajouter des utilisateurs à votre compte du Centre de développement. Un rôle est attribué à chaque utilisateur. Il lui confère un ensemble d’autorisations spécifique à l’égard du compte. Vous pouvez également attribuer un rôle à un groupe d’utilisateurs ou à une application Azure AD.
 
-> **Important** Pour ajouter et gérer des utilisateurs de comptes, vous devez d’abord associer votre compte du Centre de développement au service Azure Active Directory de votre organisation. Pour cela, vous devez vous connecter à Azure AD avec un compte [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654). Une fois cette association établie, vous ne pouvez plus la supprimer sans prendre contact avec le support.
+> **Important**  Pour ajouter et gérer des utilisateurs de comptes, vous devez d’abord associer votre compte du Centre de développement au service Azure Active Directory de votre organisation. Pour cela, vous devez vous connecter à Azure AD avec un compte [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654). Une fois cette association établie, vous ne pouvez plus la supprimer sans prendre contact avec le support.
 
-## Associer votre compte du Centre de développement au service Azure Active Directory de votre organisation
+## <a name="associate-your-dev-center-account-with-your-organizations-azure-active-directory"></a>Associer votre compte du Centre de développement au service Azure Active Directory de votre organisation
 
-Le Centre de développement Windows tire parti d’Azure Active Directory pour la gestion multi-utilisateurs et l’attribution des rôles. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Dans le cas contraire, vous pouvez créer un AzureAD depuis le Centre de développement sans frais supplémentaires.
+Le Centre de développement Windows tire parti d’Azure Active Directory pour la gestion multi-utilisateurs et l’attribution des rôles. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Dans le cas contraire, vous pouvez créer un Azure AD depuis le Centre de développement sans frais supplémentaires.
 
 Notez que vous ne pouvez associer qu’un seul compte du Centre de développement à un service Azure AD. De même, il n’est possible d’associer qu’un seul service Azure AD à un compte du Centre de développement.
 
-> **Remarque** Vous ne pouvez ajouter des utilisateurs à votre compte du Centre de développement que s’ils font partie du service Azure AD de votre organisation (ou si vous créez des comptes Azure AD pour eux). Vous ne pourrez pas ajouter d’utilisateurs à votre compte du Centre de développement en utilisant leur compte Microsoft personnel.
+> **Remarque**   Si les utilisateurs que vous souhaitez ajouter ne font pas partie du service Azure AD de votre organisation et que vous ne souhaitez pas créer de compte Azure AD, vous pouvez les [inviter par courrier électronique](#add-and-manage-account-users).
 
-### Associer votre compte du Centre de développement au service Azure AD existant de votre organisation
+### <a name="associate-your-dev-center-account-with-your-organizations-existing-azure-ad"></a>Associer votre compte du Centre de développement au service Azure AD existant de votre organisation
 
-Si votre organisation utilise déjà AzureAD, suivez ces étapes pour lier votre compte du Centre de développement.
+Si votre organisation utilise déjà Azure AD, suivez ces étapes pour lier votre compte du Centre de développement.
 
 1.  Sous **Paramètres du compte**, cliquez sur **Gérer les utilisateurs**.
 2.  Cliquez sur le bouton **Associer Azure AD avec votre compte du Centre de développement**.
@@ -34,44 +41,44 @@ Si votre organisation utilise déjà AzureAD, suivez ces étapes pour lier votre
 4.  Vérifiez le nom d’organisation et le nom de domaine pour votre compte Azure AD. Pour valider l’association, cliquez sur **Confirmer**.
 5.  Si l’association réussit, vous êtes prêt à ajouter et gérer des utilisateurs de comptes sur la page **Gérer les utilisateurs** de votre compte, tel que décrit dans les sections ci-dessous.
 
-### Créer un tout nouvel AzureAD à associer à votre compte du Centre de développement
+### <a name="create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account"></a>Créer un tout nouvel Azure AD à associer à votre compte du Centre de développement
 
 Si vous avez besoin de configurer un nouvel Azure AD à lier à votre compte du Centre de développement, procédez comme suit.
 
-1.  Sous **Paramètres du compte**, cliquez sur **Gérer les utilisateurs**.
-2.  Cliquez sur le bouton **Créer Azure AD**.
-3.  Entrez les informations de répertoire de votre nouvel Azure AD:
- - **Nom de domaine**: nom unique que nous utiliserons pour votre domaine Azure AD, avec «.onmicrosoft.com». Par exemple, si vous avez entré «exemple», votre domaine Azure AD sera «exemple.onmicrosoft.com».
- - **E-mail de contact**: adresse de messagerie à laquelle nous pouvons vous contacter à propos de votre compte si nécessaire.
- - **Informations de compte d’utilisateur administrateur général**: prénom, nom, nom d’utilisateur et mot de passe que vous souhaitez utiliser pour le nouveau compte d’administrateur.
-4.  Cliquez sur **Créer** pour confirmer les nouvelles informations de domaine et de compte.
-5.  Connectez-vous avec vos nouveaux nom d’utilisateur et mot de passe d’administrateur général Azure AD pour commencer à ajouter et à gérer des utilisateurs de compte supplémentaires sur la page **Gérer les utilisateurs** de votre compte, tel que décrit dans les sections ci-dessous.
+1.    Sous **Paramètres du compte**, cliquez sur **Gérer les utilisateurs**.
+2.    Cliquez sur le bouton **Créer Azure AD**.
+3.    Entrez les informations de répertoire de votre nouvel Azure AD :
+ - **Nom de domaine** : nom unique que nous utiliserons pour votre domaine Azure AD, avec « .onmicrosoft.com ». Par exemple, si vous avez entré « exemple », votre domaine Azure AD sera « exemple.onmicrosoft.com ».
+ - **E-mail de contact** : adresse de messagerie à laquelle nous pouvons vous contacter à propos de votre compte si nécessaire.
+ - **Informations de compte d’utilisateur administrateur général** : prénom, nom, nom d’utilisateur et mot de passe que vous souhaitez utiliser pour le nouveau compte d’administrateur.
+4.    Cliquez sur **Créer** pour confirmer les nouvelles informations de domaine et de compte.
+5.    Connectez-vous avec vos nouveaux nom d’utilisateur et mot de passe d’administrateur général Azure AD pour commencer à ajouter et à gérer des utilisateurs de compte supplémentaires sur la page **Gérer les utilisateurs** de votre compte, tel que décrit dans les sections ci-dessous.
 
 
-> **Important** Après avoir associé votre compte du Centre de développement Azure AD, vous aurez toujours besoin de vous connecter au Centre de développement à l’aide du compte d’administrateur général Azure AD (et non d’un compte Microsoft personnel) afin d’ajouter et de gérer les utilisateurs de compte.
+> **Important**  Après avoir associé votre compte du Centre de développement Azure AD, vous aurez toujours besoin de vous connecter au Centre de développement à l’aide du compte d’administrateur général Azure AD (et non d’un compte Microsoft personnel) afin d’ajouter et de gérer les utilisateurs de compte.
 
-## Ajouter et gérer des utilisateurs, des groupes et des applications Azure AD pour le compte
+## <a name="add-and-manage-account-users-groups-and-azure-ad-applications"></a>Ajouter et gérer des utilisateurs, des groupes et des applications Azure AD pour le compte
 
 Une fois l’association établie, vous pouvez ajouter des utilisateurs, des groupes et des applications Azure AD à votre compte. Vous pouvez également modifier les rôles et les détails de compte ou supprimer des utilisateurs.
 
-> **Remarque** Si votre organisation utilise l’[intégration du répertoire](http://go.microsoft.com/fwlink/p/?LinkID=724033) pour synchroniser le service d’annuaire local avec votre compte Azure AD, vous ne pourrez pas créer d’utilisateurs, de groupes ou d’applications Azure AD dans le Centre de développement. Vous (ou un autre administrateur de votre annuaire local) devrez créer ces éléments directement dans l’annuaire local avant de pouvoir les afficher et les ajouter dans le Centre de développement.
+> **Remarque**  Si votre organisation utilise l’[intégration du répertoire](http://go.microsoft.com/fwlink/p/?LinkID=724033) pour synchroniser le service d’annuaire local avec votre compte Azure AD, vous ne pourrez pas créer d’utilisateurs, de groupes ou d’applications Azure AD dans le Centre de développement. Vous (ou un autre administrateur de votre annuaire local) devrez créer ces éléments directement dans l’annuaire local avant de pouvoir les afficher et les ajouter dans le Centre de développement.
 
 Lorsque vous gérez des utilisateurs, gardez à l’esprit les points suivants :
 
 -   Tous les utilisateurs du Centre de développement doivent disposer d’un compte actif auprès du service Azure AD de votre organisation.
 -   Lorsque vous **créez** un utilisateur ou un groupe dans le Centre de développement, il est également ajouté au service Azure AD de votre organisation.
 -   Lorsque vous modifiez le nom d’un utilisateur ou d’un groupe dans le Centre de développement, les modifications sont répercutées dans le service Azure AD de votre organisation.
--   Les utilisateurs (y compris les groupes et applications AzureAD) pourront accéder à l’ensemble du compte du Centre de développement avec les autorisations associées au rôle qui leur est attribué. Si vous [personnalisez les autorisations](set-custom-permissions-for-account-users.md), vous pouvez limiter l’accès d’un utilisateur de sorte qu’il puisse utiliser uniquement des applications et/ou modules complémentaires.
+-   Les utilisateurs (y compris les groupes et applications Azure AD) pourront accéder à l’ensemble du compte du Centre de développement avec les autorisations associées au rôle qui leur est attribué. Si vous [personnalisez les autorisations](set-custom-permissions-for-account-users.md), vous pouvez limiter l’accès d’un utilisateur de sorte qu’il puisse utiliser uniquement des applications et/ou modules complémentaires.
 -   Vous pouvez autoriser un utilisateur, un groupe ou une application Azure AD à accéder aux fonctionnalités de différents rôles en sélectionnant plusieurs rôles ou en utilisant les [autorisations personnalisées](set-custom-permissions-for-account-users.md) pour accorder l’accès de votre choix.
 -   Un utilisateur ayant un certain rôle (ou un ensemble [d’autorisations personnalisées](set-custom-permissions-for-account-users.md)) peut également faire partie d’un groupe ayant un rôle différent (ou un ensemble d’autorisations). Dans ce cas, l’utilisateur a accès à toutes les fonctionnalités associées au groupe et au compte individuel.
 
-### Rôles et autorisations
+## <a name="roles-and-permissions"></a>Rôles et autorisations
 
-Lorsque vous ajoutez un utilisateur, un groupe ou une application AzureAD, vous devez spécifier ses autorisations. Pour cela, vous pouvez leur accorder un **rôle standard** ou [personnaliser leurs autorisations](set-custom-permissions-for-account-users.md).
+Lorsque vous ajoutez un utilisateur, un groupe ou une application Azure AD, vous devez spécifier ses autorisations. Pour cela, vous pouvez leur accorder un **rôle standard** ou [personnaliser leurs autorisations](set-custom-permissions-for-account-users.md).
 
-À moins d’utiliser des autorisations personnalisées, chaque utilisateur, groupe ou application AzureAD ajoutée à un compte doit se voir attribuer au moins l’un des rôles standard ci-après. Chaque rôle dispose d’un ensemble d’autorisations spécifique lui permettant d’exécuter certaines fonctions dans le cadre du compte. 
+À moins d’utiliser des autorisations personnalisées, chaque utilisateur, groupe ou application Azure AD ajoutée à un compte doit se voir attribuer au moins l’un des rôles standard ci-après. Chaque rôle dispose d’un ensemble d’autorisations spécifique lui permettant d’exécuter certaines fonctions dans le cadre du compte. 
 
-> **Remarque** Le propriétaire du compte est la personne qui l’a créé en premier avec un compte Microsoft (et non l’un des utilisateurs ajoutés par le biais d’Azure AD). Il est le seul à disposer d’un accès complet au compte et à pouvoir notamment supprimer des applications, créer et modifier l’ensemble des utilisateurs du compte et modifier tous les paramètres financiers et de compte. 
+> **Remarque**  Le propriétaire du compte est la personne qui l’a créé en premier avec un compte Microsoft (et non l’un des utilisateurs ajoutés par le biais d’Azure AD). Il est le seul à disposer d’un accès complet au compte et à pouvoir notamment supprimer des applications, créer et modifier l’ensemble des utilisateurs du compte et modifier tous les paramètres financiers et de compte. 
 
 | Rôle                 | Description              |
 |----------------------|--------------------------|
@@ -95,7 +102,7 @@ Le tableau ci-dessous présente certaines fonctionnalités spécifiques disponib
 
 Si aucun des rôles standard ne convient, ou si vous souhaitez limiter l’accès à des applications spécifiques et/ou des modules complémentaires, vous pouvez accorder des autorisations personnalisées à l’utilisateur en cliquant sur **Personnaliser les autorisations**. Pour plus d’informations, consultez [Définir des autorisations personnalisées pour les utilisateurs de compte](set-custom-permissions-for-account-users.md).
 
-### Ajouter et gérer des utilisateurs du compte
+## <a name="add-and-manage-account-users"></a>Ajouter et gérer des utilisateurs du compte
 
 Pour identifier les utilisateurs que vous souhaitez ajouter à votre compte du Centre de développement et leur attribuer un rôle, cliquez sur **Ajouter des utilisateurs**.
 
@@ -162,9 +169,9 @@ Si vous avez fourni un **e-mail de récupération du mot de passe** lors de la c
 2.  Cliquez sur le bouton **Réinitialiser le mot de passe** en bas de la page.
 3.  Une page de confirmation affiche les informations de connexion de l’utilisateur, y compris un mot de passe temporaire.
 
-   > **Important** Veillez à imprimer ou copier ces informations et à les fournir à l’utilisateur, car vous n’aurez plus accès au mot de passe temporaire après avoir quitté cette page.
+   > **Important**  Veillez à imprimer ou copier ces informations et à les fournir à l’utilisateur, car vous n’aurez plus accès au mot de passe temporaire après avoir quitté cette page.
 
-### Ajouter et gérer des groupes
+## <a name="add-and-manage-groups"></a>Ajouter et gérer des groupes
 
 Lorsque vous ajoutez un groupe à votre compte du Centre de développement partir de l’annuaire de votre organisation, tous les utilisateurs membres de ce groupe peuvent y accéder avec les autorisations associées au rôle attribué à ce groupe. Gardez à l’esprit que toutes les modifications apportées aux groupes (notamment à leur nom ou leur appartenance) seront répercutées dans l’annuaire de votre organisation.
 
@@ -199,7 +206,7 @@ Vous pouvez modifier des comptes de groupe que vous avez ajoutés à votre compt
 3.  Pour modifier le rôle du groupe, sélectionnez ou désélectionnez les rôles que vous souhaitez appliquer au groupe, ou attribuez des autorisations personnalisées.
 4.  Cliquez sur **Enregistrer**.
 
-### Ajouter et gérer des applications Azure AD
+## <a name="add-and-manage-azure-ad-applications"></a>Ajouter et gérer des applications Azure AD
 
 Vous pouvez autoriser des applications ou des services faisant partie intégrante du service Azure AD de votre organisation à accéder à votre compte du Centre de développement.
 
@@ -228,7 +235,7 @@ Si vous souhaitez accorder à un nouveau compte d’application Azure AD l’acc
 
 Après avoir ajouté ou créé une application Azure AD, revenez à la section **Gérer les utilisateurs**, puis cliquez sur le nom de l’application pour revoir les paramètres de l’application, y compris l’ID de locataire, l’ID de client, l’URL de réponse et l’URI d’ID d’application.
 
-> **Remarque** Si vous envisagez d’utiliser les API REST fournies par les [services du Windows Store](../monetize/using-windows-store-services.md), vous aurez besoin des valeurs ID de locataire et ID de client indiquées sur cette page pour obtenir un jeton d’accès AzureAD que vous pourrez utiliser pour authentifier les appels aux services.   
+> **Remarque** Si vous envisagez d’utiliser les API REST fournies par les [services du Windows Store](../monetize/using-windows-store-services.md), vous aurez besoin des valeurs ID de locataire et ID de client indiquées sur cette page pour obtenir un jeton d’accès Azure AD que vous pourrez utiliser pour authentifier les appels aux services.   
 
 Vous pouvez modifier les applications Azure AD que vous avez ajoutées à votre compte du Centre de développement dans la section **Gérer les utilisateurs**. Notez que les modifications apportées à l’URL de réponse et à l’URI d’ID d’application seront non seulement répercutées dans votre compte du Centre de développement, mais également dans l’annuaire de votre organisation. Les modifications de rôle affecteront uniquement les autorisations de l’application Azure AD dans le Centre de développement.
 
@@ -245,30 +252,31 @@ Si votre application Azure AD lit et écrit des données dans Microsoft Azure AD
 
 1.  Sur la page **Gérer les utilisateurs**, cliquez sur le nom de l’application Azure AD.
 
-    > **Conseil** Lorsque vous cliquez sur le nom de l’application Azure AD, vous voyez toutes les clés actives pour cette application, y compris les dates de création et d’arrivée à expiration des clés. Pour supprimer une clé devenue inutile, cliquez sur **Supprimer**.
+    > **Conseil**  Lorsque vous cliquez sur le nom de l’application Azure AD, vous voyez toutes les clés actives pour cette application, y compris les dates de création et d’arrivée à expiration des clés. Pour supprimer une clé devenue inutile, cliquez sur **Supprimer**.
 
 2.  Pour ajouter une nouvelle clé, cliquez sur **Ajouter une clé**.
 
 3.  Un écran vous présente les valeurs **ID client** et **Clé**.
 
-    > **Important** Veillez à imprimer ou copier ces informations, car vous n’y aurez plus accès après avoir quitté cette page.
+    > **Important**  Veillez à imprimer ou copier ces informations, car vous n’y aurez plus accès après avoir quitté cette page.
 
 4.  Si vous souhaitez créer d’autres clés, cliquez sur **Ajouter une autre clé**.
 
-### Supprimer des utilisateurs, des groupes et des applications Azure AD
+## <a name="view-history-for-account-users"></a>Afficher l’historique des utilisateurs de compte
+
+En tant que propriétaire de compte, vous pouvez afficher l’historique détaillé de navigation des utilisateurs supplémentaires ajoutés au compte.
+
+Sur la page **Gérer les utilisateurs**, cliquez sur le lien présent sous **Dernière activité** pour l’utilisateur dont vous souhaitez passer en revue l’historique de navigation. Vous serez en mesure d’afficher les URL de toutes les pages auxquelles a accédé l’utilisateur au cours des 30 derniers jours.
+
+## <a name="removing-users-groups-and-azure-ad-applications"></a>Supprimer des utilisateurs, des groupes et des applications Azure AD
 
 Pour supprimer un utilisateur, un groupe ou une application Azure AD de votre compte du Centre de développement, cliquez sur le lien **Supprimer** en regard de leur nom sur la page **Gérer les utilisateurs**. Une fois la suppression du compte confirmée, l’utilisateur, le groupe ou l’application Azure AD ne pourront plus accéder à votre compte du Centre de développement (sauf si vous l’ajoutez de nouveau ultérieurement).
 
-> **Remarque** Lorsque vous supprimez un utilisateur, un groupe ou une application Azure AD, ces derniers n’ont plus accès à votre compte du Centre de développement. L’utilisateur, le groupe ou l’application Azure AD n’est pas supprimé de l’annuaire de votre organisation.
+> **Remarque**  Lorsque vous supprimez un utilisateur, un groupe ou une application Azure AD, ces derniers n’ont plus accès à votre compte du Centre de développement. L’utilisateur, le groupe ou l’application Azure AD n’est pas supprimé de l’annuaire de votre organisation.
 
  
 
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

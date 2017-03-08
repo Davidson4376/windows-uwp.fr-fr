@@ -3,21 +3,28 @@ author: TylerMSFT
 title: "Prendre en charge votre application avec des tâches en arrière-plan"
 description: "Les rubriques de cette section expliquent comment exécuter du code léger en arrière-plan, en réponse à des déclencheurs."
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 9f83717657fddf2df51589aae75a3aa21c6ef5da
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a9ac85483c3d7e252f24147088b928de6e781dc6
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="support-your-app-with-background-tasks"></a>Prendre en charge votre application avec des tâches en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 Les rubriques de cette section expliquent comment exécuter du code léger en arrière-plan, en réponse à des déclencheurs. Vous pouvez utiliser les tâches en arrière-plan pour fournir des fonctionnalités lorsque votre application est suspendue ou n’est pas en cours d’exécution. Les tâches en arrière-plan sont également utiles pour les applications de communication en temps réel (VoIP, messagerie électronique et messagerie instantanée, par exemple).
 
 ## <a name="playing-media-in-the-background"></a>Lecture de contenu multimédia en arrière-plan
 
-À partir de Windows 10, version 1607, il est beaucoup plus facile de lire du contenu audio en arrière-plan. Voir [Lire du contenu multimédia en arrière-plan](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio) pour obtenir plus d’informations.
+À partir de Windows 10, version 1607, il est beaucoup plus facile de lire du contenu audio en arrière-plan. Voir [Lire du contenu multimédia en arrière-plan](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio) pour obtenir plus d’informations.
 
 ## <a name="in-process-and-out-of-process-background-tasks"></a>Tâches en arrière-plan in-process et hors processus
 
@@ -162,7 +169,7 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 
 **Recommandations connexes en matière de tâches en arrière-plan**
 
-* [Lire du contenu multimédia en arrière-plan](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
+* [Lire du contenu multimédia en arrière-plan](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Accéder aux capteurs et aux périphériques à partir d’une tâche en arrière-plan](access-sensors-and-devices-from-a-background-task.md)
 * [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
@@ -179,9 +186,4 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
 * [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
 * [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 * [Synchronisation et mise à jour des périphériques pour les applications pour périphériques du Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=306619)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

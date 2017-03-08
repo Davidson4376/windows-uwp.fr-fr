@@ -1,27 +1,34 @@
 ---
 title: "Stockage sécurisé des informations d’identification"
-description: "Cet article décrit comment des applications UWP peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur."
+description: "Cet article décrit comment des applications de plateforme Windows universelle (UWP) peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur."
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 2d5e1fada82e0c39ad0dce31c779ac80005aff17
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d72432aa5f9ccc40d4f822f5d76c1e09b606e33a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Stockage sécurisé des informations d’identification
+# <a name="credential-locker"></a>Stockage sécurisé des informations d’identification
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 
-Cet article décrit comment des applications de plateformeWindows universelle (UWP) peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur.
+Cet article décrit comment des applications de plateforme Windows universelle (UWP) peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur.
 
 Supposons que vous ayez une application qui se connecte à un service pour accéder à des ressources protégées telles que des fichiers multimédias ou des réseaux sociaux. Votre service exige des informations de connexion pour chaque utilisateur. Vous avez créé une interface utilisateur dans votre application, qui obtient le nom et le mot de passe de l’utilisateur. Ces données sont ensuite utilisées pour connecter l’utilisateur au service. L’API de stockage sécurisé des informations d’identification vous permet de stocker les nom et mot de passe de votre utilisateur, puis de les récupérer facilement pour connecter automatiquement l’utilisateur lors de la prochaine ouverture de l’application, quel que soit l’appareil utilisé.
 
 Le stockage sécurisé des informations d’identification fonctionne un peu différemment pour les comptes de domaine. Si des informations d’identification sont stockées avec votre compte Microsoft et que vous associez ce compte à un compte de domaine (comme le compte que vous utilisez au travail), vos informations sont transmises à ce compte de domaine. Toutefois, les nouvelles informations d’identification ajoutées lors de la connexion au compte de domaine ne seront pas transmises. Cela permet de s’assurer que les informations d’identification privées pour le domaine ne sont pas exposées à l’extérieur du domaine.
 
-## Stockage des informations d’identification de l’utilisateur
+## <a name="storing-user-credentials"></a>Stockage des informations d’identification de l’utilisateur
 
 
 1.  Obtenez une référence au stockage des informations d’identification de l’utilisateur à l’aide de l’objet [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) de l’espace de noms [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089).
@@ -33,7 +40,7 @@ vault.Add(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## Récupération des informations d’identification de l’utilisateur
+## <a name="retrieving-user-credentials"></a>Récupération des informations d’identification de l’utilisateur
 
 
 Pour récupérer les informations d’identification de l’utilisateur du stockage des informations d’identification de l’utilisateur suite à la création d’une référence à l’objet [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081), plusieurs options s’offrent à vous.
@@ -104,7 +111,7 @@ private Windows.Security.Credentials.PasswordCredential GetCredentialFromLocker(
 }
 ```
 
-## Suppression des informations d’identification de l’utilisateur
+## <a name="deleting-user-credentials"></a>Suppression des informations d’identification de l’utilisateur
 
 
 La suppression des informations d’identification de l’utilisateur dans le stockage sécurisé des informations d’identification est aussi un processus rapide en deux étapes.
@@ -119,7 +126,7 @@ vault.Remove(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## Meilleures pratiques
+## <a name="best-practices"></a>Meilleures pratiques
 
 
 Utilisez uniquement le stockage sécurisé des informations d’identification pour les mots de passe et pas pour des données plus volumineuses.
@@ -130,8 +137,3 @@ Enregistrez les mots de passe dans le stockage sécurisé des informations d’i
 -   L’utilisateur a choisi d’enregistrer les mots de passe.
 
 Ne stockez jamais d’informations d’identification en texte brut en utilisant des données d’application ou des paramètres d’itinérance.
-
-
-<!--HONumber=Aug16_HO3-->
-
-

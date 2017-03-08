@@ -2,16 +2,24 @@
 author: payzer
 title: "Référence des API des paramètres de développement Xbox Device Portal"
 description: "Découvrez comment accéder aux paramètres de développement Xbox."
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 translationtype: Human Translation
-ms.sourcegitcommit: c51eff41e63d815f6298b4fc46a9b11314bc8bc9
-ms.openlocfilehash: 5a983714cda9b5a5f45e555e2cb6f980f082a003
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: a17a489944fdc2d78831549c1afdc2bd87deabdf
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Informations de référence sur les API des paramètres de développement   
+# <a name="developer-settings-api-reference"></a>Informations de référence sur les API des paramètres de développement   
 Cette API vous permet d’accéder aux paramètres Xbox One utiles pour le développement.
 
-## Obtenir tous les paramètres de développement à la fois
+## <a name="get-all-developer-settings-at-once"></a>Obtenir tous les paramètres de développement à la fois
 
 **Requête**
 
@@ -34,12 +42,12 @@ GET | /ext/settings
 - Aucun
 
 **Réponse**   
-La réponse est un tableau de paramètres JSON contenant tous les paramètres. Chaque paramètre inclut les champs suivants:   
+La réponse est un tableau de paramètres JSON contenant tous les paramètres. Chaque paramètre inclut les champs suivants :   
 
-Name: (chaîne) le nom du paramètre.   
-Value: (chaîne) la valeur du paramètre.   
-RequiresReboot: («Oui» | «Non») ce champ indique si un redémarrage est nécessaire pour que le paramètre prenne effet.
-Category: (chaîne) la catégorie du paramètre.
+Name : (chaîne) le nom du paramètre.   
+Value : (chaîne) la valeur du paramètre.   
+RequiresReboot : (« Oui » | « Non ») ce champ indique si un redémarrage est nécessaire pour que le paramètre prenne effet.
+Category : (chaîne) la catégorie du paramètre.
 
 **Code d’état**
 
@@ -51,7 +59,7 @@ Code d’état HTTP      | Description
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
-## Obtenir les paramètres un par un
+## <a name="get-settings-one-at-a-time"></a>Obtenir les paramètres un par un
 Les paramètres peuvent également être récupérés individuellement.
 
 **Requête**
@@ -75,12 +83,12 @@ GET | /ext/settings/\&lt;nom paramètre\&gt;
 - Aucun
 
 **Réponse**   
-La réponse est un objet JSON avec les champs suivants:   
+La réponse est un objet JSON avec les champs suivants :   
 
-Name: (chaîne) le nom du paramètre.   
-Value: (chaîne) la valeur du paramètre.   
-RequiresReboot: («Oui» | «Non») ce champ indique si un redémarrage est nécessaire pour que le paramètre prenne effet.
-Category: (chaîne) la catégorie du paramètre.
+Name : (chaîne) le nom du paramètre.   
+Value : (chaîne) la valeur du paramètre.   
+RequiresReboot : (« Oui » | « Non ») ce champ indique si un redémarrage est nécessaire pour que le paramètre prenne effet.
+Category : (chaîne) la catégorie du paramètre.
 
 **Code d’état**
 
@@ -92,7 +100,7 @@ Code d’état HTTP      | Description
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
-## Définir la valeur d’un paramètre
+## <a name="set-the-value-of-a-setting"></a>Définir la valeur d’un paramètre
 Vous pouvez définir la valeur d’un paramètre.
 
 **Requête**
@@ -112,8 +120,8 @@ PUT | /ext/settings/\&lt;nom paramètre\&gt;
 - Aucun
 
 **Corps de la requête**   
-Le corps de la requête est un objet JSON contenant le champ suivant:   
-Value: (chaîne) la nouvelle valeur du paramètre.
+Le corps de la requête est un objet JSON contenant le champ suivant :   
+Value : (chaîne) la nouvelle valeur du paramètre.
 
 **Réponse**   
 
@@ -133,10 +141,5 @@ Code d’état HTTP      | Description
 **Familles d’appareils disponibles**
 
 * Windows Xbox
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

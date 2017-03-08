@@ -2,16 +2,24 @@
 author: WilliamsJason
 title: "Informations de référence sur les API Fiddler Device Portal"
 description: "Apprenez à activer/désactiver le suivi de Fiddler par programmation."
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 translationtype: Human Translation
-ms.sourcegitcommit: 3cc2a4bd1859e46a73f3e806489eac7381fa6c17
-ms.openlocfilehash: bd215058c71118d8b3e5ce81e2302ce8b151c3f6
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 24e966f953928d238f9197359e0b539b8a3e5c3c
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Informations de référence sur les API des paramètres Fiddler   
+# <a name="fiddler-settings-api-reference"></a>Informations de référence sur les API des paramètres Fiddler   
 Vous pouvez activer et désactiver le suivi réseau de Fiddler sur votre kit de développement à l’aide de cette API REST.
 
-## Activer le suivi de Fiddler
+## <a name="enable-fiddler-tracing"></a>Activer le suivi de Fiddler
 
 **Requête**
 
@@ -23,12 +31,12 @@ POST | /ext/fiddler
 <br />
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 | Paramètre d’URI      | Description     | 
 | ------------------ |-----------------|
 | proxyAddress       | L’adresse IP ou le nom d’hôte de l’appareil exécutant Fiddler |
-| proxyPort          | Le port que Fiddler utilise pour la surveillance du trafic. Par défaut: 8888 |
+| proxyPort          | Le port que Fiddler utilise pour la surveillance du trafic. Par défaut : 8888 |
 | updateCert (facultatif)| Une valeur booléenne indiquant si le certificat Fiddler racine est fourni. Cette valeur doit être true si Fiddler n’a jamais été configuré sur ce kit de développement ou a été configuré pour un autre hôte.  |
 <br>
 
@@ -54,7 +62,7 @@ Code d’état HTTP      | Description
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
-## Désactiver le suivi de Fiddler sur le kit de développement
+## <a name="disable-fiddler-tracing-on-the-devkit"></a>Désactiver le suivi de Fiddler sur le kit de développement
 
 **Requête**
 
@@ -95,12 +103,7 @@ Code d’état HTTP      | Description
 
 * Windows Xbox
 
-## Voir également
+## <a name="see-also"></a>Voir également
 - [Configuration de Fiddler pour UWP sur Xbox](uwp-fiddler.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

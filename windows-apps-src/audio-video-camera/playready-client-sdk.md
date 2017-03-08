@@ -2,16 +2,23 @@
 author: eliotcowley
 ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
 description: "Cette rubrique explique comment ajouter du contenu multimédia PlayReady protégé à votre application de plateforme Windows universelle (UWP)."
-title: "Gestion des droits numériques par PlayReady"
+title: "Gestion des droits numériques PlayReady"
+ms.author: elcowle
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 3c0b72b674ce02a1802a50c512e98b9aeba3bfe1
-ms.openlocfilehash: 97a3002c1e61d8f7d31b81a3a80d7473a5dc6077
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 161a048a4bfa9479821aec542db17ded8243d231
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="playready-drm"></a>Gestion des droits numériques par PlayReady
+# <a name="playready-drm"></a>Gestion des droits numériques PlayReady
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 
 Cette rubrique explique comment ajouter du contenu multimédia PlayReady protégé à votre application de plateforme Windows universelle (UWP).
@@ -35,7 +42,7 @@ La liste suivante décrit les nouvelles fonctionnalités et les modifications ap
 -   Les en-têtes suivants définissant les codes d’erreur PlayReady font désormais partie du Kit de développement logiciel (SDK) Windows : Windows.Media.Protection.PlayReadyErrors.h et Windows.Media.Protection.PlayReadyResults.h.
 -   Acquisition proactive de licences non persistantes.
 
-    Les versions précédentes de la gestion des droits numériques par PlayReady ne prenaient pas en charge l’acquisition proactive de licences non persistantes. Cette fonctionnalité a été ajoutée à cette version. Cela peut réduire le délai d’affichage de la première image. Pour plus d’informations, voir [Acquérir une licence non persistante de manière proactive avant la lecture](#proactively_acquire_a_non_persistent_license_before_playback).
+    Les versions précédentes de la gestion des droits numériques par PlayReady ne prenaient pas en charge l’acquisition proactive de licences non persistantes. Cette fonctionnalité a été ajoutée à cette version. Cela peut réduire le délai d’affichage de la première image. Pour plus d’informations, voir [Acquérir une licence non persistante de manière proactive avant la lecture](#proactively-acquire-a-non-persistent-license-before-playback).
 
 -   Acquisition de plusieurs licences en un message.
 
@@ -49,7 +56,7 @@ La liste suivante décrit les nouvelles fonctionnalités et les modifications ap
 -   Ajout de la prise en charge de restrictions temporelles (y compris l’expiration, l’expiration après la première lecture et l’expiration en temps réel) sur les licences non persistantes.
 -   Ajout de la prise en charge de la stratégie de protection HDCP de type 1 (version 2.2 sous Windows 10).
 
-    Pour plus d’informations, voir [Points à prendre en considération](#things_to_consider).
+    Pour plus d’informations, voir [Points à prendre en considération](#things-to-consider).
 
 -   Miracast est désormais une sortie implicite.
 -   Ajout de l’arrêt sécurisé.
@@ -395,9 +402,10 @@ Le tableau suivant décrit la gestion des droits numériques par PlayReady pour
 Avant de commencer la création de votre application pour UWP protégée par PlayReady, le logiciel suivant doit être installé sur votre système :
 
 -   Windows 10.
--   Si vous compilez les exemples de la gestion des droits numériques par PlayReady pour les applications pour UWP, vous devez utiliser Microsoft Visual Studio 2015 ou version ultérieure. Vous pouvez toujours utiliser Microsoft Visual Studio 2013 pour compiler les exemples de la gestion des droits numériques par PlayReady pour les applications du Windows Store Windows 8.1.
+-   Si vous compilez les exemples de la gestion des droits numériques par PlayReady pour les applications pour UWP, vous devez utiliser Microsoft Visual Studio 2015 ou version ultérieure. Vous pouvez toujours utiliser Microsoft Visual Studio 2013 pour compiler les exemples de la gestion des droits numériques par PlayReady pour les applications du Windows Store Windows 8.1.
 
-Si vous envisagez de lire du contenu MPEG-2/H.262 sur votre application, vous devez également télécharger et installer le [Pack Media Center pour Windows 8.1](http://go.microsoft.com/fwlink/p/?LinkId=626876).
+<!--This is no longer available-->
+<!--If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876).-->
 
 ## <a name="playready-windows-store-app-migration-guide"></a>Guide de migration des applications du Windows Store PlayReady
 
@@ -509,10 +517,5 @@ Utilisez l’approche qui convient pour votre produit et pour votre entreprise.
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

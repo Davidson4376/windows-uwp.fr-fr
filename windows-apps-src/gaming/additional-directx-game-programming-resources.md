@@ -3,39 +3,46 @@ author: mtoepke
 title: Ressources de programmation de jeux
 description: "Pour plus d’informations sur la programmation de jeux sur Windows, consultez les ressources suivantes."
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, jeux, programmation"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9d7e21a10686a22299e644600414c73f5b4991e7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 736f5f5864edc9c7a976e8e0f062779ddd1f86c5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Ressources de programmation de jeux
+# <a name="game-programming-resources"></a>Ressources de programmation de jeux
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Pour plus d’informations sur la programmation de jeux sur Windows, consultez les ressources suivantes.
 
-## Informations de référence sur la programmation de jeux
+## <a name="game-programming-reference"></a>Informations de référence sur la programmation de jeux
 
 
 -   [Graphiques et jeux](https://msdn.microsoft.com/library/windows/desktop/ee663279)
 -   [Informations de référence sur OpenGL](http://go.microsoft.com/fwlink/p/?LinkID=288875)
 
-## Guide de conception de jeux
+## <a name="game-design-guidance"></a>Guide de conception de jeux
 
 
 -   [Index des recommandations en matière d’expérience utilisateur pour les applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/hh465424)
 
-## Blogs
+## <a name="blogs"></a>Blogs
 
 
 -   [Jeux pour Windows et kit de développement logiciel (SDK) DirectX]( http://go.microsoft.com/fwlink/p/?LinkID=288873)
 -   [Blog DirectX pour les développeurs]( http://go.microsoft.com/fwlink/p/?LinkID=288874)
 -   [Blog de Shawn Hargreaves]( http://go.microsoft.com/fwlink/p/?LinkID=288872) (informations sur les jeux XNA).
 
-## Kits de ressources
+## <a name="toolkits"></a>Kits de ressources
 
 
 -   [Kit de ressources DirectX](  http://go.microsoft.com/fwlink/p/?LinkID=248929)
@@ -44,7 +51,7 @@ Pour plus d’informations sur la programmation de jeux sur Windows, consultez l
 -   [Win2D](https://github.com/Microsoft/Win2D) : API Windows Runtime facile à utiliser pour le rendu d’éléments graphiques 2D en mode immédiat avec accélération GPU.
 -   [ANGLE pour Windows Store](http://go.microsoft.com/fwlink/p/?linkid=618387) : exécute le contenu OpenGL ES sous Windows en convertissant les appels d’API OpenGL ES en appels d’API DirectX 11.
 
-## Vidéos des sessions consacrées au développement de jeux lors du GDC 2015
+## <a name="gdc-2015-game-dev-session-videos"></a>Vidéos des sessions consacrées au développement de jeux lors du GDC 2015
 
 
 -   [The Future of Gaming Across the Microsoft Ecosystem](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem), par Phil Spencer (en anglais)
@@ -62,14 +69,14 @@ Pour plus d’informations sur la programmation de jeux sur Windows, consultez l
 -   [Designing Games for a Windows Core World](http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World), par Todd Williams, Shai Hinitz (en anglais)
 -   [PC Games for Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10), par Chuck Walbourn (en anglais)
 
-## //Vidéos de la session Build 2015
+## <a name="build-2015-session-videos"></a>//Vidéos de la session Build 2015
 
 
 -   [Introducing Win2D: DirectX-Powered Drawing in C#](https://channel9.msdn.com/Events/Build/2015/2-631), par Simon Tao (en anglais)
 -   [ANGLE: Running OpenGL ES 2.0 Graphics Code on Windows](https://channel9.msdn.com/Events/Build/2015/3-686), par Tony Balogh (en anglais)
 -   [Advanced DirectX12 Graphics and Performance](https://channel9.msdn.com/Events/Build/2015/3-673), par Max McMullen (en anglais)
 
-## Autres ressources
+## <a name="other-resources"></a>Autres ressources
 
 
 -   [CodePlex](http://go.microsoft.com/fwlink/p/?LinkID=76627)
@@ -81,10 +88,5 @@ Pour plus d’informations sur la programmation de jeux sur Windows, consultez l
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

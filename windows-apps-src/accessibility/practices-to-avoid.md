@@ -5,14 +5,21 @@ ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
 title: "Pratiques d’accessibilité à éviter"
 label: Accessibility practices to avoid
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 014fb096817a25651188821fa59b202d260781d5
-ms.openlocfilehash: 382899f038e2ac2ad6e34e98b3ba4849e9685d10
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 27e91fad32818a920f393cba703773ea7fddcf0d
+ms.lasthandoff: 02/07/2017
 
 ---
-# Pratiques d’accessibilité à éviter
+# <a name="accessibility-practices-to-avoid"></a>Pratiques d’accessibilité à éviter
 
-Si vous voulez créer une application de plateforme Windows universelle (UWP) accessible, consultez cette liste des pratiques à éviter: 
+Si vous voulez créer une application de plateforme Windows universelle (UWP) accessible, consultez cette liste des pratiques à éviter : 
 
 * **Évitez de créer des éléments d’interface utilisateur personnalisés si vous pouvez utiliser les contrôles Windows par défaut** ou des contrôles qui ont déjà implémenté la prise en charge de Microsoft UI Automation. Les contrôles Windows standard sont accessibles par défaut et ne nécessitent généralement que l’ajout de quelques attributs d’accessibilité propres à l’application. L’implémentation de la prise en charge de [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) pour un vrai contrôle personnalisé nécessite quant à elle une charge de travail plus importante (voir [Pairs d’automatisation personnalisés](custom-automation-peers.md)).
 * **Ne placez pas de texte statique ou d’autres éléments non interactifs dans l’ordre de tabulation** (par exemple, en définissant la propriété [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) pour un élément non interactif). La présence d’éléments non interactifs dans l’ordre de tabulation est contraire aux consignes d’accessibilité du clavier, car elle diminue l’efficacité de la navigation au clavier pour les utilisateurs. De nombreuses technologies d’assistance utilisent l’ordre de tabulation et la possibilité de mettre le focus sur un élément dans le cadre de leur logique pour présenter l’interface d’une application à l’utilisateur de technologie d’assistance. Les éléments de texte uniquement dans l’ordre de tabulation peuvent dérouter les utilisateurs qui s’attendent à rencontrer seulement des éléments interactifs dans l’ordre de tabulation (boutons, cases à cocher, champs de saisie de texte, zones de liste déroulante, listes, etc.).
@@ -29,13 +36,8 @@ Si vous voulez créer une application de plateforme Windows universelle (UWP) ac
 * **Ne modifiez pas le contexte utilisateur ou n’activez pas des fonctionnalités automatiquement.** Les modifications de contexte ou d’activation doivent se produire uniquement lorsque l’utilisateur entreprend une action directe sur un élément d’interface utilisateur qui a le focus. Les modifications apportées au contexte utilisateur comprennent le changement de focus, l’affichage d’un nouveau contenu et la navigation jusqu’à une autre page. Le fait d’apporter des changements de contexte sans impliquer l’utilisateur peut être désorientant pour les utilisateurs souffrant de handicaps. Les exceptions à cette exigence sont notamment l’affichage de sous-menus, la validation de formulaires, l’affichage de texte d’aide dans un autre contrôle et la modification du contexte en réponse à un événement asynchrone.
 
 <span id="related_topics"/>
-## Rubriques connexes  
+## <a name="related-topics"></a>Rubriques connexes  
 * [Accessibilité](accessibility.md)
 * [Accessibilité dans le Windows Store](accessibility-in-the-store.md)
 * [Liste de vérification de l’accessibilité](accessibility-checklist.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -2,9 +2,17 @@
 author: PatrickFarley
 title: Lancer une application avec un URI
 description: "Cette section explique comment utiliser un URI (Uniform Resource Identifier) pour lancer une application à partir d’une autre application."
+ms.assetid: a40c4ce2-4f41-4a55-aeb3-1beb3e84e839
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: dfbfe75d19c08e549263b97350dfca1dbfb96447
-ms.openlocfilehash: e4b070db5180538732e08b10ace1aaa196ae5eaa
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6dceda60b60b29f772ec4fab8b142b45cc387e75
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -26,8 +34,3 @@ Cette section explique comment utiliser un URI (Uniform Resource Identifier) pou
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Lancer une application sur un appareil distant](launch-a-remote-app.md)
-
-
-<!--HONumber=Dec16_HO1-->
-
-

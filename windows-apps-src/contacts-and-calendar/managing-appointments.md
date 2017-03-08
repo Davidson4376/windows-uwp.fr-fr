@@ -3,20 +3,27 @@ author: Xansky
 description: "L’espace de noms Windows.ApplicationModel.Appointments vous permet de créer et gérer des rendez-vous dans l’application Calendrier d’un utilisateur."
 title: "Gérer des rendez-vous"
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp, rendez-vous, calendrier
 translationtype: Human Translation
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: ae7fe9075a4c49c99a572087bf4b7b176555caef
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8fe8c0172d50cfe65bc8e695ffeb6899a228bdd2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Gérer des rendez-vous
+# <a name="manage-appointments"></a>Gérer des rendez-vous
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 L’espace de noms [**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/Dn263359) vous permet de créer et gérer des rendez-vous dans l’application Calendrier d’un utilisateur. Ici, nous allons vous montrer comment créer un rendez-vous, l’ajouter à l’application Calendrier, le remplacer dans l’application Calendrier et le supprimer de l’application Calendrier. Nous allons également vous montrer comment afficher une période de temps pour une application Calendrier et créer un objet appointment-recurrence.
 
-## Créer un rendez-vous et lui ajouter des données
+## <a name="create-an-appointment-and-apply-data-to-it"></a>Créer un rendez-vous et lui ajouter des données
 
 Créez un objet [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) et affectez-le à une variable. Appliquez ensuite à **Appointment** les propriétés de rendez-vous fournies par un utilisateur dans l’interface utilisateur.
 
@@ -250,7 +257,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Ajouter un rendez-vous au calendrier d’un utilisateur
+## <a name="add-an-appointment-to-the-users-calendar"></a>Ajouter un rendez-vous au calendrier d’un utilisateur
 
 Créez un objet [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) et affectez-le à une variable. Appelez ensuite la méthode [**AppointmentManager.ShowAddAppointmentAsync(Appointment, Rect, Placement)**](https://msdn.microsoft.com/library/windows/apps/dn297261) pour afficher l’interface utilisateur add-appointment du fournisseur de rendez-vous par défaut, pour permettre à l’utilisateur d’ajouter un rendez-vous. Si l’utilisateur a cliqué sur **Ajouter**, l’exemple affiche l’identificateur du rendez-vous renvoyé par **ShowAddAppointmentAsync**.
 
@@ -279,9 +286,9 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Remarque** Dans les applications du Windows Phone Store, l’élément [**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) fonctionne comme [**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync), c’est-à-dire que la boîte de dialogue affichée pour ajouter le rendez-vous est modifiable.
+**Remarque**  Dans les applications du Windows Phone Store, l’élément, [**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) fonctionne comme [**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync), c’est-à-dire que la boîte de dialogue affichée pour ajouter le rendez-vous est modifiable.
 
-## Remplacer un rendez-vous dans le calendrier d’un utilisateur
+## <a name="replace-an-appointment-in-the-users-calendar"></a>Remplacer un rendez-vous dans le calendrier d’un utilisateur
 
 Créez un objet [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) et affectez-le à une variable. Appelez ensuite la méthode [**AppointmentManager.ShowReplaceAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showreplaceappointmentasync) appropriée pour afficher l’interface utilisateur replace-appointment du fournisseur de rendez-vous par défaut, pour permettre à l’utilisateur de remplacer un rendez-vous. L’utilisateur fournit également l’identificateur du rendez-vous qu’il souhaite remplacer. Cet identificateur a été renvoyé à partir de [**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync). Si l’utilisateur a cliqué sur **Remplacer**, l’exemple indique que l’identificateur du rendez-vous a été mis à jour.
 
@@ -335,7 +342,7 @@ private async void Replace-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Supprimer un rendez-vous du calendrier d’un utilisateur
+## <a name="remove-an-appointment-from-the-users-calendar"></a>Supprimer un rendez-vous du calendrier d’un utilisateur
 
 Appelez la méthode [**AppointmentManager.ShowRemoveAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showremoveappointmentasync) appropriée pour afficher l’interface utilisateur remove-appointment du fournisseur de rendez-vous par défaut, pour permettre à l’utilisateur de supprimer un rendez-vous. L’utilisateur fournit également l’identificateur du rendez-vous qu’il souhaite supprimer. Cet identificateur a été renvoyé à partir de [**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync). Si l’utilisateur a cliqué sur **Supprimer**, l’exemple indique que le rendez-vous spécifié par cet identificateur du rendez-vous a été supprimé.
 
@@ -385,7 +392,7 @@ private async void Remove-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Afficher une période de temps pour le fournisseur de rendez-vous
+## <a name="show-a-time-span-for-the-appointments-provider"></a>Afficher une période de temps pour le fournisseur de rendez-vous
 
 Appelez la méthode [**AppointmentManager.ShowTimeFrameAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showtimeframeasync) pour afficher une période de temps spécifique pour l’interface utilisateur principale du fournisseur de rendez-vous par défaut si l’utilisateur a cliqué sur **Afficher**. L’exemple indique que le fournisseur de rendez-vous par défaut s’affiche à l’écran.
 
@@ -399,7 +406,7 @@ private async void Show-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Créer un objet appointment-recurrence et lui ajouter des données
+## <a name="create-an-appointment-recurrence-object-and-apply-data-to-it"></a>Créer un objet appointment-recurrence et lui ajouter des données
 
 Créez un objet [**Windows.ApplicationModel.Appointments.AppointmentRecurrence**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentrecurrence) et affectez-le à une variable. Appliquez ensuite à **AppointmentRecurrence** les propriétés de périodicité fournies par un utilisateur dans l’interface utilisateur.
 
@@ -502,7 +509,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Ajouter un rendez-vous modifiable
+## <a name="add-a-new-editable-appointment"></a>Ajouter un rendez-vous modifiable
 
 [**ShowEditNewAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) fonctionne comme [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync), sauf que la boîte de dialogue qui permet d’ajouter le rendez-vous est modifiable. Ainsi, l’utilisateur peut changer les données du rendez-vous avant de les enregistrer.
 
@@ -537,7 +544,7 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Afficher les détails des rendez-vous
+## <a name="show-appointment-details"></a>Afficher les détails des rendez-vous
 
 [**ShowAppointmentDetailsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) indique au système d’afficher les détails relatifs au rendez-vous spécifié. Une application qui implémente des calendriers d’application peut s’activer pour afficher les détails des rendez-vous dans ses propres calendriers. Sinon, le système affiche les détails des rendez-vous. Une surcharge de la méthode qui accepte un argument de date de début est fournie pour afficher les détails d’une instance de rendez-vous périodique.
 
@@ -560,19 +567,14 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 }
 ```
 
-## Récapitulatif et étapes suivantes
+## <a name="summary-and-next-steps"></a>Récapitulatif et étapes suivantes
 
 Vous disposez désormais des notions de base pour gérer les rendez-vous. Téléchargez les [Exemples d’applications Windows universelles](http://go.microsoft.com/fwlink/p/?linkid=619979) dans GitHub pour voir d’autres exemples illustrant comment gérer des rendez-vous.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Exemple d’API de rendez-vous](http://go.microsoft.com/fwlink/p/?linkid=309836)
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

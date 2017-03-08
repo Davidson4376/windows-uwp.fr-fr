@@ -1,26 +1,33 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: "Cette feuille de route propose une vue d’ensemble des principales fonct. d’entreprise pour les app. de plateforme Windowsuniverselle(UWP) et Windows10."
+description: "Cette feuille de route propose une vue d’ensemble des principales fonctionnalités d’entreprise pour les applications de plateforme Windows universelle (UWP) et Windows 10."
 title: Entreprise
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 8f4b9e7b1b30beb8974a17af77e4d7138bd8f829
-ms.openlocfilehash: 75a7723fb8934a59d44da2f075184dd6bbd85d45
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ffbccf88cd00331b622c158a7e46773ae62197e2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Entreprise
+# <a name="enterprise"></a>Entreprise
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cette feuille de route propose une vue d’ensemble sur les fonctionnalités principales d’entreprise des applications de la plateforme Windowsuniverselle(UWP) Windows10. Windows 10 vous permet d’écrire une application une seule fois, de la déployer sur tous les appareils, et se charge d’adapter cette application à tous les appareils. Vous pouvez ainsi concevoir des expériences exceptionnelles, à la hauteur des attentes de vos utilisateurs, tout en fournissant le contrôle que votre organisation exige en termes de sécurité, de gestion et de configuration.
+Cette feuille de route propose une vue d’ensemble sur les fonctionnalités principales d’entreprise des applications de la plateforme Windows universelle (UWP) Windows 10. Windows 10 vous permet d’écrire une application une seule fois, de la déployer sur tous les appareils, et se charge d’adapter cette application à tous les appareils. Vous pouvez ainsi concevoir des expériences exceptionnelles, à la hauteur des attentes de vos utilisateurs, tout en fournissant le contrôle que votre organisation exige en termes de sécurité, de gestion et de configuration.
 
 **Remarque** Cet article s’adresse aux développeurs qui écrivent des applications UWP d’entreprise. Pour le développement UWP général, voir les [guides de procédure pour les applications Windows 10](https://msdn.microsoft.com/library/windows/apps/mt244352). Pour le développement WPF, Windows Forms ou Win32, voir le [Centre de développement-Bureau](https://dev.windows.com/desktop). Pour les ressources informatiques professionnelles, tels que le déploiement de Windows 10 ou la gestion des fonctionnalités de sécurité d’entreprise, voir [Windows 10 sur TechNet](https://msdn.microsoft.com/library/dn986868).
 
  
 
-## Sécurité
+## <a name="security"></a>Sécurité
 
 
 Windows 10 fournit un ensemble de fonctionnalités de sécurité pour les développeurs d’applications destinées à protéger l’identité de leurs utilisateurs, la sécurité des réseaux d’entreprise et les données professionnelles stockées sur des appareils. Nouveauté de Windows 10, Microsoft Passport constitue une alternative à l’utilisation de mot de passe. Il s’agit d’une solution d’authentification à deux facteurs facile à déployer et accessible à l’aide d’un PIN ou de Windows Hello, qui fournit une sécurité de qualité professionnelle et prend en charge la reconnaissance des empreintes digitales, de l’iris et la reconnaissance faciale.
@@ -28,13 +35,13 @@ Windows 10 fournit un ensemble de fonctionnalités de sécurité pour les dével
 | Rubrique | Description |
 |-------|-------------|
 | [Présentation du développement d’applications Windows sécurisées](https://msdn.microsoft.com/library/windows/apps/mt622741) | Cet article introductif décrit les différentes fonctionnalités d’entreprise Windows lors des phases d’authentification, de données en transit et de données au repos. Il explique également comment vous pouvez intégrer ces phases dans vos applications. Il couvre une large gamme de rubriques et vise essentiellement à aider les architectes d’application à mieux comprendre les fonctionnalités Windows qui facilitent et accélèrent la création d’applications de plateforme Windows universelle. |
-| [Authentification et identité des utilisateurs](https://msdn.microsoft.com/library/windows/apps/mt270184) | Les applications UWP disposent de plusieurs options pour l’authentification des utilisateurs qui sont décrites dans cet article. Pour l’entreprise, l’utilisation de la nouvelle fonctionnalité Microsoft Passport est fortement recommandée. Microsoft Passport remplace les mots de passe par la méthode d’authentification à 2 facteurs (2FA) forte en vérifiant les informations d’identification existantes et en créant une information d’identification propre à l’appareil protégée par un mouvement de l’utilisateur basé sur la biométrie ou sur l’entrée du PIN de ce dernier. |
+| [Authentification et identité des utilisateurs](https://msdn.microsoft.com/library/windows/apps/mt270184) | Les applications UWP disposent de plusieurs options pour l’authentification des utilisateurs qui sont décrites dans cet article. Pour l’entreprise, l’utilisation de la nouvelle fonctionnalité Microsoft Passport est fortement recommandée. Microsoft Passport remplace les mots de passe par la méthode d’authentification à 2 facteurs (2FA) forte en vérifiant les informations d’identification existantes et en créant une information d’identification propre à l’appareil protégée par un simple mouvement de l’utilisateur basé sur la biométrie ou sur l’entrée du PIN de ce dernier. |
 | [Chiffrement](https://msdn.microsoft.com/library/windows/apps/mt270191) | La section relative au chiffrement fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications UWP. Les articles comprennent des procédures pas à pas introductives pour chiffrer facilement les données professionnelles sensibles et couvrent également des sujets avancés tels que la manipulation des clés de chiffrement et l’utilisation des codes d’authentification de message (MAC), codes de hachage et signatures. |
 | [Protection des informations Windows (WIP)](wip-hub.md) | Il s’agit d’une rubrique de hub destinée aux développeurs qui aborde de manière exhaustive la relation de la protection des informations Windows (WIP) avec les fichiers, les mémoires tampons, le Presse-papiers, la mise en réseau, les tâches en arrière-plan et la protection des données verrouillées. |
 
  
 
-## Liaison de données et bases de données
+## <a name="data-binding-and-databases"></a>Liaison de données et bases de données
 
 
 La liaison de données est un moyen dont dispose l’interface utilisateur de votre application pour afficher des données provenant d’une source externe (par exemple, une base de données) et éventuellement rester synchronisée avec ces données. La liaison de données vous permet de séparer les problématiques liées aux données de celles liées à l’interface utilisateur, ce qui se traduit par un modèle conceptuel plus simple et l’amélioration de la lisibilité, de la testabilité et de la gestion de la maintenance de votre application.
@@ -42,12 +49,12 @@ La liaison de données est un moyen dont dispose l’interface utilisateur de vo
 | Rubrique | Description |
 |-------|-------------|
 | [Vue d’ensemble de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt269383) | Cette rubrique vous montre comment lier un contrôle (ou un autre élément d’interface utilisateur) à un élément individuel ou lier un contrôle d’éléments à une collection d’éléments dans une application de plateforme Windows universelle (UWP). Elle explique également comment contrôler le rendu des éléments, implémenter un affichage des détails en fonction d’une sélection et convertir des données pour l’affichage. |
-| [Entity Framework7 pour UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | Entity Framework7, qui prend en charge UWP, vous permet d’exécuter facilement des requêtes complexes dans de grands ensembles de données. Dans cette procédure pas à pas, vous allez créer une application UWP qui propose un accès de base aux données d’une base de données SQLite locale à l’aide d’Entity Framework. |
+| [Entity Framework 7 pour UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | Entity Framework 7, qui prend en charge UWP, vous permet d’exécuter facilement des requêtes complexes dans de grands ensembles de données. Dans cette procédure pas à pas, vous allez créer une application UWP qui propose un accès de base aux données d’une base de données SQLite locale à l’aide d’Entity Framework. |
 | [Base de données SQLite locale.](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | Cette vidéo est un guide du développeur complet sur l’utilisation de SQLite, la solution recommandée pour les bases de données d’applications locales. Visitez [SQLite](https://www.sqlite.org/download.html) pour télécharger la dernière version pour UWP, ou utilisez la version fournie avec le Kit de développement logiciel (SDK) Windows 10. |
 
  
 
-## Réseau et sérialisation des données
+## <a name="networking-and-data-serialization"></a>Réseau et sérialisation des données
 
 
 Les applications métier ont souvent besoin de communiquer avec des données ou de les stocker dans un grand nombre d’autres systèmes. Cette opération est généralement effectuée en vous connectant à un service réseau (à l’aide de protocoles tels que REST ou SOAP), puis en sérialisant ou désérialisant les données dans un format commun. L’utilisation des services réseau et de la sérialisation des données dans les applications UWP est similaire à celle dans les applications WPF, WinForms et ASP.NET. Voir les articles suivants pour plus d’informations.
@@ -55,13 +62,13 @@ Les applications métier ont souvent besoin de communiquer avec des données ou 
 | Rubrique | Description |
 |-------|-------------|
 | [Notions de base en matière de réseau](https://msdn.microsoft.com/library/windows/apps/mt280233) | Cette procédure pas à pas explique les concepts de mise en réseau de base pertinents pour toutes les applications UWP, quels que soient les protocoles de communication utilisés.  |
-| [Quelle technologie de réseau?](https://msdn.microsoft.com/library/windows/apps/mt280235) | Une vue d’ensemble des technologies de réseau disponibles pour les applications UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application. |
+| [Quelle technologie de réseau ?](https://msdn.microsoft.com/library/windows/apps/mt280235) | Une vue d’ensemble des technologies de réseau disponibles pour les applications UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application. |
 | [Sérialisation XML et SOAP](https://msdn.microsoft.com/library/90c86ass.aspx) | La sérialisation XML convertit les objets en un flux XML qui est conforme à un langage de définition de schéma XML (XSD) spécifique. Pour effectuer une conversion entre XML et une classe fortement typée, vous pouvez utiliser la classe [XDocument](https://msdn.microsoft.com/library/system.xml.linq.xdocument.aspx) native ou une bibliothèque externe. |
 | [Sérialisation JSON](https://msdn.microsoft.com/library/windows/apps/br240639) | La sérialisation JSON (JavaScript Object Notation) est un format populaire utilisé pour la communication avec les API REST. Le [Newtonsoft Json.NET](http://www.newtonsoft.com/json), qui est entièrement pris en charge par les applications UWP. |
 
  
 
-## Appareils
+## <a name="devices"></a>Appareils
 
 
 Afin d’interagir avec des outils métier comme des imprimantes, des scanneurs de codes-barres ou des lecteurs de cartes à puce, vous jugerez peut-être nécessaire d’intégrer des appareils ou des capteurs externes à votre application. Voici quelques exemples des fonctionnalités que vous pouvez ajouter à votre application à l’aide de la technologie décrite dans cette section.
@@ -75,7 +82,7 @@ Afin d’interagir avec des outils métier comme des imprimantes, des scanneurs 
 
  
 
-## Ciblage des appareils
+## <a name="device-targeting"></a>Ciblage des appareils
 
 
 Aujourd’hui, de nombreux utilisateurs travaillent avec leur propre téléphone ou tablette, des appareils qui présentent des facteurs de forme et des tailles d’écran différents. Avec la plateforme Windows universelle (UWP), vous pouvez écrire une application métier unique qui s’exécute en toute transparence sur tous les types d’appareils, y compris les ordinateurs de bureau et quel que soit le nombre de PPP de l’écran, ce qui vous permet d’optimiser la portée de votre application ainsi que l’efficacité de votre code.
@@ -87,10 +94,10 @@ Aujourd’hui, de nombreux utilisateurs travaillent avec leur propre téléphone
 
  
 
-## Déploiement
+## <a name="deployment"></a>Déploiement
 
 
-Vous disposez d’options pour la distribution des applications aux utilisateurs de votre organisation. Vous pouvez utiliser Windows Store pour Entreprises, la gestion existante des appareils mobiles, ou charger de manière indépendante des applications sur les appareils. Vous pouvez également mettre vos applications à la disposition du grand public en les publiant sur le WindowsStore.
+Vous disposez d’options pour la distribution des applications aux utilisateurs de votre organisation. Vous pouvez utiliser Windows Store pour Entreprises, la gestion existante des appareils mobiles, ou charger de manière indépendante des applications sur les appareils. Vous pouvez également mettre vos applications à la disposition du grand public en les publiant sur le Windows Store.
 
 | Rubrique | Description |
 |-------|-------------|
@@ -100,7 +107,7 @@ Vous disposez d’options pour la distribution des applications aux utilisateurs
 
  
 
-## Modèles et pratiques
+## <a name="patterns-and-practices"></a>Modèles et pratiques
 
 
 Les bases de code pour les applications d’entreprise à grande échelle peuvent être difficiles à gérer. Prism est une infrastructure permettant de créer des applications XAML pouvant être testées, faciles à gérer et faiblement couplées dans WPF, UWP Windows 10 et Xamarin Forms. Prism fournit une implémentation d’une collection de modèles de conception utiles pour écrire des applications XAML bien structurées et faciles à gérer, notamment des modèles MVVM, d’injection de dépendance, de commandes, EventAggregator, etc.
@@ -110,9 +117,4 @@ Pour plus d’informations sur Prism, voir le [référentiel GitHub](https://git
  
 
  
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

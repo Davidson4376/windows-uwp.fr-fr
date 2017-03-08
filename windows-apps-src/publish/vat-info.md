@@ -3,23 +3,30 @@ author: jnHs
 Description: "Si vous devez fournir un numéro de TVA lors du processus d’inscription au Centre de développement, voici quelques informations pour vous aider à démarrer."
 title: Informations sur la TVA
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9ff913999f0697b379df868277fb45597150aa6e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a26cb43d230cd7dbb050254cceb70d3158c3af5d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Informations sur la TVA
+# <a name="vat-info"></a>Informations sur la TVA
 
 
 Si vous devez fournir un numéro de TVA lors du processus d’inscription au Centre de développement, voici quelques informations pour vous aider à démarrer.
 
-## Description des numéros de TVA
+## <a name="understanding-vat-numbers"></a>Description des numéros de TVA
 
 
 Un numéro de TVA (taxe sur la valeur ajoutée) est un identificateur utilisé pour des pays ou des régions dans l’Union européenne. Pour plus d’informations, accédez au site officiel de l’Union européenne [VIES](http://go.microsoft.com/fwlink/p/?LinkId=258372).
 
-## Formats acceptés pour les numéros de TVA
+## <a name="accepted-formats-for-vat-numbers"></a>Formats acceptés pour les numéros de TVA
 
 
 Notez que Microsoft ne fournit pas de conseils fiscaux et que le tableau suivant est fourni uniquement à titre indicatif. Si ces conseils ne vous suffisent pas pour indiquer un numéro de TVA à Microsoft, consultez votre administration fiscale locale pour savoir si des changements récents ont été opérés.
@@ -247,10 +254,5 @@ Notez que Microsoft ne fournit pas de conseils fiscaux et que le tableau suivant
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

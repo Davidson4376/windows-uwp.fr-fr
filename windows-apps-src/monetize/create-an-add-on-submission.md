@@ -3,13 +3,20 @@ author: mcleanbyron
 ms.assetid: C09F4B7C-6324-4973-980A-A60035792EFC
 description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour créer une soumission d’extension d’app. inscrite dans le compte du Centre de dév. Windows."
 title: "Créer une soumission d’extension avec l’API de soum. du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, créer une soumission d&quot;extensions, produit in-app, PIA"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: b7de4b00fb4d48b9f4c542437c38e0282e155a29
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: f824fe7d37a4a2db4e336fd43c335047e09aa323
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Créer une soumission d’extension avec l’API de soum. du Windows Store
+# <a name="create-an-add-on-submission-using-the-windows-store-submission-api"></a>Créer une soumission d’extension avec l’API de soum. du Windows Store
 
 
 
@@ -18,9 +25,9 @@ Utilisez cette méthode dans l’API de soumission du Windows Store pour créer 
 
 Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le processus de création d’une soumission d’extension à l’aide de l’API de soumission du Windows Store, consultez [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
 
->**Remarque**  Cette méthode permet de créer une soumission pour une extension existante. Pour créer une extension, utilisez la méthode [Créer une extension](create-an-add-on.md).
+>**Remarque**&nbsp;&nbsp;Cette méthode permet de créer une soumission pour une extension existante. Pour créer une extension, utilisez la méthode [Créer une extension](create-an-add-on.md).
 
-## Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
@@ -28,9 +35,9 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créez une extension pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une extension](create-an-add-on.md).
 
->**Remarque**  Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+>**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
-## Requête
+## <a name="request"></a>Requête
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
@@ -41,7 +48,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 <span/>
  
 
-### En-tête de requête
+### <a name="request-header"></a>En-tête de requête
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -49,7 +56,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Paramètres de la requête
+### <a name="request-parameters"></a>Paramètres de la requête
 
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -57,11 +64,11 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Corps de la requête
+### <a name="request-body"></a>Corps de la requête
 
 Ne fournissez pas de corps de requête pour cette méthode.
 
-### Exemple de requête
+### <a name="request-example"></a>Exemple de requête
 
 L’exemple suivant montre comment créer une soumission pour une extension.
 
@@ -70,7 +77,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/s
 Authorization: Bearer <your access token>
 ```
 
-## Réponse
+## <a name="response"></a>Réponse
 
 L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à cette méthode. Le corps de la réponse contient des informations sur la nouvelle soumission. Pour plus d’informations sur les valeurs figurant dans le corps de la réponse, voir la [ressource Soumission d’extension](manage-add-on-submissions.md#add-on-submission-object).
 
@@ -116,7 +123,8 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
          }
       }
     ],
-    "priceId": "Free"
+    "priceId": "Free",
+    "isAdvancedPricingModel": "true"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -146,7 +154,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 }
 ```
 
-## Codes d’erreur
+## <a name="error-codes"></a>Codes d’erreur
 
 Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
@@ -158,7 +166,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 <span/>
 
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Gérer les soumissions d’extensions](manage-add-on-submissions.md)
@@ -167,9 +175,4 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Mettre à jour une soumission d’extension](update-an-add-on-submission.md)
 * [Supprimer une soumission d’extension](delete-an-add-on-submission.md)
 * [Obtenir l’état d’une soumission d’extension](get-status-for-an-add-on-submission.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

@@ -3,9 +3,16 @@ author: msatranjr
 ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: "Déclarations des fonctionnalités d’application"
 description: "Pour pouvoir accéder à certaines API, ressources (images ou musique) ou appareils (appareil photo ou microphone), les fonctionnalités doivent être déclarées dans le manifeste du package de votre application UWP."
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: ece16df809e7f030c3cbb7a6ab5e727ae77614e3
-ms.openlocfilehash: 5b1052c8b20908cef431a4d1d144d5e8fe1a0eac
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 29aa2aefda5eebfade2da6b3e2b1e8b71361889f
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="app-capability-declarations"></a>Déclarations des fonctionnalités d’application
@@ -175,9 +182,4 @@ Cet article s’adresse aux développeurs de Windows 10 qui écrivent des appli
 * [Comment spécifier des fonctionnalités dans un manifeste de package](https://msdn.microsoft.com/library/windows/apps/BR211477)
 * [Comment spécifier des fonctionnalités de périphérique dans un manifeste de package](https://msdn.microsoft.com/library/windows/apps/Dn263092)
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

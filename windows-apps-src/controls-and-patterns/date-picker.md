@@ -1,21 +1,28 @@
 ---
 author: Jwmsft
-Description: "Le sélecteur de dates offre aux utilisateurs une méthode standard de sélection des valeurs des dates localisées à l’aide d’une entrée tactile, de la souris ou du clavier."
+Description: "Le sélecteur de dates vous offre une méthode standard pour permettre aux utilisateurs de sélectionner une valeur de date localisée à l’aide d’une entrée tactile, de la souris ou du clavier."
 title: "Sélecteur de dates"
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
 label: Date picker
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 76d5cd756f462ebaad5a200cf4bcf7f4076e4652
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 19551174cebd33785ac21910b52adf31e354373b
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="date-picker"></a>Sélecteur de dates
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Le sélecteur de dates offre aux utilisateurs une méthode standard de sélection des valeurs des dates localisées à l’aide d’une entrée tactile, de la souris ou du clavier. 
+Le sélecteur de dates vous offre une méthode standard pour permettre aux utilisateurs de sélectionner une valeur de date localisée à l’aide d’une entrée tactile, de la souris ou du clavier. 
 
 <div class="important-apis" >
 <b>API importantes</b><br/>
@@ -65,9 +72,4 @@ Le sélecteur de dates qui en résulte se présente comme suit :
 - [Sélecteur de dates du calendrier](calendar-date-picker.md)
 - [Affichage Calendrier](calendar-view.md)
 - [Sélecteur d’heure](time-picker.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

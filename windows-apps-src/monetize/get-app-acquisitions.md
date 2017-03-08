@@ -1,18 +1,25 @@
 ---
 author: mcleanbyron
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
-description: "Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir les données d’acquisition agrégées d’une application pour une plage de dates données, et en fonction de filtres facultatifs."
+description: "Utilisez cette méthode dans l’API d’analyse du Windows Store afin d’obtenir les données d’acquisition agrégées d’une application pour une plage de dates donnée et en fonction d’autres filtres facultatifs."
 title: "Obtenir des acquisitions d’applications"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, services du Windows Store, API d’analyse du Windows Store, acquisitions d’application"
 translationtype: Human Translation
-ms.sourcegitcommit: ce6535508136f8f7bfc8e0da599eea10a936908d
-ms.openlocfilehash: 2e35da3b3033ecbad8c48184d831ca9465142322
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9a716acb00b7a86429c444555c491b48cbc2c4b0
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="get-app-acquisitions"></a>Obtenir des acquisitions d’applications
 
 
-Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir les données d’acquisition agrégées au format JSON d’une application pour une plage de dates données, et en fonction de filtres facultatifs. Ces informations sont également disponibles dans le [rapport Acquisitions](../publish/acquisitions-report.md) du tableau de bord du Centre de développement.
+Utilisez cette méthode dans l’API d’analyse du Windows Store afin d’obtenir les données d’acquisition agrégées au format JSON d’une application pour une plage de dates donnée et en fonction d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport Acquisitions](../publish/acquisitions-report.md) du tableau de bord du Centre de développement.
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -160,9 +167,4 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 * [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
 * [Obtenir les classifications des applications](get-app-ratings.md)
 * [Obtenir les avis sur les applications](get-app-reviews.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

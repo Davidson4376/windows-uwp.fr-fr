@@ -3,15 +3,22 @@ author: DelfCo
 description: "Les applications utilisent les tâches en arrière-plan et deux mécanismes principaux pour maintenir les communications lorsqu’elles ne sont pas au premier plan."
 title: "Communications réseau en arrière-plan"
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a6d297ca8510267d21656bd2e22bb3958a4a4b52
-ms.openlocfilehash: ea979eceb20c13d4025ec94ec8ed05b484a7eb27
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3f0e52780788eafe9e53bba491b8d54208dcc761
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="network-communications-in-the-background"></a>Communications réseau en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -429,7 +436,7 @@ Pour plus d’informations sur l’utilisation de [**MessageWebSocket**](https:/
 
 Certaines considérations spéciales s’appliquent lors de l’utilisation de [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) avec [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Certaines meilleures pratiques et certains modèles d’utilisation spécifiques au transport doivent être respectés lors de l’utilisation d’un [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) avec **ControlChannelTrigger**. De plus, ces considérations affectent la manière dont les demandes de réception de paquets sur le [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) sont gérées.
 
-**Remarque** [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) utilisant SSL n’est pas pris en charge actuellement à l’aide de la fonctionnalité de déclencheur réseau et de [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+**Remarque**  [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) utilisant SSL n’est pas pris en charge actuellement à l’aide de la fonctionnalité de déclencheur réseau et de [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
  
 Les meilleures pratiques et modèles d’utilisation suivants doivent être respectés lors de l’utilisation de [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) avec [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) :
@@ -586,10 +593,5 @@ Meilleures pratiques et modèles d’utilisation à appliquer lors de l’utilis
 -   Il est possible qu’une application doive effectuer une demande [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) initiale pour tester et configurer le transport correctement avant de créer le transport à utiliser avec [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Une fois que l’application a déterminé que le transport était correctement configuré, l’objet [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) peut être configuré comme objet de transport utilisé avec **ControlChannelTrigger**. Ce processus est conçu pour empêcher certains scénarios d’interrompre la connexion établie sur le transport. En utilisant SSL avec un certificat, une application peut requérir l’affichage d’un dialogue pour la saisie du code confidentiel ou s’il est nécessaire de choisir parmi plusieurs certificats. L’authentification proxy et l’authentification du serveur peuvent être requises. Si l’authentification proxy ou l’authentification du serveur expire, la connexion peut être fermée. Une façon pour l’application de traiter ces problèmes d’expiration d’authentification consiste à définir un minuteur. Quand une redirection HTTP est requise, il n’est pas certain que la seconde connexion puisse être établie de manière fiable. Une demande de test initiale garantit que l’application peut utiliser l’URL redirigée la plus à jour avant d’utiliser l’objet **IXMLHTTPRequest2** comme transport avec l’objet **ControlChannelTrigger**.
 
 Pour plus d’informations sur l’utilisation de [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) avec [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), voir l’[exemple ControlChannelTrigger avec IXMLHTTPRequest2](http://go.microsoft.com/fwlink/p/?linkid=258538).
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

@@ -3,13 +3,20 @@ author: TylerMSFT
 title: "Recommandations pour les tâches en arrière-plan"
 description: "Assurez-vous que votre application répond aux exigences relatives à l’exécution de tâches en arrière-plan."
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 2d03c7f47461422fef7a0905df7e68b3e65c33f0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5e03fbb7971e5526d542d409bccb1c7fee6fd3ee
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="guidelines-for-background-tasks"></a>Recommandations pour les tâches en arrière-plan
+# <a name="guidelines-for-background-tasks"></a>Recommandations en matière de tâches en arrière-plan
 
 \[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -19,7 +26,7 @@ Assurez-vous que votre application répond aux exigences relatives à l’exécu
 
 Tenez compte des recommandations suivantes au moment de développer une tâche en arrière-plan et avant de publier votre application.
 
-Si vous utilisez une tâche en arrière-plan pour lire du contenu multimédia en arrière-plan, consultez [Lire du contenu multimédia en arrière-plan](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio). Les informations fournies sur les améliorations apportées dans Windows 10 version 1607 vous simplifieront la vie.
+Si vous utilisez une tâche en arrière-plan pour lire du contenu multimédia en arrière-plan, consultez [Lire du contenu multimédia en arrière-plan](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio). Les informations fournies sur les améliorations apportées dans Windows 10 version 1607 vous simplifieront la vie.
 
 **Tâches en arrière-plan hors processus ou in-process :** Windows 10 version 1607 propose des [tâches en arrière-plan in-process](create-and-register-an-inproc-background-task.md) qui vous permettent d’exécuter du code en arrière-plan dans le même processus que votre application au premier plan. Pour déterminer s’il est préférable de disposer de tâches en arrière-plan in-process ou hors processus, prenez en compte les facteurs suivants :
 
@@ -27,14 +34,14 @@ Si vous utilisez une tâche en arrière-plan pour lire du contenu multimédia en
 |--------------|--------|
 |Résilience   | Si votre processus en arrière-plan s’exécute dans un autre processus, un blocage dans votre processus en arrière-plan ne bloque pas votre application au premier plan. De plus, l’activité en arrière-plan peut être arrêtée, même dans votre application, si elle s’exécute au-delà des limites de durée d’exécution. Séparer des tâches en arrière-plan dans une tâche distincte de l’application au premier plan peut être plus judicieux lorsque les processus au premier plan et en arrière-plan n’ont pas à communiquer entre eux (l’un des principaux avantages des tâches en arrière-plan in-process est qu’elles évitent toute communication entre les processus). |
 |Simplicité    | Les tâches en arrière-plan in-process ne nécessitent aucune communication entre les processus et sont moins complexes à écrire.  |
-|Déclencheurs disponibles | Les tâches en arrière-plan in-process ne prennent pas en charge les déclencheurs suivants : [DeviceUseTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396), [DeviceServicingTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) et **IoTStartupTask**. |
+|Déclencheurs disponibles | Les tâches en arrière-plan in-process ne prennent pas en charge les déclencheurs suivants : [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396), [DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) et **IoTStartupTask**. |
 |VoIP | Les tâches en arrière-plan in-process ne prennent pas en charge l’activation d’une tâche en arrière-plan VoIP dans votre application. |  
 
 **Quotas de processeur :** les tâches en arrière-plan sont limitées par la quantité de temps d’utilisation de l’horloge en fonction de leur type de déclencheur. La plupart des déclencheurs sont limités à 30 secondes d’utilisation de l’horloge, mais certains ont une capacité d’exécution pouvant atteindre 10 minutes pour exécuter des tâches intensives. Les tâches en arrière-plan doivent être légères pour préserver l’autonomie de la batterie et assurer une meilleure expérience utilisateur pour les applications de premier plan. Pour plus d’informations sur les contraintes de ressource appliquées aux tâches en arrière-plan, consultez [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
 
 **Gérer les tâches en arrière-plan :** votre application doit obtenir la liste des tâches en arrière-plan inscrites, s’inscrire aux gestionnaires de progression et d’achèvement et gérer ces événements de manière appropriée. Vos classes de tâches en arrière-plan doivent signaler la progression, l’annulation et l’achèvement des tâches. Pour plus d’informations, consultez [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md) et [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md).
 
-**Utilisez [BackgroundTaskDeferral](https://msdn.microsoft.com/library/windows/apps/hh700499) :** si votre classe de tâches en arrière-plan exécute du code asynchrone, veillez à utiliser des reports. Sinon, votre tâche en arrière-plan peut se terminer prématurément lorsque la méthode [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) (ou la méthode [OnBackgroundActivated](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) dans le cas de tâches en arrière-plan in-process) est appelée. Pour plus d’informations, consultez [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md).
+**Utilisez [BackgroundTaskDeferral](https://msdn.microsoft.com/library/windows/apps/hh700499) :** si votre classe de tâches en arrière-plan exécute du code asynchrone, veillez à utiliser des reports. Sinon, votre tâche en arrière-plan peut se terminer prématurément lorsque la méthode [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) (ou la méthode [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) dans le cas de tâches en arrière-plan in-process) est appelée. Pour plus d’informations, consultez [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md).
 
 L’autre solution consiste à demander un report et à utiliser **async/await** pour exécuter des appels de méthode asynchrone. Fermez le report après les appels de la méthode **await**.
 
@@ -93,7 +100,7 @@ Cet article s’adresse aux développeurs de Windows 10 qui créent des applica
 * [Créez et inscrivez une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
 * [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
-* [Contenu audio en arrière-plan](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
+* [Contenu audio en arrière-plan](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
 * [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
@@ -108,9 +115,4 @@ Cet article s’adresse aux développeurs de Windows 10 qui créent des applica
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

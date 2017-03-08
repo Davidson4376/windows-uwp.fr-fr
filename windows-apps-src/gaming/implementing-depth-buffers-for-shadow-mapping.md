@@ -1,20 +1,27 @@
 ---
 author: mtoepke
 title: "Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11"
-description: "Cette procédure pas à pas montre comment effectuer le rendu de volumes d’ombre (« shadow volumes ») avec des mappages de profondeur, en utilisant Direct3D 11 sur des appareils de tout niveau de fonctionnalité Direct3D."
+description: "Cette procédure pas à pas indique comment effectuer le rendu de volumes d’ombre avec des cartes de profondeur, en utilisant Direct3D 11 sur des périphériques dotés de tous niveaux de fonctionnalités Direct3D."
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, jeux, directx, volumes d’ombre, tampons de profondeur, directx 11"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a323c299d588cdcff7b83d538a705d64207c96b2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 00e823b667a4622f6fa2dd213c3277bec9d616a2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11
+# <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>Procédure pas à pas : Implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cette procédure pas à pas montre comment effectuer le rendu de volumes d’ombre («shadow volumes») avec des mappages de profondeur, en utilisant Direct3D 11 sur des appareils de tout niveau de fonctionnalité Direct3D.
+Cette procédure pas à pas montre comment effectuer le rendu de volumes d’ombre (« shadow volumes ») avec des mappages de profondeur, en utilisant Direct3D 11 sur des appareils de tout niveau de fonctionnalité Direct3D.
 ## 
 <table>
 <colgroup>
@@ -49,7 +56,7 @@ Cette procédure pas à pas montre comment effectuer le rendu de volumes d’omb
 
  
 
-## Application du mappage d’ombres pour le portage Direct3D 9
+## <a name="shadow-mapping-application-to-direct3d-9-desktop-porting"></a>Application du mappage d’ombres pour le portage Direct3D 9
 
 
 Dans Windows 8, une nouvelle fonctionnalité de comparaison de la profondeur a été ajoutée aux niveaux de fonctionnalité 9\_1 et 9\_3. Vous pouvez désormais transférer du code de rendu contenant des volumes d’ombre sur DirectX 11. Le convertisseur Direct3D 11 peut être utilisé sur les appareils fonctionnant avec des niveaux de fonctionnalité 9 inférieurs. Cette procédure pas à pas montre comment une application ou un jeu Direct3D 11 peut implémenter des volumes d’ombres classiques avec le test de profondeur. Le code couvre le processus suivant :
@@ -62,18 +69,18 @@ Dans Windows 8, une nouvelle fonctionnalité de comparaison de la profondeur a �
 
 Au terme de cette procédure pas à pas, vous serez capable d’implémenter un volume d’ombre de base dans Direct3D 11, totalement compatible avec les niveaux de fonctionnalité 9\_1 et supérieurs.
 
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 
 Vous devez [préparer votre environnement au développement de jeux de plateforme Windows universelle (UWP) DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Vous n’avez pas encore besoin de modèle, mais vous devez disposer de Microsoft Visual Studio 2015 pour générer l’exemple de code de cette procédure pas à pas.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 
 **Direct3D**
 
-* [Écriture de nuanceurs HLSL dans Direct3D9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
-* [Créer un projet DirectX11 pour UWP](user-interface.md)
+* [Écriture de nuanceurs HLSL dans Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [Créer un projet DirectX 11 pour UWP](user-interface.md)
 
 **Articles techniques sur le mappage d’ombres**
 
@@ -86,10 +93,5 @@ Vous devez [préparer votre environnement au développement de jeux de plateform
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

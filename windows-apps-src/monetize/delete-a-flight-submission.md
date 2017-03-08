@@ -2,30 +2,37 @@
 author: mcleanbyron
 ms.assetid: 1A69A388-B1CC-4D2C-886B-EA07E6E60252
 description: "Utilisez cette méthode de l’API de soumission du Windows Store pour supprimer une soumission de version d’évaluation du package existante."
-title: "Supprimer une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store"
+title: "Supprimer une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, API de soumission du Windows Store, soumission de version d’évaluation, supprimer, version d’évaluation du package"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 9712f0ef68cc3614c9961183dba8b67a71c0ec39
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e720b8551949335faa0407cbc159c217d4b91343
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Supprimer une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store
+# <a name="delete-a-package-flight-submission-using-the-windows-store-submission-api"></a>Supprimer une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store
 
 
 
 
 Utilisez cette méthode de l’API de soumission du Windows Store pour supprimer une soumission de version d’évaluation du package existante.
 
-## Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
->**Remarque**  Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+>**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
-## Requête
+## <a name="request"></a>Requête
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
@@ -36,7 +43,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 <span/>
  
 
-### En-tête de requête
+### <a name="request-header"></a>En-tête de requête
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -44,7 +51,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Paramètres de la requête
+### <a name="request-parameters"></a>Paramètres de la requête
 
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -54,13 +61,13 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 <span/>
 
-### Corps de la requête
+### <a name="request-body"></a>Corps de la requête
 
 Ne fournissez pas de corps de requête pour cette méthode.
 
 <span/>
 
-### Exemple de requête
+### <a name="request-example"></a>Exemple de requête
 
 L’exemple suivant montre comment supprimer une soumission de version d’évaluation du package.
 
@@ -69,11 +76,11 @@ DELETE https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/
 Authorization: Bearer <your access token>
 ```
 
-## Réponse
+## <a name="response"></a>Réponse
 
 En cas de succès, cette méthode retourne un corps de réponse vide.
 
-## Codes d’erreur
+## <a name="error-codes"></a>Codes d’erreur
 
 Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
@@ -85,7 +92,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 
 <span/>
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Gérer les soumissions de versions d’évaluation de package](manage-flight-submissions.md)
@@ -94,9 +101,4 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Valider une soumission de version d’évaluation de package](commit-a-flight-submission.md)
 * [Mettre à jour une soumission de version d’évaluation du package](update-a-flight-submission.md)
 * [Obtenir l’état d’une soumission de version d’évaluation du package](get-status-for-a-flight-submission.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

@@ -2,12 +2,19 @@
 author: Jwmsft
 title: "Mode Fractionné"
 ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
-description: "Un contrôle de mode Fractionné inclut un volet avec une fonction développer/réduire ainsi qu’une zone de contenu."
+description: "Un contrôle de mode Fractionné inclut un volet pouvant être développé/réduit ainsi qu’une zone de contenu."
 label: Split view
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 61ada7839f76df92041b606066f5cbd54448cd93
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b4f0c84c4fdf273e7ddf2c16e3323ad0c4e52359
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="split-view-control"></a>Contrôle de mode Fractionné
@@ -83,9 +90,4 @@ Voici un contrôle SplitView avec un volet ouvert, qui s’affiche en ligne en r
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

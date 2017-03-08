@@ -3,20 +3,27 @@ author: drewbatgit
 ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
 description: "Les API de l’espace de noms Windows.Media.Editing permettent de développer rapidement des applications permettant aux utilisateurs de créer des compositions multimédias à partir de fichiers sources audio et vidéo."
 title: "Compositions multimédias et modification"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: 018d7c85aae007a1fd887de0daf6625ccce37a64
-ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d31cb88d1cea00bd291478b612b1759b1d6fd0b4
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Compositions multimédias et modification
+# <a name="media-compositions-and-editing"></a>Compositions multimédias et modification
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous montre comment utiliser les API de l’espace de noms [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) pour développer rapidement des applications qui permettent aux utilisateurs de créer des compositions multimédias à partir de fichiers sources audio et vidéo. Les fonctionnalités de l’infrastructure incluent la possibilité d’ajouter simultanément plusieurs clips vidéo, d’ajouter des superpositions d’images et de vidéos, d’ajouter du son en arrière-plan et d’appliquer des effets audio et vidéos, par programme. Une fois créées, les compositions multimédias peuvent être rendues dans un fichier multimédia plat pour lecture ou partage, mais il est également possible de les sérialiser et désérialiser à partir du disque en permettant à l’utilisateur de charger et de modifier les compositions précédemment créées. Toutes ces fonctionnalités sont proposées dans l’interface simple d’utilisation Windows Runtime, qui réduit considérablement la quantité de code requis et sa complexité pour effectuer ces tâches, en comparaison avec l’APi [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) de bas niveau.
 
-## Créer une composition multimédia
+## <a name="create-a-new-media-composition"></a>Créer une composition multimédia
 
 La classe [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) est le conteneur de tous les clips multimédias qui constituent la composition et est responsable du rendu de la composition finale, du chargement et de l’enregistrement des compositions sur le disque et de fournir un flux d’aperçu de la composition afin que l’utilisateur puisse l’afficher dans l’interface utilisateur. Pour utiliser **MediaComposition** dans votre application, vous devez inclure l’espace de noms [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565), ainsi que l’espace de noms [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) qui fournit les API associées dont vous aurez besoin.
 
@@ -31,7 +38,7 @@ Le constructeur de **MediaComposition** ne prend pas d’arguments.
 
 [!code-cs[MediaCompositionConstructor](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetMediaCompositionConstructor)]
 
-## Ajouter des clips multimédias à une composition
+## <a name="add-media-clips-to-a-composition"></a>Ajouter des clips multimédias à une composition
 
 Les compositions multimédia contiennent généralement un ou plusieurs clips vidéo. Vous pouvez utiliser un élément [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369) pour permettre à l’utilisateur de sélectionner un fichier vidéo. Une fois le fichier sélectionné, créez un nouvel objet [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) destiné à contenir le clip vidéo en appelant [**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607). Ajoutez ensuite le clip à la liste [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) de l’objet **MediaComposition**.
 
@@ -53,7 +60,7 @@ Les compositions multimédia contiennent généralement un ou plusieurs clips vi
 
 -   Créez un élément **MediaClip** à partir d’une [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) en appelant [**CreateFromSurface**](https://msdn.microsoft.com/library/dn764774) et en spécifiant une surface et une durée à partir du clip.
 
-## Afficher un aperçu de la composition dans un objet MediaElement
+## <a name="preview-the-composition-in-a-mediaelement"></a>Afficher un aperçu de la composition dans un objet MediaElement
 
 Pour permettre à l’utilisateur d’afficher la composition multimédia, ajoutez une classe [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) au fichier XAML qui définit votre interface utilisateur.
 
@@ -77,7 +84,7 @@ Il est recommandé de définir l’objet **MediaStreamSource** et la propriété
 
 [!code-cs[OnNavigatedFrom](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
-## Restituer la composition dans un fichier vidéo
+## <a name="render-the-composition-to-a-video-file"></a>Restituer la composition dans un fichier vidéo
 
 Pour restituer une composition multimédia dans un fichier vidéo plat de manière à pouvoir la partager et la visualiser sur d’autres appareils, vous devrez utiliser les API de l’espace de noms [**Windows.Media.Transcoding**](https://msdn.microsoft.com/library/windows/apps/br207105). Pour mettre à jour l’interface utilisateur en fonction de la progression de l’opération asynchrone, vous aurez également besoin des API de l’espace de noms [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383).
 
@@ -89,9 +96,9 @@ Après avoir autorisé l’utilisateur à sélectionner un fichier de sortie à 
 
 -   La préférence [**MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) vous permet de privilégier la vitesse de l’opération de transcodage par rapport à la précision de découpage des clips multimédias adjacents. **Fast** accélère le transcodage par un découpage moins précis et **Precise** le ralentit par une augmentation de la précision du découpage.
 
-## Découper un clip vidéo
+## <a name="trim-a-video-clip"></a>Découper un clip vidéo
 
-Réduisez la durée d’un clip vidéo d’une composition en définissant la propriété [**TrimTimeFromStart**](https://msdn.microsoft.com/library/windows/apps/dn652637) des objets [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596), la propriété [**TrimTimeFromEnd**](https://msdn.microsoft.com/library/windows/apps/dn652634) ou les deux.
+Réduisez la durée d’un clip vidéo d’une composition en définissant la propriété [**TrimTimeFromStart**](https://msdn.microsoft.com/library/windows/apps/dn652596) des objets [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652637), la propriété [**TrimTimeFromEnd**](https://msdn.microsoft.com/library/windows/apps/dn652634) ou les deux.
 
 [!code-cs[TrimClipBeforeCurrentPosition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetTrimClipBeforeCurrentPosition)]
 
@@ -100,13 +107,13 @@ Réduisez la durée d’un clip vidéo d’une composition en définissant la pr
 -   La propriété [**TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) vous permet de connaître la durée du clip multimédia après découpage.
 -   La spécification d’une valeur de découpage supérieure à la durée initiale du clip ne génère pas d’erreur. Toutefois, si une composition ne contient qu’un seul clip, et que celui-ci a subi un découpage complet le ramenant à une durée égale à zéro dû à la spécification d’une valeur de découpage importante, un appel ultérieur à [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) renvoie la valeur null, comme si la composition ne comportait aucun clip.
 
-## Ajouter une piste audio en arrière-plan à une composition
+## <a name="add-a-background-audio-track-to-a-composition"></a>Ajouter une piste audio en arrière-plan à une composition
 
 Pour ajouter une piste audio en arrière-plan à une composition, chargez un fichier audio, puis créez un objet [**BackgroundAudioTrack**](https://msdn.microsoft.com/library/windows/apps/dn652544) en appelant la méthode de fabrique [**BackgroundAudioTrack.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652561). Ajoutez ensuite l’élément **BackgroundAudioTrack** à la propriété [**BackgroundAudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn652647) de la composition.
 
 [!code-cs[AddBackgroundAudioTrack](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddBackgroundAudioTrack)]
 
--   Un élément **MediaComposition** prend en charge les pistes audio en arrière-plan aux formats suivants: MP3, WAV, FLAC.
+-   Un élément **MediaComposition** prend en charge les pistes audio en arrière-plan aux formats suivants : MP3, WAV, FLAC.
 
 -   Une piste audio en arrière-plan
 
@@ -116,7 +123,7 @@ Pour ajouter une piste audio en arrière-plan à une composition, chargez un fic
 
 -   Par défaut, la lecture des pistes audio en arrière-plan commence au début de la composition. En présence de plusieurs pistes en arrière-plan, la lecture de toutes les pistes commence au début de la composition. Pour que la lecture d’une piste audio en arrière-plan se déclenche à un autre moment, définissez la propriété [**Delay**](https://msdn.microsoft.com/library/windows/apps/dn652563) sur le décalage souhaité.
 
-## Ajouter une superposition à une composition
+## <a name="add-an-overlay-to-a-composition"></a>Ajouter une superposition à une composition
 
 Les superpositions permettent d’empiler plusieurs couches de vidéos les unes sur les autres au sein d’une composition. Une composition peut contenir plusieurs couches de superposition, qui peuvent elles-mêmes inclure plusieurs superpositions. Créez un objet [**MediaOverlay**](https://msdn.microsoft.com/library/windows/apps/dn764793) en transmettant un élément **MediaClip** à son constructeur. Définissez la position et l’opacité de la superposition, puis créez une classe [**MediaOverlayLayer**](https://msdn.microsoft.com/library/windows/apps/dn764795) et ajoutez l’élément **MediaOverlay** à sa liste [**Overlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411). Ajoutez enfin l’élément **MediaOverlayLayer** à la liste [**OverlayLayers**](https://msdn.microsoft.com/library/windows/apps/dn764791) de la composition.
 
@@ -126,21 +133,21 @@ Les superpositions permettent d’empiler plusieurs couches de vidéos les unes 
 
 -   Dans la mesure où les superpositions sont empilées les unes sur les autres au lieu d’être lues séquentiellement, toutes les superpositions commencent par défaut la lecture au début de la composition. Pour qu’une superposition commence la lecture à un autre moment, définissez la propriété [**Delay**](https://msdn.microsoft.com/library/windows/apps/dn764810) sur le décalage souhaité.
 
-## Ajouter des effets à un clip multimédia
+## <a name="add-effects-to-a-media-clip"></a>Ajouter des effets à un clip multimédia
 
 Chaque **MediaClip** d’une composition possède une liste d’effets audio et vidéo auxquels plusieurs effets peuvent être ajoutés. Les effets doivent respectivement implémenter [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) et [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047). L’exemple suivant utilise la position actuelle de l’élément **MediaPlayerElement** de manière à choisir l’élément **MediaClip** affiché actuellement, puis crée une nouvelle instance de la classe [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) et l’ajoute à la liste [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) du clip multimédia.
 
 [!code-cs[AddVideoEffect](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddVideoEffect)]
 
-## Enregistrer une composition dans un fichier
+## <a name="save-a-composition-to-a-file"></a>Enregistrer une composition dans un fichier
 
-Les compositions multimédia peuvent être sérialisées dans un fichier pour être modifiées ultérieurement. Sélectionnez un fichier de sortie, puis appelez la méthode [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/dn640554) de la classe [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) pour enregistrer la composition.
+Les compositions multimédia peuvent être sérialisées dans un fichier pour être modifiées ultérieurement. Sélectionnez un fichier de sortie, puis appelez la méthode [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/dn652646) de la classe [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn640554) pour enregistrer la composition.
 
 [!code-cs[SaveComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetSaveComposition)]
 
-## Charger une composition à partir d’un fichier
+## <a name="load-a-composition-from-a-file"></a>Charger une composition à partir d’un fichier
 
-Les compositions multimédia peuvent être désérialisées à partir d’un fichier pour permettre à l’utilisateur d’afficher et de modifier la composition. Sélectionnez un fichier de composition, puis appelez la méthode [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/dn652684) de la classe [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) pour charger la composition.
+Les compositions multimédia peuvent être désérialisées à partir d’un fichier pour permettre à l’utilisateur d’afficher et de modifier la composition. Sélectionnez un fichier de composition, puis appelez la méthode [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/dn652646) de la classe [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652684) pour charger la composition.
 
 [!code-cs[OpenComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOpenComposition)]
 
@@ -152,10 +159,5 @@ Les compositions multimédia peuvent être désérialisées à partir d’un fic
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

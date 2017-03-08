@@ -3,16 +3,23 @@ title: "Encoder et décoder des données"
 description: "Cet exemple de code indique comment encoder et décoder des données base64 et hexadécimales dans une application de plateforme Windows universelle (UWP)."
 ms.assetid: 2CC23863-E840-48F4-B087-0479045743AC
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: b07a040cafd2248f12fee571552632080e117692
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cdf4ee8d67048111b1e5e76bfd99ac555fb749ca
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Encoder et décoder des données
+# <a name="encode-and-decode-data"></a>Encoder et décoder des données
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cet exemple de code indique comment encoder et décoder des données base64 et hexadécimales dans une application de plateforme Windows universelle (UWP).
 
@@ -41,9 +48,4 @@ public void EncodeDecodeHex()
     String strHexNew = CryptographicBuffer.EncodeToHexString(buffer);
 }
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

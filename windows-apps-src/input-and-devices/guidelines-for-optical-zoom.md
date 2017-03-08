@@ -1,13 +1,20 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Cette rubrique décrit les éléments de zoom et de redimensionnement Windows. Elle fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications."
+Description: "Cet article décrit les éléments de zoom et de redimensionnement Windows. Il fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications."
 title: "Recommandations en matière de zoom optique et de redimensionnement"
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
 label: Optical zoom and resizing
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 2776fe18d20286a3beaf8ba280976316e40119dd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 567c3bc66c78924bc33ec3a336db6e2ce8592d68
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -15,7 +22,7 @@ ms.openlocfilehash: 2776fe18d20286a3beaf8ba280976316e40119dd
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Cet article décrit les éléments de zoom et de redimensionnement Windows. Elle fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications.
+Cet article décrit les éléments de zoom et de redimensionnement Windows. Il fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications.
 
 <div class="important-apis" >
 <b>API importantes</b><br/>
@@ -97,10 +104,5 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

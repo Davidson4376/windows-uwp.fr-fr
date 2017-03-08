@@ -3,17 +3,25 @@ author: awkoren
 Description: Montre comment convertir manuellement une application de bureau Windows (Win32, WPF, Windows Forms) en une application de plateforme Windows universelle (UWP).
 Search.Product: eADQiWindows 10XVcnh
 title: Convertir manuellement une application de bureau Windows en application UWP
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
+ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 translationtype: Human Translation
-ms.sourcegitcommit: b612b2c94de79f48a375ae3469c35dee6ce3939d
-ms.openlocfilehash: 73f30d564fcec1b748b4d59ff545e25b62b1c719
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 345296a3fa9faeb8daa8e03fbb633863380d2424
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="manually-convert-your-app-to-uwp-using-the-desktop-bridge"></a>Convertir manuellement votre application en application UWP à l’aide de Desktop Bridge
+# <a name="manually-convert-your-app-to-uwp-using-the-desktop-bridge"></a>Convertir manuellement votre application en application UWP à l’aide de Pont du bureau
 
-L’utilisation de [Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) est pratique et automatique. Ce module est aussi très utile en cas d’incertitude sur les opérations effectuées par votre programme d’installation. Mais si votre application est installée avec xcopy ou si vous connaissez les modifications apportées au système par le programme d’installation de votre application, vous pouvez créer manuellement un package et un manifeste d’application. Cet article décrit la procédure de prise en main. Il explique également comment ajouter des ressources sans plaque à votre application, ce que le DAC n’effectue pas. 
+L’utilisation de [Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) est pratique et automatique. Cet outil se révèle également très utile en cas d’incertitude sur les opérations effectuées par votre programme d’installation. Mais si votre application est installée avec xcopy ou si vous connaissez les modifications apportées au système par le programme d’installation de votre application, vous pouvez créer manuellement un package et un manifeste d’application. Cet article décrit la procédure de prise en main. Il explique également comment ajouter des ressources sans plaque à votre application, ce que l’outil DAC ne fait pas. 
 
-Voici comment faire :
+Voici comment prendre en main la conversion manuelle. Si vous disposez d’une application .NET et que vous utilisez Visual Studio, vous pouvez également consulter l’article [Guide d’empaquetage Pont du bureau pour les applications de bureau .NET avec Visual Studio](desktop-to-uwp-packaging-dot-net.md).  
 
 ## <a name="create-a-manifest-by-hand"></a>Créer un manifeste manuellement
 
@@ -107,17 +115,10 @@ Si vous le souhaitez, configurez les ressources 44 x 44 de votre application q
 
 2. Pour chaque image 44 x 44, créez une copie dans le même dossier et ajoutez *.targetsize-44_altform-unplated* à la fin du nom de fichier. Vous devez avoir deux copies de chaque icône, chacune ayant un nom propre. Par exemple, à l’issue du processus, votre dossier Assets peut contenir *MYAPP_44x44.png* et *MYAPP_44x44.targetsize-44_altform-unplated.png* (Remarque : la première est l’icône référencée dans le fichier appxmanifest sous l’attribut VisualElements *Square44x44Logo*). 
 
-3.  Dans AppXManifest, définissez le paramètre BackgroundColor sur transparent pour chaque icône que vous corrigez. Cet attribut se trouve sous VisualElements pour chaque application.
+3.    Dans AppXManifest, définissez le paramètre BackgroundColor sur transparent pour chaque icône que vous corrigez. Cet attribut se trouve sous VisualElements pour chaque application.
 
-4.  Ouvrez CMD, accédez au répertoire racine du package et créez un fichier priconfig.xml en exécutant la commande ```makepri createconfig /cf priconfig.xml /dq en-US```.
+4.    Ouvrez CMD, accédez au répertoire racine du package et créez un fichier priconfig.xml en exécutant la commande ```makepri createconfig /cf priconfig.xml /dq en-US```.
 
-5.  À l’aide de CMD, dans le dossier racine du package, créez le ou les fichiers resources.pri avec la commande ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml```. Par exemple, la commande de votre application peut ressembler à : ```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml```. 
+5.    À l’aide de CMD, dans le dossier racine du package, créez le ou les fichiers resources.pri avec la commande ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml```. Par exemple, la commande de votre application peut ressembler à : ```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml```. 
 
-6.  Créez un package de votre application AppX en suivant les instructions de l’étape suivante pour afficher les résultats.
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
-
+6.    Créez un package de votre application AppX en suivant les instructions de l’étape suivante pour afficher les résultats.

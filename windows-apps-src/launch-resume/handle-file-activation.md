@@ -3,9 +3,16 @@ author: TylerMSFT
 title: "Gérer l’activation des fichiers"
 description: "Une application peut s’inscrire afin de devenir le gestionnaire par défaut pour un certain type de fichier."
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp"
 translationtype: Human Translation
-ms.sourcegitcommit: ed7aee6add80d31b48006d9dec9e207c449a1912
-ms.openlocfilehash: ffcfa8991e9eb73b8d6a47bb7dd1cd23220097e0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6575ea6480b5c03836f9f44bdb19d8b17d78d16d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -26,7 +33,7 @@ Nous vous recommandons de vous inscrire uniquement pour un type de fichier si vo
 
 Ces étapes montrent comment s’inscrire pour un type de fichier personnalisé, alsdk, et comment activer votre application quand l’utilisateur lance un fichier alsdk.
 
-> **Remarque** Dans les applications UWP, certains URI et certaines extensions de fichier ne peuvent être utilisés que par des applications intégrées et le système d’exploitation. Toute tentative d’inscription de votre application avec une extension de fichier ou un URI réservés sera ignorée. Pour plus d’informations, voir [Noms de schéma d’URI et de fichier réservé](reserved-uri-scheme-names.md).
+> **Remarque**  Dans les applications UWP, certains URI et certaines extensions de fichier ne sont utilisables que par des applications intégrées et par le système d’exploitation. Toute tentative d’inscription de votre application avec une extension de fichier ou un URI réservés sera ignorée. Pour plus d’informations, voir [Noms de schéma d’URI et de fichier réservé](reserved-uri-scheme-names.md).
 
 ## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>Étape 1 : spécifier le point d’extension dans le manifeste du package
 
@@ -42,7 +49,7 @@ L’application reçoit des événements d’activation uniquement pour les exte
 | **Nom complet** | Spécifiez le nom complet d’un groupe de types de fichiers. Le nom d’affichage sert à identifier le type de fichier dans l’option [Définir les programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/cc144154) du **Panneau de configuration**. |
 | **Logo** | Spécifiez le logo utilisé pour identifier le type de fichier sur le Bureau et dans l’option [Définir les programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/cc144154) du **Panneau de configuration**. Si aucun logo n’est spécifié, le petit logo de l’application est utilisé. |
 | **Info-bulle** | Spécifiez l’[info-bulle](https://msdn.microsoft.com/library/windows/desktop/cc144152) d’un groupe de types de fichier. Cette info-bulle s’affiche quand l’utilisateur pointe sur l’icône d’un fichier de ce type avec la souris. |
-| **Nom** | Choisissez un nom pour un groupe de types de fichiers partageant les mêmes nom complet, logo, info-bulle et indicateurs de modification. Choisissez un nom de groupe pouvant rester le même sur toutes les applications à mettre à jour. **Remarque** Le nom doit être entièrement en minuscules. |
+| **Nom** | Choisissez un nom pour un groupe de types de fichiers partageant les mêmes nom complet, logo, info-bulle et indicateurs de modification. Choisissez un nom de groupe pouvant rester le même sur toutes les applications à mettre à jour. **Remarque**  Le nom doit être indiqué entièrement en minuscules. |
 | **Type de contenu** | Spécifiez le type de contenu MIME, par exemple **image/jpeg**, pour un type de fichier particulier. **Remarque importante sur les types de contenu autorisés :** voici la liste alphabétique des types de contenu MIME que vous ne pouvez pas inclure dans le manifeste du package, car ils sont réservés ou interdits : **application/force-download**, **application/octet-stream**, **application/unknown**, **application/x-msdownload**. |
 | **Type de fichier** | Indiquez le type de fichier à inscrire, précédé d’un point (par exemple, « .jpeg »). **Types de fichier réservés et interdits :** pour obtenir la liste alphabétique des types de fichier des applications intégrées que vous ne pouvez pas inscrire dans vos applications UWP parce qu’ils sont réservés ou interdits, consultez [Noms de schéma d’URI et de fichier réservés](reserved-uri-scheme-names.md). |
 
@@ -120,7 +127,7 @@ En cas de lancement via l’activation de fichier, les applications doivent envi
 
 Les fichiers que vous recevez peuvent provenir d’une source non approuvée. Nous vous recommandons de vérifier le contenu d’un fichier avant d’entreprendre une quelconque action sur ce fichier. Pour plus d’informations sur la validation d’entrée, voir [Écriture de code sécurisé](http://go.microsoft.com/fwlink/p/?LinkID=142053).
 
-> **Remarque** Cet article s’adresse aux développeurs Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque**  Cet article s’adresse aux développeurs Windows 10 qui créent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -151,9 +158,4 @@ Les fichiers que vous recevez peuvent provenir d’une source non approuvée. No
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 
