@@ -1,45 +1,42 @@
 ---
 author: mcleanbyron
 ms.assetid: c0450f7b-5c81-4d8c-92ef-2b1190d18af7
-description: "Découvrez comment utiliser la classe AdControl pour afficher des bannières publicitaires dans une application Silverlight pour Windows Phone 8.1 ou Windows Phone 8.0."
+description: "Découvrez comment utiliser la classe AdControl pour afficher des bannières publicitaires dans une application Silverlight pour Windows Phone8.1 ou Windows Phone8.0."
 title: AdControl dans Silverlight Windows Phone
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, annonces, publicité, AdControl, Silverlight, Windows Phone"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1f4606f5bb5446d8749f80e2bf4772a0b6db48b3
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows10, uwp, annonces, publicité, AdControl, Silverlight, Windows Phone"
+ms.openlocfilehash: 743b9faccaa120f1904b592fc09a965dc7878e03
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-in-windows-phone-silverlight"></a>AdControl dans Silverlight Windows Phone
 
-Cette procédure pas à pas montre comment utiliser la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) pour afficher des bannières publicitaires dans une application Silverlight pour Windows Phone 8.1 ou Windows Phone 8.0.
+Cette procédure pas à pas montre comment utiliser la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) pour afficher des bannières publicitaires dans une application Silverlight pour Windows Phone8.1 ou Windows Phone8.0.
 
-> **Remarque concernant Windows Phone Silverlight 8.0**&nbsp;&nbsp;Les bannières publicitaires sont toujours prises en charge pour les applications Silverlight Windows Phone 8.0 existantes qui utilisent un **AdControl** d’une version antérieure du Kit de développement Logiciel (SDK) Universal Ad Client ou Microsoft Advertising et qui sont déjà disponibles dans le Windows Store. Cependant, les bannières publicitaires ne sont plus prises en charge dans les nouveaux projets Silverlight Windows Phone 8.0. Par ailleurs, certains scénarios de débogage et de test sont limités dans les projets Silverlight Windows Phone 8.x. Pour plus d’informations, voir [Afficher des publicités dans votre application](display-ads-in-your-app.md#silverlight_support).
+> **Remarque concernant Windows Phone Silverlight 8.0**&nbsp;&nbsp;Les bannières publicitaires sont toujours prises en charge pour les applications Silverlight Windows Phone8.0 existantes qui utilisent un **AdControl** d’une version antérieure du Kit de développement Logiciel (SDK) Universal Ad Client ou Microsoft Advertising et qui sont déjà disponibles dans le Windows Store. Cependant, les bannières publicitaires ne sont plus prises en charge dans les nouveaux projets Silverlight Windows Phone8.0. Par ailleurs, certains scénarios de débogage et de test sont limités dans les projets Silverlight Windows Phone8.x. Pour plus d’informations, voir [Afficher des publicités dans votre application](display-ads-in-your-app.md#silverlight_support).
 
 ## <a name="add-the-advertising-assemblies-to-your-project"></a>Ajouter les assemblys publicitaires à votre projet
 
 Pour commencer, téléchargez et installez le package NuGet qui contient les assemblys publicitaires Microsoft pour Silverlight Windows Phone à votre projet.
 
-1.  Ouvrez votre projet dans Visual Studio.
+1.  Ouvrez votre projet dans VisualStudio.
 
 2.  Cliquez sur **Outils**, pointez sur **Gestionnaire de package NuGet**, puis cliquez sur **Console du Gestionnaire de package**.
 
 3.  Dans la fenêtre **Console du Gestionnaire de package**, entrez l’une de ces commandes.
 
-  * Si votre projet cible Windows Phone 8.0, entrez cette commande.
+  * Si votre projet cible Windows Phone8.0, entrez cette commande.
 
       > [!div class="tabbedCodeSnippets"]
       ```syntax
       Install-Package Microsoft.Advertising.WindowsPhone.SL80 -Version 6.2.40501.1
       ```
 
-  * Si votre projet cible Windows Phone 8.1, entrez cette commande.
+  * Si votre projet cible Windows Phone8.1, entrez cette commande.
 
       > [!div class="tabbedCodeSnippets"]
       ```syntax
@@ -60,7 +57,7 @@ Pour commencer, téléchargez et installez le package NuGet qui contient les ass
   <Capability Name="ID_CAP_PHONEDIALER"/>
   ```
 
-  Pour cet exemple, le nœud **Fonctionnalités** ressemble à ceci :
+  Pour cet exemple, le nœud **Fonctionnalités** ressemble à ceci:
 
   > [!div class="tabbedCodeSnippets"]
   ``` syntax
@@ -93,7 +90,7 @@ Pour commencer, téléchargez et installez le package NuGet qui contient les ass
   xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
   ```
 
-  L’en-tête de votre page contient alors le code suivant :
+  L’en-tête de votre page contient alors le code suivant:
 
   > [!div class="tabbedCodeSnippets"]
   ``` xml
@@ -119,7 +116,7 @@ Pour commencer, téléchargez et installez le package NuGet qui contient les ass
   </Grid>
   ```
 
-7.  Générez et exécutez votre projet. Vérifiez que votre application affiche une publicité, qui ressemble à ce qui suit :
+7.  Générez et exécutez votre projet. Vérifiez que votre application affiche une publicité, qui ressemble à ce qui suit:
 
   ![wp81silverlight\-emulatorwithad](images/13-8db1492f-ae1d-439b-9b78-bed8e22fe996.jpg)
 
@@ -135,4 +132,3 @@ Pour commencer, téléchargez et installez le package NuGet qui contient les ass
 
 
  
-

@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, jeux, directx, activation"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp, jeux, directx, activation
 ms.openlocfilehash: 4d3585e28ca4a3665a881df4f16a3cc3f82fcc52
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="how-to-activate-an-app-directx-and-c"></a>Activation d’une application (DirectX et C++)
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique explique comment définir l’expérience d’activation d’une application DirectX de plateforme Windows universelle (UWP).
 
@@ -95,7 +92,6 @@ void App::Run()
  
 
  
-
 
 
 

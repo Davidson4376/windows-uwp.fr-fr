@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, carte, emplacement, définition de clôture virtuelle"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: "windows10, uwp, carte, emplacement, définition de clôture virtuelle"
 ms.openlocfilehash: e21b5b89c95a6b4988e1e95fc924ec3eefd46942
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="guidelines-for-geofencing-apps"></a>Recommandations concernant la clôture virtuelle des applications
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -51,7 +48,7 @@ Suivez ces meilleures pratiques pour définir la [**clôture virtuelle**](https:
 
 ### <a name="checking-the-time-stamp-and-current-location"></a>Vérification de l’horodatage et de l’emplacement actuel
 
-Lorsqu’un événement indique un changement apporté à un état [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) ou **Exited**, vérifiez à la fois l’horodatage de l’événement et votre emplacement actuel. Divers facteurs peuvent avoir une incidence sur le moment où l’événement est réellement traité par l’utilisateur : par exemple, le système ne dispose pas de ressources suffisantes pour lancer une tâche en arrière-plan, l’utilisateur ne remarque pas la notification ou le périphérique est en état de veille (sur Windows). Par exemple, il peut se produire la séquence suivante :
+Lorsqu’un événement indique un changement apporté à un état [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) ou **Exited**, vérifiez à la fois l’horodatage de l’événement et votre emplacement actuel. Divers facteurs peuvent avoir une incidence sur le moment où l’événement est réellement traité par l’utilisateur: par exemple, le système ne dispose pas de ressources suffisantes pour lancer une tâche en arrière-plan, l’utilisateur ne remarque pas la notification ou le périphérique est en état de veille (sur Windows). Par exemple, il peut se produire la séquence suivante :
 
 -   Votre application crée une clôture virtuelle et surveille la présence d’événements Enter et Exit pour cette dernière.
 -   L’utilisateur déplace l’appareil à l’intérieur de la clôture virtuelle, ce qui provoque le déclenchement d’un événement Enter.
@@ -63,7 +60,7 @@ Lorsqu’un événement indique un changement apporté à un état [**Entered**]
 
 ### <a name="background-and-foreground-listeners"></a>Détecteurs en arrière-plan et au premier plan
 
-En règle générale, votre application n’a pas besoin de détecter les événements [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) au premier plan et en arrière-plan simultanément. Toutefois, si cela est nécessaire, la méthode la plus sûre est de confier la gestion des notifications à la tâche en arrière-plan. Si vous configurez des détecteurs de clôtures virtuelles (parfois appelées « géorepères ») tant au premier plan qu’en arrière-plan, il est impossible de savoir avec certitude lequel sera déclenché le premier, et vous devez donc appeler en permanence la méthode [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) pour savoir si un événement s’est produit.
+En règle générale, votre application n’a pas besoin de détecter les événements [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) au premier plan et en arrière-plan simultanément. Toutefois, si cela est nécessaire, la méthode la plus sûre est de confier la gestion des notifications à la tâche en arrière-plan. Si vous configurez des détecteurs de clôtures virtuelles (parfois appelées «géorepères») tant au premier plan qu’en arrière-plan, il est impossible de savoir avec certitude lequel sera déclenché le premier, et vous devez donc appeler en permanence la méthode [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) pour savoir si un événement s’est produit.
 
 Si vous avez configuré des détecteurs de clôtures virtuelles au premier plan et en arrière-plan, vous devez désinscrire votre détecteur d’événements au premier plan lorsque votre application n’est pas visible pour l’utilisateur et le réinscrire quand elle redevient visible. L’exemple de code présenté ci-dessous permet d’inscrire l’événement de visibilité.
 
@@ -137,4 +134,3 @@ Si votre application doit utiliser une clôture virtuelle avec un petit rayon, c
  
 
  
-

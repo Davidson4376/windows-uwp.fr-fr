@@ -2,48 +2,45 @@
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: "Découvrez les problèmes connus de la version actuelle des bibliothèques de publicités Microsoft contenues dans Microsoft Store Services SDK."
-title: "Problèmes connus des bibliothèques de publicités Microsoft"
+title: "Problèmes connus pour les bibliothèques publicitaires"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, pub, publicité, problèmes connus"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54e3361ce9fdfc67495d41903b8b291931b7ee9f
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows 10, uwp, annonces, publicité, problèmes connus"
+ms.openlocfilehash: 33bf3c2db5db7e8ec07df3f4d13cc0ad074e99a3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="known-issues-for-the-microsoft-advertising-libraries"></a>Problèmes connus des bibliothèques de publicités Microsoft
-
+# <a name="known-issues-for-the-advertising-libraries"></a>Problèmes connus pour les bibliothèques publicitaires
 
 
 
-Cette rubrique répertorie les problèmes connus avec la version actuelle des bibliothèques de publicités Microsoft dans Microsoft Store Services SDK (pour les applications UWP) et dans Microsoft Advertising SDK pour Windows et Windows Phone 8.x (pour les applications Windows 8.1 et Windows Phone 8.x).
+
+Cette rubrique répertorie les problèmes connus avec la version actuelle des bibliothèques de publicités Microsoft dans Microsoft Store Services SDK (pour les applications UWP) et dans Microsoft Advertising SDK pour Windows et Windows Phone8.x (pour les applications Windows8.1 et Windows Phone8.x).
 
 ## <a name="installation-of-microsoft-store-services-sdk-requires-visual-studio-tools-for-universal-windows-apps"></a>L’installation de Microsoft Store Services SDK requiert Visual Studio Tools pour les applications Windows universelles
 
-Pour installer [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) avec Visual Studio 2015, vous devez disposer d’une version 1.1 ou ultérieure de Visual Studio Tools for Universal Windows Apps. Pour plus d’informations, voir les [notes de publication](http://go.microsoft.com/fwlink/?LinkID=624516) de Visual Studio.
+Pour installer [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) avec Visual Studio2015, vous devez disposer d’une version1.1 ou ultérieure de Visual Studio Tools for Universal Windows Apps. Pour plus d’informations, voir les [notes de publication](http://go.microsoft.com/fwlink/?LinkID=624516) de VisualStudio.
 
-## <a name="windows-phone-8x-silverlight-projects"></a>Projets Silverlight Windows Phone 8.x
+## <a name="windows-phone-8x-silverlight-projects"></a>Projets Silverlight Windows Phone8.x
 
-Microsoft Advertising SDK pour Windows et Windows Phone 8.x assure une prise en charge limitée des projets Silverlight Windows Phone 8.x. Pour plus d’informations, voir [Afficher des publicités dans votre application](display-ads-in-your-app.md#silverlight_support).
+Microsoft Advertising SDK pour Windows et Windows Phone8.x assure une prise en charge limitée des projets Silverlight Windows Phone8.x. Pour plus d’informations, voir [Afficher des publicités dans votre application](display-ads-in-your-app.md#silverlight_support).
 
-Pour obtenir les assemblys de publicités Microsoft pour des projets Silverlight Windows Phone 8.x, installez [Microsoft Advertising SDK pour Windows et Windows Phone 8.x](http://aka.ms/store-8-sdk), ouvrez votre projet dans Visual Studio, puis accédez à **Projet** > **Ajouter un service connecté** > **Ad Mediator** pour télécharger automatiquement les assemblys. Après quoi, vous pouvez supprimer les références au médiateur publicitaire de votre projet si vous ne souhaitez pas utiliser la médiation publicitaire. Pour plus d’informations, voir [AdControl dans Silverlight Windows Phone](adcontrol-in-windows-phone-silverlight.md).
+Pour obtenir les assemblys de publicités Microsoft pour des projets Silverlight Windows Phone8.x, installez [Microsoft Advertising SDK pour Windows et Windows Phone8.x](http://aka.ms/store-8-sdk), ouvrez votre projet dans Visual Studio, puis accédez à **Projet** > **Ajouter un service connecté** > **AdMediator** pour télécharger automatiquement les assemblys. Après quoi, vous pouvez supprimer les références au médiateur publicitaire de votre projet si vous ne souhaitez pas utiliser la médiation publicitaire. Pour plus d’informations, voir [AdControl dans Silverlight WindowsPhone](adcontrol-in-windows-phone-silverlight.md).
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>Interface AdControl inconnue en XAML
 
-Le balisage XAML d’un contrôle [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) peut afficher incorrectement une ligne courbe bleue impliquant que l’interface est inconnue. Ce problème se produit uniquement lors d’un ciblage x86, et peut être ignoré.
+Le balisageXAML d’un contrôle [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) peut afficher incorrectement une ligne courbe bleue impliquant que l’interface est inconnue. Ce problème se produit uniquement lors d’un ciblagex86, et peut être ignoré.
 
 ## <a name="lasterror-from-previous-ad-request"></a>Élément lastError de la demande de publicité précédente
 
-S’il reste un élément **lastError** de la demande de publicité précédente, l’événement peut être déclenché deux fois durant le prochain appel de publicité. Si la nouvelle demande de publicité est toujours effectuée et peut générer une publicité valide, ce comportement peut cependant prêter à confusion.
+S’il reste un élément **lastError** de la demande de publicité précédente, l’événement peut être déclenché deuxfois durant le prochain appel de publicité. Si la nouvelle demande de publicité est toujours effectuée et peut générer une publicité valide, ce comportement peut cependant prêter à confusion.
 
 ## <a name="interstitial-ads-and-navigation-buttons-on-phones"></a>Spots publicitaires et boutons de navigation sur les téléphones
 
-Sur les téléphones (ou émulateurs) pourvus des boutons logiciels **Précédent**, **Démarrer** et **Rechercher** au lieu des boutons matériels, le compte à rebours minuterie et les boutons de clic publicitaire des spots vidéo publicitaires risquent d’être masqués.
+Sur les téléphones (ou émulateurs) pourvus des boutons logiciels **Précédent**, **Démarrer** et **Rechercher** au lieu des boutons matériels, le compte à rebours minuterie et les boutons de clic publicitaire des spots publicitaires risquent d’être masqués.
 
 ## <a name="recently-created-ads-are-not-being-served-to-your-app"></a>Les publicités récemment créées ne sont pas fournies à votre application
 
@@ -51,11 +48,11 @@ Si vous avez créé une publicité récemment (moins d’un jour), elle peut ne 
 
 ## <a name="no-ads-are-shown-in-your-app"></a>Aucune publicité n’est affichée dans votre application
 
-Plusieurs raisons peuvent provoquer le non-affichage des publicités, notamment des erreurs réseau. Autres raisons possibles :
+Plusieurs raisons peuvent provoquer le non-affichage des publicités, notamment des erreurs réseau. Autres raisons possibles:
 
 * Vous avez sélectionné une unité publicitaire dans le Centre de développement Windows dont la taille est supérieure ou inférieure à la taille du **AdControl** dans le code de votre application.
 
-* Les publicités ne s’affichent pas si vous utilisez une [valeur du mode test](test-mode-values.md) pour votre ID d’unité publicitaire lors de l’exécution d’une application dynamique.
+* Les publicités ne s’affichent pas si vous utilisez une [valeur du mode test](test-mode-values.md) pour votreID d’unité publicitaire lors de l’exécution d’une application dynamique.
 
 * Si vous avez créé un ID d’unité publicitaire dans la dernière demi-heure, la publicité risque de ne pas s’afficher tant que les serveurs n’ont pas propagé les nouvelles données dans le système. Les ID existants qui affichaient des publicités précédemment doivent en afficher immédiatement.
 
@@ -65,9 +62,9 @@ Vous pouvez également publier une question sur le [forum](http://go.microsoft.c
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>Les publicités de test s’affichent dans votre application à la place des publicités dynamiques
 
-Les publicités de test peuvent s’afficher même lorsque vous attendez des publicités dynamiques. Cela peut se produire dans les cas suivants :
+Les publicités de test peuvent s’afficher même lorsque vous attendez des publicités dynamiques. Cela peut se produire dans les cas suivants:
 
-* Microsoft Advertising ne peut pas vérifier ni trouver l’ID d’application dynamique utilisé dans la boutique d’applications. Dans ce cas, lorsqu’une unité publicitaire est créée par un utilisateur, son état peut démarrer à dynamique (non-test), mais passer à l’état de test dans les 6 heures qui suivent la première demande de publicité. Il revient à l’état dynamique en cas d’absence de demandes d’applications de test pendant 10 jours.
+* MicrosoftAdvertising ne peut pas vérifier ni trouver l’ID d’application dynamique utilisé dans la boutique d’applications. Dans ce cas, lorsqu’une unité publicitaire est créée par un utilisateur, son état peut démarrer à dynamique (non-test), mais passer à l’état de test dans les 6heures qui suivent la première demande de publicité. Il revient à l’état dynamique en cas d’absence de demandes d’applications de test pendant 10jours.
 
 * Les applications chargées indépendamment ou les applications qui sont exécutées dans l’émulateur n’affichent pas de publicités dynamiques.
 
@@ -85,9 +82,9 @@ Les valeurs de test suivantes pour les applications Silverlight Windows Phone so
 | test_client     |  Image480_80   |
 
 <span id="reference_errors"/>
-## <a name="reference-errors-caused-by-targeting-any-cpu-in-your-project"></a>Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet
+## <a name="reference-errors-caused-by-targeting-any-cpu-in-your-project"></a>Erreurs de référence provoquées par le ciblage de TouteUC dans votre projet
 
-Lorsque vous utilisez les bibliothèques de publicités Microsoft, vous ne pouvez pas cibler **Toute UC** dans votre projet. Si votre projet cible la plateforme **Toute UC**, un message d’avertissement peut s’afficher après que vous avez ajouté une référence semblable à ce qui suit.
+Lorsque vous utilisez les bibliothèques de publicités Microsoft, vous ne pouvez pas cibler **TouteUC** dans votre projet. Si votre projet cible la plateforme **TouteUC**, un message d’avertissement peut s’afficher après que vous avez ajouté une référence semblable à ce qui suit.
 
 ![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
@@ -95,7 +92,7 @@ Pour supprimer cet avertissement, mettez à jour votre projet pour utiliser une 
 
 ![configurationmanagerwin10](images/13-87074274-c10d-4dbd-9a06-453b7184f8de.png)
 
-Lorsque vous créez vos packages d’application pour les soumettre au Windows Store (comme illustré dans les images suivantes), veillez à inclure les architectures que vous souhaitez cibler. Vous pouvez choisir d’ignorer x64 si vous prévoyez d’exécuter des builds x86 sur le système d’exploitation x64.
+Lorsque vous créez vos packages d’application pour les soumettre au WindowsStore (comme illustré dans les images suivantes), veillez à inclure les architectures que vous souhaitez cibler. Vous pouvez choisir d’ignorerx64 si vous prévoyez d’exécuter des buildsx86 sur le système d’exploitationx64.
 
 ![projectstorecreateapppackages](images/13-a99b05a4-8917-4c53-822e-2548fadf828a.png)
 
@@ -123,4 +120,3 @@ Pour contacter le support produit à propos des problèmes liés aux bibliothèq
  
 
  
-

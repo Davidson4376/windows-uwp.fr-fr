@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, clé d’authentification de cartes, contrôle de cartes"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 841a3bf42faaaa12df94ad9be2ffc9eb3a833ae5
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows10, uwp, clé d’authentification de cartes, contrôle de cartes"
+ms.openlocfilehash: 42078becbc5853787ca057dcbfb58b8d8de7967d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="request-a-maps-authentication-key"></a>Demander une clé d’authentification de cartes
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Votre [application Windows universelle](https://msdn.microsoft.com/library/windows/apps/dn894631) doit être authentifiée pour pouvoir utiliser le [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) et les services cartographiques dans l’espace de noms [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979). Pour authentifier votre application, vous devez spécifier une clé d’authentification de cartes. Cette rubrique décrit comment demander une clé d’authentification de cartes au [Centre de développement Bing Cartes](https://www.bingmapsportal.com/) et comment l’ajouter à votre application.
@@ -54,7 +51,7 @@ Pour créer une clé
     -   **Type de clé :** sélectionnez **De base** ou **Entreprise**.
     -   **Type d’application :** sélectionnez **Application Windows universelle** pour utiliser la clé dans votre application Windows universelle.
 
-    Voici un exemple de formulaire :
+    Voici un exemple de formulaire:
 
     ![Exemple du formulaire Créer une clé.](images/createkeydialog.png)
 
@@ -96,6 +93,5 @@ Pour utiliser les services dans l’espace de noms [**Windows.Services.Maps**](h
 * [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)
 * [Exemple de carte UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Vidéos de la build 2015 : utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Vidéos de la build 2015: utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Exemple d’application de trafic UWP](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-

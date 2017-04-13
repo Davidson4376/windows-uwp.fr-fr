@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 709f3da69e95985512835994a9bb7cf5e0e91a7f
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 704511b388a6dbcdbddf95c74108b5a463efef98
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="monitor-background-task-progress-and-completion"></a>Surveiller la progression et l’achèvement des tâches en arrière-plan
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -94,7 +91,7 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
 
 2.  Ajoutez du code au gestionnaire d’événements qui traite l’achèvement des tâches en arrière-plan.
 
-    Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) met à jour l’interface utilisateur conformément à l’état de progression transmis avec le paramètre *args* :
+    Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) met à jour l’interface utilisateur conformément à l’état de progression transmis avec le paramètre *args*:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -155,7 +152,7 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
 
 2.  Lorsque l’application se lance ou accède à une nouvelle page dans laquelle l’état des tâches en arrière-plan est important, elle doit obtenir la liste des tâches en arrière-plan actuellement inscrites et les associer aux fonctions de gestionnaire des événements de progression et d’achèvement. Cette liste est conservée dans la propriété [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787).
 
-    Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) utilise le code suivant pour joindre les gestionnaires d’événements lorsque vous accédez à la page SampleBackgroundTask :
+    Ainsi, l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) utilise le code suivant pour joindre les gestionnaires d’événements lorsque vous accédez à la page SampleBackgroundTask:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -217,4 +214,3 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
 * [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-

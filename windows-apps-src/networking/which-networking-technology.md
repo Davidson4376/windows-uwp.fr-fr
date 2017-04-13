@@ -1,24 +1,21 @@
 ---
 author: DelfCo
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
-description: "Un aperçu rapide des technologies de réseau disponibles pour un développeur UWP, avec des suggestions sur la façon de choisir les technologies appropriées pour votre application."
-title: "Quelle technologie de réseau ?"
+description: "Une vue d’ensemble des technologies de réseau disponibles pour un développeur UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application."
+title: "Quelle technologie de réseau?"
 ms.author: bobdel
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3ee88a22fe50fc3d782febafdc82c2a68c386dab
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 4cbb423d8fdddfc6cc158c1cbca2398b21dc205c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="which-networking-technology"></a>Quelle technologie de réseau?
 
-# <a name="which-networking-technology"></a>Quelle technologie de réseau ?
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Une vue d’ensemble des technologies de réseau disponibles pour un développeur UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application.
 
@@ -140,5 +137,4 @@ L’API [**Windows.Networking.NetworkOperators**](https://msdn.microsoft.com/lib
 ### <a name="sms"></a>SMS
 
 L’espace de noms [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/br206567) a trait aux SMS et aux messages similaires en tant qu’entités de bas niveau. Il est fourni à l’usage des opérateurs mobiles pour une utilisation des SMS orientée application, et est contrôlé par une fonctionnalité dont l’utilisation ne sera pas approuvée par la plupart des développeurs d’applications. Si vous écrivez une application pour traiter des messages, vous devez utiliser l’API [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/dn642321) à la place, qui est conçue pour gérer non seulement les messages SMS, mais aussi les messages provenant d’autres sources telles que des applications de conversation en temps réel, en permettant une expérience de conversation/messagerie beaucoup plus riche.
-
 

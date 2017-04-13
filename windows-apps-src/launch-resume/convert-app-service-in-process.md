@@ -7,15 +7,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 1fea72237a9ac7d18fb415d5957f959542a833e8
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 015a37c8d85174e6494690a67b4dc23b1cce5712
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte
 
 Une [AppServiceConnection](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceconnection.aspx) permet à une autre application de réactiver votre application en arrière-plan et de démarrer une ligne directe de communication avec celle-ci.
@@ -34,7 +31,7 @@ Supprimez l’attribut `EntryPoint`. Désormais, le rappel [OnBackgroundActivate
 
 La seconde modification consiste à déplacer la logique de service de son projet de tâche distinct en arrière-plan dans les méthodes qui peuvent être appelées à partir de **OnBackgroundActivated()**.
 
-À présent, votre application peut directement exécuter votre service d’application.  Par exemple :
+À présent, votre application peut directement exécuter votre service d’application.  Par exemple:
 
 > ``` cs
 > private AppServiceConnection appServiceconnection;
@@ -82,4 +79,3 @@ Dans le code ci-dessus, la méthode `OnBackgroundActivated` gère l’activation
 Lorsque l’application reçoit une demande, elle lit l’élément [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx) fourni pour voir si les chaînes `Key` et `Value` sont présentes. Si elles sont bien présentes, le service d’application renvoie alors une paire de valeurs de chaîne `Response` et `True` à l’application sur l’autre côté de la **AppServiceConnection**.
 
 Pour en savoir plus sur la connexion et la communication avec d’autres applications, consultez [Créer et utiliser un service d’application](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service?f=255&MSPPError=-2147217396).
-

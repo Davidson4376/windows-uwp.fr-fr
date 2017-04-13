@@ -4,30 +4,26 @@ ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
 title: "Accéder à la carte SD"
 description: "Vous pouvez stocker des données non essentielles et y accéder sur une carte microSD en option, plus particulièrement sur les appareils mobiles à faible coût dont le stockage interne est limité."
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 03/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3fc8bbaa0b665b640974b5342b2b60c9b7f90143
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp, cartesd, stockage
+ms.openlocfilehash: 89dfed0cbd8a4a87f432a747e4155cdef3bbc757
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="access-the-sd-card"></a>Accéder à la carte SD
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour lire des articles sur Windows8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Vous pouvez stocker des données non essentielles et y accéder sur une carte microSD en option, plus particulièrement sur les appareils mobiles à faible coût dont le stockage interne est limité.
+Vous pouvez stocker des données non essentielles et y accéder sur une carte microSD en option, plus particulièrement sur les appareils mobiles à faible coût dont le stockage interne est limité et qui disposent d’un emplacement pour les cartes de ce type.
 
 Dans la plupart des cas, vous devez spécifier la fonctionnalité **removableStorage** dans le fichier manifeste de l’application pour que votre application puisse stocker des fichiers sur la carte SD et y accéder. En général, vous devez également inscrire les types de fichier stockés et accessibles que votre application peut gérer.
 
-Utilisez les moyens suivants pour stocker des fichiers sur la carte SD en option et y accéder :
-
+Utilisez les moyens suivants pour stocker des fichiers sur la carteSD en option et y accéder:
 - Sélecteurs de fichiers.
-
 - API [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346).
 
 ## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>Éléments accessibles et non accessibles sur la carte SD
@@ -35,15 +31,12 @@ Utilisez les moyens suivants pour stocker des fichiers sur la carte SD en optio
 ### <a name="what-you-can-access"></a>Ce à quoi vous pouvez accéder
 
 - Votre application peut uniquement lire et écrire des fichiers dont le type a été inscrit à des fins de gestion dans le fichier manifeste de l’application.
-
 - Votre application peut également créer et gérer des dossiers.
 
 ### <a name="what-you-cant-access"></a>Ce à quoi vous ne pouvez pas accéder
 
 - Votre application ne peut pas voir les dossiers système et les fichiers qu’ils contiennent, ni y accéder.
-
 - Votre application ne peut pas voir les fichiers marqués de l’attribut Hidden (masqué). L’attribut Hidden sert généralement à réduire le risque de suppression accidentelle de données.
-
 - Votre application ne peut pas voir la bibliothèque de documents ni y accéder à l’aide de la propriété [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152). En revanche, vous pouvez accéder à la bibliothèque de documents sur la carte SD en parcourant le système de fichiers.
 
 ## <a name="security-and-privacy-considerations"></a>Considérations liées à la sécurité et à la confidentialité
@@ -51,7 +44,6 @@ Utilisez les moyens suivants pour stocker des fichiers sur la carte SD en optio
 Quand une application enregistre des fichiers à un emplacement global sur la carte SD, ces fichiers n’étant pas chiffrés, ils sont en général accessibles à d’autres applications.
 
 - Tant que la carte SD se trouve dans l’appareil, vos fichiers sont accessibles à d’autres applications dès lors que celles-ci se sont inscrites pour gérer les types de fichiers correspondants.
-
 - Quand vous retirez la carte SD de l’appareil et que vous l’ouvrez à partir d’un ordinateur, vos fichiers sont visibles dans l’Explorateur de fichiers et accessibles aux autres applications.
 
 Lorsqu’une application installée sur la carte SD enregistre des fichiers dans son élément [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621), ces fichiers sont chiffrés et ne sont pas accessibles aux autres applications.
@@ -73,28 +65,29 @@ Pour accéder aux fichiers multimédias stockés dans les bibliothèques multim�
 
 Le dossier [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) correspond à la classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) de la racine logique de l’ensemble des appareils amovibles actuellement connectés à l’appareil. Si une carte SD est présente, la première (et unique) classe **StorageFolder** sous le dossier **KnownFolders.RemovableDevices** représente la carte SD.
 
-Utilisez du code comme le suivant pour déterminer si une carte SD est présente et obtenir une référence à cette carte sous forme de classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230).
+Utilisez du code semblable au suivant pour déterminer si une carte SD est présente et obtenir une référence à celle-ci en tant que classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230).
 
 ```csharp
 using Windows.Storage;
 
-...
+// Get the logical root folder for all external storage devices.
+StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
 
-            // Get the logical root folder for all external storage devices.
-            StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
+// Get the first child folder, which represents the SD card.
+StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
 
-            // Get the first child folder, which represents the SD card.
-            StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
-
-            if (sdCard != null)
-            {
-                // An SD card is present and the sdCard variable now contains a reference to it.
-            }
-            else
-            {
-                // No SD card is present.
-            }
+if (sdCard != null)
+{
+    // An SD card is present and the sdCard variable now contains a reference to it.
+}
+else
+{
+    // No SD card is present.
+}
 ```
+
+> [!NOTE]
+> Si votre lecteur de carte SD est intégré (emplacement dans l’ordinateur portable ou le PC), il peut ne pas être accessible via KnownFolders.RemovableDevices.
 
 ### <a name="querying-the-contents-of-the-sd-card"></a>Interrogation du contenu de la carte SD
 
@@ -107,7 +100,6 @@ Votre application peut également inviter l’utilisateur à choisir des dossier
 Quand vous accédez au système de fichiers de la carte SD par un chemin d’accès dérivé de l’élément [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158), les méthodes se comportent de la manière suivante.
 
 -   La méthode [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) renvoie les extensions de fichier que vous avez inscrites à des fins de gestion et les extensions de fichier associées aux fonctionnalités de bibliothèque multimédia que vous avez spécifiées.
-
 -   La méthode [**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) échoue si vous n’avez pas inscrit l’extension du fichier auquel vous essayez d’accéder.
 
 ## <a name="identifying-the-individual-sd-card"></a>Identification de la carte SD individuelle
@@ -121,35 +113,32 @@ Le nom de la propriété qui contient cet ID est **WindowsPhone.ExternalStorageI
 ```csharp
 using Windows.Storage;
 
-...
+// Get the logical root folder for all external storage devices.
+StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
 
-            // Get the logical root folder for all external storage devices.
-            StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
+// Get the first child folder, which represents the SD card.
+StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
 
-            // Get the first child folder, which represents the SD card.
-            StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
+if (sdCard != null)
+{
+    var allProperties = sdCard.Properties;
+    IEnumerable<string> propertiesToRetrieve = new List<string> { "WindowsPhone.ExternalStorageId" };
 
-            if (sdCard != null)
-            {
-                var allProperties = sdCard.Properties;
-                IEnumerable<string> propertiesToRetrieve = new List<string> { "WindowsPhone.ExternalStorageId" };
+    var storageIdProperties = await allProperties.RetrievePropertiesAsync(propertiesToRetrieve);
 
-                var storageIdProperties = await allProperties.RetrievePropertiesAsync(propertiesToRetrieve);
+    string cardId = (string)storageIdProperties["WindowsPhone.ExternalStorageId"];
 
-                string cardId = (string)storageIdProperties["WindowsPhone.ExternalStorageId"];
-
-                if (...) // If cardID matches the cached ID of a recognized card.
-                {
-                    // Card is recognized. Index contents opportunistically.
-                }
-                else
-                {
-                    // Card is not recognized. Index contents immediately.
-                }
-            }
+    if (...) // If cardID matches the cached ID of a recognized card.
+    {
+        // Card is recognized. Index contents opportunistically.
+    }
+    else
+    {
+        // Card is not recognized. Index contents immediately.
+    }
+}
 ```
 
  
 
  
-

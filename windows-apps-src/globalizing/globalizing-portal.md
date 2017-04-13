@@ -11,14 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fa7757a8657abfc84ee905cb05b0b3addc59f64e
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: f46a48e6f93dc152a76ab5791d722dbe757a90b6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="globalization-and-localization"></a>Globalisation et localisation
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -26,7 +23,7 @@ Windows est utilisé dans le monde entier, par des publics de diverses cultures,
 
 **La globalisation** consiste à concevoir et développer votre application de sorte qu’elle adapte son comportement aux différents marchés du monde entier sans aucune modification ou personnalisation.
 
-Vous pouvez par exemple :
+Vous pouvez par exemple:
 
 -   Concevoir la disposition de votre application pour qu’elle s’adapte aux différentes longueurs de texte et tailles de police des autres langues dans les libellés et les chaînes de texte.
 -   Récupérer du texte et des images liées à la culture à partir de ressources pouvant être adaptées à différents marchés locaux, au lieu de les coder en dur dans le code ou le balisage de votre application.
@@ -34,7 +31,7 @@ Vous pouvez par exemple :
 
 **La localisation** consiste à adapter votre application pour répondre aux besoins linguistiques, culturels et politiques d’un marché local spécifique.
 
-Par exemple :
+Par exemple:
 
 -   Traduire le texte et les libellés de l'application pour le nouveau marché et créer des ressources distinctes pour la langue utilisée sur ce marché.
 -   Modifier si besoin les images liées à la culture, puis les placer dans des ressources distincts.
@@ -98,7 +95,6 @@ Consultez également la documentation initialement créée pour Windows 8.x, qui
  
 
  
-
 
 
 

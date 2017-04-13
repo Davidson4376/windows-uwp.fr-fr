@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e05d6278472af75fb97f33eb840f6ecf28d33670
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: b3081680c0d2324585fa5550aa7c6e8548673219
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="printing-and-scanning"></a>Impression et numérisation
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette section décrit comment imprimer et numériser à partir de votre application Windows universelle.
 
@@ -34,5 +32,4 @@ Cette section décrit comment imprimer et numériser à partir de votre applicat
 * [//Vidéo de la build 2015 : développement d’applications qui impriment dans Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [Exemple d’impression UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984)
  
-
 

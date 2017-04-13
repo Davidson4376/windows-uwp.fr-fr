@@ -2,29 +2,25 @@
 title: Compression de mipmaps
 description: "Plusieurs mips (par tranche de tableau) peuvent être compressées dans plusieurs vignettes, en fonction des dimensions et du format de la ressource de diffusion en continu, du nombre de mipmaps et des tranches de tableau."
 ms.assetid: 906C3CAC-4E84-4947-B508-06788551BE85
-keywords:
-- Compression de mipmaps
+keywords: Compression de mipmaps
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4d9f8d62ee19cd92b543359413fc09e6053c1ed5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 720e8ff5fd6dee2a67bd7a1bf7de02a8f5c34583
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="mipmap-packing"></a>Compression de mipmaps
 
 
 Plusieurs mips (par tranche de tableau) peuvent être compressées dans plusieurs vignettes, en fonction des dimensions et du format de la ressource de diffusion en continu, du nombre de mipmaps et des tranches de tableau.
 
-En fonction du [niveau](streaming-resources-features-tiers.md) de prise en charge des ressources de diffusion en continu, les mipmaps de certaines dimensions ne respectent pas la forme standard des vignettes. Le cas échéant, elles sont compressées ensemble, selon une méthode inconnue de l’application. Des niveaux supérieurs de prise en charge procurent de meilleures garanties d’intégration des dimensions des types de surface dans le format standard des vignettes ; un mappage individuel par les applications est alors possible.
+En fonction du [niveau](streaming-resources-features-tiers.md) de prise en charge des ressources de diffusion en continu, les mipmaps de certaines dimensions ne respectent pas la forme standard des vignettes. Le cas échéant, elles sont compressées ensemble, selon une méthode inconnue de l’application. Des niveaux supérieurs de prise en charge procurent de meilleures garanties d’intégration des dimensions des types de surface dans le format standard des vignettes; un mappage individuel par les applications est alors possible.
 
-Quelles sont les différences entre les implémentations ? En fait, en fonction des dimensions et du format de la ressource, du nombre de mipmaps et des tranches de tableau, un nom M de mips (par tranche de tableau) peut être compressé dans un nombre N de vignettes. Lorsque vous récupérez les informations sur les vignettes des ressources pour un appareil donné, le pilote communique à l’application les valeurs M et N (parmi d’autres données relatives à la surface, indépendantes du fournisseur matériel). L’ensemble de vignettes correspondant aux mips compressés représente toujours 64 Ko ; les éléments peuvent être mappés individuellement à des emplacements distincts du pool de vignettes.
+Quelles sont les différences entre les implémentations? En fait, en fonction des dimensions et du format de la ressource, du nombre de mipmaps et des tranches de tableau, un nomM de mips (par tranche de tableau) peut être compressé dans un nombreN de vignettes. Lorsque vous récupérez les informations sur les vignettes des ressources pour un appareil donné, le pilote communique à l’application les valeurs M et N (parmi d’autres données relatives à la surface, indépendantes du fournisseur matériel). L’ensemble de vignettes correspondant aux mips compressés représente toujours 64Ko; les éléments peuvent être mappés individuellement à des emplacements distincts du pool de vignettes.
 
 Cependant, la forme des pixels des vignettes et la manière dont les mipmaps s’intègrent dans l’ensemble de vignettes, spécifiques à chaque fournisseur matériel, sont trop complexes à présenter. Par conséquent, les applications doivent mapper aucune ou l’ensemble (simultanément) des vignettes considérées comme compressées. Dans le cas contraire, le comportement d’accès à la ressource de diffusion en continu reste indéfini.
 
@@ -40,7 +36,6 @@ Les API dédiées à la copie des vignettes n’ont pas accès aux mips compress
  
 
  
-
 
 
 

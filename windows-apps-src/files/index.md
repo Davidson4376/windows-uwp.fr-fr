@@ -2,22 +2,20 @@
 author: laurenhughes
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
 title: "Fichiers, dossiers et bibliothèques"
-description: "Découvrez la lecture et l’écriture de paramètres d’application, les sélecteurs de fichiers et de dossiers, et les emplacements de bac à sable « sandbox » tels que la bibliothèque de musique/vidéos."
+description: "Découvrez la lecture et l’écriture de paramètres d’application, les sélecteurs de fichiers et de dossiers, et les emplacements de bac à sable «sandbox» tels que la bibliothèque de musique/vidéos."
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
-ms.openlocfilehash: 0baa58915bfac91d618a6da84f37174e41f7377f
-ms.lasthandoff: 01/19/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 77969b423ba955c50937a45955e2e490118b2c13
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
  # <a name="files-folders-and-libraries"></a>Fichiers, dossiers et bibliothèques
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Vous utilisez les API dans les espaces de noms [Windows.Storage](https://msdn.microsoft.com/library/windows/apps/br227346), [Windows.Storage.Streams](https://msdn.microsoft.com/library/windows/apps/br241791) et [Windows.Storage.Pickers](https://msdn.microsoft.com/library/windows/apps/br207928) pour lire et écrire du texte et d’autres formats de données dans des fichiers, et gérer les fichiers et dossiers. Cette section traite également de la lecture et de l’écriture de paramètres d’application, des sélecteurs de fichiers et de dossiers, et des emplacements bac à sable (sandbox) tels que la bibliothèque de musique/vidéos.
 
@@ -44,4 +42,3 @@ Vous utilisez les API dans les espaces de noms [Windows.Storage](https://msdn.mi
  
 
  
-

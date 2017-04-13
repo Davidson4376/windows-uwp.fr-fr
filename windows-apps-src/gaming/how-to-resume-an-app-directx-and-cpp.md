@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, reprise, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp, reprise, directx
 ms.openlocfilehash: 0ef4617417526cd2e39ce968e4d682b4015e22d3
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="how-to-resume-an-app-directx-and-c"></a>Reprise d’une application (DirectX et C++)
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX de plateforme Windows universelle.
 
@@ -100,7 +97,6 @@ Le système suspend votre application chaque fois que l’utilisateur bascule ve
  
 
  
-
 
 
 

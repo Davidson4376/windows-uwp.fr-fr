@@ -2,25 +2,22 @@
 author: mcleanbyron
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
 description: "Utilisez ces méthodes dans l’API de soumission du Windows Store pour gérer les extensions des applications qui sont inscrites dans votre compte du Centre de développement Windows."
-title: "Gérer les extensions à l’aide de l’API de soumission du Windows Store"
+title: "Gérer les modules complémentaires"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, extensions, produit in-app"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 55a6b548246e801c9fcc0392265263123f24de00
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp, API de soumission du Windows Store, extensions, produit dans l&quot;application, FAI
+ms.openlocfilehash: b442f48b7d03f0f972882ec240dbc1f37f018fd9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="manage-add-ons"></a>Gérer les modules complémentaires
 
-# <a name="manage-add-ons-using-the-windows-store-submission-api"></a>Gérer les extensions à l’aide de l’API de soumission du Windows Store
+Utilisez les méthodes suivantes dans l’API de soumission du WindowsStore pour gérer les extensions (également connues sous le nom produits in-app ou PIA) pour vos applications. Pour obtenir une présentation de l’API de soumission du WindowsStore, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services du WindowsStore](create-and-manage-submissions-using-windows-store-services.md).
 
-Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pour gérer les extensions (également connues sous le nom produits in-app ou PIA) pour vos applications. Pour obtenir une présentation de l’API de soumission du Windows Store, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
-
->**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. L’octroi de cette autorisation se fait en plusieurs étapes. Elle est accordée aux comptes de développeur, et tous les comptes n’en bénéficient pas pour le moment. Pour demander un accès anticipé, connectez-vous au tableau de bord du Centre de développement, cliquez sur **Commentaires** au bas du tableau de bord, sélectionnez **API de soumission** dans la zone de commentaires, puis soumettez votre demande. Vous recevrez un message électronique dès que cette autorisation sera accordée à votre compte.
+>**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. L’octroi de cette autorisation s’effectue en plusieurs étapes. Elle est accordée aux comptes de développeur, et tous les comptes n’en bénéficient pas pour le moment. Pour demander un accès anticipé, connectez-vous au tableau de bord du Centre de développement, cliquez sur **Commentaires** au bas du tableau de bord, sélectionnez **API de soumission** dans la zone de commentaires, puis soumettez votre demande. Vous recevrez un message électronique dès que cette autorisation sera accordée à votre compte.
 
 Ces méthodes peuvent uniquement être utilisées pour obtenir, créer ou supprimer des extensions. Pour créer des soumissions pour des extensions, voir les méthodes indiquées dans [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
 
@@ -63,11 +60,11 @@ Ces méthodes peuvent uniquement être utilisées pour obtenir, créer ou suppri
 
 ## <a name="prerequisites"></a>Prérequis
 
-Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store avant d’essayer d’utiliser l’une de ces méthodes.
+Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du WindowsStore avant d’essayer d’utiliser l’une de ces méthodes.
 
 ## <a name="data-resources"></a>Ressources de données
 
-Les méthodes de l’API de soumission du Windows Store pour gérer les extensions utilisent les ressources de données JSON suivantes.
+Les méthodes de l’API de soumission du WindowsStore pour gérer les extensions utilisent les ressources de données JSON suivantes.
 
 <span id="add-on-object" />
 ### <a name="add-on-resource"></a>Ressource d’extension
@@ -104,9 +101,9 @@ Cette ressource a les valeurs suivantes.
 | Valeur      | Type   | Description        |
 |------------|--------|--------------|
 | applications      | tableau  | Tableau qui contient une [ressource d’application](#application-object) qui représente l’application à laquelle cette extension est associée. Un seul élément est pris en charge dans ce tableau.  |
-| id | chaîne  | ID Windows Store de l’extension. Cette valeur est fournie par le Windows Store. Exemple d’ID Windows Store : 9NBLGGH4TNMP.  |
+| id | chaîne  | ID WindowsStore de l’extension. Cette valeur est fournie par le Windows Store. Exemple d’ID Windows Store: 9NBLGGH4TNMP.  |
 | productId | chaîne  | ID de produit de l’extension. Il s’agit de l’ID fourni par le développeur au moment de la création de l’extension. Pour plus d’informations, consultez [Définir le type et l’ID de votre produit](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id). |
-| productType | chaîne  | Type de produit de l’extension. Les valeurs suivantes sont prises en charge : **Durable** et **Consommable**.  |
+| productType | chaîne  | Type de produit de l’extension. Les valeurs suivantes sont prises en charge: **Durable** et **Consommable**.  |
 | lastPublishedInAppProductSubmission       | objet | [Ressource de soumission](#submission-object) qui fournit des informations sur la dernière soumission publiée de l’extension.         |
 | pendingInAppProductSubmission        | objet  |  [Ressource de soumission](#submission-object) qui fournit des informations sur la soumission actuellement en attente pour l’extension.  |   |
 
@@ -133,7 +130,7 @@ Cette ressource a les valeurs suivantes.
 
 | Valeur           | Type    | Description        |
 |-----------------|---------|-----------|
-| value            | objet  |  Objet qui contient les valeurs suivantes : <br/><br/> <ul><li>*id*. ID Windows Store de l’application. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).</li><li>*resourceLocation*. Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de l’application.</li></ul>   |
+| value            | objet  |  Objet qui contient les valeurs suivantes: <br/><br/> <ul><li>*id*. ID Windows Store de l’application. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).</li><li>*resourceLocation*. Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de l’application.</li></ul>   |
 | totalCount   | entier  | Nombre d’objets d’application dans le tableau *applications* du corps de la réponse.                                                                                                                                                 |
 
 <span id="submission-object" />
@@ -166,4 +163,3 @@ Cette ressource a les valeurs suivantes.
 * [Obtenir une extension](get-an-add-on.md)
 * [Créer une extension](create-an-add-on.md)
 * [Supprimer une extension](delete-an-add-on.md)
-

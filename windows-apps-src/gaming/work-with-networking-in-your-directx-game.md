@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, jeux, mise en réseau, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: "Windows10, uwp, jeux, mise en réseau, directx"
 ms.openlocfilehash: ce94dda0eaf156f1e09fefbd76f50bc764050970
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="networking-for-games"></a>Mise en réseau pour les jeux
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Apprenez à développer et à incorporer des fonctionnalités réseau dans votre jeu DirectX.
 
@@ -50,9 +47,9 @@ Vous pouvez utiliser un éventail d’API de réseau dans les jeux DirectX. Il e
 Les API de réseau les plus connues pour les jeux sont les suivantes :
 
 -   TCP et sockets : fournit une connexion fiable. Utilisez TCP pour les jeux qui ne nécessitent aucune sécurité. TCP permet au serveur d’effectuer facilement une montée en puissance. Il est ainsi couramment utilisé dans les jeux qui ont recours au modèle d’infrastructure (client-serveur ou pair à pair Internet). TCP peut également servir pour les jeux ad hoc (pair à pair local) via Wi-Fi Direct et Bluetooth. TCP est couramment utilisé pour les déplacements d’objets, l’interaction entre les personnages, la conversation textuelle et bien d’autres opérations. La classe [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) fournit un socket TCP utilisable dans les jeux du Windows Store. La classe **StreamSocket** est utilisée avec les classes associées de l’espace de noms [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960).
--   TCP et sockets avec SSL : offre une connexion fiable qui empêche l’écoute clandestine. Utilisez les connexions TCP avec SSL pour les jeux qui nécessitent de la sécurité. Le chiffrement et le traitement de SSL ajoute un coût en termes de latence et de performance. Il est donc uniquement utilisé quand la sécurité est nécessaire. TCP avec SSL est couramment utilisé pour les connexions, les ressources d’achat et de commerce, la création de personnages de jeu et la gestion. La classe [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) fournit un socket TCP prenant en charge SSL.
+-   TCP et sockets avec SSL: offre une connexion fiable qui empêche l’écoute clandestine. Utilisez les connexions TCP avec SSL pour les jeux qui nécessitent de la sécurité. Le chiffrement et le traitement de SSL ajoute un coût en termes de latence et de performance. Il est donc uniquement utilisé quand la sécurité est nécessaire. TCP avec SSL est couramment utilisé pour les connexions, les ressources d’achat et de commerce, la création de personnages de jeu et la gestion. La classe [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) fournit un socket TCP prenant en charge SSL.
 -   UDP et sockets : offre des transferts réseau non fiables avec un traitement faible. UDP est utilisé pour les jeux qui tolèrent un faible niveau de latence et quelques pertes de paquets. Il sert souvent dans les jeux de combat, pour les tirs et les trajectoires, l’audio sur le réseau et la conversation vocale. La classe [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) fournit un socket UDP qu’il est possible d’utiliser dans les jeux du Windows Store. La classe **DatagramSocket** est utilisée avec les classes associées de l’espace de noms [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960).
--   Client HTTP : offre une connexion fiable aux serveurs HTTP. Le scénario de réseau le plus courant consiste à accéder à un site Web pour récupérer ou stocker des informations. Il peut s’agir tout simplement d’un site Web permettant de stocker des informations utilisateur et des scores de jeu. Combiné à SSL à des fins de sécurité, un client HTTP peut être utilisé pour la connexion, l’achat, les ressources de commerce, la création de personnages de jeu et la gestion. La classe [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) fournit une API de client HTTP moderne à utiliser dans les jeux du Windows Store. La classe **HttpClient** est utilisée avec les classes associées de l’espace de noms [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692).
+-   Client HTTP: offre une connexion fiable aux serveurs HTTP. Le scénario de réseau le plus courant consiste à accéder à un site Web pour récupérer ou stocker des informations. Il peut s’agir tout simplement d’un site Web permettant de stocker des informations utilisateur et des scores de jeu. Combiné à SSL à des fins de sécurité, un client HTTP peut être utilisé pour la connexion, l’achat, les ressources de commerce, la création de personnages de jeu et la gestion. La classe [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) fournit une API de client HTTP moderne à utiliser dans les jeux du Windows Store. La classe **HttpClient** est utilisée avec les classes associées de l’espace de noms [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692).
 
 ## <a name="handling-network-exceptions-in-your-directx-game"></a>Gestion des exceptions réseau dans votre jeu DirectX
 
@@ -76,7 +73,7 @@ Les applications de plateforme Windows universelle (UWP) lèvent généralement 
 
 Lorsqu’une exception survient dans un jeu DirectX qui correspond à une application UWP, il est possible de récupérer la valeur **HRESULT** permettant d’identifier la cause de l’erreur. Le fichier include *Winerror.h* contient une liste importante de valeurs **HRESULT** possibles qui inclut les erreurs réseau.
 
-Les API de réseau prennent en charge différentes méthodes permettant de récupérer ces informations détaillées sur la cause d’une exception :
+Les API de réseau prennent en charge différentes méthodes permettant de récupérer ces informations détaillées sur la cause d’une exception:
 
 -   Méthode permettant d’extraire la valeur **HRESULT** de l’erreur à l’origine de l’exception. La liste des valeurs **HRESULT** potentielles est importante et non spécifiée. La valeur **HRESULT** peut être extraite lors de l’utilisation d’une API de réseau quelconque.
 -   Méthode d’assistance qui convertit la valeur **HRESULT** en valeur d’énumération. La liste des valeurs d’énumération potentielles est précisée et relativement petite. Une méthode d’assistance est disponible pour les classes de socket dans l’espace de noms [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960).
@@ -396,4 +393,3 @@ using namespace Windows::Web::Http;
 * [Exemple HttpClient]( http://go.microsoft.com/fwlink/p/?linkid=242550)
 * [Exemple de proximité](http://go.microsoft.com/fwlink/p/?linkid=245082)
 * [Exemple StreamSocket](http://go.microsoft.com/fwlink/p/?linkid=243037)
-

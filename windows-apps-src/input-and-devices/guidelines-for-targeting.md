@@ -1,6 +1,6 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Cet article décrit l’utilisation de la géométrie de contact pour le ciblage tactile et indique les meilleures pratiques en matière de ciblage dans les applications Windows Runtime."
+Description: "Cette rubrique décrit l’utilisation de la géométrie de contact pour le ciblage tactile et indique les meilleures pratiques de ciblage dans les applications WindowsRuntime."
 title: Ciblage
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
@@ -10,14 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fd4ba842a1d6f9eec6012a930a5dda5d7ff7c249
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: dbd5d649dbb9efd95b61f1cffa8266143c5bf2d9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="guidelines-for-targeting"></a>Recommandations en matière de ciblage
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -58,12 +55,12 @@ Ce résultat doit être ajusté en fonction de chaque plateau d’échelle défi
 
 Des seuils de distance et de temps peuvent être utilisés pour déterminer le résultat d’une interaction.
 
-Par exemple, lorsqu’un appui est détecté, il est enregistré si l’objet est glissé de moins de 2,7 mm par rapport au point d’appui et que le doigt est levé dans les 0,1 seconde suivant l’appui. Le fait de déplacer le doigt sur l’écran au-delà de ce seuil de 2,7 mm entraîne un glissement de l’objet et sa sélection ou son déplacement (pour plus d’informations, voir [Recommandations en matière de glisser transversal](guidelines-for-cross-slide.md)). En fonction de votre application, le fait de maintenir appuyé le doigt pendant plus de 0,1 seconde peut provoquer de la part du système une interaction d’auto-révélation (pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md)).
+Par exemple, lorsqu’un appui est détecté, il est enregistré si l’objet est glissé de moins de 2,7 mm par rapport au point d’appui et que le doigt est levé dans les 0,1 seconde suivant l’appui. Le fait de déplacer le doigt sur l’écran au-delà de ce seuil de 2,7mm entraîne un glissement de l’objet et sa sélection ou son déplacement (pour plus d’informations, voir [Recommandations en matière de glisser transversal](guidelines-for-cross-slide.md)). En fonction de votre application, le fait de maintenir appuyé le doigt pendant plus de 0,1seconde peut provoquer de la part du système une interaction d’auto-révélation (pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md)).
 
 ## <a name="target-sizes"></a>Taille des cibles
 
 
-En général, vous devez définir votre cible tactile sur une taille de 9 mm carrés ou plus (48x48 pixels sur un affichage de 135 PPP pour un plateau de mise à l’échelle de 1.0x). Évitez d’utiliser des cibles tactiles inférieures à 7 mm carrés.
+En général, vous devez définir votre cible tactile sur une taille de 9mm carrés ou plus (48x48pixels sur un affichage de 135PPP pour un plateau de mise à l’échelle de 1.0x). Évitez d’utiliser des cibles tactiles inférieures à 7 mm carrés.
 
 Le schéma suivant montre comment la taille de la cible est généralement une combinaison de la cible visuelle, de la taille réelle de la cible et de l’éventuel espacement entre la cible réelle et d’autres cibles potentielles.
 
@@ -92,8 +89,8 @@ Le tableau suivant montre les tailles minimales et recommandées pour les compos
 </tr>
 <tr class="even">
 <td align="left">Taille visuelle de la cible</td>
-<td align="left">&lt; 60 % de la taille réelle</td>
-<td align="left">90 à 100 % de la taille réelle
+<td align="left">&lt; 60% de la taille réelle</td>
+<td align="left">90 à 100% de la taille réelle
 <p>La plupart des utilisateurs ne se rendront pas compte qu’une cible visuelle est tactile si elle fait moins de 4,2 mm carrés (60 % de la taille de cible minimale recommandée, 7 mm).</p></td>
 </tr>
 <tr class="odd">
@@ -125,7 +122,7 @@ Vous pouvez modifier ces recommandations en matière de tailles de cibles en fon
 ## <a name="targeting-assistance"></a>Aide au ciblage
 
 
-Windows offre une aide au ciblage pour prendre en charge les scénarios dans lesquels les recommandations en matière de taille ou d’espacement minimal présentées ici ne peuvent pas s’appliquer ; par exemple, des liens hypertexte sur une page web, des contrôles de calendrier, des listes déroulantes et des zones de liste modifiable ou une sélection de texte.
+Windows offre une aide au ciblage pour prendre en charge les scénarios dans lesquels les recommandations en matière de taille ou d’espacement minimal présentées ici ne peuvent pas s’appliquer; par exemple, des liens hypertexte sur une page web, des contrôles de calendrier, des listes déroulantes et des zones de liste modifiable ou une sélection de texte.
 
 Ces améliorations de la plateforme de ciblage et les comportement de l’interface utilisateur fonctionnent ensemble avec le retour visuel (interface utilisateur de résolution des ambiguïtés) afin d’améliorer la précision et la confiance de l’utilisateur. Pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
 
@@ -139,7 +136,7 @@ La connexion est un signal visuel (un connecteur situé entre un point de contac
 -   Un contact tactile a été détecté pour la première fois dans un certain seuil de proximité d’un objet et cet objet a été identifié comme la cible la plus probable du contact.
 -   Un contact tactile a été éloigné d’un objet, mais il reste encore dans un seuil de proximité.
 
-Cette fonctionnalité n’est pas exposée aux développeurs d’applications du Windows Store en JavaScript.
+Cette fonctionnalité n’est pas exposée aux développeurs d’applications du WindowsStore en JavaScript.
 
 ## <a name="scrubbing"></a>Frottement
 
@@ -166,7 +163,7 @@ Pour concevoir des interactions de frottement, tenez compte des recommandations 
 * [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Exemples d’archive**
-* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Entrée: exemple d’événements d’entrée utilisateurXAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple de test de positionnement tactile](http://go.microsoft.com/fwlink/p/?linkid=231590)
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -177,7 +174,6 @@ Pour concevoir des interactions de frottement, tenez compte des recommandations 
  
 
  
-
 
 
 

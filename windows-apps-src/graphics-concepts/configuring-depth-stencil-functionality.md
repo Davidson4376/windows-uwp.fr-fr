@@ -2,21 +2,17 @@
 title: "Configuration de la fonctionnalité de profondeur-gabarit"
 description: "Cette section décrit les étapes de configuration de la mémoire tampon de profondeur-gabarit et l’état de profondeur-gabarit pour l’étape de fusion/sortie."
 ms.assetid: B3F6CDAA-93ED-4DC1-8E69-972C557C7920
-keywords:
-- "Configuration de la fonctionnalité de profondeur-gabarit"
+keywords: "Configuration de la fonctionnalité de profondeur-gabarit"
 author: mtoepke
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6814e5ee5aa99558830af4da3b43d102048f8bcb
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9064c65732287777c90fe3987cda61c087e49508
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="span-iddirect3dconceptsconfiguringdepth-stencilfunctionalityspanconfiguring-depth-stencil-functionality"></a><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>Configuration de la fonctionnalité de profondeur-gabarit
 
 
@@ -40,7 +36,7 @@ Les cibles de rendu doivent toutes avoir le même type de ressource. Si un antic
 
 Lorsqu’une mémoire tampon est utilisée comme cible de rendu, les tests de profondeur-gabarit et les cibles de rendu multiples ne sont pas pris en charge.
 
--   Il est possible de lier jusqu'à 8 cibles de rendu simultanément.
+-   Il est possible de lier jusqu'à 8cibles de rendu simultanément.
 -   Toutes les cibles de rendu doivent avoir la même taille dans toutes les dimensions (largeur et hauteur, et profondeur 3D ou taille de tableau pour les types \*Array).
 -   Chaque cible de rendu peut avoir un format de données différent.
 -   Les masques d'écriture contrôlent les données qui sont écrites dans une cible de rendu. Les masques d'écriture de sortie contrôlent au niveau de chaque cible de rendu et au niveau de chaque composant les données écrites sur la ou les cible(s) de rendu.
@@ -92,7 +88,7 @@ Cela signifie que la géométrie d'ombre est dessinée deux fois pour chaque sou
 
 ### <a name="span-idreadingthedepth-stencilbufferasatexturespanspan-idreadingthedepth-stencilbufferasatexturespanspan-idreadingthedepth-stencilbufferasatexturespanspan-idreading-the-depth-stencil-buffer-as-a-texturespanreading-the-depth-stencil-buffer-as-a-texture"></a><span id="Reading_the_Depth-Stencil_Buffer_as_a_Texture"></span><span id="reading_the_depth-stencil_buffer_as_a_texture"></span><span id="READING_THE_DEPTH-STENCIL_BUFFER_AS_A_TEXTURE"></span><span id="reading-the-depth-stencil-buffer-as-a-texture"></span>Lecture de la mémoire tampon de profondeur-gabarit en tant que texture
 
-Une mémoire tampon de profondeur-gabarit peut être lue par un nuanceur en tant que texture. Une application qui lit une mémoire tampon de profondeur-gabarit en tant que texture effectue un rendu en deux passes ; la première pour écrire dans le tampon de profondeur-gabarit, la seconde pour lire à partir de la mémoire tampon. Ceci permet un nuanceur de comparer les valeurs de profondeur ou de gabarit précédemment écrites dans la mémoire tampon avec la valeur du pixel actuellement rendu. Le résultat de la comparaison peut être utilisé pour créer divers effets, tels que le mappage d'ombres ou les particules souples dans un système à particules.
+Une mémoire tampon de profondeur-gabarit peut être lue par un nuanceur en tant que texture. Une application qui lit une mémoire tampon de profondeur-gabarit en tant que texture effectue un rendu en deux passes; la première pour écrire dans le tampon de profondeur-gabarit, la seconde pour lire à partir de la mémoire tampon. Ceci permet un nuanceur de comparer les valeurs de profondeur ou de gabarit précédemment écrites dans la mémoire tampon avec la valeur du pixel actuellement rendu. Le résultat de la comparaison peut être utilisé pour créer divers effets, tels que le mappage d'ombres ou les particules souples dans un système à particules.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
@@ -102,4 +98,3 @@ Une mémoire tampon de profondeur-gabarit peut être lue par un nuanceur en tant
 [Pipeline graphique](graphics-pipeline.md)
 
 [Étape de fusion de sortie](https://msdn.microsoft.com/library/windows/desktop/bb205120)
-

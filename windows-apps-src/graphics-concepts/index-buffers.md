@@ -2,21 +2,17 @@
 title: "Mémoires tampons d’index"
 description: "Les mémoires tampons d’index sont des mémoires comportant des données d’index, qui sont des décalages d’entiers dans des mémoires tampons de vertex, utilisés pour l’affichage des primitives."
 ms.assetid: 14D3DEC5-CF74-488B-BE41-16BF5E3201BE
-keywords:
-- "Mémoires tampons d’index"
+keywords: "Mémoires tampons d’index"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6aa62a7506b37314b1952a6687920a2cdf3deca3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: aeb526032489cac2fdbbc436f98eac0cda59b643
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="index-buffers"></a>Mémoires tampons d’index
 
 
@@ -29,7 +25,7 @@ Une mémoire tampon de vertex comportant des vertex, vous pouvez dessiner une m�
 ## <a name="span-idindexbufferdescriptionspanspan-idindexbufferdescriptionspanspan-idindexbufferdescriptionspanindex-buffer-description"></a><span id="Index_Buffer_Description"></span><span id="index_buffer_description"></span><span id="INDEX_BUFFER_DESCRIPTION"></span>Description d’une mémoire tampon d’index
 
 
-Une mémoire tampon d’index est décrite en fonction de ses fonctionnalités. Où existe-t-elle en mémoire ? Supporte-t-elle la lecture et l’écriture ? Combien d’index peut-elle contenir ? De quel type ?
+Une mémoire tampon d’index est décrite en fonction de ses fonctionnalités. Où existe-t-elle en mémoire? Supporte-t-elle la lecture et l’écriture? Combien d’index peut-elle contenir? De quel type?
 
 Les descriptions de mémoires tampons d’index indiquent à votre application la méthode de création d’une mémoire existante. Vous fournissez une structure de description vide, que le système renseigne avec les fonctionnalités d’une mémoire tampon d’index préalablement créée.
 
@@ -48,7 +44,6 @@ L’application peut écrire directement les index sur une mémoire tampon d’i
  
 
  
-
 
 
 

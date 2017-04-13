@@ -2,21 +2,17 @@
 title: "Éclairage"
 description: "Les lumières sont utilisées pour illuminer les objets d’une scène. La couleur de chaque vertex d’objet est basée sur la carte de texture, les couleurs de vertex et les sources de lumière actuelles."
 ms.assetid: AB16CF5B-47CE-455C-A8BD-36305E54BEA9
-keywords:
-- "Éclairage"
+keywords: "Éclairage"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9b2449f6d461acb0cb19b3e5b332bbb6d903fdb6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6102c070a10d44e8882fe72c8168fb244353fd68
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="lighting"></a>Éclairage
 
 
@@ -43,11 +39,11 @@ Les lumières sont utilisées pour illuminer les objets d’une scène. La coule
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Vue d’ensemble de l’éclairage](lighting-overview.md)</p></td>
-<td align="left"><p>Lorsque vous recourez à l’éclairage Direct3D, vous autorisez Direct3D à gérer les paramètres d’illumination à votre place. S’ils le souhaitent, les utilisateurs avancés peuvent ajuster eux-mêmes l’éclairage.</p></td>
+<td align="left"><p>Lorsque vous recourez à l’éclairageDirect3D, vous autorisez Direct3D à gérer les paramètres d’illumination à votre place. S’ils le souhaitent, les utilisateurs avancés peuvent ajuster eux-mêmes l’éclairage.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Types de lumière](light-types.md)</p></td>
-<td align="left"><p>La propriété du type de lumière définit le type de source lumineuse utilisé. Direct3D prend en charge 3 types de lumières : les lumières à points, les projecteurs et les lumières directionnelles.</p></td>
+<td align="left"><p>La propriété du type de lumière définit le type de source lumineuse utilisé. Direct3D prend en charge 3types de lumières: les lumières à points, les projecteurs et les lumières directionnelles.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Propriétés de lumière](light-properties.md)</p></td>
@@ -70,7 +66,6 @@ Les lumières sont utilisées pour illuminer les objets d’une scène. La coule
  
 
  
-
 
 
 

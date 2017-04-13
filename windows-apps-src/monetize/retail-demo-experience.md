@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, application de démonstration commerciale"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 843f98782410559d47bdb8dc0b23b50fa96552d6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2fa839c3a559ff0065c98712f73b9bb3ed81b276
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 #  <a name="create-a-retail-demo-experience-rdx-app"></a>Créer une application de démonstration commerciale (RDX)
 
@@ -22,10 +20,10 @@ Les appareils de démonstration commerciale et les contenus qui y sont installé
 
 Les applications installées sur ces ordinateurs et ces téléphones mobiles en magasin doivent être des applications de démonstration commerciale (RDX). Cet article offre une vue d’ensemble de la conception et du développement de la version de démonstration commerciale d’une application à installer sur les ordinateurs et les appareils mobiles de démonstration en magasin.
 
-Il existe une seule build de l’application de démonstration commerciale, qui peut être démarrée dans deux modes différents : _normal_ ou _commercial_.
-Du point de vue de nos clients, il n’existe qu’une seule application. Pour les aider à faire la distinction entre les deux versions, il est préférable que l’application affiche le mot « Commercial » dans la barre de titre ou dans un emplacement approprié lors de son exécution en mode démonstration commerciale.
+Il existe une seule build de l’application de démonstration commerciale, qui peut être démarrée dans deux modes différents: _normal_ ou _commercial_.
+Du point de vue de nos clients, il n’existe qu’une seule application. Pour les aider à faire la distinction entre les deux versions, il est préférable que l’application affiche le mot «Commercial» dans la barre de titre ou dans un emplacement approprié lors de son exécution en mode démonstration commerciale.
 
-En plus des exigences du Windows Store relatives aux applications, les applications RDX doivent également être entièrement compatibles avec le système de configuration, de nettoyage et de mise à jour des appareils de démonstration commerciale pour garantir que les clients bénéficient d’une expérience homogène et positive en magasin.
+En plus des exigences du WindowsStore relatives aux applications, les applicationsRDX doivent également être entièrement compatibles avec le système de configuration, de nettoyage et de mise à jour des appareils de démonstration commerciale pour garantir que les clients bénéficient d’une expérience homogène et positive en magasin.
 
 ## <a name="design-principles"></a>Principes de conception
 
@@ -52,7 +50,7 @@ Vous pouvez également vous en servir comme liste de contrôle pour préparer le
 
 ### <a name="critical-level-requirements"></a>Exigences critiques
 
-Les applications RDX ne satisfaisant pas ces exigences critiques seront supprimées de tous les appareils de démonstration commerciale dès que possible.
+Les applicationsRDX ne satisfaisant pas ces exigences critiques seront supprimées de tous les appareils de démonstration commerciale dès que possible.
 
 * Aucune demande d’informations d’identification personnelle
 
@@ -73,7 +71,7 @@ Les applications RDX qui ne satisfont pas les exigences de priorité élevée do
 
 * Expérience mémorable hors connexion
 
-    Votre application de démonstration commerciale doit fournir une excellente expérience hors connexion dans la mesure où environ 50 % des appareils sont hors connexion dans les magasins. Vous devez vous assurer que les clients qui interagissent avec votre application hors connexion vivent une expérience positive et significative.
+    Votre application de démonstration commerciale doit fournir une excellente expérience hors connexion dans la mesure où environ 50% des appareils sont hors connexion dans les magasins. Vous devez vous assurer que les clients qui interagissent avec votre application hors connexion vivent une expérience positive et significative.
 
 * Utilisation de contenus à jour
 
@@ -101,11 +99,11 @@ L’équipe commerciale Windows Store peut contacter directement les développeu
 
 * Satisfaction des exigences de taille de l’application commerciale
 
-    L’application doit être inférieure à 800 Mo. Si votre application ne satisfait pas les conditions de taille requises, contactez l’équipe commerciale Windows Store directement pour en discuter.
+    L’application doit être inférieure à 800Mo. Si votre application ne satisfait pas les conditions de taille requises, contactez l’équipe commerciale Windows Store directement pour en discuter.
 
 ## <a name="preparing-codebase-for-retail-demo-mode-development"></a>Préparation du code base pour le développement du mode démo commerciale
 
-La propriété [**IsDemoModeEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.isdemomodeenabled.aspx) dans la classe utilitaire [**RetailInfo**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.aspx), qui fait partie de l’espace de noms [Windows.System.Profile](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.aspx) dans le Kit de développement logiciel (SDK) Windows 10, est utilisée comme indicateur booléen pour spécifier le chemin de code sur lequel votre application s’exécute : mode _normal_ ou mode _commercial_.
+La propriété [**IsDemoModeEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.isdemomodeenabled.aspx) dans la classe utilitaire [**RetailInfo**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.aspx), qui fait partie de l’espace de noms [Windows.System.Profile](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.aspx) dans le Kit de développement logiciel (SDK) Windows10, est utilisée comme indicateur booléen pour spécifier le chemin de code sur lequel votre application s’exécute: mode _normal_ ou mode _commercial_.
 
 Quand [**RetailInfo.IsDemoModeEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.isdemomodeenabled.aspx) renvoie la valeur true, vous pouvez exécuter une requête concernant différentes propriétés de l’appareil à l’aide de [**RetailInfo.Properties**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.properties.aspx) pour créer une expérience de démonstration commerciale plus personnalisée. Ces propriétés incluent [**ManufacturerName**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.knownretailinfoproperties.manufacturername.aspx), [**Screensize**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.knownretailinfoproperties.screensize.aspx), [**Memory**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.knownretailinfoproperties.memory.aspx) et ainsi de suite.
 
@@ -114,41 +112,41 @@ Quand [**RetailInfo.IsDemoModeEnabled**](https://msdn.microsoft.com/library/wind
 
 Le processus de nettoyage permet de rétablir automatiquement les paramètres par défaut d’origine des appareils de démonstration commerciale lorsqu’il n’y a aucune interaction avec l’appareil pendant une durée fixe. Cela permet de s’assurer que tous les utilisateurs du magasin vivent la même expérience prévue par défaut lors de leur interaction avec un appareil. Lors du développement d’une application de démonstration commerciale, il est essentiel de comprendre quand et comment le processus de nettoyage est déclenché et ce qui se passe pendant le processus de nettoyage par défaut. Vous devez également apprendre à personnaliser le processus de nettoyage de manière à satisfaire les conditions requises pour l’expérience de démonstration commerciale prévue.
 
-### <a name="when-does-clean-up-begin"></a>Quand commence le nettoyage ?
+### <a name="when-does-clean-up-begin"></a>Quand commence le nettoyage?
 
 La séquence de nettoyage commence après une certaine durée d’inactivité de l’appareil. La durée d’inactivité commence lorsqu’il n’y a plus aucune saisie via l’écran tactile, la souris et le clavier de l’appareil.
 
 #### <a name="desktoppc"></a>Ordinateur de bureau
 
-Après 120 secondes d’inactivité, la lecture de la vidéo d’attrait de l’application commence. 5 secondes plus tard, le processus de nettoyage débute.
+Après 120secondes d’inactivité, la lecture de la vidéo d’attrait de l’application commence. 5secondes plus tard, le processus de nettoyage débute.
 
 #### <a name="phone"></a>Téléphone
 
-Après 60 secondes d’inactivité, la lecture de la vidéo d’attrait de l’application commence et le processus de nettoyage débute immédiatement.
+Après 60secondes d’inactivité, la lecture de la vidéo d’attrait de l’application commence et le processus de nettoyage débute immédiatement.
 
-### <a name="what-happens-during-a-default-clean-up-process"></a>Que se passe-t-il pendant un processus de nettoyage par défaut ?
+### <a name="what-happens-during-a-default-clean-up-process"></a>Que se passe-t-il pendant un processus de nettoyage par défaut?
 
-#### <a name="step-1-clean-up"></a>Étape 1 : nettoyage
+#### <a name="step-1-clean-up"></a>Étape1: nettoyage
 * Toutes les applications Win32 et du Windows Store sont fermées
 * Tous les fichiers des dossiers connus comme __Images__, __Vidéos__, __Musique__, __Documents__, __Photos enregistrées__, __Pellicule__, __Bureau__ et __Téléchargements__ sont supprimés.
 * Les états d’itinérance non structurés et structurés sont supprimés
 * Les états locaux structurés sont supprimés
 
-#### <a name="step-2-set-up"></a>Étape 2 : configuration
-* Pour les appareils hors connexion : les dossiers restent vides
-* Pour les appareils en ligne : les ressources de démonstration commerciale peuvent être transférées vers l’appareil à partir du Windows Store
+#### <a name="step-2-set-up"></a>Étape2: configuration
+* Pour les appareils hors connexion: les dossiers restent vides
+* Pour les appareils en ligne: les ressources de démonstration commerciale peuvent être transférées vers l’appareil à partir du Windows Store
 
-### <a name="how-to-store-data-across-user-sessions"></a>Comment stocker les données entre des sessions utilisateur ?
+### <a name="how-to-store-data-across-user-sessions"></a>Comment stocker les données entre des sessions utilisateur?
 
 Si vous voulez stocker des données d’une session utilisateur à l’autre, vous pouvez les stocker dans __ApplicationData.Current.TemporaryFolder__ car le processus de nettoyage par défaut ne supprime pas automatiquement les données dans ce dossier. Notez que les informations stockées à l’aide de *LocalState* sont supprimées pendant le processus de nettoyage.
 
-### <a name="how-to-customize-the-clean-up-process"></a>Comment personnaliser le processus de nettoyage ?
+### <a name="how-to-customize-the-clean-up-process"></a>Comment personnaliser le processus de nettoyage?
 
 Si vous souhaitez personnaliser le processus de nettoyage, vous devez implémenter le service d’application `Microsoft-RetailDemo-Cleanup` dans votre application.
 
-Les scénarios exigeant une logique de nettoyage personnalisée sont les suivants : exécution d’une installation coûteuse, téléchargement et mise en cache de données ou volonté de ne pas supprimer les données *LocalState*.
+Les scénarios exigeant une logique de nettoyage personnalisée sont les suivants: exécution d’une installation coûteuse, téléchargement et mise en cache de données ou volonté de ne pas supprimer les données *LocalState*.
 
-Étape 1 : Déclarez le service _Microsoft-RetailDemo-Cleanup_ dans votre manifeste d’application.
+Étape 1: Déclarez le service _Microsoft-RetailDemo-Cleanup_ dans votre manifeste d’application.
 ``` CSharp
   <Applications>
       <Extensions>
@@ -161,7 +159,7 @@ Les scénarios exigeant une logique de nettoyage personnalisée sont les suivant
 
 ```
 
-Étape 2 : Implémentez votre logique de nettoyage personnalisée sous la fonction de cas _AppdataCleanup_ à l’aide de l’exemple de modèle ci-dessous.
+Étape 2: Implémentez votre logique de nettoyage personnalisée sous la fonction de cas _AppdataCleanup_ à l’aide de l’exemple de modèle ci-dessous.
 ``` CSharp
 using System;
 using System.IO;
@@ -264,4 +262,3 @@ namespace MyCompany.MyApp
  
 
  
-

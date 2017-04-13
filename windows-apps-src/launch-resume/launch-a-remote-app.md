@@ -1,28 +1,25 @@
 ---
 author: TylerMSFT
 title: Lancer une application sur un appareil distant
-description: "Découvrez comment lancer une application sur un appareil distant à l’aide du projet « Rome »."
+description: "Apprenez à lancer un appareil sur un appareil distant à l&quot;aide du projet «Rome»."
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e3ef31ed9a90122ae0634274ac5794e67017bc2f
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 15ab4c39f4da1bb524f912d4e6ab6b3e6a5f34c6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-an-app-on-a-remote-device"></a>Lancer une application sur un appareil distant
 
 Cet article explique comment lancer une application Windows sur un appareil distant.
 
-Depuis Windows 10 version 1607, une application UWP peut lancer une application UWP ou une application de bureau Windows à distance sur un autre appareil qui exécute également Windows 10 version 1607 ou ultérieure, pourvu que les deux appareils soient signés avec le même compte Microsoft (MSA).
+Depuis Windows10 version1607, une applicationUWP peut lancer une applicationUWP ou une application de bureau Windows à distance sur un autre appareil qui exécute également Windows10 version1607 ou ultérieure, pourvu que les deuxappareils soient signés avec le même compte Microsoft (MSA).
 
-La fonctionnalité de lancement à distance permet des expériences orientées tâches, où un utilisateur peut démarrer une tâche sur un appareil et la terminer sur un autre. Par exemple, si l’utilisateur écoute de la musique sur son téléphone dans la voiture, il peut ensuite transférer la lecture sur sa console Xbox One lorsqu’il arrive chez lui. Le lancement à distance vous permet de transmettre des données contextuelles à l’application distante démarrée, afin de reprendre exactement la tâche là où elle a été arrêtée.
+La fonctionnalité de lancement à distance permet des expériences orientées tâches, où un utilisateur peut démarrer une tâche sur un appareil et la terminer sur un autre. Par exemple, si l’utilisateur écoute de la musique sur son téléphone dans la voiture, il peut ensuite transférer la lecture sur sa console XboxOne lorsqu’il arrive chez lui. Le lancement à distance vous permet de transmettre des données contextuelles à l’application distante démarrée, afin de reprendre exactement la tâche là où elle a été arrêtée.
 
 ## <a name="add-the-remotesystem-capability"></a>Ajouter la fonctionnalité remoteSystem
 
@@ -55,7 +52,7 @@ Ajoutez un appel à `BuildDeviceList()` dans le code de démarrage de l’applic
 
 ## <a name="launch-an-app-on-a-remote-device"></a>Lancer une application sur un appareil distant
 
-Lancez une application à distance en transmettant l’appareil auquel vous souhaitez vous connecter à l’API [**RemoteLauncher.LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelauncher.launchuriasync.aspx). Il existe trois surcharges pour cette méthode. La plus simple, reprise dans cet exemple, spécifie l’URI qui active l’application sur l’appareil distant. Dans cet exemple, l’URI ouvre l’application Cartes sur l’ordinateur distant avec une vue 3D sur l’Aiguille de l’espace de Seattle.
+Lancez une application à distance en transmettant l’appareil auquel vous souhaitez vous connecter à l’API [**RemoteLauncher.LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelauncher.launchuriasync.aspx). Il existe troissurcharges pour cette méthode. La plus simple, reprise dans cet exemple, spécifie l’URI qui active l’application sur l’appareil distant. Dans cet exemple, l’URI ouvre l’application Cartes sur l’ordinateur distant avec une vue3D sur l’Aiguille de l’espace de Seattle.
 
 Les autres surcharges de **RemoteLauncher.LaunchUriAsync** vous permettent de spécifier des options telles que l’URI du site web à afficher si aucune application capable de gérer l’URI ne peut être lancée sur l’appareil distant, et une liste facultative de noms de famille de package pouvant servir à lancer l’URI sur l’appareil distant. Vous pouvez également fournir des données sous la forme de paires clé/valeur. Vous pouvez transmettre des données à l’application que vous activez pour fournir un contexte à l’application distante, comme le nom de la chanson à lire et le lieu de lecture en cours lorsque vous basculez la lecture d’un appareil à un autre.
 
@@ -68,7 +65,6 @@ L’objet [**RemoteLaunchUriStatus**](https://msdn.microsoft.com/library/windows
 ## <a name="related-topics"></a>Rubriques connexes
 
 [Référence sur l’API Systèmes distants](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
-[Applications et appareils connectés (projet « Rome »)](connected-apps-and-devices.md)  
+[Applications et appareils connectés (projet «Rome»)](connected-apps-and-devices.md)  
 [Détecter des appareils distants](discover-remote-devices.md)  
-L’[exemple Systèmes distants](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems) montre comment détecter un système distant, lancer une application sur un système distant et utiliser des services d’application pour échanger des messages avec des applications qui s’exécutent sur deux systèmes.
-
+L’[exemple Systèmes distants](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems) montre comment détecter un système distant, lancer une application sur un système distant et utiliser des services d’application pour échanger des messages avec des applications qui s’exécutent sur deuxsystèmes.

@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, publicités, publicité, AdControl, XAML, propriétés"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dbcc08b1373c7f73d5b9ebf541ec82bb01fd9df3
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows10, uwp, publicités, publicité, AdControl, XAML, propriétés"
+ms.openlocfilehash: 3c5dae93ab6ee58fac7d4593257d357f268c241a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-xaml-properties-example"></a>Exemple de propriétés AdControl XAML
 
 L’exemple de code XAML suivant montre comment attribuer des propriétés [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) aux valeurs. Si une propriété n’est pas définie, le contrôle **AdControl** utilisera les valeurs par défaut pour créer une publicité cohérente avec l’expérience utilisateur de l’application.
@@ -40,4 +37,3 @@ Les valeurs indiquées sont des exemples. Dans votre code, vous allez définir l
 * [Exemples de publicité sur GitHub](http://aka.ms/githubads)
 
  
-

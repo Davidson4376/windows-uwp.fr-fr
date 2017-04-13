@@ -1,6 +1,6 @@
 ---
 author: mtoepke
-title: "Développement de Marble Maze, jeu pour UW en C++ et DirectX"
+title: "Développement de MarbleMaze, jeu pour UW en C++ et DirectX"
 description: "Cette section de la documentation décrit comment utiliser DirectX et Visual C++ afin de créer un jeu pour la plateforme Windows universelle (UWP) en 3D."
 ms.assetid: 43f1977a-7e1d-614c-696e-7669dd8a9cc7
 ms.author: mtoepke
@@ -8,27 +8,24 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, jeux, exemple, directx, 3d"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp, jeux, exemple, directx, 3d
 ms.openlocfilehash: 738be6a129158fbd6058ff7407aca0b8ece7ea3e
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>Développement de MarbleMaze, jeu pour UWP en C++ et DirectX
 
-# <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>Développement de Marble Maze, jeu pour UWP en C++ et DirectX
 
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cette section de la documentation décrit comment utiliser DirectX et Visual C++ pour créer un jeu pour la plateforme Windows universelle (UWP) en 3D. Cette documentation indique comment créer un jeu 3D appelé Marble Maze qui tient compte des nouveaux facteurs de formes pour s’adapter aux tablettes, mais qui s’utilise également sur les ordinateurs de bureau et les ordinateurs portables classiques.
 
-> **Remarque**   Pour télécharger le code source de Marble Maze, consultez l’[exemple de jeu Marble Maze en DirectX](http://go.microsoft.com/fwlink/?LinkId=624011).
+> **Remarque**   Pour télécharger le code source de MarbleMaze, consultez l’[exemple de jeu MarbleMaze en DirectX](http://go.microsoft.com/fwlink/?LinkId=624011).
 
  
 
-> **Important**  Marble Maze illustre des modèles de conception que nous considérons comme exemplaires pour la création de jeux UWP. Vous pouvez personnaliser de nombreux détails d’implémentation pour les adapter à vos propres méthodes et aux critères spécifiques du jeu que vous développez. Vous êtes libre d’utiliser des techniques ou des bibliothèques différentes si elles sont mieux adaptées à vos besoins. (Toutefois, vérifiez toujours que votre code passe le Kit de certification des applications Windows.) Si nous considérons que l’implémentation de Marble Maze est essentielle pour la réussite du développement du jeu, nous le soulignons dans cette documentation.
+> **Important**  MarbleMaze illustre des modèles de conception que nous considérons comme exemplaires pour la création de jeux UWP. Vous pouvez personnaliser de nombreux détails d’implémentation pour les adapter à vos propres méthodes et aux critères spécifiques du jeu que vous développez. Vous êtes libre d’utiliser des techniques ou des bibliothèques différentes si elles sont mieux adaptées à vos besoins. (Toutefois, vérifiez toujours que votre code passe le Kit de certification des applications Windows.) Si nous considérons que l’implémentation de Marble Maze est essentielle pour la réussite du développement du jeu, nous le soulignons dans cette documentation.
 
  
 
@@ -106,7 +103,6 @@ Nous vous recommandons de commencer par les Notions de base de l’exemple Marbl
  
 
  
-
 
 
 

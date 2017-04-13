@@ -1,7 +1,7 @@
 ---
 author: mtoepke
 title: Configurer des ressources DirectX et afficher une image
-description: "Nous vous montrons ici comment créer un périphérique Direct3D, une chaîne d’échange et un affichage de cible de rendu, puis comment présenter l’image rendue à l’écran."
+description: "Voici comment créer un périphérique Direct3D, une chaîne d’échange et un affichage de cible de rendu, et comment présenter l’image rendue à l’écran."
 ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
 ms.author: mtoepke
 ms.date: 02/08/2017
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, jeux, directx, ressources, images
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 1aeb4ef581254ae914efae4bc38853611dbde488
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-up-directx-resources-and-display-an-image"></a>Configurer des ressources DirectX et afficher une image
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Nous vous montrons ici comment créer un périphérique Direct3D, une chaîne d’échange et un affichage de cible de rendu, puis comment présenter l’image rendue à l’écran.
 
@@ -36,7 +33,7 @@ Nous partons du principe que vous êtes familiarisé avec C++. Vous avez égalem
 
 ### <a name="1-declaring-direct3d-interface-variables-with-comptr"></a>1. Déclaration de variables d’interface Direct3D à l’aide de ComPtr
 
-Nous déclarons les variables d’interface Direct3D à l’aide du modèle de [pointeur intelligent](https://msdn.microsoft.com/library/windows/apps/hh279674.aspx) ComPtr issu de la bibliothèque de modèles C++ Windows Runtime (WRL) afin de pouvoir gérer la durée de vie de ces variables en parant à toute exception. Nous pouvons ensuite utiliser ces variables pour accéder à la classe [**ComPtr class**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) et à ses membres. Par exemple :
+Nous déclarons les variables d’interface Direct3D à l’aide du modèle de [pointeur intelligent](https://msdn.microsoft.com/library/windows/apps/hh279674.aspx) ComPtr issu de la bibliothèque de modèles C++ Windows Runtime (WRL) afin de pouvoir gérer la durée de vie de ces variables en parant à toute exception. Nous pouvons ensuite utiliser ces variables pour accéder à la classe [**ComPtr class**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) et à ses membres. Par exemple:
 
 ```cpp
     ComPtr<ID3D11RenderTargetView> m_renderTargetView;
@@ -292,7 +289,6 @@ Nous avons créé un périphérique Direct3D, une chaîne d’échange et un aff
  
 
  
-
 
 
 

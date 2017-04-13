@@ -7,15 +7,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, jeux, souris, entrée"
+keywords: "windows10, uwp, jeux, souris, entrée"
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: f207c1b7de4fd4a885c05c6988ecf685359d1d8b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: dff08052af7f005366f9cb5154b307c13a316953
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="relative-mouse-movement-and-corewindow"></a>Mouvements de souris relatifs et CoreWindow
 
 Dans les jeux, la souris est une option de contrôle commune que de nombreux joueurs ont l’habitude d’utiliser. De même, elle est indispensable à de nombreux types de jeux, notamment les jeux de tir à la première personne et à la troisième personne, ainsi que les jeux de stratégie en temps réel. Ici, nous abordons l’implémentation des contrôles relatifs basés sur la souris, qui n’utilisent pas le curseur système et ne retournent pas de coordonnées d’écran absolues. En revanche, ils suivent le delta des pixels entre les mouvements de la souris.

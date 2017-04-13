@@ -8,18 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6a6ad55a134a45bf3feb7092cdad78d9f6ee196b
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 3f04d00da3fce4674f344129910917e9585e8723
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="enterprise-shared-storage"></a>Stockage partagé d’entreprise
 
 Le stockage partagé se compose de deux emplacements où les applications dotées de la fonctionnalité restreinte **enterpriseDeviceLockdown** et d’un certificat d’entreprise disposent d’un accès complet en lecture et écriture. Notez que la fonctionnalité **enterpriseDeviceLockdown** permet aux applications d’utiliser l’API de verrouillage de l’appareil et d’accéder aux dossiers de stockage partagés de l’entreprise. Pour plus d’informations sur l’API, voir l’espace de noms [**Windows.Embedded.DeviceLockdown**](http://go.microsoft.com/fwlink/?LinkId=699331).  
 
-Ces emplacements sont définis sur le disque local :
+Ces emplacements sont définis sur le disque local:
 - \Data\SharedData\Enterprise\Persistent
 - \Data\SharedData\Enterprise\Non-Persistent
 
@@ -35,7 +33,7 @@ Stockage partagé d’entreprise prend en charge les scénarios suivants.
 
 L’exemple suivant montre comment déclarer la fonctionnalité pour accéder au stockage d’entreprise partagé dans le manifeste du package et comment accéder aux dossiers de stockage partagé à l’aide de la classe Windows.Storage.StorageFolder.
 
-Incluez la fonctionnalité suivante dans le manifeste de package de votre application :
+Incluez la fonctionnalité suivante dans le manifeste de package de votre application:
 
 ```xml
 <Package
@@ -77,5 +75,4 @@ IReadOnlyList<StorageFile> sortedItems =
 foreach (StorageFile file in sortedItems)
     Debug.WriteLine(file.Name + ", " + file.DateCreated);
 ```
-
 

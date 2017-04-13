@@ -5,13 +5,11 @@ title: "Recommandations en matière de glisser transversal"
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 label: Cross-slide
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# Recommandations en matière de glisser transversal
+# <a name="guidelines-for-cross-slide"></a>Recommandations en matière de glisser transversal
 
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
@@ -25,14 +23,14 @@ ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
 
 Utilisez le glisser transversal pour prendre en charge la sélection avec le mouvement de balayage et les interactions de glissement (déplacement) avec le mouvement de glissement.
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Pratiques conseillées et déconseillées
+## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Pratiques conseillées et déconseillées
 
 
 -   Utilisez le glisser transversal pour les listes ou les collections qui défilent dans une seule direction.
 -   Utilisez le glisser transversal pour la sélection d’éléments lorsque l’interaction d’appui n’est pas possible.
 -   N’utilisez pas le glisser transversal pour ajouter des éléments à une file d’attente.
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Indications d’utilisation supplémentaires
+## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Indications d’utilisation supplémentaires
 
 
 La sélection et le déplacement par glissement sont possibles uniquement à l’intérieur d’une zone de contenu capable de défiler en panoramique dans une direction (verticale or horizontale). Pour que chacune de ces interactions fonctionne, l’une des directions de mouvement panoramique doit être verrouillée. De plus, le mouvement doit être effectué perpendiculairement à la direction du mouvement panoramique.
@@ -128,7 +126,7 @@ Utilisez l’action de glissement pour déplacer un ou plusieurs objets d’un e
 
 Si plusieurs objets doivent être déplacés, permettez aux utilisateurs de sélectionner plusieurs éléments, puis de les faire glisser en même temps.
 
-## <span id="related_topics"></span>Articles connexes
+## <a name="span-idrelatedtopicsspanrelated-articles"></a><span id="related_topics"></span>Articles connexes
 
 
 **Exemples**
@@ -150,11 +148,5 @@ Si plusieurs objets doivent être déplacés, permettez aux utilisateurs de sél
  
 
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

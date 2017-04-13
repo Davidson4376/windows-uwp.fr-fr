@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0b1dfaeb098ac4b73c89f4d1a51ec658312aee4e
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 722389a7440110eaffa5458e8ef5e85fccb39671
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="listview-and-gridview-data-virtualization"></a>Virtualisation des données ListView et GridView
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Remarque**  Pour plus d’informations, voir la session //build/ [Accroître considérablement les performances lors de l’interaction des utilisateurs avec de grandes quantités de données dans GridView et ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
 
@@ -48,7 +46,7 @@ Lorsque le contrôle d’éléments approche de la fin des données existantes, 
 
 ## <a name="random-access-data-virtualization"></a>Virtualisation des données par accès aléatoire
 
-La virtualisation des données par accès aléatoire permet le chargement à partir d’un point arbitraire du jeu de données. Un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) faisant appel à la virtualisation des données par accès aléatoire et utilisé pour afficher une collection d’un million d’éléments peut charger les éléments 100 000 à 100 050. Si l’utilisateur affiche ensuite le début de la liste, le contrôle charge les 50 premiers éléments. À tout moment, le curseur de la barre de défilement indique que le contrôle **ListView** contient un million d’éléments. La position du curseur de la barre de défilement est déterminée par rapport à l’emplacement des éléments visibles dans le jeu de données de la collection. Ce type de virtualisation des données peut considérablement réduire les besoins en mémoire et les temps de chargement pour la collection. Pour l’appliquer, vous devez écrire une classe de source de données qui récupère les données à la demande, gère un cache local et implémente les interfaces suivantes :
+La virtualisation des données par accès aléatoire permet le chargement à partir d’un point arbitraire du jeu de données. Un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) faisant appel à la virtualisation des données par accès aléatoire et utilisé pour afficher une collection d’un million d’éléments peut charger les éléments 100 000 à 100 050. Si l’utilisateur affiche ensuite le début de la liste, le contrôle charge les 50 premiers éléments. À tout moment, le curseur de la barre de défilement indique que le contrôle **ListView** contient un million d’éléments. La position du curseur de la barre de défilement est déterminée par rapport à l’emplacement des éléments visibles dans le jeu de données de la collection. Ce type de virtualisation des données peut considérablement réduire les besoins en mémoire et les temps de chargement pour la collection. Pour l’appliquer, vous devez écrire une classe de source de données qui récupère les données à la demande, gère un cache local et implémente les interfaces suivantes:
 
 -   [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)
 -   [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) ou [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
@@ -83,7 +81,6 @@ En outre, la stratégie permettant de déterminer à quel moment charger les él
 -   Quels types de notifications sont fournis par le service lorsque les résultats d’une requête sont modifiés ? Serez-vous informé si un élément est inséré à l’index 33 ? Si votre service prend en charge les requêtes basées sur une instruction key-plus-offset, cela peut s’avérer préférable à la simple utilisation d’un index.
 -   Quel degré d’intelligence recherchez-vous pour la prérécupération des éléments ? Allez-vous essayer de suivre la direction et la vitesse du défilement pour prédire les éléments requis ?
 -   Quel degré d’agressivité recherchez-vous pour le vidage du cache ? Il s’agit d’un compromis entre la mémoire et l’expérience.
-
 
 
 

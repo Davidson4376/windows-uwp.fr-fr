@@ -8,19 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9317ea8690d5696d4a9e55b3a88f1a2ff83d8bfd
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: ccacfc1257af529fcc2363285c6dd9e4ab2315ac
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>Sélection d’une approche pour le développement d’applications pour UWP et iOS
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Quels sont les choix possibles lors du développement d’applications multiplateformes ?
+Quels sont les choix possibles lors du développement d’applications multiplateformes?
 
 ## <a name="whats-the-best-way-to-support-both-ios-and-windows"></a>Quel est le meilleur moyen de prise en charge des applications iOS et Windows ?
 
@@ -99,5 +96,4 @@ Avec une application iOS existante, les options sont un peu plus limitées. Néa
 -   [PlayCanvas](http://go.microsoft.com/fwlink/p/?LinkID=394061)
 
     Outil de développement de jeux HTML.
-
 

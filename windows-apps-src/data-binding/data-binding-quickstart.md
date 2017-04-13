@@ -2,23 +2,21 @@
 author: mcleblanc
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
 title: "Vue d’ensemble de la liaison de données"
-description: "Cet article vous indique comment lier un contrôle (ou un autre élément d’interface utilisateur) à un élément spécifique ou comment lier un contrôle d’éléments à une collection d’éléments dans une application de plateforme Windows universelle (UWP)."
+description: "Cette rubrique vous montre comment lier un contrôle (ou un autre élément d’interface utilisateur) à un élément individuel ou lier un contrôle d’éléments à une collection d’éléments dans une application de plateforme Windows universelle (UWP)."
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
-ms.openlocfilehash: 3abf2b7e9ff59099dafaa753f3a8ccf257dbc19a
-ms.lasthandoff: 01/19/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: d3be03785e977229c6aa38dba728e6ef6552a23e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 <a name="data-binding-overview"></a>Vue d’ensemble de la liaison de données
 =====================
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cette rubrique vous montre comment lier un contrôle (ou un autre élément d’interface utilisateur) à un élément individuel ou lier un contrôle d’éléments à ou un contrôle de liste à une collection d’éléments dans une application de plateforme Windows universelle (UWP). Elle explique également comment contrôler le rendu des éléments, implémenter un affichage détails en fonction d’une sélection et convertir des données pour l’affichage. Pour obtenir des informations plus détaillées, consultez [Présentation détaillée de la liaison de données](data-binding-in-depth.md).
@@ -31,7 +29,7 @@ Dans cette rubrique, nous partons du principe que vous savez créer une applicat
 <a name="create-the-project"></a>Créer le projet
 ---------------------------------------------------------------------------------------------------------------------------------
 
-Commencez par créer un projet **Application vide (universelle Windows)**. Nommez-le « Quickstart ».
+Commencez par créer un projet **Application vide (universelle Windows)**. Nommez-le «Quickstart».
 
 <a name="binding-to-a-single-item"></a>Liaison à un élément unique
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -184,7 +182,7 @@ La dernière étape consiste à lier un contrôle **TextBlock** à la propriét�
     </Page>
 ```
 
-Résultat :
+Résultat:
 
 ![Liaison d’une zone de texte](images/xaml-databinding0.png)
 
@@ -272,7 +270,7 @@ Nous n’avons pas encore fourni de modèle de données pour la classe **Recordi
 
 ![Liaison d’un affichage liste](images/xaml-databinding1.png)
 
-Pour résoudre ce problème, nous pouvons soit remplacer [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) pour renvoyer la valeur de **OneLineSummary**, soit fournir un modèle de données. L’option du modèle de données est plus courante et sans doute plus souple. Pour spécifier un modèle de données, vous devez utiliser la propriété [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) d’un contrôle de contenu ou la propriété [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) d’un contrôle d’éléments. Voici deux manières de créer un modèle de données pour **Recording** avec une illustration du résultat :
+Pour résoudre ce problème, nous pouvons soit remplacer [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) pour renvoyer la valeur de **OneLineSummary**, soit fournir un modèle de données. L’option du modèle de données est plus courante et sans doute plus souple. Pour spécifier un modèle de données, vous devez utiliser la propriété [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) d’un contrôle de contenu ou la propriété [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) d’un contrôle d’éléments. Voici deux manières de créer un modèle de données pour **Recording** avec une illustration du résultat:
 
 ```xml
     <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -313,7 +311,7 @@ Pour en savoir plus sur la syntaxe XAML, consultez [Créer une interface utilisa
 
 Vous pouvez choisir d’afficher tous les détails des objets **Recording** dans les éléments [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). Cependant, l’espace occupé à l’écran sera considérable. Au lieu de cela, vous pouvez afficher juste assez de données dans l’élément à identifier puis, lorsque l’utilisateur effectue une sélection, afficher tous les détails de l’élément sélectionné dans un élément d’interface utilisateur distinct appelé affichage détails. Cette disposition est également connue sous le nom d’affichage maître/détails ou d’affichage liste/détails.
 
-Il existe deux façons de procéder : Vous pouvez lier l’affichage de détails à la propriété [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) de [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). Ou vous pouvez utiliser une [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) : liez à la fois le contrôle **ListView** et l’affichage détails à la classe **CollectionViewSource** (qui s’occupera de l’élément actuellement sélectionné pour vous). Ces deux techniques sont présentées ci-dessous et donnent les mêmes résultats que dans l’illustration.
+Il existe deux façons de procéder : Vous pouvez lier l’affichage de détails à la propriété [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) de [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). Ou vous pouvez utiliser une [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833): liez à la fois le contrôle **ListView** et l’affichage détails à la classe **CollectionViewSource** (qui s’occupera de l’élément actuellement sélectionné pour vous). Ces deux techniques sont présentées ci-dessous et donnent les mêmes résultats que dans l’illustration.
 
 > [!NOTE]
 > Jusqu’à présent, nous avons uniquement utilisé l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), mais les deux techniques que nous allons présenter ci-dessous requièrent l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), plus souple (mais moins performante).
@@ -438,8 +436,7 @@ Résultat :
 ![Affichage d’une date avec une mise en forme personnalisée](images/xaml-databinding5.png)
 
 > [!NOTE]
-> Depuis Windows 10, version 1607, l’infrastructure XAML fournit un convertisseur intégré permettant de convertir une valeur booléenne en valeur Visibility. Le convertisseur mappe **true** à la valeur d’énumération **Visible**et **false** à la valeur d’énumération **Collapsed**. Vous pouvez ainsi lier une propriété Visibility à une valeur booléenne sans avoir à créer de convertisseur. Pour utiliser le convertisseur intégré, la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas l’utiliser si votre application cible des versions antérieures de Windows 10. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Depuis Windows10, version1607, l’infrastructure XAML fournit un convertisseur intégré permettant de convertir une valeur booléenne en valeur Visibility. Le convertisseur mappe **true** à la valeur d’énumération **Visible**et **false** à la valeur d’énumération **Collapsed**. Vous pouvez ainsi lier une propriété Visibility à une valeur booléenne sans avoir à créer de convertisseur. Pour utiliser le convertisseur intégré, la version du SDK cible de votre application doit être14393 ou une version ultérieure. Vous ne pouvez pas l’utiliser si votre application cible des versions antérieures de Windows10. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
 ## <a name="see-also"></a>Voir également
 - [Liaison de données](index.md)
-

@@ -1,34 +1,31 @@
 ---
 author: mcleanbyron
 ms.assetid: 934F2DBF-2C7E-4B77-997D-17B9B0535D51
-description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour valider une soum. d’app. nouvelle ou mise à jour à destination du Ctre de dév. Windows."
-title: "Valider une soumission d’app. avec l’API de soum. du Windows Store"
+description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour valider une soumission d’application nouvelle ou mise à jour à destination du Centre de développement Windows."
+title: "Valider une soumission d’application"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, validation d&quot;une soumission d’applications"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b22143dc9f64e1f1075b0f9a2851699ca4208673
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, API de soumission du Windows Store, valider une soumission d’application"
+ms.openlocfilehash: bbfaaa016d4c45e20afec8a98a1c1d87b6dd9bd4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="commit-an-app-submission"></a>Valider une soumission d’application
 
-# <a name="commit-an-app-submission-using-the-windows-store-submission-api"></a>Valider une soumission d’app. avec l’API de soum. du Windows Store
 
-
-Utilisez cette méthode dans l’API de soumission du Windows Store pour valider une soum. d’app. nouvelle ou mise à jour à destination du Ctre de dév. Windows. L’action de validation alerte le Centre de développement que les données de soumission ont été chargées sur le serveur (y compris les packages et les images associés, le cas échéant). En réponse, le Centre de développement valide les modifications apportées aux données de soumission en vue de leur intégration et publication. Dès lors que l’opération de validation a abouti, les modifications apportées à la soumission s’affichent dans le tableau de bord du Centre de développement.
+Utilisez cette méthode dans l’API de soumission du Windows Store pour valider une soumission d’application nouvelle ou mise à jour à destination du Centre de développement Windows. L’action de validation alerte le Centre de développement que les données de soumission ont été chargées sur le serveur (y compris les packages et les images associés, le cas échéant). En réponse, le Centre de développement valide les modifications apportées aux données de soumission en vue de leur intégration et publication. Dès lors que l’opération de validation a abouti, les modifications apportées à la soumission s’affichent dans le tableau de bord du Centre de développement.
 
 Pour plus d’informations sur la façon dont l’opération de validation s’inscrit dans le processus de soumission d’une application à l’aide de l’API de soumission du Windows Store, voir [Gérer les soumissions d’applications](manage-app-submissions.md).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * [Créez une soumission d’application](create-an-app-submission.md), puis [mettez à jour cette soumission](update-an-app-submission.md) avec les éventuelles modifications nécessaires apportées aux données de soumission.
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
@@ -88,7 +85,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
+| status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
 
 <span/>
 
@@ -113,4 +110,3 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Mettre à jour une soumission d’application](update-an-app-submission.md)
 * [Supprimer une soumission d’application](delete-an-app-submission.md)
 * [Obtenir l’état d’une soumission d’application](get-status-for-an-app-submission.md)
-

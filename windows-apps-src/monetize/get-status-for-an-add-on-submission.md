@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 55315F38-6EC5-4889-A14E-7D8EC282FE98
 description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour obtenir l’état d’une soumission d’extension."
-title: "Obtenir l’état d’une soumission d’extension à l’aide de l’API de soumission du Windows Store"
+title: "Obtenir l’état d’une soumission de module complémentaire"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, soumission d’extension, état"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 41fc9b5597b5331fc6221575e0601f2414f4c778
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, API de soumission du Windows Store, soumission d’extension, état"
+ms.openlocfilehash: 691e512c2a072748434d092286f0ab36a90f91f2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-the-status-of-an-add-on-submission-using-the-windows-store-submission-api"></a>Obtenir l’état d’une soumission d’extension à l’aide de l’API de soumission du Windows Store
+# <a name="get-the-status-of-an-add-on-submission"></a>Obtenir l’état d’une soumission de module complémentaire
 
 
 
@@ -25,10 +22,10 @@ Utilisez cette méthode dans l’API de soumission du Windows Store pour obtenir
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créez une soumission d’extension pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission d’extension](create-an-add-on-submission.md).
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
@@ -93,7 +90,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
+| status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | objet  |  Contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs. Pour plus d’informations, voir [Ressource des détails d’état](manage-add-on-submissions.md#status-details-object). |
 
 <span/>
@@ -118,4 +115,3 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Valider une soumission d’extension](commit-an-add-on-submission.md)
 * [Mettre à jour une soumission d’extension](update-an-add-on-submission.md)
 * [Supprimer une soumission d’extension](delete-an-add-on-submission.md)
-

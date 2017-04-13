@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-Description: "Une application a principalement pour objet d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos ; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc."
+Description: "Une application a principalement pour objet d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc."
 title: "Informations de base relatives à la conception de contenu pour les applications de plateforme Windows universelle (UWP)"
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
@@ -11,39 +11,36 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9bb39b117fe4c4e95616c06921b05199e153cddd
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 0086078b2ca25f3c69c7a6e3034d99479f6d5602
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="content-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de contenu pour les applications UWP
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Le rôle principal de toute application est d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos ; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc. Les éléments de navigation donnent accès au contenu. Les éléments de commande permettent à l’utilisateur d’interagir avec contenu. Les éléments de contenu affichent le contenu réel.
+Le rôle principal de toute application est d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc. Les éléments de navigation donnent accès au contenu. Les éléments de commande permettent à l’utilisateur d’interagir avec contenu. Les éléments de contenu affichent le contenu réel.
 
-Cet article fournit des recommandations de conception de contenu pour les trois scénarios de contenu.
+Cet article fournit des recommandations de conception de contenu pour les troisscénarios de contenu.
 
 ## <a name="design-for-the-right-content-scenario"></a>Scénario de conception de contenu adapté
 
 
-Il existe trois scénarios principaux en matière de contenu :
+Il existe troisscénarios principaux en matière de contenu:
 
--   **Consommation** : expérience principalement unidirectionnelle où le contenu est utilisé. Les actions de lecture de documents, de morceaux de musique ou de vidéos, ou d’affichage de photos et d’images rentrent dans la catégorie Consommation.
--   **Création** : expérience principalement unidirectionnelle dans laquelle l’objectif est de créer du contenu. Elle inclut les actions de création d’éléments à partir de zéro (par exemple, capture de photos ou de vidéos, création d’images dans une application de dessin ou ouverture d’un nouveau document).
--   **Interaction** : expérience de contenu bidirectionnelle qui inclut la consommation, la création et la révision de contenu.
+-   **Consommation**: expérience principalement unidirectionnelle où le contenu est utilisé. Les actions de lecture de documents, de morceaux de musique ou de vidéos, ou d’affichage de photos et d’images rentrent dans la catégorie Consommation.
+-   **Création**: expérience principalement unidirectionnelle dans laquelle l’objectif est de créer du contenu. Elle inclut les actions de création d’éléments à partir de zéro (par exemple, capture de photos ou de vidéos, création d’images dans une application de dessin ou ouverture d’un nouveau document).
+-   **Interaction**: expérience de contenu bidirectionnelle qui inclut la consommation, la création et la révision de contenu.
 
 ## <a name="consumption-focused-apps"></a>Applications axées sur la consommation
 
 
-Les éléments de contenu reçoivent la priorité la plus élevée dans une application axée sur la consommation, suivie des [éléments de navigation](navigation-basics.md) permettant aux utilisateurs de trouver le contenu qu’ils recherchent. Exemples d’applications axées sur la consommation : lecteurs de films, applications de lecture, applications de musique et visionneuses de photos.
+Les éléments de contenu reçoivent la priorité la plus élevée dans une application axée sur la consommation, suivie des [éléments de navigation](navigation-basics.md) permettant aux utilisateurs de trouver le contenu qu’ils recherchent. Exemples d’applications axées sur la consommation: lecteurs de films, applications de lecture, applications de musique et visionneuses de photos.
 
 ![application de lecteur de news](images/news-reader/v2/newsreader-v2-tablet-phone.png)
 
-Recommandations générales pour les applications axées sur la consommation :
+Recommandations générales pour les applications axées sur la consommation:
 
 -   Pensez à créer des pages de [navigation](navigation-basics.md) dédiées et des pages d’affichage de contenu, afin que lorsque les utilisateurs trouvent le contenu recherché, ils puissent l’afficher sur une page dédiée exempte de distractions.
 -   Pensez à créer une option de mode plein écran qui étend le contenu pour remplir tout l’écran et masque tous les autres éléments d’interface utilisateur.
@@ -57,7 +54,7 @@ Par exemple, voici une conception pour une application de retouche photo qui uti
 
 ![exemple d’une conception d’application de retouche photo utilisant un Canvas actif](images/photo-editor/uap-photo-tabletphone-sbs.png)
 
-Recommandations générales pour les applications axées sur la création :
+Recommandations générales pour les applications axées sur la création:
 
 -   Réduisez l’utilisation des éléments de [navigation](navigation-basics.md).
 -   Les éléments de [commande](commanding-basics.md) sont particulièrement importants dans les applications axées sur la création. Dans la mesure où les utilisateurs doivent exécuter un grand nombre de commandes, nous vous recommandons de fournir une fonctionnalité d’historique/annulation de commande.
@@ -65,11 +62,11 @@ Recommandations générales pour les applications axées sur la création :
 ## <a name="apps-with-interactive-content"></a>Applications avec contenu interactif
 
 
-Dans une application avec contenu interactif, les utilisateurs créent, affichent et modifient du contenu. De nombreuses applications entrent dans cette catégorie. Exemples : applications métier, applications de gestion de l’inventaire, applications permettant à l’utilisateur de créer ou de modifier des recettes de cuisine.
+Dans une application avec contenu interactif, les utilisateurs créent, affichent et modifient du contenu. De nombreuses applications entrent dans cette catégorie. Exemples: applications métier, applications de gestion de l’inventaire, applications permettant à l’utilisateur de créer ou de modifier des recettes de cuisine.
 
 ![conception pour un outil de collaboration, application disposant d’un contenu interactif](images/collaboration-tool/uap-collaboration-tabphone-700.png)
 
-Ces applications doivent trouver un équilibre entre les trois éléments de l’interface utilisateur :
+Ces applications doivent trouver un équilibre entre les trois éléments de l’interface utilisateur:
 
 -   Les éléments de [navigation](navigation-basics.md) permettent aux utilisateurs de rechercher et d’afficher du contenu. Si l’objectif principal consiste à afficher et à rechercher du contenu, donnez la priorité aux éléments de navigation, au filtrage et au tri, ainsi qu’à la recherche.
 -   Les éléments de [commande](commanding-basics.md) permettent à l’utilisateur de créer, modifier et manipuler du contenu.
@@ -126,7 +123,6 @@ Voici quelques éléments d’interface utilisateur couramment utilisés pour af
  
 
  
-
 
 
 

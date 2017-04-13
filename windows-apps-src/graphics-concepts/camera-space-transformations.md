@@ -2,21 +2,17 @@
 title: "Transformations de l’espace de caméra"
 description: "Les vertex dans l’espace de caméra sont calculés en transformant les vertex de l’objet avec la matrice globale."
 ms.assetid: 86EDEB95-8348-4FAA-897F-25251B32B076
-keywords:
-- "Transformations de l’espace de caméra"
+keywords: "Transformations de l’espace de caméra"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 478202cc8fd4f968539e3081edd6c6feddcec38b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 907df69fdd0c785294283de858a0fcebd0c63513
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="camera-space-transformations"></a>Transformations de l’espace de caméra
 
 
@@ -30,7 +26,7 @@ N = N \* (wvMatrix⁻¹)<sup>T</sup>
 
 L’inversion matricielle et la transposition matricielle fonctionnent sur une matrice 4x4. La multiplication associe la normale à la partie 3x3 de la matrice 4x4 qui en résulte.
 
-Si l’état de rendu est défini de manière à normaliser les normales, les vecteurs normaux du vertex sont normalisés après la transformation dans l’espace de caméra, comme indiqué ci-après :
+Si l’état de rendu est défini de manière à normaliser les normales, les vecteurs normaux du vertex sont normalisés après la transformation dans l’espace de caméra, comme indiqué ci-après:
 
 N = norm(N)
 
@@ -42,7 +38,7 @@ La direction de la lumière dans l'espace de caméra, dans le cas d'une lumière
 
 L<sub>dir</sub> = -norm(L<sub>dir</sub> \* wvMatrix)
 
-Pour une lumière ponctuelle et un projecteur, la direction par rapport à la lumière est calculée comme suit :
+Pour une lumière ponctuelle et un projecteur, la direction par rapport à la lumière est calculée comme suit:
 
 L<sub>dir</sub> = norm(V \* Lₚ), où les paramètres sont définis dans le tableau suivant.
 
@@ -65,7 +61,6 @@ L<sub>dir</sub> = norm(V \* Lₚ), où les paramètres sont définis dans le tab
  
 
  
-
 
 
 

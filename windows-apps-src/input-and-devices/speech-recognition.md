@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 79e40abde2265a8e6f760bd00768a18b06f69116
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 49cd1e7ac0fceff7e39679f337ea4c029fa98806
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="speech-recognition"></a>Reconnaissance vocale
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -47,7 +44,7 @@ Voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft
 
 Une *contrainte* définit les mots et expressions (vocabulaire) qu’une application reconnaît dans la saisie vocale. Les contraintes sont au centre de la reconnaissance vocale. Elles permettent à votre application de contrôler sa précision.
 
-Vous pouvez utiliser différents types de contraintes lors de l’exécution d’opérations de reconnaissance vocale :
+Vous pouvez utiliser différents types de contraintes lors de l’exécution d’opérations de reconnaissance vocale:
 
 1.  **Grammaires prédéfinies** ([**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)).
 
@@ -61,13 +58,13 @@ Vous pouvez utiliser différents types de contraintes lors de l’exécution d�
 
      
 
-    Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’à 10 secondes de saisie vocale et ne nécessitent aucun effort de création de votre part. Toutefois, elles requièrent une connexion à un réseau.
+    Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’à 10secondes de saisie vocale et ne nécessitent aucun effort de création de votre part. Toutefois, elles requièrent une connexion à un réseau.
 
     Pour utiliser les contraintes de service web, vous devez activer la prise en charge de la saisie vocale et de la dictée dans **Paramètres** en activant l’option Reconnaître ma voix dans la page Paramètres -&gt; Confidentialité -&gt; Voix, entrée manuscrite et frappe.
 
     Nous indiquons ici comment vérifier si la saisie vocale est activée et comment ouvrir la page Paramètres -&gt; Confidentialité -&gt; Voix, entrée manuscrite et frappe si cette fonction n’est pas activée.
 
-    Nous commençons par initialiser une variable globale (HResultPrivacyStatementDeclined) sur la valeur HResult de 0x80045509. Voir [Gestion des exceptions pour les applications en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194).
+    Nous commençons par initialiser une variable globale (HResultPrivacyStatementDeclined) sur la valeur HResult de 0x80045509. Voir [Gestion des exceptions pour les applications enC# ou VisualBasic](https://msdn.microsoft.com/library/windows/apps/dn532194).
 
 ```    CSharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;</code></pre></td>
@@ -118,7 +115,7 @@ catch (Exception exception)
 
 3.  **Grammaires SRGS** ([**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)).
 
-    Contrairement à une contrainte de liste de programmation, une grammaire SRGS (Speech Recognition Grammar Specification) est un document statique au format XML défini par la norme [SRGS version 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). Une grammaire SRGS permet de contrôler au maximum l’expérience de la reconnaissance vocale en capturant plusieurs significations sémantiques dans une même reconnaissance.
+    Contrairement à une contrainte de liste de programmation, une grammaire SRGS (Speech Recognition Grammar Specification) est un document statique au format XML défini par la norme [SRGS version1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). Une grammaire SRGS permet de contrôler au maximum l’expérience de la reconnaissance vocale en capturant plusieurs significations sémantiques dans une même reconnaissance.
 
 4.  **Contraintes de commandes vocales** ([**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220))
 
@@ -160,13 +157,13 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 Quand votre application tente une reconnaissance vocale en appelant la méthode [**SpeechRecognizer.RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245), plusieurs écrans s’affichent dans l’ordre suivant.
 
-Si vous utilisez une contrainte basée sur une grammaire prédéfinie (dictée ou recherche web) :
+Si vous utilisez une contrainte basée sur une grammaire prédéfinie (dictée ou recherche web):
 
 -   Écran **Écoute**
 -   Écran **Réflexion**
 -   Écran **Nous vous avons entendu dire** ou écran de notification d’erreur
 
-Si vous utilisez une contrainte basée sur une liste de mots ou d’expressions ou une contrainte basée sur un fichier de grammaire SRGS :
+Si vous utilisez une contrainte basée sur une liste de mots ou d’expressions ou une contrainte basée sur un fichier de grammaire SRGS:
 
 -   Écran **Écoute**
 -   Écran **Nous vous avons entendu dire**, si l’interprétation de ce que l’utilisateur a prononcé pourrait avoir plusieurs résultats éventuels
@@ -224,7 +221,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
  
 
  
-
 
 
 

@@ -2,23 +2,20 @@
 author: dbirtolo
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "Informations de référence sur les API principales Device Portal"
-description: "Découvrez les API REST principales Windows Device Portal que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation."
+description: "Découvrez les API REST principales WindowsDevicePortal que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation."
 ms.author: dbirtolo
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 10d8799b73a941a4a0eb89fd369d67b2fc6a68c2
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 347d658f346ab14c60a4468c4a9935e555c2e016
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="device-portal-core-api-reference"></a>Informations de référence sur les API principales DevicePortal
 
-# <a name="device-portal-core-api-reference"></a>Informations de référence sur les API principales Device Portal
-
-Dans Windows Device Portal, tout repose sur les API REST que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation.
+Dans WindowsDevicePortal, tout repose sur les API REST que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation.
 
 ## <a name="app-deployment"></a>Déploiement des applications
 
@@ -35,7 +32,7 @@ POST | /api/app/packagemanager/package
 <br />
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -222,7 +219,7 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * Xbox
 * HoloLens
@@ -283,7 +280,7 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * IoT
 
@@ -348,7 +345,7 @@ GET | /api/debug/dump/usermode/crashcontrol
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -400,7 +397,7 @@ DELETE | /api/debug/dump/usermode/crashdump
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -448,7 +445,7 @@ DELETE | /api/debug/dump/usermode/crashcontrol
 <br />
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -495,7 +492,7 @@ GET | /api/debug/dump/usermode/crashdump
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -545,7 +542,7 @@ POST | /api/debug/dump/usermode/crashcontrol
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -639,7 +636,7 @@ GET | /api/debug/dump/kernel/dump
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -710,13 +707,13 @@ La réponse comprend les paramètres de contrôle d’incident. Pour plus d’in
 
 **Types de vidage**
 
-0 : désactivé
+0: désactivé
 
-1 : image mémoire complète (collecte toute la mémoire utilisée)
+1: image mémoire complète (collecte toute la mémoire utilisée)
 
-2 : image mémoire du noyau (ignore la mémoire en mode utilisateur)
+2: image mémoire du noyau (ignore la mémoire en mode utilisateur)
 
-3 : minividage limité du noyau
+3: minividage limité du noyau
 
 **Code d’état**
 
@@ -790,7 +787,7 @@ GET | /api/debug/dump/usermode/live
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -837,7 +834,7 @@ POST | /api/debug/dump/kernel/crashcontrol
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -899,7 +896,7 @@ GET/WebSocket | /api/etw/session/realtime
 
 **Réponse**
 
-La réponse comprend les événements ETW issus des fournisseurs activés.  Voir les commandes WebSocket ETW ci-dessous. 
+La réponse comprend les événements ETW issus des fournisseurs activés.  Voir les commandes WebSocketETW ci-dessous. 
 
 **Code d’état**
 
@@ -946,7 +943,7 @@ Cette réponse est envoyée du serveur vers le client. Elle est envoyée sous fo
 
 Les objets de charge utile sont des paires clé-valeur supplémentaires (chaîne:chaîne) qui sont fournies dans l’événement ETW d’origine.
 
-Exemple :
+Exemple:
 ```
 {
     "ID" : 42, 
@@ -1061,7 +1058,7 @@ GET | /api/etw/customproviders
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * HoloLens
 * IoT
@@ -1200,7 +1197,7 @@ GET | /api/os/devicefamily
 
 **Réponse**
 
-La réponse comprend la famille d’appareils (référence : ordinateur de bureau, Xbox, etc.).
+La réponse comprend la famille d’appareils (référence: ordinateur de bureau, Xbox, etc.).
 
 ```
 {
@@ -1208,7 +1205,7 @@ La réponse comprend la famille d’appareils (référence : ordinateur de bure
 }
 ```
 
-DeviceType aura pour valeur une chaîne du type « Windows.Xbox », « Windows.Desktop », etc. 
+DeviceType aura pour valeur une chaîne du type «Windows.Xbox», «Windows.Desktop», etc. 
 
 **Code d’état**
 
@@ -1242,7 +1239,7 @@ POST | /api/os/machinename
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1268,7 +1265,7 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * Xbox
 * HoloLens
@@ -1410,7 +1407,7 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * Xbox
 * HoloLens
@@ -1532,7 +1529,7 @@ Méthode      | URI de la requête
 :------     | :-----
 GET | /api/power/cfg/*<power scheme path>*
 <br />
-Options :
+Options:
 - SCHEME_CURRENT
 
 **Paramètres d’URI**
@@ -1625,7 +1622,7 @@ POST | /api/power/activecfg
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1670,7 +1667,7 @@ POST | /api/power/cfg/*<power scheme path>*
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1919,7 +1916,7 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * Xbox
 * HoloLens
@@ -1941,7 +1938,7 @@ POST | /api/taskmanager/app
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1990,7 +1987,7 @@ DELETE | /api/taskmanager/app
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2019,7 +2016,7 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * Xbox
 * HoloLens
@@ -2189,7 +2186,7 @@ GET | /api/wifi/networks
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2259,7 +2256,7 @@ POST | /api/wifi/network
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2309,7 +2306,7 @@ DELETE | /api/wifi/network
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2336,7 +2333,7 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * Xbox
 * HoloLens
@@ -2349,7 +2346,7 @@ Code d’état HTTP      | Description
 
 **Requête**
 
-Vous pouvez télécharger un fichier associé à un Rapport d’erreurs Windows en utilisant le format de requête suivant.
+Vous pouvez télécharger un fichier associé à un rapport d’erreurs Windows en utilisant le format de requête suivant.
  
 Méthode      | URI de la requête
 :------     | :-----
@@ -2358,7 +2355,7 @@ GET | /api/wer/report/file
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2409,7 +2406,7 @@ GET | /api/wer/report/files
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2576,7 +2573,7 @@ POST | /api/wpr/boottrace
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2644,7 +2641,7 @@ GET | /api/wpr/boottrace
 
 **Réponse**
 
--  Aucune.  **Remarque :** il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.
+-  Aucune.  **Remarque:** il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.
 
 **Code d’état**
 
@@ -2677,7 +2674,7 @@ POST | /api/wpr/trace
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2745,7 +2742,7 @@ GET | /api/wpr/trace
 
 **Réponse**
 
-- Aucune.  **Remarque :** il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.  
+- Aucune.  **Remarque:** il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.  
 
 **Code d’état**
 
@@ -2887,7 +2884,7 @@ GET | /api/wpr/tracefile
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de requête :
+Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2936,7 +2933,7 @@ DELETE | /api/wpr/tracefile
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de requête :
+Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de requête:
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2966,7 +2963,7 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
-* Windows Mobile
+* Windows Mobile
 * Windows Desktop
 * HoloLens
 * IoT
@@ -2978,7 +2975,7 @@ Code d’état HTTP      | Description
 
 **Requête**
 
-Affichez les balises actuellement appliquées pour l’appareil.  Ces balises sont annoncées par le biais d’enregistrements DNS-SD TXT dans la clé T.  
+Affichez les balises actuellement appliquées pour l’appareil.  Ces balises sont annoncées par le biais d’enregistrementsDNS-SDTXT dans la cléT.  
  
 Méthode      | URI de la requête
 :------     | :-----
@@ -3031,7 +3028,7 @@ Code d’état HTTP      | Description
 
 **Requête**
 
-Supprimez toutes les balises actuellement signalées par DNS-SD.   
+Supprimez toutes les balises actuellement signalées parDNS-SD.   
  
 Méthode      | URI de requête
 :------     | :-----
@@ -3076,7 +3073,7 @@ Code d’état HTTP      | Description
 
 **Requête**
 
-Supprimez une balise actuellement signalée par DNS-SD.   
+Supprimez une balise actuellement signalée parDNS-SD.   
  
 Méthode      | URI de requête
 :------     | :-----
@@ -3122,7 +3119,7 @@ Code d’état HTTP      | Description
 
 **Requête**
 
-Ajoutez une balise à l’annonce DNS-SD.   
+Ajoutez une balise à l’annonceDNS-SD.   
  
 Méthode      | URI de la requête
 :------     | :-----
@@ -3153,7 +3150,7 @@ Cette API comporte les codes d’état attendus suivants.
 Code d’état HTTP      | Description
 :------     | :-----
 200 | OK
-401 | Dépassement de capacité pour l’espace de balise.  Survient lorsque la balise proposée est trop longue pour l’enregistrement de service DNS-SD résultant.  
+401 | Dépassement de capacité pour l’espace de balise.  Survient lorsque la balise proposée est trop longue pour l’enregistrement de serviceDNS-SD résultant.  
 
 <br />
 **Familles d’appareils disponibles**

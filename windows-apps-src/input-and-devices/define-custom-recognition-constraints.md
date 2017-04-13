@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 52e38acbde0fe1b7a53c210e4988ab34c8aacd50
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f8af866b36cbc8748a878814ec9d46eec340dc5b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="define-custom-recognition-constraints"></a>Définir des contraintes de reconnaissance vocale personnalisées
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -152,7 +149,7 @@ Les grammaires SRGS offrent un ensemble complet de fonctionnalités pour vous ai
 
 Pour plus d’informations sur les éléments et les attributs SRGS, voir [Informations de référence XML sur la grammaire SRGS](http://go.microsoft.com/fwlink/p/?LinkID=269886). Pour commencer à créer une grammaire SRGS, voir [Comment créer une grammaire XML de base](http://go.microsoft.com/fwlink/p/?LinkID=269887).
 
-Gardez à l’esprit les points suivants :
+Gardez à l’esprit les points suivants:
 
 -   Vous pouvez ajouter plusieurs contraintes de fichier de grammaire à une collection de contraintes.
 -   Utilisez l’extension de fichier .grxml pour les documents de grammaire XML qui sont conformes aux règles SRGS.
@@ -186,7 +183,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 Ce fichier SRGS (srgs.grxml) inclut des balises d’interprétation sémantique. Ces balises fournissent un mécanisme permettant de retourner à votre application les données correspondant à la grammaire. Les grammaires doivent être conformes à la spécification W3C (World Wide Web Consortium) [SISR (Semantic Interpretation for Speech Recognition) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765).
 
-Ici, nous écoutons des variantes de « yes » et « no ».
+Ici, nous écoutons des variantes de «yes» et «no».
 
 ```CSharp
 <grammar xml:lang="en-US" 
@@ -246,7 +243,6 @@ Pour informer l’utilisateur des expressions qu’il peut énoncer, utilisez le
  
 
  
-
 
 
 

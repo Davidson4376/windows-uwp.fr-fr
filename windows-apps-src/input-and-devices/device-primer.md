@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 058858be62a2d6bf3afc0c9461090d0211b39ebd
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 66afc2412323817f15594bb25e8f86475fc6f73f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>Notions fondamentales sur les appareils pour les applications de plateforme Windows universelle (UWP)
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -32,7 +29,7 @@ Une bonne connaissance des appareils qui prennent en charge les applications UWP
 Les PC et portables Windows comprennent une large gamme d’appareils et de tailles d’écran. En règle générale, les PC et les portables peuvent afficher davantage d’informations que les téléphones ou les tablettes.
 
 Tailles d’écran
--   13 pouces et plus
+-   13pouces et plus
 
 ![pc](images/device-primer/device-primer-desktop.png)
 
@@ -42,7 +39,7 @@ Utilisation type
 Considérations relatives à l’interface utilisateur
 -   Les applications peuvent inclure un affichage fenêtré, dont la taille est déterminée par l’utilisateur. Selon la taille des fenêtres, une à trois images peuvent s’afficher. Sur les moniteurs de grande taille, l’application peut inclure plus de trois images.
 
--   Lorsqu’il utilise une application sur un ordinateur de bureau ou portable, l’utilisateur contrôle les fichiers de l’application. En tant que concepteur d’applications, veillez à fournir les mécanismes permettant de gérer le contenu de votre application. Vous pouvez envisager d’inclure des fonctions et commandes comme « Enregistrer sous », « Fichiers récents », etc.
+-   Lorsqu’il utilise une application sur un ordinateur de bureau ou portable, l’utilisateur contrôle les fichiers de l’application. En tant que concepteur d’applications, veillez à fournir les mécanismes permettant de gérer le contenu de votre application. Vous pouvez envisager d’inclure des fonctions et commandes comme «Enregistrer sous», «Fichiers récents», etc.
 
 -   L’arrière-plan système est facultatif. Lorsqu’un développeur d’application choisit de l’afficher, celui-ci apparaît dans la barre de titre de l’application.
 
@@ -62,8 +59,8 @@ Fonctionnalités de l’appareil type
 Les tablettes PC ultra-portables sont dotées d’un écran tactile, d’un appareil photo, de microphones et d’accéléromètres. En général, leur écran mesure entre 7 et 13,3 pouces. Les appareils 2-en-1 peuvent s’utiliser comme une tablette ou comme un ordinateur portable avec un clavier et une souris, en fonction de la configuration (en règle générale, l’écran de l’appareil est rabattu ou incliné en position verticale).
 
 Tailles d’écran
-- De 7 à 13,3 pouces pour les tablettes
-- 13,3 pouces et plus pour les appareils 2-en-1
+- De7 à 13,3pouces pour les tablettes
+- 13,3pouces et plus pour les appareils 2-en-1
 
 ![appareil de type tablette](images/device-primer/device-primer-tablet.png)
 
@@ -91,16 +88,16 @@ Fonctionnalités de l’appareil type
 -   Capteurs d’emplacement
 
 > [!NOTE]
-> La plupart des considérations relatives aux PC et ordinateurs portables s’appliquent également aux appareils 2-en-1.
+> La plupart des considérations relatives aux PC et ordinateurs portables s’appliquent également aux appareils2-en-1.
 
 ## <a name="xbox-and-tv"></a>Xbox et télévision
 
-L’expérience qui consiste à se trouver assis sur son fauteuil en face de la télévision et à interagir avec celle-ci à l’aide d’un boîtier de commande ou d’une télécommande est appelée le « **10-foot experience** » Ce nom vient du fait que l’utilisateur se trouve généralement à 3 mètres (10 pieds) de l’écran. Cela soulève des défis propres à cette expérience, qui ne sont pas présents dans l’expérience « *2-foot experience* » ou lors d’interactions avec un PC. Si vous développez une application pour Xbox One ou tout autre appareil connecté à un écran de télévision et susceptible d’utiliser une télécommande ou un boîtier de commande comme périphérique d’entrée, vous devez toujours garder ceci à l’esprit.
+L’expérience qui consiste à se trouver assis sur son fauteuil en face de la télévision et à interagir avec celle-ci à l’aide d’un boîtier de commande ou d’une télécommande est appelée le «**10-foot experience**» Ce nom vient du fait que l’utilisateur se trouve généralement à 3mètres (10pieds) de l’écran. Cela soulève des défis propres à cette expérience, qui ne sont pas présents dans l’expérience «*2-foot experience*» ou lors d’interactions avec un PC. Si vous développez une application pour XboxOne ou tout autre appareil connecté à un écran de télévision et susceptible d’utiliser une télécommande ou un boîtier de commande comme périphérique d’entrée, vous devez toujours garder ceci à l’esprit.
 
-Concevoir une application UWP pour l’expérience « 10-foot » est très différent de concevoir une application pour les autres catégories d’appareils décrites ici. Pour plus d’informations, consultez [Conception pour Xbox et télévision](designing-for-tv.md).
+Concevoir une application UWP pour l’expérience «10-foot» est très différent de concevoir une application pour les autres catégories d’appareils décrites ici. Pour plus d’informations, consultez [Conception pour Xbox et télévision](designing-for-tv.md).
 
 Tailles d’écran
-- 24 pouces et plus
+- 24pouces et plus
 
 ![Xbox et télévision](images/device-primer/device-primer-tv-and-xbox.png)
 
@@ -114,8 +111,8 @@ Utilisation type
 
 Considérations relatives à l’interface utilisateur
 - Les applications ne changent pas de taille, sauf si une autre application est ancrée sur le côté.
-- La fonction de système de retour est disponible dans la plupart des applications Xbox, par le biais du bouton B sur le boîtier de commande.
-- Étant donné que l’utilisateur se trouve généralement à 3 mètres (10 pieds) de l’écran, assurez-vous que l’interface utilisateur est suffisamment grande et claire pour être visible à cette distance.
+- La fonction de système de retour est disponible dans la plupart des applications Xbox, par le biais du boutonB sur le boîtier de commande.
+- Étant donné que l’utilisateur se trouve généralement à 3mètres (10pieds) de l’écran, assurez-vous que l’interface utilisateur est suffisamment grande et claire pour être visible à cette distance.
 
 Entrées
 - Boîtier de commande (tel qu’une manette Xbox)
@@ -136,7 +133,7 @@ Avec Continuum pour téléphones, une nouvelle expérience pour les appareils mo
 
 Tailles d’écran
 -   De 4 à 5 pouces pour les téléphones
--   De 5,5 à 7 pouces pour les phablettes
+-   De 5,5 à 7pouces pour les phablettes
 
 ![windows Phone](images/device-primer/device-primer-phablet.png)
 
@@ -167,13 +164,13 @@ Fonctionnalités de l’appareil type
 
  
 
-## <a name="surface-hub-devices"></a>Appareils Surface Hub
+## <a name="surface-hub-devices"></a>Appareils SurfaceHub
 
 
-L’appareil de collaboration d’équipe à écran large Microsoft Surface Hub est conçu pour être utilisé simultanément par plusieurs personnes.
+L’appareil de collaboration d’équipe à écran large Microsoft SurfaceHub est conçu pour être utilisé simultanément par plusieurs personnes.
 
 Tailles d’écran
--   55 et 84 pouces
+-   55 et 84pouces
 
 ![surface hub](images/device-primer/device-primer-surfacehub3.png)
 
@@ -183,7 +180,7 @@ Utilisation type
 -   Les appareils Surface Hub sont généralement fixes et sont rarement déplacés.
 
 Considérations relatives à l’interface utilisateur
--   Les applications installées sur Surface Hub peuvent présenter quatre états : complet (affichage plein écran standard), arrière-plan (masqué lorsque l’application est en cours d’exécution, disponible dans le sélecteur de tâches) remplissage (affichage fixe occupant tout l’espace disponible à l’écran) et ancré (affichage variable occupant le côté gauche ou droit de l’écran).
+-   Les applications installées sur Surface Hub peuvent présenter quatre états: complet (affichage plein écran standard), arrière-plan (masqué lorsque l’application est en cours d’exécution, disponible dans le sélecteur de tâches) remplissage (affichage fixe occupant tout l’espace disponible à l’écran) et ancré (affichage variable occupant le côté gauche ou droit de l’écran).
 -   En mode ancré ou en mode remplissage, le système affiche la barre latérale Skype et réduit l’application horizontalement.
 -   L’arrière-plan système est facultatif. Lorsqu’un développeur d’application choisit de l’afficher, celui-ci apparaît dans la barre de titre de l’application.
 

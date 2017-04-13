@@ -1,25 +1,22 @@
 ---
 author: mtoepke
 title: "Ajouter des contrôles"
-description: "Examinons maintenant la façon dont l’exemple de jeu implémente des contrôles de déplacement/vue dans un jeu 3D et développe des contrôles tactiles, de souris et de manette de jeu de base."
+description: "Examinons maintenant la façon dont l’exemple de jeu implémente des contrôles de déplacement/vue dans un jeu 3D et développe des contrôles tactiles, de souris et de manette de jeu de base."
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, jeux, contrôles, entrée"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: "windows10, uwp, jeux, contrôles, entrée"
 ms.openlocfilehash: d70e9ef8efffd2a78f6c49596e716770a9162b5c
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="add-controls"></a>Ajouter des contrôles
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Examinons maintenant la façon dont l’exemple de jeu implémente des contrôles de déplacement/vue dans un jeu 3D et développe des contrôles tactiles, de souris et de manette de jeu de base.
 
@@ -472,7 +469,7 @@ void MoveLookController::OnPointerReleased(
 }
 ```
 
-Si l’ID du pointeur qui a déclenché l’événement [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) est l’ID du pointeur de déplacement précédemment enregistré, **MoveLookController** affecte la valeur 0 à la vitesse, car le joueur a cessé de toucher le rectangle de déplacement. Si la valeur 0 n’était pas affectée à la vitesse, le joueur continuerait de se déplacer ! Si vous voulez implémenter une certaine forme d’inertie, ajoutez ici la méthode qui commence à redéfinir la vitesse sur 0 lors des futurs appels de la méthode **Update** à partir de la boucle de jeu.
+Si l’ID du pointeur qui a déclenché l’événement [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) est l’ID du pointeur de déplacement précédemment enregistré, **MoveLookController** affecte la valeur 0 à la vitesse, car le joueur a cessé de toucher le rectangle de déplacement. Si la valeur0 n’était pas affectée à la vitesse, le joueur continuerait de se déplacer! Si vous voulez implémenter une certaine forme d’inertie, ajoutez ici la méthode qui commence à redéfinir la vitesse sur 0 lors des futurs appels de la méthode **Update** à partir de la boucle de jeu.
 
 Sinon, si l’événement [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) s’est déclenché dans le rectangle de tir ou la zone de vue, **MoveLookController** réinitialise les ID de pointeur spécifiques.
 
@@ -498,7 +495,7 @@ window->KeyUp +=
         ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &MoveLookController::OnKeyUp);
 ```
 
-La souris est traitée un peu différemment des contrôles tactiles, même si elle utilise un pointeur. Bien évidemment, elle n’utilise pas les rectangles de déplacement ni de tir, car le joueur serait très embarrassé : comment pourrait-il appuyer en même temps sur les contrôles de déplacement et de tir ? Comme mentionné plus tôt, le contrôleur **MoveLookController** lance les contrôles de vue chaque fois que la souris est déplacée, et les contrôles de tir chaque fois que le bouton gauche de la souris est enfoncé, comme illustré ici.
+La souris est traitée un peu différemment des contrôles tactiles, même si elle utilise un pointeur. Bien évidemment, elle n’utilise pas les rectangles de déplacement ni de tir, car le joueur serait très embarrassé: comment pourrait-il appuyer en même temps sur les contrôles de déplacement et de tir? Comme mentionné plus tôt, le contrôleur **MoveLookController** lance les contrôles de vue chaque fois que la souris est déplacée, et les contrôles de tir chaque fois que le bouton gauche de la souris est enfoncé, comme illustré ici.
 
 ```cpp
 void MoveLookController::OnPointerPressed(
@@ -804,7 +801,7 @@ void MoveLookController::UpdateGameController()
 }
 ```
 
-Si la manette de jeu présente l’état **Active**, cette méthode vérifie si un utilisateur a bougé le stick analogique gauche dans une direction spécifique. Toutefois, le mouvement effectué dans une direction spécifique sur le stick doit dépasser le rayon de la zone morte ; sinon, rien ne se produit. Cette zone morte est nécessaire pour gérer les « effleurements », c’est-à-dire lorsque la manette détecte des mini-mouvements effectués par le pouce du joueur lorsqu’il repose sur le stick. En l’absence de cette zone morte, le joueur peut s’énerver très rapidement, car les contrôles ne sont pas du tout stables.
+Si la manette de jeu présente l’état **Active**, cette méthode vérifie si un utilisateur a bougé le stick analogique gauche dans une direction spécifique. Toutefois, le mouvement effectué dans une direction spécifique sur le stick doit dépasser le rayon de la zone morte; sinon, rien ne se produit. Cette zone morte est nécessaire pour gérer les « effleurements », c’est-à-dire lorsque la manette détecte des mini-mouvements effectués par le pouce du joueur lorsqu’il repose sur le stick. En l’absence de cette zone morte, le joueur peut s’énerver très rapidement, car les contrôles ne sont pas du tout stables.
 
 La méthode **Update** effectue alors la même vérification sur le stick droit pour voir si le joueur a modifié la direction de la vue de la caméra, à condition que le mouvement sur le stick dépasse le rayon d’une autre zone morte.
 
@@ -1908,7 +1905,7 @@ void MoveLookController::UpdateGameController()
 ```
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -1920,7 +1917,6 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
  
 
  
-
 
 
 

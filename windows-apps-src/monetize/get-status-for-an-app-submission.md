@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 039B8810-5C9E-4DB9-A6AF-33E7401311FF
 description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour obtenir l’état d’une soumission d’application."
-title: "Obtenir l’état d’une soumission d’application à l’aide de l’API de soumission du Windows Store"
+title: "Obtenir l’état d’une soumission d’applications"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, soumission d’application, état"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 757a5e0d09cc7c8c6838b595dba34670d93a8536
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, API de soumission du Windows Store, soumission d’application, état"
+ms.openlocfilehash: f8bfae09e44f02b740885709e9c22f370412538c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-the-status-of-an-app-submission-using-the-windows-store-submission-api"></a>Obtenir l’état d’une soumission d’application à l’aide de l’API de soumission du Windows Store
+# <a name="get-the-status-of-an-app-submission"></a>Obtenir l’état d’une soumission d’applications
 
 
 
@@ -25,10 +22,10 @@ Utilisez cette méthode dans l’API de soumission du Windows Store pour obtenir
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
@@ -92,7 +89,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
+| status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | objet  |  Contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs. Pour plus d’informations, voir [Ressource des détails d’état](manage-app-submissions.md#status-details-object). |
 
 <span/>
@@ -117,4 +114,3 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Valider une soumission d’application](commit-an-app-submission.md)
 * [Mettre à jour une soumission d’application](update-an-app-submission.md)
 * [Supprimer une soumission d’application](delete-an-app-submission.md)
-

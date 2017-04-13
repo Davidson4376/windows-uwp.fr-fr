@@ -1,26 +1,22 @@
 ---
 title: "Systèmes de coordonnées et géométrie"
-description: "La programmation des applications Direct3D nécessite une maîtrise des principes géométriques 3D. Cette section présente les concepts géométriques les plus importants associés à la création de scènes 3D."
+description: "La programmation des applicationsDirect3D nécessite une maîtrise des principes géométriques3D. Cette section présente les concepts géométriques les plus importants associés à la création de scènes3D."
 ms.assetid: E82EB0A9-0678-496B-96B3-8993BA580099
-keywords:
-- "Systèmes de coordonnées et géométrie"
+keywords: "Systèmes de coordonnées et géométrie"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 655e8587d103843bf2e040519b60f82160bc7b5d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 01885f6e2014e1659b1e59cc13bc6ce275f1ad03
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="coordinate-systems-and-geometry"></a>Systèmes de coordonnées et géométrie
 
 
-La programmation des applications Direct3D nécessite une maîtrise des principes géométriques 3D. Cette section présente les concepts géométriques les plus importants associés à la création de scènes 3D.
+La programmation des applicationsDirect3D nécessite une maîtrise des principes géométriques3D. Cette section présente les concepts géométriques les plus importants associés à la création de scènes3D.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Dans cette section
 
@@ -39,11 +35,11 @@ La programmation des applications Direct3D nécessite une maîtrise des princip
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Systèmes de coordonnées](coordinate-systems.md)</p></td>
-<td align="left"><p>Les applications graphiques 3D utilisent généralement l'un des deux types de systèmes de coordonnées cartésiens : gaucher ou droitier. Dans les deux systèmes de coordonnées, l’axe x positif pointe vers la droite et l’axe y positif pointe vers le haut.</p></td>
+<td align="left"><p>Les applications graphiques 3D utilisent généralement l'un des deux types de systèmes de coordonnées cartésiens: gaucher ou droitier. Dans les deux systèmes de coordonnées, l’axe x positif pointe vers la droite et l’axe y positif pointe vers le haut.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Primitives](primitives.md)</p></td>
-<td align="left"><p>Une <em>primitive</em> 3D est un ensemble de vertex qui forme une entité 3D unique.</p></td>
+<td align="left"><p>Une <em>primitive</em> 3D est un ensemble de vertex qui forme une entité3D unique.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Vecteurs normaux de face et de vertex](face-and-vertex-normal-vectors.md)</p></td>
@@ -51,11 +47,11 @@ La programmation des applications Direct3D nécessite une maîtrise des princip
 </tr>
 <tr class="even">
 <td align="left"><p>[Rectangles](rectangles.md)</p></td>
-<td align="left"><p>Dans la programmation Direct3D et Windows, les objets à l'écran sont appelés « rectangles englobants ». Les côtés d'un rectangle englobant sont toujours parallèles aux côtés de l'écran, ce qui signifie que le rectangle peut être décrit par deux points : l'angle supérieur gauche et l'angle inférieur droit.</p></td>
+<td align="left"><p>Dans la programmationDirect3D et Windows, les objets à l'écran sont appelés «rectangles englobants». Les côtés d'un rectangle englobant sont toujours parallèles aux côtés de l'écran, ce qui signifie que le rectangle peut être décrit par deux points: l'angle supérieur gauche et l'angle inférieur droit.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Interpolation de triangles](triangle-interpolation.md)</p></td>
-<td align="left"><p>Pendant le rendu, le pipeline interpole les données des vertex pour chaque triangle. Les données de vertex peuvent représenter un large éventail de données et inclure (sans s'y limiter) les données suivantes : la couleur diffuse, la couleur spéculaire, l'alpha diffus (opacité du triangle), l'alpha spéculaire et un facteur brouillard.</p></td>
+<td align="left"><p>Pendant le rendu, le pipeline interpole les données des vertex pour chaque triangle. Les données de vertex peuvent représenter un large éventail de données et inclure (sans s'y limiter) les données suivantes: la couleur diffuse, la couleur spéculaire, l'alpha diffus (opacité du triangle), l'alpha spéculaire et un facteur brouillard.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Vecteurs, sommets et quaternions](vectors--vertices--and-quaternions.md)</p></td>
@@ -67,7 +63,7 @@ La programmation des applications Direct3D nécessite une maîtrise des princip
 </tr>
 <tr class="even">
 <td align="left"><p>[Fenêtres d’affichage et découpage](viewports-and-clipping.md)</p></td>
-<td align="left"><p>Une <em>fenêtre d’affichage</em> est un rectangle en deux dimensions (2D) dans lequel une scène 3D est projetée. Dans Direct3D, le rectangle existe en tant que coordonnées au sein d’une surface Direct3D que le système utilise en tant que cible de rendu. La transformation de projection convertit les vertex dans le système de coordonnées utilisé pour la fenêtre d’affichage. Une fenêtre d’affichage est également utilisée pour spécifier la plage de valeurs de profondeur sur une surface de cible de rendu dans laquelle une scène sera rendue (généralement de 0,0 à 1,0).</p></td>
+<td align="left"><p>Une <em>fenêtre d’affichage</em> est un rectangle en deux dimensions (2D) dans lequel une scène3D est projetée. Dans Direct3D, le rectangle existe en tant que coordonnées au sein d’une surface Direct3D que le système utilise en tant que cible de rendu. La transformation de projection convertit les vertex dans le système de coordonnées utilisé pour la fenêtre d’affichage. Une fenêtre d’affichage est également utilisée pour spécifier la plage de valeurs de profondeur sur une surface de cible de rendu dans laquelle une scène sera rendue (généralement de0,0 à1,0).</p></td>
 </tr>
 </tbody>
 </table>
@@ -82,7 +78,6 @@ La programmation des applications Direct3D nécessite une maîtrise des princip
  
 
  
-
 
 
 

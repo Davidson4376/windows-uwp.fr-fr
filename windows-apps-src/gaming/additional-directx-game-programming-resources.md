@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, jeux, programmation"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: Windows10, uwp, jeux, programmation
 ms.openlocfilehash: 736f5f5864edc9c7a976e8e0f062779ddd1f86c5
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="game-programming-resources"></a>Ressources de programmation de jeux
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Pour plus d’informations sur la programmation de jeux sur Windows, consultez les ressources suivantes.
@@ -85,7 +82,6 @@ Pour plus d’informations sur la programmation de jeux sur Windows, consultez l
  
 
  
-
 
 
 

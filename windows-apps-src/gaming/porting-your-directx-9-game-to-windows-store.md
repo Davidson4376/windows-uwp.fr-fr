@@ -1,29 +1,26 @@
 ---
 author: mtoepke
 title: Porter de DirectX 9 vers la plateforme Windows universelle (UWP)
-description: "Cette section inclut des articles, des vues d’ensemble et des procédures pas à pas liés au portage des jeux DirectX 9 vers la plateforme Windows universelle (UWP)."
+description: "Cette section inclut des articles, des vues d’ensemble et des procédures pas à pas liés au portage des jeux DirectX9 vers la plateforme Windows universelle (UWP)."
 ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, jeux, directx 9, directx 11, portage"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp, jeux, directx9, directx11, portage
 ms.openlocfilehash: 9ea27288fd239b2af4b63985a3c8e0ad4055b0b9
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="port-from-directx-9-to-universal-windows-platform-uwp"></a>Porter de DirectX9 vers la plateforme Windows universelle (UWP)
 
-# <a name="port-from-directx-9-to-universal-windows-platform-uwp"></a>Porter de DirectX 9 vers la plateforme Windows universelle (UWP)
 
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+Cette section inclut des articles, des vues d’ensemble et des procédures pas à pas liés au portage des jeux DirectX9 vers la plateforme Windows universelle (UWP).
 
-Cette section inclut des articles, des vues d’ensemble et des procédures pas à pas liés au portage des jeux DirectX 9 vers la plateforme Windows universelle (UWP).
-
-##  <a name="port-your-directx-9-game-to-uwp"></a>Porter votre jeu DirectX 9 vers UWP
+##  <a name="port-your-directx-9-game-to-uwp"></a>Porter votre jeu DirectX9 vers UWP
 
 
 -   Atteindre le public UWP et monétiser votre jeu.
@@ -40,7 +37,6 @@ Cette section inclut des articles, des vues d’ensemble et des procédures pas 
  
 
  
-
 
 
 

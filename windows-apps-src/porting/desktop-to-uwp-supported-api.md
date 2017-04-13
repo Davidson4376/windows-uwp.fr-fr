@@ -1,26 +1,24 @@
 ---
-author: awkoren
+author: normesta
 Description: Cet article explique comment signer une application de bureau que vous avez convertie vers la plateforme Windows universelle (UWP).
 Search.Product: eADQiWindows 10XVcnh
-title: API UWP prises en charge pour les applications de bureau converties
-ms.author: alkoren
-ms.date: 02/08/2017
+title: 'Pont du bureau vers UWP: API UWP prises en charge'
+ms.author: normesta
+ms.date: 03/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: f5ee6f103fa9a7e5f13dc68eb9c6060e6b66e227
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 34b29f8e68c77acdb19a1b0005f039097c8d2cbb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# <a name="supported-uwp-apis-for-apps-converted-with-the-desktop-bridge"></a>API UWP prises en charge pour les applications converties avec Pont du bureau
+# <a name="desktop-to-uwp-bridge-supported-uwp-apis"></a>Pont du bureau vers UWP: API UWP prises en charge
 
-Les applications de bureau converties peuvent utiliser un large éventail d’API de la plateforme Windows universelle (UWP), ce même si elles n’ont pas été entièrement converties en applications UWP. Cet article répertorie les classes disponibles que votre application convertie peut utiliser. 
+Les applications de bureau converties peuvent utiliser un large éventail d’API de la plateforme Windows universelle (UWP), ce même si elles n’ont pas été entièrement converties en applications UWP. Cet article répertorie les classes disponibles que votre application convertie peut utiliser.
 
-La plupart des API UWP fonctionnent parfaitement sur les applications de bureau converties. Certains domaines de fonctionnalités n’ont cependant pas été totalement testés ou ne fonctionnent actuellement pas comme prévu. 
+La plupart des API UWP fonctionnent parfaitement sur les applications de bureau converties. Certains domaines de fonctionnalités n’ont cependant pas été totalement testés ou ne fonctionnent actuellement pas comme prévu.
 
 <table><tr><th>Domaine de fonctionnalité</th><th>Détails</th><tr>
 <tr><td>Rendez-vous, contacts et messages électroniques</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications converties.</td></tr>
@@ -42,15 +40,15 @@ La plupart des API UWP fonctionnent parfaitement sur les applications de bureau 
 </table>
 
 
-Parfois, les API dans ces domaines peuvent sembler fonctionner correctement. Toutefois, si une API n’apparaît pas explicitement comme étant prise en charge, vous devez évitez de l’utiliser car elle pourrait avoir des effets ou un comportement inattendus. Ces API pourraient être prises en charge dans les versions futures. En attendant, votre application doit utiliser les API Win32 ou .NET applicables. 
+Parfois, les API dans ces domaines peuvent sembler fonctionner correctement. Toutefois, si une API n’apparaît pas explicitement comme étant prise en charge, vous devez évitez de l’utiliser car elle pourrait avoir des effets ou un comportement inattendus. Ces API pourraient être prises en charge dans les versions futures. En attendant, votre application doit utiliser les API Win32 ou .NET applicables.
 
 Certaines API UWP disponibles pour les applications de bureau complètes ne sont pas prises en charge pour les applications converties. Si votre application de bureau utilisait des API UWP avant la conversion, vous devez vérifier si ces API sont toujours prises en charge. Pour plus d’informations, voir [API Windows Runtime pour applications de bureau](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx).
 
 ## <a name="list-of-apis"></a>Liste des API
 
-Voici une liste complète des API UWP prises en charge dans les applications converties. Vous pouvez afficher les [API nouvellement prises en charge dans les applications converties](#new) ou les [API prises en charge à la fois dans les applications converties et dans les applications de bureau](#both). 
+Voici une liste complète des API UWP prises en charge dans les applications converties. Vous pouvez afficher les [API nouvellement prises en charge dans les applications converties](#new) ou les [API prises en charge à la fois dans les applications converties et dans les applications de bureau](#both).
 
-Pour des exemples d’utilisation des API WinRT, consultez les [exemples de pont entre une application de bureau et UWP](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) et les [exemples d’applications de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples) sur GitHub. Vous pouvez également consulter le billet de blog de création d’application pour Windows [Appel d’API Windows 10 à partir d’une application de bureau](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application). 
+Pour des exemples d’utilisation des API WinRT, consultez [Exemples de pont d’application de bureau en UWP](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) et [Exemples d’applications de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples) sur GitHub. Vous pouvez également consulter le billet de blog de création d’application pour Windows [Appel d’API Windows10 à partir d’une application de bureau](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
 
 <span id="new" />
 ### <a name="apis-supported-in-newly-converted-apps"></a>API prises en charge dans les applications récemment converties
@@ -1045,4 +1043,3 @@ Pour des exemples d’utilisation des API WinRT, consultez les [exemples de pont
 * [Windows.Web.Syndication.SyndicationPerson](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationPerson)
 * [Windows.Web.Syndication.SyndicationText](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationText)
 * [Windows.Web.WebError](https://msdn.microsoft.com/library/windows/apps/Windows.Web.WebError)
-

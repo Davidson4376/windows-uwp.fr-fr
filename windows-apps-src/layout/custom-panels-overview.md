@@ -14,14 +14,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1925d6b10eb23a6382bd63e812cade1311da178a
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: aeea966a40b551bf4fc54901e622f57745720c43
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-custom-panels-overview"></a>Vue d’ensemble des panneaux personnalisés XAML
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -58,7 +55,7 @@ L’objet ici est de décrire les concepts de disposition XAML pour que vous pui
 ## <a name="the-children-property"></a>Propriété **Children**
 
 
-La propriété [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) est pertinente lorsqu’il s’agit de panneau personnalisé, car toutes les classes dérivées de [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) utilisent la propriété **Children** comme emplacement de stockage de leurs éléments enfants dans une collection. **Children** est désignée comme propriété de contenu XAML pour la classe **Panel** et toutes les classes dérivées de **Panel** peuvent hériter du comportement de la propriété de contenu XAML. Si une propriété est désignée comme propriété de contenu XAML, cela signifie que le balisage XAML peut omettre un élément de propriété lors de la spécification de cette propriété dans le balisage et que les valeurs sont définies comme enfants de balisage immédiat (le « contenu »). Par exemple, si vous dérivez une classe nommée **CustomPanel** à partir de **Panel** qui ne définit aucun nouveau comportement, vous pouvez tout de même utiliser le balisage suivant :
+La propriété [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) est pertinente lorsqu’il s’agit de panneau personnalisé, car toutes les classes dérivées de [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) utilisent la propriété **Children** comme emplacement de stockage de leurs éléments enfants dans une collection. **Children** est désignée comme propriété de contenu XAML pour la classe **Panel** et toutes les classes dérivées de **Panel** peuvent hériter du comportement de la propriété de contenu XAML. Si une propriété est désignée comme propriété de contenu XAML, cela signifie que le balisage XAML peut omettre un élément de propriété lors de la spécification de cette propriété dans le balisage et que les valeurs sont définies comme enfants de balisage immédiat (le «contenu»). Par exemple, si vous dérivez une classe nommée **CustomPanel** à partir de **Panel** qui ne définit aucun nouveau comportement, vous pouvez tout de même utiliser le balisage suivant :
 
 ```XAML
 <local:CustomPanel>
@@ -92,7 +89,7 @@ De nombreuses propriétés et valeurs contribuent au fonctionnement de la logiqu
 
 La disposition candidate doit être ajustée à la fenêtre d’application active, sinon certaines parties de l’interface utilisateur seront coupées. La logique de coupe est souvent déterminée au niveau des panneaux. La logique de panneau peut souvent déterminer la taille qui est disponible à partir de l’implémentation de [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) et peut devoir pousser les restrictions de taille vers les enfants et diviser l’espace parmi les enfants pour que tous les éléments soient ajustés du mieux possible. Le résultat de la disposition est, dans l’idéal, quelque chose qui utilise différentes propriétés de toutes les parties de la disposition tout en étant ajusté à la fenêtre de l’application. Cela nécessite à la fois une bonne implémentation de la logique de disposition des panneaux et une conception judicieuse de l’interface utilisateur de la part du code d’application qui génère une interface utilisateur à l’aide de ce panneau. Votre conception de panneau ne pourra pas être attrayante si la conception globale de l’interface utilisateur comporte plus d’éléments enfants que l’application ne peut en contenir.
 
-Le bon fonctionnement du système de disposition est dû en grande partie au fait que tout élément basé sur [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) possède déjà une partie de son propre comportement inhérent quand il joue le rôle d’enfant dans un conteneur. Par exemple, il y a plusieurs API de **FrameworkElement** qui informent le comportement de disposition ou qui sont nécessaires au fonctionnement de la disposition. Il s’agit des éléments suivants :
+Le bon fonctionnement du système de disposition est dû en grande partie au fait que tout élément basé sur [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) possède déjà une partie de son propre comportement inhérent quand il joue le rôle d’enfant dans un conteneur. Par exemple, il y a plusieurs API de **FrameworkElement** qui informent le comportement de disposition ou qui sont nécessaires au fonctionnement de la disposition. Il s’agit des éléments suivants:
 
 -   [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) (en réalité une propriété [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)) ;
 -   [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) et [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) ;
@@ -152,7 +149,7 @@ La valeur de retour de [**MeasureOverride**](https://msdn.microsoft.com/library/
 ## **<a name="arrangeoverride"></a>ArrangeOverride**
 
 
-La méthode [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) a une valeur de retour [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) qui est utilisée par le système de disposition lors de l’affichage du panneau proprement dit, quand la méthode [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) est appelée sur le panneau par son parent dans la disposition. Il est courant que la valeur *finalSize* d’entrée et la valeur **Size** retournée par **ArrangeOverride** soient identiques. Si ce n’est pas le cas, cela veut dire que le panneau essaie de s’allouer une taille différente de celle déclarée comme disponible par les autres participants à la disposition. La taille finale est basée sur l’exécution précédente de la passe de mesure de disposition dans le code de panneau. C’est pourquoi le fait de retourner une taille différente n’est pas anodin : cela signifie que vous ignorez délibérément la logique de mesure.
+La méthode [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) a une valeur de retour [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) qui est utilisée par le système de disposition lors de l’affichage du panneau proprement dit, quand la méthode [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) est appelée sur le panneau par son parent dans la disposition. Il est courant que la valeur *finalSize* d’entrée et la valeur **Size** retournée par **ArrangeOverride** soient identiques. Si ce n’est pas le cas, cela veut dire que le panneau essaie de s’allouer une taille différente de celle déclarée comme disponible par les autres participants à la disposition. La taille finale est basée sur l’exécution précédente de la passe de mesure de disposition dans le code de panneau. C’est pourquoi le fait de retourner une taille différente n’est pas anodin: cela signifie que vous ignorez délibérément la logique de mesure.
 
 Ne retournez pas une valeur [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) avec un composant **Infinity**. L’utilisation d’une telle valeur **Size** lève une exception depuis la disposition interne.
 
@@ -210,4 +207,3 @@ D’autres API font partie du système de disposition mais ne sont pas déclaré
 
 **Concepts**
 * [Alignement, marge et espacement](alignment-margin-padding.md)
-

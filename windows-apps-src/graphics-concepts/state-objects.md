@@ -2,21 +2,17 @@
 title: "Objets d’état"
 description: "L&quot;état de l’appareil est regroupé dans des objets d’état qui réduisent considérablement le coût des changements d’état. Il existe plusieurs objets d’état, et chacun d’eux est conçu pour initialiser un ensemble d’état pour une étape du pipeline spécifique. Les objets d’état varient selon la version de Direct3D."
 ms.assetid: D998745C-2B75-4E59-9923-AD1A17A92E05
-keywords:
-- "Objets d’état"
+keywords: "Objets d’état"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d3cdc8fda5062ea0b659029d8168a5df5be2fbe6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f046ab40ef4e05a8542f259330269e75ceb06f5f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="state-objects"></a>Objets d’état
 
 
@@ -56,7 +52,7 @@ Le fait de concevoir l’API de manière à utiliser des objets d’état offre 
 
 Pour réussir à améliorer ces performances, vous devez créer vos objets d'état lorsque votre application démarre, bien avant votre boucle de rendu. Les objets d’état sont immuables, c'est-à-dire que lorsqu'ils sont créés, vous ne pouvez pas les modifier. À la place, vous devez les détruire et les recréer.
 
-Vous pouvez créer plusieurs objets d’échantillonneur avec différentes combinaisons échantillonneur-état. La modification de l’état de l'échantillonneur s’effectue ensuite en appelant l’API « Set » appropriée qui permet de passer les informations handle à l'objet (par opposition à l’état de l’échantillonneur). Cela réduit considérablement la quantité de charge lors de chaque image de rendu de changement d’état dans la mesure où le nombre d’appels et la quantité de données sont largement réduits.
+Vous pouvez créer plusieurs objets d’échantillonneur avec différentes combinaisons échantillonneur-état. La modification de l’état de l'échantillonneur s’effectue ensuite en appelant l’API «Set» appropriée qui permet de passer les informations handle à l'objet (par opposition à l’état de l’échantillonneur). Cela réduit considérablement la quantité de charge lors de chaque image de rendu de changement d’état dans la mesure où le nombre d’appels et la quantité de données sont largement réduits.
 
 Sinon, vous pouvez choisir d’utiliser le système d’effet qui gère automatiquement la création et la destruction efficaces des objets d’état de votre application.
 
@@ -70,7 +66,6 @@ Sinon, vous pouvez choisir d’utiliser le système d’effet qui gère automati
  
 
  
-
 
 
 

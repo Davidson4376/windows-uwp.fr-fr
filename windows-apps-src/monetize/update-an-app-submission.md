@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: E8751EBF-AE0F-4107-80A1-23C186453B1C
 description: "Utilisez cette méthode de l’API de soumission du Windows Store pour mettre à jour une soumission d’application existante."
-title: "Mettre à jour une soumission d’application à l’aide de l’API de soumission du Windows Store"
+title: "Mettre à jour une soumission d’application"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, soumission d&quot;application, mise à jour"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: df52b5de7751d8428a92bd3892f91159c5fdd518
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, API de soumission du Windows Store, soumission d’application, mise à jour"
+ms.openlocfilehash: a4b7816d0d6e47282864992044eea58eaaa05d1d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="update-an-app-submission-using-the-windows-store-submission-api"></a>Mettre à jour une soumission d’application à l’aide de l’API de soumission du Windows Store
+# <a name="update-an-app-submission"></a>Mettre à jour une soumission d’application
 
 Utilisez cette méthode de l’API de soumission du Windows Store pour mettre à jour une soumission d’application existante. Après avoir mis à jour une soumission à l’aide de cette méthode, vous devez [valider la soumission](commit-an-app-submission.md) en vue de son intégration et de sa publication.
 
@@ -24,10 +21,10 @@ Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créez une soumission pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission d’application](create-an-app-submission.md).
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
@@ -66,13 +63,13 @@ Le corps de la requête contient les paramètres suivants.
 
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| applicationCategory           | chaîne  |   Chaîne qui spécifie la [catégorie et/ou sous-catégorie](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) pour votre application. Les catégories et sous-catégories sont combinées en une seule chaîne à l’aide du caractère trait de soulignement « _ », par exemple **BooksAndReference_EReader**.      |  
+| applicationCategory           | chaîne  |   Chaîne qui spécifie la [catégorie et/ou sous-catégorie](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) pour votre application. Les catégories et sous-catégories sont combinées en une seule chaîne à l’aide du caractère trait de soulignement«_», par exemple **BooksAndReference_EReader**.      |  
 | pricing           |  objet  | Objet qui contient les informations de tarification pour l’application. Pour plus d’informations, voir la section relative à la [ressource de tarification](manage-app-submissions.md#pricing-object).       |   
-| visibility           |  chaîne  |  Visibilité de l’application. Les valeurs possibles sont les suivantes : <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
-| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes : <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
-| targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO 8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |  
+| visibility           |  chaîne  |  Visibilité de l’application. Les valeurs possibles sont les suivantes: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
+| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |  
 | listings           |   objet  |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays et chaque valeur est un objet de [ressource de référencement](manage-app-submissions.md#listing-object) qui contient des informations de référencement pour l’application.       |   
-| hardwarePreferences           |  tableau  |   Tableau de chaînes qui définissent les [préférences matérielles](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences) pour votre application. Les valeurs possibles sont les suivantes : <ul><li>Touch</li><li>Keyboard</li><li>Mouse</li><li>Camera</li><li>NfcHce</li><li>NFC</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
+| hardwarePreferences           |  tableau  |   Tableau de chaînes qui définissent les [préférences matérielles](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences) pour votre application. Les valeurs possibles sont les suivantes: <ul><li>Touch</li><li>Keyboard</li><li>Mouse</li><li>Camera</li><li>NfcHce</li><li>NFC</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
 | automaticBackupEnabled           |  booléen  |   Indique si Windows peut inclure les données de votre application dans les sauvegardes automatiques sur OneDrive. Pour plus d’informations, voir [Déclarations d’application](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).   |   
 | canInstallOnRemovableMedia           |  booléen  |   Indique si les clients peuvent installer votre application sur un stockage amovible. Pour plus d’informations, voir [Déclarations d’application](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | isGameDvrEnabled           |  booléen |   Indique si les jeux DVR sont activés pour l’application.    |   
@@ -82,8 +79,8 @@ Le corps de la requête contient les paramètres suivants.
 | applicationPackages           |   tableau  | Contient des objets qui fournissent des détails sur chaque package de la soumission. Pour plus d’informations, voir la section [Package d’application](manage-app-submissions.md#application-package-object). Quand vous appelez cette méthode pour mettre à jour une soumission d’application, seules les valeurs *fileName*, *fileStatus*, *minimumDirectXVersion* et *minimumSystemRam* de ces objets sont nécessaires dans le corps de la requête. Les autres valeurs sont renseignées par le Centre de développement.   |    
 | packageDeliveryOptions    | objet  | Contient les paramètres de déploiement de package progressif et de mise à jour obligatoire de la soumission. Pour plus d’informations, consultez [Objet options de remise du package](manage-app-submissions.md#package-delivery-options-object).  |
 | enterpriseLicensing           |  chaîne  |  Une des [valeur de gestion des licences d’entreprise](manage-app-submissions.md#enterprise-licensing) qui indiquent le comportement de la gestion des licences d’entreprise pour l’application.  |    
-| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  booléen   |  Indique si Microsoft est autorisé à [rendre l’application disponible pour les futures familles d’appareils Windows 10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
-| allowTargetFutureDeviceFamilies           | booléen   |  Indique si votre application est autorisée à [cibler les futures familles d’appareils Windows 10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).     |    
+| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  booléen   |  Indique si Microsoft est autorisé à [rendre l’application disponible pour les futures familles d’appareils Windows10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
+| allowTargetFutureDeviceFamilies           | booléen   |  Indique si votre application est autorisée à [cibler les futures familles d’appareils Windows10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).     |    
 
 <span/>
 
@@ -110,13 +107,17 @@ Content-Type: application/json
     "en-us": {
       "baseListing": {
         "copyrightAndTrademarkInfo": "",
-        "keywords": [],
+        "keywords": [
+          "epub"
+        ],
         "licenseTerms": "",
         "privacyPolicy": "",
         "supportContact": "",
         "websiteUrl": "",
         "description": "Description",
-        "features": [],
+        "features": [
+          "Free ebook reader"
+        ],
         "releaseNotes": "",
         "images": [
           {
@@ -127,9 +128,13 @@ Content-Type: application/json
           }
         ],
         "recommendedHardware": [],
-        "title": "ApiTestApp For Devbox"
+        "title": "Contoso ebook reader"
       },
-      "platformOverrides": {}
+      "platformOverrides": {
+        "Windows81": {
+          "description": "Ebook reader for Windows 8.1"
+        }
+      }
     }
   },
   "hardwarePreferences": [
@@ -152,7 +157,7 @@ Content-Type: application/json
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -192,13 +197,17 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
     "en-us": {
       "baseListing": {
         "copyrightAndTrademarkInfo": "",
-        "keywords": [],
+        "keywords": [
+           "epub"
+        ],
         "licenseTerms": "",
         "privacyPolicy": "",
         "supportContact": "",
         "websiteUrl": "",
         "description": "Description",
-        "features": [],
+        "features": [
+          "Free ebook reader"
+        ],
         "releaseNotes": "",
         "images": [
           {
@@ -209,9 +218,13 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
           }
         ],
         "recommendedHardware": [],
-        "title": "ApiTestApp For Devbox"
+        "title": "Contoso ebook reader"
       },
-      "platformOverrides": {}
+      "platformOverrides": {
+        "Windows81": {
+          "description": "Ebook reader for Windows 8.1",
+        }
+      }
     }
   },
   "hardwarePreferences": [
@@ -255,7 +268,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -295,4 +308,3 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Valider une soumission d’application](commit-an-app-submission.md)
 * [Supprimer une soumission d’application](delete-an-app-submission.md)
 * [Obtenir l’état d’une soumission d’application](get-status-for-an-app-submission.md)
-

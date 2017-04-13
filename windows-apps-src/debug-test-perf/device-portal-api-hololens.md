@@ -3,18 +3,17 @@ author: mcleblanc
 ms.assetid: 41ac0142-4d86-4bb3-b580-36d0d6956091
 title: "Informations de référence sur les API Device Portal pour HoloLens"
 description: "Découvrez les API REST Windows Device Portal pour HoloLens que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme."
-translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 638ebca167b2ca56f00a83aab13b15c57b2dca2a
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# Informations de référence sur les API Device Portal pour HoloLens
+# <a name="device-portal-api-reference-for-hololens"></a>Informations de référence sur les API Device Portal pour HoloLens
 
 Dans Windows Device Portal, tout repose sur les API REST que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme.
 
-## Système d’exploitation holographique
+## <a name="holographic-os"></a>Système d’exploitation holographique
 ---
-### Obtenir la spécification HTTPS pour Device Portal
+### <a name="get-https-requirements-for-the-device-portal"></a>Obtenir la spécification HTTPS pour Device Portal
 
 **Requête**
 
@@ -46,7 +45,7 @@ GET | /api/holographic/os/webmanagement/settings/https
 - Codes d’état standard.
 
 ---
-### Obtenir l’écart pupillaire stocké (IPD)
+### <a name="get-the-stored-interpupillary-distance-ipd"></a>Obtenir l’écart pupillaire stocké (IPD)
 
 **Requête**
 
@@ -78,7 +77,7 @@ GET | /api/holographic/os/settings/ipd
 - Codes d’état standard.
 
 ---
-### Obtenir une liste des fournisseurs ETW spécifiques HoloLens
+### <a name="get-a-list-of-hololens-specific-etw-providers"></a>Obtenir une liste des fournisseurs ETW spécifiques HoloLens
 
 **Requête**
 
@@ -110,7 +109,7 @@ GET | /api/holographic/os/etw/customproviders
 - Codes d’état standard.
 
 ---
-### Renvoie l’état de tous les services actifs
+### <a name="return-the-state-for-all-active-services"></a>Renvoie l’état de tous les services actifs
 
 **Requête**
 
@@ -142,7 +141,7 @@ GET | /api/holographic/os/services
 - Codes d’état standard.
 
 ---
-### Obtenir la spécification HTTPS pour Device Portal
+### <a name="set-the-https-requirement-for-the-device-portal"></a>Obtenir la spécification HTTPS pour Device Portal
 
 **Requête**
 
@@ -178,7 +177,7 @@ required   | (**requis**) Détermine si HTTPS est requis pour Device Portal. Les
 - Codes d’état standard.
 
 ---
-### Définir l’écart pupillaire (IPD)
+### <a name="set-the-interpupillary-distance-ipd"></a>Définir l’écart pupillaire (IPD)
 
 **Requête**
 
@@ -214,9 +213,9 @@ ipd   | (**requis**) Nouvelle valeur IPD à stocker. Cette valeur doit être exp
 - Codes d’état standard.
 
 ---
-## Perception holographique
+## Holographic perception
 ---
-### Accepter les mises à niveau websocket et exécuter un client mirage qui envoie des mises à jour
+### <a name="accept-websocket-upgrades-and-run-a-mirage-client-that-sends-updates"></a>Accepter les mises à niveau websocket et exécuter un client mirage qui envoie des mises à jour
 
 **Requête**
 
@@ -252,9 +251,9 @@ clientmode   | (**requis**) Détermine le mode de suivi. La valeur **active** fo
 - Codes d’état standard.
 
 ---
-## Thermique holographique
+## Holographic thermal
 ---
-### Obtenir la phase thermique de l’appareil
+### <a name="get-the-thermal-stage-of-the-device"></a>Obtenir la phase thermique de l’appareil
 
 **Requête**
 
@@ -291,9 +290,9 @@ Valeur | Description
 - Codes d’état standard.
 
 ---
-## Contrôle HSimulation
+## HSimulation control
 ---
-### Créer un flux de contrôle ou publier des données dans un flux créé
+### <a name="create-a-control-stream-or-post-data-to-a-created-stream"></a>Créer un flux de contrôle ou publier des données dans un flux créé
 
 **Requête**
 
@@ -330,7 +329,7 @@ streamid   | (**requis en cas de publication dans un flux créé**) Identifiant 
 - Codes d’état standard.
 
 ---
-### Supprimer un flux de contrôle
+### <a name="delete-a-control-stream"></a>Supprimer un flux de contrôle
 
 **Requête**
 
@@ -362,7 +361,7 @@ DELETE | /api/holographic/simulation/control/stream
 - Codes d’état standard.
 
 ---
-### Obtenir un flux de contrôle
+### <a name="get-a-control-stream"></a>Obtenir un flux de contrôle
 
 **Requête**
 
@@ -394,7 +393,7 @@ GET/WebSocket | /api/holographic/simulation/control/stream
 - Codes d’état standard.
 
 ---
-### Obtenir le mode de simluation
+### <a name="get-the-simluation-mode"></a>Obtenir le mode de simluation
 
 **Requête**
 
@@ -426,7 +425,7 @@ GET | /api/holographic/simulation/control/mode
 - Codes d’état standard.
 
 ---
-### Définir le mode de simluation
+### <a name="set-the-simluation-mode"></a>Définir le mode de simluation
 
 **Requête**
 
@@ -462,9 +461,9 @@ mode   | (**requis**) Indique le mode de simulation. Les valeurs possibles sont 
 - Codes d’état standard.
 
 ---
-## Lecture HSimulation
+## HSimulation playback
 ---
-### Supprimer un enregistrement
+### <a name="delete-a-recording"></a>Supprimer un enregistrement
 
 **Requête**
 
@@ -500,7 +499,7 @@ recording   | (**requis**) Nom de l’enregistrement à supprimer.
 - Codes d’état standard.
 
 ---
-### Obtenir tous les enregistrements
+### <a name="get-all-recordings"></a>Obtenir tous les enregistrements
 
 **Requête**
 
@@ -532,7 +531,7 @@ GET | /api/holographic/simulation/playback/files
 - Codes d’état standard.
 
 ---
-### Obtenir les types de données dans un enregistrement chargé
+### <a name="get-the-types-of-data-in-a-loaded-recording"></a>Obtenir les types de données dans un enregistrement chargé
 
 **Requête**
 
@@ -568,7 +567,7 @@ recording   | (**requis**) Nom de l’enregistrement qui vous intéresse.
 - Codes d’état standard.
 
 ---
-### Obtenir tous les enregistrements chargés
+### <a name="get-all-the-loaded-recordings"></a>Obtenir tous les enregistrements chargés
 
 **Requête**
 
@@ -600,7 +599,7 @@ GET | /api/holographic/simulation/playback/session/files
 - Codes d’état standard.
 
 ---
-### Obtenir l’état actuel de lecture d’un enregistrement 
+### <a name="get-the-current-playback-state-of-a-recording"></a>Obtenir l’état actuel de lecture d’un enregistrement 
 
 **Requête**
 
@@ -636,7 +635,7 @@ recording   | (**requis**) Nom de l’enregistrement qui vous intéresse.
 - Codes d’état standard.
 
 ---
-### Charger un enregistrement
+### <a name="load-a-recording"></a>Charger un enregistrement
 
 **Requête**
 
@@ -672,7 +671,7 @@ recording   | (**requis**) Nom de l’enregistrement à charger.
 - Codes d’état standard.
 
 ---
-### Suspendre un enregistrement
+### <a name="pause-a-recording"></a>Suspendre un enregistrement
 
 **Requête**
 
@@ -708,7 +707,7 @@ recording   | (**requis**) Nom de l’enregistrement à suspendre.
 - Codes d’état standard.
 
 ---
-### Lire un enregistrement
+### <a name="play-a-recording"></a>Lire un enregistrement
 
 **Requête**
 
@@ -744,7 +743,7 @@ recording   | (**requis**) Nom de l’enregistrement à lire.
 - Codes d’état standard.
 
 ---
-### Arrêter un enregistrement
+### <a name="stop-a-recording"></a>Arrêter un enregistrement
 
 **Requête**
 
@@ -780,7 +779,7 @@ recording   | (**requis**) Nom de l’enregistrement à arrêter.
 - Codes d’état standard.
 
 ---
-### Décharger un enregistrement
+### <a name="unload-a-recording"></a>Décharger un enregistrement
 
 **Requête**
 
@@ -816,7 +815,7 @@ recording   | (**requis**) Nom de l’enregistrement à décharger.
 - Codes d’état standard.
 
 ---
-### Charger un enregistrement
+### <a name="upload-a-recording"></a>Charger un enregistrement
 
 **Requête**
 
@@ -848,9 +847,9 @@ POST | /api/holographic/simulation/playback/file
 - Codes d’état standard.
 
 ---
-## Enregistrement HSimulation
+## HSimulation recording
 ---
-### Obtenir l’état de l’enregistrement
+### <a name="get-the-recording-state"></a>Obtenir l’état de l’enregistrement
 
 **Requête**
 
@@ -882,7 +881,7 @@ GET | /api/holographic/simulation/recording/status
 - Codes d’état standard.
 
 ---
-### Démarrer un enregistrement
+### <a name="start-a-recording"></a>Démarrer un enregistrement
 
 **Requête**
 
@@ -925,7 +924,7 @@ Pour ces paramètres, un des paramètres suivants doit être défini sur 1 : *he
 - Codes d’état standard.
 
 ---
-### Arrêter l’enregistrement en cours
+### <a name="stop-the-current-recording"></a>Arrêter l’enregistrement en cours
 
 **Requête**
 
@@ -957,9 +956,9 @@ POST | /api/holographic/simulation/recording/stop
 - Codes d’état standard.
 
 ---
-## MRC (Mixed Reality Capture)
+## Mixed reality capture
 ---
-### Supprimer un enregistrement MRC à partir de l’appareil
+### <a name="delete-a-mixed-reality-capture-mrc-recording-from-the-device"></a>Supprimer un enregistrement MRC à partir de l’appareil
 
 **Requête**
 
@@ -995,7 +994,7 @@ filename   | (**requis**) Nom du fichier vidéo à supprimer. Ce nom doit être 
 - Codes d’état standard.
 
 ---
-### Télécharger un fichier MRC
+### <a name="download-a-mixed-reality-capture-mrc-file"></a>Télécharger un fichier MRC
 
 **Requête**
 
@@ -1032,7 +1031,7 @@ op   | (**facultatif**) Définissez cette valeur sur **stream** si vous voulez t
 - Codes d’état standard.
 
 ---
-### Obtenir les paramètres MRC
+### <a name="get-the-mixed-reality-capture-mrc-settings"></a>Obtenir les paramètres MRC
 
 **Requête**
 
@@ -1064,7 +1063,7 @@ GET | /api/holographic/mrc/settings
 - Codes d’état standard.
 
 ---
-### Obtenir l’état de l’enregistrement MRC
+### <a name="get-the-status-of-the-mixed-reality-capture-mrc-recording"></a>Obtenir l’état de l’enregistrement MRC
 
 **Requête**
 
@@ -1096,7 +1095,7 @@ GET | /api/holographic/mrc/status
 - Codes d’état standard.
 
 ---
-### Obtenir la liste des fichiers MRC
+### <a name="get-the-list-of-mixed-reality-capture-mrc-files"></a>Obtenir la liste des fichiers MRC
 
 **Requête**
 
@@ -1128,7 +1127,7 @@ GET | /api/holographic/mrc/files
 - Codes d’état standard.
 
 ---
-### Définir les paramètres MRC
+### <a name="set-the-mixed-reality-capture-mrc-settings"></a>Définir les paramètres MRC
 
 **Requête**
 
@@ -1160,7 +1159,7 @@ POST | /api/holographic/mrc/settings
 - Codes d’état standard.
 
 ---
-### Démarre un enregistrement MRC
+### <a name="starts-a-mixed-reality-capture-mrc-recording"></a>Démarre un enregistrement MRC
 
 **Requête**
 
@@ -1192,7 +1191,7 @@ POST | /api/holographic/mrc/video/control/start
 - Codes d’état standard.
 
 ---
-### Arrêter l’enregistrement MRC actuel
+### <a name="stop-the-current-mixed-reality-capture-mrc-recording"></a>Arrêter l’enregistrement MRC actuel
 
 **Requête**
 
@@ -1224,7 +1223,7 @@ POST | /api/holographic/mrc/video/control/stop
 - Codes d’état standard.
 
 ---
-### Prendre une photo MRC
+### <a name="take-a-mixed-reality-capture-mrc-photo"></a>Prendre une photo MRC
 
 **Requête**
 
@@ -1256,9 +1255,9 @@ GET | /api/holographic/mrc/photo
 - Codes d’état standard.
 
 ---
-## Diffusion en continu de la réalité mixée
+## Mixed reality streaming
 ---
-### Initie un téléchargement mémorisé en bloc d’un mp4 fragmenté
+### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>Initie un téléchargement mémorisé en bloc d’un mp4 fragmenté
 
 **Requête**
 
@@ -1297,7 +1296,7 @@ loopback   | (**facultatif**) Indique si vous souhaitez capturer le son de l’a
 - Codes d’état standard.
 
 ---
-### Initie un téléchargement mémorisé en bloc d’un mp4 fragmenté
+### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>Initie un téléchargement mémorisé en bloc d’un mp4 fragmenté
 
 **Requête**
 
@@ -1336,7 +1335,7 @@ loopback   | (**facultatif**) Indique si vous souhaitez capturer le son de l’a
 - Codes d’état standard.
 
 ---
-### Initie un téléchargement mémorisé en bloc d’un mp4 fragmenté
+### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>Initie un téléchargement mémorisé en bloc d’un mp4 fragmenté
 
 **Requête**
 
@@ -1375,7 +1374,7 @@ loopback   | (**facultatif**) Indique si vous souhaitez capturer le son de l’a
 - Codes d’état standard.
 
 ---
-### Initie un téléchargement mémorisé en bloc d’un mp4 fragmenté
+### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>Initie un téléchargement mémorisé en bloc d’un mp4 fragmenté
 
 **Requête**
 
@@ -1412,9 +1411,3 @@ loopback   | (**facultatif**) Indique si vous souhaitez capturer le son de l’a
 **Code d’état**
 
 - Codes d’état standard.
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

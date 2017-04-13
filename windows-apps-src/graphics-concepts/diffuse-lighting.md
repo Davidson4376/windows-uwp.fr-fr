@@ -2,31 +2,27 @@
 title: "Éclairage diffus"
 description: "L’éclairage diffus dépend de la direction de la lumière et de la normale à la surface de l’objet."
 ms.assetid: 8AF78742-76B1-4BBB-86E3-94AE6F48B847
-keywords:
-- "Éclairage diffus"
+keywords: "Éclairage diffus"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 256d3ed1dd6236abe4ca93e362c52316eb548bda
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d7916bf421a56125691da9be3505039e9cb1d71d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="diffuse-lighting"></a>Éclairage diffus
 
 
-L’*éclairage diffus* dépend de la direction de la lumière et de la normale à la surface de l’objet. L’éclairage diffus varie à la surface d’un objet, en réponse aux modifications de la direction de la lumière et du vecteur numérique de surface. Le calcul de l’éclairage diffus exige davantage de temps, car cette valeur varie pour chaque vertex d’objet. Parallèlement, il permet d’ombrer des objets et de leur octroyer une profondeur en 3 dimensions.
+L’*éclairage diffus* dépend de la direction de la lumière et de la normale à la surface de l’objet. L’éclairage diffus varie à la surface d’un objet, en réponse aux modifications de la direction d’éclairage et du vecteur numéral à la surface. Le calcul de l’éclairage diffus exige davantage de temps, car cette valeur varie pour chaque vertex d’objet. Parallèlement, il permet d’ombrer des objets et de leur octroyer une profondeur en 3dimensions.
 
 Après avoir ajusté l’intensité lumineuse pour appliquer des effets d’atténuation, le moteur d’éclairage calcule la quantité de lumière restante reflétée par un vertex, en fonction de l’angle de la normale de vertex et de la direction de la lumière incidente. Le moteur d’éclairage ignore cette étape pour les lumières directionnelles, car ces dernières ne s’atténuent pas avec la distance. Le système considère deux types de réflexions, diffuse et spéculaire, et utilise une formule différente pour déterminer la quantité de lumière reflétée pour chacune.
 
 Après avoir calculé les quantités de lumière reflétées, Direct3D applique ces nouvelles valeurs aux propriétés de facteur de réflexion diffuse et spéculaire du matériau actuel. Les valeurs de couleur qui en résultent sont les composants diffus et spéculaire que le rastériseur utilise pour produire l’ombrage Gouraud et le reflet spéculaire.
 
-Il est possible de calculer l’éclairage diffus en utilisant l’équation suivante :
+Il est possible de calculer l’éclairage diffus en utilisant l’équation suivante:
 
 Éclairage diffus = sum\[C<sub>d</sub>\*L<sub>d</sub>\*(N<sup>.</sup>L<sub>dir</sub>)\*Atten\*Spot\]
 
@@ -53,19 +49,19 @@ Dans cet exemple, l’objet est coloré à l’aide de la couleur diffuse de la 
 
 Selon l’équation, la couleur obtenue pour les vertex d’objet combine la couleur du matériau et la couleur de la lumière.
 
-Les deux illustrations ci-après présentent la couleur du matériau (grise) et la couleur de la lumière (rouge vif).
+Les deux illustrations suivantes montrent la couleur du matériau (grise) et la couleur de la lumière (rouge vif).
 
-![illustration d’une sphère grise](images/amb1.jpg)![illustration d’une sphère rouge](images/lightred.jpg)
+![Illustration d’une sphère grise](images/amb1.jpg)![Illustration d’une sphère rouge](images/lightred.jpg)
 
 La scène obtenue est présentée dans l’illustration suivante. Le seul objet de la scène est une sphère. Le calcul de l’éclairage diffus considère la couleur diffuse du matériau et de la lumière et la modifie par l’angle entre la direction de la lumière et la normale de vertex à l’aide du produit scalaire. En conséquence, la partie arrière de la sphère s’assombrit à mesure que la surface de la sphère s’éloigne de la lumière.
 
 ![illustration d’une sphère avec un éclairage diffus](images/lightd.jpg)
 
-La combinaison de l’éclairage diffus et de l’éclairage ambiant de l’exemple précédent entraîne l’ombrage de la totalité de la surface de l’objet. La lumière ambiante ombre la surface entière, et la lumière diffuse contribue à révéler la forme 3D de l’objet, comme illustré dans la figure suivante.
+La combinaison de l’éclairage diffus et de l’éclairage ambiant de l’exemple précédent entraîne l’ombrage de la totalité de la surface de l’objet. La lumière ambiante ombre la surface entière, et la lumière diffuse contribue à révéler la forme3D de l’objet, comme illustré dans la figure suivante.
 
 ![illustration d’une sphère avec un éclairage diffus et un éclairage ambiant](images/lightad.jpg)
 
-L’éclairage diffus est plus difficile à calculer que l’éclairage ambiant. Étant donné qu’il dépend des normales de vertex et de la direction de la lumière, vous pouvez visualiser la géométrie des objets dans l’espace 3D, ce qui produit un éclairage plus réaliste que l’éclairage ambiant. Vous pouvez accroître l’aspect réaliste en utilisant des reflets spéculaires.
+L’éclairage diffus est plus difficile à calculer que l’éclairage ambiant. Étant donné qu’il dépend des normales de vertex et de la direction de la lumière, vous pouvez visualiser la géométrie des objets dans l’espace3D, ce qui produit un éclairage plus réaliste que l’éclairage ambiant. Vous pouvez accroître l’aspect réaliste en utilisant des reflets spéculaires.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Articles connexes
 
@@ -75,7 +71,6 @@ L’éclairage diffus est plus difficile à calculer que l’éclairage ambiant.
  
 
  
-
 
 
 

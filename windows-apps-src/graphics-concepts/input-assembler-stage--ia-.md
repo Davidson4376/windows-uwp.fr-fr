@@ -2,21 +2,17 @@
 title: "Étape de l’assembleur d’entrée (IA)"
 description: "L’étape de l’assembleur d’entrée (IA, Input Assembler) fournit au pipeline des données de primitive et de contiguïté, telles que des triangles, des lignes et des points, incluant des ID sémantiques pour améliorer l’efficacité des nuanceurs en réduisant le traitement aux primitives qui n’ont pas encore été traitées."
 ms.assetid: AF1DC611-C872-47F1-BF1A-92C68C8903E6
-keywords:
-- "Étape de l’assembleur d’entrée (IA)"
+keywords: "Étape de l’assembleur d’entrée (IA)"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8bdabf3a49417974acb6a134da07e9702573bf2d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3093fc58a3432fae64e9324773a9277d907a15fd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="input-assembler-ia-stage"></a>Étape de l’assembleur d’entrée (IA)
 
 
@@ -29,14 +25,14 @@ L’étape de l’assembleur d’entrée a pour vocation de lire les données de
 
 L’étape IA peut assembler des vertex en différents [types de primitives](primitive-topologies.md) (comme des listes de lignes, des triangles ou des primitives avec voisinage). Les types de primitives tels qu’une liste de triangles avec voisinage et une liste de lignes avec voisinage prennent en charge l’[étape du nuanceur de géométrie](geometry-shader-stage--gs-.md).
 
-Les informations de voisinage sont visibles par les applications uniquement dans un nuanceur de géométrie. Si un nuanceur de géométrie a été appelé avec un triangle avec voisinage, par exemple, les données d’entrée comportent 3 vertex pour chaque triangle et 3 vertex pour les données de voisinage par triangle.
+Les informations de voisinage sont visibles par les applications uniquement dans un nuanceur de géométrie. Si un nuanceur de géométrie a été appelé avec un triangle avec voisinage, par exemple, les données d’entrée comportent 3vertex pour chaque triangle et 3vertex pour les données de voisinage par triangle.
 
-Lorsque l’étape IA est sollicitée pour la production des données de voisinage, les données d’entrée doivent inclure les données de voisinage. Il vous faudra éventuellement fournir un vertex factice (formant un triangle dégénéré), ou éventuellement marquer l’existence ou la non-existence du vertex sur l’un de ses attributs. Cette opération devra également être détectée et gérée par un nuanceur de géométrie, bien que l’élimination de la géométrie dégénérée intervient à l’étape du rastériseur.
+Lorsque l’étapeIA est sollicitée pour la production des données de voisinage, les données d’entrée doivent inclure les données de voisinage. Il vous faudra éventuellement fournir un vertex factice (formant un triangle dégénéré), ou éventuellement marquer l’existence ou la non-existence du vertex sur l’un de ses attributs. Cette opération devra également être détectée et gérée par un nuanceur de géométrie, bien que l’élimination de la géométrie dégénérée intervient à l’étape du rastériseur.
 
 ## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Entrée
 
 
-L’étape IA lit les données de la mémoire : données de primitives (points, lignes et/ou triangles) des mémoires tampons renseignées par les utilisateurs.
+L’étape IA lit les données de la mémoire: données de primitives (points, lignes et/ou triangles) des mémoires tampons renseignées par les utilisateurs.
 
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Sortie
 
@@ -79,7 +75,6 @@ L’étape IA assemble les données en primitives et associe les valeurs génér
  
 
  
-
 
 
 

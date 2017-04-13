@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
 description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour créer une soumission pour une app. inscrite dans votre compte du Centre de dév. Windows."
-title: "Créer une soumission d’app. avec l’API de soumission du Windows Store"
+title: "Crée une soumission d’applications"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, créer une soumission d&quot;application"
-translationtype: Human Translation
-ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
-ms.openlocfilehash: ecc701016ff37e7cc7de0723793efdfe89118c48
-ms.lasthandoff: 02/08/2017
-
+keywords: "windows10, uwp, API de soumission du Windows Store, créer une soumission d’application"
+ms.openlocfilehash: 13b1b1cc83b6a8659bf38f5a97caf8b2f50a3ee0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="create-an-app-submission-using-the-windows-store-submission-api"></a>Créer une soumission d’app. avec l’API de soumission du Windows Store
+# <a name="create-an-app-submission"></a>Crée une soumission d’applications
 
 
 
@@ -28,10 +25,10 @@ Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Vérifiez que l’application a déjà fait l’objet d’au moins une soumission avec les informations de [classification par âge](https://msdn.microsoft.com/windows/uwp/publish/age-ratings) spécifiées.
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
@@ -89,7 +86,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
     "marketSpecificPricings": {},
     "sales": [],
     "priceId": "Tier2",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -98,13 +95,17 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
     "en-us": {
       "baseListing": {
         "copyrightAndTrademarkInfo": "",
-        "keywords": [],
+        "keywords": [
+           "epub"
+        ],
         "licenseTerms": "",
         "privacyPolicy": "",
         "supportContact": "",
         "websiteUrl": "",
         "description": "Description",
-        "features": [],
+        "features": [
+          "Free ebook reader"
+        ],
         "releaseNotes": "",
         "images": [
           {
@@ -115,9 +116,13 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
           }
         ],
         "recommendedHardware": [],
-        "title": "ApiTestApp For Devbox"
+        "title": "Contoso ebook reader"
       },
-      "platformOverrides": {}
+      "platformOverrides": {
+        "Windows81": {
+          "description": "Ebook reader for Windows 8.1"
+        }
+      }
     }
   },
   "hardwarePreferences": [
@@ -161,7 +166,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -201,4 +206,3 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Mettre à jour une soumission d’application](update-an-app-submission.md)
 * [Supprimer une soumission d’application](delete-an-app-submission.md)
 * [Obtenir l’état d’une soumission d’application](get-status-for-an-app-submission.md)
-

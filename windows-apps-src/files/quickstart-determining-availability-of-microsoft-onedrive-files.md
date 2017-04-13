@@ -1,23 +1,21 @@
 ---
 author: laurenhughes
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
-title: "Détermination de la disponibilité des fichiers Microsoft OneDrive"
-description: "Déterminez si un fichier Microsoft OneDrive est disponible à l’aide de la propriété StorageFile.IsAvailable."
+title: "Détermination de la disponibilité des fichiers MicrosoftOneDrive"
+description: "Déterminez si un fichier MicrosoftOneDrive est disponible à l’aide de la propriété StorageFile.IsAvailable."
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dcc1104fb50b926c76d2c9d28983f91dc76edef0
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 5c4a4d27e53229524414dd566386251f74577701
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>Détermination de la disponibilité des fichiers Microsoft OneDrive
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -26,13 +24,13 @@ ms.lasthandoff: 02/07/2017
 -   [**Classe StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)
 -   [**Propriété StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
 
-Déterminez si un fichier Microsoft OneDrive est disponible à l’aide de la propriété [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx).
+Déterminez si un fichier MicrosoftOneDrive est disponible à l’aide de la propriété [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx).
 
 ## <a name="prerequisites"></a>Prérequis
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
-    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/Mt187334).
+    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337). Pour apprendre à écrire des applications asynchrones enC++, voir [Programmation asynchrone enC++](https://msdn.microsoft.com/library/windows/apps/Mt187334).
 
 -   **Déclarations des fonctionnalités d’application**
 
@@ -96,4 +94,3 @@ private async void CheckAvailabilityOfFilesInPicturesLibrary()
  
 
  
-

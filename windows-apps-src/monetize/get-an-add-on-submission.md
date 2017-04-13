@@ -2,30 +2,27 @@
 author: mcleanbyron
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour obtenir des données pour une soumission d’extension existante."
-title: "Obtenir une soumission d’extension à l’aide de l’API de soumission du Windows Store"
+title: "Obtenir une soumission de module complémentaire"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, soumission d’extension"
-translationtype: Human Translation
-ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
-ms.openlocfilehash: 2f6211c1ec399c5b6234ee4181dd319130c606b4
-ms.lasthandoff: 02/08/2017
-
+keywords: windows10, uwp, API de soumission du Windows Store, soumission d&quot;extension, produit dans l&quot;application, FAI
+ms.openlocfilehash: 21bed5bd2b0c3b4e1fb2224cce9f6e3c9a2fd6b4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-an-add-on-submission-using-the-windows-store-submission-api"></a>Obtenir une soumission d’extension à l’aide de l’API de soumission du Windows Store
+# <a name="get-an-add-on-submission"></a>Obtenir une soumission de module complémentaire
 
 Utilisez cette méthode dans l’API de soumission du Windows Store pour obtenir des données pour une soumission d’extension existante (également connue sous le nom PIA ou produit in-app). Pour plus d’informations sur le processus de création d’une soumission d’extensions à l’aide de l’API de soumission du Windows Store, voir [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créez une soumission d’extension pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission d’extension](create-an-add-on-submission.md).
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
@@ -108,7 +105,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
     },
     "sales": [],
     "priceId": "Free",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -159,4 +156,3 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Mettre à jour une soumission d’extension](update-an-add-on-submission.md)
 * [Supprimer une soumission d’extension](delete-an-add-on-submission.md)
 * [Obtenir l’état d’une soumission d’extension](get-status-for-an-add-on-submission.md)
-

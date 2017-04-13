@@ -1,6 +1,6 @@
 ---
 title: "Vue d’ensemble de la transformation"
-description: "Les transformations de matrice gèrent une grande partie des calculs de bas niveau des graphiques 3D."
+description: "Les transformations de matrice gèrent une grande partie des calculs de bas niveau des graphiques3D."
 ms.assetid: B5220EE8-2533-4B55-BF58-A3F9F612B977
 author: PeterTurcan
 ms.author: pettur
@@ -8,20 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a0e820891634317409b4c0ee78c0f521f3f08902
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: f161462c352cf898a6b81920a3b81aec04cb6cc2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="transform-overview"></a>Vue d’ensemble de la transformation
 
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
-Les transformations de matrice gèrent une grande partie des calculs de bas niveau des graphiques 3D.
+Les transformations de matrice gèrent une grande partie des calculs de bas niveau des graphiques3D.
 
 Le pipeline de géométrie prend les vertex en entrée. Le moteur de transformation applique les transformations universelles, de vue et de projection aux vertex, découpe le résultat et transmet le tout au rastériseur.
 
@@ -29,34 +26,34 @@ Le pipeline de géométrie prend les vertex en entrée. Le moteur de transformat
 |-----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Coordonnées du modèle dans l’espace modèle              | Au début du pipeline, les sommets d’un modèle sont déclarés par rapport à un système de coordonnées local. Il s’agit d’un point d’origine local et d'une orientation. Cette orientation de coordonnées est souvent appelée *espace du modèle*. Les coordonnées individuelles sont appelées *coordonnées du modèle*.                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | Transformation universelle dans l’espace universel              | La première étape du pipeline de géométrie transforme les vertex d’un modèle à partir de leur système de coordonnées local en un système de coordonnées utilisé par tous les objets d'une scène. Le processus de réorientation des vertex est appelé [transformation universelle](world-transform.md), qui convertit l'espace du modèle en une nouvelle orientation appelée *espace universel*. Chaque vertex de l’espace universel est déclaré à l’aide de *coordonnées universelles*.                                                                                                                                                                                                                                                                                                                           |
-| Transformation de vue dans l’espace d’affichage (espace de la caméra) | Dans l’étape suivante, les vertex qui décrivent votre monde en 3D sont adaptés à la caméra. Autrement dit, votre application choisit un point de vue de la scène, puis les coordonnées de l'espace universel sont déplacées et pivotent autour de la vue de la caméra, transformant l'espace universel en *espace de vue* (également appelé *espace de la caméra*). Il s’agit de la [transformation de vue](view-transform.md), qui convertit l’espace universel en espace de vue.                                                                                                                                                                                                                                                                                                                        |
-| Transformation de la projection en espace de projection    | L’étape suivante est la [transformation de la projection](projection-transform.md), qui convertit l’espace de vue en espace de projection. Dans cette partie du pipeline, les objets sont généralement mis à l’échelle en fonction de leur distance par rapport à l'observateur afin de donner une illusion de profondeur à une scène ; l'opération fait apparaître les objets proches plus grands que les objets distants. Par souci de simplicité, cette documentation fait référence à l’espace dans lequel les vertex existent après la transformation de la projection comme *espace de projection*. Certains livres graphiques peuvent se référer à l’espace de projection comme *espace homogène post-perspective*. Toutes les transformations de projection ne mettent pas la taille des objets à l’échelle dans une scène. Ce type de projection est parfois appelé *projection affine* ou *orthogonale*. |
+| Transformation de vue dans l’espace d’affichage (espace de la caméra) | Dans l’étape suivante, les vertex qui décrivent votre monde en3D sont adaptés à la caméra. Autrement dit, votre application choisit un point de vue de la scène, puis les coordonnées de l'espace universel sont déplacées et pivotent autour de la vue de la caméra, transformant l'espace universel en *espace de vue* (également appelé *espace de la caméra*). Il s’agit de la [transformation de vue](view-transform.md), qui convertit l’espace universel en espace de vue.                                                                                                                                                                                                                                                                                                                        |
+| Transformation de la projection en espace de projection    | L’étape suivante est la [transformation de la projection](projection-transform.md), qui convertit l’espace de vue en espace de projection. Dans cette partie du pipeline, les objets sont généralement mis à l’échelle en fonction de leur distance par rapport à l'observateur afin de donner une illusion de profondeur à une scène; l'opération fait apparaître les objets proches plus grands que les objets distants. Par souci de simplicité, cette documentation fait référence à l’espace dans lequel les vertex existent après la transformation de la projection comme *espace de projection*. Certains livres graphiques peuvent se référer à l’espace de projection comme *espace homogène post-perspective*. Toutes les transformations de projection ne mettent pas la taille des objets à l’échelle dans une scène. Ce type de projection est parfois appelé *projection affine* ou *orthogonale*. |
 | Découpage dans l’espace d’écran                      | Dans la partie finale du pipeline, les vertex qui ne seront pas visibles sur l’écran sont supprimés afin que le module de rastérisation ne passe pas de temps à calculer les couleurs et l’ombrage d’un élément qui ne sera jamais affiché. Ce processus est nommé *découpage*. Après découpage, les vertex restants sont mis à l’échelle selon les paramètres de la fenêtre d’affichage et convertis en coordonnées d’écran. Les vertex résultants, visibles sur l’écran lorsque la scène est rastérisée, existent dans l'*espace d’écran*.                                                                                                                                                                                                                                                    |
 
  
 
-Les transformations sont utilisées pour convertir la géométrie de l’objet d’un espace de coordonnées à un autre. Direct3D utilise des matrices pour effectuer les transformations 3D. Les matrices créent des transformations 3D. Vous pouvez combiner des matrices pour produire une matrice unique qui englobe plusieurs transformations.
+Les transformations sont utilisées pour convertir la géométrie de l’objet d’un espace de coordonnées à un autre. Direct3D utilise des matrices pour effectuer les transformations3D. Les matrices créent des transformations3D. Vous pouvez combiner des matrices pour produire une matrice unique qui englobe plusieurs transformations.
 
 Vous pouvez transformer les coordonnées entre l’espace du modèle, l'espace universel et l'espace de vue.
 
--   [Transformation universelle](world-transform.md) : convertit de l'espace du modèle à l'espace universel.
--   [Transformation de vue](view-transform.md) : convertit de l’espace universel à l’espace de vue.
--   [Transformation de projection](projection-transform.md) : convertit de l’espace de vue à l'espace de projection.
+-   [Transformation universelle](world-transform.md): convertit de l'espace du modèle à l'espace universel.
+-   [Transformation de vue](view-transform.md): convertit de l’espace universel à l’espace de vue.
+-   [Transformation de projection](projection-transform.md): convertit de l’espace de vue à l'espace de projection.
 
 ## <a name="span-idmatrixtransformsspanspan-idmatrixtransformsspanspan-idmatrixtransformsspanmatrix-transforms"></a><span id="Matrix_Transforms"></span><span id="matrix_transforms"></span><span id="MATRIX_TRANSFORMS"></span>Transformations de matrices
 
 
-Dans les applications qui fonctionnent avec des graphiques 3D, vous pouvez utiliser les transformations géométriques pour effectuer les opérations suivantes :
+Dans les applications qui fonctionnent avec des graphiques3D, vous pouvez utiliser les transformations géométriques pour effectuer les opérations suivantes:
 
 -   Exprimer l’emplacement d’un objet par rapport à un autre.
 -   Faire pivoter et dimensionner des objets.
 -   Modifier les positions d’affichage, les directions et les perspectives.
 
-Vous pouvez transformer n’importe quel point (x, y, z) en un autre (x », y », z ») à l’aide d’une matrice 4 x 4, comme le montre l’équation suivante.
+Vous pouvez transformer n’importe quel point (x, y, z) en un autre (x», y», z») à l’aide d’une matrice 4x4, comme le montre l’équation suivante.
 
 ![équation de la transformation de n’importe quel point en un autre point](images/matmult.png)
 
-Effectuer les équations suivantes sur (x, y, z) et la matrice pour produire le point (x », y », z »).
+Effectuer les équations suivantes sur (x, y, z) et la matrice pour produire le point (x», y», z»).
 
 ![équations du nouveau point](images/matexpnd.png)
 
@@ -66,7 +63,7 @@ Les matrices s'écrivent dans l’ordre rangée-colonne. Une matrice qui s’ada
 
 ![équation d’une matrice de mise à l’échelle uniforme](images/matrix.png)
 
-En langage C++, Direct3D déclare les matrices sous forme de tableau à deux dimensions à l’aide d’une structure de matrice. L’exemple suivant montre comment initialiser une structure [**D3DMATRIX**](https://msdn.microsoft.com/library/windows/desktop/bb172573) pour qu'elle agisse comme une mise à l’échelle uniforme de matrice (facteur d’échelle « s »).
+En langage C++, Direct3D déclare les matrices sous forme de tableau à deux dimensions à l’aide d’une structure de matrice. L’exemple suivant montre comment initialiser une structure [**D3DMATRIX**](https://msdn.microsoft.com/library/windows/desktop/bb172573) pour qu'elle agisse comme une mise à l’échelle uniforme de matrice (facteur d’échelle «s»).
 
 ```
 D3DMATRIX scale = {
@@ -80,7 +77,7 @@ D3DMATRIX scale = {
 ## <a name="span-idtranslatespanspan-idtranslatespanspan-idtranslatespantranslate"></a><span id="Translate"></span><span id="translate"></span><span id="TRANSLATE"></span>Translater
 
 
-L’équation suivante convertit le point (x, y, z) en un nouveau point (x », y », z »).
+L’équation suivante convertit le point (x, y, z) en un nouveau point (x», y», z»).
 
 ![équation d’une matrice de translation pour un nouveau point](images/transl8.png)
 
@@ -101,7 +98,7 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 ## <a name="span-idscalespanspan-idscalespanspan-idscalespanscale"></a><span id="Scale"></span><span id="scale"></span><span id="SCALE"></span>Mettre à l'échelle
 
 
-L’équation suivante met à l'échelle le point (x, y, z) à l'aide de valeurs arbitraires dans les directions x, y et z vers un nouveau point (x », y », z »).
+L’équation suivante met à l'échelle le point (x, y, z) à l'aide de valeurs arbitraires dans les directions x, y et z vers un nouveau point (x», y», z»).
 
 ![équation d’une matrice de mise à l'échelle pour un nouveau point](images/matscale.png)
 
@@ -110,7 +107,7 @@ L’équation suivante met à l'échelle le point (x, y, z) à l'aide de valeurs
 
 Les transformations décrites ici conviennent à des systèmes de coordonnées pour gaucher et peuvent donc différer des matrices de transformation que vous avez vues ailleurs.
 
-L’équation suivante fait pivoter le point (x, y, z) autour de l’axe x, produisant un nouveau point (x », y », z »).
+L’équation suivante fait pivoter le point (x, y, z) autour de l’axe x, produisant un nouveau point (x», y», z»).
 
 ![équation d’une matrice de rotation x pour un nouveau point](images/matxrot.png)
 
@@ -167,7 +164,6 @@ Quel que soit le type de matrice que vous créez, n’oubliez pas la règle de g
  
 
  
-
 
 
 

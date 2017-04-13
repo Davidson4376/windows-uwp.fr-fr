@@ -1,6 +1,6 @@
 ---
 author: DelfCo
-Description: "Développez une application dans une perspective de globalisation en mettant correctement en forme dates, heures, nombres, numéros de téléphone et devises."
+Description: "Développez une app. dans une perspective de globalisation en mettant correctement en forme dates, heures, nombres, numéros de téléphone et devises."
 title: Utiliser des formats compatibles avec la globalisation
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 label: Use global-ready formats
@@ -10,19 +10,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a733f3d87f2e6598e49d8926a7b10797e335c79c
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 84e53b5093d2d288dbe95f51b0a3f9a8e5e06fe0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="use-global-ready-formats"></a>Utiliser des formats compatibles avec la globalisation
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Développez une application dans une perspective de globalisation en mettant correctement en forme dates, heures, nombres, numéros de téléphone et devises. Cela vous permet d’adapter ultérieurement votre application à d’autres cultures, à d’autres régions et à d’autres langues pour le marché international.
+Développez une app. dans une perspective de globalisation en mettant correctement en forme dates, heures, nombres, numéros de téléphone et devises. Cela vous permet d’adapter ultérieurement votre application à d’autres cultures, à d’autres régions et à d’autres langues pour le marché international.
 
 <div class="important-apis" >
 <b>API importantes</b><br/>
@@ -43,11 +40,11 @@ Le processus d’adaptation d’une application à de nouveaux marchés peut êt
 
 ## <a name="format-dates-and-times-appropriately"></a>Mettre correctement en forme les dates et les heures
 
-Il existe de nombreux formats d’affichage possibles pour les dates et les heures. Selon les régions et les cultures, les conventions diffèrent en ce qui concerne l’ordre d’affichage du jour et du mois dans la date, la séparation des heures et des minutes dans l’heure, et même le signe de ponctuation utilisé en tant que séparateur. En outre, les dates peuvent être affichées dans différents formats longs (« mercredi 28 mars 2012 ») ou formats courts (« 28/03/12 »), ce qui est déterminé par la culture. Pour finir, les noms et les abréviations des jours de la semaine et des mois de l’année sont propres à chaque langue.
+Il existe de nombreux formats d’affichage possibles pour les dates et les heures. Selon les régions et les cultures, les conventions diffèrent en ce qui concerne l’ordre d’affichage du jour et du mois dans la date, la séparation des heures et des minutes dans l’heure, et même le signe de ponctuation utilisé en tant que séparateur. En outre, les dates peuvent être affichées dans différents formats longs («mercredi28mars2012») ou formats courts («28/03/12»), ce qui est déterminé par la culture. Pour finir, les noms et les abréviations des jours de la semaine et des mois de l’année sont propres à chaque langue.
 
 Pour permettre aux utilisateurs de sélectionner une date ou une heure, utilisez les contrôles standard de type [sélecteur de date et heure](https://msdn.microsoft.com/library/windows/apps/hh465466). Ces contrôles appliquent automatiquement les formats de date et d’heure qui sont associés à la langue et à la région par défaut de l’utilisateur.
 
-Si vous souhaitez afficher vous-même les dates et l’heure, utilisez les formateurs [**Date/Time**](https://msdn.microsoft.com/library/windows/apps/br206859) et [**Number**](https://msdn.microsoft.com/library/windows/apps/br226136) qui permettent d’afficher automatiquement les dates, l’heure et les nombres dans le format par défaut de l’utilisateur. Le code ci-dessous met en forme une valeur DateTime dans le format associé à la langue et région par défaut. Par exemple, si la date du jour est le 3 juin 2012, le formateur affiche « 6/3/2012 » si l’utilisateur a choisi le format par défaut « Anglais (États-Unis) », mais « 03.06.2012 » s’il a choisi le format « Allemand (Allemagne) » :
+Si vous souhaitez afficher vous-même les dates et l’heure, utilisez les formateurs [**Date/Time**](https://msdn.microsoft.com/library/windows/apps/br206859) et [**Number**](https://msdn.microsoft.com/library/windows/apps/br226136) qui permettent d’afficher automatiquement les dates, l’heure et les nombres dans le format par défaut de l’utilisateur. Le code ci-dessous met en forme une valeur DateTime dans le format associé à la langue et région par défaut. Par exemple, si la date du jour est le 3juin2012, le formateur affiche «6/3/2012» si l’utilisateur a choisi le format par défaut «Anglais (États-Unis)», mais «03.06.2012» s’il a choisi le format «Allemand (Allemagne)»:
 
 ```CSharp
     // Use the Windows.Globalization.DateTimeFormatting.DateTimeFormatter class
@@ -73,7 +70,7 @@ Si vous souhaitez afficher vous-même les dates et l’heure, utilisez les forma
 
 La mise en forme des nombres varie en fonction des cultures. Les différences de mise en forme peuvent concerner le nombre de décimales affichées, le caractère servant de séparateur décimal et le symbole monétaire. Utilisez le formateur [**NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136) pour afficher les décimales, les pourcentages ou les nombres par mille, et les devises. Dans la plupart des cas, vous devrez simplement afficher les nombres et les devises en fonction des préférences utilisateur actuelles. Cependant, vous pouvez également choisir d’utiliser des formateurs pour afficher une devise d’une région ou d’un format spécifique.
 
-Le code suivant donne un exemple de présentation des devises en fonction de la langue et de la région préférées de l’utilisateur ou pour un système monétaire donné :
+Le code suivant donne un exemple de présentation des devises en fonction de la langue et de la région préférées de l’utilisateur ou pour un système monétaire donné:
 
 ```CSharp
     // This scenario uses the Windows.Globalization.NumberFormatting.CurrencyFormatter class
@@ -114,7 +111,7 @@ Le calendrier peut être différent selon les régions et les langues. Le calend
 Utilisez les contrôles standard de type [sélecteur de dates et d’heure](https://msdn.microsoft.com/library/windows/apps/hh465466) pour permettre aux utilisateurs de sélectionner des dates dans un calendrier affiché au format par défaut. Dans le cas de scénarios plus complexes nécessitant d’effectuer directement des opérations sur les dates du calendrier, Windows.Globalization propose une classe [**Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724) qui permet de représenter correctement le calendrier selon la culture, la région et le type de calendrier.
 
 ## <a name="format-phone-numbers-appropriately"></a>Mettre correctement en forme les numéros de téléphone
-Les numéros de téléphone affichent une mise en forme différente selon les régions. Le nombre de chiffres, la façon dont ils sont regroupés et la signification de certaines parties du numéro de téléphone varient d’un pays à l’autre. À compter de Windows 10, version 1607, vous pouvez utiliser [**PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting) pour adapter le format des numéros de téléphone à la région active.
+Les numéros de téléphone affichent une mise en forme différente selon les régions. Le nombre de chiffres, la façon dont ils sont regroupés et la signification de certaines parties du numéro de téléphone varient d’un pays à l’autre. À compter de Windows10, version1607, vous pouvez utiliser [**PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting) pour adapter le format des numéros de téléphone à la région active.
 
 [**PhoneNumberInfo**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.phonenumberformatting.phonenumberinfo.aspx) permet d’analyser une chaîne de chiffres pour déterminer si elle forme un numéro de téléphone valide dans la région active et de comparer deux nombres pour déterminer s’ils sont égaux. Par ailleurs, il permet d’extraire les différentes parties fonctionnelles du numéro de téléphone, telles que l’indicatif du pays ou d’indicatif régional.
 
@@ -173,4 +170,3 @@ Pour les scénarios dans lesquels les fonctionnalités offertes varient en fonct
 * [Exemple de mise en forme des dates et heures](http://go.microsoft.com/fwlink/p/?linkid=231618)
 * [Exemple de préférences de globalisation](http://go.microsoft.com/fwlink/p/?linkid=231608)
 * [Exemple de mise en forme et d’analyse des nombres](http://go.microsoft.com/fwlink/p/?linkid=231620)
-

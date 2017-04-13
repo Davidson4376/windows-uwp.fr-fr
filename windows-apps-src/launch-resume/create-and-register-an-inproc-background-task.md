@@ -7,15 +7,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 1955f4981f09c2632fe2236ebd6a772e7b0ed8a1
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f89537416b409642adab894ba9e3a413e4b0b828
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-and-register-an-in-process-background-task"></a>Créer et inscrire une tâche en arrière-plan in-process
 
 **API importantes**
@@ -32,13 +29,13 @@ N’oubliez pas que l’activité en arrière-plan peut être arrêtée, même e
 
 ## <a name="fundamentals"></a>Principes de base
 
-Le modèle in-process améliore le cycle de vie de l’application grâce à des notifications avancées qui vous indiquent quand votre application est au premier plan ou en arrière-plan. Deux nouveaux événements sont disponibles à partir de l’objet Application pour ces transitions : [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) et [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). Ces événements s’intègrent au cycle de vie de l’application en fonction de l’état de visibilité de votre application. Pour en savoir plus sur ces événements et comment ils affectent le cycle de vie de l’application, consultez la rubrique [Cycle de vie de l’application](app-lifecycle.md).
+Le modèle in-process améliore le cycle de vie de l’application grâce à des notifications avancées qui vous indiquent quand votre application est au premier plan ou en arrière-plan. Deux nouveaux événements sont disponibles à partir de l’objet Application pour ces transitions: [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) et [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). Ces événements s’intègrent au cycle de vie de l’application en fonction de l’état de visibilité de votre application. Pour en savoir plus sur ces événements et comment ils affectent le cycle de vie de l’application, consultez la rubrique [Cycle de vie de l’application](app-lifecycle.md).
 
 En règle générale, vous gérerez l’événement **EnteredBackground** pour exécuter le code lorsque votre application s’exécute en arrière-plan, et l’événement **LeavingBackground** pour savoir quand votre application est passée au premier plan.
 
 ## <a name="register-your-background-task-trigger"></a>Inscrire votre déclencheur de tâche en arrière-plan
 
-L’inscription d’une activité en arrière-plan in-process est similaire à celle d’une activité en arrière-plan hors processus. Pour tous les déclencheurs en arrière-plan, l’inscription fait appel à l’élément [BackgroundTaskBuilder](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.aspx?f=255&MSPPError=-2147217396). Le générateur permet d’inscrire facilement une tâche en arrière-plan en définissant toutes les valeurs requises au même endroit :
+L’inscription d’une activité en arrière-plan in-process est similaire à celle d’une activité en arrière-plan hors processus. Pour tous les déclencheurs en arrière-plan, l’inscription fait appel à l’élément [BackgroundTaskBuilder](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.aspx?f=255&MSPPError=-2147217396). Le générateur permet d’inscrire facilement une tâche en arrière-plan en définissant toutes les valeurs requises au même endroit:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -62,7 +59,7 @@ Une fois le déclencheur inscrit, il se déclenchera en fonction du type de déc
 
 Vous pouvez ajouter une condition pour définir à quel moment votre tâche sera exécutée après que l’événement de déclencheur est survenu. Par exemple, si vous ne souhaitez pas que la tâche s’exécute tant que l’utilisateur n’est pas présent, appliquez la condition **UserPresent**. Pour obtenir la liste des conditions possibles, voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-L’exemple de code suivant affecte une condition qui exige la présence de l’utilisateur :
+L’exemple de code suivant affecte une condition qui exige la présence de l’utilisateur:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -115,4 +112,3 @@ Consultez les rubriques connexes suivantes pour obtenir des informations de réf
 **Informations de référence d’API de tâche en arrière-plan**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
-

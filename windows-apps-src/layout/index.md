@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ce668d5450f9b47e49e9f2535c420bc9c07d2a30
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 1034588565032301cb0746d79a122e8388dad8f9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="layout-for-uwp-apps"></a>Disposition pour les applications UWP
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -38,7 +36,7 @@ Lorsque vous concevez une application UWP, vous créez une interface utilisateur
 </div>
 
 ## <a name="app-layout-and-structure"></a>Disposition et structure d’application
-Consultez ces recommandations pour structurer votre application et exploiter les trois types d’éléments d’interface utilisateur : navigation, commande et contenu.
+Consultez ces recommandations pour structurer votre application et exploiter les trois types d’éléments d’interface utilisateur: navigation, commande et contenu.
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -49,7 +47,7 @@ La navigation dans les applications UWP est basée sur un modèle flexible de st
 </p>
 <p>
 <b>[Notions de base sur le contenu](content-basics.md)</b><br/>
-Le rôle principal de toute application est d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos ; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc. Cet article fournit des recommandations de conception de contenu pour les trois scénarios de contenu : consommation, création et interaction.
+Le rôle principal de toute application est d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc. Cet article fournit des recommandations de conception de contenu pour les troisscénarios de contenu: consommation, création et interaction.
 </p> 
   </div>
   <div class="side-by-side-content-right">
@@ -67,7 +65,7 @@ Grâce à ces articles, vous pourrez créer une interface utilisateur flexible, 
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
    <p><b>[Tailles d’écran et points d’arrêt](screen-sizes-and-breakpoints-for-responsive-design.md)</b><br/>
-Le nombre d’appareils cibles et de tailles d’écran dans l’écosystème Windows 10 est trop élevé pour pouvoir optimiser votre interface utilisateur pour chacun d’eux. À la place, nous vous recommandons de concevoir une application pour plusieurs largeurs principales (également appelées « points d’arrêt ») : 360, 640, 1024 et 1366 epx.</p>
+Le nombre d’appareils cibles et de tailles d’écran dans l’écosystème Windows10 est trop élevé pour pouvoir optimiser votre interface utilisateur pour chacun d’eux. À la place, nous vous recommandons de concevoir une application pour plusieurs largeurs principales (également appelées «points d’arrêt»): 360, 640, 1024 et 1366epx.</p>
   </div>
   <div class="side-by-side-content-right">
  <p><b>[Définir des dispositions avec XAML](layouts-with-xaml.md)</b> <br/>
@@ -87,6 +85,5 @@ Outre les propriétés de dimension (largeur, hauteur et contraintes), les élé
   </div>
 </div>
 </div>
-
 
 

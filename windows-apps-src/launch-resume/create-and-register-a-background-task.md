@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ba9c5c1a59452295a07efd371ccfd632f290c837
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 2492d8c50b6f2e35a137eae6e1a002af0f46afd1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-and-register-an-out-of-process-background-task"></a>Créer et inscrire une tâche en arrière-plan hors processus
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -29,7 +26,7 @@ ms.lasthandoff: 02/07/2017
 Créez une classe de tâche en arrière-plan et inscrivez-la pour permettre son exécution lorsque votre application ne se trouve pas au premier plan. Cette rubrique explique comment créer et inscrire une tâche en arrière-plan qui s’exécute dans un processus distinct du processus de votre application. Pour exécuter une tâche en arrière-plan directement dans l’application au premier plan, consultez [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
 
 > [!Note]
-> Si vous utilisez une tâche en arrière-plan pour lire du contenu multimédia en arrière-plan, consultez [Lire du contenu multimédia en arrière-plan](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio). Les informations fournies sur les améliorations apportées dans Windows 10 version 1607 vous simplifieront la vie.
+> Si vous utilisez une tâche en arrière-plan pour lire du contenu multimédia en arrière-plan, consultez [Lire du contenu multimédia en arrière-plan](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio). Les informations fournies sur les améliorations apportées dans Windows10 version1607 vous simplifieront la vie.
 
 ## <a name="create-the-background-task-class"></a>Créer la classe de tâche en arrière-plan
 
@@ -40,16 +37,16 @@ Les étapes suivantes vous montrent comment écrire une nouvelle classe qui impl
 1.  Créez un projet pour les tâches en arrière-plan et ajoutez-le à votre solution. Pour ce faire, cliquez avec le bouton droit sur le nœud de votre solution dans l’**Explorateur de solutions**, puis sélectionnez Ajouter-&gt;Nouveau projet. Sélectionnez ensuite le type de projet **Composant Windows Runtime (Windows universel)**, nommez le projet, puis cliquez sur OK.
 2.  Référencez le projet des tâches en arrière-plan à partir de votre projet d’application de plateforme Windows universelle (UWP).
 
-    Pour une application C++, cliquez avec le bouton droit sur votre projet d’application et sélectionnez **Propriétés**. Accédez ensuite à **Propriétés communes** et cliquez sur **Ajouter une nouvelle référence**, cochez la case en regard de votre projet de tâches en arrière-plan, et cliquez sur **OK** dans les deux boîtes de dialogue.
+    Pour une application C++, cliquez avec le bouton droit sur votre projet d’application et sélectionnez **Propriétés**. Accédez ensuite à **Propriétés communes** et cliquez sur **Ajouter une nouvelle référence**, cochez la case en regard de votre projet de tâches en arrière-plan, et cliquez sur **OK** dans les deuxboîtes de dialogue.
 
     Pour une application C#, dans votre projet d’application, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une nouvelle référence**. Sous **Solution**, sélectionnez **Projets** et le nom de votre projet de tâches en arrière-plan, puis cliquez sur **OK**.
 
-3.  Créez une classe qui implémente l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). La méthode [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) est un point d’entrée obligatoire qui est appelé quand l’événement spécifié est déclenché ; cette méthode est nécessaire dans chaque tâche en arrière-plan.
+3.  Créez une classe qui implémente l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). La méthode [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) est un point d’entrée obligatoire qui est appelé quand l’événement spécifié est déclenché; cette méthode est nécessaire dans chaque tâche en arrière-plan.
 
     > [!NOTE]
     > La classe de tâche en arrière-plan elle-même, ainsi que toutes les autres classes au sein du projet de tâche en arrière-plan, doivent être des classes **public** qui sont **sealed**.
 
-    L’exemple de code suivant présente un point de départ très élémentaire pour une classe de tâche en arrière-plan :
+    L’exemple de code suivant présente un point de départ très élémentaire pour une classe de tâche en arrière-plan:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -113,7 +110,7 @@ Les étapes suivantes vous montrent comment écrire une nouvelle classe qui impl
 
     Demandez le report dans la méthode Run avant d’appeler la méthode asynchrone. Enregistrez le report dans une variable globale pour que la méthode asynchrone puisse y accéder. Déclarez le report terminé après que l’exécution du code asynchrone a abouti.
 
-    L’exemple de code suivant obtient le report, l’enregistre et le libère à l’issue de l’exécution du code asynchrone :
+    L’exemple de code suivant obtient le report, l’enregistre et le libère à l’issue de l’exécution du code asynchrone:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -150,7 +147,7 @@ Les étapes suivantes vous montrent comment écrire une nouvelle classe qui impl
     > ```
 
 > [!NOTE]
-> En C#, les méthodes asynchrones de vos tâches en arrière-plan peuvent être appelées à l’aide des mots clés **async/await**. En C++, un résultat similaire peut être obtenu à l’aide d’une chaîne de tâches.
+> En C#, les méthodes asynchrones de vos tâches en arrière-plan peuvent être appelées à l’aide des mots clés **async/await**. EnC++, un résultat similaire peut être obtenu à l’aide d’une chaîne de tâches.
 
 Pour plus d’informations sur les modèles asynchrones, voir [Programmation asynchrone](https://msdn.microsoft.com/library/windows/apps/mt187335). Pour obtenir des exemples supplémentaires sur l’utilisation de reports en vue d’empêcher l’arrêt prématuré d’une tâche en arrière-plan, voir l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666).
 
@@ -204,7 +201,7 @@ Les étapes qui suivent sont à effectuer dans l’une de vos classes d’applic
 
     Le déclencheur de tâche en arrière-plan contrôle à quel moment la tâche en arrière-plan. Pour obtenir la liste des déclencheurs possibles, voir [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).
 
-    Par exemple, ce code crée une tâche en arrière-plan et la configure pour l’exécuter au moment où le déclencheur **TimeZoneChanged** est activé :
+    Par exemple, ce code crée une tâche en arrière-plan et la configure pour l’exécuter au moment où le déclencheur **TimeZoneChanged** est activé:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -224,7 +221,7 @@ Les étapes qui suivent sont à effectuer dans l’une de vos classes d’applic
 
 3.  Vous pouvez ajouter une condition afin de contrôler à quel moment votre tâche sera exécutée après que l’événement de déclencheur est survenu (facultatif). Par exemple, si vous ne souhaitez pas que la tâche s’exécute tant que l’utilisateur n’est pas présent, appliquez la condition **UserPresent**. Pour obtenir la liste des conditions possibles, voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-    L’exemple de code suivant affecte une condition qui exige la présence de l’utilisateur :
+    L’exemple de code suivant affecte une condition qui exige la présence de l’utilisateur:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -236,7 +233,7 @@ Les étapes qui suivent sont à effectuer dans l’une de vos classes d’applic
 
 4.  Inscrivez la tâche en arrière-plan en appelant la méthode Register sur l’objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Stockez le résultat [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) pour pouvoir l’utiliser à l’étape suivante.
 
-    Le code qui suit inscrit la tâche en arrière-plan et stocke le résultat :
+    Le code qui suit inscrit la tâche en arrière-plan et stocke le résultat:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -287,7 +284,7 @@ Vous devez inscrire une méthode avec le [**BackgroundTaskCompletedEventHandler*
 
 2.  Revenez à l’endroit où vous avez inscrit la tâche en arrière-plan. Après cette ligne de code, ajoutez un nouvel objet [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781). Fournissez votre méthode OnCompleted comme paramètre du constructeur **BackgroundTaskCompletedEventHandler**.
 
-    L’exemple de code suivant ajoute un objet [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) à [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) :
+    L’exemple de code suivant ajoute un objet [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) à [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786):
 
      > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -308,7 +305,7 @@ Pour que votre application puisse exécuter des tâches en arrière-plan, vous d
 5.  Dans la zone de texte **Point d’entrée**, entrez l’espace de noms et le nom de votre classe en arrière-plan qui, pour cet exemple, est RuntimeComponent1.ExampleBackgroundTask.
 6.  Fermez le concepteur de manifeste.
 
-    L’élément Extensions suivant est ajouté à votre fichier Package.appxmanifest pour inscrire la tâche en arrière-plan :
+    L’élément Extensions suivant est ajouté à votre fichier Package.appxmanifest pour inscrire la tâche en arrière-plan:
 
     ```xml
     <Extensions>
@@ -330,7 +327,7 @@ Vous devez à présent être en mesure d’écrire une classe de tâche en arri�
 Consultez les rubriques connexes suivantes pour obtenir des informations de référence sur les API, des recommandations conceptuelles pour les tâches en arrière-plan, ainsi que des instructions plus détaillées pour écrire des applications qui utilisent des tâches en arrière-plan.
 
 > [!NOTE]
-> Cet article s’adresse aux développeurs de Windows 10 qui écrivent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> Cet article s’adresse aux développeurs de Windows10 qui écrivent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -355,4 +352,3 @@ Consultez les rubriques connexes suivantes pour obtenir des informations de réf
 **Informations de référence d’API de tâche en arrière-plan**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
-

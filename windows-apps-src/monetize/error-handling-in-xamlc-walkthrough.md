@@ -8,21 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, annonces publicitaires, publicité, gestion des erreurs, XAML, c#"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7bfb809f1b5511ba27faf1bdd664c24da109e2f3
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, annonces publicitaires, publicité, gestion des erreurs, XAML, c#"
+ms.openlocfilehash: d6c048397a5f7fd6c9a6cd625a7ff5ce0b6c29bf
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="error-handling-in-xamlc-walkthrough"></a>Gestion des erreurs dans la procédure pas à pas pour XAML/C#
 
-Cet article indique comment intercepter les erreurs [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) dans votre application.
+Cette rubrique montre comment intercepter les erreurs [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) dans votre application.
 
 Ces exemples partent du principe que vous disposez d’une application XAML/C# qui contient un **AdControl**. Pour obtenir des instructions pas à pas qui montrent comment ajouter un **AdControl** à votre application, voir [AdControl en XAML et .NET](adcontrol-in-xaml-and--net.md). Pour un exemple de projet complet illustrant l’ajout de bannières publicitaires à une application XAML en C# et C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
-1.  Dans votre fichier MainPage.xaml, recherchez la définition du contrôle **AdControl**. Ce code se présente ainsi :
+1.  Dans votre fichier MainPage.xaml, recherchez la définition du contrôle **AdControl**. Ce code se présente ainsi:
 
   > [!div class="tabbedCodeSnippets"]
   ``` xml
@@ -53,7 +50,7 @@ Ces exemples partent du principe que vous disposez d’une application XAML/C# q
 
 2.  Pour générer une erreur lors de l’exécution, créez un second contrôle **AdControl** avec un ID d’application différent. Comme tous les objets **AdControl** d’une application doivent utiliser le même ID d’application, la création d’un objet **AdControl** supplémentaire doté d’un autre ID d’application lève une erreur.
 
-    Définissez un second objet **AdControl** dans le fichier MainPage.xaml juste après le premier **AdControl**, puis définissez la propriété [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) sur zéro (« 0 »).
+    Définissez un second objet **AdControl** dans le fichier MainPage.xaml juste après le premier **AdControl**, puis définissez la propriété [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) sur zéro («0»).
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -68,7 +65,7 @@ Ces exemples partent du principe que vous disposez d’une application XAML/C# q
         ErrorOccurred="OnAdError" />
     ```
 
-3.  Dans MainPage.xaml.cs, ajoutez le gestionnaire d’événements **OnAdError** suivant à la classe **MainPage**. Ce gestionnaire d’événements écrit les informations dans la fenêtre **Sortie** de Visual Studio.
+3.  Dans MainPage.xaml.cs, ajoutez le gestionnaire d’événements **OnAdError** suivant à la classe **MainPage**. Ce gestionnaire d’événements écrit les informations dans la fenêtre **Sortie** de VisualStudio.
 
   > [!div class="tabbedCodeSnippets"]
   ``` csharp
@@ -79,7 +76,7 @@ Ces exemples partent du principe que vous disposez d’une application XAML/C# q
   }
   ```
 
-4.  Générez et exécutez le projet. Après l’exécution de l’application, un message semblable à celui qui suit s’affiche dans la fenêtre **Sortie** de Visual Studio.
+4.  Générez et exécutez le projet. Après l’exécution de l’application, un message semblable à celui qui suit s’affiche dans la fenêtre **Sortie** de VisualStudio.
 
   > [!div class="tabbedCodeSnippets"]
   ``` syntax
@@ -91,4 +88,3 @@ Ces exemples partent du principe que vous disposez d’une application XAML/C# q
 * [Exemples de publicité sur GitHub](http://aka.ms/githubads)
 
  
-

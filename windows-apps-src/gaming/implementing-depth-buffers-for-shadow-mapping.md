@@ -1,27 +1,24 @@
 ---
 author: mtoepke
-title: "Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11"
-description: "Cette procédure pas à pas indique comment effectuer le rendu de volumes d’ombre avec des cartes de profondeur, en utilisant Direct3D 11 sur des périphériques dotés de tous niveaux de fonctionnalités Direct3D."
+title: "Procédure pas à pas: tampons de profondeur de volume d&quot;ombres dans Direct3D 11"
+description: "Cette procédure pas à pas montre comment effectuer le rendu de volumes d’ombre («shadow volumes») avec des mappages de profondeur, en utilisant Direct3D 11 sur des appareils de tout niveau de fonctionnalité Direct3D."
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, jeux, directx, volumes d’ombre, tampons de profondeur, directx 11"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 00e823b667a4622f6fa2dd213c3277bec9d616a2
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, jeux, directx, volumes d’ombre, tampons de profondeur, directx11"
+ms.openlocfilehash: e68f0d559e6dbd7791104310a985ca99e0131c99
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>Procédure pas à pas: Implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D11
 
-# <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>Procédure pas à pas : Implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11
 
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-Cette procédure pas à pas montre comment effectuer le rendu de volumes d’ombre (« shadow volumes ») avec des mappages de profondeur, en utilisant Direct3D 11 sur des appareils de tout niveau de fonctionnalité Direct3D.
+Cette procédure pas à pas montre comment effectuer le rendu de volumes d’ombre («shadow volumes») avec des mappages de profondeur, en utilisant Direct3D 11 sur des appareils de tout niveau de fonctionnalité Direct3D.
 ## 
 <table>
 <colgroup>
@@ -79,8 +76,8 @@ Vous devez [préparer votre environnement au développement de jeux de plateform
 
 **Direct3D**
 
-* [Écriture de nuanceurs HLSL dans Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
-* [Créer un projet DirectX 11 pour UWP](user-interface.md)
+* [Écriture de nuanceurs HLSL dans Direct3D9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [Créer un projet DirectX11 pour UWP](user-interface.md)
 
 **Articles techniques sur le mappage d’ombres**
 
@@ -90,7 +87,6 @@ Vous devez [préparer votre environnement au développement de jeux de plateform
  
 
  
-
 
 
 

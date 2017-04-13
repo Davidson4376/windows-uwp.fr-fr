@@ -2,21 +2,17 @@
 title: "Types de périphériques"
 description: "Les types de périphériques Direct3D comprennent les périphériques de couche d’abstraction matérielle (HAL) et le module de rastérisation de référence."
 ms.assetid: 64084B23-10C0-4541-8E93-FB323385D2F0
-keywords:
-- "Types de périphériques"
+keywords: "Types de périphériques"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 883e40145b4d9667eee4fe2b945f555ccddc9895
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d863c3f45269c448f1f6fc1055ee765f323dbcd7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="device-types"></a>Types de périphériques
 
 
@@ -44,7 +40,7 @@ L’autre cas dans lequel l’utilisation d’un périphérique REF peut se rév
 ## <a name="span-idhardwarevssoftwarespanspan-idhardwarevssoftwarespanspan-idhardwarevssoftwarespanhardware-vs-software-vertex-processing"></a><span id="Hardware_vs_Software"></span><span id="hardware_vs_software"></span><span id="HARDWARE_VS_SOFTWARE"></span>Traitement de vertex matériel ou logiciel
 
 
-Le choix entre un traitement de vertex matériel et un traitement logiciel ne s’applique réellement qu’aux périphériques HAL. Lorsque vous transmettez des vertex par le biais du pipeline, ces vertex doivent être transformés (par les matrices de modèle, de vue et de projection successivement) et éclairés (par des éclairages D3D intégrés). Cette étape est désignée sous l’acronyme T&L (Transformation & Lighting, transformation et éclairage). Le traitement de vertex matériel signifie que cette opération est effectuée dans le matériel, si ce dernier la prend en charge ; de la même façon, le traitement de vertex logiciel se produit dans le logiciel. L’approche générale consiste à commencer par essayer de créer un périphérique T&L matériel, puis si cette opération échoue, à créer un périphérique mixte, et en cas de nouvel échec, à créer un périphérique logiciel. (Si le traitement logiciel échoue, l’opération est abandonnée et prend fin avec un message d’erreur.)
+Le choix entre un traitement de vertex matériel et un traitement logiciel ne s’applique réellement qu’aux périphériques HAL. Lorsque vous transmettez des vertex par le biais du pipeline, ces vertex doivent être transformés (par les matrices de modèle, de vue et de projection successivement) et éclairés (par des éclairagesD3D intégrés). Cette étape est désignée sous l’acronyme T&L (Transformation & Lighting, transformation et éclairage). Le traitement de vertex matériel signifie que cette opération est effectuée dans le matériel, si ce dernier la prend en charge; de la même façon, le traitement de vertex logiciel se produit dans le logiciel. L’approche générale consiste à commencer par essayer de créer un périphérique T&L matériel, puis si cette opération échoue, à créer un périphérique mixte, et en cas de nouvel échec, à créer un périphérique logiciel. (Si le traitement logiciel échoue, l’opération est abandonnée et prend fin avec un message d’erreur.)
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Articles connexes
 
@@ -54,7 +50,6 @@ Le choix entre un traitement de vertex matériel et un traitement logiciel ne s�
  
 
  
-
 
 
 

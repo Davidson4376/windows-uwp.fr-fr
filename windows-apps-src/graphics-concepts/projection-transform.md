@@ -2,27 +2,23 @@
 title: Transformation de la projection
 description: "Une transformation de projection permet de contrôler les éléments internes de la caméra, notamment le choix d’un objectif. Il s’agit du plus complexe des trois types de transformations."
 ms.assetid: 378F205D-3800-4477-9820-5EBE6528B14A
-keywords:
-- Transformation de la projection
+keywords: Transformation de la projection
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 83679e9a41adcad68f1341328de4c03b10db08e5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cb6704383bafe9ee3e5785701c78f92e84b90b3d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="projection-transform"></a>Transformation de la projection
 
 
 Une *transformation de projection* permet de contrôler les éléments internes de la caméra, notamment le choix d’un objectif. Il s’agit du plus complexe des trois types de transformations.
 
-La matrice de projection consiste principalement en une projection de l'échelle et de la perspective. La transformation de projection convertit le tronc de cône d’affichage en une forme cubique. L’extrémité proche du tronc de cône d’affichage étant plus petite que son extrémité éloignée, cela a pour effet de développer les objets situés à proximité de la caméra ; c’est de cette manière que la perspective est appliquée à la scène.
+La matrice de projection consiste principalement en une projection de l'échelle et de la perspective. La transformation de projection convertit le tronc de cône d’affichage en une forme cubique. L’extrémité proche du tronc de cône d’affichage étant plus petite que son extrémité éloignée, cela a pour effet de développer les objets situés à proximité de la caméra; c’est de cette manière que la perspective est appliquée à la scène.
 
 Dans [le tronc de cône d’affichage](viewports-and-clipping.md), la distance entre l’appareil photo et l’origine de l’espace de transformation de l’affichage est définie de façon arbitraire sur la valeur D. La matrice de projection ressemble donc à l’illustration suivante.
 
@@ -56,7 +52,7 @@ Pour votre application, il est plus pratique d’utiliser les dimensions horizon
 
 Dans ces formules, Zₙ représente la position du plan de coupe proche, et les variables V<sub>w</sub> et Vₕ représentent la largeur et la hauteur de la fenêtre d’affichage dans l’espace de la caméra.
 
-Quelle que soit la formule vous décidez d’utiliser, veillez à définir Zₙ sur la plus grande valeur possible, car les valeurs z très proches de la caméra ne varient pas beaucoup. Cela permet d’effectuer des comparaisons de profondeur à l’aide d’un z-buffer 16 bits complexe.
+Quelle que soit la formule vous décidez d’utiliser, veillez à définir Zₙ sur la plus grande valeur possible, car les valeurs z très proches de la caméra ne varient pas beaucoup. Cela permet d’effectuer des comparaisons de profondeur à l’aide d’un z-buffer 16bits complexe.
 
 ## <a name="span-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspana-w-friendly-projection-matrix"></a><span id="A_W_Friendly_Projection_Matrix"></span><span id="a_w_friendly_projection_matrix"></span><span id="A_W_FRIENDLY_PROJECTION_MATRIX"></span>Une matrice de projection compatible avec w
 
@@ -79,7 +75,6 @@ Direct3D utilise la matrice de projection définie pour effectuer ses calculs de
  
 
  
-
 
 
 

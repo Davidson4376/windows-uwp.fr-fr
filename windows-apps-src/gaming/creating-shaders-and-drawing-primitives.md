@@ -1,25 +1,22 @@
 ---
 author: mtoepke
 title: "Créer des nuanceurs et tracer des primitives"
-description: "Nous vous montrons ici comment utiliser les fichiers HLSL sources pour compiler et créer des nuanceurs que vous pouvez ensuite utiliser pour tracer des primitives à l’écran."
+description: "Nous vous montrons ici comment utiliser les fichiers HLSL sources pour compiler et créer des nuanceurs que vous pouvez utiliser ensuite pour tracer des primitives à l’écran."
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, jeux, nuanceurs, primitives, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: Windows10, uwp, jeux, nuanceurs, primitives, directx
 ms.openlocfilehash: 62f4b9b641a3c365659e44893a8a7801f2c1f6c0
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-shaders-and-drawing-primitives"></a>Créer des nuanceurs et tracer des primitives
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Nous vous montrons ici comment utiliser les fichiers HLSL sources pour compiler et créer des nuanceurs que vous pouvez ensuite utiliser pour tracer des primitives à l’écran.
 
@@ -42,7 +39,7 @@ Nous supposons en outre que vous avez suivi la rubrique [Démarrage rapide : con
 
 Microsoft Visual Studio utilise le compilateur de code HLSL [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) pour compiler les fichiers sources .hlsl (SimpleVertexShader.hlsl et SimplePixelShader.hlsl) en fichiers objets .cso de nuanceur binaire (SimpleVertexShader.cso et SimplePixelShader.cso). Pour plus d’informations sur le compilateur de code HLSL, voir Outil compilateur d’effet. Pour plus d’informations sur la compilation de code de nuanceurs, voir [Compilation de nuanceurs](https://msdn.microsoft.com/library/windows/desktop/bb509633).
 
-Le code suivant correspond au fichier SimpleVertexShader.hlsl :
+Le code suivant correspond au fichier SimpleVertexShader.hlsl:
 
 ```hlsl
 struct VertexShaderInput
@@ -66,7 +63,7 @@ PixelShaderInput SimpleVertexShader(VertexShaderInput input)
 }
 ```
 
-Le code suivant correspond au fichier SimplePixelShader.hlsl :
+Le code suivant correspond au fichier SimplePixelShader.hlsl:
 
 ```hlsl
 struct PixelShaderInput
@@ -296,7 +293,6 @@ Nous allons à présent créer un cube 3D en orbite et lui appliquer des effets 
  
 
  
-
 
 
 

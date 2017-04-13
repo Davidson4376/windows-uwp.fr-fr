@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 96902d7532aed1510d959b45528cc71e0e6dca70
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 3cd3695f6a7ec9c2d29fdd1826635973aab809a9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>Optimisation des options d’interface ListView et GridView
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **Remarque**  
 Pour plus d’informations, voir la session //build/ [Accroître considérablement les performances lors de l’interaction des utilisateurs avec de grandes quantités de données dans GridView et ListView](https://channel9.msdn.com/events/build/2013/3-158).
@@ -34,9 +32,9 @@ Pour garantir des panoramiques/défilements fluides, il est essentiel que le thr
 
 ## <a name="ui-virtualization"></a>Virtualisation de l’interface utilisateur
 
-La virtualisation de l’interface utilisateur est le principal axe d’amélioration. Elle implique la création à la demande des éléments d’interface utilisateur. Pour un contrôle d’éléments lié à une collection de 1 000 éléments, créer l’interface utilisateur simultanément pour tous les éléments constituerait un gaspillage de ressources, car il n’est pas possible d’afficher tous les éléments en même temps. Les contrôles [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) (et d’autres contrôles standard dérivés de [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803)) se chargent de la virtualisation de l’interface utilisateur à votre place. Quand des éléments vont bientôt défiler dans l’affichage (quelques pages plus loin), l’infrastructure génère l’interface utilisateur pour ces éléments et les met en cache. Lorsqu’il est peu probable que les éléments soient de nouveau affichés, l’infrastructure récupère la mémoire qui leur était allouée.
+La virtualisation de l’interface utilisateur est le principal axe d’amélioration. Elle implique la création à la demande des éléments d’interface utilisateur. Pour un contrôle d’éléments lié à une collection de 1 000 éléments, créer l’interface utilisateur simultanément pour tous les éléments constituerait un gaspillage de ressources, car il n’est pas possible d’afficher tous les éléments en même temps. Les contrôles [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) (et d’autres contrôles standard dérivés de [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803)) se chargent de la virtualisation de l’interface utilisateur à votre place. Lorsque des éléments vont bientôt défiler dans l’affichage (dans quelques pages), l’infrastructure génère l’interface utilisateur pour ces éléments et les met en cache. Lorsqu’il est peu probable que les éléments soient de nouveau affichés, l’infrastructure récupère la mémoire qui leur était allouée.
 
-Si vous fournissez un modèle de panneau d’éléments personnalisé (voir [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx)), veillez à utiliser un volet de virtualisation tel que [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) ou [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795). Si vous utilisez [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227651), [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227717) ou [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), vous ne pourrez pas bénéficier de la virtualisation. Par ailleurs, les événements [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) suivants sont déclenchés uniquement lors de l’utilisation d’un [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) ou d’un [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795) : [**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer), [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) et [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging).
+Si vous fournissez un modèle de panneau d’éléments personnalisé (voir [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx)), veillez à utiliser un volet de virtualisation tel que [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) ou [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795). Si vous utilisez [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227651), [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227717) ou [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), vous ne pourrez pas bénéficier de la virtualisation. Par ailleurs, les événements [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) suivants sont déclenchés uniquement lors de l’utilisation d’un [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) ou d’un [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795): [**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer), [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) et [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging).
 
 La fenêtre d’affichage est un concept essentiel de la virtualisation de l’interface utilisateur, car l’infrastructure doit créer les éléments qui sont susceptibles d’être affichés. La fenêtre d’affichage d’un contrôle [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) est généralement l’extension du contrôle logique. Par exemple, la fenêtre d’affichage d’un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) correspond à la largeur et à la hauteur de l’élément **ListView**. Certains volets offrent un espace illimité aux éléments enfants (par exemple, [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) et [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)) avec un dimensionnement automatique des lignes ou des colonnes. Lorsqu’un contrôle **ItemsControl** virtualisé est placé dans un volet de ce type, il occupe suffisamment d’espace pour afficher tous ses éléments, ce qui va à l’encontre de la virtualisation. Restaurez la virtualisation en définissant une largeur et une hauteur pour **ItemsControl**.
 
@@ -69,7 +67,7 @@ Les modèles de contrôle par défaut pour [**ListViewItem**](https://msdn.micro
 <!-- ... -->
 ```
 
-Il y a environ 25 propriétés portant des noms autodescriptifs similaires à [**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled.aspx) et [**SelectedBackground**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectedbackground.aspx). Si les types de présentateur se révèlent ne pas être suffisamment personnalisables pour votre cas d’utilisation, vous pouvez modifier une copie du modèle de contrôle `ListViewItemExpanded` ou `GridViewItemExpanded` à la place. Ces modèles se trouvent dans `\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\<version>\Generic\generic.xaml`. Notez que l’utilisation de ces modèles implique un compromis en termes de performances en échange de l’augmentation des possibilités de personnalisation.
+Il y a environ 25propriétés portant des noms autodescriptifs similaires à [**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled.aspx) et [**SelectedBackground**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectedbackground.aspx). Si les types de présentateur se révèlent ne pas être suffisamment personnalisables pour votre cas d’utilisation, vous pouvez modifier une copie du modèle de contrôle `ListViewItemExpanded` ou `GridViewItemExpanded` à la place. Ces modèles se trouvent dans `\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\<version>\Generic\generic.xaml`. Notez que l’utilisation de ces modèles implique un compromis en termes de performances en échange de l’augmentation des possibilités de personnalisation.
 
 <span id="update-items-incrementally"/>
 ## <a name="update-listview-and-gridview-items-progressively"></a>Mettre à jour les éléments ListView et GridView de façon progressive
@@ -88,7 +86,7 @@ La fonctionnalité d’espaces réservés visuels temporaires est activée par d
 
 Voici comment utiliser l’[attribut x:Phase](https://msdn.microsoft.com/library/windows/apps/Mt204790) avec les liaisons [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) pour implémenter des mises à jour de modèles de données progressives.
 
-1.  Voici à quoi ressemble la source de liaison (il s’agit de la source de données que nous allons lier) :
+1.  Voici à quoi ressemble la source de liaison (il s’agit de la source de données que nous allons lier):
 
     ```csharp
 namespace LotsOfItems
@@ -119,7 +117,7 @@ namespace LotsOfItems
         }
     }
     ```
-2.  Voici le balisage que contient le fichier `DeferMainPage.xaml`. L’affichage grille contient un modèle d’élément avec des éléments liés aux propriétés **Title**, **Subtitle** et **Description** de la classe **MyItem**. Notez que **x:Phase** a pour valeur par défaut 0. Ici, les éléments sont affichés initialement avec seulement le titre visible. L’élément sous-titre est ensuite lié aux données et affiché pour tous les éléments, et ainsi de suite jusqu’à ce que toutes les phases aient été traitées.
+2.  Voici le balisage que contient le fichier `DeferMainPage.xaml`. L’affichage grille contient un modèle d’élément avec des éléments liés aux propriétés **Title**, **Subtitle** et **Description** de la classe **MyItem**. Notez que **x:Phase** a pour valeur par défaut0. Ici, les éléments sont affichés initialement avec seulement le titre visible. L’élément sous-titre est ensuite lié aux données et affiché pour tous les éléments, et ainsi de suite jusqu’à ce que toutes les phases aient été traitées.
     ```xml
     <Page
         x:Class="LotsOfItems.DeferMainPage"
@@ -154,7 +152,7 @@ La stratégie générale pour l’événement [**ContainerContentChanging**](htt
 
 1.  Nous utilisons la même source de liaison que pour **x:Phase**.
 
-2.  Voici le balisage que contient le fichier `MainPage.xaml`. L’affichage grille déclare un gestionnaire à son événement [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging) et contient un modèle d’élément avec des éléments utilisés pour afficher les propriétés **Title**, **Subtitle** et **Description** de la classe **MyItem**. Pour exploiter pleinement les avantages de **ContainerContentChanging** en termes de performances, nous n’utilisons pas de liaisons dans le balisage, mais nous attribuons à la place des valeurs par programme. L’exception ici est l’élément affichant le titre, que nous considérons dans la phase 0.
+2.  Voici le balisage que contient le fichier `MainPage.xaml`. L’affichage grille déclare un gestionnaire à son événement [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging) et contient un modèle d’élément avec des éléments utilisés pour afficher les propriétés **Title**, **Subtitle** et **Description** de la classe **MyItem**. Pour exploiter pleinement les avantages de **ContainerContentChanging** en termes de performances, nous n’utilisons pas de liaisons dans le balisage, mais nous attribuons à la place des valeurs par programme. L’exception ici est l’élément affichant le titre, que nous considérons dans la phase0.
     ```xml
     <Page
         x:Class="LotsOfItems.MainPage"
@@ -249,7 +247,7 @@ La stratégie générale pour l’événement [**ContainerContentChanging**](htt
 
 ## <a name="container-recycling-with-heterogeneous-collections"></a>Recyclage de conteneurs avec des collections hétérogènes
 
-Dans certaines applications, vous devez avoir différentes interfaces utilisateur pour différents types d’élément au sein d’une collection. Cela peut créer une situation dans laquelle il est impossible pour les volets de virtualisation de réutiliser/recycler les éléments visuels utilisés pour afficher les éléments. La recréation des éléments visuels d’un élément pendant le mouvement panoramique annule bon nombre des gains de performances offerts par la virtualisation. Cependant, un minimum de planification peut permettre aux volets de virtualisation de réutiliser les éléments. Les développeurs ont deux options en fonction de leur scénario : l’événement [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) ou un sélecteur de modèles d’éléments. L’approche **ChoosingItemContainer** offre de meilleures performances.
+Dans certaines applications, vous devez avoir différentes interfaces utilisateur pour différents types d’élément au sein d’une collection. Cela peut créer une situation dans laquelle il est impossible pour les volets de virtualisation de réutiliser/recycler les éléments visuels utilisés pour afficher les éléments. La recréation des éléments visuels d’un élément pendant le mouvement panoramique annule bon nombre des gains de performances offerts par la virtualisation. Cependant, un minimum de planification peut permettre aux volets de virtualisation de réutiliser les éléments. Les développeurs ont deux options en fonction de leur scénario: l’événement [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) ou un sélecteur de modèles d’éléments. L’approche **ChoosingItemContainer** offre de meilleures performances.
 
 **Événement ChoosingItemContainer**
 
@@ -324,5 +322,4 @@ Lors du recyclage d’un élément (**ListViewItem**/**GridViewItem**), l’infr
 Lorsque la répartition des éléments utilisant différents modèles d’éléments est inégale, alors les modèles d’éléments devront probablement être créés lors du mouvement panoramique, annulant ainsi nombre des avantages offerts par la virtualisation. En outre, un sélecteur de modèles d’éléments ne considère que cinq candidats possibles lorsqu’il s’agit d’évaluer si un conteneur donné peut être réutilisé pour l’élément de données actuel. Par conséquent, il convient d’examiner attentivement vos données pour déterminer si elles sont appropriées pour une utilisation avec un sélecteur de modèles d’éléments avant d’en utiliser un dans votre application. Si votre collection est en grande partie homogène, le sélecteur renvoie le même type la plupart du temps (voire tout le temps). Soyez conscient du prix que vous payez pour les exceptions à cette homogénéité et demandez-vous s’il est préférable d’utiliser [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) (ou deux contrôles d’éléments).
 
  
-
 

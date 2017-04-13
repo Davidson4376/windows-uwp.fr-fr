@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 96C090C1-88F8-42E7-AED1-AFA9031E952B
 description: "Utilisez cette méthode de l’API de soumission du Windows Store pour supprimer une soumission d’application existante."
-title: "Supprimer une soumission d’application à l’aide de l’API de soumission du Windows Store"
+title: "Supprime une soumission d’applications"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, soumission d’application, supprimer"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fe85515d9baaaf0d36cdcdce12a0e81561bb6787
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, API de soumission du Windows Store, soumission d’application, supprimer"
+ms.openlocfilehash: 20ac77960c47e21daddec845abef73887ee93710
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="delete-an-app-submission-using-the-windows-store-submission-api"></a>Supprimer une soumission d’application à l’aide de l’API de soumission du Windows Store
+# <a name="delete-an-app-submission"></a>Supprime une soumission d’applications
 
 
 
@@ -25,10 +22,10 @@ Utilisez cette méthode de l’API de soumission du Windows Store pour supprimer
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
@@ -100,4 +97,3 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Valider une soumission d’application](commit-an-app-submission.md)
 * [Mettre à jour une soumission d’application](update-an-app-submission.md)
 * [Obtenir l’état d’une soumission d’application](get-status-for-an-app-submission.md)
-

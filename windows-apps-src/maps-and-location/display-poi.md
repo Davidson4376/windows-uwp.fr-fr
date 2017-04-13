@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, carte, emplacement, clics-infos"
-translationtype: Human Translation
-ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
+keywords: windows10, uwp, carte, emplacement, clics-infos
 ms.openlocfilehash: c8fdc16b99a9d2d57f71e32e008fa668c3404835
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="display-points-of-interest-poi-on-a-map"></a>Afficher les points d’intérêt sur une carte
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Ajoutez des points d’intérêt à une carte à l’aide des punaises, des images, des formes et des éléments d’interface utilisateur XAML. Un point d’intérêt est un point spécifique sur la carte, qui représente un élément intéressant. Il peut s’agir, par exemple, de l’emplacement d’une entreprise, d’une localité ou d’un ami.
@@ -32,7 +29,7 @@ Affichez des punaises, des images et des formes sur la carte en ajoutant des obj
 
 Affichez des éléments de l’interface utilisateur XAML ([**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) ou [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)) sur la carte en les ajoutant en tant qu’éléments [**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) de la classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Vous pouvez également les ajouter à la classe [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094), ou lier la classe **MapItemsControl** à une collection d’éléments.
 
-En résumé :
+En résumé:
 
 -   [Ajoutez un élément MapIcon à la carte](#add-a-mapicon) pour afficher une image telle qu’une punaise avec un texte facultatif.
 -   [Ajoutez un élément MapPolygon à la carte](#add-a-mappolygon) pour afficher une forme multipoint.
@@ -228,9 +225,8 @@ Cet exemple affiche une collection d’éléments XAML liés à un [**MapItemsCo
 * [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)
 * [Exemple de carte UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Vidéos de la build 2015 : utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Vidéos de la build 2015: utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Exemple d’application de trafic UWP](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
 * [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
 * [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)
-

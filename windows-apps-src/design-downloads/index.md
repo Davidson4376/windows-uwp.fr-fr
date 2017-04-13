@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 57c29414deadcf4f1ba5c462b8fe81faa0b38d49
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 6f6edf982ffd329561b35c51ca19ee7a6fa92bf0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="design-downloads-for-uwp-apps"></a>Téléchargements de conceptions pour les applications UWP
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -38,7 +36,7 @@ Ce support dispose de tous les éléments nécessaires pour rapidement créer un
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-            <p><b>Adobe Illustrator</b><br/>
+            <p><b>AdobeIllustrator</b><br/>
 Ces modèles Adobe Illustrator fournissent des contrôles et dispositions pour la conception d’applications UWP.<br/>[Télécharger les modèles de conception pour Adobe Illustrator](https://go.microsoft.com/fwlink/p/?LinkId=534634)</p>    
   </div>
   <div class="side-by-side-content-right">
@@ -51,7 +49,7 @@ Ces modèles Adobe Illustrator fournissent des contrôles et dispositions pour l
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>Adobe Photoshop</b><br/>
-Contrôles et dispositions pour la conception d’applications UWP dans Adobe Photoshop.<br/>[Télécharger les modèles de conception pour Adobe Photoshop](http://go.microsoft.com/fwlink/p/?LinkId=626453)</p>    
+Contrôles et dispositions pour la conception d’applications UWP dans AdobePhotoshop.<br/>[Télécharger les modèles de conception pour AdobePhotoshop](http://go.microsoft.com/fwlink/p/?LinkId=626453)</p>    
   </div>
   <div class="side-by-side-content-right">
 <a href="http://go.microsoft.com/fwlink/p/?LinkId=626453"><img src="images/photoshop.jpg" alt="Download the design templates for Adobe Photoshop" /></a>
@@ -64,8 +62,8 @@ Contrôles et dispositions pour la conception d’applications UWP dans Adobe P
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-            <p><b>Générateur de vignettes et d’icônes pour Adobe Photoshop</b><br/>
-Cet ensemble d’actions pour Adobe Photoshop génère les 68 vignettes et icônes recommandées à partir de seulement 7 fichiers. <br/>[Télécharger le générateur de vignettes et d’icônes](http://go.microsoft.com/fwlink/p/?LinkId=760394)</p>    
+            <p><b>Générateur de vignettes et d’icônes pour AdobePhotoshop</b><br/>
+Cet ensemble d’actions pour AdobePhotoshop génère les 68vignettes et icônes recommandées à partir de seulement 7fichiers. <br/>[Télécharger le générateur de vignettes et d’icônes](http://go.microsoft.com/fwlink/p/?LinkId=760394)</p>    
   </div>
   <div class="side-by-side-content-right">
 <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator" /></a>
@@ -99,4 +97,4 @@ Cet exemple intègre des fonctionnalités Windows avec une automatisation domest
   </div>
 </div>
 </div>
-<b>Vous voulez plus de code ?</b> Consultez la page d’exemples Windows pour obtenir la liste complète de tous nos exemples d’applications UWP. [Accédez au portail d’exemples](https://developer.microsoft.com/samples)
+<b>Vous voulez plus de code?</b> Consultez la page d’exemples Windows pour obtenir la liste complète de tous nos exemples d’applications UWP. [Accédez au portail d’exemples](https://developer.microsoft.com/samples)

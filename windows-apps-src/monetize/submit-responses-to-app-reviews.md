@@ -1,25 +1,22 @@
 ---
 author: mcleanbyron
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
-description: "Utilisez cette méthode dans l&quot;API d&quot;avis du Windows Store pour envoyer des réponses aux avis concernant votre application."
-title: "Envoyer des réponses aux avis concernant l&quot;application"
+description: "Utilisez cette méthode dans l&quot;API d&quot;avis du Windows Store pour envoyer des réponses aux avis sur votre application."
+title: "Soumettre des réponses aux avis"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, services Windows Store, API d&quot;avis du Windows Store, acquisitions de modules complémentaires"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 1531059831b4c20d11661eb87fceda7b8dcb7f02
-ms.lasthandoff: 02/08/2017
-
+keywords: windows 10, uwp, services du windows store, API d&quot;avis du Windows Store, acquisitions d&quot;extension
+ms.openlocfilehash: d418e64bf1608591e877da8339d1dda308611285
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="submit-responses-to-reviews"></a>Soumettre des réponses aux avis
 
-# <a name="submit-responses-to-app-reviews"></a>Envoyer des réponses aux avis concernant l'application
 
-
-Utilisez cette méthode dans l'API d'avis du Windows Store pour répondre par programmation aux avis concernant votre application. Lorsque vous utilisez cette méthode, vous devez spécifier les ID des avis auxquels vous souhaitez répondre. Les ID d'avis sont disponibles dans les données de réponse de la méthode [obtenir les avis sur les applications](get-app-reviews.md) dans l’API d'analyse du Windows Store et dans le [téléchargement hors connexion](../publish/download-analytic-reports.md) du [rapport Avis](../publish/reviews-report.md).
+Utilisez cette méthode dans l'API du Windows Store pour répondre par programmation aux avis sur votre application. Lorsque vous utilisez cette méthode, vous devez spécifier les ID des avis auxquels vous souhaitez répondre. Les ID d'avis sont disponibles dans les données de réponse de la méthode [obtenir les avis sur les applications](get-app-reviews.md) dans l’API d'analyse du Windows Store et dans le [téléchargement hors connexion](../publish/download-analytic-reports.md) du [rapport Avis](../publish/reviews-report.md).
 
 Lorsqu’un client envoie un avis, il peut choisir ne pas de recevoir les réponses concernant ses avis. Si vous essayez de répondre à un avis pour lequel le client a choisi de ne pas recevoir de réponses, le corps de réponse de cette méthode indique que la tentative de réponse a échoué. Avant d’appeler cette méthode, vous pouvez également déterminer si vous êtes autorisé à répondre à un avis donné à l’aide de la méthode [obtenir des informations de réponse pour les avis sur les applications](get-response-info-for-app-reviews.md) méthode.
 
@@ -27,10 +24,10 @@ Lorsqu’un client envoie un avis, il peut choisir ne pas de recevoir les répon
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](respond-to-reviews-using-windows-store-services.md#prerequisites) relatives à l’API d’avis du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](respond-to-reviews-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](respond-to-reviews-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Obtenez les ID des avis auxquels vous souhaitez répondre. Les ID d'avis sont disponibles dans les données de réponse de la méthode [obtenir les avis sur les applications](get-app-reviews.md) dans l’API d'analyse du Windows Store et dans le [téléchargement hors connexion](../publish/download-analytic-reports.md) du [rapport Avis](../publish/reviews-report.md).
 
 ## <a name="request"></a>Requête
@@ -59,7 +56,7 @@ Cette méthode n’a aucun paramètre de requête.
 
 ### <a name="request-body"></a>Corps de la requête
 
-Le corps de la requête contient les valeurs suivantes :
+Le corps de la requête contient les valeurs suivantes:
 
 | Valeur        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------|
@@ -69,7 +66,7 @@ Chaque objet figurant dans le tableau *Réponses* contient les valeurs suivantes
 
 | Valeur        | Type   | Description           |  Obligatoire  |
 |---------------|--------|-----------------------------|-----|
-| ApplicationId | chaîne |  L’ID Windows Store de l’application qui contient l'avis auquel vous souhaitez répondre. L’ID Windows Store est disponible sur la [page Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID Windows Store : 9WZDNCRFJ3Q8.   |  Oui  |
+| ApplicationId | chaîne |  L’ID Windows Store de l’application qui contient l'avis auquel vous souhaitez répondre. L’ID WindowsStore est disponible sur la [page Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8.   |  Oui  |
 | ReviewId | chaîne |  L’ID de l’avis auquel vous souhaitez répondre (il s’agit d’un GUID). Les ID d'avis sont disponibles dans les données de réponse de la méthode [obtenir les avis sur les applications](get-app-reviews.md) dans l’API d'analyse du Windows Store et dans le [téléchargement hors connexion](../publish/download-analytic-reports.md) du [rapport Avis](../publish/reviews-report.md).   |  Oui  |
 | ResponseText | chaîne | La réponse que vous souhaitez soumettre. Votre réponse doit suivre [les recommandations suivantes](../publish/respond-to-customer-reviews.md#guidelines-for-responses).   |  Oui  |
 | SupportEmail | chaîne | L'adresse e-mail de support de votre application que votre client pourra utiliser par la suite pour vous contacter directement. Vous devez spécifier une adresse e-mail valide.     |  Oui  |
@@ -115,7 +112,7 @@ Chaque objet figurant dans le tableau *Résultat* contient les valeurs suivantes
 
 | Valeur        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------|
-| ApplicationId | chaîne |  L’ID Windows Store de l’application qui contient l'avis auquel vous avez répondu. Exemple d’ID Windows Store : 9WZDNCRFJ3Q8.   |
+| ApplicationId | chaîne |  L’ID Windows Store de l’application qui contient l'avis auquel vous avez répondu. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8.   |
 | ReviewId | chaîne |  L’ID de l’avis auquel vous avez répondu. Il s’agit d’un GUID.   |
 | Réussite | chaîne | La valeur **true** indique que votre réponse a été envoyée avec succès. La valeur **false** indique que votre réponse a échoué.    |
 | FailureReason | chaîne | Si la valeur de **Réussite** est égale à **false**, cette valeur contient le motif de l’échec. Si la valeur **Réussite** est égale à **true**, cette valeur est vide.      |
@@ -149,4 +146,3 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 * [Répondre aux avis à l’aide des services du Windows Store](respond-to-reviews-using-windows-store-services.md)
 * [Obtenir des informations de réponse pour les avis sur les applications](get-response-info-for-app-reviews.md)
 * [Obtenir les avis sur les applications](get-app-reviews.md)
-

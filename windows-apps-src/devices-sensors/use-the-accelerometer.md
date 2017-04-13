@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8f8236a68fd7628f1f53eebc13731a72414e3217
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: f0665bf071b4c75ee6a3ea8bcc11cefb357c6825
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="use-the-accelerometer"></a>Utiliser l’accéléromètre
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -38,7 +36,7 @@ L’appareil ou émulateur que vous utilisez doit prendre en charge un accélér
 
 ## <a name="create-a-simple-accelerometer-app"></a>Créer une application simple d’accéléromètre
 
-Cette section se divise en deux sous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple d’accéléromètre. La sous-section suivante décrit l’application que vous venez de créer.
+Cette section se divise en deuxsous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple d’accéléromètre. La sous-section suivante décrit l’application que vous venez de créer.
 
 ### <a name="instructions"></a>Instructions
 
@@ -153,7 +151,7 @@ L’application établit une connexion avec l’accéléromètre par défaut dan
 _accelerometer = Accelerometer.GetDefault();
 ```
 
-L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16 millisecondes (ce qui représente une fréquence de rafraîchissement de 60 Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
+L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16millisecondes (ce qui représente une fréquence de rafraîchissement de 60Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
 
 ```csharp
 uint minReportInterval = _accelerometer.MinimumReportInterval;
@@ -178,4 +176,3 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Exemple d’accéléromètre](http://go.microsoft.com/fwlink/p/?linkid=241377)
-

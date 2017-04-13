@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: A0DFF26B-FE06-459B-ABDC-3EA4FEB7A21E
 description: "Utilisez cette méthode de l’API de soumission du Windows Store pour obtenir des données pour une soumission de version d’évaluation du package existante."
-title: "Obtenir une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store"
+title: "Obtenir une soumission de version d’évaluation de package"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, soumission de version d’évaluation"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a989e9d081ec9cb709b59e1ff4ceff2d517ae48f
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, API de soumission du Windows Store, soumission de version d&quot;évaluation"
+ms.openlocfilehash: 2571bb25ce407a9c44ed40aae0a865708e6154d5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-a-package-flight-submission-using-the-windows-store-submission-api"></a>Obtenir une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store
+# <a name="get-a-package-flight-submission"></a>Obtenir une soumission de version d’évaluation de package
 
 
 
@@ -25,10 +22,10 @@ Utilisez cette méthode de l’API de soumission du Windows Store pour obtenir d
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créez une soumission de version d’évaluation du package pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission de version d’évaluation du package](create-a-flight-submission.md).
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
@@ -104,7 +101,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -138,4 +135,3 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Valider une soumission de version d’évaluation de package](commit-a-flight-submission.md)
 * [Mettre à jour une soumission de version d’évaluation de package](update-a-flight-submission.md)
 * [Supprimer une soumission de version d’évaluation du package](delete-a-flight-submission.md)
-

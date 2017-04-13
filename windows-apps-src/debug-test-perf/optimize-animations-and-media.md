@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7eeb8b79b3c50593470f62c3eddd29a9f218d528
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 29383c65d36b7bc9e5946e4c55298ac0e04107c6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-animations-media-and-images"></a>Optimiser les animations, les éléments multimédias et les images
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Créez des applications de plateforme Windows universelle (UWP) avec des animations fluides, une fréquence d’images élevée et une capture/lecture multimédia hautement performante.
 
@@ -56,7 +54,7 @@ Le contenu Web d’un contrôle [**WebView**](https://msdn.microsoft.com/library
 
 L’animation d’un objet [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) est également une mauvaise idée. Au-delà de l’impact négatif sur les performances, elle peut provoquer des dégradations ou d’autres artefacts sur le contenu vidéo qui est lu.
 
-> **Remarque**  Les recommandations de cet article concernant l’objet **MediaPlayerElement** s’appliquent également à l’objet [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926). L’objet **MediaPlayerElement** étant uniquement disponible dans Windows 10, version 1607, si vous créez une application pour une version précédente de Windows, vous avez besoin d’utiliser l’objet **MediaElement**.
+> **Remarque**  Les recommandations de cet article concernant l’objet **MediaPlayerElement** s’appliquent également à l’objet [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926). L’objet **MediaPlayerElement** étant uniquement disponible dans Windows10, version1607, si vous créez une application pour une version précédente de Windows, vous avez besoin d’utiliser l’objet **MediaElement**.
 
 ### <a name="use-infinite-animations-sparingly"></a>Utiliser avec parcimonie les animations infinies
 
@@ -89,7 +87,7 @@ Par exemple, si votre application utilise un objet [**RandomAccessStream**](http
 
 Dans les applications UWP, utilisez toujours la propriété [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.isfullwindow.aspx) sur l’objet [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) pour activer et désactiver le rendu de fenêtre entière. L’utilisation des optimisations au niveau système est ainsi garantie pendant la lecture multimédia.
 
-L’infrastructure XAML permet d’optimiser l’affichage du contenu vidéo lorsque la vidéo est le seul élément rendu : l’expérience utilisateur fait alors appel à moins de puissance et offre un meilleur rendement en termes de fréquence d’images. Pour une lecture multimédia plus efficace, définissez la taille d’un objet **MediaPlayerElement** conformément à la largeur et la hauteur de l’écran et n’affichez aucun autre élément XAML.
+L’infrastructure XAML permet d’optimiser l’affichage du contenu vidéo lorsque la vidéo est le seul élément rendu: l’expérience utilisateur fait alors appel à moins de puissance et offre un meilleur rendement en termes de fréquence d’images. Pour une lecture multimédia plus efficace, définissez la taille d’un objet **MediaPlayerElement** conformément à la largeur et la hauteur de l’écran et n’affichez aucun autre élément XAML.
 
 Plusieurs raisons légitimes justifient la décision de superposer des éléments XAML sur un objet **MediaPlayerElement** qui occupe toute la largeur et la hauteur de l’écran, par exemple des sous-titres ou des contrôles de transport provisoires. Prenez soin de masquer ces éléments (définissez `Visibility="Collapsed"`) lorsqu’ils ne sont pas requis pour rétablir l’état le plus efficace de la lecture multimédia.
 
@@ -111,7 +109,9 @@ Les applications offrent souvent un affichage incorporé dans lequel la vidéo e
 
 Ne dessinez pas d’éléments XAML sur la vidéo lorsqu’elle est en mode incorporé. Dans le cas contraire, l’infrastructure doit fournir davantage d’effort pour composer la scène. Le placement de contrôles de transport sous un élément multimédia incorporé plutôt que sur la vidéo est un bon exemple d’optimisation dans cette situation. Dans cette image, la barre rouge correspond à un ensemble de contrôles de transport (lire, suspendre, arrêter, etc.).
 
-![Objet MediaPlayerElement avec d’autres éléments superposés](images/videowithoverlay.png) Ne placez pas ces contrôles sur un média qui n’est pas affiché en plein écran. Positionnez plutôt les contrôles de transport quelque part à l’extérieur de la zone dans laquelle le média est rendu. Dans l’image suivante, les contrôles sont placés sous le média.
+![Objet MediaPlayerElement avec des éléments superposés](images/videowithoverlay.png)
+
+Ne placez pas ces contrôles sur un média qui n’est pas affiché en plein écran. Positionnez plutôt les contrôles de transport quelque part à l’extérieur de la zone dans laquelle le média est rendu. Dans l’image suivante, les contrôles sont placés sous le média.
 
 ![Objet MediaPlayerElement avec des éléments voisins](images/videowithneighbors.png)
 
@@ -127,7 +127,7 @@ La définition de [**MediaPlayerElement.PosterSource**](https://msdn.microsoft.c
 
 Le nettoyage est une tâche délicate pour que les plateformes multimédias soient vraiment réactives. En général, les utilisateurs préfèrent s’acquitter de cette tâche en modifiant la valeur d’un curseur. Voici quelques conseils qui vous permettront de rendre le nettoyage aussi efficace que possible.
 
--   Mettez à jour la valeur de l’objet [**Slider**](https://msdn.microsoft.com/library/windows/apps/BR209614) en fonction d’un minuteur qui interroge la propriété [**Position**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx) sur l’élément [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx). Veillez à utiliser une fréquence de mise à jour raisonnable pour votre minuteur. La propriété **Position** est seulement mise à jour toutes les 250 millisecondes lors de la lecture.
+-   Mettez à jour la valeur de l’objet [**Slider**](https://msdn.microsoft.com/library/windows/apps/BR209614) en fonction d’un minuteur qui interroge la propriété [**Position**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx) sur l’élément [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx). Veillez à utiliser une fréquence de mise à jour raisonnable pour votre minuteur. La propriété **Position** est seulement mise à jour toutes les 250millisecondes lors de la lecture.
 -   La taille de la fréquence d’incrémentation du l’objet Slider doit s’adapter à la longueur de la vidéo.
 -   Abonnez-vous aux événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx), [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointermoved.aspx) et [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx) sur l’objet Slider pour affecter à la propriété [**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackrate.aspx) la valeur 0 lorsque l’utilisateur fait glisser le curseur.
 -   Dans le gestionnaire d’événements [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx), définissez manuellement la position du média sur la valeur de la position du curseur afin d’obtenir un alignement du curseur optimal lors du nettoyage.
@@ -154,7 +154,7 @@ Les images sont capturées dans des résolutions très élevées, ce qui peut g�
 À ne pas faire :
 
 ```xaml
-<Image Source="ms-appx:///Assets/highresCar.jpg" 
+<Image Source="ms-appx:///Assets/highresCar.jpg"
        Width="300" Height="200"/>    <!-- BAD CODE DO NOT USE.-->
 ```
 
@@ -163,21 +163,21 @@ Les images sont capturées dans des résolutions très élevées, ce qui peut g�
 ```xaml
 <Image>
     <Image.Source>
-    <BitmapImage UriSource="ms-appx:///Assets/highresCar.jpg" 
+    <BitmapImage UriSource="ms-appx:///Assets/highresCar.jpg"
                  DecodePixelWidth="300" DecodePixelHeight="200"/>
     </Image.Source>
 </Image>
 ```
 
-Les unités pour [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) sont en pixels physiques par défaut. La propriété [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) peut être utilisée pour modifier ce comportement : en définissant **DecodePixelType** sur **Logical**, la taille de décodage tient compte automatiquement du facteur d’échelle actuel du système, comme c’est le cas pour d’autres contenus XAML. Il est donc généralement approprié de définir **DecodePixelType** sur **Logical** si, par exemple, vous souhaitez que **DecodePixelWidth** et **DecodePixelHeight** correspondent aux propriétés de hauteur et de largeur du contrôle d’image dans lequel s’affichera l’image. Avec le comportement par défaut consistant à utiliser des pixels physiques, vous devez tenir compte du facteur d’échelle du système actuel et vous devez prendre en considération les notifications de modification de mise à l’échelle au cas où l’utilisateur modifie ses préférences d’affichage.
+Les unités pour [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) sont en pixels physiques par défaut. La propriété [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) peut être utilisée pour modifier ce comportement : en définissant **DecodePixelType** sur **Logical**, la taille de décodage tient compte automatiquement du facteur d’échelle actuel du système, comme c’est le cas pour d’autres contenus XAML. Il est donc généralement approprié de définir **DecodePixelType** sur **Logical** si, par exemple, vous souhaitez que **DecodePixelWidth** et **DecodePixelHeight** correspondent aux propriétés de hauteur et de largeur du contrôle d’image dans lequel s’affichera l’image. Avec le comportement par défaut consistant à utiliser des pixels physiques, vous devez tenir compte du facteur d’échelle du système actuel et vous devez prendre en considération les notifications de modification de mise à l’échelle au cas où l’utilisateur modifie ses préférences d’affichage.
 
-Si les paramètres DecodePixelWidth/Height sont explicitement définis plus grands que la taille de l’image affichée à l’écran, alors l’application utilisera inutilement de la mémoire supplémentaire (jusqu’à 4 octets par pixel), ce qui devient rapidement coûteux pour les grandes images. L’image sera également réduite à l’aide d’une mise à l’échelle bilinéaire, ce qui risque de la faire apparaître floue pour les grands facteurs d’échelle.
+Si les paramètres DecodePixelWidth/Height sont explicitement définis plus grands que la taille de l’image affichée à l’écran, alors l’application utilisera inutilement de la mémoire supplémentaire (jusqu’à 4octets par pixel), ce qui devient rapidement coûteux pour les grandes images. L’image sera également réduite à l’aide d’une mise à l’échelle bilinéaire, ce qui risque de la faire apparaître floue pour les grands facteurs d’échelle.
 
 Si les paramètres DecodePixelWidth/DecodePixelHeight sont explicitement définis plus petits que la taille de l’image affichée à l’écran, elle sera agrandie et risque d’apparaître pixelisée.
 
 Dans certains cas, lorsqu’une taille de décodage appropriée ne peut pas être déterminée à l’avance, vous devez vous en remettre au décodage automatique à la taille adéquate qui tentera de décoder au mieux l’image à la taille appropriée si aucun paramètre DecodePixelWidth/DecodePixelHeight explicite n’est spécifié.
 
-Vous devez définir une taille de décodage explicite si vous connaissez à l’avance la taille du contenu image. Vous devez également définir [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) sur **Logical** si la taille de décodage fournie dépend de la taille d’autres éléments XAML. Par exemple, si vous définissez explicitement la taille du contenu avec Image.Width et Image.Height, vous pourriez définir DecodePixelType sur DecodePixelType.Logical pour utiliser les mêmes dimensions de pixels logiques comme contrôle d’image, puis utiliser explicitement BitmapImage.DecodePixelWidth et/ou BitmapImage.DecodePixelHeight pour contrôler la taille de l’image afin de parvenir éventuellement à économiser une grande capacité de mémoire.
+Il est conseillé de définir une taille de décodage explicite si vous connaissez la taille du contenu image à l’avance. Il est également recommandé de définir conjointement [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) sur **Logical** si la taille de décodage fournie dépend des tailles d’autres éléments XAML. Par exemple, si vous définissez explicitement la taille du contenu avec Image.Width et Image.Height, vous pourriez définir DecodePixelType sur DecodePixelType.Logical pour utiliser les mêmes dimensions de pixels logiques comme contrôle d’image, puis utiliser explicitement BitmapImage.DecodePixelWidth et/ou BitmapImage.DecodePixelHeight pour contrôler la taille de l’image afin de parvenir éventuellement à économiser une grande capacité de mémoire.
 
 Remarque : il convient de prendre en considération Image.Stretch lors de la détermination de la taille du contenu décodé.
 
@@ -195,23 +195,23 @@ Dans le cas où vous ne définissez pas de taille de décodage explicite, XAML t
 
 Dans les scénarios ci-dessus, la définition d’une taille de décodage explicite est la seule façon de réaliser des économies de mémoire.
 
-Vous devez toujours associer une [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) dans l’arborescence dynamique avant de définir la source. Dès lors qu’un élément ou pinceau image est spécifié dans le balisage, ce sera automatiquement le cas. Des exemples sont fournis ci-dessous sous le titre « Exemples d’arborescences dynamiques ». Vous devez toujours éviter d’utiliser [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) et utiliser plutôt [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) lors de la définition d’une source de flux. Il est conseillé d’éviter de masquer du contenu image (soit avec zéro opacité ou avec une visibilité réduite) dans l’attente du déclenchement de l’événement [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx). L’exécution de cette opération est laissée à l’appréciation de chacun : vous ne pourrez pas profiter du décodage automatique à la bonne taille si vous l’exécutez. Si votre application doit masquer le contenu image initialement, alors elle doit également définir la taille de décodage explicitement si possible.
+Vous devez toujours associer une [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) dans l’arborescence dynamique avant de définir la source. Dès lors qu’un élément ou pinceau image est spécifié dans le balisage, ce sera automatiquement le cas. Des exemples sont fournis ci-dessous sous le titre «Exemples d’arborescences dynamiques». Vous devez toujours éviter d’utiliser [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) et utiliser plutôt [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) lors de la définition d’une source de flux. Il est conseillé d’éviter de masquer du contenu image (soit avec zéro opacité ou avec une visibilité réduite) dans l’attente du déclenchement de l’événement [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx). L’exécution de cette opération est laissée à l’appréciation de chacun: vous ne pourrez pas profiter du décodage automatique à la bonne taille si vous l’exécutez. Si votre application doit masquer le contenu image initialement, alors elle doit également définir la taille de décodage explicitement si possible.
 
 **Exemples d’arborescences dynamiques**
 
-Exemple 1 (correct) : Uniform Resource Identifier (URI) spécifié dans le balisage.
+Exemple1 (correct): Uniform Resource Identifier (URI) spécifié dans le balisage.
 
 ```xaml
 <Image x:Name="myImage" UriSource="Assets/cool-image.png"/>
 ```
 
-Exemple 2 balisage : URI spécifié dans le code-behind.
+Exemple2 balisage: URI spécifié dans le code-behind.
 
 ```xaml
 <Image x:Name="myImage"/>
 ```
 
-Exemple 2 code-behind (correct) : association de la BitmapImage à l’arborescence avant de définir son UriSource.
+Exemple2 code-behind (correct): association de la BitmapImage à l’arborescence avant de définir son UriSource.
 
 ```csharp
 var bitmapImage = new BitmapImage();
@@ -219,7 +219,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Exemple 2 code-behind (incorrect) :définition de l’UriSouce de la BitmapImage avant de l’associer à l’arborescence.
+Exemple2 code-behind (incorrect):définition de l’UriSouce de la BitmapImage avant de l’associer à l’arborescence.
 
 ```csharp
 var bitmapImage = new BitmapImage();
@@ -273,14 +273,14 @@ Un exemple d’utilisation des images mises à l’échelle : la création des m
 > picker.FileTypeFilter.Add(".jpeg");
 > picker.FileTypeFilter.Add(".png");
 > picker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-> 
+>
 > StorageFile file = await picker.PickSingleFileAsync();
-> 
+>
 > StorageItemThumbnail fileThumbnail = await file.GetThumbnailAsync(ThumbnailMode.SingleItem, 64);
-> 
+>
 > BitmapImage bmp = new BitmapImage();
 > bmp.SetSource(fileThumbnail);
-> 
+>
 > Image img = new Image();
 > img.Source = bmp;
 > ```
@@ -291,14 +291,14 @@ Un exemple d’utilisation des images mises à l’échelle : la création des m
 > picker.FileTypeFilter.Add(".jpeg")
 > picker.FileTypeFilter.Add(".png")
 > picker.SuggestedStartLocation = PickerLocationId.PicturesLibrary
-> 
+>
 > Dim file As StorageFile = Await picker.PickSingleFileAsync()
-> 
+>
 > Dim fileThumbnail As StorageItemThumbnail = Await file.GetThumbnailAsync(ThumbnailMode.SingleItem, 64)
-> 
+>
 > Dim bmp As New BitmapImage()
 > bmp.SetSource(fileThumbnail)
-> 
+>
 > Dim img As New Image()
 > img.Source = bmp
 > ```
@@ -306,5 +306,3 @@ Un exemple d’utilisation des images mises à l’échelle : la création des m
 ### <a name="decode-images-once"></a>Décoder une fois les images
 
 Pour éviter de décoder les images plus d’une fois, assignez la propriété [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/BR242760) à partir d’un Uri plutôt qu’à l’aide de flux de mémoire. L’infrastructure XAML peut associer le même URI dans plusieurs endroits à une seule image décodée, mais ne peut pas effectuer la même chose pour plusieurs flux de mémoire qui contiennent les mêmes données, et crée une image décodée différente pour chaque flux de mémoire.
-
-

@@ -1,6 +1,6 @@
 ---
 title: Pipeline graphique
-description: "Le pipeline graphique Direct3D est conçu pour la génération de graphismes destinés aux applications de jeu en temps réel. Les données progressent de l’entrée vers la sortie en transitant par chacune des étapes configurables ou programmables de ce pipeline."
+description: "Le pipeline graphiqueDirect3D est conçu pour la génération de graphismes destinés aux applications de jeu en temps réel. Les données progressent de l’entrée vers la sortie en transitant par chacune des étapes configurables ou programmables de ce pipeline."
 ms.assetid: C9519AD0-5425-48BD-9FF4-AED8959CA4AD
 keywords:
 - Pipeline graphique
@@ -11,23 +11,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 72e4985481f464cd45c13fd390d27c4ba0e7c618
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: af583deb51b93bffc05c4371466fa8412bb0476d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="graphics-pipeline"></a>Pipeline graphique
 
 
-Le pipeline graphique Direct3D est conçu pour la génération de graphismes destinés aux applications de jeu en temps réel. Les données progressent de l’entrée vers la sortie en transitant par chacune des étapes configurables ou programmables de ce pipeline.
+Le pipeline graphiqueDirect3D est conçu pour la génération de graphismes destinés aux applications de jeu en temps réel. Les données progressent de l’entrée vers la sortie en transitant par chacune des étapes configurables ou programmables de ce pipeline.
 
 Toutes les étapes sont configurables à l’aide de l’API Direct3D. Les étapes qui utilisent des noyaux de nuanceur communs (blocs rectangulaires arrondis) sont programmables au moyen du langage de programmation [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561). En conséquence, le pipeline offre un haut degré de flexibilité et d’adaptabilité.
 
 Les étapes les plus couramment utilisées sont l’étape du nuanceur de vertex (VS) et l’étape du nuanceur de pixels (PS). Si vous ne fournissez même pas ces étapes de nuanceur, l’application utilise un nuanceur de vertex et un nuanceur de pixels directs sans opération par défaut.
 
-![diagramme du flux de données dans le pipeline programmable direct3d 11](images/d3d11-pipeline-stages.jpg)
+![diagramme du flux de données dans le pipeline programmable direct3d11](images/d3d11-pipeline-stages.jpg)
 
 ## <a name="input-assembler-stage"></a>Étape de l’assembleur d’entrée
 
@@ -36,7 +33,7 @@ Les étapes les plus couramment utilisées sont l’étape du nuanceur de vertex
 | | |
 |-|-|
 |Objectif|L’[étape de l’assembleur d’entrée (IA, Input Assembler)](input-assembler-stage--ia-.md) fournit au pipeline des données de primitive et de contiguïté, telles que des triangles, des lignes et des points, incluant des ID sémantiques pour améliorer l’efficacité des nuanceurs en restreignant le traitement aux primitives qui n’ont pas encore été traitées.|
-|Entrée|Données de primitive (triangles, lignes et/ou points) provenant de mémoires tampons en mémoire alimentées par l’utilisateur. Données de contiguïté éventuelles. Par exemple, il existe 3 vertex par triangle, et éventuellement 3 vertex pour les données de contiguïté par triangle.|
+|Entrée|Données de primitive (triangles, lignes et/ou points) provenant de mémoires tampons en mémoire alimentées par l’utilisateur. Données de contiguïté éventuelles. Par exemple, il existe 3vertex par triangle, et éventuellement 3vertex pour les données de contiguïté par triangle.|
 |Sortie|Primitives avec valeurs attachées générées par le système (par exemple, ID de primitive, ID d’instance ou ID de vertex).|
 | | |
 
@@ -71,8 +68,8 @@ Les étapes les plus couramment utilisées sont l’étape du nuanceur de vertex
 | | |
 |-|-|
 |Objectif|L’[étape du nuanceur de vertex (VS, Vertex Shader)](vertex-shader-stage--vs-.md) traite les vertex, notamment en leur appliquant des transformations, une apparence et un éclairage. Un nuanceur de vertex prend un vertex d’entrée spécifique et produit un seul vertex de sortie. Il applique différentes opérations par vertex, telles que des transformations, une morphose, ainsi que l’application d’une apparence et d’un éclairage.|
-|Entrée|Vertex unique, avec des valeurs VertexID et InstanceID générées par le système. Chaque vertex d’entrée d’un nuanceur de vertex peut comprendre jusqu’à 16 vecteurs de 32 bits (d’un maximum de 4 composants chacun).|
-|Sortie|Vertex unique. Chaque vertex de sortie peut également comprendre jusqu’à 16 vecteurs de 32 bits à 4 composants.|
+|Entrée|Vertex unique, avec des valeurs VertexID et InstanceID générées par le système. Chaque vertex d’entrée d'un nuanceur de vertex peut comprendre jusqu'à 16vecteurs de 32bits (d'un maximum de 4composants chacun).|
+|Sortie|Vertex unique. Chaque vertex de sortie peut également comprendre jusqu’à 16vecteurs de 32bits à 4composants.|
 | | |
 
 <!---
@@ -111,8 +108,8 @@ Les étapes les plus couramment utilisées sont l’étape du nuanceur de vertex
 | | |
 |-|-|
 |Objectif|L’[étape du nuanceur de coque (HS, Hull Shader)](hull-shader-stage--hs-.md) constitue l’une des étapes de pavage qui décomposent efficacement une surface unique d’un modèle en un grand nombre de triangles. Un nuanceur de coque est invoqué une fois par patch et transforme les points de contrôle d’entrée qui définissent une surface d’ordre bas en points de contrôle constituant un patch. Ce nuanceur effectue également certains calculs par patch afin de fournir des données pour l’étape du paveur (TS) et l’étape du nuanceur de domaine (DS).|
-|Entrée|Entre 1 et 32 points de contrôle d’entrée, qui définissent conjointement une surface d’ordre bas.|
-|Sortie|Entre 1 et 32 points de contrôle de sortie, qui composent un patch. Le nuanceur de coque déclare l’état requis par l’étape du paveur (TS), y compris le nombre de points de contrôle, le type de face du patch, ainsi que le type de partitionnement à utiliser lors du pavage.|
+|Entrée|Entre 1 et 32points de contrôle d’entrée, qui définissent conjointement une surface d’ordre bas.|
+|Sortie|Entre 1 et 32points de contrôle de sortie, qui composent un patch. Le nuanceur de coque déclare l’état requis par l’étape du paveur (TS), y compris le nombre de points de contrôle, le type de face du patch, ainsi que le type de partitionnement à utiliser lors du pavage.|
 | | |
 
 <!---
@@ -176,8 +173,8 @@ Les étapes les plus couramment utilisées sont l’étape du nuanceur de vertex
 
 | | |
 |-|-|
-|Objectif|L’[étape du nuanceur de domaine (DS, Domain Shader)](domain-shader-stage--ds-.md) calcule la position de vertex d’un point subdivisé dans le patch de sortie ; ce calcul porte sur la position de vertex correspondant à chaque échantillon de domaine. Un nuanceur de domaine est exécuté une fois par point de sortie de l’étape du paveur et dispose d’un accès en lecture seule au patch de sortie et aux constantes de patch de sortie du nuanceur de coque, ainsi qu’aux coordonnées UV de sortie de l’étape du paveur.|
-|Entrée|Un nuanceur de domaine consomme les points de contrôle de sortie de l’[étape du nuanceur de coque (HS)](hull-shader-stage--hs-.md). Les sorties du nuanceur de coque comprennent les éléments suivants : points de contrôle, données de constante de patch et facteurs de pavage (les facteurs de pavage peuvent inclure les valeurs utilisées par le paveur à fonction fixe et les valeurs brutes - avant l’arrondissement sous forme d’entier par le pavage - ce qui facilite notamment la géomorphose). Un nuanceur de domaine est invoqué une fois par coordonnée de sortie issue de l’[étape du paveur (TS)](tessellator-stage--ts-.md).|
+|Objectif|L’[étape du nuanceur de domaine (DS, Domain Shader)](domain-shader-stage--ds-.md) calcule la position de vertex d’un point subdivisé dans le patch de sortie; ce calcul porte sur la position de vertex correspondant à chaque échantillon de domaine. Un nuanceur de domaine est exécuté une fois par point de sortie de l’étape du paveur et dispose d’un accès en lecture seule au patch de sortie et aux constantes de patch de sortie du nuanceur de coque, ainsi qu’aux coordonnéesUV de sortie de l’étape du paveur.|
+|Entrée|Un nuanceur de domaine consomme les points de contrôle de sortie de l’[étape du nuanceur de coque (HS)](hull-shader-stage--hs-.md). Les sorties du nuanceur de coque comprennent les éléments suivants: points de contrôle, données de constante de patch et facteurs de pavage (les facteurs de pavage peuvent inclure les valeurs utilisées par le paveur à fonction fixe et les valeurs brutes - avant l’arrondissement sous forme d’entier par le pavage - ce qui facilite notamment la géomorphose). Un nuanceur de domaine est invoqué une fois par coordonnée de sortie issue de l’[étape du paveur (TS)](tessellator-stage--ts-.md).|
 |Sortie|L’étape du nuanceur de domaine (DS) produit en sortie la position de vertex d’un point subdivisé dans le patch de sortie.|
 | | |
 
@@ -294,8 +291,8 @@ Les étapes les plus couramment utilisées sont l’étape du nuanceur de vertex
 
 | | |
 |-|-|
-|Objectif|L’[étape du rastériseur ((RS, Rasterizer)](rasterizer-stage--rs-.md) extrait les primitives qui ne figurent pas dans la vue, prépare les primitives pour l’étape du nuanceur de pixels (PS) et détermine le mode d’invocation des nuanceurs de pixels. Cette étape convertit des informations de vecteur (composées de formes ou de primitives) en une image raster (constituée de pixels) afin d’afficher des graphismes 3D en temps réel.|
-|Entrée|Les vertex (X,Y,Z,W) introduits dans l’étape du rastériseur sont supposés se trouver dans un espace de découpage homogène. Dans cet espace de coordonnées, l’axe X pointe vers la droite, l’axe Y pointe vers le haut et l’axe Z pointe dans la direction opposée à la caméra.|
+|Objectif|L’[étape du rastériseur ((RS, Rasterizer)](rasterizer-stage--rs-.md) extrait les primitives qui ne figurent pas dans la vue, prépare les primitives pour l’étape du nuanceur de pixels (PS) et détermine le mode d’invocation des nuanceurs de pixels. Cette étape convertit des informations de vecteur (composées de formes ou de primitives) en une image raster (constituée de pixels) afin d’afficher des graphismes3D en temps réel.|
+|Entrée|Les vertex (X,Y,Z,W) introduits dans l’étape du rastériseur sont supposés se trouver dans un espace de découpage homogène. Dans cet espace de coordonnées, l’axeX pointe vers la droite, l’axeY pointe vers le haut et l’axeZ pointe dans la direction opposée à la caméra.|
 |Sortie|Pixels réels qui doivent faire l’objet du rendu. Inclut certains attributs de vertex à utiliser dans l’interpolation par le nuanceur de pixels.|
 | | |
 
@@ -328,8 +325,8 @@ Les étapes les plus couramment utilisées sont l’étape du nuanceur de vertex
 | | |
 |-|-|
 |Objectif|L’[étape du nuanceur de pixels (PS, Pixel Shader)](pixel-shader-stage--ps-.md) reçoit les données interpolées pour une primitive et génère des données par pixel telles que la couleur.|
-|Entrée|Lorsque le pipeline est configuré sans nuanceur de géométrie, un nuanceur de pixels est limité à 16 entrées 32 bits de 4 composants. Dans le cas contraire, un nuanceur de pixels peut prendre en charge jusqu’à 32 entrées 32 bits de 4 composants. Les données d’entrée du nuanceur de pixels comprennent les attributs de vertex (qui peuvent être interpolés avec ou sans correction de la perspective) ou peuvent être traitées en tant que constantes par primitive. Les entrées du nuanceur de pixels sont interpolées à partir des attributs de vertex de la primitive faisant l’objet de la rastérisation, en fonction du mode d’interpolation déclaré. Si une primitive est extraite avant la rastérisation, le mode d’interpolation est également respecté pendant le processus de découpage. |
-|Sortie|Un nuanceur de pixels peut produire en sortie jusqu’à 8 couleurs 32 bits de 4 composants, ou aucune couleur si le pixel est ignoré. Les composants du registre de sortie du nuanceur de pixels doivent être déclarés avant d’être utilisés ; un masque d’écriture de sortie distinct est autorisé pour chaque registre.|
+|Entrée|Lorsque le pipeline est configuré sans nuanceur de géométrie, un nuanceur de pixels est limité à 16entrées 32bits de 4composants. Dans le cas contraire, un nuanceur de pixels peut prendre en charge jusqu’à 32entrées 32bits de 4composants. Les données d’entrée du nuanceur de pixels comprennent les attributs de vertex (qui peuvent être interpolés avec ou sans correction de la perspective) ou peuvent être traitées en tant que constantes par primitive. Les entrées du nuanceur de pixels sont interpolées à partir des attributs de vertex de la primitive faisant l’objet de la rastérisation, en fonction du mode d’interpolation déclaré. Si une primitive est extraite avant la rastérisation, le mode d’interpolation est également respecté pendant le processus de découpage. |
+|Sortie|Un nuanceur de pixels peut produire en sortie jusqu’à 8couleurs 32bits de 4composants, ou aucune couleur si le pixel est ignoré. Les composants du registre de sortie du nuanceur de pixels doivent être déclarés avant d’être utilisés; un masque d’écriture de sortie distinct est autorisé pour chaque registre.|
 | | |
 
 <!---
@@ -414,4 +411,3 @@ Les étapes les plus couramment utilisées sont l’étape du nuanceur de vertex
  
 
  
-

@@ -7,18 +7,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: bfdb1b218676503699674c97fc962ad8161769dd
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: dbd68ceb310a53932108291cad3a33ea944b4d08
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="bluetooth-le-advertisements"></a>Annonces publicitaires BluetoothLE
 
-# <a name="bluetooth-le-advertisements"></a>Annonces publicitaires Bluetooth LE
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -28,10 +25,10 @@ Cet article fournit une vue d’ensemble des balises d’annonce Bluetooth Low E
 
 ## <a name="overview"></a>Vue d’ensemble
 
-Un développeur peut exécuter deux fonctions principales à l’aide des API d’annonce Bluetooth LE :
+Un développeur peut exécuter deuxfonctions principales à l’aide des API d’annonce BluetoothLE:
 
--   [Advertisement Watcher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx) : écouter les balises proches et les filtrer en fonction de la charge utile ou de la proximité.  
--   [Advertisement Publisher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx) : définir une charge utile pour Windows afin de créer des annonces au nom des développeurs.  
+-   [Advertisement Watcher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx): écouter les balises proches et les filtrer en fonction de la charge utile ou de la proximité.  
+-   [Advertisement Publisher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx): définir une charge utile pour Windows afin de créer des annonces au nom des développeurs.  
 
 L’exemple de code complet est disponible dans l’[exemple d’annonce Bluetooth](http://go.microsoft.com/fwlink/p/?LinkId=619990) sur Github.
 
@@ -45,7 +42,7 @@ Pour utiliser les fonctionnalités Bluetooth LE de base dans une application de 
 
 ## <a name="publishing-advertisements"></a>Publication d’annonces publicitaires
 
-Les annonces Bluetooth LE permettent à votre appareil de baliser en permanence une charge utile spécifique, appelée annonce publicitaire. Cette annonce est visible par n’importe quel appareil compatible Bluetooth LE à proximité, s’il est configuré pour écouter cette annonce spécifiquement.
+Les annonces BluetoothLE permettent à votre appareil de baliser en permanence une charge utile spécifique, appelée annonce publicitaire. Cette annonce est visible par n’importe quel appareil compatible BluetoothLE à proximité, s’il est configuré pour écouter cette annonce spécifiquement.
 
 **Remarque** Pour préserver la confidentialité des utilisateurs, la durée de vie de votre annonce est liée à celle de votre application. Vous pouvez créer une annonce BluetoothLEAdvertisementPublisher et appeler Start dans une tâche en arrière-plan pour l’annonce en arrière-plan. Pour plus d’informations sur les tâches en arrière-plan, consultez [Lancement, reprise et tâches en arrière-plan](https://msdn.microsoft.com/windows/uwp/launch-resume/index).
 
@@ -87,7 +84,7 @@ publisher.Start();
 
 ### <a name="basic-watching"></a>Visionnage de base
 
-Le code suivant montre comment créer un observateur d’annonces Bluetooth LE, définir un rappel et commencer à visionner toutes les annonces LE.
+Le code suivant montre comment créer un observateur d’annonces BluetoothLE, définir un rappel et commencer à visionner toutes les annoncesLE.
 
 ```csharp
 BluetoothLEAdvertisementWatcher watcher = new BluetoothLEAdvertisementWatcher();
@@ -111,7 +108,7 @@ watcher.ScanningMode = BluetoothLEScanningMode.Active;
 
 ### <a name="watching-for-a-specific-advertisement-pattern"></a>Visionnage d’un modèle d’annonce spécifique
 
-Parfois, vous voulez écouter une annonce spécifique. Dans ce cas, écoutez une annonce contenant une charge utile avec une société fictive (identifiée par 0xFFFE) et contenant la chaîne *Hello World*. Vous pouvez associer cette information à l’exemple Publication de base pour obtenir une machine Windows qui émet l’annonce et une autre qui l’affiche. N’oubliez pas de définir ce filtre d’annonce avant de lancer l’observateur !
+Parfois, vous voulez écouter une annonce spécifique. Dans ce cas, écoutez une annonce contenant une charge utile avec une société fictive (identifiée par 0xFFFE) et contenant la chaîne *Hello World*. Vous pouvez associer cette information à l’exemple Publication de base pour obtenir une machine Windows qui émet l’annonce et une autre qui l’affiche. N’oubliez pas de définir ce filtre d’annonce avant de lancer l’observateur!
 
 ```csharp
 var manufacturerData = new BluetoothLEManufacturerData();
@@ -148,7 +145,7 @@ watcher.SignalStrengthFilter.OutOfRangeTimeout = TimeSpan.FromMilliseconds(2000)
 
 ### <a name="gauging-distance"></a>Estimation de la distance
 
-Lorsque le rappel de votre observateur Bluetooth LE se déclenche, les arguments eventArgs incluent une valeur RSSI indiquant la force du signal reçu (autrement dit, la qualité du signal Bluetooth).
+Lorsque le rappel de votre observateur BluetoothLE se déclenche, les arguments eventArgs incluent une valeur RSSI indiquant la force du signal reçu (autrement dit, la qualité du signal Bluetooth).
 
 ```csharp
 private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watcher, BluetoothLEAdvertisementReceivedEventArgs eventArgs)
@@ -160,4 +157,4 @@ private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watch
 
 Cette valeur peut être convertie en une distance, mais ne doit pas servir à mesurer des distances réelles, car chaque radio est différente. Différents facteurs environnementaux peuvent compliquer l’évaluation de la distance (comme les murs, le boîtier de la radio et même l’humidité ambiante).
 
-Une autre solution permettant d’évaluer une distance consiste à définir des « compartiments ». Les radios ont tendance à émettre entre 0 et 50 dBm quand elles sont très proches, entre -50 et -90 lorsqu’elles sont à moyenne distance, et au-dessous de -90 lorsqu’elles sont éloignées. La méthode d’ajustement par tâtonnements est la meilleure pour déterminer les compartiments idéaux pour votre application.
+Une autre solution permettant d’évaluer une distance consiste à définir des «compartiments». Les radios ont tendance à émettre entre0 et50dBm quand elles sont très proches, entre -50 et -90 lorsqu’elles sont à moyenne distance, et au-dessous de -90 lorsqu’elles sont éloignées. La méthode d’ajustement par tâtonnements est la meilleure pour déterminer les compartiments idéaux pour votre application.

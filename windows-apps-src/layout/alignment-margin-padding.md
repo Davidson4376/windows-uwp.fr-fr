@@ -11,12 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: aba82e911a0641378378bee66d0b07e665ac4b5a
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 86052c0d3224ffe2a9312d2e48c5398a7466eeb0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="alignment-margin-and-padding"></a>Alignement, marge et espacement
 
@@ -48,7 +46,7 @@ La propriété [**Margin**](https://msdn.microsoft.com/library/windows/apps/br20
 
 Dans le comportement de disposition général, les composants d’une valeur [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) sont contraints en dernier et uniquement lorsque [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) et [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) ont déjà été contraints jusqu’à 0. Vous devez donc faire attention aux marges quand le conteneur tronque ou contraint déjà l’élément, car votre marge pourrait entraîner le non-affichage d’un élément (car l’une de ses dimensions a été contrainte à 0 après l’application de la marge).
 
-Les valeurs de marge peuvent être uniformisées grâce à l’utilisation d’une syntaxe telle que `Margin="20"`. Avec cette syntaxe, une marge uniforme de 20 pixels est appliquée à l’élément, avec une marge de 20 pixels à gauche, en haut, à droite et en bas. Les quatre valeurs de marge peuvent également être distinctes, chacune décrivant une marge distincte à appliquer à gauche, en haut, à droite et en bas (dans cet ordre). Exemple : `Margin="0,10,5,25"`. Le type sous-jacent pour la propriété [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) est une structure [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864), qui a des propriétés qui contiennent les valeurs [**Left**](https://msdn.microsoft.com/library/windows/apps/hh673893), [**Top**](https://msdn.microsoft.com/library/windows/apps/hh673840), [**Right**](https://msdn.microsoft.com/library/windows/apps/hh673881), et [**Bottom**](https://msdn.microsoft.com/library/windows/apps/hh673775) comme valeurs **Double** distinctes.
+Les valeurs de marge peuvent être uniformisées grâce à l’utilisation d’une syntaxe telle que `Margin="20"`. Avec cette syntaxe, une marge uniforme de 20pixels est appliquée à l’élément, avec une marge de 20pixels à gauche, en haut, à droite et en bas. Les quatre valeurs de marge peuvent également être distinctes, chacune décrivant une marge distincte à appliquer à gauche, en haut, à droite et en bas (dans cet ordre). Exemple : `Margin="0,10,5,25"`. Le type sous-jacent pour la propriété [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) est une structure [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864), qui a des propriétés qui contiennent les valeurs [**Left**](https://msdn.microsoft.com/library/windows/apps/hh673893), [**Top**](https://msdn.microsoft.com/library/windows/apps/hh673840), [**Right**](https://msdn.microsoft.com/library/windows/apps/hh673881), et [**Bottom**](https://msdn.microsoft.com/library/windows/apps/hh673775) comme valeurs **Double** distinctes.
 
 Les marges s’ajoutent. Par exemple, si deux éléments spécifient chacun une marge uniforme de 10 pixels et qu’il s’agit d’homologues adjacents dans une orientation quelconque, la distance entre les éléments est de 20 pixels.
 
@@ -64,7 +62,7 @@ Une propriété **Padding** décrit la distance entre un élément et tout conte
 
 -   [**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459) : hérite de toutes les classes dérivées [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390). Comme les contrôles ne possèdent pas tous du contenu, pour certains contrôles (par exemple [**AppBarSeparator**](https://msdn.microsoft.com/library/windows/apps/dn279268)), cette propriété n’a aucun effet. Si le contrôle a une bordure (voir [**Control.BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209399)), l’espacement s’applique à l’intérieur de celle-ci.
 -   [**Border.Padding**](https://msdn.microsoft.com/library/windows/apps/br209263) : définit l’espace entre la ligne de rectangle créée par [**BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209256)/[**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209254) et l’élément [**Child**](https://msdn.microsoft.com/library/windows/apps/br209258).
--   [**ItemsPresenter.Padding**](https://msdn.microsoft.com/library/windows/apps/hh968021) : contribue à l’apparence des éléments visuels générés dans les contrôles d’éléments, en plaçant l’espacement spécifié autour de chaque élément.
+-   [**ItemsPresenter.Padding**](https://msdn.microsoft.com/library/windows/apps/hh968021): contribue à l’apparence des éléments visuels générés dans les contrôles d’éléments, en plaçant l’espacement spécifié autour de chaque élément.
 -   [**TextBlock.Padding**](https://msdn.microsoft.com/library/windows/apps/br209673) et [**RichTextBlock.Padding**](https://msdn.microsoft.com/library/windows/apps/br227596) : étend le cadre englobant autour du texte de l’élément de texte. Ces éléments de texte n’ayant pas de **Background**, il peut être difficile de voir quel est l’espacement du texte par rapport à d’autres comportements de disposition appliqués par le conteneur de l’élément de texte. Pour cette raison, l’espacement d’élément de texte est rarement utilisé et l’on utilise plus souvent des paramètres [**Margin**](https://msdn.microsoft.com/library/windows/apps/jj191725) sur des conteneurs [**Block**](https://msdn.microsoft.com/library/windows/apps/br244379) contenus (pour le cas [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)).
 
 Dans chacun de ces cas, le même élément a aussi une propriété **Margin**. Si une marge et un espacement sont appliqués, ils s’ajoutent. Autrement dit, la distance apparente entre un conteneur extérieur et tout contenu intérieur est égale à la marge plus l’espacement. Si des valeurs d’arrière-plan différentes sont appliquées au contenu, à l’élément ou au conteneur, le point où la marge se termine et où l’espacement commence est potentiellement visible dans le rendu.
@@ -83,4 +81,3 @@ Les propriétés [**Height**](https://msdn.microsoft.com/library/windows/apps/br
 * [**FrameworkElement.VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
 * [**FrameworkElement.Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
 * [**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
-

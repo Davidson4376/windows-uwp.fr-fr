@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ae2754f543a3bc799b3d5af4c5c3c46f654c1ed7
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 6b69a2e69948e1d774abe78ba0958aa48ba4d318
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-write-and-read-a-file"></a>Créer, écrire et lire un fichier
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -187,7 +184,7 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 ```
 
-**Lecture de texte dans un fichier via une mémoire tampon (2 étapes)**
+**Lecture de texte dans un fichier via une mémoire tampon (2étapes)**
 
 1.  Commencez par appeler la méthode [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) de la classe [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440).
 > [!div class="tabbedCodeSnippets"]
@@ -263,4 +260,3 @@ Dim dataReader As New DataReader(inputStream)
  
 
  
-

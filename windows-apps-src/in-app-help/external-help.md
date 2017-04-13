@@ -9,15 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: 56afd553-c520-4a28-b63d-2e1b3c1d3606
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: dbe54f5c033a14ad6f9d8acae6b1ec3e62eead67
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 27b3fa1d1765d548e0d290d989eac542e63bc853
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="external-help-pages"></a>Pages d’aide externe
 
 
@@ -32,7 +29,7 @@ Si votre contenu d’aide est bref ou suffisamment spécifique pour être affich
 
 ## <a name="navigating-external-help-pages"></a>Navigation dans les pages d’aide externe
 
-Lorsqu’un utilisateur est dirigé vers une page d’aide externe, deux scénarios s’offrent à lui :
+Lorsqu’un utilisateur est dirigé vers une page d’aide externe, deuxscénarios s’offrent à lui:
 -   Les utilisateurs sont dirigés directement vers la page correspondant au problème connu. Il s’agit d’une aide contextuelle, qui doit être utilisée dans la mesure du possible.
 -   Ils sont dirigés vers une page d’aide générale affichant clairement les catégories et sous-catégories à choisir.
 
@@ -48,4 +45,3 @@ Les pages d’aide externe sont l’endroit idéal pour proposer des didacticiel
 ## <a name="related-articles"></a>Articles connexes
 
 * [Recommandations en matière d’aide de l’application](guidelines-for-app-help.md)
-

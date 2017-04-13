@@ -2,21 +2,17 @@
 title: "Étape du nuanceur de coque (HS)"
 description: "L’étape du nuanceur de coque (HS, Hull Shader) constitue l’une des étapes de pavage qui décomposent efficacement une surface unique d’un modèle en un grand nombre de triangles."
 ms.assetid: C62F6F15-CAD7-4C72-9735-00762E346C4C
-keywords:
-- "Étape du nuanceur de coque (HS)"
+keywords: "Étape du nuanceur de coque (HS)"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 17608ac181b8cd9af2e518cc32461441bff616da
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ea1aaea93e585259eba141c5d23c7a7dcb0dd4c3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="hull-shader-hs-stage"></a>Étape du nuanceur de coque (HS)
 
 
@@ -39,7 +35,7 @@ Un nuanceur de coque opère en deux phases, une phase de points de contrôle et 
 ## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Entrée
 
 
-Entre 1 et 32 points de contrôle d’entrée, qui définissent conjointement une surface d’ordre bas.
+Entre 1 et 32points de contrôle d’entrée, qui définissent conjointement une surface d’ordre bas.
 
 -   Le nuanceur de coque déclare l’état requis par l’[étape du paveur (TS)](tessellator-stage--ts-.md). Cet état inclut des informations telles que le nombre de points de contrôle, le type de face de patch et le type de partitionnement à utiliser lors du pavage. Ces informations apparaissent sous forme de déclarations qui précèdent généralement le code du nuanceur.
 -   Les facteurs de pavage déterminent la quantité de subdivision de chaque patch.
@@ -47,10 +43,10 @@ Entre 1 et 32 points de contrôle d’entrée, qui définissent conjointement u
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Sortie
 
 
-Entre 1 et 32 points de contrôle de sortie, qui composent un patch.
+Entre 1 et 32points de contrôle de sortie, qui composent un patch.
 
--   La sortie du nuanceur est comprise entre 1 et 32 points de contrôle, quel que soit le nombre de facteurs de pavage. Les points de contrôle sortis par un nuanceur de coque peuvent être consommés par l’étape du nuanceur de domaine. Les données de constante de patch peuvent être consommées par un nuanceur de domaine. Les facteurs de pavage peuvent être consommés par l’[étape du paveur (TS)](tessellator-stage--ts-.md) et par l’[étape du nuanceur de domaine (DS)](domain-shader-stage--ds-.md).
--   Si le nuanceur de coque définit un facteur de pavage d’arête sur une valeur ≤ 0 ou NaN (n’est pas un nombre), le patch sera éliminé (omis). En conséquence, l’étape du paveur pourra ou non s’exécuter, le nuanceur de domaine ne s’exécutera pas, et aucune sortie visible ne sera générée pour ce patch.
+-   La sortie du nuanceur est comprise entre 1 et 32points de contrôle, quel que soit le nombre de facteurs de pavage. Les points de contrôle sortis par un nuanceur de coque peuvent être consommés par l’étape du nuanceur de domaine. Les données de constante de patch peuvent être consommées par un nuanceur de domaine. Les facteurs de pavage peuvent être consommés par l’[étape du paveur (TS)](tessellator-stage--ts-.md) et par l’[étape du nuanceur de domaine (DS)](domain-shader-stage--ds-.md).
+-   Si le nuanceur de coque définit un facteur de pavage d’arête sur une valeur≤0 ou NaN (n’est pas un nombre), le patch sera éliminé (omis). En conséquence, l’étape du paveur pourra ou non s’exécuter, le nuanceur de domaine ne s’exécutera pas, et aucune sortie visible ne sera générée pour ce patch.
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Exemple
 
@@ -71,7 +67,7 @@ MyOutPoint main(uint Id : SV_ControlPointID,
 }
 ```
 
-Consultez l’article [Procédure : Création d’un nuanceur de coque](https://msdn.microsoft.com/library/windows/desktop/ff476338).
+Consultez l’article [Procédure: Création d’un nuanceur de coque](https://msdn.microsoft.com/library/windows/desktop/ff476338).
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Articles connexes
 
@@ -81,7 +77,6 @@ Consultez l’article [Procédure : Création d’un nuanceur de coque](https:/
  
 
  
-
 
 
 

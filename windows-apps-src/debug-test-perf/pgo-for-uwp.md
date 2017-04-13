@@ -1,13 +1,11 @@
 ---
 title: "Exécution de l’optimisation guidée par profil (PGO) sur des applications de plateforme Windows universelle (UWP)"
 author: erwals-msft
-translationtype: Human Translation
-ms.sourcegitcommit: cb0c425b9764cb20aeab500a0c47db9f573a0042
 ms.openlocfilehash: 60182879f9cf3d364974d6ec4d3c26ec76e0e105
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# Exécution de l’optimisation guidée par profil sur des applications de plateforme Windows universelle 
+# <a name="running-profile-guided-optimization-on-universal-windows-platform-apps"></a>Exécution de l’optimisation guidée par profil sur des applications de plateforme Windows universelle 
  
 Cette rubrique vous guide pas à pas dans l’application de l’optimisation guidée par profil aux applications de plateforme Windows universelle (UWP). Les étapes disponibles pour les applications win32 classiques ne sont pas toutes disponibles pour les applications UWP. Notre objectif consiste donc à expliquer le processus nécessaire pour incorporer la PGO afin de faciliter l’optimisation et la rendre plus accessible aux développeurs UWP.
 
@@ -77,14 +75,8 @@ Pour appliquer la PGO au modèle d’application DirectX11:
  
 10. À présent que le projet est généré, l’éditeur de liens appelle pgomgr.exe pour fusionner tous les fichiers `<PGDName>!*.pgc` du fichier .pgd avec une pondération de1 par défaut, et l’application résultante est optimisée en fonction des données de profilage.
 
-## Voir également
+## <a name="see-also"></a>Voir également
 - [Performances](performance-and-xaml-ui.md)
 
  
-
-
-
-
-<!--HONumber=Sep16_HO2-->
-
 

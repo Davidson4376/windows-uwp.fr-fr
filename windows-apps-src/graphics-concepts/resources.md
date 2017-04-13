@@ -2,27 +2,23 @@
 title: Ressources
 description: "Une ressource est une zone de mémoire accessible par le pipeline Direct3D."
 ms.assetid: 2E68E5A8-83DA-4DC8-B7F3-B8988CF8090C
-keywords:
-- Ressources
+keywords: Ressources
 author: mtoepke
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a95762696905bcb5e1ae900c96a47ee9fc5d1a73
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 361e5e1489e976776015ec9401f1473b9d3c8bdd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="resources"></a>Ressources
 
 
-Une ressource est une zone de mémoire accessible par le pipeline Direct3D. Pour permettre un accès efficace du pipeline à la mémoire, les données fournies au pipeline (géométrie d’entrée, ressources des nuanceurs et textures) doivent être stockées dans une ressource. Il existe 2 types de ressources à partir desquelles l’ensemble des ressources Direct3D dérivent : une mémoire tampon et une texture. Jusqu’à 128 ressources peuvent être actives à chaque étape du pipeline.
+Une ressource est une zone de mémoire accessible par le pipeline Direct3D. Pour permettre un accès efficace du pipeline à la mémoire, les données fournies au pipeline (géométrie d’entrée, ressources des nuanceurs et textures) doivent être stockées dans une ressource. Il existe 2types de ressources à partir desquelles l’ensemble des ressources Direct3D dérivent: une mémoire tampon et une texture. Jusqu’à 128ressources peuvent être actives à chaque étape du pipeline.
 
-Chaque application crée généralement un grand nombre de ressources. Exemples de ressources : tampons de sommet, tampon d’index, tampon de constante textures et ressources de nuanceur. La façon dont les ressources peuvent être utilisées est déterminée par plusieurs options. Vous pouvez créer des ressources plus ou moins typées, contrôler si les ressources disposent d’un accès en lecture et écriture, et rendre des ressources accessibles à l’UC, au processeur graphique ou aux deux. Naturellement, vous devrez faire des compromis entre vitesse et fonctionnalité : plus vous accordez de ressources à une fonctionnalité, moins les performances sont optimales.
+Chaque application crée généralement un grand nombre de ressources. Exemples de ressources: tampons de sommet, tampon d’index, tampon de constante textures et ressources de nuanceur. La façon dont les ressources peuvent être utilisées est déterminée par plusieurs options. Vous pouvez créer des ressources plus ou moins typées, contrôler si les ressources disposent d’un accès en lecture et écriture, et rendre des ressources accessibles à l’UC, au processeur graphique ou aux deux. Naturellement, vous devrez faire des compromis entre vitesse et fonctionnalité: plus vous accordez de ressources à une fonctionnalité, moins les performances sont optimales.
 
 Étant donné qu’une application utilise souvent de nombreuses textures, Direct3D propose également un concept de tableau de textures pour simplifier la gestion. Un tableau de textures contient une ou plusieurs textures (toutes de même type et mêmes dimensions) qui peuvent être indexés à partir d’une application ou par les nuanceurs. Les tableaux de textures vous permettent d’accéder à de nombreuses textures via une interface unique avec plusieurs index. Vous pouvez créer autant de tableaux de textures que nécessaire pour gérer vos différents types de textures.
 
@@ -47,7 +43,7 @@ Une vue de ressources fournit un modèle général d’accès à une ressource (
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Types de ressource](resource-types.md)</p></td>
-<td align="left"><p>Les différents types de ressources ont une disposition (ou un encombrement mémoire) distinct(e). Toutes les ressources utilisées par le pipeline Direct3D dérivent de deux types de ressources de base : les [tampons](resource-types.md#buffer-resources) et les [textures](resource-types.md#texture-resources). Un tampon est un ensemble de données brutes (éléments) ; une texture est un ensemble de texels (éléments de texture).</p></td>
+<td align="left"><p>Les différents types de ressources ont une disposition (ou un encombrement mémoire) distinct(e). Toutes les ressources utilisées par le pipeline Direct3D dérivent de deux types de ressources de base: les [tampons](resource-types.md#buffer-resources) et les [textures](resource-types.md#texture-resources). Un tampon est un ensemble de données brutes (éléments); une texture est un ensemble de texels (éléments de texture).</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Choix d’une ressource](choosing-a-resource.md)</p></td>
@@ -76,4 +72,3 @@ Une vue de ressources fournit un modèle général d’accès à une ressource (
 [Règles en matière de virgule flottante](floating-point-rules.md)
 
 [Conversion de types de données](data-type-conversion.md)
-

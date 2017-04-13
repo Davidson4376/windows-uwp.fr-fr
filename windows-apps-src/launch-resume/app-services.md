@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 63c0634905b14ca9f9546c9fcc678c05edb67780
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 1a9647a9b915359f00ac22c88b715c9e938f6110
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="use-app-services"></a>Utiliser les services d’application
 
 Cette section décrit comment intégrer les services d’application dans votre application UWP pour autoriser le partage des données et des fonctionnalités entre les applications.
@@ -27,3 +24,4 @@ Cette section décrit comment intégrer les services d’application dans votre 
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Communiquer avec un service d’application distant](communicate-with-a-remote-app-service.md)
+* [Exemples d’applications de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices) 

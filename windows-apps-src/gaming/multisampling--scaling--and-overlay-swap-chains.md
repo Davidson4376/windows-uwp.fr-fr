@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, jeux, mise à l’échelle de chaînes d’échange, superpositions, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 02088fce03c88b4166d49cd36754ac956f254199
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="swap-chain-scaling-and-overlays"></a>Mise à l’échelle et superpositions de chaînes d’échange
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Apprenez à créer des chaînes d’échange mises à l’échelle pour accélérer le rendu sur les appareils mobiles, et utilisez la superposition des chaînes d’échange (quand cela est possible) pour améliorer la qualité visuelle.
 
@@ -201,7 +198,7 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
     }
     ```
 
-4.  Les chaînes de permutation de premier plan utilisent toujours un alpha prémultiplié. Les valeurs de couleur de chaque pixel sont censées être déjà multipliées par la valeur alpha avant la présentation de l’image. Par exemple, un pixel BVRA (bleu/vert/rouge/alpha) 100 % blanc, ayant 50 % d’alpha, a la valeur (0.5, 0.5, 0.5, 0.5).
+4.  Les chaînes de permutation de premier plan utilisent toujours un alpha prémultiplié. Les valeurs de couleur de chaque pixel sont censées être déjà multipliées par la valeur alpha avant la présentation de l’image. Par exemple, un pixel BVRA (bleu/vert/rouge/alpha) 100% blanc, ayant 50% d’alpha, a la valeur (0.5, 0.5, 0.5, 0.5).
 
     L’étape de prémultiplication alpha peut être effectuée à l’étape de fusion/sortie en appliquant un état de fusion d’application (voir [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)) avec le champ **SrcBlend** de la structure [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) défini à **D3D11\_SRC\_ALPHA**. Il est également possible d’utiliser des valeurs alpha prémultipliées.
 
@@ -329,7 +326,6 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
  
 
  
-
 
 
 

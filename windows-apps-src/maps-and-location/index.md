@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, carte, emplacement, services de carte"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6ab167cb032cffba11e7e90e3aefe91bd1c21d74
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp, carte, emplacement, services de carte
+ms.openlocfilehash: 33cf0a7a69ff40434ecb46977e4a6f67ca2a07e4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="maps-and-location-overview"></a>Vue d’ensemble des cartes et de l’emplacement
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cette section explique comment afficher des cartes, utiliser les services de carte, rechercher l’emplacement et configurer une limite géographique dans votre application. Cette section vous montre également comment lancer l’application Cartes Windows pour obtenir une carte, un itinéraire ou un ensemble d’itinéraires détaillés spécifique.
@@ -33,13 +30,13 @@ Cette section explique comment afficher des cartes, utiliser les services de car
 ## <a name="display-maps"></a>Afficher des cartes
 
 
-Affichez des cartes avec des vues 2D, 3D ou Streetview dans votre application à l’aide des API de l’espace de noms [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751). Vous pouvez marquer des points d’intérêt sur la carte grâce à des punaises, des images, des formes ou des éléments d’interface utilisateur XAML. Vous pouvez également superposer des images sous forme de vignettes ou remplacer entièrement les images de la carte.
+Affichez des cartes avec des vues2D, 3D ou Streetview dans votre application à l’aide des API de l’espace de noms [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751). Vous pouvez marquer des points d’intérêt sur la carte grâce à des punaises, des images, des formes ou des éléments d’interface utilisateur XAML. Vous pouvez également superposer des images sous forme de vignettes ou remplacer entièrement les images de la carte.
 
 | Rubrique | Description |
 |-------|-------------|
 | [Demander une clé d’authentification de cartes](authentication-key.md) | Pour pouvoir utiliser le [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) et les services de carte dans l’espace de noms [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979), votre application doit être authentifiée. Pour authentifier votre application, vous devez spécifier une clé d’authentification de cartes. Cet article décrit comment demander une clé d’authentification de cartes au [Centre de développement Bing Cartes](https://www.bingmapsportal.com/) et comment l’ajouter à votre application. |
 | [Contrôle de carte](controls-map.md) | Le contrôle de carte peut afficher des cartes routières et des vues aériennes, des itinéraires, des résultats de recherche et des informations sur la circulation. |
-| [Afficher des cartes avec des vues 2D, 3D et Streetside](display-maps.md) | Affichez des cartes personnalisables dans votre application en utilisant la classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Cette rubrique présente également des vues 3D aériennes et Streetside. |
+| [Afficher des cartes avec des vues2D, 3D et Streetside](display-maps.md) | Affichez des cartes personnalisables dans votre application en utilisant la classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). Cette rubrique présente également des vues3D aériennes et Streetside. |
 | [Afficher les points d’intérêt sur une carte](display-poi.md) | Ajoutez des points d’intérêt à une carte à l’aide de punaises, d’images, de formes et d’éléments d’interface utilisateur XAML. |
 | [Superposer des images sous forme de vignettes sur une carte](overlay-tiled-images.md) | Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...), ou pour remplacer entièrement la carte par défaut. |
 
@@ -69,9 +66,9 @@ Utilisez les API de l’espace de noms [**Windows.Devices.Geolocation**](https:/
 | [Recommandations en matière de conception pour le géorepérage](guidelines-for-geofencing.md) | Recommandations en matière de performances pour les applications qui utilisent la fonctionnalité de géorepérage. |
 | [Configurer une limite géographique](set-up-a-geofence.md) | Configurez une limite géographique dans votre application et découvrez comment gérer les notifications au premier plan et en arrière-plan. |
 
-## <a name="launch-the-windows-maps-app"></a>Lancer l’application Cartes Windows
+## <a name="launch-the-windows-maps-app"></a>Lancer l’application CartesWindows
 
-Votre application peut lancer l’application Cartes Windows, comme illustré ici, pour afficher des cartes et des itinéraires détaillés spécifiques. Au lieu de fournir des fonctionnalités de carte directement dans votre application, envisagez d’utiliser l’application Cartes Windows. Pour plus d’informations, voir [Lancer l’application Cartes Windows](https://msdn.microsoft.com/library/windows/apps/mt228341).
+Votre application peut lancer l’application Cartes Windows, comme illustré ici, pour afficher des cartes et des itinéraires détaillés spécifiques. Au lieu de fournir des fonctionnalités de carte directement dans votre application, envisagez d’utiliser l’application Cartes Windows. Pour plus d’informations, voir [Lancer l’application CartesWindows](https://msdn.microsoft.com/library/windows/apps/mt228341).
 
 ![Exemple de l’application Cartes Windows.](images/mapnyc.png)
 
@@ -84,6 +81,5 @@ Votre application peut lancer l’application Cartes Windows, comme illustré ic
 * [Recommandations en matière de conception pour les applications prenant en charge la géolocalisation](guidelines-and-checklist-for-detecting-location.md)
 * [Recommandations en matière de conception pour les cartes](controls-map.md)
 * [Recommandations en matière conception pour les applications prenant en charge la confidentialité](https://msdn.microsoft.com/library/windows/apps/hh768223)
-* [Vidéos de la build 2015 : utilisation de cartes et de localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Vidéos de la build 2015: utilisation de cartes et de localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Exemple d’application de trafic UWP](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-

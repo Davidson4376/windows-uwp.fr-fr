@@ -2,27 +2,24 @@
 author: mcleanbyron
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
 description: "En savoir plus sur les tailles des bannières publicitaires prises en charge."
-title: "Tailles de bannières publicitaires prises en charge"
+title: "Tailles des bannières prises en charge"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, publicités, publicité, tailles, bannière"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0c0ae3dbb197b166993a71bad80a05b11c5d815f
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, annonces, publicités, tailles, bannière"
+ms.openlocfilehash: 6f8e679a31da140911306110027e1fdc041df399
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="supported-ad-sizes-for-banner-ads"></a>Tailles de bannières publicitaires prises en charge
-
+# <a name="supported-banner-ad-sizes"></a>Tailles des bannières prises en charge
 
 
-Microsoft Advertising prend en charge les tailles de bannières publicitaires suivantes :
 
-## <a name="windows-10-mobile-and-windows-phone-8x"></a>Windows 10 Mobile et Windows Phone 8x
+MicrosoftAdvertising prend en charge les tailles de bannières publicitaires suivantes:
+
+## <a name="windows-10-mobile-and-windows-phone-8x"></a>Windows10 Mobile et WindowsPhone8x
 
 <table>
 <colgroup>
@@ -57,7 +54,7 @@ Microsoft Advertising prend en charge les tailles de bannières publicitaires s
 
  
 
-## <a name="windows-10-uwp-and-windows-81"></a>Windows 10 (UWP) et Windows 8.1
+## <a name="windows-10-uwp-and-windows-81"></a>Windows10 (UWP) et Windows8.1
 
 <table>
 <colgroup>
@@ -95,4 +92,3 @@ Microsoft Advertising prend en charge les tailles de bannières publicitaires s
  
 
  
-

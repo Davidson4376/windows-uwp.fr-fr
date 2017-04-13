@@ -2,21 +2,17 @@
 title: "Choix d’une ressource"
 description: "Une ressource est une collection de données utilisées par le pipeline 3D."
 ms.assetid: 6BAD6287-2930-42F8-BF51-69A379D1D2C3
-keywords:
-- "Choix d’une ressource"
+keywords: "Choix d’une ressource"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 73f2d2f6b6a925a425c94bcf1b5f957a82569236
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1722558dfbb9620d4d265a2a479109366780a514
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="choosing-a-resource"></a>Choix d’une ressource
 
 
@@ -85,7 +81,7 @@ Une ressource peut être liée à plusieurs étapes du pipeline simultanément t
 
 Lors de la liaison d'une ressource, considérez la manière dont celle-ci sera accessible au processeur graphique et à l'UC. Les ressources conçues pour un seul objet (qui n'utilisent pas plusieurs indicateurs d'utilisation, de liaison et d'accès UC) produisent généralement de meilleures performances.
 
-Considérez, par exemple, le cas d’une cible de rendu utilisée plusieurs fois comme texture. Il peut être plus rapide d’avoir deux ressources : une cible de rendu et une texture utilisée comme ressource de nuanceur. Chaque ressource utiliserait dans ce cas un seul indicateur de liaison, spécifiant « cible de rendu » ou « ressource de nuanceur ». Les données sont copiées de la texture cible de rendu vers la texture de nuanceur.
+Considérez, par exemple, le cas d’une cible de rendu utilisée plusieurs fois comme texture. Il peut être plus rapide d’avoir deux ressources: une cible de rendu et une texture utilisée comme ressource de nuanceur. Chaque ressource utiliserait dans ce cas un seul indicateur de liaison, spécifiant «cible de rendu» ou «ressource de nuanceur». Les données sont copiées de la texture cible de rendu vers la texture de nuanceur.
 
 La technique employée dans cet exemple peut améliorer les performances en isolant l’opération d'écriture de la cible de rendu de l'opération de lecture de la texture de nuanceur. L'idéal est de mettre en œuvre les deux approches et d'évaluer les différences de performances dans votre application.
 
@@ -97,7 +93,6 @@ La technique employée dans cet exemple peut améliorer les performances en isol
  
 
  
-
 
 
 

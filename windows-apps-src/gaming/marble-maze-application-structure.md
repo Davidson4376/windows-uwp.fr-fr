@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, jeux, exemple, directx, structure
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 1045bed8d7e4e8f9ead1c144dda02f900d0eb996
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="marble-maze-application-structure"></a>Structure de l’application Marble Maze
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 La structure d’une application de plateforme Windows universelle (UWP) en DirectX diffère de celle d’une application de bureau classique. Au lieu de fonctionner avec des types de handle tels que **HWND** et des fonctions telles que **CreateWindow**, Windows Runtime fournit des interfaces comme [**Windows::UI::Core::ICoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208296). Vous pouvez ainsi développer des applications pour UWP grâce à une approche orientée objet plus moderne. Cette section montre comment le code de l’application Marble Maze est structuré.
@@ -28,7 +25,7 @@ La structure d’une application de plateforme Windows universelle (UWP) en Dire
 
  
 ## 
-Ce document aborde certains points importants relatifs à la structure de votre code de jeu :
+Ce document aborde certains points importants relatifs à la structure de votre code de jeu:
 
 -   Dans la phase d’initialisation, configurez les composants d’exécution et de bibliothèque utilisés par votre jeu. Chargez également les ressources spécifiques au jeu.
 -   Les applications pour UWP doivent commencer à traiter les événements dans un délai de 5 secondes après le lancement. Ne chargez donc que les ressources nécessaires quand vous chargez votre application. Les jeux doivent charger une grande quantité de ressources en arrière-plan et afficher un écran de progression.
@@ -128,7 +125,7 @@ La classe **MarbleMaze** définit l’indicateur *m\_deferredResourcesReady* pou
 
 Pour plus d’informations sur la programmation asynchrone dans les applications UWP, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
-> **Conseil**  Si vous écrivez le code de jeu qui fait partie d’une bibliothèque C++ Windows Runtime (en d’autres termes, une DLL), prenez connaissance de la section [Création d’opérations asynchrones en C++ pour les applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/hh750113.aspx) pour découvrir comment créer des opérations asynchrones pouvant être consommées par des applications et d’autres bibliothèques.
+> **Conseil**  Si vous écrivez le code de jeu qui fait partie d’une bibliothèque C++ WindowsRuntime (en d’autres termes, une DLL), prenez connaissance de la section [Création d’opérations asynchrones en C++ pour les applications du WindowsStore](https://msdn.microsoft.com/library/windows/apps/hh750113.aspx) pour découvrir comment créer des opérations asynchrones pouvant être consommées par des applications et d’autres bibliothèques.
 
  
 
@@ -378,7 +375,6 @@ Pour plus d’informations sur certaines pratiques importantes à garder à l’
  
 
  
-
 
 
 

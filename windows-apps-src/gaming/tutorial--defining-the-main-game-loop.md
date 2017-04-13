@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, jeux, objet principal"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp, jeux, objet principal
 ms.openlocfilehash: f81b3eaa9b896295386232f99b789dc3857b3bad
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="define-the-main-game-object"></a>Définir l’objet jeu principal
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 À ce stade, nous avons conçu l’infrastructure de base de l’exemple de jeu et implémenté une machine à états qui gère les comportements globaux du système et de l’utilisateur. Toutefois, nous n’avons pas étudié la partie qui transforme l’exemple de jeu en jeu réel : les règles et la mécanique, et leur implémentation ! Examinons maintenant les détails de l’objet principal de l’exemple de jeu et la façon dont les règles qu’il implémente se traduisent en interactions avec le monde du jeu.
 
@@ -31,7 +28,7 @@ ms.lasthandoff: 02/07/2017
 ## <a name="considering-the-games-flow"></a>Prise en compte du flux du jeu
 
 
-La majeure partie de la structure de base du jeu est définie dans ces fichiers :
+La majeure partie de la structure de base du jeu est définie dans ces fichiers:
 
 -   **App.cpp**
 -   **Simple3DGame.cpp**
@@ -49,7 +46,7 @@ Examinons la définition de la classe **Simple3DGame**.
 
 Lorsque le singleton de l’application démarre, la méthode **Initialize** du fournisseur de vues crée une instance de la classe de jeu principal, l’objet **Simple3DGame**. Cet objet contient les méthodes qui communiquent les modifications de l’état du jeu à la machine à états définie dans l’infrastructure de l’application, ou de l’application à l’objet jeu lui-même. Il contient également des méthodes qui renvoient des informations pour la mise à jour de la bitmap de superposition du jeu et l’affichage à tête haute, ainsi que pour la mise à jour des animations et de la physique (dynamique) du jeu. GameRenderer.cpp contient le code permettant d’obtenir les ressources des périphériques graphiques utilisées par le jeu, dont nous parlons ensuite dans [Assembler l’infrastructure de rendu](tutorial--assembling-the-rendering-pipeline.md).
 
-Le code pour **Simple3DGame** se présente ainsi :
+Le code pour **Simple3DGame** se présente ainsi:
 
 ```cpp
 ref class GameRenderer;
@@ -95,14 +92,14 @@ Commençons par passer en revue les méthodes internes définies sur **Simple3DG
 
 -   **Initialize**. Définit les valeurs de départ des variables globales et initialise les objets jeu.
 -   **LoadGame**. Initialise un nouveau niveau et commence son chargement.
--   **LoadLevelAsync**. Démarre une tâche asynchrone (voir la [Bibliothèque de modèles parallèles](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx) pour plus de détails) pour initialiser le niveau, puis invoquer une tâche asynchrone sur le convertisseur pour charger les ressources de niveau propres au périphérique. Cette méthode s’exécute dans un thread séparé ; seules les méthodes [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) (par opposition aux méthodes [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) peuvent être appelées à partir de ce thread. Toutes les méthodes de contexte de périphérique sont appelées dans la méthode **FinalizeLoadLevel**.
--   **FinalizeLoadLevel**. Finit tout travail de chargement de niveau à effectuer sur le thread principal. Cela comprend tout appel aux méthodes ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) de contexte de périphérique Direct3D 11.
+-   **LoadLevelAsync**. Démarre une tâche asynchrone (voir la [Bibliothèque de modèles parallèles](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx) pour plus de détails) pour initialiser le niveau, puis invoquer une tâche asynchrone sur le convertisseur pour charger les ressources de niveau propres au périphérique. Cette méthode s’exécute dans un thread séparé; seules les méthodes [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) (par opposition aux méthodes [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) peuvent être appelées à partir de ce thread. Toutes les méthodes de contexte de périphérique sont appelées dans la méthode **FinalizeLoadLevel**.
+-   **FinalizeLoadLevel**. Finit tout travail de chargement de niveau à effectuer sur le thread principal. Cela comprend tout appel aux méthodes ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) de contexte de périphérique Direct3D11.
 -   **StartLevel**. Démarre le jeu sur un nouveau niveau.
 -   **PauseGame**. Suspend le jeu.
 -   **RunGame**. Exécute une itération de la boucle de jeu. Cette méthode est appelée à partir d’**App::Update** une fois par itération de la boucle de jeu si le jeu présente l’état **Active**.
 -   **OnSuspending** et **OnResuming**. Suspend et reprend la partie audio du jeu, respectivement.
 
-Et les méthodes privées :
+Et les méthodes privées:
 
 -   **LoadSavedState** et **SaveState**. Charge et enregistre l’état actuel du jeu, respectivement.
 -   **SaveHighScore** et **LoadHighScore**. Enregistre et charge les meilleurs scores des différentes parties, respectivement.
@@ -156,7 +153,7 @@ private:
 En haut de l’exemple de code, il existe quatre objets dont les instances sont mises à jour pendant l’exécution de la boucle de jeu.
 
 -   Objet **MoveLookController**. Cet objet représente les entrées du joueur. (Pour plus d’informations sur l’objet **MoveLookController**, voir [Ajouter des contrôles](tutorial--adding-controls.md).)
--   Objet **GameRenderer**. Cet objet représente le convertisseur Direct3D 11 dérivé de la classe **DirectXBase** qui gère tous les objets propres au périphérique et leur rendu. Pour plus d’informations, voir [Assembler l’infrastructure de rendu](tutorial--assembling-the-rendering-pipeline.md).
+-   Objet **GameRenderer**. Cet objet représente le convertisseur Direct3D11 dérivé de la classe **DirectXBase** qui gère tous les objets propres au périphérique et leur rendu. Pour plus d’informations, voir [Assembler l’infrastructure de rendu](tutorial--assembling-the-rendering-pipeline.md).
 -   Objet **Camera**. Cet objet représente la vue subjective du monde du jeu du joueur. (Pour plus d’informations sur l’objet **Camera**, voir [Assembler l’infrastructure de rendu](tutorial--assembling-the-rendering-pipeline.md).)
 -   Objet **Audio**. Cet objet contrôle la lecture audio du jeu. (Pour plus d’informations sur l’objet **Audio**, voir [Ajouter du son](tutorial--adding-sound.md).)
 
@@ -370,7 +367,7 @@ L’exemple de jeu configure les composants de l’objet jeu dans l’ordre suiv
 
 1.  Un nouvel objet lecture audio est créé.
 2.  Des tableaux pour les primitives graphiques du jeu sont créés, notamment des tableaux pour les primitives de niveau, les munitions et les obstacles.
-3.  Un emplacement pour enregistrer les données de l’état du jeu est créé : il est nommé *Game* et est placé dans l’emplacement de stockage des paramètres des données d’application spécifié par [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619).
+3.  Un emplacement pour enregistrer les données de l’état du jeu est créé: il est nommé *Game* et est placé dans l’emplacement de stockage des paramètres des données d’application spécifié par [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619).
 4.  Un minuteur de jeu et la bitmap de superposition initiale, intégrée au jeu, sont créés.
 5.  Une nouvelle caméra est créée avec un ensemble spécifique de paramètres de vue et de projection.
 6.  Le périphérique d’entrée (contrôleur) étant défini sur les mêmes tangage et lacet de départ que la caméra, le joueur a une correspondance un-à-un entre la position du contrôle de départ et la position de la caméra.
@@ -388,7 +385,7 @@ Le jeu a maintenant des instances de tous les principaux composants : le monde, 
 ## <a name="building-and-loading-the-games-levels"></a>Génération et chargement des niveaux du jeu
 
 
-La plupart des lourdes tâches de construction des niveaux est effectuée dans le fichier **Level.h/.cpp**, que nous n’allons pas étudier en détail, car il est axé sur une implémentation très spécifique. Il est important que le code pour chaque niveau soit exécuté en tant qu’objet **LevelN** distinct. Si vous voulez étendre le jeu, vous pouvez créer un objet **Level** qui prend un numéro affecté en tant que paramètre et place de façon aléatoire les obstacles et cibles. Vous pouvez également faire en sorte qu’il charge les données de configuration de niveau à partir d’un fichier de ressources, ou même d’Internet !
+La plupart des lourdes tâches de construction des niveaux est effectuée dans le fichier **Level.h/.cpp**, que nous n’allons pas étudier en détail, car il est axé sur une implémentation très spécifique. Il est important que le code pour chaque niveau soit exécuté en tant qu’objet **LevelN** distinct. Si vous voulez étendre le jeu, vous pouvez créer un objet **Level** qui prend un numéro affecté en tant que paramètre et place de façon aléatoire les obstacles et cibles. Vous pouvez également faire en sorte qu’il charge les données de configuration de niveau à partir d’un fichier de ressources, ou même d’Internet!
 
 Le code complet pour **Level.h/.cpp** est fourni dans [Exemple de code complet pour cette section](#complete-code-sample-for-this-section).
 
@@ -405,7 +402,7 @@ Voici un diagramme représentant le flux de base du jeu et ses principaux états
 
 ![Diagramme illustrant la machine à états principale de notre jeu](images/simple3dgame-mainstatemachine.png)
 
-Lorsque l’exemple de jeu démarre le jeu, l’objet jeu peut présenter l’un des trois états suivants :
+Lorsque l’exemple de jeu démarre le jeu, l’objet jeu peut présenter l’un des trois états suivants:
 
 -   **Waiting for resources**. Cet état est activé lorsque l’objet jeu est initialisé ou que les composants d’un niveau sont en cours de chargement. Si cet état a été déclenché par une demande de chargement d’un jeu précédent, la superposition des statistiques du jeu est affichée. Si l’état a été déclenché par une demande de jeu à un certain niveau, la superposition de début de niveau est affichée. À la fin du chargement d’une ressource, le jeu prend l’état **Resources loaded**, puis **Waiting for press**.
 -   **Waiting for press**. Cet état est activé lorsque le jeu est mis en pause par le joueur ou par le système (par exemple, après le chargement des ressources). Lorsque le joueur est prêt à quitter cet état, il est invité à charger un nouvel état de jeu (LoadGame), à démarrer/redémarrer le niveau chargé (StartLevel) ou à poursuivre le niveau actuel (ContinueGame).
@@ -558,18 +555,18 @@ void App::Update()
 
 Tout d’abord, cette méthode appelle la propre méthode **Update** de l’instance [MoveLookController](tutorial--adding-controls.md), qui met à jour les données du contrôleur. Ces données incluent la direction de la vue à laquelle l’utilisateur (la caméra) fait face et la vitesse de mouvement du joueur.
 
-Lorsque le jeu présente l’état Dynamics, autrement dit lorsque le joueur joue, le travail est géré dans la méthode **RunGame**, avec cet appel :
+Lorsque le jeu présente l’état Dynamics, autrement dit lorsque le joueur joue, le travail est géré dans la méthode **RunGame**, avec cet appel:
 
 `GameState runState = m_game->RunGame();`
 
-**RunGame** gère l’ensemble des données qui définissent l’état actuel du jeu pour l’itération en cours de la boucle de jeu. Le flux se présente comme suit :
+**RunGame** gère l’ensemble des données qui définissent l’état actuel du jeu pour l’itération en cours de la boucle de jeu. Le flux se présente comme suit:
 
-1.  La méthode met à jour le minuteur qui compte à rebours les secondes jusqu’à ce que le niveau soit terminé, et vérifie si le délai imparti pour ce niveau a expiré. Il s’agit de l’une des règles du jeu : lorsque le temps imparti est écoulé alors que toutes les cibles n’ont pas été atteintes, la partie se termine.
+1.  La méthode met à jour le minuteur qui compte à rebours les secondes jusqu’à ce que le niveau soit terminé, et vérifie si le délai imparti pour ce niveau a expiré. Il s’agit de l’une des règles du jeu: lorsque le temps imparti est écoulé alors que toutes les cibles n’ont pas été atteintes, la partie se termine.
 2.  À la fin du temps imparti, la méthode place le jeu à l’état **TimeExpired**, puis revient à la méthode **Update** dans le code précédent.
 3.  S’il reste du temps, le contrôleur de déplacement/vue est interrogé dans le cadre d’une mise à jour de la position de la caméra, en particulier une mise à jour de l’angle perpendiculaire de la vue du plan de la caméra (où le joueur regarde), et de la distance selon laquelle cet angle a bougé depuis la dernière fois que le contrôleur a été interrogé.
 4.  La caméra est mise à jour en fonction des nouvelles données du contrôleur de déplacement/vue.
 5.  La dynamique, ou les animations et comportements des objets du monde du jeu indépendants du contrôle du joueur, sont mis à jour. Dans l’exemple de jeu, il s’agit du mouvement des sphères de munitions qui ont été tirées, de l’animation des colonnes d’obstacles et du déplacement des cibles.
-6.  La méthode vérifie si les critères de réussite d’un niveau ont été remplis. Si tel est le cas, elle finalise le score du niveau et vérifie s’il s’agit du dernier niveau (6). S’il s’agit du dernier niveau, la méthode renvoie l’état de jeu **GameComplete** ; sinon, elle renvoie l’état de jeu **LevelComplete**.
+6.  La méthode vérifie si les critères de réussite d’un niveau ont été remplis. Si tel est le cas, elle finalise le score du niveau et vérifie s’il s’agit du dernier niveau (6). S’il s’agit du dernier niveau, la méthode renvoie l’état de jeu **GameComplete**; sinon, elle renvoie l’état de jeu **LevelComplete**.
 7.  Si le niveau n’est pas terminé, la méthode renvoie l’état de jeu **Active**.
 
 Voici à quoi **RunGame**, qui figure dans **Simple3DGame.cpp**, ressemble dans le code.
@@ -3613,7 +3610,7 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
 ```
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -3625,7 +3622,6 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
  
 
  
-
 
 
 

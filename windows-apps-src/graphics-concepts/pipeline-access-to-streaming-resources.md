@@ -2,21 +2,17 @@
 title: "Accès du pipeline aux ressources de diffusion en continu"
 description: "Les ressources de diffusion en continu peuvent être utilisés dans les vues de ressource de nuanceur (SRV), les vues de cible de rendu (RTV), les vues de gabarit/profondeur (DSV) et les affichages des accès sans ordre (UAV), ainsi que dans certains points de liaison où les vues ne sont pas utilisées, notamment les liaisons de tampon de sommet."
 ms.assetid: 18DA5D61-930D-4466-8EFE-0CED566EA4A6
-keywords:
-- "Accès du pipeline aux ressources de diffusion en continu"
+keywords: "Accès du pipeline aux ressources de diffusion en continu"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5f4fd92e1519579f15b3c3d452ce80e944f0942b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b730a8c15f4327397e945b616c6c1edc2e1ad5a9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="pipeline-access-to-streaming-resources"></a>Accès du pipeline aux ressources de diffusion en continu
 
 
@@ -63,7 +59,7 @@ Si toutes les vignettes situées derrière l’encombrement d’accès mémoire 
 </tr>
 <tr class="even">
 <td align="left"><p>[Exposition des ressources de diffusion en continu HLSL](hlsl-streaming-resources-exposure.md)</p></td>
-<td align="left"><p>La prise en charge des ressources de diffusion en continu dans [Shader Model 5](https://msdn.microsoft.com/library/windows/desktop/ff471356) requiert une syntaxe Microsoft HLSL (High Level Shader Language, langage de nuanceur de haut niveau) spécifique.</p></td>
+<td align="left"><p>La prise en charge des ressources de diffusion en continu dans [Shader Model5](https://msdn.microsoft.com/library/windows/desktop/ff471356) requiert une syntaxe Microsoft HLSL (High Level Shader Language, langage de nuanceur de haut niveau) spécifique.</p></td>
 </tr>
 </tbody>
 </table>
@@ -78,7 +74,6 @@ Si toutes les vignettes situées derrière l’encombrement d’accès mémoire 
  
 
  
-
 
 
 

@@ -2,25 +2,21 @@
 title: "Éclairage spéculaire"
 description: "L&quot;éclairage spéculaire désigne les reflets spéculaires vifs qui surviennent lorsque la lumière atteint la surface d&quot;un objet et se reflète sur l&quot;appareil photo."
 ms.assetid: 71F87137-B00F-48CE-8E6A-F98A139A742A
-keywords:
-- "Éclairage spéculaire"
+keywords: "Éclairage spéculaire"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54cb099e768ad1583f686d98375a0f1bcedd4e5d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c57edefa190fbb56b8bbe2a0c06ef2828b780927
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="specular-lighting"></a>Éclairage spéculaire
 
 
-L'*éclairage spéculaire* désigne les reflets spéculaires vifs qui surviennent lorsque la lumière atteint la surface d'un objet et se reflète sur l'appareil photo. L'éclairage spéculaire est plus intense que la lumière diffuse et tombe plus rapidement sur la surface de l’objet. Le calcul de l’éclairage spéculaire prend plus de temps que celui de l'éclairage diffus. Toutefois, le fait de l'utiliser permet de préciser des informations importantes sur une surface.
+L'*éclairage spéculaire* désigne les reflets spéculaires vifs qui surviennent lorsque la lumière atteint la surface d'un objet et se reflète sur l'appareil photo. L’éclairage spéculaire est plus intense que la lumière diffuse et tombe plus rapidement sur la surface de l’objet. Le calcul de l’éclairage spéculaire prend plus de temps que celui de l'éclairage diffus. Toutefois, le fait de l'utiliser permet de préciser des informations importantes sur une surface.
 
 La modélisation de la réflexion spéculaire nécessite que le système connaisse la direction dans laquelle la lumière se déplace et la direction vers les yeux de l’observateur. Le système utilise une version simplifiée du modèle de réflexion spéculaire Phong, qui utilise un vecteur à mi-chemin pour estimer l’intensité de réflexion spéculaire.
 
@@ -29,7 +25,7 @@ L’état d’éclairage par défaut ne calcule pas les reflets spéculaires.
 ## <a name="span-idspecularlightingequationspanspan-idspecularlightingequationspanspan-idspecularlightingequationspanspecular-lighting-equation"></a><span id="Specular_Lighting_Equation"></span><span id="specular_lighting_equation"></span><span id="SPECULAR_LIGHTING_EQUATION"></span>Équation de l'éclairage spéculaire
 
 
-Il est possible de calculer l'éclairage spéculaire en utilisant l’équation suivante :
+Il est possible de calculer l'éclairage spéculaire en utilisant l’équation suivante:
 
 |                                                                             |
 |-----------------------------------------------------------------------------|
@@ -37,7 +33,7 @@ Il est possible de calculer l'éclairage spéculaire en utilisant l’équation 
 
  
 
-Les variables, leurs types et leurs plages sont les suivantes :
+Les variables, leurs types et leurs plages sont les suivantes:
 
 | Paramètre    | Valeur par défaut | Type                                                             | Description                                                                                            |
 |--------------|---------------|------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
@@ -52,10 +48,10 @@ Les variables, leurs types et leurs plages sont les suivantes :
 
  
 
-La valeur pour Cₛ possède l'une des valeurs suivantes :
+La valeur pour Cₛ possède l'une des valeurs suivantes:
 
--   couleur 1 du vertex, si la source du matériau spéculaire est la couleur du vertex diffus et que la première couleur du vertex est indiquée dans la déclaration du vertex.
--   couleur 2 du vertex, si la source du matériau spéculaire est la couleur du vertex spéculaire, et que la deuxième couleur du vertex est indiquée dans la déclaration du vertex.
+-   couleur1 du vertex, si la source du matériau spéculaire est la couleur du vertex diffus et que la première couleur du vertex est indiquée dans la déclaration du vertex.
+-   couleur2 du vertex, si la source du matériau spéculaire est la couleur du vertex spéculaire, et que la deuxième couleur du vertex est indiquée dans la déclaration du vertex.
 -   couleur spéculaire du matériau
 
 **Remarque** si vous utilisez l'une des options de source du matériau spéculaire et que la couleur du vertex n’est pas indiquée, la couleur spéculaire du matériau est utilisée.
@@ -67,7 +63,7 @@ Les composants spéculaires sont restreints pour être compris entre 0 et 255. E
 ## <a name="span-idthehalfwayvectorspanspan-idthehalfwayvectorspanspan-idthehalfwayvectorspanthe-halfway-vector"></a><span id="The_Halfway_Vector"></span><span id="the_halfway_vector"></span><span id="THE_HALFWAY_VECTOR"></span>Le vecteur à mi-chemin
 
 
-Le vecteur à mi-chemin (H) se situe à mi-chemin entre deux vecteurs : le vecteur qui relie un vertex d’objet à la source de lumière et le vecteur qui relie un vertex d’objet à la position de l'appareil photo. Direct3D propose deux méthodes de calcul du vecteur à mi-chemin. Lorsque les reflets liés à l'appareil photo sont activés (plutôt que les reflets spéculaires orthogonaux), le système calcule le vecteur à mi-chemin à l'aide de la position de l'appareil photo et de la position du vertex, ainsi que le vecteur de direction de la lumière. La formule suivante permet d'illustrer cela :
+Le vecteur à mi-chemin (H) se situe à mi-chemin entre deux vecteurs: le vecteur qui relie un vertex d’objet à la source de lumière et le vecteur qui relie un vertex d’objet à la position de l'appareil photo. Direct3D propose deux méthodes de calcul du vecteur à mi-chemin. Lorsque les reflets liés à l'appareil photo sont activés (plutôt que les reflets spéculaires orthogonaux), le système calcule le vecteur à mi-chemin à l'aide de la position de l'appareil photo et de la position du vertex, ainsi que le vecteur de direction de la lumière. La formule suivante permet d'illustrer cela:
 
 |                                           |
 |-------------------------------------------|
@@ -122,7 +118,6 @@ L'éclairage spéculaire est plus difficile à calculer que l'éclairage diffus.
  
 
  
-
 
 
 

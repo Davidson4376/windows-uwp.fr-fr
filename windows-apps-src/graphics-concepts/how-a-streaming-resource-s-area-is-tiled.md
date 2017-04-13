@@ -12,23 +12,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 699c9e3ce1477589f9331038ae3c7433b5dc1bde
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0718557245d9072adb0db608a7692dc7674ceca8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="how-a-streaming-resources-area-is-tiled"></a>Restitution de la surface d’une ressource de diffusion en continu sous forme de vignettes
 
 
 Lorsque vous créez une ressource de diffusion en continu, les dimensions, la taille des éléments de format et le nombre de mipmaps et/ou de sections de tableau (le cas échéant) déterminent le nombre de vignettes requises pour couvrir toute la zone de la surface. La disposition des pixels/octets au sein des vignettes est déterminée par l’implémentation. Le nombre de pixels qui tiennent dans une vignette, selon la taille des éléments de format, est fixe et identique, que vous effectuiez ou non un réagencement standard des données en surface.
 
-Le nombre de vignettes qui seront utilisées par une taille de surface et une largeur d’élément de format spécifiques est parfaitement défini et prévisible grâce aux tableaux figurant dans les articles répertoriés ci-dessous. Pour les ressources qui contiennent des mipmaps ou pour les cas dans lesquels les dimensions de surface ne remplissent pas une vignette, il existe certaines contraintes ; pour plus d’informations, consultez l’article [Compression de mipmaps](mipmap-packing.md).
+Le nombre de vignettes qui seront utilisées par une taille de surface et une largeur d’élément de format spécifiques est parfaitement défini et prévisible grâce aux tableaux figurant dans les articles répertoriés ci-dessous. Pour les ressources qui contiennent des mipmaps ou pour les cas dans lesquels les dimensions de surface ne remplissent pas une vignette, il existe certaines contraintes; pour plus d’informations, consultez l’article [Compression de mipmaps](mipmap-packing.md).
 
 Différentes ressources de diffusion en continu peuvent pointer sur une mémoire identique présentant différents formats, à condition que les applications ne s’appuient pas sur les résultats d’écriture en mémoire dans un format spécifique et sur les résultats de lecture en mémoire dans un autre format. Toutefois, les applications peuvent se fonder sur les résultats d’écriture en mémoire dans un format et sur les résultats de lecture dans un autre format si ces formats appartiennent à la même famille (autrement dit, s’ils ont le même format parent sans type). Par exemple, DXGI\_FORMAT\_R8G8B8A8\_UNORM et DXGI\_FORMAT\_R8G8B8A8\_UINT sont compatibles l’un avec l’autre, mais non avec DXGI\_FORMAT\_R16G16\_UNORM.
 
-Il existe une exception bien définie à cette règle dans le cas où des données d’un format sont fusionnées dans un autre format : si tous les bits d’une vignette se composent uniquement de 0, cette vignette peut être utilisée avec n’importe quel format interprétant ce contenu en mémoire en tant que 0 (quelle que soit la configuration mémoire). Ainsi, si une vignette était écrasée par 0x00 avec le format DXGI\_FORMAT\_R8\_UNORM, puis utilisée avec un format tel que DXGI\_FORMAT\_R32G32\_FLOAT, elle continuerait de présenter le contenu (0.0f,0.0f).
+Il existe une exception bien définie à cette règle dans le cas où des données d’un format sont fusionnées dans un autre format: si tous les bits d’une vignette se composent uniquement de 0, cette vignette peut être utilisée avec n’importe quel format interprétant ce contenu en mémoire en tant que 0 (quelle que soit la configuration mémoire). Ainsi, si une vignette était écrasée par 0x00 avec le format DXGI\_FORMAT\_R8\_UNORM, puis utilisée avec un format tel que DXGI\_FORMAT\_R32G32\_FLOAT, elle continuerait de présenter le contenu (0.0f,0.0f).
 
 La disposition des données dans une vignette ne dépend pas de l’emplacement de mappage de la vignette dans une ressource globale. Ceci permet donc par exemple de réutiliser une vignette à différents emplacements d’une surface en une seule opération et d’obtenir systématiquement un comportement cohérent.
 
@@ -57,7 +54,7 @@ La disposition des données dans une vignette ne dépend pas de l’emplacement 
 </tr>
 <tr class="odd">
 <td align="left"><p>[Découpage de mémoires tampons en vignettes](buffer-tiling.md)</p></td>
-<td align="left"><p>Une ressource de [mémoire tampon](introduction-to-buffers.md) est divisée en vignettes de 64 Ko, avec un espace vide dans la dernière vignette si la taille n’est pas un multiple de 64 Ko.</p></td>
+<td align="left"><p>Une ressource de [mémoire tampon](introduction-to-buffers.md) est divisée en vignettes de 64Ko, avec un espace vide dans la dernière vignette si la taille n’est pas un multiple de 64Ko.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Compression de mipmaps](mipmap-packing.md)</p></td>
@@ -76,7 +73,6 @@ La disposition des données dans une vignette ne dépend pas de l’emplacement 
  
 
  
-
 
 
 

@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 975f364fec4edfcf90ee65912f509741bd1f80dd
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 5df57d0bd5d2104278f653d78b1e478a034a38ac
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="porting-windows-phone-silverlight-to-uwp-for-io-device-and-app-model"></a>Portage d’une application Silverlight pour Windows Phone vers UWP pour le modèle d’E/S, d’appareil et d’application
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Rubrique précédente : [Portage du balisage XAML et de la couche interface utilisateur](wpsl-to-uwp-porting-xaml-and-ui.md).
 
@@ -99,5 +96,4 @@ L’équivalent d’application UWP des propriétés **PhoneApplicationPage.Supp
 Toutefois, vous êtes invité à concevoir l’interface utilisateur de votre application UWP de façon à en optimiser l’apparence indépendamment de l’orientation de l’appareil et de la taille de l’écran. Pour plus d’informations, voir la rubrique [Portage pour différents facteurs de forme et expériences utilisateur](wpsl-to-uwp-form-factors-and-ux.md).
 
 Rubrique suivante : [Portage des couches métier et des couches de données](wpsl-to-uwp-business-and-data.md).
-
 

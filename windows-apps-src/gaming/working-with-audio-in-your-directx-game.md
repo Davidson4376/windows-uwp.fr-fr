@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, jeux, audio, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: Windows10, uwp, jeux, audio, directx
 ms.openlocfilehash: 2fd568b8424585106c83d128a55f85909f35f2b8
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="audio-for-games"></a>Audio pour les jeux
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Apprenez à développer et à incorporer de la musique et des sons dans votre jeu DirectX, et à traiter les signaux audio afin de créer des sons dynamiques et positionnels.
 
@@ -126,67 +123,67 @@ XAudio2 est la bibliothèque de mixage audio pour DirectX, principalement destin
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Procédure : initialiser XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779)</p></td>
+<td align="left"><p>[Procédure: initialiser XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779)</p></td>
 <td align="left"><p>Découvrez comment initialiser XAudio2 pour la lecture audio en créant une instance du moteur XAudio2 et en créant une voix mastérisée.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Procédure : charger des fichiers de données audio dans XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415781)</p></td>
+<td align="left"><p>[Procédure: charger des fichiers de données audio dans XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415781)</p></td>
 <td align="left"><p>Apprenez comment remplir les structures nécessaires pour lire les données audio dans XAudio2.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Procédure : lire un son avec XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415787)</p></td>
+<td align="left"><p>[Procédure: lire un son avec XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415787)</p></td>
 <td align="left"><p>Apprenez à lire des données audio précédemment chargées dans XAudio2.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Procédure : utiliser des voix prémixées](https://msdn.microsoft.com/library/windows/desktop/ee415794)</p></td>
+<td align="left"><p>[Procédure: utiliser des voix prémixées](https://msdn.microsoft.com/library/windows/desktop/ee415794)</p></td>
 <td align="left"><p>Apprenez à définir des groupes de voix pour créer en sortie une seule voix prémixée.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Procédure : utiliser des rappels de voix source](https://msdn.microsoft.com/library/windows/desktop/ee415769)</p></td>
+<td align="left"><p>[Procédure: utiliser des rappels de voix source](https://msdn.microsoft.com/library/windows/desktop/ee415769)</p></td>
 <td align="left"><p>Apprenez à utiliser les rappels de voix source XAudio2.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Procédure : utiliser des rappels de moteur](https://msdn.microsoft.com/library/windows/desktop/ee415774)</p></td>
+<td align="left"><p>[Procédure: utiliser des rappels de moteur](https://msdn.microsoft.com/library/windows/desktop/ee415774)</p></td>
 <td align="left"><p>Apprenez à utiliser les rappels de moteur XAudio2.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Procédure : créer un graphique de traitement audio de base](https://msdn.microsoft.com/library/windows/desktop/ee415767)</p></td>
+<td align="left"><p>[Procédure: créer un graphique de traitement audio de base](https://msdn.microsoft.com/library/windows/desktop/ee415767)</p></td>
 <td align="left"><p>Apprenez à créer un graphique de traitement audio, construit à partir d’une seule voix mastérisée et d’une seule voix source.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Procédure : Ajouter ou supprimer dynamiquement des voix d’un graphique audio](https://msdn.microsoft.com/library/windows/desktop/ee415772)</p></td>
-<td align="left"><p>Apprenez à ajouter ou supprimer des voix prémixées dans un graphique qui a été créé en suivant les étapes décrites dans [Procédure : Créer un graphique de traitement audio de base](https://msdn.microsoft.com/library/windows/desktop/ee415767).</p></td>
+<td align="left"><p>[Procédure: Ajouter ou supprimer dynamiquement des voix d’un graphique audio](https://msdn.microsoft.com/library/windows/desktop/ee415772)</p></td>
+<td align="left"><p>Apprenez à ajouter ou supprimer des voix prémixées dans un graphique qui a été créé en suivant les étapes décrites dans [Procédure: Créer un graphique de traitement audio de base](https://msdn.microsoft.com/library/windows/desktop/ee415767).</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Procédure : Créer une chaîne d’effets](https://msdn.microsoft.com/library/windows/desktop/ee415789)</p></td>
+<td align="left"><p>[Procédure: Créer une chaîne d’effets](https://msdn.microsoft.com/library/windows/desktop/ee415789)</p></td>
 <td align="left"><p>Apprenez à appliquer une chaîne d’effets à une voix pour le traitement personnalisé des données audio de cette voix.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Procédure : Créer un XAPO](https://msdn.microsoft.com/library/windows/desktop/ee415730)</p></td>
+<td align="left"><p>[Procédure: Créer un XAPO](https://msdn.microsoft.com/library/windows/desktop/ee415730)</p></td>
 <td align="left"><p>Apprenez à implémenter [<strong>IXAPO</strong>](https://msdn.microsoft.com/library/windows/desktop/ee415893) pour créer un objet de traitement audio XAudio2 (XAPO).</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Procédure : Ajouter la prise en charge de paramètre d’exécution à un XAPO](https://msdn.microsoft.com/library/windows/desktop/ee415728)</p></td>
+<td align="left"><p>[Procédure: Ajouter la prise en charge de paramètre d’exécution à un XAPO](https://msdn.microsoft.com/library/windows/desktop/ee415728)</p></td>
 <td align="left"><p>Apprenez à ajouter la prise en charge de paramètre d’exécution à un XAPO en implémentant l’interface [<strong>IXAPOParameters</strong>](https://msdn.microsoft.com/library/windows/desktop/ee415896).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Procédure : Utiliser un XAPO dans XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415733)</p></td>
+<td align="left"><p>[Procédure: Utiliser un XAPO dans XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415733)</p></td>
 <td align="left"><p>Apprenez à utiliser l’effet implémenté en tant que XAPO dans une chaîne d’effets XAudio2.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Procédure : utiliser un XAPOFX dans XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415723)</p></td>
+<td align="left"><p>[Procédure: utiliser un XAPOFX dans XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415723)</p></td>
 <td align="left"><p>Apprenez à utiliser les effets inclus dans XAPOFX dans une chaîne d’effets XAudio2.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Procédure : diffuser un son en continu à partir du disque](https://msdn.microsoft.com/library/windows/desktop/ee415791)</p></td>
+<td align="left"><p>[Procédure: diffuser un son en continu à partir du disque](https://msdn.microsoft.com/library/windows/desktop/ee415791)</p></td>
 <td align="left"><p>Apprenez à diffuser des données audio dans XAudio2 en créant un thread séparé pour lire un tampon audio et en utilisant des rappels pour contrôler ce thread.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Procédure : intégrer X3DAudio avec XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415798)</p></td>
+<td align="left"><p>[Procédure: intégrer X3DAudio avec XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415798)</p></td>
 <td align="left"><p>Apprenez à utiliser X3DAudio pour fournir les valeurs de volume et de tonalité aux voix XAudio2 ainsi que les paramètres de l’effet de réverbération intégré XAudio2.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Procédure : regrouper des méthodes audio comme un ensemble d’opérations](https://msdn.microsoft.com/library/windows/desktop/ee415783)</p></td>
+<td align="left"><p>[Procédure: regrouper des méthodes audio comme un ensemble d’opérations](https://msdn.microsoft.com/library/windows/desktop/ee415783)</p></td>
 <td align="left"><p>Apprenez à utiliser les ensembles d’opérations XAudio2 pour appliquer un groupe d’appels de méthode en même temps.</p></td>
 </tr>
 <tr class="odd">
@@ -219,7 +216,7 @@ Media Foundation (MF) est une plate-forme de médias pour la diffusion audio et 
 <td align="left"><p>Cette section contient des informations générales sur les API Media Foundation et les outils disponibles pour leur prise en charge.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Media Foundation : notions essentielles](https://msdn.microsoft.com/library/windows/desktop/ee663601)</p></td>
+<td align="left"><p>[Media Foundation: notions essentielles](https://msdn.microsoft.com/library/windows/desktop/ee663601)</p></td>
 <td align="left"><p>Cette rubrique présente certains concepts que vous devez comprendre avant d’écrire une application Media Foundation.</p></td>
 </tr>
 <tr class="odd">
@@ -261,7 +258,7 @@ Media Foundation (MF) est une plate-forme de médias pour la diffusion audio et 
 
 ### <a name="windows-runtime-xaml-media-types"></a>Types multimédias XAML de Windows Runtime
 
-Si vous utilisez la [technologie interop XAML-DirectX](https://msdn.microsoft.com/library/windows/apps/hh825871), vous pouvez incorporer les API multimédias XAML Windows Runtime dans vos applications du Windows Store en C++ avec DirectX pour des scénarios de jeu plus simples.
+Si vous utilisez la [technologie interop XAML-DirectX](https://msdn.microsoft.com/library/windows/apps/hh825871), vous pouvez incorporer les API multimédias XAML WindowsRuntime dans vos applications du WindowsStore en C++ avec DirectX pour des scénarios de jeu plus simples.
 
 <table>
 <colgroup>
@@ -308,7 +305,7 @@ Si vous utilisez la [technologie interop XAML-DirectX](https://msdn.microsoft.co
 -   [Vue d’ensemble de Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197)
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -320,7 +317,6 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
  
 
  
-
 
 
 

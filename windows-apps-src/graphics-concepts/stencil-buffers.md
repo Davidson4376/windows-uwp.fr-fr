@@ -2,25 +2,21 @@
 title: "Mémoires tampons de gabarits"
 description: "Une mémoire tampon de gabarit est utilisée pour masquer les pixels d&quot;une image afin de produire des effets spéciaux."
 ms.assetid: 544B3B9E-31E3-41DA-8081-CC3477447E94
-keywords:
-- "Mémoires tampons de gabarits"
+keywords: "Mémoires tampons de gabarits"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 981d9d25b860d1c168227c9f67537cf033165aac
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 131b573d990db4d24f33b33c38e4534a7932571b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="stencil-buffers"></a>Mémoires tampons de gabarits
 
 
-Une *mémoire tampon de gabarit* est utilisée pour masquer les pixels d'une image afin de produire des effets spéciaux. Le masque permet de définir si le pixel est dessiné ou non. Ces effets spéciaux incluent notamment la composition, le transfert, la dissolution, le fondu et le balayage, le contour et la silhouette, ainsi que le gabarit recto verso. Certains des effets les plus courants sont présentés ci-dessous.
+Une *mémoire tampon de gabarit* est utilisée pour masquer les pixels d'une image afin de produire des effets spéciaux. Le masque permet de contrôler si le pixel est ou non dessiné. Ces effets spéciaux incluent notamment la composition, le transfert, la dissolution, le fondu et le balayage, le contour et la silhouette, ainsi que le gabarit recto verso. Certains des effets les plus courants sont présentés ci-dessous.
 
 La mémoire tampon de gabarit permet d'activer ou de désactiver le dessin sur la surface de rendu cible sur une base pixel par pixel. À son niveau le plus fondamental, il permet aux applications de masquer des sections de l’image rendue afin de ne pas les afficher. Les applications utilisent souvent des mémoires tampons de gabarits pour des effets spéciaux comme les fondus, le transfert et la mise en plan.
 
@@ -29,13 +25,13 @@ Les informations sur les mémoire tampon de gabarit sont intégrées dans les do
 ## <a name="span-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanhow-the-stencil-buffer-works"></a><span id="How_the_Stencil_Buffer_Works"></span><span id="how_the_stencil_buffer_works"></span><span id="HOW_THE_STENCIL_BUFFER_WORKS"></span>Fonctionnement de la mémoire tampon de gabarit
 
 
-Direct3D procède à un test sur les contenus de la mémoire tampon de gabarit sur une base pixel par pixel. Pour chaque pixel de la surface cible, il procède à un test à l’aide de la valeur correspondante dans la mémoire tampon de gabarit, d'une valeur de référence du gabarit et d'une valeur de masque du gabarit. Si le test réussit, Direct3D exécute une action. Le test est réalisé en suivant les étapes suivantes :
+Direct3D procède à un test sur les contenus de la mémoire tampon de gabarit sur une base pixel par pixel. Pour chaque pixel de la surface cible, il procède à un test à l’aide de la valeur correspondante dans la mémoire tampon de gabarit, d'une valeur de référence du gabarit et d'une valeur de masque du gabarit. Si le test réussit, Direct3D exécute une action. Le test est réalisé en suivant les étapes suivantes:
 
 1.  Exécutez une opération AND au niveau du bit de la valeur de référence du gabarit avec le masque de gabarit.
 2.  Exécutez une opération AND au niveau du bit de la valeur de mémoire tampon de gabarit pour le pixel actuel à l'aide du masque de gabarit.
-3.  Comparez le résultat de l’étape 1 au résultat de l’étape 2 à l’aide de la fonction de comparaison.
+3.  Comparez le résultat de l’étape1 au résultat de l’étape2 à l’aide de la fonction de comparaison.
 
-Les étapes ci-dessus sont présentées dans la ligne de code suivante :
+Les étapes ci-dessus sont présentées dans la ligne de code suivante:
 
 ```
 (StencilRef &amp; StencilMask) CompFunc (StencilBufferValue &amp; StencilMask)
@@ -56,14 +52,14 @@ Votre application peut personnaliser le fonctionnement de la mémoire tampon de 
 
 Votre application peut utiliser la mémoire tampon de gabarit pour composer des images 2D ou 3D dans une scène 3D. Un masque de mémoire tampon de gabarit est utilisé pour masquer une zone de la surface cible de rendu. Les informations 2D stockées, comme le texte ou les bitmaps, peuvent ensuite être insérées dans la zone masquée. Votre application peut également rendre des primitives 3D supplémentaires sur la région masquée du gabarit de la surface de cible de rendu. Il peut même rendre une scène entière.
 
-Les jeux composent parfois plusieurs scènes 3D en même temps. Par exemple, les jeux de voitures incluent généralement une fonction rétroviseur. Le rétroviseur contient la vue de la scène 3D située derrière le pilote. Il s'agit essentiellement d'une deuxième scène 3D composée à partir de la vue avant du pilote.
+Les jeux composent parfois plusieurs scènes 3D en même temps. Par exemple, les jeux de voitures incluent généralement une fonction rétroviseur. Le rétroviseur contient la vue de la scène 3D derrière le pilote. Il s'agit essentiellement d'une deuxième scène 3D composée à partir de la vue avant du pilote.
 
 ## <a name="span-iddecalingspanspan-iddecalingspanspan-iddecalingspandecaling"></a><span id="Decaling"></span><span id="decaling"></span><span id="DECALING"></span>Transfert
 
 
 Les applications Direct3D utilisent le transfert pour déterminer les pixels qui sont tracés à la surface cible de rendu à partir d'une image de primitive donnée. Les applications appliquent des transferts aux images des primitives afin de rendre correctement les polygones coplanaires.
 
-Par exemple, lorsque vous appliquez des traces de pneu et des lignes jaunes sur une piste, les marques doivent apparaître directement sur la route. Toutefois, les valeurs z des marques et de la route sont identiques. Par conséquent, le tampon de profondeur peut ne pas produire une séparation nette entre les deux. Certains pixels de la primitive arrière peuvent être rendus au-dessus de la primitive avant, et inversement. L’affichage obtenu semble miroiter d’une image à une autre. Cet effet est appelé *z-fighting* ou *flimmering*.
+Par exemple, lorsque vous appliquez des traces de pneu et des lignes jaunes sur une piste, les inscriptions doivent apparaître directement sur la route. Toutefois, les valeurs z des marques et de la route sont identiques. Par conséquent, le tampon de profondeur peut ne pas produire une séparation nette entre les deux. Certains pixels de la primitive arrière peuvent être rendus au-dessus de la primitive avant, et inversement. L’image obtenue semble trembloter$$$ d’une image à une autre. Cet effet est appelé *z-fighting* ou *flimmering*.
 
 Pour résoudre ce problème, utilisez un gabarit pour masquer la section de la primitive arrière où apparaît le transfert. Désactivez la mise en mémoire tampon z et rendez l'image de la primitive avant dans la zone masquée de la surface de rendu cible.
 
@@ -100,9 +96,9 @@ Si le masque de gabarit est de la même taille et possède la même forme que la
 
 Les volumes d’ombre sont utilisés pour dessiner des ombres avec la mémoire tampon de gabarit. L’application calcule les volumes d’ombre castés en masquant la géométrie, en calculant les bords de la silhouette et en les extrudant hors de la lumière dans un ensemble de volumes 3D. Ces volumes sont ensuite rendus deux fois dans la mémoire tampon de gabarit.
 
-Le premier rendu dessine des polygones orientés vers l'avant et incrémente les valeurs de mémoire tampon de gabarit. Le deuxième rendu dessine des polygones orientés vers l'arrière du volume d'ombre et décrémente les valeurs de mémoire tampon de gabarit. En règle générale, toutes les valeurs incrémentées et décrémentées s'annulent entre elles. Toutefois, la scène avait déjà été rendue avec une géométrie normale, ce qui a entraîné l'échec de certains pixels au test du tampon z au fur et à mesure que le volume d'ombre était rendu. Les valeurs conservées dans la mémoire tampon de gabarit correspondent aux pixels qui se trouvent dans l’ombre. Ces contenus restants de la mémoire tampon de gabarit sont utilisés en tant que masque, afin de fusionner à l'aide du canal alpha un grand quad entièrement cerné de noir dans la scène. Lorsque la mémoire tampon de gabarit agit en tant que masque, le résultat consiste à obscurcir les pixels qui sont dans les ombres.
+Le premier rendu dessine des polygones orientés vers l'avant et incrémente les valeurs de mémoire tampon de gabarit. Le deuxième rendu dessine des polygones orientés vers l'arrière du volume d'ombre et décrémente les valeurs de mémoire tampon de gabarit. En règle générale, toutes les valeurs incrémentées et décrémentées s'annulent entre elles. Toutefois, la scène avait déjà été rendue avec une géométrie normale, ce qui a entraîné l'échec de certains pixels au test du tampon z au fur et à mesure que le volume d'ombre était rendu. Les valeurs conservées dans la mémoire tampon de gabarit correspondent aux pixels qui se trouvent dans l’ombre. Ces contenus restants de la mémoire tampon de gabarit sont utilisés en tant que masque, afin de fusionner à l'aide du canal alpha une grande zone entièrement cernée de noir dans la scène.$$$ Lorsque la mémoire tampon de gabarit agit en tant que masque, le résultat consiste à obscurcir les pixels qui sont dans les ombres.
 
-Cela signifie que la géométrie d'ombre est dessinée deux fois pour chaque source de lumière, ce qui met la pression sur le débit de vertex du GPU. La fonctionnalité de gabarit recto-verso a été créée pour atténuer cette situation. Dans cette approche, il existe deux jeux d'états de gabarit (indiqués ci-dessous), le premier permet de définir les valeurs des triangles orientés vers l'avant et l’autre celles des triangles orientés vers l'arrière. De cette façon, un seul passage est dessiné par volume d'ombre, par lumière.
+Cela signifie que la géométrie d'ombre est dessinée deux fois pour chaque source de lumière, ce qui met la pression sur le débit de vertex du GPU. La fonctionnalité de gabarit recto-verso a été créée pour atténuer cette situation. Dans cette approche, il existe deux jeux d'états de gabarit (indiqués ci-dessous), le premier permet de définir les valeurs des triangles orientés vers l'avant et l’autre celles des triangles orientés vers l'arrière.$$$ De cette façon, un seul passage est dessiné par volume d'ombre, par lumière.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
@@ -112,7 +108,6 @@ Cela signifie que la géométrie d'ombre est dessinée deux fois pour chaque sou
  
 
  
-
 
 
 

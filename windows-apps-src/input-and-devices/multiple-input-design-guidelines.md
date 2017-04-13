@@ -10,14 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4311ab1c817beaac5a57b12a4426f26ac8710fdf
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: e3da62c83012d2a854e53c0e7082ecacec8df766
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="multiple-inputs"></a>Entrées multiples
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -30,7 +27,7 @@ Pour commencer, envisagez les différentes situations dans lesquelles votre appl
 
 -   Les utilisateurs peuvent interagir avec l’application à l’aide de plusieurs périphériques d’entrée ?
 -   Toutes les méthodes d’entrée sont-elles prises en charge à tout moment ? Avec certains contrôles ? À des moments ou dans des circonstances spécifiques ?
--   Une méthode d’entrée a-t-elle la priorité ?
+-   Une méthode d’entrée a-t-elle la priorité?
 
 ## <a name="single-or-exclusive-mode-interactions"></a>Interactions en mode unique (ou exclusif)
 
@@ -46,8 +43,7 @@ Reconnaissance vocale + mouvement
 L’utilisateur désigne un produit, puis dit « Ajouter au panier ».
 
 Reconnaissance vocale + interface tactile  
-L’utilisateur sélectionne une photo en appuyant de façon prolongée dessus, puis dit « Envoyer photo ».
-
+L’utilisateur sélectionne une photo en appuyant de façon prolongée dessus, puis dit «Envoyer photo».
 
 
 

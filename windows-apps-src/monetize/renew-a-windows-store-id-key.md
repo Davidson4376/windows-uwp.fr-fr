@@ -8,26 +8,23 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de collection du Windows Store, API d’achat du Windows Store, clé d’ID du Windows Store, renouveler"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b740cf431607f1748a8513a02746a70560d09da2
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, API de collection du WindowsStore, API d’achat du WindowsStore, clé d’ID du WindowsStore, renouveler"
+ms.openlocfilehash: 22db5f1ae693c26ecf727c94a9f6746225325f74
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="renew-a-windows-store-id-key"></a>Renouveler une clé d’ID du WindowsStore
 
-# <a name="renew-a-windows-store-id-key"></a>Renouveler une clé d’ID du Windows Store
 
-
-Utilisez cette méthode pour renouveler une clé du Windows Store. Lorsque vous [générez une clé d’ID du Windows Store](view-and-grant-products-from-a-service.md#step-4), la clé est valide pendant 90 jours. Après l’expiration de la clé, vous pouvez utiliser la clé arrivée à expiration pour en renégocier une nouvelle à l’aide de cette méthode.
+Utilisez cette méthode pour renouveler une clé du Windows Store. Lorsque vous [générez une clé d’ID du Windows Store](view-and-grant-products-from-a-service.md#step-4), la clé est valide pendant 90jours. Après l’expiration de la clé, vous pouvez utiliser la clé arrivée à expiration pour en renégocier une nouvelle à l’aide de cette méthode.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
 
-Pour utiliser cette méthode, vous devez disposer des éléments suivants :
+Pour utiliser cette méthode, vous devez disposer des éléments suivants:
 
-* un jeton d’accès Azure AD créé avec l’URI d’audience `https://onestore.microsoft.com` ;
-* une clé d’ID du Windows Store expirée qui a été [générée à partir du code côté client de votre application](view-and-grant-products-from-a-service.md#step-4).
+* un jeton d’accès AzureAD créé avec l’URI d’audience `https://onestore.microsoft.com`;
+* une clé d’ID du WindowsStore expirée qui a été [générée à partir du code côté client de votre application](view-and-grant-products-from-a-service.md#step-4).
 
 Pour plus d’informations, voir [Gérer les droits sur les produits à partir d’un service](view-and-grant-products-from-a-service.md).
 
@@ -109,7 +106,7 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 | Code | Erreur        | Code d’erreur interne           | Description                                                                                                                                                                           |
 |------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 401  | Non autorisé | AuthenticationTokenInvalid | Le jeton d’accès Azure AD n’est pas valide. Dans certains cas, les détails de l’erreur ServiceError contiennent plus d’informations, par exemple lorsque le jeton est arrivé à expiration ou que la revendication *appid* est manquante. |
-| 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du Windows Store et la revendication *appid* dans le jeton d’accès Azure AD ne correspondent pas.                                                                     |
+| 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du Windows Store et la revendication *appid* dans le jeton d’accès Azure AD ne correspondent pas.                                                                     |
 
 <span/>
 
@@ -120,4 +117,3 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 * [Demander des produits](query-for-products.md)
 * [Signaler le traitement de la commande d’un produit consommable](report-consumable-products-as-fulfilled.md)
 * [Octroyer des produits gratuits](grant-free-products.md)
-

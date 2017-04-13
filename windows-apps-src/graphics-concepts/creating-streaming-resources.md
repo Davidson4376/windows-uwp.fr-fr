@@ -2,21 +2,17 @@
 title: "Création de ressources de diffusion en continu"
 description: "Les ressources de diffusion en continu sont créées en spécifiant un indicateur au moment de la création, pour indiquer que la ressource est une ressource de diffusion en continu."
 ms.assetid: B3F3E43C-54D4-458C-9E16-E13CB382C83F
-keywords:
-- "Création de ressources de diffusion en continu"
+keywords: "Création de ressources de diffusion en continu"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 86f19b2afd580a16510fee8e97acfc2a388cad01
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0f42d34251ccd6d9add87808e502ab66dc830905
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="creating-streaming-resources"></a>Création de ressources de diffusion en continu
 
 
@@ -26,7 +22,7 @@ Les restrictions applicables à la création d'une ressource de diffusion en con
 
 Le stockage d’une ressource autre que celles de diffusion en continu est alloué dans le système graphique lors de la création de la ressource (par exemple, allocation d’un tableau de textures 2D).
 
-Lorsqu'une ressource de diffusion en continu est créée, le système graphique n’alloue pas le stockage pour le contenu de la ressource. Au lieu de cela, lorsqu’une application crée une ressource de diffusion en continu, le système graphique effectue une réservation d’espace d'adresse uniquement pour la zone de la surface de vignettes, avant de laisser l'application contrôler le mappage des vignettes. Le « mappage » d’une vignette désigne simplement l’emplacement physique dans la mémoire vers lequel pointe une vignette logique d'une ressource (ou **NULL** pour une vignette non mappée).
+Lorsqu'une ressource de diffusion en continu est créée, le système graphique n’alloue pas le stockage pour le contenu de la ressource. Au lieu de cela, lorsqu’une application crée une ressource de diffusion en continu, le système graphique effectue une réservation d’espace d'adresse uniquement pour la zone de la surface de vignettes, avant de laisser l'application contrôler le mappage des vignettes. Le «mappage» d’une vignette désigne simplement l’emplacement physique dans la mémoire vers lequel pointe une vignette logique d'une ressource (ou **NULL** pour une vignette non mappée).
 
 Ne confondez pas ce concept avec la notion de mappage d’une ressource Direct3D pour l’accès UC, qui est un processus totalement indépendant bien qu'il porte le même nom. Vous serez en mesure de définir et modifier si besoin le mappage de chaque vignette individuellement, en sachant qu'il n'est pas nécessaire de mapper simultanément toutes les vignettes d’une surface (ce qui permet d'utiliser efficacement la quantité de mémoire disponible).
 
@@ -86,7 +82,6 @@ Ne confondez pas ce concept avec la notion de mappage d’une ressource Direct3D
  
 
  
-
 
 
 

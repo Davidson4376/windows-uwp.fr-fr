@@ -11,12 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c4c03e48c9957d78cfa8c4287c4e99b73b5609b0
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 3862b008afece61648357c84a218ba210703727c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="define-page-layouts-with-xaml"></a>Définir des dispositions de pages avec XAML
 
@@ -24,10 +22,10 @@ ms.lasthandoff: 02/07/2017
 
 XAML fournit un système de disposition souple qui permet d’utiliser le dimensionnement automatique, les panneaux de disposition, les états visuels et même des définitions d’interface utilisateur séparées pour créer une interface utilisateur réactive. Grâce à cette structure souple, vous pouvez valoriser votre application en modifiant son apparence à l’écran, notamment en variant les tailles de fenêtre d’application, les résolutions, les densités de pixels et les orientations.
 
-Nous vous expliquons ici comment utiliser les propriétés XAML et les panneaux de disposition pour que votre application soit réactive et adaptative. Nous nous appuyons sur les informations importantes trouvées dans [Présentation de la conception des applications UWP](../layout/design-and-ui-intro.md). Vous devez comprendre ce que sont les pixels effectifs et connaître chacune des techniques de conception réactive : Repositionner, Redimensionner, Ajuster dynamiquement, Révéler, Remplacer et Remodéliser.
+Nous vous expliquons ici comment utiliser les propriétés XAML et les panneaux de disposition pour que votre application soit réactive et adaptative. Nous nous appuyons sur les informations importantes trouvées dans [Présentation de la conception des applications UWP](../layout/design-and-ui-intro.md). Vous devez comprendre ce que sont les pixels effectifs et connaître chacune des techniques de conception réactive: Repositionner, Redimensionner, Ajuster dynamiquement, Révéler, Remplacer et Remodéliser.
 
 > [!NOTE]
-> La disposition de votre application commence par le modèle de navigation choisi. Par exemple, vous pouvez choisir d’utiliser [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) avec le modèle [« onglets et pivot »](../controls-and-patterns/tabs-pivot.md) ou [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) avec le modèle [« volet de navigation »](../controls-and-patterns/nav-pane.md). Pour plus d’informations à ce sujet, voir [Informations de base relatives à la conception de la navigation pour les applications UWP](../layout/navigation-basics.md). Ici, nous abordons les techniques pour rendre réactive la disposition d’une page unique ou d’un groupe d’éléments. Ces informations s’appliquent quel que soit le modèle de navigation que vous choisissez pour votre application.
+> La disposition de votre application commence par le modèle de navigation choisi. Par exemple, vous pouvez choisir d’utiliser [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) avec le modèle [«onglets et pivot»](../controls-and-patterns/tabs-pivot.md) ou [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) avec le modèle [«volet de navigation»](../controls-and-patterns/nav-pane.md). Pour plus d’informations à ce sujet, voir [Informations de base relatives à la conception de la navigation pour les applications UWP](../layout/navigation-basics.md). Ici, nous abordons les techniques pour rendre réactive la disposition d’une page unique ou d’un groupe d’éléments. Ces informations s’appliquent quel que soit le modèle de navigation que vous choisissez pour votre application.
 
 L’infrastructure XAML fournit plusieurs niveaux d’optimisation que vous pouvez utiliser pour créer une interface utilisateur réactive.
 - **Disposition fluide**
@@ -38,7 +36,7 @@ L’infrastructure XAML fournit plusieurs niveaux d’optimisation que vous pouv
 - **Disposition adaptative**
     Utilisez les états visuels pour apporter des changements significatifs à votre interface utilisateur en fonction de la taille de la fenêtre ou d’autres modifications.
 
-    Lorsque la fenêtre de votre application grandit ou rétrécit au-delà d’une certaine proportion, vous pouvez, si vous le souhaitez, changer les propriétés de disposition pour repositionner, redimensionner, ajuster dynamiquement, révéler ou remplacer des sections de votre interface utilisateur. Vous pouvez définir des états visuels différents pour votre interface utilisateur et les appliquer lorsque la largeur ou la hauteur de la fenêtre atteint un seuil spécifié. Un [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) offre un moyen facile de définir le seuil (également appelé « point d’arrêt ») au niveau duquel un état est appliqué.
+    Lorsque la fenêtre de votre application grandit ou rétrécit au-delà d’une certaine proportion, vous pouvez, si vous le souhaitez, changer les propriétés de disposition pour repositionner, redimensionner, ajuster dynamiquement, révéler ou remplacer des sections de votre interface utilisateur. Vous pouvez définir des états visuels différents pour votre interface utilisateur et les appliquer lorsque la largeur ou la hauteur de la fenêtre atteint un seuil spécifié. Un [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) offre un moyen facile de définir le seuil (également appelé «point d’arrêt») au niveau duquel un état est appliqué.
 
 - **Disposition personnalisée**
     Une disposition personnalisée est optimisée pour une famille d’appareils spécifique ou plusieurs tailles d’écran. Dans la famille d’appareils, la disposition doit toujours réagir et s’adapter aux modifications de la plage de tailles de fenêtres prises en charge.
@@ -82,7 +80,7 @@ Le dimensionnement automatique permet de redimensionner les éléments d’inter
 
 Le *dimensionnement proportionnel* sert à répartir l’espace disponible entre les lignes et les colonnes d’une grille par proportions pondérées. En XAML, les valeurs proportionnelles sont exprimées par \* (ou *n*\* pour le dimensionnement proportionnel pondéré). À titre d’exemple, dans une disposition à deux colonnes, pour spécifier qu’une colonne est cinq fois plus large que l’autre colonne, utilisez « 5\* » et « \* » pour les propriétés [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.width.aspx) des éléments [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.aspx).
 
-Cet exemple combine le dimensionnement fixe, automatique et proportionnel dans un élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) avec 4 colonnes.
+Cet exemple combine le dimensionnement fixe, automatique et proportionnel dans un élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) avec 4colonnes.
 
 &nbsp;|&nbsp;|&nbsp;
 ------|------|------
@@ -91,7 +89,7 @@ Colonne_2 | * | Une fois les colonnes Auto calculées, la colonne conserve une p
 Colonne_3 | **44** | La colonne aura une largeur de 44 pixels.
 Colonne_4 | **2**\* | Une fois les colonnes Auto calculées, la colonne conserve une partie de la largeur restante. Colonne_4 sera deux fois plus large que Colonne_2.
 
-La largeur par défaut de la colonne est « * », de sorte que vous n’avez pas besoin de définir explicitement cette valeur pour la deuxième colonne.
+La largeur par défaut de la colonne est «*», de sorte que vous n’avez pas besoin de définir explicitement cette valeur pour la deuxième colonne.
 
 ```xaml
 <Grid>

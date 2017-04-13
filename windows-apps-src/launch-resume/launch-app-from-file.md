@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp
 ms.openlocfilehash: c0426320e978c88bc2db67398e626c0ed3794edc
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-an-app-through-file-activation"></a>Lancer une application par l’activation de fichiers
 
 Cette section montre comment configurer le démarrage de votre application à l’ouverture d’un fichier d’un type donné.

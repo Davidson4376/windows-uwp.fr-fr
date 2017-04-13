@@ -1,25 +1,22 @@
 ---
 author: mtoepke
 title: Empaqueter votre jeu de plateforme Windows universelle (UWP) DirectX
-description: "Certains jeux de plateforme Windows universelle (UWP), en particulier ceux qui prennent en charge plusieurs langues et comprennent des ressources spécifiques à la région ou des ressources haute définition facultatives, peuvent facilement devenir très volumineux."
+description: "Certains jeux de plateforme Windows universelle (UWP) qui prennent notamment en charge plusieurs langues et comprennent des ressources spécifiques à la région ou des ressources haute définition facultatives peuvent devenir facilement très volumineux."
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, jeux, directx, package"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp, jeux, directx, package
 ms.openlocfilehash: db31338d908f4c18eaa6b5090b8cf35ac5305655
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="package-your-universal-windows-platform-uwp-directx-game"></a>Créer un package pour votre jeu de plateforme Windows universelle (UWP) DirectX
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Certains jeux de plateforme Windows universelle (UWP) qui prennent notamment en charge plusieurs langues et comprennent des ressources spécifiques à la région ou des ressources haute définition facultatives peuvent devenir facilement très volumineux. Dans cette rubrique, découvrez comment utiliser les packages et ensembles d’applications pour personnaliser votre application afin que vos clients ne reçoivent que les ressources dont ils ont réellement besoin.
 
@@ -56,8 +53,8 @@ Tout cela est défini dans le fichier package.appxmanifest qui fait partie de vo
 Les ressources utilisées pour la création de packs de ressources sont spécifiées de l’une de ces deux manières de base suivantes :
 
 -   Les fichiers de ressources portent le même nom de fichier et les versions spécifiques du pack de ressources sont placées dans des répertoires nommés particuliers. Ces noms de répertoires sont réservés par le système. Par exemple, \\en-us, \\scale-140, \\dxfl-dx11.
--   Les fichiers de ressources sont stockés dans des dossiers avec des noms arbitraires. Toutefois, les fichiers sont nommés avec une étiquette commune qui est ajoutée à l’aide des chaînes réservées par le système pour indiquer la langue ou d’autres qualificateurs. Plus précisément, les chaînes des qualificateurs sont ajoutées au nom de fichier généralisé après un trait de soulignement (« \_ »). Par exemple, \\assets\\menu\_option1\_lang-en-us.png, \\assets\\menu\_option1\_scale-140.png, \\assets\\coolsign\_dxfl-dx11.dds. Vous pouvez également combiner ces chaînes. Par exemple, \\assets\\menu\_option1\_scale-140\_lang-en-us.png.
-    > **Remarque** Quand il est utilisé dans un nom de fichier au lieu d’être utilisé seul dans un nom de répertoire, un qualificateur de langue doit prendre la forme « lang-<tag> » (exemple : « lang-fr-fr »), comme indiqué dans [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
+-   Les fichiers de ressources sont stockés dans des dossiers avec des noms arbitraires. Toutefois, les fichiers sont nommés avec une étiquette commune qui est ajoutée à l’aide des chaînes réservées par le système pour indiquer la langue ou d’autres qualificateurs. Plus précisément, les chaînes des qualificateurs sont ajoutées au nom de fichier généralisé après un trait de soulignement («\_»). Par exemple, \\assets\\menu\_option1\_lang-en-us.png, \\assets\\menu\_option1\_scale-140.png, \\assets\\coolsign\_dxfl-dx11.dds. Vous pouvez également combiner ces chaînes. Par exemple, \\assets\\menu\_option1\_scale-140\_lang-en-us.png.
+    > **Remarque** Quand il est utilisé dans un nom de fichier au lieu d’être utilisé seul dans un nom de répertoire, un qualificateur de langue doit prendre la forme «lang-<tag>» (exemple: «lang-fr-fr»), comme indiqué dans [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
 
      
 
@@ -65,13 +62,13 @@ Les noms de répertoires peuvent être combinés pour afficher une spécificité
 
 Vous pouvez spécifier tous les noms de sous-répertoires non réservés dont vous avez besoin sous le répertoire d’une ressource. Il suffit que la structure du répertoire soit identique dans chaque répertoire de ressource. Par exemple, \\dxfl-dx10\\assets\\textures\\coolsign.dds. Quand vous chargez ou référencez une ressource, le chemin d’accès doit être généralisé par la suppression des qualificateurs de la langue, de l’échelle ou du niveau de fonctionnalité DirectX, que ce soit dans les nœuds de dossier ou dans les noms de fichier. Par exemple, pour faire référence dans du code à une ressource dont l’une des variantes est \\dxfl-dx10\\assets\\textures\\coolsign.dds, utilisez \\assets\\textures\\coolsign.dds. De même, pour faire référence à une ressource avec une variante \\images\\background\_scale-140.png, utilisez \\images\\background.png.
 
-Voici les noms de répertoires réservés et les suffixes de nom de fichier derrière le trait de soulignement suivants :
+Voici les noms de répertoires réservés et les suffixes de nom de fichier derrière le trait de soulignement suivants:
 
 | Type de ressource                   | Nom de répertoire du pack de ressources                                                                                                                  | Suffixe de nom de fichier du pack de ressources                                                                                                    |
 |------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| Ressources localisées             | Toutes les langues possibles ou les combinaisons de langues et de paramètres régionaux possibles pour Windows 10. (Le préfixe qualificateur « lang- » n’est pas nécessaire dans un nom de dossier.) | Un « \_ » suivi de la langue, d’un paramètre régional ou d’un spécificateur de langue-paramètre régional. Par exemple, « \_en », « \_us » ou « \_en-us » respectivement. |
-| Ressources de facteur d’échelle        | scale-100, scale-140 ou scale-180. Ces valeurs conviennent pour les facteurs d’échelle d’interface utilisateur 1.0x, 1.4x et 1.8x respectivement.                                     | Un « \_ » suivi de « scale-100 », « scale-140 » ou « scale-180 ».                                                                    |
-| Ressources de niveau de fonctionnalité DirectX | dxfl-dx9, dxfl-dx10 et dxfl-dx11. Ces valeurs conviennent pour les niveaux de fonctionnalités DirectX 9, 10 et 11, respectivement.                                     | Un « \_ » suivi de « dxfl-dx9 », « dxfl-dx10 » ou « dxfl-dx11 ».                                                                     |
+| Ressources localisées             | Toutes les langues possibles ou les combinaisons de langues et de paramètres régionaux possibles pour Windows 10. (Le préfixe qualificateur «lang-» n’est pas nécessaire dans un nom de dossier.) | Un «\_» suivi de la langue, d’un paramètre régional ou d’un spécificateur de langue-paramètre régional. Par exemple, «\_en», «\_us» ou «\_en-us» respectivement. |
+| Ressources de facteur d’échelle        | scale-100, scale-140 ou scale-180. Ces valeurs conviennent pour les facteurs d’échelle d’interface utilisateur 1.0x, 1.4x et 1.8x respectivement.                                     | Un «\_» suivi de «scale-100», «scale-140» ou «scale-180».                                                                    |
+| Ressources de niveau de fonctionnalité DirectX | dxfl-dx9, dxfl-dx10 et dxfl-dx11. Ces valeurs conviennent pour les niveaux de fonctionnalités DirectX9, 10 et 11, respectivement.                                     | Un «\_» suivi de «dxfl-dx9», «dxfl-dx10» ou «dxfl-dx11».                                                                     |
 
  
 
@@ -116,7 +113,7 @@ Les niveaux de fonctionnalités DirectX correspondent aux jeux de fonctionnalit�
 
 Votre package d’application de base doit utiliser les formats de compression de texture de base : BC1, BC2 ou BC3. Ces formats peuvent être consommés par tout appareil UWP, depuis les plateformes ARM à faible résolution jusqu’aux stations de travail multi-GPU et ordinateurs multimédias.
 
-La prise en charge du format de texture au niveau de fonctionnalité DirectX 10 ou supérieur doit être ajouté dans un pack de ressources pour conserver de l’espace disque en local et de la bande passante de téléchargement. Cela permet d’utiliser des schémas de compression avancés pour la version 11, comme BC6H et BC7. (Pour plus d’informations, voir [Compression de bloc de texture dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh308955).) Ces formats sont plus efficaces pour les ressources de texture haute résolution prises en charge par les GPU modernes. Leur utilisation améliore l’apparence, les performances et les exigences en termes d’espace de votre jeu sur des plateformes de haute qualité.
+La prise en charge du format de texture au niveau de fonctionnalité DirectX 10 ou supérieur doit être ajouté dans un pack de ressources pour conserver de l’espace disque en local et de la bande passante de téléchargement. Cela permet d’utiliser des schémas de compression avancés pour la version11, comme BC6H et BC7. (Pour plus d’informations, voir [Compression de bloc de texture dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh308955).) Ces formats sont plus efficaces pour les ressources de texture haute résolution prises en charge par les GPU modernes. Leur utilisation améliore l’apparence, les performances et les exigences en termes d’espace de votre jeu sur des plateformes de haute qualité.
 
 | Niveau de fonctionnalité DirectX | Compression de texture prise en charge |
 |-----------------------|-------------------------------|
@@ -130,10 +127,10 @@ Chaque niveau de fonctionnalité DirectX prend en charge différentes versions d
 
 Le mécanisme de ressource se concentre principalement sur les formats de texture pris en charge pour les ressources. Ainsi, il ne prend en charge que les trois niveaux de fonctionnalités globaux. Si vous avez besoin d’autres nuanceurs pour les sous-niveaux (versions intermédiaires), tels que DX9\_1 ou DX9\_3, votre gestion des ressources et votre code de rendu doivent les gérer de manière explicite.
 
-Quand vous configurez votre application pour prendre en charge des packs de ressources de différents niveaux de fonctionnalités DirectX, vous devez effectuer les actions suivantes :
+Quand vous configurez votre application pour prendre en charge des packs de ressources de différents niveaux de fonctionnalités DirectX, vous devez effectuer les actions suivantes:
 
 -   Créez un sous-répertoire d’application (ou version de fichier) pour chaque niveau de fonctionnalité DirectX pris en charge (dxfl-dx9, dxfl-dx10 et dxfl-dx11).
--   Pendant le développement, placez les ressources spécifiques de niveau de fonctionnalité dans chaque répertoire de ressource de niveau de fonctionnalité. Contrairement aux paramètres régionaux et aux facteurs d’échelle, vous pouvez disposer de différentes ramifications de code de rendu pour chaque niveau de fonctionnalité dans votre jeu. Si vous utilisez des textures, des nuanceurs compilés ou d’autres ressources qui ne sont utilisées dans un niveau de fonctionnalité ou un sous-ensemble comprenant tous les niveaux de fonctionnalités, ne placez les ressources correspondantes que dans les répertoires relatifs aux niveaux de fonctionnalités qui les utilisent. Si des ressources sont chargées dans tous les niveaux de fonctionnalités, veillez à ce que chaque répertoire de ressource de niveau de fonctionnalité dispose d’une version du même nom. Par exemple, dans le cas d’une texture non liée à un niveau de fonctionnalité appelée « coolsign.dds », placez la version compressée BC3 dans le répertoire \\dxfl-dx9 et la version compressée BC7 dans le répertoire \\dxfl-dx11.
+-   Pendant le développement, placez les ressources spécifiques de niveau de fonctionnalité dans chaque répertoire de ressource de niveau de fonctionnalité. Contrairement aux paramètres régionaux et aux facteurs d’échelle, vous pouvez disposer de différentes ramifications de code de rendu pour chaque niveau de fonctionnalité dans votre jeu. Si vous utilisez des textures, des nuanceurs compilés ou d’autres ressources qui ne sont utilisées dans un niveau de fonctionnalité ou un sous-ensemble comprenant tous les niveaux de fonctionnalités, ne placez les ressources correspondantes que dans les répertoires relatifs aux niveaux de fonctionnalités qui les utilisent. Si des ressources sont chargées dans tous les niveaux de fonctionnalités, veillez à ce que chaque répertoire de ressource de niveau de fonctionnalité dispose d’une version du même nom. Par exemple, dans le cas d’une texture non liée à un niveau de fonctionnalité appelée «coolsign.dds», placez la version compressée BC3 dans le répertoire \\dxfl-dx9 et la version compressée BC7 dans le répertoire \\dxfl-dx11.
 -   Veillez à ce que chaque ressource (si elle est disponible dans plusieurs niveaux de fonctionnalités) porte le même nom dans chaque répertoire. Par exemple, coolsign.dds doit avoir le même nom dans les deux répertoires \\dxfl-dx9 et \\dxfl-dx11, même si le contenu du fichier est différent. Dans ce cas, ils s’affichent comme \\dxfl-dx9\\coolsign.dds et \\dxfl-dx11\\coolsign.dds.
     > **Remarque** Vous pouvez éventuellement ajouter le suffixe du niveau de fonctionnalité au nom de fichier et les stocker dans le même répertoire, par exemple \\textures\\coolsign\_dxfl-dx9.dds, \\textures\\coolsign\_dxfl-dx11.dds.
 
@@ -169,7 +166,7 @@ Quand vous configurez votre application pour prendre en charge des packs de ress
     );
     ```
 
--   Utilisez les API dans [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) pour charger les ressources. Les références de ressources doivent être généralisées (sans suffixe), en laissant de côté le niveau de fonctionnalité. Cependant, contrairement à la langue et à l’échelle, le système ne détermine pas automatiquement le niveau de fonctionnalité optimal pour un affichage donné. C’est à vous de le déterminer via la logique du code. Une fois cette opération effectuée, utilisez les API pour indiquer au système d’exploitation le niveau de fonctionnalité préféré. Le système pourra ensuite récupérer la ressource appropriée en fonction de cette préférence. Voici un exemple de code qui montre comment indiquer à votre application le niveau de fonctionnalité DirectX actuel de la plateforme :
+-   Utilisez les API dans [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) pour charger les ressources. Les références de ressources doivent être généralisées (sans suffixe), en laissant de côté le niveau de fonctionnalité. Cependant, contrairement à la langue et à l’échelle, le système ne détermine pas automatiquement le niveau de fonctionnalité optimal pour un affichage donné. C’est à vous de le déterminer via la logique du code. Une fois cette opération effectuée, utilisez les API pour indiquer au système d’exploitation le niveau de fonctionnalité préféré. Le système pourra ensuite récupérer la ressource appropriée en fonction de cette préférence. Voici un exemple de code qui montre comment indiquer à votre application le niveau de fonctionnalité DirectX actuel de la plateforme:
     
     ```cpp
     // Set the current UI thread's MRT ResourceContext's DXFeatureLevel with the right DXFL. 
@@ -193,7 +190,7 @@ Quand vous configurez votre application pour prendre en charge des packs de ress
         ResourceContext::SetGlobalQualifierValue(L"DXFeatureLevel", dxFeatureLevel);
     ```
 
-    > **Remarque** Dans votre code, chargez la texture directement par nom (ou par chemin d’accès sous le répertoire de niveau de fonctionnalité). N’incluez pas le nom du répertoire du niveau de fonctionnalité ni le suffixe. Par exemple, chargez « textures\\coolsign.dds », mais pas « dxfl-dx11\\textures\\coolsign.dds » ni « textures\\coolsign\_dxfl-dx11.dds ».
+    > **Remarque** Dans votre code, chargez la texture directement par nom (ou par chemin d’accès sous le répertoire de niveau de fonctionnalité). N’incluez pas le nom du répertoire du niveau de fonctionnalité ni le suffixe. Par exemple, chargez «textures\\coolsign.dds», mais pas «dxfl-dx11\\textures\\coolsign.dds» ni «textures\\coolsign\_dxfl-dx11.dds».
 
      
 
@@ -229,7 +226,6 @@ Quand vous configurez votre application pour prendre en charge des packs de ress
  
 
  
-
 
 
 

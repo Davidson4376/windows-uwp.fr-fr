@@ -1,30 +1,27 @@
 ---
 author: TylerMSFT
 title: "Démarrage automatique avec lecture automatique"
-description: "Vous pouvez utiliser la lecture automatique pour proposer votre application en tant qu’option lorsque l’utilisateur connecte un périphérique à son PC. Cela inclut les périphériques autres que les périphériques de volume, tels qu’un appareil photo ou un lecteur multimédia, ou les périphériques de volume tels qu’une clé USB, une carte mémoire SD ou un DVD."
+description: "Vous pouvez utiliser la lecture automatique pour proposer votre application en tant qu’option lorsque l’utilisateur connecte un périphérique à son PC. Cela inclut les périphériques autres que les périphériques de volume, tels qu’un appareil photo ou un lecteur multimédia, ou les périphériques de volume tels qu’une cléUSB, une carte mémoireSD ou un DVD."
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 60d4e40d056671f19149a031eb7774809060729e
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 02215be4cff7bbd42bdc1911777f62bacd22b6c7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>Démarrage automatique avec lecture automatique
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Vous pouvez utiliser la **lecture automatique** pour proposer votre application en tant qu’option lorsque l’utilisateur connecte un périphérique à son PC. Cela inclut les périphériques autres que les périphériques de volume, tels qu’un appareil photo ou un lecteur multimédia, ou les périphériques de volume tels qu’une clé USB, une carte mémoire SD ou un DVD. Vous pouvez également utiliser la **lecture automatique** pour proposer votre application en tant qu’option quand des utilisateurs partagent des fichiers entre deux PC à l’aide de la fonction de proximité (appui).
+Vous pouvez utiliser la **lecture automatique** pour proposer votre application en tant qu’option lorsque l’utilisateur connecte un périphérique à son PC. Cela inclut les périphériques autres que les périphériques de volume, tels qu’un appareil photo ou un lecteur multimédia, ou les périphériques de volume tels qu’une clé USB, une carte mémoire SD ou un DVD. Vous pouvez également utiliser la **lecture automatique** pour proposer votre application en tant qu’option quand des utilisateurs partagent des fichiers entre deuxPC à l’aide de la fonction de proximité (appui).
 
-> **Remarque**  Si vous êtes fabricant de périphériques et si vous voulez associer votre [application pour périphériques du Windows Store](http://go.microsoft.com/fwlink/p/?LinkID=301381) en tant que gestionnaire de **lecture automatique** de votre périphérique, vous pouvez identifier l’application dans les métadonnées du périphérique. Pour plus d’informations, voir [Lecture automatique pour les applications pour périphériques du Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=306684).
+> **Remarque**  Si vous êtes fabricant de périphériques et si vous voulez associer votre [application pour périphériques du WindowsStore](http://go.microsoft.com/fwlink/p/?LinkID=301381) en tant que gestionnaire de **lecture automatique** de votre périphérique, vous pouvez identifier l’application dans les métadonnées du périphérique. Pour plus d’informations, voir [Lecture automatique pour les applications pour périphériques du WindowsStore](http://go.microsoft.com/fwlink/p/?LinkId=306684).
 
 ## <a name="register-for-autoplay-content"></a>S’inscrire pour le contenu de lecture automatique
 
@@ -42,18 +39,18 @@ La lecture automatique déclenche également des événements de contenu pour du
  
 Lorsque des fichiers sont partagés à l’aide de la fonction de proximité, la propriété **Files** de l’objet **FileActivatedEventArgs** contient une référence à un dossier racine reprenant l’intégralité des fichiers partagés.
 
-### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>Étape 1 : Créer un projet et ajouter les déclarations de lecture automatique
+### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>Étape 1: Créer un projet et ajouter les déclarations de lecture automatique
 
 1.  Ouvrez Microsoft Visual Studio et sélectionnez **Nouveau projet** dans le menu **Fichier**. Dans la section **Visual C#**, sous **Windows**, sélectionnez **Application vide (Windows universel)**. Attribuez à l’application le nom **AutoPlayDisplayOrCopyImages**, puis cliquez sur **OK**.
 2.  Ouvrez le fichier Package.appxmanifest, puis sélectionnez l’onglet **Fonctionnalités**. Sélectionnez les fonctionnalités **Stockage amovible** et **Bibliothèque d’images**. Cela permet à l’application d’accéder à des périphériques de stockage amovibles pour la mémoire de l’appareil photo, et d’accéder aux images locales.
 3.  Dans le fichier manifeste, sélectionnez l’onglet **Déclarations**. Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Contenu de lecture automatique**, puis cliquez sur **Ajouter**. Sélectionnez le nouvel élément **Contenu de lecture automatique** ajouté à la liste **Déclarations prises en charge**.
-4.  Une déclaration **Contenu de lecture automatique** identifie votre application en tant qu’option lorsque la lecture automatique déclenche un événement de contenu. L’événement est basé sur le contenu d’un périphérique de volume tel qu’un DVD ou une clé USB. La lecture automatique examine le contenu du périphérique de volume et détermine l’événement de contenu à déclencher. Si la racine du volume contient un dossier DCIM, AVCHD ou PRIVATE\ACHD ou si un utilisateur a activé **Choisir l’action pour chaque type de média** dans la section Lecture automatique du Panneau de configuration et que des images sont présentes à la racine du volume, la lecture automatique déclenche alors l’événement **ShowPicturesOnArrival**. Dans la section **Actions de lancement**, entrez les valeurs du tableau 1 ci-dessous pour la première action de lancement.
+4.  Une déclaration **Contenu de lecture automatique** identifie votre application en tant qu’option lorsque la lecture automatique déclenche un événement de contenu. L’événement est basé sur le contenu d’un périphérique de volume tel qu’un DVD ou une clé USB. La lecture automatique examine le contenu du périphérique de volume et détermine l’événement de contenu à déclencher. Si la racine du volume contient un dossier DCIM, AVCHD ou PRIVATE\ACHD ou si un utilisateur a activé **Choisir l’action pour chaque type de média** dans la section Lecture automatique du Panneau de configuration et que des images sont présentes à la racine du volume, la lecture automatique déclenche alors l’événement **ShowPicturesOnArrival**. Dans la section **Actions de lancement**, entrez les valeurs du tableau1 ci-dessous pour la première action de lancement.
 5.  Dans la section **Actions de lancement** correspondant à l’élément **Contenu de lecture automatique**, cliquez sur **Ajouter nouveau** pour ajouter une deuxième action de lancement. Entrez les valeurs suivantes pour la deuxième action de lancement.
 6.  Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Associations de types de fichier**, puis cliquez sur **Ajouter**. Dans les propriétés de la nouvelle déclaration **Associations de types de fichier**, attribuez au champ **Nom d’affichage** la valeur **AutoPlay Copy or Show Images** et au champ **Nom** la valeur **image\_association1**. Dans la section **Types de fichier pris en charge**, cliquez sur **Ajouter nouveau**. Attribuez au champ **Type de fichier** la valeur **.jpg**. Dans la section **Types de fichier pris en charge**, attribuez au champ **Type de fichier** de la nouvelle association de fichiers la valeur **.png**. Pour les événements de contenu, la lecture automatique filtre les types de fichiers qui ne sont pas explicitement associés à votre application.
 7.  Enregistrez et fermez le fichier manifeste.
 
 
-**Tableau 1**
+**Tableau1**
 
 | Paramètre             | Valeur                 |
 |---------------------|-----------------------|
@@ -63,7 +60,7 @@ Lorsque des fichiers sont partagés à l’aide de la fonction de proximité, la
 
 Le paramètre **Nom complet de l’action** identifie la chaîne que la lecture automatique affiche pour votre application. Le paramètre **Verbe** identifie une valeur qui est transmise à votre application pour l’option sélectionnée. Vous pouvez spécifier plusieurs options de lancement pour un événement de lecture automatique et utiliser le paramètre **Verbe** pour déterminer l’option sélectionnée par l’utilisateur pour votre application. Vous pouvez vérifier quelle option a été sélectionnée par l’utilisateur par le biais de la propriété **verb** des arguments d’événement de démarrage transmis à votre application. Vous pouvez attribuer n’importe quelle valeur au paramètre **Verbe**, sauf la valeur **open** qui est réservée.
 
-**Tableau 2**  
+**Tableau2**  
 
 | Paramètre             | Valeur                      |
 |---------------------|----------------------------|
@@ -71,7 +68,7 @@ Le paramètre **Nom complet de l’action** identifie la chaîne que la lecture 
 | Nom complet de l’action | Copy Pictures Into Library |
 | Événement de contenu       | ShowPicturesOnArrival      |
 
-### <a name="step-2-add-xaml-ui"></a>Étape 2 : Ajouter une interface utilisateur XAML
+### <a name="step-2-add-xaml-ui"></a>Étape2: Ajouter une interface utilisateur XAML
 
 Ouvrez le fichier MainPage.xaml et ajoutez le code XAML suivant à la section &lt;Grid&gt; par défaut.
 
@@ -83,7 +80,7 @@ Ouvrez le fichier MainPage.xaml et ajoutez le code XAML suivant à la section &l
         Margin="260,20,0,0" Height="280" Width="100"/>
 ```
 
-### <a name="step-3-add-initialization-code"></a>Étape 3 : Ajouter du code d’initialisation
+### <a name="step-3-add-initialization-code"></a>Étape3: Ajouter du code d’initialisation
 
 Le code de cette étape vérifie la valeur du verbe dans la propriété **Verb**, qui est l’un des arguments de démarrage transmis à l’application pendant l’événement **OnFileActivated**. Le code appelle alors une méthode associée à l’option que l’utilisateur a sélectionnée. Pour un événement de mémoire d’appareil photo, la lecture automatique passe le dossier racine du stockage de l’appareil photo à l’application. Vous pouvez récupérer ce dossier à partir du premier élément de la propriété **Files**.
 
@@ -116,7 +113,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
 > **Remarque**  Les méthodes `DisplayImages` et `CopyImages` sont ajoutées au cours des étapes suivantes.
 
-### <a name="step-4-add-code-to-display-images"></a>Étape 4 : Ajouter du code pour afficher des images
+### <a name="step-4-add-code-to-display-images"></a>Étape4: Ajouter du code pour afficher des images
 
 Dans le fichier MainPage.xaml.cs, ajoutez le code suivant à la classe **MainPage**.
 
@@ -176,7 +173,7 @@ private async void WriteMessageText(string message, bool overwrite = false)
 }
 ```
 
-### <a name="step-5-add-code-to-copy-images"></a>Étape 5 : Ajouter du code pour copier des images
+### <a name="step-5-add-code-to-copy-images"></a>Étape5: Ajouter du code pour copier des images
 
 Dans le fichier MainPage.xaml.cs, ajoutez le code suivant à la classe **MainPage**.
 
@@ -222,7 +219,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 }
 ```
 
-### <a name="step-6-build-and-run-the-app"></a>Étape 6 : Générer et exécuter l’application
+### <a name="step-6-build-and-run-the-app"></a>Étape6: Générer et exécuter l’application
 
 1.  Appuyez sur F5 pour créer et déployer l’application (en mode débogage).
 2.  Pour exécuter votre application, insérez une carte mémoire d’appareil photo ou un autre périphérique de stockage d’un appareil photo dans votre PC. Sélectionnez ensuite l’une des options d’événement de contenu que vous avez spécifiées dans votre fichier package.appxmanifest à partir de la liste d’options de la lecture automatique. Cet exemple de code affiche ou copie uniquement les images du dossier DCIM de la carte mémoire d’un appareil photo. Si la carte mémoire de votre appareil photo stocke des images dans un dossier AVCHD ou PRIVATE\\ACHD, vous devez mettre à jour le code en conséquence.
@@ -235,7 +232,7 @@ Vous pouvez inscrire des applications en tant qu’options pour les événements
 
 Voici comment identifier votre application en tant qu’option de **lecture automatique** lorsqu’un appareil photo est connecté à un PC. L’application s’inscrit en tant que gestionnaire de l’événement **WPD\\ImageSourceAutoPlay**. Il s’agit d’un événement courant que le système WPD (Windows Portable Device) déclenche lorsque des appareils photo et d’autres périphériques d’acquisition d’images l’avertissent qu’ils sont une source d’image (ImageSource) utilisant MTP. Pour plus d’informations, voir [Appareils mobiles Windows](https://msdn.microsoft.com/library/windows/hardware/ff597729).
 
-**Important**  Les API [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) font partie de la [famille des appareils de bureau](https://msdn.microsoft.com/library/windows/apps/dn894631). Les applications peuvent utiliser ces API uniquement sur les appareils Windows 10 de la famille d’appareils de bureau, tels que les PC.
+**Important**  Les API [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) font partie de la [famille des appareils de bureau](https://msdn.microsoft.com/library/windows/apps/dn894631). Les applications peuvent utiliser ces API uniquement sur les appareils Windows10 de la famille d’appareils de bureau, tels que les PC.
 
  
 
@@ -256,7 +253,7 @@ Voici comment identifier votre application en tant qu’option de **lecture auto
 
 Le paramètre **Nom complet de l’action** identifie la chaîne que la lecture automatique affiche pour votre application. Le paramètre **Verbe** identifie une valeur qui est transmise à votre application pour l’option sélectionnée. Vous pouvez spécifier plusieurs options de lancement pour un événement de lecture automatique et utiliser le paramètre **Verbe** pour déterminer l’option sélectionnée par l’utilisateur pour votre application. Vous pouvez vérifier quelle option a été sélectionnée par l’utilisateur par le biais de la propriété **verb** des arguments d’événement de démarrage transmis à votre application. Vous pouvez attribuer n’importe quelle valeur au paramètre **Verbe**, sauf la valeur **open** qui est réservée. Pour obtenir un exemple d’utilisation de plusieurs verbes dans une même application, voir [S’inscrire pour le contenu de lecture automatique](#register-for-autoplay-content).
 
-### <a name="step-2-add-assembly-reference-for-the-desktop-extensions"></a>Étape 2 : Ajouter la référence d’assembly pour les extensions de bureau
+### <a name="step-2-add-assembly-reference-for-the-desktop-extensions"></a>Étape2 : Ajouter la référence d’assembly pour les extensions de bureau
 
 Les API nécessaires pour accéder au stockage d’un appareil mobile Windows, [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654), font partie de la [famille des appareils de bureau](https://msdn.microsoft.com/library/windows/apps/dn894631). Cela signifie qu’un assembly spécial est requis pour utiliser les API et ces appels fonctionneront uniquement sur un appareil de la famille des appareils de bureau (par exemple un PC).
 
@@ -264,7 +261,7 @@ Les API nécessaires pour accéder au stockage d’un appareil mobile Windows, [
 2.  Développez **Windows universel** et cliquez sur **Extensions**.
 3.  Sélectionnez ensuite **Extensions de bureau Windows pour UWP** et cliquez sur **OK**.
 
-### <a name="step-3-add-xaml-ui"></a>Étape 3 : Ajouter une interface utilisateur XAML
+### <a name="step-3-add-xaml-ui"></a>Étape3: Ajouter une interface utilisateur XAML
 
 Ouvrez le fichier MainPage.xaml et ajoutez le code XAML suivant à la section &lt;Grid&gt; par défaut.
 
@@ -292,7 +289,7 @@ Ouvrez le fichier MainPage.xaml et ajoutez le code XAML suivant à la section &l
 </StackPanel>
 ```
 
-### <a name="step-4-add-activation-code"></a>Étape 4 : Ajouter du code d’activation
+### <a name="step-4-add-activation-code"></a>Étape4: Ajouter du code d’activation
 
 Le code de cette étape fait référence à l’appareil photo en tant que [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) en transmettant l’ID des informations de périphérique de l’appareil photo à la méthode [**FromId**](https://msdn.microsoft.com/library/windows/apps/br225655). L’ID des informations de périphérique de l’appareil photo est obtenu en diffusant tout d’abord des arguments de l’événement en tant que [**DeviceActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224710), puis en obtenant la valeur de la propriété [**DeviceInformationId**](https://msdn.microsoft.com/library/windows/apps/br224711).
 
@@ -346,7 +343,7 @@ protected override void OnActivated(IActivatedEventArgs args)
 
 > **Remarque**  La méthode `ShowImages` est ajoutée à l’étape suivante.
 
-### <a name="step-5-add-code-to-display-device-information"></a>Étape 5 : Ajouter du code pour afficher des informations de périphérique
+### <a name="step-5-add-code-to-display-device-information"></a>Étape5: Ajouter du code pour afficher des informations de périphérique
 
 Vous pouvez obtenir des informations sur l’appareil photo à partir des propriétés de la classe [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654). Le code de cette étape affiche le nom du périphérique et d’autres informations pour l’utilisateur au moment de l’exécution de l’application. Le code appelle alors les méthodes GetImageList et GetThumbnail, que vous ajouterez à l’étape suivante, pour afficher des miniatures des images stockées dans l’appareil photo.
 
@@ -376,7 +373,7 @@ internal async void ShowImages(Windows.Storage.StorageFolder folder)
 
  
 
-### <a name="step-6-add-code-to-display-images"></a>Étape 6 : Ajouter du code pour afficher des images
+### <a name="step-6-add-code-to-display-images"></a>Étape6: Ajouter du code pour afficher des images
 
 Le code de cette étape affiche des miniatures des images stockées dans l’appareil photo. Le code effectue des appels asynchrones à l’appareil photo pour obtenir l’image miniature. Toutefois, l’appel asynchrone suivant ne se produit qu’une fois l’appel asynchrone précédent terminé. Cela garantit qu’une seule demande à la fois est effectuée auprès de l’appareil photo.
 
@@ -413,7 +410,7 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 }
 ```
 
-### <a name="step-7-build-and-run-the-app"></a>Étape 7 : Générer et exécuter l’application
+### <a name="step-7-build-and-run-the-app"></a>Étape7: Générer et exécuter l’application
 
 1.  Appuyez sur F5 pour créer et déployer l’application (en mode débogage).
 2.  Pour exécuter votre application, connectez un appareil photo à votre ordinateur. Sélectionnez ensuite l’application dans la liste d’options de la lecture automatique.
@@ -430,7 +427,7 @@ Voici comment identifier votre périphérique de volume comme périphérique de 
 
 Pour identifier votre périphérique de volume comme périphérique de **lecture automatique**, ajoutez un fichier autorun.inf au lecteur racine de votre périphérique. Dans le fichier autorun.inf, ajoutez une clé **CustomEvent** à la section **AutoRun**. Lorsque votre périphérique de volume se connecte à un PC, la **lecture automatique** trouve le fichier autorun.inf et traite votre volume comme un périphérique. La **lecture automatique** crée un événement de **lecture automatique** à l’aide du nom que vous avez fourni pour la clé **CustomEvent**. Vous pouvez alors créer une application et l’inscrire en tant que gestionnaire de cet événement de **lecture automatique**. Lorsque le périphérique est connecté au PC, la **lecture automatique** affiche votre application comme gestionnaire de votre périphérique de volume. Pour plus d’informations sur les fichiers autorun.inf, voir [Entrées du fichier Autorun.inf](https://msdn.microsoft.com/library/windows/desktop/cc144200).
 
-### <a name="step-1-create-an-autoruninf-file"></a>Étape 1 : Créer un fichier autorun.inf
+### <a name="step-1-create-an-autoruninf-file"></a>Étape1: Créer un fichier autorun.inf
 
 Dans le lecteur racine de votre périphérique de volume, ajoutez un fichier nommé autorun.inf. Ouvrez le fichier autorun.inf et ajoutez le texte suivant.
 
@@ -439,7 +436,7 @@ Dans le lecteur racine de votre périphérique de volume, ajoutez un fichier nom
 CustomEvent=AutoPlayCustomEventQuickstart
 ```
 
-### <a name="step-2-create-a-new-project-and-add-autoplay-declarations"></a>Étape 2 : Créer un projet et ajouter les déclarations de lecture automatique
+### <a name="step-2-create-a-new-project-and-add-autoplay-declarations"></a>Étape2: Créer un projet et ajouter les déclarations de lecture automatique
 
 1.  Ouvrez Visual Studio et sélectionnez **Nouveau projet** dans le menu **Fichier**. Dans la section **Visual C#**, sous **Windows**, sélectionnez **Application vide (Windows universel)**. Nommez l’application **AutoPlayCustomEvent** et cliquez sur **OK**.
 2.  Ouvrez le fichier Package.appxmanifest, puis sélectionnez l’onglet **Fonctionnalités**. Sélectionnez la fonctionnalité **Stockage amovible**. Cela permet à l’application d’accéder aux fichiers et dossiers situés sur les périphériques de stockage amovibles.
@@ -459,7 +456,7 @@ CustomEvent=AutoPlayCustomEventQuickstart
 
 La valeur **Événement de contenu** correspond au texte que vous avez fourni pour la clé **CustomEvent** dans votre fichier autorun.inf. Le paramètre **Nom complet de l’action** identifie la chaîne que la lecture automatique affiche pour votre application. Le paramètre **Verbe** identifie une valeur qui est transmise à votre application pour l’option sélectionnée. Vous pouvez spécifier plusieurs options de lancement pour un événement de lecture automatique et utiliser le paramètre **Verbe** pour déterminer l’option sélectionnée par l’utilisateur pour votre application. Vous pouvez vérifier quelle option a été sélectionnée par l’utilisateur par le biais de la propriété **verb** des arguments d’événement de démarrage transmis à votre application. Vous pouvez attribuer n’importe quelle valeur au paramètre **Verbe**, sauf la valeur **open** qui est réservée.
 
-### <a name="step-3-add-xaml-ui"></a>Étape 3 : Ajouter une interface utilisateur XAML
+### <a name="step-3-add-xaml-ui"></a>Étape3: Ajouter une interface utilisateur XAML
 
 Ouvrez le fichier MainPage.xaml et ajoutez le code XAML suivant à la section &lt;Grid&gt; par défaut.
 
@@ -470,7 +467,7 @@ Ouvrez le fichier MainPage.xaml et ajoutez le code XAML suivant à la section &l
 </StackPanel>
 ```
 
-### <a name="step-4-add-activation-code"></a>Étape 4 : Ajouter du code d’activation
+### <a name="step-4-add-activation-code"></a>Étape4: Ajouter du code d’activation
 
 Dans les étapes suivantes, le code appelle une méthode destinée à afficher les dossiers présents dans le lecteur racine de votre périphérique de volume. Pour les événements de contenu de lecture automatique, la lecture automatique transmet le dossier racine du dispositif de stockage aux arguments de démarrage qui sont transmis à l’application pendant l’événement **OnFileActivated**. Vous pouvez récupérer ce dossier à partir du premier élément de la propriété **Files**.
 
@@ -493,7 +490,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
  
 
-### <a name="step-5-add-code-to-display-folders"></a>Étape 5 : Ajouter du code pour afficher des dossiers
+### <a name="step-5-add-code-to-display-folders"></a>Étape5: Ajouter du code pour afficher des dossiers
 
 Dans le fichier MainPage.xaml.cs, ajoutez le code suivant à la classe **MainPage**.
 
@@ -518,7 +515,7 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 }
 ```
 
-### <a name="step-6-build-and-run-the-qpp"></a>Étape 6 : Générer et exécuter l’application
+### <a name="step-6-build-and-run-the-qpp"></a>Étape6: Générer et exécuter l’application
 
 1.  Appuyez sur F5 pour créer et déployer l’application (en mode débogage).
 2.  Pour exécuter votre application, insérez une carte mémoire ou un autre périphérique de stockage dans votre PC. Sélectionnez ensuite votre application dans la liste des options de gestionnaire de lecture automatique.
@@ -584,4 +581,3 @@ Vous pouvez inscrire votre application en tant que gestionnaire d’événements
  
 
  
-

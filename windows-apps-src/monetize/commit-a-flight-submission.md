@@ -1,36 +1,33 @@
 ---
 author: mcleanbyron
 ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
-description: "Utilisez cette méthode ds l’API de soum. du Windows Store pr valider une soum. de version d’éval. de pack. nouvelle ou mise à jour vers le Ctre de dév. Windows."
-title: "Val. soum. de version d’éval. de pack. av l’API de soum. Windows Store"
+description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour valider une soumission de version d’évaluation de package nouvelle ou mise à jour vers le Centre de développement Windows."
+title: "Valider une soumission de version d’évaluation de package"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, validation d&quot;une soumission de version d&quot;évaluation"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 305c9280b00fbbd669bee31732e831238054f177
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, API de soumission du Windows Store, valider une soumission de version d&quot;évaluation"
+ms.openlocfilehash: 5171fb89b9485ed314a8c7f0322db89019e9d512
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="commit-a-package-flight-submission-using-the-windows-store-submission-api"></a>Val. soum. de version d’éval. de pack. av l’API de soum. Windows Store
-
+# <a name="commit-a-package-flight-submission"></a>Valider une soumission de version d’évaluation de package
 
 
 
-Utilisez cette méthode ds l’API de soum. du Windows Store pr valider une soum. de version d’éval. de pack. nouvelle ou mise à jour vers le Ctre de dév. Windows. L’action de validation alerte le Centre de développement que les données de soumission ont été chargées sur le serveur (y compris les packages associées, le cas échéant). En réponse, le Centre de développement valide les modifications apportées aux données de soumission en vue de leur intégration et publication. Dès lors que l’opération de validation a abouti, les modifications apportées à la soumission s’affichent dans le tableau de bord du Centre de développement.
+
+Utilisez cette méthode dans l’API de soumission du Windows Store pour valider une soumission de version d’évaluation de package nouvelle ou mise à jour vers le Centre de développement Windows. L’action de validation alerte le Centre de développement que les données de soumission ont été chargées sur le serveur (y compris les packages associées, le cas échéant). En réponse, le Centre de développement valide les modifications apportées aux données de soumission en vue de leur intégration et publication. Dès lors que l’opération de validation a abouti, les modifications apportées à la soumission s’affichent dans le tableau de bord du Centre de développement.
 
 Pour plus d’informations sur la façon dont cette opération de validation s’inscrit dans le processus de création d’une soumission de version d’évaluation de package à l’aide de l’API de soumission du Windows Store, consultez [Gérer les soumissions de versions d’évaluation de package](manage-flight-submissions.md).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * [Créez une soumission de version d’évaluation de package ](create-a-flight-submission.md), puis [mettez à jour cette soumission](update-a-flight-submission.md) avec les éventuelles modifications nécessaires apportées aux données de soumission.
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
@@ -91,7 +88,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
+| status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
 
 <span/>
 
@@ -115,6 +112,5 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Obtenir une soumission de version d’évaluation du package](get-a-flight-submission.md)
 * [Créer une soumission de version d’évaluation du package](create-a-flight-submission.md)
 * [Mettre à jour une soumission de version d’évaluation de package](update-a-flight-submission.md)
-* [Supprimer une soumission de version d’évaluation de package](delete-a-flight-submission.md)
+* [Supprimer une soumission de version d’évaluation du package](delete-a-flight-submission.md)
 * [Obtenir l’état d’une soumission de version d’évaluation du package](get-status-for-a-flight-submission.md)
-

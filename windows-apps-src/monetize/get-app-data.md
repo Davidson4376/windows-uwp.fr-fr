@@ -1,26 +1,23 @@
 ---
 author: mcleanbyron
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
-description: "Utilisez ces méthodes de l’API de soumission du Windows Store pour récupérer des données pour les applications inscrites dans votre compte du Centre de développement Windows."
-title: "Obtenir des données d’application à l’aide de l’API de soumission du Windows Store"
+description: "Utilisez ces méthodes de l’API de soumission du Windows Store pour récupérer des données pour les applications inscrites dans votre compte du Centre de développement Windows."
+title: "Obtenir des données d’application"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, données d’application"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 756f11cdc440a891658c2311cc61199dec3d6d1f
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, API de soumission du Windows Store, données d’application"
+ms.openlocfilehash: dc0aa91aa417689866aa6bd666f0446c0eb2e242
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="get-app-data"></a>Obtenir des données d’application
 
-# <a name="get-app-data-using-the-windows-store-submission-api"></a>Obtenir des données d’application à l’aide de l’API de soumission du Windows Store
+Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pour obtenir des données pour les applications existantes dans votre compte du Centre de développement. Pour obtenir une présentation de l’API de soumission du WindowsStore, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services du WindowsStore](create-and-manage-submissions-using-windows-store-services.md).
 
-Utilisez les méthodes ci-après de l’API de soumission du Windows Store afin d’obtenir des données pour les applications existantes dans votre compte du Centre de développement Windows. Pour découvrir une présentation de l’API de soumission du Windows Store, notamment les conditions préalables à l’utilisation de l’API, consultez l’article [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
-
->**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. L’octroi de cette autorisation s’effectue en plusieurs étapes. Elle est accordée aux comptes de développeur, et tous les comptes n’en bénéficient pas pour le moment. Pour demander un accès anticipé, connectez-vous au tableau de bord du Centre de développement, cliquez sur **Commentaires** au bas du tableau de bord, sélectionnez **API de soumission** dans la zone de commentaires, puis soumettez votre demande. Dès que cette autorisation sera accordée à votre compte, vous en serez averti par e-mail.
+>**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. L’octroi de cette autorisation s’effectue en plusieurs étapes. Elle est accordée aux comptes de développeur, et tous les comptes n’en bénéficient pas pour le moment. Pour demander un accès anticipé, connectez-vous au tableau de bord du Centre de développement, cliquez sur **Commentaires** au bas du tableau de bord, sélectionnez **API de soumission** dans la zone de commentaires, puis soumettez votre demande. Dès que cette autorisation sera accordée à votre compte, vous en serez averti par e-mail.
 
 Pour que vous puissiez utiliser ces méthodes, l’application doit déjà exister dans votre compte du Centre de développement. Pour créer ou gérer des soumissions pour des applications, consultez les méthodes indiquées dans l’article [Gérer les soumissions d’applications](manage-app-submissions.md).
 
@@ -65,7 +62,7 @@ Pour que vous puissiez utiliser ces méthodes, l’application doit déjà exist
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store avant d’essayer d’utiliser l’une de ces méthodes.
+Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du WindowsStore avant d’essayer d’utiliser l’une de ces méthodes.
 
 ## <a name="data-resources"></a>Ressources de données
 
@@ -104,7 +101,7 @@ Cette ressource a les valeurs suivantes.
 | packageFamilyName | chaîne  | Nom de la famille de packages de l’application.      |
 | packageIdentityName          | chaîne  | Nom de l’identité du package de l’application.                       |
 | publisherName       | chaîne  | ID de l’éditeur Windows associé à l’application. Celui-ci correspond à la valeur **Package/Identité/Éditeur** qui apparaît dans la page [Identité de l’application](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) de l’application dans le tableau de bord du Centre de développement Windows.       |
-| firstPublishedDate      | chaîne  | Date de la première publication de l’application, au format ISO 8601.   |
+| firstPublishedDate      | chaîne  | Date de la première publication de l’application, au format ISO8601.   |
 | lastPublishedApplicationSubmission       | objet | [Ressource de soumission](#submission_object) qui fournit des informations sur la dernière soumission publiée de l’application.    |
 | pendingApplicationSubmission        | objet  |  [Ressource de soumission](#submission_object) qui fournit des informations sur la soumission actuellement en attente pour l’application.   |   |
 
@@ -124,7 +121,7 @@ Cette ressource a les valeurs suivantes.
 
 | Valeur           | Type    | Description         |
 |-----------------|---------|----------------------|
-| inAppProductId            | chaîne  | ID Windows Store de l’extension. Cette valeur est fournie par le Windows Store. Exemple d’ID Windows Store : 9NBLGGH4TNMP.   |
+| inAppProductId            | chaîne  | ID WindowsStore de l’extension. Cette valeur est fournie par le Windows Store. Exemple d’ID Windows Store: 9NBLGGH4TNMP.   |
 
 
 <span id="flight-object" />
@@ -159,7 +156,7 @@ Cette ressource a les valeurs suivantes.
 | friendlyName           | chaîne  | Nom de la version d’évaluation du package, tel que spécifié par le développeur.   |
 | lastPublishedFlightSubmission       | objet | [Ressource de soumission](#submission_object) qui fournit des informations sur la dernière soumission publiée de la version d’évaluation du package.   |
 | pendingFlightSubmission        | objet  |  [Ressource de soumission](#submission_object) qui fournit des informations sur la soumission actuellement en attente pour la version d’évaluation du package.  |    
-| groupIds           | tableau  | Tableau de chaînes qui contiennent les ID des groupes de versions d’évaluation associés à la version d’évaluation du package. Pour plus d’informations sur les groupes de versions d’évaluation, voir [Versions d’évaluation du package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
+| groupIds           | tableau  | Tableau de chaînes qui contiennent les ID des groupes de versions d’évaluation associés à la version d’évaluation du package. Pour plus d’informations sur les groupes de versions d’évaluation, voir [Versions d’évaluation de package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
 | rankHigherThan           | chaîne  | Nom convivial de la version d’évaluation du package classée juste en dessous de la version d’évaluation du package actuelle. Pour plus d’informations sur le classement des groupes de versions d’évaluation, voir [Versions d’évaluation de package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
 
 
@@ -192,6 +189,5 @@ Cette ressource a les valeurs suivantes.
 * [Gérer les soumissions d’applications à l’aide de l’API de soumission du Windows Store](manage-app-submissions.md)
 * [Obtenir toutes les applications](get-all-apps.md)
 * [Obtenir une application](get-an-app.md)
-* [Obtenir des modules complémentaires pour une application](get-add-ons-for-an-app.md)
+* [Obtenir des extensions pour une application](get-add-ons-for-an-app.md)
 * [Obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md)
-

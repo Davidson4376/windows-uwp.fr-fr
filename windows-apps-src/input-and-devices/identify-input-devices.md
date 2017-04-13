@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8131f56572c4266b5987669d4195ab94d1fd5206
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8449d48dd8f3b50aaede6f85f41094d9073606a9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="identify-input-devices"></a>Identifier des périphériques d’entrée
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -37,7 +34,7 @@ Identifiez les périphériques d’entrée connectés à un appareil de platefor
 
 L’espace de noms [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) contient la classe [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626), utilisée pour récupérer les propriétés exposées par une ou plusieurs souris connectées. Créez simplement un objet **MouseCapabilities** et obtenez les propriétés qui vous intéressent.
 
-**Remarque**  Les valeurs retournées par les propriétés abordées ici sont basées sur l’ensemble des souris détectées : les propriétés booléennes retournent une valeur différente de zéro si au moins une souris prend en charge une fonctionnalité spécifique, tandis que les propriétés numériques retournent la valeur maximale exposée par n’importe quelle souris.
+**Remarque**  Les valeurs retournées par les propriétés abordées ici sont basées sur l’ensemble des souris détectées: les propriétés booléennes retournent une valeur différente de zéro si au moins une souris prend en charge une fonctionnalité spécifique, tandis que les propriétés numériques retournent la valeur maximale exposée par n’importe quelle souris.
 
  
 
@@ -75,7 +72,7 @@ private void GetKeyboardProperties()
 
 L’espace de noms [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) contient la classe [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644), utilisée pour savoir si un numériseur tactile est connecté. Créez simplement un objet **TouchCapabilities** et obtenez les propriétés qui vous intéressent.
 
-**Remarque**  Les valeurs retournées par les propriétés abordées ici sont basées sur l’ensemble des numériseurs tactiles détectés : les propriétés booléennes retournent une valeur différente de zéro si au moins un numériseur prend en charge une fonctionnalité spécifique, tandis que les propriétés numériques retournent la valeur maximale exposée par n’importe quel numériseur.
+**Remarque**  Les valeurs retournées par les propriétés abordées ici sont basées sur l’ensemble des numériseurs tactiles détectés: les propriétés booléennes retournent une valeur différente de zéro si au moins un numériseur prend en charge une fonctionnalité spécifique, tandis que les propriétés numériques retournent la valeur maximale exposée par n’importe quel numériseur.
 
  
 
@@ -95,7 +92,7 @@ private void GetTouchProperties()
 
 L’espace de noms [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) contient la classe [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633), utilisée pour savoir si l’un des appareils détectés prend en charge l’entrée de pointeur (interaction tactile, pavé tactile, souris ou stylet). Créez simplement un objet **PointerDevice** et obtenez les propriétés qui vous intéressent.
 
-**Remarque**  Les valeurs retournées par les propriétés abordées ici sont basées sur l’ensemble des périphériques de pointage détectés : les propriétés booléennes retournent une valeur différente de zéro si au moins un périphérique prend en charge une fonctionnalité spécifique, tandis que les propriétés numériques retournent la valeur maximale exposée par n’importe quel périphérique de pointage.
+**Remarque**  Les valeurs retournées par les propriétés abordées ici sont basées sur l’ensemble des périphériques de pointage détectés: les propriétés booléennes retournent une valeur différente de zéro si au moins un périphérique prend en charge une fonctionnalité spécifique, tandis que les propriétés numériques retournent la valeur maximale exposée par n’importe quel périphérique de pointage.
 
  
 
@@ -195,11 +192,10 @@ private void GetPointerDevices()
 * [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 
 **Exemples d’archive**
-* [Entrée : exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Entrée: exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
  
 
  
-
 
 
 

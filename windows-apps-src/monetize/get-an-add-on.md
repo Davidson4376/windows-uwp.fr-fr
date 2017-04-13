@@ -1,34 +1,31 @@
 ---
 author: mcleanbyron
 ms.assetid: 78278741-09A4-4406-A112-9AF3C73F5C16
-description: "Utilisez cette méthode de l’API de soumission du Windows Store afin de récupérer des informations sur une extension pour une application inscrite dans votre compte du Centre de développement Windows."
-title: "Obtenir une extension à l’aide de l’API de soumission du Windows Store"
+description: "Utilisez cette méthode de l’API de soumission du Windows Store pour récupérer des informations sur une extension pour une application inscrite dans votre compte du Centre de développement Windows."
+title: Obtenir une extension
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, extension"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e000c435b8a271085872bfb1ce42dd09352847c5
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp, API de soumission du Windows Store, extension, produit dans l&quot;application, FAI
+ms.openlocfilehash: a79c93c1ed7d38b4de1da2bbd05456fd0884692e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-an-add-on-using-the-windows-store-submission-api"></a>Obtenir une extension à l’aide de l’API de soumission du Windows Store
-
+# <a name="get-an-add-on"></a>Obtenir une extension
 
 
 
-Utilisez cette méthode de l’API de soumission du Windows Store afin de récupérer des informations sur une extension pour une application inscrite dans votre compte du Centre de développement Windows.
+
+Utilisez cette méthode dans l’API de soumission du Windows Store pour récupérer des informations sur une extension (également connue sous le nom PIA ou produit in-app) pour une application inscrite dans votre compte du Centre de développement Windows.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
@@ -121,4 +118,3 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Obtenir toutes les extensions](get-all-add-ons.md)
 * [Créer une extension](create-an-add-on.md)
 * [Supprimer une extension](delete-an-add-on.md)
-

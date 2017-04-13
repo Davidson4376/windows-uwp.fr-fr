@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 28a1af4079a943c61f547ecf57d802287a3f191f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: dfd7a85475b006e7af6bfc010a8b548e2306f436
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="specify-the-speech-recognizer-language"></a>Spécifier la langue de reconnaissance vocale
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -38,7 +35,7 @@ Découvrez comment sélectionner une langue installée à utiliser pour la recon
 
 Nous avons répertorié les langues installées sur un système. Identifiez la langue par défaut et sélectionnez une autre langue pour la reconnaissance.
 
-**Éléments requis :  **
+**Éléments requis:  **
 
 Cette rubrique s’appuie sur l’article [Reconnaissance vocale](speech-recognition.md).
 
@@ -49,7 +46,7 @@ Si vous débutez dans le développement d’applications pour plateforme Windows
 -   [Créer votre première application](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584).
 
-**Recommandations en matière d’expérience utilisateur :  **
+**Recommandations en matière d’expérience utilisateur:  **
 
 Pour obtenir de précieux conseils concernant la conception d’une application dotée de fonctions vocales à la fois utile et conviviale, voir [Recommandations en matière de conception](https://msdn.microsoft.com/library/windows/apps/dn596121).
 
@@ -80,14 +77,14 @@ Déterminez les langues prises en charge sur un appareil en vérifiant l’une d
 
 -   [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251) : collection des objets [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) utilisés avec les grammaires de dictée et de recherche web prédéfinies.
 
--   [**supportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250) : collection des objets [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) utilisés avec une contrainte de liste ou un fichier SRGS (Speech Recognition Grammar Specification).
+-   [**supportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250): collection des objets [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) utilisés avec une contrainte de liste ou un fichier SRGS (Speech Recognition Grammar Specification).
 
 ## <a name="specify-a-language"></a>Spécifier une langue
 
 
 Pour spécifier une langue, passez un objet [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) dans le constructeur [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226).
 
-Ici, nous spécifions « en-US » comme langue de reconnaissance.
+Ici, nous spécifions «en-US» comme langue de reconnaissance.
 
 
 ```CSharp
@@ -130,7 +127,6 @@ Une grammaire SRGS est un format XML standard ouvert représenté par la classe 
  
 
  
-
 
 
 

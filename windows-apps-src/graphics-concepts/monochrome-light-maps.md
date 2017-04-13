@@ -1,26 +1,22 @@
 ---
 title: "Mappages de lumière monochrome"
-description: "Les mappages de lumière monochrome permettent à des cartes plus anciennes d’exécuter des fusions de textures multipasse, lorsqu’une carte d’accélérateur 3D ne prend pas en charge la fusion de textures à l’aide de la valeur alpha du pixel de destination."
+description: "Les mappages de lumière monochrome permettent à des cartes plus anciennes d’exécuter des fusions de textures multipasse, lorsqu’une carte d’accélérateur3D ne prend pas en charge la fusion de textures à l’aide de la valeur alpha du pixel de destination."
 ms.assetid: 60F8F8F6-9DB7-452B-8DC0-407FFAA4BFE1
-keywords:
-- "Cartes de lumière monochrome"
+keywords: "Cartes de lumière monochrome"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dcdb54345298cd5def27707ad473aeb2ea873203
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 088e109cde92515305e474b2b03bd03526aaab87
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="monochrome-light-maps"></a>Cartes de lumière monochrome
 
 
-Les mappages de lumière monochrome permettent à des cartes plus anciennes d’exécuter des fusions de textures multipasse, lorsqu’une carte d’accélérateur 3D ne prend pas en charge la fusion de textures à l’aide de la valeur alpha du pixel de destination.
+Les mappages de lumière monochrome permettent à des cartes plus anciennes d’exécuter des fusions de textures multipasse, lorsqu’une carte d’accélérateur3D ne prend pas en charge la fusion de textures à l’aide de la valeur alpha du pixel de destination.
 
 Certaines cartes d’accélérateur 3D plus anciennes ne prennent pas en charge la fusion de textures à l’aide de la valeur alpha du pixel de destination. Ces cartes, généralement, ne prennent pas en charge la fusion de textures multiples. Si votre application est exécutée sur une carte de ce type, elle peut recourir à la fusion de textures multipasse pour exécuter le mappage de lumière monochrome.
 
@@ -34,7 +30,6 @@ Pour exécuter un mappage de lumière monochrome, une application stocke les inf
  
 
  
-
 
 
 

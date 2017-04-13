@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2dc8ef975c58ba5eb1d8b59bee773c7b6219a03c
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 5233437bf1676cd63b4beebaf6b7004df2a8f0c6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="scan-from-your-app"></a>Numériser à partir de votre application
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -27,7 +25,7 @@ ms.lasthandoff: 02/07/2017
 
 Découvrez ici comment numériser du contenu à partir de votre application à l’aide d’un scanneur à plat, à chargeur ou configuré automatiquement.
 
-**Important** Les API [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) font partie de la [famille d’appareils](https://msdn.microsoft.com/library/windows/apps/Dn894631) bureautiques. Les applications peuvent utiliser ces API uniquement sur la version bureau de Windows 10.
+**Important** Les API [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) font partie de la [famille d’appareils](https://msdn.microsoft.com/library/windows/apps/Dn894631) bureautiques. Les applications peuvent utiliser ces API uniquement sur la version bureau de Windows10.
 
 Pour numériser à partir de votre application, vous devez d’abord répertorier les scanneurs disponibles en déclarant un nouvel objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) et en récupérant le type [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381). Seuls les scanneurs installés localement avec des pilotes WIA sont répertoriés et disponibles pour votre application.
 
@@ -178,4 +176,3 @@ cancellationToken = new CancellationTokenSource();
 ## <a name="scanning-to-the-pictures-library"></a>Numériser vers la bibliothèque d’images
 
 Grâce à la classe [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/BR207881), les utilisateurs peuvent numériser dynamiquement vers n’importe quel dossier, mais vous devez déclarer la fonctionnalité *Bibliothèque d’images* dans le manifeste pour qu’ils puissent numériser dans ce dossier. Pour plus d’informations sur les fonctionnalités d’application, voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/library/windows/apps/Mt270968).
-

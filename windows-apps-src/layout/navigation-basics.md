@@ -1,7 +1,7 @@
 ---
 author: mijacobs
-Description: "La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures et d’éléments de navigation, ainsi que de fonctionnalités au niveau du système."
-title: "Informations de base relatives à la navigation pour les applications UWP (applications Windows)"
+Description: "La navigation dans les applications de plateformeWindows universelle (UWP) est basée sur un modèle flexible de structures et d’éléments de navigation, ainsi que de fonctionnalités au niveau du système."
+title: "Informations de base relatives à la navigation pour les applicationsUWP (applicationsWindows)"
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
@@ -11,19 +11,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 72596a2d902dff72af76c84115bc1eb0be8fa743
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 6397949c4c763db9d406790a6ffcb7f8ad94b7aa
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-#  <a name="navigation-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de la navigation pour les applications UWP
+#  <a name="navigation-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de la navigation pour les applicationsUWP
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures et d’éléments de navigation, ainsi que de fonctionnalités au niveau du système. Ensemble, ces composantes permettent d’offrir diverses expériences utilisateur intuitives de déplacement entre les applications, les pages et dans leur contenu.
+La navigation dans les applications de plateformeWindows universelle (UWP) est basée sur un modèle flexible de structures et d’éléments de navigation, ainsi que de fonctionnalités au niveau du système. Ensemble, ces composantes permettent d’offrir diverses expériences utilisateur intuitives de déplacement entre les applications, les pages et dans leur contenu.
 
 Dans certains cas, vous pouvez faire tenir la totalité du contenu et des fonctionnalités de votre application sur une seule page, de sorte que l’utilisateur n’ait plus qu’à faire défiler celle-ci pour en parcourir le contenu. Toutefois, la plupart des applications comptent généralement plusieurs pages de contenu et fonctionnalités permettant d’explorer et d’interagir. Si une application possède plusieurs pages, vous devez fournir une expérience de navigation adaptée.
 
@@ -75,7 +72,7 @@ Une application standard utilise les deux dispositions, certaines parties étant
 
 ![Application à structure hybride](images/nav/nav-hybridstructure.png.png)
 
-Quand devez-vous organiser les pages en hiérarchies et quand devez-vous les organiser en tant qu’homologues ? Pour répondre à cette question, nous devons prendre en compte le nombre de pages contenues dans le groupe, si les pages doivent être parcourues dans un ordre particulier et la relation entre les pages. En règle générale, les structures plus plates sont plus faciles à comprendre et la navigation y est plus aisée, mais il convient parfois de disposer d’une hiérarchie à plusieurs niveaux.
+Quand devez-vous organiser les pages en hiérarchies et quand devez-vous les organiser en tant qu’homologues? Pour répondre à cette question, nous devons prendre en compte le nombre de pages contenues dans le groupe, si les pages doivent être parcourues dans un ordre particulier et la relation entre les pages. En règle générale, les structures plus plates sont plus faciles à comprendre et la navigation y est plus aisée, mais il convient parfois de disposer d’une hiérarchie à plusieurs niveaux.
 
 
 
@@ -85,8 +82,8 @@ Quand devez-vous organiser les pages en hiérarchies et quand devez-vous les org
 <ul>
 <li>Vous pensez que l’utilisateur va parcourir les pages dans un ordre spécifique. Organisez la hiérarchie pour appliquer cet ordre.</li>
 <li>Il existe une relation parent-enfant clairement définie entre l’une des pages et les autres pages du groupe.</li>
-<li>Le groupe contient plus de 7 pages.
-<p>S’il y a plus de 7 pages dans le groupe, il peut être difficile pour les utilisateurs de comprendre dans quelle mesure les pages sont uniques ou de connaître leur emplacement actuel au sein du groupe. Si vous ne pensez pas que ce soit un problème pour votre application, lancez-vous et faites des pages des homologues. Sinon, envisagez d’utiliser une structure hiérarchique pour répartir les pages en deux groupes au moins plus petits. (Un contrôle hub peut vous aider à regrouper des pages en catégories.)</p></li>
+<li>Le groupe contient plus de 7pages.
+<p>S’il y a plus de 7pages dans le groupe, il peut être difficile pour les utilisateurs de comprendre dans quelle mesure les pages sont uniques ou de connaître leur emplacement actuel au sein du groupe. Si vous ne pensez pas que ce soit un problème pour votre application, lancez-vous et faites des pages des homologues. Sinon, envisagez d’utiliser une structure hiérarchique pour répartir les pages en deux groupes au moins plus petits. (Un contrôle hub peut vous aider à regrouper des pages en catégories.)</p></li>
 </ul>
   </div>
   <div class="side-by-side-content-right">Nous recommandons l’utilisation d’une relation d’homologue lorsque :
@@ -104,7 +101,7 @@ Quand devez-vous organiser les pages en hiérarchies et quand devez-vous les org
 ## <a name="use-the-right-navigation-elements"></a>Utiliser les éléments de navigation appropriés
 
 
-Les éléments de navigation peuvent fournir deux services : ils aident l’utilisateur à accéder au contenu souhaité, et certains éléments lui permettent également de savoir où il se trouve dans l’application. Cependant, ils occupent aussi l’espace que l’application pourrait utiliser pour les éléments de contenu ou de commande. Il est donc important d’utiliser les éléments de navigation qui sont adaptés à la structure de votre application.
+Les éléments de navigation peuvent fournir deuxservices: ils aident l’utilisateur à accéder au contenu souhaité, et certains éléments lui permettent également de savoir où il se trouve dans l’application. Cependant, ils occupent aussi l’espace que l’application pourrait utiliser pour les éléments de contenu ou de commande. Il est donc important d’utiliser les éléments de navigation qui sont adaptés à la structure de votre application.
 
 ### <a name="peer-to-peer-navigation-elements"></a>Éléments de navigation pair à pair
 
@@ -132,7 +129,7 @@ Pour la navigation pair à pair, nous vous recommandons d’utiliser des onglets
 <p>(Utilisez les onglets/pivots lorsqu’il y a plus de 5 pages, mais qu’il peut être difficile d’ajuster l’ensemble des onglets/pivots à l’écran.)</p></li>
 <li>Vous pensez que les utilisateurs passeront fréquemment d’une page à l’autre.</li>
 </ul>
-<p>Cette conception pour une application de recherche de restaurants utilise des onglets/pivots :</p>
+<p>Cette conception pour une application de recherche de restaurants utilise des onglets/pivots:</p>
 <p><img src="images/food-truck-finder/uap-foodtruck-tabletphone-sbs-sm-400.png" alt="Example of an app using tabs/pivots pattern" /></p></td>
 </tr>
 <tr class="even">
@@ -145,7 +142,7 @@ Pour la navigation pair à pair, nous vous recommandons d’utiliser des onglets
 <li>Vous souhaitez économiser de l’espace, même si cela ralentit les opérations de navigation.</li>
 <li>Les pages se trouvent au niveau supérieur.</li>
 </ul>
-<p>Cette conception pour une application de maison intelligente utilise un volet de navigation :</p>
+<p>Cette conception pour une application de maison intelligente utilise un volet de navigation:</p>
 <p><img src="images/smart-home/uap-smarthome-tabletphone-sbs-sm-400.png" alt="Example of an app that uses a nav pane pattern" /></p>
 <p></p></td>
 </tr>
@@ -154,13 +151,13 @@ Pour la navigation pair à pair, nous vous recommandons d’utiliser des onglets
 
  
 
-Si votre structure de navigation comporte plusieurs niveaux, nous vous recommandons de lier les éléments de navigation pair à pair uniquement aux homologues au sein de leur sous-arborescence actuelle. Prenez en considération l’illustration suivante, qui montre une structure de navigation à trois niveaux :
+Si votre structure de navigation comporte plusieurs niveaux, nous vous recommandons de lier les éléments de navigation pair à pair uniquement aux homologues au sein de leur sous-arborescence actuelle. Prenez en considération l’illustration suivante, qui montre une structure de navigation à trois niveaux:
 
 ![Application avec deux sous-arborescences](images/nav/nav-subtrees.png)
--   Pour le niveau 1, l’élément de navigation pair à pair doit donner accès aux pages A, B, C et D.
--   Au niveau 2, les éléments de navigation pair à pair des pages A2 doivent uniquement être liés aux autres pages A2. Ils ne doivent pas renvoyer aux pages de niveau 2 de la sous-arborescence C.
+-   Pour le niveau1, l’élément de navigation pair à pair doit donner accès aux pagesA, B, C etD.
+-   Au niveau2, les éléments de navigation pair à pair des pagesA2 doivent uniquement être liés aux autres pagesA2. Ils ne doivent pas renvoyer aux pages de niveau2 de la sous-arborescenceC.
 
-![Application avec deux sous-arborescences](images/nav/nav-subtrees2.png)
+![Application avec deuxsous-arborescences](images/nav/nav-subtrees2.png)
 
 ### <a name="hierarchical-navigation-elements"></a>Éléments de navigation hiérarchique
 
@@ -198,7 +195,7 @@ Les éléments de navigation hiérarchique permettent de naviguer entre une page
 <li>Vous voulez permettre à l’utilisateur d’effectuer des opérations générales, comme la suppression ou le tri, sur des éléments individuels ou des groupes d’éléments. Vous voulez également lui permettre d’afficher ou de mettre à jour les détails de chaque élément.</li>
 </ul>
 <p>Les éléments maîtres/détails sont particulièrement bien adaptés aux boîtes de réception, aux listes de contacts et à l’entrée de données.</p>
-<p>Cette conception pour une application de suivi d’inventaire utilise un modèle Maître/Détails :</p>
+<p>Cette conception pour une application de suivi d’inventaire utilise un modèle Maître/Détails:</p>
 <p><img src="images/stock-tracker/uap-finance-tabletphone-sbs-sm.png" alt="Example of a stock trading app that has a master/details pattern" /></p></td>
 </tr>
 </tbody>
@@ -254,7 +251,6 @@ Vous pouvez combiner des éléments de navigation pour créer une expérience de
 
 
  
-
 
 
 

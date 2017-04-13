@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 96f9f9855dba48203e4372cef88d1f6ab7d435f5
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: d5933eec7b2f34b2c5939bb083113dfd3a1f965d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="masterdetails-pattern"></a>Modèle Maître/Détails
 
@@ -87,7 +85,7 @@ La conception d’application ci-dessous qui suit la bourse utilise un modèle M
 
 Pour obtenir un exemple de code affichant le modèle Maître/Détails, voir
 - [Exemple de ListView et GridView](http://go.microsoft.com/fwlink/p/?LinkId=619900)
-- [Exemple de lecteur RSS](https://github.com/Microsoft/Windows-appsample-rssreader)
+- [Exemple de lecteurRSS](https://github.com/Microsoft/Windows-appsample-rssreader)
 
 ## <a name="related-articles"></a>Articles connexes
 
@@ -95,4 +93,3 @@ Pour obtenir un exemple de code affichant le modèle Maître/Détails, voir
 - [Recherche](search.md)
 - [Barre de l’application et barre de commandes](app-bars.md)
 - [**Classe ListView (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
-

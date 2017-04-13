@@ -1,21 +1,18 @@
 ---
 author: mcleanbyron
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
-description: "Utilisez cette méthode dans l’API de collection du Windows Store pour obtenir tous les produits possédés par un client pour les applications associées à votre ID client Azure AD. Vous pouvez limiter votre requête à un produit spécifique ou utiliser d’autres filtres."
+description: "Utilisez cette méthode dans l’API de collection du WindowsStore pour obtenir tous les produits possédés par un client pour les applications associées à votre ID client AzureAD. Vous pouvez limiter votre requête à un produit spécifique ou utiliser d’autres filtres."
 title: Demander des produits
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de collection du Windows Store, afficher produits"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp, API de collection du WindowsStore, afficher produits
 ms.openlocfilehash: 29db10862533e7b15c7a676fc3aecd4ba58f9514
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="query-for-products"></a>Demander des produits
 
 
@@ -26,10 +23,10 @@ Cette méthode est conçue pour être appelée par votre service en réponse à 
 ## <a name="prerequisites"></a>Conditions préalables
 
 
-Pour utiliser cette méthode, vous devez disposer des éléments suivants :
+Pour utiliser cette méthode, vous devez disposer des éléments suivants:
 
-* un jeton d’accès Azure AD créé avec l’URI d’audience `https://onestore.microsoft.com` ;
-* une clé d’ID du Windows Store qui représente l’identité de l’utilisateur dont vous souhaitez obtenir les produits.
+* un jeton d’accès AzureAD créé avec l’URI d’audience `https://onestore.microsoft.com`;
+* une clé d’ID du WindowsStore qui représente l’identité de l’utilisateur dont vous souhaitez obtenir les produits.
 
 Pour plus d’informations, consultez l’article [Gérer les droits sur les produits à partir d’un service](view-and-grant-products-from-a-service.md).
 
@@ -61,10 +58,10 @@ Pour plus d’informations, consultez l’article [Gérer les droits sur les pro
 | beneficiaries     | UserIdentity | Objet UserIdentity qui représente l’utilisateur interrogé pour les produits. Pour plus d’informations, voir le tableau ci-dessous.    | Oui      |
 | continuationToken | chaîne       | S’il existe plusieurs ensembles de produits, le corps de la réponse retourne un jeton de continuation lorsque la limite de la page est atteinte. Indiquez ce jeton de continuation ici dans les appels ultérieurs pour récupérer les produits restants.       | Non       |
 | maxPageSize       | nombre       | Nombre maximal de produits à retourner dans une réponse. La valeur par défaut et maximale est de 100.                 | Non       |
-| modifiedAfter     | horodatage     | Si ce paramètre est spécifié, le service retourne uniquement les produits qui ont été modifiés après cette date.        | Non       |
+| modifiedAfter     | DateHeure     | Si ce paramètre est spécifié, le service retourne uniquement les produits qui ont été modifiés après cette date.        | Non       |
 | parentProductId   | chaîne       | Si ce paramètre est spécifié, le service retourne uniquement les extensions correspondant à l’application spécifiée.      | Non       |
 | productSkuIds     | liste&lt;ProductSkuId&gt; | Si ce paramètre est spécifié, le service retourne uniquement les produits applicables aux paires produit/référence fournies. Pour plus d’informations, voir le tableau ci-dessous.      | Non       |
-| productTypes      | chaîne       | Si ce paramètre est spécifié, le service retourne uniquement les produits qui correspondent aux types de produit spécifiés. Types de produit pris en charge : **Application**, **Durable** et **UnmanagedConsumable**.     | Non       |
+| productTypes      | chaîne       | Si ce paramètre est spécifié, le service retourne uniquement les produits qui correspondent aux types de produit spécifiés. Types de produit pris en charge: **Application**, **Durable** et **UnmanagedConsumable**.     | Non       |
 | validityType      | chaîne       | Si ce paramètre est défini sur **All**, tous les produits d’un utilisateur sont retournés, y compris les articles arrivés à expiration. S’il est défini sur **Valid**, seuls les produits qui sont valides à ce stade sont retournés (autrement dit, ils ont un état actif, une date de début &lt; maintenant et une date de fin &gt; maintenant). | Non       |
 
 <span/>
@@ -73,9 +70,9 @@ L’objet UserIdentity contient les paramètres ci-dessous.
 
 | Paramètre            | Type   |  Description      | Obligatoire |
 |----------------------|--------|----------------|----------|
-| identityType         | chaîne | Spécifiez la valeur de chaîne **b2b**.    | Oui      |
-| identityValue        | chaîne | [Clé d’ID du Windows Store](view-and-grant-products-from-a-service.md#step-4) représentant l’identité de l’utilisateur auquel vous souhaitez demander des produits.  | Oui      |
-| localTicketReference | chaîne | Identificateur demandé pour les produits retournés. Les articles retournés dans le corps de la réponse ont un paramètre *localTicketReference* correspondant. Nous vous recommandons d’utiliser la même valeur que la revendication *userId* dans la clé d’ID du Windows Store. | Oui      |
+| identityType         | chaîne | Spécifiez la valeur chaîne **b2b**.    | Oui      |
+| identityValue        | chaîne | [Clé d’ID du WindowsStore](view-and-grant-products-from-a-service.md#step-4) représentant l’identité de l’utilisateur auquel vous souhaitez demander des produits.  | Oui      |
+| localTicketReference | chaîne | Identificateur demandé pour les produits retournés. Les articles retournés dans le corps de la réponse ont un paramètre *localTicketReference* correspondant. Nous vous recommandons d’utiliser la même valeur que la revendication *userId* dans la clé d’ID du WindowsStore. | Oui      |
 
 <span/> 
 
@@ -83,8 +80,8 @@ L’objet ProductSkuId contient les paramètres ci-dessous.
 
 | Paramètre | Type   | Description          | Obligatoire |
 |-----------|--------|----------------------|----------|
-| productId | chaîne | [ID Windows Store](in-app-purchases-and-trials.md#store-ids) pour un [produit](in-app-purchases-and-trials.md#products-skus-and-availabilities) dans le catalogue du Windows Store. Exemple d’ID Windows Store pour un produit : 9NBLGGH42CFD. | Oui      |
-| skuID     | chaîne | [ID Windows Store](in-app-purchases-and-trials.md#store-ids) pour la [référence](in-app-purchases-and-trials.md#products-skus-and-availabilities) d’un produit dans le catalogue du Windows Store. Exemple d’ID Windows Store pour une référence (SKU) : 0010.       | Oui      |
+| productId | chaîne | [ID WindowsStore](in-app-purchases-and-trials.md#store-ids) pour un [produit](in-app-purchases-and-trials.md#products-skus-and-availabilities) dans le catalogue du WindowsStore. Exemple d’ID WindowsStore pour un produit: 9NBLGGH42CFD. | Oui      |
+| skuID     | chaîne | [ID WindowsStore](in-app-purchases-and-trials.md#store-ids) pour la [référence](in-app-purchases-and-trials.md#products-skus-and-availabilities) d’un produit dans le catalogue du WindowsStore. Exemple d’ID WindowsStore pour une référence (SKU): 0010.       | Oui      |
 
 <span/>
 
@@ -141,22 +138,22 @@ L’objet CollectionItemContractV6 contient les paramètres ci-dessous.
 | devOfferId           | chaîne             | ID d’offre d’un achat dans l’application.              | Non       |
 | endDate              | DateHeure           | Date de fin de l’article.              | Oui      |
 | fulfillmentData      | chaîne             | Non applicable         | Non       |
-| inAppOfferToken      | chaîne             | Chaîne d’ID produit spécifiée par le développeur qui est attribuée à l’article dans le tableau de bord du Centre de développement Windows. Exemple d’ID produit : *product123*. | Non       |
+| inAppOfferToken      | chaîne             | Chaîne d’ID produit spécifiée par le développeur qui est attribuée à l’article dans le tableau de bord du Centre de développement Windows. Exemple d’ID produit: *product123*. | Non       |
 | itemId               | chaîne             | ID qui identifie cet élément de collection à partir des autres articles dont l’utilisateur est propriétaire. Cet ID est unique par produit.   | Oui      |
 | localTicketReference | chaîne             | L’ID du paramètre *localTicketReference* précédemment fourni dans le corps de la requête.                  | Oui      |
-| modifiedDate         | horodatage           | Date de la dernière modification de cet article.              | Oui      |
+| modifiedDate         | DateHeure           | Date de la dernière modification de cet article.              | Oui      |
 | orderId              | chaîne             | Le cas échéant, référence de la commande par le biais de laquelle cet article a été obtenu.              | Non       |
 | orderLineItemId      | chaîne             | Le cas échéant, ligne d’article de la commande spécifique dans laquelle cet article a été obtenu.              | Non       |
 | ownershipType        | chaîne             | La chaîne *OwnedByBeneficiary*.   | Oui      |
-| productId            | chaîne             | [ID Windows Store](in-app-purchases-and-trials.md#store-ids) pour le [produit](in-app-purchases-and-trials.md#products-skus-and-availabilities) dans le catalogue du Windows Store. Exemple d’ID Windows Store pour un produit : 9NBLGGH42CFD.          | Oui      |
-| productType          | chaîne             | L’un des types de produit suivants : **Application**, **Durable** et **UnmanagedConsumable**.        | Oui      |
+| productId            | chaîne             | [ID WindowsStore](in-app-purchases-and-trials.md#store-ids) pour le [produit](in-app-purchases-and-trials.md#products-skus-and-availabilities) dans le catalogue du WindowsStore. Exemple d’ID WindowsStore pour un produit: 9NBLGGH42CFD.          | Oui      |
+| productType          | chaîne             | L’un des types de produit suivants: **Application**, **Durable** et **UnmanagedConsumable**.        | Oui      |
 | purchasedCountry     | chaîne             | Non applicable   | Non       |
 | purchaser            | IdentityContractV6 | Le cas échéant, représente l’identité de l’acheteur de l’article. Voir les détails de cet objet ci-dessous.        | Non       |
-| quantity             | nombre             | Quantité de l’article. Actuellement, il s’agit toujours de la valeur 1.      | Non       |
-| skuId                | chaîne             | [ID Windows Store](in-app-purchases-and-trials.md#store-ids) pour la [référence (SKU)](in-app-purchases-and-trials.md#products-skus-and-availabilities) du produit dans le catalogue du Windows Store. Exemple d’ID Windows Store pour une référence (SKU) : 0010.     | Oui      |
-| skuType              | chaîne             | Type de référence. Valeurs possibles : **Trial**, **Full** et **Rental**.        | Oui      |
+| quantity             | nombre             | Quantité de l’article. Actuellement, il s’agit toujours de la valeur 1.      | Non       |
+| skuId                | chaîne             | [ID WindowsStore](in-app-purchases-and-trials.md#store-ids) pour la [référence (SKU)](in-app-purchases-and-trials.md#products-skus-and-availabilities) du produit dans le catalogue du WindowsStore. Exemple d’ID WindowsStore pour une référence (SKU): 0010.     | Oui      |
+| skuType              | chaîne             | Type de référence. Valeurs possibles: **Trial**, **Full** et **Rental**.        | Oui      |
 | startDate            | DateHeure           | Date de début de validité de l’article.       | Oui      |
-| status               | chaîne             | État de l’article. Valeurs possibles : **Active**, **Expired**, **Revoked** et **Banned**.    | Oui      |
+| status               | chaîne             | État de l’article. Valeurs possibles: **Active**, **Expired**, **Revoked** et **Banned**.    | Oui      |
 | tags                 | chaîne             | Non applicable    | Oui      |
 | transactionId        | GUID               | ID de la transaction résultant de l’achat de cet article. Peut être utilisé pour signaler le traitement de la commande d’un article.      | Oui      |
 
@@ -167,7 +164,7 @@ L’objet IdentityContractV6 contient les paramètres ci-dessous.
 | Paramètre     | Type   | Description                                                                        | Obligatoire |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
 | identityType  | chaîne | Contient la valeur *pub*.                                                      | Oui      |
-| identityValue | chaîne | Valeur chaîne du paramètre *publisherUserId* dans la clé d’ID du Windows Store. | Oui      |
+| identityValue | chaîne | Valeur chaîne du paramètre *publisherUserId* dans la clé d’ID du WindowsStore. | Oui      |
 
 <span/> 
 
@@ -219,4 +216,3 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 * [Signaler le traitement de la commande d’un produit consommable](report-consumable-products-as-fulfilled.md)
 * [Octroyer des produits gratuits](grant-free-products.md)
 * [Renouveler une clé d’ID du Windows Store](renew-a-windows-store-id-key.md)
-

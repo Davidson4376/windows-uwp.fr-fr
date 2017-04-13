@@ -1,27 +1,24 @@
 ---
-author: awkoren
+author: normesta
 Description: Montre comment convertir manuellement une application de bureau Windows (Win32, WPF, Windows Forms) en une application de plateforme Windows universelle (UWP).
 Search.Product: eADQiWindows 10XVcnh
-title: Convertir manuellement une application de bureau Windows en application UWP
-ms.author: alkoren
-ms.date: 02/08/2017
+title: 'Pont du bureau vers UWP: Conversion manuelle'
+ms.author: normesta
+ms.date: 03/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 345296a3fa9faeb8daa8e03fbb633863380d2424
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 8d09a0349620e071f5c4d680df18f716e3b10a8e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="desktop-to-uwp-bridge-manual-conversion"></a>Pont du bureau vers UWP: Conversion manuelle
 
-# <a name="manually-convert-your-app-to-uwp-using-the-desktop-bridge"></a>Convertir manuellement votre application en application UWP à l’aide de Pont du bureau
+L’utilisation de [Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) est pratique et automatique. Cet outil se révèle également très utile en cas d’incertitude sur les opérations effectuées par votre programme d’installation. Mais si votre application est installée avec xcopy ou si vous connaissez les modifications apportées au système par le programme d’installation de votre application, vous pouvez créer manuellement un package et un manifeste d’application. Cet article décrit la procédure de prise en main. Il explique également comment ajouter des ressources sans plaque à votre application, ce que l’outil DAC ne fait pas.
 
-L’utilisation de [Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) est pratique et automatique. Cet outil se révèle également très utile en cas d’incertitude sur les opérations effectuées par votre programme d’installation. Mais si votre application est installée avec xcopy ou si vous connaissez les modifications apportées au système par le programme d’installation de votre application, vous pouvez créer manuellement un package et un manifeste d’application. Cet article décrit la procédure de prise en main. Il explique également comment ajouter des ressources sans plaque à votre application, ce que l’outil DAC ne fait pas. 
-
-Voici comment prendre en main la conversion manuelle. Si vous disposez d’une application .NET et que vous utilisez Visual Studio, vous pouvez également consulter l’article [Guide d’empaquetage Pont du bureau pour les applications de bureau .NET avec Visual Studio](desktop-to-uwp-packaging-dot-net.md).  
+Voici comment prendre en main la conversion manuelle. Si vous disposez d’une application.NET et que vous utilisez VisualStudio, vous pouvez également consulter l’article [Guide d’empaquetage Pont du bureau pour les applications de bureau .NET avec VisualStudio](desktop-to-uwp-packaging-dot-net.md).  
 
 ## <a name="create-a-manifest-by-hand"></a>Créer un manifeste manuellement
 
@@ -65,15 +62,15 @@ Votre fichier _appxmanifest.xml_ doit présenter au moins le contenu suivant. Re
     </Package>
 ```
 
-Vous souhaitez ajouter des ressources sans plaque ? Pour savoir comment faire, consultez la section sur les [ressources sans plaque](#unplated-assets), plus loin dans cet article.
+Vous souhaitez ajouter des ressources sans plaque? Pour savoir comment faire, consultez la section sur les [ressources sans plaque](#unplated-assets), plus loin dans cet article.
 
 ## <a name="run-the-makeappx-tool"></a>Exécuter l’outil MakeAppX
 
-Utilisez l’[outil de création de package de l’application (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) pour générer un AppX pour votre projet. MakeAppx.exe est inclus dans le SDK Windows 10. 
+Utilisez l’[outil de création de package de l’application (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) pour générer un package d’application Windows pour votre projet. MakeAppx.exe est inclus dans le SDK Windows10.
 
-Pour exécuter MakeAppx, assurez-vous d’abord que vous avez créé un fichier manifeste, tel que décrit ci-dessus. 
+Pour exécuter MakeAppx, assurez-vous d’abord que vous avez créé un fichier manifeste, tel que décrit ci-dessus.
 
-Ensuite, créez un fichier de mappage. Le fichier doit commencer par **[Files]**, puis répertorier chacun de vos fichiers sources sur le disque, suivis de leur chemin de destination dans le package. Voici un exemple : 
+Ensuite, créez un fichier de mappage. Le fichier doit commencer par **[Files]**, puis répertorier chacun de vos fichiers sources sur le disque, suivis de leur chemin de destination dans le package. Voici un exemple:
 
 ```
 [Files]
@@ -83,7 +80,7 @@ Ensuite, créez un fichier de mappage. Le fichier doit commencer par **[Files]**
 "MyCustomManifest.xml"       "AppxManifest.xml"
 ```
 
-Enfin, exécutez la commande suivante : 
+Enfin, exécutez la commande suivante:
 
 ```cmd
 MakeAppx.exe pack /f mapping_filepath /p filepath.appx
@@ -91,34 +88,34 @@ MakeAppx.exe pack /f mapping_filepath /p filepath.appx
 
 ## <a name="sign-your-appx-package"></a>Signer votre package AppX
 
-L’applet de commande Add-AppxPackage nécessite que le package d’application (.appx) déployé soit signé. Utilisez [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx), fourni dans le SDK Microsoft Windows 10 pour signer le package .appx.
+L’applet de commande Add-AppxPackage nécessite que le package d’application (.appx) déployé soit signé. Utilisez [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx), fourni dans le Kit de développement logiciel Microsoft Windows10, pour signer le package d’application Windows.
 
-Exemple d’utilisation : 
+Exemple d’utilisation:
 
 ```cmd
 C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -sv <my.pvk> <my.cer>
 C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
 C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 ```
-Lorsque vous exécutez MakeCert.exe et que vous êtes invité à entrer un mot de passe, sélectionnez **Aucun**. Pour plus d’informations sur les certificats et la signature, consultez les rubriques suivantes : 
+Lorsque vous exécutez MakeCert.exe et que vous êtes invité à entrer un mot de passe, sélectionnez **Aucun**. Pour plus d’informations sur les certificats et la signature, consultez les rubriques suivantes:
 
-- [Procédure : Créer des certificats temporaires à utiliser pendant le développement](https://msdn.microsoft.com/library/ms733813.aspx)
+- [Procédure: Créer des certificats temporaires à utiliser pendant le développement](https://msdn.microsoft.com/library/ms733813.aspx)
 - [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
 - [SignTool.exe (Sign Tool)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
 
 <span id="unplated-assets" />
 ## <a name="add-unplated-assets"></a>Ajouter des ressources sans plaque
 
-Si vous le souhaitez, configurez les ressources 44 x 44 de votre application qui s’affichent sur la barre des tâches. Voici comment faire : 
+Si vous le souhaitez, configurez les ressources 44x44 de votre application qui s’affichent sur la barre des tâches. Voici comment faire:
 
-1. Obtenez les images 44 x 44 correctes et copiez-les dans le dossier qui contient vos images (c’est-à-dire Assets).
+1. Obtenez les images 44x44 correctes et copiez-les dans le dossier qui contient vos images (c’est-à-dire Assets).
 
-2. Pour chaque image 44 x 44, créez une copie dans le même dossier et ajoutez *.targetsize-44_altform-unplated* à la fin du nom de fichier. Vous devez avoir deux copies de chaque icône, chacune ayant un nom propre. Par exemple, à l’issue du processus, votre dossier Assets peut contenir *MYAPP_44x44.png* et *MYAPP_44x44.targetsize-44_altform-unplated.png* (Remarque : la première est l’icône référencée dans le fichier appxmanifest sous l’attribut VisualElements *Square44x44Logo*). 
+2. Pour chaque image 44x44, créez une copie dans le même dossier et ajoutez *.targetsize-44_altform-unplated* à la fin du nom de fichier. Vous devez avoir deuxcopies de chaque icône, chacune ayant un nom propre. Par exemple, à l’issue du processus, votre dossier Assets peut contenir *MYAPP_44x44.png* et *MYAPP_44x44.targetsize-44_altform-unplated.png* (Remarque: la première est l’icône référencée dans le fichier appxmanifest sous l’attribut VisualElements *Square44x44Logo*).
 
 3.    Dans AppXManifest, définissez le paramètre BackgroundColor sur transparent pour chaque icône que vous corrigez. Cet attribut se trouve sous VisualElements pour chaque application.
 
 4.    Ouvrez CMD, accédez au répertoire racine du package et créez un fichier priconfig.xml en exécutant la commande ```makepri createconfig /cf priconfig.xml /dq en-US```.
 
-5.    À l’aide de CMD, dans le dossier racine du package, créez le ou les fichiers resources.pri avec la commande ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml```. Par exemple, la commande de votre application peut ressembler à : ```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml```. 
+5.    À l’aide de CMD, dans le dossier racine du package, créez le ou les fichiers resources.pri avec la commande ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml```. Par exemple, la commande de votre application peut ressembler à: ```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml```.
 
-6.    Créez un package de votre application AppX en suivant les instructions de l’étape suivante pour afficher les résultats.
+6.    Créez un package d’application Windows en suivant les instructions de l’étape suivante pour afficher les résultats.

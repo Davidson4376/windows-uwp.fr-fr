@@ -8,19 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, annonces publicitaires, publicité, AdControl, HTML, propriétés"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a879944dc14ca161c3e52a49ffe4a8cebfa7d69f
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, annonces publicitaires, publicité, AdControl, HTML, propriétés"
+ms.openlocfilehash: efc94b723b3bfe97b35484882ae784e9ef4d6807
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-html-properties-example"></a>Exemple de propriétés AdControl HTML
 
-L’exemple suivant indique comment affecter les propriétés [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) au format HTML. Les propriétés **applicationId** et **adUnitId** sont requises. Les autres propriétés et événements sont facultatifs. Si vous n’indiquez pas les valeurs des propriétés facultatives, le contrôle utilise les valeurs par défaut qui créent une publicité en harmonie avec l’expérience utilisateur de l’application.
+L’exemple suivant montre comment affecter les propriétés [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) au format HTML. Les propriétés **applicationId** et **adUnitId** sont requises. Les autres propriétés et événements sont facultatifs. Si vous n’indiquez pas les valeurs des propriétés facultatives, le contrôle utilise les valeurs par défaut qui créent une publicité en harmonie avec l’expérience utilisateur de l’application.
 
-Les cinq dernières lignes sont un exemple d’inscription des fonctions dans les événements **AdControl**. Vous ne pouvez inscrire que les fonctions que vous avez définies dans votre code JavaScript.
+Les cinqdernières lignes sont un exemple d’inscription des fonctions dans les événements **AdControl**. Vous ne pouvez inscrire que les fonctions que vous avez définies dans votre code JavaScript.
 
 Les valeurs indiquées sont des exemples. Dans votre code, vous allez définir les valeurs de ces fonctions et propriétés pour qu’elles conviennent à votre application.
 
@@ -40,8 +37,7 @@ Les valeurs indiquées sont des exemples. Dans votre code, vous allez définir l
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [AdControl en HTML 5 et JavaScript](adcontrol-in-html-5-and-javascript.md)
+* [AdControl en HTML5 et JavaScript](adcontrol-in-html-5-and-javascript.md)
 * [Exemples de publicité sur GitHub](http://aka.ms/githubads)
 
  
-

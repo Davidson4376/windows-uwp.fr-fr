@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: "Utilisez cette méth. ds l’API de soum. du Windows Store pr créer une soum. de version d’éval. de pack. pr une app. inscrite ds le cpte du Ctre de dév. Windows."
-title: "Créer soum. de vers. d’éval. de pack. av API de soum. du Windows Store"
+title: "Créer une soumission de version d’évaluation de package"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, créer une soumission de version d&quot;évaluation"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d3e3c74d8afcd3b9055b64a0d06f207b1e02d598
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, API de soumission du Windows Store, création d&quot;une soumission de version d&quot;évaluation"
+ms.openlocfilehash: ff296cbdd5114641a469daab14b940042e9673d0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="create-a-package-flight-submission-using-the-windows-store-submission-api"></a>Créer soum. de vers. d’éval. de pack. av API de soum. du Windows Store
+# <a name="create-a-package-flight-submission"></a>Créer une soumission de version d’évaluation de package
 
 Utilisez cette méthode dans l’API de soumission du Windows Store pour créer une soumission de version d’évaluation de package pour une application. Après avoir créé une soumission à l’aide de cette méthode, [mettez à jour cette soumission](update-a-flight-submission.md) pour apporter les modifications nécessaires aux données de soumission, puis [validez la soumission](commit-a-flight-submission.md) pour permettre son intégration et sa publication.
 
@@ -26,10 +23,10 @@ Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créez une version d’évaluation de package pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une version d’évaluation de package](create-a-flight.md).
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
@@ -104,7 +101,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -136,6 +133,5 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Obtenir une soumission de version d’évaluation de package](get-a-flight-submission.md)
 * [Valider une soumission de version d’évaluation de package](commit-a-flight-submission.md)
 * [Mettre à jour une soumission de version d’évaluation de package](update-a-flight-submission.md)
-* [Supprimer une soumission de version d’évaluation de package](delete-a-flight-submission.md)
+* [Supprimer une soumission de version d’évaluation du package](delete-a-flight-submission.md)
 * [Obtenir l’état d’une soumission de version d’évaluation du package](get-status-for-a-flight-submission.md)
-

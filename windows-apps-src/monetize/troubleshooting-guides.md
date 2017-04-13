@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, pubs, publicités, résolution des problèmes"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f81fba28ccbaa504d5c5674d3d04b2ab5b05f8f0
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, pubs, publicités, résolution des problèmes"
+ms.openlocfilehash: b5a968fd1ef995e0bf2aacd2f542b7053356e11f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="troubleshooting-guides"></a>Guides de résolution des problèmes
 
 
@@ -32,4 +29,3 @@ Cette section décrit les solutions aux problèmes de développement courants li
  
 
  
-

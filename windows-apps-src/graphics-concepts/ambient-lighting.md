@@ -2,21 +2,17 @@
 title: "Éclairage ambiant"
 description: "L&quot;éclairage ambiant permet de donner à une scène un éclairage constant."
 ms.assetid: C34FA65A-3634-4A4B-B183-4CDA89F4DC95
-keywords:
-- "Éclairage ambiant"
+keywords: "Éclairage ambiant"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 77865a483f226fba912c03e2f9abe17eaa7fbee0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c03e3a67af7da1326e254a687c77c9c0fd1d5403
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="ambient-lighting"></a>Éclairage ambiant
 
 
@@ -28,7 +24,7 @@ L’éclairage ambiant pour une scène est décrit par l’équation suivante.
 
 Éclairage ambiant = Cₐ\*\[Gₐ + sum(Atten<sub>i</sub>\*Spot<sub>i</sub>\*L<sub>ai</sub>)\]
 
-Où :
+Où:
 
 | Paramètre         | Valeur par défaut | Type          | Description                                                                                                       |
 |-------------------|---------------|---------------|-------------------------------------------------------------------------------------------------------------------|
@@ -41,7 +37,7 @@ Où :
 
  
 
-Cₐ possède l'une des valeurs suivantes :
+Cₐ possède l'une des valeurs suivantes:
 
 -   couleur1 du vertex, si AMBIENTMATERIALSOURCE = D3DMCS\_COLOR1, et si la première couleur du vertex est indiquée dans la déclaration du vertex.
 -   couleur2 du vertex, si AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2, et si la deuxième couleur du vertex est indiquée dans la déclaration du vertex.
@@ -91,7 +87,6 @@ Pour donner à des objets un aspect plus réaliste, appliquez un éclairage diff
  
 
  
-
 
 
 

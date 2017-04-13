@@ -1,38 +1,34 @@
 ---
-title: "Niveau 1"
-description: "Cette section décrit la prise en charge du niveau 1."
+title: Niveau1
+description: "Cette section décrit la prise en charge du niveau1."
 ms.assetid: 153DA429-0C99-4691-AEB4-124FD9B17BE2
-keywords:
-- "Niveau 1"
+keywords: Niveau1
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: de1010a39655e8ac24e213aa5682e9f739b88ecc
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0c463e2a6ea4f43ea1f3eccab69a94f9d6f13170
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="tier-1"></a>Niveau1
 
-# <a name="tier-1"></a>Niveau 1
 
+Cette section décrit la prise en charge du niveau1.
 
-Cette section décrit la prise en charge du niveau 1.
-
-## <a name="span-idtier1generallimitationsspanspan-idtier1generallimitationsspanspan-idtier1generallimitationsspantier-1-general-limitations"></a><span id="Tier_1_general_limitations"></span><span id="tier_1_general_limitations"></span><span id="TIER_1_GENERAL_LIMITATIONS"></span>Limitations générales du niveau 1
+## <a name="span-idtier1generallimitationsspanspan-idtier1generallimitationsspanspan-idtier1generallimitationsspantier-1-general-limitations"></a><span id="Tier_1_general_limitations"></span><span id="tier_1_general_limitations"></span><span id="TIER_1_GENERAL_LIMITATIONS"></span>Limitations générales du niveau1
 
 
 -   Matériel au niveau de fonctionnalité 11.0 minimum.
 -   Aucune prise en charge du matelassage.
 -   Aucune prise en charge de la Texture1D ou Texture3D.
--   Aucune prise en charge de l’anticrénelage multi-échantillon (MSAA) à 2, 8 ou 16 échantillons. Seules les valeurs 4 x sont requises, excepté les formats 128 bpp.
--   Aucun modèle de panachage standard (disposition dans des tuiles de 64 Ko et package de fin de mip pris en charge par le fabricant du matériel).
+-   Aucune prise en charge de l’anticrénelage multi-échantillon (MSAA) à 2, 8 ou 16échantillons. Seules les valeurs 4x sont requises, excepté les formats 128bpp.
+-   Aucun modèle de panachage standard (disposition dans des tuiles de 64Ko et package de fin de mip pris en charge par le fabricant du matériel).
 -   Restrictions d’accès aux tuiles lorsqu’il existe des mappages en double. Voir [Restrictions d’accès aux tuiles avec des mappages en double](tile-access-limitations-with-duplicate-mappings.md).
 
-## <a name="span-idspecificlimitationsaffectingtier1onlyspanspan-idspecificlimitationsaffectingtier1onlyspanspan-idspecificlimitationsaffectingtier1onlyspanspecific-limitations-affecting-tier-1-only"></a><span id="Specific_limitations_affecting_tier_1_only"></span><span id="specific_limitations_affecting_tier_1_only"></span><span id="SPECIFIC_LIMITATIONS_AFFECTING_TIER_1_ONLY"></span>Limitations spécifiques concernant uniquement le niveau 1
+## <a name="span-idspecificlimitationsaffectingtier1onlyspanspan-idspecificlimitationsaffectingtier1onlyspanspan-idspecificlimitationsaffectingtier1onlyspanspecific-limitations-affecting-tier-1-only"></a><span id="Specific_limitations_affecting_tier_1_only"></span><span id="specific_limitations_affecting_tier_1_only"></span><span id="SPECIFIC_LIMITATIONS_AFFECTING_TIER_1_ONLY"></span>Limitations spécifiques concernant uniquement le niveau1
 
 
 ### <a name="span-idreadingwritingtostreamingresourcesthathavenullmappingsspanspan-idreadingwritingtostreamingresourcesthathavenullmappingsspanspan-idreadingwritingtostreamingresourcesthathavenullmappingsspanreadingwriting-to-streaming-resources-that-have-null-mappings"></a><span id="Reading_writing_to_streaming_resources_that_have_NULL_mappings"></span><span id="reading_writing_to_streaming_resources_that_have_null_mappings"></span><span id="READING_WRITING_TO_STREAMING_RESOURCES_THAT_HAVE_NULL_MAPPINGS"></span>Lecture/écriture de ressources de diffusion en continu avec des mappages NULL
@@ -45,7 +41,7 @@ Les instructions du nuanceur pour les commentaires sur l’état mappé et le ni
 
 ### <a name="span-idalignmentconstraintsforstandardtileshapesspanspan-idalignmentconstraintsforstandardtileshapesspanspan-idalignmentconstraintsforstandardtileshapesspanalignment-constraints-for-standard-tile-shapes"></a><span id="Alignment_constraints_for_standard_tile_shapes"></span><span id="alignment_constraints_for_standard_tile_shapes"></span><span id="ALIGNMENT_CONSTRAINTS_FOR_STANDARD_TILE_SHAPES"></span>Contraintes d’alignement des formes de tuile standard
 
-Seuls les mips (en commençant par le plus petit) dont les dimensions sont des multiples de la taille de tuile standard prennent en charge les formes de tuile standard et peuvent disposer de tuiles individuelles arbitrairement mappées/non mappées. Le premier mipmap dans une ressource de diffusion en continu dont la dimension n’est pas un multiple de la taille de tuile standard, ainsi que tous les mipmaps plus grands, peuvent avoir une forme de tuile non standard, applicable à des tuiles N 64 Ko pour cet ensemble de mips (N signalé pour cette application). Ces tuiles N sont considérées comme compressées en une seule unité, qui doit être entièrement mappée ou non mappée par l’application à un moment donné, même si les mappages de chaque tuile N peuvent se trouver à des emplacements disjoints arbitraires dans un pool de tuiles.
+Seuls les mips (en commençant par le plus petit) dont les dimensions sont des multiples de la taille de tuile standard prennent en charge les formes de tuile standard et peuvent disposer de tuiles individuelles arbitrairement mappées/non mappées. Le premier mipmap dans une ressource de diffusion en continu dont la dimension n’est pas un multiple de la taille de tuile standard, ainsi que tous les mipmaps plus grands, peuvent avoir une forme de tuile non standard, applicable à des tuiles N 64Ko pour cet ensemble de mips (N signalé pour cette application). Ces tuiles N sont considérées comme compressées en une seule unité, qui doit être entièrement mappée ou non mappée par l’application à un moment donné, même si les mappages de chaque tuile N peuvent se trouver à des emplacements disjoints arbitraires dans un pool de tuiles.
 
 ### <a name="span-idarrayofmipmapsthatarentamultipleofstandardtilesizespanspan-idarrayofmipmapsthatarentamultipleofstandardtilesizespanspan-idarrayofmipmapsthatarentamultipleofstandardtilesizespanarray-of-mipmaps-that-arent-a-multiple-of-standard-tile-size"></a><span id="Array_of_mipmaps_that_aren_t_a_multiple_of_standard_tile_size"></span><span id="array_of_mipmaps_that_aren_t_a_multiple_of_standard_tile_size"></span><span id="ARRAY_OF_MIPMAPS_THAT_AREN_T_A_MULTIPLE_OF_STANDARD_TILE_SIZE"></span>Tableau des mipmaps n’étant pas des multiples de la taille de tuile standard
 
@@ -69,7 +65,6 @@ Le filtrage de réduction min/max n’est pas pris en charge. Voir [Fonctionnali
  
 
  
-
 
 
 

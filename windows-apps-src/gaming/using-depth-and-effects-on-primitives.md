@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, jeux, profondeur, effets, primitives, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: Windows10, uwp, jeux, profondeur, effets, primitives, directx
 ms.openlocfilehash: 923bce3dd5f340b97fd6d4e7b31c4ed2e949ca94
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="use-depth-and-effects-on-primitives"></a>Utiliser la profondeur et les effets sur des primitives
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Nous décrivons ici comment utiliser la profondeur, la perspective, la couleur et d’autres effets sur des primitives.
 
@@ -118,7 +115,7 @@ En plus de créer la vue de la cible de rendu, nous devons créer une vue du ste
 
 ### <a name="3-updating-perspective-with-the-window"></a>3. Mise à jour de la perspective avec la fenêtre
 
-Nous mettons à jour les paramètres de projection de la perspective pour la mémoire tampon constante en fonction des dimensions de la fenêtre. Nous corrigeons les paramètres pour appliquer un champ de vision de 70 degrés avec une plage de profondeur de 0,01 à 100.
+Nous mettons à jour les paramètres de projection de la perspective pour la mémoire tampon constante en fonction des dimensions de la fenêtre. Nous corrigeons les paramètres pour appliquer un champ de vision de 70degrés avec une plage de profondeur de 0,01 à 100.
 
 ```cpp
         // Finally, update the constant buffer perspective projection parameters
@@ -341,7 +338,7 @@ Nous créons les tampons vertex et d’index et la mémoire tampon constante pou
 
 ### <a name="5-rotating-and-drawing-the-cube-and-presenting-the-rendered-image"></a>5. Rotation et dessin du cube, et présentation de l’image rendue
 
-L’exécution du code entre dans une boucle sans fin pour effectuer le rendu de façon continue et afficher la scène. Nous appelons la fonction inline **rotationY** (BasicMath.h) en indiquant une valeur de rotation pour définir les valeurs chargées de faire pivoter la matrice de modèle du cube sur l’axe Y. Nous appelons ensuite [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) pour mettre à jour la mémoire tampon constante et faire pivoter le modèle du cube. Nous appelons [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) pour préciser que la cible de sortie correspond à la cible de rendu. Au cours de cet appel d’**OMSetRenderTargets**, nous transmettons la vue du stencil de profondeur. Nous appelons [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) pour effacer la cible de rendu et lui attribuer une couleur unie bleue, puis nous appelons [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) pour effacer le tampon de profondeur.
+L’exécution du code entre dans une boucle sans fin pour effectuer le rendu de façon continue et afficher la scène. Nous appelons la fonction incluse **rotationY** (BasicMath.h) en indiquant une valeur de rotation pour définir les valeurs chargées de faire pivoter la matrice de modèle du cube sur l’axe Y. Nous appelons ensuite [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) pour mettre à jour la mémoire tampon constante et faire pivoter le modèle du cube. Nous appelons [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) pour préciser que la cible de sortie correspond à la cible de rendu. Au cours de cet appel d’**OMSetRenderTargets**, nous transmettons la vue du stencil de profondeur. Nous appelons [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) pour effacer la cible de rendu et lui attribuer une couleur unie bleue, puis nous appelons [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) pour effacer le tampon de profondeur.
 
 Dans la boucle sans fin, nous traçons également le cube sur la surface bleue.
 
@@ -458,7 +455,6 @@ L’étape suivante consiste à appliquer des textures aux primitives.
  
 
  
-
 
 
 

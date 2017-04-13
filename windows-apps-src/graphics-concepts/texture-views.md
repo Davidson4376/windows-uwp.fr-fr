@@ -2,21 +2,17 @@
 title: Affichages de texture
 description: "Dans Direct3D, les ressources de texture sont disponibles avec un affichage, qui est un mécanisme d’interprétation matérielle d’une ressource de la mémoire."
 ms.assetid: 18DABFCE-8A36-4C4E-B08E-10428B05D701
-keywords:
-- Affichages de texture
+keywords: Affichages de texture
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: bd5f49364f40876747e34aaade3ca119230407aa
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 70b7b5da92f5be038fd1eb16ca27875704410449
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="texture-views"></a>Affichages de texture
 
 
@@ -24,11 +20,11 @@ Dans Direct3D, les ressources de texture sont disponibles avec un affichage, qui
 
 Un affichage prend en charge la notion de ressource sans type. Une ressource sans type est une ressource créée avec une taille spécifique, mais pas avec un type de données spécifique. Les données sont interprétées dynamiquement lorsqu’elles sont liées au pipeline.
 
-L’illustration suivante montre un exemple de liaison d’un tableau de textures 2D avec 6 textures en tant que ressource de nuanceur, par la création d’une vue de ressource de nuanceur. La ressource est ensuite traitée comme un tableau de textures. (Remarque : une sous-ressource ne peut pas être liée simultanément en tant qu’entrée et sortie du pipeline).
+L’illustration suivante montre un exemple de liaison d’un tableau de textures 2D avec 6textures en tant que ressource de nuanceur, par la création d’une vue de ressource de nuanceur. La ressource est ensuite traitée comme un tableau de textures. (Remarque: une sous-ressource ne peut pas être liée simultanément en tant qu’entrée et sortie du pipeline).
 
 ![illustration d’un tableau de textures avec six textures](images/d3d10-cube-texture-faces.png)
 
-Lorsque vous utilisez un tableau de textures 2D en tant que cible de rendu, la ressource peut être considérée comme un tableau de textures 2D (6 dans cet exemple) avec des niveaux de mipmap (3 dans cet exemple).
+Lorsque vous utilisez un tableau de textures 2D en tant que cible de rendu, la ressource peut être considérée comme un tableau de textures 2D (6dans cet exemple) avec des niveaux de mipmap (3dans cet exemple).
 
 Créez un objet d’affichage pour une cible de rendu en appelant la méthode CreateRenderTargetView. Appelez ensuite OMSetRenderTargets pour définir l’affichage de la cible de rendu au pipeline. Générez les cibles de rendu en appelant Draw et en utilisant la méthode RenderTargetArrayIndex pour les indexer dans la texture du tableau. Vous pouvez utiliser une sous-ressource (niveau de mipmap, combinaison d’index de tableau) pour effectuer une liaison à un tableau de sous-ressources. Vous pouvez effectuer une liaison au deuxième niveau de mipmap et mettre à jour uniquement ce niveau de mipmap particulier si vous le souhaitez, comme dans l’illustration suivante.
 
@@ -42,7 +38,6 @@ Créez un objet d’affichage pour une cible de rendu en appelant la méthode Cr
  
 
  
-
 
 
 

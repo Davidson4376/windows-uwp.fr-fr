@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, jeux, rendu"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp, jeux, rendu
 ms.openlocfilehash: 7b97a70094c953e9614a84979c9f98fc91a82451
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="assemble-the-rendering-framework"></a>Assembler l’infrastructure de rendu
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Jusqu’à présent, vous avez vu comment structurer un jeu de plateforme Windows universelle (UWP) à utiliser avec Windows Runtime, et comment définir une machine à états pour gérer le flux du jeu. Il est maintenant temps d’examiner comment l’exemple de jeu utilise cette structure et ces états pour afficher ses graphiques. Dans cette rubrique, nous allons examiner comment implémenter une infrastructure de rendu, en partant de l’initialisation du périphérique graphique jusqu’à la présentation des objets graphiques à afficher.
 
@@ -30,7 +27,7 @@ Jusqu’à présent, vous avez vu comment structurer un jeu de plateforme Window
 
 > **Remarque**   Les fichiers de code suivants ne sont pas abordés ici, mais fournissent des classes et méthodes référencées dans cette rubrique, et sont [fournis en tant que code à la fin de cette rubrique](#complete-sample-code-for-this-section) :
 -   **Animate.h/.cpp**.
--   **BasicLoader.h/.cpp**. Fournit des méthodes pour le chargement des maillages, nuanceurs et textures, à la fois de façon synchrone et asynchrone. Très utile !
+-   **BasicLoader.h/.cpp**. Fournit des méthodes pour le chargement des maillages, nuanceurs et textures, à la fois de façon synchrone et asynchrone. Très utile!
 -   **MeshObject.h/.cpp**, **SphereMesh.h/.cpp**, **CylinderMesh.h/.cpp**, **FaceMesh.h/.cpp** et **WorldMesh.h/.cpp**. Contient les définitions des primitives d’objets utilisées dans le jeu, par exemple les sphères de munitions, les obstacles sous forme de cylindres et de cônes, ainsi que les murs du pas de tir. (**GameObject.cpp**, brièvement abordé dans cette rubrique, contient la méthode de rendu de ces primitives.)
 -   **Level.h/.cpp** et **Level\[1-6\].h/.cpp**. Contient la configuration de chacun des six niveaux de jeu, notamment les critères de réussite ainsi que le nombre et la position des cibles et obstacles.
 -   **TargetTexture.h/.cpp**. Contient un ensemble de méthodes pour le dessin des bitmaps utilisées comme textures sur les cibles.
@@ -39,28 +36,28 @@ Ces fichiers contiennent un code qui n’est pas spécifique aux jeux UWP Direct
 
  
 
-Cette section couvre trois fichiers clés de l’exemple de jeu ([fournis en tant que code à la fin de cette rubrique](#complete-sample-code-for-this-section)) :
+Cette section couvre trois fichiers clés de l’exemple de jeu ([fournis en tant que code à la fin de cette rubrique](#complete-sample-code-for-this-section)):
 
 -   **Camera.h/.cpp**
 -   **GameRenderer.h/.cpp**
 -   **PrimObject.h/.cpp**
 
-Encore une fois, nous partons du principe que vous comprenez les concepts de programmation 3D de base, tels que les maillages, vertex et textures. Pour plus d’informations sur la programmation Direct3D 11 en général, voir [Guide de programmation pour Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345).
+Encore une fois, nous partons du principe que vous comprenez les concepts de programmation 3D de base, tels que les maillages, vertex et textures. Pour plus d’informations sur la programmation Direct3D11 en général, voir [Guide de programmation pour Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff476345).
 Ceci étant dit, examinons le travail qui doit être effectué pour mettre votre jeu à l’écran.
 
 ## <a name="an-overview-of-the-windows-runtime-and-directx"></a>Vue d’ensemble de Windows Runtime et DirectX
 
 
-DirectX est une partie essentielle de Windows Runtime et de l’expérience Windows 10. Tous les effets visuels de Windows 10 sont basés sur DirectX, et vous disposez de la même ligne directe à la même interface graphique de bas niveau, [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534), qui fournit une couche d’abstraction pour le matériel vidéo et ses pilotes. Toutes les API Direct3D 11 sont disponibles pour que vous puissiez communiquer directement avec DXGI. Vous obtenez ainsi des graphiques rapides et hautement performants dans vos jeux, qui vous donnent accès à toutes les dernières fonctionnalités de matériel vidéo.
+DirectX est une partie essentielle de Windows Runtime et de l’expérience Windows 10. Tous les effets visuels de Windows10 sont basés sur DirectX, et vous disposez de la même ligne directe à la même interface graphique de bas niveau, [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534), qui fournit une couche d’abstraction pour le matériel vidéo et ses pilotes. Toutes les API Direct3D11 sont disponibles pour que vous puissiez communiquer directement avec DXGI. Vous obtenez ainsi des graphiques rapides et hautement performants dans vos jeux, qui vous donnent accès à toutes les dernières fonctionnalités de matériel vidéo.
 
-Pour ajouter la prise en charge de DirectX à une application du Windows Store, vous créez un fournisseur de vues pour les ressources DirectX en implémentant les interfaces [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) et [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478). Celles-ci fournissent un modèle de fabrique pour le type du fournisseur de vues et l’implémentation du fournisseur de vues DirectX, respectivement. Le singleton UWP, représenté par l’objet [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016), exécute cette implémentation.
+Pour ajouter la prise en charge de DirectX à une application du WindowsStore, vous créez un fournisseur de vues pour les ressources DirectX en implémentant les interfaces [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) et [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478). Celles-ci fournissent un modèle de fabrique pour le type du fournisseur de vues et l’implémentation du fournisseur de vues DirectX, respectivement. Le singleton UWP, représenté par l’objet [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016), exécute cette implémentation.
 
 Dans [Définition de l’infrastructure UWP du jeu](tutorial--building-the-games-metro-style-app-framework.md), nous avons examiné la façon dont le convertisseur s’adapte à l’infrastructure d’application de l’exemple de jeu. Examinons maintenant la façon dont le convertisseur de jeu se connecte à la vue et crée les graphiques qui définissent l’apparence du jeu.
 
 ## <a name="defining-the-renderer"></a>Définition du convertisseur
 
 
-Le type abstrait **GameRenderer** hérite du type de convertisseur **DirectXBase**, ajoute la prise en charge du mode 3D stéréo et déclare des ressources et des mémoires tampons constantes pour les nuanceurs qui créent et définissent nos primitives graphiques.
+Le type abstrait **GameRenderer** hérite du type de convertisseur **DirectXBase**, ajoute la prise en charge du mode3D stéréo et déclare des ressources et des mémoires tampons constantes pour les nuanceurs qui créent et définissent nos primitives graphiques.
 
 Voici la définition de **GameRenderer**.
 
@@ -131,9 +128,9 @@ protected private:
 };
 ```
 
-Dans la mesure où les API Direct3D 11 sont définies comme des API COM, vous devez fournir des références [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983) aux objets définis par ces API. Ces objets sont automatiquement libérés lorsque leur dernière référence sort du contexte une fois l’exécution de l’application terminée.
+Dans la mesure où les API Direct3D11 sont définies comme des API COM, vous devez fournir des références [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983) aux objets définis par ces API. Ces objets sont automatiquement libérés lorsque leur dernière référence sort du contexte une fois l’exécution de l’application terminée.
 
-L’exemple de jeu déclare 4 mémoires tampons constantes spécifiques :
+L’exemple de jeu déclare 4mémoires tampons constantes spécifiques:
 
 -   **m\_constantBufferNeverChanges**. Cette mémoire tampon constante contient les paramètres d’éclairage. Elle est définie une fois et n’est plus jamais modifiée.
 -   **m\_constantBufferChangeOnResize**. Cette mémoire tampon constante contient la matrice de projection. La matrice de projection dépend de la taille et des proportions de la fenêtre. Elle est mise à jour uniquement lorsque la taille de la fenêtre change.
@@ -142,7 +139,7 @@ L’exemple de jeu déclare 4 mémoires tampons constantes spécifiques :
 
 L’intérêt de plusieurs tampons constants avec des fréquences différentes est de réduire la quantité de données à envoyer à l’unité de traitement graphique (GPU) par trame. Par conséquent, l’exemple répartit les constantes en plusieurs tampons en fonction de la fréquence à laquelle elles doivent être mises à jour. Il s’agit d’une recommandation pour la programmation Direct3D.
 
-Le convertisseur contient les objets de nuanceurs qui calculent nos primitives et textures : **m\_vertexShader** et **m\_pixelShader**. Le nuanceur de vertex traite les primitives et l’éclairage de base, tandis que le nuanceur de pixels (parfois appelé nuanceur de fragments) traite les textures et tous les effets par pixel. Il existe deux versions de ces nuanceurs (régulier et plat) pour rendre des primitives différentes. Les versions plates sont beaucoup plus simples et n’engendrent pas de mises en surbrillance spéculaires ni d’effets d’éclairage par pixel. Ces nuanceurs sont utilisés pour les murs et accélèrent le rendu sur des périphériques de faible puissance.
+Le convertisseur contient les objets de nuanceurs qui calculent nos primitives et textures: **m\_vertexShader** et **m\_pixelShader**. Le nuanceur de vertex traite les primitives et l’éclairage de base, tandis que le nuanceur de pixels (parfois appelé nuanceur de fragments) traite les textures et tous les effets par pixel. Il existe deux versions de ces nuanceurs (régulier et plat) pour rendre des primitives différentes. Les versions plates sont beaucoup plus simples et n’engendrent pas de mises en surbrillance spéculaires ni d’effets d’éclairage par pixel. Ces nuanceurs sont utilisés pour les murs et accélèrent le rendu sur des périphériques de faible puissance.
 
 La classe du convertisseur contient les ressources [DirectWrite et Direct2D](https://msdn.microsoft.com/library/windows/desktop/ff729481) utilisées pour la superposition et l’affichage à tête haute (l’objet **GameHud**). La superposition et l’affichage à tête haute sont tracés au-dessus de la cible de rendu lorsque la projection est terminée dans le pipeline graphique.
 
@@ -189,13 +186,13 @@ Une fois cette opération effectuée, le processus d’initialisation du convert
 ## <a name="creating-and-loading-directx-graphics-resources"></a>Création et chargement des ressources graphiques DirectX
 
 
-Le premier point de l’ordre du jour de tout jeu est d’établir une connexion à l’interface graphique, de créer les ressources nécessaires pour dessiner les graphiques, puis de configurer une cible de rendu dans laquelle ces graphiques peuvent être dessinés. Dans l’exemple de jeu (et dans le modèle **Application DirectX 11 (Windows universel)** de Microsoft Visual Studio), ce processus est implémenté avec trois méthodes :
+Le premier point de l’ordre du jour de tout jeu est d’établir une connexion à l’interface graphique, de créer les ressources nécessaires pour dessiner les graphiques, puis de configurer une cible de rendu dans laquelle ces graphiques peuvent être dessinés. Dans l’exemple de jeu (et dans le modèle **Application DirectX11 (Windows universel)** de Microsoft VisualStudio), ce processus est implémenté avec troisméthodes:
 
 -   **CreateDeviceIndependentResources**
 -   **CreateDeviceResources**
 -   **CreateWindowSizeDependentResources**
 
-À présent, dans l’exemple de jeu, nous remplaçons deux de ces méthodes (**CreateDeviceIndependentResources** et **CreateDeviceResources**) fournies par la classe **DirectXBase** implémentée dans le modèle **Application DirectX 11 (Windows universel)**. Pour chacune de ces méthodes de substitution, nous commençons par appeler les implémentations **DirectXBase** qu’elles remplacent, puis nous ajoutons d’autres détails sur l’implémentation propres à l’exemple de jeu. Gardez à l’esprit que l’implémentation de classe **DirectXBase** incluse dans l’exemple de jeu a été modifiée par rapport à la version fournie dans le modèle Visual Studio afin d’inclure la prise en charge de vue stéréoscopique. Elle comprend aussi la rotation préalable de l’objet **SwapBuffer**.
+À présent, dans l’exemple de jeu, nous remplaçons deux de ces méthodes (**CreateDeviceIndependentResources** et **CreateDeviceResources**) fournies par la classe **DirectXBase** implémentée dans le modèle **Application DirectX11 (Windows universel)**. Pour chacune de ces méthodes de substitution, nous commençons par appeler les implémentations **DirectXBase** qu’elles remplacent, puis nous ajoutons d’autres détails sur l’implémentation propres à l’exemple de jeu. Gardez à l’esprit que l’implémentation de classe **DirectXBase** incluse dans l’exemple de jeu a été modifiée par rapport à la version fournie dans le modèle VisualStudio afin d’inclure la prise en charge de vue stéréoscopique. Elle comprend aussi la rotation préalable de l’objet **SwapBuffer**.
 
 L’objet **GameRenderer** ne substitue pas **CreateWindowSizeDependentResources**. Nous utilisons son implémentation fournie dans la classe **DirectXBase**.
 
@@ -384,7 +381,7 @@ void GameHud::CreateDeviceResources(_In_ ID2D1DeviceContext* d2dContext)
 }
 ```
 
-Dans cet exemple et dans des conditions d’exécution normale, la méthode **CreateDeviceResources** appelle simplement la méthode de classe de base, puis appelle la méthode **GameHud::CreateDeviceResources** (également répertoriée précédemment). Dans le cas où un problème se produit par la suite avec le périphérique graphique sous-jacent, ce dernier devra probablement être réinitialisé. Dans ce cas, la méthode **CreateDeviceResources** initialise un ensemble de tâches asynchrones afin de créer les ressources de périphériques de jeu, par le biais d’une séquence de deux méthodes : un appel de la méthode **CreateDeviceResourcesAsync**, puis, à la fin, un appel de la méthode **FinalizeCreateGameDeviceResources**.
+Dans cet exemple et dans des conditions d’exécution normale, la méthode **CreateDeviceResources** appelle simplement la méthode de classe de base, puis appelle la méthode **GameHud::CreateDeviceResources** (également répertoriée précédemment). Dans le cas où un problème se produit par la suite avec le périphérique graphique sous-jacent, ce dernier devra probablement être réinitialisé. Dans ce cas, la méthode **CreateDeviceResources** initialise un ensemble de tâches asynchrones afin de créer les ressources de périphériques de jeu, par le biais d’une séquence de deux méthodes: un appel de la méthode **CreateDeviceResourcesAsync**, puis, à la fin, un appel de la méthode **FinalizeCreateGameDeviceResources**.
 
 CreateGameDeviceResourcesAsync et FinalizeCreateGameDeviceResources
 
@@ -669,13 +666,13 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 }
 ```
 
-**CreateDeviceResourcesAsync** est une méthode qui exécute un ensemble de tâches asynchrones afin de charger les ressources de jeu. Elle n’a accès qu’aux méthodes de périphériques Direct3D 11 (celles définies sur [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379)) et non aux méthodes de contexte de périphériques (méthodes définies sur [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)), car elle doit être exécutée sur un thread distinct. Elle offre donc la possibilité de n’effectuer aucun rendu. La méthode **FinalizeCreateGameDeviceResources** s’exécute sur le thread principal et a accès aux méthodes de contexte de périphériques Direct3D 11.
+**CreateDeviceResourcesAsync** est une méthode qui exécute un ensemble de tâches asynchrones afin de charger les ressources de jeu. Elle n’a accès qu’aux méthodes de périphériques Direct3D11 (celles définies sur [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379)) et non aux méthodes de contexte de périphériques (méthodes définies sur [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)), car elle doit être exécutée sur un thread distinct. Elle offre donc la possibilité de n’effectuer aucun rendu. La méthode **FinalizeCreateGameDeviceResources** s’exécute sur le thread principal et a accès aux méthodes de contexte de périphériques Direct3D11.
 
 La séquence d’événements permettant de charger les ressources de périphériques de jeu se déroule de la manière suivante.
 
-**CreateDeviceResourcesAsync** commence par initialiser les mémoires tampons constantes pour les primitives. Les mémoires tampons constantes sont des mémoires tampons à faible latence et à largeur fixe qui contiennent les données utilisées par un nuanceur pendant son exécution. (Imaginez ces mémoires tampons comme transmettant des données au nuanceur qui sont constantes pendant l’exécution d’un appel de dessin particulier.) Dans cet exemple, les mémoires tampons contiennent les données que les nuanceurs utilisent pour :
+**CreateDeviceResourcesAsync** commence par initialiser les mémoires tampons constantes pour les primitives. Les mémoires tampons constantes sont des mémoires tampons à faible latence et à largeur fixe qui contiennent les données utilisées par un nuanceur pendant son exécution. (Imaginez ces mémoires tampons comme transmettant des données au nuanceur qui sont constantes pendant l’exécution d’un appel de dessin particulier.) Dans cet exemple, les mémoires tampons contiennent les données que les nuanceurs utilisent pour:
 
--   placer les sources de lumière et définir leur couleur lorsque le convertisseur est initialisé ;
+-   placer les sources de lumière et définir leur couleur lorsque le convertisseur est initialisé;
 -   calculer la matrice globale chaque fois que la fenêtre est redimensionnée ;
 -   calculer la matrice de projection pour chaque mise à jour de trame ;
 -   calculer les transformations des primitives à chaque mise à jour de rendu.
@@ -699,7 +696,7 @@ Le jeu dispose des ressources pour afficher les graphiques dans la fenêtre actu
 ## <a name="implementing-the-camera-object"></a>Implémentation de l’objet caméra
 
 
-Le jeu a le code en place pour mettre à jour le monde dans son propre système de coordonnées (parfois appelé espace du monde ou espace de scène). Tous les objets, y compris la caméra, sont positionnés et orientés dans cet espace. Dans l’exemple de jeu, la position de la caméra et les vecteurs de vue (le vecteur « de visualisation » qui pointe directement sur la scène depuis la caméra et le vecteur « de recherche » qui pointe vers le haut, à la perpendiculaire) définissent l’espace de la caméra. Les paramètres de projection déterminent la quantité de cet espace qui est vraiment visible dans la scène finale ; le champ de vision, les proportions et les plans de découpage définissent la transformation de la projection. Un nuanceur de vertex effectue la lourde tâche de convertir les coordonnées du modèle en coordonnées de périphérique avec l’algorithme suivant (où V est un vecteur et M est une matrice) :
+Le jeu a le code en place pour mettre à jour le monde dans son propre système de coordonnées (parfois appelé espace du monde ou espace de scène). Tous les objets, y compris la caméra, sont positionnés et orientés dans cet espace. Dans l’exemple de jeu, la position de la caméra et les vecteurs de vue (le vecteur « de visualisation » qui pointe directement sur la scène depuis la caméra et le vecteur « de recherche » qui pointe vers le haut, à la perpendiculaire) définissent l’espace de la caméra. Les paramètres de projection déterminent la quantité de cet espace qui est vraiment visible dans la scène finale ; le champ de vision, les proportions et les plans de découpage définissent la transformation de la projection. Un nuanceur de vertex effectue la lourde tâche de convertir les coordonnées du modèle en coordonnées de périphérique avec l’algorithme suivant (oùV est un vecteur etM est une matrice):
 
 `              V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device)           `.
 
@@ -759,12 +756,12 @@ protected private:
 };
 ```
 
-Il existe deux matrices 4x4 qui définissent les transformations apportées aux coordonnées de vue et de projection, **m_viewMatrix** et **m\_projectionMatrix**. (Pour la projection stéréo, vous utilisez deux matrices de projection : une pour la vue de chaque œil.) Elles sont calculées avec ces deux méthodes, respectivement :
+Il existe deux matrices 4x4 qui définissent les transformations apportées aux coordonnées de vue et de projection, **m_viewMatrix** et **m\_projectionMatrix**. (Pour la projection stéréo, vous utilisez deux matrices de projection: une pour la vue de chaque œil.) Elles sont calculées avec ces deux méthodes, respectivement:
 
 -   **SetViewParams**
 -   **SetProjParams**
 
-Le code de ces deux méthodes se présente comme suit :
+Le code de ces deux méthodes se présente comme suit:
 
 ```cpp
 void Camera::SetViewParams(
@@ -958,7 +955,7 @@ protected private:
 };
 ```
 
-La plupart des champs contiennent des données sur l’état, les propriétés visuelles ou la position de la primitive dans le monde du jeu. Il existe quelques méthodes en particulier qui sont nécessaires dans la plupart des jeux :
+La plupart des champs contiennent des données sur l’état, les propriétés visuelles ou la position de la primitive dans le monde du jeu. Il existe quelques méthodes en particulier qui sont nécessaires dans la plupart des jeux:
 
 -   **Mesh**. Obtient la géométrie de maillage de la primitive, qui est stockée dans **m\_mesh**. Cette géométrie est définie dans **MeshObject.h/.cpp**.
 -   **IsTouching**. Cette méthode détermine si la primitive se trouve à une distance spécifique d’un point et renvoie le point de la surface le plus proche du point et la perpendiculaire à la surface de l’objet au niveau de ce point. Étant donné que l’exemple ne se préoccupe que des collisions entre munitions et primitives, cela est suffisant pour la dynamique du jeu. Il ne s’agit pas d’une fonction d’intersection primitive-primitive universelle, même si elle pourrait servir de base à une telle fonction.
@@ -973,7 +970,7 @@ Examinons le rendu de base d’une primitive dans l’exemple de jeu.
 ## <a name="rendering-the-primitives"></a>Rendu des primitives
 
 
-Les primitives de l’exemple de jeu utilisent la méthode de base **Render** implémentée sur la classe **GameObject** parente, comme ici :
+Les primitives de l’exemple de jeu utilisent la méthode de base **Render** implémentée sur la classe **GameObject** parente, comme ici:
 
 ```cpp
 void GameObject::Render(
@@ -1009,7 +1006,7 @@ void GameObject::Render(
 
 La méthode **GameObject::Render** met à jour la mémoire tampon constante de primitives avec les données propres à une primitive donnée. Le jeu utilise plusieurs mémoires tampons constantes, mais n’a besoin de mettre à jour ces mémoires tampons qu’une seule fois par primitive.
 
-Considérez les mémoires tampons constantes comme des données entrantes pour les nuanceurs qui sont exécutés pour chaque primitive. Certaines données sont statiques (**m_constantBufferNeverChanges**), certaines données sont constantes sur la trame (**m\_constantBufferChangesEveryFrame**), comme la position de la caméra, et certaines données sont propres à la primitive, comme ses couleurs et textures (**m\_constantBufferChangesEveryPrim**). Le convertisseur de jeu répartit ces données entrantes entre différentes mémoires tampons constantes pour optimiser la bande passante de mémoire utilisée par l’UC et le GPU. Cette approche permet également de réduire la quantité de données dont le GPU doit assurer le suivi. Gardez à l’esprit que le GPU a une longue file d’attente de commandes et que, chaque fois que le jeu appelle **Draw**, cette commande est mise en file d’attente avec les données qui lui sont associées. Lorsque le jeu met à jour la mémoire tampon constante de primitives et émet la commande **Draw** suivante, le pilote graphique ajoute cette commande suivante et les données associées à la file d’attente. Si le jeu dessine 100 primitives, la file d’attente peut contenir 100 copies des données de la mémoire tampon constante. Comme nous voulons réduire la quantité de données envoyées par le jeu au GPU, le jeu utilise une mémoire tampon constante de primitives distincte qui contient uniquement les mises à jour pour chaque primitive.
+Considérez les mémoires tampons constantes comme des données entrantes pour les nuanceurs qui sont exécutés pour chaque primitive. Certaines données sont statiques (**m_constantBufferNeverChanges**), certaines données sont constantes sur la trame (**m\_constantBufferChangesEveryFrame**), comme la position de la caméra, et certaines données sont propres à la primitive, comme ses couleurs et textures (**m\_constantBufferChangesEveryPrim**). Le convertisseur de jeu répartit ces données entrantes entre différentes mémoires tampons constantes pour optimiser la bande passante de mémoire utilisée par l’UC et le GPU. Cette approche permet également de réduire la quantité de données dont le GPU doit assurer le suivi. Gardez à l’esprit que le GPU a une longue file d’attente de commandes et que, chaque fois que le jeu appelle **Draw**, cette commande est mise en file d’attente avec les données qui lui sont associées. Lorsque le jeu met à jour la mémoire tampon constante de primitives et émet la commande **Draw** suivante, le pilote graphique ajoute cette commande suivante et les données associées à la file d’attente. Si le jeu dessine 100primitives, la file d’attente peut contenir 100copies des données de la mémoire tampon constante. Comme nous voulons réduire la quantité de données envoyées par le jeu au GPU, le jeu utilise une mémoire tampon constante de primitives distincte qui contient uniquement les mises à jour pour chaque primitive.
 
 Si une collision (un coup) est détectée, **GameObject::Render** vérifie le contexte actuel, qui indique si la cible a été atteinte par une sphère de munitions. Si la cible a été atteinte, cette méthode applique une matière de coup qui inverse les couleurs des cercles de la cible pour indiquer un coup réussi au joueur. Sinon, elle applique la matière par défaut avec la même méthode. Dans les deux cas, elle définit la matière en appelant **Material::RenderSetup**, qui définit les constantes appropriées dans la mémoire tampon constante. Elle appelle alors [**ID3D11DeviceContext::PSSetShaderResources**](https://msdn.microsoft.com/library/windows/desktop/ff476473) pour définir la ressource de texture correspondante pour le nuanceur de pixels, et [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) et [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) pour définir les objets du nuanceur de vertex et du nuanceur de pixels proprement dits, respectivement.
 
@@ -1063,9 +1060,9 @@ Cela se produit au niveau du processus de rendu réel !
 -   Les nuanceurs de vertex exécutent les opérations par vertex, telles que les transformations et l’éclairage.
 -   Les nuanceurs de pixels (ou de fragments) exécutent les opérations par pixel, telles que les textures et l’éclairage par pixel. Ils peuvent également être utilisés pour appliquer des effets de post-traitement sur les bitmaps, par exemple la cible de rendu final.
 
-Le code de nuanceur est défini à l’aide du langage HLSL (High-Level Shader Language) qui, dans Direct3D 11, est compilé à partir d’un programme créé avec une syntaxe proche de celle du C. (La syntaxe complète est disponible [ici](https://msdn.microsoft.com/library/windows/desktop/bb509635).) Les deux nuanceurs principaux pour l’exemple de jeu sont définis dans **PixelShader.hlsl** et **VertexShader.hlsl**. (Deux nuanceurs de « faible puissance » définissent également les périphériques de faible puissance : **PixelShaderFlat.hlsl** et **VertexShaderFlat.hlsl**. Ces deux nuanceurs fournissent des effets limités, comme un manque de spéculaire en surbrillance sur les surfaces de textures.) Enfin, il existe un fichier .hlsli qui contient le format des mémoires tampons constantes, **ConstantBuffers.hlsli**.
+Le code de nuanceur est défini à l’aide du langage HLSL (High-Level Shader Language) qui, dans Direct3D11, est compilé à partir d’un programme créé avec une syntaxe proche de celle du C. (La syntaxe complète est disponible [ici](https://msdn.microsoft.com/library/windows/desktop/bb509635).) Les deux nuanceurs principaux pour l’exemple de jeu sont définis dans **PixelShader.hlsl** et **VertexShader.hlsl**. (Deuxnuanceurs de «faible puissance» définissent également les périphériques de faible puissance: **PixelShaderFlat.hlsl** et **VertexShaderFlat.hlsl**. Ces deux nuanceurs fournissent des effets limités, comme un manque de spéculaire en surbrillance sur les surfaces de textures.) Enfin, il existe un fichier .hlsli qui contient le format des mémoires tampons constantes, **ConstantBuffers.hlsli**.
 
-**ConstantBuffers.hlsli** est défini comme suit :
+**ConstantBuffers.hlsli** est défini comme suit:
 
 ```cpp
 Texture2D diffuseTexture : register(t0);
@@ -1123,7 +1120,7 @@ struct PixelShaderFlatInput
 };
 ```
 
-**VertexShader.hlsl** est défini comme suit :
+**VertexShader.hlsl** est défini comme suit:
 
 VertexShader.hlsl
 
@@ -1184,7 +1181,7 @@ float4 main(PixelShaderInput input) : SV_Target
 }
 ```
 
-La fonction **main** dans **PixelShader.hlsl** prend les projections 2-D des surfaces en triangle pour chaque primitive de la scène, puis calcule la valeur de couleur de chaque pixel des surfaces visibles en fonction des textures et des effets (ici, l’éclairage spéculaire) qui leur sont appliqués.
+La fonction **main** dans **PixelShader.hlsl** prend les projections2-D des surfaces en triangle pour chaque primitive de la scène, puis calcule la valeur de couleur de chaque pixel des surfaces visibles en fonction des textures et des effets (ici, l’éclairage spéculaire) qui leur sont appliqués.
 
 Rassemblons maintenant toutes ces idées (primitives, caméra et nuanceurs) et voyons comment l’exemple de jeu génère le processus de rendu complet.
 
@@ -1353,12 +1350,12 @@ Examinons à présent le processus qui permet de tout rassembler.
 6.  Dessinez l’affichage à tête haute et la superposition en utilisant le contexte Direct2D.
 7.  Appelez **DirectXBase::Present**.
 
-Le jeu a mis à jour l’affichage ! Il s’agit là du processus de base pour l’implémentation de l’infrastructure graphique d’un jeu. Bien entendu, plus votre jeu est volumineux, plus grand est le nombre d’abstractions que vous devez mettre en place pour gérer cette complexité, par exemple des hiérarchies entières de types d’objets et de comportements d’animations, et plus complexes sont les méthodes pour charger et gérer les composants, tels que les maillages et textures.
+Le jeu a mis à jour l’affichage! Il s’agit là du processus de base pour l’implémentation de l’infrastructure graphique d’un jeu. Bien entendu, plus votre jeu est volumineux, plus grand est le nombre d’abstractions que vous devez mettre en place pour gérer cette complexité, par exemple des hiérarchies entières de types d’objets et de comportements d’animations, et plus complexes sont les méthodes pour charger et gérer les composants, tels que les maillages et textures.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
 
-Avançons et examinons quelques points importants de l’exemple de jeu que nous n’avons fait que survoler : [la superposition de l’interface utilisateur](tutorial--adding-a-user-interface.md), [les contrôles d’entrée](tutorial--adding-controls.md) et [le son](tutorial--adding-sound.md).
+Avançons et examinons quelques points importants de l’exemple de jeu que nous n’avons fait que survoler: [la superposition de l’interface utilisateur](tutorial--adding-a-user-interface.md), [les contrôles d’entrée](tutorial--adding-controls.md) et [le son](tutorial--adding-sound.md).
 
 ## <a name="complete-sample-code-for-this-section"></a>Exemple de code complet pour cette section
 
@@ -6314,7 +6311,7 @@ void Material::RenderSetup(
 ```
 
 > **Remarque**  
-Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -6326,7 +6323,6 @@ Cet article s’adresse aux développeurs de Windows 10 qui développent des ap
  
 
  
-
 
 
 

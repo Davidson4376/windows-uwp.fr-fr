@@ -2,21 +2,17 @@
 title: "Restrictions d’accès aux tuiles avec des mappages en double"
 description: "Il existe des restrictions d’accès aux tuiles avec des mappages en double, par exemple en cas de copie de ressources de diffusion en continu avec une source et une destination se superposant, ou lors du rendu de tuiles partagées dans la zone de rendu."
 ms.assetid: 6E40B1DC-BCF1-4B09-82A8-7B2D9B209A61
-keywords:
-- "Restrictions d’accès aux tuiles avec des mappages en double"
+keywords: "Restrictions d’accès aux tuiles avec des mappages en double"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 863dba7a8c2fa37a1bef3f3babb8674cbc22424c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 13895acb5bb14cb1f0e5b91a2060e4eed9265a1c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tile-access-limitations-with-duplicate-mappings"></a>Restrictions d’accès aux tuiles avec des mappages en double
 
 
@@ -73,11 +69,11 @@ L’incompatibilité des ressources de diffusion en continu partageant des tuile
 
 Si les autres ressource partageant des mappages sont initialisées avec de nouvelles données (recyclage de la mémoire pour un rôle différent), les opérations de lecture ou de rendu suivantes sont correctes dans la mesure où les données ne sont pas fusionnées dans des interprétations incompatibles. Toutefois, lorsque vous basculez entre l’accès à des mappages incompatibles, vous devez spécifier des barrières (avec une contrainte de classement d’accès de données entre plusieurs ressources à tuiles).
 
-Si l’indicateur de liaison de profondeur/gabarit ou de rendu cible n’est pas défini sur les ressources partageant des mappages, il existe beaucoup moins de restrictions. Dans la mesure où les types de format et de surface (par exemple, Texture2D) sont identiques, les tuiles peuvent être partagées. Les différents formats compatibles sont les surfaces BC\* et le format équivalent non compressé de 32 bits ou 16 bits par composant, comme BC6H et R32G32B32A32. De nombreux formats de 32 bits par élément peuvent disposer d’un alias avec R32\_\*, ainsi que (R10G10B10A2\_\*, R8G8B8A8\_\*, B8G8R8A8\_\*,B8G8R8X8\_\*,R16G16\_\*). Cette opération a toujours été autorisée pour les ressources non à diffusion en continu.
+Si l’indicateur de liaison de profondeur/gabarit ou de rendu cible n’est pas défini sur les ressources partageant des mappages, il existe beaucoup moins de restrictions. Dans la mesure où les types de format et de surface (par exemple, Texture2D) sont identiques, les tuiles peuvent être partagées. Les différents formats compatibles sont les surfaces BC\* et le format équivalent non compressé de 32bits ou 16bits par composant, comme BC6H et R32G32B32A32. De nombreux formats de 32bits par élément peuvent disposer d’un alias avec R32\_\*, ainsi que (R10G10B10A2\_\*, R8G8B8A8\_\*, B8G8R8A8\_\*,B8G8R8X8\_\*,R16G16\_\*). Cette opération a toujours été autorisée pour les ressources non à diffusion en continu.
 
 Le partage entre des tuiles compressées et non compressées fonctionne correctement si les formats sont compatibles et si les tuiles sont remplies avec une couleur unie.
 
-Enfin, si des ressources partageant des mappages de tuiles n’ont rien en commun, sauf qu’aucune ne présente d’indicateur de liaison de profondeur/gabarit ou de rendu cible, seule une mémoire remplie avec 0 peut être partagée en toute sécurité. Le mappage s’affiche avec une valeur de décodage de 0 pour la définition du format de ressource donné (généralement 0).
+Enfin, si des ressources partageant des mappages de tuiles n’ont rien en commun, sauf qu’aucune ne présente d’indicateur de liaison de profondeur/gabarit ou de rendu cible, seule une mémoire remplie avec 0 peut être partagée en toute sécurité. Le mappage s’affiche avec une valeur de décodage de0 pour la définition du format de ressource donné (généralement 0).
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques associées
 
@@ -87,7 +83,6 @@ Enfin, si des ressources partageant des mappages de tuiles n’ont rien en commu
  
 
  
-
 
 
 

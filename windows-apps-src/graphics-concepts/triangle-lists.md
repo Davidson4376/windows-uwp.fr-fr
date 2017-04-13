@@ -2,21 +2,17 @@
 title: Listes de triangles
 description: "Une liste de triangles est une liste de triangles isolés. Les triangles isolés peuvent être proches ou non. Une liste de triangles doit avoir au moins trois vertex et le nombre total de vertex doit être divisible par trois."
 ms.assetid: BC50D532-9E9C-4AAE-B466-9E8C4AD1862A
-keywords:
-- Listes de triangles
+keywords: Listes de triangles
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3f04e1b830b2d82b0ddcc9ae08186680df404ea3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f333f73977d777871a5c2a8df4d5966bd7acf890
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="triangle-lists"></a>Listes de triangles
 
 
@@ -25,7 +21,7 @@ Une liste de triangles est une liste de triangles isolés. Les triangles isolés
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Exemple
 
 
-Utilise les listes de triangles pour créer un objet composé de pièces disjointes. Par exemple, un moyen de créer un mur de champ de force dans un jeu 3D consiste à spécifier une longue liste de petits triangles non connectés. On applique ensuite un matériau et une texture qui semblent émettre une lumière vers la liste de triangles. Chaque triangle du mur semble briller. La scène derrière le mur devient partiellement visible à travers les intervalles séparant les triangles, comme un joueur peut s’y attendre en regardant un champ de force.
+Utilise les listes de triangles pour créer un objet composé de pièces disjointes. Par exemple, un moyen de créer un mur de champ de force dans un jeu3D consiste à spécifier une longue liste de petits triangles non connectés. On applique ensuite un matériau et une texture qui semblent émettre une lumière vers la liste de triangles. Chaque triangle du mur semble briller. La scène derrière le mur devient partiellement visible à travers les intervalles séparant les triangles, comme un joueur peut s’y attendre en regardant un champ de force.
 
 Les listes de triangles sont également utiles pour créer des primitives aux bords nets, ombrées à l'aide un ombrage de Gouraud. Voir [Vecteurs normaux à une face ou un sommet](face-and-vertex-normal-vectors.md).
 
@@ -71,7 +67,6 @@ d3dDevice->DrawPrimitive( D3DPT_TRIANGLELIST, 0, 2 );
  
 
  
-
 
 
 

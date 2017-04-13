@@ -2,21 +2,17 @@
 title: Vecteurs normaux de face et de vertex
 description: "Chaque face d’un maillage comporte un vecteur normal d’une unité perpendiculaire. La direction du vecteur est déterminée par l’ordre dans lequel les vertex sont définis et par le côté (droit ou gauche) sur lequel se trouve le système de coordonnées."
 ms.assetid: 02333579-9749-4612-B121-23F97898A3E0
-keywords:
-- Vecteurs normaux de face et de vertex
+keywords: Vecteurs normaux de face et de vertex
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 48a87cc9766d7fb6d0e3ac42e7956b27264af0db
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 04725508694370c1fff20ae34736fbd05948328c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="face-and-vertex-normal-vectors"></a>Vecteurs normaux de face et de vertex
 
 
@@ -27,21 +23,21 @@ Chaque face d’un maillage comporte un vecteur normal d’une unité perpendicu
 
 Chaque face d’un maillage comporte un vecteur normal d’une unité perpendiculaire. La direction du vecteur est déterminée par l’ordre dans lequel les vertex sont définis et par le côté (droit ou gauche) sur lequel se trouve le système de coordonnées. La normale de la face pointe dans la direction opposée au côté avant de la face. Dans Direct3D, seul l’avant d’une face est visible. Une face avant est une face dont les vertex sont définis dans l’ordre des aiguilles d’une montre.
 
-La figure ci-après illustre un vecteur normal d’une face avant :
+La figure ci-après illustre un vecteur normal d’une face avant:
 
 ![vecteur normal d’une face avant](images/nrmlvect.png)
 
 ## <a name="span-idcullingbackfacesspanspan-idcullingbackfacesspanspan-idcullingbackfacesspanculling-back-faces"></a><span id="Culling_back_faces"></span><span id="culling_back_faces"></span><span id="CULLING_BACK_FACES"></span>Élimination des faces arrière
 
 
-Toute face autre qu’une face avant est une face arrière. Direct3D ne procède pas systématiquement au rendu des faces arrière ; dans ce cas, on parle d’élimination des faces arrière. L’élimination des faces arrière consiste à supprimer les faces arrière du rendu. Si vous le souhaitez, vous pouvez modifier le mode d’élimination de façon à obtenir le rendu des faces arrière. Pour plus d’informations, consultez l’article [État d’élimination](https://msdn.microsoft.com/library/windows/desktop/bb204882).
+Toute face autre qu’une face avant est une face arrière. Direct3D ne procède pas systématiquement au rendu des faces arrière; dans ce cas, on parle d’élimination des faces arrière. L’élimination des faces arrière consiste à supprimer les faces arrière du rendu. Si vous le souhaitez, vous pouvez modifier le mode d’élimination de façon à obtenir le rendu des faces arrière. Pour plus d’informations, consultez l’article [État d’élimination](https://msdn.microsoft.com/library/windows/desktop/bb204882).
 
 ## <a name="span-idvertexunitnormalsspanspan-idvertexunitnormalsspanspan-idvertexunitnormalsspanvertex-unit-normals"></a><span id="Vertex_unit_normals"></span><span id="vertex_unit_normals"></span><span id="VERTEX_UNIT_NORMALS"></span>Normales d’unité de vertex
 
 
 Direct3D utilise les normales d’unité de vertex pour les effets d’ombrage Gouraud, d’éclairage et d’application de textures.
 
-La figure ci-après illustre des normales de vertex :
+La figure ci-après illustre des normales de vertex:
 
 ![normales de vertex](images/vertnrml.png)
 
@@ -52,7 +48,7 @@ Lorsque vous appliquez un ombrage Gouraud à un polygone, Direct3D utilise les n
 
 Si vous créez un objet plat, définissez les normales de vertex pour qu’elles pointent perpendiculairement à la surface.
 
-La figure ci-après illustre une surface plate composée de deux triangles avec des normales de vertex :
+La figure ci-après illustre une surface plate composée de deux triangles avec des normales de vertex:
 
 ![surface plate composée de deux triangles avec des normales de vertex](images/flatvert.png)
 
@@ -61,24 +57,24 @@ La figure ci-après illustre une surface plate composée de deux triangles avec 
 
 Au lieu d’être plat, votre objet se compose plutôt probablement de bandes de triangles qui ne sont pas coplanaires. Un moyen simple d’appliquer un ombrage lisse à l’ensemble des triangles d’une bande consiste à commencer par calculer le vecteur normal de surface pour chaque face polygonale à laquelle le vertex est associé. Il est possible de définir la normale de vertex pour qu’elle forme un angle égal avec chaque normale de surface. Toutefois, cette méthode risque de ne pas se révéler suffisamment efficace pour les primitives complexes.
 
-Cette méthode est illustrée par le diagramme ci-après, qui présente deux surfaces, S1 et S2, vues d’en haut par la tranche. Les vecteurs normaux des surfaces S1 et S2 sont affichés en bleu. Le vecteur normal de vertex est représenté en rouge. L’angle que forme le vecteur normal de vertex avec la normale de la surface S1 est identique à celui formé par la normale de vertex avec la normale de la surface S2. Lorsque ces deux surfaces sont éclairées et ombrées à l’aide d’un ombrage Gouraud, le résultat obtenu est une arête à ombrage et à arrondi lisses entre les deux surfaces.
+Cette méthode est illustrée par le diagramme ci-après, qui présente deux surfaces, S1 et S2, vues d’en haut par la tranche. Les vecteurs normaux des surfaces S1 et S2 sont affichés en bleu. Le vecteur normal de vertex est représenté en rouge. L’angle que forme le vecteur normal de vertex avec la normale de la surfaceS1 est identique à celui formé par la normale de vertex avec la normale de la surfaceS2. Lorsque ces deux surfaces sont éclairées et ombrées à l’aide d’un ombrage Gouraud, le résultat obtenu est une arête à ombrage et à arrondi lisses entre les deux surfaces.
 
-La figure ci-après illustre deux surfaces (S1 et S2) avec leurs vecteurs normaux et le vecteur normal de vertex :
+La figure ci-après illustre deux surfaces (S1 et S2) avec leurs vecteurs normaux et le vecteur normal de vertex:
 
 ![deux surfaces (s1 et s2) avec leurs vecteurs normaux et le vecteur normal de vertex](images/gvert.png)
 
 Si la normale de vertex est orientée vers l’une des faces à laquelle elle est associée, il en résulte une augmentation ou une diminution de l’intensité lumineuse appliquée aux points de cette surface, selon l’angle qu’elle forme avec la source de lumière. Le diagramme ci-après en présente un exemple. Ces surfaces sont vues par la tranche. La normale de vertex penche vers S1, formant ainsi un angle avec la source de lumière plus petit que si la normale de vertex présentait des angles égaux avec les normales de surface.
 
-La figure ci-après illustre deux surfaces (S1 et S2) avec un vecteur normal de vertex orienté vers l’une des faces :
+La figure ci-après illustre deux surfaces (S1 et S2) avec un vecteur normal de vertex orienté vers l’une des faces:
 
 ![deux surfaces (s1 et s2) avec un vecteur normal de vertex orienté vers l’une des faces](images/gvert2.png)
 
 ## <a name="span-idsharpedgesspanspan-idsharpedgesspanspan-idsharpedgesspansharp-edges"></a><span id="Sharp_edges"></span><span id="sharp_edges"></span><span id="SHARP_EDGES"></span>Arêtes vives
 
 
-Vous pouvez utiliser l’ombrage Gouraud pour afficher certains objets d’une scène 3D avec des arêtes vives. Pour ce faire, dupliquez les vecteurs normaux de vertex à chaque intersection des faces où une arête vive est requise.
+Vous pouvez utiliser l’ombrage Gouraud pour afficher certains objets d’une scène3D avec des arêtes vives. Pour ce faire, dupliquez les vecteurs normaux de vertex à chaque intersection des faces où une arête vive est requise.
 
-La figure ci-après illustre des vecteurs normaux de vertex dupliqués au niveau des arêtes vives :
+La figure ci-après illustre des vecteurs normaux de vertex dupliqués au niveau des arêtes vives:
 
 ![vecteurs normaux de vertex dupliqués au niveau des arêtes vives](images/shade1.png)
 
@@ -96,7 +92,6 @@ Une autre solution consiste à opter pour un ombrage constant lors du rendu d’
  
 
  
-
 
 
 

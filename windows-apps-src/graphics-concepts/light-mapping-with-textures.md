@@ -2,21 +2,17 @@
 title: Mappage lumineux avec textures
 description: "Un mappage lumineux est une texture ou un groupe de textures contenant des informations sur l’éclairage dans une scène en 3D."
 ms.assetid: 5C7518D2-AC92-4A97-B7AF-4469D213D7BD
-keywords:
-- Mappage lumineux avec textures
+keywords: Mappage lumineux avec textures
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1154be19719cc3101c114c0bd700fb735824bcda
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 18e24c1bc60c37a01cb99335e7a8e984697b19b7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="light-mapping-with-textures"></a>Mappage lumineux avec textures
 
 
@@ -32,7 +28,7 @@ La fusion de textures multiples permet à votre application d’effectuer le ren
 
 En s’appuyant sur les mappages lumineux, une application Direct3D peut mettre en œuvre divers effets d’éclairage durant le rendu des primitives. Elle peut non seulement mapper les lumières monochromes et polychromes d’une scène, mais ajouter des détails tels que des surbrillances spéculaires ou un éclairage diffus.
 
-Des détails sur l’utilisation de la fusion de textures Direct3D pour exécuter le mappage lumineux sont présentés dans les rubriques suivantes.
+Des détails sur l’utilisation de la fusion de texturesDirect3D pour exécuter le mappage lumineux sont présentés dans les rubriques suivantes.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Dans cette section
 
@@ -51,7 +47,7 @@ Des détails sur l’utilisation de la fusion de textures Direct3D pour exécut
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Mappages lumineux monochromes](monochrome-light-maps.md)</p></td>
-<td align="left"><p>Les mappages lumineux monochromes permettent à des cartes plus anciennes d’exécuter des fusions de textures multipasse, lorsqu’une carte d’accélérateur 3D ne prend pas en charge la fusion de textures à l’aide de la valeur alpha du pixel de destination.</p></td>
+<td align="left"><p>Les mappages lumineux monochromes permettent à des cartes plus anciennes d’exécuter des fusions de textures multipasse, lorsqu’une carte d’accélérateur3D ne prend pas en charge la fusion de textures à l’aide de la valeur alpha du pixel de destination.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Mappages de lumière en couleur](color-light-maps.md)</p></td>
@@ -78,7 +74,6 @@ Des détails sur l’utilisation de la fusion de textures Direct3D pour exécut
  
 
  
-
 
 
 

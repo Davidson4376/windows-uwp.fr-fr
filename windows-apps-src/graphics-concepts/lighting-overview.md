@@ -1,6 +1,6 @@
 ---
 title: "Vue d’ensemble de l’éclairage"
-description: "Lorsque vous recourez à l’éclairage Direct3D, vous autorisez Direct3D à gérer les paramètres d’illumination à votre place. S’ils le souhaitent, les utilisateurs avancés peuvent ajuster eux-mêmes l’éclairage."
+description: "Lorsque vous recourez à l’éclairageDirect3D, vous autorisez Direct3D à gérer les paramètres d’illumination à votre place. S’ils le souhaitent, les utilisateurs avancés peuvent ajuster eux-mêmes l’éclairage."
 ms.assetid: FCBF6A92-4EAC-4CCC-A76C-79985AF348AE
 author: PeterTurcan
 ms.author: pettur
@@ -8,19 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: cb5391dcd210b28b2971d39cfe8c9f2964889839
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 7f4ca6fdbd93d42dbefd955f31bd514b93886d03
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="lighting-overview"></a>Vue d’ensemble de l’éclairage
 
-Lorsque vous recourez à l’éclairage Direct3D, vous autorisez Direct3D à gérer les paramètres d’illumination à votre place. S’ils le souhaitent, les utilisateurs avancés peuvent ajuster eux-mêmes l’éclairage.
+Lorsque vous recourez à l’éclairageDirect3D, vous autorisez Direct3D à gérer les paramètres d’illumination à votre place. S’ils le souhaitent, les utilisateurs avancés peuvent ajuster eux-mêmes l’éclairage.
 
-Lorsque l’éclairage est activé, Direct3D calcule la couleur de chaque vertex d’objet en fonction de la combinaison des éléments suivants :
+Lorsque l’éclairage est activé, Direct3D calcule la couleur de chaque vertex d’objet en fonction de la combinaison des éléments suivants:
 
 -   Les texels d’une carte de texture associée.
 -   Les couleurs diffuses et spéculaires au niveau du vertex, si spécifiées.
@@ -35,7 +32,7 @@ Les lumières ne sont pas requises pour le rendu d’une scène, mais les détai
 
 Si les deux types de lumière (directe et ambiante) illuminent les objets d’une scène, ils sont indépendants l’un de l’autre. Ils produisent des effets différents, et nécessitent un traitement distinct.
 
-La *lumière directe* frappe directement l’objet. La lumière directe présente toujours une direction et une couleur. Elle est un facteur pour les algorithmes d’ombrage, tels que l’ombrage Gouraud. Différents types d’éclairage émettent de la lumière directe de différentes façons ; des effets d’atténuation spéciaux sont produits.
+La *lumière directe* frappe directement l’objet. La lumière directe présente toujours une direction et une couleur. Elle est un facteur pour les algorithmes d’ombrage, tels que l’ombrage Gouraud. Différents types d’éclairage émettent de la lumière directe de différentes façons; des effets d’atténuation spéciaux sont produits.
 
 La *lumière ambiante* est distribuée de manière uniforme dans une scène. La lumière ambiante correspond à un niveau général d’éclairage réparti sur une scène, indépendamment des objets internes et des emplacements. La lumière ambiante, qui ne présente ni position ni direction, présente uniquement une couleur et une intensité. Chacun des types de lumière s’ajoute à la lumière ambiante globale d’une scène.
 
@@ -48,11 +45,11 @@ La combinaison des composants de lumière rouge, verte et bleue constitue la cou
 
 Dans la nature, lorsque de la lumière est émise d’une source, elle est réfléchie sur des milliers voire des millions d’objets avant de frapper l’œil humain. Chaque fois qu’elle est reflétée, une portion est absorbée par la surface de l’objet, une autre est distribuée aléatoirement dans diverses directions, tandis que le reste est dirigé vers une autre surface ou l’œil humain. Ce processus se poursuit jusqu’à élimination totale de la lumière ou perception de cette dernière par l’œil humain.
 
-Cela va de soi, les calculs requis par la simulation du comportement naturel de la lumière sont trop chronophages pour les graphismes en temps réel Direct3D. Par conséquent, ceci dans un souci de rapidité d’exécution, le modèle d’éclairage Direct3D reproduit de manière approximative la lumière du monde réel. Direct3D décompose la lumière en composants rouge, vert et bleu constituant la couleur finale.
+Cela va de soi, les calculs requis par la simulation du comportement naturel de la lumière sont trop chronophages pour les graphismes en temps réel Direct3D. Par conséquent, ceci dans un souci de rapidité d’exécution, le modèle d’éclairageDirect3D reproduit de manière approximative la lumière du monde réel. Direct3D décompose la lumière en composants rouge, vert et bleu constituant la couleur finale.
 
 Dans Direct3D, lorsque la lumière est réfléchie sur une surface, la couleur interagit mathématiquement avec ladite surface. Ce contact génère la couleur affichée à l’écran. Pour des informations spécifiques sur les algorithmes utilisés par Direct3D, voir [Formules mathématiques d’éclairage](mathematics-of-lighting.md).
 
-Le modèle d’éclairage Direct3D généralise la lumière en 2 types distincts : la lumière ambiante et la lumière directe. Chacun possède des attributs différents et interagit de manière propre avec le matériau d’une surface. La lumière ambiante a été tellement distribuée qu’elle présente une direction et une source indéterminées : son niveau d’intensité est bas à tout endroit de la scène. L’éclairage indirect utilisé par les photographes est un bon exemple de lumière ambiante.
+Le modèle d’éclairageDirect3D généralise la lumière en 2types distincts: la lumière ambiante et la lumière directe. Chacun possède des attributs différents et interagit de manière propre avec le matériau d’une surface. La lumière ambiante a été tellement distribuée qu’elle présente une direction et une source indéterminées: son niveau d’intensité est bas à tout endroit de la scène. L’éclairage indirect utilisé par les photographes est un bon exemple de lumière ambiante.
 
 La lumière ambiante dans Direct3D, comme celle de la nature, ne présente ni direction ni source réelle. Uniquement une couleur et une intensité. En fait, le niveau de lumière ambiante est complètement indépendant des objets d’une scène générant de la lumière. La lumière ambiante n’affecte pas la réflexion spéculaire.
 
@@ -63,9 +60,9 @@ Par ailleurs, le matériau d’un polygone présente des propriétés qui affect
 ## <a name="span-idcolorvaluesforlightsandmaterialsspanspan-idcolorvaluesforlightsandmaterialsspanspan-idcolorvaluesforlightsandmaterialsspancolor-values-for-lights-and-materials"></a><span id="Color_Values_for_Lights_and_Materials"></span><span id="color_values_for_lights_and_materials"></span><span id="COLOR_VALUES_FOR_LIGHTS_AND_MATERIALS"></span>Valeurs de couleur pour les lumières et les matériaux
 
 
-Direct3D décompose la couleur en quatre composants (rouge, vert, bleu et alpha) qui constituent une couleur finale. Chaque composant est défini sur une valeur comprise entre 0,0 et 1,0. Bien que les lumières et les matériaux utilisent la même structure pour décrire la couleur, les valeurs sont valorisées légèrement différemment.
+Direct3D décompose la couleur en quatrecomposants (rouge, vert, bleu et alpha) qui constituent une couleur finale. Chaque composant est défini sur une valeur comprise entre 0,0 et 1,0. Bien que les lumières et les matériaux utilisent la même structure pour décrire la couleur, les valeurs sont valorisées légèrement différemment.
 
-Les valeurs de couleur des sources de lumière représentent la quantité émise d’un composant spécifique. Dans la mesure où les lumières n’utilisent aucun composant alpha, seuls les composants rouge, vert et bleu importent. Vous pouvez visualiser les trois composants sous la forme de filtres rouge, vert et bleu sur un écran de projection. Chacun des filtres peut être désactivé (une valeur de 0,0 dans l’élément inapproprié), présenter une brillance maximale (valeur de 1,0) ou se situer entre les deux.
+Les valeurs de couleur des sources de lumière représentent la quantité émise d’un composant spécifique. Dans la mesure où les lumières n’utilisent aucun composant alpha, seuls les composants rouge, vert et bleu importent. Vous pouvez visualiser les troiscomposants sous la forme de filtres rouge, vert et bleu sur un écran de projection. Chacun des filtres peut être désactivé (une valeur de 0,0 dans l’élément inapproprié), présenter une brillance maximale (valeur de 1,0) ou se situer entre les deux.
 
 Les couleurs provenant des filtres sont combinées pour produire la couleur finale de l’éclairage. Une combinaison comme R (1,0), V (1,0), B (1,0) génère une lumière blanche, tandis qu’une combinaison comme R (0,0), V (0,0), B (0,0) ne provoque aucune émission de lumière. Vous pouvez définir une lumière émettant uniquement un composant, afin d’obtenir un éclairage rouge, vert ou bleu pur. Sinon, l’éclairage peut valoriser des combinaisons générant du jaune ou du violet, par exemple. Il est même possible de définir un composant de couleur négatif afin de créer un éclairage sombre, qui a pour effet de supprimer la luminosité d’une scène. Sinon, si vous décidez de paramétrer les composants sur des valeurs supérieures à 1,0, vous créez un éclairage extrêmement puissant.
 
@@ -81,7 +78,6 @@ Voir [Types de lumière](light-types.md) et [Propriétés de lumière](light-pro
  
 
  
-
 
 
 

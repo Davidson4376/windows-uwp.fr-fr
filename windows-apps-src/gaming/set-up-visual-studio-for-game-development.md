@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, jeux, visual studio, outils, directx
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 5f5c1ef45dd476565d302ef10f8d47ab2b819993
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="visual-studio-tools-for-game-programming"></a>Outils Visual Studio pour la programmation de jeux
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **Récapitulatif**
 
@@ -145,14 +142,13 @@ Visual Studio fournit des outils de débogage propres aux graphiques. Utilisez c
 
 Pour plus d’informations, voir [Débogage de graphiques DirectX](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
 
-> **Remarque** Cet article s’adresse aux développeurs Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs Windows10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
  
 
  
-
 
 
 

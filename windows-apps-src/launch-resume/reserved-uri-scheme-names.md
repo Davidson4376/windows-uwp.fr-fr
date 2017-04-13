@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a0c0b2cee4512bdd6dd888aceae53eec061dac72
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 98735ce2d102c1a0b7b054b9d70038fe5f9dc40c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a>Noms de schéma d’URI et de fichier réservés
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Vous pouvez utiliser des associations d’URI pour lancer automatiquement votre application quand une autre application lance un schéma d’URI spécifique. Il existe cependant des associations d’URI que vous ne pouvez pas utiliser, car elles sont réservées. Si votre application s’inscrit pour une association réservée, cette inscription est ignorée. Cette rubrique répertorie les noms de schéma d’URI et de fichier réservés, indisponibles pour votre application.
 
@@ -122,4 +120,3 @@ Les types de fichiers suivants sont réservés au système d’exploitation
 <tr><td>inffile</td><td>ms-settings:network-dialup</td><td>scrfile</td><td></td></tr>
 <tr><td>insfile</td><td>ms-settings:network-ethernet</td><td>scriptletfile</td><td></td></tr>
 </table>
-

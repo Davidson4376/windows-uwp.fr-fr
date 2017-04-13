@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fcc1d056fc3a4cb8d57ae5082e62cf0b802bb4e7
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: f74a93714b32613b6bee606a3916961b861b2d08
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-the-default-app-for-a-uri"></a>Lancer l’application par défaut pour un URI
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -31,7 +28,7 @@ Découvrez comment lancer l’application par défaut pour un URI (Uniform Resou
 
 Les schémas d’URI permettent d’ouvrir des applications en cliquant sur des liens hypertexte. Tout comme vous pouvez commencer à écrire un nouveau message électronique à l’aide de **mailto:**, vous pouvez ouvrir le navigateur web par défaut à l’aide de **http:**.
 
-Cette rubrique décrit les schémas d’URI suivants qui sont intégrés dans Windows :
+Cette rubrique décrit les schémas d’URI suivants qui sont intégrés dans Windows:
 
 | Schéma d’URI | Lancement |
 | -------|--------------|
@@ -82,7 +79,7 @@ private async void launchURI_Click(object sender, RoutedEventArgs e)
 
 Dans certains cas, le système d’exploitation invite l’utilisateur à confirmer qu’il veut réellement changer d’application.
 
-![boîte de dialogue d’avertissement sur un arrière-plan grisé de l’application. la boîte de dialogue demande à l’utilisateur s’il souhaite basculer entre les applications et a des boutons « oui » et « non » dans le coin inférieur droit. le bouton « non » est mis en surbrillance.](images/warningdialog.png)
+![boîte de dialogue d’avertissement sur un arrière-plan grisé de l’application. la boîte de dialogue demande à l’utilisateur s’il souhaite basculer entre les applications et a des boutons «oui» et «non» dans le coin inférieur droit. le bouton «non» est mis en surbrillance.](images/warningdialog.png)
 
 Si vous voulez que cette invite apparaisse toujours, utilisez la propriété [**Windows.System.LauncherOptions.TreatAsUntrusted**](https://msdn.microsoft.com/library/windows/apps/hh701442) pour indiquer que le système d’exploitation doit afficher un avertissement.
 
@@ -176,7 +173,7 @@ Pour plus d’informations, voir [Lancer l’application Cartes Windows](launch-
 
 Votre application peut utiliser le schéma d’URI **ms-chat:** pour lancer l’application de messagerie Windows.
 
-| Schéma d’URI | Résultats | |-- ---------|--------| | ms-chat:   | Lance l’application de messagerie. | | ms-chat:?ContactID={contacted}  |  Permet le lancement de l’application de messagerie avec les informations d’un contact spécifique.   | | ms-chat:?Body={body} | Permet le lancement de l’application de messagerie avec une chaîne à utiliser en tant que contenu du message.| | ms-chat:?Addresses={address}&amp;Body={body} | Permet le lancement de l’application de messagerie avec les informations d’adresse d’une personne particulière et une chaîne à utiliser en tant que contenu du message. Remarque : les adresses peuvent être concaténées. | | ms-chat:?TransportId={transportId}  |  Permet le lancement de l’application de messagerie avec un ID de transport particulier. |
+| Schéma d’URI | Résultats | |-- ---------|--------| | ms-chat:   | Lance l’application de messagerie. | | ms-chat:?ContactID={contacted}  |  Permet le lancement de l’application de messagerie avec les informations d’un contact spécifique.   | | ms-chat:?Body={body} | Permet le lancement de l’application de messagerie avec une chaîne à utiliser en tant que contenu du message.| | ms-chat:?Addresses={address}&amp;Body={body} | Permet le lancement de l’application de messagerie avec les informations d’adresse d’une personne particulière et une chaîne à utiliser en tant que contenu du message. Remarque: les adresses peuvent être concaténées. | | ms-chat:?TransportId={transportId}  |  Permet le lancement de l’application de messagerie avec un ID de transport particulier. |
 <br>
 ### <a name="tone-picker-uri-scheme"></a>Schéma d’URI pour le sélecteur de tonalités
 
@@ -221,4 +218,3 @@ Votre application peut utiliser le schéma d’URI **ms-windows-store:** pour [l
 `ms-windows-store://home/`
 
 Pour plus d’informations, voir [Lancer l’application du Windows Store](launch-store-app.md).
-

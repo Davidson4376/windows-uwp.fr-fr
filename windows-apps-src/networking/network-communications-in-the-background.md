@@ -8,24 +8,21 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3f0e52780788eafe9e53bba491b8d54208dcc761
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 5cdb441ef2649322111a3f08e4396abef396f851
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="network-communications-in-the-background"></a>Communications réseau en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
 -   [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)
 -   [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)
 
-Les applications utilisent les tâches en arrière-plan et deux mécanismes principaux pour maintenir les communications lorsqu’elles ne sont pas au premier plan : le broker de socket et les déclencheurs de canal de contrôle. Les applications qui utilisent des sockets pour les connexions à long terme peuvent déléguer la propriété d’un socket à un broker de socket système lorsqu’elles quittent le premier plan. Le broker active ensuite l’application lorsque le trafic atteint le socket, puis retransfère la propriété à l’application, et l’application traite alors le trafic entrant.
+Les applications utilisent les tâches en arrière-plan et deux mécanismes principaux pour maintenir les communications lorsqu’elles ne sont pas au premier plan: le broker de socket et les déclencheurs de canal de contrôle. Les applications qui utilisent des sockets pour les connexions à long terme peuvent déléguer la propriété d’un socket à un broker de socket système lorsqu’elles quittent le premier plan. Le broker active ensuite l’application lorsque le trafic atteint le socket, puis retransfère la propriété à l’application, et l’application traite alors le trafic entrant.
 
 ## <a name="performing-short-lived-network-operations-in-background-tasks"></a>Exécution d’opérations réseau de courte durée dans les tâches en arrière-plan
 
@@ -39,7 +36,7 @@ Si votre application utilise des connexions [**DatagramSocket**](https://msdn.mi
 
 Pour que votre application reçoive et traite les données reçues sur un socket lorsqu’elle est inactive, elle doit effectuer une configuration unique au démarrage, puis transférer la propriété du socket au broker de socket lorsqu’elle bascule vers un état d’inactivité.
 
-Les étapes de l’installation ponctuelle visent à créer un déclencheur, à inscrire une tâche en arrière-plan pour ce déclencheur, et à activer le socket pour le broker de socket :
+Les étapes de l’installation ponctuelle visent à créer un déclencheur, à inscrire une tâche en arrière-plan pour ce déclencheur, et à activer le socket pour le broker de socket:
   - Créez un **SocketActivityTrigger** et inscrivez une tâche en arrière-plan pour le déclencheur en définissant le paramètre TaskEntryPoint sur votre code de traitement d’un paquet reçu.
 ```csharp
             var socketTaskBuilder = new BackgroundTaskBuilder(); 
@@ -64,7 +61,7 @@ Les étapes de l’installation ponctuelle visent à créer un déclencheur, à 
 
 Une fois votre socket correctement configuré et lorsque votre application est sur le point d’être suspendue, appelez la méthode **TransferOwnership** sur le socket pour le transférer au broker de socket. Le broker surveille le socket et active votre tâche en arrière-plan lors de la réception de données. L’exemple suivant inclut une fonction **TransferOwnership** utilitaire pour effectuer le transfert des sockets **StreamSocketListener**. (Notez que les différents types de sockets ont tous leur propre méthode **TransferOwnership**. Vous devez donc appeler la méthode appropriée pour le socket dont vous transférez la propriété. Votre code contient probablement une fonction d’assistance **TransferOwnership** surchargée avec une implémentation pour chaque type de socket utilisé, afin que le code **OnSuspending** reste facile à lire.)
 
-Une application transfère la propriété d’un socket à un broker de socket et transmet l’ID de la tâche en arrière-plan à l’aide de l’une des méthodes suivantes, selon celle qui est la plus appropriée :
+Une application transfère la propriété d’un socket à un broker de socket et transmet l’ID de la tâche en arrière-plan à l’aide de l’une des méthodes suivantes, selon celle qui est la plus appropriée:
 -   L’une des méthodes [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) sur un [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319).
 -   L’une des méthodes [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) sur un [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
 -   L’une des méthodes [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804407) sur un [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906).
@@ -94,7 +91,7 @@ Dans le gestionnaire d’événements de votre tâche en arrière-plan :
 ```csharp
 var deferral = taskInstance.GetDeferral();
 ```
-   -  Ensuite, extrayez l’élément SocketActivityTriggerDetails des arguments de l’événement et trouvez le motif de déclenchement de l’événement :
+   -  Ensuite, extrayez l’élément SocketActivityTriggerDetails des arguments de l’événement et trouvez le motif de déclenchement de l’événement:
 ```csharp
 var details = taskInstance.TriggerDetails as SocketActivityTriggerDetails; 
     var socketInformation = details.SocketInformation; 
@@ -593,5 +590,4 @@ Meilleures pratiques et modèles d’utilisation à appliquer lors de l’utilis
 -   Il est possible qu’une application doive effectuer une demande [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) initiale pour tester et configurer le transport correctement avant de créer le transport à utiliser avec [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Une fois que l’application a déterminé que le transport était correctement configuré, l’objet [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) peut être configuré comme objet de transport utilisé avec **ControlChannelTrigger**. Ce processus est conçu pour empêcher certains scénarios d’interrompre la connexion établie sur le transport. En utilisant SSL avec un certificat, une application peut requérir l’affichage d’un dialogue pour la saisie du code confidentiel ou s’il est nécessaire de choisir parmi plusieurs certificats. L’authentification proxy et l’authentification du serveur peuvent être requises. Si l’authentification proxy ou l’authentification du serveur expire, la connexion peut être fermée. Une façon pour l’application de traiter ces problèmes d’expiration d’authentification consiste à définir un minuteur. Quand une redirection HTTP est requise, il n’est pas certain que la seconde connexion puisse être établie de manière fiable. Une demande de test initiale garantit que l’application peut utiliser l’URL redirigée la plus à jour avant d’utiliser l’objet **IXMLHTTPRequest2** comme transport avec l’objet **ControlChannelTrigger**.
 
 Pour plus d’informations sur l’utilisation de [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) avec [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), voir l’[exemple ControlChannelTrigger avec IXMLHTTPRequest2](http://go.microsoft.com/fwlink/p/?linkid=258538).
-
 

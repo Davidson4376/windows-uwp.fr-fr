@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f51e92c95676d924725d06e70f098965f3c9f5c7
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: a69bead489f5d155145b7389199e743792f53f85
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="handle-app-suspend"></a>Gérer la suspension d’une application
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -26,9 +23,9 @@ ms.lasthandoff: 02/07/2017
 
 Apprenez à enregistrer d’importantes données d’application lorsque le système suspend votre application. L’exemple inscrit un gestionnaire pour l’événement [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) et enregistre une chaîne dans un fichier.
 
-## <a name="important-change-introduced-in-windows-10-version-1607"></a>Changement important introduit dans Windows 10 version 1607
+## <a name="important-change-introduced-in-windows-10-version-1607"></a>Changement important introduit dans Windows10 version1607
 
-Avant Windows 10 version 1607, vous auriez placé le code pour enregistrer votre état dans le gestionnaire d’interruptions. À présent, nous vous recommandons d’enregistrer votre état lorsque vous basculez en arrière-plan, comme décrit dans la rubrique [Cycle de vie des applications de la plateforme Windows 10 universelle](app-lifecycle.md).
+Avant Windows10 version1607, vous auriez placé le code pour enregistrer votre état dans le gestionnaire d’interruptions. À présent, nous vous recommandons d’enregistrer votre état lorsque vous basculez en arrière-plan, comme décrit dans la rubrique [Cycle de vie des applications de la plateforme Windows10 universelle](app-lifecycle.md).
 
 ## <a name="register-the-suspending-event-handler"></a>Enregistrer le gestionnaire d’événements de suspension
 
@@ -126,9 +123,9 @@ Si vous effectuez un appel asynchrone depuis votre gestionnaire, le contrôle re
 
 Un report n’augmente pas le temps d’exécution nécessaire de votre code avant l’arrêt de votre application. Cela ne retarde que l’arrêt jusqu’à ce que la méthode *Complete* soit appelée ou que la date d’échéance ne soit passée, *selon ce qui se produit en premier.*.
 
-> **Remarque** Pour améliorer la réactivité du système dans Windows 8.1, les applications disposent d’un accès à faible priorité aux ressources en cas de suspension. Pour prendre en charge cette nouvelle priorité, le délai de l’opération de suspension est prolongé afin que l’application dispose d’un délai de 5 secondes en priorité normale sur Windows ou de 1 à 10 secondes sur Windows Phone. Vous ne pouvez pas étendre ni modifier ce délai.
+> **Remarque** Pour améliorer la réactivité du système dans Windows8.1, les applications disposent d’un accès à faible priorité aux ressources en cas de suspension. Pour prendre en charge cette nouvelle priorité, le délai de l’opération de suspension est prolongé afin que l’application dispose d’un délai de 5secondes en priorité normale sur Windows ou de 1 à 10secondes sur Windows Phone. Vous ne pouvez pas étendre ni modifier ce délai.
 
-> **Remarque concernant le débogage à l’aide de Visual Studio :** Visual Studio empêche Windows de suspendre une application qui est jointe au débogueur. afin que l’utilisateur puisse voir l’interface de débogage de Visual Studio pendant l’exécution de l’application. Lorsque vous déboguez une application, vous pouvez lui envoyer un événement de suspension à l’aide de Visual Studio. Assurez-vous que la barre d’outils **Emplacement de débogage** est visible et cliquez sur l’icône **Suspendre**.
+> **Remarque concernant le débogage à l’aide de VisualStudio:** VisualStudio empêche Windows de suspendre une application qui est jointe au débogueur. afin que l’utilisateur puisse voir l’interface de débogage de Visual Studio pendant l’exécution de l’application. Lorsque vous déboguez une application, vous pouvez lui envoyer un événement de suspension à l’aide de Visual Studio. Assurez-vous que la barre d’outils **Emplacement de débogage** est visible et cliquez sur l’icône **Suspendre**.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -141,4 +138,3 @@ Un report n’augmente pas le temps d’exécution nécessaire de votre code ava
  
 
  
-

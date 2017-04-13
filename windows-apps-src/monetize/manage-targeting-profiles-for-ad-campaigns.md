@@ -1,34 +1,31 @@
 ---
 author: mcleanbyron
 ms.assetid: d305746a-d370-4404-8cde-c85765bf3578
-description: "Utilisez cette méthode dans l’API des promotions du Windows Store pour gérer les profils de ciblage des campagnes publicitaires."
-title: "Gérer les profils de ciblage pour les campagnes publicitaires"
+description: "Utilisez cette méthode dans l’API des promotions du Windows Store pour gérer les profils de ciblage dans le cadre de campagnes publicitaires."
+title: "Gérer les profils de ciblage"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, API des promotions du Windows Store, campagnes publicitaires
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: c737e27df4a911d3fcbdcb3128ece865bda2b703
-ms.lasthandoff: 02/08/2017
-
+keywords: "windows10, uwp, API de promotions du Windows Store, campagnes de publicité"
+ms.openlocfilehash: 30fb160e389edd18fb3782d332b5603fc6207757
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="manage-targeting-profiles"></a>Gérer les profils de ciblage
 
-# <a name="manage-targeting-profiles-for-ad-campaigns"></a>Gérer les profils de ciblage pour les campagnes publicitaires
 
+Utilisez ces méthodes dans l’API des promotions du Windows Store pour sélectionner les utilisateurs, les zones géographiques et les types d’inventaire que vous souhaitez cibler pour chaque ligne de livraison d’une campagne publicitaire promotionnelle. Les profils de ciblage peuvent être créés et réutilisés sur plusieurs chaînes de livraison.
 
-Utilisez ces méthodes dans l’API des promotions du Windows Store pour sélectionner les utilisateurs, les zones géographiques et les types de stock que vous souhaitez cibler pour chacune des chaînes de distribution d’une campagne publicitaire. Les profils de ciblage peuvent être créés et réutilisés sur plusieurs chaînes de livraison.
-
-Pour plus d’informations sur la relation entre les profils de ciblage et les campagnes publicitaires, les chaînes de distribution et les contenus, consultez la page [Exécuter des campagnes publicitaires à l’aide des services du Windows Store](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api).
+Pour plus d’informations sur la relation entre les profils de ciblage et les campagnes publicitaires, les chaînes de distribution et les contenus, consultez la page [Exécuter des campagnes publicitaires à l’aide des services du WindowsStore](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api).
 
 ## <a name="prerequisites"></a>Prérequis
 
-Pour utiliser ces méthodes, vous devez d’abord effectuer les opérations suivantes :
+Pour utiliser ces méthodes, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](run-ad-campaigns-using-windows-store-services.md#prerequisites) relatives à l’API des promotions du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de ces méthodes. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de ces méthodes. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
 ## <a name="request"></a>Requête
 
@@ -45,14 +42,14 @@ Ces méthodes présentent les URI suivants.
 
 | En-tête        | Type   | Description         |
 |---------------|--------|---------------------|
-| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès AzureAD sous la forme **Bearer** &lt;*jeton*&gt;. |
 | ID de suivi   | GUID   | Facultatif. ID de suivi du flux d’appels.                                  |
 
 
 <span/>
 ### <a name="request-body"></a>Corps de la requête
 
-Les méthodes POST et PUT nécessitent un corps de requête JSON avec les champs requis d’un objet de [profil de ciblage](#targeting-profile) et tous les champs que vous souhaitez définir ou modifier.
+Les méthodes POST et PUT nécessitent un corps de requêteJSON avec les champs requis d’un objet de [profil de ciblage](#targeting-profile) et tous les champs que vous souhaitez définir ou modifier.
 
 <span/>
 ### <a name="request-examples"></a>Exemples de requête
@@ -98,7 +95,7 @@ Authorization: Bearer <your access token>
 <span/>
 ## <a name="response"></a>Réponse
 
-Ces méthodes renvoient un corps de réponse JSON avec un objet de [profil de ciblage](#targeting-profile) comportant des informations sur le profil de ciblage créé, mis à jour ou récupéré. L’exemple suivant représente un corps de réponse associé à ces méthodes.
+Ces méthodes renvoient un corps de réponseJSON avec un objet de [profil de ciblage](#targeting-profile) comportant des informations sur le profil de ciblage créé, mis à jour ou récupéré. L’exemple suivant représente un corps de réponse associé à ces méthodes.
 
 ```json
 {
@@ -139,13 +136,13 @@ Ces méthodes renvoient un corps de réponse JSON avec un objet de [profil de c
 <span id="targeting-profile"/>
 ## <a name="targeting-profile-object"></a>Objet de profil de ciblage
 
-Les corps de requête et de réponse associés à ces méthodes comportent les champs suivants. Ce tableau signale les champs en lecture seule (qui ne peuvent être modifiés dans la méthode PUT) et les champs requis dans le corps de requête associé à la méthode POST.
+Les corps de requête et de réponse associés à ces méthodes comportent les champs suivants. Ce tableau signale les champs en lecture seule (qui ne peuvent être modifiés dans la méthodePUT) et les champs requis dans le corps de requête associé à la méthodePOST.
 
 | Champ        | Type   |  Description      |  Lecture seule  | Valeur par défaut  | Requis pour la méthode POST |  
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  entier   |  ID du profil de ciblage.     |   Oui    |       |   Non      |       
 |  name   |  chaîne   |   Nom du profil de ciblage.    |    Non   |      |  Oui     |       
-|  targetingType   |  chaîne   |  Utilisez l’une des valeurs suivantes : <ul><li>**Auto** : définissez cette valeur pour autoriser Microsoft à sélectionner le profil de ciblage en fonction des paramètres de votre application dans le Centre de développement.</li><li>**Manual** : définissez cette valeur pour définir votre propre profil de ciblage.</li></ul>     |  Non     |  Auto    |   Oui    |       
+|  targetingType   |  chaîne   |  Utilisez l’une des valeurs suivantes: <ul><li>**Auto**: définissez cette valeur pour autoriser Microsoft à sélectionner le profil de ciblage en fonction des paramètres de votre application dans le Centre de développement.</li><li>**Manual**: définissez cette valeur pour définir votre propre profil de ciblage.</li></ul>     |  Non     |  Auto    |   Oui    |       
 |  age   |  tableau   |   Un ou plusieurs nombres entiers identifiant les tranches d’âge des utilisateurs à cibler. Pour obtenir une liste complète des entiers, consultez la section [Valeurs d’âge](#age-values) de cet article.    |    Non    |  null    |     Non    |       
 |  gender   |  tableau   |  Un ou plusieurs nombres entiers identifiant les genres des utilisateurs à cibler. Pour obtenir une liste complète des entiers, consultez la section [Valeurs de sexe](#gender-values) de cet article.       |  Non    |  null    |     Non    |       
 |  country   |  tableau   |  Un ou plusieurs nombres entiers identifiant les codes pays des utilisateurs à cibler. Pour obtenir une liste complète des entiers, consultez la section [Valeurs de codes pays](#country-code-values) de cet article.    |  Non    |  null   |      Non   |       
@@ -157,17 +154,17 @@ Les corps de requête et de réponse associés à ces méthodes comportent les c
 <span id="age-values"/>
 ### <a name="age-values"></a>Valeurs d’âge
 
-Le champ *age* de l’objet du [TargetingProfile](#targeting-profile) comporte un ou plusieurs des entiers suivants identifiant les tranches d’âge des utilisateurs à cibler.
+Le champ *âge* de l'objet [TargetingProfile](#targeting-profile) contient un ou plusieurs des entiers suivants qui identifient les tranches d’âge des utilisateurs à cibler.
 
-|  Valeur entière pour le champ *age*  |  Tranche d’âge correspondante  |  
+|  Valeur entière pour le champ *âge*  |  Tranche d’âge correspondante  |  
 |---------------------------------|---------------------------|
-|     621     |            13 à 17             |
+|     651     |            13 à 17             |
 |     652     |           18 à 24             |
 |     653     |            25 à 34             |
 |     654     |            35 à 49             |
 |     655     |            50 et plus             |
 
-Pour obtenir les valeurs prises en charge pour le champ *age* automatiquement, vous pouvez appeler la méthode GET suivante.  Pour l’en-tête ```Authorization```, communiquez votre jeton d’accès Azure AD, sous la forme **Bearer** &lt;*jeton*&gt;.
+Pour obtenir les valeurs prises en charge pour le champ *âge* de manière programmée, vous pouvez utiliser la méthode GET suivante.  Pour l’en-tête ```Authorization```, communiquez votre jeton d’accès AzureAD, sous la forme **Bearer** &lt;*jeton*&gt;.
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/age
@@ -200,7 +197,7 @@ Le champ *gender* de l’objet de [TargetingProfile](#targeting-profile) comport
 |     700     |            Homme             |
 |     701     |           Femme             |
 
-Pour obtenir les valeurs prises en charge pour le champ *gender* automatiquement, vous pouvez appeler la méthode GET suivante.  Pour l’en-tête ```Authorization```, communiquez votre jeton d’accès Azure AD, sous la forme **Bearer** &lt;*jeton*&gt;.
+Pour obtenir les valeurs prises en charge pour le champ *gender* automatiquement, vous pouvez appeler la méthode GET suivante.  Pour l’en-tête ```Authorization```, communiquez votre jeton d’accès AzureAD, sous la forme **Bearer** &lt;*jeton*&gt;.
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/gender
@@ -228,18 +225,18 @@ Le champ *osVersion* de l’objet [TargetingProfile](#targeting-profile) comport
 
 |  Valeur entière pour le champ*osVersion*  |  Version correspondante de système d’exploitation  |  
 |---------------------------------|---------------------------|
-|     500     |            Windows Phone 7             |
+|     500     |            Windows Phone7             |
 |     501     |           Windows Phone 7.1             |
 |     502     |           Windows Phone 7.5             |
 |     503     |           Windows Phone 7.8             |
 |     504     |           Windows Phone 8.0             |
 |     505     |           Windows Phone 8.1             |
-|     506     |           Windows 8.0             |
-|     507     |           Windows 8.1             |
-|     508     |           Windows 10             |
-|     509     |           Windows 10 Mobile             |
+|     506     |           Windows8.0             |
+|     507     |           Windows8.1             |
+|     508     |           Windows10             |
+|     509     |           Windows10 Mobile             |
 
-Pour obtenir les valeurs prises en charge pour le champ *osVersion* automatiquement, vous pouvez appeler la méthode GET suivante.  Pour l’en-tête ```Authorization```, communiquez votre jeton d’accès Azure AD, sous la forme **Bearer** &lt;*jeton*&gt;.
+Pour obtenir les valeurs prises en charge pour le champ *osVersion* automatiquement, vous pouvez appeler la méthodeGET suivante.  Pour l’en-tête ```Authorization```, communiquez votre jeton d’accès AzureAD, sous la forme **Bearer** &lt;*jeton*&gt;.
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/osversion
@@ -275,10 +272,10 @@ Le champ *deviceType* de l’objet de [TargetingProfile](#targeting-profile) com
 
 |  Valeur entière pour le champ *deviceType*  |  Type d’appareil correspondant  |  Description  |
 |---------------------------------|---------------------------|---------------------------|
-|     710     |  Windows   |  Cette valeur représente les appareils exécutant une version bureau de Windows 10 ou de Windows 8.x.  |
+|     710     |  Windows   |  Cette valeur représente les appareils exécutant une version bureau de Windows10 ou de Windows8.x.  |
 |     711     |  Téléphone     |  Cette valeur représente les appareils exécutant Windows 10 Mobile, Windows Phone 8.x ou Windows Phone 7.x.
 
-Pour obtenir les valeurs prises en charge pour le champ *deviceType* automatiquement, vous pouvez appeler la méthode GET suivante.  Pour l’en-tête ```Authorization```, communiquez votre jeton d’accès Azure AD, sous la forme **Bearer** &lt;*jeton*&gt;.
+Pour obtenir les valeurs prises en charge pour le champ *deviceType* automatiquement, vous pouvez appeler la méthodeGET suivante.  Pour l’en-tête ```Authorization```, communiquez votre jeton d’accès AzureAD, sous la forme **Bearer** &lt;*jeton*&gt;.
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/devicetype
@@ -309,7 +306,7 @@ Le champ *supplyType* de l’objet de [TargetingProfile](#targeting-profile)  co
 |     11470     |  Applications        |  Cette valeur fait référence aux publicités apparaissant uniquement dans les applications.  |
 |     11471     |  Universel        |  Cette valeur fait référence aux publicités apparaissant dans les applications, sur le web et sur d’autres surfaces d’affichage.  |
 
-Pour obtenir les valeurs prises en charge pour le champ *supplyType* automatiquement, vous pouvez appeler la méthode GET suivante.  Pour l’en-tête ```Authorization```, communiquez votre jeton d’accès Azure AD, sous la forme **Bearer** &lt;*jeton*&gt;.
+Pour obtenir les valeurs prises en charge pour le champ *supplyType* automatiquement, vous pouvez appeler la méthodeGET suivante.  Pour l’en-tête ```Authorization```, communiquez votre jeton d’accès AzureAD, sous la forme **Bearer** &lt;*jeton*&gt;.
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/supplytype
@@ -466,7 +463,7 @@ Le champ *country* de l’objet de [TargetingProfile](#targeting-profile) compor
 |     225      |            RE                  |
 |     246      |            PR                  |
 
-Pour obtenir les valeurs prises en charge pour le champ *country* automatiquement, vous pouvez appeler la méthode GET suivante.  Pour l’en-tête ```Authorization```, communiquez votre jeton d’accès Azure AD, sous la forme **Bearer** &lt;*jeton*&gt;.
+Pour obtenir les valeurs prises en charge pour le champ *country* automatiquement, vous pouvez appeler la méthode GET suivante.  Pour l’en-tête ```Authorization```, communiquez votre jeton d’accès AzureAD, sous la forme **Bearer** &lt;*jeton*&gt;.
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/country
@@ -615,9 +612,8 @@ L’exemple suivant représente le corps de réponse pour cette méthode.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exécuter des campagnes publicitaires à l’aide des services du Windows Store](run-ad-campaigns-using-windows-store-services.md)
+* [Exécuter des campagnes publicitaires à l’aide des services du WindowsStore](run-ad-campaigns-using-windows-store-services.md)
 * [Gérer les campagnes publicitaires](manage-ad-campaigns.md)
 * [Gérer les chaînes de distribution des campagnes publicitaires](manage-delivery-lines-for-ad-campaigns.md)
 * [Gérer les contenus des campagnes publicitaires](manage-creatives-for-ad-campaigns.md)
 * [Obtenir les données relatives aux performances des campagnes publicitaires](get-ad-campaign-performance-data.md)
-

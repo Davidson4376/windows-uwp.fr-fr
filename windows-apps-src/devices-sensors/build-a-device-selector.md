@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e4e3cecc0618d81554dbaae80c3bb4d907c79d31
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 88474544e0cc6ee91a1c50f65b327c339b9be170
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="build-a-device-selector"></a>Créer un sélecteur d’appareil
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -31,7 +29,7 @@ La création d’un sélecteur d’appareil permet de limiter les appareils que 
 Il existe quelques cas où vous devez énumérer des appareils alors qu’aucun sélecteur d’appareils fourni n’est pas disponible pour votre scénario. Un sélecteur d’appareils est une chaîne de filtre AQS qui contient les informations suivantes. Avant de créer une chaîne de filtre, vous devez connaître certains éléments clés d’information sur les appareils que vous souhaitez énumérer.
 
 -   Les éléments [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) des appareils qui vous intéressent. Pour plus d’informations sur l’incidence de **DeviceInformationKind** sur la façon d’énumérer les appareils, voir [Énumérer les appareils](enumerate-devices.md) ;
--   la procédure de génération d’une chaîne de filtre AQS, expliquée dans cette rubrique ;
+-   la procédure de génération d’une chaîne de filtre AQS, expliquée dans cette rubrique;
 -   les propriétés qui vous intéressent ; Les propriétés disponibles dépendent des éléments [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991). Pour plus d’informations, voir [Propriétés d’informations d’appareil](device-information-properties.md).
 -   Les protocoles que vous interrogez. Cela est nécessaire uniquement si vous recherchez des appareils sur un réseau sans fil ou filaire. Pour plus d’informations sur cette procédure, voir [Énumérer des appareils sur un réseau](enumerate-devices-over-a-network.md).
 
@@ -113,4 +111,3 @@ System.Devices.IpAddress:=[]
  
 
  
-

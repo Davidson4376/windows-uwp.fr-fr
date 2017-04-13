@@ -1,32 +1,29 @@
 ---
 author: mcleanbyron
 ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
-description: "Découvrez comment utiliser la classe AdControl pour afficher des bannières publicitaires dans une application XAML pour Windows 10 (UWP), Windows 8.1 ou Windows Phone 8.1."
+description: "Découvrez comment utiliser la classe AdControl pour afficher des bannières publicitaires dans une application XAML pour Windows10 (UWP), Windows8.1 ou Windows Phone8.1."
 title: AdControl en XAML et .NET
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, annonces, publicité, AdControl, XAML, .net, procédure pas à pas"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: db84e03d0cefb4692689ed901f25930a064f9a31
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows10, uwp, annonces, publicité, AdControl, XAML, .net, procédure pas à pas"
+ms.openlocfilehash: 9db232709d3aa4ca1b7a6c6672cb2d1c1dea5049
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-in-xaml-and-net"></a>AdControl en XAML et .NET
 
 
-Cette procédure pas à pas montre comment utiliser la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) pour afficher des bannières publicitaires dans une application XAML pour Windows 10 (UWP), Windows 8.1 ou Windows Phone 8.1. Cette procédure pas à pas n’utilise ni **AdMediatorControl** ni la médiation publicitaire.
+Cette procédure pas à pas montre comment utiliser la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) pour afficher des bannières publicitaires dans une application XAML pour Windows10 (UWP), Windows8.1 ou Windows Phone8.1. Cette procédure pas à pas n’utilise ni **AdMediatorControl** ni la médiation publicitaire.
 
 Pour un exemple de projet complet illustrant l’ajout de bannières publicitaires à une application XAML en C# et C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-* Pour les applications UWP : installez [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) avec Visual Studio 2015.
-* Pour les applications Windows 8.1 ou Windows Phone 8.1 : [installe Microsoft Advertising SDK pour Windows et Windows Phone 8.x](http://aka.ms/store-8-sdk) avec Visual Studio 2015 ou Visual Studio 2013.
+* Pour les applications UWP: installez [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) avec Visual Studio2015.
+* Pour les applicationsWindows8.1 ou WindowsPhone8.1: [installe Microsoft Advertising SDK pour Windows et Windows Phone8.x](http://aka.ms/store-8-sdk) avec Visual Studio2015 ou Visual Studio2013.
 
 ## <a name="code-development"></a>Développement du code
 
@@ -36,17 +33,17 @@ Pour un exemple de projet complet illustrant l’ajout de bannières publicitair
 
 1.  Dans la fenêtre **Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence.**
 
-2.  Dans **Gestionnaire de références**, sélectionnez l’une des références suivantes en fonction de votre type de projet :
+2.  Dans **Gestionnaire de références**, sélectionnez l’une des références suivantes en fonction de votre type de projet:
 
-    -   Pour un projet de plateforme Windows universelle (UWP) : développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour XAML** (version 10.0).
+    -   Pour un projet de plateforme Windows universelle (UWP): développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour XAML** (version10.0).
 
-    -   Pour un projet Windows 8.1 : développez **Windows 8.1**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Ad Mediator pour Windows 8.1 XAML**. Cette option permet d’ajouter les bibliothèques de publicités et de médiateurs publicitaires Microsoft à votre projet, mais vous pouvez ignorer les bibliothèques de médiateurs publicitaires.
+    -   Pour un projet Windows8.1: développez **Windows8.1**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Ad Mediator pour Windows8.1 XAML**. Cette option permet d’ajouter les bibliothèques de publicités et de médiateurs publicitaires Microsoft à votre projet, mais vous pouvez ignorer les bibliothèques de médiateurs publicitaires.
 
-    -   Pour un projet Windows Phone 8.1 : développez **Windows Phone 8.1**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Ad Mediator pour Windows Phone 8.1 XAML**. Cette option permet d’ajouter les bibliothèques de publicités et de médiateurs publicitaires Microsoft à votre projet, mais vous pouvez ignorer les bibliothèques de médiateurs publicitaires.
+    -   Pour un projet Windows Phone8.1: développez **Windows Phone8.1**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Ad Mediator pour Windows Phone8.1 XAML**. Cette option permet d’ajouter les bibliothèques de publicités et de médiateurs publicitaires Microsoft à votre projet, mais vous pouvez ignorer les bibliothèques de médiateurs publicitaires.
 
   ![addreferences](images/13-a84c026e-b283-44f2-8816-f950a1ef89aa.png)
 
-    > **Remarque**&nbsp;&nbsp;Cette image correspond à la génération d’un projet UWP pour Windows 10 à l’aide de Visual Studio 2015. Si vous générez une application Windows 8.1 ou Windows Phone 8.1 à l’aide de Visual Studio 2013, votre écran aura une apparence différente.
+    > **Remarque**&nbsp;&nbsp;Cette image correspond à la génération d’un projet UWP pour Windows10 à l’aide de Visual Studio2015. Si vous générez une application Windows8.1 ou Windows Phone8.1 à l’aide de Visual Studio2013, votre écran aura une apparence différente.
 
 3.  Dans **Gestionnaire de références**, cliquez sur OK.
 4.  Modifiez le code XAML de la page où vous incorporez des publicités pour inclure l’espace de noms **Microsoft.Advertising.WinRT.UI**. Par exemple, dans l’exemple d’application par défaut généré par Visual Studio (nommé, dans cette application, MyAdFundedWindows10AppXAML), la page XAML est **MainPage.XAML**.
@@ -142,17 +139,16 @@ Pour un exemple de projet complet illustrant l’ajout de bannières publicitair
 
 ## <a name="notes"></a>Remarques
 
-* C# : consultez l’article [Exemple de propriétés XAML](xaml-properties-example.md) pour voir comment affecter des gestionnaires d’événements aux événements **AdControl**. Vous pouvez ensuite consulter [Événements AdControl en C#](adcontrol-events-in-c.md) pour obtenir un exemple de code illustrant des gestionnaires d’événements écrits en C#.
+* C#: consultez l’article [Exemple de propriétés XAML](xaml-properties-example.md) pour voir comment affecter des gestionnaires d’événements aux événements **AdControl**. Vous pouvez ensuite consulter [Événements AdControl en C#](adcontrol-events-in-c.md) pour obtenir un exemple de code illustrant des gestionnaires d’événements écrits en C#.
 
-* C++ : la version actuelle des bibliothèques de publicités Microsoft prend en charge C++. La classe **AdControl** est implémentée dans le code C++ natif et ne charge pas .NET CLR. Pour obtenir des exemples de code qui illustrent l’utilisation de **AdControl** en C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
+* C++: la version actuelle des bibliothèques de publicités Microsoft prend en charge C++. La classe **AdControl** est implémentée dans le code C++ natif et ne charge pas .NET CLR. Pour obtenir des exemples de code qui illustrent l’utilisation de **AdControl** en C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
-* Visual Basic : consultez l’article [Exemple de propriétés XAML](xaml-properties-example.md) pour voir comment affecter des gestionnaires d’événements aux événements **AdControl**.
+* Visual Basic: consultez l’article [Exemple de propriétés XAML](xaml-properties-example.md) pour voir comment affecter des gestionnaires d’événements aux événements **AdControl**.
 
-* Gestion des erreurs : pour en savoir plus sur la gestion des erreurs, voir [Gestion des erreurs AdControl](adcontrol-error-handling.md).
+* Gestion des erreurs: pour en savoir plus sur la gestion des erreurs, voir [Gestion des erreurs AdControl](adcontrol-error-handling.md).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Exemples de publicité sur GitHub](http://aka.ms/githubads)
 
  
-

@@ -1,26 +1,22 @@
 ---
 title: Textures
-description: "Les textures sont un puissant outil d’amélioration du réalisme des images 3D générées par ordinateur. Direct3D prend en charge un ensemble complet de fonctionnalités de texture, grâce auquel les développeurs accèdent facilement à des techniques avancées d’application de textures."
+description: "Les textures sont un puissant outil d’amélioration du réalisme des images3D générées par ordinateur. Direct3D prend en charge un ensemble complet de fonctionnalités de texture, grâce auquel les développeurs accèdent facilement à des techniques avancées d’application de textures."
 ms.assetid: B9E85C9E-B779-4852-9166-6FA2240B7046
-keywords:
-- Textures
+keywords: Textures
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4c78099f6bd30956c45a907a960a595288e0eaf4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ef5c72f3c667c63cb48c469349ae26c364050c19
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="textures"></a>Textures
 
 
-Les textures sont un puissant outil d’amélioration du réalisme des images 3D générées par ordinateur. Direct3D prend en charge un ensemble complet de fonctionnalités de texture, grâce auquel les développeurs accèdent facilement à des techniques avancées d’application de textures.
+Les textures sont un puissant outil d’amélioration du réalisme des images3D générées par ordinateur. Direct3D prend en charge un ensemble complet de fonctionnalités de texture, grâce auquel les développeurs accèdent facilement à des techniques avancées d’application de textures.
 
 Pour améliorer vos performances, vous pouvez envisager d’utiliser des textures dynamiques. Une texture dynamique peut être verrouillée, écrite et déverrouillée sur chaque image.
 
@@ -49,7 +45,7 @@ Pour améliorer vos performances, vous pouvez envisager d’utiliser des texture
 </tr>
 <tr class="odd">
 <td align="left"><p>[Modes d’adressage de texture](texture-addressing-modes.md)</p></td>
-<td align="left"><p>Votre application Direct3D peut attribuer des coordonnées de texture à tous les sommets d’une primitive. Les coordonnées de texture u et v que vous attribuez à un sommet sont généralement comprises entre 0,0 à 1,0 inclus. Si vous attribuez des coordonnées de texture en dehors de cette plage, vous pouvez créer des effets de texture spéciaux.</p></td>
+<td align="left"><p>Votre application Direct3D peut attribuer des coordonnées de texture à tous les sommets d’une primitive. Les coordonnées de texture u et v que vous attribuez à un sommet sont généralement comprises entre 0,0 à 1,0inclus. Si vous attribuez des coordonnées de texture en dehors de cette plage, vous pouvez créer des effets de texture spéciaux.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Filtrage de textures](texture-filtering.md)</p></td>
@@ -88,7 +84,6 @@ Pour améliorer vos performances, vous pouvez envisager d’utiliser des texture
  
 
  
-
 
 
 

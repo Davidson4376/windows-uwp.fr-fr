@@ -9,23 +9,20 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, jeux, portage, boucle de jeu, direct3d 9, directx 11
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 23631bf464095e1d2f2aab97740d89c6a82f4a70
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="port-the-game-loop"></a>Porter la boucle de jeu
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **Récapitulatif**
 
--   [Partie 1 : initialiser Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
+-   [Partie1: initialiser Direct3D11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
 -   [Partie 2 : convertir l’infrastructure de rendu](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
--   Partie 3 : porter la boucle de jeu
+-   Partie3: porter la boucle de jeu
 
 
 Montre comment implémenter une fenêtre pour un jeu de plateforme Windows universelle (UWP) et comment récupérer la boucle de jeu, notamment comment créer une interface [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) pour contrôler une classe [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) en plein écran. Partie 3 de la procédure pas à pas [Porter une application Direct3D 9 simple vers DirectX 11 et UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
@@ -105,13 +102,13 @@ while(WM_QUIT != msg.message)
 }
 ```
 
-La boucle de jeu est similaire, mais plus facile, dans la version UWP de notre jeu :
+La boucle de jeu est similaire, mais plus facile, dans la version UWP de notre jeu:
 
 La boucle de jeu va dans la méthode [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) (plutôt que **main()**) car notre jeu fonctionne au sein de la classe [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478).
 
 Au lieu d’implémenter une infrastructure de gestion des messages et d’appeler la fonction [**PeekMessage**](https://msdn.microsoft.com/library/windows/desktop/ms644943), nous pouvons appeler la méthode [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) intégrée dans la classe [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) de notre fenêtre d’application. La boucle de jeu n’a pas besoin de se ramifier et de gérer les messages : il suffit d’appeler la méthode **ProcessEvents** et de continuer.
 
-Boucle de jeu dans un jeu du Windows Store Direct3D 11
+Boucle de jeu dans un jeu du Windows Store Direct3D11
 
 ```cpp
 // Windows Store apps should not exit. Use app lifecycle events instead.
@@ -144,7 +141,6 @@ Consultez les articles détaillés suivants sur le développement des jeux du Wi
  
 
  
-
 
 
 

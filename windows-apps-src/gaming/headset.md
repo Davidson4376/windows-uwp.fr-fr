@@ -8,26 +8,23 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, jeux, casque"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp, jeux, casque
 ms.openlocfilehash: 04baee2a3011cee63933fe1fdab759d1b6d29c89
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="headset"></a>Casque
 
-Cette page décrit les concepts de base de la programmation pour les casques à l’aide de [Windows.Gaming.Input.Headset][headset] et des API associées pour la plateforme Windows universelle (UWP).
+Cette page décrit les concepts de base de la programmation pour les casques à l’aide des API [Windows.Gaming.Input.Headset][headset] et des API associées pour la plateforme Windows universelle (UWP).
 
-Voici ce que vous allez apprendre à la lecture de cette page :
+Voici ce que vous allez apprendre à la lecture de cette page:
 * Accéder à un casque connecté à un périphérique d’entrée ou de navigation
 * Détecter la connexion ou la déconnexion d’un casque
 
 
 ## <a name="headset-overview"></a>Vue d’ensemble du casque
 
-Les casques sont des périphériques de capture et de lecture audio utilisés la plupart du temps pour communiquer avec d’autres joueurs participant aux jeux en ligne. Cependant, ils peuvent aussi être utilisés dans les séquences de jeu ou pour d’autres usages créatifs. Les casques sont pris en charge dans les applications UWP Windows 10 et Xbox par l’espace de noms [Windows.Gaming.Input][].
+Les casques sont des périphériques de capture et de lecture audio utilisés la plupart du temps pour communiquer avec d’autres joueurs participant aux jeux en ligne. Cependant, ils peuvent aussi être utilisés dans les séquences de jeu ou pour d’autres usages créatifs. Les casques sont pris en charge dans les applications UWP Windows10 et Xbox par l’espace de noms [Windows.Gaming.Input][].
 
 
 ## <a name="detect-and-track-headsets"></a>Détecter et suivre des casques
@@ -66,7 +63,7 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 
 ## <a name="using-the-headset"></a>Utilisation du casque
 
-La classe [Headset][] est constituée de deux chaînes qui représentent les ID du point de terminaison XAudio : l’un pour la capture audio (enregistrement à partir du microphone sur casque) et l’autre pour la restitution audio (lecture via l’écouteur du casque).
+La classe [Headset][] est constituée de deuxchaînes qui représentent les ID du point de terminaison XAudio: l’un pour la capture audio (enregistrement à partir du microphone sur casque) et l’autre pour la restitution audio (lecture via l’écouteur du casque).
 
 Les détails de l’utilisation du point de terminaison XAudio ne sont pas couverts ici. Pour en savoir plus, voir le [Guide de programmation XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415737.aspx) et les [informations de référence sur l’API XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415899.aspx).
 
@@ -76,5 +73,4 @@ Les détails de l’utilisation du point de terminaison XAudio ne sont pas couve
 [igamecontroller.headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headset.aspx
 [igamecontroller.headsetconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetconnected.aspx
 [igamecontroller.headsetdisconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetdisconnected.aspx
-[headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx
-
+[casque]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx

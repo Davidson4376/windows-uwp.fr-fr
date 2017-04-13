@@ -2,34 +2,30 @@
 title: "Chaînes de permutation"
 description: "Une chaîne de permutation est une collection de mémoires tampons utilisées pour la présentation des images à l’utilisateur."
 ms.assetid: A38E8BB7-1E77-4D93-B321-D3572A80D5DD
-keywords:
-- "Chaînes de permutation"
+keywords: "Chaînes de permutation"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8028c67e2ffb8f1b021ec486691251850de5fa8b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1598811ce05536c3396ef72bb9d1b06ddbba0fdc
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="swap-chains"></a>Chaînes de permutation
 
 
 Une chaîne de permutation est une collection de mémoires tampons utilisées pour la présentation des images à l’utilisateur. Chaque fois qu’une application présente une nouvelle image à afficher, la première mémoire tampon de la chaîne de permutation prend la place de la mémoire tampon affichée. Ce processus est désigné sous le terme de *permutation* ou d'*inversion*.
 
-Une carte graphique pointe un curseur sur une surface qui représente l'image diffusée à l'écran, appelée un tampon d’affichage. Après avoir actualisé l'écran, la carte graphique envoie le contenu du tampon d'affichage vers l'écran à afficher. Toutefois, cela conduit à un problème de « coupure » lors du rendu des graphiques en temps réel. Le cœur du problème , c'est que les taux de rafraichissement de l'écran sont très lents en comparaison au reste de l'ordinateur. Les taux d'actualisation vont généralement de 60 Hz (60 fois par seconde) à 100 Hz.
+Une carte graphique pointe un curseur sur une surface qui représente l'image diffusée à l'écran, appelée un tampon d’affichage. Après avoir actualisé l'écran, la carte graphique envoie le contenu du tampon d'affichage vers l'écran à afficher. Toutefois, cela conduit à un problème de «coupure» lors du rendu des graphiques en temps réel. Le cœur du problème , c'est que les taux de rafraichissement de l'écran sont très lents en comparaison au reste de l'ordinateur. Les taux d'actualisation vont généralement de 60Hz (60fois par seconde) à 100Hz.
 
 Si votre application met à jour le tampon d’affichage pendant que le moniteur est en cours actualisation, l’image qui s’affiche est coupée en deux, la partie supérieure contenant l’ancienne image et la partie inférieure contenant la nouvelle image. Ce problème est appelé *coupure*.
 
 ## <a name="span-idavoidingtearingspanspan-idavoidingtearingspanspan-idavoidingtearingspanavoiding-tearing"></a><span id="Avoiding_tearing"></span><span id="avoiding_tearing"></span><span id="AVOIDING_TEARING"></span>Éviter les coupures
 
 
-Direct3D met en œuvre deux options pour éviter les erreurs :
+Direct3D met en œuvre deux options pour éviter les erreurs:
 
 -   Une option pour autoriser uniquement les mises à jour de l’opération d’analyse sur les opérations de retracé vertical (ou de synchronisation verticale). Un moniteur actualise généralement son image en déplaçant un point lumineux à l'horizontale, en zigzaguant depuis le coin supérieur gauche de l'écran vers le coin inférieur droit. Une fois qu'il a atteint le bas de l'écran, le moniteur réétalonne le point lumineux dans l’angle supérieur gauche afin de pouvoir recommencer le processus.
 
@@ -42,7 +38,7 @@ Direct3D met en œuvre deux options pour éviter les erreurs :
 ## <a name="span-idsurfaceflippingspanspan-idsurfaceflippingspanspan-idsurfaceflippingspansurface-flipping"></a><span id="Surface_flipping"></span><span id="surface_flipping"></span><span id="SURFACE_FLIPPING"></span>Inversion de surface
 
 
-Le processus de déplacement de la mémoire tampon d’arrière-plan vers la mémoire tampon d’affichage est appelé inversion de surface. Comme la carte graphique utilise simplement un pointeur vers une surface pour représenter la mémoire tampon d’affichage, il est simplement nécessaire d'effectuer une simple modification du pointeur pour transférer la mémoire tampon d’arrière-plan vers la mémoire tampon d’affichage. Lorsqu'une application demande à Direct3D de présenter la mémoire tampon d'arrière-plan à la mémoire tampon d'affichage, Direct3D se contente simplement d'« inverser » les deux pointeurs de surface. Par conséquent, la mémoire tampon d'arrière-plan est désormais la nouvelle mémoire tampon d'affichage, et l'ancienne mémoire tampon d'affichage est désormais la nouvelle mémoire tampon d'arrière-plan.
+Le processus de déplacement de la mémoire tampon d’arrière-plan vers la mémoire tampon d’affichage est appelé inversion de surface. Comme la carte graphique utilise simplement un pointeur vers une surface pour représenter la mémoire tampon d’affichage, il est simplement nécessaire d'effectuer une simple modification du pointeur pour transférer la mémoire tampon d’arrière-plan vers la mémoire tampon d’affichage. Lorsqu'une application demande à Direct3D de présenter la mémoire tampon d'arrière-plan à la mémoire tampon d'affichage, Direct3D se contente simplement d'«inverser» les deux pointeurs de surface. Par conséquent, la mémoire tampon d'arrière-plan est désormais la nouvelle mémoire tampon d'affichage, et l'ancienne mémoire tampon d'affichage est désormais la nouvelle mémoire tampon d'arrière-plan.
 
 Une inversion de surface est invoquée chaque fois qu'une application demande à l'appareil Direct3D de présenter la mémoire tampon d'affichage. Cependant, Direct3D peut être configuré pour déplacer les demandes vers la file d'attente jusqu'à ce qu'une synchronisation verticale ne survienne. Cette option est appelée l'intervalle de présentation de l'appareil Direct3D. Les données de la mémoire tampon d’arrière-plan peuvent ne pas être réutilisables, en fonction de la manière dont une application spécifie comment Direct3D doit traiter les inversions de surface.
 
@@ -56,7 +52,6 @@ L'inversion de surface est fréquemment utilisée dans les logiciels multimédia
  
 
  
-
 
 
 

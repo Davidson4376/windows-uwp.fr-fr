@@ -8,21 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, jeux, rendu, scène, test de profondeur, direct3d, ombres"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: "windows10, uwp, jeux, rendu, scène, test de profondeur, direct3d, ombres"
 ms.openlocfilehash: 538ebe9a604daaa5a444b0f7f1764770eec8ce7c
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="render-the-scene-with-depth-testing"></a>Générer le rendu de la scène avec un test de profondeur
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Créez un effet d’ombre en ajoutant un test de profondeur à votre nuanceur de sommets (ou de géométrie) et votre nuanceur de pixels. Partie 3 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
+Créez un effet d’ombre en ajoutant un test de profondeur à votre nuanceur de vertex (ou géométrie) et votre nuanceur de pixels. Partie 3 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
 ## <a name="include-transformation-for-light-frustum"></a>Inclure une transformation pour un tronc de cône lumineux
 
@@ -93,7 +90,7 @@ if ((saturate(shadowTexCoords.x) == shadowTexCoords.x) &&
 ## <a name="depth-test-against-the-shadow-map"></a>Test de profondeur par rapport au mappage d’ombre
 
 
-Utilisez une fonction de comparaison d’exemples (soit [SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696), soit [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697)) pour tester la profondeur du pixel dans l’espace lumineux par rapport au mappage de profondeur. Calculez la valeur de la profondeur de l’espace lumineux normalisé, à savoir `z / w`, puis passez la valeur à la fonction de comparaison. Puisque nous utilisons un test de comparaison LessOrEqual pour l’échantillon, la fonction intrinsèque renvoie zéro quand le test de comparaison est satisfaisant ; cela indique que le pixel est dans l’ombre.
+Utilisez une fonction de comparaison d’exemples (soit [SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696), soit [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697)) pour tester la profondeur du pixel dans l’espace lumineux par rapport au mappage de profondeur. Calculez la valeur de la profondeur de l’espace lumineux normalisé, à savoir `z / w`, puis passez la valeur à la fonction de comparaison. Puisque nous utilisons un test de comparaison LessOrEqual pour l’échantillon, la fonction intrinsèque renvoie zéro quand le test de comparaison est satisfaisant; cela indique que le pixel est dans l’ombre.
 
 ```cpp
 // Use an offset value to mitigate shadow artifacts due to imprecise 
@@ -165,7 +162,6 @@ Dans la partie suivante de cette procédure pas à pas, découvrez comment [pren
  
 
  
-
 
 
 

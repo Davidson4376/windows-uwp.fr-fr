@@ -2,22 +2,20 @@
 author: mcleblanc
 ms.assetid: 0C69521B-47E0-421F-857B-851B0E9605F2
 title: "Lier des données hiérarchiques et créer un affichage maître/détails"
-description: "Vous pouvez créer un affichage maître/détails (également appelé affichage liste/détails) de données hiérarchiques sur plusieurs niveaux en liant les contrôles d’éléments aux instances CollectionViewSource qui sont liées dans une chaîne."
+description: "Vous pouvez effectuer un affichage maître/détails (également appelé affichage liste/détails) de données hiérarchiques sur plusieurs niveaux en liant les contrôles d’éléments aux instances CollectionViewSource qui sont liées dans une chaîne."
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 107d4a9778b377370632b6e8d37ad3216858d251
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 9f297cdb3fdc90ab7c024bce3aa93db69465c5d3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>Lier des données hiérarchiques et créer un affichage maître/détails
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 > **Remarque**  Consultez également l’[exemple Maître/détails](http://go.microsoft.com/fwlink/p/?linkid=619991).
@@ -36,7 +34,7 @@ Dans cette rubrique, nous partons du principe que vous savez créer une applicat
 
 ## <a name="create-the-project"></a>Créer le projet
 
-Commencez par créer un projet **Application vide (Windows universel)**. Nommez-le « MasterDetailsBinding ».
+Commencez par créer un projet **Application vide (Windows universel)**. Nommez-le «MasterDetailsBinding».
 
 ## <a name="create-the-data-model"></a>Créer le modèle de données
 
@@ -228,5 +226,4 @@ Notez qu’en effectuant une liaison directe à la classe [**CollectionViewSourc
  
 
  
-
 

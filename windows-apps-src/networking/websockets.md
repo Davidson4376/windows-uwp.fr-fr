@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 203face64ddb925601d23274c4e9cf9ab6d7c6f8
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: de9b10324d212a92a21f64f1b857cdf465e26b4c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="websockets"></a>WebSockets
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -49,7 +46,7 @@ Le [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br2268
 
 Le code de cette section crée un objet [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842), se connecte à un serveur WebSocket et envoie des données à celui-ci. Une fois qu’une connexion a été correctement établie, l’application attend le déclenchement de l’événement [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358), qui indique que des données ont été reçues.
 
-Cet exemple utilise le serveur echo WebSocket.org, service qui renvoie simplement à l’expéditeur l’écho de toute chaîne qui lui est envoyée. Cet exemple utilise une connexion sécurisée pour envoyer et recevoir des messages à l’aide du spécificateur de protocole « wss: ».
+Cet exemple utilise le serveur echo WebSocket.org, service qui renvoie simplement à l’expéditeur l’écho de toute chaîne qui lui est envoyée. Cet exemple utilise une connexion sécurisée pour envoyer et recevoir des messages à l’aide du spécificateur de protocole «wss:».
 
 > [!div class="tabbedCodeSnippets"]
 > ```cpp
@@ -348,5 +345,4 @@ L’exemple suivant crée une tâche qui se termine après un délai spécifié,
         });
     }
 ```
-
 

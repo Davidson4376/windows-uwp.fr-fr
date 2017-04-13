@@ -1,25 +1,22 @@
 ---
 author: mcleblanc
 description: "Le code qui s’intègre à l’appareil proprement dit et à ses capteurs implique une entrée de l’utilisateur et une sortie vers ce dernier."
-title: "Portage d’une application Windows Runtime 8.x vers UWP pour le modèle d’E/S, d’appareil et d’application"
+title: "Portage d’une application Windows Runtime8.x vers UWP pour le modèle d’E/S, d’appareil et d’application"
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 69fdeed812eb6add3eeacb0e776e7477e061979f
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 2ccc9b0d81b69a06973feac8d554aa0ab47f2af0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>Portage d’une application Windows Runtime8.x vers UWP pour le modèle d’E/S, d’appareil et d’application
 
-# <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>Portage d’une application Windows Runtime 8.x vers UWP pour le modèle d’E/S, d’appareil et d’application
 
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Rubrique précédente : [Portage du balisage XAML et de la couche interface utilisateur](w8x-to-uwp-porting-xaml-and-ui.md).
@@ -36,14 +33,14 @@ Pour plus d’informations, voir [Cycle de vie de l’application](https://msdn.
 ## <a name="background-audio"></a>Contenu audio en arrière-plan
 
 
-Dans le cas de la propriété [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352), les valeurs **ForegroundOnlyMedia** et **BackgroundCapableMedia** sont déconseillées pour les applications Windows 10. Utilisez plutôt le modèle d’application du Windows Phone Store. Pour plus d’informations, voir [Contenu audio en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt282140).
+Dans le cas de la propriété [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352), les valeurs **ForegroundOnlyMedia** et **BackgroundCapableMedia** sont déconseillées pour les applications Windows 10. Utilisez plutôt le modèle d’application du Windows PhoneStore. Pour plus d’informations, voir [Contenu audio en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt282140).
 
 ## <a name="detecting-the-platform-your-app-is-running-on"></a>Détection de la plateforme d’exécution de votre application
 
 
 La façon d’envisager le ciblage d’application change avec Windows 10. Selon le nouveau modèle conceptuel, une application cible la plateforme Windows universelle (UWP) et s’exécute sur tous les appareils Windows. Elle peut ensuite choisir d’activer des fonctionnalités exclusives à certaines familles d’appareils. Si nécessaire, l’application a également la possibilité de restreindre son ciblage à une ou plusieurs familles d’appareils spécifiques. Pour plus d’informations sur les familles d’appareils et savoir comment déterminer les familles d’appareils à cibler, voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
-Si votre application 8.1 universelle intègre du code qui détecte le système d’exploitation sur lequel elle est exécutée, vous devrez peut-être changer cela en fonction de la raison de la logique. Si l’application transmet la valeur et n’intervient pas en conséquence, il peut être préférable de continuer à collecter les informations sur le système d’exploitation.
+Si votre application8.1 universelle intègre du code qui détecte le système d’exploitation sur lequel elle est exécutée, vous devrez peut-être changer cela en fonction de la raison de la logique. Si l’application transmet la valeur et n’intervient pas en conséquence, il peut être préférable de continuer à collecter les informations sur le système d’exploitation.
 
 **Remarque**   Nous vous recommandons de ne pas utiliser le système d’exploitation ou la famille d’appareils pour détecter la présence de fonctionnalités. En règle générale, l’identification de la famille d’appareils ou du système d’exploitation actuel ne constitue pas le meilleur moyen de déterminer si une fonctionnalité particulière du système d’exploitation ou de la famille d’appareils est présente. Plutôt que de détecter le système d’exploitation ou la famille d’appareils (et le numéro de version), vérifiez directement la présence de la fonctionnalité à l’aide d’un test (voir [Compilation conditionnelle et code adaptatif](w8x-to-uwp-porting-to-a-uwp-project.md)). Si vous devez exiger un système d’exploitation ou une famille d’appareils spécifique, veillez à l’utiliser comme une version minimale prise en charge plutôt que de concevoir le test pour cette version particulière.
 
@@ -78,7 +75,6 @@ Lorsqu’une application déclarant la fonctionnalité de localisation dans son 
  
 
  
-
 
 
 

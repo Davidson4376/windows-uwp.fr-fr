@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9e9ba56fd9d9a3b33d6dc7eadb999d0fcf159d3e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0175a7ca7e2bbeb97f526dffb3c6fee7b8eb8819
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="speech-interactions"></a>Interactions vocales
 
 
@@ -29,9 +26,9 @@ Intégrez la reconnaissance vocale et la conversion de texte par synthèse vocal
 -   Consultez [Recommandations en matière de conception de Cortana](cortana-interactions.md) si vous proposez des fonctionnalités d’application de l’interface utilisateur **Cortana**.
 
 
-**Reconnaissance vocale :** convertit en texte les mots prononcés par l’utilisateur pour remplir des formulaires, dicter du texte, spécifier une action/commande ou accomplir des tâches. Les deux grammaires prédéfinies pour la dictée de texte libre et la recherche web, ainsi que les grammaires personnalisées basées sur la norme SRGS (Speech Recognition Grammar Specification) version 1.0, sont prises en charge.
+**Reconnaissance vocale:** convertit en texte les mots prononcés par l’utilisateur pour remplir des formulaires, dicter du texte, spécifier une action/commande ou accomplir des tâches. Les deux grammaires prédéfinies pour la dictée de texte libre et la recherche web, ainsi que les grammaires personnalisées basées sur la norme SRGS (Speech Recognition Grammar Specification) version1.0, sont prises en charge.
 
-**Conversion de texte par synthèse vocale (TTS) :** utilise un moteur de synthèse vocale (voix) pour convertir une chaîne de texte en parole. La chaîne d’entrée peut être du texte basique sans fioriture ou un texte SSML (Speech Synthesis Markup Language) plus complexe. Le langage SSML fournit un moyen standard de contrôler les caractéristiques de la restitution vocale telles que la prononciation, le volume, la tonalité, le débit ou la vitesse et l’accentuation.
+**Conversion de texte par synthèse vocale (TTS):** utilise un moteur de synthèse vocale (voix) pour convertir une chaîne de texte en parole. La chaîne d’entrée peut être du texte basique sans fioriture ou un texte SSML (Speech Synthesis Markup Language) plus complexe. Le langage SSML fournit un moyen standard de contrôler les caractéristiques de la restitution vocale telles que la prononciation, le volume, la tonalité, le débit ou la vitesse et l’accentuation.
 
 > [!NOTE]
 > À l’aide de **Cortana** et des commandes vocales personnalisées, votre application peut être lancée au premier plan (l’application prend le focus, comme si elle avait été lancée à partir du menu Démarrer) ou activée en tant que service d’arrière-plan (**Cortana** conserve le focus, mais fournit les résultats de l’application).
@@ -56,7 +53,7 @@ Si vous envisagez de prendre en charge des interactions vocales dans votre appli
 -   La TTS ou les écrans d’invite, de confirmation et de levée d’ambiguïté sont-ils requis ?
 -   Quelle est la boîte de dialogue d’interaction entre l’application et l’utilisateur ?
 -   Un vocabulaire personnalisé ou restreint (médical, scientifique ou régional) est-il requis pour le contexte de votre application ?
--   La connectivité réseau est-elle nécessaire ?
+-   La connectivité réseau est-elle nécessaire?
 
 ## <a name="text-input"></a>Saisie de texte
 
@@ -80,7 +77,7 @@ La saisie vocale permet d’initier des actions, d’appeler des commandes et d�
 
 Si l’espace le permet, envisagez d’afficher les réponses prises en charge pour le contexte de l’application en cours, avec des exemples d’entrée valide. Cela réduit les réponses potentielles que votre application doit traiter et permet d’éviter toute confusion pour l’utilisateur.
 
-Essayez de formuler vos questions de manière à ce que la réponse soit la plus précise possible. Par exemple, la question « Que vous voulez faire aujourd’hui ? » est très ouverte et nécessiterait une définition de grammaire lourde en raison de la variété des réponses. La question « Voulez-vous jouer à un jeu ou écouter de la musique ? » restreint la réponse à deux options valides avec une définition de grammaire relativement simple. Une grammaire simple est beaucoup plus facile à créer et génère des résultats de reconnaissance beaucoup plus précis.
+Essayez de formuler vos questions de manière à ce que la réponse soit la plus précise possible. Par exemple, la question «Que vous voulez faire aujourd’hui?» est très ouverte et nécessiterait une définition de grammaire lourde en raison de la variété des réponses. La question «Voulez-vous jouer à un jeu ou écouter de la musique?» restreint la réponse à deux options valides avec une définition de grammaire relativement simple. Une grammaire simple est beaucoup plus facile à créer et génère des résultats de reconnaissance beaucoup plus précis.
 
 Demandez confirmation à l’utilisateur quand le niveau de fiabilité de la reconnaissance vocale est faible. Si l’intention de l’utilisateur n’est pas évidente, il est préférable de la clarifier avant de lancer une action involontaire.
 
@@ -103,11 +100,11 @@ Les écrans varient selon les contraintes spécifiées :
     -   Écran **Nous vous avons entendu dire**, si l’interprétation de ce que l’utilisateur a prononcé pourrait avoir plusieurs résultats éventuels
     -   Écran **Nous vous avons entendu dire** ou écran de notification d’erreur
 
-Sur l’écran **Écoute**, vous pouvez :
+Sur l’écran **Écoute**, vous pouvez:
 
 -   personnaliser le titre ;
 -   fournir un exemple de texte illustrant ce que peut dire l’utilisateur ;
--   spécifier si l’écran **Nous vous avons entendu dire** s’affiche ;
+-   spécifier si l’écran **Nous vous avons entendu dire** s’affiche;
 -   restituer à l’utilisateur la chaîne reconnue sur l’écran **Nous vous avons entendu dire**.
 
 Voici un exemple du flux de reconnaissance intégrée pour un module de reconnaissance vocale qui utilise une contrainte définie par le SRGS. Dans cet exemple, la reconnaissance vocale est une réussite.
@@ -124,13 +121,13 @@ Votre application peut écouter et reconnaître la saisie vocale dès que l’ap
 
 Vous devez personnaliser les contraintes de grammaire en fonction du contexte de l’application. Cela permet non seulement de cibler l’expérience de reconnaissance vocale sur les tâches en cours afin de la rendre plus pertinente, mais également de minimiser les erreurs.
 
-## <a name="what-can-i-say"></a>Qu’est-ce que je dis ?
+## <a name="what-can-i-say"></a>Qu’est-ce que je dis?
 
 Lorsque la saisie vocale est activée, il est important d’aider les utilisateurs à cerner ce qui est compréhensible et les actions qui peuvent être effectuées.
 
 Si la reconnaissance vocale est activée par l’utilisateur, envisagez d’utiliser la barre de commandes ou une commande de menu pour afficher tous les mots et expressions pris en charge dans le contexte actuel.
 
-Si la reconnaissance vocale est toujours activée, pensez à ajouter l’expression « Que puis-je dire ? » à chaque page. Lorsque l’utilisateur prononce cette phrase, affichez tous les mots et expressions pris en charge dans le contexte actuel. Cette expression fournit un moyen cohérent pour les utilisateurs de découvrir les fonctionnalités vocales du système.
+Si la reconnaissance vocale est toujours activée, pensez à ajouter l’expression «Que puis-je dire?» à chaque page. Lorsque l’utilisateur prononce cette phrase, affichez tous les mots et expressions pris en charge dans le contexte actuel. Cette expression fournit un moyen cohérent pour les utilisateurs de découvrir les fonctionnalités vocales du système.
 
 ## <a name="recognition-failures"></a>Gestion des échecs de la reconnaissance
 
@@ -162,25 +159,25 @@ Les grammaires de dictée et de recherche web prédéfinies vous permettent d’
 -   La grammaire de recherche web, comme une grammaire de dictée, contient un grand nombre de mots et expressions qu’un utilisateur peut dire. Toutefois, elle est optimisée pour reconnaître les termes que les personnes utilisent généralement lors des recherches sur le web.
 
 > [!NOTE]
-> Étant donné que les grammaires de dictée et de recherche web prédéfinies peuvent être volumineuses et qu’elles sont hébergées en ligne (elles ne se trouvent pas sur l’appareil), les performances obtenues peuvent ne pas être aussi bonnes qu’avec des grammaires personnalisées qui sont installées sur l’appareil.
+> Étant donné que les grammaires de dictée et de recherche web prédéfinies peuvent être volumineuses et qu’elles sont hébergées enligne (elles ne se trouvent pas sur l’appareil), les performances obtenues peuvent ne pas être aussi bonnes qu’avec des grammaires personnalisées qui sont installées sur l’appareil.
 
-Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’à 10 secondes de saisie vocale et ne nécessitent aucun effort de création de votre part. Elles nécessitent toutefois une connexion à un réseau.
+Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’à 10secondes de saisie vocale et ne nécessitent aucun effort de création de votre part. Elles nécessitent toutefois une connexion à un réseau.
 
 ### <a name="custom-grammars"></a>Grammaires personnalisées
 
 Une grammaire personnalisée est conçue et créée par vous-même, et installé sur votre application. La reconnaissance vocale à l’aide d’une contrainte personnalisée est effectuée sur l’appareil.
 
 -   Les contraintes de liste de programmation permettent de créer facilement une grammaire simple sous la forme d’une liste de mots ou d’expressions. Une contrainte de liste fonctionne correctement pour la reconnaissance d’expressions distinctes courtes. En indiquant explicitement des mots dans une grammaire, vous améliorez également la précision de la reconnaissance, car le traitement de la parole par le moteur de reconnaissance se limite à la confirmation d’une correspondance. La liste peut également être mise à jour par programmation.
--   Contrairement à une contrainte de liste de programmation, une grammaire SRGS est un document statique au format XML défini par la norme [SRGS version 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). Une grammaire SRGS permet de contrôler au maximum l’expérience de la reconnaissance vocale en capturant plusieurs significations sémantiques dans une même reconnaissance.
+-   Contrairement à une contrainte de liste de programmation, une grammaire SRGS est un document statique au format XML défini par la norme [SRGS version1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). Une grammaire SRGS permet de contrôler au maximum l’expérience de la reconnaissance vocale en capturant plusieurs significations sémantiques dans une même reconnaissance.
 
     Voici quelques conseils pour la création de grammaires SRGS :
 
     -   Limitez chaque grammaire. Les grammaires qui contiennent peu d’expressions ont tendance à offrir une reconnaissance plus précise que les grammaires complexes qui contiennent de nombreuses expressions. Il est préférable d’utiliser plusieurs grammaires de taille réduite pour les différents scénarios plutôt qu’une seule grammaire pour la totalité de l’application.
     -   Indiquez aux utilisateurs ce qu’ils doivent dire pour chaque contexte d’application, et activez et désactivez les grammaires selon les besoins.
-    -   Concevez chaque grammaire de manière à ce que les utilisateurs puissent prononcer une commande de différentes manières. Par exemple, vous pouvez utiliser la règle **GARBAGE** pour accepter la saisie vocale que votre grammaire ne définit pas. Cela permet aux utilisateurs de prononcer des mots supplémentaires qui n’ont aucune signification pour votre application. Par exemple, « donnez-moi », « et », « euh », « peut-être », etc.
+    -   Concevez chaque grammaire de manière à ce que les utilisateurs puissent prononcer une commande de différentes manières. Par exemple, vous pouvez utiliser la règle **GARBAGE** pour accepter la saisie vocale que votre grammaire ne définit pas. Cela permet aux utilisateurs de prononcer des mots supplémentaires qui n’ont aucune signification pour votre application. Par exemple, «donnez-moi», «et», «euh», «peut-être», etc.
     -   Utilisez l’élément [sapi:subset](http://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) pour faciliter la détection de l’entrée vocale. Il s’agit d’une extension Microsoft à la spécification SRGS permettant de mieux répondre aux expressions partielles.
     -   Évitez de définir des expressions dans votre grammaire qui ne contiennent qu’une seule syllabe. La reconnaissance tend à être plus précise pour les expressions contenant au moins deux syllabes.
-    -   Évitez d’utiliser des expressions qui se ressemblent. Par exemple, les expressions telles que « matin », « châtain » et « latin » peuvent induire en erreur le module de reconnaissance et affecter le degré de précision de la reconnaissance.
+    -   Évitez d’utiliser des expressions qui se ressemblent. Par exemple, les expressions telles que «matin», «châtain» et «latin» peuvent induire en erreur le module de reconnaissance et affecter le degré de précision de la reconnaissance.
 
 > [!NOTE]
 > Le type de contrainte que vous utilisez dépend de la complexité de l’expérience de reconnaissance que vous voulez créer. Un type de contrainte peut être mieux adapté à une tâche de reconnaissance vocale particulière, mais vous pouvez aussi combiner tous les types de contrainte dans votre application.
@@ -238,7 +235,6 @@ Vous pouvez traiter les deux problèmes en fournissant au synthétiseur vocal un
  
 
  
-
 
 
 

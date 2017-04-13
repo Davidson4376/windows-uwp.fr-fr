@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 041a591cc3e53ee6f5e4b5d51e41a0e1032c6cac
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: b9bf56e9f4fa4632623ae2d644a4e9958ee02443
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="print-from-your-app"></a>Imprimer à partir de votre application
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -399,4 +397,3 @@ Si vous imprimez un sous-ensemble de pages, plusieurs options s’offrent à vou
 * [Instructions de conception concernant l’impression](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//Vidéo de la build 2015 : développement d’applications qui impriment dans Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [Exemple d’impression UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984)
-

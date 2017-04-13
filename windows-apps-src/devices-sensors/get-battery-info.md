@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f78c828faded1d7efbd82bc41245052ce95862c7
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: b136c53cd39028c15ff55be803ae314c773a9be6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="get-battery-information"></a>Obtenir des informations sur la batterie
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -80,7 +78,7 @@ async private void RequestIndividualBatteryReports()
 
 ## <a name="access-report-details"></a>Accéder aux détails du rapport
 
-L’objet [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) fournit de nombreuses informations sur la batterie. Pour plus d’informations, reportez-vous à la référence de l’API pour connaître ses propriétés : **Status** (énumération [**BatteryStatus**](https://msdn.microsoft.com/library/windows/apps/Dn818458)), [**ChargeRateInMilliwatts**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx), [**DesignCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx), [**FullChargeCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx) et [**RemainingCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours). Cet exemple présente certaines des propriétés du rapport sur la batterie utilisées par l’application de batterie de base fournie plus loin dans cette rubrique.
+L’objet [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) fournit de nombreuses informations sur la batterie. Pour plus d’informations, reportez-vous à la référence de l’API pour connaître ses propriétés: **Status** (énumération [**BatteryStatus**](https://msdn.microsoft.com/library/windows/apps/Dn818458)), [**ChargeRateInMilliwatts**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx), [**DesignCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx), [**FullChargeCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx) et [**RemainingCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours). Cet exemple présente certaines des propriétés du rapport sur la batterie utilisées par l’application de batterie de base fournie plus loin dans cette rubrique.
 
 ```csharp
 ...
@@ -133,11 +131,11 @@ async private void AggregateBattery_ReportUpdated(Battery sender, object args)
 }
 ```
 
-## <a name="example-basic-battery-app"></a>Exemple : application de batterie de base
+## <a name="example-basic-battery-app"></a>Exemple: application de batterie de base
 
-Testez ces API en créant l’application suivante de batterie de base dans Microsoft Visual Studio. Dans la page d’accueil de Visual Studio, cliquez sur **Nouveau projet**, puis, sous les modèles **Visual C# &gt; Windows &gt; Universel**, créez une application à l’aide du modèle **Application vide**.
+Testez ces API en créant l’application suivante de batterie de base dans Microsoft VisualStudio. Dans la page d’accueil de Visual Studio, cliquez sur **Nouveau projet**, puis, sous les modèles **Visual C# &gt; Windows &gt; Universel**, créez une application à l’aide du modèle **Application vide**.
 
-Ensuite, ouvrez le fichier **MainPage.xaml** et copiez le code XML suivant dans ce fichier (en remplaçant son contenu d’origine).
+Ensuite, ouvrez le fichier **MainPage.xaml** et copiez le codeXML suivant dans ce fichier (en remplaçant son contenu d’origine).
 
 ```xml
 <Page
@@ -339,8 +337,7 @@ Si votre application n’est pas nommée **App1**, vous devez renommer l’espac
 
 Enfin, pour exécuter cette application de batterie de base, dans le menu **Déboguer**, cliquez sur **Démarrer le débogage** afin de tester la solution.
 
-**Conseil**  Pour recevoir les valeurs numériques de l’objet [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005), déboguez votre application sur l’**ordinateur local** ou sur un **appareil** externe (par exemple, un téléphone Windows Phone). Lors du débogage sur un émulateur d’appareil, l’objet **BatteryReport** renvoie **null** aux propriétés de capacité et de vitesse.
+**Conseil**  Pour recevoir les valeurs numériques de l’objet [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005), déboguez votre application sur l’**ordinateur local** ou sur un **appareil** externe (par exemple, un téléphone WindowsPhone). Lors du débogage sur un émulateur d’appareil, l’objet **BatteryReport** renvoie **null** aux propriétés de capacité et de vitesse.
 
  
-
 

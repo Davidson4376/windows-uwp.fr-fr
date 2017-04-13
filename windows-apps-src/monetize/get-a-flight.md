@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
 description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour obtenir des données pour une version d’évaluation du package pour une application inscrite dans votre compte du Centre de développement Windows."
-title: "Obtenir une version d’évaluation du package à l’aide de l’API de soumission du Windows Store"
+title: "Obtenir une version d’évaluation du package"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, version d’évaluation, version d’évaluation du package"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ae8014dadfb838cfd14202a673654be3a012c8bf
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, API de soumission du WindowsStore, version d’évaluation, version d’évaluation de package"
+ms.openlocfilehash: 921d33c033704de711112c30feae7dbbfebc732b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-a-package-flight-using-the-windows-store-submission-api"></a>Obtenir une version d’évaluation du package à l’aide de l’API de soumission du Windows Store
+# <a name="get-a-package-flight"></a>Obtenir une version d’évaluation du package
 
 
 
@@ -25,10 +22,10 @@ Utilisez cette méthode dans l’API de soumission du Windows Store pour obtenir
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
@@ -107,7 +104,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 | friendlyName           | chaîne  | Nom de la version d’évaluation du package, tel que spécifié par le développeur.   |  
 | lastPublishedFlightSubmission       | objet | Objet qui fournit des informations sur la dernière soumission publiée de la version d’évaluation du package. Pour plus d’informations, voir la section [Objet de la soumission](#submission_object) ci-dessous.  |
 | pendingFlightSubmission        | objet  |  Objet qui fournit des informations sur la soumission actuellement en attente pour la version d’évaluation du package. Pour plus d’informations, voir la section [Objet de la soumission](#submission_object) ci-dessous.  |   
-| groupIds           | tableau  | Tableau de chaînes qui contiennent les ID des groupes de versions d’évaluation associés à la version d’évaluation du package. Pour plus d’informations sur les groupes de versions d’évaluation, voir [Versions d’évaluation du package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
+| groupIds           | tableau  | Tableau de chaînes qui contiennent les ID des groupes de versions d’évaluation associés à la version d’évaluation du package. Pour plus d’informations sur les groupes de versions d’évaluation, voir [Versions d’évaluation de package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
 | rankHigherThan           | chaîne  | Nom convivial de la version d’évaluation du package classée juste en dessous de la version d’évaluation du package actuelle. Pour plus d’informations sur le classement des groupes de versions d’évaluation, voir [Versions d’évaluation du package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
 
 <span id="submission_object" />
@@ -139,4 +136,3 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Créer une version d’évaluation du package](create-a-flight.md)
 * [Supprimer une version d’évaluation du package](delete-a-flight.md)
-

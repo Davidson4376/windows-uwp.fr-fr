@@ -1,32 +1,28 @@
 ---
 title: "Éclairage émissif"
-description: "L’éclairage émissif correspond à la luminosité émise par un objet ; par exemple, une lueur."
+description: "L’éclairage émissif correspond à la luminosité émise par un objet; par exemple, une lueur."
 ms.assetid: 262EB9E2-DF96-401F-93D6-51A7BB60074B
-keywords:
-- "Éclairage émissif"
+keywords: "Éclairage émissif"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 50bc904e5810340846b3fd84ffca214d07d38750
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6e67a38f1ec7d036646abd06d641e8bf9d900ce3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="emissive-lighting"></a>Éclairage émissif
 
 
-L’*éclairage émissif* correspond à la luminosité émise par un objet ; par exemple, une lueur. Sous l’effet de l’émission, l’objet rendu paraît lumineux par lui-même. L’émission affecte la couleur d’un objet et peut, par exemple, procurer de la brillance à un matériau sombre et assurer une partie de la couleur émise.
+L’*éclairage émissif* correspond à la luminosité émise par un objet; par exemple, une lueur. Sous l’effet de l’émission, l’objet rendu paraît lumineux par lui-même. L’émission affecte la couleur d’un objet et peut, par exemple, procurer de la brillance à un matériau sombre et assurer une partie de la couleur émise.
 
 L’éclairage émissif est décrit par un seul terme.
 
 Éclairage émissif = Cₑ
 
-où :
+où:
 
 | Paramètre | Valeur par défaut | Type                                                                 | Description     |
 |-----------|---------------|----------------------------------------------------------------------|-----------------|
@@ -34,7 +30,7 @@ où :
 
  
 
-Les valeurs possibles de Cₑ sont couleur 1 ou couleur 2. Si la couleur de vertex n’est pas fournie, la couleur émissive du matériau est utilisée.
+Les valeurs possibles de Cₑ sont couleur1 ou couleur2. Si la couleur de vertex n’est pas fournie, la couleur émissive du matériau est utilisée.
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Exemple
 
@@ -43,7 +39,7 @@ Dans cet exemple, la couleur de l’objet est définie à partir de la lumière 
 
 Selon l’équation, la couleur résultante des vertex de l’objet correspond à la couleur du matériau.
 
-La figure ci-après illustre la couleur du matériau (vert). La lumière émissive éclaire de la même couleur tous les vertex de l’objet. Elle ne dépend ni de la normale de vertex, ni de la direction de la lumière. La sphère apparaît donc comme un cercle 2D, car il n’y a aucune différence d’ombrage autour de la surface de l’objet.
+La figure ci-après illustre la couleur du matériau (vert). La lumière émissive éclaire de la même couleur tous les vertex de l’objet. Elle ne dépend ni de la normale de vertex, ni de la direction de la lumière. La sphère apparaît donc comme un cercle2D, car il n’y a aucune différence d’ombrage autour de la surface de l’objet.
 
 ![illustration d’une sphère verte](images/lighte.jpg)
 
@@ -59,7 +55,6 @@ La figure ci-après illustre la façon dont la lumière émissive fusionne avec 
  
 
  
-
 
 
 

@@ -8,22 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, annonces publicitaires, publicité, gestion des erreurs, javascript"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 935ce9ca17d2b9d4a63496ab0b254960bd68e23d
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, annonces publicitaires, publicité, gestion des erreurs, javascript"
+ms.openlocfilehash: 5b3e9b66ea0b52e9a44b6c71c3d7107a86b038df
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="error-handling-in-javascript-walkthrough"></a>Gestion des erreurs dans la procédure pas à pas pour JavaScript
 
 
 
 
-Cet article indique comment intercepter les erreurs [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) dans votre application.
+Cette rubrique montre comment intercepter les erreurs [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) dans votre application.
 
-Ces exemples partent du principe que vous disposez d’une application JavaScript/HTML qui contient un **AdControl**. Pour obtenir des instructions pas à pas qui montrent comment ajouter un **AdControl** à votre application, voir [AdControl en HTML 5 JavaScript](adcontrol-in-html-5-and-javascript.md). Pour un exemple de projet complet illustrant l’ajout de bannières publicitaires à une application HTML/JavaScript, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
+Ces exemples partent du principe que vous disposez d’une application JavaScript/HTML qui contient un **AdControl**. Pour obtenir des instructions pas à pas qui montrent comment ajouter un **AdControl** à votre application, voir [AdControl en HTML5 JavaScript](adcontrol-in-html-5-and-javascript.md). Pour un exemple de projet complet illustrant l’ajout de bannières publicitaires à une application HTML/JavaScript, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
 1.  Dans le fichier default.html, ajoutez une valeur pour l’événement **onErrorOccurred** où vous définissez les options **data-win-options** dans l’élément **div** du contrôle **AdControl**. Recherchez le code ci-dessous dans le fichier default.html.
 
@@ -86,4 +83,3 @@ Ces exemples partent du principe que vous disposez d’une application JavaScrip
 * [Exemples de publicité sur GitHub](http://aka.ms/githubads)
 
  
-

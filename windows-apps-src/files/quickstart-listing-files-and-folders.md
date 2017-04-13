@@ -8,17 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: def5e4e75f4208eb91f129160807728e57322064
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 7da7002a95c107e64278e8bc67064542ed183d8b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>Énumérer et interroger des fichiers et dossiers
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Accédez aux fichiers et dossiers dans un dossier, une bibliothèque, un appareil ou un emplacement réseau. Vous pouvez également interroger les fichiers et dossiers d’un emplacement en créant des requêtes de fichiers et de dossiers.
@@ -145,7 +143,7 @@ Dans cet exemple, nous utilisons d’abord la méthode [**StorageFolder.GetFiles
 > ```
 
 
-> **Remarque** En C# ou Visual Basic, n’oubliez pas de placer le mot-clé **async** dans la déclaration de toutes les méthodes dans lesquelles vous utilisez l’opérateur **await**.
+> **Remarque** EnC# ou VisualBasic, n’oubliez pas de placer le mot-clé **async** dans la déclaration de toutes les méthodes dans lesquelles vous utilisez l’opérateur **await**.
  
 
 Vous pouvez aussi utiliser la méthode [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) pour obtenir tous les éléments (fichiers et sous-dossiers) figurant dans un emplacement particulier. L’exemple suivant utilise la méthode **GetItemsAsync** pour obtenir tous les fichiers et sous-dossiers figurant dans le dossier racine de la propriété [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (pas dans les sous-dossiers). L’exemple affiche ensuite le nom de chaque fichier et sous-dossier. Si l’élément est un sous-dossier, l’exemple ajoute `"folder"` au nom.
@@ -330,4 +328,3 @@ July ‎2015 (2)
    MyImage1.png
    MyImage2.png
 ```
-

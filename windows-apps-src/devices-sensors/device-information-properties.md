@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dbe72dd476903083518dcf4b9d299b04e87f6e85
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 68e427a4d94b7c599e1fec375f0f66b5ff2704e0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="device-information-properties"></a>Propriétés d’informations d’appareil
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -77,9 +75,9 @@ Certaines propriétés sont communes à tous les objets [**DeviceInformationKind
 
 | Nom                              | Type       | Description                                                                                                                                                        |
 |-----------------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **System.Devices.Category**       | Chaîne\[\] | Liste de descriptions des catégories auxquelles l’appareil appartient. Cette liste est fournie sous la forme de catégories singulières. Par exemple, « Affichage », « Téléphone » ou « Appareil audio ».  |
+| **System.Devices.Category**       | Chaîne\[\] | Liste de descriptions des catégories auxquelles l’appareil appartient. Cette liste est fournie sous la forme de catégories singulières. Par exemple, «Affichage», «Téléphone» ou «Appareil audio».  |
 | **System.Devices.CategoryIds**    | Chaîne\[\] | Contient la liste des catégories auxquelles cet appareil appartient. Par exemple, **Audio.Headphone**, **Display.Monitor** ou **Input.Gaming**.                                  |
-| **System.Devices.CateogryPlural** | Chaîne\[\] | Liste de descriptions des catégories auxquelles l’appareil appartient. Cette liste est fournie sous la forme de catégories plurielles. Par exemple, « Affichages », « Téléphones » ou « Appareils audio ». |
+| **System.Devices.CateogryPlural** | Chaîne\[\] | Liste de descriptions des catégories auxquelles l’appareil appartient. Cette liste est fournie sous la forme de catégories plurielles. Par exemple, «Affichages», «Téléphones» ou «Appareils audio». |
 | **System.Devices.CompatibleIds**  | Chaîne\[\] | Collection d’ID compatibles pour tous les objets **DeviceInformationKind.Device** enfants.                                                                       |
 | **System.Devices.Connected**      | Booléen    | Indique si l’appareil est connecté au système ou non.                                                                                          |
 | **System.Devices.GlyphIcon**      | Chaîne     | Chemin d’accès à l’icône pour le glyphe.                                                                                                                                           |
@@ -161,4 +159,3 @@ Certaines propriétés sont communes à tous les objets [**DeviceInformationKind
  
 
  
-

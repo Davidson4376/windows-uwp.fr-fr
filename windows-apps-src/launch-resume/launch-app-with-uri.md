@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp
 ms.openlocfilehash: 6dceda60b60b29f772ec4fab8b142b45cc387e75
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-an-app-with-a-uri"></a>Lancer une application avec un URI
 
-Cette section explique comment utiliser un URI (Uniform Resource Identifier) pour lancer une application à partir d’une autre application, permettant de répondre à des scénarios mettant en œuvre deux applications.
+Cette section explique comment utiliser un URI (Uniform Resource Identifier) pour lancer une application à partir d’une autre application, permettant de répondre à des scénarios mettant en œuvre deuxapplications.
 
 | Rubrique | Description |
 |-------|-------------|
@@ -27,7 +24,7 @@ Cette section explique comment utiliser un URI (Uniform Resource Identifier) pou
 | [Lancer une application pour obtenir des résultats](how-to-launch-an-app-for-results.md) | Découvrez comment démarrer une application à partir d’une autre, et échanger des données entre les deux. On parle de démarrage d’une application pour afficher les résultats. |
 | [Sélectionner et enregistrer des tonalités à l’aide du schéma d’URI ms-tonepicker](launch-ringtone-picker.md) | Cette rubrique décrit le schéma d’URI ms-tonepicker et explique comment il affiche un outil permettant de sélectionner une tonalité, d’enregistrer une tonalité et de lui attribuer un nom convivial. |
 | [Lancer l’application Paramètres Windows](launch-settings-app.md) | Découvrez comment lancer l’application Paramètres Windows à partir de votre application. Cette rubrique décrit le schéma d’URI ms-settings. Utilisez ce schéma d’URI pour lancer l’application Paramètres Windows en ouvrant des pages de paramètres spécifiques. |
-| [Lancer l’application du Windows Store](launch-store-app.md) | Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application du Windows Store sur des pages spécifiques du Windows Store. |
+| [Lancer l’application du WindowsStore](launch-store-app.md) | Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application du WindowsStore sur des pages spécifiques du WindowsStore. |
 | [Lancer l’application Cartes Windows](launch-maps-app.md) | Découvrez comment lancer l’application Cartes Windows à partir de votre application. |
 | [Lancer l’application Contacts](launch-people-apps.md) | Cette rubrique décrit le schéma d’URI ms-people. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour effectuer des actions spécifiques. |
 | [Prise en charge de la liaison application-site web avec les gestionnaires d’URI d’application](web-to-app-linking.md) | Rendez votre application plus attractive avec des gestionnaires d’URI d’application. |

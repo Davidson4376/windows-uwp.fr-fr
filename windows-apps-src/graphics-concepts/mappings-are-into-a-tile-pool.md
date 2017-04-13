@@ -2,45 +2,41 @@
 title: Mappages dans un pool de vignettes
 description: "Lorsqu’une ressource est créée en tant que ressource de diffusion en continu, les vignettes qui la constituent proviennent du pointage dans des emplacements d’un pool de vignettes. Un pool de vignettes est un pool de mémoire (pris en charge par une ou plusieurs allocations masquées, auxquelles l’application n’a pas accès)."
 ms.assetid: 58B8DBD5-62F5-4B94-8DD1-C7D57A812185
-keywords:
-- Mappages dans un pool de vignettes
+keywords: Mappages dans un pool de vignettes
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9c8ba46cdd1968fd72307849005f91aa5e872260
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: bc5787333c266491e432abbb3c5039f73bdeb1f2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="mappings-are-into-a-tile-pool"></a>Mappages dans un pool de vignettes
 
 
-Lorsqu’une ressource est créée en tant que ressource de diffusion en continu, les vignettes qui la constituent proviennent du pointage dans des emplacements d’un pool de vignettes. Un pool de vignettes est un pool de mémoire (pris en charge par une ou plusieurs allocations masquées, auxquelles l’application n’a pas accès). Le système d’exploitation et le pilote d’affichage gèrent ce pool de mémoire ; l’encombrement de mémoire est facilement appréhendé par les applications. Les ressources de diffusion en continu mappent des régions de 64 Ko en pointant vers des emplacements d’un pool de vignettes. Cette configuration permet à plusieurs ressources de partager et de réutiliser les mêmes vignettes, et prend en charge la réutilisation des mêmes vignettes à différents emplacements d’une ressource, en fonction des besoins.
+Lorsqu’une ressource est créée en tant que ressource de diffusion en continu, les vignettes qui la constituent proviennent du pointage dans des emplacements d’un pool de vignettes. Un pool de vignettes est un pool de mémoire (pris en charge par une ou plusieurs allocations masquées, auxquelles l’application n’a pas accès). Le système d’exploitation et le pilote d’affichage gèrent ce pool de mémoire; l’encombrement de mémoire est facilement appréhendé par les applications. Les ressources de diffusion en continu mappent des régions de 64Ko en pointant vers des emplacements d’un pool de vignettes. Cette configuration permet à plusieurs ressources de partager et de réutiliser les mêmes vignettes, et prend en charge la réutilisation des mêmes vignettes à différents emplacements d’une ressource, en fonction des besoins.
 
-Avec cette méthode flexible d’intégration des vignettes d’une ressource à partir d’un pool de vignettes, la ressource est chargée de la définition et de la gestion des mappages des vignettes du pool requises. Les mappages de vignettes peuvent être modifiés. En outre, il n’est pas nécessaire de mapper simultanément l’ensemble des vignettes d’une ressource ; cette dernière peut présenter des mappages **NULL**. Un mappage **NULL** définit une vignette comme non disponible, du point de vue de la ressource qui y accède.
+Avec cette méthode flexible d’intégration des vignettes d’une ressource à partir d’un pool de vignettes, la ressource est chargée de la définition et de la gestion des mappages des vignettes du pool requises. Les mappages de vignettes peuvent être modifiés. En outre, il n’est pas nécessaire de mapper simultanément l’ensemble des vignettes d’une ressource; cette dernière peut présenter des mappages **NULL**. Un mappage **NULL** définit une vignette comme non disponible, du point de vue de la ressource qui y accède.
 
 Plusieurs pools de vignettes peuvent être créés, et un nombre illimité de ressources de diffusion en continu peuvent mapper simultanément sur un pool de vignettes donné. Les pools de vignettes peuvent être augmentés ou réduits. Pour plus d’informations, voir [Redimensionnement d’un pool de vignettes](tile-pool-resizing.md). Pour que l’implémentation du disque d’affichage et de l’exécution puisse être simplifiée, une ressource donnée de diffusion en continu peut présenter des mappages dans un seul pool de vignettes simultanément.
 
 Le volume de stockage associé à une ressource de diffusion en continu (mémoire indépendante du pool de vignettes) est plus ou moins proportionnel au nombre de vignettes mappées sur le pool à un moment donné. Avec le matériel, cela revient en fin de compte à mettre à l’échelle l’encombrement de mémoire associé au stockage de la table de page en fonction des vignettes mappées (par exemple, utiliser un schéma multiniveau approprié de table de page).
 
-Le pool de vignettes peut être considéré comme une abstraction exclusivement logicielle permettant aux applications Direct3D de programmer les tables de page sur le processeur graphique (GPU), sans avoir à connaître les détails d’implémentation de niveau inférieur (ou traiter directement avec des adresses de pointeur). Les pools de vignettes n’appliquent aucun niveau supplémentaire d’indirection dans le matériel. Les optimisations d’une table de page de niveau unique exécutées à l’aide de constructions comme les répertoires de page sont indépendantes du concept de pool de vignettes.
+Le pool de vignettes peut être considéré comme une abstraction exclusivement logicielle permettant aux applicationsDirect3D de programmer les tables de page sur le processeur graphique(GPU), sans avoir à connaître les détails d’implémentation de niveau inférieur (ou traiter directement avec des adresses de pointeur). Les pools de vignettes n’appliquent aucun niveau supplémentaire d’indirection dans le matériel. Les optimisations d’une table de page de niveau unique exécutées à l’aide de constructions comme les répertoires de page sont indépendantes du concept de pool de vignettes.
 
 Découvrons ensemble quel serait, dans le pire des cas, le besoin en stockage de la table de page (bien qu’en pratique les implémentations nécessitent uniquement un volume de stockage plus ou moins proportionnel au contenu mappé).
 
-Supposons que chacune des entrées de la table de page représente 64 bits.
+Supposons que chacune des entrées de la table de page représente 64bits.
 
-Pour la prévision la plus pessimiste de taille de table de page pour une surface unique, compte tenu des limites des ressources dans Direct3D 11, supposons qu’une ressource de diffusion en continu soit créée avec un format de 128 bits par élément (par exemple, une valeur flottante RVBA) ; une vignette de 64 Ko comporte alors uniquement 4 096 pixels. La taille maximale prise en charge de [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526), de 16 384\*16 384\*2 048 (avec uniquement une seule image bitmap), nécessite environ 1 Go de stockage dans la table de page si les éléments sont renseignés exclusivement (sans mipmap) avec des entrées de table de 64 bits. Dans le pire des cas, l’ajout de mipmaps provoque l’accroissement du stockage de la table de page entièrement mappé d’environ un tiers ; il est alors d’environ 1,3 Go.
+Pour la prévision la plus pessimiste de taille de table de page pour une surface unique, compte tenu des limites des ressources dans Direct3D11, supposons qu’une ressource de diffusion en continu soit créée avec un format de 128bits par élément (par exemple, une valeur flottante RVBA); une vignettede 64Ko comporte alors uniquement4096pixels. La taille maximale prise en charge de [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526), de 16384\*16384\*2048 (avec uniquement une seule image bitmap), nécessite environ 1Go de stockage dans la table de page si les éléments sont renseignés exclusivement (sans mipmap) avec des entrées de table de 64bits. Dans le pire des cas, l’ajout de mipmaps provoque l’accroissement du stockage de la table de page entièrement mappé d’environ un tiers; il est alors d’environ 1,3Go.
 
-Dans cette configuration, vous aurez accès à environ 10 6 téraoctets de mémoire adressable. Toutefois, il peut exister une limite de quantité de mémoire adressable. Le cas échéant, ces volumes sont réduits, éventuellement autour d’un téraoctet.
+Dans cette configuration, vous aurez accès à environ 106téraoctets de mémoire adressable. Toutefois, il peut exister une limite de quantité de mémoire adressable. Le cas échéant, ces volumes sont réduits, éventuellement autour d’un téraoctet.
 
-Il est également pertinent d’étudier la ressource de diffusion en continu [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) de 16 384\*16 384 avec un format de 32 bits par élément, avec des mipmaps. L’espace requis pour une table de page entièrement renseignée sera d’environ 170 Ko, avec des entrées de table de 64 bits;
+Il est également pertinent d’étudier la ressource de diffusion en continu [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) de 16384\*16384 avec un format de 32bits par élément, avec des mipmaps. L’espace requis pour une table de page entièrement renseignée sera d’environ 170Ko, avec des entrées de table de 64bits;
 
-Enfin, considérons un exemple valorisant le format BC, par exemple BC7, avec 128 bits par vignette de 4x4 pixels. Un pixel comporte un octet. Une ressource [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) de 16 384\*16 384\*2 048 comprenant des mipmaps nécessiterait environ 85 Mo d’espace pour renseigner entièrement cette mémoire dans une table de page. Cela n’est pas si mal, car cela permet à une ressource de diffusion en continu de couvrir 550 gigapixels (512 Go de mémoire dans ce cas).
+Enfin, considérons un exemple valorisant le formatBC, par exemple BC7, avec 128bits par vignette de 4x4pixels. Un pixel comporte un octet. Une ressource [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) de 16384\*16384\*2048 comprenant des mipmaps nécessiterait environ 85Mo d’espace pour renseigner entièrement cette mémoire dans une table de page. Cela n’est pas si mal, car cela permet à une ressource de diffusion en continu de couvrir 550gigapixels(512Go de mémoire dans ce cas).
 
 Dans la pratique, la définition de ces mappages intégraux est impossible, dans la mesure où la quantité de mémoire physique disponible est bien insuffisante pour des opérations de mappage et de référencement simultanées d’un tel volume. Cependant, avec un pool de vignettes, les applications pourraient opter pour la réutilisation des vignettes (prenons l’exemple simple de réutilisation d’une vignette de couleur noire pour les régions noires d’une image) via le pool de vignettes (mappages de table de page) comme outil pour la compression de mémoire.
 
@@ -86,7 +82,6 @@ L’ensemble des entrées de la table de page sont initialement définies sur **
  
 
  
-
 
 
 

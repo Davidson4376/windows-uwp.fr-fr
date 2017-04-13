@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, jeux, textures, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: Windows10, uwp, jeux, textures, directx
 ms.openlocfilehash: cc25d7bcc5809dd10b43418ccd42f78c10d1336e
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="apply-textures-to-primitives"></a>Appliquer des textures aux primitives
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Dans cette rubrique, nous chargeons des données de texture brutes et les appliquons à une primitive 3D à l’aide du cube que nous avons créé à la rubrique [Utilisation de la profondeur et d’effets sur des primitives](using-depth-and-effects-on-primitives.md). Nous introduisons aussi un modèle simple de produits/points d’éclairage, où la tonalité (plus clair ou plus sombre) des surfaces du cube se détermine en fonction de leur distance et de l’angle relatifs à une source de lumière.
 
@@ -522,12 +519,11 @@ Comme nous l’avons vu dans les didacticiels précédents, nous appelons [**IDX
 ## <a name="summary"></a>Récapitulatif
 
 
-Nous avons chargé les données de texture brutes et les avons appliquées à une primitive 3D.
+Nous avons chargé les données de texture brutes et les avons appliquées à une primitive3D.
 
  
 
  
-
 
 
 

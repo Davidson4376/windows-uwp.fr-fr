@@ -1,6 +1,6 @@
 ---
 author: DelfCo
-description: "Utilisez HttpClient et le reste de l’API d’espace de noms Windows.Web.Http pour envoyer et recevoir des informations à l’aide des protocoles HTTP 2.0 et HTTP 1.1."
+description: "Utilisez HttpClient et le reste de l’API d’espace de noms Windows.Web.Http pour envoyer et recevoir des informations à l’aide des protocoles HTTP 2.0 et HTTP 1.1."
 title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
 ms.author: bobdel
@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fad4c4c215c209971d2a76b4c1ac6f160f8ebced
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: c29d1d0a9595958aaa2872488f131b59ee278161
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="httpclient"></a>HttpClient
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -108,7 +105,7 @@ catch (Exception ex)
 
 Une exception est levée quand une chaîne d’URI non valide est transmise au constructeur pour l’objet [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998).
 
-**.NET :** le type [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) apparaît sous la forme [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) en C# et VB.
+**.NET:** le type [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) apparaît sous la forme [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) en C# et VB.
 
 En C# et Visual Basic, cette erreur peut être évitée en utilisant la classe [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) dans .NET 4.5 et l’une des méthodes [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) pour tester la chaîne envoyée par un utilisateur avant la construction de l’URI.
 
@@ -121,5 +118,4 @@ Quand une exception se produit dans une application utilisant .NET Framework 4.5
 Quand une exception se produit dans une application utilisant le C++ managé et que cette application est en cours d’exécution, [Platform::Exception](http://msdn.microsoft.com/library/windows/apps/hh755825.aspx) représente une erreur. La propriété [Platform::Exception::HResult](http://msdn.microsoft.com/library/windows/apps/hh763371.aspx) renvoie la valeur **HRESULT** affectée à l’exception spécifique. La propriété [Platform::Exception::Message](http://msdn.microsoft.com/library/windows/apps/hh763375.aspx) renvoie la chaîne fournie par le système associée à la valeur **HRESULT**. Les valeurs **HRESULT** possibles sont répertoriées dans le fichier d’en-tête *Winerror.h*. Une application peut effectuer un filtrage sur des valeurs **HRESULT** spécifiques pour modifier son comportement en fonction de la cause de l’exception.
 
 Pour la plupart des erreurs de validation de paramètre, la valeur **HRESULT** renvoyée est **E\_INVALIDARG**. Pour certains appels de méthodes non conformes, la valeur **HRESULT** renvoyée est **E\_ILLEGAL\_METHOD\_CALL**.
-
 

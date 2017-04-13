@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d24d1ff9408585246aae4c4849d3af5e8f4846be
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: a2220b8c31877efdbef6a102efdb32158a709939
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="networking-basics"></a>Notions de base en matière de réseau
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Ce que vous devez faire pour toute application réseau.
 
@@ -44,7 +41,7 @@ D’autres fonctionnalités peuvent être nécessaires pour votre application da
 
 ## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>Communication lorsque votre application n’est pas au premier plan
 
-[Prise en charge de votre application avec des tâches en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt299103) contient des informations générales sur l’utilisation des tâches en arrière-plan pour effectuer des tâches lorsque votre application n’est pas au premier plan. Plus précisément, votre code doit prévoir des mesures spéciales pour que votre application soit notifiée quand elle n’est pas au premier plan et que des données qui lui sont destinées arrivent sur le réseau. À cette fin, dans Windows 8, vous utilisiez des déclencheurs de canal de contrôle qui sont toujours pris en charge dans Windows 10. Pour des informations complètes sur l’utilisation de déclencheurs de canal de contrôle, voir [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032). Une nouvelle technologie dans Windows 10 assure une meilleure fonctionnalité à moindre coût dans certaines situations. C’est, par exemple, le cas des sockets de flux à extension push : le broker de socket et les déclencheurs d’activité de socket.
+[Prise en charge de votre application avec des tâches en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt299103) contient des informations générales sur l’utilisation des tâches en arrière-plan pour effectuer des tâches lorsque votre application n’est pas au premier plan. Plus précisément, votre code doit prévoir des mesures spéciales pour que votre application soit notifiée quand elle n’est pas au premier plan et que des données qui lui sont destinées arrivent sur le réseau. À cette fin, dans Windows8, vous utilisiez des déclencheurs de canal de contrôle qui sont toujours pris en charge dans Windows10. Pour des informations complètes sur l’utilisation de déclencheurs de canal de contrôle, voir [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032). Une nouvelle technologie dans Windows10 assure une meilleure fonctionnalité à moindre coût dans certaines situations. C’est, par exemple, le cas des sockets de flux à extension push: le broker de socket et les déclencheurs d’activité de socket.
 
 Si votre application utilise [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) ou[**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906), elle peut transférer la propriété d’un socket ouvert à un broker de socket fourni par le système, puis quitter le premier plan, ou même s’arrêter. Quand une connexion est établie sur le socket transféré, ou quand du trafic arrive sur ce socket, votre application ou sa tâche en arrière-plan désignée sont activées. Si votre application n’est pas en cours d’exécution, elle est démarrée. Le broker de socket avertit alors votre application à l’aide d’un [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) qu’un nouveau trafic est arrivé. Votre application récupère le socket à partir du broker de socket et traite le trafic sur le socket. Cela signifie que votre application consomme beaucoup moins de ressources système quand elle ne traite pas activement le trafic réseau.
 
@@ -376,7 +373,7 @@ Comment fournir des informations d’authentification lors d’une connexion via
 
 La classe [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) prend en charge l’utilisation des protocoles SSL/TLS pour authentifier le serveur avec lequel l’application communique. Dans certains cas, l’application doit également s’authentifier auprès du serveur à l’aide d’un certificat client TLS. Dans Windows 10, vous pouvez prévoir un certificat client sur l’objet [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) (cela doit être défini avant le début de la négociation TLS). Si le serveur demande le certificat client, Windows répond avec le certificat fourni.
 
-Voici un extrait de code montrant comment implémenter cela :
+Voici un extrait de code montrant comment implémenter cela:
 
 ```csharp
 var socket = new StreamSocket();
@@ -387,23 +384,20 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 ### <a name="providing-authentication-credentials-to-a-web-service"></a>Transmission d’informations d’identification d’authentification à un service Web
 
-Les API réseau qui permettent aux applications d’interagir avec les services web sécurisés fournissent chacune leurs propres méthodes pour initialiser un client ou pour définir un en-tête de demande avec les informations d’identification d’authentification du serveur et du proxy. Chaque méthode est définie par un objet [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) qui indique un nom d’utilisateur, un mot de passe et la ressource pour laquelle ces informations d’identification sont utilisées. Le tableau suivant fournit un mappage de ces API :
+Les API réseau qui permettent aux applications d’interagir avec les services web sécurisés fournissent chacune leurs propres méthodes pour initialiser un client ou pour définir un en-tête de demande avec les informations d’identification d’authentification du serveur et du proxy. Chaque méthode est définie par un objet [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) qui indique un nom d’utilisateur, un mot de passe et la ressource pour laquelle ces informations d’identification sont utilisées. Le tableau suivant fournit un mappage de ces API:
 
 | **WebSockets** | [**MessageWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226848) |
 |-------------------------|----------------------------------------------------------------------------------------------------------|
 |  | [**MessageWebSocketControl.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br226847) |
 |  | [**StreamWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226928) |
 |  | [**StreamWebSocketControl.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br226927) |
-|  |  |
 | **Transfert en arrière-plan** | [**BackgroundDownloader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701076) |
 |  | [**BackgroundDownloader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701068) |
 |  | [**BackgroundUploader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701184) |
 |  | [**BackgroundUploader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701178) |
-|  |  |
 | **Syndication** | [**SyndicationClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702355) |
 |  | [**SyndicationClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461) |
 |  | [**SyndicationClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459) |
-|  |  |
 | **AtomPub** | [**AtomPubClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702262) |
 |  | [**AtomPubClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243428) |
 |  | [**AtomPubClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243423) |
@@ -416,14 +410,13 @@ Quand des applications Windows universelles lèvent un exception, votre gestionn
 
 Chaque projection de langage prend en charge une méthode permettant d’accéder à ces informations plus détaillées. Une exception est projetée en tant que valeur **HRESULT** dans les applications Windows universelles. Le fichier include *Winerror.h* contient une très grande liste de valeurs **HRESULT** possibles qui comprend des erreurs réseau.
 
-Les API de réseau prennent en charge différentes méthodes permettant de récupérer ces informations détaillées sur la cause d’une exception :
+Les API de réseau prennent en charge différentes méthodes permettant de récupérer ces informations détaillées sur la cause d’une exception:
 
 -   Certaines API fournissent une méthode d’assistance qui convertit la valeur **HRESULT** de l’exception en valeur d’énumération.
 -   D’autres API fournissent une méthode pour récupérer la valeur **HRESULT** réelle.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Améliorations de l’API de réseau dans Windows 10](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
+* [Améliorations de l’API de réseau dans Windows10](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
  
-
 

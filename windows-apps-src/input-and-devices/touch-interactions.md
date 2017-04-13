@@ -11,19 +11,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c78122e3bd1a860359cb482ff54fe7cfc673081e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f3eee810f11d1d079da8436ba6d7eac6d0982cb3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="touch-interactions"></a>Interactions tactiles
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Concevez votre application en partant du principe que l’entrée tactile sera la principale méthode d’entrée de vos utilisateurs. Si vous utilisez des contrôles UWP, la prise en charge du pavé tactile, de la souris et du stylet ne nécessite pas de programmation supplémentaire, car les applications UWP proposent cette fonctionnalité gratuitement.
 
-Sachez cependant qu’une interface utilisateur optimisée pour les entrées tactiles ne se révèle pas toujours supérieure à une interface utilisateur classique. Les deux présentent des avantages et des inconvénients qui sont propres à une technologie et une application. Lorsque l’on cible une interface utilisateur principalement tactile, il est important de connaître les différences fondamentales qui existent entre les différentes entrées : tactile (y compris le pavé tactile), stylet, souris et clavier.
+Sachez cependant qu’une interface utilisateur optimisée pour les entrées tactiles ne se révèle pas toujours supérieure à une interface utilisateur classique. Les deux présentent des avantages et des inconvénients qui sont propres à une technologie et une application. Lorsque l’on cible une interface utilisateur principalement tactile, il est important de connaître les différences fondamentales qui existent entre les différentes entrées: tactile (y compris le pavé tactile), stylet, souris et clavier.
 
 <div class="important-apis" >
 <b>API importantes</b><br/>
@@ -73,7 +70,7 @@ Le tableau suivant présente certaines des différences qui existent entre les p
 <tr><td rowspan="3">Anatomie humaine</td><td>Les mouvements effectués avec le bout du doigt sont imprécis, car le traçage d’une ligne droite avec un ou plusieurs doigts est difficile à réaliser. Cela s’explique par la courbure des articulations de la main et le nombre d’articulations impliquées dans le mouvement.</td><td>Il est plus facile de tracer un mouvement de ligne droite avec la souris ou le stylo/stylet, car la main qui les contrôle parcourt une distance plus courte que le curseur sur l’écran.</td><td>Comme la souris.</td></tr>
 <tr><td>Certaines zones situées sur la surface tactile d’un périphérique d’affichage peuvent être difficiles à atteindre en raison de la posture des doigts et de la prise en main du périphérique par l’utilisateur.</td><td>La souris et le stylo/stylet peuvent accéder à toutes les parties de l’écran, et n’importe quel contrôle est accessible par le clavier via l’ordre des onglets. </td><td>La posture des doigts et la prise en main peuvent poser problème.</td></tr>
 <tr><td>Le bout des doigts ou la main de l’utilisateur peuvent masquer des objets. C’est ce que l’on appelle l’« occlusion ».</td><td>Les périphériques d’entrée indirects ne provoquent pas d’occlusion.</td><td>Comme la souris.</td></tr>
-<tr><td>État de l’objet</td><td>L’interaction tactile utilise un modèle à deux états : la surface tactile du périphérique d’affichage est touchée (activée) ou non touchée (désactivée) par l’utilisateur. Il n’existe pas d’état de pointage susceptible de déclencher un retour visuel supplémentaire.</td><td>
+<tr><td>État de l’objet</td><td>L’interaction tactile utilise un modèle à deux états: la surface tactile du périphérique d’affichage est touchée (activée) ou non touchée (désactivée) par l’utilisateur. Il n’existe pas d’état de pointage susceptible de déclencher un retour visuel supplémentaire.</td><td>
 <p>Une souris, un stylo/stylet et un clavier exposent tous un modèle à trois états : soulevé (activé), appuyé (activé) et pointé (focus).</p>
 <p>Le pointage permet à l’utilisateur d’explorer et de découvrir les éléments à l’aide d’info-bulles associées aux éléments de l’interface utilisateur. Les effets de pointage et de focus peuvent transmettre les objets qui sont interactifs et aident également au ciblage. 
 </p>
@@ -141,7 +138,7 @@ Pour éviter l’occlusion du doigt et de la main, respectez les recommandations
 
 -   Poignées de précision
 
-    Pour les actions de précision (par exemple, la sélection de texte), insérez des poignées de sélection décalées afin d’augmenter le degré d’exactitude. Pour plus d’informations, voir [Recommandations en matière de sélection de texte et d’images (applications Windows Runtime)](guidelines-for-textselection.md).
+    Pour les actions de précision (par exemple, la sélection de texte), insérez des poignées de sélection décalées afin d’augmenter le degré d’exactitude. Pour plus d’informations, voir [Recommandations en matière de sélection de texte et d’images (applications WindowsRuntime)](guidelines-for-textselection.md).
 
 ## <a name="timing"></a>Chronométrage
 
@@ -162,7 +159,7 @@ En outre, nous vous encourageons vivement à tenir compte des recommandations su
 -   Les interactions doivent prendre en charge les manipulations composées. Par exemple, resserrez les doigts pour zoomer tout en les faisant glisser pour effectuer un mouvement panoramique.
 -   Ne classez pas les interactions en fonction du temps. Une même interaction doit avoir le même résultat, quel que soit le temps pris pour l’effectuer. Les activations temporelles impliquent des délais obligatoires à respecter par l’utilisateur. Par ailleurs, elles portent atteinte non seulement à la nature immersive des manipulations directes, mais également à la perception de la réactivité du système.
 
-    **Remarque** Il existe une exception à cette règle : quand vous utilisez des interactions chronométrées à titre d’aide à l’apprentissage et à l’exploration (par exemple, l’appui prolongé).
+    **Remarque** Il existe une exception à cette règle: quand vous utilisez des interactions chronométrées à titre d’aide à l’apprentissage et à l’exploration (par exemple, l’appui prolongé).
 
      
 
@@ -647,7 +644,6 @@ Tous les événements de pointeur, événements de mouvement et événements de 
  
 
  
-
 
 
 

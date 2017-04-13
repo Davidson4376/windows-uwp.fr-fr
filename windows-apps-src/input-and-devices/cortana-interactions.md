@@ -11,18 +11,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b3adb444389716274f32d1f62af026b625624ea7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9442787d187bab77adc0b24d1f270d7ceffc9092
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="cortana-interactions-in-uwp-apps"></a>Interactions avec Cortana dans les applications UWP
+# <a name="cortana-interactions-in-uwp-apps"></a>Interactions avec Cortana dans les applicationsUWP
 
 Cortana propose une infrastructure d’extensibilité robuste et complète qui vous permet d’incorporer en toute transparence des fonctionnalités de votre application ou service dans l’expérience Cortana.
 
-## <a name="weve-moved"></a>Nous avons déménagé !
+## <a name="weve-moved"></a>Nous avons déménagé!
 
 Toute la documentation développeur relative aux fonctionnalités et services Cortana est désormais disponible via le [Centre de développement Cortana](https://developer.microsoft.com/en-us/cortana).
 
@@ -32,7 +29,7 @@ Pour savoir comment étendre Cortana avec les fonctionnalités d’une applicati
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [**Éléments et attributs d’un fichier VCD v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+* [**Éléments et attributs d’un fichier VCDv1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
 **Concepteurs**
 * [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
@@ -43,7 +40,6 @@ Pour savoir comment étendre Cortana avec les fonctionnalités d’une applicati
  
 
  
-
 
 
 

@@ -8,20 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 30f73484bde4948e4b0bac5609197f08be5968a0
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 2643606fa3dcbf1c95669bb09bef0aae49f86529
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="transforms-overview"></a>Vue d’ensemble des transformations
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Apprenez à utiliser les transformations dans l’API Windows Runtime, en changeant le système de coordonnées relatives des éléments dans l’interface utilisateur. Cela permet de modifier l’apparence d’éléments XAML, par exemple avec la mise à l’échelle, la rotation ou la transformation de la position dans l’espace x-y.
+Apprenez à utiliser les transformations dans l’API WindowsRuntime, en changeant le système de coordonnées relatives des éléments dans l’interface utilisateur. Cela permet de modifier l’apparence d’éléments XAML, par exemple avec la mise à l’échelle, la rotation ou la transformation de la position dans l’espace x-y.
 
 ## <a name="span-idwhatisatransformspanspan-idwhatisatransformspanspan-idwhatisatransformspanwhat-is-a-transform"></a><span id="What_is_a_transform_"></span><span id="what_is_a_transform_"></span><span id="WHAT_IS_A_TRANSFORM_"></span>Qu’est-ce qu’une transformation ?
 
@@ -42,7 +39,7 @@ Vous pouvez combiner les transformations. Cette opération est prise en charge p
 
 Dans une disposition XAML, les transformations sont appliquées après la passe de disposition. Ainsi, les calculs relatifs à l’espace disponible et les autres décisions relatives à la mise en page ont été effectués avant l’application des transformations. La disposition étant prioritaire, vous aurez parfois des résultats inattendus si vous transformez des éléments situés dans une cellule [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) ou tout conteneur de disposition similaire qui alloue de l’espace durant la disposition. L’élément transformé peut paraître tronqué ou masqué, car il essaie de figurer dans une zone où n’ont pas été calculées les dimensions postérieures à la transformation durant la répartition de l’espace dans son conteneur parent. Vous devrez peut-être tester les résultats des transformations et modifier certains paramètres. Par exemple, au lieu de vous fier à la disposition adaptative et au redimensionnement proportionnel, vous devrez peut-être modifier les propriétés **Center** ou déclarer des mesures de pixels fixes pour l’espace de disposition pour vous assurer que le parent alloue suffisamment d’espace.
 
-**Remarque relative à la migration :**WPF (Windows Presentation Foundation) avait une propriété **LayoutTransform** qui appliquait les transformations avant la passe de disposition. Toutefois, Windows Runtime XAML ne prend pas en charge la propriété **LayoutTransform**. (Microsoft Silverlight ne disposait pas non plus de cette propriété.)
+**Remarque relative à la migration:**WPF (Windows Presentation Foundation) avait une propriété **LayoutTransform** qui appliquait les transformations avant la passe de disposition. Toutefois, Windows Runtime XAML ne prend pas en charge la propriété **LayoutTransform**. (MicrosoftSilverlight ne disposait pas non plus de cette propriété.)
 
 ## <a name="span-idapplyingatransformtoauielementspanspan-idapplyingatransformtoauielementspanspan-idapplyingatransformtoauielementspanapplying-a-transform-to-a-ui-element"></a><span id="Applying_a_transform_to_a_UI_element"></span><span id="applying_a_transform_to_a_ui_element"></span><span id="APPLYING_A_TRANSFORM_TO_A_UI_ELEMENT"></span>Application d’une transformation à un élément d’interface utilisateur
 
@@ -52,7 +49,7 @@ Par défaut, chaque transformation d’affichage est centrée au point d’origi
 
 Chaque fois que vous utilisez des transformations avec [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980), rappelez-vous qu’il existe une autre propriété pour [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) qui affecte le comportement de la transformation : [**RenderTransformOrigin**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.rendertransformorigin.aspx). **RenderTransformOrigin** déclare si l’ensemble de la transformation doit s’appliquer au point par défaut (0,0) d’un élément ou à un autre point d’origine dans l’espace de coordonnées relatif de cet élément. Pour les éléments classiques, (0,0) place la transformation dans le coin supérieur gauche. Selon l’effet souhaité, vous pouvez choisir de changer **RenderTransformOrigin** au lieu de modifier les valeurs **CenterX** et **CenterY** des transformations. Notez que si vous appliquez à la fois les valeurs **RenderTransformOrigin** et **CenterX** / **CenterY**, les résultats peuvent être assez déroutants, surtout si vous animez l’une des valeurs.
 
-Pour les besoins des tests de positionnement, un objet auquel une transformation est appliquée continue de répondre à l’entrée d’une manière attendue qui est cohérente avec son apparence visuelle dans l’espace x-y. Par exemple, si vous avez utilisé [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) pour déplacer un objet [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) de 400 pixels latéralement dans l’interface utilisateur, **Rectangle** répond aux événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx) quand l’utilisateur appuie à l’emplacement où **Rectangle** apparaît visuellement. Vous n’obtiendrez pas de faux événements si l’utilisateur appuie dans la zone où **Rectangle** se trouvait avant sa translation. En ce qui concerne les aspects relatifs à l’index Z qui affectent les tests de positionnement, l’application d’une transformation ne fait aucune différence. L’index Z, qui détermine l’élément qui gère les événements d’entrée pour un point de l’espace x-y, est toujours évalué en fonction de l’ordre enfant déclaré dans un conteneur. Cet ordre est généralement le même que celui dans lequel vous déclarez les éléments en XAML. Toutefois, pour les éléments enfants d’un objet [**Canvas**](https://msdn.microsoft.com/library/windows/apps/BR209267), vous pouvez modifier l’ordre en appliquant la propriété jointe [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx) aux éléments enfants.
+Pour les besoins des tests de positionnement, un objet auquel une transformation est appliquée continue de répondre à l’entrée d’une manière attendue qui est cohérente avec son apparence visuelle dans l’espace x-y. Par exemple, si vous avez utilisé [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) pour déplacer un objet [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) de 400 pixels latéralement dans l’interface utilisateur, **Rectangle** répond aux événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx) quand l’utilisateur appuie à l’emplacement où **Rectangle** apparaît visuellement. Vous n’obtiendrez pas de faux événements si l’utilisateur appuie dans la zone où **Rectangle** se trouvait avant sa translation. En ce qui concerne les aspects relatifs à l’indexZ qui affectent les tests de positionnement, l’application d’une transformation ne fait aucune différence. L’indexZ, qui détermine l’élément qui gère les événements d’entrée pour un point de l’espace x-y, est toujours évalué en fonction de l’ordre enfant déclaré dans un conteneur. Cet ordre est généralement le même que celui dans lequel vous déclarez les éléments en XAML. Toutefois, pour les éléments enfants d’un objet [**Canvas**](https://msdn.microsoft.com/library/windows/apps/BR209267), vous pouvez modifier l’ordre en appliquant la propriété jointe [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx) aux éléments enfants.
 
 ## <a name="span-idothertransformpropertiesspanspan-idothertransformpropertiesspanspan-idothertransformpropertiesspanother-transform-properties"></a><span id="Other_transform_properties"></span><span id="other_transform_properties"></span><span id="OTHER_TRANSFORM_PROPERTIES"></span>Autres propriétés de transformation
 
@@ -125,9 +122,9 @@ Certains outils de conception XAML qui vous permettent d’appliquer des opérat
 
 ## <a name="span-id3-dtransformsspanspan-id3-dtransformsspanspan-id3-dtransformsspan3-d-transforms"></a><span id="3-D_transforms"></span><span id="3-d_transforms"></span><span id="3-D_TRANSFORMS"></span>Transformations 3D
 
-Dans Windows 10, XAML a introduit une nouvelle propriété, [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx), qui peut être utilisée pour créer des effets 3D dans l’interface utilisateur. Pour ce faire, utilisez [**PerspectiveTransform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.media3d.perspectivetransform3d.aspx) pour ajouter une perspective 3D partagée ou « caméra » à votre scène, puis utilisez [**CompositeTransform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.media3d.compositetransform3d.aspx) pour transformer un élément au sein d’un espace en 3D, comme si vous utilisiez [**CompositeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228105). Pour plus d’informations sur comment implémenter des transformations 3D, voir [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx).
+Dans Windows10, XAML a introduit une nouvelle propriété, [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx), qui peut être utilisée pour créer des effets 3D dans l’interface utilisateur. Pour ce faire, utilisez [**PerspectiveTransform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.media3d.perspectivetransform3d.aspx) pour ajouter une perspective 3D partagée ou «caméra» à votre scène, puis utilisez [**CompositeTransform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.media3d.compositetransform3d.aspx) pour transformer un élément au sein d’un espace en 3D, comme si vous utilisiez [**CompositeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228105). Pour plus d’informations sur comment implémenter des transformations 3D, voir [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx).
 
- La propriété [**UIElement.Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection) peut être utilisée pour des effets 3D plus simples s’appliquant à un objet unique. L’utilisation de [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/br210192) en tant que valeur de cette propriété revient à appliquer une transformation de perspective fixe et une ou plusieurs transformations 3D à l’élément. Ce type de transformation est décrit de manière plus détaillée dans [Effets de perspective 3D pour une interface utilisateur en XAML](3-d-perspective-effects.md).
+ La propriété [**UIElement.Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection) peut être utilisée pour des effets 3D plus simples s’appliquant à un objet unique. L’utilisation de [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/br210192) en tant que valeur de cette propriété revient à appliquer une transformation de perspective fixe et une ou plusieurs transformations3D à l’élément. Ce type de transformation est décrit de manière plus détaillée dans [Effets de perspective 3D pour une interface utilisateur en XAML](3-d-perspective-effects.md).
 
 ## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>Rubriques connexes
 
@@ -138,7 +135,6 @@ Dans Windows 10, XAML a introduit une nouvelle propriété, [**UIElement.Transf
  
 
  
-
 
 
 

@@ -1,6 +1,6 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Cet article décrit les éléments de zoom et de redimensionnement Windows. Il fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications."
+Description: "Cette rubrique décrit les éléments de zoom et de redimensionnement Windows. Elle fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications."
 title: "Recommandations en matière de zoom optique et de redimensionnement"
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
 label: Optical zoom and resizing
@@ -10,19 +10,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 567c3bc66c78924bc33ec3a336db6e2ce8592d68
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 5598f5278b6d4aff1dd9ebd786c6a344e14529ec
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="optical-zoom-and-resizing"></a>Zoom optique et redimensionnement
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Cet article décrit les éléments de zoom et de redimensionnement Windows. Il fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications.
+Cet article décrit les éléments de zoom et de redimensionnement Windows. Elle fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications.
 
 <div class="important-apis" >
 <b>API importantes</b><br/>
@@ -38,30 +35,30 @@ Les interactions de zoom optique et de redimensionnement s’effectuent à l’a
 
 Les schémas suivants montrent les différences entre le redimensionnement et le zoom optique.
 
-**Zoom optique** : l’utilisateur sélectionne une zone, puis effectue un zoom sur la totalité de la zone.
+**Zoom optique**: l’utilisateur sélectionne une zone, puis effectue un zoom sur la totalité de la zone.
 
 ![resserrez les doigts pour faire un zoom avant et écartez-les pour faire un zoom arrière.](images/areazoom.png)
 
-**Redimensionnement** : l’utilisateur sélectionne un objet au sein d’une zone et le redimensionne.
+**Redimensionnement**: l’utilisateur sélectionne un objet au sein d’une zone et le redimensionne.
 
 ![resserrer les doigts pour rétrécir un objet et les écarter pour l’agrandir](images/objectresize.png)
 
 **Remarque**  
-Ne confondez pas le zoom optique avec le [zoom sémantique](../controls-and-patterns/semantic-zoom.md). Même si les mêmes gestes sont utilisés pour les deux interactions, le zoom sémantique désigne la présentation et la navigation du contenu organisé au sein d’une seule vue (par exemple, la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo).
+Ne confondez pas le zoom optique avec le [zoom sémantique](../controls-and-patterns/semantic-zoom.md). Même si les mêmes gestes sont utilisés pour les deuxinteractions, le zoom sémantique désigne la présentation et la navigation du contenu organisé au sein d’une seule vue (par exemple, la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo).
 
  
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
 
-Pour les applications prenant en charge le redimensionnement ou le zoom optique, tenez compte des recommandations suivantes :
+Pour les applications prenant en charge le redimensionnement ou le zoom optique, tenez compte des recommandations suivantes:
 
 -   Si des limites ou des contraintes de tailles maximale et minimale sont définies, utilisez le retour visuel pour indiquer quand l’utilisateur atteint ou dépasse ces limites.
 -   Utilisez des points d’ancrage pour influencer le comportement du zoom et du mouvement panoramique en spécifiant des points logiques où arrêter la manipulation et garantir qu’un sous-ensemble spécifique de contenu soit visible dans la fenêtre d’affichage. Prévoyez des points d’ancrage pour les niveaux de zoom ou les affichages logiques courants afin de faciliter leur sélection par l’utilisateur. Par exemple, une application de photographie peut prévoir un point d’ancrage de redimensionnement à 100 % ou, dans le cas d’une application de cartographie, les points d’ancrage peuvent s’avérer utiles dans les vues de la ville, de la province et du pays.
 
     Les points d’ancrage permettent à l’utilisateur d’exécuter correctement ces opérations, en exigeant moins de précision dans ses mouvements. Si vous utilisez XAML, reportez-vous aux propriétés de points d’ancrage de [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527). Pour JavaScript et HTML, utilisez [**-ms-content-zoom-snap-points**](https://msdn.microsoft.com/library/hh771895).
 
-    Il existe deux types de points d’ancrage :
+    Il existe deux types de points d’ancrage:
 
     -   De proximité : lorsque l’utilisateur met fin au contact, un point d’ancrage est sélectionné si l’inertie s’arrête au sein du seuil de distance du point d’ancrage. Les points d’ancrage de proximité permettent à un zoom ou à un redimensionnement de se terminer entre des points d’ancrage.
     -   Obligatoire : le point d’ancrage sélectionné est celui qui précède ou qui suit immédiatement le dernier point d’ancrage rencontré avant que l’utilisateur ait mis fin au contact (en fonction de la direction et de la vitesse du mouvement). Une manipulation doit prendre fin sur un point d’ancrage obligatoire.
@@ -90,7 +87,7 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
 * [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Exemples d’archive**
-* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Entrée: exemple d’événements d’entrée utilisateurXAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple de test de positionnement tactile](http://go.microsoft.com/fwlink/p/?linkid=231590)
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -101,7 +98,6 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
  
 
  
-
 
 
 

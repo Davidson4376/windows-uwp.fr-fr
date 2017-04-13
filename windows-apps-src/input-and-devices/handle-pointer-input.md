@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d93583c4d6eeaa8e81bda4672d38386f07e7dcc5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5923b02d2d41a9d5311f39cb02f0bc58f5f6188c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="handle-pointer-input"></a>Gérer les entrées du pointeur
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -50,7 +47,7 @@ Chaque point (ou contact) d’entrée sur la pile d’entrée est représenté p
 
 Les événements de pointeur exposent des informations de base, telles que l’état de détection (dans la plage ou au contact) et le type de périphérique. Ils exposent également des informations détaillées, telles que l’emplacement, la pression et la géométrie du contact. D’autres propriétés de périphérique spécifiques sont également disponibles. Elles indiquent sur quel bouton de souris l’utilisateur a appuyé ou si la gomme du stylet a été utilisée. Si une différenciation entre les périphériques d’entrée et leurs fonctionnalités est nécessaire dans le cadre de votre application, voir [Identifier des périphériques d’entrée](identify-input-devices.md).
 
-Les applications UWP peuvent écouter les événements de pointeur suivants :
+Les applications UWP peuvent écouter les événements de pointeur suivants:
 
 **Remarque**  Appelez [**CapturePointer**](https://msdn.microsoft.com/library/windows/apps/br208918) pour limiter les entrées du pointeur à un élément d’interface utilisateur spécifique. Lorsqu’un pointeur est capturé par un élément, seul cet objet reçoit les événements d’entrée de pointeur, même lorsque le pointeur se déplace à l’extérieur de la zone de délimitation de l’objet. Vous capturez généralement le pointeur dans un gestionnaire d’événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), car [**IsInContact**](https://msdn.microsoft.com/library/windows/apps/br227976) (bouton de souris enfoncé, interaction tactile ou stylet en contact) doit être défini sur true pour que **CapturePointer** réussisse.
 
@@ -146,7 +143,7 @@ Dans le cadre de cet exemple, nous utilisons un rectangle (`targetContainer`) co
 
 Les détails pour chaque pointeur sont affichés dans un bloc de texte flottant qui se déplace avec le pointeur. Les événements de pointeur eux-mêmes sont affichés à gauche du rectangle (pour signaler la séquence d’événements).
 
-Voici le code XAML (Extensible Application Markup Language) correspondant à cet exemple.
+Voici le codeXAML (Extensible Application Markup Language) correspondant à cet exemple.
 
 ```XAML
 <Page
@@ -662,7 +659,7 @@ Comme indiqué précédemment, vous devez obtenir les informations de pointeur l
 
 ### <a name="complete-example"></a>Exemple complet
 
-Le code C# correspondant à cet exemple est indiqué ci-après. Pour des liens vers des exemples plus complexes, voir la section Articles connexes, en bas de cette page.
+Le codeC# correspondant à cet exemple est indiqué ci-après. Pour des liens vers des exemples plus complexes, voir la section Articles connexes, en bas de cette page.
 
 ```CSharp
 using System;
@@ -1098,7 +1095,7 @@ namespace PointerInput
 * [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Exemples d’archive**
-* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Entrée: exemple d’événements d’entrée utilisateurXAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Entrée : exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple de manipulations et de mouvements (C++)](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [Entrée : exemple de test de positionnement tactile](http://go.microsoft.com/fwlink/p/?linkid=231590)
@@ -1107,7 +1104,6 @@ namespace PointerInput
  
 
  
-
 
 
 

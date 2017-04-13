@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, carte, localisation, clôture virtuelle, notifications"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 8a143359948e536d30efb425055969ae8ac0987f
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-up-a-geofence"></a>Configurer une clôture virtuelle
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Configurez une [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) dans votre application et découvrez comment gérer les notifications au premier plan et en arrière-plan.
@@ -56,7 +53,7 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 La méthode [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) demande à l’utilisateur l’autorisation d’accéder à son emplacement. L’utilisateur est invité une fois seulement (par application). Une fois la première autorisation accordée ou refusée, cette méthode ne demande plus d’autorisation. Pour aider l’utilisateur à modifier les autorisations d’emplacement une fois qu’il a été invité, nous vous recommandons de fournir un lien vers les paramètres d’emplacement, comme illustré plus loin dans cette rubrique.
 
-### <a name="step-2-register-for-changes-in-geofence-state-and-location-permissions"></a>Étape 2 : Inscrire les modifications d’autorisations d’emplacement et d’état de limite géographique
+### <a name="step-2-register-for-changes-in-geofence-state-and-location-permissions"></a>Étape2: Inscrire les modifications d’autorisations d’emplacement et d’état de limite géographique
 
 Dans cet exemple, une instruction **switch** est utilisée avec l’élément **accessStatus** (de l’exemple précédent) afin d’agir uniquement lorsque l’accès à l’emplacement de l’utilisateur est autorisé. Si l’accès à l’emplacement de l’utilisateur est autorisé, le code accède aux limites géographiques actuelles et s’inscrit aux modifications de l’état des limites géographiques, ainsi qu’aux modifications des autorisations d’emplacement.
 
@@ -475,4 +472,3 @@ Pour que votre application puisse accéder à l’emplacement, l’option **Loca
 * [Exemple de géolocalisation UWP](http://go.microsoft.com/fwlink/p/?linkid=533278)
 * [Recommandations en matière de conception pour le géorepérage](https://msdn.microsoft.com/library/windows/apps/dn631756)
 * [Recommandations en matière de conception pour les applications prenant en charge la géolocalisation](https://msdn.microsoft.com/library/windows/apps/hh465148)
-

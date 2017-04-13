@@ -8,27 +8,24 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ef4527f72898c8c5a6ad9c56d975966402894b2c
-ms.lasthandoff: 02/08/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 7c8b8eb3ae3c097a346144c57d7899cb5e9584f5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="free-memory-when-your-app-moves-to-the-background"></a>Libérer de la mémoire quand l’application bascule en arrière-plan
 
 Cet article vous explique comment réduire la quantité de mémoire utilisée par votre application lorsqu’elle bascule en arrière-plan, afin qu’elle ne soit pas suspendue, voire arrêtée.
 
 ## <a name="new-background-events"></a>Nouveaux événements en arrière-plan
 
-La version 1607 de Windows 10 inclut deux nouveaux évéments de cycle de vie de l’application, [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) et [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). Ces événements indiquent à votre application à quel moment elle passe en arrière-plan et à quel moment elle revient au premier plan.
+La version1607 de Windows10 inclut deux nouveaux évéments de cycle de vie de l’application, [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) et [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). Ces événements indiquent à votre application à quel moment elle passe en arrière-plan et à quel moment elle revient au premier plan.
 
 Lorsque votre application passe en arrière-plan, les contraintes de mémoire appliquées par le système peuvent changer. Utilisez ces événements pour vérifier votre consommation de mémoire actuelle et libérer des ressources afin de rester sous la limite autorisée et éviter que votre application ne soit suspendue, voire arrêtée, alors qu’elle se trouve en arrière-plan.
 
 ### <a name="events-for-controlling-your-apps-memory-usage"></a>Événements permettant de contrôler l’utilisation de la mémoire de votre application
 
-L’événement [MemoryManager.AppMemoryUsageLimitChanging](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.appmemoryusagelimitchanging.aspx) se déclenche juste avant que la limite de mémoire totale pouvant être utilisée par l’application soit modifiée. Par exemple, lorsque l’application passe en arrière-plan et sur la Xbox, la limite de mémoire passe de 1 024 Mo à 128 Mo.  
+L’événement [MemoryManager.AppMemoryUsageLimitChanging](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.appmemoryusagelimitchanging.aspx) se déclenche juste avant que la limite de mémoire totale pouvant être utilisée par l’application soit modifiée. Par exemple, lorsque l’application passe en arrière-plan et sur la Xbox, la limite de mémoire passe de 1024Mo à 128Mo.  
 Il s’agit du principal événement à gérer pour éviter que la plateforme suspende ou arrête l’application.
 
 L’événement [MemoryManager.AppMemoryUsageIncreased](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.appmemoryusageincreased.aspx) se déclenche lorsque le niveau de consommation de mémoire de l’application augmente dans l’énumération [AppMemoryUsageLevel](https://msdn.microsoft.com/library/windows/apps/windows.system.appmemoryusagelevel.aspx). Par exemple, si la consommation passe de **Low** à **Medium**. Facultative, la gestion de cet événement est toutefois recommandée, car l’application doit toujours rester sous la limite autorisée.
@@ -39,7 +36,7 @@ L’événement [MemoryManager.AppMemoryUsageDecreased](https://msdn.microsoft.c
 
 Lorsque votre application passe du premier plan à l’arrière-plan, l’événement [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) est déclenché. Quand votre application revient au premier plan, l’événement [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) est déclenché. Vous pouvez enregistrer des gestionnaires pour ces événements au moment de la création de votre application. Dans le modèle de projet par défaut, l’enregistrement s’effectue au niveau du constructeur de la classe **App**, dans App.xaml.cs.
 
-L’exécution en arrière-plan implique une réduction des ressources de mémoire que votre application est autorisée à conserver. Vous devez donc également enregistrer les événements [**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) et [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging), que vous pouvez utiliser pour vérifier l’utilisation actuelle de la mémoire par l’application et la limite actuelle autorisée. Les gestionnaires de ces événements sont affichés dans les exemples suivants. Pour plus d’informations sur le cycle de vie des applications UWP, consultez la rubrique [Cycle de vie de l’application](../\launch-resume\app-lifecycle.md).
+L’exécution en arrière-plan implique une réduction des ressources de mémoire que votre application est autorisée à conserver. Vous devez donc également enregistrer les événements [**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) et [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging), que vous pouvez utiliser pour vérifier l’utilisation actuelle de la mémoire par l’application et la limite actuelle autorisée. Les gestionnaires de ces événements sont affichés dans les exemples suivants. Pour plus d’informations sur le cycle de vie des applicationsUWP, consultez la rubrique [Cycle de vie de l’application](../\launch-resume\app-lifecycle.md).
 
 [!code-cs[RegisterEvents](./code/ReduceMemory/cs/App.xaml.cs#SnippetRegisterEvents)]
 
@@ -56,7 +53,7 @@ Dans cet exemple, cette opération s’effectue dans la méthode d’assistance 
 [!code-cs[MemoryUsageLimitChanging](./code/ReduceMemory/cs/App.xaml.cs#SnippetMemoryUsageLimitChanging)]
 
 > [!NOTE]
-> Certaines configurations d’appareil permettent à une application de continuer à s’exécuter au-delà de la nouvelle limite de mémoire jusqu’à ce que le système manque de ressources, mais ce n’est pas toujours le cas. Sur Xbox en particulier, les applications sont interrompues ou arrêtées si elles ne réduisent pas leur utilisation de mémoire en deçà de la nouvelle limite dans un délai de 2 secondes. Cela signifie que vous pouvez fournir la meilleure expérience sur un large éventail d’appareils en utilisant cet événement pour réduire l’utilisation des ressources en deçà de la limite dans les 2 secondes suivant le déclenchement de l’événement.
+> Certaines configurations d’appareil permettent à une application de continuer à s’exécuter au-delà de la nouvelle limite de mémoire jusqu’à ce que le système manque de ressources, mais ce n’est pas toujours le cas. Sur Xbox en particulier, les applications sont interrompues ou arrêtées si elles ne réduisent pas leur utilisation de mémoire en deçà de la nouvelle limite dans un délai de 2secondes. Cela signifie que vous pouvez fournir la meilleure expérience sur un large éventail d’appareils en utilisant cet événement pour réduire l’utilisation des ressources en deçà de la limite dans les 2secondes suivant le déclenchement de l’événement.
 
 Même si l’utilisation de la mémoire de votre application est en dessous de la limite autorisée pour les applications en arrière-plan au moment où l’application passe en arrière-plan, il est possible que l’application augmente sa consommation de mémoire au fil du temps pour s’approcher de la limite autorisée. Le gestionnaire de l’événement [**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) vous permet de savoir quand votre utilisation augmente, et de libérer de la mémoire le cas échéant.
 
@@ -68,7 +65,7 @@ Vérifiez si [**AppMemoryUsageLevel**](https://msdn.microsoft.com/library/window
 
 [!code-cs[UnloadViewContent](./code/ReduceMemory/cs/App.xaml.cs#SnippetUnloadViewContent)]
 
-Lorsque le contenu de la fenêtre est collecté, chaque élément Frame démarre son processus de déconnexion. Si l’arborescence des objets visuels sous le contenu de la fenêtre comporte des éléments Pages, ces derniers commenceront à déclencher leur événement Unloaded. Les Pages ne peuvent pas être complètement effacées de la mémoire, sauf si l’ensemble des références associées sont supprimées. Dans le rappel Unloaded, procédez comme suit afin de garantir la libération rapide de la mémoire :
+Lorsque le contenu de la fenêtre est collecté, chaque élément Frame démarre son processus de déconnexion. Si l’arborescence des objets visuels sous le contenu de la fenêtre comporte des éléments Pages, ces derniers commenceront à déclencher leur événement Unloaded. Les Pages ne peuvent pas être complètement effacées de la mémoire, sauf si l’ensemble des références associées sont supprimées. Dans le rappel Unloaded, procédez comme suit afin de garantir la libération rapide de la mémoire:
 * Effacez les grandes structures de données de votre Page, et définissez-les sur `null`.
 * Annulez l’enregistrement de l’ensemble des gestionnaires d’événements comprenant des méthodes de rappel dans la Page. Veillez à inscrire ces rappels durant le gestionnaire d’événement Loaded associé à la Page. L’événement Loaded est déclenché quand l’interface utilisateur a été reconstituée et que la Page a été ajoutée à l’arborescence des objets visuels.
 * Appelez `GC.Collect` à la fin du rappel Unloaded afin de procéder rapidement à un nettoyage de la mémoire des grandes structures de données que vous venez de définir sur `null`.
@@ -108,4 +105,3 @@ Lorsqu’une application passe de l’arrière-plan au premier plan, elle reçoi
 
 * [Exemple de lecture de contenu multimédia en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=800141) - explique comment libérer de la mémoire lorsque votre application passe en arrière-plan.
 * [Outils de diagnostic](https://blogs.msdn.microsoft.com/visualstudioalm/2015/01/16/diagnostic-tools-debugger-window-in-visual-studio-2015/) - utilisez les outils de diagnostic pour analyser les événements de nettoyage de la mémoire et vérifier que votre application libère de la mémoire de manière optimale.
-

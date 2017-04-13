@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: aa53060a281a452d47461602866d1b67edc161aa
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 33a8b62a378e4a9abe20be04a49c94d886144cc5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="radio-buttons"></a>Cases d’option
 
@@ -37,7 +35,7 @@ Les cases d’option permettent aux utilisateurs de faire un choix parmi au moin
 </div>
 
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
 Utilisez les cases d’option pour présenter à l’utilisateur au moins deux options qui s’excluent mutuellement, comme ci-après.
 
@@ -62,13 +60,13 @@ S’il existe plus de huit options, utilisez une [liste déroulante](lists.md), 
 Si les options disponibles dépendent du contexte actuel de l’application, ou sont amenées à changer de manière dynamique, utilisez une [zone de liste](lists.md) à sélection unique.
 
 ## <a name="example"></a>Exemple
-Cases d’option dans les paramètres du navigateur Microsoft Edge.
+Cases d’option dans les paramètres du navigateur MicrosoftEdge.
 
-![Cases d’option dans les paramètres du navigateur Microsoft Edge](images/control-examples/radio-buttons-edge.png)
+![Cases d’option dans les paramètres du navigateur MicrosoftEdge](images/control-examples/radio-buttons-edge.png)
 
 ## <a name="create-a-radio-button"></a>Créer une case d’option
 
-Les cases d’option s’utilisent en groupes. Les 2 méthodes permettant de grouper des contrôles de cases d’option sont les suivantes :
+Les cases d’option s’utilisent en groupes. Les 2méthodes permettant de grouper des contrôles de cases d’option sont les suivantes:
 - Placez-les dans le même conteneur parent.
 - Définissez la propriété [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) de chaque case d’option sur la même valeur.
 
@@ -160,7 +158,7 @@ La case d’option ressemble à ceci.
 
 ![Cases d’option en deux groupes](images/radio-button-groups.png)
 
-Une case d’option a deux états : *sélectionnée* ou *désactivée*. Lorsqu’une case d’option est sélectionnée, sa propriété [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) vaut **true**. Lorsqu’une case d’option est désactivée, sa propriété **IsChecked** vaut **false**. Une case d’option peut être désactivée en cliquant sur une autre case d’option dans le même groupe. Elle ne peut pas être désactivée en cliquant à nouveau dessus. Toutefois, vous pouvez désactiver une case d’option par programme en définissant sa propriété IsChecked sur **false**.
+Une case d’option a deux états: *sélectionnée* ou *désactivée*. Lorsqu’une case d’option est sélectionnée, sa propriété [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) vaut **true**. Lorsqu’une case d’option est désactivée, sa propriété **IsChecked** vaut **false**. Une case d’option peut être désactivée en cliquant sur une autre case d’option dans le même groupe. Elle ne peut pas être désactivée en cliquant à nouveau dessus. Toutefois, vous pouvez désactiver une case d’option par programme en définissant sa propriété IsChecked sur **false**.
 
 ## <a name="recommendations"></a>Recommandations
 
@@ -196,4 +194,3 @@ Cette illustration montre la manière convenable de positionner et espacer les c
 
 **Pour les développeurs (XAML)**
 - [**Classe Windows.UI.Xaml.Controls RadioButton**](https://msdn.microsoft.com/library/windows/apps/br227544)
-

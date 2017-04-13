@@ -8,19 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, jeux, volant de course, retour de force"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp, jeux, volant de course, retour de force
 ms.openlocfilehash: ca8413a857fd4d8925a6767280a32a8336eeba19
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="racing-wheel-and-force-feedback"></a>Volant de course et retour de force
 
 Cet article explique les notions de base de la programmation pour les volants de course Xbox One avec l’API [Windows.Gaming.Input.RacingWheel][racingwheel] et les API associées pour la plateforme Windows universelle (UWP).
 
-Voici les procédures que vous allez découvrir à la lecture de cet article :
+Voici les procédures que vous allez découvrir à la lecture de cet article:
 * Obtenir une liste des volants de course connectés et de leurs utilisateurs
 * Détecter l’ajout ou la suppression d’un volant de course
 * Lire les entrées provenant d’un ou de plusieurs volants de course
@@ -28,11 +25,11 @@ Voici les procédures que vous allez découvrir à la lecture de cet article :
 * Comprendre le comportement des volants de course utilisés en tant que périphériques de navigation
 
 
-## <a name="racing-wheel-overview"></a>Volant de course : présentation
+## <a name="racing-wheel-overview"></a>Volant de course: présentation
 
 Un volant de course est un périphérique d’entrée dont l’utilisation rappelle celle du volant d’une voiture de course réelle. Les volants de course sont idéaux pour les jeux de course de type arcade ou simulation, qui mettent en scène des voitures ou des camions. Ils sont pris en charge dans les applications UWP Windows 10 et Xbox One, via l’espace de noms [Windows.Gaming.Input][].
 
-Il existe différentes gammes de prix pour les volants de course Xbox One. Les plus chers présentent généralement des fonctionnalités de retour de force et d’entrée plus performantes et en plus grand nombre. Tous les volants de course sont dotés d’un volant analogique, de contrôles de freinage et d’accélération, ainsi que des boutons. Certains volants de course sont également dotés de contrôles d’embrayage, de frein à main, de levier de vitesse et de retour de force. Cependant, les volants de course ne sont pas tous équipés du même ensemble de fonctionnalités. De plus, il se peut qu’ils ne prennent pas tous en charge les mêmes fonctions ; par exemple, certains volants peuvent accepter des plages différentes de rotation et les leviers de vitesses peuvent gérer différents nombres de vitesses.
+Il existe différentes gammes de prix pour les volants de course Xbox One. Les plus chers présentent généralement des fonctionnalités de retour de force et d’entrée plus performantes et en plus grand nombre. Tous les volants de course sont dotés d’un volant analogique, de contrôles de freinage et d’accélération, ainsi que des boutons. Certains volants de course sont également dotés de contrôles d’embrayage, de frein à main, de levier de vitesse et de retour de force. Cependant, les volants de course ne sont pas tous équipés du même ensemble de fonctionnalités. De plus, il se peut qu’ils ne prennent pas tous en charge les mêmes fonctions; par exemple, certains volants peuvent accepter des plages différentes de rotation et les leviers de vitesses peuvent gérer différents nombres de vitesses.
 
 ### <a name="device-capabilities"></a>Fonctionnalités de l’appareil
 
@@ -42,7 +39,7 @@ Pour en savoir plus, voir [Identification des fonctionnalités de volant de cour
 
 ### <a name="force-feedback"></a>Retour de force
 
-Certains volants de course Xbox One proposent un retour de force réel ; ils peuvent appliquer des forces réelles sur un axe de contrôle, comme un volant, et non une simple vibration. Les jeux utilisent cette fonctionnalité pour renforcer la sensation d’immersion (_dégâts d’un accident simulé_, _« sensation de conduite »_) et accroître les difficultés associées à la conduite.
+Certains volants de course Xbox One proposent un retour de force réel; ils peuvent appliquer des forces réelles sur un axe de contrôle, comme un volant, et non une simple vibration. Les jeux utilisent cette fonctionnalité pour renforcer la sensation d’immersion (_dégâts d’un accident simulé_, _«sensation de conduite»_) et accroître les difficultés associées à la conduite.
 
 Pour en savoir plus, voir [Présentation du retour de force](#force-feedback-overview).
 
@@ -50,7 +47,7 @@ Pour en savoir plus, voir [Présentation du retour de force](#force-feedback-ove
 
 Pour réduire la difficulté associée à la prise en charge de plusieurs périphériques d’entrée différents lors de la navigation dans l’interface utilisateur, et pour favoriser la cohérence entre les jeux et les périphériques, la plupart des périphériques d’entrée _physiques_ agissent en tant que périphérique d’entrée _logique_ distinct, appelé [contrôleur de navigation d’interface utilisateur](ui-navigation-controller.md). Le contrôleur de navigation d’interface utilisateur fournit un vocabulaire commun pour les commandes de navigation dans l’interface utilisateur, sur plusieurs périphériques d’entrée.
 
-Comme ils se concentrent tout particulièrement sur les contrôles analogiques et le degré de variante entre les différents volants de course, ils sont généralement dotés d’un bouton multidirectionnel et de boutons **Afficher**, **Menu**, **A**, **B**, **X** et **Y** qui ressemblent à ceux d’un [boîtier de commande](gamepad-and-vibration.md) ; ces boutons, qui n’ont pas pour but de prendre en charge les commandes de jeu, ne peuvent pas être facilement utilisés en tant que boutons de volant de course.
+Comme ils se concentrent tout particulièrement sur les contrôles analogiques et le degré de variante entre les différents volants de course, ils sont généralement dotés d’un bouton multidirectionnel et de boutons **Afficher**, **Menu**, **A**, **B**, **X** et **Y** qui ressemblent à ceux d’un [boîtier de commande](gamepad-and-vibration.md); ces boutons, qui n’ont pas pour but de prendre en charge les commandes de jeu, ne peuvent pas être facilement utilisés en tant que boutons de volant de course.
 
 En tant que contrôleurs de navigation dans l’interface utilisateur, les volants de course incluent l’[ensemble requis](ui-navigation-controller.md#required-set) de commandes de navigation, placées dans le stick analogique gauche, le bouton multidirectionnel et les boutons **Afficher**, **Menu**, **A** et **B**.
 
@@ -60,9 +57,9 @@ En tant que contrôleurs de navigation dans l’interface utilisateur, les volan
 |               Bas | Bouton multidirectionnel vers le bas         |
 |               Gauche | Bouton multidirectionnel vers la gauche         |
 |              Droit | Bouton multidirectionnel vers la droite        |
-|               Affichage | Bouton Afficher        |
+|               View (Afficher) | Bouton Afficher        |
 |               Menu | Bouton Menu        |
-|             Accepter | Bouton A           |
+|             Accept (Accepter) | BoutonA           |
 |             Annuler | Bouton B           |
 
 De plus, certains volants de course peuvent mapper certaines commandes d’un [ensemble de commandes de navigation en option](ui-navigation-controller.md#optional-set) à d’autres entrées prises en charge, mais ces mappages peuvent varier d’un appareil à l’autre. Envisagez également la prise en charge de ces commandes, en vous assurant qu’elles ne sont pas essentielles à la navigation au sein de l’interface de votre jeu.
@@ -77,10 +74,10 @@ De plus, certains volants de course peuvent mapper certaines commandes d’un [e
 |        Faire défiler vers le bas | _Dépendant du jeu_              |
 |        Faire défiler vers la gauche | _Dépendant du jeu_              |
 |       Faire défiler vers la droite | _Dépendant du jeu_              |
-|          Contexte 1 | Bouton X (_en général_) |
-|          Contexte 2 | Bouton Y (_en général_) |
-|          Contexte 3 | _Dépendant du jeu_              |
-|          Contexte 4 | _Dépendant du jeu_              |
+|          Contexte1 | Bouton X (_en général_) |
+|          Contexte2 | Bouton Y (_en général_) |
+|          Contexte3 | _Dépendant du jeu_              |
+|          Contexte4 | _Dépendant du jeu_              |
 
 
 ## <a name="detect-and-track-racing-wheels"></a>Détecter et effectuer le suivi des volants de course
@@ -153,9 +150,9 @@ En plus de l’état du volant de course, chaque valeur comprend un horodatage q
 
 ### <a name="determining-racing-wheel-capabilities"></a>Identification des fonctionnalités de volant de course
 
-La plupart des contrôles du volant de course sont facultatifs ou prennent en charge des variantes, même dans les contrôles requis ; vous devez donc déterminer les fonctionnalités de chaque volant de course avant de pouvoir traiter les entrées regroupées dans chaque valeur du volant de course.
+La plupart des contrôles du volant de course sont facultatifs ou prennent en charge des variantes, même dans les contrôles requis; vous devez donc déterminer les fonctionnalités de chaque volant de course avant de pouvoir traiter les entrées regroupées dans chaque valeur du volant de course.
 
-Les contrôles en option sont les suivants : frein à main, embrayage et leviers de vitesses ; vous pouvez déterminer si un volant de course connecté gère ces contrôles en lisant les propriétés [HasHandbrake][], [HasClutch][] et [HasPatternShifter][] du volant de course, respectivement. Ce contrôle est pris en charge si la valeur de la propriété est **true** ; dans le cas contraire, elle n’est pas gérée.
+Les contrôles en option sont les suivants: frein à main, embrayage et leviers de vitesses; vous pouvez déterminer si un volant de course connecté gère ces contrôles en lisant les propriétés [HasHandbrake][], [HasClutch][] et [HasPatternShifter][] du volant de course, respectivement. Ce contrôle est pris en charge si la valeur de la propriété est **true**; dans le cas contraire, elle n’est pas gérée.
 
 ```cpp
 if (racingwheel->HasHandbrake)
@@ -174,7 +171,7 @@ if (racingwheel->HasPatternShifter)
 }
 ```
 
-De plus, les contrôles susceptibles de varier sont le volant et le levier de vitesses. La variation du volant peut correspondre au degré de rotation physique qu’un volant réel peut prendre en charge, alors que celle du levier de vitesses peut correspondre au nombre de vitesses avant qu’il gère. Vous pouvez déterminer l’angle de rotation le plus étendu pris en charge par le volant réel en lisant la propriété `MaxWheelAngle` du volant de course ; cette valeur correspond à l’angle physique maximal pris en charge, en degrés, dans le sens des aiguilles d’une montre (positif), également géré dans le sens contraire (négatif). Vous pouvez déterminer la vitesse avant la plus grande que le levier de vitesses prend en charge en lisant la propriété `MaxPatternShifterGear` du volant de course ; cette valeur correspond à la vitesse avant gérée la plus élevée (incluse). Si la valeur est de 4, alors le levier de vitesses gère la marche arrière, le point mort, mais également la première, la seconde, la troisième et la quatrième vitesse.
+De plus, les contrôles susceptibles de varier sont le volant et le levier de vitesses. La variation du volant peut correspondre au degré de rotation physique qu’un volant réel peut prendre en charge, alors que celle du levier de vitesses peut correspondre au nombre de vitesses avant qu’il gère. Vous pouvez déterminer l’angle de rotation le plus étendu pris en charge par le volant réel en lisant la propriété `MaxWheelAngle` du volant de course; cette valeur correspond à l’angle physique maximal pris en charge, en degrés, dans le sens des aiguilles d’une montre (positif), également géré dans le sens contraire (négatif). Vous pouvez déterminer la vitesse avant la plus grande que le levier de vitesses prend en charge en lisant la propriété `MaxPatternShifterGear` du volant de course; cette valeur correspond à la vitesse avant gérée la plus élevée (incluse). Si la valeur est de 4, alors le levier de vitesses gère la marche arrière, le point mort, mais également la première, la seconde, la troisième et la quatrième vitesse.
 
 ```cpp
 auto maxWheelDegrees = racingwheel->MaxWheelAngle;
@@ -194,11 +191,11 @@ Pour en savoir plus sur l’utilisation de la fonction de retour de force des vo
 
 ### <a name="reading-the-buttons"></a>Lecture des valeurs des boutons
 
-Chaque bouton du volant de course (quatre directions du bouton directionnel, boutons **Vitesse précédente** et **Vitesse suivante** et 16 boutons supplémentaires) fournit des entrées numériques, qui signalent s’il est enclenché (vers le bas) ou relâché (vers le haut). Pour plus d’efficacité, les entrées de bouton ne sont pas représentées individuellement sous forme de valeurs booléennes. Elles sont toutes regroupées dans un seul champ de bits représenté par l’énumération [RacingWheelButtons][].
+Chaque bouton du volant de course (quatre directions du bouton directionnel, boutons **Vitesse précédente** et **Vitesse suivante** et 16boutons supplémentaires) fournit des entrées numériques, qui signalent s’il est enclenché (vers le bas) ou relâché (vers le haut). Pour plus d’efficacité, les entrées de bouton ne sont pas représentées individuellement sous forme de valeurs booléennes. Elles sont toutes regroupées dans un seul champ de bits représenté par l’énumération [RacingWheelButtons][].
 
-> **Remarque** Les volants de course sont dotés de boutons supplémentaires, utilisés pour la navigation dans l’interface utilisateur, par exemple des boutons **Afficher** et **Menu**. Ces boutons ne font pas partie de l’énumération `RacingWheelButtons` ; vous ne pouvez lire leurs valeurs qu’en accédant au volant de navigation en tant que périphérique de navigation dans l'interface utilisateur. Pour en savoir plus, voir [Périphérique de navigation d’interface utilisateur](ui-navigation-controller.md).
+> **Remarque** Les volants de course sont dotés de boutons supplémentaires, utilisés pour la navigation dans l’interface utilisateur, par exemple des boutons **Afficher** et **Menu**. Ces boutons ne font pas partie de l’énumération `RacingWheelButtons`; vous ne pouvez lire leurs valeurs qu’en accédant au volant de navigation en tant que périphérique de navigation dans l'interface utilisateur. Pour en savoir plus, voir [Périphérique de navigation d’interface utilisateur](ui-navigation-controller.md).
 
-Les valeurs des boutons sont lues à partir de la propriété `Buttons` de la structure [RacingWheelReading][]. Comme cette propriété est un champ de bits, un masquage au niveau du bit est effectué pour isoler la valeur du bouton qui vous intéresse. Le bouton est à l’état appuyé (position basse) quand le bit correspondant est défini ; sinon, il est à l’état relâché (position haute).
+Les valeurs des boutons sont lues à partir de la propriété `Buttons` de la structure [RacingWheelReading][]. Comme cette propriété est un champ de bits, un masquage au niveau du bit est effectué pour isoler la valeur du bouton qui vous intéresse. Le bouton est à l’état appuyé (position basse) quand le bit correspondant est défini; sinon, il est à l’état relâché (position haute).
 
 L’exemple suivant détermine si le bouton **Vitesse suivante** est à l’état appuyé.
 ```cpp
@@ -220,17 +217,17 @@ Vous pouvez avoir besoin de savoir quand un bouton passe de l’état appuyé à
 
 ### <a name="reading-the-wheel"></a>Lecture des données du volant
 
-Le volant est un contrôle requis, qui fournit une valeur analogique située entre -1.0 et +1.0. Une valeur de -1.0 correspond à la position de volant la plus à gauche ; une valeur de +1.0 indique la position la plus à droite. La valeur du volant est lue à partir de la propriété `Wheel` de la structure [RacingWheelReading][].
+Le volant est un contrôle requis, qui fournit une valeur analogique située entre -1.0 et +1.0. Une valeur de -1.0 correspond à la position de volant la plus à gauche; une valeur de +1.0 indique la position la plus à droite. La valeur du volant est lue à partir de la propriété `Wheel` de la structure [RacingWheelReading][].
 
 ```cpp
 float wheel = reading.Wheel;  // returns a value between -1.0 and +1.0.
 ```
 
-Même si les valeurs du volant correspondent à différents degrés de rotation physique dans le volant réel, selon la plage de rotations prise en charge par le volant de course physique, il n’est généralement pas nécessaire de mettre les valeurs du volant à l’échelle ; les volants gérant des degrés de rotation plus étendus permettent simplement une plus grande précision.
+Même si les valeurs du volant correspondent à différents degrés de rotation physique dans le volant réel, selon la plage de rotations prise en charge par le volant de course physique, il n’est généralement pas nécessaire de mettre les valeurs du volant à l’échelle; les volants gérant des degrés de rotation plus étendus permettent simplement une plus grande précision.
 
 ### <a name="reading-the-throttle-and-brake"></a>Lecture des valeurs d’accélération et de freinage
 
-L’accélération et le freinage sont des contrôles requis, qui fournissent des valeurs analogiques incluses entre 0.0 (élément entièrement relâché) et 1.0 (élément entièrement enclenché) représentées en tant que valeurs à virgule flottante. La valeur du contrôle d’accélération est lue à partir de la propriété `Throttle` de la structure [RacingWheelReading][] ; la valeur du contrôle de freinage est lue à partir de la propriété `Brake`.
+L’accélération et le freinage sont des contrôles requis, qui fournissent des valeurs analogiques incluses entre 0.0 (élément entièrement relâché) et 1.0 (élément entièrement enclenché) représentées en tant que valeurs à virgule flottante. La valeur du contrôle d’accélération est lue à partir de la propriété `Throttle` de la structure [RacingWheelReading][]; la valeur du contrôle de freinage est lue à partir de la propriété `Brake`.
 
 ```cpp
 float throttle = reading.Throttle;  // returns a value between 0.0 and 1.0
@@ -239,7 +236,7 @@ float brake    = reading.Brake;     // returns a value between 0.0 and 1.0
 
 ### <a name="reading-the-handbrake-and-clutch"></a>Lecture des valeurs de frein à main et d’embrayage
 
-Le frein à main et l’embrayage sont des contrôles en option, qui fournissent des valeurs analogiques incluses entre 0.0 (élément entièrement relâché) et 1.0 (élément entièrement enclenché) représentées en tant que valeurs à virgule flottante. La valeur du contrôle de frein à main est lue à partir de la propriété `Handbrake` de la structure [RacingWheelReading][] ; la valeur du contrôle d’embrayage est lue à partir de la propriété `Clutch`.
+Le frein à main et l’embrayage sont des contrôles en option, qui fournissent des valeurs analogiques incluses entre 0.0 (élément entièrement relâché) et 1.0 (élément entièrement enclenché) représentées en tant que valeurs à virgule flottante. La valeur du contrôle de frein à main est lue à partir de la propriété `Handbrake` de la structure [RacingWheelReading][]; la valeur du contrôle d’embrayage est lue à partir de la propriété `Clutch`.
 
 ```cpp
 float handbrake = 0.0;
@@ -258,7 +255,7 @@ if(racingwheel->HasClutch)
 
 ### <a name="reading-the-pattern-shifter"></a>Lecture de la valeur du levier de vitesses
 
-Le levier de vitesses est un contrôle en option, qui fournit une valeur numérique incluse entre -1 et [MaxPatternShifterGear][], représentée en tant que valeur entière signée. Une valeur de -1 ou 0 correspond à la _marche arrière_ et au _point mort_, respectivement ; des valeurs positives croissantes indiquent des vitesses avant supérieures à [MaxPatternShifterGear][] (valeur incluse). La valeur du levier de vitesses est lue à partir de la propriété `PatternShifterGear` de la structure [RacingWheelReading][].
+Le levier de vitesses est un contrôle en option, qui fournit une valeur numérique incluse entre -1 et [MaxPatternShifterGear][], représentée en tant que valeur entière signée. Une valeur de -1 ou 0 correspond à la _marche arrière_ et au _point mort_, respectivement; des valeurs positives croissantes indiquent des vitesses avant supérieures à [MaxPatternShifterGear][] (valeur incluse). La valeur du levier de vitesses est lue à partir de la propriété `PatternShifterGear` de la structure [RacingWheelReading][].
 
 ```cpp
 if(racingwheel->HasPatternShifter)
@@ -285,7 +282,7 @@ Ces sections décrivent les bases de la programmation des effets de retour de fo
 
 ### <a name="determining-force-feedback-capabilities"></a>Identification des fonctionnalités de retour de force
 
-Vous pouvez déterminer si un volant connecté gère le retour de force en lisant la propriété [WheelMotor][] associée au volant. Si la propriété `WheelMotor` a la valeur **null**, cela signifie que le retour de force n’est pas pris en charge ; toute autre valeur indique qu’il est géré et vous pouvez déterminer les fonctionnalités de retour spécifiques du moteur, par exemple les axes susceptibles d’être affectés.
+Vous pouvez déterminer si un volant connecté gère le retour de force en lisant la propriété [WheelMotor][] associée au volant. Si la propriété `WheelMotor` a la valeur **null**, cela signifie que le retour de force n’est pas pris en charge; toute autre valeur indique qu’il est géré et vous pouvez déterminer les fonctionnalités de retour spécifiques du moteur, par exemple les axes susceptibles d’être affectés.
 
 ```cpp
 if (racingwheel->WheelMotor != nullptr)
@@ -311,7 +308,7 @@ if (racingwheel->WheelMotor != nullptr)
 
 ### <a name="loading-force-feedback-effects"></a>Chargement des effets de retour de force
 
-Ces effets sont chargés sur l’appareil devant les appliquer, puis « exécutés » de manière autonome lorsque le jeu le commande. Nous fournissons certains effets de base, mais vous pouvez créer des effets personnalisés via une classe qui implémente l’interface [IForceFeedbackEffect][].
+Ces effets sont chargés sur l’appareil devant les appliquer, puis «exécutés» de manière autonome lorsque le jeu le commande. Nous fournissons certains effets de base, mais vous pouvez créer des effets personnalisés via une classe qui implémente l’interface [IForceFeedbackEffect][].
 
 | Classe d’effet         | Description de l’effet                                                                     |
 | -------------------- | -------------------------------------------------------------------------------------- |
@@ -387,4 +384,3 @@ Pour finir, vous pouvez activer, désactiver ou réinitialiser l’ensemble du s
 [wheelmotor]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.wheelmotor.aspx
 [racingwheelreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheelreading.aspx
 [racingwheelbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheelbuttons.aspx
-

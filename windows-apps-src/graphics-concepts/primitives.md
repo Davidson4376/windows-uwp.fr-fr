@@ -1,26 +1,22 @@
 ---
 title: Primitives
-description: "Une primitive 3D est un ensemble de sommets qui forme une entité 3D unique."
+description: "Une primitive3D est un ensemble de sommets qui forme une entité3D unique."
 ms.assetid: A1FE6F49-B0D4-4665-90E1-40AD98E668B1
-keywords:
-- Primitives
+keywords: Primitives
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e6734ff8534302d3866374adba45c34d70ae440a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 22f143030d3973cf77cd3b0857cf9b67ff5503fb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="primitives"></a>Primitives
 
 
-Une *primitive* 3D est un ensemble de sommets qui forme une entité 3D unique.
+Une *primitive* 3D est un ensemble de sommets qui forme une entité3D unique.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Dans cette section
 
@@ -39,11 +35,11 @@ Une *primitive* 3D est un ensemble de sommets qui forme une entité 3D unique.
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Listes de points](point-lists.md)</p></td>
-<td align="left"><p>Une liste de points est un ensemble de sommets qui sont rendus sous forme de points isolés. Votre application peut utiliser des listes de points dans les scènes 3D pour les champs d’étoiles, ou encore des lignes en pointillé sur la surface d’un polygone.</p></td>
+<td align="left"><p>Une liste de points est un ensemble de sommets qui sont rendus sous forme de points isolés. Votre application peut utiliser des listes de points dans les scènes3D pour les champs d’étoiles, ou encore des lignes en pointillé sur la surface d’un polygone.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Listes de lignes](line-lists.md)</p></td>
-<td align="left"><p>Une liste de lignes est une liste de segments de ligne rectilignes et isolés. Les listes de lignes sont utiles pour certaines tâches telles que l’ajout de neige fondue ou de pluie abondante dans une scène 3D. Les applications créent une liste de lignes en remplissant un tableau de sommets.</p></td>
+<td align="left"><p>Une liste de lignes est une liste de segments de ligne rectilignes et isolés. Les listes de lignes sont utiles pour certaines tâches telles que l’ajout de neige fondue ou de pluie abondante dans une scène3D. Les applications créent une liste de lignes en remplissant un tableau de sommets.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Bandes de lignes](line-strips.md)</p></td>
@@ -70,7 +66,6 @@ Une *primitive* 3D est un ensemble de sommets qui forme une entité 3D unique.
  
 
  
-
 
 
 

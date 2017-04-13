@@ -2,21 +2,17 @@
 title: "Périphériques"
 description: "Un périphérique Direct3D est le composant de rendu de Direct3D. Un périphérique encapsule et stocke l’état de rendu, exécute des transformations et des opérations d’éclairage, et rastérise une image sur une surface."
 ms.assetid: BC903462-A32A-46BA-8411-FB294F5D2CD9
-keywords:
-- "Périphériques"
+keywords: "Périphériques"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5f2d86f3ceeb5a7026d5ad8e445e47cb69402879
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e95c1e1cc9cf1b26553ec9e148438ae837dbdf0e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="devices"></a>Périphériques
 
 
@@ -26,20 +22,20 @@ D’un point de vue architectural, les périphériques Direct3D contiennent un m
 
 ![diagramme de l’architecture d’un périphérique direct3d](images/d3ddev.png)
 
-Direct3D prend en charge deux principaux types de périphériques Direct3D :
+Direct3D prend en charge deux principaux types de périphériques Direct3D:
 
 -   Périphérique de couche d’abstraction matérielle (HAL) avec ombrage et rastérisation à accélération matérielle combinant un traitement de vertex matériel et logiciel
 -   Périphérique de référence
 
 Ces périphériques correspondent à deux pilotes distincts. Les périphériques logiciels et de référence sont représentés par des pilotes logiciels, tandis que le périphérique HAL est représenté par un pilote matériel. La méthode d’exploitation la plus courante de ces périphériques consiste à utiliser les périphériques HAL pour les applications distribuées, et les périphériques de référence pour le test de fonctionnalités. Ces derniers sont fournis par des tiers afin d’émuler des périphériques spécifiques, par exemple un matériel expérimental qui n’a pas encore été commercialisé.
 
-Le périphérique Direct3D créé par une application doit correspondre aux capacités du matériel sur lequel l’application est en cours d’exécution. Direct3D fournit des fonctionnalités de rendu, soit en accédant à un matériel 3D installé sur l’ordinateur, soit en émulant les capacités du matériel 3D dans le logiciel. Par conséquent, Direct3D offre des périphériques à la fois pour l’accès au matériel et pour l’émulation logicielle.
+Le périphérique Direct3D créé par une application doit correspondre aux capacités du matériel sur lequel l’application est en cours d’exécution. Direct3D fournit des fonctionnalités de rendu, soit en accédant à un matériel3D installé sur l’ordinateur, soit en émulant les capacités du matériel3D dans le logiciel. Par conséquent, Direct3D offre des périphériques à la fois pour l’accès au matériel et pour l’émulation logicielle.
 
 Les périphériques à accélération matérielle offrent de meilleures performances que les périphériques logiciels. Le type de périphérique HAL est disponible sur toutes les cartes graphiques prises en charge par Direct3D. Dans la plupart des cas, les applications ciblent des ordinateurs qui disposent d’une accélération matérielle et s’appuient sur une émulation logicielle pour prendre en charge les ordinateurs moins élaborés.
 
 À l’exception du périphérique de référence, les périphériques logiciels ne prennent pas toujours en charge les mêmes fonctionnalités qu’un périphérique matériel. Les applications doivent systématiquement rechercher les capacités du périphérique pour déterminer les fonctionnalités prises en charge.
 
-Étant donné que le comportement des périphériques logiciels et de référence fournis avec Direct3D 9 est identique à celui du périphérique HAL, le code d’application conçu pour fonctionner avec le périphérique HAL fonctionnera avec les périphériques logiciels ou de référence sans aucune modification. Malgré leur similitude de comportement, les périphériques logiciels ou de référence n’offrent pas les mêmes capacités que le périphérique HAL, et certains périphériques logiciels implémentent parfois un nombre de capacités sensiblement moins élevé.
+Étant donné que le comportement des périphériques logiciels et de référence fournis avec Direct3D9 est identique à celui du périphérique HAL, le code d’application conçu pour fonctionner avec le périphérique HAL fonctionnera avec les périphériques logiciels ou de référence sans aucune modification. Malgré leur similitude de comportement, les périphériques logiciels ou de référence n’offrent pas les mêmes capacités que le périphérique HAL, et certains périphériques logiciels implémentent parfois un nombre de capacités sensiblement moins élevé.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Dans cette section
 
@@ -62,7 +58,7 @@ Les périphériques à accélération matérielle offrent de meilleures performa
 </tr>
 <tr class="even">
 <td align="left"><p>[Mode fenêtré ou plein écran](windowed-vs--full-screen-mode.md)</p></td>
-<td align="left"><p>Les applications Direct3D peuvent s’exécuter dans deux modes : fenêtré ou plein écran. En <em>mode fenêtré</em>, l’application partage l’espace disponible sur l’écran du bureau avec toutes les applications en cours d’exécution. En <em>mode plein écran</em>, la fenêtre dans laquelle s’exécute l’application couvre la totalité du bureau et masque toutes les applications en cours d’exécution (y compris votre environnement de développement).</p></td>
+<td align="left"><p>Les applications Direct3D peuvent s’exécuter dans deux modes: fenêtré ou plein écran. En <em>mode fenêtré</em>, l’application partage l’espace disponible sur l’écran du bureau avec toutes les applications en cours d’exécution. En <em>mode plein écran</em>, la fenêtre dans laquelle s’exécute l’application couvre la totalité du bureau et masque toutes les applications en cours d’exécution (y compris votre environnement de développement).</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Périphériques perdus](lost-devices.md)</p></td>
@@ -89,7 +85,6 @@ Les périphériques à accélération matérielle offrent de meilleures performa
  
 
  
-
 
 
 

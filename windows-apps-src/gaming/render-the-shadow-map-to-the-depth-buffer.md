@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, jeux, rendu, mappage d’ombres, tampon de profondeur, direct3d"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: "windows10, uwp, jeux, rendu, mappage d’ombres, tampon de profondeur, direct3d"
 ms.openlocfilehash: 27b7c9a5fb69a19eed5941bf06068d5237ec101e
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>Générer le rendu du mappage d’ombre dans le tampon de profondeur
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Générez le rendu du point de vue de la lumière pour créer un mappage de profondeur en deux dimensions qui représente le volume de l’ombre. Le mappage de profondeur masque l’espace qui sera rendu dans l’ombre. Partie 2 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
@@ -129,7 +126,7 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**Optimisez le tronc de cône de l’affichage :** assurez-vous que votre implémentation calcule un tronc de cône de l’affichage étroit afin d’obtenir le niveau de précision le plus élevé possible de votre tampon de profondeur. Voir [Techniques courantes pour améliorer les mappages de profondeur d’ombre](https://msdn.microsoft.com/library/windows/desktop/ee416324) pour obtenir plus de conseils sur la technique d’ombrage.
+**Optimisez le tronc de cône de l’affichage:** assurez-vous que votre implémentation calcule un tronc de cône de l’affichage étroit afin d’obtenir le niveau de précision le plus élevé possible de votre tampon de profondeur. Voir [Techniques courantes pour améliorer les mappages de profondeur d’ombre](https://msdn.microsoft.com/library/windows/desktop/ee416324) pour obtenir plus de conseils sur la technique d’ombrage.
 
 ## <a name="vertex-shader-for-shadow-pass"></a>Nuanceur de vertex pour la passe d’ombre
 
@@ -157,7 +154,6 @@ Dans la partie suivante de cette procédure pas à pas, découvrez comment ajout
  
 
  
-
 
 
 

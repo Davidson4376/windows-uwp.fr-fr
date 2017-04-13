@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 04d34aa8f1cff2460462fff8100ab345a04d9000
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: e67a373b5e36d6e1a8a5e738f8c0964c5df8489b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="accessing-homegroup-content"></a>Accès au contenu du Groupement résidentiel
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -30,11 +28,11 @@ Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utili
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
-    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Pour apprendre à écrire des applications asynchrones enC++, voir [Programmation asynchrone enC++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
 -   **Déclarations des fonctionnalités d’application**
 
-    Pour accéder au contenu Groupement résidentiel, l’ordinateur de l’utilisateur doit avoir un Groupement résidentiel configuré et votre application au moins l’une des fonctionnalités suivantes : **picturesLibrary**, **musicLibrary** ou **videosLibrary**. Lorsque votre application accédera au dossier Groupement résidentiel, elle ne verra que les bibliothèques correspondant aux fonctionnalités déclarées dans le manifeste de votre application. Pour en savoir plus, voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
+    Pour accéder au contenu Groupement résidentiel, l’ordinateur de l’utilisateur doit avoir un Groupement résidentiel configuré et votre application au moins l’une des fonctionnalités suivantes: **picturesLibrary**, **musicLibrary** ou **videosLibrary**. Lorsque votre application accédera au dossier Groupement résidentiel, elle ne verra que les bibliothèques correspondant aux fonctionnalités déclarées dans le manifeste de votre application. Pour en savoir plus, voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
 
     **Remarque** Le contenu de la bibliothèque Documents d’un Groupement résidentiel n’est pas visible pour votre application quelles que soient les fonctionnalités déclarées dans le manifeste de votre application et quels que soient les paramètres de partage de l’utilisateur.
 
@@ -56,7 +54,7 @@ Suivez ces étapes pour ouvrir une instance du sélecteur de fichiers qui permet
 
     Utilisez [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) pour créer le sélecteur de fichiers, puis définissez le paramètre [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) du sélecteur sur [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890). Ou définissez les autres propriétés qui sont pertinentes pour vos utilisateurs et votre application. Pour obtenir des directives susceptibles de vous aider à choisir comment personnaliser le sélecteur de fichiers, voir [Recommandations et liste de vérification sur les sélecteurs de fichiers](https://msdn.microsoft.com/library/windows/apps/hh465182).
 
-    Cet exemple crée un sélecteur de fichiers qui s’ouvre au Groupement résidentiel, inclut des fichiers de tous types et affiche les fichiers sous forme d’images miniatures :
+    Cet exemple crée un sélecteur de fichiers qui s’ouvre au Groupement résidentiel, inclut des fichiers de tous types et affiche les fichiers sous forme d’images miniatures:
     ```csharp
     Windows.Storage.Pickers.FileOpenPicker picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
@@ -215,4 +213,3 @@ Suivez les étapes suivantes pour lire en continu le contenu vidéo du Groupemen
  
 
  
-

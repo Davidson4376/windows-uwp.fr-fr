@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: bececce2784e1b76c73e147bb89efc84be48a5d7
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 93635403ad919381599211436b7ae70a8dd13ef1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="appendices"></a>Annexes
 
 Les sections suivantes fournissent des informations techniques détaillées.
@@ -37,7 +34,7 @@ Les sections suivantes fournissent des informations techniques détaillées.
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Règles en matière de virgule flottante](floating-point-rules.md)</p></td>
-<td align="left"><p>Direct3D prend en charge plusieurs représentations à virgule flottante. Tous les calculs à virgule flottante fonctionnent sous un sous-ensemble défini de règles de représentation des nombres à virgule flottante 32 bits simple précision conformément à l'IEEE 754.</p></td>
+<td align="left"><p>Direct3D prend en charge plusieurs représentations à virgule flottante. Tous les calculs à virgule flottante fonctionnent sous un sous-ensemble défini de règles de représentation des nombres à virgule flottante 32bits simple précision conformément à l'IEEE754.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Conversion de types de données](data-type-conversion.md)</p></td>
@@ -49,7 +46,7 @@ Les sections suivantes fournissent des informations techniques détaillées.
 </tr>
 <tr class="even">
 <td align="left"><p>[Compression de blocs de texture](texture-block-compression.md)</p></td>
-<td align="left"><p>La prise en charge de la compression de blocs (BC) pour les textures a été étendue dans Direct3D 11 pour inclure les algorithmes BC6H et BC7. L'algorithme BC6H prend en charge les données de source de couleur à plage dynamique élevée, tandis que l'algorithme BC7 offre une compression de meilleure qualité globale avec un nombre réduit d'artéfacts pour les données source RVB standards.</p></td>
+<td align="left"><p>La prise en charge de la compression de blocs (BC) pour les textures a été étendue dans Direct3D11 pour inclure les algorithmes BC6H et BC7. L'algorithme BC6H prend en charge les données de source de couleur à plage dynamique élevée, tandis que l'algorithme BC7 offre une compression de meilleure qualité globale avec un nombre réduit d'artéfacts pour les données source RVB standards.</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,7 +61,6 @@ Les sections suivantes fournissent des informations techniques détaillées.
  
 
  
-
 
 
 

@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: C09F4B7C-6324-4973-980A-A60035792EFC
 description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour créer une soumission d’extension d’app. inscrite dans le compte du Centre de dév. Windows."
-title: "Créer une soumission d’extension avec l’API de soum. du Windows Store"
+title: "Crée une soumission d’extension"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, créer une soumission d&quot;extensions, produit in-app, PIA"
-translationtype: Human Translation
-ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
-ms.openlocfilehash: f824fe7d37a4a2db4e336fd43c335047e09aa323
-ms.lasthandoff: 02/08/2017
-
+keywords: "windows10, uwp, API de soumission du Windows Store, créer la soumission d’extension, produit dans l&quot;application, FAI"
+ms.openlocfilehash: 3bf7379856a5011d5323351d7952091b0ff9d179
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="create-an-add-on-submission-using-the-windows-store-submission-api"></a>Créer une soumission d’extension avec l’API de soum. du Windows Store
+# <a name="create-an-add-on-submission"></a>Crée une soumission d’extension
 
 
 
@@ -29,10 +26,10 @@ Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créez une extension pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une extension](create-an-add-on.md).
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
@@ -124,7 +121,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
       }
     ],
     "priceId": "Free",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -175,4 +172,3 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Mettre à jour une soumission d’extension](update-an-add-on-submission.md)
 * [Supprimer une soumission d’extension](delete-an-add-on-submission.md)
 * [Obtenir l’état d’une soumission d’extension](get-status-for-an-add-on-submission.md)
-

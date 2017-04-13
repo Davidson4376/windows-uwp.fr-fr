@@ -7,20 +7,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6fbcf24984fde4b86e94481d6ad1104a827a8c31
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 5cbff0011a4a96c61d7f7bad7e57bd130e09c39b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="sign-an-app-package-using-signtool"></a>Signer un package d'application à l'aide de SignTool
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
-**SignTool** est un outil de ligne de commande utilisé pour signer numériquement un package d’application ou un ensemble d’applications à l'aide d'un certificat. Le certificat peut être créé par l’utilisateur (à des fins de test) ou émis par une société (à des fins de distribution). Le fait de signer un package d'application permet à l'utilisateur de vérifier que les données de l'application n'ont pas été modifiées après avoir été signées, mais également de confirmer l'identité du signataire, qu'il s'agisse d'un utilisateur ou d'une société qui l'a signé. **SignTool** permet de signer des packages et des ensembles d'applications cryptés ou non.
+**SignTool** est un outil de ligne de commande utilisé pour signer numériquement un package d’application ou un ensemble d’applications à l'aide d'un certificat. Le certificat peut être créé par l’utilisateur (à des fins de test) ou émis par une société (à des fins de distribution). Le fait de signer un package d'application permet à l'utilisateur de vérifier que les données de l'application n'ont pas été modifiées après avoir été signées, mais également de confirmer l'identité du signataire, qu'il s'agisse d'un utilisateur ou d'une société qui l'a signé. **SignTool** permet de signer des packages et des ensembles d’applications cryptés ou non.
+
+> [!IMPORTANT] 
+> Si vous avez utilisé Visual Studio pour développer votre application, nous vous recommandons d’utiliser l’Assistant Visual Studio pour créer et signer votre package d’application. Pour plus d’informations, voir [Créer un package d’application UWP avec Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
 Pour en savoir plus sur la signature de code et les certificats en général, voir [Introduction à la signature de code](https://msdn.microsoft.com/library/windows/desktop/aa380259.aspx#introduction_to_code_signing).
 
@@ -32,7 +32,7 @@ Pour en savoir plus sur la signature de code et les certificats en général, vo
     Pour plus d’informations sur la création ou l’importation d’un certificat de signature valide, voir [Créer ou importer un certificat pour la signature d'un package](https://msdn.microsoft.com/windows/uwp/packaging/create-certificate-package-signing).
 
 - **SignTool.exe**  
-    Selon votre chemin d’installation du Kit de développement logiciel (SDK), c’est là où **SignTool** se trouve sur votre PC Windows 10 :
+    Selon votre chemin d’installation du Kit de développement logiciel (SDK), c’est là où **SignTool** se trouve sur votre PC Windows10:
     - x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\SignTool.exe
     - x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\SignTool.exe
 
@@ -41,15 +41,15 @@ Pour en savoir plus sur la signature de code et les certificats en général, vo
 **SignTool** peut être utilisé pour signer les fichiers, vérifier les signatures ou les horodatages, supprimer des signatures etc. Dans le cadre de la signature d’un package d’application, nous allons nous concentrer sur la commande **signer**. Pour plus d’informations sur **SignTool**, voir la page de référence [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx). 
 
 ### <a name="determine-the-hash-algorithm"></a>Déterminer l’algorithme de hachage
-Lorsque vous utilisez **SignTool** pour signer votre package d’application ou un ensemble d’applications, l’algorithme de hachage utilisé dans **SignTool** doit être le même que celui que vous avez utilisé pour empaqueter votre application. Par exemple, si vous avez utilisé **MakeAppx.exe** pour créer votre package d’application avec les paramètres par défaut, vous devez spécifier SHA256 lorsque vous utilisez **SignTool** puisqu’il s’agit de l’algorithme par défaut utilisé par **MakeAppx.exe**.
+Lorsque vous utilisez **SignTool** pour signer votre package d’application ou un ensemble d’applications, l’algorithme de hachage utilisé dans **SignTool** doit être le même que celui que vous avez utilisé pour empaqueter votre application. Par exemple, si vous avez utilisé **MakeAppx.exe** pour créer votre package d’application avec les paramètres par défaut, vous devez spécifier SHA256lorsque vous utilisez **SignTool** puisqu’il s’agit de l’algorithme par défaut utilisé par **MakeAppx.exe**.
 
-Pour connaître l'algorithme de hachage utilisé lors de l’empaquetage de votre application, extrayez les contenus du package d’application et examinez le fichier AppxBlockMap.xml. Pour découvrir comment décompresser/extraire un package d’application, voir [Extraire les fichiers d’un package ou d’un ensemble d’applications](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool#extract-files-from-a-package-or-bundle). La méthode de hachage se trouve dans l’élément BlockMap au format format suivant :
+Pour connaître l'algorithme de hachage utilisé lors de l’empaquetage de votre application, extrayez les contenus du package d’application et examinez le fichier AppxBlockMap.xml. Pour découvrir comment décompresser/extraire un package d’application, voir [Extraire les fichiers d’un package ou d’un ensemble d’applications](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool#extract-files-from-a-package-or-bundle). La méthode de hachage se trouve dans l’élément BlockMap au format format suivant:
 ```
 <BlockMap xmlns="http://schemas.microsoft.com/appx/2010/blockmap" 
 HashMethod="http://www.w3.org/2001/04/xmlenc#sha256">
 ```
 
-Ce tableau présente chaque valeur HashMethod et son algorithme de hachage correspondant :
+Ce tableau présente chaque valeur HashMethod et son algorithme de hachage correspondant:
 | Valeur HashMethod                              | Algorithme de hachage |
 |-----------------------------------------------|----------------|
 | http://www.w3.org/2001/04/xmlenc#sha256       | SHA256         |
@@ -62,35 +62,35 @@ Ce tableau présente chaque valeur HashMethod et son algorithme de hachage corre
 
 Une fois que toutes les conditions préalables sont réunies et que vous avez déterminé quel algorithme de hachage a été utilisé pour empaqueter votre application, vous êtes prêt à procéder à la signature. 
 
-La syntaxe de ligne de commande générale pour la signature de package **SignTool** est la suivante :
+La syntaxe de ligne de commande générale pour la signature de package **SignTool** est la suivante:
 ```
 SignTool sign [options] <filename(s)>
 ```
 
 Le certificat utilisé pour signer votre application doit être un fichier .pfx ou être installé dans un magasin de certificats.
 
-Pour signer votre package d’application avec un certificat issu d'un fichier .pfx, utilisez la syntaxe suivante :
+Pour signer votre package d’application avec un certificat issu d'un fichier .pfx, utilisez la syntaxe suivante:
 ```
 SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.appx
 ```
 Notez que l'option `/a` permet à **SignTool** de choisir automatiquement le meilleur certificat.
 
-Si votre certificat n’est pas un fichier .pfx, utilisez la syntaxe suivante :
+Si votre certificat n’est pas un fichier .pfx, utilisez la syntaxe suivante:
 ```
 SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.appx
 ```
 
-Vous pouvez également spécifier le hachage SHA1 du certificat souhaité au lieu de &lt;Nom du certificat&gt; à l’aide de cette syntaxe :
+Vous pouvez également spécifier le hachage SHA1 du certificat souhaité au lieu de &lt;Nom du certificat&gt; à l’aide de cette syntaxe:
 ```
 SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.appx
 ```
 
 Notez que certains certificats n’utilisent pas de mot de passe. Si votre certificat ne dispose pas d’un mot de passe, omettez "/p &lt;Votre mot de passe&gt;" dans les exemples de commandes.
 
-Une fois que votre package d’application est signé avec un certificat valide, vous êtes prêt à importer votre package sur le Windows Store. Pour obtenir des instructions supplémentaires sur l'importation et la soumission des applications au Windows Store, voir [Soumissions d’application](https://msdn.microsoft.com/windows/uwp/publish/app-submissions).
+Une fois que votre package d’application est signé avec un certificat valide, vous êtes prêt à importer votre package sur le WindowsStore. Pour obtenir des instructions supplémentaires sur l'importation et la soumission des applications au WindowsStore, voir [Soumissions d’application](https://msdn.microsoft.com/windows/uwp/publish/app-submissions).
 
 ## <a name="common-errors-and-troubleshooting"></a>Erreurs fréquentes et résolution des problèmes
-Les types d'erreurs les plus fréquentes lors de l'utilisation de **SignTool** sont internes et prennent généralement la forme suivante :
+Les types d'erreurs les plus fréquentes lors de l'utilisation de **SignTool** sont internes et prennent généralement la forme suivante:
 
 ```
 SignTool Error: An unexpected internal error has occurred.
@@ -106,15 +106,15 @@ SignTool sign /debug [options]
 
 Le type d'erreur le plus courant est 0x8007000B. Pour ce type d’erreur, vous trouverez plus d’informations dans le journal des événements.
  
-Pour trouver plus d’informations dans le journal des événements :
+Pour trouver plus d’informations dans le journal des événements:
 - Exécutez Eventvwr.msc
-- Ouvrez le journal des événements : Observateur d’événements (Local) -> Journaux des applications et des services -> Microsoft -> Windows -> appxPackagingOM -> Microsoft-Windows-AppxPackaging/Operational
+- Ouvrez le journal des événements: Observateur d’événements (Local) -> Journaux des applications et des services -> Microsoft -> Windows -> appxPackagingOM -> Microsoft-Windows-AppxPackaging/Operational
 - Recherchez l’événement d’erreur le plus récent
 
-L’erreur interne 0x8007000B correspond généralement à l'une des valeurs suivantes :
+L’erreur interne 0x8007000B correspond généralement à l'une des valeurs suivantes:
 
 | **ID d’événement** | **Exemple de chaîne d'événements** | **Suggestion** |
 |--------------|--------------------------|----------------|
-| 150          | erreur 0x8007000B : le nom de l’éditeur de manifeste de l’application (CN = Contoso) doit correspondre au nom du sujet du certificat de signature (CN = Contoso, C = US). | Le nom de l’éditeur du manifeste de l'application doit correspondre exactement au nom de sujet de la signature.               |
-| 151          | erreur 0x8007000B : la méthode de hachage de la signature qui est spécifiée (SHA512) doit correspondre à la méthode de hachage utilisée dans le mappage de bloc du package d'application (SHA256).     | Le hashAlgorithm spécifié dans le paramètre /fd est incorrect. Exécutez de nouveau **SignTool** à l’aide du hashAlgorithm qui correspond à la carte de bloc du package d'application (utilisée pour créer le package d’application)  |
-| 152          | Erreur 0x8007000B : le contenu du package d’application doit permettre de valider son mappage de bloc.                                                           | Le package d’application est endommagé et doit être reconstruit pour générer un nouveau mappage de bloc. Pour en savoir plus sur la création d’un package d’application, voir [Créer un package d’application avec l’outil MakeAppx.exe](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool) |
+| 150          | erreur 0x8007000B: le nom de l’éditeur de manifeste de l’application (CN = Contoso) doit correspondre au nom du sujet du certificat de signature (CN = Contoso, C = US). | Le nom de l’éditeur du manifeste de l'application doit correspondre exactement au nom de sujet de la signature.               |
+| 151          | erreur 0x8007000B: la méthode de hachage de la signature qui est spécifiée (SHA512) doit correspondre à la méthode de hachage utilisée dans le mappage de bloc du package d'application (SHA256).     | Le hashAlgorithm spécifié dans le paramètre /fd est incorrect. Exécutez de nouveau **SignTool** à l’aide du hashAlgorithm qui correspond à la carte de bloc du package d'application (utilisée pour créer le package d’application)  |
+| 152          | Erreur 0x8007000B: le contenu du package d’application doit permettre de valider son mappage de bloc.                                                           | Le package d’application est endommagé et doit être reconstruit pour générer un nouveau mappage de bloc. Pour en savoir plus sur la création d’un package d’application, voir [Créer un package d’application avec l’outil MakeAppx.exe](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool) |

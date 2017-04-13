@@ -2,22 +2,20 @@
 author: DBirtolo
 ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
 title: "Énumérer les appareils"
-description: "L’espace de noms d’énumération vous permet de rechercher des appareils connectés au système en interne, connectés en externe ou détectables sur les protocoles sans fil ou réseau."
+description: "L’espace de noms d’énumération vous permet de rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau."
 ms.author: dbirtolo
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 05ba89322a72763660a49b9e14a2d318eacc56a6
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 1bf6b8fc87061625b8bc206faf43da99a6b11bf5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="enumerate-devices"></a>Énumérer les appareils
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ## <a name="samples"></a>Exemples
 
@@ -98,7 +96,7 @@ Dans certains scénarios, le [**DevicePicker**](https://msdn.microsoft.com/libra
 
 Pour énumérer une capture instantanée d’appareils, utilisez la méthode [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx). Cette méthode attend que le processus d’énumération soit terminé et renvoie tous les résultats sous la forme d’un seul objet [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcollection.aspx). Cette méthode est également surchargée pour vous offrir plusieurs options de filtrage des résultats et limiter ceux-ci aux appareils qui vous intéressent. Pour ce faire, fournissez une [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) ou transmettez un sélecteur d’appareil. Le sélecteur d’appareil est une chaîne AQS qui spécifie les appareils que vous voulez énumérer. Pour plus d’informations, voir [Créer un sélecteur d’appareil](build-a-device-selector.md).
 
-Vous trouverez ci-dessous l’exemple d’un instantané d’énumération d’appareil :
+Vous trouverez ci-dessous l’exemple d’un instantané d’énumération d’appareil:
 
 
 
@@ -162,7 +160,6 @@ Tout objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/ap
  
 
  
-
 
 
 

@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0e9121dfc590a1a7f67be69b7dbce475e438dd08
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 8933fb5c970203746fe1a00c71c0630fa264ebf6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="sockets"></a>Sockets
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -262,7 +259,7 @@ foreach (IBuffer packet in packetsToSend)
 await outputStream.FlushAsync();
 ```
 
-Dans les versions antérieures de Windows, **FlushAsync** retournait immédiatement et ne garantissait pas que toutes les opérations sur le flux étaient terminées. Dans Windows 10, le comportement a changé. Il est désormais garanti que **FlushAsync** retourne une fois toutes les opérations sur le flux de sortie terminées.
+Dans les versions antérieures de Windows, **FlushAsync** retournait immédiatement et ne garantissait pas que toutes les opérations sur le flux étaient terminées. Dans Windows10, le comportement a changé. Il est désormais garanti que **FlushAsync** retourne une fois toutes les opérations sur le flux de sortie terminées.
 
 Certaines limitations importantes découlent de l’utilisation d’écritures par lot dans votre code.
 
@@ -279,7 +276,7 @@ Windows 10 introduit une nouvelle propriété [**DatagramSocketControl**](https:
 
 La classe [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) prend en charge l’utilisation des protocoles SSL/TLS pour authentifier le serveur avec lequel l’application communique. Dans certains cas, l’application doit également s’authentifier auprès du serveur à l’aide d’un certificat client TLS. Dans Windows 10, vous pouvez prévoir un certificat client sur l’objet [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) (cela doit être défini avant le début de la négociation TLS). Si le serveur demande le certificat client, Windows répond avec le certificat fourni.
 
-Voici un extrait de code montrant comment implémenter cela :
+Voici un extrait de code montrant comment implémenter cela:
 
 ```csharp
 var socket = new StreamSocket();
@@ -302,7 +299,6 @@ Pour les erreurs de validation de paramètre, une application peut également ut
 
 ## <a name="the-winsock-api"></a>API Winsock
 
-Vous pouvez également utiliser [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) dans votre application UWP. L’API Winsock prise en charge est basée sur celle de Microsoft Silverlight pour Windows Phone 8.1 et continue de prendre en charge la plupart des types, propriétés et méthodes (certaines API jugées obsolètes ont été supprimées). Pour plus d’informations sur la programmation de Winsock, voir [ici](https://msdn.microsoft.com/library/windows/desktop/ms740673).
-
+Vous pouvez également utiliser [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) dans votre application UWP. L’API Winsock prise en charge est basée sur celle de Microsoft Silverlight pour Windows Phone8.1 et continue de prendre en charge la plupart des types, propriétés et méthodes (certaines API jugées obsolètes ont été supprimées). Pour plus d’informations sur la programmation de Winsock, voir [ici](https://msdn.microsoft.com/library/windows/desktop/ms740673).
 
 

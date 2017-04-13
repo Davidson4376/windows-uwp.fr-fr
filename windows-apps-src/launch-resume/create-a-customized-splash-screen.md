@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 220e2e1bee237120acd35d2a4111bf7390b8e619
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 0a7a51cdd330bc361b7d0cec3a002c5b1aee9de4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="display-a-splash-screen-for-more-time"></a>Afficher un écran de démarrage plus longtemps
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -30,13 +27,13 @@ ms.lasthandoff: 02/07/2017
 
 Affichez un écran de démarrage plus longtemps en créant un écran de démarrage étendu pour votre application. Cet écran étendu imite l’écran de démarrage affiché quand votre application est lancée, mais il est personnalisable. Que vous vouliez afficher des informations de chargement en temps réel ou simplement donner à votre application un délai supplémentaire pour préparer son interface utilisateur initiale, un écran de démarrage étendu vous permet de définir l’expérience de lancement.
 
-> **Note** L’expression « écran de démarrage étendu » utilisée dans cette rubrique fait référence à l’écran de démarrage qui reste à l’écran pendant une période prolongée. Elle ne désigne pas une sous-classe qui dérive de la classe [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763).
+> **Note** L’expression «écran de démarrage étendu» utilisée dans cette rubrique fait référence à l’écran de démarrage qui reste à l’écran pendant une période prolongée. Elle ne désigne pas une sous-classe qui dérive de la classe [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763).
 
  
 
-Assurez-vous que votre écran de démarrage étendu imite avec précision l’écran de démarrage par défaut, en suivant ces recommandations :
+Assurez-vous que votre écran de démarrage étendu imite avec précision l’écran de démarrage par défaut, en suivant ces recommandations:
 
--   La page de votre écran de démarrage étendu doit utiliser une image de 620 x 300 pixels cohérente avec l’image spécifiée pour l’écran de démarrage dans le manifeste de votre application (image de l’écran de démarrage de votre application). Dans Microsoft Visual Studio 2015, les paramètres de l’écran de démarrage sont stockés dans la section **Écran de démarrage** de l’onglet **Composants visuels**, dans votre manifeste de l’application (fichier Package.appxmanifest).
+-   La page de votre écran de démarrage étendu doit utiliser une image de 620x300 pixels cohérente avec l’image spécifiée pour l’écran de démarrage dans le manifeste de votre application (image de l’écran de démarrage de votre application). Dans Microsoft Visual Studio 2015, les paramètres de l’écran de démarrage sont stockés dans la section **Écran de démarrage** de l’onglet **Composants visuels**, dans votre manifeste de l’application (fichier Package.appxmanifest).
 -   Votre écran de démarrage étendu doit utiliser une couleur d’arrière-plan identique à celle spécifiée pour l’écran de démarrage dans votre manifeste de l’application (arrière-plan de l’écran de démarrage de votre application).
 -   Votre code doit utiliser la classe [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) pour positionner l’image de l’écran de démarrage de votre application aux mêmes coordonnées d’écran que l’écran de démarrage par défaut.
 -   Votre code doit répondre aux événements de redimensionnement de fenêtre (par exemple, quand l’écran pivote ou que votre application est déplacée à côté d’une autre application à l’écran) via la classe [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763), pour permettre le repositionnement des éléments sur votre écran de démarrage étendu.
@@ -48,9 +45,9 @@ Procédez comme suit pour créer un écran de démarrage étendu qui imite effic
 
 Cette rubrique suppose que vous voulez ajouter un écran de démarrage étendu à un projet d’application de plateforme Windows universelle (UWP) existant en C#, Visual Basic ou C++.
 
--   Ouvrez votre application dans Visual Studio 2015.
+-   Ouvrez votre application dans VisualStudio2015.
 -   Appuyez sur ou ouvrez **Projet** à partir de la barre de menus, puis cliquez sur **Ajouter un nouvel élément**. Une boîte de dialogue **Ajouter un nouvel élément** s’affiche.
--   À partir de cette boîte de dialogue, ajoutez un nouvel élément **Page vierge** à votre application. Dans cette rubrique, « ExtendedSplash » est le nom de la page de l’écran de démarrage étendu.
+-   À partir de cette boîte de dialogue, ajoutez un nouvel élément **Page vierge** à votre application. Dans cette rubrique, «ExtendedSplash» est le nom de la page de l’écran de démarrage étendu.
 
 L’ajout d’un élément **Page vierge** génère deux fichiers, l’un pour le balisage (ExtendedSplash.xaml) et l’autre pour le code (ExtendedSplash.xaml.cs).
 
@@ -59,7 +56,7 @@ L’ajout d’un élément **Page vierge** génère deux fichiers, l’un pour l
 
 Suivez ces étapes pour ajouter une image et un contrôle de progression à votre écran de démarrage étendu.
 
-Dans votre fichier ExtendedSplash.xaml :
+Dans votre fichier ExtendedSplash.xaml:
 
 -   Modifiez la propriété [**Background**](https://msdn.microsoft.com/library/windows/apps/br209396) de l’élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) par défaut pour correspondre à la couleur d’arrière-plan que vous avez définie pour l’écran de démarrage de votre application dans votre manifeste de l’application (dans la section **Composants visuels** de votre fichier Package.appxmanifest). La couleur par défaut de l’écran de démarrage est de type gris clair (valeur hexadécimale \#464646). Notez que cet élément **Grid** est fourni par défaut quand vous créez une **Page vierge**. Vous n’avez pas à utiliser **Grid**. Il s’agit juste d’une base de départ pour la création d’un écran de démarrage étendu.
 -   Ajoutez un élément [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) à [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704). Vous utiliserez **Canvas** pour positionner votre image de l’écran de démarrage étendu.
@@ -77,7 +74,7 @@ Ajoutez le code suivant pour définir les éléments [**Canvas**](https://msdn.m
     </Grid>
 ```
 
-**Remarque** Ce code définit la largeur de [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) à 20 pixels. Vous pouvez définir manuellement sa largeur en fonction d’une valeur qui convient pour votre application. Toutefois, le contrôle ne s’affiche pas pour les largeurs de moins de 20 pixels.
+**Remarque** Ce code définit la largeur de [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) à 20 pixels. Vous pouvez définir manuellement sa largeur en fonction d’une valeur qui convient pour votre application. Toutefois, le contrôle ne s’affiche pas pour les largeurs de moins de 20pixels.
 
  
 
@@ -555,4 +552,3 @@ namespace SplashScreenExample
  
 
  
-

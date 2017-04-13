@@ -10,14 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 94a92c184f4c695caf29cb7a185842ccd72e4c53
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: be99225c0691c8813a071a314ab3df4573fb11f5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="mouse-interactions"></a>Interactions avec la souris
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -99,14 +96,14 @@ Répondez à l’entrée de souris dans vos applications en gérant les mêmes �
 
 Utilisez les événements [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) pour implémenter des fonctionnalités de base d’entrée sans avoir à rédiger de code pour chaque appareil d’entrée de pointeur. Toutefois, vous pouvez toujours tirer parti des fonctionnalités spéciales de chaque appareil (telles que les événements de roulette de souris) à l’aide des événements de pointeur, de mouvement et de manipulation de cet objet.
 
-**Exemples : **découvrez ces fonctionnalités en action dans nos [exemples d’applications](http://go.microsoft.com/fwlink/p/?LinkID=264996).
+**Exemples: **découvrez ces fonctionnalités en action dans nos [exemples d’applications](http://go.microsoft.com/fwlink/p/?LinkID=264996).
 
 
-- [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
+- [Entrée: exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
 
 - [Exemple d’entrée](http://go.microsoft.com/fwlink/p/?linkid=226855)
 
-- [Entrée : Mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+- [Entrée: Mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
 
 ## <a name="guidelines-for-visual-feedback"></a>Recommandations en matière de retour visuel
 
@@ -128,7 +125,7 @@ Un ensemble de curseurs standard est disponible pour servir de pointeurs de sour
 
 Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Spécifiez une image de curseur par le biais de la fonction [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273).
 
-Si vous avez besoin de personnaliser le curseur de la souris :
+Si vous avez besoin de personnaliser le curseur de la souris:
 
 -   Utilisez toujours le curseur en forme de flèche (![Curseur en forme de flèche](images/cursor-arrow.png)) pour les éléments interactifs. N’utilisez pas le curseur en forme de main (![Curseur en forme de main](images/cursor-pointinghand.png)) pour les liens ou pour d’autres éléments interactifs. À la place, utilisez les effets de pointage (décrits précédemment).
 -   Utilisez le curseur texte (![Curseur texte](images/cursor-text.png)) pour le texte sélectionnable.
@@ -156,7 +153,6 @@ Si vous avez besoin de personnaliser le curseur de la souris :
  
 
  
-
 
 
 

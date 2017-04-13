@@ -11,12 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 329c4c507e94b08f948f4984dfbd96239eb3cd9d
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 45c7c541ab278da1f00899a16636337dcdc20d3f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="layout-panels"></a>Panneaux de disposition
 
@@ -101,7 +99,7 @@ Ce code XAML montre comment organiser des éléments dans un élément RelativeP
 </RelativePanel>
 ```
 
-Le résultat se présente ainsi : 
+Le résultat se présente ainsi: 
 
 ![Panneau relatif](images/layout-panel-relative-panel.png)
 
@@ -128,7 +126,7 @@ Le code XAML suivant indique comment créer un empilement StackPanel vertical de
 ```
 
 
-Le résultat se présente ainsi :
+Le résultat se présente ainsi:
 
 ![Panneau d’empilement](images/layout-panel-stack-panel.png)
 
@@ -142,7 +140,7 @@ Les objets peuvent être positionnés dans des cellules spécifiques du panneau 
 
 Vous pouvez forcer le contenu à s’étendre sur plusieurs lignes et colonnes via les propriétés jointes [**Grid.RowSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowspan.aspx) et [**Grid.ColumnSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columnspan.aspx).
 
-Cet exemple XAML montre comment créer un élément Grid à deux lignes et deux colonnes.
+Cet exemple XAML montre comment créer un élément Grid à deuxlignes et deuxcolonnes.
 
 ```xaml
 <Grid>
@@ -162,7 +160,7 @@ Cet exemple XAML montre comment créer un élément Grid à deux lignes et deux
 ```
 
 
-Le résultat se présente ainsi :
+Le résultat se présente ainsi:
 
 ![Grille](images/layout-panel-grid.png)
 
@@ -197,7 +195,7 @@ Voici comment utiliser un élément VariableSizedWrapGrid en XAML.
 ```
 
 
-Le résultat se présente ainsi :
+Le résultat se présente ainsi:
 
 ![Grille avec renvoi à la ligne à taille variable](images/layout-panel-variable-size-wrap-grid.png)
 
@@ -223,7 +221,7 @@ Voici un exemple d’élément Canvas en XAML.
 ```
 
 
-Le résultat se présente ainsi :
+Le résultat se présente ainsi:
 
 ![Canevas](images/layout-panel-canvas.png)
 
@@ -232,4 +230,3 @@ Utilisez le panneau Canvas en fonction de vos besoins. Bien qu’il soit pratiqu
 ## <a name="panels-for-itemscontrol"></a>Panneaux pour ItemsControl
 
 Il existe plusieurs panneaux à usage spécifique qui peuvent être utilisés uniquement comme un contrôle [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) pour afficher des éléments dans un contrôle [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx). Il s’agit de [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx), [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx), [**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx) et [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx). Vous ne pouvez pas utiliser ces panneaux pour créer une disposition générale de l’interface utilisateur.
-

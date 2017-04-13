@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 797ee8930a01f9934692067139a3fd5321ae36df
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 750dd44b6f10e527e6bd6db04a9588a87e84de0c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="respond-to-system-events-with-background-tasks"></a>Répondre aux événements système avec des tâches en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -36,7 +33,7 @@ Cette rubrique suppose qu’une classe de tâche en arrière-plan est écrite po
 
     Le deuxième paramètre, *OneShot*, indique si la tâche en arrière-plan sera exécutée une seule fois la prochaine fois que l’événement système survient ou bien chaque fois que l’événement système survient jusqu’à ce que la tâche soit désinscrite.
 
-    Le code suivant spécifie que la tâche en arrière-plan s’exécute chaque fois qu’Internet devient accessible :
+    Le code suivant spécifie que la tâche en arrière-plan s’exécute chaque fois qu’Internet devient accessible:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -50,7 +47,7 @@ Cette rubrique suppose qu’une classe de tâche en arrière-plan est écrite po
 
 -   Inscrivez la tâche en arrière-plan en appelant la fonction qui vous permet de le faire. Pour plus d’informations sur l’inscription des tâches en arrière-plan, voir [Inscrire une tâche en arrière-plan](register-a-background-task.md).
 
-    Le code suivant inscrit la tâche en arrière-plan pour un processus en arrière-plan qui s’exécute hors processus. Si vous appeliez une tâche en arrière-plan qui s’exécute dans le même processus que l’application hôte, vous ne définiriez pas `entrypoint` :
+    Le code suivant inscrit la tâche en arrière-plan pour un processus en arrière-plan qui s’exécute hors processus. Si vous appeliez une tâche en arrière-plan qui s’exécute dans le même processus que l’application hôte, vous ne définiriez pas `entrypoint`:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -80,7 +77,7 @@ Les tâches en arrière-plan peuvent s’exécuter en réponse à des événemen
 
 Les applications peuvent inscrire des tâches en arrière-plan qui répondent aux événements [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843), [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) et [**NetworkOperatorNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/br224831), ce qui leur permet d’assurer une communication en temps réel avec l’utilisateur même lorsque l’application n’est pas au premier plan. Pour plus d’informations, voir [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
 
-> **Remarque** Cet article s’adresse aux développeurs Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -99,4 +96,3 @@ Les applications peuvent inscrire des tâches en arrière-plan qui répondent au
 * [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-

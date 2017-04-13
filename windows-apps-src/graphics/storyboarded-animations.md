@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5de5007327b86b401b2f85d6f80adbc2bed820a8
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 99b07dd5c19cf16b4337e5af1c46b7285333e474
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="storyboarded-animations"></a>Animations dans une table de montage séquentiel
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Les animations de table de montage séquentiel ne sont pas seulement des animations au sens visuel. Une animation de table de montage séquentiel permet de changer la valeur d’une propriété de dépendance en tant que fonction de temps. Vous pouvez avoir notamment besoin d’une animation de table de montage séquentiel qui ne provient pas de la bibliothèque des animations pour définir l’état visuel d’un contrôle dans un modèle de contrôle ou une définition de page.
@@ -72,7 +70,7 @@ Vous définissez la valeur de [**Storyboard.TargetProperty**](https://msdn.micro
 
 Parfois vous devez cibler une propriété qui n’est pas une propriété immédiate de l’objet cible, mais qui est imbriquée plus profondément dans une relation objet-propriété. Vous devez souvent faire cela afin d’explorer un ensemble de valeurs de propriétés et d’objets contributives jusqu’à ce que vous puissiez référencer un type de propriété qui peut être animé ([**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870), [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723)). Ce concept porte le nom de *ciblage indirect* et la syntaxe de ciblage d’une propriété de cette manière porte le nom de *chemin d’accès de propriété*.
 
-Voici un exemple : Un exemple courant de scénario pour une animation de table de montage séquentiel consiste à changer la couleur d’une partie de l’interface utilisateur ou d’un contrôle d’une application afin d’indiquer l’état de ce contrôle. Supposons que vous vouliez animer le [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) d’un [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) pour qu’il soit vert au lieu d’être rouge. Vous vous attendez à ce qu’intervienne [**ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066) et vous avez raison. Cependant, aucune des propriétés sur les éléments d’interface utilisateur qui modifient la couleur de l’objet n’est de type [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Elles sont en fait de type [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). Par conséquent, pour votre animation, vous devez cibler la propriété [**Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) de la classe [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) dont le type est dérivé de **Brush**. Ce type est en général utilisé pour les propriétés de couleur d’interface utilisateur. Voici ce que cela donne pour la formation d’un chemin d’accès de propriété pour le ciblage d’une propriété de votre animation :
+Voici un exemple: Un exemple courant de scénario pour une animation de table de montage séquentiel consiste à changer la couleur d’une partie de l’interface utilisateur ou d’un contrôle d’une application afin d’indiquer l’état de ce contrôle. Supposons que vous vouliez animer le [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) d’un [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) pour qu’il soit vert au lieu d’être rouge. Vous vous attendez à ce qu’intervienne [**ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066) et vous avez raison. Cependant, aucune des propriétés sur les éléments d’interface utilisateur qui modifient la couleur de l’objet n’est de type [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Elles sont en fait de type [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). Par conséquent, pour votre animation, vous devez cibler la propriété [**Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) de la classe [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) dont le type est dérivé de **Brush**. Ce type est en général utilisé pour les propriétés de couleur d’interface utilisateur. Voici ce que cela donne pour la formation d’un chemin d’accès de propriété pour le ciblage d’une propriété de votre animation:
 
 ```xml
 <Storyboard x:Name="myStoryboard">
@@ -88,11 +86,11 @@ Voici comment interpréter chacune des parties de la syntaxe :
 -   Le nom de la propriété comporte un point. Ce point sépare un nom de type et un nom de propriété, par conséquent la propriété que vous identifiez est correcte.
 -   Le point au milieu, c’est-à-dire celui qui n’est pas entre parenthèses, est une étape. Pour la syntaxe cela veut dire, prendre la valeur de la première propriété (qui est un objet), aller dans son modèle d’objet et cibler une sous-propriété spécifique de la valeur de la première propriété.
 
-Voici une liste des scénarios de ciblage d’animation pour lesquels vous utiliserez probablement le ciblage de propriété indirect avec des chaînes de chemin d’accès de propriété qui sont similaires à la syntaxe que vous utiliserez :
+Voici une liste des scénarios de ciblage d’animation pour lesquels vous utiliserez probablement le ciblage de propriété indirect avec des chaînes de chemin d’accès de propriété qui sont similaires à la syntaxe que vous utiliserez:
 
--   Animation de la valeur [**X**](https://msdn.microsoft.com/library/windows/apps/BR243029) d’une classe [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027), appliquée à une propriété [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) : `(UIElement.RenderTransform).(TranslateTransform.X)`
--   Animation d’une propriété [**Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) dans un [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) d’un [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108), appliquée à une propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/BR243378) : `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
--   Animation de la valeur [**X**](https://msdn.microsoft.com/library/windows/apps/BR243029) d’un [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027), qui est l’une des quatre transformations dans un [**TransformGroup**](https://msdn.microsoft.com/library/windows/apps/BR243022), appliquée à une propriété [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) :`(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
+-   Animation de la valeur [**X**](https://msdn.microsoft.com/library/windows/apps/BR243029) d’une classe [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027), appliquée à une propriété [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980): `(UIElement.RenderTransform).(TranslateTransform.X)`
+-   Animation d’une propriété [**Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) dans un [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) d’un [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108), appliquée à une propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/BR243378): `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
+-   Animation de la valeur [**X**](https://msdn.microsoft.com/library/windows/apps/BR243029) d’un [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027), qui est l’une des quatre transformations dans un [**TransformGroup**](https://msdn.microsoft.com/library/windows/apps/BR243022), appliquée à une propriété [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980):`(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
 
 Vous remarquerez que certains de ces exemples utilisent des crochets autour des nombres. Il s’agit d’indexeurs. Ils indiquent que le nom de la propriété qui les précède a pour valeur une collection dans laquelle vous voulez un élément (identifié par un index basé sur zéro).
 
@@ -114,7 +112,7 @@ Il existe également un type d’animation [**Object**](https://msdn.microsoft.c
 
 Jusqu’à présent, nous vous avons montré comment cibler l’objet et la propriété à animer mais nous ne vous avons pas expliqué ce qu’il arrive à la valeur de la propriété lorsque l’animation est exécutée.
 
-Les types d’animation que nous vous avons présentés sont parfois appelés animations **From**/**To**/**By**. Cela veut dire que l’animation change au fur et à mesure la valeur d’une propriété en utilisant les informations provenant de sa définition :
+Les types d’animation que nous vous avons présentés sont parfois appelés animations **From**/**To**/**By**. Cela veut dire que l’animation change au fur et à mesure la valeur d’une propriété en utilisant les informations provenant de sa définition:
 
 -   La valeur commence à la valeur **From**. Si vous ne spécifiez pas une valeur **From**, la valeur de départ est la valeur de la propriété animée avant que l’animation s’exécute. Il peut s’agir d’une valeur par défaut, d’une valeur provenant d’un style ou d’un modèle ou d’une valeur appliquée spécifiquement par une définition d’interface utilisateur XAML ou le code de l’application.
 -   À la fin de l’animation, la valeur est la valeur **To**.
@@ -124,7 +122,7 @@ Les types d’animation que nous vous avons présentés sont parfois appelés an
 
 Revenons à l’exemple XAML précédent et examinons de nouveau les valeurs **From** et **To** et la valeur **Duration**. L’exemple anime la propriété [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) et le type de la propriété **Opacity** est [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Par conséquent, l’animation à utiliser ici est [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136).
 
-`From="1.0" To="0.0"` spécifie que lorsque l’animation est exécutée, la propriété [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) démarre à la valeur 1 et s’anime à 0. Concernant la signification de ces valeurs [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) pour la propriété **Opacity**, avec cette animation, l’objet sera opaque au début puis deviendra transparent.
+`From="1.0" To="0.0"` spécifie que lorsque l’animation est exécutée, la propriété [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) démarre à la valeur1 et s’anime à0. Concernant la signification de ces valeurs [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) pour la propriété **Opacity**, avec cette animation, l’objet sera opaque au début puis deviendra transparent.
 
 ```xml
 ...
@@ -163,11 +161,11 @@ La propriété [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps
 
 La propriété [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) spécifie le nombre de fois qu’une chronologie est exécutée ou une durée plus longue pendant laquelle la chronologie doit se répéter. Par défaut, le nombre d’itérations d’une chronologie est « 1x », ce qui signifie qu’elle s’exécute une fois selon la valeur de sa propriété [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) et qu’elle ne se répète pas.
 
-Vous pouvez cependant faire en sorte que l’animation exécute plusieurs itérations. Par exemple, avec la valeur « 3x », l’animation s’exécute trois fois. Ou, vous pouvez spécifier une valeur différente de [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) pour [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211). Cette valeur de **Duration** ne doit pas être plus longue que la valeur de **Duration** de l’animation elle-même pour être effective. Par exemple, si vous spécifiez une propriété **RepeatBehavior** avec la valeur « 0:0:10 », pour une animation dont la propriété [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) a la valeur « 0:0:2 », cette animation se répète cinq fois. Si ces valeurs ne sont pas divisibles équitablement, l’animation est tronquée au moment où la valeur de **RepeatBehavior** est atteinte, ce qui peut être en plein milieu. Enfin, vous pouvez spécifier la valeur spéciale « Forever », qui exécute l’animation indéfiniment jusqu’à ce qu’elle soit délibérément arrêtée.
+Vous pouvez cependant faire en sorte que l’animation exécute plusieurs itérations. Par exemple, avec la valeur «3x», l’animation s’exécute trois fois. Ou, vous pouvez spécifier une valeur différente de [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) pour [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211). Cette valeur de **Duration** ne doit pas être plus longue que la valeur de **Duration** de l’animation elle-même pour être effective. Par exemple, si vous spécifiez une propriété **RepeatBehavior** avec la valeur « 0:0:10 », pour une animation dont la propriété [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) a la valeur « 0:0:2 », cette animation se répète cinq fois. Si ces valeurs ne sont pas divisibles équitablement, l’animation est tronquée au moment où la valeur de **RepeatBehavior** est atteinte, ce qui peut être en plein milieu. Enfin, vous pouvez spécifier la valeur spéciale «Forever», qui exécute l’animation indéfiniment jusqu’à ce qu’elle soit délibérément arrêtée.
 
 Pour plus d’informations sur les valeurs [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411) et la syntaxe XAML, voir [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411).
 
-### **<a name="fillbehaviorstop"></a>FillBehavior= « Stop »**
+### **<a name="fillbehaviorstop"></a>FillBehavior= «Stop»**
 
 Par défaut, lorsqu’une animation se termine, l’animation conserve la valeur finale de **To** ou modifiée de **By** pour sa propriété de durée, même une fois celle-ci dépassée. Cependant, si vous définissez la valeur de la propriété [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) sur [**FillBehavior.Stop**](https://msdn.microsoft.com/library/windows/apps/BR210306), la valeur de la valeur animée avant que l’animation ait été appliquée est rétablie, ou plus précisément, la valeur effective déterminée par le système de propriétés de dépendance (pour plus d’informations sur cette distinction, voir [Vue d’ensemble des propriétés de dépendance](https://msdn.microsoft.com/library/windows/apps/Mt185583)).
 
@@ -333,7 +331,6 @@ Jusqu’à présent nous vous avons montré les animations personnalisées qui s
  
 
  
-
 
 
 

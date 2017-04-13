@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fe0bc3c6a178aa635ab8a5463e9c7663f27e8ccc
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f58b2c244a99580b038609c5bd5ef0a4c3ffe030
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="touchpad-design-guidelines"></a>Recommandations en matière de conception pour le pavé tactile
 
 
@@ -28,7 +25,7 @@ Concevez votre application afin que les utilisateurs puissent interagir avec ell
 ![Pavé tactile](images/input-patterns/input-touchpad.jpg)
 
 
-Les interactions de pavé tactile nécessitent trois éléments :
+Les interactions de pavé tactile nécessitent trois éléments:
 
 -   Un pavé tactile standard ou un pavé tactile de précision Windows.
 
@@ -142,9 +139,9 @@ Pour obtenir des conseils plus généraux concernant le retour visuel, voir [Rec
 
 Un ensemble de curseurs standard est disponible pour servir de pointeurs de pavé tactile. Ces derniers sont utilisés pour indiquer l’action principale d’un élément.
 
-Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Les applications du Windows Store spécifient une image de curseur par le biais de la fonction [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273).
+Chaque curseur standard possède une image par défaut correspondante qui lui est associée. L’utilisateur ou une application peut remplacer à tout moment l’image par défaut associée à n’importe quel curseur standard. Les applications du WindowsStore spécifient une image de curseur par le biais de la fonction [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273).
 
-Si vous avez besoin de personnaliser le curseur de la souris :
+Si vous avez besoin de personnaliser le curseur de la souris:
 
 -   Utilisez toujours le curseur en forme de flèche (![Curseur en forme de flèche](images/cursor-arrow.png)) pour les éléments interactifs. N’utilisez pas le curseur en forme de main (![Curseur en forme de main](images/cursor-pointinghand.png)) pour les liens ou pour d’autres éléments interactifs. À la place, utilisez les effets de pointage (décrits précédemment).
 -   Utilisez le curseur texte (![Curseur texte](images/cursor-text.png)) pour le texte sélectionnable.
@@ -168,7 +165,6 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
 * [Entrée : mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
  
-
 
 
 

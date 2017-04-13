@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp
 ms.openlocfilehash: 2ca600085c14c43d9d9d37e80efbae30bae650ef
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="getting-started-what-next"></a>Prise en main: Et ensuite?
 
-# <a name="getting-started-what-next"></a>Prise en main : Et ensuite ?
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -33,7 +30,7 @@ Avec ces informations de base, vous pouvez commencer à écrire des applications
 
 Pensez aussi surtout à consulter nos [ressources de communauté](https://developer.microsoft.com/en-us/windows/support) pour savoir comment obtenir de l’aide et accéder des forums des développeurs, des blogs, des séminaires (Devcamps) et des ateliers pour développeurs, et des événements et contacts Microsoft locaux.
 
-Nous pensons que Windows 10 vous ouvrira un vaste champ de nouvelles opportunités pour la création de vos applications. Et nous attendons avec impatience de découvrir toutes les applications que vous créerez !
+Nous pensons que Windows 10 vous ouvrira un vaste champ de nouvelles opportunités pour la création de vos applications. Et nous attendons avec impatience de découvrir toutes les applications que vous créerez!
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -42,4 +39,3 @@ Nous pensons que Windows 10 vous ouvrira un vaste champ de nouvelles opportunit�
 * [Contrôles Windows pour les développeurs iOS](https://msdn.microsoft.com/library/windows/apps/dn263255)
 * [Guide de référence Windows pour les développeurs iOS](https://msdn.microsoft.com/library/windows/apps/dn263256)
 * [Blog de création d’applications pour Windows](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)
-

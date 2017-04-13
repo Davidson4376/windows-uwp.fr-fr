@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e4cc17bf268ddb470c3c64dfe3e471053d8fca55
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: e9d66feb6117fddfff62c217b55da813a63c4331
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-the-windows-settings-app"></a>Lancer l’application Paramètres Windows
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -54,7 +51,7 @@ Par ailleurs, votre application peut appeler la méthode[**LaunchUriAsync**](htt
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
 ```
 
-Le code ci-dessus ouvre la page des paramètres de confidentialité relatifs à l’appareil photo :
+Le code ci-dessus ouvre la page des paramètres de confidentialité relatifs à l’appareil photo:
 
 ![paramètres de confidentialité de l’appareil photo.](images/privacyawarenesssettingsapp.png)
 
@@ -383,4 +380,3 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
         <td>ms-settings:developers</td>
     </tr>
 </table><br/>
-

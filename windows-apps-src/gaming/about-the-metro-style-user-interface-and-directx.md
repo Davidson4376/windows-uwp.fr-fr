@@ -8,20 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, directx, objet d&quot;application"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: Windows10, uwp, directx, objet d&quot;application
 ms.openlocfilehash: 7d3290633ead698a6c42c3accdbd2012ccfd7065
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="the-app-object-and-directx"></a>Objet application et DirectX
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Les applications de la plateforme Windows universelle (UWP) intégrant des jeux DirectX n’utilisent pas beaucoup d’éléments et d’objets d’interface utilisateur Windows Store. En effet, comme elles s’exécutent à un niveau inférieur de la pile Windows Runtime, elles doivent interopérer avec l’infrastructure d’interface utilisateur d’une manière plus basique : en accédant directement à l’objet application et en interopérant avec lui. Découvrez quand et comment cette interopération se produit et comment vous, en tant que développeur DirectX, vous pouvez exploiter efficacement ce modèle dans le cadre du développement de vos applications de la plateforme Windows universelle.
+Les applications de la plateforme Windows universelle (UWP) intégrant des jeux DirectX n’utilisent pas beaucoup d’éléments et d’objets d’interface utilisateur Windows Store. En effet, comme elles s’exécutent à un niveau inférieur de la pile Windows Runtime, elles doivent interopérer avec l’infrastructure d’interface utilisateur d’une manière plus basique: en accédant directement à l’objet application et en interopérant avec lui. Découvrez quand et comment cette interopération se produit et comment vous, en tant que développeur DirectX, vous pouvez exploiter efficacement ce modèle dans le cadre du développement de vos applications de la plateforme Windows universelle.
 
 ## <a name="the-important-core-user-interface-namespaces"></a>Principaux espaces de noms d’interface utilisateur
 
@@ -68,7 +65,7 @@ Maintenant que nous avons vu les principes de base, examinons les autres options
 ## <a name="core-user-interface-types"></a>Principaux types d’interface utilisateur
 
 
-Voici d’autres types principaux d’interface utilisateur figurant dans Windows Runtime et qui peuvent s’avérer utiles :
+Voici d’autres types principaux d’interface utilisateur figurant dans Windows Runtime et qui peuvent s’avérer utiles:
 
 -   [**Windows.ApplicationModel.Core.CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017)
 -   [**Windows.UI.Core.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
@@ -145,7 +142,7 @@ Si vous portez du code existant afin qu’il s’exécute sur le thread ASTA, n�
     2.  Le thread ASTA appelle plus tard le même objet MTA. L’objet MTA appelle P1 avant son retour au thread ASTA.
     3.  P1 ne peut pas entrer dans le thread ASTA, car il est bloqué en tentant d’effectuer un appel sans rapport. Toutefois, le thread MTA est bloqué, car il tente d’effectuer l’appel vers P1.
 
-    Vous pouvez résoudre ce problème en :
+    Vous pouvez résoudre ce problème en:
     -   utilisant le modèle **async** défini dans la Bibliothèque de modèles parallèles (PPLTasks.h) ;
     -   appelant [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) à partir du thread ASTA de votre application (thread principal de votre application) dès que possible pour autoriser les appels arbitraires.
 
@@ -156,7 +153,6 @@ Globalement, lors de la conception de votre application UWP basée sur DirectX, 
  
 
  
-
 
 
 

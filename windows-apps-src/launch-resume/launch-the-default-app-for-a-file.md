@@ -1,6 +1,6 @@
 ---
 author: TylerMSFT
-title: "Lancer l’application par défaut pour un fichier"
+title: "Lancer l’application par défaut d’un fichier"
 description: "Découvrez comment lancer l’application par défaut d’un fichier."
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
 ms.author: twhitney
@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1ab65f210c5fd01460cbe9f63f8b94f6935a630e
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 9727aa78a4df0ab204574b12e827f279144d3fe1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-the-default-app-for-a-file"></a>Lancer l’application par défaut pour un fichier
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -355,7 +352,7 @@ Les applications sources qui appellent la méthode [**LaunchFileAsync**](https:/
 
 > **Remarque**  Windows tient compte de plusieurs facteurs différents pour déterminer la taille finale de la fenêtre de l’application source, par exemple, la préférence de l’application source, le nombre d’applications à l’écran, l’orientation de l’écran, etc. La définition de la propriété [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) ne garantit pas un comportement de fenêtrage spécifique pour l’application source.
 
-**Famille d’appareils mobiles :  **[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) n’est pas pris en charge sur la famille d’appareils mobiles.
+**Famille d’appareils mobiles:  **[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) n’est pas pris en charge sur la famille d’appareils mobiles.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cpp
@@ -435,7 +432,7 @@ Vous ne pouvez pas lancer des types de fichiers qui contiennent du code ou un sc
 
 Si vous essayez de lancer un type de fichier restreint, le lancement se soldera par un échec et votre rappel d’erreur sera appelé. Si votre application gère de nombreux types de fichiers divers et que vous vous attendez à rencontrer cette erreur, nous vous recommandons de proposer un mécanisme de secours à vos utilisateurs. Par exemple, vous pouvez leur offrir comme option d’enregistrer le fichier sur le Bureau pour l’ouvrir depuis cet emplacement.
 
-> **Remarque**  Cet article s’adresse aux développeurs Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque**  Cet article s’adresse aux développeurs Windows10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 ## <a name="related-topics"></a>Rubriques connexes
@@ -458,4 +455,3 @@ Si vous essayez de lancer un type de fichier restreint, le lancement se soldera 
  
 
  
-

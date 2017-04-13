@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b0855392c9e9e3f18d08a16cf39cdfa5c0910701
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: c16506ddb58043b5cba9af7989c34c7f453fe6e8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="3-d-perspective-effects-for-xaml-ui"></a>Effets de perspective 3D pour une interface utilisateur en XAML
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Vous pouvez appliquer des effets 3D au contenu de vos applications Windows Runtime à l’aide de transformations de perspective. Par exemple, vous pouvez donner l’illusion qu’un objet est tourné vers vous ou vers l’arrière, comme illustré ici.
 
@@ -189,5 +187,4 @@ Dans cet exemple, l’objet ne change pas de course à mesure qu’il pivote. En
 
 ## <a name="positioning-an-object"></a>Positionnement d’un objet
 
-Vous pouvez utiliser les types [**Matrix3DProjection**](https://msdn.microsoft.com/library/windows/apps/BR210128) et [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/BR243266) dans le cadre de scénarios 3D partiels plus complexes que permet l’objet [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192). L’objet **Matrix3DProjection** met à votre disposition une matrice de transformation 3D complète que vous pouvez appliquer à n’importe quel objet [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911), ce qui vous permet d’appliquer aux éléments des matrices de perspective et des matrices de transformation de modèle arbitraires. Gardez à l’esprit que ces API sont minimales ; par conséquent, si vous les utilisez, vous devez écrire le code qui crée correctement les matrices de transformation 3D. Il est donc plus facile d’utiliser l’objet **PlaneProjection** pour des scénarios 3D simples.
-
+Vous pouvez utiliser les types [**Matrix3DProjection**](https://msdn.microsoft.com/library/windows/apps/BR210128) et [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/BR243266) dans le cadre de scénarios 3D partiels plus complexes que permet l’objet [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192). L’objet **Matrix3DProjection** met à votre disposition une matrice de transformation 3D complète que vous pouvez appliquer à n’importe quel objet [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911), ce qui vous permet d’appliquer aux éléments des matrices de perspective et des matrices de transformation de modèle arbitraires. Gardez à l’esprit que ces API sont minimales; par conséquent, si vous les utilisez, vous devez écrire le code qui crée correctement les matrices de transformation3D. Il est donc plus facile d’utiliser l’objet **PlaneProjection** pour des scénarios 3D simples.

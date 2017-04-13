@@ -2,21 +2,17 @@
 title: "Atténuation et facteur de point lumineux"
 description: "Les composants d’éclairage diffus et spéculaire de l’équation d&quot;illumination globale contiennent des termes qui décrivent l’atténuation de lumière et le cône de point lumineux."
 ms.assetid: F61D4ACB-09AB-4087-9E2D-224E472D6196
-keywords:
-- "Atténuation et facteur de point lumineux"
+keywords: "Atténuation et facteur de point lumineux"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6ca596ae1deebadc4bb192c7e2622daa9bf6b348
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 41b2b16e6eea6eb3edceb523b4db7cf207af48fb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="attenuation-and-spotlight-factor"></a>Atténuation et facteur de point lumineux
 
 
@@ -29,7 +25,7 @@ L’atténuation de lumière varie selon le type de lumière et la distance entr
 
 Atten = 1/( att0<sub>i</sub> + att1<sub>i</sub> \* d + att2<sub>i</sub> \* d²)
 
-Où :
+Où:
 
 | Paramètre        | Valeur par défaut | Type           | Description                                     | Plage          |
 |------------------|---------------|----------------|-------------------------------------------------|----------------|
@@ -47,7 +43,7 @@ La distance entre la lumière et la position du vertex est toujours positive.
 
 d = | L<sub>dir</sub> |
 
-Où :
+Où:
 
 | Paramètre       | Valeur par défaut | Type                                             | Description                                                 |
 |-----------------|---------------|--------------------------------------------------|-------------------------------------------------------------|
@@ -57,7 +53,7 @@ Où :
 
 Si d est supérieur à la plage de la lumière, Direct3D n'effectue aucun autre calcul d'atténuation et n'applique aucun effet de lumière sur le vertex.
 
-Les constantes d'atténuation agissent comme des coefficients dans la formule : vous pouvez produire diverses courbes d'atténuation en y apportant de simples ajustements. Vous pouvez définir Attenuation1 sur 1,0 pour créer une lumière qui ne s'atténuera pas, mais qui restera limitée par la plage ; vous pouvez aussi tester différentes valeurs pour obtenir des effets d’atténuation différents.
+Les constantes d'atténuation agissent comme des coefficients dans la formule: vous pouvez produire diverses courbes d'atténuation en y apportant de simples ajustements. Vous pouvez définir Attenuation1 sur 1,0 pour créer une lumière qui ne s'atténuera pas, mais qui restera limitée par la plage; vous pouvez aussi tester différentes valeurs pour obtenir des effets d’atténuation différents.
 
 L’atténuation à la plage maximale de la lumière n’est pas égale à 0,0. Pour éviter que des lumières apparaissent subitement lorsqu’elles se trouvent dans la plage de lumière, une application peut augmenter la plage de lumière. Sinon, l’application peut définir des constantes d'atténuation afin que le facteur d’atténuation soit proche de 0,0 à la plage de lumière. La valeur d’atténuation est multipliée par les composants rouges, verts et bleus de la couleur de la lumière pour mettre à l’échelle l’intensité de la lumière en tant que facteur de la distance parcourue par la lumière pour atteindre un vertex.
 
@@ -71,17 +67,17 @@ L’équation suivante spécifie le facteur de point lumineux.
 | Paramètre         | Valeur par défaut | Type           | Description                              | Plage                    |
 |-------------------|---------------|----------------|------------------------------------------|--------------------------|
 | rho<sub>i</sub>   | Non applicable           | Virgule flottante | cosinus (angle) du point lumineux i            | Non applicable                      |
-| phi<sub>i</sub>   | 0,0           | Virgule flottante | Angle de pénombre du point lumineux i en radians | \[theta<sub>i</sub>, pi) |
-| theta<sub>i</sub> | 0,0           | Virgule flottante | Angle d'ombre du point lumineux i en radians    | \[0, pi)                 |
+| phi<sub>i</sub>   | 0,0           | Virgule flottante | Angle de pénombre du point lumineuxi en radians | \[theta<sub>i</sub>, pi) |
+| theta<sub>i</sub> | 0,0           | Virgule flottante | Angle d'ombre du point lumineuxi en radians    | \[0, pi)                 |
 | atténuation           | 0,0           | Virgule flottante | Facteur d’atténuation                           | (-infini, +infini)   |
 
  
 
-Où :
+Où:
 
 rho = norm(L<sub>dcs</sub>)<sup>.</sup>norm(L<sub>dir</sub>)
 
-et :
+et:
 
 | Paramètre       | Valeur par défaut | Type                                             | Description                                                 |
 |-----------------|---------------|--------------------------------------------------|-------------------------------------------------------------|
@@ -90,7 +86,7 @@ et :
 
  
 
-Après avoir calculé l’atténuation de lumière, Direct3D prend également en compte les effets de point lumineux, le cas échéant, l’angle de réflexion de la lumière sur une surface et le facteur de réflexion du matériau actuel afin de calculer les composants diffus et spéculaires du vertex. Dans [types de lumière](light-types.md), voir « Point lumineux ».
+Après avoir calculé l’atténuation de lumière, Direct3D prend également en compte les effets de point lumineux, le cas échéant, l’angle de réflexion de la lumière sur une surface et le facteur de réflexion du matériau actuel afin de calculer les composants diffus et spéculaires du vertex. Dans [types de lumière](light-types.md), voir «Point lumineux».
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
@@ -100,7 +96,6 @@ Après avoir calculé l’atténuation de lumière, Direct3D prend également en
  
 
  
-
 
 
 

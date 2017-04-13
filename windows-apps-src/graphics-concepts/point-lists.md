@@ -1,26 +1,22 @@
 ---
 title: Listes de points
-description: "Une liste de points est un ensemble de sommets qui sont rendus sous forme de points isolés. Votre application peut utiliser des listes de points dans les scènes 3D pour les champs d’étoiles, ou encore des lignes en pointillé sur la surface d’un polygone."
+description: "Une liste de points est un ensemble de sommets qui sont rendus sous forme de points isolés. Votre application peut utiliser des listes de points dans les scènes3D pour les champs d’étoiles, ou encore des lignes en pointillé sur la surface d’un polygone."
 ms.assetid: 332954AE-019F-4A91-B773-E3A7C92F3297
-keywords:
-- Listes de points
+keywords: Listes de points
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: da7fd4dfd4835e39a76daddfa8855415f0e3234b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d5f2ee1c9a42a0d2f380f4f9a98c204088b1379a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="point-lists"></a>Listes de points
 
 
-Une liste de points est un ensemble de sommets qui sont rendus sous forme de points isolés. Votre application peut utiliser des listes de points dans les scènes 3D pour les champs d’étoiles, ou encore des lignes en pointillé sur la surface d’un polygone.
+Une liste de points est un ensemble de sommets qui sont rendus sous forme de points isolés. Votre application peut utiliser des listes de points dans les scènes3D pour les champs d’étoiles, ou encore des lignes en pointillé sur la surface d’un polygone.
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Exemple
 
@@ -68,7 +64,6 @@ d3dDevice->DrawPrimitive( D3DPT_POINTLIST, 0, 6 );
  
 
  
-
 
 
 

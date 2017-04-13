@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, jeux, directx 11"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp, jeux, directx11
 ms.openlocfilehash: 7dda21925e31785e0ce7c3dfc72ba173b8686743
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="directx-11-porting-faq"></a>Portage DirectX11: FAQ
 
-# <a name="directx-11-porting-faq"></a>Portage DirectX 11 : FAQ
 
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Réponses aux questions fréquemment posées sur le portage de jeux vers la plateforme Windows universelle (UWP).
@@ -68,7 +65,7 @@ Vous pouvez aussi utiliser DDSTextureLoader et WICTextureLoader, à partir du [D
 
 Le Kit de développement logiciel (SDK) DirectX est inclus dans le Kit de développement logiciel (SDK) Windows. Le dernier kit de développement logiciel DirectX indépendant de celui de Windows date de juin 2010. Des exemples Direct3D figurent dans la bibliothèque de code avec les autres exemples d’applications Windows.
 
-## <a name="what-about-directx-redistributables"></a>Qu’en est-il des redistribuables DirectX ?
+## <a name="what-about-directx-redistributables"></a>Qu’en est-il des redistribuables DirectX?
 
 
 La grande majorité des composants du Kit de développement logiciel (SDK) Windows sont déjà inclus dans les versions prises en charge du système d’exploitation, ou ne comprennent pas de composant DLL (comme DirectXMath). Tous les composants API Direct3D utilisables par les applications UWP seront déjà disponibles pour votre jeu. Vous n’avez pas besoin de les redistribuer.
@@ -99,7 +96,7 @@ Les jeux de bureau DirectX 10.x et 11 sont faciles à porter vers UWP. Voir [Mig
 
 L’utilisateur sélectionne le moniteur sur lequel afficher votre application. Laissez Windows fournir l’adaptateur approprié en appelant [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) avec le premier paramètre défini sur **nullptr**. Ensuite, obtenez l’interface [**IDXGIDevice interface**](https://msdn.microsoft.com/library/windows/desktop/bb174527) du périphérique, appelez [**GetAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174531) et utilisez la carte DXGI pour créer la chaîne d’échange.
 
-## <a name="how-do-i-turn-on-antialiasing"></a>Comment activer l’anticrénelage ?
+## <a name="how-do-i-turn-on-antialiasing"></a>Comment activer l’anticrénelage?
 
 
 L’anticrénelage (échantillonnage multiple) est activé quand vous créez le périphérique Direct3D. Énumérez la prise en charge de l’échantillonnage multiple en appelant [**CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499), puis définissez les options d’échantillonnage multiple dans la structure [**DXGI\_SAMPLE\_DESC structure**](https://msdn.microsoft.com/library/windows/desktop/bb173072) quand vous appelez [**CreateSurface**](https://msdn.microsoft.com/library/windows/desktop/bb174530).
@@ -109,7 +106,7 @@ L’anticrénelage (échantillonnage multiple) est activé quand vous créez le 
 
 Consultez [Introduction au multithreading dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476891) pour la prise en main. Pour obtenir une liste des différences notables, voir [Différences de thread entre les versions Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476890). Notez que le rendu différé utilise un *contexte différé* d’appareil au lieu d’un *contexte immédiat*.
 
-## <a name="where-can-i-read-more-about-the-programmable-pipeline-since-direct3d-9"></a>Où trouver de la documentation sur le pipeline programmable à partir de Direct3D 9 ?
+## <a name="where-can-i-read-more-about-the-programmable-pipeline-since-direct3d-9"></a>Où trouver de la documentation sur le pipeline programmable à partir de Direct3D 9?
 
 
 Consultez les rubriques suivantes :
@@ -140,7 +137,6 @@ Voir le [mappage des formats de surface](feature-mapping.md#surface-format-mappi
  
 
  
-
 
 
 

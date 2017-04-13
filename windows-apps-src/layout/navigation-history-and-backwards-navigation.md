@@ -1,9 +1,9 @@
 ---
 author: mijacobs
-Description: "La navigation dans les applications de plateforme Windows universelle (UWP) est basée sur un modèle flexible de structures et d’éléments de navigation, ainsi que de fonctionnalités au niveau du système."
-title: "Historique de navigation et navigation vers l’arrière (applications Windows)"
+Description: "La navigation dans les applications de plateformeWindows universelle (UWP) est basée sur un modèle flexible de structures et d’éléments de navigation, ainsi que de fonctionnalités au niveau du système."
+title: "Historique de navigation et navigation vers l’arrière (applicationsWindows)"
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
-isNew: true
+isNew: True
 label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
@@ -12,19 +12,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ea937ba237f4b0c58deff2b8d342337512e0de5f
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: c2037c4b313b45309162ea4c0874418fe9463d17
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-#  <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Historique de navigation et navigation vers l’arrière pour les applications UWP
+#  <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Historique de navigation et navigation vers l’arrière pour les applicationsUWP
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Sur le web, les sites web individuels fournissent leurs propres systèmes de navigation, tels que des tables des matières, des boutons, des menus, des listes simples de liens, etc. L’expérience de navigation peut varier sensiblement d’un site web à l’autre. Il existe toutefois une expérience de navigation cohérente : le bouton Précédent. La plupart des navigateurs fournissent un bouton Précédent qui a le même comportement, quel que soit le site web consulté.
+Sur le web, les sitesweb individuels fournissent leurs propres systèmes de navigation, tels que des tables des matières, des boutons, des menus, des listes simples de liens, etc. L’expérience de navigation peut varier sensiblement d’un site web à l’autre. Il existe toutefois une expérience de navigation cohérente : le bouton Précédent. La plupart des navigateurs fournissent un bouton Précédent qui a le même comportement, quel que soit le site web consulté.
 
 Pour des raisons similaires, la plateforme Windows universelle (UWP) fournit un système de navigation cohérent pour la fonctionnalité Précédent afin que l’utilisateur puisse parcourir l’historique de navigation dans une application et, en fonction de l’appareil, d’une application à l’autre.
 
@@ -54,8 +51,8 @@ Voici les facteurs de forme principaux avec l’interface utilisateur du bouton 
         <td style="vertical-align:top;">![retour système sur une tablette (en mode tablette)](images/back-systemback-tablet.png)</td>
         <td style="vertical-align:top;">
 <ul>
-<li>Toujours présent en mode tablette. Non disponible en mode bureau. Vous pouvez activer le bouton Précédent de la barre de titre, à la place. Voir [PC, ordinateur portable, tablette](#PC).
-Vous pouvez alterner entre le mode tablette et le mode bureau en cliquant sur **Paramètres &gt; Système &gt; Mode tablette** et en définissant l’option **Optimiser les fonctions tactiles de Windows lors de l’utilisation de votre appareil en mode tablette**.</li>
+<li>Toujours présent en mode tablette. Non disponible en mode bureau. Vous pouvez activer le boutonPrécédent de la barre de titre, à la place. Voir [PC, ordinateur portable, tablette](#PC).
+Vous pouvez alterner entre le mode tablette et le mode bureau en cliquant sur **Paramètres &gt; Système &gt; Mode tablette** et en définissant l’option **Optimiser les fonctions tactiles deWindows lors de l’utilisation de votre appareil en mode tablette**.</li>
 <li> Bouton logiciel dans la barre de navigation en bas de l’appareil.</li>
 <li>Navigation vers l’arrière globale au sein de l’application et entre les applications.</li></ul>        
         </td>
@@ -91,7 +88,7 @@ Voici d’autres types d’entrée qui ne font pas appel à une interface utilis
 <table>
 <tr><td colspan="3">Appareils d’entrée</td></tr>
 <tr><td style="vertical-align:top;">Clavier</td><td style="vertical-align:top;">![clavier](images/keyboard-wireframe.png)</td><td style="vertical-align:top;">Touche Windows + Retour arrière</td></tr>
-<tr><td style="vertical-align:top;">Cortana</td><td style="vertical-align:top;">![fonctions vocales](images/speech-wireframe.png)</td><td style="vertical-align:top;">Dites « Hey Cortana, reviens en arrière »</td></tr>
+<tr><td style="vertical-align:top;">Cortana</td><td style="vertical-align:top;">![fonctions vocales](images/speech-wireframe.png)</td><td style="vertical-align:top;">Dites «Hey Cortana, reviens en arrière»</td></tr>
 </table>
  
 
@@ -167,7 +164,7 @@ En mode bureau, chaque application s’exécute dans une fenêtre avec une barre
 
 Le bouton Précédent de la barre de titre est uniquement disponible dans les applications qui s’exécutent sur des appareils en mode bureau et ne prend en charge que l’historique de navigation dans l’application. Il ne prend pas en charge l’historique de navigation entre applications.
 
-**Important** Le bouton Précédent de la barre de titre n’est pas affiché par défaut. Vous devez le sélectionner.
+**Important** Le boutonPrécédent de la barre de titre n’est pas affiché par défaut. Vous devez le sélectionner.
 
  
 
@@ -256,7 +253,7 @@ Si vous choisissez de fournir votre propre navigation de pile Back, l’expérie
 <tr class="odd">
 <td style="vertical-align:top;"><strong>Page à page, différents groupes d’homologues</strong></td>
 <td style="vertical-align:top;"><strong>Oui</strong>
-<p>Dans cette illustration, l’utilisateur navigue du niveau 1 de l’application vers le niveau 2, en traversant des groupes d’homologues. La navigation est donc ajoutée à l’historique de navigation.</p>
+<p>Dans cette illustration, l’utilisateur navigue du niveau1 de l’application vers le niveau2, en traversant des groupes d’homologues. La navigation est donc ajoutée à l’historique de navigation.</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Navigation across peer groups" /></p>
 <p>Dans l’illustration suivante, l’utilisateur navigue entre deux groupes d’homologues du même niveau. La navigation est donc ajoutée à l’historique de navigation.</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Navigation across peer groups" /></p></td>
@@ -265,12 +262,12 @@ Si vous choisissez de fournir votre propre navigation de pile Back, l’expérie
 <td style="vertical-align:top;"><strong>Page à page, même groupe d’homologues, pas d’élément de navigation à l’écran</strong>
 <p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Aucun élément de navigation (par exemple les onglets/tableaux croisés dynamiques ou un volet de navigation ancré) fournissant une navigation directe vers les deux pages n’est toujours présent.</p></td>
 <td style="vertical-align:top;"><strong>Oui</strong>
-<p>Dans l’illustration suivante, l’utilisateur navigue entre deux pages dans le même groupe d’homologues. Comme les pages n’utilisent pas d’onglets ni de volet de navigation ancré, la navigation est ajoutée à l’historique de navigation.</p>
+<p>Dans l’illustration suivante, l’utilisateur navigue entre deuxpages dans le même groupe d’homologues. Comme les pages n’utilisent pas d’onglets ni de volet de navigation ancré, la navigation est ajoutée à l’historique de navigation.</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>Page à page, même groupe d’homologues, avec un élément de navigation à l’écran</strong>
-<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Les deux pages sont affichées dans le même élément de navigation. Par exemple, les deux pages utilisent le même élément onglets/tableaux croisés dynamiques, ou elles s’affichent dans un volet de navigation ancré.</p></td>
+<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Les deux pages sont affichées dans le même élément de navigation. Par exemple, les deuxpages utilisent le même élément onglets/tableaux croisés dynamiques, ou elles s’affichent dans un volet de navigation ancré.</p></td>
 <td style="vertical-align:top;"><strong>Non</strong>
 <p>Lorsque l’utilisateur appuie sur le bouton Précédent, il retourne à la dernière page avant d’avoir accédé au groupe d’homologues actuel.</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
@@ -306,7 +303,6 @@ Quand l’utilisateur bascule vers une autre application et retourne dans votre 
 * [Notions de base sur la navigation](navigation-basics.md)
 
  
-
 
 
 

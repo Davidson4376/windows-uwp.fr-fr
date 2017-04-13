@@ -2,29 +2,27 @@
 author: DBirtolo
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
 title: Jumeler des appareils
-description: "Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms Windows.Devices.Enumeration prend en charge trois méthodes différentes de jumelage des appareils."
+description: "Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms Windows.Devices.Enumeration prend en charge troisméthodes différentes de jumelage des appareils."
 ms.author: dbirtolo
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7349188a9b735ac887c1afbc09c572f598407471
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 8bde7d6b65ae6fd96c38e2748a4e7ea0f9821aa2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="pair-devices"></a>Coupler des appareils
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-** API importantes **
+**API importantes**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
-Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) prend en charge trois méthodes différentes de jumelage des appareils.
+Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) prend en charge troisméthodes différentes de jumelage des appareils.
 
 -   Jumelage automatique
 -   Jumelage de base
@@ -48,7 +46,7 @@ Lors d’un jumelage de base, votre application utilise les API [**Windows.Devic
 
 Pour tenter de procéder à un jumelage de base, vous devez d’abord obtenir l’objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) associé à l’appareil qui vous intéresse. Une fois que vous recevez cet objet, vous interagissez avec la propriété [**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx), qui est un objet [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx). Pour procéder à un jumelage, il vous suffit d’appeler [**DeviceInformationPairing.PairAsync**](https://msdn.microsoft.com/library/windows/apps/mt608800). Il vous faudra **await** le résultat, ceci pour octroyer à votre application le temps nécessaire à la tentative de jumelage. Le résultat de l’action de jumelage est alors renvoyé. Si aucune erreur n’est identifiée, l’appareil est jumelé.
 
-Si vous avez recours au jumelage de base, vous disposez également d’un accès à des informations supplémentaires sur l’état de l’appareil. Par exemple, vous connaissez l’état de jumelage ([**IsPaired**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.ispaired.aspx)) et savez si l’appareil peut être jumelé ([**CanPair**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.canpair.aspx)). Ces deux données sont des propriétés de l’objet [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx). Si vous utilisez le jumelage automatique, vous n’aurez pas forcément accès à ces informations, sauf si vous obtenez les objets [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) appropriés.
+Si vous avez recours au jumelage de base, vous disposez également d’un accès à des informations supplémentaires sur l’état de l’appareil. Par exemple, vous connaissez l’état de jumelage ([**IsPaired**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing#Windows_Devices_Enumeration_DeviceInformationPairing_IsPaired)) et savez si l’appareil peut être jumelé ([**CanPair**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing#Windows_Devices_Enumeration_DeviceInformationPairing_CanPair)). Ces deux données sont des propriétés de l’objet [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx). Si vous utilisez le jumelage automatique, vous n’aurez pas forcément accès à ces informations, sauf si vous obtenez les objets [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) appropriés.
 
 ## <a name="custom-pairing"></a>Jumelage personnalisé
 
@@ -76,8 +74,3 @@ Pour télécharger un exemple illustrant comment utiliser les API [**Windows.Dev
  
 
  
-
-
-
-
-

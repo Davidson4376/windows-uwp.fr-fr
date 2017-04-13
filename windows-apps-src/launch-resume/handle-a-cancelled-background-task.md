@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7211ba08f1b697fb79cfca767300c92e6e41fb68
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 41a089ca2cd5269204e3f67df8fed7081ce57ff9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="handle-a-cancelled-background-task"></a>Gérer une tâche en arrière-plan annulée
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -65,9 +62,9 @@ Ajoutez une variable d’indicateur appelée **\_CancelRequested** à la classe 
 >     volatile bool CancelRequested;
 > ```
 
-Dans la méthode OnCanceled que vous avez créée à l’étape 1, attribuez à la variable d’indicateur **\_CancelRequested** la valeur **true**.
+Dans la méthode OnCanceled que vous avez créée à l’étape1, attribuez à la variable d’indicateur **\_CancelRequested** la valeur **true**.
 
-La méthode OnCanceled de l’[exemple complet de tâche en arrière-plan]( http://go.microsoft.com/fwlink/p/?linkid=227509) attribue à **_CancelRequested** la valeur **true** et écrit une sortie de débogage qui peut s’avérer utile :
+La méthode OnCanceled de l’[exemple complet de tâche en arrière-plan]( http://go.microsoft.com/fwlink/p/?linkid=227509) attribue à **_CancelRequested** la valeur **true** et écrit une sortie de débogage qui peut s’avérer utile:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -93,7 +90,7 @@ La méthode OnCanceled de l’[exemple complet de tâche en arrière-plan]( http
 >     }
 > ```
 
-Dans la méthode Run de la tâche en arrière-plan, inscrivez la méthode de gestionnaire d’événements OnCanceled avant de lancer le travail. Dans le cas d’une tâche en arrière-plan in-process, vous pouvez effectuer cette inscription dans le cadre de l’initialisation de votre application. Par exemple, utilisez la ligne de code suivante :
+Dans la méthode Run de la tâche en arrière-plan, inscrivez la méthode de gestionnaire d’événements OnCanceled avant de lancer le travail. Dans le cas d’une tâche en arrière-plan in-process, vous pouvez effectuer cette inscription dans le cadre de l’initialisation de votre application. Par exemple, utilisez la ligne de code suivante:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -109,7 +106,7 @@ Lors de la réception d’une demande d’annulation, la méthode qui effectue l
 
 Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée. Si **_cancelRequested** a la valeur true, le travail s’arrête.
 
-L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) comprend une vérification qui arrête le rappel de minuteur périodique en cas d’annulation de la tâche en arrière-plan :
+L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) comprend une vérification qui arrête le rappel de minuteur périodique en cas d’annulation de la tâche en arrière-plan:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -143,7 +140,7 @@ L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkI
 
 Modifiez la méthode Run de sorte qu’une fois le travail arrêté, elle enregistre l’état de la tâche (terminé ou annulé). Cette étape s’applique aux tâches en arrière-plan hors processus, car vous avez besoin d’un moyen pour communiquer entre les processus lorsque la tâche en arrière-plan a été annulée. Pour les tâches en arrière-plan in-process, vous pouvez simplement partager l’état avec l’application pour indiquer que la tâche a été annulée.
 
-L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) enregistre l’état dans LocalSettings :
+L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) enregistre l’état dans LocalSettings:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -215,7 +212,7 @@ Pour des raisons d’illustration, l’exemple de code présente uniquement des 
 
 ## <a name="run-method-example"></a>Exemple de méthode Run
 
-L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) sont présentés ci-dessous pour plus de contexte :
+L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) sont présentés ci-dessous pour plus de contexte:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -334,7 +331,7 @@ L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de 
 > }
 > ```
 
-> **Remarque**  Cet article s’adresse aux développeurs Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque**  Cet article s’adresse aux développeurs Windows10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -351,4 +348,3 @@ L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de 
 * [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-

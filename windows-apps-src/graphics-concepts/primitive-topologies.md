@@ -2,21 +2,17 @@
 title: Topologies de primitives
 description: "Direct3D prend en charge plusieurs topologies de primitives, qui définissent le mode d’interprétation et de rendu des sommets par le pipeline. Il peut s’agir par exemple de listes de points, de listes de lignes ou de bandes de triangles."
 ms.assetid: 7AA5A4A2-0B7C-431D-B597-684D58C02BA5
-keywords:
-- Topologies de primitives
+keywords: Topologies de primitives
 author: mtoepke
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 487de51420cd6ce747d0257920429e9015bc1864
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d0d6bed3cbccd37fcd4fc835273099e8d26f671d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="primitive-topologies"></a>Topologies de primitives
 
 
@@ -25,7 +21,7 @@ Direct3D prend en charge plusieurs topologies de primitives, qui définissent l�
 ## <a name="span-idprimitivetypesspanspan-idprimitivetypesspanspan-idprimitivetypesspanbasic-primitive-topologies"></a><span id="Primitive_Types"></span><span id="primitive_types"></span><span id="PRIMITIVE_TYPES"></span>Topologies de primitives de base
 
 
-Les topologies de primitives de base suivantes (ou les types de primitives) sont pris(es) en charge :
+Les topologies de primitives de base suivantes (ou les types de primitives) sont pris(es) en charge:
 
 -   [Listes de points](point-lists.md)
 -   [Listes de lignes](line-lists.md)
@@ -40,11 +36,11 @@ L’[étape de l’assembleur d’entrée(IA)](input-assembler-stage--ia-.md) li
 ## <a name="span-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanprimitive-adjacency"></a><span id="Primitive_Adjacency"></span><span id="primitive_adjacency"></span><span id="PRIMITIVE_ADJACENCY"></span>Voisinage des primitives
 
 
-Tous les types de primitives Direct3D (à l’exception de la liste de points) sont disponibles dans deux versions : avec voisinage et sans voisinage. Les primitives avec voisinage contiennent certains des sommets adjacents, tandis que les primitives sans voisinage contiennent uniquement les sommets de la primitive cible. Par exemple, la primitive de type liste de lignes possède une primitive de type liste de lignes correspondante qui inclut le voisinage.
+Tous les types de primitives Direct3D (à l’exception de la liste de points) sont disponibles dans deux versions: avec voisinage et sans voisinage. Les primitives avec voisinage contiennent certains des sommets adjacents, tandis que les primitives sans voisinage contiennent uniquement les sommets de la primitive cible. Par exemple, la primitive de type liste de lignes possède une primitive de type liste de lignes correspondante qui inclut le voisinage.
 
 Les primitives adjacentes sont conçues pour fournir davantage d’informations sur la géométrie et ne sont visibles que par le biais d’un nuanceur de géométrie. Le voisinage est utile pour les nuanceurs de géométrie qui utilisent la détection de silhouettes, l’extrusion du volume d’ombre, etc.
 
-Par exemple, supposons que vous souhaitiez dessiner une liste de triangles avec voisinage. Une liste de triangles qui contient 36 sommets (avec voisinage) générera 6 primitives complètes. Les primitives avec voisinage (à l’exception des bandes de lignes) contiennent exactement deux fois plus de sommets que la primitive équivalente sans voisinage, où chaque sommet supplémentaire est un sommet adjacent.
+Par exemple, supposons que vous souhaitiez dessiner une liste de triangles avec voisinage. Une liste de triangles qui contient 36sommets (avec voisinage) générera 6primitives complètes. Les primitives avec voisinage (à l’exception des bandes de lignes) contiennent exactement deux fois plus de sommets que la primitive équivalente sans voisinage, où chaque sommet supplémentaire est un sommet adjacent.
 
 ## <a name="span-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwinding-direction-and-leading-vertex-positionsspanwinding-direction-and-leading-vertex-positions"></a><span id="Winding_Direction_and_Leading_Vertex_Positions"></span><span id="winding_direction_and_leading_vertex_positions"></span><span id="WINDING_DIRECTION_AND_LEADING_VERTEX_POSITIONS"></span><span id="winding-direction-and-leading-vertex-positions"></span>Sens de l’enroulement et positions du sommet principal
 
@@ -72,7 +68,7 @@ Les symboles contenus dans l’illustration précédente sont décrits dans le t
 ## <a name="span-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspangenerating-multiple-strips"></a><span id="Generating_Multiple_Strips"></span><span id="generating_multiple_strips"></span><span id="GENERATING_MULTIPLE_STRIPS"></span>Génération de plusieurs bandes
 
 
-La fonction de coupe par bandes permet de générer plusieurs bandes. Vous pouvez effectuer une coupe par bandes en appelant explicitement la fonction HLSL[RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660), ou encore en insérant une valeur d’index spéciale dans le tampon d’index. Cette valeur est -1, qui correspond à 0xffffffff pour les index de 32 bits ou à 0xffff pour les index de 16 bits.
+La fonction de coupe par bandes permet de générer plusieurs bandes. Vous pouvez effectuer une coupe par bandes en appelant explicitement la fonction HLSL[RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660), ou encore en insérant une valeur d’index spéciale dans le tampon d’index. Cette valeur est -1, qui correspond à 0xffffffff pour les index de 32bits ou à 0xffff pour les index de 16bits.
 
 Un index de – 1 indique une fonction explicite ’cut’ ou ’restart’ de la bande actuelle. L’index précédent termine la primitive ou la bande précédente, et l’index suivant démarre une nouvelle primitive ou une nouvelle bande.
 
@@ -88,7 +84,6 @@ Pour plus d’informations sur la génération de plusieurs bandes, consultez l�
  
 
  
-
 
 
 

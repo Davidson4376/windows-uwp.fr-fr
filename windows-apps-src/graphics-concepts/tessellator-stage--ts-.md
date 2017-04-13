@@ -2,21 +2,17 @@
 title: "Étape Tessellator (TS)"
 description: "L&quot;étape du paveur (TS, Tessellator) crée un modèle d&quot;échantillonnage du domaine qui représente le patch de géométrie et génère un ensemble d&quot;objets plus petits (triangles, points ou lignes) qui connectent ces échantillons."
 ms.assetid: 2F006F3D-5A04-4B3F-8BC7-55567EFCFA6C
-keywords:
-- "Étape Tessellator (TS)"
+keywords: "Étape Tessellator (TS)"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b50139fe60bb36df06e8f50d7b529602f0e6d764
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0a18a2ba4172fb4c7aad1d4e8a071bf077afeead
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tessellator-ts-stage"></a>Étape Tessellator (TS)
 
 
@@ -39,7 +35,7 @@ Le runtime Direct3D prend en charge les trois étapes qui implémentent le pavag
 
 Les étapes de pavage fonctionnent de concert pour convertir des surfaces d'ordre plus élevé (qui garantissent la simplicité et l'efficacité du modèle) en un grand nombre de triangles pour un rendu détaillé dans le pipeline graphique Direct3D.
 
-Le pavage utilise le GPU pour calculer une surface plus détaillée à partir d’une surface créée à partir de patchs quad, de patchs de triangles ou d'isolignes. Pour estimer la surface d'ordre plus élevé, chaque patch est divisé en triangles, points ou des lignes à l’aide de facteurs de pavage. Le pipeline graphique Direct3D implémente le pavage à l’aide de trois étapes de pipeline :
+Le pavage utilise le GPU pour calculer une surface plus détaillée à partir d’une surface créée à partir de patchs quad, de patchs de triangles ou d'isolignes. Pour estimer la surface d'ordre plus élevé, chaque patch est divisé en triangles, points ou des lignes à l’aide de facteurs de pavage. Le pipeline graphique Direct3D implémente le pavage à l’aide de trois étapes de pipeline:
 
 -   [Étape du nuanceur de coque (Hull_shadr, HS)](hull-shader-stage--hs-.md) -une étape de nuanceur programmable qui produit un patch de la géométrie (et les constantes de patch) qui correspondent à chaque entrée de patch (quad, triangle ou ligne).
 -   Étape du paveur (TS, Tessellator) - Une étape de pipeline à fonctions fixes qui crée un modèle d'échantillonnage du domaine qui représente le patch de géométrie et génère un ensemble d'objets plus petits (triangles, points ou lignes) qui connectent ces échantillons.
@@ -47,7 +43,7 @@ Le pavage utilise le GPU pour calculer une surface plus détaillée à partir d�
 
 En implémentant le pavage dans le matériel, un pipeline graphique peut évaluer des modèles moins détaillés (nombre de polygones inférieur) inférieurs et générer un rendu plus détaillé. Lorsqu'il est possible de procéder au pavage, le pavage implémenté par le matériel peut générer un volume incroyable de détail visuel (y compris la prise en charge pour le mappage de déplacement) sans ajouter le détail visuel pour les tailles de modèle, ni paralyser les fréquences d’actualisation.
 
-Avantages du pavage :
+Avantages du pavage:
 
 -   Le pavage enregistre une grande quantité de mémoire et de bande passante, ce qui permet à une application de rendre des surfaces plus détaillées à partir de modèles basse résolution. La technique de pavage mise en place dans le pipeline graphique Direct3D prend également en charge le mappage de déplacement, ce qui peut produire des détails de surface extraordinairement détaillés.
 -   Le pavage prend en charge les techniques de rendu évolutif, comme les niveaux de détail continus ou dépendants de la vue qui peuvent être calculés à la volée.
@@ -55,25 +51,25 @@ Avantages du pavage :
 
 Le pipeline graphique Direct3D implémente le pavage en fonction du matériel, qui transfère le travail de l’unité centrale vers le GPU. Cela peut contribuer à améliorer largement les performances si une application met en œuvre un grand nombre de cibles de morphing et/ou des modèles d'apparence/de déformation plus sophistiqués.
 
-Le tessellator est une étape à fonctions fixes initialisée en liant un [nuanceur de coque](hull-shader-stage--hs-.md) au pipeline. (voir [Procédure : Initialiser l’étape Tessellator](https://msdn.microsoft.com/library/windows/desktop/ff476341)). L’objectif de l’étape tessellator consiste à subdiviser un domaine (quad, tri ou ligne) dans un grand nombre d’objets plus petit (triangles, points ou lignes). Le tessellator permet de décomposer un domaine canonique est un système coordonné normalisé (de zéro à un). Par exemple, un domaine quad est fractionné en carré-unité.
+Le tessellator est une étape à fonctions fixes initialisée en liant un [nuanceur de coque](hull-shader-stage--hs-.md) au pipeline. (voir [Procédure: Initialiser l’étape Tessellator](https://msdn.microsoft.com/library/windows/desktop/ff476341)). L’objectif de l’étape tessellator consiste à subdiviser un domaine (quad, tri ou ligne) dans un grand nombre d’objets plus petit (triangles, points ou lignes). Le tessellator permet de décomposer un domaine canonique est un système coordonné normalisé (de zéro à un). Par exemple, un domaine quad est fractionné en carré-unité.
 
 ### <a name="span-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanphases-in-the-tessellator-ts-stage"></a><span id="Phases_in_the_Tessellator__TS__stage"></span><span id="phases_in_the_tessellator__ts__stage"></span><span id="PHASES_IN_THE_TESSELLATOR__TS__STAGE"></span>Phases de l’étape Tessellator (TS)
 
-L’étape Tessellator (TS) se compose de deux phases :
+L’étape Tessellator (TS) se compose de deux phases:
 
--   La première phase traite les facteurs de pavage, résout les problèmes d'arrondis, gère les tout petits facteurs, réduit et combine les facteurs à l'aide d'opérations arithmétiques à virgule flottante 32 bits.
--   La deuxième phase génère des listes de points ou de topologie basées sur le type de partitionnement sélectionné. Il s'agit de la tâche principale de l'étape tessellator. Elle utilise des fractions 16 bits avec des opérations arithmétiques à virgule fixe. Les opérations arithmétiques à virgule fixe permettent une accélération matérielle tout en conservant une précision acceptable. Par exemple, avec un patch large de 64 mètres, cette précision peut placer les points à une résolution de 2 mm.
+-   La première phase traite les facteurs de pavage, résout les problèmes d'arrondis, gère les tout petits facteurs, réduit et combine les facteurs à l'aide d'opérations arithmétiques à virgule flottante 32bits.
+-   La deuxième phase génère des listes de points ou de topologie basées sur le type de partitionnement sélectionné. Il s'agit de la tâche principale de l'étape tessellator. Elle utilise des fractions 16bits avec des opérations arithmétiques à virgule fixe. Les opérations arithmétiques à virgule fixe permettent une accélération matérielle tout en conservant une précision acceptable. Par exemple, avec un patch large de 64mètres, cette précision peut placer les points à une résolution de 2mm.
 
     | Type de partitionnement | Plage                       |
     |----------------------|-----------------------------|
     | Fractional\_odd      | \[1...63\]                  |
-    | Fractional\_even     | Plage TessFactor : \[2..64\] |
+    | Fractional\_even     | Plage TessFactor: \[2..64\] |
     | Integer              | TessFactor range: \[1..64\] |
-    | Pow2                 | Plage TessFactor : \[1..64\] |
+    | Pow2                 | Plage TessFactor: \[1..64\] |
 
      
 
-Le pavage est implémenté avec les deux étapes de nuanceur programmable : un [nuanceur de coque](hull-shader-stage--hs-.md) et un [nuanceur de domaine](domain-shader-stage--ds-.md). Ces étapes de nuanceur sont programmées avec le code HLSL défini dans le modèle de nuanceur 5. Les cibles du nuanceur sont : hs\_5\_0 et ds\_5\_0. Le titre de crée le nuanceur, avant que le code pour le matériel soit extrait des nuanceurs compilés transmis dans le runtime lorsque les nuanceurs sont liés au pipeline.
+Le pavage est implémenté avec les deux étapes de nuanceur programmable: un [nuanceur de coque](hull-shader-stage--hs-.md) et un [nuanceur de domaine](domain-shader-stage--ds-.md). Ces étapes de nuanceur sont programmées avec le code HLSL défini dans le modèle de nuanceur 5. Les cibles du nuanceur sont: hs\_5\_0 et ds\_5\_0. Le titre de crée le nuanceur, avant que le code pour le matériel soit extrait des nuanceurs compilés transmis dans le runtime lorsque les nuanceurs sont liés au pipeline.
 
 ### <a name="span-idenablingdisablingtessellationspanspan-idenablingdisablingtessellationspanspan-idenablingdisablingtessellationspanenablingdisabling-tessellation"></a><span id="Enabling_disabling_tessellation"></span><span id="enabling_disabling_tessellation"></span><span id="ENABLING_DISABLING_TESSELLATION"></span>Activation/désactivation du pavage
 
@@ -99,7 +95,6 @@ Le paveur sort des coordonnées UV (et éventuellement W) et la topologie de sur
  
 
  
-
 
 
 

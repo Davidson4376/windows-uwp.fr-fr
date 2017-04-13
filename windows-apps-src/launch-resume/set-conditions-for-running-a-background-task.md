@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 486e0cd3938a09c663e8e805092377709672359f
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 3ede40c7241e1652fcb2cd549badb1e33dd234b2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-conditions-for-running-a-background-task"></a>Définir des conditions pour exécuter une tâche en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -42,7 +39,7 @@ Cette rubrique concerne aussi bien les tâches en arrière-plan qui s’exécute
 
 Avant d’ajouter la condition, créez un objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) représentant la condition qui doit être effective pour qu’une tâche en arrière-plan soit exécutée. Dans le constructeur, spécifiez la condition qui doit être remplie en fournissant une valeur d’énumération [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-Le code suivant crée un objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) qui spécifie l’accessibilité à Internet comme étant une condition essentielle :
+Le code suivant crée un objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) qui spécifie l’accessibilité à Internet comme étant une condition essentielle:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -70,9 +67,9 @@ Le code suivant inscrit la condition de tâche en arrière-plan InternetAvailabl
 ## <a name="register-your-background-task"></a>Inscrire votre tâche en arrière-plan
 
 
-Vous pouvez à présent inscrire votre tâche en arrière-plan à l’aide de la méthode [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) ; la tâche ne démarrera pas tant que la condition spécifiée n’aura pas été satisfaite.
+Vous pouvez à présent inscrire votre tâche en arrière-plan à l’aide de la méthode [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772); la tâche ne démarrera pas tant que la condition spécifiée n’aura pas été satisfaite.
 
-Le code suivant inscrit la tâche et stocke l’objet BackgroundTaskRegistration obtenu :
+Le code suivant inscrit la tâche et stocke l’objet BackgroundTaskRegistration obtenu:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -95,7 +92,7 @@ Pour ajouter plusieurs conditions, votre application effectue plusieurs appels �
 > **Remarque** Veillez à ne pas ajouter de conditions conflictuelles à une tâche en arrière-plan.
  
 
-L’extrait de code suivant présente plusieurs conditions dans un contexte de création et d’inscription d’une tâche en arrière-plan :
+L’extrait de code suivant présente plusieurs conditions dans un contexte de création et d’inscription d’une tâche en arrière-plan:
 
 > [!div class="tabbedCodeSnippets"]
 ```cs
@@ -162,7 +159,7 @@ L’extrait de code suivant présente plusieurs conditions dans un contexte de c
 
 > **Remarque** Choisissez les conditions appropriées pour votre tâche en arrière-plan, afin qu’elle s’exécute uniquement lorsque cela est nécessaire, et non à un moment inopportun. Voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) pour obtenir une description des différentes conditions de tâche en arrière-plan.
 
-> **Remarque** Cet article s’adresse aux développeurs Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -185,4 +182,3 @@ L’extrait de code suivant présente plusieurs conditions dans un contexte de c
  
 
  
-

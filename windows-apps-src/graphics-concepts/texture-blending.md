@@ -2,21 +2,17 @@
 title: Fusion de textures
 description: Direct3D peut fusionner huit textures sur des primitives dans une seule passe.
 ms.assetid: 9AD388FA-B2B9-44A9-B73E-EDBD7357ACFB
-keywords:
-- Fusion de textures
+keywords: Fusion de textures
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 363adc6537fe2c8421f938dbeee7735c9d336771
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1fed6a38121402e1aa0273b9186a9eab80fdf4ea
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="texture-blending"></a>Fusion de textures
 
 
@@ -41,11 +37,11 @@ La combinaison d’arguments et d’opérations utilisés par plusieurs étapes 
 
 ![diagramme des étapes de texture dans une cascade de fusion de textures](images/tcascade.png)
 
-Chaque étape dans un appareil comprend un index commençant par zéro. Direct3D autorise jusqu’à huit étapes de fusion. Vous devez cependant toujours vérifier les fonctionnalités de l’appareil pour déterminer le nombre d’étapes prises en charge par le matériel. La première étape de fusion est l’index 0, le deuxième est l’index 1 et ainsi de suite jusqu’à l’index 7. Le système fusionne les étapes dans l’ordre d’index croissant.
+Chaque étape dans un appareil comprend un index commençant par zéro. Direct3D autorise jusqu’à huit étapes de fusion. Vous devez cependant toujours vérifier les fonctionnalités de l’appareil pour déterminer le nombre d’étapes prises en charge par le matériel. La première étape de fusion est l’index0, le deuxième est l’index1 et ainsi de suite jusqu’à l’index7. Le système fusionne les étapes dans l’ordre d’index croissant.
 
 Utilisez uniquement le nombre d’étapes nécessaires. Les étapes de fusion inutilisées sont désactivées par défaut. Par conséquent, si votre application utilise uniquement les deux premières étapes, il suffit de définir les opérations et les arguments des phases 0 et 1. Le système fusionne les deux étapes et ignore les étapes désactivées.
 
-Si le nombre d’étapes utilisées par votre application varie selon différentes situations, par exemple, quatre étapes pour certains objets et uniquement deux pour d’autres objets, vous n’avez pas besoin de désactiver explicitement les étapes précédemment utilisées. Une option permet de désactiver l’opération de couleur pour la première étape inutilisée, puis pour toutes les étapes ayant un index supérieur. Une autre option consiste à désactiver tout le mappage de texture en définissant l’opération de couleur pour la première étape de texture (étape 0) sur l’état désactivé.
+Si le nombre d’étapes utilisées par votre application varie selon différentes situations, par exemple, quatre étapes pour certains objets et uniquement deux pour d’autres objets, vous n’avez pas besoin de désactiver explicitement les étapes précédemment utilisées. Une option permet de désactiver l’opération de couleur pour la première étape inutilisée, puis pour toutes les étapes ayant un index supérieur. Une autre option consiste à désactiver tout le mappage de texture en définissant l’opération de couleur pour la première étape de texture (étape0) sur l’état désactivé.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Dans cette section
 
@@ -83,7 +79,6 @@ Si le nombre d’étapes utilisées par votre application varie selon différent
  
 
  
-
 
 
 

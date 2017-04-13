@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c8f8cd6681b4e00e8430d7ddfacdd8fad395365c
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: cdef86477570b33e9cd0c7adaaceb8fea12e3d40
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="track-recently-used-files-and-folders"></a>Suivre les fichiers et dossiers récemment utilisés
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -60,7 +58,7 @@ Les éléments récents de votre application sont représentés par la classe [*
     string mruToken = mru.Add(file, "profile pic");
     ```
 
-    [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) est surchargé. Dans l’exemple, nous utilisons [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481) afin de pouvoir associer des métadonnées au fichier. La définition des métadonnées vous permet d’enregistrer la finalité de l’élément, par exemple, « image du profil ». Vous pouvez également ajouter le fichier à la liste Utilisés récemment sans métadonnées en appelant [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480). Chaque fois que vous ajoutez un élément aux éléments récents, la méthode retourne une chaîne d’identification unique, ou jeton, qui est utilisée pour récupérer l’élément.
+    [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) est surchargé. Dans l’exemple, nous utilisons [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481) afin de pouvoir associer des métadonnées au fichier. La définition des métadonnées vous permet d’enregistrer la finalité de l’élément, par exemple, «image du profil». Vous pouvez également ajouter le fichier à la liste Utilisés récemment sans métadonnées en appelant [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480). Chaque fois que vous ajoutez un élément aux éléments récents, la méthode retourne une chaîne d’identification unique, ou jeton, qui est utilisée pour récupérer l’élément.
 
     **Conseil**   Le jeton étant nécessaire pour récupérer un élément de la liste des fichiers utilisés récemment, il convient de le conserver quelque part. Pour plus d’informations sur les données d’application, consultez [Gestion des données d’application](https://msdn.microsoft.com/library/windows/apps/hh465109).
 
@@ -104,10 +102,9 @@ Comme pour les éléments récents, votre application dispose d’une liste d'ac
 
 Quand un utilisateur sélectionne un élément, songez à ajouter celui-ci à votre liste d'accès futurs ainsi qu’aux éléments récents.
 
--   La [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) peut contenir jusqu’à 1 000 éléments. N'oubliez pas que ce nombre comprend les dossiers et les fichiers.
--   La plateforme ne supprime jamais d’éléments de la [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) à votre place. Lorsque vous avez atteint la limite des 1 000 éléments, vous ne pouvez plus en ajouter sans libérer préalablement de l’espace avec la méthode [**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497).
+-   La [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) peut contenir jusqu’à 1000éléments. N'oubliez pas que ce nombre comprend les dossiers et les fichiers.
+-   La plateforme ne supprime jamais d’éléments de la [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) à votre place. Lorsque vous avez atteint la limite des 1000éléments, vous ne pouvez plus en ajouter sans libérer préalablement de l’espace avec la méthode [**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497).
 
  
 
  
-

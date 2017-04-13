@@ -1,28 +1,24 @@
 ---
 title: Exposition des ressources de diffusion en continu HLSL
-description: "La prise en charge des ressources de diffusion en continu dans Shader Model 5 requiert une syntaxe Microsoft HLSL (High Level Shader Language, langage de nuanceur de haut niveau) spécifique."
+description: "La prise en charge des ressources de diffusion en continu dans Shader Model5 requiert une syntaxe Microsoft HLSL (High Level Shader Language, langage de nuanceur de haut niveau) spécifique."
 ms.assetid: 00A40D82-0565-43DC-82AB-0675B7E772E3
-keywords:
-- Exposition des ressources de diffusion en continu HLSL
+keywords: Exposition des ressources de diffusion en continu HLSL
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4a6164c2a2dca3dd14998627ab7d9b4b62e02541
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 143e2379e64b38cc30384bd0fb4c983eeacb7f37
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="hlsl-streaming-resources-exposure"></a>Exposition des ressources de diffusion en continu HLSL
 
 
-La prise en charge des ressources de diffusion en continu dans [Shader Model 5](https://msdn.microsoft.com/library/windows/desktop/ff471356) requiert une syntaxe Microsoft HLSL (High Level Shader Language, langage de nuanceur de haut niveau) spécifique.
+La prise en charge des ressources de diffusion en continu dans [Shader Model5](https://msdn.microsoft.com/library/windows/desktop/ff471356) requiert une syntaxe Microsoft HLSL (High Level Shader Language, langage de nuanceur de haut niveau) spécifique.
 
-La syntaxe HLSL pour Shader Model 5 est uniquement autorisée sur les périphériques incluant une prise en charge des ressources de diffusion en continu. Toutes les méthodes HLSL pertinentes pour les ressources de diffusion en continu qui sont répertoriées dans le tableau ci-dessous acceptent un ou deux paramètres facultatifs supplémentaires(feedback, ou clamp et feedback dans cet ordre). Voici un exemple de méthode **Sample** :
+La syntaxe HLSL pour Shader Model5 est uniquement autorisée sur les périphériques incluant une prise en charge des ressources de diffusion en continu. Toutes les méthodes HLSL pertinentes pour les ressources de diffusion en continu qui sont répertoriées dans le tableau ci-dessous acceptent un ou deux paramètres facultatifs supplémentaires(feedback, ou clamp et feedback dans cet ordre). Voici un exemple de méthode **Sample**:
 
 **Sample(sampler, location \[, offset \[, clamp \[, feedback\] \] \])**
 
@@ -32,21 +28,21 @@ Les paramètres offset, clamp et feedback sont facultatifs. Vous devez spécifie
 
 Le paramètre clamp est une valeur flottante scalaire. La valeur littérale clamp=0.0f indique que l’opération de limitation (clamp) n’est pas effectuée.
 
-Le paramètre feedback est une variable **uint** que vous pouvez fournir à la fonction intrinsèque [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) demandant un accès à la mémoire. Vous ne devez pas modifier ni interpréter la valeur du paramètre feedback ; toutefois, le compilateur ne fournit pas d’analyse ni de diagnostics avancés destinés à détecter si vous avez modifié cette valeur.
+Le paramètre feedback est une variable **uint** que vous pouvez fournir à la fonction intrinsèque [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) demandant un accès à la mémoire. Vous ne devez pas modifier ni interpréter la valeur du paramètre feedback; toutefois, le compilateur ne fournit pas d’analyse ni de diagnostics avancés destinés à détecter si vous avez modifié cette valeur.
 
-La syntaxe de la fonction [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) est la suivante :
+La syntaxe de la fonction [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) est la suivante:
 
 **bool CheckAccessFullyMapped(in uint FeedbackVar);**
 
-La fonction [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) interprète la valeur de *FeedbackVar* et renvoie la valeur true si toutes les données sur lesquelles porte l’accès ont été mappées dans la ressource ; dans le cas contraire, **CheckAccessFullyMapped** renvoie la valeur false.
+La fonction [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) interprète la valeur de *FeedbackVar* et renvoie la valeur true si toutes les données sur lesquelles porte l’accès ont été mappées dans la ressource; dans le cas contraire, **CheckAccessFullyMapped** renvoie la valeur false.
 
 Si les paramètres clamp ou feedback sont spécifiés, le compilateur émet une variante de l’instruction de base. Par exemple, un exemple de ressource de diffusion en continu génère l’instruction `sample_cl_s`.
 
 Si ni le paramètre clamp ni le paramètre feedback ne sont spécifiés, le compilateur émet l’instruction de base, de sorte qu’aucune modification n’est apportée au comportement actuel.
 
-La définition du paramètre clamp sur la valeur 0.0f indique qu’aucune limitation n’est effectuée ; le compilateur du pilote peut donc adapter davantage l’instruction au matériel cible. Si le paramètre feedback correspond à un registre NULL dans une instruction, il n’est pas utilisé ; le compilateur du pilote peut donc adapter davantage l’instruction à l’architecture cible.
+La définition du paramètre clamp sur la valeur 0.0f indique qu’aucune limitation n’est effectuée; le compilateur du pilote peut donc adapter davantage l’instruction au matériel cible. Si le paramètre feedback correspond à un registre NULL dans une instruction, il n’est pas utilisé; le compilateur du pilote peut donc adapter davantage l’instruction à l’architecture cible.
 
-Si le compilateur HLSL déduit que le paramètre clamp présente la valeur 0.0f et que le paramètre feedback n’est pas utilisé, il émet l’instruction de base correspondante (par exemple, `sample` plutôt que `sample_cl_s`).
+Si le compilateur HLSL déduit que le paramètre clamp présente la valeur0.0f et que le paramètre feedback n’est pas utilisé, il émet l’instruction de base correspondante (par exemple, `sample` plutôt que `sample_cl_s`).
 
 Si un accès aux ressources de diffusion en continu est constitué de plusieurs instructions de code d’octet, par exemple dans le cas de ressources structurées, le compilateur agrège les différentes valeurs feedback par le biais de l’opération OU afin de produire la valeur feedback finale. Vous ne voyez donc qu’une seule valeur feedback pour ce type d’accès complexe.
 
@@ -121,7 +117,6 @@ Voici le tableau récapitulatif des méthodes HLSL qui sont modifiées pour la p
  
 
  
-
 
 
 

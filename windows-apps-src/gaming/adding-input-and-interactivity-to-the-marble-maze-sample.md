@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, jeux, entrée, exemple"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: "Windows10, uwp, jeux, entrée, exemple"
 ms.openlocfilehash: dc667be326950151b08bbaded6d4e9a0b109523b
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>Ajout d’entrées et d’interactivité à l’exemple Marble Maze
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Les jeux d’application de plateforme Windows universelle (UWP) s’exécutent sur différents appareils, tels que des ordinateurs de bureau, des ordinateurs portables et des tablettes. Un appareil peut utiliser différents types de mécanismes de contrôle et d’entrée. Il est important de prendre en charge plusieurs périphériques d’entrée afin que votre jeu puisse fonctionner avec un plus grand nombre de préférences et de fonctionnalités choisies par vos utilisateurs. Ce document décrit les pratiques clés à prendre en compte quand vous utilisez des périphériques d’entrée et comment appliquer ces pratiques à l’exemple Marble Maze.
@@ -27,7 +24,7 @@ Les jeux d’application de plateforme Windows universelle (UWP) s’exécutent 
 > **Remarque**   L’exemple de code correspondant à ce document est disponible dans l’[exemple de jeu Marble Maze en DirectX](http://go.microsoft.com/fwlink/?LinkId=624011).
 
  
-Voici quelques éléments clés présentés dans ce document que vous devez prendre en compte quand vous travaillez avec les entrées dans votre jeu :
+Voici quelques éléments clés présentés dans ce document que vous devez prendre en compte quand vous travaillez avec les entrées dans votre jeu:
 
 -   Quand cela est possible, il est important de prendre en charge différents périphériques d’entrée afin que votre jeu puisse fonctionner avec un plus grand nombre de préférences et fonctionnalités choisies par vos utilisateurs. Bien que l’utilisation d’un contrôleur de jeu et d’un capteur soit facultative, nous recommandons cette utilisation pour améliorer l’expérience des joueurs. Nous avons conçu l’API du contrôleur de jeu et du capteur pour vous aider à intégrer ces périphériques d’entrée.
 -   Pour initialiser les entrées tactiles, vous devez enregistrer des événements de fenêtre, par exemple quand le pointeur est activé, libéré et déplacé. Pour initialiser l’accéléromètre, créez un objet [**Windows::Devices::Sensors::Accelerometer**](https://msdn.microsoft.com/library/windows/apps/br225687) quand vous initialisez l’application. La manette Xbox 360 ne nécessite pas cette initialisation.
@@ -459,7 +456,7 @@ XInput définit la constante **XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE** pour le stic
 
 ###  <a name="applying-input-to-the-game-state"></a>Application des entrées à l’état du jeu
 
-Les périphériques indiquent les valeurs d’entrée de différentes manières. Par exemple, les entrées du pointeur peuvent être des coordonnées d’écran, tandis que les entrées de manette peuvent être dans un format complètement différent. L’un des problèmes liés à la combinaison des entrées de plusieurs périphériques en un ensemble de valeurs d’entrée est la normalisation, c’est-à-dire la conversion de valeurs dans un format commun. Marble Maze normalise les valeurs en les mettant à l’échelle dans la plage [-1,0, 1,0]. Pour normaliser les entrées de la manette Xbox 360, Marble Maze divise les valeurs d’entrée par 32 768, car les valeurs d’entrée du stick sont toujours comprises entre -32 768 et 32 767. La fonction **PointToTouch**, décrite précédemment dans cette section, donne des résultats similaires, en convertissant les coordonnées écran en valeurs normalisées comprises dans la plage -1,0 et +1,0.
+Les périphériques indiquent les valeurs d’entrée de différentes manières. Par exemple, les entrées du pointeur peuvent être des coordonnées d’écran, tandis que les entrées de manette peuvent être dans un format complètement différent. L’un des problèmes liés à la combinaison des entrées de plusieurs périphériques en un ensemble de valeurs d’entrée est la normalisation, c’est-à-dire la conversion de valeurs dans un format commun. Marble Maze normalise les valeurs en les mettant à l’échelle dans la plage [-1,0, 1,0]. Pour normaliser les entrées de la manette Xbox 360, Marble Maze divise les valeurs d’entrée par 32768, car les valeurs d’entrée du stick sont toujours comprises entre -32768 et 32767. La fonction **PointToTouch**, décrite précédemment dans cette section, donne des résultats similaires, en convertissant les coordonnées écran en valeurs normalisées comprises dans la plage -1,0 et +1,0.
 
 > **Conseil**  Même si votre application utilise une méthode d’entrée, nous recommandons toujours de normaliser les valeurs d’entrée. Cela permet de simplifier l’interprétation des entrées par d’autres composants de votre jeu, par exemple des simulations physiques, et de faciliter l’écriture de jeux qui fonctionnent sur différentes résolutions d’écran.
 
@@ -527,7 +524,6 @@ Consultez [Ajout d’audio à l’exemple Marble Maze](adding-audio-to-the-marbl
  
 
  
-
 
 
 

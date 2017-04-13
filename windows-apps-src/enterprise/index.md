@@ -1,6 +1,6 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: "Cette feuille de route propose une vue d’ensemble des principales fonctionnalités d’entreprise pour les applications de plateforme Windows universelle (UWP) et Windows 10."
+description: "Cette feuille de route propose une vue d’ensemble des principales fonct. d’entreprise pour les app. de plateforme Windowsuniverselle(UWP) et Windows10."
 title: Entreprise
 author: awkoren
 ms.author: alkoren
@@ -8,20 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ffbccf88cd00331b622c158a7e46773ae62197e2
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 28d005d76fa8d412eb283e409ea7f5d673bfd857
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="enterprise"></a>Entreprise
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cette feuille de route propose une vue d’ensemble sur les fonctionnalités principales d’entreprise des applications de la plateforme Windows universelle (UWP) Windows 10. Windows 10 vous permet d’écrire une application une seule fois, de la déployer sur tous les appareils, et se charge d’adapter cette application à tous les appareils. Vous pouvez ainsi concevoir des expériences exceptionnelles, à la hauteur des attentes de vos utilisateurs, tout en fournissant le contrôle que votre organisation exige en termes de sécurité, de gestion et de configuration.
+Cette feuille de route propose une vue d’ensemble sur les fonctionnalités principales d’entreprise des applications de la plateforme Windowsuniverselle(UWP) Windows10. Windows 10 vous permet d’écrire une application une seule fois, de la déployer sur tous les appareils, et se charge d’adapter cette application à tous les appareils. Vous pouvez ainsi concevoir des expériences exceptionnelles, à la hauteur des attentes de vos utilisateurs, tout en fournissant le contrôle que votre organisation exige en termes de sécurité, de gestion et de configuration.
 
 **Remarque** Cet article s’adresse aux développeurs qui écrivent des applications UWP d’entreprise. Pour le développement UWP général, voir les [guides de procédure pour les applications Windows 10](https://msdn.microsoft.com/library/windows/apps/mt244352). Pour le développement WPF, Windows Forms ou Win32, voir le [Centre de développement-Bureau](https://dev.windows.com/desktop). Pour les ressources informatiques professionnelles, tels que le déploiement de Windows 10 ou la gestion des fonctionnalités de sécurité d’entreprise, voir [Windows 10 sur TechNet](https://msdn.microsoft.com/library/dn986868).
 
@@ -49,7 +46,7 @@ La liaison de données est un moyen dont dispose l’interface utilisateur de vo
 | Rubrique | Description |
 |-------|-------------|
 | [Vue d’ensemble de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt269383) | Cette rubrique vous montre comment lier un contrôle (ou un autre élément d’interface utilisateur) à un élément individuel ou lier un contrôle d’éléments à une collection d’éléments dans une application de plateforme Windows universelle (UWP). Elle explique également comment contrôler le rendu des éléments, implémenter un affichage des détails en fonction d’une sélection et convertir des données pour l’affichage. |
-| [Entity Framework 7 pour UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | Entity Framework 7, qui prend en charge UWP, vous permet d’exécuter facilement des requêtes complexes dans de grands ensembles de données. Dans cette procédure pas à pas, vous allez créer une application UWP qui propose un accès de base aux données d’une base de données SQLite locale à l’aide d’Entity Framework. |
+| [Entity Framework7 pour UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | Entity Framework7, qui prend en charge UWP, vous permet d’exécuter facilement des requêtes complexes dans de grands ensembles de données. Dans cette procédure pas à pas, vous allez créer une application UWP qui propose un accès de base aux données d’une base de données SQLite locale à l’aide d’Entity Framework. |
 | [Base de données SQLite locale.](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | Cette vidéo est un guide du développeur complet sur l’utilisation de SQLite, la solution recommandée pour les bases de données d’applications locales. Visitez [SQLite](https://www.sqlite.org/download.html) pour télécharger la dernière version pour UWP, ou utilisez la version fournie avec le Kit de développement logiciel (SDK) Windows 10. |
 
  
@@ -62,7 +59,7 @@ Les applications métier ont souvent besoin de communiquer avec des données ou 
 | Rubrique | Description |
 |-------|-------------|
 | [Notions de base en matière de réseau](https://msdn.microsoft.com/library/windows/apps/mt280233) | Cette procédure pas à pas explique les concepts de mise en réseau de base pertinents pour toutes les applications UWP, quels que soient les protocoles de communication utilisés.  |
-| [Quelle technologie de réseau ?](https://msdn.microsoft.com/library/windows/apps/mt280235) | Une vue d’ensemble des technologies de réseau disponibles pour les applications UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application. |
+| [Quelle technologie de réseau?](https://msdn.microsoft.com/library/windows/apps/mt280235) | Une vue d’ensemble des technologies de réseau disponibles pour les applications UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application. |
 | [Sérialisation XML et SOAP](https://msdn.microsoft.com/library/90c86ass.aspx) | La sérialisation XML convertit les objets en un flux XML qui est conforme à un langage de définition de schéma XML (XSD) spécifique. Pour effectuer une conversion entre XML et une classe fortement typée, vous pouvez utiliser la classe [XDocument](https://msdn.microsoft.com/library/system.xml.linq.xdocument.aspx) native ou une bibliothèque externe. |
 | [Sérialisation JSON](https://msdn.microsoft.com/library/windows/apps/br240639) | La sérialisation JSON (JavaScript Object Notation) est un format populaire utilisé pour la communication avec les API REST. Le [Newtonsoft Json.NET](http://www.newtonsoft.com/json), qui est entièrement pris en charge par les applications UWP. |
 
@@ -97,7 +94,7 @@ Aujourd’hui, de nombreux utilisateurs travaillent avec leur propre téléphone
 ## <a name="deployment"></a>Déploiement
 
 
-Vous disposez d’options pour la distribution des applications aux utilisateurs de votre organisation. Vous pouvez utiliser Windows Store pour Entreprises, la gestion existante des appareils mobiles, ou charger de manière indépendante des applications sur les appareils. Vous pouvez également mettre vos applications à la disposition du grand public en les publiant sur le Windows Store.
+Vous disposez d’options pour la distribution des applications aux utilisateurs de votre organisation. Vous pouvez utiliser Windows Store pour Entreprises, la gestion existante des appareils mobiles, ou charger de manière indépendante des applications sur les appareils. Vous pouvez également mettre vos applications à la disposition du grand public en les publiant sur le WindowsStore.
 
 | Rubrique | Description |
 |-------|-------------|
@@ -117,4 +114,3 @@ Pour plus d’informations sur Prism, voir le [référentiel GitHub](https://git
  
 
  
-

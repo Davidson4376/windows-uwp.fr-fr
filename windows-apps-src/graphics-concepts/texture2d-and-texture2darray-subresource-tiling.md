@@ -2,21 +2,17 @@
 title: Restitution des sous-ressources Texture2D et Texture2DArray sous forme de tuiles
 description: "Les tableaux suivants montrent comment des sous-ressources Texture2D et Texture2DArray sont restituées sous forme de tuiles."
 ms.assetid: 2DC14DFC-5299-44D9-895F-5A223D3FD530
-keywords:
-- Restitution des sous-ressources Texture2D et Texture2DArray sous forme de tuiles
+keywords: Restitution des sous-ressources Texture2D et Texture2DArray sous forme de tuiles
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8f6ca928fe9c4d93663c337ae57d3894995f35d2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4e4c4cb0293f2d595c7e009ddf1b86d17efe9e37
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="texture2d-and-texture2darray-subresource-tiling"></a>Restitution des sous-ressources Texture2D et Texture2DArray sous forme de tuiles
 
 
@@ -27,40 +23,40 @@ Les tableaux suivants montrent comment des sous-ressources [**Texture2D**](https
 
 Le tableau suivant montre comment des sous-ressources [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) et [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) avec un nombre d’échantillonnage multiple de 1 sont restituées sous forme de tuiles.
 
-| Bits/pixel (1 exemple/pixel) | Dimensions de la tuile (pixels, l x h) |
+| Bits/pixel (1exemple/pixel) | Dimensions de la tuile (pixels, lxh) |
 |-----------------------------|-------------------------------|
-| 8                           | 256 x 256                       |
-| 16                          | 256 x 128                       |
-| 32                          | 128 x 128                       |
-| 64                          | 128 x 64                        |
-| 128                         | 64 x 64                         |
-| BC1,4                       | 512 x 256                       |
-| BC2,3,5,6,7                 | 256 x 256                       |
+| 8                           | 256x256                       |
+| 16                          | 256x128                       |
+| 32                          | 128x128                       |
+| 64                          | 128x64                        |
+| 128                         | 64x64                         |
+| BC1,4                       | 512x256                       |
+| BC2,3,5,6,7                 | 256x256                       |
 
  
 
-Les bits de format non pris en charge avec les ressources de diffusion en continu sont les formats de 96 bpp, les formats vidéo, DXGI\_FORMAT\_R1\_UNORM, DXGI\_FORMAT\_R8G8\_B8G8\_UNORM et DXGI\_FORMAT\_R8R8\_G8B8\_UNORM.
+Les bits de format non pris en charge avec les ressources de diffusion en continu sont les formats de 96bpp, les formats vidéo, DXGI\_FORMAT\_R1\_UNORM, DXGI\_FORMAT\_R8G8\_B8G8\_UNORM et DXGI\_FORMAT\_R8R8\_G8B8\_UNORM.
 
 ## <a name="span-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspansubresources-with-various-multisample-counts"></a><span id="Subresources-with-various-multisample-counts"></span><span id="subresources-with-various-multisample-counts"></span><span id="SUBRESOURCES-WITH-VARIOUS-MULTISAMPLE-COUNTS"></span>Sous-ressources avec plusieurs échantillonnages multiples
 
 
 Le tableau suivant montre comment des sous-ressources [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) et [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) avec plusieurs échantillonnages multiples sont restituées sous forme de tuiles.
 
-| Bits/pixel (1 exemple/pixel) | Dimensions de la tuile (pixels, l x h) |
+| Bits/pixel (1exemple/pixel) | Dimensions de la tuile (pixels, lxh) |
 |-----------------------------|-------------------------------|
-| 1                           | 1 x 1                           |
-| 2                           | 2 x 1                           |
-| 4                           | 2 x 2                           |
-| 8                           | 4 x 2                           |
-| 16                          | 4 x 4                           |
+| 1                           | 1x1                           |
+| 2                           | 2x1                           |
+| 4                           | 2x2                           |
+| 8                           | 4x2                           |
+| 16                          | 4x4                           |
 
  
 
 Seul un nombre d’échantillonnage compris entre 1 et 4 est requis (et autorisé) et peut être pris en charge avec les ressources de diffusion en continu. Les ressources de diffusion en continu ne prennent actuellement pas en charge les nombres d’échantillonnage de 2, 8 et 16, même si elles sont affichées.
 
-Les implémentations peuvent choisir de prendre en charge 2, 8 ou 16 modes d’anticrénelage multi-échantillon (MSAA) pour des ressources autres que de diffusion en continu, même si les ressources de diffusion en continu ne les prennent pas en charge.
+Les implémentations peuvent choisir de prendre en charge 2, 8 ou 16modes d’anticrénelage multi-échantillon (MSAA) pour des ressources autres que de diffusion en continu, même si les ressources de diffusion en continu ne les prennent pas en charge.
 
-Les ressources de diffusion en continu avec un nombre d’échantillons supérieur à 1 ne peuvent pas utiliser les formats de 128 bpp.
+Les ressources de diffusion en continu avec un nombre d’échantillons supérieur à 1 ne peuvent pas utiliser les formats de 128bpp.
 
 Les contraintes sur le nombre d’échantillons et les formats pris en charge sont dues à des incohérences matérielles par rapport à la spécification.
 
@@ -72,7 +68,6 @@ Les contraintes sur le nombre d’échantillons et les formats pris en charge so
  
 
  
-
 
 
 

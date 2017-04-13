@@ -9,15 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: 6208b71b-37a7-40f5-91b0-19b665e7458a
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 19d4a4e00692bc983a56416951e82f71bf5f6be2
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 659a2871e540398d34b93c288d34fb80699c36c9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="in-app-help-pages"></a>Pages d’aide dans l’application
 
 Dans la plupart des cas, il est généralement préférable d’afficher l’aide au sein de l’application et à la demande de l’utilisateur.
@@ -38,28 +35,27 @@ L’aide dans l’application peut prendre plusieurs formes, mais ces dernières
 
 La fourniture d’une ou de plusieurs pages d’aide distinctes au sein de votre application constitue un moyen rapide et simple d’afficher des instructions utiles.
 
--   **Soyez concis :** une bibliothèque de rubriques d’aide volumineuse se révèle peu maniable et inadaptée pour une aide dans l’application.
--   **Restez cohérent :** assurez-vous que les utilisateurs pourront accéder à vos pages d’aide de la même manière qu’aux autres parties de votre application. Ils ne doivent jamais avoir besoin de chercher comment y accéder.
--   **Attribuez des titres significatifs à vos pages d’aide :** étant donné que le contenu d’aide recherché par un utilisateur peut figurer sur la même page que d’autres rubriques d’aide, veillez à ce que l’utilisateur puisse facilement déterminer la rubrique qui l’intéresse spécifiquement.
+-   **Soyez concis:** une bibliothèque de rubriques d’aide volumineuse se révèle peu maniable et inadaptée pour une aide dans l’application.
+-   **Restez cohérent:** assurez-vous que les utilisateurs pourront accéder à vos pages d’aide de la même manière qu’aux autres parties de votre application. Ils ne doivent jamais avoir besoin de chercher comment y accéder.
+-   **Attribuez des titres significatifs à vos pages d’aide:** étant donné que le contenu d’aide recherché par un utilisateur peut figurer sur la même page que d’autres rubriques d’aide, veillez à ce que l’utilisateur puisse facilement déterminer la rubrique qui l’intéresse spécifiquement.
 
 
 #### <a name="popups"></a>Fenêtres contextuelles
 
 Les fenêtres contextuelles permettent de fournir une aide très spécifique en affichant des instructions et des conseils précisément adaptés à la tâche que l’utilisateur tente d’exécuter.
 
--   **Concentrez-vous sur un seul problème :** l’espace disponible dans une fenêtre contextuelle est encore plus restreint que celui d’une page d’aide. Pour être efficaces, les fenêtres d’aide contextuelles ne doivent donc faire référence qu’à une seule tâche.
--   **Souciez-vous de la visibilité :** les fenêtres d’aide contextuelles n’étant visualisables qu’à partir d’un seul emplacement, faites en sorte qu’elles soient nettement visibles par l’utilisateur sans masquer le reste du contenu. Si l’utilisateur ne distingue pas immédiatement une fenêtre contextuelle, il risque de la faire disparaître en recherchant une page d’aide.
--   **Évitez d’utiliser une quantité de ressources excessive :** l’aide ne doit pas s’afficher avec un temps de décalage ni mettre du temps à se charger. L’utilisation de vidéos, de fichiers audio ou d’images haute résolution dans des fenêtres contextuelles est plus susceptible de frustrer l’utilisateur que de l’aider véritablement.
+-   **Concentrez-vous sur un seul problème:** l’espace disponible dans une fenêtre contextuelle est encore plus restreint que celui d’une page d’aide. Pour être efficaces, les fenêtres d’aide contextuelles ne doivent donc faire référence qu’à une seule tâche.
+-   **Souciez-vous de la visibilité:** les fenêtres d’aide contextuelles n’étant visualisables qu’à partir d’un seul emplacement, faites en sorte qu’elles soient nettement visibles par l’utilisateur sans masquer le reste du contenu. Si l’utilisateur ne distingue pas immédiatement une fenêtre contextuelle, il risque de la faire disparaître en recherchant une page d’aide.
+-   **Évitez d’utiliser une quantité de ressources excessive:** l’aide ne doit pas s’afficher avec un temps de décalage ni mettre du temps à se charger. L’utilisation de vidéos, de fichiers audio ou d’images haute résolution dans des fenêtres contextuelles est plus susceptible de frustrer l’utilisateur que de l’aider véritablement.
 
 #### <a name="descriptions"></a>Descriptions
 
-Il peut parfois être utile de fournir un complément d’informations concernant une fonctionnalité au moment où l’utilisateur accède à cette dernière. Les descriptions sont comparables à une interface utilisateur d’instructions, mais il existe une différence essentielle entre ces deux types d’aides : l’interface utilisateur d’instructions tente d’enseigner et de faire découvrir à l’utilisateur des fonctionnalités qu’il ne connaît pas encore, alors que les descriptions détaillées enrichissent les connaissances d’un utilisateur concernant des fonctionnalités qui l’intéressent déjà.
+Il peut parfois être utile de fournir un complément d’informations concernant une fonctionnalité au moment où l’utilisateur accède à cette dernière. Les descriptions sont comparables à une interface utilisateur d’instructions, mais il existe une différence essentielle entre ces deux types d’aides: l’interface utilisateur d’instructions tente d’enseigner et de faire découvrir à l’utilisateur des fonctionnalités qu’il ne connaît pas encore, alors que les descriptions détaillées enrichissent les connaissances d’un utilisateur concernant des fonctionnalités qui l’intéressent déjà.
 
--   **N’enseignez pas les concepts de base :** supposez que l’utilisateur possède déjà les connaissances de base en matière d’utilisation de l’élément décrit. L’utilisateur a besoin de clarifications ou de compléments d’informations. Il est inutile de lui fournir des informations qu’il connaît déjà.
--   **Décrivez les interactions intéressantes :** l’une des fonctions les plus utiles des descriptions consiste à informer l’utilisateur des interactions possibles de fonctionnalités qu’il connaît déjà. Cette approche complète les connaissances des utilisateurs sur les fonctions qu’ils ont pris l’habitude d’utiliser.
--   **Restez à l’écart :** à l’instar d’une interface utilisateur d’instructions, les descriptions ne doivent pas interférer avec le plaisir que prend l’utilisateur à manipuler l’application.
+-   **N’enseignez pas les concepts de base:** supposez que l’utilisateur possède déjà les connaissances de base en matière d’utilisation de l’élément décrit. L’utilisateur a besoin de clarifications ou de compléments d’informations. Il est inutile de lui fournir des informations qu’il connaît déjà.
+-   **Décrivez les interactions intéressantes:** l’une des fonctions les plus utiles des descriptions consiste à informer l’utilisateur des interactions possibles de fonctionnalités qu’il connaît déjà. Cette approche complète les connaissances des utilisateurs sur les fonctions qu’ils ont pris l’habitude d’utiliser.
+-   **Restez à l’écart:** à l’instar d’une interface utilisateur d’instructions, les descriptions ne doivent pas interférer avec le plaisir que prend l’utilisateur à manipuler l’application.
 
 ## <a name="related-articles"></a>Articles connexes
 
 * [Recommandations en matière d’aide de l’application](guidelines-for-app-help.md)
-

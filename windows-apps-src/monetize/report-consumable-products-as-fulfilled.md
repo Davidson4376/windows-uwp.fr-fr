@@ -1,26 +1,23 @@
 ---
 author: mcleanbyron
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
-description: "Utilisez cette méthode dans l’API de collection du Windows Store pour indiquer le traitement de la commande d’un produit consommable pour un client donné. Pour qu’un utilisateur puisse racheter un produit consommable, votre application ou votre service doit indiquer que la commande de ce produit a été traitée pour cet utilisateur."
+description: "Utilisez cette méthode dans l’API de collection du WindowsStore pour indiquer le traitement de la commande d’un produit consommable pour un client donné. Pour qu’un utilisateur puisse racheter un produit consommable, votre application ou votre service doit indiquer que la commande de ce produit a été traitée pour cet utilisateur."
 title: "Signaler le traitement de la commande d’un produit consommable"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de collection du Windows Store, traiter, produit consommable"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp, API de collection du WindowsStore, traiter, produit consommable
 ms.openlocfilehash: 201e4fedc5f36202cba4c495ae9344d5a7975d62
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="report-consumable-products-as-fulfilled"></a>Signaler le traitement de la commande d’un produit consommable
 
-Utilisez cette méthode dans l’API de collection du Windows Store pour indiquer le traitement de la commande d’un produit consommable pour un client donné. Pour qu’un utilisateur puisse racheter un produit consommable, votre application ou votre service doit indiquer que la commande de ce produit a été traitée pour cet utilisateur.
+Utilisez cette méthode dans l’API de collection du Windows Store pour indiquer le traitement de la commande d’un produit consommable pour un client donné. Pour qu’un utilisateur puisse racheter un produit consommable, votre application ou votre service doit indiquer que la commande de ce produit a été traitée pour cet utilisateur.
 
-Vous pouvez utiliser cette méthode pour indiquer que la commande d’un produit consommable a été traitée de deux façons :
+Vous pouvez utiliser cette méthode pour indiquer que la commande d’un produit consommable a été traitée de deux façons:
 
 * Indiquez l’ID d’article du produit consommable (tel qu’il est retourné dans le paramètre **itemId** d’une [demande de produits](query-for-products.md)) et un ID de suivi unique que vous fournissez. Si le même ID de suivi est utilisé pour plusieurs tentatives, le même résultat est retourné, même si l’article est déjà consommé. Si vous ne savez pas si une demande de consommation a abouti, votre service doit de nouveau la soumettre avec le même ID de suivi. L’ID de suivi sera toujours lié à cette demande de consommation et peut être soumis indéfiniment.
 * Indiquez l’ID produit (tel qu’il est retourné dans le paramètre **productId** d’une [demande de produits](query-for-products.md)) et un ID de transaction qui est obtenu à partir de l’une des sources indiquées dans la description du paramètre **transactionId** dans la section Corps de la requête ci-dessous.
@@ -28,10 +25,10 @@ Vous pouvez utiliser cette méthode pour indiquer que la commande d’un produit
 ## <a name="prerequisites"></a>Prérequis
 
 
-Pour utiliser cette méthode, vous devez disposer des éléments suivants :
+Pour utiliser cette méthode, vous devez disposer des éléments suivants:
 
-* un jeton d’accès Azure AD créé avec l’URI d’audience `https://onestore.microsoft.com` ;
-* une clé d’ID du Windows Store, qui représente l’identité de l’utilisateur pour lequel vous souhaitez indiquer le traitement de la commande d’un produit consommable.
+* un jeton d’accès AzureAD créé avec l’URI d’audience `https://onestore.microsoft.com`;
+* une clé d’ID du WindowsStore, qui représente l’identité de l’utilisateur pour lequel vous souhaitez indiquer le traitement de la commande d’un produit consommable.
 
 Pour plus d’informations, voir [Gérer les droits sur les produits à partir d’un service](view-and-grant-products-from-a-service.md).
 
@@ -74,9 +71,9 @@ L’objet UserIdentity contient les paramètres ci-dessous.
 
 | Paramètre            | Type   | Description       | Obligatoire |
 |----------------------|--------|-------------------|----------|
-| identityType         | chaîne | Spécifiez la valeur de chaîne **b2b**.    | Oui      |
-| identityValue        | chaîne | La [clé d’ID du Windows Store](view-and-grant-products-from-a-service.md#step-4) qui représente l’identité de l’utilisateur pour lequel vous souhaitez indiquer le traitement de la commande d’un produit consommable.      | Oui      |
-| localTicketReference | chaîne | Identificateur demandé pour la réponse retournée. Nous vous recommandons d’utiliser la même valeur que la [revendication](view-and-grant-products-from-a-service.md#claims-in-a-windows-store-id-key) *userId* dans la clé d’ID du Windows Store. | Oui      |
+| identityType         | chaîne | Spécifiez la valeur chaîne **b2b**.    | Oui      |
+| identityValue        | chaîne | La [clé d’ID du WindowsStore](view-and-grant-products-from-a-service.md#step-4) qui représente l’identité de l’utilisateur pour lequel vous souhaitez indiquer le traitement de la commande d’un produit consommable.      | Oui      |
+| localTicketReference | chaîne | Identificateur demandé pour la réponse retournée. Nous vous recommandons d’utiliser la même valeur que la [revendication](view-and-grant-products-from-a-service.md#claims-in-a-windows-store-id-key) *userId* dans la clé d’ID du WindowsStore. | Oui      |
 
 <span/> 
 
@@ -146,7 +143,7 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 |------|--------------|----------------------------|-----------------------|
 | 401  | Non autorisé | AuthenticationTokenInvalid | Le jeton d’accès Azure AD n’est pas valide. Dans certains cas, les détails de l’erreur ServiceError contiennent plus d’informations, par exemple lorsque le jeton est arrivé à expiration ou que la revendication *appid* est manquante. |
 | 401  | Non autorisé | PartnerAadTicketRequired   | Un jeton d’accès Azure AD n’a pas été transmis au service dans l’en-tête d’autorisation.                                                                                                   |
-| 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du Windows Store du corps de la demande et la revendication *appid* du jeton d’accès Azure AD de l’en-tête d’autorisation ne correspondent pas.                     |
+| 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du WindowsStore du corps de la requête et la revendication *appid* du jeton d’accès AzureAD de l’en-tête d’autorisation ne correspondent pas.                     |
 
 <span/> 
 
@@ -155,5 +152,4 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 * [Gérer les droits sur les produits à partir d’un service](view-and-grant-products-from-a-service.md)
 * [Demander des produits](query-for-products.md)
 * [Octroyer des produits gratuits](grant-free-products.md)
-* [Renouveler une clé d’ID du Windows Store](renew-a-windows-store-id-key.md)
-
+* [Renouveler une clé d’ID du Windows Store](renew-a-windows-store-id-key.md)

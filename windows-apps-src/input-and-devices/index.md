@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6be02f9ec4163df510827552e04be78fffe1a8a5
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 6bcc81d80bb3e2167b6d6e5ee078279bd830f04c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="inputs-and-devices"></a>Entrées et appareils
 
@@ -65,13 +63,13 @@ Intégrez la reconnaissance vocale et la conversion de texte par synthèse vocal
 <div class="side-by-side-content-left">
 <p>
 <b>[Stylet](pen-and-stylus-interactions.md)</b><br/>
-Optimisez votre application UWP pour la saisie au stylet afin de fournir une fonctionnalité standard du dispositif de pointage et d’octroyer une expérience Windows Ink optimale à vos utilisateurs.
+Optimisez votre application UWP pour la saisie au stylet afin de fournir une fonctionnalité standard du dispositif de pointage et d’octroyer une expérience WindowsInk optimale à vos utilisateurs.
 </p>
 </div>
 <div class="side-by-side-content-right">
 <p>
 <b>[Clavier](keyboard-interactions.md)</b><br/>
-Les entrées via le clavier représentent une part importante de l’expérience d’interaction utilisateur globale pour les applications. Le clavier est indispensable pour certaines personnes souffrant d’un handicap et les utilisateurs qui le considèrent simplement comme un moyen plus efficace d’interaction avec une application.
+Les saisies au clavier représentent une part importante de l’expérience d’interaction utilisateur globale pour les applications. Le clavier est indispensable pour certaines personnes souffrant d’un handicap et les utilisateurs qui le considèrent simplement comme un moyen plus efficace d’interaction avec une application.
 </p>
 </div>
 </div>
@@ -99,13 +97,13 @@ Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée
 <div class="side-by-side-content-left">
 <p>
 <b>[Souris](mouse-interactions.md)</b><br/>
-Les entrées de la souris conviennent mieux aux interactions utilisateur qui demandent de la précision comme le pointage et le clic. Cette précision inhérente est naturellement prise en charge par l’interface utilisateur de Windows qui permet de gérer la nature imprécise de l’entrée tactile.
+Les entrées de souris conviennent mieux aux interactions utilisateur qui demandent de la précision comme le pointage et le clic. Cette précision inhérente est naturellement prise en charge par l’interface utilisateur de Windows qui permet de gérer la nature imprécise de l’entrée tactile.
 </p>
 </div>
 <div class="side-by-side-content-right">
 <p>
 <b>[Boîtier de commande et télécommande](gamepad-and-remote-interactions.md)</b><br/>
-Les applications UWP prennent désormais en charge les entrées du boîtier de commande et de la télécommande. Les boîtiers de commandes et les télécommandes sont les principaux appareils d’entrée utilisables avec une Xbox et un téléviseur.
+Les applications UWP prennent désormais en charge les entrées du boîtier de commande et de contrôle à distance. Les boîtiers de commandes et les télécommandes sont les principaux appareils d’entrée utilisables avec une Xbox et un téléviseur.
 </p>
 </div>
 </div>
@@ -115,7 +113,7 @@ Les applications UWP prennent désormais en charge les entrées du boîtier de c
 <div class="side-by-side-content">
 <p>
 <b>[Entrées multiples](multiple-input-design-guidelines.md)</b><br/>
-Pour vous adapter au plus grand nombre possible d’utilisateurs et d’appareils, nous vous recommandons de concevoir vos applications de manière à ce qu’elles fonctionnent avec le plus grand nombre possible de types d’entrées (mouvement, commande vocale, écran tactile, pavé tactile, souris et clavier). Cela a pour effet d’optimiser la flexibilité, la facilité d’utilisation et l’accessibilité.
+Pour vous adapter au plus grand nombre possible d’utilisateurs et d’appareils, nous vous recommandons de concevoir vos applications de manière à ce qu’elles fonctionnent avec le plus grand nombre possible de types d’entrée (mouvement, voix, écran tactile, pavé tactile, souris et clavier). Cela a pour effet d’optimiser la flexibilité, la facilité d’utilisation et l’accessibilité.
 </p>
 </div>
 </div>
@@ -141,7 +139,7 @@ Recevez, traitez et gérez les données d’entrée à partir de dispositifs de 
 <div class="side-by-side-content">
 <div class="side-by-side-content-left">
 <p><b>[Saisie de texte personnalisé](custom-text-input.md)</b><br/>
-Les API Core Text de l’espace de noms Windows.UI.Text.Core activent une application UWP pour recevoir une entrée de texte à partir de n’importe quel service de texte pris en charge sur les appareils Windows. Cela permet à l’application de recevoir du texte dans n’importe quelle langue et à partir de n’importe quel type d’entrée, comme la saisie sur clavier, la saisie vocale ou la saisie à l’aide d’un stylet.
+Les API CoreText de l’espace de noms Windows.UI.Text.Core permettent à une application UWP de recevoir une entrée de texte à partir de tout service de texte pris en charge sur les appareils Windows. Cela permet à l’application de recevoir du texte dans n’importe quelle langue et à partir de n’importe quel type d’entrée, comme la saisie sur clavier, la saisie vocale ou la saisie à l’aide d’un stylet.
 </p>
 </div>
 <div class="side-by-side-content-right">
@@ -205,9 +203,8 @@ Une bonne connaissance des appareils qui prennent en charge les applications UWP
 </p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Conception pour Xbox et télévision](designing-for-tv.md)</b><br/>Concevez votre application de plateforme Windows universelle (UWP) pour une esthétique et un fonctionnement optimaux sur les écrans de télévision et Xbox One.
+<p><b>[Conception pour Xbox et télévision](designing-for-tv.md)</b><br/>Concevez votre application de plateformeWindows universelle (UWP) pour une esthétique et un fonctionnement optimaux sur les écrans de télévision et XboxOne.
 </p>
   </div>
 </div>
 </div>
-

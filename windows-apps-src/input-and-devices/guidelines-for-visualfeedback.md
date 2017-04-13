@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 00d05638de0080a6df2e5e0d971caaea424fd6ef
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 422d396e9810d6ebe083a6346c8ec8f032ef1fb3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="guidelines-for-visual-feedback"></a>Recommandations en matière de retour visuel
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -47,7 +44,7 @@ L’utilisation des contrôles de la plateforme XAML disponibles permet de garan
 
 [!IMPORTANT] Nous ne conseillons pas de modifier le comportement d’interaction des mouvements intégrés. 
 
-**Retour visuel sur tous les appareils :**
+**Retour visuel sur tous les appareils:**
 
 Le retour visuel dépend généralement du périphérique d’entrée (entrée tactile, pavé tactile, souris, stylo/stylet, clavier, etc.). Par exemple, le retour intégré pour une souris implique habituellement le déplacement et le changement du curseur, l’entrée tactile et le stylo nécessitent des visualisations de contact, et l’entrée et la navigation au clavier utilisent la mise en surbrillance et des rectangles de sélection.
 
@@ -55,7 +52,7 @@ La propriété [**ShowGestureFeedback**](https://msdn.microsoft.com/library/wind
 
 Si vous personnalisez l’interface utilisateur de retour, veillez à fournir un retour d’interaction prenant en charge tous les modes d’entrée et approprié à tous ces modes.
 
-Voici quelques exemples de visualisations de contact intégrées à Windows :
+Voici quelques exemples de visualisations de contact intégrées à Windows:
 
 | ![Retour tactile](images/TouchFeedback.png) | ![Retour de la souris](images/MouseFeedback.png) | ![Retour du stylo](images/PenFeedback.png) | ![Retour du clavier](images/KeyboardFeedback.png) |
 | --- | --- | --- | --- |
@@ -69,26 +66,26 @@ Toutes les applications Windows comportent un visuel du focus plus défini autou
 
 **Propriétés des bordures**
 
-Les visuels du focus à haute visibilité sont composés de deux éléments : la bordure principale et la bordure secondaire. La bordure principale a une épaisseur de **2 px** et apparaît autour de la bordure secondaire *extérieure*. La bordure secondaire a une épaisseur de **1 px** et apparaît autour de la bordure principale *intérieure*.
+Les visuels du focus à haute visibilité sont composés de deux éléments: la bordure principale et la bordure secondaire. La bordure principale a une épaisseur de **2px** et apparaît autour de la bordure secondaire *extérieure*. La bordure secondaire a une épaisseur de **1px** et apparaît autour de la bordure principale *intérieure*.
 ![Lignes rouges des visuels du focus à haute visibilité](images/FocusRectRedlines.png)
 
-Pour modifier l’épaisseur des bordures (principale ou secondaire), utilisez les propriétés **FocusVisualPrimaryThickness** ou **FocusVisualSecondaryThickness**, respectivement :
+Pour modifier l’épaisseur des bordures (principale ou secondaire), utilisez les propriétés **FocusVisualPrimaryThickness** ou **FocusVisualSecondaryThickness**, respectivement:
 ```XAML
 <Slider Width="200" FocusVisualPrimaryThickness="5" FocusVisualSecondaryThickness="2"/>
 ```
 ![Épaisseurs des marges des visuels du focus à haute visibilité](images/FocusMargin.png)
 
-La marge est une propriété de type [**Thickness**](https://msdn.microsoft.com/library/system.windows.thickness) ; par conséquent, la marge peut être personnalisée afin d’apparaître uniquement sur certains côtés du contrôle. Voir ci-dessous : ![Épaisseurs des marges des visuels du focus à haute visibilité, bas uniquement](images/FocusThicknessSide.png)
+La marge est une propriété de type [**Thickness**](https://msdn.microsoft.com/library/system.windows.thickness); par conséquent, la marge peut être personnalisée afin d’apparaître uniquement sur certains côtés du contrôle. Voir ci-dessous: ![Épaisseurs des marges des visuels du focus à haute visibilité, bas uniquement](images/FocusThicknessSide.png)
 
-La marge est l’espace entre les limites de l’élément visuel du contrôle et le début de la *bordure secondaire* des visuels du focus. La marge par défaut est à **1px** des limites du contrôle. Vous pouvez modifier cette marge pour chaque contrôle, en modifiant la propriété **FocusVisualMargin** :
+La marge est l’espace entre les limites de l’élément visuel du contrôle et le début de la *bordure secondaire* des visuels du focus. La marge par défaut est à **1px** des limites du contrôle. Vous pouvez modifier cette marge pour chaque contrôle, en modifiant la propriété **FocusVisualMargin**:
 ```XAML
 <Slider Width="200" FocusVisualMargin="-5"/>
 ```
 ![Différences des marges des visuels du focus à haute visibilité](images/FocusPlusMinusMargin.png)
 
-*Une marge négative éloignera la bordure du centre du contrôle ; en revanche, une marge positive rapprochera la bordure du centre du contrôle.*
+*Une marge négative éloignera la bordure du centre du contrôle; en revanche, une marge positive rapprochera la bordure du centre du contrôle.*
 
-Pour désactiver les visuels du focus du contrôle, désactivez simplement **UseSystemFocusVisuals** :
+Pour désactiver les visuels du focus du contrôle, désactivez simplement **UseSystemFocusVisuals**:
 ```XAML
 <Slider Width="200" UseSystemFocusVisuals="False"/>
 ```
@@ -97,16 +94,16 @@ L’épaisseur, la marge ou la présence souhaitée (ou non) de visuels du focus
 
 **Propriétés de couleur**
 
-Les visuels du focus comportent seulement deux propriétés de couleur : la couleur de la bordure principale et secondaire. Ces couleurs des bordures des visuels du focus peuvent être modifiées pour chaque contrôle au niveau page et, plus globalement, à l’échelle de l’application :
+Les visuels du focus comportent seulement deux propriétés de couleur: la couleur de la bordure principale et secondaire. Ces couleurs des bordures des visuels du focus peuvent être modifiées pour chaque contrôle au niveau page et, plus globalement, à l’échelle de l’application:
 
-Pour personnaliser les visuels du focus à l’échelle de l’application, remplacez les pinceaux système :
+Pour personnaliser les visuels du focus à l’échelle de l’application, remplacez les pinceaux système:
 ```XAML
 <SolidColorBrush x:Key="SystemControlFocusVisualPrimaryBrush" Color="DarkRed"/>
 <SolidColorBrush x:Key="SystemControlFocusVisualSecondaryBrush" Color="Pink"/>
 ```
 ![Changements de couleurs des visuels du focus à haute visibilité](images/FocusRectColorChanges.png)
 
-Pour modifier les couleurs pour chaque contrôle, modifiez simplement les propriétés visuelles du focus sur le contrôle souhaité :
+Pour modifier les couleurs pour chaque contrôle, modifiez simplement les propriétés visuelles du focus sur le contrôle souhaité:
 ```XAML
 <Slider Width="200" FocusVisualPrimaryBrush="DarkRed" FocusVisualSecondaryBrush="Pink"/>
 ```
@@ -126,7 +123,7 @@ Pour modifier les couleurs pour chaque contrôle, modifiez simplement les propri
 * [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Exemples d’archive**
-* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Entrée: exemple d’événements d’entrée utilisateurXAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple de test de positionnement tactile](http://go.microsoft.com/fwlink/p/?linkid=231590)
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -137,4 +134,3 @@ Pour modifier les couleurs pour chaque contrôle, modifiez simplement les propri
  
 
  
-

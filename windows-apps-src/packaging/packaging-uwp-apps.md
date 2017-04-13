@@ -8,20 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ca57f50f4827ba5de7a140f1353ba864c5e2fb6c
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 6c699b357a2c1271f6765514331eb2ca0a6ff0b3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# <a name="packaging-uwp-apps"></a>Création de packages d’applications UWP
+# <a name="package-a-uwp-app-with-visual-studio"></a>Créer un package d’application UWP avec Visual Studio
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Pour vendre ou distribuer votre application UWP à d’autres utilisateurs, vous devez créer un package d’application appxupload. Lorsque vous créez l’appxupload, un autre package appx est alors généré pour le test et le chargement indépendant. Vous pouvez distribuer votre application directement en chargeant de manière indépendante le package appx sur un appareil. Cet article décrit le processus de configuration, de création et de test d’un package d’application UWP. Pour plus d’informations sur le chargement indépendant, voir [Charger de manière indépendante des applications dans Windows 10](https://technet.microsoft.com/library/mt269549.aspx).
+Pour vendre ou distribuer votre application UWP à d’autres utilisateurs, vous devez créer un package d’application appxupload. Lorsque vous créez l’appxupload, un autre package appx est alors généré pour le test et le chargement indépendant. Vous pouvez distribuer votre application directement en chargeant de manière indépendante le package appx sur un appareil. Cet article décrit le processus de configuration, de création et de test d’un package d’application UWP. Pour plus d’informations sur le chargement indépendant, voir [Charger de manière indépendante des applications dans Windows10](https://technet.microsoft.com/library/mt269549.aspx).
 
-Pour Windows 10, vous générez un package (.appxupload) qui peut être chargé sur le Windows Store. Votre application est ensuite disponible pour être installée et exécutée sur tout appareil Windows 10. Voici les étapes pour créer un package d’application.
+Pour Windows10, vous générez un package (.appxupload) qui peut être chargé sur le Windows Store. Votre application est ensuite disponible pour être installée et exécutée sur tout appareil Windows 10. Voici les étapes pour créer un package d’application.
 
 1.  [Avant de créer un package pour votre application](#before-packaging-your-app). Suivez ces étapes pour vous assurer que votre application est prête à être placée dans un package pour son envoi au Windows Store.
 2.  [Configurer un package d’application.](#configure-an-app-package) Utilisez le concepteur de manifeste pour configurer le package. Par exemple, ajoutez des images de vignette et choisissez les orientations prises en charge par votre application.
@@ -38,7 +36,7 @@ Après avoir effectué les étapes ci-dessus, vous êtes prêt à vendre votre a
 
 ## <a name="configure-an-app-package"></a>Configurer un package d’application
 
-Le fichier manifeste de l’application (package.appxmanifest.xml) possède les propriétés et les paramètres qui sont nécessaires pour créer votre package d’application. Par exemple, les propriétés dans le fichier manifeste décrivent l’image à utiliser en tant que vignette de votre application et les orientations prises en charge par votre application quand un utilisateur fait pivoter l’appareil.
+Le fichier manifeste de l’application (package.appxmanifest) possède les propriétés et les paramètres qui sont nécessaires pour créer votre package d’application. Par exemple, les propriétés dans le fichier manifeste décrivent l’image à utiliser en tant que vignette de votre application et les orientations prises en charge par votre application quand un utilisateur fait pivoter l’appareil.
 
 Visual Studio dispose d’un concepteur de manifeste qui facilite la mise à jour du fichier manifeste sans modifier le code XML brut du fichier.
 
@@ -59,7 +57,7 @@ Visual Studio peut associer votre package au Windows Store. Lors de cette opéra
 
 ## <a name="create-an-app-package"></a>Créer un package d’application
 
-Pour distribuer une application via le Windows Store, vous devez créer un package appxupload. Pour ce faire, utilisez l’Assistant **Create App Packages**. Suivez ces étapes pour créer un package approprié pour un envoi vers le Windows Store avec Microsoft Visual Studio 2015.
+Pour distribuer une application via le Windows Store, vous devez créer un package appxupload. Pour ce faire, utilisez l’Assistant **Create App Packages**. Suivez ces étapes pour créer un package approprié pour un envoi vers le Windows Store avec Microsoft Visual Studio2015.
 
 **Pour créer votre package d’application**
 
@@ -69,15 +67,15 @@ Pour distribuer une application via le Windows Store, vous devez créer un packa
 
     L’assistant **Créer des packages d’application** s’affiche.
 
-3.  Sélectionnez « Oui » dans la première boîte de dialogue demandant si vous voulez générer des packages à charger dans le Windows Store, puis cliquez sur « Suivant ».<br/>
+3.  Sélectionnez «Oui» dans la première boîte de dialogue demandant si vous voulez générer des packages à charger dans le WindowsStore, puis cliquez sur «Suivant».<br/>
     ![Fenêtre Créer vos packages affichée](images/packaging-screen3.jpg)
 
-    Si vous choisissez « Non », Visual Studio ne génère pas le package .appxupload requis pour l’envoi au Windows Store. Si vous souhaitez uniquement charger de manière indépendante votre application pour l’exécuter sur des appareils internes, vous pouvez sélectionner cette option. Pour plus d’informations sur le chargement indépendant, voir [Activer votre appareil pour le développement](https://msdn.microsoft.com/library/windows/apps/Dn706236).
+    Si vous choisissez «Non», Visual Studio ne génère pas le package .appxupload requis pour l’envoi au WindowsStore. Si vous souhaitez uniquement charger de manière indépendante votre application pour l’exécuter sur des appareils internes, vous pouvez sélectionner cette option. Pour plus d’informations sur le chargement indépendant, voir [Activer votre appareil pour le développement](https://msdn.microsoft.com/library/windows/apps/Dn706236).
 
 4.  Connectez-vous au tableau de bord du Centre de développement Windows à l’aide de votre compte de développeur. (Si vous ne disposez pas encore d’un compte de développeur, l’Assistant vous aidera à en créer un.)
 5.  Sélectionnez le nom d’application de votre package ou réservez-en un nouveau sur le portail du Centre de développement Windows, si ce n’est déjà fait.<br/>
     ![Fenêtre Créer des packages d’application avec la sélection de nom d’application affichée](images/packaging-screen4.jpg)
-6.  Veillez à sélectionner les trois configurations d’architecture (x86, x64 et ARM) dans la boîte de dialogue **Sélectionner et configurer des packages**. De cette façon, votre application pourra être déployée sur une large gamme d’appareils. Dans la zone de liste **Generate app bundle**, sélectionnez **Always**. Cela permet de simplifier le processus d’envoi au Windows Store, car vous n’aurez qu’un seul fichier à charger(.appxupload). L’ensemble d’applications contient tous les packages nécessaires à déployer sur les appareils avec chaque architecture de processeur.<br/>
+6.  Veillez à sélectionner les troisconfigurations d’architecture (x86, x64 et ARM) dans la boîte de dialogue **Sélectionner et configurer des packages**. De cette façon, votre application pourra être déployée sur une large gamme d’appareils. Dans la zone de liste **Generate app bundle**, sélectionnez **Always**. Cela permet de simplifier le processus d’envoi au Windows Store, car vous n’aurez qu’un seul fichier à charger(.appxupload). L’ensemble d’applications contient tous les packages nécessaires à déployer sur les appareils avec chaque architecture de processeur.<br/>
     ![Fenêtre Créer des packages d’application avec la configuration de package affichée](images/packaging-screen5.jpg)
 7.  Il est conseillé d’inclure les fichiers de symboles PDB complets pour optimiser l’expérience d’[analyse des incidents](http://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/) à partir du Centre de développement Windows. Vous pouvez en apprendre davantage sur le débogage avec des symboles en consultant [Débogage avec des symboles](https://msdn.microsoft.com/library/windows/desktop/Ee416588).
 8.  Vous pouvez maintenant configurer les détails pour créer votre package. Lorsque vous êtes prêt à publier votre application, vous allez charger les packages à partir de l’emplacement de sortie.
@@ -85,7 +83,7 @@ Pour distribuer une application via le Windows Store, vous devez créer un packa
 10. Vous voyez maintenant cette boîte de dialogue.<br/>
     ![Fenêtre de création de package terminée avec options de validation affichées](images/packaging-screen6.jpg)
 
-    Validez votre application avant de l’envoyer au Windows Store en certification sur un ordinateur local ou distant. (Vous pouvez uniquement valider les versions Release pour votre package d’application et non les versions Debug.)
+    Validez votre application avant de l’envoyer au WindowsStore en certification sur un ordinateur local ou distant. (Vous pouvez uniquement valider les versions Release pour votre package d’application et non les versions Debug.)
 
 11. Pour valider localement, laissez l’option **Local machine** sélectionnée, puis cliquez sur **Launch Windows App Certification Kit**. Pour plus d’informations sur le test de votre application avec le Kit de certification des applications Windows, voir [Kit de certification des applications Windows](https://msdn.microsoft.com/library/windows/apps/Mt186449).
 
@@ -95,10 +93,10 @@ Pour distribuer une application via le Windows Store, vous devez créer un packa
 
 12. Une fois que le Kit de certification des applications Windows a terminé et que votre application a réussi, vous êtes prêt à charger le fichier dans le Windows Store. Assurez-vous de charger le fichier approprié. Vous le trouverez dans le dossier racine de votre solution \\[AppName]\\AppPackages. Il se termine par l’extension de fichier .appxupload. Le nom sera sous la forme \[AppName\]\_\[AppVersion\]\_x86\_x64\_arm\_bundle.appxupload.
 
-**Valider votre package d’application sur un appareil Windows 10 distant**
+**Valider votre package d’application sur un appareil Windows10 distant**
 
 1.  Activez votre appareil Windows 10 pour le développement en suivant les instructions [Activer votre appareil pour le développement](https://msdn.microsoft.com/library/windows/apps/Dn706236).
-    **Important** Vous ne pouvez pas valider votre package d’application sur un appareil ARM distant pour Windows 10.
+    **Important** Vous ne pouvez pas valider votre package d’application sur un appareil ARM distant pour Windows10.
 2.  Téléchargez et installez les outils de contrôle à distance de Visual Studio. Ils sont utilisés pour exécuter le kit de certification des applications Windows à distance. Vous pouvez obtenir plus d’informations sur ces outils, y compris sur l’endroit où les télécharger, en consultant [Exécuter les applications du Windows Store sur un ordinateur distant](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor).
 3.  Téléchargez le [Kit de certification des applications Windows](http://go.microsoft.com/fwlink/p/?LinkID=309666) requis, puis installez-le sur votre appareil Windows 10 distant.
 4.  Sur la page **Package Creation Completed** de l’Assistant, choisissez la case d’option **Remote Machine**, puis choisissez le bouton de sélection en regard du bouton **Test Connection**.
@@ -120,7 +118,7 @@ La liste suivante fournit les conditions requises pour le chargement indépendan
 
 1.  Copiez les dossiers pour la version que vous souhaitez installer sur l’appareil cible.
 
-    Si vous avez créé un ensemble d’applications, vous aurez un dossier en fonction du numéro de version et un dossier \_test. Par exemple, ces deux dossiers (dans lesquels la version à installer est 1.0.2) :
+    Si vous avez créé un ensemble d’applications, vous aurez un dossier en fonction du numéro de version et un dossier \_test. Par exemple, ces deux dossiers (dans lesquels la version à installer est 1.0.2):
 
     -   C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0
     -   C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_Test
@@ -133,7 +131,7 @@ La liste suivante fournit les conditions requises pour le chargement indépendan
 3.  Cliquez avec le bouton droit sur le fichier **Add-AppDevPackage.ps1**, puis choisissez **Exécuter avec PowerShell** et suivez les invites.<br/>
     ![Explorateur de fichiers affichant le script PowerShell](images/packaging-screen7.jpg)
 
-    Une fois le package d’application installé, le message « Votre application a été correctement installée » s’affiche dans votre fenêtre PowerShell.
+    Une fois le package d’application installé, le message «Votre application a été correctement installée» s’affiche dans votre fenêtre PowerShell.
 
     **Remarque** Pour ouvrir le menu contextuel sur une tablette, touchez l’écran à l’endroit où vous désirez cliquer avec le bouton droit, restez appuyé jusqu’à ce qu’apparaisse un cercle complet, puis levez le doigt. Le menu contextuel s’affiche quand vous levez le doigt.
 4.  Cliquez sur le bouton Démarrer et tapez le nom de votre application pour la lancer.

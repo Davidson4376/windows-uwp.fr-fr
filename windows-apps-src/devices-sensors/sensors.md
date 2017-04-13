@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9a7c1c5e4352f80aee65cd828f8113ac0bd35d49
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: af862471fcac7ee7f0ab8ad61f57c485d995bae2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="sensors"></a>Capteurs
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Les capteurs permettent à votre application de connaître la relation entre un appareil et le monde physique qui l’entoure. Ils peuvent indiquer à votre application la direction, l’orientation et le mouvement de l’appareil. Ces capteurs peuvent rendre votre jeu, votre utilitaire ou votre application de réalité augmentée plus utile et interactive en fournissant une forme unique d’entrée, par exemple l’utilisation du mouvement de l’appareil pour organiser les personnages à l’écran ou pour simuler la présence dans un cockpit avec l’appareil pour volant.
@@ -55,7 +53,7 @@ Si un capteur utilise la création de rapports par lot, l’appel de [**GetCurre
 
 ## <a name="accelerometer"></a>Accéléromètre
 
-Le capteur [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) mesure les valeurs de force G le long des axes X, Y et Z de l’appareil. Il convient parfaitement aux applications simples basées sur des mouvements. Notez que les « valeurs de force G » incluent l’accélération due à la gravité. Si l’appareil a **FaceUp** comme [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) sur une table, l’accéléromètre indique -1 G sur l’axe Z. Ainsi, les accéléromètres ne mesurent pas nécessairement simplement l’accélération par rapport aux coordonnées, le taux de changement de vélocité. Durant l’utilisation d’un accéléromètre, assurez-vous d’effectuer la distinction entre le vecteur gravitationnel de la gravité et le vecteur d’accélération linéaire du mouvement. Notez que le vecteur gravitationnel doit avoir une valeur normalisée de 1 pour un appareil immobile.
+Le capteur [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) mesure les valeurs de force G le long des axes X, Y et Z de l’appareil. Il convient parfaitement aux applications simples basées sur des mouvements. Notez que les «valeurs de force G» incluent l’accélération due à la gravité. Si l’appareil a **FaceUp** comme [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) sur une table, l’accéléromètre indique -1 G sur l’axe Z. Ainsi, les accéléromètres ne mesurent pas nécessairement simplement l’accélération par rapport aux coordonnées, le taux de changement de vélocité. Durant l’utilisation d’un accéléromètre, assurez-vous d’effectuer la distinction entre le vecteur gravitationnel de la gravité et le vecteur d’accélération linéaire du mouvement. Notez que le vecteur gravitationnel doit avoir une valeur normalisée de 1 pour un appareil immobile.
 
 Les schémas suivants illustrent ce qui suit :
 
@@ -132,5 +130,4 @@ Une application de lecture qui change son affichage selon que l’appareil est t
 ## <a name="samples"></a>Exemples
 
 Pour découvrir certains exemples illustrant l’utilisation de deux capteurs différents, voir le [référentiel d’exemples de capteur Windows](http://go.microsoft.com/fwlink/?LinkID=616041).
-
 

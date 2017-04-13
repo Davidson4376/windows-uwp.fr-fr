@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e8e955f9449d48a6586c9648b70f9565c5278a16
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 174fcd8c7413b502fe2bc2476f5688a73984d7aa
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="use-a-maintenance-trigger"></a>Utiliser un déclencheur de maintenance
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -36,9 +33,9 @@ Des informations supplémentaires sur l’écriture d’une classe de tâche en 
 
 Créez un objet [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). Le deuxième paramètre, *OneShot*, indique si la tâche de maintenance s’exécute une seule fois ou régulièrement. Si *OneShot* est défini sur true, le premier paramètre (*FreshnessTime*) indique le nombre de minutes à attendre avant de planifier la tâche en arrière-plan. Si *OneShot* est défini sur false, *FreshnessTime* indique la fréquence d’exécution de la tâche en arrière-plan.
 
-> **Remarque** Si *FreshnessTime* indique une fréquence inférieure à 15 minutes, une exception est levée lors de la tentative d’inscription de la tâche en arrière-plan.
+> **Remarque** Si *FreshnessTime* indique une fréquence inférieure à 15minutes, une exception est levée lors de la tentative d’inscription de la tâche en arrière-plan.
 
-Cet exemple de code crée un déclencheur qui s’exécute une fois par heure :
+Cet exemple de code crée un déclencheur qui s’exécute une fois par heure:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -58,7 +55,7 @@ Cet exemple de code crée un déclencheur qui s’exécute une fois par heure :
 
 Dans cet exemple, la condition est définie sur **InternetAvailable**, de sorte que la maintenance s’exécute quand Internet est accessible (ou le devient). Pour obtenir la liste des conditions de tâche en arrière-plan possibles, voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-Le code suivant ajoute une condition au générateur de tâches de maintenance :
+Le code suivant ajoute une condition au générateur de tâches de maintenance:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -97,7 +94,7 @@ Le code suivant ajoute une condition au générateur de tâches de maintenance 
     > **Remarque** Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Une erreur est retournée si l’un des paramètres d’inscription n’est pas valide. Vérifiez que votre application gère de façon fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 
 
-> **Remarque** Cet article s’adresse aux développeurs Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs Windows10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -116,4 +113,3 @@ Le code suivant ajoute une condition au générateur de tâches de maintenance 
 * [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-

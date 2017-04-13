@@ -2,31 +2,27 @@
 title: "Périphériques perdus"
 description: "Un périphérique Direct3D peut présenter l’état opérationnel ou perdu."
 ms.assetid: 1639CC02-8000-4208-AA95-91C1F0A3B08D
-keywords:
-- "Périphériques perdus"
+keywords: "Périphériques perdus"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c8f92ed1f8941147e3cb0f2555b01c26a708ed20
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 625fe26facb8903c36c4efbb38216005b0a4271b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="lost-devices"></a>Périphériques perdus
 
 
 Un périphérique Direct3D peut présenter l’état opérationnel ou perdu. L’état *opérationnel* correspond à l’état normal du périphérique, dans lequel ce dernier s’exécute correctement et présente la totalité du rendu attendu. Le périphérique passe à l’état *perdu* lorsqu’un événement, tel que la perte du focus clavier dans une application en plein écran, empêche le rendu. L’état de perte se manifeste par la défaillance silencieuse de l’ensemble des opérations de rendu. Concrètement, les méthodes de rendu peuvent renvoyer des codes de réussites même si les opérations de rendu échouent.
 
-Par conception, l’ensemble complet de scénarios pouvant entraîner la perte d’un périphérique n’est pas spécifié. Parmi les configurations possibles, citons tout de même la perte de focus, quand l’utilisateur active la combinaison ALT+TAB ou lors de l’initialisation d’une boîte de dialogue système. Les périphériques peuvent également être perdus suite à un événement de gestion de l’alimentation, ou lorsqu’une autre application fonctionne en plein écran. Par ailleurs, toute défaillance intervenant après la réinitialisation d’un périphérique définit ce dernier sur l’état de perte.
+Par conception, l’ensemble complet de scénarios pouvant entraîner la perte d’un périphérique n’est pas spécifié. Parmi les configurations possibles, citons tout de même la perte de focus, quand l’utilisateur active la combinaisonALT+TAB ou lors de l’initialisation d’une boîte de dialogue système. Les périphériques peuvent également être perdus suite à un événement de gestion de l’alimentation, ou lorsqu’une autre application fonctionne en plein écran. Par ailleurs, toute défaillance intervenant après la réinitialisation d’un périphérique définit ce dernier sur l’état de perte.
 
-Toutes les méthodes dérivant de [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) fonctionnent obligatoirement après la perte d’un périphérique. Après la perte d’un périphérique, chaque fonction présente généralement les 3 options suivantes :
+Toutes les méthodes dérivant de [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) fonctionnent obligatoirement après la perte d’un périphérique. Après la perte d’un périphérique, chaque fonction présente généralement les 3options suivantes:
 
--   Défaillance après une erreur de « périphérique perdu » - L’application doit reconnaître que le périphérique a été perdu, afin qu’elle enregistre un événement inattendu.
+-   Défaillance après une erreur de «périphérique perdu» - L’application doit reconnaître que le périphérique a été perdu, afin qu’elle enregistre un événement inattendu.
 -   Défaillance silencieuse, renvoyant S\_OK ou tout autre code - Si une fonction échoue en silence, l’application ne peut généralement pas faire la distinction entre le résultat de réussite et la défaillance silencieuse.
 -   Renvoi d’un code de retour.
 
@@ -70,7 +66,6 @@ Les opérations de copie peuvent échouer, dans la mesure où il n’existe aucu
  
 
  
-
 
 
 

@@ -10,14 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 73e119663483a62d06b29b3212053ba9a0d181ee
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: bf0abd41262704ccf634350ae53e8f428d412bf5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="guidelines-for-panning"></a>Recommandations en matière de mouvement panoramique
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -88,7 +85,7 @@ Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au
 
 Le mouvement panoramique tactile, par un mouvement de glissement ou de balayage avec un ou plusieurs doigts, ressemble à un défilement à l’aide de la souris. L’interaction de type panoramique ressemble plus à la rotation de la roulette de la souris ou au glissement de la case de défilement qu’à un clic sur la barre de défilement. À moins qu’une distinction ne soit établie dans une API ou nécessaire pour une interface utilisateur propre à un appareil Windows, nous utilisons le mouvement panoramique pour faire référence aux deux interactions.
 
-Selon le périphérique d’entrée utilisé, l’utilisateur effectue un mouvement panoramique au sein d’une région de mouvement panoramique à l’aide de l’un des éléments suivants :
+Selon le périphérique d’entrée utilisé, l’utilisateur effectue un mouvement panoramique au sein d’une région de mouvement panoramique à l’aide de l’un des éléments suivants:
 
 -   Une souris, un pavé tactile ou un stylo/stylet actif pour cliquer sur les flèches de défilement, faire glisser la case de défilement ou cliquer dans la barre de défilement.
 -   La roulette de la souris pour émuler le glissement de la case de défilement.
@@ -113,9 +110,9 @@ Windows 8 prend en charge trois types de défilements panoramiques :
 
 L’expérience d’interaction pour le mouvement panoramique est propre au périphérique d’entrée tout en étant similaire en termes de fonctionnalité.
 
-**Régions de mouvement panoramique** Les comportements des régions de mouvement panoramique sont exposés aux développeurs d’applications du Windows Store en JavaScript au moment de la conception à l’aide des feuilles de style en cascade (CSS).
+**Régions de mouvement panoramique** Les comportements des régions de mouvement panoramique sont exposés aux développeurs d’applications du WindowsStore en JavaScript au moment de la conception à l’aide des feuilles de style en cascade (CSS).
 
-Il existe deux modes d’affichage du mouvement panoramique qui dépendent du périphérique d’entrée détecté :
+Il existe deuxmodes d’affichage du mouvement panoramique qui dépendent du périphérique d’entrée détecté:
 
 -   Des indicateurs de mouvement panoramique pour l’interaction tactile.
 -   Des barres de défilement pour d’autres périphériques d’entrée comme la souris, le pavé tactile, le clavier et le stylet.
@@ -151,7 +148,7 @@ Le schéma suivant montre comment l’action qui consiste à effectuer un mouvem
 
  
 
-**Rails** Le contenu peut être plus large et plus grand que les dimensions et la résolution d’un périphérique d’affichage. C’est pourquoi le mouvement panoramique en deux dimensions (horizontale et verticale) est souvent nécessaire. Des rails améliorent l’expérience utilisateur dans ces cas précis en mettant l’accent sur le mouvement panoramique le long de l’axe de mouvement (vertical ou horizontal).
+**Rails** Le contenu peut être plus large et plus grand que les dimensions et la résolution d’un périphérique d’affichage. C’est pourquoi le mouvement panoramique en deuxdimensions (horizontale et verticale) est souvent nécessaire. Des rails améliorent l’expérience utilisateur dans ces cas précis en mettant l’accent sur le mouvement panoramique le long de l’axe de mouvement (vertical ou horizontal).
 
 Le schéma suivant explique le concept des rails.
 
@@ -187,7 +184,7 @@ Ces recommandations s’avèrent utiles pour des applications telles que les alb
 * [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Exemples d’archive**
-* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Entrée: exemple d’événements d’entrée utilisateurXAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple de test de positionnement tactile](http://go.microsoft.com/fwlink/p/?linkid=231590)
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -198,7 +195,6 @@ Ces recommandations s’avèrent utiles pour des applications telles que les alb
  
 
  
-
 
 
 

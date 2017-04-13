@@ -2,21 +2,17 @@
 title: Filtrage de textures
 description: "Le filtrage de textures génère une couleur pour chaque pixel dans l’image rendue en 2D de la primitive lorsqu’une primitive est affichée en mappant une primitive 3D sur un écran 2D."
 ms.assetid: 1CCF4138-5D48-4B07-9490-996844F994D8
-keywords:
-- Filtrage de textures
+keywords: Filtrage de textures
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 97b2dc04c518bfec4b09a50707c08767932f05c6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 43dccdc8a8834830b6c15fcfc1cd56216e27ee90
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="texture-filtering"></a>Filtrage de textures
 
 
@@ -26,7 +22,7 @@ Lorsque Direct3D effectue le rendu d’une primitive, la primitive 3D est mappé
 
 Lors de l’exécution d’une opération de filtrage de texture, la texture utilisée est généralement également agrandie ou réduite. En d’autres termes, elle est mappée vers une image primitive supérieure ou inférieure. L’agrandissement d’une texture peut entraîner le mappage d’un grand nombre de pixels dans un texel. Le résultat peut donner une apparence approximative. La réduction d’une texture signifie souvent qu’un seul pixel est mappé à nombreux texels. L’image obtenue permettre être floue ou crénelée. Pour résoudre ces problèmes, une fusion des couleurs de texels doit être effectuée pour obtenir une couleur de pixel.
 
-Direct3D simplifie le processus complexe de filtrage de textures. Il vous fournit trois types de filtrage de textures : le filtrage linéaire, le filtrage anisotropique et le filtrage de mipmaps. Si vous ne sélectionnez aucun filtrage de textures, Direct3D utilise une technique appelée l’échantillonnage des points les plus proches.
+Direct3D simplifie le processus complexe de filtrage de textures. Il vous fournit trois types de filtrage de textures: le filtrage linéaire, le filtrage anisotropique et le filtrage de mipmaps. Si vous ne sélectionnez aucun filtrage de textures, Direct3D utilise une technique appelée l’échantillonnage des points les plus proches.
 
 Chaque type de filtrage de textures présente des avantages et des inconvénients. Par exemple, le filtrage linéaire de textures peut produire des bords irréguliers ou une apparence approximative dans l’image finale. Il existe toutefois une méthode de calcul peu coûteuse pour le filtrage de textures. Le filtrage avec mipmaps produit généralement de meilleurs résultats, en particulier lorsqu’il est combiné avec le filtrage anisotropique. Toutefois, il requiert davantage de mémoire des techniques prises en charge par Direct3D.
 
@@ -56,11 +52,11 @@ Direct3D prend en charge les approches de filtrage de textures suivantes.
 </tr>
 <tr class="even">
 <td align="left"><p>[Filtrage de textures bilinéaires](bilinear-texture-filtering.md)</p></td>
-<td align="left"><p><em>Le filtrage bilinéaire</em> calcul la moyenne pondérée des 4 texels les plus proches du point d’échantillonnage. Cette approche de filtrage est plus précise et courante que le filtrage des points les plus proches. Cette approche est efficace car elle est implémentée dans le matériel graphique moderne.</p></td>
+<td align="left"><p>Le <em>filtrage bilinéaire</em> calcule la moyenne pondérée des 4éléments de texture les plus proches du point d’échantillonnage. Cette approche de filtrage est plus précise et courante que le filtrage des points les plus proches. Cette approche est efficace car elle est implémentée dans le matériel graphique moderne.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Filtrage de textures anisotropiques](anisotropic-texture-filtering.md)</p></td>
-<td align="left"><p><em>L’anisotropie</em> désigne la distorsion visible dans les texels d’un objet 3D dont la surface est orientée à un certain angle par rapport au plan de l’écran. Un pixel d’une primitive anisotropique apparaît déformé lorsqu’il est mappé à des texels.</p></td>
+<td align="left"><p>L'<em>anisotropie</em> est la distorsion visible dans les éléments de texture d’un objet 3D dont la surface est orientée à un certain angle par rapport au plan de l’écran. Un pixel d’une primitive anisotropique apparaît déformé lorsqu’il est mappé à des texels.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Filtrage de textures avec mipmaps](texture-filtering-with-mipmaps.md)</p></td>
@@ -79,7 +75,6 @@ Direct3D prend en charge les approches de filtrage de textures suivantes.
  
 
  
-
 
 
 

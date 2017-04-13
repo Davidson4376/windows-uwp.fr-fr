@@ -11,17 +11,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp
 ms.openlocfilehash: 53e12e2f3ff6e87af3de2dc6f80370376f18f9e7
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="deep-link-from-cortana-to-a-background-app"></a>Lien ciblé de Cortana vers une application en arrière-plan
 
-Cet article a été déplacé vers https://msdn.microsoft.com/en-us/cortana/voicecommands/deep-link-into-your-app-from-cortana.
+Cette rubrique a été déplacée vers https&#58;//msdn.microsoft.com/fr-fr/cortana/voicecommands/deep-link-into-your-app-from-cortana.
 
-Github : https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/deep-link-into-your-app-from-cortana.md (en anglais)
-
+Github: https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/deep-link-into-your-app-from-cortana.md (en anglais)

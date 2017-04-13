@@ -11,14 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 011a6e50c22a1ef245a9be11e3a5d7f9e270d5bc
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 87f3d5e75b361d1ba9d2c304e58542803da66cd4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="show-multiple-views-for-an-app"></a>Afficher plusieurs vues d’une application
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -35,14 +32,14 @@ Vous pouvez aider les utilisateurs à accroître leur productivité en leur perm
 
 Quand vous créez plusieurs fenêtres pour une application, chacune d’elles se comporte de manière indépendante. La barre des tâches répertorie chaque fenêtre séparément. Les utilisateurs peuvent déplacer, redimensionner, afficher et masquer des fenêtres d’application indépendamment et ils peuvent basculer d’une fenêtre à une autre comme s’il s’agissait d’applications distinctes. Chaque fenêtre opère dans son propre thread.
 
-## <a name="what-is-a-view"></a>Qu’est-ce qu’une vue ?
+## <a name="what-is-a-view"></a>Qu’est-ce qu’une vue?
 
 
 Une vue d’application est l’association de type 1:1 d’un thread et d’une fenêtre que l’application utilise pour afficher le contenu. Elle est représentée par un objet [**Windows.ApplicationModel.Core.CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017).
 
-Les vues sont gérées par l’objet [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016). Vous devez appeler [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278) pour créer un objet [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017). L’objet **CoreApplicationView** réunit [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) et [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) (stockés dans les propriétés [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) et [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/dn433264)). Vous pouvez considérer la **CoreApplicationView** comme l’objet qui utilise Windows Runtime pour interagir avec le système Windows principal.
+Les vues sont gérées par l’objet [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016). Vous devez appeler [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278) pour créer un objet [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017). L’objet **CoreApplicationView** réunit [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) et [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) (stockés dans les propriétés [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) et [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/dn433264)). Vous pouvez considérer la **CoreApplicationView** comme l’objet qui utilise WindowsRuntime pour interagir avec le système Windows principal.
 
-En règle générale, vous ne travaillez pas directement avec la [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017). À la place, Windows Runtime fournit la classe [**ApplicationView**](https://msdn.microsoft.com/library/windows/apps/hh701658) dans l’espace de noms [**Windows.UI.ViewManagement**](https://msdn.microsoft.com/library/windows/apps/br242295). Cette classe fournit des propriétés, des méthodes et des événements que vous utilisez quand votre application interagit avec le système de fenêtrage. Pour fonctionner avec une **ApplicationView**, appelez la méthode statique [**ApplicationView.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh701672), qui obtient une instance **ApplicationView** liée au thread actuel de la **CoreApplicationView**.
+En règle générale, vous ne travaillez pas directement avec la [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017). À la place, WindowsRuntime fournit la classe [**ApplicationView**](https://msdn.microsoft.com/library/windows/apps/hh701658) dans l’espace de noms [**Windows.UI.ViewManagement**](https://msdn.microsoft.com/library/windows/apps/br242295). Cette classe fournit des propriétés, des méthodes et des événements que vous utilisez quand votre application interagit avec le système de fenêtrage. Pour fonctionner avec une **ApplicationView**, appelez la méthode statique [**ApplicationView.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh701672), qui obtient une instance **ApplicationView** liée au thread actuel de la **CoreApplicationView**.
 
 De même, l’infrastructure XAML enveloppe l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) dans un objet [**Windows.UI.XAML.Window**](https://msdn.microsoft.com/library/windows/apps/br209041). Dans une application XAML, vous interagissez généralement avec l’objet **Window** au lieu de travailler directement avec la **CoreWindow**.
 
@@ -92,9 +89,9 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
     En XAML, vous ajoutez généralement un élément [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) à la propriété [**Content**](https://msdn.microsoft.com/library/windows/apps/br209041) de [**Window**](https://msdn.microsoft.com/library/windows/apps/br209051), puis parcourez **Frame** vers une [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) XAML dans laquelle vous avez défini le contenu de votre application. Pour en savoir plus, voir [Navigation pair à pair entre deux pages](navigate-between-two-pages.md).
 
-    Une fois le nouvel élément [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) rempli, vous devez appeler la méthode **[Activate](https://msdn.microsoft.com/library/windows/apps/br209046)** de **Window** pour afficher l’élément **Window** ultérieurement. Cela se produit sur le thread de la nouvelle vue ; ainsi la nouvelle **Window** est activée.
+    Une fois le nouvel élément [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) rempli, vous devez appeler la méthode **[Activate](https://msdn.microsoft.com/library/windows/apps/br209046)** de **Window** pour afficher l’élément **Window** ultérieurement. Cela se produit sur le thread de la nouvelle vue; ainsi la nouvelle **Window** est activée.
 
-    Enfin, récupérez l’élément [**Id**](https://msdn.microsoft.com/library/windows/apps/dn281120) de la nouvelle vue que vous utilisez pour afficher la vue plus tard. Une fois encore, cela se produit sur le thread de la nouvelle vue ; ainsi [**ApplicationView.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh701672) obtient l’élément **Id** de la nouvelle vue.
+    Enfin, récupérez l’élément [**Id**](https://msdn.microsoft.com/library/windows/apps/dn281120) de la nouvelle vue que vous utilisez pour afficher la vue plus tard. Une fois encore, cela se produit sur le thread de la nouvelle vue; ainsi [**ApplicationView.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh701672) obtient l’élément **Id** de la nouvelle vue.
 
     ```csharp
     await newView.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
@@ -145,7 +142,6 @@ Lorsque vous utilisez [**SwitchAsync**](https://msdn.microsoft.com/library/windo
  
 
  
-
 
 
 

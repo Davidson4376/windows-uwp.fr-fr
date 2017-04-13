@@ -1,25 +1,23 @@
 ---
 author: msatranjr
 ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
-title: "Créer une application de carte à puce NFC"
-description: "Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation de carte NFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage étroit d’applications de paiement sécurisé avec les opérateurs de réseau mobile."
+title: "Créer une application de carte à puceNFC"
+description: "Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation de carte NFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage fort d’applications de paiement sécurisé avec les opérateurs de réseau mobile."
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ee62e0d1ddd41ce1cce61bc854168f0cac6ad038
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: bc8064cd5446ca4c481c60b08cdf626ec85be646
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-# <a name="create-an-nfc-smart-card-app"></a>Créer une application de carte à puce NFC
+# <a name="create-an-nfc-smart-card-app"></a>Créer une application de carte à puceNFC
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**Important**  Cette rubrique s’applique uniquement à Windows 10 Mobile.
+**Important**  Cette rubrique s’applique uniquement à Windows10Mobile.
 
 Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation de carte NFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage fort d’applications de paiement sécurisé avec les opérateurs de réseau mobile. Cette configuration éliminait de facto le recours aux solutions de paiement proposées par d’autres négociants ou développeurs ne présentant aucun couplage avec les opérateurs de réseau mobile. Dans Windows 10 Mobile, nous avons introduit une nouvelle technologie d’émulation de carte, appelée HCE (Host Card Emulation, émulation de carte hôte). Grâce à la technologie HCE, votre application peut directement interagir avec un lecteur de cartes NFC. Cette rubrique illustre le fonctionnement de la technologie HCE sur les appareils Windows 10 Mobile et vous explique comment développer une application HCE permettant à vos clients d’accéder à vos services sur leur téléphone, non par le biais d’une carte physique, sans aucune collaboration avec un opérateur de réseau mobile.
 
@@ -49,7 +47,7 @@ L’architecture de la prise en charge de l’émulation de cartes HCE et SIM es
 
 ## <a name="app-selection-and-aid-routing"></a>Sélection des applications et routage des identificateurs d’applet
 
-Pour développer une application HCE, vous devez comprendre comment les appareils Windows 10 Mobile dirigent les identificateurs d’applet vers une application spécifique, dans la mesure où les utilisateurs peuvent installer différentes applications HCE. Chaque application peut inscrire plusieurs cartes HCE et SIM. Les applications Windows Phone 8.1 héritées qui sont basées sur la carte SIM continueront à fonctionner sur Windows 10 Mobile, tant que l’utilisateur sélectionne l’option Carte SIM en tant que carte de paiement par défaut dans le menu des paramètres NFC. Il s’agit de la configuration établie par défaut lors du premier allumage de l’appareil.
+Pour développer une application HCE, vous devez comprendre comment les appareils Windows10Mobile dirigent les identificateurs d’applet vers une application spécifique, dans la mesure où les utilisateurs peuvent installer différentes applications HCE. Chaque application peut inscrire plusieurs cartes HCE et SIM. Les applications Windows Phone 8.1 héritées qui sont basées sur la carte SIM continueront à fonctionner sur Windows 10 Mobile, tant que l’utilisateur sélectionne l’option Carte SIM en tant que carte de paiement par défaut dans le menu des paramètres NFC. Il s’agit de la configuration établie par défaut lors du premier allumage de l’appareil.
 
 Lorsque l’utilisateur appuie vers un terminal sur son appareil Windows 10 Mobile, les données sont automatiquement routées vers l’application appropriée installée sur l’appareil. Ce routage est basé sur les identificateurs d’applet (AID), qui sont des identificateurs de 5-16 octets. Lors d’un appui, le terminal externe transmet une commande SELECT APDU afin de spécifier l’identificateur d’applet vers lequel diriger l’ensemble des commandes APDU suivantes. Les commandes SELECT suivantes modifieront de nouveau le routage. En fonction des identificateurs d’applet inscrits par les applications et des paramètres utilisateurs, le trafic APDU est dirigé vers une application spécifique, qui renvoie une réponse APDU. N’oubliez pas qu’un terminal peut tenter de communiquer avec plusieurs applications durant le même appui. Ainsi, vous devez vous assurer que la tâche en arrière-plan de votre application se ferme le plus rapidement possible lorsqu’elle est désactivée, afin de libérer de l’espace pour une autre tâche en arrière-plan d’application, utilisée pour répondre à la commande APDU. Les tâches en arrière-plan seront évoquées ultérieurement dans cette rubrique.
 
@@ -57,23 +55,23 @@ Les applications HCE doivent s’inscrire avec les identificateurs d’applet sp
 
 ## <a name="conflict-resolution-for-payment-aid-groups"></a>Résolution de conflits pour les groupes d’identificateurs d’applet de paiement
 
-Lorsqu’une application inscrit des cartes physiques (groupes d’identificateurs d’applet), elle peut communiquer les catégories « Paiement » ou « Autre » de groupe d’identificateurs d’applet. Si plusieurs groupes d’identificateurs d’applet de paiement peuvent être inscrits simultanément, seul l’un d’entre eux peut être pris en charge à la fois pour le paiement au toucher. Cette sélection est effectuée par l’utilisateur. Ce comportement permet à l’utilisateur de disposer d’un contrôle total sur son choix. Qu’il s’agisse d’une carte de paiement unique ou d’une carte de crédit, il est assuré de ne pas payer à l’aide d’une autre carte choisie aléatoirement lorsqu’il sélectionne un terminal au toucher sur son appareil.
+Lorsqu’une application inscrit des cartes physiques (groupes d’identificateurs d’applet), elle peut communiquer les catégories «Paiement» ou «Autre» de groupe d’identificateurs d’applet. Si plusieurs groupes d’identificateurs d’applet de paiement peuvent être inscrits simultanément, seul l’un d’entre eux peut être pris en charge à la fois pour le paiement au toucher. Cette sélection est effectuée par l’utilisateur. Ce comportement permet à l’utilisateur de disposer d’un contrôle total sur son choix. Qu’il s’agisse d’une carte de paiement unique ou d’une carte de crédit, il est assuré de ne pas payer à l’aide d’une autre carte choisie aléatoirement lorsqu’il sélectionne un terminal au toucher sur son appareil.
 
 Cependant, plusieurs groupes d’identificateurs d’applet inscrits dans la catégorie « Autre » peuvent être activés simultanément sans aucune interaction de l’utilisateur. Ce comportement existe, car d’autres types de cartes comme des cartes de fidélité, des bons de réduction ou des cartes de transport public sont censés fonctionner d’office, sans autre action ou invite après la pression sur le téléphone.
 
-L’ensemble des groupes d’identificateurs d’applet qui sont inscrits dans la catégorie « Paiement » apparaissent dans la liste des cartes de la page des paramètres NFC, sur laquelle l’utilisateur peut sélectionner sa carte de paiement par défaut. Lorsqu’une carte de paiement par défaut est sélectionnée, l’application ayant inscrit ce groupe d’identificateurs d’applet de paiement devient l’application de paiement par défaut. Les applications de paiement par défaut peuvent activer ou désactiver les groupes d’identificateurs d’applet de paiement pris en charge sans aucune interaction utilisateur. Si l’utilisateur décline l’invite de l’application de paiement par défaut, l’application de paiement par défaut actuellement définie (le cas échéant) demeure la valeur utilisée par défaut. La capture d’écran suivante représente la page des paramètres NFC.
+L’ensemble des groupes d’identificateurs d’applet qui sont inscrits dans la catégorie «Paiement» apparaissent dans la liste des cartes de la page des paramètres NFC, sur laquelle l’utilisateur peut sélectionner sa carte de paiement par défaut. Lorsqu’une carte de paiement par défaut est sélectionnée, l’application ayant inscrit ce groupe d’identificateurs d’applet de paiement devient l’application de paiement par défaut. Les applications de paiement par défaut peuvent activer ou désactiver les groupes d’identificateurs d’applet de paiement pris en charge sans aucune interaction utilisateur. Si l’utilisateur décline l’invite de l’application de paiement par défaut, l’application de paiement par défaut actuellement définie (le cas échéant) demeure la valeur utilisée par défaut. La capture d’écran suivante représente la page des paramètres NFC.
 
 ![Capture d’écran de la page des paramètres NFC](./images/nfc-settings.png)
 
-À l’aide de l’exemple de capture d’écran ci-dessus, si l’utilisateur remplace sa carte de paiement par défaut par une autre carte qui n’est pas inscrite par « HCE Application 1 », le système crée une invite de confirmation destinée à l’utilisateur. Toutefois, si l’utilisateur remplace sa carte de paiement par défaut par une autre carte inscrite par « HCE Application 1 », le système ne crée aucune invite de confirmation, car « HCE Application 1 » est déjà l’application de paiement par défaut.
+À l’aide de l’exemple de capture d’écran ci-dessus, si l’utilisateur remplace sa carte de paiement par défaut par une autre carte qui n’est pas inscrite par «HCE Application1», le système crée une invite de confirmation destinée à l’utilisateur. Toutefois, si l’utilisateur remplace sa carte de paiement par défaut par une autre carte inscrite par «HCE Application 1», le système ne crée aucune invite de confirmation, car «HCE Application 1» est déjà l’application de paiement par défaut.
 
 ## <a name="conflict-resolution-for-non-payment-aid-groups"></a>Résolution de conflits pour les groupes d’identificateurs d’applet sans paiement
 
-Les cartes sans paiement de la catégorie « Autre » n’apparaissent pas dans la page des paramètres NFC.
+Les cartes sans paiement de la catégorie «Autre» n’apparaissent pas dans la page des paramètres NFC.
 
-Votre application peut créer, inscrire et activer des groupes d’identificateurs d’applet sans paiement sans rien changer de la procédure utilisée pour les groupes d’identificateurs d’applet de paiement. Toutefois, et il s’agit ici de la principale différence, la catégorie d’émulation des groupes d’identificateurs d’applet sans paiement est configurée sur « Autre », non sur « Paiement ». Après avoir inscrit le groupe d’identificateurs d’applet auprès du système, vous devez activer la réception du trafic NFC sur le groupe. Lorsque vous essayez d’activer la réception du trafic sur un groupe d’identificateurs d’applet sans paiement, aucune invite de confirmation n’est transmise à l’utilisateur, sauf s’il existe un conflit avec l’un des identificateurs d’applet déjà inscrit dans le système par une application différente. Si un conflit est identifié, un message est transmis à l’utilisateur, afin de lui communiquer des informations sur la carte et l’application associée qui seront désactivées si l’utilisateur décide d’activer le groupe d’identificateurs d’applet nouvellement inscrit.
+Votre application peut créer, inscrire et activer des groupes d’identificateurs d’applet sans paiement sans rien changer de la procédure utilisée pour les groupes d’identificateurs d’applet de paiement. Toutefois, et il s’agit ici de la principale différence, la catégorie d’émulation des groupes d’identificateurs d’applet sans paiement est configurée sur «Autre», non sur «Paiement». Après avoir inscrit le groupe d’identificateurs d’applet auprès du système, vous devez activer la réception du trafic NFC sur le groupe. Lorsque vous essayez d’activer la réception du trafic sur un groupe d’identificateurs d’applet sans paiement, aucune invite de confirmation n’est transmise à l’utilisateur, sauf s’il existe un conflit avec l’un des identificateurs d’applet déjà inscrit dans le système par une application différente. Si un conflit est identifié, un message est transmis à l’utilisateur, afin de lui communiquer des informations sur la carte et l’application associée qui seront désactivées si l’utilisateur décide d’activer le groupe d’identificateurs d’applet nouvellement inscrit.
 
-**Coexistence avec des applications NFC basées sur SIM**
+**Coexistence avec des applicationsNFC basées sur SIM**
 
 Dans Windows 10 Mobile, le système configure la table de routage du contrôleur NFC qui est utilisée pour prendre les décisions de routage sur la couche du contrôleur. La table contient les informations de routage pour les éléments suivants.
 
@@ -81,11 +79,11 @@ Dans Windows 10 Mobile, le système configure la table de routage du contrôleur
 -   Itinéraire de protocole (ISO-DEP).
 -   Itinéraire technologique (NFC-A/B/F).
 
-Lorsqu’un lecteur externe envoie une commande « SELECT AID », le contrôleur NFC recherche une correspondance d’itinéraire d’identificateur d’applet dans la table de routage. Si aucune correspondance n’est identifiée, le contrôleur utilise l’itinéraire de protocole en tant qu’itinéraire par défaut pour le trafic ISO-DEP (14443-4-A). Pour tous les autres trafics non ISO-DEP, il utilise le routage technologique.
+Lorsqu’un lecteur externe envoie une commande «SELECT AID», le contrôleur NFC recherche une correspondance d’itinéraire d’identificateur d’applet dans la table de routage. Si aucune correspondance n’est identifiée, le contrôleur utilise l’itinéraire de protocole en tant qu’itinéraire par défaut pour le trafic ISO-DEP (14443-4-A). Pour tous les autres trafics non ISO-DEP, il utilise le routage technologique.
 
-Dans la page des paramètres NFC, Windows 10 Mobile offre une option de menu « Carte SIM » qui permet de continuer à utiliser les applications héritées sur carte SIM de Windows Phone 8.1, qui n’inscrivent pas leurs identificateurs d’applet auprès du système. Si l’utilisateur sélectionne « Carte SIM » en tant que carte de paiement par défaut, l’itinéraire ISO-DEP est défini sur UICC. Pour toutes les autres sélections du menu déroulant, l’itinéraire ISO-DEP est défini sur l’hôte.
+Dans la page des paramètres NFC, Windows 10 Mobile offre une option de menu «Carte SIM» qui permet de continuer à utiliser les applications héritées sur carte SIM de Windows Phone 8.1, qui n’inscrivent pas leurs identificateurs d’applet auprès du système. Si l’utilisateur sélectionne «Carte SIM» en tant que carte de paiement par défaut, l’itinéraire ISO-DEP est défini sur UICC. Pour toutes les autres sélections du menu déroulant, l’itinéraire ISO-DEP est défini sur l’hôte.
 
-L’itinéraire ISO-DEP est défini sur « Carte SIM » pour les appareils qui présentent une carte SIM compatible SE lorsque l’appareil est démarré pour la première fois avec Windows 10 Mobile. Lorsque l’utilisateur installe une application HCE et que cette application active des inscriptions de groupes d’identificateurs d’applet HCE, l’itinéraire ISO-DEP est dirigé vers l’hôte. Les nouvelles applications sur cartes SIM doivent inscrire les identificateurs d’applet sur la carte SIM afin de renseigner les itinéraires d’identificateur d’applet dans la table de routage du contrôleur.
+L’itinéraire ISO-DEP est défini sur «Carte SIM» pour les appareils qui présentent une carte SIM compatible SE lorsque l’appareil est démarré pour la première fois avec Windows 10 Mobile. Lorsque l’utilisateur installe une application HCE et que cette application active des inscriptions de groupes d’identificateurs d’applet HCE, l’itinéraire ISO-DEP est dirigé vers l’hôte. Les nouvelles applications sur cartes SIM doivent inscrire les identificateurs d’applet sur la carte SIM afin de renseigner les itinéraires d’identificateur d’applet dans la table de routage du contrôleur.
 
 ## <a name="creating-an-hce-based-app"></a>Création d’une application HCE
 
@@ -250,15 +248,15 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Host);
 ```
 
-Vous pouvez inclure jusqu’à 9 identificateurs d’applet (d’une longueur comprise entre 5 et 16 octets) par groupe d’identificateurs d’applet.
+Vous pouvez inclure jusqu’à 9 identificateurs d’applet (d’une longueur comprise entre 5 et 16octets) par groupe d’identificateurs d’applet.
 
-Utilisez la méthode [**RegisterAppletIdGroupAsync**](https://msdn.microsoft.com/library/windows/apps/Dn894656) pour inscrire votre groupe d’identificateurs d’applet auprès du système, qui renverra un objet [**SmartCardAppletIdGroupRegistration**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration). Par défaut, la propriété [**ActivationPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) de l’objet d’inscription est définie sur **Disabled**. Cela signifie que même si vos identificateurs d’applet sont inscrits auprès du système, ils ne sont pas encore activés et ne reçoivent aucun trafic.
+Utilisez la méthode [**RegisterAppletIdGroupAsync**](https://msdn.microsoft.com/library/windows/apps/Dn894656) pour inscrire votre groupe d’identificateurs d’applet auprès du système, qui renverra un objet [**SmartCardAppletIdGroupRegistration**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration). Par défaut, la propriété [**ActivationPolicy**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) de l’objet d’inscription est définie sur **Disabled**. Cela signifie que même si vos identificateurs d’applet sont inscrits auprès du système, ils ne sont pas encore activés et ne reçoivent aucun trafic.
 
 ```csharp
 reg = await SmartCardEmulator.RegisterAppletIdGroupAsync(appletIdGroup);
 ```
 
-Vous pouvez activer vos cartes inscrites (groupes d’identificateurs d’applet) en appliquant la méthode [**RequestActivationPolicyChangeAsync**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_requestactivationpolicychangeasync) de la classe [**SmartCardAppletIdGroupRegistration**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration), comme montré ci-dessous. Dans la mesure où une seule carte de paiement peut être activée à la fois sur le système, la définition de l’élément [**ActivationPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) d’un groupe d’identificateurs d’applet de carte de paiement sur **Enabled** équivaut à la définition de la carte de paiement par défaut. L’utilisateur est invité à autoriser cette carte en tant que carte de paiement par défaut, indépendamment du fait qu’une carte de paiement par défaut soit déjà sélectionnée ou non. Cette allégation n’est pas vraie si votre application est déjà l’application de paiement par défaut, et qu’elle est modifiée simplement entre ses propres groupes d’identificateurs d’applet. Vous pouvez enregistrer jusqu’à 10 groupes d’identificateurs d’applet par application.
+Vous pouvez activer vos cartes inscrites (groupes d’identificateurs d’applet) en appliquant la méthode [**RequestActivationPolicyChangeAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) de la classe [**SmartCardAppletIdGroupRegistration**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration), comme montré ci-dessous. Dans la mesure où une seule carte de paiement peut être activée à la fois sur le système, la définition de l’élément [**ActivationPolicy**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) d’un groupe d’identificateurs d’applet de carte de paiement sur **Enabled** équivaut à la définition de la carte de paiement par défaut. L’utilisateur est invité à autoriser cette carte en tant que carte de paiement par défaut, indépendamment du fait qu’une carte de paiement par défaut soit déjà sélectionnée ou non. Cette allégation n’est pas vraie si votre application est déjà l’application de paiement par défaut, et qu’elle est modifiée simplement entre ses propres groupes d’identificateurs d’applet. Vous pouvez enregistrer jusqu’à 10 groupes d’identificateurs d’applet par application.
 
 ```csharp
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.Enabled);
@@ -290,7 +288,7 @@ bgTask = taskBuilder.Register();
 
 ## <a name="foreground-override-behavior"></a>Comportement de remplacement au premier plan
 
-Vous pouvez remplacer l’élément [**ActivationPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) de l’une de vos inscriptions de groupes d’identificateurs d’applet par **ForegroundOverride** lorsque votre application est au premier plan, sans inviter l’utilisateur. Lorsque l’utilisateur appuie vers un terminal sur son appareil lorsque l’application est au premier plan, le trafic est dirigé vers votre application, même si aucune de vos cartes de paiement n’a été choisie par l’utilisateur en tant que carte de paiement par défaut. Lorsque vous modifiez une stratégie d’activation de carte en **ForegroundOverride**, cette modification temporaire est conservée jusqu’à ce que votre application quitte le premier plan. Elle ne modifie en rien la carte de paiement par défaut actuellement définie par l’utilisateur. Pour modifier l’élément **ActivationPolicy** de vos cartes (avec ou sans paiement) à partir de votre application de premier plan, procédez comme suit : Notez que la méthode [**RequestActivationPolicyChangeAsync**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_requestactivationpolicychangeasync) peut être appelée uniquement à partir d’une application de premier plan, et pas d’une tâche en arrière-plan.
+Vous pouvez remplacer l’élément [**ActivationPolicy**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) de l’une de vos inscriptions de groupes d’identificateurs d’applet par **ForegroundOverride** lorsque votre application est au premier plan, sans inviter l’utilisateur. Lorsque l’utilisateur appuie vers un terminal sur son appareil lorsque l’application est au premier plan, le trafic est dirigé vers votre application, même si aucune de vos cartes de paiement n’a été choisie par l’utilisateur en tant que carte de paiement par défaut. Lorsque vous modifiez une stratégie d’activation de carte en **ForegroundOverride**, cette modification temporaire est conservée jusqu’à ce que votre application quitte le premier plan. Elle ne modifie en rien la carte de paiement par défaut actuellement définie par l’utilisateur. Pour modifier l’élément **ActivationPolicy** de vos cartes (avec ou sans paiement) à partir de votre application de premier plan, procédez comme suit: Notez que la méthode [**RequestActivationPolicyChangeAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) peut être appelée uniquement à partir d’une application de premier plan, et pas d’une tâche en arrière-plan.
 
 ```csharp
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundOverride);
@@ -386,5 +384,4 @@ var appletIdGroup = new SmartCardAppletIdGroup(
 ```
 
 ** Important **  
-La prise en charge héritée de l’interception des SMS binaires de Windows Phone 8.1 a été supprimée et remplacée par une nouvelle prise en charge élargie des SMS dans Windows 10 Mobile, mais l’ensemble des applications Windows Phone 8.1 héritées utilisant cette fonctionnalité doivent être mises à jour pour prendre en charge les nouvelles API SMS Windows 10 Mobile.
-
+La prise en charge héritée de l’interception des SMS binaires de Windows Phone8.1 a été supprimée et remplacée par une nouvelle prise en charge élargie des SMS dans Windows10 Mobile, mais l’ensemble des applications Windows Phone8.1 héritées utilisant cette fonctionnalité doivent être mises à jour pour prendre en charge les nouvelles API SMS Windows10 Mobile.

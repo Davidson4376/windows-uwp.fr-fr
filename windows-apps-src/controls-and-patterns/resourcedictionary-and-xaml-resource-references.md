@@ -13,12 +13,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e24b411c5a966d48e4db07a4ddfce1248454e78d
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 40f1bdad88ebcbd226dc935730766449d40d4595
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>Références aux ressources ResourceDictionary et XAML
 
@@ -51,13 +49,13 @@ Les ressources XAML sont des objets référencés plusieurs fois à partir du ba
 </Page>
 ```
 
-Dans cet exemple :
+Dans cet exemple:
 
 -   `<Page.Resources>…</Page.Resources>` - Définit le dictionnaire de ressources.
--   `<x:String>` - Définit la ressource avec la clé « greeting ».
--   `{StaticResource greeting}` - Recherche la ressource avec la clé « greeting », qui est attribuée à la propriété [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) du composant [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
+-   `<x:String>` - Définit la ressource avec la clé «greeting».
+-   `{StaticResource greeting}` -Recherche la ressource avec la clé «greeting», qui est attribuée à la propriété [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) du composant [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
 
-> **Remarque**&nbsp;&nbsp;Ne confondez pas les concepts liés à [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) et l’action de génération **Resource**, les fichiers de ressources (.resw) ou autres « ressources » décrits dans le contexte de la structuration du projet de code qui produit votre package d’application.
+> **Remarque**&nbsp;&nbsp;Ne confondez pas les concepts liés à [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) et l’action de génération **Resource**, les fichiers de ressources (.resw) ou autres «ressources» décrits dans le contexte de la structuration du projet de code qui produit votre package d’application.
 
 Les ressources ne sont pas forcément des chaînes. Il peut s’agir de tout objet partageable, comme des styles, des modèles, des pinceaux et des couleurs. Toutefois, les contrôles, les formes et autres [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706), qui ne peuvent pas être partagés, ne peuvent pas être marqués comme ressources réutilisables. Pour plus d’informations sur le partage, voir la section [Les ressources XAML doivent pouvoir être partagées.](#xaml_resources_must_be_sharable), plus bas dans cette rubrique.
 
@@ -79,7 +77,7 @@ Ici, un pinceau et une chaîne sont marqués en tant que ressources et utilisés
 </Page>
 ```
 
-Toutes les ressources doivent présenter une clé. Généralement, cette clé est une chaîne définie avec `x:Key=”myString”`. Toutefois, il existe d’autres moyens de spécifier une clé :
+Toutes les ressources doivent présenter une clé. Généralement, cette clé est une chaîne définie avec `x:Key=”myString”`. Toutefois, il existe d’autres moyens de spécifier une clé:
 
 -   [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) et [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) nécessitent un composant **TargetType**, et utilisent le composant **TargetType** en tant que clé si [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787) n’est pas spécifiée. Dans ce cas, la clé est l’objet réel Type, pas une chaîne. (Voir les exemples ci-dessous)
 -   Les ressources [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) qui présentent un composant **TargetType** utilisent **TargetType** en tant que clé si [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787) n’est pas spécifiée. Dans ce cas, la clé est l’objet réel Type, pas une chaîne.
@@ -342,7 +340,7 @@ Dans cet exemple, vous définissez le premier plan d’un élément [**TextBlock
 
 Un dictionnaire de thème est un type spécifique de dictionnaire fusionné qui conserve les ressources variant en fonction du thème exécuté par l’utilisateur sur son appareil. Par exemple, le thème « clair » peut utiliser un pinceau de couleur blanche alors que le thème par défaut (« sombre ») peut utiliser un pinceau de couleur sombre. Le pinceau change la ressource dans laquelle il est résolu, mais autrement la composition d’un contrôle qui utilise le pinceau comme ressource pourrait être identique. Pour reproduire le comportement de basculement de thème dans vos propres modèles et styles, plutôt que d’utiliser [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801) en tant que propriété pour fusionner des éléments dans les principaux dictionnaires, utilisez la propriété [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807).
 
-Chaque élément [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) de [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) doit présenter une valeur [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787). La valeur est une chaîne qui nomme le thème pertinent : par exemple, « Défaut », « Sombre », « Clair » ou « ContrasteÉlevé ». Généralement, `Dictionary1` et `Dictionary2` définissent les ressources qui ont des noms identiques, mais des valeurs différentes.
+Chaque élément [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) de [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) doit présenter une valeur [x:Key](https://msdn.microsoft.com/library/windows/apps/mt204787). La valeur est une chaîne qui nomme le thème pertinent: par exemple, «Défaut», «Sombre», «Clair» ou «ContrasteÉlevé». Généralement, `Dictionary1` et `Dictionary2` définissent les ressources qui ont des noms identiques, mais des valeurs différentes.
 
 Ici, vous utilisez du texte rouge pour le thème clair et du texte bleu pour le thème sombre.
 
@@ -409,7 +407,7 @@ La séquence de recherche vérifie ensuite l’objet parent suivant dans l’arb
 
 Si la ressource demandée est introuvable dans les ressources immédiates, l’étape de recherche suivante consiste à consulter la propriété [**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338). **Application.Resources** est l’endroit idéal où placer des ressources spécifiques à une application qui sont référencées par plusieurs pages dans la structure de navigation de votre application.
 
-Les modèles de contrôle ont un autre emplacement possible dans la recherche de référence : les dictionnaires de thèmes. Un dictionnaire de thème est un fichier XAML qui possède un élément [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) en guise de racine. Le dictionnaire de thème peut être un dictionnaire fusionné à partir de [**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338). Il peut également s’agir du dictionnaire de thème spécifique à un contrôle pour un contrôle personnalisé basé sur un modèle.
+Les modèles de contrôle ont un autre emplacement possible dans la recherche de référence: les dictionnaires de thèmes. Un dictionnaire de thème est un fichier XAML qui possède un élément [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) en guise de racine. Le dictionnaire de thème peut être un dictionnaire fusionné à partir de [**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338). Il peut également s’agir du dictionnaire de thème spécifique à un contrôle pour un contrôle personnalisé basé sur un modèle.
 
 Pour finir, il existe une recherche de ressource ayant pour objet des ressources de plateforme. Parmi les ressources de plateforme figurent les modèles de contrôles définis pour chacun des thèmes d’interface utilisateur du système et qui définissent l’apparence par défaut de tous les contrôles que vous utilisez pour l’interface utilisateur dans une application Windows Runtime. Les ressources de plateforme comprennent également un ensemble de ressources nommées liées à l’apparence et aux thèmes utilisés dans tout le système. Ces ressources constituent techniquement un élément [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801) et sont donc disponibles pour la recherche à partir du XAML ou du code une fois l’application chargée. Par exemple, les ressources de thème système incluent une ressource nommée « SystemColorWindowTextColor » qui offre une définition [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) pour faire correspondre la couleur du texte de l’application à la couleur du texte d’une fenêtre système provenant du système d’exploitation et des préférences utilisateur. D’autres styles XAML destinés à votre application peuvent faire référence à ce style, ou votre code peut se procurer une valeur de recherche de ressource (et la transtyper en valeur **Color** dans le cas de l’exemple).
 
@@ -467,7 +465,7 @@ Lorsque vous utilisez du code pour examiner ou modifier un [**ResourceDictionary
 
 Par ailleurs, si vous demandez une clé qui n’existe pas dans le [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), il se peut qu’aucune erreur ne soit générée et que **null** soit simplement fournie comme valeur de retour. En revanche, vous obtiendrez peut-être quand même une erreur si vous essayez d’utiliser la valeur **null** retournée en tant que valeur. L’erreur provient alors de la méthode setter de la propriété, et non de votre appel à **ResourceDictionary**. Vous pouvez éviter une erreur si la propriété a accepté **null** en tant que valeur valide. Notez le contraste entre ce comportement et un comportement de recherche XAML au moment de l’analyse XAML. Tout échec de résolution de la clé fournie à partir du code XAML au moment de l’analyse génère une erreur d’analyse XAML, même dans les cas où la propriété aurait pu accepter la valeur **null**.
 
-Les dictionnaires de ressources fusionnés sont inclus dans l’étendue d’index du dictionnaire de ressources principal qui fait référence au dictionnaire fusionné au moment de l’exécution. Autrement dit, vous pouvez utiliser le mot clé **Item** ou la méthode [**Lookup**](https://msdn.microsoft.com/library/windows/apps/br208800) du dictionnaire principal pour rechercher des objets qui ont été définis dans le dictionnaire fusionné. Dans ce cas, le comportement de recherche ressemble au comportement de recherche XAML au moment de l’analyse : s’il existe dans des dictionnaires fusionnés plusieurs objets qui ont la même clé, l’objet du dernier dictionnaire ajouté est retourné.
+Les dictionnaires de ressources fusionnés sont inclus dans l’étendue d’index du dictionnaire de ressources principal qui fait référence au dictionnaire fusionné au moment de l’exécution. Autrement dit, vous pouvez utiliser le mot clé **Item** ou la méthode [**Lookup**](https://msdn.microsoft.com/library/windows/apps/br208800) du dictionnaire principal pour rechercher des objets qui ont été définis dans le dictionnaire fusionné. Dans ce cas, le comportement de recherche ressemble au comportement de recherche XAML au moment de l’analyse: s’il existe dans des dictionnaires fusionnés plusieurs objets qui ont la même clé, l’objet du dernier dictionnaire ajouté est retourné.
 
 Vous êtes autorisé à ajouter des éléments à un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) existant en appelant **Add** (C\# ou Visual Basic) ou [**Insert**](https://msdn.microsoft.com/library/windows/apps/br208799) (C++/CX). Vous pouvez ajouter les éléments à des ressources immédiates ou à des ressources d’application. Chacun de ces appels d’API requiert une clé, ce qui satisfait à l’exigence selon laquelle chaque élément d’un **ResourceDictionary** doit avoir une clé. Toutefois, les éléments que vous ajoutez à un **ResourceDictionary** au moment de l’exécution ne sont pas pertinents du point de vue des références aux ressources XAML. La recherche nécessaire pour les références aux ressources XAML se produit quand ce code XAML est analysé au chargement de l’application (ou une modification de thème est détectée). Les ressources ajoutées aux collections au moment de l’exécution n’étaient alors pas disponibles, et la modification du **ResourceDictionary** n’annule pas une ressource déjà récupérée de ce dernier même en modifiant la valeur de cette ressource.
 
@@ -496,7 +494,6 @@ Pour les scénarios avancés, vous pouvez implémenter une classe ayant un autre
  
 
  
-
 
 
 

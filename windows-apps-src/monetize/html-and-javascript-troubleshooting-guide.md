@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, annonces publicitaires, publicité, AdControl, résolution des problèmes, HTML, javascript"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fe06749583dc42ec84dc4acd876ea96c70c916db
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, annonces publicitaires, publicité, AdControl, résolution des problèmes, HTML, javascript"
+ms.openlocfilehash: 068ba245475aa03b0772e8f38017c93783fdb6ce
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="html-and-javascript-troubleshooting-guide"></a>Guide de résolution des problèmes pour HTML et JavaScript
 
-Cet article contient des solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications JavaScript/HTML.
+Cette rubrique contient des solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications JavaScript/HTML.
 
 * [HTML](#html)
   * [AdControl invisible](#html-notappearing)
@@ -39,7 +36,7 @@ Cet article contient des solutions aux problèmes de développement courants li�
 
 2.  Vérifiez la présence des informations de référence JavaScript. Sans la référence ad.js dans la section &lt;head&gt; (après la référence default.js), le contrôle **AdControl** n’est pas en mesure de s’afficher, et une erreur se produit lors de la génération.
 
-    Windows 10 :
+    Windows10:
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -50,7 +47,7 @@ Cet article contient des solutions aux problèmes de développement courants li�
     </head>
     ```
 
-    Windows 8.x :
+    Windows8.x:
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -99,7 +96,7 @@ Cet article contient des solutions aux problèmes de développement courants li�
     </div>
     ```
 
-7.  Vérifiez la propriété **position**. La propriété position doit être définie sur une valeur appropriée en fonction des autres propriétés de l’élément (par exemple, les marges dans l’élément parent et l’index z). Cette propriété peut être incluse (comme illustré ci-dessous) ou définie dans une feuille de style externe.
+7.  Vérifiez la propriété **position**. La propriété position doit être définie sur une valeur appropriée en fonction des autres propriétés de l’élément (par exemple, les marges dans l’élément parent et l’indexz). Cette propriété peut être incluse (comme illustré ci-dessous) ou définie dans une feuille de style externe.
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -175,7 +172,7 @@ Cet article contient des solutions aux problèmes de développement courants li�
     </div>
     ```
 
-    L’erreur la plus courante provoquant une boîte noire est la suivante : « Aucune publicité disponible ». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
+    L’erreur la plus courante provoquant une boîte noire est la suivante: «Aucune publicité disponible». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
 
 3.  Le contrôle **AdControl** se comporte normalement. Par défaut, le **AdControl** est réduit s’il ne peut pas afficher de publicité. Si d’autres éléments sont des enfants du même parent, ils peuvent être déplacés pour combler le vide du contrôle **AdControl** réduit, et développés à la prochaine demande.
 
@@ -196,7 +193,7 @@ Cet article contient des solutions aux problèmes de développement courants li�
     </div>
     ```
 
-2.  Vérifiez les appels à la méthode **refresh**. Si vous utilisez l’actualisation automatique, la méthode **refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle, la méthode **refresh** doit être appelée uniquement après un minimum de 30 à 60 secondes en fonction de la connexion de données actuelle de l’appareil.
+2.  Vérifiez les appels à la méthode **refresh**. Si vous utilisez l’actualisation automatique, la méthode **refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle, la méthode **refresh** doit être appelée uniquement après un minimum de 30à 60secondes en fonction de la connexion de données actuelle de l’appareil.
 
     Cet exemple montre comment utiliser la méthode **refresh**. Le code HTML suivant montre un exemple d’instanciation du contrôle **AdControl** avec la propriété **isAutoRefreshEnabled** définie sur false.
 
@@ -236,7 +233,7 @@ Cet article contient des solutions aux problèmes de développement courants li�
 
 1.  Assurez-vous que la fonctionnalité **Internet (client)** est sélectionnée dans le fichier Package.appxmanifest.
 
-2.  Vérifiez que le contrôle **AdControl** est instancié. Si le contrôle **AdControl** n’est pas instancié, c’est qu’il n’est pas disponible.
+2.  Vérifiez que le contrôle **AdControl** est instancié. S’il ne l’est pas, c’est qu’il n’est pas disponible.
 
     Les extraits de code suivants illustrent un exemple d’instanciation du contrôle **AdControl**. Le code HTML suivant montre un exemple de configuration de l’interface utilisateur pour le contrôle **AdControl**
 
@@ -340,7 +337,7 @@ Cet article contient des solutions aux problèmes de développement courants li�
     );
     ```
 
-    L’erreur la plus courante provoquant une boîte noire est la suivante : « Aucune publicité disponible ». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
+    L’erreur la plus courante provoquant une boîte noire est la suivante: «Aucune publicité disponible». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
 
 3.  Le contrôle **AdControl** se comporte normalement. Parfois, une même publicité s’affiche plusieurs fois dans une ligne, ce qui donne l’impression que les publicités ne sont pas actualisées.
 
@@ -349,7 +346,7 @@ Cet article contient des solutions aux problèmes de développement courants li�
 
 1.  Vérifiez si la propriété [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) de votre **AdControl** est définie sur false. Par défaut, cette propriété facultative est définie sur **true**. Si elle est définie sur **false**, la méthode **Refresh** doit être utilisée pour récupérer une autre publicité.
 
-2.  Vérifiez les appels à la méthode [Refresh](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx). Si vous utilisez l’actualisation automatique (**IsAutoRefreshEnabled** est définie sur **true**), la méthode **Refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle (**IsAutoRefreshEnabled** est définie sur **false**), la méthode **Refresh** doit être appelée uniquement après un minimum de 30 à 60 secondes en fonction de la connexion de données actuelle de l’appareil.
+2.  Vérifiez les appels à la méthode [Refresh](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx). Si vous utilisez l’actualisation automatique (**IsAutoRefreshEnabled** est définie sur **true**), la méthode **Refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle (**IsAutoRefreshEnabled** est définie sur **false**), la méthode **Refresh** doit être appelée uniquement après un minimum de 30à 60secondes en fonction de la connexion de données actuelle de l’appareil.
 
     Cet exemple montre comment créer l’élément **div** pour le contrôle **AdControl**.
 
@@ -387,4 +384,3 @@ Cet article contient des solutions aux problèmes de développement courants li�
  
 
  
-

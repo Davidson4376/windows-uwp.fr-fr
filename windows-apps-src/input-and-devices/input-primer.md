@@ -10,14 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d11efb262dfbdd604dc249f19ae35e4110369654
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 4092969ce730e74ad2359dd0fd7ada9c9ef4c00a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="interaction-primer"></a>Notions fondamentales sur les interactions
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -31,7 +28,7 @@ Familiarisez-vous avec chaque type de périphérique d’entrée, ses comporteme
 
 ## <a name="surface-dial"></a>Surface Dial
 
-À l’occasion de la mise à jour anniversaire de Windows 10, nous introduisons une nouvelle catégorie de périphérique de saisie appelé Windows Wheel. Surface Dial est le premier de cette classe de périphérique. 
+À l’occasion de la mise à jour anniversaire de Windows10, nous introduisons une nouvelle catégorie de périphérique de saisie appelé Windows Wheel. Surface Dial est le premier de cette classe de périphérique. 
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
@@ -49,7 +46,7 @@ Avec un format appelant à une action de rotation (ou un mouvement), Surface Dia
 
 ## <a name="cortana"></a>Cortana
 
-Dans Windows 10, l’extensibilité de **Cortana** vous permet de gérer les commandes vocales d’un utilisateur et de lancer votre application pour effectuer une opération unique.
+Dans Windows10, l’extensibilité de **Cortana** vous permet de gérer les commandes vocales d’un utilisateur et de lancer votre application pour effectuer une opération unique.
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
@@ -96,13 +93,13 @@ La conversion de texte par synthèse vocale (ou TTS) est utilisée pour informer
 
 ### <a name="typical-usage"></a>Utilisation type
 
-Il existe trois modes d’interaction vocale :
+Il existe trois modes d’interaction vocale:
 
 **Langage naturel**
 
 Le langage naturel est la façon dont nous interagissons verbalement avec d’autres personnes de façon régulière. Notre discours varie d’une personne à l’autre et d’une situation à l’autre, et il est généralement compris. Lorsque ce n’est pas le cas, nous utilisons souvent d’autres mots et séquences de mots pour formuler la même idée.
 
-Les interactions en langage naturel avec une application sont similaires : nous parlons à l’application par le biais de notre appareil comme s’il s’agissait d’une personne et attendons de l’application qu’elle comprenne et réagisse en conséquence.
+Les interactions en langage naturel avec une application sont similaires: nous parlons à l’application par le biais de notre appareil comme s’il s’agissait d’une personne et attendons de l’application qu’elle comprenne et réagisse en conséquence.
 
 Le langage naturel est le mode d’interaction vocale le plus avancé. Il peut être implémenté et exposé par le biais de **Cortana**.
 
@@ -127,7 +124,7 @@ La dictée est généralement utilisée lorsqu’une application n’a pas besoi
 
 Un stylet peut servir de dispositif de pointage précis au niveau des pixels, tel que la souris. Il constitue également l’appareil d’entrée manuscrite numérique optimal.
 
-**Remarque**  Il existe deux types de stylet : actif et passif.
+**Remarque**  Il existe deuxtypes de stylet: actif et passif.
   -   Les stylets passifs ne contiennent pas d’éléments électroniques et peuvent émuler efficacement des entrées tactiles au doigt. Ils requièrent un écran de base reconnaissant les entrées en fonction de la pression de contact. Dans la mesure où les utilisateurs posent souvent leur main lorsqu’ils écrivent sur la surface d’entrée, les données d’entrée peuvent être altérées en raison d’une mauvaise élimination des interférences de la paume.
   -   Les stylets actifs contiennent des éléments électroniques et peuvent fonctionner avec des écrans d’appareil complexes. Ils peuvent ainsi fournir des données d’entrée beaucoup plus étendues (pointage ou données de proximité, par exemple) au système et à votre application. L’élimination des interférences de la paume est beaucoup plus robuste.
 
@@ -219,7 +216,7 @@ Il est recommandé de fournir des commandes d’interface utilisateur spécifiqu
 
 Le clavier, principal périphérique d’entrée de texte, est indispensable pour les personnes souffrant de certains handicaps et les utilisateurs qui le considèrent simplement comme un mode d’interaction plus rapide et plus efficace avec une application.
 
-Avec [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431), une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à une souris et un clavier pour les utiliser comme un ordinateur portable.
+Avec [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431), une nouvelle expérience pour les appareils mobiles Windows10 compatibles, les utilisateurs peuvent connecter leurs téléphones à une souris et un clavier pour les utiliser comme un ordinateur portable.
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
@@ -243,7 +240,7 @@ Le clavier tactile est un clavier logiciel visuel permettant d’entrer du texte
 
 **Remarque**  Le clavier visuel a priorité sur le clavier tactile, lequel n’est pas visible si le clavier visuel est présent.
 
-En règle générale, un clavier répond aux critères suivants :
+En règle générale, un clavier répond aux critères suivants:
 
 -   Utilisateur unique
 -   Pas de contrainte quant à l’orientation de l’appareil
@@ -354,4 +351,3 @@ Tout comme les personnes ont recours à une combinaison de voix et de mouvement 
  
 
  
-

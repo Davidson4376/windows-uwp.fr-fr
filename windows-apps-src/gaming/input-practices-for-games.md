@@ -9,18 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, jeux, entrée"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 15d56a27ad914b258bb19b80b3498510d01105cd
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="input-practices-for-games"></a>Pratiques d’entrée pour les jeux
 
 Cette page décrit les modèles et techniques pour utiliser efficacement les périphériques d’entrée dans les jeux de plateforme Windows universelle (UWP).
 
-Voici ce que vous allez apprendre à la lecture de cette page :
+Voici ce que vous allez apprendre à la lecture de cette page:
 * Comment suivre les joueurs et les périphériques d’entrée et de navigation qu’ils utilisent
 * Comment détecter les transitions de bouton (appuyé à relâché, relâché à appuyé)
 * Comment détecter les dispositions de boutons complexes à l’aide d’un seul et même test
@@ -40,7 +37,7 @@ https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/UserGam
 
 Vous souhaiterez savoir parfois quand un bouton est d’abord enfoncé ou relâché, autrement dit lorsque l’état du bouton passe de relâché à appuyé, ou inversement. Pour le déterminer, vous devez mémoriser la lecture précédente du périphérique et la comparer à la lecture actuelle pour voir ce qui a changé.
 
-L’exemple suivant illustre une approche de base pour mémoriser la lecture précédente ; des boîtiers de commande sont affichés ici, mais les principes sont les mêmes pour les sticks arcade, les volants de course et les boutons de navigation d’interface utilisateur.
+L’exemple suivant illustre une approche de base pour mémoriser la lecture précédente; des boîtiers de commande sont affichés ici, mais les principes sont les mêmes pour les sticks arcade, les volants de course et les boutons de navigation d’interface utilisateur.
 
 ```cpp
 GamepadReading newReading();
@@ -78,14 +75,14 @@ bool buttonJustReleased(gamepadButtons selection)
 }
 ```
 
-Ces deux fonctions dérivent d’abord l’état booléen de la sélection de bouton de `newReading` et `oldReading`, puis effectuent une logique booléenne pour déterminer si la transition cible s’est produite. Ces fonctions retournent _true_ uniquement si la nouvelle lecture contient l’état cible (appuyé ou relâché, respectivement) *et* si l’ancienne lecture ne contient pas également l’état cible. Dans le cas contraire, elles retournent _false_.
+Ces deuxfonctions dérivent d’abord l’état booléen de la sélection de bouton de `newReading` et `oldReading`, puis effectuent une logique booléenne pour déterminer si la transition cible s’est produite. Ces fonctions retournent _true_ uniquement si la nouvelle lecture contient l’état cible (appuyé ou relâché, respectivement) *et* si l’ancienne lecture ne contient pas également l’état cible. Dans le cas contraire, elles retournent _false_.
 
 
 ## <a name="detecting-complex-button-arrangements"></a>Détection des dispositions de boutons complexes
 
-Chaque bouton d’un périphérique d’entrée fournit une lecture numérique qui indique s’il est à l’état appuyé (position basse) ou relâché (position haute). Pour plus d’efficacité, les entrées de bouton ne sont pas représentées individuellement sous forme de valeurs booléennes. Elles sont toutes regroupées dans des champs de bits représentés par des énumérations propres aux périphériques, par exemple [GamepadButtons][]. Pour lire des boutons spécifiques, un masquage au niveau du bit est effectué pour isoler les valeurs qui vous intéressent. Les boutons sont à l’état appuyé (position basse) quand leur bit correspondant est défini ; sinon, il est à l’état relâché (position haute).
+Chaque bouton d’un périphérique d’entrée fournit une lecture numérique qui indique s’il est à l’état appuyé (position basse) ou relâché (position haute). Pour plus d’efficacité, les entrées de bouton ne sont pas représentées individuellement sous forme de valeurs booléennes. Elles sont toutes regroupées dans des champs de bits représentés par des énumérations propres aux périphériques, par exemple [GamepadButtons][]. Pour lire des boutons spécifiques, un masquage au niveau du bit est effectué pour isoler les valeurs qui vous intéressent. Les boutons sont à l’état appuyé (position basse) quand leur bit correspondant est défini; sinon, il est à l’état relâché (position haute).
 
-Rappelez comme déterminer que les boutons uniques sont à l’état appuyé ou relâché ; des boîtiers de commande sont affichés ici, mais les principes sont les mêmes pour les sticks arcade, les volants de course et les boutons de navigation d’interface utilisateur.
+Rappelez comme déterminer que les boutons uniques sont à l’état appuyé ou relâché; des boîtiers de commande sont affichés ici, mais les principes sont les mêmes pour les sticks arcade, les volants de course et les boutons de navigation d’interface utilisateur.
 
 ```cpp
 // determines whether gamepad button A is pressed
@@ -130,7 +127,7 @@ if (GamepadButtons::A == (reading.Buttons & (GamepadButtons::A | GamepadButtons:
 }
 ```
 
-Dans la formule que ces cinq exemples ont en commun, la disposition des boutons à tester est spécifiée par l’expression située à gauche de l’opérateur d’égalité tandis que les boutons à examiner sont sélectionnés par l’expression de masquage à droite.
+Dans la formule que ces cinqexemples ont en commun, la disposition des boutons à tester est spécifiée par l’expression située à gauche de l’opérateur d’égalité tandis que les boutons à examiner sont sélectionnés par l’expression de masquage à droite.
 
 L’exemple suivant présente cette formule plus clairement en réécrivant l’exemple précédent.
 
@@ -153,4 +150,3 @@ Cette formule peut être appliquée pour tester n’importe quel nombre de bouto
 [igamecontroller.user]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.user.aspx
 [igamecontroller.userchanged]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.userchanged.aspx
 [gamepadbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadbuttons.aspx
-

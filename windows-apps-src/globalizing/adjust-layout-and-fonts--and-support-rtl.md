@@ -10,14 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4b7d34aaf891497af80ed8c94609e6a8fbbd3bec
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 9c700928d2ec0da21b518528289034296637eeff
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adjust-layout-and-fonts-and-support-rtl"></a>Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -30,7 +27,7 @@ Certaines langues, comme l’allemand et le finnois, nécessitent plus d’espac
 
 Utilisez des mécanismes de disposition flexibles à la place d’un positionnement absolu, de largeurs fixes ou de hauteurs fixes. Le cas échéant, il est possible d’ajuster des éléments d’interface utilisateur selon la langue.
 
-Spécifiez l’**Uid** d’un élément :
+Spécifiez l’**Uid** d’un élément:
 
 ```XML
 <TextBlock x:Uid="Block1">
@@ -42,7 +39,7 @@ Pour les applications du Windows Store en C++, C# ou Visual Basic, utilisez la p
 
 Les contrôles de disposition XAML tels que [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) sont mis à l’échelle et pivotent automatiquement avec la propriété [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716). Exposez votre propre propriété **FlowDirection** dans votre application en tant que ressource pour les outils de localisation.
 
-Spécifiez un **Uid** pour la page principale de votre application :
+Spécifiez un **Uid** pour la page principale de votre application:
 
 ```XML
 <Page x:Uid="MainPage">
@@ -53,7 +50,7 @@ Assurez-vous que le fichier **ResW** de votre application possède une ressource
 
 ## <a name="mirroring-images"></a>Mise en miroir des images
 
-Si votre application possède des images qui doivent être mises en miroir (c’est-à-dire qu’une même image peut être renversée) pour une disposition de droite à gauche, vous pouvez appliquer la propriété [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) :
+Si votre application possède des images qui doivent être mises en miroir (c’est-à-dire qu’une même image peut être renversée) pour une disposition de droite à gauche, vous pouvez appliquer la propriété [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716):
 
 ```XML
 <!-- en-US\localized.xaml -->
@@ -89,7 +86,7 @@ C#
     }
 ```
 
-C++ :
+C++:
 ```
     // Get preferred app language
     m_language = Windows::Globalization::ApplicationLanguages::Languages->GetAt(0);
@@ -103,13 +100,13 @@ C++ :
 ### <a name="rtl-faq"></a>FAQ sur les langues DàG 
 
 <dl>
-  <dt> <p><b>Q :</b> La propriété <b>FlowDirection</b> est-elle automatiquement définie en fonction de la langue sélectionnée ? Par exemple, si la langue sélectionnée est l’anglais, le texte s’affiche-t-il de gauche à droite ? Inversement, si l’arabe est sélectionné, s’affiche-t-il de droite à gauche ?</p></dt>
+  <dt> <p><b>Q:</b> La propriété <b>FlowDirection</b> est-elle automatiquement définie en fonction de la langue sélectionnée? Par exemple, si la langue sélectionnée est l’anglais, le texte s’affiche-t-il de gauche à droite? Inversement, si l’arabe est sélectionné, s’affiche-t-il de droite à gauche?</p></dt>
 
-  <dd><p><b>R : </b> <b>FlowDirection</b> ne prend pas en compte la langue. Vous devez définir <b>FlowDirection</b> en fonction de la langue active. Consultez l’exemple de code ci-dessus.</p></dd> 
+  <dd><p><b>R:</b> <b>FlowDirection</b> ne prend pas en compte la langue. Vous devez définir <b>FlowDirection</b> en fonction de la langue active. Consultez l’exemple de code ci-dessus.</p></dd> 
 
-  <dt> <p><b>Q :</b> Je ne suis pas expert en traduction. Les ressources contiennent-elles déjà le sens du déroulement ? Est-il possible de déterminer le sens du déroulement à partir de la langue active ?</p></dt>
+  <dt> <p><b>Q:</b> Je ne suis pas expert en traduction. Les ressources contiennent-elles déjà le sens du déroulement? Est-il possible de déterminer le sens du déroulement à partir de la langue active?</p></dt>
 
-  <dd> <p><b>R :</b> Si vous mettez en application les bonnes pratiques actuelles, les ressources ne contiennent pas directement le sens du déroulement. Vous devez déterminer le sens du déroulement de la langue active. Voici deux façons d’y remédier : </p>
+  <dd> <p><b>R:</b> Si vous mettez en application les bonnes pratiques actuelles, les ressources ne contiennent pas directement le sens du déroulement. Vous devez déterminer le sens du déroulement de la langue active. Voici deux façons d’y remédier: </p>
    <p>La méthode à privilégier consiste à utiliser l’élément LayoutDirection pour la langue préférée de façon à définir la propriété FlowDirection de l’élément RootFrame. Tous les contrôles de l’élément RootFrame héritent de la propriété FlowDirection de l’élément RootFrame.</p>
    <p>L’autre méthode consiste à définir la propriété FlowDirection dans le fichier resw pour les langues DàG que vous traduisez. Par exemple, vous pouvez avoir un fichier resw arabe et un fichier resw hébreu. Dans ces fichiers, vous pouvez utiliser x:UID pour définir la propriété FlowDirection. Cette méthode est cependant plus exposée aux erreurs que la méthode par programmation.</p></dd>
 </dl>
@@ -117,4 +114,3 @@ C++ :
 
 ## <a name="related-topics"></a>Rubriques connexes
 [FlowDirection](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.flowdirection.aspx)
-

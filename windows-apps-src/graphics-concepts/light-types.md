@@ -1,26 +1,22 @@
 ---
 title: "Types de lumière"
-description: "La propriété du type de lumière définit le type de source lumineuse utilisé. Direct3D prend en charge 3 types de lumières : les lumières à points, les projecteurs et les lumières directionnelles."
+description: "La propriété du type de lumière définit le type de source lumineuse utilisé. Direct3D prend en charge 3types de lumières: les lumières à points, les projecteurs et les lumières directionnelles."
 ms.assetid: 57748CAF-6F08-4D1D-9ED6-8FAA8C5FE314
-keywords:
-- "Types de lumière"
+keywords: "Types de lumière"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 52edfb04924dcb35f71c638c173c319430c5d97e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 256a241ad5a2233586c07d3daca67eeba0780e89
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="light-types"></a>Types de lumière
 
 
-La propriété du type de lumière définit le type de source lumineuse utilisé. Direct3D prend en charge 3 types de lumières : les lumières à points, les projecteurs et les lumières directionnelles. Chaque type illumine les objets d’une scène de manière particulière, avec des niveaux variés de calcul.
+La propriété du type de lumière définit le type de source lumineuse utilisé. Direct3D prend en charge 3types de lumières: les lumières à points, les projecteurs et les lumières directionnelles. Chaque type illumine les objets d’une scène de manière particulière, avec des niveaux variés de calcul.
 
 ## <a name="span-idpointlightspanspan-idpointlightspanspan-idpointlightspanpoint-light"></a><span id="Point_Light"></span><span id="point_light"></span><span id="POINT_LIGHT"></span>Lumière à points
 
@@ -29,7 +25,7 @@ Au sein d’une scène, les lumières à points présentent une couleur et une p
 
 ![illustration de la lumière à points](images/ptlight.png)
 
-Une ampoule est un bon exemple d’émission de lumière à points. Les lumières à points sont affectées par l’atténuation et l’étendue. Elles illuminent un maillage, par unité de vertex. Durant l’éclairage, Direct3D utilise la position de la lumière à points dans l’espace du monde et les coordonnées du vertex illuminé pour dériver un vecteur pour la direction du faisceau, et la distance parcourue par la lumière. Les 2 éléments sont utilisés, avec le vertex normal, pour calculer la contribution de la lumière à l’illumination de la surface.
+Une ampoule est un bon exemple d’émission de lumière à points. Les lumières à points sont affectées par l’atténuation et l’étendue. Elles illuminent un maillage, par unité de vertex. Durant l’éclairage, Direct3D utilise la position de la lumière à points dans l’espace du monde et les coordonnées du vertex illuminé pour dériver un vecteur pour la direction du faisceau, et la distance parcourue par la lumière. Les 2éléments sont utilisés, avec le vertex normal, pour calculer la contribution de la lumière à l’illumination de la surface.
 
 ## <a name="span-iddirectionallightspanspan-iddirectionallightspanspan-iddirectionallightspandirectional-light"></a><span id="Directional_Light"></span><span id="directional_light"></span><span id="DIRECTIONAL_LIGHT"></span>Lumière directionnelle
 
@@ -47,25 +43,25 @@ Les projecteurs sont affectés par l’atténuation et l’étendue. Ces facteur
 
 Les valeurs d’atténuation, thêta et phi sont utilisées uniquement par les projecteurs. Ces valeurs définissent le diamètre des cônes interne et externe d’un projecteur, et l’atténuation de la lumière entre les deux.
 
-Thêta est l’angle en radians du cône interne du projecteur, tandis que la valeur Phi est l’angle du cône externe de lumière. L’atténuation est la mesure de diminution de l’intensité de la lumière entre la bordure externe du cone interne et la bordure interne du cône externe. La plupart des applications définissent l’atténuation sur 1,0, de manière à ce que cette valeur soit uniforme entre les 2 cônes. Vous pouvez aussi paramétrer d’autres valeurs, au besoin.
+Thêta est l’angle en radians du cône interne du projecteur, tandis que la valeur Phi est l’angle du cône externe de lumière. L’atténuation est la mesure de diminution de l’intensité de la lumière entre la bordure externe du cone interne et la bordure interne du cône externe. La plupart des applications définissent l’atténuation sur 1,0, de manière à ce que cette valeur soit uniforme entre les 2cônes. Vous pouvez aussi paramétrer d’autres valeurs, au besoin.
 
 L’illustration suivante représente la relation entre ces valeurs et la manière dont elles affectent les cônes interne et externe de lumière d’un projecteur.
 
 ![illustration de l’incidence des valeurs phi et thêta sur les cônes du projecteur](images/spotlt2.png)
 
-Les projecteurs émettent un cône de lumière en 2 portions : un cône interne lumineux et un cône externe. La lumière est plus intense dans le cône interne et est inexistante à l’extérieur du cône externe, l’intensité diminuant entre des deux zones. Ce type de réduction de l’intensité s’appelle l’atténuation.
+Les projecteurs émettent un cône de lumière en 2portions: un cône interne lumineux et un cône externe. La lumière est plus intense dans le cône interne et est inexistante à l’extérieur du cône externe, l’intensité diminuant entre des deuxzones. Ce type de réduction de l’intensité s’appelle l’atténuation.
 
-La quantité de lumière reçue par un vertex est fonction de l’emplacement du vertex dans les cônes interne et externe. Direct3D calcule le produit scalaire du vecteur de direction du projecteur (L) et le vecteur de la lumière du vertex (D). Cette valeur, égale au cosinus de l’angle entre les 2 vecteurs, indique la position du vertex. Cette dernière peut être comparée aux angles du cône de lumière, ceci pour identifier l’emplacement du vertex, dans les cônes interne ou externe. L’illustration suivante fournit une représentation graphique de l’association entre ces deux vecteurs.
+La quantité de lumière reçue par un vertex est fonction de l’emplacement du vertex dans les cônes interne et externe. Direct3D calcule le produit scalaire du vecteur de direction du projecteur(L) et le vecteur de la lumière du vertex (D). Cette valeur, égale au cosinus de l’angle entre les 2vecteurs, indique la position du vertex. Cette dernière peut être comparée aux angles du cône de lumière, ceci pour identifier l’emplacement du vertex, dans les cônes interne ou externe. L’illustration suivante fournit une représentation graphique de l’association entre ces deuxvecteurs.
 
 ![illustration du vecteur de direction du projecteur et du vecteur entre le vertex et le projecteur](images/spotalg1.png)
 
 Le système compare cette valeur au cosinus des angles des cônes interne et externe du projecteur. Les valeurs thêta et phi de la lumière représentent le total des angles des cônes interne et externe. Dans la mesure où l’atténuation se produit à mesure que le vertex s’éloigne du centre de l’illumination (non sur la totalité de l’angle occupé par les cônes), le processus d’exécution divise ces angles de cônes en 2 avant de calculer les cosinus.
 
-Si le produit scalaire des vecteurs L et D est inférieur ou égal au cosinus de l’angle du cône externe, le vertex est placé au-delà du cône externe. Il ne reçoit pas de lumière. Si le produit scalaire de L et D est supérieur au cosinus de l’angle du cône interne, le vertex se situe dans le cône interne. Il reçoit la quantité maximale de lumière, affectée par l’atténuation à mesure qu’il s’écarte. Si le vertex se situe entre les 2 régions, l’atténuation est calculée à l’aide de l’équation suivante.
+Si le produit scalaire des vecteurs L et D est inférieur ou égal au cosinus de l’angle du cône externe, le vertex est placé au-delà du cône externe. Il ne reçoit pas de lumière. Si le produit scalaire de L et D est supérieur au cosinus de l’angle du cône interne, le vertex se situe dans le cône interne. Il reçoit la quantité maximale de lumière, affectée par l’atténuation à mesure qu’il s’écarte. Si le vertex se situe entre les 2régions, l’atténuation est calculée à l’aide de l’équation suivante.
 
 ![formule dédiée au calcul de l’intensité de la lumière, après atténuation](images/falloff.png)
 
-où :
+où:
 
 -   I<sub>f</sub> correspond à l’intensité de la lumière après l’atténuation
 -   Alpha est l’angle entre les vecteurs L et D
@@ -87,7 +83,6 @@ L’effet de ces valeurs d’atténuation sur l’éclairage réel est minime. U
  
 
  
-
 
 
 

@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, jeux, directx, lancement, reprise
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: c3557a11f8f18262f0b5e0c6ad6cac88d5274f73
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launching-and-resuming-apps-directx-and-c"></a>Lancement et reprise des applications (DirectX et C++)
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Découvrez comment lancer, suspendre et reprendre votre application DirectX de plateforme Windows universelle (UWP).
 
@@ -33,7 +30,6 @@ Découvrez comment lancer, suspendre et reprendre votre application DirectX de p
  
 
  
-
 
 
 

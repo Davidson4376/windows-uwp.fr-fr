@@ -1,6 +1,6 @@
 ---
 author: mtoepke
-title: "Définir l’infrastructure d’application de plateforme Windows universelle (UWP) du jeu"
+title: "Définir l’infrastructure d’application UWP du jeu"
 description: "La première partie du codage d’un jeu de plateforme Windows universelle (UWP) avec DirectX consiste à créer l’infrastructure qui permet à l’objet jeu d’interagir avec Windows."
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 ms.author: mtoepke
@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, jeux, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 82a44a3499297b3988815ad10091cd351a194cbd
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp, jeux, directx
+ms.openlocfilehash: 9c19c2ca89b2d38929ade8596c10beb3c3a16104
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="define-the-games-universal-windows-platform-uwp-app-framework"></a>Définir l’infrastructure d’application de plateforme Windows universelle (UWP) du jeu
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 La première partie du codage d’un jeu de plateforme Windows universelle (UWP) avec DirectX consiste à créer l’infrastructure qui permet à l’objet jeu d’interagir avec Windows. Cela inclut des propriétés Windows Runtime telles que la gestion des événements de pause/reprise, la sélection de fenêtre et l’ancrage, ainsi que les événements, interactions et transitions pour l’interface utilisateur. Nous passons en revue la façon dont l’exemple de jeu est structuré et la façon dont il définit la machine à états principale pour l’interaction du joueur avec le système.
 
@@ -33,11 +30,11 @@ La première partie du codage d’un jeu de plateforme Windows universelle (UWP)
 
 Dans tout jeu UWP DirectX, vous devez obtenir un fournisseur de vues que le singleton de l’application, l’objet Windows Runtime qui définit une instance de votre application en cours d’exécution, peut utiliser pour accéder aux ressources graphiques nécessaires. Windows Runtime permet à votre application d’avoir une connexion directe à l’interface graphique, mais vous devez spécifier les ressources nécessaires et la façon de les gérer.
 
-Comme nous l’avons indiqué dans [Configuration du projet de jeu](tutorial--setting-up-the-games-infrastructure.md), Microsoft Visual Studio 2015 fournit une implémentation d’un convertisseur de base pour DirectX dans le fichier **Sample3DSceneRenderer.cpp**, qui est disponible quand vous sélectionnez le modèle **Application DirectX 11 (Windows universel)**.
+Comme nous l’avons indiqué dans [Configuration du projet de jeu](tutorial--setting-up-the-games-infrastructure.md), Microsoft VisualStudio2015 fournit une implémentation d’un convertisseur de base pour DirectX dans le fichier **Sample3DSceneRenderer.cpp**, qui est disponible quand vous sélectionnez le modèle **Application DirectX11 (Windows universel)**.
 
 Pour plus d’informations sur la compréhension et la création d’un fournisseur de vues et d’un convertisseur, voir [Configuration de votre UWP avec C++ et DirectX pour afficher une vue DirectX](https://msdn.microsoft.com/library/windows/apps/hh465077).
 
-Inutile de préciser que vous devez fournir l’implémentation de 5 méthodes que le singleton de l’application appelle :
+Inutile de préciser que vous devez fournir l’implémentation de 5méthodes que le singleton de l’application appelle:
 
 -   [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)
 -   [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)
@@ -45,7 +42,7 @@ Inutile de préciser que vous devez fournir l’implémentation de 5 méthodes 
 -   [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)
 -   [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)
 
-Dans le modèle Application DirectX 11 (Windows universel), ces 5 méthodes sont définies sur l’objet **App** dans [App.h](#complete-sample-code-for-this-section). Examinons la façon dont elles sont implémentées dans ce jeu.
+Dans le modèle Application DirectX11 (Windows universel), ces 5méthodes sont définies sur l’objet **App** dans [App.h](#complete-sample-code-for-this-section). Examinons la façon dont elles sont implémentées dans ce jeu.
 
 Méthode Initialize du fournisseur de vues
 
@@ -167,13 +164,13 @@ void App::Load(
 
 Une fois la fenêtre principale définie, le singleton de l’application appelle **Load**. Dans l’exemple, cette méthode utilise un ensemble de tâches asynchrones (dont la syntaxe est définie dans la [Bibliothèque de modèles parallèles](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx)) pour créer les objets jeu, charger les ressources graphiques et initialiser la machine à états du jeu. Avec le modèle de tâche asynchrone, la méthode Load finit rapidement et permet à l’application de commencer à traiter les entrées. Dans cette méthode, l’application affiche aussi une barre de progression au fil du chargement des fichiers de ressources.
 
-Nous scindons le chargement des ressources en deux étapes, car l’accès au contexte de périphérique Direct3D 11 est limité au thread sur lequel le contexte de périphérique a été créé, tandis que l’accès au périphérique Direct3D 11 pour la création d’objet est dépourvu de thread. La tâche **CreateGameDeviceResourcesAsync** s’exécute sur un thread séparé à partir de la tâche de fin (*FinalizeCreateGameDeviceResources*), qui s’exécute sur le thread original. Nous utilisons un modèle semblable pour charger les ressources de niveau avec **LoadLevelAsync** et **FinalizeLoadLevel**.
+Nous scindons le chargement des ressources en deux étapes, car l’accès au contexte de périphérique Direct3D11 est limité au thread sur lequel le contexte de périphérique a été créé, tandis que l’accès au périphérique Direct3D11 pour la création d’objet est dépourvu de thread. La tâche **CreateGameDeviceResourcesAsync** s’exécute sur un thread séparé à partir de la tâche de fin (*FinalizeCreateGameDeviceResources*), qui s’exécute sur le thread original. Nous utilisons un modèle semblable pour charger les ressources de niveau avec **LoadLevelAsync** et **FinalizeLoadLevel**.
 
-Une fois les objets jeu créés et les ressources graphiques chargées, nous initialisons la machine à états du jeu avec les conditions de départ (par exemple : réglage du nombre de munitions, du nombre de niveaux et des positions des objets initiaux). Si l’état du jeu indique que le joueur reprend une partie, nous chargeons le niveau en cours (niveau du joueur lorsqu’il a interrompu la partie).
+Une fois les objets jeu créés et les ressources graphiques chargées, nous initialisons la machine à états du jeu avec les conditions de départ (par exemple: réglage du nombre de munitions, du nombre de niveaux et des positions des objets initiaux). Si l’état du jeu indique que le joueur reprend une partie, nous chargeons le niveau en cours (niveau du joueur lorsqu’il a interrompu la partie).
 
 Dans la méthode **Load**, nous effectuons toutes les préparations nécessaires avant le début du jeu, comme la définition des états de départ ou des valeurs globales. Si vous voulez commencer par récupérer des données ou des composants du jeu, faites-le ici, plutôt que dans **SetWindow** ou **Initialize**. Utilisez des tâches asynchrones dans votre jeu pour tout chargement, car Windows impose des restrictions sur le temps que peut prendre le jeu avant de commencer à traiter les entrées. Si le chargement dure un certain temps (en cas de nombreuses ressources), fournissez à vos utilisateurs une barre de progression régulièrement mise à jour.
 
-Lors du développement de votre propre jeu, concevez votre code de démarrage autour de ces méthodes. Voici une liste de suggestions de base pour chaque méthode :
+Lors du développement de votre propre jeu, concevez votre code de démarrage autour de ces méthodes. Voici une liste de suggestions de base pour chaque méthode:
 
 -   Utilisez **Initialize** pour allouer vos classes principales et connecter les gestionnaires d’événements de base.
 -   Utilisez **SetWindow** pour créer votre fenêtre d’application principale et connecter tous les événements propres à la fenêtre.
@@ -217,7 +214,7 @@ void App::Run()
 }
 ```
 
-Nous arrivons ici à la partie jeu de l’application de jeu. Après avoir exécuté les 3 méthodes et préparé le terrain, l’application de jeu exécute la méthode **Run**, il est temps de s’amuser !
+Nous arrivons ici à la partie jeu de l’application de jeu. Après avoir exécuté les 3méthodes et préparé le terrain, l’application de jeu exécute la méthode **Run**, il est temps de s’amuser!
 
 Dans l’exemple de jeu, nous démarrons une boucle while qui se termine lorsque le joueur ferme la fenêtre du jeu. L’exemple de code passe dans l’un des deux états de la machine à états du moteur de jeu :
 
@@ -228,7 +225,7 @@ Lorsque votre jeu a le focus, vous devez gérer chaque événement qui arrive da
 
 Bien entendu, lorsque l’application est invisible, suspendue ou ancrée, nous ne voulons pas qu’elle utilise des ressources qui tournent en boucle pour envoyer des messages qui n’arriveront jamais. Votre jeu doit donc utiliser **ProcessOneAndAllPending**, qui opère un blocage tant qu’il ne reçoit pas d‘événement, puis traite cet événement et tous les autres qui arrivent dans la file d’attente de traitement pendant le traitement du premier. [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) est ensuite immédiatement de retour une fois que la file d’attente a été traitée.
 
-Le jeu est en cours d’exécution ! Les événements qu’il utilise pour basculer entre les états sont distribués et traités. Les graphiques sont mis à jour lorsque la boucle de jeu effectue une itération. Nous espérons que le joueur s’amuse. Mais les bonnes choses ont une fin...
+Le jeu est en cours d’exécution! Les événements qu’il utilise pour basculer entre les états sont distribués et traités. Les graphiques sont mis à jour lorsque la boucle de jeu effectue une itération. Nous espérons que le joueur s’amuse. Mais les bonnes choses ont une fin...
 
 ...et nous devons procéder au nettoyage. C’est là où **Uninitialize** intervient.
 
@@ -286,7 +283,7 @@ void App::InitializeGameState()
 }
 ```
 
-L’initialisation ne concerne pas tant le « démarrage à froid » de l’application que le redémarrage de l’application une fois qu’elle s’est terminée. L’exemple de jeu enregistre toujours l’état, ce qui donne l’impression que l’application est toujours en cours d’exécution. L’état suspendu peut se résumer ainsi : le jeu est interrompu, mais les ressources du jeu sont toujours en mémoire. De même, l’événement de reprise indique que l’exemple de jeu reprend là où il a été interrompu ou arrêté. Lorsque l’exemple de jeu redémarre après un arrêt, il démarre normalement, puis détermine le dernier état connu afin que le joueur puisse tout de suite continuer à jouer.
+L’initialisation ne concerne pas tant le «démarrage à froid» de l’application que le redémarrage de l’application une fois qu’elle s’est terminée. L’exemple de jeu enregistre toujours l’état, ce qui donne l’impression que l’application est toujours en cours d’exécution. L’état suspendu peut se résumer ainsi : le jeu est interrompu, mais les ressources du jeu sont toujours en mémoire. De même, l’événement de reprise indique que l’exemple de jeu reprend là où il a été interrompu ou arrêté. Lorsque l’exemple de jeu redémarre après un arrêt, il démarre normalement, puis détermine le dernier état connu afin que le joueur puisse tout de suite continuer à jouer.
 
 L’organigramme présente les états initiaux et transitions pour le processus d’initialisation de l’exemple de jeu.
 
@@ -323,7 +320,7 @@ Voici les gestionnaires d’événements de l’exemple et les événements qu�
 <td align="left">OnLogicalDpiChanged</td>
 <td align="left">Gère [<strong>DisplayProperties::LogicalDpiChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br226150). Les PPP de la fenêtre principale du jeu ont été modifiés, et l’application de jeu règle ses ressources en conséquence.
 <div class="alert">
-<strong>Remarque</strong>  Les coordonnées de [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) sont affichées en DIP (pixels indépendants des appareils), comme dans [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987). Par conséquent, vous devez indiquer à Direct2D la modification des PPP afin d’afficher correctement les primitives ou composants 2D.
+<strong>Remarque</strong> [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) ) est affiché en DIP (pixels indépendants des appareils), comme dans  [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987). Par conséquent, vous devez indiquer à Direct2D la modification des PPP afin d’afficher correctement les primitives ou composants2D.
 </div>
 <div>
  
@@ -339,7 +336,7 @@ Voici les gestionnaires d’événements de l’exemple et les événements qu�
 </tr>
 <tr class="odd">
 <td align="left">OnVisibilityChanged</td>
-<td align="left">Gère [<strong>CoreWindow::VisibilityChanged</strong>](https://msdn.microsoft.com/library/windows/apps/hh701591). L’application de jeu a modifié la visibilité : elle est devenue soit visible, soit invisible car une autre application est devenue visible.</td>
+<td align="left">Gère [<strong>CoreWindow::VisibilityChanged</strong>](https://msdn.microsoft.com/library/windows/apps/hh701591). L’application de jeu a modifié la visibilité: elle est devenue soit visible, soit invisible car une autre application est devenue visible.</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowActivationChanged</td>
@@ -365,7 +362,7 @@ Votre propre jeu doit gérer ces événements, car ils font partie de la concept
 
 Dans la boucle de jeu de **Run**, l’exemple a implémenté une machine à états de base pour la gestion de toutes les actions principales que le joueur peut effectuer. Le niveau le plus élevé de cette machine à états traite du chargement d’un jeu, du jeu à un niveau spécifique ou de la poursuite d’un niveau une fois que le jeu a été suspendu (par le système ou le joueur).
 
-Dans l’exemple de jeu, le jeu peut se trouver dans l’un des 3 principaux états suivants (UpdateEngineState) :
+Dans l’exemple de jeu, le jeu peut se trouver dans l’un des 3principaux états suivants (UpdateEngineState):
 
 -   **Waiting for resources**. La boucle de jeu effectue une itération, incapable de procéder à la transition tant que les ressources (en particulier, les ressources graphiques) ne sont pas disponibles. Une fois terminées les tâches asynchrones de chargement des ressources, elle met à jour l’état avec **ResourcesLoaded**. Cette situation se produit généralement entre les niveaux lorsque le niveau a besoin de charger de nouvelles ressources à partir du disque. Dans l’exemple de jeu, nous simulons ce comportement, car l’exemple n’a pas besoin de ressources supplémentaires par niveau à ce stade.
 -   **Waiting for press**. La boucle de jeu effectue une itération, en attente d’une entrée utilisateur spécifique. Cette entrée est une action du joueur pour charger un jeu, démarrer un niveau ou continuer de jouer à un niveau. L’exemple de code fait référence à ces sous-états en tant que valeurs d’énumération PressResultState.
@@ -472,7 +469,7 @@ void App::Update()
 }
 ```
 
-Visuellement, la machine à états principale du jeu se présente comme suit :
+Visuellement, la machine à états principale du jeu se présente comme suit:
 
 ![Machine à états principale de notre jeu](images/simple3dgame-mainstatemachine.png)
 
@@ -1427,7 +1424,6 @@ int main(Platform::Array<Platform::String^>^)
  
 
  
-
 
 
 

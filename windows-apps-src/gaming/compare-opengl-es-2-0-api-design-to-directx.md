@@ -1,25 +1,22 @@
 ---
 author: mtoepke
-title: "Planifier votre portage d’OpenGL ES 2.0 vers Direct3D"
-description: "Si vous portez un jeu à partir des plateformes iOS ou Android, vous avez probablement effectué un investissement considérable dans OpenGL ES 2.0."
+title: "Planifier votre portage d’OpenGL ES2.0 vers Direct3D"
+description: "Si vous portez un jeu à partir des plateformes iOS ou Android, vous avez probablement effectué un investissement considérable dans OpenGLES2.0."
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, jeux, opengl, direct3d"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp, jeux, opengl, direct3d
 ms.openlocfilehash: d2642abbfbfc6030aa00f68f30d4a45eb0e86ee1
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="plan-your-port-from-opengl-es-20-to-direct3d"></a>Planifier votre portage d’OpenGL ES 2.0 vers Direct3D
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -52,7 +49,7 @@ Pour simplifier la mise en place de votre portage, commencez avec un modèle Vis
 ## <a name="understand-direct3d-feature-levels"></a>Explorer les niveaux de fonctionnalité Direct3D
 
 
-Direct3D 11 prend en charge les « niveaux de fonctionnalité » de matériel du niveau 9\_1 (Direct3D 9.1) au niveau 11\_1. Ces niveaux de fonctionnalité indiquent la disponibilité de certaines fonctionnalités et ressources graphiques. En général, la plupart des plateformes OpenGL ES 2.0 prennent en charge un ensemble de fonctionnalités Direct3D 9.1 (niveau de fonctionnalité 9\_1).
+Direct3D 11 prend en charge les «niveaux de fonctionnalité» de matériel du niveau 9\_1 (Direct3D 9.1) au niveau 11\_1. Ces niveaux de fonctionnalité indiquent la disponibilité de certaines fonctionnalités et ressources graphiques. En général, la plupart des plateformes OpenGL ES 2.0 prennent en charge un ensemble de fonctionnalités Direct3D 9.1 (niveau de fonctionnalité 9\_1).
 
 ## <a name="review-directx-graphics-features-and-apis"></a>Parcourir les fonctionnalités graphiques et les API DirectX
 
@@ -60,7 +57,7 @@ Direct3D 11 prend en charge les « niveaux de fonctionnalité » de matériel 
 | Famille d’API                                                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534)                     | L’infrastructure DXGI (DirectX Graphics Infrastructure) constitue une interface entre le matériel vidéo et Direct3D. Elle définit la carte du périphérique et la configuration matérielle à l’aide des interfaces COM [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) et [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543). Utilisez-la pour créer et configurer vos tampons et autres ressources Windows. De toute évidence, le modèle de fabrique [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) est utilisé pour acquérir des ressources graphiques, y compris la chaîne de permutation (ensemble de tampons de trame). Dans la mesure où DXGI détient la chaîne de permutation, l’interface [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) sert à présenter les trames à l’écran. |
-| [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476080)       | Direct3D est l’ensemble d’API qui fournit une représentation virtuelle de l’interface graphique et vous permet de dessiner des graphiques. Version 11 est à peu près comparable à OpenGL 4.3 du point de vue des fonctionnalités. (OpenGL ES 2.0, pour sa part, est similaire à DirectX9, du point de vue des fonctionnalités, et à OpenGL 2.0, mais accompagné du pipeline nuanceur unifié d’OpenGL 3.0). Une grande partie du travail est effectuée dans les interfaces ID3D11Device1 et ID3D11DeviceContext1 qui fournissent respectivement un accès aux ressources et sous-ressources individuelles, et au contexte de rendu.                                                                                                                                          |
+| [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476080)       | Direct3D est l’ensemble d’API qui fournit une représentation virtuelle de l’interface graphique et vous permet de dessiner des graphiques. Version 11 est à peu près comparable à OpenGL 4.3 du point de vue des fonctionnalités. (OpenGL ES2.0, pour sa part, est similaire à DirectX9, du point de vue des fonctionnalités, et à OpenGL2.0, mais accompagné du pipeline nuanceur unifié d’OpenGL3.0). Une grande partie du travail est effectuée dans les interfaces ID3D11Device1 et ID3D11DeviceContext1 qui fournissent respectivement un accès aux ressources et sous-ressources individuelles, et au contexte de rendu.                                                                                                                                          |
 | [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990)                      | Direct2D fournit un ensemble d’API pour le rendu 2D à accélération graphique. Sa fonction est comparable à celle d’OpenVG.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)            | DirectWrite fournit un ensemble d’API pour le rendu de polices haute qualité, à accélération graphique.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)                  | DirectXMath fournit un ensemble d’API et de macros pour la gestion des types, valeurs et fonctions courants d’algèbre linéaire et de trigonométrie. Ces types et fonctions sont conçus pour fonctionner correctement avec Direct3D et ses opérations de nuanceur.                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -73,7 +70,7 @@ Direct3D 11 prend en charge les « niveaux de fonctionnalité » de matériel 
 
 Les API Windows Runtime fournissent l’infrastructure générale des applications UWP. Parcourez-les [ici](https://msdn.microsoft.com/library/windows/apps/br211377).
 
-Les API Windows Runtime essentielles utilisées dans le portage de votre pipeline graphique sont notamment les suivantes :
+Les API Windows Runtime essentielles utilisées dans le portage de votre pipeline graphique sont notamment les suivantes:
 
 -   [**Windows::UI::Core::CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
 -   [**Windows::UI::Core::CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)
@@ -120,7 +117,6 @@ Toutefois, Direct3D peut prendre en charge un système de coordonnées droitier.
  
 
  
-
 
 
 

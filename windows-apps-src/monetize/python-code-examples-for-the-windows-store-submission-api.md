@@ -2,25 +2,22 @@
 author: mcleanbyron
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: "Servez-vous des exemples de code Python présentés dans cette section pour en savoir plus sur l’utilisation de l’API de soumission du Windows Store."
-title: "Exemples de code Python pour l’API de soumission du Windows Store"
+title: "Exemples de code Python pour l’API de soumission"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, exemples de code"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f787fd042982e4e5a965c9bb77ef72a8dabb6ae9
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp, API de soumission du Windows Store, exemples de code
+ms.openlocfilehash: a46907ecfea1de60b8a32cdaea7076f056a41ff5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="python-code-examples-for-the-windows-store-submission-api"></a>Exemples de code Python pour l’API de soumission du Windows Store
+# <a name="python-code-examples-for-the-submission-api"></a>Exemples de code Python pour l’API de soumission
 
 Cet article fournit des exemples de code Python pour l’utilisation de l’*API de soumission du Windows Store*. Pour plus d’informations sur cette API, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
 
-Ces exemples de code illustrent les tâches suivantes :
+Ces exemples de code illustrent les tâches suivantes:
 
 * [Obtenir un jeton d’accès Azure AD](#token)
 * [Créer une extension](#create-add-on)
@@ -30,9 +27,9 @@ Ces exemples de code illustrent les tâches suivantes :
 * [Créer une soumission de version d’évaluation du package](#create-flight-submission)
 
 <span id="token" />
-## <a name="obtain-an-azure-ad-access-token"></a>Obtenir un jeton d’accès Azure AD
+## <a name="obtain-an-azure-ad-access-token"></a>Obtenir un jeton d’accès AzureAD
 
-L’exemple suivant indique comment [obtenir un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) que vous pouvez utiliser pour appeler des méthodes dans l’API de soumission du Windows Store. Une fois le jeton obtenu, vous avez 60 minutes pour l’utiliser dans les appels à l’API de soumission du Windows Store. Passé ce délai, le jeton n’est plus valable. Une fois le jeton arrivé à expiration, vous pouvez en générer un autre.
+L’exemple suivant indique comment [obtenir un jeton d’accès AzureAD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) que vous pouvez utiliser pour appeler des méthodes dans l’API de soumission du WindowsStore. Une fois le jeton obtenu, vous avez 60minutes pour l’utiliser dans les appels à l’API de soumission du WindowsStore. Passé ce délai, le jeton n’est plus valable. Une fois le jeton arrivé à expiration, vous pouvez en générer un autre.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L1-L20)]
 
@@ -53,13 +50,13 @@ L’exemple suivant indique comment [créer](create-a-flight.md) et [supprimer](
 <span id="create-app-submission" />
 ## <a name="create-an-app-submission"></a>Créer une soumission d’applications
 
-L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission du Windows Store, afin de créer une soumission d’applications. Pour ce faire, le code crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développement Windows. Cet exemple effectue les tâches suivantes, entre autres :
+L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission du WindowsStore, afin de créer une soumission d’applications. Pour ce faire, le code crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développementWindows. Cet exemple effectue les tâches suivantes, entre autres:
 
 1. Pour commencer, il [récupère les données de l’application indiquée](get-an-app.md).
 2. Ensuite, il [supprime la soumission en attente de l’application](delete-an-app-submission.md), s’il en existe une.
 3. Cela fait, il [crée une soumission pour l’application](create-an-app-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
-4. Il modifie certains détails de cette soumission, puis charge un nouveau package associé à cette dernière dans le stockage Blob Azure.
-5. Ensuite, il [met à jour](update-an-app-submission.md) et [valide](commit-an-app-submission.md) la nouvelle soumission dans le Centre de développement Windows.
+4. Il modifie certains détails de cette soumission, puis charge un nouveau package associé à cette dernière dans le stockage BlobAzure.
+5. Ensuite, il [met à jour](update-an-app-submission.md) et [valide](commit-an-app-submission.md) la nouvelle soumission dans le Centre de développementWindows.
 6. Pour finir, il [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-app-submission.md), jusqu’à ce que sa validation aboutisse.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L93-L166)]
@@ -67,13 +64,13 @@ L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de
 <span id="create-add-on-submission" />
 ## <a name="create-an-add-on-submission"></a>Créer une soumission d’extension
 
-L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission du Windows Store, afin de créer une soumission d’extension. Pour ce faire, le code crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développement Windows. Cet exemple effectue les tâches suivantes, entre autres :
+L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission du WindowsStore, afin de créer une soumission d’extension. Pour ce faire, le code crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développementWindows. Cet exemple effectue les tâches suivantes, entre autres:
 
 1. Pour commencer, il [récupère les données de l’extension indiquée](get-an-add-on.md).
 2. Ensuite, il [supprime la soumission en attente de l’extension](delete-an-add-on-submission.md), s’il en existe une.
 3. Cela fait, il [crée une soumission pour l’extension](create-an-add-on-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
-4. Il charge une archive ZIP contenant des icônes associées à la soumission sur le stockage Blob Azure. Pour en savoir plus, consultez les instructions relatives au chargement d’une archive ZIP sur le stockage Blob Azure, dans la section [Créer une soumission d’extension](manage-add-on-submissions.md#create-an-add-on-submission).
-5. Ensuite, il [met à jour](update-an-add-on-submission.md) et [valide](commit-an-add-on-submission.md) la nouvelle soumission dans le Centre de développement Windows.
+4. Il charge une archiveZIP contenant des icônes associées à la soumission sur le stockage BlobAzure. Pour en savoir plus, consultez les instructions relatives au chargement d’une archiveZIP sur le stockage BlobAzure, dans la section [Créer une soumission d’extension](manage-add-on-submissions.md#create-an-add-on-submission).
+5. Ensuite, il [met à jour](update-an-add-on-submission.md) et [valide](commit-an-add-on-submission.md) la nouvelle soumission dans le Centre de développementWindows.
 6. Pour finir, il [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-an-add-on-submission.md) jusqu’à ce que sa validation aboutisse.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L172-L245)]
@@ -81,18 +78,17 @@ L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de
 <span id="create-flight-submission" />
 ## <a name="create-a-package-flight-submission"></a>Créer une soumission de version d’évaluation du package
 
-L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission du Windows Store, afin de créer une soumission de version d’évaluation du package. Pour ce faire, le code crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développement Windows. Cet exemple effectue les tâches suivantes, entre autres :
+L’exemple suivant indique comment utiliser plusieurs méthodes dans l’API de soumission du WindowsStore, afin de créer une soumission de version d’évaluation du package. Pour ce faire, le code crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développementWindows. Cet exemple effectue les tâches suivantes, entre autres:
 
 1. Pour commencer, il [récupère les données de la version d’évaluation du package indiquée](get-a-flight.md).
 2. Ensuite, il [supprime la soumission en attente de la version d’évaluation du package](delete-a-flight-submission.md), s’il en existe une.
 3. Cela fait, il [crée une soumission pour la version d’évaluation du package](create-a-flight-submission.md) (la nouvelle soumission est une copie de la dernière soumission publiée).
-4. Il charge un nouveau package associé à la soumission sur le stockage Blob Azure. Pour en savoir plus, consultez les instructions relatives au chargement d’une archive ZIP sur le stockage Blob Azure, dans la section [Créer une soumission de version d’évaluation du package](manage-flight-submissions.md#create-a-package-flight-submission).
-5. Ensuite, il [met à jour](update-a-flight-submission.md) et [valide](commit-a-flight-submission.md) la nouvelle soumission dans le Centre de développement Windows.
+4. Il charge un nouveau package associé à la soumission sur le stockage BlobAzure. Pour en savoir plus, consultez les instructions relatives au chargement d’une archiveZIP sur le stockage BlobAzure, dans la section [Créer une soumission de version d’évaluation du package](manage-flight-submissions.md#create-a-package-flight-submission).
+5. Ensuite, il [met à jour](update-a-flight-submission.md) et [valide](commit-a-flight-submission.md) la nouvelle soumission dans le Centre de développementWindows.
 6. Pour finir, il [vérifie régulièrement l’état de la nouvelle soumission](get-status-for-a-flight-submission.md), jusqu’à ce que sa validation aboutisse.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L251-L325)]
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
-
+* [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)

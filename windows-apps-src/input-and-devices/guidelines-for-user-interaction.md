@@ -6,13 +6,11 @@ ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
 label: Touch design guidelines
 template: detail.hbs
 redirect_url: https://msdn.microsoft.com/windows/uwp/input-and-devices/touch-interactions
-translationtype: Human Translation
-ms.sourcegitcommit: 2db7aaccfd56b1bdfda099b197a695bad8a9cba1
 ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# Recommandations en matière de conception pour l’interface tactile
+# <a name="touch-design-guidelines"></a>Recommandations en matière de conception pour l’interface tactile
 
 
 
@@ -20,7 +18,7 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
 
 Créez des applications de plateforme Windows universelle (UWP) offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour l’entrée tactile, mais cohérentes du point de vue du fonctionnement entre les périphériques d’entrée.
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Pratiques conseillées et déconseillées
+## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Pratiques conseillées et déconseillées
 
 
 -   Concevez des applications en utilisant l’interaction tactile comme méthode d’entrée principale.
@@ -31,7 +29,7 @@ Créez des applications de plateforme Windows universelle (UWP) offrant des exp�
 -   Évitez dans la mesure du possible d’utiliser des interactions chronométrées (exemple d’utilisation appropriée : maintenir appuyé).
 -   Évitez d’utiliser le nombre de doigts servant à distinguer la manipulation.
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Indications d’utilisation supplémentaires
+## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Indications d’utilisation supplémentaires
 
 
 Avant tout, concevez votre application en ayant comme objectif que l’entrée tactile sera la principale méthode d’entrée de vos utilisateurs. Si vous utilisez les contrôles de la plateforme, la prise en charge du pavé tactile, de la souris et du stylo/stylet ne demande pas plus de programmation car Windows 8 fournit cela gratuitement.
@@ -157,13 +155,13 @@ En outre, nous vous encourageons vivement à tenir compte des recommandations su
 -   Les interactions doivent prendre en charge les manipulations composées. Par exemple, resserrez les doigts pour zoomer tout en les faisant glisser pour effectuer un mouvement panoramique.
 -   Ne classez pas les interactions en fonction du temps. Une même interaction doit avoir le même résultat, quel que soit le temps pris pour l’effectuer. Les activations temporelles impliquent des délais obligatoires à respecter par l’utilisateur. Par ailleurs, elles portent atteinte non seulement à la nature immersive des manipulations directes, mais également à la perception de la réactivité du système.
 
-    **Remarque** Il existe une exception à cette règle : quand vous utilisez des interactions chronométrées à titre d’aide à l’apprentissage et à l’exploration (par exemple, l’appui prolongé).
+    **Remarque** Il existe une exception à cette règle: quand vous utilisez des interactions chronométrées à titre d’aide à l’apprentissage et à l’exploration (par exemple, l’appui prolongé).
 
      
 
 -   Les descriptions appropriées et les signaux visuels influent très favorablement sur l’utilisation des interactions avancées.
 
-## <span id="related_topics"></span>Articles connexes
+## <a name="span-idrelatedtopicsspanrelated-articles"></a><span id="related_topics"></span>Articles connexes
 
 **Pour les développeurs (XAML)**
 * [Interactions tactiles](https://msdn.microsoft.com/library/windows/apps/mt185617)
@@ -173,11 +171,5 @@ En outre, nous vous encourageons vivement à tenir compte des recommandations su
  
 
 
-
-
-
-
-
-<!--HONumber=Sep16_HO3-->
 
 

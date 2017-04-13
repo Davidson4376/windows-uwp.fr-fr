@@ -1,7 +1,7 @@
 ---
 author: Jwmsft
-Description: "Découvrez comment naviguer dans une application de base à deux pages pair à pair de la plateforme Windows universelle (UWP)."
-title: "Navigation pair à pair entre deux pages"
+Description: "Découvrez comment naviguer dans une application de base à deuxpages pair à pair de la plateforme Windows universelle (UWP)."
+title: "Navigation pair à pair entre deuxpages"
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
@@ -11,19 +11,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 84e144e612567a977a6c4e1502719dabbc488329
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 7e1529d641920c93ce7914c39d38001c2cbdfd78
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="peer-to-peer-navigation-between-two-pages"></a>Navigation pair à pair entre deux pages
+# <a name="peer-to-peer-navigation-between-two-pages"></a>Navigation pair à pair entre deuxpages
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Découvrez comment naviguer dans une application de base à deux pages pair à pair de la plateforme Windows universelle (UWP).
+Découvrez comment naviguer dans une application de base à deuxpages pair à pair de la plateforme Windows universelle (UWP).
 
 ![Exemple de navigation pair à pair sur deux pages](images/nav-peertopeer-2page.png)
 
@@ -147,10 +144,10 @@ Apportez les modifications suivantes à l’interface utilisateur de Page2.xaml.
                  HorizontalAlignment="Center"/>
 ```
 
-Ajoutez le code suivant à la classe `Page2` dans le fichier code-behind Page2.xaml pour gérer l’événement `Click` de l’élément [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) que vous avez ajouté précédemment. Ici, nous accédons à Page1.xaml.
+Ajoutez le code suivant à la classe `Page2` dans le fichier code-behindPage2.xaml pour gérer l’événement `Click` de l’élément [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) que vous avez ajouté précédemment. Ici, nous accédons à Page1.xaml.
 
 > [!NOTE]
-> Pour les projets C++, vous devez ajouter une directive `#include` dans le fichier d’en-tête de chaque page faisant référence à une autre page. Pour l’exemple de navigation entre les pages présenté ici, le fichier page1.xaml.h contient `#include "Page2.xaml.h"`, et à son tour, page2.xaml.h contient `#include "Page1.xaml.h"`.
+> Pour les projetsC++, vous devez ajouter une directive `#include` dans le fichier d’en-tête de chaque page faisant référence à une autre page. Pour l’exemple de navigation entre les pages présenté ici, le fichier page1.xaml.h contient `#include "Page2.xaml.h"`, et à son tour, page2.xaml.h contient `#include "Page1.xaml.h"`.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -248,7 +245,7 @@ Ici, nous spécifions `Page1` dans l’appel à [**Frame.Navigate**](https://msd
 
 **Remarque** Le code utilise ici la valeur de retour de [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) pour lever une exception d’application en cas d’échec de la navigation vers la fenêtre initiale de l’application. Quand **Navigate** retourne **true**, la navigation a lieu.
 
-À présent, générez et exécutez l’application. Cliquez sur le lien « Click to go to page 2 ». La deuxième page indiquant « Page 2 » en haut doit être chargée et affichée dans le cadre.
+À présent, générez et exécutez l’application. Cliquez sur le lien «Click to go to page2». La deuxième page indiquant «Page2» en haut doit être chargée et affichée dans le cadre.
 
 ## <a name="frame-and-page-classes"></a>Classes Frame et Page
 
@@ -284,7 +281,7 @@ Ici, nous ajoutons une étiquette [**TextBlock**](https://msdn.microsoft.com/lib
 </StackPanel>
 ```
 
-Dans le gestionnaire d’événements `HyperlinkButton_Click` du fichier code-behind Page1.xaml, ajoutez un paramètre faisant référence à la propriété `Text` de l’élément `name` associé à [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) à la méthode `Navigate`.
+Dans le gestionnaire d’événements `HyperlinkButton_Click` du fichier code-behindPage1.xaml, ajoutez un paramètre faisant référence à la propriété `Text` de l’élément `name` associé à [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) à la méthode `Navigate`.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -371,7 +368,6 @@ Page1::Page1()
  
 
  
-
 
 
 

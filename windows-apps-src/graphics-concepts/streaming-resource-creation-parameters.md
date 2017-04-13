@@ -2,21 +2,17 @@
 title: "Paramètres de création de ressources de diffusion en continu"
 description: "Il existe certaines contraintes quant au type de ressources Direct3D que vous pouvez créer en tant que ressource de diffusion en continu."
 ms.assetid: 6FC5AD93-6F47-479E-947C-895C99B427BC
-keywords:
-- "Paramètres de création de ressources de diffusion en continu"
+keywords: "Paramètres de création de ressources de diffusion en continu"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 73f844071fe1349db3a61854fb09e87eb73c9082
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8704705edb0ec516a03c13a4bf240fd00f31e44b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="streaming-resource-creation-parameters"></a>Paramètres de création de ressources de diffusion en continu
 
 
@@ -25,22 +21,22 @@ Il existe certaines contraintes quant au type de ressources Direct3D que vous po
 <span id="Supported-Resource-Type"></span><span id="supported-resource-type"></span><span id="SUPPORTED-RESOURCE-TYPE"></span>**Type de ressource pris en charge**  
 Texture2D\ [Array\] (y compris TextureCube\[Array\], qui est une variante de Texture2D\[Array\]) ou d'une mémoire tampon.
 
-**NON pris en charge : **Texture1D\ [Array\].
+**NON pris en charge: **Texture1D\ [Array\].
 
 <span id="Supported-Resource-Usage"></span><span id="supported-resource-usage"></span><span id="SUPPORTED-RESOURCE-USAGE"></span>**Utilisation des ressources prises en charge**  
 Utilisation par défaut.
 
-**NON pris en charge : **dynamique, intermédiaire ou non modifiable.
+**NON pris en charge: **dynamique, intermédiaire ou non modifiable.
 
 <span id="Supported-Resource-Misc-Flags"></span><span id="supported-resource-misc-flags"></span><span id="SUPPORTED-RESOURCE-MISC-FLAGS"></span>**Indicateurs de diverses ressources prises en charge**  
-Sous forme de vignettes ; autrement dit, diffusion en continu (par définition), cube de texture, dessiner des arguments indirects, la mémoire tampon autorise les vues brutes, mémoire tampon structurée, limitation de ressource ou générer des mips.
+Sous forme de vignettes; autrement dit, diffusion en continu (par définition), cube de texture, dessiner des arguments indirects, la mémoire tampon autorise les vues brutes, mémoire tampon structurée, limitation de ressource ou générer des mips.
 
-**NON pris en charge : **partagé, mutex à clé partagée, compatible avec GDI, descripteur NT partagé, contenu restreint, limiter les ressources partagées, limiter le pilote des ressources partagées, protégés ou pool de vignettes.
+**NON pris en charge: **partagé, mutex à clé partagée, compatible avec GDI, descripteur NT partagé, contenu restreint, limiter les ressources partagées, limiter le pilote des ressources partagées, protégés ou pool de vignettes.
 
 <span id="Supported-Bind-Flags"></span><span id="supported-bind-flags"></span><span id="SUPPORTED-BIND-FLAGS"></span>**Indicateurs de liaison pris en charge**  
 Liaison en tant que ressource de nuanceur, cible de rendu, gabarit de profondeur ou accès sans ordre.
 
-**NON pris en charge : **Liaison en tant que mémoire tampon constante, mémoire tampon de vertex (la liaison en tant que tampon sous forme de vignettes SRV/UAV/RTV est prise en charge), mémoire tampon d'index, sortie de flux, décodeur ou encodeur vidéo.
+**NON pris en charge: **Liaison en tant que mémoire tampon constante, mémoire tampon de vertex (la liaison en tant que tampon sous forme de vignettes SRV/UAV/RTV est prise en charge), mémoire tampon d'index, sortie de flux, décodeur ou encodeur vidéo.
 
 <span id="Supported-Formats"></span><span id="supported-formats"></span><span id="SUPPORTED-FORMATS"></span>**Formats pris en charge**  
 Tous les formats disponibles pour la configuration indiquée, qu'elle soit sous forme de vignettes ou non, à quelques exceptions près.
@@ -85,7 +81,6 @@ Le contenu initial de la mémoire du pool de vignettes n’est pas défini.
  
 
  
-
 
 
 

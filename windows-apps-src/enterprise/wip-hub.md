@@ -1,6 +1,6 @@
 ---
 author: normesta
-Description: "Il s’agit d’une rubrique de hub destinée aux développeurs qui aborde de manière exhaustive la relation de la protection des informations Windows (WIP) avec les fichiers, les mémoires tampons, le Presse-papiers, la mise en réseau, les tâches en arrière-plan et la protection des données verrouillées."
+Description: "Il s’agit d’une rubrique de hub destinée aux développeurs abordant de manière exhaustive la relation de la Protection des informations Windows avec les fichiers, les mémoires tampons, le Presse-papiers, la mise en réseau, les tâches en arrière-plan et la protection des données verrouillées."
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -10,23 +10,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, Protection des informations Windows, données d’entreprise, protection des données d’entreprise, PDE, applications compatibles"
+keywords: "Windows10, uwp, Protection des informations Windows, données d’entreprise, protection des données d’entreprise, PDE, applications compatibles"
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: b9bde047a70d31105680361d34cf71b33f708f93
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f624d20d33f560f151b40bd1a405711d697fd4cb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-information-protection-wip"></a>Protection des informations Windows (WIP)
 
-__Remarque__ La stratégie de Protection des informations Windows peut être appliquée à Windows 10, version 1607.
+__Remarque__ La stratégie de Protection des informations Windows peut être appliquée à Windows10, version1607.
 
 Cette stratégie protège les données qui appartiennent à une organisation en appliquant des stratégies qui sont définies par l’organisation. Si votre application est incluse dans ces stratégies, toutes les données générées par votre application sont soumises aux restrictions de stratégie. Cette rubrique vous aide à créer des applications qui appliquent ces stratégies plus en douceur sans avoir d’impact sur les données personnelles de l’utilisateur.
 <iframe src="https://channel9.msdn.com/Blogs/Windows-Development-for-the-Enterprise/Securing-Enterprise-Data-with-Windows-Information-Protection/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
-## <a name="first-what-is-wip"></a>Tout d’abord, qu’est-ce que la Protection des informations Windows ?
+## <a name="first-what-is-wip"></a>Tout d’abord, qu’est-ce que la Protection des informations Windows?
 
 WIP est un ensemble de fonctionnalités prenant en charge la gestion des appareils mobiles (GPM) et la gestion des applications mobiles (GAM) de l’organisation sur les postes de travail, les ordinateurs de bureau, les tablettes et les téléphones.
 
@@ -34,7 +31,7 @@ Avec la gestion des appareils mobiles, WIP permet à l’organisation de mieux c
 
 À l’aide de la gestion des appareils mobiles et de la gestion des applications mobiles, les administrateurs peuvent identifier les applications autorisées à accéder aux fichiers appartenant à l’organisation et indiquer si les utilisateurs peuvent copier des données à partir de ces fichiers pour les coller ensuite dans des documents personnels.
 
-Voici le principe : Les utilisateurs inscrivent leurs appareils dans le système de gestion des appareils mobiles (GPM) de l’organisation. Un administrateur de l’organisation de gestion utilise Microsoft Intune ou System Center Configuration Manager (SCCM) pour définir, puis déployer une stratégie sur les appareils inscrits.
+Voici le principe: Les utilisateurs inscrivent leurs appareils dans le système de gestion des appareils mobiles (GPM) de l’organisation. Un administrateur de l’organisation de gestion utilise Microsoft Intune ou System Center Configuration Manager (SCCM) pour définir, puis déployer une stratégie sur les appareils inscrits.
 
 Si les utilisateurs ne sont pas obligés d’inscrire leurs appareils, les administrateurs définissent et déploient une stratégie pour des applications spécifiques dans le système de gestion des applications mobiles. Quand les utilisateurs installent l’une de ces applications, la stratégie associée est implémentée.
 
@@ -62,15 +59,15 @@ Rendez votre application compatible si vous voulez gérer de manière fluide l�
 
 Par exemple, si la stratégie permet aux utilisateurs de coller des données d’entreprise dans un document personnel, vous pouvez empêcher les utilisateurs d’avoir à répondre à une boîte de dialogue de consentement avant le collage des données. De même, vous pouvez présenter des boîtes de dialogue informatives personnalisées en réponse à ces types d’événements.
 
-Si vous êtes prêt à rendre votre application compatible, reportez-vous à l’un de ces guides :
+Si vous êtes prêt à rendre votre application compatible, reportez-vous à l’un de ces guides:
 
 **Pour les applications de plateforme Windows universelle (UWP) générées à l’aide de C#**
 
-[Créer une application compatible qui utilise des données d’entreprise et personnelles](wip-dev-guide.md)
+[Guide du développeur sur la Protection des informations Windows](wip-dev-guide.md).
 
 **Pour les applications de bureau que vous créez à l’aide de C++**
 
-[Créer une application compatible qui utilise des données d’entreprise et personnelles (C++)](http://go.microsoft.com/fwlink/?LinkId=822192)
+[Guide du développeur sur la Protection des informations Windows (C++)](http://go.microsoft.com/fwlink/?LinkId=822192).
 
 
 ## <a name="create-non-enlightened-enterprise-app"></a>Créer une application non compatible qui utilise des données d’entreprise
@@ -100,4 +97,3 @@ Si vous prévoyez d’inclure votre application dans une stratégie de gestion d
 
 
  
-

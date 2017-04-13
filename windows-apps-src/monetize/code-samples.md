@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, annonces, publicité, exemples de code"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ae6e806f8aead387afe55dec2d70c04b7fc21284
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows10, uwp, annonces, publicité, exemples de code"
+ms.openlocfilehash: cb10a81c2fac1a14ae6e3a7eec20953d4267164d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="code-samples"></a>Exemples de code
 
 
@@ -23,7 +20,7 @@ ms.lasthandoff: 02/07/2017
 
 Cette section propose des exemples qui montrent comment utiliser les propriétés, méthodes et événements des classes [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) et [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) dans les bibliothèques de publicités Microsoft afin de cibler des utilisateurs, actualiser manuellement les publicités et gérer les événements. Pour passer en revue les procédures pas à pas d’introduction qui montrent comment ajouter ces contrôles à votre application, voir [Procédures pas à pas pour développeurs](developer-walkthroughs.md).
 
-Pour obtenir des exemples complets de projets qui montrent comment ajouter des bannières et des spots vidéo publicitaires à des applications HTML/JavaScript et XAML en C# et C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
+Pour obtenir des exemples complets de projets qui montrent comment ajouter des bannières et des spots publicitaires à des applications HTML/JavaScript et XAML en C# et C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
 ## <a name="in-this-section"></a>Dans cette section
 
@@ -45,4 +42,3 @@ Pour obtenir des exemples complets de projets qui montrent comment ajouter des b
  
 
  
-

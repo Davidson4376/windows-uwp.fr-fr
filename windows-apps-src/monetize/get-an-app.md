@@ -1,34 +1,31 @@
 ---
 author: mcleanbyron
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
-description: "Utilisez cette méthode de l’API de soumission du Windows Store pour récupérer des informations sur une application spécifique inscrite dans votre compte du Centre de développement Windows."
-title: "Obtenir une application à l’aide de l’API de soumission du Windows Store"
+description: "Utilisez cette méthode de l’API de soumission du Windows Store pour récupérer des informations sur une application spécifique inscrite dans votre compte du Centre de développement Windows."
+title: Obtenir une application
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, API de soumission du Windows Store, application"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 176e3b584137e503c4adfe2eb612d9329226baac
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp, API de soumission du Windows Store, application
+ms.openlocfilehash: 6087bf65ac297b12f92a9082db4e6a12e93130ef
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-an-app-using-the-windows-store-submission-api"></a>Obtenir une application à l’aide de l’API de soumission du Windows Store
-
+# <a name="get-an-app"></a>Obtenir une application
 
 
 
-Utilisez cette méthode de l’API de soumission du Windows Store pour récupérer des informations sur une application spécifique inscrite dans votre compte du Centre de développement Windows.
+
+Utilisez cette méthode de l’API de soumission du Windows Store pour récupérer des informations sur une application spécifique inscrite dans votre compte du Centre de développement Windows.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
@@ -114,4 +111,3 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 * [Obtenir toutes les applications](get-all-apps.md)
 * [Obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md)
 * [Obtenir des extensions pour une application](get-add-ons-for-an-app.md)
-
