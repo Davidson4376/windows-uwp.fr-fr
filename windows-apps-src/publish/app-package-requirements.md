@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp
 ms.openlocfilehash: 59660de0adb6ff1247ea90f0ace3bcca35f19d1a
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-package-requirements"></a>Exigences relatives au package de l’application
 
 Suivez ces instructions pour préparer les packages de votre application et les envoyer au Windows Store.
@@ -62,7 +59,7 @@ Les ensembles d’applications utilisent un manifeste différent. Pour obtenir l
 > **Conseil**  Veillez à exécuter le [Kit de certification des applications Windows](https://msdn.microsoft.com/library/windows/apps/mt186449) avant de soumettre vos packages. Vous pouvez ainsi déterminer si votre manifeste présente des problèmes susceptibles de faire échouer la certification ou la soumission.
 
 
-Si votre application possède plusieurs packages, les éléments suivants du manifeste de l’application doivent être identiques dans chaque package (par système d’exploitation ciblé) :
+Si votre application possède plusieurs packages, les éléments suivants du manifeste de l’application doivent être identiques dans chaque package (par système d’exploitation ciblé):
 
 -   [**Package/Capacités**](https://msdn.microsoft.com/library/windows/apps/br211422)
 -   [**Package/Dépendances**](https://msdn.microsoft.com/library/windows/apps/br211428)
@@ -74,7 +71,7 @@ Les packages de votre application doivent être conformes aux exigences ci-aprè
 
 | Propriété du package de l’application | Exigence                                                          |
 |----------------------|----------------------------------------------------------------------|
-| Taille de package         | .appxbundle : 25 Go maximum par offre groupée <br>Packages .appx ciblant Windows 10 : 25 Go maximum par package<br>Packages .appx ciblant Windows 8.1 : 8 Go maximum par package <br> Packages .appx ciblant Windows 8 : 2 Go maximum par package <br> Packages .appx ciblant Windows Phone 8.1 : 4 Go maximum par package <br> Packages .xap : 1 Go maximum par package                                                                           |
+| Taille de package         | .appxbundle: 25Go maximum par offre groupée <br>Packages .appx ciblant Windows10: 25Go maximum par package<br>Packages .appx ciblant Windows8.1: 8Go maximum par package <br> Packages .appx ciblant Windows 8 : 2 Go maximum par package <br> Packages .appx ciblant Windows Phone 8.1 : 4 Go maximum par package <br> Packages .xap : 1 Go maximum par package                                                                           |
 | Hachages de mappage de bloc     | Algorithme SHA2-256                                                   |
  
 
@@ -85,7 +82,6 @@ Le fichier StoreManifest.xml est un fichier de configuration facultatif qui peut
  
 
  
-
 
 
 

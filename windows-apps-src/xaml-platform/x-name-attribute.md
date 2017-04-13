@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a80a5cdeae5adc2af59072400aa42428eac28431
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 9fa472869ed3b81a9f688652a487b1b93986b777
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xname-attribute"></a>Attribut x:Name
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Identifie de manière unique les éléments objet pour l’accès à l’objet instancié depuis le code-behind ou le code général. Une fois appliqué à un modèle de programmation de stockage, **x:Name** peut être considéré comme équivalent à la variable qui contient une référence d’objet, telle que renvoyée par un constructeur.
 
@@ -36,7 +33,7 @@ Identifie de manière unique les éléments objet pour l’accès à l’objet i
 
 ##  <a name="xamlname-grammar"></a>Grammaire XamlName
 
-Les points suivants représentent la grammaire normative qui régit une chaîne servant de clé dans cette implémentation XAML :
+Les points suivants représentent la grammaire normative qui régit une chaîne servant de clé dans cette implémentation XAML:
 
 ``` syntax
 XamlName ::= NameStartChar (NameChar)*
@@ -74,5 +71,4 @@ Si **Name** est disponible en tant que propriété définissable sur un élémen
 ### <a name="xname-and-xkey"></a>x:Name et x:Key
 
 **x:Name** peut être appliqué en tant qu’attribut à des éléments dans un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) pour agir en tant que substitut de l’[attribut x:Key](x-key-attribute.md). (C’est une règle que tous les éléments d’un **ResourceDictionary** doivent avoir un attribut x:Key.) Cela est courant dans le cas des [Animations dans une table de montage séquentiel](https://msdn.microsoft.com/library/windows/apps/mt187354). Pour plus d’informations, voir la section correspondante de [Références aux ressources ResourceDictionary et XAML](https://msdn.microsoft.com/library/windows/apps/mt187273).
-
 

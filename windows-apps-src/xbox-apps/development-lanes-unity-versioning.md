@@ -2,13 +2,11 @@
 author: JordanEllis6809
 title: 'Unity: Gestion de version de votre projet UWP'
 description: Version de votre projet UWP Unity
-translationtype: Human Translation
-ms.sourcegitcommit: a1b759b00e35092323b8c4634907dd5c0fffa68c
 ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# Unity: Gestion de version de votre projet UWP
+# <a name="unity-version-control-your-uwp-project"></a>Unity: Gestion de version de votre projet UWP
 
 Vous n’avez pas encore créé votre jeu Unity pour Xbox à l’aide de la plateforme Windows universelle (UWP)?  Commencez par lire [Intégration de jeux Unity dans UWP sur Xbox](development-lanes-unity.md).
 
@@ -46,7 +44,7 @@ Nous allons sélectionner quelques fichiers et dossiers différents dans le doss
 
 ![Répertoire des builds UWP](images/uwp-build-directory.png)  
 
-## Dossiers  
+## <a name="folders"></a>Dossiers  
 
 `Assets` | ***Include*** | Contient les images du Windows Store.  
 `Data`   | ***Ignore*** | Où Unity compile votre projet (scènes, nuanceurs, scripts, préfabriqués, etc.).  
@@ -54,7 +52,7 @@ Nous allons sélectionner quelques fichiers et dossiers différents dans le doss
 `Properties` | ***Include*** | Contient des paramètres plus avancés qui peuvent être modifiés par le développeur.  
 `Unprocessed` | ***Ignore*** | Contient les fichiers Unity `.dll` et `.pdb`.  
 
-## Fichiers  
+## <a name="files"></a>Fichiers  
 
 `App.cs` | ***Incluent*** | Point d’entrée de votre application UWP. Peut être modifié et étendu avec d’autres fichiers sources.  
 `Package.appxmanifest` | ***Include*** | Manifeste du package pour votre AppX.  
@@ -62,7 +60,7 @@ Nous allons sélectionner quelques fichiers et dossiers différents dans le doss
 `ScrapyardPhoenix.csproj` | ***Include*** | Décrit la cible de votre build UWP. Si vous ajoutez des dépendances supplémentaires à votre projet UWP, ce fichier `*.csproj` contiendra ces informations.  
 `ScrapyardPhoenix.csproj.user` | ***Ignore*** | Ce fichier contient des informations sur l’utilisateur local.
 
-## Fichier .gitignore obtenu
+## <a name="resulting-gitignore"></a>Fichier .gitignore obtenu
 
     ##################################################################
     # The original .gitignore file can be found at
@@ -88,7 +86,7 @@ Et voilà, maintenant vos coéquipiers seront synchronisés avec le projet UWP q
 
 Quelques exemples supplémentaires de gestion de version du dossier UWP sont disponibles [ici](https://bitbucket.org/Unity-Technologies/windowsstoreappssamples/overview).
 
-## Ajout de dépendances à votre application UWP
+## <a name="adding-dependencies-to-your-uwp-app"></a>Ajout de dépendances à votre application UWP
 
 Ajoutez des dépendances à des DLL et des WINMD en les plaçant dans votre dossier **Unity Assets** sous un dossier **Plugins**, puis sélectionnez-les et définissez correctement les paramètres de leur plateforme cible dans l’inspecteur.
 
@@ -96,12 +94,6 @@ Ajoutez des dépendances à des DLL et des WINMD en les plaçant dans votre doss
 
 ***ScrapyardPhoenix (Windows universel)*** est le projet auquel vous ajoutez une référence, par exemple, le Kit SDK XboxLive.
 
-## Voir également
+## <a name="see-also"></a>Voir également
 - [Intégration de jeux existants dansXbox](development-lanes-landing.md)
 - [UWP sur XboxOne](index.md)
-
-
-
-<!--HONumber=Aug16_HO4-->
-
-

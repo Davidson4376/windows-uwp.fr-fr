@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ab2c2307376f3fad8cd404f7ddf8056f1ef2e8d3
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: a69ad9bdff70dc04f9bdf9eb4f5117a22a005969
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>Mappages .NET Framework des types Windows Runtime
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Le tableau suivant répertorie les mappages que .NET Framework effectue entre les types de plateforme Windows universelle (UWP) et les types .NET Framework. Dans une application Windows universelle écrite en code managé, IntelliSense affiche le type .NET Framework plutôt que le type UWP. Par exemple, si une méthode Windows Runtime prend un paramètre de type IVector&lt;string&gt;, IntelliSense affiche un paramètre de type IList&lt;string&gt;. De même, dans un composant Windows Runtime écrit en code managé, vous devez utiliser le type .NET Framework dans les signatures de membre. Lorsque l’[outil d’exportation de métadonnées Windows Runtime (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) génère votre composant Windows Runtime, le type .NET Framework devient le type UWP correspondant.
 
@@ -28,9 +25,7 @@ Le tableau suivant répertorie les mappages que .NET Framework effectue entre le
 
 La plupart des types qui présentent le même nom d’espace de noms et le même nom de type dans UWP et .NET Framework sont des structures (ou des types associés à des structures, tels que les énumérations). Dans UWP, les structures ont pour seuls membres des champs et requièrent des types d’assistance, masqués par .NET Framework. Les versions de .NET Framework de ces structures présentent des propriétés et des méthodes qui fournissent les fonctionnalités des types d’assistance masqués.
 
-Pour plus d’informations sur la façon dont .NET Framework utilise les métadonnées Windows pour simplifier la programmation avec Windows Runtime, téléchargez le livre blanc [CLR et Windows Runtime](http://download.microsoft.com/download/2/3/E/23E1E9BE-41AA-4716-A7B3-82040271394C/CLR%20and%20the%20Windows%20Runtime.docx) à partir du Centre de développement Windows.
-
-Tableau 1 : types UWP correspondants aux types .NET Framework avec un nom ou un espace de noms différent.
+Tableau 1: Types UWP correspondants aux types .NET Framework avec un nom ou un espace de noms différent.
 
 | Type/espace de noms UWP                                            | Type/espace de noms .NET Framework                                          | Assembly .NET Framework                           |
 |---------------------------------------------------------------|------------------------------------------------------------------------|---------------------------------------------------|
@@ -90,4 +85,3 @@ Tableau 2 : types UWP correspondants aux types .NET Framework avec un nom et un 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Création de composants Windows Runtime en C# et Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-

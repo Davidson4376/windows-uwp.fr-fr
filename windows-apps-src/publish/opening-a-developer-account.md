@@ -8,12 +8,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 26329304df64689ea7938d4fc838bd730696e4a2
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 6b7f11330c5849d0df4e54c10a71c2a70fc77a08
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="opening-a-developer-account"></a>Ouverture d’un compte de développeur
 
@@ -34,7 +32,7 @@ Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un co
 
    Si vous vous inscrivez en tant qu’entreprise, vous devez également entrer le nom, l’adresse de messagerie et le numéro de téléphone de la personne qui approuvera le compte de votre société.
 
-5.  Pour les comptes individuels, entrez le **nom complet de l’éditeur** que vous souhaitez utiliser (50 caractères maximum). Choisissez-le soigneusement, car les clients pourront le voir quand ils navigueront et en viendront à connaître vos applications par ce nom.
+5.  Pour les comptes individuels, entrez le **nom complet de l’éditeur** que vous souhaitez utiliser (50caractères maximum). Choisissez-le soigneusement, car les clients pourront le voir quand ils navigueront et en viendront à connaître vos applications par ce nom.
 
     Pour les comptes d’entreprise, entrez le **nom d’enregistrement** de votre société (le nom d’entreprise ou le nom commercial enregistré pour votre société). Il sera utilisé comme nom complet de l’éditeur.
     
@@ -56,9 +54,9 @@ Une fois le processus d’inscription terminé, votre compte est soumis au proce
 
 Lorsque vous créez un compte d’entreprise, suivez ces recommandations si plusieurs utilisateurs doivent accéder au compte à l’aide du compte Microsoft ayant ouvert ce dernier. 
 
-> **Important** Pour autoriser à plusieurs utilisateurs l’accès à votre compte de Centre de développement, nous vous recommandons d’utiliser Azure Active Directory afin d’attribuer des rôles aux utilisateurs individuels ; ces derniers peuvent accéder au compte en se connectant à l’aide de leurs informations d’identification Azure AD. Pour plus d’informations, voir [Gérer les utilisateurs de compte](manage-account-users.md).
+> **Important** Pour autoriser à plusieurs utilisateurs l’accès à votre compte de Centre de développement, nous vous recommandons d’utiliser Azure Active Directory afin d’attribuer des rôles aux utilisateurs individuels; ces derniers peuvent accéder au compte en se connectant à l’aide de leurs informations d’identification AzureAD. Pour plus d’informations, voir [Gérer les utilisateurs de compte](manage-account-users.md).
 
--   Créez votre compte Microsoft en utilisant une adresse de messagerie appartenant au domaine de votre entreprise, et non à un individu unique (par exemple, windowsapps@fabrikam.com).
+-   Créez votre compte Microsoft en utilisant une adresse de messagerie appartenant au domaine de votre entreprise, et non à un individu unique (par exemple, windowsapps@fabrikam.com.
 -   Limitez l’accès à ce compte Microsoft au plus petit nombre possible de développeurs.
 -   Configurez une liste de distribution de courrier électronique d’entreprise qui comprend toutes les personnes qui doivent accéder au compte de développeur, puis ajoutez cette adresse de messagerie aux informations de sécurité. Cela permet à tous les employés de la liste de recevoir des codes de sécurité quand cela est nécessaire, et de gérer les informations de sécurité de votre compte Microsoft. Si la configuration d’une liste de distribution n’est pas envisageable, le propriétaire du compte de messagerie individuel doit être disponible pour accéder au code de sécurité et le partager quand le système le demande (par exemple, quand de nouvelles informations de sécurité sont ajoutées au compte, ou quand un nouvel appareil accède au compte).
 -   Ajoutez un numéro de téléphone d’entreprise direct (sans numéro de poste), accessible aux membres clés de l’équipe.
@@ -90,6 +88,5 @@ Lorsque vous fermez votre compte, il est important que vous en compreniez les r�
 -   Même si votre application reste accessible aux clients l’ayant déjà achetée, la description de l’application sera supprimée du Store. Aucun nouveau client ne pourra l’acheter.
 -   Le nom de votre application deviendra potentiellement utilisable par un autre développeur.
 -   Si un solde provenant des ventes d’une précédente application vous est dû, ce solde vous sera réglé, même si la somme due n’atteint pas le seuil de paiement habituel.
-
 
 

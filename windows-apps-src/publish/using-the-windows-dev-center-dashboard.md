@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a4dfc6003c681bb0379f25d94bb144940467d15e
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: b0fedbbc881d3c9febac2a1486ec441e5d4719d1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="using-the-windows-dev-center-dashboard"></a>Utilisation du tableau de bord du Centre de développement Windows
 
 
@@ -23,7 +20,7 @@ Le tableau de bord du Centre de développement Windows vous permet de gérer et 
 
 > **Remarque**   Vous devez disposer d’un [compte de développeur](http://go.microsoft.com/fwlink/p/?LinkId=615100) pour accéder au tableau de bord du Centre de développement Windows.
 
-Lorsque vous [créez une soumission pour votre application](app-submissions.md) (pour la première fois ou en tant que mise à jour), vous pouvez [charger des packages d’application](upload-app-packages.md) pour tout système d’exploitation pris en charge. Le Windows Store propose automatiquement aux clients le package qui fonctionne le mieux pour eux. Vous pouvez utiliser les mêmes [descriptions du Windows Store](create-app-store-listings.md) et [illustrations](app-screenshots-and-images.md) pour l’ensemble des systèmes d’exploitation pris en charge par votre application, ou vous pouvez [personnaliser la description du Windows Store pour des versions spécifiques du système d’exploitation](create-platform-specific-Store-listings.md).
+Lorsque vous [créez une soumission pour votre application](app-submissions.md) (pour la première fois ou en tant que mise à jour), vous pouvez [charger des packages d’application](upload-app-packages.md) pour tout système d’exploitation pris en charge. Le Windows Store propose automatiquement aux clients le package qui fonctionne le mieux pour eux. Vous pouvez utiliser les mêmes [descriptions du Windows Store](create-app-store-listings.md) et [illustrations](app-screenshots-and-images.md) pour l’ensemble des systèmes d’exploitation pris en charge par votre application, ou vous pouvez [personnaliser la description du WindowsStore pour des versions spécifiques du système d’exploitation](create-platform-specific-Store-listings.md).
 
 Les modules complémentaires (produits in-app) sont gérés indépendamment de la soumission de l’application. Vous disposez ainsi d’une plus grande souplesse et de la possibilité d’effectuer des modifications de manière indépendante. Pour plus d’informations, consultez la section [Soumissions de modules complémentaires](add-on-submissions.md).
 
@@ -38,7 +35,6 @@ Les applications qui étaient liées pour partager l'identité dans les versions
  
 
  
-
 
 
 

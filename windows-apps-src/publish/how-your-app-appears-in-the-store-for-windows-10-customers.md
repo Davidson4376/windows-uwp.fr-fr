@@ -1,41 +1,38 @@
 ---
 author: jnHs
-Description: "Si vous avez déjà publié des applications pour Windows ou Windows Phone sur le Windows Store, ces applications sont également disponibles pour les clients disposant d’appareils Windows 10."
-title: "Apparence de votre application dans le Windows Store pour les clients dotés de Windows 10"
+Description: "Si vous avez déjà publié des applications pour Windows ou Windows Phone sur le Store, elles sont également disponibles pour les clients disposant d’appareils Windows 10."
+title: "Apparence de votre application dans le WindowsStore pour les clients dotés de Windows10"
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4a7c10d93a3145466007bfe4fac63422400a9830
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: ef76bf9a26336f89b1b1a93099dec56191823a2e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="how-your-app-appears-in-the-store-for-windows-10-customers"></a>Apparence de votre application dans le WindowsStore pour les clients dotés de Windows10
 
-# <a name="how-your-app-appears-in-the-store-for-windows-10-customers"></a>Apparence de votre application dans le Windows Store pour les clients dotés de Windows 10
 
+Si vous avez déjà publié des applications pour Windows ou Windows Phone sur le Store, elles sont également disponibles pour les clients disposant d’appareils Windows 10. Comme le mode de présentation et de classement des applications a été modifié dans le Store pour les clients exécutant Windows10, cette rubrique décrit ces changements.
 
-Si vous avez déjà publié des applications pour Windows ou Windows Phone sur le Windows Store, ces applications sont également disponibles pour les clients disposant d’appareils Windows 10. Comme le mode de présentation et de classement des applications a été modifié dans le Store pour les clients exécutant Windows 10, cette rubrique décrit ces changements.
-
-**Remarque**  Si vous voulez modifier certains détails, [créez une soumission](app-submissions.md), apportez vos modifications, puis soumettez la mise à jour au Windows Store.
+**Remarque**  Si vous voulez modifier certains détails, [créez une soumission](app-submissions.md), apportez vos modifications, puis soumettez la mise à jour au WindowsStore.
 
  
 
-## <a name="consideration-for-apps-that-shared-identity-in-the-windows-store-and-windows-phone-store"></a>Remarques relatives aux applications partageant des identités dans le Windows Store et dans le Windows Phone Store
+## <a name="apps-that-shared-identity-in-the-windows-store-and-windows-phone-store"></a>Applications partageant des identités dans le Windows Store et dans le Windows Phone Store
 
 
 Si vous avez utilisé le même nom réservé pour une application publiée dans les deux Stores (on parle également de partage d’identité de votre application), ces deux Stores considèrent qu’il existe une application, et non deux. Dans le tableau de bord, elles figurent sous la forme d’une seule application disponible en packages Windows et Windows Phone.
 
-La plupart des développeurs définissent des prix et d’autres propriétés identiques pour l’application et tout module complémentaire dans les deux Stores. Cependant, si certaines de ces valeurs diffèrent, vous devez absolument déterminer celles qui sont affichées pour les clients Windows 10.
+La plupart des développeurs définissent des prix et d’autres propriétés identiques pour l’application et tout module complémentaire dans les deux Stores. Cependant, si certaines de ces valeurs diffèrent, vous devez absolument déterminer celles qui sont affichées pour les clients Windows10.
 
 ### <a name="pricing"></a>Tarification
 Si vous avez choisi des prix de base différents pour votre application ou module complémentaire dans chaque Store, le prix de base proposé dans le Windows Store a la priorité.
 
-**Remarque**  Si vous avez défini une tarification par marché dans le Windows Phone Store, les prix personnalisés sont également présentés aux clients dotés de Windows 10.
+**Remarque**  Si vous avez défini une tarification par marché dans le Windows Phone Store, les prix personnalisés sont également présentés aux clients dotés de Windows10.
 
 ### <a name="free-trials"></a>Évaluation gratuite
 les options d’évaluation déféraient dans les deux anciens Stores. Ainsi, si vous les avez utilisés, il se peut que vous ayez choisi des options différentes pour chacun d’eux. L’option d’évaluation disponible pour les clients Windows 10 est déterminée d’après le tableau suivant.
@@ -47,13 +44,13 @@ les options d’évaluation déféraient dans les deux anciens Stores. Ainsi, si
 | La version d’évaluation n’expire jamais | La version d’évaluation n’expire jamais | La version d’évaluation n’expire jamais                                                           |
 | La version d’évaluation n’expire jamais | Aucune version d’évaluation gratuite       | Aucune version d’évaluation gratuite                                                                 |
 | Version d’évaluation à durée limitée  | La version d’évaluation n’expire jamais | Aucune version d’évaluation gratuite disponible pour Windows Phone 8.1 et versions antérieures ; dans les autres cas, version d’évaluation à durée limitée |
-| Version d’évaluation à durée limitée  | Aucune version d’évaluation gratuite       | Aucune version d’évaluation gratuite disponible pour Windows Phone 8.1 et versions antérieures ; dans les autres cas, version d’évaluation à durée limitée |
+| Version d’évaluation à durée limitée  | Aucune version d’évaluation gratuite       | Aucune version d’évaluation gratuite disponible pour Windows Phone 8.1 et versions antérieures; dans les autres cas, version d’évaluation à durée limitée |
 
 ### <a name="markets"></a>Marchés
 Votre application sera disponible pour les clients Windows 10, sur tous les marchés où vous avez déjà publié l’application. Cela s’applique même si vous avez sélectionné des marchés différents pour chaque Store.
 
 ### <a name="categories"></a>Catégories
-Si votre application s’affichait dans des catégories différentes dans les deux Stores, nous utilisons la catégorie du Windows Store comme nouvelle catégorie. Remarque : certaines catégories sont différentes dans le Store pour les clients Windows 10. Veillez donc à consulter le [tableau](#cat) ci-dessous.
+Si votre application s’affichait dans des catégories différentes dans les deux Stores, nous utilisons la catégorie du Windows Store comme nouvelle catégorie. Remarque : certaines catégories sont différentes dans le Store pour les clients Windows 10. Veillez donc à consulter le [tableau](#category-changes) ci-dessous.
 
 ### <a name="age-rating"></a>Évaluation de l’âge
 Si vous avez fourni des évaluations d’âge différentes, la plus stricte (l’âge le plus élevé) est utilisée.
@@ -65,16 +62,16 @@ Si votre application inclut une politique de confidentialité, c’est celle que
 Nous récupérons toutes les captures d’écran que vous avez soumises, en affichant la version appropriée de celles-ci aux clients Windows 10, selon le type d’appareil qu’ils utilisent. Dans les rares cas où les langues prises en charge par votre application diffèrent selon le Store, certains clients peuvent voir une capture d’écran dans une autre langue, choisie de manière à représenter au mieux l’expérience dont ils profiteront lorsqu’ils achèteront l’application.
 
 ### <a name="store-listings"></a>Descriptions dans le Windows Store
-Nous nous efforçons de choisir la description la plus appropriée dans le Windows Store pour les clients Windows 10 en fonction de leur langue. Lorsque des descriptions sont disponibles à partir de plusieurs sources dans la même langue, la description de votre application dans le Windows Store est présentée aux clients Windows 10. Dans les rares cas où vos langues prises en charge diffèrent pour chaque Store, certains clients peuvent voir une description de votre application Windows Phone dans le Windows Store, s’il s’agit de la seule description que vous avez fournie dans cette langue.
+Nous nous efforçons de choisir la description la plus appropriée dans le Windows Store pour les clients Windows10 en fonction de leur langue. Lorsque des descriptions sont disponibles à partir de plusieurs sources dans la même langue, la description de votre application dans le Windows Store est présentée aux clients Windows10. Dans les rares cas où vos langues prises en charge diffèrent pour chaque Store, certains clients peuvent voir une description de votre application Windows Phone dans le Windows Store, s’il s’agit de la seule description que vous avez fournie dans cette langue.
 
-Si vous voulez mettre à jour la description du Windows Store visible par vos clients Windows 10 afin de leur indiquer les expériences fonctionnant sur plusieurs appareils, vous pouvez le faire en mettant à jour la [description de votre application](create-app-store-listings.md). Les clients Windows 10 voient la description par défaut de votre application, mais vous pouvez également [créer des descriptions dans le Windows Store spécifiques à la plateforme](create-platform-specific-store-listings.md) si vous souhaitez que votre description diffère en fonction de la version du système d’exploitation.
+Si vous voulez mettre à jour la description du Windows Store visible par vos clients Windows 10 afin de leur indiquer les expériences fonctionnant sur plusieurs appareils, vous pouvez le faire en mettant à jour la [description de votre application](create-app-store-listings.md). Les clients Windows10 voient la description par défaut de votre application, mais vous pouvez également [créer des descriptions dans le Windows Store spécifiques à la plateforme](create-platform-specific-store-listings.md) si vous souhaitez que votre description diffère en fonction de la version du système d’exploitation.
 
 ## <a name="category-changes"></a>Changements de catégorie
 
 
 Dans de nombreux cas, les nouvelles [catégories et sous-catégories](category-and-subcategory-table.md) associées aux applications et aux jeux sont les mêmes que celles du Store pour les version de système d’exploitation antérieure. Toutefois, quelques modifications ont été apportées. Consultez le tableau ci-dessous pour comprendre comment votre application est classée dans le Store pour les clients Windows 10, en fonction de sa catégorie précédente.
 
-**Remarque**  Vous pouvez voir la nouvelle catégorie répertoriée dans le tableau de bord lorsque vous visualisez la [catégorie de votre application](category-and-subcategory-table.md) dans la page [Propriétés de l’application](enter-app-properties.md) d’une soumission. Les clients consultant le Windows Store sur des appareils Windows 10 voient votre application dans la nouvelle catégorie. En revanche, les clients consultant le Store à partir d’un système d’exploitation antérieur continuent de voir l’application dans sa catégorie d’origine.
+**Remarque**  Vous pouvez voir la nouvelle catégorie répertoriée dans le tableau de bord lorsque vous visualisez la [catégorie de votre application](category-and-subcategory-table.md) dans la page [Propriétés de l’application](enter-app-properties.md) d’une soumission. Les clients consultant le WindowsStore sur des appareils Windows10 voient votre application dans la nouvelle catégorie. En revanche, les clients consultant le Store à partir d’un système d’exploitation antérieur continuent de voir l’application dans sa catégorie d’origine.
 
 
 **Changements de catégorie pour les applications Windows Phone :**
@@ -109,7 +106,7 @@ Dans de nombreux cas, les nouvelles [catégories et sous-catégories](category-a
 
  
 
-**Changements de catégorie pour les applications Windows 8 :**
+**Changements de catégorie pour les applications Windows 8:**
 
 | Catégorie précédente           | Nouvelle catégorie                         |
 |-----------------------------|--------------------------------------|
@@ -126,4 +123,3 @@ Dans de nombreux cas, les nouvelles [catégories et sous-catégories](category-a
 | Jeux &gt; Famille           | Jeux &gt; Famille + enfants             |
 | Jeux &gt; Puzzles           | Jeux &gt; Puzzles + jeux d’esprit           |
 | Jeux &gt; Course           | Jeux &gt; Course + vol           |
-

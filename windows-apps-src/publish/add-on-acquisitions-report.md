@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 189b15728fd5013a1f976803ffb0e55f57e95142
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 1c2001e93fd06cc93fa5cfe9d2a10a029e13c82d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="add-on-acquisitions-report"></a>Rapport sur les acquisitions de modules complémentaires
 
 
@@ -30,9 +27,9 @@ Dans ce rapport, une acquisition de module complémentaire signifie qu’un clie
 
 Dans la zone supérieure de la page, vous pouvez développer l’option **Appliquer les filtres** pour filtrer toutes les données de cette page par plage de dates et/ou par type d’appareil. Vous pouvez également filtrer les données de façon à afficher uniquement celles relatives à un module complémentaire spécifique.
 
--   **Date** : la valeur par défaut de ce filtre est **30 derniers jours**, mais vous pouvez étendre cette période aux **12 derniers mois**.
--   **Module complémentaire** : Le filtre par défaut est **Tous les modules complémentaires**. Si vous souhaitez afficher les données d’acquisition pour l’un de vos modules complémentaires uniquement, vous pouvez en choisir un ici.
--   **Type d’appareil** : le paramètre par défaut est **Tous les appareils**. Si vous souhaitez afficher les données d’acquisitions de modules complémentaires relatives à un certain type d’appareil uniquement, vous pouvez en choisir un ici.
+-   **Date**: la valeur par défaut de ce filtre est **30derniers jours**, mais vous pouvez étendre cette période aux **12derniers mois**.
+-   **Module complémentaire**: Le filtre par défaut est **Tous les modules complémentaires**. Si vous souhaitez afficher les données d’acquisition pour l’un de vos modules complémentaires uniquement, vous pouvez en choisir un ici.
+-   **Type d’appareil**: le paramètre par défaut est **Tous les appareils**. Si vous souhaitez afficher les données d’acquisitions de modules complémentaires relatives à un certain type d’appareil uniquement, vous pouvez en choisir un ici.
 
 Les informations figurant dans les graphiques répertoriés ci-après correspondent à la période sélectionnée dans la section **Appliquer les filtres**.
 
@@ -70,4 +67,3 @@ Le graphique **Version du système d'exploitation** présente le nombre total d'
  
 
  
-

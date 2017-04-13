@@ -1,22 +1,19 @@
 ---
 author: jnHs
-Description: "La section Descriptions dans le Windows Store du processus de soumission d’application vous permet de définir le texte et les images visibles par les clients dans la description de votre application dans le Windows Store."
-title: "Créer des annonces d’application dans le Windows Store"
+Description: "La section Descriptions dans le Windows Store  du processus de soumission d’application vous permet de définir le texte et les images visibles par les clients dans la description de votre application dans le Windows Store."
+title: "Créer des annonces d’application dans le WindowsStore"
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dcce4d53dd095c634f893d40f87eaf69cf546f1d
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 84b00674e06433625010a976f7237b26ea062d7c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="create-app-store-listings"></a>Créer des annonces d’application dans le Windows Store
+# <a name="create-app-store-listings"></a>Créer des annonces d’application dans le WindowsStore
 
 
 La section **Descriptions dans le Windows Store** du [processus de soumission d’application](app-submissions.md) vous permet de définir le texte et les [images](app-screenshots-and-images.md) qui seront visibles par les clients dans la description de votre application dans le Windows Store.
@@ -43,17 +40,17 @@ Pour modifier une description dans le Windows Store, cliquez sur le nom de la la
 
 ## <a name="default-store-listing-fields"></a>Champs de description par défaut dans le Windows Store
 
-Les champs associés à votre description par défaut dans le Windows Store pour la langue sélectionnée se trouvent en haut de la page **Description dans le Windows Store**. Ces champs sont visibles de tous vos clients, sauf si certains packages ciblent des versions antérieures du système d’exploitation (Windows 8.x ou version antérieure ; Windows Phone 8.x ou version antérieure) ou si vous créez des descriptions dans le Windows Store spécifiques à la plateforme incluant différentes captures d’écran ou informations à présenter aux clients sur les versions de système d’exploitation spécifiées. Pour plus d’informations, consultez [Créer des descriptions spécifiques à la plateforme ](create-platform-specific-store-listings.md).
+Les champs associés à votre description par défaut dans le Windows Store pour la langue sélectionnée se trouvent en haut de la page **Description dans le Windows Store**. Ces champs sont visibles de tous vos clients, sauf si certains packages ciblent des versions antérieures du système d’exploitation (Windows8.x ou version antérieure; Windows Phone8.x ou version antérieure) ou si vous créez des descriptions dans le Windows Store spécifiques à la plateforme incluant différentes captures d’écran ou informations à présenter aux clients sur les versions de système d’exploitation spécifiées. Pour plus d’informations, consultez [Créer des descriptions spécifiques à la plateforme ](create-platform-specific-store-listings.md).
 
 ### <a name="description"></a>Description
 
-Le champ de description est l’emplacement où vous pouvez indiquer aux clients ce que fait votre application. Ce champ obligatoire accepte jusqu’à 10 000 caractères.
+Le champ de description est l’emplacement où vous pouvez indiquer aux clients ce que fait votre application. Ce champ obligatoire accepte jusqu’à 10000 caractères.
 
 Pour obtenir des conseils sur la rédaction d’une description attrayante, consultez l’article [Rédiger une description convaincante de l’application](write-a-great-app-description.md).
 
 ### <a name="release-notes"></a>Notes de publication
 
-Si vous soumettez votre application pour la première fois, vous laisserez probablement ce champ vide. Si vous proposez une mise à jour d’une application existante, ce champ vous permet d’indiquer aux clients les modifications introduites dans la dernière version. Ce champ est limité à 1 500 caractères.
+Si vous soumettez votre application pour la première fois, vous laisserez probablement ce champ vide. Si vous proposez une mise à jour d’une application existante, ce champ vous permet d’indiquer aux clients les modifications introduites dans la dernière version. Ce champ est limité à 1500 caractères.
 
 ### <a name="screenshots"></a>Captures d’écran
 
@@ -63,13 +60,13 @@ Pour plus d’informations, voir l’article [Images et captures d’écran de l
 
 ### <a name="app-tile-icon"></a>Icône de vignette d’application
 
-Cette icône est utilisée lors de l’affichage de la description de votre application dans le Windows Store aux clients sur Windows Phone 8.1 et versions antérieures (et dans certaines dispositions de Windows Store pour les clients sur Windows 10). Cette icône doit prendre la forme d’un fichier .png de 300 x 300 pixels.
+Cette icône est utilisée lors de l’affichage de la description de votre application dans le Windows Store aux clients sur Windows Phone8.1 et versions antérieures (et dans certaines dispositions de Windows Store pour les clients sur Windows10). Cette icône doit prendre la forme d’un fichier .png de 300x300pixels.
 
 Pour plus d’informations, consultez [Icône de vignette d’application](app-screenshots-and-images.md#app-tile-icon).
 
 ### <a name="app-features"></a>Fonctionnalités de l’application
 
-Il s’agit de courts résumés des principales fonctionnalités de votre application. Ces dernières sont présentées et décrites au client sous la forme d’une liste à puce dans la description de votre application dans le Windows Store. Chacune de ces informations est limitée à 200 caractères. Vous pouvez spécifier jusqu’à 20 fonctionnalités.
+Il s’agit de courts résumés des principales fonctionnalités de votre application. Ces dernières sont présentées et décrites au client sous la forme d’une liste à puce dans la description de votre application dans le Windows Store. Chacune de ces informations est limitée à 200caractères. Vous pouvez spécifier jusqu’à 20fonctionnalités.
 
 **Remarque** Ces informations apparaissant sous la forme d’une liste à puces, n’ajoutez pas vos propres puces.
 
@@ -77,7 +74,7 @@ Il s’agit de courts résumés des principales fonctionnalités de votre applic
 
 Si nécessaire, vous pouvez décrire les configurations matérielles requises par votre application pour fonctionner correctement (en plus des informations fournies dans la section **Configuration système requise** de [Propriétés de l’application](enter-app-properties.md#system-requirements). Ces informations sont particulièrement importantes si votre application nécessite du matériel qui peut ne pas être présent sur tous les ordinateurs.
 
- Vous pouvez entrer jusqu’à 11 éléments pour les deux champs **Matériel minimum** et **Matériel recommandé**.  Les configurations matérielles sont présentées au client sous la forme d’une liste à puces dans la description de votre application. Chacune de ces informations est limitée à 200 caractères. Les informations que vous entrez ici sont visibles des clients qui consultent la description de votre application dans le Windows Store sur Windows 10, version 1607 ou ultérieure, en même temps que la configuration requise indiquée sur la page des propriétés du produit.
+ Vous pouvez entrer jusqu’à 11éléments pour les deux champs **Matériel minimum** et **Matériel recommandé**.  Les configurations matérielles sont présentées au client sous la forme d’une liste à puces dans la description de votre application. Chacune de ces informations est limitée à 200caractères. Les informations que vous entrez ici sont visibles des clients qui consultent la description de votre application dans le Windows Store sur Windows10, version1607 ou ultérieure, en même temps que la configuration requise indiquée sur la page des propriétés du produit.
 
 **Remarque** Ces informations apparaissant sous la forme d’une liste à puces, n’ajoutez pas vos propres puces.
 
@@ -93,7 +90,7 @@ Si vous voulez ajouter des mots clés, pensez aux termes que vos clients sont su
 
 ### <a name="copyright-and-trademark-info"></a>Informations de copyright et de marque déposée
 
-Si vous voulez fournir des informations supplémentaires de droits d’auteur et/ou de marque, entrez-les ici. Ce champ est limité à 200 caractères.
+Si vous voulez fournir des informations supplémentaires de droits d’auteur et/ou de marque, entrez-les ici. Ce champ est limité à 200caractères.
 
 ### <a name="additional-license-terms"></a>Termes de licence supplémentaires
 
@@ -120,4 +117,3 @@ Entrez l’URL de la page web où vos clients peuvent obtenir un support concern
 Si vous disposez d’une politique de confidentialité pour votre application, entrez son URL dans ce champ. Votre application doit respecter les lois et règles applicables et proposer une politique de confidentialité s’il y a lieu.
 
 **Important** Microsoft ne fournit aucune politique de confidentialité par défaut pour votre application. De même, votre application n’est couverte par aucune politique de confidentialité Microsoft. Pour déterminer si votre application nécessite une politique de confidentialité, passez en revue le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058) et les [politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1).
-

@@ -1,6 +1,6 @@
 ---
 title: "Sécurité"
-description: "Cette section contient des articles sur la création d’applications de plateforme Windows universelle (UWP) sécurisées pour Windows 10."
+description: "Cette section contient des articles sur la création d’applications de plateforme Windows universelle (UWP) sécurisées pour Windows10."
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 author: awkoren
 ms.author: alkoren
@@ -8,24 +8,21 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e769a9aa7d381a527c1e1504efc52c2ead031c70
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 8e17ef86e5eb08808e22c1fb4070e3d15bd01556
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="security"></a>Sécurité
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cette section contient des articles sur la création d’applications de plateforme Windows universelle (UWP) sécurisées pour Windows 10.
+Cette section contient des articles sur la création d’applications de plateforme Windows universelle (UWP) sécurisées pour Windows10.
 
 ## <a name="introduction"></a>Introduction 
 
-Si vous débutez dans le développement d’applications Windows ou UWP, commencez par l’article [Présentation du développement d’applications Windows sécurisées](intro-to-secure-windows-app-development.md). Cet article introductif offre une vue d’ensemble des considérations en matière de sécurité pour les applications et les différentes fonctionnalités disponibles dans Windows 10.
+Si vous débutez dans le développement d’applications Windows ou UWP, commencez par l’article [Présentation du développement d’applications Windows sécurisées](intro-to-secure-windows-app-development.md). Cet article introductif offre une vue d’ensemble des considérations en matière de sécurité pour les applications et les différentes fonctionnalités disponibles dans Windows10.
 
 ## <a name="authentication-and-user-identity"></a>Authentification et identité des utilisateurs
 
@@ -41,8 +38,8 @@ La [section sur l’authentification et l’identité des utilisateurs](authenti
 <tr><td>[Créer un service de connexion Microsoft Passport](microsoft-passport-login-auth-service.md)</td><td>Deuxième partie de la procédure complète sur l’utilisation de Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels dans des applications UWP Windows 10.</td></tr>
 <tr><td>[Cartes à puce](smart-cards.md)</td><td>Cette rubrique explique comment les applications peuvent utiliser des cartes à puce pour connecter des utilisateurs à des services réseau sécurisés, notamment comment accéder aux lecteurs de carte à puce physiques, créer des cartes à puce virtuelles, communiquer avec des cartes à puce, authentifier des utilisateurs, réinitialiser des PIN d’utilisateur, et supprimer ou déconnecter des cartes à puce.</td></tr>
 <tr><td>[Partager des certificats entre applications](share-certificates.md)</td><td>Les applications UWP qui nécessitent une authentification sécurisée en plus de l’identifiant et du mot de passe de l’utilisateur peuvent utiliser des certificats à des fins d’authentification. L’authentification par certificat permet d’authentifier un utilisateur avec un niveau de confiance élevé. Dans certains cas, un groupe de services peut authentifier un utilisateur pour plusieurs applications. Cet article montre comment authentifier plusieurs applications à l’aide du même certificat. Vous apprendrez également à écrire du code pour permettre à un utilisateur d’importer un certificat fourni pour accéder à des services web sécurisés.</td></tr>
-<tr><td>[Déverrouillage Windows avec appareils IoT complémentaires](companion-device-unlock.md)</td><td>Un dispositif complémentaire est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur l’infrastructure Companion Device Framework, un dispositif complémentaire peut enrichir considérablement l’expérience Microsoft Passport, même en l’absence de Windows Hello (par exemple, si l’ordinateur de bureau Windows 10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales).</td></tr>
-<tr><td>[Gestionnaire de comptes web](web-account-manager.md)</td><td>Cet article explique comment afficher la classe AccountsSettingsPane et connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des nouvelles API du Gestionnaire de comptes web de Windows 10. Vous découvrirez comment demander l’autorisation d’un utilisateur pour utiliser son compte Microsoft, obtenir un jeton d’accès et l’utiliser pour effectuer des opérations de base (par exemple, obtenir des données de profil ou télécharger des fichiers dans OneDrive). </td></tr>
+<tr><td>[DéverrouillageWindows avec appareils IoT complémentaires](companion-device-unlock.md)</td><td>Un dispositif complémentaire est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur l’infrastructure CompanionDeviceFramework, un dispositif complémentaire peut enrichir considérablement l’expérience MicrosoftPassport, même en l’absence de WindowsHello (par exemple, si l’ordinateur de bureau Windows10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales).</td></tr>
+<tr><td>[Gestionnaire de comptes web](web-account-manager.md)</td><td>Cet article explique comment afficher la classe AccountsSettingsPane et connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des nouvelles API du Gestionnaire de comptes web de Windows10. Vous découvrirez comment demander l’autorisation d’un utilisateur pour utiliser son compte Microsoft, obtenir un jeton d’accès et l’utiliser pour effectuer des opérations de base (par exemple, obtenir des données de profil ou télécharger des fichiers dans OneDrive). </td></tr>
 <tr><td>[Service Broker d’authentification web](web-authentication-broker.md)</td><td>Cet article explique comment connecter votre application à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth, par exemple, Facebook, Twitter, Flickr, Instagram, etc. La méthode [AuthenticateAsync](https://msdn.microsoft.com/library/windows/apps/br212066) envoie une demande au fournisseur d’identité en ligne, puis obtient un jeton d’accès en retour qui décrit les ressources du fournisseur auxquelles l’application a accès.</td></tr>
 </table>
 
@@ -55,7 +52,6 @@ La section sur le chiffrement contient des informations sur des sujets plus comp
 | [Présentation de certificats](certificates.md)                                      | Cet article traite de l’utilisation des certificats dans les applications. Les certificats numériques sont utilisés dans le chiffrement à clé publique pour lier une clé publique à une personne, un ordinateur ou une organisation. Les identités liées sont le plus souvent utilisées pour authentifier une entité auprès d’une autre. Par exemple, les certificats sont souvent utilisés pour authentifier un serveur Web auprès d’un utilisateur ou vice versa. Vous pouvez créer des demandes de certificat et installer ou importer des certificats émis. Vous pouvez aussi inscrire un certificat dans une hiérarchie de certificats. |
 | [Clés de chiffrement](cryptographic-keys.md)                                   | Cet article montre comment utiliser les fonctions de dérivation de clés standard, et chiffrer du contenu à l’aide de clés symétriques et asymétriques.                                                                                                                                                                                                                                                                                                                                                                         |
 | [Protection des données](data-protection.md)                                         | Cet article explique comment utiliser la classe [DataProtectionProvider](https://msdn.microsoft.com/library/windows/apps/br241559) dans l’espace de noms [Windows.Security.Cryptography.DataProtection](https://msdn.microsoft.com/library/windows/apps/br241585) pour chiffrer et déchiffrer des données numériques dans une application UWP.                                                                                                                                                                                                              |
-| [Codes d’authentification des messages, hachages et signatures](macs-hashes-and-signatures.md)               | Cet article explique comment les codes d’authentification des messages, les hachages et les signatures peuvent être utilisés dans les applications pour détecter une falsification des messages.                                                                                                                                                                                                                                                                                                                                                                                |
+| [Codes d’authentification de message (MAC), codes de hachage et signatures](macs-hashes-and-signatures.md)               | Cet article explique comment les codes d’authentification des messages, les hachages et les signatures peuvent être utilisés dans les applications pour détecter une falsification des messages.                                                                                                                                                                                                                                                                                                                                                                                |
 | [Restrictions à l’exportation liées à l’utilisation du chiffrement](export-restrictions-on-cryptography.md) | Utilisez ces informations pour déterminer si votre application emploie un type de chiffrement qui pourrait l’empêcher de figurer dans le .                                                                                                                                                                                                                                                                                                                                                                                                     |
 | [Tâches courantes de chiffrement](common-cryptography-tasks.md)                     | Ces articles fournissent des exemples de code pour les tâches de chiffrement courantes, telles que la création de nombres aléatoires, la comparaison de mémoires tampons, la conversion entre chaînes et données binaires, la copie de tableaux d’octets, et le codage/décodage de données.                                                                                                                                                                                                                                                                                    |
-

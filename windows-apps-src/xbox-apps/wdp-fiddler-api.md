@@ -7,15 +7,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 24e966f953928d238f9197359e0b539b8a3e5c3c
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 02b1a056cd7e711b1fc4533c353570209153f9e8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="fiddler-settings-api-reference"></a>Informations de référence sur les API des paramètres Fiddler   
 Vous pouvez activer et désactiver le suivi réseau de Fiddler sur votre kit de développement à l’aide de cette API REST.
 
@@ -31,12 +28,12 @@ POST | /ext/fiddler
 <br />
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
 | Paramètre d’URI      | Description     | 
 | ------------------ |-----------------|
 | proxyAddress       | L’adresse IP ou le nom d’hôte de l’appareil exécutant Fiddler |
-| proxyPort          | Le port que Fiddler utilise pour la surveillance du trafic. Par défaut : 8888 |
+| proxyPort          | Le port que Fiddler utilise pour la surveillance du trafic. Par défaut: 8888 |
 | updateCert (facultatif)| Une valeur booléenne indiquant si le certificat Fiddler racine est fourni. Cette valeur doit être true si Fiddler n’a jamais été configuré sur ce kit de développement ou a été configuré pour un autre hôte.  |
 <br>
 
@@ -105,5 +102,4 @@ Code d’état HTTP      | Description
 
 ## <a name="see-also"></a>Voir également
 - [Configuration de Fiddler pour UWP sur Xbox](uwp-fiddler.md)
-
 

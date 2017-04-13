@@ -8,12 +8,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5ca55f04d919e273017530ab4c14d09c7a2ec20a
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 0a2d8562774c00544fcdcab8941bfbb04f889a45
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="managing-your-account-settings-and-profile-info"></a>Gestion de vos paramètres de compte et des informations sur le profil
 
@@ -39,6 +37,5 @@ Si vous modifiez le nom complet de l’éditeur, nous devons vérifier de nouvea
 
 Cette section comprend également des liens dédiés à la [configuration de votre compte de revenu et de vos formulaires fiscaux](setting-up-your-payout-account-and-tax-forms.md). Vous devez effectuer cette action avant de facturer des applications ou des modules complémentaires.
 
-Certains programmes peuvent fournir un code vous permettant d’étendre les fonctionnalités de votre compte ; le cas échéant, accédez aux **Paramètres du compte**. Cette page comporte également des détails sur les [appareils Windows Phone 8 ou Windows Phone 8.1 que vous avez déverrouillés pour le test](http://go.microsoft.com/fwlink/p/?LinkId=533897), et vous permet de vous inscrire ou de vous désinscrire du [Programme Insider du Centre de développement](dev-center-insider-program.md).
-
+Certains programmes peuvent fournir un code vous permettant d’étendre les fonctionnalités de votre compte; le cas échéant, accédez aux **Paramètres du compte**. Cette page comporte également des détails sur les [appareils Windows Phone8 ou Windows Phone8.1 que vous avez déverrouillés pour le test](http://go.microsoft.com/fwlink/p/?LinkId=533897), et vous permet de vous inscrire ou de vous désinscrire du [Programme Insider du Centre de développement](dev-center-insider-program.md).
 

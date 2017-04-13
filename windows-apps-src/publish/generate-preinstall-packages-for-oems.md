@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 962b6b7361da8b88d13b37219fab538e1510c961
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: e040f0ea1f2106da2d7da76464d4c818f39d6735
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="generate-preinstall-packages-for-oems"></a>Générer des packages de préinstallation pour les fabricants d’ordinateurs OEM
 
 
-Si votre compte de développeur a reçu les autorisations appropriées, vous pouvez générer et télécharger des packages de préinstallation permettant à un fabricant d’ordinateurs OEM d’inclure votre application dans son image. Les autorisations de préinstallation sont uniquement activées sur les comptes de développeur qui sont sponsorisés par des OEM.
+Si votre compte de développeur a reçu les autorisations appropriées, vous pouvez générer et télécharger des packages de préinstallation permettant à un fabricant d'ordinateurs OEM d'inclure votre application dans son image. Les autorisations de préinstallation sont uniquement activées sur les comptes de développeur qui sont sponsorisés par des OEM.
 
 ## <a name="important-preinstall-policy--limitations"></a>Politique et limitations importantes en matière de préinstallation
 
@@ -46,12 +43,11 @@ Vous pouvez alors fournir ce fichier .zip à l'OEM pour qu'il puisse l'inclure d
 ## <a name="support"></a>Support technique
 
 
-Si vous avez des questions sur la génération de packages de préinstallation, envoyez un e-mail à l'adresse <partnerops@microsoft.com>.
+Si vous avez des questions sur la génération de packages de pré-installation, envoyez un e-mail à l’adresse <partnerops@microsoft.com>.
 
  
 
  
-
 
 
 

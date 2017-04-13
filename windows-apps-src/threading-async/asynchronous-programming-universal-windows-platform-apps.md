@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, asynchrone"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1f157db0dc9124ce839f608e5f1a2325c1ce922f
-ms.lasthandoff: 02/07/2017
-
+keywords: Windows10, uwp, asynchrone
+ms.openlocfilehash: 06eceae9c7736ce59bc0ab1b842425c3dc56d299
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="asynchronous-programming"></a>Programmation asynchrone
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cette rubrique décrit la programmation asynchrone dans la plateforme Windows universelle (UWP), ainsi que sa représentation dans les langages C#, Microsoft Visual Basic .NET, les extensions de composant Visual C++ (C++/CX) et JavaScript.
@@ -28,7 +26,7 @@ Pour les méthodes dont l’exécution peut prendre un certain temps, la program
 
 ## <a name="asynchronous-programming-in-the-uwp"></a>Programmation asynchrone dans UWP
 
-De nombreuses fonctionnalités UWP, telles que les API [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/BR241124) et les API [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171), sont exposées en tant qu’API asynchrones. Par convention, les noms d’API asynchrones se terminent par « Async » pour indiquer qu’une partie de leur exécution peut se produire une fois l’API appelée.
+De nombreuses fonctionnalités UWP, telles que les API [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/BR241124) et les API [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171), sont exposées en tant qu’API asynchrones. Par convention, les noms d’API asynchrones se terminent par «Async» pour indiquer qu’une partie de leur exécution peut se produire une fois l’API appelée.
 
 Quand vous utilisez les API asynchrones dans votre application de plateforme Windows universelle (UWP), votre code effectue des appels non bloquants de manière cohérente. Quand vous implémentez ces modèles asynchrones dans vos propres définitions d’API, les appelants peuvent comprendre et utiliser votre code de façon prévisible.
 
@@ -75,7 +73,7 @@ La fonction [**create\_async function**](https://msdn.microsoft.com/library/wind
 
 En JavaScript, la programmation asynchrone suit la norme [Common JS Promises/A](http://wiki.commonjs.org/wiki/Promises/A) proposée en ayant des méthodes asynchrones qui retournent des objets promise. Les promesses sont utilisées à la fois dans l’UWP et dans la Bibliothèque Microsoft Windows pour JavaScript.
 
-Un objet promise représente une valeur qui sera traitée dans le futur. Dans l’UWP, vous obtenez un objet promise à partir d’une fonction factory, qui, par convention, a un nom se terminant par « Async ».
+Un objet promise représente une valeur qui sera traitée dans le futur. Dans l’UWP, vous obtenez un objet promise à partir d’une fonction factory, qui, par convention, a un nom se terminant par «Async».
 
 Dans de nombreux cas, il est presque aussi simple d’appeler une fonction asynchrone que d’appeler une fonction conventionnelle. La seule différence tient au fait que vous utilisez la méthode [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) ou [**done**](https://msdn.microsoft.com/library/windows/apps/Hh701079) pour assigner les gestionnaires des résultats ou des erreurs et pour démarrer l’opération.
 
@@ -84,4 +82,3 @@ Dans de nombreux cas, il est presque aussi simple d’appeler une fonction async
 * [Appeler des API asynchrones en C# ou Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)
 * [Programmation asynchrone avec Async et Await (C# et Visual Basic)](http://msdn.microsoft.com/library/hh191443(vs.110).aspx)
 * [Exemple de scénarios de fonctionnalité Reversi : code asynchrone](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)
-

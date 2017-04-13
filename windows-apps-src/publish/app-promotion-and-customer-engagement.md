@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1177acd3f5bea2a53cb0d76217dcf5a4edc86647
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 72beedaf83c684d0cfab7416d25804a34d4ac62a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-promotion-and-customer-engagement"></a>Promotion des applications et implication des clients
 
 
@@ -28,11 +25,10 @@ Une fois que votre application se trouve dans le Windows Store, le moment est ve
 -   [Commercialiser des applications et composants additionnels](put-apps-and-add-ons-on-sale.md)
 -   [Répondre aux retours des clients](respond-to-customer-feedback.md)
 -   [Répondre aux avis des clients](respond-to-customer-reviews.md)
--   [Recommandations en matière de marketing adapté aux applications du Windows Store](app-marketing-guidelines.md)
+-   [Recommandations en matière de marketing adapté aux applications du WindowsStore](app-marketing-guidelines.md)
 -   [Créer un lien vers votre application](link-to-your-app.md)
 -   [Faciliter la promotion de votre application](make-your-app-easier-to-promote.md)
 
  
 
  
-

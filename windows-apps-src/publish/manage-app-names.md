@@ -4,18 +4,15 @@ Description: "Affichez les noms réservés pour l’app, réservez d’autres no
 title: "Gestion des noms d’application"
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 02/15/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5b34723eb6d336eeacb7437a926cae7f1d3ca871
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 0dc9582a0a041f6e30a2bebaa22843983d633cee
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="manage-app-names"></a>Gestion des noms d’application
 
 
@@ -37,18 +34,17 @@ Si vous ne voulez plus utiliser un nom que vous avez réservé précédemment, v
 
 Pour supprimer l’un des noms réservés de votre application, recherchez ce dernier, puis cliquez sur **Supprimer**. Dans la boîte de dialogue de confirmation, cliquez de nouveau sur **Supprimer** pour confirmer l'opération.
 
-Notez que votre application doit comporter au moins un nom réservé. Si vous souhaitez supprimer définitivement une application de votre tableau de bord (et libérer ainsi tous les noms que vous avez réservés pour cette dernière), cliquez sur **Supprimer cette application** sur la page **Vue d'ensemble**.
+Notez que votre application doit comporter au moins un nom réservé. Si vous souhaitez supprimer définitivement une application de votre tableau de bord (et libérer tous les noms que vous avez réservés pour cette dernière), cliquez sur **Supprimer cette application** sur la page **Vue d’ensemble**. Si vous disposez d’une soumission pour l’application en cours d’exécution, il vous faudra dans un premier temps supprimer cette soumission (si vous avez déjà publié l’application dans le Windows Store, vous ne pourrez pas la supprimer de votre tableau de bord).
 
 ## <a name="rename-an-app-that-has-already-been-published"></a>Renommer une application qui a déjà été publiée
 
-Si votre application figure déjà dans le Windows Store et que vous voulez la renommer, vous devez lui réserver un nouveau nom (en suivant la procédure décrite ci-dessus), puis créer une autre soumission pour l'application. Notez que vous devrez mettre à jour votre package en y incluant le nouveau nom afin que le Windows Store affiche l'application sous ce nom. Veillez à utiliser le nouveau nom dans l'élément [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) du manifeste de l'application et à mettre à jour l'ensemble des graphiques ou textes contenant le nom de l'application. Vous devrez également revoir la description de l'application et modifier les éventuelles occurrences de l'ancien nom dans le texte descriptif.
+Si votre application figure déjà dans le Windows Store et que vous voulez la renommer, vous devez lui réserver un nouveau nom (en suivant la procédure décrite ci-dessus), puis créer une autre soumission pour l'application. Notez que vous devrez mettre à jour votre package en y incluant le nouveau nom afin que le Windows Store affiche l'application sous ce nom. Veillez à utiliser le nouveau nom dans l'élément [**Package/Properties/DisplayName**](https://msdn.microsoft.com/en-us/library/windows/apps/dn934748.aspx) du manifeste de l'application et à mettre à jour l'ensemble des graphiques ou textes contenant le nom de l'application. Vous devrez également revoir la description de l'application et modifier les éventuelles occurrences de l'ancien nom dans le texte descriptif.
 
 Une fois votre application publiée sous le nouveau nom, vous pourrez supprimer l'ancien nom que vous n'utilisez plus.
 
  
 
  
-
 
 
 

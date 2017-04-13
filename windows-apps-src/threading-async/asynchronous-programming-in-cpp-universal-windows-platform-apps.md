@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, threads, asynchrone, C++"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 112b5d58064ae6cd006d791a2c4534848baee259
-ms.lasthandoff: 02/07/2017
-
+keywords: Windows10, uwp, threads, asynchrone, C++
+ms.openlocfilehash: c74a2d18a0852d28cf33715a540356a61438ff48
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="asynchronous-programming-in-c"></a>Programmation asynchrone en C++
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cet article décrit la meilleure façon d’utiliser des méthodes asynchrones dans les extensions des composants Visual C++ (C++/CX) à l’aide de la classe `task` qui est définie dans l’espace de noms `concurrency` dans ppltasks.h.
 
@@ -26,7 +23,7 @@ Cet article décrit la meilleure façon d’utiliser des méthodes asynchrones d
 
 Les fonctionnalités de plateforme Windows universelle UWP comprennent un modèle bien défini pour l’appel de méthodes asynchrones, et fournissent les types dont vous avez besoin pour consommer de telles méthodes. Si vous n'avez pas l'habitude d'utiliser le modèle asynchrone UWP, veuillez consulter l'article [Programmation asynchrone][AsyncProgramming] avant de poursuivre la lecture de cet article.
 
-Bien qu'il soit possible d'utiliser des API UWP asynchrones directement dans C++, il est recommandé d'utiliser la [**classe task**][task-class] et ses types et fonctions associés (contenus dans l'espace de noms [**concurrency**][concurrencyNamespace] et définis dans `<ppltasks.h>`). Le type **concurrency::task** est un type à usage général, mais lorsque le commutateur du compilateur **/ZW**, requis pour les applications et composants de plateforme Windows universelle (UWP), est utilisé, la classe task encapsule les types asynchrones UWP, ce qui facilite les opérations suivantes :
+Bien qu'il soit possible d'utiliser des API UWP asynchrones directement dans C++, il est recommandé d'utiliser la [**classe task**][task-class] et ses types et fonctions associés (contenus dans l'espace de noms [**concurrency**][concurrencyNamespace] et définis dans `<ppltasks.h>`). Le type **concurrency::task** est un type à usage général, mais lorsque le commutateur du compilateur **/ZW**, requis pour les applications et composants de plateforme Windows universelle (UWP), est utilisé, la classe task encapsule les types asynchrones UWP, ce qui facilite les opérations suivantes :
 
 -   chaîner plusieurs opérations asynchrones et synchrones
 
@@ -87,9 +84,9 @@ Bien que vous déclariez la variable de la tâche sur la pile locale, elle gère
 
 ## <a name="creating-a-chain-of-tasks"></a>Création d’une chaîne de tâches
 
-Dans la programmation asynchrone, il est courant de définir une séquence d’opérations, également appelée *chaîne de tâches*, dans laquelle chaque continuation s’exécute uniquement si la précédente est terminée. Dans certains cas, la tâche précédente (aussi appelée *antécédent*) produit une valeur que la continuation accepte comme entrée. En utilisant la méthode [**task::then**][taskThen], vous pouvez créer des chaînes de tâches d’une manière intuitive et simple ; la méthode renvoie une valeur **task<T>** où **T** est le type de retour de la fonction lambda. Vous pouvez composer plusieurs continuations dans une chaîne de tâches : `myTask.then(…).then(…).then(…);`
+Dans la programmation asynchrone, il est courant de définir une séquence d’opérations, également appelée *chaîne de tâches*, dans laquelle chaque continuation s’exécute uniquement si la précédente est terminée. Dans certains cas, la tâche précédente (aussi appelée *antécédent*) produit une valeur que la continuation accepte comme entrée. En utilisant la méthode [**task::then**][taskThen], vous pouvez créer des chaînes de tâches d’une manière intuitive et simple; la méthode renvoie une valeur **task<T>** où **T** est le type de retour de la fonction lambda. Vous pouvez composer plusieurs continuations dans une chaîne de tâches : `myTask.then(…).then(…).then(…);`
 
-Les chaînes de tâches sont particulièrement utiles lorsqu’une continuation crée une nouvelle opération asynchrone ; une telle tâche est appelée « tâche asynchrone ». L’exemple suivant illustre une chaîne de tâches comportant deux continuations. La tâche initiale acquiert le handle vers un fichier existant, et lorsque cette opération se termine, la première continuation démarre une nouvelle opération asynchrone pour supprimer le fichier. Lorsque l’opération se termine, la deuxième continuation s’exécute, et génère un message de confirmation.
+Les chaînes de tâches sont particulièrement utiles lorsqu’une continuation crée une nouvelle opération asynchrone; une telle tâche est appelée «tâche asynchrone». L’exemple suivant illustre une chaîne de tâches comportant deux continuations. La tâche initiale acquiert le handle vers un fichier existant, et lorsque cette opération se termine, la première continuation démarre une nouvelle opération asynchrone pour supprimer le fichier. Lorsque l’opération se termine, la deuxième continuation s’exécute, et génère un message de confirmation.
 
 ``` cpp
 #include <ppltasks.h>
@@ -109,7 +106,7 @@ void App::DeleteWithTasks(String^ fileName)
 }
 ```
 
-L’exemple précédent illustre quatre points importants :
+L’exemple précédent illustre quatre points importants:
 
 -   La première continuation convertit l’objet [**IAsyncAction^**][IAsyncAction] en un type **task<void>**  et renvoie l’objet **task**.
 
@@ -323,4 +320,3 @@ Les méthodes qui prennent en charge [**IAsyncOperationWithProgress**](https://m
 [taskParallelism]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492427.aspx> "Parallélisme des tâches"
 [taskThen]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx> "TaskThen"
 [useArbitrary]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750036.aspx> "UseArbitrary"
-

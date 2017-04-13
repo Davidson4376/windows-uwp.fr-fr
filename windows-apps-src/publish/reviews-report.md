@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54666642e67581bebbb35049f7779086d23939a0
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 2b9cc9142655efc8123fdcde0eef464cb86df070
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="reviews-report"></a>Rapport Avis
 
 
@@ -33,12 +30,12 @@ Chaque avis de client contient les éléments suivants :
 -   La date de l'avis.
 -   Le nom de l'auteur de l'avis tel qu'il apparaît dans le Windows Store.
 -   Le pays ou la région de l'auteur de l'avis.
--   La version du package de l'application installée sur l'appareil du client au moment de la rédaction de l'avis. (Cette information n'est pas disponible pour les avis soumis par les clients qui utilisent Windows 8.1 ou une version antérieure.)
+-   La version du package de l'application installée sur l'appareil du client au moment de la rédaction de l'avis. (Cette information n'est pas disponible pour les avis soumis par les clients qui utilisent Windows8.1 ou une version antérieure.)
 -   La version du système d'exploitation installée sur l'appareil du client au moment de la rédaction de l'avis.
--   Le nom de l'appareil utilisé par le client au moment de la rédaction de l'avis. (Cette information n'est pas disponible pour les avis soumis par les clients qui utilisent Windows 8.1 ou une version antérieure.)
+-   Le nom de l'appareil utilisé par le client au moment de la rédaction de l'avis. (Cette information n'est pas disponible pour les avis soumis par les clients qui utilisent Windows8.1 ou une version antérieure.)
 -   La « note d'utilité » de l'avis signalant le nombre de fois où l'avis a été considéré comme utile par d'autres clients. Cette information est indiquée sous la forme de deux valeurs : la première spécifie le nombre de clients ayant jugé l'avis utile, la seconde correspond au nombre total de clients ayant laissé une évaluation. Par exemple, une note d'utilité de 4/10 signifie que sur 10 personnes, 4 ont trouvé l'avis utile, et 6 non. (Si aucun utilisateur n’a évalué l’utilité d’un avis, aucune note d’utilité ne s'affiche.)
 
-> **Remarque** Les avis peuvent ponctuellement disparaître de ce rapport. Cela peut se produire lorsque Microsoft supprime des avis du Windows Store qui ont été rédigés par des clients qui utilisent certaines versions préliminaires ou builds de Windows 10 réservées aux Insiders. Nous procédons ainsi afin de réduire le risque de publication d’avis négatifs liés à un problème d’une version préliminaire de Windows. Nous pouvons également supprimer les avis du Windows Store qui ont été identifiés comme indésirables, inappropriés, offensants ou contraires à notre politique. Nous pensons que cette action va améliorer l’expérience utilisateur.
+> **Remarque** Les avis peuvent ponctuellement disparaître de ce rapport. Cela peut se produire lorsque Microsoft supprime des avis du WindowsStore qui ont été rédigés par des clients qui utilisent certaines versions préliminaires ou builds de Windows10 réservées aux Insiders. Nous procédons ainsi afin de réduire le risque de publication d’avis négatifs liés à un problème d’une version préliminaire de Windows. Nous pouvons également supprimer les avis du Windows Store qui ont été identifiés comme indésirables, inappropriés, offensants ou contraires à notre politique. Nous pensons que cette action va améliorer l’expérience utilisateur.
 
 ## <a name="apply-filters"></a>Appliquer les filtres
 
@@ -47,10 +44,10 @@ Dans la zone supérieure de la page, vous pouvez développer l’option **Appliq
 
 >**Conseil** Si cette page ne contient aucun avis, assurez-vous que vos filtres n’ont pas exclu la totalité des avis concernant votre application. Par exemple, si vous filtrez les avis en fonction d’un système d’exploitation non pris en charge par votre application, aucun avis n’apparaîtra sur cette page.
 
--   **Évaluation** : les évaluations Toutes les étoiles sont contrôlées par défaut, mais vous pouvez choisir une ou plusieurs évaluations spécifiques (entre 1 et 5 étoiles) si vous voulez ne visualiser que les avis associés à une évaluation donnée.
--   **De** : la valeur par défaut (vide) permet d’afficher les avis publiés depuis la date de publication de votre application. Vous pouvez choisir une autre date si vous souhaitez afficher uniquement les avis publiés à la date ou depuis la date de votre choix.
--   **À** : la valeur par défaut (vide) permet d’afficher les avis publiés jusqu’à la date du jour. Vous pouvez choisir une autre date si vous souhaitez afficher uniquement les avis publiés à la date ou avant la date de votre choix.
--   **Contenu d’avis** : par défaut, ce filtre est défini sur la valeur **Tous**, qui demande d’inclure les évaluations ne comportant aucun avis. Vous pouvez sélectionner l'option **Évaluations avec avis** pour ne visualiser que les évaluations qui comportent un avis.
+-   **Évaluation**: les évaluations Toutes les étoiles sont contrôlées par défaut, mais vous pouvez choisir une ou plusieurs évaluations spécifiques (entre 1 et 5 étoiles) si vous voulez ne visualiser que les avis associés à une évaluation donnée.
+-   **De**: la valeur par défaut (vide) permet d’afficher les avis publiés depuis la date de publication de votre application. Vous pouvez choisir une autre date si vous souhaitez afficher uniquement les avis publiés à la date ou depuis la date de votre choix.
+-   **À**: la valeur par défaut (vide) permet d’afficher les avis publiés jusqu’à la date du jour. Vous pouvez choisir une autre date si vous souhaitez afficher uniquement les avis publiés à la date ou avant la date de votre choix.
+-   **Contenu d’avis**: par défaut, ce filtre est défini sur la valeur **Tous**, qui demande d’inclure les évaluations ne comportant aucun avis. Vous pouvez sélectionner l'option **Évaluations avec avis** pour ne visualiser que les évaluations qui comportent un avis.
 -   **Système d’exploitation cible** : la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir un système d'exploitation ciblé spécifique pour ne visualiser que les évaluations émanant de clients qui utilisent votre ou vos package(s) sur ce système d'exploitation.
 -   **Réponses** : la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir de ne visualiser que les avis pour lesquels vous avez [répondu aux clients](respond-to-customer-reviews.md), ou uniquement ceux auxquels vous n'avez pas encore répondu.
 -   **Mises à jour** : la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir de ne visualiser que les avis qui ont été mis à jour par le client depuis que vous avez [répondu à ces avis](respond-to-customer-reviews.md), ou uniquement ceux qui n'ont pas encore été mis à jour par le client.
@@ -89,4 +86,3 @@ Vous découvrirez ci-après certaines actions supplémentaires à envisager en f
  
 
  
-

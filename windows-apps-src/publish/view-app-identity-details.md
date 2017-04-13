@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Lorsque vous travaillez sur une application dans le tableau de bord du Centre de développement Windows, vous pouvez visualiser les informations concernant l&quot;identité unique qui lui est affectée par le Windows Store et obtenir un lien d&quot;accès à la description de votre application dans le Windows Store."
+Description: "Quand vous travaillez sur une application dans le tableau de bord du Centre de développement Windows, vous pouvez visualiser les informations concernant l’identité unique qui lui est affectée par le Windows Store et obtenir un lien d’accès à la description de votre application dans le Windows Store."
 title: "Visualiser les informations d’identité des applications"
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.author: wdg-dev-content
@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b9cbe976eb5aece26cac54f7ae8693aef5009ca3
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: b48f99d4146bfa5e4d9b2af3184e1ce3c1aea491
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="view-app-identity-details"></a>Visualiser les informations d’identité des applications
 
 
-Lorsque vous travaillez sur une application dans le tableau de bord du Centre de développement Windows, vous pouvez visualiser les informations concernant l'identité unique qui lui est affectée par le Windows Store et obtenir un lien d'accès à la description de votre application dans le Windows Store.
+Quand vous travaillez sur une application dans le tableau de bord du Centre de développement Windows, vous pouvez visualiser les informations concernant l'identité unique qui lui est affectée par le Windows Store et obtenir un lien d'accès à la description de votre application dans le Windows Store.
 
 Pour consulter ces informations, accédez à l’une de vos applications, puis développez l’option **Gestion des applications** dans le menu de navigation gauche. Cliquez sur **Identité de l’application** pour afficher les détails correspondants.
 
@@ -47,9 +44,9 @@ Les valeurs supplémentaires ci-après font référence à la famille de package
 
 ## <a name="link-to-your-apps-listing"></a>Lien d’accès à la description de votre application
 
-Vous pouvez partager le lien d’accès à la page de votre application afin d’aider vos clients à trouver cette dernière dans le Windows Store. Ce lien est au format **`https://www.microsoft.com/store/apps/<your app's Store ID>`**.
+Vous pouvez partager le lien d’accès à la page de votre application afin d’aider vos clients à trouver cette dernière dans le WindowsStore. Ce lien est au format **`https://www.microsoft.com/store/apps/<your app's Store ID>`**.
 
-> **Remarque**  Cette URL fonctionne pour n’importe quelle version du système d’exploitation, à condition que votre application soit disponible dessus. Vous pouvez également voir des liens supplémentaires pour Windows 8.1 et versions antérieures et/ou Windows Phone 8.1 et versions antérieures, qui ne fonctionnent que sur les versions de système d’exploitation spécifiées.
+> **Remarque**  Cette URL fonctionne pour n’importe quelle version du système d’exploitation, à condition que votre application soit disponible dessus. Vous pouvez également voir des liens supplémentaires pour Windows8.1 et versions antérieures et/ou Windows Phone8.1 et versions antérieures, qui ne fonctionnent que sur les versions de système d’exploitation spécifiées.
 
 Lorsqu’un client clique sur ce lien, il accède automatiquement à la page de description Web de votre application. Si l’appareil Windows du client prend en charge votre application, l’application du Windows Store lancera et affichera également la description de votre application.
 
@@ -58,7 +55,6 @@ L’**ID Windows Store** de votre application figure également dans cette secti
  
 
  
-
 
 
 

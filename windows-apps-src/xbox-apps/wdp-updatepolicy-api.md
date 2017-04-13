@@ -2,22 +2,20 @@
 author: payzer
 title: "Informations de référence sur l’API de stratégie de mise à jour du Kit de développement Device Portal pour Xbox"
 description: "Découvrez comment définir par programmation la stratégie de mise à jour de votre console."
-translationtype: Human Translation
-ms.sourcegitcommit: 8f02e0c2f6fa30a3ac56945347c5bec253189bd8
 ms.openlocfilehash: f9313d3c8b93ba13074c547f1f63c9f3204f0f58
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 REMARQUE: Cette API sera disponible dans la prochaine préversion pour les développeurs.
 
-# Informations de référence sur l’API de stratégie de mise à jour du système   
+# <a name="system-update-policy-api-reference"></a>Informations de référence sur l’API de stratégie de mise à jour du système   
 Vous pouvez utiliser cette API pour savoir quelle stratégie de mise à jour s’applique à votre console et remplacer la stratégie de mise à jour actuelle par une nouvelle.
 
 IMPORTANT: La plupart des consoles reçoivent une réponse «accès refusé» lors d’une tentative d’appel de cette API. Toutes les consoles de développement n’ont en effet pas la possibilité de modifier leur stratégie de mise à jour.
 
 Cette API affecte la stratégie de mise à jour pour les consoles en mode développeur, pas pour les consoles en mode commercial.
 
-## Obtenir la stratégie de mise à jour de la console
+## <a name="get-the-console-update-policy"></a>Obtenir la stratégie de mise à jour de la console
 
 **Requête**
 
@@ -58,7 +56,7 @@ Code d’état HTTP      | Description
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
-## Définir la stratégie de mise à jour du système d’une console
+## <a name="set-a-consoles-system-update-policy"></a>Définir la stratégie de mise à jour du système d’une console
 Vous pouvez utiliser cette API pour modifier les groupes de mise à jour du système auxquels la console appartient.
 
 Remarque: Les consoles ne peuvent appartenir qu’à un groupe de mise à jour du système à la fois.
@@ -109,10 +107,4 @@ Code d’état HTTP      | Description
 **Familles d’appareils disponibles**
 
 * Windows Xbox
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

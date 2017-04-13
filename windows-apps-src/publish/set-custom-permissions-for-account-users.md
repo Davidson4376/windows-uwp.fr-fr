@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 23d8c14bfdbfc05a1397fa67cb831d38ec092233
-ms.lasthandoff: 02/08/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 2ce4ddc5240281618fefa16587067c4ad9382b2e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-custom-permissions-for-account-users"></a>Définir des autorisations personnalisées pour les utilisateurs de compte
 
 Lorsque vous ajoutez des utilisateurs à votre compte, vous pouvez leur attribuer un [rôle standard](manage-account-users.md#roles-and-permissions), ou choisir de personnaliser leurs autorisations pour leur fournir un niveau d’accès approprié. Certaines de ces autorisations s’appliquent à l’ensemble du compte, tandis que d’autres peuvent être accordées à tous les produits ou limitées à certains produits. 
@@ -28,10 +25,10 @@ Pour activer une autorisation pour l’utilisateur, activez la case du paramètr
 
 ![Guide des paramètres d’accès](images/permission_key.png)
 
-- **Aucun accès** : l’utilisateur n’aura pas l’autorisation indiquée.
-- **Lecture seule** : l’utilisateur pourra afficher les fonctionnalités liées à la zone indiquée, mais ne pourra pas apporter de modifications.
-- **Lecture/écriture** : l’utilisateur pourra visualiser la zone et y apporter des modifications.
-- **Mixte** : vous ne pouvez pas sélectionner cette option directement, mais l’indicateur **Mixte** montre si vous avez autorisé une combinaison d’accès pour cette autorisation. Par exemple, si vous accordez un accès **en lecture seule** à **Tarification et disponibilité** pour **Tous les produits**, mais que vous accordez ensuite un accès **en lecture/écriture** à **Tarification et disponibilité** pour un produit spécifique, l’indicateur **Tarification et disponibilité** pour **Tous les produits** sera considéré comme Mixte. Le même raisonnement s’applique si certains produits n’ont **aucun accès** pour une autorisation, mais que d’autres ont un accès **en lecture/écriture** et/ou **en lecture seule**.
+- **Aucun accès**: l’utilisateur n’aura pas l’autorisation indiquée.
+- **Lecture seule**: l’utilisateur pourra afficher les fonctionnalités liées à la zone indiquée, mais ne pourra pas apporter de modifications.
+- **Lecture/écriture**: l’utilisateur pourra visualiser la zone et y apporter des modifications.
+- **Mixte**: vous ne pouvez pas sélectionner cette option directement, mais l’indicateur **Mixte** montre si vous avez autorisé une combinaison d’accès pour cette autorisation. Par exemple, si vous accordez un accès **en lecture seule** à **Tarification et disponibilité** pour **Tous les produits**, mais que vous accordez ensuite un accès **en lecture/écriture** à **Tarification et disponibilité** pour un produit spécifique, l’indicateur **Tarification et disponibilité** pour **Tous les produits** sera considéré comme Mixte. Le même raisonnement s’applique si certains produits n’ont **aucun accès** pour une autorisation, mais que d’autres ont un accès **en lecture/écriture** et/ou **en lecture seule**.
 
 Pour certaines autorisations, telles que celles liées à l’affichage des données analytiques, seul un accès **en lecture seule** peut être accordé. Notez que dans l’implémentation actuelle, certaines autorisations ne font pas la distinction entre l’accès **en lecture seule** et l’accès **en lecture/écriture**. Passez en revue les détails de chaque autorisation pour comprendre les fonctionnalités spécifiques accordées par l’accès **en lecture seule** et **en lecture/écriture**.
 
@@ -68,7 +65,7 @@ Les autorisations de cette section ne peuvent pas être limitées à des produit
 <tr><td align="left">    **Rapports de publicité sur l’installation d’application**             </td><td align="left">  Peut afficher le [rapport de publicité sur l’installation d’application](app-install-ads-reports.md) de tous les produits dans le compte.           </td><td align="left">  Non applicable   </td></tr>
 <tr><td align="left">    **Annonces de la communauté**                       </td><td align="left">  Peut afficher l’utilisation des [annonces gratuites de la communauté](about-community-ads.md) de tous les produits dans le compte.          </td><td align="left">  Peut créer, gérer et afficher l’utilisation des [annonces gratuites de la communauté](about-community-ads.md) de tous les produits dans le compte.               </td></tr>
 <tr><td align="left">    **Coordonnées**                        </td><td align="left">  Peut afficher les [coordonnées](managing-your-profile.md) dans la section Paramètres du compte.        </td><td align="left">  Peut modifier et afficher les [coordonnées](managing-your-profile.md) dans la section Paramètres du compte.            </td></tr>
-<tr><td align="left">    **Conformité avec la réglementation COPPA**                    </td><td align="left">  Peut afficher les sélections de [conformité avec la réglementation COPPA](monetize-with-ads.md#coppa-compliance) (qui indique si les produits sont adaptés aux enfants de moins de 13 ans) pour tous les produits dans le compte.                                            </td><td align="left">  Peut modifier et afficher les sélections de [conformité avec la réglementation COPPA](monetize-with-ads.md#coppa-compliance) (qui indique si les produits sont adaptés aux enfants de moins de 13 ans) pour tous les produits dans le compte.         </td></tr>
+<tr><td align="left">    **Conformité avec la réglementation COPPA**                    </td><td align="left">  Peut afficher les sélections de [conformité avec la réglementation COPPA](monetize-with-ads.md#coppa-compliance) (qui indique si les produits sont adaptés aux enfants de moins de 13ans) pour tous les produits dans le compte.                                            </td><td align="left">  Peut modifier et afficher les sélections de [conformité avec la réglementation COPPA](monetize-with-ads.md#coppa-compliance) (qui indique si les produits sont adaptés aux enfants de moins de 13ans) pour tous les produits dans le compte.         </td></tr>
 <tr><td align="left">    **Groupes de clients**                     </td><td align="left">  Peut afficher les [groupes de clients](create-customer-groups.md) (segments et groupes de versions d’évaluation) dans la section **Clients**.      </td><td align="left">  Peut créer, modifier et afficher les [groupes de clients](create-customer-groups.md) (segments et groupes de versions d’évaluation) dans la section **Clients**.       </td></tr>
 <tr><td align="left">    **Nouvelles applications**                            </td><td align="left">  Peut afficher la page de création d’une nouvelle application, mais ne peut pas créer de nouvelles applications dans le compte.    </td><td align="left">  Peut [créer de nouvelles applications](create-your-app-by-reserving-a-name.md) dans le compte en réservant les noms d’application et peut créer des soumissions et envoyer des applications dans le Windows Store.     </td></tr>
 <tr><td align="left">    **Nouveaux ensembles**&nbsp;*                       </td><td align="left">  Peut afficher la page de création de nouveaux ensembles, mais ne peut pas créer de nouveaux ensembles dans le compte.     </td><td align="left">  Peut créer de nouveaux ensembles de produits.          </td></tr>
@@ -87,7 +84,7 @@ Les autorisations de cette section ne peuvent pas être limitées à des produit
 
 ## <a name="product-level-permissions"></a>Autorisations au niveau du produit
 
-Les autorisations de cette section peuvent être accordées à tous les produits du compte, ou personnalisées pour appliquer l’autorisation uniquement à un ou plusieurs produits spécifiques. Ces autorisations sont regroupées en quatre catégories : **Analytique**, **Monétisation**, **Publication** et **Xbox Live**. Vous pouvez développer chacune de ces catégories pour en afficher les autorisations individuelles. 
+Les autorisations de cette section peuvent être accordées à tous les produits du compte, ou personnalisées pour appliquer l’autorisation uniquement à un ou plusieurs produits spécifiques. Ces autorisations sont regroupées en quatre catégories: **Analytique**, **Monétisation**, **Publication** et **Xbox Live**. Vous pouvez développer chacune de ces catégories pour en afficher les autorisations individuelles. 
 
 Pour accorder une autorisation pour tous les produits du compte, effectuez vos sélections pour cette autorisation (en cochant la case **Lecture seule**, **Lecture/écriture** ou **Aucun accès**) dans la ligne **Tous les produits**. 
  
@@ -97,7 +94,7 @@ Sur la ligne **Tous les produits**, vous verrez chaque produit du compte répert
 
 Chaque module complémentaire est répertorié dans une ligne distincte sous son produit parent, ainsi que dans la ligne **Tous les modules complémentaires**. Les sélections effectuées pour **tous les modules complémentaires** s’appliquent à tous les modules complémentaires actuels de ce produit, ainsi qu’à tous les modules complémentaires qui seront créés plus tard pour ce produit.
 
-Remarque : certaines autorisations ne peuvent pas être définies pour les modules complémentaires. Cela peut être parce qu’elles ne s’appliquent pas aux modules complémentaires (par exemple, l’autorisation **Retour d’expérience du client**) ou parce que l’autorisation accordée au niveau du produit parent s’applique à tous les modules complémentaires de ce produit (par exemple, **Codes promotionnels**). Notez toutefois que toutes les autorisations disponibles pour les modules complémentaires doivent être définies séparément ; les modules complémentaires n’héritent pas des sélections effectuées pour le produit parent. Par exemple, si vous souhaitez permettre à l’utilisateur d’effectuer des sélections de tarification et de disponibilité pour un module complémentaire, vous devez activer l’autorisation **Tarification et disponibilité** pour le module complémentaire (ou pour **Tous les modules complémentaires**), que vous ayez ou non accordé l’autorisation **Tarification et disponibilité** pour le produit parent. 
+Remarque: certaines autorisations ne peuvent pas être définies pour les modules complémentaires. Cela peut être parce qu’elles ne s’appliquent pas aux modules complémentaires (par exemple, l’autorisation **Retour d’expérience du client**) ou parce que l’autorisation accordée au niveau du produit parent s’applique à tous les modules complémentaires de ce produit (par exemple, **Codes promotionnels**). Notez toutefois que toutes les autorisations disponibles pour les modules complémentaires doivent être définies séparément; les modules complémentaires n’héritent pas des sélections effectuées pour le produit parent. Par exemple, si vous souhaitez permettre à l’utilisateur d’effectuer des sélections de tarification et de disponibilité pour un module complémentaire, vous devez activer l’autorisation **Tarification et disponibilité** pour le module complémentaire (ou pour **Tous les modules complémentaires**), que vous ayez ou non accordé l’autorisation **Tarification et disponibilité** pour le produit parent. 
 
 ### <a name="analytics"></a>Analytique
 
@@ -116,7 +113,7 @@ Remarque : certaines autorisations ne peuvent pas être définies pour les modu
     <tr><td align="left">    **Utilisation** </td><td>    Peut afficher le [rapport d’utilisation](usage-report.md) du produit.     </td><td>    Non applicable       </td><td>    Non applicable     </td><td>    Non applicable         </td></tr>
     <tr><td align="left">    **Intégrité** </td><td>    Peut afficher le [rapport d’intégrité](health-report.md) du produit.    </td><td>    Non applicable     </td><td>    Non applicable     </td><td>    Non applicable         </td></tr>
     <tr><td align="left">    **Retour d'expérience du client**    </td><td>    Peut afficher les rapports [Évaluations](ratings-report.md), [Avis](reviews-report.md) et [Commentaires](feedback-report.md) pour le produit.       </td><td>    Non applicable (pour répondre à des commentaires ou à des avis, l’autorisation **Contacter le client** doit être accordée)   </td><td>    Non applicable     </td><td>    Non applicable         </td></tr>
-    <tr><td align="left">    **Analyse Xbox** </td><td>    Peut afficher le rapport d’analyse Xbox du produit. (Remarque : ce rapport n’est pas encore disponible.)    </td><td>    Non applicable   </td><td>    Non applicable       </td><td>    Non applicable          </td></tr>
+    <tr><td align="left">    **Analyse Xbox** </td><td>    Peut afficher le rapport d’analyse Xbox du produit. (Remarque: ce rapport n’est pas encore disponible.)    </td><td>    Non applicable   </td><td>    Non applicable       </td><td>    Non applicable          </td></tr>
     <tr><td align="left">    **En temps réel**   </td><td>    Peut afficher le rapport en temps réel du produit.       </td><td>    Non applicable   </td><td>    Non applicable     </td><td>    Non applicable                 </td></tr>
     </tbody>
     </table>
@@ -184,4 +181,3 @@ Remarque : certaines autorisations ne peuvent pas être définies pour les modu
 </table>
 
 \* Les autorisations marquées d’un astérisque (*) accordent l’accès à des fonctionnalités qui ne sont pas disponibles pour tous les comptes. Si ces fonctionnalités n’ont pas été activées pour votre compte, vos sélections concernant ces autorisations n’auront aucun effet.  
-

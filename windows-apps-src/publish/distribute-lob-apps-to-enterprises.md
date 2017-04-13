@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Vous pouvez publier des applications cœur de métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans rendre vos applications disponibles à grande échelle sur le Windows Store."
+Description: "Vous pouvez publier des applications métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans mettre vos applications à disposition sur le Store de façon étendue."
 title: "Distribuer des applications cœur de métier aux entreprises"
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.author: wdg-dev-content
@@ -8,20 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 94d12656a122f623240463886297c2378753924b
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: e29809f34facafc442b9b26580b91e17ed0a364e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="distribute-lob-apps-to-enterprises"></a>Distribuer des applications cœur de métier aux entreprises
 
 
-Vous pouvez publier des applications cœur de métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans rendre vos applications disponibles à grande échelle sur le Windows Store.
+Vous pouvez publier des applications métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans mettre vos applications à disposition sur le Windows Store de façon étendue.
 
-> **Important**  Pour l’instant, seules les applications gratuites peuvent être distribuées exclusivement aux entreprises par le biais du Windows Store pour Entreprises. Si vous soumettez une application payante en tant qu’application métier, elle ne sera pas disponible pour l’entreprise à ce stade. 
+> **Important**  Pour l’instant, seules les applications gratuites peuvent être distribuées exclusivement aux entreprises par le biais du WindowsStore pour Entreprises. Si vous soumettez une application payante en tant qu’application métier, elle ne sera pas disponible pour l’entreprise à ce stade. 
 
 ## <a name="setting-up-the-enterprise-association"></a>Configuration de l’association d’entreprise
 
@@ -87,7 +84,6 @@ Pour plus d'informations, voir [Charger la version test d'applications métier d
  
 
  
-
 
 
 

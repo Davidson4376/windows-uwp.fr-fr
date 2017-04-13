@@ -1,28 +1,25 @@
 ---
 author: jwmsft
 title: Attribut xDeferLoadStrategy
-description: "xDeferLoadStrategy retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600 octets à l’utilisation de la mémoire."
+description: "xDeferLoadStrategy retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600octets à l’utilisation de la mémoire."
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4ccc18920a98b3c2258b4965e96fa063124d0546
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 0fd1e58549ba19397948864fe5fe0b31fcaf01d7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xdeferloadstrategy-attribute"></a>Attribut x:DeferLoadStrategy
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **x:DeferLoadStrategy="Lazy"** est une fonctionnalité qui peut être utilisée pour optimiser les performances des scénarios de démarrage et de création d’arborescence d’une application XAML. L’utilisation de **x:DeferLoadStrategy="Lazy"** retarde la création d’un élément et de ses enfants, ce qui réduit le temps de démarrage et les coûts mémoire. Cela permet de réduire les coûts des éléments qui ne sont pas souvent nécessaires ou qui le sont dans certaines conditions. L’élément est réalisé lorsqu’il est référencé dans le code ou dans VisualStateManager.
 
-Toutefois, la gestion des reports accroît d’environ 600 octets l’utilisation de la mémoire pour chaque élément affecté. Plus l’arborescence d’éléments que vous reportez est importante, plus vous économisez de temps de démarrage, mais au prix d’une plus grande empreinte mémoire. Par conséquent, un usage abusif de cet attribut peut entraîner une diminution des performances.
+Toutefois, la gestion des reports accroît d’environ 600octets l’utilisation de la mémoire pour chaque élément affecté. Plus l’arborescence d’éléments que vous reportez est importante, plus vous économisez de temps de démarrage, mais au prix d’une plus grande empreinte mémoire. Par conséquent, un usage abusif de cet attribut peut entraîner une diminution des performances.
 
 ## <a name="xaml-attribute-usage"></a>Utilisation des attributs XAML
 
@@ -36,7 +33,7 @@ Les restrictions pour l’utilisation de **x:DeferLoadStrategy** sont les suivan
 
 -   Nécessite un [x: Name](x-name-attribute.md) défini, car il doit être possible de trouver l’élément ultérieurement.
 -   Seul un [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) peut être marqué comme différé, à l’exception des types dérivés de [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249).
--   Des éléments racines ne peuvent pas être différés dans [**Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page), [**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol) ou [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
+-   Des éléments racines ne peuvent pas être différés dans [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page), [**UserControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) ou [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
 -   Les éléments d’un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) ne peuvent pas être différés.
 -   Ne fonctionne pas avec un XAML libre chargé avec [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048).
 -   Le déplacement d’un élément parent efface tous les éléments qui n’ont pas été réalisés.
@@ -93,5 +90,4 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
     this.FindName("DeferredGrid"); // This will realize the deferred grid
 }
 ```
-
 

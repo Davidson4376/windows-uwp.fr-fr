@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4b97cb009078039582bfcff6cdaa678f1dd9b979
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: b72b5593f4266a015b14e2b61a70c87ce199cdfd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="resolve-submission-errors"></a>Résoudre les erreurs d’envoi
 
 Si vous rencontrez des erreurs après avoir envoyé votre application au Windows Store, vous devez les résoudre pour poursuivre le [processus de certification](the-app-certification-process.md). Le message d’erreur indique la nature du problème et ce que vous devez faire pour le résoudre. Voici quelques informations supplémentaires pour vous aider à résoudre ces erreurs.
@@ -42,7 +39,7 @@ Vous pouvez également rencontrer l’**erreur 1300** après avoir soumis votre 
 
 ## <a name="nameidentity-errors"></a>Erreurs de nom/identité
 
-Si vous voyez une erreur indiquant : **Le nom trouvé dans le package ne fait pas partie de vos noms d’application réservés. Veuillez réserver le nom de l’application et/ou mettre à jour votre package avec le nom d’application approprié pour cette langue**, il se peut que vous ayez saisi un nom incorrect dans votre package. Cette erreur peut également se produire si vous utilisez un nom d’application que vous n’avez pas réservé dans le Centre de développement. Vous pouvez généralement corriger cette erreur en procédant comme suit :
+Si vous voyez une erreur indiquant: **Le nom trouvé dans le package ne fait pas partie de vos noms d’application réservés. Veuillez réserver le nom de l’application et/ou mettre à jour votre package avec le nom d’application approprié pour cette langue**, il se peut que vous ayez saisi un nom incorrect dans votre package. Cette erreur peut également se produire si vous utilisez un nom d’application que vous n’avez pas réservé dans le Centre de développement. Vous pouvez généralement corriger cette erreur en procédant comme suit:
 
 - Accédez à la page [Identité des applications](view-app-identity-details.md) pour votre application (sous **Gestion des applications**) pour vérifier si une identité est affectée à votre application. Si ce n’est pas le cas, une option vous permettra d’en créer une. Vous devez réserver un nom pour votre application afin de créer l’identité. Assurez-vous qu’il s’agit du nom que vous avez utilisé dans votre package.
 - Si votre application possède déjà une identité, vous devrez peut-être quand même réserver le nom que vous voulez utiliser dans votre package. Sous **Gestion des applications**, cliquez sur [Gestion des noms d’application](manage-app-names.md). Entrez le nom que vous souhaitez utiliser, puis cliquez sur **Réserver le nom d’application**.
@@ -52,7 +49,6 @@ Si vous voyez une erreur indiquant : **Le nom trouvé dans le package ne fait p
  
 
  
-
 
 
 

@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 518631e791746259dc4ee6f23184c8fc01ace427
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: e7d327cbe8d99b6b10ae4ccdeb8c7a6f0ee2ac5e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-store-app-marketing-guidelines"></a>Recommandations en matière de marketing adapté aux applications du Windows Store
 
 Découvrez comment promouvoir vos applications et vos contenus dans le Windows Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique.
@@ -40,7 +37,7 @@ Pour promouvoir votre application, vous pouvez afficher son aspect lors de son e
 
 ## <a name="license-to-microsoft-marks"></a>Licence d’utilisation des marques Microsoft
 
-*Marques Microsoft* désigne le *badge Microsoft* et la *vignette du Windows Store* décrits dans la page [Générateur de badge](http://go.microsoft.com/fwlink/p/?LinkID=534236). Pour utiliser ces badges, vous devez :
+*Marques Microsoft* désigne le *badge Microsoft* et la *vignette du Windows Store* décrits dans la page [Générateur de badge](http://go.microsoft.com/fwlink/p/?LinkID=534236). Pour utiliser ces badges, vous devez:
 
 -   avoir votre application ou d’autres contenus disponibles dans le Windows Store, ou faire partie du [programme d’affiliation Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=624463) ;
 
@@ -55,7 +52,6 @@ Microsoft est l’unique propriétaire des Marques Microsoft et de son actif inc
  
 
  
-
 
 
 

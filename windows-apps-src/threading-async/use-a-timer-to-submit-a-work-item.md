@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, minuteur, threads"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 984571c0b059a989477d99c4f823ed839dd8bff4
-ms.lasthandoff: 02/07/2017
-
+keywords: Windows10, uwp, minuteur, threads
+ms.openlocfilehash: 7148e14734f54c24275c4127801b487e5862bba9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>Utiliser un minuteur pour envoyer un élément de travail
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -32,7 +30,7 @@ Utilisez la méthode [**CreateTimer**](https://msdn.microsoft.com/library/window
 
 > **Remarque**  Vous pouvez utiliser [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
-L’exemple suivant crée un élément de travail qui s’exécute dans trois minutes :
+L’exemple suivant crée un élément de travail qui s’exécute dans trois minutes:
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -92,7 +90,7 @@ L’exemple suivant crée un élément de travail qui s’exécute dans trois mi
 
 Si nécessaire, gérez l’annulation et l’achèvement de l’élément de travail avec un objet [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Utilisez la surcharge [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) pour fournir une expression lambda supplémentaire. Celle-ci s’exécute lorsque le minuteur est annulé ou que l’élément de travail se termine.
 
-L’exemple suivant crée un minuteur qui envoie l’élément de travail, puis appelle une méthode lorsque l’élément de travail se termine ou que le minuteur est annulé :
+L’exemple suivant crée un minuteur qui envoie l’élément de travail, puis appelle une méthode lorsque l’élément de travail se termine ou que le minuteur est annulé:
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -236,4 +234,3 @@ Pour plus d’informations sur la répétition de minuteurs, voir [Créer un él
  
 
  
-

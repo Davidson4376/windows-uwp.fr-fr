@@ -1,7 +1,7 @@
 ---
 author: mijacobs
 Description: "Cet article répertorie des conseils d’utilisation des glyphes fournis avec la police Segoe MDL2 Assets."
-Search.Refinement.TopicID: 184
+Search.Refinement.TopicID: "184"
 title: "Recommandations en matière d’icônes Segoe MDL2"
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
 label: Segoe MDL2 icons
@@ -11,14 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0869bd8f26a6baf0a6b174812526fe7d80487dec
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 669a59227e06a976ee567eeea7717787727a51ff
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="segoe-mdl2-icons"></a>Icônes Segoe MDL2
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -35,13 +32,13 @@ Cet article répertorie les icônes fournies par la police Segoe MDL2 Assets.
 
 ## <a name="about-segoe-mdl2-assets"></a>À propos de la police Segoe MDL2 Assets
 
-Depuis la publication de Windows 10, la police Segoe MDL2 Assets a remplacé la police d’icône Segoe UI Symbol Windows 8/8.1. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (La police **Segoe UI Symbol** reste disponible comme ressource « héritée », mais nous vous recommandons de mettre à jour votre application de façon à utiliser la nouvelle police **Segoe MDL2 Assets**).
+Depuis la publication de Windows 10, la police Segoe MDL2 Assets a remplacé la police d’icône Segoe UI Symbol Windows 8/8.1. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (La police **Segoe UI Symbol** reste disponible comme ressource «héritée», mais nous vous recommandons de mettre à jour votre application de façon à utiliser la nouvelle police **Segoe MDL2 Assets**).
 
 La plupart des icônes et des contrôles d’interface utilisateur inclus dans la police **Segoe MDL2 Assets** sont mappés à la zone d’utilisation privée d’Unicode. La zone d’utilisation privée permet aux développeurs de polices d’affecter des valeurs Unicode privées à des glyphes qui ne correspondent pas à des points de code existants. Cette opération peut s’avérer utile lors de la création d’une police de symboles, mais elle génère un problème d’interopérabilité. Si la police n’est pas disponible, les glyphes n’apparaissent pas. Utilisez ces glyphes uniquement lorsque vous pouvez spécifier la police **Segoe MDL2 Assets**.
 
 Utilisez ces glyphes uniquement si vous pouvez spécifier explicitement la police **Segoe MDL2 Assets**. Si vous utilisez des vignettes, vous ne pouvez pas utiliser ces glyphes car vous ne pouvez pas spécifier la police des vignettes et les glyphes de la zone d’utilisation privée ne sont pas disponibles via font-fallback.
 
-À la différence de la police **Segoe UI Symbol**, les icônes de la police **Segoe MDL2 Assets** ne sont pas conçues pour être alignées sur du texte. Cela signifie que certaines anciennes « astuces » comme les flèches de divulgation progressive ne s’appliquent plus. De même, dans la mesure où toutes les nouvelles icônes sont dimensionnées et positionnées de la même manière, elles ne peuvent pas avoir une chasse nulle. Nous avons simplement veillé à ce qu’elles fonctionnent en tant que jeu. Théoriquement, vous pouvez superposer deux icônes conçues en tant que jeu. Elles se fondent. Nous pouvons faire cela pour permettre une colorisation dans le code. Par exemple, les icônes U+EA3A et U+EA3B ont été créées pour le badge de la vignette de démarrage. Comme elles sont déjà centrées, le remplissage du cercle peut changer de couleur en fonction de l’état.
+À la différence de la police **Segoe UI Symbol**, les icônes de la police **Segoe MDL2 Assets** ne sont pas conçues pour être alignées sur du texte. Cela signifie que certaines anciennes «astuces» comme les flèches de divulgation progressive ne s’appliquent plus. De même, dans la mesure où toutes les nouvelles icônes sont dimensionnées et positionnées de la même manière, elles ne peuvent pas avoir une chasse nulle. Nous avons simplement veillé à ce qu’elles fonctionnent en tant que jeu. Théoriquement, vous pouvez superposer deux icônes conçues en tant que jeu. Elles se fondent. Nous pouvons faire cela pour permettre une colorisation dans le code. Par exemple, les icônes U+EA3A et U+EA3B ont été créées pour le badge de la vignette de démarrage. Comme elles sont déjà centrées, le remplissage du cercle peut changer de couleur en fonction de l’état.
 
 ## <a name="layering-and-mirroring"></a>Superposition et mise en miroir
 
@@ -54,8 +51,8 @@ De nombreuses icônes offrent également des formes en miroir utilisables dans d
 ## <a name="symbol-enumeration"></a>Énumération Symbol
 Si vous développez une application en C#/VB/C++ et XAML, vous pouvez utiliser l’[**énumération Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842) pour utiliser des icônes de la police Segoe MDL2 Assets. 
 
-## <a name="how-do-i-get-this-font"></a>Comment obtenir cette police ?
-Pour obtenir la police Segoe MDL2 Assets, vous devez installer Windows 10. 
+## <a name="how-do-i-get-this-font"></a>Comment obtenir cette police?
+Pour obtenir la police Segoe MDL2 Assets, vous devez installer Windows10. 
 
 <!--
 Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons than we can show here. Many of these are intended for specialized purposed and are not typically used anywhere else.
@@ -63,7 +60,7 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 
 ## <a name="icon-list"></a>Liste des icônes
 
-<table>
+<table style="background-color: white; color: black">
 
  <tr>
   <td>Symbole</td>
@@ -5150,7 +5147,6 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 
 
  
-
 
 
 

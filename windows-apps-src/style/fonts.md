@@ -10,20 +10,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9e09569eaad194c6b945444579dc37dec0fdc76c
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 7d72d5251000e16349efa8d4f7716e12d22764d6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
 # <a name="fonts-for-uwp-apps"></a>Polices pour les applications UWP
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Cet article répertorie les polices recommandées pour les applications UWP. Ces polices sont systématiquement disponibles dans toutes les éditions de Windows 10 prenant en charge les applications UWP.
+Cet article répertorie les polices recommandées pour les applications UWP. Ces polices sont systématiquement disponibles dans toutes les éditions de Windows10 prenant en charge les applications UWP.
 
 <div class="important-apis" >
 <b>API importantes</b><br/>
@@ -315,7 +311,6 @@ Utilisez les API de [mappage de police LanguageFont](https://msdn.microsoft.com/
  
 
  
-
 
 
 

@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 07cca18b97a50fe8ced8b76094d358b948d18535
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 9dee8e05dbf2384fc87c1974a732ff36459fa229
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="make-your-app-easier-to-promote"></a>Faciliter la promotion de votre application
 
 
-Faites en sorte que votre application soit remarquée ! En plus de faire le nécessaire pour que votre application soit la meilleure possible, il y a des choses que vous pouvez faire pour faciliter la promotion de votre application dans le Windows Store et sur d’autres sites et pour qu’elle retienne davantage l’attention.
+Faites en sorte que votre application soit remarquée! En plus de faire le nécessaire pour que votre application soit la meilleure possible, il y a des choses que vous pouvez faire pour faciliter la promotion de votre application dans le Windows Store et sur d’autres sites et pour qu’elle retienne davantage l’attention.
 
 ## <a name="windows-store-requirements-for-featured-apps"></a>Conditions requises par le Windows Store pour les applications proposées
 
@@ -38,7 +35,7 @@ Le Windows Store présente différentes applications regroupées par catégorie 
 
 -   **Activer des filtres pour les applications comportant du contenu classifié 16+ et 18+**
 
-    Dans la plupart des cas, le Windows Store ne propose des applications comportant du contenu classifié 16+ que si l'application utilise le filtrage de contenu. Ainsi, tout le contenu destiné à un public âgé de plus de 16 ans sera masqué aux utilisateurs jusqu'à ce qu'ils décident explicitement de l'afficher. Le filtre de contenu doit être activé par défaut, protégé par mot de passe et disponible dans l'application proprement dite (et non pas sur un site web distinct).
+    Dans la plupart des cas, le WindowsStore ne propose des applications comportant du contenu classifié16+ que si l'application utilise le filtrage de contenu. Ainsi, tout le contenu destiné à un public âgé de plus de 16ans sera masqué aux utilisateurs jusqu'à ce qu'ils décident explicitement de l'afficher. Le filtre de contenu doit être activé pardéfaut, protégé par mot de passe et disponible dans l'application proprement dite (et non pas sur un site web distinct).
 
 -   **Répertorier votre application dans tous les marchés pertinents et la localiser dans les langues appropriées**
 
@@ -49,7 +46,6 @@ Le fait de suivre ces recommandations permettra également à d’autres personn
  
 
  
-
 
 
 

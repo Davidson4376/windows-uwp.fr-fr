@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 06be2dad7022a25e07a159bec7f1d007ff608ed3
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 7de4e53df32979d87a19b7d0556ef716b901687b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="respond-to-customer-reviews"></a>Répondre aux avis des clients
 
 
-Vous pouvez répondre directement aux avis concernant votre application pour montrer à vos clients que vous prêtez attention à leurs commentaires. Les réponses aux avis permettent d’indiquer aux clients les nouvelles fonctionnalités ou les bogues corrigés d’après leurs commentaires ou d’obtenir des commentaires plus précis sur les améliorations à apporter à votre application. Vous pouvez également choisir d’afficher votre réponse dans le Windows Store afin qu’elle soit visible pour tous les clients Windows 10.
+Vous pouvez répondre directement aux avis concernant votre application pour montrer à vos clients que vous prêtez attention à leurs commentaires. Les réponses aux avis permettent d’indiquer aux clients les nouvelles fonctionnalités ou les bogues corrigés d’après leurs commentaires ou d’obtenir des commentaires plus précis sur les améliorations à apporter à votre application. Vous pouvez également choisir d’afficher votre réponse dans le WindowsStore afin qu’elle soit visible pour tous les clients Windows10.
 
 > **Important** Vous ne pourrez pas répondre directement aux avis rédigés par des clients ayant choisi de ne pas recevoir de réponses. Il est également impossible de laisser des réponses aux commentaires créés par des clients en dehors des États-Unis avec des appareils Windows Phone 8.
 
@@ -29,7 +26,7 @@ Pour visualiser les avis concernant votre application et y répondre, recherchez
 
 Lorsque vous répondez à un avis, le client reçoit un e-mail de Microsoft contenant votre réponse. Cet e-mail contient également l’adresse e-mail de support de votre application que votre client pourra utiliser par la suite pour vous contacter directement. Si vous n'avez pas ajouté d’adresse e-mail de support pour votre application au cours du processus de soumission, vous devrez en indiquer une pour pouvoir répondre.
 
-Par défaut, seul le client auquel vous répondez pourra lire votre réponse. Si vous souhaitez permettre aux autres clients de consulter votre réponse, cochez la case **Rendre cette réponse publique** pour afficher votre réponse dans la description de votre application dans le Windows Store, juste au-dessous de l’avis du client. Les réponses publiques seront visibles pour tous les clients consultant le Windows Store sur des appareils Windows 10.
+Par défaut, seul le client auquel vous répondez pourra lire votre réponse. Si vous souhaitez permettre aux autres clients de consulter votre réponse, cochez la case **Rendre cette réponse publique** pour afficher votre réponse dans la description de votre application dans le WindowsStore, juste au-dessous de l’avis du client. Les réponses publiques seront visibles pour tous les clients consultant le WindowsStore sur des appareils Windows10.
 
 > **Important** Il est impossible de modifier ultérieurement une réponse publique (sauf si le client modifie l’avis qu’il a initialement publié). Nous vous invitons donc à bien vérifier votre réponse avant de la rendre publique. Si un client modifie son avis initial, votre réponse sera supprimée. Vous pouvez ensuite, si vous le souhaitez, répondre à l’avis qu’il aura modifié.
 
@@ -54,4 +51,3 @@ Votre relation avec vos clients est de votre responsabilité. Microsoft ne prend
 
 
 Être à l'écoute de vos clients et leur fournir des réponses n'est qu'un début. Réagir à leurs commentaires est également un point essentiel. Si vous apportez des améliorations importantes, présentez-les dans le Windows Store en toute confiance en [créant une autre soumission](app-submissions.md) pour mettre à jour votre application.
-

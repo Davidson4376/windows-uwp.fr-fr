@@ -10,14 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 98158e8dc1531c1d4059b5462a6839d775fb6336
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 0d4266d1335198cffb74900b0d1eb2bb48cd1879
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="color"></a>Couleur
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -28,7 +25,7 @@ Dans Windows, la couleur est également personnalisable. Les utilisateurs peuven
 
 ## <a name="accent-color"></a>Couleur d’accentuation
 
-L’utilisateur peut sélectionner une seule couleur appelée couleur d’accentuation à partir de *Paramètres &gt; Personnalisation &gt; Couleurs*. Il peut choisir parmi un ensemble de 48 nuances de couleur, sauf sur Xbox où la palette inclut 21 couleurs adaptées aux écrans de TV.
+L’utilisateur peut sélectionner une seule couleur appelée couleur d’accentuation à partir de *Paramètres&gt; Personnalisation&gt; Couleurs*. Il peut choisir parmi un ensemble de 48nuances de couleur, sauf sur Xbox où la palette inclut 21couleurs adaptées aux écrans de TV.
 
 ### <a name="default-accent-colors"></a>Couleurs d’accentuation par défaut
 <table class="uwpd-color-table" style="border: solid 4px white;">
@@ -150,10 +147,30 @@ Une fois qu’une couleur d’accentuation est sélectionnée, des nuances clair
 Par défaut, les liens hypertexte utilisent la couleur d’accentuation de l’utilisateur. Si l’arrière-plan de la page est de couleur similaire, vous pouvez choisir d’affecter une nuance plus claire (ou plus foncée) pour l’accentuation des liens hypertexte, afin d’obtenir un meilleur contraste.
 
 
-<div class="uwpd-image-with-caption">
-    <img src="images/shades.png" alt="A single accent color with its 6 shades" />
-    <div>Les différentes nuances claires/foncées de la couleur d’accentuation par défaut.</div>
-</div>
+<table class="uwpd-color-table" style="border: solid 4px white; width: 30pc">
+   <caption>Les différentes nuances claires/foncées de la couleur d’accentuation par défaut.</caption>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #A6D8FF; color: black">3nuances plus claires</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #76B9ED; color: black">2nuances plus claires</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #429CE3; color: black">1nuance plus claire</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #0078D7; color: white">Exemple de couleur d’accentuation</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #005A9E; color: white">1nuance plus foncée</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #004275; color: white">2nuances plus foncées</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #002642; color: white">3nuances plus foncées</td>
+    </tr>
+</table>
 
 <div class="uwpd-image-with-caption">
     <img src="images/action_center_redline_zoom.png" alt="Redlines for Colored Action Center" />
@@ -168,7 +185,7 @@ Par défaut, les liens hypertexte utilisent la couleur d’accentuation de l’u
 
 Les utilisateurs peuvent également choisir entre un thème clair ou un thème foncé pour le système. Certaines applications modifient leur thème selon la préférence de l’utilisateur.
 
-Les applications utilisant le thème clair sont conçues pour des scénarios impliquant des applications de productivité. Par exemple, la suite d’applications disponibles avec Microsoft Office. Le thème clair permet une lecture plus aisée de textes longs associée à de longues périodes de travail.
+Les applications utilisant le thème clair sont conçues pour des scénarios impliquant des applications de productivité. Par exemple, la suite d’applications disponibles avec MicrosoftOffice. Le thème clair permet une lecture plus aisée de textes longs associée à de longues périodes de travail.
 
 Un thème foncé rend plus visible le contraste des contenus pour les applications multimédias ou dans des scénarios où les utilisateurs ont accès à une quantité importante de vidéos et d’images. Dans ces scénarios, la lecture n’est pas forcément prépondérante, contrairement au visionnage d’un film, dans un environnement peu éclairé.
 
@@ -198,7 +215,7 @@ Pour faciliter la conception des thèmes, Windows propose une palette de couleur
 
 ## <a name="changing-the-theme"></a>Modification du thème
 
-Vous pouvez facilement modifier les thèmes en modifiant la propriété **RequestedTheme** dans votre fichier App.xaml :
+Vous pouvez facilement modifier les thèmes en modifiant la propriété **RequestedTheme** dans votre fichier App.xaml:
 
 ```XAML
 <Application
@@ -223,4 +240,3 @@ Notre palette est optimisée pour une utilisation sur écran. Pour le texte, nou
 
 * [Styles XAML](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)
 * [Ressources de thème XAML](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)
-

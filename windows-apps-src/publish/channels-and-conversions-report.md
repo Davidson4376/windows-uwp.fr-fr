@@ -8,20 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, canaux, conversions, rapport, analyse"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 60f639c6bad73273a6cc7f83cf65fdf321211ba1
-ms.lasthandoff: 02/07/2017
-
+keywords: Windows10, uwp, canaux, conversions, rapport, analyse
+ms.openlocfilehash: cbdd2e530594b97847196941580e2837d71698d0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="channels-and-conversions-report"></a>Rapport sur les canaux et conversions
 
 
-Le rapport **Canaux et conversions** dans le tableau de bord du Centre de développement Windows vous permet de voir comment les clients de Windows 10 sont arrivés à votre application. Il vous permet de suivre les [campagnes de promotion personnalisées](create-a-custom-app-promotion-campaign.md) pour votre application ou ses modules complémentaires, et de voir combien de ces visites ont généré des nouvelles acquisitions. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion.
+Le rapport **Canaux et conversions** dans le tableau de bord du Centre de développement Windows vous permet de voir comment les clients de Windows10 sont arrivés à votre application. Il vous permet de suivre les [campagnes de promotion personnalisées](create-a-custom-app-promotion-campaign.md) pour votre application ou ses modules complémentaires, et de voir combien de ces visites ont généré des nouvelles acquisitions. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion.
 
-> **Important**   Ce rapport n’affiche que les données de conversion et les vues de page des clients sur Windows 10.
+> **Important**   Ce rapport n’affiche que les données de conversion et les vues de page des clients sur Windows10.
 
  
 
@@ -29,9 +26,9 @@ Dans ce rapport, un *canal* fait référence à la méthode par laquelle un clie
 
 -   **Trafic du magasin :** le client naviguait ou effectuait une recherche dans le Windows Store lorsqu'ils a consulté la description de votre application.
 -   **Campagne personnalisée :** le client suivait un lien qui a utilisé un [ID de campagne personnalisée](create-a-custom-app-promotion-campaign.md).
--   **Autres :** le client suivait un lien externe (sans ID de campagne personnalisée) d’un site web vers la description de votre application ou d’un moteur de recherche vers la description de votre application.
+-   **Autres:** le client suivait un lien externe (sans ID de campagne personnalisée) d’un site web vers la description de votre application ou d’un moteur de recherche vers la description de votre application.
 
-Une *vue de page* signifie qu’un client a consulté la description de votre application dans le Windows Store, soit via le Windows Store sur le web, soit depuis l’application du Windows Store sur Windows 10.
+Une *vue de page* signifie qu’un client a consulté la description de votre application dans le Windows Store, soit via le Windows Store sur le web, soit depuis l’application du Windows Store sur Windows10.
 
 Une *conversion* signifie qu’un client a obtenu une licence pour votre application (qu’elle soit payante ou gratuite) ou un module complémentaire.
 
@@ -39,7 +36,7 @@ Nous n’affichons pas de taux de conversion dans ce rapport, car nos vues de pa
 
 Les données de conversion ne sont disponibles que pour vos campagnes personnalisées. Pour les autres types de canal, seules les données sur les vues de page sont incluses dans ce rapport.
 
-> **Remarque**  Les clients peuvent arriver à la description de votre application en cliquant sur une campagne personnalisée qui n'a pas été créée par vos soins. Pour prendre en compte cette possibilité, nous marquons chaque vue de page dans une session avec l’ID de campagne à partir duquel l’utilisateur arrive dans le Windows Store. Nous attribuons ensuite une conversion de votre application à cet ID de campagne si une acquisition de votre application se produit dans les 24 heures. Lorsque vous affichez votre rapport, c’est la raison pour laquelle vous risquez de voir des conversions attribuées à des campagnes qui ne vous sont pas familières, de voir un plus grand nombre de conversions totales que celui indiqué dans la répartition des conversions, ou encore d'obtenir des conversions d'applications ou des conversions de module complémentaire qui ne comportent aucune vue de page. Vous pouvez examiner la répartition des conversions par ID de campagne pour afficher uniquement les conversions attribuées à des campagnes que vous avez créées afin d’en évaluer l'efficacité.
+> **Remarque**  Les clients peuvent arriver à la description de votre application en cliquant sur une campagne personnalisée qui n'a pas été créée par vos soins. Pour prendre en compte cette possibilité, nous marquons chaque vue de page dans une session avec l’ID de campagne à partir duquel l’utilisateur arrive dans le Windows Store. Nous attribuons ensuite une conversion de votre application à cet ID de campagne si une acquisition de votre application se produit dans les 24heures. Lorsque vous affichez votre rapport, c’est la raison pour laquelle vous risquez de voir des conversions attribuées à des campagnes qui ne vous sont pas familières, de voir un plus grand nombre de conversions totales que celui indiqué dans la répartition des conversions, ou encore d'obtenir des conversions d'applications ou des conversions de module complémentaire qui ne comportent aucune vue de page. Vous pouvez examiner la répartition des conversions par ID de campagne pour afficher uniquement les conversions attribuées à des campagnes que vous avez créées afin d’en évaluer l'efficacité.
 
 
 ## <a name="apply-filters"></a>Appliquer des filtres
@@ -90,13 +87,12 @@ Par défaut, ce rapport inclut les modules complémentaires pour lesquels une co
 
 Le graphique **Répartition des conversions** affiche les informations suivantes sur les vues de page et les conversions obtenues à partir des campagnes personnalisées.
 
--   **ID :** affiche les ID de campagne spécifiques.
--   **Vues de page :** affiche le nombre de vues de page marquées avec l’ID de campagne de la première entrée du client dans le Windows Store.
--   **Conversions d’applications :** indique le nombre de conversions d’applications résultant de la campagne personnalisée.
--   **Conversions de modules complémentaires :** indique le nombre de conversions de modules complémentaires résultant de la campagne personnalisée.
+-   **ID:** affiche les ID de campagne spécifiques.
+-   **Vues de page:** affiche le nombre de vues de page marquées avec l’ID de campagne de la première entrée du client dans le Windows Store.
+-   **Conversions d’applications:** indique le nombre de conversions d’applications résultant de la campagne personnalisée.
+-   **Conversions de modules complémentaires:** indique le nombre de conversions de modules complémentaires résultant de la campagne personnalisée.
 
 
  
 
  
-

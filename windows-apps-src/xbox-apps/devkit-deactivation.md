@@ -1,24 +1,21 @@
 ---
 author: Mtoepke
-title: "Désactivation du mode développeur Xbox One"
+title: "Désactivation du Mode développeur XboxOne"
 description: "Procédure de désactivation du mode développeur."
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 857b1529a933f416a1c61f3afd844f6cb820f3f3
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 46e9e013336f19aedafdb21e0417c878c7c7e8a1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="xbox-one-developer-mode-deactivation"></a>Désactivation du mode développeur XboxOne
 
-# <a name="xbox-one-developer-mode-deactivation"></a>Désactivation du mode développeur Xbox One
-
-* [Basculer en mode commercial](#switch-to-retail-mode)
+* [Basculer en Mode commercial](#switch-to-retail-mode)
 * [Désactiver votre console à l’aide de l’application Dev Mode Activation](#deactivate-your-console-using-the-dev-mode-activation-app)  
 * [Réinitialiser votre console](#reset-your-console)
 * [Désactiver votre console à l’aide du Centre de développement Windows](#deactivate-your-console-using-windows-dev-center)
@@ -41,7 +38,7 @@ La méthode recommandée pour désactiver le Mode développeur sur votre console
 
 1. Accédez à **Mes jeux et applications** > **Applications**.
   
-   ![Activation - Étape 3](images/activation-step-3.png)    
+   ![Activation - Étape3](images/activation-step-3.png)    
    
 2.  Ouvrez l’application Dev Mode Activation.    
 3.  Cliquez sur **Désactiver**.
@@ -55,7 +52,7 @@ Vous pouvez également désactiver le Mode développeur en réinitialisant votre
 > [!NOTE]
 > La réinitialisation de votre console entraîne la perte de toutes les données de jeu enregistrées localement.
 
-Pour réinitialiser votre console procédez comme suit :
+Pour réinitialiser votre console procédez comme suit:
 
 1.  Accédez à **Mes jeux et applications**.  
 2.  Sélectionnez **Applications**, puis sélectionnez **Paramètres**.  
@@ -88,9 +85,8 @@ Si vous n’avez pas encore basculé votre console Xbox One en Mode commercial, 
 1. Lancez **Dev Home**.
 2. Cliquez sur **Quitter le mode développeur**.  Votre console redémarre en Mode commercial.
 
-![Activation - Étape 13](images/deactivation-leave-dev-mode.png)
+![Activation - Étape13](images/deactivation-leave-dev-mode.png)
 
 ## <a name="see-also"></a>Voir aussi
-- [Activation du Mode développeur Xbox One](devkit-activation.md)
-- [UWP sur Xbox One](index.md)
-
+- [Activation du Mode développeur XboxOne](devkit-activation.md)
+- [UWP sur XboxOne](index.md)

@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Vous pouvez soumettre des applications dans le Windows Store dans plus de 100 langues."
+Description: Vous pouvez soumettre des applications dans le Windows Store dans plus de 100 langues.
 title: Langues prises en charge
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ms.author: wdg-dev-content
@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b9d0720ee56430320cfc4ca2725fb3e0ac8049e5
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: dcf74918f00f4e13d85e9eecc2570451354097e8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="supported-languages"></a>Langues prises en charge
 
 
-Vous pouvez soumettre des applications dans le Windows Store dans plus de 100 langues.
+Vous pouvez soumettre des applications dans le Windows Store dans plus de 100langues.
 
 Pour en savoir plus sur la configuration de langues dans vos applications, consultez [Globalisation et localisation](../globalizing/globalizing-portal.md) et [Gérer la langue et la région](../globalizing/manage-language-and-region.md). Nous avons également un [Kit de ressources pour application multilingue](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370) pour vous aider à écrire des applications qui prennent en charge plusieurs langues.
 
@@ -139,7 +136,6 @@ Voici la liste des langues que le Windows Store prend en charge. Votre applicati
  
 
  
-
 
 
 

@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1aaab8d122968265ff17b352a53b69081e84f01e
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 48e48d1a350b01777c1d7e5ed4ab1f82b1d66d26
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-management-and-services"></a>Gestion des applications et services
 
 Vous pouvez gérer chacune de vos applications dans le tableau de bord du Centre de développement Windows, en afficher les détails et configurer des services comme les notifications Push, les tests A/B et les cartes.
@@ -28,9 +25,9 @@ La section **Services** vous permet de gérer les différents services pour vos 
 
 ### <a name="push-notifications"></a>Notifications Push
 
-La section **Notifications Push** vous permet de créer et d’envoyer des notifications push ciblées aux clients de votre application. Vous pouvez les envoyer à tous les clients de votre application ou à un sous-ensemble de vos clients Windows 10 remplissant les critères définis par vous dans un [segment de clients](create-customer-segments.md). Pour plus d’informations, consultez [Envoyer des notifications Push ciblées aux clients de votre application](send-push-notifications-to-your-apps-customers.md).
+La section **Notifications Push** vous permet de créer et d’envoyer des notifications push ciblées aux clients de votre application. Vous pouvez les envoyer à tous les clients de votre application ou à un sous-ensemble de vos clients Windows10 remplissant les critères définis par vous dans un [segment de clients](create-customer-segments.md). Pour plus d’informations, consultez [Envoyer des notifications Push ciblées aux clients de votre application](send-push-notifications-to-your-apps-customers.md).
 
-En fonction du type de package de votre application et de sa configuration spécifique, vous pouvez utiliser l’une des options suivantes pour les notifications Push en cliquant sur la page **WNS/MPNS** dans le menu de navigation de gauche : 
+En fonction du type de package de votre application et de sa configuration spécifique, vous pouvez utiliser l’une des options suivantes pour les notifications Push en cliquant sur la page **WNS/MPNS** dans le menu de navigation de gauche: 
 
 -   **Windows Push Notification Services (WNS)** vous permet d’envoyer un toast, une vignette, un badge et des mises à jour brutes depuis votre propre service cloud. Pour plus d’informations, voir l’article [Vue d’ensemble des services de notifications Push Windows (WNS)](https://msdn.microsoft.com/library/windows/apps/mt187203).
 
@@ -48,13 +45,13 @@ Pour plus d’informations, voir [Exécuter des expériences d’application ave
 
 Pour utiliser les services cartographiques dans les applications pour Windows Phone 8.1 et versions antérieures, vous devez insérer un identifiant et un jeton d’application de service cartographique dans le code de votre application. Ce jeton est accessible sur la page **Cartes**, dans la section **Services**.
 
-> **Remarque**  Pour utiliser les services cartographiques dans des applications ciblant Windows 10 ou Windows 8.x, visitez le [Centre de développement Bing Cartes](http://go.microsoft.com/fwlink/p/?LinkId=614880). Pour plus d’informations, voir [Demander une clé d’authentification de cartes](https://msdn.microsoft.com/library/windows/apps/mt219694).
+> **Remarque**  Pour utiliser les services cartographiques dans des applications ciblant Windows10 ou Windows8.x, visitez le [Centre de développement Bing Cartes](http://go.microsoft.com/fwlink/p/?LinkId=614880). Pour plus d’informations, voir [Demander une clé d’authentification de cartes](https://msdn.microsoft.com/library/windows/apps/mt219694).
 
 Pour plus d’informations, voir [Utiliser les services cartographiques](use-map-services.md).
 
 ### <a name="product-collections-and-purchases"></a>Collections et achats de produits
 
-Pour utiliser l’API de collection du Windows Store et l’API d’achat du Windows Store afin d’accéder aux informations de propriété relatives aux applications et aux modules complémentaires, vous devez entrer les ID clients Azure AD associés ici. Notez que la prise en compte de ces modifications peut prendre jusqu’à 16 heures.
+Pour utiliser l’API de collection du Windows Store et l’API d’achat du Windows Store afin d’accéder aux informations de propriété relatives aux applications et aux modules complémentaires, vous devez entrer les ID clients Azure AD associés ici. Notez que la prise en compte de ces modifications peut prendre jusqu’à 16heures.
 
 Pour plus d’informations, voir [Visualiser et accorder des produits à partir d’un service](https://msdn.microsoft.com/library/windows/apps/mt609002).
 
@@ -87,4 +84,3 @@ Les développeurs ayant des autorisations OEM peuvent également [générer des 
  
 
  
-

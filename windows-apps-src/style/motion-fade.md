@@ -5,12 +5,10 @@ title: Animations en fondu dans les applications UWP
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
 ms.openlocfilehash: cbe1a4ca77f0d6e15b3d12b2b3a0f2f8363530ae
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="fade-animations"></a>Afficher et masquer les animations en fondu
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -38,7 +36,7 @@ Utilisez les animations en fondu pour faire apparaître ou disparaître des él�
 
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animation de fondus](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [Démarrage rapide : Animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Démarrage rapide: Animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210298)
 * [**Classe FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
@@ -47,11 +45,5 @@ Utilisez les animations en fondu pour faire apparaître ou disparaître des él�
  
 
 
-
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

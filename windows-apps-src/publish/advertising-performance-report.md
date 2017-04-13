@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Pour afficher les données de performances pour les unités publicitaires dans vos applications, utilisez les rapports sur les performances publicitaires au niveau du compte et de l’application dans le tableau de bord du Centre de développement Windows."
+Description: "Pour afficher les données de performances pour les unités publicitaires dans vos applications, utilisez les rapports sur les performances publicitaires au niveau du compte et de l’application dans le tableau de bord du Centre de développementWindows."
 title: Rapport sur les performances publicitaires
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.author: wdg-dev-content
@@ -8,23 +8,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d53fe17f2d2452e66a6b4f9c1609112c621ede64
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: e12cec828704a839092c1a6cb618ce8a46b83093
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="advertising-performance-report"></a>Rapport sur les performances publicitaires
 
 
 Pour afficher les données de performances pour les unités publicitaires dans vos applications, vous pouvez utiliser les rapports suivants dans le tableau de bord du centre de développement Windows :
 
--   [Rapport sur les performances publicitaires au niveau de l’application](advertising-performance-report.md#app-level-advertising-performance-report). Ce rapport fournit des données de performances pour les unités publicitaires Microsoft dans l’application actuellement sélectionnée dans le tableau de bord.
--   [Rapport sur les performances publicitaires au niveau du compte](advertising-performance-report.md#account-level-advertising-performance-report). Ce rapport fournit des données de performances détaillées pour les unités publicitaires Microsoft et les annonces de la communauté pour toutes les applications qui sont enregistrées sur votre compte de développeur.
+-   [Rapport sur les performances publicitaires au niveau de l’application](advertising-performance-report.md#app-level-advertising-performance-report). Ce rapport fournit des données de performances pour les unités publicitairesMicrosoft dans l’application actuellement sélectionnée dans le tableau de bord.
+-   [Rapport sur les performances publicitaires au niveau du compte](advertising-performance-report.md#account-level-advertising-performance-report). Ce rapport fournit des données de performances détaillées pour les unités publicitairesMicrosoft et les annonces de la communauté pour toutes les applications qui sont enregistrées sur votre compte de développeur.
 
-Par défaut, les rapports sont filtrés sur les performances des 30 derniers jours, sur tous les appareils. Pour modifier ces filtres, sélectionnez **Appliquer des filtres**, puis choisissez une autre période (un des périodes prédéfinies ou une plage de dates personnalisée) ou un type d’appareil spécifique. 
+Par défaut, les rapports sont filtrés sur les performances des 30derniers jours, sur tous les appareils. Pour modifier ces filtres, sélectionnez **Appliquer des filtres**, puis choisissez une autre période (un des périodes prédéfinies ou une plage de dates personnalisée) ou un type d’appareil spécifique. 
 
 > [!TIP]
 > Pour effectuer une analyse plus approfondie de vos données, sélectionnez **Télécharger le rapport**, puis ouvrez le fichier CSV (valeurs séparées par une virgule) dans Microsoft Excel ou un programme similaire.
@@ -33,9 +30,9 @@ Les sections suivantes fournissent des informations supplémentaires sur ces rap
 
 ## <a name="app-level-advertising-performance-report"></a>Rapport sur les performances publicitaires au niveau de l’application.
 
-Ce rapport fournit, sous forme de graphique, de carte du monde et de tableau, des données de performances pour les unités publicitaires Microsoft dans l’application actuellement sélectionnée dans le tableau de bord. Pour afficher ce rapport, sélectionnez l’une de vos applications dans le tableau de bord et cliquez sur **Analyse** &gt; **Performances des publicités** dans le volet de navigation.
+Ce rapport fournit, sous forme de graphique, de carte du monde et de tableau, des données de performances pour les unités publicitairesMicrosoft dans l’application actuellement sélectionnée dans le tableau de bord. Pour afficher ce rapport, sélectionnez l’une de vos applications dans le tableau de bord et cliquez sur **Analyse** &gt; **Performances des publicités** dans le volet de navigation.
 
-Les données sont obtenues à partir des métriques de performances ci-après, que nous suivons pour les publicités intégrées dans votre application :
+Les données sont obtenues à partir des métriques de performances ci-après, que nous suivons pour les publicités intégrées dans votre application:
 
 -   **Estimation des revenus** : estimation des revenus générés par les publicités diffusées dans votre application.
 -   **Coût par impression électronique** : coût effectif pour mille impressions.
@@ -55,13 +52,13 @@ Pour effectuer une analyse plus approfondie de vos données, sélectionnez **Té
 
 ## <a name="account-level-advertising-performance-report"></a>Rapport sur les performances publicitaires au niveau du compte
 
-Ce rapport fournit des données de performances pour les unités publicitaires Microsoft et les annonces de la communauté utilisées dans les applications qui sont enregistrées sur votre compte de développeur. Pour afficher ce rapport, accédez à votre page de présentation du tableau de bord et cliquez sur **Performances des publicités** dans le volet de navigation.
+Ce rapport fournit des données de performances pour les unités publicitairesMicrosoft et les annonces de la communauté utilisées dans les applications qui sont enregistrées sur votre compte de développeur. Pour afficher ce rapport, accédez à votre page de présentation du tableau de bord et cliquez sur **Performances des publicités** dans le volet de navigation.
 
 Cette page contient les sections suivantes.
 
-### <a name="microsoft-advertising"></a>Microsoft Advertising
+### <a name="microsoft-advertising"></a>MicrosoftAdvertising
 
-Ce rapport fournit des données de performances pour toutes les unités publicitaires Microsoft utilisées dans vos applications. Il inclut également des données de performances pour les unités publicitaires pubCenter qui n’ont pas été correctement mappées à vos applications du Centre de développement.
+Ce rapport fournit des données de performances pour toutes les unités publicitairesMicrosoft utilisées dans vos applications. Il inclut également des données de performances pour les unités publicitaires pubCenter qui n’ont pas été correctement mappées à vos applications du Centre de développement.
 
 Ce rapport montre les sept mêmes mesures de performances et affichages (sous forme de graphiques, cartes du monde et tableaux) que le rapport sur les performances publicitaires au niveau de l’application décrit ci-dessus. Vous pouvez appliquer les filtres suivants à ce rapport :
 
@@ -77,11 +74,11 @@ Pour plus d’informations sur la migration de comptes pubCenter vers le Centre 
 
 Pour effectuer une analyse plus approfondie de vos données, sélectionnez **Télécharger le rapport**, puis ouvrez le fichier CSV (valeurs séparées par une virgule) dans Microsoft Excel ou un programme similaire.
 
-### <a name="microsoft-community-ads"></a>Annonces de la communauté Microsoft
+### <a name="microsoft-community-ads"></a>Annonces de la communautéMicrosoft
 
 Cette section fournit, sous forme de graphiques et de cartes du monde, des données de performances pour les annonces de la communauté dans l’application actuellement sélectionnée dans le tableau de bord. Pour en savoir plus sur les annonces de la communauté, voir [À propos des annonces de la communauté](about-community-ads.md).
 
-Les données sont obtenues à partir des métriques de performances suivantes que nous suivons pour les publicités intégrées dans votre application :
+Les données sont obtenues à partir des métriques de performances suivantes que nous suivons pour les publicités intégrées dans votre application:
 
 -   **Demandes** : nombre de fois où une demande d’annonce de la communauté a été envoyée à partir de votre application.
 -   **Taux de remplissage** : pourcentage de demandes d’annonce de la communauté envoyées à partir de votre application dans lesquelles une publicité était affichée.
@@ -98,9 +95,8 @@ Voici quelques éléments à prendre en considération lors de l’utilisation d
 
 - Il peut exister des différences entre les rapports sur les performances publicitaires dans le Centre de développement et pubCenter. Les données de performances publicitaires dans le Centre de développement sont agrégées en fonction de l’heure UTC (et non de votre fuseau horaire spécifique), tandis que les rapports pubCenter sont agrégés en fonction de votre fuseau horaire spécifique.
 - Les données des rapports portant sur les trois derniers jours sont susceptibles de changer à mesure que nous recevons et traitons de nouvelles données en provenance de différentes sources.
-- Les données remontant à jusqu’à 90 jours peuvent faire l’objet d’un ajustement.
+- Les données remontant à jusqu’à 90jours peuvent faire l’objet d’un ajustement.
 
  
 
  
-

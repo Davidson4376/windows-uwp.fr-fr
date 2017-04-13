@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e82431c9b39999af9fe19ac147a6c031b9a3edc3
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 6418fe1b47ac89e8decb135aa9a2108b3b95ef82
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="monetize-with-ads"></a>Monétiser à l’aide des publicités
 
 
@@ -36,7 +33,7 @@ Pour plus d’informations sur les obligations qui vous incombent en vertu de la
 
 ## <a name="microsoft-affiliate-ads"></a>Annonces des affiliés Microsoft
 
-Cochez la case dans cette section si vous voulez afficher les annonces des affiliés Microsoft dans votre application. Si vous activez cette case à cocher, les annonces concernant les produits disponibles dans le Store, y compris la musique, les jeux, les films, les applications, le matériel et les logiciels, sont affichées dans votre application si aucune annonce n’est disponible via les autres réseaux publicitaires. Lorsqu’un utilisateur clique sur les annonces et achète des produits au sein d’une fenêtre d’attribution donnée, vous touchez une commission sur les achats approuvés.
+Cochez la case dans cette section si vous voulez afficher les annonces des affiliés Microsoft dans votre application. Si vous activez cette case à cocher, les annonces concernant les produits disponibles dans le Store, y compris la musique, les jeux, les films, les applications, le matériel et les logiciels, sont affichées dans votre application si aucune annonce n’est disponible via les autres réseaux publicitaires. Lorsqu’un utilisateur clique sur les annonces et achète des produits au sein d’une fenêtre d’attribution donnée du Windows Store, vous touchez une commission sur les achats approuvés.
 
 Si vous changez cette sélection, il n’est pas nécessaire de republier l’application pour que les modifications prennent effet. Pour plus d’informations sur les annonces des affiliés Microsoft, voir [À propos des annonces des affiliés](about-affiliate-ads.md).
 
@@ -50,28 +47,27 @@ Si vous changez cette sélection, il n’est pas nécessaire de republier l’ap
 
 ## <a name="microsoft-advertising-ad-units"></a>Unités publicitaires Microsoft Advertising
 
-Utilisez cette section pour créer une unité publicitaire Microsoft Advertising. Il vous faudra créer des unités publicitaires uniquement dans les scénarios suivants :
+Utilisez cette section pour créer une unité publicitaire Microsoft Advertising. Il vous faudra créer des unités publicitaires uniquement dans les scénarios suivants:
 
--   Votre application affiche des bannières de Microsoft Advertising à l’aide d’un objet [AdControl](https://msdn.microsoft.com/library/mt313154.aspx).
--   Votre application affiche des spots publicitaires de Microsoft Advertising à l’aide d’un objet [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx).
+-   Votre application affiche des bannières à l’aide d’un objet [AdControl](https://msdn.microsoft.com/library/mt313154.aspx).
+-   Votre application affiche des spots publicitaires à l’aide d’un objet [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx).
 
-Pour créer une unité publicitaire pour ces scénarios :
+Pour créer une unité publicitaire pour ces scénarios:
 
 1.  Nommez l’unité publicitaire.
-2.  Sélectionnez le type d’unité publicitaire (**Bannière** ou **Spot vidéo**).
+2.  Sélectionnez le type d’unité publicitaire (**Bannière**, **Spot vidéo** ou **Bannière spot publicitaire**).
 3.  Sélectionnez le type d’appareil (**Mobile** ou **PC/tablette**).
 4.  Cliquez sur **Créer une publicité**.
 
 Vos unités publicitaires apparaissent dans un tableau situé en bas de cette section. Pour chaque unité publicitaire, vous voyez l’**ID de l’application** et l’**ID de l’unité publicitaire**. Pour afficher les publicités dans votre application, vous devez utiliser ces valeurs dans votre code :
 
--   Si votre application affiche des bannières, affectez ces valeurs aux propriétés [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) et [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) de votre objet [AdControl](https://msdn.microsoft.com/library/mt313154.aspx).
--   Si votre application affiche des spots publicitaires, transmettez ces valeurs à la méthode [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) de votre objet [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx).
+-   Si votre application affiche des bannières, affectez ces valeurs aux propriétés [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) et [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) de votre objet [AdControl](https://msdn.microsoft.com/library/mt313154.aspx). Pour plus d’informations, voir [AdControl en XAML et .NET](../monetize/adcontrol-in-xaml-and--net.md) et [AdControl en HTML5 et JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md).
+-   Si votre application affiche des spots publicitaires, transmettez ces valeurs à la méthode [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) de votre objet [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx). Pour plus d’informations, consultez [Spots publicitaires](../monetize/interstitial-ads.md).
 
-> **Remarque**  Si votre application utilise la médiation publicitaire pour afficher les bannières publicitaires de Microsoft Advertising (elle utilise un objet **AdMediatorControl**), il n’est pas nécessaire de demander des unités publicitaires. Dans ce scénario, les unités publicitaires Microsoft Advertising sont automatiquement générées pour vous.
-
- 
+> **Remarque**   Si votre application utilise un objet **AdMediatorControl** pour afficher les bannières publicitaires de Microsoft Advertising, il n’est pas nécessaire de demander des unités publicitaires. Dans ce scénario, les unités publicitaires Microsoft Advertising sont automatiquement générées pour vous.
 
  
 
  
 
+ 

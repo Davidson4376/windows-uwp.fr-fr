@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Consultez cette liste pour éviter les problèmes qui empêchent souvent les applications d’obtenir une certification, ou qui peuvent être identifiés au cours d’une vérification ponctuelle après la publication de l’application."
+Description: "Consultez cette liste pour éviter les problèmes qui empêchent souvent les applications d’être certifiées, ou qui peuvent être identifiés au cours d’une vérification ponctuelle après la publication de l’application."
 title: "Éviter les échecs de certification courants"
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
 ms.author: wdg-dev-content
@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f8b61d14b46614680b84da5aa7e4413159a0cfb1
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: ad5654c7d07f1f17ddfe733732dfc6a2c77b3bc2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="avoid-common-certification-failures"></a>Éviter les échecs de certification courants
 
 
-Consultez cette liste pour éviter les problèmes qui empêchent souvent les applications d’obtenir une certification, ou qui peuvent être identifiés au cours d’une vérification ponctuelle après la publication de l’application.
+Consultez cette liste pour éviter les problèmes qui empêchent souvent les applications d’être certifiées, ou qui peuvent être identifiés au cours d’une vérification ponctuelle après la publication de l’application.
 
 > **Remarque**  Reportez-vous également aux [Politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944) pour vous assurer que votre application remplit toutes les obligations spécifiées.
 
@@ -45,7 +42,6 @@ Consultez cette liste pour éviter les problèmes qui empêchent souvent les app
  
 
  
-
 
 
 

@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, asynchrone, threads, de thread"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fb249a1c7a562cb4b1eb7ff8590e8525c00c64f2
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp, asynchrone, threads, de thread
+ms.openlocfilehash: 8b51cf845f7bd9e5efdc5fa9ae611caf4bf7d71f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="threading-and-async-programming"></a>Threads et programmation asynchrone
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Les threads et la programmation asynchrone permettent à votre application d’accomplir des tâches de manière asynchrone dans des threads parallèles.
 
@@ -42,4 +40,3 @@ Le pool de threads est plus efficace pour la gestion des threads car il réduit 
 | [Créer un élément de travail périodique](create-a-periodic-work-item.md)                                                   | Découvrez comment créer un élément de travail qui se reproduit régulièrement. |
 | [Envoyer un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)                               | Découvrez comment effectuer des tâches dans un thread distinct en envoyant un élément de travail au pool de threads. |
 | [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md)                                       | Découvrez comment créer un élément de travail qui s’exécute une fois le délai du minuteur écoulé. |
-

@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-description: "En tant que représentation visuelle du langage, la typographie a pour mission principale d’être claire. Son style doit toujours être aligné sur cet objectif. Parallèlement, la typographie a un rôle important en tant que composant de disposition, en affectant considérablement la densité et la complexité de la conception, ainsi que l’expérience vécue par l’utilisateur de cette conception."
+description: "En tant que représentation visuelle du langage, la typographie a pour mission principale d’être claire. Son style doit toujours être aligné sur cet objectif. Mais la typographie joue également un rôle important en tant que composant de la disposition, grâce à son puissant effet sur la densité et la complexité de la conception, ainsi que sur l’expérience de l’utilisateur concernant cette conception."
 title: Typographie
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
@@ -9,14 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a10d1b164513f9abce48c51bdfe5f6e4c3bdf79d
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 92fd3ee66768fcf1c98d9760ecb44811c9b0f9b3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="typography"></a>Typographie
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -37,9 +34,9 @@ Notre approche de la typographie est axée sur la simplicité et sur l’efficac
 
 ## <a name="line-spacing"></a>Interligne
 
-![Exemple d’interligne à 125 %](images/line-spacing.png)
+![Exemple d’interligne à 125%](images/line-spacing.png)
 
-L’interligne doit être calculé comme étant égal à 125 % de la taille de police, arrondi au plus proche multiple de quatre si nécessaire. Par exemple, pour une police Segoe UI 15 px, l’interligne sera de 125 % de 15 px, autrement dit 18,75 px. Nous vous recommandons d’arrondir cette valeur et donc de définir la hauteur de ligne sur 20 px pour rester sur la grille de 4 px. Cette technique garantit une bonne expérience de lecture et un espace adéquat pour les signes diacritiques. Pour découvrir des exemples spécifiques, voir la section « Gamme de caractères » ci-dessous.
+L’interligne doit être calculé comme étant égal à 125% de la taille de police, arrondi au plus proche multiple de quatre si nécessaire. Par exemple, pour une police Segoe UI 15px, l’interligne sera de 125% de 15px, autrement dit 18,75px. Nous vous recommandons d’arrondir cette valeur et donc de définir la hauteur de ligne sur 20px pour rester sur la grille de 4px. Cette technique garantit une bonne expérience de lecture et un espace adéquat pour les signes diacritiques. Pour découvrir des exemples spécifiques, voir la section «Gamme de caractères» ci-dessous.
 
 Lorsque vous empilez une grande taille de caractère sur une taille de caractère plus petite, la distance entre la dernière ligne de base de la taille de caractère la plus grande et la première ligne de base de la taille de caractère la plus petite doit être égale à la hauteur de ligne de la taille de caractère la plus grande.
 
@@ -75,14 +72,14 @@ En XAML, cette opération est effectuée par l’empilement de deux éléments [
 
 Segoe est une police proche de l’écriture humaine, dotée d’une apparence douce et conviviale et de formes ouvertes organiques reposant sur du texte manuscrit. Pour optimiser la lisibilité de cette police et pour en conserver l’intégrité humaniste, il convient d’attribuer des valeurs spécifiques à ses paramètres de crénage et d’interlettrage.
 
-Le crénage doit être défini sur « metrics », et l’interlettrage doit présenter la valeur « 0 ».
+Le crénage doit être défini sur «metrics», et l’interlettrage doit présenter la valeur «0».
   </div>
   <div class="side-by-side-content-right">
 <h2>Espacement entre les mots et entre les lettres</h2>
 
 Comme pour le crénage et l’interlettrage, les paramètres d’espacement entre les mots et entre les lettres utilisent des valeurs spécifiques pour optimiser la lisibilité et l’intégrité humaniste de la police.
 
-L’espacement entre les mots est toujours de 100 % par défaut, et l’espacement entre les lettres doit être défini sur « 0 ».
+L’espacement entre les mots est toujours de 100% par défaut, et l’espacement entre les lettres doit être défini sur «0».
   </div>
 </div>
 </div>
@@ -99,7 +96,7 @@ L’espacement entre les mots est toujours de 100 % par défaut, et l’espacem
 
 
 >[!NOTE]
->Dans un contrôle de texte XAML, utilisez [Typography.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) et [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) pour contrôler le crénage et l’interlettrage, respectivement. Par défaut, Typography.Kerning est défini sur « true », tandis que FontStretch est défini sur « Normal » ; il s’agit des valeurs recommandées.
+>Dans un contrôle de texteXAML, utilisez [Typography.Kerning](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) et [FontStretch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_FontStretch) pour contrôler le crénage et l’interlettrage, respectivement. Par défaut, Typography.Kerning est défini sur «true», tandis que FontStretch est défini sur «Normal»; il s’agit des valeurs recommandées.
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -136,13 +133,13 @@ Pour que les bords de colonne soient alignés, les paragraphes doivent être sig
 
 ## <a name="character-count"></a>Nombre de caractères
 
-Si une ligne est trop courte, l’œil devra effectuer de trop fréquents déplacements vers la gauche et la droite, ce qui viendra casser le rythme du lecteur. Dans la mesure du possible, il convient de créer des lignes de 50 à 60 caractères afin de faciliter la lecture.
+Si une ligne est trop courte, l’œil devra effectuer de trop fréquents déplacements vers la gauche et la droite, ce qui viendra casser le rythme du lecteur. Dans la mesure du possible, il convient de créer des lignes de 50 à 60caractères afin de faciliter la lecture.
 
 La police Segoe UI offre un large éventail de caractères et est conçue pour conserver une lisibilité optimale dans les tailles de caractères petites et grandes et dans les densités en pixels faibles et élevées. L’utilisation du nombre optimal de lettres dans une ligne de colonne de texte garantit une bonne lisibilité dans une application.
 
 Les lignes trop longues fatiguent l’œil et risquent de désorienter l’utilisateur. Les lignes trop courtes imposent de trop fréquents déplacements à l’œil du lecteur et peuvent provoquer une fatigue oculaire.
 
-![3 paragraphes de différentes longueurs de ligne](images/character-count.png)
+![3paragraphes de différentes longueurs de ligne](images/character-count.png)
 
 ## <a name="hanging-text-alignment"></a>Alignement du texte en suspension
 
@@ -153,13 +150,13 @@ Lorsque la hauteur du texte dépasse celle de l’icône, la première ligne de 
 ![Montre différentes associations d’icônes et de texte](images/hanging-text-alignment.png)
 
 >[!NOTE]
->La propriété [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) du code XAML fournit l’accès aux mesures de police de base et de hauteur de majuscule. Elle peut être utilisée pour les types de textes centrés verticalement ou alignés vers le haut.
+>La propriété [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) du codeXAML fournit l’accès aux mesures de police de base et de hauteur de majuscule. Elle peut être utilisée pour les types de textes centrés verticalement ou alignés vers le haut.
 
 ## <a name="clipping-and-ellipses"></a>Détourage et ellipses
 
-Choisissez le détourage par défaut : supposez que le texte fera l’objet d’un retour automatique à la ligne, sauf en cas d’indication contraire. Si vous utilisez du texte sans retour automatique à la ligne, nous vous recommandons de recourir au détourage plutôt qu’à des ellipses. Le détourage peut survenir au niveau du bord du conteneur, du bord de l’appareil, du bord d’une barre de défilement, etc.
+Choisissez le détourage par défaut: supposez que le texte fera l’objet d’un retour automatique à la ligne, sauf en cas d’indication contraire. Si vous utilisez du texte sans retour automatique à la ligne, nous vous recommandons de recourir au détourage plutôt qu’à des ellipses. Le détourage peut survenir au niveau du bord du conteneur, du bord de l’appareil, du bord d’une barre de défilement, etc.
 
-Exceptions : pour les conteneurs qui sont pas clairement définis (par exemple, sans couleur d’arrière-plan distinctive), il est possible de définir que le texte sans retour automatique à la ligne doit utiliser l’ellipse (« … »).
+Exceptions: pour les conteneurs qui sont pas clairement définis (par exemple, sans couleur d’arrière-plan distinctive), il est possible de définir que le texte sans retour automatique à la ligne doit utiliser l’ellipse («…»).
 
 ![Cadre d’appareil avec détourage de texte](images/clipping.png)
 
@@ -182,7 +179,7 @@ SubtitleAlt, BaseAlt et CaptionAlt ne sont pas fournis. Vous pouvez créer les s
 
 ## <a name="primary-and-secondary-text"></a>Texte principal et secondaire
 
-Si vous souhaitez créer une hiérarchie supplémentaire par rapport à celle de la gamme, définissez un texte secondaire avec une opacité de 60 %. Dans la [palette de thèmes de couleur](color.md#color-theming), vous utiliseriez le thème BaseMedium. Le texte principal doit toujours présenter une opacité de 100 %, correspondant au thème BaseHigh.
+Si vous souhaitez créer une hiérarchie supplémentaire par rapport à celle de la gamme, définissez un texte secondaire avec une opacité de 60%. Dans la [palette de thèmes de couleur](color.md#color-theming), vous utiliseriez le thème BaseMedium. Le texte principal doit toujours présenter une opacité de 100%, correspondant au thème BaseHigh.
 
 <!-- Need new images
 ![Two phone apps using SubtitleAlt](images/type-ramp-example-2.png)
@@ -194,7 +191,7 @@ Recommended use of CaptionAlt.
 
 ## <a name="all-caps-titles"></a>Titres tout en majuscules
 
-Certains titres de page doivent apparaître TOUT EN MAJUSCULES pour ajouter encore une autre dimension hiérarchique. Ces titres doivent utiliser BaseAlt avec un espacement des caractères de 75 millièmes d’em. Ce traitement peut également être utilisé pour faciliter la navigation dans l’application.
+Certains titres de page doivent apparaître TOUT EN MAJUSCULES pour ajouter encore une autre dimension hiérarchique. Ces titres doivent utiliser BaseAlt avec un espacement des caractères de 75millièmes d’em. Ce traitement peut également être utilisé pour faciliter la navigation dans l’application.
 
 Toutefois, dans certaines langues, les noms propres changent de signification lorsqu’ils sont écrits en majuscules ; par conséquent, les titres de page reposant sur des noms ou des entrées utilisateur ne doivent *pas* être convertis intégralement en majuscules.
 
@@ -218,4 +215,3 @@ Green shows where all caps should be used. Red shows where it should not.
 * [Contrôles de texte](../controls-and-patterns/text-controls.md)
 * [Polices](fonts.md)
 * [Icônes Segoe MDL2](segoe-ui-symbol-font.md)
-

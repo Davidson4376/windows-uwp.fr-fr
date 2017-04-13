@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Le classement de votre application dans la catégorie et la sous-catégorie adéquates permet aux utilisateurs de la trouver facilement et d&quot;en savoir plus sur elle."
+Description: "Le classement de votre application dans la catégorie et la sous-catégorie adéquates permet aux utilisateurs de la trouver facilement et d’en savoir plus sur elle."
 title: "Tableau des catégories et sous-catégories"
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.author: wdg-dev-content
@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a69521d9ff9adb682a370b421458269507e9befe
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 1234a1209f7cc32901b093a44c2b71fc90a6f3b5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="category-and-subcategory-table"></a>Tableau des catégories et sous-catégories
 
 
@@ -67,5 +64,4 @@ Seules certaines catégories ont des sous-catégories. N’oubliez pas que vous 
  
 
 > **Important**  Pour plus d’informations sur les catégories utilisées dans le Windows Store pour Windows 8.1 et les versions antérieures ainsi que dans le Windows Phone Store, et sur leur lien avec la liste de catégories ci-dessus, consultez [Apparence de votre application dans le Store pour les clients dotés de Windows 10](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes).
-
 

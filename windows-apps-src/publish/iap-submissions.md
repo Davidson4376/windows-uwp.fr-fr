@@ -1,16 +1,9 @@
 ---
 redirect_url: https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions
-translationtype: Human Translation
-ms.sourcegitcommit: 0edf45e997f36a82a8bfcb92c1d8fd2c79242461
-ms.openlocfilehash: 96d5c731d4ea98078020b512133f072a9e8c45f4
-
+ms.openlocfilehash: c3355af8aef66d22159795b196855d7c89e6d3d2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# Soumissions de produits intégrés à l’application
+# <a name="iap-submissions"></a>Soumissions de produits intégrés à l’application
 
 Cette page a été redirigée vers: Soumissions de modules complémentaires
-
-
-<!--HONumber=Aug16_HO3-->
-
-

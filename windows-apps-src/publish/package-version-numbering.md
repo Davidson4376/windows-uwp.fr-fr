@@ -8,33 +8,30 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dfa8191be375998021f233711ae433f8a5d4e44b
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 00131a10892e80f3bd81384fa80fe39915b17ec8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="package-version-numbering"></a>Numérotation des versions de packages
 
 
 Chaque package que vous fournissez doit avoir un numéro de version (fourni sous la forme d’une valeur dans l’attribut **Version** de l’élément **Package/Identity** dans le manifeste de l’application). Le Windows Store applique certaines règles relatives aux numéros de version, qui fonctionnent différemment dans les différentes versions du système d’exploitation.
 
-> **Remarque** Cette rubrique fait référence aux « packages ». Toutefois, sauf indication contraire, les mêmes règles s’appliquent aux numéros de version des fichiers .appx et .appxbundle.
+> **Remarque** Cette rubrique fait référence aux «packages». Toutefois, sauf indication contraire, les mêmes règles s’appliquent aux numéros de version des fichiers .appx et .appxbundle.
 
-## <a name="version-numbering-for-windows-10-packages"></a>Numérotation des versions pour les packages Windows 10
+## <a name="version-numbering-for-windows-10-packages"></a>Numérotation des versions pour les packages Windows10
 
 
-Le numéro de version de tous vos packages Windows 10 doit toujours être supérieur à ceux des packages Windows 8, Windows 8.1 et/ou Windows Phone 8.1 que vous publiez (ou avez publié) pour la même application. (Pour plus d’informations, voir [Ajout de packages pour Windows 10 à une application publiée précédemment](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).)
+Le numéro de version de tous vos packages Windows 10 doit toujours être supérieur à ceux des packages Windows 8, Windows 8.1 et/ou Windows Phone 8.1 que vous publiez (ou avez publié) pour la même application. (Pour plus d’informations, voir [Ajout de packages pour Windows10 à une application publiée précédemment](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).)
 
-> **Important** La dernière (quatrième) partie du numéro de version est réservée au Windows Store. Vous devez conserver la valeur de 0 lorsque vous générez votre package (bien que le Windows Store puisse modifier la valeur de cette partie du numéro).
+> **Important** La dernière (quatrième) partie du numéro de version est réservée au WindowsStore. Vous devez conserver la valeur de 0 lorsque vous générez votre package (bien que le WindowsStore puisse modifier la valeur de cette partie du numéro).
 
-Lors du choix d’un package Windows 10 à partir de votre soumission publiée, le Windows Store utilise toujours le package dont le numéro de version est le plus élevé et qui s’applique à l’appareil du client. Cela vous offre une plus grande souplesse et vous permet de contrôler les packages fournis aux clients sur des types spécifiques d’appareils. Il est important de noter que vous pouvez soumettre ces packages dans n’importe quel ordre ; vous n’êtes pas obligé de fournir des packages dont le numéro de version est supérieur avec chaque soumission ultérieure.
+Lors du choix d’un package Windows10 à partir de votre soumission publiée, le Windows Store utilise toujours le package dont le numéro de version est le plus élevé et qui s’applique à l’appareil du client. Cela vous offre une plus grande souplesse et vous permet de contrôler les packages fournis aux clients sur des types spécifiques d’appareils. Il est important de noter que vous pouvez soumettre ces packages dans n’importe quel ordre ; vous n’êtes pas obligé de fournir des packages dont le numéro de version est supérieur avec chaque soumission ultérieure.
 
 Vous pouvez même fournir plusieurs packages Windows 10 avec le même numéro de version. Toutefois, les packages qui partagent un même numéro de version ne peuvent pas avoir la même architecture, car l’identité complète que le Windows Store utilise pour chaque package doit être unique. Pour plus d’informations, voir [**Identity**](https://msdn.microsoft.com/library/windows/apps/br211441).
 
-Si vous fournissez plusieurs packages Windows 10 qui utilisent le même numéro de version, l’architecture (dans l’ordre x64, x86, ARM, neutre) permet de déterminer celui qui est de niveau supérieur lors du choix du package à fournir à un appareil donné. Lors du classement des ensembles d’applications qui utilisent la même version, le niveau d’architecture le plus élevé dans l’ensemble est pris en considération : un ensemble d’applications contenant un package x64 aura un classement plus élevé qu’un ensemble contenant uniquement un package x86.
+Si vous fournissez plusieurs packages Windows10 qui utilisent le même numéro de version, l’architecture (dans l’ordre x64, x86, ARM, neutre) permet de déterminer celui qui est de niveau supérieur lors du choix du package à fournir à un appareil donné. Lors du classement des ensembles d’applications qui utilisent la même version, le niveau d’architecture le plus élevé dans l’ensemble est pris en considération : un ensemble d’applications contenant un package x64 aura un classement plus élevé qu’un ensemble contenant uniquement un package x86.
 
 Cela vous offre une grande souplesse pour faire évoluer votre application au fil du temps. Vous pouvez charger et soumettre de nouveaux packages utilisant des numéros de version inférieurs pour prendre en charge des appareils abordables qui ne sont pas encore pris en charge, ajouter des packages de version supérieure comprenant des dépendances plus strictes pour tirer parti de certaines fonctionnalités matérielles ou de système d’exploitation, ou ajouter des packages de version supérieure faisant office de mises à jour pour tout ou partie de vos clients existants.
 
@@ -48,10 +45,10 @@ Vous pouvez utiliser les règles de contrôle de version du package pour amener 
 
 | Soumission | Contenu                                                  | Expérience utilisateur                                                                                                                                                                             |
 |------------|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1          | - Version de package : 1.1.10.0 <br> - Famille d’appareils : Windows.Desktop, minVersion 10.0.10240.0 <br> <br> - Version de package : 1.1.0.0 <br> - Famille d’appareils : Windows.Mobile, minVersion 10.0.10240.0     | - Les appareils sous Windows 10 Desktop build 10.0.10240.0 et versions supérieures obtiendront le package 1.1.10.0 <br> - Les appareils sous Windows 10 Mobile build 10.0.10240.0 et versions supérieures obtiendront le package 1.1.0.0 <br> - Les autres familles d’appareils ne peuvent pas acheter et installer l’application |
-| 2          | - Version de package : 1.1.10.0 <br> - Famille d’appareils : Windows.Desktop, minVersion 10.0.10240.0 <br> <br> - Version de package : 1.1.0.0 <br> - Famille d’appareils : Windows.Mobile, minVersion 10.0.10240.0 <br> <br> - Version de package : 1.0.0.0 <br> - Famille d’appareils : Windows.Universal, minVersion 10.0.10240.0    | - Les appareils sous Windows 10 Desktop build 10.0.10240.0 et versions supérieures obtiendront le package 1.1.10.0 <br> - Les appareils sous Windows 10 Mobile build 10.0.10240.0 et supérieure obtiendront le package 1.1.0.0 <br> - Les autres familles d’appareils (non de bureau, non mobiles) obtiendront le package 1.0.0.0 quand elles seront introduites <br> - Les appareils mobiles et de bureau sur lesquels l’application est déjà installée n’obtiendront aucune mise à jour (car ils ont déjà la meilleure version disponible : les versions 1.1.10.0 et 1.1.0.0 sont supérieures à la version 1.0.0.0) |
-| 3          | - Version de package : 1.1.10.0 <br> - Famille d’appareils : Windows.Desktop, minVersion 10.0.10240.0 <br> <br> - Version de package : 1.1.5.0 <br> - Famille d’appareils : Windows.Universal, minVersion 10.0.10250.0 <br> <br> - Version de package : 1.0.0.0 <br> - Famille d’appareils : Windows.Universal, minVersion 10.0.10240.0    | - Les appareils sous Windows 10 Desktop build 10.0.10240.0 et versions supérieures obtiendront le package 1.1.10.0 <br> - Les appareils sous Windows 10 Mobile build 10.0.10250.0 et versions supérieures obtiendront le package 1.1.5.0 <br> - Les appareils sous Windows 10 Mobile build > 10.0.10240.0 et < 10.010250.0 obtiendront le package 1.1.0.0 
-| 4          | - Version de package : 2.0.0.0 <br> - Famille d’appareils : Windows.Universal, minVersion 10.0.10240.0   | - Tous les clients sur toutes les familles d’appareils sous Windows 10 build v10.0.10240.0 et versions supérieures obtiendront le package 2.0.0.0 | 
+| 1          | - Version de package: 1.1.10.0 <br> - Famille d’appareils: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> - Version de package: 1.1.0.0 <br> - Famille d’appareils: Windows.Mobile, minVersion 10.0.10240.0     | - Les appareils sous Windows10 Desktop build 10.0.10240.0 et versions supérieures obtiendront le package 1.1.10.0 <br> - Les appareils sous Windows10 Mobile build 10.0.10240.0 et versions supérieures obtiendront le package 1.1.0.0 <br> - Les autres familles d’appareils ne peuvent pas acheter et installer l’application |
+| 2          | - Version de package: 1.1.10.0 <br> - Famille d’appareils: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> - Version de package: 1.1.0.0 <br> - Famille d’appareils: Windows.Mobile, minVersion 10.0.10240.0 <br> <br> - Version de package: 1.0.0.0 <br> - Famille d’appareils: Windows.Universal, minVersion 10.0.10240.0    | - Les appareils sous Windows10 Desktop build 10.0.10240.0 et versions supérieures obtiendront le package 1.1.10.0 <br> - Les appareils sous Windows10 Mobile build 10.0.10240.0 et supérieure obtiendront le package 1.1.0.0 <br> - Les autres familles d’appareils (non de bureau, non mobiles) obtiendront le package 1.0.0.0 quand elles seront introduites <br> - Les appareils mobiles et de bureau sur lesquels l’application est déjà installée n’obtiendront aucune mise à jour (car ils ont déjà la meilleure version disponible: les versions 1.1.10.0 et 1.1.0.0 sont supérieures à la version 1.0.0.0) |
+| 3          | - Version de package: 1.1.10.0 <br> - Famille d’appareils: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> - Version de package: 1.1.5.0 <br> - Famille d’appareils: Windows.Universal, minVersion 10.0.10250.0 <br> <br> - Version de package: 1.0.0.0 <br> - Famille d’appareils: Windows.Universal, minVersion 10.0.10240.0    | - Les appareils sous Windows10 Desktop build 10.0.10240.0 et versions supérieures obtiendront le package 1.1.10.0 <br> - Les appareils sous Windows10 Mobile build 10.0.10250.0 et versions supérieures obtiendront le package 1.1.5.0 <br> - Les appareils sous Windows10 Mobile build > 10.0.10240.0 et < 10.010250.0 obtiendront le package 1.1.0.0 
+| 4          | - Version de package: 2.0.0.0 <br> - Famille d’appareils: Windows.Universal, minVersion 10.0.10240.0   | - Tous les clients sur toutes les familles d’appareils sous Windows10 build v10.0.10240.0 et versions supérieures obtiendront le package 2.0.0.0 | 
 
 > **Remarque** Dans tous les cas, les appareils clients recevront le package associé au numéro de version le plus élevé possible pour lequel ils sont éligibles. Par exemple, dans la troisième soumission ci-dessus, tous les appareils de bureau recevront le package v1.1.10.0, même si leur système d’exploitation est de la version 10.0.10250.0 ou supérieure, et pourraient donc également accepter le package v1.1.5.0. Étant donné que le package 1.1.10.0 est celui dont le numéro de version est le plus élevé à leur disposition, ils obtiendront ce package.
 
@@ -69,9 +66,9 @@ Pour les packages .appx qui ciblent Windows Phone 8.1, le numéro de version du 
 
 Pour les packages .appx qui ciblent Windows 8 et Windows 8.1, la même règle s’applique par architecture : le numéro de version du package dans une nouvelle soumission doit toujours être supérieur à celui du package livré en dernier dans le Windows Store pour la même architecture.
 
-De plus, le numéro de version des packages Windows 8.1 doit toujours être supérieur aux numéros de version de vos packages Windows 8 pour la même application. Autrement dit, le numéro de version d’un package Windows 8 que vous soumettez doit être inférieur au numéro de version de tout package Windows 8.1 que vous avez soumis pour la même application.
+De plus, le numéro de version des packages Windows 8.1 doit toujours être supérieur aux numéros de version de vos packages Windows 8 pour la même application. Autrement dit, le numéro de version d’un package Windows8 que vous soumettez doit être inférieur au numéro de version de tout package Windows8.1 que vous avez soumis pour la même application.
 
-> **Remarque** Si vous avez également des packages Windows 10, leur numéro de version doit être supérieur aux numéros de version des packages Windows 8, Windows 8.1 et/ou Windows Phone 8.1 que vous publiez ou avez publiés. Pour plus d’informations, voir [Ajout de packages pour Windows 10 à une application publiée précédemment](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).
+> **Remarque** Si vous avez également des packages Windows10, leur numéro de version doit être supérieur aux numéros de version des packages Windows8, Windows8.1 et/ou Windows Phone8.1 que vous publiez ou avez publiés. Pour plus d’informations, voir [Ajout de packages pour Windows 10 à une application publiée précédemment](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).
 
 Voici quelques exemples de ce qui se passe dans les différents scénarios de mise à jour de numéro de version pour Windows 8 et Windows 8.1.
 
@@ -86,4 +83,3 @@ Voici quelques exemples de ce qui se passe dans les différents scénarios de mi
 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | x86, v1.0.0.2 <br> x64, v1.0.0.2 <br> ARM, v1.0.0.2 | v1.0.0.2 pour l’architecture de l’ordinateur du client.  | Mise à jour de v1.0.0.1 vers v1.0.0.2 pour les clients exécutant la version v1.0.0.1 de l’application générée pour l’architecture de leur ordinateur. |
  
 > **Remarque** À la différence des packages .appx, les numéros de version dans les packages .xap ne sont pas pris en compte lors de la détermination du package à fournir à un client donné. Pour mettre à jour un client d’un package .xap vers une version plus récente, veillez à supprimer l’ancien .xap dans la nouvelle soumission.
-

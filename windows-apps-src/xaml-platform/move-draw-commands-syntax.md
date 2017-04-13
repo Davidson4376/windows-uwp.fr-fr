@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: "Découvrez les commandes de déplacement et de dessin (ou « mini langage ») que vous pouvez utiliser pour spécifier des géométries de chemin sous forme d’une valeur d’attribut XAML."
+description: "Découvrez les commandes de déplacement et de dessin (ou « mini langage ») que vous pouvez utiliser pour spécifier des géométries de chemin sous forme d’une valeur d’attribut XAML."
 title: "Syntaxe des commandes de déplacement et de dessin"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 ms.author: jimwalk
@@ -8,25 +8,22 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ea01f8191190db0a9b13b8081bc6fef687369c13
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: e360869cd8406fac057046412fc135a42b3e0ccd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="move-and-draw-commands-syntax"></a>Syntaxe des commandes de déplacement et de dessin
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Découvrez les commandes de déplacement et de dessin (ou « mini langage ») que vous pouvez utiliser pour spécifier des géométries de chemin sous forme d’une valeur d’attribut XAML. Les commandes de déplacement et de dessin sont utilisées par de nombreux outils de conception et de création de graphiques capables de générer un graphique ou une forme de type vectoriel comme format de sérialisation et d’échange.
+Découvrez les commandes de déplacement et de dessin (ou «mini langage») que vous pouvez utiliser pour spécifier des géométries de chemin sous forme d’une valeur d’attribut XAML. Les commandes de déplacement et de dessin sont utilisées par de nombreux outils de conception et de création de graphiques capables de générer un graphique ou une forme de type vectoriel comme format de sérialisation et d’échange.
 
 ## <a name="properties-that-use-move-and-draw-command-strings"></a>Propriétés qui utilisent des chaînes de commande de déplacement et de dessin
 
 La syntaxe des commandes de déplacement et de dessin est prise en charge par un convertisseur de type interne pour XAML qui analyse les commandes et produit une représentation graphique au moment de l’exécution. Cette représentation consiste essentiellement en un ensemble fini de vecteurs prêts pour la présentation. Les vecteurs ne représentent pas en eux-mêmes la totalité des détails de la présentation, et vous devez définir d’autres valeurs sur les éléments. Pour un objet [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355), vous avez aussi besoin de valeurs pour [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378), [**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383) et d’autres propriétés. Ensuite, cet objet **Path** doit être connecté d’une façon ou d’une autre à l’arborescence visuelle. Pour un objet [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722), définissez la propriété [**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974).
 
-Windows Runtime comprend deux propriétés qui peuvent utiliser une chaîne représentant des commandes de déplacement et de dessin : [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) et [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723). Si vous définissez l’une de ces propriétés en spécifiant des commandes de déplacement et de dessin, vous définissez généralement cette propriété comme une valeur d’attribut XAML avec d’autres attributs requis de cet élément. Sans entrer dans les détails, voici à quoi cela ressemble :
+Windows Runtime comprend deux propriétés qui peuvent utiliser une chaîne représentant des commandes de déplacement et de dessin : [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) et [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723). Si vous définissez l’une de ces propriétés en spécifiant des commandes de déplacement et de dessin, vous définissez généralement cette propriété comme une valeur d’attribut XAML avec d’autres attributs requis de cet élément. Sans entrer dans les détails, voici à quoi cela ressemble:
 
 ```xml
 <Path x:Name="Arrow" Fill="White" Height="11" Width="9.67"
@@ -59,7 +56,7 @@ Les règles générales de cette syntaxe sont les suivantes :
 
 De nombreuses commandes de dessin utilisent des points qui nécessitent la définition d’une valeur _x,y_. Chaque fois que vous voyez un espace réservé \*_points_, vous pouvez supposer que vous donnez deux valeurs décimales à la valeur _x,y_ d’un point.
 
-L’espace blanc peut souvent être omis lorsque le résultat n’est pas ambigu. Vous pouvez en effet omettre les espaces blancs si vous utilisez des virgules comme séparateurs pour tous vos ensembles de nombres (points et taille). Par exemple, cette utilisation est légale :`F1M0,58L2,56L6,60L13,51L15,53L6,64z` Il est toutefois plus courant d’inclure un espace blanc entre les commandes pour plus de clarté.
+L’espace blanc peut souvent être omis lorsque le résultat n’est pas ambigu. Vous pouvez en effet omettre les espaces blancs si vous utilisez des virgules comme séparateurs pour tous vos ensembles de nombres (points et taille). Parexemple, cette utilisation est légale:`F1M0,58L2,56L6,60L13,51L15,53L6,64z` Il est toutefois plus courant d’inclure un espace blanc entre les commandes pour plus de clarté.
 
 N’utilisez pas la virgule comme séparateur décimal pour les nombres décimaux ; la chaîne de commande est interprétée par XAML et ne tient pas compte des conventions de mise en forme des nombres spécifiques à la culture qui diffèrent de celles utilisées dans les paramètres régionaux **en-us**.
 
@@ -75,7 +72,7 @@ Spécifie le point de départ d’une nouvelle figure.
 
 | Syntaxe |
 |--------|
-| `M ` _startPoint_ <br/>- ou -<br/>`m` _startPoint_|
+| `M ` _startPoint_ <br/>-ou-<br/>`m` _startPoint_|
 
 | Terme | Description |
 |------|-------------|
@@ -99,7 +96,7 @@ Crée une ligne droite entre le point actuel et le point de terminaison spécifi
 
 | Syntaxe |
 |--------|
-| `L` _endPoint_ <br/>- ou -<br/>`l` _endPoint_ |
+| `L` _endPoint_ <br/>-ou-<br/>`l` _endPoint_ |
 
 | Terme | Description |
 |------|-------------|
@@ -107,11 +104,11 @@ Crée une ligne droite entre le point actuel et le point de terminaison spécifi
 
 **Commande de ligne horizontale**
 
-Crée une ligne horizontale entre le point actuel et la coordonnée x spécifiée. `H 90` est un exemple de commande de ligne horizontale valide.
+Crée une ligne horizontale entre le point actuel et la coordonnéex spécifiée. `H 90` est un exemple de commande de ligne horizontale valide.
 
 | Syntaxe |
 |--------|
-| `H ` _x_ <br/> - ou - <br/>`h ` _x_ |
+| `H ` _x_ <br/> -ou- <br/>`h ` _x_ |
 
 | Terme | Description |
 |------|-------------|
@@ -119,11 +116,11 @@ Crée une ligne horizontale entre le point actuel et la coordonnée x spécifi�
 
 **Commande de ligne verticale**
 
-Crée une ligne verticale entre le point actuel et la coordonnée y spécifiée. `v 90` est un exemple de commande de ligne verticale valide.
+Crée une ligne verticale entre le point actuel et la coordonnéey spécifiée. `v 90` est un exemple de commande de ligne verticale valide.
 
 | Syntaxe |
 |--------|
-| `V ` _y_ <br/> - ou - <br/> `v ` _y_ |
+| `V ` _y_ <br/> -ou- <br/> `v ` _y_ |
 
 | Terme | Description |
 |------|-------------|
@@ -135,7 +132,7 @@ Crée une courbe de Bézier cubique entre le point actuel et le point de termina
 
 | Syntaxe |
 |--------|
-| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - ou - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
+| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> -ou- <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
 
 | Terme | Description |
 |------|-------------|
@@ -149,7 +146,7 @@ Crée une courbe de Bézier quadratique entre le point actuel et le point de ter
 
 | Syntaxe |
 |--------|
-| `Q ` *controlPoint endPoint* <br/> - ou - <br/> `q ` *controlPoint endPoint* |
+| `Q ` *controlPoint endPoint* <br/> -ou- <br/> `q ` *controlPoint endPoint* |
 
 | Terme | Description |
 |------|-------------|
@@ -162,7 +159,7 @@ Crée une courbe de Bézier cubique entre le point actuel et le point de termina
 
 | Syntaxe |
 |--------|
-| `S` *controlPoint2* *endPoint* <br/> - ou - <br/>`s` *controlPoint2 endPoint* |
+| `S` *controlPoint2* *endPoint* <br/> -ou- <br/>`s` *controlPoint2 endPoint* |
 
 | Terme | Description |
 |------|-------------|
@@ -175,7 +172,7 @@ Crée une courbe de Bézier quadratique entre le point actuel et le point de ter
 
 | Syntaxe |
 |--------|
-| `T` *controlPoint* *endPoint* <br/> - ou - <br/> `t` *controlPoint* *endPoint* |
+| `T` *controlPoint* *endPoint* <br/> -ou- <br/> `t` *controlPoint* *endPoint* |
 
 | Terme | Description |
 |------|-------------|
@@ -188,14 +185,14 @@ Crée un arc elliptique entre le point actuel et le point de terminaison spécif
 
 | Syntaxe |
 |--------|
-| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - ou - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> -ou- <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
 
 | Terme | Description |
 |------|-------------|
 | *size* | [**Taille**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>Rayon x et rayon y de l’arc. |
 | *rotationAngle* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> Rotation de l’ellipse, en degrés. |
-| *isLargeArcFlag* | Affectez la valeur 1 si l’angle de l’arc doit être de 180 degrés ou plus ; sinon, affectez la valeur 0. |
-| *sweepDirectionFlag* | Affectez la valeur 1 si l’arc est dessiné dans la direction de l’angle positif ; sinon, affectez la valeur 0. |
+| *isLargeArcFlag* | Affectez la valeur1 si l’angle de l’arc doit être de 180degrés ou plus; sinon, affectez la valeur0. |
+| *sweepDirectionFlag* | Affectez la valeur1 si l’arc est dessiné dans la direction de l’angle positif; sinon, affectez la valeur0. |
 | *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point vers lequel l’arc est tracé.|
  
 **Bouton de fermeture**
@@ -231,11 +228,11 @@ Au lieu d’utiliser des nombres décimaux ou entiers, vous pouvez utiliser la n
 
 ## <a name="design-tools-that-produce-move-and-draw-commands"></a>Outils de conception qui produisent des commandes de déplacement et de dessin
 
-L’outil **Stylet** et d’autres outils de dessin dans Blend pour Microsoft Visual Studio 2015 produisent généralement un objet [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) avec des commandes de déplacement et de dessin.
+L’outil **Stylet** et d’autres outils de dessin dans Blend pour MicrosoftVisualStudio2015 produisent généralement un objet [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) avec des commandes de déplacement et de dessin.
 
 Il est possible que vous constatiez la présence de données de commandes de déplacement et de dessin dans certaines parties de contrôle définies dans les modèles par défaut XAML Windows Runtime de contrôles. Par exemple, certains contrôles utilisent un [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) dans lequel les données sont définies en tant que commandes de déplacement et de dessin.
 
-Des exportateurs ou des plug-ins sont disponibles pour d’autres outils de conception de graphiques vectoriels couramment utilisés pour générer le vecteur au format XAML. Ceux-ci créent généralement des objets [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) dans un conteneur de disposition avec des commandes de déplacement et de dessin pour [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). Plusieurs éléments **Path** peuvent être présents dans le code XAML, ce qui permet d’appliquer différents types de pinceaux. Plusieurs de ces exportateurs ou plug-ins ont été écrits à l’origine pour le langage XAML dans Windows Presentation Foundation (WPF) ou Silverlight, mais la syntaxe XAML est identique dans le langage XAML Windows Runtime. Vous pouvez généralement utiliser des blocs de code XAML d’un exportateur et les coller directement dans une page XAML Windows Runtime. (Toutefois, si **RadialGradientBrush** faisait partie du code XAML converti, vous ne pourrez pas l’utiliser étant donné que le langage XAML Windows Runtime ne prend pas en charge ce pinceau.)
+Des exportateurs ou des plug-ins sont disponibles pour d’autres outils de conception de graphiques vectoriels couramment utilisés pour générer le vecteur au format XAML. Ceux-ci créent généralement des objets [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) dans un conteneur de disposition avec des commandes de déplacement et de dessin pour [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). Plusieurs éléments **Path** peuvent être présents dans le code XAML, ce qui permet d’appliquer différents types de pinceaux. Plusieurs de ces exportateurs ou plug-ins ont été écrits à l’origine pour le langage XAML dans WindowsPresentationFoundation (WPF) ou Silverlight, mais la syntaxe XAML est identique dans le langage XAML Windows Runtime. Vous pouvez généralement utiliser des blocs de code XAML d’un exportateur et les coller directement dans une page XAML WindowsRuntime. (Toutefois, si **RadialGradientBrush** faisait partie du code XAML converti, vous ne pourrez pas l’utiliser étant donné que le langage XAML Windows Runtime ne prend pas en charge ce pinceau.)
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -243,5 +240,4 @@ Des exportateurs ou des plug-ins sont disponibles pour d’autres outils de conc
 * [Utiliser des pinceaux](https://msdn.microsoft.com/library/windows/apps/mt280383)
 * [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356)
 * [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)
-
 

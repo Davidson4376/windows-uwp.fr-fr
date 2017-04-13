@@ -7,15 +7,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: ed84f232-ddb5-4ba1-bf1c-578e8df47602
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 1aea4f2da584124050665d159b1d83f34368b819
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 38bafd7c63b101e495748c169a1b566115c2a1e6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xbox-dev-mode-companion"></a>Compagnon du mode de développement Xbox
 
 L’application Compagnon du mode de développement Xbox vous permet de vous connecter à distance à une console Xbox One et de la contrôler. Cet outil a été créé pour les développeurs qui utilisent le mode développeur Xbox.
@@ -24,15 +21,15 @@ L’application Compagnon du mode de développement Xbox vous permet de vous con
 Téléchargez le [Compagnon du mode de développement Xbox (préversion)](https://www.microsoft.com/store/p/xbox-dev-mode-companion/9nblggh519cp).
 
 ## <a name="how-to-connect"></a>Comment se connecter   
-Pour vous connecter à votre console :
+Pour vous connecter à votre console:
 
 1. Lancez l’application.   
 2. Si votre console ne figure pas dans la boîte de dialogue de connexion, tapez l’adresse IP de la console dans la zone de texte en bas de la boîte de dialogue et sélectionnez **Se connecter**.
 
 ## <a name="streaming-controls"></a>Commandes de streaming
-Une fois connecté, vous pouvez accéder aux commandes de streaming en pointant sur la zone de streaming avec votre souris. Ces commandes vous permettent d’effectuer les actions suivantes :
+Une fois connecté, vous pouvez accéder aux commandes de streaming en pointant sur la zone de streaming avec votre souris. Ces commandes vous permettent d’effectuer les actions suivantes:
 * Basculer entre le mode plein écran et le mode fenêtré.
-* Lancer Windows Device Portal.
+* Lancer WindowsDevicePortal.
 * Allumer et éteindre la console.
 * Se déconnecter.
 
@@ -44,8 +41,7 @@ Vous pouvez également utiliser les touches de direction, d’entrée et d’éc
 Enfin, dans les zones de texte, vous pouvez taper du texte avec votre clavier pour l’envoyer à la console.   
 
 ## <a name="help"></a>Aide
-Vous pouvez afficher la page d’aide en cliquant sur l’icône ? dans la boîte de dialogue de connexion ou la barre de commandes.
+Vous pouvez afficher la page d’aide en cliquant sur l’icône? dans la boîte de dialogue de connexion ou la barre de commandes.
 
 ## <a name="see-also"></a>Voir également
-- [UWP sur Xbox One](index.md)
-
+- [UWP sur XboxOne](index.md)

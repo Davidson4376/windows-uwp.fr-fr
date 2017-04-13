@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et vos extensions, ainsi que vos revenus Microsoft Advertising."
+Description: "Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et vos produits in-app, ainsi que vos revenusMicrosoftAdvertising."
 title: "Rémunération"
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ms.author: wdg-dev-content
@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: af5c30aae3927f901bb93fd2c79bfee202754a1e
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: c27e06491b66fea4f451b70309a9a8c3802aff18
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-paid"></a>Rémunération
-Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et vos extensions, ainsi que vos revenus Microsoft Advertising.
+Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et vos extensions, ainsi que vos revenusMicrosoftAdvertising.
 
-> **Important**  Pour recevoir l’argent des ventes d’application dans le Windows Store, vous devez [configurer votre compte de paiement et remplir les déclarations fiscales appropriées](setting-up-your-payout-account-and-tax-forms.md).
+> **Important**  Pour recevoir l’argent des ventes d’application dans le WindowsStore, vous devez [configurer votre compte de paiement et remplir les déclarations fiscales appropriées](setting-up-your-payout-account-and-tax-forms.md).
 
 ## <a name="store-fee"></a>Frais d’utilisation du Windows Store
 
@@ -35,7 +32,7 @@ Le niveau de prix fixe le prix de vente dans tous les pays où vous souhaitez di
 
 > **Remarque**  Ces niveaux de prix s’appliquent également à toutes les extensions que vous proposez dans votre application.
 
-Chaque niveau de prix a une valeur correspondante dans chacune des devises du Windows Store, qui en compte plus de 60. Ces valeurs vous aident à vendre vos applications à un prix comparable dans le monde entier. Cependant, en raison des fluctuations des taux de change, le montant exact des ventes peut varier légèrement d’une devise à l’autre.
+Chaque niveau de prix a une valeur correspondante dans chacune des devises du Windows Store, qui en compte plus de60. Ces valeurs vous aident à vendre vos applications à un prix comparable dans le monde entier. Cependant, en raison des fluctuations des taux de change, le montant exact des ventes peut varier légèrement d’une devise à l’autre.
 
 N'oubliez pas que le niveau de prix que vous sélectionnez peut inclure la taxe de vente ou la taxe sur la valeur ajoutée que vos clients doivent payer. Pour plus d'informations, consultez l'article [Informations fiscales pour les applications payantes](tax-details-for-paid-apps.md).
 
@@ -45,7 +42,7 @@ Vous pouvez accéder à vos informations de paiement et télécharger des rappor
 
 ## <a name="payout-timeframe"></a>Période de paiement
 
-Les paiements sont effectués sur une base mensuelle (à condition que le seuil de paiement applicable ait été atteint et que vous n’ayez pas mis le paiement en attente comme décrit ci-dessous). Généralement, nous transférons les paiements dus pour un mois donné vers le 15 de ce mois. Notez qu’un délai de 3 à 10 jours ouvrés supplémentaires est nécessaire pour l’enregistrement des montants sur votre compte de paiement. Pour plus d’informations, consultez la page [Seuils de paiement, méthodes et délais](payment-thresholds-methods-and-timeframes.md).
+Les paiements sont effectués sur une base mensuelle (à condition que le seuil de paiement applicable ait été atteint et que vous n’ayez pas mis le paiement en attente comme décrit ci-dessous). Généralement, nous transférons les paiements dus pour un mois donné vers le 15 de ce mois. Notez qu’un délai de 3 à 10jours ouvrés supplémentaires est nécessaire pour l’enregistrement des montants sur votre compte de paiement. Pour plus d’informations, consultez la page [Seuils de paiement, méthodes et délais](payment-thresholds-methods-and-timeframes.md).
 
 ##  <a name="payout-hold-status"></a>État de mise en attente des paiements
 
@@ -61,7 +58,6 @@ Une fois que vous avez configuré l’état de mise en attente des paiements sur
  
 
  
-
 
 
 

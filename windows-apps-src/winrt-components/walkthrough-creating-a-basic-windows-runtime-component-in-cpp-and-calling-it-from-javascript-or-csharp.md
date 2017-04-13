@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
-ms.openlocfilehash: e02d7fabf6337fa23ab97858046c3b089c39a087
-ms.lasthandoff: 01/19/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: cff0af6b2cebbc28ab5641b1b0571cb6b01ce885
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+<h1>Procédure pas à pas: création d’un composant WindowsRuntime de base en C++ et appel de ce composant à partir de JavaScript ou C#</h1>
 
-<h1>Procédure pas à pas : création d’un composant Windows Runtime de base en C++ et appel de ce composant à partir de JavaScript ou C#</h1>
 
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette procédure pas à pas montre comment créer une DLL de composant Windows Runtime de base qui peut être appelée à partir de JavaScript, C# ou Visual Basic. Avant d’entreprendre cette procédure pas à pas, vous devez maîtriser des concepts tels que l’interface binaire abstraite (ABI), les classes ref et les extensions des composants Visual C++ qui facilitent l’utilisation des classes ref. Pour plus d’informations, consultez les articles [Création de composants Windows Runtime en C++](creating-windows-runtime-components-in-cpp.md) et [Informations de référence sur le langage Visual C++ (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
 
@@ -41,9 +38,9 @@ Cliquez sur le bouton **OK**.
 
 ## **<a name="to-add-an-activatable-class-to-the-component"></a>Pour ajouter une classe activable au composant**
 
-Une classe activable est une classe que le code client peut créer à l’aide d’une expression **new** (**New** en Visual Basic ou **ref new** en C++). Dans votre composant, vous devez la déclarer sous la forme **public ref class sealed**. En fait, les fichiers Class1.h et .cpp disposent déjà d’une classe ref. Vous pouvez changer le nom, mais dans cet exemple, nous utiliserons celui par défaut : Class1. Vous pouvez définir des classes ref ou standard supplémentaires dans votre composant si nécessaire. Pour plus d’informations sur les classes ref, voir [Système de types (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
+Une classe activable est une classe que le code client peut créer à l’aide d’une expression **new** (**New** en Visual Basic ou **ref new** en C++). Dans votre composant, vous devez la déclarer sous la forme **public ref class sealed**. En fait, les fichiers Class1.h et .cpp disposent déjà d’une classe ref. Vous pouvez changer le nom, mais dans cet exemple, nous utiliserons celui par défaut: Class1. Vous pouvez définir des classes ref ou standard supplémentaires dans votre composant si nécessaire. Pour plus d’informations sur les classes ref, voir [Système de types (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
 
-Ajoutez ces directives \#include à Class1.h :
+Ajoutez ces directives \#include à Class1.h:
 
 ```cpp
 #include <collection.h>
@@ -52,11 +49,11 @@ Ajoutez ces directives \#include à Class1.h :
 #include <amp_math.h>
 ```
 
-collection.h est le fichier d’en-tête pour les classes C++ concrètes, telles que les classes Platform::Collections::Vector et Platform::Collections::Map, qui implémentent des interfaces indépendantes du langage définies par Windows Runtime. Les en-têtes amp sont utilisés pour exécuter des calculs sur le GPU. Ils n’ont pas d’équivalent dans Windows Runtime, mais cela ne pose pas de problème, car ils sont privés. En règle générale, pour des raisons de performance, vous devez utiliser du code C++ ISO et des bibliothèques standard en interne dans le composant ; seule l’interface Windows Runtime doit être exprimée en types Windows Runtime.
+collection.h est le fichier d’en-tête pour les classes C++ concrètes, telles que les classes Platform::Collections::Vector et Platform::Collections::Map, qui implémentent des interfaces indépendantes du langage définies par WindowsRuntime. Les en-têtes amp sont utilisés pour exécuter des calculs sur le GPU. Ils n’ont pas d’équivalent dans Windows Runtime, mais cela ne pose pas de problème, car ils sont privés. En règle générale, pour des raisons de performance, vous devez utiliser du code C++ ISO et des bibliothèques standard en interne dans le composant; seule l’interface Windows Runtime doit être exprimée en types Windows Runtime.
 
 ## <a name="to-add-a-delegate-at-namespace-scope"></a>Pour ajouter un délégué à la portée espace de noms
 
-Un délégué est une construction qui définit les paramètres et le type de retour pour les méthodes. Un événement est une instance d’un type délégué particulier, et toute méthode de gestionnaire d’événements qui s’abonne à l’événement doit présenter la signature spécifiée dans le délégué. Le code suivant définit un type délégué qui prend un int et retourne void. Ensuite, le code déclare un événement public de ce type ; cela permet au code client de fournir les méthodes appelées lorsque l’événement est déclenché.
+Un délégué est une construction qui définit les paramètres et le type de retour pour les méthodes. Un événement est une instance d’un type délégué particulier, et toute méthode de gestionnaire d’événements qui s’abonne à l’événement doit présenter la signature spécifiée dans le délégué. Le code suivant définit un type délégué qui prend un int et retourne void. Ensuite, le code déclare un événement public de ce type; cela permet au code client de fournir les méthodes appelées lorsque l’événement est déclenché.
 
 Ajoutez la déclaration delegate suivante à la portée espace de noms dans Class1.h, juste avant la déclaration Class1.
 
@@ -87,7 +84,7 @@ public:
 ```
 ## <a name="to-add-the-private-members"></a>Pour ajouter les membres privés
 
-La classe contient trois membres privés : deux méthodes d’assistance pour les calculs numériques et un objet CoreDispatcher utilisé pour marshaler les appels d’événements des threads de travail vers le thread d’interface utilisateur.
+La classe contient trois membres privés: deux méthodes d’assistance pour les calculs numériques et un objet CoreDispatcher utilisé pour marshaler les appels d’événements des threads de travail vers le thread d’interface utilisateur.
 
 ```cpp
 private:
@@ -97,14 +94,14 @@ private:
 
 ## <a name="to-add-the-header-and-namespace-directives"></a>Pour ajouter les directives d’en-tête et d’espace de noms
 
-Dans Class1.cpp, ajoutez ces directives #include :
+Dans Class1.cpp, ajoutez ces directives #include:
 
 ```cpp
 #include <ppltasks.h>
 #include <concurrent_vector.h>
 ```
 
-Ajoutez ensuite ces instructions using pour récupérer les espaces de noms requis :
+Ajoutez ensuite ces instructions using pour récupérer les espaces de noms requis:
 
 ```cpp
 using namespace concurrency;
@@ -304,7 +301,7 @@ Dans le volet central, sélectionnez WinRT_CPP, puis cliquez sur le bouton **OK*
 
 ## <a name="to-add-the-html-that-invokes-the-javascript-event-handlers"></a>Pour ajouter le code HTML qui appelle les gestionnaires d’événements JavaScript
 
-Collez ce code HTML dans le nœud <body> de la page default.html :
+Collez ce code HTML dans le nœud <body> de la page default.html:
 
 ```HTML
 <div id="LogButtonDiv">
@@ -342,7 +339,7 @@ Collez ce code HTML dans le nœud <body> de la page default.html :
 
 ## <a name="to-add-styles"></a>Pour ajouter des styles
 
-Dans le fichier default.css, supprimez le style body, puis ajoutez ces styles :
+Dans le fichier default.css, supprimez le style body, puis ajoutez ces styles:
 
 ```css
 #LogButtonDiv {
@@ -440,7 +437,7 @@ function ButtonClear_Click() {
 }
 ```
 
-Ajoutez du code pour ajouter les détecteurs d’événements en remplaçant l’appel existant à WinJS.UI.processAll dans app.onactivated dans le fichier default.js par le code suivant, qui implémente l’inscription d’événements dans un bloc then. Pour obtenir une explication détaillée, consultez l’article Créer une application « Hello World » (JS).
+Ajoutez du code pour ajouter les détecteurs d’événements en remplaçant l’appel existant à WinJS.UI.processAll dans app.onactivated dans le fichier default.js par le code suivant, qui implémente l’inscription d’événements dans un bloc then. Pour obtenir une explication détaillée, consultez l’article Créer une application «Hello World» (JS).
 
 ```JavaScript
 args.setPromise(WinJS.UI.processAll().then( function completed() {
@@ -521,7 +518,7 @@ private void Button1_Click_1(object sender, RoutedEventArgs e)
 }
 ```
 
-Ajoutez le gestionnaire d’événements pour le résultat ordonné :
+Ajoutez le gestionnaire d’événements pour le résultat ordonné:
 
 ```csharp
 async private void PrimesOrderedButton_Click_1(object sender, RoutedEventArgs e)
@@ -616,7 +613,7 @@ Dans le volet gauche de l’Explorateur d’objets, développez le nœud WinRT\_
 
 ## <a name="debugging-tips"></a>Conseils de débogage
 
-Pour optimiser le débogage, téléchargez les symboles de débogage à partir des serveurs de symboles publics de Microsoft :
+Pour optimiser le débogage, téléchargez les symboles de débogage à partir des serveurs de symboles publics de Microsoft:
 
 ## **<a name="to-download-debugging-symbols"></a>Pour télécharger les symboles de débogage**
 
@@ -639,4 +636,3 @@ Si vous supprimez un projet de composant Windows Runtime C++ dans une solution, 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Création de composants Windows Runtime en C++](creating-windows-runtime-components-in-cpp.md)
-

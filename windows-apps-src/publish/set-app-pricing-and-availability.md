@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9971f61947759ff23adf7ccc5204ea27287f4720
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: cf781345d0fe089f779db9b42fcf9eb56f229028
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-app-pricing-and-availability"></a>Définir la tarification et la disponibilité d’une application
 
 
@@ -56,15 +53,15 @@ La section **Distribution et visibilité** vous permet de définir des restricti
 
 Le paramètre par défaut est **Rendre votre application accessible dans le Windows Store**. Cala signifie que dans le Store, votre application sera mise à disposition des clients qui y auront accès via un lien direct ou par le biais d’autres méthodes, comme la recherche, la navigation et l’intégration dans des listes organisées.
 
-Si vous souhaitez masquer votre application dans le Windows Store tout en la rendant accessible à certains utilisateurs, utilisez l’une des options ci-après pour limiter sa disponibilité. Notez qu’aucun client sur Windows 8 ou Windows 8.1 n’aura accès à l’application si vous sélectionnez l’une de ces options.
+Si vous souhaitez masquer votre application dans le Windows Store tout en la rendant accessible à certains utilisateurs, utilisez l’une des options ci-après pour limiter sa disponibilité. Notez qu’aucun client sur Windows8 ou Windows8.1 n’aura accès à l’application si vous sélectionnez l’une de ces options.
 
 -   **Masquer cette application et empêcher l’acquisition. Les clients disposant d’un code promotionnel peuvent la télécharger sur les appareils Windows 10** : aucun client ne peut rechercher votre application ou y accéder dans le Windows Store, mais vous pouvez [générer des codes promotionnels](generate-promotional-codes.md) afin de la rendre disponible pour certains utilisateurs sur Windows 10. Ceux-ci peuvent utiliser le lien et le code pour obtenir votre application gratuitement, même si vous ne l’offrez à aucun autre client.
 -   **Masquer cette application dans le Windows Store. Les clients accédant directement à la description de l’application peuvent malgré tout la télécharger, sauf sur Windows 8 et Windows 8.1** : aucun client ne peut rechercher votre application ou y accéder dans le Windows Store, mais tous les clients cliquant sur le lien direct vers la description de votre application peuvent télécharger l’application sur les appareils exécutant Windows 10 ou Windows Phone 8.1 et les versions antérieures.
 -   **Masquer cette application et la rendre disponible uniquement aux utilisateurs spécifiés ci-dessous, qui peuvent la télécharger sur les appareils Windows Phone 8.x. Un code promotionnel peut être utilisé pour télécharger cette application sur les appareils Windows 10** : aucun client ne peut rechercher votre application ou y accéder sur le Windows Store, et seuls les clients Windows Phone 8.x dont vous saisissez les adresses de messagerie (associées à leurs comptes Microsoft) dans la zone (en les séparant par des points-virgules) peuvent la télécharger en cliquant sur lien direct vers la description. Vous pouvez également [générer des codes promotionnels](generate-promotional-codes.md) afin de la rendre disponible à certains utilisateurs sur Windows 10. Cette option est souvent utilisée pour le [test bêta](beta-testing-and-targeted-distribution.md) sur Windows Phone 8.1 et versions antérieures. Notez que vous pouvez activer cette option uniquement si vous n’avez jamais publié l’application avec l’option **Distribution et visibilité** définie sur **Tout le monde peut trouver votre application sur le Windows Store**.
 
-> **Remarque** Pour arrêter d’offrir une application aux nouveaux clients, cliquez sur **Rendre votre application indisponible**, sur la page Vue d’ensemble de l’application. Quelques heures après que vous avez confirmé vouloir la rendre indisponible, votre application disparaît du Windows Store. Dès lors, aucun nouveau client ne pourra y accéder, quelle que soit la méthode. Cette action remplacera les options définies ici : aucun nouveau client ne disposera d’un accès. Si vous décidez de la remettre à disposition des clients, vous pouvez à tout moment cliquer sur **Rendre votre application disponible** sur la page Vue d’ensemble de l’application. Pour en savoir plus, consultez l’article [Suppression d’une application du Windows Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
+> **Remarque** Pour arrêter d’offrir une application aux nouveaux clients, cliquez sur **Rendre votre application indisponible**, sur la page Vue d’ensemble de l’application. Quelques heures après que vous avez confirmé vouloir la rendre indisponible, votre application disparaît du Windows Store. Dès lors, aucun nouveau client ne pourra y accéder, quelle que soit la méthode. Cette action remplacera les options définies ici: aucun nouveau client ne disposera d’un accès. Si vous décidez de la remettre à disposition des clients, vous pouvez à tout moment cliquer sur **Rendre votre application disponible** sur la page Vue d’ensemble de l’application. Pour en savoir plus, consultez l’article [Suppression d’une application du Windows Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
 
-## <a name="windows-10-device-families"></a>Familles d’appareils Windows 10
+## <a name="windows-10-device-families"></a>Familles d’appareils Windows10
 
 la disponibilité de la famille d’appareils est désormais gérée sur la page **Packages** de votre soumission. Pour plus d’informations, consultez la section [Disponibilité de la famille d’appareils](upload-app-packages.md#device-family-availability).
 
@@ -90,4 +87,3 @@ Vous pouvez également modifier la date de sortie après avoir soumis votre appl
  
 
  
-

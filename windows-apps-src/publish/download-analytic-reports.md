@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Vous pouvez télécharger des fichiers .tsv contenant vos données d’analyse afin d’examiner vos statistiques et informations hors connexion."
+Description: "Vous pouvez télécharger des fichiers .tsv contenant vos données d’analyse afin d’examiner vos statistiques et informations hors connexion."
 title: "Télécharger des rapports d’analyse"
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 ms.author: wdg-dev-content
@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0480c3a35db6aaab1d8f7682dbb2ca5483bc8f5f
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: e8080eb249b684fd1d6427de0f53aa6e2dd1cda9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="download-analytics-reports"></a>Télécharger des rapports d’analyse
 
 
@@ -34,4 +31,3 @@ Vous pouvez télécharger des fichiers contenant vos données d’analyse afin d
 
 ## <a name="related-topics"></a>Rubriques connexes
 - [Analyses](analytics.md)
-

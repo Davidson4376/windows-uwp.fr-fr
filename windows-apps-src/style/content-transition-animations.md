@@ -4,12 +4,10 @@ Description: "Les animations de transition de contenu vous permettent de modifie
 title: "Recommandations en matière d’animations de transition de contenu"
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
 ms.openlocfilehash: ed2d580568b73e787ad7b980981e025652232a83
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="content-transition-animations"></a>Animations de transition de contenu
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -41,7 +39,7 @@ Les animations de transition de contenu vous permettent de modifier le contenu d
 **Pour les développeurs (XAML)**
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animation de transitions de contenu](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
-* [Démarrage rapide : animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
  
@@ -49,11 +47,5 @@ Les animations de transition de contenu vous permettent de modifier le contenu d
  
 
 
-
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

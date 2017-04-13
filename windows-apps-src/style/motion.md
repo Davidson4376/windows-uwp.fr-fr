@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-Description: "Avec des animations utiles et bien faites, vos applications prennent vie et donnent l’impression d’un travail soigné. Elles permettent aux utilisateurs de comprendre les changements de contexte et assurent l’homogénéité des expériences par des transitions visuelles."
+Description: "Avec des animations utiles et bien faites, vos applications prennent vie et donnent l’impression d’un travail soigné. Elles permettent aux utilisateurs de comprendre les changements de contexte et assure l’homogénéité des expériences par des transitions visuelles."
 title: Animations dans les applications UWP
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
@@ -10,14 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fc0c4f50cc7970fe6ff4cfa5c631a03a9f216470
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 9478cb5669d38008d42bbd57ba07fb9b47a81eef
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="motion-for-uwp-apps"></a>Animations pour les applications UWP
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -29,17 +26,17 @@ Avec des animations utiles et bien faites, vos applications prennent vie et donn
 
 Une animation ne consiste pas simplement à faire bouger des objets. L’animation est un outil qui permet de créer un écosystème physique dans lequel l’utilisateur peut évoluer et qu’il peut manipuler de façon tactile. La qualité de l’expérience dépend de la façon dont l’application répond à l’utilisateur et du type de personnalité communiqué par l’interface utilisateur.
 
-Assurez-vous que l’animation a une fonction spécifique dans votre application. Les meilleures applications de plateforme Windows universelle (UWP) utilisent l’animation pour donner vie à l’interface utilisateur. Une animation doit :
+Assurez-vous que l’animation a une fonction spécifique dans votre application. Les meilleures applications de plateforme Windows universelle (UWP) utilisent l’animation pour donner vie à l’interface utilisateur. Une animation doit:
 
--   fournir un retour d’informations basé sur le comportement de l’utilisateur ;
--   enseigner à l’utilisateur comment interagir avec l’interface utilisateur ;
+-   fournir un retour d’informations basé sur le comportement de l’utilisateur;
+-   enseigner à l’utilisateur comment interagir avec l’interface utilisateur;
 -   indiquer comment accéder aux vues précédentes ou suivantes.
 
-Plus un utilisateur passe de temps dans votre application (ou plus les tâches deviennent sophistiquées), plus la qualité de l’animation devient importante : elle permet de modifier la façon dont l’utilisateur perçoit la charge cognitive et la simplicité d’utilisation de votre application. Une animation présente de nombreux autres avantages directs :
+Plus un utilisateur passe de temps dans votre application (ou plus les tâches deviennent sophistiquées), plus la qualité de l’animation devient importante: elle permet de modifier la façon dont l’utilisateur perçoit la charge cognitive et la simplicité d’utilisation de votre application. Une animation présente de nombreux autres avantages directs:
 
 -   **l’animation ajoute des conseils concernant l’interaction.**
 
-    L’animation est directionnelle : elle permet de se déplacer vers l’avant ou en arrière, dans ou hors du contenu, laissant un minimum de traces quant à la façon dont l’utilisateur est parvenu jusqu’à la vue active.
+    L’animation est directionnelle: elle permet de se déplacer vers l’avant ou en arrière, dans ou hors du contenu, laissant un minimum de traces quant à la façon dont l’utilisateur est parvenu jusqu’à la vue active.
 
 -   **L’animation peut donner l’impression de performances accrues.**
 
@@ -113,4 +110,3 @@ Plus un utilisateur passe de temps dans votre application (ou plus les tâches d
  
 
  
-

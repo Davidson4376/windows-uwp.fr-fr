@@ -8,21 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5823fce5aa5b5d0e98bc43828dc7469a08fdb9d0
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 7c88e927a88dbef928deedd6f92b2aa7b60da1cf
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="put-apps-and-add-ons-on-sale"></a>Commercialiser des applications et composants additionnels
 
-Vous pouvez promouvoir votre application ou votre module complémentaire dans le Windows Store en les mettant en vente à prix réduit pendant une période limitée.
+Vous pouvez promouvoir votre application ou votre module complémentaire dans le Windows Store en les mettant en vente à prix réduit pendant une période limitée.
 
 Lorsque vous planifiez une vente pour réduire temporairement le prix de votre application ou de votre module complémentaire, les clients consultant votre description sur le Store voient que le prix a été réduit, et peuvent acheter l’application ou le produit au prix inférieur pendant la période que vous avez sélectionnée. Si vous définissez le prix sur **Gratuit**, les clients peuvent télécharger l’application sans rien payer pendant la période de vente.
 
-> **Remarque** Le prix de vente réduit s’affiche uniquement pour vos clients sur Windows 10. Sur d’autres systèmes d’exploitation, les clients voient le prix normal de votre application ou de votre module complémentaire. Vous pouvez toujours modifier un prix en choisissant un autre niveau de prix dans une nouvelle soumission, mais il ne sera pas affiché en tant que vente à prix réduit limitée dans le temps.
+> **Remarque** Le prix de vente réduit s’affiche uniquement pour vos clients sur Windows10. Sur d’autres systèmes d’exploitation, les clients voient le prix normal de votre application ou de votre module complémentaire. Vous pouvez toujours modifier un prix en choisissant un autre niveau de prix dans une nouvelle soumission, mais il ne sera pas affiché en tant que vente à prix réduit limitée dans le temps.
 
 ## <a name="scheduling-a-sale"></a>Planification d’une vente à prix réduit
 
@@ -70,6 +67,5 @@ Une fois votre soumission certifiée, les modifications prennent effet (même si
 
 Si la vente à prix réduit n’a pas démarré au moment où le processus de certification de la soumission se termine, elle n’est pas exécutée du tout. Si vous supprimez une vente à prix réduit déjà terminée, elle est simplement supprimée de votre page **Tarification et disponibilité**.
 
-> **Important** Dans la mesure où les clients peuvent voir la date de fin planifiée quand ils consultent la description de votre application dans le Windows Store, nous vous déconseillons de supprimer une vente à prix réduit après son démarrage. Si vous supprimez une vente à prix réduit déjà en cours, elle prend fin quand le processus de certification de la soumission se termine, ce qui peut être frustrant pour vos clients potentiels.
-
+> **Important** Dans la mesure où les clients peuvent voir la date de fin planifiée quand ils consultent la description de votre application dans le WindowsStore, nous vous déconseillons de supprimer une vente à prix réduit après son démarrage. Si vous supprimez une vente à prix réduit déjà en cours, elle prend fin quand le processus de certification de la soumission se termine, ce qui peut être frustrant pour vos clients potentiels.
 

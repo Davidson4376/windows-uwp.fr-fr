@@ -8,14 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 92a46c556303b88f8d506f5315e23d4e2b2edf5f
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: bba3cd7bc2f1ffde7c77c7e2de35a49963a8158c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="resolve-package-upload-errors"></a>Résolution des erreurs de chargement de package
 
 
@@ -32,7 +29,7 @@ Le non-respect de ces exigences se traduit par des erreurs de chargement de pack
 
 Pour plus d’informations sur la résolution d’erreurs liées aux numéros de version et les exigences relatives à la soumission de mises à jour, voir [Numérotation des versions de package](package-version-numbering.md).
 
-Sachez en outre que, si votre soumission comprend plusieurs XAP Windows Phone 8.1, ceux-ci doivent avoir le même numéro de version.
+Sachez en outre que, si votre soumission comprend plusieurs XAP Windows Phone8.1, ceux-ci doivent avoir le même numéro de version.
 
 **Remarque** Pour poser des questions supplémentaires sur d’autres messages d’erreur et obtenir une aide pour les résoudre, veuillez visiter nos [forums](http://go.microsoft.com/fwlink/p/?LinkId=224196).
 
@@ -41,7 +38,6 @@ Sachez en outre que, si votre soumission comprend plusieurs XAP Windows Phone 8
  
 
  
-
 
 
 

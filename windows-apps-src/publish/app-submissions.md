@@ -9,13 +9,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: df66981ae8355ea62128a881f02fd6fb891ffb30
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8d6764051a6f3d9d5c6d851f0ba15353da5f9d5e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-submissions"></a>Soumissions d’application
 
 
@@ -70,7 +67,7 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 | Nom du champ                    | Remarques                                  | Informations supplémentaires                          |
 |-------------------------------|----------------------------------------|----------------------------------------|
 | **Contrôle du chargement des packages**    | Obligatoire (au moins un package)        | [Chargement des packages d’application](upload-app-packages.md) |
-| **Disponibilité de la famille d’appareils** | Par défaut : basée sur les packages       | [Disponibilité de la famille d’appareils](upload-app-packages.md#device-family-availability) |
+| **Disponibilité de la famille d’appareils** | Par défaut: basée sur les packages       | [Disponibilité de la famille d’appareils](upload-app-packages.md#device-family-availability) |
 | **Lancement de package progressif**   | Facultatif (pour les mises à jour uniquement)            | [Lancement de package progressif](gradual-package-rollout.md) |
 | **Mise à jour obligatoire**          | Facultatif (pour les mises à jour uniquement)            | [Mise à jour obligatoire](upload-app-packages.md#mandatory-update)
 
@@ -95,7 +92,7 @@ Vous devez indiquer toutes les informations requises pour au moins l’une des l
 | **Site web**                   | Facultatif                                    | [Site web](create-app-store-listings.md#website)                     |
 | **Coordonnées du support technique**      | Facultatif                                    | [Coordonnées du support technique](create-app-store-listings.md)                |
 | **Politique de confidentialité**            | Obligatoire pour certaines applications. Voir le [contrat du développeur d'applications](https://msdn.microsoft.com/library/windows/apps/hh694058) et les [stratégies du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1) | [Politique de confidentialité](create-app-store-listings.md#privacy-policy) |
-| **Descriptions dans le Windows Store spécifiques à la plateforme** | Facultatif                               | [Créer des descriptions dans le Windows Store spécifiques à la plateforme](create-platform-specific-store-listings.md) |
+| **Descriptions dans le WindowsStore spécifiques à la plateforme** | Facultatif                               | [Créer des descriptions dans le WindowsStore spécifiques à la plateforme](create-platform-specific-store-listings.md) |
 
 <span/>
 
@@ -108,4 +105,3 @@ Vous devez indiquer toutes les informations requises pour au moins l’une des l
 <span/>
 
 **Remarque**&nbsp;&nbsp;Pour plus d’informations sur la publication d’applications métier directement à l’attention des entreprises, voir [Distribuer des applications métier aux entreprises](distribute-lob-apps-to-enterprises.md).
-

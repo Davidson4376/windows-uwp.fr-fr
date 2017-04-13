@@ -10,19 +10,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fe56db9f63461ad21173406289c18e6f704aa2a4
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 6c7745b5702d22bc201dbc173af3765097685514
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="sound"></a>Son
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Il existe de nombreuses manières d’utiliser le son pour améliorer votre application. Vous pouvez utiliser les sons pour compléter d’autres éléments de l’interface utilisateur, afin de permettre aux utilisateurs de reconnaître les événements par un son. Le son peut être un élément d’interface utilisateur efficace pour les personnes souffrant de handicaps visuels. Vous pouvez utiliser le son pour créer une atmosphère qui immerge totalement l’utilisateur ; par exemple, vous pouvez lire une bande son fantaisiste en arrière-plan d’un jeu de puzzle ou utiliser des effets sonores menaçants pour un jeu d’horreur/de survie.
+Il existe de nombreuses manières d’utiliser le son pour améliorer votre application. Vous pouvez utiliser les sons pour compléter d’autres éléments de l’interface utilisateur, afin de permettre aux utilisateurs de reconnaître les événements par un son. Le son peut être un élément d’interface utilisateur efficace pour les personnes souffrant de handicaps visuels. Vous pouvez utiliser le son pour créer une atmosphère qui immerge totalement l’utilisateur; par exemple, vous pouvez lire une bande son fantaisiste en arrière-plan d’un jeu de puzzle ou utiliser des effets sonores menaçants pour un jeu d’horreur/de survie.
 
 ## <a name="sound-global-api"></a>API de son globale
 
@@ -45,7 +42,7 @@ Pour plus d’informations sur la conception pour Xbox et télévision, voir [Co
 
 Tous les sons au sein de l’application peuvent être atténués avec le contrôle **Volume**. En revanche, le volume des sons de l’application ne peut pas être *plus élevé que le volume système*.
 
-Pour définir le niveau de volume de l’application, appelez la méthode suivante :
+Pour définir le niveau de volume de l’application, appelez la méthode suivante:
 ```C#
 ElementSoundPlayer.Volume = 0.5f;
 ```
@@ -65,7 +62,7 @@ L’élément **ElementSoundMode** peut prendre deux états : **Off** et **Defau
 ButtonName.ElementSoundState = ElementSoundMode.Off;
 ```
 
-## <a name="is-this-the-right-sound"></a>Est-ce le son approprié ?
+## <a name="is-this-the-right-sound"></a>Est-ce le son approprié?
 
 Lorsque vous créez un contrôle personnalisé ou que vous modifiez le son d’un contrôle existant, il est important de bien comprendre les utilisations de tous les sons fournis par le système.
 
@@ -73,7 +70,7 @@ Chaque son se rapporte à une interaction utilisateur de base spécifique, et bi
 
 ### <a name="invoking-an-element"></a>Invocation d’un élément
 
-Le son le plus courant déclenché par un contrôle dans notre système actuel est le son **Invoke**. Ce son est émis lorsqu’un utilisateur invoque un contrôle par le biais d’un appui, d’un clic, d’une sélection de la touche Entrée ou de la barre d’espace ou d’une pression de la touche « A » d’un boîtier de commande.
+Le son le plus courant déclenché par un contrôle dans notre système actuel est le son **Invoke**. Ce son est émis lorsqu’un utilisateur invoque un contrôle par le biais d’un appui, d’un clic, d’une sélection de la touche Entrée ou de la barre d’espace ou d’une pression de la touche «A» d’un boîtier de commande.
 
 En règle générale, ce son est uniquement émis quand un utilisateur cible explicitement un contrôle simple ou une partie d’un contrôle par l’intermédiaire d’un [périphérique d’entrée](../input-and-devices/input-primer.md).
 
@@ -148,9 +145,8 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 
 En complément de l’appel de l’élément **ElementSound.Focus**, le système audio émet successivement par défaut 4 sons différents lors de chaque déclencheur de navigation. Cela signifie que le système n’émettra pas deux fois de suite les deux mêmes sons de focus.
 
-Cette fonctionnalité de lecture successive est destinée à empêcher que les sons de focus ne deviennent monotones ou gênants pour l’utilisateur ; les sons de focus sont ceux qui seront émis le plus souvent, et doivent donc se révéler les plus subtils.
+Cette fonctionnalité de lecture successive est destinée à empêcher que les sons de focus ne deviennent monotones ou gênants pour l’utilisateur; les sons de focus sont ceux qui seront émis le plus souvent, et doivent donc se révéler les plus subtils.
 
 ## <a name="related-articles"></a>Articles connexes
 
 * [Conception pour Xbox et télévision](http://go.microsoft.com/fwlink/?LinkId=760736)
-

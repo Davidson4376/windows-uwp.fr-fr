@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2c1bf910303f0c26761a3c63c3e1159dd2d0c6bb
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: cad84be24836bc6a33a4ab08f1ca4fa2d9e97512
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xfieldmodifier-attribute"></a>Attribut x:FieldModifier
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Modifie le comportement de la compilation XAML pour que les champs des références d’objet nommé soient définis avec l’accès **public** au lieu de suivre le comportement **private** par défaut.
 
@@ -34,12 +31,11 @@ L’[attribut x:Phase](x-name-attribute.md) doit également être fourni sur le 
 
 ## <a name="remarks"></a>Remarques
 
-La valeur de l’attribut **x:FieldModifier** dépend du langage de programmation. Les valeurs valides sont **privé**, **public**, **protégé**, **interne** ou **ami**. Dans le cas de C#, de Microsoft Visual Basic ou des extensions de composant Visual C++ (C++/CX), vous pouvez attribuer la valeur de chaîne « public » ou « Public » ; l’analyseur n’impose pas de casse à cette valeur d’attribut.
+La valeur de l’attribut **x:FieldModifier** dépend du langage de programmation. Les valeurs valides sont **privé**, **public**, **protégé**, **interne** ou **ami**. Dans le cas de C#, de Microsoft Visual Basic ou des extensions de composant Visual C++ (C++/CX), vous pouvez attribuer la valeur de chaîne «public» ou «Public»; l’analyseur n’impose pas de casse à cette valeur d’attribut.
 
 L’accès **privé** est l’accès par défaut.
 
 **x:FieldModifier** n’est pertinent que pour les éléments comportant un [attribut x:Phase](x-name-attribute.md), car ce nom est utilisé pour référencer le champ une fois qu’il est public.
 
 **Remarque**  Le XAML Windows Runtime ne prend pas en charge **x:ClassModifier** ou **x:Subclass**.
-
 

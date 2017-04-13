@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 301f1b55644842225f1b8d040d5b02a035d1940b
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 23afad0c6499950d13d9771a5f0286403a5fe886
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="porting-windows-phone-silverlight-to-uwp-for-form-factor-and-ux"></a>Portage d’une application Silverlight pour Windows Phone vers UWP pour différents facteurs de forme et expériences utilisateur
 
-\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Rubrique précédente : [Portage des couches métier et des couches de données](wpsl-to-uwp-business-and-data.md).
 
@@ -42,11 +39,11 @@ Même dans ce cas, nous vous recommandons de tester votre application avec diff�
 
 Les affordances (widgets d’interface utilisateur) doivent présenter la taille adéquate pour une interaction tactile. Ainsi, une cible tactile doit conserver grosso modo sa taille physique sur les différents appareils qui sont susceptibles de proposer des densités en pixels variées. Là encore, les pixels effectifs vous viennent en aide, car ils sont mis à l’échelle sur les différents appareils (la densité en pixels étant prise en compte) afin de garantir une taille physique plus ou moins constante idéale pour les cibles tactiles.
 
-Pour pouvoir être lu correctement, le texte doit présenter une taille adéquate : de manière empirique, on considère qu’une distance 50 cm pour lire un texte de 12 points est appropriée. De plus, les images doivent présenter la taille et la résolution réelle les mieux adaptées à la distance d’affichage. Sur les différents appareils, la même valeur de mise à l’échelle des pixels effectifs permet d’assurer une taille adéquate des éléments de l’interface utilisateur, qui sont alors clairement lisibles. Le texte et les autres graphiques vectoriels sont automatiquement mis à l’échelle de manière efficace. Les graphiques raster (bitmap) sont également mis à l’échelle de manière automatique lorsque le développeur fournit une ressource présentant une taille unique élevée. Toutefois, le développeur est invité à proposer différentes tailles pour chaque ressource afin de permettre le chargement automatique de la taille idéale pour le facteur d’échelle d’un appareil cible. Pour plus d’informations, voir [Pixels d’affichage/effectifs, distance d’affichage et facteurs d’échelle](wpsl-to-uwp-porting-xaml-and-ui.md).
+Pour pouvoir être lu correctement, le texte doit présenter une taille adéquate: de manière empirique, on considère qu’une distance 50cm pour lire un texte de 12points est appropriée. De plus, les images doivent présenter la taille et la résolution réelle les mieux adaptées à la distance d’affichage. Sur les différents appareils, la même valeur de mise à l’échelle des pixels effectifs permet d’assurer une taille adéquate des éléments de l’interface utilisateur, qui sont alors clairement lisibles. Le texte et les autres graphiques vectoriels sont automatiquement mis à l’échelle de manière efficace. Les graphiques raster (bitmap) sont également mis à l’échelle de manière automatique lorsque le développeur fournit une ressource présentant une taille unique élevée. Toutefois, le développeur est invité à proposer différentes tailles pour chaque ressource afin de permettre le chargement automatique de la taille idéale pour le facteur d’échelle d’un appareil cible. Pour plus d’informations, voir [Pixels d’affichage/effectifs, distance d’affichage et facteurs d’échelle](wpsl-to-uwp-porting-xaml-and-ui.md).
 
 ## <a name="layout-and-adaptive-visual-state-manager"></a>Disposition et Gestionnaire d’état visuel adaptatif
 
-Nous avons décrit les facteurs qui entrent en jeu dans une connaissance approfondie de la taille de l’écran. À présent, penchons-nous sur la disposition de votre application et voyons comment utiliser l’éventuel excédent d’espace. Considérons l’exemple de cette page, qui provient d’une application très simple, conçue pour s’exécuter sur un appareil mobile de petite taille. À quoi doit-elle ressembler sur un écran plus grand ?
+Nous avons décrit les facteurs qui entrent en jeu dans une connaissance approfondie de la taille de l’écran. À présent, penchons-nous sur la disposition de votre application et voyons comment utiliser l’éventuel excédent d’espace. Considérons l’exemple de cette page, qui provient d’une application très simple, conçue pour s’exécuter sur un appareil mobile de petite taille. À quoi doit-elle ressembler sur un écran plus grand?
 
 ![Application du Windows Phone Store portée](images/wpsl-to-uwp-case-studies/c01-04-uni-phone-app-ported.png)
 
@@ -75,5 +72,4 @@ Reportez-vous à la liste [Valorisation de la réutilisation du code et du balis
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Mappages des espaces de noms et des classes](wpsl-to-uwp-namespace-and-class-mappings.md)
-
 

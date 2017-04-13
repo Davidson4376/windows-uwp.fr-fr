@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1657c092d09761b7e1db82252295356384faf68a
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 853816bcb994628a8864a066309c5abd0e31fd2b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="use-map-services"></a>Utiliser les services cartographiques
 
 
-Pour utiliser les services cartographiques dans les applications pour Windows Phone 8.1 et versions antérieures, vous devez insérer un identifiant et un jeton d’application de service cartographique dans le code de votre application. Vous pouvez obtenir ce jeton sur la page **Cartes** accessible dans la section **Services** du tableau de bord du Centre de développement.
+Pour utiliser les services cartographiques dans des applications pour Windows Phone 8.1 et versions antérieures, vous devez insérer un identifiant et un jeton d’application de service cartographique dans le code de votre application. Vous pouvez obtenir ce jeton sur la page **Cartes** accessible dans la section **Services** du tableau de bord du Centre de développement.
 
 > **Remarque**  Pour utiliser les services cartographiques dans des applications ciblant d’autres systèmes d’exploitation, visitez le [Centre de développement Bing Cartes](http://go.microsoft.com/fwlink/p/?LinkId=614880). Pour plus d’informations, voir [Demander une clé d’authentification de cartes](https://msdn.microsoft.com/library/windows/apps/mt219694).
 
@@ -32,7 +29,6 @@ Vous devez également veiller à ajouter les informations **ApplicationID** et *
  
 
  
-
 
 
 

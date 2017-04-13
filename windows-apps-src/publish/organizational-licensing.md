@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Vous pouvez indiquer si (et comment) votre application peut être proposée pour les achats en volume par le biais du Windows Store pour Entreprises dans la section Clés de produit réservées aux entreprises de la page Tarification et disponibilité relative à la soumission d’une application."
+Description: "Vous pouvez indiquer si et comment votre application peut être proposée pour les achats en volume par le biais du Windows Store pour Entreprises dans la section Clés de produit réservées aux entreprises de la page Tarification et disponibilité relative à la soumission d’une application."
 title: "Options de clés de produit réservées aux entreprises"
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
 ms.author: wdg-dev-content
@@ -8,18 +8,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0fb906dc84085d3006be7f5f25d895e1150f9265
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 3e942e649ce2c2e486f0326f10378124dd159c4c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="organizational-licensing-options"></a>Options de clés de produit réservées aux entreprises
 
 
-Vous pouvez indiquer si (et comment) votre application peut être proposée pour les achats en volume par le biais du Windows Store pour Entreprises dans la section **Clés de produit réservées aux entreprises** de la page [Tarification et disponibilité](set-app-pricing-and-availability.md#organizational-licensing) relative à la soumission d’une application.
+Vous pouvez indiquer si et comment votre application peut être proposée pour les achats en volume par le biais du Windows Store pour Entreprises dans la section **Clés de produit réservées aux entreprises** de la page [Tarification et disponibilité](set-app-pricing-and-availability.md#organizational-licensing) relative à la soumission d'une application.
 
 Ces paramètres vous permettent d'autoriser que votre application soit disponible pour les organisations qui acquièrent et déploient plusieurs licences pour leurs utilisateurs, ce qui offre une opportunité d'élargir votre couverture aux entreprises qui utilisent Windows 10 sur différents types d'appareils tels que PC, tablettes et téléphones. Vous devrez également autoriser la gestion des licences organisationnelles pour les [applications métier](distribute-lob-apps-to-enterprises.md) que vous publiez directement à l’attention des entreprises.
 
@@ -55,7 +52,7 @@ Sur certains marchés, les comptes de développeur sont actuellement en mesure d
 
 Si votre pays ou votre région n’est pas répertorié ci-dessous, vos applications payantes ne seront pour le moment pas proposées dans le Windows Store pour Entreprises. Si tel est le cas, les choix de licences organisationnelles que vous faites pour vos applications payantes pourront être appliquées ultérieurement, au fur et à mesure que le Windows Store pour Entreprises prendra en charge les soumissions d’applications payantes pour de nouveaux marchés de compte de développeur.
 
-À ce stade, les développeurs des pays et régions suivants peuvent distribuer des applications payantes aux clients professionnels via le Windows Store pour Entreprises :
+À ce stade, les développeurs des pays et régions suivants peuvent distribuer des applications payantes aux clients professionnels via le Windows Store pour Entreprises:
 
 - Autriche
 - Belgique
@@ -92,4 +89,3 @@ Si votre pays ou votre région n’est pas répertorié ci-dessous, vos applicat
 - Suisse
 - Royaume-Uni
 - France
-

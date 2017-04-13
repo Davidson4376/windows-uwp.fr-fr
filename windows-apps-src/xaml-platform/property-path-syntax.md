@@ -8,21 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 301f411f1911e12163ba123b93f99f5f15b5e479
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 3209028f151608c83e69d6750e978132a6c8b83c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="property-path-syntax"></a>Syntaxe de Property-path
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Vous pouvez utiliser la classe [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) et la syntaxe de chaîne pour instancier une valeur **PropertyPath** en XAML ou dans le code. Les valeurs **PropertyPath** sont utilisées par la liaison de données. Une syntaxe similaire est utilisée pour cibler les animations dans une table de montage séquentiel. Dans les deux scénarios, un chemin de propriété décrit la traversée d’une ou de plusieurs relations de propriétés d’objet qui finissent par devenir une seule propriété.
 
-Vous pouvez affecter une chaîne de chemin de propriété directement à un attribut en XAML. Vous pouvez utiliser la même syntaxe de chaîne pour construire un [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) qui définit [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) dans du code, ou pour définir un ciblage d’animation dans du code via [**SetTargetProperty**](https://msdn.microsoft.com/library/windows/apps/br210503). Il existe deux zones de fonctionnalités distinctes dans Windows Runtime qui utilisent un chemin de propriété : la liaison de données et le ciblage d’animation. Le ciblage d’animation ne crée pas de valeurs de syntaxe Property-path sous-jacentes dans l’implémentation Windows Runtime ; il conserve l’information sous forme de chaîne. Toutefois, les concepts de traversée de propriété d’objet sont très similaires. La liaison de données et le ciblage d’animation évaluent chacun un chemin de propriété de façon légèrement différente. C’est la raison pour laquelle nous décrivons séparément la syntaxe du chemin de propriété dans chaque cas.
+Vous pouvez affecter une chaîne de chemin de propriété directement à un attribut en XAML. Vous pouvez utiliser la même syntaxe de chaîne pour construire un [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) qui définit [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) dans du code, ou pour définir un ciblage d’animation dans du code via [**SetTargetProperty**](https://msdn.microsoft.com/library/windows/apps/br210503). Il existe deux zones de fonctionnalités distinctes dans Windows Runtime qui utilisent un chemin de propriété: la liaison de données et le ciblage d’animation. Le ciblage d’animation ne crée pas de valeurs de syntaxe Property-path sous-jacentes dans l’implémentation Windows Runtime; il conserve l’information sous forme de chaîne. Toutefois, les concepts de traversée de propriété d’objet sont très similaires. La liaison de données et le ciblage d’animation évaluent chacun un chemin de propriété de façon légèrement différente. C’est la raison pour laquelle nous décrivons séparément la syntaxe du chemin de propriété dans chaque cas.
 
 ## <a name="property-path-for-objects-in-data-binding"></a>Chemin de propriété pour les objets de la liaison de données
 
@@ -32,17 +29,17 @@ Vous pouvez lier soit une valeur de propriété individuelle, soit une propriét
 
 ### <a name="traversing-an-object-graph"></a>Traversée d’un graphique d’objet
 
-L’élément de la syntaxe qui désigne la traversée d’une relation de propriété d’objet dans un graphique d’objet est le point (**.**). Chaque point d’une chaîne de chemin de propriété indique une division entre un objet (côté gauche du point) et une propriété de cet objet (côté droit du point). La chaîne est évaluée de gauche à droite, ce qui permet d’exécuter le code pas à pas dans plusieurs relations de propriétés d’objet. Voyons un exemple :
+L’élément de la syntaxe qui désigne la traversée d’une relation de propriété d’objet dans un graphique d’objet est le point (**.**). Chaque point d’une chaîne de chemin de propriété indique une division entre un objet (côté gauche du point) et une propriété de cet objet (côté droit du point). La chaîne est évaluée de gauche à droite, ce qui permet d’exécuter le code pas à pas dans plusieurs relations de propriétés d’objet. Voyons un exemple:
 
 ``` syntax
 "{Binding Path=Customer.Address.StreetAddress1}"
 ```
 
-Voici comment ce chemin d’accès est évalué :
+Voici comment ce chemin d’accès est évalué:
 
 1.  L’objet de contexte de données (ou un [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) spécifié par le même [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)) donne lieu à la recherche de la propriété nommée « Customer ».
-2.  L’objet qui a la valeur de la propriété « Customer » donne lieu à la recherche de la propriété nommée « Address ».
-3.  L’objet qui a la valeur de la propriété « Address » donne lieu à la recherche de la propriété nommée « StreetAddress1 ».
+2.  L’objet qui a la valeur de la propriété «Customer» donne lieu à la recherche de la propriété nommée «Address».
+3.  L’objet qui a la valeur de la propriété «Address» donne lieu à la recherche de la propriété nommée «StreetAddress1».
 
 À chacune de ces étapes, la valeur est traitée comme un objet. Le type du résultat est vérifié uniquement lorsque la liaison est appliquée à une propriété spécifique. Cet exemple échoue si « Address » est juste une valeur de chaîne qui n’indique pas quelle est la partie de la chaîne correspondant à l’adresse. En règle générale, la liaison pointe vers les valeurs de propriétés imbriquées spécifiques d’un objet métier ayant une structure d’information connue et intentionnelle.
 
@@ -54,9 +51,9 @@ Voici comment ce chemin d’accès est évalué :
 
 ### <a name="indexers"></a>Indexeurs
 
-Un chemin de propriété pour la liaison de données peut inclure des références à des propriétés indexées. Cela permet de lier des listes/vecteurs ordonnés ou des dictionnaires/mappages. Utilisez des crochets « \[\] » pour indiquer une propriété indexée. Le contenu de ces crochets peut être soit un entier (pour la liste ordonnée), soit une chaîne sans guillemets (pour les dictionnaires). Vous pouvez également lier un dictionnaire où la clé est un entier. Vous pouvez utiliser différentes propriétés indexées dans le même chemin d’accès en séparant l’objet de la propriété à l’aide d’un point.
+Un chemin de propriété pour la liaison de données peut inclure des références à des propriétés indexées. Cela permet de lier des listes/vecteurs ordonnés ou des dictionnaires/mappages. Utilisez des crochets «\[\]» pour indiquer une propriété indexée. Le contenu de ces crochets peut être soit un entier (pour la liste ordonnée), soit une chaîne sans guillemets (pour les dictionnaires). Vous pouvez également lier un dictionnaire où la clé est un entier. Vous pouvez utiliser différentes propriétés indexées dans le même chemin d’accès en séparant l’objet de la propriété à l’aide d’un point.
 
-Prenons par exemple un objet métier qui contient une liste de « Teams » (liste ordonnée). Chacune des équipes (teams) a un dictionnaire de « Players » où chaque joueur est indexé par le nom de famille. Voici un exemple de chemin de propriété pour un joueur spécifique de la deuxième équipe : « Teams\[1\].Players\[Smith\] ». (Vous utilisez 1 pour indiquer le deuxième élément de « Teams », car la liste est indexée à partir de zéro.)
+Prenons par exemple un objet métier qui contient une liste de «Teams» (liste ordonnée). Chacune des équipes (teams) a un dictionnaire de «Players» où chaque joueur est indexé par le nom de famille. Voici un exemple de chemin de propriété pour un joueur spécifique de la deuxième équipe: «Teams\[1\].Players\[Smith\]». (Vous utilisez1 pour indiquer le deuxième élément de «Teams», car la liste est indexée à partir de zéro.)
 
 **Remarque** La prise en charge de l’indexation pour les sources de données C++ est limitée ; voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
@@ -88,7 +85,7 @@ Vous pouvez animer une propriété qui représente une sous-propriété de l’o
 
 ## <a name="specifying-a-particular-child-in-a-collection"></a>Spécification d’un enfant particulier dans une collection
 
-Pour spécifier un élément enfant dans une propriété de collection, vous pouvez utiliser un indexeur numérique. Utilisez des crochets « \[\] » autour de la valeur d’index de l’entier. Vous ne pouvez référencer que des listes ordonnées, pas des dictionnaires. Dans la mesure où une collection n’est pas une valeur qui peut être animée, l’utilisation d’un indexeur ne peut jamais représenter la propriété de fin d’un chemin de propriété.
+Pour spécifier un élément enfant dans une propriété de collection, vous pouvez utiliser un indexeur numérique. Utilisez des crochets «\[\]» autour de la valeur d’index de l’entier. Vous ne pouvez référencer que des listes ordonnées, pas des dictionnaires. Dans la mesure où une collection n’est pas une valeur qui peut être animée, l’utilisation d’un indexeur ne peut jamais représenter la propriété de fin d’un chemin de propriété.
 
 Par exemple, pour indiquer que vous voulez animer la première couleur d’interruption de couleur dans un [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/br210108) appliqué à la propriété [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) d’un contrôle, voici le chemin de propriété correspondant : « (Control.Background).(GradientBrush.GradientStops)\[0\].(GradientStop.Color) ». Notez que l’indexeur n’est pas la dernière étape du chemin d’accès et que la dernière étape, en particulier, doit faire référence à la propriété [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) de l’élément 0 de la collection pour lui appliquer une valeur animée [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723).
 
@@ -122,5 +119,4 @@ La plupart du temps, vous pouvez appliquer [**PropertyPath**](https://msdn.micro
 * [**Liaison**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**Constructeur de liaison**](https://msdn.microsoft.com/library/windows/apps/br209825)
 * [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)
-
 

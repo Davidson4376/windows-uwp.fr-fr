@@ -5,12 +5,10 @@ title: Animations de glissement dans les applications UWP
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
 ms.openlocfilehash: e71b936be1649f8ede394b019369176c7e3ca631
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="drag-animations"></a>Animations de glissement
 
 
@@ -60,7 +58,7 @@ Utilisez les animations de glisser-déplacer lors du déplacement d’objets par
 **Pour les développeurs**
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animation de séquences de glisser-déplacer](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
-* [Démarrage rapide : Animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Démarrage rapide: Animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)
 * [**Classe DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243186)
 * [**Classe DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243180)
@@ -69,11 +67,5 @@ Utilisez les animations de glisser-déplacer lors du déplacement d’objets par
  
 
 
-
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

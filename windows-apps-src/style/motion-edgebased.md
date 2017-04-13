@@ -5,12 +5,10 @@ title: "Animations latérales de l’interface utilisateur dans les applications
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
 ms.openlocfilehash: 925826f2702474a0003f2ca2dee6ff10992f5f25
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="edge-based-ui-animations"></a>Animations latérales de l’interface utilisateur
 
 
@@ -48,7 +46,7 @@ Les animations latérales affichent ou masquent l’interface utilisateur qui pa
 **Pour les développeurs**
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animation latérale de l’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
-* [Démarrage rapide : Animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Démarrage rapide: Animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 * [**Classe PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh969160)
 * [Animation de fondus](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
@@ -59,11 +57,5 @@ Les animations latérales affichent ou masquent l’interface utilisateur qui pa
  
 
 
-
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

@@ -1,22 +1,19 @@
 ---
 author: JordanEllis6809
-title: "Intégration de jeux existants dans Xbox"
-description: "Intégration de jeux existants dans Xbox avec UWP."
+title: "Intégration de jeux existants dansXbox"
+description: "Intégration de jeux existants dansXbox avec UWP."
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: 9ac96766-df89-4403-89f2-200549436921
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e82eacae06141c873690cccde04c3d871ae9d0eb
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 1f2306469468bf1990534d27ca633bba3a582a33
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="bringing-existing-games-to-xbox"></a>Intégration de jeux existants dans Xbox
+# <a name="bringing-existing-games-to-xbox"></a>Intégration de jeux existants dansXbox
 
 
 Selon les technologies utilisées par votre jeu, voici quelques étapes pour vous aider à intégrer votre jeu dans UWP sur Xbox.
@@ -26,11 +23,10 @@ Selon les technologies utilisées par votre jeu, voici quelques étapes pour vou
 
 | Moteur      | Description |
 |------------|-------------|
-|[Custom C++](development-lanes-custom-cpp.md)| Informations relatives au développement de jeux C++ sur Xbox à l’aide de la plateforme UWP. |
+|[CustomC++](development-lanes-custom-cpp.md)| Informations relatives au développement de jeux C++ sur Xbox à l’aide de la plateforme UWP. |
 |[Unity](development-lanes-unity.md)| Didacticiel vous aidant à faire passer des jeux existants d’Unity à Xbox. |
-|[HTML / JS](development-lanes-html.md)| Informations relatives au développement de jeux HTML sur Xbox. |
+|[HTML/JS](development-lanes-html.md)| Informations relatives au développement de jeux HTML sur Xbox. |
 
 ## <a name="see-also"></a>Voir également
 
-- [UWP sur Xbox One](index.md)
-
+- [UWP sur XboxOne](index.md)

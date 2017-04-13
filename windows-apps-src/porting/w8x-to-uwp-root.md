@@ -1,38 +1,35 @@
 ---
 author: mcleblanc
-description: "Si vous disposez d’une application 8.1 universelle (qu’elle cible Windows 8.1, Windows Phone 8.1 ou les deux), vous constaterez que le portage de votre code source et de vos compétences vers Windows 10 s’effectue en toute transparence."
-title: "Passer de Windows Runtime 8.x à UWP"
+description: "Si vous disposez d’une application 8.1 universelle (qu’elle cible Windows 8.1, Windows Phone 8.1 ou les deux), vous constaterez que le portage de votre code source et de vos compétences vers Windows 10 s’effectue en toute transparence."
+title: "Passer de Windows Runtime8.x à UWP"
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a4ee1fd29b276958ed6a18b4eadcd89d5ea914b6
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 37da1d6385bf18fcf44f6425b843715e1a462379
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="move-from-windows-runtime-8x-to-uwp"></a>Passer de Windows Runtime8.x à UWP
 
-# <a name="move-from-windows-runtime-8x-to-uwp"></a>Passer de Windows Runtime 8.x à UWP
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-Si vous disposez d’une application 8.1 universelle (qu’elle cible Windows 8.1, Windows Phone 8.1 ou les deux), vous constaterez que le portage de votre code source et de vos compétences vers Windows 10 s’effectue en toute transparence. Grâce à Windows 10, vous pouvez créer une application de plateforme Windows universelle (UWP), à savoir un package d’application unique que vos clients peuvent installer sur tout type d’appareil. Pour en savoir plus sur Windows 10, sur les applications UWP et sur les concepts de code adaptatif et d’interface utilisateur adaptative que nous mentionnerons dans ce guide de portage, voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
+Si vous disposez d’une application8.1 universelle (qu’elle cible Windows 8.1, Windows Phone 8.1 ou les deux), vous constaterez que le portage de votre code source et de vos compétences vers Windows10 s’effectue en toute transparence. Grâce à Windows10, vous pouvez créer une application de plateforme Windows universelle (UWP), à savoir un package d’application unique que vos clients peuvent installer sur tout type d’appareil. Pour en savoir plus sur Windows 10, sur les applications UWP et sur les concepts de code adaptatif et d’interface utilisateur adaptative que nous mentionnerons dans ce guide de portage, voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
 Pendant le portage, vous constaterez que Windows 10 partage la majorité des API avec les plateformes précédentes, ainsi que le balisage XAML, l’infrastructure d’interface utilisateur et des outils, et qu’elles sont toutes très conviviales. Comme précédemment, vous avez toujours le choix entre les langages de programmation C++, C# et Visual Basic pour l’infrastructure d’interface utilisateur XAML. Les premières étapes de planification de ce que vous devez faire avec vos applications existantes dépendent des types d’applications et de projets dont vous disposez. Cela est expliqué dans les sections suivantes.
 
 ## <a name="if-you-have-a-universal-81-app"></a>Si vous disposez d’une application 8.1 universelle
 
-Une application 8.1 universelle est créée à partir d’un projet d’application universelle 8.1. Supposons que le nom du projet soit AppName\_81. Il contient les sous-projets suivants.
+Une application8.1 universelle est créée à partir d’un projet d’application universelle8.1. Supposons que le nom du projet soit AppName\_81. Il contient les sous-projets suivants.
 
--   AppName\_81.Windows. Il s’agit du projet qui crée le package d’application pour Windows 8.1.
--   AppName\_81.WindowsPhone. Il s’agit du projet qui crée le package d’application pour Windows Phone 8.1.
+-   AppName\_81.Windows. Il s’agit du projet qui crée le package d’application pour Windows8.1.
+-   AppName\_81.WindowsPhone. Il s’agit du projet qui crée le package d’application pour Windows Phone8.1.
 -   AppName\_81.Shared. Il s’agit du projet qui contient le code source, les fichiers de balisage et d’autres actifs et ressources qui sont utilisés par les deux autres projets.
 
-Une application Windows universelle 8.1 offre souvent des fonctionnalités identiques—en utilisant les mêmes code et balisage—dans ses versions pour Windows 8.1 et Windows Phone 8.1. Une telle application est idéalement adaptée au portage vers une application Windows 10 unique qui cible la famille d’appareils universels (et que vous pouvez installer sur le plus large éventail d’appareils). Vous porterez essentiellement le contenu du projet partagé et vous n’utiliserez que très peu, voire pas du tout, les deux autres projets, car ils ne contiendront qu’un nombre limité d’éléments, voire aucun.
+Une application Windows universelle8.1 offre souvent des fonctionnalités identiques—en utilisant les mêmes code et balisage—dans ses versions pour Windows8.1 et Windows Phone8.1. Une telle application est idéalement adaptée au portage vers une application Windows10 unique qui cible la famille d’appareils universels (et que vous pouvez installer sur le plus large éventail d’appareils). Vous porterez essentiellement le contenu du projet partagé et vous n’utiliserez que très peu, voire pas du tout, les deux autres projets, car ils ne contiendront qu’un nombre limité d’éléments, voire aucun.
 
 Dans d’autres cas, la version pour Windows 8.1 et/ou pour Windows Phone 8.1 de l’application contient des fonctionnalités uniques. Elles peuvent également contenir les mêmes fonctionnalités mais les implémenter selon des techniques ou des technologies différentes. Avec une telle application, vous pouvez choisir d’effectuer le portage vers une application unique qui cible la famille d’appareils universelle (auquel cas vous souhaiterez adapter l’application aux différents appareils) ou vers plusieurs applications, l’une d’elles ciblant la famille d’appareils de bureau et une autre ciblant la famille d’appareils mobiles, par exemple. La nature de l’application 8.1 universelle détermine l’option la mieux adaptée à votre cas.
 
@@ -63,19 +60,15 @@ Lors du portage d’une application 8.1 universelle vers le modèle d’applicat
 
 Avant ou pendant le portage, vérifiez si vous pouvez améliorer votre application en la refactorisant, afin de regrouper l’ensemble du code présentant une finalité similaire sous la forme de couches, ce qui vous permet d’éviter toute répartition arbitraire. La factorisation de votre application en couches comme celles que nous venons de décrire vous permet de vous assurer que votre application est correcte, de la tester, de l’exécuter et de l’entretenir, en toute simplicité. Vous pouvez rendre des fonctionnalités plus réutilisables en suivant le modèle Model-View-ViewModel ([MVVM](http://msdn.microsoft.com/magazine/dd419663.aspx)). Ce modèle gère de manière séparée les éléments de l’interface utilisateur, les composants professionnels et les données. Même au sein de l’interface utilisateur, ce modèle peut séparer les états et les comportements des éléments visuels, qui seront testés séparément. Grâce au modèle MVVM, vous pouvez écrire vos données et votre logique métier une seule fois et l’utiliser sur tous les appareils, quelle que soit l’interface utilisateur. En outre, ce modèle vous permettra probablement de réutiliser la majeure partie du modèle d’affichage et des zones d’affichage sur l’ensemble des appareils.
 
-## <a name="if-you-have-a-microsoft-visual-studio-2015-rc-project"></a>Si vous disposez d’un projet Microsoft Visual Studio 2015 RC
-
-Si vous disposez d’un projet Windows 10 que vous avez créé avec Visual Studio 2015 RC, voir [Mettre à jour votre projet Microsoft Visual Studio 2015 RC UWP vers RTM](update-your-visual-studio-2015-rc-project-to-rtm.md).
- 
 | Rubrique | Description |
 |-------|-------------|
-| [Portage du projet](w8x-to-uwp-porting-to-a-uwp-project.md) | Lorsque vous commencez le processus de portage, vous avez le choix entre deux options. La première consiste à modifier une copie de vos fichiers de projet existants, y compris le manifeste de package d’application (pour cette option, voir les informations sur la mise à jour de vos fichiers de projet dans [Migrer des applications vers la plateforme Windows universelle](https://msdn.microsoft.com/library/mt148501.aspx)). La seconde consiste à créer un projet Windows 10 dans Visual Studio et à copier vos fichiers dans ce projet. |
+| [Portage du projet](w8x-to-uwp-porting-to-a-uwp-project.md) | Lorsque vous commencez le processus de portage, vous avez le choix entre deux options. La première consiste à modifier une copie de vos fichiers de projet existants, y compris le manifeste de package d’application (pour cette option, voir les informations sur la mise à jour de vos fichiers de projet dans [Migrer des applications vers la plateforme Windows universelle](https://msdn.microsoft.com/library/mt148501.aspx)). La seconde consiste à créer un projet Windows10 dans VisualStudio et à copier vos fichiers dans ce projet. |
 | [Résolution des problèmes](w8x-to-uwp-troubleshooting.md) | Nous vous recommandons vivement de lire ce guide de portage jusqu’à la fin, mais nous comprenons également que vous soyez impatient d’avancer et de passer à l’étape de développement et d’exécution de votre projet. À cette fin, vous pouvez avancer provisoirement en commentant ou en remplaçant du code non essentiel, pour revenir ensuite afin de combler cette lacune ultérieurement. Le tableau de résolution des problèmes et des solutions de cette rubrique peuvent vous être utiles à ce stade, même s’il ne se substitue pas à la lecture des rubriques suivantes. Vous pouvez toujours revenir au tableau lorsque vous avancez dans les rubriques ultérieures. |
-| [Portage du balisage XAML et de la couche interface utilisateur](w8x-to-uwp-porting-xaml-and-ui.md) | La pratique de définition de l’interface utilisateur sous la forme de balisage XAML déclaratif convertit extrêmement bien des applications 8.1 universelles en applications de plateforme Windows universelle (UWP). Vous constaterez que la majeure partie de votre balisage est compatible, même si vous devez peut-être apporter quelques ajustements aux clés de ressources système ou aux modèles personnalisés que vous utilisez. |
+| [Portage du balisage XAML et de la couche interface utilisateur](w8x-to-uwp-porting-xaml-and-ui.md) | La pratique de définition de l’interface utilisateur sous la forme de balisage XAML déclaratif convertit extrêmement bien des applications8.1 universelles en applications de plateforme Windows universelle (UWP). Vous constaterez que la majeure partie de votre balisage est compatible, même si vous devez peut-être apporter quelques ajustements aux clés de ressources système ou aux modèles personnalisés que vous utilisez. |
 | [Portage pour le modèle d’E/S, d’appareil et d’application](w8x-to-uwp-input-and-sensors.md) | Le code qui s’intègre à l’appareil proprement dit et à ses capteurs implique des entrées de l’utilisateur et des sorties vers ce dernier. Il peut également impliquer le traitement des données. Néanmoins, ce code n’est généralement pas pensé comme la couche interface utilisateur ni comme la couche de données. Ce code inclut l’intégration au contrôleur de vibrations, à l’accéléromètre, au gyroscope, au microphone et au haut-parleur (qui rejoignent la reconnaissance et la synthèse vocales), à la (géo)localisation et aux modalités d’entrée telles que l’écran tactile, la souris, le clavier et le stylet. |
-| [Étude de cas : Bookstore1](w8x-to-uwp-case-study-bookstore1.md) | Cette rubrique présente une étude de cas illustrant le portage d’une application 8.1 universelle très simple vers une application UWP Windows 10. Une application 8.1 universelle génère un package d’application pour Windows 8.1 et un autre pour Windows Phone 8.1. Grâce à Windows 10, vous pouvez créer un package d’application unique que vos clients peuvent installer sur un large éventail d’appareils. C’est ce que nous allons faire dans la présente étude de cas. Voir [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631). |
-| [Étude de cas : Bookstore2](w8x-to-uwp-case-study-bookstore2.md) | Cette étude de cas repose sur les informations fournies dans le contrôle [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/hh702601). Dans le modèle d’affichage, chaque instance de la classe Author représente l’ensemble des livres écrits par l’auteur en question ; dans l’élément SemanticZoom, nous pouvons afficher la liste des livres regroupés par auteur ou nous pouvons effectuer un zoom arrière pour afficher une liste de raccourcis relatifs aux auteurs. |
-| [Étude de cas : QuizGame](w8x-to-uwp-case-study-quizgame.md) | Cette rubrique présente une étude de cas illustrant le portage d’un exemple d’application de jeu-questionnaire WinRT 8.1 d’homologue à homologue vers une application de plateforme Windows universelle (UWP) Windows 10. |
+| [Étude de cas: Bookstore1](w8x-to-uwp-case-study-bookstore1.md) | Cette rubrique présente une étude de cas illustrant le portage d’une application8.1 universelle très simple vers une application UWP Windows10. Une application8.1 universelle génère un package d’application pour Windows8.1 et un autre pour Windows Phone8.1. Grâce à Windows10, vous pouvez créer un package d’application unique que vos clients peuvent installer sur un large éventail d’appareils. C’est ce que nous allons faire dans la présente étude de cas. Voir [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631). |
+| [Étude de cas: Bookstore2](w8x-to-uwp-case-study-bookstore2.md) | Cette étude de cas repose sur les informations fournies dans le contrôle [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/hh702601). Dans le modèle d’affichage, chaque instance de la classe Author représente l’ensemble des livres écrits par l’auteur en question; dans l’élément SemanticZoom, nous pouvons afficher la liste des livres regroupés par auteur ou nous pouvons effectuer un zoom arrière pour afficher une liste de raccourcis relatifs aux auteurs. |
+| [Étude de cas: QuizGame](w8x-to-uwp-case-study-quizgame.md) | Cette rubrique présente une étude de cas illustrant le portage d’un exemple d’application de jeu-questionnaire WinRT8.1 d’homologue à homologue vers une application de plateforme Windows universelle (UWP) Windows10. |
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -83,5 +76,3 @@ Si vous disposez d’un projet Windows 10 que vous avez créé avec Visual Studi
 * [Informations de référence sur Windows Runtime](https://msdn.microsoft.com/library/windows/apps/br211377)
 * [Développement d’applications Windows universelles pour tous les appareils Windows](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 * [Conception de l’expérience utilisateur des applications](https://msdn.microsoft.com/library/windows/apps/hh767284)
-
-

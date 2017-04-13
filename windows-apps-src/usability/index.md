@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: f76bdf6052228e5588ea7e34d95360f698525eb2
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d05db2899fe2ad26eaf5e200ae2673b8efafddd0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="usability-for-uwp-apps"></a>Facilité d’utilisation des applications UWP
 
@@ -36,7 +34,7 @@ L’accessibilité consiste à rendre vos applications utilisables par des perso
 <p><b>[Vue d’ensemble de l’accessibilité](../accessibility/accessibility-overview.md)</b> <br/> Cet article est une vue d’ensemble des concepts et technologies associés aux scénarios d’accessibilité des applications UWP.</p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Conception de logiciels inclusifs](../accessibility/designing-inclusive-software.md)</b><br/>En savoir plus sur l’évolution de la conception inclusive avec les applications de la plateforme Windows universelle (UWP) pour Windows 10.  Concevez et développez un logiciel inclusif en tenant compte de l’accessibilité.</p>
+<p><b>[Conception de logiciels inclusifs](../accessibility/designing-inclusive-software.md)</b><br/>En savoir plus sur l’évolution de la conception inclusive avec les applications de la plateforme Windows universelle(UWP) pour Windows10.  Concevez et développez un logiciel inclusif en tenant compte de l’accessibilité.</p>
   </div>
 </div>
 </div>
@@ -55,10 +53,10 @@ L’accessibilité consiste à rendre vos applications utilisables par des perso
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Accessibilité dans le Windows Store](../accessibility/accessibility-in-the-store.md)</b><br/>Décrit la configuration requise pour la déclaration de votre application UWP comme étant accessible dans le Windows Store.</p>
+<p><b>[Accessibilité dans le WindowsStore](../accessibility/accessibility-in-the-store.md)</b><br/>Décrit la configuration requise pour la déclaration de votre application UWP comme étant accessible dans le Windows Store.</p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Liste de vérification de l’accessibilité](../accessibility/accessibility-checklist.md)</b><br/>Fournit une liste de vérification pour vous aider à garantir que votre application UWP est accessible.</p>
+<p><b>[Liste de vérification de l’accessibilité](../accessibility/accessibility-checklist.md)</b><br/>Fournit une liste de vérification pour vous aider à garantir que votre applicationUWP est accessible.</p>
   </div>
 </div>
 </div>
@@ -80,7 +78,7 @@ L’accessibilité consiste à rendre vos applications utilisables par des perso
 <p><b>[Thèmes à contraste élevé](../accessibility/high-contrast-themes.md)</b><br/>Décrit les étapes nécessaires pour s’assurer que votre application UWP est utilisable quand un thème à contraste élevé est actif. </p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Exigences de texte accessible](../accessibility/accessible-text-requirements.md)</b><br/>Cette rubrique décrit les meilleures pratiques relatives à l’accessibilité du texte dans une application, en garantissant que les couleurs et de l’arrière-plan respectent le coefficient de contraste nécessaire. Elle traite également des rôles Microsoft UI Automation que peuvent avoir les éléments de texte dans une application UWP et des meilleures pratiques relatives au texte des graphiques.</p>
+<p><b>[Exigences de texte accessible](../accessibility/accessible-text-requirements.md)</b><br/>Cette rubrique décrit les meilleures pratiques relatives à l’accessibilité du texte dans une application, en garantissant que les couleurs et de l’arrière-plan respectent le coefficient de contraste nécessaire. Elle traite également des rôles MicrosoftUIAutomation que peuvent avoir les éléments de texte dans une applicationUWP et des meilleures pratiques relatives au texte des graphiques.</p>
   </div>
 </div>
 </div>
@@ -88,10 +86,10 @@ L’accessibilité consiste à rendre vos applications utilisables par des perso
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Pratiques d’accessibilité à éviter](../accessibility/practices-to-avoid.md)</b><br/>Répertorie les pratiques à éviter si vous voulez créer une application UWP accessible.</p>
+<p><b>[Pratiques d’accessibilité à éviter](../accessibility/practices-to-avoid.md)</b><br/>Répertorie les pratiques à éviter si vous voulez créer une applicationUWP accessible.</p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[Homologues d’automation personnalisés](../accessibility/custom-automation-peers.md)</b><br/>Décrit le concept des homologues d’automatisation pour UI Automation, et la manière dont vous pouvez fournir une prise en charge de l’automatisation pour votre propre classe d’interface utilisateur personnalisée.</p>
+<p><b>[Homologues d’automation personnalisés](../accessibility/custom-automation-peers.md)</b><br/>Décrit le concept des homologues d’automatisation pour UIAutomation, et la manière dont vous pouvez fournir une prise en charge de l’automatisation pour votre propre classe d’interface utilisateur personnalisée.</p>
   </div>
 </div>
 </div>
@@ -167,7 +165,7 @@ Les paramètres d’application permettent à l’utilisateur de personnaliser v
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Recommandations](../app-settings/guidelines-for-app-settings.md)</b><br/>Meilleures pratiques pour créer et afficher des paramètres d’application</p>
+<p><b>[Recommandations](../app-settings/guidelines-for-app-settings.md)</b><br/>Bonnes pratiques pour créer et afficher des paramètres d’application.</p>
   </div>
   <div class="side-by-side-content-right">
 <p><b>[Stocker et récupérer des données d’application](../app-settings/store-and-retrieve-app-data.md)</b><br/>Comment stocker et récupérer des données d’application locales, itinérantes et temporaires</p>
@@ -200,4 +198,3 @@ Même si votre application a été très bien conçue, certains utilisateurs aur
   </div>
 </div>
 </div>
-

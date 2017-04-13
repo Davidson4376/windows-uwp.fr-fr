@@ -8,21 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e7d13a55ba545758e01452103c3380ac67ad6610
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 7de8b6db65bb9ec58f16643dc8b477c274513c9a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="add-on-submissions"></a>Soumissions de modules complémentaires
 
 Les modules complémentaires (parfois appelés produits in-app) sont des éléments qui complètent votre application et qui peuvent être achetés par les clients. Il peut s’agir d’une nouvelle fonctionnalité amusante, d’un nouveau niveau de jeu ou de tout ce qui selon vous contribuera à maintenir les utilisateurs impliqués. Les modules complémentaires constituent non seulement une excellente façon de gagner de l’argent, mais également un bon moyen de renforcer le niveau d’interactivité et d’implication des clients avec votre application.
 
 Les modules complémentaires sont publiés par le biais du tableau de bord du Centre de développement Windows. Vous devez également [activer les modules complémentaires](../monetize/in-app-purchases-and-trials.md) dans le code de votre application.
 
-La première étape de la procédure de soumission d’un module complémentaire consiste à créer ce module dans le tableau de bord en [définissant son type de produit et son ID produit](set-your-add-on-product-id.md). Vous pouvez ensuite créer une soumission afin que votre module complémentaire puisse être acheté par le biais du Windows Store. Vous pouvez soumettre un module complémentaire au moment où vous [soumettez votre application](app-submissions.md), ou le soumettre séparément. Enfin, après avoir publié une application dans le Windows Store, vous pouvez proposer des [mises à jour](#updating-an-add-on-after-submission) des modules complémentaires sans avoir à soumettre une nouvelle fois l’application.
+La première étape de la procédure de soumission d’un module complémentaire consiste à créer ce module dans le tableau de bord en [définissant son type de produit et son ID produit](set-your-add-on-product-id.md). Vous pouvez ensuite créer une soumission afin que votre module complémentaire puisse être acheté par le biais du Windows Store. Vous pouvez soumettre un module complémentaire au moment où vous [soumettez votre application](app-submissions.md), ou le soumettre séparément. Enfin, après avoir publié une application dans le Windows Store, vous pouvez proposer des [mises à jour](#updating-an-add-on-after-publication) des modules complémentaires sans avoir à soumettre une nouvelle fois l’application.
 
 > **Remarque**&nbsp;&nbsp;Cette section de la documentation explique comment soumettre des extensions dans le tableau de bord du Centre de développement. Sinon, vous pouvez utiliser [l’API de soumission du Windows Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour automatiser la soumission des modules complémentaires.
 
@@ -44,8 +41,8 @@ Voici la liste des informations que vous fournissez quand vous créez la soumiss
 | [**Durée de vie du produit**](enter-add-on-properties.md#product-lifetime)  | Obligatoire si le type de produit est **Durable**. Non applicable à d’autres types de produit. |
 | [**Quantité**](enter-add-on-properties.md#quantity)  | Obligatoire si le type de produit est **Consommable géré par le Windows Store**. Non applicable à d’autres types de produit.
 | [**Type de contenu**](enter-add-on-properties.md#content-type)          | Obligatoire       |               
-| [**Mots clés**](enter-add-on-properties.md#keywords)                  | Facultatif (jusqu’à 10 mots clés d’un maximum de 30 caractères chacun) |
-| [**Données personnalisées du développeur**](enter-add-on-properties.md#custom-developer-data)                               | Facultatif (3 000 caractères maximum)             |
+| [**Mots clés**](enter-add-on-properties.md#keywords)                  | Facultatif (jusqu’à 10mots clés d’un maximum de 30caractères chacun) |
+| [**Données personnalisées du développeur**](enter-add-on-properties.md#custom-developer-data)                               | Facultatif (3000 caractères maximum)             |
 
 <span/>
 
@@ -55,8 +52,8 @@ Voici la liste des informations que vous fournissez quand vous créez la soumiss
 | [**Prix de base**](set-add-on-pricing-and-availability.md#base-price)                | Obligatoire                                    |
 | [**Marchés et prix personnalisés**](set-add-on-pricing-and-availability.md#markets-and-custom-prices)  | Valeur par défaut : produit disponible dans tous les marchés possibles |
 | [**Prix de vente**](put-apps-and-add-ons-on-sale.md)               | Facultatif                             |
-| [**Distribution et visibilité**](set-add-on-pricing-and-availability.md#distribution-and-visibility)   | Valeur par défaut : les clients peuvent trouver le module complémentaire à l’application en parcourant le Windows Store ou en effectuant une recherche dans ce dernier |
-| [**Date de publication**](set-add-on-pricing-and-availability.md#publish-date)                | Valeur par défaut : publication dès que le module complémentaire a obtenu la certification |
+| [**Distribution et visibilité**](set-add-on-pricing-and-availability.md#distribution-and-visibility)   | Valeur par défaut: les clients peuvent trouver le module complémentaire à l’application en parcourant le WindowsStore ou en effectuant une recherche dans ce dernier |
+| [**Date de publication**](set-add-on-pricing-and-availability.md#publish-date)                | Valeur par défaut: publication dès que le module complémentaire a obtenu la certification |
 
 <span/>
 
@@ -66,12 +63,12 @@ Une description est requise dans le Windows Store. Nous vous recommandons de fou
 | Nom du champ                    | Remarques                                       |
 |-------------------------------|---------------------------------------------|
 | [**Titre**](create-add-on-store-listings.md#title)                    | Obligatoire (100 caractères maximum)              |
-| [**Description**](create-add-on-store-listings.md#description)       | Facultatif (200 caractères maximum)              |
+| [**Description**](create-add-on-store-listings.md#description)       | Facultatif (200caractères maximum)              |
 | [**Icône**](create-add-on-store-listings.md#icon)                    | Facultatif (fichier .png, 300 x 300 pixels)             |
 
 <span/>
 
-Quand vous avez terminé d'entrer ces informations, cliquez sur **Soumettre au Windows Store**. Dans la plupart des cas, le processus de certification prend environ une heure. Au terme de ce processus, votre module complémentaire est publié sur le Windows Store et devient aussitôt disponible à l’achat par les clients.
+Quand vous avez terminé d'entrer ces informations, cliquez sur **Soumettre au Windows Store**. Dans la plupart des cas, le processus de certification prend environ une heure. Au terme de ce processus, votre module complémentaire est publié sur le WindowsStore et devient aussitôt disponible à l’achat par les clients.
 
 >**Remarque**&nbsp;&nbsp;Les modules complémentaires doivent également être implémentés dans le code de votre application. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](../monetize/in-app-purchases-and-trials.md).
 
@@ -80,9 +77,8 @@ Quand vous avez terminé d'entrer ces informations, cliquez sur **Soumettre au W
 
 Un module complémentaire est modifiable à tout moment après sa publication. Les modifications apportées à un module complémentaire sont soumises et publiées indépendamment de votre application. Par conséquent, vous n’avez généralement pas besoin de mettre à jour la totalité de l’application pour modifier un module complémentaire, par exemple afin de mettre à jour son prix ou sa description.
 
-> **Important**&nbsp;&nbsp;Si votre application est accessible aux clients utilisant Windows 8.x, vous devrez créer et publier une nouvelle soumission d’application pour faire en sorte que les mises à jour de module complémentaire soient visibles par ces clients. De même, si vous ajoutez de nouveaux modules complémentaires dans une application ciblant Windows 8.x après la publication de cette dernière, vous devrez mettre à jour le code de votre application pour référencer ces modules, puis soumettre de nouveau l’application. Dans le cas contraire, les nouveaux modules complémentaires ne seront pas visibles par les clients utilisant Windows 8.x.
+> **Important**&nbsp;&nbsp;Si votre application est accessible aux clients utilisant Windows8.x, vous devrez créer et publier une nouvelle soumission d’application pour faire en sorte que les mises à jour de module complémentaire soient visibles par ces clients. De même, si vous ajoutez de nouveaux modules complémentaires dans une application ciblant Windows8.x après la publication de cette dernière, vous devrez mettre à jour le code de votre application pour référencer ces modules, puis soumettre de nouveau l’application. Dans le cas contraire, les nouveaux modules complémentaires ne seront pas visibles par les clients utilisant Windows8.x.
 
 Pour soumettre des mises à jour, accédez à la page du module complémentaire dans votre tableau de bord, puis cliquez sur **Mettre à jour**. Cette opération crée une autre soumission pour le module complémentaire, initialement renseignée avec les informations de votre soumission précédente. Modifiez les informations souhaitées, puis cliquez sur **Envoyer au Store**.
 
 Si vous voulez supprimer un module complémentaire précédemment proposé, vous pouvez créer une soumission et modifier l’option [Distribution et visibilité](set-add-on-pricing-and-availability.md) en la définissant sur **Plus disponible à l’achat. Non affiché dans la description de votre application**. Veillez à mettre à jour le code de votre application comme nécessaire pour supprimer les références à ce module complémentaire.
-

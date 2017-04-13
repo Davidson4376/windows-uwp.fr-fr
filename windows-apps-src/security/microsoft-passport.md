@@ -1,6 +1,6 @@
 ---
 title: Windows Hello
-description: "Cet article décrit la nouvelle technologie Windows Hello intégrée au système d’exploitation Windows 10 et explique comment les développeurs peuvent implémenter cette technologie pour protéger leurs applications UWP et services principaux. Il présente des fonctionnalités spécifiques de ces technologies qui contribuent à atténuer les menaces découlant de l’utilisation des informations d’identification classiques et fournit des recommandations sur la conception et le déploiement de ces technologies dans le cadre de votre lancement de Windows 10."
+description: "Cet article décrit la nouvelle technologie Windows Hello intégrée au système d’exploitation Windows10 et explique comment les développeurs peuvent implémenter cette technologie pour protéger leurs applications UWP et services principaux. Il présente des fonctionnalités spécifiques de ces technologies qui contribuent à atténuer les menaces découlant de l’utilisation des informations d’identification classiques et fournit des recommandations sur la conception et le déploiement de ces technologies dans le cadre de votre lancement de Windows 10."
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
 author: awkoren
 ms.author: alkoren
@@ -8,27 +8,24 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f77de7b7a3c89a57855afba59028f55d8e8bb39c
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: e22176049652717af5ad222f7e6c8a30d447ce1b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-hello"></a>Windows Hello
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Cet article décrit la nouvelle technologie Windows Hello intégrée au système d’exploitation Windows 10 et explique comment les développeurs peuvent implémenter cette technologie pour protéger leurs applications UWP et services principaux. Il présente des fonctionnalités spécifiques de ces technologies qui contribuent à atténuer les menaces découlant de l’utilisation des informations d’identification classiques et fournit des recommandations sur la conception et le déploiement de ces technologies dans le cadre de votre lancement de Windows 10.
+Cet article décrit la nouvelle technologie Windows Hello intégrée au système d’exploitation Windows10 et explique comment les développeurs peuvent implémenter cette technologie pour protéger leurs applications UWP et services principaux. Il présente des fonctionnalités spécifiques de ces technologies qui contribuent à atténuer les menaces découlant de l’utilisation des informations d’identification classiques et fournit des recommandations sur la conception et le déploiement de ces technologies dans le cadre de votre lancement de Windows 10.
 
-Notez que cet article est axé sur le développement d’applications. Pour plus d’informations sur l’architecture et l’implémentation de Windows Hello, voir le [Guide de Windows Hello sur TechNet](https://technet.microsoft.com/library/mt589441.aspx).
+Notez que cet article est axé sur le développement d’applications. Pour plus d’informations sur l’architecture et l’implémentation de Windows Hello, voir le [Guide de WindowsHello sur TechNet](https://technet.microsoft.com/library/mt589441.aspx).
 
-Pour obtenir un exemple du code complet, voir l’[exemple de code Windows Hello sur GitHub](http://go.microsoft.com/fwlink/?LinkID=717812).
+Pour obtenir un exemple du code complet, voir l’[exemple de code WindowsHello sur GitHub](http://go.microsoft.com/fwlink/?LinkID=717812).
 
-Pour une procédure pas à pas sur la création d’une application UWP à l’aide de Windows Hello et le service d’authentification de stockage, voir les articles [Créer une application de connexion Microsoft Passport](microsoft-passport-login.md) et [Créer un service de connexion Microsoft Passport](microsoft-passport-login-auth-service.md).
+Pour une procédure pas à pas sur la création d’une application UWP à l’aide de WindowsHello et le service d’authentification de stockage, voir les articles [Créer une application de connexion Microsoft Passport](microsoft-passport-login.md) et [Créer un service de connexion Microsoft Passport](microsoft-passport-login-auth-service.md).
 
 ## <a name="1-introduction"></a>1 Introduction
 
@@ -74,7 +71,7 @@ L’authentificateur Windows Hello est appelé un Hello. Un Hello est propre à 
 
 Avec Windows Hello, un appareil dispose d’une méthode fiable de reconnaissance de l’utilisateur, ce qui permet de traiter la première partie du chemin d’accès entre un utilisateur et un service ou un élément de données demandé. Une fois que l’appareil a reconnu l’utilisateur, il doit toujours authentifier ce dernier avant de déterminer s’il lui accorde l’accès à une ressource demandée. Windows Hello propose une authentification 2FA forte, entièrement intégrée à Windows, qui remplace les mots de passe réutilisables par la combinaison d’un appareil spécifique et d’un mouvement biométrique ou d’un code PIN.
 
-Toutefois, Windows Hello n’est pas un simple substitut aux systèmes 2FA traditionnels. Sa conception est semblable à celle des cartes à puce : l’authentification est effectuée à l’aide de primitives de chiffrement plutôt que par comparaison de chaînes, et le matériel de clé de l’utilisateur est protégé au sein d’un matériel inviolable. Windows Hello ne nécessite pas non plus les composants d’infrastructure supplémentaire requis pour le déploiement de cartes à puce. Par exemple, vous n’avez pas besoin d’une infrastructure à clé publique (PKI) pour gérer les certificats, si vous n’en êtes pas encore équipé. Windows Hello offre les principaux avantages des cartes à puce (flexibilité de déploiement pour les cartes à puce virtuelles et sécurité fiable pour les cartes à puce physiques), sans aucun de leurs inconvénients.
+Toutefois, Windows Hello n’est pas un simple substitut aux systèmes 2FA traditionnels. Sa conception est semblable à celle des cartes à puce : l’authentification est effectuée à l’aide de primitives de chiffrement plutôt que par comparaison de chaînes, et le matériel de clé de l’utilisateur est protégé au sein d’un matériel inviolable. Windows Hello ne nécessite pas non plus les composants d’infrastructure supplémentaire requis pour le déploiement de cartes à puce. Par exemple, vous n’avez pas besoin d’une infrastructure à clé publique (PKI) pour gérer les certificats, si vous n’en êtes pas encore équipé. Windows Hello offre les principaux avantages des cartes à puce (flexibilité de déploiement pour les cartes à puce virtuelles et sécurité fiable pour les cartes à puce physiques), sans aucun de leurs inconvénients.
 
 ## <a name="22-how-windows-hello-works"></a>2.2 Fonctionnement de Windows Hello
 
@@ -86,18 +83,18 @@ Pour activer Windows Hello sur un appareil, l’utilisateur doit disposer d’un
 ## <a name="221-how-keys-are-protected"></a>2.2.1 Protection des clés
 
 
-Chaque fois qu’un document de clé est généré, il doit être protégé contre les attaques. La meilleure façon de procéder consiste à utiliser un matériel dédié. Depuis longtemps, les modules de sécurité matériels (HSM) sont utilisés pour générer, stocker et traiter les clés des applications de sécurité critiques. Les cartes à puce constituent un type spécial de HSM, comme les appareils compatibles avec la norme TPM de Trusted Computing Group. Dans la mesure du possible, la mise en œuvre de Windows Hello tire profit du module de plateforme sécurisée (TPM) matériel intégré pour générer, stocker et traiter les clés. Toutefois, Windows Hello et Windows Hello pour le travail ne nécessitent aucun module de plateforme sécurisée intégré.
+Chaque fois qu’un document de clé est généré, il doit être protégé contre les attaques. La meilleure façon de procéder consiste à utiliser un matériel dédié. Depuis longtemps, les modules de sécurité matériels (HSM) sont utilisés pour générer, stocker et traiter les clés des applications de sécurité critiques. Les cartes à puce constituent un type spécial de HSM, comme les appareils compatibles avec la norme TPM de Trusted Computing Group. Dans la mesure du possible, la mise en œuvre de Windows Hello tire profit du module de plateforme sécurisée (TPM) matériel intégré pour générer, stocker et traiter les clés. Toutefois, WindowsHello et WindowsHello pour le travail ne nécessitent aucun module de plateforme sécurisée intégré.
 
 Dans la mesure du possible, Microsoft vous recommande d’utiliser un TPM matériel. Le TPM offre une protection contre diverses attaques connues et potentielles, notamment les attaques par force brute du code confidentiel. Le TPM offre également une couche de protection supplémentaire après le verrouillage du compte. Une fois que le TPM a verrouillé le matériel de clé, l’utilisateur doit réinitialiser le code confidentiel. La réinitialisation du code PIN signifie que toutes les clés et tous les certificats chiffrés avec l’ancien matériel de clé seront supprimés.
 
 ## <a name="222-authentication"></a>2.2.2 Authentification
 
 
-Lorsqu’un utilisateur souhaite accéder à un matériel de clé protégé, le processus d’authentification commence quand l’utilisateur entre un code confidentiel ou un mouvement biométrique pour déverrouiller l’appareil, ce processus étant parfois appelé « libération de la clé ».
+Lorsqu’un utilisateur souhaite accéder à un matériel de clé protégé, le processus d’authentification commence quand l’utilisateur entre un code confidentiel ou un mouvement biométrique pour déverrouiller l’appareil, ce processus étant parfois appelé «libération de la clé».
 
 Une application ne peut jamais utiliser les clés d’une autre application, tout comme une personne ne peut jamais utiliser les clés d’un autre utilisateur. Ces clés sont utilisées pour signer les demandes d’accès à des ressources spécifiées envoyées au fournisseur d’identité ou IdP. Les applications peuvent utiliser des API spécifiques pour demander des opérations qui nécessitent un matériel de clé pour certaines actions. L’accès par le biais de ces API implique une validation explicite à l’aide d’un mouvement de l’utilisateur. Le matériel de clé n’est pas exposé à l’application à l’origine de la demande. L’application demande plutôt des actions spécifiques, comme la signature d’un élément de données, et la couche Windows Hello gère la tâche réelle et renvoie les résultats.
 
-## <a name="23-getting-ready-to-implement-windows-hello"></a>2.3 Préparation à l’implémentation de Windows Hello
+## <a name="23-getting-ready-to-implement-windows-hello"></a>2.3 Préparation à l’implémentation de WindowsHello
 
 
 Maintenant que vous connaissez le fonctionnement de base de Windows Hello, nous allons vous expliquer comment l’implémenter dans vos propres applications.
@@ -152,11 +149,11 @@ Une fois la paire de clés et les informations d’attestation créées sur l’
 
 Pour permettre à l’utilisateur d’accéder à l’application sur plusieurs appareils, le service principal doit pouvoir stocker plusieurs clés pour le même utilisateur. Étant donné que chaque clé est unique pour chaque appareil, toutes ces clés vont être stockées en étant connectées au même utilisateur. Un identificateur d’appareil est utilisé pour optimiser le composant serveur lors de l’authentification des utilisateurs. Nous aborderons ce sujet plus en détail dans le chapitre suivant.
 
-Voici un exemple de schéma de base de données permettant de stocker ces informations sur le système principal :
+Voici un exemple de schéma de base de données permettant de stocker ces informations sur le système principal:
 
-![Exemple de schéma de base de données Windows Hello](images/passport-db.png)
+![Exemple de schéma de base de données WindowsHello](images/passport-db.png)
 
-La logique d’inscription peut ressembler à ceci :
+La logique d’inscription peut ressembler à ceci:
 
 ![Logique d’inscription Windows Hello](images/passport-registration.png)
 
@@ -227,7 +224,7 @@ Lorsque le serveur reçoit la clé RSA générée, la déclaration d’attestati
 
 -   La signature du certificat AIK est valide.
 -   Le certificat AIK forme une chaîne jusqu’à une racine de confiance.
--   Le certificat AIK et sa chaîne sont activés pour EKU OID « 2.23.133.8.3 » (son nom développé est « certificat de clé d’attestation d’identité »).
+-   Le certificat AIK et sa chaîne sont activés pour EKU OID «2.23.133.8.3» (son nom développé est «certificat de clé d’attestation d’identité»).
 -   Le certificat AIK a une limite de validité.
 -   Tous les certificats d’autorité de certification de la chaîne ont une limite de validité et ne sont pas révoqués.
 -   La déclaration d’attestation présente un format correct.
@@ -267,9 +264,9 @@ En plus de vérifier les clés, le service peut également vérifier l’attesta
 
 Une attestation est uniquement disponible pour les appareils dotés d’un processeur de TPM version 2.0 ou ultérieure. Vous devez donc tenir compte du fait que ces informations risquent de ne pas être disponibles sur certains appareils.
 
-Le flux de travail du client pourra ressembler à ceci :
+Le flux de travail du client pourra ressembler à ceci:
 
-![Flux de travail du client Windows Hello](images/passport-client-workflow.png)
+![Flux de travail du client WindowsHello](images/passport-client-workflow.png)
 
 Lorsque l’application appelle le service sur le système principal, le serveur envoie une demande. La demande est signée à l’aide du code suivant :
 
@@ -297,9 +294,9 @@ La première ligne, [**KeyCredentialManager.OpenAsync**](https://msdn.microsoft.
 
 Les API demandent au système d’exploitation de signer la demande avec la clé privée. Le système demande ensuite à l’utilisateur son code confidentiel ou une identification biométrique configurée. Si les informations entrées sont correctes, le système peut demander au processeur du TPM d’exécuter les fonctions de chiffrement et de signer la demande (ou d’utiliser la solution logicielle de secours, si aucun TPM n’est disponible). Le client doit renvoyer la demande signée au serveur.
 
-Le diagramme de séquence ci-après illustre un flux de demande-réponse :
+Le diagramme de séquence ci-après illustre un flux de demande-réponse:
 
-![Flux de demande-réponse Windows Hello](images/passport-challenge-response.png)
+![Flux de demande-réponse WindowsHello](images/passport-challenge-response.png)
 
 Ensuite, le serveur doit valider la signature. Lorsque vous demandez la clé publique et que vous l’envoyez au serveur à des fins de future validation, elle figure dans un objet blob publicKeyInfo codé ASN.1. Si vous observez l’[exemple de code Windows Hello sur GitHub](http://go.microsoft.com/fwlink/?LinkID=717812), vous verrez que des classes d’assistance incluent les fonctions Crypt32 pour traduire l’objet blob codé ASN.1 en objet blob CNG, qui est plus couramment utilisé. L’objet blob contient l’algorithme de clé publique (RSA) et la clé publique RSA.
 
@@ -363,7 +360,7 @@ L’implémentation du mécanisme de demande-réponse correct n’est pas couver
 ## <a name="35-enrolling-another-device"></a>3.5 Inscription d’un autre appareil
 
 
-De nos jours, les utilisateurs possèdent couramment plusieurs appareils équipés des mêmes applications. Comment fonctionne l’utilisation de Windows Hello avec différents appareils ?
+De nos jours, les utilisateurs possèdent couramment plusieurs appareils équipés des mêmes applications. Comment fonctionne l’utilisation de Windows Hello avec différents appareils?
 
 Chaque appareil qui utilise Windows Hello crée un ensemble unique de clés publiques et privées. Cela signifie que si vous voulez qu’un utilisateur puisse utiliser plusieurs appareils, votre système principal doit être en mesure de stocker plusieurs clés publiques de cet utilisateur. Pour découvrir un exemple de la structure de table, reportez-vous au schéma de base de données de la section 2.1.
 
@@ -395,7 +392,7 @@ var openKeyResult = await KeyCredentialManager.OpenAsync(AccountId);
 
 Le reste du flux est le même que celui décrit précédemment. En clair, tous ces comptes sont protégés par le même code confidentiel ou par le même mouvement biométrique, car dans ce scénario, ils sont utilisés sur un appareil avec le même compte Windows.
 
-## <a name="4-migrating-an-existing-system-to-windows-hello"></a>4 Migration d’un système existant vers Windows Hello
+## <a name="4-migrating-an-existing-system-to-windows-hello"></a>4 Migration d’un système existant vers WindowsHello
 
 
 Dans cette courte section, nous considérons l’exemple d’une application de plateforme Windows universelle existante et d’un système principal utilisant une base de données qui stocke le nom d’utilisateur et le mot de passe haché. Ces applications collectent les informations d’identification de l’utilisateur lorsque l’application démarre, et les utilisent lorsque le système principal renvoie la demande d’authentification.
@@ -410,7 +407,7 @@ L’une des approches consiste à laisser l’utilisateur décider du moment où
 var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
 ```
 
-L’interface utilisateur peut ressembler à ce qui suit :
+L’interface utilisateur peut ressembler à ce qui suit:
 
 ![Interface utilisateur Windows Hello](images/passport-ui.png)
 
@@ -438,7 +435,7 @@ Mission accomplie ! Vous venez de contribuer à rendre Internet plus sûr !
 
 -   [Présentation de Windows Hello](http://windows.microsoft.com/windows-10/getstarted-what-is-hello)
 -   [Détails d’implémentation de Windows Hello](https://msdn.microsoft.com/library/mt589441)
--   [Exemple de code Windows Hello sur GitHub](http://go.microsoft.com/fwlink/?LinkID=717812)
+-   [Exemple de code WindowsHello sur GitHub](http://go.microsoft.com/fwlink/?LinkID=717812)
 
 ### <a name="62-terminology"></a>6.2 Terminologie
 
@@ -455,5 +452,5 @@ Mission accomplie ! Vous venez de contribuer à rendre Internet plus sûr !
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Application de connexion Windows Hello](microsoft-passport-login.md)
-* [Service de connexion Windows Hello](microsoft-passport-login-auth-service.md)
+* [Application de connexion WindowsHello](microsoft-passport-login.md)
+* [Service de connexion WindowsHello](microsoft-passport-login-auth-service.md)

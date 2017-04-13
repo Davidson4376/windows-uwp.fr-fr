@@ -5,12 +5,10 @@ title: Animations de clic avec le pointeur dans les applications UWP
 ms.assetid: EEB10A2C-629A-4705-8468-4D019D74DDFF
 label: Motion--Pointer animations
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
 ms.openlocfilehash: c208b67829e2053302ec0cc7c6da013b89cee8b3
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="pointer-click-animations"></a>Animations de clic avec le pointeur
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -35,7 +33,7 @@ Utilisez les animations de pointeur pour fournir un retour visuel lorsqu’un ut
 
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animation de clics de pointeur](https://msdn.microsoft.com/library/windows/apps/xaml/jj649432)
-* [Démarrage rapide : Animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Démarrage rapide: Animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe PointerUpThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/hh969168)
 * [**Classe PointerDownThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/hh969164)
 
@@ -44,11 +42,5 @@ Utilisez les animations de pointeur pour fournir un retour visuel lorsqu’un ut
  
 
 
-
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

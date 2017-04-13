@@ -1,22 +1,19 @@
 ---
 author: jnHs
 Description: "Quand vous soumettez un module complémentaire, les informations que vous entrez à l’étape Descriptions dans le Windows Store sont visibles par vos clients."
-title: "Créer des descriptions de module complémentaire dans le Windows Store"
+title: "Créer des descriptions de module complémentaire dans le WindowsStore"
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ecf24a0a51734d159a412824d6b43d76d92b3002
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: d27afd09d5805604a09aba91f57b20625df4d95b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="create-add-on-store-listings"></a>Créer des descriptions de module complémentaire dans le Windows Store
+# <a name="create-add-on-store-listings"></a>Créer des descriptions de module complémentaire dans le WindowsStore
 
 
 Quand vous soumettez un module complémentaire, les informations que vous entrez à l’étape **Descriptions dans le Windows Store** sont visibles par vos clients lorsque l’option d’acquisition de votre module complémentaire s’affiche. Formulez avec soin les informations de la description dans le Windows Store pour qu’elle donne du module complémentaire une image à la fois fidèle et attrayante aux yeux des clients. Vous pouvez fournir des descriptions personnalisées dans le Windows Store pour chaque langue.
@@ -34,7 +31,7 @@ Pour modifier une description dans le Windows Store, cliquez sur le nom de la la
 
 ## <a name="title"></a>Titre
 
-Vous devez fournir un titre ici, qui sera le nom du module complémentaire que verront vos clients. La longueur du titre ne doit pas dépasser 100 caractères.
+Vous devez fournir un titre ici, qui sera le nom du module complémentaire que verront vos clients. La longueur du titre ne doit pas dépasser 100caractères.
 
 ## <a name="description"></a>Description
 
@@ -42,12 +39,11 @@ Si vous souhaitez afficher plus qu'un simple titre, ce champ vous permet d'entre
 
 ## <a name="icon"></a>Icône
 
-Vous pouvez également fournir une image qui sera visible du client. Cette icône doit prendre la forme d’un fichier PNG de 300 x 300 pixels exactement.
+Vous pouvez également fournir une image qui sera visible du client. Cette icône doit prendre la forme d’un fichier PNG de 300x300pixels exactement.
 
  
 
  
-
 
 
 
