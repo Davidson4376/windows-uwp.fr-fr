@@ -8,21 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 34bac5b7332bcc258c76f15a6005f82f545eef4d
-ms.lasthandoff: 02/08/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 7bf47b166dfd05b906b37deded909d5a3b26ac6e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="http-live-streaming-hls-tag-support"></a>Prise en charge des balises HTTP Live Streaming (HLS)
 Le tableau suivant répertorie les balises HLS prises en charge pour les applications UWP.
 
 > [!NOTE] 
-> Les balises personnalisées qui démarrent avec le préfixe « X » sont accessibles en tant que métadonnées synchronisées, tel que décrit dans l’article [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md).
+> Les balises personnalisées qui démarrent avec le préfixe «X» sont accessibles en tant que métadonnées synchronisées, tel que décrit dans l’article [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md).
 
-|Balise |Introduite dans la version du protocole HLS|Version brouillon du document du protocole HLS|Requis sur le client|Version de juillet de Windows 10|Windows 10, version 1511|Windows 10, version 1606 |
+|Balise |Introduite dans la version du protocole HLS|Version brouillon du document du protocole HLS|Requis sur le client|Version de juillet de Windows10|Windows10, version1511|Windows10, version1607 |
 |---------------------|-----------|--------------|---------|--------------|-----|-----|
 |4.3.1.  Balises de base                 |             |                   |         |             |     |    |
 | 4.3.1.1.  EXTM3U |1|0|OBLIGATOIRE|Prise en charge|Pris en charge|Prise en charge|
@@ -32,54 +29,54 @@ Le tableau suivant répertorie les balises HLS prises en charge pour les applica
 | 4.3.2.2.  EXT-X-BYTERANGE |4|7|FACULTATIVE|Prise en charge|Pris en charge|Prise en charge|
 | 4.3.2.3.  EXT-X-DISCONTINUITY |1|2|FACULTATIVE|Prise en charge|Pris en charge|Prise en charge|
 | 4.3.2.4.  EXT-X-KEY |1|0|FACULTATIVE|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp; MÉTHODE|1|0|Attribut|« NONE, AES-128 »|« NONE, AES-128 »|« NONE, AES-128, SAMPLE-AES »|
+|&nbsp;&nbsp;&nbsp; MÉTHODE|1|0|Attribut|«NONE, AES-128»|«NONE, AES-128»|«NONE, AES-128, SAMPLE-AES»|
 |&nbsp;&nbsp;&nbsp; URI|1|0|Attribut|Prise en charge|Pris en charge|Prise en charge|
 |&nbsp;&nbsp;&nbsp; IV|2|3|Attribut|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp; KEYFORMAT|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp; KEYFORMATVERSIONS|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-| 4.3.2.5.  EXT-X-MAP |5|9|FACULTATIVE|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp; URI|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp; BYTERANGE|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-| 4.3.2.6.  EXT-X-PROGRAM-DATE-TIME |1|0|FACULTATIVE|Non prise en charge|Non prise en charge|Non prise en charge|
+|&nbsp;&nbsp;&nbsp; KEYFORMAT|5|9|Attribut|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
+|&nbsp;&nbsp;&nbsp; KEYFORMATVERSIONS|5|9|Attribut|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
+| 4.3.2.5.  EXT-X-MAP |5|9|FACULTATIVE|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
+|&nbsp;&nbsp;&nbsp; URI|5|9|Attribut|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
+|&nbsp;&nbsp;&nbsp; BYTERANGE|5|9|Attribut|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
+| 4.3.2.6.  EXT-X-PROGRAM-DATE-TIME |1|0|FACULTATIVE|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
 |4.3.3.  Balises de sélection multimédia                 |             |                   |         |             |     |    | 
 | 4.3.3.1.  EXT-X-TARGETDURATION  |1|0|OBLIGATOIRE|Prise en charge|Pris en charge|Prise en charge|
 | 4.3.3.2.  EXT-X-MEDIA-SEQUENCE  |1|0|FACULTATIVE|Prise en charge|Pris en charge|Prise en charge|
-| 4.3.3.3.  EXT-X-DISCONTINUITY-SEQUENCE|6|12|FACULTATIVE|Non prise en charge|Non prise en charge|Non prise en charge|
+| 4.3.3.3.  EXT-X-DISCONTINUITY-SEQUENCE|6|12|FACULTATIVE|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
 | 4.3.3.4.  EXT-X-ENDLIST |1|0|FACULTATIVE|Prise en charge|Pris en charge|Prise en charge|
 | 4.3.3.5.  EXT-X-PLAYLIST-TYPE |3|6|FACULTATIVE|Prise en charge|Pris en charge|Prise en charge|
-| 4.3.3.6.  EXT-X-I-FRAMES-ONLY |4|7|FACULTATIVE|Non prise en charge|Non prise en charge|Non prise en charge|
+| 4.3.3.6.  EXT-X-I-FRAMES-ONLY |4|7|FACULTATIVE|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
 |4.3.4.  Balises de sélection principale                 |             |                   |         |             |     |    |
 | 4.3.4.1.  EXT-X-MEDIA |4|7|FACULTATIVE|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  TYPE|4|7|Attribut|« AUDIO, VIDEO »|« AUDIO, VIDEO »|« AUDIO, VIDEO, SUBTITLES »|
+|&nbsp;&nbsp;&nbsp;  TYPE|4|7|Attribut|«AUDIO, VIDEO»|«AUDIO, VIDEO»|«AUDIO, VIDEO, SUBTITLES»|
 |&nbsp;&nbsp;&nbsp;  URI|4|7|Attribut|Prise en charge|Pris en charge|Prise en charge|
 |&nbsp;&nbsp;&nbsp;  GROUP-ID|4|7|Attribut|Prise en charge|Pris en charge|Prise en charge|
 |&nbsp;&nbsp;&nbsp;  LANGUAGE|4|7|Attribut|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  ASSOC-LANGUAGE|6|13|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp;  NAME|4|7|Attribut|Non prise en charge|Non prise en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  PAR DÉFAUT|4|7|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp;  AUTOSELECT|4|7|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp;  FORCED|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp;  INSTREAM-ID|6|12|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp;  CARACTÉRISTIQUES|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
+|&nbsp;&nbsp;&nbsp;  ASSOC-LANGUAGE|6|13|Attribut|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
+|&nbsp;&nbsp;&nbsp;  NAME|4|7|Attribut|Pas de prise en charge|Pas de prise en charge|Prise en charge|
+|&nbsp;&nbsp;&nbsp;  PAR DÉFAUT|4|7|Attribut|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
+|&nbsp;&nbsp;&nbsp;  AUTOSELECT|4|7|Attribut|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
+|&nbsp;&nbsp;&nbsp;  FORCED|5|9|Attribut|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
+|&nbsp;&nbsp;&nbsp;  INSTREAM-ID|6|12|Attribut|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
+|&nbsp;&nbsp;&nbsp;  CARACTÉRISTIQUES|5|9|Attribut|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
 | 4.3.4.2.  EXT-X-STREAM-INF  |1|0|OBLIGATOIRE|Prise en charge|Pris en charge|Prise en charge|
 |&nbsp;&nbsp;&nbsp;  BANDWIDTH|1|0|Attribut|Prise en charge|Pris en charge|Prise en charge|
 |&nbsp;&nbsp;&nbsp;  PROGRAM-ID|1|0|Attribut|N/A|N/A|N/A|
-|&nbsp;&nbsp;&nbsp;  AVERAGE-BANDWIDTH|7|14|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
+|&nbsp;&nbsp;&nbsp;  AVERAGE-BANDWIDTH|7|14|Attribut|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
 |&nbsp;&nbsp;&nbsp;  CODECS|1|0|Attribut|Prise en charge|Pris en charge|Prise en charge|
 |&nbsp;&nbsp;&nbsp;  RESOLUTION|2|3|Attribut|Prise en charge|Pris en charge|Prise en charge|
 |&nbsp;&nbsp;&nbsp;  FRAME-RATE|7|15|Attribut|N/A|N/A|N/A|
 |&nbsp;&nbsp;&nbsp;  AUDIO|4|7|Attribut|Prise en charge|Pris en charge|Prise en charge|
 |&nbsp;&nbsp;&nbsp;  VIDEO|4|7|Attribut|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  SUBTITLES|5|9|Attribut|Non prise en charge|Non prise en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  CLOSED-CAPTIONS|6|12|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-| 4.3.4.3.  EXT-X-I-FRAME-STREAM-INF  |4|7|FACULTATIVE|Non prise en charge|Non prise en charge|Non prise en charge|
-| 4.3.4.4.  EXT-X-SESSION-DATA  |7|14|FACULTATIVE|Non prise en charge|Non prise en charge|Non prise en charge|
+|&nbsp;&nbsp;&nbsp;  SUBTITLES|5|9|Attribut|Pas de prise en charge|Pas de prise en charge|Prise en charge|
+|&nbsp;&nbsp;&nbsp;  CLOSED-CAPTIONS|6|12|Attribut|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
+| 4.3.4.3.  EXT-X-I-FRAME-STREAM-INF  |4|7|FACULTATIVE|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
+| 4.3.4.4.  EXT-X-SESSION-DATA  |7|14|FACULTATIVE|Pas de prise en charge|Pas de prise en charge|Non prise en charge|
 | 4.3.4.5.  EXT-X-SESSION-KEY |7|17|FACULTATIVE|Pas de prise en charge|Pas de prise en charge|Pas de prise en charge|
 |4.3.5.  Balises de playlist principale ou de média                  |             |                   |         |             |     |    |
 | 4.3.5.1.  EXT-X-INDEPENDENT-SEGMENTS |6|13|FACULTATIVE|Pas de prise en charge|Prise en charge|Prise en charge|
 | 4.3.5.2.  EXT-X-START  |6|12|FACULTATIVE|Pas de prise en charge|Prise en charge partielle|Prise en charge partielle|
 |&nbsp;&nbsp;&nbsp;  TIME-OFFSET|6|12|Attribut|Pas de prise en charge|Prise en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  PRECISE|6|12|Attribut|Pas de prise en charge|Valeur « NON » par défaut prise en charge|Valeur « NON » par défaut prise en charge|
+|&nbsp;&nbsp;&nbsp;  PRECISE|6|12|Attribut|Pas de prise en charge|Valeur «NON» par défaut prise en charge|Valeur «NON» par défaut prise en charge|
 
 
 
@@ -90,7 +87,6 @@ Le tableau suivant répertorie les balises HLS prises en charge pour les applica
  
 
  
-
 
 
 

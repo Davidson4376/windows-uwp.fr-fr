@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 780ee8a28f0c272b4cbf7e4fe770784aa4f11b9d
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 4c6a6ef37af9f860e4ff1c77fd8e5e5151bb271e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="variable-photo-sequence"></a>Séquence de photos variables
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article indique comment capturer une séquence de photos variables pour capturer plusieurs trames d’images en une succession rapide et configurer des paramètres de mise au point, de flash, de sensibilité ISO, d’exposition et de compensation de l’exposition différents pour chaque trame. Cette fonctionnalité permet par exemple de créer des images HDR (High Dynamic Range).
@@ -44,7 +41,7 @@ Une fois que vous avez initialisé votre [MediaCapture](capture-photos-and-video
 
 [!code-cs[IsVPSSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsVPSSupported)]
 
-Obtenez un objet [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548) à partir du contrôleur de séquence de photos variables. Cet objet possède une propriété pour chaque paramètre pouvant être configuré par trame d’une séquence de photos. Ces propriétés sont les suivantes :
+Obtenez un objet [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548) à partir du contrôleur de séquence de photos variables. Cet objet possède une propriété pour chaque paramètre pouvant être configuré par trame d’une séquence de photos. Ces propriétés sont les suivantes:
 
 -   [**Exposure**](https://msdn.microsoft.com/library/windows/apps/dn652552)
 -   [**ExposureCompensation**](https://msdn.microsoft.com/library/windows/apps/dn652560)
@@ -85,7 +82,7 @@ L’événement [**Stopped**](https://msdn.microsoft.com/library/windows/apps/dn
 
 ## <a name="update-frame-controllers"></a>Mettre à jour des contrôleurs de trame
 
-Si vous souhaitez effectuer une autre capture de séquence de photos variables avec différents paramètres de trame, vous n’avez pas besoin de réinitialiser complètement l’élément **VariablePhotoSequenceCapture**. Vous pouvez supprimer la collection [**DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) et ajouter de nouveaux contrôleurs de trame ou bien modifier les valeurs du contrôleur de trame existant. L’exemple suivant active l’objet [**FrameFlashCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652657) pour vérifier que l’appareil actuel prend en charge le flash et la puissance du flash pour les trames de séquences de photos variables. Si c’est le cas, chaque trame est mise à jour pour activer le flash à 100 %. Les valeurs de compensation d’exposition précédemment définies pour chaque trame sont toujours actives.
+Si vous souhaitez effectuer une autre capture de séquence de photos variables avec différents paramètres de trame, vous n’avez pas besoin de réinitialiser complètement l’élément **VariablePhotoSequenceCapture**. Vous pouvez supprimer la collection [**DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) et ajouter de nouveaux contrôleurs de trame ou bien modifier les valeurs du contrôleur de trame existant. L’exemple suivant active l’objet [**FrameFlashCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652657) pour vérifier que l’appareil actuel prend en charge le flash et la puissance du flash pour les trames de séquences de photos variables. Si c’est le cas, chaque trame est mise à jour pour activer le flash à 100%. Les valeurs de compensation d’exposition précédemment définies pour chaque trame sont toujours actives.
 
 [!code-cs[UpdateFrameControllers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateFrameControllers)]
 
@@ -102,7 +99,6 @@ Lorsque vous avez terminé la capture de séquences de photos variables ou que v
  
 
  
-
 
 
 

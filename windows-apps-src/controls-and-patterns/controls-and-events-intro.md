@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 93297899c341366788f1d7dfa06507c1f3003884
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 14186f0623f16426a98b5184020736bd4321857d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="intro-to-controls-and-patterns"></a>Présentation des contrôles et des modèles
 
@@ -27,7 +25,7 @@ Un *modèle* est en quelque sorte une recette qui permet de modifier un contrôl
 
 Dans de nombreux cas, vous pouvez utiliser un contrôle en l’état. Toutefois, les contrôles XAML distinguent la fonction de la structure et de l’apparence, vous pouvez donc apporter des modifications à différents niveaux pour les adapter à vos besoins. Dans la section [Style](../style/index.md), vous pouvez apprendre à utiliser des [styles XAML](xaml-styles.md) et des [modèles de contrôle](control-templates.md) pour modifier un contrôle.
 
-Dans cette section, nous fournissons des indications pour chaque contrôle XAML que vous pouvez utiliser pour créer l’interface utilisateur de votre application. Pour commencer, cet article explique comment ajouter des contrôles à votre application. Il existe 3 étapes principales pour utiliser des contrôles dans votre application : 
+Dans cette section, nous fournissons des indications pour chaque contrôle XAML que vous pouvez utiliser pour créer l’interface utilisateur de votre application. Pour commencer, cet article explique comment ajouter des contrôles à votre application. Il existe 3étapes principales pour utiliser des contrôles dans votre application: 
 
 - Ajoutez un contrôle à l’interface utilisateur de votre application. 
 - Définissez des propriétés sur le contrôle, telles que la largeur, la hauteur ou la couleur de premier plan. 
@@ -113,7 +111,7 @@ Pour créer un gestionnaire d’événements, sélectionnez le contrôle, puis c
 
 ![Liste des événements Visual Studio](images/add-controls-add-event-designer.png)
 
-Pour créer un gestionnaire d’événements avec le nom par défaut, double-cliquez sur la zone de texte en regard du nom d’événement dans la fenêtre Propriétés. Pour créer un gestionnaire d’événements avec un nom personnalisé, tapez le nom de votre choix dans la zone de texte, puis appuyez sur Entrée. Le gestionnaire d’événements est créé, et le fichier code-behind est ouvert dans l’éditeur de code. La méthode de gestionnaire d’événements possède 2 paramètres. Le premier est `sender`, qui est une référence à l’objet auquel le gestionnaire est attaché. Le paramètre `sender` est un type **Object**. Vous effectuez généralement une conversion de type (transtypage) `sender` en un type plus précis si vous prévoyez de vérifier ou de modifier l’état sur l’objet `sender` lui-même. En fonction de la conception de votre propre application, vous attendez un type vers lequel un transtypage de `sender` peut être effectué en toute sécurité, en fonction de l’élément auquel le gestionnaire est attaché. La seconde valeur correspond aux données d’événement, qui apparaissent généralement dans les signatures sous la forme du paramètre `e` ou `args`.
+Pour créer un gestionnaire d’événements avec le nom par défaut, double-cliquez sur la zone de texte en regard du nom d’événement dans la fenêtre Propriétés. Pour créer un gestionnaire d’événements avec un nom personnalisé, tapez le nom de votre choix dans la zone de texte, puis appuyez sur Entrée. Le gestionnaire d’événements est créé, et le fichier code-behind est ouvert dans l’éditeur de code. La méthode de gestionnaire d’événements possède 2paramètres. Le premier est `sender`, qui est une référence à l’objet auquel le gestionnaire est attaché. Le paramètre `sender` est un type **Object**. Vous effectuez généralement une conversion de type (transtypage) `sender` en un type plus précis si vous prévoyez de vérifier ou de modifier l’état sur l’objet `sender` lui-même. En fonction de la conception de votre propre application, vous attendez un type vers lequel un transtypage de `sender` peut être effectué en toute sécurité, en fonction de l’élément auquel le gestionnaire est attaché. La seconde valeur correspond aux données d’événement, qui apparaissent généralement dans les signatures sous la forme du paramètre `e` ou `args`.
 
 Voici le code qui gère l’événement Click d’un objet Button nommé `Button1`. Lorsque vous cliquez sur le bouton, la propriété Foreground de l’objet Button sur lequel vous avez cliqué a la valeur blue. 
 
@@ -150,4 +148,3 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 -     [Disposition](../layout/index.md)
 -     [Style](../style/index.md)
 -     [Usage](../usability/index.md)
-

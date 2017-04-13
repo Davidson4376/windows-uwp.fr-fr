@@ -8,24 +8,21 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: be3c421c2b8d7b4bb71ddaa984ff925f0563f1f6
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: d0d7a429cf702455d969e1ac1c62def6181e8dd0
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>Contrôles d’appareil photo manuel pour la capture photo et vidéo
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous montre comment utiliser les contrôles des appareils manuels pour activer les scénarios de capture photo et vidéo, y compris la stabilisation d’image optique et le zoom fluide.
 
 Les contrôles mentionnés dans cet article sont tous ajoutés à votre application en utilisant le même modèle. Tout d’abord, vérifiez si le contrôle est pris en charge sur l’appareil sur lequel votre application est en cours d’exécution. Si le contrôle est pris en charge, définissez le mode de votre choix pour le contrôle. En règle générale, si un contrôle particulier n’est pas pris en charge sur l’appareil actuel, vous devez désactiver ou masquer l’élément d’interface utilisateur qui permet à l’utilisateur d’activer la fonctionnalité.
 
-Le code figurant dans cet article a été adapté à partir de l’exemple [Kit de développement logiciel (SDK) de contrôles manuels d’appareil photo](http://go.microsoft.com/fwlink/p/?LinkId=619479). Vous pouvez télécharger l’exemple pour voir le code utilisé en contexte ou pour vous en servir comme point de départ pour votre propre application.
+Le code figurant dans cet article a été adapté à partir de l’exemple [Kit de développement logiciel (SDK) de contrôles manuels d’appareil photo](https://go.microsoft.com/fwlink/?linkid=845228). Vous pouvez télécharger l’exemple pour voir le code utilisé en contexte ou pour vous en servir comme point de départ pour votre propre application.
 
 > [!NOTE]
 > Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture simple de contenu multimédia de cet article avant d’adopter des scénarios de capture plus avancés. Le code de cet article suppose que votre application possède déjà une instance de MediaCapture correctement lancée.
@@ -174,7 +171,7 @@ Obtenez ensuite le [**RegionsOfInterestControl**](https://msdn.microsoft.com/lib
 Enfin, appelez [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) sur **FocusControl** pour démarrer la mise au point.
 
 > [!IMPORTANT]
-> Quand vous implémentez la technique appuyer pour mettre au point, l’ordre des opérations est important. Vous devez appeler ces API dans l’ordre suivant :
+> Quand vous implémentez la technique appuyer pour mettre au point, l’ordre des opérations est important. Vous devez appeler ces API dans l’ordre suivant:
 >
 > 1. [**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067)
 > 2. [**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070)
@@ -349,4 +346,3 @@ Définissez le niveau de zoom sur l’appareil de capture en créant un objet [*
 
 * [Appareil photo](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-

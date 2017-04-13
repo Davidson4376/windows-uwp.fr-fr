@@ -1,24 +1,21 @@
 ---
 author: drewbatgit
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
-description: "Cet article décrit comment utiliser la classe CameraCaptureUI afin de capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows."
+description: "Cet article décrit comment utiliser la classe CameraCaptureUI pour capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows."
 title: "Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows"
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7ddd659bc32eb8328f993fba4bfd4f137ea99d0f
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 7be9a38bdb4d9489c08cd53c5b24348e16d7a74f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article décrit comment utiliser la classe CameraCaptureUI afin de capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows. Cette fonctionnalité est facile à utiliser et permet à votre application d’obtenir une photo ou une vidéo capturée par l’utilisateur avec seulement quelques lignes de code.
@@ -35,7 +32,7 @@ Pour utiliser l’interface utilisateur de capture d’appareil photo, incluez l
 
 [!code-cs[UsingCaptureUI](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingCaptureUI)]
 
-Pour capturer une photo, créez un objet [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030). À l’aide de la propriété [**PhotoSettings**](https://msdn.microsoft.com/library/windows/apps/br241058) de l’objet, vous pouvez spécifier les propriétés de la photo renvoyée, comme le format d’image. Par défaut, l’interface utilisateur de capture de l’appareil photo permet à l’utilisateur de rogner la photo avant de la renvoyer. Cette fonctionnalité peut être désactivée avec la propriété [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042). Cet exemple définit [**CroppedSizeInPixels**](https://msdn.microsoft.com/library/windows/apps/br241044) pour demander que l’image renvoyée soit au format 200 x 200 pixels.
+Pour capturer une photo, créez un objet [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030). À l’aide de la propriété [**PhotoSettings**](https://msdn.microsoft.com/library/windows/apps/br241058) de l’objet, vous pouvez spécifier les propriétés de la photo renvoyée, comme le format d’image. Par défaut, l’interface utilisateur de capture de l’appareil photo permet à l’utilisateur de rogner la photo avant de la renvoyer. Cette fonctionnalité peut être désactivée avec la propriété [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042). Cet exemple définit [**CroppedSizeInPixels**](https://msdn.microsoft.com/library/windows/apps/br241044) pour demander que l’image renvoyée soit au format 200x200pixels.
 
 > [!NOTE]
 > Le rognage d’images dans **CameraCaptureUI** n’est pas pris en charge pour les appareils de la famille d’appareils mobiles. La valeur de la propriété [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) est ignorée quand votre application est exécutée sur ces appareils.
@@ -110,7 +107,7 @@ Enfin, définissez la source de flux de manière à utiliser la méthode [**SetM
 Vous pouvez continuer à capturer des clips vidéo et les ajouter à la composition. Pour plus d’informations sur les compositions multimédias, voir [Compositions multimédias et modification](media-compositions-and-editing.md).
 
 > [!NOTE] 
-> Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -122,7 +119,6 @@ Vous pouvez continuer à capturer des clips vidéo et les ajouter à la composit
  
 
  
-
 
 
 

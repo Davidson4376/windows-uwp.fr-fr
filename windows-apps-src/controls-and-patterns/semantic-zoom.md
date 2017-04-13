@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 29c80f1120a503968e426325aad818dd7a62e87c
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: c5a34805941d72981f84a5d515e01d404fb30650
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="semantic-zoom"></a>Zoom sémantique
 
@@ -26,7 +24,7 @@ Le zoom sémantique permet à l’utilisateur de basculer entre deux affichages 
 - La vue avec zoom avant est la vue principale du contenu. Il s’agit de la vue principale dans laquelle vous affichez des éléments de données individuels. 
 - La vue avec zoom arrière est une vue plus générale du même contenu. En règle générale, vous affichez les en-têtes de groupe d’un jeu de données regroupées dans cette vue. 
 
-Par exemple, s’il consulte un carnet d’adresses, l’utilisateur peut effectuer un zoom arrière pour accéder rapidement à la lettre « W » et effectuer un zoom avant sur cette lettre pour afficher les noms associés. 
+Par exemple, s’il consulte un carnet d’adresses, l’utilisateur peut effectuer un zoom arrière pour accéder rapidement à la lettre «W» et effectuer un zoom avant sur cette lettre pour afficher les noms associés. 
 
 <div class="important-apis" >
 <b>API importantes</b><br/>
@@ -37,13 +35,13 @@ Par exemple, s’il consulte un carnet d’adresses, l’utilisateur peut effect
 </ul>
 </div>
 
-**Fonctionnalités** :
+**Fonctionnalités**:
 
 -   La taille de la vue avec zoom arrière est restreinte par les limites du contrôle de zoom sémantique.
 -   Appuyer sur un en-tête de groupe permet de basculer entre les vues. Il est possible d’activer le pincement pour basculer entre les vues.
 -   Les en-têtes actifs basculent entre les vues.
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
 Utilisez un contrôle **SemanticZoom** quand vous avez besoin d’afficher un jeu de données regroupées trop grand pour être affiché sur une ou deux pages.
 
@@ -65,16 +63,16 @@ Un carnet d’adresses est un autre exemple de jeu de données dans lequel la na
 
 ## <a name="create-a-semantic-zoom"></a>Créer un zoom sémantique
 
-Le contrôle **SemanticZoom** n’a pas de représentation visuelle propre. Il s’agit d’un contrôle hôte qui gère la transition entre 2 autres contrôles qui fournissent les vues de votre contenu, généralement les contrôles **ListView** ou **GridView**.  Vous définissez les contrôles d’affichage sur les propriétés [**ZoomedInView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.zoomedinview.aspx) et [**ZoomedOutView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.zoomedoutview.aspx) de SemanticZoom.
+Le contrôle **SemanticZoom** n’a pas de représentation visuelle propre. Il s’agit d’un contrôle hôte qui gère la transition entre 2autres contrôles qui fournissent les vues de votre contenu, généralement les contrôles **ListView** ou **GridView**.  Vous définissez les contrôles d’affichage sur les propriétés [**ZoomedInView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.zoomedinview.aspx) et [**ZoomedOutView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.zoomedoutview.aspx) de SemanticZoom.
 
-Les 3 éléments dont vous avez besoin pour un zoom sémantique sont les suivants :
+Les 3éléments dont vous avez besoin pour un zoom sémantique sont les suivants:
 - Une source de données regroupées
 - Une vue avec zoom avant qui affiche les données au niveau de l’élément.
 - Une vue avec zoom arrière qui affiche les données au niveau du groupe.
 
 Avant d’utiliser un zoom sémantique, vous devez comprendre comment utiliser un affichage Liste avec des données regroupées. Pour plus d’informations, voir [Affichage Liste et affichage Grille](listview-and-gridview.md) et [Regroupement d’éléments dans une liste](). 
 
-> **Remarque**&nbsp;&nbsp;Pour définir la vue avec zoom avant et la vue avec zoom arrière du contrôle SemanticZoom, vous pouvez utiliser l’un ou l’autre des deux contrôles qui implémentent l’interface [**ISemanticZoomInformation**](). L’infrastructure XAML fournit 3 contrôles qui implémentent cette interface : ListView, GridView et Hub.
+> **Remarque**&nbsp;&nbsp;Pour définir la vue avec zoom avant et la vue avec zoom arrière du contrôle SemanticZoom, vous pouvez utiliser l’un ou l’autre des deux contrôles qui implémentent l’interface [**ISemanticZoomInformation**](). L’infrastructure XAML fournit 3contrôles qui implémentent cette interface: ListView, GridView et Hub.
  
  Ce code XAML montre la structure du contrôle SemanticZoom. Vous attribuez d’autres contrôles aux propriétés ZoomedInView et ZoomedOutView.
  
@@ -202,7 +200,6 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 - [Informations de base relatives à la conception de la navigation](../layout/navigation-basics.md)
 - [Affichage Liste et affichage Grille](listview-and-gridview.md)
 - [Modèles d’élément d’affichage Liste](listview-item-templates.md)
-
 
 
 

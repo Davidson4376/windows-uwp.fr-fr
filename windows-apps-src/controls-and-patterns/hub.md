@@ -10,19 +10,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 32a558866457c4a9e9a359f12d43af317fc0f84a
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: df2ed32801cbf1377e72b10aac0049575528408c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="hub-controlpattern"></a>Modèle/contrôle hub
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-Un contrôle hub vous permet d’organiser le contenu de l’application en sections ou catégories distinctes et pourtant liées. Les sections d’un hub sont censées être parcourues dans un ordre préféré et peuvent servir de point de départ pour des expériences plus détaillées.
+Un contrôle hub vous permet d’organiser le contenu de l’application en sections ou catégories, distinctes et pourtant liées. Les sections d’un hub sont censées être parcourues dans un ordre préféré et peuvent servir de point de départ pour des expériences plus détaillées.
 
 ![Exemple de hub](images/hub_example_tablet.png)
 
@@ -38,7 +36,7 @@ Le contenu d’un hub peut être affiché dans une vue panoramique qui offre aux
 </div>
 
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
 Le contrôle hub fonctionne bien pour afficher de grandes quantités de contenu organisé dans une hiérarchie. Les hubs hiérarchisent la navigation et la découverte de nouveau contenu, et sont utiles pour afficher des éléments dans un magasin ou une collection multimédia.
 
@@ -127,4 +125,3 @@ Sur les appareils mobiles, une seule section du hub est visible à la fois.
 - [Notions de base sur la navigation](../layout/navigation-basics.md)
 - [Utilisation d’un hub](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
 - [Exemple de contrôle hub XAML](http://go.microsoft.com/fwlink/p/?LinkID=310072)
-

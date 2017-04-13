@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 24a5696a6e835a40b9b4e800677596514b56d53b
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 9728eced6de3d246dc1ec9950b90d77fea0d576d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-your-xaml-markup"></a>Optimiser votre balisage XAML
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 L’analyse du balisage XAML pour la construction d’objets en mémoire est chronophage pour une interface utilisateur complexe. Voici quelques astuces pour améliorer l’analyse du balisage XAML ainsi que l’efficacité du temps de chargement et de la mémoire de votre application.
 
@@ -157,8 +155,8 @@ Recherchez également les pinceaux utilisant des couleurs prédéfinies : `"Oran
 
 Le surdessin désigne le fait de dessiner plusieurs objets dans les mêmes pixels d’un écran. Il est parfois nécessaire de trouver un compromis entre ces instructions et la volonté de réduire le nombre d’éléments.
 
--   Si un élément est invisible, car il est transparent ou masqué derrière d’autres éléments, et qu’il n’est pas utilisé pour la disposition, alors supprimez-le. Si l’élément n’est pas visible dans l’état visuel initial mais qu’il apparaît dans d’autres états visuels, alors définissez [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) sur **Collapsed** sur l’élément lui-même et modifiez la valeur sur **Visible** dans les états appropriés. Il y a toutefois des exceptions : en règle générale, la valeur d’une propriété dans la plupart des états visuels est mieux définie localement sur l’élément.
--   Utilisez un élément composite au lieu de disposer en couches les différents éléments pour créer un effet. Dans cet exemple, le résultat est une forme bicolore dans laquelle la moitié supérieure est noire (depuis l’arrière-plan de la [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)) et la moitié inférieure est grise (depuis le [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) blanc semi-transparent fusionné à l’aide du canal alpha sur l’arrière-plan noir de la **Grid**). Ici, 150 % des pixels nécessaires pour obtenir le résultat sont remplis.
+-   Si un élément est invisible, car il est transparent ou masqué derrière d’autres éléments, et qu’il n’est pas utilisé pour la disposition, alors supprimez-le. Si l’élément n’est pas visible dans l’état visuel initial mais qu’il apparaît dans d’autres états visuels, alors définissez [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) sur **Collapsed** sur l’élément lui-même et modifiez la valeur sur **Visible** dans les états appropriés. Il y a toutefois des exceptions: en règle générale, la valeur d’une propriété dans la plupart des états visuels est mieux définie localement sur l’élément.
+-   Utilisez un élément composite au lieu de disposer en couches les différents éléments pour créer un effet. Dans cet exemple, le résultat est une forme bicolore dans laquelle la moitié supérieure est noire (depuis l’arrière-plan de la [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)) et la moitié inférieure est grise (depuis le [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) blanc semi-transparent fusionné à l’aide du canal alpha sur l’arrière-plan noir de la **Grid**). Ici, 150% des pixels nécessaires pour obtenir le résultat sont remplis.
 
 **Inefficace.**
     
@@ -294,5 +292,4 @@ XBF2 est une représentation binaire du balisage XAML, qui permet d’éviter le
 Les contrôles et dictionnaires intégrés dans XAML, qui sont fournis par l’infrastructure sont déjà entièrement compatibles XBF2. Pour votre propre application, vérifiez que votre fichier projet déclare TargetPlatformVersion 8.2 ou ultérieur.
 
 Pour vérifier si vous possédez XBF2, ouvrez votre application dans un éditeur binaire ; les 12e et 13e octets correspondent à 00 02 si vous possédez XBF2.
-
 

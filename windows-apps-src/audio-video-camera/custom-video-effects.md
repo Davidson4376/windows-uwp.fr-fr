@@ -1,6 +1,6 @@
 ---
 author: drewbatgit
-Description: "Cet article explique comment créer un composant Windows Runtime implémentant l’interface IBasicVideoEffect pour créer des effets personnalisés de flux vidéo."
+Description: "Cet article explique comment créer un composant WindowsRuntime implémentant l’interface IBasicVideoEffect pour créer des effets personnalisés de flux vidéo."
 MS-HAID: dev\_audio\_vid\_camera.custom\_video\_effects
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -10,22 +10,19 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 60ab406a5908b1a21c7a0f579664b7632722dd4e
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 5a2e44448877ddc7906a8d4e41ec9c0b809f9a7e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="custom-video-effects"></a>Effets vidéo personnalisés
 
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Cet article explique comment créer un composant Windows Runtime implémentant l’interface [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) pour créer des effets personnalisés de flux vidéo. Vous pouvez utiliser les effets personnalisés avec plusieurs API Windows Runtime différentes, notamment [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124), qui fournit un accès à la caméra d’un appareil, et [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646), qui vous permet de créer des compositions complexes à partir de clips multimédias.
+Cet article explique comment créer un composant WindowsRuntime implémentant l’interface [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) pour créer des effets personnalisés de flux vidéo. Vous pouvez utiliser les effets personnalisés avec plusieurs API Windows Runtime différentes, notamment [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124), qui fournit un accès à la caméra d’un appareil, et [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646), qui vous permet de créer des compositions complexes à partir de clips multimédias.
 
 ## <a name="add-a-custom-effect-to-your-app"></a>Ajouter un effet personnalisé à votre application
 
@@ -249,7 +246,6 @@ Pour obtenir des instructions générales sur la création des compositions mult
 * [Lecture de contenu multimédia](media-playback.md)
 
  
-
 
 
 

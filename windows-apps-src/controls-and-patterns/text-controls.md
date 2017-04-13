@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 41c5b771440a3ad88b3c1fcc2aec57b2e080741b
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 8be1dac30047a647d7f80464b53fe2fc3527d2c3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="text-controls"></a>Contrôles de texte
 
@@ -24,7 +22,7 @@ ms.lasthandoff: 02/07/2017
 Les contrôles de texte comprennent les zones de saisie de texte, les zones de mot de passe, les zones de suggestion automatique et les blocs de texte. L’infrastructure XAML propose plusieurs contrôles de rendu, de saisie et de modification de texte, ainsi qu’un jeu de propriétés de mise en forme du texte.
 
 - Les contrôles d’affichage de texte en lecture seule sont [TextBlock](text-block.md) et [RichTextBlock](rich-text-block.md).
-- Les contrôles de saisie et de modification de texte sont : [TextBox](text-box.md), [AutoSuggestBox](auto-suggest-box.md), [PasswordBox](password-box.md) et [RichEditBox](rich-edit-box.md).
+- Les contrôles de saisie et de modification de texte sont: [TextBox](text-box.md), [AutoSuggestBox](auto-suggest-box.md), [PasswordBox](password-box.md) et [RichEditBox](rich-edit-box.md).
 
 <div class="important-apis" >
 <b>API importantes</b><br/>
@@ -66,20 +64,20 @@ Pour présenter à l’utilisateur une liste de suggestions dans laquelle il peu
 
 Vous devez également utiliser un contrôle AutoSuggestBox pour implémenter une zone de recherche.
 
-Utilisez un contrôle **RichEditBox** pour afficher et modifier les fichiers de texte. Vous n’utilisez pas un contrôle RichEditBox pour obtenir les données entrées dans votre application par l’utilisateur de la même façon que vous utilisez d’autres zones de saisie de texte standard. En fait, ce contrôle vous permet de travailler sur des fichiers de texte séparés de votre application. Le texte entré dans un contrôle RichEditBox est généralement enregistré dans un fichier .rtf.
+Utilisez un contrôle **RichEditBox** pour afficher et modifier les fichiers de texte. Vous n’utilisez pas un contrôle RichEditBox pour obtenir les données entrées dans votre application par l’utilisateur de la même façon que vous utilisez d’autres zones de saisie de texte standard. En fait, ce contrôle vous permet de travailler sur des fichiers de texte séparés de votre application. Le texte entré dans un contrôle RichEditBox est généralement enregistré dans un fichier.rtf.
 
-**La saisie de texte est-elle la meilleure option ?**
+**La saisie de texte est-elle la meilleure option?**
 
 Vous disposez de nombreuses méthodes pour obtenir les entrées des utilisateurs de votre application. Les questions suivantes vous aideront à déterminer si le meilleur moyen d’obtenir les entrées utilisateur consiste à utiliser l’une des zones de saisie de texte standard ou un autre contrôle.
 
--   **L’énumération efficace de l’ensemble des valeurs valides est-elle souhaitable ?** Si tel est le cas, envisagez le recours à des contrôles par sélection, du type [case à cocher](checkbox.md), [liste déroulante](lists.md), zone de liste, [case d’option](radio-button.md), [curseur](slider.md), [bouton-bascule](toggles.md), [sélecteur de dates](date-and-time.md) ou sélecteur d’heure.
--   **L’ensemble de valeurs valides est-il restreint ?** Si tel est le cas, utilisez plutôt une [liste déroulante](lists.md) ou une zone de liste, en particulier si les valeurs contiennent un grand nombre de caractères.
--   **Les données valides sont entièrement sans contraintes ? Ou sont-elles limitées par le format (contraintes de longueur ou portant sur les types de caractère) ?** Si tel est le cas, utilisez un contrôle d’entrée de texte. Vous pouvez limiter le nombre de caractères pouvant être saisis et valider le format dans le code de votre application.
--   **La valeur représente-t-elle un type de données auquel correspond un contrôle commun spécialisé ?** Si tel est le cas, utilisez le contrôle approprié plutôt qu’un contrôle d’entrée de texte. Utilisez, par exemple, un contrôle [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) plutôt qu’un contrôle d’entrée de texte pour les saisies de date.
--   Si les données sont strictement numériques :
-    -   **La valeur à entrer est-elle approximative et/ou relative à une autre quantité spécifiée sur la même page ?** Si tel est le cas, utilisez un [curseur](slider.md).
-    -   **L’utilisateur bénéficiera-t-il de commentaires instantanés sur l’effet de toute modification apportée aux paramètres ?** Si tel est le cas, utilisez un [curseur](slider.md), accompagné éventuellement d’un contrôle correspondant.
-    -   **La valeur entrée risque-t-elle d’être ajustée en fonction du résultat obtenu (par exemple, le volume ou la luminosité) ?** Si tel est le cas, utilisez un [curseur](slider.md).
+-   **L’énumération efficace de l’ensemble des valeurs valides est-elle souhaitable?** Si tel est le cas, envisagez le recours à des contrôles par sélection, du type [case à cocher](checkbox.md), [liste déroulante](lists.md), zone de liste, [case d’option](radio-button.md), [curseur](slider.md), [bouton-bascule](toggles.md), [sélecteur de dates](date-and-time.md) ou sélecteur d’heure.
+-   **L’ensemble de valeurs valides est-il restreint?** Si tel est le cas, utilisez plutôt une [liste déroulante](lists.md) ou une zone de liste, en particulier si les valeurs contiennent un grand nombre de caractères.
+-   **Les données valides sont entièrement sans contraintes? Ou sont-elles limitées par le format (contraintes de longueur ou portant sur les types de caractère)?** Si tel est le cas, utilisez un contrôle d’entrée de texte. Vous pouvez limiter le nombre de caractères pouvant être saisis et valider le format dans le code de votre application.
+-   **La valeur représente-t-elle un type de données auquel correspond un contrôle commun spécialisé?** Si tel est le cas, utilisez le contrôle approprié plutôt qu’un contrôle d’entrée de texte. Utilisez, par exemple, un contrôle [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) plutôt qu’un contrôle d’entrée de texte pour les saisies de date.
+-   Si les données sont strictement numériques:
+    -   **La valeur à entrer est-elle approximative et/ou relative à une autre quantité spécifiée sur la même page?** Si tel est le cas, utilisez un [curseur](slider.md).
+    -   **L’utilisateur bénéficiera-t-il de commentaires instantanés sur l’effet de toute modification apportée aux paramètres?** Si tel est le cas, utilisez un [curseur](slider.md), accompagné éventuellement d’un contrôle correspondant.
+    -   **La valeur entrée risque-t-elle d’être ajustée en fonction du résultat obtenu (par exemple, le volume ou la luminosité)?** Si tel est le cas, utilisez un [curseur](slider.md).
 
 ## <a name="examples"></a>Exemples
 
@@ -107,7 +105,7 @@ Pour plus d’informations et d’exemples propres à chaque contrôle de texte,
 -   [**TextBox**](text-box.md)
 
 ## <a name="font-and-style-guidelines"></a>Recommandations en matière de polices et de styles
-Pour découvrir les recommandations concernant les polices, voir les articles suivants :
+Pour découvrir les recommandations concernant les polices, voir les articles suivants:
 
 - [**Recommandations en matière de polices**](fonts.md)
 - [**Recommandations en matière d’icônes Segoe MDL2**](segoe-ui-symbol-font.md)
@@ -142,7 +140,7 @@ Les contrôles de texte standard et enrichi prennent en charge l’affichage des
 <TextBlock FontSize="30">Hello ☺⛄☂♨⛅</TextBlock>
 ```
 
-Le texte affiché ressemble à ceci :
+Le texte affiché ressemble à ceci:
 
 ![Bloc de texte avec police en couleur](images/text-block-color-fonts.png)
 
@@ -154,7 +152,7 @@ Pour plus d’informations, voir la propriété [**IsColorFontEnabled**](https:/
 
 Pour diviser un texte brut, utilisez le caractère séparateur de lignes (0x2028) et le caractère séparateur de paragraphes (0x2029). Une ligne est créée après chaque séparateur de lignes. Un paragraphe est créé après chaque séparateur de paragraphes.
 
-Il n’est pas nécessaire d’insérer ces caractères au début de la première ligne ou du premier paragraphe d’un fichier, ni à la fin de la dernière ligne ou du dernier paragraphe ; cette opération signalerait l’existence d’une ligne vide ou d’un paragraphe vide à cet emplacement.
+Il n’est pas nécessaire d’insérer ces caractères au début de la première ligne ou du premier paragraphe d’un fichier, ni à la fin de la dernière ligne ou du dernier paragraphe; cette opération signalerait l’existence d’une ligne vide ou d’un paragraphe vide à cet emplacement.
 
 Votre application peut utiliser le séparateur de lignes pour indiquer une fin de ligne inconditionnelle. Toutefois, les séparateurs de lignes ne correspondent pas aux caractères distincts de retour chariot et de saut de ligne, ni à une combinaison de ces caractères. Les séparateurs de lignes doivent être traités séparément des caractères de saut de ligne et de retour chariot.
 
@@ -162,15 +160,15 @@ Votre application peut insérer un séparateur de paragraphes entre les paragrap
 
 ## <a name="guidelines-for-spell-checking"></a>Recommandations en matière de vérification orthographique
 
-**S’applique aux contrôles :** TextBox, RichEditBox
+**S’applique aux contrôles:** TextBox, RichEditBox
 
 Lors de la saisie et de la modification de texte, le vérificateur orthographique vous informe si un mot a été mal orthographié en le surlignant d’une ligne ondulée rouge et permet de corriger l’erreur.
 
-Voici un exemple de vérificateur d’orthographe intégré :
+Voici un exemple de vérificateur d’orthographe intégré:
 
 ![Vérificateur d’orthographe intégré](images/spellchecking.png)
 
-Le vérificateur d’orthographe peut être utilisé avec des contrôles de saisie de texte dans deux objectifs :
+Le vérificateur d’orthographe peut être utilisé avec des contrôles de saisie de texte dans deux objectifs:
 
 -   **La correction automatique des fautes**
 
@@ -182,7 +180,7 @@ Le vérificateur d’orthographe peut être utilisé avec des contrôles de sais
 
 -   Utilisez la vérification orthographique pour aider l’utilisateur lors de la saisie de mots ou de phrases dans les contrôles de saisie de texte. La vérification orthographique fonctionne avec le pavé tactile et l’entrée à l’aide de la souris et du clavier.
 -   N’utilisez pas la vérification orthographique pour les mots peu susceptibles de figurer dans le dictionnaire ou quand cela n’apporte rien à l’utilisateur. Par exemple, ne l’activez pas si la zone de texte est conçue pour accueillir un nom ou un numéro de téléphone.
--   Ne désactivez pas la vérification orthographique au seul motif que le vérificateur d’orthographe actuel ne prend pas en charge la langue de votre application. Si le vérificateur d’orthographe ne prend pas en charge une langue, rien ne se produit, il n’y a donc aucun risque à laisser l’option activée. En outre, certains utilisateurs peuvent utiliser un éditeur de méthode d’entrée (IME) pour saisir dans votre application une autre langue qui elle peut être prise en charge. Par exemple, lorsque vous créez une application en japonais, même si le vérificateur d’orthographe ne reconnaît pas actuellement cette langue, ne le désactivez pas. L’utilisateur pourrait utiliser un IME pour saisir de l’anglais dans l’application ; si la vérification d’orthographe est activée, le texte anglais est vérifié.
+-   Ne désactivez pas la vérification orthographique au seul motif que le vérificateur d’orthographe actuel ne prend pas en charge la langue de votre application. Si le vérificateur d’orthographe ne prend pas en charge une langue, rien ne se produit, il n’y a donc aucun risque à laisser l’option activée. En outre, certains utilisateurs peuvent utiliser un éditeur de méthode d’entrée (IME) pour saisir dans votre application une autre langue qui elle peut être prise en charge. Par exemple, lorsque vous créez une application en japonais, même si le vérificateur d’orthographe ne reconnaît pas actuellement cette langue, ne le désactivez pas. L’utilisateur pourrait utiliser un IME pour saisir de l’anglais dans l’application; si la vérification d’orthographe est activée, le texte anglais est vérifié.
 
 Pour les contrôles TextBox et RichEditBox, la vérification orthographique est activée par défaut. Vous pouvez la désactiver en affectant à la propriété **IsSpellCheckEnabled** la valeur **false**.
 
@@ -197,4 +195,3 @@ Pour les contrôles TextBox et RichEditBox, la vérification orthographique est 
 - [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Classe PasswordBox Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length.aspx)
-

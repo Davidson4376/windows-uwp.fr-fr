@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3d98936788057d4bd16f1ef44841ef0d8fb0648b
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: e7db3553ea158c1337e0a541fd497e16d1202af7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="toggle-switches"></a>Boutons bascule
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -56,7 +54,7 @@ Le bouton bascule et la case à cocher peuvent tous deux convenir à certaines a
 
     ![Case à cocher et bouton Envoyer](images/submitcheckbox.png)
 
--   Utilisez des cases à cocher ou une [zone de liste](lists.md) lorsque l’utilisateur peut sélectionner plusieurs éléments :
+-   Utilisez des cases à cocher ou une [zone de liste](lists.md) lorsque l’utilisateur peut sélectionner plusieurs éléments:
 
     ![Case à cocher avec plusieurs éléments sélectionnés](images/guidelines_and_checklist_for_toggle_switches_checkbox_multi_select.png)
 
@@ -158,9 +156,9 @@ Vous pouvez également utiliser un contenu plus complexe en définissant les pro
 
 ## <a name="recommendations"></a>Recommandations
 
--   Remplacez les étiquettes « Activé » et « Désactivé » quand il en existe de plus spécifiques pour le paramètre. S’il existe des étiquettes courtes (de 3 ou 4 caractères) qui représentent des choix binaires plus pertinents pour un paramètre donné, utilisez-les. Par exemple, vous pouvez utiliser « Show/Hide » si le paramètre offre la possibilité d’afficher des images. L’utilisation d’étiquettes plus précises peut contribuer à faciliter la localisation de l’interface utilisateur.
--   Évitez de remplacer les étiquettes On et Off, sauf si vous y êtes tenu ; utilisez les étiquettes par défaut, à moins que la situation n’appelle des étiquettes personnalisées.
--   Les étiquettes ne doivent pas contenir plus de 4 caractères.
+-   Remplacez les étiquettes « Activé » et « Désactivé » quand il en existe de plus spécifiques pour le paramètre. S’il existe des étiquettes courtes (de 3 ou 4caractères) qui représentent des choix binaires plus pertinents pour un paramètre donné, utilisez-les. Par exemple, vous pouvez utiliser «Show/Hide» si le paramètre offre la possibilité d’afficher des images. L’utilisation d’étiquettes plus précises peut contribuer à faciliter la localisation de l’interface utilisateur.
+-   Évitez de remplacer les étiquettes On et Off, sauf si vous y êtes tenu; utilisez les étiquettes par défaut, à moins que la situation n’appelle des étiquettes personnalisées.
+-   Les étiquettes ne doivent pas contenir plus de 4caractères.
 
 ## <a name="related-articles"></a>Articles connexes
 

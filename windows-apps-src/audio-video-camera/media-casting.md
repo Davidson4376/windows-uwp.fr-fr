@@ -1,24 +1,21 @@
 ---
 author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
-description: "Cet article vous montre comment effectuer une diffusion multimédia sur des appareils distants à partir d’une application Windows universelle."
+description: "Cet article vous montre comment procéder à une diffusion multimédia sur des appareils distants à partir d’une application Windows universelle."
 title: "Diffusion multimédia"
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f399007426f5a973a06d473ef98a9eb7e24184dd
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 8ba90e1538962fdb7ef1434698ea52845713c634
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="media-casting"></a>Diffusion multimédia
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous montre comment effectuer une diffusion multimédia sur des appareils distants à partir d’une application Windows universelle.
@@ -50,7 +47,7 @@ Une fois la vidéo chargée dans l’élément **MediaPlayerElement**, il suffit
 ![Bouton de diffusion MediaElement](images/media-element-casting-button.png)
 
 > [!NOTE] 
-> À compter de Windows 10, version 1607, nous vous recommandons d’utiliser la classe **MediaPlayer** pour lire des éléments multimédias. **MediaPlayerElement** est un contrôle XAML léger utilisé pour afficher le contenu d’un **MediaPlayer** dans une page XAML. Le contrôle **MediaElement** continue d’être pris en charge pour la compatibilité descendante. Pour plus d’informations sur l’utilisation de **MediaPlayer** et **MediaPlayerElement** pour lire du contenu multimédia, voir [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md). Pour plus d’informations sur l’utilisation de **MediaSource** et des API associées pour utiliser du contenu multimédia, voir [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md).
+> À compter de Windows10, version1607, nous vous recommandons d’utiliser la classe **MediaPlayer** pour lire des éléments multimédias. **MediaPlayerElement** est un contrôle XAML léger utilisé pour afficher le contenu d’un **MediaPlayer** dans une page XAML. Le contrôle **MediaElement** continue d’être pris en charge pour la compatibilité descendante. Pour plus d’informations sur l’utilisation de **MediaPlayer** et **MediaPlayerElement** pour lire du contenu multimédia, voir [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md). Pour plus d’informations sur l’utilisation de **MediaSource** et des API associées pour utiliser du contenu multimédia, voir [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md).
 
 ## <a name="media-casting-with-the-castingdevicepicker"></a>Diffusion multimédia à l’aide de la classe CastingDevicePicker
 
@@ -93,7 +90,7 @@ Pour énumérer les appareils de diffusion disponibles, incluez l’espace de no
 
 [!code-cs[EnumerationNamespace](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetEnumerationNamespace)]
 
-Ajoutez les contrôles suivants à votre page XAML pour implémenter l’interface utilisateur rudimentaire pour cet exemple :
+Ajoutez les contrôles suivants à votre page XAML pour implémenter l’interface utilisateur rudimentaire pour cet exemple:
 
 -   Un bouton pour démarrer l’observateur d’appareils qui recherche les appareils de diffusion disponibles.
 -   Un contrôle [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) pour signaler à l’utilisateur que l’énumération de la diffusion est en cours.
@@ -140,7 +137,7 @@ Lancez la diffusion multimédia en appelant [**RequestStartCastingAsync**](https
 
 [!code-cs[SelectionChanged](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetSelectionChanged)]
 
-Dans le gestionnaire de changement d’état, l’action effectuée dépend du nouvel état de la connexion de diffusion :
+Dans le gestionnaire de changement d’état, l’action effectuée dépend du nouvel état de la connexion de diffusion:
 
 -   Si l’état est **Connected** ou **Rendering**, assurez-vous que le contrôle **ProgressRing** est inactif et que le bouton de déconnexion est visible.
 -   Si l’état est **Disconnected**, désélectionnez l’appareil de diffusion actuel dans la zone de liste, assurez-vous que le contrôle **ProgressRing** est inactif et masquez le bouton de déconnexion.
@@ -160,7 +157,6 @@ Enfin, implémentez le gestionnaire pour le bouton de déconnexion. Arrêtez la 
  
 
  
-
 
 
 

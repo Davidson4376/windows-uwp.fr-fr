@@ -1,29 +1,26 @@
 ---
 author: drewbatgit
 ms.assetid: 05E418B4-5A62-42BD-BF66-A0762216D033
-description: "Cet article vous indique comment obtenir une image d’aperçu à partir du flux d’aperçu de capture multimédia."
+description: "Cette rubrique vous montre comment obtenir une image d’aperçu à partir du flux d’aperçu de capture multimédia."
 title: "Obtenir une image d’aperçu"
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 420f9b8c3bb6573fbc12bc974ef2382b9ba6ec03
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 3dca5108988e4a3c0fe3903d26f31733685d66a4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-a-preview-frame"></a>Obtenir une image d’aperçu
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique vous montre comment obtenir une image d’aperçu à partir du flux d’aperçu de capture multimédia.
 
 > [!NOTE] 
-> Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture simple de contenu multimédia de cet article avant d’adopter des scénarios de capture plus avancés. Le code de cet article part du principe que votre application possède déjà une instance de MediaCapture correctement lancée et que vous disposez d’un [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) avec un flux d’aperçu vidéo actif.
+> Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture multimédia de base de cet article avant de passer à des scénarios de capture plus avancés. Le code de cet article part du principe que votre application possède déjà une instance de MediaCapture correctement lancée et que vous disposez d’un [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) avec un flux d’aperçu vidéo actif.
 
 Outre les espaces de noms nécessaires pour la capture multimédia de base, la capture d’une image d’aperçu nécessite les espaces de noms suivants.
 
@@ -65,7 +62,6 @@ Lorsque vous avez fini d’utiliser l’image d’aperçu, veillez à appeler sa
  
 
  
-
 
 
 

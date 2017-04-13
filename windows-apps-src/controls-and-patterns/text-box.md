@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 205903636b6486d80ccffde9b32818e02e5ac7ea
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 29ab04588088907a851700fcbd04a64bcea77d63
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="text-box"></a>Zone de texte
 
@@ -23,7 +21,7 @@ ms.lasthandoff: 02/07/2017
 
 Le contrôle TextBox permet à un utilisateur de taper du texte dans une application. Il est généralement utilisé pour capturer une seule ligne de texte, mais peut être configuré pour la saisie de plusieurs lignes. Le texte s’affiche sous la forme d’un texte brut uniforme simple.
 
-Le contrôle TextBox comporte différentes fonctionnalités destinées à simplifier la saisie de texte. Il intègre un menu contextuel familier prenant en charge la copie et le collage de texte. Le bouton Effacer tout (« X ») permet à un utilisateur de supprimer rapidement l’ensemble du texte qui a été entré. Le contrôle intègre également des fonctionnalités de vérification de l’orthographe qui sont activées par défaut.
+Le contrôle TextBox comporte différentes fonctionnalités destinées à simplifier la saisie de texte. Il intègre un menu contextuel familier prenant en charge la copie et le collage de texte. Le bouton Effacer tout («X») permet à un utilisateur de supprimer rapidement l’ensemble du texte qui a été entré. Le contrôle intègre également des fonctionnalités de vérification de l’orthographe qui sont activées par défaut.
 
 <div class="important-apis" >
 <b>API importantes</b><br/>
@@ -81,13 +79,13 @@ Vous pouvez ajouter un contrôle [Header](https://msdn.microsoft.com/library/win
 
 Vous pouvez restreindre le nombre de caractères que l’utilisateur peut taper en définissant la propriété [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.maxlength.aspx). Toutefois, la propriété MaxLength ne limite pas la longueur du texte collé. Si cet aspect a de l’importance pour votre application, utilisez l’événement [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) pour modifier le texte collé.
 
-La zone de texte inclut un bouton Effacer tout (« X ») qui s’affiche lorsque du texte est entré dans la zone. Quand un utilisateur clique sur le bouton « X », le texte figurant dans la zone de texte est effacé. Ce bouton apparaît comme suit.
+La zone de texte inclut un bouton Effacer tout («X») qui s’affiche lorsque du texte est entré dans la zone. Quand un utilisateur clique sur le bouton «X», le texte figurant dans la zone de texte est effacé. Ce bouton apparaît comme suit.
 
 ![Zone de texte avec un bouton Effacer tout](images/text-box-clear-all.png)
 
 Le bouton Effacer tout s’affiche uniquement pour les zones de texte modifiables d’une seule ligne qui contiennent du texte et qui présentent le focus.
 
-Le bouton Effacer tout n’apparaît pas dans l’un des cas suivants :
+Le bouton Effacer tout n’apparaît pas dans l’un des cas suivants:
 - **IsReadOnly** présente la valeur **true**.
 - **AcceptsReturn** présente la valeur **true**.
 - **TextWrap** présente une valeur différente de **NoWrap**.
@@ -96,7 +94,7 @@ Le bouton Effacer tout n’apparaît pas dans l’un des cas suivants :
 
 Vous pouvez configurer une zone de texte comme étant en lecture seule en définissant la propriété [IsReadOnly](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isreadonly.aspx) sur la valeur **true**. En règle générale, vous activez/désactivez cette propriété dans le code de votre application en fonction de conditions applicables à cette dernière. Si vous avez besoin que le texte soit toujours en lecture seule, envisagez plutôt d’utiliser un contrôle TextBlock.
 
-Pour configurer le contrôle TextBox en lecture seule, définissez la propriété IsReadOnly sur la valeur « true ». Par exemple, vous pouvez avoir besoin de définir un contrôle TextBox ne permettant à un utilisateur d’entrer des commentaires que sous certaines conditions. Vous pouvez alors configurer le contrôle TextBox comme étant en lecture seule jusqu’à ce que ces conditions soient remplies. Si vous souhaitez simplement afficher du texte, envisagez plutôt d’utiliser un contrôle TextBlock ou RichTextBlock.
+Pour configurer le contrôle TextBox en lecture seule, définissez la propriété IsReadOnly sur la valeur «true». Par exemple, vous pouvez avoir besoin de définir un contrôle TextBox ne permettant à un utilisateur d’entrer des commentaires que sous certaines conditions. Vous pouvez alors configurer le contrôle TextBox comme étant en lecture seule jusqu’à ce que ces conditions soient remplies. Si vous souhaitez simplement afficher du texte, envisagez plutôt d’utiliser un contrôle TextBlock ou RichTextBlock.
 
 Une zone de texte en lecture seule présente le même aspect qu’une zone de texte en lecture/écriture, ce qui peut dérouter l’utilisateur.
 Un utilisateur peut sélectionner et copier du texte.
@@ -183,7 +181,7 @@ Coller | Le Presse-papiers contient du texte.
 Tout sélectionner | Le contrôle TextBox contient du texte.
 Annuler | L’utilisateur a modifié du texte.
 
-Pour modifier les commandes figurant dans le menu contextuel, gérez l’événement [ContextMenuOpening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.contextmenuopening.aspx). Pour découvrir un exemple de la procédure à suivre, voir le scénario 2 de l’[exemple de menu contextuel](http://go.microsoft.com/fwlink/p/?linkid=234891). Pour plus d’informations sur la conception, voir l’article Recommandations en matière de menus contextuels.
+Pour modifier les commandes figurant dans le menu contextuel, gérez l’événement [ContextMenuOpening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.contextmenuopening.aspx). Pour découvrir un exemple de la procédure à suivre, voir le scénario2 de l’[exemple de menu contextuel](http://go.microsoft.com/fwlink/p/?linkid=234891). Pour plus d’informations sur la conception, voir l’article Recommandations en matière de menus contextuels.
 
 ### <a name="select-copy-and-paste"></a>Sélectionner, copier et coller du texte
 
@@ -215,7 +213,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 }
 ```
 
-Voici le résultat de ce code :
+Voici le résultat de ce code:
 
 ![Texte sélectionné dans une zone de texte](images/text-box-selection.png)
 
@@ -246,7 +244,7 @@ Pour plus d’informations et d’exemples, voir [Utiliser l’étendue des entr
 
 -   Utilisez plusieurs zones de texte d’une ligne pour la saisie de plusieurs éléments de texte de petite taille. Si les zones de texte sont de nature apparentées, regrouper-les.
 
--   Faites en sorte que la taille des zones de texte d’une ligne soit légèrement supérieure à l’entrée la plus longue prévue. Si cette opération élargit le contrôle de manière excessive, divisez ce dernier en deux contrôles. Par exemple, vous pouvez fractionner une entrée d’adresse unique sous la forme « Ligne d’adresse 1 » et « Ligne d’adresse 2 ».
+-   Faites en sorte que la taille des zones de texte d’une ligne soit légèrement supérieure à l’entrée la plus longue prévue. Si cette opération élargit le contrôle de manière excessive, divisez ce dernier en deux contrôles. Par exemple, vous pouvez fractionner une entrée d’adresse unique sous la forme «Ligne d’adresse1» et «Ligne d’adresse2».
 -   Définissez un nombre maximal de caractères pouvant être entrés. Si la source de données de stockage n’accepte pas les chaînes d’entrée longues, limitez la longueur des entrées et utilisez une fenêtre contextuelle de validation pour indiquer à l’utilisateur qu’il a atteint la limite.
 -   Utilisez des contrôles de saisie de texte d’une ligne pour recueillir de petits éléments de texte.
 
@@ -287,4 +285,3 @@ Pour plus d’informations et d’exemples, voir [Utiliser l’étendue des entr
 - [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Classe PasswordBox Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
-

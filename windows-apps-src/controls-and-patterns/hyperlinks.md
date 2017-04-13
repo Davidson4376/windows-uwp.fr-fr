@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou vers une autre application, ou lancent un URI spécifique dans une application de navigateur distincte."
+Description: "Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte."
 title: Liens hypertexte
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
@@ -10,18 +10,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9af0a58478bbbb0dfc46bb18851ae78735e2c9b1
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: e2c04ea39eee88c225bfef277037363c084e8eff
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="hyperlinks"></a>Liens hypertexte
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou vers une autre application, ou lancent un URI spécifique dans une application de navigateur distincte. Vous pouvez ajouter un lien hypertexte à une application XAML de deux façons : à l’aide d’un élément de texte **Hyperlink** ou d’un contrôle **HyperlinkButton**.
+Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte. Vous pouvez ajouter un lien hypertexte à une application XAML de deux façons : à l’aide d’un élément de texte **Hyperlink** ou d’un contrôle **HyperlinkButton**.
 
 ![Bouton Lien hypertexte](images/controls/hyperlink-button.png)
 
@@ -34,11 +32,11 @@ Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’app
 </div>
 
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
 Utilisez un lien hypertexte lorsque vous avez besoin de texte qui réponde lorsqu’il est sélectionné et dirige l’utilisateur vers plus d’informations.
 
-Choisissez le type de lien hypertexte approprié en fonction de vos besoins :
+Choisissez le type de lien hypertexte approprié en fonction de vos besoins:
 
 -   Utilisez un élément de texte **Hyperlink** inclus dans un contrôle de texte. Un élément Hyperlink comprend d’autres éléments de texte et vous pouvez l’utiliser dans toute collection InlineCollection. Utilisez un lien hypertexte de type texte si vous souhaitez un saut de ligne automatique et si vous n’avez pas nécessairement besoin d’une cible large. Le texte du lien hypertexte peut être petit et difficile à cibler, notamment pour les fonctions tactiles.
 -   Utilisez un contrôle **HyperlinkButton** pour les liens hypertexte autonomes. Un contrôle HyperlinkButton est un contrôle Button spécialisé que vous pouvez utiliser à tout endroit où vous utiliseriez un bouton.
@@ -63,7 +61,7 @@ Cet exemple montre comment utiliser un élément de texte Hyperlink à l’inté
 </StackPanel>
 
 ```
-Le lien hypertexte s’affiche en ligne avec le texte qui l’entoure :
+Le lien hypertexte s’affiche en ligne avec le texte qui l’entoure:
 
 ![Exemple de lien hypertexte en tant qu’élément de texte](images/controls_hyperlink-element.png) 
 
@@ -86,7 +84,7 @@ Voici comment utiliser un HyperlinkButton, avec un texte et une image.
 </StackPanel>
 
 ```
-Les boutons de lien hypertexte incluant du texte s’affichent en tant que texte marqué. L’image du logo Contoso est également un lien hypertexte sur lequel vous pouvez cliquer :
+Les boutons de lien hypertexte incluant du texte s’affichent en tant que texte marqué. L’image du logo Contoso est également un lien hypertexte sur lequel vous pouvez cliquer:
 
 ![Exemple de lien hypertexte en tant que contrôle de bouton](images/controls_hyperlink-button-image.png)
 
@@ -125,7 +123,7 @@ Vous pouvez définir la propriété [UnderlineStyle](https://msdn.microsoft.com/
 
 Par défaut, l’élément HyperlinkButton s’affiche sous forme de texte souligné lorsque vous définissez une chaîne comme valeur pour la propriété [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx).
 
-Le texte n’apparaît pas souligné dans les cas suivants :
+Le texte n’apparaît pas souligné dans les cas suivants:
 - Si vous définissez un [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) comme valeur pour la propriété Content et définissez la propriété [Text](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.text.aspx) sur TextBlock.
 - Si vous redéfinissez le modèle de l’élément HyperlinkButton et modifiez le nom de la partie du modèle [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx).
 
@@ -164,4 +162,3 @@ La couleur par défaut du lien hypertexte est la couleur d’accentuation du sys
 **Pour les développeurs (XAML)**
 - [**Classe Windows.UI.Xaml.Documents.Hyperlink**](https://msdn.microsoft.com/library/windows/apps/dn279356)
 - [**Classe Windows.UI.Xaml.Controls.HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)
-

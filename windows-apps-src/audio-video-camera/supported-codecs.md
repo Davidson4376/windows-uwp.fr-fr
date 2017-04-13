@@ -8,22 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2c477e9dc0cc86534a179edb8e3a9415f4872d93
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 0973195b8777a0154b733ba2625327bb9296bd6b
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="supported-codecs"></a>Codecs pris en charge
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 
-Cet article répertorie les codecs et formats audio, vidéo et d’image pris en charge dans les applications UWP.
+Cet article répertorie les codecs audio, vidéo et d’image ainsi que la disponibilité par défaut des formats d’applications UWP, pour chaque famille d’appareils. Notez que ces tableaux répertorient les codecs inclus avec l’installation Windows10 pour la famille considérée d’appareils. Les utilisateurs et les applications peuvent installer les codecs supplémentaires mis à disposition, le cas échéant. Durant l’exécution, vous pouvez identifier le jeu de codecs disponible pour un appareil spécifique. Pour plus d’informations, voir [Rechercher les codecs installés sur un appareil](codec-query.md).
 
-Dans les tableaux ci-dessous, la lettre « D » indique la prise en charge de décodeurs et la lettre « E » la prise en charge d’encodeurs.
+Dans les tableaux ci-dessous, la lettre «D» indique la prise en charge de décodeurs et la lettre «E» la prise en charge d’encodeurs.
 
 ## <a name="audio-codec--format-support"></a>Prise en charge des codecs et formats audio
 

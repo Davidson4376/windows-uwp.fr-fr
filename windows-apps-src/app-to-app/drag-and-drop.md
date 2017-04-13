@@ -1,5 +1,5 @@
 ---
-description: "Cet article vous explique comment ajouter le glisser-déplacer dans votre application de plateforme Windows universelle (UWP)."
+description: "Cet article vous explique comment ajouter le glisser-déplacer dans votre application UWP."
 title: "Glisser-déplacer"
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 author: awkoren
@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c8b12681584b85a053f1d06b827d4c1f61c157e5
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 84f78d43a0d9a34b8ba992a2357f08ad374b32d1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="drag-and-drop"></a>Glisser-déplacer
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article vous explique comment ajouter le glisser-déplacer dans votre application UWP. Glisser-déplacer est une méthode naturelle classique d’interaction avec le contenu comme les images et les fichiers. Une fois implémenté, le glisser-déplacer fonctionne parfaitement dans toutes les directions, notamment d’application à application, d’application à bureau et de bureau à application.
@@ -58,10 +56,10 @@ Le système fournit une interface utilisateur par défaut pour le glisser-dépos
 
 ## <a name="open-a-context-menu-on-an-item-you-can-drag-with-touch"></a>Ouvrir un menu contextuel sur un élément que vous pouvez faire glisser avec une interface tactile
 
-Quand vous utilisez une interface tactile, pour faire glisser un élément [**UIElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement) et ouvrir son menu contextuel, vous utilisez des mouvements tactiles similaires qui commencent tous deux par un appui prolongé. Voici comment le système lève l’ambiguïté entre les deux actions pour les éléments de votre application qui prennent en charge les deux opérations : 
+Quand vous utilisez une interface tactile, pour faire glisser un élément [**UIElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement) et ouvrir son menu contextuel, vous utilisez des mouvements tactiles similaires qui commencent tous deux par un appui prolongé. Voici comment le système lève l’ambiguïté entre les deux actions pour les éléments de votre application qui prennent en charge les deux opérations: 
 
-* Si un utilisateur appuie de façon prolongée sur un élément et commence à le faire glisser dans un intervalle de 500 millisecondes, l’élément est déplacé et le menu contextuel n’est pas affiché. 
-* Si l’utilisateur appuie de façon prolongée sur l’élément, mais ne le fait pas glisser dans l’intervalle de 500 millisecondes, le menu contextuel est ouvert. 
+* Si un utilisateur appuie de façon prolongée sur un élément et commence à le faire glisser dans un intervalle de 500millisecondes, l’élément est déplacé et le menu contextuel n’est pas affiché. 
+* Si l’utilisateur appuie de façon prolongée sur l’élément, mais ne le fait pas glisser dans l’intervalle de 500millisecondes, le menu contextuel est ouvert. 
 * Une fois que le menu contextuel est ouvert, si l’utilisateur essaie de faire glisser l’élément (sans lever le doigt), le menu contextuel se ferme et le déplacement commence.
 
 ## <a name="designate-an-item-in-a-listview-or-gridview-as-a-folder"></a>Désigner un élément dans un contrôle ListView ou GridView en tant que dossier
@@ -81,4 +79,3 @@ Le système montre automatiquement les animations appropriées pour le déplacem
 * [DragUIOverride](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.draguioverride.aspx)
 * [Drop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
 * [IsDragSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isdragsource.aspx)
-

@@ -1,24 +1,21 @@
 ---
 author: laurenhughes
 ms.assetid: D5D98044-7221-4C2A-9724-56E59F341AB0
-description: "Cet article indique comment lire et écrire des propriétés de métadonnées d’image et comment indiquer la position géographique de fichiers à l’aide de la classe utilitaire GeotagHelper."
+description: "Vous saurez comment lire et écrire des propriétés de métadonnées d’image et indiquer la position géographique de fichiers à l’aide de la classe GeotagHelper."
 title: "Métadonnées d’image"
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: af9a4c243c939ddc04e5d0763b58df00e70d7017
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: e69508ae558d93281e0170913fa0ccdc5891cc64
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="image-metadata"></a>Métadonnées d’image
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article montre comment lire et écrire des propriétés de métadonnées d’image et indiquer la position géographique de fichiers à l’aide de la classe utilitaire [**GeotagHelper**](https://msdn.microsoft.com/library/windows/apps/dn903683).
@@ -92,7 +89,6 @@ Créez un objet [**BitmapPropertySet**](https://msdn.microsoft.com/library/windo
  
 
  
-
 
 
 

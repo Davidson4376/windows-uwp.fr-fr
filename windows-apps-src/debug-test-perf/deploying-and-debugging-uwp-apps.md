@@ -8,21 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, déboguer, test, performances"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a7ce6c003c24a1efd03cc48419438b59e4f2ec11
-ms.lasthandoff: 02/07/2017
-
+keywords: "windows10, uwp, déboguer, test, performances"
+ms.openlocfilehash: 6f399136be121288dcff4b482f9e022fc0323181
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="deploying-and-debugging-uwp-apps"></a>Déploiement et débogage des applications UWP
 
-# <a name="deploying-and-debugging-universal-windows-platform-uwp-apps"></a>Déploiement et débogage des applications UWP
-
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cet article vous guide tout au long des étapes nécessaires pour cibler différents objectifs de déploiement et de débogage.
 
-Microsoft Visual Studio vous permet de déployer et de déboguer vos applications de plateforme Windows universelle (UWP) sur de nombreux appareils Windows 10. Visual Studio gère le processus de génération et d’inscription de l’application sur l’appareil cible.
+Microsoft Visual Studio vous permet de déployer et de déboguer vos applications de plateforme Windows universelle (UWP) sur de nombreux appareils Windows10. Visual Studio gère le processus de génération et d’inscription de l’application sur l’appareil cible.
 
 ## <a name="picking-a-deployment-target"></a>Sélection d’une cible de déploiement
 
@@ -34,7 +31,7 @@ Pour sélectionner une cible, accédez à la liste déroulante des cibles de dé
 -   L’**Ordinateur local** déploie l’application sur votre ordinateur de développement actuel. Cette option est disponible uniquement si la **Version minimale de la plateforme cible** de votre application est inférieure ou égale à celle du système d’exploitation de votre ordinateur de développement.
 -   L’**Ordinateur distant** vous permet de spécifier une cible distante pour déployer l’application. Pour plus d’informations sur le déploiement sur un ordinateur distant, voir [Spécification d’un appareil distant](#specifying-a-remote-device).
 -   L’**Appareil** déploie l’application sur un appareil USB connecté. L’appareil doit être déverrouillé par le développeur et son écran doit être déverrouillé.
--   Un **Émulateur** démarre et déploie l’application sur un émulateur avec la configuration spécifiée dans le nom. Les émulateurs sont disponibles uniquement sur les ordinateurs Hyper-V exécutant Windows 8.1 ou supérieur.
+-   Un **Émulateur** démarre et déploie l’application sur un émulateur avec la configuration spécifiée dans le nom. Les émulateurs sont disponibles uniquement sur les ordinateurs Hyper-V exécutant Windows8.1 ou supérieur.
 
 
 ## <a name="debugging-deployed-apps"></a>Débogage des applications déployées
@@ -46,16 +43,16 @@ En outre, vous pouvez attacher et déboguer n’importe quel package d’applica
 
 Si vous sélectionnez **Ne pas lancer, mais déboguer mon code au démarrage**, le débogueur Visual Studio sera attaché à votre application UWP au moment où vous la lancerez. Il s’agit d’un moyen efficace pour déboguer les chemins d’accès de contrôle à partir de [différentes méthodes de lancement](../xbox-apps/automate-launching-uwp-apps.md), notamment en cas d’activation du protocole avec des paramètres personnalisés.  
 
-Les applications UWP peuvent être développées et compilées sur Windows 8.1 ou une version ultérieure, mais leur exécution nécessite Windows 10. Si vous développez une application UWP sur un PC Windows 8.1, vous pouvez déboguer à distance une application UWP s’exécutant sur un autre appareil Windows 10, sous réserve que les ordinateurs hôte et cible soient sur le même LAN. Pour ce faire, téléchargez et installez les [Outils de contrôle à distance de Visual Studio](https://www.visualstudio.com/downloads/) sur les deux machines. La version installée doit correspondre à la version existante de Visual Studio que vous avez installée, et l’architecture que vous sélectionnez (x86, x64) doit également correspondre à celle de votre application cible.   
+Les applications UWP peuvent être développées et compilées sur Windows8.1 ou une version ultérieure, mais leur exécution nécessite Windows10. Si vous développez une application UWP sur un PC Windows8.1, vous pouvez déboguer à distance une application UWP s’exécutant sur un autre appareil Windows10, sous réserve que les ordinateurs hôte et cible soient sur le même LAN. Pour ce faire, téléchargez et installez les [Outils de contrôle à distance de Visual Studio](https://www.visualstudio.com/downloads/) sur les deux machines. La version installée doit correspondre à la version existante de Visual Studio que vous avez installée, et l’architecture que vous sélectionnez (x86, x64) doit également correspondre à celle de votre application cible.   
 
 ## <a name="package-layout"></a>Disposition de package
-Avec Visual Studio 2015 Update 3, nous avons ajouté la possibilité pour les développeurs de spécifier le chemin de disposition de leurs applications UWP. Cela permet de déterminer l’emplacement sur le disque où est copiée la disposition de package quand vous générez l’application. Par défaut, cette propriété est définie par rapport au répertoire racine du projet. Si vous ne modifiez pas cette propriété, le comportement reste le même que celui des versions antérieures de Visual Studio.
+Avec Visual Studio2015 Update3, nous avons ajouté la possibilité pour les développeurs de spécifier le chemin de disposition de leurs applications UWP. Cela permet de déterminer l’emplacement sur le disque où est copiée la disposition de package quand vous générez l’application. Par défaut, cette propriété est définie par rapport au répertoire racine du projet. Si vous ne modifiez pas cette propriété, le comportement reste le même que celui des versions antérieures de Visual Studio.
 
 Cette propriété peut être modifiée dans les propriétés de **débogage** du projet.
 
 Si vous voulez inclure tous les fichiers de disposition dans votre package d’application au moment de sa création, vous devez ajouter la propriété de projet `<IncludeLayoutFilesInPackage>true</IncludeLayoutFilesInPackage>`.
 
-Pour ajouter cette propriété :
+Pour ajouter cette propriété:
 
 1. Cliquez avec le bouton droit sur le projet, puis sélectionnez **Décharger le projet**.
 2. Cliquez avec le bouton droit sur le projet, puis sélectionnez **Modifier [nom_projet].xxproj** (.xxproj varie selon la langue du projet).
@@ -69,7 +66,7 @@ Pour spécifier un ordinateur distant pour des applications en C# ou Microsoft V
 
 ![Boîte de dialogue Connexions à distance](images/debug-remote-connections.png)
 
-Pour revenir à cette boîte de dialogue, vous pouvez ouvrir les propriétés du projet et accéder à l’onglet **Déboguer**. Sélectionnez **Rechercher** à côté de **Ordinateur distant :**
+Pour revenir à cette boîte de dialogue, vous pouvez ouvrir les propriétés du projet et accéder à l’onglet **Déboguer**. Sélectionnez **Rechercher** à côté de **Ordinateur distant:**
 
 ![Onglet Déboguer](images/debug-remote-machine-config.png)
 
@@ -77,7 +74,7 @@ Pour déployer une application sur un PC distant, vous devez également téléch
 
 ### <a name="c-and-javascript"></a>C++ et JavaScript
 
-Pour spécifier une cible d’ordinateur distant pour une application UWP en C++ ou JavaScript :
+Pour spécifier une cible d’ordinateur distant pour une application UWP en C++ ou JavaScript:
 
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis cliquez sur **Propriétés**.
 2. Accédez aux paramètres de **Débogage** et sous **Débogueur à lancer**, sélectionnez **Ordinateur distant**.
@@ -95,28 +92,28 @@ Pour ce faire, recherchez **Débogueur distant** dans le menu **Démarrer**, ouv
 
 Pour changer l’option en **aucune authentification**, dans le **Débogueur distant**, accédez à **Outils** -&gt;**Options**, puis définissez-la sur **Aucune authentification**. Une fois que le débogueur distant est configuré, vous devez également vérifier que vous avez défini l’appareil hôte sur [Mode développeur](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development). Ensuite, vous pouvez effectuer le déploiement à partir de votre ordinateur de développement.
 
-Pour plus d’informations, voir la page de téléchargement [Outils de contrôle à distance de Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=717039).
+Pour plus d’informations, voir la page [Centre de téléchargementVisual Studio](https://www.visualstudio.com/downloads/).
 
 ## <a name="authentication-modes"></a>Modes d’authentification
 
 Il existe trois modes d’authentification de déploiement sur un ordinateur distant :
 
-- **Universel (protocole non chiffré)** : Utilisez ce mode d’authentification chaque fois que vous effectuez un déploiement sur un appareil distant autre qu’un PC Windows (ordinateur de bureau ou portable). Actuellement, ce mode convient aux appareils IoT, aux appareils Xbox et aux appareils HoloLens. Le mode Universel (protocole non chiffré) doit uniquement être utilisé sur les réseaux approuvés. La connexion de débogage est vulnérable aux utilisateurs malveillants qui peuvent intercepter les données transmises entre la machine de développement et la machine distante, et les modifier.
-- **Windows** : Ce mode d’authentification est destiné uniquement au déploiement sur un PC distant (ordinateur de bureau ou portable). Utilisez ce mode d’authentification quand vous avez accès aux informations d’identification de l’utilisateur connecté sur l’ordinateur cible. Il s’agit du canal le plus sécurisé pour le déploiement à distance.
-- **Aucun** : Ce mode d’authentification est destiné uniquement au déploiement sur un PC distant (ordinateur de bureau ou portable). Utilisez ce mode d’authentification quand vous disposez d’un ordinateur de test configuré dans un environnement avec un compte de test connecté, et que vous ne pouvez pas entrer les informations d’identification. Vérifiez que les paramètres du débogueur distant sont définis pour n’accepter aucune authentification.
+- **Universel (protocole non chiffré)**: Utilisez ce mode d’authentification chaque fois que vous effectuez un déploiement sur un appareil distant autre qu’un PC Windows (ordinateur de bureau ou portable). Actuellement, ce mode convient aux appareils IoT, aux appareils Xbox et aux appareils HoloLens. Le mode Universel (protocole non chiffré) doit uniquement être utilisé sur les réseaux approuvés. La connexion de débogage est vulnérable aux utilisateurs malveillants qui peuvent intercepter les données transmises entre la machine de développement et la machine distante, et les modifier.
+- **Windows**: Ce mode d’authentification est destiné uniquement au déploiement sur un PC distant (ordinateur de bureau ou portable). Utilisez ce mode d’authentification quand vous avez accès aux informations d’identification de l’utilisateur connecté sur l’ordinateur cible. Il s’agit du canal le plus sécurisé pour le déploiement à distance.
+- **Aucun**: Ce mode d’authentification est destiné uniquement au déploiement sur un PC distant (ordinateur de bureau ou portable). Utilisez ce mode d’authentification quand vous disposez d’un ordinateur de test configuré dans un environnement avec un compte de test connecté, et que vous ne pouvez pas entrer les informations d’identification. Vérifiez que les paramètres du débogueur distant sont définis pour n’accepter aucune authentification.
 
 ## <a name="advanced-remote-deployment-options"></a>Options avancées de déploiement distant
-Avec le lancement de Visual Studio 2015 Update 3 et de la Mise à jour anniversaire Windows 10, de nouvelles options avancées de déploiement distant ont vu le jour pour certains appareils Windows 10. Les options avancées de déploiement distant se trouvent dans le menu **Déboguer** des propriétés du projet.
+Avec le lancement de Visual Studio2015 Update3 et de la Mise à jour anniversaire Windows10, de nouvelles options avancées de déploiement distant ont vu le jour pour certains appareils Windows10. Les options avancées de déploiement distant se trouvent dans le menu **Déboguer** des propriétés du projet.
 
-Les nouvelles propriétés sont notamment :
+Les nouvelles propriétés sont notamment:
 * Type de déploiement
 * Chemin d’inscription du package
 * Conserver tous les fichiers sur l’appareil, même ceux qui ne font plus partie de votre disposition
 
 ### <a name="requirements"></a>Configuration requise
-Pour utiliser les options avancées de déploiement distant, vous devez avoir la configuration requise suivante :
-* Visual Studio 2015 Update 3 est installé avec la version 1.4.1 des outils Windows 10 (qui inclut le SDK de la Mise à jour anniversaire Windows 10)
-* Cibler un appareil distant Xbox avec la Mise à jour anniversaire Windows 10
+Pour utiliser les options avancées de déploiement distant, vous devez avoir la configuration requise suivante:
+* Visual Studio2015 Update3 est installé avec la version1.4.1 des outils Windows10 (qui inclut le SDK de la Mise à jour anniversaire Windows10)
+* Cibler un appareil distant Xbox avec la Mise à jour anniversaire Windows10
 * Utiliser le mode d’authentification Universel
 
 ### <a name="properties-pages"></a>Pages de propriétés
@@ -134,57 +131,57 @@ L’option **Copier les fichiers sur l’appareil** transfère physiquement les 
 Le **chemin d’inscription de package** spécifié quand vous **copiez les fichiers sur l’appareil** est l’emplacement physique sur l’appareil distant dans lequel les fichiers sont copiés. Ce chemin peut être spécifié comme tout autre chemin relatif. L’emplacement dans lequel les fichiers sont déployés est relatif à une racine de fichiers de développement qui varie en fonction de l’appareil cible. La spécification de ce chemin est utile si plusieurs développeurs partagent le même appareil et utilisent des packages avec un écart de build.
 
 > [!NOTE]
-> L’option **Copier les fichiers sur l’appareil** est actuellement prise en charge sur Xbox exécutant la Mise à jour anniversaire Windows 10.
+> L’option **Copier les fichiers sur l’appareil** est actuellement prise en charge sur Xbox exécutant la Mise à jour anniversaire Windows10.
 
-Sur l’appareil distant, la disposition est copiée à l’emplacement par défaut suivant en fonction de la famille d’appareils :
+Sur l’appareil distant, la disposition est copiée à l’emplacement par défaut suivant en fonction de la famille d’appareils:
   `Xbox: \\MY-DEVKIT\DevelopmentFiles\PACKAGE-REGISTRATION-PATH`
 
 ### <a name="register-layout-from-network"></a>Inscrire la disposition à partir du réseau
 Quand vous choisissez d’inscrire la disposition à partir du réseau, vous pouvez générer votre disposition de package dans un partage réseau, puis inscrire la disposition sur l’appareil distant directement à partir du réseau. Pour cela , vous spécifiez un chemin de dossier de disposition (un partage réseau) accessible à partir de l’appareil distant. La propriété **Chemin du dossier de disposition** est le chemin relatif défini sur le PC exécutant Visual Studio, tandis que la propriété **Chemin d’inscription du package** désigne le même chemin, mais spécifié sur l’appareil distant.
 
-Pour inscrire correctement la disposition à partir du réseau, vous devez d’abord définir le **chemin du dossier de disposition** sur un dossier partagé sur le réseau. Pour ce faire, cliquez avec le bouton droit sur le dossier dans l’Explorateur de fichiers, sélectionnez **Partager avec &gt; Des personnes spécifiques**, puis choisissez les utilisateurs avec lesquels vous voulez partager le dossier. Quand vous tentez d’inscrire la disposition à partir du réseau, vous êtes invité à entrer vos informations d’identification pour vérifier que l’utilisateur avec lequel vous vous inscrivez a accès au partage.
+Pour inscrire correctement la disposition à partir du réseau, vous devez d’abord définir le **chemin du dossier de disposition** sur un dossier partagé sur le réseau. Pour ce faire, cliquez avec le bouton droit sur le dossier dans l’Explorateur de fichiers, sélectionnez **Partager avec&gt; Des personnes spécifiques**, puis choisissez les utilisateurs avec lesquels vous voulez partager le dossier. Quand vous tentez d’inscrire la disposition à partir du réseau, vous êtes invité à entrer vos informations d’identification pour vérifier que l’utilisateur avec lequel vous vous inscrivez a accès au partage.
 
-Pour obtenir de l’aide, voir les exemples suivants :
+Pour obtenir de l’aide, voir les exemples suivants:
 
-- Exemple 1 (dossier de disposition local, accessible en tant que partage réseau) :
+- Exemple1 (dossier de disposition local, accessible en tant que partage réseau):
   * **Chemin du dossier de disposition** = `D:\Layouts\App1`
   * **Chemin d’inscription du package** = `\\NETWORK-SHARE\Layouts\App1`
 
-- Exemple 2 (dossier de disposition sur le réseau) :
+- Exemple2 (dossier de disposition sur le réseau):
   * **Chemin du dossier de disposition** = `\\NETWORK-SHARE\Layouts\App1`
   * **Chemin d’inscription du package** = `\\NETWORK-SHARE\Layouts\App1`
 
-Quand vous inscrivez la disposition à partir du réseau pour la première fois, vos informations d’identification sont mises en cache sur l’appareil cible, vous n’avez donc pas besoin de vous connecter chaque fois. Pour supprimer les informations d’identification mises en cache, vous pouvez utiliser l’[outil WinAppDeployCmd.exe](https://msdn.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool) du SDK Windows 10 avec la commande **deletecreds**.
+Quand vous inscrivez la disposition à partir du réseau pour la première fois, vos informations d’identification sont mises en cache sur l’appareil cible, vous n’avez donc pas besoin de vous connecter chaque fois. Pour supprimer les informations d’identification mises en cache, vous pouvez utiliser l’[outil WinAppDeployCmd.exe](https://msdn.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool) du SDK Windows10 avec la commande **deletecreds**.
 
 Vous ne pouvez pas sélectionner **conserver tous les fichiers sur l’appareil** quand vous inscrivez la disposition à partir du réseau, car aucun fichier n’est copié physiquement sur l’appareil distant.
 
 > [!NOTE]
-> L’option **Inscrire la disposition à partir du réseau** est actuellement prise en charge sur Xbox exécutant la Mise à jour anniversaire Windows 10.
+> L’option **Inscrire la disposition à partir du réseau** est actuellement prise en charge sur Xbox exécutant la Mise à jour anniversaire Windows10.
 
-Sur l’appareil distant, la disposition est inscrite à l’emplacement par défaut suivant en fonction de la famille d’appareils :
+Sur l’appareil distant, la disposition est inscrite à l’emplacement par défaut suivant en fonction de la famille d’appareils:
   `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles`
 
 
 ## <a name="debugging-options"></a>Options de débogage
 
-Dans Windows 10, les performances de démarrage des applications UWP sont améliorées en les lançant de manière proactive, puis en les suspendant dans une technique dite de [prélancement](https://msdn.microsoft.com/library/windows/apps/Mt593297). De nombreuses applications fonctionnent dans ce mode sans configuration particulière, mais certaines doivent peut-être ajuster leur comportement. Pour permettre le débogage des problèmes dans ces chemins de code, vous pouvez commencer à déboguer l’application à partir de Visual Studio en mode de prélancement.
+Dans Windows10, les performances de démarrage des applications UWP sont améliorées en les lançant de manière proactive, puis en les suspendant dans une technique dite de [prélancement](https://msdn.microsoft.com/library/windows/apps/Mt593297). De nombreuses applications fonctionnent dans ce mode sans configuration particulière, mais certaines doivent peut-être ajuster leur comportement. Pour permettre le débogage des problèmes dans ces chemins de code, vous pouvez commencer à déboguer l’application à partir de Visual Studio en mode de prélancement.
 
 Le débogage est pris en charge à la fois à partir d’un projet Visual Studio (**Déboguer** -&gt;**Autres cibles de débogage** -&gt; **Déboguer le prélancement d’application Windows universelle**) et pour les applications déjà installées sur l’ordinateur (**Déboguer** -&gt; **Autres cibles de débogage** -&gt;**Déboguer le package d’application installé**, puis cochez la case **Activer l’application par prélancement**). Pour plus d’informations, voir [Déboguer le prélancement d’applications UWP](http://go.microsoft.com/fwlink/p/?LinkId=717245).
 
-Vous pouvez définir les options de déploiement suivantes dans la page de propriétés de **débogage** du projet de démarrage :
+Vous pouvez définir les options de déploiement suivantes dans la page de propriétés de **débogage** du projet de démarrage:
 
 - **Autoriser le bouclage réseau local**
 
   Pour des raisons de sécurité, une application UWP installée de manière standard n’est pas autorisée à effectuer des appels réseau à l’appareil sur lequel elle est installée. Par défaut, le déploiement de Visual Studio crée une exemption à cette règle pour l’application déployée. Cette exemption vous permet de tester les procédures de communication sur un seul et même ordinateur. Avant de soumettre votre application au Windows Store, vous devez la tester sans l’exemption.
 
-  Pour supprimer l’exemption de bouclage réseau de l’application :
+  Pour supprimer l’exemption de bouclage réseau de l’application:
 
   -   Dans la page de propriétés de **débogage** en C# et Visual Basic, décochez la case **Autoriser le bouclage réseau local**.
   -   Dans la page de propriétés de **débogage** en JavaScript et C++, définissez la valeur **Autoriser le bouclage réseau local** sur **Non**.
 
-- **Ne pas lancer, mais déboguer mon code au démarrage / Lancer l’application**
+- **Ne pas lancer, mais déboguer mon code au démarrage/ Lancer l’application**
 
-  Pour configurer le déploiement afin de démarrer automatiquement une session de débogage au lancement de l’application :
+  Pour configurer le déploiement afin de démarrer automatiquement une session de débogage au lancement de l’application:
 
   -   Dans la page de propriétés de **débogage** en C# et Visual Basic, cochez la case **Ne pas lancer, mais déboguer mon code au démarrage**.
   -   Dans la page de propriétés de **débogage** en JavaScript et C++, définissez la valeur **Lancer l’application** sur **Oui**.
@@ -193,11 +190,11 @@ Vous pouvez définir les options de déploiement suivantes dans la page de propr
 
 Les fichiers de symboles contiennent une variété de données très utiles lors du débogage du code, notamment des variables, des noms de fonctions et des adresses de points d’entrée, ce qui vous permet de mieux comprendre les exceptions et l’ordre d’exécution de la pile des appels. Les symboles sont disponibles par le biais du [serveur de symboles Microsoft](http://msdl.microsoft.com/download/symbols) pour la plupart des variantes de Windows. Pour des recherches hors connexion plus rapides, vous pouvez également les télécharger à partir de la page [Télécharger des packages de symboles Windows](http://aka.ms/winsymbols).
 
-Pour définir les options de symbole de Visual Studio, sélectionnez **Outils &gt; Options**, puis accédez à **Débogage &gt; Symboles** dans la boîte de dialogue.
+Pour définir les options de symbole de Visual Studio, sélectionnez **Outils&gt; Options**, puis accédez à **Débogage&gt; Symboles** dans la boîte de dialogue.
 
 ![Boîte de dialogue Options](images/gs-debug-uwp-apps-004.png)
 
-Pour charger les symboles dans une session de débogage avec [WinDbg](#windbg), définissez la variable **sympath** sur l’emplacement du package de symboles. Par exemple, l’exécution de la commande suivante permet de charger des symboles à partir du serveur de symboles Microsoft et de les mettre en cache dans le répertoire C:\Symbols :
+Pour charger les symboles dans une session de débogage avec [WinDbg](#windbg), définissez la variable **sympath** sur l’emplacement du package de symboles. Par exemple, l’exécution de la commande suivante permet de charger des symboles à partir du serveur de symboles Microsoft et de les mettre en cache dans le répertoire C:\Symbols:
 
 ```
 .sympath SRV*C:\Symbols*http://msdl.microsoft.com/download/symbols
@@ -218,15 +215,14 @@ plmdebug /enableDebug [PackageFullName] "\"C:\Program Files\Debugging Tools for 
 
 Contrairement à Visual Studio, WinDbg a pour principale fonctionnalité de fournir des commandes à la fenêtre de commandes. Les commandes fournies vous permettent d’afficher l’état d’exécution, d’examiner les vidages sur incident en mode utilisateur et d’effectuer le débogage dans une variété de modes.
 
-`!analyze -v` est l’une des commandes les plus utilisées de WinDbg. Elle permet de récupérer des informations détaillées sur l’exception actuelle, notamment :
+`!analyze -v` est l’une des commandes les plus utilisées de WinDbg. Elle permet de récupérer des informations détaillées sur l’exception actuelle, notamment:
 
-- FAULTING_IP : pointeur d’instruction au moment de l’erreur
-- EXCEPTION_RECORD : adresse, code et indicateurs de l’exception actuelle
-- STACK_TEXT : arborescence des appels de procédure avant l’exception
+- FAULTING_IP: pointeur d’instruction au moment de l’erreur
+- EXCEPTION_RECORD: adresse, code et indicateurs de l’exception actuelle
+- STACK_TEXT: arborescence des appels de procédure avant l’exception
 
 Pour obtenir la liste complète de toutes les commandes de WinDbg, consultez [Commandes du débogueur](https://msdn.microsoft.com/library/ff540507).
 
 ## <a name="related-topics"></a>Rubriques connexes
 - [Outils de test et de débogage pour la PLM](testing-debugging-plm.md)
 - [Débogage, tests et analyse des performances](index.md)
-

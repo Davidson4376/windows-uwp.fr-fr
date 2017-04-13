@@ -13,12 +13,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3a8a2ccde21ba1e2b16545ae26ebe5e8908ec6b8
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 825b6a8b2689143b5a68b9e7e1862ac2e6e92d28
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="control-templates"></a>Modèles de contrôles
 
@@ -106,7 +104,7 @@ Le tableau suivant comporte les valeurs [**IsChecked**](https://msdn.microsoft.c
 |                     |                    |                         |
 |---------------------|--------------------|-------------------------|
 | Valeur de **IsChecked** | État de **CheckBox** | Apparence de **CheckBox** |
-| **true**            | `Checked`          | Contient un « X ».        |
+| **true**            | `Checked`          | Contient un «X».        |
 | **false**           | `Unchecked`        | Vide.                  |
 | **null**            | `Indeterminate`    | Contient un cercle.      |
 
@@ -214,7 +212,6 @@ Pour certains des attributs des exemples XAML, vous avez peut-être remarqué de
 * [Exemple de contrôle d’édition de texte personnalisé](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
 
  
-
 
 
 

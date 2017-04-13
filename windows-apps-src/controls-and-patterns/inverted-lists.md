@@ -9,13 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: 52c1d63d-69c1-48d6-a234-6f39296e4bfd
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 0a33aaf71dbf23e991591f790f7327d812b060ef
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 332271894b5e11657bd2b0b1ca40f0bd7620889d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="inverted-lists"></a>Listes inversées
 
@@ -42,7 +40,7 @@ En règle générale, vous définirez la liste selon une configuration ascendant
 Pour créer une liste inversée, utilisez un affichage de liste avec un objet [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) en tant que panneau d’éléments. Sur l’objet ItemsStackPanel, définissez [**ItemsUpdatingScrollMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx) sur [**KeepLastItemInView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsupdatingscrollmode.aspx).
 
 > [!IMPORTANT]
-> La valeur d’énumération **KeepLastItemInView** est disponible à partir de Windows 10, version 1607. Vous ne pouvez pas utiliser cette valeur quand votre application s’exécute sur des versions antérieures de Windows 10.
+> La valeur d’énumération **KeepLastItemInView** est disponible à partir de Windows10, version1607. Vous ne pouvez pas utiliser cette valeur quand votre application s’exécute sur des versions antérieures de Windows10.
 
 Cet exemple montre comment aligner les éléments de l’affichage de liste sur la partie inférieure et indiquer que le dernier élément doit rester affiché en cas de modification des éléments.
  
@@ -63,4 +61,3 @@ Cet exemple montre comment aligner les éléments de l’affichage de liste sur 
 - Alignez les messages de l’expéditeur/du destinataire sur des côtés opposés afin de clarifier le flux de conversation pour les utilisateurs.
 - Animez les messages existants à l’écart afin d’afficher le dernier message si l’utilisateur est déjà positionné en fin de conversation en attente du message suivant.
 - S’il n’est pas positionné en fin de conversation, ne perturbez pas l’utilisateur en déplaçant des éléments.
-

@@ -4,23 +4,22 @@ Description: "Utilisez l’exemple de code d’arborescence pour créer une arbo
 title: Arborescence
 label: Tree view
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
 ms.openlocfilehash: 88e3e79b7ebdf06c200f3525095d7685f7e3e6dc
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="hierarchical-layout-with-treeview"></a>Disposition hiérarchique avec TreeView
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 <div class="microsoft-internal-note">
-Les lignes rouges à utiliser pour l’arborescence se trouvent dans le Design Depot : http://designdepotweb1/DesignDepot.FrontEnd/#/Dashboard/856
+Les lignes rouges à utiliser pour l’arborescence se trouvent dans le Design Depot: http://designdepotweb1/DesignDepot.FrontEnd/#/Dashboard/856
 </div>
 
 TreeView est un modèle de liste hiérarchique comportant des nœuds de développement et de réduction qui contiennent des éléments imbriqués. Ces derniers peuvent être des nœuds supplémentaires ou des éléments de liste standard. Vous pouvez utiliser un élément [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) pour générer une arborescence afin d’illustrer une structure de dossiers ou des relations imbriquées dans votre interface utilisateur.
 
 L’[exemple TreeView](http://go.microsoft.com/fwlink/?LinkId=785018) est une implémentation de référence générée à l’aide de **ListView**. Il ne s’agit pas d’un contrôle autonome. Le contrôle TreeView rencontré dans le volet Favoris du navigateur Microsoft Edge utilise cette implémentation de référence.
 
-L’exemple prend en charge les éléments suivants :
+L’exemple prend en charge les éléments suivants:
 - Imbrication de niveau N
 - Extension/Réduction des nœuds
 - Glissement - déplacement des nœuds dans le contrôle TreeView
@@ -30,7 +29,7 @@ L’exemple prend en charge les éléments suivants :
 -- | --
 Exemple de référence TreeView | TreeView dans le navigateur Edge
 
-## <a name="is-this-the-right-pattern"></a>Est-ce le modèle approprié ?
+## <a name="is-this-the-right-pattern"></a>Est-ce le modèle approprié?
 
 - Utilisez un contrôle TreeView lorsque les éléments comportent des éléments de liste imbriqués et s’il est important d’illustrer la relation hiérarchique des éléments par rapport à leurs homologues et leurs nœuds.
 
@@ -187,9 +186,3 @@ Pour fournir à l’utilisateur la possibilité d’ajouter/supprimer des élém
 - [Exemple TreeView](http://go.microsoft.com/fwlink/?LinkId=785018)
 - [**ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
 - [ListView et GridView](listview-and-gridview.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
-

@@ -8,22 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8aa20d434b4ea89d972712e48131e9a965476d1d
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: f0cf9d2928c8d6a0494092643daa19d9b437d3eb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-edit-and-save-bitmap-images"></a>Créer, modifier et enregistrer des images bitmap
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article explique comment charger et enregistrer des fichiers image à l’aide de [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) et de [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206), et comment utiliser l’objet [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) pour représenter des images bitmap.
 
-La classe **SoftwareBitmap** est une API polyvalente qui peut être créée à partir de plusieurs sources, y compris les fichiers image, les objets [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259), les surfaces Direct3D et le code. **SoftwareBitmap** permet de convertir facilement entre les différents formats de pixels et les modes alpha, et offre l’accès de bas niveau aux données de pixel. En outre, **SoftwareBitmap** est une interface commune utilisée par plusieurs fonctionnalités de Windows, notamment :
+La classe **SoftwareBitmap** est une API polyvalente qui peut être créée à partir de plusieurs sources, y compris les fichiers image, les objets [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259), les surfaces Direct3D et le code. **SoftwareBitmap** permet de convertir facilement entre les différents formats de pixels et les modes alpha, et offre l’accès de bas niveau aux données de pixel. En outre, **SoftwareBitmap** est une interface commune utilisée par plusieurs fonctionnalités de Windows, notamment:
 
 -   [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/dn278725) qui vous permet d’obtenir des images capturées par l’appareil photo en tant que **SoftwareBitmap**.
 
@@ -132,7 +129,6 @@ Vous pouvez transcoder un fichier image directement à partir de [**BitmapDecode
  
 
  
-
 
 
 

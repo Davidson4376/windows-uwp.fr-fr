@@ -1,6 +1,6 @@
 ---
 author: Xansky
-Description: "Les informations d’accessibilité élémentaires sont souvent classées en trois catégories : nom, rôle et valeur. Cette rubrique décrit le code qui aide votre application à exposer les informations de base nécessaires aux technologies d’assistance."
+Description: "Les informations d’accessibilité élémentaires sont souvent classées en trois catégories: nom, rôle et valeur. Cette rubrique décrit le code qui aide votre application à exposer les informations de base nécessaires aux technologies d’assistance."
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: "Présenter des informations d’accessibilité élémentaires"
 label: Expose basic accessibility information
@@ -10,14 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 123776d100b0308248e6d715d8253b69f700f1d8
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: fd873b6d1abd4187f1b8ff1d9040da3242c0ee65
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="expose-basic-accessibility-information"></a>Présenter des informations d’accessibilité élémentaires  
 
 
@@ -48,13 +45,13 @@ Les contrôles et autres éléments d’interface utilisateur qui font partie du
 Les contrôles n’ont pas tous une valeur. Ceux qui en ont une signalent ces informations à UI Automation par le biais des homologues et modèles qui sont pris en charge par ce contrôle. Par exemple, un élément de formulaire [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) a bien une valeur. Une technologie d’assistance peut être un client UI Automation et découvrir par conséquent qu’il existe une valeur et quelle est cette valeur. Dans ce cas particulier, **TextBox** prend en charge le modèle [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) via les définitions [**TextBoxAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242550).
 
 > [!NOTE]
-> Dans les cas où vous utilisez [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) ou d’autres techniques pour fournir le nom accessible de manière explicite, n’incluez pas le même texte que celui utilisé par les informations de type ou de rôle de contrôle dans le nom accessible. Par exemple, n’incluez pas des chaînes telles que « bouton » ou « liste » dans le nom. Les informations de type et de rôle proviennent d’une propriété UI Automation différente (**LocalizedControlType**) qui est fournie par la prise en charge du contrôle par défaut pour UI Automation. De nombreuses technologies d’assistance ajoutent l’élément **LocalizedControlType** au nom accessible. Le fait de dupliquer le rôle dans le nom accessible peut donc provoquer une répétition de mots inutile. Par exemple, si vous attribuez à un contrôle [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) le nom accessible « bouton » ou incluez « bouton » à la fin du nom, les lecteurs d’écran risquent de lire « bouton bouton ». Nous vous conseillons de tester cet aspect de votre accessibilité à l’aide du Narrateur.
+> Dans les cas où vous utilisez [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) ou d’autres techniques pour fournir le nom accessible de manière explicite, n’incluez pas le même texte que celui utilisé par les informations de type ou de rôle de contrôle dans le nom accessible. Par exemple, n’incluez pas des chaînes telles que «bouton» ou «liste» dans le nom. Les informations de type et de rôle proviennent d’une propriété UI Automation différente (**LocalizedControlType**) qui est fournie par la prise en charge du contrôle par défaut pour UI Automation. De nombreuses technologies d’assistance ajoutent l’élément **LocalizedControlType** au nom accessible. Le fait de dupliquer le rôle dans le nom accessible peut donc provoquer une répétition de mots inutile. Par exemple, si vous attribuez à un contrôle [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) le nom accessible « bouton » ou incluez « bouton » à la fin du nom, les lecteurs d’écran risquent de lire « bouton bouton ». Nous vous conseillons de tester cet aspect de votre accessibilité à l’aide du Narrateur.
 
 <span id="Influencing_the_UI_Automation_tree_views"/>
 <span id="influencing_the_ui_automation_tree_views"/>
 <span id="INFLUENCING_THE_UI_AUTOMATION_TREE_VIEWS"/>
 ## <a name="influencing-the-ui-automation-tree-views"></a>Influence sur les vues de l’arborescence UI Automation  
-La conception de l’infrastructure UI Automation repose sur des arborescences, où les clients UI Automation peuvent récupérer les relations entre les éléments d’une interface utilisateur à l’aide de trois affichages possibles : brut, de contrôle et de contenu. L’affichage de contrôle est souvent utilisé par les clients UI Automation, car il fournit une bonne représentation et une organisation efficace des éléments interactifs d’une interface utilisateur. Les outils de test vous permettent généralement de choisir l’arborescence à utiliser quand l’outil présente l’organisation des éléments.
+La conception de l’infrastructure UI Automation repose sur des arborescences, où les clients UIAutomation peuvent récupérer les relations entre les éléments d’une interface utilisateur à l’aide de trois affichages possibles: brut, de contrôle et de contenu. L’affichage de contrôle est souvent utilisé par les clients UI Automation, car il fournit une bonne représentation et une organisation efficace des éléments interactifs d’une interface utilisateur. Les outils de test vous permettent généralement de choisir l’arborescence à utiliser quand l’outil présente l’organisation des éléments.
 
 Par défaut, toute classe dérivée [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) et quelques autres éléments apparaissent dans l’affichage de contrôle lorsque l’infrastructure UI Automation représente l’interface utilisateur pour une application UWP. Cependant, il se peut que vous ne souhaitiez pas qu’un élément apparaisse dans l’affichage de contrôle en raison de la composition de l’interface utilisateur, où cet élément duplique des informations ou présente des informations qui ne sont pas importantes pour les scénarios d’accessibilité. Utilisez la propriété jointe [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/Dn251788) pour modifier la façon dont les éléments sont exposés dans les arborescences. Si vous placez un élément dans l’arborescence **Raw**, la plupart des technologies d’assistance n’indiquent pas cet élément dans le cadre de leurs affichages. Pour voir quelques exemples de ce fonctionnement dans des contrôles existants, ouvrez le fichier XAML de référence de la conception generic.xaml dans un éditeur de texte et recherchez **AutomationProperties.AccessibilityView** dans les modèles.
 
@@ -64,10 +61,10 @@ Par défaut, toute classe dérivée [**Control**](https://msdn.microsoft.com/lib
 Pour simplifier l’utilisation de chaînes qui existent déjà dans l’interface utilisateur visible pour les valeurs de noms accessibles, une grande partie des contrôles et autres éléments d’interface utilisateur permettent de déterminer automatiquement un nom accessible par défaut, en fonction du texte interne de l’élément ou de valeurs de chaînes de propriétés de contenu.
 
 * [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565), [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) et **RichTextBlock** effectuent chacun la promotion de la valeur de la propriété **Text** comme nom accessible par défaut.
-* Toute sous-classe [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) utilise une technique « ToString » itérative pour rechercher les chaînes dans sa valeur [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) et effectue la promotion de ces chaînes comme nom accessible par défaut.
+* Toute sous-classe [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) utilise une technique «ToString» itérative pour rechercher les chaînes dans sa valeur [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) et effectue la promotion de ces chaînes comme nom accessible par défaut.
 
 > [!NOTE]
-> Comme l’impose UI Automation, la longueur du nom accessible ne doit pas dépasser 2 048 caractères. Si une chaîne utilisée pour la détermination automatique du nom accessible dépasse cette limite, le nom accessible est tronqué à ce niveau.
+> Comme l’impose UIAutomation, la longueur du nom accessible ne doit pas dépasser 2048caractères. Si une chaîne utilisée pour la détermination automatique du nom accessible dépasse cette limite, le nom accessible est tronqué à ce niveau.
 
 <span id="images"/>
 <span id="IMAGES"/>
@@ -80,7 +77,7 @@ XAML
   AutomationProperties.Name="An image of a customer using the product."/>
 ```
 
-En guise d’alternative, vous pouvez inclure une légende qui s’affiche dans l’interface utilisateur visible et qui sert également d’informations d’accessibilité associées à l’étiquette pour le contenu de l’image. Voici un exemple :
+En guise d’alternative, vous pouvez inclure une légende qui s’affiche dans l’interface utilisateur visible et qui sert également d’informations d’accessibilité associées à l’étiquette pour le contenu de l’image. Voici un exemple:
 
 XAML
 ```xml
@@ -150,4 +147,3 @@ Notez que les propriétés jointes telles les propriétés [**AutomationProperti
 * [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770)
 * [Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Test de l’accessibilité](accessibility-testing.md)
-

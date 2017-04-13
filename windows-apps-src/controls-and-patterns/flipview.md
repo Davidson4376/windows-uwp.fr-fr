@@ -10,18 +10,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5266c1aaeeb2ecd009b8ee4dac6218fcb8b2f31b
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 6ea53de0e200b3e60b55adf3f69bc745bfa01e82
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="flip-view"></a>Vue symétrique
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-La vue symétrique permet de parcourir les images ou d’autres éléments d’une collection, par exemple les photos d’un album ou les éléments d’une page de détails sur le produit, élément après élément. Pour les appareils tactiles, un mouvement de balayage sur un élément permet de parcourir la collection. Pour une souris, les boutons de navigation apparaissent au pointage de la souris. Pour un clavier, les touches de direction permettent de parcourir la collection.
+La vue symétrique permet d’afficher les images ou d’autres éléments d’une collection, par exemple les photos d’un album ou les éléments d’une page de détails sur le produit, élément après élément. Pour les appareils tactiles, un mouvement de balayage sur un élément permet de parcourir la collection. Pour une souris, les boutons de navigation apparaissent au pointage de la souris. Pour un clavier, les touches de direction permettent de parcourir la collection.
 
 <div class="important-apis" >
 <b>API importantes</b><br/>
@@ -33,7 +31,7 @@ La vue symétrique permet de parcourir les images ou d’autres éléments d’u
 </ul>
 </div>
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
 La vue symétrique est appropriée pour l’examen des images des petites et moyennes collections (jusqu’à 25 éléments environ). Les exemples de telles collections comprennent les éléments d’une page de détails de produit ou les photos d’un album. Même si nous ne recommandons pas la vue symétrique pour la plupart des grandes collections, ce contrôle est souvent utilisé pour afficher les images individuelles d’un album photo.
 
@@ -200,13 +198,13 @@ Pour obtenir un exemple de code montrant comment ajouter un indicateur de contex
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
--   Les vues symétriques sont particulièrement adaptées aux collections contenant jusqu’à 25 éléments environ.
+-   Les vues symétriques sont particulièrement adaptées aux collections contenant jusqu’à 25éléments environ.
 -   Évitez d’utiliser un contrôle de vue symétrique pour les collections de grande taille, car le passage d’un élément à l’autre peut être fastidieux. Les albums photo, qui possèdent souvent des centaines, voire des milliers d’images, constituent une exception. Ils passent presque toujours en vue symétrique dès lors qu’une photo a été sélectionnée dans l’affichage Grille. Pour les autres collections de grande taille, pensez à [l’affichage Liste ou Grille](lists.md).
 -   Pour les indicateurs de contexte :
     -   L’ordre des points (ou n’importe quel marqueur visuel que vous choisissez) fonctionne mieux lorsqu’il est centré et placé sous une galerie avec un mouvement panoramique horizontal.
     -   Si vous souhaitez ajouter un indicateur de contexte dans une galerie avec un mouvement panoramique vertical, nous vous conseillons de le positionner au centre et à droite des images.
     -   Le point en surbrillance indique l’élément actuel. Généralement, le point en surbrillance est blanc et les autres points sont gris.
-    -   Le nombre de points peut varier, mais veillez à ne pas en placer trop car l’utilisateur pourrait avoir du mal à se situer. 10 points est généralement le nombre maximal à afficher.
+    -   Le nombre de points peut varier, mais veillez à ne pas en placer trop car l’utilisateur pourrait avoir du mal à se situer. 10points est généralement le nombre maximal à afficher.
 
 ## <a name="globalization-and-localization-checklist"></a>Liste de contrôle de globalisation et de localisation
 
@@ -225,4 +223,3 @@ Pour obtenir un exemple de code montrant comment ajouter un indicateur de contex
 
 - [Recommandations en matière de listes](lists.md)
 - [**Classe FlipView**](https://msdn.microsoft.com/library/windows/apps/br242678)
-

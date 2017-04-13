@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: windows10, uwp
 ms.openlocfilehash: f77bdb61fdb596720a857960094c959b344db9af
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="periodic-notification-overview"></a>Vue d’ensemble des notifications périodiques
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -59,7 +57,7 @@ Quand vous appelez l’une de ces méthodes, l’URI est immédiatement interrog
 
 ### <a name="the-recurrence-interval"></a>Intervalle de récurrence
 
-Vous devez définir l’intervalle de récurrence sous forme de paramètre des méthodes indiquées ci-dessus. Note que même si Windows effectue l’interrogation en respectant au mieux ce qui est indiqué, l’intervalle n’est pas précis. L’intervalle d’interrogation demandé peut être retardé de 15 minutes au maximum en fonction de Windows.
+Vous devez définir l’intervalle de récurrence sous forme de paramètre des méthodes indiquées ci-dessus. Note que même si Windows effectue l’interrogation en respectant au mieux ce qui est indiqué, l’intervalle n’est pas précis. L’intervalle d’interrogation demandé peut être retardé de 15minutes au maximum en fonction de Windows.
 
 ### <a name="the-start-time"></a>Heure de début
 

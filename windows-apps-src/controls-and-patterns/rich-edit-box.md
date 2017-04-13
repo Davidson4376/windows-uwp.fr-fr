@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ae0fab5d09779ccfcc1c9b15e29921c07f0f6c6d
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: b92febc902f293c4b6e5db8838a220a36becbf43
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="rich-edit-box"></a>Zone d’édition enrichie
 
@@ -33,9 +31,9 @@ Vous pouvez utiliser un contrôle RichEditBox pour entrer et modifier des docume
 </ul>
 </div>
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
-Utilisez un contrôle **RichEditBox** pour afficher et modifier les fichiers de texte. Vous n’utilisez pas un contrôle RichEditBox pour obtenir les données entrées dans votre application par l’utilisateur de la même façon que vous utilisez d’autres zones de saisie de texte standard. En fait, ce contrôle vous permet de travailler sur des fichiers de texte séparés de votre application. Le texte entré dans un contrôle RichEditBox est généralement enregistré dans un fichier .rtf.
+Utilisez un contrôle **RichEditBox** pour afficher et modifier les fichiers de texte. Vous n’utilisez pas un contrôle RichEditBox pour obtenir les données entrées dans votre application par l’utilisateur de la même façon que vous utilisez d’autres zones de saisie de texte standard. En fait, ce contrôle vous permet de travailler sur des fichiers de texte séparés de votre application. Le texte entré dans un contrôle RichEditBox est généralement enregistré dans un fichier.rtf.
 -   Si l’objectif principal de la zone de texte de plusieurs lignes est de créer des documents (par exemple les entrées d’un blog ou le contenu d’un message électronique) et si ces documents nécessitent du texte enrichi, utilisez une zone de texte enrichi.
 -   Si vous voulez permettre aux utilisateurs de mettre en forme leur texte, utilisez une zone de texte enrichi.
 -   Pour saisir du texte qui sera uniquement utilisé et non réaffiché aux utilisateurs, utilisez un contrôle de saisie de texte brut.
@@ -218,4 +216,3 @@ Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utilis
 - [Recommandations en matière de saisie de texte](text-controls.md)
 - [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Classe PasswordBox Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227519)
-

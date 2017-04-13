@@ -1,24 +1,21 @@
 ---
 author: drewbatgit
 ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
-description: "Cette section fournit des informations sur la création d’applications de plateforme Windows universelle (UWP) qui capturent, lisent ou modifient des photos, des vidéos ou des fichiers audio."
+description: "Cette section fournit des informations sur la création d’une application Windows universelle (UWP) qui capture, lit ou modifie des photos, des vidéos ou des fichiers audio."
 title: "Audio, vidéo et appareil photo"
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2d3b61b35307536bc54f19b5857acfe946a010ce
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 4264912469d1da56d980b50575926ecf105e1f97
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="audio-video-and-camera"></a>Audio, vidéo et appareil photo
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette section fournit des informations sur la création d’une application Windows universelle (UWP) qui capture, lit ou modifie des photos, des vidéos ou des fichiers audio.
  
@@ -28,8 +25,8 @@ Cette section fournit des informations sur la création d’une application Wind
 | [Lecture de contenu multimédia](media-playback.md) | Fournit des informations sur la création d’applications UWP qui utilisent la lecture audio et vidéo. |
 | [Détecter les visages dans des images ou des vidéos](detect-and-track-faces-in-an-image.md) | Explique comment utiliser [FaceTracker](https://msdn.microsoft.com/library/windows/apps/dn974150) pour suivre les visages au fil du temps dans une séquence d’images vidéo. |
 | [Compositions multimédias et modification](media-compositions-and-editing.md) | Explique comment utiliser les API de l’espace de noms [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) pour développer rapidement des applications qui permettent aux utilisateurs de créer des compositions multimédias à partir de fichiers sources audio et vidéo. |
-| [Effets vidéo personnalisés](custom-video-effects.md) | Explique comment créer un composant Windows Runtime implémentant l’interface **IBasicVideoEffect** afin de créer des effets personnalisés pour des flux vidéo. |
-| [Effets audio personnalisés](custom-audio-effects.md) | Explique comment créer un composant Windows Runtime implémentant l’interface **IBasicVideoEffect** afin de créer des effets personnalisés pour des flux audio. |
+| [Effets vidéo personnalisés](custom-video-effects.md) | Explique comment créer un composant WindowsRuntime implémentant l’interface **IBasicVideoEffect** afin de créer des effets personnalisés pour des flux vidéo. |
+| [Effets audio personnalisés](custom-audio-effects.md) | Explique comment créer un composant WindowsRuntime implémentant l’interface **IBasicVideoEffect** afin de créer des effets personnalisés pour des flux audio. |
 | [Créer, modifier et enregistrer des images bitmap](imaging.md) | Explique comment charger et enregistrer des fichiers image à l’aide de l’objet [SoftwareBitmap](https://msdn.microsoft.com/library/windows/apps/dn887358) pour représenter des images bitmap.  |
 | [Propriétés d’informations des appareils audio](audio-device-information-properties.md)  | Répertorie les propriétés d’informations liées aux appareils audio. |
 | [Transcoder des fichiers multimédias](transcode-media-files.md) | Explique comment utiliser les API [Windows.Media.Transcoding](https://msdn.microsoft.com/library/windows/apps/br207105) pour transcoder des fichiers vidéo d’un format à un autre. |
@@ -42,14 +39,13 @@ Cette section fournit des informations sur la création d’une application Wind
 
 
 ## <a name="see-also"></a>Voir aussi
-- [Développer des applications UWP](https://developer.microsoft.com/windows/develop)
+- [Développer des applicationsUWP](https://developer.microsoft.com/windows/develop)
 
  
 
  
 
  
-
 
 
 

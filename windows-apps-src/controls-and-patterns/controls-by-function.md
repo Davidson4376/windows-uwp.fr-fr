@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e665814f2d65affd89973879332ba0a2732e1509
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 7082b8f81f45d5035cbe2d9b4bf482d0c985bb8f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="controls-by-function"></a>Contrôles par fonction
 
@@ -298,7 +296,7 @@ Fenêtre contextuelle qui affiche des informations pour un élément.
 
 Référence : [ToolTip](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltip.aspx), [ToolTipService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltipservice.aspx) 
 
-Conception et procédure : Recommandations en matière d’info-bulles 
+Conception et procédure: Recommandations en matière d’info-bulles 
 
 ## <a name="images"></a>Images
 
@@ -338,7 +336,7 @@ Objets graphiques conservés dans différents modes pouvant être présentés co
 <Rectangle/>
 ```
 
-Référence : [Shapes](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx) 
+Référence: [Shapes](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx) 
 
 Procédure : [Dessiner des formes](../graphics/drawing-shapes.md) 
 
@@ -349,7 +347,7 @@ Exemple de code : [Exemple de dessin vectoriel XAML](http://go.microsoft.com/fwl
 ### <a name="border"></a>Bordure
 Contrôle de conteneur qui dessine une bordure, un arrière-plan ou les deux, autour d’un autre objet.
 
-![Bordure autour de 2 rectangles](images/controls/border.png) 
+![Bordure autour de 2rectangles](images/controls/border.png) 
 
 ```xaml
 <Border BorderBrush="Blue" BorderThickness="4" 
@@ -561,7 +559,7 @@ Exemple de code : [Exemple de contrôle Hub XAML](http://go.microsoft.com/fwlink
 ### <a name="pivot"></a>Pivot
 Modèle de navigation et conteneur plein écran qui permet aussi de passer rapidement d’un pivot à un autre (vue ou filtre), généralement dans le même jeu de données.
 
-La disposition du contrôle Pivot peut être définie en « onglets ».
+La disposition du contrôle Pivot peut être définie en «onglets».
 
 Référence : [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 
 
@@ -619,7 +617,7 @@ Contrôle de conteneur qui héberge du contenu web.
 
 Référence : [WebView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 
 
-Conception et procédure : Recommandations pour l’affichage web 
+Conception et procédure: Recommandations pour l’affichage web 
 
 Exemple de code : [Exemple de contrôle d’affichage web XAML](http://go.microsoft.com/fwlink/p/?linkid=238582)
 
@@ -751,7 +749,7 @@ Exemple de code : [Exemple de texte XAML](http://go.microsoft.com/fwlink/p/?link
 ### <a name="check-box"></a>Case à cocher
 Contrôle pouvant être activé ou désactivé.
 
-![Les 3 états d’une case à cocher](images/templates-checkbox-states-default.png)
+![Les 3états d’une case à cocher](images/templates-checkbox-states-default.png)
 
 ```xaml
 <CheckBox x:Name="checkbox1" Content="CheckBox" 
@@ -855,4 +853,3 @@ Bouton pouvant basculer entre deux états.
 Référence : [ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.toggleswitch.aspx) 
 
 Conception et procédure : [Guide de contrôle Bascule](toggles.md) 
-

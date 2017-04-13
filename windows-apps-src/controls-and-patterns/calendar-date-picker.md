@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "Le sélecteur de dates de calendrier est une commande déroulante optimisée pour la sélection d’une seule date dans un affichage calendrier, dans lequel les informations contextuelles comme le jour de la semaine ou l’exhaustivité du calendrier sont importantes."
+Description: "Le sélecteur de dates de calendrier est un contrôle déroulant optimisé pour la sélection d’une seule date dans un affichage calendrier, dans lequel les informations contextuelles comme le jour de la semaine ou l’exhaustivité du calendrier sont importantes."
 title: "Sélecteur de dates du calendrier"
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
@@ -10,18 +10,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 801e9192f3da2f72803dcb95168b1f8dfded6695
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 6d8e45d39c3781eefa9081971c51c001e95799df
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="calendar-date-picker"></a>Sélecteur de dates du calendrier
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Le sélecteur de dates de calendrier est une commande déroulante optimisée pour la sélection d’une seule date dans un affichage calendrier, dans lequel les informations contextuelles comme le jour de la semaine ou l’exhaustivité du calendrier sont importantes. Vous pouvez modifier le calendrier pour fournir du contexte supplémentaire ou pour limiter les dates disponibles.
+Le sélecteur de dates de calendrier est un contrôle déroulant optimisé pour la sélection d’une seule date dans un affichage calendrier, dans lequel les informations contextuelles comme le jour de la semaine ou l’exhaustivité du calendrier sont importantes. Vous pouvez modifier le calendrier pour fournir du contexte supplémentaire ou pour limiter les dates disponibles.
 
 <div class="important-apis" >
 <b>API importantes</b><br/>
@@ -32,7 +30,7 @@ Le sélecteur de dates de calendrier est une commande déroulante optimisée pou
 </ul>
 </div>
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 Utilisez un **sélecteur de dates du calendrier** pour permettre à un utilisateur de choisir une date unique à partir d’un affichage Calendrier contextuel. Utilisez-le pour des éléments tels que le choix d’une date de rendez-vous ou de départ.
 
 Pour permettre à un utilisateur de choisir une date connue, par exemple, une date de naissance, où le contexte du calendrier n’est pas important, pensez à utiliser un [**sélecteur de dates**](date-picker.md).
@@ -41,7 +39,7 @@ Pour plus d’informations sur le choix du contrôle approprié, voir l’articl
 
 ## <a name="examples"></a>Exemples
 
-Le point d’entrée affiche le texte de l’espace réservé si aucune date n’a été définie. Sinon, il affiche la date choisie. Lorsque l’utilisateur sélectionne le point d’entrée, un affichage de calendrier est développé pour que l’utilisateur sélectionne une date. Cet affichage de calendrier se superpose aux autres éléments de l’interface utilisateur ; il ne les ferme pas.
+Le point d’entrée affiche le texte de l’espace réservé si aucune date n’a été définie. Sinon, il affiche la date choisie. Lorsque l’utilisateur sélectionne le point d’entrée, un affichage de calendrier est développé pour que l’utilisateur sélectionne une date. Cet affichage de calendrier se superpose aux autres éléments de l’interface utilisateur; il ne les ferme pas.
 
 ![Exemple de sélecteur de dates du calendrier](images/calendar-date-picker-2-views.png)
 
@@ -56,7 +54,7 @@ CalendarDatePicker arrivalCalendarDatePicker = new CalendarDatePicker();
 arrivalCalendarDatePicker.Header = "Arrival date";
 ```
 
-Le sélecteur de dates du calendrier qui en résulte se présente comme suit :
+Le sélecteur de dates du calendrier qui en résulte se présente comme suit:
 
 ![Exemple de sélecteur de dates du calendrier](images/calendar-date-picker-closed.png)
 
@@ -87,7 +85,7 @@ Pour obtenir des informations importantes sur les valeurs de date, consultez [Va
 
 Vous pouvez ajouter un contrôle [**Header**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.header.aspx) (ou étiquette) et un contrôle [**PlaceholderText**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.placeholdertext.aspx) (ou filigrane) au sélecteur de date de calendrier pour indiquer à l’utilisateur son rôle. Si vous souhaitez personnaliser l’aspect de l’en-tête, vous pouvez définir la propriété [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.headertemplate.aspx) au lieu de la propriété Header.
 
-Le texte d’espace réservé par défaut est « sélectionner une date ». Vous pouvez le supprimer en définissant la propriété PlaceholderText sur une chaîne vide, ou vous pouvez fournir un texte personnalisé comme illustré ici.
+Le texte d’espace réservé par défaut est «sélectionner une date». Vous pouvez le supprimer en définissant la propriété PlaceholderText sur une chaîne vide, ou vous pouvez fournir un texte personnalisé comme illustré ici.
 
 ```xaml
 <CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date" 
@@ -104,4 +102,3 @@ Le texte d’espace réservé par défaut est « sélectionner une date ». Vo
 - [Affichage Calendrier](calendar-view.md)
 - [Sélecteur de dates](date-picker.md)
 - [Sélecteur d’heure](time-picker.md)
-

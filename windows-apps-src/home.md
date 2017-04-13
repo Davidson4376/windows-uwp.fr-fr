@@ -3,14 +3,11 @@ Description: "Voici les informations dont vous avez besoin pour créer une appli
 title: "Guides de procédure pour les applications Windows10 - Développement d’applicationsWindows"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 redirect_url: https://developer.microsoft.com/windows/develop
-translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
 ms.openlocfilehash: 5b07b46627ca19f2a3cc02e72212a9870d778c7c
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
-# Guides de procédure pour les applications Windows 10
+# <a name="how-to-guides-for-windows-10-apps"></a>Guides de procédure pour les applications Windows 10
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -45,9 +42,3 @@ Si vous souhaitez une présentation de la plateforme Windows universelle (UWP) e
 | [Threads et programmation asynchrone](threading-async/index.md) | Utilisez la programmation asynchrone pour aider votre application à rester réactive, en lui permettant de continuer à s’exécuter et à réagir à l’interface utilisateur tandis qu’elle achève une autre tâche susceptible de prendre un temps prolongé. |
 | [Composants Windows Runtime](winrt-components/index.md) | Apprenez-en davantage sur ces objets autonomes que vous pouvez initialiser et utiliser dans n’importe quel langage, incluant C#, Visual Basic, JavaScript et C++. Par exemple, vous pourriez créer un composant Windows Runtime en C++, qui utilise une bibliothèque tierce pour effectuer une opération lourde en calcul, ou simplement réutiliser du code Visual Basic ou C# dans votre application Windows universelle. 
 | [Plateforme XAML](xaml-platform/index.md) | Découvrez les concepts de base du langage de programmation XAML. Ou bien, si vous connaissez le code XAML, allez de l’avant et découvrez comment implémenter les fonctionnalités Windows Runtime en XAML à l’aide de Visual Studio pour créer une application Windows universelle réussie. |
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

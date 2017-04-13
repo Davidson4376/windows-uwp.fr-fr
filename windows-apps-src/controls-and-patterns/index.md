@@ -1,5 +1,5 @@
 ---
-description: "Bénéficiez de recommandations en matière de conception ainsi que d’instructions de codage pour l’ajout de contrôles et de modèles à votre application UWP. Vous trouverez plus de 45 contrôles puissants utilisables avec votre application."
+description: "Bénéficiez de recommandations en matière de conception ainsi que d’instructions de codage pour l’ajout de contrôles et de modèles à votre application UWP. Vous trouverez plus de 45contrôles puissants utilisables avec votre application."
 title: "Contrôles et modèles UWP - Développement d’applications Windows"
 author: mijacobs
 keywords: "contrôles uwp, interface utilisateur, contrôles d’application"
@@ -11,16 +11,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
-translationtype: Human Translation
-ms.sourcegitcommit: 412a3f70861c6cd1bbf003fe0bd78c8547a5f3f8
 ms.openlocfilehash: 7b525267c8f4d24af95f6d41d46d33a3adf10f8f
-ms.lasthandoff: 02/08/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>Contrôles et modèles pour applications UWP
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Dans le développement d’applications UWP, un <i>contrôle</i> est un élément d’interface utilisateur qui affiche du contenu ou permet une interaction. Les contrôles constituent les blocs de construction de l’interface utilisateur. Nous vous proposons plus de 45 contrôles, des simples boutons aux contrôles de données puissants, tels que l’affichage Grille. Un <i>modèle</i> est en quelque sorte une recette permettant d’associer plusieurs contrôles pour créer un élément nouveau.
+Dans le développement d’applications UWP, un <i>contrôle</i> est un élément d’interface utilisateur qui affiche du contenu ou permet une interaction. Les contrôles constituent les blocs de construction de l’interface utilisateur. Nous vous proposons plus de 45contrôles, des simples boutons aux contrôles de données puissants, tels que l’affichage Grille. Un <i>modèle</i> est en quelque sorte une recette permettant d’associer plusieurs contrôles pour créer un élément nouveau.
 
 Les articles de cette section donnent des recommandations en matière de conception et des instructions de codage pour l’ajout de contrôles et de modèles à votre application UWP. 
 
@@ -32,7 +30,7 @@ Instructions générales et exemples de code d’ajout et de stylisation de cont
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
    <p><b>[Ajouter des contrôles et gérer des événements](controls-and-events-intro.md)</b> <br/>
-L’ajout de contrôles à votre application se fait en trois étapes : l’ajout de contrôle à l’interface utilisateur de votre application, la définition de propriétés sur le contrôle et l’ajout de code aux gestionnaires d’événements du contrôle pour que ce dernier soit opérationnel.</li>
+L’ajout de contrôles à votre application se fait en trois étapes: l’ajout de contrôle à l’interface utilisateur de votre application, la définition de propriétés sur le contrôle et l’ajout de code aux gestionnaires d’événements du contrôle pour que ce dernier soit opérationnel.</li>
 </ul> 
 </p>
   </div>
@@ -178,8 +176,8 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 
 ## <a name="additional-controls-options"></a>Options des contrôles supplémentaires
 
-Les contrôles supplémentaires pour le développement UWP sont disponibles auprès de sociétés comme [Telerik](http://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/products/uwp), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](http://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) et [ActiPro](http://www.actiprosoftware.com/products/controls/universal). Ces contrôles fournissent une prise en charge supplémentaire pour les développeurs de l’entreprise et .NET, en optimisant les commandes système standard à l’aide de contrôles et de services personnalisés.  
+Les contrôles supplémentaires pour le développementUWP sont disponibles auprès de sociétés comme [Telerik](http://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/products/uwp), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](http://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) et [ActiPro](http://www.actiprosoftware.com/products/controls/universal). Ces contrôles fournissent une prise en charge supplémentaire pour les développeurs de l’entreprise et .NET, en optimisant les commandes système standard à l’aide de contrôles et de services personnalisés.  
 
-Si vous souhaitez en savoir plus sur ces contrôles, consultez l’exemple de [base de données de commande clients](https://github.com/Microsoft/Windows-appsample-customers-orders-database) sur GitHub. Cet exemple utilise le contrôle de grille de données et la validation de saisie des données de Telerik, qui font partie intégrante de leur interface utilisateur de la suite UWP. L’interface utilisateur de la suite UWP est une collection de plus de 20 commandes, disponible sous la forme de projet Open Source via .NET Foundation.
+Si vous souhaitez en savoir plus sur ces contrôles, consultez l’exemple de [base de données de commande clients](https://github.com/Microsoft/Windows-appsample-customers-orders-database) sur GitHub. Cet exemple utilise le contrôle de grille de données et la validation de saisie des données de Telerik, qui font partie intégrante de leur interface utilisateur de la suiteUWP. L’interface utilisateur de la suiteUWP est une collection de plus de 20commandes, disponible sous la forme de projetOpenSource via .NET Foundation.
 
 ![Image de base de données de commandes clients](images/customerOrdersDataGrid.png)

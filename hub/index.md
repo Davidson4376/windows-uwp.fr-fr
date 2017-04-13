@@ -1,6 +1,6 @@
 ---
 layout: HubPage
-hide_bc: true
+hide_bc: True
 title: Documentation Windows
 description: "Trouvez les documents dédiés aux développeurs, au matériel et aux professionnels de l’informatique qui vous aideront à créer et gérer votre solution Windows."
 ms.assetid: 56bbc230-b855-426e-b849-4f65a747b944
@@ -8,11 +8,9 @@ ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: hub-page
 ms.prod: windows
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: cb15f417c4254776af4548a5b962392431c9a75b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: b04722c101d6647eca8d97ebb33ded7fb3ba8c3a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 <div id="main" class="v2">
   <div class="container">
@@ -28,7 +26,7 @@ ms.lasthandoff: 02/08/2017
                                   </div>
                               </div>
                               <div class="cardText">
-                                  <h3>Essayez de Windows 10 sur des machines virtuelles</h3>
+                                  <h3>Essayez de Windows10 sur des machines virtuelles</h3>
                               </div>
                           </div>
                       </div>
@@ -80,7 +78,7 @@ ms.lasthandoff: 02/08/2017
             <a data-default="true" href="#developer">Développeur</a>
             <ul id="developer">
                 <li>
-                    <a href="#developer-all">tout</a>
+                    <a href="#developer-all">tous</a>
                     <ul id="developer-all" class="cardsF">
                         <li>
                             <div class="cardSize">
@@ -103,11 +101,14 @@ ms.lasthandoff: 02/08/2017
                                                 <a href="https://developer.microsoft.com/windows/develop">Développement</a>
                                             </p>
                                             <p>
-                                                <a href="https://msdn.microsoft.com/windows/uwp/publish/index">Publication</a>
+                                                <a href="https://msdn.microsoft.com/windows/uwp/publish/index">Publier</a>
                                             </p>
                                             <p>
-                                                <a href="https://msdn.microsoft.com/windows/uwp/monetize/index">Monétisation</a>
+                                                <a href="https://msdn.microsoft.com/windows/uwp/monetize/index">Monétiser</a>
                                             </p>
+                                            <p>
+                                                <a href="https://docs.microsoft.com/en-us/uwp/api/">Informations de référence sur les API</a>
+                                            <p>
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +138,7 @@ ms.lasthandoff: 02/08/2017
                                                 <a href="https://developer.microsoft.com/windows/desktop/app-compatibility">Compatibilité</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/test-deploy">Test et déploiement</a>
+                                                <a href="https://developer.microsoft.com/windows/desktop/test-deploy">Tester et déployer</a>
                                             </p>
                                         </div>
                                     </div>
@@ -165,7 +166,7 @@ ms.lasthandoff: 02/08/2017
                                                 <a href="https://developer.microsoft.com/windows/games/develop">Développement</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/games/publish">Publication</a>
+                                                <a href="https://developer.microsoft.com/windows/games/publish">Publier</a>
                                             </p>
                                         </div>
                                     </div>
@@ -196,7 +197,7 @@ ms.lasthandoff: 02/08/2017
                                                 <a href="https://developer.microsoft.com/windows/iot/Community">Communauté</a>
                                             </p>
                                             <p>
-                                                <a href="https://www.windowsforiotdevices.com/">Commercialisation</a>
+                                                <a href="https://www.windowsforiotdevices.com/">Commercialiser</a>
                                             </p>
                                         </div>
                                     </div>
@@ -213,18 +214,18 @@ ms.lasthandoff: 02/08/2017
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Hologrammes</h3>
+                                            <h3>Réalité mixte</h3>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/getting_started">Prise en main</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/academy">Academy</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/academy">Academy</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/development">Développement</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/documentation">Documentation</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/design">Conception</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/community">Communauté</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/community">Communauté et Support</a>
                                             </p>
                                         </div>
                                     </div>
@@ -243,7 +244,7 @@ ms.lasthandoff: 02/08/2017
                                         <div class="cardText">
                                             <h3>Edge</h3>
                                             <p>
-                                                <a href="https://developer.microsoft.com/microsoft-edge/platform/documentation/">Documents Microsoft Edge</a>
+                                                <a href="https://developer.microsoft.com/microsoft-edge/platform/documentation/">Documents MicrosoftEdge</a>
                                             </p>
                                             <p>
                                                 <a href="https://developer.microsoft.com/microsoft-edge/tools/">Outils</a>
@@ -268,7 +269,7 @@ ms.lasthandoff: 02/08/2017
                     <ul id="hardware-dev1" class="cardsC">
                         <li>
                             <div class="container intro">
-                                <p>Créez des appareils innovants et originaux avec Windows 10.</p>
+                                <p>Créez des appareils innovants et originaux avec Windows10.</p>
                             </div>
                         </li>
                         <li>
@@ -321,7 +322,7 @@ ms.lasthandoff: 02/08/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>Personnalisation</h3>
-                                                <p>Appliquez les paramètres, langues et pilotes aux images Windows 10.</p>
+                                                <p>Appliquez les paramètres, langues et pilotes aux images Windows10.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -359,7 +360,7 @@ ms.lasthandoff: 02/08/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>Fabrication</h3>
-                                                <p>Créez et déployez Windows 10.</p>
+                                                <p>Créez et déployez Windows10.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -411,8 +412,8 @@ ms.lasthandoff: 02/08/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Windows Server 2016</h3>
-                                                <p>Apprenez à programmer, déployer, sécuriser et mettre à l’échelle Windows Server 2016.</p>
+                                                <h3>WindowsServer2016</h3>
+                                                <p>Apprenez à programmer, déployer, sécuriser et mettre à l’échelle Windows Server2016.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -430,8 +431,8 @@ ms.lasthandoff: 02/08/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Windows 10 et Windows 10 Mobile</h3>
-                                                <p>Apprenez à programmer, déployer, gérer et sécuriser Windows 10 et Windows 10 Mobile.</p>
+                                                <h3>Windows10 et Windows10Mobile</h3>
+                                                <p>Apprenez à programmer, déployer, gérer et sécuriser Windows10 et Windows10Mobile.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -449,8 +450,8 @@ ms.lasthandoff: 02/08/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Windows 10 Éducation</h3>
-                                                <p>Apprenez à utiliser Windows 10 Éducation dans les établissements scolaires.</p>
+                                                <h3>Windows10 Éducation</h3>
+                                                <p>Apprenez à utiliser Windows10 Éducation dans les établissements scolaires.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -469,7 +470,7 @@ ms.lasthandoff: 02/08/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>HoloLens</h3>
-                                                <p>Apprenez comment configurer et gérer HoloLens Commercial Suite.</p>
+                                                <p>Apprenez comment configurer et gérer HoloLensCommercialSuite.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -506,7 +507,7 @@ ms.lasthandoff: 02/08/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Surface Hub</h3>
+                                                <h3>SurfaceHub</h3>
                                                 <p>Apprenez à configurer et à gérer Surface Hub.</p>
                                             </div>
                                         </div>
@@ -515,7 +516,7 @@ ms.lasthandoff: 02/08/2017
                             </a>
                         </li> 
                         <li>
-                            <a href="https://technet.microsoft.com/en-us/library/mt267544.aspx">
+                            <a href="https://technet.microsoft.com/library/mt267544.aspx">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -526,7 +527,7 @@ ms.lasthandoff: 02/08/2017
                                             </div>
                                             <div class="cardText">
                                                 <h3>Navigateurs</h3>
-                                                <p>Apprenez à déployer et à gérer Microsoft Edge et Internet Explorer 11.</p>
+                                                <p>Apprenez à déployer et à gérer MicrosoftEdge et InternetExplorer11.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -539,4 +540,3 @@ ms.lasthandoff: 02/08/2017
         </li>
     </ul>
 </div>
-

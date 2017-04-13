@@ -1,24 +1,21 @@
 ---
 author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
-description: "Cet article vous indique comment appliquer des effets aux flux de prévisualisation et d’enregistrement vidéo de l’appareil photo. Il explique également comment utiliser l’effet de stabilisation vidéo."
+description: "Cette rubrique vous montre comment appliquer des effets aux flux de prévisualisation et d’enregistrement vidéo de l’appareil photo. Elle explique également comment utiliser l’effet de stabilisation vidéo."
 title: "Effets de capture vidéo"
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 60b3d3874ea90b7d626ff1a78c104348ff80dc09
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 7e8d65576347308eea7dd2f445961ba366557fa3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="effects-for-video-capture"></a>Effets de capture vidéo
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique vous montre comment appliquer des effets aux flux de prévisualisation et d’enregistrement vidéo de l’appareil photo. Elle explique également comment utiliser l’effet de stabilisation vidéo.
 
@@ -37,7 +34,7 @@ L’exemple suivant ajoute un effet à la fois au flux de prévisualisation et a
 
 Notez que **AddVideoEffectAsync** retourne un objet qui implémente [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.IMediaExtension) représentant l’effet vidéo ajouté. Certains effets vous permettent de modifier les paramètres d’effet en passant un [**PropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet) dans la méthode [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986).
 
-À partir de Windows 10, version 1607, vous pouvez également utiliser l’objet retourné par **AddVideoEffectAsync** pour supprimer l’effet du pipeline vidéo en le passant à [**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957). **RemoveEffectAsync** détermine automatiquement si le paramètre d’objet de l’effet a été ajouté au flux de prévisualisation ou d’enregistrement, ce qui signifie que vous n’avez pas besoin de spécifier le type de flux lors de l’appel.
+À partir de Windows10, version1607, vous pouvez également utiliser l’objet retourné par **AddVideoEffectAsync** pour supprimer l’effet du pipeline vidéo en le passant à [**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957). **RemoveEffectAsync** détermine automatiquement si le paramètre d’objet de l’effet a été ajouté au flux de prévisualisation ou d’enregistrement, ce qui signifie que vous n’avez pas besoin de spécifier le type de flux lors de l’appel.
 
 [!code-cs[RemoveOneEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetRemoveOneEffect)]
 
@@ -110,7 +107,6 @@ Pour nettoyer l’effet de stabilisation vidéo, appelez [**ClearEffectsAsync**]
  
 
  
-
 
 
 

@@ -1,6 +1,6 @@
 ---
 author: Xansky
-Description: "Cette rubrique décrit les meilleures pratiques d’accessibilité du texte, en s’assurant que les couleurs et les arrière-plans respectent le coefficient de contraste."
+Description: "Ici sont décrites les meilleures pratiques d’accessibilité du texte, en s’assurant que les couleurs et les arrière-plans respectent le coefficient de contraste."
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: Exigences de texte accessible
 label: Accessible text requirements
@@ -10,20 +10,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c1decefe507ccebbaee1055426fbde06eb9670e7
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 4f3bb71d1aef8917e14514521393ef1ba7c782d1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessible-text-requirements"></a>Exigences de texte accessible  
 
 
 
 
-Cette rubrique décrit les meilleures pratiques d’accessibilité du texte, en s’assurant que les couleurs et les arrière-plans respectent le coefficient de contraste. Elle traite également des rôles Microsoft UI Automation que peuvent avoir les éléments de texte dans une application UWP et des meilleures pratiques relatives au texte des graphiques.
+Ici sont décrites les meilleures pratiques d’accessibilité du texte, en s’assurant que les couleurs et les arrière-plans respectent le coefficient de contraste. Elle traite également des rôles MicrosoftUIAutomation que peuvent avoir les éléments de texte dans une application UWP et des meilleures pratiques relatives au texte des graphiques.
 
 <span id="contrast_rations"/>
 <span id="CONTRAST_RATIONS"/>
@@ -39,7 +36,7 @@ Le texte décoratif et qui ne véhicule aucune information est exclu. Par exempl
 Utilisez des outils de contraste des couleurs pour vérifier que le coefficient de contraste du texte visible est acceptable. Pour connaître les outils permettant de tester les coefficients de contraste, voir la spécification [Techniques for WCAG 2.0 G18 (section Resources)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources).
 
 > [!NOTE]
-> Certains outils répertoriés par la spécification Techniques for WCAG 2.0 G18 ne peuvent pas être utilisés de manière interactive avec une application UWP. Vous pouvez être amené à saisir manuellement des valeurs de couleur de premier plan et d’arrière-plan dans l’outil, ou à effectuer des captures d’écran de l’interface utilisateur de l’application, puis à exécuter l’outil de coefficient de contraste sur l’image de capture d’écran.
+> Certains outils répertoriés par la spécification Techniques for WCAG 2.0 G18 ne peuvent pas être utilisés de manière interactive avec une application UWP. Vous pouvez être amené à saisir manuellement des valeurs de couleur de premierplan et d’arrière-plan dans l’outil, ou à effectuer des captures d’écran de l’interface utilisateur de l’application, puis à exécuter l’outil de coefficient de contraste sur l’image de capture d’écran.
 
 <span id="Text_element_roles"/>
 <span id="text_element_roles"/>
@@ -60,9 +57,9 @@ Dans les modèles de texte pour XAML, deux éléments sont principalement utilis
 <span id="auto-suggest_accessibility"/>
 <span id="AUTO-SUGGEST_ACCESSIBILITY"/>
 ## <a name="auto-suggest-accessibility"></a>Accessibilité de suggestion automatique  
-Lorsqu’un utilisateur effectue une saisie dans un champ d’entrée et qu’une liste de suggestions potentielles apparaît, il s’agit d’une suggestion automatique. Ce scénario est courant dans le champ **À :** d’un message, dans la zone de recherche Cortana de Windows, dans le champ d’entrée d’URL de Microsoft Edge, dans le champ d’entrée de situation géographique de l’application Météo, etc. Si vous utilisez la fonction XAML [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox) ou les commandes intrinsèques HTML, cette expérience est d’ores et déjà raccordée par défaut. Pour la rendre accessible, le champ d’entrée et la liste doivent être associés. Cette procédure est expliquée dans la section [Implémentation de la suggestion automatique](#implementing_auto-suggest).
+Lorsqu’un utilisateur effectue une saisie dans un champ d’entrée et qu’une liste de suggestions potentielles apparaît, il s’agit d’une suggestion automatique. Ce scénario est courant dans le champ **À:** d’un message, dans la zone de recherche Cortana de Windows, dans le champ d’entrée d’URL de MicrosoftEdge, dans le champ d’entrée de situation géographique de l’application Météo, etc. Si vous utilisez la fonction XAML [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox) ou les commandes intrinsèques HTML, cette expérience est d’ores et déjà raccordée par défaut. Pour la rendre accessible, le champ d’entrée et la liste doivent être associés. Cette procédure est expliquée dans la section [Implémentation de la suggestion automatique](#implementing_auto-suggest).
 
-La Narrateur a été mis à jour pour rendre cette expérience accessible avec un mode spécial de suggestions. À un niveau élevé, quand le champ d’entrée et la liste sont associés de manière appropriée, l’utilisateur final :
+La Narrateur a été mis à jour pour rendre cette expérience accessible avec un mode spécial de suggestions. À un niveau élevé, quand le champ d’entrée et la liste sont associés de manière appropriée, l’utilisateur final:
 
 * Aura connaissance de la liste et du moment de clôture de cette dernière
 * Aura connaissance du nombre de suggestions disponibles
@@ -79,7 +76,7 @@ _Exemple de liste de suggestions_
 ### <a name="implementing-auto-suggest"></a>Implémentation de la suggestion automatique  
 Pour rendre cette expérience accessible, le champ d’entrée et la liste doivent être associés dans l’arborescence UIA. Cette association est effectuée avec la propriété [UIA_ControllerForPropertyId](https://msdn.microsoft.com/windows/desktop/ee684017) des applications de bureau ou la propriété [ControlledPeers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) des applications UWP.
 
-À un niveau élevé, il existe 2 types d’expériences de suggestion automatique.
+À un niveau élevé, il existe 2types d’expériences de suggestion automatique.
 
 **Sélection par défaut**  
 Si une sélection par défaut est effectuée dans la liste, le Narrateur recherche un événement [**UIA_SelectionItem_ElementSelectedEventId**](https://msdn.microsoft.com/library/windows/desktop/ee671223) dans l’application de bureau, ou l’événement [**AutomationEvents.SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) à déclencher dans une application UWP. Chaque fois que la sélection est modifiée, quand un utilisateur saisit une autre lettre et que les suggestions ont été mises à jour et quand un utilisateur parcourt la liste, l’événement **ElementSelected** doit être déclenché.
@@ -97,7 +94,7 @@ _Exemple sans sélection par défaut_
 Si vous utilisez la fonction XAML par défaut [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox), l’ensemble des connexions sont déjà effectuées. Si vous développez votre propre expérience de suggestion automatique à l’aide d’un élément [**TextBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox) et d’une liste, vous devrez définir la liste en tant que [**AutomationProperties.ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) sur l’élément **TextBox**. Vous devez déclencher l’événement **AutomationPropertyChanged** de la propriété [**ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) chaque fois que vous ajoutez ou supprimez cette propriété, mais également déclencher vos propres événements [**SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) ou [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) en fonction de votre type de scénario, tel qu’expliqué plus haut dans cet article.
 
 ### <a name="html-implementation"></a>Implémentation HTML  
-Si vous utilisez les contrôles intrinsèques du format HTML, l’implémentation UIA a d’ores et déjà été mappée. Vous trouverez ci-dessous un exemple d’une implémentation déjà connectée :
+Si vous utilisez les contrôles intrinsèques du format HTML, l’implémentation UIA a d’ores et déjà été mappée. Vous trouverez ci-dessous un exemple d’une implémentation déjà connectée:
 
 ``` HTML
 <label>Sites <input id="input1" type="text" list="datalist1" /></label>
@@ -107,7 +104,7 @@ Si vous utilisez les contrôles intrinsèques du format HTML, l’implémentatio
 </datalist>
 ```
 
- Si vous créez vos propres contrôles, vous devez définir vos propres contrôles ARIA, décrits dans les normes W3C.
+ Si vous créez vos propres contrôles, vous devez définir vos propres contrôles ARIA, décrits dans les normesW3C.
 
 <span id="Text_in_graphics"/>
 <span id="text_in_graphics"/>
@@ -128,7 +125,7 @@ Beaucoup de lecteurs ont du mal à lire le texte d’une application quand celui
 <span id="text_scale_factor"/>
 <span id="TEXT_SCALE_FACTOR"/>
 ## <a name="text-scale-factor"></a>Facteur d’échelle de police  
-Les différents contrôles et éléments de texte ont une propriété [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled). La valeur par défaut de cette propriété est **true**. Lorsque sa valeur est **true**, le paramètre appelé **Mise à l’échelle du texte** sur le téléphone (**Paramètres &gt; Options d’ergonomie**) entraîne l’agrandissement de la taille du texte dans l’élément concerné. La mise à l’échelle affecte davantage le texte pour lequel la valeur **FontSize** est faible que le texte pour lequel la valeur **FontSize** est élevée. Vous pouvez toutefois désactiver cet agrandissement automatique en définissant la propriété **IsTextScaleFactorEnabled** d’un élément sur **false**. Essayez ce balisage, ajustez le paramètre **Taille du texte** sur le téléphone, puis observez les éléments **TextBlock** :
+Les différents contrôles et éléments de texte ont une propriété [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled). La valeur par défaut de cette propriété est **true**. Lorsque sa valeur est **true**, le paramètre appelé **Mise à l’échelle du texte** sur le téléphone (**Paramètres &gt; Options d’ergonomie**) entraîne l’agrandissement de la taille du texte dans l’élément concerné. La mise à l’échelle affecte davantage le texte pour lequel la valeur **FontSize** est faible que le texte pour lequel la valeur **FontSize** est élevée. Vous pouvez toutefois désactiver cet agrandissement automatique en définissant la propriété **IsTextScaleFactorEnabled** d’un élément sur **false**. Essayez ce balisage, ajustez le paramètre **Taille du texte** sur le téléphone, puis observez les éléments **TextBlock**:
 
 XAML
 ```xml
@@ -141,7 +138,7 @@ XAML
 
 Cependant, ne désactivez pas l’agrandissement automatique systématiquement, car la mise à l’échelle du texte de l’interface utilisateur à travers toutes les applications constitue une expérience d’accessibilité importante pour les utilisateurs qui s’attendent à ce qu’elle fonctionne aussi dans votre application.
 
-Vous pouvez également utiliser l’événement [**TextScaleFactorChanged**](https://msdn.microsoft.com/library/windows/apps/Dn633867) et la propriété [**TextScaleFactor**](https://msdn.microsoft.com/library/windows/apps/Dn633866) pour évaluer les incidences sur le paramètre **Taille du texte** sur le téléphone. Voici comment :
+Vous pouvez également utiliser l’événement [**TextScaleFactorChanged**](https://msdn.microsoft.com/library/windows/apps/Dn633867) et la propriété [**TextScaleFactor**](https://msdn.microsoft.com/library/windows/apps/Dn633866) pour évaluer les incidences sur le paramètre **Taille du texte** sur le téléphone. Voici comment:
 
 C#
 ```csharp
@@ -176,4 +173,3 @@ Les types suivants possèdent une propriété **IsTextScaleFactorEnabled** :
 * [Exemple d’affichage de texte XAML](http://go.microsoft.com/fwlink/p/?linkid=238579)
 * [Exemple de modification de texte XAML](http://go.microsoft.com/fwlink/p/?linkid=251417)
 * [Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570) 
-

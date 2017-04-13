@@ -1,24 +1,21 @@
 ---
 author: drewbatgit
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
-description: "Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et de caméra de l’appareil."
+description: "Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo."
 title: "Lampe torche indépendante de la caméra"
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54251b965f94da70614bcd81f70b9af53cb6168d
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 7777b1b3f72090667f1e75f3c9e23b6adcd9f2d5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="camera-independent-flashlight"></a>Lampe torche indépendante de la caméra
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo de l’appareil. Outre des informations de références sur la lampe et le réglage de ses paramètres, cet article vous montre comment libérer la ressource de la lampe quand elle n’est pas utilisée et comment détecter les changements de disponibilité de la lampe quand elle est utilisée par une autre application.
@@ -73,7 +70,7 @@ Dans le gestionnaire de l’événement, vérifiez la propriété [**LampAvailab
 
 ## <a name="properly-dispose-of-the-lamp-resource-when-not-in-use"></a>Libérer correctement la ressource de lampe quand elle n’est pas en cours d’utilisation
 
-Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [**Lamp.Close**](https://msdn.microsoft.com/library/windows/apps/dn894320) pour libérer les ressources et permettre aux autres applications d’accéder à la lampe. Cette propriété est mappée à la méthode **Dispose** si vous utilisez C#. Si vous êtes inscrit à [**AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317), vous devez vous désinscrire du gestionnaire lorsque vous libérez la ressource de la lampe. L’emplacement idéal dans le code pour procéder à une telle opération dépend de l’application. Pour limiter l’accès à la lampe sur une seule page, libérez la ressource dans l’événement [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509).
+Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [**Lamp.Close**](https://msdn.microsoft.com/library/windows/apps/dn894320) pour libérer les ressources et permettre aux autres applications d’accéder à la lampe. Cette propriété est mappée à la méthode **Dispose** si vous utilisezC#. Si vous êtes inscrit à [**AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317), vous devez vous désinscrire du gestionnaire lorsque vous libérez la ressource de la lampe. L’emplacement idéal dans le code pour procéder à une telle opération dépend de l’application. Pour limiter l’accès à la lampe sur une seule page, libérez la ressource dans l’événement [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509).
 
 [!code-cs[DisposeLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetDisposeLamp)]
 
@@ -81,7 +78,6 @@ Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [*
 - [Lecture de contenu multimédia](media-playback.md)
 
  
-
 
 
 

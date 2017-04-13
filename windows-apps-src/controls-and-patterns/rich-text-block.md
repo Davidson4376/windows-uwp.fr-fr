@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f3eded52428f0432cbdecfbda7d8b53e9e89ed16
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 464a726f4429eb24ad04acae130c7fc812971b3b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="rich-text-block"></a>Bloc de texte enrichi
 
@@ -33,7 +31,7 @@ Les blocs de texte enrichi fournissent plusieurs fonctionnalités de disposition
 </ul>
 </div>
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
 Utilisez un élément **RichTextBlock** si vous devez prendre en charge plusieurs paragraphes, du texte sur plusieurs colonnes, d’autres dispositions de texte complexes ou des éléments d’interface utilisateur inline, tels que des images.
 
@@ -45,7 +43,7 @@ Pour en savoir plus sur le choix du contrôle de texte approprié, consultez l�
 
 La propriété de contenu de RichTextBlock est [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx). Elle prend en charge le texte basé sur un paragraphe via l’élément [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx). Elle ne présente pas de propriété **Text** permettant d’accéder facilement au contenu de texte du contrôle dans votre application. Toutefois, RichTextBlock propose plusieurs fonctionnalités uniques que TextBlock ne fournit pas. 
 
-RichTextBlock prend en charge les éléments suivants :
+RichTextBlock prend en charge les éléments suivants:
 - Paragraphes multiples. Définissez le retrait de paragraphes en définissant la propriété [TextIndent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.textindent.aspx).
 - Éléments d’interface utilisateur inline. Utilisez un élément [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) pour afficher des éléments d’interface utilisateur, tels que des images et des éléments inline avec votre texte.
 - Conteneurs de débordement. Utilisez des éléments [RichTextBlockOverflow](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) pour créer des dispositions de texte sur plusieurs colonnes.
@@ -114,7 +112,7 @@ Bien que RichTextBlock stocke du texte brut, vous pouvez appliquer différentes 
 
 L’espace de noms [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) propose une variété d’éléments de texte inline utilisables pour mettre en forme votre texte, par exemple Bold, Italic, Run, Span, et LineBreak. Un moyen standard d’appliquer une mise en forme aux sections d’un texte consiste à placer le texte dans un élément Run ou Span, puis à définir les propriétés de cet élément.
 
-Voici un Paragraph dont le texte de la première phrase est affiché en gras, bleu et 16 points.
+Voici un Paragraph dont le texte de la première phrase est affiché en gras, bleu et 16points.
 
 ```xaml
 <Paragraph>
@@ -158,4 +156,3 @@ Voir les articles Typographie et Recommandations concernant les polices.
 
 **Pour les développeurs (autres)**
 - [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
-

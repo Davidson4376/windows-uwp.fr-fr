@@ -10,26 +10,24 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f7269e3fde1f5dbca278b2b9047b392049ee452c
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: d3594936942a8504d88f33bafccd77d66d9bd299
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="notifications-visualizer"></a>Notifications Visualizer
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-Notifications Visualizer est une nouvelle application de plateforme Windows universelle (UWP) dans [le Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives pour Windows 10.
+Notifications Visualizer est une nouvelle application de plateforme Windows universelle (UWP) dans [le Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives pour Windows10.
 
 ## <a name="overview"></a>Vue d’ensemble
 
 
 L’application Notifications Visualizer fournit des aperçus visuels instantanés de votre vignette pendant que vous effectuez des modifications, similaires à la vue de l’éditeur/de la conception XAML de Visual Studio. L’application contrôle également les erreurs, ce qui vous permet de créer une charge utile de vignette valide.
 
-Cette capture d’écran à partir de l’application montre la charge utile XML et la façon dont les tailles de vignette apparaissent sur un appareil sélectionné :
+Cette capture d’écran à partir de l’application montre la charge utile XML et la façon dont les tailles de vignette apparaissent sur un appareil sélectionné:
 
 ![Capture d’écran de l’éditeur d’application Notifications Visualizer avec le code et les vignettes](images/notif-visualizer-001.png)
 
@@ -50,7 +48,7 @@ L’éditeur fournit des avertissements et des erreurs en temps réel. Par exemp
 
 Vous pouvez contrôler les propriétés des vignettes comme le nom complet, la couleur, les logos, ShowName, la valeur de badge. Ces options vous aident à comprendre instantanément de quelle façon les propriétés des vignettes et les charges utiles de notification des vignettes interagissent, et quels sont les résultats produits.
 
-Cette capture d’écran de l’application montre l’éditeur de vignettes :
+Cette capture d’écran de l’application montre l’éditeur de vignettes:
 
 ![Capture d’écran de l’éditeur Notifications Visualizer avec les vignettes](images/notif-visualizer-004.png)
 
@@ -59,7 +57,7 @@ Cette capture d’écran de l’application montre l’éditeur de vignettes :
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Obtenir Notifications Visualizer dans le Windows Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
+* [Obtenir Notifications Visualizer dans le WindowsStore](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
 * [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md)
 * [Modèles de vignette adaptative : schéma et documentation](tiles-and-notifications-adaptive-tiles-schema.md)
 * [Vignettes et notifications toast (blog MSDN, en anglais)](http://blogs.msdn.com/b/tiles_and_toasts/)

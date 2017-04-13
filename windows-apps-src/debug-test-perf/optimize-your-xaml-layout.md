@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d4eae4379fb74d36a97db9be9a100408825682a7
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 226b2fd19777deb5135d1e1f059596883f95d3d3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-your-xaml-layout"></a>Optimiser votre disposition XAML
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -189,5 +187,4 @@ Pour des performances optimales, [**SizeChanged**](https://msdn.microsoft.com/li
 Les performances ne sont généralement pas prises en compte lors du choix entre des panneaux individuels. Ce choix repose habituellement sur la prise en compte du panneau fournissant le comportement de disposition le plus proche de l’interface utilisateur que vous implémentez. Par exemple, si vous choisissez entre [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)et [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546), vous devez choisir le panneau de configuration qui fournit le mappage le plus proche de votre modèle mental de l’implémentation.
 
 Chaque panneau XAML est optimisé pour des performances optimales, et tous les panneaux fournissent des performances similaires pour une interface utilisateur similaire.
-
 

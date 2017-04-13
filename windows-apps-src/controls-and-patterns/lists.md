@@ -10,18 +10,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f6df625d9eaab9db1bd3aed96d3f07160001ae70
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 4c17bab575be207106abfac44104bb32bcffd6ac
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="lists"></a>Listes
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Les listes affichent et activent l’interaction avec du contenu basé sur des collections. Les quatre modèles de liste traités dans cet article sont les suivants :
+Les listes affichent et activent l’interaction avec du contenu basé sur des collections. Les quatre modèles de liste traités dans cet article sont les suivants:
 
 -   Affichages Liste, principalement utilisés pour afficher des collections de contenus riches en texte
 -   Affichages Grille, principalement utilisés pour afficher des collections de contenus riches en images
@@ -157,7 +155,7 @@ Un affichage Grille est une solution idéale pour une bibliothèque de contenu, 
 
 Les listes déroulantes, également appelées zones de liste déroulante, démarrent dans un état compact et se développent pour afficher une liste d’éléments sélectionnables. L’élément sélectionné est toujours visible, et les éléments non visibles peuvent s’afficher lorsque l’utilisateur appuie sur la zone de liste déroulante pour la développer.
 
-### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
 -   Utilisez une liste déroulante pour permettre aux utilisateurs de sélectionner une valeur unique parmi un ensemble d’éléments qui peuvent être représentés correctement à l’aide de simples lignes de texte.
 -   Utilisez un affichage Liste ou Grille au lieu d’une zone de liste déroulante pour afficher des éléments contenant plusieurs lignes de texte ou images.
@@ -185,7 +183,7 @@ Si la collection figurant dans une zone de liste déroulante est suffisamment lo
 
 ### <a name="text-search"></a>Recherche en texte
 
-Les zones de liste déroulante prennent automatiquement en charge la recherche au sein de leurs collections. Lorsque les utilisateurs tapent des caractères sur un clavier physique dans une zone de liste déroulante ouverte ou fermée, des candidats correspondant à la chaîne entrée apparaissent. Cette fonctionnalité est particulièrement utile lors de la navigation dans une liste longue. Par exemple, lorsqu’un utilisateur interagit avec une liste déroulante contenant une liste des États américains, le fait d’appuyer sur la touche « W » affiche « Washington » pour une sélection rapide. 
+Les zones de liste déroulante prennent automatiquement en charge la recherche au sein de leurs collections. Lorsque les utilisateurs tapent des caractères sur un clavier physique dans une zone de liste déroulante ouverte ou fermée, des candidats correspondant à la chaîne entrée apparaissent. Cette fonctionnalité est particulièrement utile lors de la navigation dans une liste longue. Par exemple, lorsqu’un utilisateur interagit avec une liste déroulante contenant une liste des États américains, le fait d’appuyer sur la touche «W» affiche «Washington» pour une sélection rapide. 
 
 ## <a name="list-boxes"></a>Zones de liste
 
@@ -263,4 +261,3 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 - [**Classe GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)
 - [**Classe ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)
 - [**Classe ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868)
-

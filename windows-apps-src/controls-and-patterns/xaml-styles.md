@@ -8,12 +8,11 @@ title: Styles XAML
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
 label: XAML styles
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: 86f28a0509ead0632c942c6746fea19acac54931
 ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# Styles XAML
+# <a name="xaml-styles"></a>Styles XAML
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -21,7 +20,7 @@ ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
 
 Vous pouvez personnaliser l’apparence de vos applications de nombreuses manières à l’aide de l’infrastructure XAML. Les styles permettent de définir les propriétés des contrôles et de réutiliser ces paramètres pour uniformiser l’apparence de plusieurs contrôles.
 
-## Bases des styles
+## <a name="style-basics"></a>Bases des styles
 
 Les styles permettent d’extraire des paramètres de propriété visuels afin de disposer de ressources réutilisables. Voici un exemple représentant 3boutons avec un style définissant les propriétés [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397), [**BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209399) et [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414). Lorsque vous appliquez un style, vous pouvez faire en sorte que les contrôles aient la même apparence sans définir ces propriétés pour chaque contrôle individuellement.
 
@@ -58,7 +57,7 @@ Chaque élément [**Setter**](https://msdn.microsoft.com/library/windows/apps/br
 </StackPanel>
 ```
 
-## Appliquer un style de manière implicite ou explicite
+## <a name="apply-an-implicit-or-explicit-style"></a>Appliquer un style de manière implicite ou explicite
 
 Si vous définissez un style en tant que ressource, vous pouvez l’appliquer à vos contrôles de deux façons :
 
@@ -103,7 +102,7 @@ Dans cet exemple, l’[attribut x:Key](../xaml-platform/x-key-attribute.md) est 
 </Grid>
 ```
 
-## Utiliser des styles basés sur d’autres styles
+## <a name="use-based-on-styles"></a>Utiliser des styles basés sur d’autres styles
 
 Pour faciliter la gestion des styles et optimiser leur réutilisation, vous pouvez créer des styles héritant d’autres styles. Pour créer des styles hérités, vous devez utiliser la propriété [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852). Les styles héritant d’autres styles doivent cibler le même type de contrôle ou un contrôle dérivé du type ciblé par le style de référence. Par exemple, si le contrôle cible du style de référence est [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/br209365), les styles basés sur ce style peuvent cibler également **ContentControl** ou des types dérivés de **ContentControl**, tels que [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) et [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527). Si vous ne définissez aucune valeur dans le style qui hérite, celle du style de référence est utilisée. Pour modifier une valeur issue du style de référence, le style qui hérite écrase cette valeur. L’exemple suivant présente un type **Button** et un type [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) avec des styles basés sur le même style de référence.
 
@@ -139,11 +138,11 @@ Le type cible du style de référence est [**ContentControl**](https://msdn.micr
 </StackPanel>
 ```
 
-## Utilisation de styles en toute simplicité à l’aide d’outils
+## <a name="use-tools-to-work-with-styles-easily"></a>Utilisation de styles en toute simplicité à l’aide d’outils
 
 Pour appliquer rapidement des styles à vos contrôles, cliquez avec le bouton droit sur un contrôle dans l’aire de conception XAML de Microsoft Visual Studio et sélectionnez **Modifier le style** ou **Modifier le modèle** (selon le contrôle concerné). Vous pouvez ensuite appliquer un style existant en sélectionnant **Appliquer la ressource** ou en définir un nouveau en sélectionnant **Créer vide**. Si vous créez un style vide, vous avez l’option de le définir dans la page, dans le fichier App.xaml ou dans un dictionnaire de ressources distinct.
 
-## Création d’un style léger
+## <a name="lightweight-styling"></a>Création d’un style léger
 
 Le remplacement des pinceaux système est généralement effectué au niveau de l’application ou de la page. Dans les deux cas, la substitution de la couleur s’appliquera à tous les contrôles qui font référence à ce pinceau (dans un code XAML, de nombreux contrôles peuvent référencer le même pinceau système).
 
@@ -167,7 +166,7 @@ Pour les états du type PointerOver (souris déplacée sur le bouton), **Pointer
 
 Le fait de placer ces remplacements de pinceau au niveau **App.Resources** a pour effet d’affecter tous les boutons de l’ensemble de votre application, et non une seule page.
 
-### Création d’un style par contrôle
+### <a name="per-control-styling"></a>Création d’un style par contrôle
 
 Dans d’autres cas, il peut être souhaitable de modifier un seul contrôle sur une même page afin de lui affecter un style donné, sans altérer les autres versions de ce contrôle:
 
@@ -200,16 +199,10 @@ Dans d’autres cas, il peut être souhaitable de modifier un seul contrôle sur
 
 Cela affecterait uniquement cet élément «Special CheckBox» sur la page qui contenait ce contrôle.
 
-## Modifier les styles système par défaut
+## <a name="modify-the-default-system-styles"></a>Modifier les styles système par défaut
 
 Lorsque vous le pouvez, vous devez utiliser les styles provenant des ressources XAML Windows Runtime par défaut. Quand vous devez définir vos propres styles, essayez de les baser sur les styles par défaut lorsque cela est possible (en utilisant des styles basés sur d’autres styles, comme expliqué précédemment, ou en commençant par modifier une copie du style par défaut d’origine).
 
-## Propriété Template
+## <a name="the-template-property"></a>Propriété Template
 
 Il est possible d’utiliser un setter de style pour la propriété [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) d’un élément [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390). En réalité, cela constitue la majorité d’un style XAML classique et des ressources XAML d’une application . Ce sujet est abordé de manière plus détaillée dans la rubrique [Modèles de contrôles](control-templates.md).
-
-
-
-<!--HONumber=Nov16_HO1-->
-
-

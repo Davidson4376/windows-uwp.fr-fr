@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-Description: "Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows 10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP)."
+Description: "Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP)."
 title: "Ressources de vignette et d’icône"
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
 label: Tile and icon assets
@@ -10,21 +10,19 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fa195ab35b0d6b1825adb8ce18ae1666d0bf1581
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 0d3b58b8ea03c3ba836078e507495beeebe74fb8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="guidelines-for-tile-and-icon-assets"></a>Recommandations en matière de ressources de vignette et d’icône
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows 10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP). Ces recommandations précisent où apparaissent les ressources d’icône d’application dans le système et fournissent des conseils de conception détaillés pour vous aider à créer les plus belles icônes.
+Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP). Ces recommandations précisent où apparaissent les ressources d’icône d’application dans le système et fournissent des conseils de conception détaillés pour vous aider à créer les plus belles icônes.
 
-![Écran d’accueil et vignettes de Windows 10](images/assetguidance01.jpg)
+![Écran d’accueil et vignettes de Windows10](images/assetguidance01.jpg)
 
 ## <a name="adaptive-scaling"></a>Mise à l’échelle adaptative
 
@@ -36,15 +34,15 @@ Le Store sélectionne les ressources à télécharger notamment en fonction de l
 ## <a name="tile-elements"></a>Éléments de vignette
 
 
-Les composants de base d’une vignette de démarrage comprennent une plaque de fond, une icône, une barre de marque, des marges et un titre d’application :
+Les composants de base d’une vignette de démarrage comprennent une plaque de fond, une icône, une barre de marque, des marges et un titre d’application:
 
 ![Décomposition des éléments d’une vignette](images/assetguidance02.png)
 
-La barre de marque au bas d’une vignette comprend le nom de l’application, le badge et le compteur (le cas échéant) :
+La barre de marque au bas d’une vignette comprend le nom de l’application, le badge et le compteur (le cas échéant):
 
 ![Barre de marque de la vignette](images/assetguidance03.png)
 
-La hauteur de la barre de marque dépend du facteur d’échelle de l’appareil sur lequel la vignette s’affiche :
+La hauteur de la barre de marque dépend du facteur d’échelle de l’appareil sur lequel la vignette s’affiche:
 
 | Facteur d’échelle | Pixels |
 |--------------|--------|
@@ -56,11 +54,11 @@ La hauteur de la barre de marque dépend du facteur d’échelle de l’appareil
 
  
 
-Le système définit les marges de vignette. Elles ne peuvent pas être modifiées. La majorité du contenu s’affiche entre les marges, comme illustré dans cet exemple :
+Le système définit les marges de vignette. Elles ne peuvent pas être modifiées. La majorité du contenu s’affiche entre les marges, comme illustré dans cet exemple:
 
 ![Marges de vignette](images/assetguidance04.png)
 
-La largeur des marges dépend du facteur d’échelle de l’appareil sur lequel la vignette s’affiche :
+La largeur des marges dépend du facteur d’échelle de l’appareil sur lequel la vignette s’affiche:
 
 | Facteur d’échelle | Pixels |
 |--------------|--------|
@@ -75,69 +73,69 @@ La largeur des marges dépend du facteur d’échelle de l’appareil sur lequel
 ## <a name="tile-assets"></a>Ressources de vignette
 
 
-Chaque ressource de vignette a la même taille que la vignette sur laquelle elle est positionnée. Vous pouvez personnaliser les vignettes de votre application avec deux représentations différentes d’une ressource :
+Chaque ressource de vignette a la même taille que la vignette sur laquelle elle est positionnée. Vous pouvez personnaliser les vignettes de votre application avec deux représentations différentes d’une ressource:
 
-1. Une icône ou un logo centrés avec remplissage. La couleur de la plaque de fond apparaît ainsi sur les éléments suivants :
+1. Une icône ou un logo centrés avec remplissage. La couleur de la plaque de fond apparaît ainsi sur les éléments suivants:
 
 ![Vignette et plaque de fond](images/assetguidance05.png)
 
-2. Une vignette personnalisée en pleine page sans remplissage :
+2. Une vignette personnalisée en pleine page sans remplissage:
 
 ![Vignette en pleine page](images/assetguidance06.png)
 
 Par souci de cohérence entre les appareils, chaque taille de vignette (petite, moyenne, large et grande) a son propre ratio de dimensionnement. Pour obtenir un positionnement homogène de l’icône sur l’ensemble des vignettes, nous vous donnons quelques recommandations de base en matière de remplissage pour les tailles de vignette suivantes. L’emplacement idéal d’une icône est à l’intersection des deux superpositions violettes. Même si les icônes ne tiennent pas toujours à l’intérieur de l’emplacement, le volume visuel d’une icône devrait plus ou moins correspondre aux exemples fournis.
 
-Dimensionnement d’une petite vignette :
+Dimensionnement d’une petite vignette:
 
 ![Exemple de dimensionnement d’une petite vignette](images/assetguidance07a.png)
 
-Dimensionnement d’une vignette moyenne :
+Dimensionnement d’une vignette moyenne:
 
 ![Exemple de dimensionnement d’une vignette moyenne](images/assetguidance07b.png)
 
-Dimensionnement d’une vignette large :
+Dimensionnement d’une vignette large:
 
 ![Exemple de dimensionnement d’une vignette large](images/assetguidance07c.png)
 
-Dimensionnement d’une grande vignette :
+Dimensionnement d’une grande vignette:
 
 ![Exemple de dimensionnement d’une grande vignette](images/assetguidance07d.png)
 
-Dans cet exemple, l’icône est trop grande pour la vignette :
+Dans cet exemple, l’icône est trop grande pour la vignette:
 
 ![Icône trop grande pour la vignette](images/assetguidance08a.png)
 
-Dans cet exemple, l’icône est trop petite pour la vignette :
+Dans cet exemple, l’icône est trop petite pour la vignette:
 
 ![Icône trop petite pour la vignette](images/assetguidance08b.png)
 
 Les taux de remplissage suivants sont particulièrement adaptés aux icônes positionnées à l’horizontale ou à la verticale.
 
-Pour les petites vignettes, limitez la largeur et la hauteur de l’icône à 66 % de la taille de la vignette :
+Pour les petites vignettes, limitez la largeur et la hauteur de l’icône à 66% de la taille de la vignette:
 
 ![Ratios de dimensionnement d’une petite vignette](images/assetguidance09.png)
 
-Pour les vignettes moyennes, limitez la largeur de l’icône à 66 % et la hauteur de l’icône à 50 % de la taille de la vignette. Cela empêche le chevauchement des éléments dans la barre de marque :
+Pour les vignettes moyennes, limitez la largeur de l’icône à 66% et la hauteur de l’icône à 50% de la taille de la vignette. Cela empêche le chevauchement des éléments dans la barre de marque:
 
 ![Ratios de dimensionnement d’une vignette moyenne](images/assetguidance10.png)
 
-Pour les vignettes larges, limitez la largeur de l’icône à 66 % et la hauteur de l’icône à 50 % de la taille de la vignette. Cela empêche le chevauchement des éléments dans la barre de marque :
+Pour les vignettes larges, limitez la largeur de l’icône à 66% et la hauteur de l’icône à 50% de la taille de la vignette. Cela empêche le chevauchement des éléments dans la barre de marque:
 
 ![Ratios de dimensionnement d’une vignette large](images/assetguidance11.png)
 
-Pour les grandes vignettes, limitez la largeur et la hauteur de l’icône à 50 % de la taille de la vignette :
+Pour les grandes vignettes, limitez la largeur et la hauteur de l’icône à 50% de la taille de la vignette:
 
 ![Ratios de dimensionnement d’une grande vignette](images/assetguidance12.png)
 
-Certaines icônes sont conçues pour être positionnées à l’horizontale ou à la verticale, tandis que certaines ont des formes plus complexes qui les empêchent de respecter les dimensions cibles. Les icônes qui semblent centrées peuvent déborder d’un côté. Dans ce cas, certaines parties de l’icône peuvent se retrouver hors de l’emplacement recommandé, à condition que l’icône offre le même attrait visuel qu’une icône aux bonnes dimensions :
+Certaines icônes sont conçues pour être positionnées à l’horizontale ou à la verticale, tandis que certaines ont des formes plus complexes qui les empêchent de respecter les dimensions cibles. Les icônes qui semblent centrées peuvent déborder d’un côté. Dans ce cas, certaines parties de l’icône peuvent se retrouver hors de l’emplacement recommandé, à condition que l’icône offre le même attrait visuel qu’une icône aux bonnes dimensions:
 
 ![Trois icônes centrées](images/assetguidance13.png)
 
-Pour les ressources pleine page, prenez en compte les éléments qui interagissent avec les marges et les bords des vignettes. Conservez des marges équivalentes à au moins 16 % de la hauteur ou de la largeur de la vignette. Ce pourcentage représente le double de la largeur des marges pour la plus petite taille de vignette :
+Pour les ressources pleine page, prenez en compte les éléments qui interagissent avec les marges et les bords des vignettes. Conservez des marges équivalentes à au moins 16 % de la hauteur ou de la largeur de la vignette. Ce pourcentage représente le double de la largeur des marges pour la plus petite taille de vignette:
 
 ![Vignette pleine page avec marges](images/assetguidance14.png)
 
-Dans cet exemple, les marges sont trop étroites :
+Dans cet exemple, les marges sont trop étroites:
 
 ![Vignette pleine page avec marges trop étroites](images/assetguidance15.png)
 
@@ -148,30 +146,30 @@ Les vignettes peuvent également apparaître dans un affichage Liste. Les recomm
 
 ![Ressources de vignette dans un affichage Liste](images/assetguidance16.png)
 
-Limitez la largeur et la hauteur de l’icône à 75 % de la taille de la vignette :
+Limitez la largeur et la hauteur de l’icône à 75% de la taille de la vignette:
 
 ![Dimensionnement d’une icône de vignette en affichage Liste](images/assetguidance17.png)
 
-Pour les icônes horizontales et verticales, limitez la largeur et la hauteur de l’icône à 75 % de la taille de la vignette :
+Pour les icônes horizontales et verticales, limitez la largeur et la hauteur de l’icône à 75% de la taille de la vignette:
 
 ![Dimensionnement d’une icône de vignette en affichage Liste](images/assetguidance18.png)
 
-Pour des illustrations pleine page d’éléments de marque importants, conservez des marges d’au moins 12,5 % :
+Pour des illustrations pleine page d’éléments de marque importants, conservez des marges d’au moins 12,5%:
 
 ![Illustration pleine page d’une vignette en affichage Liste](images/assetguidance19.png)
 
-Dans cet exemple, l’icône est trop grande pour la vignette :
+Dans cet exemple, l’icône est trop grande pour la vignette:
 
 ![Icône trop grande pour la vignette](images/assetguidance20a.png)
 
-Dans cet exemple, l’icône est trop petite pour la vignette :
+Dans cet exemple, l’icône est trop petite pour la vignette:
 
 ![Icône trop petite pour la vignette](images/assetguidance20b.png)
 
 ## <a name="target-based-assets"></a>Ressources basées sur la taille de la cible avec plaque
 
 
-Les ressources basées sur la cible sont destinées aux icônes et vignettes qui apparaissent dans la barre des tâches Windows, dans les applications actives, dans l’affichage Alt+Tab, dans l’alignement automatique et dans le coin inférieur droit des vignettes de démarrage. Vous n’avez pas besoin d’ajouter du remplissage à ces ressources ; Windows s’en charge le cas échéant. Ces ressources doivent présenter un encombrement minimal de 16 pixels. Voici un exemple de ces ressources telles qu’elles apparaissent dans les icônes de la barre des tâches Windows :
+Les ressources basées sur la cible sont destinées aux icônes et vignettes qui apparaissent dans la barre des tâches Windows, dans les applications actives, dans l’affichage Alt+Tab, dans l’alignement automatique et dans le coin inférieur droit des vignettes de démarrage. Vous n’avez pas besoin d’ajouter du remplissage à ces ressources ; Windows s’en charge le cas échéant. Ces ressources doivent présenter un encombrement minimal de 16 pixels. Voici un exemple de ces ressources telles qu’elles apparaissent dans les icônes de la barre des tâches Windows:
 
 ![Ressources dans la barre des tâches Windows](images/assetguidance21.png)
 
@@ -179,23 +177,23 @@ Même si ces interfaces utilisateur positionnent par défaut une ressource basé
 
 ![Ressources avec et sans plaque](images/assetguidance22.png)
 
-Voici des recommandations de dimensionnement pour les ressources basées sur la cible, à l’échelle 100 % :
+Voici des recommandations de dimensionnement pour les ressources basées sur la cible, à l’échelle 100%:
 
-![Dimensionnement des ressources basées sur la cible à l’échelle 100 %](images/assetguidance23.png)
+![Dimensionnement des ressources basées sur la cible à l’échelle 100%](images/assetguidance23.png)
 
 **Ressources d’application utilisant un modèle sous forme d’icône**
 
 Le modèle sous forme d’icône (également connu sous le nom de modèle « IconWithBadge ») vous permet d’afficher une petite image au centre de la vignette. Windows 10 prend en charge le modèle à la fois sur les téléphones et sur les tablettes/ordinateurs de bureau. (Pour en savoir plus sur la création de vignettes sous forme d’icône, voir l’article [Modèles de vignette spéciaux](tiles-and-notifications-special-tile-templates-catalog.md).)
 
-Les applications qui utilisent un modèle sous forme d’icône, telles que les applications Messagerie, Téléphone et Windows Store, disposent de ressources basées sur la cible pouvant intégrer un badge (avec compteur dynamique). À l’instar des autres ressources basées sur la cible, aucun remplissage n’est nécessaire. Les ressources sous forme d’icône ne font pas partie du manifeste de l’application, mais d’une charge utile de vignettes dynamiques. Les ressources sont redimensionnées et centrées dans un conteneur de coefficient 3:2 :
+Les applications qui utilisent un modèle sous forme d’icône, telles que les applications Messagerie, Téléphone et Windows Store, disposent de ressources basées sur la cible pouvant intégrer un badge (avec compteur dynamique). À l’instar des autres ressources basées sur la cible, aucun remplissage n’est nécessaire. Les ressources sous forme d’icône ne font pas partie du manifeste de l’application, mais d’une charge utile de vignettes dynamiques. Les ressources sont redimensionnées et centrées dans un conteneur de coefficient 3:2:
 
 ![Dimensionnement des ressources avec et sans badge](images/assetguidance24.png)
 
-Pour les ressources carrées, un centrage automatique est effectué dans le conteneur :
+Pour les ressources carrées, un centrage automatique est effectué dans le conteneur:
 
 ![Dimensionnement des ressources carrées, avec et sans badge](images/assetguidance25.png)
 
-Pour les ressources non carrées, un centrage horizontal/vertical automatique et un alignement de la largeur/hauteur sont effectués dans le conteneur :
+Pour les ressources non carrées, un centrage horizontal/vertical automatique et un alignement de la largeur/hauteur sont effectués dans le conteneur:
 
 ![Dimensionnement des ressources non carrées, avec et sans badge](images/assetguidance26a.png)
 
@@ -215,7 +213,7 @@ Si vous ouvrez le fichier « Package.appxmanifest » dans un éditeur de texte, 
 </table>
 ```
 
-Les ressources d’écran de démarrage sont centrées sur chaque appareil sur lequel elles apparaissent :
+Les ressources d’écran de démarrage sont centrées sur chaque appareil sur lequel elles apparaissent:
 
 ![Dimensionnement des ressources d’écran de démarrage](images/assetguidance27.png)
 
@@ -224,11 +222,11 @@ Les ressources d’écran de démarrage sont centrées sur chaque appareil sur l
 
 Le mode de contraste élevé utilise des jeux de ressources distincts pour le blanc à contraste élevé (arrière-plan blanc avec texte noir) et le noir à contraste élevé (arrière-plan noir avec texte blanc). Si vous ne fournissez pas de ressources à contraste élevé pour votre application, les ressources standard seront utilisées.
 
-Si les ressources standard de votre application offrent un affichage acceptable sur un arrière-plan noir et blanc, alors votre application pourra au moins offrir un affichage satisfaisant en mode de contraste élevé. Si vos ressources standard n’offrent pas un affichage acceptable sur un arrière-plan noir et blanc, envisagez d’inclure des ressources à contraste élevé. Ces exemples illustrent les deux types de ressources à contraste élevé :
+Si les ressources standard de votre application offrent un affichage acceptable sur un arrière-plan noir et blanc, alors votre application pourra au moins offrir un affichage satisfaisant en mode de contraste élevé. Si vos ressources standard n’offrent pas un affichage acceptable sur un arrière-plan noir et blanc, envisagez d’inclure des ressources à contraste élevé. Ces exemples illustrent les deux types de ressources à contraste élevé:
 
 ![Exemples de ressources à contraste élevé](images/assetguidance28.png)
 
-Si vous décidez de fournir des ressources à contraste élevé, vous devez inclure les deux types de ressources : blanc sur noir et noir sur blanc. Au moment d’ajouter ces ressources à votre package, vous pouvez créer un dossier « contraste noir » pour les ressources blanc sur noir et un dossier « contraste blanc » pour les ressources noir sur blanc.
+Si vous décidez de fournir des ressources à contraste élevé, vous devez inclure les deux types de ressources: blanc sur noir et noir sur blanc. Au moment d’ajouter ces ressources à votre package, vous pouvez créer un dossier «contraste noir» pour les ressources blanc sur noir et un dossier «contraste blanc» pour les ressources noir sur blanc.
 
 ## <a name="asset-size-tables"></a>Tableaux des tailles de ressource
 
@@ -242,7 +240,7 @@ Nous vous recommandons vivement de fournir au moins des ressources pour les fact
 | Petite                | Square71x71Logo   | 71 x 71         | 89 x 89         | 107 x 107       | 142 x 142       | 284 x 284       |
 | Moyenne               | Square150x150Logo | 150 x 150       | 188 x 188       | 225 x 225       | 300 x 300       | 600 x 600       |
 | Large                 | Square310x150Logo | 310 x 150       | 388 x 188       | 465 x 225       | 620 x 300       | 1 240 x 600      |
-| Grande (bureau uniquement) | Square310x310Logo | 310 x 310       | 388 x 388       | 465 x 465       | 620 x 620       | 1 240 x 1 240     |
+| Grande (bureau uniquement) | Square310x310Logo | 310 x 310       | 388 x 388       | 465 x 465       | 620 x 620       | 1240x 1240     |
 | Liste des applications (icône)      | Square44x44Logo   | 44 x 44         | 55 x 55         | 66 x 66         | 88 x 88         | 176 x 176       |
 
  
@@ -306,8 +304,8 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 **Ressources de vignette**
 
 -   Les ressources centrées sont généralement utilisées sur l’écran de démarrage pour présenter votre application.
--   Format de nom de fichier : \*Tile.scale-\*.PNG
--   Applications concernées : toutes les applications UWP
+-   Format de nom de fichier: \*Tile.scale-\*.PNG
+-   Applications concernées: toutes les applications UWP
 -   Utilisations :
     -   Vignettes d’écran de démarrage par défaut (bureau et appareil mobile)
     -   Centre de maintenance (bureau et appareil mobile)
@@ -319,8 +317,8 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 **Ressources évolutives avec plaque**
 
 -   Ces ressources sont utilisées sur les surfaces qui requièrent des facteurs d’échelle. Les ressources sont équipées d’une plaque par le système ou sont fournies avec leur propre couleur d’arrière-plan si l’application inclut cette fonctionnalité.
--   Format de nom de fichier : \*AppList.scale-\*.PNG
--   Applications concernées : toutes les applications UWP
+-   Format de nom de fichier: \*AppList.scale-\*.PNG
+-   Applications concernées: toutes les applications UWP
 -   Utilisations :
     -   Liste Toutes les applications du menu Démarrer (bureau)
     -   Liste Les plus utilisées du menu Démarrer (bureau)
@@ -332,8 +330,8 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 **Ressources basées sur la taille de la cible avec plaque**
 
 -   Ces tailles de ressource fixes ne sont pas mises à l’échelle avec les plaques. Principalement utilisées pour les expériences héritées. Les ressources sont vérifiées par le système.
--   File Format de nom de fichier : \*AppList.targetsize-\*.PNG
--   Applications concernées : toutes les applications UWP
+-   File Format de nom de fichier: \*AppList.targetsize-\*.PNG
+-   Applications concernées: toutes les applications UWP
 -   Utilisations :
     -   Liste des raccourcis du menu Démarrer (bureau)
     -   Coin inférieur de la vignette du menu Démarrer (bureau)
@@ -343,8 +341,8 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 **Ressources basées sur la taille de la cible sans plaque**
 
 -   Ces ressources ne sont pas équipées de plaque ni mises à l’échelle par le système.
--   Format de nom de fichier : \*AppList.targetsize-\*\_altform-unplated.PNG
--   Applications concernées : toutes les applications UWP
+-   Format de nom de fichier: \*AppList.targetsize-\*\_altform-unplated.PNG
+-   Applications concernées: toutes les applications UWP
 -   Utilisations :
     -   Barre des tâches et miniature de la barre des tâches (bureau)
     -   Liste des raccourcis de la barre des tâches
@@ -354,8 +352,8 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 **Ressources d’extension de fichier**
 
 -   Ces ressources sont spécifiques aux extensions de fichier. Elles s’affichent en regard des icônes d’association de fichier de type Win32 dans l’Explorateur de fichiers et doivent être indépendantes du thème défini. Le dimensionnement diffère selon les plateformes mobiles et de bureau.
--   Format de nom de fichier : \*LogoExtensions.targetsize-\*.PNG
--   Applications concernées : Musique, Vidéo, Photos, Microsoft Edge, Microsoft Office
+-   Format de nom de fichier: \*LogoExtensions.targetsize-\*.PNG
+-   Applications concernées : Musique, Vidéo, Photos, MicrosoftEdge, Microsoft Office
 -   Utilisations :
     -   Explorateur de fichiers
     -   Cortana
@@ -364,8 +362,8 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 **Écran de démarrage**
 
 -   La ressource qui s’affiche sur l’écran de démarrage de votre application. Elle est automatiquement mise à l’échelle sur les plateformes mobiles et de bureau.
--   Format de nom de fichier : \*SplashScreen.screen-100.PNG
--   Applications concernées : toutes les applications UWP
+-   Format de nom de fichier: \*SplashScreen.screen-100.PNG
+-   Applications concernées: toutes les applications UWP
 -   Utilisations :
     -   Écran de démarrage de l’application
 
@@ -387,7 +385,6 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
  
 
  
-
 
 
 

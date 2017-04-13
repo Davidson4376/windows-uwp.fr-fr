@@ -8,15 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, contacts, carte de visite, annotation"
+keywords: windows10, uwp, contacts, carte de visite, annotation
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: da64e23714035b6763104d48430371469272a939
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e882566fcc81941669dd4844235bcbd899ea3079
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>Connecter votre application à des actions sur une carte de visite
 
 Votre application peut apparaître en regard des actions sur une carte de visite ou une mini carte de visite. Les utilisateurs peuvent choisir votre application pour effectuer une action telle qu’ouvrir une page de profil, effectuer un appel ou envoyer un message.
@@ -81,7 +78,7 @@ await contactList.SaveContactAsync(contact);
 
 ## <a name="tag-each-contact-with-an-annotation"></a>Identifier chaque contact avec une annotation
 
-Identifiez chaque contact avec une liste des actions (opérations) que votre application peut effectuer (par exemple : appels vidéo et messagerie).
+Identifiez chaque contact avec une liste des actions (opérations) que votre application peut effectuer (par exemple: appels vidéo et messagerie).
 
 Ensuite, associez l’identifiant d’un contact à un identifiant que votre application utilise en interne pour identifier cet utilisateur.
 
@@ -186,11 +183,11 @@ Tout comme avec la carte de visite, chaque onglet enregistre la dernière applic
 
 Remplacez la méthode [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) dans votre fichier **App.cs**, puis dirigez les utilisateurs vers une page de votre application. L’[exemple d’intégration de carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration) vous présente une façon de procéder.
 
-Dans le fichier code-behind de la page, remplacez la méthode [Page.OnNavigatedTo](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx). La carte de visite transmet à cette méthode le nom de l’opération et l’identifiant de l’utilisateur.
+Dans le fichier code-behind de la page, remplacez la méthode [Page.OnNavigatedTo](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx). La carte de visite transmet à cette méthode le nom de l’opération et l’identifiant de l’utilisateur.
 
-Pour démarrer une vidéo ou un appel audio, consultez cet exemple : [exemple VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Vous trouverez l’API complète dans l’espace de noms [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx).
+Pour démarrer une vidéo ou un appel audio, consultez cet exemple: [exemple VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Vous trouverez l’API complète dans l’espace de noms [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx).
 
-Pour simplifier la messagerie, consultez l’espace de noms [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.chat.aspx).
+Pour simplifier la messagerie, consultez l’espace de noms [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.aspx).
 
 Vous pouvez également démarrer une autre application. C’est ce que fait ce code.
 
@@ -217,4 +214,3 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 ```
 
 La propriété ```args.uri.scheme``` comporte le nom de l’opération, et la propriété ```args.uri.Query``` comporte l’identifiant de l’utilisateur.
-

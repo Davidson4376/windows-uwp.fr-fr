@@ -8,20 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9b33388429f72dcc7acb9803d00a407ed35589a0
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: fd469f2a037871b04e67227ad132261711a17511
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="improve-garbage-collection-performance"></a>Améliorer les performances du nettoyage de la mémoire (garbage collection)
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Les applications UWP écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performance du récupérateur de mémoire .NET pour les applications UWP. Pour plus d’informations sur le fonctionnement du récupérateur de mémoire .NET et les outils en matière de débogage et d’analyse des performances du récupérateur de mémoire, voir [Nettoyage de la mémoire](https://msdn.microsoft.com/library/windows/apps/xaml/0xy59wtx.aspx).
 
-**Remarque**  Le fait de devoir intervenir dans le comportement par défaut du récupérateur de mémoire signifie que votre application rencontre des problèmes généraux de mémoire. Pour plus d’informations, voir [Utilisation de l’outil d’utilisation de la mémoire pendant le débogage dans Visual Studio 2015](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx). Cette rubrique s’applique uniquement au code C# et Visual Basic.
+**Remarque**  Le fait de devoir intervenir dans le comportement par défaut du récupérateur de mémoire signifie que votre application rencontre des problèmes généraux de mémoire. Pour plus d’informations, voir [Utilisation de l’outil d’utilisation de la mémoire pendant le débogage dans Visual Studio2015](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx). Cette rubrique s’applique uniquement au code C# et Visual Basic.
 
  
 
@@ -53,7 +51,7 @@ Pour éviter le déclenchement accidentel d’un trop grand nombre de nettoyages
 
 Cette section s’applique si vous avez analysé votre application et constaté que les nettoyages de la mémoire prenaient un temps considérable. Les temps d’interruption liés au nettoyage de la mémoire incluent la durée nécessaire à l’exécution d’une seule passe de nettoyage de la mémoire et la durée totale consacrée par votre application à l’ensemble des nettoyages. La durée d’une création de collection dépend du volume de données dynamiques que le récupérateur de mémoire doit analyser. La génération 0 et la génération 1 sont limitées par la taille, mais la génération 2 continue de croître à mesure que davantage d’objets à durée de vie longue deviennent actifs dans votre application. Cela signifie que les durées des collections pour la génération 0 et la génération 1 sont limitées, tandis que les collections de génération 2 peuvent prendre plus de temps. La fréquence des nettoyages de la mémoire dépend principalement de la quantité de mémoire allouée, car un nettoyage libère de la mémoire pour satisfaire les demandes d’allocation.
 
-Le Garbage Collector interrompt de manière occasionnelle votre application afin d’exécuter des tâches, mais ne l’interrompt pas nécessairement en continu pendant le nettoyage. Les temps d’interruption ne sont généralement pas perceptibles par l’utilisateur dans votre application, en particulier dans le cas des collections de génération 0 et de génération 1. La fonctionnalité de [Nettoyage de la mémoire en arrière-plan](https://msdn.microsoft.com/library/windows/apps/xaml/ee787088.aspx#background-garbage-collection) du .NET Garbage Collector permet l’exécution simultanée des collections de génération 2 pendant l’exécution de votre application. Votre application ne sera interrompue que sur de courtes périodes. Toutefois, il n’est pas toujours possible d’effectuer une collection de génération 2 en arrière-plan. Dans ce cas, l’interruption peut être perceptible par l’utilisateur si votre tas est suffisamment important (plus de 100 Mo).
+Le Garbage Collector interrompt de manière occasionnelle votre application afin d’exécuter des tâches, mais ne l’interrompt pas nécessairement en continu pendant le nettoyage. Les temps d’interruption ne sont généralement pas perceptibles par l’utilisateur dans votre application, en particulier dans le cas des collections de génération 0 et de génération 1. La fonctionnalité de [Nettoyage de la mémoire en arrière-plan](https://msdn.microsoft.com/library/windows/apps/xaml/ee787088.aspx#background-garbage-collection) du .NET Garbage Collector permet l’exécution simultanée des collections de génération2 pendant l’exécution de votre application. Votre application ne sera interrompue que sur de courtes périodes. Toutefois, il n’est pas toujours possible d’effectuer une collection de génération 2 en arrière-plan. Dans ce cas, l’interruption peut être perceptible par l’utilisateur si votre tas est suffisamment important (plus de 100 Mo).
 
 Les nettoyages de mémoire fréquents peuvent contribuer à une augmentation de la consommation (et de la puissance) de l’unité centrale et des temps de chargement ou à une diminution de la fréquence d’images dans votre application. Voici quelques techniques auxquelles vous pouvez recourir en vue de réduire les temps de nettoyage de la mémoire et les interruptions liées à ces collections dans votre application UWP.
 
@@ -77,14 +75,13 @@ Tout objet de 85 Ko ou plus est alloué au tas des objets volumineux (LOH, Large
 
 ### <a name="avoid-reference-rich-objects"></a>Éviter les objets riches en référence
 
-Le Garbage Collector détermine quels objets sont dynamiques en suivant les références entre les objets, en partant des racines de votre application. Pour plus d’informations, voir [Que se passe-t-il pendant un nettoyage de la mémoire ?](https://msdn.microsoft.com/library/windows/apps/xaml/ee787088.aspx#what-happens-during-a-garbage-collection) Si un objet contient de nombreuses références, le Garbage Collector doit exécuter davantage de tâches. Une technique courante (en particulier avec des objets volumineux) consiste à convertir des objets riches en référence en des objets sans aucune référence (par exemple, au lieu de stocker une référence, stocker un index). Il est clair que cette technique ne fonctionne que s’il est logiquement possible de la mettre en œuvre.
+Le Garbage Collector détermine quels objets sont dynamiques en suivant les références entre les objets, en partant des racines de votre application. Pour plus d’informations, voir [Que se passe-t-il pendant un nettoyage de la mémoire?](https://msdn.microsoft.com/library/windows/apps/xaml/ee787088.aspx#what-happens-during-a-garbage-collection) Si un objet contient de nombreuses références, le Garbage Collector doit exécuter davantage de tâches. Une technique courante (en particulier avec des objets volumineux) consiste à convertir des objets riches en référence en des objets sans aucune référence (par exemple, au lieu de stocker une référence, stocker un index). Il est clair que cette technique ne fonctionne que s’il est logiquement possible de la mettre en œuvre.
 
 Le remplacement des références d’objet par des index peut représenter un changement perturbant et compliqué pour votre application et s’avère plus efficace dans le cas d’objets volumineux avec un grand nombre de références. Ne procédez à ce changement que si vous identifiez des durées longues de nettoyages de la mémoire dans votre application liées aux objets riches en référence.
 
  
 
  
-
 
 
 

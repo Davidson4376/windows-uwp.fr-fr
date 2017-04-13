@@ -10,14 +10,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 47f40261b3829400c06c4ff071404e5d06cdbf7d
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 17d3d310ed1dbefb9fbe9c248db4533a6f760066
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# <a name="adaptive-tile-templates-schema-and-guidance"></a>Modèles de vignette adaptative : schéma et conseils
+# <a name="adaptive-tile-templates-schema-and-guidance"></a>Modèles de vignette adaptative: schéma et conseils
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -110,7 +108,7 @@ Voici les éléments et attributs permettant de créer des vignettes adaptatives
 </text>
 ```
 
-Valeurs de textStyle : caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumeral
+Valeurs de textStyle: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumeral
 
 ## <a name="group-element"></a>élément de groupe
 
@@ -147,7 +145,6 @@ Valeurs de textStyle : caption captionSubtle body bodySubtle base baseSubtle su
  
 
  
-
 
 
 

@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c3779262c24ef1bd124330fc7709b38abead1a7a
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: b033c58fed79db197858db99d71ad6a174a9a662
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="calendar-view"></a>Affichage Calendrier
 
@@ -33,7 +31,7 @@ Un affichage Calendrier permet à un utilisateur d’afficher un calendrier qu�
 </div>
 
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 Utilisez un affichage Calendrier pour permettre à un utilisateur de sélectionner une date unique ou une plage de dates à partir d’un calendrier toujours visible.
 
 Si vous avez besoin de permettre à un utilisateur de sélectionner plusieurs dates en une seule fois, vous devez utiliser un affichage Calendrier. Si vous avez besoin de permettre à un utilisateur de sélectionner une seule date sans que le calendrier soit toujours visible, envisagez d’utiliser un contrôle de type [Sélecteur de dates du calendrier](calendar-date-picker.md) ou [Sélecteur de date](date-picker.md).
@@ -42,9 +40,9 @@ Pour plus d’informations sur le choix du contrôle approprié, voir l’articl
 
 ## <a name="examples"></a>Exemples
 
-L’affichage Calendrier se compose de 3 affichages distincts : l’affichage mensuel, l’affichage annuel et l’affichage décennal. Par défaut, il s’ouvre avec l’affichage mensuel. Vous pouvez spécifier un affichage de démarrage en définissant la propriété [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.displaymode.aspx).
+L’affichage Calendrier se compose de 3affichages distincts: l’affichage mensuel, l’affichage annuel et l’affichage décennal. Par défaut, il s’ouvre avec l’affichage mensuel. Vous pouvez spécifier un affichage de démarrage en définissant la propriété [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.displaymode.aspx).
 
-![Les 3 affichages d’un affichage Calendrier](images/calendar-view-3-views.png)
+![Les 3affichages d’un affichage Calendrier](images/calendar-view-3-views.png)
 
 Les utilisateurs cliquent sur l’en-tête dans l’affichage mensuel pour ouvrir l’affichage annuel, et cliquent sur l’en-tête dans l’affichage annuel pour ouvrir l’affichage décennal. Les utilisateurs sélectionnent une année dans l’affichage décennal pour revenir à l’affichage annuel, et sélectionnent un mois dans l’affichage annuel pour revenir à l’affichage mensuel. Les deux flèches sur le côté de l’en-tête permettent d’avancer ou de reculer par mois, par année ou par décennie. 
 
@@ -56,7 +54,7 @@ Cet exemple montre comment créer un simple affichage calendrier.
 <CalendarView/>
 ```
 
-L’affichage Calendrier obtenu se présente comme suit :
+L’affichage Calendrier obtenu se présente comme suit:
 
 ![Exemple d’affichage Calendrier](images/controls_calendar_monthview.png)
 
@@ -102,7 +100,7 @@ Bordures d’état visuel | [FocusBorderBrush](https://msdn.microsoft.com/librar
 OutofScope | [IsOutOfScopeEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.isoutofscopeenabled.aspx), [OutOfScopeBackground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.outofscopebackground.aspx), [OutOfScopeForeground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.outofscopeforeground.aspx)  
 Aujourd’hui | [IsTodayHighlighted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.istodayhighlighted.aspx), [TodayFontWeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.todayfontweight.aspx), [TodayForeground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.todayforeground.aspx)  
 
- Par défaut, l’affichage mensuel affiche 6 semaines à la fois. Vous pouvez modifier le nombre de semaines affiché en définissant la propriété [**NumberOfWeeksInView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.numberofweeksinview.aspx). Le nombre de semaines minimum à afficher est 2 ; le nombre maximum est 8.
+ Par défaut, l’affichage mensuel affiche 6semaines à la fois. Vous pouvez modifier le nombre de semaines affiché en définissant la propriété [**NumberOfWeeksInView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.numberofweeksinview.aspx). Le nombre de semaines minimum à afficher est2; le nombre maximum est8.
 
 Par défaut, les affichages annuel et décennal s’affichent dans une grille 4x4. Pour modifier le nombre de lignes ou de colonnes, appelez [**SetYearDecadeDisplayDimensions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions.aspx) avec le nombre souhaité de lignes et de colonnes. Cela modifiera la grille pour les affichages annuel et décennal.
 
@@ -112,7 +110,7 @@ Ici, les affichages annuel et décennal sont définis pour apparaître dans une 
 calendarView1.SetYearDecadeDisplayDimensions(3, 4);
 ```
 
-Par défaut, la date minimale affichée dans l’affichage Calendrier est 100 ans avant la date actuelle, et la date maximale affichée est 100 ans après la date actuelle. Vous pouvez changer les dates minimale et maximale qui s’affichent dans le calendrier en définissant les propriétés [**MinDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.mindate.aspx) et [**MaxDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.maxdate.aspx).
+Par défaut, la date minimale affichée dans l’affichage Calendrier est 100ans avant la date actuelle, et la date maximale affichée est 100ans après la date actuelle. Vous pouvez changer les dates minimale et maximale qui s’affichent dans le calendrier en définissant les propriétés [**MinDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.mindate.aspx) et [**MaxDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.maxdate.aspx).
 
 ```csharp
 calendarView1.MinDate = new DateTime(2000, 1, 1);
@@ -136,9 +134,9 @@ Voici quelques éléments Jour dans un calendrier. Les jours 1 et 2 sont grisés
 Un affichage Calendrier peut contenir un grand nombre d’objets CalendarViewDayItem. Pour assurer la réactivité de l’interface utilisateur et permettre une navigation fluide dans le calendrier, l’affichage Calendrier prend en charge le rendu progressif. Vous pouvez ainsi répartir le traitement d’un élément Jour en plusieurs phases. Si un jour est déplacé en dehors de l’affichage avant que toutes les phases soient terminées, aucun temps supplémentaire n’est consacré à essayer de traiter et de rendre de cet élément.
 
 Cet exemple montre le rendu progressif d’un affichage Calendrier pour la planification de rendez-vous. 
-- Dans la phase 0, l’élément Jour par défaut est rendu. 
-- Dans la phase 1, vous grisez les dates qui ne peuvent pas être réservées. Cela inclut les dates passées, les dimanches et les dates déjà entièrement réservées. 
-- Dans la phase 2, vous vérifiez chaque rendez-vous réservé pour la journée. Vous affichez une barre de densité verte pour chaque rendez-vous confirmé et une barre de densité bleue pour chaque rendez-vous provisoire. 
+- Dans la phase0, l’élément Jour par défaut est rendu. 
+- Dans la phase1, vous grisez les dates qui ne peuvent pas être réservées. Cela inclut les dates passées, les dimanches et les dates déjà entièrement réservées. 
+- Dans la phase2, vous vérifiez chaque rendez-vous réservé pour la journée. Vous affichez une barre de densité verte pour chaque rendez-vous confirmé et une barre de densité bleue pour chaque rendez-vous provisoire. 
 
 Dans cet exemple, la classe `Bookings` est tirée d’une application fictive de prise de rendez-vous et n’est pas affichée.
 
@@ -207,4 +205,3 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 - [Sélecteur de dates du calendrier](calendar-date-picker.md)
 - [Sélecteur de dates](date-picker.md)
 - [Sélecteur d’heure](time-picker.md)
-

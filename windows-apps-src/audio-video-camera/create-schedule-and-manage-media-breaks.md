@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8d4e9a87009b50538adac2357badc0a7dfe8f88c
-ms.lasthandoff: 02/08/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 439d39dab1b628ff484de587f47a3cf9129d639f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-schedule-and-manage-media-breaks"></a>Créer, planifier et gérer des coupures de médias
 
-Cet article vous explique comment créer, planifier et gérer des coupures de médias dans votre application de lecture de contenu multimédia. Les coupures de médias sont généralement utilisées pour insérer des publicités audio ou vidéo dans du contenu multimédia. À partir de Windows 10, version 1607, vous pouvez utiliser la classe [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) pour ajouter rapidement et facilement des coupures de médias dans un objet [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) lu dans [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer).
+Cet article vous explique comment créer, planifier et gérer des coupures de médias dans votre application de lecture de contenu multimédia. Les coupures de médias sont généralement utilisées pour insérer des publicités audio ou vidéo dans du contenu multimédia. À partir de Windows10, version 1607, vous pouvez utiliser la classe [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) pour ajouter rapidement et facilement des coupures de médias dans un objet [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) lu dans [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer).
 
 
 Une fois que vous avez planifié une ou plusieurs coupures de médias, le système lit automatiquement votre contenu multimédia à l’intervalle spécifié durant la lecture. L’objet **MediaBreakManager** génère des événements de manière à ce que votre application puisse réagir au démarrage et à l’arrêt des coupures de médias, ou lorsqu’elles sont ignorées par l’utilisateur. Vous pouvez également accéder à un objet [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) associé à vos coupures de médias afin de surveiller les événements tels que les mises à jour de l’avancement des téléchargements et de la mise en mémoire tampon.
@@ -54,7 +51,7 @@ Vous pouvez également planifier une ou plusieurs coupures de midroll à lire à
 
 Le prochain exemple représenté de coupure de midroll utilise la méthode d’insertion [**MediaBreakInsertionMethod.Replace**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakInsertionMethod), ce qui signifie que le système continuera à traiter le contenu principal pendant la lecture de la coupure. Cette option est généralement utilisée par les applications de diffusion de contenu multimédia en continu au sein desquelles le contenu n’est pas interrompu et déplacé derrière le flux en direct pendant la lecture de la publicité. 
 
-Cet exemple utilise également une surcharge du constructeur [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) qui accepte deux paramètres [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.TimeSpan). Le premier paramètre spécifie le point de départ de la lecture au sein de l’élément de coupure de média. Le second paramètre spécifie la durée pendant laquelle l’élément de coupure de média sera lu. Ainsi, dans l’exemple suivant, l’objet **MediaBreak** démarrera 20 minutes après le démarrage du contenu principal. La lecture de l’élément multimédia démarre 30 secondes après le début de l’élément de coupure de média et s’arrête 15 secondes avant la reprise de la lecture du contenu multimédia principal.
+Cet exemple utilise également une surcharge du constructeur [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) qui accepte deuxparamètres [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.TimeSpan). Le premier paramètre spécifie le point de départ de la lecture au sein de l’élément de coupure de média. Le second paramètre spécifie la durée pendant laquelle l’élément de coupure de média sera lu. Ainsi, dans l’exemple suivant, l’objet **MediaBreak** démarrera 20minutes après le démarrage du contenu principal. La lecture de l’élément multimédia démarre 30secondes après le début de l’élément de coupure de média et s’arrête 15secondes avant la reprise de la lecture du contenu multimédia principal.
 
 [!code-cs[MidrollBreak2](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetMidrollBreak2)]
 
@@ -79,11 +76,11 @@ L’événement [**BreakStarted**](https://msdn.microsoft.com/library/windows/ap
 
 L’événement **BreakSkipped** est déclenché lorsque l’utilisateur appuie sur le bouton *Suivant* dans l’interface utilisateur durant la lecture d’un élément pour lequel l’objet [**CanSkip**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.CanSkip) est défini sur true,ou lorsque vous ignorez une coupure dans votre code en appelant [**SkipCurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.SkipCurrentBreak).
 
-L’exemple suivant utilise la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) de l’objet **MediaPlayer** afin d’obtenir une référence à l’élément multimédia pour le contenu principal. La coupure de média ignorée appartient à la planification des coupures de cet élément. Ensuite, le code vérifie si la coupure de média ignorée correspond à celle définie dans la propriété [**PrerollBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSchedule.PrerollBreak) de la planification. Si tel est le cas, cela signifie que la coupure de preroll est bien celle qui a été ignorée. Le cas échéant, une nouvelle coupure de midroll est créée, et sa lecture est planifiée 10 minutes après le démarrage du contenu principal.
+L’exemple suivant utilise la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) de l’objet **MediaPlayer** afin d’obtenir une référence à l’élément multimédia pour le contenu principal. La coupure de média ignorée appartient à la planification des coupures de cet élément. Ensuite, le code vérifie si la coupure de média ignorée correspond à celle définie dans la propriété [**PrerollBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSchedule.PrerollBreak) de la planification. Si tel est le cas, cela signifie que la coupure de preroll est bien celle qui a été ignorée. Le cas échéant, une nouvelle coupure de midroll est créée, et sa lecture est planifiée 10minutes après le démarrage du contenu principal.
 
 [!code-cs[BreakSkipped](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSkipped)]
 
-L’événement [**BreaksSeekedOver**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreaksSeekedOver) est déclenché quand la position de lecture de l’élément multimédia principal passe au-dessus de l’intervalle prévu pour une ou plusieurs coupures de média. L’exemple suivant détecte si une ou plusieurs coupures de média ont été recherchées, si la position de lecture a été avancée et si elle a été avancée de moins de 10 minutes. Le cas échéant, la première coupure recherchée, récupérée de la collection [**SeekedOverBreaks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSeekedOverEventArgs.SeekedOverBreaks) exposée par les arguments d’événement, est lue immédiatement avec un appel à la méthode [**PlayBreak**](https://msdn.microsoft.com/library/windows/apps/mt670689) de **MediaPlayer.BreakManager**.
+L’événement [**BreaksSeekedOver**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreaksSeekedOver) est déclenché quand la position de lecture de l’élément multimédia principal passe au-dessus de l’intervalle prévu pour une ou plusieurs coupures de média. L’exemple suivant détecte si une ou plusieurs coupures de média ont été recherchées, si la position de lecture a été avancée et si elle a été avancée de moins de 10minutes. Le cas échéant, la première coupure recherchée, récupérée de la collection [**SeekedOverBreaks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSeekedOverEventArgs.SeekedOverBreaks) exposée par les arguments d’événement, est lue immédiatement avec un appel à la méthode [**PlayBreak**](https://msdn.microsoft.com/library/windows/apps/mt670689) de **MediaPlayer.BreakManager**.
 
 [!code-cs[BreakSeekedOver](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSeekedOver)]
 
@@ -95,7 +92,7 @@ Comme indiqué précédemment dans cet article, la propriété [**CurrentItemInd
 ## <a name="access-the-current-playback-session"></a>Accéder à la session de lecture active
 L’objet [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) utilise la classe **MediaPlayer** pour fournir des données et des événements associés au contenu multimédia en cours de lecture. L’objet [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) présente également un élément **MediaPlaybackSession** auquel vous accédez pour récupérer les données et les événements spécifiquement associés au contenu de la coupure de média en cours de lecture. Parmi les informations pouvant être obtenues de la session de lecture, vous trouverez l’état de lecture actif (en lecture ou en pause), ainsi que la position de lecture au sein du contenu. Vous pouvez utiliser les propriétés [**NaturalVideoWidth**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoWidth) et [**NaturalVideoHeight**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoHeight), ainsi que [**NaturalVideoSizeChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoSizeChanged) pour ajuster votre interface utilisateur vidéo si le contenu de la coupure de média présente des proportions différentes de celles de votre contenu principal. Vous pouvez également recevoir des événements tels que [**BufferingStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingStarted), [**BufferingEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingEnded) et [**DownloadProgressChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.DownloadProgressChanged), qui peuvent fournir des données précieuses de télémétrie relatives aux performances de votre application.
 
-Dans l’exemple suivant, un gestionnaire est enregistré pour l’**événement BufferingProgressChanged** ; dans le gestionnaire d’événement, il met à jour l’interface utilisateur en fonction de l’avancement de la mise en mémoire tampon.
+Dans l’exemple suivant, un gestionnaire est enregistré pour l’**événement BufferingProgressChanged**; dans le gestionnaire d’événement, il met à jour l’interface utilisateur en fonction de l’avancement de la mise en mémoire tampon.
 
 [!code-cs[RegisterBufferingProgressChanged](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetRegisterBufferingProgressChanged)]
 
@@ -109,7 +106,6 @@ Dans l’exemple suivant, un gestionnaire est enregistré pour l’**événement
  
 
  
-
 
 
 

@@ -7,15 +7,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ac1a9b38a9857ae536025e682f98d01135850a19
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e308280fcecf825061ddf503ce91f8607fcece72
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="take-a-test-javascript-api"></a>API JavaScript Examen
 
 [Examen](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) est une application de navigateur qui génère des évaluations en ligne dans un environnement verrouillé pour des examens dont les enjeux sont importants. Elle prend en charge la norme d’API de navigateur SBAC pour les examens de tronc commun dont les enjeux sont importants et vous permet de vous concentrer sur le contenu de l’évaluation plutôt que sur la façon de verrouiller Windows.
@@ -69,7 +66,7 @@ Efface les ressources web mises en cache.
 `None`
 
 **Configuration requise**  
-Windows 10, version 1607
+Windows10, version1607
 
 ---
 
@@ -81,13 +78,13 @@ Ferme le navigateur et déverrouille l’appareil.
 `browser.security.close(false);`
 
 **Paramètres**  
-`restart` - ce paramètre est ignoré, mais doit être fourni.
+`restart` -ce paramètre est ignoré, mais doit être fourni.
 
 **Valeur de retour**  
 `None`
 
 **Configuration requise**  
-Windows 10, version 1607
+Windows10, version1607
 
 ---
 
@@ -105,7 +102,7 @@ Verrouille l’appareil. Également utilisé pour déverrouiller l’appareil.
 `None`
 
 **Configuration requise**  
-Windows 10, version 1607
+Windows10, version1607
 
 ---
 
@@ -138,7 +135,7 @@ Obtient la liste des adresses MAC pour l’appareil.
 `An array of MAC addresses.`
 
 **Configuration requise**  
-Windows 10, version 1607
+Windows10, version1607
 
 ---
 
@@ -158,7 +155,7 @@ Obtient la liste des processus en cours d’exécution de l’utilisateur.
 **Remarques** La liste n’inclut pas les processus système.
 
 **Configuration requise**  
-Windows 10, version 1607
+Windows10, version1607
 
 ---
 
@@ -176,7 +173,7 @@ Détermine si le contexte de verrouillage est toujours appliqué à l’appareil
 `True indicates that the lockdown context is applied to the device; otherwise false.`
 
 **Configuration requise**  
-Windows 10, version 1607
+Windows10, version1607
 
 ---
 
@@ -212,7 +209,7 @@ Obtient l’état de lecture des fonctions vocales.
 `The speech playback status. Possible values are: “available”, “idle”, “paused”, and “speaking”.`
 
 **Configuration requise**  
-Windows 10, version 1607
+Windows10, version1607
 
 ---
 
@@ -230,7 +227,7 @@ Obtient la liste des modules vocaux disponibles.
 `The available voice packs. For example: “Microsoft Zira Mobile”, “Microsoft Mark Mobile”`
 
 **Configuration requise**  
-Windows 10, version 1607
+Windows10, version1607
 
 ---
 
@@ -251,7 +248,7 @@ Met en pause la synthèse vocale.
 `None`
 
 **Configuration requise**  
-Windows 10, version 1607
+Windows10, version1607
 
 ---
 
@@ -269,7 +266,7 @@ Reprend la synthèse vocale suspendue.
 `None`
 
 **Configuration requise**  
-Windows 10, version 1607
+Windows10, version1607
 
 ---
 
@@ -301,7 +298,7 @@ Le volume, la tonalité et le taux doivent être marqués dans le fichier SSML (
 L’objet options doit suivre l’ordre, le nommage et la casse illustrés dans l’exemple suivant.
 
 **Configuration requise**  
-Windows 10, version 1607
+Windows10, version1607
 
 ---
 
@@ -319,5 +316,4 @@ Arrête la synthèse vocale.
 `None`
 
 **Configuration requise**  
-Windows 10, version 1607
-
+Windows10, version1607

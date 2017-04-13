@@ -1,6 +1,6 @@
 ---
 author: Xansky
-Description: "Répertorie les modèles de contrôle Microsoft UI Automation, les classes que les clients utilisent pour y accéder, ainsi que les interfaces que les fournisseurs utilisent pour les implémenter."
+Description: "Répertorie les modèles de contrôle Microsoft UI Automation, les classes que les clients utilisent pour y accéder, ainsi que les interfaces que les fournisseurs utilisent pour les implémenter."
 ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
 title: "Modèles de contrôle et interfaces"
 label: Control patterns and interfaces
@@ -10,19 +10,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: bec52abfca19634948e3ad2a1959b51b1df3eced
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 0dd135fb0ece7d78c985188c50639472aa038ad4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="control-patterns-and-interfaces"></a>Modèles de contrôle et interfaces  
 
 
 
-Répertorie les modèles de contrôle Microsoft UI Automation, les classes que les clients utilisent pour y accéder, ainsi que les interfaces que les fournisseurs utilisent pour les implémenter.
+Répertorie les modèles de contrôle Microsoft UI Automation, les classes que les clients utilisent pour y accéder, ainsi que les interfaces que les fournisseurs utilisent pour les implémenter.
 
 Le tableau présenté dans cette rubrique décrit les modèles de contrôle Microsoft UI Automation. Par ailleurs, ce tableau recense les classes utilisées par les clients UI Automation pour accéder aux modèles de contrôle et aux interfaces utilisées par les fournisseurs UI Automation pour les implémenter. La colonne **Control pattern** indique le nom du modèle du point de vue du client UI Automation, sous la forme d’une valeur de constante répertoriée dans [**Control Pattern Availability Property Identifiers**](https://msdn.microsoft.com/library/windows/desktop/Ee671199). Du point de vue du fournisseur UI Automation, chacun de ces modèles est un nom de constante [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496). La colonne **Class provider interface** indique le nom de l’interface que les fournisseurs implémentent pour proposer ce modèle pour un contrôle XAML personnalisé.
 
@@ -65,13 +62,12 @@ Quand vous implémentez un modèle de contrôle, vous devez aussi consulter la d
 | **Window** | [**IWindowProvider**](https://msdn.microsoft.com/library/windows/apps/BR242670) | Expose des informations spécifiques aux fenêtres, concept fondamental du système d’exploitation Microsoft Windows. Les fenêtres et les boîtes de dialogue enfants sont des exemples de contrôles correspondant à des fenêtres. |
 
 > [!NOTE]
-> Vous ne trouverez pas nécessairement des implémentations de tous ces modèles dans les contrôles XAML existants. Certains de ces modèles ont des interfaces uniquement pour prendre en charge la parité avec la définition de l’infrastructure UI Automation générale des modèles, ainsi que pour prendre en charge des scénarios d’homologues d’automation qui nécessiteront une implémentation purement personnalisée pour prendre en charge ce modèle.
+> Vous ne trouverez pas nécessairement des implémentations de tous ces modèles dans les contrôles XAML existants. Certains de ces modèles ont des interfaces uniquement pour prendre en charge la parité avec la définition de l’infrastructure UIAutomation générale des modèles, ainsi que pour prendre en charge des scénarios d’homologues d’automation qui nécessiteront une implémentation purement personnalisée pour prendre en charge ce modèle.
 
 > [!NOTE]
-> Les applications du Windows Phone Store ne prennent pas en charge tous les modèles de contrôle UI Automation répertoriés ici. **Annotation**, **Dock**, **Drag**, **DropTarget** et **ObjectModel** font partie des modèles non pris en charge.
+> Les applications du WindowsPhoneStore ne prennent pas en charge tous les modèles de contrôle UIAutomation répertoriés ici. **Annotation**, **Dock**, **Drag**, **DropTarget** et **ObjectModel** font partie des modèles non pris en charge.
 
 <span id="related_topics"/>
 ## <a name="related-topics"></a>Rubriques connexes  
 * [Homologues d’automatisation personnalisés](custom-automation-peers.md)
 * [Accessibilité](accessibility.md) 
-

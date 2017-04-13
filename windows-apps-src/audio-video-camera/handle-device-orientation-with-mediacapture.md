@@ -8,16 +8,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 4e7895f65a6d16fc43acab9f1804e5a44bd8cb35
-ms.lasthandoff: 02/08/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 0cca599b448ab663d4ebf0004329ecce8f4309c4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="handle-device-orientation-with-mediacapture"></a>Gérer l’orientation de l’appareil à l’aide de MediaCapture
-Lorsque votre application capture une photo ou une vidéo destinées à être vues en dehors, comme lors de l’enregistrement dans un fichier sur l’appareil de l’utilisateur ou lors d’un partage en ligne, il est important d’encoder l’image à l’aide des métadonnées d’orientation appropriées, de manière que le contenu soit orienté correctement lorsqu’il est affiché par une autre application ou un autre appareil. La détermination des données appropriées d’orientation à inclure dans un fichier multimédia peut être une tâche complexe, dans la mesure où diverses variables sont à examiner, dont l’orientation du châssis de l’appareil, l’orientation de l’affichage et le placement de l’appareil photo sur le châssis (appareil photo frontal ou arrière). 
+Lorsque votre application capture une photo ou une vidéo qui est destinée à être vue en dehors, comme lors de l’enregistrement sur un fichier sur l’appareil de l’utilisateur ou d’un partage en ligne, il est important de coder l’image à l’aide des métadonnées appropriées d’orientation, de manière à ce que le contenu soit orienté correctement lorsqu’une autre application ou un autre appareil l’affiche. La détermination des données appropriées d’orientation à inclure dans un fichier multimédia peut être une tâche complexe, dans la mesure où diverses variables sont à examiner, dont l’orientation du châssis de l’appareil, l’orientation de l’affichage et le placement de l’appareil photo sur le châssis (appareil photo frontal ou arrière). 
 
 Pour simplifier le processus de gestion de l’orientation, nous vous recommandons d’utiliser une classe d’assistance **CameraRotationHelper**, pour laquelle une définition complète est fournie à la fin de cet article. Vous pouvez ajouter cette classe à votre projet, puis suivre les instructions de cet article pour ajouter la prise en charge de l’orientation à votre application caméra. La classe d’assistance simplifie la rotation des contrôles de votre interface utilisateur d’appareil photo, de manière à ce qu’ils soient correctement affichés du point de vue de l’utilisateur.
 
@@ -34,7 +31,7 @@ La première étape de l’ajout de la prise en charge de l’orientation à vot
 [!code-cs[AutoRotationPreference](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetAutoRotationPreference)]
 
 ## <a name="tracking-the-camera-device-location"></a>Suivi de l’emplacement de l’appareil photo
-Pour calculer l’orientation appropriée du contenu multimédia capturé, votre application doit déterminer l’emplacement de l’appareil photo sur le châssis. Ajoutez une variable de membre booléenne afin de détecter si l’appareil photo est externe à l’appareil, tel qu’une webcam USB. Ajoutez une autre variable booléenne afin de détecter si l’aperçu doit être mis en miroir, ce qui est le cas lors de l’utilisation d’un appareil photo de face. Par ailleurs, ajoutez une variable dédiée au stockage de l’objet **DeviceInformation** représentant l’appareil photo sélectionné.
+Pour calculer l’orientation appropriée du contenu multimédia capturé, votre application doit déterminer l’emplacement de l’appareil photo sur le châssis. Ajoutez une variable de membre booléenne afin de détecter si l’appareil photo est externe à l’appareil, tel qu’une webcamUSB. Ajoutez une autre variable booléenne afin de détecter si l’aperçu doit être mis en miroir, ce qui est le cas lors de l’utilisation d’un appareil photo de face. Par ailleurs, ajoutez une variable dédiée au stockage de l’objet **DeviceInformation** représentant l’appareil photo sélectionné.
 
 [!code-cs[CameraDeviceLocationBools](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCameraDeviceLocationBools)]
 [!code-cs[DeclareCameraDevice](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareCameraDevice)]
@@ -83,7 +80,7 @@ L’article [**Capture photo, vidéo et audio de base à l’aide de MediaCaptur
 
 Dans l’exemple suivant, une photo est capturée dans une classe [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.InMemoryRandomAccessStream) avec un appel à [**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.CapturePhotoToStreamAsync), tandis qu’un élément [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder) est généré à partir du flux. Ensuite, un élément [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile) est créé et ouvert afin de récupérer un [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.IRandomAccessStream) dédié à l’écriture sur le fichier. 
 
-Avant de procéder au transcodage du fichier, l’orientation de la photo est récupérée de la méthode de la classe d’assistance **GetCameraCaptureOrientation**. Cette méthode renvoie un objet [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Sensors.SimpleOrientation) qui est converti en objet [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.FileProperties.PhotoOrientation) avec la méthode d’assistance **ConvertSimpleOrientationToPhotoOrientation**. Ensuite, un nouvel objet **BitmapPropertySet** est créé et une propriété est ajoutée. Sa clé est « System.Photo.Orientation » et la valeur est l’orientation de la photo, exprimée en tant qu’élément **BitmapTypedValue**. « System.Photo.Orientation » est l’une des nombreuses propriétés Windows qui peuvent être ajoutées en tant que métadonnées à un fichier d’image. Pour consulter une liste de l’ensemble des propriétés associées à la photo, consultez la page [**Propriétés Windows - Photo**](https://msdn.microsoft.com/library/windows/desktop/ff516600). Pour plus d’informations sur l’utilisation des métadonnées dans les images, consultez la page [**Métadonnées d’image**](image-metadata.md).
+Avant de procéder au transcodage du fichier, l’orientation de la photo est récupérée de la méthode de la classe d’assistance **GetCameraCaptureOrientation**. Cette méthode renvoie un objet [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Sensors.SimpleOrientation) qui est converti en objet [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.FileProperties.PhotoOrientation) avec la méthode d’assistance **ConvertSimpleOrientationToPhotoOrientation**. Ensuite, un nouvel objet **BitmapPropertySet** est créé et une propriété est ajoutée. Sa clé est «System.Photo.Orientation» et la valeur est l’orientation de la photo, exprimée en tant qu’élément **BitmapTypedValue**. «System.Photo.Orientation» est l’une des nombreuses propriétés Windows qui peuvent être ajoutées en tant que métadonnées à un fichier d’image. Pour consulter une liste de l’ensemble des propriétés associées à la photo, consultez la page [**Propriétés Windows - Photo**](https://msdn.microsoft.com/library/windows/desktop/ff516600). Pour plus d’informations sur l’utilisation des métadonnées dans les images, consultez la page [**Métadonnées d’image**](image-metadata.md).
 
 Enfin, l’ensemble de propriétés comprenant les données d’orientation est défini pour l’encodeur à l’aide d’un appel à [**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/) et l’image est transcodée à l’aide d’un appel à [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder.FlushAsync).
 
@@ -101,11 +98,11 @@ L’extrait de code suivant répertorie le code complet de la classe **CameraRot
 
 Cette classe d’assistance utilise la variable [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Sensors.SimpleOrientationSensor) de l’appareil afin de déterminer l’orientation courante du châssis d’appareil et la classe [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation) afin de déterminer l’orientation courante de l’affichage. Chacune de ces classes fournit des événements qui sont déclenchés quand l’orientation courante est modifiée. Le panneau sur lequel l’appareil de capture est monté (frontal, arrière ou externe) est utilisé pour déterminer si le flux d’aperçu doit être mis en miroir. Par ailleurs, la propriété [**EnclosureLocation.RotationAngleInDegreesClockwise**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.EnclosureLocation.RotationAngleInDegreesClockwise), prise en charge par certains appareils, est utilisée pour déterminer l’orientation selon laquelle l’appareil photo est monté sur les châssis.
 
-Les méthodes suivantes peuvent être utilisées pour récupérer les valeurs recommandées d’orientation pour les tâches spécifiques de l’application Caméra :
+Les méthodes suivantes peuvent être utilisées pour récupérer les valeurs recommandées d’orientation pour les tâches spécifiques de l’application Caméra:
 
-* **GetUIOrientation** : renvoie l’orientation suggérée pour les éléments d’interface utilisateur d’appareil photo.
-* **GetCameraCaptureOrientation** : renvoie l’orientation suggérée pour l’encodage dans les métadonnées de l’image.
-* **GetCameraPreviewOrientation** : renvoie l’orientation suggérée pour le flux d’aperçu, afin de fournir une expérience utilisateur naturelle.
+* **GetUIOrientation**: renvoie l’orientation suggérée pour les éléments d’interface utilisateur d’appareil photo.
+* **GetCameraCaptureOrientation**: renvoie l’orientation suggérée pour l’encodage dans les métadonnées de l’image.
+* **GetCameraPreviewOrientation**: renvoie l’orientation suggérée pour le flux d’aperçu, afin de fournir une expérience utilisateur naturelle.
 
 [!code-cs[CameraRotationHelperFull](./code/SimpleCameraPreview_Win10/cs/CameraRotationHelper.cs#SnippetCameraRotationHelperFull)]
 
@@ -118,7 +115,6 @@ Les méthodes suivantes peuvent être utilisées pour récupérer les valeurs re
  
 
  
-
 
 
 

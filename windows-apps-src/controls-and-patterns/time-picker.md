@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5cd0b42f05ca246005b09faa0e926bc2e625d2c1
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 83ef423ce4e6fd57726879dd83a704c47cc43744
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="time-picker"></a>Sélecteur d’heure
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -30,14 +28,14 @@ Le sélecteur d’heure offre aux utilisateurs une méthode standard de sélecti
 </ul>
 </div>
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 Utilisez un sélecteur d’heure pour permettre à un utilisateur de sélectionner une valeur d’heure unique.
 
 Pour plus d’informations sur le choix du contrôle approprié, voir l’article [Contrôles de date et d’heure](date-and-time.md).
 
 ## <a name="examples"></a>Exemples
 
-Le point d’entrée affiche l’heure choisie, et lorsque l’utilisateur sélectionne ce point d’entrée, la surface du sélecteur s’agrandit à la verticale à partir du milieu pour que l’utilisateur puisse effectuer une sélection. Le sélecteur d’heure se superpose aux autres éléments de l’interface utilisateur ; il ne les ferme pas.
+Le point d’entrée affiche l’heure choisie, et lorsque l’utilisateur sélectionne ce point d’entrée, la surface du sélecteur s’agrandit à la verticale à partir du milieu pour que l’utilisateur puisse effectuer une sélection. Le sélecteur d’heure se superpose aux autres éléments de l’interface utilisateur; il ne les ferme pas.
 
 ![Exemple de développement du sélecteur d’heure](images/controls_timepicker_expand.png)
 
@@ -54,7 +52,7 @@ TimePicker arrivalTimePicker = new TimePicker();
 arrivalTimePicker.Header = "Arrival time";
 ```
 
-Le sélecteur d’heure qui en résulte se présente comme suit :
+Le sélecteur d’heure qui en résulte se présente comme suit:
 
 ![Exemple de sélecteur d’heure](images/time-picker-closed.png)
 
@@ -69,4 +67,3 @@ Le sélecteur d’heure qui en résulte se présente comme suit :
 - [Sélecteur de dates du calendrier](calendar-date-picker.md)
 - [Affichage Calendrier](calendar-view.md)
 - [Sélecteur de dates](date-picker.md)
-

@@ -1,6 +1,6 @@
 ---
 ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
-description: "Cette section explique comment partager des données entre des applications de plateforme Windows universelle (UWP), notamment comment utiliser le contrat de partage, copier et coller, et glisser-déplacer."
+description: "Cette section explique comment partager des données entre des applications UWP, notamment comment utiliser le contrat de partage, copier et coller, et glisser-déplacer."
 title: Communication entre les applications
 author: awkoren
 ms.author: alkoren
@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4e8c90996324e7481a7a4dab5a1ff3f30b139276
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 8d700c707a3a3cdebe338ac51c8ebb5b37d94da3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-to-app-communication"></a>Communication entre les applications
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette section explique comment partager des données entre des applications de plateforme Windows universelle (UWP), notamment comment utiliser le contrat de partage, copier et coller, et glisser-déplacer.
 
@@ -40,5 +37,4 @@ Outre le contrat de partage, les applications peuvent également intégrer des t
 | [Glisser-déplacer](drag-and-drop.md) | Cet article explique comment ajouter le glisser-déplacer dans votre application UWP. Glisser-déplacer est une méthode naturelle et classique d’interaction avec le contenu comme les images et les fichiers. Une fois implémenté, le glisser-déplacer fonctionne parfaitement dans toutes les directions, notamment d’application à application, d’application à bureau et de bureau à application. |
 
 ## <a name="see-also"></a>Voir également
-- [Développer des applications UWP](https://developer.microsoft.com/windows/develop)
-
+- [Développer des applicationsUWP](https://developer.microsoft.com/windows/develop)

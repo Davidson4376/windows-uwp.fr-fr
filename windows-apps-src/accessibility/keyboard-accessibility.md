@@ -10,19 +10,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9b1261de60bf0a45940fe9a284d8a5276b42e0a3
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: b41e7a03d3ca2ac6d146ed706421699dc66066a3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="keyboard-accessibility"></a>Accessibilité du clavier  
 
 
 
-Si votre application ne fournit pas un bon accès par le clavier, les non-voyants ou les utilisateurs ayant des problèmes de mobilité peuvent rencontrer des difficultés à utiliser votre application ou risquent de ne pas pouvoir l’utiliser du tout.
+Si votre application ne fournit pas un bon accès par le clavier, les utilisateurs aveugles ou ayant des problèmes de mobilité peuvent rencontrer des difficultés à utiliser votre application ou risquent de ne pas pouvoir l’utiliser du tout.
 
 <span id="keyboard_navigation_among_UI_elements"/>
 <span id="keyboard_navigation_among_ui_elements"/>
@@ -245,5 +242,4 @@ En règle générale, les raccourcis clavier ne concernent pas les applications 
 * [Entrée : exemple de clavier tactile](http://go.microsoft.com/fwlink/p/?linkid=246019)
 * [Exemple de réponse à l’apparition du Clavier visuel](http://go.microsoft.com/fwlink/p/?linkid=231633)
 * [Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
-
 

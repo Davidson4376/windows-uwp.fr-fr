@@ -1,24 +1,21 @@
 ---
 author: drewbatgit
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
-description: "Cet article vous explique comment utiliser la classe AdvancedPhotoCapture pour capturer des photos avec plage dynamique étendue (HDR) et en faible luminosité."
+description: "Cet article vous explique comment utiliser la classe AdvancedPhotoCapture pour capturer des photos avec plage dynamique élevée(HDR)et en basse lumière."
 title: "Capture de photos avec plage dynamique étendue (HDR) et en faible luminosité"
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e4ed8175e0f35733972474bbcc01cce9830f1e5b
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 32badfb6cc2a069370623357ba96800cebd11c03
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>Capture de photos avec plage dynamique étendue (HDR) et en faible luminosité
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous explique comment utiliser la classe [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) pour capturer des photos avec plage dynamique élevée. Cette API permet aussi d’obtenir une image de référence à partir de la capture HDR avant la fin du traitement de l’image finale.
@@ -161,7 +158,7 @@ Bien entendu, vous pouvez toujours enregistrer l’image dans un fichier, avant 
 ## <a name="save-a-capturedframe-to-a-file"></a>Enregistrer une classe CapturedFrame dans un fichier
 La classe [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame) implémente l’interface IInputStream interface, afin qu’elle puisse être utilisée en tant qu’entrée pour une instance [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder). Ensuite, une classe [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder) peut être utilisée pour écrire les données de l’image sur le disque.
 
-Dans l’exemple suivant, un nouveau dossier est créé dans la bibliothèque d’image de l’utilisateur ; un fichier est créé dans ce dossier. Notez que votre application devra inclure la fonctionnalité **Bibliothèque d’images** dans votre fichier de manifeste d’application afin d’accéder à ce répertoire. Un flux de fichier est alors ouvert sur le fichier spécifié. Ensuite, la méthode [**BitmapDecoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder.CreateAsync) est appelée pour la création du décodeur de **CapturedFrame**. La méthode [**CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214) crée un encodeur à partir du flux de fichier et du décodeur.
+Dans l’exemple suivant, un nouveau dossier est créé dans la bibliothèque d’image de l’utilisateur; un fichier est créé dans ce dossier. Notez que votre application devra inclure la fonctionnalité **Bibliothèque d’images** dans votre fichier de manifeste d’application afin d’accéder à ce répertoire. Un flux de fichier est alors ouvert sur le fichier spécifié. Ensuite, la méthode [**BitmapDecoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder.CreateAsync) est appelée pour la création du décodeur de **CapturedFrame**. La méthode [**CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214) crée un encodeur à partir du flux de fichier et du décodeur.
 
 Les étapes suivantes sont dédiées à l’encodage de l’orientation de la photo dans le fichier image à l’aide de la classe [**BitmapProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder.BitmapProperties) de l’encodeur. Pour plus d’informations sur le traitement de l’orientation durant la capture d’images, consultez la section [**Gérer l’orientation de l’appareil à l’aide de MediaCapture**](handle-device-orientation-with-mediacapture.md).
 
@@ -173,4 +170,3 @@ Enfin, l’image est écrite sur le fichier avec un appel à [**FlushAsync**](ht
 
 * [Appareil photo](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-

@@ -2,23 +2,21 @@
 author: mcleblanc
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Device Portal pour Xbox
-description: "Découvrez comment activer Device Portal pour Xbox One."
+description: "Découvrez comment activer Device Portal pour XboxOne."
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4321e799e8633dc31cc0d73889a0b0b6056f6d3b
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 00b9f0ca9cb0f62bf7bcc972604c697213242c21
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="device-portal-for-xbox"></a>Device Portal pour Xbox
 
 
-## <a name="set-up-device-portal-on-xbox"></a>Configurer Device Portal sur Xbox
+## <a name="set-up-device-portal-on-xbox"></a>Configurer Device Portal pour Xbox
 
 ### <a name="enable-device-portal"></a>Activer Device Portal
 
@@ -42,4 +40,3 @@ Device Portal sur XBox propose un ensemble de pages standard. Pour obtenir une d
 - Applications
 - Performances
 - Réseau
-

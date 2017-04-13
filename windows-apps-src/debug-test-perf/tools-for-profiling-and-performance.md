@@ -8,22 +8,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 51304d873261466afc9014224b918b82603f00e8
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 0a1a955d464fe875afdeef74d3ffa23a43e1406b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="tools-for-profiling-and-performance"></a>Outils de profilage et de performances
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Microsoft fournit plusieurs outils pour vous aider à améliorer les performances de vos applications de plateforme Windows universelle (UWP). Suivez ces liens pour découvrir comment utiliser ces outils.
 
 **Outil Réactivité de l’interface utilisateur XAML dans Visual Studio 2015** : l’un des meilleurs outils à utiliser pour mesurer l’impact sur les performances au sein de votre application. Cet outil a été [mis à jour pour Visual Studio 2015](http://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx) pour prendre en charge d’autres scénarios.
 
-Voir aussi :
+Voir aussi:
 
 |           |             |
 |-----------|-------------|
@@ -33,5 +31,4 @@ Voir aussi :
 | [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx) | Inclus dans le Kit de déploiement et d’évaluation Windows (Windows ADK), Windows Performance Analyzer (WPA) est un outil qui crée des graphiques et des tables de données d’événements du Suivi d’événements pour Windows (ETW) enregistrés par l’Enregistreur de performances Windows (WPR), Xperf ou une évaluation effectuée dans la Plateforme d’évaluation . WPA peut ouvrir tout fichier journal de suivi des événements (ETL) à des fins d’analyse. |
 
  
-
 

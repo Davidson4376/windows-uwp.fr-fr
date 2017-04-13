@@ -1,6 +1,6 @@
 ---
 author: Xansky
-Description: "Cet article offre une vue d’ensemble des concepts et technologies associés aux scénarios d’accessibilité des applications de plateforme Windows universelle (UWP)."
+Description: "Cet article est une vue d’ensemble des concepts et technologies associés aux scénarios d’accessibilité des applications de plateforme Windows universelle (UWP)."
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: "Vue d’ensemble de l’accessibilité"
 label: Accessibility overview
@@ -10,20 +10,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a03953885179cf8e969e3b35a426aa958c528f54
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: f0fd2e03c58ac5ffa575cf2381df4c652422efea
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessibility-overview"></a>Vue d’ensemble de l’accessibilité  
 
 
 
 
-Cet article offre une vue d’ensemble des concepts et technologies associés aux scénarios d’accessibilité des applications de plateforme Windows universelle (UWP).
+Cet article est une vue d’ensemble des concepts et technologies associés aux scénarios d’accessibilité des applications de plateforme Windows universelle (UWP).
 
 <span id="Accessibility_and_your_app"/>
 <span id="accessibility_and_your_app"/>
@@ -42,8 +39,8 @@ De plus, les fonctionnalités de liaison de données, de style et de modèle sim
 <span id="UI_Automation"/>
 <span id="ui_automation"/>
 <span id="UI_AUTOMATION"/>
-## <a name="ui-automation"></a>UI Automation  
-La prise en charge de l’accessibilité provient principalement de la prise en charge intégrée de l’infrastructure Microsoft UI Automation. Cette prise en charge est fournie via des classes de base et le comportement intégré de l’implémentation de classe pour les types de contrôle, ainsi que via une représentation d’interface de l’API du fournisseur UI Automation. Chaque classe de contrôle utilise les concepts UI Automation des homologues d’automation et des modèles d’automation pour signaler le rôle et le contenu des contrôles aux clients UI Automation. L’application est traitée en tant que fenêtre de niveau supérieur par UI Automation. Via l’infrastructure UI Automation, tout le contenu relatif à l’accessibilité présent dans cette fenêtre d’application est disponible pour un client UI Automation. Pour plus d’informations sur UI Automation, voir [Vue d’ensemble d’UI Automation](https://msdn.microsoft.com/library/windows/desktop/Ee684076).
+## <a name="ui-automation"></a>UIAutomation  
+La prise en charge de l’accessibilité provient principalement de la prise en charge intégrée de l’infrastructure MicrosoftUIAutomation. Cette prise en charge est fournie via des classes de base et le comportement intégré de l’implémentation de classe pour les types de contrôle, ainsi que via une représentation d’interface de l’API du fournisseur UI Automation. Chaque classe de contrôle utilise les concepts UI Automation des homologues d’automation et des modèles d’automation pour signaler le rôle et le contenu des contrôles aux clients UI Automation. L’application est traitée en tant que fenêtre de niveau supérieur par UI Automation. Via l’infrastructure UI Automation, tout le contenu relatif à l’accessibilité présent dans cette fenêtre d’application est disponible pour un client UI Automation. Pour plus d’informations sur UI Automation, voir [Vue d’ensemble d’UI Automation](https://msdn.microsoft.com/library/windows/desktop/Ee684076).
 
 <span id="Assistive_technology"/>
 <span id="assistive_technology"/>
@@ -73,7 +70,7 @@ Par exemple, certains lecteurs d’écran lisent la totalité de l’interface u
 
 L’information la plus importante dont un lecteur d’écran ou une autre technologie d’assistance a besoin pour aider les utilisateurs à comprendre une application ou à naviguer dans une application est un *nom accessible* pour les parties d’élément de l’application. Dans de nombreux cas, un contrôle ou élément possède déjà un nom accessible calculé à partir d’autres valeurs de propriété que vous avez fournies par un autre moyen. Le cas le plus courant dans lequel vous pouvez utiliser un nom déjà calculé concerne un élément qui prend en charge et affiche du texte interne. Pour les autres éléments, vous devez parfois prendre en compte d’autres manières de fournir un nom accessible en appliquant les meilleures pratiques en matière de structure d’élément. Parfois, vous devez fournir un nom spécifié de manière explicite comme nom accessible aux fins d’accessibilité de l’application. Pour obtenir une liste des valeurs calculées qui fonctionnent dans les éléments d’interface utilisateur courants et pour plus d’informations sur les noms accessibles en général, voir [Informations d’accessibilité de base](basic-accessibility-information.md).
 
-Plusieurs autres propriétés d’automation sont disponibles (notamment les propriétés de clavier décrites dans la section suivante). Toutefois, tous les lecteurs d’écran ne prennent pas en charge toutes les propriétés d’automation. En général, vous devez définir toutes les propriétés d’automatisation appropriées et les tester pour fournir la prise en charge la plus large possible pour les lecteurs d’écran.
+Plusieurs autres propriétés d’automation sont disponibles (notamment les propriétés de clavier décrites dans la section suivante). Toutefois, tous les lecteurs d’écran ne prennent pas en charge toutes les propriétés d’automation. Engénéral, vous devez définir toutes les propriétés d’automatisation appropriées et les tester pour fournir la prise en charge la plus large possible pour les lecteurs d’écran.
 
 <span id="Keyboard_support"/>
 <span id="keyboard_support"/>
@@ -179,10 +176,9 @@ Lorsque vous créez un contrôle personnalisé, nous vous recommandons de mettre
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>Prise en charge de la technologie d’assistance dans les applications qui gèrent l’interopérabilité entre XAML et Microsoft DirectX  
 Par défaut, le contenu Microsoft DirectX hébergé dans une interface utilisateur XAML (à l’aide de la classe [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) ou [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)) n’est pas accessible. L’[exemple XAML SwapChainPanel DirectX interop](http://go.microsoft.com/fwlink/p/?LinkID=309155) montre comment créer des homologues UI Automation pour le contenu DirectX hébergé. Cette technique permet de rendre le contenu hébergé accessible via UI Automation.
 
-<span id="related_topics"/>
 ## <a name="related-topics"></a>Rubriques connexes  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
 * [Concevoir des applications pour l’accessibilité](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Accessibilité](accessibility.md)
-
+* [Prise en main du Narrateur](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)

@@ -8,22 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 166e63659d138db2c4a6c49f11a2277eae790529
-ms.lasthandoff: 02/08/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: ca8910129ba0993597be905a24fb5b2c5c4061a4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="integrate-with-the-system-media-transport-controls"></a>Intégration avec les contrôles de transport de média système
 
-Cet article vous explique comment interagir avec les contrôles de transport de média système. Il s’agit d’un ensemble de contrôles communs à l’ensemble des appareils Windows 10 et qui octroient aux utilisateurs un moyen simple de contrôler la lecture des éléments multimédias pour les applications exécutées qui recourent à [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) pour la lecture.
+Cet article vous explique comment interagir avec les contrôles de transport de média système. Il s’agit d’un ensemble de contrôles communs à l’ensemble des appareils Windows10 et qui octroient aux utilisateurs un moyen simple de contrôler la lecture des éléments multimédias pour les applications exécutées qui recourent à [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) pour la lecture.
 
 Pour obtenir un exemple complet illustrant l’intégration avec les contrôles de transport de média système, consultez l’[exemple de contrôle de transport de média système sur github](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls).
                     
 ##<a name="automatic-integration-with-smtc"></a>Intégration automatique avec les contrôles de transport de média système
-À partir de Windows 10, version 1607, les applications UWP qui utilisent la classe [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) pour lire le contenu multimédia sont automatiquement intégrées par défaut avec les contrôles de transport de média système. Instanciez simplement une nouvelle instance de**MediaPlayer** et affectez un objet [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource), [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) ou [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList) sur la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) du lecteur. Dès lors, l’utilisateur verra le nom de votre application dans les contrôles de transport de média système et sera en mesure de lire et de suspendre le contenu lu, et de se déplacer dans la liste de lecture à l’aide des contrôles de transport de média système. 
+À partir de Windows 10, version 1607, les applicationsUWP qui utilisent la classe [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) pour lire le contenu multimédia sont automatiquement intégrées par défaut avec les contrôles de transport de média système. Instanciez simplement une nouvelle instance de**MediaPlayer** et affectez un objet [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource), [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) ou [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList) sur la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) du lecteur. Dès lors, l’utilisateur verra le nom de votre application dans les contrôles de transport de média système et sera en mesure de lire et de suspendre le contenu lu, et de se déplacer dans la liste de lecture à l’aide des contrôles de transport de média système. 
 
 Votre application peut créer et utiliser plusieurs objets **MediaPlayer** simultanément. Pour chaque instance **MediaPlayer** active dans votre application, un onglet séparé est créé dans les contrôles de transport de média système. Ici, l’utilisateur peut basculer entre vos différents lecteurs multimédias actifs et ceux d’autres applications en cours d’exécution. Les contrôles de transport de média système affectent le lecteur multimédia actuellement sélectionné.
 
@@ -47,7 +44,7 @@ L’exemple suivant enregistre un gestionnaire pour l’événement **NextReceiv
 
 [!code-cs[AddNextHandler](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetAddNextHandler)]
 
-L’exemple suivant illustre un scénario au cours duquel une application tente de désactiver la commande *Next* après que l’utilisateur a cliqué sur cinq éléments de la playlist, en nécessitant peut-être un certain niveau d’interaction de l’utilisateur avant de poursuivre la lecture du contenu. Chaque fois qu’un événement **NextReceived** est déclenché, un compteur est incrémenté. Une fois que le compteur atteint le nombre cible, l’objet [**EnablingRule**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior.EnablingRule) de la commande *Next* est défini sur [**Never**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaCommandEnablingRule), auquel cas la commande est désactivée. 
+L’exemple suivant illustre un scénario au cours duquel une application tente de désactiver la commande *Next* après que l’utilisateur a cliqué sur cinqéléments de la playlist, en nécessitant peut-être un certain niveau d’interaction de l’utilisateur avant de poursuivre la lecture du contenu. Chaque fois qu’un événement **NextReceived** est déclenché, un compteur est incrémenté. Une fois que le compteur atteint le nombre cible, l’objet [**EnablingRule**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior.EnablingRule) de la commande *Next* est défini sur [**Never**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaCommandEnablingRule), auquel cas la commande est désactivée. 
 
 [!code-cs[NextReceived](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetNextReceived)]
 
@@ -61,7 +58,7 @@ Pour le scénario décrit ci-dessus, à un moment donné l’application tentera
 
 [!code-cs[IsEnabledChanged](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetIsEnabledChanged)]
 
-Dans certains cas, vous voudrez remplacer complètement le comportement de la commande des contrôles de transport de média système. L’exemple suivant illustre un scénario dans lequel une application utilise les commandes *Next* et *Previous* pour basculer entre les différentes stations de radio sur Internet, au lieu de transiter entre les pistes de la playlist actuelle. Comme dans l’exemple précédent, un gestionnaire est enregistré dans le cadre d’une réception de commande ; ici, il s’agit de l’événement [**PreviousReceived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.PreviousReceived).
+Dans certains cas, vous voudrez remplacer complètement le comportement de la commande des contrôles de transport de média système. L’exemple suivant illustre un scénario dans lequel une application utilise les commandes *Next* et *Previous* pour basculer entre les différentes stations de radio sur Internet, au lieu de transiter entre les pistes de la playlist actuelle. Comme dans l’exemple précédent, un gestionnaire est enregistré dans le cadre d’une réception de commande; ici, il s’agit de l’événement [**PreviousReceived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.PreviousReceived).
 
 [!code-cs[AddPreviousHandler](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetAddPreviousHandler)]
 
@@ -86,7 +83,6 @@ Comme mentionné précédemment dans cet article, les contrôles de transport de
  
 
  
-
 
 
 

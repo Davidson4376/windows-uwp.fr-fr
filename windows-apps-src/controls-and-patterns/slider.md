@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2f00c27ae2248ebe39ed1cf426af640ec9200e73
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 392b0b0acf1443b2260a33bbf389d505f8cc7d0e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="sliders"></a>Curseurs
 
@@ -35,7 +33,7 @@ Un curseur est un contrôle qui permet à l’utilisateur d’effectuer une sél
 </div>
 
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
 Utilisez un curseur lorsque vous voulez donner la possibilité à l’utilisateur de spécifier des valeurs définies et contiguës (telles que le volume ou la luminosité) ou une plage de valeurs distinctes (comme les paramètres de résolution d’écran).
 
@@ -43,15 +41,15 @@ Un curseur représente un bon choix lorsque vous savez que les utilisateurs cons
 
 N’utilisez pas un curseur pour les paramètres binaires. Utilisez un [bouton bascule](toggles.md) à la place.
 
-Voici les autres facteurs à prendre en compte lorsque vous hésitez à utiliser un curseur :
+Voici les autres facteurs à prendre en compte lorsque vous hésitez à utiliser un curseur:
 
--   **Le paramètre s’apparente-t-il à une quantité relative ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md) ou une [zone de liste](lists.md).
--   **Le paramètre est-il une valeur numérique exacte connue ?** Si tel est le cas, utilisez une [zone de texte](text-box.md) numérique.
--   **Un utilisateur bénéficiera-t-il de commentaires instantanés sur l’effet de toute modification apportée aux paramètres ?** Si tel est le cas, utilisez un curseur. Par exemple, les utilisateurs choisissent plus facilement une couleur lorsqu’ils voient immédiatement le résultat des modifications qu’ils ont apportées aux valeurs de teinte, de saturation ou de luminosité.
--   **Le paramètre a-t-il une plage de quatre valeurs ou plus ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md).
--   **L’utilisateur peut-il changer la valeur ?** Les curseurs sont pour l’interaction utilisateur. Pour les valeurs que l’utilisateur ne peut pas modifier, utilisez plutôt du texte en lecture seule.
+-   **Le paramètre s’apparente-t-il à une quantité relative?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md) ou une [zone de liste](lists.md).
+-   **Le paramètre est-il une valeur numérique exacte connue?** Si tel est le cas, utilisez une [zone de texte](text-box.md) numérique.
+-   **Un utilisateur bénéficiera-t-il de commentaires instantanés sur l’effet de toute modification apportée aux paramètres?** Si tel est le cas, utilisez un curseur. Par exemple, les utilisateurs choisissent plus facilement une couleur lorsqu’ils voient immédiatement le résultat des modifications qu’ils ont apportées aux valeurs de teinte, de saturation ou de luminosité.
+-   **Le paramètre a-t-il une plage de quatre valeurs ou plus?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md).
+-   **L’utilisateur peut-il changer la valeur?** Les curseurs sont pour l’interaction utilisateur. Pour les valeurs que l’utilisateur ne peut pas modifier, utilisez plutôt du texte en lecture seule.
 
-Si vous devez choisir entre un curseur et une zone de texte numérique, utilisez plutôt une zone de texte numérique si :
+Si vous devez choisir entre un curseur et une zone de texte numérique, utilisez plutôt une zone de texte numérique si:
 
 -   l’espace de l’écran est réduit ;
 -   l’utilisateur préfère probablement utiliser un clavier.
@@ -136,7 +134,7 @@ La direction de la plage est le sens dans lequel vous déplacez le curseur lorsq
 
 ### <a name="steps-and-tick-marks"></a>Étapes et graduations
 
--   Utilisez des points d’ancrage si vous ne souhaitez pas que le curseur autorise des valeurs arbitraires entre la valeur minimale et la valeur maximale. Par exemple, si vous utilisez un curseur pour spécifier le nombre de tickets de cinéma à acheter, n’autorisez pas les valeurs à virgule flottante. Définissez un point d’ancrage de valeur 1.
+-   Utilisez des points d’ancrage si vous ne souhaitez pas que le curseur autorise des valeurs arbitraires entre la valeur minimale et la valeur maximale. Par exemple, si vous utilisez un curseur pour spécifier le nombre de tickets de cinéma à acheter, n’autorisez pas les valeurs à virgule flottante. Définissez un point d’ancrage de valeur1.
 -   Si vous spécifiez des points d’ancrage, veillez à ce que le dernier point corresponde à la valeur maximale du curseur.
 -   Utilisez la graduation lorsque vous voulez indiquer aux utilisateurs l’emplacement de valeurs importantes ou significatives. Par exemple, un curseur qui contrôle un zoom pourrait être pourvu de graduations pour 50 %, 100 % et 200 %.
 -   Affichez des graduations lorsque les utilisateurs ont besoin de connaître la valeur approximative du paramètre.
@@ -180,4 +178,3 @@ Lors de la conception d’un curseur personnalisé, réfléchissez à la meilleu
 ## <a name="related-topics"></a>Rubriques connexes
 - [Boutons bascule](toggles.md)
 - [**Classe Slider**](https://msdn.microsoft.com/library/windows/apps/br209614)
-

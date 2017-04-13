@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ffa13b2bfc89a94370beee7fa47372f948c3f700
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 8e167fd07d589b8ad159fe3cb535dd884eeab0ef
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="scroll-bars"></a>Barres de défilement
 
@@ -25,7 +23,7 @@ Le mouvement panoramique et le défilement permettent aux utilisateurs d’attei
 
 Un contrôle de visionneuse à défilement est composé d’autant de contenu que la fenêtre d’affichage peut en contenir et d’une ou deux barres de défilement. Vous pouvez utiliser des mouvements tactiles pour agrandir ou effectuer un panoramique (les barres de défilement apparaissent en fondu uniquement durant la manipulation) et utiliser le pointeur pour le défilement. Le mouvement de raccourci effectue un panoramique avec l’inertie.
 
-**Remarque** Windows dispose de deux visualisations de barre de défilement, qui sont basées sur le mode d’entrée de l’utilisateur : les indicateurs de défilement en cas d’utilisation de l’interface tactile ou du boîtier de commande, et les barres de défilement interactif pour d’autres périphériques d’entrée, y compris la souris, le clavier et le stylet.
+**Remarque** Windows dispose de deux visualisations de barre de défilement, qui sont basées sur le mode d’entrée de l’utilisateur: les indicateurs de défilement en cas d’utilisation de l’interface tactile ou du boîtier de commande, et les barres de défilement interactif pour d’autres périphériques d’entrée, y compris la souris, le clavier et le stylet.
 
 ![Exemple de l’aspect des contrôles de barre de défilement et d’indicateur de mouvement panoramique standard](images/SCROLLBAR.png)
 
@@ -86,7 +84,7 @@ Pour permettre aux contrôles qui incluent un ScrollViewer d’influencer certai
 
 **Propriétés XAML jointes de ScrollViewer**
 
-ScrollViewer définit les propriétés XAML jointes suivantes :
+ScrollViewer définit les propriétés XAML jointes suivantes:
 - [ScrollViewer.BringIntoViewOnFocusChange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.bringintoviewonfocuschange.aspx)
 - [ScrollViewer.HorizontalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility.aspx)
 - [ScrollViewer.HorizontalScrollMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode.aspx)
@@ -126,4 +124,3 @@ Pour les cas où un ScrollViewer est explicite dans votre code XAML, comme indiq
 
 **Pour les développeurs (XAML)**
 * [**Classe ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)
-

@@ -8,22 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6251ff13e6cc751ad370a43950cfdbb9dca0ecc8
-ms.lasthandoff: 02/08/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 148bb77f9386864a1b127341aa875beb7123bae9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="play-media-in-the-background"></a>Lire du contenu multimédia en arrière-plan
 Cet article vous explique comment configurer votre application de telle sorte que le contenu multimédia continue à être lu quand votre application est déplacée du premier plan vers l’arrière-plan. Cela signifie que même après que l’utilisateur a réduit votre application, est revenu à l’écran d’accueil ou a quitté votre application d’une autre manière, votre application peut continuer à lire le contenu audio. 
 
-Scénarios de lecture audio en arrière-plan :
+Scénarios de lecture audio en arrière-plan:
 
--   **Playslist de longue durée :** l’utilisateur affiche brièvement une application au premier plan pour sélectionner et lancer une playslist, puis veut que la lecture de la playslist continue en arrière-plan.
+-   **Playslist de longue durée:** l’utilisateur affiche brièvement une application au premier plan pour sélectionner et lancer une playslist, puis veut que la lecture de la playslist continue en arrière-plan.
 
--   **Utilisation du Sélecteur de tâches :** l’utilisateur affiche brièvement une application au premier plan pour démarrer la lecture d’un contenu audio, puis passe dans une autre application ouverte à l’aide du Sélecteur de tâches. Il veut que la lecture du contenu audio continue en arrière-plan.
+-   **Utilisation du Sélecteur de tâches:** l’utilisateur affiche brièvement une application au premier plan pour démarrer la lecture d’un contenu audio, puis passe dans une autre application ouverte à l’aide du Sélecteur de tâches. Il veut que la lecture du contenu audio continue en arrière-plan.
 
 L’implémentation audio en arrière-plan décrite dans cet article permettra à votre application de s’exécuter universellement sur tous les appareils Windows, y compris les appareils mobiles, de bureau et Xbox.
 
@@ -31,15 +28,15 @@ L’implémentation audio en arrière-plan décrite dans cet article permettra �
 > Le code de cet article a été adapté de [l’exemple Contenu audio en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=800141) UWP.
 
 ## <a name="explanation-of-one-process-model"></a>Explication du modèle à processus unique
-Avec Windows 10, version 1607, un nouveau modèle à processus unique simplifie considérablement la prise en charge de l’audio d’arrière-plan. Auparavant, votre application devait gérer un processus en arrière-plan en plus de l’application de premier plan. De votre côté, vous deviez communiquer manuellement les modifications d’état de communication entre les deux processus. Sous le nouveau modèle, vous ajoutez simplement la capacité d’audio d’arrière-plan à votre manifeste d’application, de manière à ce que votre application continue à lire le contenu audio lorsqu’elle se déplace vers l’arrière-plan. Deux événements de cycle de vie d’application, [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) et [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground), indiquent à votre application les moments d’entrée et de sortie de l’arrière-plan. Quand votre application se déplace au sein des transitions à destination et en provenance de l’arrière-plan, les contraintes de mémoire mises en place par le système peuvent être modifiées, afin que vous puissiez utiliser ces événements pour évaluer votre consommation courante de mémoire et libérer des ressources vous permettant de rester sous la limite.
+Avec Windows10, version 1607, un nouveau modèle à processus unique simplifie considérablement la prise en charge de l’audio d’arrière-plan. Auparavant, votre application devait gérer un processus en arrière-plan en plus de l’application de premier plan. De votre côté, vous deviez communiquer manuellement les modifications d’état de communication entre les deuxprocessus. Sous le nouveau modèle, vous ajoutez simplement la capacité d’audio d’arrière-plan à votre manifeste d’application, de manière à ce que votre application continue à lire le contenu audio lorsqu’elle se déplace vers l’arrière-plan. Deuxévénements de cycle de vie d’application, [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) et [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground), indiquent à votre application les moments d’entrée et de sortie de l’arrière-plan. Quand votre application se déplace au sein des transitions à destination et en provenance de l’arrière-plan, les contraintes de mémoire mises en place par le système peuvent être modifiées, afin que vous puissiez utiliser ces événements pour évaluer votre consommation courante de mémoire et libérer des ressources vous permettant de rester sous la limite.
 
-En éliminant les activités complexes de communication intraprocessus et de gestion de l’état, le nouveau modèle vous permet d’implémenter l’audio d’arrière-plan bien plus rapidement, via une réduction considérable du code. Toutefois, le modèle à deux processus est toujours pris en charge pour la compatibilité descendante dans la version actuelle. Pour plus d’informations, consultez la page [Contenu audio en arrière-plan](legacy-background-media-playback.md).
+En éliminant les activités complexes de communication intraprocessus et de gestion de l’état, le nouveau modèle vous permet d’implémenter l’audio d’arrière-plan bien plus rapidement, via une réduction considérable du code. Toutefois, le modèle à deuxprocessus est toujours pris en charge pour la compatibilité descendante dans la version actuelle. Pour plus d’informations, consultez la page [Contenu audio en arrière-plan](legacy-background-media-playback.md).
 
 ## <a name="requirements-for-background-audio"></a>Conditions requises pour l’audio d’arrière-plan
 Votre application doit satisfaire les exigences suivantes associées à la lecture de contenu audio durant sa mise en arrière-plan.
 
 * Ajoutez la fonctionnalité de **Lecture de médias en arrière-plan** à votre manifeste d’application, tel que décrit plus bas dans cet article.
-* Si votre application désactive l’intégration automatique de **MediaPlayer** avec les contrôles de transport de média système, en définissant par exemple la propriété [**CommandManager.IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) sur False, vous devez implémenter l’intégration manuelle avec les contrôles de transport de média système afin de prendre en charge la lecture de médias en arrière-plan. Vous devez également procéder à une intégration manuelle avec les contrôles de transport de média système si vous utilisez une API différente de **MediaPlayer**, telle que [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioGraph), afin de lire du contenu audio de manière ininterrompue durant la mise en arrière-plan de votre application. La configuration minimale requise en matière d’intégration des contrôles de transport de média système est décrite dans la section « Utiliser les contrôles de transport de média système pour le son en arrière-plan » de [Contrôle manuel des contrôles de transport de média système](system-media-transport-controls.md).
+* Si votre application désactive l’intégration automatique de **MediaPlayer** avec les contrôles de transport de média système, en définissant par exemple la propriété [**CommandManager.IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) sur False, vous devez implémenter l’intégration manuelle avec les contrôles de transport de média système afin de prendre en charge la lecture de médias en arrière-plan. Vous devez également procéder à une intégration manuelle avec les contrôles de transport de média système si vous utilisez une API différente de **MediaPlayer**, telle que [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioGraph), afin de lire du contenu audio de manière ininterrompue durant la mise en arrière-plan de votre application. La configuration minimale requise en matière d’intégration des contrôles de transport de média système est décrite dans la section «Utiliser les contrôles de transport de média système pour le son en arrière-plan» de [Contrôle manuel des contrôles de transport de média système](system-media-transport-controls.md).
 * Pendant que votre application est en arrière-plan, vous devez rester sous les limites d’utilisation de la mémoire définies par le système pour les applications en arrière-plan. Les recommandations en matière de gestion de la mémoire pendant la mise en arrière-plan sont fournies plus loin dans cet article.
 
 ## <a name="background-media-playback-manifest-capability"></a>Fonctionnalité de manifeste de lecture de médias en arrière-plan
@@ -61,7 +58,7 @@ Pour définir la fonctionnalité en modifiant manuellement le manifeste xml de l
   IgnorableNamespaces="uap uap3 mp">
 ```
 
-Ensuite, ajoutez la fonctionnalité *backgroundMediaPlayback* à l’élément **Capabilities** :
+Ensuite, ajoutez la fonctionnalité *backgroundMediaPlayback* à l’élément **Capabilities**:
 ```xml
 <Capabilities>
     <uap3:Capability Name="backgroundMediaPlayback"/>
@@ -102,7 +99,6 @@ SI vous avez besoin d’effectuer des appels réseau intervenant en arrière-pla
  
 
  
-
 
 
 

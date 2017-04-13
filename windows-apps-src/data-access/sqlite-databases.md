@@ -2,22 +2,20 @@
 author: mcleblanc
 ms.assetid: 5A47301A-2291-4FC8-8BA7-55DB2A5C653F
 title: "Bases de données SQLite"
-description: "SQLite est un moteur de base de données intégré, sans serveur. Cet article explique comment utiliser la bibliothèque SQLite incluse dans le Kit de développement logiciel (SDK), comment créer un package pour votre propre bibliothèque SQLite dans une application Windows universelle ou comment la générer à partir de la source."
+description: "SQLite est un moteur de base de données intégré, sans serveur. Cet article explique comment utiliser la bibliothèque SQLite incluse dans le Kit de développement logiciel (SDK), empaqueter votre propre bibliothèque SQLite dans une application Windows universelle ou la générer à partir de la source."
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, SQLite, base de données"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 70f0ae8d4f67e0b24199d7dd56ddebe5a643fae5
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="sqlite-databases"></a>Bases de données SQLite
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 SQLite est un moteur de base de données intégré, sans serveur. Cet article explique comment utiliser la bibliothèque SQLite incluse dans le Kit de développement logiciel (SDK), empaqueter votre propre bibliothèque SQLite dans une application Windows universelle ou la générer à partir de la source.
@@ -26,7 +24,7 @@ SQLite est un moteur de base de données intégré, sans serveur. Cet article ex
 
 SQLite est une base de données open source intégrée, sans serveur. Au fil des ans, elle s’est imposée comme la technologie dominante côté appareil pour le stockage de données sur de nombreuses plateformes et appareils. La plateforme Windows universelle (UWP) prend en charge et recommande SQLite pour le stockage local sur toutes les familles d’appareils Windows 10.
 
-SQLite convient parfaitement aux applications de téléphone, aux applications intégrées pour Windows 10 IoT Standard (IoT Standard), et sert de cache pour les données de base de données relationnelle d’entreprise (RDBS). SQLite répond à la plupart des besoins d’accès aux données locales, sauf en cas d’écritures simultanées ou de données trop volumineuses, scénarios peu probable avec la plupart des applications.
+SQLite convient parfaitement aux applications de téléphone, aux applications intégrées pour Windows10 IoT Standard (IoT Standard), et sert de cache pour les données de base de données relationnelle d’entreprise (RDBS). SQLite répond à la plupart des besoins d’accès aux données locales, sauf en cas d’écritures simultanées ou de données trop volumineuses, scénarios peu probable avec la plupart des applications.
 
 Dans les applications de jeu et de lecture de contenus multimédias, SQLite peut également être utilisé comme format de fichier pour stocker les catalogues ou d’autres ressources, telles que les niveaux d’un jeu, qui peuvent être téléchargés en l’état à partir d’un serveur web.
 
@@ -78,12 +76,12 @@ Utilisez toujours SQLITE\_OS\_WINRT et SQLITE\_API=\_\_declspec(dllexport) en pl
 
 Il est possible de créer, de mettre à jour et de supprimer des bases de données SQLite avec les API C SQLite. Vous trouverez plus d’informations sur l’API C SQLite dans la page [Introduction To The SQLite C/C++ Interface (anglais)](http://www.sqlite.org/cintro.html) de SQLite.org.
 
-Pour bien comprendre le fonctionnement de SQLite, vous devez tout reprendre à partir de la tâche principale de la base de données SQL qui consiste à évaluer les instructions SQL. Deux objets sont à garder à l’esprit :
+Pour bien comprendre le fonctionnement de SQLite, vous devez tout reprendre à partir de la tâche principale de la base de données SQL qui consiste à évaluer les instructions SQL. Deux objets sont à garder à l’esprit:
 
 -   [Handle de connexion de base de données](https://www.sqlite.org/c3ref/sqlite3.html)
 -   [Objet d’instruction préparé](https://www.sqlite.org/c3ref/stmt.html)
 
-Six interfaces permettent d’effectuer des opérations de base de données sur ces objets :
+Six interfaces permettent d’effectuer des opérations de base de données sur ces objets:
 
 -   [sqlite3\_open()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/open.html)
 -   [sqlite3\_prepare()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/prepare.html)
@@ -95,4 +93,3 @@ Six interfaces permettent d’effectuer des opérations de base de données sur 
  
 
  
-

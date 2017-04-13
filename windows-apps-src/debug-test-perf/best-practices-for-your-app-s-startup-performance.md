@@ -8,16 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b59a4eb056e36156b847c769778b2609863ec1fc
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 9ab3eeeffbab26f5d26d28160a750c50d53b7e96
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>Meilleures pratiques en matière de performances lors du démarrage de votre application
 
-\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation.
 
@@ -272,7 +270,7 @@ Une application peut être activée pour plusieurs raisons, chacune pouvant êtr
 
 Les applications affichant une page de chargement dans le gestionnaire d’activation commencent à créer l’interface utilisateur en arrière-plan. Une fois que cet élément a été créé, l’événement [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) associé est déclenché. Dans le gestionnaire d’événements, vous remplacez le contenu de la fenêtre, à savoir la page de chargement, par la nouvelle page d’accueil.
 
-Il est essentiel de prévoir l’affichage d’une page de chargement dans toute application qui nécessite une période d’initialisation plus longue. En plus d’informer l’utilisateur sur la progression du processus d’activation, cette page empêche que le processus ne soit arrêté si [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) n’est pas appelé dans les 15 secondes suivant son lancement.
+Il est essentiel de prévoir l’affichage d’une page de chargement dans toute application qui nécessite une période d’initialisation plus longue. En plus d’informer l’utilisateur sur la progression du processus d’activation, cette page empêche que le processus ne soit arrêté si [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) n’est pas appelé dans les 15secondes suivant son lancement.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -367,5 +365,4 @@ Frame, cependant, propose un cache de pages facultatif permettant d’éviter le
 La mise en cache de pages peut améliorer les performances en évitant les instanciations, et par conséquent, la navigation. L’utilisation excessive de la mise en cache de pages peut avoir un effet néfaste sur les performances et par là même sur la plage de travail.
 
 C’est la raison pour laquelle nous vous conseillons d’utiliser la mise en cache de pages en fonction des besoins de votre application. Supposons par exemple que vous disposez d’une application affichant une liste d’éléments d’un contrôle Frame, et que le fait de cliquer sur un élément implique la navigation dans Frame vers une page de détails correspondant à cet élément. La page de liste devrait probablement être mise en cache. Si la page de détails est identique pour tous les éléments, elle devrait probablement être mise en cache également. Toutefois, si la page de détails est plus hétérogène, il peut être préférable d’abandonner la mise en cache.
-
 

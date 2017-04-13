@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4dc1cd837b7ac7849125e0a1737873fec4a15cd3
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 34c3aab3e9a04eb535014182c0dbc8c140670b89
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="create-custom-transport-controls"></a>Créer des contrôles de transport personnalisés
 
@@ -38,9 +36,9 @@ Avant de démarrer, prenez le temps de vous familiariser avec les classes MediaP
 </div>
 
 > [!NOTE]
-> **MediaPlayerElement** est uniquement disponible dans Windows 10, version 1607 ou ultérieure. Si vous développez une application pour une version antérieure de Windows 10, vous devez utiliser [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) à la place. Tous les exemples de cette page fonctionnent avec **MediaElement** également.
+> **MediaPlayerElement** est uniquement disponible dans Windows10, version1607 ou ultérieure. Si vous développez une application pour une version antérieure de Windows10, vous devez utiliser [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) à la place. Tous les exemples de cette page fonctionnent avec **MediaElement** également.
 
-## <a name="when-should-you-customize-the-template"></a>Quand faut-il personnaliser le modèle ?
+## <a name="when-should-you-customize-the-template"></a>Quand faut-il personnaliser le modèle?
 
 **MediaPlayerElement** intègre des contrôles de transport compatibles sans modification avec la plupart des applications de lecture audio et vidéo. Ils sont fournis par la classe [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) et comprennent des boutons qui permettent de lire, d’arrêter, de naviguer dans les médias, de régler le volume, de passer en plein écran, de diffuser sur un second appareil, d’activer des sous-titres, de basculer entre les pistes audio et de paramétrer la vitesse de lecture. MediaTransportControls a des propriétés qui vous permettent de contrôler si chaque bouton est affiché et activé. Vous pouvez également définir la propriété [**IsCompact**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.iscompact.aspx) pour spécifier si les contrôles sont affichés sur une ou deux lignes.
 
@@ -66,11 +64,11 @@ Le [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/wi
 - La troisième section contient l’élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) qui rassemble ces différents éléments MediaTransportControls et définit la manière dont les composants sont disposés.
 
 > [!NOTE]
-> Pour plus d’informations sur la modification des modèles, consultez [Control templates](). Utilisez un éditeur de texte ou des éditeurs similaires de votre IDE pour ouvrir les fichiers XAML dans \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*version SDK*)\Generic. Le style et le modèle par défaut de chaque contrôle sont définis dans le fichier **generic.xaml**. Pour rechercher le modèle MediaTransportControls dans generic.xaml, recherchez « MediaTransportControls ».
+> Pour plus d’informations sur la modification des modèles, consultez [Control templates](). Utilisez un éditeur de texte ou des éditeurs similaires de votre IDE pour ouvrir les fichiers XAML dans \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*version SDK*)\Generic. Le style et le modèle par défaut de chaque contrôle sont définis dans le fichier **generic.xaml**. Pour rechercher le modèle MediaTransportControls dans generic.xaml, recherchez «MediaTransportControls».
 
-Dans les sections suivantes, vous allez apprendre à personnaliser plusieurs des éléments principaux des contrôles de transport :
-- [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) : permet à l’utilisateur de parcourir ses fichiers multimédias et d’afficher la progression
-- [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx) : contient l’ensemble des boutons.
+Dans les sections suivantes, vous allez apprendre à personnaliser plusieurs des éléments principaux des contrôles de transport:
+- [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx): permet à l’utilisateur de parcourir ses fichiers multimédias et d’afficher la progression
+- [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx): contient l’ensemble des boutons.
 Pour plus d’informations, consultez la section d’anatomie de la rubrique de référence sur MediaTransportControls.
 
 ## <a name="customize-the-transport-controls"></a>Personnaliser les contrôles de transport
@@ -114,7 +112,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 }
 ```
 3. Copiez le style par défaut pour [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) dans un [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx) de votre projet. Il s’agit du style et du modèle que vous modifiez.
-(Dans l’Exemple de contrôles de transport média, un nouveau dossier nommé « Thèmes » est créé, et un fichier ResourceDictionary nommé generic.xaml lui est ajouté.)
+(Dans l’Exemple de contrôles de transport média, un nouveau dossier nommé «Thèmes» est créé, et un fichier ResourceDictionary nommé generic.xaml lui est ajouté.)
 4. Remplacez la propriété [**TargetType**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.targettype.aspx) du style par le nouveau type de contrôle personnalisé. (Dans l’exemple, la propriété TargetType est remplacée par `local:CustomMediaTransportControls`.)
 ```xaml
 xmlns:local="using:CustomMediaTransportControls">
@@ -157,7 +155,7 @@ Dans le modèle MediaTransportControls, les boutons de commande sont contenus da
 
 Pour déplacer un élément des commandes principales de la barre de commandes vers le menu de dépassement, vous devez modifier le modèle de contrôle XAML.
 
-**Pour déplacer une commande vers le menu de dépassement :**
+**Pour déplacer une commande vers le menu de dépassement:**
 1. Dans le modèle de contrôle, recherchez l’élément CommandBar nommé `MediaControlsCommandBar`.
 2. Ajoutez une section [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) au code XAML pour la classe CommandBar. Placez-la après la balise fermante de la propriété [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx).
 ```xaml
@@ -197,7 +195,7 @@ Pour déplacer un élément des commandes principales de la barre de commandes v
 
 ### <a name="adding-a-custom-button"></a>Ajout d’un bouton personnalisé
 
-Il se peut que vous souhaitiez personnaliser la classe MediaTransportControls pour pouvoir ajouter une commande personnalisée au contrôle. Que vous l’ajoutiez en tant que commande principale ou secondaire, la procédure de création du bouton de commande et de modification de son comportement est la même. Dans [l’Exemple de contrôles de transport de média](http://go.microsoft.com/fwlink/p/?LinkId=620023), un bouton « rating » est ajouté aux commandes principales.
+Il se peut que vous souhaitiez personnaliser la classe MediaTransportControls pour pouvoir ajouter une commande personnalisée au contrôle. Que vous l’ajoutiez en tant que commande principale ou secondaire, la procédure de création du bouton de commande et de modification de son comportement est la même. Dans [l’Exemple de contrôles de transport de média](http://go.microsoft.com/fwlink/p/?LinkId=620023), un bouton «rating» est ajouté aux commandes principales.
 
 **Pour ajouter un bouton de commande personnalisé**
 1. Créez un objet AppBarButton et ajoutez-le à la classe CommandBar dans le modèle de contrôle.
@@ -262,14 +260,14 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 }
 ```
 
-**Contrôles de transport de média personnalisés avec un bouton « J’aime » ajouté**
+**Contrôles de transport de média personnalisés avec un bouton «J’aime» ajouté**
 ![Contrôle de transport de média personnalisé avec un bouton J’aime supplémentaire](images/controls/mtc_double_custom_inprod.png)
 
 ### <a name="modifying-the-slider"></a>Modification du curseur
 
 Le contrôle seek de la classe MediaTransportControls est fourni par un élément [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx). Vous pouvez notamment le personnaliser en changeant la granularité du comportement de recherche.
 
-Le curseur de recherche par défaut est divisé en 100 portions, de sorte que le comportement de recherche est limité à ces nombreuses sections. Vous pouvez modifier la granularité du curseur de recherche en obtenant la classe Slider à partir de l’arborescence visuelle XAML dans votre gestionnaire d’événements [**MediaOpened**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) sur [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx). Cet exemple montre comment utiliser [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) pour obtenir une référence à la classe Slider, puis changer la fréquence d’étape par défaut du curseur de 1 % en 0,1 % (1 000 étapes) si le média est plus long que 120 minutes. Le MediaPlayerElement est nommé `MediaPlayerElement1`.
+Le curseur de recherche par défaut est divisé en 100portions, de sorte que le comportement de recherche est limité à ces nombreuses sections. Vous pouvez modifier la granularité du curseur de recherche en obtenant la classe Slider à partir de l’arborescence visuelle XAML dans votre gestionnaire d’événements [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) sur [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx). Cet exemple montre comment utiliser [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) pour obtenir une référence à la classe Slider, puis changer la fréquence d’étape par défaut du curseur de 1% en 0,1% (1000étapes) si le média est plus long que 120minutes. Le MediaPlayerElement est nommé `MediaPlayerElement1`.
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -292,4 +290,3 @@ private void MediaPlayerElement_MediaPlayer_MediaOpened(object sender, RoutedEve
 ## <a name="related-articles"></a>Articles connexes
 
 - [Lecture de contenu multimédia](media-playback.md)
-

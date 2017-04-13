@@ -1,9 +1,9 @@
 ---
 author: Jwmsft
-Description: "Le sélecteur de dates vous offre une méthode standard pour permettre aux utilisateurs de sélectionner une valeur de date localisée à l’aide d’une entrée tactile, de la souris ou du clavier."
+Description: "Le sélecteur de dates offre aux utilisateurs une méthode standard de sélection des valeurs des dates localisées à l’aide d’une entrée tactile, de la souris ou du clavier."
 title: "Sélecteur de dates"
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
-isNew: true
+isNew: True
 label: Date picker
 template: detail.hbs
 ms.author: jimwalk
@@ -11,18 +11,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 19551174cebd33785ac21910b52adf31e354373b
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 114e91276ee4f080ead825b655fc05fcf460bacb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="date-picker"></a>Sélecteur de dates
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Le sélecteur de dates vous offre une méthode standard pour permettre aux utilisateurs de sélectionner une valeur de date localisée à l’aide d’une entrée tactile, de la souris ou du clavier. 
+Le sélecteur de dates offre aux utilisateurs une méthode standard de sélection des valeurs des dates localisées à l’aide d’une entrée tactile, de la souris ou du clavier. 
 
 <div class="important-apis" >
 <b>API importantes</b><br/>
@@ -34,14 +32,14 @@ Le sélecteur de dates vous offre une méthode standard pour permettre aux utili
 </div>
 
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 Utilisez un sélecteur de dates pour permettre à un utilisateur de choisir une date connue, par exemple, une date de naissance, où le contexte du calendrier n’est pas important.
 
 Pour plus d’informations sur le choix du contrôle de date approprié, voir l’article [Contrôles de date et d’heure](date-and-time.md).
 
 ## <a name="examples"></a>Exemples
 
-Le point d’entrée affiche la date choisie, et lorsque l’utilisateur sélectionne ce point d’entrée, la surface du sélecteur s’agrandit à la verticale à partir du milieu pour que l’utilisateur effectue une sélection. Le sélecteur de dates se superpose aux autres éléments de l’interface utilisateur ; il ne les ferme pas.
+Le point d’entrée affiche la date choisie, et lorsque l’utilisateur sélectionne ce point d’entrée, la surface du sélecteur s’agrandit à la verticale à partir du milieu pour que l’utilisateur effectue une sélection. Le sélecteur de dates se superpose aux autres éléments de l’interface utilisateur; il ne les ferme pas.
 
 ![Exemple de développement du sélecteur de date](images/controls_datepicker_expand.png)
 
@@ -58,7 +56,7 @@ DatePicker birthDatePicker = new DatePicker();
 birthDatePicker.Header = "Date of birth";
 ```
 
-Le sélecteur de dates qui en résulte se présente comme suit :
+Le sélecteur de dates qui en résulte se présente comme suit:
 
 ![Exemple de sélecteur de dates](images/date-picker-closed.png)
 
@@ -72,4 +70,3 @@ Le sélecteur de dates qui en résulte se présente comme suit :
 - [Sélecteur de dates du calendrier](calendar-date-picker.md)
 - [Affichage Calendrier](calendar-view.md)
 - [Sélecteur d’heure](time-picker.md)
-

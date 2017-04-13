@@ -1,24 +1,21 @@
 ---
 author: drewbatgit
 ms.assetid: 370f2c14-4f1e-47b3-9197-24205ab255a3
-description: "Cet article répertorie les fonctionnalités de caméra disponibles pour les applications UWP et renvoie vers les articles de procédures décrivant leur utilisation."
+description: "Cet article répertorie les fonctionnalités d’appareil photo disponibles pour les applications UWP et renvoie vers les articles de procédures décrivant leur utilisation."
 title: "Caméra"
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 0b2b421c2619c1649b3a6c9afb6b0ccafafc473b
-ms.lasthandoff: 02/08/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 883a8977839d8f93ff878b075a52df8b9a587aa9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="camera"></a>Caméra
 
-Cette section fournit des recommandations relatives à la création d’application de la plateforme Windows universelle qui utilise la caméra ou le microphone pour capturer des photos, des vidéos et du contenu audio.
+Cette section fournit des recommandations relatives à la création d’application de la plateforme Windows universelle qui utilise l’appareil photo ou le microphone pour capturer des photos, des vidéos et du contenu audio.
 
 ##<a name="use-the-windows-built-in-camera-ui"></a>Utiliser l’interface utilisateur de l’appareil photo intégré à Windows
 | Rubrique                                                                                             | Description                                                                                                                                                                                                                                                                                    |
@@ -38,7 +35,7 @@ Cette section fournit des recommandations relatives à la création d’applicat
 | [Gérer l’orientation de l’appareil et de l’écran à l’aide de MediaCapture](handle-device-orientation-with-mediacapture.md) | Cet article vous explique comment gérer l’orientation de l’appareil quand vous capturez des photos et des vidéos à l’aide d’une classe d’assistance. | 
 | [Détecter et sélectionner des fonctions de l’appareil photo à l’aide de profils d’appareil photo](camera-profiles.md) | Cet article explique comment utiliser les profils d’appareil photo pour découvrir et gérer les fonctionnalités des différents appareils de capture vidéo. Cela inclut les tâches telles que la sélection des profils qui prennent en charge des résolutions ou de fréquences d’images spécifiques, des profils qui prennent en charge un accès simultané à plusieurs appareils photos et des profils qui prennent en charge la capture HDR. |
 | [Définir le format, la résolution et fréquence d’images pour MediaCapture](set-media-encoding-properties.md) | Cet article vous montre comment utiliser l’interface [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) pour définir la résolution et la fréquence d’images du flux d’aperçu d’appareil photo et des photos et vidéos capturées. Il montre également comment s’assurer que les proportions du flux d’aperçu correspondent à celle du média capturé. |
-| [Capture photo HDR et en basse lumière](high-dynamic-range-hdr-photo-capture.md) | Cet article vous explique comment utiliser la classe [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture) pour capturer des photos avec plage dynamique élevée (HDR) et en basse lumière. |
+| [Capture photo HDR et en basse lumière](high-dynamic-range-hdr-photo-capture.md) | Cet article vous explique comment utiliser la classe [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture) pour capturer des photos avec plage dynamique élevée(HDR)et en basse lumière. |
 | [Contrôles d’appareil photo manuel pour la capture photo et vidéo](capture-device-controls-for-photo-and-video-capture.md) | Cet article vous montre comment utiliser les contrôles des appareils manuels pour activer les scénarios de capture photo et vidéo, y compris la stabilisation d’image optique et le zoom fluide. |
 | [Contrôles d’appareil photo manuel pour la capture vidéo](capture-device-controls-for-video-capture.md) | Cet article vous montre comment utiliser les contrôles des appareils manuels pour activer les scénarios de capture vidéo, y compris la vidéo HDR et la priorité de l’exposition.  |
 | [Effet de stabilisation vidéo pour la capture vidéo](effects-for-video-capture.md) | Cet article vous montre comment utiliser l’effet de stabilisation vidéo.  |
@@ -65,7 +62,6 @@ Cette section fournit des recommandations relatives à la création d’applicat
  
 
  
-
 
 
 

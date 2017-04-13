@@ -1,21 +1,18 @@
 ---
 author: drewbatgit
 ms.assetid: a128edc8-8a80-4645-ac29-908ede2d1c72
-description: "Cet article vous explique comment utiliser une instance MediaFrameReader avec MediaCapture pour récupérer des images multimédias à partir d’une ou de plusieurs sources disponibles, y compris les caméras couleur, de profondeur et infrarouge, les appareils audio ou même les sources d’images personnalisées telles que celles qui produisent des images de suivi des squelettes."
+description: "Utiliser une instance MediaFrameReader avec MediaCapture pour récupérer des images à partir d’appareils photos couleur, de profondeur et infrarouges, de périphériques audio ou même de sources d’images personnalisés telles que celles qui produisent des images de suivi des squelettes."
 title: "Traiter des images multimédias avec MediaFrameReader"
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 7646cce8c8aafcb881e825be1ad134ad682c362a
-ms.lasthandoff: 02/08/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 8c41f85c7d49d9019a2dc3a94242271a6fa9eb9a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="process-media-frames-with-mediaframereader"></a>Traiter des images multimédias avec MediaFrameReader
 
 Cet article vous explique comment utiliser une instance [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) avec [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) pour récupérer des images à partir d’une ou de plusieurs sources disponibles, notamment d’appareils photos couleur, de profondeur et infrarouges, de périphériques audio ou même de sources d’images personnalisés telles que celles qui produisent des images de suivi des squelettes. Cette fonctionnalité est conçue pour être utilisée par les applications qui effectuent le traitement en temps réel des images multimédias, telles que les applications de caméra prenant en charge la profondeur et de réalité augmentée.
@@ -23,7 +20,7 @@ Cet article vous explique comment utiliser une instance [**MediaFrameReader**](h
 Si vous souhaitez simplement capturer du contenu vidéo ou des photos, comme c’est possible avec une application standard de photographie, vous avez probablement tout intérêt à valoriser l’une des autres techniques de capture prises en charge par [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture). Pour consulter une liste des techniques de capture multimédia disponibles et des articles vous expliquant comment les utiliser, consultez la page [**Appareil photo**](camera.md).
 
 > [!NOTE] 
-> Les fonctionnalités décrites dans cet article sont disponibles uniquement à partir de Windows 10, version 1607.
+> Les fonctionnalités décrites dans cet article sont disponibles uniquement à partir de Windows10, version 1607.
 
 > [!NOTE] 
 > Il existe un exemple d’application Windows universelle qui illustre l’utilisation de **MediaFrameReader** pour afficher des images de différentes sources, notamment d’appareils photos couleur, de profondeur et infrarouges. Pour plus d’informations voir [Profils d’appareil photo](http://go.microsoft.com/fwlink/?LinkId=823230).
@@ -55,7 +52,7 @@ L’exemple suivant vous présente le moyen le plus simple de sélectionner un g
 
 [!code-cs[SimpleSelect](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSimpleSelect)]
 
-Cette méthode d’identification du groupe des sources d’images et des sources d’images fonctionne efficacement avec des cas simples, mais si vous souhaitez sélectionner des sources d’images en fonction de critères plus complexes, le processus peut rapidement devenir très lourd. Une autre méthode consiste à effectuer cette sélection à l’aide de la syntaxe Linq et d’objets anonymes. L’exemple suivant utilise la méthode d’extension **Select** afin de transformer les objets **MediaFrameSourceGroup** de la liste *frameSourceGroups* en objets anonymes avec deux champs : *sourceGroup*, représentant le groupe en soi et *colorSourceInfo*, qui est associé à la source des images couleur du groupe. Le champ *colorSourceInfo* est défini sur le résultat de **FirstOrDefault**, qui sélectionne le premier objet pour lequel le prédicat fourni a la valeur TRUE. Dans ce cas, le prédicat a la valeur TRUE si le type de flux est **VideoPreview**, le type de source est **Color** et si l’appareil photo se trouve sur le panneau avant de l’appareil.
+Cette méthode d’identification du groupe des sources d’images et des sources d’images fonctionne efficacement avec des cas simples, mais si vous souhaitez sélectionner des sources d’images en fonction de critères plus complexes, le processus peut rapidement devenir très lourd. Une autre méthode consiste à effectuer cette sélection à l’aide de la syntaxe Linq et d’objets anonymes. L’exemple suivant utilise la méthode d’extension **Select** afin de transformer les objets **MediaFrameSourceGroup** de la liste *frameSourceGroups* en objets anonymes avec deuxchamps: *sourceGroup*, représentant le groupe en soi et *colorSourceInfo*, qui est associé à la source des images couleur du groupe. Le champ *colorSourceInfo* est défini sur le résultat de **FirstOrDefault**, qui sélectionne le premier objet pour lequel le prédicat fourni a la valeur TRUE. Dans ce cas, le prédicat a la valeur TRUE si le type de flux est **VideoPreview**, le type de source est **Color** et si l’appareil photo se trouve sur le panneau avant de l’appareil.
 
 À partir de la liste des objets anonymes renvoyés de la requête décrite ci-dessus, la méthode d’extension **Where**, la méthode d’extension est utilisée pour sélectionner uniquement les objets dont le champ *colorSourceInfo* n’a pas la valeur NULL. Enfin, **FirstOrDefault** est appelé pour sélectionner le premier élément de la liste.
 
@@ -74,11 +71,11 @@ L’objet **MediaCapture** étant généralement utilisé à partir de multiples
 
 [!code-cs[DeclareMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
-Créez une instance de l’objet **MediaCapture** en appelant le constructeur. Ensuite, créez un objet [**MediaCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSettings) qui sera utilisé pour initialiser l’objet **MediaCapture**. Dans cet exemple, les paramètres suivants sont utilisés :
+Créez une instance de l’objet **MediaCapture** en appelant le constructeur. Ensuite, créez un objet [**MediaCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSettings) qui sera utilisé pour initialiser l’objet **MediaCapture**. Dans cet exemple, les paramètres suivants sont utilisés:
 
 * [**SourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SourceGroup) - Ce paramètre indique au système le groupe de sources utilisé pour récupérer les images. N’oubliez pas que le groupe de sources définir un ensemble de sources d’images multimédias pouvant être utilisées simultanément.
 * [**SharingMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SharingMode) - Ce paramètre indique au système si vous avez besoin d’un contrôle exclusif sur les appareils sources de capture. Si vous le définissez sur [**ExclusiveControl**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode), cela signifie que vous pouvez modifier les paramètres du périphérique de capture, par exemple le format des images produites. Par ailleurs, si une autre application dispose d’ores et déjà du contrôle exclusif, votre application sera mise en échec lors de la tentative d’initialisation du périphérique de capture multimédia. Si vous le définissez sur [**SharedReadOnly**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode), vous pouvez recevoir des images des sources d’images, même si elles sont utilisées par une autre application, mais vous ne pouvez pas modifier les paramètres des appareils.
-* [**MemoryPreference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.MemoryPreference) - Si vous spécifiez [**CPU**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference), le système utilise la mémoire UC qui garantit qu’à l’arrivée des images, ces dernières sont disponibles en tant qu’objets [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap). Si vous spécifiez [**Auto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference), le système sélectionne dynamiquement l’emplacement optimal de mémoire dédié au stockage des images. Si le système choisit d’utiliser la mémoire GPU, les images multimédias arrivent en tant qu’objets [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface), et non en tant qu’instances **SoftwareBitmap**.
+* [**MemoryPreference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.MemoryPreference) - Si vous spécifiez [**CPU**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference), le système utilise la mémoireUC qui garantit qu’à l’arrivée des images, ces dernières sont disponibles en tant qu’objets [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap). Si vous spécifiez [**Auto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference), le système sélectionne dynamiquement l’emplacement optimal de mémoire dédié au stockage des images. Si le système choisit d’utiliser la mémoireGPU, les images multimédias arrivent en tant qu’objets [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface), et non en tant qu’instances **SoftwareBitmap**.
 * [**StreamingCaptureMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.StreamingCaptureMode) - Définissez ce paramètre sur [**Video**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.StreamingCaptureMode) afin d’indiquer qu’il n’est pas nécessaire de diffuser le contenu audio en continu.
 
 Appelez [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) afin d’initialiser **MediaCapture** avec vos paramètres souhaités. Assurez-vous d’effectuer votre appel au sein d’un bloc *try*, ceci pour vous protéger en cas de mise en échec de l’initialisation.
@@ -88,7 +85,7 @@ Appelez [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br
 ## <a name="set-the-preferred-format-for-the-frame-source"></a>Définir le format préféré de la source d’images
 Pour définir le format préféré d’une source d’images, vous devez obtenir un objet [**MediaFrameSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource) représentant la source. Pour obtenir cet objet, accédez au dictionnaire [**Frames**](https://msdn.microsoft.com/library/windows/apps/Windows.Phone.Media.Capture.CameraCaptureSequence.Frames) de l’objet **MediaCapture** initialisé, en spécifiant l’identificateur de la source d’images que vous souhaitez utiliser. C’est pourquoi nous avons enregistré l’objet [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) lorsque nous sélectionnions un groupe de sources d’images.
 
-La propriété [**MediaFrameSource.SupportedFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource.SupportedFormats) comporte une liste d’objets [**MediaFrameFormat**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameFormat) décrivant les formats pris en charge pour la source d’images. Utilisez la méthode d’extension Linq **Where** pour sélectionner un format basé sur les propriétés souhaitées. Dans cet exemple, le format sélectionné présente une largeur de 1 080 pixels et peut fournir des images au format RVB 32 bits. La méthode d’extension **FirstOrDefault** sélectionne la première entrée de la liste. Si le format sélectionné est NULL, le format demandé n’est pas pris en charge par la source des images. Si le format est pris en charge, vous pouvez demander que la source l’utilise en appelant [**SetFormatAsync**](https://msdn.microsoft.com/library/windows/apps/).
+La propriété [**MediaFrameSource.SupportedFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource.SupportedFormats) comporte une liste d’objets [**MediaFrameFormat**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameFormat) décrivant les formats pris en charge pour la source d’images. Utilisez la méthode d’extension Linq **Where** pour sélectionner un format basé sur les propriétés souhaitées. Dans cet exemple, le format sélectionné présente une largeur de 1080pixels et peut fournir des images au format RVB32bits. La méthode d’extension **FirstOrDefault** sélectionne la première entrée de la liste. Si le format sélectionné est NULL, le format demandé n’est pas pris en charge par la source des images. Si le format est pris en charge, vous pouvez demander que la source l’utilise en appelant [**SetFormatAsync**](https://msdn.microsoft.com/library/windows/apps/).
 
 [!code-cs[GetPreferredFormat](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetPreferredFormat)]
 
@@ -106,7 +103,7 @@ Indiquez au système de commencer à lire des images de la source en appelant [*
 [!code-cs[CreateFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateFrameReader)]
 
 ## <a name="handle-the-frame-arrived-event"></a>Gérer l’événement déclenché à l’arrivée des images
-L’événement [**MediaFrameReader.FrameArrived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.FrameArrived) est déclenché quand une nouvelle image est disponible. Vous pouvez choisir de traiter toutes les images qui arrivent ou seulement celles dont vous avez besoin. Étant donné que le lecteur d’images déclenche l’événement sur son propre thread, il vous faudra éventuellement implémenter une logique de synchronisation afin de garantir que vous n’essayez pas d’accéder aux mêmes données à partir de plusieurs threads. Cette section vous indique comment synchroniser les images couleur des dessins sur un contrôle d’images dans une page XAML. Ce scénario traite de la contrainte de synchronisation supplémentaire qui implique que l’ensemble des mises à jour des contrôles XAML soient effectuées sur le même thread d’interface utilisateur.
+L’événement [**MediaFrameReader.FrameArrived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.FrameArrived) est déclenché quand une nouvelle image est disponible. Vous pouvez choisir de traiter toutes les images qui arrivent ou seulement celles dont vous avez besoin. Étant donné que le lecteur d’images déclenche l’événement sur son propre thread, il vous faudra éventuellement implémenter une logique de synchronisation afin de garantir que vous n’essayez pas d’accéder aux mêmes données à partir de plusieurs threads. Cette section vous indique comment synchroniser les images couleur des dessins sur un contrôle d’images dans une pageXAML. Ce scénario traite de la contrainte de synchronisation supplémentaire qui implique que l’ensemble des mises à jour des contrôles XAML soient effectuées sur le même thread d’interface utilisateur.
 
 La première étape de l’affichage des images au format XAML consiste à créer un contrôle Image. 
 
@@ -167,7 +164,6 @@ La classe d’assistance **FrameRenderer** implémente les méthodes suivantes.
  
 
  
-
 
 
 

@@ -10,14 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: bf56b564b383ee90e276416bf1dda29f55bb771c
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: a5a0a20ffa8ca27c123d139f25f636587db07aba
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessibility-testing"></a>Test de l’accessibilité  
 
 Procédures de test à appliquer pour vous assurer de l’accessibilité de votre application de plateforme Windows universelle (UWP).
@@ -53,7 +50,7 @@ L’image suivante illustre l’outil [**Inspect**](https://msdn.microsoft.com/l
 
 <span id="ui_automation_verify"/>
 <span id="UI_AUTOMATION_VERIFY"/>
-### **<a name="ui-automation-verify"></a>UI Automation Verify**  
+### **<a name="ui-automation-verify"></a>UIAutomationVerify**  
 **UI Automation Verify (UIA Verify)** est une infrastructure de vérification et de test automatisée pour les implémentations UI Automation. **UIA Verify** peut être intégré au code de test et effectuer des tests réguliers et automatisés ou des vérifications ponctuelles de scénarios UI Automation. Pour exécuter **UIA Verify**, exécutez VisualUIAVerifyNative.exe à partir du sous-répertoire UIAVerify.
 
 <span id="accessible_event_watcher"/>
@@ -75,7 +72,7 @@ Le meilleur moyen de tester l’accessibilité de votre clavier consiste à déb
 Utilisez des outils de contraste des couleurs pour vérifier que le coefficient de contraste du texte visible est acceptable. Les exceptions comprennent les éléments d’interface utilisateur inactifs, ainsi que les logos et le texte décoratif qui ne transmettent pas d’informations et peuvent être réorganisés sans modifier la signification. Pour plus d’informations sur le coefficient de contraste et les exceptions, voir [Exigences de texte accessible](accessible-text-requirements.md). Pour connaître les outils permettant de tester les coefficients de contraste, voir la spécification [Techniques for WCAG 2.0 G18 (section Resources)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources).
 
 > [!NOTE]
-> Certains des outils répertoriés par la spécification « Techniques for WCAG 2.0 G18 » ne peuvent pas être utilisés de manière interactive avec une application du Windows Store. Vous pouvez être amené à entrer des valeurs de couleur de premier plan et d’arrière-plan manuellement dans l’outil, ou à effectuer des captures d’écran de l’interface utilisateur de l’application puis à exécuter l’outil de coefficient de contraste sur l’image de capture d’écran, ou à exécuter l’outil tout en ouvrant des fichiers bitmap sources dans un programme d’édition d’images plutôt que pendant que cette image est chargée par l’application.
+> Certains des outils répertoriés par la spécification «Techniques for WCAG2.0 G18» ne peuvent pas être utilisés de manière interactive avec une application du Windows Store. Vous pouvez être amené à entrer des valeurs de couleur de premierplan et d’arrière-plan manuellement dans l’outil, ou à effectuer des captures d’écran de l’interface utilisateur de l’application puis à exécuter l’outil de coefficient de contraste sur l’image de capture d’écran, ou à exécuter l’outil tout en ouvrant des fichiers bitmap sources dans un programme d’édition d’images plutôt que pendant que cette image est chargée par l’application.
 
 <span id="verify_your_app_in_high_contrast"/>
 <span id="VERIFY_YOUR_APP_IN_HIGH_CONTRAST"/>
@@ -92,10 +89,10 @@ Utilisez les options d’affichage du système qui ajustent la valeur ppp de l�
 ## <a name="verify-main-app-scenarios-by-using-narrator"></a>Vérifier les scénarios d’application principaux à l’aide du Narrateur  
 Utilisez le Narrateur pour tester l’expérience de lecture d’écran pour votre application en effectuant les étapes suivantes :
 
-**Procédez comme suit pour tester votre application à l’aide du Narrateur avec une souris et le clavier :**
+**Procédez comme suit pour tester votre application à l’aide du Narrateur avec une souris et le clavier:**
 1.  Démarrez le Narrateur en appuyant sur _la touche Windows + Entrée_.
 2.  Naviguez dans votre application à l’aide du clavier en utilisant la touche _Tab_, les touches de direction et la _touche Verr. maj + les touches de direction_.
-3.  À mesure que vous naviguez dans votre application, écoutez le Narrateur lire les éléments de votre interface utilisateur et vérifiez les points suivants :
+3.  À mesure que vous naviguez dans votre application, écoutez le Narrateur lire les éléments de votre interface utilisateur et vérifiez les points suivants:
     * Pour chaque contrôle, vérifiez que le Narrateur lit tout le contenu visible. Vérifiez également qu’il lit le nom de chaque contrôle, tout état applicable (coché, sélectionné, etc.) et le type du contrôle (bouton, case à cocher, élément de liste, etc.).
     * Si l’élément est interactif, vérifiez que vous pouvez utiliser le Narrateur pour appeler son action en appuyant sur _Verr. maj + Entrée_.
     * Pour chaque tableau, vérifiez que le Narrateur lit correctement le nom du tableau, sa description (le cas échéant) et les en-têtes de lignes et de colonnes.
@@ -103,9 +100,9 @@ Utilisez le Narrateur pour tester l’expérience de lecture d’écran pour vot
 4.  Appuyez sur _Verr. maj + Maj + Entrée_ pour effectuer des recherches dans votre application et vérifier que tous vos contrôles apparaissent dans la liste de recherche, et que les noms des contrôles sont localisés et lisibles.
 5.  Éteignez votre moniteur et essayez d’accomplir les scénarios d’application principaux en utilisant uniquement le clavier et le Narrateur. Pour obtenir la liste complète des commandes et des raccourcis du Narrateur, appuyez sur _Verr. maj + F1_.
 
-À compter de Windows 10 version 1607, nous avons introduit un nouveau mode développeur dans le Narrateur. Activez le mode développeur quand le Narrateur est déjà en cours d’exécution en appuyant sur _Verr. maj + Maj + F12_. Quand le mode développeur est activé, l’écran est masqué et met en évidence uniquement les objets accessibles et le texte associé exposé par programmation au Narrateur. Vous avez ainsi une bonne représentation visuelle des informations qui sont exposées au Narrateur.
+À compter de Windows10 version1607, nous avons introduit un nouveau mode développeur dans le Narrateur. Activez le mode développeur quand le Narrateur est déjà en cours d’exécution en appuyant sur _Verr. maj + Maj + F12_. Quand le mode développeur est activé, l’écran est masqué et met en évidence uniquement les objets accessibles et le texte associé exposé par programmation au Narrateur. Vous avez ainsi une bonne représentation visuelle des informations qui sont exposées au Narrateur.
 
-**Procédez comme suit pour tester votre application à l’aide du mode tactile du Narrateur :**
+**Procédez comme suit pour tester votre application à l’aide du mode tactile du Narrateur:**
 
 > [!NOTE]
 > Le Narrateur passe automatiquement en mode tactile sur les appareils qui prennent en charge les contacts 4+. Le Narrateur ne prend pas en charge les scénarios à plusieurs moniteurs ou les numériseurs d’interaction tactile multipoint sur l’écran principal.
@@ -136,7 +133,7 @@ Vous devez également envisager d’utiliser l’outil [**AccScope**](https://ms
 <span id="Examine_the_UI_Automation_representation_for_your_app"/>
 <span id="examine_the_ui_automation_representation_for_your_app"/>
 <span id="EXAMINE_THE_UI_AUTOMATION_REPRESENTATION_FOR_YOUR_APP"/>
-## <a name="examine-the-ui-automation-representation-for-your-app"></a>Examiner la représentation UI Automation de votre application  
+## <a name="examine-the-ui-automation-representation-for-your-app"></a>Examiner la représentation UIAutomation de votre application  
 Plusieurs des outils de test d’UI Automation mentionnés précédemment permettent d’afficher votre application d’une façon qui, délibérément, ne prend pas en compte son apparence, mais la représente sous la forme d’une structure d’éléments UI Automation. C’est ainsi que les clients UI Automation, principalement les technologies d’assistance, vont interagir avec votre application dans les scénarios d’accessibilité.
 
 L’outil [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) fournit une vue particulièrement intéressante de votre application, car vous pouvez voir les éléments UI Automation sous forme de représentation visuelle ou de liste. Si vous utilisez la visualisation, vous pouvez explorer les différents éléments d’une façon qui vous permettra de les mettre en corrélation avec l’apparence visuelle de l’interface utilisateur de votre application. Vous pouvez même tester l’accessibilité de vos premiers prototypes d’interface utilisateur avant d’avoir affecté toute la logique à l’interface utilisateur, ce qui garantit que l’interaction visuelle et la navigation dans les scénarios d’accessibilité dans votre application sont équilibrées.
@@ -149,4 +146,3 @@ La présence d’éléments apparaissant à tort dans l’affichage des élémen
 * [Pratiques à éviter](practices-to-avoid.md)
 * [UI Automation](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
 * [Accessibilité dans Windows](http://go.microsoft.com/fwlink/p/?LinkId=320802) 
-

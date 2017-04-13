@@ -10,12 +10,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9f7f786007a6e251a76fe5c4fcbad5c81b879c53
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 03b4832b64b044a4fb990fac3b64f61409f959bb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="web-view"></a>Affichage web
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -29,7 +27,7 @@ Un contrôle d’affichage web incorpore dans votre application une vue qui affi
 </ul>
 </div>
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
 Utilisez un contrôle d’affichage web pour afficher du contenu HTML à mise en forme enrichie à partir d’un serveur web distant, du code généré de manière dynamique ou des fichiers de contenu dans votre package d’application. Le contenu enrichi peut aussi contenir du code de script et communiquer entre le script et le code de votre application.
 
@@ -206,7 +204,7 @@ private void webView_ContainsFullScreenElementChanged(WebView sender, object arg
 
 Vous pouvez utiliser l’événement [**NewWindowRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.newwindowrequested.aspx) pour gérer les cas où le contenu web hébergé demande l’affichage d’une nouvelle fenêtre, telle qu’une fenêtre contextuelle. Vous pouvez utiliser un autre contrôle WebView pour afficher le contenu de la fenêtre demandée.
 
-Utilisez l’événement [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) pour activer les fonctionnalités web qui requièrent des fonctionnalités spéciales. Ces dernières incluent actuellement la géolocalisation, le stockage IndexedDB et la prise en charge du son et de la vidéo de l’utilisateur (d’un microphone ou d’une webcam, par exemple). Si votre application accède à l’emplacement ou au média de l’utilisateur, vous devez déclarer cette fonctionnalité dans le manifeste de l’application. Par exemple, une application qui utilise la géolocalisation doit inclure au minimum les déclarations de fonctionnalités suivantes dans le fichier Package.appxmanifest :
+Utilisez l’événement [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) pour activer les fonctionnalités web qui requièrent des fonctionnalités spéciales. Ces dernières incluent actuellement la géolocalisation, le stockage IndexedDB et la prise en charge du son et de la vidéo de l’utilisateur (d’un microphone ou d’une webcam, par exemple). Si votre application accède à l’emplacement ou au média de l’utilisateur, vous devez déclarer cette fonctionnalité dans le manifeste de l’application. Par exemple, une application qui utilise la géolocalisation doit inclure au minimum les déclarations de fonctionnalités suivantes dans le fichier Package.appxmanifest:
 
 ```xml
   <Capabilities>
@@ -217,7 +215,7 @@ Utilisez l’événement [**PermissionRequested**](https://msdn.microsoft.com/li
 
 En plus de la gestion par l’application de l’événement [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx), l’utilisateur devra approuver des boîtes de dialogue système standard pour les applications faisant appel à des fonctionnalités de géolocalisation ou multimédias afin d’activer ces dernières.
 
-Voici un exemple de la façon dont une application activerait la géolocalisation dans une carte de Bing :
+Voici un exemple de la façon dont une application activerait la géolocalisation dans une carte de Bing:
 
 ```csharp
 // Assume webView is defined in XAML
@@ -285,7 +283,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 Pour plus d’informations, voir [**WebView.AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx). 
 
-Par ailleurs, le contenu JavaScript approuvé d’un affichage web peut être autorisé à accéder directement aux API Windows Runtime. Cela fournit des fonctionnalités natives puissantes pour les applications web hébergées dans un affichage web. Pour activer cette fonctionnalité, l’URI du contenu approuvé doit être autorisé dans la section ApplicationContentUriRules de l’application au sein du fichier Package.appxmanifest, avec WindowsRuntimeAccess spécifiquement défini sur « all ». 
+Par ailleurs, le contenu JavaScript approuvé d’un affichage web peut être autorisé à accéder directement aux API Windows Runtime. Cela fournit des fonctionnalités natives puissantes pour les applications web hébergées dans un affichage web. Pour activer cette fonctionnalité, l’URI du contenu approuvé doit être autorisé dans la section ApplicationContentUriRules de l’application au sein du fichier Package.appxmanifest, avec WindowsRuntimeAccess spécifiquement défini sur «all». 
 
 Cet exemple montre une section du manifeste de l’application. Ici, un URI local est autorisé à accéder au composant Windows Runtime. 
 
@@ -317,7 +315,7 @@ Par défaut, le contenu de l’affichage web est hébergé sur le thread d’int
 
 > **Remarque**&nbsp;&nbsp; Des problèmes de performances peuvent se présenter lorsque du contenu est hébergé sur le thread d’interface utilisateur sur des appareils mobiles. Par conséquent, veillez à effectuer des tests sur tous les appareils cibles en cas de changement de la propriété DefaultExecutionMode.
 
-Un affichage web qui héberge le contenu en dehors du thread d’interface utilisateur n’est pas compatible avec les contrôles parents qui nécessitent la propagation de mouvements entre le contrôle d’affichage web et le parent, tels que [**FlipView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx), [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) et les autres contrôles associés. Ces contrôles ne sont pas en mesure de recevoir des mouvements effectués dans l’affichage web hors thread. En outre, l’impression de contenu web hors thread n’est pas directement prise en charge : vous devez imprimer un élément avec le remplissage [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx) à la place.
+Un affichage web qui héberge le contenu en dehors du thread d’interface utilisateur n’est pas compatible avec les contrôles parents qui nécessitent la propagation de mouvements entre le contrôle d’affichage web et le parent, tels que [**FlipView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx), [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) et les autres contrôles associés. Ces contrôles ne sont pas en mesure de recevoir des mouvements effectués dans l’affichage web hors thread. En outre, l’impression de contenu web hors thread n’est pas directement prise en charge: vous devez imprimer un élément avec le remplissage [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx) à la place.
 
 ## <a name="recommendations"></a>Recommandations
 
@@ -334,7 +332,6 @@ Un affichage web qui héberge le contenu en dehors du thread d’interface utili
  
 
  
-
 
 
 

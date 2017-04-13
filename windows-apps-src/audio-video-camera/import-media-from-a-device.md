@@ -1,21 +1,18 @@
 ---
 author: drewbatgit
 ms.assetid: dd2a1e01-c284-4d62-963e-f59f58dca61a
-description: "Cet article décrit la procédure d’importation de fichiers multimédias à partir d’un appareil, notamment la recherche de sources de médias disponibles, l’importation de photos et de fichiers sidecar et la suppression des fichiers importés de l’appareil source."
+description: "Cet article vous décrit la procédure d’importation de fichiers multimédias à partir d’un appareil, notamment la recherche de sources de médias disponibles, l’importation de photos et de fichiers sidecar et la suppression des fichiers importés de l’appareil source."
 title: "Importer des fichiers multimédias"
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 4deda6efa9b9b9ea03bee76855e30c8e9a290480
-ms.lasthandoff: 02/08/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 588367c1e4c1676641d57bbd33df6bdaf0c854da
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="import-media-from-a-device"></a>Importer des fichiers multimédias à partir d’un appareil
 
 Cet article vous décrit la procédure d’importation de fichiers multimédias à partir d’un appareil, notamment la recherche de sources de médias disponibles, l’importation de photos et de fichiers sidecar et la suppression des fichiers importés de l’appareil source.
@@ -24,7 +21,7 @@ Cet article vous décrit la procédure d’importation de fichiers multimédias 
 > Le code figurant dans cet article a été adapté de l’[**exemple d’application MediaImport UWP**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport). Vous pouvez dupliquer ou télécharger cet exemple à partir du [**référentiel Git d’exemples d’applications Windows universelles**](https://github.com/Microsoft/Windows-universal-samples) afin d’afficher le code en contexte ou de l’utiliser en tant que point de départ pour votre propre application.
 
 ## <a name="create-a-simple-media-import-ui"></a>Créer une interface simple d’importation de médias
-L’exemple de cet article utilise une interface utilisateur épurée prenant en charge les scénarios principaux d’importation de médias. Pour savoir comment créer une interface utilisateur plus robuste adaptée à une application d’importation de médias, consultez l’[**exemple MediaImport**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport). Le code XAML suivant crée un panneau d’empilement avec les contrôles suivants :
+L’exemple de cet article utilise une interface utilisateur épurée prenant en charge les scénarios principaux d’importation de médias. Pour savoir comment créer une interface utilisateur plus robuste adaptée à une application d’importation de médias, consultez l’[**exemple MediaImport**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport). Le code XAML suivant crée un panneau d’empilement avec les contrôles suivants:
 * Un objet [**Button**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Button) permettant de lancer la recherche des sources à partir desquelles les médias peuvent être importés.
 * Un objet [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ComboBox) permettant de répertorier et d’effectuer des sélections à partir des sources d’importation de fichiers multimédias identifiées.
 * Un objet [**ListView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ListView) permettant d’afficher et de sélectionner les éléments multimédias à partir de la source d’importation sélectionnée.
@@ -51,18 +48,18 @@ Implémentez un gestionnaire pour le bouton d’annulation. L’exemple figurant
 
 ## <a name="data-binding-helper-classes"></a>Classes d’assistance de liaison de données
 
-Dans un scénario d’importation standard d’éléments multimédias, vous présentez à l’utilisateur une liste des éléments multimédias disponibles à l’importation. Le nombre de fichiers pouvant s’avérer conséquent, vous pouvez avoir intérêt à présenter une miniature de chaque élément multimédia. Pour cette raison, cet exemple utilise trois classes d’assistance permettant de charger de manière incrémentielle des entrées dans le contrôle ListView, à mesure que l’utilisateur fait défiler la liste.
+Dans un scénario d’importation standard d’éléments multimédias, vous présentez à l’utilisateur une liste des éléments multimédias disponibles à l’importation. Le nombre de fichiers pouvant s’avérer conséquent, vous pouvez avoir intérêt à présenter une miniature de chaque élément multimédia. Pour cette raison, cet exemple utilise troisclasses d’assistance permettant de charger de manière incrémentielle des entrées dans le contrôle ListView, à mesure que l’utilisateur fait défiler la liste.
 
-* Classe **IncrementalLoadingBase** : implémente les objets [**IList**](https://msdn.microsoft.com/library/system.collections.ilist), [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading) et [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/system.collections.specialized.inotifycollectionchanged(v=vs.105).aspx) afin de communiquer le comportement de base de chargement incrémentiel.
-* Classe **GeneratorIncrementalLoadingClass** : fournit une implémentation de la classe de base de chargement incrémentiel.
-* Classe **ImportableItemWrapper** : un wrapper fin autour de la classe [**PhotoImportItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem) afin d’ajouter une propriété [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.Imaging.BitmapImage) pouvant être liée pour chacune des images miniatures associées aux éléments importés.
+* Classe **IncrementalLoadingBase**: implémente les objets [**IList**](https://msdn.microsoft.com/library/system.collections.ilist), [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading) et [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/system.collections.specialized.inotifycollectionchanged(v=vs.105).aspx) afin de communiquer le comportement de base de chargement incrémentiel.
+* Classe **GeneratorIncrementalLoadingClass**: fournit une implémentation de la classe de base de chargement incrémentiel.
+* Classe **ImportableItemWrapper**: un wrapper fin autour de la classe [**PhotoImportItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem) afin d’ajouter une propriété [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.Imaging.BitmapImage) pouvant être liée pour chacune des images miniatures associées aux éléments importés.
 
-Ces classes sont fournies dans l’[**exemple MediaImport**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport) ; ils peuvent être ajoutées à votre projet sans modifications. Une fois les classes d’assistance ajoutées à votre projet, déclarez une variable de membre de classe de type **GeneratorIncrementalLoadingClass**, qui sera utilisé plus loin dans cet exemple.
+Ces classes sont fournies dans l’[**exemple MediaImport**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport); ils peuvent être ajoutées à votre projet sans modifications. Une fois les classes d’assistance ajoutées à votre projet, déclarez une variable de membre de classe de type **GeneratorIncrementalLoadingClass**, qui sera utilisé plus loin dans cet exemple.
 
 [!code-cs[GeneratorIncrementalLoadingClass](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetGeneratorIncrementalLoadingClass)]
 
 
-# <a name="find-available-sources-from-which-media-can-be-imported"></a>Rechercher les sources disponibles à partir desquelles importer les fichiers multimédias
+## <a name="find-available-sources-from-which-media-can-be-imported"></a>Rechercher les sources disponibles à partir desquelles importer les fichiers multimédias
 
 Dans le gestionnaire de clics du bouton de recherche des sources, appelez la méthode statique [**PhotoImportManager.FindAllSourcesAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportManager.FindAllSourcesAsync) afin de démarrer sur le système la recherche des appareils à partir desquels importer des fichiers multimédias. Après avoir attendu l’exécution de l’opération, parcourez chaque objet [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) de la liste renvoyée et ajoutez une entrée à l’instance **ComboBox**, en définissant la propriété **Tag** sur l’objet source, afin qu’il puisse être facilement récupéré lorsque l’utilisateur effectue une sélection.
 
@@ -76,13 +73,13 @@ Dans le gestionnaire [**SelectionChanged**](https://msdn.microsoft.com/library/w
 
 [!code-cs[SourcesSelectionChanged](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetSourcesSelectionChanged)]
 
-# <a name="find-items-to-import"></a>Rechercher des éléments à importer
+## <a name="find-items-to-import"></a>Rechercher des éléments à importer
 
 Ajoutez des variables de membre de classe de type [**PhotoImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSession) et [**PhotoImportFindItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult) à utiliser dans les étapes suivantes.
 
 [!code-cs[DeclareImport](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareImport)]
 
-Dans la méthode FindItems, initialisez la variable **CancellationTokenSource** afin de pouvoir l’utiliser pour annuler l’opération de recherche, si nécessaire. Dans un bloc **try**, créez une nouvelle session d’importation en appelant [**CreateImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource.CreateImportSession) sur l’objet [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) sélectionné par l’utilisateur. Créez un nouvel objet [**Progress**](https://msdn.microsoft.com/library/hh193692.aspx) afin de fournir un rappel prenant en charge l’affichage de l’avancement de l’opération de recherche. Ensuite, appelez la méthode [**FindItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSession.FindItemsAsync(Windows.Media.Import.PhotoImportContentTypeFilter,Windows.Media.Import.PhotoImportItemSelectionMode) afin de démarrer l’opération de recherche. Fournissez une valeur [**PhotoImportContentTypeFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportContentTypeFilter) afin de spécifier si des photos ou des vidéos (ou les deux) sont à renvoyer. Fournissez une valeur [**PhotoImportItemSelectionMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItemSelectionMode) afin de spécifier si l’ensemble des éléments multimédias, aucun d’entre eux ou uniquement les nouvelles instances sont renvoyés avec la propriété [**IsSelected**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem.IsSelected) définie sur true. Cette propriété est liée à une case à cocher pour chaque élément multimédia de notre modèle d’élément ListBox.
+Dans la méthode FindItems, initialisez la variable **CancellationTokenSource** afin de pouvoir l’utiliser pour annuler l’opération de recherche, si nécessaire. Dans un bloc **try**, créez une nouvelle session d’importation en appelant [**CreateImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource.CreateImportSession) sur l’objet [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) sélectionné par l’utilisateur. Créez un nouvel objet [**Progress**](https://msdn.microsoft.com/library/hh193692.aspx) afin de fournir un rappel prenant en charge l’affichage de l’avancement de l’opération de recherche. Ensuite, appelez [**FindItemsAsync**](https://docs.microsoft.com/uwp/api/windows.media.import.photoimportsession#Windows_Media_Import_PhotoImportSession_FindItemsAsync_Windows_Media_Import_PhotoImportContentTypeFilter_Windows_Media_Import_PhotoImportItemSelectionMode_) pour démarrer l’opération de recherche. Fournissez une valeur [**PhotoImportContentTypeFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportContentTypeFilter) afin de spécifier si des photos ou des vidéos (ou les deux) sont à renvoyer. Fournissez une valeur [**PhotoImportItemSelectionMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItemSelectionMode) afin de spécifier si l’ensemble des éléments multimédias, aucun d’entre eux ou uniquement les nouvelles instances sont renvoyés avec la propriété [**IsSelected**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem.IsSelected) définie sur true. Cette propriété est liée à une case à cocher pour chaque élément multimédia de notre modèle d’élément ListBox.
 
 **FindItemsAsync** renvoie une valeur [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx). La méthode d’extension [**AsTask**](https://msdn.microsoft.com/library/hh779750.aspx) est utilisée pour créer une tâche pouvant être attendue ou pouvant être annulée avec le jeton d’annulation. Elle fait état de l’avancement à l’aide de l’objet **Progress** fourni.
 
@@ -121,6 +118,5 @@ Pour supprimer les éléments importés de la source à partir de laquelle ils o
 
 
  
-
 
 

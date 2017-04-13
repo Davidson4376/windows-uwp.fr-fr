@@ -9,13 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
+keywords: windows10, uwp
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 515c63d5612358cf90684427f8f747e19384c6ff
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 3e194902b9fb166600ee58ec601993dc808a6853
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="menus-and-context-menus"></a>Menus et menus contextuels
 
@@ -35,7 +33,7 @@ Les menus et les menus contextuels affichent une liste de commandes ou d’optio
 </div>
 
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 Les menus et les menus contextuels permettent de gagner de l’espace en organisant les commandes et en les masquant jusqu’à ce que l’utilisateur en ait besoin. Si une commande particulière doit être utilisée fréquemment et que vous disposez de l’espace disponible, envisagez de le placer directement dans son propre élément, plutôt que dans un menu, afin que les utilisateurs n’aient pas à passer par un menu afin d’y accéder. 
 
 Les menus et menus contextuels permettent d’organiser les commandes. Pour afficher du contenu arbitraire, comme une notification ou demander confirmation, utilisez une [boîte de dialogue ou un menu volant](dialogs.md).  
@@ -45,18 +43,18 @@ Les menus et menus contextuels permettent d’organiser les commandes. Pour affi
 
 Les menus et menus contextuels sont identiques en termes d’affichage et de contenu. En fait, vous utilisez le même contrôle nommé [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) pour les créer. La seule différence est la façon dont vous permettez à l’utilisateur d’y accéder. 
 
-Quand utiliser un menu ou un menu contextuel ?
+Quand utiliser un menu ou un menu contextuel?
 * Si l’élément hôte est un bouton ou un autre élément de commande dont le principal rôle est d’afficher des commandes supplémentaires, utilisez un menu.
 * Si l’élément hôte est un autre type d’élément ayant un autre objectif principal (par exemple, la présentation de texte ou une image), utilisez un menu contextuel. 
 
 Par exemple, utilisez un menu sur un bouton dans un volet de navigation pour fournir des options de navigation supplémentaires. Dans ce scénario, l’objectif principal du contrôle de bouton consiste à fournir un accès à un menu. 
 
-Si vous voulez ajouter des commandes (telles que couper, copier et coller) à un élément de texte, utilisez un menu contextuel au lieu d’un menu. Dans ce scénario, le rôle principal de l’élément de texte est de présenter et de modifier du texte ; les commandes supplémentaires (par exemple, couper, copier et coller) sont secondaires et doivent figurer dans un menu contextuel. 
+Si vous voulez ajouter des commandes (telles que couper, copier et coller) à un élément de texte, utilisez un menu contextuel au lieu d’un menu. Dans ce scénario, le rôle principal de l’élément de texte est de présenter et de modifier du texte; les commandes supplémentaires (par exemple, couper, copier et coller) sont secondaires et doivent figurer dans un menu contextuel. 
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-   <p><b>Les menus :</b></p>
+   <p><b>Les menus:</b></p>
 <p>
 <ul>
 <li>Ont un point d’entrée unique (un menu Fichier en haut de l’écran, par exemple) qui est toujours affiché.</li>
@@ -68,7 +66,7 @@ Si vous voulez ajouter des commandes (telles que couper, copier et coller) à un
 
   </div>
   <div class="side-by-side-content-right">
-   <p><b>Les menus contextuels :</b></p>
+   <p><b>Les menus contextuels:</b></p>
    
 <ul>
 <li>Sont attachés à un élément unique, mais ne sont accessibles que lorsque le contexte est logique.</li>
@@ -82,10 +80,10 @@ Si vous voulez ajouter des commandes (telles que couper, copier et coller) à un
 
 ## <a name="create-a-menu-or-a-context-menu"></a>Créer un menu ou un menu contextuel
 
-Pour créer un menu ou un menu de contenu, vous utilisez la [classe MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030). Vous définissez le contenu du menu en ajoutant des objets [MenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx), et [MenuFlyoutSeparator](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) à MenuFlyout. Voici le rôle de ces objets :
-* [MenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx) : effectuer une action immédiate.
-* [ToggleMenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) : activer ou désactiver une option.
-* [MenuFlyoutSeparator](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) : séparer visuellement des éléments de menu.
+Pour créer un menu ou un menu de contenu, vous utilisez la [classe MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030). Vous définissez le contenu du menu en ajoutant des objets [MenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx), et [MenuFlyoutSeparator](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) à MenuFlyout. Voici le rôle de ces objets:
+* [MenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx): effectuer une action immédiate.
+* [ToggleMenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx): activer ou désactiver une option.
+* [MenuFlyoutSeparator](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx): séparer visuellement des éléments de menu.
 
 
 Cet exemple crée une [classe MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) et utilise la propriété [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx), disponible pour la plupart des contrôles, pour afficher la [classe MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) sous la forme d’un menu contextuel.
@@ -120,7 +118,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-L’exemple qui suit est presque identique. Cependant, au lieu d’utiliser la propriété [ContextFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) pour afficher la [classe MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) sous forme de menu contextuel, l’exemple utilise la propriété [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) pour l’afficher sous forme de menu. 
+L’exemple qui suit est presque identique. Cependant, au lieu d’utiliser la propriété [ContextFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) pour afficher la [classeMenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) sous forme de menu contextuel, l’exemple utilise la propriété [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) pour l’afficher sous forme de menu. 
 
 ````xaml
 <Rectangle 
@@ -158,17 +156,16 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ````
 
 
-> Les contrôles permettant de faire disparaître les contrôles, tels que des menus, des menus contextuels et des menus volants, interceptent le focus du clavier et du boîtier de commande à l’intérieur de l’interface utilisateur temporaire jusqu’à le faire disparaître. Pour fournir une indication visuelle de ce comportement, les contrôles de la Xbox permettant de faire disparaître la luminosité dessinent une superposition qui assombrit l’interface utilisateur hors de portée. Ce comportement peut être modifié à l’aide de la nouvelle propriété [LightDismissOverlayMode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx). Par défaut, les interfaces utilisateur temporaires dessinent la superposition permettant de faire disparaître la luminosité sur la Xbox, mais pas sur d’autres familles d’appareils. Toutefois, les applications peuvent choisir de forcer la superposition afin d’être toujours **activées** ou **désactivées**.
+> Les contrôles permettant de faire disparaître les contrôles, tels que des menus, des menus contextuels et des menus volants, interceptent le focus du clavier et du boîtier de commande à l’intérieur de l’interface utilisateur temporaire jusqu’à le faire disparaître. Pour fournir une indication visuelle de ce comportement, les contrôles de la Xbox permettant de faire disparaître la luminosité dessinent une superposition qui assombrit l’interface utilisateur hors de portée. Ce comportement peut être modifié à l’aide de la nouvelle propriété [LightDismissOverlayMode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx). Par défaut, les interfaces utilisateur temporaires dessinent la superposition permettant de faire disparaître la luminosité sur laXbox, mais pas sur d’autres familles d’appareils. Toutefois, les applications peuvent choisir de forcer la superposition afin d’être toujours **activées** ou **désactivées**.
 
 > ```xaml
 > <MenuFlyout LightDismissOverlayMode=\"Off\">
 > ```
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
-*   [Exemple d’éléments de base d’une interface utilisateur XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
-    Affichez tous les contrôles XAML dans un format interactif.
+*   [Exemple d’éléments de base d’une interface utilisateurXAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
+    Affichez tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [**Classe MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030)
-
+- [**ClasseMenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030)
