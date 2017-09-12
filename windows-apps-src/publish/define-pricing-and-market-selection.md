@@ -1,340 +1,437 @@
 ---
 author: jnHs
 Description: "Le Windows Store touche des clients dans plus de 200 pays et régions du monde."
-title: "Définition des prix et sélection du marché"
+title: "Définir la sélection du marché"
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
-ms.openlocfilehash: b994d4c46a319f7f5714685666295f079c31d8df
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "windows 10, uwp, marchés, pays, régions"
+ms.openlocfilehash: 8cce339a57c60eadfb277893902c9e72afc1b4ae
+ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/03/2017
 ---
-# <a name="define-pricing-and-market-selection"></a>Définition des prix et sélection du marché
+# <a name="define-market-selection"></a>Définir la sélection du marché
 
 
-Le Windows Store touche des clients dans plus de 200 pays et régions du monde. Vous pouvez choisir les marchés dans lesquels proposer votre application, et déterminer le prix à facturer aux clients, avec la possibilité de personnaliser les prix en fonction des marchés.
+Le Windows Store touche des clients dans plus de 200 pays et régions du monde. Vous pouvez choisir les marchés dans lesquels vous souhaitez proposer votre application, avec la possibilité de personnaliser de nombreuses fonctionnalités de [Tarification et disponibilité](set-app-pricing-and-availability.md) par marché ou par groupe de marchés.
 
-**Remarque**  Tenez compte de nos [recommandations pour globaliser votre application](https://msdn.microsoft.com/library/windows/apps/hh969150).
+Tenez compte de nos [recommandations pour globaliser votre application](../globalizing/guidelines-and-checklist-for-globalizing-your-app.md).
 
- 
+> [!NOTE]
+> Bien que cet article fasse référence aux applications, la sélection du marché des soumissions d’extensions applique le même processus.
 
-## <a name="base-price"></a>Prix de base
+## <a name="markets"></a>Marchés
 
+Par défaut, nous proposerons votre application à son prix de base dans tous les marchés possibles, y compris dans les éventuels marchés que nous ajouterons par la suite.
 
-Une fois que vous avez sélectionné le **prix de base** de votre application, ce prix est utilisé dans tous les marchés où votre application est vendue, sauf si vous spécifiez un prix personnalisé pour un marché spécifique.
+Si vous préférez, vous pouvez définir des marchés spécifiques dans lesquels vous souhaitez proposer votre application. Pour ce faire, sélectionnez **Afficher les options** dans la section **Marchés** sur la page **Tarification et disponibilité**. Cela permet d’afficher la fenêtre contextuelle **Sélection du marché**, dans laquelle vous pouvez choisir les marchés dans lesquels vous voulez proposer votre application.
 
-Vous pouvez définir le champ **Prix de base** sur **Gratuit** ou choisir un niveau de prix disponible. Le niveau de prix fixe le prix de vente dans tous les pays où vous souhaitez distribuer votre application. Les niveaux de prix commencent à 0,99USD, avec des niveaux supplémentaires disponibles par incréments croissants (1,10USD, 1,29USD, etc.). Les incréments augmentent généralement à mesure que le prix devient plus élevé.
+Par défaut, tous les marchés sont sélectionnés. Vous pouvez désélectionner des marchés spécifiques pour les exclure, ou cliquer sur **Désélectionner tout**, puis ajouter les marchés de votre choix. Vous pouvez rechercher un marché spécifique dans la barre de recherche, et pouvez également remplacer la liste déroulante **Tous les marchés** par **Marchés Xbox** si vous souhaitez afficher les marchés dans lesquels vous pouvez vendre des produits Xbox. Une fois que vous avez terminé, cliquez sur **OK** pour enregistrer vos choix.
 
-> **Remarque**  Ces niveaux de prix s’appliquent également aux [extensions](add-on-submissions.md).
+Notez que vos sélections s’appliquent ici uniquement aux nouvelles acquisitions. Si une personne possède déjà votre application dans un certain marché et que vous supprimez ultérieurement ce marché, les personnes qui possèdent déjà l’application dans ce marché peuvent continuer à l'utiliser, mais n'obtiendront pas les mises à jour que vous soumettez, et aucun nouveau client sur ce marché ne peut obtenir votre application.
 
-Chaque niveau de prix a une valeur correspondante dans chacune des devises du Windows Store, qui en compte plus de60. Ces valeurs vous aident à vendre vos applications à un prix comparable dans le monde entier. Cependant, en raison des fluctuations des taux de change, le montant exact des ventes peut varier légèrement d’une devise à l’autre.
-
-N’oubliez pas que le niveau de prix que vous sélectionnez peut inclure la taxe de vente ou la taxe sur la valeur ajoutée que vos clients doivent payer. Pour plus d’informations sur les implications fiscales de votre application dans les marchés sélectionnés, voir l’article [Informations fiscales pour les applications payantes](tax-details-for-paid-apps.md). Consultez également l’article [Considérations de prix pour des marchés spécifiques](#price-considerations-for-specific-markets) ci-dessous.
-
-## <a name="markets-and-custom-prices"></a>Marchés et prix personnalisés
-
-
-Par défaut, votre application sera indiquée à son prix de base dans tous les marchés possibles, y compris dans les éventuels marchés que nous ajouterons par la suite.
-
-Pour modifier ce paramétrage, développez la section **Marchés et prix personnalisés** sur la page **Tarification et disponibilité** de la soumission de votre application. Vous pouvez désélectionner des marchés spécifiques pour les exclure, ou cliquer sur **Désélectionner tout**, puis ajouter les marchés de votre choix.
-
-> **Important**   Il est de votre responsabilité de vous conformer à toute obligation légale locale, même si ces obligations ne sont pas répertoriées ici ni dans le tableau de bord du Centre de développement Windows.
-
-Si vous souhaitez définir des prix personnalisés pour votre application dans des marchés spécifiques, vous pouvez également effectuer cette opération à partir de cette section; dans le cas contraire, votre application sera indiquée par défaut à son prix de base (dans la devise locale de ce marché).
-
-> **Remarque**  En outre, vous pouvez définir des prix personnalisés pour des marchés spécifiques dans les [soumissions d’extensions](add-on-submissions.md).
+> [!IMPORTANT]
+> Il est de votre responsabilité de vous conformer à toute obligation légale locale, même si ces obligations ne sont pas répertoriées ici ni dans le tableau de bord du Centre de développement Windows.
 
 Tenez compte du fait que même si vous sélectionnez tous les marchés, la législation et les restrictions locales ou d’autres facteurs peuvent empêcher certaines applications d’être référencées dans des pays ou régions spécifiques. Par ailleurs, certains marchés peuvent avoir établi des conditions spécifiques relatives à la classification par âge. Si votre application ne satisfait pas ces conditions, nous ne pourrons pas proposer votre application dans ce marché. Pour plus d’informations, consultez la section [Classification par âge](age-ratings.md).
 
-> **Remarque**  Pour les applications destinées à Windows8 ou Windows8.1, certains marchés spécifiques sont traités comme un seul marché «Reste du monde». Pour plus d’informations, voir [Marchés « Rest of World » pour Windows 8.x](#rest-of-world-markets-for-windows-8x). N’oubliez pas non plus que sur Windows 8 ou Windows 8.1, les clients verront uniquement l’application répertoriée avec son prix de base, même si vous avez changé le prix pour leur marché.
+> [!NOTE]
+> Pour les applications destinées à Windows8 ou Windows8.1, certains marchés spécifiques sont traités comme un seul marché «Reste du monde». Pour plus d’informations, voir [Marchés «Reste du monde» pour Windows8.x](#rest-of-world-markets-for-windows-8x).
 
+Vous verrez également une case à cocher qui vous permet d’indiquer si vous souhaitez proposer votre application dans un marché que le Windows Store peut ajouter à l’avenir. Si vous laissez cette case à cocher activée, et que nous ajoutons ultérieurement de nouveaux marchés, le prix de base et la date de disponibilité générale de votre soumission seront utilisés pour votre application sur ces marchés. Si vous ne souhaitez pas cette option, vous pouvez désactiver cette case, auquel cas votre application ne sera pas répertoriée dans les éventuels futurs marchés (bien que vous puissiez toujours les ajouter ultérieurement).
  
 
 ## <a name="windows-store-consumer-markets"></a>Marchés grand public du Windows Store
 
 
-Vous pouvez choisir de répertorier votre application (ou module complémentaire) dans un ou plusieurs des marchés suivants.
+Vous pouvez choisir de répertorier votre application (ou module complémentaire) dans un ou plusieurs des marchés suivants. Les marchés comportant un astérisque prennent en charge le Windows Store sur Xbox. L'indication **Xbox** apparaît en regard de leurs noms dans la fenêtre contextuelle **Sélection du marché**.
 
--   Afghanistan
--   Åland (îles d’)
--   Albanie
--   Samoa américaines
--   Andorre
--   Angola
--   Anguilla
--   Antarctique
--   Antigua et Barbuda
--   Arménie
--   Aruba
--   Azerbaïdjan
--   Algérie
--   Argentine
--   Australie
--   Autriche
--   Bahamas, Les
--   Bahreïn
--   Bangladesh
--   Barbade (La)
--   Bélarus
--   Belgique
--   Belize
--   Bénin
--   Bermudes
--   Bhoutan
--   Bolivie
--   Bonaire, Saint-Eustache et Saba
--   Bosnie-Herzégovine
--   Botswana
--   Bouvet (Île)
--   Brésil
--   Territoires britanniques de l’océan Indien
--   Îles Vierges britanniques
--   Brunei
--   Burkina-Faso
--   Burundi
--   Bulgarie
--   Cabo Verde
--   Cambodge
--   Cameroun
--   Canada
--   Caïmans (îles)
--   République centrafricaine
--   Tchad
--   Chili
--   Chine
--   Christmas (île)
--   Cocos-Keeling (îles)
--   Colombie
--   Comores (Les)
--   Congo
--   Congo (RDC)
--   Cook (îles)
--   Costa Rica
--   Côte d’Ivoire
--   Croatie
--   Curaçao
--   Chypre
--   République tchèque
--   Danemark
--   Djibouti
--   Dominique
--   République dominicaine
--   Équateur (République de)
--   Égypte
--   Salvador
--   Guinée équatoriale
--   Érythrée
--   Estonie
--   Éthiopie
--   Malouines (îles)
--   Féroé (îles)
--   Fidji
--   Finlande
--   France
--   Guyane française
--   Polynésie française
--   Terres australes et antarctiques françaises
--   Gabon
--   Gambie
--   Géorgie
--   Allemagne
--   Ghana
--   Gibraltar
--   Grèce
--   Groenland
--   Grenade
--   Guadeloupe
--   Guam
--   Guatemala
--   Guernesey
--   Guinée
--   Guinée-Bissau
--   Guyana
--   Haïti
--   Heard et McDonald (Îles)
--   Saint-Siège (Cité du Vatican)
--   Honduras
--   Hong Kong R.A.S.
--   Hongrie
--   Islande
--   Inde
--   Indonésie
--   Irak
--   Irlande
--   Île de Man
--   Israël
--   Italie
--   Japon
--   Jamaïque
--   Jersey
--   Jordanie
--   Kazakhstan
--   Kenya
--   Kiribati
--   Corée
--   Kirghizistan
--   Koweït
--   Laos
--   Lettonie
--   Liban
--   Lesotho
--   Liberia
--   Libye
--   Liechtenstein
--   Lituanie
--   Luxembourg
--   Macao R.A.S.
--   Macédoine (Ex-République yougoslave de Macédoine)
--   Madagascar
--   Malawi
--   Malaisie
--   Maldives
--   Mali
--   Malte (République de)
--   Marshall (îles)
--   Martinique
--   Mauritanie
--   Maurice (île)
--   Mayotte
--   Mexique
--   Micronésie
--   République de Moldavie
--   Monaco
--   Mongolie
--   Monténégro
--   Montserrat
--   Maroc
--   Mozambique
--   Myanmar
--   Namibie
--   Nauru
--   Népal
--   Pays-Bas
--   Nouvelle-Calédonie
--   Nouvelle-Zélande
--   Nicaragua
--   Niger
--   Nigeria
--   Niue
--   Norfolk (île)
--   Mariannes du Nord (îles)
--   Norvège
--   Oman
--   Pakistan
--   Palau
--   Autorité palestinienne
--   Panama
--   Papouasie-Nouvelle-Guinée
--   Paraguay
--   Pérou
--   Philippines
--   Pitcairn (îles)
--   Pologne
--   Portugal
--   Puerto Rico
--   Qatar
--   La Réunion
--   Roumanie
--   Russie
--   Rwanda
--   Saint-Barthélemy
--   Sainte-Hélène, Ascension et Tristan da Cunha
--   Saint Kitts et Nevis
--   Sainte-Lucie
--   Saint-Martin (partie française)
--   Saint-Pierre-et-Miquelon
--   Saint-Vincent-et-les-Grenadines
--   Samoa
--   Saint-Marin
--   São Tomé et Príncipe
--   Arabie saoudite
--   Sénégal
--   Serbie
--   Seychelles
--   Sierra Leone
--   Singapour
--   Sint-Maarten (partie néerlandaise)
--   Slovaquie
--   Slovénie
--   Salomon (îles)
--   Somalie
--   Géorgie du Sud-et-les îles Sandwich du Sud
--   Sri Lanka
--   Surinam
--   Svalbard et Jan Mayen
--   Swaziland
--   Suède
--   Suisse
--   Afrique du Sud
--   Espagne
--   Taïwan
--   Tadjikistan
--   Tanzanie
--   Thaïlande
--   Timor-Leste
--   Togo
--   Tokelau
--   Tonga
--   Trinité-et-Tobago
--   Tunisie
--   Turkménistan
--   Turks et Caïcos (îles)
--   Tuvalu
--   Turquie
--   Ouganda
--   Ukraine
--   Émirats arabes unis
--   Royaume-Uni
--   États-Unis
--   Uruguay
--   Îles mineures éloignées des États-Unis
--   Îles Vierges (É.-U.)
--   Ouzbékistan
--   Venezuela
--   Vietnam
--   Vanuatu
--   Wallis-et-Futuna
--   Yémen
--   Zambie
--   Zimbabwe
+<table>
+  <tr>
+    <td>Afghanistan</td>
+    <td>Albanie</td>
+    <td>Algérie</td>
+    <td>Samoa américaines</td>
+  </tr>
+  <tr>
+    <td>Andorre</td>
+    <td>Angola</td>
+    <td>Anguilla</td>
+    <td>Antarctique</td>
+  </tr>
+  <tr>
+    <td>Antigua et Barbuda</td>
+    <td>Argentine</td>
+    <td>Arménie</td>
+    <td>Aruba</td>
+  </tr>
+  <tr>
+    <td>Australie</td>
+    <td>Autriche</td>
+    <td>Azerbaïdjan</td>
+    <td>Les Bahamas</td>
+  </tr>
+  <tr>
+    <td>Bahreïn</td>
+    <td>Bangladesh</td>
+    <td>Barbade (La)</td>
+    <td>Bélarus</td>
+  </tr>
+  <tr>
+    <td>Belgique</td>
+    <td>Belize</td>
+    <td>Bénin</td>
+    <td>Bermudes</td>
+  </tr>
+  <tr>
+    <td>Bhoutan</td>
+    <td>Bolivie</td>
+    <td>Bonaire</td>
+    <td>Bosnie-Herzégovine</td>
+  </tr>
+  <tr>
+    <td>Botswana</td>
+    <td>Bouvet (Île)</td>
+    <td>Brésil</td>
+    <td>Territoires britanniques de l’océan Indien</td>
+  </tr>
+  <tr>
+    <td>Îles Vierges britanniques</td>
+    <td>Brunei</td>
+    <td>Bulgarie</td>
+    <td>Burkina-Faso</td>
+  </tr>
+  <tr>
+    <td>Burundi</td>
+    <td>Cabo Verde</td>
+    <td>Cambodge</td>
+    <td>Cameroun</td>
+  </tr>
+  <tr>
+    <td>Canada</td>
+    <td>Caïmans (îles)</td>
+    <td>République centrafricaine</td>
+    <td>Tchad</td>
+  </tr>
+  <tr>
+    <td>Chili</td>
+    <td>Chine</td>
+    <td>Christmas (île)</td>
+    <td>Cocos-Keeling (îles)</td>
+  </tr>
+  <tr>
+    <td>Colombie *</td>
+    <td>Comores (Les)</td>
+    <td>Congo</td>
+    <td>Congo (RDC)</td>
+  </tr>
+  <tr>
+    <td>Cook (îles)</td>
+    <td>Costa Rica</td>
+    <td>Croatie</td>
+    <td>Curaçao</td>
+  </tr>
+  <tr>
+    <td>Chypre</td>
+    <td>République tchèque *</td>
+    <td>Côte d’Ivoire</td>
+    <td>Danemark *</td>
+  </tr>
+  <tr>
+    <td>Djibouti</td>
+    <td>Dominique</td>
+    <td>République dominicaine</td>
+    <td>Équateur (République de l’)</td>
+  </tr>
+  <tr>
+    <td>Égypte</td>
+    <td>Salvador</td>
+    <td>Guinée équatoriale</td>
+    <td>Érythrée</td>
+  </tr>
+  <tr>
+    <td>Estonie</td>
+    <td>Éthiopie</td>
+    <td>Malouines (îles)</td>
+    <td>Féroé (îles)</td>
+  </tr>
+  <tr>
+    <td>Fidji</td>
+    <td>Finlande *</td>
+    <td>France *</td>
+    <td>Guyane française</td>
+  </tr>
+  <tr>
+    <td>Polynésie française</td>
+    <td>Terres australes et antarctiques françaises</td>
+    <td>Gabon</td>
+    <td>Gambie</td>
+  </tr>
+  <tr>
+    <td>Géorgie</td>
+    <td>Allemagne *</td>
+    <td>Ghana</td>
+    <td>Gibraltar</td>
+  </tr>
+  <tr>
+    <td>Grèce *</td>
+    <td>Groenland</td>
+    <td>Grenade</td>
+    <td>Guadeloupe</td>
+  </tr>
+  <tr>
+    <td>Guam</td>
+    <td>Guatemala</td>
+    <td>Guernesey</td>
+    <td>Guinée</td>
+  </tr>
+  <tr>
+    <td>Guinée-Bissau</td>
+    <td>Guyana</td>
+    <td>Haïti</td>
+    <td>Heard et McDonald (Îles)</td>
+  </tr>
+  <tr>
+    <td>Honduras</td>
+    <td>Hong Kong R.A.S. *</td>
+    <td>Hongrie *</td>
+    <td>Islande</td>
+  </tr>
+  <tr>
+    <td>Inde *</td>
+    <td>Indonésie</td>
+    <td>Irak</td>
+    <td>Irlande *</td>
+  </tr>
+  <tr>
+    <td>Île de Man</td>
+    <td>Israël *</td>
+    <td>Italie *</td>
+    <td>Jamaïque</td>
+  </tr>
+  <tr>
+    <td>Japon *</td>
+    <td>Jersey</td>
+    <td>Jordanie</td>
+    <td>Kazakhstan</td>
+  </tr>
+  <tr>
+    <td>Kenya</td>
+    <td>Kiribati</td>
+    <td>Corée *</td>
+    <td>Kirghizistan</td>
+  </tr>
+  <tr>
+    <td>Koweït</td>
+    <td>Laos</td>
+    <td>Lettonie</td>
+    <td>Liban</td>
+  </tr>
+  <tr>
+    <td>Lesotho</td>
+    <td>Liberia</td>
+    <td>Libye</td>
+    <td>Liechtenstein</td>
+  </tr>
+  <tr>
+    <td>Lituanie</td>
+    <td>Luxembourg</td>
+    <td>Macao R.A.S.</td>
+    <td>Macédoine, Ex.-Rép. yougoslave de</td>
+  </tr>
+  <tr>
+    <td>Madagascar</td>
+    <td>Malawi</td>
+    <td>Malaisie</td>
+    <td>Maldives</td>
+  </tr>
+  <tr>
+    <td>Mali</td>
+    <td>Malte (République de)</td>
+    <td>Marshall (îles)</td>
+    <td>Martinique</td>
+  </tr>
+  <tr>
+    <td>Mauritanie</td>
+    <td>Maurice (île)</td>
+    <td>Mayotte</td>
+    <td>Mexique *</td>
+  </tr>
+  <tr>
+    <td>Micronésie</td>
+    <td>République de Moldavie</td>
+    <td>Monaco</td>
+    <td>Mongolie</td>
+  </tr>
+  <tr>
+    <td>Monténégro</td>
+    <td>Montserrat</td>
+    <td>Maroc</td>
+    <td>Mozambique</td>
+  </tr>
+  <tr>
+    <td>Myanmar</td>
+    <td>Namibie</td>
+    <td>Nauru</td>
+    <td>Népal</td>
+  </tr>
+  <tr>
+    <td>Pays-Bas *</td>
+    <td>Nouvelle-Calédonie</td>
+    <td>Nouvelle-Zélande *</td>
+    <td>Nicaragua</td>
+  </tr>
+  <tr>
+    <td>Niger</td>
+    <td>Nigeria</td>
+    <td>Niue</td>
+    <td>Norfolk (île)</td>
+  </tr>
+  <tr>
+    <td>Mariannes du Nord (îles)</td>
+    <td>Norvège *</td>
+    <td>Oman</td>
+    <td>Pakistan</td>
+  </tr>
+  <tr>
+    <td>Palau</td>
+    <td>Autorité palestinienne</td>
+    <td>Panama</td>
+    <td>Papouasie-Nouvelle-Guinée</td>
+  </tr>
+  <tr>
+    <td>Paraguay</td>
+    <td>Pérou</td>
+    <td>Philippines</td>
+    <td>Pitcairn (îles)</td>
+  </tr>
+  <tr>
+    <td>Pologne *</td>
+    <td>Portugal *</td>
+    <td>Qatar</td>
+    <td>Roumanie</td>
+  </tr>
+  <tr>
+    <td>Russie *</td>
+    <td>Rwanda</td>
+    <td>La Réunion</td>
+    <td>Saint-Barthélemy</td>
+  </tr>
+  <tr>
+    <td>Sainte-Hélène, Ascension et Tristan da Cunha</td>
+    <td>Saint Kitts et Nevis</td>
+    <td>Sainte-Lucie</td>
+    <td>Saint-Martin (partie française)</td>
+  </tr>
+  <tr>
+    <td>Saint-Pierre-et-Miquelon</td>
+    <td>Saint-Vincent-et-les-Grenadines</td>
+    <td>Samoa</td>
+    <td>Saint-Marin</td>
+  </tr>
+  <tr>
+    <td>Arabie saoudite *</td>
+    <td>Sénégal</td>
+    <td>Serbie</td>
+    <td>Seychelles</td>
+  </tr>
+  <tr>
+    <td>Sierra Leone</td>
+    <td>Singapour *</td>
+    <td>Sint-Maarten (partie néerlandaise)</td>
+    <td>Slovaquie *</td>
+  </tr>
+  <tr>
+    <td>Slovénie</td>
+    <td>Salomon (îles)</td>
+    <td>Somalie</td>
+    <td>Afrique du Sud *</td>
+  </tr>
+  <tr>
+    <td>Géorgie du Sud-et-les îles Sandwich du Sud</td>
+    <td>Espagne *</td>
+    <td>Sri Lanka</td>
+    <td>Surinam</td>
+  </tr>
+  <tr>
+    <td>Svalbard et Jan Mayen</td>
+    <td>Swaziland</td>
+    <td>Suède *</td>
+    <td>Suisse *</td>
+  </tr>
+  <tr>
+    <td>São Tomé et Príncipe</td>
+    <td>Taïwan *</td>
+    <td>Tadjikistan</td>
+    <td>Tanzanie</td>
+  </tr>
+  <tr>
+    <td>Thaïlande</td>
+    <td>Timor-Leste</td>
+    <td>Togo</td>
+    <td>Tokelau</td>
+  </tr>
+  <tr>
+    <td>Tonga</td>
+    <td>Trinité-et-Tobago</td>
+    <td>Tunisie</td>
+    <td>Turquie *</td>
+  </tr>
+  <tr>
+    <td>Turkménistan</td>
+    <td>Turks et Caïcos (îles)</td>
+    <td>Tuvalu</td>
+    <td>Îles mineures éloignées des États-Unis</td>
+  </tr>
+  <tr>
+    <td>Îles Vierges (É.-U.)</td>
+    <td>Ouganda</td>
+    <td>Ukraine</td>
+    <td>Émirats arabes unis *</td>
+  </tr>
+  <tr>
+    <td>Royaume-Uni *</td>
+    <td>États-Unis *</td>
+    <td>Uruguay</td>
+    <td>Ouzbékistan</td>
+  </tr>
+  <tr>
+    <td>Vanuatu</td>
+    <td>Cité du Vatican</td>
+    <td>Venezuela</td>
+    <td>Vietnam</td>
+  </tr>
+  <tr>
+    <td>Wallis-et-Futuna</td>
+    <td>Sahara occidentale (litige)</td>
+    <td>Yémen</td>
+    <td>Zambie</td>
+  </tr>
+  <tr>
+    <td>Zimbabwe</td>
+    <td>Åland (îles d’)</td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
 
 ## <a name="price-considerations-for-specific-markets"></a>Considérations de prix pour des marchés spécifiques
-
 
 Les moyens de paiement tels que la facturation d’opérateur mobile peuvent aider à augmenter les ventes d’applications payantes et d’articles in-app. En raison des coûts plus élevés engendrés pour autoriser ces moyens de paiement, un Ajustement du développement commercial est ajouté à la redevance du Store pour calculer les revenus de l’application à payer pour des transactions d’applications payantes et d’achats in-app dans les pays/régions et en utilisant les moyens de paiement du tableau ci-dessous. Vous pouvez analyser si l’Ajustement du développement commercial s’applique dans un pays/région où votre application est disponible et en tenir compte dans votre stratégie de fixation des prix du marché. Vous pouvez trouver des détails sur l’Ajustement du développement commercial dans le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058).
 
 L’Ajustement du développement commercial sera appliqué à toutes les transactions traitées pour les pays/régions et moyens de paiement spécifiés à compter de la date d’entrée en vigueur. Ces informations seront mises à jour mensuellement ; de nouveaux pays/régions et moyens de paiement seront répertoriés dans les trente (30) jours qui suivent la prise d’effet de l’Ajustement du développement commercial pour ce pays/région et moyen de paiement.
 
-| Pays/région | Moyens de paiement         | Ajustement du développement commercial | Date d’entrée en vigueur |
-|----------------|-------------------------|-------------------------------|----------------|
-| Brésil         | Facturation de l’opérateur mobile | 13,9 %                         | Décembre 2014  |
-| Chili          | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
-| Chine          | Facturation de l’opérateur mobile | 13,9 %                         | Décembre 2014  |
-| Colombie       | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
-| Costa Rica     | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
-| Équateur (République de l’)        | Facturation de l’opérateur mobile | 13,9 %                         | Novembre 2014  |
-| Égypte          | Facturation de l’opérateur mobile | 13,9 %                         | Juin 2014      |
-| Guatemala      | Facturation de l’opérateur mobile | 13,9 %                         | Octobre 2014   |
-| Inde          | Facturation de l’opérateur mobile | 13,9 %                         | Décembre 2014  |
-| Jordanie         | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2015     |
-| Kenya          | Facturation de l’opérateur mobile | 13,9 %                         | Juillet 2014      |
-| Malaisie       | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
-| Mexique         | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
-| Pakistan       | Facturation de l’opérateur mobile | 13.9%                         | Octobre 2015   |
-| Pérou           | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
-| Philippines    | Facturation de l’opérateur mobile | 13,9 %                         | Juin 2015      |
-| Puerto Rico    | Facturation de l’opérateur mobile | 13,9 %                         | Juin 2015      |
-| Afrique du Sud   | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
-| Vietnam        | Facturation de l’opérateur mobile | 13,9 %                         | Octobre 2014   |
+&nbsp;
 
-  
-
-| Pays/région       | Moyens de paiement | Ajustement du développement commercial | Date d’entrée en vigueur |
-|----------------------|-----------------|-------------------------------|----------------|
+| Pays/région       | Moyen de paiement          | Ajustement du développement commercial | Date d’entrée en vigueur |
+|----------------------|-------------------------|-------------------------------|----------------|
+| Afrique du Sud         | Facturation de l’opérateur mobile | 13,9 %                         | Mars2014     |
 | Argentine            | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Australie            | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Autriche              | Carte cadeau       | 2,24 %                         | Mars 2016     |
@@ -381,178 +478,266 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Marchés « Rest of World » pour Windows 8.x
 
-
-Si votre application contient des packages destinés à Windows 8.x, n’oubliez pas que certains marchés sont traités comme un seul marché « Rest of World » pour les clients qui utilisent le Store sur Windows 8.x, même s’ils sont désormais affichés comme des marchés individuels dans le tableau de bord du Centre de développement Windows (contrairement au tableau de bord Windows Store précédent, qui contenait une seule option de marché « Rest of World » sélectionnable).
+Si votre application contient des packages destinés à Windows 8.x, n’oubliez pas que certains marchés sont traités comme un seul marché «Reste du monde» pour les clients qui utilisent le Windows Store sur Windows8.x, même s’ils sont affichés comme des marchés individuels dans le tableau de bord du Centre de développement Windows (contrairement au tableau de bord du Windows Store précédent, qui contenait une seule option de marché «Reste du monde» sélectionnable).
 
 Si vous conservez la sélection par défaut lorsque vous soumettez votre application, vous n’avez pas à vous soucier de cela. Votre application sera disponible sur tous les marchés possibles. Toutefois, si vous voulez exclure certains marchés, gardez à l’esprit que l’exclusion d’un seul de ces marchés « Rest of World » signifie que votre application ne sera disponible sur aucun marché « Rest of World » pour les clients utilisant Windows 8 ou Windows 8.1.
 
 Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants :
 
--   Afghanistan
--   Åland (îles d’)
--   Albanie
--   Samoa américaines
--   Andorre
--   Angola
--   Anguilla
--   Antarctique
--   Antigua et Barbuda
--   Arménie
--   Aruba
--   Azerbaïdjan
--   Bahamas, Les
--   Bangladesh
--   Barbade (La)
--   Bélarus
--   Belize
--   Bénin
--   Bermudes
--   Bhoutan
--   Bolivie
--   Bonaire, Saint-Eustache et Saba
--   Bosnie-Herzégovine
--   Botswana
--   Bouvet (Île)
--   Territoires britanniques de l’océan Indien
--   Îles Vierges britanniques
--   Brunei
--   Burkina-Faso
--   Burundi
--   Cabo Verde
--   Cambodge
--   Cameroun
--   Caïmans (îles)
--   République centrafricaine
--   Tchad
--   Christmas (île)
--   Cocos-Keeling (îles)
--   Comores (Les)
--   Congo
--   Congo (RDC)
--   Cook (îles)
--   Côte d’Ivoire
--   Curaçao
--   Djibouti
--   Dominique
--   République dominicaine
--   Équateur (République de l’)
--   Salvador
--   Guinée équatoriale
--   Érythrée
--   Éthiopie
--   Malouines (îles)
--   Féroé (îles)
--   Fidji
--   Guyane française
--   Polynésie française
--   Terres australes et antarctiques françaises
--   Gabon
--   Gambie
--   Géorgie
--   Ghana
--   Gibraltar
--   Groenland
--   Grenade
--   Guadeloupe
--   Guam
--   Guatemala
--   Guernesey
--   Guinée
--   Guinée-Bissau
--   Guyana
--   Haïti
--   Heard et McDonald (Îles)
--   Saint-Siège (Cité du Vatican)
--   Honduras
--   Islande
--   Île de Man
--   Jamaïque
--   Jersey
--   Kenya
--   Kiribati
--   Kirghizistan
--   Laos
--   Lesotho
--   Liberia
--   Liechtenstein
--   Macao R.A.S.
--   Macédoine (ex-République yougoslave de Macédoine)
--   Madagascar
--   Malawi
--   Maldives
--   Mali
--   Marshall (îles)
--   Martinique
--   Mauritanie
--   Maurice (île)
--   Mayotte
--   Micronésie
--   République de Moldavie
--   Monaco
--   Mongolie
--   Monténégro
--   Montserrat
--   Maroc
--   Mozambique
--   Myanmar
--   Namibie
--   Nauru
--   Népal
--   Nouvelle-Calédonie
--   Nicaragua
--   Niger
--   Nigeria
--   Niue
--   Norfolk (île)
--   Mariannes du Nord (îles)
--   Palau
--   Autorité palestinienne
--   Panama
--   Papouasie-Nouvelle-Guinée
--   Paraguay
--   Pitcairn (îles)
--   Porto Rico
--   La Réunion
--   Rwanda
--   Saint-Barthélemy
--   Sainte-Hélène, Ascension et Tristan da Cunha
--   Saint Kitts et Nevis
--   Sainte-Lucie
--   Saint-Martin (partie française)
--   Saint-Pierre-et-Miquelon
--   Saint-Vincent-et-les-Grenadines
--   Samoa
--   Saint-Marin
--   São Tomé et Príncipe
--   Sénégal
--   Seychelles
--   Sierra Leone
--   Sint-Maarten (partie néerlandaise)
--   Salomon (îles)
--   Somalie
--   Géorgie du Sud-et-les îles Sandwich du Sud
--   Surinam
--   Svalbard et Jan Mayen
--   Swaziland
--   Tadjikistan
--   Tanzanie
--   Timor-Leste
--   Togo
--   Tokelau
--   Tonga
--   Turkménistan
--   Turks et Caïcos (îles)
--   Tuvalu
--   Ouganda
--   Îles mineures éloignées des États-Unis
--   Îles Vierges (É.-U.)
--   Ouzbékistan
--   Venezuela
--   Vietnam
--   Vanuatu
--   Wallis-et-Futuna
--   Yémen
--   Zambie
--   Zimbabwe
+<table>
+  <tr>
+    <td>Afghanistan</td>
+    <td>Åland (îles d’)</td>
+    <td>Albanie</td>
+    <td>Samoa américaines</td>
+  </tr>
+  <tr>
+    <td>Andorre</td>
+    <td>Angola</td>
+    <td>Anguilla</td>
+    <td>Antarctique</td>
+  </tr>
+  <tr>
+    <td>Antigua et Barbuda</td>
+    <td>Arménie</td>
+    <td>Aruba</td>
+    <td>Azerbaïdjan</td>
+  </tr>
+  <tr>
+    <td>Bahamas</td>
+    <td>Bangladesh</td>
+    <td>Barbade (La)</td>
+    <td>Bélarus</td>
+  </tr>
+  <tr>
+    <td>Belize</td>
+    <td>Bénin</td>
+    <td>Bermudes</td>
+    <td>Bhoutan</td>
+  </tr>
+  <tr>
+    <td>Bolivie</td>
+    <td>Bonaire</td>
+    <td>Bosnie-Herzégovine</td>
+    <td>Botswana</td>
+  </tr>
+  <tr>
+    <td>Bouvet (Île)</td>
+    <td>Territoires britanniques de l’océan Indien</td>
+    <td>Îles Vierges britanniques</td>
+    <td>Brunei</td>
+  </tr>
+  <tr>
+    <td>Burkina-Faso</td>
+    <td>Burundi</td>
+    <td>Cabo Verde</td>
+    <td>Cambodge</td>
+  </tr>
+  <tr>
+    <td>Cameroun</td>
+    <td>Caïmans (îles)</td>
+    <td>République centrafricaine</td>
+    <td>Tchad</td>
+  </tr>
+  <tr>
+    <td>Christmas (île)</td>
+    <td>Cocos-Keeling (îles)</td>
+    <td>Comores (Les)</td>
+    <td>Congo</td>
+  </tr>
+  <tr>
+    <td>Congo (RDC)</td>
+    <td>Cook (îles)</td>
+    <td>Côte d’Ivoire</td>
+    <td>Curaçao</td>
+  </tr>
+  <tr>
+    <td>Djibouti</td>
+    <td>Dominique</td>
+    <td>République dominicaine</td>
+    <td>Équateur (République de l’)</td>
+  </tr>
+  <tr>
+    <td>Salvador</td>
+    <td>Guinée équatoriale</td>
+    <td>Érythrée</td>
+    <td>Éthiopie</td>
+  </tr>
+  <tr>
+    <td>Malouines (îles)</td>
+    <td>Féroé (îles)</td>
+    <td>Fidji</td>
+    <td>Guyane française</td>
+  </tr>
+  <tr>
+    <td>Polynésie française</td>
+    <td>Terres australes et antarctiques françaises</td>
+    <td>Gabon</td>
+    <td>Gambie</td>
+  </tr>
+  <tr>
+    <td>Géorgie</td>
+    <td>Ghana</td>
+    <td>Gibraltar</td>
+    <td>Groenland</td>
+  </tr>
+  <tr>
+    <td>Grenade</td>
+    <td>Guadeloupe</td>
+    <td>Guam</td>
+    <td>Guatemala</td>
+  </tr>
+  <tr>
+    <td>Guernesey</td>
+    <td>Guinée</td>
+    <td>Guinée-Bissau</td>
+    <td>Guyana</td>
+  </tr>
+  <tr>
+    <td>Haïti</td>
+    <td>Heard et McDonald (Îles)</td>
+    <td>Honduras</td>
+    <td>Islande</td>
+  </tr>
+  <tr>
+    <td>Île de Man</td>
+    <td>Jamaïque</td>
+    <td>Jersey</td>
+    <td>Kenya</td>
+  </tr>
+  <tr>
+    <td>Kiribati</td>
+    <td>Kirghizistan</td>
+    <td>Laos</td>
+    <td>Lesotho</td>
+  </tr>
+  <tr>
+    <td>Liberia</td>
+    <td>Liechtenstein</td>
+    <td>Macao R.A.S.</td>
+    <td>Macédoine, Ex.-Rép. yougoslave de</td>
+  </tr>
+  <tr>
+    <td>Madagascar</td>
+    <td>Malawi</td>
+    <td>Maldives</td>
+    <td>Mali</td>
+  </tr>
+  <tr>
+    <td>Marshall (îles)</td>
+    <td>Martinique</td>
+    <td>Mauritanie</td>
+    <td>Maurice (île)</td>
+  </tr>
+  <tr>
+    <td>Mayotte</td>
+    <td>Micronésie</td>
+    <td>République de Moldavie</td>
+    <td>Monaco</td>
+  </tr>
+  <tr>
+    <td>Mongolie</td>
+    <td>Monténégro</td>
+    <td>Montserrat</td>
+    <td>Maroc</td>
+  </tr>
+  <tr>
+    <td>Mozambique</td>
+    <td>Myanmar</td>
+    <td>Namibie</td>
+    <td>Nauru</td>
+  </tr>
+  <tr>
+    <td>Népal</td>
+    <td>Nouvelle-Calédonie</td>
+    <td>Nicaragua</td>
+    <td>Niger</td>
+  </tr>
+  <tr>
+    <td>Nigeria</td>
+    <td>Niue</td>
+    <td>Norfolk (île)</td>
+    <td>Mariannes du Nord (îles)</td>
+  </tr>
+  <tr>
+    <td>Palau</td>
+    <td>Autorité palestinienne</td>
+    <td>Panama</td>
+    <td>Papouasie-Nouvelle-Guinée</td>
+  </tr>
+  <tr>
+    <td>Paraguay</td>
+    <td>Pitcairn (îles)</td>
+    <td>La Réunion</td>
+    <td>Rwanda</td>
+  </tr>
+  <tr>
+    <td>Saint-Barthélemy</td>
+    <td>Sainte-Hélène, Ascension et Tristan da Cunha</td>
+    <td>Saint Kitts et Nevis</td>
+    <td>Sainte-Lucie</td>
+  </tr>
+  <tr>
+    <td>Saint-Martin (partie française)</td>
+    <td>Saint-Pierre-et-Miquelon</td>
+    <td>Saint-Vincent-et-les-Grenadines</td>
+    <td>Samoa</td>
+  </tr>
+  <tr>
+    <td>Saint-Marin</td>
+    <td>São Tomé et Príncipe</td>
+    <td>Sénégal</td>
+    <td>Seychelles</td>
+  </tr>
+  <tr>
+    <td>Sierra Leone</td>
+    <td>Sint-Maarten (partie néerlandaise)</td>
+    <td>Salomon (îles)</td>
+    <td>Somalie</td>
+  </tr>
+  <tr>
+    <td>Géorgie du Sud-et-les îles Sandwich du Sud</td>
+    <td>Surinam</td>
+    <td>Svalbard et Jan Mayen</td>
+    <td>Swaziland</td>
+  </tr>
+  <tr>
+    <td>Tadjikistan</td>
+    <td>Tanzanie</td>
+    <td>Timor-Leste</td>
+    <td>Togo</td>
+  </tr>
+  <tr>
+    <td>Tokelau</td>
+    <td>Tonga</td>
+    <td>Turkménistan</td>
+    <td>Turks et Caïcos (îles)</td>
+  </tr>
+  <tr>
+    <td>Tuvalu</td>
+    <td>Ouganda</td>
+    <td>Îles mineures éloignées des États-Unis</td>
+    <td>Îles Vierges (É.-U.)</td>
+  </tr>
+  <tr>
+    <td>Ouzbékistan</td>
+    <td>Cité du Vatican</td>
+    <td>Venezuela</td>
+    <td>Vietnam</td>
+  </tr>
+  <tr>
+    <td>Vanuatu</td>
+    <td>Wallis-et-Futuna</td>
+    <td>Yémen</td>
+    <td>Zambie</td>
+  </tr>
+  <tr>
+    <td>Zimbabwe</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
 
-> **Remarque**  Pour obtenir la liste des pays et régions dans lesquels vous pouvez vous inscrire en vue d’obtenir un compte de développeur, consultez l’article [Types de compte, emplacements et frais](https://msdn.microsoft.com/library/windows/apps/jj863494).
+> [!NOTE]
+> Pour obtenir la liste des pays et régions dans lesquels vous pouvez vous inscrire en vue d’obtenir un compte de développeur, consultez l’article [Types de compte, emplacements et frais](account-types-locations-and-fees.md).

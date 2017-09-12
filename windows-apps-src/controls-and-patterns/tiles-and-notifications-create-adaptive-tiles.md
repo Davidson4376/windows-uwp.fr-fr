@@ -6,14 +6,16 @@ ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 27d3de280201d92ee98f6e8a17afd85f76acd7d5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b80772109f0349f23feb6ff7f7440ab2e9242288
+ms.sourcegitcommit: 9a1310468970c8d1ade0fb200126dff56ea8c9e1
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/14/2017
 ---
 # <a name="create-adaptive-tiles"></a>Créer des vignettes adaptatives
 
@@ -34,7 +36,7 @@ Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows
 
 ## <a name="how-to-send-a-tile-notification"></a>Comment envoyer une notification par vignette
 
-Lisez notre [Démarrage rapide sur l’envoi de notifications par vignette locales](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/10/05/quickstart-sending-a-local-tile-notification-in-windows-10/). La documentation fournie sur cette page explique toutes les possibilités de l’interface utilisateur visuelle avec les vignettes adaptatives.
+Lisez notre [Démarrage rapide sur l’envoi de notifications par vignette locales](tiles-and-notifications-sending-a-local-tile-notification.md). La documentation fournie sur cette page explique toutes les possibilités de l’interface utilisateur visuelle avec les vignettes adaptatives.
 
 
 ## <a name="usage-guidance"></a>Conseils d’utilisation
@@ -1395,7 +1397,7 @@ TileWide = new TileBinding()
 
 
 * [Schéma des vignettes adaptatives](tiles-and-notifications-adaptive-tiles-schema.md)
-* [Démarrage rapide: Envoyer une notification par vignette locale](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/10/05/quickstart-sending-a-local-tile-notification-in-windows-10/)
+* [Démarrage rapide: Envoyer une notification par vignette locale](tiles-and-notifications-sending-a-local-tile-notification.md)
 * [Bibliothèque Notifications sur GitHub](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
 * [Catalogue de modèles de vignette spéciaux](tiles-and-notifications-special-tile-templates-catalog.md)
  

@@ -7,14 +7,16 @@ label: Command design basics
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: a9e7cda7794b3463ffa567bcf36ebec2d2d02687
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 868221cce04688ea2f7ab50e3062579932fbbd80
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2017
 ---
 #  <a name="command-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception des commandes pour les applications UWP
 
@@ -22,8 +24,9 @@ translationtype: HT
 
 Dans une application de plateforme Windows universelle (UWP), les *éléments de commande* sont les éléments d’interface utilisateur interactifs qui permettent à l’utilisateur d’effectuer des actions telles que l’envoi d’un message électronique, la suppression d’un élément ou l’envoi d’un formulaire. Cet article décrit les éléments de commande, comme les boutons et les cases à cocher, les interactions qu’ils prennent en charge, ainsi que les surfaces de commandes (telles que les barres de commandes et les menus contextuels) pouvant les accueillir.
 
-## <a name="provide-the-right-type-of-interactions"></a>Fournissez le type approprié d’interactions
+> **API importantes**: [interface ICommand](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Input.ICommand), [catégorie bouton](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Button), [catégorie CommandBar](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.commandbar), [catégorie MenuFlyout](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)
 
+## <a name="provide-the-right-type-of-interactions"></a>Fournissez le type approprié d’interactions
 
 Lorsque vous créez une interface de commande, la décision la plus importante consiste à choisir ce que les utilisateurs auront la possibilité de faire. Par exemple, si vous créez une application de retouche photo, l’utilisateur aura besoin d’outils pour modifier ses photos. Toutefois, si vous créez une application de réseau social qui affiche des photos, la retouche d’images peut ne pas être une priorité. Les outils d’édition peuvent donc être omis pour économiser de l’espace. Choisissez ce que les utilisateurs pourront accomplir et fournissez-leur les outils adéquats.
 

@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 8238076131d932900e8edfb53ab963de8c98402c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8b55968a93f09dae396353e73d72566feb188a89
+ms.sourcegitcommit: 77bbd060f9253f2b03f0b9d74954c187bceb4a30
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/11/2017
 ---
 # <a name="background-transfers"></a>Transferts en arrière-plan
 
@@ -36,6 +38,10 @@ Si vous téléchargez peu de ressources et si l’opération est censée se term
 ### <a name="how-does-the-background-transfer-feature-work"></a>Comment la fonctionnalité de transfert en arrière-plan fonctionne-t-elle ?
 
 Quand une application utilise la fonctionnalité de transfert en arrière-plan pour lancer un transfert, la requête est configurée et initialisée à l’aide d’objets de classe [**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) ou [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140). Chaque opération de transfert est gérée individuellement par le système et séparément de l’application appelante. Les informations sur la progression sont disponibles si vous voulez indiquer un état à l’utilisateur dans l’interface utilisateur de votre application. En outre, l’exécution de votre application peut être suspendue, reprise, annulée ou même lue à partir des données pendant le transfert. La manière dont les transferts sont gérés par le système favorise une consommation d’énergie intelligente et évite les problèmes qui peuvent se produire lorsqu’une application connectée se heurte à des événements tels qu’une interruption ou un arrêt de l’application, ou encore des modifications soudaines de l’état du réseau.
+
+En outre, le transfert en arrière-plan utilise les événements de service Broker pour les événements système. De ce fait, le nombre de téléchargements est limité par le nombre d’événements disponibles sur le système. Ce nombre est de 500événements par défaut, mais ceux-ci sont partagés entre tous les processus. Par conséquent, une seule application ne doit pas créer plus de 100transferts en arrière-plan à la fois.
+
+Lorsqu’une application démarre un transfert en arrière-plan, l’application doit appeler [**AttachAsync**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation#methods_) sur tous les objets [**DownloadOperation**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) existants. Autrement, cela risque de provoquer une fuite de ces événements et de rendre inutilisable la fonctionnalité de transfert en arrière-plan.
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>Exécution de demandes de fichiers authentifiées avec le transfert en arrière-plan
 
@@ -182,6 +188,8 @@ Lorsque vous faites appel à la fonctionnalité de transfert en arrière-plan, c
 
 Si vous téléchargez peu de ressources et si l’opération est censée se terminer rapidement, utilisez les API [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) à la place du transfert en arrière-plan.
 
+En raison des contraintes de ressource par application, une application ne doit pas effectuer plus de 200transferts (DownloadOperations + UploadOperations) à un moment donné. Si cette limite est dépassée, cela peut mettre la file d’attente de transfert de l’application dans un état irrécupérable.
+
 Les exemples qui suivent vous guident tout au long du processus de création et d’initialisation d’un téléchargement de base et décrivent comment énumérer des opérations de chargement issues d’une session d’application précédente.
 
 ### <a name="configure-and-start-a-background-transfer-file-download"></a>Configurer et démarrer un téléchargement de fichier à l’aide de la fonctionnalité de transfert en arrière-plan
@@ -228,7 +236,7 @@ Un post-traitement utilise une nouvelle classe, [**BackgroundTransferCompletionG
 
 Pour initier un transfert en arrière-plan avec post-traitement, procédez comme suit.
 
-1.  Créez un objet [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209). Créez ensuite un objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Définissez la propriété **Trigger** de l’objet générateur sur l’objet groupe d’achèvement, et la propriété **TaskEngtyPoint** du générateur sur le point d’entrée de la tâche en arrière-plan qui doit s’exécuter à la fin du transfert. Pour finir, appelez la méthode [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) pour inscrire votre tâche en arrière-plan. Notez que de nombreux groupes d’achèvement peuvent partager un point d’entrée de tâche en arrière-plan, mais que vous ne pouvez avoir qu’un seul groupe d’achèvement par inscription de tâche en arrière-plan.
+1.  Créez un objet [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209). Créez ensuite un objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Définissez la propriété **Trigger** de l’objet générateur sur l’objet groupe d’achèvement, et la propriété **TaskEntryPoint** du générateur sur le point d’entrée de la tâche en arrière-plan qui doit s’exécuter à la fin du transfert. Pour finir, appelez la méthode [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) pour inscrire votre tâche en arrière-plan. Notez que de nombreux groupes d’achèvement peuvent partager un point d’entrée de tâche en arrière-plan, mais que vous ne pouvez avoir qu’un seul groupe d’achèvement par inscription de tâche en arrière-plan.
 
    ```csharp
     var completionGroup = new BackgroundTransferCompletionGroup();
@@ -306,7 +314,7 @@ Pour contourner ce problème, désinstallez complètement toutes les versions de
 
 Une exception est levée quand une chaîne d’URI non valide est transmise au constructeur pour l’objet [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998).
 
-**.NET:  **le type [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) apparaît en tant que [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) en C# et VB.
+**.NET: **le type [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) apparaît en tant que [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) en C# et VB.
 
 En C# et Visual Basic, cette erreur peut être évitée en utilisant la classe [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) dans .NET 4.5 et l’une des méthodes [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) pour tester la chaîne envoyée par l’utilisateur de l’application avant la construction de l’URI.
 

@@ -4,20 +4,20 @@ Description: "La page Propriétés de l’application du processus de soumission
 title: "Entrer les propriétés d’une application"
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 31385fe3edb9d9f38a4f444c84ef189faed49985
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e4d391d551cf4e41853a1aac0e4b5be8bf0b0c3f
+ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="enter-app-properties"></a>Entrer les propriétés d’une application
 
-La page **Propriétés de l'application** du [processus de soumission d'application](app-submissions.md) vous permet de définir la catégorie de votre application, ainsi que les préférences matérielles ou d'autres déclarations. Cet article décrit les options disponibles sur cette page et les éléments à prendre en compte pour la spécification de ces informations.
-
-> **Remarque**  Les évaluations de l’âge constituent désormais une page distincte du processus de soumission. Pour plus d’informations, voir la section [Classification par âge](age-ratings.md).
+La page **Propriétés** du [processus de soumission d’applications](app-submissions.md) vous permet de définir la catégorie de votre application, ainsi que les préférences matérielles ou d’autres déclarations. Cet article décrit les options disponibles sur cette page et les éléments à prendre en compte pour la spécification de ces informations.
 
 ## <a name="category-and-subcategory"></a>Catégorie et sous-catégorie
 
@@ -25,13 +25,22 @@ Dans cette section, vous indiquez la catégorie (et la sous-catégorie s'il y a 
 
 Pour plus d’informations, voir l’article [Tableau des catégories et sous-catégories](category-and-subcategory-table.md).
 
+## <a name="game-settings"></a>Paramètres de jeux
+
+Cette section s’affiche uniquement si vous avez sélectionné **Jeux** comme catégorie de votre produit. Ici, vous pouvez spécifier les fonctionnalités que votre jeu prend en charge. Toutes les informations que vous fournissez dans cette section figureront dans la description du produit dans le Windows Store.
+
+Si votre jeu prend en charge des options multijoueurs, veillez à indiquer le nombre minimum et maximum de joueurs pour une session. Vous ne pouvez pas entrer un nombre minimum ou maximum de joueurs supérieur à 1000.
+
+**Mode multijoueur multiplateforme** signifie que le jeu prend en charge des sessions multijoueurs entre joueurs sur PC Windows10 et Xbox.
+
+
 ## <a name="product-declarations"></a>Déclarations de produit
 
 Les cases à cocher de cette section vous permettent d’indiquer les déclarations qui s’appliquent à votre application. Votre sélection affecte le mode d'affichage de votre application, le public auquel elle est proposée ou la façon dont les clients peuvent l'utiliser.
 
-Pour plus d’informations, voir l’article [Déclarations d’application](app-declarations.md).
+Pour plus d’informations, voir l’article [Déclarations de produit](app-declarations.md).
 
-## <a name="system-requirements"></a>Configuration système
+## <a name="system-requirements"></a>Configuration requise
 
 Cette section vous permet d’indiquer si certaines fonctionnalités matérielles sont requises ou recommandées pour exécuter votre application et interagir avec cette dernière. Lorsque vous souhaitez spécifier **Matériel minimum** et/ou **Matériel recommandé** pour un composant matériel, activez la case à cocher (ou indiquez l’option appropriée).
 
@@ -52,6 +61,7 @@ Le comportement des clients varie selon les configurations requises spécifiques
 
 Nous vous recommandons également d’ajouter des vérifications d’exécution pour le matériel spécifié dans votre application, car il peut arriver que le Windows Store ne puisse pas détecter que l’appareil d’un client ne dispose pas des fonctionnalités sélectionnées. Dans ce cas, le client peut toujours télécharger votre application, même si un avertissement s’affiche.
 
-> **Conseil**  Si vous souhaitez empêcher complètement le téléchargement de votre application UWP sur un appareil non conforme à la configuration minimale requise pour la mémoire ou le niveau DirectX, vous pouvez indiquer cette configuration minimale requise dans un fichier XML StoreManifest. Pour plus d’informations, voir [Schéma StoreManifest (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335).
+> [!TIP]
+> Si vous souhaitez empêcher complètement le téléchargement de votre application UWP sur un appareil non conforme à la configuration minimale requise concernant la mémoire ou le niveauDirectX, vous pouvez indiquer cette configuration minimale requise dans un fichierXML StoreManifest. Pour plus d’informations, voir [Schéma StoreManifest (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335).
 
 

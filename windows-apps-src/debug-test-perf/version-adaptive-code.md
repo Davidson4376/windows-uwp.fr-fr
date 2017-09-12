@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 title: Code adaptatif de version
-description: "Découvrez comment tirer parti des nouvellesAPI tout en conservant la compatibilité avec les versions précédentes"
+description: "Utilisez la classe ApiInformation pour tirer parti des nouvellesAPI tout en conservant la compatibilité avec les versions précédentes"
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,49 +9,17 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
-ms.openlocfilehash: 4076bd9edf26108e896e3a7734c2108a00577cd0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d5b9a3b02c5acbb2ad7bcd00b9af4f7d6edd91de
+ms.sourcegitcommit: 73ea31d42a9b352af38b5eb5d3c06504b50f6754
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 07/27/2017
 ---
-# <a name="version-adaptive-code-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>Code adaptatif de version: Utilisez de nouvellesAPI tout en conservant la compatibilité avec les versions précédentes
-
-Chaque version du Kit de développement logicielWindows10 apporte d’incroyables fonctionnalités qui vous raviront. Toutefois, vos clients ne mettent pas tous en même temps leurs appareils à jour vers la dernière version de Windows10, et vous voulez vous assurer que votre application fonctionne sur le plus large éventail possible d’appareils. Nous allons vous expliquer comment concevoir votre application afin qu’elle s’exécute sur les versions antérieures de Windows10, mais tire également parti des nouvelles fonctionnalités lorsque votre application s’exécute sur un appareil disposant de la dernière mise à jour.
-
-Vous devez suivre 2étapes pour vous assurer que votre application prend en charge la plus large gamme d’appareils Windows10. Tout d’abord, configurez votre projet VisualStudio afin de cibler les dernièresAPI. Cela influe sur les résultats de la compilation de votre application. Ensuite, effectuez des vérifications à l’exécution pour vérifier que vous appelez uniquement les API présentes sur l’appareil sur lequel votre application s’exécute.
-
-## <a name="configure-your-visual-studio-project"></a>Configurer votre projet VisualStudio
-
-La première étape de la prise en charge de plusieurs versions de Windows10 consiste à spécifier les versions de système d’exploitation et de Kit de développement logiciel *Cible* et *Minimum* prises en charge dans votre projet VisualStudio.
-- *Cible*: version du Kit de développement logiciel pour laquelle Visual Studio compile le code de votre application et exécute tous les outils. Toutes les API et les ressources de ce Kit de développement logiciel sont disponibles dans le code de votre application au moment de la compilation.
-- *Minimum*: version du Kit de développement logiciel qui prend en charge la version la plus ancienne du système d’exploitation sur laquelle votre application peut s’exécuter (et qui sera déployée par le WindowsStore) et la version pour laquelle VisualStudio compile le code de balisage de votre application. 
-
-Pendant son exécution, votre application s’exécute par rapport à la version du système d’exploitation déployée: votre application lève donc des exceptions si vous utilisez des ressources ou si vous appelez des API qui ne sont pas disponibles dans cette version. Nous allons vous montrer comment effectuer des vérifications à l’exécution pour appeler les API appropriées dans la suite de cet article.
-
-Les paramètres Cible et Minimum spécifient les limites de plage des versions de système d’exploitation et de Kit de développement logiciel. Toutefois, si vous testez votre application sur la version Minimum, vous pouvez être sûr qu’elle s’exécutera sur toutes les versions comprises entre la version Minimum et la version Cible.
-
-> [!TIP]
-> VisualStudio ne donne aucune information sur la compatibilité des API. Il vous incombe de tester et de vous assurer que votre application fonctionne comme prévu sur toutes les versions de système d’exploitation, de la version Minimum à la version Cible incluses.
-
-Lorsque vous créez un projet dans VisualStudio2015, Update2 ou version ultérieure, vous êtes invité à définir les versions Cible et Minimum prises en charge par votre application. Par défaut, la version Cible est la version du Kit de développement logiciel installée la plus élevée, tandis que la version Minimum est la version du Kit de développement logiciel installée la moins élevée. Vous pouvez choisir les versions Cible et Minimum uniquement parmi les versions du Kit de développement logiciel installées sur votre ordinateur. 
-
-![Définir le Kit de développement logiciel cible dans VisualStudio](images/vs-target-sdk-1.png)
-
-Nous vous recommandons généralement de conserver les valeurs par défaut. Toutefois, si vous avez installé une version d’évaluation du Kit de développement et si vous écrivez du code de production, vous devez modifier la version Cible en passant du Kit de développement logiciel d’évaluation à la dernière version officielle du Kit de développement logiciel. 
-
-Pour modifier la version Minimum et la version Cible d’un projet déjà créé dans VisualStudio, accédez à Projet -&gt; Propriétés -&gt; onglet Application -&gt; Ciblage.
-
-![Modifier le Kit de développement logiciel cible dans VisualStudio](images/vs-target-sdk-2.png) 
-
-À titre de référence, voici les numéros de version pour chaque Kit de développement logiciel:
-- Windows10, version1506: SDKversion10240
-- Windows10, version1511 (mise à jour de novembre): SDK version10586
-- Windows10, version1607 (mise à jour anniversaire): SDK version14393
-
-Vous pouvez télécharger les versions finales du SDK à partir des [archives de Windows SDK et de l’émulateur](https://developer.microsoft.com/downloads/sdk-archive). Vous pouvez télécharger la dernière version du Kit de développement logiciel Windows Insider Preview dans la section du site [Windows Insider](https://insider.windows.com/) dédiée aux développeurs.
-
-## <a name="write-adaptive-code"></a>Écrire du code adaptatif
+# <a name="version-adaptive-code"></a>Code adaptatif de version
 
 Vous pouvez considérer l’écriture de code adaptatif de la même façon que vous envisagez la [création d’une interface utilisateur adaptative](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml). Vous pouvez concevoir une interface utilisateur de base qui s’exécute sur l’écran le plus petit, puis déplacer ou ajouter des éléments lorsque vous détectez un écran plus grand pendant l’exécution de votre application. Avec le code adaptatif, vous écrivez votre code de base pour qu’il s’exécute sur la version du système d’exploitation minimale, et vous pouvez ajouter des fonctionnalités choisies lorsque vous détectez une version supérieure pour laquelle la nouvelle fonctionnalité est disponible.
+
+Pour obtenir des informations générales importantes sur ApiInformation, les contrats API et la configuration de VisualStudio, voir [Applications adaptatives de version](version-adaptive-apps.md).
 
 ### <a name="runtime-api-checks"></a>Vérification des API à l’exécution
 
@@ -476,6 +444,7 @@ class IsEnumPresentTrigger : StateTriggerBase
     </VisualStateManager.VisualStateGroups>
 </Grid>
 ```
+
 ## <a name="related-articles"></a>Articles connexes
 
 - [Guide des applicationsUWP](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)

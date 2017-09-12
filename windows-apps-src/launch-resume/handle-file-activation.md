@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: b35b8a9dcd6ea23b734de1041d829f620103fa6e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e05cc939d4a836e2f385a20f63d6ffb2242696db
+ms.sourcegitcommit: 7f03e200ef34f7f24b6f8b6489ecb44aa2b870bc
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/01/2017
 ---
 # <a name="handle-file-activation"></a>Gérer l’activation des fichiers
 
@@ -73,15 +75,14 @@ Les étapes ci-dessus ajoutent un élément [**Extension**](https://msdn.microso
 ## <a name="step-2-add-the-proper-icons"></a>Étape 2: Ajouter les icônes appropriées
 
 
-Les applications qui deviennent la valeur par défaut d’un type de fichier ont leurs icônes affichées à différents emplacements dans l’ensemble du système. Par exemple, ces icônes s’affichent dans :
+Les applications qui deviennent la valeur par défaut d’un type de fichier ont leurs icônes affichées à différents emplacements dans l’ensemble du système. Par exemple, ces icônes s’affichent dans:
 
--   la vue d’éléments de l’Explorateur Windows, les menus contextuels et le Ruban ;
+-   la vue d’éléments de l’Explorateur Windows, les menus contextuels et le Ruban;
 -   l’applet Programmes par défaut du Panneau de configuration ;
 -   le sélecteur de fichiers ;
 -   les résultats de recherche sur l’écran d’accueil.
 
-Reproduisez l’apparence du logo de la vignette de l’application et utilisez la couleur d’arrière-plan de celle-ci au lieu de rendre l’icône transparente. Faites en sorte que le logo s’étende jusqu’au bord sans remplissage. Testez vos icônes sur des arrière-plans blancs. Pour obtenir des exemples d’icônes, voir [Exemple de lancement d’association](http://go.microsoft.com/fwlink/p/?LinkID=620490).
-![explorateur de solutions avec une vue des fichiers dans le dossier images. il existe des versions de 16, 32, 48 et 256pixels de «icon.targetsize» et de «smalltile-sdk».](images/seviewofimages.png)
+Incluez une icône 44x44 de votre projet, afin que votre logo puisse apparaître dans ces emplacements. Reproduisez l’apparence du logo de la vignette de l’application et utilisez la couleur d’arrière-plan de celle-ci au lieu de rendre l’icône transparente. Faites en sorte que le logo s’étende jusqu’au bord sans remplissage. Testez vos icônes sur des arrière-plans blancs. Voir [Recommandations en matière de ressources de vignette et d’icône](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets) pour plus d’informations sur les icônes.
 
 ## <a name="step-3-handle-the-activated-event"></a>Étape3: Gérer l’événement activé
 

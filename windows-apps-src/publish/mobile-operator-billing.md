@@ -4,23 +4,26 @@ Description: "Le Windows Store offre la facturation de l’opérateur mobile com
 title: "Facturation de l’opérateur mobile"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 03/03/2017
+ms.date: 07/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 5d3dbe205fd3f4260f761d9372a573fe568b3638
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 431d61b087bd59aea8f9a6bc1a7197b603022504
+ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 07/06/2017
 ---
 # <a name="mobile-operator-billing"></a>Facturation de l’opérateur mobile
 
 
-Le Windows Store offre la facturation de l’opérateur mobile comme mode de paiement des opérateurs mobiles qui prennent en charge cette fonctionnalité. Si l’opérateur mobile d’un client prend en charge cette fonctionnalité, le client peut effectuer des achats dans le Windows Store à l’aide de son compte mobile.
+Le WindowsStore offre la facturation de l’opérateur mobile comme mode de paiement. Si l’opérateur mobile d’un client prend en charge cette fonctionnalité, le client peut effectuer des achats dans le Windows Store à l’aide de son compte mobile.
 
-> **Remarque**  Si l’opérateur mobile d’un client offre la facturation de l’opérateur mobile, mais que le client n’a pas accès à cette option sur son appareil, consultez les [étapes](http://go.microsoft.com/fwlink/p/?LinkId=523993) suivantes.
+> [!TIP]
+>  Si l’opérateur mobile d’un client offre la facturation de l’opérateur mobile, mais que le client n’a pas accès à cette option sur son appareil, consultez ces [étapes](http://go.microsoft.com/fwlink/p/?LinkId=523993).
 
-Nous collaborons régulièrement avec les opérateurs mobiles pour développer la disponibilité de ce mode de paiement. Si vous souhaitez nous suggérer la prise en charge d’un opérateur mobile dont le nom est absent des listes ci-dessous, contactez l’opérateur mobile.
+Nous collaborons régulièrement avec les opérateurs mobiles pour développer la disponibilité de ce mode de paiement. Si vous souhaitez suggérer un opérateur mobile dont le nom n’est pas répertorié ci-dessous, contactez cet opérateur mobile et demandez-lui d’ajouter ce mode de paiement.
 
 ## <a name="mobile-operator-billing-for-windows-10-and-xbox-one-devices"></a>Facturation de l’opérateur mobile pour les appareils Windows10 et Xbox One
 
@@ -30,18 +33,24 @@ L’implémentation sur Windows10 de la facturation de l’opérateur mobile est
 
 | Pays/région  | Opérateurs mobiles     |
 |-----------------|----------------------|
-| Autriche         | Hutchison 3G Autriche |
+| Autriche         | Hutchison 3G Austria, A1Telekom |
+| Belgique         | Base, Proximus       |
+| Canada          | Telus                |
+| Danemark         | 3                    |
 | Finlande         | DNA, Elisa           |
 | France          | Orange               |
 | Allemagne         | O2                   |
 | Hongrie         | Telenor              |
-| Italie           | Wind                 |
+| Italie           | Wind, Tre            |
 | Norvège          | Telenor              |
 | Pologne          | Orange               |
+| Roumanie         | Orange               |
 | Russie          | Beeline              |
-| Suède          | Telenor              |
+| Espagne           | Orange               |
+| Suède          | Telenor, 3           |
 | Suisse     | Swisscom             |
-| États-Unis   | Sprint               |
+| Turquie          | Turkcell             |
+| États-Unis   | Sprint, Verizon      |
 | Royaume-Uni  | O2, 3 UK             |
 
  
@@ -56,17 +65,13 @@ L’implémentation héritée de la facturation de l’opérateur mobile est act
 | Pays/région       | Opérateurs mobiles                                                   |
 |----------------------|--------------------------------------------------------------------|
 | Australie            | Telstra                                                            |
-| Autriche              | A1 Telekom, T-Mobile Austria                                               |
-| Belgique              | BASE, Mobistar, Proximus                                           |
-| Canada               | Fido, Rogers                                                       |
+| Autriche              | T-Mobile                                                           |
+| Belgique              | Mobistar                                                           |
 | République tchèque       | T-Mobile, Vodafone                                                 |
-| Finlande              | TeliaSonera                                                        |
-| France               | Orange, SFR, Bouygues                                              |
+| France               | Orange, Bouygues                                              |
 | Allemagne              | Telefonica, Telekom Deutschland, Vodafone                          |
 | Grèce               | Vodafone                                                           |
-| Hongrie              | Telenor, T-Mobile                                                  |
-| Inde                | Idea                                                               |
-| Indonésie            | Telkomsel, Hutchinson CP Telecommunications (HCPT)                 |
+| Hongrie              | T-Mobile                                                           |
 | Irlande              | O2, Vodafone, Three                                                |
 | Italie                | Telecom Italia, Vodafone, Wind, 3 Italie                           |
 | Pays-Bas          | T-Mobile, Vodafone                                                 |
@@ -76,9 +81,9 @@ L’implémentation héritée de la facturation de l’opérateur mobile est act
 | Slovaquie             | T-Mobile                                                           |
 | Afrique du Sud         | Vodacom                                                            |
 | Espagne                | Movistar, Vodafone, Orange                                         |
-| Royaume-Uni       | Everything Everywhere (T-Mobile), Telefonica (O2), Three, Vodafone |
+| Royaume-Uni       | Telefonica (O2), Vodafone        |
 | États-Unis        | AT&T, T-Mobile                                                     |
-| Vietnam              | Viettel, Vinaphone, Mobifone                                       |
+
 
  
 

@@ -1,5 +1,5 @@
 ---
-author: GrantMeStrength
+author: jken
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: "Créer votre première application"
 description: "Créer une application de plateforme Windows universelle (UWP) pour Windows10 est plus simple que vous le pensez."
@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 54c80c7d1f4620f0270752167684dd4ce11b9c5c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: fca180db42fcd5b8b9c30bd67fe2bb890a817c78
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="create-your-first-app"></a>Créer votre première application
 
@@ -19,10 +21,11 @@ translationtype: HT
 
 ![Créer votre application](images/build-your-app.png)
 
-Bienvenue sur la plateforme UWP! Ces didacticiels visent à vous aider à créer votre première application UWP dans le langage de votre choix. Vous allez apprendre à effectuer les opérations suivantes:
+Bienvenue dans l’UWP ([Qu’est-ce que l’UWP?](whats-a-uwp.md)) C’est une plateforme! Ces didacticiels visent à vous aider à créer votre première application UWP dans le langage de votre choix. Vous allez apprendre à effectuer les opérations suivantes:
 
 -   Créer des projetsUWP dans Microsoft Visual Studio.
 -   Ajouter du code et des éléments d’interface utilisateur au projet.
+-   Utiliser l’écriture manuscrite et la numérotation dans vos applications.
 -   Utiliser des bibliothèques tierces afin d’ajouter de nouvelles fonctionnalités.
 -   Développer et déboguer votre application sur votre ordinateur local.
 
@@ -32,13 +35,13 @@ Pour commencer, choisissez le langage de votre choix.
 
 Exploitez vos compétences .NET, WPF ou Silverlight pour créer des applications en XAML avec C#.
 
-* [Créer une application «Hello World» en utilisant XAML avec C#](create-a-hello-world-app-xaml-universal.md)
+* [Créer une application «Hello World» en XAML avec C#](create-a-hello-world-app-xaml-universal.md)
 
 Si vous souhaitez découvrir les notions de base, ou simplement vous rafraîchir la mémoire, consultez ces ressources:
 
-* [Principes de base de C# pour les néophytes](https://mva.microsoft.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169?l=Lvld4EQIC_2706218949)
-* [Principes de base de VB pour les néophytes](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
-* [Guide pour le développeur vers Windows10](https://mva.microsoft.com/en-US/training-courses/a-developers-guide-to-windows-10-12618)
+* [Principes de base de C# pour les néophytes](https://go.microsoft.com/fwlink/?linkid=850801)
+* [Principes de base de VB pour les néophytes](https://go.microsoft.com/fwlink/?linkid=850802)
+* [Guide pour le développeur vers Windows10](https://go.microsoft.com/fwlink/?linkid=850804)
 * [Académie virtuelle Microsoft](http://www.microsoftvirtualacademy.com/)
 
 Si vous souhaitez consulter des ressources un peu plus amusantes que «Hello, World!», accédez à ce didacticiel C# et MonoGame:
@@ -52,6 +55,7 @@ Valorisez vos compétences web afin de développer des applications à l’aide 
 * [Créer une application « Hello World » en utilisant HTML et JavaScript](create-a-hello-world-app-js-uwp.md)
 * [Jeu UWP2D simple pour le Windows Store, écrit en JavaScript et CreateJS](get-started-tutorial-game-js2d.md)
 * [Jeu UWP3D pour le Windows Store, écrit en JavaScript et threeJS](get-started-tutorial-game-js3d.md)
+* [Application Web à page unique avec API REST](get-started-tutorial-fullstack-web-app.md)
 
 Vous avez besoin d’actualiser vos compétences web?
 
@@ -69,6 +73,19 @@ En savoir plus sur C++:
 
 * [C++: A General Purpose Language and Library Jump Start (C++: Mise en route rapide avec un langage et une bibliothèque généralistes)](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
 * [Académie virtuelle Microsoft](http://go.microsoft.com/fwlink/p/?LinkID=389916)
+
+## <a name="using-features-unique-to-windows-10"></a>Utilisation des fonctionnalités propres à Windows10
+
+Quelle est la particularité de Windows10? Entre autres, l’entrée manuscrite et le contrôleur Surface Dial.
+
+* [Utilisation d’entrée manuscrite dans votre application UWP](ink-walkthrough.md)
+* [Prise en charge de Surface Dial](radialcontroller-walkthrough.md)
+
+## <a name="cutting-edge-ideas"></a>Idées innovantes
+
+La réalité virtuelle vous intéresse?
+
+* [Ajout de WebVR à un jeu Babylon.js](adding-webvr-to-a-babylonjs-game.md)
 
 ## <a name="objective-c"></a>Objective-C
 
@@ -89,5 +106,4 @@ Vous êtes plutôt un développeur iOS?
 * [Qu’est-ce qu’une application Windows universelle?](whats-a-uwp.md)
 * [Préparation](get-set-up.md)
 * [Créer un compte Windows](sign-up.md)
-
 

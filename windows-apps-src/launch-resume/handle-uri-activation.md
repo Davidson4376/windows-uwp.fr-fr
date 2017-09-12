@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: b655bea614f1c395959a12e9c3b8a5b1af61d694
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 40c70770028853d5912ef63f84259245252ce881
+ms.sourcegitcommit: 7f03e200ef34f7f24b6f8b6489ecb44aa2b870bc
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/01/2017
 ---
 # <a name="handle-uri-activation"></a>Gérer l’activation des URI
 
@@ -73,14 +75,9 @@ L’application reçoit des événements d’activation uniquement pour les noms
 
 ## <a name="step-2-add-the-proper-icons"></a>Étape 2: Ajouter les icônes appropriées
 
+Les applications qui deviennent la valeur par défaut d’un nom de schéma d’URI ont leurs icônes affichées à différents emplacements dans l’ensemble du système, par exemple dans l’applet Programmes par défaut du Panneau de configuration. Incluez une icône 44x44 dans votre projet à cet effet. Reproduisez l’apparence du logo de la vignette de l’application et utilisez la couleur d’arrière-plan de celle-ci au lieu de rendre l’icône transparente. Faites en sorte que le logo s’étende jusqu’au bord sans remplissage. Testez vos icônes sur des arrière-plans blancs. Voir [Recommandations en matière de ressources de vignette et d’icône](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets) pour plus d’informations sur les icônes.
 
-Les applications qui deviennent la valeur par défaut d’un nom de schéma d’URI ont leurs icônes affichées à différents emplacements dans l’ensemble du système, par exemple dans l’applet Programmes par défaut du Panneau de configuration.
-
-Nous vous recommandons d’inclure les icônes appropriées dans votre projet, afin que votre logo s’affiche correctement dans tous ces emplacements. Reproduisez l’apparence du logo de la vignette de l’application et utilisez la couleur d’arrière-plan de celle-ci au lieu de rendre l’icône transparente. Faites en sorte que le logo s’étende jusqu’au bord sans remplissage. Testez vos icônes sur des arrière-plans blancs. Pour obtenir des exemples d’icônes, voir [Exemple de lancement d’association](http://go.microsoft.com/fwlink/p/?LinkID=620490).
-
-![l’Explorateur de solution avec une vue des fichiers dans le dossier Images. il existe des versions de 16, 32, 48 et 256pixels de «icon.targetsize» et de «smalltile-sdk».](images/seviewofimages.png)
-
-## <a name="step-3-handle-the-activated-event"></a>Étape 3: Gérer l’événement activé
+## <a name="step-3-handle-the-activated-event"></a>Étape3: Gérer l’événement activé
 
 
 Le gestionnaire d’événements [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) reçoit tous les événements d’activation. La propriété **Kind** indique le type d’événement d’activation. Cet exemple est défini pour gérer les événements d’activation [**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol).

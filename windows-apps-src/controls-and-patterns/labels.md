@@ -6,14 +6,19 @@ ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: b14c775896984095f580aed8cf41d010f408f67e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 2a3f3d6795276df6e3436c5ae6eff42551d03478
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="labels"></a>Étiquettes
 
@@ -21,20 +26,9 @@ translationtype: HT
 
 Une étiquette correspond au nom ou au titre d’un contrôle ou d’un groupe de contrôles associés.
 
-<div class="important-apis" >
-<b>API importantes</b><br/>
-<ul>
-<li>Propriété Header</li>
-<li>[**Classe TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)</li>
-</ul>
-</div>
+> **API importantes**: propriété Header, [classe TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
 
-
-En XAML, de nombreux contrôles disposent d’une propriété Header intégrée que vous utilisez pour afficher l’étiquette. Pour les contrôles dépourvus de propriété Header, ou pour étiqueter des groupes de contrôles, vous pouvez utiliser un élément [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
-
-
-## <a name="example"></a>Exemple
-
+En XAML, de nombreux contrôles disposent d’une propriété Header intégrée que vous utilisez pour afficher l’étiquette. Pour les contrôles dépourvus de propriété Header, ou pour étiqueter des groupes de contrôles, vous pouvez utiliser un élément [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652).
 
 ![capture d’écran du contrôle d’étiquette standard](images/label-standard.png)
 
@@ -51,17 +45,15 @@ En XAML, de nombreux contrôles disposent d’une propriété Header intégrée 
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Contrôles de texte](text-controls.md)
-
-**Pour les développeurs**
-* [**Propriété TextBox.Header**](https://msdn.microsoft.com/library/windows/apps/dn252861)
-* [**Propriété PasswordBox.Header**](https://msdn.microsoft.com/library/windows/apps/dn299051)
-* [**Propriété ToggleSwitch.Header**](https://msdn.microsoft.com/library/windows/apps/br209713)
-* [**Propriété DatePicker.Header**](https://msdn.microsoft.com/library/windows/apps/dn279460)
-* [**Propriété TimePicker.Header**](https://msdn.microsoft.com/library/windows/apps/dn299286)
-* [**Propriété Slider.Header**](https://msdn.microsoft.com/library/windows/apps/dn252829)
-* [**Propriété ComboBox.Header**](https://msdn.microsoft.com/library/windows/apps/dn279416)
-* [**Propriété RichEditBox.Header**](https://msdn.microsoft.com/library/windows/apps/dn252726)
-* [**Classe TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
+* [Propriété TextBox.Header](https://msdn.microsoft.com/library/windows/apps/dn252861)
+* [Propriété PasswordBox.Header](https://msdn.microsoft.com/library/windows/apps/dn299051)
+* [Propriété ToggleSwitch.Header](https://msdn.microsoft.com/library/windows/apps/br209713)
+* [Propriété DatePicker.Header](https://msdn.microsoft.com/library/windows/apps/dn279460)
+* [Propriété TimePicker.Header](https://msdn.microsoft.com/library/windows/apps/dn299286)
+* [Propriété Slider.Header](https://msdn.microsoft.com/library/windows/apps/dn252829)
+* [Propriété ComboBox.Header](https://msdn.microsoft.com/library/windows/apps/dn279416)
+* [Propriété RichEditBox.Header](https://msdn.microsoft.com/library/windows/apps/dn252726)
+* [Classe TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
 
  
 

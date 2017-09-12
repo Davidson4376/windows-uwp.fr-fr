@@ -1,70 +1,101 @@
 ---
 author: mcleanbyron
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
-description: "Microsoft Store Services SDK vous propose différentes manières de monétiser votre application avec des publicités."
-title: "Afficher des publicités dans votre application"
+description: "Le SDK MicrosoftAdvertising vous offre plusieurs moyens de monétiser votre application grâce aux publicités."
+title: "Afficher des publicités dans votre application avec le SDK MicrosoftAdvertising"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows10, uwp, annonces publicitaires, publicité, bannière, spot publicitaire"
-ms.openlocfilehash: ceae17d34ba400876f912ba9932d76f59d773e63
-ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
-translationtype: HT
+keywords: "windows10, uwp, publicités, publicité, bannière, contrôle de publicité, spot"
+ms.openlocfilehash: 4730ebaf55af8e7063c444d5b3bbd973b0508db2
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="display-ads-in-your-app"></a>Afficher des publicités dans votre application
+# <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Afficher des publicités dans votre application avec le SDK MicrosoftAdvertising
 
+Augmentez vos opportunités de revenus en plaçant des publicités dans vos applications à l’aide du SDK Microsoft Advertising. Notre plateforme de monétisation des publicités offre une grande diversité de types de publicités et prend en charge la médiation avec de nombreux réseaux publicitaires populaires.
 
-La plateforme Windows universelle (UWP) et le Windows Store proposent plusieurs façons de monétiser votre application à l’aide de publicités.
+Pour afficher des publicités dans vos applications, procédez comme suit.
 
-## <a name="display-banner-and-interstitial-ads-using-the-microsoft-advertising-libraries"></a>Afficher des bannières et des spots publicitaires à l’aide des bibliothèques de publicités Microsoft
+## <a name="step-1-install-the-microsoft-advertising-sdk"></a>Étape1: Installer le SDK Microsoft Advertising
 
-Maximisez les revenus générés par vos applications en incluant une bannière ou des spots publicitaires dans vos applications.
+Le SDK MicrosoftAdvertising fournit divers contrôles que vous pouvez utiliser dans votre application pour afficher les différents types de publicités. Pour des instructions d’installation, voir [cet article](install-the-microsoft-advertising-libraries.md).
 
-* Les *bannières publicitaires* sont de petites annonces qui utilisent une partie de la page d'une application, généralement en haut ou en bas de la page.
-* Les *spots publicitaires* sont des publicités plein écran qui obligent en général l’utilisateur à visionner une vidéo ou à cliquer dessus pour poursuivre sa progression dans l'application ou dans le jeu. Nous prenons en charge deux types de spots publicitaires pour les applications UWP: bannières et vidéo.
+## <a name="step-2-choose-your-ad-type-and-add-code-to-display-test-ads-in-your-app"></a>Étape2: Choisir votre type de publicité et ajouter du code pour afficher des publicités de test dans votre application
 
-Pour inclure ces types de publicités dans vos applications, utilisez les contrôles **AdControl** et **InterstitialAd** dans les bibliothèques de publicités distribuées dans [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) (pour les applications UWP) et [Microsoft Advertising SDK pour Windows et Windows Phone8.x](http://aka.ms/store-8-sdk) (pour les applications Windows8.1 et Windows Phone8.x).
+Le SDK MicrosoftAdvertising fournit plusieurs types de publicités différents que vous pouvez afficher dans votre application. Choisissez les types de publicités qui conviennent le mieux à votre scénario, puis ajoutez du code à votre application pour afficher ces publicités.
 
-Vous pouvez surveiller les performances des publicités en temps réel à l’aide du [rapport sur les performances publicitaires](../publish/advertising-performance-report.md) dans le tableau de bord du Centre de développement Windows.
+Vous devez spécifier un ID d’application et un ID d’unité publicitaire dans votre code pour servir des publicités à votre application. Lors du développement de votre application, vous devez utiliser les [valeurs de test d’ID d’application et d’ID d’unité publicitaire](test-mode-values.md) pour voir comment votre application restitue les publicités au cours du test.
 
-Les rubriques suivantes fournissent des informations sur les tâches courantes impliquant les bibliothèques de publicités Microsoft.
+### <a name="banner-ads"></a>Bannières publicitaires
 
-|  Tâche    | Rubrique |               
-|----------|-------|
-| Installer et utiliser les bibliothèques de publicités Microsoft.     | Voir [Prise en main des bibliothèques de publicités Microsoft](get-started-with-microsoft-advertising-libraries.md).        |
-| Afficher des bannières publicitaires dans votre application XAML/C#.     | Voir [AdControl en XAML et .NET](adcontrol-in-xaml-and--net.md).        |
-| Afficher des bannières publicitaires dans votre application HTML/JavaScript.     | Voir [AdControl en HTML5 et JavaScript](adcontrol-in-html-5-and-javascript.md).        |
-| Afficher des bannières publicitaires dans votre application Silverlight Windows Phone8.x.     | Voir [AdControl dans Silverlight WindowsPhone](adcontrol-in-windows-phone-silverlight.md).        |
-| Présenter un spot publicitaire dans votre application.     | Voir [Spots publicitaires](interstitial-ads.md).       |
-| Ajoutez des publicités à des contenus vidéo dans une application de plateforme Windows universelle (UWP) écrite en JavaScript avec HTML.   |  Voir [Ajouter des publicités à des contenus vidéo en HTML5 et JavaScript](add-advertisements-to-video-content.md).  |
-| Télécharger des exemples de projet qui montrent comment ajouter des bannières et des spots publicitaires aux applications.     |Voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).       |
-| Gérer les erreurs [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) dans votre application.     | Voir [Gestion des erreurs](error-handling-with-advertising-libraries.md) ainsi que les procédures pas à pas dans [Gestion des erreurs AdControl](adcontrol-error-handling.md).       |
-| Signaler un bogue dans les bibliothèques de publicités Microsoft.     | Consultez la [page de support](https://go.microsoft.com/fwlink/p/?LinkId=331508).        |
-| Bénéficier du support de la communauté.     | Consultez le [forum](http://go.microsoft.com/fwlink/p/?LinkId=401266).       |
+Ces publicités à affichage statique utilisent une partie de la page d'une application, souvent en haut ou en bas de la page.
 
-                            
+Pour des instructions et des exemples de code, voir [AdControl en XAML et .NET](adcontrol-in-xaml-and--net.md) et [AdControl en HTML5 et Javascript](adcontrol-in-html-5-and-javascript.md). Pour obtenir des exemples complets de projet qui montrent comment ajouter des bannières publicitaires à des applications JavaScript/HTML et XAML en C# et C++, voir les [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
-## <a name="use-ad-mediation-for-banner-ads-windows-81-and-windows-phone-8x"></a>Utiliser la médiation publicitaire pour les bannières publicitaires (Windows8.1 et Windows Phone8.x)
+![addreferences](images/banner-ad.png)
 
-Pour les applications Windows8.1 et Windows Phone8.x, vous pouvez utiliser la classe **AdMediatorControl** pour optimiser vos recettes publicitaires en affichant des bannières publicitaires provenant de plusieurs réseaux publicitaires. Une fois que vous avez ajouté ce contrôle à votre application, vous pouvez configurer vos paramètres de médiation publicitaire dans le tableau de bord du Centre de développement Windows, et nous nous chargeons de la médiation des demandes de bannières publicitaires des réseaux publicitaires que vous choisissez. Pour plus d’informations, voir [Utiliser la médiation publicitaire pour optimiser les recettes publicitaires](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx).
+### <a name="interstitial-ads"></a>Spots
+
+Ce sont des publicités plein écran qui obligent en général l’utilisateur à visionner une vidéo ou à cliquer dessus pour poursuivre sa progression dans l'application ou dans le jeu. Nous prenons en charge deux types de spots publicitaires: bannières et vidéo.
+
+Pour obtenir des instructions et des exemples de code, voir [Spots publicitaires](interstitial-ads.md). Pour obtenir des exemples complets de projet qui montrent comment ajouter des spots publicitaires à des applications JavaScript/HTML et XAML en C# et C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
+
+![addreferences](images/interstitial-ad.png)
+
+### <a name="native-ads"></a>Publicités natives
+
+Il s’agit de publicités basées sur un composant. Chaque élément de l'annonce publicitaire (par exemple, le titre, l’image, la description et le texte de l’appel à l’action) est fourni à votre application sous forme d'élément individuel que vous pouvez intégrer dans votre application en utilisant vos propres polices, couleurs et autres composants d’interface utilisateur afin de composer une expérience utilisateur discrète.
+
+Pour obtenir des instructions et des exemples de code, voir [Publicités natives](native-ads.md).
+
+![addreferences](images/native-ad.png)
+
+## <a name="step-3-get-an-ad-unit-from-dev-center-and-configure-your-app-to-receive-live-ads"></a>Étape3: Obtenir une unité publicitaire à partir du centre de développement et configurer votre application afin de recevoir des publicités dynamiques
+
+Une fois que vous avez testé votre application et que vous êtes prêt à la soumettre au Windows Store, créez une unité publicitaire sur la page [Monétiser avec des publicités](../publish/monetize-with-ads.md) du tableau de bord du Centre de développement Windows. Ensuite, mettez à jour le code de votre application pour utiliser les valeurs ID d’application et ID d'unité publicitaire de cette unité publicitaire. Si vous essayez d’utiliser des valeurs de test d'ID d'application et d'ID d'unité publicitaire dans la version publiée de votre application dans le Windows Store, votre application ne recevra pas de publicités dynamiques. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md).
+
+<span id="ad-mediation"/>
+### <a name="configure-ad-mediation"></a>Configurer la médiation publicitaire
+
+Par défaut, les bannières publicitaires, les spots et les publicités natives affichent des publicités à partir du réseau de Microsoft pour les publicités payées. Pour optimiser vos revenus publicitaires, vous pouvez activer la médiation publicitaire pour votre unité publicitaire afin d'afficher des publicités à partir de réseaux de publicités payées supplémentaires, tels que Taboola et Smaato. Vous pouvez également augmenter vos capacités de promotion d'application en affichant des publicités provenant des campagnes de promotion d'applications Microsoft.
+
+Pour commencer à utiliser la médiation publicitaire dans votre application UWP, [configurez les paramètres de médiation publicitaire](../publish/monetize-with-ads.md#mediation) de votre unité publicitaire. Par défaut, nous configurons automatiquement les paramètres de médiation à l’aide d’algorithmes d’apprentissage automatique pour vous aider à optimiser vos revenus publicitaires sur les marchés pris en charge par votre application. Toutefois, vous avez également la possibilité de choisir manuellement les réseaux à utiliser. Dans chaque cas, les paramètres de médiation sont entièrement configurés dans le service; vous n’avez pas besoin d’apporter des modifications de code dans votre application.    
+
+<span id="8.x-mediation"/>
+### <a name="mediation-in-windows-81-and-windows-phone-8x-apps"></a>La médiation dans les applications Windows8.1 et WindowsPhone8.x
+
+Dans les applications Windows8.1 et WindowsPhone8.x, la médiation publicitaire est uniquement disponible pour les bannières publicitaires. Pour utiliser la médiation publicitaire, vous devez obligatoirement utiliser la classe **AdMediatorControl** dans le [kit SDK MicrosoftAdvertising pour Windows et WindowsPhone8.x](http://aka.ms/store-8-sdk), à la place de la classe **AdControl**. Après avoir ajouté ce contrôle à votre application, vous pouvez configurer manuellement vos paramètres de médiation publicitaire sur le tableau de bord.
+
+Pour plus d’informations concernant l’utilisation de la médiation publicitaire dans une application Windows8.1 ou WindowsPhone8.x, consultez [cet article](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx).
 
 > [!NOTE]
-> La médiation publicitaire à l’aide de la classe **AdMediatorControl** n’est actuellement pas prise en charge pour les applications UWP pour Windows10. La médiation côté serveur sera disponible très prochainement pour les applications UWP à l’aide des API dédiées aux bannières publicitaires (**AdControl**) et aux spots publicitaires (**InterstitialAd**). Pour obtenir des instructions sur la migration depuis **AdMediatorControl** vers **AdControl** dans votre application UWP, voir [Migration d’AdMediatorControl vers AdControl pour les applications UWP](migrate-from-admediatorcontrol-to-adcontrol.md).
+> La médiation publicitaire pour les applications Windows8.1 et WindowsPhone8.x n’est plus en cours de développement actif. Pour optimiser vos revenus publicitaires potentiels, nous vous recommandons de créer des applications UWP qui utilisent la médiation publicitaire avec des bannières publicitaires, des spots ou des publicités natives.
 
-<span id="silverlight_support"/>
-## <a name="advertising-support-for-windows-phone-8x-silverlight-projects"></a>Prise en charge des publicités pour les projets Silverlight Windows Phone8.x
+## <a name="step-4-submit-your-app-and-review-performance"></a>Étape4: Soumettre votre application et examiner les performances
 
-Certains scénarios de développement ne sont plus pris en charge dans les projets Silverlight Windows Phone8.x. Pour plus d’informations, voir le tableau suivant.
+Une fois que vous avez développé votre application contenant des publicités, vous pouvez [soumettre votre application mise à jour](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) dans le tableau de bord du Centre de développement pour qu’elle soit disponible dans le Windows Store. Les applications qui affichent des publicités doivent respecter les exigences supplémentaires qui sont spécifiées dans la [section10.10 des politiques du WindowsStore](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) et l’[annexeE du Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058.aspx).
 
-|  Version de la plateforme  |  Projets existants    |   Nouveaux projets  |
-|-----------------|----------------|--------------|
-| Silverlight Windows Phone8.0     |  Si vous avez un projet Silverlight Windows Phone8.0 existant qui utilise déjà un **AdControl** ou **AdMediatorControl** d’une précédente version de Microsoft Universal Ad Client SDK ou Microsoft Advertising SDK et que cette application est déjà publiée dans le Windows Store, vous pouvez modifier, puis régénérer le projet, puis vous pouvez déboguer ou tester vos modifications sur un appareil. Le débogage ou les tests du projet dans l’émulateur ne sont pas pris en charge.  |  Non pris en charge.  |
-| Silverlight Windows Phone8.1    |  Si vous disposez d’un projet Silverlight Windows Phone8.1 qui utilise un **AdControl** ou **AdMediatorControl** d’un kit de développement logiciel (SDK) antérieur, vous pouvez modifier et régénérer le projet. Toutefois, pour déboguer ou tester l’application, vous devez l’exécuter dans l’émulateur et utiliser des [valeurs de mode de test](test-mode-values.md) pour les ID d’application et ID d’unité publicitaire. Le débogage ou les tests de l’application sur un appareil ne sont pas pris en charge.  |   Vous pouvez ajouter un **AdControl** ou **AdMediatorControl** à un nouveau projet Silverlight Windows Phone8.1. Toutefois, pour déboguer ou tester l’application, vous devez l’exécuter dans l’émulateur et utiliser des [valeurs de mode de test](test-mode-values.md) pour les ID d’application et ID d’unité publicitaire. Le débogage ou les tests de l’application sur un appareil ne sont pas pris en charge. |
+Une fois que votre application est publiée et disponible dans le Windows Store, vous pouvez examiner vos [rapports de performances des publicités](../publish/advertising-performance-report.md) dans le tableau de bord et continuer à apporter des modifications à vos paramètres de médiation afin d'optimiser les performances de vos annonces. Vos revenus publicitaires sont inclus dans votre [résumé du paiement](../publish/payout-summary.md).
 
-## <a name="related-topics"></a>Rubriques connexes
+<span id="additional-help" />
+## <a name="additional-help"></a>Aide supplémentaire
 
-* [Microsoft Store Services SDK](microsoft-store-services-sdk.md)
-* [Monétiser votre application en insérant des annonces publicitaires](http://go.microsoft.com/fwlink/p/?LinkId=699559)
+Pour obtenir une aide supplémentaire sur l'utilisation du SDK MicrosoftAdvertising, utilisez les ressources suivantes.
+
+|  Tâche    | Ressource |               
+|----------|-------|
+| Signaler un bogue ou obtenir un support assisté en matière de publicité     | Visitez la [page de support](https://go.microsoft.com/fwlink/p/?LinkId=331508) et choisissez **Publicité intégrée à l’application**.        |
+| Bénéficier du support de la communauté     | Consultez le [forum](http://go.microsoft.com/fwlink/p/?LinkId=401266).       |
+| Télécharger des exemples de projet qui montrent comment ajouter des bannières et des spots publicitaires aux applications.     | Voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).       |
+| Découvrir les dernières opportunités de monétisation pour les applications Windows     | Consultez [Monétiser vos applications](https://developer.microsoft.com/store/monetize).        |
+
+## <a name="related-topics"></a>Rubriques associées
+
+* [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp)
+* [Monétiser votre application grâce aux publicités](http://go.microsoft.com/fwlink/p/?LinkId=699559)
 * [Rapport sur les performances publicitaires](../publish/advertising-performance-report.md)

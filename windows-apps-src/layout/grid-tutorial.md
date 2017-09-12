@@ -2,22 +2,27 @@
 author: mukin
 Description: "Cet article se présente sous forme de didacticiel conçu pour guider le lecteur tout au long des étapes nécessaires pour créer l’interface utilisateur d’une application simple. Il explique et montre comment utiliser Grid et StackPanel, deux des éléments XAML les plus courants."
 title: "Créer une application Météo simple à l’aide de Grid et de StackPanel"
-ms.author: wdg-dev-content
-ms.date: 02/08/2017
+template: detail.hbs
+ms.author: mukin
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
-ms.openlocfilehash: 094cabc642884f57af2dbeb5125a2a8b81365824
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 12a48ec9e907a65abbbd9ec1e9f9c60c3519fa20
+ms.sourcegitcommit: 2de58584a42e580dbc0d19bdecee12bfee7fd7e7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/23/2017
 ---
 # <a name="create-a-simple-weather-app-by-using-grid-and-stackpanel"></a>Créer une application Météo simple à l’aide de Grid et de StackPanel
 
 Utilisez XAML pour créer la disposition d’une application Météo simple à l’aide des éléments **Grid** et **StackPanel**. Ces outils vous permettent de créer des applications esthétiques qui fonctionnent sur tous les appareils exécutant Windows10. Ce didacticiel dure 10 à 20minutes.
 
-## <a name="prerequisites"></a>Conditions préalables
+> **API importantes**: [catégorie de grille](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid), [catégorie StackPanel](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
+
+## <a name="prerequisites"></a>Prérequis
 - Windows10 et Microsoft Visual Studio 2015. [Cliquez ici pour savoir comment prendre en main VisualStudio](../get-started/get-set-up.md).
 - Savoir créer une application «Hello World» de base à l’aide de XAML et de C#. Le cas échéant, [cliquez ici pour apprendre à créer une application «Hello World»](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
@@ -46,7 +51,7 @@ Pour commencer à créer une disposition, ouvrez **MainPage.xaml** à l’aide d
 </Grid>
 ```
 
-Le nouvel élément **Grid** crée un ensemble de deuxlignes et colonnes, qui définit la disposition de l’interface de l’application. La première colonne a une **largeur** de «3\*», tandis que la seconde a une largeur de «5\*», divisant l’espace horizontal entre les deuxcolonnes à un rapport de3:5. De la même manière, les deuxlignes ont une **hauteur** de «3\*» et «\*» respectivement, l’élément **Grid** allouant troisfois plus d’espace à la première ligne qu’à la seconde («\*» est identique à «1\*»). Ces rapports sont conservés même si la fenêtre est redimensionnée ou si l’appareil est modifié.
+Le nouvel élément **Grid** crée un ensemble de deuxlignes et colonnes, qui définit la disposition de l’interface de l’application. La première colonne a une **largeur** de «3\*», tandis que la seconde a une largeur de «5\*», divisant l’espace horizontal entre les deuxcolonnes à un rapport de3:5. De la même manière, les deuxlignes ont une **hauteur** de «2\*» et «\*» respectivement, l’élément **Grid** allouant deuxfois plus d’espace à la première ligne qu’à la seconde («\*» est identique à «1\*»). Ces rapports sont conservés même si la fenêtre est redimensionnée ou si l’appareil est modifié.
 
 Pour en savoir plus sur les autres méthodes de dimensionnement des lignes et des colonnes, consultez [Définir des dispositions avec XAML](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties).
 

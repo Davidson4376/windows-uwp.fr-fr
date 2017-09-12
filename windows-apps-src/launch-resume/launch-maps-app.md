@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: cfaa7c96a3ec8bf50f19ee699ff74b037500a838
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 3d36708b5b11a089ffa126b760f0990f2da39e38
+ms.sourcegitcommit: f6dd9568eafa10ee5cb2b849c0d82d84a1c5fb93
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/02/2017
 ---
 # <a name="launch-the-windows-maps-app"></a>Lancer l’application Cartes Windows
 
@@ -19,7 +21,7 @@ translationtype: HT
 \[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Découvrez comment lancer l’application Cartes Windows à partir de votre application. Cette rubrique décrit les schémas d’URI **bingmaps:, ms-drive-to:, ms-walk-to:** et **ms-settings:**. Utilisez ces schémas d’URI afin de lancer l’application Cartes Windows pour des cartes, itinéraires et résultats de recherche spécifiques ou pour télécharger des cartes de l’application Cartes Windows hors connexion à partir de l’application Paramètres.
+Découvrez comment lancer l’application Cartes Windows à partir de votre application. Cette rubrique décrit les schémas d’URI **bingmaps: *ms-drive-to:**, ms-walk-to: et **ms-settings:**. Utilisez ces schémas d’URI afin de lancer l’application Cartes Windows pour des cartes, itinéraires et résultats de recherche spécifiques ou pour télécharger des cartes de l’application Cartes Windows hors connexion à partir de l’application Paramètres.
 
 **Conseil** Pour plus d’informations sur le lancement de l’application CartesWindows à partir de votre application, téléchargez l’[Exemple de carte pour la plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977) à partir du [référentiel Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
 
@@ -68,37 +70,37 @@ Dans cet exemple, la classe [**LauncherOptions**](https://msdn.microsoft.com/lib
 
 ## <a name="display-known-locations"></a>Afficher des emplacements connus
 
-Il existe plusieurs façons de contrôler le point central de la carte et le niveau de zoom. Les paramètres *cp* (point central) et *lvl* (niveau de zoom) sont le moyen le plus simple et le plus direct d’y parvenir. De plus, ils produisent des résultats prévisibles. En effet, le paramètre *bb* (qui spécifie une zone délimitée par des valeurs de latitude et de longitude) produit des résultats nettement plus incertains, car il tient compte de la résolution de l’écran et détermine le point central de la carte et le niveau de zoom en fonction des coordonnées indiquées. Le paramètre *bb* est ignoré quand les troisparamètres (*bb*, *cp* et *lvl*) sont présents.
+Il existe de nombreuses options permettant de contrôler la partie de la carte à afficher. Vous pouvez utiliser le paramètre *cp* (point central) avec les paramètres *rad* (rayon) ou *lvl* (niveau de zoom) pour afficher un emplacement et choisir comment zoomer dessus. Lorsque vous utilisez le paramètre *cp*, vous pouvez également définir un paramètre *hdg* (en-tête) et *pit* (inclinaison) pour indiquer dans quelle direction effectuer la recherche. Une autre méthode consiste à utiliser le paramètre *bb* (zone de délimitation) pour indiquer le maximum de coordonnées (sud, est, nord et ouest) de la zone que vous souhaitez afficher.
 
-Pour contrôler le type d’affichage, utilisez les paramètres (Streetside) *ss* et (style) *sty*. Le paramètre *ss* place la carte dans une vue Streetside. Le paramètre *sty* vous permet de basculer entre les vues aérienne, routière et3D. Lors de l’utilisation du style3D, les paramètres *hdg*, *pit* et *rad* permettent de spécifier l’affichage3D. *hdg* spécifie l’orientation de la vue, *pit* l’inclinaison de la vue, et *rad* la distance par rapport au point central à afficher dans la vue. Pour plus d’informations sur ces paramètres et d’autres, voir la [référence de paramètre bingmaps:](#bingmaps-param-reference).
+Pour contrôler le type d’affichage, utilisez les paramètres *sty* (style) et *ss* (Streetside). Le paramètre *sty* vous permet de basculer entre les vues aérienne et routière. Le paramètre *ss* place la carte dans une vue Streetside. Pour plus d’informations sur ces paramètres et d’autres, voir la [référence de paramètre bingmaps:](#bingmaps-param-reference).
 
-| Exemple d’URI                                                                 | Résultats                                                                                                                                                                                                   |
-|----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?                                                                 | Ouvre l’application Cartes.                                                                                                                                                                                       |
-| bingmaps:?cp=40.726966~-74.006076                                          | Affiche une carte centrée sur la ville de New York.                                                                                                                                                               |
-| bingmaps:?cp=40.726966~-74.006076&amp;lvl=10                                   | Affiche une carte centrée sur la ville de New York avec le niveau de zoom 10.                                                                                                                                       |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | Affiche une carte de la ville de New York avec la taille de l’écran comme cadre englobant.                                                                                                                          |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&amp;cp=47~-122                        | Affiche une carte de la ville de New York, qui est la zone spécifiée dans l’argument du cadre englobant. Le point central pour Seattle spécifié dans l’argument **cp** est ignoré.                                      |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&amp;cp=47~-122&amp;lvl=8                  | Affiche une carte de la ville de New York, qui est la zone spécifiée dans l’argument **bb**. L’argument **cp**, qui spécifie Seattle, est ignoré, car les éléments **cp** et **lvl** ne sont pas pris en compte quand l’élément **bb** est spécifié. |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&amp;lvl=16 | Affiche une carte avec un point nommé Caesars Palace (à Las Vegas) et affecte la valeur 16 au niveau de zoom.                                                                                                            |
-| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | Affiche une carte avec un point nommé Some_Business (à Las Vegas).                                                                                                                                          |
-| bingmaps:?cp=40.726966~-74.006076&amp;trfc=1&amp;sty=a                             | Affiche une carte de la ville de New York avec le trafic sur une vue de carte aérienne.                                                                                                                                               |
-| bingmaps:?cp=47.6204~-122.3491&amp;sty=3d                                      | Affiche une vue 3D de la Space Needle.                                                                                                                                                                   |
-| bingmaps:?cp=47.6204~-122.3491&amp;sty=3d&amp;rad=200&amp;pit=75&amp;hdg=165               | Affiche une vue 3D de la Space Needle avec un rayon de 200 m, une inclinaison de 75 degrés et une orientation de 165 degrés.                                                                                        |
-| bingmaps:?cp=47.6204~-122.3491&amp;ss=1                                        | Affiche une vue Streetside de la Space Needle.                                                                                                                                                           |
 
- 
+| Exemple d’URI                                                                 | Résultats                                                                                                                                                                                        |
+|----------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| bingmaps:?                                                                 | Ouvre l’application Cartes.                                                                                                                                                                            |
+| bingmaps:?cp=40.726966~-74.006076                                          | Affiche une carte centrée sur la ville de New York.                                                                                                                                                    |
+| bingmaps:?cp=40.726966~-74.006076&amp;lvl=10                                   | Affiche une carte centrée sur la ville de New York avec le niveau de zoom 10.                                                                                                                            |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | Affiche une carte de la ville de New York, qui est la zone spécifiée dans l’argument **bb**.                                                                                                           |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&cp=47~-122                        | Affiche une carte de la ville de New York, qui est la zone spécifiée dans l’argument du cadre englobant. Le point central pour Seattle spécifié dans l’argument **cp** est ignoré parce que *bb* est spécifié. |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16 | Affiche une carte avec un point nommé Caesars Palace (à Las Vegas) et affecte la valeur 16 au niveau de zoom.                                                                                                 |
+| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | Affiche une carte avec un point nommé Some_Business (à Las Vegas).                                                                                                                               |
+| bingmaps:?cp=40.726966~-74.006076&trfc=1&sty=a                             | Affiche une carte de la ville de New York avec le trafic sur une vue de carte aérienne.                                                                                                                          |
+| bingmaps:?cp=47.6204~-122.3491&sty=3d                                      | Affiche une vue 3D de la Space Needle.                                                                                                                                                        |
+| bingmaps:?cp=47.6204~-122.3491&amp;sty=3d&amp;rad=200&amp;pit=75&amp;hdg=165               | Affiche une vue 3D de la Space Needle avec un rayon de 200m, une inclinaison de 75degrés et une orientation de 165degrés.                                                                             |
+| bingmaps:?cp=47.6204~-122.3491&ss=1                                        | Affiche une vue Streetside de la Space Needle.                                                                                                                                                |
+
+
 ## <a name="display-search-results"></a>Afficher les résultats de la recherche
 
-Lorsque vous effectuez une recherche d’entreprise à l’aide du paramètre *q*, nous vous recommandons d’utiliser des termes aussi spécifiques que possible, en parallèle avec le paramètre *cp* ou *where*, pour spécifier un emplacement. Si l’utilisateur n’a pas donné à l’application Cartes l’autorisation d’utiliser son emplacement et si aucun emplacement n’est spécifié pour la recherche d’entreprise, cette recherche peut être effectuée au niveau du pays sans renvoyer de résultats exploitables. Les résultats de recherche sont affichés dans la vue de carte la mieux appropriée. Pour cette raison, si vous n’avez pas absolument besoin de définir le paramètre *lvl* (niveau de zoom), nous vous recommandons d’autoriser l’application Cartes à prendre cette décision. Pour plus d’informations sur ces paramètres et d’autres, voir la [référence de paramètre bingmaps:](#bingmaps-param-reference).
+Lorsque vous recherchez des lieux à l’aide du paramètre *q*, nous recommandons de définir des termes aussi spécifiques que possible et ce à l’aide des paramètres *cp*, *bb* ou *where* pour spécifier un emplacement de recherche. Si vous ne spécifiez aucun emplacement de recherche et si l’emplacement actuel de l’utilisateur n’est pas disponible, la recherche peut ne pas renvoyer de résultats pertinents. Les résultats de recherche sont affichés dans la vue de carte la plus appropriée. Pour plus d’informations sur ces paramètres et d’autres, voir la [référence de paramètre bingmaps:](#bingmaps-param-reference).
 
-| Exemple d’URI                                                    | Résultats                                                                                                                                         |
-|---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?where=1600%20Pennsylvania%20Ave,%20Washington,%20DC | Affiche une carte et recherche l’adresse de la Maison Blanche à Washington.                                                              |
-| bingmaps:?cp=40.726966~-74.006076&amp;lvl=10&amp;where=New%20York     | Recherche New York près du point central indiqué, affiche les résultats sur une carte et affecte la valeur 10 au niveau de zoom.                            |
-| bingmaps:?lvl=10&amp;where=New%20York                             | Recherche la ville de New York et affiche le résultat avec un niveau de zoom de 10.                                                                                    |
-| bingmaps:?cp=40.726966~-74.006076&amp;lvl=14.5&amp;q=pizza            | Recherche une pizzeria près du point central indiqué (autrement dit, à New York), affiche les résultats sur une carte et affecte la valeur 14,5 au niveau de zoom. |
-| bingmaps:?q=coffee&amp;where=Seattle                              | Recherche un café à Seattle.                                                                                                                 |
+
+| Exemple d’URI                                                    | Résultats                                                                            |
+|---------------------------------------------------------------|------------------------------------------------------------------------------------|
+| bingmaps:?q=1600%20Pennsylvania%20Ave,%20Washington,%20DC     | Affiche une carte et recherche l’adresse de la Maison Blanche à Washington. |
+| bingmaps:?q=coffee&where=Seattle                              | Recherche un café à Seattle.                                                    |
+| bingmaps:?cp=40.726966~-74.006076&where=New%20York            | Recherche New York près du point central indiqué.                             |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&q=pizza              | Recherche une pizzeria dans la zone de délimitation (autrement dit, à New York).      |
 
  
 ## <a name="display-multiple-points"></a>Afficher plusieurs points
@@ -292,7 +294,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>ss=1</p></td>
 <td align="left"><p>Spécifie l’affichage des images au niveau de la rue quand <code>ss=1</code>. Si vous omettez le paramètre **ss**, vous obtenez le même résultat qu’avec la commande <code>ss=0</code>. Utilisez ce paramètre conjointement avec le paramètre **cp** pour spécifier l’emplacement de la vue au niveau de la rue.</p>
 <div class="alert">
-> **Remarque**  Les images au niveau de la rue ne sont pas disponibles dans toutes les régions.
+**Remarque**  Les images au niveau de la rue ne sont pas disponibles dans toutes les régions.
 </div>
 <div>
  
@@ -306,7 +308,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>trfc=1</p></td>
 <td align="left"><p>Spécifie si les informations sur le trafic sont incluses sur la carte. Si vous omettez le paramètre trfc, vous obtenez le même résultat qu’avec la commande <code>trfc=0</code>.</p>
 <div class="alert">
-> **Remarque**  Les données sur le trafic ne sont pas disponibles dans toutes les régions.
+**Remarque**  Les données sur le trafic ne sont pas disponibles dans toutes les régions.
 </div>
 <div>
  
@@ -375,14 +377,12 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>Le nom doit être séparé des différents points par un caractère tilde (**~**).</p>
 <p>Si l’élément spécifié contient un tilde, assurez-vous qu’il est codé comme suit: <code>%7E</code>. En l’absence de paramètres de niveau de zoom et de point central, la collection propose la meilleure vue de carte possible.</p>
 
-<p>**Important** Si l’élément que vous spécifiez contient un trait de soulignement, assurez-vous qu’il est double et encodé comme suit: %255F.</p>
-
-<p>Si l’élément que vous spécifiez contient un trait de soulignement, assurez-vous qu’il est double et encodé comme suit: %255F.</p></td>
+<p>**Important** Si l’élément que vous spécifiez contient un trait de soulignement, assurez-vous qu’il est double et encodé comme suit: %255F.</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+  
 <span id="ms-drive-to-param-reference"/>
 ## Référence de paramètre ms-drive-to:
 
@@ -407,7 +407,6 @@ L’URI permettant de lancer une demande d’itinéraire détaillé en voiture n
 L’URI permettant de lancer une demande d’itinéraire détaillé à pied n’a pas besoin d’encodage et présente le format suivant.
 
 > **Remarque**  Dans ce schéma d’URI, vous ne spécifiez pas le point de départ. Le point de départ est toujours supposé être la localisation actuelle. Si vous devez spécifier un point de départ différent de l’emplacement actuel, voir [Afficher un itinéraire et le trafic](#display-directions-and-traffic).
-
  
 
 | Paramètre | Définition | Exemple | Détails |

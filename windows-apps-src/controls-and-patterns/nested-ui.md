@@ -5,15 +5,20 @@ title: "Interface utilisateur imbriquée dans des éléments de liste"
 label: Nested UI in list items
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
-ms.openlocfilehash: b3b41e81f48f790c85377208816668ba302d3738
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: chigy
+design-contact: kimsea
+doc-status: Published
+ms.openlocfilehash: a8d7ac9ad5cad6d88c0fac0c1e7bba53eaf0045d
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="nested-ui-in-list-items"></a>Interface utilisateur imbriquée dans des éléments de liste
 
@@ -22,6 +27,8 @@ translationtype: HT
 L’interface utilisateur imbriquée est une interface utilisateur (UI) qui expose des contrôles exploitables imbriqués intégrés à l’intérieur d’un conteneur qui peut également faire l’objet d’un focus distinct.
 
 Vous pouvez utiliser l’interface utilisateur imbriquée pour présenter des options supplémentaires permettant d’accélérer la réalisation d’actions importantes. Toutefois, plus le nombre d’actions exposées augmente, plus votre interface utilisateur devient compliquée. Vous devez être particulièrement vigilant lorsque vous choisissez d’utiliser ce modèle d’interface utilisateur. Cet article fournit des recommandations qui vont vous permettre de déterminer le meilleur mode de fonctionnement de votre interface utilisateur spécifique.
+
+> **API importantes**: [classe ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [classe GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
 
 Dans cet article, nous abordons la création d’une interface utilisateur imbriquée dans les éléments [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) et [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). Bien que les autres cas d’interface utilisateur imbriquée ne soient pas abordés dans cette section, ces concepts sont transférables. Avant de commencer, vous devez être familiarisé avec les instructions générales concernant l’utilisation des contrôles ListView ou GridView dans votre interface utilisateur, qui se trouvent dans les articles [Listes](lists.md) et [Affichage Liste et affichage Grille](listview-and-gridview.md).
 

@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: 159681E4-BF9E-4A57-9FEE-EC7ED0BEFFAD
 title: "Conseils relatifs aux performances du langage de programmation et du modèleMVVM"
 description: "Cette rubrique décrit certaines considérations en matière de performances liées à vos choix de modèles de conception de logiciel et de langage de programmation."
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 2c803083a9f7a279a6cfb70087c5cd1f0c3def1e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d308fd8b8ded0ac737fc39c4760bc52d8414b3cb
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="mvvm-and-language-performance-tips"></a>Conseils relatifs aux performances du langage de programmation et du modèle MVVM
 
@@ -31,7 +33,7 @@ Il existe plusieurs définitions concrètes du modèle MVVM, et des infrastructu
 
 -   La liaison de données XAML (extension de balisage {Binding}) a été conçue en partie pour activer des modèles d’affichage/de modèle. Néanmoins, {Binding} est accompagnée d’une plage de travail non triviale et d’une surcharge de processeur. La création d’une {Binding} entraîne une série d’allocations, et la mise à jour d’une cible de liaison peut provoquer boxing et réflexion. Ces problèmes sont traités avec l’extension de balisage {x:Bind}, qui compile les liaisons au moment de la génération. **Recommandation :** utilisez {x: Bind}.
 -   Dans MVVM, il est courant de connecter Button.Click au modèle d’affichage à l’aide d'une ICommand, par exemple les applications auxiliaires DelegateCommand ou RelayCommand courantes. Ces commandes sont des allocations supplémentaires, qui incluent cependant le détecteur d’événements CanExecuteChanged, s’ajoutent à la plage de travail et au temps de démarrage/navigation de la page. **Recommandation :** comme alternative à l’utilisation de l’interface ICommand pratique, pensez à placer des gestionnaires d’événements dans votre code-behind, à les attacher aux événements d’affichage et à appeler une commande dans votre modèle d’affichage lorsque ces événements sont déclenchés. Vous devez également ajouter du code supplémentaire pour désactiver le bouton lorsque la commande n’est pas disponible.
--   Dans le modèle MVVM, il est courant de créer une Page avec toutes les configurations possibles de l’interface utilisateur, puis de réduire les parties de l’arborescence en liant la propriété Visibility aux propriétés de l’ordinateur virtuel. Cela s’ajoute inutilement au temps de démarrage et éventuellement à la plage de travail (car certaines parties de l’arborescence peuvent ne jamais devenir visibles). **Recommandations :** utilisez la fonctionnalité x:DeferLoadStrategy pour différer des parties superflues de l’arborescence hors du démarrage. Vous pouvez également créer des contrôles utilisateur pour les différents modes de la page et utiliser code-behind pour ne conserver que les contrôles nécessaires chargés.
+-   Dans le modèle MVVM, il est courant de créer une Page avec toutes les configurations possibles de l’interface utilisateur, puis de réduire les parties de l’arborescence en liant la propriété Visibility aux propriétés de l’ordinateur virtuel. Cela s’ajoute inutilement au temps de démarrage et éventuellement à la plage de travail (car certaines parties de l’arborescence peuvent ne jamais devenir visibles). **Recommandations:** Utilisez la fonctionnalité [x:Load attribute](../xaml-platform/x-load-attribute.md) ou [x:DeferLoadStrategy attribute](../xaml-platform/x-deferloadstrategy-attribute.md) pour différer les parties superflues de l’arborescence hors du démarrage. Vous pouvez également créer des contrôles utilisateur pour les différents modes de la page et utiliser code-behind pour ne conserver que les contrôles nécessaires chargés.
 
 ## <a name="ccx-recommendations"></a>Recommandations liées à C++/CX
 
@@ -39,11 +41,3 @@ Il existe plusieurs définitions concrètes du modèle MVVM, et des infrastructu
 -   **Désactivez l’option RTTI (/GR-)**. L’option RTTI est activée par défaut dans le compilateur. À moins que votre environnement de génération ne l’ait désactivée, vous l’utilisez donc probablement. La surcharge de l’option RTTI est importante, et vous devez donc désactiver cette option à moins que votre code n’ait une dépendance approfondie avec elle. L’infrastructure XAML n’impose nullement que votre code utilise l’option RTTI.
 -   **Évitez une utilisation intensive des ppltasks**. Les ppltasks sont très pratiques lors de l’appel des API WinRT asynchrones, mais elles sont fournies avec une surcharge de taille de code importante. L’équipe chargée de C++/CX travaille sur une fonctionnalité de langage qui fournit de bien meilleures performances. D’ici là, veillez à équilibrer l’utilisation des ppltasks dans les chemins réactifs de votre code.
 -   **Évitez d’utiliser C++/CX dans la « logique métier » de votre application**. C++/CX est conçu pour permettre d’accéder facilement aux API WinRT des applications en C++. Il utilise des wrappers qui génèrent une surcharge. Vous devez éviter d’utiliser C++/CX dans la logique métier/le modèle de votre classe, et le réserver pour une utilisation aux frontières entre votre code et WinRT.
-
- 
-
- 
-
-
-
-

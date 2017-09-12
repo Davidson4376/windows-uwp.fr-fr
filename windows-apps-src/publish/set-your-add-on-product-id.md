@@ -4,54 +4,70 @@ Description: "Lorsque vous créez un module complémentaire dans le tableau de b
 title: "Définir le type et l’ID de produit d’un module complémentaire"
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: abd6c27367476e5f1da11cde14b7d7f08105ad3e
-ms.lasthandoff: 02/07/2017
-
+keywords: windows10, uwp
+ms.openlocfilehash: 136077edcf4704f3ea71416719e7c37db43dafda
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/09/2017
 ---
-
 # <a name="set-your-add-on-product-type-and-product-id"></a>Définir le type et l’ID de produit d’un module complémentaire
 
-Un module complémentaire doit être associé à une application que vous avez déjà créée dans le tableau de bord (même si vous ne l’avez pas encore soumise). Recherchez le bouton **Créer un module complémentaire** sur la page **Vue d’ensemble** ou **Modules complémentaires** de votre application.
+Une extension doit être associée à une application que vous avez déjà créée dans le tableau de bord (même si vous ne l’avez pas encore soumise). Recherchez le bouton **Créer un nouveau module complémentaire** sur la page **Vue d’ensemble** ou **Modules complémentaires** de votre application.
 
-Une fois que vous avez cliqué sur ce bouton, la page **Créer un module complémentaire** s’affiche. Ici, vous devez spécifier un type de produit et lui attribuer un ID de produit.
+Après avoir sélectionné **Créer un nouveau module complémentaire**, vous serez invité à spécifier un type de produit et à attribuer un ID de produit pour votre extension.
 
 ## <a name="product-type"></a>Type de produit
 
-Vous devez commencer par indiquer le type de module complémentaire que vous proposez. Cette sélection détermine la façon dont le client pourra utiliser votre module complémentaire.
+Vous devez commencer par indiquer le type de module complémentaire que vous proposez. Cette sélection détermine la façon dont le client pourra utiliser votre extension.
 
-> **Remarque** Vous ne pourrez pas modifier le type de produit après avoir enregistré cette page pour créer le module complémentaire. Si vous avez choisi un type de produit incorrect, vous pouvez toujours supprimer votre soumission de module complémentaire en cours et recommencer en créant un autre module complémentaire.
+> [!NOTE]
+> Vous ne pourrez pas modifier le type de produit après avoir enregistré cette page pour créer l’extension. Si vous choisissez un type de produit incorrect, vous pouvez toujours supprimer votre soumission d’extension en cours et recommencer en créant une autre extension.
 
-Si le produit peut être acheté, utilisé (consommé), puis racheté, vous devez sélectionner un type de produit **consommable**. Les modules complémentaires consommables sont souvent utilisés pour la monnaie d’un jeu par exemple (or, pièces, etc.), qui peuvent être achetés en montants prédéfinis puis dépensés par le client. Pour plus d’informations sur l’ajout de modules complémentaires consommables dans votre application, voir [Activer les achats de modules complémentaires consommables](../monetize/enable-consumable-add-on-purchases.md).
+<span id="durable" />
+### <a name="durable"></a>Durable
 
-Vous pouvez sélectionner deux types de modules complémentaires consommables :
+Sélectionnez **Durable** comme type de produit si votre extension n’est généralement achetée qu’une seule fois. Ces extensions servent généralement à déverrouiller des fonctionnalités supplémentaires d’une application.
 
-- **Consommable géré par le développeur** : pris en charge sur toutes les versions de système d’exploitation. Le solde et l’acquisition doivent être gérés dans votre application. 
-- **Consommable géré par le Windows store :** Microsoft assure le suivi du solde sur tous les appareils du client fonctionnant sous Windows 10, version 1607 ou ultérieure ; non pris en charge sur les versions antérieures du système d’exploitation. Pour utiliser cette option, le produit parent doit être compilé à l’aide du Kit de développement logiciel Windows 10 version 14393 ou ultérieure. Notez également que vous ne pouvez pas soumettre au Windows Store un module complémentaire consommable géré par le Windows Store tant que le produit parent n’a pas été publié (vous pouvez cependant créer la soumission dans votre tableau de bord et commencer à travailler dessus à tout moment). Vous devez renseigner la quantité concernant votre module complémentaire consommable géré par le Windows Store dans la page **Propriétés**.
+Par défaut, le champ **Durée de vie du produit** d’une extension durable affiche la valeur **Toujours**, ce qui signifie que cette extension n’expire jamais. Vous avez la possibilité de définir le champ **Durée de vie du produit** sur une autre durée à l’étape [Propriétés](enter-add-on-properties.md) du processus de soumission de l’extension. Si vous procédez ainsi, l’extension arrivera à expiration au terme de la durée que vous spécifiez (comprise entre 1 et 365jours), auquel cas un client pourra la racheter après son expiration.
 
-Si votre produit ne peut être acheté qu’une seule fois, vous devez sélectionner **Durable**. Les modules complémentaires durables servent généralement à déverrouiller des fonctionnalités supplémentaires d’une application. Ils ne sont pas consommés, mais vous pouvez définir le champ **Durée de vie du produit** pour qu’ils arrivent à expiration au bout d’un laps de temps défini (compris entre 1 et 365 jours). Par défaut, le champ **Durée de vie du produit** d’un module complémentaire durable affiche **Toujours**, ce qui signifie que ce module n’expire jamais. Vous pouvez changer la durée à l’étape [Propriétés du module complémentaire](enter-add-on-properties.md) du processus de soumission du module complémentaire.
+<span id="consumable" />
+### <a name="consumable"></a>Consommable
 
-## <a name="product-id"></a>ID de produit
+Si l’extension peut être achetée, utilisée (consommée), puis rachetée, vous devez sélectionner l’un des types de produits **consommables**. Les modules complémentaires consommables sont souvent utilisés pour la monnaie d’un jeu par exemple (or, pièces, etc.), qui peuvent être achetés en montants prédéfinis puis dépensés par le client. Pour plus d’informations sur l’inclusion d’extensions consommables dans votre application, consultez l’article [Activer les achats d’extensions consommables](../monetize/enable-consumable-add-on-purchases.md).
 
-Entrez un ID de produit unique pour votre module complémentaire. Cet ID produit correspond à l’identificateur que vous devrez référencer dans le [code de votre application pour appeler le module complémentaire](https://msdn.microsoft.com/library/windows/apps/mt219684).
+Il existe deux types d’extensions consommables:
+- **Consommable géré par le développeur**: le solde et l’acquisition doivent être gérés dans votre application. Pris en charge dans toutes les versions de système d’exploitation.
+- **Consommable géré par le Windows store:** Microsoft assure le suivi du solde sur tous les appareils du client fonctionnant sous Windows10, version1607 ou ultérieure; non pris en charge sur les versions antérieures du système d’exploitation. Pour que cette option soit utilisable, le produit parent doit être compilé à l’aide du Kit de développement logiciel (SDK) Windows10 version14393 ou ultérieure. Notez également que vous ne pouvez pas soumettre au WindowsStore une extension consommable gérée par le WindowsStore tant que le produit parent n’a pas été publié (toutefois, vous pouvez créer la soumission dans votre tableau de bord, puis commencer à travailler dessus à tout moment). Vous devez renseigner la quantité concernant votre extension consommable gérée par le WindowsStore à l’étape **Propriétés** de votre soumission.
 
-Voici quelques éléments à prendre en considération lors du choix d’un ID produit :
+<span id="subscription" />
+### <a name="subscription"></a>Abonnement
+
+Si vous souhaitez facturer les clients de manière récurrente pour votre extension, choisissez **Abonnement**.
+
+> [!NOTE]
+> Actuellement, la possibilité de créer des extensions d’abonnement n’est disponible que pour un ensemble de comptes de développeur qui participent à un programme d’adoption anticipée. À l’avenir, nous rendrons les extensions d’abonnement disponibles pour tous les comptes de développeur, mais nous mettons cette documentation préliminaire à disposition dès à présent pour donner aux développeurs un aperçu de cette fonctionnalité. Pour plus d’informations, consultez l’article [Activer les extensions d’abonnement de votre application](../monetize/enable-subscription-add-ons-for-your-app.md).
+
+Une fois qu’un client a acquis une extension d’abonnement, il est facturé à intervalles réguliers afin de continuer à utiliser l’extension. Le client peut annuler l’abonnement à tout moment pour éviter d’autres frais. Vous devez spécifier la période d’abonnement et choisir de proposer ou non un essai gratuit à l’étape **Propriétés** de votre soumission.
+
+Les extensions d’abonnement sont uniquement prises en charge pour les clients qui exécutent Windows10, version1607 ou ultérieure. L’application parente doit être compilée à l’aide du SDK Windows10, version14393 ou ultérieure, et elle doit utiliser l’API d’achat in-app de l’espace de noms **Windows.Services.Store** en lieu et place de l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations sur les différences entre ces espaces de noms, consultez l’article [Achats dans l’application et versions d’évaluation](../monetize/in-app-purchases-and-trials.md).
+
+Vous devez soumettre le produit parent avant de publier des extensions d’abonnement sur le WindowsStore (toutefois, vous pouvez créer la soumission dans votre tableau de bord et commencer à travailler dessus à tout moment).
+
+## <a name="product-id"></a>ID produit
+
+Quel que soit le type de produit que vous choisissez, vous devez entrer un ID produit unique pour votre extension. Ce nom servira à identifier votre extension dans le tableau de bord, et vous pourrez utiliser cet identificateur pour [faire référence à l’extension dans votre code](../monetize/in-app-purchases-and-trials.md#how-to-use-product-ids-for-add-ons-in-your-code).
+
+Voici quelques éléments à prendre en considération lors du choix d’un ID produit:
 
 -   Les clients ne verront pas cet ID produit. (Par la suite, vous pourrez entrer un [titre et une description](create-add-on-descriptions.md) qui seront visibles par les clients.)
 -   Vous ne pouvez plus modifier ni supprimer l’ID produit d’un module complémentaire après la publication de ce dernier.
--   Un ID produit ne peut pas comporter plus de 100 caractères.
--   Un ID produit ne peut pas inclure les caractères suivants : **&lt; &gt; \* % &amp; : \\ ? + ,**
--   Pour offrir votre module complémentaire sur tous les appareils, utilisez uniquement des caractères alphanumériques, des points et/ou des traits de soulignement. Si vous utilisez d’autres types de caractère, le module complémentaire ne sera pas disponible à l’achat pour les clients utilisant Windows Phone 8.1 ou une version antérieure.
+-   Un ID produit ne peut pas comporter plus de 100caractères.
+-   Un ID produit ne peut comporter aucun de ces caractères: **&lt; &gt; \* % & : \\ ? + ,**
+-   Pour offrir votre module complémentaire sur toutes les versions de système d’exploitation, utilisez uniquement des caractères alphanumériques, des points et/ou des traits de soulignement. Si vous utilisez d’autres types de caractère, le module complémentaire ne sera pas disponible à l’achat pour les clients utilisant WindowsPhone8.1 ou une version antérieure.
 -   Un ID produit ne doit pas nécessairement être unique dans le Windows Store, mais doit l’être dans votre compte de développeur.
  
-
-
-
-
-

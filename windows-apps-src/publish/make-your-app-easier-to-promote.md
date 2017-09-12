@@ -4,34 +4,36 @@ Description: "Faites en sorte que votre application soit remarquée ! En plus de
 title: Faciliter la promotion de votre application
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 9dee8e05dbf2384fc87c1974a732ff36459fa229
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8976e616910246366048cffa3c971b93b974e09d
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="make-your-app-easier-to-promote"></a>Faciliter la promotion de votre application
 
 
 Faites en sorte que votre application soit remarquée! En plus de faire le nécessaire pour que votre application soit la meilleure possible, il y a des choses que vous pouvez faire pour faciliter la promotion de votre application dans le Windows Store et sur d’autres sites et pour qu’elle retienne davantage l’attention.
 
-## <a name="windows-store-requirements-for-featured-apps"></a>Conditions requises par le Windows Store pour les applications proposées
 
+## <a name="windows-store-requirements-for-featured-apps"></a>Conditions requises par le Windows Store pour les applications proposées
 
 Le Windows Store présente différentes applications regroupées par catégorie ou par thème. Les applications réussies sont trop nombreuses pour être toutes proposées, et il n’existe aucun moyen de garantir que votre application sera sélectionnée. Cependant, il y a certaines actions à effectuer pour garantir que la promotion de votre application sera prise en considération dans le Windows Store.
 
 -   **Inclure des captures d’écran et des images publicitaires attrayantes**
 
-    Pour présenter les applications, le Windows Store peut afficher les [images et captures d'écran de votre application](app-screenshots-and-images.md) dans différentes dispositions. Veillez à concevoir des captures d'écran attrayantes qui reflètent fidèlement votre application et assurez-vous que la première capture d'écran est particulièrement représentative et percutante.
+    Pour présenter les applications, le Windows Store peut afficher les [images et captures d'écran de votre application](app-screenshots-and-images.md) dans différentes dispositions. Veillez à concevoir des captures d'écran attrayantes qui reflètent fidèlement votre application et assurez-vous que la première capture d'écran est particulièrement représentative et percutante. Vous pouvez fournir différents ensembles de captures d’écran afin d’illustrer l’apparence de l’application sur chaque type d’appareil que cette dernière prend en charge.
 
-    Pour faire en sorte que votre application soit présentée dans le Windows Store, vous devez également joindre au moins une image promotionnelle dans votre envoi. Il est particulièrement important de fournir une image au format 2400 x 1200 pixels, car ce format d’image est exploitable de différentes façons dans le Windows Store, à destination des clients Windows 10. N’oubliez pas que nous pouvons rogner cette image dans certaines dispositions, de manière à ce que le centre de l’image contienne les éléments visuels clés et le logo/la marque de votre application. Nous pouvons également fournir des formats d’image supplémentaires, si votre application est exécutée sur des versions antérieures de système d’exploitation. Pour plus de détails et de recommandations, voir [Conception graphique promotionnelle](app-screenshots-and-images.md#promotional-artwork).
+    Pour favoriser la recommandation de votre application dans le WindowsStore, vous devez également inclure des images promotionnelles dans la soumission de votre application. Pour plus de détails et de recommandations, consultez la section [Images promotionnelles](app-screenshots-and-images.md#promotional-images).
 
--   **Générer une seule version de votre application, et non pas une version gratuite et une version payante distincte**
+-   **Générer une seule version de votre application, plutôt qu’une version gratuite et une version payante distincte**
 
-    Au lieu de publier une version gratuite et une version payante distinctes de la même application, proposez une version d’évaluation gratuite de votre application payante ou proposez-la sous forme d’une application gratuite avec la possibilité d’effectuer des achats dans l’application pour ajouter des fonctionnalités avancées. Ainsi, tous les utilisateurs (aussi bien ceux qui sont intéressés par des téléchargements gratuits que ceux qui sont peut-être prêts à effectuer un achat) auront accès à une seule et même description de votre application.
+    Au lieu de publier une version gratuite et une version payante distinctes de la même application, proposez un essai gratuit de votre application payante, ou proposez une application gratuite et offrez des extensions pour permettre aux clients d’acheter des fonctionnalités avancées. Ainsi, tous les utilisateurs (aussi bien ceux qui sont intéressés par des téléchargements gratuits que ceux qui sont peut-être prêts à effectuer un achat) auront accès à une seule et même description de votre application.
 
 -   **Activer des filtres pour les applications comportant du contenu classifié 16+ et 18+**
 

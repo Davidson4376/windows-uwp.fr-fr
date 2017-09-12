@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: A37ADD4A-2187-4767-9C7D-EDE8A90AA215
 title: Planification des performances
 description: "Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie."
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: d80ff77c380d8c4f03cb2ef415126cba46d77062
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d25620c0fc86f76b8c0d4de6e606250186b9ce37
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="planning-for-performance"></a>Planification des performances
 
@@ -85,7 +87,7 @@ Vous pouvez désormais utiliser vos objectifs de performances pour déterminer l
 -   Optimisez le temps d’analyse et de chargement ainsi que l’efficacité de la mémoire de chaque page de l'interface utilisateur de votre application (surtout la page d’accueil) en [optimisant votre balisage XAML](optimize-xaml-loading.md). Autrement dit, différez le chargement de l’interface utilisateur et du code jusqu’à ce que cela soit nécessaire.
 -   Pour [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705), faites en sorte que tous les éléments aient la même taille et utilisez autant de [techniques d'optimisation des commandes ListView et GridView](optimize-gridview-and-listview.md) que possible.
 -   Déclarez l’interface utilisateur sous forme de balisage, pouvant être chargé et réutilisé sous forme de segments par l’infrastructure, au lieu de vouloir à tout prix la construire dans le code.
--   Réduisez les éléments de l’interface utilisateur jusqu’à ce que l’utilisateur en ait besoin. Consultez la propriété [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992).
+-   Différez la création des éléments de l’interface utilisateur jusqu’à ce que l’utilisateur en ait besoin. Consultez l’attribut [**x:Load**](../xaml-platform/x-load-attribute.md).
 -   Préférez les transitions et les animations thématiques aux animations dans une table de montage. Pour plus d’informations, voir [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/Mt187350). Rappelez-vous que les animations dans une table de montage nécessitent que l’affichage soit en permanence mis à jour et que le processeur et les transformations graphiques restent actifs. Pour préserver la batterie, ne lancez pas d’animations si l’utilisateur n’interagit pas avec l’application.
 -   Les images doivent être chargées à une taille appropriée à la vue dans laquelle vous les présentez, à l’aide de la méthode [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210).
 
@@ -195,4 +197,3 @@ Si des modifications sont nécessaires, faites-les, puis revenez à l’instrume
 ## <a name="optimizing"></a>Optimisation
 
 Optimisez uniquement les chemins de code critiques en termes de performances, c’est-à-dire ceux qui occupent le plus de temps. Le profilage vous indiquera quels sont ces chemins. Il y a souvent un compromis à faire entre créer une application respectueuse des meilleures pratiques de conception et écrire du code qui s’exécute de façon optimale. En règle générale, il vaut mieux privilégier la productivité du développeur et la qualité de la conception pour les aspects de l’application où les performances ne sont pas essentielles.
-

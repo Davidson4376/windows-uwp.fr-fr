@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 8c41f85c7d49d9019a2dc3a94242271a6fa9eb9a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: bc0cfc468613429d7989c9c0d93bd98246c0195b
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/26/2017
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Traiter des images multimédias avec MediaFrameReader
 
@@ -156,7 +158,48 @@ La classe d’assistance **FrameRenderer** implémente les méthodes suivantes.
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetFrameRenderer)]
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources"></a>Utiliser MultiSourceMediaFrameReader pour obtenir des images corrélées dans le temps à partir de plusieurs sources
+À partir de Windows10, version1607, vous pouvez utiliser [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.multisourcemediaframereader) pour recevoir des images corrélées dans le temps à partir de plusieurs sources. Cette API facilite le traitement qui nécessite des images provenant de plusieurs sources et prises dans un court intervalle de temps, comme l'utilisation de la classe [**DepthCorrelatedCoordinateMapper**](https://docs.microsoft.com/en-us/uwp/api/windows.media.devices.core.depthcorrelatedcoordinatemapper). Une limitation de l’utilisation de cette nouvelle méthode réside dans le fait que les événements déclenchés à l’arrivée des images sont uniquement déclenchés à la cadence de la source de capture plus lente. Les images supplémentaires provenant de sources plus rapides seront supprimées. En outre, étant donné que le système s'attend à ce que les images arrivent de sources différentes à différentes cadences, il ne détecte pas automatiquement si une source a cessé complètement de générer des images. L’exemple de code de cette section montre comment utiliser un événement pour créer votre propre logique de délai d’expiration qui sera appelée si des images corrélées n'arrivent pas dans une limite de temps définie par l'application.
+
+Les étapes d’utilisation de [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.multisourcemediaframereader) sont similaires aux étapes d’utilisation de [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) décrites précédemment dans cet article. Cet exemple utilise une source de couleur et une source de profondeur. Déclarez des variables de chaîne pour stocker les ID de source d’images multimédias qui seront utilisés pour sélectionner des images à partir de chaque source. Déclarez ensuite un [**ManualResetEventSlim**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim?view=netframework-4.7), un [**CancellationTokenSource**](https://msdn.microsoft.com/library/system.threading.cancellationtokensource.aspx)et un [**EventHandler**](https://msdn.microsoft.com/library/system.eventhandler.aspx) qui seront utilisés pour implémenter la logique de délai d’expiration pour cet exemple. 
+
+[!code-cs[MultiFrameDeclarations](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameDeclarations)]
+
+À l’aide des techniques décrites précédemment dans cet article, recherchez un [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) qui inclut les sources de couleur et de profondeur requises pour cet exemple de scénario. Après avoir sélectionné le groupe de sources d’images souhaité, récupérez le [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) pour chaque source d’image.
+
+[!code-cs[SelectColorAndDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSelectColorAndDepth)]
+
+Créez et initialisez un objet **MediaCapture**, en transmettant le groupe de sources d’images sélectionné dans les paramètres d’initialisation.
+
+[!code-cs[MultiFrameInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameInitMediaCapture)]
+
+Après avoir initialisé l'objet **MediaCapture**, récupérez les objets [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource) pour les appareils photo couleur et de profondeur. Stockez l’ID de chaque source afin de pouvoir sélectionner l’image arrivante pour la source correspondante.
+
+[!code-cs[GetColorAndDepthSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetColorAndDepthSource)]
+
+Créez et initialisez le **MultiSourceMediaFrameReader** en appelant [**CreateMultiSourceFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture#Windows_Media_Capture_MediaCapture_CreateMultiSourceFrameReaderAsync_Windows_Foundation_Collections_IIterable_Windows_Media_Capture_Frames_MediaFrameSource__) et en transmettant un tableau de sources d’images que le lecteur utilisera. Inscrivez un gestionnaire d’événements pour l'événement [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_FrameArrived). Cet exemple crée une instance de la classe d'assistance **FrameRenderer** décrite précédemment dans cet article pour restituer les images vers un contrôle **Image**. Démarrez le lecteur d'images en appelant [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_StartAsync).
+
+Inscrivez un gestionnaire d'événements pour l'événement **CorellationFailed** déclaré précédemment dans cet exemple. Nous signalerons cet événement si l'une des sources d’images multimédias utilisées cesse de générer des images. Pour finir, appelez [**Task.Run**](https://msdn.microsoft.com/en-us/library/hh195051.aspx) pour appeler la méthode d'assistance de délai d'expiration, **NotifyAboutCorrelationFailure**, sur un thread distinct. L’implémentation de cette méthode est illustrée plus loin dans cet article.
+
+[!code-cs[InitMultiFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMultiFrameReader)]
+
+L'événement **FrameArrived** est déclenché chaque fois qu’une nouvelle image est disponible à partir de l'ensemble des sources d’images multimédias gérées par le **MultiSourceMediaFrameReader**. Cela signifie que l’événement sera déclenché selon la cadence de la source multimédia la plus lente. Si une source produit plusieurs images dans le temps que met une source plus lente à produire une image, les images supplémentaires provenant de la source rapide seront supprimées. 
+
+Obtenez le [**MultiSourceMediaFrameReference**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference) associé à l’événement en appelant [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_TryAcquireLatestFrame). Obtenez le **MediaFrameReference** associé à chaque source d’images multimédia en appelant [**TryGetFrameReferenceBySourceId**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference#Windows_Media_Capture_Frames_MultiSourceMediaFrameReference_TryGetFrameReferenceBySourceId_System_String_), en transmettant les chaînes d’identification stockées lorsque le lecteur d’images a été initialisé.
+
+Appelez la méthode [**Set**](https://msdn.microsoft.com/library/system.threading.manualreseteventslim.set.aspx) de l'objet **ManualResetEventSlim** pour signaler l'arrivée des images. Nous vérifierons cet événement dans la méthode **NotifyCorrelationFailure** qui s’exécute dans un thread distinct. 
+
+Pour finir, effectuez tout traitement requis sur les images multimédias corrélées dans le temps. Cet exemple affiche simplement l'image de la source de profondeur.
+
+[!code-cs[MultiFrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameArrived)]
+
+La méthode d'assistance **NotifyCorrelationFailure** a été exécutée sur un thread distinct, après le démarrage du lecteur d’images. Dans cette méthode, vérifiez si l’événement déclenché par la réception d'une image a été signalé. N’oubliez pas que, dans le gestionnaire **FrameArrived**, nous définissons cet événement à chaque arrivée d'un groupe d'images corrélées. Si l’événement n’a pas été signalé pour une période de temps définie par l’application - 5secondes est une valeur raisonnable - et que la tâche n’a pas été annulée avec **CancellationToken**, il est probable qu’une des sources d’images multimédias ait cessé de lire les images. Dans ce cas, vous souhaiterez généralement arrêter le lecteur d’images et déclencher l'événement **CorrelationFailed** défini par l'application. Dans le gestionnaire de cet événement, vous pouvez arrêter le lecteur d’images et nettoyer ses ressources associées comme indiqué précédemment dans cet article.
+
+[!code-cs[NotifyCorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetNotifyCorrelationFailure)]
+
+[!code-cs[CorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCorrelationFailure)]
+
+## <a name="related-topics"></a>Rubriques associées
 
 * [Appareil photo](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)

@@ -6,34 +6,37 @@ ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
 label: Show multiple views for an app
 template: detail.hbs
 op-migration-status: ready
-ms.author: jimwalk
-ms.date: 02/08/2017
+ms.author: mijacobs
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 87f3d5e75b361d1ba9d2c304e58542803da66cd4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 629e6b4bc2b192f5e81bf49e2cc4c18fbd9a0d54
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="show-multiple-views-for-an-app"></a>Afficher plusieurs vues d’une application
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Vous pouvez aider les utilisateurs à accroître leur productivité en leur permettant d’afficher plusieurs parties indépendantes de votre application dans des fenêtres distinctes. Une application de courrier électronique est un exemple classique dans lequel la principale interface utilisateur affiche la liste des messages électroniques et un aperçu du message sélectionné. Toutefois, les utilisateurs peuvent également ouvrir les messages dans des fenêtres séparées et les afficher côte à côte.
+Aidez les utilisateurs à accroître leur productivité en leur permettant d’afficher des parties indépendantes de votre application dans des fenêtres distinctes. Quand vous créez plusieurs fenêtres pour une application, chacune d’elles se comporte de manière indépendante. La barre des tâches répertorie chaque fenêtre séparément. Les utilisateurs peuvent déplacer, redimensionner, afficher et masquer des fenêtres d’application indépendamment et ils peuvent basculer d’une fenêtre à une autre comme s’il s’agissait d’applications distinctes. Chaque fenêtre opère dans son propre thread.
 
-<div class="important-apis" >
-<b>API importantes</b><br/>
-<ul>
-<li>[**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094)</li>
-<li>[**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)</li>
-</ul>
-</div> 
+![Mode filaire illustrant une application avec plusieurs fenêtres](images/multi-view.png)
 
-Quand vous créez plusieurs fenêtres pour une application, chacune d’elles se comporte de manière indépendante. La barre des tâches répertorie chaque fenêtre séparément. Les utilisateurs peuvent déplacer, redimensionner, afficher et masquer des fenêtres d’application indépendamment et ils peuvent basculer d’une fenêtre à une autre comme s’il s’agissait d’applications distinctes. Chaque fenêtre opère dans son propre thread.
+> **API importantes**: [**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094), [**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
+
+## <a name="when-should-an-app-use-multiple-views"></a>Quand une application doit-elle utiliser plusieurs vues?
+Il existe de nombreux scénarios qui peuvent bénéficier de plusieurs vues. Voici quelques exemples:
+ - Une application de messagerie qui permet aux utilisateurs d’afficher une liste des messages reçus tout en rédigeant un e-mail
+ - Une application de carnet d’adresses qui permet aux utilisateurs de comparer les informations de contact de plusieurs personnes côte à côte
+ - Une application de lecteur de musique qui permet aux utilisateurs de voir ce qui est en cours de lecture tout en naviguant dans une liste d’autres morceaux disponibles
+ - Une application de prise de notes qui permet aux utilisateurs de copier des informations à partir d’une page de notes sur une autre
+ - Une application de lecture qui permet aux utilisateurs d’ouvrir plusieurs articles à lire plus tard, après avoir pu accéder à tous les gros titres de l'actualité
 
 ## <a name="what-is-a-view"></a>Qu’est-ce qu’une vue?
-
 
 Une vue d’application est l’association de type 1:1 d’un thread et d’une fenêtre que l’application utilise pour afficher le contenu. Elle est représentée par un objet [**Windows.ApplicationModel.Core.CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017).
 
@@ -45,8 +48,9 @@ De même, l’infrastructure XAML enveloppe l’objet [**CoreWindow**](https://m
 
 ## <a name="show-a-new-view"></a>Afficher une nouvelle vue
 
+Chaque disposition d'application est unique, mais nous vous recommandons d'inclure un bouton «nouvelle fenêtre» dans un emplacement prévisible, comme le coin supérieur droit du contenu, qui pourra être ouvert dans une nouvelle fenêtre. Envisagez également d’inclure une option de menu contextuel pour «Ouvrir dans une nouvelle fenêtre».
 
-Avant d’aller plus loin, examinons les étapes nécessaires pour créer une vue. Ici, la nouvelle vue est lancée en réponse à un clic sur un bouton.
+Examinons les étapes nécessaires pour créer une nouvelle vue. Ici, la nouvelle vue est lancée suite à un clic sur un bouton.
 
 ```csharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -131,7 +135,7 @@ Les autres vues, notamment les vues que vous avez créées en appelant [**Create
 
 ## <a name="switch-from-one-view-to-another"></a>Basculer d’une vue à une autre
 
-Vous devez permettre à l’utilisateur de revenir à la fenêtre principale à partir d’une fenêtre secondaire. Pour ce faire, utilisez la méthode [**ApplicationViewSwitcher.SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097). Vous appelez cette méthode à partir du thread de la fenêtre que vous quittez et vous transmettez l’ID de vue de la fenêtre vers laquelle vous basculez.
+Pensez à un moyen de permettre à l’utilisateur de revenir à la fenêtre principale à partir de sa fenêtre parent. Pour ce faire, utilisez la méthode [**ApplicationViewSwitcher.SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097). Vous appelez cette méthode à partir du thread de la fenêtre que vous quittez et vous transmettez l’ID de vue de la fenêtre vers laquelle vous basculez.
 
 ```csharp
 await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
@@ -139,10 +143,16 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
 
 Lorsque vous utilisez [**SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097), vous pouvez choisir si vous voulez fermer la fenêtre initiale et la supprimer de la barre des tâches en spécifiant la valeur de [**ApplicationViewSwitchingOptions**](https://msdn.microsoft.com/library/windows/apps/dn281105).
 
- 
+## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
+
+* Fournissez un point d’entrée clair à la vue secondaire en utilisant le glyphe «ouvrir une nouvelle fenêtre».
+* Communiquez l’objectif de la vue secondaire aux utilisateurs.
+* Assurez-vous que votre application est totalement opérationnelle dans une vue unique et que les utilisateurs ouvriront une vue secondaire uniquement pour des raisons pratiques.
+* N’utilisez pas la vue secondaire pour fournir des notifications ou d'autres éléments visuels temporaires.
+
+## <a name="related-topics"></a>Rubriques associées
+
+* [ApplicationViewSwitcher](https://msdn.microsoft.com/library/windows/apps/dn281094)
+* [CreateNewView](https://msdn.microsoft.com/library/windows/apps/dn297278)
 
  
-
-
-
-

@@ -2,24 +2,24 @@
 author: mcleanbyron
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: "Servez-vous des exemples de code Python présentés dans cette section pour en savoir plus sur l’utilisation de l’API de soumission du Windows Store."
-title: "Exemples de code Python pour l’API de soumission"
+title: "Exemple de code Python: soumissions d'applications, d'extensions et de versions d’évaluation"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp, API de soumission du Windows Store, exemples de code
-ms.openlocfilehash: a46907ecfea1de60b8a32cdaea7076f056a41ff5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows10, uwp, API de soumission au Windows Store, exemples de code, python
+ms.openlocfilehash: 01d40aa31531aa4d5b75f02627bc7e6234963c7e
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/09/2017
 ---
-# <a name="python-code-examples-for-the-submission-api"></a>Exemples de code Python pour l’API de soumission
+# <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Exemple de code Python: soumissions d'applications, d'extensions et de versions d’évaluation
 
-Cet article fournit des exemples de code Python pour l’utilisation de l’*API de soumission du Windows Store*. Pour plus d’informations sur cette API, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
+Cet article fournit des exemples de code Python qui décrivent comment utiliser l’[API de soumission au Windows Store](create-and-manage-submissions-using-windows-store-services.md) pour les tâches suivantes:
 
-Ces exemples de code illustrent les tâches suivantes:
-
-* [Obtenir un jeton d’accès Azure AD](#token)
+* [Obtenir un jeton d’accès AzureAD](#token)
 * [Créer une extension](#create-add-on)
 * [Créer une version d’évaluation du package](#create-package-flight)
 * [Créer une soumission d’applications](#create-app-submission)
@@ -36,7 +36,7 @@ L’exemple suivant indique comment [obtenir un jeton d’accès AzureAD](create
 <span id="create-add-on" />
 ## <a name="create-an-add-on"></a>Créer une extension
 
-L’exemple suivant indique comment [créer](create-an-add-on.md) et [supprimer](delete-an-add-on.md) une extension (qu’on appelle également produit in-app, ou PIA).
+L’exemple suivant indique comment [créer](create-an-add-on.md) et [supprimer](delete-an-add-on.md) une extension.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
 

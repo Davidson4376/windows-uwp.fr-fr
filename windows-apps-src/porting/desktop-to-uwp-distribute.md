@@ -1,83 +1,187 @@
 ---
 author: normesta
-Description: "Distribuer votre application UWP convertie à l’aide du pont du bureau vers UWP"
+Description: "Distribuer une application de bureau empaquetée (Pont du bureau)"
 Search.Product: eADQiWindows 10XVcnh
-title: Distribution via le pont du bureau vers UWP
+title: "Publiez votre application de bureau empaquetée dans un WindowsStore ou chargez-la de manière indépendante sur un ou plusieurs périphériques."
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
-ms.openlocfilehash: ee38bd22b6d4737cf5bb64eb489365e3f83efd53
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 24a005309271a91d669322787fb8d341e1a6d6ad
+ms.sourcegitcommit: 77bbd060f9253f2b03f0b9d74954c187bceb4a30
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/11/2017
 ---
-# <a name="desktop-to-uwp-bridge-distribute"></a>Pont du bureau vers UWP: distribuer
+# <a name="distribute-a-packaged-desktop-app-desktop-bridge"></a>Distribuer une application de bureau empaquetée (Pont du bureau)
 
-Pour déployer une application convertie, vous disposez de troisméthodes principales: le WindowsStore, le chargement indépendant et l’inscription de fichiers libres.  
+Publiez votre application de bureau empaquetée dans un WindowsStore ou chargez-la de manière indépendante sur un ou plusieurs périphériques.  
 
-## <a name="windows-store"></a>Windows Store
+> [!NOTE]
+> Avez-vous un plan pour la méthode de transition des utilisateurs vers votre application empaquetée? Avant de distribuer votre application, consultez la section [Migrer les utilisateurs vers votre application Pont du bureau](#transition-users) de ce guide où vous trouverez quelques idées.
 
-Le Windows Store est la méthode la plus pratique pour rendre votre application accessible aux clients. Pour commencer, renseignez le formulaire dans [Transférez vos applications et vos jeux vers le WindowsStore avec Desktop Bridge](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft vous contactera pour démarrer le processus d’intégration.
+## <a name="distribute-your-app-by-publishing-it-to-the-windows-store"></a>Distribuer votre application en la publiant sur le WindowsStore
 
-Notez que, pour transférer l’application ou le jeu vers le Windows Store, vous devez être son développeur et/ou son éditeur. En tant que tel, vous devez vous assurer que votre nom et votre adresse e-mail correspondent avec le site Web soumis dans l’URL ci-dessous. Cela nous permet de valider votre statut de développeur et/ou d’éditeur.
+Le [WindowsStore](https://www.microsoft.com/store/apps) est une méthode pratique pour rendre votre application accessible aux clients.
 
-## <a name="sideloading"></a>Chargement indépendant
+<div style="float: left; padding: 10px">
+    ![Icône du WindowsStore](images/desktop-to-uwp/store.png)
+</div>
+Publiez votre application dans cette boutique pour atteindre un public plus large. En outre, les clients professionnels peuvent acquérir votre application pour la distribuer en interne au sein de leur organisation par le biais du [WindowsStore pour entreprises](https://www.microsoft.com/business-store).
 
-Le chargement indépendant simplifie le déploiement sur plusieurs ordinateurs. Il est particulièrement utile lorsque vous souhaitez contrôler de plus près la distribution des applications d’entreprise/métier sans avoir à vous inquiéter du certificat du Windows Store.
+Si vous prévoyez de publier dans le WindowsStore, et si vous n’avez pas encore pris contact avec nous, remplissez [ce formulaire](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge) et Microsoft reviendra vers vous pour démarrer le processus d’intégration.
 
-Avant de déployer votre application via un chargement indépendant, vous devez la signer avec un certificat. Pour plus d’informations sur la création d’un certificat, voir [Signer votre package d’application Windows](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter#deploy-your-converted-appx).
+Vous n’êtes pas obligé de signer votre application avant de la soumettre au WindowsStore.
 
-Voici comment vous importez un certificat que vous avez créé précédemment. Vous pouvez importer le certificat directement à l’aide de CERTUTIL, ou l’installer à partir d’un package d’application Windows que vous avez signé, comme le fera le client.
+>[!IMPORTANT]
+> Si vous prévoyez de publier votre application sur le Windows Store, assurez-vous que votre application fonctionne correctement sur les appareils qui exécutent Windows10 S. Il s'agit d'une condition requise par le Windows store. Voir [Tester votre application pour Windows10 S](desktop-to-uwp-test-windows-s.md).
 
-Pour installer le certificat à l’aide de CERTUTIL, exécutez la commande suivante à partir d’une invite de commandes administrateur:
+## <a name="distribute-your-app-without-placing-it-onto-the-windows-store"></a>Distribuer votre application sans la mettre sur le WindowsStore
 
-```cmd
-Certutil -addStore TrustedPeople <testcert.cer>
+Si vous préférez distribuer votre application sans passer par le WindowsStore, sachez qu’il est possible de distribuer manuellement des applications pour un ou plusieurs périphériques.
+
+Ceci peut être utile si vous souhaitez contrôler davantage l’expérience de distribution ou si vous ne voulez pas vous impliquer dans le processus de certification du WindowsStore.
+
+Pour distribuer votre application à d’autres appareils sans passer par le WindowsStore, vous devez obtenir un certificat, signer votre application à l’aide de ce certificat, puis charger de manière indépendante votre application sur ces appareils.
+
+Vous pouvez [créer un certificat](../packaging/create-certificate-package-signing.md) ou en obtenir un auprès d’un fournisseur populaire, tel que [Verisign](https://www.verisign.com/).
+
+Si vous envisagez de distribuer votre application sur des périphériques exécutant Windows10 S, votre application doit être signée par le WindowsStore afin de passer par le processus de soumission de ce dernier, préalable à la distribution de votre application sur ces appareils.
+
+Si vous créez un certificat, vous devez l’installer dans le magasin de certificats **Racine approuvée** ou **Personnes autorisées** de chaque appareil exécutant votre application. Si vous obtenez un certificat auprès d’un fournisseur populaire, vous n’aurez rien à installer sur les autres systèmes, hormis votre application.  
+
+> [!IMPORTANT]
+> Assurez-vous que le nom de l’éditeur mentionné sur votre certificat correspond à celui de l’éditeur de votre application.
+
+Pour signer votre application à l’aide d’un certificat, voir [Signer un package d’application à l’aide de SignTool](../packaging/sign-app-package-using-signtool.md).
+
+Pour charger votre application sur d’autres périphériques, consultez [Chargement indépendant d’applications métier dans Windows10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10).
+
+**Vidéos**
+
+|Publier votre application dans le WindowsStore |Distribuer une application d’entreprise  |
+|---|---|
+|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Windows-Store-Publication-3cWyG5WhD_5506218965"      width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Distribution-for-Enterprise-Apps-XJ5Hd5WhD_1106218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
+
+<span id="transition-users" />
+## <a name="transition-users-to-your-desktop-bridge-app"></a>Migrer les utilisateurs vers votre application Pont du bureau
+
+Avant de distribuer votre application, envisagez d’ajouter quelques extensions à votre manifeste de package pour aider les utilisateurs à prendre l’habitude d’utiliser votre application Pont du bureau. Voici certaines choses que vous pouvez faire.
+
+* Pointez les vignettes de l’écran de démarrage existantes et les boutons de la barre des tâches vers votre application Pont du bureau.
+* Associez votre application empaquetée à un ensemble de types de fichiers.
+* Autorisez votre application Pont du bureau à ouvrir certains types de fichiers par défaut.
+
+Pour obtenir la liste complète des extensions et des conseils pour leur utilisation, voir [Migration des utilisateurs vers votre application](desktop-to-uwp-extensions.md#transition-users-to-your-app).
+
+Pensez également à ajouter du code à votre application Pont du bureau chargée d’accomplir ces tâches:
+
+* Migrez les données utilisateur associées à votre application de bureau dans les dossiers appropriés de votre application Pont du bureau.
+* Permet aux utilisateurs de désinstaller la version de bureau de votre application.
+
+Examinons chacune de ces tâches. Nous allons commencer par la migration des données utilisateur.
+
+### <a name="migrate-user-data"></a>Migrer les données utilisateur
+
+Si vous allez ajouter du code qui effectuera la migration des données utilisateur. Il est préférable de n’exécuter ce code que lors du démarrage initial de l’application. Avant de migrer les données des utilisateurs, affichez une boîte de dialogue expliquant à l’utilisateur ce qui est en train de se produire, les raisons pour lesquelles cette action est recommandée, et ce qui va advenir des données existantes.
+
+Voici un exemple montrant comment vous pourriez procéder dans une application Pont du bureau .NET.
+
+```csharp
+private void MigrateUserData()
+{
+    String sourceDir = Environment.GetFolderPath
+        (Environment.SpecialFolder.ApplicationData) + "\\AppName";
+
+    if (sourceDir != null)
+    {
+        String migrateMessage =
+            "Would you like to migrate your data from the previous version of this app?";
+
+        DialogResult migrateResult = MessageBox.Show
+            (migrateMessage, "Data Migration", MessageBoxButtons.YesNo);
+
+        if (migrateResult.Equals(DialogResult.Yes))
+        {
+            String destinationDir =
+                Windows.Storage.ApplicationData.Current.LocalFolder.Path + "\\AppName";
+
+            Process process = new Process();
+            process.StartInfo.FileName = "robocopy.exe";
+            process.StartInfo.Arguments = "%LOCALAPPDATA%\\AppName " + destinationDir + " /move";
+            process.StartInfo.CreateNoWindow = true;
+            process.Start();
+            process.WaitForExit();
+
+            if (process.ExitCode > 1)
+            {
+                //Migration was unsuccessful -- you can choose to block/retry/other action
+            }
+        }
+    }
+}
 ```
 
-Pour importer le certificat à partir du package d’application Windows, comme le ferait un client:
+### <a name="uninstall-the-desktop-version-of-your-app"></a>Désinstallez la version bureau de votre application
 
-1.    Dans l’Explorateur de fichiers, cliquez avec le bouton droit sur un package d’application Windows que vous avez signé avec un certificat de test, puis choisissez **Propriétés** dans le menu contextuel.
-2.    Cliquez ou appuyez sur l’onglet **Signatures numériques**.
-3.    Cliquez ou appuyez sur le certificat et choisissez **Détails**.
-4.    Cliquez ou appuyez sur **Afficher le certificat**.
-5.    Cliquez ou appuyez sur **Installer le certificat**.
-6.    Dans le groupe **Emplacement de stockage**, sélectionnez **Ordinateur local**.
-7.    Cliquez ou appuyez sur **Suivant** et sur **OK** pour confirmer la boîte de dialogue UAC.
-8.    Dans l’écran suivant de l’Assistant Importation du certificat, remplacez l’option sélectionnée par **Placer tous les certificats dans le magasin suivant**.
-9.    Cliquez ou appuyez sur **Parcourir**. Dans la fenêtre Sélectionner un magasin de certificats, faites défiler et sélectionnez **Personnes autorisées**, puis cliquez ou appuyez sur **OK**.
-10.    Cliquez ou appuyez sur **Suivant**. Un nouvel écran s’affiche. Cliquez ou appuyez sur **Terminer**.
-11.    Une boîte de dialogue de confirmation doit s’afficher. Si tel est le cas, cliquez sur **OK**. Si une autre boîte de dialogue indique que le certificat pose problème, vous devrez peut-être résoudre les problèmes liés au certificat.
+Il est préférable de ne pas désinstaller l’application de bureau des utilisateurs sans leur permission. Affichez une boîte de dialogue demandant l’autorisation de l’utilisateur. Les utilisateurs peuvent décider de conserver la version bureau de votre application. Dans ce cas de figure, vous devrez décider si vous souhaitez bloquer l’utilisation de l’application de bureau ou prendre en charge la cohabitation des deux applications.
 
-Remarque: Pour que Windows approuve le certificat, ce dernier doit se trouver dans le nœud **Certificats (Ordinateur local)&gt; Autorités de certification racines de confiance&gt; Certificats** ou dans le nœud **Certificats (Ordinateur local)&gt; Personnes autorisées&gt; Certificats**. Seuls les certificats figurant à ces deux emplacements peuvent valider les certificats de confiance dans le contexte de l’ordinateur local. Autrement, un message d’erreur ressemblant à la chaîne suivante s’affiche:
+Voici un exemple montrant comment vous pourriez procéder dans une application Pont du bureau .NET.
 
-```CMD
-"Add-AppxPackage : Deployment failed with HRESULT: 0x800B0109, A certificate chain processed,
-but terminated in a rootcertificate which is not trusted by the trust provider.
-(Exception from HRESULT: 0x800B0109) error 0x800B0109: The root certificate of the signature
-in the app package must be trusted."
+Pour voir le contexte complet de cet extrait de code, consultez le fichier **MainWindow.cs** de cet exemple [Visionneuse d’images WPF avec transition/migration/désinstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition).
+
+```csharp
+private void RemoveDesktopApp()
+{              
+    //Typically, you can find your uninstall string at this location.
+    String uninstallString = (String)Microsoft.Win32.Registry.GetValue
+        (@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion" +
+         @"\Uninstall\{7AD02FB8-B85E-44BC-8998-F4803BA5A0E3}\", "UninstallString", null);
+
+    //Detect if the previous version of the Desktop App is installed.
+    if (uninstallString != null)
+    {
+        String uninstallMessage = "To have the best experience, consider uninstalling the "
+            +" previous version of this app. Would you like to do that now?";
+
+        DialogResult uninstallResult = MessageBox.Show
+            (uninstallMessage, "Uninstall the previous version", MessageBoxButtons.YesNo);
+
+        if (uninstallResult.Equals(DialogResult.Yes))
+        {
+                    string[] uninstallArgs = uninstallString.Split(' ');
+
+            Process process = new Process();
+            process.StartInfo.FileName = uninstallArgs[0];
+            process.StartInfo.Arguments = uninstallArgs[1];
+            process.StartInfo.CreateNoWindow = true;
+
+            process.Start();
+            process.WaitForExit();
+
+            if (process.ExitCode != 0)
+            {
+                //Uninstallation was unsuccessful - You can choose to block the app here.
+            }
+        }
+    }
+
+}
 ```
 
-Maintenant que le certificat a été approuvé, il existe 2façons d’installer le package: par le biais de PowerShell ou en double-cliquant simplement sur le fichier de package d’application Windows pour l’installer.  Pour effectuer l’installation par le biais de PowerShell, exécutez l’applet de commande suivante:
+### <a name="video"></a>Vidéo
 
-```powershell
-Add-AppxPackage <MyApp>.appx
-```
+<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Transition-Taskbar-Pins-Start-Tiles-File-Type-Associations-and-Protocol-Handlers-MD5mv5WhD_2406218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
-### <a name="loose-file-registration"></a>Inscription de fichiers libres
+## <a name="next-steps"></a>Étapes suivantes
 
-L’inscription de fichiers libres est utile à des fins de débogage quand les fichiers sont placés sur un disque dans un emplacement auquel vous pouvez facilement accéder et que vous pouvez facilement mettre à jour. De plus, elle ne nécessite pas de signature ou de certificat.  
+**Trouver des réponses aux questions spécifiques**
 
-Pour déployer votre application pendant le développement, exécutez l’applet de commande PowerShell suivante:
+Notre équipe contrôle ces [balises StackOverflow](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
 
-```Add-AppxPackage –Register AppxManifest.xml```
+**Envoyer vos commentaires concernant cet article**
 
-Pour mettre à jour les fichiers .exe ou .dll de votre application, remplacez simplement les fichiers existants dans votre package par les nouveaux, augmentez le nombre de versions dans AppxManifest.xml, puis exécutez à nouveau la commande ci-dessus.
-
-Points à prendre en considération:
-
-* Tout lecteur sur lequel vous installez votre application convertie doit être formaté au format NTFS.
-* Une application convertie s’exécute toujours en tant qu’utilisateur interactif.
+Utilisez la section remarques ci-dessous.

@@ -3,15 +3,17 @@ author: jnHs
 Description: "Prenez connaissance des déclarations fiscales envoyées par Microsoft, notamment à qui elles sont envoyées et à quelle date."
 title: "Présentation des déclarations fiscales de l’IRS envoyées par Microsoft"
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
-ms.openlocfilehash: 068a940a54048b10e8f66bd3267b3a22c42beb50
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: bffb666184f52e6e6491d8651414ecbc269352b8
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Présentation des déclarations fiscales de l’IRS envoyées par Microsoft
 
@@ -26,7 +28,8 @@ Nous expliquons ci-dessous en quoi consistent ces déclarations, notamment à qu
 |1099-MISC, 1099-K | Concerne les ventes réalisées et/ou les paiements reçus dans le cadre de vos activités sur les places de marché Microsoft. | Les versions imprimées des déclarations sont envoyées par courrier au plus tard le **31janvier**, et les copies.pdf sont mises en ligne dans le Centre de développement (**Tableau de bord> Paramètres du compte> Profil fiscal**) à la même date. |
 |1042-S | Concerne les paiements que vous avez reçus et qui sont imposables aux États-Unis. | Les versions imprimées des déclarations sont envoyées par courrier au plus tard le **15mars**, et les copies.pdf sont mises en ligne dans le Centre de développement (**Tableau de bord> Paramètres du compte> Profil fiscal**) à la même date. |
 
-> **Remarque** L’adresse figurant sur les déclarations fiscales de l’IRS est celle indiquée dans votre [profil fiscal](setting-up-your-payout-account-and-tax-forms.md#tax-forms). Si vous avez changé d’adresse, n’oubliez pas de modifier l’adresse indiquée dans votre **profil fiscal**.
+> [!NOTE]
+> L’adresse figurant sur les déclarations fiscales de l’IRS est celle indiquée dans votre [profil fiscal](setting-up-your-payout-account-and-tax-forms.md#tax-forms). Si vous avez changé d’adresse, n’oubliez pas de modifier l’adresse indiquée dans votre **profil fiscal**.
 
 ## <a name="for-developers-located-in-the-united-states"></a>Pour les développeurs résidant aux États-Unis
 
@@ -68,7 +71,7 @@ Numéro EIN: \*\*\*\*\*4442<br>
      <th> Je dois recevoir cette déclaration</th>
   </tr>
   <tr> 
-     <td valign="top">J’ai reçu **au moins 600dollars en paiement** de publicités dans des applications (Microsoft Advertising) durant l’année fiscale applicable.</td>
+     <td valign="top">J’ai reçu **au moins 600dollars en paiement** de publicités dans des applications durant l’exercice fiscal applicable.</td>
     <td valign="top">**1099-MISC**:<br>
 Payeur: Microsoft Online Inc<br>
 Numéro EIN: \*\*\*\*\*0505<br>
@@ -76,7 +79,7 @@ Numéro EIN: \*\*\*\*\*0505<br>
 **Important:** Certaines entités commerciales ne recevront pas de déclarations 1099-MISC, quel que soit le montant des paiements reçus de la part de Microsoft.  Pour plus d’informations, consultez votre conseiller fiscal.  </td>
   </tr>
   <tr> 
-     <td valign="top">J’ai reçu **moins de 600dollars en paiement** de publicités dans des applications (Microsoft Advertising) durant l’année fiscale applicable.</td>
+     <td valign="top">J’ai reçu **moins de 600dollars en paiement** de publicités dans des applications durant l’exercice fiscal applicable.</td>
      <td valign="top">Aucune</td>
   </tr>
 </table>
@@ -123,4 +126,5 @@ Numéro EIN: \*\*\*\*\*0505<br>
 </table>
 
 
-> **Remarque** Si vous avez une question ou un problème concernant les **déclarations fiscales de l’IRS**, créez un [ticket de support](http://aka.ms/storesupport). Microsoft n’est pas en mesure de répondre aux questions relatives à votre situation fiscale spécifique. Pour les questions de cet ordre, consultez votre conseiller fiscal.
+> [!NOTE]
+> Si vous avez une question ou un problème concernant les **déclarations fiscales de l’IRS**, créez un [ticket de support](http://aka.ms/storesupport). Microsoft n’est pas en mesure de répondre aux questions relatives à votre situation fiscale spécifique. Pour les questions de cet ordre, consultez votre conseiller fiscal.

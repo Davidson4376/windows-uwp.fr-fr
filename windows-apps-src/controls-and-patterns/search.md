@@ -6,14 +6,19 @@ ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: b85d14b037fc65f10a6a24ed6c1a04b4be3ff6d5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 9a12e7490cc1cf7bd1aa65b694a3aeb345ba1128
+ms.sourcegitcommit: 45490bd85e6f8d247a041841d547ecac2ff48250
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/23/2017
 ---
 # <a name="search-and-find-in-page"></a>Recherche et recherche dans la page
 
@@ -21,12 +26,7 @@ translationtype: HT
 
 L’option de recherche est l’un des moyens les plus courants pour rechercher du contenu dans votre application. Les recommandations de cet article abordent différents aspects de l’expérience de recherche, les étendues de recherche, l’implémentation et des exemples de recherche en contexte.
 
-<div class="important-apis" >
-<b>API importantes</b><br/>
-<ul>
-<li>[**Classe AutoSuggestBox (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn633874)</li>
-</ul>
-</div>
+> **API importantes**: [classe AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/dn633874)
 
 ## <a name="elements-of-the-search-experience"></a>Aspects de l’expérience de recherche
 
@@ -207,25 +207,14 @@ La Recherche dans la page a un compteur de correspondances:
 -   Les visionneuses de documents, lecteurs et navigateurs, qui sont les types d’applications les plus susceptibles d’offrir la fonctionnalité de recherche dans la page, offrent à l’utilisateur une expérience d’affichage/lecture plein écran.
 -   La fonctionnalité de recherche dans la page est une fonctionnalité secondaire qui doit figurer dans une barre de commandes.
 
-Pour en savoir plus sur l’ajout de commandes à votre barre de commandes, voir [Barre de commandes](app-bars.md).
+Pour plus d’informations sur l’ajout de commandes à votre barre de commandes, voir [Barre de commandes](app-bars.md).
 
-<div class="microsoft-internal-note">
-## Liste de contrôle de globalisation et de localisation
-
-<table>
-<tr>
-<th>Espacement vertical</th><td>Utilisez les caractères non latins d’espacement vertical pour assurer un affichage correct des scripts non latins, y compris les nombres.</td>
-</tr>
-<tr>
-<th>Considérations bidirectionnelles</th><td>L’icône Loupe ne doit pas être affichée dans une forme en miroir en mode bidirectionnel.</td>
-</tr>
-</table>
-</div>
+ 
 
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [**Zone de suggestion automatique**](auto-suggest-box.md)
+* [Zone de suggestion automatique](auto-suggest-box.md)
 
 
  

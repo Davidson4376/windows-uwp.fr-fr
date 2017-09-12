@@ -6,14 +6,16 @@ ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
 label: Tile and icon assets
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 0d3b58b8ea03c3ba836078e507495beeebe74fb8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 54ad78d5799a96ddcec7b060704ee198e0bf8db5
+ms.sourcegitcommit: 9a1310468970c8d1ade0fb200126dff56ea8c9e1
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/14/2017
 ---
 # <a name="guidelines-for-tile-and-icon-assets"></a>Recommandations en matière de ressources de vignette et d’icône
 
@@ -123,7 +125,7 @@ Pour les vignettes larges, limitez la largeur de l’icône à 66% et la hauteur
 
 ![Ratios de dimensionnement d’une vignette large](images/assetguidance11.png)
 
-Pour les grandes vignettes, limitez la largeur et la hauteur de l’icône à 50% de la taille de la vignette:
+Pour les grandes vignettes, limitez la largeur de l’icône à 66% et la hauteur de l’icône à 50% de la taille de la vignette:
 
 ![Ratios de dimensionnement d’une grande vignette](images/assetguidance12.png)
 
@@ -181,24 +183,6 @@ Voici des recommandations de dimensionnement pour les ressources basées sur la 
 
 ![Dimensionnement des ressources basées sur la cible à l’échelle 100%](images/assetguidance23.png)
 
-**Ressources d’application utilisant un modèle sous forme d’icône**
-
-Le modèle sous forme d’icône (également connu sous le nom de modèle « IconWithBadge ») vous permet d’afficher une petite image au centre de la vignette. Windows 10 prend en charge le modèle à la fois sur les téléphones et sur les tablettes/ordinateurs de bureau. (Pour en savoir plus sur la création de vignettes sous forme d’icône, voir l’article [Modèles de vignette spéciaux](tiles-and-notifications-special-tile-templates-catalog.md).)
-
-Les applications qui utilisent un modèle sous forme d’icône, telles que les applications Messagerie, Téléphone et Windows Store, disposent de ressources basées sur la cible pouvant intégrer un badge (avec compteur dynamique). À l’instar des autres ressources basées sur la cible, aucun remplissage n’est nécessaire. Les ressources sous forme d’icône ne font pas partie du manifeste de l’application, mais d’une charge utile de vignettes dynamiques. Les ressources sont redimensionnées et centrées dans un conteneur de coefficient 3:2:
-
-![Dimensionnement des ressources avec et sans badge](images/assetguidance24.png)
-
-Pour les ressources carrées, un centrage automatique est effectué dans le conteneur:
-
-![Dimensionnement des ressources carrées, avec et sans badge](images/assetguidance25.png)
-
-Pour les ressources non carrées, un centrage horizontal/vertical automatique et un alignement de la largeur/hauteur sont effectués dans le conteneur:
-
-![Dimensionnement des ressources non carrées, avec et sans badge](images/assetguidance26a.png)
-
-![Dimensionnement des ressources non carrées, avec et sans badge](images/assetguidance26b.png)
-
 ## <a name="splash-screen-assets"></a>Ressources d’écran de démarrage
 
 
@@ -233,38 +217,217 @@ Si vous décidez de fournir des ressources à contraste élevé, vous devez incl
 
 Nous vous recommandons vivement de fournir au moins des ressources pour les facteurs d’échelle 100, 200 et 400. Si vous fournissez des ressources pour tous les facteurs d’échelle, l’expérience utilisateur sera optimale.
 
-**Ressources basées sur l’échelle**
+<br/>
 
-| Catégorie             | Nom d’élément      | À l’échelle 100 % | À l’échelle 125 % | À l’échelle 150 % | À l’échelle 200 % | À l’échelle 400 % |
-|----------------------|-------------------|---------------|---------------|---------------|---------------|---------------|
-| Petite                | Square71x71Logo   | 71 x 71         | 89 x 89         | 107 x 107       | 142 x 142       | 284 x 284       |
-| Moyenne               | Square150x150Logo | 150 x 150       | 188 x 188       | 225 x 225       | 300 x 300       | 600 x 600       |
-| Large                 | Square310x150Logo | 310 x 150       | 388 x 188       | 465 x 225       | 620 x 300       | 1 240 x 600      |
-| Grande (bureau uniquement) | Square310x310Logo | 310 x 310       | 388 x 388       | 465 x 465       | 620 x 620       | 1240x 1240     |
-| Liste des applications (icône)      | Square44x44Logo   | 44 x 44         | 55 x 55         | 66 x 66         | 88 x 88         | 176 x 176       |
+<table>
+<thead>
+<tr><th colspan="3">Petite vignette (Square71x71Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">Échelle 100%</td>
+    <td width="20%">71x71</td>
+    <td>Square71x71Logo.Scale-100.png</td>
+</tr>
+<tr>
+    <td>Échelle 125%</td>
+    <td>89x89</td>
+    <td>Square71x71Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>Échelle 150%</td>
+    <td>107x107</td>
+    <td>Square71x71Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>Échelle 200%</td>
+    <td>142x142</td>
+    <td>Square71x71Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>Échelle 400%</td>
+    <td>284x284</td>
+    <td>Square71x71Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
- 
+<br/>
 
-**Exemples de nom de fichier pour les ressources basées sur l’échelle**
+<table>
+<thead>
+<tr><th colspan="3">Vignette moyenne (Square150x150Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">Échelle 100%</td>
+    <td width="20%">150x150</td>
+    <td>Square150x150Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>Échelle 125%</td>
+    <td>188x188</td>
+    <td>Square150x150Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>Échelle 150%</td>
+    <td>225x225</td>
+    <td>Square150x150Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>Échelle 200%</td>
+    <td>300x300</td>
+    <td>Square150x150Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>Échelle 400%</td>
+    <td>600x600</td>
+    <td>Square150x150Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
-| Catégorie             | Nom d’élément      | À l’échelle 100 %                  | À l’échelle 125 %                  | À l’échelle 150 %                  |
-|----------------------|-------------------|--------------------------------|--------------------------------|--------------------------------|
-| Petite                | Square71x71Logo   | AppNameSmallTile.scale-100.png | AppNameSmallTile.scale-125.png | AppNameSmallTile.scale-150.png |
-| Moyenne               | Square150x150Logo | AppNameMedTile.scale-100.png   | AppNameMedTile.scale-125.png   | AppNameMedTile.scale-150.png   |
-| Large                 | Square310x150Logo | AppNameWideTile.scale-100.png  | AppNameWideTile.scale-125.png  | AppNameWideTile.scale-150.png  |
-| Grande (bureau uniquement) | Square310x310Logo | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
-| Liste des applications (icône)      | Square44x44Logo   | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
+<br/>
 
- 
+<table>
+<thead>
+<tr><th colspan="3">Vignette large (Wide310x150Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">Échelle 100%</td>
+    <td width="20%">310x150</td>
+    <td>Wide310x150Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>Échelle 125%</td>
+    <td>388x188</td>
+    <td>Wide310x150Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>Échelle 150%</td>
+    <td>465 x 225</td>
+    <td>Wide310x150Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>Échelle 200%</td>
+    <td>620x300</td>
+    <td>Wide310x150Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>Échelle 400%</td>
+    <td>1240x600</td>
+    <td>Wide310x150Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
-| Catégorie             | Nom d’élément      | À l’échelle 200 %                  | À l’échelle 400 %                  |
-|----------------------|-------------------|--------------------------------|--------------------------------|
-| Petite                | Square71x71Logo   | AppNameSmallTile.scale-200.png | AppNameSmallTile.scale-400.png |
-| Moyenne               | Square150x150Logo | AppNameMedTile.scale-200.png   | AppNameMedTile.scale-400.png   |
-| Large                 | Square310x150Logo | AppNameWideTile.scale-200.png  | AppNameWideTile.scale-400.png  |
-| Grande (bureau uniquement) | Square310x310Logo | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
-| Liste des applications (icône)      | Square44x44Logo   | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
+<br/>
 
+<table>
+<thead>
+<tr><th colspan="3">Grande vignette (Square310x310Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">Échelle 100%</td>
+    <td width="20%">310x310</td>
+    <td>Square310x310Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>Échelle 125%</td>
+    <td>388x388</td>
+    <td>Square310x310Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>Échelle 150%</td>
+    <td>465x465</td>
+    <td>Square310x310Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>Échelle 200%</td>
+    <td>620x620</td>
+    <td>Square310x310Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>Échelle 400%</td>
+    <td>1240x 1240</td>
+    <td>Square310x310Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
+
+<table>
+<thead>
+<tr><th colspan="3">Icône de la liste d’applications (Square44x44Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">Échelle 100%</td>
+    <td width="20%">44x44</td>
+    <td>Square44x44Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>Échelle 125%</td>
+    <td>55x55</td>
+    <td>Square44x44Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>Échelle 150%</td>
+    <td>66x66</td>
+    <td>Square44x44Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>Échelle 200%</td>
+    <td>88x88</td>
+    <td>Square44x44Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>Échelle 400%</td>
+    <td>176x176</td>
+    <td>Square44x44Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
+
+<table>
+<thead>
+<tr><th colspan="3">Écran de démarrage (SplashScreen)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">Échelle 100%</td>
+    <td width="20%">620x300</td>
+    <td>SplashScreen.scale-100.png</td>
+</tr>
+<tr>
+    <td>Échelle 125%</td>
+    <td>775x375</td>
+    <td>SplashScreen.scale-125.png</td>
+</tr>
+<tr>
+    <td>Échelle 150%</td>
+    <td>930x450</td>
+    <td>SplashScreen.scale-150.png</td>
+</tr>
+<tr>
+    <td>Échelle 200%</td>
+    <td>1240x600</td>
+    <td>SplashScreen.scale-200.png</td>
+</tr>
+<tr>
+    <td>Échelle 400%</td>
+    <td>2480x1200</td>
+    <td>SplashScreen.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
  
 
 **Ressources basées sur la taille de la cible avec plaque**
@@ -275,22 +438,22 @@ Les ressources basées sur la cible sont utilisées dans plusieurs facteurs d’
 
 Le tableau suivant répertorie toutes les tailles de ressources basées sur la cible et les exemples de nom de fichier correspondants :
 
-| Taille de la ressource | Exemple de nom de fichier                 |
-|------------|-----------------------------------|
-| 16 x 16\*    | AppNameAppList.targetsize-16.png  |
-| 24 x 24\*    | AppNameAppList.targetsize-24.png  |
-| 32 x 32\*    | AppNameAppList.targetsize-32.png  |
-| 48 x 48\*    | AppNameAppList.targetsize-48.png  |
-| 256 x 256\*  | AppNameAppList.targetsize-256.png |
-| 20 x 20      | AppNameAppList.targetsize-20.png  |
-| 30 x 30      | AppNameAppList.targetsize-30.png  |
-| 36 x 36      | AppNameAppList.targetsize-36.png  |
-| 40 x 40      | AppNameAppList.targetsize-40.png  |
-| 60 x 60      | AppNameAppList.targetsize-60.png  |
-| 64 x 64      | AppNameAppList.targetsize-64.png  |
-| 72 x 72      | AppNameAppList.targetsize-72.png  |
-| 80 x 80      | AppNameAppList.targetsize-80.png  |
-| 96 x 96      | AppNameAppList.targetsize-96.png  |
+| Taille de la ressource | Exemple de nom de fichier                  |
+|------------|------------------------------------|
+| 16x16\*    | Square44x44Logo.targetsize-16.png  |
+| 24x24\*    | Square44x44Logo.targetsize-24.png  |
+| 32x32\*    | Square44x44Logo.targetsize-32.png  |
+| 48x48\*    | Square44x44Logo.targetsize-48.png  |
+| 256x256\*  | Square44x44Logo.targetsize-256.png |
+| 20x20      | Square44x44Logo.targetsize-20.png  |
+| 30x30      | Square44x44Logo.targetsize-30.png  |
+| 36x36      | Square44x44Logo.targetsize-36.png  |
+| 40x40      | Square44x44Logo.targetsize-40.png  |
+| 60x60      | Square44x44Logo.targetsize-60.png  |
+| 64x64      | Square44x44Logo.targetsize-64.png  |
+| 72x72      | Square44x44Logo.targetsize-72.png  |
+| 80x80      | Square44x44Logo.targetsize-80.png  |
+| 96x96      | Square44x44Logo.targetsize-96.png  |
 
  
 
@@ -304,7 +467,7 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 **Ressources de vignette**
 
 -   Les ressources centrées sont généralement utilisées sur l’écran de démarrage pour présenter votre application.
--   Format de nom de fichier: \*Tile.scale-\*.PNG
+-   Format du nom de fichier: [Square\Wide]\*x\*Logo.scale-\*.png
 -   Applications concernées: toutes les applications UWP
 -   Utilisations :
     -   Vignettes d’écran de démarrage par défaut (bureau et appareil mobile)
@@ -317,7 +480,7 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 **Ressources évolutives avec plaque**
 
 -   Ces ressources sont utilisées sur les surfaces qui requièrent des facteurs d’échelle. Les ressources sont équipées d’une plaque par le système ou sont fournies avec leur propre couleur d’arrière-plan si l’application inclut cette fonctionnalité.
--   Format de nom de fichier: \*AppList.scale-\*.PNG
+-   Format de nom de fichier: Square44x44Logo.scale-\*.png
 -   Applications concernées: toutes les applications UWP
 -   Utilisations :
     -   Liste Toutes les applications du menu Démarrer (bureau)
@@ -330,7 +493,7 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 **Ressources basées sur la taille de la cible avec plaque**
 
 -   Ces tailles de ressource fixes ne sont pas mises à l’échelle avec les plaques. Principalement utilisées pour les expériences héritées. Les ressources sont vérifiées par le système.
--   File Format de nom de fichier: \*AppList.targetsize-\*.PNG
+-   Format de nom de fichier: Square44x44Logo.targetsize-\*.png
 -   Applications concernées: toutes les applications UWP
 -   Utilisations :
     -   Liste des raccourcis du menu Démarrer (bureau)
@@ -341,7 +504,7 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 **Ressources basées sur la taille de la cible sans plaque**
 
 -   Ces ressources ne sont pas équipées de plaque ni mises à l’échelle par le système.
--   Format de nom de fichier: \*AppList.targetsize-\*\_altform-unplated.PNG
+-   Format de nom de fichier: Square44x44Logo.targetsize-\*\_altform-unplated.png
 -   Applications concernées: toutes les applications UWP
 -   Utilisations :
     -   Barre des tâches et miniature de la barre des tâches (bureau)
@@ -352,8 +515,8 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 **Ressources d’extension de fichier**
 
 -   Ces ressources sont spécifiques aux extensions de fichier. Elles s’affichent en regard des icônes d’association de fichier de type Win32 dans l’Explorateur de fichiers et doivent être indépendantes du thème défini. Le dimensionnement diffère selon les plateformes mobiles et de bureau.
--   Format de nom de fichier: \*LogoExtensions.targetsize-\*.PNG
--   Applications concernées : Musique, Vidéo, Photos, MicrosoftEdge, Microsoft Office
+-   Format de nom de fichier: \*LogoExtensions.targetsize-\*.png
+-   Applications concernées: Musique, Vidéo, Photos, MicrosoftEdge, Microsoft Office
 -   Utilisations :
     -   Explorateur de fichiers
     -   Cortana
@@ -362,30 +525,7 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 **Écran de démarrage**
 
 -   La ressource qui s’affiche sur l’écran de démarrage de votre application. Elle est automatiquement mise à l’échelle sur les plateformes mobiles et de bureau.
--   Format de nom de fichier: \*SplashScreen.screen-100.PNG
+-   Format de nom de fichier: SplashScreen.scale-*.png
 -   Applications concernées: toutes les applications UWP
 -   Utilisations :
     -   Écran de démarrage de l’application
-
-**Ressources de vignette sous forme d’icône**
-
--   Il s’agit des ressources pour les applications utilisant le modèle sous forme d’icône.
--   Format de nom de fichier : non applicable
--   Applications concernées : Messagerie, Téléphone, Windows Store, etc.
--   Utilisations :
-    -   Vignette sous forme d’icône
-
-
-
-## <a name="related-topics"></a>Rubriques connexes
-
-
-
-* [Modèles de vignette spéciaux](tiles-and-notifications-special-tile-templates-catalog.md)
- 
-
- 
-
-
-
-

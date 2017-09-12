@@ -8,17 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp, API de soumission du Windows Store, extensions, produits dans l&quot;application, FAI
-ms.openlocfilehash: 198db630fbba8d4145454a6912f118225b13ac1c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows10, uwp, API de soumission du Windows Store, extensions, produits dans l'application, FAI
+ms.openlocfilehash: 9c39bfe9754805dccf5ccb82c9834d6d4deea385
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="get-add-ons-for-an-app"></a>Obtenir des extensions pour une application
 
 
 
 
-Utilisez cette méthode dans l’API de soumission du Windows Store pour répertorier les extensions (également connues sous le nom PIA ou produits in-app) pour une application inscrite dans votre compte du Centre de développement Windows.
+Utilisez cette méthode dans l’API de soumission au Windows Store pour répertorier les extensions pour une application inscrite dans votre compte du Centre de développement Windows.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -26,8 +28,6 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
-
->**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
 ## <a name="request"></a>Requête
 

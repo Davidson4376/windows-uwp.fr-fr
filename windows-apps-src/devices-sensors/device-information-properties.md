@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
 title: "Propriétés d’informations d’appareil"
 description: "Chaque appareil dispose de propriétés DeviceInformation associées que vous pouvez utiliser lorsque vous avez besoin d’informations spécifiques ou que vous créez un sélecteur d’appareil."
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 68e427a4d94b7c599e1fec375f0f66b5ff2704e0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 37b88b501c3bdb0f38b04f2f7b6d936cb0d201b4
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="device-information-properties"></a>Propriétés d’informations d’appareil
 
@@ -77,7 +79,7 @@ Certaines propriétés sont communes à tous les objets [**DeviceInformationKind
 |-----------------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **System.Devices.Category**       | Chaîne\[\] | Liste de descriptions des catégories auxquelles l’appareil appartient. Cette liste est fournie sous la forme de catégories singulières. Par exemple, «Affichage», «Téléphone» ou «Appareil audio».  |
 | **System.Devices.CategoryIds**    | Chaîne\[\] | Contient la liste des catégories auxquelles cet appareil appartient. Par exemple, **Audio.Headphone**, **Display.Monitor** ou **Input.Gaming**.                                  |
-| **System.Devices.CateogryPlural** | Chaîne\[\] | Liste de descriptions des catégories auxquelles l’appareil appartient. Cette liste est fournie sous la forme de catégories plurielles. Par exemple, «Affichages», «Téléphones» ou «Appareils audio». |
+| **System.Devices.CategoryPlural** | Chaîne\[\] | Liste de descriptions des catégories auxquelles l’appareil appartient. Cette liste est fournie sous la forme de catégories plurielles. Par exemple, «Affichages», «Téléphones» ou «Appareils audio». |
 | **System.Devices.CompatibleIds**  | Chaîne\[\] | Collection d’ID compatibles pour tous les objets **DeviceInformationKind.Device** enfants.                                                                       |
 | **System.Devices.Connected**      | Booléen    | Indique si l’appareil est connecté au système ou non.                                                                                          |
 | **System.Devices.GlyphIcon**      | Chaîne     | Chemin d’accès à l’icône pour le glyphe.                                                                                                                                           |

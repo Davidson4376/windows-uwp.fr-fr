@@ -1,17 +1,19 @@
 ---
-author: rmpablos
+author: laurenhughes
 title: "Configuration de builds automatisées pour votre application UWP"
-description: "Configuration de builds automatisées pour produire des packages de chargement indépendant et/ou de stockage."
-ms.author: wdg-dev-content
-ms.date: 02/15/2017
+description: "Configuration de builds automatisées pour produire des packages de chargement indépendant et/ou pour le WindowsStore."
+ms.author: lahugh
+ms.date: 08/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
-ms.openlocfilehash: f4c68af97e5d5b11a0c5320c9fa6040b9ab94e5a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c8c1765e2983484ddc57e47a995867aa3b401ad4
+ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/10/2017
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Configuration de builds automatisées pour votre application UWP
 
@@ -39,7 +41,7 @@ Si vous choisissez de créer une agent de build personnalisé, vous devez utilis
 
 Pour en savoir plus, consultez [Déployer un agent sur Windows.](https://www.visualstudio.com/docs/build/admin/agents/v2-windows) 
 
-Pour exécuter des tests unitaires UWP, vous devez effectuer les opérations suivantes: •    Déployer et démarrer votre application. •    Exécuter l’agent VSTS en mode interactif. •    Configurer votre agent pour qu’ils e connecte automatiquement après un redémarrage.
+Pour exécuter des tests unitaires UWP, vous devez effectuer les opérations suivantes: •   Déployer et démarrer votre application. •   Exécuter l’agent VSTS en mode interactif. •   Configurer votre agent pour qu’il se connecte automatiquement après un redémarrage.
 
 À présent, voyons comment configurer une build automatisée.
 
@@ -104,11 +106,11 @@ Les paramètres définis avec la syntaxe $() sont des variables définies dans l
 Pour afficher toutes les variables prédéfinies, consultez [Utiliser les variables de build](https://www.visualstudio.com/docs/build/define/variables).
 
 #### <a name="configure-the-publish-artifact-build-task"></a>Configurer la tâche Publier l’artefact 
-Cette tâche stocke les artefacts générés dans VSTS. Vous pouvez les voir dans l’onglet Artefacts de la page de résultats de la génération. VSTS utilise le dossier `$Build.ArtifactStagingDirectory)\AppxPackages` que nous avons défini précédemment.
+Cette tâche stocke les artefacts générés dans VSTS. Vous pouvez les voir dans l’onglet Artefacts de la page de résultats de la génération. VSTS utilise le dossier `$(Build.ArtifactStagingDirectory)\AppxPackages` que nous avons défini précédemment.
 
 ![artefacts](images/building-screen6.png)
 
-Étant donné que nous avons défini la propriété `UapAppxPackageBuildMode` sur `StoreUpload`, le dossier d’artefacts inclut le package que vous chargez dans le Windows Store (appxupload), ainsi que les packages qui permettent le chargement indépendant (appxbundle).
+Étant donné que nous avons attribué à la propriété `UapAppxPackageBuildMode` la valeur `StoreUpload`, le dossier d’artefacts inclut le package recommandé pour la soumission au Windows Store (.appxupload). Vous pouvez également soumettre un package d'application standard (.appx) ou un ensemble d’applications (.appxbundle) dans le Windows Store. Dans le cadre de cet article, nous allons utiliser le fichier .appxupload.
 
 
 >Remarque: par défaut, l’agent VSTS conserve les derniers packages appx générés. Si vous voulez stocker uniquement les artefacts de la version actuelle, configurez la build pour nettoyer le répertoire des fichiers binaires. Pour ce faire, ajoutez une variable nommée `Build.Clean` et définissez-la sur la valeur `all`. Pour plus d’informations, consultez [Spécifier le référentiel.](https://www.visualstudio.com/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)
@@ -120,7 +122,7 @@ Ensuite, vous devez générer la définition de build pour créer une build auto
 |-----------------|------------|-------------------------|---------------|
 |Intégration continue|Journal de génération, Résultats des tests|Chaque validation|Ce type de build est rapide et s’exécute plusieurs fois par jour.|
 |Build de déploiement continu pour le chargement indépendant|Packages de déploiement|Quotidienne |Ce type de build peut inclure des tests unitaires, mais cela prend un peu plus de temps. Cela permet d’effectuer des tests manuels et vous pouvez l’intégrer avec d’autres outils comme HockeyApp.|
-|Build de déploiement continu qui soumet un package au Windows Store|Packages de publication|À la demande|Ce type de build crée un package que vous pouvez publier dans le Windows store.|
+|Build de déploiement continu qui soumet un package au Windows Store|Packages de publication|À la demande|Ce type de build crée un package que vous pouvez publier dans le Windows Store.|
 
 Voyons comment configurer chacun d’eux.
 
@@ -172,10 +174,10 @@ Dans VSTS, la page Résumé de la build présente les résultats des tests pour 
 Si vous voulez utiliser votre build CI seulement pour surveiller la qualité de vos enregistrements, vous pouvez réduire les durées de génération.
 
 #### <a name="to-improve-the-speed-of-a-ci-build"></a>Pour augmenter la rapidité d’une build CI
-1.    Générez pour une seule plateforme.
-2.    Modifiez la variable BuildPlatform pour utiliser seulement x86. ![configuration CI](images/building-screen10.png) 
-3.    À l’étape de génération, ajoutez /p:AppxBundle = jamais à la propriété Arguments MSBuild, puis définissez la propriété Plateforme. ![configuration de la plateforme](images/building-screen11.png)
-4.    Dans le projet de test unitaire, désactivez Native .NET. 
+1.  Générez pour une seule plateforme.
+2.  Modifiez la variable BuildPlatform pour utiliser seulement x86. ![configuration CI](images/building-screen10.png) 
+3.  À l’étape de génération, ajoutez /p:AppxBundle = jamais à la propriété Arguments MSBuild, puis définissez la propriété Plateforme. ![configuration de la plateforme](images/building-screen11.png)
+4.  Dans le projet de test unitaire, désactivez Native .NET. 
 
 Pour ce faire, ouvrez le fichier de projet et dans les propriétés du projet, définissez la propriété `UseDotNetNativeToolchain` sur `false`.
 
@@ -274,16 +276,16 @@ Vous devez ensuite vérifier que l’étape de génération inclut le paramètre
 /p:UapAppxPackageBuildMode=StoreUpload 
 ```
 
-Cette commande génère le fichier appxupload qui peut être soumis au Windows Store.
+Cette commande génère un fichier appxupload qui peut être soumis au Windows Store.
 
 
 #### <a name="configure-automatic-store-submission"></a>Configuration de la soumission automatique au Windows Store
 
-Utilisez l’extension Visual Studio Team Services pour le Windows Store pour l’intégration avec l’API Windows Store, et envoyez votre package appxupload au Windows Store.
+Utilisez l’extension Visual Studio Team Services pour le Windows Store pour l’intégration avec l’API Windows Store et envoyez votre package d'application au Windows Store.
 
 Vous devez connecter votre compte DevCenter avec Azure Active Directory (AD), puis créer une application dans votre AD pour authentifier les demandes. Pour ce faire, vous pouvez suivre les recommandations de la page d’extension. 
 
-Une fois que vous avez configuré l’extension, vous pouvez ajouter la tâche de génération et la configurer avec votre ID d’application et l’emplacement du fichier appxupload.
+Une fois que vous avez configuré l’extension, vous pouvez ajouter la tâche de génération et la configurer avec votre ID d’application et l’emplacement du fichier .appxupload.
 
 ![configuration du compte DevCenter](images/building-screen17.png) 
 
@@ -317,7 +319,7 @@ Si vous souhaitez distribuer vos packages appx à partir d’un site Web comme V
 
 <span id="certificates-best-practices"/>
 ### <a name="best-practices-for-signing-certificates"></a>Meilleures pratiques pour les certificats de signature 
-Visual Studio génère un certificat pour chaque projet. Pour cette raison, il est difficile de conserver une liste des certificats valides. Si vous prévoyez de créer plusieurs applications, vous pouvez créer un certificat unique pour la signature de toutes vos applications. Ensuite, chaque appareil approuvant votre certificat peut charger vos applications de manière indépendante sans avoir à installer un autre certificat. Pour en savoir plus, consultez [Création d’un certificat de signature de package d’application.](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)
+Visual Studio génère un certificat pour chaque projet. Pour cette raison, il est difficile de conserver une liste des certificats valides. Si vous prévoyez de créer plusieurs applications, vous pouvez créer un certificat unique pour la signature de toutes vos applications. Ensuite, chaque appareil approuvant votre certificat peut charger vos applications de manière indépendante sans avoir à installer un autre certificat. Pour en savoir plus, consultez [Créer un certificat de signature de package](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing).
 
 
 #### <a name="create-a-signing-certificate"></a>Création d’un certificat de signature
@@ -360,4 +362,4 @@ Pour enregistrer votre certificat, il vous suffit de double-cliquer sur le fichi
 * [Créer votre application .NET pour Windows](https://www.visualstudio.com/docs/build/get-started/dot-net) 
 * [Création de packages d’applicationsUWP](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
 * [Chargement indépendant d’applications métier dans Windows10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
-* [Création d’un certificat de signature de package d’application](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)
+* [Créer un certificat de signature de package](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)

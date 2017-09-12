@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: ba08e426fea4c494276978d96cf0b36f6956bdb8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0adc0789c4e52e8b9943f774d786aea6efb60c91
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 07/21/2017
 ---
 # <a name="xbind-markup-extension"></a>Extension de balisage {x:Bind}
 
@@ -181,9 +183,10 @@ Ces propriétés fonctionnent essentiellement de la même manière que les propr
 | **FallbackValue** | Spécifie une valeur à afficher quand la source ou le chemin ne peuvent pas être résolus. |
 | **Mode** | Spécifie le mode de liaison, sous la forme de l’une des chaînes suivantes : «OneTime», «OneWay» ou «TwoWay». La valeur par défaut est «OneTime». Notez qu’elle diffère de la valeur par défaut **{Binding}**, qui est « OneWay » dans la plupart des cas. |
 | **TargetNullValue** | Spécifie une valeur à afficher quand la valeur de la source est résolue, mais est explicitement **null**. |
-| **BindBack** | Spécifie une fonction à utiliser pour le sens inverse d’une liaison bidirectionnelle. | 
+| **BindBack** | Spécifie une fonction à utiliser pour le sens inverse d’une liaison bidirectionnelle. |
+| **UpdateSourceTrigger** | Spécifie à quel moment renvoyer les modifications du contrôle vers le modèle dans les liaisons TwoWay. La valeur par défaut de toutes les propriétés à l’exception de TextBox.Text est PropertyChanged; la valeur par défaut de TextBox.Text est LostFocus.| 
 
-**Remarque**  Si vous convertissez un balisage de **{Binding}** en **{x:Bind}**, soyez attentif aux différences de valeur par défaut de la propriété **Mode**.
+**Remarque**  Si vous convertissez un balisage de **{Binding}** en **{x:Bind}**, soyez attentif aux différences de valeurs par défaut de la propriété **Mode**.
  
 ## <a name="remarks"></a>Remarques
 

@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 0c5ca9146dd3b5bc04433ef9680af0c2d1009bf7
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 2376a21efc0e2167afb64274cee4037f43ed1674
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/26/2017
 ---
 # <a name="web-authentication-broker"></a>Service Broker d’authentification web
 
@@ -21,7 +23,8 @@ translationtype: HT
 
 Cet article explique comment connecter votre application de plateforme Windows universelle (UWP) à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth (par exemple, Facebook, Twitter, Flickr, Instagram, etc.). La méthode [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) envoie une demande au fournisseur d’identité en ligne, puis obtient en retour un jeton d’accès qui décrit les ressources du fournisseur auxquelles l’application a accès.
 
-**Remarque**  Pour obtenir un exemple de code utilisable complet, copiez le [référentiel WebAuthenticationBroker sur GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620622) (en anglais).
+>[!NOTE]
+>Pour obtenir un exemple de code utilisable complet, clonez le [référentiel WebAuthenticationBroker sur GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620622).
 
  
 
@@ -35,7 +38,7 @@ Vous devez inscrire votre application auprès du fournisseur d’identité en li
 
 L’URI de la demande se compose de l’adresse à laquelle vous envoyez la demande d’authentification à votre fournisseur en ligne, complétée par d’autres informations requises, comme un ID d’application ou secret, un URI de redirection où l’utilisateur est envoyé après avoir effectué l’authentification, ainsi que le type de réponse attendu. Vous pouvez déterminer auprès de votre fournisseur les paramètres requis.
 
-L’URI de la demande est envoyé en tant que paramètre *requestUri* de la méthode [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066). Il doit s’agir d’une adresse sécurisée (commençant par https://).
+L’URI de la demande est envoyé en tant que paramètre *requestUri* de la méthode [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066). Il doit s’agir d’une adresse sécurisée (commençant par `https://`).
 
 L’exemple suivant explique comment créer l’URI de la demande.
 
@@ -86,14 +89,15 @@ catch (Exception ex)
 }
 ```
 
-En plus de [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066), l’espace de noms [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) contient une méthode [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425). N’appelez pas cette méthode. Elle est conçue pour les applications ciblant uniquement Windows Phone 8.1, et son usage avec Windows 10 est désapprouvé.
+>[!WARNING]
+>En plus de [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066), l’espace de noms [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) contient une méthode [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425). N’appelez pas cette méthode. Elle est conçue pour les applications ciblant uniquement Windows Phone 8.1, et son usage avec Windows 10 est désapprouvé.
 
 ## <a name="connecting-with-single-sign-on-sso"></a>Connexion par authentification unique (SSO).
 
 
-Par défaut, le service Broker d’authentification web n’autorise pas la persistance des cookies. C’est pourquoi, même si l’utilisateur de l’application indique qu’il souhaite rester connecté (par exemple, en activant une case à cocher dans la boîte de dialogue de connexion du fournisseur), il doit se connecter chaque fois qu’il souhaite accéder aux ressources de ce fournisseur. Pour se connecter avec l’authentification unique, votre fournisseur d’identité en ligne doit avoir activé l’authentification unique pour le service Broker d’authentification web et votre application doit appeler la surcharge de la méthode [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) qui ne prend pas de paramètre *callbackUri*.
+Par défaut, le service Broker d’authentification web n’autorise pas la persistance des cookies. C’est pourquoi, même si l’utilisateur de l’application indique qu’il souhaite rester connecté (par exemple, en activant une case à cocher dans la boîte de dialogue de connexion du fournisseur), il doit se connecter chaque fois qu’il souhaite accéder aux ressources de ce fournisseur. Pour se connecter avec l’authentification unique, votre fournisseur d’identité en ligne doit avoir activé l’authentification unique pour le service Broker d’authentification web et votre application doit appeler la surcharge de la méthode [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) qui ne prend pas de paramètre *callbackUri*. Ceci permettra aux cookies persistants d’être stockés par le service Broker d’authentification web, de sorte que les futurs appels d’authentification par la même application ne nécessiteront pas une connexion répétée de la part de l’utilisateur (l’utilisateur est effectivement «connecté» jusqu’à ce que le jeton d’accès expire).
 
-Pour prendre en charge l’authentification unique, le fournisseur en ligne doit vous permettre d’inscrire un URI de redirection sous la forme `ms-app://`*appSID*, où *appSID* correspond au SID de l’application. Vous pouvez obtenir le SID de votre application depuis la page du développeur correspondant à votre application ou en appelant la méthode [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069).
+Pour prendre en charge l’authentification unique, le fournisseur en ligne doit vous permettre d’inscrire un URI de redirection sous la forme `ms-app://<appSID>`, où `<appSID>` correspond au SID de votre application. Vous pouvez obtenir le SID de votre application à partir de la page du développeur correspondant à votre application ou en appelant la méthode [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069).
 
 ```cs
 string result;

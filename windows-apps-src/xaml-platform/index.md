@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
-description: "Cette section contient des rubriques qui décrivent des concepts de programmation généralement applicables aux applications que vous écrivez."
+description: "Cette section inclut des rubriques qui expliquent l’infrastructure XAML pour les applications de plateforme Windows universelle (UWP)."
 title: Plateforme XAML
 ms.author: jimwalk
 ms.date: 02/08/2017
@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 3a5a638a2b8caf63cc3353d7bd6a43068ec61119
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 82ef0c06fa706837f5cbd35d3975c464e14315fa
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 07/21/2017
 ---
 # <a name="xaml-platform"></a>Plateforme XAML
 
@@ -21,7 +23,7 @@ Cette section comprend des rubriques qui décrivent des concepts de programmatio
  
 | Rubrique | Description |
 |-------|-------------|
-| [Vue d’ensemble du langage XAML](xaml-overview.md) | Nous présentons le langage XAML et les concepts XAML aux développeurs d’applications Windows Runtime, puis nous décrivons les différentes manières de déclarer des objets et de définir des attributs en langage XAML tel qu’il est utilisé pour créer une application Windows Runtime. |
+| [Vue d’ensemble du langage XAML](xaml-overview.md) | Nous présentons le langage XAML et les concepts XAML aux développeurs d’applications Windows Runtime, puis nous décrivons les différentes manières de déclarer des objets et de définir des attributs en langage XAML tel qu’il est utilisé pour créer une application du Windows Store. |
 | [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md) | Cette rubrique décrit le système de propriétés de dépendance disponible quand vous écrivez une application Windows Runtime en C++, C# ou Visual Basic avec des définitions XAML pour l’interface utilisateur. |
 | [Propriétés de dépendance personnalisées](custom-dependency-properties.md) | Explique comment définir et implémenter des propriétés de dépendance personnalisées pour une application Windows Runtime en C++, C# ou Visual Basic. |
 | [Vue d’ensemble des propriétés jointes](attached-properties-overview.md) | Explique le concept de propriété jointe en XAML et fournit quelques exemples. |

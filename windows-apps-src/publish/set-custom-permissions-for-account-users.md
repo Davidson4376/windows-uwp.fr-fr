@@ -4,35 +4,81 @@ Description: "Définissez des autorisations personnalisées pour les utilisateur
 title: "Définir des autorisations personnalisées pour les utilisateurs de compte"
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 07/17/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 2ce4ddc5240281618fefa16587067c4ad9382b2e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d45ae4001dbb14a11e2beeecc3f98fb72bbc8a86
+ms.sourcegitcommit: eaacc472317eef343b764d17e57ef24389dd1cc3
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 07/17/2017
 ---
-# <a name="set-custom-permissions-for-account-users"></a>Définir des autorisations personnalisées pour les utilisateurs de compte
+# <a name="set-roles-or-custom-permissions-for-account-users"></a>Définir des rôles ou des autorisations personnalisées pour les utilisateurs de compte
 
-Lorsque vous ajoutez des utilisateurs à votre compte, vous pouvez leur attribuer un [rôle standard](manage-account-users.md#roles-and-permissions), ou choisir de personnaliser leurs autorisations pour leur fournir un niveau d’accès approprié. Certaines de ces autorisations s’appliquent à l’ensemble du compte, tandis que d’autres peuvent être accordées à tous les produits ou limitées à certains produits. 
+Lorsque vous [ajoutez des utilisateurs à votre compte du Centre de développement](add-users-groups-and-azure-ad-applications.md), vous devez spécifier l’accès dont ils disposent dans ce compte. Pour effectuer cette opération, vous pouvez attribuer aux utilisateurs des [rôles standard](#roles) qui s’appliquent à la totalité du compte, ou vous pouvez [personnaliser leurs autorisations](#custom) afin de leur fournir le niveau d’accès approprié. Certaines des autorisations personnalisées s’appliquent à l’ensemble du compte, tandis que d’autres peuvent être limitées à un ou plusieurs produits spécifiques (ou accordées à tous les produits si vous préférez ce cas de figure).
 
-Pour utiliser des autorisations personnalisées plutôt que des rôles standard, cliquez sur **Personnaliser les autorisations** dans la section **Rôles** lors de l’ajout ou de la modification du compte d’utilisateur. 
+> [!NOTE] 
+> Vous pouvez appliquer les mêmes rôles et autorisations, que vous ajoutiez un utilisateur, un groupe ou une application AzureAD.
 
-> **Remarque** Les mêmes autorisations peuvent être appliquées, que vous ajoutiez un utilisateur, un groupe ou une application Azure AD.
+Lorsque vous déterminez le rôle ou les autorisations à appliquer, gardez à l’esprit les points suivants: 
+-   Les utilisateurs (y compris les groupes et applications AzureAD) pourront accéder à l’ensemble du compte du Centre de développement avec les autorisations associées au rôle qui leur est attribué, sauf si vous [personnalisez les autorisations](#custom) et attribuez des [autorisations au niveau du produit](#product-level-permissions) afin que les utilisateurs puissent utiliser uniquement des applications et/ou des extensions spécifiques.
+-   Vous pouvez autoriser un utilisateur, un groupe ou une application Azure AD à accéder aux fonctionnalités de différents rôles en sélectionnant plusieurs rôles ou en utilisant les autorisations personnalisées pour accorder l’accès de votre choix.
+-   Un utilisateur ayant un certain rôle (ou un ensemble d’autorisations personnalisées) peut également faire partie d’un groupe ayant un rôle différent (ou un ensemble d’autorisations). Dans ce cas, l’utilisateur a accès à toutes les fonctionnalités associées à la fois au groupe et au compte individuel.
+
+
+<span id="roles" />
+## <a name="assign-roles-to-account-users"></a>Attribuer des rôles aux utilisateurs de compte
+
+Par défaut, un ensemble de rôles standard vous est présenté pour vous permettre d’effectuer une sélection lorsque vous ajoutez un utilisateur, un groupe ou une application AzureAD à votre compte du Centre de développement. Chaque rôle dispose d’un ensemble d’autorisations spécifique lui permettant d’exécuter certaines fonctions dans le cadre du compte. 
+
+À moins que vous ne choisissiez de définir des [autorisations personnalisées](#custom) en sélectionnant **Personnaliser les autorisations**, chaque utilisateur, groupe ou application AzureAD que vous ajoutez à un compte doit se voir attribuer au moins l’un des rôles standard ci-après. 
+
+> [!NOTE]
+> Le **propriétaire** du compte est la personne qui l’a créé en premier avec un compte Microsoft (et non l’un des utilisateurs ajoutés par le biais d’AzureAD). Il est le seul à disposer d’un accès complet au compte et à pouvoir notamment supprimer des applications, créer et modifier l’ensemble des utilisateurs du compte et modifier tous les paramètres financiers et de compte. 
+
+
+| Rôle                 | Description              |
+|----------------------|--------------------------|
+| Manager              | Dispose d’un accès complet au compte, mais ne peut pas modifier les paramètres fiscaux et de revenus. Ceci inclut la gestion des utilisateurs dans le Centre de développement. Cependant, notez que la possibilité de créer et supprimer des utilisateurs dépend des autorisations du compte dans Azure AD. Ainsi, si le rôle Manager est attribué à un utilisateur, mais que celui-ci ne dispose pas des autorisations d’administrateur dans le service AzureAD de l’organisation, il ne pourra pas créer d’utilisateurs ni supprimer des utilisateurs de l’annuaire (toutefois, il pourra modifier le rôle d’un utilisateur dans le Centre de développement). |
+| Développeur            | Peut charger des packages, soumettre des applications et modules complémentaires et afficher le [Rapport d’utilisation](usage-report.md) pour obtenir des informations de télémétrie détaillées. Il ne peut afficher ni les informations financières ni les paramètres de compte.   |
+| Contributeur professionnel | Peut afficher des rapports [d’intégrité](health-report.md) et [d’utilisation](usage-report.md). Impossible de créer ou soumettre des produits, de modifier des paramètres de compte ou d’afficher des informations financières.                                         |
+| Contributeur financier  | Peut afficher des [rapports sur les revenus](payout-summary.md), des informations financières et des rapports d’acquisition. Il ne peut apporter aucune modification aux applications, modules complémentaires et paramètres de compte.                                                                                                                                   |
+| Responsable marketing             | Peut [répondre aux avis de clients](respond-to-customer-reviews.md) et afficher des [rapports analytiques](analytics.md) non financiers. Il ne peut apporter aucune modification aux applications, modules complémentaires et paramètres de compte.      |
+
+Le tableau ci-dessous présente certaines fonctionnalités spécifiques disponibles pour chacun de ces rôles (et pour le propriétaire du compte).
+
+|                                 |    Propriétaire du compte                 |    Responsable                       |    Développeur                     |    Contributeur professionnel    |    Contributeur financier    |    Responsable marketing                      |
+|---------------------------------|----------------------------------|----------------------------------|----------------------------------|----------------------------|---------------------------|----------------------------------|
+|    Rapport d’acquisition           |    Peut afficher                      |    Peut afficher                      |     Aucun accès                    |     Aucun accès              |    Peut afficher               |    Aucun accès                     |
+|    Rapport de commentaires/réponses    |    Peut afficher et envoyer des commentaires    |    Peut afficher et envoyer des commentaires    |    Peut afficher et envoyer des commentaires    |     Aucun accès              |     Aucun accès             |    Peut afficher et envoyer des commentaires    |
+|    Rapport d’intégrité                |    Peut afficher                      |    Peut afficher                      |    Peut afficher                      |    Peut afficher                |     Aucun accès             |    Aucun accès                     |
+|    Rapport d’utilisation                 |    Peut afficher                      |    Peut afficher                      |    Peut afficher                      |    Peut afficher                |     Aucun accès             |    Aucun accès                     |
+|    Compte de revenu               |    Peut mettre à jour                    |    Aucun accès                     |    Aucun accès                     |    Aucun accès               |    Peut afficher               |    Aucun accès                     |
+|    Profil fiscal                  |    Peut mettre à jour                    |    Aucun accès                     |    Aucun accès                     |    Aucun accès               |    Peut afficher               |    Aucun accès                     |
+|    Résumé du paiement               |    Peut afficher                      |    Aucun accès                     |    Aucun accès                     |    Aucun accès               |    Peut afficher               |    Aucun accès                     |
+
+Si aucun des rôles standard ne convient, ou que vous souhaitez limiter l’accès à des applications et/ou extensions spécifiques, vous pouvez accorder des autorisations personnalisées à l’utilisateur en sélectionnant **Personnaliser les autorisations**, comme décrit ci-dessous.
+
+
+<span id="custom" />
+## <a name="assign-custom-permissions-to-account-users"></a>Attribuer des autorisations personnalisées aux utilisateurs de compte
+
+Pour attribuer des autorisations personnalisées plutôt que des rôles standard, cliquez sur **Personnaliser les autorisations** dans la section **Rôles** lors de l’ajout ou de la modification du compte d’utilisateur. 
 
 Pour activer une autorisation pour l’utilisateur, activez la case du paramètre approprié. 
 
 ![Guide des paramètres d’accès](images/permission_key.png)
 
 - **Aucun accès**: l’utilisateur n’aura pas l’autorisation indiquée.
-- **Lecture seule**: l’utilisateur pourra afficher les fonctionnalités liées à la zone indiquée, mais ne pourra pas apporter de modifications.
+- **Lecture seule**: l’utilisateur pourra afficher les fonctionnalités associées à la zone indiquée, mais ne sera pas en mesure d’apporter de modifications. 
 - **Lecture/écriture**: l’utilisateur pourra visualiser la zone et y apporter des modifications.
 - **Mixte**: vous ne pouvez pas sélectionner cette option directement, mais l’indicateur **Mixte** montre si vous avez autorisé une combinaison d’accès pour cette autorisation. Par exemple, si vous accordez un accès **en lecture seule** à **Tarification et disponibilité** pour **Tous les produits**, mais que vous accordez ensuite un accès **en lecture/écriture** à **Tarification et disponibilité** pour un produit spécifique, l’indicateur **Tarification et disponibilité** pour **Tous les produits** sera considéré comme Mixte. Le même raisonnement s’applique si certains produits n’ont **aucun accès** pour une autorisation, mais que d’autres ont un accès **en lecture/écriture** et/ou **en lecture seule**.
 
-Pour certaines autorisations, telles que celles liées à l’affichage des données analytiques, seul un accès **en lecture seule** peut être accordé. Notez que dans l’implémentation actuelle, certaines autorisations ne font pas la distinction entre l’accès **en lecture seule** et l’accès **en lecture/écriture**. Passez en revue les détails de chaque autorisation pour comprendre les fonctionnalités spécifiques accordées par l’accès **en lecture seule** et **en lecture/écriture**.
+Pour certaines autorisations, telles que celles liées à l’affichage des données analytiques, seul un accès **en lecture seule** peut être accordé. Notez que dans l’implémentation actuelle, certaines autorisations ne font pas la distinction entre l’accès **en lecture seule** et l’accès **en lecture/écriture**. Examinez les détails de chaque autorisation pour comprendre les fonctionnalités spécifiques accordées par l’accès **Lecture seule** et/ou **Lecture/écriture**.
 
-Les informations spécifiques à chaque autorisation figurent dans les tableaux ci-dessous.
+Les informations propres à chaque autorisation figurent dans les tableaux ci-dessous.
 
 ## <a name="account-level-permissions"></a>Autorisations au niveau du compte
 
@@ -54,15 +100,15 @@ Les autorisations de cette section ne peuvent pas être limitées à des produit
     <tbody>
 <tr><td align="left">    **Paramètres du compte**                    </td><td align="left">  Peut afficher toutes les pages de la section **Paramètres du compte**, y compris les [coordonnées](managing-your-profile.md).       </td><td align="left">  Peut afficher toutes les pages de la section **Paramètres du compte**. Peut modifier les [coordonnées](managing-your-profile.md) et d’autres pages, mais ne peut pas apporter de modifications au compte de revenu ou au profil fiscal (à moins que l’autorisation ne soit accordée séparément).            </td></tr>
 <tr><td align="left">    **Utilisateurs de compte**                       </td><td align="left">  Peut afficher les utilisateurs qui ont été ajoutés au compte dans la section **Gérer les utilisateurs**.          </td><td align="left">  Peut ajouter des utilisateurs au compte et modifier les utilisateurs existants dans la section **Gérer les utilisateurs**.             </td></tr>
-<tr><td align="left">    **Rapport sur les performances publicitaires au niveau du compte** </td><td align="left">  Peut afficher le [Rapport sur les performances publicitaires](advertising-performance-report.md#account-level-advertising-performance-report) au niveau du compte. (Ne peut pas afficher les rapports sur les performances publicitaires pour chaque produit, sauf si cette autorisation est accordée séparément.)       </td><td align="left">  Non applicable   </td></tr>
+<tr><td align="left">    **Rapport sur les performances publicitaires au niveau du compte** </td><td align="left">  Peut visualiser le [rapport sur les performances publicitaires](advertising-performance-report.md) au niveau du compte.      </td><td align="left">  N/A   </td></tr>
 <tr><td align="left">    **Campagnes publicitaires**                        </td><td align="left">  Peut afficher les [campagnes publicitaires](create-an-ad-campaign-for-your-app.md) créées dans le compte.      </td><td align="left">  Peut créer, gérer et afficher les [campagnes publicitaires](create-an-ad-campaign-for-your-app.md) créées dans le compte.          </td></tr>
 <tr><td align="left">    **Médiation publicitaire**                        </td><td align="left">  Peut afficher les [configurations de médiation publicitaire](https://msdn.microsoft.com/library/windows/apps/xaml/mt149935.aspx) de tous les produits dans le compte.    </td><td align="left">  Peut afficher et modifier les [configurations de médiation publicitaire](https://msdn.microsoft.com/library/windows/apps/xaml/mt149935.aspx) de tous les produits dans le compte.        </td></tr>
 <tr><td align="left">    **Rapports de médiation publicitaire**                </td><td align="left">  Peut afficher le [rapport de médiation publicitaire](ad-mediation-report.md) de tous les produits dans le compte.    </td><td align="left">  Non applicable    </td></tr>
-<tr><td align="left">    **Rapports sur les performances publicitaires**              </td><td align="left">  Peut afficher les [rapports sur les performances publicitaires](advertising-performance-report.md) de tous les produits dans le compte. (Ne peut pas afficher le [rapport sur les performances publicitaires](advertising-performance-report.md#account-level-advertising-performance-report) au niveau du compte, sauf si cette autorisation est accordée séparément.)       </td><td align="left">  Peut afficher les [rapports sur les performances publicitaires](advertising-performance-report.md) de tous les produits dans le compte. (Ne peut pas afficher le [rapport sur les performances publicitaires](advertising-performance-report.md#account-level-advertising-performance-report) au niveau du compte, sauf si cette autorisation est accordée séparément.)         </td></tr>
+<tr><td align="left">    **Rapports sur les performances publicitaires**              </td><td align="left">  Peut visualiser les [rapports sur les performances publicitaires](advertising-performance-report.md) pour tous les produits dans le compte.       </td><td align="left">  Non applicable         </td></tr>
 <tr><td align="left">    **Unités publicitaires**                            </td><td align="left">  Peut afficher les [unités publicitaires](monetize-with-ads.md) qui ont été créées pour le compte.    </td><td align="left">  Peut créer, gérer et afficher les [unités publicitaires](monetize-with-ads.md) du compte.             </td></tr>
 <tr><td align="left">    **Annonces des affiliés**                       </td><td align="left">  Peut afficher l’utilisation de l’[annonce des affiliés](about-affiliate-ads.md) dans tous les produits du compte.    </td><td align="left">  Peut gérer et afficher l’utilisation de l’[annonce des affiliés](about-affiliate-ads.md) dans tous les produits du compte.                </td></tr>
 <tr><td align="left">    **Rapports sur les performances des annonces des affiliés**      </td><td align="left">  Peut afficher le [rapport sur les performances des annonces des affiliés](affiliates-performance-report.md) de tous les produits dans le compte.   </td><td align="left">  Non applicable   </td></tr>
-<tr><td align="left">    **Rapports de publicité sur l’installation d’application**             </td><td align="left">  Peut afficher le [rapport de publicité sur l’installation d’application](app-install-ads-reports.md) de tous les produits dans le compte.           </td><td align="left">  Non applicable   </td></tr>
+<tr><td align="left">    **Rapports de publicité sur l’installation d’application**             </td><td align="left">  Peut visualiser le [rapport de campagne de publicité](promote-your-app-report.md).           </td><td align="left">  Non applicable   </td></tr>
 <tr><td align="left">    **Annonces de la communauté**                       </td><td align="left">  Peut afficher l’utilisation des [annonces gratuites de la communauté](about-community-ads.md) de tous les produits dans le compte.          </td><td align="left">  Peut créer, gérer et afficher l’utilisation des [annonces gratuites de la communauté](about-community-ads.md) de tous les produits dans le compte.               </td></tr>
 <tr><td align="left">    **Coordonnées**                        </td><td align="left">  Peut afficher les [coordonnées](managing-your-profile.md) dans la section Paramètres du compte.        </td><td align="left">  Peut modifier et afficher les [coordonnées](managing-your-profile.md) dans la section Paramètres du compte.            </td></tr>
 <tr><td align="left">    **Conformité avec la réglementation COPPA**                    </td><td align="left">  Peut afficher les sélections de [conformité avec la réglementation COPPA](monetize-with-ads.md#coppa-compliance) (qui indique si les produits sont adaptés aux enfants de moins de 13ans) pour tous les produits dans le compte.                                            </td><td align="left">  Peut modifier et afficher les sélections de [conformité avec la réglementation COPPA](monetize-with-ads.md#coppa-compliance) (qui indique si les produits sont adaptés aux enfants de moins de 13ans) pour tous les produits dans le compte.         </td></tr>
@@ -72,8 +118,9 @@ Les autorisations de cette section ne peuvent pas être limitées à des produit
 <tr><td align="left">    **Services partenaires**&nbsp;*                  </td><td align="left">  Peut afficher les certificats pour l’installation de services permettant de récupérer des XTokens.     </td><td align="left">  Peut gérer et afficher les certificats pour l’installation de services permettant de récupérer des XTokens.       </td></tr>
 <tr><td align="left">    **Compte de revenu**                      </td><td align="left">  Peut afficher les [informations sur le compte de revenu](setting-up-your-payout-account-and-tax-forms.md#payout-account) dans **Paramètres du compte**.     </td><td align="left">  Peut modifier et afficher les [informations sur le compte de revenu](setting-up-your-payout-account-and-tax-forms.md#payout-account) dans **Paramètres du compte**.       </td></tr>
 <tr><td align="left">    **Résumé du paiement**                      </td><td align="left">  Peut afficher le [résumé du paiement](payout-summary.md) pour accéder aux informations des rapports sur les paiements et les télécharger.       </td><td align="left">  Peut afficher le [résumé du paiement](payout-summary.md) pour accéder aux informations des rapports sur les paiements et les télécharger.   </td></tr>
-<tr><td align="left">    **Parties de confiance**&nbsp;*                   </td><td align="left">  Peut afficher les parties de confiance pour récupérer les XTokens.    </td><td align="left">  Peut gérer et afficher les parties de confiance pour récupérer les XTokens.     </td></tr>
-<tr><td align="left">    **Sandboxes**&nbsp;*                         </td><td align="left">  Peut accéder à la page **Sandboxes** et afficher les sandboxes du compte et toutes les configurations qui s’y rapportent. Ne peut pas afficher les produits et soumissions de chaque sandbox, sauf si les autorisations appropriées au niveau du produit sont accordées. </td><td align="left">  Peut accéder à la page **Sandboxes**, et afficher et gérer les sandboxes du compte, y compris créer et supprimer des sandboxes, et gérer leur configuration. Ne peut pas afficher les produits et soumissions de chaque sandbox, sauf si les autorisations appropriées au niveau du produit sont accordées.    </td></tr>
+<tr><td align="left">    **Parties de confiance**&nbsp;*                   </td><td align="left">  Peut visualiser les parties de confiance pour récupérer les XTokens.    </td><td align="left">  Peut gérer et visualiser les parties de confiance pour récupérer les XTokens.     </td></tr>
+<tr><td align="left">    **Demande de disques**&nbsp;*                   </td><td align="left">  Peut visualiser les demandes de disque de jeu.    </td><td align="left">  Peut générer et visualiser les demandes de disque de jeu.     </td></tr>
+<tr><td align="left">    **Sandboxes**&nbsp;*                         </td><td align="left">  Peut accéder à la page **Sandboxes** et visualiser les sandboxes du compte et toutes les configurations qui s’y rapportent. Ne peut pas afficher les produits et soumissions de chaque sandbox, sauf si les autorisations appropriées au niveau du produit sont accordées. </td><td align="left">  Peut accéder à la page **Sandboxes**, et afficher et gérer les sandboxes du compte, y compris créer et supprimer des sandboxes, et gérer leur configuration. Ne peut pas afficher les produits et soumissions de chaque sandbox, sauf si les autorisations appropriées au niveau du produit sont accordées.    </td></tr>
 <tr><td align="left">    **Profil fiscal**                         </td><td align="left">  Peut afficher les [formulaires et informations du profil fiscal](setting-up-your-payout-account-and-tax-forms.md#tax-forms) dans **Paramètres du compte**.     </td><td align="left">  Peut remplir les déclarations fiscales et mettre à jour les [informations du profil fiscal](setting-up-your-payout-account-and-tax-forms.md#tax-forms) dans **Paramètres du compte**.     </td></tr>
 <tr><td align="left">    **Comptes de test**&nbsp;*                     </td><td align="left">  Peut afficher les comptes permettant de tester la configuration Xbox Live.      </td><td align="left">  Peut créer, gérer et afficher les comptes permettant de tester la configuration Xbox Live.      </td></tr>
 <tr><td align="left">    **Appareils Xbox**                        </td><td align="left">  Peut afficher les consoles de développement Xbox activées pour le compte dans la section **Paramètres du compte**.       </td><td align="left">  Peut ajouter, supprimer et afficher les consoles de développement Xbox activées pour le compte dans la section **Paramètres du compte**.     </td></tr>
@@ -82,19 +129,24 @@ Les autorisations de cette section ne peuvent pas être limitées à des produit
 
 \* Les autorisations marquées d’un astérisque (*) accordent l’accès à des fonctionnalités qui ne sont pas disponibles pour tous les comptes. Si ces fonctionnalités n’ont pas été activées pour votre compte, vos sélections concernant ces autorisations n’auront aucun effet.   
 
+
 ## <a name="product-level-permissions"></a>Autorisations au niveau du produit
 
-Les autorisations de cette section peuvent être accordées à tous les produits du compte, ou personnalisées pour appliquer l’autorisation uniquement à un ou plusieurs produits spécifiques. Ces autorisations sont regroupées en quatre catégories: **Analytique**, **Monétisation**, **Publication** et **Xbox Live**. Vous pouvez développer chacune de ces catégories pour en afficher les autorisations individuelles. 
+Les autorisations de cette section peuvent être accordées à tous les produits du compte, ou personnalisées pour appliquer l’autorisation uniquement à un ou plusieurs produits spécifiques. 
 
-Pour accorder une autorisation pour tous les produits du compte, effectuez vos sélections pour cette autorisation (en cochant la case **Lecture seule**, **Lecture/écriture** ou **Aucun accès**) dans la ligne **Tous les produits**. 
+Les autorisations au niveau du produit sont regroupées en quatre catégories: **Analytique**, **Monétisation**, **Publication** et **XboxLive**. Vous pouvez développer chacune de ces catégories pour en visualiser les autorisations individuelles. Vous avez également la possibilité d’activer **Toutes les autorisations** pour un ou plusieurs produits spécifiques.
+
+Pour accorder une autorisation pour chaque produit du compte, effectuez vos sélections pour cette autorisation (en cochant la case **Lecture seule** ou **Lecture/écriture**) dans la ligne **Tous les produits**. 
  
-> **Conseil** Les sélections effectuées pour **tous les produits** s’appliquent à tous les produits actuellement dans le compte, ainsi qu’à tous les produits qui seront créés plus tard dans le compte.
+> [!TIP]
+> Les sélections effectuées pour **Tous les produits** s’appliquent à chaque produit figurant actuellement dans le compte, ainsi qu’à tous les produits qui seront créés plus tard dans le compte. Pour éviter que les autorisations s’appliquent aux futurs produits, sélectionnez tous les produits individuellement au lieu de choisir **Tous les produits**.
 
-Sur la ligne **Tous les produits**, vous verrez chaque produit du compte répertorié sur une ligne distincte. Pour accorder une autorisation pour seulement un produit donné, effectuez vos sélections pour cette autorisation dans la ligne du produit en question.
+Sous la ligne **Tous les produits**, chaque produit du compte est répertorié sur une ligne distincte. Pour accorder une autorisation pour seulement un produit donné, effectuez vos sélections pour cette autorisation dans la ligne du produit en question.
 
 Chaque module complémentaire est répertorié dans une ligne distincte sous son produit parent, ainsi que dans la ligne **Tous les modules complémentaires**. Les sélections effectuées pour **tous les modules complémentaires** s’appliquent à tous les modules complémentaires actuels de ce produit, ainsi qu’à tous les modules complémentaires qui seront créés plus tard pour ce produit.
 
 Remarque: certaines autorisations ne peuvent pas être définies pour les modules complémentaires. Cela peut être parce qu’elles ne s’appliquent pas aux modules complémentaires (par exemple, l’autorisation **Retour d’expérience du client**) ou parce que l’autorisation accordée au niveau du produit parent s’applique à tous les modules complémentaires de ce produit (par exemple, **Codes promotionnels**). Notez toutefois que toutes les autorisations disponibles pour les modules complémentaires doivent être définies séparément; les modules complémentaires n’héritent pas des sélections effectuées pour le produit parent. Par exemple, si vous souhaitez permettre à l’utilisateur d’effectuer des sélections de tarification et de disponibilité pour un module complémentaire, vous devez activer l’autorisation **Tarification et disponibilité** pour le module complémentaire (ou pour **Tous les modules complémentaires**), que vous ayez ou non accordé l’autorisation **Tarification et disponibilité** pour le produit parent. 
+
 
 ### <a name="analytics"></a>Analytique
 
@@ -112,9 +164,9 @@ Remarque: certaines autorisations ne peuvent pas être définies pour les module
     <tr><td align="left">    **Acquisitions**     </td><td>    Peut afficher les rapports [Acquisitions](acquisitions-report.md) et [Acquisitions de modules complémentaires](add-on-acquisitions-report.md) pour le produit.        </td><td>    Non applicable    </td><td>    Non applicable (les paramètres du produit parent incluent les rapports d’acquisition de modules complémentaires)        </td><td>    Non applicable                         </td></tr>
     <tr><td align="left">    **Utilisation** </td><td>    Peut afficher le [rapport d’utilisation](usage-report.md) du produit.     </td><td>    Non applicable       </td><td>    Non applicable     </td><td>    Non applicable         </td></tr>
     <tr><td align="left">    **Intégrité** </td><td>    Peut afficher le [rapport d’intégrité](health-report.md) du produit.    </td><td>    Non applicable     </td><td>    Non applicable     </td><td>    Non applicable         </td></tr>
-    <tr><td align="left">    **Retour d'expérience du client**    </td><td>    Peut afficher les rapports [Évaluations](ratings-report.md), [Avis](reviews-report.md) et [Commentaires](feedback-report.md) pour le produit.       </td><td>    Non applicable (pour répondre à des commentaires ou à des avis, l’autorisation **Contacter le client** doit être accordée)   </td><td>    Non applicable     </td><td>    Non applicable         </td></tr>
+    <tr><td align="left">    **Retour d’expérience du client**    </td><td>    Peut visualiser les rapports [Avis](reviews-report.md) et [Commentaires](feedback-report.md) concernant le produit.       </td><td>    Non applicable (pour répondre à des commentaires ou à des avis, l’autorisation **Contacter le client** doit être accordée)   </td><td>    Non applicable     </td><td>    Non applicable         </td></tr>
     <tr><td align="left">    **Analyse Xbox** </td><td>    Peut afficher le rapport d’analyse Xbox du produit. (Remarque: ce rapport n’est pas encore disponible.)    </td><td>    Non applicable   </td><td>    Non applicable       </td><td>    Non applicable          </td></tr>
-    <tr><td align="left">    **En temps réel**   </td><td>    Peut afficher le rapport en temps réel du produit.       </td><td>    Non applicable   </td><td>    Non applicable     </td><td>    Non applicable                 </td></tr>
+    <tr><td align="left">    **En temps réel**   </td><td>    Peut visualiser le rapport en temps réel du produit. (Remarque: pour l’instant, ce rapport n’est disponible que par le biais du [Programme Insider du Centre de développement](dev-center-insider-program.md).)      </td><td>    Non applicable   </td><td>    Non applicable     </td><td>    Non applicable                 </td></tr>
     </tbody>
     </table>
 
@@ -131,9 +183,11 @@ Remarque: certaines autorisations ne peuvent pas être définies pour les module
     </tr>
     </thead>
     <tbody>
+    <tr><td align="left">    **Codes promotionnels**     </td><td>    Peut afficher les commandes avec un [code promotionnel](generate-promotional-codes.md) et les informations d’utilisation du produit et de ses modules complémentaires, et peut afficher les informations d’utilisation.         </td><td>    Peut afficher, gérer et créer des commandes avec un [code promotionnel](generate-promotional-codes.md) pour le produit et pour ses modules complémentaires, et peut afficher les informations d’utilisation.          </td><td>    Non applicable (les paramètres du produit parent s’appliquent à tous les modules complémentaires)     </td><td>    Non applicable (les paramètres du produit parent s’appliquent à toutes les extensions)     </td></tr>
+    <tr><td align="left">    **Offres ciblées**     </td><td>    Peut visualiser les [offres ciblées](use-targeted-offers-to-maximize-engagement-and-conversions.md) concernant le produit.         </td><td>    Peut visualiser, gérer et créer des [offres ciblées](use-targeted-offers-to-maximize-engagement-and-conversions.md) concernant le produit.          </td><td>    Non applicable     </td><td>    Non applicable      </td></tr>
     <tr><td align="left">    **Contacter le client**  </td><td>    Peut afficher les [réponses aux commentaires des clients](respond-to-customer-feedback.md) et les [réponses aux avis des clients](respond-to-customer-reviews.md), à condition que l’autorisation **Retour d’expérience du client** ait également été accordée. Peut également afficher les [notifications ciblées](send-push-notifications-to-your-apps-customers.md) qui ont été créées pour le produit.    </td><td>    Peut [répondre aux commentaires des clients](respond-to-customer-feedback.md) et [répondre aux avis des clients](respond-to-customer-reviews.md), à condition que l’autorisation **Retour d’expérience du client** ait également été accordée. Peut également [créer et envoyer des notifications ciblées](send-push-notifications-to-your-apps-customers.md) pour le produit.                   </td><td>    Non applicable         </td><td>    Non applicable                          </td></tr>
     <tr><td align="left">    **Expérimentation**</td><td>    Peut afficher les [expériences (test A/B)](../monetize/run-app-experiments-with-a-b-testing.md) et consulter les données de l’expérimentation du produit.   </td><td>    Peut créer, gérer et afficher les [expériences (test A/B)](../monetize/run-app-experiments-with-a-b-testing.md) pour le produit, et consulter les données d’expérimentation.     </td><td>    Non applicable  </td><td>    Non applicable                 </td></tr>
-    <tr><td align="left">    **Codes promotionnels**     </td><td>    Peut afficher les commandes avec un [code promotionnel](generate-promotional-codes.md) et les informations d’utilisation du produit et de ses modules complémentaires, et peut afficher les informations d’utilisation.         </td><td>    Peut afficher, gérer et créer des commandes avec un [code promotionnel](generate-promotional-codes.md) pour le produit et pour ses modules complémentaires, et peut afficher les informations d’utilisation.          </td><td>    Non applicable (les paramètres du produit parent s’appliquent à tous les modules complémentaires)     </td><td>    Non applicable (les paramètres du produit parent s’appliquent à tous les modules complémentaires)     </td></tr>
+
     </tbody>
     </table>
 
@@ -175,8 +229,8 @@ Remarque: certaines autorisations ne peuvent pas être définies pour les module
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    **Configuration du service Xbox**&nbsp;\*    </td><td>    Peut afficher les paramètres liés aux succès, au mode multijoueur, aux classements et aux autres configurations Xbox Live pour le produit.  </td><td>    Peut afficher et modifier les paramètres liés aux succès, au mode multijoueur, aux classements et aux autres configurations Xbox Live pour le produit.  </td><td>    Non applicable     </td><td>    Non applicable                      </td></tr>
     <tr><td align="left">    **Canaux d’application**&nbsp;\*</td><td>    Non applicable  </td><td>    Peut publier des canaux de vidéos promotionnelles sur la console Xbox, à afficher via OneGuide.  </td><td>  Non applicable </td><td> Non applicable </td></tr>
+    <tr><td align="left">    **Configuration du service**&nbsp;\*    </td><td>    Peut visualiser les paramètres liés aux succès, au mode multijoueur, aux classements et aux autres configurations XboxLive pour le produit.  </td><td>    Peut afficher et modifier les paramètres liés aux succès, au mode multijoueur, aux classements et aux autres configurations Xbox Live pour le produit.  </td><td>    Non applicable     </td><td>    Non applicable                      </td></tr>
 </tbody>
 </table>
 

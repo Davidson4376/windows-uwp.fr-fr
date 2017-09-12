@@ -6,14 +6,16 @@ ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 39418d553eceb6b38d9b0cecc633c984f38465b9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: ddbc04afd6571ac5692c2202fa292185d11e05b0
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="choose-a-notification-delivery-method"></a>Choisir une méthode de remise de notification
 
@@ -111,7 +113,7 @@ Par défaut, les notifications toast locales ont une durée de vie de troisjours
 Pour plus d’informations, consultez les rubriques suivantes:
 
 -   [Envoyer une notification par vignette locale](tiles-and-notifications-sending-a-local-tile-notification.md)
--   [Envoyer une notification toast locale](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/)
+-   [Envoyer une notification toast locale](tiles-and-notifications-send-local-toast.md)
 -   [Exemples de code de notifications de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="scheduled-notifications"></a>Notifications planifiées
@@ -161,7 +163,7 @@ Pour plus d’informations, consultez:
 
 
 * [Envoyer une notification par vignette locale](tiles-and-notifications-sending-a-local-tile-notification.md)
-* [Envoyer une notification toast locale](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/)
+* [Envoyer une notification toast locale](tiles-and-notifications-send-local-toast.md)
 * [Recommandations en matière de notifications Push](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [Recommandations en matière de notifications toast](https://msdn.microsoft.com/library/windows/apps/hh465391)
 * [Vue d’ensemble des notifications périodiques](tiles-and-notifications-periodic-notification-overview.md)

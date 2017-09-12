@@ -1,86 +1,88 @@
 ---
 author: jnHs
 Description: "Afin de recevoir l’argent provenant des ventes d’applications dans le Windows Store, vous devez configurer votre compte de revenu et remplir les déclarations fiscales nécessaires."
-title: "Configuration de votre compte de revenu et de vos déclarations fiscales"
+title: "Configurer votre compte de paiement et vos déclarations fiscales"
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 10333de456b913adf1c35a0df08f9b99ad4d4fa0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 65fae11722df4640dffa88a21142e6d80876cb18
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/04/2017
 ---
-# <a name="setting-up-your-payout-account-and-tax-forms"></a>Configuration de votre compte de revenu et de vos déclarations fiscales
+# <a name="set-up-your-payout-account-and-tax-forms"></a>Configurer votre compte de paiement et vos déclarations fiscales
 
 
 Afin de recevoir l’argent provenant des ventes d’applications dans le Windows Store, vous devez configurer votre compte de revenu et remplir les déclarations fiscales nécessaires.
 
-> **Remarque** Dès le 1eravril2016, vos revenus Microsoft Advertising seront reversés sur le compte de revenu défini dans le Centre de développement. Pour en savoir plus, consultez l’article [Consolidation du profil fiscal et du compte de paiement de pubCenter dans le Centre de développement](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
+Si vous envisagez de référencer uniquement des applications gratuites (et que vous ne voulez pas proposer d’achats in-app ou utiliser Microsoft Advertising), vous n’avez pas besoin de configurer de compte de revenu ni de remplir de déclaration fiscale. Si vous changez d’avis par la suite et décidez de vendre des applications (ou de proposer des produits in-app), vous pourrez alors configurer votre compte de revenu et remplir vos déclarations fiscales à ce moment-là. Vous ne pourrez pas soumettre d’applications ou d’extensions payantes avant d’avoir créé votre compte de paiement et votre profil fiscal.
 
-Si vous envisagez de référencer uniquement des applications gratuites (et que vous ne voulez pas proposer d’achats in-app ou utiliser Microsoft Advertising), vous n’avez pas besoin de configurer de compte de revenu ni de remplir de déclaration fiscale. Si vous changez d’avis par la suite et décidez de vendre des applications (ou de proposer des produits in-app), vous pourrez alors configurer votre compte de revenu et remplir vos déclarations fiscales à ce moment-là. Vous ne pourrez pas soumettre d’applications payées ou de produits in-app avant d’avoir créé votre compte de paiement et votre profil fiscal.
-
-> **Remarque** Sur [certains marchés](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), les développeurs peuvent uniquement soumettre des applications gratuites. Si votre compte est enregistré sur l’un de ces marchés, vous n’aurez pas la possibilité de configurer un compte de paiement.
-
+> [!NOTE]
+> Dans [certains marchés](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), les développeurs peuvent uniquement soumettre des applications gratuites. Si votre compte est enregistré sur l’un de ces marchés, vous n’aurez pas la possibilité de configurer un compte de paiement.
 
 Après avoir [configuré votre compte de développeur](opening-a-developer-account.md), vous devez effectuer deux opérations avant de pouvoir vendre des applications (ou des modules complémentaires) dans le Windows Store:
 
 -   [Configurer votre compte de paiement](#payout-account)
 -   [Remplir vos déclarations fiscales](#tax-forms)
 
-> **Remarque** Pour plus d’informations sur le mode et l’échéance des paiements de l’argent que vos applications vous ont rapporté, voir [Rémunération](getting-paid-apps.md).
-
+> [!NOTE]
+> Pour plus d’informations sur le mode et l’échéance des paiements de l’argent que vos applications vous ont rapporté, consultez l’article [Rémunération](getting-paid-apps.md).
  
 
 ## <a name="payout-account"></a>Compte de revenu
 
-
 Un compte de revenu est le compte bancaire vers lequel nous transférons l'argent de vos ventes. Ce compte bancaire doit se trouver dans le même pays que celui dans lequel vous avez enregistré votre compte de développeur.
 
-> **Remarque** Sur certains marchés, PayPal peut être utilisé pour votre compte de revenu. Pour savoir si PayPal est pris en charge pour un marché spécifique, consultez l’article [Types de compte, emplacements et frais](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), et lisez la section [Informations PayPal](#paypal-info) ci-après pour en savoir plus.
+> [!NOTE]
+> Dans certains marchés, PayPal peut être utilisé pour votre compte de paiement. Pour savoir si PayPal est pris en charge pour un marché spécifique, consultez l’article [Types de compte, emplacements et frais](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), et lisez la section [Informations PayPal](#paypal-info) ci-après pour en savoir plus.
 
  
-**Pour configurer votre compte de revenu**
+**Pour configurer votre compte de paiement**
 
-1.  Dans le tableau de bord du Centre de développement Windows, cliquez sur **Paramètres du compte** dans le menu de navigation gauche.
-2.  Dans le menu de navigation gauche de la page **Paramètres du compte**, cliquez sur **Compte de revenu**.
+1.  Dans le tableau de bord du Centre de développement Windows, accédez à **Paramètres du compte** en sélectionnant l’icône dans le coin supérieur droit.
+2.  Dans le menu de navigation gauche de la page **Paramètres du compte**, cliquez sur **Compte de paiement**.
 
-   > **Remarque** Étant donné qu’il s’agit d’informations sensibles, vous serez peut-être invité à vous reconnecter.
+   > [!NOTE]
+   > Étant donné qu’il s’agit d’informations sensibles, vous serez peut-être invité à vous reconnecter.
 
 3.  Sur l’écran qui apparaît, saisissez les informations relatives à votre compte.
 
-   > **Remarque** Les champs dans lesquels vous entrez des informations sur votre compte acceptent uniquement les caractères alphanumériques.
+   > [!NOTE]
+   > Les champs dans lesquels vous entrez des informations sur votre compte acceptent uniquement les caractères alphanumériques.
 
 4.  Enregistrez vos informations.
 
-Si vous devez mettre à jour ou modifier votre compte de revenu, suivez la même procédure ci-dessus, en remplaçant les informations actuelles par les nouvelles informations.
+Si vous devez mettre à jour ou modifier votre compte de paiement, suivez la procédure ci-dessus en remplaçant les informations actuelles par les nouvelles informations.
 
-> **Important** En cas de modification de votre compte de revenu, vos paiements peuvent être retardés au plus d’un cycle de paiement. Ce retard s’explique par le fait que nous devons vérifier la modification apportée au compte, et ce, selon le même processus que celui utilisé lors de la configuration initiale du compte de revenu. Une fois votre compte vérifié, vous serez toujours rémunéré, mais nous ajouterons les paiements du cycle de paiement actuel au prochain cycle de paiement. Pour plus d'informations, voir l'article [Rémunération](getting-paid-apps.md).
-
+> [!IMPORTANT]
+> En cas de modification de votre compte de paiement, vos paiements peuvent être retardés d’un cycle de paiement au maximum. Ce retard s’explique par le fait que nous devons vérifier la modification apportée au compte, et ce, selon le même processus que celui utilisé lors de la configuration initiale du compte de revenu. Une fois votre compte vérifié, vous serez toujours rémunéré, mais nous ajouterons les paiements du cycle de paiement actuel au prochain cycle de paiement. Pour plus d'informations, voir l'article [Rémunération](getting-paid-apps.md).
  
 
 ### <a name="paypal-info"></a>Informations PayPal
 
-Selon votre pays ou votre région, vous avez la possibilité de créer un compte de paiement en saisissant vos informations PayPal. Avant de choisir PayPal comme option de compte de paiement, vérifiez les points suivants :
+Selon votre pays ou votre région, vous avez la possibilité de créer un compte de paiement en saisissant vos informations PayPal. Toutefois, avant de choisir PayPal comme option de compte de paiement, vérifiez les points suivants:
 
--   Consultez l'article [Types de compte, emplacements et frais](account-types-locations-and-fees.md) pour savoir si PayPal est un mode de paiement pris en charge dans votre pays ou région.
+-   Pour savoir si PayPal est un mode de paiement pris en charge dans votre pays ou région, consultez l’article [Types de compte, emplacements et frais](account-types-locations-and-fees.md).
 -   Consultez les FAQ ci-après. En fonction de votre situation, il se peut que PayPal ne soit pas l'option idéale pour votre compte de paiement et qu'un compte bancaire soit mieux adapté.
 
 Questions courantes concernant l'utilisation de PayPal comme mode de paiement :
 
 -   **Comment configurer les paramètres PayPal pour recevoir des paiements?** Vous devez vous assurer que votre compte PayPal ne bloque pas les paiements par eCheck. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal. Pour plus d'informations, voir la [page de configuration du compte PayPal](http://go.microsoft.com/fwlink/p/?linkid=513139).
 -   **Mon pays ou ma région sont-ils pris en charge?** Pour savoir si PayPal est un mode de paiement pris en charge, consultez l’article [Types de compte, emplacements et frais](account-types-locations-and-fees.md).
--   **Existe-t-il un montant maximal pour les paiements reçus sur mon compte PayPal?** Oui. PayPal limite le montant que les utilisateurs peuvent percevoir au cours d’une même transaction. Ces seuils varient en fonction de la devise utilisée. Pour connaître les seuils de chaque devise, consultez la [page des seuils de transaction PayPal](http://go.microsoft.com/fwlink/p/?linkid=513108). Si vous pensez recevoir un paiement dépassant votre seuil de transaction PayPal, modifiez votre mode de paiement et optez pour le paiement par compte bancaire.
 -   **Mon compte PayPal doit-il être enregistré dans le même pays ou la même région que mon compte du Centre de développement?** Non. Lorsque vous créez un compte PayPal, vous pouvez accepter la configuration par défaut. Vous ne devriez rencontrer aucun problème d’incompatibilité entre les différents pays ou régions et entre les différentes devises, à moins que vous n’ayez bloqué le paiement dans certaines devises. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal.
 -   **Dois-je accepter les paiements PayPal manuellement?** Non. Les comptes PayPal demandent par défaut de valider manuellement chaque paiement, ce qui signifie que si vous n’acceptez pas le paiement dans un délai de 30 jours, celui-ci est rejeté. Vous pouvez modifier ce paramètre en désactivant l'option « Me demander » sur la page des paramètres supplémentaires de votre compte PayPal.
+
 
 ### <a name="specific-requirements-for-certain-countriesregions"></a>Exigences spécifiques pour certains pays/régions
 
 Certains pays et régions appliquent des exigences supplémentaires pour les comptes de revenu. Si vous résidez au Pakistan, en Russie ou en Ukraine, notez les obligations suivantes.
 
-### <a name="pakistan"></a>Pakistan
+#### <a name="pakistan"></a>Pakistan
 
 Le remplissage d’un formulaire R constitue une exigence réglementaire du secteur bancaire au Pakistan. Ce formulaire sert à indiquer la finalité et le motif d’un encaissement de fonds en provenance de l’étranger. Par conséquent, chaque fois que vous pouvez bénéficier d’un revenu mensuel de la part de Microsoft, vous devez soumettre un formulaire R à votre banque pour que ce paiement soit autorisé sur votre compte. Pour connaître la procédure d’obtention d’un formulaire R, contactez votre agence bancaire locale.
 
@@ -88,7 +90,7 @@ Vous devrez soumettre un formulaire R à votre banque pour chacun des mois où v
 
 Une fois que le paiement a été soumis à votre banque, vous disposez de 30 jours pour envoyer un formulaire R. Passé ce délai, les fonds seront retournés à Microsoft.
 
-### <a name="russia"></a>Russie
+#### <a name="russia"></a>Russie
 
 Si vous êtes un développeur vivant en Russie, vous pouvez avoir besoin de fournir des documents à votre banque pour que celle-ci puisse déposer des fonds sur votre compte. Si vous pouvez bénéficier d’une rémunération, nous vous fournirons les documents suivants dans un e-mail:
 
@@ -102,7 +104,7 @@ Pour garantir le succès du paiement, notez les points suivants :
 -   Les informations bancaires entrées dans le Centre de développement en caractères latins sont converties en caractères cyrilliques.
 -   Les paiements doivent être effectués sur un compte bancaire et non sur une carte bancaire.
 
-### <a name="ukraine"></a>Ukraine
+#### <a name="ukraine"></a>Ukraine
 
 Si vous êtes un développeur vivant en Ukraine, vous pouvez avoir besoin de fournir des documents à votre banque pour que celle-ci puisse déposer des fonds sur votre compte. Si vous pouvez bénéficier d’une rémunération, nous vous fournirons les documents suivants dans un e-mail:
 
@@ -118,8 +120,8 @@ Pour garantir le succès du paiement, notez les points suivants :
 -   Les paiements sont transférés directement de Microsoft vers votre compte bancaire en dollars USD.
 -   Les informations bancaires entrées dans le Centre de développement en caractères latins sont converties en caractères cyrilliques.
 
-## <a name="tax-forms"></a>Déclarations fiscales
 
+## <a name="tax-forms"></a>Déclarations fiscales
 
 Une fois que vous vous êtes [inscrit pour obtenir un compte de développeur](opening-a-developer-account.md) et que vous avez configuré votre [compte de revenu](#payout-account), vous pouvez créer votre *profil fiscal* pour le Windows Store en procédant comme suit :
 
@@ -128,21 +130,23 @@ Une fois que vous vous êtes [inscrit pour obtenir un compte de développeur](op
 
 Vous pouvez remplir et envoyer vos déclarations fiscales au format électronique dans votre tableau de bord, ce qui vous évite d’avoir à imprimer les formulaires et à les envoyer par courrier.
 
-> **Important** L’imposition varie selon les pays et les régions. Le montant exact des taxes dont vous devez vous affranchir varie selon les pays et les régions où vous vendez vos applications. Pour savoir dans quels pays Microsoft vous dispense des taxes d’utilisation et sur les ventes, voir le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058) Dans d’autres pays, selon l’endroit où vous êtes inscrit, vous devrez peut-être verser directement les taxes d’utilisation et les taxes sur les ventes de vos applications à l’administration fiscale locale. Notez également que le produit des ventes d’applications que vous recevez peut être considéré comme un revenu imposable. Nous vous encourageons vivement à contacter l’autorité compétente de votre pays ou de votre région pour obtenir les informations fiscales appropriées à vos activités en tant que développeur Windows Store.
+> [!IMPORTANT]
+> L’imposition varie selon les pays et les régions. Le montant exact des taxes dont vous devez vous affranchir varie selon les pays et les régions où vous vendez vos applications. Pour savoir dans quels pays Microsoft vous dispense des taxes d’utilisation et sur les ventes, voir le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058) Dans d’autres pays, selon l’endroit où vous êtes inscrit, vous devrez peut-être verser directement les taxes d’utilisation et les taxes sur les ventes de vos applications à l’administration fiscale locale. Notez également que le produit des ventes d’applications que vous recevez peut être considéré comme un revenu imposable. Nous vous encourageons vivement à contacter l’autorité compétente de votre pays ou de votre région pour obtenir les informations fiscales appropriées à vos activités en tant que développeur Windows Store.
 
  
 **Pour créer votre profil fiscal**
 
-1.  Dans le tableau de bord du Centre de développement Windows, cliquez sur **Paramètres du compte** dans le menu de navigation gauche.
-2.  Dans le menu de navigation gauche de la page **Paramètres du compte**, cliquez sur **Profil fiscal**.
+1.  Dans le tableau de bord du Centre de développement Windows, cliquez sur l'icône **Paramètres du compte** dans le coin supérieur droit.
+2.  Dans le menu de navigation de gauche de la page **Paramètres du compte**, cliquez sur **Profil fiscal**.
 
-   > **Remarque** Étant donné qu’il s’agit d’informations sensibles, vous serez peut-être invité à vous reconnecter.
+   > [!NOTE]
+   > Étant donné qu’il s’agit d’informations sensibles, vous serez peut-être invité à vous reconnecter.
 
 3.  Prenez connaissance de l’état actuel de votre profil fiscal, puis cliquez sur **Modifier** pour remplir les formulaires requis.
 4.  Répondez aux questions portant sur la nationalité américaine et la résidence aux États-Unis, puis cliquez sur **Suivant**.
 5.  Si votre nom et votre adresse sont affichés, vérifiez-les pour la déclaration de vos revenus.
 
-Les versions électroniques des déclarations fiscales à remplir apparaissent ensuite. Quel que soit votre pays de résidence ou votre nationalité, vous devez remplir les déclarations fiscales des États-Unis pour pouvoir vendre des applications ou des produits in-app par le biais du Windows Store. Les développeurs répondant à certains critères de résidence aux États-Unis doivent remplir le formulaire W-9 du fisc américain (IRS). Les autres développeurs résidant en dehors des États-Unis doivent compléter le formulaire W-8 de l'IRS. Vous pouvez remplir ces formulaires en ligne lors de la création de votre profil fiscal.
+Les versions électroniques des déclarations fiscales à remplir apparaissent ensuite. Quel que soit votre pays de résidence ou votre nationalité, vous devez remplir les déclarations fiscales des États-Unis pour pouvoir vendre des applications ou des extension par le biais du Windows Store. Les développeurs répondant à certains critères de résidence aux États-Unis doivent remplir le formulaire W-9 du fisc américain (IRS). Les autres développeurs résidant en dehors des États-Unis doivent compléter le formulaire W-8 de l'IRS. Vous pouvez remplir ces formulaires en ligne lors de la création de votre profil fiscal.
 
 Il n'est pas nécessaire de fournir un numéro d'identification du contribuable ou ITIN (États-Unis) pour recevoir des paiements de Microsoft ou pour revendiquer des avantages en vertu d'une convention fiscale.
 

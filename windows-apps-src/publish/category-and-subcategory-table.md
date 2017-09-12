@@ -4,29 +4,30 @@ Description: "Le classement de votre application dans la catégorie et la sous-c
 title: "Tableau des catégories et sous-catégories"
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 1234a1209f7cc32901b093a44c2b71fc90a6f3b5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 88971766290288f6badb611e6b27c58641020005
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="category-and-subcategory-table"></a>Tableau des catégories et sous-catégories
 
 
 Le classement de votre application dans la catégorie et la sous-catégorie adéquates permet aux utilisateurs de la trouver facilement et d'en savoir plus sur elle.
 
-Choisissez la catégorie qui correspond le mieux à votre application. Ensuite, sélectionnez une sous-catégorie, le cas échéant.
+Vous êtes tenu de choisir la catégorie qui décrit le mieux votre application. Si vous le souhaitez, vous pouvez choisir une sous-catégorie, le cas échéant. (Si vous choisissez la catégorie **Jeux**, vous devez définir une sous-catégorie (un genre).)
 
-> **Important**  Si vous choisissez la catégorie **Jeux**, vous devez définir une sous-catégorie.
+Une application ne peut être répertoriée que dans une seule catégorie (et une seule sous-catégorie, le cas échéant.) Si vous ne savez pas quelle catégorie ou sous-catégorie utiliser, ou que vous n’en trouvez aucune qui corresponde à votre application, choisissez celle que, selon vous, les clients vont très certainement examiner lorsqu’ils rechercheront des applications comme la vôtre.
 
-Une application ne peut être répertoriée que dans une seule catégorie (et une seule sous-catégorie, le cas échéant.) Si vous ne savez pas quelle catégorie ou sous-catégorie utiliser, choisissez celle que, selon vous, les clients vont très certainement parcourir lorsqu’ils rechercheront des applications comme les vôtres.
+Pour modifier la catégorie ou la sous-catégorie d’une application déjà publiée dans le WindowsStore, [créez une autre soumission](app-submissions.md) et sélectionnez la nouvelle catégorie ou sous-catégorie.
 
-Si vous souhaitez modifier la catégorie ou la sous-catégorie d’une application déjà publiée dans le Windows Store, vous devez [créer une autre soumission](app-submissions.md) et sélectionner la nouvelle catégorie.
-
-> **Important** Si vous publiez l’application dans la catégorie **Jeux**, vous ne pourrez pas sélectionner une autre catégorie lors d’une nouvelle soumission. Vous ne pouvez pas sélectionner la catégorie **Jeux** pour la mise à jour d’une application que vous avez précédemment publiée dans une catégorie différente.
+> [!IMPORTANT] 
+> Si vous publiez l’application dans la catégorie **Jeux**, vous ne pourrez pas sélectionner une autre catégorie lors d’une nouvelle soumission. Vous ne pouvez pas sélectionner la catégorie **Jeux** pour la mise à jour d’une application que vous avez précédemment publiée dans une catégorie différente.
 
 Le Windows Store organise les applications dans les catégories et sous-catégories ci-après.
 
@@ -55,7 +56,7 @@ Seules certaines catégories ont des sous-catégories. N’oubliez pas que vous 
 | Personnalisation             | Sonneries et sons <br> Thèmes <br> Papier peint et écrans de verrouillage |
 | Photo et vidéo               | (Aucune)                                            |
 | Productivité                | (Aucune)                                            |
-| Sécurité                    | Protection du PC <br> Protection personnelle <br>         |
+| Sécurité                    | Protection du PC <br> Protection personnelle              |
 | Achats                    | (Aucune)                                            |
 | Social                      | (Aucune)                                            |
 | Sports                      | (Aucune)                                            |
@@ -63,5 +64,6 @@ Seules certaines catégories ont des sous-catégories. N’oubliez pas que vous 
 | Utilitaires et outils           | Sauvegarde et gestion <br> Gestionnaires de fichiers                |
  
 
-> **Important**  Pour plus d’informations sur les catégories utilisées dans le Windows Store pour Windows 8.1 et les versions antérieures ainsi que dans le Windows Phone Store, et sur leur lien avec la liste de catégories ci-dessus, consultez [Apparence de votre application dans le Store pour les clients dotés de Windows 10](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes).
+> [!NOTE] 
+> Certaines des catégories et sous-catégories utilisées dans le WindowsStore pour Windows8.1 et les versions antérieures, ainsi que dans le WindowsPhone Store, peuvent différer des catégories répertoriées ci-dessus. 
 

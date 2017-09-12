@@ -5,21 +5,29 @@ title: Tirer pour actualiser
 label: Pull-to-refresh
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
-ms.openlocfilehash: 0d10a0c7f269cc6c7d0b2e9476a926226fe94f82
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: predavid
+design-contact: kimsea
+dev-contact: stpete
+doc-status: Published
+ms.openlocfilehash: 51a8c9a2e4618e054374308918a74cf2095119ef
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="pull-to-refresh"></a>Tirer pour actualiser
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Le modèle Tirer pour actualiser permet à l’utilisateur de dérouler une liste de données à l’aide de la fonction tactile afin de récupérer des données supplémentaires. Tirer pour actualiser est largement utilisé sur les applications mobiles, mais est utile sur n’importe quel appareil doté d’un écran tactile. Vous pouvez gérer des [les événements de manipulation](../input-and-devices/touch-interactions.md#manipulation-events) afin d’implémenter le modèle Tirer pour actualiser dans votre application.
+
+> **API importantes**: [classe ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [classe GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
 
 L’[exemple Tirer pour actualiser](http://go.microsoft.com/fwlink/p/?LinkId=620635) montre comment étendre le contrôle [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) pour prendre en charge ce modèle. Dans cet article, nous utilisons cet exemple pour expliquer les points clés de l’implémentation du modèle Tirer pour actualiser.
 
@@ -39,7 +47,7 @@ RefreshableListView propose un mode d’actualisation automatique qui détermine
 - Désactivé: une actualisation est demandée uniquement si la liste est relâchée en cas de dépassement du seuil `PullThreshold`. L’indicateur s’anime en dehors de la vue lorsque l’utilisateur relâche le défilement. L’indicateur de barre d’état s’affiche s’il est disponible (sur le téléphone).
 - Activé: une actualisation est demandée dès que le seuil `PullThreshold` est dépassé en cas de relâchement ou non. L’indicateur reste en vue jusqu’à ce que les nouvelles données soient récupérées, puis s’anime hors vue. Une méthode **Deferral** est utilisée pour notifier l’application une fois la recherche de données terminée.
 
-> **Remarque**&nbsp;&nbsp;Le code de l’exemple est également applicable à un élément [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). Pour modifier un contrôle GridView, dérivez la classe personnalisée du contrôle GridView au lieu de ListView et modifiez le modèle GridView par défaut.
+> **Remarque**&nbsp;&nbsp;Le code de l’exemple est également applicable à un élément [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). Pour modifier un contrôle GridView, dérivez la classe personnalisée du contrôle GridView au lieu de ListView et modifiez le modèle GridView par défaut.
 
 ## <a name="add-a-refresh-indicator"></a>Ajouter un indicateur d’actualisation
 
@@ -51,7 +59,7 @@ Voici les instructions recommandées pour l’indicateur d’actualisation.
 
 **Modifier le modèle d’affichage Liste**
 
-Dans l’exemple Tirer pour actualiser, le modèle de contrôle `RefreshableListView` modifie le modèle **ListView** standard en ajoutant un indicateur d’actualisation. L’indicateur d’actualisation est placé dans une [**grille**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) au-dessus de l’élément [**ItemsPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx), qui est la partie affichant les éléments de liste.
+Dans l’exemple Tirer pour actualiser, le modèle de contrôle `RefreshableListView` modifie le modèle **ListView** standard en ajoutant un indicateur d’actualisation. L’indicateur d’actualisation est placé dans une [grille](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) au-dessus de l’élément [ItemsPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx), qui est la partie affichant les éléments de liste.
 
 > **Remarque**&nbsp;&nbsp;La `DefaultRefreshIndicatorContent` zone de texte fournit un indicateur de texte de secours affiché uniquement si la propriété `RefreshIndicatorContent` n’est pas définie.
 
@@ -123,7 +131,7 @@ Vous définissez le contenu de l’indicateur d’actualisation dans le code XAM
 
 **Animer le compteur**
 
-Lorsque la liste est extraite vers le bas, l’événement de RefreshableListView `PullProgressChanged` survient. Vous gérez cet événement dans votre application pour contrôler l’indicateur d’actualisation. Dans l’exemple, ce plan conceptuel est démarré pour animer l’élément [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.aspx) de l’indicateur et faire tourner l’indicateur d’actualisation. 
+Lorsque la liste est extraite vers le bas, l’événement de RefreshableListView `PullProgressChanged` survient. Vous gérez cet événement dans votre application pour contrôler l’indicateur d’actualisation. Dans l’exemple, ce plan conceptuel est démarré pour animer l’élément [RotateTransform](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.aspx) de l’indicateur et faire tourner l’indicateur d’actualisation. 
 
 **XAML**
 ```xaml
@@ -142,13 +150,13 @@ Lorsque la liste est extraite vers le bas, l’événement de RefreshableListVie
 
 ## <a name="handle-scroll-viewer-manipulation-events"></a>Gérer les événements de manipulation de la visionneuse à défilement
 
-Le modèle de contrôle d’affichage Liste intègre un élément [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) qui permet à un utilisateur de faire défiler les éléments de liste. Pour implémenter le modèle Tirer pour actualiser, vous devez gérer les événements de manipulation sur la visionneuse à défilement intégrée, ainsi que plusieurs événements connexes. Pour plus d’informations sur les événements de manipulation, voir [Interactions tactiles](../input-and-devices/touch-interactions.md).
+Le modèle de contrôle d’affichage Liste intègre un élément [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) qui permet à un utilisateur de faire défiler les éléments de liste. Pour implémenter le modèle Tirer pour actualiser, vous devez gérer les événements de manipulation sur la visionneuse à défilement intégrée, ainsi que plusieurs événements connexes. Pour plus d’informations sur les événements de manipulation, voir [Interactions tactiles](../input-and-devices/touch-interactions.md).
 
-** OnApplyTemplate**
+**OnApplyTemplate**
 
-Pour obtenir l’accès à la visionneuse à défilement et à d’autres parties du modèle afin de pouvoir ajouter des gestionnaires d’événements et les appeler ultérieurement dans votre code, vous devez remplacer la méthode [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.onapplytemplate.aspx). Dans OnApplyTemplate, vous appelez [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.gettemplatechild.aspx) pour obtenir une référence à une partie nommée dans le modèle de contrôle, que vous pouvez enregistrer de manière à l’utiliser ultérieurement dans votre code.
+Pour obtenir l’accès à la visionneuse à défilement et à d’autres parties du modèle afin de pouvoir ajouter des gestionnaires d’événements et les appeler ultérieurement dans votre code, vous devez remplacer la méthode [OnApplyTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.onapplytemplate.aspx). Dans OnApplyTemplate, vous appelez [GetTemplateChild](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.gettemplatechild.aspx) pour obtenir une référence à une partie nommée dans le modèle de contrôle, que vous pouvez enregistrer de manière à l’utiliser ultérieurement dans votre code.
 
-Dans l’exemple, les variables utilisées pour stocker les parties du modèle sont déclarées dans la région Variables privées. Une fois récupérés dans la méthode OnApplyTemplate, les gestionnaires d’événements sont ajoutés pour les événements [**DirectManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationstarted.aspx), [**DirectManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationcompleted.aspx), [**ViewChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.viewchanged.aspx), et [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx)
+Dans l’exemple, les variables utilisées pour stocker les parties du modèle sont déclarées dans la région Variables privées. Une fois récupérés dans la méthode OnApplyTemplate, les gestionnaires d’événements sont ajoutés pour les événements [DirectManipulationStarted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationstarted.aspx), [DirectManipulationCompleted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationcompleted.aspx), [ViewChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.viewchanged.aspx), et [PointerPressed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx)
 
 **DirectManipulationStarted**
 
@@ -162,7 +170,7 @@ Lorsque l’utilisateur cesse de tirer la liste vers le bas, le code de ce gesti
 
 Les gestionnaires d’événements pour les animations sont également supprimés.
 
-En fonction de la valeur de la propriété `AutoRefresh`, la liste peut animer l’arrière vers le haut immédiatement ou attendre que l’actualisation soit terminée, puis animer l’arrière vers le haut. Un objet [**Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) est utilisé pour marquer l’achèvement de l’actualisation. À ce moment, l’interface utilisateur de l’indicateur d’actualisation est masquée.
+En fonction de la valeur de la propriété `AutoRefresh`, la liste peut animer l’arrière vers le haut immédiatement ou attendre que l’actualisation soit terminée, puis animer l’arrière vers le haut. Un objet [Deferral](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) est utilisé pour marquer l’achèvement de l’actualisation. À ce moment, l’interface utilisateur de l’indicateur d’actualisation est masquée.
 
 Cette partie du gestionnaire d’événements DirectManipulationCompleted déclenche l’événement `RefreshRequested` et obtient l’objet Deferral si nécessaire.
 
@@ -232,7 +240,7 @@ Dans l’exemple, le contenu de l’indicateur d’actualisation est fourni et c
 
 ## <a name="composition-animations"></a>Animations de composition
 
-Par défaut, le contenu d’une visionneuse à défilement s’arrête lorsque la barre de défilement atteint le haut. Pour permettre à l’utilisateur de continuer à tirer la liste vers le bas, vous devez accéder à la couche visuelle et animer le contenu de la liste. Pour ce faire, l’exemple utilise des [animations composition](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation) et plus précisément des [animations par expressions](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations).
+Par défaut, le contenu d’une visionneuse à défilement s’arrête lorsque la barre de défilement atteint le haut. Pour permettre à l’utilisateur de continuer à tirer la liste vers le bas, vous devez accéder à la couche visuelle et animer le contenu de la liste. Pour ce faire, l’exemple utilise des [animations composition](https://msdn.microsoft.com/windows/uwp/composition/composition-animation) et plus précisément des [animations par expressions](https://msdn.microsoft.com/windows/uwp/composition/composition-animation#expression-animations).
 
 Dans l’exemple, ce travail s’effectue principalement dans le gestionnaire d’événements `CompositionTarget_Rendering` et la méthode `UpdateCompositionAnimations`.
 
@@ -242,4 +250,4 @@ Dans l’exemple, ce travail s’effectue principalement dans le gestionnaire d�
 - [Interactions tactiles](../input-and-devices/touch-interactions.md)
 - [Affichage Liste et affichage Grille](listview-and-gridview.md)
 - [Modèles d’élément d’affichage Liste](listview-item-templates.md)
-- [Animations par expressions](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)
+- [Animations par expressions](https://msdn.microsoft.com/windows/uwp/composition/composition-animation#expression-animations)

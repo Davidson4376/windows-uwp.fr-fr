@@ -4,65 +4,89 @@ Description: "Le rapport sur les acquisitions de modules complémentaires dispon
 title: "Rapport sur les acquisitions de modules complémentaires"
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 1c2001e93fd06cc93fa5cfe9d2a10a029e13c82d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 46d5ee3d0e0ac9c2a3599f51e17ea4d7425ab5af
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="add-on-acquisitions-report"></a>Rapport sur les acquisitions de modules complémentaires
 
 
-Le rapport **Acquisitions de modules complémentaires** disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser le nombre de modules complémentaires que vous avez vendus, et vous fournit des informations sur la plateforme ainsi que des données démographiques. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de la méthode [obtenir des acquisitions d’extensions](../monetize/get-in-app-acquisitions.md) dans [l’API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
+Le rapport **Acquisitions de modules complémentaires** disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser le nombre de modules complémentaires que vous avez vendus, et vous fournit des informations sur la plateforme ainsi que des données démographiques. Ce rapport vous permet également d’obtenir les informations de conversion relatives aux clients qui utilisent Windows10.
 
-Dans ce rapport, une acquisition de module complémentaire signifie qu’un client vous a acheté l’un de ces modules. Plusieurs achats d’un même module complémentaire de type consommable effectués par le même client sont comptabilisés comme différentes acquisitions de modules complémentaires.
+Vous pouvez visualiser ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de la méthode [obtenir des acquisitions d’extensions](../monetize/get-in-app-acquisitions.md) dans [l’API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
 
-> **Important**  Le rapport **Acquisitions de modules complémentaires** n’inclut aucune donnée sur les remboursements, reprises, rétrofacturations, etc. Pour évaluer les revenus générés par l’application, visitez [Synthèse des paiements](payout-summary.md). Dans la section **Réservé**, cliquez sur le lien **Télécharger les transactions réservées**.
+Dans ce rapport, une acquisition d’extension signifie qu’un client vous a acheté une extension (ou l’a acquise sans frais si vous l’avez offerte gratuitement). Plusieurs achats d’une même extension de type consommable effectués par le même client sont comptabilisés comme différentes acquisitions d’extension.
+
+> [!IMPORTANT]
+> Le rapport **Acquisitions de modules complémentaires** n’inclut aucune donnée sur les remboursements, reprises, rétrofacturations, etc. Pour évaluer les revenus de votre application, consultez l’article [Résumé du paiement](payout-summary.md). Dans la section **Réservé**, cliquez sur le lien **Télécharger les transactions réservées**.
+
 
 ## <a name="apply-filters"></a>Appliquer des filtres
 
+Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de **30D** (30jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12mois, ou sur une plage de dates personnalisée que vous spécifiez.
 
-Dans la zone supérieure de la page, vous pouvez développer l’option **Appliquer les filtres** pour filtrer toutes les données de cette page par plage de dates et/ou par type d’appareil. Vous pouvez également filtrer les données de façon à afficher uniquement celles relatives à un module complémentaire spécifique.
+Vous pouvez également développer l’option **Filtres** pour filtrer toutes les données de cette page par extension, par marché et/ou par type d’appareil.
 
--   **Date**: la valeur par défaut de ce filtre est **30derniers jours**, mais vous pouvez étendre cette période aux **12derniers mois**.
--   **Module complémentaire**: Le filtre par défaut est **Tous les modules complémentaires**. Si vous souhaitez afficher les données d’acquisition pour l’un de vos modules complémentaires uniquement, vous pouvez en choisir un ici.
--   **Type d’appareil**: le paramètre par défaut est **Tous les appareils**. Si vous souhaitez afficher les données d’acquisitions de modules complémentaires relatives à un certain type d’appareil uniquement, vous pouvez en choisir un ici.
+-   **Extension**: le filtre par défaut est **Tous les modules complémentaires**, mais vous pouvez restreindre les données à une ou plusieurs extensions de l’application.
+-   **Marché**: le filtre par défaut est **Tous les marchés**, mais vous pouvez restreindre les données aux acquisitions relatives à un ou plusieurs marchés.
+-   **Type d’appareil**: le paramétrage par défaut est **Tous les appareils**. Si vous souhaitez uniquement afficher les données d’acquisitions relatives à un certain type d’appareil, vous pouvez en choisir un ici.
 
-Les informations figurant dans les graphiques répertoriés ci-après correspondent à la période sélectionnée dans la section **Appliquer les filtres**.
+Les informations figurant dans tous les graphiques répertoriés ci-après correspondent à la plage de dates et à tous les filtres que vous avez sélectionnés. Certaines sections vous permettent également d’appliquer des filtres supplémentaires.
 
-Les informations figurant dans tous les graphiques répertoriés ci-après refléteront la période sélectionnée dans la section **Appliquer des filtres**. Par défaut, ces données porteront sur tous les types d’appareil, sauf si vous avez utilisé l’option **Appliquer les filtres** pour ne visualiser qu’un seul type.
 
 ## <a name="add-on-acquisitions"></a>Acquisitions de modules complémentaires
 
+Le graphique **Acquisitions de modules complémentaires** affiche le nombre total d’acquisitions quotidiennes ou hebdomadaires de vos modules complémentaires au cours de la période sélectionnée. (Lorsque vous utilisez l’option **Appliquer des filtres** afin d’afficher les données portant sur une période plus étendue, les données d’acquisition sont regroupées par semaine.)
 
-Le graphique **Acquisitions de modules complémentaires** affiche le nombre total d’acquisitions quotidiennes ou hebdomadaires de vos modules complémentaires au cours de la période sélectionnée. (Lorsque vous utilisez l’option **Appliquer des filtres** pour filtrer les données sur une plus longue période, les données sont rassemblées par semaine.)
+Vous pouvez également visualiser le nombre total d’acquisitions sur toute la durée de vie de votre application en sélectionnant **Add-on cumulative**. Vous avez alors accès au total cumulé de l’ensemble des acquisitions effectuées depuis la première publication de votre application.
 
-Vous pouvez également afficher le nombre d’acquisitions total sur toute la durée de vie de vos modules complémentaires. Vous avez alors accès au total cumulé de l’ensemble des acquisitions effectuées depuis la première publication de votre application.
+Si vous le souhaitez, vous pouvez filtrer les résultats par acquisition d’extension émanant du client ou du WindowsStore sur le web et/ou par version du système d’exploitation.
 
-Le graphique indique également le prix qu’un client a payé pour acquérir le module complémentaire.
-
-Vous pouvez également filtrer les résultats par marché et/ou par version du système d’exploitation.
-
-## <a name="top-add-ons"></a>Top des modules complémentaires
-
-Le graphique **Top des modules complémentaires** présente le nombre total d’acquisitions de chacun de vos modules complémentaires par marché au cours de la période sélectionnée. Par défaut, les modules complémentaires ayant fait l’objet du plus grand nombre d’acquisitions apparaissent en premier dans le graphique. Vous pouvez inverser cet ordre en cliquant sur la flèche dans la colonne **Acquisitions** de ce graphique.
-
-## <a name="markets"></a>Marchés
-
-Le graphique **Marchés** présente le nombre total d’acquisitions de modules complémentaires survenues par marché au cours de la période sélectionnée. Par défaut, les marchés ayant donné lieu au plus grand nombre d’acquisitions apparaissent en premier dans le graphique. Vous pouvez inverser cet ordre en cliquant sur la flèche dans la colonne **Acquisitions** de ce graphique.
 
 ## <a name="customer-demographic"></a>Données démographiques sur les clients
 
-Le graphique **Données démographiques sur les clients** présente des informations démographiques sur les personnes ayant acheté votre module complémentaire. Vous pouvez voir le nombre d’acquisitions (au cours de la période sélectionnée) effectuées par des personnes appartenant à un certain groupe d’âge et par sexe.
+Le graphique **Données démographiques sur les clients** présente des informations démographiques sur les personnes qui ont acquis vos extensions. Vous pouvez voir le nombre d’acquisitions (au cours de la période sélectionnée) effectuées par des personnes appartenant à un certain groupe d’âge et par sexe.
 
-> **Remarque**  Certains clients ont choisi de ne pas partager ces informations. Si nous n’avons pas pu déterminer le groupe d’âge ni le sexe, l’acquisition entre dans la catégorie **Inconnu**.
+> [!NOTE]
+> Certains clients ont choisi de ne pas partager ces informations. Si nous n’avons pas pu déterminer le groupe d’âge ni le sexe, l’acquisition entre dans la catégorie **Inconnu**.
 
-## <a name="os-version"></a>Version du système d'exploitation
 
-Le graphique **Version du système d'exploitation** présente le nombre total d'acquisitions en fonction du système d'exploitation du client (ou via une [acquisition en volume par des organisations](organizational-licensing.md)). Il arrive que nous ne soyons pas en mesure de fournir ces informations. Auquel cas, la version du système d'exploitation entre dans la catégorie **Inconnu**.
+## <a name="markets"></a>Marchés
+
+Le graphique **Marchés** indique le nombre total d’acquisitions d’extension au cours de la période sélectionnée pour chaque marché dans lequel votre application est disponible. 
+
+Vous pouvez visualiser ces données sous la forme visuelle **Carte** ou **Tableau**. La représentation sous forme de tableau affiche cinq marchés à la fois, soit dans l’ordre alphabétique, soit par nombre maximal ou minimal d’acquisitions ou d’installations. Vous pouvez également télécharger ces données afin de visualiser d’un seul coup d’œil les informations relatives à la totalité des marchés.
+
+
+## <a name="add-on-page-views-and-conversions-by-campaign-id"></a>Vues et conversions de la page d’extension par ID de campagne
+
+Le graphique **Vues et conversions de la page d’extension par ID de campagne** vous présente le nombre total de conversions (acquisitions) d’extension par ID de campagne au cours de la période sélectionnée, ce qui vous permet d’effectuer le suivi des conversions et des vues de page par des clients qui utilisent Windows10 pour chacune de vos [campagnes de promotion personnalisées](create-a-custom-app-promotion-campaign.md). Ce graphique affiche uniquement les conversions d’extension.
+
+> [!NOTE]
+> Il est possible que des clients soient arrivés à la description de votre application en cliquant sur une campagne personnalisée qui n’a pas été créée par vos soins. Nous marquons chaque vue de page dans une session avec l’ID de campagne à partir duquel l’utilisateur a accédé au WindowsStore. Puis nous attribuons à cet ID de campagne les conversions appropriées parmi toutes les acquisitions effectuées dans les 24heures. Par conséquent, le nombre total de conversions peut être plus élevé que celui de vos ID de campagne, et certaines de vos conversions ou conversions d’extension peuvent présenter un nombre de vues de page nul. 
+
+
+## <a name="conversions-breakdown-by-campaign-id"></a>Répartition des conversions par ID de campagne
+
+Le graphique **Répartition des conversions par ID de campagne** vous permet d’effectuer le suivi des conversions et des vues de page par des clients qui utilisent Windows10 pour chacune de vos [campagnes de promotion personnalisées](create-a-custom-app-promotion-campaign.md). Ce graphique affiche les conversions d’application et d’extension par ID de campagne.
+
+Dans ce graphique, une *vue de page* signifie qu’un client a consulté la description de l’application dans le WindowsStore. Une *conversion* signifie qu’un client a obtenu une licence pour l’application ou pour l’extension (qu’elle soit payante ou gratuite).
+
+Gardez à l’esprit que ces nombres de vues de page et de conversions ne correspondent pas à des nombres de clients uniques. 
+
+
+## <a name="top-add-ons"></a>Top des modules complémentaires
+
+Le graphique **Top des modules complémentaires** présente le nombre total d’acquisitions de chacune de vos extensions au cours de la période sélectionnée, ce qui vous permet de déterminer les extensions les plus populaires. 
+
+
 
  
 

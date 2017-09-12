@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 412876d0b05b2e703482f8cc79a1f07268ac200f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 6eed2ecb5766edea8678ea2af10c02332d5a5928
+ms.sourcegitcommit: a61e9fc06f74dc54c36abf7acb85eeb606e475b8
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/15/2017
 ---
 # <a name="launching-resuming-and-background-tasks"></a>Lancement, reprise et tâches en arrière-plan
 
@@ -24,6 +26,7 @@ Cette section contient des informations sur ce qui suit:
 - Comment utiliser des services d’application qui permettent à votre application de plateforme Windows universelle (UWP) de partager des données et des fonctionnalités avec d’autres applications.
 - Comment utiliser des tâches d’arrière-plan qui permettent à une applicationUWP de fonctionner même lorsqu’elle n’est pas au premier plan.
 - Comment détecter les appareils connectés, lancer une application sur un autre appareil et communiquer avec un service d’application sur un appareil distant, pour créer des expériences utilisateur fluides sur plusieurs appareils.
+- Comment choisir la technologie adéquate pour étendre et agencer votre application.
 - Comment ajouter et configurer l’écran de démarrage de votre application.
 
 ## <a name="the-app-lifecycle"></a>Cycle de vie d’une application
@@ -68,7 +71,7 @@ Consultez les rubriques liées au lancement d’une application ci-dessous.
 | Rubrique | Description |
 |-------|-------------|
 | [Noms de schéma d’URI et de fichier réservés](reserved-uri-scheme-names.md) | Cette rubrique répertorie les noms de schéma d’URI et de fichier réservés, indisponibles pour votre application. |
-| [Démarrage automatique avec lecture automatique](auto-launching-with-autoplay.md) | Vous pouvez utiliser la lecture automatique pour proposer votre application en tant qu’option lorsque l’utilisateur connecte un périphérique à son PC. Cela inclut les appareils qui ne sont pas des volumes, tels qu’un appareil photo ou un lecteur multimédia, et les appareils qui sont des volumes, tels qu’une cléUSB, une carte mémoireSD ou un DVD. |
+| [Démarrage automatique avec lecture automatique](auto-launching-with-autoplay.md) | Vous pouvez utiliser la lecture automatique pour proposer votre application en tant qu’option lorsque l’utilisateur connecte un périphérique à son PC. Cela inclut les périphériques autres que les périphériques de volume, tels qu’un appareil photo ou un lecteur multimédia, ou les périphériques de volume tels qu’une cléUSB, une carte mémoireSD ou un DVD. |
 
 ## <a name="app-services"></a>Services d’application
 
@@ -78,6 +81,7 @@ La section [Services d’application](app-services.md) décrit comment intégrer
 |-------|-------------|
 | [Créer et utiliser un service d’application](how-to-create-and-consume-an-app-service.md) | Découvrez comment écrire une application de plateforme Windows universelle (UWP) fournissant des services à d’autres applications UWP et comment utiliser ces derniers. |
 | [Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte](convert-app-service-in-process.md) | Convertissez un code de service d’application qui s’exécutait dans un processus distinct en arrière-plan en code qui s’exécute dans le même processus que votre fournisseur de service d’application. |
+| [Étendre votre application avec des services, des extensions et des packages d’application](extend-your-app-with-services-extensions-packages.md) | Windows10 intègre différentes technologies qui vous aideront à étendre et agencer votre application. Cette rubrique vous aide à déterminer quelle technologie utiliser et fournit une brève présentation de chacune. |
 
 ## <a name="background-tasks"></a>Tâches en arrière-plan
 
@@ -85,22 +89,26 @@ La section [Tâches en arrière-plan](support-your-app-with-background-tasks.md)
 
 | Rubrique | Description |
 |-------|-------------|
-| [Accéder à des capteurs et des appareils à partir d’une tâche en arrière-plan](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) permet à votre application Windows universelle d’accéder aux capteurs et aux périphériques en arrière-plan, même si votre application au premier plan est suspendue. |
-| [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)                                           | Assurez-vous que votre application répond aux exigences relatives à l’exécution de tâches en arrière-plan.                                                                                                                          |
-| [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)                               | Créez et inscrivez une tâche en arrière-plan qui s’exécute dans un processus distinct de votre application, et inscrivez-la pour qu’elle s’exécute lorsque votre application ne se trouve pas au premier plan.                                                                                                 |
-| [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)                               | Créez et inscrivez une tâche en arrière-plan in-process qui s’exécute dans le même processus que votre application au premier plan.                                                                                                 |
-| [Convertir une tâche en arrière-plan hors processus en une tâche en arrière-plan in-process](convert-out-of-process-background-task.md)                               | Découvrez comment convertir une tâche en arrière-plan hors processus en une tâche en arrière-plan in-process qui s’exécute dans le même processus que votre application au premier plan.
-| [Déboguer une tâche en arrière-plan](debug-a-background-task.md)                                                           | Découvrez comment déboguer une tâche en arrière-plan, notamment dans le cadre de son activation et du suivi de débogage dans le journal des événements Windows.                                                                        |
-| [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md) | Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application.                                                                                                       |
-| [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)                                     | Découvrez comment faire en sorte qu’une tâche en arrière-plan reconnaisse les demandes d’annulation et arrête le travail, tout en signalant l’annulation à l’application utilisant le dispositif de stockage persistant.                                     |
-| [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)           | Découvrez comment votre application peut reconnaître la progression et l’achèvement d’une tâche en arrière-plan.                                                                                                                     |
-| [Inscrire une tâche en arrière-plan](register-a-background-task.md)                                                     | Découvrez comment créer une fonction que vous pouvez réutiliser pour inscrire la plupart des tâches en arrière-plan en toute sécurité.                                                                                                  |
-| [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)             | Découvrez comment créer une tâche en arrière-plan qui répond aux événements [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).                                                                         |
-| [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)                                        | Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une tâche en arrière-plan périodique.                                                                                                          |
-| [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)                 | Découvrez comment définir des conditions qui contrôlent le moment auquel votre tâche en arrière-plan s’exécutera.                                                                                                                  |
-| [Transférer des données en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt280377)                                           | Utilisez l’API de transfert en arrière-plan pour copier des fichiers en arrière-plan.                                                                                                                              |
-| [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)                       | Utilisez une tâche en arrière-plan pour mettre à jour une vignette dynamique de votre application avec du contenu actualisé.                                                                                                                      |
-| [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)                                                       | Découvrez comment utiliser la classe [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) pour exécuter du code léger en arrière-plan pendant que l’appareil est branché.                             |
+| [Recommandations concernant les tâches en arrière-plan](guidelines-for-background-tasks.md)                                       | Assurez-vous que votre application répond aux exigences relatives à l’exécution de tâches en arrière-plan. |
+| [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)       | Créez et inscrivez une tâche en arrière-plan in-process qui s’exécute dans le même processus que votre application au premier plan. |
+| [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)           | Créez et inscrivez une tâche en arrière-plan qui s’exécute dans un processus distinct de votre application, et inscrivez-la pour qu’elle s’exécute lorsque votre application ne se trouve pas au premier plan. |
+| [Convertir une tâche en arrière-plan hors processus en une tâche en arrière-plan in-process](convert-out-of-process-background-task.md) | Découvrez comment convertir une tâche en arrière-plan hors processus en une tâche en arrière-plan in-process qui s’exécute dans le même processus que votre application au premier plan.|
+| [Déboguer une tâche en arrière-plan](debug-a-background-task.md)                                                       | Découvrez comment déboguer une tâche en arrière-plan, notamment dans le cadre de son activation et du suivi de débogage dans le journal des événements Windows. |
+| [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md) | Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application. |
+| [Inscription d’une tâche en arrière-plan dans un groupe](group-background-tasks.md)                                             | Utilisez des groupes pour isoler les inscriptions de tâches en arrière-plan. |
+| [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)                                 | Découvrez comment faire en sorte qu’une tâche en arrière-plan reconnaisse les demandes d’annulation et arrête le travail, tout en signalant l’annulation à l’application utilisant le dispositif de stockage persistant. |
+| [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)       | Découvrez comment votre application peut reconnaître la progression et l’achèvement d’une tâche en arrière-plan. |
+| [Inscrire une tâche en arrière-plan](register-a-background-task.md)                                                 | Découvrez comment créer une fonction que vous pouvez réutiliser pour inscrire la plupart des tâches en arrière-plan en toute sécurité. |
+| [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)         | Découvrez comment créer une tâche en arrière-plan qui répond aux événements [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839). |
+| [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)                                    | Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une tâche en arrière-plan périodique. |
+| [Déclencher une tâche en arrière-plan depuis votre application](trigger-background-task-from-app.md) | Découvrez comment utiliser [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) pour activer une tâche en arrière-plan depuis votre application.|
+| [Accéder à des capteurs et des appareils depuis une tâche en arrière-plan](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) permet à votre application Windows universelle d’accéder aux capteurs et aux périphériques en arrière-plan, même si votre application au premier plan est suspendue. |
+| [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)             | Découvrez comment définir des conditions qui contrôlent le moment auquel votre tâche en arrière-plan s’exécutera. |
+| [Transférer des données en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt280377)                 | Utilisez l’API de transfert en arrière-plan pour copier des fichiers en arrière-plan. |
+| [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)                   | Utilisez une tâche en arrière-plan pour mettre à jour une vignette dynamique de votre application avec du contenu actualisé. |
+| [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)                                                   | Découvrez comment utiliser la classe [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) pour exécuter du code léger en arrière-plan tandis que l’appareil est branché. |
+### <a name="see-also"></a>Articles associés
+* [Optimiser l’activité en arrière-plan](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity): découvrez comment réduire l’énergie utilisée en arrière-plan et interagir avec les paramètres utilisateur pour l’activité en arrière-plan.
 
 ## <a name="remote-systems"></a>Systèmes distants
 

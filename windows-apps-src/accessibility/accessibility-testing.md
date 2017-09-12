@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: a5a0a20ffa8ca27c123d139f25f636587db07aba
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 73fe48744346b2fd784b36d1fa29bd419c0fea02
+ms.sourcegitcommit: f6dd9568eafa10ee5cb2b849c0d82d84a1c5fb93
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/02/2017
 ---
 # <a name="accessibility-testing"></a>Test de l’accessibilité  
 
@@ -82,16 +84,19 @@ Utilisez votre application lorsqu’un thème à contraste élevé est actif pou
 <span id="verify_your_app_with_make_everything_on_your_screen_bigger"/>
 <span id="VERIFY_YOUR_APP_WITH_MAKE_EVERYTHING_ON_YOUR_SCREEN_BIGGER"/>
 ## <a name="verify-your-app-with-display-settings"></a>Vérifier votre application avec des paramètres d’affichage  
+
 Utilisez les options d’affichage du système qui ajustent la valeur ppp de l’affichage et assurez-vous que l’interface utilisateur de votre application est correctement mise à l’échelle quand la valeur ppp change. (Certains utilisateurs modifient les valeurs ppp en tant qu’option d’accessibilité. Celle-ci est disponible dans **Options d’ergonomie**, ainsi que les propriétés d’affichage.) Si vous détectez des problèmes, suivez [Recommandations en matière d’expérience utilisateur pour la disposition et la mise à l’échelle](https://msdn.microsoft.com/library/windows/apps/Dn611863) et fournissez des ressources supplémentaires pour les différents facteurs de mise à l’échelle.
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
 ## <a name="verify-main-app-scenarios-by-using-narrator"></a>Vérifier les scénarios d’application principaux à l’aide du Narrateur  
-Utilisez le Narrateur pour tester l’expérience de lecture d’écran pour votre application en effectuant les étapes suivantes :
+Utilisez le Narrateur pour tester l’expérience de lecture d’écran pour votre application.
+
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 **Procédez comme suit pour tester votre application à l’aide du Narrateur avec une souris et le clavier:**
-1.  Démarrez le Narrateur en appuyant sur _la touche Windows + Entrée_.
-2.  Naviguez dans votre application à l’aide du clavier en utilisant la touche _Tab_, les touches de direction et la _touche Verr. maj + les touches de direction_.
+1.  Démarrez le Narrateur en appuyant sur la _touche de logo Windows+Ctrl+Entrée_. Dans les versions antérieures à Windows10 version1607, utilisez la _touche de logo Windows+Entrée_ pour démarrer le Narrateur.
+2.  Naviguez dans votre application à l’aide du clavier en utilisant la touche _Tab_, les touches de direction et la _touche Verr. maj+les touches de direction_.
 3.  À mesure que vous naviguez dans votre application, écoutez le Narrateur lire les éléments de votre interface utilisateur et vérifiez les points suivants:
     * Pour chaque contrôle, vérifiez que le Narrateur lit tout le contenu visible. Vérifiez également qu’il lit le nom de chaque contrôle, tout état applicable (coché, sélectionné, etc.) et le type du contrôle (bouton, case à cocher, élément de liste, etc.).
     * Si l’élément est interactif, vérifiez que vous pouvez utiliser le Narrateur pour appeler son action en appuyant sur _Verr. maj + Entrée_.
@@ -145,4 +150,5 @@ La présence d’éléments apparaissant à tort dans l’affichage des élémen
 * [Accessibilité](accessibility.md)
 * [Pratiques à éviter](practices-to-avoid.md)
 * [UI Automation](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
-* [Accessibilité dans Windows](http://go.microsoft.com/fwlink/p/?LinkId=320802) 
+* [Accessibilité dans Windows](http://go.microsoft.com/fwlink/p/?LinkId=320802)
+* [Prise en main du Narrateur](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
 title: Capteurs
 description: "Les capteurs permettent à votre application de connaître la relation entre un appareil et le monde physique qui l’entoure. Ils peuvent indiquer à votre application la direction, l’orientation et le mouvement de l’appareil."
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: af862471fcac7ee7f0ab8ad61f57c485d995bae2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: eee6bb0c70c39a6676639f5b6da0f5465811dbad
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="sensors"></a>Capteurs
 
@@ -65,17 +67,25 @@ Les schémas suivants illustrent ce qui suit :
 
 Parmi les applications qui peuvent utiliser l’accéléromètre, citons les jeux dans lesquels une bille à l’écran glisse dans la direction dans laquelle vous inclinez l’appareil (vecteur gravitationnel). Ce type de fonctionnalité reflète étroitement celui de l’[**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) et pourrait être obtenu avec ce capteur, à l’aide d’une combinaison de tangage et de roulis. Le recours au vecteur de gravité de l’accéléromètre simplifie quelque peu ce processus en fournissant un vecteur manipulé facilement de manière mathématique pour l’inclinaison de l’appareil. Autre exemple : une application qui émet un bruit de fouet quand l’utilisateur déplace l’appareil d’un coup sec (vecteur d’accélération linéaire).
 
+Pour un exemple d’implémentation, consultez l'[exemple d'accéléromètre](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer).
+
 ## <a name="activity-sensor"></a>Capteur d’activité
 
-Le capteur [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) détermine l’état actuel de l’appareil connecté au capteur. Ce capteur est fréquemment utilisé dans des applications de santé et forme pour suivre l’activité de course ou de marche d’un utilisateur porteur d’un appareil. Pour obtenir la liste des activités que cette API de capteur peut détecter, voir [**ActivityType**](https://msdn.microsoft.com/library/windows/apps/Dn785128).
+Le capteur [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) détermine l’état actuel de l’appareil connecté au capteur. Ce capteur est fréquemment utilisé dans des applications de santé et forme pour suivre l’activité de course ou de marche d’un utilisateur porteur d’un appareil. Pour obtenir la liste des activités que cette API de capteur peut détecter, consultez [**ActivityType**](https://msdn.microsoft.com/library/windows/apps/Dn785128).
+
+Pour un exemple d'implémentation, consultez l'[exemple de capteur d'activité](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ActivitySensor).
 
 ## <a name="altimeter"></a>Altimètre
 
 Le capteur [**Altimeter**](https://msdn.microsoft.com/library/windows/apps/Dn858893) renvoie une valeur qui indique l’altitude du capteur. Cela vous permet de suivre les changements d’altitude en termes de mètres par rapport au niveau de la mer. Un exemple d’application pouvant utiliser cela est une application qui mesure les changements d’altitude durant une course pour calculer les calories brûlées. Dans ce cas, les données de ce capteur pourraient être combinées avec celles du capteur [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) pour fournir des informations de suivi plus précises.
 
+Pour un exemple d'implémentation, consultez l'[exemple d'altimètre](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Altimeter).
+
 ## <a name="barometer"></a>Baromètre
 
 Le capteur [**Barometer**](https://msdn.microsoft.com/library/windows/apps/Dn872405) permet à une application d’obtenir les lectures barométriques. Une application météo pourrait utiliser ces informations pour indiquer la pression atmosphérique actuelle. Cela permettrait de fournir des informations plus détaillées et de prévoir d’éventuels changements des conditions météo.
+
+Pour un exemple d'implémentation, consultez l'[exemple de baromètre](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Barometer).
 
 ## <a name="compass"></a>Boussole
 
@@ -85,6 +95,8 @@ Le capteur [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR22570
 
 Les applications qui doivent afficher une rose des vents ou parcourir une carte utilisent généralement le capteur de boussole.
 
+Pour un exemple d'implémentation, consultez l'[exemple de boussole](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Compass).
+
 ## <a name="gyrometer"></a>Gyromètre
 
 Le capteur [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718) mesure les vélocités angulaires le long des axes X, Y et Z. Ces valeurs sont très utiles dans les applications simples basées sur des mouvements, qui ne se soucient pas de l’orientation de l’appareil mais de sa rotation à différentes vitesses. Les gyromètres peuvent être perturbés en cas de bruit dans les données ou de décalage constant le long d’un ou plusieurs axes. Interrogez l’accéléromètre pour vérifier si l’appareil se déplace, afin de déterminer si le gyromètre est perturbé par un décalage, puis compensez le cas échéant dans votre application.
@@ -92,6 +104,8 @@ Le capteur [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225
 ![Gyromètre avec tangage, roulis et lacet](images/gyrometer.png)
 
 Comme exemple d’application pouvant utiliser le gyromètre, citons un jeu qui fait tourner une roulette de casino en fonction d’un bref mouvement de l’appareil.
+
+Pour un exemple d'implémentation, consultez l'[exemple de gyromètre](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Gyrometer).
 
 ## <a name="inclinometer"></a>Inclinomètre
 
@@ -101,9 +115,13 @@ Le capteur [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR
 
 Les applications qui changent leur vue pour s’adapter à l’orientation de l’appareil peuvent utiliser le capteur inclinomètre. Une application qui affiche un avion dont la position correspond au tangage, au roulis et au lacet de l’appareil utiliserait également les mesures de l’inclinomètre.
 
+Pour un exemple d’implémentation, consultez l’exemple d’inclinomètre [https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer).
+
 ## <a name="light-sensor"></a>Capteur de lumière
 
 Le capteur [**Light**](https://msdn.microsoft.com/library/windows/apps/BR225790) est capable de déterminer la lumière ambiante. Cela permet à une application de déterminer les changements de luminosité à proximité de l’appareil. Par exemple, un utilisateur disposant d’un appareil de type tablette peut passer d’un espace couvert à un espace découvert pendant une journée ensoleillée. Une application intelligente pourrait utiliser cette valeur pour modifier le contraste entre l’arrière-plan et la police affichée. Le contenu resterait ainsi lisible dans les conditions plus lumineuses de l’extérieur.
+
+Pour un exemple d'implémentation, consultez l'[exemple de capteur de lumière](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LightSensor).
 
 ## <a name="orientation-sensor"></a>Capteur d’orientation
 
@@ -113,13 +131,19 @@ L’orientation de l’appareil est exprimée par l’intermédiaire du quaterni
 
 Le capteur d’orientation est souvent utilisé dans les applications de réalité augmentée avancées qui peignent une superposition sur votre environnement en fonction de la direction dans laquelle pointe l’arrière de l’appareil.
 
+Pour un exemple d'implémentation, consultez l'[exemple de capteur d'orientation](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/OrientationSensor).
+
 ## <a name="pedometer"></a>Podomètre
 
 Le capteur [**Pedometer**](https://msdn.microsoft.com/library/windows/apps/Dn878203) suit le nombre de pas effectués par l’utilisateur porteur de l’appareil connecté. Le capteur est configuré pour suivre le nombre de pas pendant une période donnée. Plusieurs applications de forme et santé suivent ainsi le nombre de pas effectués pour aider l’utilisateur à définir et à atteindre divers objectifs. Ces informations peuvent ensuite être collectées et stockées pour afficher la progression au fil du temps.
 
+Pour un exemple d'implémentation, consultez l'[exemple de podomètre](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Pedometer).
+
 ## <a name="proximity-sensor"></a>Capteur de proximité
 
 Le capteur [**Proximity**](https://msdn.microsoft.com/library/windows/apps/Dn872427) peut indiquer s’il détecte ou non certains objets. En plus de déterminer si un objet est ou non à portée de l’appareil, le capteur de proximité peut également déterminer la distance de l’objet détecté. Un exemple d’utilisation pourrait être une application qui doit sortir du mode veille quand un utilisateur entre dans une plage spécifiée. L’appareil pourrait rester en état de veille avec faible consommation d’énergie jusqu’à ce que le capteur de proximité détecte un objet, avec pour effet d’activer l’appareil.
+
+Pour un exemple d'implémentation, consultez l'[exemple de capteur de proximité](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ProximitySensor).
 
 ## <a name="simple-orientation"></a>Orientation simple
 
@@ -127,7 +151,4 @@ Le [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps
 
 Une application de lecture qui change son affichage selon que l’appareil est tenu parallèlement ou perpendiculairement au sol utiliserait les valeurs de SimpleOrientationSensor pour déterminer comment l’appareil est tenu.
 
-## <a name="samples"></a>Exemples
-
-Pour découvrir certains exemples illustrant l’utilisation de deux capteurs différents, voir le [référentiel d’exemples de capteur Windows](http://go.microsoft.com/fwlink/?LinkID=616041).
-
+Pour un exemple d'implémentation, consultez l'[exemple de capteur d'orientation simple](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleOrientationSensor).

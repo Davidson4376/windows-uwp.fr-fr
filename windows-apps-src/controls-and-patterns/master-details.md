@@ -6,20 +6,24 @@ ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: d5933eec7b2f34b2c5939bb083113dfd3a1f965d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 49a586aac0c846cdad02f8448532238bd3eb8551
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="masterdetails-pattern"></a>Modèle Maître/Détails
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Le modèle Maître/Détails possède un volet principal (généralement avec un [affichage Liste](lists.md)) et un volet d’informations correspondant au contenu. Lorsqu’un élément de la liste principale est sélectionné, le volet d’informations est mis à jour. Ce modèle est souvent utilisé pour le courrier électronique et les carnets d’adresses.
+
+> **API importantes**: [classe ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Exemple de modèle Maître/Détails](images/HIGSecOne_MasterDetail.png)
 
@@ -73,17 +77,11 @@ Pour le volet principal, un contrôle d’[affichage Liste](lists.md) fonctionne
 
 Pour le volet d’informations, utilisez l’élément de contenu le plus logique. Si vous disposez d’un grand nombre de champs distincts, pensez à utiliser une disposition en grille pour organiser les éléments dans un formulaire.
 
-## <a name="examples"></a>Exemples
+## <a name="get-the-code-samples"></a>Obtenir les exemples de code
 
-La conception d’application ci-dessous qui suit la bourse utilise un modèle Maître/Détails. Dans cet exemple de l’application telle qu’elle serait affichée sur un téléphone, le volet/la liste principal(e) apparaît à gauche, tandis que le volet d’informations figure à droite.
+Pour obtenir un exemple de code affichant le modèle Maître/Détails, voir les exemples suivants: 
 
-![Exemple d’application utilisant le modèle Maître/Détails sur un téléphone](images/uap-finance-phone-masterdetails-600.png)
-
-La conception d’application ci-dessous qui suit la bourse utilise un modèle Maître/Détails. Dans cet exemple de l’application telle qu’elle serait affichée sur un ordinateur, le volet/la liste principal(e) et le volet d’informations sont tous deux visibles et en plein écran. Le volet principal comprend une zone de recherche dans sa partie supérieure et une barre de commandes dans sa partie inférieure.
-
-![Exemple d’application utilisant le modèle Maître/Détails sur un ordinateur](images/uap-finance-desktop700.png)
-
-Pour obtenir un exemple de code affichant le modèle Maître/Détails, voir
+- [Exemple de base de données de commandes de clients](https://github.com/Microsoft/Windows-appsample-customers-orders-database) 
 - [Exemple de ListView et GridView](http://go.microsoft.com/fwlink/p/?LinkId=619900)
 - [Exemple de lecteurRSS](https://github.com/Microsoft/Windows-appsample-rssreader)
 
@@ -92,4 +90,4 @@ Pour obtenir un exemple de code affichant le modèle Maître/Détails, voir
 - [Listes](lists.md)
 - [Recherche](search.md)
 - [Barre de l’application et barre de commandes](app-bars.md)
-- [**Classe ListView (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [Classe ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)

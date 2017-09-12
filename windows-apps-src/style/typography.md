@@ -5,14 +5,16 @@ title: Typographie
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 92fd3ee66768fcf1c98d9760ecb44811c9b0f9b3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0609622053d0ae25b5039766137db1b195c0d69d
+ms.sourcegitcommit: 5ece992c31870df4c089360ef47501bd4ce14fa9
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/22/2017
 ---
 # <a name="typography"></a>Typographie
 
@@ -50,7 +52,7 @@ En XAML, cette opération est effectuée par l’empilement de deux éléments [
          puts the baseline of the body text exactly 24px
          below the baseline of the header. 24px is the
          recommended line height for a 20px font size,
-         which is what's set in SubtitleTextBlockStyle.
+         which is what’s set in SubtitleTextBlockStyle.
          The bottom margin will be different for
          different font size pairings. -->
     <TextBlock
@@ -172,9 +174,11 @@ La gamme de types établit une relation fondamentale entre les titres et le corp
 >La plupart des niveaux de la gamme sont disponibles sous forme de [ressources statiques](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) XAML qui suivent la convention d’affectation de noms `*TextBlockStyle` (par exemple, `HeaderTextBlockStyle`).
 
 
+<!--
 <div class="microsoft-internal-note">
-SubtitleAlt, BaseAlt et CaptionAlt ne sont pas fournis. Vous pouvez créer les styles dans votre application en vous aidant des extraits de code disponibles via le lien ci-dessus. Notez également que le code XAML ne correspond pas exactement à la hauteur de ligne.
+SubtitleAlt, BaseAlt, and CaptionAlt are not currently included. You can create the styles in your own app following the code snippets in the above link. Also note that XAML does not currently match the line height exactly.
 </div>
+-->
 
 
 ## <a name="primary-and-secondary-text"></a>Texte principal et secondaire
@@ -201,7 +205,7 @@ Toutefois, dans certaines langues, les noms propres changent de signification lo
 Green shows where all caps should be used. Red shows where it should not.
 -->
 
-## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
+## <a name="dos-and-donts"></a>À faire et à ne pas faire
 * Utilisez Body pour la plus grande partie du texte.
 * Utilisez Base pour les titres lorsque l’espace est restreint.
 * Incorporez SubtitleAlt pour créer un contraste et une hiérarchie en mettant en évidence le contenu de premier niveau.
@@ -210,7 +214,7 @@ Green shows where all caps should be used. Red shows where it should not.
 * Ne combinez pas Subtitle et SubtitleAlt sur une même page.
 
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 * [Contrôles de texte](../controls-and-patterns/text-controls.md)
 * [Polices](fonts.md)

@@ -9,14 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows10, uwp, annonces, publicités, procédures pas à pas"
-ms.openlocfilehash: 17391bda754195d2cf66ddc2e5e22ed445a37ef0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 73f2c9b36d0b083a74f6b226a2eed95fe49b6f63
+ms.sourcegitcommit: 9d1ca16a7edcbbcae03fad50a4a10183a319c63a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/09/2017
 ---
 # <a name="developer-walkthroughs"></a>Procédures pas à pas de développement
-
-
-
 
 Les procédures pas à pas de cette section vous montrent comment ajouter des bannières et des spots publicitaires aux applications à l’aide des bibliothèques de publicités Microsoft.
 
@@ -26,11 +25,12 @@ Pour obtenir des exemples complets de projets qui montrent comment ajouter des b
 
 |  Rubrique    | Description |               
 |----------|-------|
-| [Spots publicitaires](interstitial-ads.md)    | Présenter un spot publicitaire dans votre application.        |
+| [Spots publicitaires](interstitial-ads.md)    | Ajouter un spot publicitaire à votre application.       |
+| [Publicités natives](native-ads.md)       | Ajoutez une publicité native à votre application UWP.  |
 | [AdControl en XAML et .NET](adcontrol-in-xaml-and--net.md)     | Ajoutez une bannière publicitaire dans votre application XAML/.NET.        |
 | [AdControl en HTML5 et JavaScript](adcontrol-in-html-5-and-javascript.md)     | Ajoutez une bannière publicitaire dans votre application HTML5/JavaScript.        |
 | [AdControl dans Silverlight Windows Phone](adcontrol-in-windows-phone-silverlight.md)       | Ajoutez une bannière publicitaire dans votre application Silverlight Windows Phone8.x. |
-| [Ajouter des publicités à des contenus vidéo en HTML5 et JavaScript](add-advertisements-to-video-content.md)     |  Ajoutez des publicités à des contenus vidéo dans une application de plateforme Windows universelle (UWP) écrite en JavaScript avec HTML. |
+| [Afficher des publicités dans du contenu vidéo](add-advertisements-to-video-content.md)     |  Affichez des publicités dans du contenu vidéo dans une application de plateforme Windows universelle (UWP) écrite en JavaScript avec HTML. |
 
 
 

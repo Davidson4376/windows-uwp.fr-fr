@@ -9,14 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows10, uwp, annonces, publicité, AdControl, javascript"
-ms.openlocfilehash: b669925c3b630ddbfe82086231c46c951072244b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 5a64f58c7f66dd1177549562364a483641b1fd32
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="create-an-adcontrol-in-javascript"></a>Créer un AdControl en JavaScript
-
-
-
 
 Les exemples fournis dans cet article montrent comment créer par programmation un [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) en JavaScript. Cet article part du principe que vous avez déjà ajouté les références nécessaires dans votre projet pour pouvoir utiliser un **AdControl**. Pour obtenir plus d’informations, y compris une procédure pas à pas pour créer et initialiser un **AdControl** dans le balisage HTML au lieu de JavaScript, consultez [AdControl en HTML5 et Javascript](adcontrol-in-html-5-and-javascript.md).
 
@@ -42,7 +41,8 @@ Instanciez le **AdControl** dans la fonction **app.onactivated**.
 
 Cet exemple suppose que vous avez déjà déclaré les méthodes de gestionnaires d’événements **myAdError**, **myAdRefreshed** et **myAdEngagedChanged**.
 
->**Remarque**&nbsp;&nbsp;Les valeurs *applicationId* et *adUnitId* indiquées dans cet exemple sont des [valeurs du mode test](test-mode-values.md). Vous devez [remplacer ces valeurs par les valeurs dynamiques](set-up-ad-units-in-your-app.md) du Centre de développement Windows avant de soumettre votre application.
+> [!NOTE]
+> Les valeurs *applicationId* et *adUnitId* indiquées dans cet exemple sont des [valeurs du mode test](test-mode-values.md). Vous devez [remplacer ces valeurs par les valeurs dynamiques](set-up-ad-units-in-your-app.md) du Centre de développement Windows avant de soumettre votre application.
 
 Si vous utilisez ce code et que vous ne voyez pas de publicités, vous pouvez essayer d’insérer un attribut de **position:relative** dans l’élément **div** qui contient le **AdControl**. Cela remplace le paramètre par défaut de l’élément **IFrame**. Les publicités apparaissent correctement, sauf si elles ne sont pas affichées en raison de la valeur de cet attribut. Notez que les nouvelles unités publicitaires peuvent ne pas être disponibles pendant 30minutes.
 

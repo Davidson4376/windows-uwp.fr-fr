@@ -6,14 +6,20 @@ ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 392b0b0acf1443b2260a33bbf389d505f8cc7d0e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: ksulliv
+dev-contact: mitra
+doc-status: Published
+ms.openlocfilehash: c705c2fc4d53c77391236604f8edb86e164a1177
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="sliders"></a>Curseurs
 
@@ -21,16 +27,9 @@ translationtype: HT
 
 Un curseur est un contrôle qui permet à l’utilisateur d’effectuer une sélection parmi une plage de valeurs en déplaçant un contrôle curseur de position le long d’une ligne.
 
-![Contrôle de curseur](images/controls/slider.png)
+> **API importantes**: [classe Slider](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx), [propriété Value](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx), [événement ValueChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
 
-<div class="important-apis" >
-<b>API importantes</b><br/>
-<ul>
-<li>[**Classe Slider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)</li>
-<li>[**Propriété Value**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)</li>
-<li>[**Événement ValueChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)</li>
-</ul>
-</div>
+![Contrôle de curseur](images/controls/slider.png)
 
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
@@ -89,7 +88,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-Vous obtenez et définissez la valeur du curseur à partir de la propriété [**Value**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx). En réponse aux changements de valeur, vous pouvez utiliser la liaison de données pour créer une liaison avec la propriété Value ou gérer l’événement [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx).
+Vous obtenez et définissez la valeur du curseur à partir de la propriété [Value](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx). En réponse aux changements de valeur, vous pouvez utiliser la liaison de données pour créer une liaison avec la propriété Value ou gérer l’événement [ValueChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx).
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -177,4 +176,4 @@ Lors de la conception d’un curseur personnalisé, réfléchissez à la meilleu
 
 ## <a name="related-topics"></a>Rubriques connexes
 - [Boutons bascule](toggles.md)
-- [**Classe Slider**](https://msdn.microsoft.com/library/windows/apps/br209614)
+- [Classe Slider](https://msdn.microsoft.com/library/windows/apps/br209614)

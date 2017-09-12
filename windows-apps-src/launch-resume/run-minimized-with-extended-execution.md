@@ -1,27 +1,29 @@
 ---
 author: TylerMSFT
 description: "Découvrir comment utiliser l’exécution étendue pour que votre application continue de s’exécuter lorsqu’elle est en mode réduit"
-title: "Lancer une application en mode réduit avec exécution étendue"
+title: "Reporter la suspension d’une application avec l’exécution étendue"
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: "windows10, uwp, exécution étendue, mode réduit, ExtendedExecutionSession, tâche en arrière-plan, cycle de vie de l’application, écran de verrouillage"
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
-ms.openlocfilehash: bd9ccaa4cb87a24906c531996d4fc3f88875b060
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f82fa37ade38d6a92fa1fec427079f75057a1a4a
+ms.sourcegitcommit: e7e8de39e963b73ba95cb34d8049e35e8d5eca61
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/16/2017
 ---
-# <a name="run-while-minimized-with-extended-execution"></a>Lancer une application en mode réduit avec exécution étendue
+# <a name="postpone-app-suspension-with-extended-execution"></a>Reporter la suspension d’une application avec l’exécution étendue
 
-Cet article vous explique comment utiliser l’exécution étendue pour retarder l’interruption de votre application, afin qu’elle continue de s’exécuter lorsqu’elle est en mode réduit.
+Cet article vous explique comment utiliser l’exécution étendue pour retarder l’interruption de votre application, afin qu’elle continue de s’exécuter lorsqu’elle est en mode réduit ou sous l’écran de verrouillage.
 
 Lorsque l’utilisateur réduit ou ferme l’application, cette dernière adopte l’état interrompu.  Sa mémoire est conservée, mais son code ne s’exécute pas. Cela s’avère tout particulièrement sur l’ensemble des éditions de système d’exploitation dotées d’une interface utilisateur visuelle. Pour en savoir plus sur les situations d’interruption de votre application, voir [Cycle de vie des applications](app-lifecycle.md).
 
-Il peut arriver que l’application doive continuer de s’exécuter lorsqu’elle est réduite, plutôt que d’être interrompue. Si tel est le cas, le système d’exploitation peut s’assurer lui-même que l’application continue de s’exécuter, ou peut lui demander de continuer à s’exécuter. Ainsi, lorsqu’un morceau s’exécute en arrière-plan, le système d’exploitation peut assurer l’exécution de l’application pendant une plus longue période si vous suivez la procédure de la section [Lecture multimédia en arrière-plan](../audio-video-camera/background-audio.md). Dans le cas contraire, vous devez demander manuellement l’allongement de cette période.
+Il peut arriver que l’application doive continuer de s’exécuter lorsqu’elle est réduite, plutôt que d’être interrompue. Si tel est le cas, le système d’exploitation peut s’assurer lui-même que l’application continue de s’exécuter, ou peut lui demander de continuer à s’exécuter. Ainsi, lorsqu’un morceau s’exécute en arrière-plan, le système d’exploitation peut assurer l’exécution de l’application pendant une plus longue période si vous suivez la procédure de la section [Lecture multimédia en arrière-plan](../audio-video-camera/background-audio.md). Dans le cas contraire, vous devez demander manuellement l’allongement de cette période. La durée d’une exécution en arrière-plan peut être de plusieurs minutes, mais vous devez être prêt à gérer la session en cours de révocation à tout moment.
 
-Créez une session [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) afin de demander davantage de temps pour exécuter une opération en arrière-plan. Le type de session **ExtendedExecutionSession** que vous créez est déterminé par la valeur [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) que vous indiquez lorsque vous la générez. Il existe trois valeurs d’énumération **ExtendedExecutionReason**: **Unspecified, LocationTracking** et **SavingData**.
+Créez une session [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) afin de demander davantage de temps pour exécuter une opération en arrière-plan. Le type de session **ExtendedExecutionSession** que vous créez est déterminé par la valeur [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) que vous indiquez lorsque vous la générez. Il existe trois valeurs d’énumération **ExtendedExecutionReason**: **Unspecified, LocationTracking** et **SavingData**. Seul **ExtendedExecutionSession** peut être demandé à tout moment. Le constructeur **ExtendedExecutionSession** lève une exception si vous tentez de créer une autre session alors qu’une autre est actuellement active. N’utilisez pas les valeurs [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) ni [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx), car elles nécessitent des fonctionnalités restreintes et ne peuvent pas être utilisées dans les applications du WindowsStore.
 
 ## <a name="run-while-minimized"></a>Exécution en mode réduit
 
@@ -35,7 +37,7 @@ Sur l’ensemble des éditions de système d’exploitation, ce type de session 
 
 Lorsque vous créez une session **ExtendedExecutionSession**, indiquez le paramètre **ExtendedExecutionReason.LocationTracking** si votre application doit régulièrement consigner l’emplacement de l’utilisateur depuis [GeoLocator](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx). Les applications effectuant la navigation et le suivi d’activité physique, afin de surveiller régulièrement l’emplacement de l’utilisateur, doivent utiliser ce motif.
 
-Une session d’exécution étendue associée au suivi de l’emplacement peut s’exécuter aussi longtemps que nécessaire. Cependant, une seule session de ce type peut s’exécuter pour chaque appareil. Vous pouvez uniquement demander l’exécution de cette catégorie de session au premier plan; l’application doit présenter l’état **Exécution en cours**. Cela permet de s’assurer que l’utilisateur est conscient de l’initiation d’une session de suivi d’emplacement étendue par l’application. Vous pouvez toujours utiliser la fonctionGeolocator lorsque l’application est exécutée à l’arrière-plan. Pour cela, utilisez une tâche en arrière-plan ou un service d’application sans demander de session d’exécution étendue de suivi de l’emplacement.
+Une session d’exécution étendue associée au suivi de l’emplacement peut s’exécuter aussi longtemps que nécessaire., y compris lorsque l’écran est verrouillé sur un appareil mobile. Cependant, une seule session de ce type peut s’exécuter pour chaque appareil. Vous pouvez uniquement demander l’exécution de cette catégorie de session au premier plan; l’application doit présenter l’état **Exécution en cours**. Cela permet de s’assurer que l’utilisateur est conscient de l’initiation d’une session de suivi d’emplacement étendue par l’application. Vous pouvez toujours utiliser la fonctionGeolocator lorsque l’application est exécutée à l’arrière-plan. Pour cela, utilisez une tâche en arrière-plan ou un service d’application sans demander de session d’exécution étendue de suivi de l’emplacement.
 
 ## <a name="save-critical-data-locally"></a>Enregistrement en local des données critiques
 
@@ -43,7 +45,7 @@ Il arrive que le fait de ne pas enregistrer des données avant l’arrêt de l�
 
 N’utilisez pas ce type de session pour étendre la durée de vie d’une application afin de charger ou de télécharger des données. Pour charger des données, demandez un [transfert en arrière-plan](https://msdn.microsoft.com/windows/uwp/networking/background-transfers) ou enregistrez un élément **MaintenanceTrigger** afin de gérer le transfert lorsque l’alimentationsecteur est disponible. Vous pouvez demander une session d’exécution étendue **ExtendedExecutionReason.SavingData** lorsque l’application est au premier plan et présente l’état **Exécution en cours**, ou à l’arrière-plan, à l’état **Interruption en cours**.
 
-L’état **Interruption en cours** correspond à la dernière occasion dont dispose l’application pour effectuer des tâches avant son arrêt. Le fait de demander une session d’exécution étendue **ExtendedExecutionReason.SavingData** alors que l’application présente l’état **Interruption en cours** crée un problème éventuel dont vous devez être informé. Si une session de ce type est demandée alors que l’état est **Interruption en cours**, et si l’utilisateur demande un nouveau lancement de l’application, cette dernière peut prendre un certain temps à démarrer. En effet, la session d’exécution étendue doit être terminée pour qu’il soit possible de fermer l’ancienne instance de l’application et d’en démarrer une nouvelle. Le délai de performances du lancement est sacrifié de manière à garantir la conservation de l’état utilisateur.
+L’état **Interruption en cours** correspond à la dernière occasion dont dispose l’application pour effectuer des tâches avant son arrêt. **ExtendedExecutionReason.SavingData** est le seul type de **ExtendedExecutionSession** pouvant être demandé dans l’état **Interruption en cours**. Le fait de demander une session d’exécution étendue **ExtendedExecutionReason.SavingData** alors que l’application présente l’état **Interruption en cours** crée un problème éventuel dont vous devez être informé. Si une session de ce type est demandée alors que l’état est **Interruption en cours**, et si l’utilisateur demande un nouveau lancement de l’application, cette dernière peut prendre un certain temps à démarrer. En effet, la session d’exécution étendue doit être terminée pour qu’il soit possible de fermer l’ancienne instance de l’application et d’en démarrer une nouvelle. Le délai de performances du lancement est sacrifié de manière à garantir la conservation de l’état utilisateur.
 
 ## <a name="request-disposal-and-revocation"></a>Demande, cession et révocation
 
@@ -54,7 +56,6 @@ Il existe trois interactions fondamentales avec une session d’exécution éten
 ```csharp
 var newSession = new ExtendedExecutionSession();
 newSession.Reason = ExtendedExecutionReason.Unspecified;
-newSession.Description = "Raising periodic toasts";
 newSession.Revoked += SessionRevoked;
 ExtendedExecutionResult result = await newSession.RequestExtensionAsync();
 
@@ -163,7 +164,6 @@ static class ExtendedExecutionHelper
 
         var newSession = new ExtendedExecutionSession();
         newSession.Reason = ExtendedExecutionReason.Unspecified;
-        newSession.Description = "Running multiple tasks";
         newSession.Revoked += SessionRevoked;
 
         if(revoked != null)

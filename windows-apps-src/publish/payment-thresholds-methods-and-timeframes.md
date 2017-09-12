@@ -3,15 +3,17 @@ author: jnHs
 Description: "Le temps estimé de transfert des paiements, les seuils de paiement applicables et les places de marché Microsoft permettant de recevoir des paiements peuvent varier en fonction de votre pays/région et de votre type de compte de paiement."
 title: "Délais, méthodes et seuils de paiement"
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
-ms.openlocfilehash: 2d2f586a1125f12c1034e002e2245e0fe155c1b4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0d0e421108de5daecb552c606b3f2c00b722fb89
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>Délais, méthodes et seuils de paiement
 
@@ -23,22 +25,24 @@ Pour n’importe quel pays ou région, nous utiliserons soit un virement ACH/SEP
 
 Tout paiement dû au cours d’un mois donné sera généralement effectué le 15e jour du mois en question, mais un délai supplémentaire peut être nécessaire pour que le paiement soit crédité sur votre compte. Le nombre de jours varie en fonction du mode de paiement que nous utilisons pour votre compte, comme décrit ci-dessous. 
 
-> **Remarque** Les jours indiqués ci-dessous sont donnés à titre approximatif; tout paiement donné peut impliquer un délai plus ou moins long.
+> [!NOTE]
+> Les jours indiqués ci-dessous sont indiqués à titre approximatif; tout paiement donné peut impliquer un délai plus ou moins long.
 
 
-| Moyen de paiement | Nombre de jours d’attente avant que le compte de revenu soit crédité |
+| Moyen de paiement     | Nombre de jours d’attente avant que le compte de revenu soit crédité     |
 |--------------------|--------------------------------------------|
-| PayPal | 1jour ouvrable |    
-| ACH/SEPA |2 à 3jours ouvrables |
-| Virement bancaire | 7 à 10jours ouvrables |
+| PayPal             | 1jour ouvrable                             | 
+| ACH/SEPA           | 2 à 3jours ouvrables                          |
+| Virement bancaire      | 7 à 10jours ouvrables                         |
 
 &nbsp;
 
-Pour connaître les pays/régions dans lesquels ces modes de paiement sont utilisés pour chaque marché, consultez les tableaux ci-dessous.
+Pour connaître les pays/régions dans lesquels ces modes de paiement sont utilisés pour chaque place de marché, examinez les tableaux ci-dessous.
 
 ## <a name="payment-thresholds-and-methods"></a>Seuils et modes de paiement
 
-> **Remarque** Les seuils de paiement sont indiqués en dollars américains (USD). Certains marchés utilisent l’équivalent dans la devise locale. 
+> [!NOTE]
+> Les seuils de paiement sont indiqués ici en dollars américains (USD). Certains marchés utilisent l’équivalent dans la devise locale. 
 
 - [Windows Store](#windows-store)
 - [MicrosoftAdvertising](#microsoft-advertising)

@@ -6,14 +6,16 @@ ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: e0fccee6ede019b6bb8d8792956d2dca791bf63b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8907b57bce9c39c1c508b97536485a08e8e1bf83
+ms.sourcegitcommit: 9a1310468970c8d1ade0fb200126dff56ea8c9e1
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/14/2017
 ---
 # <a name="tiles-for-uwp-apps"></a>Vignettes pour les applications UWP
 
@@ -26,6 +28,8 @@ Une *vignette* est la représentation d’une application dans le menu Démarrer
 
 Lorsque vous créez un projet dans Visual Studio, cela a pour effet de créer une vignette par défaut simple qui affiche le nom et le logo de votre application.
 
+Pour modifier votre vignette, double-cliquez sur le fichier **Package.appxmanifest** dans votre projet UWP principal pour ouvrir le concepteur (ou cliquez avec le bouton droit sur le fichier et sélectionnez Afficher le Code).
+
 ```XML
   <Applications>
     <Application Id="App"
@@ -33,8 +37,8 @@ Lorsque vous créez un projet dans Visual Studio, cela a pour effet de créer un
       EntryPoint="ExampleApp.App">
       <uap:VisualElements
         DisplayName="ExampleApp"
-        Square150x150Logo="Assets\Logo.png"
-        Square44x44Logo="Assets\SmallLogo.png"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png"
         Description="ExampleApp"
         BackgroundColor="#464646">
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
@@ -43,21 +47,21 @@ Lorsque vous créez un projet dans Visual Studio, cela a pour effet de créer un
   </Applications>
 ```
 
-Vous devez mettre à jour quelques éléments :
+Vous devez mettre à jour quelques éléments:
 
 -   DisplayName : remplacez cette valeur par le nom à afficher sur votre vignette.
 -   ShortName : l’espace disponible pour le nom d’affichage sur les vignettes étant limité, nous vous recommandons de spécifier ce nom court pour éviter que le nom de votre application soit tronqué.
 -   Images de logo :
 
-    Vous devez remplacer ces images par vos propres images. Vous avez la possibilité de fournir des images pour différentes échelles visuelles, mais vous n’êtes pas obligé de le faire pour toutes. Pour vérifier que votre application s’affiche correctement sur divers appareils, nous vous recommandons de fournir des versions de chaque image aux échelles 100%, 200% et 400%.
+    Vous devez remplacer ces images par vos propres images. Vous avez la possibilité de fournir des images pour différentes échelles visuelles, mais vous n’êtes pas obligé de le faire pour toutes. Pour vérifier que votre application s’affiche correctement sur divers appareils, nous vous recommandons de fournir des versions de chaque image aux échelles 100%, 200% et 400%. Voir [Ressources de vignette et d’icône](tiles-and-notifications-app-assets.md) pour en savoir plus sur la génération de ces ressources.
 
-    Les images mises à l’échelle suivent cette convention de nommage: tests
+    Les images mises à l’échelle suivent cette convention de nommage:
     
     *&lt;nom de l’image&gt;*.scale-*&lt;facteur d’échelle&gt;*.*&lt;extension de fichier image&gt;* 
 
-    Par exemple: SmallLogo.scale-100.png
+    Par exemple: SplashScreen.scale-100.png
 
-    Lorsque vous faites référence à l’image, vous spécifiez *&lt;nom de l’image&gt;*.*&lt;extension de fichier image&gt;* (« SmallLogo.png » dans cet exemple). Le système sélectionne automatiquement l’image à l’échelle appropriée pour l’appareil parmi les images que vous avez fournies.
+    Lorsque vous faites référence à l’image, vous spécifiez *&lt;nom de l’image&gt;*.*&lt;extension de fichier image&gt;* («SplashScreen.png» dans cet exemple). Le système sélectionne automatiquement l’image à l’échelle appropriée pour l’appareil parmi les images que vous avez fournies.
 
 -   Nous vous conseillons vivement de fournir des logos pour les vignettes de grande taille afin que l’utilisateur puisse redimensionner la vignette de votre application si nécessaire. Pour fournir ces images supplémentaires, vous créez un élément `DefaultTile` et utilisez les attributs `Wide310x150Logo` et `Square310x310Logo` pour spécifier les images supplémentaires :
 ```    XML
@@ -67,13 +71,13 @@ Vous devez mettre à jour quelques éléments :
           EntryPoint="ExampleApp.App">
           <uap:VisualElements
             DisplayName="ExampleApp"
-            Square150x150Logo="Assets\Logo.png"
-            Square44x44Logo="Assets\SmallLogo.png"
+            Square150x150Logo="Assets\Square150x150Logo.png"
+            Square44x44Logo="Assets\Square44x44Logo.png"
             Description="ExampleApp"
             BackgroundColor="#464646">
             <uap:DefaultTile
-              Wide310x150Logo="Assets\WideLogo.png"
-              Square310x310Logo="Assets\LargeLogo.png">
+              Wide310x150Logo="Assets\Wide310x150Logo.png"
+              Square310x310Logo="Assets\Square310x310Logo.png">
             </uap:DefaultTile>
             <uap:SplashScreen Image="Assets\SplashScreen.png" />
           </uap:VisualElements>
@@ -84,25 +88,6 @@ Vous devez mettre à jour quelques éléments :
 ## <a name="use-notifications-to-customize-your-tile"></a>Utiliser les notifications pour personnaliser votre vignette
 
 
-Une fois votre application installée, vous pouvez utiliser les notifications pour personnaliser votre vignette. Vous pouvez le faire lors du premier lancement de l’application ou en réponse à certains événements tels qu’une notification Push.
+Une fois votre application installée, vous pouvez utiliser les notifications pour personnaliser votre vignette. Vous pouvez le faire lors du premier lancement de l’application ou en réponse à un événement tel qu’une notification Push.
 
-1.  Créez une charge utile XML (sous la forme d’un [**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173)) décrivant la vignette.
-
-    -   Windows10 inaugure un nouveau schéma de vignette adaptative que vous pouvez utiliser. Pour obtenir des instructions, voir [Vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md). Pour découvrir le schéma, voir l’article [Schéma des vignettes adaptatives](tiles-and-notifications-adaptive-tiles-schema.md). 
-
-    -   Pour définir votre vignette, vous pouvez utiliser les modèles de vignette Windows8.1. Pour plus d’informations, voir [Création de vignettes et badges (Windows8.1)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260).
-
-2.  Créez un objet notification par vignette et passez-lui le [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173) que vous avez créé. Il existe plusieurs types d’objets notification :
-    -   Un objet [**Windows.UI.NotificationsTileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) pour la mise à jour immédiate de la vignette.
-    -   Un objet [**Windows.UI.Notifications.ScheduledTileNotification**](https://msdn.microsoft.com/library/windows/apps/hh701637) pour la mise à jour la vignette à un moment donné dans le futur.
-
-3.  Utilisez la méthode [**Windows.UI.Notifications.TileUpdateManager.CreateTileUpdaterForApplication**](https://msdn.microsoft.com/library/windows/apps/br208623) pour créer un objet [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628).
-4.  Appelez la méthode [**TileUpdater.Update**](https://msdn.microsoft.com/library/windows/apps/br208632) et passez-lui l’objet notification par vignette créé à l’étape2.
-
- 
-
- 
-
-
-
-
+Pour savoir comment envoyer des notifications par vignette, consultez [Envoyer une notification par vignette locale](tiles-and-notifications-sending-a-local-tile-notification.md).

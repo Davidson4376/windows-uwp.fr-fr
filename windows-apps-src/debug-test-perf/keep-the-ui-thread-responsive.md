@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
 title: "Assurer la réactivité du thread de l’interface utilisateur"
 description: "Les utilisateurs attendent de leurs applications qu’elles restent réactives pendant les opérations de calcul, et ce sur n’importe quel type d’ordinateur."
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 921af1b7f408bed5f846af631592755d48a37dd4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d5be2a8ea14f35d048b4402f2cfb1018d5998c3d
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="keep-the-ui-thread-responsive"></a>Assurer la réactivité du thread de l’interface utilisateur
 
@@ -29,7 +31,7 @@ Vous devez utiliser le thread d’interface utilisateur pour apporter la quasi-t
 
 Certaines des étapes les plus lentes dans une application incluent le démarrage et le changement d’affichage. N’obligez pas l’application à faire plus de travail que nécessaire pour afficher l’interface utilisateur que l’utilisateur voit initialement. Par exemple, ne créez pas l’interface utilisateur de manière à révéler progressivement des éléments d’interface et le contenu des fenêtres contextuelles.
 
--   Utilisez [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) pour retarder l’instanciation des éléments.
+-   Utilisez [x:Load attribute](../xaml-platform/x-load-attribute.md) ou [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) pour différer l’instanciation des éléments.
 -   Insérez les éléments par programme dans l’arborescence, à la demande.
 
 Les files d’attente [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) fonctionnent pour le traitement par le thread d’interface utilisateur lorsque ce dernier n’est pas occupé.
@@ -107,4 +109,3 @@ Dans cet exemple, le gestionnaire `NextMove-Click` effectue son retour lorsqu’
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Interactions utilisateur personnalisées](https://msdn.microsoft.com/library/windows/apps/Mt185599)
-

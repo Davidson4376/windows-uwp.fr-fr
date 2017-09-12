@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: f0fd2e03c58ac5ffa575cf2381df4c652422efea
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 230480343a3f63ece4935e34101b1d3ec5408b84
+ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/10/2017
 ---
 # <a name="accessibility-overview"></a>Vue d’ensemble de l’accessibilité  
 
@@ -22,11 +24,12 @@ translationtype: HT
 
 Cet article est une vue d’ensemble des concepts et technologies associés aux scénarios d’accessibilité des applications de plateforme Windows universelle (UWP).
 
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
+
 <span id="Accessibility_and_your_app"/>
 <span id="accessibility_and_your_app"/>
 <span id="ACCESSIBILITY_AND_YOUR_APP"/>
-## <a name="accessibility-and-your-app"></a>Accessibilité et votre application  
-Il existe de nombreuses invalidités et handicaps, notamment des limitations relatives à la mobilité, la vision, la perception des couleurs, l’audition, la parole, la cognition et l’alphabétisation. Toutefois, vous pouvez répondre à la plupart des besoins en suivant les recommandations fournies dans cette rubrique. Vous devez notamment offrir :
+## Accessibilité et votre application Il existe de nombreuses invalidités et handicaps, notamment des limitations relatives à la mobilité, la vision, la perception des couleurs, l’audition, la parole, la cognition et l’alphabétisation. Toutefois, vous pouvez répondre à la plupart des besoins en suivant les recommandations fournies dans cette rubrique. Vous devez notamment offrir :
 
 * la prise en charge d’interactions au clavier et de lecteurs d’écran ;
 * la prise en charge de la personnalisation utilisateur, y compris les paramètres de police, de zoom (loupe), de couleur et de contraste élevé ;
@@ -127,7 +130,7 @@ XAML
 </StackPanel>
 ```
 
-Visual Basic
+VisualBasic
 ```vb
 Private Sub ShowAccessibleUICheckBox_Click(ByVal sender As Object,
     ByVal e As RoutedEventArgs)
@@ -181,4 +184,4 @@ Par défaut, le contenu Microsoft DirectX hébergé dans une interface utilisate
 * [Concevoir des applications pour l’accessibilité](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Accessibilité](accessibility.md)
-* [Prise en main du Narrateur](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)
+* [Prise en main du Narrateur](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

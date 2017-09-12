@@ -6,14 +6,16 @@ ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 11c8fbdfd8653fe93ab712c865dc1d23e7a76581
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: ebeac8bb4d2787514c788ecfa0ab1381ff40820b
+ms.sourcegitcommit: 9a1310468970c8d1ade0fb200126dff56ea8c9e1
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/14/2017
 ---
 # <a name="special-tile-templates"></a>Modèles de vignette spéciaux
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -35,13 +37,25 @@ Les étapes suivantes couvrent tout ce que vous devez savoir pour créer une vig
 
 **Étape 1: créez vos ressources d’image au format PNG**
 
-Créez les ressources d’icônes pour la vignette et placez-les dans votre projet avec vos autres ressources. Créez une icône d’au moins 200 x 200 pixels, qui peut être utilisée pour les petites et moyennes vignettes sur le téléphone et le bureau. Pour une meilleure expérience utilisateur, créez une icône pour chaque taille. Voir les détails de dimensionnement dans l’image présentée plus bas.
+Créez les ressources d’icônes pour la vignette et placez-les dans votre projet avec vos autres ressources. Créez une icône d’au moins 200 x 200 pixels, qui peut être utilisée pour les petites et moyennes vignettes sur le téléphone et le bureau. Pour une meilleure expérience utilisateur, créez une icône pour chaque taille. Aucun remplissage n’est nécessaire sur ces ressources. Voir les détails de dimensionnement dans l’image présentée plus bas.
 
 Enregistrez les ressources d’icônes au format PNG avec une transparence. Sur Windows Phone, chaque pixel non transparent s’affiche en blanc (RVB 255, 255, 255). Pour plus de cohérence et de simplicité, utilisez également le blanc pour les icônes du bureau.
 
 Windows 10 sur tablette, ordinateur portable et ordinateur de bureau prend uniquement en charge les ressources d’icônes carrées. WindowsPhone prend en charge à la fois les ressources carrées et les ressources qui sont plus hautes que larges, jusqu’à un rapport de largeur:hauteur de 2:3. Ceci est donc très utile pour les images comme les icônes de téléphone.
 
 ![Dimensionnement des icônes sur les petites et moyennes vignettes, sur le téléphone et le bureau](images/iconic-template-sizing-info.png)
+
+![Dimensionnement des ressources avec et sans badge](images/assetguidance24.png)
+
+Pour les ressources carrées, un centrage automatique est effectué dans le conteneur:
+
+![Dimensionnement des ressources carrées, avec et sans badge](images/assetguidance25.png)
+
+Pour les ressources non carrées, un centrage horizontal/vertical automatique et un alignement de la largeur/hauteur sont effectués dans le conteneur:
+
+![Dimensionnement des ressources non carrées, avec et sans badge](images/assetguidance26a.png)
+
+![Dimensionnement des ressources non carrées, avec et sans badge](images/assetguidance26b.png)
 
 **Étape2: créez votre vignette de base**
 

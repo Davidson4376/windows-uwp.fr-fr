@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
 description: "Cet article vous guide tout au long des étapes nécessaires pour cibler différents objectifs de déploiement et de débogage."
 title: "Déploiement et débogage des applications UWP"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows10, uwp, déboguer, test, performances"
-ms.openlocfilehash: 6f399136be121288dcff4b482f9e022fc0323181
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 2d4f49b0b9756162a22adf5c52910102d4a37281
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Déploiement et débogage des applications UWP
 
@@ -70,7 +72,7 @@ Pour revenir à cette boîte de dialogue, vous pouvez ouvrir les propriétés du
 
 ![Onglet Déboguer](images/debug-remote-machine-config.png)
 
-Pour déployer une application sur un PC distant, vous devez également télécharger et installer les outils de contrôle à distance Visual Studio sur le PC cible. Voir [Instructions pour un PC distant](#remote-pc-instructions) pour obtenir des instructions complètes.
+Pour déployer une application sur un PC distant exécutant une version antérieure à CreatorsUpdate, vous devez également télécharger et installer les outils de contrôle à distance de VisualStudio sur le PC cible. Voir [Instructions pour un PC distant](#remote-pc-instructions) pour obtenir des instructions complètes.  Toutefois, à partir de CreatorsUpdate, le PC prend également en charge le déploiement distant.  
 
 ### <a name="c-and-javascript"></a>C++ et JavaScript
 
@@ -86,7 +88,10 @@ Une fois que l’ordinateur est spécifié, vous pouvez sélectionner **Ordinate
 
 ### <a name="remote-pc-instructions"></a>Instructions pour un PC distant
 
-Pour effectuer un déploiement sur un PC distant, les outils de contrôle à distance Visual Studio doivent être installés sur ce PC cible. Le PC distant doit également exécuter une version de Windows supérieure ou égale à la propriété **Version minimale de la plateforme cible** de vos applications. Une fois que vous avez installé les outils de contrôle à distance, vous devez lancer le débogueur distant sur le PC cible.
+> [!NOTE]
+> Ces instructions sont uniquement requises pour les versions antérieures de Windows10.  À partir de CreatorsUpdate, un PC peut être traité comme une Xbox.  Autrement dit, vous pouvez activer la détection d'appareils dans le menu Mode développeur du PC et utiliser le mode d'authentification Universel pour le couplage de code PIN et la connexion au PC. 
+
+Pour effectuer un déploiement sur un PC distant exécutant une version antérieure à CreatorsUpdate, les outils de contrôle à distance de VisualStudio doivent être installés sur le PC cible. Le PC distant doit également exécuter une version de Windows supérieure ou égale à la propriété **Version minimale de la plateforme cible** de vos applications. Une fois que vous avez installé les outils de contrôle à distance, vous devez lancer le débogueur distant sur le PC cible.
 
 Pour ce faire, recherchez **Débogueur distant** dans le menu **Démarrer**, ouvrez-le et, si vous y êtes invité, autorisez le débogueur à configurer vos paramètres de pare-feu. Par défaut, le débogueur est lancé avec l’authentification Windows. Vous avez donc besoin des informations d’identification de l’utilisateur si ce dernier n’est pas le même sur les deux PC.
 
@@ -94,13 +99,31 @@ Pour changer l’option en **aucune authentification**, dans le **Débogueur dis
 
 Pour plus d’informations, voir la page [Centre de téléchargementVisual Studio](https://www.visualstudio.com/downloads/).
 
+## <a name="passing-command-line-debug-arguments"></a>Transmission d’arguments de ligne de commande pour le débogage 
+Dans Visual Studio2017, vous pouvez transmettre des arguments de ligne de commande pour le débogage lorsque vous commencez à déboguer des applications UWP. Vous pouvez accéder aux arguments de ligne de commande relatifs au débogage à partir du paramètre *args* de la méthode **OnLaunched** de la classe [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application). Pour spécifier des arguments de ligne de commande pour le débogage, ouvrez les propriétés du projet et accédez à l’onglet **Déboguer**. 
+
+> [!NOTE]
+> Cette fonctionnalité est disponible dans VisualStudio2017 (version15.1) pour C#, VB et C++. JavaScript est disponible dans les versions ultérieures de VisualStudio2017. Les arguments de ligne de commande relatifs au débogage sont disponibles pour tous les types de déploiements, à l’exception du Simulateur.
+
+Pour les projets UWP C# et VB, vous verrez un champ **Arguments de la ligne de commande:** sous **Options de démarrage**. 
+
+![Arguments de ligne de commande](images/command-line-arguments.png)
+
+Dans le cas des projets UWP C++ et JS, le champ **Arguments de la ligne de commande** apparaît dans **Propriétés de débogage**.
+
+![Arguments de ligne de commande C++ et JS](images/command-line-arguments-cpp.png)
+
+Une fois que vous avez spécifié les arguments de ligne de commande, vous pouvez accéder à la valeur de l’argument dans la méthode **OnLaunched** de l’application. L’objet *args* de la classe [**LaunchActivatedEventArgs**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) présente une propriété **Arguments** dont la valeur est définie sur le texte figurant dans le champ **Arguments de la ligne de commande**. 
+
+![Arguments de ligne de commande C++ et JS](images/command-line-arguments-debugging.png)
+
 ## <a name="authentication-modes"></a>Modes d’authentification
 
 Il existe trois modes d’authentification de déploiement sur un ordinateur distant :
 
-- **Universel (protocole non chiffré)**: Utilisez ce mode d’authentification chaque fois que vous effectuez un déploiement sur un appareil distant autre qu’un PC Windows (ordinateur de bureau ou portable). Actuellement, ce mode convient aux appareils IoT, aux appareils Xbox et aux appareils HoloLens. Le mode Universel (protocole non chiffré) doit uniquement être utilisé sur les réseaux approuvés. La connexion de débogage est vulnérable aux utilisateurs malveillants qui peuvent intercepter les données transmises entre la machine de développement et la machine distante, et les modifier.
-- **Windows**: Ce mode d’authentification est destiné uniquement au déploiement sur un PC distant (ordinateur de bureau ou portable). Utilisez ce mode d’authentification quand vous avez accès aux informations d’identification de l’utilisateur connecté sur l’ordinateur cible. Il s’agit du canal le plus sécurisé pour le déploiement à distance.
-- **Aucun**: Ce mode d’authentification est destiné uniquement au déploiement sur un PC distant (ordinateur de bureau ou portable). Utilisez ce mode d’authentification quand vous disposez d’un ordinateur de test configuré dans un environnement avec un compte de test connecté, et que vous ne pouvez pas entrer les informations d’identification. Vérifiez que les paramètres du débogueur distant sont définis pour n’accepter aucune authentification.
+- **Universel (protocole non chiffré)**: Utilisez ce mode d’authentification chaque fois que vous effectuez un déploiement sur un appareil distant. Actuellement, ce mode convient aux appareils IoT, aux appareils Xbox et aux appareils HoloLens, ainsi qu'aux PC exécutant CreatorsUpdate ou version ultérieure. Le mode Universel (protocole non chiffré) doit uniquement être utilisé sur les réseaux approuvés. La connexion de débogage est vulnérable aux utilisateurs malveillants qui peuvent intercepter les données transmises entre la machine de développement et la machine distante, et les modifier.
+- **Windows**: Ce mode d’authentification est destiné uniquement à être utilisé pour un PC distant (ordinateur de bureau ou portable) exécutant les outils de contrôle à distance de VisualStudio. Utilisez ce mode d’authentification quand vous avez accès aux informations d’identification de l’utilisateur connecté sur l’ordinateur cible. Il s’agit du canal le plus sécurisé pour le déploiement à distance.
+- **Aucun**: Ce mode d’authentification est destiné à être utilisé uniquement pour un PC distant (ordinateur de bureau ou portable) exécutant les outils de contrôle à distance de VisualStudio. Utilisez ce mode d’authentification quand vous disposez d’un ordinateur de test configuré dans un environnement avec un compte de test connecté, et que vous ne pouvez pas entrer les informations d’identification. Vérifiez que les paramètres du débogueur distant sont définis pour n’accepter aucune authentification.
 
 ## <a name="advanced-remote-deployment-options"></a>Options avancées de déploiement distant
 Avec le lancement de Visual Studio2015 Update3 et de la Mise à jour anniversaire Windows10, de nouvelles options avancées de déploiement distant ont vu le jour pour certains appareils Windows10. Les options avancées de déploiement distant se trouvent dans le menu **Déboguer** des propriétés du projet.
@@ -112,9 +135,9 @@ Les nouvelles propriétés sont notamment:
 
 ### <a name="requirements"></a>Configuration requise
 Pour utiliser les options avancées de déploiement distant, vous devez avoir la configuration requise suivante:
-* Visual Studio2015 Update3 est installé avec la version1.4.1 des outils Windows10 (qui inclut le SDK de la Mise à jour anniversaire Windows10)
-* Cibler un appareil distant Xbox avec la Mise à jour anniversaire Windows10
-* Utiliser le mode d’authentification Universel
+* Installez VisualStudio2015 Update3 avec la version1.4.1 des outils Windows10 (qui inclut le SDK de la Mise à jour anniversaire Windows10)
+* Ciblez un appareil distant Xbox avec la Mise à jour anniversaire Windows10 ou un PC avec Windows10CreatorsUpdate 
+* Utilisez le mode d’authentification Universel
 
 ### <a name="properties-pages"></a>Pages de propriétés
 Pour une application UWP en C# ou Visual Basic, la page de propriétés ressemble à ce qui suit.
@@ -131,10 +154,10 @@ L’option **Copier les fichiers sur l’appareil** transfère physiquement les 
 Le **chemin d’inscription de package** spécifié quand vous **copiez les fichiers sur l’appareil** est l’emplacement physique sur l’appareil distant dans lequel les fichiers sont copiés. Ce chemin peut être spécifié comme tout autre chemin relatif. L’emplacement dans lequel les fichiers sont déployés est relatif à une racine de fichiers de développement qui varie en fonction de l’appareil cible. La spécification de ce chemin est utile si plusieurs développeurs partagent le même appareil et utilisent des packages avec un écart de build.
 
 > [!NOTE]
-> L’option **Copier les fichiers sur l’appareil** est actuellement prise en charge sur Xbox exécutant la Mise à jour anniversaire Windows10.
+> L'option **Copier les fichiers sur l’appareil** est actuellement prise en charge sur Xbox exécutant la Mise à jour anniversaire Windows10 et les PC exécutant Windows10CreatorsUpdate.
 
-Sur l’appareil distant, la disposition est copiée à l’emplacement par défaut suivant en fonction de la famille d’appareils:
-  `Xbox: \\MY-DEVKIT\DevelopmentFiles\PACKAGE-REGISTRATION-PATH`
+Sur l’appareil distant, la disposition est copiée à l’emplacement par défaut suivant:
+  `\\MY-DEVKIT\DevelopmentFiles\PACKAGE-REGISTRATION-PATH`
 
 ### <a name="register-layout-from-network"></a>Inscrire la disposition à partir du réseau
 Quand vous choisissez d’inscrire la disposition à partir du réseau, vous pouvez générer votre disposition de package dans un partage réseau, puis inscrire la disposition sur l’appareil distant directement à partir du réseau. Pour cela , vous spécifiez un chemin de dossier de disposition (un partage réseau) accessible à partir de l’appareil distant. La propriété **Chemin du dossier de disposition** est le chemin relatif défini sur le PC exécutant Visual Studio, tandis que la propriété **Chemin d’inscription du package** désigne le même chemin, mais spécifié sur l’appareil distant.
@@ -156,10 +179,10 @@ Quand vous inscrivez la disposition à partir du réseau pour la première fois,
 Vous ne pouvez pas sélectionner **conserver tous les fichiers sur l’appareil** quand vous inscrivez la disposition à partir du réseau, car aucun fichier n’est copié physiquement sur l’appareil distant.
 
 > [!NOTE]
-> L’option **Inscrire la disposition à partir du réseau** est actuellement prise en charge sur Xbox exécutant la Mise à jour anniversaire Windows10.
+> L'option **Inscrire la disposition à partir du réseau** est actuellement prise en charge sur Xbox exécutant la Mise à jour anniversaire Windows10 et les PC exécutant Windows10CreatorsUpdate.
 
-Sur l’appareil distant, la disposition est inscrite à l’emplacement par défaut suivant en fonction de la famille d’appareils:
-  `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles`
+Sur l'appareil distant, la disposition est inscrite à l'emplacement par défaut suivant en fonction de la famille d'appareils:   `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles` - il s'agit d'un lien symbolique vers le **chemin d'inscription de package**
+  Le PC n’utilise pas de lien symbolique et enregistre à la place directement le **chemin d'inscription de package**
 
 
 ## <a name="debugging-options"></a>Options de débogage

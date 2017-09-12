@@ -1,22 +1,25 @@
 ---
 author: jnHs
-Description: "Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et vos produits in-app, ainsi que vos revenusMicrosoftAdvertising."
+Description: "Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et vos produits in-app, ainsi que vos revenus publicitaires."
 title: "Rémunération"
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: c27e06491b66fea4f451b70309a9a8c3802aff18
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: eae4c71366da0aa4b2be3ce722bfd0e3273ccf0a
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="getting-paid"></a>Rémunération
-Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et vos extensions, ainsi que vos revenusMicrosoftAdvertising.
+Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et extensions, ainsi que vos revenus publicitaires.
 
-> **Important**  Pour recevoir l’argent des ventes d’application dans le WindowsStore, vous devez [configurer votre compte de paiement et remplir les déclarations fiscales appropriées](setting-up-your-payout-account-and-tax-forms.md).
+> [!IMPORTANT]
+> Pour recevoir l’argent des ventes d’applications dans le WindowsStore, vous devez [configurer votre compte de paiement et remplir les déclarations fiscales appropriées](setting-up-your-payout-account-and-tax-forms.md).
 
 ## <a name="store-fee"></a>Frais d’utilisation du Windows Store
 
@@ -28,11 +31,14 @@ Les frais d’utilisation du Windows Store s’appliquent à toutes les ventes d
 
 ## <a name="price-tiers"></a>Niveaux de prix
 
-Le niveau de prix fixe le prix de vente dans tous les pays où vous souhaitez distribuer votre application. Vous pouvez proposer votre application gratuitement, ou vous pouvez choisir un prix que les clients devront verser pour l’acquérir. Les niveaux de prix commencent à 0,99 USD, avec des incréments supplémentaires (1,29 USD, 1,49 USD, 1,99 USD, etc.). Les incréments entre les niveaux de prix augmentent en même temps que le prix.
+Le ou les niveaux de prix que vous sélectionnez fixent le [prix de vente](set-and-schedule-app-pricing.md#base-price) dans tous les pays où vous souhaitez distribuer votre application. Vous pouvez également utiliser des fonctionnalités de tarification supplémentaires, telles que la [fixation de prix différents pour des marchés distincts](set-and-schedule-app-pricing.md#customize-pricing-for-specific-markets) ou la [mise en vente de votre application](put-apps-and-add-ons-on-sale.md).
 
-> **Remarque**  Ces niveaux de prix s’appliquent également à toutes les extensions que vous proposez dans votre application.
+Vous pouvez proposer votre application gratuitement, ou vous pouvez choisir un prix que les clients devront verser pour l’acquérir. Les niveaux de prix commencent à 0,99USD, avec des incréments supplémentaires (1,09USD, 1,19USD, etc.). Les incréments entre les niveaux de prix augmentent en même temps que le prix.
 
-Chaque niveau de prix a une valeur correspondante dans chacune des devises du Windows Store, qui en compte plus de60. Ces valeurs vous aident à vendre vos applications à un prix comparable dans le monde entier. Cependant, en raison des fluctuations des taux de change, le montant exact des ventes peut varier légèrement d’une devise à l’autre.
+> [!NOTE] 
+> Ces niveaux de prix s’appliquent également à toutes les extensions que vous proposez dans votre application.
+
+Chaque niveau de prix a une valeur correspondante dans chacune des devises du WindowsStore. Ces valeurs vous aident à vendre vos applications à un prix comparable dans le monde entier. Cependant, en raison des fluctuations des taux de change, le montant exact des ventes peut varier légèrement d’une devise à l’autre.
 
 N'oubliez pas que le niveau de prix que vous sélectionnez peut inclure la taxe de vente ou la taxe sur la valeur ajoutée que vos clients doivent payer. Pour plus d'informations, consultez l'article [Informations fiscales pour les applications payantes](tax-details-for-paid-apps.md).
 
@@ -52,7 +58,8 @@ Pour mettre des paiements en attente, accédez à **Paramètres du compte**. Sou
 
 Une fois que vous avez configuré l’état de mise en attente des paiements sur **Activé**, tous les paiements sont mis en attente jusqu’à ce que vous basculiez à nouveau le curseur sur **Désactivé**. Lorsque vous procédez ainsi, vous êtes inclus dans le cycle de paiement mensuel suivant (à condition que les seuils de paiement applicables aient été atteints). Par exemple, si vous avez mis vos paiements en attente, mais que vous souhaitez qu’un paiement soit généré en juin, vous devez configurer l’état de mise en attente des paiements sur **Désactivé** avant la fin du mois de mai.
 
-> **Important** Votre choix d’**État de mise en attente des paiements** s’applique à **toutes** les sources de revenus payées via le Centre de développement Windows (Windows Store, Microsoft Advertising, Azure Marketplace, etc.). Vous ne pouvez pas sélectionner des état de mise en attente différents pour chaque source de revenus.
+> [!NOTE]
+> La valeur que vous sélectionnez dans **État de mise en attente des paiements** s’applique à **toutes** les sources de revenus payées par le biais du Centre de développement Windows (WindowsStore, publicité, Place de marché MicrosoftAzure, etc.). Vous ne pouvez pas sélectionner des état de mise en attente différents pour chaque source de revenus.
 
 
  

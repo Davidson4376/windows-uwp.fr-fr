@@ -2,7 +2,7 @@
 author: GrantMeStrength
 Description: "Comparez les fonctionnalités de la plateforme sur iOS, Android et Windows10."
 Search.Product: eADQiWindows 10XVcnh
-title: "Concepts Windows pour développeurs iOS et Android"
+title: "Mappage de concepts d’applications Windows pour développeurs iOS et Android"
 ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
@@ -10,11 +10,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
-ms.openlocfilehash: ce32bd7ebaca20827a637c456b2dbe82811817cb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 72bb41939b0676dab7c212770cc9eddaef538c3f
+ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/28/2017
 ---
-#<a name="windows-concepts-for-android-and-ios-developers"></a>Concepts Windows pour développeurs iOS et Android
+#<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Mappage de concepts d’applications Windows pour développeurs iOS et Android
 
 Si vous êtes un développeur doté de compétences relatives aux systèmes d’exploitation Android ou iOS et au code et que vous souhaitez migrer vers Windows10 et la plateforme Windows universelle (UWP), cette ressource vous permettra de mapper les fonctionnalités de la plateforme, et vos connaissances, entre les trois plateformes.
 
@@ -128,13 +130,13 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <td align="left"><strong>Navigation parmi les homologues.</strong> <br><br>Présentation à l’utilisateur de méthodes de navigation entre les pages d’importance hiérarchique équivalente.</td>
 <td align="left">Les <strong>onglets</strong>, <strong>vues à balayage</strong> et <strong>panneaux de navigation</strong> permettent une <strong>navigation latérale</strong>.</td>
 <td align="left">Les <strong>contrôleurs de la barre d’onglets</strong>, <strong>les contrôleurs du mode fractionné</strong> et les <strong>contrôleurs d’affichage de page</strong> permettent de naviguer entre les vues de hiérarchie équivalente.</td>
-<td align="left">Vous pouvez afficher une liste permanente de liens/onglets au-dessus du contenu à l’aide d’<strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">onglets/de pivots</a></strong>. Le <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">mode fractionné/volet de navigation</a></strong> vous permet d’afficher une liste de liens avec le contenu.<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">Navigation</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">Naviguer entre deux pages</a></td>
+<td align="left">Vous pouvez afficher une liste permanente de liens/onglets au-dessus du contenu à l’aide d’<strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">onglets/de pivots</a></strong>. Le <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">mode fractionné/volet de navigation</a></strong> vous permet d’afficher une liste de liens avec le contenu.<br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigation-basics">Navigation</a><br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigate-between-two-pages">Naviguer entre deux pages</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Navigation hiérarchique.</strong> <br><br>Navigation entre les pages parent et enfant d’une hiérarchie.</td>
 <td align="left">Les <strong>listes</strong>, <strong>listes de quadrillage</strong>, <strong>boutons</strong> et autres contrôles permettent une <strong>navigation par descendants</strong> lorsqu’ils sont utilisés dans l’<strong>intention</strong> de charger d’autres <strong>activités</strong>.</td>
 <td align="left">Les <strong>contrôleurs de navigation</strong> permettent aux utilisateurs de naviguer entre les niveaux d’une hiérarchie.</td>
-<td align="left">Les <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">concentrateurs</a></strong> permettent de présenter à l’utilisateur un aperçu du contenu qui peut être sélectionné pour accéder aux pages enfants. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">Maître/détails</a></strong> permet aux utilisateurs de faire une sélection parmi une liste de résumés d’éléments qui s’affichent en regard de la section correspondante relative aux détails.<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">Navigation</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">Naviguer entre deux pages</a></td>
+<td align="left">Les <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">concentrateurs</a></strong> permettent de présenter à l’utilisateur un aperçu du contenu qui peut être sélectionné pour accéder aux pages enfants. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">Maître/détails</a></strong> permet aux utilisateurs de faire une sélection parmi une liste de résumés d’éléments qui s’affichent en regard de la section correspondante relative aux détails.<br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigation-basics">Navigation</a><br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigate-between-two-pages">Naviguer entre deux pages</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Navigation via le bouton Précédent.</strong> <br><br>Retour à une application.</td>
@@ -170,7 +172,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Voix.</strong> <br><br>Reconnaissance vocale pour la saisie vocale et fonctionnalités vocales supplémentaires.</td>
 <td align="left">La saisie vocale peut être assurée par toute application implémentant une classe <strong>RecognizerIntent</strong>, tel que la <strong>recherche vocale Google</strong>. La classe <strong>SpeechRecognizer</strong> permet aux applications d’utiliser l’API de reconnaissance vocale de Google.</td>
-<td align="left">Aucune reconnaissance vocale intégrée ou API de saisie vocale n’existe.</td>
+<td align="left">Les applications peuvent utiliser la classe <strong>SFSpeechRecognizer</strong> pour implémenter la reconnaissance et la saisie vocales.</td>
 <td align="left">Vous pouvez utiliser l’API de <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">reconnaissance vocale</a></strong> pour interagir avec votre application au premier plan. Vous pouvez utiliser des <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">interactions Cortana</a></strong> vocales pour lancer des applications au premier plan ou en arrière-plan et pour interagir avec des applications en arrière-plan.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">Interactions vocales</a></td>
 </tr>
 <tr class="even">

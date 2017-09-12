@@ -4,22 +4,22 @@ ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
 description: "Utilisez ces méthodes de l’API de soumission du Windows Store pour récupérer des données pour les applications inscrites dans votre compte du Centre de développement Windows."
 title: "Obtenir des données d’application"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows10, uwp, API de soumission du Windows Store, données d’application"
-ms.openlocfilehash: dc0aa91aa417689866aa6bd666f0446c0eb2e242
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0bb01250756c464113570ece433afe11506a5399
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="get-app-data"></a>Obtenir des données d’application
 
 Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pour obtenir des données pour les applications existantes dans votre compte du Centre de développement. Pour obtenir une présentation de l’API de soumission du WindowsStore, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services du WindowsStore](create-and-manage-submissions-using-windows-store-services.md).
 
->**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. L’octroi de cette autorisation s’effectue en plusieurs étapes. Elle est accordée aux comptes de développeur, et tous les comptes n’en bénéficient pas pour le moment. Pour demander un accès anticipé, connectez-vous au tableau de bord du Centre de développement, cliquez sur **Commentaires** au bas du tableau de bord, sélectionnez **API de soumission** dans la zone de commentaires, puis soumettez votre demande. Dès que cette autorisation sera accordée à votre compte, vous en serez averti par e-mail.
-
-Pour que vous puissiez utiliser ces méthodes, l’application doit déjà exister dans votre compte du Centre de développement. Pour créer ou gérer des soumissions pour des applications, consultez les méthodes indiquées dans l’article [Gérer les soumissions d’applications](manage-app-submissions.md).
+Avant de pouvoir utiliser ces méthodes, l’application doit obligatoirement exister dans votre compte du Centre de développement. Pour créer ou gérer des soumissions pour des applications, consultez les méthodes indiquées dans l’article [Gérer les soumissions d’applications](manage-app-submissions.md).
 
 <table>
 <colgroup>
@@ -88,7 +88,8 @@ Cette ressource représente une application inscrite dans votre compte.
   "pendingApplicationSubmission": {
     "id": "1152921504621243487",
     "resourceLocation": "applications/9NBLGGH4R315/submissions/1152921504621243487"
-  }
+  },
+  "hasAdvancedListingPermission": false
 }
 ```
 
@@ -103,7 +104,8 @@ Cette ressource a les valeurs suivantes.
 | publisherName       | chaîne  | ID de l’éditeur Windows associé à l’application. Celui-ci correspond à la valeur **Package/Identité/Éditeur** qui apparaît dans la page [Identité de l’application](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) de l’application dans le tableau de bord du Centre de développement Windows.       |
 | firstPublishedDate      | chaîne  | Date de la première publication de l’application, au format ISO8601.   |
 | lastPublishedApplicationSubmission       | objet | [Ressource de soumission](#submission_object) qui fournit des informations sur la dernière soumission publiée de l’application.    |
-| pendingApplicationSubmission        | objet  |  [Ressource de soumission](#submission_object) qui fournit des informations sur la soumission actuellement en attente pour l’application.   |   |
+| pendingApplicationSubmission        | objet  |  [Ressource de soumission](#submission_object) qui fournit des informations sur la soumission actuellement en attente pour l’application.   |   
+| hasAdvancedListingPermission        | objet  |  Indique si vous pouvez configurer les valeurs [gamingOptions](manage-app-submissions.md#gaming-options-object) ou [trailers](manage-app-submissions.md#trailer-object) pour les soumissions de l’application. Pour plus d’informations, consultez [cette section](manage-app-submissions.md#advanced-listings). |  |
 
 
 <span id="add-on-object" />

@@ -1,4 +1,20 @@
-# <a name="app-analysis-overview"></a>Vue d’ensemble de l’analyse d’application
+---
+author: jwmsft
+title: "Analyse d’application"
+description: "Analysez votre application pour détecter les problèmes de performances."
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows10, uwp
+ms.openlocfilehash: bedd4ce683622935488f9cc210d71f568a167f51
+ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/10/2017
+---
+# <a name="app-analysis-overview"></a>vue d’ensemble de l’analyse d’application
 
 L’analyse d’application est un outil qui envoie aux développeurs une notification qui les avertit de problèmes de performances. L’analyse d’application teste le code de votre application par rapport à un ensemble de bonnes pratiques et de recommandations en matière de performances.
 
@@ -105,7 +121,7 @@ Définissez une taille de décodage explicite pour créer une version de l’ima
 
 ## <a name="collapsed-elements-at-load-time"></a>Éléments réduits au moment du chargement
 
-Un modèle courant dans les applications consiste à d’abord masquer des éléments dans l’interface utilisateur pour les afficher plus tard. Dans la plupart des cas, ces éléments doivent être différés à l’aide de x:DeferLoadStrategy pour éviter de payer le coût de création de l’élément au moment du chargement.
+Un modèle courant dans les applications consiste à masquer initialement des éléments dans l’interface utilisateur pour les afficher plus tard. Dans la plupart des cas, ces éléments doivent être différés à l’aide de x:Load ou de x:DeferLoadStrategy pour éviter de payer le coût de création de l’élément au moment du chargement.
 
 C’est le cas notamment quand un convertisseur de valeur booléenne en valeur visibility est utilisé pour masquer des éléments afin de les afficher plus tard.
 
@@ -119,9 +135,9 @@ Cette règle a été déclenchée, car un élément a été réduit au moment du
 
 ### <a name="solution"></a>Solution
 
-x:DeferLoadStrategy vous permet de retarder le chargement d’un élément d’interface utilisateur et de le charger quand c’est nécessaire. C’est un bon moyen de retarder le traitement de l’interface utilisateur qui n’est pas visible dans le premier frame. Vous pouvez choisir de charger l’élément selon les besoins, ou dans le cadre d’un ensemble de logique différée. Pour déclencher le chargement, appelez findName sur l’élément que vous voulez charger.
+L’utilisation de [x:Load attribute](../xaml-platform/x-load-attribute.md) ou de [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) vous permet de différer le chargement d’un élément d’interface utilisateur et de le charger quand c’est nécessaire. C’est un bon moyen de retarder le traitement de l’interface utilisateur qui n’est pas visible dans le premier frame. Vous pouvez choisir de charger l’élément selon les besoins, ou dans le cadre d’un ensemble de logique différée. Pour déclencher le chargement, appelez findName sur l’élément que vous voulez charger. x:Load étend les fonctionnalités de x:DeferLoadStrategy en permettant de décharger les éléments et de contrôler l’état de chargement par le biais de x:Bind.
 
-Dans certains cas, l’utilisation de findName pour afficher un élément d’interface utilisateur n’est peut-être pas appropriée. Cela est vrai si vous prévoyez de réaliser une partie significative de l’interface utilisateur à partir d’un clic sur un bouton avec une très faible latence. Dans ce cas, vous devez utiliser x:DeferLoadStrategy et définir Visibility sur Collapsed pour l’élément que vous voulez réaliser. Une fois que la page est chargée et que le thread d’interface utilisateur est libre, vous pouvez appeler findName selon vos besoins pour charger les éléments. Les éléments ne sont pas visibles pour l’utilisateur si la propriété Visibility de l’élément n’est pas définie sur Visible.
+Dans certains cas, l’utilisation de findName pour afficher un élément d’interface utilisateur n’est peut-être pas appropriée. Cela est vrai si vous prévoyez de réaliser une partie significative de l’interface utilisateur à partir d’un clic sur un bouton avec une très faible latence. Dans ce cas, vous envisagerez peut-être un compromis entre une latence d’interface utilisateur plus courte et un coût mémoire supplémentaire; si tel est le cas, utilisez x:DeferLoadStrategy et définissez Visibility sur Collapsed au niveau de l’élément que vous voulez réaliser. Une fois que la page est chargée et que le thread d’interface utilisateur est libre, vous pouvez appeler findName selon vos besoins pour charger les éléments. Les éléments ne sont pas visibles pour l’utilisateur si la propriété Visibility de l’élément n’est pas définie sur Visible.
 
 ## <a name="listview-is-not-virtualized"></a>ListView n’est pas virtualisé
 

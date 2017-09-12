@@ -6,20 +6,21 @@ keywords: "disposition d’application uwp, plateforme windows universelle, conc
 label: Layout
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 08/9/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
-ms.openlocfilehash: 1034588565032301cb0746d79a122e8388dad8f9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 4c1b4617b3b58cb613bcca8d5df456621af730fa
+ms.sourcegitcommit: 0d5b3daddb3ae74f91178c58e35cbab33854cb7f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="layout-for-uwp-apps"></a>Disposition pour les applications UWP
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-
-La structure de l’application, la mise en page et la navigation sont les trois éléments clés de l’expérience utilisateur de votre application. Les articles de cette section vous aident à créer une application intuitive qui s’affiche parfaitement sur un grand nombre d’appareils et sur des écrans de différentes tailles.
+La structure de l’application, la mise en page et la navigation sont les trois éléments clés de l’expérience utilisateur de votre application. Les articles de cette section utilisent le système de conception Fluent pour vous aider à créer une application intuitive qui s’affiche parfaitement sur un grand nombre d’appareils et sur des écrans de différentes tailles.
 
 ## <a name="intro"></a>Introduction
 
@@ -27,7 +28,7 @@ La structure de l’application, la mise en page et la navigation sont les trois
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
   <p><b>[Introduction à la conception de l’interface utilisateur d’une application](design-and-ui-intro.md)</b><br />
-Lorsque vous concevez une application UWP, vous créez une interface utilisateur adaptée à une multitude d’appareils dotés d’écrans de tailles différentes. Cet article fournit un aperçu des fonctionnalités et des avantages des applications UWP en matière d’interface utilisateur, ainsi que quelques conseils et astuces pour concevoir une interface utilisateur réactive. </p>
+Lorsque vous concevez une application UWP, vous créez une interface utilisateur adaptée à une multitude d’appareils dotés d’écrans de tailles différentes. Cet article présente le système de conception Fluent et donne un aperçu des fonctionnalités et des avantages des applications UWP en matière d’interface utilisateur, ainsi que quelques conseils et astuces pour concevoir une interface utilisateur réactive. </p>
   </div>
   <div class="side-by-side-content-right">
     ![Application exécutée sur plusieurs appareils](images/rspd-reposition-type1-sm.png)
@@ -60,30 +61,31 @@ Les éléments de commande sont les éléments d’interface utilisateur interac
 ## <a name="page-layout"></a>Mise en page 
 Grâce à ces articles, vous pourrez créer une interface utilisateur flexible, qui s’adapte à différentes tailles d’écran et de fenêtre, résolutions et orientations. 
 
+<div style="column-count: 2; column-gap: 40px; margin-top: 40px;">
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-   <p><b>[Tailles d’écran et points d’arrêt](screen-sizes-and-breakpoints-for-responsive-design.md)</b><br/>
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
+<p style="margin-top: 0px; padding-top: 0px;"><b>[Tailles d’écran et points d’arrêt](screen-sizes-and-breakpoints-for-responsive-design.md)</b><br/>
 Le nombre d’appareils cibles et de tailles d’écran dans l’écosystème Windows10 est trop élevé pour pouvoir optimiser votre interface utilisateur pour chacun d’eux. À la place, nous vous recommandons de concevoir une application pour plusieurs largeurs principales (également appelées «points d’arrêt»): 360, 640, 1024 et 1366epx.</p>
-  </div>
-  <div class="side-by-side-content-right">
- <p><b>[Définir des dispositions avec XAML](layouts-with-xaml.md)</b> <br/>
+</div>
+
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
+  <p><b>[Définir des dispositions avec XAML](layouts-with-xaml.md)</b> <br/>
 Comment utiliser les propriétés XAML et les panneaux de disposition pour que votre application soit réactive et adaptative.</p>
-  </div>
 </div>
-</div>
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
    <p><b>[Panneaux de disposition](layout-panels.md)</b> <br />
-Découvrez les types de panneaux de disposition et apprenez à les utiliser pour disposer les éléments d’interface utilisateur XAML.</p>
-  </div>
-  <div class="side-by-side-content-right">
+Découvrez les types de panneaux de disposition et apprenez à les utiliser pour disposer les éléments d’interface utilisateur XAML.</p> 
+</div>
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
  <p><b>[Alignement, marge et espacement](alignment-margin-padding.md)</b> <br />
 Outre les propriétés de dimension (largeur, hauteur et contraintes), les éléments peuvent aussi avoir des propriétés d’alignement, de marge et d’espacement qui influencent le comportement de disposition lorsqu’un élément subit une passe de disposition et est affiché dans une interface utilisateur.</p> 
-  </div>
 </div>
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
+ <p><b>[Création de dispositions avec les éléments Grid et StackPanel](grid-tutorial.md)</b> <br />
+Utilisez XAML pour créer la disposition d’une application Météo simple à l’aide des éléments Grid et StackPanel. </p> 
 </div>
+
+</div>
+
 
 

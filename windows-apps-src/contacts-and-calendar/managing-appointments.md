@@ -1,17 +1,19 @@
 ---
-author: Xansky
+author: normesta
 description: "L’espace de noms Windows.ApplicationModel.Appointments vous permet de créer et gérer des rendez-vous dans l’application Calendrier d’un utilisateur."
 title: "Gérer des rendez-vous"
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
-ms.author: mhopkins
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, rendez-vous, calendrier
-ms.openlocfilehash: 2f220e8efadfca824a1ec4f41045f18dcc61ffb1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d4bc4832dd489508eabbddd486f782ac8b0191a3
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="manage-appointments"></a>Gérer des rendez-vous
 

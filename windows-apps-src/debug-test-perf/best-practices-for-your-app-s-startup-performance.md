@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
 title: "Meilleures pratiques en matière de performances lors du démarrage de votre application"
 description: "Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation."
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 9ab3eeeffbab26f5d26d28160a750c50d53b7e96
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e36103953ad3fb04ee5beef7e263fc326f817c0b
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>Meilleures pratiques en matière de performances lors du démarrage de votre application
 
@@ -108,7 +110,7 @@ La fenêtre [Arborescence visuelle dynamique de Visual Studio](http://blogs.msdn
 
 ![Arborescence visuelle dynamique](images/live-visual-tree.png)
 
-**Utiliser x:DeferLoadStrategy**. Le fait de réduire un élément ou de définir son opacité sur 0 n’empêche pas la création de l’élément. x:DeferLoadStrategy vous permet de retarder le chargement d’un élément d’interface utilisateur et de le charger lorsque cela est nécessaire. Cela est très pratique pour retarder le traitement de l’interface utilisateur qui n’est pas visible sur l’écran de démarrage, afin de pouvoir la charger en cas de besoin, ou dans le cadre d’une logique différée. Pour déclencher le chargement, il vous suffit d’appeler FindName pour l’élément. Pour plus d’informations et pour consulter un exemple, voir [Attribut x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785).
+**Différez le chargement**. Le fait de réduire un élément ou de définir son opacité sur 0 n’empêche pas la création de l’élément. L’utilisation de x:Load ou de x:DeferLoadStrategy vous permet de différer le chargement d’un élément d’interface utilisateur et de le charger quand c’est nécessaire. Cela est très pratique pour retarder le traitement de l’interface utilisateur qui n’est pas visible sur l’écran de démarrage, afin de pouvoir la charger en cas de besoin, ou dans le cadre d’une logique différée. Pour déclencher le chargement, il vous suffit d’appeler FindName pour l’élément. Pour plus d’informations et pour obtenir un exemple d’utilisation, consultez les articles [Attribut x:Load](../xaml-platform/x-load-attribute.md) et [Attribut x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785).
 
 **Virtualisation** Si votre interface utilisateur comporte un contenu de liste ou Repeater, il est vivement recommandé d’utiliser la virtualisation de l’interface utilisateur. Si l’interface utilisateur de liste n’est pas virtualisée, vous devez créer sur le moment tous les éléments, ce qui peut ralentir le démarrage. Voir [Optimisation des options d’interface ListView et GridView](optimize-gridview-and-listview.md)
 
@@ -364,5 +366,4 @@ Frame, cependant, propose un cache de pages facultatif permettant d’éviter le
 
 La mise en cache de pages peut améliorer les performances en évitant les instanciations, et par conséquent, la navigation. L’utilisation excessive de la mise en cache de pages peut avoir un effet néfaste sur les performances et par là même sur la plage de travail.
 
-C’est la raison pour laquelle nous vous conseillons d’utiliser la mise en cache de pages en fonction des besoins de votre application. Supposons par exemple que vous disposez d’une application affichant une liste d’éléments d’un contrôle Frame, et que le fait de cliquer sur un élément implique la navigation dans Frame vers une page de détails correspondant à cet élément. La page de liste devrait probablement être mise en cache. Si la page de détails est identique pour tous les éléments, elle devrait probablement être mise en cache également. Toutefois, si la page de détails est plus hétérogène, il peut être préférable d’abandonner la mise en cache.
-
+C’est la raison pour laquelle nous vous recommandons d’utiliser la mise en cache de pages en fonction des besoins de votre application. Supposons par exemple que vous disposez d’une application affichant une liste d’éléments d’un contrôle Frame, et que le fait de cliquer sur un élément implique la navigation dans Frame vers une page de détails correspondant à cet élément. La page de liste devrait probablement être mise en cache. Si la page de détails est identique pour tous les éléments, elle devrait probablement être mise en cache également. Toutefois, si la page de détails est plus hétérogène, il peut être préférable d’abandonner la mise en cache.

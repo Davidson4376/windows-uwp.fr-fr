@@ -4,14 +4,16 @@ ms.assetid: b556a245-6359-4ddc-a4bd-76f9873ab694
 description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir la trace de pile concernant une erreur dans votre application."
 title: Obtenir la trace de pile concernant une erreur dans votre application
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows10, uwp, services du WindowsStore, API d’analyse du WindowsStore, trace de pile, erreur"
-ms.openlocfilehash: fb99c65e91e02e3e60b12258e30083183c213324
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.openlocfilehash: bec42609ee9441a872415bc270a97bcb21a858f7
+ms.sourcegitcommit: 7aabd2e59d45bbc5512dd4ddd9110ae62b79d552
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/19/2017
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>Obtenir la trace de pile concernant une erreur dans votre application
 
@@ -129,3 +131,4 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 * [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
 * [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
 * [Obtenir les informations sur une erreur de votre application](get-details-for-an-error-in-your-app.md)
+* [Télécharger le fichier CAB concernant une erreur dans votre application](download-the-cab-file-for-an-error-in-your-app.md)

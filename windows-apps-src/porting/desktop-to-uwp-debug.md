@@ -1,147 +1,162 @@
 ---
 author: normesta
-Description: "Déployez et déboguez une application de plateforme Windows universelle (UWP) convertie à partir d’une application de bureau Windows (Win32, WPF, Windows Forms) à l’aide de Desktop to UWP Bridge."
+Description: "Exécutez votre application empaquetée et examinez-la sans la signer. Ensuite, définissez des points d’arrêt et parcourez le code. Lorsque vous êtes prêt à tester votre application dans un environnement de production, signez votre application, puis installez-la."
 Search.Product: eADQiWindows 10XVcnh
-title: "Débogage du pont du bureau vers UWP"
+title: "Exécuter, déboguer et tester une application de bureau empaquetée (Pont du bureau)"
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 06/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
-ms.openlocfilehash: d1ce3054df19b0b51c8203e7fa7296efde848c41
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c160fecc530a6366de48f4f2ecc24df2463c0469
+ms.sourcegitcommit: 77bbd060f9253f2b03f0b9d74954c187bceb4a30
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/11/2017
 ---
-# <a name="desktop-to-uwp-bridge-debug"></a>Pont du bureau vers UWP: déboguer
+# <a name="run-debug-and-test-a-packaged-desktop-app-desktop-bridge"></a>Exécuter, déboguer et tester une application de bureau empaquetée (Pont du bureau)
 
-Cette rubrique contient des informations pour vous aider à déboguer votre application après l’avoir convertie à l’aide du pont du bureau vers UWP. Plusieurs options s’offrent à vous pour le débogage de votre application convertie.
+Exécutez votre application empaquetée et examinez-la sans la signer. Ensuite, définissez des points d’arrêt et parcourez le code. Lorsque vous êtes prêt à tester votre application dans un environnement de production, signez votre application, puis installez-la. Cette rubrique vous montre comment effectuer chacune de ces opérations.
 
-## <a name="attach-to-process"></a>Attacher au processus
+<span id="run-app" />
+## <a name="run-your-app"></a>Exécuter votre application
 
-Lorsque Microsoft Visual Studio est exécuté «en tant qu’administrateur», les commandes *Démarrer le débogage* et *Exécuter sans débogage* fonctionnent pour un projet d’application convertie, mais l’application lancée s’exécute avec un [niveau d’intégrité moyen](https://msdn.microsoft.com/library/bb625963) (c’est-à-dire, qu’elle ne dispose pas de privilèges élevés). Pour conférer des privilèges d’administrateur sur l’application lancée, vous devez d’abord la lancer «en tant qu’administrateur» via un raccourci ou une vignette. Une fois que l’application est exécutée, à partir d’une instance de Microsoft Visual Studio exécutée «en tant qu’administrateur», appelez __Attacher au processus__, puis sélectionnez le processus de votre application dans la boîte de dialogue.
+Vous pouvez exécuter votre application pour la tester localement sans certificat et la signer.
 
-## <a name="f5-debug"></a>Débogage F5
+Si vous avez créé votre package à l’aide d’un projet UWP dans Visual Studio, définissez simplement le projet de création de package en tant que projet de démarrage, puis appuyez sur Ctrl + F5 pour démarrer votre application.
 
-Visual Studio prend désormais en charge un nouveau projet de création de packages. Le nouveau projet vous permet de copier automatiquement toutes les mises à jour lorsque vous générez votre application dans le package d’application Windows créé à partir du convertisseur dans le programme d’installation de votre application. Une fois le projet de création de package configuré, vous pouvez également utiliser F5 pour déboguer directement dans le package d’application Windows.
+Si vous avez utilisé Desktop App Converter ou si vous créez le package de votre application manuellement, ouvrez une invite de commande Windows PowerShell et à partir du sous-dossier **PacakgeFiles** de votre dossier de sortie, exécutez la commande suivante:
 
->Remarque: vous pouvez également déboguer un package d’application Windows existant en sélectionnant Déboguer -> Autres cibles à déboguer -> Déboguer le package d’application installé.
+```
+Add-AppxPackage –Register AppxManifest.xml
+```
+Pour démarrer votre application, sélectionnez-la dans le menu Démarrer de Windows.
 
-Voici comment faire:
+![Application empaquetée dans le menu Démarrer](images/desktop-to-uwp/converted-app-installed.png)
 
-1. Tout d’abord, vérifiez que vous êtes prêt pour utiliser Desktop App Converter. Pour obtenir des instructions, consultez [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md).
+> [!NOTE]
+> Une application empaquetée s’exécute toujours en tant qu’utilisateur interactif, et le lecteur sur lequel vous installez votre application empaquetée (quel qu’il soit) doit être formaté en NTFS.
 
-2. Exécutez le convertisseur, puis le programme d’installation pour votre application Win32. Le convertisseur capture la disposition et les modifications apportées au Registre et génère un package d’application Windows avec manifeste et registery.dat pour virtualiser le Registre:
+## <a name="debug-your-app"></a>Déboguer votre application
 
-![alt](images/desktop-to-uwp/debug-1.png)
+Sélectionnez votre package dans une boîte de dialogue chaque fois que vous déboguez votre application ou installez une extension et déboguez votre application sans avoir à sélectionner votre package chaque fois que vous démarrez la session.
 
-3. Installez et lancez [Visual Studio 2017 RC](https://www.visualstudio.com/downloads/#visual-studio-community-2017-rc).
+### <a name="debug-your-app-by-selecting-the-package"></a>Déboguer votre application en sélectionnant le package
 
-4. Dans la [Galerie Visual Studio](http://go.microsoft.com/fwlink/?LinkId=797871), installez le projet VSIX de création de packages du bureau vers UWP.
+Cette option a un faible temps d’installation, mais vous oblige à effectuer une étape supplémentaire à chaque démarrage de session de débogage.
 
-5. Ouvrez la solution Win32 correspondante qui a été convertie dans Visual Studio.
 
-6. Ajoutez le nouveau projet de création de packages à votre solution en cliquant avec le bouton droit sur la solution et en choisissant «Ajouter un nouveau projet». Ensuite, sous Configuration et déploiement, choisissez le projet de création de packages du bureau vers UWP:
+1. Veillez à démarrer votre application empaquetée au moins une fois pour qu’elle soit installée sur votre ordinateur local.
+
+   Consultez la section [Exécuter votre application](#run-app) ci-dessus.
+
+2. Démarrez Visual Studio.
+
+   Si vous souhaitez déboguer votre application avec des autorisations élevées, démarrez Visual Studio en utilisant l’option **Exécuter en tant qu’administrateur**.
+
+3. Dans Visual Studio, choisissez **Déboguer**->**Autres cibles de débogage**->**Déboguer le package d'application installé**.
+
+4. Dans la liste **Packages d’application installés**, sélectionnez votre package d’application, puis choisissez le bouton **Lier**.
+
+
+### <a name="debug-your-app-without-having-to-select-the-package"></a>Déboguer votre application sans avoir à sélectionner le package
+
+Cette option a la durée d’installation la plus élevée, mais vous n’aurez pas à sélectionner le package installé chaque fois que vous démarrez l’application. Vous devrez installer [Visual Studio2017](https://www.visualstudio.com/vs/whatsnew/) afin d’utiliser cette approche.
+
+1. Tout d’abord, installez le [Projet de débogage Pont du bureau](http://go.microsoft.com/fwlink/?LinkId=797871).
+
+2. Démarrez Visual Studio et ouvrez le projet d’application de bureau.
+
+6. Ajoutez un projet de **Débogage Pont du bureau** à votre solution.
+
+   Vous pouvez trouver le modèle de projet dans le groupe de modèles installés **Autres types de projets**.
 
     ![alt](images/desktop-to-uwp/debug-2.png)
 
-    Le projet qui en résulte sera ajouté à votre solution:
+    Le projet de **Débogage Pont du bureau** apparaîtra dans votre solution.
 
     ![alt](images/desktop-to-uwp/debug-3.png)
 
-    Dans le projet de création de package, AppXFileList fournit un mappage des fichiers dans la disposition du package d’application Windows. Les références démarrent vides, mais doivent être définies manuellement sur le projet .exe pour le classement des builds.
+7. Ouvrez les pages de propriétés du projet de **Débogage Pont du bureau**.
 
-7. Le projet DesktopToUWPPackaging possède une page de propriétés qui vous permet de configurer la racine du package d’application Windows et chaque vignette à exécuter:
+8. Définissez le champ **Disposition de package** à l’emplacement de votre fichier manifeste de package (AppxManifest.xml) et choisissez le fichier exécutable de votre application à partir de la liste déroulante **Vignette de démarrage**.
 
-    ![alt](images/desktop-to-uwp/debug-4.png)
+     ![alt](images/desktop-to-uwp/debug-4.png)
 
-    Définissez PackageLayout sur l’emplacement racine du package d’application Windows qui a été créé par le convertisseur (ci-dessus). Ensuite, choisissez la vignette à exécuter.
+8. Ouvrez le fichier AppXPackageFileList.xml dans l’éditeur de code.
 
-8.    Ouvrez et modifiez AppXFileList.xml. Ce fichier définit la façon de copier la sortie de la build de débogage Win32 dans la disposition du package d’application Windows générée par le convertisseur. Par défaut, un espace réservé figure dans le fichier avec un exemple de balise et de commentaire:
+9. Supprimez les commentaires sur le bloc de code XML et ajoutez les valeurs de ces éléments:
 
-    ```XML
-    <?xml version="1.0" encoding="utf-8"?>
-    <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-      <ItemGroup>
-    <!— Use the following syntax to copy debug output to the AppX layout
-       <AppxPackagedFile Include="$(outdir)\App.exe">
-          <PackagePath>App.exe</PackagePath>
-        </AppxPackagedFile>
-        See http://etc...
-    -->
-      </ItemGroup>
-    </Project>
-    ```
+   **MyProjectOutputPath**: le chemin d’accès relatif au dossier de débogage de votre application de bureau.
 
-    Voici un exemple de création de mappage. Dans ce cas, nous copions les fichiers .exe et .dll depuis l’emplacement de la build Win32 à l’emplacement de la disposition du package.
+   **LayoutFile**: le fichier exécutable qui se trouve dans le dossier de débogage de votre application de bureau.
+
+   **PackagePath**: le nom de fichier complet de l’exécutable de votre application de bureau qui a été copié dans votre dossier de package d’application Windows pendant le processus de conversion.
+
+    Voici un exemple:
 
     ```XML
-    <?xml version="1.0" encoding=utf-8"?>
-    <Project ToolsVersion=14.0" xmlns="http://scehmas.microsoft.com/developer/msbuild/2003">
-        <PropertyGroup>
-            <MyProjectOutputPath>{relativepath}</MyProjectOutputPath>
-        </PropertyGroup>
-        <ItemGroup>
-            <LayoutFile Include="$(MyProjectOutputPath)\ProjectTracker.exe">
-                <PackagePath>$(PackageLayout)\VFS\Program Files (x86)\Contoso Software\Project Tracker\ProjectTracker.exe</PackagePath>
-            </LayoutFile>
-            <LayoutFile Include="$(MyProjectOutputPath)\ProjectTracker.Models.dll">
-                <PackagePath>$(PackageLayout)\VFS\Program Files (x86)\Contoso Software\Project Tracker\ProjectTracker.Models.dll</PackagePath>
-            </LayoutFile>
-        </ItemGroup>
-    </Project>
+  <?xml version="1.0" encoding="utf-8"?>
+  <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+     <MyProjectOutputPath>..\MyDesktopApp\bin\Debug</MyProjectOutputPath>
+    </PropertyGroup>
+    <ItemGroup>
+      <LayoutFile Include="$(MyProjectOutputPath)\MyDesktopApp.exe">
+        <PackagePath>$(PackageLayout)\MyDesktopApp.exe</PackagePath>
+      </LayoutFile>
+    </ItemGroup>
+  </Project>
     ```
 
-    Le fichier est défini comme suit:
+  Si votre application utilise des fichiers .dll qui sont générés à partir d’autres projets dans votre solution, et que vous souhaitez détailler le code qui est contenu dans les DLL, incluez un élément **LayoutFile** pour chacun des fichiers .dll.
 
-    Tout d’abord, nous définissons *MyProjectOutputPath* de manière à désigner l’emplacement de création du projet Win32:
+  ```XML
+  ...
+      <LayoutFile Include="$(MyProjectOutputPath)\MyDesktopApp.Models.dll">
+      <PackagePath>$(PackageLayout)\MyDesktopApp.Models.dll</PackagePath>
+      </LayoutFile>
+  ...
+  ```
 
-    ```XML
-    <?xml version="1.0" encoding="utf-8"?>
-    <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-        <PropertyGroup>
-            <MyProjectOutputPath>..\ProjectTracker\bin\DesktopUWP</MyProjectOutputPath>
-        </PropertyGroup>
-    ```
-
-    Ensuite, chaque *LayoutFile* spécifie un fichier à copier depuis l’emplacement de build Win32 vers la disposition du package d’application Windows. Dans ce cas, un fichier .exe et un fichier .dll sont copiés.
-
-    ```XML
-        <ItemGroup>
-            <LayoutFile Include="$(MyProjectOutputPath)\ProjectTracker.exe">
-                <PackagePath>$(PackageLayout)\VFS\Program Files (x86)\Contoso Software\Project Tracker\ProjectTracker.exe</PackagePath>
-            </LayoutFile>
-            <LayoutFile Include="$(MyProjectOutputPath)\ProjectTracker.Models.dll">
-                <PackagePath>$(PackageLayout)\VFS\Program Files (x86)\Contoso Software\Project Tracker\ProjectTracker.Models.dll</PackagePath>
-            </LayoutFile>
-        </ItemGroup>
-    </Project>
-    ```
-
-9. Définissez le projet de démarrage de création de package. Les fichiers Win32 sont alors copiés dans le package d’application Windows, puis le débogueur est lancé quand le projet est créé et exécuté.  
+10. Définissez le projet de démarrage de création de package.  
 
     ![alt](images/desktop-to-uwp/debug-5.png)
 
-10.    Enfin, vous pouvez maintenant définir un point d’arrêt dans le code Win32 et appuyer sur F5 pour lancer le débogueur. Cela copie toutes les mises à jour que vous avez apportées à votre application Win32 dans le package d’application Windows, et vous permet de déboguer directement depuis VisualStudio.
+11. Définissez des points d’arrêt dans votre code d’application de bureau, puis démarrez le débogueur.
 
-11.    Si vous mettez à jour votre application, vous devrez utiliser MakeAppX pour remettre en package votre application. Pour plus d’informations, consultez [Outil de création de packages (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx).
+  ![Bouton de débogage](images/desktop-to-uwp/debugger-button.png)
 
-Si vous disposez de plusieurs configurations de build (par exemple, pour la sortie et le débogage), vous pouvez ajouter ce qui suit au fichier AppXFileList.xml pour copier la version Win32 depuis différents emplacements:
+  Visual Studio copie les fichiers exécutables et les fichiers .dll que vous avez spécifiés dans le fichier XML à votre package d’application Windows, puis démarrez le débogueur.
+
+#### <a name="handle-multiple-build-configurations"></a>Gérer plusieurs configurations de build
+
+Si vous avez défini plusieurs configurations de build (par exemple: Release et Debug), vous pouvez modifier votre fichier AppXPackageFileList.xml pour copier uniquement les fichiers qui correspondent à la configuration de build choisie dans Visual Studio lorsque vous démarrez le débogueur.
+
+En voici un exemple:
 
 ```XML
 <PropertyGroup>
-    <MyProjectOutputPath Condition="$(Configuration) == 'DesktopUWP'">C:\Users\peterfar\Desktop\ProjectTracker\ProjectTracker\bin\DesktopUWP>
-    </MyProjectOutputPath>
-    <MyProjectOutputPath Condition="$(Configuration) == 'ReleaseDesktopUWP'"> C:\Users\peterfar\Desktop\ProjectTracker\ProjectTracker\bin\ReleaseDesktopUWP</MyProjectOutputPath>
+    <MyProjectOutputPath Condition="$(Configuration) == 'Debug'">..\MyDesktopApp\bin\Debug</MyProjectOutputPath>
+    <MyProjectOutputPath Condition="$(Configuration) == 'Release'"> ..\MyDesktopApp\bin\Release</MyProjectOutputPath>
 </PropertyGroup>
 ```
 
-Vous pouvez également utiliser la compilation conditionnelle pour activer des chemins de code particuliers si vous mettez à jour votre application vers UWP mais que vous souhaitez également toujours la générer pour Win32.
+#### <a name="debug-uwp-enhancements-to-your-app"></a>Déboguer les améliorations UWP apportées à votre application
 
-1.    Dans l’exemple ci-dessous, le code sera compilé uniquement pour DesktopUWP et affichera une vignette à l’aide de l’API WinRT.
+Vous voudrez peut-être améliorer votre application avec des expériences modernes telles que les vignettes dynamiques. Si vous le faites, vous pouvez utiliser la compilation conditionnelle pour activer les chemins de code avec des configurations de build spécifiques.
 
-    ```C#
+1. Tout d’abord, dans Visual Studio, définissez une configuration de build et donnez-lui un nom semblable à «DesktopUWP».
+
+2. Dans l’onglet **Build** des propriétés de projet de votre projet, ajoutez ce nom dans le champ **Symboles de compilation conditionnelle**.
+
+     ![alt](images/desktop-to-uwp/debug-8.png)
+
+3. Ajouter des blocs de code conditionnels. Ce code est compilé uniquement pour la configuration de build **DesktopUWP**.
+
+    ```csharp
     [Conditional("DesktopUWP")]
     private void showtile()
     {
@@ -153,25 +168,50 @@ Vous pouvez également utiliser la compilation conditionnelle pour activer des c
     }
     ```
 
-2.    Vous pouvez utiliser Configuration Manager pour ajouter la nouvelle configuration de build:
+### <a name="debug-the-entire-app-lifecycle"></a>Déboguer l’intégralité du cycle de vie de l’application
 
-    ![alt](images/desktop-to-uwp/debug-6.png)
+Dans certains cas, vous pouvez souhaiter un contrôle plus fin sur le processus de débogage, notamment la possibilité de déboguer votre application avant son démarrage.
 
-    ![alt](images/desktop-to-uwp/debug-7.png)
+Vous pouvez utiliser [PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) pour obtenir un contrôle total sur le cycle de vie de l’application, y compris la suspension, la reprise et la résiliation.
 
-3.    Ensuite, sous les propriétés du projet, ajoutez la prise en charge des symboles de compilation conditionnelle:
+[PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) est inclus dans le SDK Windows.
 
-    ![alt](images/desktop-to-uwp/debug-8.png)
 
-4.    Vous pouvez maintenant basculer la cible de build vers DesktopUWP si vous souhaitez créer pour cibler l’API UWP que vous avez ajoutée.
+### <a name="modify-your-app-in-between-debug-sessions"></a>Modifier votre application entre les sessions de débogage
 
-## <a name="plmdebug"></a>PLMDebug
+Si vous apportez vos modifications à votre application pour corriger des bogues, remettez-la en package à l’aide de l’outil MakeAppx. Voir [Exécuter l’outil MakeAppX](desktop-to-uwp-manual-conversion.md#make-appx).
 
-Les options Visual Studio F5 et Attacher au processus sont utiles pour le débogage de votre application pendant qu’elle s’exécute. Dans certains cas, toutefois, vous pouvez souhaiter un contrôle plus fin sur le processus de débogage, notamment la possibilité de déboguer votre application avant son démarrage. Dans ces scénarios plus avancés, utilisez [**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx). Cet outil vous permet de déboguer votre application convertie à l’aide du débogueur Windows et propose un contrôle total sur le cycle de vie de l’application, ce qui inclut la suspension, la reprise et l’arrêt.
+## <a name="test-your-app"></a>Tester votre application
 
-PLMDebug.exe est inclus dans le SDK Windows. Pour plus d’informations, consultez [**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx).
+Pour tester votre application dans un paramètre réaliste lorsque vous vous préparez pour la distribution, il est préférable de signer votre application, puis de l’installer.
 
-## <a name="run-another-process-inside-the-full-trust-container"></a>Exécuter un autre processus à l’intérieur du conteneur d’un niveau de confiance totale
+Si vous avez créé un package de votre application à l’aide de Visual Studio, vous pouvez exécuter un script pour signer votre application, puis l’installer. Voir [Chargez de manière indépendante votre package d’application](../packaging/packaging-uwp-apps.md#sideload-your-app-package).
+
+Si vous créez un package de votre application à l’aide de Desktop App Converter, vous pouvez utiliser le paramètre ``sign`` pour signer automatiquement votre application à l’aide d’un certificat généré. Vous devrez installer ce certificat, puis installer l’application. Voir [Exécuter l’application empaquetée](desktop-to-uwp-run-desktop-app-converter.md#run-app).   
+
+Vous pouvez également signer votre application manuellement. Voici comment procéder:
+
+1. Créez un certificat. Voir [Créer un certificat](../packaging/create-certificate-package-signing.md).
+
+2. Installez ce certificat dans le magasin de certificats **racine de confiance** ou **personnes autorisées** sur votre système.
+
+3. Signez votre application à l’aide d’un certificat, voir [Signer un package d’application à l’aide de SignTool](../packaging/sign-app-package-using-signtool.md).
+
+  > [!IMPORTANT]
+  > Assurez-vous que le nom de l’éditeur mentionné sur votre certificat correspond à celui de l’éditeur de votre application.
+
+### <a name="related-sample"></a>Exemple connexe
+
+[SigningCerts](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SigningCerts)
+
+
+### <a name="test-your-app-for-windows-10-s"></a>Tester votre application pour Windows10 S
+
+Avant de publier votre application, assurez-vous qu’elle fonctionne correctement sur les appareils qui exécutent Windows10 S. En réalité, si vous envisagez de publier votre application dans le Windows Store, vous devez le faire, car c'est une condition requise par le Windows store. Les applications qui ne fonctionnent pas correctement sur les appareils exécutant Windows10 S ne seront pas certifiées. 
+
+Voir [Tester votre application pour Windows10 S](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-test-windows-s).
+
+### <a name="run-another-process-inside-the-full-trust-container"></a>Exécuter un autre processus à l’intérieur du conteneur d’un niveau de confiance totale
 
 Vous pouvez appeler des processus personnalisés à l’intérieur du conteneur d’un package d’application spécifié. Cela peut être utile pour les scénarios de tests (par exemple, si vous avez un atelier de test personnalisé et que vous voulez tester la sortie de l’application). Pour ce faire, utilisez l’applet de commande PowerShell ```Invoke-CommandInDesktopPackage```:
 
@@ -179,3 +219,13 @@ Vous pouvez appeler des processus personnalisés à l’intérieur du conteneur 
 Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [-Command] <string> [[-Args]
     <string>]  [<CommonParameters>]
 ```
+
+## <a name="next-steps"></a>Étapes suivantes
+
+**Trouver des réponses aux questions spécifiques**
+
+Notre équipe contrôle ces [balises StackOverflow](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
+**Envoyer vos commentaires concernant cet article**
+
+Utilisez la section remarques ci-dessous.

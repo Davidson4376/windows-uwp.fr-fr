@@ -4,60 +4,71 @@ ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: Types de compte, emplacements et frais
 description: "Nous proposons des comptes de développeur individuels et d’entreprise dans un grand nombre de pays et de régions."
 ms.author: wdg-dev-content
-ms.date: 03/07/2017
+ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 9f6cdace7d619ede77956fb081756e0bc5682e16
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 25ae63638a76df2d064dbbc6334d5793cdadbedf
+ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/17/2017
 ---
 # <a name="account-types-locations-and-fees"></a>Types de compte, emplacements et frais
 
 Nous proposons deux types de comptes de développeur : les comptes pour les particuliers et les comptes pour les entreprises. Les comptes de développeur sont proposés dans de nombreux [pays et régions](#developer-account-and-app-submission-markets). Ces deux types de compte vous permettent de publier des applications dans le Windows Store et de participer à d’autres programmes pour développeurs Microsoft.
 
-> **Remarque**  Que vous créiez un compte pour une entreprise ou pour un particulier, vous ne pouvez associer qu’un seul compte Microsoft au compte de développeur. Quand vous vous inscrivez pour obtenir un compte, veillez à vous connecter à l’aide du compte Microsoft que vous voulez utiliser pour votre compte de développeur.
+> [!NOTE]
+> Quand vous vous inscrivez pour obtenir un compte, veillez à vous connecter à l’aide du compte Microsoft que vous voulez utiliser pour votre compte de développeur. Vous pourrez [ajouter d’autres utilisateurs au compte](manage-account-users.md) ultérieurement.
 
-Au [début du processus d’inscription](http://go.microsoft.com/fwlink/p/?LinkId=615100), vous devez déterminer si vous souhaitez créer un compte individuel ou un compte d’entreprise. Les deuxtypes de compte vous permettent de soumettre des applications, des compléments et des services. Les comptes personnels sont destinés aux développeurs indépendants. Les comptes d’entreprise sont destinés aux organisations et aux entreprises, et permettent d’accéder à certaines fonctionnalités d’application supplémentaires. Pour les comptes d’entreprise, nous mettons en place une [vérification](#account-verification) renforcée afin de nous assurer que vous êtes bien habilité à créer un compte au nom de votre entreprise. 
+Au [début du processus d’inscription](http://go.microsoft.com/fwlink/p/?LinkId=615100), vous devez déterminer si vous souhaitez créer un compte individuel ou un compte d’entreprise. Les deuxtypes de comptes vous permettent de soumettre des applications, des jeux, des compléments et des services.
 
-> **Important**  Choisissez bien le type de compte souhaité, car vous ne pourrez pas le modifier par la suite.
+Les comptes d’entreprise sont destinés aux organisations et aux entreprises, et permettent d’accéder à certaines fonctionnalités d’application supplémentaires. Pour les comptes d’entreprise, nous mettons en place une [vérification](#account-verification) renforcée afin de nous assurer que vous êtes bien habilité à créer un compte au nom de votre entreprise. Les comptes individuels sont généralement adaptés aux développeurs indépendants, même si vous avez la possibilité d’ajouter d’autres utilisateurs de compte aux deux types de comptes.
+
+> [!IMPORTANT]
+> Choisissez bien le type de compte souhaité, car vous ne pourrez pas le modifier par la suite.
 
 Voici les principales différences entre les deux types de compte.
 
 | Compte individuel | Compte d’entreprise |
 |--------------------|-----------------|
-| <ul><li>Ne permet pas d’utiliser certaines fonctionnalités d’application</li><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li></ul> | <ul><li>Vérification requise via Symantec ou Dun &amp; Bradstreet</li><li>Accès plus étendu aux fonctionnalités des applications</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>Coûte environ 99USD (frais d’inscription ponctuels; le montant exact varie en fonction de votre pays ou région)</li></ul> |
+| <ul><li>Ne permet pas d’utiliser certaines fonctionnalités d’application</li><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li></ul> | <ul><li>Nécessite une vérification renforcée du compte</li><li>Accès plus étendu aux fonctionnalités des applications</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>Coûte environ 99USD (frais d’inscription ponctuels; le montant exact varie en fonction de votre pays ou région)</li></ul> |
 
-Les comptes d’entreprise sont un peu plus onéreux, car des étapes supplémentaires sont nécessaires pour vérifier que vous êtes autorisé à configurer le compte au nom de votre entreprise. Les comptes d’entreprise vous permettent également de soumettre des applications qui déclarent des fonctionnalités supplémentaires [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/library/windows/apps/Mt270968).
+Les comptes d’entreprise sont un peu plus onéreux, car des étapes supplémentaires sont nécessaires pour vérifier que vous êtes autorisé à configurer le compte au nom de votre entreprise. Les comptes d’entreprise vous permettent également de soumettre des applications qui déclarent des fonctionnalités supplémentaires [Déclarations des fonctionnalités d’application](../packaging/app-capability-declarations.md).
 
 Vous devez notamment disposer d’un compte d’entreprise pour publier des applications qui utilisent les trois fonctionnalités suivantes:
 
 -   **enterpriseAuthentication** - Utilise les informations d’identification Windows pour accéder à un intranet d’entreprise. Cette capacité est généralement utilisée dans des applications métier qui se connectent à des serveurs au sein d’une entreprise. (Vous n’en avez pas besoin pour communiquer sur Internet.)
 -   **sharedUserCertificates** - Permet à une application d’accéder à des certificats de logiciel et de matériel, tels que les certificats stockés sur une carte à puce. Cette fonctionnalité est généralement utilisée pour des applications financières ou d’entreprise qui requièrent une carte à puce pour l’authentification.
--   **documentsLibrary** - Permet d’accéder par programme au dossier Documents de l’utilisateur, filtré en fonction des associations de types de fichiers déclarées dans le manifeste du package. (Vous n’avez pas besoin de déclarer cette fonctionnalité pour accéder au dossier Documents d’un utilisateur à l’aide du [sélecteur de fichiers](https://msdn.microsoft.com/library/windows/apps/Hh465174).) Notez que les applications ciblant Windows Phone8.1 ou version antérieure utilisent la fonctionnalité documentsLibrary.
+-   **documentsLibrary** - Permet d’accéder par programme au dossier Documents de l’utilisateur, filtré en fonction des associations de types de fichiers déclarées dans le manifeste du package. (Vous n’avez pas besoin de déclarer cette fonctionnalité pour accéder au dossier Documents d’un utilisateur à l’aide du [sélecteur de fichiers](../files/quickstart-using-file-and-folder-pickers.md).) Notez que les applications ciblant Windows Phone8.1 ou version antérieure utilisent la fonctionnalité documentsLibrary.
 
-> **Remarque**  En outre, vous devez contacter le support technique et obtenir son approbation pour pouvoir soumettre les applications qui déclarent la fonctionnalité **documentsLibrary**.
+> [!NOTE]
+> En outre, vous devez contacter le support technique et obtenir son approbation avant de pouvoir soumettre des applications qui déclarent la fonctionnalité **documentsLibrary**.
 
-Le fait de posséder un compte d’entreprise ne garantit pas que les applications qui utilisent ces fonctionnalités obtiennent la certification. Ces fonctionnalités sont destinées à des scénarios très spécifiques et la plupart des applications ne doivent pas les déclarer. Pour plus d’informations, voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/library/windows/apps/Mt270968).
+Le fait de posséder un compte d’entreprise ne garantit pas que les applications qui utilisent ces fonctionnalités obtiennent la certification. Ces fonctionnalités sont destinées à des scénarios très spécifiques et la plupart des applications ne doivent pas les déclarer. Pour plus d’informations, voir [Déclarations des fonctionnalités d’application](../packaging/app-capability-declarations.md).
+
 
 ## <a name="account-verification"></a>Vérification de compte
 
-Une fois le processus d’inscription terminé, votre compte est soumis au processus de vérification. Pour les comptes individuels, nous vérifions qu’aucune autre entreprise n’utilise déjà votre nom complet d’éditeur. Pour les comptes d’entreprise, nous utilisons Symantec ou Dun &amp; Bradstreet pour vérifier que vous êtes autorisé à créer un compte pour l’entreprise que vous représentez. La durée de ce processus peut varier de quelques jours à quelques semaines. Il implique souvent un appel téléphonique à votre entreprise (vérifiez que toutes les coordonnées que vous avez fournies dans les formulaires d’inscription sont à jour). Vous ne pouvez pas soumettre d’application à partir d’un compte d’entreprise tant qu’il n’a pas été vérifié. Toutefois, en attendant, vous pouvez [réserver des noms d’application](create-your-app-by-reserving-a-name.md), accéder au tableau de bord du Centre de développement Windows et continuer à générer et à tester votre application.
+Une fois le processus d’inscription terminé, votre compte est soumis au processus de vérification. Pour les comptes individuels, nous vérifions qu’aucune autre entreprise n’utilise déjà votre nom complet d’éditeur. Pour les comptes d’entreprise, notre partenaire de vérification Dun&Bradstreet vérifiera que vous êtes autorisé à créer un compte pour l’entreprise que vous représentez. La durée de ce processus peut varier de quelques jours à quelques semaines. Il implique souvent un appel téléphonique à votre entreprise (vérifiez que toutes les coordonnées que vous avez fournies dans les formulaires d’inscription sont à jour). Vous ne pouvez pas soumettre d’application à partir d’un compte d’entreprise tant qu’il n’a pas été vérifié. Toutefois, en attendant, vous pouvez [réserver des noms d’application](create-your-app-by-reserving-a-name.md), accéder au tableau de bord du Centre de développement Windows et continuer à générer et à tester votre application.
 
 Vous pouvez vérifier l’état de la vérification dans la page **Paramètres du compte**. 
+
 
 ## <a name="developer-account-and-app-submission-markets"></a>Compte de développeur et marchés sur lesquels soumettre vos applications
 
 Vous pouvez obtenir un compte de développeur et soumettre des applications si vous résidez ou développez une activité commerciale dans un pays ou une région répertorié ci-dessous.
 
-Dans le tableau suivant, les **frais d’inscription** correspondent au coût actuel d’un compte de développeur. Les prix sont sujets à modification.
+Dans le tableau suivant, les **frais d’inscription** correspondent au coût actuel d’un compte de développeur. Ces frais ne sont à régler qu’une seule fois, et il n’existe aucun frais de renouvellement. Notez que les prix ci-dessous sont sujets à modification.
 
-> **Remarque**  Nous ajoutons les taxes et frais applicables aux frais d’inscription au moment où vous vous inscrivez. Au moment de vous régler les sommes dues, votre banque est en outre susceptible de vous facturer des frais pour pouvoir recevoir le paiement.
+> [!NOTE]
+> Nous ajoutons les taxes et frais applicables aux frais d’inscription au moment où vous vous inscrivez. Au moment de vous régler les sommes dues, votre banque est en outre susceptible de vous facturer des frais pour pouvoir recevoir le paiement.
 
-La colonne **Revenu** décrit ici le mode de [versement](getting-paid-apps.md) que nous utilisons pour vous transférer l’argent que vous gagnez grâce à vos applications. Vous pouvez choisir le [compte de revenu](setting-up-your-payout-account-and-tax-forms.md) sur lequel nous virons cet argent.
+La colonne **Revenu** décrit ici le mode de [versement](getting-paid-apps.md) que nous utilisons pour vous transférer l’argent que vous gagnez grâce à vos applications. Vous pouvez choisir le [compte de paiement](setting-up-your-payout-account-and-tax-forms.md) sur lequel nous virons cet argent.
 
-> **Remarque**  Certains marchés ne prennent pas en charge les applications payantes (**revenu**). Sur ces marchés, seules les applications gratuites peuvent être soumises.
+> [!NOTE]
+> Certains marchés ne prennent pas en charge les applications payantes (**revenu**). Sur ces marchés, seules les applications gratuites peuvent être soumises.
 
 La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge qui peut être utilisé pour votre [compte de revenu](setting-up-your-payout-account-and-tax-forms.md) (et, sauf indication contraire, pour vos frais d’inscription de compte de développeur).
 

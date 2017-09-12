@@ -1,17 +1,19 @@
 ---
-author: dbirtolo
+author: mukin
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "Informations de référence sur les API principales Device Portal"
 description: "Découvrez les API REST principales WindowsDevicePortal que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation."
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 347d658f346ab14c60a4468c4a9935e555c2e016
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b6df8f361df82ef65098877027cf1857fa575b0b
+ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/28/2017
 ---
 # <a name="device-portal-core-api-reference"></a>Informations de référence sur les API principales DevicePortal
 
@@ -1272,6 +1274,69 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
+## User information
+---
+### <a name="get-the-active-user"></a>Obtenir l’utilisateur actif
+
+**Requête**
+
+Vous pouvez obtenir le nom de l'utilisateur actif en utilisant le format de requête suivant.
+ 
+Méthode      | URI de la requête
+:------     | :-----
+GET | /api/users/activeuser
+<br />
+
+**Paramètres d’URI**
+
+- Aucun
+
+**En-têtes de requête**
+
+- Aucun
+
+**Corps de la requête**
+
+- Aucun
+
+**Réponse**
+
+La réponse inclut des informations sur l'utilisateur au format suivant. 
+
+En cas de réussite: 
+```
+{
+    "UserDisplayName" : string, 
+    "UserSID" : string
+}
+```
+En cas d'échec:
+```
+{
+    "Code" : int, 
+    "CodeText" : string, 
+    "Reason" : string, 
+    "Success" : bool
+}
+```
+
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+Code d’état HTTP      | Description
+:------     | :-----
+200 | OK
+4XX | Codes d’erreur
+5XX | Codes d’erreur
+<br />
+**Familles d’appareils disponibles**
+
+* Windows Desktop
+* HoloLens
+* IoT
+
+---
 ## Performance data
 ---
 ### <a name="get-the-list-of-running-processes"></a>Obtenir la liste des processus en cours d’exécution
@@ -2023,6 +2088,52 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
+### <a name="kill-process-by-pid"></a>Arrêter le processus par PID
+
+**Requête**
+
+Vous pouvez arrêter un processus en utilisant le format de requête suivant.
+ 
+Méthode      | URI de la requête
+:------     | :-----
+DELETE | /api/taskmanager/process
+<br />
+
+**Paramètres d’URI**
+
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+
+Paramètre d’URI | Description
+:---          | :---
+pid   | (**requis**) ID unique du processus à arrêter.
+<br />
+**En-têtes de requête**
+
+- Aucun
+
+**Corps de la requête**
+
+- Aucun
+
+**Réponse**
+
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+Code d’état HTTP      | Description
+:------     | :-----
+200 | OK
+4XX | Codes d’erreur
+5XX | Codes d’erreur
+<br />
+**Familles d’appareils disponibles**
+
+* Windows Desktop
+* HoloLens
+* IoT
+
+---
 ## Networking
 ---
 ### <a name="get-the-current-ip-configuration"></a>Obtenir la configuration IP actuelle
@@ -2262,8 +2373,8 @@ Paramètre d’URI | Description
 :---          | :---
 interface   | (**requis**) GUID de l’interface réseau à utiliser pour se connecter au réseau.
 op   | (**requis**) Indique l’action à entreprendre. Les valeurs possibles sont connect ou disconnect.
-ssid   | (*requis si *op* == connect***) SSID auquel se connecter.
-key   | (**requis si *op* == connecter et le réseau exige une authentification**) La clé partagée.
+ssid   | (**requis si *op* == connect**) SSID auquel se connecter.
+key   | (**requis si *op* == connect et que le réseau exige une authentification**) Clé partagée.
 createprofile | (**requis**) Créez un profil pour le réseau sur l’appareil.  Cela obligera l’appareil à se connecter automatiquement au réseau à l’avenir. Cela peut être **yes** ou **no**. 
 
 **En-têtes de requête**

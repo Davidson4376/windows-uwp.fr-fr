@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, uwp, jeux, maillage, directx
-ms.openlocfilehash: f7dc55c0a7653616a86f1cca41521c7b25c070f9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 264563d2db7d48ab6a18bb15c53b00e75fbd5943
+ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/17/2017
 ---
 # <a name="create-and-display-a-basic-mesh"></a>Créer et afficher un maillage de base
 
@@ -37,6 +39,15 @@ Les jeux de plateforme Windows universelle (UWP) 3D utilisent généralement des
 -   Modèle Direct3D de Visual Studio 2015
 
 ## <a name="instructions"></a>Instructions
+
+Ces étapes vous montrent comment créer un cube de maillage de base. 
+
+
+Si vous préférez une explication vocale de ces concepts, regardez cette vidéo.
+</br>
+</br>
+<iframe src="https://channel9.msdn.com/Series/Introduction-to-C-and-DirectX-Game-Development/03/player#time=7m39s:paused" width="600" height="338" allowFullScreen frameBorder="0"></iframe>
+
 
 ### <a name="step-1-construct-the-mesh-for-the-model"></a>Étape1: Construire le maillage pour le modèle
 

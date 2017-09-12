@@ -7,14 +7,16 @@ label: Screen sizes and break points
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: cd6ba1378aeddb44aa66c53088f32286aff8d29f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b56cdeeb9a3c3d3ca89e19d8057e3d93241e6c3c
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2017
 ---
 #  <a name="screen-sizes-and-break-points-for-responsive-design"></a>Tailles d’écran et points d’arrêt pour la conception réactive
 
@@ -78,7 +80,7 @@ Le tableau suivant décrit les différentes classes de taille et fournit des rec
 <li>Ancrez les [barres de l’application](../controls-and-patterns/app-bars.md) en bas de la fenêtre pour faciliter l’accessibilité.</li>
 <li>Utiliser une colonne/zone à la fois</li>
 <li>Utilisez une icône pour représenter la recherche (n’affichez pas de zone de recherche).</li>
-<li>Placez le [volet de navigation](../controls-and-patterns/nav-pane.md) en mode Superposition pour économiser l’espace à l’écran.</li>
+<li>Placez le [volet de navigation](../controls-and-patterns/navigationview.md) en mode Superposition pour économiser l’espace à l’écran.</li>
 <li>Si vous utilisez le [modèle Maître/Détails](../controls-and-patterns/master-details.md), utilisez le mode présentation empilée pour économiser l’espace d’écran.</li>
 </ul></td>
 <td style="vertical-align:top;"><ul>
@@ -87,7 +89,7 @@ Le tableau suivant décrit les différentes classes de taille et fournit des rec
 <li>Placez les éléments de commande comme les [barres de l’application](../controls-and-patterns/app-bars.md) en haut de la fenêtre de l’application.</li>
 <li>Jusqu’à deuxcolonnes/zones</li>
 <li>Affichez la zone de recherche.</li>
-<li>Placez le [volet de navigation](../controls-and-patterns/nav-pane.md) en mode partiel de manière à ce qu’une bande étroite d’icônes soit toujours affichée.</li>
+<li>Placez le [volet de navigation](../controls-and-patterns/navigationview.md) en mode partiel de manière à ce qu’une bande étroite d’icônes soit toujours affichée.</li>
 <li>Pensez à personnaliser davantage votre application pour les [expériences télévisuelles](http://go.microsoft.com/fwlink/?LinkId=760736).</li>
 </ul></td>
 <td style="vertical-align:top;"><ul>
@@ -96,7 +98,7 @@ Le tableau suivant décrit les différentes classes de taille et fournit des rec
 <li>Placez les éléments de commande comme les [barres de l’application](../controls-and-patterns/app-bars.md) en haut de la fenêtre de l’application.</li>
 <li>Jusqu’à troiscolonnes/zones</li>
 <li>Affichez la zone de recherche.</li>
-<li>Placez le [volet de navigation](../controls-and-patterns/nav-pane.md) en mode ancré pour qu’il soit toujours affiché.</li>
+<li>Placez le [volet de navigation](../controls-and-patterns/navigationview.md) en mode ancré pour qu’il soit toujours affiché.</li>
 </ul></td>
 </tr>
 </tbody>

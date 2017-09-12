@@ -6,18 +6,25 @@ ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 4c17bab575be207106abfac44104bb32bcffd6ac
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: predavid
+design-contact: kimsea
+dev-contact: ranjeshj
+doc-status: Published
+ms.openlocfilehash: 0249132942cbb15a009c85c929185bffcba23cd9
+ms.sourcegitcommit: 690320e6cbfc16ed9e935a136fecc44d68e95719
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 07/31/2017
 ---
 # <a name="lists"></a>Listes
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Les listes affichent et activent l’interaction avec du contenu basé sur des collections. Les quatre modèles de liste traités dans cet article sont les suivants:
 
@@ -26,18 +33,17 @@ Les listes affichent et activent l’interaction avec du contenu basé sur des c
 -   Listes déroulantes, permettant aux utilisateurs de choisir un élément dans une liste développée
 -   Zones de liste, permettant aux utilisateurs de choisir un ou plusieurs éléments dans une zone pouvant défiler
 
-Des recommandations en matière de conception, des fonctionnalités et des exemples sont fournis pour chaque modèle de liste. À la fin de l’article figurent des liens vers des rubriques et des API connexes.
+Des recommandations en matière de conception, des fonctionnalités et des exemples sont fournis pour chaque modèle de liste.
 
-<div class="important-apis" >
-<b>API importantes</b><br/>
-<ul>
-<li>[**Classe ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)</li>
-<li>[**Classe GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)</li>
-<li>[**Classe ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)</li>
-</ul>
-</div>
+> **API importantes**: [classe ListView](https://msdn.microsoft.com/library/windows/apps/br242878), [classe GridView](https://msdn.microsoft.com/library/windows/apps/br242705), [classe ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348)
 
-## <a name="list-views"></a>Affichages de liste
+> <div id="main">
+> <strong><span class="uwpd-prelease">Version préliminaire.</span> Fall Creators Update (Windows 10 Insider Preview - Build16215 et version ultérieure) - Changement de comportement</strong>
+> </div>
+> Par défaut, au lieu d’effectuer la sélection, un stylet actif fait défiler/parcourt une liste dans les applications UWP (comme l’interaction tactile, le pavé tactile et le stylet passif).
+> Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Consultez la rubrique de référence sur les API [Classe ScrollViewer] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) pour plus d’informations.
+
+## <a name="list-views"></a>Affichages Liste
 
 Les affichages Liste permettent de classer des éléments et d’affecter des en-têtes de groupe, de glisser-déplacer des éléments, de traiter du contenu et de réorganiser des éléments.
 
@@ -180,10 +186,12 @@ Si la collection figurant dans une zone de liste déroulante est suffisamment lo
 
 -   Limitez le contenu texte des éléments de zone de liste déroulante à une seule ligne.
 -   Triez les éléments d’une zone de liste déroulante dans l’ordre le plus logique. Regroupez les options associées et placez les options les plus courantes en haut. Triez les noms par ordre alphabétique, les nombres par ordre numérique et les dates par ordre chronologique.
+-   Pour créer une liste déroulante avec mise à jour dynamique pendant que l’utilisateur utilise les touches de direction (comme une liste déroulante de sélection de police), définissez SelectionChangedTrigger sur «Toujours».  
 
 ### <a name="text-search"></a>Recherche en texte
 
-Les zones de liste déroulante prennent automatiquement en charge la recherche au sein de leurs collections. Lorsque les utilisateurs tapent des caractères sur un clavier physique dans une zone de liste déroulante ouverte ou fermée, des candidats correspondant à la chaîne entrée apparaissent. Cette fonctionnalité est particulièrement utile lors de la navigation dans une liste longue. Par exemple, lorsqu’un utilisateur interagit avec une liste déroulante contenant une liste des États américains, le fait d’appuyer sur la touche «W» affiche «Washington» pour une sélection rapide. 
+Les zones de liste déroulante prennent automatiquement en charge la recherche au sein de leurs collections. Lorsque les utilisateurs tapent des caractères sur un clavier physique dans une zone de liste déroulante ouverte ou fermée, des candidats correspondant à la chaîne entrée apparaissent. Cette fonctionnalité est particulièrement utile lors de la navigation dans une liste longue. Par exemple, lorsqu’un utilisateur interagit avec une liste déroulante contenant une liste des États américains, le fait d’appuyer sur la touche «W» affiche «Washington» pour une sélection rapide.
+
 
 ## <a name="list-boxes"></a>Zones de liste
 
@@ -252,12 +260,12 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 
 - [Hub](hub.md)
 - [Maître/détails](master-details.md)
-- [Volet de navigation](nav-pane.md)
+- [Volet de navigation](navigationview.md)
 - [Zoom sémantique](semantic-zoom.md)
 - [Glisser-déplacer](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 
 **Pour les développeurs**
-- [**Classe ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)
-- [**Classe GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)
-- [**Classe ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)
-- [**Classe ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868)
+- [Classe ListView](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [Classe GridView](https://msdn.microsoft.com/library/windows/apps/br242705)
+- [Classe ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348)
+- [Classe ListBox](https://msdn.microsoft.com/library/windows/apps/br242868)

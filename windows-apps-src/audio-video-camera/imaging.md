@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: f0cf9d2928c8d6a0494092643daa19d9b437d3eb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8679dfd073a3b756e37059a5b0bf35cc6b000e6a
+ms.sourcegitcommit: bfa61aae632cca0c68dbfb0168424d38fd607f84
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 07/31/2017
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>Créer, modifier et enregistrer des images bitmap
 
@@ -118,7 +120,7 @@ La classe **SoftwareBitmap** fournit la méthode statique [**Convert**](https://
 
 ## <a name="transcode-an-image-file"></a>Transcoder un fichier image
 
-Vous pouvez transcoder un fichier image directement à partir de [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) vers [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). Créez un [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) à partir du fichier à transcoder. Créez un **BitmapDecoder** à partir du flux d’entrée. Créez un [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) sur lequel l’encodeur pourra écrire et appelez [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214) en transmettant le flux en mémoire et l’objet de décodeur. Définissez les propriétés d’encodage de votre choix. Toutes les propriétés dans le fichier image d’entrée que vous ne définissez pas spécifiquement sur l’encodeur seront écrites dans le fichier de sortie inchangé. Appelez [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) pour forcer l’encodeur à encoder dans le flux en mémoire. Enfin, recherchez le début du flux de fichier et du flux en mémoire et appelez [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) pour écrire le flux en mémoire dans le flux de fichier.
+Vous pouvez transcoder un fichier image directement à partir de [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) vers [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). Créez un [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) à partir du fichier à transcoder. Créez un **BitmapDecoder** à partir du flux d’entrée. Créez un [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) sur lequel l’encodeur pourra écrire et appelez [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214) en transmettant le flux en mémoire et l’objet de décodeur. Les options d'encodage ne sont pas prises en charge lors du transcodage; vous devez plutôt utiliser [**CreateAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.graphics.imaging.bitmapencoder#Windows_Graphics_Imaging_BitmapEncoder_CreateAsync_System_Guid_Windows_Storage_Streams_IRandomAccessStream_Windows_Foundation_Collections_IIterable_Windows_Foundation_Collections_IKeyValuePair_System_String_Windows_Graphics_Imaging_BitmapTypedValue___). Toutes les propriétés dans le fichier image d’entrée que vous ne définissez pas spécifiquement sur l’encodeur seront écrites dans le fichier de sortie inchangé. Appelez [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) pour forcer l’encodeur à encoder dans le flux en mémoire. Enfin, recherchez le début du flux de fichier et du flux en mémoire et appelez [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) pour écrire le flux en mémoire dans le flux de fichier.
 
 [!code-cs[TranscodeImageFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetTranscodeImageFile)]
 

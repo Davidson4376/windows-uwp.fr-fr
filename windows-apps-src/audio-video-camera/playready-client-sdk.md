@@ -1,17 +1,19 @@
 ---
-author: eliotcowley
+author: drewbatgit
 ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
 description: "Cette rubrique explique comment ajouter du contenu multimédia PlayReady protégé à votre application de plateforme Windows universelle (UWP)."
 title: "Gestion des droits numériques PlayReady"
-ms.author: elcowle
+ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 161a048a4bfa9479821aec542db17ded8243d231
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 803070143a3d07bfbdbb4f3e1b7b70858b75e0f9
+ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/21/2017
 ---
 # <a name="playready-drm"></a>Gestion des droits numériques PlayReady
 
@@ -470,6 +472,33 @@ Dans les versions précédentes de la gestion des droits numériques par PlayRea
     videoPlayer.msSetMediaProtectionManager( mediaProtectionManager );
     ```
     
+## <a name="query-for-protection-capabilities"></a>Requête pour les fonctionnalités de protection
+À partir de Windows10, version1703, vous pouvez interroger les fonctionnalités de gestion des droits numériques en fonction du matériel, telles que le décodage des codecs, la résolution et les protections de sortie (HDCP). Les requêtes sont effectuées avec la méthode [**IsTypeSupported**](https://docs.microsoft.com/uwp/api/windows.media.protection.protectioncapabilities#Windows_Media_Protection_ProtectionCapabilities_IsTypeSupported_System_String_System_String_) qui utilise une chaîne représentant les fonctionnalités pour lesquelles la prise en charge est interrogée et une chaîne spécifiant le système de clés auquel la requête s'applique. Pour obtenir la liste des valeurs de chaîne prises en charge, consultez la page de référence des API pour [**IsTypeSupported**](https://docs.microsoft.com/uwp/api/windows.media.protection.protectioncapabilities#Windows_Media_Protection_ProtectionCapabilities_IsTypeSupported_System_String_System_String_). L'exemple de code suivant illustre l'utilisation de cette méthode.  
+
+    ```cs
+    using namespace Windows::Media::Protection;
+
+    ProtectionCapabilities^ sr = ref new ProtectionCapabilities();
+
+    ProtectionCapabilityResult result = sr->IsTypeSupported(
+    L"video/mp4; codecs=\"avc1.640028\"; features=\"decode-bpp=10,decode-fps=29.97,decode-res-x=1920,decode-res-y=1080\"",
+    L"com.microsoft.playready");
+
+    switch (result)
+    {
+        case ProtectionCapabilityResult::Probably:
+        // Queue up UHD HW DRM video
+        break;
+
+        case ProtectionCapabilityResult::Maybe:
+        // Check again after UI or poll for more info.
+        break;
+
+        case ProtectionCapabilityResult::NotSupported:
+        // Do not queue up UHD HW DRM video.
+        break;
+    }
+    ```
 ## <a name="add-secure-stop"></a>Ajouter un arrêt sécurisé
 
 Cette section explique comment ajouter un arrêt sécurisé à votre application pour UWP.
@@ -508,6 +537,7 @@ Vous devez tenir compte d’un dernier aspect lors de l’utilisation de PlayRea
 * Implémentez la logique afin que seuls certains comptes de test authentifiés soient en mesure d’acquérir des licences SL150 pour certains contenus.
 
 Utilisez l’approche qui convient pour votre produit et pour votre entreprise.
+
 
 ## <a name="see-also"></a>Voir aussi
 - [Lecture de contenu multimédia](media-playback.md)

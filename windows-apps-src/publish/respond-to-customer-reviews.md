@@ -4,50 +4,57 @@ Description: "Vous pouvez répondre directement aux avis concernant votre applic
 title: "Répondre aux avis des clients"
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 7de4e53df32979d87a19b7d0556ef716b901687b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c43304d9902727fb8f5c4d0854efb09a0f0f5196
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="respond-to-customer-reviews"></a>Répondre aux avis des clients
 
 
 Vous pouvez répondre directement aux avis concernant votre application pour montrer à vos clients que vous prêtez attention à leurs commentaires. Les réponses aux avis permettent d’indiquer aux clients les nouvelles fonctionnalités ou les bogues corrigés d’après leurs commentaires ou d’obtenir des commentaires plus précis sur les améliorations à apporter à votre application. Vous pouvez également choisir d’afficher votre réponse dans le WindowsStore afin qu’elle soit visible pour tous les clients Windows10.
 
-> **Important** Vous ne pourrez pas répondre directement aux avis rédigés par des clients ayant choisi de ne pas recevoir de réponses. Il est également impossible de laisser des réponses aux commentaires créés par des clients en dehors des États-Unis avec des appareils Windows Phone 8.
+> [!IMPORTANT]
+> Vous ne pourrez pas répondre directement aux avis rédigés par des clients ayant choisi de ne pas recevoir de réponses. Il est également impossible de laisser des réponses aux commentaires créés par des clients en dehors des États-Unis avec des appareils Windows Phone 8.
 
-Pour visualiser les avis concernant votre application et y répondre, recherchez l'application appropriée dans votre tableau de bord du Centre de développement Windows. Dans le menu de navigation de gauche, développez **Analyse**, puis cliquez sur **Avis** afin d’afficher le [Rapport sur les avis](reviews-report.md).
+Pour visualiser les avis concernant votre application et y répondre, recherchez l’application dans votre tableau de bord du Centre de développement Windows. Dans le menu de navigation de gauche, développez **Analyse**, puis cliquez sur **Avis** afin d’afficher le [Rapport sur les avis](reviews-report.md). Sélectionnez **Répondre à l’avis** pour formuler votre réponse.
 
-> **Remarque** Vous pouvez utiliser cette méthode pour répondre aux avis, mais également répondre [par programmation](../monetize/submit-responses-to-app-reviews.md) ou via [l’application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws). 
+> [!TIP]
+> Outre l’utilisation du tableau de bord pour répondre aux avis, vous pouvez également formuler vos réponses [par programme](../monetize/submit-responses-to-app-reviews.md) ou par le biais de [l’application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws). 
 
 Lorsque vous répondez à un avis, le client reçoit un e-mail de Microsoft contenant votre réponse. Cet e-mail contient également l’adresse e-mail de support de votre application que votre client pourra utiliser par la suite pour vous contacter directement. Si vous n'avez pas ajouté d’adresse e-mail de support pour votre application au cours du processus de soumission, vous devrez en indiquer une pour pouvoir répondre.
 
-Par défaut, seul le client auquel vous répondez pourra lire votre réponse. Si vous souhaitez permettre aux autres clients de consulter votre réponse, cochez la case **Rendre cette réponse publique** pour afficher votre réponse dans la description de votre application dans le WindowsStore, juste au-dessous de l’avis du client. Les réponses publiques seront visibles pour tous les clients consultant le WindowsStore sur des appareils Windows10.
+Par défaut, seul le client auquel vous répondez pourra lire votre réponse. Si vous souhaitez permettre aux autres clients de consulter votre réponse, cochez la case **Rendre cette réponse publique** pour afficher votre réponse dans la description de votre application dans le WindowsStore, juste au-dessous de l’avis du client. Les réponses publiques seront visibles par tous les clients consultant le WindowsStore sur des appareils Windows10.
 
-> **Important** Il est impossible de modifier ultérieurement une réponse publique (sauf si le client modifie l’avis qu’il a initialement publié). Nous vous invitons donc à bien vérifier votre réponse avant de la rendre publique. Si un client modifie son avis initial, votre réponse sera supprimée. Vous pouvez ensuite, si vous le souhaitez, répondre à l’avis qu’il aura modifié.
+> [!IMPORTANT] 
+> Vous ne pourrez pas modifier une réponse publique ultérieurement (sauf si le client modifie l’avis qu’il a initialement publié). Nous vous invitons donc à bien vérifier votre réponse avant de la rendre publique. Si un client modifie son avis initial, votre réponse sera supprimée. Si vous le souhaitez, vous pourrez alors répondre à l’avis modifié en sélectionnant **Mettre à jour votre réponse**.
+
 
 ## <a name="guidelines-for-responses"></a>Recommandations en matière de réponses
 
+Lorsque vous répondez à l’avis d’un clients, respectez les consignes suivantes : Elles s’appliquent à toutes les réponses, que vous choisissiez ou non de les rendre publiques.
 
-Lorsque vous répondez à l’avis d’un clients, respectez les consignes suivantes : Elles s'appliquent à toutes les réponses, que vous choisissiez ou non de les rendre publiques.
-
--   Les réponses ne doivent pas comporter plus de 1 000 caractères.
--   Vous ne pouvez proposer aux utilisateurs aucun type de rémunération, y compris sous forme d'éléments d'application numériques, afin de les inciter à modifier leur évaluation de l'application. Nous vous rappelons que toute tentative de manipulation des évaluations est proscrite, conformément au [Contrat du développeur de l'application](https://msdn.microsoft.com/library/windows/apps/hh694058).
+-   Les réponses ne peuvent pas comporter plus de 1000caractères.
+-   Vous ne pouvez proposer aux utilisateurs aucun type de rémunération, y compris sous forme d’éléments d’application numériques, en vue de les inciter à modifier leur évaluation de l’application. Nous vous rappelons que toute tentative de manipulation des évaluations est proscrite, conformément au [Contrat du développeur de l'application](https://msdn.microsoft.com/library/windows/apps/hh694058).
 -   N'incluez ni contenu marketing ni publicités dans votre réponse. N'oubliez pas que votre évaluateur est déjà votre client.
 -   Ne faites pas la promotion d'autres applications ou services dans votre réponse.
 -   Votre réponse doit être directement liée à l'application et à l'avis concernés. L'envoi d'une même réponse à un grand nombre d'utilisateurs est interdit si la réponse générique utilisée ne répond pas à la même question.
 -   N'incluez pas de commentaires profanes, agressifs, personnels ou malveillants dans votre réponse. Soyez toujours poli et gardez à l’esprit que les clients satisfaits seront probablement les plus grands promoteurs de votre application.
 
-> **Remarque** Les clients peuvent signaler à Microsoft toute réponse inappropriée d’un développeur à l’un de leurs avis. Ils peuvent également choisir de ne pas recevoir de réponses à leurs avis.
-Microsoft se réserve le droit de révoquer la possibilité pour un développeur d'envoyer des réponses, notamment si les réponses de ce développeur entraînent un nombre anormalement élevé de signalements de réponses inappropriées ou un nombre inhabituel de clients choisissant de ne pas recevoir de réponses aux avis.
+> [!NOTE]
+> Les clients peuvent signaler à Microsoft toute réponse inappropriée d’un développeur à l’un de leurs avis. Ils peuvent également choisir de ne pas recevoir de réponses à leurs avis. 
+>
+> Microsoft se réserve le droit de révoquer la possibilité pour un développeur d’envoyer des réponses, notamment si les réponses de ce développeur entraînent un nombre anormalement élevé de signalements de réponses inappropriées, ou si ces réponses incitent un nombre inhabituel de clients à choisir de ne pas recevoir de réponses aux avis.
 
-Votre relation avec vos clients est de votre responsabilité. Microsoft ne prend pas parti en cas de litiges entre les développeurs et les clients. Toutefois, si une évaluation de votre application contient des propos injurieux, profanes ou abusif, nous vous invitons à créer un [ticket de support](http://go.microsoft.com/fwlink/p/?LinkID=401178).
-
-## <a name="use-customer-feedback-to-improve-your-app"></a>Utiliser les commentaires des clients pour améliorer votre application
+Votre relation avec vos clients est de votre responsabilité. Microsoft ne prend pas parti en cas de litiges entre les développeurs et les clients. Toutefois, si un avis concernant votre application contient des propos choquants, injurieux ou insultants, nous vous invitons à créer un [ticket de support](http://go.microsoft.com/fwlink/p/?LinkID=401178).
 
 
-Être à l'écoute de vos clients et leur fournir des réponses n'est qu'un début. Réagir à leurs commentaires est également un point essentiel. Si vous apportez des améliorations importantes, présentez-les dans le Windows Store en toute confiance en [créant une autre soumission](app-submissions.md) pour mettre à jour votre application.
+## <a name="use-customer-reviews-to-improve-your-app"></a>Utiliser les avis des clients pour améliorer votre application
+
+Être à l’écoute de vos clients et leur fournir des réponses n’est qu’un début. Réagir à leurs commentaires est également un point essentiel. Si vous apportez des améliorations importantes, présentez-les dans le Windows Store en toute confiance en [créant une autre soumission](app-submissions.md) pour mettre à jour votre application.

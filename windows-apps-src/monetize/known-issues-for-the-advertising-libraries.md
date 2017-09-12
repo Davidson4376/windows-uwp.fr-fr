@@ -1,34 +1,32 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: "Découvrez les problèmes connus de la version actuelle des bibliothèques de publicités Microsoft contenues dans Microsoft Store Services SDK."
+description: "Découvrez les problèmes connus de la version actuelle des bibliothèques Microsoft Advertising."
 title: "Problèmes connus pour les bibliothèques publicitaires"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, annonces, publicité, problèmes connus"
-ms.openlocfilehash: 33bf3c2db5db7e8ec07df3f4d13cc0ad074e99a3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b18c4568770afb70bcca991c79d59a9912981705
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 07/21/2017
 ---
 # <a name="known-issues-for-the-advertising-libraries"></a>Problèmes connus pour les bibliothèques publicitaires
 
 
 
 
-Cette rubrique répertorie les problèmes connus avec la version actuelle des bibliothèques de publicités Microsoft dans Microsoft Store Services SDK (pour les applications UWP) et dans Microsoft Advertising SDK pour Windows et Windows Phone8.x (pour les applications Windows8.1 et Windows Phone8.x).
+Cette rubrique répertorie les problèmes connus avec la version actuelle des bibliothèques de publicités Microsoft du kit SDK Microsoft Advertising (pour les applications UWP) et du kit SDK Microsoft Advertising pour Windows et Windows Phone8.x (pour les applications Windows8.1 et Windows Phone8.x).
 
-## <a name="installation-of-microsoft-store-services-sdk-requires-visual-studio-tools-for-universal-windows-apps"></a>L’installation de Microsoft Store Services SDK requiert Visual Studio Tools pour les applications Windows universelles
+## <a name="windows-phone-8x-silverlight-projects"></a>Projets Windows Phone8.xSilverlight
 
-Pour installer [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) avec Visual Studio2015, vous devez disposer d’une version1.1 ou ultérieure de Visual Studio Tools for Universal Windows Apps. Pour plus d’informations, voir les [notes de publication](http://go.microsoft.com/fwlink/?LinkID=624516) de VisualStudio.
+Le SDK Microsoft Advertising pour Windows et Windows Phone8.x assure une prise en charge limitée des projets Silverlight Windows Phone8.x. Pour en savoir plus, voir [Prise en charge des publicités pour les projets Silverlight WindowsPhone8.x](adcontrol-in-windows-phone-silverlight.md#silverlight_support).
 
-## <a name="windows-phone-8x-silverlight-projects"></a>Projets Silverlight Windows Phone8.x
-
-Microsoft Advertising SDK pour Windows et Windows Phone8.x assure une prise en charge limitée des projets Silverlight Windows Phone8.x. Pour plus d’informations, voir [Afficher des publicités dans votre application](display-ads-in-your-app.md#silverlight_support).
-
-Pour obtenir les assemblys de publicités Microsoft pour des projets Silverlight Windows Phone8.x, installez [Microsoft Advertising SDK pour Windows et Windows Phone8.x](http://aka.ms/store-8-sdk), ouvrez votre projet dans Visual Studio, puis accédez à **Projet** > **Ajouter un service connecté** > **AdMediator** pour télécharger automatiquement les assemblys. Après quoi, vous pouvez supprimer les références au médiateur publicitaire de votre projet si vous ne souhaitez pas utiliser la médiation publicitaire. Pour plus d’informations, voir [AdControl dans Silverlight WindowsPhone](adcontrol-in-windows-phone-silverlight.md).
+Pour obtenir les assemblys de publicités Microsoft pour des projets Silverlight Windows Phone8.x, installez le [Kit SDK Microsoft Advertising pour Windows et Windows Phone8.x](http://aka.ms/store-8-sdk), ouvrez votre projet dans Visual Studio, puis accédez à **Projet** > **Ajouter un service connecté** > **AdMediator** pour télécharger automatiquement les assemblys. Après quoi, vous pouvez supprimer les références au médiateur publicitaire de votre projet si vous ne souhaitez pas utiliser la médiation publicitaire. Pour plus d’informations, voir [AdControl dans Silverlight WindowsPhone](adcontrol-in-windows-phone-silverlight.md).
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>Interface AdControl inconnue en XAML
 
@@ -64,7 +62,7 @@ Vous pouvez également publier une question sur le [forum](http://go.microsoft.c
 
 Les publicités de test peuvent s’afficher même lorsque vous attendez des publicités dynamiques. Cela peut se produire dans les cas suivants:
 
-* MicrosoftAdvertising ne peut pas vérifier ni trouver l’ID d’application dynamique utilisé dans la boutique d’applications. Dans ce cas, lorsqu’une unité publicitaire est créée par un utilisateur, son état peut démarrer à dynamique (non-test), mais passer à l’état de test dans les 6heures qui suivent la première demande de publicité. Il revient à l’état dynamique en cas d’absence de demandes d’applications de test pendant 10jours.
+* Notre plateforme publicitaire ne peut pas vérifier ni trouver l’ID d’application dynamique utilisé dans la boutique. Dans ce cas, lorsqu’une unité publicitaire est créée par un utilisateur, son état peut démarrer à dynamique (non-test), mais passer à l’état de test dans les 6heures qui suivent la première demande de publicité. Il revient à l’état dynamique en cas d’absence de demandes d’applications de test pendant 10jours.
 
 * Les applications chargées indépendamment ou les applications qui sont exécutées dans l’émulateur n’affichent pas de publicités dynamiques.
 

@@ -6,14 +6,20 @@ ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: e2c04ea39eee88c225bfef277037363c084e8eff
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: stpete
+doc-status: Published
+ms.openlocfilehash: 5079d1782188b6d2e49fc14741a23a5651995c67
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="hyperlinks"></a>Liens hypertexte
 
@@ -21,15 +27,9 @@ translationtype: HT
 
 Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte. Vous pouvez ajouter un lien hypertexte à une application XAML de deux façons : à l’aide d’un élément de texte **Hyperlink** ou d’un contrôle **HyperlinkButton**.
 
-![Bouton Lien hypertexte](images/controls/hyperlink-button.png)
+> **API importantes**: [élément de texte Hyperlink](https://msdn.microsoft.com/library/windows/apps/dn279356), [contrôle HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/br242739)
 
-<div class="important-apis" >
-<b>API importantes</b><br/>
-<ul>
-<li>[**Élément de texte Hyperlink|**](https://msdn.microsoft.com/library/windows/apps/dn279356)</li>
-<li>[**Contrôle HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)</li>
-</ul>
-</div>
+![Bouton Lien hypertexte](images/controls/hyperlink-button.png)
 
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
@@ -41,12 +41,6 @@ Choisissez le type de lien hypertexte approprié en fonction de vos besoins:
 -   Utilisez un élément de texte **Hyperlink** inclus dans un contrôle de texte. Un élément Hyperlink comprend d’autres éléments de texte et vous pouvez l’utiliser dans toute collection InlineCollection. Utilisez un lien hypertexte de type texte si vous souhaitez un saut de ligne automatique et si vous n’avez pas nécessairement besoin d’une cible large. Le texte du lien hypertexte peut être petit et difficile à cibler, notamment pour les fonctions tactiles.
 -   Utilisez un contrôle **HyperlinkButton** pour les liens hypertexte autonomes. Un contrôle HyperlinkButton est un contrôle Button spécialisé que vous pouvez utiliser à tout endroit où vous utiliseriez un bouton.
 -   Utilisez un contrôle **HyperlinkButton** avec un élément [Image](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) comme contenu pour créer une image sur laquelle vous pouvez cliquer.
-
-## <a name="examples"></a>Exemples
-
-Liens hypertexte dans l’application Calculatrice.
-
-![Exemple de lien hypertexte dans l’application Calculatrice](images/control-examples/hyperlinks-calculator.png)
 
 ## <a name="create-a-hyperlink-text-element"></a>Créer un élément de texte Hyperlink
 
@@ -150,7 +144,7 @@ La couleur par défaut du lien hypertexte est la couleur d’accentuation du sys
 ## <a name="recommendations"></a>Recommandations
 
 -   Utilisez uniquement les liens hypertexte pour la navigation. Ne les utilisez pas pour d’autres actions.
--   Utilisez le style Body de la gamme de types pour les liens hypertexte de type texte. Voir [**fonts and the Windows 10 type ramp**](fonts.md).
+-   Utilisez le style Body de la gamme de types pour les liens hypertexte de type texte. Voir [fonts and the Windows 10 type ramp](fonts.md).
 -   Gardez les liens hypertexte suffisamment éloignés les uns des autres pour que l’utilisateur puisse les distinguer et les sélectionner aisément.
 -   Ajoutez des info-bulles aux liens hypertexte pour indiquer à l’utilisateur l’emplacement vers lequel il va être dirigé. Si l’utilisateur est dirigé vers un site externe, insérez le nom de domaine de niveau supérieur dans l’info-bulle, puis appliquez un style au texte avec une couleur de police secondaire.
 
@@ -160,5 +154,5 @@ La couleur par défaut du lien hypertexte est la couleur d’accentuation du sys
 - [Recommandations en matière d’info-bulles](tooltips.md)
 
 **Pour les développeurs (XAML)**
-- [**Classe Windows.UI.Xaml.Documents.Hyperlink**](https://msdn.microsoft.com/library/windows/apps/dn279356)
-- [**Classe Windows.UI.Xaml.Controls.HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)
+- [Classe Windows.UI.Xaml.Documents.Hyperlink](https://msdn.microsoft.com/library/windows/apps/dn279356)
+- [Classe Windows.UI.Xaml.Controls.HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/br242739)

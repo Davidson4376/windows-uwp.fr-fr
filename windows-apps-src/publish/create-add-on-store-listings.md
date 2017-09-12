@@ -4,30 +4,37 @@ Description: "Quand vous soumettez un module complémentaire, les informations q
 title: "Créer des descriptions de module complémentaire dans le WindowsStore"
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: d27afd09d5805604a09aba91f57b20625df4d95b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 873e20039d6bd994f5ee3f42822f18c18ded0537
+ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/27/2017
 ---
 # <a name="create-add-on-store-listings"></a>Créer des descriptions de module complémentaire dans le WindowsStore
 
 
 Quand vous soumettez un module complémentaire, les informations que vous entrez à l’étape **Descriptions dans le Windows Store** sont visibles par vos clients lorsque l’option d’acquisition de votre module complémentaire s’affiche. Formulez avec soin les informations de la description dans le Windows Store pour qu’elle donne du module complémentaire une image à la fois fidèle et attrayante aux yeux des clients. Vous pouvez fournir des descriptions personnalisées dans le Windows Store pour chaque langue.
 
-## <a name="languages"></a>Langues
+> [!TIP]
+> Vous pouvez également [importer et exporter des descriptions dans le WindowsStore](import-and-export-store-listings.md) pour votre extension si vous souhaitez entrer vos informations de description hors connexion dans un fichier.csv, plutôt que de renseigner ces informations directement dans le tableau de bord. Cette opération peut se révéler particulièrement adaptée lorsque vous créez des descriptions en différentes langues.
 
 
-Avant d’entrer les informations de la description dans le Windows Store, vous devez spécifier une ou plusieurs [langues](supported-languages.md). Nous vous recommandons de fournir une description dans le Windows Store pour chaque langue prise en charge par votre application.
+## <a name="store-listing-languages"></a>Langues des descriptions dans le WindowsStore
 
-Sous la section **Description dans le Windows Store** de la soumission de votre module complémentaire, cliquez sur **Gérer les langages de description**, puis sur **Préférences linguistiques** de la page suivante. Cochez les cases pour les langues que vous souhaitez ajouter, puis cliquez sur **Mettre à jour**. Les langues que vous avez sélectionnées s’afficheront dans la section **Langues de la description dans le Windows Store** de la page. Pour supprimer une ou plusieurs de ces langues, cliquez sur **Supprimer** (ou cliquez sur **Préférences linguistiques** et décochez la case pour les langues que vous souhaitez supprimer). Cliquez sur **Enregistrer** lorsque la liste des langues vous convient.
+Avant d’entrer les informations de la description dans le WindowsStore, vous devez spécifier une ou plusieurs [langues](supported-languages.md). Vous devez remplir la page **Description dans le WindowsStore** dans une langue au minimum. Nous vous recommandons de fournir une description dans le WindowsStore pour chaque langue prise en charge par votre application.
 
-> **Conseil** Pour ajouter ou supprimer des langues supplémentaires, cliquez sur **Préférences linguistiques dans le Windows Store** à partir de la vue d’ensemble de la soumission du module complémentaire.
+Sous la section **Description dans le WindowsStore** de la soumission de votre extension, cliquez sur **Ajouter/Supprimer des langues**, puis cliquez sur **Préférences linguistiques** sur la page suivante. Cochez les cases des langues que vous souhaitez ajouter, puis cliquez sur **Mettre à jour**. Les langues que vous avez sélectionnées s’afficheront dans la section **Langues de la description dans le WindowsStore** de la page.
 
-Pour modifier une description dans le Windows Store, cliquez sur le nom de la langue dans la vue d’ensemble de la soumission du module complémentaire. Les informations que vous pouvez entrer pour chaque langue sont décrites ci-dessous.
+Pour supprimer une langue, cliquez sur **Supprimer** (ou cliquez sur **Préférences linguistiques** et décochez la case des langues que vous souhaitez supprimer). 
+
+Lorsque vous avez terminé vos sélections, cliquez sur **Enregistrer** pour revenir à la page de vue d’ensemble de la soumission.
+
+Pour modifier une description dans le WindowsStore, cliquez sur le nom de la langue dans la page de vue d’ensemble de la soumission d’extension. Les informations que vous pouvez entrer pour chaque langue sont décrites ci-dessous.
 
 ## <a name="title"></a>Titre
 

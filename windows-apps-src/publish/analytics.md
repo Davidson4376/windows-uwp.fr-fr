@@ -1,62 +1,50 @@
 ---
-author: shawjohn
-Description: "Vous pouvez voir les analyses détaillées de vos applications dans le tableau de bord du Centre de développement Windows."
-title: Analyses
+author: JnHs
+Description: "Obtenez des analyses détaillées de vos applications Windows dans le tableau de bord ou par le biais d’autres méthodes."
+title: "Analyser les performances de l’application"
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
-ms.author: johnshaw
-ms.date: 02/08/2017
+ms.author: wdg-dev-content
+ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, uwp, analyse, rapports, tableau de bord, applications
-ms.openlocfilehash: 13a37a4ae2cea67fdce843ed4e6189797d85b93e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 57e4a30258fa25411bb461cac56aa18d2f74981d
+ms.sourcegitcommit: a93b1da07b386a682435de58a8129d7b4ee90c14
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/29/2017
 ---
-# <a name="analytics"></a>Analyses
+# <a name="analyze-app-performance"></a>Analyser les performances de l’application
 
-Vous pouvez voir les analyses détaillées de vos applications dans le tableau de bord du Centre de développement Windows. Les statistiques et les graphiques vous permettent de savoir où en sont vos applications: combien de clients vous avez atteint, la façon dont ils utilisent votre application et ce qu’ils en pensent. Vous obtenez également des informations sur l’intégrité de l’application, l’utilisation des publicités, etc. Affichez des rapports dans le tableau de bord ou [téléchargez les rapports dont vous avez besoin](download-analytic-reports.md) pour analyser les données hors connexion. Nous vous proposerons également plusieurs méthodes vous permettant [d’accéder à vos données d’analyse sans utiliser le tableau de bord](#no-dashboard).
+Vous pouvez voir les analyses détaillées de vos applications dans le tableau de bord du Centre de développement Windows. Les statistiques et les graphiques vous permettent de savoir où en sont vos applications: combien de clients vous avez atteint, la façon dont ils utilisent votre application et ce qu’ils en pensent. Vous pouvez également obtenir des métriques sur l’intégrité de l’application, l’utilisation des publicités, etc.
 
-> [!NOTE]
-> Outre les rapports du tableau de bord, vous pouvez accéder par programme à certaines données d’analyse à l’aide de [l’API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
+Vous pouvez visualiser les rapports d’analyse dans le tableau de bord ou [télécharger les rapports dont vous avez besoin](download-analytic-reports.md) pour analyser les données hors connexion. Nous vous proposerons également plusieurs méthodes vous permettant [d’accéder à vos données d’analyse sans utiliser le tableau de bord](#no-dashboard).
 
-## <a name="analytics-for-all-your-apps"></a>Analyse de toutes vos applications
+## <a name="view-key-analytics-for-all-your-apps"></a>Visualiser les principales analyses de toutes vos applications
 
-Pour afficher les principales analyses concernant les applications les plus téléchargées, dans le menu de navigation supérieur, sélectionnez **Analyse** > **Vue d’ensemble**. Par défaut, la page **Vue d’ensemble de l’analyse** affiche des informations sur les cinq applications qui ont été acquises le plus souvent au cours de leur durée de vie. Pour choisir d’autres applications à afficher, sélectionnez **Modifier les filtres**.
+Pour visualiser les principales analyses relatives à vos applications les plus téléchargées, développez **Analyser**, puis sélectionnez **Vue d’ensemble**. Par défaut, la page **Vue d’ensemble de l’analyse** affiche des informations sur les cinq applications qui ont été acquises le plus souvent au cours de leur durée de vie. Pour choisir d’autres applications publiées à afficher, sélectionnez **Filtres**.
 
-## <a name="available-reports-for-each-app"></a>Rapports disponibles pour chaque application
+## <a name="view-individual-reports-for-each-app"></a>Visualiser des rapports individuels pour chaque application
 
-Cette section détaille les informations présentées dans chacun des rapports suivants :
+Cette section détaille les informations présentées dans chacun des rapports suivants:
 
 -   [Rapport sur les acquisitions](acquisitions-report.md)
--   [Rapport sur les acquisitions de modules complémentaires](add-on-acquisitions-report.md)
--   [Rapport sur les installations](installs-report.md)
--   [Rapport sur l’utilisation](usage-report.md)
--   [Rapport sur l’intégrité](health-report.md)
--   [Rapport sur les évaluations](ratings-report.md)
--   [Rapport sur les révisions](reviews-report.md)
+-   [Rapport sur les acquisitions d’extensions](add-on-acquisitions-report.md)
+-   [Rapport d’utilisation](usage-report.md)
+-   [Rapport d’intégrité](health-report.md)
+-   [Rapport sur les avis](reviews-report.md)
 -   [Rapport sur les commentaires](feedback-report.md)
--   [Rapport sur les canaux et conversions](channels-and-conversions-report.md)
--   [Rapport de médiation publicitaire](ad-mediation-report.md)
 -   [Rapport sur les performances publicitaires](advertising-performance-report.md)
--   [Rapport de performances des annonces des affiliés](affiliates-performance-report.md)
--   [Promouvoir votre rapport d'application](promote-your-app-report.md)
+-   [Rapport de campagne de publicité](promote-your-app-report.md)
 
 > [!NOTE]
-> Les données figurant dans ces rapports dépendant des fonctionnalités et de l’implémentation propres à votre application, certains rapports n’en contiennent pas.
-
-## <a name="page-and-section-filters"></a>Filtres de page et de section
-
-Chaque rapport intègre des filtres qui vous aident à analyser vos données en profondeur. En haut de la page se trouve **Appliquer les filtres**. Ces filtres servent à restreindre ou à développer l’étendue des informations et des graphiques présentés sur la page.
-
-Dans chaque graphique, vous pouvez voir des filtres de section. Ceux-ci limitent les données affichées uniquement pour ce graphique particulier.
-
-Ces filtres varient selon les rapports. Les rubriques de cette section expliquent les filtres disponibles et décrivent les autres données disponibles sur la page de chaque rapport.
+> Étant donné que les données qui figurent dans ces rapports dépendent des fonctionnalités et de l’implémentation propres à votre application, certains rapports n’en contiennent pas.
 
 <span id="no-dashboard"/>
 ## <a name="access-analytics-data-without-using-the-dev-center-dashboard"></a>Accéder aux données d’analyse sans utiliser le tableau de bord du Centre de développement
 
-Outre les rapports d’analyse du tableau de bord, il existe plusieurs façons d’accéder à vos données d’analyse.
+Outre les rapports d’analyse du tableau de bord, vous pouvez accéder à vos données d’analyse de plusieurs autres façons.
 
 ### <a name="windows-store-analytics-api"></a>API d’analyse du WindowsStore
 
@@ -77,7 +65,5 @@ Utilisez les ressources suivantes pour commencer à utiliser PowerBI pour accéd
 
 ### <a name="dev-center-app"></a>Application Centre de développement
 
-Installez l’application [Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) pour afficher rapidement des informations sur l’intégrité et les performances de vos applications sur tout appareil Windows10.
+Installez l’application [Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) pour visualiser rapidement des informations sur l’intégrité et les performances de vos applications sur tout appareil Windows10.
 
-## <a name="related-topics"></a>Rubriques connexes
-- [Publier des applications Windows](index.md)

@@ -4,14 +4,16 @@ Description: "Découvrez comment promouvoir vos applications et vos contenus dan
 title: "Recommandations en matière de marketing adapté aux applications du Windows Store"
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: e7d327cbe8d99b6b10ae4ccdeb8c7a6f0ee2ac5e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e953bf1b7392a93ddb8323167ca1bf191e162076
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="windows-store-app-marketing-guidelines"></a>Recommandations en matière de marketing adapté aux applications du Windows Store
 
@@ -19,21 +21,25 @@ Découvrez comment promouvoir vos applications et vos contenus dans le Windows S
 
 ## <a name="store-badges"></a>Badges Windows Store
 
-Nous avons créé des badges promotionnels spéciaux pour attirer davantage de clients vers la description de votre application dans le Windows Store. Ces badges sont disponibles en 44 langues. N’oubliez pas que vous devez respecter certains critères lorsque vous utilisez ces images. Ces critères, ainsi que des exemples d’utilisation et les recommandations, sont disponibles dans un fichier PDF.
+Nous avons créé des badges promotionnels spéciaux pour attirer davantage de clients vers la description de votre application dans le WindowsStore. Ces badges sont disponibles en 44 langues. N’oubliez pas que vous devez respecter certains critères lorsque vous utilisez ces images. Ces critères, ainsi que des exemples d’utilisation et les recommandations, sont disponibles dans un fichier PDF.
 
-[![Bouton Télécharger](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) Recommandations en matière de marketing adapté aux applications du Windows Store (PDF, anglais)
+[![Bouton Télécharger](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) **Recommandations en matière de marketing adapté aux applications du WindowsStore (PDF, anglais)**
+
 
 ## <a name="badge-generator-and-images"></a>Images et générateur de badge
 
-Vous pouvez utiliser notre [Générateur de badge](http://go.microsoft.com/fwlink/p/?LinkID=534236) pour générer le code HTML qui affiche le badge Windows Store (dans la langue de votre choix) et les liens d’accès direct à la description de votre application dans le Windows Store. Vous pouvez également télécharger l’ensemble des images de badge (aux formats PNG et PDF) à partir du lien ci-dessous.
+Vous pouvez utiliser notre [Générateur de badge](http://go.microsoft.com/fwlink/p/?LinkID=534236) pour générer le code HTML qui affiche le badge Windows Store (dans la langue de votre choix) et les liens d’accès direct à la description de votre application dans le Windows Store.
 
-[![Bouton Télécharger](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) Toutes les images de badge
+Vous pouvez également télécharger l’ensemble des images de badge (aux formats PNG et PDF) à partir du lien ci-dessous.
+
+[![Bouton Télécharger](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) **Toutes les images de badge**
+
 
 ## <a name="device-images"></a>Images d’appareil
 
-Pour promouvoir votre application, vous pouvez afficher son aspect lors de son exécution sur un appareil Windows. Nous avons différentes images de châssis d'appareil que vous pouvez sélectionner, notamment des téléphones, des tablettes, des ordinateurs portables et des PC. Les meilleures pratiques et les spécifications techniques relatives à l’utilisation de ces images se trouvent dans les [Recommandations en matière de marketing adapté aux applications du Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=529769).
+Pour promouvoir votre application, vous pouvez afficher son aspect lors de son exécution sur un appareil Windows. Nous mettons à votre disposition différentes images de châssis d’appareil sélectionnables, notamment des téléphones, des tablettes, des portables et des PC. Les meilleures pratiques et les spécifications techniques relatives à l’utilisation de ces images se trouvent dans les [Recommandations en matière de marketing adapté aux applications du Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=529769).
 
-[![Bouton Télécharger](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) Image d’appareil Windows
+[![Bouton Télécharger](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Image d’appareil Windows**
 
 ## <a name="license-to-microsoft-marks"></a>Licence d’utilisation des marques Microsoft
 

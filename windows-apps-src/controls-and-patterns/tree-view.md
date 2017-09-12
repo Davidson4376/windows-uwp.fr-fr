@@ -4,16 +4,14 @@ Description: "Utilisez l’exemple de code d’arborescence pour créer une arbo
 title: Arborescence
 label: Tree view
 template: detail.hbs
-ms.openlocfilehash: 88e3e79b7ebdf06c200f3525095d7685f7e3e6dc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c7ad99d20fe30ea4b94ad62de45b3832aae3805e
+ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 07/20/2017
 ---
 # <a name="hierarchical-layout-with-treeview"></a>Disposition hiérarchique avec TreeView
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-<div class="microsoft-internal-note">
-Les lignes rouges à utiliser pour l’arborescence se trouvent dans le Design Depot: http://designdepotweb1/DesignDepot.FrontEnd/#/Dashboard/856
-</div>
 
 TreeView est un modèle de liste hiérarchique comportant des nœuds de développement et de réduction qui contiennent des éléments imbriqués. Ces derniers peuvent être des nœuds supplémentaires ou des éléments de liste standard. Vous pouvez utiliser un élément [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) pour générer une arborescence afin d’illustrer une structure de dossiers ou des relations imbriquées dans votre interface utilisateur.
 

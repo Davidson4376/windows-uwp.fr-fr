@@ -1,21 +1,26 @@
 ---
 author: Jwmsft
+redirect_url: https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview
 Description: "Assure la navigation de niveau supérieur tout en économisant l’espace de l’écran."
 title: "Recommandations en matière de volets de navigation"
 ms.assetid: 8FB52F5E-8E72-4604-9222-0B0EC6A97541
 label: Nav pane
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 2d48a92d5af75f8543f7b69ac59865e51bd334ee
-ms.sourcegitcommit: d1d53f5100edffe3f3ee57b853dc8cd1568fe7a2
-translationtype: HT
+ms.openlocfilehash: d5c838675eb8cb568f0dabd1c6b776a8a53d3bf4
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="nav-panes"></a>Volets de navigation
+
+Cet article a été déplacé ici: [Affichage Navigation](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview).
 
 Un volet de navigation est un modèle qui permet d’inclure de nombreux éléments de navigation de niveau supérieur tout en économisant l’espace de l’écran. Ce volet est largement utilisé pour les applications mobiles, mais il fonctionne également bien avec des écrans plus grands. Lorsqu’il est utilisé en superposition, le volet reste réduit et masqué tant que l’utilisateur n’appuie pas sur le bouton, ce qui est pratique pour les petits écrans. Lorsqu’il est utilisé en mode ancré, le volet reste ouvert, ce qui renforce son utilité s’il y a suffisamment d’espace dans l’écran.
 
@@ -24,7 +29,7 @@ Un volet de navigation est un modèle qui permet d’inclure de nombreux éléme
 
 **API importantes**
 
-* [**Classe SplitView**](https://msdn.microsoft.com/library/windows/apps/dn864360)
+* [Classe SplitView](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 ## <a name="is-this-the-right-pattern"></a>Est-ce le modèle approprié?
 
@@ -114,6 +119,3 @@ Pour optimiser [l’expérience d’interface utilisateur à 3m](http://go.micro
 * [Contrôle de mode Fractionné](split-view.md)
 * [Maître/détails](master-details.md)
 * [Notions de base sur la navigation](https://msdn.microsoft.com/library/windows/apps/dn958438)
- 
-
- 

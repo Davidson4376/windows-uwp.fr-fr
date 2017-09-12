@@ -1,17 +1,19 @@
 ---
-author: msatranjr
+author: normesta
 title: "Demander une clé d’authentification de cartes"
 description: "Votre application Windows universelle doit être authentifiée pour pouvoir utiliser le MapControl et les services cartographiques dans l’espace de noms Windows.Services.Maps."
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
-ms.author: misatran
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows10, uwp, clé d’authentification de cartes, contrôle de cartes"
-ms.openlocfilehash: 42078becbc5853787ca057dcbfb58b8d8de7967d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 7b964c19933db460b8f6b0cc7791165ad86adb6c
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="request-a-maps-authentication-key"></a>Demander une clé d’authentification de cartes
 
@@ -40,9 +42,9 @@ Pour créer une clé
 
 4.  Si vous n’avez pas encore de compte Bing Cartes, créez-en un. Renseignez les champs suivants : **Nom du compte**, **Nom du contact**, **Nom de la société**, **Adresse e-mail** et **Numéro de téléphone**. Après avoir accepté les conditions d’utilisation, cliquez sur **Créer**.
 
-5.  Dans le menu **Mon compte**, cliquez sur **Créer ou afficher des clés**.
+5.  Dans le menu **Mon compte**, cliquez sur **Mes clés**.
 
-6.  Cliquez sur le lien **Pour créer une clé**.
+6.  Si vous avez précédemment créé une clé, cliquez sur le lien pour créer une autre clé. Sinon, passez au formulaire Créer une clé.
 
 7.  Complétez le formulaire **Créer une clé**, puis cliquez sur **Créer**.
 

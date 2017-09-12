@@ -1,5 +1,5 @@
 ---
-author: payzer
+author: m-stahl
 title: "Référence des API des paramètres de développement Xbox Device Portal"
 description: "Découvrez comment accéder aux paramètres de développement Xbox."
 ms.author: wdg-dev-content
@@ -9,9 +9,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
-ms.openlocfilehash: 43e4bb289d12439bbc0f6de347d187b067288d51
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: dfde4c45a4aa5a520e0aa98cd7f31f7d84854e08
+ms.sourcegitcommit: 0e44f197e7e649d542ec3f67cd790a61dbe1226f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/07/2017
 ---
 # <a name="developer-settings-api-reference"></a>Informations de référence sur les API des paramètres de développement   
 Cette API vous permet d’accéder aux paramètres Xbox One utiles pour le développement.
@@ -39,12 +41,20 @@ GET | /ext/settings
 - Aucun
 
 **Réponse**   
-La réponse est un tableau de paramètres JSON contenant tous les paramètres. Chaque paramètre inclut les champs suivants:   
+La réponse est un tableau de paramètres JSON contenant tous les paramètres. Chaque paramètre inclut les champs suivants:
 
-Name: (chaîne) le nom du paramètre.   
-Value: (chaîne) la valeur du paramètre.   
+Name: (chaîne) le nom du paramètre.
+Value: (chaîne) la valeur du paramètre.
 RequiresReboot: («Oui» | «Non») ce champ indique si un redémarrage est nécessaire pour que le paramètre prenne effet.
-Category: (chaîne) la catégorie du paramètre.
+Désactivé: («Oui» | «Non») ce champ indique si le paramètre est désactivé et ne peut pas être modifié.
+Category: (chaîne) catégorie du paramètre.
+Type: («Texte» | «Nombre» | «Booléen» | «Sélection») ce champ indique le type d’un paramètre: texte saisi, valeur booléenne («vrai» ou «faux»), un nombre avec valeurs max et min ou une sélection dans une liste de valeurs spécifiques.
+
+Si le paramètre est un nombre: Min - (nombre) ce champ indique la valeur numérique minimale du paramètre.
+Max - (nombre) ce champ indique la valeur numérique maximale du paramètre.
+
+Si le paramètre est sélection: OptionsVariable - («Oui» | «Non») ce champ indique si les options sont variables, si les options valides peuvent changer sans redémarrage.
+Options - tableau JSON contenant les options de sélection valides sous forme de chaînes.
 
 **Code d’état**
 
@@ -80,12 +90,20 @@ GET | /ext/settings/\&lt;nom paramètre\&gt;
 - Aucun
 
 **Réponse**   
-La réponse est un objet JSON avec les champs suivants:   
+La réponse est un objet JSON avec les champs suivants:
 
-Name: (chaîne) le nom du paramètre.   
-Value: (chaîne) la valeur du paramètre.   
+Name: (chaîne) le nom du paramètre.
+Value: (chaîne) la valeur du paramètre.
 RequiresReboot: («Oui» | «Non») ce champ indique si un redémarrage est nécessaire pour que le paramètre prenne effet.
-Category: (chaîne) la catégorie du paramètre.
+Désactivé: («Oui» | «Non») ce champ indique si le paramètre est désactivé et ne peut pas être modifié.
+Category: (chaîne) catégorie du paramètre.
+Type: («Texte» | «Nombre» | «Booléen» | «Sélection») ce champ indique le type d’un paramètre: texte saisi, valeur booléenne («vrai» ou «faux»), un nombre avec valeurs max et min ou une sélection dans une liste de valeurs spécifiques.
+
+Si le paramètre est un nombre: Min - (nombre) ce champ indique la valeur numérique minimale du paramètre.
+Max - (nombre) ce champ indique la valeur numérique maximale du paramètre.
+
+Si le paramètre est sélection: OptionsVariable - («Oui» | «Non») ce champ indique si les options sont variables, si les options valides peuvent changer sans redémarrage.
+Options - tableau JSON contenant les options de sélection valides sous forme de chaînes.
 
 **Code d’état**
 
@@ -138,4 +156,3 @@ Code d’état HTTP      | Description
 **Familles d’appareils disponibles**
 
 * Windows Xbox
-

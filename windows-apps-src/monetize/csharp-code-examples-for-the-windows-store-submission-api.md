@@ -2,27 +2,27 @@
 author: mcleanbyron
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: "Servez-vous des exemples de code C# présentés dans cette section pour en savoir plus sur l’utilisation de l’API de soumission du Windows Store."
-title: "Exemples de code C# pour l’API de soumission"
+title: "Exemple de code C#: soumissions d'applications, d'extensions et de versions d’évaluation"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp, API de soumission du Windows Store, exemples de code
-ms.openlocfilehash: 59b9c0b2cc503a56e0a1c9a75ce5ef471983c699
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows10, uwp, API de soumission au Windows Store, exemples de code, C#
+ms.openlocfilehash: 77c0f2ddbe0e76ede2580129d7d0a0ae118b3554
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/09/2017
 ---
-# <a name="c-code-examples-for-the-submission-api"></a>Exemples de code C\# pour l’API de soumission
+# <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>Exemple de code C\#: soumissions d'applications, d'extensions et de versions d’évaluation
 
-Cet article fournit des exemples de code C# pour l’utilisation de l’*API de soumission du Windows Store*. Pour plus d’informations sur cette API, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
+Cet article fournit des exemples de code C# qui décrivent comment utiliser l’[API de soumission au Windows Store](create-and-manage-submissions-using-windows-store-services.md) pour les tâches suivantes:
 
-Ces exemples de code illustrent les tâches suivantes:
-
-* [Mettre à jour une soumission d’application](#update-app-submission)
+* [Créer une soumission d’applications](#create-app-submission)
 * [Créer une soumission d’extension](#create-add-on-submission)
 * [Mettre à jour une soumission d’extension](#update-add-on-submission)
-* [Mettre à jour une soumission de version d’évaluation de package](#update-flight-submission)
+* [Créer une soumission de version d’évaluation du package](#create-flight-submission)
 
 Vous pouvez passer en revue chaque exemple pour en savoir plus sur la tâche qu’elle illustre, ou vous pouvez générer tous les exemples de code de cet article dans une application console. Pour générer les exemples, créez une application console C# nommée **DeveloperApiCSharpSample** dans Visual Studio, copiez chaque exemple dans un fichier de code distinct dans le projet et générez le projet.
 
@@ -31,13 +31,13 @@ Vous pouvez passer en revue chaque exemple pour en savoir plus sur la tâche qu�
 Ces exemples utilisent les bibliothèques suivantes:
 
 * Microsoft.WindowsAzure.Storage.dll. Cette bibliothèque est disponible dans le [kit de développement logiciel Microsoft Azure SDK pour .NET](https://azure.microsoft.com/downloads/), ou vous pouvez l’obtenir en installant le [package NuGet WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage).
-* [Json.NET](http://www.newtonsoft.com/json) de Newtonsoft.
+* Package NuGet [Newtonsoft.Json](http://www.newtonsoft.com/json) de Newtonsoft.
 
 ## <a name="main-program"></a>Programme principal
 
 L’exemple suivant implémente un programme de ligne de commande qui appelle les autres exemples de méthode indiqués dans cet article pour illustrer les différentes façons d’utiliser l’API de soumission du Windows Store. Adaptez ce programme en fonction de vos besoins, comme suit:
 
-* Affectez les propriétés ```ApplicationId```, ```InAppProductId``` et ```FlightId``` à l’ID de l’application, de l’extension (également appelée «produit in-app» ou «produit dans l’application») et de la version d’évaluation du package que vous souhaitez gérer. Ces ID sont disponibles dans le tableau de bord du Centre de développement.
+* Affectez les propriétés ```ApplicationId```, ```InAppProductId``` et ```FlightId``` à l’ID de l’application, de l’extension et de la version d’évaluation du package que vous souhaitez gérer.
 * Affectez les propriétés ```ClientId``` et ```ClientSecret``` à l’ID client et à la clé de votre application, et remplacez la chaîne *tenantid* dans l’URL ```TokenEndpoint``` par l’ID de locataire pour votre application. Pour plus d’informations, consultez [Comment associer une application AzureAD à votre compte du Centre de développement Windows](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account)
 
 > [!div class="tabbedCodeSnippets"]
@@ -51,10 +51,10 @@ L’exemple d’application utilise la classe d’assistance ```ClientConfigurat
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/ClientConfiguration.cs#ClientConfiguration)]
 
-<span id="update-app-submission" />
-## <a name="update-an-app-submission"></a>Mettre à jour une soumission d’application
+<span id="create-app-submission" />
+## <a name="create-an-app-submission"></a>Créer une soumission d’applications
 
-L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans l’API de soumission du Windows Store pour mettre à jour une soumission d’application. La méthode ```RunAppSubmissionUpdateSample``` fournie dans cette classe crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développement Windows. Plus précisément, la méthode ```RunAppSubmissionUpdateSample``` effectue les tâches suivantes:
+L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans l’API de soumission au Windows Store pour mettre à jour une soumission d’applications. La méthode ```RunAppSubmissionUpdateSample``` fournie dans cette classe crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développement Windows. Plus précisément, la méthode ```RunAppSubmissionUpdateSample``` effectue les tâches suivantes:
 
 1. Pour commencer, la méthode [récupère les données de l’application indiquée](get-an-app.md).
 2. Ensuite, elle [supprime la soumission en attente de l’application](delete-an-app-submission.md), s’il en existe une.
@@ -67,9 +67,9 @@ L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans 
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs#AppSubmissionUpdateSample)]
 
 <span id="create-add-on-submission" />
-## <a name="create-a-new-add-on-submission"></a>Créer une soumission d’extension
+## <a name="create-an-add-on-submission"></a>Créer une soumission d’extension
 
-L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans l’API de soumission du Windows Store pour créer une soumission d’extension. Plus précisément, la méthode ```RunInAppProductSubmissionCreateSample``` fournie dans cette classe effectue les tâches suivantes:
+L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans l’API de soumission au Windows Store pour créer une soumission d’extension. Plus précisément, la méthode ```RunInAppProductSubmissionCreateSample``` fournie dans cette classe effectue les tâches suivantes:
 
 1. Pour commencer, la méthode [crée une extension](create-an-add-on.md).
 2. Ensuite, elle [crée une soumission pour la nouvelle extension](create-an-add-on-submission.md).
@@ -94,10 +94,10 @@ L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs#InAppProductSubmissionUpdateSample)]
 
-<span id="update-flight-submission" />
-## <a name="update-a-package-flight-submission"></a>Mettre à jour une soumission de version d’évaluation de package
+<span id="create-flight-submission" />
+## <a name="create-a-package-flight-submission"></a>Créer une soumission de version d’évaluation du package
 
-L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans l’API de soumission du Windows Store pour mettre à jour une soumission de version d’évaluation de package. La méthode ```RunFlightSubmissionUpdateSample``` fournie dans cette classe crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développement Windows. Plus précisément, la méthode ```RunFlightSubmissionUpdateSample``` effectue les tâches suivantes:
+L’exemple suivant implémente une classe qui utilise plusieurs méthodes dans l’API de soumission au Windows Store pour mettre à jour une soumission de version d’évaluation du package. La méthode ```RunFlightSubmissionUpdateSample``` fournie dans cette classe crée une soumission en clonant la dernière soumission publiée, puis met à jour et valide la soumission clonée dans le Centre de développement Windows. Plus précisément, la méthode ```RunFlightSubmissionUpdateSample``` effectue les tâches suivantes:
 
 1. Pour commencer, la méthode [récupère les données de la version d’évaluation du package indiquée](get-a-flight.md).
 2. Ensuite, elle [supprime la soumission en attente de la version d’évaluation du package](delete-a-flight-submission.md), s’il en existe une.

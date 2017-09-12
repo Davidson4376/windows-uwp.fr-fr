@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 493e491bd16b7346046394d66587788caf06db4f
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.openlocfilehash: 67714d0b7a95e1034486d39853c91c9a7590bfa5
+ms.sourcegitcommit: 45490bd85e6f8d247a041841d547ecac2ff48250
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/23/2017
 ---
 # <a name="guidelines-for-app-settings"></a>Recommandations en matière de paramètres d’application
 
@@ -97,9 +99,11 @@ Nous vous recommandons également d’ajouter un lien hypertexte à la page Coul
 
 ![Section «Choisir un mode»](images/appsettings_mode.png)
 
-<div class=”microsoft-internal-note”>
-Des recommandations détaillées présentant les chaînes de texte favorites pour la section «Choisir un mode» sont disponibles sur le site [UNI](http://uni/DesignDepot.FrontEnd/#/ProductNav/2543/0/dv/?t=Windows%7CControls%7CColorMode&f=RS2).
+<!--
+<div class="microsoft-internal-note">
+Detailed redlines showing preferred text strings for the "Choose a mode" section are available on [UNI](http://uni/DesignDepot.FrontEnd/#/ProductNav/2543/0/dv/?t=Windows%7CControls%7CColorMode&f=RS2).
 </div>
+-->
 
 ## <a name="about-section-and-give-feedback-button"></a>Section «À propos de» et bouton «Envoyer des commentaires»
 

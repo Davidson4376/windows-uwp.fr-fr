@@ -4,20 +4,22 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs."
 title: "Obtenir les données de signalement d’erreurs pour votre application"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp, services du Windows Store, API d&quot;analyse du WindowsStore, erreurs
-ms.openlocfilehash: dc5c4092368c0b395e42be122a9e0e7feec8f03e
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+keywords: windows10, uwp, services du Windows Store, API d'analyse du WindowsStore, erreurs
+ms.openlocfilehash: 68e54c955d865669907c68d7cf1ef5a0f8986d8d
+ms.sourcegitcommit: 7aabd2e59d45bbc5512dd4ddd9110ae62b79d552
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/19/2017
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>Obtenir les données de signalement d’erreurs pour votre application
 
 Utilisez cette méthode dans l’API d’analyse du WindowsStore pour récupérer le rapport complet des erreurs de votre application au formatJSON, correspondant à une période donnée et à d’autres filtres facultatifs. Ces informations sont également disponibles dans la section **Échecs** du [rapport d’intégrité](../publish/health-report.md) dans le tableau de bord du Centre de développement Windows.
 
-Vous pouvez récupérer des informations d’erreur supplémentaires à l’aide des méthodes [Obtenir les informations sur une erreur de votre application](get-details-for-an-error-in-your-app.md) et [Obtenir la trace de pile concernant une erreur dans votre application](get-the-stack-trace-for-an-error-in-your-app.md).
+Vous pouvez récupérer des informations d’erreur supplémentaires à l’aide des méthodes [obtenir des informations les erreurs](get-details-for-an-error-in-your-app.md), [obtenir la trace de la pile](get-the-stack-trace-for-an-error-in-your-app.md) et [télécharger le fichier CAB](download-the-cab-file-for-an-error-in-your-app.md).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -168,6 +170,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 * [Rapport d’intégrité](../publish/health-report.md)
 * [Obtenir les informations sur une erreur de votre application](get-details-for-an-error-in-your-app.md)
 * [Obtenir la trace de pile concernant une erreur dans votre application](get-the-stack-trace-for-an-error-in-your-app.md)
+* [Télécharger le fichier CAB concernant une erreur dans votre application](download-the-cab-file-for-an-error-in-your-app.md)
 * [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
 * [Obtenir des acquisitions d’applications](get-app-acquisitions.md)
 * [Obtenir des acquisitions d’extensions](get-in-app-acquisitions.md)

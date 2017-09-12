@@ -1,11 +1,13 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Device Portal pour HoloLens
 description: "Découvrez comment Windows Device Portal pour HoloLens vous permet de configurer et de gérer à distance votre appareil HoloLens."
-ms.openlocfilehash: 00dec1110ba8cc27f759f05bc4a6f352a235d18d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 5272d6e1de4f684bac84d8eda6a5c56e08a58e24
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="device-portal-for-hololens"></a>Device Portal pour HoloLens
 

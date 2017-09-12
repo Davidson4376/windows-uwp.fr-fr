@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
 title: "Énumérer les appareils"
 description: "L’espace de noms d’énumération vous permet de rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau."
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 1bf6b8fc87061625b8bc206faf43da99a6b11bf5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: afd98ed5f522c4227ab199f2405c7976210478c3
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="enumerate-devices"></a>Énumérer les appareils
 
@@ -154,7 +156,7 @@ Lors de l’énumération d’objets **AssociationEndpoint**, **AssociationEndpo
 ## <a name="save-a-device-for-later-use"></a>Enregistrer un appareil en vue d’une utilisation ultérieure
 
 
-Tout objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) est identifié de façon unique par une combinaison de deux éléments d’information : [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) et [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx). Si vous conservez ces deux éléments d’information, vous pouvez recréer l’objet **DeviceInformation** après sa perte en fournissant ces informations à [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx). Dans ce cas, vous pouvez enregistrer les préférences utilisateur pour un appareil qui s’intègre à votre application.
+Tout objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) est identifié de façon unique par une combinaison de deux éléments d’information : [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) et [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx). Si vous conservez ces deux éléments d’information, vous pouvez recréer un objet **DeviceInformation** après sa perte en fournissant ces informations à [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx). Dans ce cas, vous pouvez enregistrer les préférences utilisateur pour un appareil qui s’intègre à votre application.
 
 
  

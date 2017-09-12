@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: "Utiliser l’inclinomètre"
 description: "Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet."
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 6544d4a598edb12d8d114bb27fac84831ce31d14
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b0fcc9e45d1a9e1921e77ce8b59817a5ca1c0dd2
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="use-the-inclinometer"></a>Utiliser l’inclinomètre
 
@@ -21,6 +23,10 @@ translationtype: HT
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766)
+
+**Exemple**
+
+-   Pour une implémentation plus complète, consultez l’[exemple d'inclinomètre](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer).
 
 Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet.
 
@@ -164,7 +170,7 @@ _inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer,
 InclinometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code XAML du projet.
+Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le codeXAML du projet.
 
 ```xml
 <TextBlock HorizontalAlignment="Left" Height="21" Margin="0,8,0,0" TextWrapping="Wrap" Text="Pitch: " VerticalAlignment="Top" Width="45" Foreground="#FFF9F4F4"/>
@@ -175,6 +181,3 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
  <TextBlock x:Name="txtYaw" HorizontalAlignment="Left" Height="19" Margin="55,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" Foreground="#FFF6F2F2"/>
 ```
 
- ## <a name="related-topics"></a>Rubriques connexes
-
-* [Exemple d’inclinomètre](http://go.microsoft.com/fwlink/p/?linkid=241380)

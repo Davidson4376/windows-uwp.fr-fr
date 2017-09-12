@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Device Portal pour Bureau
 description: "Découvrez comment WindowsDevicePortal ouvre les diagnostics et l’automatisation sur votre bureau Windows."
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 7b8b396078d59cc2ab3180e9af8b6017fd5edbda
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 32155bfbb676a5f79dd4b1629f0a88368da36828
+ms.sourcegitcommit: 0fa9ae00117e8e6b04ed38956e605bb74c1261c6
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="device-portal-for-desktop"></a>DevicePortal pour le bureau
 
@@ -76,37 +78,11 @@ Si vous souhaitez sélectionner des numéros de port pour DevicePortal (par exem
 
 - Sous HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service
     - Utiliser des ports dynamiques: un DWORD requis. Définissez ce paramètre sur0 pour conserver les numéros de port que vous avez choisis.
-    - Port Http: un DWORD requis. Contient le numéro de port que DevicePortal va écouter pour les connexions HTTP.    
+    - Port Http: un DWORD requis. Contient le numéro de port que DevicePortal va écouter pour les connexions HTTP.  
     - Port Https: un DWORD requis. Contient le numéro de port que Device Portal va écouter pour les connexions HTTPS.
 
-## <a name="failure-to-install-developer-mode-package-or-launch-device-portal"></a>Échec de l’installation du package Mode développeur ou du lancement de Device Portal
-Parfois, en raison de problèmes réseau ou de compatibilité, le Mode développeur ne s’installe pas correctement. Le package en mode développeur est nécessaire pour le déploiement **à distance** (DevicePortal et SSH), mais pas pour le développement local.  Même si vous rencontrez ces problèmes, vous pouvez toujours déployer votre application localement à l’aide de VisualStudio. 
+## <a name="failure-to-install-developer-mode-package"></a>Échec de l’installation du package Mode développeur
+Parfois, en raison de problèmes réseau ou de compatibilité, le Mode développeur ne s’installe pas correctement. Le package Mode développeur est nécessaire pour un déploiement **à distance** sur le PC - à l’aide de Device Portal depuis un navigateur ou de la fonction Découverte d’appareils pour activer SSH--mais pas pour un développement local.  Même si vous rencontrez ces problèmes, vous pouvez toujours déployer votre application localement à l’aide de VisualStudio. 
 
-Voir le forum [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) pour rechercher des solutions de contournement à ces problèmes et bien plus encore. 
+Voir le forum [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) et la [page sur le Mode développeur](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package) pour rechercher des solutions de contournement à ces problèmes et bien plus encore. 
 
-### <a name="failed-to-locate-the-package"></a>Échec de la localisation du package
-
-«Le package Mode développeur n’a pas pu être localisé dans la mise à jour Windows. Code d’erreur 0x001234. En savoir plus»   
-
-Cette erreur peut se produire en raison d’un problème de connectivité réseau, des paramètres d’Entreprise ou d’un package manquant. 
-
-Pour résoudre ce problème:
-
-1. Assurez-vous que votre ordinateur est connecté à Internet. 
-2. Si vous utilisez un ordinateur appartenant à un domaine, adressez-vous à votre administrateur réseau. 
-3. Recherchez les mises à jour de Windows dans Paramètres &gt; Mises à jour et sécurité &gt; Mises à jour Windows.
-4. Vérifiez que le package Mode développeur Windows est présent dans Paramètres &gt; Système &gt; Applications et fonctionnalités &gt; Gérer les fonctionnalités facultatives &gt; Ajouter une fonctionnalité. S’il n’est pas présent, Windows ne peut pas trouver le package approprié pour votre ordinateur. 
-
-Après avoir suivi les étapes ci-dessus, désactivez puis réactivez le Mode développeur pour vérifier le correctif. 
-
-
-### <a name="failed-to-install-the-package"></a>Échec de l’installation du package
-
-«Échec d’installation du package Mode développeur. Code d’erreur 0x001234  En savoir plus»
-
-Cette erreur peut se produire en raison d’incompatibilités entre votre version de Windows et le package Mode développeur. 
-
-Pour résoudre ce problème:
-
-1. Recherchez les mises à jour de Windows dans Paramètres &gt; Mises à jour et sécurité &gt; Mises à jour Windows.
-2. Redémarrez votre ordinateur pour vérifier que toutes les mises à jour sont appliquées.

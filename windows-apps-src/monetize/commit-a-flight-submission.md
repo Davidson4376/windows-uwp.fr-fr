@@ -4,14 +4,16 @@ ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
 description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour valider une soumission de version d’évaluation de package nouvelle ou mise à jour vers le Centre de développement Windows."
 title: "Valider une soumission de version d’évaluation de package"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows10, uwp, API de soumission du Windows Store, valider une soumission de version d&quot;évaluation"
-ms.openlocfilehash: 5171fb89b9485ed314a8c7f0322db89019e9d512
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "windows10, uwp, API de soumission du Windows Store, valider une soumission de version d'évaluation"
+ms.openlocfilehash: e0fd115dc5e394abe6c0353ba41ebc35fde086c4
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="commit-a-package-flight-submission"></a>Valider une soumission de version d’évaluation de package
 
@@ -29,8 +31,6 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * [Créez une soumission de version d’évaluation de package ](create-a-flight-submission.md), puis [mettez à jour cette soumission](update-a-flight-submission.md) avec les éventuelles modifications nécessaires apportées aux données de soumission.
-
->**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
 ## <a name="request"></a>Requête
 
@@ -56,7 +56,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | chaîne | Obligatoire. L’ID Windows Store de l’application qui contient la soumission de version d’évaluation de package à valider. L’ID Windows Store est disponible dans le tableau de bord du Centre de développement.  |
-| flightId | chaîne | Obligatoire. ID de la version d’évaluation de package qui contient la soumission à valider. Cet ID est disponible dans le tableau de bord du Centre de développement et figure également dans les données de réponse des requêtes pour [créer une version d’évaluation de package](create-a-flight.md) ou [obtenir des versions d’évaluation de package pour une application](get-flights-for-an-app.md).  |
+| flightId | chaîne | Obligatoire. ID de la version d’évaluation du package qui contient la soumission à valider. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md).  |
 | submissionId | chaîne | Obligatoire. ID de la soumission à valider. Cet ID est disponible dans le tableau de bord du Centre de développement et figure également dans les données de réponse des requêtes pour [créer une soumission de version d’évaluation de package](create-a-flight-submission.md).  |
 
 <span/>

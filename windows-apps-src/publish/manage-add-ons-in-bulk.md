@@ -3,21 +3,24 @@ author: jnHs
 Description: "En gérant vos modules complémentaires en bloc, vous pouvez en modifier plusieurs simultanément, plutôt que de soumettre chaque mise à jour séparément."
 title: "Gérer les modules complémentaires en bloc"
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 6d1ffcc1-b3c6-4e2f-8fbe-d243b20a6272
-ms.openlocfilehash: d5ef4c90aa9bb66ff6589d3dbe7aa6491fbf80a5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0d81130165d5f98962c9ab18f36a05c38c3ca246
+ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="manage-add-ons-in-bulk"></a>Gérer les modules complémentaires en bloc
 
-> **Important** Pour le moment, cette fonctionnalité est disponible uniquement pour les comptes de développeur qui ont rejoint le [Programme Insider du Centre de développement](dev-center-insider-program.md). L’implémentation de cette fonctionnalité peut évoluer avant qu’elle ne soit disponible pour tous les développeurs. Cette documentation préliminaire fournit certaines informations de base sur le fonctionnement de la fonctionnalité.
+> [!IMPORTANT]
+> Cette fonctionnalité était auparavant disponible pour les comptes de développeur ayant rejoint le [Programme Insider du Centre de développement](dev-center-insider-program.md) et n’est pas prise en charge pour l’instant.
 
-En gérant vos modules complémentaires en bloc, vous pouvez en modifier plusieurs simultanément, plutôt que de soumettre chaque mise à jour séparément. Vous pouvez accéder à cette fonctionnalité à partir de la page de vue d’ensemble de votre application en cliquant sur **Gérer les modules complémentaires en bloc**.
+En gérant vos extensions en bloc, vous pouvez en modifier plusieurs simultanément, plutôt que de soumettre chaque mise à jour séparément. Vous pouvez accéder à cette fonctionnalité à partir de la page de vue d’ensemble de votre application en cliquant sur **Gérer les modules complémentaires en bloc**.
 
 ## <a name="export-current-add-on-info"></a>Exportation des informations actuelles sur les modules complémentaires
 
@@ -30,17 +33,17 @@ Le fichier .csv contient les colonnes suivantes:
 | Nom de la colonne               | Description                            | Obligatoire?      |
 |---------------------------|----------------------------------|----------------------|
 | ID de produit    |  [L’ID de produit](set-your-add-on-product-id.md#product-id) unique du module complémentaire.  | Oui. Ne peut pas être modifié après la publication du module complémentaire. |
-| Action |L’action que vous souhaitez appliquer lorsque vous importez le modèle. Les valeurs prises en charge sont **Submit** (pour soumettre un nouveau module complémentaire ou mettre à jour un module complémentaire déjà publié) et **CreateDraft** (pour enregistrer les modifications sans les soumettre au WindowsStore). |     Oui |
-| Type de produit    | Le [type de produit](set-your-add-on-product-id.md#product-type) du module complémentaire. Les valeurs prises en charge sont **Consumable** ou **Durable**. |    Oui. Ne peut pas être modifié après la publication du module complémentaire. |
-| Durée de vie du produit    | Pour un module complémentaire de type Durable, il s’agit soit de **Forever** (pour un produit qui n’expire jamais) soit d’une durée définie. Les valeurs de durée possibles sont: **1day, 3days, 5days, 7days, 14days, 30days, 60days, 90days, 180days, 365days**    | Oui (si le type de produit est Durable) |
-| Type de contenu    | Le [type de contenu](enter-add-on-properties.md#content-type) du module complémentaire. Pour la plupart des modules complémentaires, il s’agit de **ElectronicSoftwareDownload**. Les autres valeurs possibles sont: **ElectronicBooks, ElectronicMagazineSingleIssue, ElectronicNewspaperSingleIssue, MusicDownload, MusicStreaming, OnlineDataStorageServices, VideoDownload, VideoStreaming, SoftwareAsAService** |    Oui |
-| Balise    | Informations facultatives de [balise](enter-add-on-properties.md#custom-developer-data) (également appelées **données personnalisés du développeur**) utilisées dans l’implémentation de votre application. | Non |
-| Prix de base    | Le [niveau de prix](set-add-on-pricing-and-availability.md#base-price) auquel vous souhaitez proposer le module complémentaire. Doit avoir la valeur **Free** ou un niveau de prix valide au format **0.99USD**. |    Oui |
-| Date de publication    | La date à laquelle vous souhaitez publier le module complémentaire. Les valeurs possibles sont **Immediate**, **Manual**, ou une chaîne de date conforme à la [norme ISO8601](http://go.microsoft.com/fwlink/p/?LinkId=817237). | Oui |
-| Titres    | Le nom que les clients verront pour le module complémentaire, précédé du code de langue et d’un point-virgule. Par exemple, pour utiliser le titre «Exemple de titre» en anglais/États-Unis, vous devez saisir *en-us;Exemple de titre*. Séparez les titres supplémentaires pour d’autres langues par des points-virgules. Chaque titre doit comporter au maximum 100caractères.     | Oui |
-|Descriptions    | Informations supplémentaires facultatives à présenter aux clients, précédées du code langue-région et d’un point-virgule. Par exemple, pour utiliser la description «Il s’agit d’un exemple» en anglais/États-Unis, vous devez saisir *en-us;Il s’agit d’un exemple*. Séparez les titres supplémentaires pour d’autres langues par des points-virgules. Chaque description doit comporter au maximum 200caractères.    | Non |
-| Marchés |    Un ou plusieurs [marchés](define-pricing-and-market-selection.md#windows-store-consumer-markets) sur lesquels vous souhaitez proposer le module complémentaire. Séparez les marchés par des points-virgules. |    Oui |
-|Mots clés |    [Mots-clés](enter-add-on-properties.md#keywords) facultatifs utilisés pour l’implémentation de votre application. | Non |
+| Action |L’action que vous souhaitez appliquer lorsque vous importez le modèle. Les valeurs prises en charge sont **Submit** (pour soumettre un nouveau module complémentaire ou mettre à jour un module complémentaire déjà publié) et **CreateDraft** (pour enregistrer les modifications sans les soumettre au WindowsStore). |  Oui |
+| Type de produit  | Le [type de produit](set-your-add-on-product-id.md#product-type) du module complémentaire. Les valeurs prises en charge sont **Consumable** ou **Durable**. |   Oui. Ne peut pas être modifié après la publication du module complémentaire. |
+| Durée de vie du produit  | Pour un module complémentaire de type Durable, il s’agit soit de **Forever** (pour un produit qui n’expire jamais) soit d’une durée définie. Les valeurs de durée possibles sont: **1day, 3days, 5days, 7days, 14days, 30days, 60days, 90days, 180days, 365days**    | Oui (si le type de produit est Durable) |
+| Type de contenu  | Le [type de contenu](enter-add-on-properties.md#content-type) du module complémentaire. Pour la plupart des modules complémentaires, il s’agit de **ElectronicSoftwareDownload**. Les autres valeurs possibles sont: **ElectronicBooks, ElectronicMagazineSingleIssue, ElectronicNewspaperSingleIssue, MusicDownload, MusicStreaming, OnlineDataStorageServices, VideoDownload, VideoStreaming, SoftwareAsAService** |    Oui |
+| Balise   | Informations facultatives de [balise](enter-add-on-properties.md#custom-developer-data) (également appelées **données personnalisés du développeur**) utilisées dans l’implémentation de votre application. | Non |
+| Prix de base    | Le niveau de prix auquel vous souhaitez proposer le module complémentaire. Doit avoir la valeur **Free** ou un niveau de prix valide au format **0.99USD**. |  Oui |
+| Date de publication  | La date à laquelle vous souhaitez publier le module complémentaire. Les valeurs possibles sont **Immediate**, **Manual**, ou une chaîne de date conforme à la [norme ISO8601](http://go.microsoft.com/fwlink/p/?LinkId=817237). | Oui |
+| Titres    | Le nom que les clients verront pour le module complémentaire, précédé du code de langue et d’un point-virgule. Par exemple, pour utiliser le titre «Exemple de titre» en anglais/États-Unis, vous devez saisir *en-us;Exemple de titre*. Séparez les titres supplémentaires pour d’autres langues par des points-virgules. Chaque titre doit comporter au maximum 100caractères.  | Oui |
+|Descriptions   | Informations supplémentaires facultatives à présenter aux clients, précédées du code langue-région et d’un point-virgule. Par exemple, pour utiliser la description «Il s’agit d’un exemple» en anglais/États-Unis, vous devez saisir *en-us;Il s’agit d’un exemple*. Séparez les titres supplémentaires pour d’autres langues par des points-virgules. Chaque description doit comporter au maximum 200caractères.    | Non |
+| Marchés | Un ou plusieurs [marchés](define-pricing-and-market-selection.md#windows-store-consumer-markets) sur lesquels vous souhaitez proposer le module complémentaire. Séparez les marchés par des points-virgules. |  Oui |
+|Mots clés | [Mots-clés](enter-add-on-properties.md#keywords) facultatifs utilisés pour l’implémentation de votre application. | Non |
 
 ## <a name="import-add-ons"></a>Importation des modules complémentaires
 

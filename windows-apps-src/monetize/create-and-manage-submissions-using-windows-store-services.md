@@ -4,19 +4,21 @@ ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: "L’API de soumission du Windows Store permet de créer et de gérer par programmation les soumissions d’application inscrites dans le compte du Centre de développement Windows."
 title: "Créer et gérer des soumissions"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, API de soumission du Windows Store
-ms.openlocfilehash: ca8bb623d06da0001b1b0751a5ac1ccc310bbd84
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.openlocfilehash: cea6f7c1f542fa91506063331e8c68345c4cca54
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="create-and-manage-submissions"></a>Créer et gérer des soumissions
 
 
-L’*API de soumission du Windows Store* vous permet d’interroger et de créer par programmation des soumissions pour des applications, des extensions (également connue sous le nom PIA, produit in-app) et des versions d’évaluation de package pour votre compte Centre de développement Windows ou celui de votre organisation. Cette API est utile si votre compte gère beaucoup d’applications ou d’extensions et que vous voulez automatiser et optimiser le processus de soumission de ces ressources. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
+L’*API de soumission du Windows Store* vous permet d’interroger et de créer par programmation des soumissions pour des applications, des extensions et des versions d’évaluation de package pour votre compte personnel du Centre de développement Windows ou celui de votre d’organisation. Cette API est utile si votre compte gère beaucoup d’applications ou d’extensions et que vous voulez automatiser et optimiser le processus de soumission de ces ressources. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
 
 Les étapes suivantes décrivent le processus complet d’utilisation de l’API de soumission du Windows Store:
 
@@ -26,13 +28,11 @@ Les étapes suivantes décrivent le processus complet d’utilisation de l’API
 
 
 <span id="not_supported" />
->**Remarques importantes**
+> [!Important]
+> Si vous utilisez cette API pour créer une soumission pour une application, une version d'évaluation d'un package ou un module complémentaire, assurez-vous d'utiliser exclusivement l'API pour apporter d'autres modifications à la soumission, sans passer par le tableau de bord du Centre de développement. Si vous passez par le tableau de bord pour modifier une soumission initialement créée via l'API, vous ne pourrez plus modifier ou valider cette soumission à l'aide de l'API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
 
-> * Cette API ne peut être utilisée que pour les comptes du Centre de développement Windows qui en ont l’autorisation. L’octroi de cette autorisation se fait en plusieurs étapes. Elle est accordée aux comptes de développeur, et tous les comptes n’en bénéficient pas pour le moment. Pour demander un accès anticipé, connectez-vous au tableau de bord du Centre de développement, cliquez sur **Commentaires** au bas du tableau de bord, sélectionnez **API de soumission** dans la zone de commentaires, puis soumettez votre demande. Vous recevrez un message électronique dès que cette autorisation sera accordée à votre compte.
-<br/><br/>
->* Si vous utilisez cette API pour créer une soumission pour une application, une version d'évaluation d'un package ou un module complémentaire, assurez-vous d'utiliser exclusivement l'API pour apporter d'autres modifications à la soumission, sans passer par le tableau de bord du Centre de développement. Si vous passez par le tableau de bord pour modifier une soumission initialement créée via l'API, vous ne pourrez plus modifier ou valider cette soumission à l'aide de l'API. Dans certains cas, la soumission non validée peut rester définie sur l'état d'erreur. Si cela se produit, vous devez supprimer la soumission et en créer une nouvelle.
-<br/><br/>
-> * Cette API ne peut pas être utilisée avec les applications ou les extensions qui utilisent certaines des fonctionnalités introduites au tableau de bord du Centre de développement en août 2016, comme notamment les mises à jour d’applications obligatoires et les extensions consommables gérées par le Store. Si vous utilisez l’API de soumission du Windows Store avec une application ou une extension qui utilise l’une de ces fonctionnalités, l’API retourne le code d’erreur409. Dans ce cas, vous devez utiliser le tableau de bord pour gérer les soumissions pour l’application ou l’extension.
+> [!NOTE]
+Cette API ne peut pas être utilisée avec les applications ou les extensions qui utilisent certaines des fonctionnalités introduites au tableau de bord du Centre de développement en août 2016, comme notamment les mises à jour d’applications obligatoires et les extensions consommables gérées par le Store. Si vous utilisez l’API de soumission du Windows Store avec une application ou une extension qui utilise l’une de ces fonctionnalités, l’API retourne le code d’erreur409. Dans ce cas, vous devez utiliser le tableau de bord pour gérer les soumissions pour l’application ou l’extension.
 
 
 <span id="prerequisites" />
@@ -40,7 +40,7 @@ Les étapes suivantes décrivent le processus complet d’utilisation de l’API
 
 Avant d’écrire le code d’appel de l’API de soumission du Windows Store, vérifiez que vous remplissez bien les conditions préalables suivantes.
 
-* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un annuaire Azure AD dans le Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users) sans frais supplémentaires.
+* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un annuaire Azure AD dans le Centre de développement](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account) sans frais supplémentaires.
 
 * Vous devez [associer une application Azure AD à votre compte du Centre de développement Windows](#associate-an-azure-ad-application-with-your-windows-dev-center-account) et obtenir vos ID de locataire, ID client et clé. Vous avez besoin de ces valeurs pour obtenir un jeton d’accès Azure AD, qui vous servira dans les appels à l’API de soumission du Windows Store.
 
@@ -59,17 +59,18 @@ Avant d’écrire le code d’appel de l’API de soumission du Windows Store, v
 <span id="associate-an-azure-ad-application-with-your-windows-dev-center-account" />
 ### <a name="how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account"></a>Comment associer une application Azure AD à votre compte du Centre de développement Windows
 
-Avant de pouvoir utiliser l’API de soumission du Windows Store, vous devez associer une application Azure AD à votre compte du Centre de développement, récupérer l’ID de locataire et l’ID client pour l’application et générer une clé. L’application Azure AD est l’application ou le service à partir duquel vous allez appeler l’API de soumission du Windows Store. Vous avez besoin de l’ID de locataire, de l’ID client et de la clé pour obtenir le jeton d’accès Azure AD à transmettre à l’API.
+Avant de pouvoir utiliser l’API de soumission du Windows Store, vous devez associer une application Azure AD à votre compte du Centre de développement, récupérer l’ID de locataire et l’ID client pour l’application et générer une clé. L’application Azure AD est l’application ou le service à partir duquel vous allez appeler l’API de soumission du Windows Store. Vous avez besoin de l’ID de locataire, de l’ID client et de la clé pour obtenir le jeton d’accès AzureAD à transmettre à l’API.
 
->**Remarque**&nbsp;&nbsp;Vous n’avez besoin d’effectuer cette tâche qu’une seule fois. Une fois que vous avez l’ID de locataire, l’ID client et la clé à disposition, vous pouvez les réutiliser chaque fois que vous avez besoin de créer un nouveau jeton d’accès Azure AD.
+> [!NOTE]
+> Cette tâche ne doit être effectuée qu’une seule fois. Une fois que vous avez l’ID de locataire, l’ID client et la clé à disposition, vous pouvez les réutiliser chaque fois que vous avez besoin de créer un nouveau jeton d’accès Azure AD.
 
-1.  Dans le Centre de développement, accédez à vos **Paramètres du compte**, cliquez sur **Gérer les utilisateurs**, puis associez le compte du Centre de développement de votre organisation à son annuaire Azure AD. Pour obtenir des instructions détaillées, voir [Gérer les utilisateurs de comptes](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users).
+1.  Dans le Centre de développement, accédez à vos **Paramètres du compte**, cliquez sur **Gérer les utilisateurs**, puis [associez le compte du Centre de développement de votre organisation à son annuaire Azure AD](../publish/associate-azure-ad-with-dev-center.md).
 
-2.  Dans la page **Gérer les utilisateurs**, cliquez sur **Ajouter des applications Azure AD**, ajoutez l’application Azure AD qui représente l’application ou le service que vous allez utiliser pour accéder aux soumissions pour votre compte du Centre de développement, puis attribuez-lui le rôle **Gestionnaire**. Si cette application existe déjà dans votre annuaire AzureAD, vous pouvez la sélectionner dans la page **Ajouter des applications Azure AD** pour l’ajouter à votre compte du Centre de développement. Sinon, vous pouvez créer une application Azure AD dans la page **Ajouter des applications Azure AD**. Pour plus d’informations, voir [Ajouter et gérer des applications Azure AD](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications).
+2.  Dans la page **Gérer les utilisateurs**, cliquez sur **Ajouter des applications Azure AD**, ajoutez l’application Azure AD qui représente l’application ou le service que vous allez utiliser pour accéder aux soumissions pour votre compte du Centre de développement, puis attribuez-lui le rôle **Gestionnaire**. Si cette application existe déjà dans votre annuaire AzureAD, vous pouvez la sélectionner dans la page **Ajouter des applications Azure AD** pour l’ajouter à votre compte du Centre de développement. Sinon, vous pouvez créer une application Azure AD dans la page **Ajouter des applications Azure AD**. Pour plus d’informations, consultez [Ajouter des applications AzureAD à votre compte du Centre de développement](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications).
 
 3.  Revenez à la page **Gérer les utilisateurs**, cliquez sur le nom de votre application Azure AD pour accéder aux paramètres de l’application, puis notez les valeurs des champs **ID de locataire** et **ID client**.
 
-4. Cliquez sur **Ajouter une clé**. Dans l’écran suivant, notez la valeur du champ **Clé**. Vous ne pourrez plus accéder à ces informations une fois que vous aurez quitté cette page. Pour en savoir plus, consultez les informations sur la gestion des clés dans l’article [Ajouter et gérer des applications Azure AD](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications).
+4. Cliquez sur **Ajouter une clé**. Dans l’écran suivant, notez la valeur du champ **Clé**. Vous ne pourrez plus accéder à ces informations une fois que vous aurez quitté cette page. Pour plus d’informations, voir [Gérer les clés pour une application Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys).
 
 <span id="obtain-an-azure-ad-access-token" />
 ## <a name="step-2-obtain-an-azure-ad-access-token"></a>Étape2: Obtenir un jeton d’accès Azure AD
@@ -100,7 +101,8 @@ Pour voir des exemples d’utilisation de code C#, Java ou Python pour obtenir u
 
 À partir du moment où vous disposez d’un jeton d’accès Azure AD, vous pouvez appeler des méthodes dans l’API de soumission du Windows Store. L’API propose diverses méthodes qui sont regroupées dans des scénarios pour applications, extensions et versions d’essai de package. Pour créer ou mettre à jour des soumissions, il convient généralement d’appeler plusieurs méthodes de l’API de soumission du Windows Store dans un ordre spécifique. Pour plus d’informations sur chaque scénario et sur la syntaxe de chacune de ces méthodes, voir les articles indiqués dans le tableau suivant.
 
->**Remarque**&nbsp;&nbsp;Après avoir obtenu un jeton d’accès, vous avez 60minutes pour appeler des méthodes dans l’API de soumission du Windows Store. Passé ce délai, il expire.
+> [!NOTE]
+> Après avoir obtenu un jeton d’accès, vous avez 60minutes pour appeler des méthodes dans l’API de soumission au Windows Store. Passé ce délai, il expire.
 
 | Scénario       | Description                                                                 |
 |---------------|----------------------------------------------------------------------|
@@ -111,13 +113,17 @@ Pour voir des exemples d’utilisation de code C#, Java ou Python pour obtenir u
 <span id="code-samples"/>
 ## <a name="code-examples"></a>Exemples de code
 
-Les articles suivants fournissent des exemples de code détaillés qui montrent comment utiliser l’API de soumission du Windows Store dans différents langages de programmation:
+Les articles suivants fournissent des exemples de code détaillés qui montrent comment utiliser l’API de soumission au Windows Store dans différents langages de programmation:
 
-* [Exemples de code C#](csharp-code-examples-for-the-windows-store-submission-api.md)
-* [Exemples de code Java](java-code-examples-for-the-windows-store-submission-api.md)
-* [Exemples de code Python](python-code-examples-for-the-windows-store-submission-api.md)
+* [Exemple de code C#: soumissions d'applications, d'extensions et de versions d’évaluation](csharp-code-examples-for-the-windows-store-submission-api.md)
+* [Exemple de code C#: soumission d’applications avec options de jeu et bandes-annonces](csharp-code-examples-for-submissions-game-options-and-trailers.md)
+* [Exemple de code Java: soumissions d'applications, d'extensions et de versions d’évaluation](java-code-examples-for-the-windows-store-submission-api.md)
+* [Exemple de code Java: soumission d’applications avec options de jeu et bandes-annonces](java-code-examples-for-submissions-game-options-and-trailers.md)
+* [Exemple de code Python: soumissions d'applications, d'extensions et de versions d’évaluation](python-code-examples-for-the-windows-store-submission-api.md)
+* [Exemple de code Python: soumission d’applications avec options de jeu et bandes-annonces](python-code-examples-for-submissions-game-options-and-trailers.md)
 
->**Remarque**&nbsp;&nbsp;En complément des exemples de code répertoriés ci-dessus, nous fournissons également un module PowerShell OpenSource qui implémente une interface de ligne de commande sur l'API de soumission du WindowsStore. Ce module est appelé [StoreBroker](https://aka.ms/storebroker). Vous pouvez utiliser ce module pour gérer les soumissions de votre application, de votre version et de vos modules complémentaires à partir de la ligne de commande, en lieu et place de l'appel direct de l'API de soumission du WindowsStore. Sinon, vous pouvez simplement parcourir la source pour consulter des exemples supplémentaires d'appel de cette API. Le module StoreBroker est activement utilisé au sein de Microsoft en tant que vecteur principal de soumission de nombreuses applications internes dans le WindowsStore. Pour plus d'informations, consultez notre [page StoreBroker sur GitHub](https://aka.ms/storebroker).
+> [!NOTE]
+> Outre les exemples de code répertoriés ci-dessus, nous fournissons également un module PowerShell OpenSource qui implémente une interface de ligne de commande sur l’API de soumission au WindowsStore. Ce module est appelé [StoreBroker](https://aka.ms/storebroker). Vous pouvez utiliser ce module pour gérer les soumissions de votre application, de votre version et de vos modules complémentaires à partir de la ligne de commande, en lieu et place de l'appel direct de l'API de soumission du WindowsStore. Sinon, vous pouvez simplement parcourir la source pour consulter des exemples supplémentaires d'appel de cette API. Le module StoreBroker est activement utilisé au sein de Microsoft en tant que vecteur principal de soumission de nombreuses applications internes dans le WindowsStore. Pour plus d'informations, consultez notre [page StoreBroker sur GitHub](https://aka.ms/storebroker).
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 

@@ -6,14 +6,20 @@ ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: b033c58fed79db197858db99d71ad6a174a9a662
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: ksulliv
+dev-contact: joyate
+doc-status: Published
+ms.openlocfilehash: 570aa40b691b6ad259ba381a6ef6060b430787a1
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="calendar-view"></a>Affichage Calendrier
 
@@ -21,14 +27,7 @@ translationtype: HT
 
 Un affichage Calendrier permet à un utilisateur d’afficher un calendrier qu’il peut parcourir par mois, par année ou par décennie, et d’interagir avec celui-ci. Un utilisateur peut sélectionner une seule date ou une plage de dates. Il n’y a pas de surface de sélection et le calendrier est toujours visible. 
 
-
-<div class="important-apis" >
-<b>API importantes</b><br/>
-<ul>
-<li>[**Classe CalendarView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</li>
-<li>[**Événement SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)</li>
-</ul>
-</div>
+> **API importantes**: [classe CalendarView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx), [événement SelectedDatesChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)
 
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
@@ -40,7 +39,7 @@ Pour plus d’informations sur le choix du contrôle approprié, voir l’articl
 
 ## <a name="examples"></a>Exemples
 
-L’affichage Calendrier se compose de 3affichages distincts: l’affichage mensuel, l’affichage annuel et l’affichage décennal. Par défaut, il s’ouvre avec l’affichage mensuel. Vous pouvez spécifier un affichage de démarrage en définissant la propriété [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.displaymode.aspx).
+L’affichage Calendrier se compose de 3affichages distincts: l’affichage mensuel, l’affichage annuel et l’affichage décennal. Par défaut, il s’ouvre avec l’affichage mensuel. Vous pouvez spécifier un affichage de démarrage en définissant la propriété [DisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.displaymode.aspx).
 
 ![Les 3affichages d’un affichage Calendrier](images/calendar-view-3-views.png)
 
@@ -60,9 +59,9 @@ L’affichage Calendrier obtenu se présente comme suit:
 
 ### <a name="selecting-dates"></a>Sélection de dates
 
-Par défaut, la propriété [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) est définie sur **Single**. Cela permet à l’utilisateur de sélectionner une date unique dans le calendrier. Définissez SelectionMode sur **None** pour désactiver la sélection de date. 
+Par défaut, la propriété [SelectionMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) est définie sur **Single**. Cela permet à l’utilisateur de sélectionner une date unique dans le calendrier. Définissez SelectionMode sur **None** pour désactiver la sélection de date. 
 
-Définissez SelectionMode sur **Multiple** pour permettre à un utilisateur de sélectionner plusieurs dates. Vous pouvez sélectionner plusieurs dates par programme en ajoutant des objets [DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)/[DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) à la collection [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx), comme illustré ici :
+Définissez SelectionMode sur **Multiple** pour permettre à un utilisateur de sélectionner plusieurs dates. Vous pouvez sélectionner plusieurs dates par programme en ajoutant des objets [DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)/[DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) à la collection [SelectedDates](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx), comme illustré ici :
 
 ```csharp
 calendarView1.SelectedDates.Add(DateTimeOffset.Now);
@@ -71,7 +70,7 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 Un utilisateur peut désélectionner une date sélectionnée en cliquant ou en appuyant sur la grille du calendrier.
 
-Vous pouvez gérer l’événement [**SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) pour être averti quand la collection [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) a changé.
+Vous pouvez gérer l’événement [SelectedDatesChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) pour être averti quand la collection [SelectedDates](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) a changé.
 
 > [!NOTE]
 > Pour obtenir des informations importantes sur les valeurs de date, consultez [Valeurs DateTime et Calendar](date-and-time.md#datetime-and-calendar-values) dans l’article Contrôles de date et d’heure.
@@ -80,9 +79,9 @@ Vous pouvez gérer l’événement [**SelectedDatesChanged**](https://msdn.micro
 
 L’affichage Calendrier est constitué d’éléments XAML définis dans le ControlTemplate et d’éléments visuels rendus directement par le contrôle. 
 - Les éléments XAML définis dans le modèle de contrôle incluent la bordure qui encadre le contrôle, l’en-tête, les boutons Précédent et Suivant et les éléments DayOfWeek. À l’instar de tout contrôle XAML, vous pouvez appliquer un style et redéfinir le modèle de ces éléments. 
-- La grille du calendrier se compose d’objets [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx). Vous ne pouvez pas appliquer un style ou redéfinir le modèle de ces éléments, mais diverses propriétés sont fournies pour vous permettre de personnaliser leur apparence.
+- La grille du calendrier se compose d’objets [CalendarViewDayItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx). Vous ne pouvez pas appliquer un style ou redéfinir le modèle de ces éléments, mais diverses propriétés sont fournies pour vous permettre de personnaliser leur apparence.
 
-Ce schéma suivant présente les éléments qui constituent l’affichage mensuel du calendrier. Pour plus d’nformations, consultez les remarques sur la classe [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx).
+Ce schéma suivant présente les éléments qui constituent l’affichage mensuel du calendrier. Pour plus d’nformations, consultez les remarques sur la classe [CalendarViewDayItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx).
 
 ![Éléments d’un affichage de calendrier mensuel](images/calendar-view-month-elements.png)
 
@@ -100,9 +99,9 @@ Bordures d’état visuel | [FocusBorderBrush](https://msdn.microsoft.com/librar
 OutofScope | [IsOutOfScopeEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.isoutofscopeenabled.aspx), [OutOfScopeBackground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.outofscopebackground.aspx), [OutOfScopeForeground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.outofscopeforeground.aspx)  
 Aujourd’hui | [IsTodayHighlighted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.istodayhighlighted.aspx), [TodayFontWeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.todayfontweight.aspx), [TodayForeground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.todayforeground.aspx)  
 
- Par défaut, l’affichage mensuel affiche 6semaines à la fois. Vous pouvez modifier le nombre de semaines affiché en définissant la propriété [**NumberOfWeeksInView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.numberofweeksinview.aspx). Le nombre de semaines minimum à afficher est2; le nombre maximum est8.
+ Par défaut, l’affichage mensuel affiche 6semaines à la fois. Vous pouvez modifier le nombre de semaines affiché en définissant la propriété [NumberOfWeeksInView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.numberofweeksinview.aspx). Le nombre de semaines minimum à afficher est2; le nombre maximum est8.
 
-Par défaut, les affichages annuel et décennal s’affichent dans une grille 4x4. Pour modifier le nombre de lignes ou de colonnes, appelez [**SetYearDecadeDisplayDimensions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions.aspx) avec le nombre souhaité de lignes et de colonnes. Cela modifiera la grille pour les affichages annuel et décennal.
+Par défaut, les affichages annuel et décennal s’affichent dans une grille 4x4. Pour modifier le nombre de lignes ou de colonnes, appelez [SetYearDecadeDisplayDimensions](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions.aspx) avec le nombre souhaité de lignes et de colonnes. Cela modifiera la grille pour les affichages annuel et décennal.
 
 Ici, les affichages annuel et décennal sont définis pour apparaître dans une grille 3x4.
 
@@ -110,7 +109,7 @@ Ici, les affichages annuel et décennal sont définis pour apparaître dans une 
 calendarView1.SetYearDecadeDisplayDimensions(3, 4);
 ```
 
-Par défaut, la date minimale affichée dans l’affichage Calendrier est 100ans avant la date actuelle, et la date maximale affichée est 100ans après la date actuelle. Vous pouvez changer les dates minimale et maximale qui s’affichent dans le calendrier en définissant les propriétés [**MinDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.mindate.aspx) et [**MaxDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.maxdate.aspx).
+Par défaut, la date minimale affichée dans l’affichage Calendrier est 100ans avant la date actuelle, et la date maximale affichée est 100ans après la date actuelle. Vous pouvez changer les dates minimale et maximale qui s’affichent dans le calendrier en définissant les propriétés [MinDate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.mindate.aspx) et [MaxDate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.maxdate.aspx).
 
 ```csharp
 calendarView1.MinDate = new DateTime(2000, 1, 1);
@@ -119,11 +118,11 @@ calendarView1.MaxDate = new DateTime(2099, 12, 31);
 
 ### <a name="updating-calendar-day-items"></a>Mise à jour des éléments Jour du calendrier
 
-Dans le calendrier, chaque jour est représenté par un objet [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx). Pour accéder à un élément Jour individuel et utiliser ses propriétés et ses méthodes, gérez l’événement [**CalendarViewDayItemChanging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging.aspx) et utilisez la propriété Item des arguments d’événement pour accéder à CalendarViewDayItem.
+Dans le calendrier, chaque jour est représenté par un objet [CalendarViewDayItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx). Pour accéder à un élément Jour individuel et utiliser ses propriétés et ses méthodes, gérez l’événement [CalendarViewDayItemChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging.aspx) et utilisez la propriété Item des arguments d’événement pour accéder à CalendarViewDayItem.
 
-Vous pouvez rendre un jour non sélectionnable dans l’affichage Calendrier, en définissant sa propriété [**CalendarViewDayItem.IsBlackout**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.isblackout.aspx) sur **true**. 
+Vous pouvez rendre un jour non sélectionnable dans l’affichage Calendrier, en définissant sa propriété [CalendarViewDayItem.IsBlackout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.isblackout.aspx) sur **true**. 
 
-Vous pouvez afficher des informations contextuelles sur la densité des événements d’une journée en appelant la méthode [**CalendarViewDayItem.SetDensityColors**](https://msdn.microsoft.com/library/windows/apps/xaml/dn890067.aspx). Vous pouvez afficher de 0 à 10 barres de densité pour chaque jour et définir la couleur de chaque barre. 
+Vous pouvez afficher des informations contextuelles sur la densité des événements d’une journée en appelant la méthode [CalendarViewDayItem.SetDensityColors](https://msdn.microsoft.com/library/windows/apps/xaml/dn890067.aspx). Vous pouvez afficher de 0 à 10 barres de densité pour chaque jour et définir la couleur de chaque barre. 
 
 Voici quelques éléments Jour dans un calendrier. Les jours 1 et 2 sont grisés. Les jours 2, 3 et 4 ont différentes barres de densité définies.
 

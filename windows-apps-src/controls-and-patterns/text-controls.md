@@ -6,14 +6,19 @@ ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 8be1dac30047a647d7f80464b53fe2fc3527d2c3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 16b019678e94e131ba1105bb92d7ea3ab301828c
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="text-controls"></a>Contrôles de texte
 
@@ -24,19 +29,10 @@ Les contrôles de texte comprennent les zones de saisie de texte, les zones de m
 - Les contrôles d’affichage de texte en lecture seule sont [TextBlock](text-block.md) et [RichTextBlock](rich-text-block.md).
 - Les contrôles de saisie et de modification de texte sont: [TextBox](text-box.md), [AutoSuggestBox](auto-suggest-box.md), [PasswordBox](password-box.md) et [RichEditBox](rich-edit-box.md).
 
-<div class="important-apis" >
-<b>API importantes</b><br/>
-<ul>
-<li>[**Classe AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)</li>
-<li>[**Classe PasswordBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</li>
-<li>[**Classe RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</li>
-<li>[**Classe RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</li>
-<li> [**Classe TextBlock**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)</li>
-<li>[**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</li>
-</ul>
-</div>
+> **API importantes**: [classe AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx), [classe PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx), [classe RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx), [classe RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [classe TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [classe TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
 
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
+
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
 Le contrôle de texte utilisé dépend du scénario. Utilisez les informations fournies dans cet article pour sélectionner le contrôle de texte adapté à votre application.
 
@@ -73,7 +69,7 @@ Vous disposez de nombreuses méthodes pour obtenir les entrées des utilisateurs
 -   **L’énumération efficace de l’ensemble des valeurs valides est-elle souhaitable?** Si tel est le cas, envisagez le recours à des contrôles par sélection, du type [case à cocher](checkbox.md), [liste déroulante](lists.md), zone de liste, [case d’option](radio-button.md), [curseur](slider.md), [bouton-bascule](toggles.md), [sélecteur de dates](date-and-time.md) ou sélecteur d’heure.
 -   **L’ensemble de valeurs valides est-il restreint?** Si tel est le cas, utilisez plutôt une [liste déroulante](lists.md) ou une zone de liste, en particulier si les valeurs contiennent un grand nombre de caractères.
 -   **Les données valides sont entièrement sans contraintes? Ou sont-elles limitées par le format (contraintes de longueur ou portant sur les types de caractère)?** Si tel est le cas, utilisez un contrôle d’entrée de texte. Vous pouvez limiter le nombre de caractères pouvant être saisis et valider le format dans le code de votre application.
--   **La valeur représente-t-elle un type de données auquel correspond un contrôle commun spécialisé?** Si tel est le cas, utilisez le contrôle approprié plutôt qu’un contrôle d’entrée de texte. Utilisez, par exemple, un contrôle [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) plutôt qu’un contrôle d’entrée de texte pour les saisies de date.
+-   **La valeur représente-t-elle un type de données auquel correspond un contrôle commun spécialisé?** Si tel est le cas, utilisez le contrôle approprié plutôt qu’un contrôle d’entrée de texte. Utilisez, par exemple, un contrôle [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) plutôt qu’un contrôle d’entrée de texte pour les saisies de date.
 -   Si les données sont strictement numériques:
     -   **La valeur à entrer est-elle approximative et/ou relative à une autre quantité spécifiée sur la même page?** Si tel est le cas, utilisez un [curseur](slider.md).
     -   **L’utilisateur bénéficiera-t-il de commentaires instantanés sur l’effet de toute modification apportée aux paramètres?** Si tel est le cas, utilisez un [curseur](slider.md), accompagné éventuellement d’un contrôle correspondant.
@@ -97,18 +93,18 @@ Zone de mot de passe
 
 Pour plus d’informations et d’exemples propres à chaque contrôle de texte, voir les articles suivants.
 
--   [**AutoSuggestBox**](auto-suggest-box.md)
--   [**PasswordBox**](password-box.md)
--   [**RichEditBox**](rich-edit-box.md)
--   [**RichTextBlock**](rich-text-block.md)
--   [**TextBlock**](text-block.md)
--   [**TextBox**](text-box.md)
+-   [AutoSuggestBox](auto-suggest-box.md)
+-   [PasswordBox](password-box.md)
+-   [RichEditBox](rich-edit-box.md)
+-   [RichTextBlock](rich-text-block.md)
+-   [TextBlock](text-block.md)
+-   [TextBox](text-box.md)
 
 ## <a name="font-and-style-guidelines"></a>Recommandations en matière de polices et de styles
 Pour découvrir les recommandations concernant les polices, voir les articles suivants:
 
-- [**Recommandations en matière de polices**](fonts.md)
-- [**Recommandations en matière d’icônes Segoe MDL2**](segoe-ui-symbol-font.md)
+- [Recommandations en matière de polices](fonts.md)
+- [Recommandations en matière d’icônes Segoe MDL2](segoe-ui-symbol-font.md)
 
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>Choisir le clavier adapté à votre contrôle de texte
@@ -144,7 +140,7 @@ Le texte affiché ressemble à ceci:
 
 ![Bloc de texte avec police en couleur](images/text-block-color-fonts.png)
 
-Pour plus d’informations, voir la propriété [**IsColorFontEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx).
+Pour plus d’informations, voir la propriété [IsColorFontEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx).
 
 ## <a name="guidelines-for-line-and-paragraph-separators"></a>Recommandations en matière de séparateurs de lignes et de paragraphes
 
@@ -187,11 +183,11 @@ Pour les contrôles TextBox et RichEditBox, la vérification orthographique est 
 ## <a name="related-articles"></a>Articles connexes
 
 **Pour les concepteurs**
-- [**Recommandations en matière de polices**](fonts.md)
-- [**Recommandations en matière d’icônes Segoe MDL2**](segoe-ui-symbol-font.md)
+- [Recommandations en matière de polices](fonts.md)
+- [Recommandations en matière d’icônes Segoe MDL2](segoe-ui-symbol-font.md)
 - [Ajout de la fonctionnalité de recherche](https://msdn.microsoft.com/library/windows/apps/hh465231)
 
 **Pour les développeurs (XAML)**
-- [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Classe PasswordBox Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [Classe TextBox](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Classe PasswordBox Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length.aspx)

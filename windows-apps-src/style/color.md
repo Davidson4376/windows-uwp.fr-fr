@@ -6,14 +6,18 @@ ms.assetid: 3ba7176f-ac47-498c-80ed-4448edade8ad
 template: detail.hbs
 extraBodyClass: style-color
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 0d4266d1335198cffb74900b0d1eb2bb48cd1879
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+design-contact: rybick
+doc-status: Published
+ms.openlocfilehash: fd37d69c2e9b20b46c34e6071f302bd55bbbba26
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="color"></a>Couleur
 
@@ -132,13 +136,47 @@ L’utilisateur peut sélectionner une seule couleur appelée couleur d’accent
       </tr>
   </table>
 
+Évitez d’utiliser la couleur d’accentuation comme arrière-plan, en particulier pour le texte et les icônes. Étant donné que la couleur d’accentuation peut changer, vous devez, si vous devez l’utiliser comme arrière-plan, effectuer des tâches supplémentaires afin de vous assurer que le texte au premier plan sera facile à lire. Par exemple, si votre texte est blanc et que la couleur d’accentuation est gris clair, votre texte sera difficile à lire, car le coefficient de contraste entre gris blanc et clair est peu élevé. Vous pouvez remédier à ce problème en testant la couleur d’accentuation afin de déterminer s’il s’agit d’une couleur sombre:  
 
-<div class="microsoft-internal-note">
-Quand vous utilisez une couleur d’accentuation comme arrière-plan, la règle est de toujours mettre le texte de premier plan en blanc. La couleur d’accentuation par défaut fournie avec Windows offre un coefficient de contraste optimal avec du texte blanc. S’ils le souhaitent, les utilisateurs peuvent toutefois choisir une autre couleur d’accentuation présentant un moins bon contraste avec du texte blanc. S’ils trouvent que le texte n’est pas assez lisible, ils peuvent ensuite sélectionner une autre couleur d’accentuation plus foncée.
-</div>
+Utilisez l’algorithme suivant pour déterminer si une couleur d’arrière-plan est claire ou sombre.
+
+```C#
+void accentColorUpdated(FrameworkElement elementWithText)
+{
+    var uiSettings = new Windows.UI.ViewManagement.UISettings();
+    Windows.UI.Color c = uiSettings.GetColorValue(UIColorType.Accent);
+
+    bool colorIsDark = (5 * c.G + 2 * c.R + c.B) <= 8 * 128;
+    if (colorIsDark)
+    {
+        elementWithText.RequestedTheme = ElementTheme.Light;
+    }
+    else
+    {
+        elementWithText.RequestedTheme = ElementTheme.Dark;
+    }
+}
+```
 
 
-Lorsque les utilisateurs choisissent une couleur d’accentuation, celle-ci devient la couleur du thème du système. Les zones concernées sont l’écran de démarrage, la barre des tâches, le chrome de la fenêtre, les états de l’interaction sélectionnés et des liens hypertexte au sein des [contrôles communs](../controls-and-patterns/index.md). Chaque application peut davantage intégrer la couleur d’accentuation par le biais de sa typographie, ses arrière-plans et ses interactions, voire la remplacer pour préserver sa personnalisation spécifique.
+```JS
+function accentColorUpdated(elementWithText)
+{
+    var uiSettings = new Windows.UI.ViewManagement.UISettings();
+    Windows.UI.Color c = uiSettings.GetColorValue(UIColorType.Accent);
+    var colorIsDark (5 * c.g + 2 * c.r + c.b) <= 8 * 128;
+    if (colorIsDark)
+    {
+        elementWithText.RequestedTheme = ElementTheme.Light;
+    }
+    else
+    {
+        elementWithText.RequestedTheme = ElementTheme.Dark;
+    }     
+}
+```
+
+Après avoir déterminé si la couleur d’accentuation est claire ou sombre, choisissez une couleur de premier plan appropriée. Nous vous recommandons d'utiliser la SystemControlForegroundBaseHighBrush à partir du thème clair pour les arrière-plans sombres et d'utiliser la version foncée pour les arrière-plans clairs.
 
 ## <a name="color-palette-building-blocks"></a>Blocs de construction de la palette de couleurs
 
@@ -228,7 +266,7 @@ Vous pouvez facilement modifier les thèmes en modifiant la propriété **Reques
 </Application>
 ```
 
-Si vous supprimez **RequestedTheme**, votre application respecte les paramètres du mode Application de l’utilisateur. Ce dernier pourra choisir d’afficher votre application dans le thème foncé ou clair. 
+Si vous supprimez **RequestedTheme**, votre application respecte les paramètres du mode Application de l’utilisateur. Ce dernier pourra choisir d’afficher votre application dans le thème foncé ou clair.
 
 Assurez-vous de bien prendre en compte le thème lors de la création de votre application dans la mesure où celui-ci a un impact important sur l’apparence de votre application.
 

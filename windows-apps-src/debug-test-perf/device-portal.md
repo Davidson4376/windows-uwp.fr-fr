@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: "Vue d’ensemble de Windows Device Portal"
 description: "Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB."
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: e729236ae7d506eb59af1a38506931865eff4f14
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f22600f2bbd5dc43996550c853c6defd04565ad4
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="windows-device-portal-overview"></a>Vue d’ensemble de Windows Device Portal
 
@@ -41,7 +43,7 @@ Téléphone | Activer dans le mode de développement | 80| 443 | http://127.0.0.
 \ * Cela n’est pas toujours le cas, car Device Portal sur le bureau revendique des ports dans la plage éphémère (&gt;50000) afin d’éviter les collisions avec les déclarations de port existant sur l’appareil.  Pour plus d’informations, consultez la section [Paramètres de port](device-portal-desktop.md#setting-port-numbers) pour le bureau.  
 
 Pour obtenir des instructions d’installation propres à chaque appareil, consultez:
-- [Device Portal pour HoloLens](https://dev.windows.com/holographic/using_the_windows_device_portal)
+- [Device Portal pour HoloLens](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-hololens)
 - [Device Portal pour IoT](https://go.microsoft.com/fwlink/?LinkID=616499)
 - [Device Portal pour appareils mobiles](device-portal-mobile.md)
 - [Device Portal pour Xbox](device-portal-xbox.md)
@@ -71,28 +73,28 @@ Propose des fonctionnalités d’installation/de désinstallation et de gestion 
 ![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-apps.png)
 
 - **Applications installées**: supprime et démarre les applications.
-- **Applications en cours d’exécution**: répertorie les applications actuellement en cours d’exécution.
+- **Applications en cours d’exécution**: répertorie les applications qui sont en cours d’exécution et offre la possibilité de les fermer.
 - **Installer l’application**: sélectionnez les packages d’application à installer à partir d’un dossier de votre ordinateur ou de votre réseau.
 - **Dépendance**: ajoutez des dépendances pour l’application que vous souhaitez installer.
 - **Déployer**: déployez l’application sélectionnée et les dépendances sur votre appareil.
 
 **Pour installer une application**
 
-1.    Lorsque vous avez [créé un package d’application](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx), vous pouvez l’installer à distance sur votre appareil. Une fois créé dans Visual Studio, un dossier de sortie est généré.
+1.  Lorsque vous avez [créé un package d’application](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx), vous pouvez l’installer à distance sur votre appareil. Une fois créé dans Visual Studio, un dossier de sortie est généré.
 
     ![Installation d’applications](images/device-portal/iot-installapp0.png)
-2.    Cliquez sur Parcourir et recherchez votre package d’application (.appx).
-3.    Cliquez sur Parcourir et recherchez le fichier de certificat (.cer). (Non requis sur tous les appareils.)
-4.    Ajoutez des dépendances. Si vous avez plusieurs objets, ajoutez chacun d’eux individuellement.     
-5.    Sous **Déployer**, cliquez sur **OK**. 
-6.    Pour installer une autre application, cliquez sur le bouton **Réinitialiser** pour effacer les champs.
+2.  Cliquez sur Parcourir et recherchez votre package d’application (.appx).
+3.  Cliquez sur Parcourir et recherchez le fichier de certificat (.cer). (Non requis sur tous les appareils.)
+4.  Ajoutez des dépendances. Si vous avez plusieurs objets, ajoutez chacun d’eux individuellement.     
+5.  Sous **Déployer**, cliquez sur **OK**. 
+6.  Pour installer une autre application, cliquez sur le bouton **Réinitialiser** pour effacer les champs.
 
 
 **Pour désinstaller une application**
 
-1.    Assurez-vous que votre application n’est pas en cours d’exécution. 
-2.    Si c’est le cas, passez à Applications en cours d’exécution et fermez l’application en question. Si vous essayez de désinstaller une application en cours d’exécution, celle-ci provoquera des problèmes lors de sa réinstallation. 
-3.    Dès que vous êtes prêt, cliquez sur **Désinstaller**.
+1.  Assurez-vous que votre application n’est pas en cours d’exécution. 
+2.  Si c’est le cas, passez à Applications en cours d’exécution et fermez l’application en question. Si vous essayez de désinstaller une application en cours d’exécution, celle-ci provoquera des problèmes lors de sa réinstallation. 
+3.  Dès que vous êtes prêt, cliquez sur **Désinstaller**.
 
 ### <a name="processes"></a>Processus
 

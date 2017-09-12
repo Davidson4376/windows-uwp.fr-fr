@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 9f4ebe843b30d5bc408a705cfc9dda5d6731d4d1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: a3e224fc51245a5f91c29da2d745a3740029cda9
+ms.sourcegitcommit: 11664964e548a2af30d6e176c515cdbf330934ac
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 07/28/2017
 ---
 # <a name="put-ui-strings-into-resources"></a>Placer des chaînes d’interface utilisateur dans des ressources
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -68,7 +70,7 @@ Attribuez la valeur d’attribut **Uid** au nom de ressource, et spécifiez quel
 Notez que les propriétés jointes sont traitées différemment dans des fichiers resw comme AutomationPeer.Name. Vous devez écrire l’espace de noms explicitement, comme suit:
 
 ```XML
-MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name</code></pre></td>
+MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 ```
 
 ## <a name="add-string-resource-identifiers-to-code-and-markup"></a>Ajoutez des identificateurs de ressource de type chaîne dans le code et le balisage.
@@ -101,7 +103,9 @@ auto str = loader->GetString("Farewell");
 
 3.  Créez un autre dossier nommé «fr-FR» pour «Français (France)». Créez un fichier de ressources et ajoutez la ligne suivante:
 
-    strings/fr-FR/Resources.resw ![ajouter une ressource, pour le français](images/addresource-fr-fr.png)
+    strings/fr-FR/Resources.resw
+    
+    ![Ajouter une ressource, français](images/addresource-fr-fr.png)
 
 ## <a name="build-and-run-the-app"></a>Générez et exécutez l’application.
 

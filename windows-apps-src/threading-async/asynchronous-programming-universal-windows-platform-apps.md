@@ -1,17 +1,19 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
 title: Programmation asynchrone
 description: "Cette rubrique décrit la programmation asynchrone dans la plateforme Windows universelle (UWP), ainsi que sa représentation dans les langages C#, Microsoft Visual Basic .NET, les extensions de composant Visual C\\+\\+ (C\\+\\+/CX) et JavaScript."
-ms.author: twhitney
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, uwp, asynchrone
-ms.openlocfilehash: 06eceae9c7736ce59bc0ab1b842425c3dc56d299
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 042ebc335d0e0a401b3aeb761daed1ba00a43f59
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="asynchronous-programming"></a>Programmation asynchrone
 

@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 21e08e22e6c6ebada4445a05f32d2bd37244758f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f9e14be4ef0e92378d4b6f1e4f5c1066c56fbdd8
+ms.sourcegitcommit: ae20971c4c8276034cd22fd7e10b0e3ddfddf480
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/11/2017
 ---
 #  <a name="plan-your-universal-windows-platform-uwp-app"></a>Planifier votre application de plateforme Windows universelle (UWP)
 
@@ -220,7 +222,7 @@ Pour en savoir plus sur l’utilisation des différentes surfaces, voir <!--[Com
 
 ![Conception d’une application pour PC ou appareils mobiles](images/ux-budgettracker1-md-notablet.png)
 
-Pour plus d’informations sur la conception d’applications dédiées à des tailles d’écran différentes, voir <!--[Responsive design 101](designing-in-effective-pixels.md)-->.
+Pour plus d’informations sur la conception pour différentes tailles d’écran, voir [Tailles d’écran et points d’arrêt pour la conception réactive](https://docs.microsoft.com/en-us/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design).
 
 ## <a name="make-a-good-first-impression"></a>Faire une bonne première impression
 

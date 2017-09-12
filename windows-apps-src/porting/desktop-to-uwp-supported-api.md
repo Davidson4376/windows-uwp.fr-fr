@@ -1,57 +1,59 @@
 ---
 author: normesta
-Description: Cet article explique comment signer une application de bureau que vous avez convertie vers la plateforme Windows universelle (UWP).
+Description: "Les applications de bureau empaquetées peuvent utiliser un large éventail d’API de la plateforme Windows universelle (UWP), ce même si elles n’ont pas été entièrement converties en applications UWP. Cet article répertorie les classes disponibles que votre application empaquetée peut utiliser."
 Search.Product: eADQiWindows 10XVcnh
-title: 'Pont du bureau vers UWP: API UWP prises en charge'
+title: "API UWP disponibles pour une application de bureau empaquetée (Pont du bureau)"
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
-ms.openlocfilehash: 34b29f8e68c77acdb19a1b0005f039097c8d2cbb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 796e47167c8462357764c78223dca34a11888aaf
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/26/2017
 ---
-# <a name="desktop-to-uwp-bridge-supported-uwp-apis"></a>Pont du bureau vers UWP: API UWP prises en charge
+# <a name="uwp-apis-available-to-a-packaged-desktop-app-desktop-bridge"></a>API UWP disponibles pour une application de bureau empaquetée (Pont du bureau)
 
-Les applications de bureau converties peuvent utiliser un large éventail d’API de la plateforme Windows universelle (UWP), ce même si elles n’ont pas été entièrement converties en applications UWP. Cet article répertorie les classes disponibles que votre application convertie peut utiliser.
+Les applications de bureau empaquetées peuvent utiliser un large éventail d’API de la plateforme Windows universelle (UWP), ce même si elles n’ont pas été entièrement converties en applications UWP. Cet article répertorie les classes disponibles que votre application empaquetée peut utiliser.
 
-La plupart des API UWP fonctionnent parfaitement sur les applications de bureau converties. Certains domaines de fonctionnalités n’ont cependant pas été totalement testés ou ne fonctionnent actuellement pas comme prévu.
+La plupart des API UWP fonctionnent parfaitement sur les applications de bureau empaquetées. Certains domaines de fonctionnalités n’ont cependant pas été totalement testés ou ne fonctionnent actuellement pas comme prévu.
 
 <table><tr><th>Domaine de fonctionnalité</th><th>Détails</th><tr>
-<tr><td>Rendez-vous, contacts et messages électroniques</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications converties.</td></tr>
-<tr><td>Authentification et identité des utilisateurs</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications converties.</td></tr>
-<tr><td>Tâches en arrière-plan</td><td>Bien que les applications converties puissent inscrire des tâches en arrière-plan, seules les applications UWP peuvent s’exécuter *en tant que* tâches en arrière-plan. Pour plus d’informations, voir [l’exemple de tâche en arrière-plan sur GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample).</td></tr>
-<tr><td>Bluetooth</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications converties.</td></tr>
-<tr><td>Chat et appels téléphoniques</td><td>Les applications converties ne peuvent pas s’exécuter sur un appareil mobile tant qu’elles n’ont pas été entièrement transférées vers UWP.</td></tr>
+<tr><td>Rendez-vous, contacts et messages électroniques</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
+<tr><td>Authentification et identité des utilisateurs</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
+<tr><td>Tâches en arrière-plan</td><td>Bien que les applications empaquetées puissent inscrire des tâches en arrière-plan, seules les applications UWP peuvent s’exécuter *en tant que* tâches en arrière-plan. Pour plus d’informations, voir [Exemple de tâche en arrière-plan sur GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample).</td></tr>
+<tr><td>Bluetooth</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
+<tr><td>Chat et appels téléphoniques</td><td>Les applications empaquetées ne peuvent pas s’exécuter sur un appareil mobile tant qu’elles n’ont pas été entièrement transférées vers UWP.</td></tr>
 <tr><td>Activation des contrats</td><td>Seules les applications UWP complètes peuvent être activées par un contrat.</td></tr>
-<tr><td>Chiffrement</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications converties.</td></tr>
-<tr><td>Géolocalisation</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications converties.</td></tr>
-<tr><td>Sélecteurs de fichiers et de dossiers</td><td>Les applications converties disposent d’un accès complet au système de fichiers et n’ont pas besoin de sélecteurs UWP.</td></tr>
-<tr><td>Multimédia</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications converties.</td></tr>
-<tr><td>Point de service</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications converties.</td></tr>
-<tr><td>Cartes à puce</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications converties.</td></tr>
-<tr><td>PlayReady</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications converties.</td></tr>
-<tr><td>VPN</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications converties.</td></tr>
-<tr><td>Portefeuille</td><td>Les applications converties ne peuvent pas s’exécuter sur un appareil mobile tant qu’elles n’ont pas été entièrement transférées vers UWP.</td></tr>
+<tr><td>Chiffrement</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
+<tr><td>Géolocalisation</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
+<tr><td>Sélecteurs de fichiers et de dossiers</td><td>Les applications empaquetées disposent d’un accès complet au système de fichiers et n’ont pas besoin de sélecteurs UWP.</td></tr>
+<tr><td>Média</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
+<tr><td>Point de service</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
+<tr><td>Cartes à puce</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
+<tr><td>PlayReady</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
+<tr><td>VPN</td><td>Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées.</td></tr>
+<tr><td>Portefeuille</td><td>Les applications empaquetées ne peuvent pas s’exécuter sur un appareil mobile tant qu’elles n’ont pas été entièrement transférées vers UWP.</td></tr>
 <tr><td>Interface utilisateur XAML</td><td>Vous ne pouvez pas ajouter l’interface utilisateur XAML à un processus d’application Win32.</td></tr>
 </table>
 
 
 Parfois, les API dans ces domaines peuvent sembler fonctionner correctement. Toutefois, si une API n’apparaît pas explicitement comme étant prise en charge, vous devez évitez de l’utiliser car elle pourrait avoir des effets ou un comportement inattendus. Ces API pourraient être prises en charge dans les versions futures. En attendant, votre application doit utiliser les API Win32 ou .NET applicables.
 
-Certaines API UWP disponibles pour les applications de bureau complètes ne sont pas prises en charge pour les applications converties. Si votre application de bureau utilisait des API UWP avant la conversion, vous devez vérifier si ces API sont toujours prises en charge. Pour plus d’informations, voir [API Windows Runtime pour applications de bureau](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx).
+Certaines API UWP disponibles pour les applications de bureau complètes ne sont pas prises en charge pour les applications empaquetées. Si votre application de bureau utilisait des API UWP avant la conversion, vous devez vérifier si ces API sont toujours prises en charge. Pour plus d’informations, voir [API Windows Runtime pour applications de bureau](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx).
 
 ## <a name="list-of-apis"></a>Liste des API
 
-Voici une liste complète des API UWP prises en charge dans les applications converties. Vous pouvez afficher les [API nouvellement prises en charge dans les applications converties](#new) ou les [API prises en charge à la fois dans les applications converties et dans les applications de bureau](#both).
+Voici une liste complète des API UWP prises en charge dans les applications empaquetées. Vous pouvez afficher les [API nouvellement prises en charge dans les applications empaquetées](#new) ou les [API prises en charge à la fois dans les applications empaquetées et dans les applications de bureau](#both).
 
-Pour des exemples d’utilisation des API WinRT, consultez [Exemples de pont d’application de bureau en UWP](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) et [Exemples d’applications de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples) sur GitHub. Vous pouvez également consulter le billet de blog de création d’application pour Windows [Appel d’API Windows10 à partir d’une application de bureau](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
+Pour des exemples d’utilisation des API WinRT, consultez [Exemples de Pont du bureau](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) et [Exemples d’applications de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples) sur GitHub. Vous pouvez également consulter le billet de blog de création d’application pour Windows [Appel d’API Windows10 à partir d’une application de bureau](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
 
 <span id="new" />
-### <a name="apis-supported-in-newly-converted-apps"></a>API prises en charge dans les applications récemment converties
+### <a name="apis-supported-in-newly-packaged-apps"></a>API prises en charge dans les applications récemment empaquetées
 
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataProviderHandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -134,7 +136,7 @@ Pour des exemples d’utilisation des API WinRT, consultez [Exemples de pont d�
 * [Windows.Foundation.AsyncActionProgressHandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionProgressHandler<TProgress>)
 * [Windows.Foundation.AsyncActionWithProgressCompletedHandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionWithProgressCompletedHandler<TProgress>)
 * [Windows.Foundation.AsyncOperationCompletedHandler<TResult>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationCompletedHandler<TResult>)
-* [Windows.Foundation.Collections.VectorChangedEventHandler<T>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.VectorChangedEventHandler<T>)
+* [Windows.Foundation.Collections.VectorChangedEventHandler<T>](https://msdn.microsoft.com/library/windows/apps/br206656.aspx)
 * [Windows.Foundation.DeferralCompletedHandler](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.DeferralCompletedHandler)
 * [Windows.Foundation.Diagnostics.FileLoggingSession](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Diagnostics.FileLoggingSession)
 * [Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs)
@@ -302,7 +304,6 @@ Pour des exemples d’utilisation des API WinRT, consultez [Exemples de pont d�
 * [Windows.Services.Store.StoreRequestHelper](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreRequestHelper)
 * [Windows.Services.Store.StoreSendRequestResult](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreSendRequestResult)
 * [Windows.Services.Store.StoreSku](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreSku)
-* [Windows.Services.Store.StoreSubscriptionData](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreSubscriptionData)
 * [Windows.Services.Store.StoreVideo](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreVideo)
 * [Windows.Storage.ApplicationDataSetVersionHandler](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.ApplicationDataSetVersionHandler)
 * [Windows.Storage.CachedFileManager](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.CachedFileManager)
@@ -377,7 +378,7 @@ Pour des exemples d’utilisation des API WinRT, consultez [Exemples de pont d�
 * [Windows.UI.StartScreen.JumpListItem](https://msdn.microsoft.com/library/windows/apps/Windows.UI.StartScreen.JumpListItem)
 
 <span id="both" />
-### <a name="apis-supported-in-both-converted-apps-and-desktop-applications"></a>API prises en charge dans les applications converties et dans les applications de bureau
+### <a name="apis-supported-in-both-packaged-apps-and-desktop-applications"></a>API prises en charge dans les applications empaquetées et dans les applications de bureau
 
 * [Windows.ApplicationModel.Core.AppListEntry](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.AppListEntry)
 * [Windows.ApplicationModel.DataTransfer.DataPackage](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)
@@ -632,15 +633,15 @@ Pour des exemples d’utilisation des API WinRT, consultez [Exemples de pont d�
 * [Windows.Devices.WiFiDirect.WiFiDirectDevice](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectDevice)
 * [Windows.Devices.WiFiDirect.WiFiDirectInformationElement](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectInformationElement)
 * [Windows.Devices.WiFiDirect.WiFiDirectLegacySettings](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectLegacySettings)
-* [Windows.Foundation.AsyncOperationProgressHandler&lt;Tresult,.TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>)
+* [Windows.Foundation.AsyncOperationProgressHandler&lt;Tresult,.TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206573.aspx(d=robot))
 * [Windows.Foundation.AsyncOperationWithProgressCompletedHandler&lt;Tresult,.TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>)
-* [Windows.Foundation.Collections.MapChangedEventHandler&lt;K,.V&gt;](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.MapChangedEventHandler<K,.V>)
+* [Windows.Foundation.Collections.MapChangedEventHandler&lt;K,.V&gt;](https://msdn.microsoft.com/library/windows/apps/br206644.aspx)
 * [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet)
 * [Windows.Foundation.Collections.StringMap](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.StringMap)
 * [Windows.Foundation.Collections.ValueSet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.ValueSet)
 * [Windows.Foundation.Deferral](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Deferral)
 * [Windows.Foundation.PropertyValue](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.PropertyValue)
-* [Windows.Foundation.TypedEventHandler&lt;Tsender,.TResult&gt;](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.TypedEventHandler<Tsender,.TResult>)
+* [Windows.Foundation.TypedEventHandler&lt;Tsender,.TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx(d=robot))
 * [Windows.Foundation.Uri](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Uri)
 * [Windows.Foundation.WwwFormUrlDecoder](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoder)
 * [Windows.Foundation.WwwFormUrlDecoderEntry](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoderEntry)
@@ -947,7 +948,7 @@ Pour des exemples d’utilisation des API WinRT, consultez [Exemples de pont d�
 * [Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties)
 * [Windows.UI.Input.Inking.InkInputProcessingConfiguration](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkInputProcessingConfiguration)
 * [Windows.UI.Input.Inking.InkManager](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkManager)
-* [Windows.UI.Input.Inking.InkPoint](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPoint)
+* [Windows.UI.Input.Inking.InkPoint](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPoint)
 * [Windows.UI.Input.Inking.InkPresenter](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPresenter)
 * [Windows.UI.Input.Inking.InkPresenterRuler](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPresenterRuler)
 * [Windows.UI.Input.Inking.InkRecognitionResult](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkRecognitionResult)

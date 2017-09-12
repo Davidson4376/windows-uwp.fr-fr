@@ -6,14 +6,20 @@ description: "Un contrôle de mode Fractionné inclut un volet pouvant être dé
 label: Split view
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: b7488f19109925faa2c9e6b3be528cb2d19846e8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: yulikl
+design-contact: kimsea
+dev-contact: tpaine
+doc-status: Published
+ms.openlocfilehash: 126fab3db9a0728626289788757f576648a43856
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="split-view-control"></a>Contrôle de mode Fractionné
 
@@ -21,14 +27,9 @@ translationtype: HT
 
 Un contrôle de mode Fractionné inclut un volet pouvant être développé/réduit ainsi qu’une zone de contenu.
 
-<div class="important-apis" >
-<b>API importantes</b><br/>
-<ul>
-<li>[**Classe SplitView**](https://msdn.microsoft.com/library/windows/apps/dn864360)</li>
-</ul>
-</div>
+> **API importante**: [classe SplitView](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
-Voici un exemple de l’application Microsoft Edge utilisant SplitView pour afficher son Hub.
+Voici un exemple de l’application MicrosoftEdge utilisant SplitView pour afficher son hub.
 
 ![Exemple de mode Fractionné Microsoft Edge](images/split_view_Edge.png)
 
@@ -53,7 +54,7 @@ Voici un exemple de l’application Microsoft Edge utilisant SplitView pour affi
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
-Le contrôle de mode Fractionné peut être utilisé pour créer un [volet de navigation](nav-pane.md). Pour créer ce modèle, ajoutez un bouton Développer/réduire (le bouton «hamburger») et un affichage Liste représentant les éléments de navigation.
+Le contrôle de mode Fractionné peut être utilisé pour créer un [volet de navigation](navigationview.md). Pour créer ce modèle, ajoutez un bouton Développer/réduire (le bouton «hamburger») et un affichage Liste représentant les éléments de navigation.
 
 Le contrôle de mode Fractionné peut également servir à créer toute expérience «à tiroirs» (c’est-à-dire que les utilisateurs peuvent ouvrir et fermer le volet supplémentaire).
 
@@ -83,7 +84,7 @@ Voici un contrôle SplitView avec un volet ouvert, qui s’affiche en ligne en r
 
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Modèle de volet de navigation](nav-pane.md)
+* [Modèle de volet de navigation](navigationview.md)
 * [Affichage Liste](lists.md)
  
 

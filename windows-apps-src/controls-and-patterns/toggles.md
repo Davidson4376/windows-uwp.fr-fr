@@ -6,39 +6,41 @@ ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: e7db3553ea158c1337e0a541fd497e16d1202af7
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: mitra
+doc-status: Published
+ms.openlocfilehash: 7cc1d11035d072fdd52bdfa4a1d0c6e66926ba9f
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="toggle-switches"></a>Boutons bascule
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
+Le [bouton bascule](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx) représente un commutateur physique qui permet à l’utilisateur d’activer ou de désactiver des options. Utilisez des contrôles ToggleSwitch pour présenter aux utilisateurs deux options qui s’excluent mutuellement (comme activé/désactivé), de sorte que la sélection d’une option produise immédiatement un résultat. 
+
+Pour créer un contrôle de bouton bascule, utilisez la [classe ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx).
+
+> **API importantes**: [classe ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx), [propriété IsOn](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx), [événement Toggled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx)
 
 
-Le bouton bascule représente un commutateur physique qui permet à l’utilisateur d’activer ou de désactiver des options. Utilisez des contrôles **ToggleSwitch** pour présenter aux utilisateurs exactement deux options qui s’excluent mutuellement (comme activé/désactivé), de sorte que la sélection d’une option se traduise par une action immédiate.
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
-<div class="important-apis" >
-<b>API importantes</b><br/>
-<ul>
-<li>[**Classe ToggleSwitch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx)</li>
-<li>[**Propriété IsOn**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx)</li>
-<li>[**Événement Toggled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx)</li>
-</ul>
-</div>
-
-## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
-
-Utilisez un bouton bascule pour les opérations binaires qui prennent effet dès que l’utilisateur change l’état du bouton. Par exemple, vous pouvez utiliser un bouton bascule pour activer ou désactiver des services ou des composants matériels, comme le WiFi :
+Utilisez un bouton bascule pour les opérations binaires qui prennent effet dès que l’utilisateur change l’état du bouton.
 
 ![Bouton bascule WiFi, activé et désactivé](images/toggleswitches01.png)
 
-Si un commutateur physique est adapté à l’action, un bouton bascule est probablement le meilleur contrôle à utiliser.
+Imaginez le bouton bascule comme le bouton marche/arrêt d’un appareil: vous l’actionnez quand vous souhaitez activer ou désactiver l’action de l’appareil.
 
-Après que l’utilisateur active ou désactive le commutateur, il est préférable que l’action correspondante soit effectuée immédiatement.
+Pour rendre le bouton bascule facile à comprendre, utilisez des étiquettes contenant un ou deux mots, de préférence des noms, qui décrivent la fonctionnalité contrôlée. Par exemple, «WiFi» ou «Lumières cuisine».  
+
 
 ### <a name="choosing-between-toggle-switch-and-check-box"></a>Choix entre le bouton bascule et la case à cocher
 
@@ -48,25 +50,21 @@ Le bouton bascule et la case à cocher peuvent tous deux convenir à certaines a
 
     ![Bouton bascule ou case à cocher](images/toggleswitches02.png)
 
-    Dans l’exemple précédent, il est évident dans le cas du bouton bascule que la fonctionnalité sans fil est activée. Mais pour la case à cocher, l’utilisateur doit se demander si la fonctionnalité sans fil est en marche ou s’il doit activer la case à cocher pour la mettre en marche.
+    Dans cet exemple, il est évident dans le cas du bouton bascule que la fonctionnalité sans fil est activée. Mais pour la case à cocher, l’utilisateur doit se demander si la fonctionnalité sans fil est en marche ou s’il doit activer la case à cocher pour la mettre en marche.
 
--   Utilisez une case à cocher lorsque l’utilisateur doit réaliser des étapes supplémentaires afin de rendre effectives les modifications. À titre d’exemple, si l’utilisateur doit cliquer sur un bouton « Envoyer » ou « Suivant » pour appliquer les modifications, utilisez une case à cocher.
+-   Utilisez les cases à cocher pour les éléments facultatifs («bonus»). 
+-   Utilisez une case à cocher lorsque l’utilisateur doit réaliser des étapes supplémentaires afin de rendre effectives les modifications. Par exemple, si l’utilisateur doit cliquer sur un bouton «Envoyer» ou «Suivant» pour appliquer les modifications, utilisez une case à cocher.
+-   Utilisez les cases à cocher lorsque l’utilisateur peut sélectionner plusieurs éléments liés à un paramètre ou une fonctionnalité unique. 
 
-    ![Case à cocher et bouton Envoyer](images/submitcheckbox.png)
+## <a name="toggle-switches-in-the-the-windows-ui"></a>Boutons bascule dans l’interface utilisateur Windows
 
--   Utilisez des cases à cocher ou une [zone de liste](lists.md) lorsque l’utilisateur peut sélectionner plusieurs éléments:
+Ces images montrent comment l’interface utilisateur Windows utilise les boutons bascule. Voici comment l’écran Paramètres Smart Storage utilise les boutons bascule:
 
-    ![Case à cocher avec plusieurs éléments sélectionnés](images/guidelines_and_checklist_for_toggle_switches_checkbox_multi_select.png)
+![Boutons bascule dans Smart Storage](images/SmartStorageToggle.png)
 
-## <a name="examples"></a>Exemples
+Cet exemple est tiré de la page Paramètres d’éclairage nocturne:
 
-Boutons bascule dans les paramètres généraux de l’application Actualités.
-
-![Boutons bascule dans les paramètres généraux de l’application Actualités](images/control-examples/toggle-switch-news.png)
-
-Boutons bascule dans les paramètres du menu Démarrer dans Windows.
-
-![Boutons bascule dans les paramètres du menu Démarrer dans Windows](images/control-examples/toggle-switch-start-settings.png)
+![Boutons bascule dans les paramètres du menu Démarrer dans Windows](images/NightLightToggle.png)
 
 ## <a name="create-a-toggle-switch"></a>Créer un bouton bascule
 
@@ -87,7 +85,7 @@ stackPanel1.Children.Add(wiFiToggle);
 
 ### <a name="ison"></a>IsOn
 
-Le commutateur peut être activé ou désactivé. Utilisez la propriété [**IsOn**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx) pour déterminer l’état du commutateur. Lorsque le commutateur est utilisé pour contrôler l’état d’une autre propriété binaire, vous pouvez utiliser une liaison, comme illustré ici.
+Le commutateur peut être activé ou désactivé. Utilisez la propriété [IsOn](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx) pour déterminer l’état du commutateur. Lorsque le commutateur est utilisé pour contrôler l’état d’une autre propriété binaire, vous pouvez utiliser une liaison, comme illustré ici.
 
 ```
 <StackPanel Orientation="Horizontal">
@@ -98,12 +96,12 @@ Le commutateur peut être activé ou désactivé. Utilisez la propriété [**IsO
 
 ### <a name="toggled"></a>Toggled
 
-Dans les autres cas, vous pouvez gérer l’événement [**Toggled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx) afin de répondre aux modifications de l’état.
+Dans les autres cas, vous pouvez gérer l’événement [Toggled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx) afin de répondre aux modifications de l’état.
 
 Cet exemple indique comment ajouter un gestionnaire d’événements Toggled en XAML et à l’aide de code. L’événement Toggled est géré de façon à activer ou désactiver un anneau de progression et à en modifier la visibilité.
 
 ```xaml
-<ToggleSwitch x:Name="toggleSwitch1" IsOn="True" 
+<ToggleSwitch x:Name="toggleSwitch1" IsOn="True"
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
@@ -142,27 +140,27 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 
 ### <a name="onoff-labels"></a>Étiquettes On/Off
 
-Par défaut, le bouton bascule inclut des étiquettes On et Off littérales, qui sont localisées automatiquement. Vous pouvez remplacer ces étiquettes en définissant les propriétés [**OnContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontent.aspx) et [**OffContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontent.aspx).
+Par défaut, le bouton bascule inclut des étiquettes On et Off littérales, qui sont localisées automatiquement. Vous pouvez remplacer ces étiquettes en définissant les propriétés [OnContent](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontent.aspx) et [OffContent](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontent.aspx).
 
 Cet exemple remplace les étiquettes On/Off par des étiquettes Show/Hide.  
 
 ```xaml
 <ToggleSwitch x:Name="imageToggle" Header="Show images"
-              OffContent="Show" OnContent="Hide" 
+              OffContent="Show" OnContent="Hide"
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
-Vous pouvez également utiliser un contenu plus complexe en définissant les propriétés [**OnContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontenttemplate.aspx) et [**OffContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontenttemplate.aspx).
+Vous pouvez également utiliser un contenu plus complexe en définissant les propriétés [OnContentTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontenttemplate.aspx) et [OffContentTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontenttemplate.aspx).
 
 ## <a name="recommendations"></a>Recommandations
 
--   Remplacez les étiquettes « Activé » et « Désactivé » quand il en existe de plus spécifiques pour le paramètre. S’il existe des étiquettes courtes (de 3 ou 4caractères) qui représentent des choix binaires plus pertinents pour un paramètre donné, utilisez-les. Par exemple, vous pouvez utiliser «Show/Hide» si le paramètre offre la possibilité d’afficher des images. L’utilisation d’étiquettes plus précises peut contribuer à faciliter la localisation de l’interface utilisateur.
--   Évitez de remplacer les étiquettes On et Off, sauf si vous y êtes tenu; utilisez les étiquettes par défaut, à moins que la situation n’appelle des étiquettes personnalisées.
--   Les étiquettes ne doivent pas contenir plus de 4caractères.
+-    Utilisez les étiquettes On et Off par défaut lorsque vous le pouvez; remplacez-les uniquement lorsque cela est nécessaire pour rendre le bouton bascule compréhensible. Si vous les remplacez, utilisez le mot qui décrit le plus précisément le bouton bascule. En règle générale, si les mots «On» et «Off» ne décrivent pas l’action liée à un bouton bascule, essayez éventuellement un autre contrôle.
+-    Évitez de remplacer les étiquettes On et Off, sauf si vous y êtes tenu; utilisez les étiquettes par défaut, à moins que la situation n’appelle des étiquettes personnalisées.
+
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [**Classe ToggleSwitch**](https://msdn.microsoft.com/library/windows/apps/hh701411)
+- [Classe ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/hh701411)
 - [Cases d’option](radio-button.md)
 - [Boutons bascule](toggles.md)
 - [Cases à cocher](checkbox.md)

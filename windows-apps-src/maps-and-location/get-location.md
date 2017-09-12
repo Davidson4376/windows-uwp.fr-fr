@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows10, uwp, carte, emplacement, fonctionnalité de localisation"
-ms.openlocfilehash: 05fa3330f5346f69061cb60cf8b54de451845e06
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f5af2815783568cb234f1196e065f18b145c7e68
+ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/27/2017
 ---
 # <a name="get-the-users-location"></a>Obtenir l’emplacement de l’utilisateur
 
@@ -29,7 +31,7 @@ Déterminez l’emplacement de l’utilisateur et réagissez aux changements d�
 
 
 1.  Dans l’**Explorateur de solutions**, double-cliquez sur **package.appxmanifest**, puis sélectionnez l’onglet **Capacités**.
-2.  Dans la liste **Capacités**, sélectionnez l’onglet **Capacités**. Cette opération ajoute la fonctionnalité `Location` de l’appareil au fichier manifeste du package.
+2.  Dans la liste **Capacités**, cochez la case **Localisation**. Cette opération ajoute la fonctionnalité `location` de l’appareil au fichier manifeste du package.
 
 ```XML
   <Capabilities>

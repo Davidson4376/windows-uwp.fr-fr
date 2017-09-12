@@ -1,19 +1,21 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Tests du Kit de certification des applications Windows
 description: "Le Kit de certification des applications Windows contient un certain nombre de tests qui permettent de vérifier si une application est prête à être publiée sur le Windows Store."
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 2dab2719eae86487b93b9030b430b84aea7b2737
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 5e3ae74ba4392b5021159f9fcb825009137701d3
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/26/2017
 ---
-## <a name="windows-app-certification-kit-tests"></a>Tests du Kit de certification des applications Windows
+# <a name="windows-app-certification-kit-tests"></a>Tests du Kit de certification des applications Windows
 
 \[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -668,8 +670,8 @@ Mettez à jour le code JavaScript en arrière-plan pour appeler Close() correcte
 
 > **Remarque**  Cet article s’adresse aux développeurs de Windows10 qui écrivent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
- 
+## <a name="related-topics"></a>Rubriques connexes
 
- 
-
+* [Tests d’application Pont du bureau Windows](windows-desktop-bridge-app-tests.md)
+* [Politiques du WindowsStore](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  

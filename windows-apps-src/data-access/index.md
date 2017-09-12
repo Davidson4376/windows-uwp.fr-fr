@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: normesta
 ms.assetid: 76776b0f-3163-48c9-835b-3f4213968079
 title: "Accès aux données"
 description: "Cette section présente le stockage des données sur l’appareil dans une base de données privée et l’utilisation du mappage relationnel objet dans les applications de plateforme Windows universelle (UWP)."
-ms.author: markl
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows10, uwp, données, base de données relationnelle, tables, sqlite"
-ms.openlocfilehash: 9e5873e7c7c5af9b3d13dcd850e19ff3dfd91dc7
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 19690b6877fb4304b7740e6098711ca0b097d567
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="data-access"></a>Accès aux données
 
@@ -24,4 +26,4 @@ SQLite est inclus dans le SDKUWP. Entity Framework Core fonctionne avec SQLite d
 | Rubrique | Description|
 |-------|------------|
 | [Entity FrameworkCoreavec SQLite pour applicationsC#](entity-framework-7-with-sqlite-for-csharp-apps.md) | Entity Framework (EF) est un mappeur objet relationnel qui vous permet de travailler avec les données relationnelles en utilisant des objets propres au domaine. Cet article explique comment utiliser Entity Framework Core avec une base de données SQLite dans une application Windows universelle. |
-| [Bases de données SQLite](sqlite-databases.md) | SQLite est un moteur de base de données intégré, sans serveur. Cet article explique comment utiliser la bibliothèque SQLite incluse dans le Kit de développement logiciel (SDK), créer un package pour votre propre bibliothèque SQLite dans une application Windows universelle ou la générer à partir de la source. |
+| [Bases de données SQLite](sqlite-databases.md) | SQLite est un moteur de base de données intégré, sans serveur. Cet article explique comment utiliser la bibliothèque SQLite incluse dans le Kit de développement logiciel (SDK), empaqueter votre propre bibliothèque SQLite dans une application Windows universelle ou la générer à partir de la source. |

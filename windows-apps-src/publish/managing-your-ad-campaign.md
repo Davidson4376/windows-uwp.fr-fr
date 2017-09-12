@@ -1,22 +1,24 @@
 ---
 author: jnHs
-Description: "Pour gérer les campagnes de publicité de votre application, cliquez sur Monétisation &gt; Promouvoir votre application sur la page de votre application dans le tableau de bord du Centre de développement Windows."
-title: "Gestion de votre campagne de publicité"
+Description: "Gérez les campagnes de publicité de vos applications dans le tableau de bord du Centre de développement Windows."
+title: "Gérer votre campagne de publicité"
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 642049a5356ec276b5cf629a7ca1c431e5c00476
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 40d82d9b3ed1b450972d69e04df511496de31f67
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/21/2017
 ---
-# <a name="managing-your-ad-campaign"></a>Gestion de votre campagne de publicité
+# <a name="manage-your-ad-campaign"></a>Gérer votre campagne de publicité
 
 
-Pour gérer les campagnes de publicité de votre application, cliquez sur **Monétisation** &gt; **Promouvoir votre application** sur la page de votre application dans le tableau de bord du Centre de développement Windows. La page **Promouvoir votre application** répertorie l’ensemble des campagnes de publicité associées à votre application et affiche les impressions, les clics et installations associés à chacune d’entre elles. Pour en savoir plus sur les impressions, les clics et les installations, consultez les définitions de ces termes dans l’article [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md).
+Pour gérer les campagnes de publicité de votre application, développez **Attract** dans le menu de navigation de gauche du tableau de bord, puis sélectionnez **Campagnes de publicité**. Vous voyez apparaître l’ensemble des campagnes de publicité associées à vos applications, ainsi que les expositions, les clics et les installations relatifs à chacune de ces campagnes. Pour plus d’informations sur les expositions, les clics et les installations, consultez les définitions de ces termes dans l’article [Rapport de campagne de publicité](promote-your-app-report.md).
 
 Pour filtrer la liste des campagnes de publicité, cliquez sur la liste déroulante **Filtres de section** et faites votre choix parmi les filtres suivants :
 
@@ -28,15 +30,16 @@ Pour filtrer la liste des campagnes de publicité, cliquez sur la liste déroula
     -   L’option **Requiert votre attention** indique que la campagne de publicité présente des problèmes qui nécessitent votre attention, comme une défaillance de facturation ou un défaut de validation d’une conception publicitaire personnalisée. Pour résoudre les problèmes, cliquez sur le texte de la colonne **Action** du tableau des campagnes de publicité.
 -   **Type de campagne** : cette valeur précise le type de campagnes de publicité à afficher (payées ou [maison](about-house-ads.md)).
 
-## <a name="report"></a>Rapport
+## <a name="reporting"></a>Rapports
 
 
-Pour contrôler l’efficacité de vos campagnes de publicité, cliquez sur **Analyse** &gt; **Publicité d’installation d’applications** dans le volet de navigation du tableau de bord. Pour en savoir plus sur ce rapport, consultez l’article [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md).
+Cette page affiche les détails des rapports. Pour plus d’informations, consultez l’article [Rapport de campagne de publicité](promote-your-app-report.md).
+
 
 ## <a name="edit-an-ad-campaign"></a>Modifier une campagne de publicité
 
-
 Pour apporter des modifications à une campagne de publicité, cliquez sur son nom afin d'accéder à la page de détails correspondante. Une fois que vous avez apporté des modifications, cliquez sur **Révision**, passez les détails en revue, puis cliquez sur **Confirmer**.
+
 
 ## <a name="related-topics"></a>Rubriques connexes
 

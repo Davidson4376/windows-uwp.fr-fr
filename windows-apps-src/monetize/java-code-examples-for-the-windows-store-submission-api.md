@@ -2,24 +2,24 @@
 author: mcleanbyron
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
 description: "Servez-vous des exemples de code Java présentés dans cette section pour en apprendre un peu plus sur l’utilisation de l’API de soumission du Windows Store."
-title: "Exemples de code Java pour l’API de soumission"
+title: "Exemple de code Java: soumissions d'applications, d'extensions et de versions d’évaluation"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp, API de soumission du Windows Store, exemples de code
-ms.openlocfilehash: ff5e857e0f5ce110ab7afc64bd2faa28f7bea517
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows10, uwp, API de soumission du Windows Store, exemples de code, java
+ms.openlocfilehash: daa91b5354abc070b1ba538f7d818125e4bc94a9
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/09/2017
 ---
-# <a name="java-code-examples-for-the-submission-api"></a>Exemples de code Java pour l’API de soumission
+# <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Exemple de code Java: soumissions d'applications, d'extensions et de versions d’évaluation
 
-Cet article fournit des exemples de code Java pour l’utilisation de l’*API de soumission du Windows Store*. Pour plus d’informations sur cette API, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
+Cet article fournit des exemples de code Java qui décrivent comment utiliser l’[API de soumission au Windows Store](create-and-manage-submissions-using-windows-store-services.md) pour les tâches suivantes:
 
-Ces exemples de code illustrent les tâches suivantes:
-
-* [Obtenir un jeton d’accès Azure AD](#token)
+* [Obtenir un jeton d’accès AzureAD](#token)
 * [Créer une extension](#create-add-on)
 * [Créer une version d’évaluation du package](#create-package-flight)
 * [Créer une soumission d’applications](#create-app-submission)
@@ -52,7 +52,7 @@ L’exemple suivant indique comment [obtenir un jeton d’accès AzureAD](create
 <span id="create-add-on" />
 ## <a name="create-an-add-on"></a>Créer une extension
 
-L’exemple suivant indique comment [créer](create-an-add-on.md) et [supprimer](delete-an-add-on.md) une extension (qu’on appelle également produit in-app, ou PIA).
+L’exemple suivant indique comment [créer](create-an-add-on.md) et [supprimer](delete-an-add-on.md) une extension.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L310-L345)]
 
