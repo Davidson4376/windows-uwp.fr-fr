@@ -9,13 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, cartesd, stockage
-ms.openlocfilehash: 89dfed0cbd8a4a87f432a747e4155cdef3bbc757
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 44354bbacd5ea775c8a973fe7f82aaf65b3f70db
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="access-the-sd-card"></a>Accéder à la carte SD
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour lire des articles sur Windows8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Vous pouvez stocker des données non essentielles et y accéder sur une carte microSD en option, plus particulièrement sur les appareils mobiles à faible coût dont le stockage interne est limité et qui disposent d’un emplacement pour les cartes de ce type.

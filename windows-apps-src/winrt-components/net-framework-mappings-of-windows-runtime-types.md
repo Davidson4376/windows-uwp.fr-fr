@@ -9,14 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: a69ad9bdff70dc04f9bdf9eb4f5117a22a005969
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: a2baf9058f841c2d8de938df65d07f0584b736e9
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>Mappages .NET Framework des types Windows Runtime
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Le tableau suivant répertorie les mappages que .NET Framework effectue entre les types de plateforme Windows universelle (UWP) et les types .NET Framework. Dans une application Windows universelle écrite en code managé, IntelliSense affiche le type .NET Framework plutôt que le type UWP. Par exemple, si une méthode Windows Runtime prend un paramètre de type IVector&lt;string&gt;, IntelliSense affiche un paramètre de type IList&lt;string&gt;. De même, dans un composant Windows Runtime écrit en code managé, vous devez utiliser le type .NET Framework dans les signatures de membre. Lorsque l’[outil d’exportation de métadonnées Windows Runtime (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) génère votre composant Windows Runtime, le type .NET Framework devient le type UWP correspondant.
 

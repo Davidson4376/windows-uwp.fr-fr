@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: windows10, uwp, jeux, casque
 ms.openlocfilehash: 04baee2a3011cee63933fe1fdab759d1b6d29c89
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: fr-FR
 ---
 # <a name="headset"></a>Casque
 

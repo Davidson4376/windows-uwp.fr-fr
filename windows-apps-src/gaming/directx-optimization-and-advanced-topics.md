@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "windows10, uwp, jeu, directx, optimiser, échantillonnage multiple, chaînes d’échange"
 ms.openlocfilehash: 9fb2c8c92cdf5a498f3e3db4d9250c9dcdfe204f
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: fr-FR
 ---
 # <a name="optimization-and-advanced-topics-for-directx-games"></a>Optimisation et rubriques avancées pour les jeux DirectX
 
