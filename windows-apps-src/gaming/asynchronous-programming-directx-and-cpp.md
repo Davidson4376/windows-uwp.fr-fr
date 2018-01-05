@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: Windows10, uwp, jeux, programmation asynchrone, directx
 ms.openlocfilehash: fe3798e475654d4d0ae7773ac26889906d40b3df
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: fr-FR
 ---
 # <a name="asynchronous-programming-directx-and-c"></a>Programmation asynchrone (DirectX et C++)
 

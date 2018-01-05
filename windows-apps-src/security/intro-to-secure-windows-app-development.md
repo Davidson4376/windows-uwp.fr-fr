@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.openlocfilehash: 1faf53dc2f1d919af072cd52593292fc552317e9
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: fr-FR
 ---
 # <a name="intro-to-secure-windows-app-development"></a>Présentation du développement d’applications Windows sécurisées
 

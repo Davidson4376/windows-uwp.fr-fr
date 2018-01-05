@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.openlocfilehash: 883a8977839d8f93ff878b075a52df8b9a587aa9
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: fr-FR
 ---
 # <a name="camera"></a>Caméra
 

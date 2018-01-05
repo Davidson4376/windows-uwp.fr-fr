@@ -1,17 +1,20 @@
 ---
-title: "Mémoires tampons de vertex et d&quot;index"
-description: "Les mémoires tampons de vertex comportent des données de vertex; les vertex sont traités dans le cadre des opérations de transformation, d&quot;éclairage et de découpage."
+title: "Mémoires tampons de vertex et d'index"
+description: "Les mémoires tampons de vertex comportent des données de vertex; les vertex sont traités dans le cadre des opérations de transformation, d'éclairage et de découpage."
 ms.assetid: 8A39CD23-85FB-4424-9AC3-37919704CD68
-keywords: "Mémoires tampons de vertex et d&quot;index"
-author: PeterTurcan
-ms.author: pettur
+keywords: "Mémoires tampons de vertex et d'index"
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: f06ee013f5c09522df387d69afa0096f7a3f7044
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: f7153696f135d8fa559933d4e7a7c6e925850565
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="vertex-and-index-buffers"></a>Mémoires tampons de vertex et d'index
 

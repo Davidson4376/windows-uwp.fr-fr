@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.openlocfilehash: 3317c1c05c8a9a51f0a4d3c363db9c92809c1919
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: fr-FR
 ---
 # <a name="convert-between-strings-and-binary-data"></a>Convertir entre chaînes et données binaires
 

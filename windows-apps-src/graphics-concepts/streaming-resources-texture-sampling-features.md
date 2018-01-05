@@ -1,17 +1,20 @@
 ---
 title: "Fonctionnalités d’échantillonnage de texture des ressources de diffusion en continu"
-description: "Les fonctionnalités d&quot;échantillonnage de texture des ressources de diffusion en continu incluent l&quot;obtention des commentaires sur l&quot;état du nuanceur concernant les zones mappées, la possibilité de vérifier que toutes les données auxquelles vous accédez ont été mappées dans la ressource, l&quot;utilisation du déplacement de couleur pour aider les nuanceurs à éviter les zones mipmappées dans les ressources de diffusion en continu connues pour ne pas être mappées, et la détection de la LOD minimale mappée entièrement pour un encombrement de filtre de texture entier."
+description: "Les fonctionnalités d'échantillonnage de texture des ressources de diffusion en continu incluent l'obtention des commentaires sur l'état du nuanceur concernant les zones mappées, la possibilité de vérifier que toutes les données auxquelles vous accédez ont été mappées dans la ressource, l'utilisation du déplacement de couleur pour aider les nuanceurs à éviter les zones mipmappées dans les ressources de diffusion en continu connues pour ne pas être mappées, et la détection de la LOD minimale mappée entièrement pour un encombrement de filtre de texture entier."
 ms.assetid: C2B2DD69-8354-417A-894D-6235A8B48B53
 keywords: "Fonctionnalités d’échantillonnage de texture des ressources de diffusion en continu"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 7d03ba6eec780a3c05e4d15247c423852d7d75f6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: ee5dc703fe52b0ac8b7163a8067e8b8b87ac8103
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="streaming-resources-texture-sampling-features"></a>Fonctionnalités d’échantillonnage de texture des ressources de diffusion en continu
 

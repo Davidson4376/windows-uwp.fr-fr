@@ -3,15 +3,18 @@ title: "Mémoires tampons d’index"
 description: "Les mémoires tampons d’index sont des mémoires comportant des données d’index, qui sont des décalages d’entiers dans des mémoires tampons de vertex, utilisés pour l’affichage des primitives."
 ms.assetid: 14D3DEC5-CF74-488B-BE41-16BF5E3201BE
 keywords: "Mémoires tampons d’index"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: aeb526032489cac2fdbbc436f98eac0cda59b643
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: f79b6982ccb6a938f88a289a823dd5da855e57e2
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="index-buffers"></a>Mémoires tampons d’index
 

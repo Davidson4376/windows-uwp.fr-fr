@@ -1,17 +1,20 @@
 ---
 title: Partage de ressources de diffusion en continu avec des processus et des appareils
-description: "Les pools de vignettes peuvent être partagés avec d’autres processus comme n&quot;importe quelle ressource traditionnelle. Les ressources de diffusion en continu qui font référence à des pools de vignettes ne peuvent être partagées entre les appareils et les processus."
+description: "Les pools de vignettes peuvent être partagés avec d’autres processus comme n'importe quelle ressource traditionnelle. Les ressources de diffusion en continu qui font référence à des pools de vignettes ne peuvent être partagées entre les appareils et les processus."
 ms.assetid: D035AF4B-D71B-4F20-9A98-7C360BF9B285
 keywords: Partage de ressources de diffusion en continu avec des processus et des appareils
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 8f383805759e099144f13a5924b5da90240b4ef0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d08153588ce596af1228fd5bb1e6989396f993c3
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="span-iddirect3dconceptsstreaming-resource-cross-process-and-device-sharingspanstreaming-resource-cross-process-and-device-sharing"></a><span id="direct3dconcepts.streaming-resource-cross-process-and-device-sharing"></span>Partage de ressources de diffusion en continu avec des processus et des appareils
 

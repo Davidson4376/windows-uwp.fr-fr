@@ -1,17 +1,20 @@
 ---
 title: "Copie et consultation des données des ressources"
-description: "Les indicateurs d’utilisation spécifient la manière dont l’application va utiliser les données de ressources, de manière à placer les ressources dans la zone de mémoire la plus performante possible. Les données de ressource sont copiées dans les ressources de sorte que l&quot;UC ou le processeur graphique puisse y accéder sans affecter les performances."
+description: "Les indicateurs d’utilisation spécifient la manière dont l’application va utiliser les données de ressources, de manière à placer les ressources dans la zone de mémoire la plus performante possible. Les données de ressource sont copiées dans les ressources de sorte que l'UC ou le processeur graphique puisse y accéder sans affecter les performances."
 ms.assetid: 6A09702D-0FF2-4EA6-A353-0F95A3EE34E2
 keywords: "Copie et consultation des données des ressources"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: e26e6abf4b15584f8c04a837dcc6bd23aad0f1d0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 438b9608e9b15fd0c00def517a4c38491d486217
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="copying-and-accessing-resource-data"></a>Copie et consultation des données des ressources
 

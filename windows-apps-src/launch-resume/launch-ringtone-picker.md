@@ -11,7 +11,8 @@ keywords: windows10, uwp
 ms.assetid: 0c17e4fb-7241-4da9-b457-d6d3a7aefccb
 ms.openlocfilehash: 84cc1c7347b71a174b25635188ef2972c2bb39d9
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: fr-FR
 ---
 # <a name="choose-and-save-tones-using-the-ms-tonepicker-uri-scheme"></a>Sélectionner et enregistrer des tonalités à l’aide du schéma d’URI ms-tonepicker
 

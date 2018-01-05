@@ -3,15 +3,18 @@ title: Filtrage de textures
 description: "Le filtrage de textures génère une couleur pour chaque pixel dans l’image rendue en 2D de la primitive lorsqu’une primitive est affichée en mappant une primitive 3D sur un écran 2D."
 ms.assetid: 1CCF4138-5D48-4B07-9490-996844F994D8
 keywords: Filtrage de textures
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 43dccdc8a8834830b6c15fcfc1cd56216e27ee90
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 42d184b15de4fdeac18549b41447da81580d6b99
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="texture-filtering"></a>Filtrage de textures
 

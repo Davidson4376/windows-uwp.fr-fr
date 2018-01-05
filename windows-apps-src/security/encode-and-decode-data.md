@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.openlocfilehash: e7b80edf6f0434e336b6b146ca4a9bc737d262ba
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: fr-FR
 ---
 # <a name="encode-and-decode-data"></a>Encoder et décoder des données
 

@@ -1,17 +1,20 @@
 ---
 title: "Éclairage ambiant"
-description: "L&quot;éclairage ambiant permet de donner à une scène un éclairage constant."
+description: "L'éclairage ambiant permet de donner à une scène un éclairage constant."
 ms.assetid: C34FA65A-3634-4A4B-B183-4CDA89F4DC95
 keywords: "Éclairage ambiant"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: c03e3a67af7da1326e254a687c77c9c0fd1d5403
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 08b44ae8348e7b9d1d8dff0b98e5f1c553ec79b2
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ambient-lighting"></a>Éclairage ambiant
 

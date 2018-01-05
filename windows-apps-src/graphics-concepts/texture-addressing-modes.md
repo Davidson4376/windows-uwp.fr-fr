@@ -8,15 +8,18 @@ keywords:
 - "Mode d’adresse de texture Mirror"
 - "Mode d’adresse de texture Clamp"
 - "Mode d’adresse de texture Border Color"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: c003e78b192aa85440219be739fc2fec6eba3c20
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 75aa946f3a0f1259adf1207e9568ca6da783883e
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="texture-addressing-modes"></a>Modes d’adressage de texture
 

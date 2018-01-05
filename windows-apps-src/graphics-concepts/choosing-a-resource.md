@@ -3,15 +3,18 @@ title: "Choix d’une ressource"
 description: "Une ressource est une collection de données utilisées par le pipeline 3D."
 ms.assetid: 6BAD6287-2930-42F8-BF51-69A379D1D2C3
 keywords: "Choix d’une ressource"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 1722558dfbb9620d4d265a2a479109366780a514
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 2e616f5a04e50b400c4bd7a700981396570a6c1d
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="choosing-a-resource"></a>Choix d’une ressource
 

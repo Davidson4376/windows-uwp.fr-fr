@@ -1,17 +1,20 @@
 ---
 title: "Étape Compute Shader (CS)"
-description: "L&quot;étape Compute Shader (CS) assure des opérations de calcul général à haut débit et tire parti du grand nombre de processeurs parallèles sur le processeur graphique (GPU)."
+description: "L'étape Compute Shader (CS) assure des opérations de calcul général à haut débit et tire parti du grand nombre de processeurs parallèles sur le processeur graphique (GPU)."
 ms.assetid: 300D4C0C-5450-45F8-9F29-E1A101D38F73
 keywords: "Étape Compute Shader (CS)"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 910965862f923750a8be6beb59dcd6ac7edf7e69
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 2bed0364efc2e32d8130aa50743dcdf03efcda34
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="compute-shader-cs-stage"></a>Étape Compute Shader (CS)
 

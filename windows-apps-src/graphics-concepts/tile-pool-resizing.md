@@ -3,15 +3,18 @@ title: "Redimensionnement d’un pool de tuiles"
 description: "Redimensionnez un pool de tuiles pour l’augmenter si l’application nécessite plus de plages de travail pour les ressources de diffusion en continu mappées ou le réduire si moins d’espace est nécessaire."
 ms.assetid: A54A06DC-BDDB-42DC-85E8-C64241100ED5
 keywords: "Redimensionnement d’un pool de tuiles"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 57d2f919b2813e31345e057a515ed9184ae40cd9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: fba4197a8d290d7677558b82ed2fcdc28a8dbdf2
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tile-pool-resizing"></a>Redimensionnement d’un pool de tuiles
 

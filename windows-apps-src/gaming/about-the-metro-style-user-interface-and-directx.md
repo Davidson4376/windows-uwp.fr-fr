@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: Windows10, uwp, directx, objet d&quot;application
 ms.openlocfilehash: 7d3290633ead698a6c42c3accdbd2012ccfd7065
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: fr-FR
 ---
 # <a name="the-app-object-and-directx"></a>Objet application et DirectX
 

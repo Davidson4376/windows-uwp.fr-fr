@@ -3,15 +3,18 @@ title: "Périphériques"
 description: "Un périphérique Direct3D est le composant de rendu de Direct3D. Un périphérique encapsule et stocke l’état de rendu, exécute des transformations et des opérations d’éclairage, et rastérise une image sur une surface."
 ms.assetid: BC903462-A32A-46BA-8411-FB294F5D2CD9
 keywords: "Périphériques"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: e95c1e1cc9cf1b26553ec9e148438ae837dbdf0e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 5b45f7289660ae59745660d8f8cfa42ce41f969c
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="devices"></a>Périphériques
 

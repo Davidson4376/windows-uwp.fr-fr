@@ -3,15 +3,18 @@ title: Vecteurs normaux de face et de vertex
 description: "Chaque face d’un maillage comporte un vecteur normal d’une unité perpendiculaire. La direction du vecteur est déterminée par l’ordre dans lequel les vertex sont définis et par le côté (droit ou gauche) sur lequel se trouve le système de coordonnées."
 ms.assetid: 02333579-9749-4612-B121-23F97898A3E0
 keywords: Vecteurs normaux de face et de vertex
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 04725508694370c1fff20ae34736fbd05948328c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 7f8a38eeca0516082a64f5b4d2778f74436bbdb7
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="face-and-vertex-normal-vectors"></a>Vecteurs normaux de face et de vertex
 

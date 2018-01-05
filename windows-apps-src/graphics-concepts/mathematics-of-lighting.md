@@ -3,15 +3,18 @@ title: "Formules mathématiques d’éclairage"
 description: "Le modèle d’éclairage Direct3D prend en charge les éclairages ambiant, diffus, spéculaire et émissif. La souplesse de la configuration permet de résoudre de nombreuses situations d’éclairage. Dans une scène, la quantité globale d’éclairage s’appelle l’illumination globale."
 ms.assetid: D0521F56-050D-4EDF-9BD1-34748E94B873
 keywords: "Formules mathématiques d’éclairage"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: fd26d7253de1422f81ff4c0b9bf94d45cd02b2fc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 74d6caed069327efd0262158d7d3781cb5a5c02e
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mathematics-of-lighting"></a>Formules mathématiques d’éclairage
 

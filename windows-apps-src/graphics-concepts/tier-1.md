@@ -3,15 +3,18 @@ title: Niveau1
 description: "Cette section décrit la prise en charge du niveau1."
 ms.assetid: 153DA429-0C99-4691-AEB4-124FD9B17BE2
 keywords: Niveau1
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 0c463e2a6ea4f43ea1f3eccab69a94f9d6f13170
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 522e2b5e9347b0b26bbd448b1d445037a3889f16
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tier-1"></a>Niveau1
 

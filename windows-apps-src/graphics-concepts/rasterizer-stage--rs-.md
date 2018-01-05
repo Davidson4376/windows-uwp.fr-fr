@@ -3,15 +3,18 @@ title: "Étape du rastériseur (RS)"
 description: "Le rastériseur extrait les primitives qui ne sont pas dans la vue, les prépare pour l’étape du nuanceur de pixels (PS) et détermine le mode d’invocation des nuanceurs de pixels."
 ms.assetid: 7E80724B-5696-4A99-91AF-49744B5CD3A9
 keywords: "Étape du rastériseur (RS)"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 1226ad54c6af2f064badf2b1e00088e3b1c70a29
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: b707356b2d90ad4839fdc7f6e52370b74ea4857a
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="rasterizer-rs-stage"></a>Étape du rastériseur (RS)
 

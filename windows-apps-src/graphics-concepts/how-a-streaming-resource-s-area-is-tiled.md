@@ -6,15 +6,18 @@ keywords:
 - "Restitution de la surface d’une ressource de diffusion en continu sous forme de vignettes"
 - "zone de ressource, découpage en vignettes"
 - "tableaux de tailles, ressources, découpage en vignettes"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 0718557245d9072adb0db608a7692dc7674ceca8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 257522f8d00596aa6bb60a87277d4e1a5ccdcf89
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-a-streaming-resources-area-is-tiled"></a>Restitution de la surface d’une ressource de diffusion en continu sous forme de vignettes
 

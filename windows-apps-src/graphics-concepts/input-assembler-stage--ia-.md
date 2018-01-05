@@ -3,15 +3,18 @@ title: "Étape de l’assembleur d’entrée (IA)"
 description: "L’étape de l’assembleur d’entrée (IA, Input Assembler) fournit au pipeline des données de primitive et de contiguïté, telles que des triangles, des lignes et des points, incluant des ID sémantiques pour améliorer l’efficacité des nuanceurs en réduisant le traitement aux primitives qui n’ont pas encore été traitées."
 ms.assetid: AF1DC611-C872-47F1-BF1A-92C68C8903E6
 keywords: "Étape de l’assembleur d’entrée (IA)"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 3093fc58a3432fae64e9324773a9277d907a15fd
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: c05572c71f3863f6c6218d15a28ee620c4c645bb
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="input-assembler-ia-stage"></a>Étape de l’assembleur d’entrée (IA)
 

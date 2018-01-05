@@ -3,15 +3,18 @@ title: "Étape du nuanceur de pixels (PS)"
 description: "L’étape du nuanceur de pixels (PS, Pixel Shader) reçoit les données interpolées pour une primitive et génère des données par pixel telles que la couleur."
 ms.assetid: 0AEBFDFB-0AD8-4633-AE4E-A44004B57745
 keywords: "Étape du nuanceur de pixels (PS)"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 94a7d35605200b010210d16a8e0ddcc605db01e8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 5b5a318a9fc5667beda26ef77d5795697b2383eb
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="pixel-shader-ps-stage"></a>Étape du nuanceur de pixels (PS)
 

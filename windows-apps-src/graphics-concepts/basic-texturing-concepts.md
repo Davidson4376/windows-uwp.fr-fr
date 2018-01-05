@@ -1,17 +1,20 @@
 ---
 title: Concepts de texture de base
-description: "Les premières images 3D générées par ordinateur, bien qu&quot;assez sophistiquées pour leur époque, avaient tendance à présenter un aspect plastique brillant."
+description: "Les premières images 3D générées par ordinateur, bien qu'assez sophistiquées pour leur époque, avaient tendance à présenter un aspect plastique brillant."
 ms.assetid: 3CA3905D-E837-48EB-A81F-319AA1C6537E
 keywords: Concepts de texture de base
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 52c21ff88f09c5136579fabf0b699fd71a8717bd
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 7bbcdd17643f64ada02ff1045e57c873f40b2c36
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="basic-texturing-concepts"></a>Concepts de texture de base
 

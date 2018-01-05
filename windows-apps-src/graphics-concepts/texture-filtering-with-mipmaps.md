@@ -3,15 +3,18 @@ title: Filtrage de textures avec mipmaps
 description: "Un mipmap est une séquence de textures, chacune étant une représentation de résolution progressivement inférieure de la même image. La hauteur et la largeur de chaque image, ou le niveau dans le mipmap sont deux fois plus petits que le niveau précédent."
 ms.assetid: 28E863A2-C776-40E4-8551-9851DF7EC93E
 keywords: Filtrage de textures avec mipmaps
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 65c775a265f7c5a0b15f76d867a9403308fc7128
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: af0c9c7013b663bceb5c3747ff5d5250f62c54c7
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="texture-filtering-with-mipmaps"></a>Filtrage de textures avec mipmaps
 

@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 1eb756c794e23a17420c14af7e27ec315305f232
-ms.sourcegitcommit: c5c96ec4b6ccef57f69eb341b06e6280994c9767
+ms.localizationpriority: medium
+ms.openlocfilehash: 2aae0e634ea219ef602eafdb1516d1d42b9c7913
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Écrire un plug-in personnalisé pour DevicePortal
 
@@ -187,15 +188,15 @@ Plus important encore, l’utilisation des méthodes HttpPost/DeleteExpect200 su
 Pour déboguer votre tâche en arrière-plan, vous devez modifier la façon dont VisualStudio exécute votre code. Pour inspecter le mode de gestion des requêtes HTTP par votre fournisseur, suivez la procédure ci-après de débogage d’une connexion de service d’application:
 
 1.  Dans le menu Déboguer, sélectionnez Propriétés DevicePortalProvider. 
-1.  Sous l’onglet Débogage, dans la section Action de démarrage, sélectionnez «Ne pas lancer, mais déboguer mon code au démarrage».  
+2.  Sous l’onglet Débogage, dans la section Action de démarrage, sélectionnez «Ne pas lancer, mais déboguer mon code au démarrage».  
 ![Passage du plug-in en mode débogage](images/device-portal/plugin-debug-mode.png)
-1.  Définissez un point d’arrêt dans la fonction du gestionnaire RequestReceived.
+3.  Définissez un point d’arrêt dans la fonction du gestionnaire RequestReceived.
 ![Point d’arrêt au niveau du gestionnaire RequestReceived](images/device-portal/plugin-requestreceived-breakpoint.png)
-    > [!NOTE]
-    > Assurez-vous que l’architecture de la build correspond exactement à celle de la cible.  Si vous utilisez un PC 64bits, vous devez effectuer le déploiement à l’aide d’une buildAMD64.
-1.  Appuyez surF5 pour déployer votre application.
-1.  Désactivez DevicePortal, puis réactivez-le pour qu’il trouve votre application (cette opération n’est requise que si vous modifiez le manifeste de votre application; dans les autres cas, il vous suffit de procéder à un nouveau déploiement et d’ignorer cette étape). 
-1.  Dans votre navigateur, accédez à l’espace de noms de votre fournisseur; le point d’arrêt devrait alors être atteint.
+> [!NOTE] 
+> Assurez-vous que l’architecture de la build correspond exactement à celle de la cible. Si vous utilisez un PC 64bits, vous devez effectuer le déploiement à l’aide d’une buildAMD64. 
+4.  Appuyez surF5 pour déployer votre application.
+5.  Désactivez DevicePortal, puis réactivez-le pour qu’il trouve votre application (cette opération n’est requise que si vous modifiez le manifeste de votre application; dans les autres cas, il vous suffit de procéder à un nouveau déploiement et d’ignorer cette étape). 
+6.  Dans votre navigateur, accédez à l’espace de noms de votre fournisseur; le point d’arrêt devrait alors être atteint.
 
 ## <a name="related-topics"></a>Articles connexes
 * [Vue d’ensemble de Windows Device Portal](device-portal.md)

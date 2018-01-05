@@ -3,15 +3,18 @@ title: "Types de périphériques"
 description: "Les types de périphériques Direct3D comprennent les périphériques de couche d’abstraction matérielle (HAL) et le module de rastérisation de référence."
 ms.assetid: 64084B23-10C0-4541-8E93-FB323385D2F0
 keywords: "Types de périphériques"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: d863c3f45269c448f1f6fc1055ee765f323dbcd7
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 1aff4fed2f69c455157b21b6cce93e37a1b48c39
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="device-types"></a>Types de périphériques
 

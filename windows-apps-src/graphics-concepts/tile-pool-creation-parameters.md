@@ -3,15 +3,18 @@ title: "Paramètres de création d’un pool de tuiles"
 description: "Utilisez les paramètres de cette section pour définir des pools de tuiles lors de la création d’une mémoire tampon."
 ms.assetid: FDC1AD88-BC41-49EE-881E-F21743D407DB
 keywords: "Paramètres de création d’un pool de tuiles"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 7bf3a83641c09f557c021b216f7422d7eaf5ea56
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: a41e37e9483521877cfd5787f47e989c2d5cdcb2
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tile-pool-creation-parameters"></a>Paramètres de création d’un pool de tuiles
 

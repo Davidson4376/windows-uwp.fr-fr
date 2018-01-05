@@ -3,15 +3,18 @@ title: Primitives
 description: "Une primitive3D est un ensemble de sommets qui forme une entité3D unique."
 ms.assetid: A1FE6F49-B0D4-4665-90E1-40AD98E668B1
 keywords: Primitives
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 22f143030d3973cf77cd3b0857cf9b67ff5503fb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: fd6995e1d34b736f9f8d2844e1d4358446556c9a
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="primitives"></a>Primitives
 

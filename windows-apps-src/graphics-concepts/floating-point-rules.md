@@ -3,15 +3,18 @@ title: "Règles en matière de virgule flottante"
 description: "Direct3D prend en charge plusieurs représentations en virgule flottante. Tous les calculs en virgule flottante sont régis par un sous-ensemble défini de règles de représentation des nombres en virgule flottante 32bits simple précision conformément à l’IEEE754."
 ms.assetid: 3B0C95E2-1025-4F70-BF14-EBFF2BB53AFF
 keywords: "Règles en matière de virgule flottante"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: f802bcc2e70a622e6ce8a80744908cfe185f31b0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 8706b10756eeec5d4b8a872c0d436a157ef74970
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="span-iddirect3dconceptsfloating-pointrulesspanfloating-point-rules"></a><span id="direct3dconcepts.floating-point_rules"></span>Règles en matière de virgule flottante
 

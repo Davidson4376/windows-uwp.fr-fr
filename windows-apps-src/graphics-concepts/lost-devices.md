@@ -3,15 +3,18 @@ title: "Périphériques perdus"
 description: "Un périphérique Direct3D peut présenter l’état opérationnel ou perdu."
 ms.assetid: 1639CC02-8000-4208-AA95-91C1F0A3B08D
 keywords: "Périphériques perdus"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 625fe26facb8903c36c4efbb38216005b0a4271b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: e46adf3826749bd974951a54166a6e2afa3702e8
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="lost-devices"></a>Périphériques perdus
 

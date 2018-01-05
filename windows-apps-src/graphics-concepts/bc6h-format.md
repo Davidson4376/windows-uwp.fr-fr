@@ -3,15 +3,18 @@ title: Format BC6H
 description: "Le format BC6H est un format de compression de texture conçu pour prendre en charge les espaces de couleur à plage dynamique élevée (HDR) dans les données source."
 ms.assetid: 6781D967-9262-4EE7-B354-7A6D0EA0498E
 keywords: Format BC6H
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 2bca4f5e86229a9b6ffc622a65628f1b588c9ac6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: abff26c7f2e874d4a5e8e964fe716fcf2f1592cb
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="bc6h-format"></a>Format BC6H
 

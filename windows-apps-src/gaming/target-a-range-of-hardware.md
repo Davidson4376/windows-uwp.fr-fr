@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "Windows10, uwp, jeux, les mappages d’ombre, directx"
 ms.openlocfilehash: e4cffcf1e9655d5bc5dacbfc17cb64b5671d7551
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: fr-FR
 ---
 # <a name="support-shadow-maps-on-a-range-of-hardware"></a>Prendre en charge les mappages d’ombre sur une gamme de matériel
 

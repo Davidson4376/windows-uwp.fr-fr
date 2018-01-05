@@ -3,15 +3,18 @@ title: Affichages
 description: "Le terme \\ 0034;affichage \\ 0034; est utilisé pour désigner des \\ 0034;données au format requis \\ 0034;. Par exemple, un affichage des mémoires tampons de constantes (CBV) correspond à des données correctement formatées de mémoire tampon de constante. Cette section décrit les affichages les plus courants et les plus utiles."
 ms.assetid: 0C7FB99F-7391-472F-BA53-576888DFC171
 keywords: Affichages
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 0091afb549c778f367e12726054cb908eb0c3eba
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 270fdafb0383b73eb6b47d721bae4d994b3ad393
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="views"></a>Affichages
 

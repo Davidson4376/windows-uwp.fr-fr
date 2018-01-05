@@ -3,15 +3,18 @@ title: Restitution des sous-ressources Texture2D et Texture2DArray sous forme de
 description: "Les tableaux suivants montrent comment des sous-ressources Texture2D et Texture2DArray sont restituées sous forme de tuiles."
 ms.assetid: 2DC14DFC-5299-44D9-895F-5A223D3FD530
 keywords: Restitution des sous-ressources Texture2D et Texture2DArray sous forme de tuiles
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 4e4c4cb0293f2d595c7e009ddf1b86d17efe9e37
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 292adb2f06022fbb8fc063c49442cd69ccf64534
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="texture2d-and-texture2darray-subresource-tiling"></a>Restitution des sous-ressources Texture2D et Texture2DArray sous forme de tuiles
 

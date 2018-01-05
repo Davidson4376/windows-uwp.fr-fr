@@ -3,15 +3,18 @@ title: Vecteurs, sommets et quaternions
 description: "Dans Direct3D, les sommets décrivent la position et l’orientation. Chaque vertex dans une primitive est décrite par un vecteur qui donne sa position, sa couleur, ses coordonnées de texture et par un vecteur normal qui donne son orientation."
 ms.assetid: 94EC3D59-43FC-4509-A233-916E9FA8381E
 keywords: Vecteurs, sommets et quaternions
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 7b0fa178db12c421f5964f0dec2b8c6391ee1973
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: fe5a112b9e991f528225421307880d2ac6e1a381
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="vectors-vertices-and-quaternions"></a>Vecteurs, sommets et quaternions
 

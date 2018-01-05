@@ -2,16 +2,19 @@
 title: "Vue d’ensemble de la transformation"
 description: "Les transformations de matrice gèrent une grande partie des calculs de bas niveau des graphiques3D."
 ms.assetid: B5220EE8-2533-4B55-BF58-A3F9F612B977
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: f161462c352cf898a6b81920a3b81aec04cb6cc2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 02c23d7ff41f45edcb2a1f4f0ae8b18c25b9843f
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transform-overview"></a>Vue d’ensemble de la transformation
 
@@ -87,7 +90,7 @@ Vous pouvez créer manuellement une matrice de translation en C++. L’exemple s
 D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
     D3DXMATRIX ret;
 
-    D3DXMatrixIdentity(&amp;ret);
+    D3DXMatrixIdentity(&ret);
     ret(3, 0) = dx;
     ret(3, 1) = dy;
     ret(3, 2) = dz;
@@ -126,7 +129,7 @@ Le code suivant montre une fonction permettant de gérer la rotation autour de l
 ```
     // Inputs are a pointer to a matrix (pOut) and an angle in radians.
     float sin, cos;
-    sincosf(angle, &amp;sin, &amp;cos);  // Determine sin and cos of angle
+    sincosf(angle, &sin, &cos);  // Determine sin and cos of angle
 
     pOut->_11 = 1.0f; pOut->_12 =  0.0f;   pOut->_13 = 0.0f; pOut->_14 = 0.0f;
     pOut->_21 = 0.0f; pOut->_22 =  cos;    pOut->_23 = sin;  pOut->_24 = 0.0f;

@@ -3,15 +3,18 @@ title: "Étape de fusion de sortie (OM)"
 description: "L’étape de fusion de sortie (OM, Output Merger) combine plusieurs types de données de sortie (valeurs du nuanceur de pixels, informations de profondeur et gabarit) avec le contenu de la cible de rendu et des tampons de profondeur/gabarit pour générer le résultat final du pipeline."
 ms.assetid: ED2DC4A0-2B92-47AF-884A-BFC2183C78B8
 keywords: "Étape de fusion de sortie (OM)"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 35d242502441d9f7539a811fbcd376ac6e0b8794
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 47725e562008e2ac948f552107816fa9fe015001
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="output-merger-om-stage"></a>Étape de fusion de sortie (OM)
 

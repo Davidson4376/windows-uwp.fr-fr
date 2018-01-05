@@ -1,17 +1,20 @@
 ---
 title: Transformation de vue
-description: "Une transformation de vue localise l&quot;observateur dans l’espace universel, transformant les vertex en espace de caméra."
+description: "Une transformation de vue localise l'observateur dans l’espace universel, transformant les vertex en espace de caméra."
 ms.assetid: DA4C2051-4C28-4ABF-8C06-241C8CB87F2F
 keywords: Transformation de vue
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 62b0958bfa298ed924a62de73c1747f353e63033
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: b7e0fdf265bdbc28d4d81e3a2ead8ca0ee7ca35d
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="view-transform"></a>Transformation de vue
 

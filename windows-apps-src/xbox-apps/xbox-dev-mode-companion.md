@@ -11,7 +11,8 @@ keywords: windows10, uwp
 ms.assetid: ed84f232-ddb5-4ba1-bf1c-578e8df47602
 ms.openlocfilehash: 38bafd7c63b101e495748c169a1b566115c2a1e6
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: fr-FR
 ---
 # <a name="xbox-dev-mode-companion"></a>Compagnon du mode de développement Xbox
 
