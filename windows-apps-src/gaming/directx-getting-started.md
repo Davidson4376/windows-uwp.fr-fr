@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, directx
-ms.openlocfilehash: 34db19006fb8adb84d6bdf26cc52ca96363f263e
-ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.localizationpriority: medium
+ms.openlocfilehash: 56c1d097c97a88cf6fc6bbaf72fa6958704a5843
+ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="directx-getting-started"></a>DirectX: prise en main
 
@@ -38,7 +39,7 @@ La rubrique Lancement et reprise des applications explique comment vous pouvez d
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Objet d’application et DirectX](about-the-metro-style-user-interface-and-directx.md)</p></td>
+<td align="left"><p>[Objet d’application et DirectX](about-the-uwp-user-interface-and-directx.md)</p></td>
 <td align="left"><p>Accès et interaction directe avec l’objet application.</p></td>
 </tr>
 <tr class="even">
