@@ -3,17 +3,18 @@ title: "Programme Insider du Centre de développement"
 description: "Essayez les nouvelles fonctionnalités du Centre de développement avant qu’elles ne soient disponibles pour tous et faites-nous part de votre avis."
 author: JnHs
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 01/10/18
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: "windows10, uwp, insiders, insider du centre de développement, fonctionnalités d’aperçu"
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
-ms.openlocfilehash: 686486c80f0f857ddc0583c8ad467208be088ff9
-ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+ms.localizationpriority: high
+ms.openlocfilehash: bb0d2ad33107de8e5e8c1711de6012b73e754cc0
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="dev-center-insider-program"></a>Programme Insider du Centre de développement
 
@@ -28,11 +29,11 @@ Voici quelques-unes des fonctionnalités que nous avons rendues disponibles excl
 
 | Fonctionnalité du programme Insider du Centre de développement   | Comment les membres du programme Insider du Centre de développement peuvent l’essayer | Date d’ajout |
 |--------------------------------------|------------------------------------|------------|
-|**Surcroît de flexibilité pour l’association de locataires AzureAD à votre compte du Centre de développement**: associez plusieurs locataires AzureAD à un même compte du Centre de développement, ou associez un locataire AzureAD unique à plusieurs comptes du Centre de développement.  | Dans **Paramètres du compte**, accédez à **Gérer les locataires**. Vous accédez à la page **Manage Azure AD tenants** qui vous permet d’ajouter d’autres locataires AzureAD à votre compte.  | Août2017|
+|**Personnaliser vos préférences de notification**: choisissez les notifications que vous recevez sur votre compte du Centre de développement et indiquez si vous voulez les recevoir par courrier électronique, dans le tableau de bord, ou les deux. | Utilisez l’icône dans la partie supérieure du tableau de bord pour accéder au **Centre de messages**, puis sélectionnez **Paramètres**. Effectuez vos sélections dans la section Préférences de notification. Vous pouvez également spécifier l’adresse à utiliser lorsque nous envoyer des notifications par courrier électronique.  | Novembre2017 |
+|**Afficher plus de détails à partir de votre page de présentation**: obtenez plus de détails sur les applications sélectionnées sans quitter votre page de présentation. | Dans la page de présentation, recherchez les zones mettant en évidence des statistiques essentielles pour vos applications. Cliquez sur l'une de ces zones pour voir d'autres détails sur l'application. | Septembre2017 |
+|**Intégrité des données presque en temps réel**: le rapport d'**Intégrité** affiche désormais des données sur les pannes, les blocages, les échecs de mémoire et les exceptions JavaScript en temps quasi réel lorsque vous utilisez l'option de filtre de page **72H**.  | Dans le rapport d’intégrité d’une application, choisissez l'option **72H** en haut de la page. Notez que vous pouvez voir un écart dans les données pour la période de 72heures lors de la comparaison des filtres **72H**et **30D**. Il s’agit d’un problème connu qui nous nous efforçons de résoudre.  | Septembre2017|
 |**Analyse de l’utilisation active des cohortes**: effectuez le suivi de l’utilisation hebdomadaire de votre application par des cohortes (groupes d’utilisateurs actifs ayant commencé à utiliser votre application la même semaine) afin d’obtenir des informations sur les tendances d’utilisation.  | Dans le rapport **Utilisation**, visualisez le graphique **Cohorts by active usage**.  |Juillet2017|
 |**Nouvelles options basées sur l’utilisation pour les segments de clientèle**: créez des segments de vos clients en fonction de leur fréquence d’utilisation de votre application. | Dans la section **Engager**, sélectionnez **Groupes de clients** pour créer un segment. Dans la section des conditions d’inclusion, sélectionnez **Utilisation** dans la première liste déroulante, puis choisissez l’une des nouvelles options: **Engagement minutes**, **Sessions utilisateur**, **Date first used** ou **Date last used**. |Juillet2017|
 |**Option de prévision de l’évolution relative aux segments de clientèle**: créez un segment de vos clients selon que nous détectons ou non qu’ils sont susceptibles d’arrêter d’utiliser votre application prochainement.  | Dans la section **Engager**, sélectionnez **Groupes de clients** pour créer un segment. Dans la section des conditions d’inclusion, sélectionnez **Churn prediction** dans la première liste déroulante, puis choisissez **vrai** ou **faux** pour définir votre segment. |Mai2017|
 |**Envoi par courrier électronique de notification sur l’évolution des tendances d’analyse**: soyez averti des modifications importantes apportées aux acquisitions de vos applications. | Si nous détectons une évolution importante du nombre d’acquisitions d’une application par rapport aux données de l'historique, nous vous envoyons automatiquement un courrier électronique. |Avril2017|
-|**Tendances des applications sur la page de vue d’ensemble**: découvrez rapidement l’évolution des métriques relatives aux applications. | Sur la page Vue d’ensemble, recherchez les graphiques sparklines et les flèches en regard des métriques. Les graphiques sparklines vous procurent une représentation visuelle des tendances récentes. La direction de la flèche rend compte de l’augmentation ou de la baisse récente des statistiques. Notez que des flèches ne sont pas apposées en regard de l’ensemble des graphiques sparkline. |Février2017|
-|**Campagnes de promotion des applications universelles**: outre les applications, vos campagnes de publicité cibleront désormais MSN.com, Outlook.com, Skype et d’autres propriétés Premium Microsoft. | Pour toucher tous ces nouveaux clients potentiels supplémentaires, créez simplement une nouvelle campagne de publicité (**Promotions> Campagnes de publicité**). |Décembre2016|
 |**Analyse en temps réel**: consultez des informations concernant les acquisitions et les modules complémentaires les plus récents de votre application. Le nouveau rapport utilise la collecte d’événements en temps réel auprès des clients de Windows10. | Choisissez **Rapport en temps réel** dans le menu de gauche sous **Analyse**. Sélectionnez l’intervalle de temps pour passer en revue les données des 7derniers jours ou jusqu’à la dernière heure, minute par minute. Notez que le rapport inclut seulement les données des clients sur Windows10.  |Août2016|

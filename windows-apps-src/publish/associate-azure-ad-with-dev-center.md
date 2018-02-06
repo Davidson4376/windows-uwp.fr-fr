@@ -1,50 +1,55 @@
 ---
 author: jnHs
-Description: "Pour ajouter et gérer des utilisateurs de comptes, vous devez commencer par associer votre compte du Centre de développement au service Azure Active Directory de votre organisation."
+Description: In order to add and manage account users, you must first associate your Dev Center account with your organization's Azure Active Directory.
 title: "Associer Azure Active Directory à votre compte du Centre de développement"
 ms.author: wdg-dev-content
-ms.date: 07/17/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
-ms.openlocfilehash: ace9470cc707206461baa8c3dd72828ea68a8eb4
-ms.sourcegitcommit: eaacc472317eef343b764d17e57ef24389dd1cc3
+keywords: Windows10, uwp, azure ad, client azure, client aad, client azure ad, gestion des clients, clients
+ms.localizationpriority: high
+ms.openlocfilehash: ef53a8b339f7f6444373d7445721b641926f00a3
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="associate-azure-active-directory-with-your-dev-center-account"></a>Associer Azure Active Directory à votre compte du Centre de développement
 
 Pour [ajouter et gérer des utilisateurs de comptes](add-users-groups-and-azure-ad-applications.md), vous devez commencer par associer votre compte du Centre de développement au service Azure Active Directory de votre organisation. 
 
-Le Centre de développement Windows tire profit d’AzureAD pour la gestion multi-utilisateur et l’attribution des rôles. Si votre organisation utilise déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’AzureAD. Dans le cas contraire, vous pouvez créer un locataire AzureAD à partir du Centre de développement sans frais supplémentaires.
+Le Centre de développement Windows tire profit d’AzureAD pour l'accès et la gestion des comptes multiutilisateur. Si votre organisation utilise déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’AzureAD. Dans le cas contraire, vous pouvez créer un client AzureAD à partir du Centre de développement sans frais supplémentaires.
+
+> [!TIP]
+> Cette rubrique est spécifique au programme destiné aux développeurs d’applications Windows, mais l’association d’un client et la gestion des utilisateurs fonctionnent de la même façon que pour les comptes du Programme pour développeurs de matériel Windows. Dans cette section, les références au rôle **Manager** s'appliquent également aux comptes Matériel ayant le rôle **Administrateur**. Pour plus d’informations sur la gestion des utilisateurs dans le programme pour développeurs de matériel, voir [Administration du tableau de bord](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration).
+
+Un seul client AzureAD peut être associé à plusieurs comptes du Centre de développement. Il vous suffit d'avoir un client Azure AD associé à votre compte du Centre de développement pour ajouter plusieurs comptes d’utilisateur, mais vous avez également la possibilité d’ajouter plusieurs clients Azure AD à un seul compte du Centre de développement. Tout utilisateur disposant du rôle **Manager** dans le compte du Centre de développement aura la possibilité d’ajouter et de supprimer des clients Azure AD.
 
 > [!IMPORTANT]
-> Pour associer AzureAD à votre compte du Centre de développement, vous devez vous connecter à votre locataire AzureAD avec un compte [d’administrateur général](http://go.microsoft.com/fwlink/?LinkId=746654).
-> 
-> Après avoir associé votre compte du Centre de développement à AzureAD, vous aurez toujours besoin de vous connecter au Centre de développement à l’aide du compte d’administrateur général AzureAD (et non d’un compte Microsoft personnel) afin d’ajouter et de gérer les utilisateurs du compte.
-
-Notez que vous ne pouvez associer qu’un seul compte du Centre de développement à un locataire AzureAD. De même, il n’est possible d’associer qu’un seul locataire AzureAD à un compte du Centre de développement. Une fois l’association établie, vous ne pouvez plus la supprimer sans prendre contact avec le support.
+> Après avoir associé votre compte du Centre de développement avec votre client AzureAD, pour ajouter des comptes utilisateur à ce client et les gérer, vous devrez vous connecter au Centre de développement en tant qu'utilisateur dans le client qui dispose du rôle **Manager**.
 
 
-## <a name="associate-your-dev-center-account-with-your-organizations-existing-azure-ad-tenant"></a>Associer votre compte du Centre de développement au locataire AzureAD existant de votre organisation
+## <a name="associate-your-dev-center-account-with-your-organizations-existing-azure-ad-tenant"></a>Associer votre compte du Centre de développement au client AzureAD existant de votre organisation
 
 Si votre organisation utilise déjà AzureAD, procédez comme suit pour lier votre compte du Centre de développement.
 
-1.  Sous **Paramètres du compte**, cliquez sur **Gérer les utilisateurs**.
-2.  Cliquez sur le bouton **Associer Azure AD avec votre compte du Centre de développement**.
-3.  Connectez-vous à votre compte AzureAD. La configuration de l’association implique que ce compte dispose d’une autorisation [d’administrateur général](http://go.microsoft.com/fwlink/?LinkId=746654).
-4.  Vérifiez le nom d’organisation et le nom de domaine pour votre locataire AzureAD. Pour valider l’association, cliquez sur **Confirmer**.
-5.  Si l’association réussit, vous êtes prêt à ajouter et gérer des utilisateurs de compte dans la section **Gérer les utilisateurs** du Centre de développement.
+1.  Sous **Paramètres du compte**, cliquez sur **Clients**.
+2.  Sélectionnez **Associer Azure AD à votre compte du Centre de développement**.
+3.  Entrez vos informations d’identification Azure AD pour le client que vous souhaitez associer.
+4.  Vérifiez le nom d’organisation et le nom de domaine pour votre locataire AzureAD. Pour valider l’association, sélectionnez **Confirmer**.
+5.  Si l’association réussit, vous êtes prêt à ajouter et gérer des utilisateurs de compte dans la section **Utilisateurs** du Centre de développement.
+
+> [!IMPORTANT]
+> Pour pouvoir créer de nouveaux utilisateurs ou apporter d’autres modifications à votre Azure AD, vous devrez vous connecter à ce client Azure AD en utilisant un compte disposant des [autorisations d’administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654) pour ce client. Toutefois, vous n’avez pas besoin des autorisations d’administrateur global pour associer le client, ni pour ajouter des utilisateurs qui existent déjà dans ce client dans votre compte du Centre de développement.
 
 
 ## <a name="create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account"></a>Créer un tout nouvel AzureAD à associer à votre compte du Centre de développement
 
-Si vous avez besoin de configurer un nouvel Azure AD à lier à votre compte du Centre de développement, procédez comme suit.
+Si vous avez besoin de configurer un nouvel AzureAD à lier à votre compte du Centre de développement, procédez comme suit.
 
-1.  Sous **Paramètres du compte**, cliquez sur **Gérer les utilisateurs**.
-2.  Cliquez sur le bouton **Créer Azure AD**.
+1.  Sous **Paramètres du compte**, cliquez sur **Clients**.
+2.  Sélectionnez **Créer Azure AD**.
 3.  Entrez les informations de répertoire de votre nouvel Azure AD:
  - **Nom de domaine**: nom unique que nous utiliserons pour votre domaine Azure AD, avec «.onmicrosoft.com». Par exemple, si vous avez entré «exemple», votre domaine Azure AD sera «exemple.onmicrosoft.com».
  - **E-mail de contact**: adresse de messagerie à laquelle nous pouvons vous contacter à propos de votre compte si nécessaire.
@@ -52,5 +57,29 @@ Si vous avez besoin de configurer un nouvel Azure AD à lier à votre compte du 
 4.  Cliquez sur **Créer** pour confirmer les nouvelles informations de domaine et de compte.
 5.  Connectez-vous avec vos nouveaux nom d’utilisateur et mot de passe d’administrateur général AzureAD pour commencer à [ajouter et gérer des utilisateurs de compte supplémentaires](add-users-groups-and-azure-ad-applications.md).
 
+
+## <a name="manage-azure-ad-tenant-associations"></a>Gérer des associations de clients AzureAD
+
+Une fois que vous avez associé un client Azure AD avec votre compte du Centre de développement, vous pouvez ajouter de nouveaux clients ou en supprimer d'existants à partir de la page **clients** page.
+
+
+### <a name="add-multiple-azure-ad-tenants-to-your-dev-center-account"></a>Ajouter plusieurs clients AzureAD à votre compte du Centre de développement
+
+Tout utilisateur qui dispose du rôle **Manager** rôle pour un compte du Centre de développement peut associer des clients Azure AD avec le compte.
+
+Pour associer un nouveau locataire, sélectionnez **Associer un autre client AzureAD**, puis suivez les étapes indiquées ci-dessus. Notez que vos informations d'identification vous seront demandées dans le client Azure AD que vous souhaitez associer.
+
+
+### <a name="remove-an-azure-ad-tenant-from-your-dev-center-account"></a>Supprimer un client Azure AD de votre compte du Centre de développement
+
+Tout utilisateur qui dispose du rôle **Manager** rôle pour un compte du Centre de développement peut supprimer des clients Azure AD du compte.
+
+> [!IMPORTANT]
+> Lorsque vous supprimez un client, tous les utilisateurs qui ont été ajoutés au compte du Centre de développement à partir de ce client ne pourront plus se connecter au compte. 
+
+Pour supprimer un client, trouvez son nom dans la page **Clients**, puis sélectionnez **Supprimer**. Vous serez invité à confirmer que vous souhaitez supprimer le client. Cela fait, aucun utilisateur du Centre de développement dans ce client ne pourra plus se connecter au compte du Centre de développement, et toutes les autorisations que vous aurez configurées pour ces utilisateurs seront supprimées.
+
+> [!TIP]
+> Vous ne pouvez pas supprimer un client si vous êtes actuellement connecté au Centre de développement à l’aide d’un compte de ce même client. Pour supprimer un client, vous devez vous connecter au Centre de développement en tant que **Manager** pour un autre client qui est associé au compte. S’il n'existe qu’un seul client associé au compte, ce client ne peut être supprimé qu'après vous être connecté avec le compte Microsoft ayant ouvert le compte.
 
 

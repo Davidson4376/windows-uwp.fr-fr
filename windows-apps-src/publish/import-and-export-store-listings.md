@@ -1,27 +1,29 @@
 ---
 author: jnHs
-Description: "Vous pouvez créer des descriptions de vos applications dans le WindowsStore sans utiliser le tableau de bord du Centre de développement en exportant vos descriptions dans un fichier.csv, en entrant vos informations et composants, puis en important le fichier mis à jour."
-title: Importer et exporter des descriptions dans le WindowsStore
+Description: You can create Store listings for your apps without using the Dev Center dashboard by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file.
+title: Importer et exporter des descriptions dans le Store
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 12/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
-ms.openlocfilehash: 691074727bab67e616541b393468eb70f0b20a05
-ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+keywords: Windows10, uwp, importer des descriptions dans le store, exporter des descriptions du store, importer exporter, description dans le store csv
+ms.localizationpriority: high
+ms.openlocfilehash: f003ab35fa968e7b4be8e6e0591d97baafaa8648
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 01/12/2018
 ---
-# <a name="import-and-export-store-listings"></a>Importer et exporter des descriptions dans le WindowsStore
+# <a name="import-and-export-store-listings"></a>Importer et exporter des descriptions dans le Store
+Au lieu de [saisir les infos des descriptions dans le Store directement dans le tableau de bord](create-app-store-listings.md), vous avez la possibilité d'ajouter ou de mettre à jour les infos en exportant vos descriptions dans un fichier.csv, en entrant vos informations et composants, puis en important le fichier mis à jour. Vous pouvez utiliser cette méthode pour créer des descriptions à partir de zéro ou pour mettre à jour des descriptions déjà créées.
 
-Vous pouvez créer des [descriptions dans le WindowsStore](create-app-store-listings.md) pour vos applications sans utiliser le tableau de bord du Centre de développement en exportant vos descriptions dans un fichier.csv, en entrant vos informations et composants, puis en important le fichier mis à jour. Vous pouvez utiliser cette méthode pour créer des descriptions à partir de zéro ou pour mettre à jour des descriptions déjà créées. 
-
-Notez que cette méthode ne vous permet pas de créer ou mettre à jour des [descriptions dans le WindowsStore propres à la plateforme](create-platform-specific-store-listings.md) pour votre application.
+Cette option est particulièrement utile si vous souhaitez créer ou mettre à jour des descriptions dans le Store en plusieurs langues pour votre produit puisque vous pouvez copier/coller les mêmes informations dans plusieurs champs et facilement apporter des modifications qui doivent s’appliquer à des langues spécifiques. Toutefois, cette méthode ne vous permet pas de créer ou mettre à jour des [descriptions dans leStore propres à la plateforme](create-platform-specific-store-listings.md) pour votre application. 
 
 > [!TIP]
 > Vous pouvez également utiliser cette fonctionnalité pour importer et exporter les détails d’une description dans le WindowsStore concernant une extension. Pour les extensions, le processus fonctionne de la même façon, à l’exception du fait que [seuls les champs applicables aux extensions](#add-ons) sont inclus.
+
+N’oubliez pas que vous pouvez toujours créer ou mettre à jour les descriptions directement dans le tableau de bord du Centre de développement (même si vous avez déjà utilisé la méthode d’importation/d’exportation). Il peut être plus facile d'effectuer la mise à jour directement dans le tableau de bord quand vous faites une simple modification, mais vous pouvez à tout moment utiliser les deux méthodes.
 
 ## <a name="export-listings"></a>Exporter des descriptions
 

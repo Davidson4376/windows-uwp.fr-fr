@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "Le tableau de bord du Centre de développement Windows vous permet de gérer et de soumettre toutes vos applications pour les appareils Windows à partir d’un seul et même emplacement."
+Description: The Windows Dev Center dashboard lets you manage and submit all of your apps for Windows devices in one place.
 title: "Utilisation du tableau de bord du Centre de développement Windows"
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
-ms.openlocfilehash: 8fabd6ecbbe5b9708a5741c69b8de7bd6096033f
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+keywords: "Windows10, uwp, tableau de bord, centre de développement"
+ms.localizationpriority: high
+ms.openlocfilehash: a9a0651145fcc8b7d8570de3151d474a154fe24c
+ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="using-the-windows-dev-center-dashboard"></a>Utilisation du tableau de bord du Centre de développement Windows
 
@@ -31,14 +32,13 @@ Voici quelques points clés concernant l’utilisation du tableau de bord:
 - Un emplacement unique dans le coin supérieur droit donne accès aux informations de profil et de compte, aux instructions de paiement, au support et aux notifications.
 - Vous bénéficiez d’un accès instantané à tous vos programmes de développement sans avoir à vous connecter/déconnecter pour chacun d’entre eux. Nous vous suggérons également de nouveaux programmes qui pourraient vous intéresser une fois disponibles.
 
-
 Lorsque vous [créez une soumission pour votre application](app-submissions.md) (pour la première fois ou en tant que mise à jour), vous pouvez [charger des packages d’application](upload-app-packages.md) pour toute version de système d’exploitation prise en charge. Le WindowsStore propose automatiquement aux clients le package qui fonctionne le mieux pour eux. Vous pouvez utiliser les mêmes [descriptions du Windows Store](create-app-store-listings.md) et [illustrations](app-screenshots-and-images.md) pour l’ensemble des systèmes d’exploitation pris en charge par votre application, ou vous pouvez [personnaliser la description du WindowsStore pour des versions spécifiques du système d’exploitation](create-platform-specific-Store-listings.md).
 
-Les modules complémentaires (produits in-app) sont gérés indépendamment de la soumission de l’application. Vous disposez ainsi d’une plus grande souplesse et de la possibilité d’effectuer des modifications de manière indépendante. Pour plus d’informations, consultez la section [Soumissions de modules complémentaires](add-on-submissions.md).
+Les extensions (produits in-app) sont gérées indépendamment de la soumission de l’application. Vous disposez ainsi d’une plus grande souplesse et de la possibilité d’effectuer des modifications de manière indépendante. Pour plus d’informations, consultez la section [Soumissions d'extensions](add-on-submissions.md).
 
-Le tableau de bord du Centre de développement offre également de nombreuses fonctionnalités, notamment en matière de [gestion des applications et de configuration des services](app-management-and-services.md), de [consultation des données d’analyse](analytics.md), de [création de rapports sur les revenus](payout-summary.md), de [promotion de vos applications](attract-customers-and-promote-your-apps.md), [d’implication de vos clients](engage-with-your-customers.md), [de tests bêta](beta-testing-and-targeted-distribution.md), de [distribution d’applications métiers aux entreprises](distribute-lob-apps-to-enterprises.md), et bien davantage.
+Le tableau de bord du Centre de développement offre également de nombreuses fonctionnalités, notamment en matière de [gestion des applications et de configuration des services](app-management-and-services.md), de [consultation des données d’analyse](analytics.md), de [création de rapports sur les revenus](payout-summary.md), de [promotion de vos applications](attract-customers-and-promote-your-apps.md), [d’implication de vos clients](engage-with-your-customers.md), de [tests bêta](beta-testing-and-targeted-distribution.md), de [distribution d’applications métiers aux entreprises](distribute-lob-apps-to-enterprises.md), et bien davantage.
 
-Vos commentaires nous aident à créer les meilleures fonctionnalités et expériences possibles. Lorsque vous travaillez dans le tableau de bord, utilisez le lien **Commentaires** dans le coin supérieur droit du nouveau tableau de bord pour nous faire part de vos réflexions et suggestions.
+Vos commentaires nous aident à créer les meilleures fonctionnalités et expériences possibles. Lorsque vous travaillez dans le tableau de bord, utilisez le lien **Commentaires** dans le coin supérieur droit du nouveau tableau de bord (sous l'icône en forme de point d'interrogation) pour nous faire part de vos réflexions et suggestions.
 
 
  

@@ -1,20 +1,20 @@
 ---
 author: jnHs
-Description: "Si votre application affiche des publicités à l’aide du SDKMicrosoftAdvertising, utilisez la page Publicités dans l’application du tableau de bord du Centre de développement pour gérer votre utilisation des publicités."
+Description: If your app displays ads using the Microsoft Advertising SDK, use the In-app ads page of the Dev Center dashboard to manage your use of ads.
 title: "Publicités dans l’application"
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 12/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-localizationpriority: high
-ms.openlocfilehash: eb835269cd9df7385d8d03e032d8b41cb7f92a19
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+ms.localizationpriority: high
+ms.openlocfilehash: f0faa69cef0f98171c4679d6a94b01199b215cb4
+ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="in-app-ads"></a>Publicités dans l’application
 
@@ -120,10 +120,13 @@ Le tableau suivant répertorie les réseaux payants actuellement pris en charge 
 | AOL et AppNexus |  Il s’agit d’un réseau publicitaire géré par Microsoft qui diffuse des annonces par le biais de nos réseaux partenaires, AOL et AppNexus.<p/>**Remarque**: AOL et AppNexus figure toujours au premier rang de la liste **Réseaux publicitaires payants** pour les unités publicitaires Bannière et il ne peut pas être classé à un niveau inférieur pour ces types de publicités. | Bannière, spot vidéo |
 | AppNexus (direct) | Sélectionnez cette option pour proposer des spots vidéo publicitaires à partir de [AppNexus](https://www.appnexus.com). | Spot vidéo, native  |
 | Publicités pour l’installation d’applications Microsoft | Sélectionnez cette option pour proposer des publicités pour l’installation d’applications ou des publicités pour la réactivation d’applications créées par d’autres développeurs dans l’écosystème Windows qui [créent des campagnes de publicité pour leurs applications](create-an-ad-campaign-for-your-app.md).  |  Bannière, spot bannière, native  |
+| Outbrain |  Sélectionnez cette option pour proposer des publicités à partir de [Outbrain](https://www.outbrain.com/). |  Bannière  |
+| Revcontent |  Sélectionnez cette option pour proposer des publicités à partir de [Revcontent](http://www.revcontent.com/). |  Bannière  |
 | Smaato |  Sélectionnez cette option pour proposer des publicités à partir de [Smaato](https://www.smaato.com/). |  Bannière  |
 | smartclip |  Sélectionnez cette option pour proposer des publicités à partir de [smartclip](http://www.smartclip.com/). |  Spot vidéo  |
 | SpotX |  Sélectionnez cette option pour proposer des publicités à partir de [SpotX](https://www.spotx.tv/). |  Spot vidéo  |
 | Taboola |  Sélectionnez cette option pour proposer des publicités à partir de [Taboola](https://www.taboola.com/). |  Bannière  |
+
 
 <span id="other-networks" />
 ### <a name="other-ad-networks"></a>Autres réseaux publicitaires
@@ -143,12 +146,18 @@ Les réseaux publicitaires disponibles proposent des publicités dans tous les [
 
 |  Réseau publicitaire  |  Marchés pris en charge  |
 |--------------|---------------------|
+| Revcontent | Brésil, Canada, France, Allemagne, Italie, Japon, Espagne, Royaume-Uni, États-Unis  |
 | Smaato | Brésil, Canada, France, Allemagne, Italie, Japon, Espagne, Royaume-Uni, États-Unis |
 | smartclip | Autriche, Belgique, Danemark, Finlande, Allemagne, Italie, Pays-Bas, Norvège, Suède, Suisse  |
 
 <span id="coppa" />
 ## <a name="coppa-compliance"></a>Conformité avec la réglementation COPPA
 
-Dans le cadre de la réglementation COPPA (Online Privacy Protection Act) relative à la protection de la vie privée des enfants sur Internet, vous devez avertir Microsoft si votre application s’adresse aux enfants de moins de 13 ans. Si vous utilisez le Centre de développement pour indiquer à Microsoft que votre application s’adresse aux enfants de moins de 13 ans, Microsoft prendra les mesures nécessaires pour désactiver les services de publicité comportementale lors de la diffusion de publicités dans votre application. Si votre application s’adresse aux enfants de moins de 13 ans, la réglementation COPPA vous impose certaines obligations.
+Au moment de [créer une unité publicitaire](#create-ad-unit) ou de [sélectionner une unité publicitaire existante](#available-ad-units), la section **Conformité avec la réglementation COPPA** apparaît au bas de la page du tableau de bord si l’application sélectionnée pour l’unité publicitaire comporte au moins une soumission ayant atteint l'étape [dans le Store](../publish/the-app-certification-process.md#in-the-store) du processus de certification d’application.
 
-Pour plus d’informations sur les obligations qui vous incombent en vertu de la réglementation COPPA, veuillez consulter [cette page](http://go.microsoft.com/fwlink/p/?linkid=536558).
+Dans le cadre de la réglementation COPPA (Children's Online Privacy Protection Act), vous devez sélectionner **Cette application est destinée à des enfants de moins de 13** dans cette section si votre application s’adresse aux enfants de moins de 13ans. Si vous sélectionnez cette option, Microsoft prendra les mesures nécessaires pour désactiver les services de publicité comportementale lors de la diffusion de publicités dans votre application.
+
+Le paramètre **Conformité avec la réglementation COPPA** que vous choisissez est automatiquement appliqué à toutes les unités publicitaires de l’application sélectionnée.
+
+> [!IMPORTANT]
+> Si votre application s’adresse aux enfants de moins de 13ans, la réglementation COPPA vous impose certaines obligations. Pour plus d’informations sur les obligations qui vous incombent, veuillez consulter [cette page](http://go.microsoft.com/fwlink/p/?linkid=536558).

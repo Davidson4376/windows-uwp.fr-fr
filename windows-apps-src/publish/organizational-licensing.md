@@ -1,31 +1,36 @@
 ---
 author: jnHs
-Description: "Vous pouvez indiquer si et comment votre application peut être proposée pour les achats en volume par le biais de MicrosoftStore pour Entreprises et de MicrosoftStore pour Éducation dans la section Clés de produit réservées aux entreprises d’une soumission d’application."
-title: "Options de clés de produit réservées aux entreprises"
+Description: You can indicate whether and how your app can be offered for volume purchases through the Microsoft Store for Business and Microsoft Store for Education in the Organizational licensing section of an app submission.
+title: Options de gestion des licences organisationnelles
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
 ms.author: wdg-dev-content
-ms.date: 06/14/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, store pour entreprises, store pour éducation, entreprises, licences en volume"
-ms.openlocfilehash: 8bb44a65f2ded280cfe8eda39663b64ef2edb3c8
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+keywords: "Windows10, uwp, store pour entreprises, store pour éducation, organisation, licence en volume, entreprise, store éducation, store entreprises,achat en volume, gros"
+localizationpriority: high
+ms.openlocfilehash: 7437b087c0966939bb5f5d8110d310f4dd5e73df
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 01/12/2018
 ---
-# <a name="organizational-licensing-options"></a>Options de clés de produit réservées aux entreprises
+# <a name="organizational-licensing-options"></a>Options de gestion des licences organisationnelles
 
 
 Vous pouvez indiquer si et comment votre application peut être proposée pour les achats en volume par le biais de MicrosoftStore pour Entreprises et de MicrosoftStore pour Éducation dans la section **Clés de produit réservées aux entreprises** de la page [Tarification et disponibilité](set-app-pricing-and-availability.md#organizational-licensing) d’une soumission d’application.
 
 Ces paramètres vous permettent d’autoriser la mise à disposition de votre application aux organisations (entreprises et établissements d’enseignement) qui acquièrent et déploient plusieurs licences pour leurs utilisateurs, ce qui vous offre une possibilité d’élargir votre rayon d’action aux organisations qui utilisent Windows10 sur différents types d’appareils, tels que PC, tablettes et téléphones.
 
+Vous devrez également autoriser la gestion des licences organisationnelles pour toutes les [applications cœur de métier](distribute-lob-apps-to-enterprises.md) que vous publiez directement à l’attention des entreprises.
+
 > [!NOTE]
 > Les sélections pour chacune de vos applications sont configurées indépendamment les unes des autres. Vous pouvez modifier vos préférences concernant une application à tout moment en créant une nouvelle soumission. Vos modifications prennent effet dès la fin du [processus de certification](the-app-certification-process.md) de la soumission.
 
-Vous devrez également autoriser la gestion des licences organisationnelles pour toutes les [applications cœur de métier](distribute-lob-apps-to-enterprises.md) que vous publiez directement à l’attention des entreprises.
+> [!IMPORTANT]
+> Les soumissions qui utilisent l'[API de soumission au MicrosoftStore](../monetize/create-and-manage-submissions-using-windows-store-services.md) ne seront pas disponibles à MicrosoftStore pour Entreprises ni à MicrosoftStore pour Éducation. Pour rendre votre application disponible aux achats en volume par des organisations, vous devez utiliser le tableau de bord du Centre de développement Windows pour créer et envoyer vos soumissions.
+
 
 ## <a name="allowing-your-app-to-be-offered-to-organizations"></a>Autorisation de l’offre de votre application aux organisations
 
@@ -57,7 +62,7 @@ L’achat de licences en mode hors connexion permet aux organisations d’acqué
 Les comptes de développeur situés dans certains marchés sont actuellement en mesure de proposer des applications payantes pour l’acquisition en volume par le biais de MicrosoftStore pour Entreprises. 
 
 > [!NOTE]
-> Sur certains marchés, le prix affiché pour une application dans MicrosoftStore pour Entreprises ou MicrosoftStore pour Éducation peut différer de celui affiché pour les clients au détail dans le WindowsStore, pour le même niveau de prix. Le paiement des revenus des achats d’entreprise fonctionne de la même façon que les achats grand public de votre application. Pour plus d’informations, consultez l’article [Rémunération](getting-paid-apps.md) et le [Contrat du développeur d’application](https://msdn.microsoft.com/library/windows/apps/hh694058). Pour obtenir la liste des marchés dans lesquels MicrosoftStore pour Entreprises et MicrosoftStore pour Éducation sont disponibles, consultez l’article [Vue d’ensemble de MicrosoftStore pour Entreprises et MicrosoftStore pour Éducation](https://technet.microsoft.com/itpro/windows/manage/windows-store-for-business-overview#supported-markets).
+> Sur certains marchés, le prix affiché pour une application dans MicrosoftStore pour Entreprises ou MicrosoftStore pour Éducation peut différer de celui affiché pour les clients au détail dans le MicrosoftStore, pour le même niveau de prix. Le paiement des revenus des achats d’entreprise fonctionne de la même façon que les achats grand public de votre application. Pour plus d’informations, consultez l’article [Rémunération](getting-paid-apps.md) et le [Contrat du développeur d’application](https://msdn.microsoft.com/library/windows/apps/hh694058). Pour obtenir la liste des marchés dans lesquels MicrosoftStore pour Entreprises et MicrosoftStore pour Éducation sont disponibles, consultez l’article [Vue d’ensemble de MicrosoftStore pour Entreprises et MicrosoftStore pour Éducation](https://technet.microsoft.com/itpro/windows/manage/windows-store-for-business-overview#supported-markets).
 
 Si votre pays ou région ne sont pas répertoriés ci-dessous, vos applications payantes ne sont pour l’instant pas proposées dans MicrosoftStore pour Entreprises ni dans MicrosoftStore pour Éducation. Si tel est le cas, les choix de licences organisationnelles que vous effectuez pour vos applications payantes pourront être appliqués ultérieurement, à mesure que nous prendrons en charge les soumissions d’applications payantes pour de nouveaux marchés de compte de développeur à l’avenir.
 

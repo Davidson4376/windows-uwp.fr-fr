@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Une fois vos packages correctement chargés, vous verrez un tableau indiquant les packages offerts aux familles d’appareilsWindows10 spécifiques (et aux versions antérieures du système d’exploitation, le cas échéant), classés par ordre."
+Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
 title: "Disponibilité de la famille d’appareils"
 ms.author: wdg-dev-content
 ms.date: 10/12/2017
@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows10, uwp, packages, télécharger, disponibilité famille d’appareils"
-localizationpriority: high
-ms.openlocfilehash: 4125d60c02dd70e1f04701f9364dc28245bc7a98
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+ms.localizationpriority: high
+ms.openlocfilehash: a3ae23a08ec305285569de8b6d55e805beaa86ba
+ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="device-family-availability"></a>Disponibilité de la famille d’appareils
 

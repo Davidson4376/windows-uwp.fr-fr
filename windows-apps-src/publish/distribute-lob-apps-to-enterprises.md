@@ -1,27 +1,31 @@
 ---
 author: jnHs
-Description: "Vous pouvez publier des applications métiers directement à l’attention des entreprises pour une acquisition en volume par le biais de MicrosoftStore pour Entreprises ou de MicrosoftStore pour Éducation, sans mettre vos applications à la disposition générale dans le WindowsStore."
-title: "Distribuer des applications cœur de métier aux entreprises"
+Description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
+title: "Distribuer des applications métier aux entreprises"
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, cœur de métier, métier, applications d’entreprise, store pour entreprises, store pour éducation"
-ms.openlocfilehash: 5dab364d495334d102e73550e5d879d2f530d44e
-ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+keywords: "windows 10, uwp, cœur de métier, métier, applications d’entreprise, store pour entreprises, store pour éducation, entreprise"
+ms.localizationpriority: high
+ms.openlocfilehash: 3857e8e6e494700233d41832fb9edce6c65b89bc
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2017
+ms.lasthandoff: 01/12/2018
 ---
-# <a name="distribute-lob-apps-to-enterprises"></a>Distribuer des applications cœur de métier aux entreprises
+# <a name="distribute-lob-apps-to-enterprises"></a>Distribuer des applications métier aux entreprises
 
 
 Vous pouvez publier des applications métiers directement à l’attention des entreprises pour une acquisition en volume par le biais de MicrosoftStore pour Entreprises ou de MicrosoftStore pour Éducation, sans mettre vos applications à la disposition générale dans le WindowsStore.
 
 > [!NOTE]
-> Pour l’instant, seules les applications gratuites peuvent être distribuées de façon exclusive aux entreprises par le biais de MicrosoftStore pour Entreprises ou de MicrosoftStore pour Éducation. Si vous soumettez une application payante en tant qu’application métier, elle ne sera pas disponible pour l’entreprise à ce stade. 
+> Pour l’instant, seules les applications gratuites peuvent être distribuées de façon exclusive aux entreprises par le biais de MicrosoftStore pour Entreprises ou de MicrosoftStore pour Éducation. Si vous soumettez une application payante en tant qu’application métier, elle ne sera pas disponible pour l’entreprise. 
+
+> [!IMPORTANT]
+> Vous ne pouvez pas utiliser l'[API de soumission au MicrosoftStore](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour publier des applications métier directement à destination des entreprises. Toutes les soumissions d'applications métier doivent être effectuées à l’aide du tableau de bord du Centre de développement Windows.
 
 
 ## <a name="set-up-the-enterprise-association"></a>Configurer l’association d’entreprise
@@ -29,16 +33,16 @@ Vous pouvez publier des applications métiers directement à l’attention des e
 Lorsque vous envisagez de publier des applications métier exclusivement à l’attention d’une entreprise, la première étape consiste à établir l’association entre votre compte et le magasin privé de l’entreprise.
 
 > [!IMPORTANT]
-> Ce processus d’association doit être initié par l’entreprise et doit utiliser l’adresse e-mail figurant dans le champ **Informations du contact** de votre compte. Pour plus d’informations, voir [Utilisation des applications métier](http://go.microsoft.com/fwlink/p/?LinkId=698846).
+> Ce processus d’association doit être lancé par l’entreprise et doit utiliser l’adresse de messagerie associée au compte Microsoft qui a été utilisé pour créer le compte de développeur. Pour plus d’informations, voir [Utilisation des applications métier](http://go.microsoft.com/fwlink/p/?LinkId=698846).
 
-Lorsqu'une entreprise vous invite à publier des applications destinées à son utilisation exclusive, vous recevez un e-mail contenant un lien pour confirmer l'association. Vous pouvez également confirmer ces associations dans la section **Associations d'entreprise**, sous **Paramètres de compte**.
+Lorsqu'une entreprise vous invite à publier des applications destinées à son utilisation exclusive, vous recevez un e-mail contenant un lien pour confirmer l'association. Vous pouvez également confirmer ces associations en accédant à la section **Associations d’entreprise** de vos **Paramètres de compte** (pour autant que vous êtes connecté avec le compte Microsoft qui a été utilisé pour ouvrir le compte de développeur).
 
 Pour confirmer l'association, cliquez sur **Accepter**. Votre compte pourra désormais publier des applications destinées à une utilisation exclusive par l'entreprise.
 
 
 ## <a name="submit-lob-apps"></a>Soumettre des applications métiers
 
-Lorsque vous êtes prêt à publier une application destinée à une utilisation exclusive par une entreprise, vous suivez un processus similaire au processus de soumission d'application. L’application est soumise au même [processus de certification](the-app-certification-process.md) et doit être conforme à l’ensemble des [stratégies du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944). Seuls quelques aspects du processus sont différents.
+Lorsque vous êtes prêt à publier une application destinée à une utilisation exclusive par une entreprise, vous suivez un processus similaire au processus de soumission d'application. L’application est soumise au même [processus de certification](the-app-certification-process.md) et doit être conforme à l’ensemble des [stratégies du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/dn764944). Seuls quelques aspects du processus sont différents.
 
 
 ### <a name="visibility"></a>Visibilité

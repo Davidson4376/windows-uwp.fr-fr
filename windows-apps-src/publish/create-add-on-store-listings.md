@@ -1,27 +1,28 @@
 ---
 author: jnHs
-Description: "Quand vous soumettez un module complémentaire, les informations que vous entrez à l’étape Descriptions dans le Windows Store sont visibles par vos clients."
-title: "Créer des descriptions de module complémentaire dans le WindowsStore"
+Description: When submitting an add-on, the info you provide in the Store listings step will be displayed to your customers.
+title: "Créer des descriptions d'extension dans le Store"
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ms.author: wdg-dev-content
-ms.date: 06/26/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 873e20039d6bd994f5ee3f42822f18c18ded0537
-ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.localizationpriority: high
+ms.openlocfilehash: 0bd24b7b155a7f0d293e49e34ca92f02d99ea787
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/27/2017
+ms.lasthandoff: 01/12/2018
 ---
-# <a name="create-add-on-store-listings"></a>Créer des descriptions de module complémentaire dans le WindowsStore
+# <a name="create-add-on-store-listings"></a>Créer des descriptions d'extension dans le WindowsStore
 
 
-Quand vous soumettez un module complémentaire, les informations que vous entrez à l’étape **Descriptions dans le Windows Store** sont visibles par vos clients lorsque l’option d’acquisition de votre module complémentaire s’affiche. Formulez avec soin les informations de la description dans le Windows Store pour qu’elle donne du module complémentaire une image à la fois fidèle et attrayante aux yeux des clients. Vous pouvez fournir des descriptions personnalisées dans le Windows Store pour chaque langue.
+Quand vous soumettez une extension, les informations que vous entrez à l’étape **Descriptions dans le Windows Store** sont visibles par vos clients lorsque l’option d’acquisition de votre extension s’affiche. Formulez avec soin les informations de la description dans le Windows Store pour qu’elle donne de l'extension une image à la fois fidèle et attrayante aux yeux des clients. Vous pouvez fournir des descriptions personnalisées dans le Windows Store pour chaque langue.
 
 > [!TIP]
-> Vous pouvez également [importer et exporter des descriptions dans le WindowsStore](import-and-export-store-listings.md) pour votre extension si vous souhaitez entrer vos informations de description hors connexion dans un fichier.csv, plutôt que de renseigner ces informations directement dans le tableau de bord. Cette opération peut se révéler particulièrement adaptée lorsque vous créez des descriptions en différentes langues.
+> Vous pouvez également [importer et exporter des descriptions dans le WindowsStore](import-and-export-store-listings.md) pour votre extension si vous souhaitez entrer vos informations de description hors connexion dans un fichier.csv, plutôt que de renseigner ces informations directement dans le tableau de bord. Cette opération peut se révéler particulièrement adaptée lorsque vous créez des descriptions en différentes langues. Toutefois, vous pouvez toujours entrer vos informations directement dans le tableau de bord, au lieu d’utiliser la fonctionnalité d’importation/exportation.
 
 
 ## <a name="store-listing-languages"></a>Langues des descriptions dans le WindowsStore
@@ -38,7 +39,7 @@ Pour modifier une description dans le WindowsStore, cliquez sur le nom de la lan
 
 ## <a name="title"></a>Titre
 
-Vous devez fournir un titre ici, qui sera le nom du module complémentaire que verront vos clients. La longueur du titre ne doit pas dépasser 100caractères.
+Vous devez fournir un titre ici, qui sera le nom de l'extension que verront vos clients. La longueur du titre ne doit pas dépasser 100caractères.
 
 ## <a name="description"></a>Description
 
