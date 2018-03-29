@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: high
-ms.openlocfilehash: b8a70a249a91f654354d27faeffdf5f605fd9c26
-ms.sourcegitcommit: 12cc05b59b2a249a7683a8692ed453da03a91b28
+ms.openlocfilehash: 3cbaa8a8e78ad14472a34e107521d9c966ba434f
+ms.sourcegitcommit: 884b79b4c6fd8014fab9953faca557e56bb8c400
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="desktop-bridge"></a>Pont du bureau
 
@@ -30,7 +30,7 @@ Ce package donne à votre application une identité, qui permet à votre applica
 Outre le code que vous utilisez pour valoriser des expériences Windows10, votre application reste inchangée et vous pouvez continuer à la distribuer à votre base d'utilisateurs existante Windows7, WindowsVista ou WindowsXP. Sur Windows10, votre application continue à s’exécuter en mode utilisateur de confiance totale comme elle le fait aujourd'hui.
 
 >[!IMPORTANT]
->Le Pont du bureau a été introduit dans Windows10, version1607 et peut être utilisé uniquement dans les projets qui ciblent Windows10 Anniversary Edition (version10.0; build 14393) ou une version ultérieure dans Visual Studio.
+>Le Pont du bureau a été introduit dans Windows10, version1607 et peut être utilisé uniquement dans les projets qui ciblent la Mise à jour anniversaire Windows10 (version10.0; build 14393) ou une version ultérieure dans Visual Studio.
 
 > [!NOTE]
 > Regardez <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">cette série</a> de courtes vidéos publiées par MicrosoftVirtual Academy. Ces vidéos vous guident dans tout le processus de conversion de votre application de bureau pour la plateforme Windows universelle (UWP).

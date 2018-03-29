@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "La page Résumé du paiement affiche le détail des sommes rapportées par vos applications et modules complémentaires. Elle vous permet également de connaître les délais et les montants de vos paiements."
-title: "Résumé du paiement"
+Description: The Payout summary shows you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
+title: Résumé du paiement
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
-ms.openlocfilehash: d6a069bab6bc24c6f6388eec7ad63c0c79525fd9
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+keywords: windows10, uwp, résumé du paiement, instruction, paiements, bénéfices, revenus, paiement
+ms.localizationpriority: high
+ms.openlocfilehash: 5be84a7fe6918a0ba272aead83ec26e68669c477
+ms.sourcegitcommit: 980e604c3767e7a73619d027bebd78cf4bfe9678
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="payout-summary"></a>Résumé du paiement
 
@@ -29,6 +30,7 @@ Si vous vendez des produits dans Place de marché MicrosoftAzure, la page **Rés
 >
 > Les paiements sont effectués mensuellement (à condition que le seuil de paiement ait été atteint). Généralement, nous transférons les paiements dus pour un mois donné vers le 15 de ce mois. Notez qu’un délai de 3 à 10jours ouvrés supplémentaires est nécessaire pour l’enregistrement des montants sur votre compte de paiement. Pour plus d’informations, consultez la page [Seuils de paiement, méthodes et délais](payment-thresholds-methods-and-timeframes.md).
 
+Pour afficher votre **Résumé du paiement**, cliquez sur l’icône **Revenu** qui s’affiche près de l’angle supérieur droit du Centre de développement, puis sélectionnez **Résumé du paiement**.
 
 ## <a name="current-proceeds-and-payments"></a>Revenus et paiements actuels
 
@@ -56,7 +58,7 @@ Au-dessous de la section **Montant cumulé des paiements**, vous pouvez visualis
 
 En haut de chaque relevé figure le montant total de votre paiement mensuel. La section **Paiements émis**, située juste en dessous, résume le mode de calcul utilisé pour déterminer le montant du paiement.
 
-Au-dessous, dans la section **Répartition des revenus**, vous pouvez voir en détail le montant des revenus générés par marché, par source de revenus (par exemple, Windows Phone Store, Windows Store 8, Windows Store, etc.) et par application. Vous bénéficiez également d’informations sur les [ajustements](#proceeds-by-app-and-adjustments) effectués, comme la date, le montant et le motif de ces modifications.
+Au-dessous, dans la section **Répartition des revenus**, vous pouvez voir en détail le montant des revenus générés par marché, par source de revenus (par exemple, Microsoft Store, Windows Store8, Windows Phone Store, etc.) et par application. Vous bénéficiez également d’informations sur les [ajustements](#proceeds-by-app-and-adjustments) effectués, comme la date, le montant et le motif de ces modifications.
 
 Notez que les sections mentionnées ci-dessus affichent uniquement des informations sur votre revenu (et sur les ajustements) compte tenu des ventes recensées pour votre application. Si vous avez généré des revenus grâce à la publicité, une autre section Microsoft Advertising regroupera les détails relatifs aux paiements et aux conversions de devises.
 
@@ -80,7 +82,7 @@ Le tableau ci-après décrit les champs qui figurent dans le fichier .csv. Notez
 
 | Nom du champ              | Description                                                                                                                              |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| Source de revenu          | Votre source de revenu, en fonction de la transaction (par exemple, Windows Store, Windows Phone Store, Windows Store8, publicités, etc.) |
+| Source de revenu          | Votre source de revenu, en fonction de la transaction (par exemple, Microsoft Store, Windows Phone Store, Windows Store8, publicités, etc.) |
 | ID de commande                |  Identificateur de commande unique. Cet ID permet d’identifier les transactions d’achat ainsi que les opérations sans achat (par exemple: remboursements, rétrofacturations, etc.). Les deux auront le même ID de commande. En outre, en cas de paiement fractionné, où plusieurs modes de paiement sont utilisés pour un achat unique, l’ID de commande vous permettra de lier les transactions d’achat.                                                                                                          |
 | ID de la transaction          |       Identifiant unique de la transaction.  |
 | Date et heure de la transaction   | Date et heure d’exécution de la transaction (UTC).                                                                                        |
@@ -89,7 +91,7 @@ Le tableau ci-après décrit les champs qui figurent dans le fichier .csv. Notez
 | Nom du produit parent     | Nom du produit parent. Notez également que si la transaction ne présente aucun produit parent, le nom du produit parent est identique au nom du produit.   |
 | Nom du produit            | Désignation du produit.                                                                                                                     |
 | Type de produit            | Type du produit (par exemple, Application, Module complémentaire, Jeu, etc.)                                                                                        |
-| Quantité                | Lorsque la Source de revenu est Windows Store pour Entreprises, la Quantité correspond au nombre de licences achetées. Pour toutes les autres Sources de revenu, la Quantité sera toujours 1. Remarque: même si une transaction unique est scindée en deux articles en raison du recours à deux méthodes de paiement différentes, chaque article affiche une Quantité égale à 1.    |
+| Quantité                | Lorsque la Source de revenu est Microsoft Store pour Entreprises, la Quantité correspond au nombre de licences achetées. Pour toutes les autres Sources de revenu, la Quantité sera toujours 1. Remarque: même si une transaction unique est scindée en deux articles en raison du recours à deux méthodes de paiement différentes, chaque article affiche une Quantité égale à 1.    |
 | Type de transaction        | Type de la transaction (par exemple, achat, remboursement, contrepassation, rétrofacturation, etc.)                                                                |
 | Moyen de paiement          | Instrument de paiement client utilisé pour la transaction (par exemple, carte, facturation de l’opérateur mobile, PayPal, etc.)                                 |
 | Pays / région        | Pays/région d’exécution de la transaction.                                                                                            |

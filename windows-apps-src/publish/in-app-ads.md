@@ -1,20 +1,20 @@
 ---
 author: jnHs
 Description: If your app displays ads using the Microsoft Advertising SDK, use the In-app ads page of the Dev Center dashboard to manage your use of ads.
-title: "Publicités dans l’application"
+title: Publicités dans l’application
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 12/04/2017
+ms.date: 2/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: high
-ms.openlocfilehash: f0faa69cef0f98171c4679d6a94b01199b215cb4
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 66c0ae56c3722162ebef5a8660cc2322d69a278b
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="in-app-ads"></a>Publicités dans l’application
 
@@ -78,6 +78,8 @@ Après avoir créé des unités publicitaires pour une ou plusieurs applications
 
 Pour modifier les [paramètres de médiation](#mediation) pour une unité publicitaire UWP ou la [conformité à la réglementation COPPA](#coppa) pour l’application dans laquelle l’unité publicitaire est utilisée, cliquez sur le nom de l'unité publicitaire.
 
+Notez que si une unité publicitaire n’a aucune activité depuis les six derniers mois, nous lui affecterons l’étiquette **Inactive**et éventuellement la supprimerons de votre tableau de bord. Vous pouvez utiliser des filtres pour afficher uniquement les unités publicitaires **Actives** ou **Inactives**. Si vous voyez des unités publicitaires qui, à votre avis, sont marquées à tort comme **Inactives**, [contactez le support](http://aka.ms/storesupport).
+
 <span id="mediation" />
 ## <a name="mediation-settings"></a>Paramètres de médiation
 
@@ -120,8 +122,8 @@ Le tableau suivant répertorie les réseaux payants actuellement pris en charge 
 | AOL et AppNexus |  Il s’agit d’un réseau publicitaire géré par Microsoft qui diffuse des annonces par le biais de nos réseaux partenaires, AOL et AppNexus.<p/>**Remarque**: AOL et AppNexus figure toujours au premier rang de la liste **Réseaux publicitaires payants** pour les unités publicitaires Bannière et il ne peut pas être classé à un niveau inférieur pour ces types de publicités. | Bannière, spot vidéo |
 | AppNexus (direct) | Sélectionnez cette option pour proposer des spots vidéo publicitaires à partir de [AppNexus](https://www.appnexus.com). | Spot vidéo, native  |
 | Publicités pour l’installation d’applications Microsoft | Sélectionnez cette option pour proposer des publicités pour l’installation d’applications ou des publicités pour la réactivation d’applications créées par d’autres développeurs dans l’écosystème Windows qui [créent des campagnes de publicité pour leurs applications](create-an-ad-campaign-for-your-app.md).  |  Bannière, spot bannière, native  |
-| Outbrain |  Sélectionnez cette option pour proposer des publicités à partir de [Outbrain](https://www.outbrain.com/). |  Bannière  |
-| Revcontent |  Sélectionnez cette option pour proposer des publicités à partir de [Revcontent](http://www.revcontent.com/). |  Bannière  |
+| Outbrain |  Sélectionnez cette option pour proposer des publicités à partir de [Outbrain](https://www.outbrain.com/). |  Bannière, spot bannière  |
+| Revcontent |  Sélectionnez cette option pour proposer des publicités à partir de [Revcontent](http://www.revcontent.com/). |  Bannière, native  |
 | Smaato |  Sélectionnez cette option pour proposer des publicités à partir de [Smaato](https://www.smaato.com/). |  Bannière  |
 | smartclip |  Sélectionnez cette option pour proposer des publicités à partir de [smartclip](http://www.smartclip.com/). |  Spot vidéo  |
 | SpotX |  Sélectionnez cette option pour proposer des publicités à partir de [SpotX](https://www.spotx.tv/). |  Spot vidéo  |

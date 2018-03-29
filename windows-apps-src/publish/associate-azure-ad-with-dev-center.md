@@ -1,19 +1,19 @@
 ---
 author: jnHs
 Description: In order to add and manage account users, you must first associate your Dev Center account with your organization's Azure Active Directory.
-title: "Associer Azure Active Directory à votre compte du Centre de développement"
+title: Associer Azure Active Directory à votre compte du Centre de développement
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, uwp, azure ad, client azure, client aad, client azure ad, gestion des clients, clients
 ms.localizationpriority: high
-ms.openlocfilehash: ef53a8b339f7f6444373d7445721b641926f00a3
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: c430bb279d0b9da6126212a8af7400df8cd1693e
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="associate-azure-active-directory-with-your-dev-center-account"></a>Associer Azure Active Directory à votre compte du Centre de développement
 
@@ -22,7 +22,7 @@ Pour [ajouter et gérer des utilisateurs de comptes](add-users-groups-and-azure-
 Le Centre de développement Windows tire profit d’AzureAD pour l'accès et la gestion des comptes multiutilisateur. Si votre organisation utilise déjà Office365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’AzureAD. Dans le cas contraire, vous pouvez créer un client AzureAD à partir du Centre de développement sans frais supplémentaires.
 
 > [!TIP]
-> Cette rubrique est spécifique au programme destiné aux développeurs d’applications Windows, mais l’association d’un client et la gestion des utilisateurs fonctionnent de la même façon que pour les comptes du Programme pour développeurs de matériel Windows. Dans cette section, les références au rôle **Manager** s'appliquent également aux comptes Matériel ayant le rôle **Administrateur**. Pour plus d’informations sur la gestion des utilisateurs dans le programme pour développeurs de matériel, voir [Administration du tableau de bord](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration).
+> Cette rubrique est spécifique au programme destiné aux développeurs d’applications Windows, mais l’association d’un client et la gestion des utilisateurs fonctionnent de la même façon pour les comptes dans le Programme pour applications de bureau Windows (voir [Programme pour applications de bureau Windows](https://msdn.microsoft.com/library/windows/desktop/mt826504#users) pour plus d’informations) et dans le Programme pour développeurs de matériel Windows (où les références au rôle **Manager** s’appliquent également aux comptes Matériel ayant le rôle **Administrator**; voir [Administration du tableau de bord](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration) pour plus d’informations).
 
 Un seul client AzureAD peut être associé à plusieurs comptes du Centre de développement. Il vous suffit d'avoir un client Azure AD associé à votre compte du Centre de développement pour ajouter plusieurs comptes d’utilisateur, mais vous avez également la possibilité d’ajouter plusieurs clients Azure AD à un seul compte du Centre de développement. Tout utilisateur disposant du rôle **Manager** dans le compte du Centre de développement aura la possibilité d’ajouter et de supprimer des clients Azure AD.
 

@@ -1,26 +1,27 @@
 ---
 author: jnHs
-Description: "Le rapport sur les acquisitions de modules complémentaires disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser le nombre de modules complémentaires que vous avez vendus, et vous fournit des informations sur la plateforme ainsi que des données démographiques."
-title: "Rapport sur les acquisitions de modules complémentaires"
+Description: The Add-on acquisitions report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details.
+title: Rapport sur les acquisitions d’extensions
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 ms.author: wdg-dev-content
-ms.date: 08/04/2017
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
-ms.openlocfilehash: 46d5ee3d0e0ac9c2a3599f51e17ea4d7425ab5af
-ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+keywords: windows10, uwp, ventes d’extensions, acquisitions d’extensions, produits in-app, extensions
+ms.localizationpriority: high
+ms.openlocfilehash: 5b8d0bb140206612a5096f48d87029b2285a0770
+ms.sourcegitcommit: 980e604c3767e7a73619d027bebd78cf4bfe9678
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2017
+ms.lasthandoff: 02/14/2018
 ---
-# <a name="add-on-acquisitions-report"></a>Rapport sur les acquisitions de modules complémentaires
+# <a name="add-on-acquisitions-report"></a>Rapport sur les acquisitions d’extensions
 
 
-Le rapport **Acquisitions de modules complémentaires** disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser le nombre de modules complémentaires que vous avez vendus, et vous fournit des informations sur la plateforme ainsi que des données démographiques. Ce rapport vous permet également d’obtenir les informations de conversion relatives aux clients qui utilisent Windows10.
+Le rapport **Acquisitions de modules complémentaires** disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser le nombre de modules complémentaires que vous avez vendus, et vous fournit des informations sur la plateforme ainsi que des données démographiques. Ce rapport vous permet également d’obtenir les informations de conversion relatives aux clients qui utilisent Windows10 (y compris Xbox).
 
-Vous pouvez visualiser ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de la méthode [obtenir des acquisitions d’extensions](../monetize/get-in-app-acquisitions.md) dans [l’API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
+Vous pouvez visualiser ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de la méthode [obtenir des acquisitions d’extensions](../monetize/get-in-app-acquisitions.md) dans [l’API REST d’analyse du MicrosoftStore](../monetize/access-analytics-data-using-windows-store-services.md).
 
 Dans ce rapport, une acquisition d’extension signifie qu’un client vous a acheté une extension (ou l’a acquise sans frais si vous l’avez offerte gratuitement). Plusieurs achats d’une même extension de type consommable effectués par le même client sont comptabilisés comme différentes acquisitions d’extension.
 
@@ -36,7 +37,7 @@ Vous pouvez également développer l’option **Filtres** pour filtrer toutes le
 
 -   **Extension**: le filtre par défaut est **Tous les modules complémentaires**, mais vous pouvez restreindre les données à une ou plusieurs extensions de l’application.
 -   **Marché**: le filtre par défaut est **Tous les marchés**, mais vous pouvez restreindre les données aux acquisitions relatives à un ou plusieurs marchés.
--   **Type d’appareil**: le paramétrage par défaut est **Tous les appareils**. Si vous souhaitez uniquement afficher les données d’acquisitions relatives à un certain type d’appareil, vous pouvez en choisir un ici.
+-   **Type d’appareil**: le paramétrage par défaut est **Tous les appareils**. Si vous souhaitez afficher les données d’acquisitions relatives à un certain type d’appareil uniquement (PC, console ou tablette, par exemple), vous pouvez en choisir un ici.
 
 Les informations figurant dans tous les graphiques répertoriés ci-après correspondent à la plage de dates et à tous les filtres que vous avez sélectionnés. Certaines sections vous permettent également d’appliquer des filtres supplémentaires.
 
@@ -67,7 +68,7 @@ Vous pouvez visualiser ces données sous la forme visuelle **Carte** ou **Tablea
 
 ## <a name="add-on-page-views-and-conversions-by-campaign-id"></a>Vues et conversions de la page d’extension par ID de campagne
 
-Le graphique **Vues et conversions de la page d’extension par ID de campagne** vous présente le nombre total de conversions (acquisitions) d’extension par ID de campagne au cours de la période sélectionnée, ce qui vous permet d’effectuer le suivi des conversions et des vues de page par des clients qui utilisent Windows10 pour chacune de vos [campagnes de promotion personnalisées](create-a-custom-app-promotion-campaign.md). Ce graphique affiche uniquement les conversions d’extension.
+Le graphique **Vues et conversions de la page d’extension par ID de campagne** vous présente le nombre total de conversions d'extensions (acquisitions) par ID de campagne au cours de la période sélectionnée, ce qui vous permet d’effectuer le suivi des conversions et des vues de page par des clients qui utilisent Windows10 (y compris Xbox) pour chacune de vos [campagnes de promotion personnalisées](create-a-custom-app-promotion-campaign.md). Ce graphique affiche uniquement les conversions d’extensions.
 
 > [!NOTE]
 > Il est possible que des clients soient arrivés à la description de votre application en cliquant sur une campagne personnalisée qui n’a pas été créée par vos soins. Nous marquons chaque vue de page dans une session avec l’ID de campagne à partir duquel l’utilisateur a accédé au WindowsStore. Puis nous attribuons à cet ID de campagne les conversions appropriées parmi toutes les acquisitions effectuées dans les 24heures. Par conséquent, le nombre total de conversions peut être plus élevé que celui de vos ID de campagne, et certaines de vos conversions ou conversions d’extension peuvent présenter un nombre de vues de page nul. 

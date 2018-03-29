@@ -1,20 +1,20 @@
 ---
 author: jnHs
-Description: Set custom permissions for account users.
-title: "Définir des autorisations personnalisées pour les utilisateurs de compte"
+Description: Set roles or custom permissions for account users.
+title: Définir des rôles ou des autorisations personnalisés pour les utilisateurs de compte
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows10, uwp, rôles d’utilisateur, autorisation d’utilisateur, rôles personnalisés, accès utilisateur, personnaliser les autorisations, rôles standard"
+keywords: Windows10, uwp, rôles d’utilisateur, autorisation d’utilisateur, rôles personnalisés, accès utilisateur, personnaliser les autorisations, rôles standard
 ms.localizationpriority: high
-ms.openlocfilehash: 1fdde4be606abae849ff3350d27afbbced157f75
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: 3c62ff8a028af62512936e51bd81d3f3e229bd24
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Définir des rôles ou des autorisations personnalisés pour les utilisateurs de compte
 
@@ -29,7 +29,7 @@ Lorsque vous déterminez le rôle ou les autorisations à appliquer, gardez à l
 -   Un utilisateur ayant un certain rôle (ou un ensemble d’autorisations personnalisées) peut également faire partie d’un groupe ayant un rôle différent (ou un ensemble d’autorisations). Dans ce cas, l’utilisateur a accès à toutes les fonctionnalités associées à la fois au groupe et au compte individuel.
 
 > [!TIP]
-> Cette rubrique est spécifique au programme destiné aux développeurs d’applications Windows. Pour plus d’informations sur les rôles utilisateurs dans le programme pour développeurs de matériel, voir [Gestion des rôles d’utilisateurs](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles).
+> Cette rubrique est spécifique au programme destiné aux développeurs d’applications Windows. Pour plus d’informations sur les rôles d’utilisateurs dans le Programme pour développeurs de matériel, voir [Gestion des rôles d’utilisateurs](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles). Pour plus d’informations sur les rôles d’utilisateurs dans le Programme pour applications de bureau Windows, voir [Programme pour applications de bureau Windows](https://msdn.microsoft.com/library/windows/desktop/mt826504#users).
 
 
 <span id="roles" />
@@ -80,13 +80,13 @@ Pour activer une autorisation pour l’utilisateur, activez la case du paramètr
 - **Lecture/écriture**: l’utilisateur pourra visualiser la zone et y apporter des modifications.
 - **Mixte**: vous ne pouvez pas sélectionner cette option directement, mais l’indicateur **Mixte** montre si vous avez autorisé une combinaison d’accès pour cette autorisation. Par exemple, si vous accordez un accès **en lecture seule** à **Tarification et disponibilité** pour **Tous les produits**, mais que vous accordez ensuite un accès **en lecture/écriture** à **Tarification et disponibilité** pour un produit spécifique, l’indicateur **Tarification et disponibilité** pour **Tous les produits** sera considéré comme Mixte. Le même raisonnement s’applique si certains produits n’ont **aucun accès** pour une autorisation, mais que d’autres ont un accès **en lecture/écriture** et/ou **en lecture seule**.
 
-Pour certaines autorisations, telles que celles liées à l’affichage des données analytiques, seul un accès **en lecture seule** peut être accordé. Notez que dans l’implémentation actuelle, certaines autorisations ne font pas la distinction entre l’accès **en lecture seule** et l’accès **en lecture/écriture**. Examinez les détails de chaque autorisation pour comprendre les fonctionnalités spécifiques accordées par l’accès **Lecture seule** et/ou **Lecture/écriture**.
+Pour certaines autorisations, telles que celles liées à l’affichage des données analytiques, seul un accès **en lecture seule** peut être accordé. Notez que dans l’implémentation actuelle, certaines autorisations ne font pas la distinction entre l’accès **en lecture seule** et l’accès **en lecture/écriture**. Passez en revue les détails de chaque autorisation pour comprendre les fonctionnalités spécifiques accordées par l’accès **en lecture seule** et/ou **en lecture/écriture**.
 
 Les informations propres à chaque autorisation figurent dans les tableaux ci-dessous.
 
 ## <a name="account-level-permissions"></a>Autorisations au niveau du compte
 
-Les autorisations de cette section ne peuvent pas être limitées à des produits donnés. En ayant accès à ces autorisations, l’utilisateur peut bénéficier de cette autorisation pour l’ensemble du compte.
+Les autorisations de cette section ne peuvent pas être limitées à des produits donnés. En ayant accès à l’une de ces autorisations, l’utilisateur peut bénéficier de cette autorisation pour l’ensemble du compte.
 
 <table>
     <colgroup>
@@ -117,6 +117,7 @@ Les autorisations de cette section ne peuvent pas être limitées à des produit
 <tr><td align="left">    **Coordonnées**                        </td><td align="left">  Peut afficher les [coordonnées](managing-your-profile.md) dans la section Paramètres du compte.        </td><td align="left">  Peut modifier et afficher les [coordonnées](managing-your-profile.md) dans la section Paramètres du compte.            </td></tr>
 <tr><td align="left">    **Conformité avec la réglementation COPPA**                    </td><td align="left">  Peut afficher les sélections de [conformité avec la réglementation COPPA](in-app-ads.md#coppa-compliance) (qui indique si les produits sont adaptés aux enfants de moins de 13ans) pour tous les produits dans le compte.                                            </td><td align="left">  Peut modifier et afficher les sélections de [conformité avec la réglementation COPPA](in-app-ads.md#coppa-compliance) (qui indique si les produits sont adaptés aux enfants de moins de 13ans) pour tous les produits dans le compte.         </td></tr>
 <tr><td align="left">    **Groupes de clients**                     </td><td align="left">  Peut afficher les [groupes de clients](create-customer-groups.md) (segments et groupes de versions d’évaluation) dans la section **Clients**.      </td><td align="left">  Peut créer, modifier et afficher les [groupes de clients](create-customer-groups.md) (segments et groupes de versions d’évaluation) dans la section **Clients**.       </td></tr>
+<tr><td align="left">    **Gérer les groupes de produits**&nbsp;\*                            </td><td align="left">  Peut afficher la page de création d’un nouveau groupe de produits, mais ne peut pas créer de nouveaux groupes de produits.    </td><td align="left">  Peut créer et modifier des groupes de produits.     </td></tr>
 <tr><td align="left">    **Nouvelles applications**                            </td><td align="left">  Peut afficher la page de création d’une nouvelle application, mais ne peut pas créer de nouvelles applications dans le compte.    </td><td align="left">  Peut [créer de nouvelles applications](create-your-app-by-reserving-a-name.md) dans le compte en réservant les noms d’application et peut créer des soumissions et envoyer des applications dans le Windows Store.     </td></tr>
 <tr><td align="left">    **Nouveaux ensembles**&nbsp;*                       </td><td align="left">  Peut afficher la page de création de nouveaux ensembles, mais ne peut pas créer de nouveaux ensembles dans le compte.     </td><td align="left">  Peut créer de nouveaux ensembles de produits.          </td></tr>
 <tr><td align="left">    **Services partenaires**&nbsp;*                  </td><td align="left">  Peut afficher les certificats pour l’installation de services permettant de récupérer des XTokens.     </td><td align="left">  Peut gérer et afficher les certificats pour l’installation de services permettant de récupérer des XTokens.       </td></tr>
@@ -124,7 +125,8 @@ Les autorisations de cette section ne peuvent pas être limitées à des produit
 <tr><td align="left">    **Résumé du paiement**                      </td><td align="left">  Peut afficher le [résumé du paiement](payout-summary.md) pour accéder aux informations des rapports sur les paiements et les télécharger.       </td><td align="left">  Peut afficher le [résumé du paiement](payout-summary.md) pour accéder aux informations des rapports sur les paiements et les télécharger.   </td></tr>
 <tr><td align="left">    **Parties de confiance**&nbsp;*                   </td><td align="left">  Peut visualiser les parties de confiance pour récupérer les XTokens.    </td><td align="left">  Peut gérer et visualiser les parties de confiance pour récupérer les XTokens.     </td></tr>
 <tr><td align="left">    **Demande de disques**&nbsp;*                   </td><td align="left">  Peut visualiser les demandes de disque de jeu.    </td><td align="left">  Peut générer et visualiser les demandes de disque de jeu.     </td></tr>
-<tr><td align="left">    **Sandboxes**&nbsp;*                         </td><td align="left">  Peut accéder à la page **Sandboxes** et visualiser les sandboxes du compte et toutes les configurations qui s’y rapportent. Ne peut pas afficher les produits et soumissions de chaque sandbox, sauf si les autorisations appropriées au niveau du produit sont accordées. </td><td align="left">  Peut accéder à la page **Sandboxes**, et afficher et gérer les sandboxes du compte, y compris créer et supprimer des sandboxes, et gérer leur configuration. Ne peut pas afficher les produits et soumissions de chaque sandbox, sauf si les autorisations appropriées au niveau du produit sont accordées.    </td></tr>
+<tr><td align="left">    **Sandboxes**&nbsp;*                         </td><td align="left">  Peut accéder à la page **Sandboxes** et visualiser les sandboxes du compte et toutes les configurations qui s’y rapportent. Ne peut pas afficher les produits et soumissions de chaque sandbox, sauf si les autorisations appropriées au niveau du produit sont accordées. </td><td align="left">  Peut accéder à la page **Sandboxes**, et afficher et gérer les sandboxes du compte, y compris créer et supprimer des sandboxes, et gérer leur configuration. Ne peut pas afficher les produits et soumissions de chaque bac à sable, sauf si les autorisations appropriées au niveau du produit sont accordées.    </td></tr>
+<tr><td align="left">    **Événements de vente du Store**&nbsp;\*                            </td><td align="left">  N/A    </td><td align="left">  Peut configurer la possibilité d’inclure automatiquement les produits dans les événements de vente du Store.     </td></tr>
 <tr><td align="left">    **Profil fiscal**                         </td><td align="left">  Peut afficher les [formulaires et informations du profil fiscal](setting-up-your-payout-account-and-tax-forms.md#tax-forms) dans **Paramètres du compte**.     </td><td align="left">  Peut remplir les déclarations fiscales et mettre à jour les [informations du profil fiscal](setting-up-your-payout-account-and-tax-forms.md#tax-forms) dans **Paramètres du compte**.     </td></tr>
 <tr><td align="left">    **Comptes de test**&nbsp;*                     </td><td align="left">  Peut afficher les comptes permettant de tester la configuration Xbox Live.      </td><td align="left">  Peut créer, gérer et afficher les comptes permettant de tester la configuration Xbox Live.      </td></tr>
 <tr><td align="left">    **Appareils Xbox**                        </td><td align="left">  Peut afficher les consoles de développement Xbox activées pour le compte dans la section **Paramètres du compte**.       </td><td align="left">  Peut ajouter, supprimer et afficher les consoles de développement Xbox activées pour le compte dans la section **Paramètres du compte**.     </td></tr>
@@ -190,7 +192,8 @@ Remarque: certaines autorisations ne peuvent pas être définies pour les extens
     <tr><td align="left">    **Codes promotionnels**     </td><td>    Peut afficher les commandes avec un [code promotionnel](generate-promotional-codes.md) et les informations d’utilisation du produit et de ses extensions, et peut afficher les informations d’utilisation.         </td><td>    Peut afficher, gérer et créer des commandes avec un [code promotionnel](generate-promotional-codes.md) pour le produit et pour ses extensions, et peut afficher les informations d’utilisation.          </td><td>    Non applicable (les paramètres du produit parent s’appliquent à toutes les extensions)     </td><td>    Non applicable (les paramètres du produit parent s’appliquent à toutes les extensions)     </td></tr>
     <tr><td align="left">    **Offres ciblées**     </td><td>    Peut visualiser les [offres ciblées](use-targeted-offers-to-maximize-engagement-and-conversions.md) concernant le produit.         </td><td>    Peut visualiser, gérer et créer des [offres ciblées](use-targeted-offers-to-maximize-engagement-and-conversions.md) concernant le produit.          </td><td>    Non applicable     </td><td>    Non applicable      </td></tr>
     <tr><td align="left">    **Contacter le client**  </td><td>    Peut afficher les [réponses aux commentaires des clients](respond-to-customer-feedback.md) et les [réponses aux avis des clients](respond-to-customer-reviews.md), à condition que l’autorisation **Retour d’expérience du client** ait également été accordée. Peut également afficher les [notifications ciblées](send-push-notifications-to-your-apps-customers.md) qui ont été créées pour le produit.    </td><td>    Peut [répondre aux commentaires des clients](respond-to-customer-feedback.md) et [répondre aux avis des clients](respond-to-customer-reviews.md), à condition que l’autorisation **Retour d’expérience du client** ait également été accordée. Peut également [créer et envoyer des notifications ciblées](send-push-notifications-to-your-apps-customers.md) pour le produit.                   </td><td>    Non applicable         </td><td>    Non applicable                          </td></tr>
-    <tr><td align="left">    **Expérimentation**</td><td>    Peut afficher les [expériences (test A/B)](../monetize/run-app-experiments-with-a-b-testing.md) et consulter les données de l’expérimentation du produit.   </td><td>    Peut créer, gérer et afficher les [expériences (test A/B)](../monetize/run-app-experiments-with-a-b-testing.md) pour le produit, et consulter les données d’expérimentation.     </td><td>    Non applicable  </td><td>    Non applicable                 </td></tr>
+    <tr><td align="left">    **Expérimentation**</td><td>    Peut afficher les [expériences (test A/B)](../monetize/run-app-experiments-with-a-b-testing.md) et consulter les données de l’expérimentation du produit.   </td><td>    Peut créer, gérer et afficher les [expériences (test A/B)](../monetize/run-app-experiments-with-a-b-testing.md) pour le produit, et consulter les données d’expérimentation.     </td><td>    Non applicable  </td><td>    N/A                 </td></tr>
+    <tr><td align="left">    **Événements de vente du Store**&nbsp;\*</td><td>    Peut afficher l’état de l’événement de vente pour le produit.   </td><td>    Peut ajouter le produit à des événements de vente et configurer des remises.      </td><td>    Peut afficher l’état de l’événement de vente pour le produit.   </td><td>    Peut ajouter le produit à des événements de vente et configurer des remises.      </td></tr>
 
     </tbody>
     </table>

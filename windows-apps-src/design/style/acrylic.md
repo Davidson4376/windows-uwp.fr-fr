@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-description: "Un type de pinceau qui crée une texture partiellement transparente."
+description: Un type de pinceau qui crée une texture partiellement transparente.
 title: Support acrylique
 template: detail.hbs
 ms.author: mijacobs
@@ -14,11 +14,11 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: high
-ms.openlocfilehash: 8f8266878356ae182b6abf59a6729bf7066d6e4c
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
+ms.openlocfilehash: 21fccc72081d1825cad91e9d44bdc458c62d99d4
+ms.sourcegitcommit: 9666ef4cf5bb63dd62ee95f89a6ad0ac1bf7ac9d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="acrylic-material"></a>Support acrylique
 
@@ -268,7 +268,7 @@ Pour donner à la fenêtre de votre application un aspect épuré, vous pouvez u
 
 ```csharp
 /// Extend acrylic into the title bar. 
-private void extendAcrylicIntoTitleBar()
+private void ExtendAcrylicIntoTitleBar()
 {
     CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
     ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
@@ -318,7 +318,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
         Window.Current.Activate();
 
         // Extend acrylic
-        extendAcrylicIntoTitleBar();
+        ExtendAcrylicIntoTitleBar();
     }
 }
 ```

@@ -1,24 +1,25 @@
 ---
 author: jnHs
-Description: "Le rapport Utilisation disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer la façon dont les clients utilisent votre application."
-title: "Rapport sur l’utilisation"
+Description: The Usage report in the Windows Dev Center dashboard lets you see how customers are using your app.
+title: Rapport d’utilisation
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.author: wdg-dev-content
-ms.date: 08/16/2017
+ms.date: 3/8/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
-ms.openlocfilehash: b3e7154a9dc8b7ecea8a319300ab482f61e0bb68
-ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+keywords: windows10, uwp, utilisation, événement personnalisé, rapport, télémétrie, sessions utilisateur
+ms.localizationpriority: high
+ms.openlocfilehash: 35bc42e8a65441d9ee4387b65c60c3a51903142c
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2017
+ms.lasthandoff: 03/08/2018
 ---
-# <a name="usage-report"></a>Rapport sur l’utilisation
+# <a name="usage-report"></a>Rapport d’utilisation
 
 
-Le rapport **Utilisation** disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer la façon dont les clients sur Windows10 utilisent votre application, et vous présente des informations sur les événements personnalisés que vous avez définis. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion.
+Le rapport **Utilisation** disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer la façon dont les clients sur Windows10 (y compris Xbox) utilisent votre application, et vous présente des informations sur les événements personnalisés que vous avez définis. Vous pouvez visualiser ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion.
 
 
 ## <a name="apply-filters"></a>Appliquer des filtres
@@ -28,13 +29,13 @@ Dans la zone supérieure de la page, vous pouvez sélectionner la période sur l
 Vous pouvez également développer l’option **Filtres** pour filtrer les données de cette page par version de package, par marché et/ou par type d’appareil.
 
 -   **Version du package**: le paramétrage par défaut est **Toutes**. Si votre application comporte plusieurs packages, vous pouvez en choisir un ici.
--   **Marché**: le filtre par défaut est **Tous les marchés**, mais vous pouvez restreindre les données aux acquisitions relatives à un ou plusieurs marchés.
--   **Type d’appareil** : le paramètre par défaut est **Tous**, mais vous pouvez choisir d’afficher les données pour un seul type d’appareil donné.
+-   **Marché**: le filtre par défaut est **Tous les marchés**, mais vous pouvez restreindre les données à un ou plusieurs marchés.
+-   **Type d’appareil**: le paramétrage par défaut est **Tous**, mais vous pouvez choisir d’afficher uniquement les données relatives à un type d’appareil spécifique (PC, console ou tablette, par exemple).
 
 Les informations figurant dans tous les graphiques répertoriés ci-après correspondent à la plage de dates et aux filtres que vous avez sélectionnés (à l’exception des données **Nouveaux utilisateurs** du graphique **Utilisation** qui n’apparaissent pas si des filtres sont sélectionnés). Certaines sections vous permettent également d’appliquer des filtres supplémentaires.
 
 > [!IMPORTANT]
-> Ce rapport intègre uniquement les données d’utilisation des clients sur Windows10 qui n’ont pas refusé de fournir des informations de télémétrie.
+> Ce rapport intègre uniquement les données d’utilisation des clients sur Windows10 (y compris Xbox) qui n’ont pas refusé de fournir des informations de télémétrie. Les données d’utilisation pour les jeux Xbox sont incluses ici, que le client ait été connecté à Xbox Live ou non. 
 
 
 ##<a name="usage"></a>Utilisation
@@ -43,9 +44,9 @@ Le graphique **Utilisation** affiche des détails sur la façon dont vos clients
 
 Ce graphique comporte quatre onglets visualisables qui vous présentent l’utilisation par jour ou par semaine (selon la durée que vous avez sélectionnée).
 
-- **Utilisateurs**: affiche le nombre total de **sessions utilisateur** au cours de la période sélectionnée. Chaque session utilisateur représente une période distincte pendant laquelle un client a interagi avec votre application. Chaque session utilisateur est considérée comme prenant fin après une période d’inactivité, de sorte qu’un même client peut être associé à plusieurs sessions utilisateur dans la même journée ou semaine. Le nombre total **d’utilisateurs actifs** (tout client utilisant l’application ce jour ou cette semaine-là) et de **nouveaux utilisateurs** (clients ayant utilisé votre application pour la première fois ce jour ou cette semaine-là) est également affiché. Notez que si vous avez appliqué des filtres à la page, la valeur **Nouveaux utilisateurs** n’apparaît pas dans ce graphique.
+- **Utilisateurs**: affiche le nombre total de **sessions utilisateur** au cours de la période sélectionnée. Chaque session utilisateur représente une période de temps distincte, qui commence au lancement de l’application (début du processus) et qui se termine à l’arrêt de l’application (fin du processus) ou après une période d’inactivité. Pour cette raison, un client unique peut avoir plusieurs sessions utilisateur sur un même jour ou une même semaine. Le nombre total **d’utilisateurs actifs** (tout client utilisant l’application ce jour ou cette semaine-là) et de **nouveaux utilisateurs** (clients ayant utilisé votre application pour la première fois ce jour ou cette semaine-là) est également affiché. Notez que si vous avez appliqué des filtres à la page, la valeur **Nouveaux utilisateurs** n’apparaît pas dans ce graphique.
 - **Appareils**: affiche le nombre d’appareils utilisés quotidiennement par tous les utilisateurs pour interagir avec votre application.
-- **Durée**: indique le nombre total de minutes d’engagement (minutes pendant lesquelles un utilisateur utilise activement votre application).
+- **Durée**: indique le nombre total d’heures d’engagement (heures pendant lesquelles un utilisateur utilise activement votre application).
 - **Rétention**: affiche le nombre total **d’utilisateurs actifs quotidiennement/d’utilisateurs actifs mensuels** au cours de la période sélectionnée.
 
 

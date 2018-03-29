@@ -1,24 +1,25 @@
 ---
 author: jnHs
-Description: "Le rapport Acquisitions disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer qui acquiert et installe votre application, et vous fournit des informations sur la plateforme ainsi que des données démographiques."
-title: Rapport sur les acquisitions
+Description: The Acquisitions report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details.
+title: Rapport Acquisitions
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 08/04/2017
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
-ms.openlocfilehash: d6540db7a3d0a045fa6a2c8fec617f045f4a1bf4
-ms.sourcegitcommit: 2b436dc5e5681b8884e0531ee303f851a3e3ccf2
+keywords: windows10, uwp, acquisitions, ventes d’applications, téléchargements d'applications, installations, entonnoir, acquisition, conversions, canal, vues de pages d'applications
+ms.localizationpriority: high
+ms.openlocfilehash: d1675b3a2ffe879585ea2fd3792b47e7bdc7a8af
+ms.sourcegitcommit: 980e604c3767e7a73619d027bebd78cf4bfe9678
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 02/14/2018
 ---
-# <a name="acquisitions-report"></a>Rapport sur les acquisitions
+# <a name="acquisitions-report"></a>Rapport Acquisitions
 
 
-Le rapport **Acquisitions** disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer qui acquiert et installe votre application, et vous fournit des informations sur la plateforme ainsi que des données démographiques. Il vous indique également la façon dont les clients utilisant Windows10 ont accédé à la description de votre application.
+Le rapport **Acquisitions** disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer qui acquiert et installe votre application, et vous fournit des informations sur la plateforme ainsi que des données démographiques. Il vous indique également la façon dont les clients utilisant Windows10 (y compris Xbox) ont accédé à la description de votre application.
 
 Vous pouvez visualiser ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de notre [API REST d’analyse](../monetize/access-analytics-data-using-windows-store-services.md).
 
@@ -37,7 +38,7 @@ Dans la zone supérieure de la page, vous pouvez sélectionner la période sur l
 Vous pouvez également développer l’option **Filtres** pour filtrer toutes les données de cette page par marché et/ou par type d’appareil.
 
 -   **Marché**: le filtre par défaut est **Tous les marchés**, mais vous pouvez restreindre les données aux acquisitions relatives à un ou plusieurs marchés.
--   **Type d’appareil**: le paramétrage par défaut est **Tous les appareils**. Si vous souhaitez uniquement afficher les données d’acquisitions relatives à un certain type d’appareil, vous pouvez en choisir un ici.
+-   **Type d’appareil**: le paramétrage par défaut est **Tous les appareils**. Si vous souhaitez afficher les données d’acquisitions relatives à un certain type d’appareil uniquement (PC, console ou tablette, par exemple), vous pouvez en choisir un ici.
 
 Les informations figurant dans tous les graphiques répertoriés ci-après correspondent à la plage de dates et à tous les filtres que vous avez sélectionnés. Certaines sections vous permettent également d’appliquer des filtres supplémentaires.
 
@@ -55,10 +56,10 @@ Si vous le souhaitez, vous pouvez filtrer les résultats par acquisition émanan
 
 ## <a name="installs"></a>Installations
 
-Le graphique **Installations** affiche le nombre de fois où nous avons détecté que des clients ont installé votre application sur des appareilsWindows10 au cours de la période sélectionnée. Nous vous présentons le nombre total d’installations, ainsi qu’un graphique affichant le nombre d’installations par jour ou par semaine (selon la durée que vous avez sélectionnée). Si vous le souhaitez, vous pouvez filtrer les résultats par version de package spécifique.
+Le graphique **Installations** affiche le nombre de fois où nous avons détecté que des clients ont installé votre application sur des appareilsWindows10 (y compris sur des consoles XboxOne) au cours de la période sélectionnée. Nous vous présentons le nombre total d’installations, ainsi qu’un graphique affichant le nombre d’installations par jour ou par semaine (selon la durée que vous avez sélectionnée). Si vous le souhaitez, vous pouvez filtrer les résultats par version de package spécifique.
 
 Le nombre total d’installations comprend les éléments suivants:
--   **Installations sur plusieurs appareilsWindows10.** Par exemple, si un même client installe votre application sur 2PC Windows10 et sur un téléphoneWindows10, 3installations sont comptabilisées.
+-   **Installations sur plusieurs appareilsWindows10.** Par exemple, si un même client installe votre application sur deuxPC Windows10 et sur une console XboxOne, troisinstallations sont comptabilisées.
 -   **Réinstallations.** Par exemple, si un client installe votre application aujourd’hui, la désinstalle demain puis la réinstalle le mois prochain, 2installations sont consignées.
 
 Le total ne comprend pas les éléments suivants:
@@ -76,7 +77,7 @@ Le total ne comprend pas les éléments suivants:
 Le graphique **Entonnoir d’acquisition** vous indique le nombre de clients ayant suivi chaque étape de l’entonnoir, depuis la visualisation de la page du WindowsStore jusqu’à l’utilisation de l’application, ainsi que le taux de conversion. Ces données peuvent vous aider à identifier les zones dans lesquelles vous pouvez vous investir davantage pour augmenter le nombre d’acquisitions, d’installations ou d’utilisations de votre application.
 
 > [!IMPORTANT]
-> La section **Entonnoir d’acquisition** affiche uniquement les données relatives aux clients utilisant Windows10 et portant sur les 90derniers jours.
+> La section **Entonnoir d’acquisition** affiche uniquement les données relatives aux clients utilisant Windows10 (y compris Xbox) et portant sur les 90derniers jours.
 
 Les étapes de l’entonnoir sont les suivantes:
 

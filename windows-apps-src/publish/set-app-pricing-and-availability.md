@@ -1,31 +1,30 @@
 ---
 author: jnHs
-Description: "La page Tarification et disponibilité du processus de soumission d’application vous permet de déterminer le prix de votre application, la mise à disposition ou non d’une version d’évaluation gratuite, ainsi que le mode, la date et l’emplacement d’accessibilité de votre application auprès des clients."
-title: "Définir la tarification et la disponibilité d’une application"
+Description: The Pricing and availability page of the app submission process lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers.
+title: Définir la tarification et la disponibilité d’une application
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 11/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 9686876bf0e5e3d89ce527eb07535f1c0a704f2a
-ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+ms.localizationpriority: high
+ms.openlocfilehash: 3e94aadefb418aa7cefa90b8f274868c80f3e480
+ms.sourcegitcommit: 11edca90aaf7856c762e68903483079d30ad3877
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="set-app-pricing-and-availability"></a>Définir la tarification et la disponibilité d’une application
 
-> [!NOTE]
-> Nous avons récemment mis à jour les options disponibles sur cette page. Si vous disposiez de soumissions en cours avant que ces options ne deviennent disponibles, il est possible que ces soumissions continuent d’afficher les anciennes options. Si vous souhaitez utiliser les dernières options pour cette application, vous pouvez supprimer ces soumissions, puis en créer d’autres. Dans le cas contraire, les dernières options deviendront disponibles avec la prochaine mise à jour une fois que vous aurez publié vos soumissions en cours.
 
 La page **Tarification et disponibilité** du [processus de soumission d’application](app-submissions.md) vous permet de déterminer le prix de votre application, la mise à disposition ou non d’une version d’évaluation gratuite, ainsi que le mode, la date et l’emplacement d’accessibilité de votre application auprès des clients. Cet article décrit les options disponibles sur cette page et les éléments à prendre en compte pour la spécification de ces informations.
 
 
 ## <a name="markets"></a>Marchés
 
-Le Windows Store touche des clients dans plus de 200pays et régions dans le monde. Par défaut, nous allons proposer votre application sur tous les marchés possibles. Si vous préférez, vous pouvez choisir les marchés spécifiques sur lesquels vous souhaitez proposer votre application. 
+Le Microsoft Store touche des clients dans plus de 200pays et régions dans le monde. Par défaut, nous allons proposer votre application sur tous les marchés possibles. Si vous préférez, vous pouvez choisir les marchés spécifiques sur lesquels vous souhaitez proposer votre application. 
 
 Pour plus d’informations, voir l’article [Définir la sélection du marché](define-pricing-and-market-selection.md).
 
@@ -46,7 +45,8 @@ Si vous souhaitez masquer votre application dans le Windows Store, mais en la re
 - **Utilisateurs sous Windows Phone8.x uniquement: seuls les utilisateurs spécifiés ci-dessous peuvent télécharger ce produit sur un appareil Windows Phone8.x. Toute personne ayant un lien direct et un code promotionnel peut télécharger le produit sur un appareil Windows10.** Cette option peut ne pas apparaître pour toutes les soumissions. Elle ne s’applique que si vous disposez de packages pouvant s’exécuter sur Windows Phone8.x. Seuls les clients dont vous spécifiez l’adresse de messagerie (associée à leur compteMicrosoft) dans le champ (séparées par des points-virgules) peuvent télécharger l’application sur Windows Phone8.x via le lien d’accès direct à sa description. Vous pouvez également générer des codes promotionnels afin de la rendre disponible à certains utilisateurs sur Windows10, comme expliqué plus haut. 
 
 > [!TIP]
-> Pour arrêter d’offrir une application aux nouveaux clients, cliquez sur **Rendre votre application indisponible** sur la page Vue d’ensemble de l’application. Quelques heures après que vous avez confirmé vouloir la rendre indisponible, votre application disparaît du Windows Store. Dès lors, aucun nouveau client ne pourra y accéder, quelle que soit la méthode. Cette action remplacera les options définies ici: aucun nouveau client ne disposera d’un accès. Si vous décidez de la remettre à disposition des clients, vous pouvez à tout moment cliquer sur **Rendre votre application disponible** sur la page Vue d’ensemble de l’application. Pour en savoir plus, consultez l’article [Suppression d’une application du Windows Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
+> Si vous voulez cesser de proposer une application à de nouveaux clients, vous pouvez sélectionner **Rendre votre application indisponible** depuis sa page d'aperçu. Quelques heures après que vous avez confirmé vouloir la rendre indisponible, votre application disparaît du Store. Dès lors, aucun nouveau client ne peut plus y accéder (sauf s'il possède un [code promotionnel](generate-promotional-codes.md) et utilise un appareil Windows10). Cette action remplacera les sélections **Visibilité** de votre soumission. Pour rendre à nouveau l'application disponible pour de nouveaux clients (conformément à vos sélections de **Visibilité**), vous pouvez cliquer à tout moment sur **Rendre l'application disponible** depuis la page d'aperçu. Pour en savoir plus, consultez l’article [Suppression d’une application du Windows Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
+
 
 ## <a name="schedule"></a>Planifier
 
@@ -54,9 +54,11 @@ Par défaut (sauf si vous avez sélectionné l'une des options **Rendre votre ap
 
 Pour plus d’informations, voir [Configurer le calendrier de publication exact](configure-precise-release-scheduling.md).
 
+
 ## <a name="display-release-date"></a>Afficher la date de publication
 
 Par défaut, la date de publication de votre application sera la date à laquelle elle apparaît dans le Windows Store. Si vous souhaitez la remplacer et fournir une date de sortie personnalisée, vous pouvez cochez la case dans cette section, puis saisir la date de publication. Notez que la date de publication n’est pas toujours affichée dans les descriptions du Windows Store.
+
 
 ## <a name="pricing"></a>Tarification
 
@@ -64,9 +66,10 @@ Vous devez sélectionner un prix de base pour votre application (sauf si vous av
 
 Pour plus d’informations, voir [Fixer et planifier le prix des applications](set-and-schedule-app-pricing.md).
 
+
 ## <a name="free-trial"></a>Essai gratuit
 
-De nombreux développeurs offrent aux utilisateurs la possibilité d’essayer gratuitement leur application à l’aide de la fonctionnalité d’essai fournie par le Windows Store. Par défaut, **Aucune version d’essai gratuit** est sélectionné. Il n’y aura alors aucune version d’essai de votre application. Si vous souhaitez en proposer une version d’essai, vous pouvez sélectionner une valeur à partir de la liste déroulante **Version d’essai gratuite**.
+De nombreux développeurs offrent aux utilisateurs la possibilité d’essayer gratuitement leur application à l’aide de la fonctionnalité d’essai fournie par le Windows Store. Par défaut, **Aucune version d’essai gratuit** est sélectionné. Il n’y aura alors aucune version d’essai de votre application. Si vous souhaitez en proposer une, vous pouvez sélectionner une valeur dans la liste déroulante **Version d’essai gratuite**.
 
 Vous pouvez choisir parmi deux types de version d’essai et vous avez la possibilité de configurer la date et l’heure à laquelle cette version d’essai doit démarrer et arrêter d'être proposée.
 
@@ -85,9 +88,9 @@ Choisissez **Illimité** pour permettre aux clients d’accéder à votre applic
 Par défaut, votre version d’essai sera disponible dès que votre application aura été publiée et elle sera proposée indéfiniment. Si vous le souhaitez, vous pouvez spécifier la date et l’heure à laquelle votre version d’évaluation doit commencer à être proposée et le moment où cette proposition doit s’arrêter. 
 
 >[!NOTE]
-> Ces dates ne s’appliquent qu'aux clients sous Windows10. Si votre version d’essai s’applique à des clients utilisant des versions antérieures du système d’exploitation, elle sera proposée aussi longtemps que votre produit sera disponible. 
+> Ces dates ne s’appliquent qu’aux clients sous Windows10 (y compris Xbox). Si votre application est disponible pour les clients utilisant des versions antérieures du système d’exploitation, la version d'essai sera proposée à ces clients aussi longtemps que votre produit sera disponible. 
 
-Pour définir les dates auxquelles votre version d’essai doit être proposée, changez les paramètres **Commence le** et/ou **Se termine le** sur la liste déroulante en **au**, puis choisissez la date et l’heure. Si vous procédez ainsi, vous pouvez choisir **UTC**, afin que l’heure que vous sélectionnez s'exprime en temps universel coordonné (UTC), ou **Local**, afin que ces dates soient utilisées dans chaque fuseau horaire associé à un marché. (Notez que pour les marchés qui incluent plusieurs fuseaux horaires, un seul fuseau horaire de ces marchés sera utilisé. Pour les États-Unis, le fuseau horaire utilisé est celui de l'Est.) 
+Pour définir les dates auxquelles votre version d’essai doit être proposée aux clients sous Windows10, changez les paramètres **Commence le** et/ou **Se termine le** sur la liste déroulante en **au**, puis choisissez la date et l’heure. Si vous procédez ainsi, vous pouvez choisir **UTC**, afin que l’heure que vous sélectionnez s'exprime en temps universel coordonné (UTC), ou **Local**, afin que ces dates soient utilisées dans chaque fuseau horaire associé à un marché. (Notez que pour les marchés qui incluent plusieurs fuseaux horaires, un seul fuseau horaire de ces marchés sera utilisé. Pour les États-Unis, le fuseau horaire utilisé est celui de l'Est.) 
 
 >[!NOTE]
 > Contrairement à ce qui se fait dans la section [Planifier](configure-precise-release-scheduling.md), les dates que vous sélectionnez pour votre **version d’essai gratuite** ne peuvent pas être personnalisées pour des marchés spécifiques. 
@@ -107,6 +110,7 @@ Par défaut, votre application peut être proposée aux entreprises avec une for
 
 Pour plus d’informations, voir [Options de gestion des licences organisationnelles](organizational-licensing.md).
 
+
 ## <a name="publish-date"></a>Date de publication
 
 Par défaut, votre soumission déclenche le processus de publication dès qu’elle a obtenu sa certification, sauf si vous avez configuré des dates dans la section [**Planifier**](#schedule) décrite ci-dessus. 
@@ -118,7 +122,7 @@ Si vous ne voulez pas encore définir de date de publication et que vous préfé
 Pour vous assurer que la soumission ne sera pas publiée avant une date donnée, choisissez l’option **Pas avant le \[date\]**. Avec cette option, votre soumission sera publiée aussitôt que possible à la date spécifiée ou après. La date doit être postérieure de 24 heures au moins. Parallèlement à la date, vous pouvez également définir l’heure à laquelle la publication de la soumission doit démarrer.
  
 > [!NOTE]
-> Des retards lors de la certification ou de la publication peuvent faire que la sortie réelle intervienne plus tard que la date demandée. Le Windows Store ne peut pas garantir que votre application (ou mise à jour) sera disponible à une date spécifique.  
+> Des retards lors de la certification ou de la publication peuvent différer la sortie réelle par rapport à la date demandée. Le Microsoft Store ne peut pas garantir que votre application (ou mise à jour) sera disponible à une date spécifique.  
 
 Vous pouvez également modifier la date de sortie après avoir soumis votre application, à condition que l’étape Publier n’ait pas encore commencé pour l’application. 
 

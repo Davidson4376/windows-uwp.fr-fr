@@ -1,19 +1,19 @@
 ---
 author: jnHs
 Description: The Xbox analytics report in the Windows Dev Center dashboard shows you statistics about how your customers are engaging with the Xbox features in your product.
-title: "Rapport d’analyse Xbox"
+title: Rapport d’analyse Xbox
 ms.author: wdg-dev-content
-ms.date: 10/30/2017
+ms.date: 02/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, analyse xbox, analyse xbox live, statistiques xbox
 ms.localizationpriority: high
-ms.openlocfilehash: ad40d33d51287126cd1940eb830b1be0c5ba7812
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 2b6ab5c15b4683456502ce1b94b1bf3ca74c239c
+ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="xbox-analytics-report"></a>Rapport d’analyse Xbox
 
@@ -55,7 +55,6 @@ Cette section présente le nombre total de clients qui ont déverrouillé chaque
 Cette section inclut des onglets que vous pouvez sélectionner pour afficher différentes données pour les clients de votre jeu. Notez que les statistiques de cette section font référence à l’utilisation des fonctionnalités en général et non dans votre produit spécifique.
 
 - L’onglet **Social usage** affiche les données relatives à la façon dont vos clients interagissent socialement.
-   - **Hub du jeu** affiche le pourcentage de vos clients qui interagissent avec les hubs de jeux. Ces données ne sont disponibles que pour les produits sur Xbox et font référence au nombre de vos clients qui utilisent des hubs de jeux en général, et non pas spécifiquement le hub de jeux de votre produit.
    - **Game invites** affiche le pourcentage de vos clients qui ont envoyé des invitations (pour n’importe quel jeu).
    - **Chat du groupe** affiche le pourcentage de vos clients qui utilisent la conversation instantanée (pour n’importe quel jeu).
    - **Messages texte** affiche le pourcentage de vos clients qui envoient des messages par le biais de l’interpréteur de commandes Xbox (pour n’importe quel jeu).

@@ -1,28 +1,27 @@
 ---
 author: jnHs
-Description: "La première étape de création d’une application dans votre tableau de bord du Centre de développement Windows consiste à réserver un nom d’application. Découvrez comment réserver des noms d’application et bénéficiez de suggestions pour choisir un nom exceptionnel pour votre application."
-title: "Créer votre application en réservant un nom"
-keywords: windows10, uwp
+Description: The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
+title: Créer votre application en réservant un nom
+keywords: windows10, uwp, réservation de noms, nom de l’application, noms d’application, noms, nom du produit, attribution de noms
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 55bd36cf1a84cc8d79d7e7373da22e97e571542e
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: 960acceb9f665b9d2f2d1def680626876c3aa29b
+ms.sourcegitcommit: b6915c7fa2c7292e9b4e3d3e9927dc8746ec1ffb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>Créer votre application en réservant un nom
 
 
-La première étape de création d’une application dans votre tableau de bord du Centre de développement Windows consiste à réserver un nom d’application. Découvrez comment réserver des noms d’application et bénéficiez de suggestions pour [choisir un nom exceptionnel pour votre application](#choosing-your-apps-name). Chaque nom réservé doit être unique à travers le Windows Store.
+La première étape de création d’une application dans votre tableau de bord du Centre de développement Windows consiste à réserver un nom d’application. Découvrez comment réserver des noms d’application et bénéficiez de suggestions pour [choisir un nom exceptionnel pour votre application](#choosing-your-apps-name). Chaque nom réservé doit être unique à travers le MicrosoftStore.
 
 Lorsque vous [chargez les packages de votre application](upload-app-packages.md), la valeur [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-displayname) doit correspondre au nom que vous avez réservé pour votre application. Si vous utilisez Microsoft VisualStudio pour créer le package de votre application, cet attribut est rempli automatiquement.
-
-Si vous avez créé une application WindowsPhone dans l’ancien tableau de bord WindowsPhone et que vous n’avez pas encore réservé de nom pour celle-ci, vous pouvez toujours gérer et soumettre cette application. Toutefois, pour charger des packages.appx pour cette application, ou pour [visualiser les détails d’identité de l’application](view-app-identity-details.md) propres aux packages.appx, vous devez réserver un nom unique en procédant comme ci-dessous. Cela empêche également quiconque de réserver ce nom.
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>Création de votre application en réservant un nouveau nom
 
@@ -35,9 +34,12 @@ Pour créer une application dans le tableau de bord, vous devez tout d'abord ré
 Ce nom est maintenant réservé pour vous et vous pourrez [soumettre](app-submissions.md) l’application lorsque vous serez prêt.
 
 > [!NOTE]
-> Il est possible que vous ne puissiez pas réserver un nom, même si vous ne voyez aucune application portant ce nom dans le WindowsStore. Cela est généralement dû au fait qu’un autre développeur a réservé ce nom, mais n’a pas encore soumis son application. Si vous ne parvenez pas à réserver un nom sur lequel vous détenez un quelconque droit, ou si vous voyez une autre application dans le Windows Store qui utilise ce nom, [contactez Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).
+> Il est possible que vous ne puissiez pas réserver un nom, même si vous ne voyez aucune application portant ce nom dans le MicrosoftStore. Cela est généralement dû au fait qu’un autre développeur a réservé ce nom, mais n’a pas encore soumis son application. Si vous ne parvenez pas à réserver un nom sur lequel vous détenez un quelconque droit, ou si vous voyez une autre application dans le MicrosoftStore qui utilise ce nom, [contactez Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).
 
 Une fois le nom réservé, vous disposez d’un an pour soumettre l’application. Si vous ne soumettez pas l’application dans ce délai, la réservation du nom expire, et un autre développeur peut alors être en mesure d’utiliser ce nom pour une autre application. Vous obtenez parfois un message d'erreur si vous tentez de soumettre une application dont vous avez laissé le nom expirer.
+
+> [!NOTE]
+> Si vous disposez d’une application Windows Phone que vous avez créée dans un tableau de bord Windows Phone plus ancien et si vous n'avez jamais réservé de nom pour celle-ci, vous devez le faire pour pouvoir charger des packages .appx pour cette application ou pour [voir les détails de l’identité de l’application](view-app-identity-details.md) spécifiques aux packages .appx. Réserver un nom unique empêche également quiconque de réserver ce nom. Toutefois, si vous ne réservez pas de nom, vous pouvez toujours gérer et soumettre l’application pour vos clients sous Windows Phone8.x.
 
 
 ## <a name="choosing-your-apps-name"></a>Choix du nom de votre application
@@ -52,6 +54,8 @@ Il est important de bien choisir le nom de votre application. Choisissez un nom 
 -   **Faites preuve d’originalité.** Assurez-vous que le nom de votre application se distingue pour éviter toute confusion avec une application existante.
 -   **N’utilisez pas de noms de marque qui sont la propriété de tiers** Assurez-vous de disposer des droits d’utilisation du nom que vous réservez. Si quelqu’un d’autre a déposé le nom en tant que marque, il peut dénoncer une violation de propriété et vous ne pourrez pas continuer à utiliser ce nom. Si cela se produit après la publication de votre application, celle-ci sera retirée du Windows Store. Vous devez alors modifier le nom de votre application, ainsi que toutes les instances du nom figurant dans celle-ci et son contenu, avant de [soumettre l’application](app-submissions.md) à nouveau pour certification.
 -   **Évitez d’ajouter des informations de différenciation à la fin du nom.** Si vous ajoutez des informations qui différencient plusieurs applications à la fin d’un nom, les clients risquent de passer à côté, surtout si le nom est long. En effet, toutes les applications risquent alors de présenter le même nom. Si vous ne pouvez pas faire autrement, utilisez des logos et images d’application différents pour distinguer plus facilement une application d’une autre.
+-   **N’incluez pas d'emojis dans votre nom.** Vous ne serez pas en mesure de réserver un nom qui inclut des emojis ou d’autres caractères non pris en charge.
+
 
 ## <a name="manage-additional-app-names"></a>Gérer des noms d’application supplémentaires
 

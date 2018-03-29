@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "Prenez connaissance des déclarations fiscales envoyées par Microsoft, notamment à qui elles sont envoyées et à quelle date."
-title: "Présentation des déclarations fiscales de l’IRS envoyées par Microsoft"
+Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
+title: Présentation des déclarations fiscales de l’IRS envoyées par Microsoft
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 03/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: windows10, uwp, fiscalité, irs, services fiscaux américains, impôt, impôt sur le revenu, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
-ms.openlocfilehash: bffb666184f52e6e6491d8651414ecbc269352b8
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: 0bdae8a8489ddf4f2ec7eb7a619631bd4fa26e9e
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Présentation des déclarations fiscales de l’IRS envoyées par Microsoft
 
@@ -26,7 +27,7 @@ Nous expliquons ci-dessous en quoi consistent ces déclarations, notamment à qu
 | Déclaration fiscale de l’IRS | Description | Disponibilité |
 |--------------|-------------|--------------|
 |1099-MISC, 1099-K | Concerne les ventes réalisées et/ou les paiements reçus dans le cadre de vos activités sur les places de marché Microsoft. | Les versions imprimées des déclarations sont envoyées par courrier au plus tard le **31janvier**, et les copies.pdf sont mises en ligne dans le Centre de développement (**Tableau de bord> Paramètres du compte> Profil fiscal**) à la même date. |
-|1042-S | Concerne les paiements que vous avez reçus et qui sont imposables aux États-Unis. | Les versions imprimées des déclarations sont envoyées par courrier au plus tard le **15mars**, et les copies.pdf sont mises en ligne dans le Centre de développement (**Tableau de bord> Paramètres du compte> Profil fiscal**) à la même date. |
+|1042-S | Concerne les paiements que vous avez reçus et qui sont imposables aux États-Unis | Les versions imprimées des déclarations sont envoyées par courrier au plus tard le **15mars**, et les copies.pdf sont mises en ligne dans le Centre de développement (**Tableau de bord> Paramètres du compte> Profil fiscal**) à la même date. |
 
 > [!NOTE]
 > L’adresse figurant sur les déclarations fiscales de l’IRS est celle indiquée dans votre [profil fiscal](setting-up-your-payout-account-and-tax-forms.md#tax-forms). Si vous avez changé d’adresse, n’oubliez pas de modifier l’adresse indiquée dans votre **profil fiscal**.
@@ -39,7 +40,7 @@ Nous expliquons ci-dessous en quoi consistent ces déclarations, notamment à qu
      <th> Je dois recevoir cette déclaration</th>
   </tr>
   <tr> 
-     <td valign="top">J’ai réalisé **plus de 200ventes d’applications** pour un montant total d’achat **supérieur à 20000dollars USD** durant l’année fiscale applicable (**sans** prendre en compte les ventes réalisées au Brésil et en Chine par le biais de Windows10 Store.)</td>
+     <td valign="top">J’ai réalisé **plus de 200ventes d’applications** pour un montant total d’achat **supérieur à 20000dollars USD** durant l’année fiscale applicable (**sans** prendre en compte les ventes réalisées au Brésil et en Chine par le biais de Microsoft Store sur Windows10).</td>
     <td valign="top">**1099-K**:<br>
 Déclarant: Microsoft Corporation<br>
 Numéro EIN: \*\*\*\*\*4442<br>
@@ -47,7 +48,7 @@ Numéro EIN: \*\*\*\*\*4442<br>
 **Important:** La déclaration 1099-K indique les montants des **achats bruts**, pas les paiements que vous avez reçus.</td>
   </tr>
   <tr> 
-     <td valign="top">J’ai reçu **au moins 10dollars en paiement** de ventes d’applications réalisées au Brésil et en Chine par le biais de Windows10 Store.<br>
+     <td valign="top">J’ai reçu **au moins 10dollars en paiement** de (i) ventes d’applications réalisées au Brésil et en Chine par le biais de Microsoft Store sur Windows10 ou de (ii) ventes sur le Marché Minecraft.<br>
 <br>
 **OU**<br>
 <br>
