@@ -1,23 +1,24 @@
 ---
 author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
-title: "Ouverture d’un compte de développeur"
-description: "Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un compte de développeur pour le Windows Store et d’autres programmes Microsoft, vous aidera à comprendre le processus de configuration de votre compte."
+title: Ouverture d’un compte de développeur
+description: Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un compte de développeur pour le MicrosoftStore et d’autres programmes Microsoft, vous aidera à comprendre le processus de configuration de votre compte.
 ms.author: wdg-dev-content
 ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 726c2edebe5c12120c0f034414516b3076bf3795
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: 5a82afad1c56a5e06e3d82d6b6e6e381fa8934dd
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="opening-a-developer-account"></a>Ouverture d’un compte de développeur
 
-Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un compte de développeur pour le Windows Store et d’autres programmes Microsoft, vous aidera à comprendre le processus de configuration de votre compte.
+Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un compte de développeur pour le MicrosoftStore et d’autres programmes Microsoft, vous aidera à comprendre le processus de configuration de votre compte.
 
 > [!NOTE]
 > Lorsque vous vous inscrivez pour obtenir un compte de développeur, nous utilisons l’adresse e-mail que vous fournissez dans vos infos de contact pour vous envoyer des communications par courrier électronique concernant votre compte. Parfois, ces communications peuvent inclure des messages d’information sur nos programmes. Si vous choisissez de ne pas recevoir ces messages d’information (en ne les [acceptant pas](http://go.microsoft.com/fwlink/p/?LinkId=533280)), sachez que nous vous enverrons des messages électroniques sur les transactions (pour vous signaler que votre application a été certifiée ou qu’un versement est en cours, par exemple). Ces messages sur les transactions sont un aspect nécessaire de la gestion de votre compte. Tant que vous n’aurez pas fermé ce dernier, vous continuerez à en recevoir.
@@ -35,7 +36,8 @@ Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un co
 
   > [!NOTE]
   > Vérifiez que vous disposez des droits d’utilisation du nom entré ici. Si quelqu’un d’autre a déposé la marque ou protégé par copyright le nom que vous avez choisi, votre compte risque d’être fermé. Pour plus d’informations, consultez le [Contrat du développeur d’application](https://msdn.microsoft.com/library/windows/apps/Hh694058). Si une autre personne utilise un nom d’éditeur sur lequel vous détenez un quelconque droit, [contactez Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).    
-6.  Entrez les infos de contact à utiliser pour votre compte de développeur.
+
+  6.  Entrez les infos de contact à utiliser pour votre compte de développeur.
 
   > [!NOTE]
   > Nous n’utilisons ces informations que pour des questions concernant votre compte. Par exemple, vous recevrez un message électronique de confirmation une fois votre inscription terminée. Après cela, nous vous enverrons des messages au moment du règlement ou en cas de problème avec votre compte. Comme décrit ci-dessus, nous pouvons également envoyer des messages d’information, sauf si vous ne souhaitez plus recevoir de messages électroniques non transactionnels.
@@ -59,7 +61,7 @@ Lorsque vous créez un compte d’entreprise, nous vous suggérons de suivre les
 > [!IMPORTANT]
 > Pour autoriser plusieurs utilisateurs à accéder à votre compte du Centre de développement, nous vous recommandons d’utiliser Azure ActiveDirectory pour attribuer des rôles à ces différents utilisateurs. Chaque utilisateur pourra alors accéder au compte du Centre de développement en se connectant avec ses propres informations d’identification AzureAD. Pour plus d’informations, voir [Gérer les utilisateurs du compte](manage-account-users.md).
 
--   Créez votre compte Microsoft à l’aide d’une adresse de messagerie qui ne vous appartient pas déjà, ni à une autre personne, telle que MyCompany_DevCenter@outlook.com. Vous n'êtes peut-être pas en mesure d’utiliser une adresse de messagerie au domaine de votre entreprise, en particulier si votre société utilise déjà Azure AD.
+-   Créez votre compte Microsoft à l’aide d’une adresse e-mail qui ne vous appartient pas déjà, ni à une autre personne, tel que MyCompany_DevCenter@outlook.com. Vous ne pourrez peut-être pas utiliser une adresse e-mail au domaine de votre entreprise, en particulier si votre société utilise déjà AzureAD.
 -   Limitez l’accès à ce compte Microsoft au plus petit nombre possible d'utilisateurs.
 -   Configurez une liste de distribution de courrier électronique d’entreprise qui comprend toutes les personnes qui doivent accéder au compte de développeur, puis ajoutez cette adresse de messagerie aux informations de sécurité. Ceci permet à tous les employés de la liste de recevoir les codes de sécurité chaque fois que nécessaire. Si la configuration d’une liste de distribution n’est pas envisageable, le propriétaire du compte de messagerie individuel doit être disponible pour accéder au code de sécurité et le partager lorsqu’il y est invité par le système (par exemple, quand de nouvelles informations de sécurité sont ajoutées au compte, ou quand un nouvel appareil accède au compte).
 -   Ajoutez un numéro de téléphone d’entreprise direct (sans numéro de poste), accessible aux membres clés de l’équipe.
@@ -73,7 +75,7 @@ Nous utilisons les informations de sécurité que vous fournissez pour renforcer
 
 Vous devez disposer d’au moins deux adresses e-mail et/ou numéros de téléphone pour votre compte Microsoft. Nous recommandons d’en ajouter autant que possible. Gardez à l’esprit que certaines informations de sécurité doivent être confirmées avant d’être valides. En outre, vérifiez fréquemment vos informations de sécurité pour vous assurer qu’elles sont à jour.
 
-Vous pouvez gérer vos informations de sécurité en accédant à [https://account.live.com/proofs/Manage](http://go.microsoft.com/fwlink/p/?LinkID=266648) et en vous connectant à l’aide du compte Microsoft associé. Pour plus d’informations, voir [Informations de sécurité de compte Microsoft : FAQ](http://go.microsoft.com/fwlink/p/?LinkID=272177).
+Vous pouvez gérer vos informations de sécurité en accédant à [https://account.live.com/proofs/Manage](http://go.microsoft.com/fwlink/p/?LinkID=266648) et en vous connectant à l’aide de votre compte Microsoft. Pour plus d’informations, voir [Informations de sécurité de compte Microsoft: FAQ](http://go.microsoft.com/fwlink/p/?LinkID=272177).
 
 Quand vous vous connectez au tableau de bord du Centre de développement Windows, le système peut vous demander de confirmer votre identité. Dans le cas d’une adresse de messagerie ou d’un numéro de téléphone, nous envoyons un code de sécurité que vous devez fournir en retour pour mener à bien la procédure de connexion.
 
@@ -83,7 +85,7 @@ Nous vous recommandons d’identifier les PC que vous utilisez souvent en tant q
 
 Les comptes de développeur n’arrivent jamais à expiration. Vous n’avez donc pas besoin de renouveler votre compte pour le maintenir ouvert. Si vous décidez de fermer entièrement votre compte, contactez le support.
 
-Lorsque vous fermez votre compte, il est important que vous en compreniez les répercussions sur toutes les applications que vous avez publiées dans le Windows Store :
+Lorsque vous fermez votre compte, il est important que vous en compreniez les répercussions sur toutes les applications que vous avez publiées dans le MicrosoftStore:
 
 -   Les clients ayant déjà acheté votre application seront toujours en mesure d’utiliser cette dernière. Toutefois, ils ne pourront pas effectuer d’achats in-app.
 -   Même si votre application reste accessible aux clients l’ayant déjà achetée, la description de l’application sera supprimée du Store. Aucun nouveau client ne pourra l’acheter.

@@ -1,20 +1,20 @@
 ---
 author: jnHs
 Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
-title: "Saisir les propriétés d’une extension"
+title: Saisir les propriétés d’une extension
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.author: wdg-dev-content
 ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows10, uwp, extension, propriétés, période d'abonnement, type de produit, durée de vie du produit, type de contenu, iap, achat in-app, produit in-app"
+keywords: Windows10, uwp, extension, propriétés, période d'abonnement, type de produit, durée de vie du produit, type de contenu, iap, achat in-app, produit in-app
 ms.localizationpriority: high
-ms.openlocfilehash: 63fc414c230e5a988013b1509280bfdb083a93c0
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: c3f5de17dc090989572d72c30bd9d8b85e385316
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="enter-add-on-properties"></a>Saisir les propriétés d’une extension
 
@@ -80,16 +80,18 @@ Voici les options disponibles pour le type de contenu d’une extension:
 Ces champs sont facultatifs pour tous les types d’extensions.
 
 <span id="keywords" />
+
 ### <a name="keywords"></a>Mots clés
 
 Vous pouvez fournir jusqu’à dix mots clés d’un maximum de 30caractères chacun pour chaque extension envoyée. Votre application peut ensuite rechercher les extensions qui correspondent à ces mots clés. Cette fonctionnalité vous permet de générer dans votre application des écrans qui peuvent charger les extensions, sans avoir à spécifier directement l’ID du produit dans le code de l’application. Vous pouvez ensuite modifier à tout moment les mots clés d’une extension sans modifier le code de votre application ni soumettre de nouveau l’application.
 
-Pour exécuter une requête sur ce champ, utilisez la propriété [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct#Windows_Services_Store_StoreProduct_Keywords) de [l’espace de noms Windows.Services.Store](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.aspx). (Si vous utilisez [l’espace de noms Windows.ApplicationModel.Store](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.aspx), utilisez plutôt la propriété [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting#Windows_ApplicationModel_Store_ProductListing_Keywords).)
+Pour exécuter une requête sur ce champ, utilisez la propriété [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) de [l’espace de noms Windows.Services.Store](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.aspx). (Si vous utilisez [l’espace de noms Windows.ApplicationModel.Store](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.aspx), utilisez plutôt la propriété [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords).)
 
 > [!NOTE]
 > Les mots clés ne sont pas utilisables dans les packages ciblant Windows8 et Windows8.1.
 
 <span id="custom-developer-data" />
+
 ### <a name="custom-developer-data"></a>Données personnalisées du développeur
 
 Vous pouvez entrer jusqu’à 3000caractères dans le champ **Données personnalisées du développeur** (anciennement libellé **Balise**) afin de fournir un contexte supplémentaire pour votre extension. Le plus souvent, ces données prennent la forme d’une chaîneXML, mais vous pouvez entrer ce que vous voulez dans ce champ. Votre application peut ensuite exécuter une requête sur ce champ afin d’en lire le contenu (bien que l’application ne puisse pas modifier les données et renvoyer les modifications).

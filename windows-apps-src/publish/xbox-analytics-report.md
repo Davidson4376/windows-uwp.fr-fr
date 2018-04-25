@@ -9,11 +9,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, analyse xbox, analyse xbox live, statistiques xbox
 ms.localizationpriority: high
-ms.openlocfilehash: 2b6ab5c15b4683456502ce1b94b1bf3ca74c239c
-ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
+ms.openlocfilehash: 4f00d400724d07a00970f0145326068e15ea9054
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="xbox-analytics-report"></a>Rapport d’analyse Xbox
 
@@ -116,7 +116,7 @@ Par défaut, ce graphique affiche les six principaux services par nombre d’err
 
 ### <a name="service-availability"></a>Service availability
 
-Le graphique **Service availability** indique la disponibilité quotidienne sur chaque service Xbox Live, sur la période sélectionnée. Cette valeur est calculée comme suit: *1-(erreurs serveur totales (5xx)/réponses totales)*et est spécifique à votre produit et non pas à Xbox Live dans l’ensemble.
+Le graphique **Service availability** indique la disponibilité quotidienne sur chaque service Xbox Live, sur la période sélectionnée. Cette valeur est calculée comme suit: *1-(erreurs serveur totales (5xx)/réponses totales)* et est spécifique à votre produit et non pas à Xbox Live dans l’ensemble.
 
 Par défaut, ce graphique affiche les sixservices qui ont enregistré la disponibilité la plus basse. Vous pouvez sélectionner l’icône de filtre dans le coin supérieur droit de cette section pour choisir d’autres services. Vous pouvez afficher la disponibilité pour un maximum de sixservices à la fois. 
 
@@ -131,7 +131,7 @@ Le tableau **Client errors by endpoint** indique le nombre d’erreurs de client
 Vous pouvez également afficher uniquement les erreurs liées à la limitation du débit en sélectionnant **Rate limiting**. Cela affiche le nombre d’erreurs quotidiennes liées à la limitation du débit (429) et à l’exemption de limitation du débit (429E) sur chaque service Xbox Live, point de terminaison et code d’état, sur la période sélectionnée.
 
 > [!NOTE]
-Un code d’état 429E a été en fait retourné avec succès comme un code d'état 200, mais le débit aurait été limité si le service avait été confronté à un volume élevé à ce moment-là, c’est pourquoi nous vous recommandons de le traiter exactement comme s’il était appliqué (429).
+> Un code d’état 429E a été en fait retourné avec succès comme un code d'état 200, mais le débit aurait été limité si le service avait été confronté à un volume élevé à ce moment-là, c’est pourquoi nous vous recommandons de le traiter exactement comme s’il était appliqué (429).
 
 
 

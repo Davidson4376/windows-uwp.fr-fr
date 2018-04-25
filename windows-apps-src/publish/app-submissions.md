@@ -1,21 +1,22 @@
 ---
 author: jnHs
-Description: "Après avoir créé votre application en réservant un nom, vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une soumission."
-title: "Soumissions d’application"
+Description: Once you've created your app by reserving a name, you can start working on getting it published. The first step is to create a submission.
+title: Soumissions d’applications
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
-keywords: "liste de vérification"
+keywords: liste de vérification, windows, uwp, soumission, soumettre, jeu, application
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 04/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: fdef30d07386a1c5ab7dc6bd62b9507ff5852194
-ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+ms.localizationpriority: high
+ms.openlocfilehash: 1ec4201060adf4a9f5c2916d605b3c995cd44fc6
+ms.sourcegitcommit: 9f059b37e45099b4314c96a0b604449e966d3c3c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/04/2018
 ---
-# <a name="app-submissions"></a>Soumissions d’application
+# <a name="app-submissions"></a>Soumissions d’applications
 
 
 Après avoir [créé votre application en réservant un nom](create-your-app-by-reserving-a-name.md), vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une **soumission**.
@@ -25,7 +26,7 @@ Vous pouvez démarrer votre soumission lorsque votre application est terminée e
 Une fois votre application publiée, vous pouvez publier une version mise à jour en créant une autre soumission dans le tableau de bord. Le fait de créer une soumission vous permet d'introduire et de publier tous les changements nécessaires, que vous chargiez d'autres packages ou que vous changiez juste des détails comme le prix ou la catégorie. Pour créer une soumission pour une application publiée, cliquez sur **Mettre à jour** en regard de la soumission la plus récente affichée sur la page de présentation de l’application.
 
 > [!NOTE]
-> Cette section de la documentation explique comment créer une soumission d’applications sur le tableau de bord du Centre de développement. Sinon, vous pouvez utiliser [l’API de soumission du Windows Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour automatiser les soumissions d’application.
+> Cette section de la documentation explique comment créer une soumission d’applications sur le tableau de bord du Centre de développement. Sinon, vous pouvez utiliser [l’API de soumission au Microsoft Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour automatiser la soumission d’applications.
 
 ## <a name="app-submission-checklist"></a>Liste de vérification relative à la soumission d’une application
 
@@ -37,23 +38,28 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 | Nom du champ                    | Remarques                                       | Informations supplémentaires                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **Marchés**                   | Par défaut: tous les marchés possibles,  | [Définition des prix et sélection du marché](define-pricing-and-market-selection.md)         |
-| **Visibilité**                | Par défaut: rendre cette application accessible et détectable dans le Windows Store | [Visibilité](set-app-pricing-and-availability.md#visibility) |
+| **Public**                | Par défaut: public non privé | [Public](choose-visibility-options.md#audience) |
+| **Détectabilité**                | Par défaut: rendre cette application accessible et détectable dans le Store | [Détectabilité](choose-visibility-options.md#discoverability) |
 | **Planification**                  | Par défaut: publication dès que possible        | [Configurer une planification précise de la publication](configure-precise-release-scheduling.md) |
 | **Prix de base**                | Obligatoire                                    | [Définition et planification du prix de l’application](set-and-schedule-app-pricing.md)              |
 | **Essai gratuit**                | Par défaut: aucune version d'essai gratuit                      | [Essai gratuit](set-app-pricing-and-availability.md#free-trial)              |
 | **Prix de vente**              | Facultatif                                    | [Commercialiser des applications et composants additionnels](put-apps-and-add-ons-on-sale.md)           |
 | **Gestion des licences organisationnelles**    | Par défaut : autoriser l'acquisition en volume par des organisations | [Options de gestion des licences organisationnelles](organizational-licensing.md)        |
-| **Date de publication**                | Par défaut : publication dès que possible      | [Date de publication](set-app-pricing-and-availability.md#publish-date)          |
+      |
 
-<span/>
 
 ### <a name="properties-page"></a>Page Propriétés
 
 | Nom du champ                    | Remarques                                       | Informations supplémentaires                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **Catégorie et sous-catégorie**  | Obligatoire                                    | [Tableau des catégories et sous-catégories](category-and-subcategory-table.md)       |
-| **Configuration système**      | Facultatif                                    | [Configuration requise](enter-app-properties.md#system-requirements)      |
+| **URL de la politique de confidentialité**            | Obligatoire pour plusieurs applications. Voir le [contrat du développeur d'applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et les [stratégies du Microsoft Store](https://docs.microsoft.com/en-us/legal/windows/agreements/store-policies#105-personal-information) | [URL de la politique de confidentialité](enter-app-properties.md#privacy-policy-url)        |
+| **site web**                   | Facultatif                                    | [Site web](enter-app-properties.md#website)                   |
+| **Coordonnées du support technique**      | Obligatoire si votre produit est disponible sur Xbox; dans le cas contraire facultatif (mais recommandé)                                   | [Coordonnées du support technique](enter-app-properties.md#support-contact-info)              |
+| **Paramètres de jeux**             | Facultatif (applicable uniquement aux jeux)         | [Paramètres de jeux](enter-app-properties.md#game-settings) |
+| **Mode d’affichage**             | Facultatif                   | [Mode d’affichage](enter-app-properties.md#display-mode) |
 | **Déclarations de produit**          | Par défaut: les clients peuvent installer cette application sur un autre lecteur ou dispositif de stockage. Windows peut inclure les données de cette application dans les sauvegardes automatiques sur OneDrive | [Déclarations de produit](app-declarations.md) |
+| **Configuration requise**      | Facultatif                                    | [Configuration requise](enter-app-properties.md#system-requirements)      |
 
 <span/>
 
@@ -70,44 +76,41 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 | Nom du champ                    | Remarques                                  | Informations supplémentaires                          |
 |-------------------------------|----------------------------------------|----------------------------------------|
 | **Contrôle du chargement des packages**    | Obligatoire (au moins un package)        | [Chargement des packages d’application](upload-app-packages.md) |
-| **Disponibilité de la famille d’appareils** | Par défaut: basée sur les packages       | [Disponibilité de la famille d’appareils](upload-app-packages.md#device-family-availability) |
+| **Disponibilité de la famille d’appareils** | Par défaut: basée sur les packages       | [Disponibilité de la famille d’appareils](device-family-availability.md) |
 | **Lancement de package progressif**   | Facultatif (pour les mises à jour uniquement)            | [Lancement de package progressif](gradual-package-rollout.md) |
 | **Mise à jour obligatoire**          | Facultatif (pour les mises à jour uniquement)            | [Mise à jour obligatoire](upload-app-packages.md#mandatory-update)
 
-<span/>
 
 ### <a name="store-listings"></a>Descriptions dans le Windows Store
 
-Vous devez indiquer toutes les informations requises pour au moins l’une des langues prises en charge par votre application. Nous vous recommandons de fournir des [descriptions dans le Windows Store](create-app-store-listings.md) dans toutes les langues prises en charge de votre application, et vous pouvez également [fournir des descriptions dans le Windows Store dans d’autres langues](create-app-store-listings.md#store-listing-languages).
+Vous devez indiquer toutes les informations requises pour au moins l’une des langues prises en charge par votre application. Nous vous recommandons de fournir des [descriptions dans le Store](create-app-store-listings.md) dans toutes les langues prises en charge par votre application, et vous pouvez également [fournir des descriptions dans le Store dans d’autres langues](create-app-store-listings.md#store-listing-languages). Pour faciliter la gestion de plusieurs descriptions pour le même produit, vous pouvez [importer et exporter des descriptions du Store](import-and-export-store-listings.md).
 
 | Nom du champ                    | Remarques                                       | Informations supplémentaires                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
-| **Description**               | Obligatoire                                    | [Rédaction d'une description convaincante de l'application](write-a-great-app-description.md) |
-| **Notes de publication**             | Facultatif                                    | [Notes de publication](create-app-store-listings.md#release-notes)       |
-| **Captures d’écran**               | Obligatoire (au moins une capture d'écran)          | [Captures d’écran](app-screenshots-and-images.md#screenshots)          |
-| **Logos Windows Store**               | Facultatif, mais fortement recommandé pour Windows Phone8.1 et versions antérieures | [Logos Windows Store](app-screenshots-and-images.md#store-logos)             |
-| **Images promotionnelles**        | Facultatif                                    | [Images promotionnelles](app-screenshots-and-images.md#promotional-images) |
-| **Images Xbox**               | Facultatif                                    | [Images Xbox](app-screenshots-and-images.md#xbox-images)              |
-| **Images promotionnelles facultatives**       | Facultatif                            | [Images promotionnelles facultatives](app-screenshots-and-images.md#optional-promotional-images)       |
+| **Description**               | Obligatoire                                    | [Rédiger une description convaincante de l’application](write-a-great-app-description.md) |
+| **Nouveautés de cette version**   | Facultatif                                 | [Notes de publication](create-app-store-listings.md#whats-new-in-this-version)       |
+| **Fonctionnalités de l’application**              | Facultatif                                    | [Fonctionnalités de l’application](create-app-store-listings.md#app-features)         |
+| **Captures d'écran**               | Obligatoire (au moins une capture d’écran, quatre ou plus recommandées)          | [Captures d'écran](app-screenshots-and-images.md#screenshots)          |
+| **Logos Store**               | Recommandé; obligatoire pour certaines versions du système d’exploitation | [Logos Store](app-screenshots-and-images.md#store-logos)             |
+| **Illustrations supplémentaires**     | Recommandé (surtout pour certaines versions du système d’exploitation)         | [Illustrations supplémentaires](app-screenshots-and-images.md#additional-art-assets) |
 | **Bandes-annonces**                  | Facultatif                                    | [Bandes-annonces](app-screenshots-and-images.md#trailers)                | 
-| **Fonctionnalités de l’application**              | Facultatif                                    | [Fonctionnalités](create-app-store-listings.md#app-features)             |
-| **Configuration système supplémentaire requise**      | Facultatif                                    | [Configuration système supplémentaire requise](create-app-store-listings.md#additional-system-requirements) 
+| **Informations supplémentaires**  | Facultatif                                    | [Informations supplémentaires](create-app-store-listings.md#supplemental-information) 
 | **Termes de recherche**              | Facultatif                                    | [Termes de recherche](create-app-store-listings.md#search-terms)         |
-| **Politique de confidentialité**            | Obligatoire pour certaines applications. Voir le [contrat du développeur d'applications](https://msdn.microsoft.com/library/windows/apps/hh694058) et les [stratégies du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1) | [Politique de confidentialité](create-app-store-listings.md#privacy-policy)        |
 | **Informations de copyright et de marque déposée** | Facultatif                                 | [Informations de copyright et de marque déposée](create-app-store-listings.md#copyright-and-trademark-info) |
 | **Termes de licence supplémentaires**  | Facultatif                                    | [Termes de licence supplémentaires](create-app-store-listings.md#additional-license-terms) |
-| **Site web**                   | Facultatif                                    | [Site web](create-app-store-listings.md#website)                   |
-| **Coordonnées du support technique**      | Facultatif                                    | [Coordonnées du support technique](create-app-store-listings.md)              |
-| **Descriptions dans le WindowsStore spécifiques à la plateforme** | Facultatif                               | [Créer des descriptions dans le WindowsStore spécifiques à la plateforme](create-platform-specific-store-listings.md)  |
+| **Développé par**              | Facultatif                                    | [Développé par](create-app-store-listings.md#developed-by)                   |
+| **Descriptions dans le Store spécifiques à la plateforme** | Facultatif                               | [Créer des descriptions dans le Store spécifiques à la plateforme](create-platform-specific-store-listings.md)  |
 
 <span/>
 
-### <a name="notes-for-certification-page"></a>Remarques pour la page de certification
+### <a name="submission-options-page"></a>Page des options de soumission
 
 | Nom du champ                    | Remarques                                       | Informations supplémentaires                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
-| **Remarques**                     | Facultatif                                    | [Notes de certification](notes-for-certification.md)             |
+| **Options de mise en attente de publication**                | Par défaut: publier cette soumission dès qu’elle a obtenu la certification (ou selon les dates que vous avez sélectionnées dans la section Planification)      | [Options de mise en attente de publication](manage-submission-options.md#publishing-hold-options)    
+| **Notes pour la certification**                     | Recommandé                                    | [Notes pour la certification](notes-for-certification.md)             |
 
 <span/>
 
-**Remarque**&nbsp;&nbsp;Pour plus d’informations sur la publication d’applications métier directement à l’attention des entreprises, voir [Distribuer des applications métier aux entreprises](distribute-lob-apps-to-enterprises.md).
+> [!NOTE]
+> Pour plus d’informations sur la publication d’applications métier directement à l’attention des entreprises, voir [Distribuer des applications métier aux entreprises](distribute-lob-apps-to-enterprises.md).

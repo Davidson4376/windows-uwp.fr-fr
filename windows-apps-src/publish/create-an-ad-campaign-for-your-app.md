@@ -1,19 +1,20 @@
 ---
 author: JnHs
-Description: "Vous pouvez créer une campagne de publicité à l’aide du tableau de bord du Centre de développement pour vous aider à promouvoir votre application et à développer la base des utilisateurs de votre application."
-title: "Créer une campagne de publicité pour votre application"
+Description: You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base.
+title: Création d’une campagne de publicité pour votre application
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, uwp, ActiveDirectory, de campagne, promouvoir
-ms.openlocfilehash: 04074261b7efd38f0309f08910e4ee1350302e4c
-ms.sourcegitcommit: 5ece992c31870df4c089360ef47501bd4ce14fa9
+ms.localizationpriority: high
+ms.openlocfilehash: 7506ee6e793e38a7babbf88ef4f63467fc044182
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/22/2017
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>Créer une campagne de publicité pour votre application
 
@@ -22,7 +23,7 @@ Vous pouvez créer une campagne de publicité à l’aide du tableau de bord du 
 Vous ne pouvez créer des campagnes de publicité que pour les applications qui ont réussi la phase de publication finale du [processus de certification des applications](the-app-certification-process.md).
 
 > [!NOTE]
-> Cette section de la documentation explique comment créer une campagne de publicité dans le tableau de bord du Centre de développement. Vous pouvez également utiliser l’[API de promotions du WindowsStore](../monetize/run-ad-campaigns-using-windows-store-services.md) pour créer et gérer les campagnes de publicité par programme.
+> Cette section de la documentation explique comment créer une campagne de publicité dans le tableau de bord du Centre de développement. Vous pouvez également utiliser l’[API de promotions du MicrosoftStore](../monetize/run-ad-campaigns-using-windows-store-services.md) pour créer et gérer les campagnes de publicité par programme.
 
 ## <a name="instructions"></a>Instructions
 
@@ -37,9 +38,9 @@ Voici comment créer une campagne de publicité pour promouvoir une application:
 4.  Sélectionnez l’application que vous souhaitez promouvoir avec cette campagne. Notez que l’application doit être déjà disponible dans le WindowsStore.
 5.  Dans le champ **Nom de la campagne**, examinez le nom fourni pour votre campagne et modifiez-le si vous le souhaitez.
 6.  Sous **Type de campagne**, choisissez l’une des options suivantes:
-        -   **Paid ad**: ces publicités s’exécutent dans n’importe quelle application correspondant à l’appareil et à la catégorie de votre application. Pour les nouvelles campagnes créées après le 9 janvier2017, ces publicités apparaîtront également dans MSN.com, Outlook.com, Skype et les autres propriétés premium de Microsoft. Les campagnes de promotion d’applications qui ciblent les applications et les propriétés Premium de Microsoft sont appelés campagnes *universelles*.
-        -   **Community ad (free)**: ces publicités s’exécutent dans les applications publiées par d’autres développeurs, qui créent également des campagnes de publicité de la communauté. Avant de sélectionner cette option, vous devez avoir accepté l’affichage des publicités de la communauté dans la page **Rentabiliser votre contenu avec les publicités** de votre application. Pour plus d’informations, consultez l’article [À propos des annonces de la communauté](about-community-ads.md).
-        -   **House ad (free)**: ces publicités s’exécutent uniquement dans vos applications (correspondant au type d’appareil de l’application publiée). Les publicités maison sont gratuites. Pour plus d’informations, consultez l’article [À propos des publicités maison](about-house-ads.md).
+    -   **Paid ad**: ces publicités s’exécutent dans n’importe quelle application correspondant à l’appareil et à la catégorie de votre application. Pour les nouvelles campagnes créées après le 9 janvier2017, ces publicités apparaîtront également dans MSN.com, Outlook.com, Skype et les autres propriétés premium de Microsoft. Les campagnes de promotion d’applications qui ciblent les applications et les propriétés Premium de Microsoft sont appelés campagnes *universelles*.
+    -   **Community ad (free)**: ces publicités s’exécutent dans les applications publiées par d’autres développeurs, qui créent également des campagnes de publicité de la communauté. Avant de sélectionner cette option, vous devez avoir accepté l’affichage des publicités de la communauté dans la page **Monétiser** -> **Publicités dans l’application**. Pour plus d’informations, consultez l’article [À propos des annonces de la communauté](about-community-ads.md).
+    -   **House ad (free)**: ces publicités s’exécutent uniquement dans vos applications correspondant au type d’appareil de l’application publiée. Les publicités maison sont gratuites. Pour plus d’informations, consultez l’article [À propos des publicités maison](about-house-ads.md).
 
 7.  Pour les campagnes de publicité payées, vérifiez l’option sélectionnée dans **Durée de la campagne** (période pendant laquelle le budget de votre campagne sera dépensé). L’option par défaut est **Mensuelle**, ce qui signifie que votre budget de campagne sera utilisé tous les mois de manière récurrente jusqu’à l’arrêt de la campagne. Si vous disposez d’un compte Premium, vous pouvez éventuellement choisir l’option **Personnalisée** pour spécifier une date personnalisée et un intervalle de temps pendant lequel votre budget de campagne sera dépensé. Pour plus d’informations sur les comptes Premium, consultez l’article [Questions courantes sur les campagnes de publicité](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign).
 
@@ -75,7 +76,7 @@ Voici comment créer une campagne de publicité pour promouvoir une application:
 
 10.  Dans la page **Conception d’annonces**, choisissez l’une des options suivantes:
     -   **Auto-généré**. Il s’agit de l’option par défaut, qui vous permet de créer une publicité à partir de nos modèles par défaut. Vous pouvez effectuer des sélections pour personnaliser le contenu de votre application, et nous afficherons alors un aperçu de l’aspect de votre publicité en fonction de vos choix (automatiquement mis à jour dès que vous effectuez des sélections).
-        -   Dans la liste déroulante **Langue**, sélectionnez la langue de votre publicité. Le texte du badge WindowsStore s’affichera dans la langue que vous avez sélectionnée.
+        -   Dans la liste déroulante **Langue**, sélectionnez la langue de votre publicité. Le texte du badge MicrosoftStore s’affichera dans la langue que vous avez sélectionnée.
         -   Pour ajouter une ligne de texte supplémentaire à votre publicité, entrez ce texte dans le champ **Slogan personnalisé**.
             > [!NOTE]
             > Le texte que vous entrez ici doit être localisé dans la langue sélectionnée. Si le texte n’est pas conforme aux [politiques Bing Ads](http://go.microsoft.com/fwlink?LinkId=398341), le slogan personnalisé sera rejeté. Lisez cette page pour obtenir des conseils sur le style et les contenus non autorisés.
@@ -94,11 +95,11 @@ Voici comment créer une campagne de publicité pour promouvoir une application:
 
 11.  Si vous disposez d’un [compte Premium](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign), vous pouvez utiliser la zone **URL de destination** pour contrôler ce qui se passe lorsqu’un client clique sur votre publicité.
     - Si vous laissez la zone vide, quand un client clique sur votre annonce, la liste de vos applications dans le Windows Store s’affiche.
-    - Si vous utilisez Kochava ou Tune pour mesurer les analyses d’installation de votre application, entrez votre URL de suivi d’installation à partir de Kochava ou de Tune. Lorsque vous enregistrez la campagne, l’URL de suivi est validée pour garantir sa résolution dans la page de description de votre application dans le WindowsStore. Pour plus d’informations sur le suivi d’installation avec Kochava et Tune, consultez la documentation de [Kochava](http://support.kochava.com/) et de [Tune](https://help.tune.com/).
+    - Si vous utilisez Kochava ou Tune pour mesurer les analyses d’installation de votre application, entrez votre URL de suivi d’installation à partir de Kochava ou de Tune. Lorsque vous enregistrez la campagne, l’URL de suivi est validée pour garantir sa résolution dans la page de description de votre application dans le MicrosoftStore. Pour plus d’informations sur le suivi d’installation avec Kochava et Tune, consultez la documentation de [Kochava](http://support.kochava.com/) et de [Tune](https://help.tune.com/).
     - Si vous avez choisi **Augmenter l’intérêt pour votre application** comme objectif de campagne, vous pouvez spécifier un [URI de lien ciblé](../launch-resume/handle-uri-activation.md) pour rediriger les clients du segment sélectionné vers une page spécifique de votre application.
     - Si vous spécifiez une destination qui n’est pas la page de description de votre application ni une page interne à votre application, votre campagne est automatiquement suspendue.
 
-13.  Enfin, cliquez sur **Révision** pour vérifier les paramètres de votre campagne de publicité et pour vérifier ses informations de budget et de paiement s’il s’agit d’une campagne de publicité payante. Cliquez sur **Confirmer**. Dans les heures qui suivent, vos annonces s’afficheront progressivement sur les appareils.
+12.  Enfin, cliquez sur **Révision** pour vérifier les paramètres de votre campagne de publicité et pour vérifier ses informations de budget et de paiement s’il s’agit d’une campagne de publicité payante. Cliquez sur **Confirmer**. Dans les heures qui suivent, vos annonces s’afficheront progressivement sur les appareils.
 
 ## <a name="review-ad-campaign-performance"></a>Vérifier les performances des campagnes de publicité
 

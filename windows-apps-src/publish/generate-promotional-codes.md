@@ -4,17 +4,17 @@ Description: You can generate promotional codes for an app or add-on that you ha
 title: Générer des codes promotionnels
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.author: wdg-dev-content
-ms.date: 01/22/2018
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, code promotionnel, codes promotionnels, jeton, jetons
 ms.localizationpriority: high
-ms.openlocfilehash: 634c0857982924ca1b588519172d77d97dd74791
-ms.sourcegitcommit: b6915c7fa2c7292e9b4e3d3e9927dc8746ec1ffb
+ms.openlocfilehash: 7043b12dc3b9d6e7a9813fb1d7b81b836902f92f
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="generate-promotional-codes"></a>Générer des codes promotionnels
 
@@ -33,7 +33,7 @@ Dans le tableau de bord du Centre de développement Windows, vous pouvez:
 -   Examiner l’utilisation des codes promotionnels.
 
 > [!NOTE]
-> Vous pouvez générer des codes promotionnels même si vous avez sélectionné l'option [Visibilité](set-app-pricing-and-availability.md#visibility) **Empêcher l'acquisition: tout client disposant d'un lien direct peut voir la description du produit dans le Windows Store, mais ne peut le télécharger que s'il possède déjà le produit ou dispose d'un code promotionnel et utilise un appareil Windows10.**
+> Vous pouvez générer des codes promotionnels même si vous avez sélectionné l'option **Rendre ce produit disponible mais non détectable dans le Store** avec l’option **Empêcher l’acquisition: tout client disposant d’un lien direct peut voir la description du produit dans le Store, mais ne peut le télécharger que s’il possède déjà le produit ou dispose d’un code promotionnel et utilise un appareil Windows10** dans la section [Détectabilité](choose-visibility-options.md#discoverability) de votre soumission.
 
 Notez que votre application doit exécuter la phase finale de publication du [processus de certification des applications](the-app-certification-process.md) avant que les clients ne puissent utiliser un code promotionnel pour l’installer.
 
@@ -80,7 +80,7 @@ Pour télécharger une commande de codes promotionnels complétée et distribuer
     -   **Nom du produit**: nom de l’application ou du module complémentaire auquel le code est associé.
     -   **Nom de la commande**: nom de la commande dans laquelle ce code a été généré.
     -   **Code promotionnel**: code proprement dit. Il s’agit d’une chaîne de 5x5 caractères alphanumériques séparés par des traits d’union. Par exemple: DM3GY-M2GYM-6YMW6-4QHHT-23W2Z
-    -   **URL donnant droit**: URL permettant à un client d’utiliser le code et d’installer votre application ou module complémentaire. L’URL est au format suivant: http://go.microsoft.com/fwlink/?LinkId=532540&mstoken=&lt;code_promotionnel>
+    -   **URL donnant droit**: URL permettant à un client d’utiliser le code et d’installer votre application ou module complémentaire. L’URL a le format suivant: http://go.microsoft.com/fwlink/?LinkId=532540&mstoken=&lt;code_promotionnel>
     -   **Date de début**: date à laquelle ce code devient actif.
     -   **Date d’expiration**: date à laquelle ce code expire.
     -   **ID de code**: ID unique de ce code.
@@ -97,7 +97,7 @@ Pour télécharger une commande de codes promotionnels complétée et distribuer
 
 ## <a name="code-redemption-user-experience"></a>Expérience utilisateur d’échange du code
 
-Une fois que vous distribuez un code promotionnel (ou son URL donnant droit) à un client, celui-ci peut utiliser cette URL pour obtenir le produit gratuitement. Lorsqu'il clique sur l'URL donnant droit, une page authentifiée **Utiliser votre code** s'ouvre à l’adresse <https://account.microsoft.com/billing/redeem>. Cette page inclut une description de l’application à laquelle l’utilisateur est sur le point d’accéder. Si le client n’est pas connecté à son compte Microsoft, il peut être invité à le faire. Votre client peut également consulter <https://account.microsoft.com/billing/redeem> et saisir le code directement.
+Une fois que vous distribuez un code promotionnel (ou son URL donnant droit) à un client, celui-ci peut utiliser cette URL pour obtenir le produit gratuitement. Lorsqu’il clique sur l'URL donnant droit, une page authentifiée **Utiliser votre code** s’ouvre à l’adresse <https://account.microsoft.com/billing/redeem>. Cette page inclut une description de l’application à laquelle l’utilisateur est sur le point d’accéder. Si le client n’est pas connecté à son compte Microsoft, il peut être invité à le faire. Votre client peut également consulter <https://account.microsoft.com/billing/redeem> et entrer le code directement.
 
 > [!IMPORTANT]
 > Nous vous recommandons de ne pas distribuer les codes promotionnels à vos clients tant que votre produit n'a pas terminé le processus de publication (même si vous avez sélectionné **Rendre ce produit disponible mais non détectable dans le Windows Store**). Les clients verront une erreur s’ils tentent d’utiliser un code promotionnel pour un produit qui n’a pas encore été publié.
@@ -111,12 +111,12 @@ Lorsque le client clique sur **Utiliser**, le MicrosoftStore s’ouvre à la pag
 ## <a name="review-your-promotional-codes"></a>Passer en revue vos codes promotionnels
 
 Pour consulter un récapitulatif détaillé des commandes de codes promotionnels pour vos applications et modules complémentaires, accédez à la page **Codes promotionnels** de l'application (dans le menu de navigation de gauche du tableau de bord du Centre de développement, développez **Attract**, puis sélectionnez **Promo codes**). Vous pouvez consulter les détails suivants pour tous vos codes promotionnels actifs et inactifs:
-    -   Nom de la commande
-    -   Application ou module complémentaire
-    -   Date de début
-    -   Date d’expiration
-    -   Disponible
-    -   Utilisé
+-   Nom de la commande
+-   Application ou module complémentaire
+-   Date de début
+-   Date d’expiration
+-   Disponible
+-   Utilisé
 
 Vous pouvez également [télécharger](#download-and-distribute-promotional-codes) une commande à partir de ce tableau.
 

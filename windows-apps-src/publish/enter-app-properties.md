@@ -4,17 +4,17 @@ Description: The App properties page of the app submission process lets you defi
 title: Entrer les propriétés d’une application
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 01/24/2018
+ms.date: 04/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, paramètres de jeu, mode d’affichage, configuration requise, configuration matérielle requise, matériel minimum, matériel recommandé
+keywords: windows10, uwp, paramètres de jeu, mode d’affichage, configuration requise, configuration matérielle requise, matériel minimum, matériel recommandé, politique de confidentialité, coordonnées du support technique, site web de l’application, support
 ms.localizationpriority: high
-ms.openlocfilehash: 8ecdeb0dd4ebba83a387666ab87067ff419a9303
-ms.sourcegitcommit: 8d9d4f17e272b78e38b346f846b96260c922bbb2
+ms.openlocfilehash: 35d7be3aa88ca17219c2f2e4024bd2e692fb1abc
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="enter-app-properties"></a>Entrer les propriétés d’une application
 
@@ -26,6 +26,37 @@ La page **Propriétés** du [processus de soumission d’applications](app-submi
 Vous devez indiquer la catégorie (et la sous-catégorie/le genre s'il y a lieu) dans laquelle le Store doit classer votre application. Vous devez définir une catégorie pour être en mesure de soumettre votre application.
 
 Pour plus d’informations, voir l’article [Tableau des catégories et sous-catégories](category-and-subcategory-table.md).
+
+
+## <a name="support-info"></a>Coordonnées du support technique
+
+Cette section vous permet de fournir des informations pour aider les clients à mieux comprendre votre application et à obtenir un support.
+
+### <a name="privacy-policy-url"></a>URL de la politique de confidentialité
+
+Il vous incombe de veiller à ce que votre application respecte les lois et règles en vigueur en matière de confidentialité, et de proposer ici une URL valide de la politique de confidentialité s’il y a lieu.
+
+Dans cette section, vous devez indiquer si votre application accède à, collecte ou transmet des [informations personnelles](https://docs.microsoft.com/legal/windows/agreements/store-policies#105-personal-information). Si vous répondez **Oui**, une URL de politique de confidentialité est requise. Dans le cas contraire, elle est facultative (cependant, si nous déterminons que votre application nécessite une politique de confidentialité et que vous n’en avez indiqué aucune, votre soumission risque de ne pas obtenir de certification).
+
+> [!NOTE]
+> Si nous détectons que vos packages déclarent des [fonctionnalités](../packaging/app-capability-declarations.md) qui pourraient permettre l’accès à, la transmission ou la collecte d’informations personnelles, cette question sera marquée comme **Oui** et vous devrez entrer une URL de politique de confidentialité.
+
+Pour déterminer plus facilement si votre application requiert une politique de confidentialité, examinez le [Contrat du développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et les [politiques du MicrosoftStore](https://docs.microsoft.com/legal/windows/agreements/store-policies#105-personal-information). 
+
+> [!NOTE]
+> Microsoft ne fournit aucune politique de confidentialité par défaut pour votre application. De même, votre application n’est couverte par aucune politique de confidentialité Microsoft. 
+
+
+### <a name="website"></a>Site web
+
+Entrez l’URL de la page web de votre application. Cette URL doit pointer vers une page de votre propre site web, et non vers la description web de votre application dans le Store. Ce champ est facultatif, mais recommandé.
+
+### <a name="support-contact-info"></a>Coordonnées du support technique
+
+Entrez l’URL de la page web où vos clients peuvent obtenir un support pour votre application (ou une adresse e-mail pour contacter le support technique). Nous vous recommandons d’inclure ces informations pour toutes les soumissions, afin que vos clients sachent comment obtenir un support s’ils en ont besoin. Notez que Microsoft ne fournit pas à vos clients de support technique pour votre application.
+
+> [!IMPORTANT]
+> Le champ **Coordonnées du support technique** est obligatoire si votre application ou votre jeu est disponible sur Xbox. Sinon, il est facultatif (mais recommandé).
 
 
 ## <a name="game-settings"></a>Paramètres de jeux

@@ -1,19 +1,19 @@
 ---
 author: jnHs
 Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
-title: "Disponibilité de la famille d’appareils"
+title: Disponibilité de la famille d’appareils
 ms.author: wdg-dev-content
-ms.date: 10/12/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows10, uwp, packages, télécharger, disponibilité famille d’appareils"
+keywords: windows10, uwp, packages, télécharger, disponibilité famille d’appareils
 ms.localizationpriority: high
-ms.openlocfilehash: a3ae23a08ec305285569de8b6d55e805beaa86ba
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 44c20c05457669edb31067b6d7ac8bc60f09e72e
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="device-family-availability"></a>Disponibilité de la famille d’appareils
 
@@ -36,6 +36,7 @@ Vous pouvez décocher la case en regard d’une famille d’appareilsWindows10 s
 Si votre application les prend en charge, nous vous recommandons de conserver toutes les cases cochées, sauf si vous avez une raison spécifique de limiter les types d’appareils Windows10 pouvant acquérir votre application. Par exemple, si vous savez que votre application n’offre pas une bonne expérience sur [SurfaceHub](https://developer.microsoft.com/windows/surfacehub) et/ou [MicrosoftHoloLens](http://dev.windows.com/holographic/development_overview), vous pouvez décocher la case **Windows10 Collaboration** et/ou **Windows10 Holographique**. Cela empêche tout nouveau client d’acquérir l’application sur ces appareils. Si vous estimez ultérieurement être prêt à proposer l’application à ces clients, vous pouvez créer une soumission en activant ces cases à cocher.
 
 <span id="xbox" />
+
 La seule famille d’appareils Windows10 qui n’est pas activée par défaut pour les packages Windows.Universal est **Xbox Windows10**. Si votre application n’est pas un jeu (ou s’il s’agit d’un jeu et que vous avez activé le [Programme Créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) ou que vous êtes passé par le processus d’[approbation de concept](../gaming/concept-approval.md)), et que votre soumission comprend des packagesUWP neutres et/ou x64 compilés à l’aide de la version14393 du SDKWindows10 ou une version ultérieure, vous pouvez cocher la case **Xbox Windows10** afin de proposer l'application aux clients sur XboxOne.
 
 > [!IMPORTANT]
@@ -48,6 +49,8 @@ La seule famille d’appareils Windows10 qui n’est pas activée par défaut po
 >   
 > SI vous ne parvenez toujours pas à résoudre le problème, contactez le support technique.
 
+Si vous soumettez une applicationUWP pour Windows10IoT Standard, vous ne devez pas modifier les sélections par défaut après avoir chargé vos packages; il n’existe aucune case à cocher distincte pour Windows10IoT. Pour plus d’informations sur la publication d’applicationsUWP sous loT Standard, voir [Prise en charge dans le MicrosoftStore pour les applicationsUWP sous IoT Standard](https://docs.microsoft.com/windows/iot-core/commercialize-your-device/installingandservicing).
+
 Si votre soumission comprend des packages pouvant s’exécuter sur **Windows8/8.1** et **Windows Phone8.x et les versions antérieures**, ces packages seront rendus disponibles pour les clients, comme illustré dans le tableau. Il n’existe aucune case à cocher pour ces versions de système d’exploitation. Pour arrêter de proposer votre application à ces clients, supprimez les packages correspondants de votre soumission.
 
 > [!IMPORTANT]
@@ -57,8 +60,7 @@ Il est important de savoir que les sélections que vous effectuez dans la sectio
 
 Par exemple, si vous avez une application publiée avec des packages Windows Phone 8.1, puis ajoutez un package Windows 10 (UWP) à la même application, qui cible la famille d’appareils universelle, les clients mobiles Windows 10 qui disposaient de votre package Windows Phone 8.1 recevront une mise à jour vers ce package Windows 10 (UWP), même si vous avez désactivé la case à cocher **Windows 10 Mobile** (car il ne s’agit pas d’une nouvelle acquisition, mais d’une mise à jour). En revanche, si vous ne fournissez pas de package Windows 10 (UWP) ciblant la famille d’appareils universelle ou d’appareils mobiles, vos clients mobiles Windows 10 resteront avec le package Windows Phone 8.1.
 
-Pour plus d’informations sur les familles d’appareils, consultez les articles [Introduction à la plateforme Windows universelle](../get-started/universal-application-platform-guide.md) et [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily).
-
+Pour plus d’informations sur les familles d’appareils, voir [**Vue d’ensemble des familles d’appareils**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview).
 
 ## <a name="understanding-ranking"></a>Compréhension du classement
 

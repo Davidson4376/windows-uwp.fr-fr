@@ -1,7 +1,7 @@
 ---
 author: jnHs
-Description: "Vous pouvez promouvoir votre application ou votre module complémentaire dans le Windows Store en les mettant en vente à prix réduit pendant une période limitée."
-title: Commercialiser des applications et composants additionnels
+Description: You can promote your app or add-on in the Microsoft Store by putting it on sale for a limited time.
+title: Commercialiser des applications et des extensions
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ms.author: wdg-dev-content
 ms.date: 08/21/2017
@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: d17394808232aeffbe81404427e668fb9c06e677
-ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
+ms.localizationpriority: high
+ms.openlocfilehash: 0cc26403c10e9300e983275d28a1a969af513dc3
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 03/17/2018
 ---
-# <a name="put-apps-and-add-ons-on-sale"></a>Commercialiser des applications et composants additionnels
+# <a name="put-apps-and-add-ons-on-sale"></a>Commercialiser des applications et des extensions
 
-Vous pouvez promouvoir votre application ou votre module complémentaire dans le Windows Store en les mettant en vente à prix réduit pendant une période limitée. Vous pouvez choisir de proposer le produit à un niveau de prix inférieur ou avec une remise en pourcentage.
+Vous pouvez promouvoir votre application ou votre extension dans le MicrosoftStore en les mettant en vente à prix réduit pendant une période limitée. Vous pouvez choisir de proposer le produit à un niveau de prix inférieur ou avec une remise en pourcentage.
 
 Lorsque vous utilisez la section **Prix de vente** de la page **Tarification et disponibilité** d’une soumission pour réduire temporairement le prix de votre application ou de votre extension, les clients qui consultent votre description dans le WindowsStore voient apparaître un prix barré indiquant que le prix a baissé (contrairement à une [modification du prix planifiée](set-and-schedule-app-pricing.md#schedule-price-changes), qui peut diminuer ou augmenter le prix sans le signaler en tant que modification dans le WindowsStore). 
 
@@ -60,7 +61,7 @@ Les ventes à prix réduit sont planifiées dans le cadre de la soumission d’u
 
 > [!NOTE]
 > Il est possible de sélectionner un niveau de prix supérieur au prix de base de votre application. Toutefois, le prix de vente s’affiche aux clients uniquement s’il est inférieur au prix normal de l’application sur ce marché.
-
+>
 > La sélection d’un prix supérieur au prix de base de votre application peut être judicieuse pour votre vente si vous avez déjà défini des prix personnalisés pour certains marchés, qui sont supérieurs au prix de base de votre application, et souhaitez réduire temporairement le prix sur ces marchés (tout en conservant un prix de vente supérieur au prix de base de l’application). Si vos sélections ont pour effet d’augmenter le prix de l’application sur un certain marché, nous ne reflétons pas ce prix (supérieur) aux clients de ce marché, qui continuent à voir l’application proposée à son prix antérieur (inférieur). Nous montrons également aux clients le prix le plus bas disponible si vous planifiez des ventes à prix réduit qui se chevauchent avec des prix différents.
 
 ## <a name="changing-or-canceling-a-scheduled-sale"></a>Modification ou annulation d’une vente à prix réduit planifiée

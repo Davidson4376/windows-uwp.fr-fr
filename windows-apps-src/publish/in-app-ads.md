@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: high
-ms.openlocfilehash: 66c0ae56c3722162ebef5a8660cc2322d69a278b
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: 04d4ca665a8f0dff495b144868767506d7a210f8
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="in-app-ads"></a>Publicités dans l’application
 
@@ -26,6 +26,7 @@ Utilisez la page **Monétiser** &gt; **Publicités dans l’application** dans l
 Pour plus d’informations sur la façon d’intégrer ces SDK avec vos applications pour afficher des publicités, voir [Afficher des publicités dans votre application avec le SDK Microsoft Advertising](../monetize/display-ads-in-your-app.md).
 
 <span id="create-ad-unit" />
+
 ## <a name="create-ad-units"></a>Créer des unités publicitaires
 
 Pour créer une unité publicitaire pour une [bannière publicitaire](../monetize/banner-ads.md), un [spot](../monetize/interstitial-ads.md) ou une [publicité native](../monetize/native-ads.md) dans votre application:
@@ -61,6 +62,7 @@ Pour créer une unité publicitaire pour une [bannière publicitaire](../monetiz
 Après avoir créé la nouvelle unité publicitaire, celle-ci apparaît dans le tableau des unités publicitaires disponibles dans la page **Monétiser** &gt; **Publicités dans l’application**.
 
 <span id="available-ad-units" />
+
 ## <a name="review-and-edit-ad-units"></a>Examiner et éditer des unités publicitaires
 
 Après avoir créé des unités publicitaires pour une ou plusieurs applications dans votre compte, ces unités publicitaires apparaissent dans un tableau au bas de la page **Monétiser** &gt; **Publicités dans l’application**. Ce tableau affiche l’**ID de l’application** et l’**ID de la publicité** pour chaque unité publicitaire, ainsi que d’autres informations. Pour afficher les publicités dans votre application, vous devrez utiliser ces valeurs dans votre code. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](../monetize/set-up-ad-units-in-your-app.md).
@@ -81,6 +83,7 @@ Pour modifier les [paramètres de médiation](#mediation) pour une unité public
 Notez que si une unité publicitaire n’a aucune activité depuis les six derniers mois, nous lui affecterons l’étiquette **Inactive**et éventuellement la supprimerons de votre tableau de bord. Vous pouvez utiliser des filtres pour afficher uniquement les unités publicitaires **Actives** ou **Inactives**. Si vous voyez des unités publicitaires qui, à votre avis, sont marquées à tort comme **Inactives**, [contactez le support](http://aka.ms/storesupport).
 
 <span id="mediation" />
+
 ## <a name="mediation-settings"></a>Paramètres de médiation
 
 Lorsque vous [créez une unité publicitaire UWP](#create-ad-unit) ou [modifiez une unité publicitaire UWP existante](#available-ad-units), utilisez les options de cette section pour configurer la médiation publicitaire pour l’unité publicitaire. La médiation publicitaire vous permet d’optimiser vos revenus publicitaires et vos capacités de promotion d’application en affichant des publicités issues de plusieurs réseaux publicitaires, y compris les publicités d’autres réseaux publicitaires payés et les publicités sans génération de revenus des campagnes de promotion d’applications Microsoft. Nous nous chargeons de la médiation des demandes de bannières publicitaires des réseaux publicitaires que vous choisissez. Si vous disposez d’une unité publicitaire UWP déjà associée à une bannière publicitaire, à un spot ou à une publicité native dans votre application, l’activation de la médiation publicitaire ne nécessite aucune modification de code dans votre application.
@@ -113,6 +116,7 @@ Pour configurer les paramètres de médiation publicitaire pour une unité publi
 10. Cliquez sur **Créer une publicité** (si vous créez une unité publicitaire) ou **Enregistrer** (si vous modifiez une unité publicitaire existante).
 
 <span id="paid-networks" />
+
 ### <a name="supported-paid-ad-networks"></a>Réseaux publicitaires payants pris en charge
 
 Le tableau suivant répertorie les réseaux payants actuellement pris en charge pour chaque type de publicité. Notez que certains de ces réseaux ne sont [pas disponibles dans tous les marchés](#network-markets).
@@ -131,6 +135,7 @@ Le tableau suivant répertorie les réseaux payants actuellement pris en charge 
 
 
 <span id="other-networks" />
+
 ### <a name="other-ad-networks"></a>Autres réseaux publicitaires
 
 Le tableau suivant répertorie les autres réseaux actuellement pris en charge pour chaque type de publicité.
@@ -142,6 +147,7 @@ Le tableau suivant répertorie les autres réseaux actuellement pris en charge p
 
 
 <span id="network-markets" />
+
 ### <a name="supported-markets-for-ad-networks"></a>Marchés pris en charge pour les réseaux publicitaires
 
 Les réseaux publicitaires disponibles proposent des publicités dans tous les [marchés pris en charge](define-pricing-and-market-selection.md#microsoft-store-consumer-markets), avec les exceptions suivantes.
@@ -153,6 +159,7 @@ Les réseaux publicitaires disponibles proposent des publicités dans tous les [
 | smartclip | Autriche, Belgique, Danemark, Finlande, Allemagne, Italie, Pays-Bas, Norvège, Suède, Suisse  |
 
 <span id="coppa" />
+
 ## <a name="coppa-compliance"></a>Conformité avec la réglementation COPPA
 
 Au moment de [créer une unité publicitaire](#create-ad-unit) ou de [sélectionner une unité publicitaire existante](#available-ad-units), la section **Conformité avec la réglementation COPPA** apparaît au bas de la page du tableau de bord si l’application sélectionnée pour l’unité publicitaire comporte au moins une soumission ayant atteint l'étape [dans le Store](../publish/the-app-certification-process.md#in-the-store) du processus de certification d’application.

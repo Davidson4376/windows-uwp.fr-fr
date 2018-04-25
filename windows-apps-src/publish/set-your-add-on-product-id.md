@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, uwp, extensions, iap, durable, consommable, abonnement, type de produit, id produit, achat in-app, produit in-app
 ms.localizationpriority: high
-ms.openlocfilehash: 12ed8eb58f9f7f7a5fec55c62f19afe0bf6fa2d5
-ms.sourcegitcommit: b6915c7fa2c7292e9b4e3d3e9927dc8746ec1ffb
+ms.openlocfilehash: f3611f74a33aaed0867df343829312c82dd16785
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>Définir le type et l’ID produit d’une extension
 
@@ -30,6 +30,7 @@ Vous devez commencer par indiquer le type de module complémentaire que vous pro
 > Vous ne pourrez pas modifier le type de produit après avoir enregistré cette page pour créer l’extension. Si vous choisissez un type de produit incorrect, vous pouvez toujours supprimer votre soumission d’extension en cours et recommencer en créant une autre extension.
 
 <span id="durable" />
+
 ### <a name="durable"></a>Durable
 
 Sélectionnez **Durable** comme type de produit si votre extension n’est généralement achetée qu’une seule fois. Ces extensions servent généralement à déverrouiller des fonctionnalités supplémentaires d’une application.
@@ -37,6 +38,7 @@ Sélectionnez **Durable** comme type de produit si votre extension n’est gén�
 Par défaut, le champ **Durée de vie du produit** d’une extension durable affiche la valeur **Toujours**, ce qui signifie que cette extension n’expire jamais. Vous avez la possibilité de définir le champ **Durée de vie du produit** sur une autre durée à l’étape [Propriétés](enter-add-on-properties.md) du processus de soumission de l’extension. Si vous procédez ainsi, l’extension arrivera à expiration au terme de la durée que vous spécifiez (comprise entre 1 et 365jours), auquel cas un client pourra la racheter après son expiration.
 
 <span id="consumable" />
+
 ### <a name="consumable"></a>Consommable
 
 Si l’extension peut être achetée, utilisée (consommée), puis rachetée, vous devez sélectionner l’un des types de produits **consommables**. Les modules complémentaires consommables sont souvent utilisés pour la monnaie d’un jeu par exemple (or, pièces, etc.), qui peuvent être achetés en montants prédéfinis puis dépensés par le client. Pour plus d’informations, voir [Activer les achats d’extensions consommables](../monetize/enable-consumable-add-on-purchases.md).
@@ -46,6 +48,7 @@ Il existe deux types d’extensions consommables:
 - **Consommable géré par le Windows store:** Microsoft assure le suivi du solde sur tous les appareils du client fonctionnant sous Windows10, version1607 ou ultérieure; non pris en charge sur les versions antérieures du système d’exploitation. Pour que cette option soit utilisable, le produit parent doit être compilé à l’aide du Kit de développement logiciel (SDK) Windows10 version14393 ou ultérieure. Notez également que vous ne pouvez pas soumettre au WindowsStore une extension consommable gérée par le WindowsStore tant que le produit parent n’a pas été publié (toutefois, vous pouvez créer la soumission dans votre tableau de bord, puis commencer à travailler dessus à tout moment). Vous devez renseigner la quantité concernant votre extension consommable gérée par le WindowsStore à l’étape **Propriétés** de votre soumission.
 
 <span id="subscription" />
+
 ### <a name="subscription"></a>Abonnement
 
 Si vous souhaitez facturer les clients de manière récurrente pour votre extension, choisissez **Abonnement**.

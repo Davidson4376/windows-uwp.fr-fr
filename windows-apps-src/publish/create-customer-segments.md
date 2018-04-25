@@ -1,25 +1,26 @@
 ---
 author: JnHs
-Description: "Découvrez comment créer des segments de clients afin de cibler un sous-ensemble de votre clientèle à des fins de promotion ou d’engagement."
-title: "Créer des segments de clients"
+Description: Learn how to create customer segments so you can target a subset of your customer base for promotional or engagement purposes.
+title: Créer des segments de clients
 ms.author: wdg-dev-content
 ms.date: 07/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, segment, segments, groupe ciblé, clients"
+keywords: windows 10, uwp, segment, segments, groupe ciblé, clients
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
-ms.openlocfilehash: 7c55528a47fe00782e5997e60fedca920cfdeb48
-ms.sourcegitcommit: 73ea31d42a9b352af38b5eb5d3c06504b50f6754
+ms.localizationpriority: high
+ms.openlocfilehash: 9b3af4a04889a46c0ff2b2592eceafd2605f139a
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="create-customer-segments"></a>Créer des segments de clients
 
 Parfois, vous avez besoin de cibler un sous-ensemble de votre clientèle à des fins de promotion et d’engagement. Vous pouvez accomplir cela dans le Centre de développement Windows en créant un type de [groupe de clients](create-customer-groups.md) appelé *segment* qui inclut les clients Windows10 correspondant aux critères démographiques ou de revenus de votre choix.
 
-Par exemple, vous pouvez créer un segment incluant uniquement les clients âgés de 50ans ou plus, ou incluant les clients ayant dépensé plus de 10$ dans le Windows Store. Vous pouvez également combiner ces critères et créer un segment qui inclut tous les clients de plus de 50ans qui ont dépensé plus de 10$ dans le Windows Store. 
+Par exemple, vous pouvez créer un segment incluant uniquement les clients âgés de 50ans ou plus, ou incluant les clients ayant dépensé plus de 10$ dans le Microsoft Store. Vous pouvez également combiner ces critères et créer un segment qui inclut tous les clients de plus de 50ans qui ont dépensé plus de 10$ dans le Windows Store. 
 
 Nous fournissons quelques modèles de segment pour démarrer, mais vous pouvez définir et combiner les critères comme bon vous semble.
 
@@ -39,8 +40,8 @@ Nous fournissons quelques modèles de segment pour démarrer, mais vous pouvez d
 2.  Sur la page **Groupes de clients**, effectuez l’une des opérations suivantes:
  - Dans la section **Mes groupes de clients**, sélectionnez **Créer un groupe** pour définir un segment à partir de zéro. Sur la page suivante, sélectionnez la case d’option **Segment**.
  - Dans la section **Modèles de segment**, sélectionnez **Copier** en regard de l’un des segments prédéfinis (que vous pouvez utiliser en l’état ou modifier selon vos besoins).
-4.  Dans la zone **Nom du groupe**, entrez un nom pour votre segment.
-3.  Dans la liste **Inclure des clients à partir de cette application**, sélectionnez l’une de vos applications à cibler.
+3.  Dans la zone **Nom du groupe**, entrez un nom pour votre segment.
+4.  Dans la liste **Inclure des clients à partir de cette application**, sélectionnez l’une de vos applications à cibler.
 5.  Dans la section **Définir des conditions d’inclusion**, spécifiez les critères de filtre du segment.
 
     Vous pouvez choisir parmi différents critères de filtre, dont **Acquisitions**, **Source d’acquisition**, **Utilisation**, **Démographie**, **Évaluation**, **Churn prediction**, **Achats dans WindowsStore**, **Acquisitions dans WindowsStore** et **Dépenses dans WindowsStore**.

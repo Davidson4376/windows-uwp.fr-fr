@@ -1,18 +1,19 @@
 ---
 author: jnHs
-Description: "Vous pouvez définir la date et l’heure précises auxquelles votre application doit devenir disponible dans le Windows Store, ce qui vous donne une plus grande flexibilité et la possibilité de personnaliser les dates pour différents marchés."
-title: "Configurer une planification précise de la publication"
+Description: You can set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
+title: Configurer une planification précise de la publication
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 03/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
-ms.openlocfilehash: 77e954e3d8b85c0cf517a154447957a2d81d5bcf
-ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+keywords: windows10, uwp, planification, date de publication, dates, lancement
+ms.localizationpriority: high
+ms.openlocfilehash: 7c6f39622c4b64e787a7d9a226121dac7dcefdfa
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="configure-precise-release-scheduling"></a>Configurer une planification précise de la publication
 
@@ -23,14 +24,14 @@ La section **Planification** de la page [Tarification et disponibilité](set-app
 
 En outre, vous pouvez choisir de définir une date à laquelle le produit ne sera plus disponible dans le WindowsStore. Notez qu'ainsi le produit n'est plus accessible dans le Windows Store via une recherche ou une navigation, mais que les clients disposant d'un lien direct peuvent voir la description du produit dans le Windows Store. Ils peuvent le télécharger uniquement s'ils possèdent déjà le produit ou s’ils disposent d'un [code promotionnel](generate-promotional-codes.md) et utilisent un appareil Windows10.
 
-Par défaut (sauf si vous avez sélectionné l'une des options **Rendre votre application disponible, mais non détectable dans le Windows Store** dans la section [Visibilité](set-app-pricing-and-availability.md#visibility)), votre application sera mise à disposition des clients dès qu'elle aura obtenu la certification et terminé le processus de publication. Pour choisir d’autres dates, sélectionnez **Afficher les options** pour développer cette section.
+Par défaut (sauf si vous avez sélectionné l'une des options **Rendre votre application disponible, mais non détectable dans le Windows Store** dans la section [Visibilité](choose-visibility-options.md#discoverability)), votre application sera mise à disposition des clients dès qu'elle aura obtenu la certification et terminé le processus de publication. Pour choisir d’autres dates, sélectionnez **Afficher les options** pour développer cette section.
 
-Notez que vous ne serez pas en mesure de configurer des dates dans la section **Planification** si vous avez sélectionné l'une des options **Rendre votre application disponible, mais non détectable dans le Windows Store** dans la section [Visibilité](set-app-pricing-and-availability.md#visibility). En effet, puisque votre application n'est pas publiée, il n’existe aucune date de publication à configurer.
+Notez que vous ne serez pas en mesure de configurer des dates dans la section **Planification** si vous avez sélectionné l'une des options **Rendre votre application disponible, mais non détectable dans le Windows Store** dans la section [Visibilité](choose-visibility-options.md#discoverability). En effet, puisque votre application n'est pas publiée, il n’existe aucune date de publication à configurer.
 
 > [!IMPORTANT]
 > Les dates que vous spécifiez dans la section Planification s’appliquent uniquement aux clients sous Windows10.
 >
->Si votre application prend en charge les versions antérieures du système d’exploitation, les clients qui les utilisent voient la description de votre application dès que celle-ci obtient la certification et termine le processus de publication, même si vous avez sélectionné une date de publication ultérieure. Si vous sélectionnez une date **Empêcher l'acquisition**, elle ne s’applique pas à ces clients; ils seront toujours en mesure d’acquérir l’application (sauf si vous soumettez une mise à jour avec une nouvelle sélection dans la section [Visibilité](set-app-pricing-and-availability.md#visibility) ou si vous sélectionnez **Rendre votre application indisponible** à partir de la page **vue d’ensemble de l’application**).
+>Si votre application prend en charge les versions antérieures du système d’exploitation, les clients qui les utilisent voient la description de votre application dès que celle-ci obtient la certification et termine le processus de publication, même si vous avez sélectionné une date de publication ultérieure. Si vous sélectionnez une date **Empêcher l'acquisition**, elle ne s’applique pas à ces clients; ils seront toujours en mesure d’acquérir l’application (sauf si vous soumettez une mise à jour avec une nouvelle sélection dans la section [Visibilité](choose-visibility-options.md#discoverability) ou si vous sélectionnez **Rendre votre application indisponible** à partir de la page **vue d’ensemble de l’application**).
 
 
 ## <a name="base-schedule"></a>Planification de base
@@ -39,7 +40,7 @@ Vos sélections pour la Planification de base s’appliquent à tous les marché
 
 Vous disposez de deux options: **Publication** et **Empêcher l'acquisition**. 
 
-### <a name="release"></a>Publication
+## <a name="release"></a>Publication
 
 Dans le menu déroulant **Publication**, vous pouvez définir le moment où vous souhaitez que votre application soit disponible dans le Windows Store. Cela signifie que l’application est détectable dans le Windows Store via une recherche ou une navigation et que les clients peuvent afficher sa description dans le Windows Store et acquérir l’application.
 
@@ -56,20 +57,20 @@ Voici les options que vous pouvez configurer pour la planification de **Publicat
 > [!TIP]
 > Vous pouvez également [Entrer une date de publication différente](set-app-pricing-and-availability.md#display-release-date) à afficher sur la description de votre application sur le Windows Store. 
 
-### <a name="stop-acquisition"></a>Empêcher l'acquisition
+## <a name="stop-acquisition"></a>Empêcher l'acquisition
 
 Dans la liste déroulante **Empêcher l'acquisition**, vous pouvez définir une date et une heure auxquelles vous souhaitez empêcher les nouveaux clients d'acquérir votre application à partir du Windows Store ou de la détecter dans ses descriptions. Cela peut être utile si vous voulez contrôler précisément le moment où une application ne sera plus proposée aux nouveaux clients, par exemple, lorsque vous coordonnez la disponibilité de plusieurs de vos applications.
 
 Par défaut, l'option **Empêcher l'acquisition** est configurée sur jamais. Pour modifier ce paramètre, sélectionnez **à** dans le menu déroulant et spécifiez une date et une heure, comme décrit ci-dessus. À la date et à l'heure que vous sélectionnez, les clients ne seront plus en mesure d’acquérir l’application.
 
-Il est important de comprendre que cette option a le même effet que de sélectionner **Rendre votre application détectable mais indisponible** dans la section [Visibilité](set-app-pricing-and-availability.md#visibility) et de choisir **Empêcher l'acquisition: tout client disposant d'un lien direct peut voir la description du produit dans le Windows Store, mais ne peut le télécharger que s'il possède déjà le produit ou dispose d'un code promotionnel et utilise un appareil Windows10.** Pour arrêter de proposer une application aux nouveaux clients, cliquez sur **Rendre votre application indisponible**, sur la page Vue d’ensemble de l’application. Pour en savoir plus, consultez l’article [Suppression d’une application du Windows Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
+Il est important de comprendre que cette option a le même effet que de sélectionner **Rendre votre application détectable mais indisponible** dans la section [Visibilité](choose-visibility-options.md#discoverability) et de choisir **Empêcher l'acquisition: tout client disposant d'un lien direct peut voir la description du produit dans le Windows Store, mais ne peut le télécharger que s'il possède déjà le produit ou dispose d'un code promotionnel et utilise un appareil Windows10.** Pour arrêter de proposer une application aux nouveaux clients, cliquez sur **Rendre votre application indisponible**, sur la page Vue d’ensemble de l’application. Pour en savoir plus, consultez l’article [Suppression d’une application du Windows Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
 
 > [!TIP]
 > Si vous sélectionnez une date pour **Empêcher l'acquisition** et décidez ultérieurement que vous souhaitez la rendre disponible à nouveau, vous pouvez créer une nouvelle soumission et reconfigurer **Empêcher l'acquisition** sur **Jamais**. L’application sera à nouveau disponible après la publication de votre soumission mise à jour.
 
-### <a name="customize-the-schedule-for-specific-markets"></a>Personnaliser la planification pour des marchés spécifiques 
+## <a name="customize-the-schedule-for-specific-markets"></a>Personnaliser la planification pour des marchés spécifiques 
 
-Par défaut, les options que vous sélectionnez ci-dessus s'appliquent à tous les marchés dans lesquels votre application est proposée. Pour personnaliser le prix pour des marchés spécifiques, cliquez sur **Personnaliser pour des marchés spécifiques**. La fenêtre contextuelle **Sélection du marché** s’affiche, répertoriant tous les marchés dans lesquels vous avez choisi de rendre votre application disponible. Si vous avez exclu des marchés dans la section [Markets]((define-pricing-and-market-selection.md), ces marchés ne s'afficheront pas. 
+Par défaut, les options que vous sélectionnez ci-dessus s'appliquent à tous les marchés dans lesquels votre application est proposée. Pour personnaliser le prix pour des marchés spécifiques, cliquez sur **Personnaliser pour des marchés spécifiques**. La fenêtre contextuelle **Sélection du marché** s’affiche, répertoriant tous les marchés dans lesquels vous avez choisi de rendre votre application disponible. Si vous avez exclu des marchés dans la section [Marchés](define-pricing-and-market-selection.md), ces marchés ne s'afficheront pas. 
 
 Pour ajouter une planification pour un marché, sélectionnez-le et cliquez sur **Enregistrer**. Vous disposerez des options **Publication** et **Empêcher l'acquisition** déjà décrites ci-dessus, mais les sélections que vous ferez s’appliqueront uniquement à ce marché.
 

@@ -1,22 +1,25 @@
 ---
 author: jnHs
-Description: "Une description attrayante peut contribuer à attirer l’attention sur votre application dans le Windows Store et à inciter les clients à la télécharger."
-title: "Rédaction d&quot;une description convaincante de l&quot;application"
+Description: A great description can make your app stand out in the Microsoft Store and help encourage customers to download it.
+title: Rédiger une description convaincante de l’application
 ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 05/15/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
-ms.openlocfilehash: 27848c7aef38999c37c8a2675783d243614f05e2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows10, uwp, description, décrire, description dans le Store, marketing
+ms.localizationpriority: high
+ms.openlocfilehash: 6a9b9ef122f2d733a2cf225ee47263bb07879538
+ms.sourcegitcommit: b8c77ac8e40a27cf762328d730c121c28de5fbc4
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/21/2018
 ---
-# <a name="write-a-great-app-description"></a>Rédaction d'une description convaincante de l'application
+# <a name="write-a-great-app-description"></a>Rédiger une description convaincante de l’application
 
 
-Une description attrayante peut contribuer à attirer l’attention sur votre application dans le Windows Store et à inciter les clients à la télécharger. [La description que vous entrez lors de la soumission de votre application](create-app-store-listings.md#description) apparaît dans le Store. Les premières lignes de cette description peuvent également apparaître dans des résultats de recherche et des listes d’algorithmes dans le Store.
+Une description attrayante peut contribuer à attirer l’attention sur votre application dans le MicrosoftStore et à inciter les clients à la télécharger. [La description que vous entrez lors de la soumission de votre application](create-app-store-listings.md#description) apparaît dans le Store. Les premières lignes de cette description peuvent également apparaître dans des résultats de recherche et des listes d’algorithmes dans le Store.
 
 
 Vous trouverez ci-après quelques conseils pour la rédaction d’une description d’application optimale.
@@ -24,14 +27,17 @@ Vous trouverez ci-après quelques conseils pour la rédaction d’une descriptio
 -   **Suscitez l’attention dès les premières phrases.** Le début de votre description est le plus important. Vous devez donc faire en sorte d’attirer et de retenir l’attention. Démarrez avec la propriété de valeur: pourquoi les clients potentiels doivent-ils consacrer du temps et de l’argent à votre application? Quel est l’avantage de choisir votre application plutôt qu’une autre? En une ou deux phrases, avec des mots simples et clairs, expliquez l’intérêt de votre application.
 -   **Permettez aux clients de découvrir facilement votre application.** Après l’accroche initiale, décrivez les avantages supplémentaires de votre application, les opportunités d’achat dans l’application, ainsi que d’autres détails de votre application qui sont susceptibles d’intéresser les clients. N’oubliez pas d’inclure les informations que vous êtes tenu de mentionner conformément aux lois des marchés dans lesquels vous distribuez votre application.
 -   **Utilisez des listes et de courts paragraphes.** Il est possible que des clients potentiels jettent simplement un œil rapide à la description de votre application. Découper le contenu à l’aide de courts paragraphes et de listes en facilite l’analyse.
-    > **Remarque**  L’ajout d’une liste de [fonctionnalités de l’application](create-app-store-listings.md#app-features) constitue également un excellent moyen de montrer rapidement sa finalité. Cette liste apparaît juste en dessous de la description de l’application.
+
+    > [!NOTE]
+    > L’ajout d’une liste de [fonctionnalités de l’application](create-app-store-listings.md#app-features) constitue également un excellent moyen de montrer rapidement sa finalité. Cette liste apparaît juste en dessous de la description de l’application.
+
 -   **Évitez d’employer un langage rébarbatif.** Rédigez votre description en utilisant un langage convivial. Veillez à ce que les termes utilisés décrivent clairement la finalité de votre application, mais essayez de faire en sorte que la formulation ne soit pas ennuyeuse. Dans de nombreuses applications, un ton informel et amical fonctionne bien.
 -   **Utilisez une description d’une longueur appropriée.** Une bonne description doit se lire rapidement, mais inclure également suffisamment d’informations pour intéresser le lecteur et expliquer ce que fait l’application. La description d’une application complexe nécessitera davantage de phrases; quelques phrases suffiront pour une application simple. Dans la plupart des cas, la longueur appropriée est généralement supérieure à 200mots, mais bien inférieure à 3000mots.
 -   **Soyez clair sur les versions d’évaluation gratuites et sur les modules complémentaires.** Si vous proposez une évaluation gratuite de votre application, veillez à expliquer son fonctionnement afin que les clients sachent quelles fonctionnalités sont limitées. Il est également conseillé de mentionner les types de modules complémentaires disponibles, en particulier s’ils ont un impact significatif sur les fonctionnalités de votre application.
 -   **Tenez compte des règles d’emploi des majuscules et de la ponctuation.** Les descriptions composées de mots tout en majuscules ou celles employant une ponctuation inhabituelle peuvent être difficiles à lire.
 -   **N’oubliez pas de vérifier l’orthographe et la grammaire.** Une description contenant un grand nombre de mots mal orthographiés ou de phrases tronquées ne donne pas une bonne image de la qualité de votre application. Veillez à relire votre description (ou demandez à quelqu’un d’autre d’y jeter un coup d’œil) pour vérifier les erreurs.
 -   **N’incluez pas de liens ni d’informations localisées ailleurs.** Les URL que vous entrez dans le champ de description ne sont pas interactives. Par conséquent, n’essayez pas d’ajouter de liens concernant des informations telles que votre politique de confidentialité ou votre site web de support technique. Ajoutez-les plutôt dans les zones désignées de la page de **description du WindowsStore**.
--   **N’essayez pas d’utiliser des balises HTML.** Le code HTML ou tout autre code ne sera pas affiché. Votre description doit être composée uniquement de texte brut.
+-   **N’utilisez pas de balises HTML.** Le code HTML ou tout autre code ne sera pas affiché. Votre description doit être composée uniquement de texte brut.
 -   **Trouvez des idées en passant en revue des descriptions d’applications similaires dans le Windows Store.** Observez la façon dont d’autres développeurs décrivent leurs applications. Cela vous permet également de déterminer les différences que vous pouvez mettre en avant concernant votre application.
 
  

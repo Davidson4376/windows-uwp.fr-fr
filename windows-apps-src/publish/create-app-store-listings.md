@@ -1,34 +1,32 @@
 ---
 author: jnHs
-Description: "La section Descriptions dans le Windows Store  du processus de soumission d’application vous permet de définir le texte et les images visibles par les clients dans la description de votre application dans le Windows Store."
-title: "Créer des annonces d’application dans le WindowsStore"
+Description: The Store listings section of the app submission process is where you provide the text and images that customers will see when viewing your app's listing in the Microsoft Store.
+title: Créer des descriptions d’application dans le Store
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 08/08/2017
+ms.date: 04/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
-ms.openlocfilehash: 004169178c906ac892865569fd2ed483bd2471fa
-ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+keywords: windows10, uwp, description, page du store, notes de publication, titre
+ms.localizationpriority: high
+ms.openlocfilehash: 91242f7bd5f43b9d8af605b3b814e80006c90ce4
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2017
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="create-app-store-listings"></a>Créer des annonces d’application dans le WindowsStore
+# <a name="create-app-store-listings"></a>Créer des descriptions d’application dans le Store
 
 
-La section **Descriptions dans le Windows Store** du [processus de soumission d’application](app-submissions.md) vous permet de définir le texte et les [images](app-screenshots-and-images.md) qui seront visibles par les clients dans la description de votre application dans le Windows Store.
+La section **Descriptions dans le Store** du [processus de soumission d’application](app-submissions.md) vous permet de définir le texte et les [images](app-screenshots-and-images.md) qui seront visibles par les clients dans la description de votre application dans le Microsoft Store.
 
-> [!NOTE]
-> Nous avons récemment mis à jour les options de cette page. Si vous disposiez d’une soumission en cours avant que ces nouvelles options ne deviennent disponibles, il est possible que cette soumission continue d’afficher les anciennes options. Si vous souhaitez utiliser les nouvelles options pour cette application, vous pouvez supprimer cette soumission, puis en créer une autre. Dans le cas contraire, les dernières options seront disponibles avec la prochaine mise à jour une fois que vous aurez publié la soumission en cours.
-
-Bien que la plupart des champs d’une **Description dans le Windows Store** soient facultatifs, nous vous conseillons de fournir plusieurs images et autant d’informations que possible afin de mettre en valeur le contenu. Dans la page **Descriptions dans le WindowsStore**, vous devez impérativement fournir une description textuelle et au moins une [capture d’écran](app-screenshots-and-images.md#screenshots).
+Un grand nombre des champs d'une **Description dans le Store** sont facultatifs, mais nous vous conseillons de fournir plusieurs images et autant d’informations que possible afin que votre description soit attrayante. La condition minimale requise pour que l'étape **Description dans le Store** puisse être considérée comme terminée est une description textuelle et au moins une [capture d’écran](app-screenshots-and-images.md#screenshots). Pour certaines soumissions, les champs [Politique de confidentialité](#privacy-policy) et [Coordonnées du support technique](#support-contact-info) sont également requis. 
 
 > [!TIP]
-> Vous pouvez également [importer et exporter des descriptions dans le WindowsStore](import-and-export-store-listings.md) si vous souhaitez entrer vos informations de description hors connexion dans un fichier.csv, plutôt que de renseigner ces informations directement dans le tableau de bord. Cette opération peut se révéler particulièrement adaptée si vous disposez de descriptions en différentes langues.
+> Vous pouvez, si vous le souhaitez, [importer et exporter des descriptions dans le Store](import-and-export-store-listings.md), si vous préférez entrer vos informations de description hors connexion dans un fichier.csv, plutôt que de renseigner ces informations et de charger les fichiers directement dans le tableau de bord. L’option d’importation et d’exportation peut être particulièrement pratique si vous avez des descriptions dans de nombreuses langues, dans la mesure où elle vous permet d’effectuer plusieurs mises à jour à la fois. 
 
-Par défaut, nous utilisons la même description dans le WindowsStore (par langue) pour tous les systèmes d’exploitation que vous ciblez. Si vous souhaitez utiliser une description personnalisée dans le Windows Store pour un système d’exploitation spécifique, vous pouvez [créer des descriptions dans le Windows Store spécifiques à la plateforme](create-platform-specific-store-listings.md). Votre description par défaut est toujours affichée pour les clients sur Windows10.
+Par défaut, nous utilisons la même description dans le Store (par langue) pour tous les systèmes d’exploitation que vous ciblez. Si vous souhaitez utiliser une description personnalisée dans le Store pour un système d’exploitation spécifique pris en charge par votre soumission, vous pouvez [créer des descriptions dans le Store spécifiques à la plateforme](create-platform-specific-store-listings.md). Votre description par défaut est toujours affichée pour les clients sur Windows10.
 
 ## <a name="store-listing-languages"></a>Langues des descriptions dans le Windows Store
 
@@ -56,24 +54,35 @@ Le champ de description est l’emplacement où vous pouvez indiquer aux clients
 
 Pour obtenir des conseils sur la rédaction d’une description attrayante, consultez l’article [Rédiger une description convaincante de l’application](write-a-great-app-description.md).
 
-## <a name="release-notes"></a>Notes de publication
+<span id="release-notes" />
 
-Si vous soumettez votre application pour la première fois, vous laisserez probablement ce champ vide. Si vous proposez une mise à jour d’une application existante, ce champ vous permet d’indiquer aux clients les modifications introduites dans la dernière version. Ce champ est limité à 1500 caractères.
+## <a name="whats-new-in-this-version"></a>Nouveautés de cette version
+
+Si vous soumettez votre application pour la première fois, laissez ce champ vide. Si vous proposez une mise à jour d’une application existante, ce champ vous permet d’indiquer aux clients les modifications introduites dans la dernière version. Ce champ est limité à 1500 caractères. (Ce champ s’appelait auparavant **Notes de publication**).
+
+## <a name="app-features"></a>Fonctionnalités de l’application
+
+Il s’agit de courts résumés des principales fonctionnalités de votre application. Ces informations sont présentées au client sous la forme d’une liste à puce dans la section **Fonctionnalités** de la description de votre application dans le Store, en complément de la **Description**. Chacune de ces informations est limitée à 200caractères par fonctionnalité. Vous pouvez spécifier jusqu’à 20fonctionnalités.
+
+> [!NOTE]
+> Les fonctionnalités de votre application apparaissant sous la forme d’une liste à puces dans la description du Store, n’ajoutez pas vos propres puces.
 
 ## <a name="screenshots"></a>Captures d’écran
 
-Une capture d’écran est obligatoire pour soumettre votre application. Nous vous recommandons de fournir au moins une capture d’écran pour chaque type d'appareil qui prend en charge votre application.
+Une capture d’écran est obligatoire pour soumettre votre application. Nous vous recommandons de fournir au moins quatrecaptures d’écran pour chaque type d’appareils pris en charge par votre application afin que les utilisateurs puissent voir à quoi cette dernière ressemblera sur leur type d’appareil.
 
 Pour plus d’informations, voir l’article [Images et captures d’écran de l’application](app-screenshots-and-images.md#screenshots).
 
+
 ## <a name="store-logos"></a>Logos Windows Store 
 
-Les logos Windows Store sont des images facultatives que vous pouvez charger pour améliorer la présentation de votre application aux clients. Vous pouvez également spécifier que seules les images que vous chargez ici doivent être utilisées dans la description de votre application dans le Windows Store pour les clients Windows10, plutôt que d’autoriser le Windows Store à utiliser les images de logo disponibles dans les packages de votre application.
+Les logos Windows Store sont des images facultatives que vous pouvez charger pour améliorer la présentation de votre application aux clients. Vous pouvez également spécifier que seules les images que vous chargez ici doivent être utilisées dans la description de votre application dans le Store pour les clients sous Windows10 (y compris Xbox), plutôt que d’autoriser le Store à utiliser les images de logo disponibles dans les packages de votre application.
 
 > [!IMPORTANT]
 > Si votre application prend en charge Xbox ou WindowsPhone8.1 ou une version antérieure, vous devez fournir certaines images ici dans l’ordre pour que la description s'affiche correctement dans le Windows Store. 
 
 Pour plus d’informations, voir [Logos Windows Store](app-screenshots-and-images.md#store-logos).
+
 
 ## <a name="additional-art-assets"></a>Illustrations supplémentaires
 
@@ -81,56 +90,65 @@ Vous pouvez soumettre des ressources supplémentaires pour votre produit, y comp
 
 Pour plus d’informations, voir [Illustrations supplémentaires](app-screenshots-and-images.md#additional-art-assets).
 
-## <a name="additional-information"></a>Informations complémentaires
 
-Les champs de cette section sont tous facultatifs, mais ils permettent d'aider les clients à mieux comprendre la fonction de votre application et ce qui est nécessaire pour une expérience optimale. Nous vous conseillons d'examiner les options décrites ci-dessous et de donner aux clients les informations nécessaires sur votre application ou qui peuvent les inciter à la télécharger.
+## <a name="supplemental-information"></a>Informations supplémentaires
 
-### <a name="app-features"></a>Fonctionnalités de l’application
+Les champs de cette section sont tous facultatifs. Les fonctionnalités de l’application et la configuration système requise permettent d’aider les clients à mieux comprendre la fonction de votre application et ce qui est nécessaire pour une expérience optimale. D’autres options permettent de fournir une expérience optimale pour votre produit dans différents scénarios. Passez en revue les informations ci-dessous pour déterminer si ces informations ont du sens pour votre soumission.
 
-Il s’agit de courts résumés des principales fonctionnalités de votre application. Ces dernières sont présentées et décrites au client sous la forme d’une liste à puce pour compléter la description de votre application dans le Windows Store. Chacune de ces informations est limitée à 200caractères. Vous pouvez spécifier jusqu’à 20fonctionnalités.
+### <a name="short-title"></a>Titre court
 
-> [!NOTE]
-> Les fonctionnalités de votre application apparaissant sous la forme d’une liste à puces, n’ajoutez pas vos propres puces.
+Version raccourcie du nom de votre produit. S’il est fourni, ce nom plus court peut apparaître à divers emplacements sur XboxOne (pendant l’installation, dans les succès, etc.) à la place du titre complet de votre produit.
 
-### <a name="additional-system-requirements"></a>Configuration système supplémentaire requise
+Le **Titre court** est limité à 50caractères.
 
-Si nécessaire, vous pouvez décrire les configurations matérielles requises par votre application pour fonctionner correctement (en plus des informations fournies dans la section **Configuration système requise** de [Propriétés de l’application](enter-app-properties.md#system-requirements). Ces informations sont particulièrement importantes si votre application nécessite du matériel qui peut ne pas être présent sur tous les ordinateurs.
 
-Vous pouvez entrer jusqu’à 11éléments pour les deux champs **Matériel minimum** et **Matériel recommandé**.  Les configurations matérielles sont présentées au client sous la forme d’une liste à puces dans la description de votre application. Chacune de ces informations est limitée à 200caractères.
+### <a name="sort-title"></a>Titre du tri
 
-Les informations que vous entrez ici sont visibles des clients qui consultent la description de votre application dans le Windows Store sur Windows10, version1607 ou ultérieure, en même temps que la configuration requise indiquée sur la page des propriétés du produit.
-
-> [!NOTE]
-> Étant donné que votre configuration système requise supplémentaire apparaît sous la forme d’une liste à puces dans votre description dans le WindowsStore, n’ajoutez pas vos propres puces.
-
-### <a name="developed-by"></a>Développé par
-
-Si vous souhaitez inclure un champ **Développé par** dans la description de votre application dans le WindowsStore, entrez ce texte ici. (Le champ **Publié par** répertorie le nom d’affichage de l’éditeur associé à votre compte, que vous fournissiez ou non une valeur pour le champ **Développé par**.)
+Si votre produit peut être trié par ordre alphabétique ou orthographié de différentes manières, vous pouvez entrer une autre version ici. Cela permet aux clients de trouver votre produit plus rapidement s’ils tapent cette version lors de la recherche. 
 
 Ce champ est limité à 255caractères.
 
 
-## <a name="shared-fields"></a>Champs partagés
+### <a name="voice-title"></a>Titre vocal
 
-Les éléments décrits ci-dessous aident les clients à découvrir et comprendre votre produit. Les informations que vous entrez ici s’appliquent à l’ensemble de vos descriptions du Windows Store dans une langue donnée, quel que soit le système d’exploitation, même si vous [créez des descriptions dans le Windows Store spécifiques à la plateforme](create-platform-specific-store-listings.md).
+Autre nom pour votre produit qui, s’il est fourni, peut être utilisé dans l’expérience audio sur XboxOne lors de l’utilisation de Kinect ou d’un casque.
+
+Ce champ est limité à 255caractères.
+
+
+### <a name="short-description"></a>Description courte
+
+Utilisée uniquement pour les jeux. Cette description s’affiche dans la section informations du Hub de jeux sur XboxOne et permet aux clients d’en savoir plus sur votre jeu.
+
+Ce champ est limité à 500caractères.
+
+
+### <a name="additional-system-requirements"></a>Configuration système supplémentaire requise
+
+Si nécessaire, vous pouvez décrire les configurations matérielles requises par votre application pour fonctionner correctement (en plus des informations fournies dans la section **Configuration système requise** de [Propriétés de l’application](enter-app-properties.md#system-requirements). Ces informations sont particulièrement importantes si votre application nécessite du matériel qui peut ne pas être présent sur tous les ordinateurs. Par exemple, si votre application ne fonctionne correctement qu'avec un matériel USB externe comme une imprimante3D ou un microcontrôleur, nous vous conseillons de les entrer ici. Les informations que vous entrez sont visibles par les clients qui consultent la description de votre application dans le Store sur Windows10, version1607 ou ultérieure (y compris Xbox), en même temps que la configuration requise indiquée sur la page des propriétés du produit. 
+
+Vous pouvez entrer jusqu’à 11éléments pour les deux champs **Matériel minimum** et **Matériel recommandé**. Ils sont présentés au client sous la forme d’une liste à puces dans votre Description dans le Store. Chacune de ces informations est limitée à 200caractères.
+
+> [!NOTE]
+> Étant donné que votre configuration système requise supplémentaire apparaît sous la forme d’une liste à puces dans votre description dans le Store, n’ajoutez pas vos propres puces.
+
+
+<span id="shared-fields" />
+
+## <a name="additional-information"></a>Informations complémentaires
+
+Les éléments décrits ci-dessous aident les clients à découvrir et comprendre votre produit. Les informations que vous entrez ici s’appliquent à l’ensemble de vos descriptions du Windows Store dans une langue donnée, quel que soit le système d’exploitation, même si vous [créez des descriptions dans le Windows Store spécifiques à la plateforme](create-platform-specific-store-listings.md). (Cette section était précédemment appelée **Champs partagés**).
 
 ### <a name="search-terms"></a>Termes de recherche
 
-Les termes de recherche (anciennement appelés mots clés) sont des mots uniques ou des phrases courtes que vos clients ne voient pas, mais qui permettent d’afficher votre application dans les résultats de recherche liés au terme. Vous pouvez inclure jusqu’à 7termes de recherche d’un maximum de 30caractères chacun, et vous pouvez utiliser jusqu’à 21mots distincts dans l’ensemble des termes de recherche.
+Les termes de recherche (anciennement appelés mots-clés) sont des mots uniques ou des phrases courtes que vos clients ne voient pas, mais qui vous permettent de rendre votre application détectable dans le Store lorsque les clients effectuent une recherche avec ces termes. Vous pouvez inclure jusqu’à 7termes de recherche d’un maximum de 30caractères chacun, et vous pouvez utiliser jusqu’à 21mots distincts dans l’ensemble des termes de recherche.
 
 Lorsque vous ajoutez des termes de recherche, pensez aux termes que vos clients sont susceptibles d’utiliser pour rechercher des applications comme la vôtre, en particulier si ces mots ne figurent pas dans le nom de votre application. Veillez à n’utiliser aucun terme de recherche non véritablement pertinent pour votre application.
-
-
-### <a name="privacy-policy"></a>Politique de confidentialité
-
-Si vous disposez d’une politique de confidentialité pour votre application, entrez son URL dans ce champ. Votre application doit respecter les lois et règles applicables et proposer une politique de confidentialité s’il y a lieu.
-
-> [!IMPORTANT]
-> Microsoft ne fournit aucune politique de confidentialité par défaut pour votre application. De même, votre application n’est couverte par aucune politique de confidentialité Microsoft. Pour déterminer si votre application nécessite une politique de confidentialité, passez en revue le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058) et les [politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1).
 
 ### <a name="copyright-and-trademark-info"></a>Informations de copyright et de marque déposée
 
 Si vous voulez fournir des informations supplémentaires de droits d’auteur et/ou de marque, entrez-les ici. Ce champ est limité à 200caractères.
+
 
 ### <a name="additional-license-terms"></a>Termes de licence supplémentaires
 
@@ -142,14 +160,16 @@ Si vous entrez une URL dans ce champ, elle apparaît aux clients sous la forme d
 
 Vous pouvez saisir jusqu’à 10000caractères de texte dans ce champ. Dans ce cas, ces termes supplémentaires du contrat de licence s’afficheront aux clients sous la forme de texte brut.
 
-### <a name="website"></a>Site web
 
-Entrez l’URL de la page web de votre application. Cette URL doit pointer vers une page de votre propre site web, et non vers la description web de votre application dans le Windows Store.
+### <a name="developed-by"></a>Développé par
 
-### <a name="support-contact-info"></a>Coordonnées du support technique
+Si vous souhaitez inclure un champ **Développé par** dans la description de votre application dans le WindowsStore, entrez ce texte ici. (Le champ **Publié par** répertorie le nom d’affichage de l’éditeur associé à votre compte, que vous fournissiez ou non une valeur pour le champ **Développé par**.)
 
-Entrez l’URL de la page web où vos clients peuvent obtenir un support concernant votre application (ou une adresse e-mail pour contacter le support technique).
+Ce champ est limité à 255caractères.
+ 
 
-> [!IMPORTANT]
-> Microsoft n’offre à vos clients aucun support technique pour votre application.
+<span id="privacy-policy" />
+
+> [!NOTE]
+> Les champs **Politique de confidentialité**, **Site web** et **Coordonnées du support technique** sont désormais situés dans la page [Propriétés](enter-app-properties.md).
 

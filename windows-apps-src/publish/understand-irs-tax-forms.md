@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, fiscalité, irs, services fiscaux américains, impôt, impôt sur le revenu, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: high
-ms.openlocfilehash: 0bdae8a8489ddf4f2ec7eb7a619631bd4fa26e9e
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: 747d79bb3f271638bcf08bb06965c56340771b73
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Présentation des déclarations fiscales de l’IRS envoyées par Microsoft
 
@@ -40,20 +40,20 @@ Nous expliquons ci-dessous en quoi consistent ces déclarations, notamment à qu
      <th> Je dois recevoir cette déclaration</th>
   </tr>
   <tr> 
-     <td valign="top">J’ai réalisé **plus de 200ventes d’applications** pour un montant total d’achat **supérieur à 20000dollars USD** durant l’année fiscale applicable (**sans** prendre en compte les ventes réalisées au Brésil et en Chine par le biais de Microsoft Store sur Windows10).</td>
-    <td valign="top">**1099-K**:<br>
+     <td valign="top">J’ai réalisé <b>plus de 200ventes d’applications</b> pour un montant total d’achat <b>supérieur à 20000dollars USD</b> durant l’année fiscale applicable (<b>sans</b> prendre en compte les ventes réalisées au Brésil et en Chine par le biais de Microsoft Store sur Windows10).</td>
+    <td valign="top"><b>1099-K</b>:<br>
 Déclarant: Microsoft Corporation<br>
 Numéro EIN: \*\*\*\*\*4442<br>
 <br>
 **Important:** La déclaration 1099-K indique les montants des **achats bruts**, pas les paiements que vous avez reçus.</td>
   </tr>
   <tr> 
-     <td valign="top">J’ai reçu **au moins 10dollars en paiement** de (i) ventes d’applications réalisées au Brésil et en Chine par le biais de Microsoft Store sur Windows10 ou de (ii) ventes sur le Marché Minecraft.<br>
+     <td valign="top">J’ai reçu <b>au moins 10dollars en paiement</b> de (i) ventes d’applications réalisées au Brésil et en Chine par le biais de Microsoft Store sur Windows10 ou de (ii) ventes sur le Marché Minecraft.<br>
 <br>
 **OU**<br>
 <br>
 J’ai reçu au moins 600dollars de Microsoft, en paiement d’activités autres que les ventes d’applications (par exemple, des paiements dans le cadre d’un programme incitatif, d’un concours ou d’une promotion) durant l’année fiscale applicable.</td>
-    <td valign="top">**1099-MISC**:<br>
+    <td valign="top"><b>1099-MISC</b>:<br>
 Payeur: Microsoft Corporation<br>
 Numéro EIN: \*\*\*\*\*4442<br>
 <br>
@@ -72,15 +72,15 @@ Numéro EIN: \*\*\*\*\*4442<br>
      <th> Je dois recevoir cette déclaration</th>
   </tr>
   <tr> 
-     <td valign="top">J’ai reçu **au moins 600dollars en paiement** de publicités dans des applications durant l’exercice fiscal applicable.</td>
-    <td valign="top">**1099-MISC**:<br>
+     <td valign="top">J’ai reçu <b>au moins 600dollars en paiement</b> de publicités dans des applications durant l’exercice fiscal applicable.</td>
+    <td valign="top"><b>1099-MISC</b>:<br>
 Payeur: Microsoft Online Inc<br>
 Numéro EIN: \*\*\*\*\*0505<br>
 <br>
 **Important:** Certaines entités commerciales ne recevront pas de déclarations 1099-MISC, quel que soit le montant des paiements reçus de la part de Microsoft.  Pour plus d’informations, consultez votre conseiller fiscal.  </td>
   </tr>
   <tr> 
-     <td valign="top">J’ai reçu **moins de 600dollars en paiement** de publicités dans des applications durant l’exercice fiscal applicable.</td>
+     <td valign="top">J’ai reçu <b>moins de 600dollars en paiement</b> de publicités dans des applications durant l’exercice fiscal applicable.</td>
      <td valign="top">Aucune</td>
   </tr>
 </table>
@@ -90,15 +90,15 @@ Numéro EIN: \*\*\*\*\*0505<br>
 
 <table>
   <tr>
-    <td valign="top">**J’ai reçu une déclaration 1042-S de la part de Microsoft. De quoi s’agit-il?**</td>
+    <td valign="top"><b>J’ai reçu une déclaration 1042-S de la part de Microsoft. De quoi s’agit-il?</b></td>
     <td valign="top">Microsoft vous a envoyé une ou plusieurs déclarations fiscales 1042-S, car nous vous avons effectué des paiements qui sont imposables aux États-Unis et qui doivent être déclarés aux services fiscaux américains.  La déclaration 1042-S est utilisée dans ce cadre.</td>
   </tr>
   <tr>
-    <td valign="top">**Que dois-je faire avec ces déclarations?**</td>
+    <td valign="top"><b>Que dois-je faire avec ces déclarations?</b></td>
     <td valign="top">Généralement, vous n’avez aucune action particulière à faire. Vous pouvez avoir besoin de présenter cette déclaration 1042-S aux services fiscaux de votre pays en vue d’obtenir un crédit d’impôt.  Pour plus d’informations à ce sujet, consultez votre conseiller fiscal.</td>
   </tr>
   <tr>
-    <td valign="top">**Pourquoi des taxes ont-elles été retenues sur mes paiements quand j’ai rempli la déclarationW8?**</td>
+    <td valign="top"><b>Pourquoi des taxes ont-elles été retenues sur mes paiements quand j’ai rempli la déclarationW8?</b></td>
     <td valign="top">Les taxes sont retenues dans les cas suivants:<br>
      1. Vous n’avez pas rempli correctement la section sur la convention fiscale dans la déclarationW8, ou<br>
      2. Vous résidez dans un pays qui n’a pas signé de convention fiscale avec les États-Unis.
@@ -108,15 +108,15 @@ Numéro EIN: \*\*\*\*\*0505<br>
      **Note:** Not all income is subject to tax withholding.</td>
   </tr>
   <tr>
-    <td valign="top">**J’ai renseigné et renvoyé une déclarationW8 avec des informations correctes sur la convention fiscale. Puis-je être remboursé par Microsoft des taxes retenues?**</td>
+    <td valign="top"><b>J’ai renseigné et renvoyé une déclarationW8 avec des informations correctes sur la convention fiscale. Puis-je être remboursé par Microsoft des taxes retenues?</b></td>
     <td valign="top">Les taxes ayant été retenues ne peuvent pas être remboursées. Consultez votre conseiller fiscal pour savoir si vous pouvez demander un crédit d’impôt sur ces taxes dans votre pays de résidence ou si vous pouvez faire une demande de remboursement auprès de l’IRS.</td>
   </tr>
   <tr>
-    <td valign="top">**Quelles sont les ventes déclarées sur le formulaire 1042-S?**</td>
-    <td valign="top">Seules les ventes **réalisées auprès d’acheteurs résidant aux États-Unis et assujetties à des taxes** doivent être déclarées.  Les autres ventes n’ont pas à être déclarées.</td>
+    <td valign="top"><b>Quelles sont les ventes déclarées sur le formulaire 1042-S?</b></td>
+    <td valign="top">Seules les ventes <b>réalisées auprès d’acheteurs résidant aux États-Unis et assujetties à des taxes</b> doivent être déclarées.  Les autres ventes n’ont pas à être déclarées.</td>
   </tr>
   <tr>
-    <td valign="top">**Pourquoi ai-je reçu trois copies de la même déclaration 1042-S dans mon enveloppe?**</td>
+    <td valign="top"><b>Pourquoi ai-je reçu trois copies de la même déclaration 1042-S dans mon enveloppe?</b></td>
     <td valign="top">Les services fiscaux de l’IRS imposent que trois copies de la déclaration soient transmises:
 <ul>
 <li>Une copie à conserver par le destinataire</li>

@@ -4,17 +4,17 @@ Description: The Pricing and availability page of the app submission process let
 title: Définir la tarification et la disponibilité d’une application
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.author: wdg-dev-content
-ms.date: 11/22/2017
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: windows10, uwp, prix, disponible, détectable, version d’évaluation gratuite, versions d’évaluation, applications, date de publication
 ms.localizationpriority: high
-ms.openlocfilehash: 3e94aadefb418aa7cefa90b8f274868c80f3e480
-ms.sourcegitcommit: 11edca90aaf7856c762e68903483079d30ad3877
+ms.openlocfilehash: 58b70da6a1be4fc52d3f31f0ea7b25b96acfa860
+ms.sourcegitcommit: 9f059b37e45099b4314c96a0b604449e966d3c3c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="set-app-pricing-and-availability"></a>Définir la tarification et la disponibilité d’une application
 
@@ -31,26 +31,14 @@ Pour plus d’informations, voir l’article [Définir la sélection du marché]
 
 ## <a name="visibility"></a>Visibilité
 
-La section **Visibilité** vous permet de définir des restrictions relatives aux modes de découverte et d’acquisition de votre application.
+La section **Visibilité** vous permet de définir des restrictions relatives aux modes de découverte et d’acquisition de votre application, y compris si les personnes peuvent trouver votre application dans le Store ou voir sa description dans le Store.
 
-Le paramètre par défaut est **Rendre votre produit accessible et détectable dans le Windows Store**. Cala signifie que dans le Store, votre application sera mise à disposition des clients qui y auront accès via un lien direct ou par le biais d’autres méthodes, comme la recherche, la navigation et l’intégration dans des listes organisées. 
-
-Si vous souhaitez masquer votre application dans le Windows Store, mais en la rendant accessible à certaines personnes, sélectionnez **Afficher les options** pour développer la section, puis **Rendre ce produit disponible mais pas détectable dans le Windows Store**. Cela signifie qu’aucun client ne pourra trouver votre application dans le Windows Store via une recherche ou en naviguant, quelle que soit sa version du système d’exploitation. Vous devez également choisir l'une des versions suivantes pour déterminer comment votre application peut être obtenue.
-
->[!IMPORTANT]
-> Chacune de ces options limite les versions des systèmes d’exploitation sur lesquels les clients peuvent acquérir votre application. Lisez attentivement les descriptions pour vous assurer que vous savez quelles versions des systèmes d’exploitation sont prises en charge. Notez que les clients sous Windows8 ou Windows8.1 ne pourront pas du tout obtenir l’application si vous choisissez l'une des options figurant sous **Rendre ce produit disponible mais pas détectable dans le Windows Store**. 
-
-- **Lien direct uniquement: n’importe quel client ayant un lien direct vers la description du produit peut télécharger celui-ci, sauf sous Windows8.x.** Tout client parvenant à la description de votre application via un lien direct peut la télécharger sur un appareil exécutant Windows10 ou WindowsPhone8.1 et les versions antérieures. Avec cette option, les clients sous Windows8.x ne peuvent pas du tout obtenir l’application.
-- **Arrêter l’acquisition: n’importe quel client ayant un lien direct peut voir la description du produit dans le Windows Store, mais ne peut télécharger ce produit que s'il en est déjà propriétaire ou s'il possède un code promotionnel et utilise un appareil Windows10.** Même si un client dispose d’un lien direct, il ne peut pas télécharger l’application, sauf s'il possède un [code promotionnel](generate-promotional-codes.md) et utilise un appareil Windows10. Lorsque vous fournissez un code à un client, celui-ci peut utiliser ce lien et le code pour obtenir gratuitement votre application (sous Windows10 uniquement), même si vous ne l’offrez à aucun autre client. En dehors d'un code promotionnel, il n’existe aucun moyen pour obtenir votre application.
-- **Utilisateurs sous Windows Phone8.x uniquement: seuls les utilisateurs spécifiés ci-dessous peuvent télécharger ce produit sur un appareil Windows Phone8.x. Toute personne ayant un lien direct et un code promotionnel peut télécharger le produit sur un appareil Windows10.** Cette option peut ne pas apparaître pour toutes les soumissions. Elle ne s’applique que si vous disposez de packages pouvant s’exécuter sur Windows Phone8.x. Seuls les clients dont vous spécifiez l’adresse de messagerie (associée à leur compteMicrosoft) dans le champ (séparées par des points-virgules) peuvent télécharger l’application sur Windows Phone8.x via le lien d’accès direct à sa description. Vous pouvez également générer des codes promotionnels afin de la rendre disponible à certains utilisateurs sur Windows10, comme expliqué plus haut. 
-
-> [!TIP]
-> Si vous voulez cesser de proposer une application à de nouveaux clients, vous pouvez sélectionner **Rendre votre application indisponible** depuis sa page d'aperçu. Quelques heures après que vous avez confirmé vouloir la rendre indisponible, votre application disparaît du Store. Dès lors, aucun nouveau client ne peut plus y accéder (sauf s'il possède un [code promotionnel](generate-promotional-codes.md) et utilise un appareil Windows10). Cette action remplacera les sélections **Visibilité** de votre soumission. Pour rendre à nouveau l'application disponible pour de nouveaux clients (conformément à vos sélections de **Visibilité**), vous pouvez cliquer à tout moment sur **Rendre l'application disponible** depuis la page d'aperçu. Pour en savoir plus, consultez l’article [Suppression d’une application du Windows Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
+Pour plus d’informations, voir [Choisir les options de visibilité](choose-visibility-options.md).
 
 
-## <a name="schedule"></a>Planifier
+## <a name="schedule"></a>Planification
 
-Par défaut (sauf si vous avez sélectionné l'une des options **Rendre votre application disponible, mais pas détectable dans le Windows Store** dans la section **Visibilité**), votre application sera disponible pour les clients dès qu’elle aura obtenu la certification et terminé le processus de publication. Pour choisir d’autres dates, sélectionnez **Afficher les options** pour développer cette section. 
+Par défaut (sauf si vous avez sélectionné l’une des options **Rendre votre application disponible mais non détectable dans le Store** dans la section [Visibilité](choose-visibility-options.md#discoverability)), votre application sera disponible pour les clients dès qu’elle aura obtenu la certification et terminé le processus de publication. Pour choisir d’autres dates, sélectionnez **Afficher les options** pour développer cette section. 
 
 Pour plus d’informations, voir [Configurer le calendrier de publication exact](configure-precise-release-scheduling.md).
 
@@ -62,7 +50,7 @@ Par défaut, la date de publication de votre application sera la date à laquell
 
 ## <a name="pricing"></a>Tarification
 
-Vous devez sélectionner un prix de base pour votre application (sauf si vous avez sélectionné l'une des options **Rendre votre application disponible, mais pas détectable dans le Windows Store** dans la section [Visibilité](#visibility)), en choisissant soit **Gratuit**, soit l’un des niveaux de prix disponibles. Vous pouvez également programmer des modifications de tarifs pour indiquer la date et l'heure à laquelle le prix de votre application doit changer. Vous pouvez aussi personnaliser ces changements pour des marchés spécifiques. 
+Vous devez sélectionner un prix de base pour votre application (sauf si vous avez sélectionné l’option **Empêcher l’acquisition** sous **Rendre votre application disponible mais non détectable dans le Store** dans la section [Visibilité](choose-visibility-options.md#discoverability)), en choisissant soit **Gratuit**, soit l’un des niveaux de prix disponibles. Vous pouvez également programmer des modifications de tarifs pour indiquer la date et l'heure à laquelle le prix de votre application doit changer. Vous pouvez aussi personnaliser ces changements pour des marchés spécifiques. 
 
 Pour plus d’informations, voir [Fixer et planifier le prix des applications](set-and-schedule-app-pricing.md).
 
@@ -96,7 +84,6 @@ Pour définir les dates auxquelles votre version d’essai doit être proposée 
 > Contrairement à ce qui se fait dans la section [Planifier](configure-precise-release-scheduling.md), les dates que vous sélectionnez pour votre **version d’essai gratuite** ne peuvent pas être personnalisées pour des marchés spécifiques. 
 
 
-
 ## <a name="sale-pricing"></a>Prix de vente
 
 Si vous souhaitez proposer votre application à un prix réduit pendant une durée limitée, vous pouvez créer et planifier une vente.
@@ -113,16 +100,6 @@ Pour plus d’informations, voir [Options de gestion des licences organisationne
 
 ## <a name="publish-date"></a>Date de publication
 
-Par défaut, votre soumission déclenche le processus de publication dès qu’elle a obtenu sa certification, sauf si vous avez configuré des dates dans la section [**Planifier**](#schedule) décrite ci-dessus. 
+Auparavant, la section **Date de publication** apparaissait sur cette page. Cette fonctionnalité se trouve à présent sur la page [Options de soumission](manage-submission-options.md), dans la section **Options de mise en attente de publication**. (Pour contrôler la date à laquelle votre application doit être publiée dans le Store, nous vous recommandons d’utiliser la section [Planification](configure-precise-release-scheduling.md) de la page **Tarification et disponibilité**.)
 
-Pour contrôler la date à laquelle votre application doit être publiée dans le Windows Store, utilisez la section **Planifier**. Pour la plupart des soumissions, vous devez utiliser cette section pour planifier la publication de votre application et laisser la section **Date de publication** sur l’option par défaut, **Publier cette soumission dès qu’elle a obtenu la certification**. Cela n’a pas pour conséquence la publication de la soumission avant les dates que vous avez définies dans la section **Planifier**. Les dates que vous avez sélectionnées dans la section **Planifier** déterminent le moment auquel votre application est disponible pour les clients dans le Windows Store.
-
-Si vous ne voulez pas encore définir de date de publication et que vous préférez que votre soumission reste non publiée jusqu'à ce que vous décidiez de déclencher manuellement le processus de publication, vous pouvez choisir **Publier cette soumission manuellement.** La sélection de cette option signifie que votre sélection ne sera pas publiée tant vous n'aurez pas indiqué qu’elle doit l'être. Une fois votre application certifiée, vous pouvez la publier en sélectionnant **Publier maintenant** sur la page d’état de certification ou en sélectionnant une date spécifique, comme décrit ci-dessous.
-
-Pour vous assurer que la soumission ne sera pas publiée avant une date donnée, choisissez l’option **Pas avant le \[date\]**. Avec cette option, votre soumission sera publiée aussitôt que possible à la date spécifiée ou après. La date doit être postérieure de 24 heures au moins. Parallèlement à la date, vous pouvez également définir l’heure à laquelle la publication de la soumission doit démarrer.
- 
-> [!NOTE]
-> Des retards lors de la certification ou de la publication peuvent différer la sortie réelle par rapport à la date demandée. Le Microsoft Store ne peut pas garantir que votre application (ou mise à jour) sera disponible à une date spécifique.  
-
-Vous pouvez également modifier la date de sortie après avoir soumis votre application, à condition que l’étape Publier n’ait pas encore commencé pour l’application. 
 

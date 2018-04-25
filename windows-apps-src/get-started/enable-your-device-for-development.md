@@ -1,19 +1,20 @@
 ---
 author: GrantMeStrength
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
-title: "Activer votre appareil pour le développement"
-description: "Configurez votre appareil Windows10 pour le développement et le débogage."
-keywords: "Commencer avec une licence de développeur Visual Studio, appareil avec licence de développeur activée"
+title: Activer votre appareil pour le développement
+description: Configurez votre appareil Windows10 pour le développement et le débogage.
+keywords: Commencer avec une licence de développeur Visual Studio, appareil avec licence de développeur activée
 ms.author: jken
 ms.date: 03/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 8a7b01205acf12d4a0ab6d3d7024311b3944f103
-ms.sourcegitcommit: 0fa9ae00117e8e6b04ed38956e605bb74c1261c6
+ms.localizationpriority: high
+ms.openlocfilehash: 09a5fd69d0a2f38adc6ba5f1b241df06211465b6
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
@@ -54,15 +55,15 @@ Voici la page des paramètres relative à la famille d’appareils mobiles:
 
  Vous pouvez activer un appareil pour le développement ou simplement pour le chargement indépendant.
 
--   *Applications du Windows Store* est le paramètre par défaut. Si vous ne développez pas des applications, ou si vous utilisez des applications internes spécifiques développées par votre entreprise, ce paramètre doit être activé.
--   Le *chargement indépendant* consiste à installer, puis à exécuter ou tester une application qui n’a pas été certifiée par le WindowsStore. Il peut par exemple s’agir d’une application utilisée en interne au sein de votre entreprise.
+-   *Applications UWP* est le paramètre par défaut. Si vous ne développez pas des applications, ou si vous utilisez des applications internes spécifiques développées par votre entreprise, ce paramètre doit être activé.
+-   *Charger la version test des applications* consiste à installer, puis à exécuter ou tester une application qui n’a pas été certifiée par le MicrosoftStore. Il peut par exemple s’agir d’une application utilisée en interne au sein de votre entreprise.
 -   Le *mode développeur* vous permet de procéder au chargement indépendant des applications et d’exécuter des applications à partir de VisualStudio en mode débogage. 
 
-Par défaut, vous pouvez installer des applications de plateforme Windows universelle (UWP) uniquement à partir du Windows Store. La modification de ces paramètres en vue d’utiliser les fonctionnalités de développement peut entraîner la modification du niveau de sécurité de votre appareil. N’installez pas d’applications à partir de sources non vérifiées.
+Par défaut, vous pouvez uniquement installer des applications de plateforme Windows universelle (UWP) à partir du MicrosoftStore. La modification de ces paramètres en vue d’utiliser les fonctionnalités de développement peut entraîner la modification du niveau de sécurité de votre appareil. N’installez pas d’applications à partir de sources non vérifiées.
 
 ### <a name="sideload-apps"></a>Charger la version test des applications
 
-Le paramètre Charger la version test des applications est généralement utilisé par des sociétés ou écoles qui ont besoin d’installer des applications personnalisées sur des appareils gérés sans passer par le Windows Store. Dans ce cas, l’organisation applique généralement une stratégie visant à désactiver le paramètre *Applications du WindowsStore*, comme le montre l’image précédente de la page des paramètres. L’organisation fournit aussi le certificat nécessaire et l’emplacement d’installation pour le chargement indépendant des applications. Pour plus d’informations, voir les articles TechNet [Charger la version test des applications dans Windows10](https://technet.microsoft.com/library/mt269549.aspx) et [Prendre en main le déploiement d’applications dans MicrosoftIntune](https://technet.microsoft.com/library/dn646955.aspx).
+Le paramètre Charger la version test des applications est généralement utilisé par des sociétés ou des écoles qui ont besoin d’installer des applications personnalisées sur des appareils gérés, sans passer par le MicrosoftStore. Dans ce cas, l’organisation applique généralement une stratégie visant à désactiver le paramètre *ApplicationsUWP*, comme le montre l’image précédente de la page des paramètres. L’organisation fournit aussi le certificat nécessaire et l’emplacement d’installation pour le chargement indépendant des applications. Pour plus d’informations, voir les articles TechNet [Charger la version test des applications dans Windows10](https://technet.microsoft.com/library/mt269549.aspx) et [Prendre en main le déploiement d’applications dans MicrosoftIntune](https://technet.microsoft.com/library/dn646955.aspx).
 
 Informations spécifiques à la famille d’appareils
 
@@ -70,43 +71,31 @@ Informations spécifiques à la famille d’appareils
 
 -   Pour la famille d’appareils mobiles: si le certificat requis est déjà installé, vous pouvez appuyer sur le fichier pour installer tout fichier .appx reçu par courrier électronique ou sur une carte SD.
 
+
 Le paramètre **Charger la version test des applications** est une option plus sécurisée que le mode développeur, car vous ne pouvez pas installer d’applications sans certificat approuvé sur l’appareil.
 
 > [!NOTE]
-> Si vous effectuez un chargement indépendant des applications, veillez à ce que les applications que vous installez proviennent toujours de sources fiables. Quand vous procédez au chargement indépendant d’une application qui n’a pas été certifiée par le WindowsStore, vous indiquez que vous avez obtenu l’ensemble des droits nécessaires au chargement indépendant de cette application et que vous êtes l’unique responsable des dommages résultant de l’installation et de l’exécution de cette application. Voir la section Windows &gt; Windows Store de cette [déclaration de confidentialité](http://go.microsoft.com/fwlink/?LinkId=521839).
+> Si vous effectuez un chargement indépendant des applications, veillez à ce que les applications que vous installez proviennent toujours de sources fiables. Quand vous procédez au chargement d’une version test d’une application qui n’a pas été certifiée par le MicrosoftStore, vous indiquez que vous avez obtenu l’ensemble des droits nécessaires au chargement d’une version test de cette application et que vous êtes l’unique responsable des dommages résultant de l’installation et de l’exécution de cette application. Voir la section Windows &gt; MicrosoftStore de cette [déclaration de confidentialité](http://go.microsoft.com/fwlink/?LinkId=521839).
+
 
 ### <a name="developer-mode"></a>Mode développeur
 
 Le mode développeur remplace l’exigence de Windows8.1 relative à la détention d’une licence de développeur.  Le paramètre Mode développeur est proposé en plus du chargement indépendant. Il offre une fonction de débogage et d’autres options de déploiement, notamment le démarrage d’un service SSH pour permettre le déploiement de cet appareil. Pour arrêter ce service, vous devez désactiver le mode développeur.
 
-Informations spécifiques pour la famille d’appareils
+Quand vous activez le mode développeur sur le bureau, un ensemble de fonctionnalités est installé, à savoir:
+- Portail d’appareil Windows. Portail d’appareil est activé et les règles de pare-feu associées sont configurées seulement si l’option **Activer Portail d’appareil** est activée.
+- Installation et configuration des règles de pare-feu pour les servicesSSH qui permettent l’installation à distance des applications. L’activation de l’option **Découverte d'appareils** activera le serveurSSH.
 
--   Pour la famille d’appareils de bureau:
-
-    Activez le mode développeur pour développer et déboguer des applications dans Visual Studio. Comme indiqué précédemment, une invite s’affiche dans Visual Studio si le mode développeur n’est pas activé.
-
-    Sur les PC antérieurs à Fall-Creators-Update, cela permet l’activation du sous-système Windows pour Linux. Pour plus d’informations, voir [À propos de Bash sur Ubuntu sur Windows](https://msdn.microsoft.com/commandline/wsl/about).  Le mode développeur n’est plus nécessaire pour WSL, à compter de Fall Creators Update.  
-
--   Pour la famille d’appareils mobiles:
-
-    Activez le mode développeur pour déployer des applications à partir de Visual Studio et les déboguer sur l’appareil.
-
-    Vous pouvez appuyer sur le fichier pour installer tout fichier .appx reçu par courrier électronique ou sur une carte SD. N’installez pas d’applications à partir de sources non vérifiées.
 
 ## <a name="additional-developer-mode-features"></a>Fonctionnalités supplémentaires du mode développeur
 
 Pour chaque famille d’appareils, des fonctionnalités de développement supplémentaires peuvent être disponibles. Ces fonctionnalités sont disponibles uniquement quand le mode développeur est activé sur l’appareil, et peuvent varier selon la version de votre système d’exploitation.
 
-Quand vous activez le mode développeur, un ensemble d’options est installé, à savoir:
-- WindowsDevicePortal. DevicePortal est activé et les règles de pare-feu associées sont configurées seulement si l’option **Activer Device Portal** est activée.
-- Installation, activation et configuration des règles de pare-feu pour les services SSH qui permettent l’installation à distance des applications.
+Cette image montre les fonctionnalités du mode développeur pour Windows10:
 
+![Options du mode développeur](images/devmode-mob-options.png) 
 
-Cette image montre les fonctionnalités de développement pour la famille d’appareils mobiles sur Windows10:
-
-![Options du Mode développeur pour les appareils mobiles](images/devmode-mob-options.png) 
-
-### <a name="span-iddevice-discovery-and-pairingspandevice-portal"></a><span id="device-discovery-and-pairing"></span>Device Portal
+### <a name="span-iddevice-discovery-and-pairingspandevice-portal"></a><span id="device-discovery-and-pairing"></span>Portail d’appareil
 
 Pour en savoir plus sur DevicePortal, consultez [Vue d’ensemble de WindowsDevicePortal](../debug-test-perf/device-portal.md).
 
@@ -119,40 +108,40 @@ Pour obtenir des instructions d’installation spécifiques pour l’appareil, v
 
 Si vous rencontrez des difficultés pour activer le Mode développeur ou Device Portal, consultez le forum [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) pour chercher des solutions à ces problèmes, ou visitez [Échec de l’installation du package Mode développeur ou du lancement de Device Portal](#failure-to-install-developer-mode-package) pour plus d’informations et savoir quelles bases de connaissances WSUS autoriser pour débloquer le package Mode développeur. 
 
-###<a name="ssh"></a>SSH
+### <a name="ssh"></a>SSH
 
-Les services SSH sont activés dès lors que vous activez le mode développeur sur votre appareil.  Ils sont utilisés du moment où votre appareil est une cible de déploiement pour des applications UWP.   Ces services se nomment «SSH Server Broker» et «SSH Server Proxy».
+Les servicesSSH sont activés dès lors que vous activez la découverte d'appareils sur votre appareil.  Ils sont utilisés lorsque votre appareil est une cible de déploiement distant pour des applicationsUWP.   Ces services se nomment «SSH Server Broker» et «SSH Server Proxy».
 
 > [!NOTE]
-> Il ne s’agit pas de l’implémentation OpenSSH de Microsoft, que vous pouvez trouver sur [GitHub](https://github.com/PowerShell/Win32-OpenSSH).
+> Il ne s’agit pas de l’implémentation OpenSSH de Microsoft, que vous pouvez trouver sur [GitHub](https://github.com/PowerShell/Win32-OpenSSH).  
 
-Pour tirer parti des services SSH, vous pouvez activer la découverte d’appareils pour permettre le couplage de code PIN. Si vous avez l’intention d’exécuter un autre service SSH, vous pouvez le configurer sur un autre port ou désactiver les services SSH du mode développeur. Pour désactiver les services SSH, désactivez simplement le mode développeur.  
+Pour tirer parti des services SSH, vous pouvez activer la découverte d’appareils pour permettre le couplage de code PIN. Si vous avez l’intention d’exécuter un autre service SSH, vous pouvez le configurer sur un autre port ou désactiver les services SSH du mode développeur. Pour désactiver les services SSH, désactivez la découverte d’appareils.  
+
+La connexion SSH s’effectue via le compte DevToolsUser, qui accepte un mot de passe pour l’authentification.  Ce mot de passe est le code PIN qui s’affiche sur l’appareil après avoir appuyé sur le bouton de couplage de la découverte d’appareils. Il est valide uniquement lorsque le code PIN est affiché.  Un sous-système SFTP est également activé pour la gestion manuelle du dossier DevelopmentFiles, dans lequel les déploiements de fichiers isolés sont installés à partir de Visual Studio. 
+
+#### <a name="caveats-for-ssh-usage"></a>Avertissements concernant l’utilisation de SSH
+Le serveur SSH existant utilisé dans Windows n’est pas encore conforme au protocole. De ce fait, l’utilisation d’un client SFTP ou SSH peut nécessiter une configuration spéciale.  En particulier, le sous-système SFTP exécutant la version3 ou inférieure, tout client qui se connecte doit être configuré de façon à anticiper un ancien serveur.  Sur des appareils plus anciens, le serveurSSH utilise `ssh-dss` pour l’authentification de clé publique, ce qui est déconseillé par OpenSSH.  Pour se connecter à ces appareils, le clientSSH doit être configuré manuellement pour accepter `ssh-dss`.  
 
 ### <a name="device-discovery"></a>Découverte d’appareils
 
-Quand vous activez la découverte d’appareils, vous consentez à rendre votre appareil visible des autres appareils du réseau via mDNS.  Cette fonctionnalité permet aussi d’obtenir le code PIN SSH pour le couplage à cet appareil.  
+Quand vous activez la découverte d’appareils, vous consentez à rendre votre appareil visible des autres appareils du réseau via mDNS.  Cette fonctionnalité vous permet également d’obtenir le code PIN SSH pour effectuer le couplage à cet appareil, en appuyant sur le bouton de couplage affiché lorsque la découverte d’appareils est activée.  Cette invite de code PIN doit être affichée sur l’écran afin de terminer votre premier déploiement Visual Studio ciblant l’appareil.  
 
 ![Couplage de code PIN](images/devmode-pc-pinpair.PNG)
 
 N’activer la découverte d’appareils que si vous envisagez de faire de l’appareil une cible de déploiement. Par exemple, si vous utilisez DevicePortal pour déployer une application sur un téléphone à des fins de test, vous devez activer la découverte d’appareils sur le téléphone, mais pas sur votre PC de développement.
-
-### <a name="error-reporting-mobile-only"></a>Rapport d’erreurs (Mobile uniquement)
-
-Définissez cette valeur pour spécifier le nombre de vidages sur incident enregistrés sur votre téléphone.
-
-La collecte des vidages sur incident sur votre téléphone vous permet d’accéder aux informations d’incident importantes immédiatement après l’incident. Les vidages sont collectés uniquement pour les applications signées par les développeurs. Vous pouvez trouver les vidages dans le système de stockage de votre téléphone, dans le dossier Documents\Debug. Pour plus d’informations sur les fichiers de vidage, voir [Utiliser les fichiers de dump pour déboguer les pannes et les blocages d’application dans Visual Studio](https://msdn.microsoft.com/library/d5zhxt22.aspx).
 
 ### <a name="optimizations-for-windows-explorer-remote-desktop-and-powershell-desktop-only"></a>Optimisations pour l’Explorateur Windows, Bureau à distance et PowerShell (Bureau uniquement)
 
  Pour la famille d’appareils de bureau, la page de paramètres **Pour les développeurs** propose des raccourcis vers les paramètres qui vous permettent d’optimiser votre PC pour les tâches de développement. Pour chaque paramètre, vous pouvez cocher la case correspondante et cliquer sur **Appliquer**, ou cliquez sur le lien **Afficher les paramètres** pour ouvrir la page de paramètres de cette option. 
 
 
+## <a name="notes"></a>Remarques
+Dans les versions antérieures de Windows10Mobile, une option de vidages sur incident était présente dans le menu Paramètres de développeur.  Elle a été déplacée vers [Portail d’appareil](../debug-test-perf/device-portal.md) afin de pouvoir être utilisée à distance, plutôt que simplement via USB.  
 
-**Astuce**  
-Vous pouvez utiliser plusieurs outils pour déployer une application à partir d’un PC Windows10 sur un appareil mobile Windows10. Les deux appareils doivent être connectés au même sous-réseau du réseau par une connexion filaire ou sans fil, ou ils doivent être connectés par USB. Dans tous les cas, seul le package d’application (.appx) est installé et non les certificats.
+Vous pouvez utiliser plusieurs outils pour déployer une application à partir d’un PC Windows10 sur un appareil Windows10. Les deux appareils doivent être connectés au même sous-réseau du réseau par une connexion filaire ou sans fil, ou ils doivent être connectés par USB. Dans les deux cas, seul le package d’application (.appx/.appxbundle) est installé, et non les certificats.
 
--   Utilisez l’outil de déploiement d’applications Windows 10 (WinAppDeployCmd). En savoir plus sur [l’outil WinAppDeployCmd](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
--   À compter de Windows10 version1511, vous pouvez utiliser [Device Portal](../debug-test-perf/device-portal-desktop.md) pour effectuer un déploiement de votre navigateur vers un appareil mobile exécutant Windows10 version1511 ou ultérieure. Utilisez la page **[Applications](../debug-test-perf/device-portal.md#apps)** dans Device Portal pour charger un package d’application (.appx) sur le serveur et l’installer sur l’appareil.
+-   Utilisez l’outil de déploiement d’applications Windows10 (WinAppDeployCmd). En savoir plus sur [l’outil WinAppDeployCmd](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
+-   Vous pouvez utiliser [Portail d’appareil](../debug-test-perf/device-portal.md) pour effectuer un déploiement de votre navigateur vers un appareil mobile exécutant Windows10 version1511 ou ultérieure. Utilisez la page **[Applications](../debug-test-perf/device-portal.md#apps-manager)** dans Device Portal pour charger un package d’application (.appx) sur le serveur et l’installer sur l’appareil.
 
 ## <a name="failure-to-install-developer-mode-package"></a>Échec de l’installation du package Mode développeur
 Parfois, en raison de problèmes réseau ou d’administration, le Mode développeur ne s’installe pas correctement. Le package Mode développeur est nécessaire pour un déploiement **à distance** sur ce PC - à l’aide de Device Portal depuis un navigateur ou de la fonction Découverte d’appareils pour activer SSH--mais pas pour un développement local.  Même si vous rencontrez ces problèmes, vous pouvez toujours déployer votre application localement à l’aide de Visual Studio, ou à partir de cet appareil sur un autre appareil. 
@@ -189,7 +178,7 @@ Pour résoudre ce problème:
 
 ## <a name="use-group-policies-or-registry-keys-to-enable-a-device"></a>Utiliser des stratégies de groupe ou des clés de Registre pour activer un appareil
 
-Pour la plupart des développeurs, vous pouvez utiliser l’application Paramètres pour activer votre appareil pour le débogage. Dans certains scénarios, comme les tests automatisés, vous pouvez employer d’autres méthodes pour activer votre appareil de bureau Windows10 pour le développement.
+Pour la plupart des développeurs, vous pouvez utiliser l’application Paramètres pour activer votre appareil pour le débogage. Dans certains scénarios, comme les tests automatisés, vous pouvez employer d’autres méthodes pour activer votre appareil de bureau Windows10 pour le développement.  Notez que ces étapes n’activeront pas le serveur SSH ou n’autoriseront pas l’appareil à être ciblé pour le déploiement distant et le débogage. 
 
 Vous pouvez utiliser gpedit.msc pour définir les stratégies de groupe visant à activer l’appareil, sauf si vous disposez de Windows10 Famille. Si vous disposez de Windows10 Famille, vous devez exécuter des commandes regedit ou PowerShell pour définir les clés de Registre directement en vue d’activer votre appareil.
 
@@ -206,7 +195,7 @@ Vous pouvez utiliser gpedit.msc pour définir les stratégies de groupe visant �
     Pour activer le mode développeur, modifiez les stratégies pour activer les deux options suivantes:
 
     -   **Autoriser l’installation des applications approuvées**
-    -   **Autorise le développement d’applications du Windows Store et leur installation depuis un environnement de développement intégré**
+    -   **Autorise le développement d’applications UWP et leur installation depuis un environnement de développement intégré**
 
 4.  Redémarrez votre machine.
 
@@ -252,8 +241,8 @@ Erreur : DEP0700 : Échec de l’inscription de l’application.
 ## <a name="see-also"></a>Voir aussi
 
 * [Votre première application](your-first-app.md)
-* [Publication de votre application du Windows Store](https://developer.microsoft.com/store/publish-apps).
+* [Publier votre application UWP](https://developer.microsoft.com/store/publish-apps)
 * [Articles sur les procédures de développement d’applications UWP](https://developer.microsoft.com/windows/apps/develop)
 * [Exemples de code pour les développeurs UWP](https://developer.microsoft.com/windows/samples)
-* [Qu’est-ce qu’une application Windows universelle?](whats-a-uwp.md)
+* [Qu’est-ce qu’une application UWP?](universal-application-platform-guide.md)
 * [Créer un compte Windows](sign-up.md)

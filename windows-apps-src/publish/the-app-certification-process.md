@@ -1,23 +1,24 @@
 ---
 author: jnHs
-Description: "Une fois que vous avez terminé de créer la soumission de votre application et cliqué sur Soumettre au Windows Store, l’application passe à l’étape de certification."
+Description: When you finish creating your app's submission and click Submit to the Store, the submission enters the certification step.
 title: Processus de certification des applications
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 ms.author: wdg-dev-content
-ms.date: 04/13/2017
+ms.date: 03/09/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
-ms.openlocfilehash: f075dc6e112a526d7aee71f0f9aa7d4da570d649
-ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
+keywords: windows10, uwp, publication, prétraitement, certification, publication, en attente, soumettre, publier, état
+ms.localizationpriority: high
+ms.openlocfilehash: 0b2191808457401a41fe6bb0996d3f5a5ed4943d
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="the-app-certification-process"></a>Processus de certification des applications
 
-Une fois que vous avez terminé de créer la soumission de votre application et cliqué sur **Soumettre au Windows Store**, l’application passe à l’étape de certification. Ce processus s’effectue généralement en quelques heures, bien qu’il nécessite parfois troisjournées ouvrables entières. Une fois votre soumission certifiée, un maximum de 24heures peut s’écouler avant l’apparition de sa description (ou de vos mises à jour d’une application publiée précédemment) dans le WindowsStore. Une notification s’affiche lorsque votre soumission est publiée et disponible pour les clients; l’état de l’application dans le tableau de bord sera **dans le Windows Store**.
+Une fois que vous avez terminé de créer la soumission de votre application et cliqué sur **Envoyer au Store**, la soumission passe à l’étape de certification. Ce processus s’effectue généralement en quelques heures, bien qu’il nécessite parfois troisjournées ouvrables entières. Une fois votre soumission certifiée, un maximum de 24heures peut s’écouler avant l’apparition de sa description (ou de vos mises à jour d’une application publiée précédemment) dans le WindowsStore. Une notification s’affiche lorsque votre soumission est publiée et disponible pour les clients; l’état de l’application dans le tableau de bord sera **dans le Windows Store**.
 
 ## <a name="preprocessing"></a>Prétraitement
 
@@ -31,7 +32,7 @@ Plusieurs tests sont exécutés pendant cette phase:
 -   **Tests de conformité technique :** la conformité technique est testée à l’aide du Kit de certification des applications Windows. (Vous devez toujours prendre soin de [tester votre application à l’aide du Kit de certification des applications Windows](../debug-test-perf/windows-app-certification-kit.md) avant de la soumettre au Windows Store.)
 -   **Conformité du contenu :** la durée de cette opération varie en fonction de la complexité de votre application, de la quantité de contenu visuel qu’elle comporte et du nombre d’applications que vous avez soumises récemment. Veillez à fournir toutes les informations que les testeurs doivent connaître dans la page [Remarques pour la certification](notes-for-certification.md).
 
-Une fois le processus de certification terminé, vous recevez un rapport de certification indiquant si votre application a été ou non certifiée. Si votre application n’a pas été certifiée, le rapport indique le test auquel elle a échoué ou la [stratégie](https://msdn.microsoft.com/library/windows/apps/dn764944) qui n’a pas été respectée. Après avoir corrigé le problème, vous pouvez créer une autre soumission pour votre application afin de recommencer le processus de certification.
+Une fois le processus de certification terminé, vous recevez un rapport de certification indiquant si votre application a été ou non certifiée. Si votre application n’a pas été certifiée, le rapport indique le test auquel elle a échoué ou la [stratégie](https://docs.microsoft.com/legal/windows/agreements/store-policies) qui n’a pas été respectée. Après avoir corrigé le problème, vous pouvez créer une autre soumission pour votre application afin de recommencer le processus de certification.
 
 ## <a name="release"></a>Mise sur le marché
 
@@ -41,13 +42,14 @@ Lorsque votre application obtient la certification, elle est prête pour l’ét
 
 Les packages de votre application sont signés numériquement pour être protégés contre toute falsification après leur publication. Une fois que cette phase a commencé, vous ne pouvez plus annuler votre soumission ni en modifier la date de sortie.
 
-Lorsque votre application est en phase de publication, le lien **Afficher les détails** dans la colonne État de soumission de votre application vous indique quand vos nouveaux packages et vos descriptions dans le Store sont disponibles pour les clients sur chacune de vos versions de système d’exploitation prises en charge. Votre application reste en phase de publication jusqu’à ce que les nouveaux packages et les descriptions soient disponibles pour tous les clients potentiels de votre application. Ce processus peut prendre jusqu’à 24heures. 
+Lorsque votre application est en phase de publication, le lien **Afficher les détails** dans la colonne État de soumission de votre application vous indique quand vos nouveaux packages et vos descriptions dans le Store sont disponibles pour les clients sur chacune de vos versions de système d’exploitation prises en charge. Les étapes qui n’ont pas encore été réalisées s’affichent comme **En attente**. Votre application reste en phase de publication jusqu’à ce que le processus se termine, ce qui signifie que les nouveaux packages et les descriptions sont disponibles pour tous les clients potentiels de votre application. Cela peut prendre jusqu'à 24heures. 
 
-## <a name="in-the-store"></a>Dans le WindowsStore 
+## <a name="in-the-store"></a>Dans le Store 
 
-Après avoir correctement effectué les étapes ci-dessus, l’état de la soumission passe de **Publication** à **Dans le Windows Store**. Les clients peuvent ainsi télécharger votre soumission à partir du WindowsStore (sauf si vous avez choisi une autre option de [Visibilité](set-app-pricing-and-availability.md#visibility)). 
+Après avoir correctement effectué les étapes ci-dessus, l’état de la soumission passe de **Publication** à **Dans le Store**. Les clients peuvent ainsi télécharger votre soumission à partir du MicrosoftStore (sauf si vous avez choisi une autre option pour [Détectabilité](choose-visibility-options.md#discoverability)). 
 
-**Remarque** Nous effectuons également des vérifications ponctuelles sur les applications publiées pour identifier les problèmes potentiels et vérifier que votre application est conforme à toutes les [politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944). Si nous détectons un problème, nous vous en informons et vous indiquons comment le résoudre, ou nous vous prévenons que votre application a été retirée du WindowsStore.
+> [!NOTE]
+> Nous effectuons également des vérifications ponctuelles sur les applications publiées pour identifier les problèmes potentiels et vérifier que votre application est conforme à toutes les [politiques du MicrosoftStore](https://docs.microsoft.com/legal/windows/agreements/store-policies). Si nous détectons un problème, nous vous en informons et vous indiquons comment le résoudre, ou nous vous prévenons que votre application a été retirée du WindowsStore.
 
  
 

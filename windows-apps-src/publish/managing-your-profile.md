@@ -1,26 +1,29 @@
 ---
 author: jnHs
 ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
-title: "Gérer les paramètres de compte et les informations de profil"
-description: "Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section Paramètres du compte du tableau de bord unifié du Centre de développement Windows."
+title: Gérer les paramètres de compte et les informations de profil
+description: Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section Paramètres du compte du tableau de bord unifié du Centre de développement Windows.
 ms.author: wdg-dev-content
-ms.date: 01/08/2018
+ms.date: 03/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows10, uwp, centre de développement, paramètres de compte, profil, profil de compte, compte de développeur, paramètres de compte de développeur"
+keywords: Windows10, uwp, centre de développement, paramètres de compte, profil, profil de compte, compte de développeur, paramètres de compte de développeur
 ms.localizationpriority: high
-ms.openlocfilehash: 840eb445eaf5cac05201a58140a7ea7f505d7e14
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
+ms.openlocfilehash: 5bedc2bb91478d86af95f45d57369f5409e7cea1
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="manage-account-settings-and-profile-info"></a>Gérer les paramètres de compte et les informations de profil
 
 Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section **Paramètres du compte** du [tableau de bord du Centre de développement Windows](using-the-windows-dev-center-dashboard.md). 
 
-## <a name="account-settings"></a>Paramètres de compte
+> [!NOTE]
+> Les préférences de notification (comme le type de notifications à recevoir et leur mode de réception) peuvent être gérées dans le **Centre de messages** (auquel vous pouvez accéder en sélectionnant l’icône de message dans la partie supérieure de votre tableau de bord).
+
+## <a name="account-settings"></a>Paramètres du compte
 
 Sélectionnez l’icône d’engrenage dans le coin supérieur droit de votre tableau de bord et cliquez sur **Paramètres du compte**. Vous y trouverez des détails sur votre compte, ainsi que des liens d’accès à d’autres pages sur lesquelles vous pouvez visualiser et/ou mettre à jour des informations et exécuter diverses tâches relatives à votre compte.
 

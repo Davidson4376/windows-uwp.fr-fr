@@ -3,19 +3,20 @@ author: jnHs
 Description: You can create Store listings for your apps without using the Dev Center dashboard by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file.
 title: Importer et exporter des descriptions dans le Store
 ms.author: wdg-dev-content
-ms.date: 12/22/2017
+ms.date: 03/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, uwp, importer des descriptions dans le store, exporter des descriptions du store, importer exporter, description dans le store csv
 ms.localizationpriority: high
-ms.openlocfilehash: f003ab35fa968e7b4be8e6e0591d97baafaa8648
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: fb9a3e6fd93600392ef724226368d33ed1585c76
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="import-and-export-store-listings"></a>Importer et exporter des descriptions dans le Store
+
 Au lieu de [saisir les infos des descriptions dans le Store directement dans le tableau de bord](create-app-store-listings.md), vous avez la possibilité d'ajouter ou de mettre à jour les infos en exportant vos descriptions dans un fichier.csv, en entrant vos informations et composants, puis en important le fichier mis à jour. Vous pouvez utiliser cette méthode pour créer des descriptions à partir de zéro ou pour mettre à jour des descriptions déjà créées.
 
 Cette option est particulièrement utile si vous souhaitez créer ou mettre à jour des descriptions dans le Store en plusieurs langues pour votre produit puisque vous pouvez copier/coller les mêmes informations dans plusieurs champs et facilement apporter des modifications qui doivent s’appliquer à des langues spécifiques. Toutefois, cette méthode ne vous permet pas de créer ou mettre à jour des [descriptions dans leStore propres à la plateforme](create-platform-specific-store-listings.md) pour votre application. 

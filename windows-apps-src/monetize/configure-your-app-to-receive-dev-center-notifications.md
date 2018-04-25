@@ -1,17 +1,20 @@
 ---
 author: mcleanbyron
-Description: "Découvrez comment inscrire votre applicationUWP pour la réception de notificationsPush envoyées depuis le Centre de développement Windows."
-title: "Configurez votre application pour les notifications push ciblées"
+Description: Learn how to register your UWP app to receive push notifications that you send from Windows Dev Center.
+title: Configurer votre application pour les notifications Push ciblées
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows10, uwp, MicrosoftStore Services SDK, notifications Push ciblées, centre de développement"
+keywords: windows10, uwp, MicrosoftStore Services SDK, notifications Push ciblées, centre de développement
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
-ms.openlocfilehash: fb8541c45c11668edb0241e530b79387531a631f
-ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
-translationtype: HT
+ms.localizationpriority: high
+ms.openlocfilehash: 5cd29ee3e04d2165a1aaea2d1d30215e75430214
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>Configurez votre application pour les notifications push ciblées
 
@@ -23,7 +26,7 @@ Pour pouvoir envoyer des notificationsPush à vos clients à partir du Centre de
 
 Avant d’écrire du code, suivez ces étapes afin d’ajouter une référence au Microsoft Store Services SDK dans votre projet:
 
-1. Si vous ne l’avez pas encore fait, [Installez le Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk) sur votre ordinateur de développement. Outre l’API dédiée à l’inscription d’une application pour la réception de notifications, ce SDK fournit des API pour d’autres fonctionnalités, comme l’exécution d’expériences dans vos applications avec des testsA/B et l’affichage d’annonces publicitaires.
+1. Si vous ne l’avez pas encore fait, [installez le Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk) sur votre ordinateur de développement. 
 2. Ouvrez votre projet dans Visual Studio.
 3. Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le nœud **Références**, puis sélectionnez **Ajouter une référence**.
 4. Dans le **Gestionnaire de références**, développez **Windows universel**, puis cliquez sur **Extensions**.
@@ -36,24 +39,25 @@ Pour inscrire votre application pour la réception de notificationsPush ciblées
 1. Dans votre projet, recherchez une section de code s’exécutant au démarrage, dans laquelle vous pouvez inscrire votre application pour la réception des notifications.
 2. Ajoutez l’instruction suivante en haut du fichier de code.
 
-  [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#EngagementNamespace)]
+    [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#EngagementNamespace)]
 
 3. Récupérez un objet [StoreServicesEngagementManager](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.aspx) et appelez l’une des surcharges [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync.aspx) dans le code de démarrage identifié plus tôt. Cette méthode doit être appelée à chaque lancement de l’application.
 
   * Si vous souhaitez que le Centre de développement crée son propre URI de canal pour les notifications, appelez la surcharge [RegisterNotificationChannelAsync()](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx).
 
-    [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync1)]
-        > [!IMPORTANT]
-        > If your app also calls [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) to create a notification channel for WNS, make sure that your code does not call [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) and the [RegisterNotificationChannelAsync()](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) overload simultaneously. If you need to call both of these methods, make sure that you call them sequentially and await the return of one method before calling the other.
+      [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync1)]
+      > [!IMPORTANT]
+      > Si votre application appelle [CreatePushNotificationChannelForApplicationAsync](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync) pour créer un canal de notification pour WNS, vérifiez que votre code n’appelle pas simultanément la surcharge [CreatePushNotificationChannelForApplicationAsync](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync) et la surcharge [RegisterNotificationChannelAsync()](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx). Si vous devez appeler les deuxméthodes, assurez-vous de les appeler séquentiellement et d’attendre le retour d’une méthode avant d’appeler l’autre.
 
-  * Si vous souhaitez spécifier l’URI de canal à utiliser pour les notificationsPush ciblées du Centre de développement, appelez la surcharge [RegisterNotificationChannelAsync(StoreServicesNotificationChannelParameters)](https://msdn.microsoft.com/library/windows/apps/mt771191.aspx). Par exemple, vous pouvez procéder ainsi si votre application utilise déjà les services de notifications Push Windows (WNS) et que vous souhaitez utiliser le même URI de canal. Vous devez dans un premier temps créer l’objet [StoreServicesNotificationChannelParameters](https://msdn.microsoft.com/en-us/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.aspx) et affecter la propriété [CustomNotificationChannelUri](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri.aspx) à votre URI de canal.
+  * Si vous souhaitez spécifier l’URI de canal à utiliser pour les notificationsPush ciblées du Centre de développement, appelez la surcharge [RegisterNotificationChannelAsync(StoreServicesNotificationChannelParameters)](https://msdn.microsoft.com/library/windows/apps/mt771191.aspx). Par exemple, vous pouvez procéder ainsi si votre application utilise déjà les services de notifications Push Windows (WNS) et que vous souhaitez utiliser le même URI de canal. Vous devez dans un premier temps créer l’objet [StoreServicesNotificationChannelParameters](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.aspx) et affecter la propriété [CustomNotificationChannelUri](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri.aspx) à votre URI de canal.
 
-    [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync2)]
+      [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync2)]
 
 > [!NOTE]
-> Lorsque vous appelez la méthode **RegisterNotificationChannelAsync**, un fichier nommé MicrosoftStoreEngagementSDKId.txt est créé dans le magasin de données d’application local pour votre application (le dossier renvoyé par la propriété [ApplicationData.LocalFolder](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData#Windows_Storage_ApplicationData_LocalFolder)). Ce fichier contient un ID utilisé par l’infrastructure des notifications Push ciblées. Assurez-vous que votre application ne modifie ni ne supprime ce fichier. Dans le cas contraire, vos utilisateurs risquent de recevoir plusieurs instances de notifications, ou les notifications peuvent ne pas se comporter correctement.
+> Lorsque vous appelez la méthode **RegisterNotificationChannelAsync**, un fichier nommé MicrosoftStoreEngagementSDKId.txt est créé dans le magasin de données d’application local pour votre application (le dossier renvoyé par la propriété [ApplicationData.LocalFolder](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalFolder)). Ce fichier contient un ID utilisé par l’infrastructure des notifications Push ciblées. Assurez-vous que votre application ne modifie ni ne supprime ce fichier. Dans le cas contraire, vos utilisateurs risquent de recevoir plusieurs instances de notifications, ou les notifications peuvent ne pas se comporter correctement.
 
 <span id="notification-customers" />
+
 ### <a name="how-targeted-push-notifications-are-routed-to-customers"></a>Comment les notifications Push ciblées sont dirigées vers les clients
 
 Lorsque votre application appelle **RegisterNotificationChannelAsync**, cette méthode recueille le compte Microsoft du client actuellement connecté à l’appareil. Ultérieurement, lorsque vous envoyez une notification Push ciblée à un segment incluant ce client, le centre de développement envoie la notification aux périphériques associés au compte Microsoft de ce client.
@@ -64,9 +68,9 @@ Si le client qui a démarré votre application confie son appareil à un tiers q
 
 Une fois que votre application est inscrite pour la réception des notifications et que vous [envoyez une notificationPush aux clients de votre application à partir du Centre de développement](../publish/send-push-notifications-to-your-apps-customers.md), l’un des points d’entrée suivants de votre application est appelé lorsque votre application est lancée par votre utilisateur en réaction à votre notificationPush. Si vous possédez du code à exécuter lorsque l’utilisateur lance votre application, vous pouvez l’ajouter à l’un de ces points d’entrée dans votre application.
 
-  * Si la notificationPush présente un type d’activation au premier plan, supprimez la méthode [OnActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onactivated.aspx) de la classe **App** dans votre projet et ajoutez votre code à cette méthode.
+  * Si la notificationPush présente un type d’activation au premier plan, supprimez la méthode [OnActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated) de la classe **App** dans votre projet et ajoutez votre code à cette méthode.
 
-  * Si la notificationPush présente un type d’activation en arrière-plan, ajoutez votre code à la méthode [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) de votre [tâche en arrière-plan](../launch-resume/support-your-app-with-background-tasks.md).
+  * Si la notificationPush présente un type d’activation en arrière-plan, ajoutez votre code à la méthode [Run](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) de votre [tâche en arrière-plan](../launch-resume/support-your-app-with-background-tasks.md).
 
 Par exemple, vous pouvez récompenser les utilisateurs de votre application qui ont fait l’acquisition d’extensions payantes en leur octroyant gratuitement une autre extension. Dans ce cas, vous pouvez envoyer une notificationPush à un [segment de clients](../publish/create-customer-segments.md) ciblant ces utilisateurs. Ensuite, vous pouvez ajouter du code afin de leur procurer un [achat in-app](in-app-purchases-and-trials.md) dans l’un des points d’entrée répertoriés ci-dessus.
 
@@ -78,15 +82,16 @@ Cette méthode renvoie également les arguments de lancement d’origine associ�
 
 La méthode d’appel de cette méthode dépend du type d’activation de la notificationPush:
 
-* Si la notificationPush présente un type d’activation au premier plan, appelez cette méthode depuis la substitution de méthode [OnActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onactivated.aspx) de votre application et communiquez les arguments disponibles dans l’objet [ToastNotificationActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.toastnotificationactivatedeventargs.aspx) transmis à cette méthode. L’exemple de code suivant suppose que votre fichier de code contient des instructions **using** pour les espaces de noms **Microsoft.Services.Store.Engagement** et **Windows.ApplicationModel.Activation**.
+* Si la notificationPush présente un type d’activation au premier plan, appelez cette méthode depuis la substitution de méthode [OnActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated) de votre application et communiquez les arguments disponibles dans l’objet [ToastNotificationActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs) transmis à cette méthode. L’exemple de code suivant suppose que votre fichier de code contient des instructions **using** pour les espaces de noms **Microsoft.Services.Store.Engagement** et **Windows.ApplicationModel.Activation**.
 
   [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/App.xaml.cs#OnActivated)]
 
-* Si la notificationPush présente un type d’activation en arrière-plan, appelez cette méthode depuis la méthode [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) de votre [tâche en arrière-plan](../launch-resume/support-your-app-with-background-tasks.md) et transmettez les arguments qui sont disponibles dans l’objet [ToastNotificationActionTriggerDetail](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.toastnotificationactiontriggerdetail.aspx) transmis à cette méthode. L’exemple de code suivant suppose que votre fichier de code contient des instructions **using** pour les espaces de noms **Microsoft.Services.Store.Engagement**, **Windows.ApplicationModel.Background** et **Windows.UI.Notifications**.
+* Si la notificationPush présente un type d’activation en arrière-plan, appelez cette méthode depuis la méthode [Run](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) de votre [tâche en arrière-plan](../launch-resume/support-your-app-with-background-tasks.md) et transmettez les arguments qui sont disponibles dans l’objet [ToastNotificationActionTriggerDetail](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationActionTriggerDetail) transmis à cette méthode. L’exemple de code suivant suppose que votre fichier de code contient des instructions **using** pour les espaces de noms **Microsoft.Services.Store.Engagement**, **Windows.ApplicationModel.Background** et **Windows.UI.Notifications**.
 
   [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#Run)]
 
 <span id="unregister" />
+
 ## <a name="unregister-for-push-notifications"></a>Annuler l’inscription aux notificationsPush
 
 Si vous souhaitez que votre application cesse de recevoir les notificationsPush ciblées du Centre de développement, appelez la méthode [UnregisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync).
@@ -98,6 +103,6 @@ Notez que cette méthode invalide le canal utilisé pour les notifications et do
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Envoyer des notifications push ciblées aux clients de votre application](../publish/send-push-notifications-to-your-apps-customers.md)
-* [Vue d’ensemble des services de notifications Push Windows (WNS)](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
-* [Comment demander, créer et enregistrer un canal de notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868221)
-* [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)
+* [Vue d’ensemble des services de notifications Push Windows (WNS)](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)
+* [Comment demander, créer et enregistrer un canal de notification](https://docs.microsoft.com/previous-versions/windows/apps/hh868221(v=win.10))
+* [Microsoft Store Services SDK](https://docs.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)

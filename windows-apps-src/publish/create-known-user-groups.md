@@ -1,33 +1,33 @@
 ---
 author: JnHs
-Description: "Découvrez comment créer des groupes d’utilisateurs connus à utiliser pour la distribution de version d’évaluation de package et bien davantage."
-title: "Créer des groupes d’utilisateurs connus"
+Description: Learn how to create known user groups to use for package flighting and more.
+title: Créer des groupes d’utilisateurs connus
 ms.author: wdg-dev-content
-ms.date: 08/08/2017
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, segment, segments, groupe ciblé, clients"
-ms.openlocfilehash: fc3986520e55ae0c636eb2db731df065463002b5
-ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+keywords: windows10, uwp, groupe ciblé, clients, groupe de versions d’évaluation, groupes d’utilisateurs connus, utilisateurs connus
+ms.localizationpriority: high
+ms.openlocfilehash: 06922ba9cde98f4bdf678dc281d261dda3bce2b0
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-known-user-groups"></a>Créer des groupes d’utilisateurs connus
 
-Les groupes d’utilisateurs connus vous permettent d’ajouter des personnes spécifiques à un groupe à l’aide de l’adresse e-mail associée à leur compte Microsoft. Ces groupes d’utilisateurs connus sont généralement utilisés avec des [versions d’évaluation de package](package-flights.md) pour distribuer des packages spécifiques à un groupe de personnes sélectionné. Ces groupes permettent également d’envoyer des [notifications ciblées](send-push-notifications-to-your-apps-customers.md) ou des [offres ciblées](use-targeted-offers-to-maximize-engagement-and-conversions.md) à un groupe de clients spécifiques dans le cadre de vos campagnes visant à susciter l’intérêt.
+Les groupes d’utilisateurs connus vous permettent d’ajouter des personnes spécifiques à un groupe à l’aide de l’adresse e-mail associée à leur compte Microsoft. Ces groupes d’utilisateurs connus sont le plus souvent utilisés pour distribuer des packages spécifiques à un groupe de personnes sélectionné avec les [versions d’évaluation de package](package-flights.md) ou pour la distribution d’une soumission à un [public privé](choose-visibility-options.md#audience). Ils peuvent également être utilisés pour les campagnes visant à susciter l’intérêt, comme l’envoi de [notifications ciblées](send-push-notifications-to-your-apps-customers.md) ou d’[offres ciblées](use-targeted-offers-to-maximize-engagement-and-conversions.md) à un groupe de clients spécifiques.
 
-Pour être comptabilisée en tant que membre du groupe, chaque personne doit être authentifiée auprès du WindowsStore à l’aide du compte Microsoft associé à l’adresse e-mail que vous fournissez. Pour les versions d’évaluation de package, ces personnes doivent utiliser [un appareil Windows10 qui prend en charge la distribution de version d’évaluation de package](package-flights.md) afin de télécharger l’application.
-
+Pour être comptabilisée en tant que membre du groupe, chaque personne doit être authentifiée auprès du WindowsStore à l’aide du compte Microsoft associé à l’adresse e-mail que vous fournissez. Pour télécharger l’application avec la distribution de version d’évaluation de package, les membres du groupe doivent utiliser une version de Windows10 qui prend en charge les versions d’évaluation de package (Windows.Desktop build10586 ou ultérieure, Windows.Mobile build10586.63 ou ultérieure, ou Xbox One). Avec les soumissions pour un public privé, les membres du groupe doivent utiliser Windows10, version1607 ou ultérieure (y compris XboxOne).
 
 ## <a name="to-create-a-known-user-group"></a>Pour créer un groupe d’utilisateurs connus
 
-1.  Dans le tableau de bord du Centre de développement Windows, développez **Engager** dans le menu de navigation de gauche, puis sélectionnez **Groupes de clients**. 
-2.  Dans la section **Mes groupes de clients**, sélectionnez **Créer un groupe**.
-3.  Sur la page suivante, sélectionnez la case d’option **Known user group**.
-4.  Dans la zone **Nom du groupe**, entrez un nom pour votre groupe d’utilisateurs connus.
-5.  Entrez les adresses e-mail des personnes que vous souhaitez ajouter au groupe. Vous devez inclure au moins une adresse e-mail, le nombre maximal d’adresses étant de 10000. Vous pouvez saisir les adresses e-mail directement dans le champ (séparées par des espaces, des virgules, des points-virgules ou des sauts de ligne) ou cliquer sur le lien **Importer au formatCSV** afin de créer le groupe de versions d’évaluation à partir d’une liste d’adresses e-mail d’un fichier.csv.
+1. Dans le tableau de bord du Centre de développement Windows, développez **Engager** dans le menu de navigation de gauche, puis sélectionnez **Groupes de clients**. 
+2. Dans la section **Mes groupes de clients**, sélectionnez **Créer un groupe**.
+3. Sur la page suivante, entre un nom pour votre groupe dans la zone **Nom du groupe**.
+4. Assurez-vous que la case d’option **Groupe d'utilisateurs connus** est sélectionnée.
+5. Entrez les adresses e-mail des personnes que vous souhaitez ajouter au groupe. Vous devez inclure au moins une adresse e-mail, le nombre maximal d’adresses étant de 10000. Vous pouvez saisir les adresses e-mail directement dans le champ (séparées par des espaces, des virgules, des points-virgules ou des sauts de ligne) ou cliquer sur le lien **Importer au formatCSV** afin de créer le groupe de versions d’évaluation à partir d’une liste d’adresses e-mail d’un fichier.csv.
 6. Sélectionnez **Enregistrer**.
 
 Vous pouvez alors utiliser le groupe à votre convenance.
@@ -47,7 +47,7 @@ Une fois que vous avez sélectionné le groupe à modifier, vous pouvez ajouter 
 
 Si vous souhaitez apporter des modifications plus importantes, sélectionnez **Exporter au formatCSV** pour enregistrer vos informations d’appartenance au groupe dans un fichier.csv. Effectuez vos modifications dans ce fichier, puis cliquez sur **Importer au formatCSV** pour utiliser la nouvelle version afin de mettre à jour l’appartenance au groupe.
 
-Notez que l’implémentation des modifications d’appartenance au groupe peut prendre jusqu’à 30minutes. Si vous ajoutez des personnes à un groupe d’utilisateurs connus après avoir publié une version d’évaluation de package pour ce groupe, les packages seront automatiquement transférés à ces personnes; vous n’êtes pas obligé de créer et publier une nouvelle soumission pour cette version d’évaluation de package. 
+Notez que l’implémentation des modifications d’appartenance au groupe peut prendre jusqu’à 30minutes. Vous n’avez pas besoin de publier une nouvelle soumission pour que les nouveaux membres du groupe puissent accéder à votre soumission par le biais de versions d’évaluation de package ou du public privé; ils y auront accès dès que les modifications seront appliquées. 
 
 
 

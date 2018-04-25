@@ -1,17 +1,20 @@
 ---
 author: mcleanbyron
-Description: "Vous pouvez utiliser le tableau de bord du Centre de développement Windows pour exécuter des expériences pour vos applications de plateformeWindows universelle (UWP) avec des tests A/B."
-title: "Exécuter des expériences d’application avec des tests A/B"
+Description: You can use the Windows Dev Center dashboard to run experiments for your Universal Windows Platform (UWP) apps with A/B testing.
+title: Exécuter des expériences d’application avec des testsA/B
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, Microsoft Store Services SDK, tests A/B, expériences"
-ms.openlocfilehash: d95f42d7a57c191e371f06b21427d52c5c51773e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows 10, uwp, Microsoft Store Services SDK, tests A/B, expériences
+ms.localizationpriority: high
+ms.openlocfilehash: 0ed6fab97d5e4172601b3c2e549e8feab4f8db57
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="run-app-experiments-with-ab-testing"></a>Exécuter des expériences d’application avec des tests A/B
 
@@ -47,6 +50,7 @@ Pour obtenir des résultats optimaux, suivez les recommandations ci-après lorsq
 * Exécutez les expériences pendant au moins 2 à 4semaines afin de collecter suffisamment de données exploitables et significatives d’un point de vue statistique.
 
 <span id="terms" />
+
 ## <a name="related-terms"></a>Termes associés
 
 |  Terme  |  Définition  |

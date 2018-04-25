@@ -1,17 +1,20 @@
 ---
 author: GrantMeStrength
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
-title: "Préparation"
-description: "Se préparer est bien plus simple que vous l’imaginez. Suivez ces instructions et lancez-vous dans la création d’applications de plateforme Windows universelle (UWP) pour Windows10."
+title: Préparation
+description: Se préparer est bien plus simple que vous l’imaginez. Suivez ces instructions et lancez-vous dans la création d’applications de plateforme Windows universelle (UWP) pour Windows10.
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 202480cd8e9107e18c7fa8c84a17089177f91dcb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: high
+ms.openlocfilehash: 85c949307183cf71f8b770d190d983db28b61a9f
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="get-set-up"></a>Préparation
 
@@ -29,7 +32,6 @@ Pour développer des applications UWP, vous avez besoin de la dernière version 
 Êtes-vous un abonné MSDN ? Vous pouvez obtenir des téléchargements ISO ici :
 
 -   Obtenir Windows 10 à partir de la page des [téléchargements réservés aux abonnés MSDN](http://go.microsoft.com/fwlink/p/?LinkId=266384)
-
 
 
 ## <a name="2-download-or-update-visual-studio"></a>2. Télécharger ou mettre à jour Visual Studio
@@ -53,7 +55,7 @@ Si vous avez déjà commencé à utiliser Visual Studio, mais que vous découvre
 
 ## <a name="3-enable-your-device-for-development"></a>3. Activer votre appareil pour le développement
 
-Il est important de tester vos applications UWP sur des PC et téléphones réels. Avant de déployer des applications sur votre PC ou Windows Phone, vous devez inscrire l’appareil pour le développement.
+Il est important de tester vos applicationsUWP sur des PC et des téléphones réels. Avant de déployer des applications sur votre PC ou Windows Phone, vous devez inscrire l’appareil pour le développement.
 
 -   Pour obtenir des instructions détaillées, voir [Activer votre appareil pour le développement](enable-your-device-for-development.md).
 
@@ -65,7 +67,7 @@ Vous pouvez commencer à développer des applications immédiatement mais, avant
 
 ## <a name="whats-next"></a>Et après ?
 
-Après avoir installé les outils et obtenu une licence de développeur ou un compte de développeur, utilisez nos didacticiels pour créer votre première application :
+Après avoir installé les outils et activé votre appareil pour le développement, utilisez nos didacticiels pour créer votre première application:
 
 -   Didacticiels [Créer votre première application](your-first-app.md)
 
@@ -77,8 +79,8 @@ Pour obtenir la liste complète des outils et des téléchargements, visitez la 
 ## <a name="see-also"></a>Voir aussi
 
 * [Votre première application](your-first-app.md)
-* [Publication de votre application du Windows Store](https://developer.microsoft.com/store/publish-apps).
+* [Publier votre application UWP](https://developer.microsoft.com/store/publish-apps)
 * [Articles sur les procédures de développement d’applications UWP](https://developer.microsoft.com/windows/apps/develop)
 * [Exemples de code pour les développeurs UWP](https://developer.microsoft.com/windows/samples)
-* [Qu’est-ce qu’une application Windows universelle?](whats-a-uwp.md)
+* [Qu’est-ce qu’une application UWP?](universal-application-platform-guide.md)
 * [Créer un compte Windows](sign-up.md)

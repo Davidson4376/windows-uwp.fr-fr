@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: high
-ms.openlocfilehash: 3cbaa8a8e78ad14472a34e107521d9c966ba434f
-ms.sourcegitcommit: 884b79b4c6fd8014fab9953faca557e56bb8c400
+ms.openlocfilehash: a16f86512a3c33055cb4825966282f1487ea158d
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="desktop-bridge"></a>Pont du bureau
 
@@ -58,6 +58,7 @@ Prévoyez-vous de publier votre application dans le [Windows app store](https://
 Ensuite, consultez l’article [Préparation à la création d'un package d'application de bureau](desktop-to-uwp-prepare.md) et corrigez les éventuels problèmes de votre application avant de créer un package d'application Windows pour elle. Votre application ne demandera peut-être que quelques corrections avant la création du package. Toutefois, certaines situations peuvent vous obliger à adapter votre application avant de créer un package pour elle.
 
 <a id="convert" />
+
 ## <a name="package"></a>Package
 
 Voici certains outils que vous pouvez employer pour créer un package d'application Windows pour votre application.
@@ -114,6 +115,9 @@ Vous pouvez utiliser [Advanced Installer](http://www.advancedinstaller.com/) pou
 Advanced Installer fournit également une extension pour Visual Studio2017 et 2015 qui permet de [générer et déboguer des applications Pont du bureau](http://www.advancedinstaller.com/debug-desktop-bridge-apps.html).
 
 Consultez cette [vidéo](https://www.youtube.com/watch?v=cmLKgn04Vfg&feature=youtu.be) pour une présentation rapide.
+
+> [!TIP]
+> Veillez à consulter l’article récemment publié [Advanced Installer Express Edition](https://www.advancedinstaller.com/express-edition.html).
 
 #### <a name="cloudhouse-compatibility-containers"></a>Conteneurs de compatibilité Cloudhouse
 

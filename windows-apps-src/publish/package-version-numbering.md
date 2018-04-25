@@ -1,24 +1,25 @@
 ---
 author: jnHs
-Description: "Le Windows Store applique certaines règles relatives aux numéros de version, qui fonctionnent différemment dans les différentes versions du système d’exploitation."
-title: "Numérotation des versions de packages"
+Description: The Microsoft Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
+title: Numérotation des versions de packages
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 67c90f87fe0d02a0a906392409103e93e83103c3
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: a5c9c676a3ccd8ff7f1e7d53d9019d722fefa722
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="package-version-numbering"></a>Numérotation des versions de packages
 
 
-Chaque package que vous fournissez doit avoir un numéro de version (fourni sous la forme d’une valeur dans l’attribut **Version** de l’élément **Package/Identity** dans le manifeste de l’application). Le Windows Store applique certaines règles relatives aux numéros de version, qui fonctionnent différemment dans les différentes versions du système d’exploitation.
+Chaque package que vous fournissez doit avoir un numéro de version (fourni sous la forme d’une valeur dans l’attribut **Version** de l’élément **Package/Identity** dans le manifeste de l’application). Le MicrosoftStore applique certaines règles relatives aux numéros de version, qui fonctionnent différemment dans les différentes versions du système d’exploitation.
 
 > [!NOTE]
 > Cet article fait référence aux «packages». Toutefois, sauf indication contraire, les mêmes règles s’appliquent aux numéros de version des fichiers.appx et .appxbundle.
@@ -26,12 +27,12 @@ Chaque package que vous fournissez doit avoir un numéro de version (fourni sous
 
 ## <a name="version-numbering-for-windows-10-packages"></a>Numérotation des versions pour les packages Windows10
 
-Le numéro de version de tous vos packages Windows 10 doit toujours être supérieur à ceux des packages Windows 8, Windows 8.1 et/ou Windows Phone 8.1 que vous publiez (ou avez publié) pour la même application. (Pour plus d’informations, voir [Ajout de packages pour Windows10 à une application publiée précédemment](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).)
+Le numéro de version de tous vos packages Windows 10 doit toujours être supérieur à ceux des packages Windows 8, Windows 8.1 et/ou Windows Phone 8.1 que vous publiez (ou avez publié) pour la même application. (Pour plus d’informations, voir [Ajout de packages pour Windows10 à une application publiée précédemment](https://docs.microsoft.com/en-us/windows/uwp/publish/guidance-for-app-package-management#adding-packages-for-windows-10-to-a-previously-published-app).)
 
 > [!IMPORTANT]
 > La dernière (quatrième) partie du numéro de version est réservée au WindowsStore. Vous devez conserver la valeur de 0 lorsque vous générez votre package (bien que le WindowsStore puisse modifier la valeur de cette partie du numéro).
 
-Lors du choix d’un package Windows10 à partir de votre soumission publiée, le Windows Store utilise toujours le package dont le numéro de version est le plus élevé et qui s’applique à l’appareil du client. Cela vous offre une plus grande souplesse et vous permet de contrôler les packages fournis aux clients sur des types spécifiques d’appareils. Il est important de noter que vous pouvez soumettre ces packages dans n’importe quel ordre ; vous n’êtes pas obligé de fournir des packages dont le numéro de version est supérieur avec chaque soumission ultérieure.
+Lors du choix d’un package Windows10 à partir de votre soumission publiée, le MicrosoftStore utilise toujours le package dont le numéro de version est le plus élevé et qui s’applique à l’appareil du client. Cela vous offre une plus grande souplesse et vous permet de contrôler les packages fournis aux clients sur des types spécifiques d’appareils. Il est important de noter que vous pouvez soumettre ces packages dans n’importe quel ordre ; vous n’êtes pas obligé de fournir des packages dont le numéro de version est supérieur avec chaque soumission ultérieure.
 
 Vous pouvez même fournir plusieurs packages Windows 10 avec le même numéro de version. Toutefois, les packages qui partagent un même numéro de version ne peuvent pas avoir la même architecture, car l’identité complète que le Windows Store utilise pour chaque package doit être unique. Pour plus d’informations, voir [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-identity).
 
@@ -65,11 +66,12 @@ Pour ce faire, créez une nouvelle soumission. Supprimez le package problématiq
 
 Pour résoudre les problèmes des clients qui ont déjà reçu le package problématique, vous pouvez soumettre dès que possible un nouveau package Windows 10 associé à un numéro de version supérieur à celui du package incorrect. Une fois cette soumission certifiée, tous les clients seront mis à jour vers le nouveau package, car celui-ci aura un numéro de version supérieur.
 
+
 ## <a name="version-numbering-for-windows-81-and-earlier-and-windows-phone-81-packages"></a>Numérotation des versions des packages pour Windows 8.1 (et versions antérieures) et Windows Phone 8.1
 
 Pour les packages .appx qui ciblent Windows Phone 8.1, le numéro de version du package dans une nouvelle soumission doit toujours être supérieur à celui du package inclus dans la dernière soumission (ou toute soumission précédente).
 
-Pour les packages .appx qui ciblent Windows 8 et Windows 8.1, la même règle s’applique par architecture : le numéro de version du package dans une nouvelle soumission doit toujours être supérieur à celui du package livré en dernier dans le Windows Store pour la même architecture.
+Pour les packages .appx qui ciblent Windows8 et Windows8.1, la même règle s’applique par architecture: le numéro de version du package dans une nouvelle soumission doit toujours être supérieur à celui du package publié en dernier dans le Store pour la même architecture.
 
 De plus, le numéro de version des packages Windows 8.1 doit toujours être supérieur aux numéros de version de vos packages Windows 8 pour la même application. Autrement dit, le numéro de version d’un package Windows8 que vous soumettez doit être inférieur au numéro de version de tout package Windows8.1 que vous avez soumis pour la même application.
 
@@ -78,7 +80,7 @@ De plus, le numéro de version des packages Windows 8.1 doit toujours être sup�
 
 Voici quelques exemples de ce qui se passe dans les différents scénarios de mise à jour de numéro de version pour Windows 8 et Windows 8.1.
 
-| Version de votre application dans le Store  | Version transférée | Une fois la nouvelle version présente dans le Windows Store, elle sera installée dans une nouvelle acquisition. | Une fois la nouvelle version présente dans le Windows Store, elle sera mise à jour si un client possède déjà l’application. |
+| Version de votre application dans le Store  | Version transférée | Une fois la nouvelle version présente dans le Store, elle sera installée dans une nouvelle acquisition. | Une fois la nouvelle version présente dans le Store, elle sera mise à jour si un client possède déjà l’application. |
 |---------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|----------|
 | Rien                                     | x86, v1.0.0.0               | x86, v1.0.0.0 sur les ordinateurs x86 et x64                                                | Rien |
 | x86, v1.0.0.0                               | x64, v1.0.0.0               | v1.0.0.0 pour l’architecture de l’ordinateur du client                                                   | Rien Les numéros de version sont les mêmes. |
@@ -87,6 +89,6 @@ Voici quelques exemples de ce qui se passe dans les différents scénarios de mi
 | neutre, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | v1.0.0.0 pour l’architecture de l’ordinateur du client.          | Rien Les clients qui possèdent la version neutre v1.0.0.1 de l’application continuent de l’utiliser. |
 | neutre, v1.0.0.1 <br> x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | v1.0.0.1 pour l’architecture de l’ordinateur du client. | Rien pour les clients qui exécutent la version neutre v1.0.0.1 de l’application. <br> Mise à jour de v1.0.0.0 vers v1.0.0.1 pour les clients exécutant la version v1.0.0.0 de l’application générée pour l’architecture de leur ordinateur. |
 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | x86, v1.0.0.2 <br> x64, v1.0.0.2 <br> ARM, v1.0.0.2 | v1.0.0.2 pour l’architecture de l’ordinateur du client.  | Mise à jour de v1.0.0.1 vers v1.0.0.2 pour les clients exécutant la version v1.0.0.1 de l’application générée pour l’architecture de leur ordinateur. |
- 
+
 > [!NOTE]
 > À la différence des packages.appx, les numéros de version dans les packages.xap ne sont pas pris en compte lors de la détermination du package à fournir à un client donné. Pour mettre à jour un client d’un package .xap vers une version plus récente, veillez à supprimer l’ancien .xap dans la nouvelle soumission.
