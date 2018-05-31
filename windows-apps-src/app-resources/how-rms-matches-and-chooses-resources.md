@@ -1,7 +1,7 @@
 ---
 author: stevewhims
-Description: "Lorsqu’une ressource est requise, plusieurs candidats sont susceptibles de correspondre, avec plus ou moins d’exactitude, au contexte de ressource actuel. Le système de gestion des ressources analyse tous les candidats et identifie le meilleur à renvoyer. Cette rubrique décrit ce processus en détail et donne des exemples."
-title: "Comment le système de gestion des ressources met en correspondance et sélectionne les ressources"
+Description: When a resource is requested, there may be several candidates that match the current resource context to some degree. The Resource Management System will analyze all of the candidates and determine the best candidate to return. This topic describes that process in detail and gives examples.
+title: Comment le système de gestion des ressources met en correspondance et sélectionne les ressources
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/23/2017
@@ -9,22 +9,22 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
-localizationpriority: medium
-ms.openlocfilehash: 4731ae7add7d5b969ab98da60b3f6740dbbbee1b
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+ms.localizationpriority: medium
+ms.openlocfilehash: bb1168401aaa715f8d1c459691dfa1b1ca38ccbe
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 03/28/2018
+ms.locfileid: "1690425"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>Comment le système de gestion des ressources met en correspondance et sélectionne les ressources
-
 Lorsqu’une ressource est requise, plusieurs candidats sont susceptibles de correspondre, dans une certaine mesure, au contexte de ressource actuel. Le système de gestion des ressources analyse tous les candidats et identifie le meilleur à renvoyer. Pour ce faire, il prend en compte l’ensemble des qualificateurs afin de classer tous les candidats.
 
 Dans ce processus de classement, une priorité différente est donnée aux qualificateurs. Ainsi, la langue a le plus d’impact sur le classement général et elle est suivie du contraste, puis de l’échelle et ainsi de suite. Pour chaque qualificateur, les qualificateurs candidats sont comparés à la valeur du qualificateur de contexte afin de déterminer la qualité de la correspondance. La façon dont la comparaison est effectuée varie en fonction du qualificateur.
 
-Pour certains qualificateurs, tels que l’échelle et le contraste, il y existe toujours un degré minimal de correspondance. Par exemple, un candidat qualifié pour «scale-100» correspond dans une certaine mesure à un contexte de «scale-400», mais pas autant qu’un candidat qualifié pour «scale-200» ou (pour une correspondance parfaite) «scale-400».
+Pour plus d’informations sur la mise en correspondance de balises de langue, consultez [Comment le système de gestion des ressources met en correspondance les balises de langue](how-rms-matches-lang-tags.md).
+
+Pour certains qualificateurs, tels que l’échelle et le contraste, il existe toujours un degré minimal de correspondance. Par exemple, un candidat qualifié pour «scale-100» correspond dans une certaine mesure à un contexte de «scale-400», mais pas autant qu’un candidat qualifié pour «scale-200» ou (pour une correspondance parfaite) «scale-400».
 
 Toutefois, pour d’autres qualificateurs tels que la langue ou le lieu de résidence, il est possible d’avoir une comparaison sans correspondance (tout comme divers degrés de correspondance). Par exemple, un candidat dont le qualificateur de langue est «en-US» est une correspondance partielle pour un contexte «en-GB», mais un candidat dont le qualificateur est «fr» n’est pas du tout une correspondance. De même, un candidat dont le qualificateur de lieu de résidence est «155» (Europe de l’ouest) correspond plutôt bien au contexte d’un utilisateur dont le paramètre de lieu de résidence est «FR», mais un candidat ayant le qualificateur «US» ne correspond pas du tout.
 
@@ -41,7 +41,6 @@ Pour toutes les ressources potentielles encore prises en considération, le char
 En cas d’égalité, la valeur du qualificateur de contexte ayant la priorité la plus élevée suivante est examinée et le processus se poursuit jusqu’à ce qu’une meilleure correspondance soit trouvée.
 
 ## <a name="example-of-choosing-a-resource-candidate"></a>Exemple de sélection d’une ressource potentielle
-
 Prenons ces fichiers.
 
 ```
@@ -85,7 +84,7 @@ Ensuite, le système de gestion des ressources utilise le qualificateur de conte
 en/images/logo.scale-400.jpg
 ```
 
-Vous pouvez utiliser la méthode avancée [**NamedResource.ResolveAll**](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live#Windows_ApplicationModel_Resources_Core_NamedResource_ResolveAll_Windows_ApplicationModel_Resources_Core_ResourceContext_) pour extraire tous les candidats dans l’ordre dans lequel ils correspondent aux paramètres du contexte. Pour l’exemple que nous venons de détailler, **ResolveAll** renvoie les candidats dans cet ordre.
+Vous pouvez utiliser la méthode avancée [**NamedResource.ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) pour extraire tous les candidats dans l’ordre dans lequel ils correspondent aux paramètres du contexte. Pour l’exemple que nous venons de détailler, **ResolveAll** renvoie les candidats dans cet ordre.
 
 ```
 en/images/logo.scale-400.jpg
@@ -95,7 +94,6 @@ fr/images/logo.scale-100.jpg
 ```
 
 ## <a name="example-of-producing-a-fallback-choice"></a>Exemple de production d’une sélection de secours
-
 Prenons ces fichiers.
 
 ```
@@ -138,9 +136,7 @@ de/images/contrast-standard/logo.jpg
 ```
 
 ## <a name="important-apis"></a>API importantes
-
-* [NamedResource.ResolveAll](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live#Windows_ApplicationModel_Resources_Core_NamedResource_ResolveAll_Windows_ApplicationModel_Resources_Core_ResourceContext_)
+* [NamedResource.ResolveAll](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live)
 
 ## <a name="related-topics"></a>Rubriques associées
-
 * [Compiler des ressources manuellement avec MakePri.exe](compile-resources-manually-with-makepri.md)
