@@ -1,21 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: 708170E1-777A-4E4A-9F77-5AB28B88B107
-description: "Cet article vous montre comment utiliser les contrôles des appareils manuels pour activer les scénarios de capture vidéo, y compris la vidéo HDR et la priorité de l’exposition."
-title: "Contrôles d’appareil photo manuel pour la capture vidéo"
+description: Cet article vous montre comment utiliser les contrôles des appareils manuels pour activer les scénarios de capture vidéo, y compris la vidéo HDR et la priorité de l’exposition.
+title: Contrôles d’appareil photo manuel pour la capture vidéo
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: cd2adcffa233b76563e47f93f298cf954154adef
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: e4bad8d38676c8298026e66be31e2493ae7d4117
+ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 04/30/2018
+ms.locfileid: "1816034"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>Contrôles d’appareil photo manuel pour la capture vidéo
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous montre comment utiliser les contrôles des appareils manuels pour activer les scénarios de capture vidéo, y compris la vidéo HDR et la priorité de l’exposition.
@@ -35,7 +38,7 @@ La fonctionnalité vidéo HDR (High Dynamic Range) applique le traitement HDR au
 
 Le contrôle vidéo HDR prend en charge trois modes: activé, désactivé et automatique, ce qui signifie que l’appareil détermine dynamiquement si le traitement vidéo HDR est susceptible d’améliorer la capture multimédia et l’active, le cas échéant. Pour déterminer si un mode particulier est pris en charge sur l’appareil actuel, vérifiez que la collection [**HdrVideoControl.SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926683) contient le mode de votre choix.
 
-Activez ou désactivez le traitement vidéo HDR en définissant le [**HdrVideoControl.Mode**](https://msdn.microsoft.com/library/windows/apps/dn926681) sur le mode de votre choix.
+Activez ou désactivez le traitement vidéo HDR en définissant l’objet [**HdrVideoControl.Mode**](https://msdn.microsoft.com/library/windows/apps/dn926681) sur le mode de votre choix.
 
 [!code-cs[SetHdrVideoMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetHdrVideoMode)]
 
@@ -45,16 +48,52 @@ Lorsqu’il est activé, le [**ExposurePriorityVideoControl**](https://msdn.micr
 
 Déterminez si le contrôle de priorité d’exposition est pris en charge sur l’appareil actuel en vérifiant la propriété [**ExposurePriorityVideoControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926647).
 
-Activez ou désactivez le contrôle de priorité d’exposition en définissant le [**ExposurePriorityVideoControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926646) sur le mode de votre choix.
+Activez ou désactivez le contrôle de priorité d’exposition en définissant l’objet [**ExposurePriorityVideoControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926646) sur le mode de votre choix.
 
 [!code-cs[EnableExposurePriority](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEnableExposurePriority)]
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="temporal-denoising"></a>Suppression du bruit temporel
+À partir de Windows10, version1803, vous pouvez activer la suppression du bruit temporel pour la vidéo sur les appareils qui la prennent en charge. Cette fonctionnalité fusionne les données d’image de plusieurs images adjacentes en temps réel pour produire des images vidéo avec moins de bruit visuel.
+
+L'objet [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol) permet à votre application de déterminer si la suppression du bruit temporel est prise en charge sur l’appareil actuel, auquel cas, quels modes de suppression du bruit sont pris en charge. Les modes de suppression du bruit disponibles sont [**Off**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode), [**On**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode) et [**Auto**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode). Un appareil peut ne pas prendre en charge tous les modes, mais chaque appareil doit prendre en charge le mode **Auto** ou **On** et **Off**.
+
+L’exemple suivant utilise une interface utilisateur simple pour fournir des cases d’option permettant à l’utilisateur de basculer entre les modes de suppression du bruit.
+
+[!code-cs[SnippetDenoiseXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetDenoiseXAML)]
+
+Dans la méthode suivante, la propriété [**VideoTemporalDenoisingControl.Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.supported) est cochée pour voir si la suppression du bruit temporel est prise en charge sur l’appareil actuel. Si oui, nous vérifions que les modes **Off** et **Auto** ou **On** sont pris en charge, auquel cas, nos cases d’option deviennent visibles. Ensuite, les boutons **Auto** et **On** deviennent visibles si ces méthodes sont prises en charge.
+
+[!code-cs[SnippetUpdateDenoiseCapabilities](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetUpdateDenoiseCapabilities)]
+
+Dans le gestionnaire d’événement **Checked** pour les cases d’option, le nom du bouton est coché et le mode correspondant est défini en définissant la propriété [**VideoTemporalDenoisingControl.Mode**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.mode).
+
+[!code-cs[SnippetDenoiseButtonChecked](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseButtonChecked)]
+
+### <a name="disabling-temporal-denoising-while-processing-frames"></a>Désactivation de la suppression du bruit temporel lors du traitement des images
+Une vidéo qui a été traitée à l’aide de la suppression du bruit temporel peut être plus agréable à l’œil humain. Toutefois, étant donné que la suppression du bruit temporel peut avoir un impact sur la cohérence de l’image et réduire la quantité de détails de l’image, les applications qui exécutent le traitement des images sur les trames, par exemple l’enregistrement ou la reconnaissance optique des caractères, peuvent désactiver par programme la suppression du bruit lorsque le traitement des images est activé.
+
+L’exemple suivant détermine quels modes de suppression du bruit sont pris en charge et stocke ces informations dans des variables de classe.
+
+[!code-cs[SnippetDenoiseFrameReaderVars](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseFrameReaderVars)]
+
+[!code-cs[SnippetDenoiseCapabilitiesForFrameProcessing](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseCapabilitiesForFrameProcessing)]
+
+Lorsque l’application active le traitement des images, elle définit le mode de suppression du bruit sur **Off** si ce mode est pris en charge, afin que le traitement des images puisse utiliser des images brutes qui n’ont pas fait l’objet d’une suppression du bruit.
+
+[!code-cs[SnippetEnableFrameProcessing](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetEnableFrameProcessing)]
+
+Lorsque l’application désactive le traitement des images, elle définit le mode de suppression du bruit sur **On** ou **Auto**, selon le mode pris en charge.
+
+[!code-cs[SnippetDisableFrameProcessing](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDisableFrameProcessing)]
+
+Pour plus d’informations sur l’obtention d’images vidéo pour le traitement des images, voir [Traiter des images multimédias avec MediaFrameReader](process-media-frames-with-mediaframereader.md).
+
+## <a name="related-topics"></a>Rubriquesassociées
 
 * [Appareil photo](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
- 
-
+* [Traiter des images multimédias avec MediaFrameReader](process-media-frames-with-mediaframereader.md)
+*  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
  
 
 
