@@ -1,35 +1,41 @@
 ---
 author: drewbatgit
 ms.assetid: 370f2c14-4f1e-47b3-9197-24205ab255a3
-description: "Cet article répertorie les fonctionnalités d’appareil photo disponibles pour les applications UWP et renvoie vers les articles de procédures décrivant leur utilisation."
-title: "Caméra"
+description: Cet article répertorie les fonctionnalités d’appareil photo disponibles pour les applications UWP et renvoie vers les articles de procédures décrivant leur utilisation.
+title: Caméra
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 883a8977839d8f93ff878b075a52df8b9a587aa9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: a1b8a63609bbc9caa452093517ca43f71e8d5ccc
+ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
+ms.lasthandoff: 03/19/2018
+ms.locfileid: "1664699"
 ---
 # <a name="camera"></a>Caméra
 
 Cette section fournit des recommandations relatives à la création d’application de la plateforme Windows universelle qui utilise l’appareil photo ou le microphone pour capturer des photos, des vidéos et du contenu audio.
 
-##<a name="use-the-windows-built-in-camera-ui"></a>Utiliser l’interface utilisateur de l’appareil photo intégré à Windows
-| Rubrique                                                                                             | Description                                                                                                                                                                                                                                                                                    |
+## <a name="use-the-windows-built-in-camera-ui"></a>Utiliser l’interface utilisateur de l’appareil photo intégré à Windows
+
+| Rubrique | Description |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows](capture-photos-and-video-with-cameracaptureui.md) | Cet article décrit comment utiliser la classe [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI) afin de capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows. Si vous souhaitez simplement permettre à l’utilisateur de capturer une photo ou une vidéo et de renvoyer les résultats à votre application, il s’agit du moyen le plus simple et le plus rapide de procéder.  |
-##<a name="basic-mediacapture-tasks"></a>Tâches de base MediaCapture
-| Rubrique                                                                                             | Description                                                                                                                                                                                                                                                                                    |
+
+## <a name="basic-mediacapture-tasks"></a>Tâches de base MediaCapture
+
+| Rubrique | Description |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Afficher l’aperçu de l’appareil photo](simple-camera-preview-access.md) | Cet article décrit comment afficher rapidement le flux d’aperçu d’appareil photo au sein de la page XAML d’une application UWP. |
 | [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md) | Cet article vous présente le moyen le plus simple de capturer des photos et des vidéos à l’aide de la classe [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture). La classe **MediaCapture** expose un jeu robuste d’API qui fournit un contrôle de niveau inférieur sur le pipeline de capture et prend en charge des scénarios de capture avancés, mais cet article est destiné à vous aider à ajouter rapidement et facilement la capture multimédia à votre application. |
 | [Fonctionnalités d’interface utilisateur d’appareil photo pour les appareils mobiles](camera-ui-features-for-mobile-devices.md) | Cet article vous explique comment valoriser les fonctionnalités spécifiques d’interface utilisateur présentes de manière exclusive sur les appareils mobiles.  |
                                                                                                                
-##<a name="advanced-mediacapture-tasks"></a>Tâches avancées MediaCapture   
+## <a name="advanced-mediacapture-tasks"></a>Tâches avancées MediaCapture   
                                                                                                                
 | Rubrique                                                                                             | Description                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

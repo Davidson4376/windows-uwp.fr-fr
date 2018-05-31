@@ -1,7 +1,7 @@
 ---
 author: stevewhims
-Description: "Si vous souhaitez que votre application prenne en charge différentes langues d’affichage et si des opérateurs de chaîne figurent dans votre code, dans votre balisage XAML ou dans le manifeste du package d’application, déplacez ces chaînes dans un fichier de ressources (.resw). Vous pouvez ensuite effectuer une copie traduite de ce fichier de ressources pour chaque langue prise en charge par votre application."
-title: "Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application"
+Description: If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.
+title: Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Localize strings in your UI and app package manifest
 template: detail.hbs
@@ -11,27 +11,24 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
-localizationpriority: medium
-ms.openlocfilehash: cca9c9b731831ce1c87ee74b7f8b502130ef97fd
-ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
+ms.localizationpriority: medium
+ms.openlocfilehash: b96ec6b28de142cd5d81230aa729d840b89b7f5c
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 04/03/2018
+ms.locfileid: "1700805"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application
-
-Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../globalizing/globalizing-portal.md).
+Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
 
 Si vous souhaitez que votre application prenne en charge différentes langues d’affichage et si des opérateurs de chaîne figurent dans votre code, dans votre balisage XAML ou dans le manifeste du package d’application, déplacez ces chaînes dans un fichier de ressources (.resw). Vous pouvez ensuite effectuer une copie traduite de ce fichier de ressources pour chaque langue prise en charge par votre application.
 
-Des opérateurs de chaîne codés en dur peuvent apparaître dans le code impératif ou dans le balisage XAML, par exemple en tant que propriété **Text** d’un **TextBlock**. Ils peuvent également apparaître dans le manifeste de votre package d’application (fichier `Package.appxmanifest`), par exemple, en tant que valeur de nom d’affichage sur l’onglet Application du Concepteur de manifeste de VisualStudio. Déplacez ces chaînes dans un fichier de ressources (.resw) et remplacez les opérateurs de chaîne codés en dur dans votre application et dans votre manifeste par des références à des identificateurs de ressources.
+Des opérateurs de chaîne codés en dur peuvent apparaître dans le code impératif ou dans le balisage XAML, par exemple en tant que propriété **Text** d’un **TextBlock**. Ils peuvent également apparaître dans le fichier source du manifeste de votre package d’application (fichier `Package.appxmanifest`), par exemple, en tant que valeur de nom d’affichage sur l’onglet Application du Concepteur de manifeste de VisualStudio. Déplacez ces chaînes dans un fichier de ressources (.resw) et remplacez les opérateurs de chaîne codés en dur dans votre application et dans votre manifeste par des références à des identificateurs de ressources.
 
 Contrairement aux ressources d’image, où un fichier de ressource d’image contient une seule ressource d’image, un fichier de ressources de chaîne contient *plusieurs* ressources de type chaîne. Un fichier de ressources de chaîne est un fichier de ressources (.resw), et vous créez généralement ce type de fichier de ressources dans un dossier \Strings dans votre projet. Pour obtenir des informations générales sur l’utilisation de qualificateurs dans les noms de vos fichiers de ressources (.resw), voir [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md).
 
 ## <a name="create-a-resources-file-resw-and-put-your-strings-in-it"></a>Créer un fichier de ressources (.resw) et placer vos chaînes dans ce fichier
-
 1. Définissez la langue par défaut de votre application.
     1. Votre solution de jeu étant ouverte dans VisualStudio, ouvrez `Package.appxmanifest`.
     2. Sous l’onglet Application, vérifiez que la langue par défaut est correctement définie (par exemple, «en» ou «en-US»). Les étapes restantes supposent que vous avez défini la langue par défaut sur «en-US».
@@ -51,12 +48,12 @@ Contrairement aux ressources d’image, où un fichier de ressource d’image co
 
     Dans cet exemple, dans la mesure où nous avons une entrée d’identificateur de ressource de chaîne simple nommée «Farewell», nous ne pouvons pas avoir *également* d’identificateurs de propriété basés sur ce même identificateur. Par conséquent, l’ajout de «Farewell.Text» provoquerait une erreur Entrée dupliquée lors de la génération de `Resources.resw`.
 
-## <a name="refer-to-a-string-resource-identifier-from-xaml-markup"></a>Faire référence à un identificateur de ressource de chaîne à partir du balisage XAML
+    Les identificateurs de ressources ne respectent pas la casse et doivent être uniques pour chaque fichier de ressources. Veillez à utiliser des identificateurs de ressources significatifs pour fournir un contexte supplémentaire aux traducteurs. De plus, ne modifiez pas les identificateurs de ressources après l’envoi aux traducteurs des ressources de type chaîne. Les équipes de localisation utilisent l’identificateur de ressource pour effectuer le suivi des ajouts, des suppressions et des mises à jour dans les ressources. Les modifications apportées dans les identificateurs de ressources (appelées également «transition des identificateurs de ressources») nécessitent la retraduction des chaînes, car il semble que des chaînes aient été supprimées et d’autres ajoutées.
 
+## <a name="refer-to-a-string-resource-identifier-from-xaml-markup"></a>Faire référence à un identificateur de ressource de chaîne à partir du balisage XAML
 Vous utilisez une [directive x:Uid](../xaml-platform/x-uid-directive.md) pour associer un contrôle ou un autre élément de votre balisage à un identificateur de ressource de chaîne.
 
-**XAML**
-```xml
+```xaml
 <TextBlock x:Uid="Greeting"/>
 ```
 
@@ -66,23 +63,23 @@ Lorsque vous affectez un identificateur de ressource de chaîne à un élément 
 
 Au lieu de définir **Width** à partir d’un fichier de ressources, vous souhaiterez probablement autoriser les contrôles à se redimensionner de manière dynamique en fonction du contenu.
 
-**Remarque:** pour les [propriétés jointes](../xaml-platform/attached-properties-overview.md), une syntaxe spéciale est requise dans la colonne Nom d’un fichier .resw. Par exemple, pour définir une valeur pour la propriété jointe [AutomationProperties.Name](/uwp/api/windows.ui.xaml.automation.automationproperties?branch=live#Windows_UI_Xaml_Automation_AutomationProperties_NameProperty) de l’identificateur «Greeting», voici ce que vous devez entrer dans la colonne Nom.
+**Remarque:** pour les [propriétés jointes](../xaml-platform/attached-properties-overview.md), une syntaxe spéciale est requise dans la colonne Nom d’un fichier .resw. Par exemple, pour définir une valeur pour la propriété jointe [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) de l’identificateur «Greeting», voici ce que vous devez entrer dans la colonne Nom.
 
-```
+```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 ```
 
 ## <a name="refer-to-a-string-resource-identifier-from-code"></a>Faire référence à un identificateur de ressource de chaîne à partir du code
-
 Vous pouvez charger de manière explicite une ressource de chaîne basée sur un identificateur de ressource de chaîne simple.
 
-**C#**
+> [!NOTE]
+> Si vous disposez d’un appel à une quelconque méthode **GetForCurrentView** qui *pourrait* être exécutée dans un thread d’arrière-plan/de travail, protégez cet appel par un test `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)`. Appeler **GetForCurrentView** à partir des résultats d’un thread d’arrière-plan/de travail dans l’exception «*&lt;typename&gt; ne peut pas être créé dans des threads dépourvus d’un objet CoreWindow. *»
+
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Farewell");
 ```
 
-**C++**
 ```cpp
 auto resourceLoader = Windows::ApplicationModel::Resources::ResourceLoader::GetForCurrentView();
 this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
@@ -93,8 +90,7 @@ Vous pouvez utiliser ce même code à partir d’un projet de bibliothèque de c
 **Remarque:** cette méthode vous permet uniquement de charger la valeur pour un identificateur de ressource de chaîne simple, et pas pour un identificateur de propriété. Par conséquent, nous pouvons charger la valeur de «Farewell» à l’aide de ce code, mais nous ne pouvons pas le faire pour «Greeting.Text». Si vous essayez de le faire, l’opération renvoie une chaîne vide.
 
 ## <a name="refer-to-a-string-resource-identifier-from-your-app-package-manifest"></a>Faire référence à un identificateur de ressource de chaîne à partir du manifeste du package d’application
-
-1. Ouvrez le manifeste de votre package d’application (fichier `Package.appxmanifest`), dans lequel le nom d’affichage de votre application est exprimé sous forme de chaîne littérale par défaut.
+1. Ouvrez le fichier source du manifeste de votre package d’application (fichier `Package.appxmanifest`), dans lequel le nom d’affichage de votre application est exprimé sous forme de chaîne littérale par défaut.
 
    ![ajouter une ressource, anglais](images/display-name-before.png)
 
@@ -107,7 +103,6 @@ Vous pouvez utiliser ce même code à partir d’un projet de bibliothèque de c
 4. Répétez la procédure pour chaque chaîne à localiser dans votre manifeste. Par exemple, le nom court de votre application (que vous pouvez configurer afin qu’il s’affiche sur la vignette de votre application dans le menu Démarrer). Pour obtenir une liste de tous les éléments du manifeste de package d’application que vous pouvez localiser, voir [Éléments de manifeste localisables](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live).
 
 ## <a name="localize-the-string-resources"></a>Localiser les ressources de chaîne
-
 1. Faites une copie de votre fichier de ressources (.resw) pour une autre langue.
     1. Sous «Strings», créez un sous-dossier et nommez-le «de-DE» pour Allemand (Allemagne).
    <br>**Remarque:** vous pouvez utiliser n’importe quelle [balise de langue BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) pour le nom du dossier. Voir [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md) pour plus d’informations sur le qualificateur de langue et une liste des balises de langue courantes.
@@ -126,33 +121,31 @@ Si vous le souhaitez, vous pouvez répéter les étapes1 et2 pour une autre lang
 ![ajouter une ressource, français](images/addresource-fr-fr.png)
 
 ## <a name="test-your-app"></a>Tester votre application
-
-Testez l’application dans votre langue d’affichage par défaut. Vous pouvez ensuite modifier la langue d’affichage sous **Paramètres** > **Heure et langue** > **Région et langue** (ou **Langue**) et tester une nouvelle fois votre application. Examinez les chaînes dans votre interface utilisateur et dans le shell (par exemple, votre barre de titre, qui est votre nom d’affichage, et le nom court dans vos vignettes).
+Testez l’application dans votre langue d’affichage par défaut. Vous pouvez ensuite modifier la langue d’affichage sous **Paramètres** > **Heure et langue** > **Région et langue** > **Langues** et tester une nouvelle fois votre application. Examinez les chaînes dans votre interface utilisateur et dans le shell (par exemple, votre barre de titre, qui est votre nom d’affichage, et le nom court dans vos vignettes).
 
 **Remarque:** si vous trouvez un nom de dossier correspondant au paramètre de langue d’affichage, cela signifie que le fichier de ressources figurant dans ce dossier est chargé. Dans le cas contraire, un basculement a lieu, finissant avec les ressources de la langue par défaut de votre application.
 
 ## <a name="factoring-strings-into-multiple-resources-files"></a>Factorisation de chaînes dans plusieurs fichiers de ressources
-
 Vous pouvez soit conserver toutes vos chaînes dans un seul fichier de ressources (resw), soit les factoriser dans plusieurs fichiers de ressources. Par exemple, vous voudrez peut-être conserver vos messages d’erreur dans un fichier de ressources, les chaînes du manifeste de votre package d’application dans un autre et vos chaînes d’interface utilisateur dans un troisième. Dans ce cas, voici comment se présenterait votre structure de dossiers.
 
 ![ajouter une ressource, anglais](images/manifest-resources.png)
 
 Pour définir l’étendue d’une référence d’identificateur de ressource chaîne à un fichier spécifique, ajoutez simplement `/<resources-file-name>/` avant l’identificateur. L’exemple de balisage suivant suppose que `ErrorMessages.resw` contient une ressource nommée «PasswordTooWeak.Text» dont la valeur décrit l’erreur.
 
-**XAML**
-```xml
+```xaml
 <TextBlock x:Uid="/ErrorMessages/PasswordTooWeak"/>
 ```
 
 L’exemple de code suivant suppose que `ErrorMessages.resw` contient une ressource nommée «MismatchedPasswords» dont la valeur décrit l’erreur.
 
-**C#**
+> [!NOTE]
+> Si vous disposez d’un appel à une quelconque méthode **GetForCurrentView** qui *pourrait* être exécutée dans un thread d’arrière-plan/de travail, protégez cet appel par un test `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)`. Appeler **GetForCurrentView** à partir des résultats d’un thread d’arrière-plan/de travail dans l’exception «*&lt;typename&gt; ne peut pas être créé dans des threads dépourvus d’un objet CoreWindow. *»
+
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ManifestResources");
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("/ErrorMessages/MismatchedPasswords");
 ```
 
-**C++**
 ```cpp
 auto resourceLoader = Windows::ApplicationModel::Resources::ResourceLoader::GetForCurrentView("ManifestResources");
 this->myXAMLTextBlockElement->Text = resourceLoader->GetString("/ErrorMessages/MismatchedPasswords");
@@ -163,14 +156,12 @@ Si vous déplacez la ressource «AppDisplayName» de `Resources.resw` vers `Mani
 Il vous suffit d’ajouter `/<resources-file-name>/` avant l’identificateur de ressource de chaîne pour les fichiers de ressources *autres que* `Resources.resw`. En effet, «Resources.resw» est le nom de fichier par défaut et c’est donc ce qui est supposé si vous omettez le nom de fichier (comme nous l’avons fait dans les exemples précédents de cette rubrique).
 
 ## <a name="load-a-string-for-a-specific-language-or-other-context"></a>Charger une chaîne pour une langue spécifique ou un autre contexte
-
-Le [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) par défaut (obtenu à partir de [**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_GetForCurrentView)) contient une valeur de qualificateur pour chaque nom de qualificateur, représentant le contexte d’exécution par défaut (en d’autres termes, les paramètres de l’utilisateur et de l’ordinateur actuels). Les fichiers de ressources (.resw) sont mis en correspondance, en fonction des qualificateurs figurant dans leurs noms, avec les valeurs de qualificateur dans ce contexte d’exécution.
+Le [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) par défaut (obtenu à partir de [**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.GetForCurrentView)) contient une valeur de qualificateur pour chaque nom de qualificateur, représentant le contexte d’exécution par défaut (en d’autres termes, les paramètres de l’utilisateur et de l’ordinateur actuels). Les fichiers de ressources (.resw) sont mis en correspondance, en fonction des qualificateurs figurant dans leurs noms, avec les valeurs de qualificateur dans ce contexte d’exécution.
 
 Toutefois, dans certains cas, vous souhaiterez que votre application remplace les paramètres système et indique de manière explicite les valeurs des qualificateurs de langue, d’échelle ou autre à utiliser lors de la recherche d’un fichier de ressources correspondant à charger. Par exemple, vous voudrez peut-être que vos utilisateurs soient en mesure de sélectionner une autre langue pour les info-bulles et les messages d’erreur.
 
 Pour ce faire, vous pouvez créer un nouveau **ResourceContext** (au lieu d’utiliser le contexte par défaut), remplacer ses valeurs, puis utiliser cet objet de contexte dans vos recherches de chaînes.
 
-**C#**
 ```csharp
 var resourceContext = new Windows.ApplicationModel.Resources.Core.ResourceContext(); // not using ResourceContext.GetForCurrentView
 resourceContext.QualifierValues["Language"] = "de-DE";
@@ -180,34 +171,29 @@ this.myXAMLTextBlockElement.Text = resourceMap.GetValue("Farewell", resourceCont
 
 L’utilisation de **QualifierValues**, comme dans l’exemple de code ci-dessus, fonctionne pour tout qualificateur. Dans le cas spécial de Langue, vous pouvez procéder de cette autre façon.
 
-**C#**
 ```csharp
 resourceContext.Languages = new string[] { "de-DE" };
 ```
 
-Pour obtenir le même effet à un niveau global, vous *pouvez* remplacer les valeurs de qualificateur dans le **ResourceContext** par défaut. Mais nous vous conseillons plutôt d’appeler [**ResourceContext.SetGlobalQualifierValue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_). Vous définissez les valeurs une fois avec l’appel de **SetGlobalQualifierValue**, puis ces valeurs sont appliquées pour le **ResourceContext** par défaut chaque fois que vous l’utiliser pour les recherches.
+Pour obtenir le même effet à un niveau global, vous *pouvez* remplacer les valeurs de qualificateur dans le **ResourceContext** par défaut. Mais nous vous conseillons plutôt d’appeler [**ResourceContext.SetGlobalQualifierValue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_). Vous définissez les valeurs une fois avec l’appel de **SetGlobalQualifierValue**, puis ces valeurs sont appliquées pour le **ResourceContext** par défaut chaque fois que vous l’utiliser pour les recherches.
 
-**C#**
 ```csharp
 Windows.ApplicationModel.Resources.Core.ResourceContext.SetGlobalQualifierValue("Language", "de-DE");
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Farewell");
 ```
 
-Quelques qualificateurs ont un fournisseur de données système. Ainsi, au lieu d’appeler **SetGlobalQualifierValue**, vous pouvez ajuster le fournisseur par le biais de sa propre API. Par exemple, ce code montre comment définir [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages?branch=live#Windows_Globalization_ApplicationLanguages_PrimaryLanguageOverride).
+Quelques qualificateurs ont un fournisseur de données système. Ainsi, au lieu d’appeler **SetGlobalQualifierValue**, vous pouvez ajuster le fournisseur par le biais de sa propre API. Par exemple, ce code montre comment définir [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride).
 
-**C#**
 ```csharp
 Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "de-DE";
 ```
 
 ## <a name="updating-strings-in-response-to-qualifier-value-change-events"></a>Mise à jour de chaînes en réponse à des événements de modification de valeur de qualificateur
-
-Votre application en cours d’exécution peut répondre à des modifications de paramètres système qui affectent les valeurs de qualificateur dans le **ResourceContext** par défaut. Ces paramètres système appellent l’événement [**MapChanged**](/uwp/api/windows.foundation.collections.iobservablemap_k_v_?branch=live#Windows_Foundation_Collections_IObservableMap_2_MapChanged) sur [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues).
+Votre application en cours d’exécution peut répondre à des modifications de paramètres système qui affectent les valeurs de qualificateur dans le **ResourceContext** par défaut. Ces paramètres système appellent l’événement [**MapChanged**](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live) sur [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues).
 
 En réponse à cet événement, vous pouvez recharger vos chaînes à partir du **ResourceContext** par défaut.
 
-**C#**
 ```csharp
 public MainPage()
 {
@@ -241,29 +227,26 @@ private void RefreshUIText()
 ```
 
 ## <a name="loading-strings-from-a-class-library-or-a-windows-runtime-library"></a>Chargement de chaînes à partir d’une bibliothèque de classes ou d’une bibliothèque Windows Runtime
-
 Les ressources de chaîne d’une bibliothèque de classes (Windows universel) ou d’une [bibliothèque Windows Runtime (Windows universel)](../winrt-components/index.md) référencée sont généralement ajoutées dans un sous-dossier du package dans lequel elles sont incluses pendant le processus de génération. L’identificateur de ressource d’une telle chaîne prend généralement la forme *NomDeBibliothèque/NomFichierRessources/IdentificateurRessource*.
 
 Une bibliothèque peut obtenir un ResourceLoader pour ses propres ressources. Par exemple, le code suivant illustre comment une bibliothèque ou une application qui la référence peut obtenir un ResourceLoader pour les ressources de chaîne de la bibliothèque.
 
-**C#**
 ```csharp
 var resourceLoader = new Windows.ApplicationModel.Resources.ResourceLoader("ContosoControl/Resources");
 resourceLoader.GetString("string1");
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>Chargement de chaînes à partir d’autres packages
-
-Les ressources d’un package d’application sont gérées et accessibles par le biais du niveau supérieur [ResourceMap](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) du package, accessible à partir du [ResourceManager](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) actuel. Dans chaque package, différents composants peuvent avoir leurs propres sous-arborescences ResourceMap, auxquelles vous pouvez accéder via [ResourceMap.GetSubtree](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap#Windows_ApplicationModel_Resources_Core_ResourceMap_GetSubtree_System_String_).
+Les ressources d’un package d’application sont gérées et accessibles par le biais du niveau supérieur [ResourceMap](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) du package, accessible à partir du [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) actuel. Dans chaque package, différents composants peuvent avoir leurs propres sous-arborescences ResourceMap, accessibles via [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
 
 Un package d’infrastructure peut accéder à ses propres ressources avec un URI d’identificateur de ressource absolu. Voir également [Schémas d’URI](uri-schemes.md).
 
 ## <a name="important-apis"></a>API importantes
-
 * [ApplicationModel.Resources.ResourceLoader](https://msdn.microsoft.com/library/windows/apps/br206014)
+* [ResourceContext.SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
+* [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
 ## <a name="related-topics"></a>Rubriques associées
-
 * [Portage du balisage XAML et de la couche interface utilisateur](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
 * [Directive x:Uid](../xaml-platform/x-uid-directive.md)
 * [propriétés jointes](../xaml-platform/attached-properties-overview.md)
