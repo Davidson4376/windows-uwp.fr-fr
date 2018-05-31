@@ -1,6 +1,6 @@
 ---
-description: "Cet article explique comment recevoir dans votre application UWP du contenu partagé à partir d’une autre application à l’aide du contrat de partage. Ce contrat de partage permet à votre application d’être présentée en tant qu’option quand l’utilisateur appelle l’option Partager."
-title: "Recevoir des données"
+description: Cet article explique comment recevoir dans votre application UWP du contenu partagé à partir d’une autre application à l’aide du contrat de partage. Ce contrat de partage permet à votre application d’être présentée en tant qu’option quand l’utilisateur appelle l’option Partager.
+title: Recevoir des données
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 author: msatranjr
 ms.author: misatran
@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 9c3054d161e45bd614e8ef42ea6f21aeb937f582
-ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.localizationpriority: medium
+ms.openlocfilehash: 3b44b3d693f6e9675f0b60e667bc434a7485eed8
+ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2017
+ms.lasthandoff: 05/03/2018
+ms.locfileid: "1832533"
 ---
 # <a name="receive-data"></a>Recevoir des données
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article explique comment recevoir dans votre application UWP du contenu partagé à partir d’une autre application à l’aide du contrat de partage. Ce contrat de partage permet à votre application d’être présentée en tant qu’option quand l’utilisateur appelle l’option Partager.
@@ -79,7 +80,7 @@ if (shareOperation.Data.Contains(StandardDataFormats.Text))
 Dans certains cas, votre application peut avoir besoin de plus de temps pour traiter les données à partager. Il s’agit, par exemple, des partages de collections de fichiers ou d’images. Ces éléments sont plus volumineux qu’une simple chaîne de texte, ce qui explique leur temps de traitement plus long.
 
 ```cs
-shareOperation.ReportDataRetreived(); 
+shareOperation.ReportStarted(); 
 ```
 
 Après avoir appelé la méthode [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted), ne prévoyez aucune interaction avec votre application de la part de l’utilisateur. Par conséquent, vous ne devez appeler cette méthode que si votre application est parvenue à un stade de l’opération où elle peut être masquée par l’utilisateur.
@@ -108,7 +109,7 @@ Généralement, vous appelez ces méthodes selon l’ordre indiqué, une seule f
 
 Lorsqu’un utilisateur sélectionne votre application pour recevoir du contenu, nous vous recommandons de créer un [**QuickLink**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink). Un objet **QuickLink** est une sorte de raccourci qui permet à l’utilisateur de partager plus facilement des informations avec votre application. Par exemple, vous pouvez créer un **QuickLink** qui ouvre un nouveau message électronique dans lequel l’adresse de messagerie du destinataire est déjà indiquée.
 
-Un **QuickLink** doit comporter un titre, une icône et un ID. Le titre (par exemple, «Message pour maman») et l’icône s’affichent lorsque l’utilisateur appuie sur l’icône Partager. L’ID est utilisé par l’application pour accéder à des informations personnalisées, telles qu’une adresse de messagerie ou des informations d’identification. Quand votre application crée un **QuickLink**, elle renvoie ce **QuickLink** au système en appelant [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted).
+Un **QuickLink** doit avoir un titre, une icône et un Id. Le titre (comme «message pour maman») et l’icône s’affichent lorsque l’utilisateur appuie sur l’icône partager. L’ID est utilisé par l’application pour accéder à des informations personnalisées, telles qu’une adresse de messagerie ou des informations d’identification. Quand votre application crée un **QuickLink**, elle renvoie ce **QuickLink** au système en appelant [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted).
 
 Un **QuickLink** ne stocke pas de données. Cet objet contient à la place un identificateur qui, lorsqu’il est sélectionné, est envoyé à votre application. Votre application stocke l’ID de **QuickLink** ainsi que les données utilisateur correspondantes. Quand l’utilisateur appuie sur l’objet **QuickLink**, vous pouvez obtenir l’ID de ce dernier à l’aide de la propriété [**QuickLinkId**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.QuickLinkId).
 

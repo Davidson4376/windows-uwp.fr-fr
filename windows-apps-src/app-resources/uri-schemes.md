@@ -1,7 +1,7 @@
 ---
 author: stevewhims
-Description: "Vous pouvez utiliser plusieurs schémas d’URI (Uniform Resource Identifier) pour faire référence à des fichiers qui proviennent de votre package d’application, des dossiers de données de votre application ou du cloud. Vous pouvez également utiliser un schéma d’URI pour faire référence à des chaînes chargées à partir des fichiers de ressources (.resw) de votre application."
-title: "Schémas d’URI"
+Description: There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw).
+title: Schémas d’URI
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/16/2017
@@ -9,15 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
-localizationpriority: medium
-ms.openlocfilehash: 7cbd4a6fea3ca7d179eae9857c6e98010d11439e
-ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
+ms.localizationpriority: medium
+ms.openlocfilehash: 445f053b0243f1b9c2e54e6e9fcfa332d49cbec5
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 03/22/2018
+ms.locfileid: "1674516"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="uri-schemes"></a>Schémas d’URI
 
 Vous pouvez utiliser plusieurs schémas d’URI (Uniform Resource Identifier) pour faire référence à des fichiers qui proviennent de votre package d’application, des dossiers de données de votre application ou du cloud. Vous pouvez également utiliser un schéma d’URI pour faire référence à des chaînes chargées à partir des fichiers de ressources (.resw) de votre application. Vous pouvez utiliser ces schémas d’URI dans votre code, votre balisage XAML, le manifeste de votre package d’application ou dans vos modèles de vignette et de notification toast.
@@ -28,7 +27,7 @@ Tous les schémas décrits dans cette rubrique suivent les règles de schéma d�
 
 Tous les schémas d’URI définissent la partie hiérarchique conformément à [RFC3986](http://go.microsoft.com/fwlink/p/?LinkId=263444) en tant que composants d’autorité et de chemin d’accès de l’URI.
 
-```
+```syntax
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
 hier-part   = "//" authority path-abempty
             / path-absolute
@@ -66,7 +65,7 @@ ms-appx-web://
 
 ### <a name="authority-ms-appx-and-ms-appx-web"></a>Autorité (ms-appx et ms-appx-web)
 
-L’autorité est le nom de l’identité du package qui est défini dans le manifeste du package. Pour les URI et IRI (Internationalized resource identifier) il est donc limité au jeu de caractères autorisé dans un nom d’identité de package. Le nom du package doit être le nom d’un des packages du graphique de dépendances du package de l’application en cours d’exécution.
+L’autorité est le nom de l’identité du package qui est défini dans le manifeste du package. Pour les URI et IRI (Internationalized resource identifier), il est donc limité au jeu de caractères autorisé dans un nom d’identité de package. Le nom du package doit être le nom d’un des packages du graphique de dépendances du package de l’application en cours d’exécution.
 
 ```xml
 ms-appx://Contoso.MyApp/
@@ -82,7 +81,7 @@ ms-appx-web:///
 
 ### <a name="user-info-and-port-ms-appx-and-ms-appx-web"></a>Informations d’utilisateur et de port (ms-appx et ms-appx-web)
 
-Contrairement à d’autres schémas courants, le schéma `ms-appx` ne définit pas de composant pour les informations d’utilisateur ou de port. Dans la mesure où "@" and ":" ne sont pas autorisés en tant que valeurs d’autorité valides, la recherche échoue en cas d’utilisation. Chaque URI suivante échoue.
+Contrairement à d’autres schémas courants, le schéma `ms-appx` ne définit pas de composant pour les informations d’utilisateur ou de port. Dans la mesure où «@" and ":» ne sont pas autorisés en tant que valeurs d’autorité valides, la recherche échoue en cas d’utilisation. Chaque URI suivante échoue.
 
 ```xml
 ms-appx://john@contoso.myapp/default.html
@@ -101,22 +100,21 @@ Si le chemin d’accès fait référence à un nom de fichier et chemin d’acc�
 ms-appx:///images/logo.png
 ```
 
-L’URI ci-dessus peut récupérer un fichier dans le package de l’application en cours avec le nom de fichier physique.
+L’URI ci-dessus peut en fait récupérer un fichier dans le package de l’application en cours avec le nom de fichier physique suivant.
 
 ```
 \Images\fr-FR\logo.scale-100_contrast-white.png
 ```
 
-Vous pouvez bien entendu récupérer ce même fichier physique en y faisant référence directement à l’aide de son nom complet.
+Vous pouvez bien entendu récupérer également ce même fichier physique en y faisant référence directement à l’aide de son nom complet.
 
-**XAML**
-```xml
+```xaml
 <Image Source="ms-appx:///images/fr-FR/logo.scale-100_contrast-white.png"/>
 ```
 
 À l’instar des URI génériques, le composant de chemin d’accès de `ms-appx(-web)` respecte la casse. Toutefois, lorsque le système de fichiers sous-jacent via lequel la ressource est accessible ne respecte pas la casse (par exemple, NTFS), la ressource est récupérée sans respect de la casse.
 
-La forme normalisée de l’URI conserve la casse et décode les caractères RFC3986 non réservés à l’aide du percent encoding (symbole «%» suivi d’une représentation hexadécimale à deux chiffres). Les caractères «?», «#», «/», «*», et «”» (le caractère de guillemet double) doivent être codés à l’aide du percent encoding dans un chemin d’accès pour représenter des données telles que les noms de fichier ou de dossier. Tous les caractères codés à l’aide du percent encoding sont décodés avant la récupération. Par conséquent, pour récupérer un fichier nommé Hello#World.html, utilisez cet URI.
+La forme normalisée de l’URI conserve la casse et décode les caractères RFC3986 non réservés à l’aide du percent encoding (symbole «%» suivi d’une représentation hexadécimale à deux chiffres). Les caractères «?», «#», «/», «*» et «”» (le caractère de guillemet double) doivent être codés à l’aide du percent encoding dans un chemin d’accès pour représenter des données telles que les noms de fichier ou de dossier. Tous les caractères codés à l’aide du percent encoding sont décodés avant la récupération. Par conséquent, pour récupérer un fichier nommé Hello#World.html, utilisez cet URI.
 
 ```xml
 ms-appx:///Hello%23World.html
@@ -128,9 +126,9 @@ Les paramètres de requête sont ignorés lors de la récupération des ressourc
 
 ## <a name="ms-appdata"></a>ms-appdata
 
-Utilisez le schéma d’URI `ms-appdata` pour faire référence aux fichiers qui proviennent des dossiers de données locales, itinérantes et temporaires de l’application. Pour plus d’informations sur ces dossiers de données d’application, voir [Stocker et récupérer des paramètres et autres données d’application](../app-settings/store-and-retrieve-app-data.md).
+Utilisez le schéma d’URI `ms-appdata` pour faire référence aux fichiers qui proviennent des dossiers de données locales, itinérantes et temporaires de l’application. Pour plus d’informations sur ces dossiers de données d’application, voir [Stocker et récupérer des paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md).
 
-Le schéma d’URI `ms-appdata` n’effectue pas la négociation de contenu lors de l’exécution effectuée par [ms-appx et ms-appx-web](#ms-appx-and-ms-appx-web). Toutefois, vous pouvez répondre au contenu de [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) et charger les ressources appropriées à partir des données d’application en utilisant leur nom de fichier physique complet dans l’URI.
+Le schéma d’URI `ms-appdata` n’effectue pas la négociation de contenu lors de l’exécution effectuée par [ms-appx et ms-appx-web](#ms-appx-and-ms-appx-web). Toutefois, vous pouvez répondre au contenu de [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) et charger les ressources appropriées à partir des données d’application en utilisant leur nom de fichier physique complet dans l’URI.
 
 ### <a name="scheme-name-ms-appdata"></a>Nom de schéma (ms-appdata)
 
@@ -142,7 +140,7 @@ ms-appdata://
 
 ### <a name="authority-ms-appdata"></a>Autorité (ms-appdata)
 
-L’autorité est le nom de l’identité du package qui est défini dans le manifeste du package. Pour les URI et IRI (Internationalized resource identifier) il est donc limité au jeu de caractères autorisé dans un nom d’identité de package. Le nom du package doit être le nom du package de l’application en cours d’exécution.
+L’autorité est le nom de l’identité du package qui est défini dans le manifeste du package. Pour les URI et IRI (Internationalized resource identifier), il est donc limité au jeu de caractères autorisé dans un nom d’identité de package. Le nom du package doit être le nom du package de l’application en cours d’exécution.
 
 ```xml
 ms-appdata://Contoso.MyApp/
@@ -156,7 +154,7 @@ ms-appdata:///
 
 ### <a name="user-info-and-port-ms-appdata"></a>Informations d’utilisateur et de port (ms-appdata)
 
-Contrairement à d’autres schémas courants, le schéma `ms-appdata` ne définit pas de composant pour les informations d’utilisateur ou de port. Dans la mesure où "@" and ":" ne sont pas autorisés en tant que valeurs d’autorité valides, la recherche échoue en cas d’utilisation. Chaque URI suivante échoue.
+Contrairement à d’autres schémas courants, le schéma `ms-appdata` ne définit pas de composant pour les informations d’utilisateur ou de port. Dans la mesure où «@" and ":» ne sont pas autorisés en tant que valeurs d’autorité valides, la recherche échoue en cas d’utilisation. Chaque URI suivante échoue.
 
 ```xml
 ms-appdata://john@contoso.myapp/local/data.xml
@@ -167,7 +165,7 @@ ms-appdata://john:password@contoso.myapp:8080/local/data.xml
 
 ### <a name="path-ms-appdata"></a>Chemin d’accès (ms-appdata)
 
-Le composant de chemin d’accès correspond à la syntaxe RFC3986 générique et prend en charge les caractères non-ASCII dans les IRI. À l’emplacement [Windows.Storage.ApplicationData](/uwp/api/Windows.Storage.ApplicationData?branch=live), trois dossiers sont réservés pour le stockage de l’état local, itinérant et temporaire. Le schéma `ms-appdata` permet d’accéder aux fichiers et dossiers à ces emplacements. Le premier segment du composant de chemin d’accès doit spécifier le dossier spécifique comme suit. Par conséquent, «hier-part» " sous la forme «path-empty» n’est pas légal.
+Le composant de chemin d’accès correspond à la syntaxe RFC3986 générique et prend en charge les caractères non-ASCII dans les IRI. À l’emplacement [Windows.Storage.ApplicationData](/uwp/api/Windows.Storage.ApplicationData?branch=live), troisdossiers sont réservés pour le stockage de l’état local, itinérant et temporaire. Le schéma `ms-appdata` permet d’accéder aux fichiers et dossiers à ces emplacements. Le premier segment du composant de chemin d’accès doit spécifier le dossier spécifique comme suit. Par conséquent, «hier-part» sous la forme «path-empty» n’est pas légal.
 
 Dossier local.
 
@@ -189,7 +187,7 @@ ms-appdata:///roaming/
 
 À l’instar des URI génériques, le composant de chemin d’accès de `ms-appdata` respecte la casse. Toutefois, lorsque le système de fichiers sous-jacent via lequel la ressource est accessible ne respecte pas la casse (par exemple, NTFS), la ressource est récupérée sans respect de la casse.
 
-La forme normalisée de l’URI conserve la casse et décode les caractères RFC3986 non réservés à l’aide du percent encoding (symbole «%» suivi d’une représentation hexadécimale à deux chiffres). Les caractères «?», «#», «/», «*», et «”» (le caractère de guillemet double) doivent être codés à l’aide du percent encoding dans un chemin d’accès pour représenter des données telles que les noms de fichier ou de dossier. Tous les caractères codés à l’aide du percent encoding sont décodés avant la récupération. Par conséquent, pour récupérer un fichier local nommé Hello#World.html, utilisez cet URI.
+La forme normalisée de l’URI conserve la casse et décode les caractères RFC3986 non réservés à l’aide du percent encoding (symbole «%» suivi d’une représentation hexadécimale à deux chiffres). Les caractères «?», «#», «/», «*» et «”» (le caractère de guillemet double) doivent être codés à l’aide du percent encoding dans un chemin d’accès pour représenter des données telles que les noms de fichier ou de dossier. Tous les caractères codés à l’aide du percent encoding sont décodés avant la récupération. Par conséquent, pour récupérer un fichier local nommé Hello#World.html, utilisez cet URI.
 
 ```xml
 ms-appdata://local/Hello%23World.html
@@ -225,7 +223,7 @@ ms-resource://
 
 ### <a name="authority-ms-resource"></a>Autorité (ms-resource)
 
-L’autorité est le mappage de ressources de niveau supérieur défini dans l’index de ressource de package (PRI), qui correspond généralement au nom d’identité du package qui est défini dans le manifeste du package. Voir [Création de packages d’application](../packaging/index.md) Pour les URI et IRI (Internationalized resource identifier) il est donc limité au jeu de caractères autorisé dans un nom d’identité de package. Le nom du package doit être le nom d’un des packages du graphique de dépendances du package de l’application en cours d’exécution.
+L’autorité est le mappage de ressources de niveau supérieur défini dans l’index de ressource de package (PRI), qui correspond généralement au nom d’identité du package qui est défini dans le manifeste du package. Voir [Création de packages d’application](../packaging/index.md) Pour les URI et IRI (Internationalized resource identifier), il est donc limité au jeu de caractères autorisé dans un nom d’identité de package. Le nom du package doit être le nom d’un des packages du graphique de dépendances du package de l’application en cours d’exécution.
 
 ```xml
 ms-resource://Contoso.MyApp/
@@ -242,7 +240,7 @@ L’autorité respecte la casse et la forme normalisée conserve la casse. Toute
 
 ### <a name="user-info-and-port-ms-resource"></a>Informations d’utilisateur et de port (ms-resource)
 
-Contrairement à d’autres schémas courants, le schéma `ms-resource` ne définit pas de composant pour les informations d’utilisateur ou de port. Dans la mesure où "@" and ":" ne sont pas autorisés en tant que valeurs d’autorité valides, la recherche échoue en cas d’utilisation. Chaque URI suivante échoue.
+Contrairement à d’autres schémas courants, le schéma `ms-resource` ne définit pas de composant pour les informations d’utilisateur ou de port. Dans la mesure où «@" and ":» ne sont pas autorisés en tant que valeurs d’autorité valides, la recherche échoue en cas d’utilisation. Chaque URI suivante échoue.
 
 ```xml
 ms-resource://john@contoso.myapp/Resources/String1
@@ -253,13 +251,13 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 ### <a name="path-ms-resource"></a>Chemin d’accès (ms-resource)
 
-Le chemin d’accès identifie l’emplacement hiérarchique de la sous-arborescence [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) (voir [Système de gestion des ressources](https://msdn.microsoft.com/library/windows/apps/jj552947)) et la [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResourcebranch=live) qu’elle contient. En règle générale, cela correspond au nom de fichier (sans extension) d’un fichier de ressources (.resw) et à l’identificateur d’une ressource de chaîne figurant dans celui-ci.
+Le chemin d’accès identifie l’emplacement hiérarchique de la sous-arborescence [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) (voir [Système de gestion des ressources](https://msdn.microsoft.com/library/windows/apps/jj552947)) et la [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live) qu’elle contient. En règle générale, cela correspond au nom de fichier (sans extension) d’un fichier de ressources (.resw) et à l’identificateur d’une ressource de chaîne figurant dans celui-ci.
 
-Pour en savoir plus et voir des exemples, voir [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](localize-strings-ui-manifest.md) et [Prise en charge des vignettes et notifications toast pour la langue, l’échelle et le contraste élevé](tile-toast-language-scale-contrast.md).
+Pour en savoir plus et voir des exemples, voir [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](localize-strings-ui-manifest.md) et [Prise en charge des vignettes et notifications toast pour la langue, l’échelle et le contraste élevé](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
 
 À l’instar des URI génériques, le composant de chemin d’accès de `ms-resource` respecte la casse. Toutefois, lorsque le système de fichiers sous-jacent via lequel la ressource est accessible ne respecte pas la casse, la ressource est récupérée à l’aide de [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) avec la valeur de *ignoreCase* définie sur `true`.
 
-La forme normalisée de l’URI conserve la casse et décode les caractères RFC3986 non réservés à l’aide du percent encoding (symbole «%» suivi d’une représentation hexadécimale à deux chiffres). Les caractères «?», «#», «/», «*», et «”» (le caractère de guillemet double) doivent être codés à l’aide du percent encoding dans un chemin d’accès pour représenter des données telles que les noms de fichier ou de dossier. Tous les caractères codés à l’aide du percent encoding sont décodés avant la récupération. Par conséquent, pour récupérer une ressource de chaîne à partir d’un fichier de ressources nommé Hello#World.resw, utilisez cet URI.
+La forme normalisée de l’URI conserve la casse et décode les caractères RFC3986 non réservés à l’aide du percent encoding (symbole «%» suivi d’une représentation hexadécimale à deux chiffres). Les caractères «?», «#», «/», «*» et «”» (le caractère de guillemet double) doivent être codés à l’aide du percent encoding dans un chemin d’accès pour représenter des données telles que les noms de fichier ou de dossier. Tous les caractères codés à l’aide du percent encoding sont décodés avant la récupération. Par conséquent, pour récupérer une ressource de chaîne à partir d’un fichier de ressources nommé Hello#World.resw, utilisez cet URI.
 
 ```xml
 ms-resource:///Hello%23World/String1
@@ -276,7 +274,7 @@ Les développeurs de composants spécifiques situés dans une couche au-dessus d
 * [URI (Uniform Resource Identifier): syntaxe générique](http://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [Création de packages d’application](../packaging/index.md)
 * [Faire référence à une image ou une autre ressource à partir du code et du balisage XAML](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
-* [Stocker et récupérer des paramètres et autres données d’application](../app-settings/store-and-retrieve-app-data.md)
+* [Stocker et récupérer des paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md)
 * [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](localize-strings-ui-manifest.md)
 * [Système de gestion des ressources](https://msdn.microsoft.com/library/windows/apps/jj552947)
-* [Prise en charge des vignettes et notifications toast pour la langue, l’échelle et le contraste élevé](tile-toast-language-scale-contrast.md)
+* [Prise en charge des vignettes et notifications toast pour la langue, l’échelle et le contraste élevé](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

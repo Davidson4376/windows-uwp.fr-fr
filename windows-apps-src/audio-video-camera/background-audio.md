@@ -1,17 +1,21 @@
 ---
 author: drewbatgit
 ms.assetid: b7333924-d641-4ba5-92a2-65925b44ccaa
-description: "Cet article vous explique comment lire du contenu multimédia pendant l’exécution de votre application en arrière-plan."
-title: "Lire du contenu multimédia en arrière-plan"
+description: Cet article vous explique comment lire du contenu multimédia pendant l’exécution de votre application en arrière-plan.
+title: Lire du contenu multimédia en arrière-plan
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 148bb77f9386864a1b127341aa875beb7123bae9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: f8fdc99355ef5a024757cc2e415b1d259965c1ce
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/28/2018
+ms.locfileid: "1690495"
 ---
 # <a name="play-media-in-the-background"></a>Lire du contenu multimédia en arrière-plan
 Cet article vous explique comment configurer votre application de telle sorte que le contenu multimédia continue à être lu quand votre application est déplacée du premier plan vers l’arrière-plan. Cela signifie que même après que l’utilisateur a réduit votre application, est revenu à l’écran d’accueil ou a quitté votre application d’une autre manière, votre application peut continuer à lire le contenu audio. 
@@ -65,7 +69,7 @@ Ensuite, ajoutez la fonctionnalité *backgroundMediaPlayback* à l’élément *
 </Capabilities>
 ```
 
-##<a name="handle-transitioning-between-foreground-and-background"></a>Gérer la transition entre le premier plan et l’arrière-plan
+## <a name="handle-transitioning-between-foreground-and-background"></a>Gérer la transition entre le premier plan et l’arrière-plan
 Lorsque votre application passe du premier plan à l’arrière-plan, l’événement [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) est déclenché. Quand votre application revient au premier plan, l’événement [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) est déclenché. Ces événements étant liés au cycle de vie de l’application, vous devez enregistrer des gestionnaires dédiés lors de sa création. Dans le modèle de projet par défaut, vous devrez procéder à leur ajout dans le constructeur de la classe **App**, dans App.xaml.cs. 
 
 [!code-cs[RegisterEvents](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetRegisterEvents)]
@@ -74,7 +78,7 @@ Créez une variable affectée à la détection de l’exécution en arrière-pla
 
 [!code-cs[DeclareBackgroundMode](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetDeclareBackgroundMode)]
 
-Lorsque l’événement [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) est déclenché, définissez la variable de détection afin d’indiquer que l’exécution se déroule actuellement dans l’arrière-plan. Vous n’avez pas intérêt à effectuer de tâches longues dans l’événement **EnteredBackground**, dans la mesure où la transition vers l’arrière-plan pourrait apparaître lente pour l’utilisateur.
+Lorsque l’événement [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) est déclenché, définissez la variable de détection afin d’indiquer que l’exécution se déroule actuellement en arrière-plan. Vous n’avez pas intérêt à effectuer de tâches longues dans l’événement **EnteredBackground**, dans la mesure où la transition vers l’arrière-plan pourrait apparaître lente pour l’utilisateur.
 
 [!code-cs[EnteredBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetEnteredBackground)]
 
@@ -88,7 +92,7 @@ La partie la plus importante du traitement de la transition entre le premier pla
 ## <a name="network-availability-for-background-media-apps"></a>Disponibilité du réseau pour les applications multimédias en arrière-plan
 L’ensemble des sources multimédias reconnaissant le réseau, celles qui ne sont pas créées à partir d’un flux ou d’un fichier, maintiennent l’activité de la connexion réseau pendant la récupération du contenu à distance et abandonnent l’activité dans le cas contraire. [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaStreamSource), particulièrement, s’appuie sur l’application pour signaler correctement à l’application la plage mise en tampon à l’aide de [**SetBufferedRange**](https://msdn.microsoft.com/library/windows/apps/dn282762). Une fois que l’intégralité du contenu est mis en tampon, le réseau n’est plus réservé pour le compte de l’application.
 
-SI vous avez besoin d’effectuer des appels réseau intervenant en arrière-plan quand aucun contenu multimédia n’est en téléchargement, ces opérations doivent être encapsulées dans une tâche appropriée comme [**ApplicationTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.ApplicationTrigger), [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.MaintenanceTrigger) ou [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.TimeTrigger). Pour plus d’informations, voir [Prendre en charge votre application avec des tâches en arrière-plan](https://msdn.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks).
+SI vous avez besoin d’effectuer des appels réseau intervenant en arrière-plan lorsqu’aucun contenu multimédia n’est en cours de téléchargement, ces opérations doivent être encapsulées dans une tâche appropriée telle que [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.MaintenanceTrigger) ou [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.TimeTrigger). Pour plus d’informations, voir [Prendre en charge votre application avec des tâches en arrière-plan](https://msdn.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks).
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Lecture de contenu multimédia](media-playback.md)

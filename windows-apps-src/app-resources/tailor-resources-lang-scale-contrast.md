@@ -1,7 +1,7 @@
 ---
 author: stevewhims
-Description: "Cette rubrique explique le concept général des qualificateurs, leur utilisation et le rôle de chacun des noms de qualificateur."
-title: "Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs"
+Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
+title: Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/10/2017
@@ -9,22 +9,21 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
-localizationpriority: medium
-ms.openlocfilehash: 930a49ab3d9bab034f771a323b17484ae6aa0e16
-ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
+ms.localizationpriority: medium
+ms.openlocfilehash: 5309b33e0f65a1a06e1a3c0060a84e4c4a88ef9d
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 04/03/2018
+ms.locfileid: "1700795"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
 
-Cette rubrique explique le concept général des qualificateurs de ressource, leur utilisation et le rôle de chacun des noms de qualificateur. Voir [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) pour un tableau de référence de toutes les valeurs de qualificateur possibles.
+Cette rubrique explique le concept général des qualificateurs de ressource, leur utilisation et le rôle de chacun des noms de qualificateur. Consultez [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) pour un tableau de référence de toutes les valeurs de qualificateur possibles.
 
-Votre application peut charger des ressources et actifs adaptés à des contextes d’exécution tels que la langue d’affichage, le contraste élevé, le [facteur d’échelle de l’affichage](../layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor) et bien d’autres. La façon de procéder consiste à donner à vos dossiers ou fichiers de ressources un nom correspondant au nom et à la valeur de qualificateur correspondant à ces contextes. Par exemple, vous souhaitez peut-être que votre application charge un autre ensemble de ressources d’image en mode de contraste élevé.
+Votre application peut charger des ressources et actifs adaptés à des contextes d’exécution tels que la langue d’affichage, le contraste élevé, le [facteur d’échelle de l'affichage](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor) et bien d’autres. La façon de procéder consiste à donner à vos dossiers ou fichiers de ressources un nom correspondant au nom et à la valeur de qualificateur correspondant à ces contextes. Par exemple, vous souhaitez peut-être que votre application charge un autre ensemble de ressources d’image en mode de contraste élevé.
 
-Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../globalizing/globalizing-portal.md).
+Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
 
 ## <a name="qualifier-name-qualifier-value-and-qualifier"></a>Nom de qualificateur, valeur de qualificateur et qualificateur
 
@@ -89,7 +88,7 @@ Si vous avez uniquement besoin d'un ensemble de ressources pour le contraste él
 \Assets\Images\<logo.png, and other images to load when high contrast theme is None>
 ```
 
-Pour plus d’informations sur le fonctionnement de la correspondance de qualificateur, consultez [Système de gestion des ressources](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj552947).
+Pour plus d’informations sur le fonctionnement de la correspondance de qualificateur, consultez [Système de gestion des ressources](resource-management-system.md).
 
 ## <a name="multiple-qualifiers"></a>Plusieurs qualificateurs
 
@@ -137,7 +136,6 @@ Le qualificateur `contrast` permet de fournir les ressources qui correspondent l
 
 Votre application peut définir une valeur pour le qualificateur `custom`. Les ressources qui correspondent le mieux à cette valeur sont alors chargées. Par exemple, vous pouvez souhaiter charger des ressources en fonction de la licence de votre application. Lorsque votre application se lance, elle vérifie sa licence et utilise celle-ci comme valeur du qualificateur `custom` en appelant [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_), comme illustré dans l’exemple de code.
 
-**C#**
 ```csharp
 public void SetLicenseLevel(BrandID brand)
 {
@@ -160,7 +158,7 @@ Dans ce scénario, vous devez attribuer à vos ressources des noms qui incluent 
 
 ## <a name="devicefamily"></a>DeviceFamily
 
-Il est peu probable que vous ayez besoin du nom de qualificateur `devicefamily`. Vous pouvez et devez éviter de l’utiliser autant que possible, car vous pouvez utiliser d'autres techniques beaucoup plus pratiques et fiables. Ces techniques sont décrites dans [Détection de la plateforme d’exécution de votre application](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on) et [Écriture de code](../get-started/universal-application-platform-guide.md#writing-code).
+Il est peu probable que vous ayez besoin du nom de qualificateur `devicefamily`. Vous pouvez et devez éviter de l’utiliser autant que possible, car vous pouvez utiliser d'autres techniques beaucoup plus pratiques et fiables. Ces techniques sont décrites dans [Détection de la plateforme d’exécution de votre application](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on) et [Code adaptatif de version](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
 Mais en dernier recours, il est possible d’utiliser des qualificateurs devicefamily pour nommer des dossiers qui contiennent vos vues XAML (une vue XAML est un fichier XAML qui contient une disposition de l’interface utilisateur et des contrôles).
 
@@ -230,11 +228,11 @@ Voir [Localiser vos chaînes d’interface utilisateur](localize-strings-ui-mani
 
 ## <a name="layoutdirection"></a>LayoutDirection
 
-Un qualificateur `layoutdirection` correspond au paramètre de sens de la disposition de la langue d’affichage. Par exemple, une image a peut-être besoin d'être mise en miroir pour une langue qui s’écrit et se lit de droite à gauche, comme l’arabe ou l'hébreu. Les panneaux de disposition et les images de votre interface utilisateur répondront correctement au sens de la disposition si vous définissez leur propriété [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=live#Windows_UI_Xaml_FrameworkElement_FlowDirection) (voir [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)). Toutefois, le qualificateur `layoutdirection` est destiné aux cas où un simple retournement n’est pas suffisant. Il permet de répondre au sens d’un ordre de lecture et d’un alignement de texte spécifiques de manière plus générale.
+Un qualificateur `layoutdirection` correspond au paramètre de sens de la disposition de la langue d’affichage. Par exemple, une image a peut-être besoin d'être mise en miroir pour une langue qui s’écrit et se lit de droite à gauche, comme l’arabe ou l'hébreu. Les panneaux de disposition et les images de votre interface utilisateur répondront correctement au sens de la disposition si vous définissez leur propriété [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) (voir [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)). Toutefois, le qualificateur `layoutdirection` est destiné aux cas où un simple retournement n’est pas suffisant. Il permet de répondre au sens d'un ordre de lecture et d'un alignement de texte spécifiques de manière plus générale.
 
 ## <a name="scale"></a>Échelle
 
-Windows sélectionne automatiquement un facteur d’échelle pour chaque affichage en fonction de son nombre de PPP (points par pouce) et de la distance de visualisation de l’appareil. Voir [Pixels effectifs et facteur d’échelle](../layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor). Vous devez créer vos images selon plusieurs tailles recommandées (au moins 100,200 et400) afin que Windows puisse choisir la taille idéale ou utiliser la taille le plus proche et la mettre à l’échelle. Pour que Windows soit en mesure d’identifier le fichier physique contenant la taille d’image appropriée pour le facteur d’échelle de l’affichage, vous utilisez un qualificateur `scale`. L’échelle d’une ressource correspond à la valeur de [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation?branch=live#Windows_Graphics_Display_DisplayInformation_ResolutionScale), ou à la ressource avec la plus grande échelle suivante.
+Windows sélectionne automatiquement un facteur d’échelle pour chaque affichage en fonction de son nombre de PPP (points par pouce) et de la distance de visualisation de l’appareil. Voir [Pixels effectifs et facteur d’échelle](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor). Vous devez créer vos images selon plusieurs tailles recommandées (au moins 100,200 et400) afin que Windows puisse choisir la taille idéale ou utiliser la taille le plus proche et la mettre à l’échelle. Pour que Windows soit en mesure d’identifier le fichier physique contenant la taille d’image appropriée pour le facteur d’échelle de l’affichage, vous utilisez un qualificateur `scale`. L’échelle d’une ressource correspond à la valeur de [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation.ResolutionScale), ou à la ressource avec la plus grande échelle suivante.
 
 Voici un exemple de définition du qualificateur au niveau du dossier.
 
@@ -264,21 +262,22 @@ Pour plus d’informations sur la qualification d’une ressource pour `scale` e
 
 ## <a name="theme"></a>Theme
 
-Le qualificateur `theme` est utilisé pour fournir les ressources qui correspondent le mieux au paramètre de mode d’application par défaut, ou au remplacement de votre application à l’aide de [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application?branch=master#Windows_UI_Xaml_Application_RequestedTheme).
+Le qualificateur `theme` est utilisé pour fournir les ressources qui correspondent le mieux au paramètre de mode d’application par défaut, ou au remplacement de votre application à l’aide de [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application?branch=master.RequestedTheme).
 
 ## <a name="important-apis"></a>API importantes
 
+* [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
 * [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 
 ## <a name="related-topics"></a>Rubriques associées
 
-* [Pixels effectifs et facteur d’échelle](../layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
-* [Système de gestion des ressources](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj552947)
+* [Pixels effectifs et facteur d’échelle](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
+* [Système de gestion des ressources](resource-management-system.md)
 * [Comment se préparer à la localisation](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
 * [Détection de la plateforme d’exécution de votre application](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [Écriture de code](../get-started/universal-application-platform-guide.md#writing-code)
+* [Présentation des familles de périphériques](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
 * [Localiser vos chaînes d’interface utilisateur](localize-strings-ui-manifest.md)
 * [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Classification M49 des codes de région de la Division de statistique de l’ONU](http://go.microsoft.com/fwlink/p/?linkid=247929)
+* [Classification M49 des codes de région de la Division de statistique de l'ONU](http://go.microsoft.com/fwlink/p/?linkid=247929)
 * [Registre des sous-balises de langues IANA](http://go.microsoft.com/fwlink/p/?linkid=227303)
-* [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)
+* [Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)
