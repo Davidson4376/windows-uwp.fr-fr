@@ -1,18 +1,21 @@
 ---
 author: drewbatgit
 ms.assetid: 3b75d881-bdcf-402b-a330-23cd29d68e53
-description: "Cet article répertorie les propriétés DeviceInformation liées aux appareils audio"
-title: "Propriétés d’informations des appareils audio"
+description: Cet article répertorie les propriétés DeviceInformation liées aux appareils audio
+title: Propriétés d’informations des appareils audio
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 0992c0fc3c6fe9d70b7867275d28e6bba78171ab
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: c221e3d77419ca02b46e8be227f3b943fe8dc241
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
+ms.lasthandoff: 03/08/2018
+ms.locfileid: "1639009"
 ---
 # <a name="audio-device-information-properties"></a>Propriétés d’informations des appareils audio
 
@@ -22,7 +25,7 @@ Cet article répertorie les propriétés d’informations liées aux appareils a
 |Nom|Type|Description|
 |------------------------------------------------------------|------------|------------------------------------------------------|
 |**System.Devices.AudioDevice.Microphone.SensitivityInDbfs**|Double|Spécifie la sensibilité du microphone en décibels par rapport aux décibels pleine échelle (dBFS).|
-|**System.Devices.AudioDevice.Microphone.SignalToNoiseRationInDb**|Double|Spécifie le ratio entre le signal du microphone  et le bruit mesuré en décibels (dB).|
+|**System.Devices.AudioDevice.Microphone.SignalToNoiseRatioInDb**|Double|Spécifie le ratio entre le signal du microphone et le bruit mesuré en décibels (dB).|
 |**System.Devices.AudioDevice.SpeechProcessingSupported**|Booléen|Indique si l’appareil audio prend en charge le traitement de la parole.|
 |**System.Devices.AudioDevice.RawProcessingSupported**|Booléen|Indique si l’appareil audio prend en charge le traitement des fichiers bruts.|
 |**System.Devices.MicrophoneArray.Geometry**|unsigned char[]|Données géométriques pour un réseau de microphones.|

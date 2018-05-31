@@ -1,7 +1,7 @@
 ---
 author: stevewhims
-Description: "La rubrique précédente (Comment le système de gestion des ressources met en correspondance et sélectionne les ressources) aborde la correspondance entre les qualificateurs de manière générale. Cette rubrique se concentre plus particulièrement sur la correspondance entre les balises de langue."
-title: "Comment le système de gestion des ressources met en correspondance les balises de langue"
+Description: The previous topic (How the Resource Management System matches and chooses resources) looks at qualifier-matching in general. This topic focuses on language-tag-matching in more detail.
+title: Comment le système de gestion des ressources met en correspondance les balises de langue
 template: detail.hbs
 ms.author: stwhi
 ms.date: 11/02/2017
@@ -9,22 +9,23 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
-localizationpriority: medium
-ms.openlocfilehash: ae1c4a3093e978cc054934d991d37c31264f128d
-ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
+ms.localizationpriority: medium
+ms.openlocfilehash: 6c01b3efe77f1933c8d9a8620a60757e14d94bd5
+ms.sourcegitcommit: dd1a2e22eadd2304afee0912fd21772a9d2d8fda
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/13/2017
+ms.locfileid: "1437740"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="how-the-resource-management-system-matches-language-tags"></a>Comment le système de gestion des ressources met en correspondance les balises de langue
 
 La rubrique précédente ([Comment le système de gestion des ressources met en correspondance et sélectionne les ressources](how-rms-matches-and-chooses-resources.md)) aborde la correspondance entre les qualificateurs de manière générale. Cette rubrique se concentre plus particulièrement sur la correspondance entre les balises de langue.
 
 ## <a name="introduction"></a>Introduction
 
-Les ressources dotées de qualificateurs de balise de langue sont comparées et notées en fonction de la liste de langues par défaut classées par ordre de priorité de l’utilisateur final. Le mécanisme de notation utilise les données incluses dans le registre de sous-balises [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) et d’autres sources de données. Il utilise une échelle de notation avec différentes qualités de correspondance et, lorsque plusieurs candidats sont disponibles, il sélectionne le candidat avec le meilleur score.
+Les ressources dotées de qualificateurs de balise de langue sont comparées et notées en fonction de la liste de langues d’exécution de l’application. Pour obtenir des définitions des listes de langues différentes, consultez [Comprendre les langues de profil utilisateur et les langues du manifeste de l’application](../design/globalizing/manage-language-and-region.md). La mise en correspondance pour la première langue d’une liste se produit avant la mise en correspondance de la deuxième langue d’une liste, même pour d’autres variantes régionales. Par exemple, une ressource pour en-GB est choisie à la place d’une ressource fr-CA si la langue d’exécution de l’application est en-US. Une ressource fr-CA est choisie uniquement s’il n’y aucune ressource pour une forme d’en (notez que la langue par défaut de l’application n’a pas pu être définie sur une forme d’en dans ce cas).
+
+Le mécanisme de notation utilise les données incluses dans le registre de sous-balises [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) et d’autres sources de données. Il utilise une échelle de notation avec différentes qualités de correspondance et, lorsque plusieurs candidats sont disponibles, il sélectionne le candidat avec le meilleur score.
 
 Ainsi, vous pouvez utiliser des balises avec des termes génériques pour un contenu linguistique, avec néanmoins la possibilité de spécifier un contenu spécifique si nécessaire. Par exemple, votre application peut contenir plusieurs chaînes anglaises qui sont communes aux États-Unis, à la Grande-Bretagne et à d’autres régions. Le marquage de ces chaînes avec la balise «en» (Anglais) réduit les besoins en espace et en localisation. Lorsqu’une distinction s’avère nécessaire, par exemple dans une chaîne contenant le mot «color/colour» en anglais, les versions américaine et britannique peuvent être marquées séparément à l’aide des sous-balises de langue et de région, «en-US» et «en-GB «, respectivement.
 
@@ -41,7 +42,7 @@ D’autres éléments de sous-balise peuvent être présents, mais ils auront tr
 
 ## <a name="matching-two-languages"></a>Mise en correspondance de deux langues
 
-Chaque fois que Windows compare deux langues, cette opération est généralement effectuée dans le contexte d’un processus plus large. IL peut s’agir de l’évaluation de plusieurs langues, par exemple, lorsque Windows génère la liste des langues de l’application (voir [Gérer la langue et la région](../globalizing/manage-language-and-region.md)). Pour ce faire, Windows met en correspondance plusieurs langues figurant dans les préférences utilisateur et les langues spécifiées dans le manifeste de l’application. La comparaison peut également être effectuée dans le contexte de l’évaluation de la langue avec d’autres qualificateurs pour une ressource particulière. Par exemple, lorsque Windows résout une ressource de fichier spécifique particulier en contexte de ressource spécifique, avec le lieu de résidence de l’utilisateur ou l’échelle ou la résolution ppp actuelles de l’appareil comme autres facteurs (en plus de la langue) pris en compte dans la sélection de la ressource.
+Chaque fois que Windows compare deux langues, cette opération est généralement effectuée dans le contexte d’un processus plus large. Il peut s’agir de l’évaluation de plusieurs langues, par exemple, lorsque Windows génère la liste des langues de l’application (voir [Comprendre les langues de profil utilisateur et les langues du manifeste de l’application](../design/globalizing/manage-language-and-region.md)). Pour ce faire, Windows met en correspondance plusieurs langues figurant dans les préférences utilisateur et les langues spécifiées dans le manifeste de l’application. La comparaison peut également être effectuée dans le contexte de l’évaluation de la langue avec d’autres qualificateurs pour une ressource particulière. Par exemple, lorsque Windows résout une ressource de fichier spécifique particulier en contexte de ressource spécifique, avec le lieu de résidence de l’utilisateur ou l’échelle ou la résolution ppp actuelles de l’appareil comme autres facteurs (en plus de la langue) pris en compte dans la sélection de la ressource.
 
 Lorsque deux balises de langue sont comparées, un score est attribué à la comparaison en fonction de la précision de la correspondance.
 
@@ -61,7 +62,7 @@ Lorsque deux balises de langue sont comparées, un score est attribué à la com
 
 ### <a name="exact-match"></a>Correspondance exacte
 
-Les balises sont identiques (tous les éléments de sous-balises correspondent). Une comparaison peut être promue à ce type de correspondance à partir d’une correspondance de variante ou de région.
+Les balises sont identiques (tous les éléments de sous-balises correspondent). Une comparaison peut être promue à ce type de correspondance à partir d’une correspondance de variante ou de région. Par exemple, en-US correspond à en-US.
 
 ### <a name="variant-match"></a>Correspondance de variante
 
@@ -69,11 +70,11 @@ Les balises correspondent pour les sous-balises de langue, script, région et va
 
 ### <a name="region-match"></a>Correspondance de région
 
-Les balises correspondent pour les sous-balises de langue, script, et variante, mais elles diffèrent à un autre titre.
+Les balises correspondent pour les sous-balises de langue, script, et variante, mais elles diffèrent à un autre titre. Par exemple, de-DE-1996correspond à de-DE et en-US-x-Pirate correspond à en-US.
 
 ### <a name="partial-matches"></a>Correspondances partielles
 
-Les balises correspondent pour les sous-balises de langue et de script, mais elles diffèrent pour la région ou une autre sous-balise.
+Les balises correspondent pour les sous-balises de langue et de script, mais elles diffèrent pour la région ou une autre sous-balise. Par exemple, en-US correspond à en ou en-US, correspond à en-\*.
 
 #### <a name="macro-region-match"></a>Correspondance de macrorégion
 
@@ -93,7 +94,7 @@ Les balises correspondent pour les sous-balises de langue et de script et les so
 
 #### <a name="preferred-region-match"></a>Correspondance de région par défaut
 
-Les balises correspondent pour les sous-balises de langue et de script et une des sous-balises de région est la sous-balise de région par défaut pour la langue. Par exemple, «fr-FR» est la région par défaut pour la sous-balise «fr». Cela repose sur les données (gérées dans Windows) qui définissent une région par défaut pour chaque langue dans laquelle Windows est localisé.
+Les balises correspondent pour les sous-balises de langue et de script et une des sous-balises de région est la sous-balise de région par défaut pour la langue. Par exemple, «fr-FR» est la région par défaut pour la sous-balise «fr». Ainsi, fr-FR convient mieux pour fr-BE que pour fr-CA. Cela repose sur les données (gérées dans Windows) qui définissent une région par défaut pour chaque langue dans laquelle Windows est localisé.
 
 #### <a name="sibling-match"></a>Correspondance sœur
 
@@ -109,19 +110,19 @@ Lorsque les balises correspondent pour la balise de langue principale, mais pas 
 
 ### <a name="no-match"></a>Aucune correspondance
 
-Les sous-balises de langue principale qui ne correspondent pas reçoivent un score plus bas que celui d’une correspondance valide.
+Les sous-balises de langue principale qui ne correspondent pas reçoivent un score plus bas que celui d’une correspondance valide. Par exemple, zh-Hant ne correspond pas à zh-Hans.
 
 ## <a name="examples"></a>Exemples
 
 La langue utilisateur "zh-Hans-CN" (Chinois simplifié (Chine)) correspond aux ressources suivantes dans l’ordre de priorité indiqué. Un X n’indique qu’il n’a pas de correspondance.
 
-[!Matching for Chinese Simplified (China)](/images/language_matching_1.png)
+![Correspondance pour Chinois simplifié (Chine)](images/language_matching_1.png)
 
 1. Exact match; 2. & 3. Region match; 4. Parent match; 5. Sibling match.
 
-Lorsqu’une valeur de script de suppression est définie pour une sous-balise de langue dans le registre de sous-balises BCP-47, une correspondance existe et elle prend la valeur du code de script supprimé. Dans l’exemple suivant, la langue de l’utilisateur est «en-AU» (Anglais (Australie)).
+Lorsqu’une valeur de script de suppression est définie pour une sous-balise de langue dans le registre de sous-balises BCP-47, une correspondance existe et elle prend la valeur du code de script supprimé. Par exemple, en-Latn-US correspond à en-US. Dans l’exemple suivant, la langue de l’utilisateur est «en-AU» (Anglais (Australie)).
 
-[!Matching for English (Australia)](/images/language_matching_2.png)
+![Correspondance pour Anglais (Australie)](images/language_matching_2.png)
 
 1. Exact match; 2. Macro region match; 3. Region-neutral match; 4. Orthographic affinity match; 5. Preferred region match; 6. Sibling match.
 
@@ -193,5 +194,5 @@ L’anglais requiert une attention particulière. Si une application ajoute la l
 
 * [Comment le système de gestion des ressources met en correspondance et sélectionne les ressources](how-rms-matches-and-chooses-resources.md)
 * [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Gérer la langue et la région](../globalizing/manage-language-and-region.md)
+* [Comprendre les langues de profil utilisateur et les langues du manifeste de l’application](../design/globalizing/manage-language-and-region.md)
 * [Composition des régions macro-géographiques (continentales), des sous-régions géographiques et des groupements économiques ou autres sélectionnés](http://go.microsoft.com/fwlink/p/?LinkId=247929)

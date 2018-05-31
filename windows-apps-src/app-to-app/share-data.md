@@ -1,6 +1,6 @@
 ---
 description: Cet article explique comment prendre en charge le contrat de partage dans une application de plateforme Windows universelle (UWP).
-title: "Partager des données"
+title: Partager des données
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: msatranjr
 ms.author: misatran
@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: fe6da350fbfe006b55e90aee8c12da90967f5711
-ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.localizationpriority: medium
+ms.openlocfilehash: d283ce0211b28f9d41e4689c978e8731c677698d
+ms.sourcegitcommit: c11e7163010cb7547aeaca96e9b90a3c3a8ef31e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2017
+ms.lasthandoff: 01/25/2018
+ms.locfileid: "1541112"
 ---
 # <a name="share-data"></a>Partager des données
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cet article explique comment prendre en charge le contrat de partage dans une application de plateforme Windows universelle (UWP). Le contrat de partage constitue un moyen simple pour partager rapidement des données, telles que du texte, des liens, des photos et vidéos, entre les applications. Par exemple, un utilisateur peut partager une page web avec ses amis à l’aide d’une application de réseau social ou enregistrer un lien dans une application de prise de notes pour s’y référer plus tard.
 
@@ -25,11 +26,11 @@ Cet article explique comment prendre en charge le contrat de partage dans une ap
 
 Ajoutez un gestionnaire d’événements [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) à appeler lorsque l’utilisateur appelle l’option Partager. Cela peut se produire lorsque l’utilisateur appuie sur un contrôle dans votre application (par exemple, une commande de barre d’application ou un bouton) ou automatiquement dans un scénario spécifique (par exemple, si l’utilisateur a terminé un niveau et obtient un score élevé).
 
-[!code-cs[Principal](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
 Lorsqu’un événement [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) survient, votre application reçoit un objet [**DataRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest). Cet objet contient une classe [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) que vous pouvez utiliser pour fournir le contenu qu’un utilisateur souhaite partager. Vous devez fournir un titre et des données à partager. La description est facultative, mais recommandée.
 
-[!code-cs[Principal](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
 ## <a name="choose-data"></a>Choisir les données
 
@@ -40,13 +41,12 @@ Vous pouvez partager différents types de données, notamment :
 -   HTML
 -   Texte mis en forme
 -   Bitmaps
--   Texte brut
 -   Fichiers
 -   Données personnalisées définies par le développeur
 
 L’objet [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) peut contenir un ou plusieurs de ces formats, dans n’importe quelle combinaison. L’exemple suivant illustre le partage de texte.
 
-[!code-cs[Principal](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
 ## <a name="set-properties"></a>Définir des propriétés
 
@@ -54,13 +54,13 @@ Lorsque vous créez un package de données en vue de le partager, vous pouvez d�
 
 Toutes les propriétés sont facultatives, à l’exception du titre. La propriété title est obligatoire et doit être définie.
 
-[!code-cs[Principal](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
 ## <a name="launch-the-share-ui"></a>Lancer l’interface utilisateur de partage
 
 Une interface utilisateur pour le partage est fournie par le système. Pour la lancer, appelez la méthode [**ShowShareUI**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI).
 
-[!code-cs[Principal](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
 ## <a name="handle-errors"></a>Gérer les erreurs
 

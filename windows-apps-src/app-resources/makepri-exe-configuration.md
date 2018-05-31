@@ -1,6 +1,6 @@
 ---
 author: stevewhims
-Description: "Cette rubrique décrit le schéma du fichier de configurationXML de MakePri.exe."
+Description: This topic describes the schema of the MakePri.exe XML configuration file.
 title: Fichier de configuration de MakePri.exe
 template: detail.hbs
 ms.author: stwhi
@@ -9,15 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
-localizationpriority: medium
-ms.openlocfilehash: 7d19d1d778b434abd25d0d087159ea79521642e8
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+ms.localizationpriority: medium
+ms.openlocfilehash: 24ba76549053ef0f88612249eb903278d8554167
+ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/12/2017
+ms.locfileid: "1393518"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="makepriexe-configuration-file"></a>Fichier de configuration de MakePri.exe
 
 Cette rubrique décrit le schéma du fichier de configuration XML de [MakePri.exe](compile-resources-manually-with-makepri.md), également appelé fichier de configuration PRI. L’outil MakePri.exe inclut une [commande createconfig](makepri-exe-command-options.md#createconfig-command) qui vous permet de créer un nouveau fichier de configuration PRI initialisé.
@@ -186,7 +185,6 @@ MakePri.exe ne bloque pas de manière explicite la génération de fichiers PRI 
 
 MakePri.exe analyse l’élément `packaging` après tous les nœuds `index` pour remplir tous les qualificateurs par défaut. MakePri.exe collecte les informations obtenues dans ces structures de données.
 
-**C#**
 ```csharp
 enum ResourcePackageMode
 {

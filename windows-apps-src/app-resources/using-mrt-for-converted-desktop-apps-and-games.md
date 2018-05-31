@@ -1,7 +1,7 @@
 ---
 author: ptorr-msft
 title: Utilisation de MRT pour les jeux et applications de bureau converties
-description: "En incluant votre application ou jeu.NET ouWin32 dans un packageAppX, vous pouvez exploiter le système de gestion des ressources pour charger des ressources d’application adaptées au contexte d’exécution. Cette rubrique détaillée décrit ces techniques."
+description: En incluant votre application ou jeu.NET ouWin32 dans un packageAppX, vous pouvez exploiter le système de gestion des ressources pour charger des ressources d’application adaptées au contexte d’exécution. Cette rubrique détaillée décrit ces techniques.
 ms.author: ptorr
 ms.date: 10/25/2017
 ms.topic: article
@@ -14,6 +14,7 @@ ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 12/12/2017
+ms.locfileid: "1396478"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>Utiliser le système de gestion des ressources Windows10 dans une application ou un jeu hérité
 
