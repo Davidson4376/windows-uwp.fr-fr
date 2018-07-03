@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6e5d69c2f86c0d57c0c1be938799d5e81bb8f00
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 81205dc7122c75345b686240f79200d8304704b7
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832273"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843419"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>Capture photo, vidéo et audio de base à l’aide de MediaCapture
 
@@ -61,7 +61,7 @@ Si vous le souhaitez, vous pouvez capturer plusieurs photos en appelant à plusi
 
 Pour plus d’informations sur l’utilisation de **BitmapEncoder** et de l'objet **SoftwareBitmap**, notamment l’affichage dans une page XAML, voir [**Créer, modifier et enregistrer des images bitmap**](imaging.md). 
 
-Pour plus d’informations sur la définition des valeurs de contrôle de l’appareil de capture, voir [Contrôles de l’appareil de capture pour la photo et la vidéo](capture-device-controls-for-photo-and-video.md).
+Pour plus d’informations sur la définition des valeurs de contrôle de l’appareil de capture, voir [Contrôles de l’appareil de capture pour la photo et la vidéo](capture-device-controls-for-photo-and-video-capture.md).
 
 À partir de Windows10, version1803, vous pouvez obtenir les métadonnées, telles que les informations EXIF, pour les photos capturées dans un format non compressé en accédant à la propriété [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) de la classe **CapturedFrame** retournée par **MediaCapture**. Dans les versions précédentes, ces données étaient uniquement accessibles dans l’en-tête des photos capturées dans un format de fichier compressé. Vous pouvez transmettre ces données à un objet [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder) lors de l’écriture manuelle d’un fichier image. Pour plus d’informations sur l’encodage des bitmaps, voir [Créer, modifier et enregistrer des images bitmap](imaging.md).  Vous pouvez également accéder aux valeurs de contrôle de trame, comme les paramètres d’exposition et de flash utilisés lors de la capture de l’image en accédant à la propriété [**ControlValues**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.capturedframe.controlvalues). Pour plus d’informations, voir [Contrôles de l’appareil de capture pour la capture photo et vidéo](capture-device-controls-for-photo-and-video-capture.md).
 

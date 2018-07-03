@@ -12,12 +12,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a5da807d430683689cf38f2db6920af2dc058a99
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: a0753081af4128cf2cad3eeff9d8c919c42eb596
+ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707290"
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "1895138"
 ---
 # <a name="handle-pointer-input"></a>Gérer les entrées du pointeur
 
@@ -704,9 +704,11 @@ Cette application particulière utilise la couleur et l’animation pour mettre 
 **Télécharger cet exemple depuis [Exemple d’entrée de pointeur (UserControl avec animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)**
 
 ### <a name="visual-feedback"></a>Retour visuel
+
 Nous définissons un **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)**, basé sur un objet XAML **[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)**, qui met en évidence l’emplacement de chaque pointeur sur le canevas et utilise une classe **[Storyboard](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.animation.storyboard)** pour animer l’ellipse correspondant au pointeur principal.
 
 **Voici le code XAML:**
+
 ```xaml
 <UserControl
     x:Class="UWP_Pointers.PointerEllipse"

@@ -4,18 +4,18 @@ ms.assetid: AE3E003F-BDEC-438B-A80A-3CE1675B369C
 description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour récupérer les données agrégées de rapport d’erreurs matérielles, pour une plage de dates données et en fonction d’autres filtres facultatifs. Cette méthode est uniquement destinées aux fabricants OEM.
 title: Obtenir les données de rapport d’erreurs matérielles de fabricant d'ordinateurs (OEM)
 ms.author: mcleans
-ms.date: 01/18/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e1e7d83b8094a79cb87a6611e2e6d8b8f05159e
-ms.sourcegitcommit: b7032f083bcbb71f5a7dd1a200dcc81dba496a81
+ms.openlocfilehash: f8d7a85a37272eb7046ca1e7f64476f94d9556e2
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
-ms.locfileid: "1527337"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989453"
 ---
 # <a name="get-oem-hardware-error-reporting-data"></a>Obtenir les données de rapport d’erreurs matérielles de fabricant d'ordinateurs (OEM)
 
@@ -36,7 +36,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
 
-| Méthode | URI de la requête                                                          |
+| Méthode | URI de requête                                                          |
 |--------|----------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/hardware/failurehits``` |
 
@@ -55,11 +55,11 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 | Paramètre        | Type   |  Description      |  Obligatoire  
 |---------------|--------|---------------|------|
 | startDate | date | Dans la plage de dates, la date de début de la récupération des données de rapport d’erreurs. La valeur par défaut est la date actuelle. |  Non  |
-| endDate | date | Dans la plage de dates, la date de fin de la récupération des données de rapports d’erreurs. La valeur par défaut est la date actuelle. |  Non  |
+| endDate | date | Dans la plage de dates, la date de fin de la récupération des données de rapports d’erreurs. La valeur par défaut est la date du jour. |  Non  |
 | top | entier | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
 | skip | entier | Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10000 et skip=0 pour obtenir les 10000 premières lignes de données, top=10000 et skip=10000 pour obtenir les 10000 lignes suivantes, et ainsi de suite. |  Non  |
 | filter |chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Vous pouvez spécifier les champs suivants:<p/><ul><li><strong>failureName</strong></li><li><strong>failureHash</strong></li><li><strong>symbol</strong></li><li><strong>osVersion</strong></li><li><strong>eventType</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>moduleName</strong></li><li><strong>moduleVersion</strong></li><li><strong>mode</strong></li><li><strong>architecture</strong></li><li><strong>modèle</strong></li><li><strong>carte de base</strong></li><li><strong>modelFamily</strong></li><li><strong>flightRing</strong></li></ul> | Non   |
-| aggregationLevel | chaîne | Indique la plage de temps pour laquelle vous souhaitez récupérer les données agrégées. Il peut s’agit des chaînes suivantes : <strong>day</strong>, <strong>week</strong> ou <strong>month</strong>. Par défaut, la valeur est <strong>day</strong>. Si vous spécifiez <strong>week</strong> ou <strong>month</strong>, les valeurs <em>failureName</em> et <em>failureHash</em> sont limitées à 1 000 compartiments. | Non |
+| aggregationLevel | chaîne | Indique la plage de temps pendant laquelle récupérer les données agrégées. Il peut s’agit des chaînes suivantes : <strong>day</strong>, <strong>week</strong> ou <strong>month</strong>. Par défaut, la valeur est <strong>day</strong>. Si vous spécifiez <strong>week</strong> ou <strong>month</strong>, les valeurs <em>failureName</em> et <em>failureHash</em> sont limitées à 1 000 compartiments. | Non |
 | orderby | chaîne | Une instruction commandant les valeurs des données de résultat. La syntaxe est <em>orderby=field [order],field [order],...</em>. Vous pouvez spécifier les champs suivants à partir du corps de réponse:<p/><ul><li><strong>date</strong></li><li><strong>failureName</strong></li><li><strong>failureHash</strong></li><li><strong>symbol</strong></li><li><strong>osVersion</strong></li><li><strong>eventType</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>moduleName</strong></li><li><strong>moduleVersion</strong></li><li><strong>mode</strong></li><li><strong>architecture</strong></li><li><strong>modèle</strong></li><li><strong>carte de base</strong></li><li><strong>modelFamily</strong></li><li><strong>flightRing</strong></li></ul><p>Le paramètre facultatif <em>order</em> peut avoir la valeur <strong>asc</strong> ou <strong>desc</strong> pour spécifier l’ordre croissant ou décroissant de chaque champ. La valeur par défaut est <strong>asc</strong>.</p><p>Voici un exemple de chaîne <em>orderby</em>: <em>orderby=date,market</em></p> |  Non  |
 | groupby | chaîne | Une instruction qui applique l’agrégation des données uniquement sur les champs spécifiés. Vous pouvez spécifier les champs suivants dans le corps de réponse:<p/><ul><li><strong>failureName</strong></li><li><strong>failureHash</strong></li><li><strong>symbol</strong></li><li><strong>osVersion</strong></li><li><strong>eventType</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>moduleName</strong></li><li><strong>moduleVersion</strong></li><li><strong>mode</strong></li><li><strong>architecture</strong></li><li><strong>modèle</strong></li><li><strong>carte de base</strong></li><li><strong>modelFamily</strong></li><li><strong>flightRing</strong></li></ul><p>Les lignes de données renvoyées comportent les champs spécifiés dans le paramètre <em>groupby</em>, ainsi que dans les paramètres suivants :</p><ul><li><strong>date</strong></li><li><strong>eventCount</strong></li></ul><p>Le paramètre <em>groupby</em> peut être utilisé avec le paramètre <em>aggregationLevel</em>. Exemple: <em>&amp;groupby=failureName,market&amp;aggregationLevel=week</em></p></p> |  Non  |
 
@@ -87,7 +87,7 @@ Authorization: Bearer <your access token>
 |------------|---------|--------------|
 | Valeur      | tableau   | Un tableau d’objets comportant les données agrégées de signalement d’erreurs. Pour plus d’informations sur les données incluses dans chaque objet, voir le tableau suivant.     |
 | @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la demande est défini sur 10000, mais que plus de 10000lignes d’erreurs sont associées à la requête. |
-| TotalCount | nombre entier | Nombre total de lignes des résultats de données pour la requête.     |
+| TotalCount | entier | Nombre total de lignes dans les résultats de données de la requête.     |
 
 <span/>
 
@@ -97,7 +97,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 |-----------------|---------|---------------------|
 | date            | chaîne  | Date de début des données d’erreur. Si la requête spécifiait un jour unique, cette valeur est cette date. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
 | sellerId   | chaîne  | La valeur d’ID de vendeur qui est associée au compte de développeur (ce qui correspond à la valeur **ID de vendeur** dans les paramètres du compte de centre de développement). |
-| failureName     | chaîne  | Le nom de l'échec, qui est constitué de quatre parties: une ou plusieurs classes de problème, un code de vérification d’exception/d’erreur, le nom de l'image/du pilote où l’échec s’est produit et le nom de la fonction associée.  |
+| failureName     | chaîne  | Le nom de l'échec, qui se compose de quatre partie: une ou plusieurs classes de problème, un code de vérification d'exception ou de bogue, le nom de l'image/du pilote où l'erreur s'est produite et le nom de la fonction associée.  |
 | failureHash     | chaîne  | L’identificateur unique de l’erreur.   |
 | symbol          | chaîne  | Le symbole affecté à cette erreur. |
 | osVersion       | chaîne  | La version du système d’exploitation en quatre parties sur laquelle l’erreur s’est produite.  |
@@ -112,7 +112,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | modelFamily | chaîne | Le nom de la famille du modèle d'appareil sur lequel l’erreur s’est produite. |
 | flightRing | chaîne | Le nom de la version d'évaluation du système d'exploitation sur lequel l’erreur s’est produite. |
 | mode | chaîne | Cette valeur est toujours *noyau*. |
-| eventCount      | nombre entier | Le nombre d’événements affectés à cette erreur pour le niveau d’agrégation spécifié.      |
+| eventCount      | entier | Le nombre d’événements affectés à cette erreur pour le niveau d’agrégation spécifié.      |
 
 <span/> 
 

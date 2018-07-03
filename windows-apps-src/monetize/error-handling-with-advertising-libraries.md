@@ -4,22 +4,22 @@ ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
 description: Découvrez comment gérer les erreurs générées par la classe AdControl dans les bibliothèques de publicités Microsoft.
 title: Gérer des erreurs dans les publicités
 ms.author: mcleans
-ms.date: 08/23/2017
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, annonces, publicités, gestion des erreurs, javascript, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bdbf33cba031bfbeca2216affe7c560b5521b24
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: fb60f870aa220a123bab185ef98ccca1f6a8881a
+ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654118"
+ms.lasthandoff: 05/14/2018
+ms.locfileid: "1880970"
 ---
 # <a name="handle-ad-errors"></a>Gérer des erreurs dans les publicités
 
-Les classes [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), et [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.aspx) ont chacune un événement **ErrorOccurred** qui se déclenche en cas d'erreur ActiveDirectory. Le code de votre application peut gérer cet événement et examiner les propriétés [ErrorCode](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errorcode.aspx) et [ErrorMessage](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errormessage.aspx) de l’objet arguments d’événement pour déterminer la cause de l’erreur.
+Les classes [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) et **NativeAdsManagerV2** ont chacune un événement **ErrorOccurred** qui se déclenche en cas d'erreur liée aux publicités. Le code de votre application peut gérer cet événement et examiner les propriétés [ErrorCode](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errorcode.aspx) et [ErrorMessage](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errormessage.aspx) de l’objet arguments d’événement pour déterminer la cause de l’erreur.
 
 <span id="bkmk-dotnet"/>
 
@@ -27,7 +27,7 @@ Les classes [AdControl](https://msdn.microsoft.com/library/windows/apps/microsof
 
 Pour gérer les erreurs liées aux publicités dans une application XAML:
 
-1. Affectez l'événement **ErrorOccurred** de votre objet **AdControl**, **InterstitialAd** ou **NativeAdsManager** au nom d’un délégué de gestionnaire d’événements.
+1. Affectez l'événement **ErrorOccurred** de votre objet **AdControl**, **InterstitialAd** ou **NativeAdsManagerV2** au nom d’un délégué de gestionnaire d’événements.
 
 2. Codez le délégué de gestion des événements d’erreur afin qu’il prenne deuxparamètres: un **Object** pour l’expéditeur et un objet [AdErrorEventArgs](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.aspx).
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e54af14d23b255718f5247605b9bdd611f172308
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 424ca52020bd5b9aeab745030dd6eef4cd4430b6
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663839"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862418"
 ---
 # <a name="create-and-host-an-app-extension"></a>Créer et héberger une extension d’application
 
@@ -27,7 +27,7 @@ Cet article est accompagné d’un exemple de code:
 
 ## <a name="introduction-to-app-extensions"></a>Présentation des extensions d’applications
 
-Les plug-ins, macros complémentaires et extensions sont des noms que vous connaissez sans doute déjà et qui désignent ce que nous appelons des extensions d’application dans la plateforme Windows universelle (UWP). Les extensions MicrosoftEdge sont des extensions d’applicationUWP. Les extensions d’applicationUWP ont été introduites dans Windows10 Édition anniversaire (version1607, build10.0.14393).
+Dans la plateforme Windows universelle (UWP), les extensions d’application fournissent des fonctionnalités similaires à celles des plug-ins, des macros complémentaires et des extensions sur d'autres plateformes. Les extensions MicrosoftEdge sont des extensions d’applicationUWP, par exemple. Les extensions d’applicationUWP ont été introduites dans Windows10 Édition anniversaire (version1607, build10.0.14393).
 
 Les extensions d’applicationUWP sont des applicationsUWP qui possède une déclaration d’extension leur permettant de partager des événements de contenu et de déploiement avec une application hôte. Une application d’extension peut fournir plusieurs extensions.
 
@@ -423,6 +423,7 @@ Cette rubrique présente les extensions d’application. Les principaux points �
 
 ## <a name="related-topics"></a>Rubriques associées
 
+* [Présentation des extensions d’application](https://blogs.msdn.microsoft.com/appinstaller/2017/05/01/introduction-to-app-extensions/)
 * [Session de la Build2016 sur les extensions d’application](https://channel9.msdn.com/Events/Build/2016/B808)
 * [Exemple de code d’extension d’application de la Build2016](https://github.com/Microsoft/App-Extensibility-Sample)
 * [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md)

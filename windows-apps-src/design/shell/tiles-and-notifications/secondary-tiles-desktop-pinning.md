@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, pont de bureau, vignettes secondaires, épingler, code confidentiel, épinglage, démarrage rapide, exemple de code, exemple, secondarytile, application de bureau, win32, winforms, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b0015a74750e08d575cad9d0ae78f8c864b7c09
-ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
+ms.openlocfilehash: 4fcce21608bf8711a97f9272a800d73c0476cdcb
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "1573206"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976607"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>Épingler des vignettes secondaires à partir d’une application de bureau
 
@@ -29,9 +29,6 @@ Grâce au [Pont du bureau](https://developer.microsoft.com/windows/bridges/deskt
 > **Nécessite Fall Creators Update**: vous devez cibler le Kit de développement logiciel (SDK)16299 et exécuter la Build16299 ou une version ultérieure pour épingler les vignettes secondaires à partir des applications Pont du bureau.
 
 L’ajout d’une vignette secondaire à partir de votre application WinForms ou WPF est très similaire à une application UWP pure. La seule différence est que vous devez spécifier votre handle de fenêtre principale (HWND). Cela est dû au fait que lors de l’épinglage d’une vignette, Windows affiche une boîte de dialogue modale demandant à l’utilisateur de confirmer s’il souhaite épingler la vignette. Si l’application de bureau ne configure pas l’objet SecondaryTile avec la fenêtre du propriétaire, Windows ne sait pas où dessiner la boîte de dialogue et l’opération échoue.
-
-> [!IMPORTANT]
-> Les notifications par vignette ne sont pas actuellement prises en charge sur les vignettes secondaires créées par le biais du Pont du bureau. Nous faisons tout notre possible pour activer cette fonctionnalité. 
 
 
 ## <a name="package-your-app-with-desktop-bridge"></a>Créer un package de votre application avec le Pont du bureau
@@ -96,7 +93,10 @@ bool isPinned = await tile.RequestCreateAsync();
 
 ## <a name="send-tile-notifications"></a>Envoyer des notifications par vignette
 
-Les notifications par vignette envoyées aux vignettes secondaires ne sont pas actuellement prises en charge par les applications Pont du bureau. Si vous essayez d’envoyer une notification par vignette à une vignette secondaire, vous recevrez une exception *Élément introuvable* avec HResult 0x80070490. Nous faisons tout notre possible pour activer cette fonctionnalité.
+> [!IMPORTANT]
+> **Requiert la Mise à jour d'avril2018 version17134.81 ou ultérieure**: vous devez exécuter la version17134.81 ou version ultérieure pour envoyer des notifications par vignette ou par badge à des vignettes secondaires à partir d’applications Pont du bureau. Avant cette mise à jour de maintenance.81, une exception0x80070490 *Élément introuvable* se produisait lors de l’envoi de notifications par vignette ou par badge aux vignettes secondaires à partir d’applications Pont du bureau.
+
+L'envoi de notifications par vignette ou par badge est identique à celui des applications UWP. Voir [Envoyer une notification par vignette locale](sending-a-local-tile-notification.md) pour commencer.
 
 
 ## <a name="resources"></a>Ressources

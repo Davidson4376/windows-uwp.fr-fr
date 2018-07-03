@@ -3,27 +3,24 @@ author: mcleanbyron
 description: Découvrez comment ajouter des publicités natives à votre application UWP.
 title: Publicités natives
 ms.author: mcleans
-ms.date: 03/22/2018
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, uwp, pub, publicité, contrôle de publicités, publicité native
 ms.localizationpriority: medium
-ms.openlocfilehash: ff7c9249989526a454ffd702f3f95d1ebc4b4566
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 5479efef22d31c5a23086b7e596553542e6e9e51
+ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690545"
+ms.lasthandoff: 05/14/2018
+ms.locfileid: "1881110"
 ---
 # <a name="native-ads"></a>Publicités natives
 
 Une publicité native est un format de publicité basée sur un composant où chaque élément de l'annonce publicitaire (par exemple, le titre, l’image, la description et le texte de l’appel à l’action) est fourni à votre application sous forme d'élément individuel. Vous pouvez intégrer ces éléments dans votre application en utilisant vos propres polices, couleurs, animations et autres composants d’interface utilisateur pour composer une expérience utilisateur discrète qui correspond à l’apparence de votre application, tout en profitant des revenus élevés générés par les publicités.
 
 Pour les annonceurs, les publicités natives offrent des emplacements de hautes performances, car l’expérience de publicité est étroitement intégrée à l’application, par conséquent, les utilisateurs ont tendance à interagir davantage avec ces types de publicités.
-
-> [!NOTE]
-> Pour servir des publicités natives à la version publique de votre app dans le MicrosoftStore, vous devez créer une unité publicitaire **native** à partir de la page  **Monétiser** &gt; **les annonces in-app** du tableau de bord du Centre de développement. La possibilité de créer des unités publicitaires **natives** n'est actuellement disponible que pour des développeurs sélectionnés qui participent à un programme pilote, mais nous envisageons de la rendre disponible pour tous les développeurs bientôt. Si vous souhaitez rejoindre notre programme pilote, contactez-nous à l’adresse aiacare@microsoft.com.
 
 > [!NOTE]
 > Les publicités natives ne sont actuellement prises en charge que pour les applications UWP basées sur XAML pour Windows10. La prise en charge pour les applications UWP écrites en HTML et JavaScript est prévue pour une future version du SDK MicrosoftAdvertising.
@@ -52,21 +49,21 @@ Suivez ces instructions pour intégrer une publicité native dans votre applicat
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
 
-5.  À un emplacement approprié de votre application (par exemple, dans ```MainPage``` ou dans une autre page), déclarez un objet [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.aspx) et plusieurs champs de chaîne représentant l’ID d'application et l’ID d’unité publicitaire de votre publicité native. L'exemple de code suivant affecte les champs `myAppId` et `myAdUnitId` pour les set-up-ad-units-in-your-app.md#live-ad-units des publicités natives.
+5.  À un emplacement approprié de votre application (par exemple, dans ```MainPage``` ou dans une autre page), déclarez un objet **NativeAdsManagerV2** et plusieurs champs de chaîne représentant l’ID d'application et l’ID d’unité publicitaire de votre publicité native. L’exemple de code suivant affecte les champs `myAppId` et `myAdUnitId` aux [valeurs de test](set-up-ad-units-in-your-app.md#test-ad-units) des publicités natives.
     > [!NOTE]
-    > Chaque **NativeAdsManager** est associé à une *unité publicitaire* qui est utilisée par nos services pour servir des publicités au contrôle de publicités natives, et chaque unité publicitaire se compose d’un *ID d'unité publicitaire* et d'un *ID d'application*. Dans ces étapes, vous attribuez à votre contrôle des valeurs de test ID d’unité publicitaire et ID d'application. Ces valeurs de test ne peuvent être utilisées que dans une version de test de votre application. Avant de publier votre app sur le MicrosoftStore, vous devez [remplacer ces valeurs de test par des valeurs dynamiques](#release) du Centre de développement Windows.
+    > Chaque **NativeAdsManagerV2** est associé à une *unité publicitaire* qui est utilisée par nos services pour servir des publicités au contrôle de publicités natives, et chaque unité publicitaire se compose d’un *ID d'unité publicitaire* et d'un *ID d'application*. Dans ces étapes, vous attribuez à votre contrôle des valeurs de test ID d’unité publicitaire et ID d'application. Ces valeurs de test ne peuvent être utilisées que dans une version de test de votre application. Avant de publier votre app sur le MicrosoftStore, vous devez [remplacer ces valeurs de test par des valeurs dynamiques](#release) du Centre de développement Windows.
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
 
-6.  Dans le code exécuté au démarrage (par exemple, dans le constructeur de la page), instanciez l’objet **NativeAdsManager** et connectez les gestionnaires d’événements correspondant aux événements de l’objet [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.adready.aspx) et [ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.erroroccurred.aspx).
+6.  Dans le code exécuté au démarrage (par exemple, dans le constructeur de la page), instanciez l’objet **NativeAdsManagerV2** et connectez les gestionnaires d’événements correspondant aux événements de l’objet **AdReady** et **ErrorOccurred**.
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
 
-7.  Lorsque vous êtes prêt à afficher une publicité native, appelez la méthode [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.requestad.aspx) pour extraire une publicité.
+7.  Lorsque vous êtes prêt à afficher une publicité native, appelez la méthode **RequestAd** pour extraire une publicité.
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#RequestAd)]
 
-8.  Quand une publicité native est prête pour votre application, votre gestionnaire d’événements **AdReady** est appelé et un objet [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) qui représente la publicité native est transmis au paramètre *e*. Utilisez les propriétés **NativeAd** pour récupérer chaque élément de la publicité native et afficher ces éléments sur votre page. Veillez à appeler également la méthode [RegisterAdContainer](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.registeradcontainer.aspx) pour inscrire l’élément d’interface utilisateur qui agit comme un conteneur pour la publicité native. C'est indispensable pour suivre correctement les expositions publicitaires et les clics.
+8.  Quand une publicité native est prête pour votre application, votre gestionnaire d’événements **AdReady** est appelé et un objet **NativeAdV2** qui représente la publicité native est transmis au paramètre *e*. Utilisez les propriétés **NativeAdV2** pour récupérer chaque élément de la publicité native et afficher ces éléments sur votre page. Veillez à appeler également la méthode **RegisterAdContainer** pour inscrire l’élément d’interface utilisateur qui agit comme un conteneur pour la publicité native. C'est indispensable pour suivre correctement les expositions publicitaires et les clics.
     > [!NOTE]
     > Certains éléments de la publicité native sont obligatoires et doivent toujours être affichés dans votre application. Pour plus d’informations, voir nos [recommandations en matière de publicité native](ui-and-user-experience-guidelines.md#guidelines-for-native-ads).
 
@@ -122,7 +119,7 @@ Après avoir vérifié que votre implémentation de publicité native affiche co
 
 3. Vous pouvez éventuellement activer la médiation publicitaire pour la publicité native en configurant les paramètres de la section [Paramètres de médiation](../publish/in-app-ads.md#mediation) sur la page [Publicités in-app](../publish/in-app-ads.md). La médiation publicitaire vous permet d'optimiser vos revenus publicitaires et vos capacités de promotion d'app en affichant des publicités issues de plusieurs réseaux publicitaires.
 
-4.  Dans votre code, remplacez les valeurs de test de l’unité publicitaire (c'est-à-dire les paramètres *applicationId* et *adUnitId* du constructeur [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx)) par les valeurs dynamiques que vous avez générées dans le Centre de développement.
+4.  Dans votre code, remplacez les valeurs de test de l’unité publicitaire (c'est-à-dire les paramètres *applicationId* et *adUnitId* du constructeur **NativeAdsManagerV2**) par les valeurs dynamiques que vous avez générées dans le Centre de développement.
 
 5.  [Soumettez votre application](../publish/app-submissions.md) au Windows Store à l’aide du tableau de bord du Centre de développement.
 

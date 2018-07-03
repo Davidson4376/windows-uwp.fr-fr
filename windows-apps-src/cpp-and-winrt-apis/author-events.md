@@ -3,27 +3,24 @@ author: stevewhims
 description: Cette rubrique montre comment créer un composant Windows Runtime contenant une classe runtime qui déclenche des événements. Elle montre également une application qui utilise le composant et gère les événements.
 title: Créer des événements en C++/WinRT
 ms.author: stwhi
-ms.date: 04/23/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, créer, événement
 ms.localizationpriority: medium
-ms.openlocfilehash: b7574f1a3406dae665ced80294f7bc1cf91aeb8c
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 192000f937989d7218931ce1465bd96d5d9b71c6
+ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832023"
+ms.lasthandoff: 05/14/2018
+ms.locfileid: "1880880"
 ---
 # <a name="author-events-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Créer des événements en [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-> [!NOTE]
-> **Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.**
-
 Cette rubrique montre comment créer un composant Windows Runtime qui contient une classe runtime représentant un compte bancaire, qui déclenche un événement lorsque son solde devient débiteur. Elle montre également une application de base qui utilise la classe runtime de compte bancaire, appelle une fonction pour ajuster le solde et gère tous les événements résultants.
 
 > [!NOTE]
-> Pour plus d’informations sur la disponibilité actuelle de l'extension Visual Studio (VSIX) C++/WinRT (qui fournit la prise en charge des modèles de projet, ainsi que les propriétés et cibles MSBuild C++/WinRT), voir [Prise en charge de Visual Studio pour C++/WinRT et VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> Pour plus d’informations sur l'installation et l'utilisation de l'extension Visual Studio (VSIX) C++/WinRT (qui fournit la prise en charge des modèles de projet, ainsi que les propriétés et cibles MSBuild C++/WinRT), voir [Prise en charge de Visual Studio de C++/WinRT et VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
 > [!IMPORTANT]
 > Pour obtenir les principaux concepts et termes facilitant votre compréhension pour utiliser et créer des classes runtime avec C++/WinRT, voir [Utiliser des API avec C++/WinRT](consume-apis.md) et [Créer des API avec C++/WinRT](author-apis.md).
@@ -33,8 +30,8 @@ Si vous souhaitez déclencher un événement à partir d’une classe runtime im
 
 Le compilateur vous aidera en affichant une erreur «*must be WinRT type*» (doit être de type WinRT) si vous oubliez cette contrainte.
 
-## <a name="winrtdelegatelttgt"></a>winrt::delegate&lt;...T&gt;
-Si vous souhaitez déclencher un événement à partir d’un type C++ (créé et utilisé au sein du même projet), vous pouvez utiliser **winrt::delegate&lt;...T&gt;** C++/WinRT pour le type délégué de votre événement. Dans ce cas, le paramètre de type n’a pas besoin d’être de type Windows Runtime.
+## <a name="winrtdelegatelt-tgt"></a>winrt::delegate&lt;...T&gt;
+Si vous souhaitez déclencher un événement à partir d’un type C++ (créé et utilisé au sein du même projet), vous pouvez utiliser [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) C++/WinRT pour le type délégué de votre événement. Dans ce cas, les paramètres de type du délégué n’ont pas besoin d’être des types Windows Runtime. Si vous effectuez un portage à partir d'un code base C++/CX où les événements et les délégués sont utilisés en interne (pas sur les fichiers binaires), **winrt::delegate** vous aidera à répliquer ce modèle en C++/WinRT.
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>Créer un composant Windows Runtime (BankAccountWRC)
 Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créez un projet **Composant Windows Runtime Visual C++ (C++/WinRT)** et nommez-le *BankAccountWRC* (pour «composant Windows Runtime de compte bancaire»).
@@ -70,14 +67,14 @@ namespace winrt::BankAccountWRC::implementation
         ...
 
     private:
-        event<Windows::Foundation::EventHandler<float>> accountIsInDebitEvent;
+        winrt::event<Windows::Foundation::EventHandler<float>> accountIsInDebitEvent;
         float balance{ 0.f };
     };
 }
 ...
 ```
 
-Dans `BankAccount.cpp`, implémentez les fonctions comme suit.
+Dans `BankAccount.cpp`, implémentez les fonctions, comme illustré dans l’exemple de code ci-dessous. Dans C++/WinRT, un événement déclaré dans le fichier IDL est implémenté comme un ensemble de fonctions surchargées (de la même manière qu'une propriété est implémentée comme une paire de fonctions Get et Set surchargées). Une surcharge prend un délégué à enregistrer et retourne un jeton. L’autre prend un jeton et révoque l’inscription du délégué associé.
 
 ```cppwinrt
 // BankAccount.cpp
@@ -102,14 +99,16 @@ namespace winrt::BankAccountWRC::implementation
 }
 ```
 
-L’implémentation de la fonction **AdjustBalance** déclenche l’événement **AccountIsInDebit** si le solde devient négatif.
+Vous n’avez pas besoin d’implémenter la surcharge pour le révocateur d’événement (pour plus d’informations, voir [Révoquer un délégué inscrit](handle-events.md#revoke-a-registered-delegate))&mdash;la projection C++/WinRT s'en charge à votre place. Les autres surcharges ne sont pas incorporées dans la projection pour vous donner la possibilité de les implémenter de manière optimale pour votre scénario. Un appel de [**event::add**](/uwp/cpp-ref-for-winrt/event#eventadd-function) et de [**event::remove**](/uwp/cpp-ref-for-winrt/event#eventremove-function) de ce type constitue une valeur par défaut efficace et concurrency/thread-safe. Mais si vous avez un très grand nombre d’événements, vous pouvez ne pas souhaiter un champ d’événement pour chacun, mais plutôt opter pour un type d’implémentation fragmentée à la place.
+
+Vous pouvez également voir ci-dessus que l’implémentation de la fonction **AdjustBalance** déclenche l’événement **AccountIsInDebit** si le solde devient négatif.
 
 Si un avertissement vous empêche de procéder à la génération, définissez la propriété de projet **C/C++** > **Général** > **Considérer les avertissements comme des erreurs** sur **Non (/WX-)** et générez de nouveau le project.
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>Créer une application de base (BankAccountCoreApp) pour tester le composant Windows Runtime
 Créez à présent un nouveau projet (dans votre solution `BankAccountWRC` ou dans une nouvelle solution). Créez un projet **Application de base Visual C++ (C++/WinRT)** et nommez-le *BankAccountCoreApp*.
 
-Ajoutez une référence, puis accédez à `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`. Cliquez sur **Ajouter**, puis sur **OK**. À présent, générez BankAccountCoreApp. Si vous voyez une erreur indiquant que le fichier de charge utile `readme.txt` n’existe pas, excluez ce fichier du projet Composant Windows Runtime, régénérez-le, puis regénérez BankAccountCoreApp.
+Ajoutez une référence, puis accédez à `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd` (ou ajoutez une référence de projet, si les deux projets se trouvent dans la même solution). Cliquez sur **Ajouter**, puis sur **OK**. À présent, générez BankAccountCoreApp. Si vous voyez une erreur indiquant que le fichier de charge utile `readme.txt` n’existe pas, excluez ce fichier du projet Composant Windows Runtime, régénérez-le, puis regénérez BankAccountCoreApp.
 
 Pendant le processus de génération, l’outil `cppwinrt.exe` est exécuté pour traiter le fichier `.winmd` référencé dans les fichiers de code source contenant les types projetés afin de vous aider à utiliser votre composant. L’en-tête pour les types projetés des classes runtime de votre composant &mdash;nommé `BankAccountWRC.h`&mdash; est généré dans le dossier `\BankAccountCoreApp\BankAccountCoreApp\Generated Files\winrt\`.
 

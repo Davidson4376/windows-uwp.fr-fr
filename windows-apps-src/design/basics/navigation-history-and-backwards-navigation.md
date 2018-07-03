@@ -14,12 +14,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cefcefc9df85b512456c5fb2e556ad95e56d4999
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 824f0e83408893bf95d856067282b1fea1313876
+ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1831983"
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "1895406"
 ---
 #  <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Historique de navigation et navigation vers l’arrière pour les applicationsUWP
 
@@ -190,16 +190,16 @@ Si vous choisissez de fournir votre propre navigation de pile Back, l’expérie
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>Page à page, même groupe d’homologues, pas d’élément de navigation à l’écran</strong>
-<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Aucun élément de navigation (par exemple les onglets/tableaux croisés dynamiques ou un volet de navigation ancré) fournissant une navigation directe vers les deux pages n’est toujours présent.</p></td>
+<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Aucun élément de navigation (par exemple un volet de navigation supérieur ou un volet de navigation gauche ancré) fournissant une navigation directe vers les deux pages n’est toujours présent.</p></td>
 <td style="vertical-align:top;"><strong>Oui</strong>
-<p>Dans l’illustration suivante, l’utilisateur navigue entre deuxpages dans le même groupe d’homologues. Comme les pages n’utilisent pas d’onglets ni de volet de navigation ancré, la navigation est ajoutée à l’historique de navigation.</p>
+<p>Dans l’illustration suivante, l’utilisateur navigue entre deuxpages dans le même groupe d’homologues. Comme les pages n’utilisent pas de barre de navigation supérieure ni de volet de navigation gauche ancré, la navigation est ajoutée à l’historique de navigation.</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>Page à page, même groupe d’homologues, avec un élément de navigation à l’écran</strong>
-<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Les deux pages sont affichées dans le même élément de navigation. Par exemple, les deuxpages utilisent le même élément onglets/tableaux croisés dynamiques, ou elles s’affichent dans un volet de navigation ancré.</p></td>
-<td style="vertical-align:top;"><strong>Non</strong>
-<p>Lorsque l’utilisateur appuie sur le bouton Précédent, il retourne à la dernière page avant d’avoir accédé au groupe d’homologues actuel.</p>
+<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Les deux pages sont affichées dans le même élément de navigation. Par exemple, les deuxpages utilisent le même élément volet supérieur ou elles s’affichent dans un volet de navigation gauche ancré.</p></td>
+<td style="vertical-align:top;"><strong>Cela dépend</strong>
+<p>Oui, ajouter à l’historique de navigation, mais avec deux exceptions notables. Si vous pensez que les utilisateurs de votre application passeront fréquemment d’une page à l’autre dans le groupe d’homologues, ou si vous souhaitez conserver l’état/historique de navigation dans une page du groupe d’homologues, n’ajoutez pas à l’historique de navigation. Dans ce cas, lorsque l’utilisateur appuie sur le bouton Précédent, il retourne à la dernière page avant d’avoir accédé au groupe d’homologues actuel. </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">

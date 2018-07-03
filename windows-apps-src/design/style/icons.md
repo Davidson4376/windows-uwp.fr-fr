@@ -6,7 +6,7 @@ ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 05/19/2017
+ms.date: 05/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,175 +14,147 @@ keywords: windows10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 61157ad23eb55447137531922ea23fa0120e2b98
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 077967c37f76c8f1d0942f365344de65db13b041
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653918"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983572"
 ---
 # <a name="icons-for-uwp-apps"></a>Icônes pour les applications UWP
 
+![image d'en-tête d'icônes](images/icons/header-icons.png)
+
+Les icônes fournissent un raccourci visuel pour une action, un concept ou un produit. En condensant une signification dans une image symbolique, les icônes peuvent franchir les barrières des langues et préserver une ressource extrêmement utile: l'espace à l’écran. 
+
+Les icônes peuvent apparaître dans les applications, ainsi qu'à l’extérieur: 
+
+:::row::: :::column::: **Icônes à l’intérieur de l’application**
+
+        ![icons inside the app](images/icons/inside-icons.png)
+        Inside your app, you use icons to represent an action, such as copying text or navigating to the settings page.
+    :::column-end:::
+    :::column:::
+        **Icons outside the app**
+
+        ![icons outside the app](images/icons/outside-icons.jpg)
+         Outside your app, Windows uses an icon to represent your app in the start menu and in the taskbar. If the user chooses to pin your app to the start menu, your app's start tile can feature your app's icon. Your app's icon appears in the title bar and you can choose to create a splash screen with your app's logo.
+    :::column-end:::
+:::row-end:::
+
+Cet article décrit les icônes au sein de votre application. Pour en savoir plus sur les icônes en dehors de votre application (icônes d’application), voir l'[article Icônes d'application et de vignette](/windows/uwp/design/shell/tiles-and-notifications/app-assets).
+
+## <a name="when-to-use-icons"></a>Quand utiliser les icônes
+
+Les icônes permettent d'économiser de l’espace, mais quand faut-il les utiliser? 
+
+:::row::: :::column::: ![faire](images/do.svg) ![image standard d’icônes](images/icons/icons-standard.svg)<br>
+
+        Use an icon for actions, like cut, copy, paste, and save, or for navigation items in a navigation menu.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        ![icons concept image](images/icons/icons-concept.svg)<br>
+
+        Use an icon if one already exists for the concept you want to represent. (To see whether an icon exists, check the Segoe icon list.)
+    :::column-end:::
+:::row-end:::
+
+:::row::: :::column::: ![faire](images/do.svg) ![icône de panier d’achat](images/icons/icon-shopping-cart.svg)<br>
+
+        Use an icon if it's easy for the user to understand what the icon means and it's simple enough to be clear at small sizes.
+    :::column-end:::
+    :::column:::
+        ![dont](images/dont.svg)
+        ![icons concept image](images/icons/icon-bad-example.png)<br>
+
+        Don't use an icon if its meaning isn't clear, or if making it clear requires a complex shape.
+    :::column-end:::
+:::row-end:::
 
 
-Des icônes efficaces s’harmonisent avec la typographie et avec le reste du langage de conception. Elles ne mélangent pas les métaphores et communiquent uniquement les informations nécessaires, le plus rapidement et simplement possible. 
 
-## <a name="linear-scaling-size-ramps"></a>Gammes de tailles de mise à l’échelle linéaire 
+## <a name="using-the-right-type-of-icon"></a>Utiliser le type approprié d’icône
 
-<table>
-    <tr> 
-        <td>16pxx16px</td>
-        <td>24pxx24px</td>
-        <td>32pxx32px</td>
-        <td>48pxx48px</td>
-    </tr>
-    <tr> 
-        <td><img src="images/icons-16x16.png" alt="Icons at 16x16 effective pixels" /></td>
-        <td><img src="images/icons-24x24.png" alt="Icons at 24x24 effective pixels" /></td>
-        <td><img src="images/icons-32x32.png" alt="Icons at 32x32 effective pixels" /></td>
-        <td><img src="images/icons-48x48.png" alt="Icons at 48x48 effective pixels" /></td>
-    </tr>
-</table>
+Il existe de nombreuses façons de créer une icône. Vous pouvez utiliser une police de symboles telle que la police Segoe MDL2 Assets. Vous pouvez créer votre propre image vectorielle. Vous pouvez même utiliser une image bitmap, bien que nous ne le conseillions pas. Voici un résumé de différentes façons d'ajouter une icône à votre application. 
 
-## <a name="common-shapes"></a>Formes courantes
+### <a name="use-a-predefined-icon"></a>Utilisez une icône prédéfinie.
+:::row::: :::column::: Microsoft fournit plus de 1000icônes dans la police Segoe MDL2 Assets. Il peut ne pas être intuitif d'obtenir une icône à partir d’une police, mais notre technologie d’affichage de police donne à ces icônes un aspect net et précis sur n’importe quel écran, à n'importe quelle résolution et à n’importe quelle taille. :::column-end::: :::column::: ![image d’icône prédéfinie](images/icons/predefined-icon.png) :::column-end::: :::row-end:::
 
-Les icônes doivent généralement optimiser l’espace dont elles disposent et n’inclure qu’un remplissage minime. Ces formes fournissent des points de départ pour le dimensionnement des formes de base. 
+### <a name="use-a-font"></a>Utilisez une police.
+:::row::: :::column::: Vous n’êtes pas obligé d’utiliser la police Segoe MDL2 Assets: vous pouvez utiliser n’importe quelle police installée par l’utilisateur sur son système, telle que Wingdings ou Webdings.
+:::column-end::: :::column::: ![image wingdings](images/icons/wingdings.png) :::column-end::: :::row-end:::
 
-![Grille de 32px par 32px](images/icons-common-shapes.png)
+### <a name="use-a-scalable-vector-graphics-svg-file"></a>Utilisez un fichier SVG (Scalable Vector Graphics).
+:::row::: :::column::: Les ressources SVG sont idéales pour les icônes, car elles paraissent toujours nettes à n’importe quelle taille ou résolution. La plupart des applications de dessin peuvent s'exporter au format SVG. :::column-end::: :::column::: ![image SVG](images/icons/icon-scale.gif) :::column-end::: :::row-end:::
 
-Utilisez la forme qui correspond à l’orientation de l’icône et créez votre composition autour de ces paramètres de base. Les icônes ne doivent pas nécessairement remplir la forme ou tenir entièrement à l’intérieur de cette dernière, et peuvent être ajustées selon les besoins pour garantir un équilibre optimal. 
+### <a name="use-geometry-objects"></a>Utilisez des objets de géométrie.
+:::row::: :::column::: Comme les fichiers SVG, les géométries sont une ressource vectorielle; elles paraissent toujours nettes. Toutefois, la création d’une géométrie est complexe, car vous devez spécifier individuellement chaque point et chaque courbe. En réalité, ce n'est un bon choix que si vous devez modifier l’icône pendant que votre application est en cours d’exécution (pour l’animer, par exemple). Pour obtenir des instructions, voir [Commandes de déplacement et de dessin pour les géométries](../../xaml-platform/move-draw-commands-syntax.md). :::column-end::: :::column::: ![Image d’objets de géométrie](images/icons/geometry-objects.png) :::column-end::: :::row-end:::
 
-<table class="uwpd-noborder">
-    <tr>
-        <td>Cercle<td>
-        <td>Carré</td>
-        <td>Triangle</td>
-    </tr>
-    <tr>
-        <td><img src="images/icons-common-shapes-examples-1.png" alt="A circle" /><td>
-        <td><img src="images/icons-common-shapes-examples-2.png" alt="A square" /></td>
-        <td><img src="images/icons-common-shapes-examples-3.png" alt="A triangle " /></td>
-    </tr>
-        <tr>
-        <td>Rectangle horizontal<td>
-        <td colspan="2">Rectangle vertical</td>        
-        </tr>
-    <tr>
-        <td><img src="images/icons-common-shapes-examples-4.png" alt="A horizontal rectangle" /><td>
-        <td colspan="2"><img src="images/icons-common-shapes-examples-5.png" alt="A vertical rectangle" /></td>
-         
-    </tr>
+### <a name="you-can-also-use-a-bitmap-image-such-as-png-gif-or-jpeg-although-we-dont-recommend-it"></a>Vous pouvez également utiliser une image bitmap, par exemple une image PNG, GIF ou JPEG, bien que nous ne le conseillions pas.
+:::row::: :::column::: Les images bitmap sont créées dans une taille spécifique, donc elles doivent être mises à l’échelle pour les agrandir ou les réduire en fonction de la taille d'icône souhaitée et de la résolution de l’écran. Lorsque l’image est réduite, elle peut paraître floue; lorsqu’elle est agrandie, elle peut paraître pixelisée. Si vous devez utiliser une image bitmap, nous vous recommandons d’utiliser le format PNG ou GIF plutôt qu'une image JPEG. :::column-end::: :::column::: ![ne pas faire](images/dont.svg) ![Image bitmap](images/icons/bitmap-image.png) :::column-end::: :::row-end:::
 
-</table>
+## <a name="make-the-icon-do-something"></a>Faites faire une action à l’icône
 
-## <a name="angles"></a>Angles
+Une fois que vous vous disposez d’une icône, l’étape suivante consiste à lui faire faire quelque chose en l’associant à une commande ou à une action de navigation. La meilleure façon de procéder consiste à ajouter l’icône à un bouton ou à une barre de commandes. 
 
-Outre l’utilisation d’une grille et d’une épaisseur de trait identiques, les icônes sont construites avec des éléments communs. 
+![Image d'une barre de commandes](images/icons/app-bar-desktop.svg)
 
-L’utilisation de ces seuls angles lors de la création de formes garantit la cohérence et le rendu adéquat de l’ensemble de nos icônes. 
+## <a name="create-an-icon-button"></a>Créer un bouton d’icône
 
-Vous pouvez combiner, joindre, faire pivoter et refléter ces lignes lorsque vous créez des icônes. 
+Vous pouvez placer une icône dans un bouton standard. Dans la mesure où vous pouvez utiliser les boutons dans une plus grande variété de lieux, cela vous donne un peu plus de souplesse pour l'emplacement d'affichage de votre icône d’action. 
 
-<table>
-    <tr>
-        <td><b>1:1</b><br/>45°</td>
-        <td><b>1:2</b><br />26,57° (vertical)<br/>63,43° (horizontal)</td>
-        <td><b>1:3</b><br/>18,43° (vertical)<br/>71,57° (horizontal)</td>
-        <td><b>1:4</b><br/>14,04° (vertical)<br/>75,96° (horizontal)</td>
-    </tr>
-    <tr>
-        
-        <td><img src="images/icons-grid-1-1.png" alt="1:1" /></td>
-        <td><img src="images/icons-grid-1-2.png" alt="1:2" /></td>
-        <td><img src="images/icons-grid-1-3.png" alt="1:3" /></td>
-        <td><img src="images/icons-grid-1-4.png" alt="1:4" /></td>
-    </tr>  
-</table>
+Il existe plusieurs méthodes pour ajouter une icône à un bouton:
 
-<p>En voici quelques exemples:</p>
+:::row::: :::column span="2"::: <b>Étape1</b><br>
+        Définissez la famille de polices du bouton sur la valeur `Segoe MDL2 Assets` et sa propriété de contenu sur la valeur unicode du glyphe à utiliser: :::column-end::: :::column::: ![Créer un bouton d'icône - Étape1](images/icons/create-icon-step-1.svg) :::column-end::: :::row-end:::
 
-<table>
-    <tr>
-        <td><img src="images/icons-angles-examples-1.png" alt="A 1:1 angle example" /></td>
-        <td><img src="images/icons-angles-examples-2.png" alt="A 1:2 angle example" /></td>
-        <td><img src="images/icons-angles-examples-3.png" alt="A 1:3 angle example" /></td>
-        <td><img src="images/icons-angles-examples-4.png" alt="A 1:4 angle example" /></td>
-    </tr>
-</table>
+```xaml 
+<Button FontFamily="Segoe MDL2 Assets" Content="&#xE102;" />
+```
 
-## <a name="curves"></a>Courbes
+:::row::: :::column span="2"::: <b>Étape2</b><br>
+        Vous pouvez utiliser l'un des objets d’élément de l’icône: [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon), [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon), [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) ou [SymbolIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbolicon). Cela vous donne davantage de choix de types d'icônes et vous permet de combiner les icônes et d'autres types de contenu, tels que le texte, si vous le souhaitez: :::column-end::: :::column::: ![Créer un bouton d'icône - Étape2](images/icons/icon-text-step-2.svg) :::column-end::: :::row-end:::
 
-Les traits courbes sont créés à partir de sections d’un cercle complet et ne doivent pas être inclinés, sauf s’ils ont besoin d’être alignés sur la grille de pixels. 
+```xaml 
+<Button>
+    <StackPanel>
+        <SymbolIcon Symbol="Play" />
+        <TextBlock>Play the movie</TextBlock>
+    </StackPanel>
+</Button>
+```
 
-<table>
-    <tr>
-        <td>1/4 de cercle</td>
-        <td>1/8 de cercle</td>
-    </tr>
-    <tr>
-        <td><img src="images/icons-curves-14circle.png" alt="1/4 circle" /></td>
-        <td><img src="images/icons-curves-18circle.png" alt="1/8 circle" /></td>
-    </tr>
-    <tr>
-        <td><img src="images/icons-curves-examples-1.png" alt="1/4 cirlce example" /></td>
-        <td><img src="images/icons-curves-examples-2.png" alt="1/8 circle example" /></td>
-    </tr>    
-</table>
+## <a name="create-a-series-of-icons-in-a-command-bar"></a>Créer une série d’icônes dans une barre de commandes
 
-## <a name="geometric-construction"></a>Construction géométrique
+:::row::: :::column span::: Lorsque vous avez une série de commandes qui vont ensemble, telles que couper/copier/coller ou un ensemble de commandes de dessin pour un programme de retouche photo, placez-les ensemble dans une [barre de commandes](../controls-and-patterns/app-bars.md). Une barre de commandes contient un ou plusieurs boutons ou boutons bascule de la barre de l’application, chacun d'entre eux représentant une action. Chaque bouton a une propriété [Icône](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon) qui vous permet de contrôler l’icône à afficher. Il existe plusieurs façons de spécifier l'icône. :::column-end::: :::column::: ![Exemple d’une barre de commandes avec des icônes](images/icons/create-icon-command-bar.svg) :::column-end::: :::row-end:::
 
-Nous vous recommandons de n’utiliser que des formes géométriques pures lorsque vous construisez des icônes.
+Le moyen le plus simple consiste à utiliser la liste des icônes prédéfinies que nous fournissons: il suffit de spécifier le nom de l’icône, par exemple, «Précédent» ou «Arrêter», et le système la dessine: 
 
-![Icône en forme de guitare avec superposition géométrique ](images/icons-geometric-construction.png)
+``` xaml
+<CommandBar>
+    <AppBarToggleButton Icon="Shuffle" Label="Shuffle" Click="AppBarButton_Click" />
+    <AppBarToggleButton Icon="RepeatAll" Label="Repeat" Click="AppBarButton_Click"/>
+    <AppBarSeparator/>
+    <AppBarButton Icon="Back" Label="Back" Click="AppBarButton_Click"/>
+    <AppBarButton Icon="Stop" Label="Stop" Click="AppBarButton_Click"/>
+    <AppBarButton Icon="Play" Label="Play" Click="AppBarButton_Click"/>
+    <AppBarButton Icon="Forward" Label="Forward" Click="AppBarButton_Click"/>
+</CommandBar>
 
-## <a name="filled-shapes"></a>Formes remplies 
+```
+Pour obtenir la liste complète des noms d’icônes, voir [Énumération Symbol](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
 
-Les icônes peuvent contenir des formes remplies si nécessaire, mais elles ne doivent pas dépasser 4px pour une grille de 32px×32px. La taille des cercles remplis ne doit pas être supérieure à 6pxx6px. 
+Il existe d'autres façons de fournir des icônes pour un bouton dans une barre de commandes:
 
-![Remplissage 5px par 8px ](images/icons-filled-shapes.png)
++ [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon): l’icône est basée sur un glyphe à partir de la famille de polices spécifiée.
++ [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon): l’icône est basée sur un fichier image bitmap avec l'**Uri** spécifié.
++ [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon): l’icône est basée sur des données de [Path](/uwp/api/windows.ui.xaml.shapes.path).
 
-## <a name="badges"></a>Badges
+Pour plus d’informations sur les barres de commandes, voir l'[article Barre de commandes](../controls-and-patterns/app-bars.md). 
 
-Un «badge» est un terme générique désignant un élément ajouté à une icône non destiné à être intégré à l’élément d’icône de base. Ces éléments véhiculent généralement d’autres informations concernant l’icône, comme un état ou une action. Les autres termes couramment employés pour désigner ce type d’élément sont: superposition, annotation ou modificateur. 
 
-![Badge d’état ](images/icons-badge-status.png)
 
-![Badge d’action ](images/icons-badge-action.png)
-
-Les badges d’état utilisent un objet coloré rempli surmontant l’icône, tandis que les badges d’action sont intégrés à l’icône avec le même style monochrome et la même épaisseur de trait.
-
-<table>
-<tr>
-    <td>Badges d’état courants</td>
-    <td>Badges d’action courants</td>
-</tr>
-<tr>
-    <td><img src="images/icons-badge-common-states-1.png" alt="Status badge " /></td>
-    <td><img src="images/icons-badge-common-states-2.png" alt="Action badge " /></td>
-</tr>
-</table>
-<p></p>
-
-### <a name="badge-color"></a>Couleur de badge 
-
-L’utilisation d’une couleur de badge ne doit être utilisée que pour communiquer l’état d’une icône. Les couleurs utilisées dans le badge d’état transmettent des messages émotionnels spécifiques à l’utilisateur. 
-
-<table>
-<tr><td>Vert: #128B44</td><td>Bleu: #2C71B9</td><td>Jaune: #FDC214</td></tr>
-<tr><td>Positif: effectué, terminé </td><td>Neutre: aide, notification </td><td>Mise en garde: alerte, avertissement </td></tr>
-<tr><td><img src="images/icons-color-inbadging-1.png" alt="Green status" /></td><td><img src="images/icons-color-inbadging-2.png" alt="Blue status" /></td>
-<td><img src="images/icons-color-inbadging-3.png" alt="Yellow status" /></td></tr>
-</table>
-<p></p>
-
-### <a name="badge-position"></a>Position de badge
-
-Par défaut, un badge d’état ou d’action est positionné dans le coin inférieur droit. N’utilisez d’autres positions que si la conception n’autorise pas ce positionnement par défaut. 
-
-### <a name="badge-sizing"></a>Dimensionnement de badge
-
-Les badges doivent présenter une taille de 10 à 18px sur une grille de 32px × 32px. 
-
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 * [Recommandations en matière de ressources de vignette et d’icône](../shell/tiles-and-notifications/app-assets.md)

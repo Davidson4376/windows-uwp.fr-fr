@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bbb26fb3c977917732a079f28d274f7f2bfba41
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 861233de6967a6199bae5d81c1a3938bf8645246
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833147"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976031"
 ---
 # <a name="getting-started-with-a-camera-barcode-scanner"></a>Prise en main du scanneur de code-barres à caméra
 ## <a name="step-1-add-capability-declarations-to-your-app-manifest"></a>Étape1: Ajouter des déclarations de fonctionnalités à votre manifeste d’application
@@ -84,7 +84,7 @@ Si votre caméra est intégrée au châssis de votre ordinateur, son nom peut se
 Utilisez [BarcodeScanner.ClaimScannerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync#Windows_Devices_PointOfService_BarcodeScanner_ClaimScannerAsync) pour obtenir l'utilisation exclusive du scanneur de codes-barres à caméra.
 
 ## <a name="step-7-system-provided-preview"></a>Étape7: Aperçu fourni par le système
-Un aperçu caméra est nécessaire pour que l’utilisateur pointe avec succès la caméra sur le codes-barres.  Windows fournit un aperçu caméra simple qui lance une boîte de dialogue permettant un contrôle de base du scanneur de codes-barres à caméra.  Il vous suffit d’appeler [ClaimedBarcodeScanner.ShowideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync) pour ouvrir la boîte de dialogue et [ClaimedBarcodeScanner.HideVideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview) pour la fermer lorsque vous avez terminé.
+Un aperçu caméra est nécessaire pour que l’utilisateur pointe avec succès la caméra sur le codes-barres.  Windows fournit un aperçu caméra simple qui lance une boîte de dialogue permettant un contrôle de base du scanneur de codes-barres à caméra.  Il vous suffit d’appeler [ClaimedBarcodeScanner.ShowVideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync) pour ouvrir la boîte de dialogue et [ClaimedBarcodeScanner.HideVideoPreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview) pour la fermer lorsque vous avez terminé.
 
 > [!TIP]
 > Voir [Héberger l'aperçu](pos-camerabarcode-hosting-preview.md) pour héberger l’aperçu du scanneur de codes-barres à caméra dans votre application.

@@ -15,14 +15,16 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1737408386628ea7ecf1bb42256976c5fd28cb77
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: 73b1c73fdd971eb4448aea62bc8c64ceac17a2b4
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707240"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843349"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>Navigation en mode focus pour clavier, boîtier de commande, télécommande et outils d’accessibilité
+
+![Clavier, télécommande et bouton multidirectionnel](images/dpad-remote/dpad-remote-keyboard.png)
 
 Utilisez la navigation en mode focus pour fournir des expériences d’interaction complètes et cohérentes dans vos applications UWP, des contrôles personnalisés pour les experts en utilisation du clavier, les utilisateurs en situation de handicap ou présentant d’autres exigences d’accessibilité, ainsi que l’expérience «10-foot» pour les écrans de télévisions et la XboxOne.
 

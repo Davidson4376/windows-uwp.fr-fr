@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, faible, référence
 ms.localizationpriority: medium
-ms.openlocfilehash: 63ffad19c0ae8a52737ae13a54e5657df875d0b5
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 69294115af93ec464abfe908df948c8ff5504efc
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832603"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842453"
 ---
 # <a name="weak-references-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Références faibles en [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 Vous devriez pouvoir, le plus souvent, concevoir vos propres API C++/WinRT de manière à éviter le besoin de références cycliques et de références faibles. Toutefois, lorsqu’il s’agit de l’implémentation native de la structure d’interface utilisateur basée sur XAML&mdash;en raison de la conception historique de l’infrastructure&mdash;le mécanisme de références faibles en C++/WinRT est nécessaire pour gérer les références cycliques. En dehors de XAML, il est peu probable que vous devrez utiliser des références faibles (bien qu’elles ne soient pas, en théorie, spécifiques à XAML).

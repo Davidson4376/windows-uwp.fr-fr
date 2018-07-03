@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 59a85512eacf880b61b3245726f4d15bb359a7ad
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
+ms.openlocfilehash: f0bed75a8201b9875f79419c0a77c8a35918b77e
+ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674886"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1877151"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>Activer les extensions d'abonnement de votre application
 
@@ -39,23 +39,24 @@ Pour activer les achats d'extensions d’abonnement dans votre application, proc
 
 1. [Créez une soumission d’extension](../publish/add-on-submissions.md) pour votre abonnement dans le tableau de bord du Centre de développement et publiez la soumission. Lorsque vous suivez le processus de soumission d'extension, faites attention aux propriétés suivantes:
 
-  * [Type de produit](../publish/set-your-add-on-product-id.md#product-type): veillez à sélectionner **Abonnement**.
+    * [Type de produit](../publish/set-your-add-on-product-id.md#product-type): veillez à sélectionner **Abonnement**.
 
-  * [Période d’abonnement](../publish/enter-add-on-properties.md#subscription-period): choisissez la période de facturation périodique de votre abonnement. Vous ne pouvez pas modifier la période d’abonnement après la publication de votre extension.
+    * [Période d’abonnement](../publish/enter-add-on-properties.md#subscription-period): choisissez la période de facturation périodique de votre abonnement. Vous ne pouvez pas modifier la période d’abonnement après la publication de votre extension.
 
-    Chaque extension d'abonnement prend en charge une période d’abonnement et une période d’évaluation uniques. Vous devez créer une extension d'abonnement différente pour chaque type d’abonnement que vous souhaitez proposer dans votre application. Par exemple, si vous souhaitez proposer un abonnement mensuel sans essai, un abonnement mensuel avec un mois d'essai, un abonnement annuel sans essai et un abonnement annuel avec un mois d'essai, vous devrez créer quatre extensions d’abonnement.
+        Chaque extension d'abonnement prend en charge une période d’abonnement et une période d’évaluation uniques. Vous devez créer une extension d'abonnement différente pour chaque type d’abonnement que vous souhaitez proposer dans votre application. Par exemple, si vous souhaitez proposer un abonnement mensuel sans essai, un abonnement mensuel avec un mois d'essai, un abonnement annuel sans essai et un abonnement annuel avec un mois d'essai, vous devrez créer quatre extensions d’abonnement.
 
-  * [Période d’essai](../publish/enter-add-on-properties.md#free-trial): optez pour une période d’essai d'1 semaine ou d'1mois pour votre abonnement pour que les utilisateurs puissent en essayer le contenu avant de l’acheter. Vous ne pouvez pas modifier ou supprimer la période d’essai après la publication de votre extension d'abonnement.
+    * [Période d’essai](../publish/enter-add-on-properties.md#free-trial): optez pour une période d’essai d'1 semaine ou d'1mois pour votre abonnement pour que les utilisateurs puissent en essayer le contenu avant de l’acheter. Vous ne pouvez pas modifier ou supprimer la période d’essai après la publication de votre extension d'abonnement.
 
-    Pour obtenir un essai gratuit de votre abonnement, l'utilisateur doit acheter votre abonnement via le processus d’achat dans l’application standard, y compris avec un moyen de paiement valide. Rien ne sera débité pendant la période d’essai. À la fin de la période d’essai, l’abonnement se convertit automatiquement en abonnement complet et le mode de paiement de l’utilisateur est débité pour la première période de l’abonnement payant. Si l’utilisateur choisit d’annuler son abonnement durant la période d’évaluation, celui-ci reste actif jusqu'à la fin de la période d’évaluation. Certaines périodes d’évaluation ne sont pas disponibles pour toutes les périodes d’abonnement.
+        Pour obtenir un essai gratuit de votre abonnement, l'utilisateur doit acheter votre abonnement via le processus d’achat dans l’application standard, y compris avec un moyen de paiement valide. Rien ne sera débité pendant la période d’essai. À la fin de la période d’essai, l’abonnement se convertit automatiquement en abonnement complet et le mode de paiement de l’utilisateur est débité pour la première période de l’abonnement payant. Si l’utilisateur choisit d’annuler son abonnement durant la période d’évaluation, celui-ci reste actif jusqu'à la fin de la période d’évaluation. Certaines périodes d’évaluation ne sont pas disponibles pour toutes les périodes d’abonnement.
+
         > [!NOTE]
-        > Each customer can acquire a free trial for a subscription add-on only one time. After a customer acquires a free trial for a subscription, the Store prevents the same customer from ever acquiring the same free trial subscription again.
+        > Chaque client peut obtenir un essai gratuit d'extension d'abonnement une seule fois. Une fois que le client a obtenu un essai gratuit pour un abonnement, le Store empêchera ce client d'acquérir à nouveau le même essai gratuit d'abonnement.
 
-  * [Visibilité](../publish/set-add-on-pricing-and-availability.md#visibility): si vous créez une extension de test que vous n'utiliserez que pour tester l'expérience d'achats in-app de votre abonnement, nous vous recommandons de sélectionner l'une des options **Masqué dans le Store**. Sinon, vous pouvez sélectionner la meilleure option de visibilité pour votre scénario.
+    * [Visibilité](../publish/set-add-on-pricing-and-availability.md#visibility): si vous créez une extension de test que vous n'utiliserez que pour tester l'expérience d'achats in-app de votre abonnement, nous vous recommandons de sélectionner l'une des options **Masqué dans le Store**. Sinon, vous pouvez sélectionner la meilleure option de visibilité pour votre scénario.
 
-  * [Prix](../publish/set-add-on-pricing-and-availability.md?#pricing): choisissez le prix de votre abonnement dans cette section. Vous ne pouvez pas augmenter le prix de l’abonnement après la publication de l'extension. Toutefois, vous pouvez réduire ce prix ultérieurement.
-      > [!IMPORTANT]
-      > Par défaut, lorsque vous créez une extension, le prix a initialement pour valeur **Gratuit**. Étant donné que vous ne pouvez pas augmenter le prix d’une extension d'abonnement une fois la soumission d’extension terminée, veillez à bien choisir le prix de votre abonnement ici.
+    * [Prix](../publish/set-add-on-pricing-and-availability.md?#pricing): choisissez le prix de votre abonnement dans cette section. Vous ne pouvez pas augmenter le prix de l’abonnement après la publication de l'extension. Toutefois, vous pouvez réduire ce prix ultérieurement.
+        > [!IMPORTANT]
+        > Par défaut, lorsque vous créez une extension, le prix a initialement pour valeur **Gratuit**. Étant donné que vous ne pouvez pas augmenter le prix d’une extension d'abonnement une fois la soumission d’extension terminée, veillez à bien choisir le prix de votre abonnement ici.
 
 2. Dans votre app, utilisez les API dans l'espace de noms [**Windows.Services.Store**](https://docs.microsoft.com/uwp/api/windows.services.store) afin de déterminer si l'utilisateur actuel a déjà fait l'acquisition de votre extension d'abonnement, puis la lui proposer à la vente en tant qu'achat in-app. Consultez les [exemples de code](#code-examples) de cet article pour plus d’informations.
 

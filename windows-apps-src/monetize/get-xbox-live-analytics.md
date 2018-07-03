@@ -3,27 +3,27 @@ author: mcleanbyron
 description: Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir les données d'analyse Xbox Live.
 title: Obtenir des données d’analytique Xbox Live
 ms.author: mcleans
-ms.date: 04/16/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, services de MicrosoftStore, API d'analyse du MicrosoftStore, analyse Xbox Live
 ms.localizationpriority: medium
-ms.openlocfilehash: 82c24ee285070d733f3310b4ccec210adeafc27f
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 4ba81f88b583a2d13785b3efe8d7008bac759a2d
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817267"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976567"
 ---
 # <a name="get-xbox-live-analytics-data"></a>Obtenir des données d’analytique Xbox Live
 
 Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir des données analytiques générales sur les 30derniers pour les clients jouant à votre [jeu Xbox Live](../xbox-live/index.md), y compris concernant l’utilisation des accessoires de l'appareil, le type de connexion Internet, la distribution des gamerscores, les statistiques de jeu et les données sur les amis et abonnés. Ces informations sont également disponibles dans le [rapport d'analyse Xbox](../publish/xbox-analytics-report.md) du tableau de bord du Centre de développement.
 
 > [!IMPORTANT]
-> Cette méthode prend uniquement en charge les jeux compatibles avec Xbox Live qui sont publiés par des [partenaires Microsoft](../xbox-live/developer-program-overview.md#microsoft-partners) ou soumis via le [ID@Xbox programme](../xbox-live/developer-program-overview.md#id). Celle-ci ne permet pas d'obtenir de données sur les jeux soumis via le [Programme Créateurs Xbox Live](../xbox-live/developer-program-overview.md#xbox-live-creators-program).
+> Cette méthode prend uniquement en charge les jeux pour Xbox et les jeux qui utilisent les services Xbox Live. Ces jeux doivent passer par le [processus d’approbation de concept](../gaming/concept-approval.md), qui inclut les jeux publiés par des [partenaires Microsoft](../xbox-live/developer-program-overview.md#microsoft-partners) et les jeux soumis via le [programme ID@Xbox](../xbox-live/developer-program-overview.md#id). Cette méthode ne prend actuellement pas en charge les jeux publiés via le [Programme Créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
 
-Des données analytique supplémentaires pour les jeux Xbox Live sont disponibles via les méthodes suivantes:
+Des données analytiques supplémentaires pour les jeux Xbox Live sont disponibles via les méthodes suivantes:
 * [Obtenir des données de réussite Xbox Live](get-xbox-live-achievements-data.md)
 * [Obtenir des données d’intégrité Xbox Live](get-xbox-live-health-data.md)
 * [Obtenir des données de hub de jeux Xbox Live](get-xbox-live-game-hub-data.md)
@@ -43,7 +43,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
 
-| Méthode | URI de la requête       |
+| Méthode | URI de requête       |
 |--------|----------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/gameanalytics``` |
 
@@ -52,7 +52,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisation | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 
 ### <a name="request-parameters"></a>Paramètres de la requête

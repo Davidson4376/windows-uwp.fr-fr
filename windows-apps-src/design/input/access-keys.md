@@ -6,7 +6,7 @@ label: Access keys design guidelines
 keywords: clavier, touche d’accès rapide, touche d’accès, accessibilité, navigation, focus, texte, entrée, interaction utilisateur
 template: detail.hbs
 ms.author: kbridge
-ms.date: 02/08/2017
+ms.date: 06/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,12 +15,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b335068762dd3999e07526962b0d6629825ad68d
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: a336109e9464052a33f5a0d8548e13b260b387a3
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707054"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018513"
 ---
 # <a name="access-keys"></a>Touches d’accès rapide
 
@@ -76,13 +76,11 @@ Par exemple, MicrosoftWord fournit deux étendues de clé d’accès: une porté
 
 Les images suivantes présentent les deux étendues des touches d’accès rapide dans Word. Le premier exemple montre les touches d’accès rapide principales qui permettent à un utilisateur de sélectionner un onglet et d’autres commandes de niveau supérieur. Le second exemple présente les touches d’accès rapide secondaire pour l’onglet Accueil.
 
-![Touches d’accès rapides principales dans MicrosoftWord](images/accesskeys/primary-access-keys-word.png)
+![Touches d'accès rapides principales dans MicrosoftWord](images/accesskeys/primary-access-keys-word.png)
+_Touches d’accès rapides principales dans MicrosoftWord_
 
-_Touches d’accès rapide principales dans MicrosoftWord_
-
-![Touches d’accès rapide secondaires dans MicrosoftWord](images/accesskeys/secondary-access-keys-word.png)
-
-Touches d’accès rapide secondaires dans MicrosoftWord
+![Touches d'accès rapide secondaires dans MicrosoftWord](images/accesskeys/secondary-access-keys-word.png)
+_Touches d'accès rapide secondaires dans MicrosoftWord_
 
 Les touches d’accès rapide peuvent être dupliquées pour les éléments dans des étendues différentes. Dans l’exemple précédent, «2» est la touche d’accès rapide pour l’option Annuler dans l’étendue principale et pour l’option «Italique» dans l’étendue secondaire.
 
@@ -122,10 +120,11 @@ _Étendue principale CommandBar et touches d’accès rapide prises en charge_
 
 _Étendue secondaire CommandBar et touches d’accès rapide prises en charge_
 
-> [!NOTE]
-> Avant Windows10 Fall Creators Update, certaines commandes, telles que CommandBar, ne prenaient pas en charge les étendues intégrées de touches d’accès rapide. Dans ce cas, vous devez implémenter des étendues de touches d’accès rapide comme indiqué dans l’exemple suivant.   
->
-> Nous montrons ici comment prendre en charge la propriété SecondaryCommands de la classe CommandBar grâce aux touches d’accès rapide, qui sont disponibles une fois qu’une commande parent est appelée (comme le ruban dans Word).
+### <a name="windows-10-creators-update-and-older"></a>Windows10CreatorsUpdate et versions antérieures
+
+Avant Windows10 Fall Creators Update, certaines commandes, telles que CommandBar, ne prenaient pas en charge les étendues intégrées de touches d’accès rapide.
+
+L’exemple suivant montre comment prendre en charge la propriété SecondaryCommands de la classe CommandBar grâce aux touches d’accès rapide qui sont disponibles une fois qu’une commande parent est appelée (comme le ruban dans Word).
 
 ```xaml
 <local:CommandBarHack x:Name="MainCommandBar" AccessKey="M" >
@@ -178,11 +177,10 @@ public class CommandBarHack : CommandBar
         secondaryItemsControl.AccessKeyScopeOwner = moreButton;
 
         overflowPopup = GetTemplateChild("OverflowPopup") as Popup;
-
     }
+
     private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
     {
-
         if (overflowPopup != null)
         {
             overflowPopup.Opened += SecondaryMenuOpened;

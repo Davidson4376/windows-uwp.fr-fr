@@ -3,20 +3,23 @@ title: Résolution des problèmes relatifs aux applications UWP ARM32
 author: msatranjr
 description: Problèmes courants avec les applications ARM32 lors de l'exécution sur ARM, et comment les résoudre.
 ms.author: misatran
-ms.date: 01/18/2018
+ms.date: 05/09/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10s, toujours connecté, applications ARM32 sur ARM, windows10 sur ARM, résolution des problèmes
 ms.localizationpriority: medium
-ms.openlocfilehash: 71d92ec26311514e0eebdfa4a1dab39e86ce72fc
-ms.sourcegitcommit: 11edca90aaf7856c762e68903483079d30ad3877
+ms.openlocfilehash: a0cc306334f4844b1660c6047dead2c0c4c3bd71
+ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2018
-ms.locfileid: "1595124"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1877201"
 ---
 # <a name="troubleshooting-arm32-uwp-apps"></a>Résolution des problèmes relatifs aux applications UWP ARM32
+>[!IMPORTANT]
+> Le SDK ARM64 est désormais disponible dans le cadre de Visual Studio15.8 Aperçu1. Nous vous recommandons de recompiler votre application pour ARM64 afin que votre application s’exécute à la vitesse native complète. Pour plus d’informations, voir le billet de blog [Version préliminaire de la prise en charge de Visual Studio du développement de Windows10 sur ARM](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/).
+
 Si votre application UWP ARM32 ne fonctionne par correctement sur ARM, ces quelques recommandations sont susceptibles de vous aider. 
 
 ## <a name="common-issues"></a>Problèmes courants

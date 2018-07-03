@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, win32, bureau, notifications toast, envoyer un toast, envoyer un toast local, pont du bureau, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: e3eecf6e6263e0126dbdf8c50f7ddb0431b66116
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 00d6d67bccf9eb91e1d90aa547d9e857cfa83c19
+ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817024"
+ms.lasthandoff: 05/24/2018
+ms.locfileid: "1917728"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Envoyer une notification toast locale depuis des applications WRL de bureau en C++
 
@@ -103,7 +103,7 @@ Si vous utilisez le Pont du bureau (ou si vous prenez en charge les deux), dans 
 1. Déclaration de **xmlns:com**
 2. Déclaration de **xmlns:desktop**
 3. Dans l’attribut **IgnorableNamespaces**, **com** et **desktop**
-4. **com:Extension** pour le serveur COM à l’aide du GUID de l’étape4. Veillez à inclure l’objet `Arguments="-ToastActivated"` afin que vous sachiez que votre lancement provenait d’un toast
+4. **com:Extension** pour l'activateur COM à l’aide du GUID de l’étape4. Veillez à inclure l’objet `Arguments="-ToastActivated"` afin que vous sachiez que votre lancement provenait d’un toast
 5. **desktop:Extension** pour **windows.toastNotificationActivation** pour déclarer le CLSID de votre activateur de toast (le GUID de l’étape4).
 
 **Package.appxmanifest**
@@ -220,9 +220,9 @@ if (SUCCEEDED(hr))
     hr = DesktopNotificationManagerCompat::CreateToastNotifier(&notifier);
     if (SUCCEEDED(hr))
     {
-        // Create the notification itself
+        // Create the notification itself (using helper method from compat library)
         ComPtr<IToastNotification> toast;
-        hr = MakeAndInitialize<ToastNotification>(&toast, doc.Get());
+        hr = DesktopNotificationManagerCompat::CreateToastNotification(doc, &toast);
         if (SUCCEEDED(hr))
         {
             // And show it!
@@ -231,6 +231,9 @@ if (SUCCEEDED(hr))
     }
 }
 ```
+
+> [!IMPORTANT]
+> Les applications Win32 classiques ne peuvent pas utiliser les modèles de notifications toast hérités (comme ToastText02). L’activation des modèles hérités échoue lorsque le CLSID COM est spécifié. Vous devez utiliser les modèles de Windows10 ToastGeneric comme indiqué ci-dessus.
 
 
 ## <a name="step-8-handling-activation"></a>Étape8: gestion de l’activation
@@ -439,10 +442,11 @@ if (IsWindows10OrGreater())
 
 ## <a name="known-issues"></a>Problèmes connus
 
-**RÉSOLU: l’application n’est pas sélectionnée lorsque vous cliquez sur le toast**: dans les builds15063 et les versions antérieures, les droits au premier plan n’ont pas été transférés vers votre application lorsque nous avons activé le serveur COM. Par conséquent, votre application clignote simplement lorsque vous avez tenté de la déplacer au premier plan. Aucune solution n’était disponible pour ce problème. Nous avons résolu ce problème dans les builds 16299 et les versions ultérieures.
+**RÉSOLU: l’application n’est pas sélectionnée lorsque vous cliquez sur le toast**: dans les builds15063 et les versions antérieures, les droits au premier plan n’ont pas été transférés vers votre application lorsque nous avons activé le serveur COM. Par conséquent, votre application clignote simplement lorsque vous avez tenté de la déplacer au premier plan. Aucune solution n’était disponible pour ce problème. Nous avons résolu ce problème dans les builds16299 et les versions ultérieures.
 
 
 ## <a name="resources"></a>Ressources
 
 * [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/desktop-toasts)
+* [Notifications toast à partir d'applications de bureau](toast-desktop-apps.md)
 * [Documentation sur le contenu des toasts](adaptive-interactive-toasts.md)

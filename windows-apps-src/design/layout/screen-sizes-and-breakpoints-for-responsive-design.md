@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d84530c1a7c3795c566495c1eae121691b0766a
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 0c61b4076ed2529fddfcec53264c95c8290297a0
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1688935"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843029"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>Tailles d’écran et points d’arrêt
 
@@ -29,15 +29,15 @@ Les applications UWP peuvent s’exécuter sur n’importe quel appareil exécut
 ## <a name="breakpoints"></a>Points d’arrêt
 Ce tableau décrit les différentes classes de taille et les points d’arrêt.
 
-![Points d’arrêt de la conception réactive](images/rsp-design/rspd-breakpoints.png)
+![Points d’arrêt de la conception réactive](images/breakpoints/size-classes.svg)
 
 <table>
 <thead>
 <tr class="header">
 <th align="left">Classe de taille</th>
 <th align="left">Points d’arrêt</th>
-<th align="left">Taille d’écran (diagonale)</th>
-<th align="left">Appareils</th>
+<th align="left">Taille d’écran standard (diagonale)</th>
+<th align="left">Périphériques</th>
 <th align="left">Tailles de fenêtre</th>
 </tr>
 </thead>
@@ -45,15 +45,15 @@ Ce tableau décrit les différentes classes de taille et les points d’arrêt.
 <tr class="even">
 <td style="vertical-align:top;">Petite</td>
 <td style="vertical-align:top;">640px maximum</td>
-<td style="vertical-align:top;">4&quot; à6&quot;</td>
-<td style="vertical-align:top;">Téléphones</td>
+<td style="vertical-align:top;">4&quot; à 6&quot;; 20&quot; à 65&quot;</td>
+<td style="vertical-align:top;">Téléphones, téléviseurs</td>
 <td style="vertical-align:top;">320x569, 360x640, 480x854</td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;">Moyenne</td>
 <td style="vertical-align:top;">641px à 1007px</td>
 <td style="vertical-align:top;">7&quot; à12&quot;</td>
-<td style="vertical-align:top;">Phablettes, tablettes, téléviseurs</td>
+<td style="vertical-align:top;">Phablettes, tablettes</td>
 <td style="vertical-align:top;">960x540</td>
 </tr>
 <tr class="even">
@@ -65,6 +65,17 @@ Ce tableau décrit les différentes classes de taille et les points d’arrêt.
 </tr>
 </tbody>
 </table>
+
+## <a name="why-are-tvs-considered-small"></a>Pourquoi les téléviseurs sont-ils considérés comme de «petite» taille? 
+
+Bien que la plupart des écrans de télévision soient physiquement très grands (une taille de 40 à 65pouces est courante) et offrent des résolutions élevées (HD ou 4K), la conception d'un téléviseur en 1080P que vous regardez à 3mètres (10pieds) de distance est différente de celle d'un moniteur en 1080p placé à 30cm de distance sur votre bureau. Lorsque vous tenez compte de la distance, les téléviseurs 1080pixels s'apparentent plus à un moniteur 540pixels qui est beaucoup plus proche.
+
+Le système de pixels effectifs d'UWP prend automatiquement en compte la distance d’affichage. Lorsque vous spécifiez une taille pour un contrôle ou une plage de point d’arrêt, vous utilisez en fait des pixels «effectifs». Par exemple, si vous créez un code réactif pour 1080pixels et versions ultérieures, un moniteur de 1080 utilisera ce code, mais pas un téléviseur en 1080p, car même si un téléviseur en 1080p possède 1080pixels physiques, il a uniquement 540pixels effectifs. Cela rend la conception d'un téléviseur similaire à celle d'un téléphone.
+
+## <a name="effective-pixels-and-scale-factor"></a>Pixels effectifs et facteur d’échelle
+
+Les applications UWP mettent automatiquement à l’échelle votre interface utilisateur afin de garantir que votre application pourra être lisible sur tous les appareils Windows10. Windows met automatiquement à l’échelle chaque affichage en fonction de son nombre de PPP (points par pouce) et de la distance de visualisation de l’appareil. Les utilisateurs peuvent remplacer la valeur par défaut en accédant à page de paramètres**Paramètres** > **Affichage** > **Échelle et disposition**. 
+
 
 ## <a name="general-recommendations"></a>Recommandations générales
 
@@ -94,6 +105,4 @@ Ce tableau décrit les différentes classes de taille et les points d’arrêt.
 >[!TIP] 
 > Avec [**Continuum pour téléphones**](http://go.microsoft.com/fwlink/p/?LinkID=699431), les utilisateurs peuvent connecter des appareils mobiles Windows10 compatibles à un moniteur, une souris et un clavier pour les utiliser comme des ordinateurs portables. N’oubliez pas cette nouvelle fonctionnalité lorsque vous concevez des points d’arrêt spécifiques: un téléphone mobile ne reste pas toujours dans la classe de taille.
 
-## <a name="effective-pixels-and-scale-factor"></a>Pixels effectifs et facteur d’échelle
 
-Les applications UWP mettent automatiquement à l’échelle votre interface utilisateur afin de garantir que votre application pourra être lisible sur tous les appareils Windows10. Windows met automatiquement à l’échelle chaque affichage en fonction de son nombre de PPP (points par pouce) et de la distance de visualisation de l’appareil. Les utilisateurs peuvent remplacer la valeur par défaut en accédant à page de paramètres**Paramètres** > **Affichage** > **Échelle et disposition**. 

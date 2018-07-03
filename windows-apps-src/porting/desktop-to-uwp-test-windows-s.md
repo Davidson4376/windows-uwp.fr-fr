@@ -1,6 +1,6 @@
 ---
 author: normesta
-Description: Test your app for Windows 10 S without having to install Windows 10 S.
+Description: Test your app for Windows 10 in S mode.
 Search.Product: eADQiWindows 10XVcnh
 title: Tester votre application Windows pour Windows10S
 ms.author: normesta
@@ -10,16 +10,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10 S, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a5810789ab2457ed14964a61bf278c84e7deb416
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 69cceb86710cea0e9066454fba4ef4e1746633d1
+ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662709"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1874317"
 ---
-# <a name="test-your-windows-app-for-windows-10-s"></a>Tester votre application Windows pour Windows10S
+# <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Tester votre application Windows pour Windows10 en modeS.
 
-Vous pouvez tester votre application Windows pour vous assurer qu’elle fonctionne correctement sur les appareils qui exécutent Windows10 S. En réalité, si vous envisagez de publier votre application dans le Microsoft Store, vous devez le faire, car c'est une condition requise par le Microsoft Store. Afin de tester votre application, vous pouvez appliquer une stratégie d’intégrité du code Device Guard sur un appareil qui exécute Windows10 Professionnel.
+Vous pouvez tester votre application Windows afin de vous assurer qu’elle fonctionnera correctement sur les appareils qui exécutent Windows10 en modeS. En fait, si vous envisagez de publier votre application dans le MicrosoftStore, vous devez le faire, car c'est une exigence du Store. Afin de tester votre application, vous pouvez appliquer une stratégie d’intégrité du code Device Guard sur un appareil qui exécute Windows10 Professionnel.
 
 > [!NOTE]
 > L'appareil sur lequel vous appliquez la stratégie d'intégrité du code DeviceGuard doit être exécuté sur Windows10 édition Creators (10.0; Build 15063) ou version ultérieure.
@@ -39,8 +39,8 @@ Ensuite, choisissez celle qui vous convient le mieux. Voici un résumé de chaqu
 
 |Stratégie |Mise en œuvre |Certificat de signature |Nom de fichier |
 |--|--|--|--|
-|Stratégie de mode d’audit |Consigne les problèmes/ne bloque pas |Store |SiPolicy_Audit.p7b |
-|Stratégie de mode de production |Oui |Store |SiPolicy_Enforced.p7b |
+|Stratégie de mode d’audit |Consigne les problèmes/ne bloque pas |WindowsStore |SiPolicy_Audit.p7b |
+|Stratégie de mode de production |Oui |WindowsStore |SiPolicy_Enforced.p7b |
 |Stratégie de mode de produit avec applications auto-signées |Oui |Certificat de Test AppX  |SiPolicy_DevModeEx_Enforced.p7b |
 
 Nous vous recommandons de commencer par la stratégie de mode d’audit. Vous pouvez passer en revue les journaux des événements d’intégrité du code et utiliser ces informations pour vous aider à régler votre application. Ensuite,lorsque vous êtes prêt pour la phase finale du test, appliquez la stratégie de mode de production.
@@ -70,7 +70,7 @@ Pour rechercher des points spécifiques dans la pile des appels où des problèm
 Cette stratégie applique des règles d’intégrité du code correspondant à Windows10 S pour vous permettre de simuler une exécution sur Windows10 S. Il s’agit de la stratégie la plus stricte, qui est très utile pour tester la production finale. Dans ce mode, votre application est soumise aux mêmes restrictions que sur le périphérique d’un utilisateur. Pour utiliser ce mode, votre application doit être signée par le MicrosoftStore.
 
 ### <a name="production-mode-policy-with-self-signed-apps"></a>Stratégie de mode de production avec applications auto-signées
-Ce mode est similaire à la stratégie du mode de production, mais il permet également d’exécuter certains éléments qui sont signés avec le certificat de test inclus dans le fichier zip. Installez le fichier PFX qui est inclus dans le dossier **AppxTestRootAgency** de ce fichier zip. Signez ensuite votre application à l'aide de celui-ci. Ainsi, vous pouvez répéter rapidement le processus sans avoir besoin de la signature du Store.
+Ce mode est similaire à la stratégie du mode de production, mais il permet également d’exécuter certains éléments qui sont signés avec le certificat de test inclus dans le fichier zip. Installez le fichier PFX qui est inclus dans le dossier **AppxTestRootAgency** de ce fichier zip. Signez ensuite votre application à l'aide de celui-ci. Ainsi, vous pouvez répéter rapidement le processus sans avoir besoin de la signature du WindowsStore.
 
 Comme le nom de l’éditeur de votre certificat doit correspondre à celui de votre application, vous devez remplacer temporairement la valeur de l'attribut **Publisher** de l’élément **Identity** par «CN=Appx Test Root Agency Ex». Une fois que vous avez effectué vos tests, vous pouvez rendre à cet attribut sa valeur d’origine.
 
@@ -80,7 +80,7 @@ Nous vous recommandons d’appliquer ces stratégies sur une machine virtuelle, 
 
 Si vous souhaitez appliquer ces stratégies sur votre ordinateur local, il est préférable de démarrer avec la stratégie de mode d’Audit. Cette stratégie vous permet de consulter les journaux des événements d’intégrité du code pour vous assurer qu’aucun élément critique ne sera bloqué par une stratégie appliquée.
 
-Lorsque vous êtes prêt à appliquer une stratégie, recherchez le fichier .P7B correspondant à la stratégie choisie, renommez-le **SIPolicy.P7B**, puis enregistrez-le dans cet emplacement sur votre système: **C:\Windows\System32\CodeIntegrity\**.
+Lorsque vous êtes prêt à appliquer une stratégie, recherchez le fichier .P7B correspondant à la stratégie choisie, renommez-le **SIPolicy.P7B**, puis enregistrez-le dans cet emplacement sur votre système: **C:\Windows\System32\CodeIntegrity\\**.
 
 Redémarrez ensuite votre système.
 
@@ -101,6 +101,6 @@ Consultez [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-window
 
 Voir [Portage et test de vos applications de bureau classiques sur Windows10 S avec le Pont du bureau](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/).
 
-**En savoir plus sur les outils qui facilitent les tests pour Windows S**
+**En savoir plus sur les outils qui facilitent les tests pour Windows en modeS**
 
 Consultez [Décompresser, modifier, générer un nouveau package, signer un APPX](https://blogs.msdn.microsoft.com/appconsult/2017/08/07/unpack-modify-repack-sign-appx/).

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 63dfd179fbc90be41b162d31e52e5c6b25956323
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691898"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842746"
 ---
 # <a name="hardware-drm"></a>Gestion des droits numériques en fonction du matériel
 

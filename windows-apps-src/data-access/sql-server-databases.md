@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, SQLServer, base de données
 ms.localizationpriority: medium
-ms.openlocfilehash: 461e3578aad11dea0d9afcd7c93dfda9a246bb10
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 31a173efbe30cffed85336a302ced504a4cad50d
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662179"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983490"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>Utiliser une base de données SQLServer dans une applicationUWP
 Votre application peut se connecter directement à une base de données SQLServer, puis stocker et récupérer des données à l’aide de classes dans l’espace de noms [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx).
@@ -68,7 +68,7 @@ sealed partial class App : Application
     private string connectionString =
         @"Data Source=YourServerName\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
 
-    public string ConnectionString { get => connectionString; set => connectionString = value;  
+    public string ConnectionString { get => connectionString; set => connectionString = value; }
 
     ...
 }
@@ -221,7 +221,17 @@ Démarrez le projet pour afficher les produits de la base de données exemple No
 
 ![Produits Northwind](images/products-northwind.png)
 
-Explorez l’espace de noms [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) pour voir les autres actions que vous pouvez effectuer avec les données dans SQLServer de base de données.
+Explorez l’espace de noms [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) pour voir les autres actions que vous pouvez effectuer avec les données dans votre base de données SQLServer.
+
+## <a name="trouble-connecting-to-your-database"></a>Problèmes de connexion à votre base de données?
+
+Dans la plupart des cas, certains aspects de la configuration de SQLServer doivent être modifiés. Si vous pouvez vous connecter à votre base de données à partir d’un autre type d’application de bureau, comme une application Windows Forms ou WPF, assurez-vous que vous avez activé TCP/IP pour SQLServer. Vous pouvez le faire dans la console **Gestion de l’ordinateur**.
+
+![Gestion de l'ordinateur](images/computer-management.png)
+
+Ensuite, assurez-vous que votre service SQLServer Browser est en cours d’exécution.
+
+![Service SQL Server Browser](images/sql-browser-service.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 

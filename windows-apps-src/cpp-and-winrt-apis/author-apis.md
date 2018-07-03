@@ -3,23 +3,20 @@ author: stevewhims
 description: Cette rubrique montre comment créer des API C++/WinRT à l’aide de la structure de base **winrt::implements**, directement ou indirectement.
 title: Créer des API avec C++/WinRT
 ms.author: stwhi
-ms.date: 04/18/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, implémenter, classe runtime, activation
 ms.localizationpriority: medium
-ms.openlocfilehash: c2ee00443e35061fa1c3cc58c268ad0bd0c89c6e
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 0cf5d196d6dfa390fc537a0f14c041049d4ef714
+ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832233"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1877321"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Créer des API avec [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-> [!NOTE]
-> **Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.**
-
 Cette rubrique montre comment créer des API C++/WinRT à l’aide de la structure de base [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements), directement ou indirectement. Les synonymes de *créer* dans ce contexte sont *produire* ou *implémenter*. Cette rubrique couvre les scénarios suivants pour l’implémentation d’API sur un type C++/WinRT, dans cet ordre.
 
 - Vous ne créez *pas* une classe Windows Runtime (classe runtime); vous souhaitez simplement implémenter une ou plusieurs interfaces Windows Runtime pour une utilisation locale au sein de votre application. Vous dérivez directement de **winrt::implements** dans ce cas, et implémentez des fonctions.
@@ -34,7 +31,7 @@ Dans les deux cas, le type qui implémente vos API C++/WinRT APIs est appelé le
 Le scénario le plus simple est celui où vous implémentez une interface Windows Runtime pour une utilisation locale. Vous n’avez pas besoin d’une classe runtime, simplement d’une classe C++ ordinaire. Par exemple, vous pouvez écrire une application basée autour de [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication).
 
 > [!NOTE]
-> Pour plus d’informations sur la disponibilité actuelle de l'extension Visual Studio (VSIX) C++/WinRT (qui fournit la prise en charge des modèles de projet, ainsi que les propriétés et cibles MSBuild C++/WinRT), voir [Prise en charge de Visual Studio pour C++/WinRT et VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
+> Pour plus d’informations sur l'installation et l'utilisation de l'extension Visual Studio (VSIX) C++/WinRT (qui fournit la prise en charge des modèles de projet, ainsi que les propriétés et cibles MSBuild C++/WinRT), voir [Prise en charge de Visual Studio de C++/WinRT et VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
 Dans Visual Studio, le modèle de projet **Application de base Visual C++ (C++/WinRT)** illustre le modèle **CoreApplication**. Le modèle commence par transmettre une implémentation de [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) à [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run).
 
@@ -127,7 +124,12 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ```
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>Si vous créez une classe runtime dans un composant Windows Runtime
-Si votre type est empaqueté dans un composant Windows Runtime pour une utilisation à partir d’une application, il doit alors s’agir d’une classe runtime. Nous vous recommandons de déclarer chaque classe runtime dans son propre fichier de langage IDL (Interface Definition Language) (`.idl`). En voici un exemple.
+Si votre type est empaqueté dans un composant Windows Runtime pour une utilisation à partir d’une application, il doit alors s’agir d’une classe runtime.
+
+> [!TIP]
+> Nous vous recommandons de déclarer chaque classe runtime dans son propre fichier de langage IDL (Interface Definition Language) (.idl), afin d’optimiser les performances de génération lorsque vous modifiez un fichier IDL et pour la correspondance logique d’un fichier IDL avec ses fichiers de code source générés. Visual Studio fusionne tous les fichiers `.winmd` résultants dans un seul fichier avec le même nom que l’espace de noms racine. Ce dernier fichier `.winmd` sera celui auquel les consommateurs de votre composant feront référence.
+
+En voici un exemple.
 
 ```idl
 // MyRuntimeClass.idl
@@ -180,9 +182,11 @@ Si votre type est référencé par votre interface utilisateur XAML, alors il do
 
 Dans ce scénario, vous créez *et* utilisez les API. La procédure d’implémentation de votre classe runtime est essentiellement identique à celle d’un composant Windows Runtime. De ce fait, reportez-vous à la section précédente &mdash;[Si vous créez une classe runtime dans un composant Windows Runtime](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component). La seule différence est que, à partir du fichier IDL, la chaîne d’outils C++/WinRT génère non seulement un type d’implémentation, mais également un type projeté. Il est important d'être conscient que «**MyRuntimeClass**» dans ce scénario peut être ambigu; il existe plusieurs entités portant ce nom, de types différents.
 
-- **MyRuntimeClass** est le nom d’une classe runtime, déclarée dans le fichier IDL et implémentée dans un certain langage de programmation.
+- **MyRuntimeClass** est le nom d’une classe runtime. Mais il s’agit en réalité d’une abstraction: déclarée dans IDL et implémentée dans un langage de programmation.
 - **MyRuntimeClass** est le nom de la structure C++ **winrt::MyProject::implementation::MyRuntimeClass**, qui est l’implémentation C++/WinRT de la classe runtime. Comme nous l’avons vu, s’il existe des projets d’implémentation et d’utilisation distincts, alors cette structure existe uniquement dans le projet d’implémentation. Il s’agit du *type d’implémentation* ou de l’*implémentation*. Ce type est généré (par l’outil `cppwinrt.exe`) dans les fichiers `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` et `MyRuntimeClass.cpp`.
 - **MyRuntimeClass** est le nom du type projeté dans la forme de la structure C++ **winrt::MyProject::MyRuntimeClass**. S’il existe des projets d’implémentation et d’utilisation distincts, alors cette structure existe uniquement dans le projet d’utilisation. Il s’agit du *type projeté* ou de la *projection*. Ce type est généré (par `cppwinrt.exe`) dans le fichier `\MyProject\MyProject\Generated Files\winrt\impl\MyProject.2.h`.
+
+![Type projeté et type d’implémentation](images/myruntimeclass.png)
 
 Voici les parties du type projeté qui sont pertinentes pour cette rubrique.
 
@@ -207,7 +211,7 @@ La procédure d’utilisation de votre classe runtime dans ce scénario est déc
 Voici quelques points à retenir des listings que nous avons vus ci-dessus.
 
 - Chaque constructeur que vous déclarez dans votre fichier IDL entraîne la génération d’un constructeur à la fois sur votre type d’implémentation et sur votre type projeté. Les constructeurs déclarés dans le fichier IDL servent à utiliser la classe runtime à partir d’une unité de compilation *différente*.
-- Qu’un ou plusieurs constructeurs soient déclarés ou non dans le fichier IDL, une surcharge de constructeur qui prend `nullptr` est générée sur votre type projeté. Appeler le constructeur `nullptr` est *la première des deux étapes* requises pour utiliser la classe runtime à partir de *la même* unité de compilation. Pour obtenir plus d’informations et un exemple de code, voir [Utiliser des API avec C++/WinRT](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project).
+- Qu’un ou plusieurs constructeurs soient déclarés ou non dans le fichier IDL, une surcharge de constructeur qui prend `nullptr_t` est générée sur votre type projeté. Appeler le constructeur `nullptr_t` est *la première des deux étapes* requises pour utiliser la classe runtime à partir de *la même* unité de compilation. Pour obtenir plus d’informations et un exemple de code, voir [Utiliser des API avec C++/WinRT](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project).
 - Si vous utilisez la classe runtime à partir de *la même* unité de compilation, vous pouvez également implémenter des constructeurs autres que ceux par défaut, directement sur le type d’implémentation (qui, n’oubliez pas, se trouve dans `MyRuntimeClass.h`).
 
 > [!NOTE]
@@ -244,7 +248,7 @@ namespace MyProject
     runtimeclass MyType: Windows.Foundation.IStringable, Windows.Foundation.IClosable
     {
         MyType();
-    }   
+    }    
 }
 ```
 

@@ -16,22 +16,20 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b60b06d9dbe8c0eb6216c2c909cc5184855056d5
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
+ms.openlocfilehash: dfd702f9ba6e28e1902ea8e595287ba10b46f4bb
+ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1493606"
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "1895281"
 ---
 # <a name="tooltips"></a>Info-bulles
- 
 
 Une info-bulle est une brève description qui est liée à un autre contrôle ou objet. Les info-bulles aident à comprendre des objets peu familiers qui ne sont pas directement décrits dans l’interface utilisateur. Une info-bulle s’affiche automatiquement lorsque l’utilisateur déplace le focus, appuie de façon prolongée ou pointe avec sa souris sur un contrôle. L’info-bulle disparaît après quelques secondes, ou lorsque l’utilisateur déplace le focus du doigt, du pointeur ou du clavier/boîtier de commande.
 
 ![Info-bulle](images/controls/tool-tip.png)
 
-> **API importantes**: [classe ToolTip](https://msdn.microsoft.com/library/windows/apps/br227608), [classe ToolTipService](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
-
+> **API importantes**: [classe ToolTip](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [classe ToolTipService](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
@@ -39,25 +37,25 @@ Utilisez une info-bulle pour fournir plus d’informations sur un contrôle avan
 
 Quand utiliser une info-bulle Pour vous décider, posez-vous les questions suivantes:
 
--   **Les informations doivent-elles devenir visibles lors du passage du pointeur?**
+- **Les informations doivent-elles devenir visibles lors du passage du pointeur?**
     Si ce n’est pas le cas, utilisez un autre contrôle. Les info-bulles doivent uniquement être affichées par une action de l’utilisateur; ne les laissez jamais s’afficher d’elles-mêmes.
 
--   **Le contrôle a-t-il une étiquette avec un libellé ?**
+- **Le contrôle a-t-il une étiquette avec un libellé ?**
     Si ce n’est pas le cas, utilisez une info-bulle pour l’indiquer. Attribuer une étiquette à la plus grande partie des contrôles est une bonne habitude de conception de l’expérience utilisateur et pour ceci, vous n’avez pas besoin d’info-bulles. Les contrôles et les commandes des barres d’outils affichant seulement des icônes doivent être accompagnés d’une info-bulle.
 
--   **Un objet a-t-il besoin d’une description ou d’informations complémentaires ?**
+- **Un objet a-t-il besoin d’une description ou d’informations complémentaires ?**
     Si c’est le cas, utilisez une info-bulle. Mais le texte doit être complémentaire, c’est-à-dire non essentiel aux tâches principales. S’il est essentiel, mettez-le directement dans l’interface utilisateur de sorte que les utilisateurs le trouvent sans peine.
 
--   **L’information complémentaire est-elle une erreur, un avertissement ou un état ?**
+- **L’information complémentaire est-elle une erreur, un avertissement ou un état ?**
     Si c’est le cas, utilisez un autre élément d’interface utilisateur, tel un menu volant.
 
--   **Les utilisateurs doivent-ils interagir avec l’info-bulle ?**
+- **Les utilisateurs doivent-ils interagir avec l’info-bulle ?**
     Le cas échéant, utilisez un autre contrôle. Il est impossible d’interagir avec une info-bulle parce qu’elle disparaît lorsqu’on déplace la souris.
 
--   **Les utilisateurs ont-ils besoin d’imprimer l’information complémentaire ?**
+- **Les utilisateurs ont-ils besoin d’imprimer l’information complémentaire ?**
     Le cas échéant, utilisez un autre contrôle.
 
--   **Les utilisateurs pourraient-ils être ennuyés ou gênés par les info-bulles ?**
+- **Les utilisateurs pourraient-ils être ennuyés ou gênés par les info-bulles ?**
     Si cela peut être le cas, envisagez une autre solution, notamment de ne rien ajouter du tout. Si les info-bulles sont susceptibles de gêner l’utilisateur, permettez-lui de les désactiver.
 
 ## <a name="example"></a>Exemple
@@ -79,6 +77,56 @@ Quand utiliser une info-bulle Pour vous décider, posez-vous les questions suiva
 Une info-bulle dans l’application Bing Cartes.
 
 ![Une info-bulle dans l’application Bing Cartes](images/control-examples/tool-tip-maps.png)
+
+## <a name="create-a-tooltip"></a>Créer une info-bulle
+
+Une [info-bulle](/uwp/api/Windows.UI.Xaml.Controls.ToolTip) doit être affectée à un autre élément d’interface utilisateur qui est son propriétaire. La classe [ToolTipService](/uwp/api/windows.ui.xaml.controls.tooltipservice) fournit des méthodes statiques pour afficher une info-bulle.
+
+En XAML, utilisez la propriété **ToolTipService.Tooltip** jointe pour affecter l’info-bulle à un propriétaire.
+
+```xaml
+<Button Content="Submit" ToolTipService.ToolTip="Click to submit"/>
+```
+
+En code, utilisez la méthode [ToolTipService.SetTooltip](/uwp/api/windows.ui.xaml.controls.tooltipservice.settooltip) pour affecter l’info-bulle à un propriétaire.
+
+```xaml
+<Button x:Name="submitButton" Content="Submit"/>
+```
+
+```csharp
+ToolTip toolTip = new ToolTip();
+toolTip.Content = "Click to submit";
+ToolTipService.SetToolTip(submitButton, toolTip);
+```
+
+### <a name="content"></a>Content
+
+Vous pouvez utiliser n’importe quel objet comme [contenu](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) d'une info-bulle. Voici un exemple d’utilisation d'une [Image](/uwp/api/windows.ui.xaml.controls.image) dans une info-bulle.
+
+```xaml
+<TextBlock Text="store logo">
+    <ToolTipService.ToolTip>
+        <Image Source="Assets/StoreLogo.png"/>
+    </ToolTipService.ToolTip>
+</TextBlock>
+```
+
+### <a name="placement"></a>Placement
+
+Par défaut, une info-bulle s’affiche centrée au-dessus du pointeur. Le placement n’étant pas limité par la fenêtre de l’application, l’info-bulle peut s’afficher partiellement ou complètement en dehors des limites de cette fenêtre.
+
+Si une info-bulle masque le contenu auquel elle fait référence, vous pouvez ajuster son emplacement. Utilisez la propriété [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) ou la propriété **ToolTipService.Placement** jointe pour placer l’info-bulle au-dessus, au-dessous, à gauche ou à droite du pointeur. Vous pouvez définir les propriétés [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) et [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset) pour modifier la distance entre le pointeur et l’info-bulle.
+
+```xaml
+<!-- A TextBlock with an offset ToolTip. -->
+<TextBlock Text="TextBlock with an offset ToolTip.">
+    <ToolTipService.ToolTip>
+        <ToolTip Content="Offset ToolTip."
+                 HorizontalOffset="20" VerticalOffset="30"/>
+    </ToolTipService.ToolTip>
+</TextBlock>
+```
 
 ## <a name="recommendations"></a>Recommandations
 

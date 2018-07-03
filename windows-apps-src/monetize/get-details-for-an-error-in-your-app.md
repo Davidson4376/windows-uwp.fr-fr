@@ -4,18 +4,18 @@ ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
 description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les informations concernant une erreur spécifique de votre app.
 title: Obtenir les informations sur une erreur de votre application
 ms.author: mcleans
-ms.date: 03/06/2018
+ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs, détails
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a553b811f130833f449063c68f63a71e4562f06
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: e44d11b9c97f049f25a6b3e57907c39bf2507bac
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663279"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989603"
 ---
 # <a name="get-details-for-an-error-in-your-app"></a>Obtenir les informations sur une erreur de votre application
 
@@ -37,7 +37,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
 
-| Méthode | URI de la requête                                                          |
+| Méthode | URI de requête                                                          |
 |--------|----------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails``` |
 
@@ -60,7 +60,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 | top | entier | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
 | skip | entier | Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10 et skip=0 pour obtenir les 10premières lignes de données, top=10 et skip=10 pour obtenir les 10lignes suivantes, et ainsi de suite. |  Non  |
 | filter |chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Vous pouvez spécifier les champs suivants dans le corps de réponse:<p/><ul><li><strong>marché</strong></li><li><strong>date</strong></li><li><strong>cabId</strong></li><li><strong>cabExpirationTime</strong></li><li><strong>deviceType</strong></li><li><strong>deviceModel</strong></li><li><strong>osVersion</strong></li><li><strong>osRelease</strong></li><li><strong>packageVersion</strong></li><li><strong>osBuild</strong></li></ul> | Non   |
-| orderby | chaîne | Instruction commandant les valeurs des données de résultats. La syntaxe est la suivante <em>orderby=field [order],field [order],...</em>. Le paramètre <em>champ</em> peut être l'une des chaînes suivantes:<ul><li><strong>marché</strong></li><li><strong>date</strong></li><li><strong>cabId</strong></li><li><strong>cabExpirationTime</strong></li><li><strong>deviceType</strong></li><li><strong>deviceModel</strong></li><li><strong>osVersion</strong></li><li><strong>osRelease</strong></li><li><strong>packageVersion</strong></li><li><strong>osBuild</strong></li></ul><p>Le paramètre facultatif <em>order</em> peut avoir la valeur <strong>asc</strong> ou <strong>desc</strong> pour spécifier l’ordre croissant ou décroissant de chaque champ. La valeur par défaut est <strong>asc</strong>.</p><p>Voici un exemple de chaîne <em>orderby</em>: <em>orderby=date,market</em></p> |  Non  |
+| orderby | chaîne | Une instruction commandant les valeurs des données de résultat. La syntaxe est la suivante <em>orderby=field [order],field [order],...</em>. Le paramètre <em>champ</em> peut être l'une des chaînes suivantes:<ul><li><strong>marché</strong></li><li><strong>date</strong></li><li><strong>cabId</strong></li><li><strong>cabExpirationTime</strong></li><li><strong>deviceType</strong></li><li><strong>deviceModel</strong></li><li><strong>osVersion</strong></li><li><strong>osRelease</strong></li><li><strong>packageVersion</strong></li><li><strong>osBuild</strong></li></ul><p>Le paramètre facultatif <em>order</em> peut avoir la valeur <strong>asc</strong> ou <strong>desc</strong> pour spécifier l’ordre croissant ou décroissant de chaque champ. La valeur par défaut est <strong>asc</strong>.</p><p>Voici un exemple de chaîne <em>orderby</em>: <em>orderby=date,market</em></p> |  Non  |
 
 
 ### <a name="request-example"></a>Exemple de requête
@@ -84,7 +84,7 @@ Authorization: Bearer <your access token>
 |------------|---------|------------|
 | Valeur      | array   | Tableau d’objets comportant des données d’erreur détaillées. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs des informations d’erreur](#error-detail-values) ci-dessous.          |
 | @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur10, mais que plus de 10lignes d’erreur sont associées à la requête. |
-| TotalCount | nombre entier | Nombre total de lignes dans les résultats de la requête.        |
+| TotalCount | entier | Nombre total de lignes dans les résultats de données de la requête.        |
 
 
 <span id="error-detail-values"/>
@@ -96,7 +96,7 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | Valeur           | Type    | Description     |
 |-----------------|---------|----------------------------|
 | applicationId   | chaîne  | ID Store de l’app dont vous souhaitez récupérer des données d’erreur.      |
-| failureHash     | chaîne  | L'identificateur unique de l’erreur.     |
+| failureHash     | chaîne  | Identificateur unique de l’erreur.     |
 | failureName     | chaîne  | Le nom de l'échec, qui se compose de quatre partie: une ou plusieurs classes de problème, un code de vérification d'exception ou de bogue, le nom de l'image où l'erreur s'est produite et le nom de la fonction associée.           |
 | date            | chaîne  | Date de début des données d’erreur. Si la requête spécifiait un jour unique, cette valeur est cette date. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
 | cabId           | chaîne  | ID unique du fichierCAB associé à cette erreur.   |
@@ -105,8 +105,8 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | osBuild         | chaîne  | Numéro de version du système d’exploitation sur lequel l’erreur s’est produite.       |
 | packageVersion  | chaîne  | Version du package applicatif associé à cette erreur.    |
 | deviceModel           | chaîne  | Chaîne identifiant le modèle d’appareil sur lequel l’app s’exécutait lorsque l’erreur s’est produite.   |
-| osVersion       | chaîne  | Une des chaînes suivantes qui spécifie la version du système d'exploitation sur laquelle l’erreur s’est produite:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Inconnu</strong></li></ul>    |
-| osRelease       | chaîne  |  L'une des chaînes suivantes qui spécifie la version du système d’exploitation ou un anneau de distribution de version d’évaluation (comme une sous-population au sein de la version du système d’exploitation) sur laquelle/lequel est installée l’application de bureau.<p/><p>Pour Windows10:</p><ul><li><strong>Version1507</strong></li><li><strong>Version1511</strong></li><li><strong>Version1607</strong></li><li><strong>Version1703</strong></li><li><strong>Version1709</strong></li><li><strong>Release Preview</strong></li><li><strong>Insider Rapide</strong></li><li><strong>Insider Lent</strong></li></ul><p/><p>Pour WindowsServer1709:</p><ul><li><strong>RTM</strong></li></ul><p>Pour WindowsServer2016:</p><ul><li><strong>Version1607</strong></li></ul><p>Pour Windows8.1:</p><ul><li><strong>Mise à jour 1</strong></li></ul><p>Pour Windows7:</p><ul><li><strong>Service Pack1</strong></li></ul><p>Si la version du système d’exploitation ou l'anneau de distribution de version d’évaluation est inconnu(e), ce champ comporte la valeur <strong>Inconnu</strong>.</p>    |
+| osVersion       | chaîne  | Une des chaînes suivantes qui spécifie la version du système d'exploitation sur laquelle l’erreur s’est produite:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Inconnu</strong></li></ul>    |
+| osRelease       | chaîne  |  L'une des chaînes suivantes qui spécifie la version du système d’exploitation ou l'anneau de distribution de version d’évaluation (comme une sous-population dans la version du système d’exploitation) sur laquelle/lequel l'erreur s'est produite.<p/><p>Pour Windows10:</p><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Version 1803</strong></li><li><strong>Release Preview</strong></li><li><strong>Insider Rapides</strong></li><li><strong>Insider Lent</strong></li></ul><p/><p>Pour WindowsServer1709:</p><ul><li><strong>RTM</strong></li></ul><p>Pour WindowsServer2016:</p><ul><li><strong>Version 1607</strong></li></ul><p>Pour Windows8.1:</p><ul><li><strong>Mise à jour 1</strong></li></ul><p>Pour Windows7:</p><ul><li><strong>Service Pack1</strong></li></ul><p>Si la version du système d’exploitation ou l'anneau de distribution de version d’évaluation est inconnu(e), ce champ comporte la valeur <strong>Inconnu</strong>.</p>    |
 | deviceType      | chaîne  | Une des chaînes suivantes qui spécifie le type de l’appareil sur lequel l’app s’exécutait lorsque l’erreur s’est produite:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Inconnu</strong></li></ul>     |
 | cabDownloadable           | Booléen  | Indique si le fichier CAB est téléchargeable par cet utilisateur.   |
 

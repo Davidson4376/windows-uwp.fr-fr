@@ -4,18 +4,18 @@ ms.assetid: 79DC7C99-70F1-499A-856B-D2A83FC6F867
 description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir des données détaillées sur une erreur de pilote Windows 10. Cette méthode est uniquement destinées aux fabricants de matériel.
 title: Obtenir des détails sur une erreur de pilote Windows10
 ms.author: mcleans
-ms.date: 01/18/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, services du Store, API d'analyse du MicrosoftStore, erreurs, détails
 ms.localizationpriority: medium
-ms.openlocfilehash: 93a8ee084bae4862beebe0c7998f440f279862a8
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 66729d94f4ea8c6db42b3e573e0e9407d6295e91
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663669"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989373"
 ---
 # <a name="get-details-for-a-windows-10-driver-error"></a>Obtenir des détails sur une erreur de pilote Windows10
 
@@ -38,7 +38,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
 
-| Méthode | URI de la requête                                                          |
+| Méthode | URI de requête                                                          |
 |--------|----------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/driver/failuredetails``` |
 
@@ -85,7 +85,7 @@ Authorization: Bearer <your access token>
 |------------|---------|------------|
 | Valeur      | array   | Un tableau d’objets comportant des données d’erreur détaillées. Pour plus d’informations sur les données incluses dans chaque objet, voir le tableau suivant.          |
 | @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur10, mais que plus de 10lignes d’erreur sont associées à la requête. |
-| TotalCount | nombre entier | Nombre total de lignes des résultats de données pour la requête.        |
+| TotalCount | entier | Nombre total de lignes dans les résultats de données de la requête.        |
 
 
 Les éléments du tableau *Value* comportent les valeurs suivantes:

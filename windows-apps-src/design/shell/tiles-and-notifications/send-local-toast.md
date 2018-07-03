@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, envoyer des notifications toast, notifications, envoyer des notifications, notifications toast, procédure, démarrage rapide, prise en main, exemple de code, procédure pas à pas
 ms.localizationpriority: medium
-ms.openlocfilehash: e59c90bae19116f725b58fc6ec9fdbb41e5dccb3
-ms.sourcegitcommit: 0ee9c6848cb9d624f15cdab1d0c5991ca7245e70
+ms.openlocfilehash: 4f76bc94c80a5191cf7bad86b43230f0d03e81b1
+ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2018
-ms.locfileid: "1641689"
+ms.lasthandoff: 05/24/2018
+ms.locfileid: "1917708"
 ---
 # <a name="send-a-local-toast-notification"></a>Envoyer une notification toast locale
 
@@ -25,7 +25,7 @@ ms.locfileid: "1641689"
 Une notification toast est un message qu’une application peut créer et remettre à l’utilisateur alors que son application n’est pas active. Ce démarrage rapide vous guide dans les procédures de création, remise et affichage d’une notification toast Windows10 avec les nouveaux modèles adaptatifs et actions interactives. Ces actions sont illustrées via une notification locale, qui est la notification la plus simple à implémenter.
 
 > [!IMPORTANT]
-> Les applications de bureau (Pont du bureau et Win32classique) ont des étapes différentes pour l’envoi de notifications et la gestion de l’activation. Pour plus d'informations sur l'implémentation de toasts, consultez la documentation [Applications de bureau en C#](send-local-toast-desktop.md) et [Applications WRL de bureau en C++](send-local-toast-desktop-cpp-wrl.md).
+> Les applications de bureau (Pont du bureau et Win32classique) ont des étapes différentes pour l’envoi de notifications et la gestion de l’activation. Pour plus d'informations sur l'implémentation de toasts, consultez la documentation [Applications de bureau](toast-desktop-apps.md).
 
 Nous allons examiner les étapes suivantes:
 
@@ -382,7 +382,7 @@ BackgroundAccessStatus status = await BackgroundExecutionManager.RequestAccessAs
 // Create the background task
 BackgroundTaskBuilder builder = new BackgroundTaskBuilder()
 {
-    Name = "MyToastNotificationActionTrigger",
+    Name = taskName
 };
 
 // Assign the toast action trigger

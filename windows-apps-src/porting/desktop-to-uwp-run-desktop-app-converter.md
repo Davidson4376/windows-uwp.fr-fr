@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: f867861537ddfb7fe346011cd637156854e2f7d8
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 141d87bf48b5b4835055375320f1e4a79498a42f
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817184"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989673"
 ---
 # <a name="package-an-app-using-the-desktop-app-converter-desktop-bridge"></a>Créer un package d'application à l’aide de Desktop App Converter (Pont du bureau)
 
@@ -60,10 +60,9 @@ Vous trouverez une liste complète des options dans la section [Paramètres](#co
 
 Si vous êtes prêt à créer votre package, mettons-nous au travail.
 
-## <a name="first-consider-how-youll-distribute-your-app"></a>Commencez par examiner la méthode de distribution de votre application
-Si vous prévoyez de publier votre application sur le [MicrosoftStore](https://www.microsoft.com/store/apps), commencez par remplir [ce formulaire](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft vous contactera pour démarrer le processus d’intégration. Dans le cadre de ce processus, vous devez réserver un nom dans le Store et obtenir les informations nécessaires pour créer le package de votre application.
+## <a name="first-prepare-your-application"></a>Tout d'abord, préparez votre application
 
-En outre, assurez-vous de passer ce guide en revue avant de commencer à créer un package pour votre application: [Préparer le package d’une application (Pont du bureau)](desktop-to-uwp-prepare.md).
+Passez ce guide en revue avant de commencer à créer un package pour votre application: [Préparer le package d’une application (Pont du bureau)](desktop-to-uwp-prepare.md).
 
 ## <a name="make-sure-that-your-system-can-run-the-converter"></a>Assurez-vous que le convertisseur peut fonctionner sur votre système
 
@@ -74,7 +73,6 @@ Assurez-vous que votre système répond aux exigences suivantes:
 * Assistance matérielle à la virtualisation
 * Traduction d’adresse de second niveau (SLAT, Second Level Address Translation)
 * [Kit de développement logiciel Windows (Kit SDK Windows) pour Windows10](https://go.microsoft.com/fwlink/?linkid=821375).
-
 
 ## <a name="start-the-desktop-app-converter"></a>Démarrez Desktop App Converter
 

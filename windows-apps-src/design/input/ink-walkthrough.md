@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cac6caf7f8feab86103e27d7947209bb3fd5c0a8
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: 68624288ea223d0882ef0b8c33b174f000081411
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707094"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983385"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>Didacticiel: prendre en charge l’entrée manuscrite dans votre application UWP
 
@@ -41,10 +41,10 @@ Avec Windows Ink, vous pouvez fournir à vos clients l’équivalent numérique 
 
 * Un ordinateur (ou un appareil virtuel) exécutant la version actuelle de Windows 10
 * [Visual Studio2017 et RS2 SDK](https://developer.microsoft.com/windows/downloads)
-* [SDK Windows 10 (10.0.15063.0)](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)
+* [SDK Windows 10 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Si vous débutez dans le développement d’applications de plateforme Windows universelle (UWP) avec Visual Studio, consultez les rubriques suivantes avant de démarrer ce didacticiel:  
-    * [Préparation](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)
-    * [Créer une application «Hello World» (XAML)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+    * [Préparation](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
+    * [Créer une application «Hello World» (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 * **[FACULTATIF] **Un stylet numérique et un ordinateur avec un écran prenant en charge les entrées de ce stylet numérique.
 
 > [!NOTE] 
@@ -70,7 +70,7 @@ Ces objets fournissent la majeure partie de l’expérience d’entrée manuscri
 | Composant | Description |
 | --- | --- |
 | [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | Un contrôle de plateforme d’interface utilisateur XAML, qui reçoit et affiche par défaut toutes les entrées à partir d’un stylet comme un trait d’encre ou un trait d’effacement. |
-| [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | Un objet code-behind, instancié avec un contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (exposé par le biais de la propriété [**InkCanvas.InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter)). Cet objet fournit toutes les fonctionnalités d’entrée manuscrite par défaut exposées par l’élément [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), ainsi qu’un ensemble complet d’API pour plus de personnalisation. |
+| [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | Un objet code-behind, instancié avec un contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (exposé par le biais de la propriété [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter)). Cet objet fournit toutes les fonctionnalités d’entrée manuscrite par défaut exposées par l’élément [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), ainsi qu’un ensemble complet d’API pour plus de personnalisation. |
 | [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | Une plateforme d'interface utilisateur XAML contenant une collection extensible et personnalisable de boutons activant des fonctionnalités d’entrée manuscrite dans un [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) associé. |
 | [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263)<br/>Nous n'abordons pas cette fonctionnalité ici; pour plus d’informations, consultez [Exemple d’entrée manuscrite complexe](http://go.microsoft.com/fwlink/p/?LinkID=620314). | Permet le rendu des traits d’encre sur le contexte d’appareil Direct2D désigné d’une application Windows universelle, au lieu du contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) par défaut. |
 
@@ -134,12 +134,12 @@ Vous remarquerez que, par défaut, l'entrée manuscrite est prise en charge uniq
 
 Pour remédier à cela, vous devez ajouter une deuxième ligne de code. Cette fois, celle-ci sera dans le code-behind pour le fichier XAML dans lequel vous avez déclaré votre [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas). 
 
-Dans cette étape, nous allons présenter l'objet [**InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter), qui assure une gestion plus fine de l’entrée, du traitement et du rendu des entrées manuscrites (standard ou modifiées) sur votre [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas).
+Dans cette étape, nous allons présenter l'objet [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), qui assure une gestion plus fine de l’entrée, du traitement et du rendu des entrées manuscrites (standard ou modifiées) sur votre [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas).
 
 > [!NOTE]
 > L’entrée manuscrite standard (mine du stylet ou mine/bouton de la gomme) n’est pas modifiée avec une affordance matérielle secondaire, tel qu’un bouton gomme du stylet, le bouton droit de la souris ou un mécanisme similaire. 
 
-Pour activer la souris et l'entrée manuscrite tactile, définissez la propriété [**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.InputDeviceTypes) de [**InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter) sur la combinaison de valeurs [**CoreInputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.core.coreinputdevicetypes) de votre choix.
+Pour activer la souris et l'entrée manuscrite tactile, définissez la propriété [**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.InputDeviceTypes) de [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter) sur la combinaison de valeurs [**CoreInputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.core.coreinputdevicetypes) de votre choix.
 
 ### <a name="in-the-sample"></a>Dans l’exemple:
 1. Ouvrez le fichier MainPage.xaml.cs.
@@ -196,11 +196,11 @@ Exécutez de nouveau l’application pour voir [**InkToolbar**](https://docs.mic
 </td>
 <td>
 
-Voici un exemple d’<strong><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar">InkToolbar</a></strong> personnalisée (à partir du bloc-croquis dans l’espace de travail Windows Ink).
+Voici un exemple d’**[InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)** personnalisée (à partir du bloc-croquis dans l’espace de travail Windows Ink).
 
 ![InkToolbar à partir du bloc-croquis dans l’espace de travail Windows Ink](images/ink/ink-inktoolbar-sketchpad-small.png)
 
-Pour en savoir plus sur la personnalisation d’une [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), voir [Ajouter un élément InkToolbar à une application d’entrée manuscrite de plateforme Windows universelle (UWP)](https://docs.microsoft.com/en-us/windows/uwp/input/ink-toolbar).
+Pour en savoir plus sur la personnalisation d’une [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), voir [Ajouter un élément InkToolbar à une application d’entrée manuscrite de plateforme Windows universelle (UWP)](ink-toolbar.md).
 
 </td>
 </tr>
@@ -294,11 +294,11 @@ Dans cette étape, nous utilisons les fonctionnalités de reconnaissance de l’
 </td>
 <td>
 
-<p>Windows Ink prend en charge la reconnaissance de texte pour la plupart des langues prises en charge par Windows. Chaque module linguistique inclut un moteur de reconnaissance de l’écriture manuscrite qui peut être installé avec le module linguistique.</p>
+Windows Ink prend en charge la reconnaissance de texte pour la plupart des langues prises en charge par Windows. Chaque module linguistique inclut un moteur de reconnaissance de l’écriture manuscrite qui peut être installé avec le module linguistique.
 
-<p>Ciblez une langue spécifique en interrogeant les moteurs de reconnaissance de l’écriture manuscrite installés.</p>
+Ciblez une langue spécifique en interrogeant les moteurs de reconnaissance de l’écriture manuscrite installés.
 
-<p>Pour plus d’informations sur la reconnaissance de l'écriture manuscrite internationale, voir <a href="https://docs.microsoft.com/windows/uwp/input/convert-ink-to-text">Reconnaître les traits Windows Ink en tant que texte</a>.</p>
+Pour plus d’informations sur la reconnaissance de l'écriture manuscrite internationale, voir [Reconnaître les traits Windows Ink en tant que texte](convert-ink-to-text.md).
 
 </td>
 </tr>
@@ -314,9 +314,9 @@ Dans cette étape, nous utilisons les fonctionnalités de reconnaissance de l’
 </td>
 <td>
 
-<p>Pour ce didacticiel, nous avons besoin d'appuyer sur un bouton pour lancer la reconnaissance. Vous pouvez également effectuer la reconnaissance dynamique à l’aide d’une fonction de chronométrage de base.</p>
+Pour ce didacticiel, nous avons besoin d'appuyer sur un bouton pour lancer la reconnaissance. Vous pouvez également effectuer la reconnaissance dynamique à l’aide d’une fonction de chronométrage de base.
 
-<p>Pour plus d'informations sur la reconnaissance dynamique, voir <a href="https://docs.microsoft.com/windows/uwp/input/convert-ink-to-text">Reconnaître les traits Windows Ink en tant que texte</a>.</p>
+Pour plus d'informations sur la reconnaissance dynamique, voir [Reconnaître les traits Windows Ink en tant que texte](convert-ink-to-text.md).
 
 </td>
 </tr>
@@ -327,6 +327,7 @@ Dans cette étape, nous utilisons les fonctionnalités de reconnaissance de l’
 OK, maintenant vous pouvez transformer vos notes manuscrites en quelque chose d’un peu plus lisible. Mais qu’en est-il de ces gribouillis tremblotants et alimentés à la caféine dans vos notes de la réunion de ce matin?
 
 À l’aide de l’analyse de l’entrée manuscrite, votre application peut également reconnaître un ensemble de formes, notamment:
+
 - Cercle
 - Losange
 - Dessin
@@ -452,9 +453,9 @@ Dans cette étape, nous connectons les boutons **Enregistrer** et **Charger**, s
 
 <td>
 
-<p>Windows Ink prend également en charge les fonctions copier et coller des traits d’encre vers et depuis le presse-papiers.</p>
+Windows Ink prend également en charge les fonctions copier et coller des traits d’encre vers et depuis le presse-papiers.
 
-<p>Pour plus d’informations sur l’utilisation du Presse-papiers avec l'entrée manuscrite, consultez <a href="https://docs.microsoft.com/en-us/windows/uwp/input/save-and-load-ink">Stocker et récupérer les données de traits WindowsInk</a>.</p>
+Pour plus d’informations sur l’utilisation du Presse-papiers avec l'entrée manuscrite, consultez [Stocker et récupérer les données de traits WindowsInk](save-and-load-ink.md).
 
 </td>
 </tr>
@@ -466,9 +467,16 @@ Félicitations, vous venez de terminer le didacticiel **Entrée: Prise en charge
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Interactions avec le stylet et WindowsInk dans les applications UWP](https://docs.microsoft.com/windows/uwp/input/pen-and-stylus-interactions)
+* [Interactions avec le stylet et WindowsInk dans les applications UWP](pen-and-stylus-interactions.md)
 
-**Exemples**
+### <a name="samples"></a>Exemples
+
+* [Exemple d’analyse des entrées manuscrites (de base) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
+* [Exemple de reconnaissance de l’écriture manuscrite WindowsInk (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
+* [Télécharger et charger des traits d’encre à partir d’un fichier ISF (Ink Serialized Format)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
+* [Enregistrer et charger des traits d’encre à partir du Presse-papiers](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
+* [Exemple d'orientation et d'emplacement de la barre d’outils Ink (de base)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
+* [Exemple d'orientation et d'emplacement de la barre d’outils Ink (dynamique)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
 * [Exemple d’entrée manuscrite simple (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [Exemple d’entrée manuscrite complexe (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
 * [Exemple d’entrée manuscrite (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)

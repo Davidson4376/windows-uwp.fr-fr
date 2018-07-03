@@ -4,18 +4,18 @@ ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: Le SDK MicrosoftAdvertising vous offre plusieurs moyens de monétiser votre application grâce aux publicités.
 title: Afficher des publicités dans votre application avec le SDK MicrosoftAdvertising
 ms.author: mcleans
-ms.date: 04/16/2018
+ms.date: 05/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, publicités, publicité, bannière, contrôle de publicité, spot
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b5e8181dbf9cc661600a0ad15f5eb713621c5b3
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 601f3fe67d6ed44403c65427af75042456bdfddb
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816084"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843019"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Afficher des publicités dans votre application avec le SDK MicrosoftAdvertising
 
@@ -96,7 +96,7 @@ Pour obtenir des instructions et des exemples de code, voir [cet article](native
 
 Après avoir testé votre app, et une fois que vous êtes prêt à la soumettre au MicrosoftStore, créez une unité publicitaire sur la page [Publicités dans l'app](../publish/in-app-ads.md) dans le tableau de bord du Centre de développement Windows. Ensuite, mettez à jour le code de votre app pour utiliser cette unité publicitaire de sorte que votre app reçoive des publicités dynamiques. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md#live-ad-units).
 
-Par défaut, votre application affiche des publicités issues du réseau Microsoft pour les publicités payées. Pour optimiser vos revenus publicitaires, vous pouvez activer la médiation publicitaire pour votre unité publicitaire afin d'afficher des publicités à partir de réseaux de publicités payées supplémentaires, tels que Taboola et Smaato. Vous pouvez également augmenter vos capacités de promotion d'application en affichant des publicités provenant des campagnes de promotion d'applications Microsoft.
+Par défaut, votre application affiche des publicités issues du réseau Microsoft pour les publicités payées. Pour optimiser vos revenus publicitaires, vous pouvez activer la [médiation publicitaire](ad-mediation-service.md) pour votre unité publicitaire afin d'afficher des publicités à partir de réseaux de publicités payées supplémentaires, tels que Taboola et Smaato. Vous pouvez également augmenter vos capacités de promotion d'application en affichant des publicités provenant des campagnes de promotion d'applications Microsoft.
 
 Pour commencer à utiliser la médiation publicitaire dans votre application UWP, [configurez les paramètres de médiation publicitaire](../publish/in-app-ads.md#mediation-settings) de votre unité publicitaire. Par défaut, nous configurons automatiquement les paramètres de médiation à l’aide d’algorithmes d’apprentissage automatique pour vous aider à optimiser vos revenus publicitaires sur les marchés pris en charge par votre application. Cependant, vous avez également la possibilité de sélectionner manuellement les réseaux que vous souhaitez utiliser. Dans tous les cas, les paramètres de médiation sont entièrement configurés sur nos serveurs, par conséquent vous n'avez pas besoin de modifier le code dans votre app.    
 

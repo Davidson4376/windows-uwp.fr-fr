@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: d7ae77c499cb8398aa5557f0d422899fbe8b252d
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 5e3dce1950de907462b62967291d456fb062bd9c
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816254"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989266"
 ---
 # <a name="package-an-app-by-using-visual-studio-desktop-bridge"></a>Créer un package d'application à l’aide de Visual Studio (Pont du bureau)
 
@@ -27,11 +27,9 @@ La dernière version de Visual Studio fournit une nouvelle version projet de cr�
 >[!IMPORTANT]
 >Le Pont du bureau a été introduit dans Windows10, version1607 et peut être utilisé uniquement dans les projets qui ciblent la Mise à jour anniversaire Windows10 (version10.0; build 14393) ou une version ultérieure dans Visual Studio.
 
-## <a name="first-consider-how-youll-distribute-your-app"></a>Commencez par examiner la méthode de distribution de votre application
+## <a name="first-prepare-your-application"></a>Tout d'abord, préparez votre application
 
-Si vous prévoyez de publier votre application sur le [MicrosoftStore](https://www.microsoft.com/store/apps), commencez par remplir [ce formulaire](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft vous contactera pour démarrer le processus d’intégration. Dans le cadre de ce processus, vous devez réserver un nom dans le Store et obtenir les informations nécessaires pour créer le package de votre application.
-
-En outre, assurez-vous de passer ce guide en revue avant de commencer à créer un package pour votre application: [Préparer le package d’une application (Pont du bureau)](desktop-to-uwp-prepare.md).
+Passez ce guide en revue avant de commencer à créer un package pour votre application: [Préparer le package d’une application (Pont du bureau)](desktop-to-uwp-prepare.md).
 
 <a id="new-packaging-project"/>
 
@@ -72,7 +70,8 @@ En outre, assurez-vous de passer ce guide en revue avant de commencer à créer 
 
 **Vidéo**
 
-<iframe src="https://www.youtube.com/embed/fJkbYPyd08w" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/fJkbYPyd08w]
 
 ## <a name="next-steps"></a>Étapes suivantes
 

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, jeux, développement de jeux
 ms.localizationpriority: medium
-ms.openlocfilehash: de899d95e25489fa815f099d696752389cc3f94e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: b351b5072c6bba228d81a65b51656a81bd564daf
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817450"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862258"
 ---
 # <a name="windows-10-game-development-guide"></a>Guide de développement de jeux Windows10
 
@@ -93,12 +93,12 @@ Tout au long de ce guide, vous trouverez des liens ciblés vers la documentation
         <td><a href="../xbox-live/index.md">Guide du développeur Xbox Live</a></td>
     </tr>
     <tr>
-        <td>Documentation pour développeurs Xbox One (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/documentation/Pages/home.aspx">Documentation du XDK Xbox One</a></td>
+        <td>Documentation de développement Xbox One (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-home">Développement de Xbox One</a></td>
     </tr>
     <tr>
-        <td>Livres blancs pour développeurs Xbox One (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Pages/WhitePapers.aspx">Livres blancs</a></td>
+        <td>Livres blancs de développement Xbox One (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-education-whitepapers">Livres blancs</a></td>
     </tr>
     <tr>
         <td>Documentation Mixer Interactive</td>
@@ -227,8 +227,8 @@ De nombreux exemples de jeu et d’application Windows10 sont disponibles pour v
         <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox-live-samples</a></td>
     </tr>
     <tr>
-        <td>Exemples de jeu Xbox One (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx">Exemples</a></td>
+        <td>Exemples de jeu Xbox One (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-education-samples">Exemples</a></td>
     </tr>
     <tr>
         <td>Exemples de jeu Windows (MSDN Code Gallery)</td>
@@ -936,7 +936,7 @@ Si vous disposez d’un jeu, nombre de ressources et de guides disponibles vous 
 ## <a name="prototype-and-design"></a>Prototype et conception
 
 
-Maintenant que vous avez choisi le type de jeu à créer et les outils et la technologie graphique que vous allez utiliser pour ce faire, vous êtes prêt à passer à sa conception et à la création de son prototype. Comme le cœur de votre jeu est une application de plateforme Windows universelle, c’est par là que vous allez commencer.
+Maintenant que vous avez choisi le type de jeu à créer et les outils et la technologie graphique que vous allez utiliser pour ce faire, vous êtes prêt à passer à sa conception et à la création de son prototype. Comme le cœur de votre jeu est une application deplateforme Windows universelle, c’est par là que vous allez commencer.
 
 ### <a name="introduction-to-the-universal-windows-platform-uwp"></a>Présentation de la plateforme Windows universelle (UWP)
 
@@ -1434,7 +1434,7 @@ Le KitWindowsPerformanceToolkit est composé d’outils d’analyse des performa
         <td><a href="https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-156-Critical-Path-Analysis-with-Windows-Performance-Analyzer">Analyse du chemin critique avec WPA</a></td>
     </tr>
     <tr>
-        <td>Diagnostiquer l’utilisation et les fuites de mémoire à l’aide de l'Enregistreur de performance Windows (vidéo)</td>
+        <td>Diagnostiquer l’utilisation et les fuites de mémoire à l’aide de Enregistreur de performance Windows (vidéo)</td>
         <td><a href="https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-154-Memory-Footprint-and-Leaks">Encombrement et fuites de mémoire</a></td>
     </tr>
     <tr>

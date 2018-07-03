@@ -3,26 +3,26 @@ author: mcleanbyron
 description: Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir les données de hub de jeux Xbox Live.
 title: Obtenir des données de hub de jeux Xbox Live
 ms.author: mcleans
-ms.date: 04/16/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, services de MicrosoftStore, API d'analyse du MicrosoftStore, analyse Xbox Live, hubs de jeu
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d34c95e615a10131b3e7f3ffe9ceb246b652727
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 70a76f82c37a4cfba6e0a562c8a6295da38976db
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815784"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976194"
 ---
 # <a name="get-xbox-live-game-hub-data"></a>Obtenir des données de hub de jeux Xbox Live
 
 
-Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir les données de hub de jeux pour votre  [jeu compatible Xbox Live](../xbox-live/index.md). Ces informations sont également disponibles dans le [rapport d'analyse Xbox](../publish/xbox-analytics-report.md) du tableau de bord du Centre de développement.
+Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir les données de hub de jeux pour votre  [jeu compatible Xbox Live](../xbox-live/index.md). Ces informations sont également disponibles dans le [rapport d'analyse Xbox](../publish/xbox-analytics-report.md) du tableau de bord du Centre de développement Windows.
 
 > [!IMPORTANT]
-> Cette méthode prend uniquement en charge les jeux compatibles avec Xbox Live qui sont publiés par des [partenaires Microsoft](../xbox-live/developer-program-overview.md#microsoft-partners) ou soumis via le [ID@Xbox programme](../xbox-live/developer-program-overview.md#id). Celle-ci ne permet pas d'obtenir de données sur les jeux soumis via le [Programme Créateurs Xbox Live](../xbox-live/developer-program-overview.md#xbox-live-creators-program).
+> Cette méthode prend uniquement en charge les jeux pour Xbox et les jeux qui utilisent les services Xbox Live. Ces jeux doivent passer par le [processus d’approbation de concept](../gaming/concept-approval.md), qui inclut les jeux publiés par des [partenaires Microsoft](../xbox-live/developer-program-overview.md#microsoft-partners) et les jeux soumis via le [programme ID@Xbox](../xbox-live/developer-program-overview.md#id). Cette méthode ne prend actuellement pas en charge les jeux publiés via le [Programme Créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
 
 ## <a name="prerequisites"></a>Éléments prérequis
 
@@ -36,7 +36,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
 
-| Méthode | URI de la requête       |
+| Méthode | URI de requête       |
 |--------|----------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/gameanalytics``` |
 
@@ -45,7 +45,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisation | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 
 ### <a name="request-parameters"></a>Paramètres de la requête
@@ -75,7 +75,7 @@ Authorization: Bearer <your access token>
 | Value      | Type   | Description                  |
 |------------|--------|-------------------------------------------------------|
 | Valeur      | array  | Un tableau d’objets qui contient des données de hub de jeux pour chaque date dans la plage de dates spécifiée. Pour plus d’informations sur les données incluses dans chaque objet, voir le tableau suivant.                                                                                                                      |
-| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur 10000 mais que la requête présente plus de 10000rangées de données. |
+| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur 10000 mais que la requête présente plus de 10000rangées de données. |
 | TotalCount | entier    | Nombre total de lignes des résultats de données pour la requête.  |
 
 
@@ -87,7 +87,8 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | applicationId       | chaîne | L’ID Store du jeu pour lequel vous récupérez les données de Hub de jeux.     |
 | gameHubLikeCount     | nombre |   Le nombre de «j'aime» comptabilisés sur la page du Hub de jeux à la date spécifiée.   |
 | gameHubCommentCount          | nombre |  Le nombre de commentaires ajoutés sur la page du Hub de jeux pour votre app à la date spécifiée.  |
-| gameHubShareCount           | nombre | Le nombre de partages de la page du Hub de jeux pour votre app par les clients à la date spécifiée.   |
+| gameHubShareCount           | nombre | Le nombre de partages de la page du Hub de jeux pour votre application par les clients à la date spécifiée.   |
+| gameHubFollowerCount          | nombre | Le nombre de vos abonnés permanents de la page du Hub de jeux pour votre application.   |
 
 
 ### <a name="response-example"></a>Exemple de réponse
@@ -102,14 +103,16 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
       "applicationId": "9NBLGGGZ5QDR",
       "gameHubLikeCount": 10,
       "gameHubCommentCount": 1,
-      "gameHubShareCount": 0
+      "gameHubShareCount": 0,
+      "gameHubFollowerCount": 15924
     },
     {
       "date": "2018-01-05",
       "applicationId": "9NBLGGGZ5QDR",
       "gameHubLikeCount": 12,
       "gameHubCommentCount": 1,
-      "gameHubShareCount": 0
+      "gameHubShareCount": 0,
+      "gameHubFollowerCount": 15931
     }
   ],
   "@nextLink": null,

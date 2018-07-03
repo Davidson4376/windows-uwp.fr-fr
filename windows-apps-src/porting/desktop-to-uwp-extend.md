@@ -4,18 +4,18 @@ Description: Extend your desktop application with Windows UIs and components
 Search.Product: eADQiWindows 10XVcnh
 title: Étendre votre application de bureau avec des interfaces utilisateur et des composants Windows
 ms.author: normesta
-ms.date: 03/22/2018
+ms.date: 06/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ef20366092a5f284c39f4e43d4412c69b60f12fa
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 4e1d808dd2991aa2ffd1e30967d329b3eced9f99
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691328"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018565"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Étendre votre application de bureau avec des composants UWP modernes
 
@@ -27,6 +27,8 @@ Dans de nombreux cas, vous pouvez appeler des API UWP directement à partir de v
 >Ce guide suppose que vous avez créé un package d’application Windows pour votre application de bureau à l’aide de Pont du bureau. Si ce n'est pas encore fait, consultez [Pont du bureau](desktop-to-uwp-root.md).
 
 Si vous êtes prêt, commençons.
+
+<a id="setup" />
 
 ## <a name="first-setup-your-solution"></a>Tout d’abord, configurez votre Solution
 
@@ -78,41 +80,74 @@ Dans le cadre du flux de votre application, vous pouvez incorporer des interface
 
 Par exemple, avec une petite quantité de balisage XAML, vous pouvez offrir aux utilisateurs des fonctionnalités puissantes de visualisation cartographique.
 
-Cette image montre une application VB6 qui ouvre une interface utilisateur XAML moderne contenant un contrôle de carte.
+Cette image montre une application Windows Forms qui ouvre une interface utilisateur XAML moderne contenant un contrôle de carte.
 
 ![adaptive-design](images/desktop-to-uwp/extend-xaml-ui.png)
-
-### <a name="have-a-closer-look-at-this-app"></a>Examinons de près cette application
-
-:heavy_check_mark: [Obtenir l’application](https://www.microsoft.com/en-us/store/p/vb6-app-with-xaml-sample/9n191ncxf2f6)
-
-:heavy_check_mark: [Parcourir le code](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/VB6withXaml)
 
 ### <a name="the-design-pattern"></a>Modèle de conception
 
 Pour afficher une interface utilisateur XAML, procédez comme suit:
 
-:one: [Ajouter une extension de protocole à ce projet](#protocol)
+:one: [Configurez votre solution](#solution-setup)
 
-:two: [Démarrer l’application UWP à partir de votre application de bureau](#start)
+:two: [Créez une interface utilisateur avec XAML](#xaml-UI)
 
-:three: [Dans le projet UWP, afficher la page que vous souhaitez](#parse)
+:three: [Ajoutez une extension de protocole au projet UWP](#protocol)
 
-<a id="protocol" />
+:four: [Démarrez l’application UWP à partir de votre application de bureau](#start)
 
-### <a name="add-a-protocol-extension"></a>Ajouter une extension de protocole
+:five: [Dans le projet UWP, affichez la page que vous voulez](#parse)
+
+<a id="solution-setup" />
+
+### <a name="setup-your-solution"></a>Configurez votre solution
+
+Pour obtenir des instructions générales sur la façon de configurer votre solution, consultez la section [Tout d’abord, configurez votre solution](#setup) au début de ce guide.
+
+Votre solution ressemblera à ceci:
+
+![Solution d'interface utilisateur XAML](images/desktop-to-uwp/xaml-ui-solution.png)
+
+Dans cet exemple, le projet Windows Forms est nommé **Landmarks** et le projet UWP qui contient l'interface utilisateur XAML est nommé **MapUI**.
+
+<a id="xaml-UI" />
+
+### <a name="create-a-xaml-ui"></a>Créez une interface utilisateur avec XAML
+
+Ajoutez une interface utilisateur XAML à votre projet UWP Voici le code XAML d'une carte de base.
+
+```xml
+<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="12,20,12,14">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <maps:MapControl x:Name="myMap" Grid.Column="0" Width="500" Height="500"
+                     ZoomLevel="{Binding ElementName=zoomSlider,Path=Value, Mode=TwoWay}"
+                     Heading="{Binding ElementName=headingSlider,Path=Value, Mode=TwoWay}"
+                     DesiredPitch="{Binding ElementName=desiredPitchSlider,Path=Value, Mode=TwoWay}"    
+                     HorizontalAlignment="Left"               
+                     MapServiceToken="<Your Key Goes Here" />
+    <Grid Grid.Column="1" Margin="12">
+        <StackPanel>
+            <Slider Minimum="1" Maximum="20" Header="ZoomLevel" Name="zoomSlider" Value="17.5"/>
+            <Slider Minimum="0" Maximum="360" Header="Heading" Name="headingSlider" Value="0"/>
+            <Slider Minimum="0" Maximum="64" Header=" DesiredPitch" Name="desiredPitchSlider" Value="32"/>
+        </StackPanel>
+    </Grid>
+</Grid>
+```
+
+### <a name="add-a-protocol-extension"></a>Ajoutez une extension de protocole
 
 Dans l'**Explorateur de solutions**, ouvrez le fichier **package.appxmanifest** du projet UWP dans votre solution et ajoutez cette extension.
 
 ```xml
 <Extensions>
-      <uap:Extension
-          Category="windows.protocol"
-          Executable="MapUI.exe"
-          EntryPoint=" MapUI.App">
-        <uap:Protocol Name="desktopbridgemapsample" />
-      </uap:Extension>
-    </Extensions>     
+  <uap:Extension Category="windows.protocol" Executable="MapUI.exe" EntryPoint="MapUI.App">
+    <uap:Protocol Name="xamluidemo" />
+  </uap:Extension>
+</Extensions>    
 ```
 
 Nommez le protocole, indiquez le nom de l’exécutable généré par le projet UWP et le nom de la classe de point d’entrée.
@@ -120,8 +155,6 @@ Nommez le protocole, indiquez le nom de l’exécutable généré par le projet 
 Vous pouvez également ouvrir le **package.appxmanifest** dans le concepteur, choisir l'onglet **Déclarations**, puis ajouter l’extension ici.
 
 ![declarations-tab](images/desktop-to-uwp/protocol-properties.png)
-
-
 
 > [!NOTE]
 > Les contrôles de carte téléchargent des données à partir d’internet, donc, si vous en utilisez un, vous devez également ajouter la fonctionnalité «client internet» à votre manifeste.
@@ -132,88 +165,79 @@ Vous pouvez également ouvrir le **package.appxmanifest** dans le concepteur, ch
 
 Tout d’abord, à partir de votre application de bureau créez un [Uri](https://msdn.microsoft.com/library/system.uri.aspx) qui inclut le nom du protocole et les paramètres que vous souhaitez passer à l’application UWP. Appelez ensuite la méthode [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync).
 
-Voici un exemple simple en C#.
-
 ```csharp
 
-private async void showMap(double lat, double lon)
+private void Statue_Of_Liberty_Click(object sender, EventArgs e)
 {
-    string str = "desktopbridgemapsample://";
+    ShowMap(40.689247, -74.044502);
+}
+
+private async void ShowMap(double lat, double lon)
+{
+    string str = "xamluidemo://";
 
     Uri uri = new Uri(str + "location?lat=" +
         lat.ToString() + "&?lon=" + lon.ToString());
 
     var success = await Windows.System.Launcher.LaunchUriAsync(uri);
 
-    if (success)
-    {
-        // URI launched
-    }
-    else
-    {
-        // URI launch failed
-    }
 }
-```
-Dans notre exemple, nous faisons quelque chose d’un peu plus indirect. Nous avons encapsulé l’appel dans une fonction d’interopérabilité qui peut être appelée par VB6, nommée ``LaunchMap``. Cette fonction est écrite en C++.
-
-Voici le bloc VB:
-
-```VB
-Private Declare Function LaunchMap Lib "UWPWrappers.dll" _
-  (ByVal lat As Double, ByVal lon As Double) As Boolean
- 
-Private Sub EiffelTower_Click()
-    LaunchMap 48.858222, 2.2945
-End Sub
-```
-
-Voici la fonction C++:
-
-```C++
-
-DllExport bool __stdcall LaunchMap(double lat, double lon)
-{
-  try
-  {
-    String ^str = ref new String(L"desktopbridgemapsample://");
-    Uri ^uri = ref new Uri(
-      str + L"location?lat=" + lat.ToString() + L"&?lon=" + lon.ToString());
- 
-    // now launch the UWP component
-    Launcher::LaunchUriAsync(uri);
-  }
-  catch (Exception^ ex) { return false; }
-  return true;
-}
-
 ```
 
 <a id="parse" />
 
-### <a name="parse-parameters-and-show-a-page"></a>Analyser les paramètres et afficher une page
+### <a name="parse-parameters-and-show-a-page"></a>Analysez les paramètres et affichez une page
 
 Dans la classe **Application** de votre projet UWP, remplacez le gestionnaire d’événements **OnActivated**. Si l’application est activée par votre protocole, analysez les paramètres, puis ouvrez la page que vous voulez.
 
-```C++
-void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs^ e)
+```csharp
+protected override void OnActivated(Windows.ApplicationModel.Activation.IActivatedEventArgs e)
 {
-  if (e->Kind == ActivationKind::Protocol)
-  {
-    ProtocolActivatedEventArgs^ protocolArgs = (ProtocolActivatedEventArgs^)e;
-    Uri ^uri = protocolArgs->Uri;
-    if (uri->SchemeName == "desktopbridgemapsample")
+    if (e.Kind == ActivationKind.Protocol)
     {
-      Frame ^rootFrame = ref new Frame();
-      Window::Current->Content = rootFrame;
-      rootFrame->Navigate(TypeName(MainPage::typeid), uri->Query);
-      Window::Current->Activate();
+        ProtocolActivatedEventArgs protocolArgs = (ProtocolActivatedEventArgs)e;
+        Uri uri = protocolArgs.Uri;
+        if (uri.Scheme == "xamluidemo")
+        {
+            Frame rootFrame = new Frame();
+            Window.Current.Content = rootFrame;
+            rootFrame.Navigate(typeof(MainPage), uri.Query);
+            Window.Current.Activate();
+        }
     }
-  }
 }
 ```
 
+Remplacez la méthode ``OnNavigatedTo`` pour utiliser les paramètres transmis à la page. Dans ce cas, nous allons utiliser la latitude et la longitude qui ont été transmises à cette page pour afficher un emplacement dans une carte.
+
+```csharp
+protected override void OnNavigatedTo(NavigationEventArgs e)
+ {
+     if (e.Parameter != null)
+     {
+         WwwFormUrlDecoder decoder = new WwwFormUrlDecoder(e.Parameter.ToString());
+
+         double lat = Convert.ToDouble(decoder[0].Value);
+         double lon = Convert.ToDouble(decoder[1].Value);
+
+         BasicGeoposition pos = new BasicGeoposition();
+
+         pos.Latitude = lat;
+         pos.Longitude = lon;
+
+         myMap.Center = new Geopoint(pos);
+
+         myMap.Style = MapStyle.Aerial3D;
+
+     }
+
+     base.OnNavigatedTo(e);
+ }
+```
+
 ### <a name="similar-samples"></a>Exemples similaires
+
+[Ajout d’une expérience utilisateur XAML UWP aux applications VB6](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/VB6withXaml)
 
 [Exemple Northwind: exemple de bout en bout pour une interface utilisateur UWA et du code hérité Win32](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/NorthwindSample)
 

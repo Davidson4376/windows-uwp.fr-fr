@@ -10,18 +10,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, jeux, directx, chargement des ressources
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cd2ca426f5a73a6cf8953ab599f8a7332be43a4
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 12dd2fd39ff0b39e747488952779cfeb180f06fa
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655611"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983552"
 ---
 # <a name="load-resources-in-your-directx-game"></a>Charger des ressources dans votre jeu DirectX
 
 
 
-La plupart des jeux, à un moment donné, chargent des ressources et des éléments multimédias (comme les nuanceurs, les textures, les maillages prédéfinis ou d’autres données graphiques) à partir d’un stockage local ou d’autres flux de données. Cette rubrique offre une vue d’ensemble des éléments à prendre en compte lors du chargement de ces fichiers en vue de leur utilisation dans votre jeu de plateforme Windows universelle (UWP).
+La plupart des jeux, à un moment donné, chargent des ressources et des éléments multimédias (comme les nuanceurs, les textures, les maillages prédéfinis ou d’autres données graphiques) à partir d’un stockage local ou d’autres flux de données. Cette rubrique offre une vue d’ensemble des éléments à prendre en compte lors du chargement de ces fichiers en vue de leur utilisation dans votre jeu de plateforme Windows universelle (UWP) DirectX C/C++.
 
 Par exemple, les maillages des objets polygonaux de votre jeu peuvent avoir été créés avec un autre outil et exportés vers un format spécifique. Il en va de même pour les textures et plus encore : alors que généralement la plupart des outils peuvent écrire une image bitmap plate, sans compression, qui est comprise par la plupart des API graphiques, utiliser dans votre jeu une telle image peut s’avérer extrêmement inefficace. Ici, nous vous guidons à travers les étapes de base du chargement de trois types de ressources graphiques pour une utilisation avec Direct3D: les maillages (modèles), les textures (bitmaps) et les objets nuanceurs compilés.
 
@@ -53,7 +53,7 @@ Vous pouvez trouver le code complet de ces exemples dans les liens suivants.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>

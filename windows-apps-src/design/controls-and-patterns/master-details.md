@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c39243217f28dd4f88c4776c058a1b93c145c50
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 68a8a812c6e5080630254014552a8bb05747749b
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393528"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983520"
 ---
 # <a name="masterdetails-pattern"></a>Modèle Maître/Détails
 
@@ -99,7 +99,7 @@ Pour créer une disposition adaptative, définissez différents [**VisualStates*
 Les exemples suivants implémentent le modèle Maître/Détails avec des dispositions adaptatives et illustrent la liaison de données avec des ressources statiques, de base de données et en ligne: 
 - [Exemple de Maître/Détails](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
 - [Exemples de Maître/Détails et de Sélection](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [Exemple de Maître/Détails Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Pages/MasterDetail)
+- [Exemple de Maître/Détails Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
 - [Exemple de base de données de commandes de clients](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [Exemple de lecteurRSS](https://github.com/Microsoft/Windows-appsample-rssreader)
 

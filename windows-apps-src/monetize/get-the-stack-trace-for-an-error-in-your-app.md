@@ -4,18 +4,18 @@ ms.assetid: b556a245-6359-4ddc-a4bd-76f9873ab694
 description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir la trace de pile concernant une erreur dans votre app.
 title: Obtenir la trace de pile concernant une erreur dans votre application
 ms.author: mcleans
-ms.date: 06/16/2017
+ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, services du Store, API d’analyse du MicrosoftStore, trace de pile, erreur
 ms.localizationpriority: medium
-ms.openlocfilehash: d29237bfc36c745933c5c40bba9c584d2e705947
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 902bf87f1650cc5b9f4aeabd8539da4a774dce75
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662779"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989533"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>Obtenir la trace de pile concernant une erreur dans votre application
 
@@ -37,7 +37,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
 
-| Méthode | URI de la requête                                                          |
+| Méthode | URI de requête                                                          |
 |--------|----------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/stacktrace``` |
 
@@ -75,7 +75,7 @@ Authorization: Bearer <your access token>
 |------------|---------|--------------------------------|
 | Valeur      | array   | Tableau d’objets qui contiennent chacun une image de données de trace de pile. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs de la trace de pile](#stack-trace-values) ci-dessous. |
 | @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur10, mais que plus de 10lignes d’erreur sont associées à la requête. |
-| TotalCount | nombre entier | Nombre total de lignes dans les résultats de la requête.          |
+| TotalCount | entier | Nombre total de lignes dans les résultats de données de la requête.          |
 
 
 ### <a name="stack-trace-values"></a>Valeurs de la trace de pile

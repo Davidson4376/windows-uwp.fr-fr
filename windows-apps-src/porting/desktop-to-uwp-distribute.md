@@ -4,34 +4,34 @@ Description: Distribute a packaged desktop app (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
 title: Publiez votre application de bureau mise en package dans un Store ou chargez-la de manière indépendante sur un ou plusieurs périphériques.
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aff2635094064c0758f9d0d2ca56b7aa73cfda1
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 682d7dfcef1ea8037b113499362f0664c388d987
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816834"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989623"
 ---
 # <a name="distribute-a-packaged-desktop-app-desktop-bridge"></a>Distribuer une application de bureau empaquetée (Pont du bureau)
 
 Publiez votre application de bureau empaquetée dans un Store ou chargez-la de manière indépendante sur un ou plusieurs périphériques.  
 
 > [!NOTE]
-> Avez-vous un plan pour la méthode de transition des utilisateurs vers votre application empaquetée? Avant de distribuer votre application, consultez la section [Migrer les utilisateurs vers votre application Pont du bureau](#transition-users) de ce guide où vous trouverez quelques idées.
+> Avez-vous un plan pour la méthode de transition des utilisateurs vers votre application empaquetée? Avant de distribuer votre application, consultez la section [Migration des utilisateurs vers votre application empaquetée](#transition-users) de ce guide où vous trouverez quelques idées.
 
 ## <a name="distribute-your-app-by-publishing-it-to-the-microsoft-store"></a>Distribuer votre application en la publiant sur le MicrosoftStore
 
 Le [MicrosoftStore](https://www.microsoft.com/store/apps) est une méthode pratique pour rendre votre application accessible aux clients.
 
-Publiez votre application dans cette boutique pour atteindre un public plus large. En outre, les clients professionnels peuvent acquérir votre application pour la distribuer en interne au sein de leur organisation par le biais du [MicrosoftStore pour Entreprises](https://www.microsoft.com/business-store).
+Publiez votre application dans ce Store pour atteindre un public plus large. En outre, les clients professionnels peuvent acquérir votre application pour la distribuer en interne au sein de leur organisation par le biais du [MicrosoftStore pour Entreprises](https://www.microsoft.com/business-store).
 
-Si vous prévoyez de publier dans le MicrosoftStore, et si vous n’avez pas encore pris contact avec nous, remplissez [ce formulaire](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge) et Microsoft reviendra vers vous pour démarrer le processus d’intégration.
+Si vous envisagez de publier dans le MicrosoftStore, vous êtes invité à répondre à quelques questions supplémentaires dans le cadre du processus de soumission. Ce, parce que votre manifeste du package déclare une fonctionnalité restreinte nommée **runFullTrust** et que nous avons besoin d'approuver l’utilisation de cette fonctionnalité par votre application. Vous trouverez davantage de détails sur ces exigences ici: [Fonctionnalités restreintes](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#restricted-capabilities.html).
 
 Vous n’êtes pas obligé de signer votre application avant de la soumettre au Store.
 
@@ -69,20 +69,20 @@ Pour charger votre application sur d’autres périphériques, consultez [Charge
 
 <a id="transition-users" />
 
-## <a name="transition-users-to-your-desktop-bridge-app"></a>Migrer les utilisateurs vers votre application Pont du bureau
+## <a name="transition-users-to-your-packaged-app"></a>Migration des utilisateurs vers votre application empaquetée
 
-Avant de distribuer votre application, envisagez d’ajouter quelques extensions à votre manifeste de package pour aider les utilisateurs à prendre l’habitude d’utiliser votre application Pont du bureau. Voici certaines choses que vous pouvez faire.
+Avant de distribuer votre application, envisagez d’ajouter quelques extensions à votre manifeste du package pour aider les utilisateurs à prendre l’habitude d’utiliser votre application empaquetée. Voici certaines choses que vous pouvez faire.
 
-* Pointez les vignettes de l’écran de démarrage existantes et les boutons de la barre des tâches vers votre application Pont du bureau.
+* Pointez les vignettes existantes de l’écran de démarrage et les boutons de barre des tâches vers votre application empaquetée.
 * Associez votre application empaquetée à un ensemble de types de fichiers.
-* Autorisez votre application Pont du bureau à ouvrir certains types de fichiers par défaut.
+* Autorisez votre application empaquetée à ouvrir certains types de fichiers par défaut.
 
 Pour obtenir la liste complète des extensions et des conseils pour leur utilisation, voir [Migration des utilisateurs vers votre application](desktop-to-uwp-extensions.md#transition-users-to-your-app).
 
-Pensez également à ajouter du code à votre application Pont du bureau chargée d’accomplir ces tâches:
+Pensez également à ajouter du code à votre application empaquetée chargée d’accomplir ces tâches:
 
-* Migrez les données utilisateur associées à votre application de bureau dans les dossiers appropriés de votre application Pont du bureau.
-* Permet aux utilisateurs de désinstaller la version de bureau de votre application.
+* migrer les données utilisateur associées à votre application de bureau dans les dossiers appropriés de votre application empaquetée;
+* permettre aux utilisateurs de désinstaller la version de bureau de votre application.
 
 Examinons chacune de ces tâches. Nous allons commencer par la migration des données utilisateur.
 
@@ -90,7 +90,7 @@ Examinons chacune de ces tâches. Nous allons commencer par la migration des don
 
 Si vous allez ajouter du code qui effectuera la migration des données utilisateur. Il est préférable de n’exécuter ce code que lors du démarrage initial de l’application. Avant de migrer les données des utilisateurs, affichez une boîte de dialogue expliquant à l’utilisateur ce qui est en train de se produire, les raisons pour lesquelles cette action est recommandée, et ce qui va advenir des données existantes.
 
-Voici un exemple montrant comment vous pourriez procéder dans une application Pont du bureau .NET.
+Voici un exemple montrant comment vous pourriez procéder dans une application empaquetée .NET.
 
 ```csharp
 private void MigrateUserData()
@@ -100,11 +100,9 @@ private void MigrateUserData()
 
     if (sourceDir != null)
     {
-        String migrateMessage =
-            "Would you like to migrate your data from the previous version of this app?";
-
         DialogResult migrateResult = MessageBox.Show
-            (migrateMessage, "Data Migration", MessageBoxButtons.YesNo);
+            ("Would you like to migrate your data from the previous version of this app?",
+             "Data Migration", MessageBoxButtons.YesNo);
 
         if (migrateResult.Equals(DialogResult.Yes))
         {
@@ -127,11 +125,11 @@ private void MigrateUserData()
 }
 ```
 
-### <a name="uninstall-the-desktop-version-of-your-app"></a>Désinstallez la version bureau de votre application
+### <a name="uninstall-the-desktop-version-of-your-app"></a>Désinstaller la version bureau de votre application
 
 Il est préférable de ne pas désinstaller l’application de bureau des utilisateurs sans leur permission. Affichez une boîte de dialogue demandant l’autorisation de l’utilisateur. Les utilisateurs peuvent décider de conserver la version bureau de votre application. Dans ce cas de figure, vous devrez décider si vous souhaitez bloquer l’utilisation de l’application de bureau ou prendre en charge la cohabitation des deux applications.
 
-Voici un exemple montrant comment vous pourriez procéder dans une application Pont du bureau .NET.
+Voici un exemple montrant comment vous pourriez procéder dans une application empaquetée .NET.
 
 Pour voir le contexte complet de cet extrait de code, consultez le fichier **MainWindow.cs** de cet exemple [Visionneuse d’images WPF avec transition/migration/désinstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition).
 
@@ -146,11 +144,10 @@ private void RemoveDesktopApp()
     //Detect if the previous version of the Desktop App is installed.
     if (uninstallString != null)
     {
-        String uninstallMessage = "To have the best experience, consider uninstalling the "
-            +" previous version of this app. Would you like to do that now?";
-
         DialogResult uninstallResult = MessageBox.Show
-            (uninstallMessage, "Uninstall the previous version", MessageBoxButtons.YesNo);
+            ("To have the best experience, consider uninstalling the "
+              + " previous version of this app. Would you like to do that now?",
+              "Uninstall the previous version", MessageBoxButtons.YesNo);
 
         if (uninstallResult.Equals(DialogResult.Yes))
         {

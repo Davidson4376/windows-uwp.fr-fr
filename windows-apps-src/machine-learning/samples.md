@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, apprentissage automatique windows
 ms.localizationpriority: medium
-ms.openlocfilehash: 0aea463503c53d7533354412e5840f94619fd056
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 49af45236d262f682c5f5f28e57120c0bb209e81
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689365"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842686"
 ---
 # <a name="windows-ml-samples"></a>Exemples WindowsML
 
@@ -30,4 +30,4 @@ Les exemples d’apps UWP suivantes montrent comment utiliser Windows ML et peuv
 
 ## <a name="windows-machine-learning-explorer"></a>Explorateur WindowsMachineLearning
 
-[Cet exemple](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/WinMLExplorer) est une application générique contrôlée par les données qui amorce les modèles ML capables de détecter des failles dans des circuits imprimés à partir d’images ou de flux de caméra en temps réel. Apprenez-en davantage en consultant le billet de blog [Comment les trois lignes de code et l’apprentissage automatique Windows permettent aux développeurs .NET d'exécuter les IA localement sur les appareils Windows10](https://aka.ms/winmlfordevsblog). 
+[Cet exemple](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/WinMLExplorer) est une application générique contrôlée par les données qui amorce les modèles ML capables de détecter des failles dans des circuits imprimés à partir d’images ou de flux de caméra en temps réel. Apprenez-en davantage en consultant le billet de blog [Comment les trois lignes de code et l’apprentissage automatique Windows permettent aux développeurs .NET d'exécuter les IA localement sur les appareils Windows10](https://aka.ms/winmlfordevsblog).

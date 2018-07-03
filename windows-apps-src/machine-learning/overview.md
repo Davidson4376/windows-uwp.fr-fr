@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, apprentissage automatique windows
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ef6ea1a4e1dab23f5ff6a09aec9b8c49c135f5e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: a2470cff6b5c7f07c720a38d0bff00486e4c6b27
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817660"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842869"
 ---
 # <a name="windows-ml-overview"></a>Vue d’ensemble de WindowsML
 
@@ -54,7 +54,7 @@ Voici quelques points essentiels sur Windows ML:
 
 ### <a name="system-requirements"></a>Configuration requise
 
-Pour créer des applications qui utilisent Windows ML, vous aurez besoin du [SDK Windows - Build17110 ou version ultérieure](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK).
+Pour créer des applications qui utilisent Windows ML, vous aurez besoin du [SDK Windows10](https://developer.microsoft.com/windows/downloads/windows-10-sdk) - Build17110 ou version ultérieure.
 
 ### <a name="onnx-models"></a>Modèles ONNX
 
@@ -77,9 +77,11 @@ Vous pouvez également utiliser [WinMLTools](https://pypi.org/project/winmltools
 
 Pour savoir comment installer et utiliser WinMLTools, consultez [Convertir un modèle](conversion-samples.md).
 
+Avec l’extension Visual Studio Tools for AI, vous pouvez également utiliser WinMLTools dans l’IDE Visual Studio pour convertir vos modèles au format ONNX à l'aide d'une expérience à clics plus conviviale. Pour en savoir plus, visitez le site [VS Tools for AI](https://github.com/Microsoft/vs-tools-for-ai/).
+
 ### <a name="onnx-operators"></a>Opérateurs ONNX
 
-Windows ML prend en charge plus de 100 opérateurs ONNX sur l'UC et accélère les opérations de calcul sur les GPU compatibles DirectX12. Pour obtenir la liste complète des signatures d’opérateur, consultez la documentation des schémas des opérateurs ONNX pour les espaces de noms [ai.onnx](https://github.com/onnx/onnx/blob/rel-1.0/docs/Operators.md) (par défaut) et [ai.onnx.ml](https://github.com/onnx/onnx/blob/rel-1.0/docs/Operators-ml.md).
+Windows ML prend en charge plus de 100opérateurs ONNX sur l'UC et accélère les opérations de calcul sur les GPU compatibles DirectX12. Pour obtenir la liste complète des signatures d’opérateur, consultez la documentation des schémas des opérateurs ONNX pour les espaces de noms [ai.onnx](https://github.com/onnx/onnx/blob/rel-1.0/docs/Operators.md) (par défaut) et [ai.onnx.ml](https://github.com/onnx/onnx/blob/rel-1.0/docs/Operators-ml.md).
 
 Windows ML prend en charge tous les opérateurs définis dans la documentation ONNX v1.0 avec les différences suivantes:
 
@@ -106,7 +108,7 @@ Windows ML prend en charge tous les opérateurs définis dans la documentation O
 
 Avec un fichier de modèle ONNX, le générateur de code Windows ML crée une interface pour interagir avec le modèle dans votre app. L’interface générée inclut les classes de wrapper qui représentent le modèle, les entrées et les sorties. Le code généré appelle l'[API WindowsML](/uwp/api/windows.ai.machinelearning.preview) pour vous, ce qui vous permet de charger, lier et évaluer aisément le modèle dans votre projet. Le générateur de code prend actuellement en charge C# et C++/CX.
 
-Pour les développeurs UWP, le générateur de code automatique de Windows ML est intégré en mode natif à [Visual Studio (version 15.7 - Aperçu 1)](https://www.visualstudio.com/vs/preview/). (**Remarque**: dans Visual Studio Installer, vous devrez désactiver l’option Kit de développement logiciel (SDK)Windows10Anniversary, Build 17110. Dans votre projet Visual Studio, ajoutez simplement votre fichier ONNX en tant qu'élément existant, et Visual Studio générera des classes de wrapper Windows ML dans un nouveau fichier d'interface.
+Pour les développeurs UWP, le générateur de code automatique de Windows ML est intégré en mode natif à [Visual Studio](https://developer.microsoft.com/windows/downloads). Dans votre projet Visual Studio, ajoutez simplement votre fichier ONNX en tant qu'élément existant, et Visual Studio générera des classes de wrapper Windows ML dans un nouveau fichier d'interface.
 
 Vous pouvez également utiliser l’outil de ligne de commande `mlgen.exe` fourni avec le SDK Windows, pour générer les classes de wrapper Windows ML. L’outil se trouve dans `(SDK_root)\bin\<version>\x64`ou `(SDK_root)\bin\<version>\x86`, SDK_root étant le répertoire d’installation SDK. Pour exécuter l'outil, utilisez la commande ci-dessous.
 

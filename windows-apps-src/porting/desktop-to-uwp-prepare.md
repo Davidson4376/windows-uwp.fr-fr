@@ -4,19 +4,19 @@ Description: This article lists things you need to know before packaging your ap
 Search.Product: eADQiWindows 10XVcnh
 title: Préparation de la création de package d'application (Pont du bureau)
 ms.author: normesta
-ms.date: 02/21/2018
+ms.date: 05/18/20188
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a4836992675f65773e9b5c890aca243e2a9e172
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 46e71812acdad92a5d017cee44490e7d8cc0de32
+ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832543"
+ms.lasthandoff: 05/21/2018
+ms.locfileid: "1905390"
 ---
 # <a name="prepare-to-package-an-app-desktop-bridge"></a>Préparation de la création de package d'application (Pont du bureau)
 
@@ -105,7 +105,7 @@ Les dépendances ne sont pas installées si l’application est installée en ch
 
 + __Votre application démarre un utilitaire chargé d’accomplir certaines tâches__. Évitez de démarrer des utilitaires de commande tels que PowerShell et Cmd.exe. En fait, si les utilisateurs installent votre application sur un système fonctionnant sous Windows10S, elle ne sera pas du tout en mesure de les démarrer. Cela peut bloquer la soumission de votre application au Microsoft Store, car toutes les applications soumises au Microsoft Store doivent être compatibles avec Windows10 S.
 
-Le démarrage d’un utilitaire constitue souvent un moyen pratique de chercher des informations dans le système d’exploitation, le registre ou les fonctionnalités d’accès au système. Toutefois, vous pouvez tout aussi bien utiliser les API UWP pour accomplir ces types de tâches. Ces API sont plus performantes, car elles n’ont besoin d’aucun fichier exécutable séparé pour s’exécuter, mais, plus important encore, elles empêchent l’application de sortir du package. La conception de l’application reste cohérente avec l’isolement, la confiance et la sécurité qui accompagnent une application Pont du bureau, et votre application se comportera comme prévu sur les systèmes exécutant Windows10 S.
+Le démarrage d’un utilitaire constitue souvent un moyen pratique de chercher des informations dans le système d’exploitation, le registre ou les fonctionnalités d’accès au système. Toutefois, vous pouvez tout aussi bien utiliser les API UWP pour accomplir ces types de tâches. Ces API sont plus performantes, car elles n’ont besoin d’aucun fichier exécutable séparé pour s’exécuter, mais, plus important encore, elles empêchent l’application de sortir du package. La conception de l’application reste cohérente avec l’isolement, la confiance et la sécurité qui accompagnent une application que vous avez empaquetée à l'aide du Pont du bureau, et votre application se comportera comme prévu sur les systèmes exécutant Windows10 S.
 
 + __Votre application héberge des compléments, des modules ou des extensions__.   Dans de nombreux cas, les extensions de type COM continueront probablement à fonctionner tant qu’elles n’auront pas été empaquetées et elles s’installeront en toute confiance. La raison est que ces programmes d’installation peuvent utiliser leurs capacités de confiance totale pour modifier le registre et placer les fichiers d’extension partout où votre application hôte s’attend à les trouver.
 

@@ -5,17 +5,17 @@ description: Découvrez comment utiliser l’espace de noms Windows.Services.Sto
 title: Activer les achats d’extensions consommables
 keywords: windows10, uwp, consommable, extensions, achats dans l’application, Windows.Services.Store
 ms.author: mcleans
-ms.date: 08/25/2017
+ms.date: 05/09/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b327327448b47416e3ba113a65aa8a7b755f1f0
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: c7c36abe2d1332e5b6c94cbb936ad00769314d07
+ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689305"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1874417"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>Activer les achats d’extensions consommables
 
@@ -32,9 +32,9 @@ Les applications peuvent proposer deuxtypes d'extensions consommables qui se dif
 
   Par exemple, si votre module complémentaire représente 100pièces dans un jeu et que l’utilisateur en consomme10, votre application ou votre service doit maintenir le nouveau solde restant de 90pièces pour l’utilisateur. Une fois que l’utilisateur a consommé les 100pièces, votre application doit signaler le module complémentaire comme épuisé. Ensuite, l’utilisateur peut racheter le module complémentaire de 100pièces.
 
-* **Consommable géré par le WindowsStore**. Pour ce type de consommable, le WindowsStore gère le solde d’éléments de l’utilisateur, que le module complémentaire représente. Lorsque l’utilisateur utilise des éléments, vous devez les déclarer comme consommés dans le Store qui met à jour le solde de l’utilisateur. Votre application peut demander le solde actuel de l’utilisateur à tout moment. Une fois que l’utilisateur a consommé tous les éléments, l’utilisateur peut acheter le module complémentaire à nouveau.
+* **Consommable géré par le WindowsStore**. Pour ce type de consommable, le WindowsStore gère le solde d’éléments de l’utilisateur, que le module complémentaire représente. Lorsque l’utilisateur utilise des éléments, vous devez les déclarer comme consommés dans le Store qui met à jour le solde de l’utilisateur. L’utilisateur peut acheter le module complémentaire autant de fois qu’il le souhaite (il est inutile de consommer les éléments d’abord). Votre application peut demander au Store le solde actuel de l’utilisateur à tout moment.
 
-  Par exemple, si votre module complémentaire représente une quantité initiale de 100pièces dans un jeu et que l’utilisateur consomme 10pièces, votre application signale au Store que 10unités du module complémentaire ont été consommées, et le Windows Store met à jour le solde restant. Une fois que l’utilisateur a consommé les 100pièces, l’utilisateur peut à nouveau acheter le module complémentaire de 100pièces.
+  Par exemple, si votre module complémentaire représente une quantité initiale de 100pièces dans un jeu et que l’utilisateur consomme 50pièces, votre application signale au Store que 50unités du module complémentaire ont été consommées, et le Store met à jour le solde restant. Si l’utilisateur rachète ensuite votre module complémentaire pour obtenir 100pièces de plus, il possède alors 150pièces au total.
     > [!NOTE]
     > Les consommables gérés dans le Store ont été introduits dans Windows10, version1607.
 

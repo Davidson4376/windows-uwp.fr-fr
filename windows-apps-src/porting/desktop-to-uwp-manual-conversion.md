@@ -4,19 +4,19 @@ Description: Shows how to manually package a Windows desktop application (like W
 Search.Product: eADQiWindows 10XVcnh
 title: Créer un package d'application manuellement (Pont du bureau)
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: 81d5b9b0b52ef0f7529b277215e7fe0b95683f0a
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: eeadd41debcfcf5cfde23948c52bdfe1ce32e9df
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689765"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989643"
 ---
 # <a name="package-an-app-manually-desktop-bridge"></a>Créer un package d'application manuellement (Pont du bureau)
 
@@ -31,8 +31,9 @@ Si vous n’êtes pas certain des modifications apportées au système par votre
 >[!IMPORTANT]
 >Le Pont du bureau a été introduit dans Windows10, version1607 et peut être utilisé uniquement dans les projets qui ciblent la Mise à jour anniversaire Windows10 (version10.0; build 14393) ou une version ultérieure dans Visual Studio.
 
-## <a name="first-consider-how-youll-distribute-your-app"></a>Commencez par examiner la méthode de distribution de votre application
-Si vous prévoyez de publier votre application sur le [MicrosoftStore](https://www.microsoft.com/store/apps), commencez par remplir [ce formulaire](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft vous contactera pour démarrer le processus d’intégration. Dans le cadre de ce processus, vous devez réserver un nom dans le Store et obtenir les informations nécessaires pour créer le package de votre application.
+## <a name="first-prepare-your-application"></a>Tout d'abord, préparez votre application
+
+Passez ce guide en revue avant de commencer à créer un package pour votre application: [Préparer le package d’une application (Pont du bureau)](desktop-to-uwp-prepare.md).
 
 ## <a name="create-a-package-manifest"></a>Créer un manifeste de package
 
@@ -111,7 +112,7 @@ Voici un exemple de nœud [Ressources](https://docs.microsoft.com/uwp/schemas/ap
 ```
 ### <a name="dependencies"></a>Dépendances
 
-Pour les applications Pont du bureau, réglez toujours l’attribut ``Name`` sur ``Windows.Desktop``.
+Pour les applications de bureau qui vous empaquetez à l’aide du Pont du bureau, définissez toujours l'attribut ``Name`` sur ``Windows.Desktop``.
 
 ```XML
 <Dependencies>
@@ -120,7 +121,7 @@ Pour les applications Pont du bureau, réglez toujours l’attribut ``Name`` sur
 ```
 
 ### <a name="capabilities"></a>Fonctionnalités
-Pour les applications Pont du bureau, vous devrez ajouter la fonctionnalité ``runFullTrust``.
+Pour les applications de bureau qui vous empaquetez à l’aide du Pont du bureau, vous devez ajouter la fonctionnalité ``runFullTrust``.
 
 ```XML
 <Capabilities>
@@ -133,7 +134,7 @@ Remplissez ce modèle avec les informations décrivant votre application.
 
 ### <a name="application-element"></a>Élément d’application
 
-Pour les applications Pont du bureau, l’attribut ``EntryPoint`` de l’élément d’application est toujours ``Windows.FullTrustApplication``.
+Pour les applications de bureau qui vous empaquetez à l’aide du Pont du bureau, l'attribut ``EntryPoint`` de l'élément Application est toujours ``Windows.FullTrustApplication``.
 
 ```XML
 <Applications>

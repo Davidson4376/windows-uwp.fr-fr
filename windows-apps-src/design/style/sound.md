@@ -16,16 +16,16 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: dbe59b422a83ad31727928c406a1f4a6dd550301
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: c6e85bcbf131755af6909fd0ae7ee42bc36544b8
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1638393"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842799"
 ---
 # <a name="sound"></a>Son
 
- 
+![image hero](images/header-sound.svg)
 
 Il existe de nombreuses manières d’utiliser le son pour améliorer votre application. Vous pouvez utiliser les sons pour compléter d’autres éléments de l’interface utilisateur, afin de permettre aux utilisateurs de reconnaître les événements par un son. Le son peut être un élément d’interface utilisateur efficace pour les personnes souffrant de handicaps visuels. Vous pouvez utiliser le son pour créer une atmosphère qui immerge totalement l’utilisateur; par exemple, vous pouvez lire une bande son fantaisiste en arrière-plan d’un jeu de puzzle ou utiliser des effets sonores menaçants pour un jeu d’horreur/de survie.
 
@@ -39,7 +39,7 @@ ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
 **ElementSoundPlayer** peut prendre trois états : **On**, **Off** et **Auto**.
 
-S’il est défini sur **Off**, aucun son ne sera émis, quelle que soit la plateforme sur laquelle votre application s’exécute. S’il est défini sur **On**, les sons de votre application seront émis sur chaque plateforme.
+S’il est défini sur **Off**, aucun son ne sera émis, quelle que soit la plateforme sur laquelle votre application s’exécute. Si le système audio est défini sur **On**, les sons de votre application seront émis sur chaque plateforme.
 
 L’activation de l’objet ElementSoundPlayer entraîne également l’activation automatique de l’audio spatial (son 3D). Pour désactiver le son 3D (tout en gardant le son activé), désactivez la propriété **SpatialAudioMode** de l’objet ElementSoundPlayer: 
 

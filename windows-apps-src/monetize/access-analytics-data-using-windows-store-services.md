@@ -4,18 +4,18 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: Utilisez l’API d’analyse du MicrosoftStore pour récupérer par programmation les données d’analyse pour les apps qui sont enregistrées sur votre compte personnel ou compte d’organisation du Centre de développement Windows.
 title: Accéder aux données d’analyse à l’aide des services du Windows Store
 ms.author: mcleans
-ms.date: 03/23/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a8523acb06a0bda48f85221f384d8a3d554c7dc
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: f7ca3c23179d97816fc54fdbacb951915aecf71f
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707154"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976394"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Accéder aux données d’analyse à l’aide des services du Windows Store
 
@@ -41,11 +41,11 @@ Avant d’écrire le code d’appel de l’API d’analyse du MicrosoftStore, v�
 
 Pour associer une application Azure AD à votre compte du Centre de développement Windows et récupérer les valeurs nécessaires:
 
-1.  Dans le Centre de développement, accédez à vos **Paramètres du compte**, cliquez sur **Gérer les utilisateurs**, puis [associez le compte du Centre de développement de votre organisation à son annuaire Azure AD](../publish/associate-azure-ad-with-dev-center.md).
+1.  Dans le Centre de développement, [associez le compte du Centre de développement de votre organisation à l'annuaire Azure AD de votre organisation](../publish/associate-azure-ad-with-dev-center.md).
 
-2.  Dans la page **Gérer les utilisateurs**, cliquez sur **Ajouter des applications AzureAD**, ajoutez l’application AzureAD qui représente l’application ou le service que vous allez utiliser pour accéder aux données d’analyse de votre compte du Centre de développement, puis affectez-lui le rôle **Gestionnaire**. Si cette application existe déjà dans votre annuaire AzureAD, vous pouvez la sélectionner dans la page **Ajouter des applications Azure AD** pour l’ajouter à votre compte du Centre de développement. Sinon, vous pouvez créer une application Azure AD dans la page **Ajouter des applications Azure AD**. Pour plus d’informations, consultez [Ajouter des applications AzureAD à votre compte du Centre de développement](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications).
+2.  Ensuite, dans la page **Utilisateurs** dans la section **Paramètres de compte** du Centre de développement, [ajoutez l’application AzureAD](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-dev-center-account) qui représente l’application ou le service que vous allez utiliser pour accéder aux données d’analyse de votre compte du Centre de développement. Assurez-vous d'attribuer à cette application le rôle **Manager**. Si l’application n’existe pas encore dans votre annuaire Azure AD, vous pouvez [créer une application Azure AD dans le Centre de développement](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-dev-center-account).
 
-3.  Revenez à la page **Gérer les utilisateurs**, cliquez sur le nom de votre application Azure AD pour accéder aux paramètres de l’application, puis notez les valeurs des champs **ID de locataire** et **ID client**.
+3.  Revenez à la page **Utilisateurs**, cliquez sur le nom de votre application Azure AD pour accéder aux paramètres de l’application, puis notez les valeurs des champs **ID de locataire** et **ID client**.
 
 4. Cliquez sur **Ajouter une clé**. Dans l’écran suivant, notez la valeur du champ **Clé**. Vous ne pourrez plus accéder à ces informations une fois que vous aurez quitté cette page. Pour plus d’informations, voir [Gérer les clés pour une application Azure AD](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys).
 
@@ -96,17 +96,7 @@ Les méthodes d'analyse suivantes peuvent être utilisées par des comptes de d�
 | Scénario       | Méthodes      |
 |---------------|--------------------|
 | Installations |  <ul><li>[Obtenir des installations d’application de bureau](get-desktop-app-installs.md)</li></ul> |
-| Erreurs des applications |  <ul><li>[Obtenir des données de rapport d'erreur pour votre application de bureau](get-desktop-application-error-reporting-data.md)</li><li>[Obtenir les informations sur une erreur de votre application de bureau](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Obtenir la trace de pile concernant une erreur dans votre application de bureau](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Télécharger le fichier CAB pour une erreur dans votre application de bureau](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
-
-### <a name="methods-for-hardware-and-drivers"></a>Méthodes pour le matériel et les pilotes
-
-Les méthodes d'analyse suivantes peuvent être utilisées par des comptes de développeur appartenant au [programme du centre de développement matériel Windows](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard).
-
-| Scénario       | Méthodes      |
-|---------------|--------------------|
-| Erreurs dans les pilotes de Windows10 (pour les fabricants de matériel) |  <ul><li>[Obtenir les données de rapport d’erreurs pour les pilotes Windows 10](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[Obtenir des détails sur une erreur de pilote Windows10](get-details-for-a-windows-10-driver-error.md)</li><li>[Téléchargez le fichier CAB pour une erreur de pilote Windows10](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
-| Erreurs dans les pilotes Windows7/Windows8.x (pour les fabricants de matériel) |  <ul><li>[Récupérer des données de rapport d'erreur pour les pilotes Windows7 et Windows8.x](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[Obtenir des informations sur une erreur de pilote Windows7 ou Windows 8.x](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[Téléchargez le fichier CAB pour une erreur de pilote Windows 7 ou Windows8.x](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
-| Erreurs matérielles (pour les fabricants OEM) |  <ul><li>[Obtenir les données de rapport d’erreurs matérielles de fabricant d'ordinateurs (OEM)](get-oem-hardware-error-reporting-data.md)</li><li>[Obtenir des informations détaillées sur une erreur matérielle d'OEM](get-details-for-an-oem-hardware-error.md)</li><li>[Téléchargez le fichier CAB pour une erreur de matériel OEM](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
+| Erreurs des applications |  <ul><li>[Obtenir des données de rapport d'erreur pour votre application de bureau](get-desktop-application-error-reporting-data.md)</li><li>[Obtenir les informations sur une erreur de votre application de bureau](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Obtenir la trace de pile concernant une erreur dans votre application de bureau](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Télécharger le fichier CAB concernant une erreur dans votre application de bureau](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
 
 ### <a name="methods-for-xbox-live-services"></a>Méthodes pour les services Xbox Live
 
@@ -125,6 +115,16 @@ Les méthodes supplémentaires suivantes sont disponibles pour les comptes de d�
 | Scénario       | Méthodes      |
 |---------------|--------------------|
 | Acquisitions |  <ul><li>[Obtenir des acquisitions de jeu Xbox One](get-xbox-one-game-acquisitions.md)</li></ul> |
+
+### <a name="methods-for-hardware-and-drivers"></a>Méthodes pour le matériel et les pilotes
+
+Les méthodes d'analyse suivantes peuvent être utilisées par des comptes de développeur appartenant au [programme du centre de développement matériel Windows](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard).
+
+| Scénario       | Méthodes      |
+|---------------|--------------------|
+| Erreurs dans les pilotes de Windows10 (pour les fabricants de matériel) |  <ul><li>[Obtenir les données de rapport d’erreurs pour les pilotes Windows 10](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[Obtenir des détails sur une erreur de pilote Windows10](get-details-for-a-windows-10-driver-error.md)</li><li>[Téléchargez le fichier CAB pour une erreur de pilote Windows10](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
+| Erreurs dans les pilotes Windows7/Windows8.x (pour les fabricants de matériel) |  <ul><li>[Récupérer des données de rapport d'erreur pour les pilotes Windows7 et Windows8.x](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[Obtenir des informations sur une erreur de pilote Windows7 ou Windows 8.x](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[Téléchargez le fichier CAB pour une erreur de pilote Windows 7 ou Windows8.x](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
+| Erreurs matérielles (pour les fabricants OEM) |  <ul><li>[Obtenir les données de rapport d’erreurs matérielles de fabricant d'ordinateurs (OEM)](get-oem-hardware-error-reporting-data.md)</li><li>[Obtenir des informations détaillées sur une erreur matérielle d'OEM](get-details-for-an-oem-hardware-error.md)</li><li>[Téléchargez le fichier CAB pour une erreur matérielle d'OEM](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
 
 ## <a name="code-example"></a>Exemple de code
 

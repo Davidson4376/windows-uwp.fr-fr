@@ -12,15 +12,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a986d6de680a3024ae252ba640871f9c5d22141
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: 4653e07d6d81f884ee6519206e75350aa47945f8
+ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707044"
+ms.lasthandoff: 05/24/2018
+ms.locfileid: "1917584"
 ---
 # <a name="guidelines-for-visual-feedback"></a>Recommandations en matière de retour visuel
-
 
 Utilisez le retour visuel pour indiquer aux utilisateurs quand leurs interactions sont détectées, interprétées et gérées. Le retour visuel peut aider les utilisateurs en encourageant l’interaction. Il indique le succès d’une interaction et améliore ainsi le sentiment de contrôle de l’utilisateur. Il transmet également l’état du système et réduit les erreurs.
 
@@ -28,10 +27,13 @@ Utilisez le retour visuel pour indiquer aux utilisateurs quand leurs interaction
 
 ## <a name="recommendations"></a>Recommandations
 
--   Essayez de rester aussi proche du modèle de contrôle d’origine que possible pour assurer des performances optimales des applications et des contrôles.
--   N’utilisez pas les visualisations tactiles dans des situations où elles risquent d’interférer avec l’utilisation de l’application. Pour plus d’informations, voir [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969).
--   N’affichez pas de retour à moins que ce soit absolument nécessaire. Veillez à ce que l’interface utilisateur soit propre et aérée en n’affichant pas de retour visuel, à moins que cela ajoute une valeur non disponible ailleurs.
--   Ne personnalisez pas les comportements de retour visuel des mouvements intégrés de Windows de manière radicale, car cela peut créer une expérience utilisateur incohérente et confuse.
+- Essayez de limiter les modifications d’un modèle de contrôle à celles directement liées à votre intention de conception, car des modifications importantes peuvent avoir un impact sur les performances et l’accessibilité du contrôle et de votre application. 
+    - Voir [Styles XAML](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles) pour plus d’informations sur la personnalisation des propriétés d’un contrôle, notamment les propriétés de l’état visuel.
+    - Voir la [classe UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) pour plus d’informations sur les modifications apportées à un modèle de contrôle
+    - Envisagez de créer votre propre contrôle basé sur un modèle personnalisé si vous avez besoin d’apporter des modifications importantes à un modèle de contrôle. Pour obtenir un exemple de contrôle basé sur un modèle personnalisé, voir [Exemple de contrôle d’édition personnalisé](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
+- N’utilisez pas les visualisations tactiles dans des situations où elles risquent d’interférer avec l’utilisation de l’application. Pour plus d’informations, voir [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969).
+- N’affichez pas de retour à moins que ce soit absolument nécessaire. Veillez à ce que l’interface utilisateur soit propre et aérée en n’affichant pas de retour visuel, à moins que cela ajoute une valeur non disponible ailleurs.
+- Ne personnalisez pas les comportements de retour visuel des mouvements intégrés de Windows de manière radicale, car cela peut créer une expérience utilisateur incohérente et confuse.
 
 ## <a name="additional-usage-guidance"></a>Indications d’utilisation supplémentaires
 
@@ -39,8 +41,8 @@ Les visualisations de contact sont essentielles pour les interactions tactiles q
 
 L’utilisation des contrôles de la plateforme XAML disponibles permet de garantir le fonctionnement correct de votre application sur tous les appareils et dans toutes les situations d’entrée. Si votre application propose des interactions personnalisées qui nécessitent un retour personnalisé, vous devez veiller à ce que le retour soit approprié, qu’il s’étende sur les périphériques d’entrée et qu’il ne risque pas de distraire l’utilisateur de sa tâche. Cela peut s’avérer particulièrement gênant dans les applications de jeu ou de dessin où le retour visuel peut entrer en conflit avec des éléments essentiels de l’interface utilisateur ou les masquer.
 
-> [!Important] 
-> Nous ne conseillons pas de modifier le comportement d’interaction des mouvements intégrés. 
+> [!Important]
+> Nous ne conseillons pas de modifier le comportement d’interaction des mouvements intégrés.
 
 **Retour visuel sur tous les appareils:**
 
@@ -59,6 +61,8 @@ Voici quelques exemples de visualisations de contact intégrées à Windows:
 ## <a name="high-visibility-focus-visuals"></a>Visuels du focus à haute visibilité
 
 Toutes les applications Windows comportent un visuel du focus plus défini autour des contrôles interactifs de l’application. Ces nouveaux visuels du focus sont entièrement personnalisables, mais peuvent également être désactivés si nécessaire.
+
+Pour l'**expérience «10-foot»** typique de l'utilisation de Xbox et de la télévision, Windows prend en charge **Révéler focus**, un effet d’éclairage qui anime la bordure d’éléments pouvant être actifs, par exemple un bouton, lorsqu’ils reçoivent le focus via une entrée par un boîtier de commande ou un clavier. Pour plus d’informations, consultez [Conception pour Xbox et télévision](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv#reveal-focus).
 
 ## <a name="color-branding--customizing"></a>Personnalisation des couleurs et des visuels du focus
 

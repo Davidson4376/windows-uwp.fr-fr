@@ -14,14 +14,16 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 68767e564055eb26d0ab7f6232082a6f7387c3d8
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 0a2892e6f4382f231299e8ef2307c70cdbebb46c
+ms.sourcegitcommit: 03a3c02c7b3b0b0a3d1b14705cc1fd73788ac034
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817347"
+ms.lasthandoff: 05/19/2018
+ms.locfileid: "1903163"
 ---
 # <a name="programmatic-focus-navigation"></a>Navigation en mode focus programmé
+
+![Clavier, télécommande et bouton multidirectionnel](images/dpad-remote/dpad-remote-keyboard.png)
 
 Pour déplacer le focus par programmation dans votre application UWP, vous pouvez utiliser la méthode [FocusManager.TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) ou la méthode [FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_).
 
@@ -244,11 +246,11 @@ private void OnGettingFocus(UIElement sender, GettingFocusEventArgs args)
             FocusState.Keyboard && 
             args.NewFocusedElement != selectedContainer)
         {
-            args.NewFocusedElement = 
-                MyListView.ContainerFromItem(MyListView.SelectedItem);
+            args.TryRedirect(
+                MyListView.ContainerFromItem(MyListView.SelectedItem));
             args.Handled = true;
         }
-    }        
+    }
 }
 ```
 
@@ -274,8 +276,10 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
     if (MyCommandBar.IsOpen == true && 
         IsNotAChildOf(MyCommandBar, args.NewFocusedElement))
     {
-        args.Cancel = true;
-        args.Handled = true;
+        if (args.TryCancel())
+        {
+            args.Handled = true;
+        }
     }
 }
 ```
@@ -324,9 +328,9 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
     }
 }
 ```
+
 ## <a name="related-articles"></a>Articles associés
 
 - [Navigation en mode focus pour clavier, boîtier de commande, télécommande et outils d’accessibilité](focus-navigation.md)
 - [Interactions avec le clavier](keyboard-interactions.md)
-- [Accessibilité du clavier](../accessibility/keyboard-accessibility.md) 
-
+- [Accessibilité du clavier](../accessibility/keyboard-accessibility.md)

@@ -12,15 +12,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 910920c1f5eb5bdc3e55b51d7886be1632559c14
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: f59675c3feaab47ee79eaf160c5592876b7564a2
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396608"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862098"
 ---
 # <a name="interaction-primer"></a>Notions fondamentales sur les interactions
-
 
 ![types d’entrée Windows](images/input-interactions/icons-inputdevices03.png)
 
@@ -30,14 +29,34 @@ La plateforme UWP utilise un système d’interactions contextuelles intelligent
 
 Familiarisez-vous avec chaque type de périphérique d’entrée, ses comportements, ses fonctionnalités et ses limites, selon son association à certains facteurs de forme. Cela vous aidera à déterminer si les contrôles et l’intuitivité de la plateforme sont suffisants pour votre application ou requièrent une personnalisation de l’expérience d’interaction utilisateur.
 
-## <a name="surface-dial"></a>Surface Dial
+## <a name="gaze"></a>Pointage du regard
 
-À l’occasion de la mise à jour anniversaire de Windows10, nous introduisons une nouvelle catégorie de périphérique de saisie appelé Windows Wheel. Surface Dial est le premier de cette classe de périphérique. 
+Pour la **Mise à jour d'avril2018 de Windows10**, nous avons introduit la prise en charge de l'entrée du pointage de regard à l’aide de périphériques d’entrée par suivi oculaire et suivi de la tête. 
+
+> [!NOTE]
+> La prise en charge du matériel de suivi oculaire a été introduite dans **Windows10 Fall Creators Update** avec le [contrôle visuel](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control), une fonctionnalité intégrée qui vous permet d’utiliser vos yeux pour contrôler le pointeur à l'écran, taper avec le clavier visuel et communiquer avec des personnes à l’aide de la synthèse vocale.
+
+### <a name="device-support"></a>Périphériques pris en charge
+
+- Tablette
+- PC et portables
+
+### <a name="typical-usage"></a>Utilisation type
+
+Effectuez le suivi du pointage du regard, de l'attention et de la présence de l'utilisateur en fonction de l’emplacement et des mouvements de ses yeux. Ce nouveau moyen puissant d'utiliser vos applications UWP et d'interagir avec elles est particulièrement utile comme technologie d’assistance pour les utilisateurs souffrant de maladies neuro-musculaires (comme la SLA) ou d’autres handicaps impliquant des troubles des fonctions musculaires ou neurologiques. L'entrée du pointage de regard offre également de remarquables opportunités pour les jeux (notamment pour l'acquisition de cible et le suivi), les applications de productivité traditionnelles, les bornes et autres scénarios interactifs dans lesquels les périphériques classiques (clavier, souris entrée tactile) ne sont pas disponibles ou il peut être utile de libérer des mains de l’utilisateur pour d’autres tâches (par exemple, pour tenir des sacs).
+
+### <a name="more-info"></a>Informations supplémentaires
+
+[Interactions avec le pointage du regard et le suivi oculaire](gaze-interactions.md)
+
+## <a name="surface-dial"></a>SurfaceDial
+
+À l’occasion de la **Mise à jour anniversaire Windows10**, nous avons introduit la catégorie de périphériques de saisie Windows Wheel. Surface Dial est le premier de cette classe de périphérique.
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
--   Tablette
--   PC et portables
+- Tablette
+- PC et portables
 
 ### <a name="typical-usage"></a>Utilisation type
 
@@ -46,7 +65,6 @@ Avec un format appelant à une action de rotation (ou un mouvement), Surface Dia
 ### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations de conception de Surface Dial](windows-wheel-interactions.md)
-
 
 ## <a name="cortana"></a>Cortana
 

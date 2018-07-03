@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 21dc29758a4622f810a02e7e5bb0ec117e4dbc2a
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: aafe2d09fc27a2693ccf2c4c9d8f189aa0164a3c
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1638553"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976507"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Améliorer votre application de bureau pour Windows10
 
@@ -54,16 +54,14 @@ Ouvrez les pages de propriétés de votre projet.
 
 Dans les paramètres **Général** du groupe de paramètres **C/C++**, définissez le champ **Consommer l'extension Windows Runtime** sur la valeur **Oui (/ZW)**.
 
-   ![Consommer l'extension Windows Runtime](images/desktop-to-uwp/enable-winrt-objects.png)
+   ![Consommer l'extension Windows Runtime](images/desktop-to-uwp/consume-runtime-extensions.png)
 
 Ouvrez la boîte de dialogue **Répertoires #using supplémentaires**, puis ajoutez ces répertoires.
 
-* C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcpackages
+* %VSInstallDir%\Common7\IDE\VC\vcpackages
 * C:\Program Files (x86)\Windows Kits\10\UnionMetadata
 * C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\<*dernière version*>
 * C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\<*dernière version*>
-
-![Répertoires using supplémentaires](images/desktop-to-uwp/additional-using.png)
 
 Ouvrez la boîte de dialogue **Autres répertoires Include**, puis ajoutez ce répertoire: C:\Program Files (x86)\Windows Kits\10\Include\<*dernière version*>\um
 

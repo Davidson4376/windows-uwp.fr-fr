@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: d158d4615ed1e53806dbc970c3709a3a2e6743a7
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: c6021b00b9ec993aa6c09df93b8845dcc789678c
+ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833134"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1874387"
 ---
 # <a name="barcode-scanner"></a>Scanneur de code-barres
 
@@ -25,6 +25,7 @@ Cette section fournit des conseils pour créer des applications de plateforme Wi
 |Article |Description |
 |------|------------|
 | [Prise en main](pos-barcodescanner-get-started.md)  |  |
-| [Scanneur de code-barres à caméra](pos-camerabarcode.md) | À partir de Windows10, version1803, vous pouvez lire des codes-barres via un objectif de caméra standard à partir d’une application Windows universelle. |
+| [Utilisation des symbologies](pos-barcodescanner-symbologies.md) | Découvrez comment déterminer les types de code-barres pris en charge par un scanneur de code-barres et vérifier les types de code-barres qui sont reconnus par le scanneur de codes-barres à partir de votre application. |
+| [Scanneur de code-barres à caméra](pos-camerabarcode.md) | Lisez des codes-barres via un objectif de caméra standard à partir d’une application de plateforme Windows universelle. Requiert la Mise à jour d'avril2018 de Windows10 (build17134 ou version ultérieure). |
 |
  

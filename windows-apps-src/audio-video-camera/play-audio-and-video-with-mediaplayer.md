@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 24b54e202835bb3dba9098591ae08527e12565bf
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: c06a4348ba1f974aaf7151456267ce7585b56a10
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832583"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983604"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Lire du contenu audio et vidéo avec MediaPlayer
 
@@ -23,6 +23,8 @@ Cet article vous explique comment lire du contenu multimédia dans votre applica
 
 Cet article vous présente les fonctions **MediaPlayer** qu’une application standard de lecture de contenu multimédia utilise. Notez que **MediaPlayer** utilise la classe [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) en tant que conteneur pour l’ensemble des éléments multimédias. Cette classe vous permet de charger et de lire le contenu multimédia à partir de multiples sources différentes utilisant une interface unique, notamment les fichiers locaux, les flux de mémoire et les sources réseau. Il existe également des classes de niveau supérieur compatibles avec **MediaSource**, comme [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) et [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList), qui fournissent des fonctions plus avancées comme des playlists et la capacité de gestion de sources multimédias avec plusieurs pistes audio, vidéo et de métadonnées. Pour plus d’informations sur **MediaSource** et les API associées, consultez la page [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md).
 
+> [!NOTE] 
+> Les éditions Windows10 N et Windows10 KN n’incluent pas les fonctionnalités multimédias nécessaires pour utiliser **MediaPlayer** pour la lecture. Ces fonctionnalités peuvent être installées manuellement. Pour plus d’informations, voir [Media Feature Pack pour les éditions Windows10 N et Windows10 KN](https://support.microsoft.com/en-us/help/3010081/media-feature-pack-for-windows-10-n-and-windows-10-kn-editions).
 
 ## <a name="play-a-media-file-with-mediaplayer"></a>Lire un fichier multimédia avec MediaPlayer  
 La lecture de contenu multimédia de base avec **MediaPlayer** est très simple à implémenter. Tout d’abord, créez une nouvelle instance de la classe **MediaPlayer**. Votre application peut présenter plusieurs instances **MediaPlayer** actives simultanément. Ensuite, définissez la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) du lecteur sur un objet qui implémente l’interface [**IMediaPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.IMediaPlaybackSource), comme un objet [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource), un objet [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) ou un objet [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList). Dans cet exemple, un objet **MediaSource** est créé à partir d’un fichier dans le stockage local de l’application, puis un objet **MediaPlaybackItem** est créé à partir de la source, puis affecté à la propriété **Source** du lecteur.
@@ -78,6 +80,10 @@ L’exemple suivant vous illustre l’implémentation d’un gestionnaire de cli
 L’exemple suivant illustre l’utilisation d’un bouton bascule permettant de passer de la vitesse de lecture normale à la vitesse double, en définissant la propriété [**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.PlaybackRate) de la session.
 
 [!code-cs[SpeedChecked](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSpeedChecked)]
+
+À partir de Windows10, version1803, vous pouvez définir la rotation selon laquelle la vidéo est présentée dans le **MediaPlayer** par incréments de 90degrés.
+
+[!code-cs[SetRotation](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetRotation)]
 
 ### <a name="detect-expected-and-unexpected-buffering"></a>Détecter une mise en mémoire tampon attendue et inattendue
 L’objet **MediaPlaybackSession** décrit dans la section précédente fournit deux événements, **[BufferingStarted](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.BufferingStarted)** et **[BufferingEnded](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.BufferingEnded)**, pour détecter quand le fichier multimédia en cours de lecture commence et termine la mise en mémoire tampon. Cela vous permet de mettre à jour votre interface utilisateur pour indiquer à l’utilisateur que la mise en mémoire tampon est en cours. Une mise en mémoire tampon initiale est attendue lorsqu’un fichier multimédia est ouvert pour la première fois ou que l’utilisateur passe à un nouvel élément dans une playlist. Une mise en mémoire tampon inattendue peut se produire lorsque la vitesse du réseau se dégrade ou que le système de gestion de contenu qui fournit le contenu rencontre des problèmes techniques. À partir de RS3, vous pouvez utiliser l’événement **BufferingStarted** pour déterminer si l’événement de mise en mémoire tampon est attendu, ou s’il est inattendu et interrompt la lecture. Vous pouvez utiliser ces informations comme données de télémétrie pour votre application ou votre service de fourniture de contenu multimédia. 

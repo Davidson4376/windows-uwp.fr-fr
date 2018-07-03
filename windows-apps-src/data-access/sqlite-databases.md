@@ -3,18 +3,18 @@ author: normesta
 title: Utiliser une base de donnéesSQLite dans une applicationUWP
 description: Utilisez une base de donnéesSQLite dans une applicationUWP.
 ms.author: normesta
-ms.date: 11/08/2017
+ms.date: 06/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, SQLite, base de données
 ms.localizationpriority: medium
-ms.openlocfilehash: d10347bb1bd2eb33bfc58a7bc09b6eb5d1ac7a58
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 01cac3c1b8c18e968c35acb01b3d3918d9efe60d
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663619"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018595"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>Utiliser une base de donnéesSQLite dans une applicationUWP
 Vous pouvez utiliser SQLite pour stocker et récupérer des données dans une base de données légère sur l’appareil des utilisateurs. Ce guide vous explique comment procéder.
@@ -145,7 +145,7 @@ Dans votre projetUWP, ajoutez une référence au projet **DataAccessLibrary** da
 
 ![Bibliothèque de classes d’accès aux données](images/ref-class-library.png)
 
-Dans votre projetUWP, ajoutez l’instruction ``using`` suivante aux fichiers **App.xaml.cs** et **MainPage.xaml**.
+Dans votre projetUWP, ajoutez l’instruction ``using`` suivante aux fichiers **App.xaml.cs** et **MainPage.xaml.cs**.
 
 ```csharp
 using DataAccessLibrary;
@@ -188,7 +188,7 @@ public static void InitializeDatabase()
         db.Open();
 
         String tableCommand = "CREATE TABLE IF NOT " +
-            "EXISTS MyTable (Primary_Key INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "EXISTS MyTable (Primary_Key INTEGER PRIMARY KEY, " +
             "Text_Entry NVARCHAR(2048) NULL)";
 
         SqliteCommand createTable = new SqliteCommand(tableCommand, db);

@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, apprentissage automatique windows, winml, windows ML
 ms.localizationpriority: medium
-ms.openlocfilehash: e30786f775a66bcf5c8e6dce0b4aab4f1f239be6
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: eec2ada8e3aadad134381a93bca2652133912b2e
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816584"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843622"
 ---
 # <a name="get-started-with-windows-ml"></a>Prise en main de WindowsML
 
@@ -22,10 +22,8 @@ Dans ce didacticiel, nous allons créer une simple app UWP qui utilise un modèl
 
 ## <a name="prerequisites"></a>Éléments prérequis
 
-- [SDK Windows - Build 17110+](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK)
-- [Visual Studio (Version 15.7 - Aperçu 1)](https://www.visualstudio.com/vs/preview/) 
-
-    **Remarque**: dans Visual Studio Installer, vous devez désactiver le SDK de la version d’évaluation Windows10 optionnelle (10.0.17110.0).
+- [SDK Windows10](https://developer.microsoft.com/windows/downloads/windows-10-sdk) (Build17110 ou version ultérieure)
+- [Visual Studio](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="1-download-the-sample"></a>1. Télécharger l’exemple
 
@@ -69,7 +67,7 @@ Si vous souhaitez entraîner votre propre modèle, vous pouvez suivre ce [didact
 
 ## <a name="5-add-the-model"></a>5. Ajouter le modèle
 
-Après avoir téléchargé le modèle MNIST, cliquez avec le bouton droit de la souris sur le dossier Actifs dans l’Explorateur de solutions, puis sélectionnez «**Ajouter** > **Élément existant**». Pointez le sélecteur de fichiers à l’emplacement de votre modèle ONNX et cliquez sur Ajouter. 
+Après avoir téléchargé le modèle MNIST, cliquez avec le bouton droit de la souris sur le dossier Actifs dans l’Explorateur de solutions, puis sélectionnez «**Ajouter** > **Élément existant**». Pointez le sélecteur de fichiers à l’emplacement de votre modèle ONNX et cliquez sur Ajouter.
 
 Le projet doit désormais comporter deux nouveaux fichiers:
 
