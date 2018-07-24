@@ -4,19 +4,19 @@ Description: Create a modern Windows app package for your existing Windows Forms
 Search.Product: eADQiWindows 10XVcnh
 title: Pont du bureau
 ms.author: normesta
-ms.date: 08/30/2017
+ms.date: 05/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: high
-ms.openlocfilehash: 3c4285d6717c27e78c13ac6588fe634c566138d9
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 321fb71d44e1298b29b6119168f67207e6df4a8d
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832370"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989693"
 ---
 # <a name="desktop-bridge"></a>Pont du bureau
 
@@ -34,7 +34,7 @@ Outre le code que vous utilisez pour valoriser des expériences Windows10, votre
 >Le Pont du bureau a été introduit dans Windows10, version1607 et peut être utilisé uniquement dans les projets qui ciblent la Mise à jour anniversaire Windows10 (version10.0; build 14393) ou une version ultérieure dans Visual Studio.
 
 > [!NOTE]
-> Regardez <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">cette série</a> de courtes vidéos publiées par MicrosoftVirtual Academy. Ces vidéos vous guident dans tout le processus de conversion de votre application de bureau pour la plateforme Windows universelle (UWP).
+> Obtenez <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">cette série</a> de courtes vidéos publiées par MicrosoftVirtual Academy. Ces vidéos vous guident dans tout le processus de conversion de votre application de bureau pour la plateforme Windows universelle (UWP).
 
 ## <a name="benefits"></a>Avantages
 
@@ -54,9 +54,7 @@ Pour voir une liste plus complète des avantages, consultez [Pont du bureau](htt
 
 ## <a name="prepare"></a>Préparation
 
-Prévoyez-vous de publier votre application dans le [Windows app store](https://www.microsoft.com/store/apps). Dans ce cas, commencez par renseigner [ce formulaire](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft vous contactera pour démarrer le processus d’intégration. Dans le cadre de ce processus, vous devez réserver un nom dans le Store et obtenir les informations dont vous avez besoin pour créer votre package d’application Windows.
-
-Ensuite, consultez l’article [Préparation à la création d'un package d'application de bureau](desktop-to-uwp-prepare.md) et corrigez les éventuels problèmes de votre application avant de créer un package d'application Windows pour elle. Votre application ne demandera peut-être que quelques corrections avant la création du package. Toutefois, certaines situations peuvent vous obliger à adapter votre application avant de créer un package pour elle.
+Pour commencer, préparez votre application en consultant l’article [Préparation à la création d'un package d'application de bureau](desktop-to-uwp-prepare.md), puis en corrigeant les éventuels problèmes de votre application avant de créer un package d'application Windows pour elle. Votre application ne demandera peut-être que quelques corrections avant la création du package. Toutefois, certaines situations peuvent vous obliger à adapter votre application avant de créer un package pour elle.
 
 <a id="convert" />
 
@@ -188,6 +186,30 @@ Pour consulter toutes les fonctionnalités de création de packages d’applicat
 
 Voir [RAD Studio d’Embarcadero](https://www.embarcadero.com/products/rad-studio/windows-10-store-desktop-bridge)
 
+#### <a name="raypack-studio"></a>RayPack Studio
+
+La solution de préparation de package de Raynet, [RayPack Studio](https://raynet.de/Raynet-Products/RayPackStudio), prend en charge le Pont du bureau comme l'une des infrastructures efficaces et faciles à configurer envisageables pour la conversion et le réempaquetage.
+
+<img width="20%" src="images/desktop-to-uwp/RaynetLogo_v3.png">
+
+Il est possible d'utiliser les environnements virtuels existants (VMware Workstation, Hyper-V) pour effectuer la conversion automatique/en bloc sans nécessiter de fastidieuse configuration d’environnement. Un des composants du studio, ([RayQC Advanced](https://raynet.de/Raynet-Products/RayQCad)), est en mesure d’effectuer des tests de filtrage et de compatibilité préalables à la conversion pour vérifier que le logiciel est éligible à celle-ci. En outre, les utilisateurs peuvent désormais effectuer des contrôles exhaustifs de collision et de compatibilité avec différentes éditions de Windows10, notamment les mises à jour anniversaire et Creators.
+
+Outre la création de packages logiciels au format APPX/UWP de Windows10, RayPack Studio peut également être utilisé pour créer des packages Windows Installer classiques (MSI), des correctifs (MSP), des transformations (MST) et des packages App-V. De plus, cette solution est livrée avec un ensemble de produits et composants logiciels dédiés à l'empaquetage logiciel professionnel d'entreprise. Outre la création de packages logiciels et la virtualisation, RayPack Studio prend en compte toutes les tâches liées à la création de packages: contrôle des conflits et de la compatibilité des applications et des packages logiciels ([RayQC Advanced](https://raynet.de/Raynet-Products/RayQCad)), évaluation de logiciel ([RayEval](https://raynet.de/Raynet-Products/RayEval)) et assurance qualité ([RayQC](https://raynet.de/Raynet-Products/RayQC)).
+
+Combiné avec [RayFlow](https://raynet.de/Raynet-Products/RayFlow), le système de workflow d'entreprise de Raynet, les utilisateurs peuvent travailler efficacement au logiciel tout au long du cycle de vie d'application de l'entreprise, depuis la commande du package jusqu'à l'acceptation par l'utilisateur et le déploiement, en passant par l'évaluation, l'analyse, l'empaquetage et l'assurance qualité. Tous les packages et formats peuvent être stockés et déployés directement dans SCCM ou d’autres solutions. L'intégralité du cycle de vie de l'application est suivi et géré par RayFlow. En outre, les systèmes de commande tels que ServiceNow peuvent être intégrés. Raynet crée des fabriques de création de packages logiciels dans le monde entier avec ses outils dédiés aux fournisseurs de services.
+
+Faites l'expérience et profitez de [la licence d’essai gratuite](https://raynet.de/contact?init=license) de RayPack Studio et RayFlow de Raynet. Pour plus d’informations, rendez-vous sur [www.raynet.de](https://raynet.de/home).
+
+**Liens connexes**:
+
+* Raynet:[https://raynet.de/home](https://raynet.de/home)
+* RayPack Studio: [https://raynet.de/Raynet-Products/RayPackStudio](https://raynet.de/Raynet-Products/RayPackStudio)
+* RayFlow:[https://raynet.de/Raynet-Products/RayFlow](https://raynet.de/Raynet-Products/RayFlow)
+* RayEval:[https://raynet.de/Raynet-Products/RayEval](https://raynet.de/Raynet-Products/RayEval)
+* RayQC:[https://raynet.de/Raynet-Products/RayQC](https://raynet.de/Raynet-Products/RayQC)
+* RayQC Advanced: [https://raynet.de/Raynet-Products/RayQCad](https://raynet.de/Raynet-Products/RayQCad)
+* Licence d'essai gratuite: [https://raynet.de/contact?init=license](https://raynet.de/contact?init=license)
+
 ### <a name="manual-packaging"></a>Création manuelle de package d’application
 
 En dernier recours, vous pouvez convertir votre application sans utiliser aucun de ces outils. Si vous souhaitez un contrôle minutieux de la conversion, vous pouvez créer un fichier de manifeste puis exécuter l’outil **MakeAppx.exe** pour créer votre package d’application Windows.
@@ -228,9 +250,9 @@ Voir [Partager du code entre une application de bureau et une application UWP](d
 Pour tester votre application dans un paramètre réaliste lorsque vous vous préparez pour la distribution, il est préférable de signer votre application, puis de l’installer. Voir [Tester votre application](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-debug#test-your-app).
 
 >[!IMPORTANT]
-> Si vous prévoyez de publier votre application dans le Microsoft Store, assurez-vous que votre application fonctionne correctement sur les appareils qui exécutent Windows10 S. Il s'agit d'une condition requise par le Store. Voir [Tester votre application pour Windows10 S](desktop-to-uwp-test-windows-s.md).
+> Si vous prévoyez de publier votre application dans le Microsoft Store, assurez-vous que votre application fonctionne correctement sur les appareils qui exécutent Windows10 en modeS. Il s'agit d'une condition requise par le Store. Consultez [Tester votre application Windows pour Windows10 en modeS](desktop-to-uwp-test-windows-s.md).
 
-## <a name="validate"></a>Valider
+## <a name="validate"></a>Validation
 
 Pour maximiser les chances de publication dans le Microsoft Store ou de [certification Windows](http://go.microsoft.com/fwlink/p/?LinkID=309666) de votre application, validez-la et testez-la sur votre ordinateur avant de l’envoyer pour certification.
 
@@ -260,7 +282,7 @@ Voir [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-pla
 
 ## <a name="in-this-section"></a>Dans cette section
 
-| Sujet | Description |
+| Rubrique | Description |
 |-------|-------------|
 | [Préparation à la création de package d'application](desktop-to-uwp-prepare.md) | Fournit une liste d’éléments à passer en revue avant de créer un package de votre application de bureau. |
 | [Créer un package d'application à l’aide de Desktop App Converter (Pont du bureau)](desktop-to-uwp-run-desktop-app-converter.md) | Montre comment exécuter Desktop App Converter. |
