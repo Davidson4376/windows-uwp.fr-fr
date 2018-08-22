@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: périphériques Windows 10, uwp, connectés, des systèmes distants, rome, rome projet, tâche en arrière-plan, service d’application
 ms.localizationpriority: medium
-ms.openlocfilehash: a40b48df9f9d8fe740795d6af0d71ba70a34c469
-ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
-ms.translationtype: HT
+ms.openlocfilehash: 72a8a02d14a4fa9287c987150a526745b294b65f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "1572766"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2799820"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>Communiquer avec un service d’application distant
 
@@ -24,7 +24,7 @@ En plus de lancer une application sur un appareil distant avec un URI, vous pouv
 ## <a name="set-up-the-app-service-on-the-host-device"></a>Configurer le service d’application sur l’appareil hôte
 Pour exécuter un service d’application sur un appareil distant, un fournisseur de ce service d’application doit être installé sur cet appareil. Ce guide utilise la version CSharp de l'[exemple du service d’application Générateur de nombres aléatoires](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices), qui est disponible dans le [référentiel d’exemples d’application Windows universelle](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices). Pour obtenir des instructions sur la rédaction du code de votre service d’application, consultez [Créer et utiliser un service d’application](how-to-create-and-consume-an-app-service.md).
 
-Que vous utilisiez un service d’application prêt à l’emploi ou créé par vos soins, vous devez lui apporter quelques modifications pour le rendre compatible avec les systèmes distants. Dans VisualStudio, accédez au projet du fournisseur du service d’application (appelé «AppServicesProvider») et sélectionnez son fichier _Package.appxmanifest_. Cliquez sur le bouton droit et sélectionnez **Afficher le code** pour afficher le contenu du fichier. Recherchez l’élément **Extension** qui définit le projet comme un service d’application et indique le nom de son projet parent.
+Que vous utilisiez un service d’application prêt à l’emploi ou créé par vos soins, vous devez lui apporter quelques modifications pour le rendre compatible avec les systèmes distants. Dans VisualStudio, accédez au projet du fournisseur du service d’application (appelé «AppServicesProvider») et sélectionnez son fichier _Package.appxmanifest_. Cliquez sur le bouton droit et sélectionnez **Afficher le code** pour afficher le contenu du fichier. Créer un élément **d’Extensions** dans l’élément principal de **l’Application** (ou trouver s’il existe déjà). Créez ensuite une **Extension** pour définir le projet comme un service d’application et référencer un projet de son parent.
 
 ``` xml
 ...
@@ -36,7 +36,7 @@ Que vous utilisiez un service d’application prêt à l’emploi ou créé par 
 ...
 ```
 
-Ajoutez l'attribut **SupportsRemoteSystems** s'il n’est pas déjà présent:
+En regard de l’élément **AppService** , ajoutez l’attribut **SupportsRemoteSystems** :
 
 ``` xml
 ...
@@ -44,7 +44,20 @@ Ajoutez l'attribut **SupportsRemoteSystems** s'il n’est pas déjà présent:
 ...
 ```
 
-Créez votre projet de fournisseur de service d’application et déployez-le sur le ou les appareils hôtes.
+Pour pouvoir utiliser les éléments de cet espace de noms **uap3** , vous devez ajouter la définition de l’espace de noms en haut du fichier de manifeste si elle n’est déjà fait.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3">
+  ...
+</Package>
+```
+
+Générez votre projet de fournisseur de service application, puis le déployer sur les périphériques de l’hôte.
 
 ## <a name="target-the-app-service-from-the-client-device"></a>Cibler le service d’application à partir de l’appareil client
 L’appareil à partir duquel le service d’application distant doit être appelé a besoin de l’application avec la fonctionnalité Systèmes distants. Vous pouvez l’ajouter dans l’application qui fournit le service d’application sur l’appareil hôte (auquel cas la même application doit être installée sur les deuxappareils) ou dans une autre application.

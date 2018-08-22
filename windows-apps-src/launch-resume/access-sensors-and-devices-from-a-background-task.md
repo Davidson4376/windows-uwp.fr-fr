@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: tâche d’arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
-ms.openlocfilehash: c0501d981bc626001b7ecb78e271bd3ec1bf868b
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 99f853da53302d4080bfa9462da0ec524e8d2064
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663979"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792757"
 ---
-# <a name="access-sensors-and-devices-from-a-background-task"></a>Accéder aux capteurs et aux périphériques à partir d’une tâche en arrière-plan
+# <a name="access-sensors-and-devices-from-a-background-task"></a>Accéder à des capteurs et des appareils depuis une tâche en arrière-plan
 
 
 

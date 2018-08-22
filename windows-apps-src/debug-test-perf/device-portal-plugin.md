@@ -8,14 +8,14 @@ ms.date: 03/24/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: Windows 10, uwp, portail de périphérique
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aae0e634ea219ef602eafdb1516d1d42b9c7913
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 6bf511a910a266877d54a014f087c1748ff25838
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1025995"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2791765"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Écrire un plug-in personnalisé pour DevicePortal
 

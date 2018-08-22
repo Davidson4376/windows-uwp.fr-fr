@@ -8,14 +8,14 @@ ms.date: 08/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: Windows 10, uwp, l’impression
 ms.localizationpriority: medium
-ms.openlocfilehash: 470984ce9f9a3304350a3479a01bc31a403bd8af
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 9e53c15b01a08c8c617529fe074929ce89a68ce9
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674976"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800313"
 ---
 # <a name="customize-the-print-workflow"></a>Personnaliser le flux de travail d'impression
 
@@ -220,7 +220,7 @@ internal async void OnXpsDataAvailable(PrintWorkflowForegroundSession sessionMan
 }
 ```
 
-En outre, l'instance **[PrintWorkflowSubmittedOperation](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)** exposée par les arguments d’événement offre la possibilité d’annuler le travail d’impression ou d'indiquer que la tâche a réussi, mais qu'aucune sortie de tâche d’impression n'est nécessaire. Pour ce faire, vous devez appeler la méthode **[Complete](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation#Windows_Graphics_Printing_Workflow_PrintWorkflowSubmittedOperation_Complete_Windows_Graphics_Printing_Workflow_PrintWorkflowSubmittedStatus_)** avec une valeur **[PrintWorkflowSubmittedStatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)**.
+En outre, l'instance **[PrintWorkflowSubmittedOperation](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)** exposée par les arguments d’événement offre la possibilité d’annuler le travail d’impression ou d'indiquer que la tâche a réussi, mais qu'aucune sortie de tâche d’impression n'est nécessaire. Pour ce faire, vous devez appeler la méthode **[Complete](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation.Complete)** avec une valeur **[PrintWorkflowSubmittedStatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)**.
 
 > [!NOTE]
 > Si l’application de flux de travail annule le travail d’impression, il est vivement recommandé qu'elle fournisse une notification toast indiquant pourquoi la tâche a été annulée. 
@@ -244,9 +244,9 @@ La différence est qu'alors que les WSDA sont automatiquement activés pour l’
 
 ### <a name="set-the-workflow-apps-policy"></a>Définir la stratégie de l’application de flux de travail
 La stratégie d’application de flux de travail est définie par des commandes Powershell sur l’appareil qui doit exécuter l’application de flux de travail. Les commandes Set-Printer, Add-Printer (port existant) et Add-Printer (nouveau port WSD) seront modifiées pour pouvoir définir les règles du flux de travail. 
-* `Off`: les applications de flux de travail ne seront pas activées.
-* `Optional`: les applications de flux de travail seront activées si le flux de travail DCA est installé dans le système. Si l’application n’est pas installée, l’impression continue. 
-* `On`: le contrat de flux de travail sera activé si le flux de travail DCA est installé dans le système. Si l’application n’est pas installée, l’impression échoue. 
+* `Disabled`: les applications de flux de travail ne seront pas activées.
+* `Uninitialized`: les applications de flux de travail seront activées si le flux de travail DCA est installé dans le système. Si l’application n’est pas installée, l’impression continue. 
+* `Enabled`: le contrat de flux de travail sera activé si le flux de travail DCA est installé dans le système. Si l’application n’est pas installée, l’impression échoue. 
 
 La commande suivante rend l’application de flux de travail nécessaire sur l’imprimante spécifiée.
 ```Powershell

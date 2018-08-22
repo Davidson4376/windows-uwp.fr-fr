@@ -7,15 +7,15 @@ ms.date: 12/6/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: Windows 10, uwp, sécurité
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 30a072ddc3489ca310875a6fc4a2d00902986277
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 2de5c969610aa6b4fa1a3af01af565d35854b5f2
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674816"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792134"
 ---
 # <a name="web-account-manager"></a>Gestionnaire de comptes web
 
@@ -173,12 +173,13 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-Dans cet exemple, nous passons la chaîne «wl.basic» au paramètre d’_étendue_. L’étendue représente le type d’informations concernant un utilisateur spécifique que vous demandez au service fournisseur. Certaines étendues donnent accès uniquement aux informations de base d’un utilisateur, comme son nom et son adresse e-mail, tandis que d'autres étendues peuvent accorder un accès à des informations sensibles telles que des photos de l’utilisateur ou la boîte de réception de sa messagerie électronique. En général, votre application doit utiliser l’étendue nécessaire la moins permissive pour remplir sa fonction.
-
-Les prestataires de services fournissent une documentation indiquant les étendues nécessaires pour obtenir des jetons à utiliser avec leurs services. 
+Dans cet exemple, nous passons la chaîne «wl.basic» au paramètre d’_étendue_. L’étendue représente le type d’informations concernant un utilisateur spécifique que vous demandez au service fournisseur. Certaines étendues donnent accès uniquement aux informations de base d’un utilisateur, comme son nom et son adresse e-mail, tandis que d'autres étendues peuvent accorder un accès à des informations sensibles telles que des photos de l’utilisateur ou la boîte de réception de sa messagerie électronique. En général, votre application doit utiliser l’étendue nécessaire la moins permissive pour remplir sa fonction. Les prestataires de services fournissent une documentation indiquant les étendues nécessaires pour obtenir des jetons à utiliser avec leurs services. 
 
 * Pour les étendues Office365 et Outlook.com, consultez [Authentification des API Office365 et Outlook.com à l’aide du point de terminaison d’authentificationv2.0](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2). 
 * Pour les étendues OneDrive, consultez [Authentification et connexion OneDrive](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes). 
+
+> [!TIP]
+> Le cas échéant, si votre application utilise un indicateur d’ouverture de session (pour remplir le champ utilisateur avec une adresse de messagerie par défaut) ou une autre propriété spéciale liées à l’expérience de connexion, répertorier dans la propriété **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** . Cela entraîne le système de sorte qu’il ignore la propriété lors de la mise en cache le compte web, ce qui empêche les différences de compte dans le cache.
 
 Si vous développez une application d’entreprise, vous souhaiterez probablement vous connecter à une instance Azure Active Directory (AAD) et utiliser l’API Microsoft Graph plutôt que les services MSA classiques. Dans ce cas, utilisez le code suivant: 
 

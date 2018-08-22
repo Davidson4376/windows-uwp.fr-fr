@@ -4,18 +4,18 @@ Description: The Pricing and availability page of the app submission process let
 title: Définir la tarification et la disponibilité d’une application
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.author: wdg-dev-content
-ms.date: 05/02/2018
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, prix, disponible, détectable, version d’évaluation gratuite, versions d’évaluation, applications, date de publication
-ms.localizationpriority: high
-ms.openlocfilehash: 6c411572bbcf048b82ff27c284dc8f9343ef4fc4
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 20c52687b375f9bf33dd491eeb37d4142acace99
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1831993"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794808"
 ---
 # <a name="set-app-pricing-and-availability"></a>Définir la tarification et la disponibilité d’une application
 
@@ -74,10 +74,7 @@ Par défaut, votre version d’essai sera disponible dès que votre application 
 >[!NOTE]
 > Ces dates ne s’appliquent qu’aux clients sous Windows10 (y compris Xbox). Si votre application est disponible pour les clients utilisant des versions antérieures du système d’exploitation, la version d'essai sera proposée à ces clients aussi longtemps que votre produit sera disponible. 
 
-Pour définir les dates auxquelles votre version d’essai doit être proposée aux clients sous Windows10, changez les paramètres **Commence le** et/ou **Se termine le** sur la liste déroulante en **au**, puis choisissez la date et l’heure. Si vous procédez ainsi, vous pouvez choisir **UTC**, afin que l’heure que vous sélectionnez s'exprime en temps universel coordonné (UTC), ou **Local**, afin que ces dates soient utilisées dans chaque fuseau horaire associé à un marché. (Notez que pour les marchés qui incluent plusieurs fuseaux horaires, un seul fuseau horaire de ces marchés sera utilisé. Pour les États-Unis, le fuseau horaire utilisé est celui de l'Est.) 
-
->[!NOTE]
-> Contrairement à ce qui se fait dans la section [Planifier](configure-precise-release-scheduling.md), les dates que vous sélectionnez pour votre **version d’essai gratuite** ne peuvent pas être personnalisées pour des marchés spécifiques. 
+Pour définir les dates auxquelles votre version d’essai doit être proposée aux clients sous Windows10, changez les paramètres **Commence le** et/ou **Se termine le** sur la liste déroulante en **au**, puis choisissez la date et l’heure. Si vous procédez ainsi, vous pouvez choisir **UTC**, afin que l’heure que vous sélectionnez s'exprime en temps universel coordonné (UTC), ou **Local**, afin que ces dates soient utilisées dans chaque fuseau horaire associé à un marché. (Notez que pour les marchés qui incluent plusieurs fuseaux horaires, un seul fuseau horaire de ces marchés sera utilisé. Pour les États-Unis, le fuseau horaire est est utilisé.) Vous pouvez sélectionner **Personnaliser pour des marchés spécifiques** si vous souhaitez définir des dates différentes pour des marchés.
 
 
 ## <a name="sale-pricing"></a>Prix de vente

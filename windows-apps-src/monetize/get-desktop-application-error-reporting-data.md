@@ -9,16 +9,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs, application de bureau
 ms.localizationpriority: medium
-ms.openlocfilehash: 422a570635fd6788b8e8b5656060a309d628b7bf
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: 71c566ff375f36108d724f3c550570b3332f4c6b
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989393"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2797300"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>Obtenir des données de rapport d'erreur pour votre application de bureau
 
-Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir des données de rapport d'erreur agrégées pour une application de bureau que vous avez ajoutée au [Du programme d’application de bureau Windows](https://msdn.microsoft.com/library/windows/desktop/mt826504). Ces informations sont également disponibles dans le [rapport d’intégrité](https://msdn.microsoft.com/library/windows/desktop/mt826504) pour les applications de bureau dans le tableau de bord du Centre de développement Windows.
+Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir des données de rapport d'erreur agrégées pour une application de bureau que vous avez ajoutée au [Du programme d’application de bureau Windows](https://msdn.microsoft.com/library/windows/desktop/mt826504). Cette méthode peut récupérer uniquement les erreurs qui se sont produites au cours des 30 derniers jours. Ces informations sont également disponibles dans le [rapport d’intégrité](https://msdn.microsoft.com/library/windows/desktop/mt826504) pour les applications de bureau dans le tableau de bord du Centre de développement Windows.
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -32,7 +32,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
 
-| Méthode | URI de requête                                                          |
+| Méthode | URI de la requête                                                          |
 |--------|----------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/failurehits``` |
 
@@ -49,13 +49,13 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 | Paramètre        | Type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
 | applicationId | chaîne | L’ID produit d'une application de bureau pour laquelle vous souhaitez récupérer les données de rapport d’erreur. Pour obtenir l’ID de produit d’une application de bureau, ouvrez un [rapport d'analyse du centre de développement relatif à votre application de bureau](https://msdn.microsoft.com/library/windows/desktop/mt826504) (comme le **rapport d’intégrité**) et récupérez l’ID de produit à partir de l’URL. |  Oui  |
-| startDate | date | Dans la plage de dates, la date de début de la récupération des données de rapport d’erreurs, au format ```mm/dd/yyyy```. La valeur par défaut est la date actuelle  |  Non  |
+| startDate | date | Dans la plage de dates, la date de début de la récupération des données de rapport d’erreurs, au format ```mm/dd/yyyy```. La valeur par défaut est la date actuelle<p/><p/>**Remarque:**&nbsp;&nbsp;cette méthode peut récupérer uniquement les erreurs qui se sont produites au cours des 30 derniers jours.  |  Non  |
 | endDate | date | Dans la plage de dates, la date de fin de la récupération des données de rapport d’erreurs, au format ```mm/dd/yyyy```. La valeur par défaut est la date actuelle   |  Non  |
 | top | entier | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
 | skip | entier | Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10000 et skip=0 pour obtenir les 10000 premières lignes de données, top=10000 et skip=10000 pour obtenir les 10000 lignes suivantes, et ainsi de suite. |  Non  |
 | filter |chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Vous pouvez spécifier les champs suivants dans le corps de réponse:<p/><ul><li><strong>fileName</strong></li><li><strong>applicationVersion</strong></li><li><strong>failureName</strong></li><li><strong>failureHash</strong></li><li><strong>symbol</strong></li><li><strong>osVersion</strong></li><li><strong>osBuild</strong></li><li><strong>osRelease</strong></li><li><strong>eventType</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>productName</strong></li><li><strong>date</strong></li></ul> | Non   |
 | aggregationLevel | chaîne | Indique la plage de temps pendant laquelle récupérer les données agrégées. Il peut s’agit des chaînes suivantes : **day**, **week** ou **month**. Par défaut, la valeur est **day**. Si vous spécifiez **week** ou **month**, les valeurs *failureName* et *failureHash* sont limitées à 1 000 compartiments.<p/>  | Non |
-| orderby | chaîne | Une instruction commandant les valeurs des données de résultat. La syntaxe est la suivante *orderby=field [order],field [order],...*. Le paramètre *champ* peut être l'une des chaînes suivantes:<ul><li><strong>fileName</strong></li><li><strong>applicationVersion</strong></li><li><strong>failureName</strong></li><li><strong>failureHash</strong></li><li><strong>symbol</strong></li><li><strong>osVersion</strong></li><li><strong>osBuild</strong></li><li><strong>osRelease</strong></li><li><strong>eventType</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>productName</strong></li><li><strong>date</strong></li></ul>Le paramètre *order*, facultatif, peut comporter les valeurs **asc** ou **desc** afin de spécifier l’ordre croissant ou décroissant pour chaque champ. La valeur par défaut est **asc**.</p><p>Voici un exemple de chaîne *orderby*: *orderby=date,market*</p> |  Non  |
+| orderby | chaîne | Une instruction commandant les valeurs des données de résultat. La syntaxe est la suivante *orderby=field [order],field [order],...*. Le paramètre *champ* peut être l'une des chaînes suivantes:<ul><li><strong>fileName</strong></li><li><strong>applicationVersion</strong></li><li><strong>failureName</strong></li><li><strong>failureHash</strong></li><li><strong>symbol</strong></li><li><strong>osVersion</strong></li><li><strong>osBuild</strong></li><li><strong>osRelease</strong></li><li><strong>eventType</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>productName</strong></li><li><strong>date</strong></li></ul>Le paramètre facultatif *order* peut avoir la valeur **asc** ou **desc** pour spécifier l’ordre croissant ou décroissant de chaque champ. La valeur par défaut est **asc**.</p><p>Voici un exemple de chaîne *orderby*: *orderby=date,market*</p> |  Non  |
 | groupby | chaîne | Une instruction qui applique l’agrégation des données uniquement sur les champs spécifiés. Vous pouvez spécifier les champs suivants:<ul><li>**failureName**</li><li>**failureHash**</li><li>**symbol**</li><li>**osVersion**</li><li>**eventType**</li><li>**market**</li><li>**deviceType**</li></ul><p>Les lignes de données renvoyées comportent les champs spécifiés dans le paramètre *groupby*, ainsi que dans les paramètres suivants:</p><ul><li>**date**</li><li>**applicationId**</li><li>**applicationName**</li><li>**eventCount**</li></ul><p>Le paramètre *groupby* peut être utilisé avec le paramètre *aggregationLevel*. Exemple: *&amp;groupby=failureName,market&amp;aggregationLevel=week*</p></p> |  Non  |
 
 
@@ -80,7 +80,7 @@ Authorization: Bearer <your access token>
 |------------|---------|--------------|
 | Valeur      | tableau   | Tableau d’objets comportant les données agrégées de rapport d’erreurs. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs des erreurs](#error-values) ci-dessous.     |
 | @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la demande est défini sur 10000, mais que plus de 10000lignes d’erreurs sont associées à la requête. |
-| TotalCount | Entier | Nombre total de lignes dans les résultats de données de la requête.     |
+| TotalCount | entier | Nombre total de lignes dans les résultats de données de la requête.     |
 
 
 ### <a name="error-values"></a>Valeurs des erreurs
@@ -94,7 +94,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | productName | chaîne  | Le nom complet de l’application de bureau tel que dérivé des métadonnées de ses fichiers exécutables associés.   |
 | appName | chaîne  |  À déterminer  |
 | fileName | chaîne  | Le nom du fichier exécutable de l’application de bureau.   |
-| failureName     | chaîne  | Le nom de l'échec, qui est constitué de quatre parties: une ou plusieurs classes de problème, un code de vérification d’exception/d’erreur, le nom de l'image où l’échec s’est produit et le nom de la fonction associée.  |
+| failureName     | chaîne  | Le nom de l'échec, qui se compose de quatre partie: une ou plusieurs classes de problème, un code de vérification d'exception ou de bogue, le nom de l'image où l'erreur s'est produite et le nom de la fonction associée.  |
 | failureHash     | chaîne  | L’identificateur unique de l’erreur.   |
 | symbol          | chaîne  | Le symbole affecté à cette erreur. |
 | osBuild       | chaîne  | Numéro de version en quatre parties du système d’exploitation sur lequel l’erreur s’est produite.  |
@@ -104,7 +104,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | market          | chaîne  | Code pays ISO3166 du marché des appareils.   |
 | deviceType      | chaîne  | Une des chaînes suivantes spécifiant le type d’appareil sur lequel l’erreur s’est produite:<p/><ul><li><strong>PC</strong></li><li><strong>Serveur</strong></li><li><strong>Tablette</strong></li><li><strong>Inconnu</strong></li></ul>    |
 | applicationVersion     | chaîne  |   La version du fichier exécutable de l’application dans laquelle l’erreur s’est produite.    |
-| eventCount      | Entier | Le nombre d’événements affectés à cette erreur pour le niveau d’agrégation spécifié.      |
+| eventCount      | entier | Le nombre d’événements affectés à cette erreur pour le niveau d’agrégation spécifié.      |
 
 
 ### <a name="response-example"></a>Exemple de réponse
@@ -139,7 +139,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 ```
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="related-topics"></a>Rubriques associées
 
 * [Rapport d’intégrité](../publish/health-report.md)
 * [Accéder aux données d’analyse à l’aide des services du MicrosoftStore](access-analytics-data-using-windows-store-services.md)

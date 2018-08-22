@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 68c22c12ac5c5dbd90878e8828160e0f56831898
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
-ms.translationtype: HT
+ms.openlocfilehash: e38e9d61e8546d412cc30bad26680243f3a188e4
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1638989"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792342"
 ---
 # <a name="menus-and-context-menus"></a>Menus et menus contextuels
 
@@ -78,7 +78,7 @@ Si vous voulez ajouter des commandes (telles que couper, copier et coller) à un
 <ul>
 <li>Ont un point d’entrée unique (un menu Fichier en haut de l’écran, par exemple) qui est toujours affiché.</li>
 <li>Sont généralement attachés à un bouton ou un élément de menu parent.</li>
-<li>Sont appelés en cliquant avec le bouton gauche de la souris (ou par le biais d’une action équivalente, telles que l’appui avec votre doigt).</li><li>Sont associés à un élément via ses propriétés [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) ou [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx).</li>
+<li>Sont appelés en cliquant avec le bouton gauche de la souris (ou par le biais d’une action équivalente, telles que l’appui avec votre doigt).</li><li>Sont associés à un élément via ses propriétés <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx">Flyout</a> ou <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx">FlyoutBase.AttachedFlyout</a>.</li>
 </ul>
 </div>
   <div class="side-by-side-content-right">
@@ -86,7 +86,7 @@ Si vous voulez ajouter des commandes (telles que couper, copier et coller) à un
 
 <ul>
 <li>Sont attachés à un élément unique et affichent les commandes secondaires.</li>
-<li>Sont appelés en cliquant avec le bouton droit de la souris (ou par le biais d’une action équivalente, telle que l’appui prolongé avec votre doigt).</li><li>Sont associés à un élément via sa propriété [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx).</li>
+<li>Sont appelés en cliquant avec le bouton droit de la souris (ou par le biais d’une action équivalente, telle que l’appui prolongé avec votre doigt).</li><li>Sont associés à un élément via sa propriété <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx">ContextFlyout</a>.</li>
 </ul>
   </div>
 </div>

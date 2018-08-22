@@ -3,26 +3,29 @@ author: stevewhims
 description: Cette rubrique montre comment porter du code C++/CX vers son équivalent en C++/WinRT.
 title: Passer de C++/CX à C++/WinRT
 ms.author: stwhi
-ms.date: 05/30/2018
+ms.date: 07/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: da6226158056cbbf0b51b46be0b17fe7e478dd01
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.openlocfilehash: 4aba8f559b7b6f0518a620d5127692d541953255
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935747"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800060"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-ccx"></a>Passer de C++/CX à [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 Cette rubrique montre comment porter du code [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) vers son équivalent en C++/WinRT.
 
+> [!IMPORTANT]
+> Si vous souhaitez port progressivement votre [C + / CX](/cpp/cppcx/visual-c-language-reference-c-cx) code C + / WinRT, puis vous pouvez. C + / CX et C + / code WinRT peut coexister dans le même projet, à l’exception de la prise en charge du compilateur XAML et composants d’exécution Windows. Pour ces exceptions, vous aurez besoin de cibler soit C + / CX ou C + / WinRT au sein du même projet. Mais vous pouvez utiliser un composant Windows Runtime au code facteur en dehors de votre application XAML comme vous le port. Déplacez autant C + / CX de code que vous pouvez dans un composant, puis remplacez le code XAML projet C + / WinRT. Ou autre laisse le projet XAML C + / CX, créer un nouveau C + / composant WinRT et commencez à portage C + / code CX hors projet XAML et dans le composant. Vous pouvez également avoir une C + / projet de composant CX avec C + / projet de composant WinRT au sein de la solution de même, les référencer à partir de votre projet d’application et le port progressivement à partir d’un à l’autre.
+
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) et le SDK Windows déclarent tous les deux les types dans l’espace de noms racine **Windows**. Un type Windows projeté en C++/WinRT a le même nom complet que le type Windows, mais il est placé dans l'espace de noms C++ **winrt**. Ces espaces de noms distincts vous permettent de porter le code C++/CX vers C++/WinRT à votre propre rythme.
 
-La première étape du portage vers C++/WinRT consiste à ajouter manuellement la prise en charge de C++/WinRT à votre projet (voir [Prise en charge de Visual Studio pour C++/WinRT et VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)). Pour ce faire, vous devez modifier votre fichier `.vcxproj`, rechercher `<PropertyGroup Label="Globals">` et, à l’intérieur de ce groupe de propriétés, définir la propriété `<CppWinRTEnabled>true</CppWinRTEnabled>`. Un effet de cette modification est la désactivation de la prise en charge de C++/CX dans le projet. Il est conseillé de laisser la prise en charge désactivée afin de pouvoir rechercher toutes les dépendances et les porter sur C++/CX. Sinon, vous pouvez réactiver la prise en charge (dans les propriétés du projet, **C/C++** \> **général** \> **Consommer l'extension Windows Runtime** \> **Oui (/ZW)**) et effectuer le portage progressivement.
+Compte tenu des exceptions mentionnées ci-dessus, la première étape du processus de porter un projet C + / WinRT consiste à ajouter manuellement C + / prise en charge WinRT (voir [prise en charge de Visual Studio pour C + / WinRT et le VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)). Pour ce faire, vous devez modifier votre fichier `.vcxproj`, rechercher `<PropertyGroup Label="Globals">` et, à l’intérieur de ce groupe de propriétés, définir la propriété `<CppWinRTEnabled>true</CppWinRTEnabled>`. Un effet de cette modification est la désactivation de la prise en charge de C++/CX dans le projet. Il est préférable de laisser de prise en charge désactivé afin que les messages de génération permettent de rechercher (et le port) toutes les dépendances sur C + / CX, ou vous pouvez activer la prise en charge sur (dans les propriétés du projet, **C/C++** \> **Général** \> **consommer Windows Runtime Extension** \> **Oui (/ZW)**) et le port progressivement.
 
 Définissez la propriété du projet **Général** \> **Version de la plateforme cible** sur 10.0.17134.0 (Windows10, version1803) ou une version supérieure.
 
@@ -201,7 +204,7 @@ auto token = myButton().Click([&](IInspectable const& sender, RoutedEventArgs co
 
 Au lieu d’une fonction lambda, vous pouvez choisir d’implémenter votre délégué sous forme d’une fonction libre ou en tant que pointeur-vers-fonction-membre. Pour plus d'informations, voir [Gérer des événements en utilisant des délégués en C++/WinRT](handle-events.md).
 
-Si vous effectuez un portage à partir d'un code base C++/CX où les événements et les délégués sont utilisés en interne (pas sur les fichiers binaires), [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) vous aidera à répliquer ce modèle en C++/WinRT. Voir également [winrt::delegate&lt;... T&gt;](author-events.md#winrtdelegate-t).
+Si vous effectuez un portage à partir d'un code base C++/CX où les événements et les délégués sont utilisés en interne (pas sur les fichiers binaires), [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) vous aidera à répliquer ce modèle en C++/WinRT. Voir aussi [délégués paramétrée, les signaux simples et les rappels dans un projet](author-events.md#parameterized-delegates-simple-signals-and-callbacks-within-a-project).
 
 ## <a name="revoking-a-delegate"></a>Révocation d’un délégué
 Dans C++/CX, vous utilisez l'opérateur `-=` pour révoquer l'inscription d'un événement préalable.
@@ -223,52 +226,25 @@ C++/CX fournit plusieurs types de données dans l'espace de noms **Platform**. C
 
 | C++/CX | C++/WinRT |
 | ---- | ---- |
-| **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
-| **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
+| **Plateforme:: Agile\ ^** | [**WinRT::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
 | **Platform::Exception\^** | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
 | **Platform::InvalidArgumentException\^** | [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
+| **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
+| **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
-### <a name="port-platformobject-to-winrtwindowsfoundationiinspectable"></a>Porter **Platform::Object\^** vers **winrt::Windows::Foundation::IInspectable**
-Comme tous les types C++/WinRT, **winrt::Windows::Foundation::IInspectable** est un type de valeur. Voici comment vous initialisez une variable de ce type sur la valeur Null.
+### <a name="port-platformagile-to-winrtagileref"></a>Port **plateforme:: Agile\ ^** à **winrt::agile_ref**
+Le **plateforme:: Agile\ ^** type dans C + / CX représente une classe Windows Runtime qui sont accessibles à partir de n’importe quel thread. C + / WinRT équivaut à [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref).
 
-```cppwinrt
-winrt::Windows::Foundation::IInspectable var{ nullptr };
-```
-
-### <a name="port-platformstring-to-winrthstring"></a>Porter **Platform::String\^** vers **winrt::hstring**
-**Platform::String\^** équivaut au type WindowsRuntimeHSTRINGABI. Pour C++/WinRT, l’équivalent est [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). Mais avec C++/WinRT, vous pouvez appeler des API Windows Runtime à l’aide de types de chaînes étendues de la bibliothèque C++ standard comme **std::wstring** et/ou des littéraux de chaîne étendue. Pour obtenir plus d’informations et des exemples de code, voir [Gestion des chaînes en C++/WinRT](strings.md).
-
-Avec C++/CX, vous pouvez accéder à la propriété [**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) pour récupérer la chaîne en tant que tableau **const wchar_t\*** de style C (par exemple, pour le passer à **std::wcout**).
-
-```C++
-auto var = titleRecord->TitleName->Data();
-```
-
-Pour faire de même avec C++/WinRT, vous pouvez utiliser la fonction [**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function) pour obtenir une version de la chaîne de style C terminée par Null, exactement comme avec **std::wstring**.
-
-```C++
-auto var = titleRecord.TitleName().c_str();
-```
-
-Lorsqu’il s’agit d'implémenter des API qui utilisent ou retournent des chaînes, généralement, vous modifiez tout code C++/CX qui utilise **Platform::String\^** pour utiliser **winrt::hstring** à la place.
-
-Voici un exemple d'API C++/CX qui utilise une chaîne.
+En C++/CX.
 
 ```cpp
-void LogWrapLine(Platform::String^ str);
+Platform::Agile<Windows::UI::Core::CoreWindow> m_window;
 ```
 
-Pour C++/WinRT, vous pouvez déclarer cette API dans [MIDL3.0](/uwp/midl-3) comme suit.
-
-```idl
-// LogType.idl
-void LogWrapLine(String str);
-```
-
-La chaîne d’outils C++/WinRT génère pour vous le code source, qui se présente comme suit.
+En C++/WinRT.
 
 ```cppwinrt
-void LogWrapLine(winrt::hstring const& str);
+winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 ```
 
 ### <a name="port-platformexception-to-winrthresulterror"></a>Porter **Platform::Exception\^** vers **winrt::hresult_error**
@@ -318,6 +294,49 @@ Et voici l’équivalent en C++/WinRT.
 
 ```cppwinrt
 throw winrt::hresult_invalid_argument{ L"A valid User is required" };
+```
+
+### <a name="port-platformobject-to-winrtwindowsfoundationiinspectable"></a>Porter **Platform::Object\^** vers **winrt::Windows::Foundation::IInspectable**
+Comme tous les types C++/WinRT, **winrt::Windows::Foundation::IInspectable** est un type de valeur. Voici comment vous initialisez une variable de ce type sur la valeur Null.
+
+```cppwinrt
+winrt::Windows::Foundation::IInspectable var{ nullptr };
+```
+
+### <a name="port-platformstring-to-winrthstring"></a>Porter **Platform::String\^** vers **winrt::hstring**
+**Platform::String\^** équivaut au type WindowsRuntimeHSTRINGABI. Pour C++/WinRT, l’équivalent est [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). Mais avec C++/WinRT, vous pouvez appeler des API Windows Runtime à l’aide de types de chaînes étendues de la bibliothèque C++ standard comme **std::wstring** et/ou des littéraux de chaîne étendue. Pour obtenir plus d’informations et des exemples de code, voir [Gestion des chaînes en C++/WinRT](strings.md).
+
+Avec C++/CX, vous pouvez accéder à la propriété [**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) pour récupérer la chaîne en tant que tableau **const wchar_t\*** de style C (par exemple, pour le passer à **std::wcout**).
+
+```C++
+auto var = titleRecord->TitleName->Data();
+```
+
+Pour faire de même avec C++/WinRT, vous pouvez utiliser la fonction [**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function) pour obtenir une version de la chaîne de style C terminée par Null, exactement comme avec **std::wstring**.
+
+```C++
+auto var = titleRecord.TitleName().c_str();
+```
+
+Lorsqu’il s’agit d'implémenter des API qui utilisent ou retournent des chaînes, généralement, vous modifiez tout code C++/CX qui utilise **Platform::String\^** pour utiliser **winrt::hstring** à la place.
+
+Voici un exemple d'API C++/CX qui utilise une chaîne.
+
+```cpp
+void LogWrapLine(Platform::String^ str);
+```
+
+Pour C++/WinRT, vous pouvez déclarer cette API dans [MIDL3.0](/uwp/midl-3) comme suit.
+
+```idl
+// LogType.idl
+void LogWrapLine(String str);
+```
+
+La chaîne d’outils C++/WinRT génère pour vous le code source, qui se présente comme suit.
+
+```cppwinrt
+void LogWrapLine(winrt::hstring const& str);
 ```
 
 ## <a name="important-apis"></a>API importantes

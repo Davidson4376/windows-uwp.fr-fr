@@ -12,29 +12,27 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2355d9f655e1eb4e38557b11797aff1784eb8ea6
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 6f8f86a6988e68e3ff8d2dfef32512633b3761fd
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393648"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800373"
 ---
 # <a name="intro-to-controls-and-patterns"></a>Présentation des contrôles et des modèles
-
- 
 
 Dans le développement d’applications UWP, un *contrôle* est un élément d’interface utilisateur qui affiche du contenu ou permet une interaction. Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des listes modifiables pour afficher les données et obtenir les entrées utilisateur.
 
 > **API importantes**: [espace de noms Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 
-Un *modèle* est en quelque sorte une recette qui permet de modifier un contrôle ou d’associer plusieurs contrôles pour créer un élément nouveau. Par exemple, le modèle [Volet de navigation](navigationview.md) est une façon d’utiliser un contrôle [SplitView](split-view.md) pour la navigation dans l’application. De la même façon, vous pouvez personnaliser le modèle d’un contrôle [Pivot](tabs-pivot.md) pour implémenter le modèle d’onglet.
+Un *modèle* est en quelque sorte une recette qui permet de modifier un contrôle ou d’associer plusieurs contrôles pour créer un élément nouveau. Par exemple, le modèle [maître/détail](master-details.md) est un moyen que vous pouvez utiliser un contrôle [SplitView](split-view.md) pour la navigation de l’application. De même, vous pouvez personnaliser le modèle d’un contrôle [NavigationView](navigationview.md) pour implémenter le modèle de l’onglet.
 
 Dans de nombreux cas, vous pouvez utiliser un contrôle en l’état. Toutefois, les contrôles XAML distinguent la fonction de la structure et de l’apparence, vous pouvez donc apporter des modifications à différents niveaux pour les adapter à vos besoins. Dans la section [Style](../style/index.md), vous pouvez apprendre à utiliser des [styles XAML](xaml-styles.md) et des [modèles de contrôle](control-templates.md) pour modifier un contrôle.
 
-Dans cette section, nous fournissons des indications pour chaque contrôle XAML que vous pouvez utiliser pour créer l’interface utilisateur de votre application. Pour commencer, cet article explique comment ajouter des contrôles à votre application. Il existe 3étapes principales pour utiliser des contrôles dans votre application: 
+Dans cette section, nous fournissons des indications pour chaque contrôle XAML que vous pouvez utiliser pour créer l’interface utilisateur de votre application. Pour commencer, cet article explique comment ajouter des contrôles à votre application. Il existe 3étapes principales pour utiliser des contrôles dans votre application:
 
-- Ajoutez un contrôle à l’interface utilisateur de votre application. 
-- Définissez des propriétés sur le contrôle, telles que la largeur, la hauteur ou la couleur de premier plan. 
+- Ajoutez un contrôle à l’interface utilisateur de votre application.
+- Définissez des propriétés sur le contrôle, telles que la largeur, la hauteur ou la couleur de premier plan.
 - Associez du code aux gestionnaires d’événements du contrôle afin qu’il effectue une opération. 
 
 ## <a name="add-a-control"></a>Ajouter un contrôle
@@ -54,9 +52,9 @@ La boîte à outils Visual Studio affiche de nombreux contrôles utilisables dan
 
 Vous pouvez également faire glisser le contrôle à partir de la boîte à outils jusqu’au concepteur XAML.
 
-## <a name="set-the-name-of-a-control"></a>Définir le nom d’un contrôle 
+## <a name="set-the-name-of-a-control"></a>Définir le nom d’un contrôle
 
-Pour utiliser un contrôle dans du code, vous définissez son attribut [x:Name](../../xaml-platform/x-name-attribute.md), puis vous le référencez par son nom dans votre code. Vous pouvez définir le nom dans la fenêtre Propriétés de Visual Studio ou en XAML. Voici comment définir le nom du contrôle actuellement sélectionné en utilisant la zone de texte Nom en haut de la fenêtre Propriétés. 
+Pour utiliser un contrôle dans du code, vous définissez son attribut [x:Name](../../xaml-platform/x-name-attribute.md), puis vous le référencez par son nom dans votre code. Vous pouvez définir le nom dans la fenêtre Propriétés de Visual Studio ou en XAML. Voici comment définir le nom du contrôle actuellement sélectionné en utilisant la zone de texte Nom en haut de la fenêtre Propriétés.
 
 Pour affecter un nom à un contrôle
 1. Sélectionnez l’élément à nommer.

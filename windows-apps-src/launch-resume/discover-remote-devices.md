@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: périphériques Windows 10, uwp, connectés, des systèmes distants, rome, rome project
 ms.localizationpriority: medium
-ms.openlocfilehash: 724e2ce05dc439ba440f46697b736faabb1e8df0
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: 02d04074ece0033da8c3454a95bc35af201903f3
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018493"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794660"
 ---
 # <a name="discover-remote-devices"></a>Détecter des appareils distants
 Votre application peut utiliser une connexion réseau sans fil, Bluetooth et cloud pour détecter les appareils Windows signés avec le même compte Microsoft que l’appareil détecteur. Aucun logiciel particulier n’est nécessaire sur les appareils distants pour qu’ils soient détectables.
@@ -60,7 +60,7 @@ Un objet **RemoteSystem** est récupéré si un objet **HostName** valide est fo
 
 ## <a name="querying-a-capability-on-a-remote-system"></a>Interroger une fonctionnalité sur un système distant
 
-Bien que distincte du filtrage de détection, l’interrogation des fonctionnalités de périphérique peut être une composante essentielle du processus de détection. À l’aide de la méthode [**RemoteSystem.GetCapabilitySupportedAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem#Windows_System_RemoteSystems_RemoteSystem_GetCapabilitySupportedAsync_System_String_), vous pouvez interroger les systèmes distants découverts pour prendre en charge certaines fonctionnalités telles que la connexion aux sessions à distance et le partage d’entités spatiales (holographiques). Voir la classe [**KnownRemoteSystemCapabilities**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.knownremotesystemcapabilities) pour consulter la liste des fonctionnalités pouvant être interrogées.
+Bien que distincte du filtrage de détection, l’interrogation des fonctionnalités de périphérique peut être une composante essentielle du processus de détection. À l’aide de la méthode [**RemoteSystem.GetCapabilitySupportedAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem.GetCapabilitySupportedAsync), vous pouvez interroger les systèmes distants découverts pour prendre en charge certaines fonctionnalités telles que la connexion aux sessions à distance et le partage d’entités spatiales (holographiques). Voir la classe [**KnownRemoteSystemCapabilities**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.knownremotesystemcapabilities) pour consulter la liste des fonctionnalités pouvant être interrogées.
 
 ```csharp
 // Check to see if the given remote system can accept LaunchUri requests

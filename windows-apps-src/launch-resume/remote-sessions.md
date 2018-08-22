@@ -8,14 +8,14 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: périphériques Windows 10, uwp, connectés, des systèmes distants, rome, rome project
 ms.localizationpriority: medium
-ms.openlocfilehash: 0539c9b50196d98809fc01ea3f2a1950cbf27599
-ms.sourcegitcommit: 12cc283e821cbf978debf24914490982f076b4b4
-ms.translationtype: HT
+ms.openlocfilehash: 8e5226b23a454bf48add22d590a3ff247c629e4f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2018
-ms.locfileid: "1658085"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794882"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>Connecter des appareils par le biais de sessions à distance
 
@@ -124,7 +124,7 @@ RemoteSystemSessionController manager = new RemoteSystemSessionController("Bob's
 //...
 ```
 
-Pour envoyer une invitation, vous devez avoir une référence au système distant de réception (acquise via la détection normale du système distant). Transmettez simplement cette référence dans la méthode **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession#remotesystemsession_sendinvitationasync_1664759118)** de l’objet de session. Tous les participants à une session ont une référence à la session à distance (voir section suivante), de sorte que tout participant peut envoyer une invitation.
+Pour envoyer une invitation, vous devez avoir une référence au système distant de réception (acquise via la détection normale du système distant). Transmettez simplement cette référence dans la méthode **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession.sendinvitationasync)** de l’objet de session. Tous les participants à une session ont une référence à la session à distance (voir section suivante), de sorte que tout participant peut envoyer une invitation.
 
 ```csharp
 // "currentSession" is a reference to a RemoteSystemSession.

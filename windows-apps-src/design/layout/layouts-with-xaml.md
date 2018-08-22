@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a175ad48255c0179335ce9204f51a0a62fd2b4f3
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.openlocfilehash: 0b45196a83edf45a69f6b79ab82542cef6817703
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707220"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795165"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Dispositions dynamiques avec XAML
 
@@ -98,7 +98,8 @@ Vous pouvez afficher ou masquer un élément en définissant sa propriété [**V
 
 Vous pouvez modifier la propriété Visibility d’un élément dans le code ou dans un état visuel. Lorsque la valeur Visibility d’un élément est modifiée, tous ses éléments enfants sont également modifiés. Vous pouvez remplacer des sections de votre interface utilisateur en révélant un panneau et en en réduisant un autre.
 
-> **Conseil**&nbsp;&nbsp;Lorsque votre interface utilisateur comporte des éléments qui ont la valeur **Collapsed** par défaut, les objets sont toujours créés au démarrage, même s’ils ne sont pas visibles. Vous pouvez différer le chargement de ces éléments jusqu’à ce qu’ils soient affichés en définissant **l’attribut x:DeferLoadStrategy** sur Lazy. Cela peut améliorer les performances de démarrage. Pour plus d’informations, voir [Attribut x:DeferLoadStrategy](../../xaml-platform/x-deferloadstrategy-attribute.md).
+> [!Tip]
+> Lorsque vous avez des éléments dans votre interface utilisateur **réduit** par défaut, les objets sont toujours créées au démarrage, même s’ils ne sont pas visibles. Vous pouvez différer le chargement de ces éléments jusqu’à ce qu’ils soient affichés en définissant **l’attribut x:DeferLoadStrategy** sur Lazy. Cela peut améliorer les performances de démarrage. Pour plus d’informations, voir [Attribut x:DeferLoadStrategy](../../xaml-platform/x-deferloadstrategy-attribute.md).
 
 ### <a name="style-resources"></a>Ressources de style
 
@@ -138,7 +139,7 @@ Pour appliquer un état visuel à partir du code, vous appelez la méthode [**Vi
 Ici, un [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstategroup.aspx) contient deuxdéfinitions de VisualState. Le premier, `DefaultState`, est vide. Lorsqu’il est appliqué, les valeurs définies dans la page XAML sont appliquées. Le second, `WideState`, change la propriété [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.displaymode.aspx) de [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) en **Inline** et ouvre le volet. Cet état est appliqué dans le gestionnaire d’événements SizeChanged si la largeur de la fenêtre est supérieure à 640pixels effectifs.
 
 > [!NOTE]
-Windows ne permet pas à votre application de détecter l’appareil spécifique sur lequel elle s’exécute. Le système peut vous indiquer la famille d’appareils (mobile, ordinateur, etc.) sur laquelle l’application s’exécute, la résolution réelle et la quantité d’espace à l’écran disponible pour l’application (la taille de la fenêtre de l’application). Nous vous recommandons de définir des états visuels pour les [tailles d’écran et points d’arrêt](screen-sizes-and-breakpoints-for-responsive-design.md).
+> Windows ne permet pas à votre application de détecter l’appareil spécifique sur lequel elle s’exécute. Le système peut vous indiquer la famille d’appareils (mobile, ordinateur, etc.) sur laquelle l’application s’exécute, la résolution réelle et la quantité d’espace à l’écran disponible pour l’application (la taille de la fenêtre de l’application). Nous vous recommandons de définir des états visuels pour les [tailles d’écran et points d’arrêt](screen-sizes-and-breakpoints-for-responsive-design.md).
 
 
 ```xaml
@@ -234,7 +235,8 @@ Cet exemple produit le même résultat que le précédent, mais utilise la synta
 </Page>
 ```
 
-> **Important**&nbsp;&nbsp;Dans l’exemple précédent, la propriété jointe VisualStateManager.VisualStateGroups est définie sur l’élément **Grid**. Lorsque vous utilisez des éléments StateTrigger, vérifiez toujours que VisualStateGroups est jointe au premier enfant de la racine pour que les déclencheurs prennent effet automatiquement. (Ici, **Grid** est le premier enfant de l’élément racine **Page**.)
+> [!Important]
+> Dans l’exemple précédent, la propriété jointe VisualStateManager.VisualStateGroups est définie sur l’élément **Grid** . Lorsque vous utilisez des éléments StateTrigger, vérifiez toujours que VisualStateGroups est jointe au premier enfant de la racine pour que les déclencheurs prennent effet automatiquement. (Ici, **Grid** est le premier enfant de l’élément racine **Page**.)
 
 ### <a name="attached-property-syntax"></a>Syntaxe de la propriété jointe
 

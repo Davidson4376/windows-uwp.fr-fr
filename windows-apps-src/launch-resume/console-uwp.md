@@ -4,38 +4,39 @@ title: Créer une application de console de plateforme Windows universelle
 description: Cette rubrique décrit comment écrire une application UWP qui s’exécute dans une fenêtre de console.
 keywords: console uwp
 ms.author: twhitney
-ms.date: 03/30/2018
+ms.date: 08/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 413f4db427557460c267370f477e16d84c8af29c
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: e4c1b1df8ad29635f38ae5b373685d3504a4eb60
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815534"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792529"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>Créer une application de console de plateforme Windows universelle
 
-Cette rubrique décrit comment créer une application de console de plateforme Windows universelle (UWP) C++/WinRT ou /CX.
+Cette rubrique explique comment créer un [C + / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) ou C + / application de console CX universels Windows plateforme (UWP).
 
-À compter de Windows10, version1803, vous pouvez écrire des applications de console UWP en C++/WinRT ou /CX qui s’exécutent dans une fenêtre de console, telle qu’une fenêtre de console DOS ou PowerShell. Les applications de console utilisent la fenêtre de console pour l’entrée et la sortie et peuvent utiliser des API Win32à la disposition des applications UWP comme **printf** ou **getchar**. Les applications de console UWP peuvent être publiées dans le MicrosoftStore. Elles ont une entrée dans la liste des applications et une vignette principale qui peut être épinglée au menu Démarrer. Les applications de console UWP peuvent être lancées à partir du menu Démarrer, même si vous les lancerez généralement à partir de la ligne de commande.
+Démarrage avec Windows 10, version 1803, vous pouvez écrire C + / WinRT ou C + / applications console CX UWP qui s’exécutent dans une fenêtre de console, par exemple une fenêtre de console DOS ou PowerShell. Applications console peuvent utiliser des fonctions de [Runtime C universel](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference) telles que **printf** et **getchar**et utilisent la fenêtre de console pour l’entrée et sortie. Les applications de console UWP peuvent être publiées dans le MicrosoftStore. Elles ont une entrée dans la liste des applications et une vignette principale qui peut être épinglée au menu Démarrer. Les applications console UWP peuvent être lancées à partir du menu Démarrer, même si vous serez généralement les lancer à partir de la ligne de commande.
 
-Pour voir tout cela en pratique, regardez cette vidéo sur la création d’une application de console UWP:
+Pour afficher une action, voici une vidéo sur la création d’une application de Console UWP.
+
 > [!VIDEO https://www.youtube.com/embed/bwvfrguY20s]
 
 ## <a name="use-a-uwp-console-app-template"></a>Utiliser un modèle d’application de console UWP 
 
-Pour créer une application de console UWP, commencez par installer les **modèles de projets (universels) d’application de console**, disponibles dans le [Visual Studio Marketplace](https://aka.ms/E2nzbv). Les modèles installés seront ensuite disponibles sous **Nouveau projet** > **Installé** > **Autres langages** > **Visual C++** > **Windows universel** sous forme d'**application de console C++/CX (Windows universel)** et d'**application de console C++/WinRT (Windows universel)**.
+Pour créer une application de console UWP, commencez par installer les **modèles de projets (universels) d’application de console**, disponibles dans le [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal). Les modèles installés puis sont disponibles sous un **Nouveau projet** > **Installed** > **Autres langages** > **Visual C++** > **Universels Windows** en tant que **Console application c++ / WinRT (Universal Windows) **et **Console application C + / CX (Windows universel)**.
 
 ## <a name="add-your-code-to-main"></a>Ajouter votre code à main()
 
 Les modèles ajoutent **Program.cpp**, qui contient la fonction `main()`. Voilà où commence l’exécution dans une application de console UWP. Accédez aux arguments de ligne de commande avec les paramètres `__argc` et `__argv`. L’application de console UWP se ferme lorsque le contrôle revient de `main()`.
 
-L’exemple suivant de **Program.cpp** est ajouté par le modèle d'**application de console C++/WinRT**:
+L’exemple suivant **Program.cpp** est ajouté à la **Console application c++ / WinRT** modèle:
 
-```cpp
+```cppwinrt
 #include "pch.h"
 
 using namespace winrt;
@@ -102,9 +103,9 @@ Le modèle ajoute également la fonctionnalité `Subsystem="console"` au fichier
 
 ## <a name="additional-considerations-for-uwp-console-apps"></a>Autres considérations sur les applications de console UWP
 
-- Seules des applications UWP C++/WinRT et C++/CX peuvent être des applications de console.
+- Uniquement C + / WinRT et C + / CX UWP applications peuvent être applications console.
 - Les applications de console UWP doivent cibler le bureau ou un type de projet IoT.
-- Les applications de console UWP ne peuvent pas créer de fenêtres. Par exemple, elles ne peuvent pas utiliser MessageBox(), car cela crée une fenêtre.
+- Les applications console UWP ne peuvent pas créer une fenêtre. Ils ne peuvent pas utiliser MessageBox(), ou Location() ou toute autre API qui peut créer une fenêtre pour une raison quelconque, telle que l’invite de consentement de l’utilisateur.
 - Les applications de console UWP ne peuvent ni utiliser des tâches en arrière‑plan, ni servir de tâche en arrière‑plan.
 - À l’exception de l'[activation par ligne de commande](https://blogs.windows.com/buildingapps/2017/07/05/command-line-activation-universal-windows-apps/#5YJUzjBoXCL4MhAe.97), les applications de console UWP ne prennent pas en charge les contrats d’activation, notamment l’association de fichiers, l'association de protocoles, etc.
 - Même si les applications de console UWP prennent en charge les instances multiples, elles ne prennent pas en charge la [redirection des instances multiples](multi-instance-uwp.md)

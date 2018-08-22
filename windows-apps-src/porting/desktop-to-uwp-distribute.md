@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
-ms.openlocfilehash: 682d7dfcef1ea8037b113499362f0664c388d987
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: fe36fec72645558c539dd8270fd15d35d92b66b5
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989623"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792678"
 ---
 # <a name="distribute-a-packaged-desktop-app-desktop-bridge"></a>Distribuer une application de bureau empaquetée (Pont du bureau)
 
@@ -31,7 +31,7 @@ Le [MicrosoftStore](https://www.microsoft.com/store/apps) est une méthode prati
 
 Publiez votre application dans ce Store pour atteindre un public plus large. En outre, les clients professionnels peuvent acquérir votre application pour la distribuer en interne au sein de leur organisation par le biais du [MicrosoftStore pour Entreprises](https://www.microsoft.com/business-store).
 
-Si vous envisagez de publier dans le MicrosoftStore, vous êtes invité à répondre à quelques questions supplémentaires dans le cadre du processus de soumission. Ce, parce que votre manifeste du package déclare une fonctionnalité restreinte nommée **runFullTrust** et que nous avons besoin d'approuver l’utilisation de cette fonctionnalité par votre application. Vous trouverez davantage de détails sur ces exigences ici: [Fonctionnalités restreintes](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#restricted-capabilities.html).
+Si vous envisagez de publier dans le MicrosoftStore, vous êtes invité à répondre à quelques questions supplémentaires dans le cadre du processus de soumission. Ce, parce que votre manifeste du package déclare une fonctionnalité restreinte nommée **runFullTrust** et que nous avons besoin d'approuver l’utilisation de cette fonctionnalité par votre application. Vous trouverez davantage de détails sur ces exigences ici: [Fonctionnalités restreintes](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 
 Vous n’êtes pas obligé de signer votre application avant de la soumettre au Store.
 

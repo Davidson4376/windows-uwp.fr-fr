@@ -3,19 +3,19 @@ author: JnHs
 Description: Learn how to send notifications from Windows Dev Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.
 title: Envoyer des notifications Push ciblées aux clients de votre application
 ms.author: wdg-dev-content
-ms.date: 04/10/2018
+ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, notifications ciblées, notifications push, toast, vignette
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
-ms.localizationpriority: high
-ms.openlocfilehash: 6c59e0856306758412d01e2d32bb312205116e88
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 9d62f46ad1b55fbad3ab7c21a593625a2538b68f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817034"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795113"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>Envoyer des notifications aux clients de votre application
 
@@ -27,7 +27,7 @@ Le Centre de développement Windows offre une plateforme d’implication client 
 > Ces notifications sont uniquement utilisables avec les applications UWP.
 
 Lorsque vous examinez le contenu de vos notifications, tenez compte des points suivants:
-- Le contenu de vos notifications doit être conforme avec les [Politiques relatives au contenu](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#content_policies) du Store.
+- Le contenu de vos notifications doit être conforme avec les [Politiques relatives au contenu](https://docs.microsoft.com/legal/windows/agreements/store-policies#content_policies) du Store.
 - Vos notifications ne doivent aucunement comporter d’informations confidentielles ou potentiellement sensibles.
 - Si nous faisons de notre mieux pour transmettre les notifications dans les délais prévus, des problèmes de latence peuvent parfois affecter ces remises.
 - Veillez à ne pas envoyer trop souvent de notifications. Un intervalle entre les remises inférieur à 30minutes peut sembler intrusif (dans de nombreux scénarios, il est préférable d’observer une fréquence moindre).
@@ -40,7 +40,7 @@ Lorsque vous examinez le contenu de vos notifications, tenez compte des points s
 De façon générale, vous devez effectuer trois opérations afin d’utiliser des notifications pour impliquer vos clients.
 
 1. **Inscrivez votre application pour recevoir les notifications Push.** Pour cela, ajoutez une référence au Microsoft Store Services SDK dans votre application, puis quelques lignes de code afin d’inscrire un canal de notification entre le Centre de développement et votre application. Nous utiliserons ce canal pour transmettre vos notifications à vos clients. Pour plus de détails, consultez l’article [Configurer votre application pour les notifications Push ciblées](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
-2. **Déterminez quels clients cibler.** Vous pouvez envoyer votre notification à l’ensemble des clients de votre application, ou (pour les notifications créées pour une application unique) à un groupe de clients appelé *segment*, que vous pouvez définir en fonction de critères démographiques ou de revenus. Pour plus d’informations, consultez [Créer des segments de clients](create-customer-segments.md). 
+2. **Déterminez quels clients cibler.** Vous pouvez envoyer votre notification à l’ensemble des clients de votre application, ou (pour les notifications créées pour une application unique) à un groupe de clients appelé *segment*, que vous pouvez définir en fonction de critères démographiques ou de revenus. Pour plus d’informations, consultez [Créer des segments de clients](create-customer-segments.md).
 3. **Créez le contenu de votre notification et envoyez-la.** Par exemple, vous pouvez créer une notification qui encourage les nouveaux clients à évaluer votre application, ou envoyer une notification pour promouvoir une offre spéciale d’achat d’une extension.
 
 
@@ -49,12 +49,12 @@ De façon générale, vous devez effectuer trois opérations afin d’utiliser d
 Suivez cette procédure pour créer une notification dans le tableau de bord et l’envoyer à un segment de clients spécifique.
 
 > [!NOTE]
-> Pour qu’une application puisse recevoir des notifications du Centre de développement, vous devez commencer par appeler la méthode [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) dans votre application afin d’y configurer la réception des notifications. Cette méthode est disponible dans le [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). Pour plus d’informations sur l’appel de cette méthode, notamment pour consulter un exemple de code, consultez l’article [Configurer votre application pour les notifications Push ciblées](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+> Pour qu’une application puisse recevoir des notifications du Centre de développement, vous devez commencer par appeler la méthode [RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) dans votre application afin d’y configurer la réception des notifications. Cette méthode est disponible dans le [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). Pour plus d’informations sur l’appel de cette méthode, notamment pour consulter un exemple de code, consultez l’article [Configurer votre application pour les notifications Push ciblées](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 
-1. Dans le [tableau de bord du Centre de développement Windows](https://developer.microsoft.com/dashboard/overview), développez la section **Engager**, puis sélectionnez **Notifications**.
+1. Dans le [tableau de bord du Centre de développement Windows](https://partner.microsoft.com/dashboard/), développez la section **Engager**, puis sélectionnez **Notifications**.
 2. Sur la page **Notifications**, sélectionnez **Nouvelle notification**.
-3. Dans la section **Sélectionner un modèle**, choisissez le type de notification que vous voulez envoyer. Pour plus d’informations, consultez [Types de modèles de notification](#notification-template-types).
-4. À la page suivante, utilisez le menu déroulant pour choisir une **Application unique** ou **Plusieurs applications** pour lesquels vous souhaitez générer une notification. Sélectionnez la ou les applications (qui doit être configurée pour recevoir des notifications à l’aide du Microsoft Store Services SDK).
+3. Dans la section **Sélectionner un modèle** , choisissez le [type de notification](#notification-template-types) que vous souhaitez envoyer, puis cliquez sur **OK**.
+4. À la page suivante, utilisez le menu déroulant pour choisir une **Application unique** ou **Plusieurs applications** pour lesquels vous souhaitez générer une notification. Vous pouvez sélectionner uniquement les applications qui ont été [configurés pour recevoir des notifications à l’aide du Kit de Services banque](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 5. Dans la section **Paramètres de notification**, choisissez un **nom** pour votre notification et, si applicable, choisissez le **groupe de clients** à qui vous souhaitez envoyer la notification. (Les notifications envoyées à plusieurs applications peuvent uniquement être envoyées à tous les clients de ces applications.) Si vous souhaitez utiliser un segment que vous n'avez pas encore créé, sélectionnez **Créer un nouveau groupe client**. Remarque: Il faut 24heures avant qu’un nouveau segment puisse être utilisé pour les notifications. Pour plus d’informations, consultez [Créer des segments de clients](create-customer-segments.md).
 6. Si vous voulez indiquer à quel moment envoyer la notification, décochez la case **Notification immédiate** et choisissez une date et une heure spécifiques (au format UTC pour tous les clients, sauf si vous indiquez d’utiliser le fuseau horaire local de chaque client).
 7. Si vous voulez que la notification expire à un moment donné, décochez la case **La notification n’expire jamais** et choisissez une date et une heure d’expiration spécifiques (au format UTC).
@@ -62,20 +62,22 @@ Suivez cette procédure pour créer une notification dans le tableau de bord et 
 8. **Pour les notifications de plusieurs applications:** Indiquez si vous souhaitez envoyer la notification uniquement à la dernière application active sur chaque appareil (par client) ou à toutes les applications sur chaque appareil.
 10. Dans la section **Contenu de la notification**, dans le menu **Langue**, choisissez les langues dans lesquelles vous souhaitez que votre notification s’affiche. Pour plus d’informations, voir [Traduire vos notifications](#translate-your-notifications).
 11. Dans la section **Options**, entrez du texte et configurez toutes les autres options que vous souhaitez. Si vous avez commencé avec un modèle, certaines de ces options sont fournies par défaut, mais vous pouvez apporter des modifications si vous le souhaitez.
-   Les options disponibles varient selon le type de notification que vous utilisez. Voici certaines des options:
-   - **Type d’activation** (notification de type toast interactif). Vous pouvez choisir **Premier plan**, **Arrière-plan**, ou **Protocole**.
-   - **Lancer** (notification de type toast interactif). Vous pouvez décider que la notification ouvre une application ou un site web.
-   - **Suivre la fréquence de lancement d’application** (notification de type toast interactif). Si vous souhaitez mesurer l’implication de vos clients par le biais de chaque notification, activez cette case à cocher. Pour plus d’informations, voir [Mesurer les performances des notifications](#measure-notification-performance).
-   - **Durée** (notification de type toast interactif). Vous pouvez choisir **Court** ou **Long**.
-   - **Scénario** (notification de type toast interactif). Vous pouvez choisir **Par défaut**, **Alarme**, **Rappel** ou **Appel entrant**.
-   - **URI de base** (notification de type toast interactif). Pour plus d’informations, voir [BaseUri](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.baseuri#Windows_UI_Xaml_FrameworkElement_BaseUri).
-   - **Ajouter une demande d’image** (notification de type toast interactif). Pour plus d’informations, voir [addImageQuery](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual#attributes-and-elements).
-   - **Éléments visuels**. Une image, une vidéo ou un son. Pour plus d’informations, voir [visual](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
-   - **Entrée**/**Action**/**Sélection** (notification de type toast interactif). Vous permet de laisser les utilisateurs interagir avec la notification. Pour plus d’informations, voir [Notifications toast adaptatives et interactives](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md).
-   - **Liaison** (notification de type vignette interactive). Le modèle de toast. Pour plus d’informations, voir [liaison](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-binding).
 
-   > [!TIP]
-   > Essayez d’utiliser l’application [Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1) pour concevoir et tester vos notifications de type vignettes adaptatives et toasts interactifs.
+    Les options disponibles varient selon le type de notification que vous utilisez. Voici certaines des options:
+
+    * **Type d’activation** (notification de type toast interactif). Vous pouvez choisir **Premier plan**, **Arrière-plan**, ou **Protocole**.
+    * **Lancer** (notification de type toast interactif). Vous pouvez décider que la notification ouvre une application ou un site web.
+    * **Suivre la fréquence de lancement d’application** (notification de type toast interactif). Si vous souhaitez mesurer l’implication de vos clients par le biais de chaque notification, activez cette case à cocher. Pour plus d’informations, voir [Mesurer les performances des notifications](#measure-notification-performance).
+    * **Durée** (notification de type toast interactif). Vous pouvez choisir **Court** ou **Long**.
+    * **Scénario** (notification de type toast interactif). Vous pouvez choisir **Par défaut**, **Alarme**, **Rappel** ou **Appel entrant**.
+    * **URI de base** (notification de type toast interactif). Pour plus d’informations, voir [BaseUri](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.baseuri#Windows_UI_Xaml_FrameworkElement_BaseUri).
+    * **Ajouter une demande d’image** (notification de type toast interactif). Pour plus d’informations, voir [addImageQuery](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual#attributes-and-elements).
+    * **Éléments visuels**. Une image, une vidéo ou un son. Pour plus d’informations, voir [visual](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
+    * **Entrée**/**Action**/**Sélection** (notification de type toast interactif). Vous permet de laisser les utilisateurs interagir avec la notification. Pour plus d’informations, voir [Notifications toast adaptatives et interactives](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md).
+    * **Liaison** (notification de type vignette interactive). Le modèle de toast. Pour plus d’informations, voir [liaison](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-binding).
+
+    > [!TIP]
+    > Essayez d’utiliser l’application [Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1) pour concevoir et tester vos notifications de type vignettes adaptatives et toasts interactifs.
 
 12. Sélectionnez **Enregistrer comme brouillon** pour continuer à travailler sur la notification plus tard, ou sélectionnez **Envoyer** si vous avez terminé.
 
@@ -88,16 +90,17 @@ Vous pouvez choisir parmi différents modèles de notification.
 -   **Vierge (vignette).** Commencez avec une notification vignette vide que vous pouvez personnaliser. Les vignettes correspondent à la représentation d’une application sur l’écran d’accueil. Les vignettes peuvent être «dynamiques», ce qui signifie que le contenu qu’elles affichent peut changer suite à des notifications.
 -   **Demander des évaluations (toast).** Une notification toast qui demande à vos clients d’évaluer votre application. Lorsque le client sélectionne la notification, la page d’évaluation de votre application dans la boutique s’affiche.
 -   **Demander des commentaires (toast).** Une notification toast qui demande à vos clients de donner leur avis sur votre application. Lorsque le client sélectionne la notification, la page Hub de commentaires de votre application s’affiche.
+    > [!NOTE]
+    > Si vous choisissez ce type de modèle, dans la zone **Lancer**, n’oubliez pas de remplacer l’espace réservé {PACKAGE_FAMILY_NAME} par le nom de la famille de packages (PFN) réel de votre application. Vous trouverez le PFN de votre application sur la page [Identité des applications](view-app-identity-details.md) (**Gestion des applications** > **Identité des applications**).
 
-   > [!NOTE]
-   > Si vous choisissez ce type de modèle, dans la zone **Lancer**, n’oubliez pas de remplacer l’espace réservé {PACKAGE_FAMILY_NAME} par le nom de la famille de packages (PFN) réel de votre application. Vous trouverez le PFN de votre application sur la page [Identité des applications](view-app-identity-details.md) (**Gestion des applications** > **Identité des applications**).
+    ![Zone de lancement de la notification toast de commentaire](images/push-notifications-feedback-toast-launch-box.png)
 
-   ![Zone de lancement de la notification toast de commentaire](images/push-notifications-feedback-toast-launch-box.png)
 -   **Promouvoir (toast).** Une notification toast visant à promouvoir une autre application de votre choix. Lorsque le client sélectionne la notification, la description de l’application dans le Store s’affiche.
-   > [!NOTE]
-   > Si vous choisissez ce type de modèle, dans la zone **Lancer**, n’oubliez pas de remplacer l’espace réservé **{ID du produit à promouvoir ici}** par l’ID Store réel de l’élément que vous voulez promouvoir. Vous trouverez l’ID sur la page [Identité des applications](view-app-identity-details.md) (**Gestion des applications** > **Identité des applications**).
+    > [!NOTE]
+    > Si vous choisissez ce type de modèle, dans la zone **Lancer**, n’oubliez pas de remplacer l’espace réservé **{ID du produit à promouvoir ici}** par l’ID Store réel de l’élément que vous voulez promouvoir. Vous trouverez l’ID sur la page [Identité des applications](view-app-identity-details.md) (**Gestion des applications** > **Identité des applications**).
 
-  ![Zone de lancement de la notification toast de promotion](images/push-notifications-promote-toast-launch-box.png)
+    ![Zone de lancement de la notification toast de promotion](images/push-notifications-promote-toast-launch-box.png)
+
 -   **Promouvoir une vente (toast).** Une notification toast que vous pouvez utiliser pour présenter une offre concernant votre application. Lorsque le client sélectionne la notification, la description de votre application dans la boutique s’affiche.
 -   **Proposition de mise à jour (toast).** Une notification toast qui encourage les clients utilisant une ancienne version de votre application à installer la dernière version. Lorsque le client sélectionne la notification, l’application Store est lancée et affiche la liste **Téléchargements et mises à jour**. Notez que ce modèle peut uniquement être utilisé avec une seule application et que vous ne pouvez pas cibler un segment de clients particulier ni définir une heure d’envoi. Nous planifierons toujours l’envoi de cette notification dans les 24heures et mettrons tout en œuvre pour cibler tous les utilisateurs qui n’utilisent pas encore la dernière version de votre application.
 
@@ -110,23 +113,32 @@ Vous pouvez mesurer l’implication de vos clients par le biais de chaque notifi
 ### <a name="to-measure-notification-performance"></a>Pour mesurer les performances des notifications
 
 1.  Lorsque vous créez une notification, dans la section **Contenu de la notification**, cochez la case **Suivre la fréquence de lancement d’application**.
-2.  Dans votre application, appelez la méthode [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) pour informer le Centre de développement que votre application a été lancée en réponse à une notification ciblée. Cette méthode est fournie par le Microsoft Store Services SDK. Pour plus d’informations sur l’appel de cette méthode, voir [Configurer votre application pour recevoir les notifications du Centre de développement](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+2.  Dans votre application, appelez la méthode [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) pour informer le Centre de développement que votre application a été lancée en réponse à une notification ciblée. Cette méthode est fournie par le Microsoft Store Services SDK. Pour plus d’informations sur l’appel de cette méthode, voir [Configurer votre application pour recevoir les notifications du Centre de développement](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 
 
 ### <a name="to-view-notification-performance"></a>Pour afficher les performances des notifications
 
 Une fois que vous avez configuré la notification et votre application afin de mesurer les performances de la notification comme décrit ci-dessus, vous pouvez utiliser le tableau de bord pour afficher les performances de vos notifications.
 
-1.  Dans le tableau de bord du Centre de développement Windows, développez la section **Engager**, puis sélectionnez **Notifications**.
-2.  Sur la page **Notifications Push ciblées**, sélectionnez **En cours** ou **Terminé**, puis consultez la **vitesse de transmission** et la **fréquence de lancement de l’application** pour voir les performances de haut niveau de chaque notification.
-3.  Pour afficher des informations plus granulaires sur les performances, sélectionnez le nom d’une notification. Dans la section **Statistiques de livraison**, vous pouvez visualiser le **nombre** et le **pourcentage** pour les types d’**états** de notification suivants:
- - **Échec**: la notification n’a pas été transmise pour une raison quelconque. Cela peut se produire, par exemple, si un problème survient dans le service de notification Windows.
- - **Échec dû à l’expiration du canal**: la notification n’a pas pu être transmise car le canal entre l’application et le Centre de développement a expiré. Cela peut se produire, par exemple, si le client n’a pas ouvert votre application depuis longtemps.
- - **Envoi**: la notification est dans la file d’attente pour être envoyée.
- - **Envoyée**: la notification a été envoyée.
- - **Lancée**: la notification a été envoyée, le client a cliqué dessus et votre application s’est ouverte. Notez que cette option suit uniquement les lancements de l’application. Les notifications qui invitent le client à effectuer d’autres actions (ouvrir la boutique pour laisser une évaluation, par exemple) ne sont pas comptabilisées dans cet état.
- - **Inconnu**: nous n’avons pas pu déterminer l’état de cette notification.
+Pour consulter des données détaillées pour chaque notification:
 
+1.  Dans le tableau de bord du Centre de développement Windows, développez la section **Engager**, puis sélectionnez **Notifications**.
+2.  Dans la table de notifications existantes, sélectionnez **en cours** ou **terminé**, puis examinez les colonnes de **taux de remise** et la **fréquence de lancement d’application** pour afficher les performances de haut niveau de chaque notification.
+3.  Pour afficher des informations plus granulaires sur les performances, sélectionnez le nom d’une notification. Dans la section **Statistiques de livraison**, vous pouvez visualiser le **nombre** et le **pourcentage** pour les types d’**états** de notification suivants:
+    * **Échec**: la notification n’a pas été transmise pour une raison quelconque. Cela peut se produire, par exemple, si un problème survient dans le service de notification Windows.
+    * **Échec dû à l’expiration du canal**: la notification n’a pas pu être transmise car le canal entre l’application et le Centre de développement a expiré. Cela peut se produire, par exemple, si le client n’a pas ouvert votre application depuis longtemps.
+    * **Envoi**: la notification est dans la file d’attente pour être envoyée.
+    * **Envoyée**: la notification a été envoyée.
+    * **Lancée**: la notification a été envoyée, le client a cliqué dessus et votre application s’est ouverte. Notez que cette option suit uniquement les lancements de l’application. Les notifications qui invitent le client à effectuer d’autres actions (ouvrir la boutique pour laisser une évaluation, par exemple) ne sont pas comptabilisées dans cet état.
+    * **Inconnu**: nous n’avons pas pu déterminer l’état de cette notification.
+
+Pour analyser les données d’activité utilisateur pour toutes vos notifications:
+
+1.  Dans le tableau de bord du Centre de développement Windows, développez la section **Engager**, puis sélectionnez **Notifications**.
+2.  Dans la page **Notifications** , cliquez sur l’onglet **analyse** . Cet onglet affiche les données suivantes:
+    * Affichages des différents états action utilisateur pour créer votre toasts et notifications action du centre du graphique.
+    * Affichages de carte World click par le biais de taux pour votre toasts et l’action de centre de notifications.
+3. Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de 30D (30jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12mois, ou sur une plage de dates personnalisée que vous spécifiez. Vous pouvez également développer des **filtres** pour filtrer toutes les données par l’application et les parts de marché.
 
 ## <a name="translate-your-notifications"></a>Traduire vos notifications
 
@@ -146,4 +158,4 @@ Votre notification sera automatiquement traduite dans les langues que vous avez 
 - [Vignettes pour les applications UWP](../design/shell/tiles-and-notifications/creating-tiles.md)
 - [Vue d’ensemble des services de notifications Push Windows (WNS)](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)
 - [Application Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1)
-- [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | méthode registerNotificationChannelAsync()](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx)
+- [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | méthode registerNotificationChannelAsync()](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)

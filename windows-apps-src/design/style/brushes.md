@@ -4,18 +4,18 @@ ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: Utiliser des pinceaux
 description: Les objets Brush permettent de peindre les intérieurs ou les contours de formes, de texte et de parties de contrôles, afin que l’objet peint soit visible dans une interface utilisateur.
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 872e93d5714eb832b64efb047079be9dbfc3b617
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 0473ee984461bf46be4ebf866a564f0d51e0cfc5
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396518"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795956"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>Utilisation des pinceaux pour peindre des arrière-plans, des premiers plans et des contours
 
@@ -181,6 +181,10 @@ SolidColorBrush blueBrush = new SolidColorBrush(Windows.UI.Colors.Blue);
 
 ```vb
 Dim blueBrush as SolidColorBrush = New SolidColorBrush(Windows.UI.Colors.Blue)
+```
+
+```cppwinrt
+Windows::UI::Xaml::Media::SolidColorBrush blueBrush{ Windows::UI::Colors::Blue() };
 ```
 
 ```cpp

@@ -9,13 +9,13 @@ ms.date: 05/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: high
-ms.openlocfilehash: cf8f0e0c7382d52eddb783b7fbbaa6ccc23a2a15
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: ad817bbae2fb8b28b95095880aa1a65c391720f3
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935777"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800511"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
@@ -56,7 +56,7 @@ Voici la page des paramètres relative à la famille d’appareils mobiles:
 
  Vous pouvez activer un appareil pour le développement ou simplement pour le chargement indépendant.
 
--   *Applications UWP* est le paramètre par défaut. Si vous ne développez pas des applications, ou si vous utilisez des applications internes spécifiques développées par votre entreprise, ce paramètre doit être activé.
+-   *Applications Microsoft Store* est le paramètre par défaut. Si vous ne développez pas des applications, ou si vous utilisez des applications internes spécifiques développées par votre entreprise, ce paramètre doit être activé.
 -   *Charger la version test des applications* consiste à installer, puis à exécuter ou tester une application qui n’a pas été certifiée par le MicrosoftStore. Il peut par exemple s’agir d’une application utilisée en interne au sein de votre entreprise.
 -   Le *mode développeur* vous permet de procéder au chargement indépendant des applications et d’exécuter des applications à partir de VisualStudio en mode débogage. 
 
@@ -148,6 +148,9 @@ Vous pouvez utiliser plusieurs outils pour déployer une application à partir d
 Parfois, en raison de problèmes réseau ou d’administration, le Mode développeur ne s’installe pas correctement. Le package Mode développeur est nécessaire pour un déploiement **à distance** sur ce PC - à l’aide de Device Portal depuis un navigateur ou de la fonction Découverte d’appareils pour activer SSH--mais pas pour un développement local.  Même si vous rencontrez ces problèmes, vous pouvez toujours déployer votre application localement à l’aide de Visual Studio, ou à partir de cet appareil sur un autre appareil. 
 
 Voir le forum [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) pour rechercher des solutions de contournement à ces problèmes et bien plus encore. 
+
+> [!NOTE]
+> Si le Mode développeur ne s’installe correctement, nous vous invitons à une demande d’évaluation de fichiers. Dans l’application de **Commentaires Hub** , sélectionnez **Ajouter nouveau commentaires**, choisissez la catégorie de la **Plateforme de développement** et de la sous-catégorie **Mode développeur** . Envoi de commentaires permettra à Microsoft de résoudre le problème que vous avez rencontré.
 
 ### <a name="failed-to-locate-the-package"></a>Échec de la localisation du package
 

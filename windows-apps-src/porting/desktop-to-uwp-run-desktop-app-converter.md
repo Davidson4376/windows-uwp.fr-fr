@@ -4,19 +4,19 @@ Description: Run the Desktop Converter App to package a Windows desktop applicat
 Search.Product: eADQiWindows 10XVcnh
 title: Créer un package d'application à l’aide de Desktop App Converter (Pont du bureau)
 ms.author: normesta
-ms.date: 09/18/2017
+ms.date: 08/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d03ad8aa066a4d3b8f5aaaf2532f09d9ce0acbe
-ms.sourcegitcommit: 6382f751f09e2f4aa8406c1ceeb25b5189e23da3
+ms.openlocfilehash: 8748b68bf4efbcc79d0bba475db32f3a2d7cc933
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "2411199"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800563"
 ---
 # <a name="package-an-app-using-the-desktop-app-converter-desktop-bridge"></a>Créer un package d'application à l’aide de Desktop App Converter (Pont du bureau)
 
@@ -270,6 +270,8 @@ Vous pouvez également afficher la liste entière en exécutant la commande ``Ge
 |-Installer &lt;chaîne&gt; |Requis |Le chemin d’accès du programme d’installation de votre application doit être en mesure de s’exécuter sans assistance/silencieusement. Lors d’une conversion sans programme d’installation, il s’agit du chemin d’accès aux répertoires racine de vos fichiers d’application. |
 |-InstallerArguments &lt;chaîne&gt; |Facultatif |Une liste séparée par des virgules ou une chaîne d’arguments pour forcer votre programme d’installation à s’exécuter sans assistance/silencieusement. Ce paramètre est facultatif si votre programme d’installation est un fichier msi. Pour obtenir un fichier journal à partir de votre programme d’installation, indiquez ici l’argument de la journalisation pour le programme d’installation, et utilisez le chemin d’accès &lt;log_folder&gt;, qui est un jeton que le convertisseur remplace par le chemin d’accès approprié. <br><br>**REMARQUE**: les indicateurs de mode sans assistance/silencieux et les arguments de journalisation varient selon les technologies d’installation. <br><br>Exemple d’utilisation de ce paramètre: -InstallerArguments "/silent /log &lt;log_folder&gt;\install.log". Un autre exemple qui ne crée pas de fichier journal peut ressembler à ceci: ```-InstallerArguments "/quiet", "/norestart"``` là encore, vous devez littéralement diriger tous les journaux sur le chemin d’accès du jeton &lt;log_folder&gt; si vous voulez que le convertisseur les capture et les place dans un dossier des journaux finaux.|
 |-InstallerValidExitCodes &lt;Int32&gt; |Facultatif |Une liste séparée par des virgules des codes de sortie qui indiquent que votre programme d’installation a été exécuté correctement (par exemple: 0, 1234, 5678).  Par défaut, le code est 0 pour les éléments non msi et 0, 1641, 3010 pour les éléments msi.|
+|-MakeAppx [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à ce script d’appeler MakeAppx sur la sortie. |
+|-MakeMSIX [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, s’il est présent, indique ce script pour empaqueter la sortie sous la forme d’un Package MSIX. |
 |<a id="identity-params" /><strong>Paramètres d’identité de package</strong>||
 |-PackageName &lt;chaîne&gt; |Requis |Le nom de votre package d’application Windows universelle. Si le centre de développement attribue une identité commençant par un chiffre à votre package, veillez à également transmettre le paramètre <i>-AppId</i> et à utiliser uniquement le suffixe de la chaîne (après le point de séparation à en tant que valeur pour ce paramètre. |
 |-Éditeur &lt;chaîne&gt; |Requis |L’éditeur de votre package d’application Windows universelle |
@@ -291,7 +293,6 @@ Vous pouvez également afficher la liste entière en exécutant la commande ``Ge
 |-PackageArch &lt;chaîne&gt; |Requis |Génère un package selon l’architecture spécifiée. Les options valides sont «x86» ou «x64»; par exemple, -PackageArch x86. Ce paramètre est facultatif. Si ce paramètre n’est pas spécifié, le Convertisseur d’applications de bureau essaie de détecter automatiquement l’architecture du package. Si la détection automatique échoue, le convertisseur choisit par défaut l’architecturex64. |
 |<a id="other-params" /><strong>Paramètres divers</strong>|||
 |-ExpandedBaseImage &lt;chaîne&gt;  |Facultatif |Chemin d’accès complet vers une image de base déjà développée.|
-|-MakeAppx [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à ce script d’appeler MakeAppx sur la sortie. |
 |-LogFile &lt;chaîne&gt;  |Facultatif |Spécifie un fichier journal. S’il est omis, un emplacement temporaire du fichier journal est créé. |
 | -Sign [&lt;SwitchParameter&gt;] |Facultatif |Indique à ce script qu’il doit signer le package d’application Windows produit à l’aide d’un certificat généré à des fins de test. Ce commutateur doit être présent en même temps que le commutateur ```-MakeAppx```. |
 |&lt;Paramètres communs&gt; |Requis |Cette applet de commande prend en charge les paramètres courants: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable* et *OutVariable*. Pour plus d’informations, consultez [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216). |

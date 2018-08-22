@@ -1,7 +1,7 @@
 ---
 author: mijacobs
 description: Révéler est un effet visuel qui permet d'ajouter de la profondeur et une meilleure mise au point des éléments interactifs de votre application.
-title: Principales fonctionnalités de Révéler
+title: Révéler la mise en surbrillance
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 08/9/2017
@@ -13,22 +13,24 @@ pm-contact: kisai
 design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
-ms.localizationpriority: high
-ms.openlocfilehash: b29de0c1d27f852f2292161331401bb185656c17
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816984"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800280"
 ---
-# <a name="reveal-highlight"></a>Principales fonctionnalités de Révéler
+# <a name="reveal-highlight"></a>Révéler la mise en surbrillance
 
-Révéler est un effet visuel qui met en évidence les éléments interactifs, tels que les barres de commandes, lorsque l’utilisateur déplace le pointeur à proximité. 
+![image hero](images/header-reveal-highlight.svg)
+
+Révéler la que mise en surbrillance est un effet d’éclairage qui met en évidence les éléments interactifs, tels que les barres de commandes, lorsque l’utilisateur déplace le pointeur à proximité de leur. 
 
 > **API importantes**: [classe RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [classe RevealBackgroundBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [classe RevealBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [classe RevealBrushHelper](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [classe VisualState](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>Principe de fonctionnement
-L’effet Révéler attire l’attention sur les éléments interactifs en révélant le conteneur de l’élément lorsque le pointeur se trouve à proximité, comme présenté dans l’illustration suivante:
+Afficher en surbrillance les appels attention à des éléments interactifs en affichant le conteneur de l’élément lorsque le pointeur se trouve à proximité, comme indiqué dans cette illustration:
 
 ![Visuel de l’effet Révéler](images/Nav_Reveal_Animation.gif)
 
@@ -56,7 +58,7 @@ L'outil Révéler expose les bordures masquées qui se trouvent autour des objet
 
 ## <a name="how-to-use-it"></a>Mode d’utilisation
 
-Révéler fonctionne automatiquement pour certains contrôles. Pour d’autres contrôles, vous pouvez activer Révéler en attribuant un style spécial au contrôle, comme décrit dans les sections [Activer Révéler sur d’autres contrôles](#enabling-reveal-on-other-controls) et [Activer Révéler sur les contrôles personnalisés](#enabling-reveal-on-custom-controls) de cet article.
+Révéler fonctionne automatiquement pour certains contrôles. Pour d’autres contrôles, vous pouvez activer Reveal en affectant un style spécial pour le contrôle, comme décrit dans les sections [Activation révéler sur d’autres contrôles](#enabling-reveal-on-other-controls) et [L’activation de révéler des contrôles personnalisés](#enabling-reveal-on-custom-controls) de cet article.
 
 ## <a name="controls-that-automatically-use-reveal"></a>Contrôles utilisant automatiquement Révéler
 
@@ -67,7 +69,7 @@ Révéler fonctionne automatiquement pour certains contrôles. Pour d’autres c
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-Ces illustrations montrent l’effet de Révéler sur plusieurs contrôles différents:
+Ces illustrations montrent révéler mettre en surbrillance sur plusieurs contrôles différents:
 
 ![Exemples de Révéler](images/RevealExamples_Collage.png)
 
@@ -132,8 +134,8 @@ Vous pouvez ajouter l’effet Révéler sur des contrôles personnalisés. Avant
 
 
 Ces effets sont définis par deux pinceaux: 
-* Révéler la bordure est défini par **RevealBorderBrush**
-* Révéler l'élément sélectionné est défini par **RevealBackgroundBrush**
+* Bordure révéler est défini par **RevealBorderBrush**
+* Pointage Reveal est défini par **RevealBackgroundBrush**
 
 ```xaml
 <RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
@@ -257,17 +259,20 @@ Voici un modèle complet illustrant l'aspect d'un bouton Révéler:
 
 ### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>Optimisation de l’effet Révéler sur un contrôle personnalisé 
 
-Lorsque vous activez Révéler sur un contrôle personnalisé, un contrôle remodélisé ou une surface de commandes personnalisées, les conseils suivants peuvent vous aider à optimiser l’effet:
+Lorsque vous activez Reveal sur un contrôle personnalisé ou re-basé sur un modèle ou une surface de commandes personnalisée, les conseils suivants peuvent vous aider à optimiser l’effet:
  
 * Pour les éléments adjacents avec des tailles qui ne sont pas alignées en hauteur ni en largeur (en particulier dans les listes): supprimez le comportement d’approche de bordure et laissez les bordures apparaître par pointage uniquement.
 * Pour les éléments de commandes qui entrent et sortent fréquemment de l’état désactivé: placez le pinceau d’approche de bordure sur les plaques de fond des éléments ainsi que sur leurs bordures afin de mettre en avant leur état.
 * Pour les éléments de commandes adjacents qui sont si proches qu’ils se touchent: ajoutez une marge de 1pixel entre les deuxéléments. 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
+### <a name="do"></a>Procédez comme:
 - Utilisez Révéler sur des éléments sur lesquels l'utilisateur peut agir (barres de commandes, menus de navigation)
 - Utilisez Révéler dans les regroupements d’éléments interactifs qui n’ont pas de séparateurs visuels par défaut (listes, rubans)
 - Utilisez Révéler dans les zones à densité élevée d'éléments interactifs (scénarios de commandes)
 - Ajoutez une marge de 1pixel entre les éléments Révéler
+
+### <a name="dont"></a>Pratiques déconseillées
 - N’utilisez pas Révéler sur le contenu statique (arrière-plans, texte)
 - N’utilisez pas Révéler sur les fenêtres contextuelles, les menus volants ou les listes déroulantes
 - N’utilisez pas Révéler dans des situations d'isolement ou d'unicité

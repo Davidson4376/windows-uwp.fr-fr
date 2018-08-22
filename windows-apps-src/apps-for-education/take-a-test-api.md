@@ -4,26 +4,24 @@ title: API JavaScript d’Examen.
 author: PatrickFarley
 ms.author: pafarley
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
-ms.date: 10/06/2017
+ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: Windows 10, uwp, éducation
 ms.localizationpriority: medium
-ms.openlocfilehash: 43edadfba169ddae85818f8ef1dbd1e7f4adba64
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 38596ad12ac309db5dc60e4a5183eee9bf8c7b7c
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691358"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792583"
 ---
 # <a name="take-a-test-javascript-api"></a>API JavaScript d’Examen
 
-[Examen](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) est une application de navigateur qui génère des évaluations en ligne dans un environnement verrouillé pour des examens dont les enjeux sont importants. Elle permet aux enseignants de se concentrer sur le contenu de l’évaluation plutôt que sur la façon de proposer un environnement de test sécurisé. Pour y parvenir, elle utilise une API JavaScript que n’importe quelle application web peut utiliser. L’API d’Examen prend en charge la [norme d’API de navigateur SBAC](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) pour des examens courants dont les enjeux sont importants.
+[Effectuer un Test](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) est une application basée sur navigateur UWP qui restitue verrouillé des évaluations en ligne pour les tests de haut niveau-enjeux, enseignants concentrer sur l’évaluation du contenu au lieu de la façon de fournir un environnement de test sécurisé. Pour y parvenir, elle utilise une API JavaScript que n’importe quelle application web peut utiliser. L’API d’Examen prend en charge la [norme d’API de navigateur SBAC](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) pour des examens courants dont les enjeux sont importants.
 
-Consultez [Informations techniques de référence sur l’application Examen](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) pour plus d’informations sur l’application.
-
-Pour obtenir de l’aide pour la résolution des problèmes, consultez [Résoudre les problèmes de Microsoft Examen avec l’observateur d’événements](troubleshooting.md).
+Consultez [Informations techniques de référence sur l’application Examen](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) pour plus d’informations sur l’application. Pour obtenir de l’aide pour la résolution des problèmes, consultez [Résoudre les problèmes de Microsoft Examen avec l’observateur d’événements](troubleshooting.md).
 
 ## <a name="reference-documentation"></a>Documentation de référence
 Les API Examen existent dans les espaces de noms suivants. Notez que toutes les API dépendent d’un objet `SecureBrowser` global.
@@ -32,12 +30,9 @@ Les API Examen existent dans les espaces de noms suivants. Notez que toutes les 
 |-----------|-------------|
 |[espace de noms de sécurité](#security-namespace)|Contient les API qui permettent de verrouiller le périphérique pour le test et de mettre en œuvre un environnement de test. |
 
-> [!NOTE]
-> L’espace de nom de conversion de texte par synthèse vocale (TTS) a été supprimé à partir de Windows10 version1709. L’[API de synthèse vocale de MicrosoftEdge](https://blogs.windows.com/msedgedev/2016/06/01/introducing-speech-synthesis-api/), une implémentation de l’[API Microsoft Speech W3C](https://dvcs.w3.org/hg/speech-api/raw-file/tip/webspeechapi.html), est désormais la solution recommandée pour l’implémentation de la conversion de texte par synthèse vocale.
-
 ### <a name="security-namespace"></a>Espace de noms de sécurité
 
-L’espace de noms de sécurité vous permet de verrouiller l’appareil, de vérifier la liste des processus utilisateur et système, d’obtenir des adresses IP et MAC, et d’effacer des ressources web mises en cache.
+L’espace de noms de sécurité vous permet de verrouiller le périphérique, vérifiez la liste des processus du système et utilisateur, obtenir des adresses MAC et IP, et désactivez les ressources web mis en cache.
 
 | Méthode | Description   |
 |--------|---------------|

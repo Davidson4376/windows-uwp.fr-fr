@@ -8,23 +8,21 @@ ms.date: 09/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: Windows 10, uwp, portail de périphérique
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e73519f57d9b08e08a7400f322367b6634cf945
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: e70ab7c7fba8b8da9a0115a86a13f08e4ef3ebe2
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817720"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792479"
 ---
-# <a name="device-portal-for-hololens"></a>Portail d’appareil pour HoloLens
+# <a name="device-portal-for-hololens"></a>Device Portal pour HoloLens
 
 
 ## <a name="set-up-device-portal-on-hololens"></a>Configurer Device Portal sur HoloLens
 
 ### <a name="enable-device-portal"></a>Activer Device Portal
-
-**Pour activer Device Portal**
 
 1. Mettez HoloLens sous tension et allumez l’appareil.
 2. Effectuer le geste qui consiste à [maintenir sa paume de main vers le haut en serrant ses doigts et à les ouvrir](https://dev.windows.com/holographic/Gestures.html#Bloom) pour lancer le menu principal.
@@ -37,7 +35,7 @@ ms.locfileid: "1817720"
 
 ### <a name="pair-your-device"></a>Jumeler votre appareil
 
-### <a name="connect-over-wi-fi"></a>Se connecter via Wi-Fi 
+#### <a name="connect-over-wi-fi"></a>Se connecter via Wi-Fi 
 
 1. Connectez votre HoloLens au Wi-Fi.
 2. Recherchez l’adresse IP de votre appareil. Recherchez l’adresse IP de l’appareil sous Paramètres &gt; Réseau et Internet &gt; Wi-Fi &gt; Options avancées.
@@ -46,18 +44,21 @@ ms.locfileid: "1817720"
 3. À partir d’un navigateur web sur votre PC, accédez à `https://<YOUR_HOLOLENS_IP_ADDRESS>`
     - Le navigateur affiche le message suivant: «Le certificat de sécurité de ce site web pose problème.». Cela se produit car le certificat envoyé à Device Portal est un certificat de test. Vous pouvez ignorer cette erreur de certificat pour le moment et continuer.
 
-### <a name="connect-over-usb"></a>Se connecter via USB 
+#### <a name="connect-over-usb"></a>Se connecter via USB 
 
 1. Installez les outils pour vous assurer que Visual Studio Update1 et les outils de développement Windows10 sont installés sur votre PC. Cela permet d’activer la connectivité USB.
 2. Connectez votre HoloLens au PC à l’aide d’un câble micro-USB.
 3. À partir d’un navigateur web sur votre PC, accédez à `http://127.0.0.1:10080`.
 
-### <a name="connect-to-an-emulator"></a>Se connecter à un émulateur 
+> [!IMPORTANT]
+> Si votre ordinateur ne peut pas trouver le périphérique, essayez d’utiliser l’adresse IP de réseau réel de l’appareil HoloLens, plutôt que `http://127.0.0.1:10080`.
+
+#### <a name="connect-to-an-emulator"></a>Se connecter à un émulateur 
 
 Vous pouvez également utiliser Device Portal avec votre émulateur. Pour vous connecter à Device Portal, utilisez la barre d’outils. Cliquez sur cette icône:
 - Ouvrir Device Portal: ouvre Windows Device Portal pour le système d’exploitation HoloLens dans l’émulateur.
 
-### <a name="create-a-username-and-password"></a>Créer un nom d’utilisateur et un mot de passe 
+#### <a name="create-a-username-and-password"></a>Créer un nom d’utilisateur et un mot de passe 
 
 Vous devrez créer un nom d’utilisateur et un mot de passe sur Device Portal de votre HoloLens lors de votre première connexion.
 1. Dans un navigateur web sur votre PC, entrez l’adresse IP de l’HoloLens. La page d’accès à la configuration s’affiche.
@@ -69,7 +70,7 @@ Vous devrez créer un nom d’utilisateur et un mot de passe sur Device Portal d
 
 Si vous souhaitez modifier ce nom d’utilisateur ou ce mot de passe, vous pouvez à tout moment répéter ce processus en accédant à la page de sécurité de l’appareil en cliquant sur le lien Sécurité situé en haut à droite ou en accédant à : `https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`.
 
-### <a name="security-certificate"></a>Certificat de sécurité 
+#### <a name="security-certificate"></a>Certificat de sécurité 
 
 Si une «erreur de certificat» s’affiche dans votre navigateur, vous pouvez la résoudre en créant une relation d’approbation avec l’appareil.
 

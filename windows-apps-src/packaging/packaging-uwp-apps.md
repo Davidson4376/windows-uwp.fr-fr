@@ -4,7 +4,7 @@ ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: Création de packages d’application UWP
 description: Pour distribuer ou vendre votre application de plateforme Windows universelle (UWP), vous devez créer un package d’application pour elle.
 ms.author: lahugh
-ms.date: 11/16/2017
+ms.date: 06/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,13 +12,13 @@ keywords: windows10, uwp
 f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
-ms.localizationpriority: high
-ms.openlocfilehash: 5509f286ddfdc3d5f039b975322c2def922a936c
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: eb930c5e6b2c1c1f864f2e63fbce97c89bb89e1f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816974"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2799910"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Créer un package d’application UWP avec Visual Studio
 

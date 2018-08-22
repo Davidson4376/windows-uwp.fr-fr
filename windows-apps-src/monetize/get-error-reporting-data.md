@@ -10,16 +10,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs
 ms.localizationpriority: medium
-ms.openlocfilehash: 2937d0d9ebfc8c9450692a01e77e57e68c896dba
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: 4c03ea17e111f86ad390dafe5360db9d10864edc
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989473"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794798"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>Obtenir les données de signalement d’erreurs pour votre application
 
-Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour récupérer le rapport complet des erreurs de votre app au formatJSON, correspondant à une période donnée et à d’autres filtres facultatifs. Ces informations sont également disponibles dans la section **Échecs** du [rapport d’intégrité](../publish/health-report.md) dans le tableau de bord du Centre de développement Windows.
+Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour récupérer le rapport complet des erreurs de votre app au formatJSON, correspondant à une période donnée et à d’autres filtres facultatifs. Cette méthode peut récupérer uniquement les erreurs qui se sont produites au cours des 30 derniers jours. Ces informations sont également disponibles dans la section **Échecs** du [rapport d’intégrité](../publish/health-report.md) dans le tableau de bord du Centre de développement Windows.
 
 Vous pouvez récupérer des informations d’erreur supplémentaires à l’aide des méthodes [obtenir des informations les erreurs](get-details-for-an-error-in-your-app.md), [obtenir la trace de la pile](get-the-stack-trace-for-an-error-in-your-app.md) et [télécharger le fichier CAB](download-the-cab-file-for-an-error-in-your-app.md).
 
@@ -36,7 +36,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
 
-| Méthode | URI de requête                                                          |
+| Méthode | URI de la requête                                                          |
 |--------|----------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits``` |
 
@@ -53,13 +53,13 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 | Paramètre        | Type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
 | applicationId | chaîne | L’ID WindowsStore de l’application pour laquelle vous souhaitez récupérer les données de rapport d’erreur. L’ID WindowsStore est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8. |  Oui  |
-| startDate | date | Dans la plage de dates, la date de début de la récupération des données de rapport d’erreurs. La valeur par défaut est la date actuelle. Si *aggregationLevel* is **day**, **week** ou **month**, ce paramètre spécifiera une date dans le format ```mm/dd/yyyy```. Si *aggregationLevel* est **hour**, ce paramètre peut spécifier une date au format ```mm/dd/yyyy```ou la date et l'heure au format ```yyyy-mm-dd hh:mm:ss```.  |  Non  |
+| startDate | date | Dans la plage de dates, la date de début de la récupération des données de rapport d’erreurs. La valeur par défaut est la date actuelle. Si *aggregationLevel* is **day**, **week** ou **month**, ce paramètre spécifiera une date dans le format ```mm/dd/yyyy```. Si *aggregationLevel* est **hour**, ce paramètre peut spécifier une date au format ```mm/dd/yyyy```ou la date et l'heure au format ```yyyy-mm-dd hh:mm:ss```.<p/><p/>**Remarque:**&nbsp;&nbsp;cette méthode peut récupérer uniquement les erreurs qui se sont produites au cours des 30 derniers jours.  |  Non  |
 | endDate | date | Dans la plage de dates, la date de fin de la récupération des données de rapports d’erreurs. La valeur par défaut est la date du jour. Si *aggregationLevel* is **day**, **week** ou **month**, ce paramètre spécifiera une date dans le format ```mm/dd/yyyy```. Si *aggregationLevel* est **hour**, ce paramètre peut spécifier une date au format ```mm/dd/yyyy```ou la date et l'heure au format ```yyyy-mm-dd hh:mm:ss```. |  Non  |
 | top | entier | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
 | skip | entier | Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10000 et skip=0 pour obtenir les 10000 premières lignes de données, top=10000 et skip=10000 pour obtenir les 10000 lignes suivantes, et ainsi de suite. |  Non  |
 | filter |chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Vous pouvez spécifier les champs suivants dans le corps de réponse:<p/><ul><li>**applicationName**</li><li>**failureName**</li><li>**failureHash**</li><li>**symbol**</li><li>**osVersion**</li><li>**osRelease**</li><li>**eventType**</li><li>**market**</li><li>**deviceType**</li><li>**packageName**</li><li>**packageVersion**</li><li>**date**</li></ul> | Non   |
 | aggregationLevel | chaîne | Indique la plage de temps pour laquelle vous souhaitez récupérer les données agrégées. Il peut s’agit des chaînes suivantes: **hour**, **day**, **week** ou **month**. Par défaut, la valeur est **day**. Si vous spécifiez **week** ou **month**, les valeurs *failureName* et *failureHash* sont limitées à 1 000 compartiments.<p/><p/>**Remarque:**&nbsp;&nbsp;si vous spécifiez **hour**, vous pouvez uniquement récupérer des données d’erreur survenues dans les dernières 72heures. Pour récupérer les données d’erreur datant de plus de 72heures, spécifiez **day** ou l’un des autres niveaux d’agrégation.  | Non |
-| orderby | chaîne | Une instruction commandant les valeurs des données de résultat. La syntaxe est *orderby=field [order],field [order],...*. Le paramètre *field* peut être l’une des chaînes suivantes:<ul><li>**applicationName**</li><li>**failureName**</li><li>**failureHash**</li><li>**symbol**</li><li>**osVersion**</li><li>**osRelease**</li><li>**eventType**</li><li>**market**</li><li>**deviceType**</li><li>**packageName**</li><li>**packageVersion**</li><li>**date**</li></ul><p>Le paramètre *order*, facultatif, peut comporter les valeurs **asc** ou **desc** afin de spécifier l’ordre croissant ou décroissant pour chaque champ. La valeur par défaut est **asc**.</p><p>Voici un exemple de chaîne *orderby*: *orderby=date,market*</p> |  Non  |
+| orderby | chaîne | Une instruction commandant les valeurs des données de résultat. La syntaxe est *orderby=field [order],field [order],...*. Le paramètre *field* peut être l’une des chaînes suivantes:<ul><li>**applicationName**</li><li>**failureName**</li><li>**failureHash**</li><li>**symbol**</li><li>**osVersion**</li><li>**osRelease**</li><li>**eventType**</li><li>**market**</li><li>**deviceType**</li><li>**packageName**</li><li>**packageVersion**</li><li>**date**</li></ul><p>Le paramètre facultatif *order* peut avoir la valeur **asc** ou **desc** pour spécifier l’ordre croissant ou décroissant de chaque champ. La valeur par défaut est **asc**.</p><p>Voici un exemple de chaîne *orderby*: *orderby=date,market*</p> |  Non  |
 | groupby | chaîne | Une instruction qui applique l’agrégation des données uniquement sur les champs spécifiés. Vous pouvez spécifier les champs suivants:<ul><li>**failureName**</li><li>**failureHash**</li><li>**symbol**</li><li>**osVersion**</li><li>**eventType**</li><li>**market**</li><li>**deviceType**</li><li>**packageName**</li><li>**packageVersion**</li></ul><p>Les lignes de données renvoyées comportent les champs spécifiés dans le paramètre *groupby*, ainsi que dans les paramètres suivants :</p><ul><li>**date**</li><li>**applicationId**</li><li>**applicationName**</li><li>**deviceCount**</li><li>**eventCount**</li></ul><p>Le paramètre *groupby* peut être utilisé avec le paramètre *aggregationLevel*. Exemple: *&amp;groupby=failureName,market&amp;aggregationLevel=week*</p></p> |  Non  |
 
 
@@ -96,7 +96,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | date            | chaîne  | Date de début des données d’erreur, au format ```yyyy-mm-dd```. Si la requête spécifie un jour unique, cette valeur est cette date. Si la requête spécifie une plage de dates plus étendue, cette valeur correspond à la première date de la plage de dates. Pour les demandes qui spécifient un *aggregationLevel* en **hour**, cette valeur inclut également une valeur d’heure au format ```hh:mm:ss```.  |
 | applicationId   | chaîne  | ID WindowsStore de l’application dont vous souhaitez récupérer les données d’erreur.   |
 | applicationName | chaîne  | Nom d’affichage de l’application.   |
-| failureName     | chaîne  | Le nom de l'échec, qui est constitué de quatre parties: une ou plusieurs classes de problème, un code de vérification d’exception/d’erreur, le nom de l'image où l’échec s’est produit et le nom de la fonction associée.  |
+| failureName     | chaîne  | Le nom de l'échec, qui se compose de quatre partie: une ou plusieurs classes de problème, un code de vérification d'exception ou de bogue, le nom de l'image où l'erreur s'est produite et le nom de la fonction associée.  |
 | failureHash     | chaîne  | L’identificateur unique de l’erreur.   |
 | symbol          | chaîne  | Le symbole affecté à cette erreur. |
 | osVersion       | chaîne  | L'une des chaînes suivantes qui spécifie la version du système d’exploitation sur lequel l'erreur s’est produite:<ul><li>**WindowsPhone7.5**</li><li>**Windows Phone 8**</li><li>**Windows Phone 8.1**</li><li>**Windows Phone 10**</li><li>**Windows8**</li><li>**Windows8.1**</li><li>**Windows10**</li><li>**Inconnu**</li></ul>  |
@@ -141,7 +141,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 ```
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="related-topics"></a>Rubriques associées
 
 * [Rapport d’intégrité](../publish/health-report.md)
 * [Obtenir les informations sur une erreur de votre application](get-details-for-an-error-in-your-app.md)

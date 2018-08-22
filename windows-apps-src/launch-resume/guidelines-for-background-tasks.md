@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: tâche d’arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
-ms.openlocfilehash: 86bc0f616cef32fc217621ddbb9730c6cf4a620a
-ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
-ms.translationtype: HT
+ms.openlocfilehash: 7adfecbe216dce25d0f80eb3ef1f528196299db4
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "1862268"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792005"
 ---
 # <a name="guidelines-for-background-tasks"></a>Recommandations en matière de tâches en arrière-plan
 

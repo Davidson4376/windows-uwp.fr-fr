@@ -4,18 +4,18 @@ Description: The Store listings section of the app submission process is where y
 title: Créer des descriptions d’application dans le Store
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 04/30/2018
+ms.date: 06/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, description, page du store, notes de publication, titre
-ms.localizationpriority: high
-ms.openlocfilehash: 871eb3cd8b8bdfd0cf12859dcb401df2158bf5b7
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816944"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795809"
 ---
 # <a name="create-app-store-listings"></a>Créer des descriptions d’application dans le Store
 
@@ -42,12 +42,22 @@ Dans la section **Langues supplémentaires de description dans le Store**, vous 
 
 Lorsque vous avez terminé vos sélections, cliquez sur **Enregistrer** pour revenir à la page de vue d’ensemble de la soumission.
 
-> [!NOTE]
-> Lorsque vous créez une description dans le Store dans une langue qui n’est pas prise en charge par vos packages, vous devez indiquer lequel de vos noms d’application réservés doit s’afficher dans cette description, dans la mesure où il n’existe aucun package associé dans cette langue à partir duquel extraire le nom. Le nom que vous choisissez ici s’applique seulement à la description du Store pour cette langue et n’a aucune répercussion sur le nom affiché lorsqu’un client installe l’application.
+## <a name="add-and-edit-store-listing-info"></a>Ajouter et modifier des informations d’annonce
 
-Pour modifier une description dans le Store, cliquez sur le nom de la langue dans la page de présentation de la soumission.
+Pour modifier une liste des magasins, sélectionnez le nom de la langue dans la page Vue d’ensemble d’envoi.
 
 Les champs associés à votre description par défaut dans le Store pour la langue sélectionnée se trouvent en haut de la page **Description dans le Store**. Ces champs sont visibles de tous vos clients, sauf si certains packages ciblent des versions antérieures du système d’exploitation (Windows8.x ou version antérieure; Windows Phone8.x ou version antérieure) ou si vous créez des descriptions dans le Store spécifiques à la plateforme incluant différentes captures d’écran ou informations à présenter aux clients sur les versions de système d’exploitation spécifiées. Pour plus d’informations, consultez [Créer des descriptions spécifiques à la plateforme ](create-platform-specific-store-listings.md).
+
+## <a name="product-name"></a>Nom du produit
+
+Cette zone de liste déroulante vous permet de spécifier quel nom doit être utilisé dans la liste magasin (si vous avez réservé plus d’un nom pour l’application).
+
+Si vous avez téléchargé les modules dans la même langue que la liste magasin sur lequel vous travaillez, le nom utilisé dans les packages est sélectionné. Si vous devez [Renommer l’application](manage-app-names.md#rename-an-app-that-has-already-been-published) une fois qu’il est déjà été publié, vous pouvez sélectionner un autre nom réservé lorsque vous créez une nouvelle soumission des packages qui utilisent le nouveau nom.
+
+Si vous n’avez pas téléchargé les packages de la langue en cours et vous avez réservé plusieurs noms, vous devez sélectionner l’un de vos noms réservés à une application, car il n’est pas un package associé dans cette langue à partir de laquelle extraire le nom.
+
+> [!NOTE]
+> Le **nom du produit** que vous sélectionnez uniquement s’applique à la liste dans la langue des magasins dans lequel vous travaillez. Il n’influe pas sur le nom affiché lorsqu’un client installe l’application; Ce nom est fourni à partir du manifeste du package qui est installé. Pour éviter toute confusion, nous vous recommandons que de chaque langue packages et Store listing le même nom.
 
 ## <a name="description"></a>Description
 
@@ -91,8 +101,9 @@ Vous pouvez soumettre des ressources supplémentaires pour votre produit, y comp
 
 Pour plus d’informations, voir [Illustrations supplémentaires](app-screenshots-and-images.md#additional-art-assets).
 
+<a id="supplemental-information" />
 
-## <a name="supplemental-information"></a>Informations supplémentaires
+## <a name="supplemental-fields"></a>Champs supplémentaires
 
 Les champs de cette section sont tous facultatifs. Passez en revue les informations ci-dessous pour déterminer si ces informations ont du sens pour votre soumission. En particulier, le champ **Brève description** est recommandée pour la plupart des soumissions. D’autres champs aident à fournir une expérience optimale pour votre produit dans différents scénarios.
 
@@ -123,7 +134,7 @@ Une description plus courte et plus accrocheuse peut être utilisé dans la part
 
 Concernant les jeux, la brève description peut également apparaître dans la section Informations du Hub de jeux sur XboxOne.
 
-Ce champ est limité à 500caractères.
+Pour obtenir les meilleurs résultats, conservez votre description courte sous 270 caractères. Le champ a une limite de 500 caractères, mais dans certains affichages, seuls les premiers 270 caractères seront affichera (avec un lien pour afficher le reste de la description courte disponible).
 
 
 ### <a name="additional-system-requirements"></a>Configuration système supplémentaire requise
@@ -155,7 +166,7 @@ Si vous voulez fournir des informations supplémentaires de droits d’auteur et
 
 ### <a name="additional-license-terms"></a>Termes de licence supplémentaires
 
-Laissez ce champ vide si vous voulez que votre application possède une licence conforme aux **Termes du contrat de licence d’application standard** (vers lesquels pointe un lien situé dans le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058)).
+Laissez ce champ vide si vous voulez que votre application possède une licence conforme aux **Termes du contrat de licence d’application standard** (vers lesquels pointe un lien situé dans le [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)).
 
 Si vos termes de contrat de licence diffèrent de ceux du **Contrat de licence d’application standard**, entrez-les ici.
 

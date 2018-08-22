@@ -6,18 +6,18 @@ title: Homologues d’automatisation personnalisés
 label: Custom automation peers
 template: detail.hbs
 ms.author: mhopkins
-ms.date: 09/25/2017
+ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bab0ac8b89815a67be2c963979b3712f022248b
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: a2f9caf8519aa76ef9487e5318a238a6e1d53fe2
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1656564"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800535"
 ---
 # <a name="custom-automation-peers"></a>Homologues d’automatisation personnalisés  
 
@@ -122,7 +122,6 @@ Si vous écrivez une classe de contrôle personnalisé et envisagez de fournir �
 
 Par exemple, le code qui suit déclare que le contrôle personnalisé `NumericUpDown` doit utiliser l’homologue `NumericUpDownPeer` pour les besoins de UIAutomation.
 
-C#
 ```csharp
 using Windows.UI.Xaml.Automation.Peers;
 ...
@@ -138,7 +137,6 @@ public class NumericUpDown : RangeBase {
 }
 ```
 
-VisualBasic
 ```vb
 Public Class NumericUpDown
     Inherits RangeBase
@@ -151,7 +149,29 @@ Public Class NumericUpDown
 End Class
 ```
 
-C++
+```cppwinrt
+// NumericUpDown.idl
+namespace MyNamespace
+{
+    runtimeclass NumericUpDown : Windows.UI.Xaml.Controls.Primitives.RangeBase
+    {
+        NumericUpDown();
+        Int32 MyProperty;
+    }
+}
+
+// NumericUpDown.h
+...
+struct NumericUpDown : NumericUpDownT<NumericUpDown>
+{
+    ...
+    Windows::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer()
+    {
+        return winrt::make<MyNamespace::implementation::NumericUpDownAutomationPeer>(*this);
+    }
+};
+```
+
 ```cpp
 //.h
 public ref class NumericUpDown sealed : Windows::UI::Xaml::Controls::Primitives::RangeBase
@@ -160,7 +180,7 @@ public ref class NumericUpDown sealed : Windows::UI::Xaml::Controls::Primitives:
 protected:
     virtual AutomationPeer^ OnCreateAutomationPeer() override
     {
-         return ref new NumericUpDown(this);
+         return ref new NumericUpDownAutomationPeer(this);
     }
 };
 ```
@@ -193,20 +213,38 @@ Si vous dérivez directement de [**ContentControl**](https://msdn.microsoft.com/
 ## <a name="initialization-of-a-custom-peer-class"></a>Initialisation d’une classe homologue personnalisée  
 L’homologue d’automatisation doit définir un constructeur de type sécurisé qui utilise une instance du contrôle propriétaire pour l’initialisation de base. Dans l’exemple qui suit, l’implémentation transmet la valeur *owner* à la base [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) et, en fin de compte, c’est le [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) qui utilise *owner* pour définir [**FrameworkElementAutomationPeer.Owner**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.owner).
 
-C#
 ```csharp
 public NumericUpDownAutomationPeer(NumericUpDown owner): base(owner)
 {}
 ```
 
-VisualBasic
 ```vb
 Public Sub New(owner As NumericUpDown)
     MyBase.New(owner)
 End Sub
 ```
 
-C++
+```cppwinrt
+// NumericUpDownAutomationPeer.idl
+import "NumericUpDown.idl";
+namespace MyNamespace
+{
+    runtimeclass NumericUpDownAutomationPeer : Windows.UI.Xaml.Automation.Peers.AutomationPeer
+    {
+        NumericUpDownAutomationPeer(NumericUpDown owner);
+        Int32 MyProperty;
+    }
+}
+
+// NumericUpDownAutomationPeer.h
+...
+struct NumericUpDownAutomationPeer : NumericUpDownAutomationPeerT<NumericUpDownAutomationPeer>
+{
+    ...
+    NumericUpDownAutomationPeer(MyNamespace::NumericUpDown const& owner);
+};
+```
+
 ```cpp
 //.h
 public ref class NumericUpDownAutomationPeer sealed :  Windows::UI::Xaml::Automation::Peers::RangeBaseAutomationPeer
@@ -225,7 +263,6 @@ Au moment d’implémenter un homologue pour un contrôle personnalisé, remplac
 
 Au minimum, quand vous définissez une nouvelle classe homologue, implémentez la méthode [**GetClassNameCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getclassnamecore) comme le décrit l’exemple suivant.
 
-C#
 ```csharp
 protected override string GetClassNameCore()
 {
@@ -244,7 +281,6 @@ Certaines technologies d’assistance utilisent la valeur [**GetAutomationContro
 
 Votre implémentation de [**GetAutomationControlTypeCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore) décrit votre contrôle en renvoyant une valeur [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182). Bien qu’il soit possible de renvoyer **AutomationControlType.Custom**, vous devez renvoyer l’un des types de contrôles plus spécifiques s’il décrit de manière précise les principaux scénarios de votre contrôle. En voici un exemple.
 
-C#
 ```csharp
 protected override AutomationControlType GetAutomationControlTypeCore()
 {
@@ -268,7 +304,7 @@ Si une classe homologue hérite d’un autre homologue et si tous les signalemen
 
 Bien qu’il ne s’agisse pas de code littéral, cet exemple ressemble à peu près à l’implémentation de [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) déjà présente dans [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506).
 
-C#
+
 ```csharp
 protected override object GetPatternCore(PatternInterface patternInterface)
 {
@@ -288,7 +324,7 @@ Un homologue peut signaler qu’il prend en charge plusieurs modèles. Dans ce c
 
 Voici un exemple de substitution de [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) pour un homologue personnalisé. Il indique la prise en charge de deux modèles, [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) et [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653). Il s’agit ici d’un contrôle d’affichage multimédia qui peut s’afficher en plein écran (mode bascule) et qui possède une barre de progression dans laquelle les utilisateurs peuvent sélectionner une position (contrôle de plage). Ce code provient de l’[exemple d’accessibilitéXAML](http://go.microsoft.com/fwlink/p/?linkid=238570).
 
-C#
+
 ```csharp
 protected override object GetPatternCore(PatternInterface patternInterface)
 {
@@ -311,7 +347,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 ### <a name="forwarding-patterns-from-sub-elements"></a>Transfert de modèles à partir de sous-éléments  
 Une implémentation de méthode [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) peut également spécifier un sous-élément ou une partie comme fournisseur de modèle pour son hôte. Cet exemple reproduit la manière dont [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) transfère la gestion des modèles de défilement à l’homologue de son contrôle [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) interne. Pour spécifier un sous-élément pour la gestion des modèles, ce code obtient l’objet sous-élément, crée un homologue pour le sous-élément à l’aide de la méthode [**FrameworkElementAutomationPeer.CreatePeerForElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.createpeerforelement), puis renvoie le nouvel homologue.
 
-C#
+
 ```csharp
 protected override object GetPatternCore(PatternInterface patternInterface)
 {
@@ -403,7 +439,7 @@ Il est préférable de planifier l’accessibilité au moment de concevoir l’A
 
 Dans le cadre d’une implémentation classique, les API du fournisseur appellent d’abord [**Owner**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.owner) pour accéder à l’instance de contrôle au moment de l’exécution. Les méthodes de comportement nécessaires peuvent ensuite être appelées dans cet objet.
 
-C#
+
 ```csharp
 public class IndexCardAutomationPeer : FrameworkElementAutomationPeer, IExpandCollapseProvider {
     private IndexCard ownerIndexCard;
@@ -447,7 +483,7 @@ Les clients UI Automation peuvent s’abonner à des événements d’automation
 
 L’exemple de code suivant montre comment se procurer l’objet homologue à partir du code de définition de contrôle et comment appeler une méthode pour déclencher un événement à partir de cet homologue. À des fins d’optimisation, le code détermine s’il existe des écouteurs pour ce type d’événement. Le fait de déclencher l’événement et de créer l’objet homologue uniquement lorsqu’il y a des écouteurs permet d’éviter toute surcharge inutile et aide à maintenir la réactivité du contrôle.
 
-C#
+
 ```csharp
 if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 {

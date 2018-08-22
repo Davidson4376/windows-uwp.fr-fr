@@ -10,16 +10,19 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: d9c2ac6ad4de6dc67cc4c661e055ad43ecb143ec
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 43545f2a8e1965124560479d399df79d247c5f05
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692800"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2789804"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>Utiliser la bibliothèque Open Source Computer Vision Library (OpenCV) avec MediaFrameReader
 
-Cet article vous montre comment utiliser l’Open Source Computer Vision Library (OpenCV), une bibliothèque de code natif qui fournit un large éventail d'algorithmes de traitement d’image, avec la classe [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader), qui peut lire des images multimédias depuis plusieurs sources simultanées. L’exemple de code de cet article vous guide dans la création d’une application simple qui obtient des images à partir d’un capteur de couleur, rend chaque image floue à l’aide de la bibliothèque OpenCV et affiche ensuite l’image traitée dans un contrôle **Image** XAML.
+Cet article vous montre comment utiliser l’Open Source Computer Vision Library (OpenCV), une bibliothèque de code natif qui fournit un large éventail d'algorithmes de traitement d’image, avec la classe [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader), qui peut lire des images multimédias depuis plusieurs sources simultanées. L’exemple de code de cet article vous guide dans la création d’une application simple qui obtient des images à partir d’un capteur de couleur, rend chaque image floue à l’aide de la bibliothèque OpenCV et affiche ensuite l’image traitée dans un contrôle **Image** XAML. 
+
+>[!NOTE]
+>Les packages OpenCV.Win.Core et OpenCV.Win.ImgProc ne sont pas régulièrement mis à jour, mais sont toujours recommandés pour créer un OpenCVHelper, comme décrit dans cette page.
 
 Cet article repose sur le contenu de deux autres articles:
 
@@ -29,7 +32,8 @@ Cet article repose sur le contenu de deux autres articles:
 
 Outre ces articles, pour afficher et télécharger un exemple de travail complet, de bout en bout, du scénario décrit dans cet article, voir la [Profils d’appareil photo + OpenCV](https://go.microsoft.com/fwlink/?linkid=854003) dans le référentiel Windows Universal Samples GitHub.
 
-Inclure la bibliothèque OpenCV dans un projet d’application UWP à travers des packages NuGet. L’exemple de cet article utilise les packages NuGet OpenCV.Win.Core et OpenCV.Win.ImgProc. L’article [Traiter des images bitmap logicielles avec OpenCV](process-software-bitmaps-with-opencv.md) comprend des instructions pour ajouter ces packages à votre solution. Vous trouverez des informations sur le développement avec OpenCV à l’adresse [http://opencv.org](http://opencv.org)
+Pour commencer à développer rapidement, vous pouvez inclure la bibliothèque OpenCV dans un projet d’application UWP à l’aide de packages NuGet, mais ces packages peut ne pas passent le processus de certficication lorsque vous soumettez votre application dans le magasin, il est recommandé que vous téléchargez le OpenCV bibliothèque de code source et créer les fichiers binaires avant de soumettre votre application. Vous trouverez des informations sur le développement avec OpenCV à l’adresse [http://opencv.org](http://opencv.org)
+
 
 ## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>Implémenter le composant Windows Runtime natif OpenCVHelper
 Suivez les étapes de [Traiter des images bitmap logicielles avec OpenCV](process-software-bitmaps-with-opencv.md) pour créer le composant Windows Runtime d'application d’assistance OpenCV et ajoutez une référence au projet de composant à votre solution d’application UWP.

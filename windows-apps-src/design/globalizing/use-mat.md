@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: c1008579b0d8d5c559f51ae2442a090411abe10b
-ms.sourcegitcommit: 8d9d4f17e272b78e38b346f846b96260c922bbb2
-ms.translationtype: HT
+ms.openlocfilehash: 39e002247cabb6389ddf23860499ebf1f166b03a
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "1538203"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792231"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>Utiliser le kit de ressources MultilingualAppToolkit4.0
 
@@ -135,7 +135,7 @@ Ces fournisseurs tiers proposent des services de localisation et peuvent vous ai
 
 - [Elanex](https://www.elanex.com/)
 - [Keywords Studios](https://www.keywordsstudios.com/)
-- [Lionbridge](https://intlapps.lionbridge.com/windows)
+- [Lionbridge](https://www.lionbridge.com)
 - [Moravia](https://www.moravia.com/)
 - [SDL](https://www.sdl.com/languagecloud/managed-translation/ilp/instantquote)
 - [Welocalize](https://www.welocalize.com/)
