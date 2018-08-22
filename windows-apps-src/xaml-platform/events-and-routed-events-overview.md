@@ -4,21 +4,20 @@ description: Nous décrivons le concept de programmation des événements dans u
 title: Vue d’ensemble des événements et des événements routés
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 61e55fa85e54970ba48413767ccf5a65b05af471
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 6ca58613a5874cde10d2bb5322c3f930e1fbce44
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691188"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788794"
 ---
 # <a name="events-and-routed-events-overview"></a>Vue d’ensemble des événements et des événements routés
-
 
 **API importantes**
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
@@ -40,39 +39,50 @@ L’une des tâches de programmation courante pour une application Windows Runti
 
 Vous définissez l’interface utilisateur de votre application Windows Runtime en générant du code XAML. Ce code XAML constitue habituellement la sortie d’une aire de conception dans Visual Studio. Vous pouvez également écrire le code XAML dans un éditeur de texte brut ou un éditeur XAML tiers. Au moment de la génération de ce code XAML, vous pouvez connecter des gestionnaires d’événements pour un élément d’interface utilisateur individuel en même temps que vous définissez tous les autres attributs XAML qui établissent les valeurs de propriétés de cet élément d’interface utilisateur.
 
-Pour connecter les événements en XAML, vous spécifiez le nom sous forme de chaîne de la méthode de gestionnaire que vous avez déjà définie ou que vous définirez plus tard dans votre code-behind. Par exemple, ce code XAML définit un objet [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) avec d’autres propriétés ([attribut x:Name](x-name-attribute.md), [**Content**](https://msdn.microsoft.com/library/windows/apps/br209366)) assignées en tant qu’attributs, puis connecte un gestionnaire pour l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) du bouton en référençant une méthode nommée `showUpdatesButton_Click` :
+Pour connecter les événements en XAML, vous spécifiez le nom sous forme de chaîne de la méthode de gestionnaire que vous avez déjà définie ou que vous définirez plus tard dans votre code-behind. Par exemple, ce code XAML définit un objet [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) avec d’autres propriétés ([attribut x:Name](x-name-attribute.md), [**Content**](https://msdn.microsoft.com/library/windows/apps/br209366)) assignées en tant qu’attributs, puis connecte un gestionnaire pour l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) du bouton en référençant une méthode nommée `ShowUpdatesButton_Click` :
 
-```XML
+```xaml
 <Button x:Name="showUpdatesButton"
   Content="{Binding ShowUpdatesText}"
-  Click="showUpdatesButton_Click"/>
+  Click="ShowUpdatesButton_Click"/>
 ```
 
 **Conseil**  La *connexion d’événements* est un terme de programmation. Il fait référence au processus ou au code par lequel vous indiquez que les occurrences d’un événement doivent invoquer une méthode de gestionnaire nommé. Dans la plupart des modèles de code procédural, la connexion d’événements est le code « AddHandler » implicite ou explicite qui nomme l’événement et la méthode, et qui implique généralement une instance d’objet cible. En XAML, le code « AddHandler » est implicite. La connexion d’événements consiste exclusivement à nommer l’événement en tant que nom d’attribut d’un élément d’objet, et à nommer le gestionnaire en tant que valeur de cet attribut.
 
-Vous écrivez le gestionnaire réel dans le langage de programmation que vous utilisez pour tout le code et le code-behind de votre application. Avec l’attribut `Click="showUpdatesButton_Click"`, vous avez créé un contrat qui veut que lorsque le balisage XAML est compilé et analysé, l’étape de compilation du balisage XAML dans l’action de génération de votre IDE et l’analyse XAML finale lors du chargement de l’application peuvent trouver une méthode nommée `showUpdatesButton_Click` dans le code de l’application. `showUpdatesButton_Click` doit être une méthode qui implémente une signature de méthode compatible (basée sur un délégué) pour tout gestionnaire de l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737). Par exemple, ce code définit le gestionnaire `showUpdatesButton_Click`.
+Vous écrivez le gestionnaire réel dans le langage de programmation que vous utilisez pour tout le code et le code-behind de votre application. Avec l’attribut `Click="ShowUpdatesButton_Click"`, vous avez créé un contrat qui veut que lorsque le balisage XAML est compilé et analysé, l’étape de compilation du balisage XAML dans l’action de génération de votre IDE et l’analyse XAML finale lors du chargement de l’application peuvent trouver une méthode nommée `ShowUpdatesButton_Click` dans le code de l’application. `ShowUpdatesButton_Click` doit être une méthode qui implémente une signature de méthode compatible (basée sur un délégué) pour tout gestionnaire de l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737). Par exemple, ce code définit le gestionnaire `ShowUpdatesButton_Click`.
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
-private void showUpdatesButton_Click (object sender, RoutedEventArgs e) {
+private void ShowUpdatesButton_Click (object sender, RoutedEventArgs e) 
+{
     Button b = sender as Button;
     //more logic to do here...
 }
 ```
+
 ```vb
-Private Sub showUpdatesButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+Private Sub ShowUpdatesButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
     Dim b As Button = CType(sender, Button)
     '  more logic to do here...
 End Sub
 ```
+
+```cppwinrt
+void winrt::MyNamespace::implementation::BlankPage::ShowUpdatesButton_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& e)
+{
+    auto b{ sender.as<Windows::UI::Xaml::Controls::Button>() };
+    // More logic to do here.
+}
+```
+
 ```cpp
-void MyNamespace::BlankPage::showUpdatesButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e) {
+void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e) 
+{
     Button^ b = (Button^) sender;
     //more logic to do here...
 }
 ```
 
-Dans cet exemple, la méthode `showUpdatesButton_Click` est basée sur le délégué [**RoutedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br208812). Vous comprenez qu’il s’agit du délégué à utiliser car il est nommé dans la syntaxe de la méthode [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) dans la page de référence MSDN.
+Dans cet exemple, la méthode `ShowUpdatesButton_Click` est basée sur le délégué [**RoutedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br208812). Vous comprenez qu’il s’agit du délégué à utiliser car il est nommé dans la syntaxe de la méthode [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) dans la page de référence MSDN.
 
 **Conseil**  VisualStudio offre un moyen pratique de nommer le gestionnaire d’événements et de définir la méthode de gestionnaire quand vous modifiez du code XAML. Quand vous fournissez le nom d’attribut de l’événement dans l’éditeur de texte XAML, patientez jusqu’à ce qu’une liste Microsoft IntelliSense s’affiche. Si vous cliquez sur **&lt;Nouveau gestionnaire d’événements&gt;** dans la liste, Microsoft Visual Studio suggère un nom de méthode en fonction du **x:Name** de l’élément (ou nom de type), le nom de l’événement et un suffixe numérique. Vous pouvez ensuite cliquer avec le bouton droit sur le nom du gestionnaire d’événements sélectionné et cliquer sur **Naviguer vers le gestionnaire d’événements**. Vous accéderez alors directement à la définition de gestionnaire d’événements nouvellement insérée, comme illustré dans l’affichage de l’éditeur de code de votre fichier code-behind pour la page XAML. Le gestionnaire d’événements a déjà la signature correcte, y compris le paramètre *sender* et la classe de données d’événements utilisée par l’événement. Par ailleurs, s’il existe déjà une méthode de gestionnaire avec la signature correcte dans votre code-behind, le nom de cette méthode apparaît dans le menu déroulant à saisie semi-automatique avec l’option **&lt;Nouveau gestionnaire d’événements&gt;**. Vous pouvez aussi appuyer sur la touche Tab, pour aller plus vite, au lieu de cliquer sur les éléments de liste IntelliSense.
 
@@ -104,7 +114,7 @@ En C#, la syntaxe doit utiliser l’opérateur `+=`. Pour inscrire le gestionnai
 
 Si vous utilisez du code pour ajouter des gestionnaires d’événements à des objets qui apparaissent dans l’interface utilisateur au moment de l’exécution, une pratique courante consiste à les ajouter en réponse à un rappel ou événement de durée de vie de l’objet, comme [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) ou [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737), afin que les gestionnaires d’événements de l’objet concerné soient prêts pour les événements initialisés par l’utilisateur au moment de l’exécution. Cet exemple montre un plan XAML de la structure de la page, puis fournit la syntaxe en langage C# permettant d’ajouter un gestionnaire d’événements à un objet.
 
-```xml
+```xaml
 <Grid x:Name="LayoutRoot" Loaded="LayoutRoot_Loaded">
   <StackPanel>
     <TextBlock Name="textBlock1">Put the pointer over this text</TextBlock>
@@ -143,15 +153,19 @@ End Sub
 
 **Remarque**  VisualStudio et son aire de conception XAML promeuvent généralement la technique de gestion d’instance plutôt que le mot clé **Handles**. Cela est dû au fait que l’établissement de la connexion des gestionnaires d’événements en XAML fait partie du flux de travail concepteur-développeur habituel et que la technique du mot-clé **Handles** est incompatible avec cette connexion des gestionnaires d’événements en XAML.
 
-En C++, vous utilisez également la syntaxe **+=**, mais il existe quelques différences par rapport au formulaire C# de base :
+En C++ / CX, également utiliser les **+=** syntaxe, mais il existe des différences par rapport à la forme de base Visual C#:
 
 -   Il n’existe aucune inférence de délégué, donc vous devez utiliser **ref new** pour l’instance de délégué.
 -   Le constructeur du délégué possède deux paramètres et requiert que l’objet cible soit le premier d’entre eux. En général, vous spécifiez **this**.
 -   Le constructeur du délégué requiert que l’adresse de la méthode soit le second paramètre, donc l’opérateur de référencement **&** précède le nom de la méthode.
 
+```cppwinrt
+textBlock1().PointerEntered({this, &MainPage::TextBlock1_PointerEntered });
+```
+
 ```cpp
 textBlock1->PointerEntered += 
-ref new PointerEventHandler(this,&BlankPage::textBlock1_PointerEntered);
+ref new PointerEventHandler(this, &BlankPage::textBlock1_PointerEntered);
 ```
 
 ### <a name="removing-event-handlers-in-code"></a>Suppression de gestionnaires d’événements dans le code
@@ -170,10 +184,10 @@ Il existe de rares cas où vous voulez supprimer explicitement des gestionnaires
 
 Par exemple, vous pouvez supprimer un gestionnaire d’événements nommé **textBlock1_PointerEntered** de l’objet cible **textBlock1** en utilisant le code suivant.
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 textBlock1.PointerEntered -= textBlock1_PointerEntered;
 ```
+
 ```vb
 RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 ```
@@ -294,5 +308,3 @@ La définition d’un événement personnalisé s’effectue généralement dans
 * [Événements et délégués .NET](http://go.microsoft.com/fwlink/p/?linkid=214364)
 * [Création de composants Windows Runtime](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399)
- 
-

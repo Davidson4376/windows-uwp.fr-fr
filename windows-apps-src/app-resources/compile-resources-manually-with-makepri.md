@@ -10,21 +10,24 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 261a2b747d25284351bb6f4e51f108158b6e2bc5
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.openlocfilehash: d065fdffe2fcb32a9d574c90f59eb7115597167a
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707024"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2787295"
 ---
 # <a name="compile-resources-manually-with-makepriexe"></a>Compiler des ressources manuellement avec MakePri.exe
 
 MakePri.exe est un outil de ligne de commande que vous pouvez utiliser pour créer et vider des fichiers PRI. Il est intégré en tant qu’élément de MSBuild dans MicrosoftVisualStudio, mais il peut aussi être utilisé pour la création de packages manuellement ou à l’aide d’un système de génération personnalisé.
 
+> [!NOTE]
+> MakePri.exe est installé lorsque vous activez l’option de **SDK de Windows pour les applications gérées UWP** pendant l’installation du Kit de développement logiciel Windows. Il est installé sur le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Exemple: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+
 La limite de taille d’un fichier PRI est 64kilo-octets.
 
 ## <a name="in-this-section"></a>Dans cette section
-|Sujet|Description|
+|Rubrique|Description|
 |-|-|
 | [Options de ligne de commande de MakePri.exe](makepri-exe-command-options.md) | MakePri.exe inclut le jeu de commandes `createconfig`, `dump`, `new`, `resourcepack` et `versioned`. Cette rubrique détaille les options de ligne de commande utilisées avec ces commandes. |
 | [Fichier de configuration de MakePri.exe](makepri-exe-configuration.md) | Cette rubrique décrit le schéma du fichier de configurationXML de MakePri.exe. |

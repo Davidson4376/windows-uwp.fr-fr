@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
-ms.openlocfilehash: 65ee6cd32e1fdb6900c859725b8deb6b5031d297
-ms.sourcegitcommit: ba0d20f6fad75ce98c25ceead78aab6661250571
+keywords: tâche d’arrière-plan Windows 10, uwp,
+ms.localizationpriority: medium
+ms.openlocfilehash: 00e685085c004cced24b9a42ef2261a26eef10bb
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2017
-ms.locfileid: "848430"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788304"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Déclarer des tâches en arrière-plan dans le manifeste de l’application
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -213,7 +213,7 @@ Voici un exemple de code XML déclarant une tâche en arrière-plan qui s’exé
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>Exécuter dans un nouveau processus à chaque fois qu’un déclencheur se déclenche avec l’attribut SupportsMultipleInstances
 
-Cet exemple déclare une tâche en arrière-plan qui s’exécute dans un nouveau processus qui obtient ses propres limites de ressources (mémoire, processeur) chaque fois qu’un nouveau déclencheur est déclenché. Notez l’utilisation de `SupportsMultipleInstances` qui permet ce comportement. Pour pouvoir utiliser cet attribut, vous devez cibler le kit de développement logiciel (SDK) version «10.0.15063» (mise à jour Windows10 Creator Update) ou une version ultérieure.
+Cet exemple déclare une tâche en arrière-plan qui s’exécute dans un nouveau processus qui obtient ses propres limites de ressources (mémoire, processeur) chaque fois qu’un nouveau déclencheur est déclenché. Notez l’utilisation de `SupportsMultipleInstances` qui permet ce comportement. Pour pouvoir utiliser cet attribut, vous devez cibler SDK version '10.0.15063' (mise à jour Windows 10 créateurs) ou supérieur.
 
 ```xml
 <Package

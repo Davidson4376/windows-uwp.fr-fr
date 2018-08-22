@@ -4,17 +4,17 @@ title: Nouveautés dans les documents Windows 2018 août - pour développer des 
 description: Nouvelles fonctionnalités, des vidéos, des exemples et des conseils pour les développeurs ont été ajoutés à la documentation pour les développeurs Windows 10 août 2018.
 keywords: Quelles sont les nouveautés, mise à jour, fonctionnalités, des conseils pour les développeurs, Windows 10 août
 ms.author: quradic
-ms.date: 8/9/2018
+ms.date: 08/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 06eef0c115675ba9673a81459c91e0f08f6fab71
-ms.sourcegitcommit: be5b71a8ec7b686d5f93d56d10cb9a50c3c5bb4a
+ms.openlocfilehash: c294dedc8e19605bc2cee0308022bed8624df57e
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "2748866"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2787784"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>Nouveautés dans la documentation de développeur Windows 2018 août
 
@@ -30,17 +30,17 @@ Les fonctionnalités suivantes ont été ajoutées à Windows versions Preview i
 
 * La [Bibliothèque de l’interface utilisateur Windows](https://aka.ms/winui-docs) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments interfact utilisateur pour les applications UWP. Ces packages sont également compatible avec les versions antérieures de Windows 10, afin que votre application fonctionne même si vos utilisateurs n’ont pas la dernière version du système d’exploitation.
 
-* [DropDownButton, bouton partagé et ToggleSplitButton](../design/controls-and-patterns/buttons.md) fournissent des contrôles de bouton avec des fonctionnalités spécialisées pour améliorer l’expérience utilisateur de votre application.
-
-* Maintenant, NavigationView prend en charge de [navigation supérieure,](../design/controls-and-patterns/navigationview.md) les cas dans lesquels votre application a un plus petit nombre d’options de navigation et requièrent davantage d’espace pour le contenu de votre application.
-
-* TreeView a été amélioré pour prendre en charge [liaison de données, modèles d’élément, dragon et déplacer.](../design/controls-and-patterns/tree-view.md)
+* [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button), [bouton partagé](../design/controls-and-patterns/buttons.md#create-a-split-button)et [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) fournissent des contrôles de bouton avec des fonctionnalités spécialisées pour améliorer l’interface utilisateur de votre application.
 
 ![Un bouton partagé pour sélectionner la couleur de premier plan](../design/controls-and-patterns/images/split-button-rtb.png)
 
+* NavigationView prend désormais en charge la [navigation supérieure](../design/controls-and-patterns/navigationview.md), pour les cas où votre application a un plus petit nombre d’options de navigation et requièrent davantage d’espace pour le contenu de votre application.
+
+* TreeView a été amélioré pour prendre en charge [liaison de données, les modèles, d’élément et glisser -déplacer.](../design/controls-and-patterns/tree-view.md)
+
 ### <a name="package-support-framework"></a>Infrastructure de prise en charge de package
 
-L’infrastructure de prise en charge de package est un kit open source qui vous permet d’appliquer des correctifs pour votre application win32 lorsque vous n’avez pas accès au code source, afin qu’il peut s’exécuter dans un conteneur MSIX.  
+L’infrastructure de prise en charge de package est un kit open source qui vous permet d’appliquer des correctifs pour votre application win32 lorsque vous n’avez pas accès au code source, afin qu’il peut s’exécuter dans un conteneur MSIX.
 
 Pour plus d’informations, voir [Appliquer runtime résout un package MSIX à l’aide de l’infrastructure de prise en charge de Package](../porting/package-support-framework.md).
 
@@ -52,7 +52,7 @@ Liste des [extensions d’API Microsoft héritées](https://developer.mozilla.or
 
 ### <a name="cwinrt-code-examples"></a>C + / exemples de WinRT Code
 
-Nous avons ajouté 250 [C + / WinRT](../cpp-and-winrt-apis/index.md) rubriques de notre documentation accompagnant existant C + extraits de code / exemples de code CX.
+Nous avons ajouté 250 [C + / WinRT](../cpp-and-winrt-apis/index.md) code annonces à des rubriques de notre documentation accompagnant existant C + / exemples de code CX.
 
 ### <a name="project-rome"></a>Projet «Rome»
 

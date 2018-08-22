@@ -4,18 +4,18 @@ title: Superposer des images sous forme de vignettes sur une carte
 description: Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...), ou pour remplacer entièrement la carte par défaut.
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 ms.author: normesta
-ms.date: 02/08/2017
+ms.date: 07/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, carte, emplacement, images, superposition
 ms.localizationpriority: medium
-ms.openlocfilehash: fb2fafb3feeb5242c9069ea9e871eebc90351714
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: ba1f7d52a1b16fbb421202229ce724dab384ffa0
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691065"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788634"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>Superposer des images sous forme de vignettes sur une carte
 
@@ -34,11 +34,9 @@ Lorsque vous utilisez des sources de vignette, il est inutile d’écrire du cod
 
 Voici un exemple de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) pour une classe [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) qui affiche les paramètres remplaçables des coordonnéesX etY et le niveau de zoom.
 
-``` syntax
-    http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
+```syntax
+http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 ```
-
- 
 
 (Les coordonnées X et Y représentent l’emplacement de la vignette individuelle au sein de la carte du monde, au niveau de détail spécifié. Le système de numérotation des vignettes démarre à partir de la valeur {0, 0}, dans le coin supérieur gauche de la carte. Par exemple, la vignette située à {1, 2} se trouve dans la deuxième colonne de la troisième ligne de la grille de vignettes.)
 
@@ -58,7 +56,7 @@ Superposez des images sous forme de vignettes à partir d’une source de vignet
 
     L’exemple suivant instancie une classe [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). Cet exemple spécifie la valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) dans le constructeur de la classe **HttpMapTileDataSource**.
 
-    ```cs
+    ```csharp
         HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
           "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
     ```
@@ -67,7 +65,7 @@ Superposez des images sous forme de vignettes à partir d’une source de vignet
 
     L’exemple suivant spécifie la propriété [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149) dans le constructeur de la classe [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
 
-    ```cs
+    ```csharp
         MapTileSource tileSource = new MapTileSource(dataSource);
     ```
 
@@ -80,7 +78,7 @@ Superposez des images sous forme de vignettes à partir d’une source de vignet
 
 3.  Ajoutez la [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) à la collection [**TileSources**](https://msdn.microsoft.com/library/windows/apps/dn637053) du [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-    ```cs
+    ```csharp
          MapControl1.TileSources.Add(tileSource);
     ```
 
@@ -93,7 +91,7 @@ Superposez des images sous forme de vignettes récupérées à partir d’un ser
 2.  Spécifiez le format de l’URI que le service web attend, en tant que valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992). Pour créer cette valeur, insérez les paramètres remplaçables dans l’URI de base. Par exemple, dans l’exemple de code suivant, la valeur de l’élément **UriFormatString** est la suivante:
 
     ``` syntax
-        http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
+    http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
     ```
 
     Le service web doit prendre en charge un URI qui contient les paramètres remplaçables {zoomlevel}, {x} et {y}. La plupart des services web (par exemple ceux de Nokia, Bing et Google) prennent en charge les URI dans ce format. Si le service web requiert des arguments supplémentaires qui ne sont pas disponibles avec la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992), vous devez créer un URI personnalisé. Créez et renvoyez un URI personnalisé en gérant l’événement [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993). Pour plus d’informations, voir la section [Fournir un URI personnalisé](#customuri) plus loin dans cette rubrique.
@@ -103,47 +101,71 @@ Superposez des images sous forme de vignettes récupérées à partir d’un ser
 L’exemple suivant illustre la superposition de vignettes provenant d’un service web fictif sur une carte représentant l’Amérique du Nord. La valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) est spécifiée dans le constructeur de la classe [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). Dans cet exemple, les vignettes sont uniquement affichées dans les limites géographiques spécifiées par la propriété facultative [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147).
 
 ```csharp
-        private void AddHttpMapTileSource()
-        {
-            // Create the bounding box in which the tiles are displayed.
-            // This example represents North America.
-            BasicGeoposition northWestCorner =
-                new BasicGeoposition() { Latitude = 48.38544, Longitude = -124.667360 };
-            BasicGeoposition southEastCorner =
-                new BasicGeoposition() { Latitude = 25.26954, Longitude = -80.30182 };
-            GeoboundingBox boundingBox = new GeoboundingBox(northWestCorner, southEastCorner);
+private void AddHttpMapTileSource()
+{
+    // Create the bounding box in which the tiles are displayed.
+    // This example represents North America.
+    BasicGeoposition northWestCorner =
+        new BasicGeoposition() { Latitude = 48.38544, Longitude = -124.667360 };
+    BasicGeoposition southEastCorner =
+        new BasicGeoposition() { Latitude = 25.26954, Longitude = -80.30182 };
+    GeoboundingBox boundingBox = new GeoboundingBox(northWestCorner, southEastCorner);
 
-            // Create an HTTP data source.
-            // This example retrieves tiles from a fictitious web service.
-            HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
-                "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
+    // Create an HTTP data source.
+    // This example retrieves tiles from a fictitious web service.
+    HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
+        "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
 
-            // Optionally, add custom HTTP headers if the web service requires them.
-            dataSource.AdditionalRequestHeaders.Add("header name", "header value");
+    // Optionally, add custom HTTP headers if the web service requires them.
+    dataSource.AdditionalRequestHeaders.Add("header name", "header value");
 
-            // Create a tile source and add it to the Map control.
-            MapTileSource tileSource = new MapTileSource(dataSource);
-            tileSource.Bounds = boundingBox;
-            MapControl1.TileSources.Add(tileSource);
-        }
+    // Create a tile source and add it to the Map control.
+    MapTileSource tileSource = new MapTileSource(dataSource);
+    tileSource.Bounds = boundingBox;
+    MapControl1.TileSources.Add(tileSource);
+}
+```
+
+```cppwinrt
+...
+#include <winrt/Windows.Devices.Geolocation.h>
+#include <winrt/Windows.UI.Xaml.Controls.Maps.h>
+...
+void MainPage::AddHttpMapTileSource()
+{
+    Windows::Devices::Geolocation::BasicGeoposition northWest{ 48.38544, -124.667360 };
+    Windows::Devices::Geolocation::BasicGeoposition southEast{ 25.26954, -80.30182 };
+    Windows::Devices::Geolocation::GeoboundingBox boundingBox{ northWest, southEast };
+
+    Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource dataSource{
+        L"http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}" };
+
+    dataSource.AdditionalRequestHeaders().Insert(L"header name", L"header value");
+
+    Windows::UI::Xaml::Controls::Maps::MapTileSource tileSource{ dataSource };
+    tileSource.Bounds(boundingBox);
+
+    MapControl1().TileSources().Append(tileSource);
+}
+...
 ```
 
 ```cpp
 void MainPage::AddHttpMapTileSource()
 {
-       BasicGeoposition northWest = { 48.38544, -124.667360 };
-       BasicGeoposition southEast = { 25.26954, -80.30182 };
-       GeoboundingBox^ boundingBox = ref new GeoboundingBox(northWest, southEast);
+    BasicGeoposition northWest = { 48.38544, -124.667360 };
+    BasicGeoposition southEast = { 25.26954, -80.30182 };
+    GeoboundingBox^ boundingBox = ref new GeoboundingBox(northWest, southEast);
 
-       auto dataSource = ref new Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource(
-             "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
+    auto dataSource = ref new Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource(
+        "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
 
-       dataSource->AdditionalRequestHeaders->Insert("header name", "header value");
+    dataSource->AdditionalRequestHeaders->Insert("header name", "header value");
 
-       auto tileSource = ref new Windows::UI::Xaml::Controls::Maps::MapTileSource(dataSource);
-       tileSource->Bounds = boundingBox;
+    auto tileSource = ref new Windows::UI::Xaml::Controls::Maps::MapTileSource(dataSource);
+    tileSource->Bounds = boundingBox;
 
-       this->MapControl1->TileSources->Append(tileSource);
+    this->MapControl1->TileSources->Append(tileSource);
 }
 ```
 
@@ -202,7 +224,6 @@ L’exemple suivant illustre le chargement de vignettes stockées en tant que fi
 
 ## <a name="provide-a-custom-uri"></a>Fournir un URI personnalisé
 
-
 Si les paramètres remplaçables fournis avec la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) de la classe [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) ou la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) de la classe [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) ne sont pas suffisants pour récupérer vos vignettes, vous devez créer un URI personnalisé. Créez et renvoyez un URI personnalisé en proposant un gestionnaire personnalisé pour l’événement **UriRequested**. L’événement **UriRequested** est déclenché pour chaque vignette individuelle.
 
 1.  Dans le gestionnaire personnalisé de l’événement **UriRequested**, combinez les arguments personnalisés requis avec les propriétés [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744)et [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) de la classe [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) pour créer l’URI personnalisé.
@@ -247,7 +268,6 @@ using System.Threading.Tasks;
 ```
 
 ## <a name="overlay-tiles-from-a-custom-source"></a>Superposer des vignettes provenant d’une source personnalisée
-
 
 Superposez des vignettes personnalisées à l’aide de la [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983). Créez des vignettes par programme en mémoire, à la volée, ou écrivez votre propre code pour charger les vignettes existantes à partir d’une autre source.
 
@@ -316,47 +336,87 @@ using System.Threading.Tasks;
         }
 ```
 
-```cpp
-InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
+```cppwinrt
+...
+#include <winrt/Windows.Storage.Streams.h>
+...
+Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::InMemoryRandomAccessStream> MainPage::CustomRandomAccessStream()
 {
-       int pixelHeight = 256;
-       int pixelWidth = 256;
-       int bpp = 4;
+    constexpr int pixelHeight{ 256 };
+    constexpr int pixelWidth{ 256 };
+    constexpr int bpp{ 4 };
 
-       Array<byte>^ bytes = ref new Array<byte>(pixelHeight * pixelWidth * bpp);
+    std::array<uint8_t, pixelHeight * pixelWidth * bpp> bytes;
 
-       for (int y = 0; y < pixelHeight; y++)
-       {
-              for (int x = 0; x < pixelWidth; x++)
-              {
-                     int pixelIndex = y * pixelWidth + x;
-                     int byteIndex = pixelIndex * bpp;
+    for (int y = 0; y < pixelHeight; y++)
+    {
+        for (int x = 0; x < pixelWidth; x++)
+        {
+            int pixelIndex{ y * pixelWidth + x };
+            int byteIndex{ pixelIndex * bpp };
 
-                     // Set the current pixel bytes.
-                     bytes[byteIndex] = (byte)(std::rand() % 256);        // Red
-                     bytes[byteIndex + 1] = (byte)(std::rand() % 256);    // Green
-                     bytes[byteIndex + 2] = (byte)(std::rand() % 256);    // Blue
-                     bytes[byteIndex + 3] = (byte)((std::rand() % 56) + 200);    // Alpha (0xff = fully opaque)
-              }
-       }
+            // Set the current pixel bytes.
+            bytes[byteIndex] = (byte)(std::rand() % 256);        // Red
+            bytes[byteIndex + 1] = (byte)(std::rand() % 256);    // Green
+            bytes[byteIndex + 2] = (byte)(std::rand() % 256);    // Blue
+            bytes[byteIndex + 3] = (byte)((std::rand() % 56) + 200);    // Alpha (0xff = fully opaque)
+        }
+    }
 
-       // Create RandomAccessStream from byte array.
-       InMemoryRandomAccessStream^ randomAccessStream = ref new InMemoryRandomAccessStream();
-       IOutputStream^ outputStream = randomAccessStream->GetOutputStreamAt(0);
-       DataWriter^ writer = ref new DataWriter(outputStream);
-       writer->WriteBytes(bytes);
+    // Create RandomAccessStream from byte array.
+    Windows::Storage::Streams::InMemoryRandomAccessStream randomAccessStream;
+    Windows::Storage::Streams::IOutputStream outputStream{ randomAccessStream.GetOutputStreamAt(0) };
+    Windows::Storage::Streams::DataWriter writer{ outputStream };
+    writer.WriteBytes(bytes);
 
-       create_task(writer->StoreAsync()).then([writer](unsigned int)
-       {
-              create_task(writer->FlushAsync());
-       });
+    co_await writer.StoreAsync();
+    co_await writer.FlushAsync();
 
-       return randomAccessStream;
+    co_return randomAccessStream;
+}
+...
+```
+
+```cpp
+InMemoryRandomAccessStream^ TileSources::CustomRandomAccessStream::get()
+{
+    int pixelHeight = 256;
+    int pixelWidth = 256;
+    int bpp = 4;
+
+    Array<byte>^ bytes = ref new Array<byte>(pixelHeight * pixelWidth * bpp);
+
+    for (int y = 0; y < pixelHeight; y++)
+    {
+        for (int x = 0; x < pixelWidth; x++)
+        {
+            int pixelIndex = y * pixelWidth + x;
+            int byteIndex = pixelIndex * bpp;
+
+            // Set the current pixel bytes.
+            bytes[byteIndex] = (byte)(std::rand() % 256);        // Red
+            bytes[byteIndex + 1] = (byte)(std::rand() % 256);    // Green
+            bytes[byteIndex + 2] = (byte)(std::rand() % 256);    // Blue
+            bytes[byteIndex + 3] = (byte)((std::rand() % 56) + 200);    // Alpha (0xff = fully opaque)
+        }
+    }
+
+    // Create RandomAccessStream from byte array.
+    InMemoryRandomAccessStream^ randomAccessStream = ref new InMemoryRandomAccessStream();
+    IOutputStream^ outputStream = randomAccessStream->GetOutputStreamAt(0);
+    DataWriter^ writer = ref new DataWriter(outputStream);
+    writer->WriteBytes(bytes);
+
+    create_task(writer->StoreAsync()).then([writer](unsigned int)
+    {
+        create_task(writer->FlushAsync());
+    });
+
+    return randomAccessStream;
 }
 ```
 
 ## <a name="replace-the-default-map"></a>Remplacer la carte par défaut
-
 
 Pour remplacer entièrement la carte par défaut par des vignettes personnalisées ou tierces, procédez comme suit:
 

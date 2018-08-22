@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f533ab00cd80838d630a78f6f877f65fc1d617ba
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: fb273b6a37cb2f6322b0c9e3842b69676f82c616
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691488"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788624"
 ---
 # <a name="background-transfers"></a>Transferts en arrière-plan
 Utilisez l’API de transfert en arrière-plan pour copier des fichiers de manière fiable sur le réseau. L’API de transfert en arrière-plan offre des fonctionnalités avancées de chargement et téléchargement, qui s’exécutent en arrière-plan pendant la suspension d’une application, et perdurent après l’arrêt de l’application. L’API surveille l’état du réseau. Elle suspend et reprend automatiquement les transferts en cas de perte de connexion. Les transferts sont par ailleurs régis par l’Assistant Données et l’Assistant batterie, ce qui signifie que l’activité de téléchargement s’ajuste en fonction de l’état actuel de la batterie de l’appareil et de la connexion. L’API est idéale pour le chargement et le téléchargement de fichiers volumineux à l’aide du protocole HTTP(S). Le protocole FTP est également pris en charge, mais uniquement pour les téléchargements.
@@ -29,9 +29,10 @@ Si vous téléchargez peu de ressources et si l’opération est censée se term
 ### <a name="how-does-the-background-transfer-feature-work"></a>Comment la fonctionnalité de transfert en arrière-plan fonctionne-t-elle ?
 Quand une application utilise la fonctionnalité de transfert en arrière-plan pour lancer un transfert, la requête est configurée et initialisée à l’aide d’objets de classe [**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) ou [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140). Chaque opération de transfert est gérée individuellement par le système et séparément de l’application appelante. Les informations sur la progression sont disponibles si vous voulez indiquer un état à l’utilisateur dans l’interface utilisateur de votre application. En outre, l’exécution de votre application peut être suspendue, reprise, annulée ou même lue à partir des données pendant le transfert. La manière dont les transferts sont gérés par le système favorise une consommation d’énergie intelligente et évite les problèmes qui peuvent se produire lorsqu’une application connectée se heurte à des événements tels qu’une interruption ou un arrêt de l’application, ou encore des modifications soudaines de l’état du réseau.
 
-En outre, le transfert en arrière-plan utilise les événements de service Broker pour les événements système. De ce fait, le nombre de téléchargements est limité par le nombre d’événements disponibles sur le système. Ce nombre est de 500événements par défaut, mais ceux-ci sont partagés entre tous les processus. Par conséquent, une seule application ne doit pas créer plus de 100transferts en arrière-plan à la fois.
+> [!NOTE]
+> En raison des contraintes de ressource par application, une application ne doit pas effectuer plus de 200transferts (DownloadOperations + UploadOperations) à un moment donné. Si cette limite est dépassée, cela peut mettre la file d’attente de transfert de l’application dans un état irrécupérable.
 
-Lorsqu’une application démarre un transfert en arrière-plan, l’application doit appeler [**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) sur tous les objets [**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live) existants. Autrement, cela risque de provoquer une fuite de ces événements et de rendre inutilisable la fonctionnalité de transfert en arrière-plan.
+Lorsqu’une application est lancée, il doit appeler [**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) sur tous les objets existants [**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live) et [**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live) . Ne pas cette opération entraîne la perte des transferts déjà effectué et finalement affichera votre utilisation de la fonctionnalité de transfert en arrière-plan inutiles.
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>Exécution de demandes de fichiers authentifiées avec le transfert en arrière-plan
 Le transfert en arrière-plan fournit des méthodes qui prennent en charge les informations d’authentification serveur et proxy de base, les cookies et l’utilisation d’en-têtes HTTP personnalisés (par l’intermédiaire de la méthode [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146)) pour chaque opération de transfert.
@@ -167,8 +168,6 @@ Lors de l’achèvement ou de l’annulation d’une opération [**UploadOperati
 Lorsque vous faites appel à la fonctionnalité de transfert en arrière-plan, chaque téléchargement qui en résulte existe sous la forme d’une opération [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) qui dévoile de nombreuses méthodes de contrôle servant à suspendre, reprendre, redémarrer et annuler l’opération. Les événements d’application (par exemple, une suspension ou un arrêt) et les changements de connectivité sont gérés automatiquement par le système pour chaque opération **DownloadOperation**. Les téléchargements se poursuivent lors des périodes de suspension des applications et perdurent après l’arrêt des applications. Dans le cadre des scénarios de réseau mobile, la propriété [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) peut être définie pour indiquer si oui ou non votre application entamera ou poursuivra un téléchargement tandis qu’une connexion réseau limitée est utilisée pour la connectivité Internet.
 
 Si vous téléchargez peu de ressources et si l’opération est censée se terminer rapidement, utilisez les API [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) à la place du transfert en arrière-plan.
-
-En raison des contraintes de ressource par application, une application ne doit pas effectuer plus de 200transferts (DownloadOperations + UploadOperations) à un moment donné. Si cette limite est dépassée, cela peut mettre la file d’attente de transfert de l’application dans un état irrécupérable.
 
 Les exemples qui suivent vous guident tout au long du processus de création et d’initialisation d’un téléchargement de base et décrivent comment énumérer des opérations de chargement issues d’une session d’application précédente.
 

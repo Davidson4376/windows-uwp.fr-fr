@@ -12,22 +12,35 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 21539d625dc70ded7bec77b9916c7ea4bff72536
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396808"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788524"
 ---
 # <a name="controls-by-function"></a>Contrôles par fonction
 
- 
-
 L’infrastructure d’interface utilisateur XAML pour Windows fournit une bibliothèque complète de contrôles qui prennent en charge le développement d’une interface utilisateur. Certains de ces contrôles ont une représentation visuelle, tandis que d’autres font office de conteneurs d’autres contrôles ou d’autre contenu, par exemple des images ou du contenu multimédia. 
 
-Vous pouvez voir de nombreux contrôles d’interface utilisateur Windows en action en téléchargeant l’[exemple d’éléments de base d’une interface utilisateur XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992). 
+Vous pouvez voir de nombreux contrôles d’interface utilisateur Windows en action en téléchargeant l’[exemple d’éléments de base d’une interface utilisateur XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992).
 
-Voici une liste par fonction des contrôles XAML courants que vous pouvez utiliser dans votre application. 
+<table>
+<th align="left">Galerie de contrôles XAML<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>Si vous disposez de l’application de la <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/NavigationView">Ouvrir l’application et de voir le NavigationView en action</a> </p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Obtenir le code source (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
+
+Voici une liste par fonction des contrôles XAML courants que vous pouvez utiliser dans votre application.
 
 ## <a name="appbars-and-commands"></a>Barres d’applications et commandes
 
@@ -257,7 +270,7 @@ Affiche un message nécessitant une action de la part de l’utilisateur. (Contr
 
 Référence : [Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
 
-Conception et procédure : [Menus contextuels et boîtes de dialogue](dialogs.md) 
+Conception et procédures: [volants](dialogs-and-flyouts/flyouts.md) 
 
 ### <a name="menu-flyout"></a>Menu volant
 Affiche temporairement une liste de commandes ou d’options liées à l’action en cours de l’utilisateur.
@@ -277,7 +290,7 @@ Affiche temporairement une liste de commandes ou d’options liées à l’actio
 
 Référence : [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx), [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
-Conception et procédure : [Menus contextuels et boîtes de dialogue](dialogs.md) 
+Conception et procédures: [Menus et menus contextuels](menus.md) 
 
 Exemple de code : [Exemple de menu contextuel XAML](http://go.microsoft.com/fwlink/p/?LinkId=620021)
 
@@ -286,7 +299,7 @@ Commandes de présentation de menu personnalisé que vous spécifiez.
 
 Référence : [PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
-Conception et procédure : [Menus contextuels et boîtes de dialogue](dialogs.md) 
+Conception et procédures: [boîtes de dialogue](dialogs-and-flyouts/dialogs.md) 
 
 ### <a name="tooltip"></a>Info-bulle
 Fenêtre contextuelle qui affiche des informations pour un élément. 
@@ -540,58 +553,16 @@ Voir Élément multimédia.
 
 ## <a name="navigation"></a>Navigation
 
-### <a name="hub"></a>Hub
-Contrôle conteneur qui permet à l’utilisateur d’afficher différentes sections de contenu et d’y accéder.
+### <a name="navigationview"></a>NavigationView
 
-```xaml
-<Hub>
-    <HubSection>
-        <!--- hub section content -->
-    </HubSection>
-    <HubSection>
-        <!--- hub section content -->
-    </HubSection>
-</Hub>
-```
+Un modèle de navigation flexible qui implémente le volet de navigation de gauche, la partie supérieure et le modèle d’onglets et de conteneur adaptable.
 
-Référence : [Hub](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 
+Référence: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-Conception et procédure : [Guide de contrôle Hub](hub.md) 
-
-Exemple de code : [Exemple de contrôle Hub XAML](http://go.microsoft.com/fwlink/p/?LinkID=309828)
-
-### <a name="pivot"></a>Pivot
-Modèle de navigation et conteneur plein écran qui permet aussi de passer rapidement d’un pivot à un autre (vue ou filtre), généralement dans le même jeu de données.
-
-La disposition du contrôle Pivot peut être définie en «onglets».
-
-Référence : [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 
-
-Conception et procédure : [Guide de contrôle Onglets et pivot](tabs-pivot.md) 
-
-Exemple de code : [Exemple Pivot](http://go.microsoft.com/fwlink/p/?LinkId=619903&amp;clcid=0x409)
-
-### <a name="semantic-zoom"></a>Zoom sémantique
-Contrôle de conteneur qui permet à l’utilisateur d’effectuer un zoom entre deux vues d’une collection d’éléments.
-
-```xaml
-<SemanticZoom>
-    <ZoomedInView>
-        <GridView></GridView>
-    </ZoomedInView>
-    <ZoomedOutView>
-        <GridView></GridView>
-    </ZoomedOutView>
-</SemanticZoom>
-```
-
-Référence : [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
-
-Conception et procédure : [Guide de contrôle Zoom sémantique](semantic-zoom.md) 
-
-Exemple de code : [Exemple de groupement de GridView et SemanticZoom XAML](http://go.microsoft.com/fwlink/p/?linkid=226564)
+Conception et procédures: [guide du contrôle NavigationView](navigationview.md)
 
 ### <a name="splitview"></a>SplitView
+
 Contrôle de conteneur avec deux vues : un affichage pour le contenu principal et un affichage généralement utilisé pour un menu de navigation.
 
 ![Contrôle de mode fractionné](images/controls/split-view.png) 
@@ -612,6 +583,7 @@ Référence : [SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/w
 Conception et procédure : [Guide de contrôle Mode fractionné](split-view.md)
 
 ### <a name="web-view"></a>Affichage web
+
 Contrôle de conteneur qui héberge du contenu web.
 
 ```xaml
@@ -624,6 +596,27 @@ Référence : [WebView](https://msdn.microsoft.com/library/windows/apps/xaml/win
 Conception et procédure: Recommandations pour l’affichage web 
 
 Exemple de code : [Exemple de contrôle d’affichage web XAML](http://go.microsoft.com/fwlink/p/?linkid=238582)
+
+### <a name="semantic-zoom"></a>Zoom sémantique
+
+Contrôle de conteneur qui permet à l’utilisateur d’effectuer un zoom entre deux vues d’une collection d’éléments.
+
+```xaml
+<SemanticZoom>
+    <ZoomedInView>
+        <GridView></GridView>
+    </ZoomedInView>
+    <ZoomedOutView>
+        <GridView></GridView>
+    </ZoomedOutView>
+</SemanticZoom>
+```
+
+Référence : [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
+
+Conception et procédure : [Guide de contrôle Zoom sémantique](semantic-zoom.md)
+
+Exemple de code : [Exemple de groupement de GridView et SemanticZoom XAML](http://go.microsoft.com/fwlink/p/?linkid=226564)
 
 ## <a name="progress-controls"></a>Contrôles de progression
 

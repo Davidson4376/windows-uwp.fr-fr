@@ -2,26 +2,26 @@
 author: PatrickFarley
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Kit de certification des applications Windows
-description: Pour maximiser les chances de publication sur le Windows Store ou de certification Windows de votre application, validez-la et testez-la sur votre ordinateur avant de l’envoyer pour certification. Cette rubrique explique comment installer et exécuter le Kit de certification des applications Windows.
+description: Pour donner à votre application en cours de publication sur le Microsoft Store ou le transformer en Windows certifié chances, valider et tester localement avant de le soumettre de certification. Cette rubrique explique comment installer et exécuter le Kit de certification des applications Windows.
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
-ms.openlocfilehash: fb5303898bfb0d7021ba4c0aa48afd5038bcad4d
-ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+keywords: Windows 10, uwp, certification de l’application
+ms.localizationpriority: medium
+ms.openlocfilehash: b7a72a89704aa3768cc43cdfbb75b620bae303e3
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/27/2017
-ms.locfileid: "695467"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788464"
 ---
 # <a name="windows-app-certification-kit"></a>Kit de certification des applications Windows
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Pour maximiser les chances de [publication sur le Windows Store](https://msdn.microsoft.com/library/windows/apps/Hh694062) ou de [certification Windows](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) de votre application, validez-la et testez-la sur votre ordinateur avant de l’envoyer pour certification. Cette rubrique décrit comment installer et exécuter le [Kit de certification des applications Windows](http://go.microsoft.com/fwlink/p/?LinkID=309666).
+Pour obtenir votre application [Windows certifié](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) ou préparer pour la [composition dans le magasin de Microsoft](https://msdn.microsoft.com/library/windows/apps/Hh694062), vous devez valider et il tester tout d’abord localement. Cette rubrique montre comment installer et exécuter le [Kit de Certification d’application Windows](http://go.microsoft.com/fwlink/p/?LinkID=309666) pour vous assurer de que votre application est fiable et efficace.
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -46,7 +46,7 @@ L’installation d’une nouvelle version du [Kit de certification des applicati
 
 3.  Une fois que vous avez entré ou sélectionné l’application que vous voulez tester, cliquez sur **Suivant**.
 
-4.  À partir de l’écran suivant, vous verrez le flux de travail de test correspondant au type d’application que vous testez. Les tests grisés dans la liste ne sont pas applicables à votre environnement. Par exemple, si vous testez une application Windows 10 sous Windows 7, seuls les tests statiques s’appliqueront au flux de travail. Notez que le Windows Store peut appliquer tous les tests à partir de ce flux de travail. Sélectionnez les tests que vous souhaitez exécuter et cliquez sur **Suivant**.
+4.  À partir de l’écran suivant, vous verrez le flux de travail de test correspondant au type d’application que vous testez. Les tests grisés dans la liste ne sont pas applicables à votre environnement. Par exemple, si vous testez une application Windows 10 sous Windows 7, seuls les tests statiques s’appliqueront au flux de travail. Notez que les Microsoft Store peuvent s’appliquer à tous les tests à partir de ce flux de travail. Sélectionnez les tests que vous souhaitez exécuter et cliquez sur **Suivant**.
 
     Le Kit de certification des applications Windows commence la validation de l’application.
 
@@ -90,14 +90,14 @@ L’installation d’une nouvelle version du [Kit de certification des applicati
 
 Les seuils du test de performances du Kit de certification des applications Windows sont basés sur les performances d’un ordinateur à faible consommation d’énergie.
 
-Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent influencer les résultats du test. Pour déterminer si les performances de votre application répondent aux [Politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/Dn764944), nous vous recommandons de tester votre application sur un ordinateur à faible consommation d’énergie, tel qu’un ordinateur équipé d’un processeur Intel Atom, d’une résolution d’écran de 1366x768 (ou supérieure) et d’un disque dur rotatif (par opposition à un disque SSD).
+Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent influencer les résultats du test. Pour déterminer si les performances de votre application répond aux [Stratégies de banque de Microsoft](https://msdn.microsoft.com/library/windows/apps/Dn764944), nous vous conseillons de tester votre application sur un ordinateur de faible puissance, par exemple un processeur Intel Atom processeur ordinateur avec une résolution d’écran de 1 366 x 768 (ou plus) et une rotation dur lecteur (par opposition à un disque dur à semi-conducteurs).
 
-À mesure que les ordinateurs à faible consommation d’énergie évoluent, leurs caractéristiques de performances peuvent elles aussi varier. Reportez-vous aux [Politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/Dn764944) les plus récentes et testez votre application avec la dernière version du Kit de certification des applications Windows pour vous assurer que votre application est conforme aux dernières spécifications en matière de performances.
+À mesure que les ordinateurs à faible consommation d’énergie évoluent, leurs caractéristiques de performances peuvent elles aussi varier. Consultez les dernières [Stratégies de banque de Microsoft](https://msdn.microsoft.com/library/windows/apps/Dn764944) et tester votre application avec la version la plus récente du Kit de Certification Windows application pour vous assurer que votre application est conforme aux exigences de performances le plus récent.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Tests du Kit de certification des applications Windows](windows-app-certification-kit-tests.md)
-* [Politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Politiques du MicrosoftStore](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  
 
  

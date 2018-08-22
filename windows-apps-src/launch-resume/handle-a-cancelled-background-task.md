@@ -4,21 +4,24 @@ title: Gérer une tâche en arrière-plan annulée
 description: Découvrez comment faire en sorte qu’une tâche en arrière-plan reconnaisse les demandes d’annulation et arrête le travail, tout en signalant l’annulation à l’application utilisant le stockage persistant.
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 07/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: tâche d’arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
-ms.openlocfilehash: 767280b3f3a073a55a4f489fd99229e42dd8140f
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+dev_langs:
+- csharp
+- cppwinrt
+- cpp
+ms.openlocfilehash: 2c78f5f43d93002b90902a7f9e5a943c7239946c
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664842"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788674"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Gérer une tâche en arrière-plan annulée
-
 
 **API importantes**
 
@@ -28,313 +31,380 @@ ms.locfileid: "1664842"
 
 Découvrez comment créer une tâche en arrière-plan qui reconnaît une demande d’annulation, arrête le travail et signale l’annulation à l’application en utilisant le dispositif de stockage persistant.
 
-Cette rubrique suppose que vous avez déjà créé une classe de tâche en arrière-plan, incluant la méthode Run utilisée comme point d’entrée de la tâche en arrière-plan. Pour commencer rapidement à créer une tâche en arrière-plan, consultez [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md) ou [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md). Pour des informations plus détaillées sur les conditions et les déclencheurs, voir [Définition de tâches en arrière-plan pour les besoins de votre application](support-your-app-with-background-tasks.md).
+Cette rubrique suppose que vous avez déjà créé une classe de tâche en arrière-plan, y compris la méthode **Run** qui est utilisée comme le point d’entrée de tâche en arrière-plan. Pour commencer rapidement à créer une tâche en arrière-plan, consultez [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md) ou [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md). Pour des informations plus détaillées sur les conditions et les déclencheurs, voir [Définition de tâches en arrière-plan pour les besoins de votre application](support-your-app-with-background-tasks.md).
 
-Cette rubrique s’applique également aux tâches en arrière-plan in-process. Il faut simplement remplacer la méthode **Run()** par **OnBackgroundActivated()**. Pour les tâches en arrière-plan in-process, il n’est pas nécessaire d’utiliser un dispositif de stockage persistant pour signaler l’annulation. En effet, vous pouvez signaler l’annulation via le paramètre d’état de l’application, car la tâche en arrière-plan s’exécute dans le même processus que votre application au premier plan.
+Cette rubrique s’applique également aux tâches en arrière-plan in-process. Mais au lieu de la méthode **Run** , remplacez **OnBackgroundActivated**. Pour les tâches en arrière-plan in-process, il n’est pas nécessaire d’utiliser un dispositif de stockage persistant pour signaler l’annulation. En effet, vous pouvez signaler l’annulation via le paramètre d’état de l’application, car la tâche en arrière-plan s’exécute dans le même processus que votre application au premier plan.
 
 ## <a name="use-the-oncanceled-method-to-recognize-cancellation-requests"></a>Utiliser la méthode OnCanceled pour reconnaître les demandes d’annulation
 
 Écrivez une méthode permettant de gérer l’événement d’annulation.
 
-> **Remarque**  Pour toutes les familles d’appareils, à l’exception des ordinateurs de bureau, les tâches en arrière-plan peuvent être arrêtées en cas de mémoire insuffisante de l’appareil. Si aucune exception de mémoire insuffisante n’est exposée ou si l’application ne la gère pas, la tâche en arrière-plan est alors arrêtée sans avertissement ni déclenchement de l’événement OnCanceled. Cela permet de garantir l’expérience utilisateur de l’application au premier plan. Votre tâche en arrière-plan doit être conçue de manière à gérer ce scénario.
+> [!NOTE]
+> Pour toutes les familles d’appareils, à l’exception des ordinateurs de bureau, les tâches en arrière-plan peuvent être arrêtées en cas de mémoire insuffisante de l’appareil. Si une exception de mémoire insuffisante n’apparaît pas, ou il ne gère pas l’application, la tâche d’arrière-plan est interrompue sans avertissement et sans déclencher l’événement OnCanceled. Cela permet de garantir l’expérience utilisateur de l’application au premier plan. Votre tâche en arrière-plan doit être conçue de manière à gérer ce scénario.
 
 Créez une méthode nommée **OnCanceled** en procédant comme suit. Cette méthode constitue le point d’entrée appelé par Windows Runtime lorsqu’une demande d’annulation est formulée pour votre tâche en arrière-plan.
 
-> [!div class="tabbedCodeSnippets"]
-> ```cs
->    private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
->    {
->        // TODO: Add code to notify the background task that it is cancelled.
->    }
-> ```
-> ```cpp
->    void ExampleBackgroundTask::OnCanceled(IBackgroundTaskInstance^ taskInstance, BackgroundTaskCancellationReason reason)
->    {
->        // TODO: Add code to notify the background task that it is cancelled.
->    }
-> ```
+```csharp
+private void OnCanceled(
+    IBackgroundTaskInstance sender,
+    BackgroundTaskCancellationReason reason)
+{
+    // TODO: Add code to notify the background task that it is cancelled.
+}
+```
+
+```cppwinrt
+void ExampleBackgroundTask::OnCanceled(
+    Windows::ApplicationModel::Background::IBackgroundTaskInstance const& taskInstance,
+    Windows::ApplicationModel::Background::BackgroundTaskCancellationReason reason)
+{
+    // TODO: Add code to notify the background task that it is cancelled.
+}
+```
+
+```cpp
+void ExampleBackgroundTask::OnCanceled(
+    IBackgroundTaskInstance^ taskInstance,
+    BackgroundTaskCancellationReason reason)
+{
+    // TODO: Add code to notify the background task that it is cancelled.
+}
+```
 
 Ajoutez une variable d’indicateur appelée **\_CancelRequested** à la classe de tâche en arrière-plan. Cette variable servira à indiquer qu’une demande d’annulation a été effectuée.
 
-> [!div class="tabbedCodeSnippets"]
-> ```cs
->   volatile bool _CancelRequested = false;
-> ```
-> ```cpp
->   private:
->     volatile bool CancelRequested;
-> ```
+```csharp
+volatile bool _CancelRequested = false;
+```
 
-Dans la méthode OnCanceled que vous avez créée à l’étape1, attribuez à la variable d’indicateur **\_CancelRequested** la valeur **true**.
+```cppwinrt
+private:
+    volatile bool m_cancelRequested;
+```
 
-La méthode OnCanceled de l’[exemple complet de tâche en arrière-plan]( http://go.microsoft.com/fwlink/p/?linkid=227509) attribue à **_CancelRequested** la valeur **true** et écrit une sortie de débogage qui peut s’avérer utile:
+```cpp
+private:
+    volatile bool CancelRequested;
+```
 
-> [!div class="tabbedCodeSnippets"]
-> ```cs
->     private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
->     {
->         //
->         // Indicate that the background task is canceled.
->         //
->
->         _cancelRequested = true;
->
->         Debug.WriteLine("Background " + sender.Task.Name + " Cancel Requested...");
->     }
-> ```
-> ```cpp
->     void SampleBackgroundTask::OnCanceled(IBackgroundTaskInstance^ taskInstance, BackgroundTaskCancellationReason reason)
->     {
->         //
->         // Indicate that the background task is canceled.
->         //
->
->         CancelRequested = true;
->     }
-> ```
+Dans la méthode **OnCanceled** que vous avez créé à l’étape 1, définissez la variable d’indicateur **\_CancelRequested** sur **true**.
 
-Dans la méthode Run de la tâche en arrière-plan, inscrivez la méthode de gestionnaire d’événements **OnCanceled** avant de lancer le travail. Dans le cas d’une tâche en arrière-plan in-process, vous pouvez effectuer cette inscription dans le cadre de l’initialisation de votre application. Par exemple, utilisez la ligne de code suivante:
+Complet [exemple de tâche de fond]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled** méthode affecte la **valeur true** **\_CancelRequested** et écrit la sortie de débogage peuvent se révéler utiles.
 
-> [!div class="tabbedCodeSnippets"]
-> ```cs
->     taskInstance.Canceled += new BackgroundTaskCanceledEventHandler(OnCanceled);
-> ```
-> ```cpp
->     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
-> ```
+```csharp
+private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
+{
+    // Indicate that the background task is canceled.
+    _cancelRequested = true;
+
+    Debug.WriteLine("Background " + sender.Task.Name + " Cancel Requested...");
+}
+```
+
+```cppwinrt
+void ExampleBackgroundTask::OnCanceled(
+    Windows::ApplicationModel::Background::IBackgroundTaskInstance const& taskInstance,
+    Windows::ApplicationModel::Background::BackgroundTaskCancellationReason reason)
+{
+    // Indicate that the background task is canceled.
+    m_cancelRequested = true;
+}
+```
+
+```cpp
+void ExampleBackgroundTask::OnCanceled(IBackgroundTaskInstance^ taskInstance, BackgroundTaskCancellationReason reason)
+{
+    // Indicate that the background task is canceled.
+    CancelRequested = true;
+}
+```
+
+Dans la méthode **d’exécution** de la tâche en arrière-plan, enregistrez la méthode de gestionnaire d’événements **OnCanceled** avant de commencer à travailler. Dans le cas d’une tâche en arrière-plan in-process, vous pouvez effectuer cette inscription dans le cadre de l’initialisation de votre application. Par exemple, utilisez la ligne de code suivante.
+
+```csharp
+taskInstance.Canceled += new BackgroundTaskCanceledEventHandler(OnCanceled);
+```
+
+```cppwinrt
+taskInstance.Canceled({ this, &ExampleBackgroundTask::OnCanceled });
+```
+
+```cpp
+taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &ExampleBackgroundTask::OnCanceled);
+```
 
 ## <a name="handle-cancellation-by-exiting-your-background-task"></a>Gérer une annulation en fermant votre tâche en arrière-plan
 
-Lors de la réception d’une demande d’annulation, la méthode qui effectue la tâche en arrière-plan doit arrêter le travail et se fermer en reconnaissant que **\_cancelRequested** est défini sur la valeur **true**. Pour les tâches en arrière-plan in-process, cela implique un retour à partir de la méthode **OnBackgroundActivated()**. Pour les tâches en arrière-plan hors processus, cela implique un retour à partir de la méthode **Run()**.
+Lors de la réception d’une demande d’annulation, la méthode qui effectue la tâche en arrière-plan doit arrêter le travail et se fermer en reconnaissant que **\_cancelRequested** est défini sur la valeur **true**. Pour les tâches en arrière-plan en cours, cela signifie que le retour de la méthode **OnBackgroundActivated** . Pour les tâches en arrière-plan out-of-process, cela signifie renvoi à partir de la méthode **Run** .
 
-Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée. Si **_cancelRequested** a la valeur true, le travail s’arrête.
+Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée. Si **\_cancelRequested** devient la valeur true, arrêter travail de continuer.
 
-L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) comprend une vérification qui arrête le rappel de minuteur périodique en cas d’annulation de la tâche en arrière-plan:
+L' [exemple de tâche de fond](http://go.microsoft.com/fwlink/p/?LinkId=618666) comprend un contrôle qui arrête le rappel du minuteur périodique si la tâche d’arrière-plan est annulée.
 
-> [!div class="tabbedCodeSnippets"]
-> ```cs
->     if ((_cancelRequested == false) && (_progress < 100))
->     {
->         _progress += 10;
->         _taskInstance.Progress = _progress;
->     }
->     else
->     {
->         _periodicTimer.Cancel();
->
->         // TODO: Record whether the task completed or was cancelled.
->     }
-> ```
-> ```cpp
->     if ((CancelRequested == false) && (Progress < 100))
->     {
->         Progress += 10;
->         TaskInstance->Progress = Progress;
->     }
->     else
->     {
->         PeriodicTimer->Cancel();
->
->         // TODO: Record whether the task completed or was cancelled.
->     }
-> ```
+```csharp
+if ((_cancelRequested == false) && (_progress < 100))
+{
+    _progress += 10;
+    _taskInstance.Progress = _progress;
+}
+else
+{
+    _periodicTimer.Cancel();
+    // TODO: Record whether the task completed or was cancelled.
+}
+```
 
-> **Remarque**  L’exemple de code présenté ci-dessus utilise la propriété [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) qui sert à enregistrer la progression de la tâche en arrière-plan. La progression est indiquée à l’application à l’aide de la classe [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
+```cppwinrt
+if (!m_cancelRequested && m_progress < 100)
+{
+    m_progress += 10;
+    m_taskInstance.Progress(m_progress);
+}
+else
+{
+    m_periodicTimer.Cancel();
+    // TODO: Record whether the task completed or was cancelled.
+}
+```
 
-Modifiez la méthode Run de sorte qu’une fois le travail arrêté, elle enregistre l’état de la tâche (terminé ou annulé). Cette étape s’applique aux tâches en arrière-plan hors processus, car vous avez besoin d’un moyen pour communiquer entre les processus lorsque la tâche en arrière-plan a été annulée. Pour les tâches en arrière-plan in-process, vous pouvez simplement partager l’état avec l’application pour indiquer que la tâche a été annulée.
+```cpp
+if ((CancelRequested == false) && (Progress < 100))
+{
+    Progress += 10;
+    TaskInstance->Progress = Progress;
+}
+else
+{
+    PeriodicTimer->Cancel();
+    // TODO: Record whether the task completed or was cancelled.
+}
+```
 
-L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) enregistre l’état dans LocalSettings:
+> [!NOTE]
+> L’exemple de code ci-dessus utilise [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797). Propriété [**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) utilisée pour enregistrer l’avancement des tâches en arrière-plan. La progression est indiquée à l’application à l’aide de la classe [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
 
-> [!div class="tabbedCodeSnippets"]
-> ```cs
->     if ((_cancelRequested == false) && (_progress < 100))
->     {
->         _progress += 10;
->         _taskInstance.Progress = _progress;
->     }
->     else
->     {
->         _periodicTimer.Cancel();
->
->         var settings = ApplicationData.Current.LocalSettings;
->         var key = _taskInstance.Task.TaskId.ToString();
->
->         //
->         // Write to LocalSettings to indicate that this background task ran.
->         //
->
->         if (_cancelRequested)
->         {
->             settings.Values[key] = "Canceled";
->         }
->         else
->         {
->             settings.Values[key] = "Completed";
->         }
->         
->         Debug.WriteLine("Background " + _taskInstance.Task.Name + (_cancelRequested ? " Canceled" : " Completed"));
->         
->         //
->         // Indicate that the background task has completed.
->         //
->
->         _deferral.Complete();
->     }
-> ```
-> ```cpp
->     if ((CancelRequested == false) && (Progress < 100))
->     {
->         Progress += 10;
->         TaskInstance->Progress = Progress;
->     }
->     else
->     {
->         PeriodicTimer->Cancel();
->         
->         //
->         // Write to LocalSettings to indicate that this background task ran.
->         //
->         
->         auto settings = ApplicationData::Current->LocalSettings;
->         auto key = TaskInstance->Task->Name;
->         settings->Values->Insert(key, (Progress < 100) ? "Canceled" : "Completed");
->         
->         //
->         // Indicate that the background task has completed.
->         //
->         
->         Deferral->Complete();
->     }
-> ```
+Modifiez la méthode **Run** afin qu’une fois que le travail a été arrêté, il enregistre si la tâche terminée ou annulée. Cette étape s’applique aux tâches en arrière-plan hors processus, car vous avez besoin d’un moyen pour communiquer entre les processus lorsque la tâche en arrière-plan a été annulée. Pour les tâches en arrière-plan in-process, vous pouvez simplement partager l’état avec l’application pour indiquer que la tâche a été annulée.
+
+L' [exemple de tâche de fond](http://go.microsoft.com/fwlink/p/?LinkId=618666) des enregistrements état dans LocalSettings.
+
+```csharp
+if ((_cancelRequested == false) && (_progress < 100))
+{
+    _progress += 10;
+    _taskInstance.Progress = _progress;
+}
+else
+{
+    _periodicTimer.Cancel();
+
+    var settings = ApplicationData.Current.LocalSettings;
+    var key = _taskInstance.Task.TaskId.ToString();
+
+    // Write to LocalSettings to indicate that this background task ran.
+    if (_cancelRequested)
+    {
+        settings.Values[key] = "Canceled";
+    }
+    else
+    {
+        settings.Values[key] = "Completed";
+    }
+        
+    Debug.WriteLine("Background " + _taskInstance.Task.Name + (_cancelRequested ? " Canceled" : " Completed"));
+        
+    // Indicate that the background task has completed.
+    _deferral.Complete();
+}
+```
+
+```cppwinrt
+if (!m_cancelRequested && m_progress < 100)
+{
+    m_progress += 10;
+    m_taskInstance.Progress(m_progress);
+}
+else
+{
+    m_periodicTimer.Cancel();
+
+    // Write to LocalSettings to indicate that this background task ran.
+    auto settings{ Windows::Storage::ApplicationData::Current().LocalSettings() };
+    auto key{ m_taskInstance.Task().Name() };
+    settings.Values().Insert(key, (m_progress < 100) ? winrt::box_value(L"Canceled") : winrt::box_value(L"Completed"));
+
+    // Indicate that the background task has completed.
+    m_deferral.Complete();
+}
+```
+
+```cpp
+if ((CancelRequested == false) && (Progress < 100))
+{
+    Progress += 10;
+    TaskInstance->Progress = Progress;
+}
+else
+{
+    PeriodicTimer->Cancel();
+        
+    // Write to LocalSettings to indicate that this background task ran.
+    auto settings = ApplicationData::Current->LocalSettings;
+    auto key = TaskInstance->Task->Name;
+    settings->Values->Insert(key, (Progress < 100) ? "Canceled" : "Completed");
+        
+    // Indicate that the background task has completed.
+    Deferral->Complete();
+}
+```
 
 ## <a name="remarks"></a>Remarques
 
 Vous pouvez télécharger l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) pour voir ces exemples de code dans le contexte des méthodes.
 
-Pour des raisons d’illustration, l’exemple de code présente uniquement des portions de la méthode Run (et du minuteur de rappel) de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+À des fins d’illustration, l’exemple de code montre uniquement les parties de la méthode **Run** (et du minuteur de rappel) à partir de l' [exemple de tâche de fond](http://go.microsoft.com/fwlink/p/?LinkId=618666).
 
 ## <a name="run-method-example"></a>Exemple de méthode Run
 
-L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) sont présentés ci-dessous pour plus de contexte:
+Le terminer la méthode **Run** et le code de rappel du minuteur, dans l' [exemple de tâche de fond](http://go.microsoft.com/fwlink/p/?LinkId=618666) sont indiqués ci-dessous pour le contexte.
 
-> [!div class="tabbedCodeSnippets"]
-> ```cs
-> //
-> // The Run method is the entry point of a background task.
-> //
-> public void Run(IBackgroundTaskInstance taskInstance)
-> {
->     Debug.WriteLine("Background " + taskInstance.Task.Name + " Starting...");
->
->     //
->     // Query BackgroundWorkCost
->     // Guidance: If BackgroundWorkCost is high, then perform only the minimum amount
->     // of work in the background task and return immediately.
->     //
->     var cost = BackgroundWorkCost.CurrentBackgroundWorkCost;
->     var settings = ApplicationData.Current.LocalSettings;
->     settings.Values["BackgroundWorkCost"] = cost.ToString();
->
->     //
->     // Associate a cancellation handler with the background task.
->     //
->     taskInstance.Canceled += new BackgroundTaskCanceledEventHandler(OnCanceled);
->
->     //
->     // Get the deferral object from the task instance, and take a reference to the taskInstance;
->     //
->     _deferral = taskInstance.GetDeferral();
->     _taskInstance = taskInstance;
->
->     _periodicTimer = ThreadPoolTimer.CreatePeriodicTimer(new TimerElapsedHandler(PeriodicTimerCallback), TimeSpan.FromSeconds(1));
-> }
->
-> //
-> // Simulate the background task activity.
-> //
-> private void PeriodicTimerCallback(ThreadPoolTimer timer)
-> {
->     if ((_cancelRequested == false) && (_progress < 100))
->     {
->         _progress += 10;
->         _taskInstance.Progress = _progress;
->     }
->     else
->     {
->         _periodicTimer.Cancel();
->
->         var settings = ApplicationData.Current.LocalSettings;
->         var key = _taskInstance.Task.Name;
->
->         //
->         // Write to LocalSettings to indicate that this background task ran.
->         //
->         settings.Values[key] = (_progress < 100) ? "Canceled with reason: " + _cancelReason.ToString() : "Completed";
->         Debug.WriteLine("Background " + _taskInstance.Task.Name + settings.Values[key]);
->
->         //
->         // Indicate that the background task has completed.
->         //
->         _deferral.Complete();
->     }
-> }
-> ```
-> ```cpp
-> void SampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
-> {
->     //
->     // Query BackgroundWorkCost
->     // Guidance: If BackgroundWorkCost is high, then perform only the minimum amount
->     // of work in the background task and return immediately.
->     //
->     auto cost = BackgroundWorkCost::CurrentBackgroundWorkCost;
->     auto settings = ApplicationData::Current->LocalSettings;
->     settings->Values->Insert("BackgroundWorkCost", cost.ToString());
->
->     //
->     // Associate a cancellation handler with the background task.
->     //
->     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
->
->     //
->     // Get the deferral object from the task instance, and take a reference to the taskInstance.
->     //
->     TaskDeferral = taskInstance->GetDeferral();
->     TaskInstance = taskInstance;
->
->     auto timerDelegate = [this](ThreadPoolTimer^ timer)
->     {
->         if ((CancelRequested == false) &&
->             (Progress < 100))
->         {
->             Progress += 10;
->             TaskInstance->Progress = Progress;
->         }
->         else
->         {
->             PeriodicTimer->Cancel();
->
->             //
->             // Write to LocalSettings to indicate that this background task ran.
->             //
->             auto settings = ApplicationData::Current->LocalSettings;
->             auto key = TaskInstance->Task->Name;
->             settings->Values->Insert(key, (Progress < 100) ? "Canceled with reason: " + CancelReason.ToString() : "Completed");
->
->             //
->             // Indicate that the background task has completed.
->             //
->             TaskDeferral->Complete();
->         }
->     };
->
->     TimeSpan period;
->     period.Duration = 1000 * 10000; // 1 second
->     PeriodicTimer = ThreadPoolTimer::CreatePeriodicTimer(ref new TimerElapsedHandler(timerDelegate), period);
-> }
-> ```
+```csharp
+// The Run method is the entry point of a background task.
+public void Run(IBackgroundTaskInstance taskInstance)
+{
+    Debug.WriteLine("Background " + taskInstance.Task.Name + " Starting...");
 
-## <a name="related-topics"></a>Rubriquesassociées
+    // Query BackgroundWorkCost
+    // Guidance: If BackgroundWorkCost is high, then perform only the minimum amount
+    // of work in the background task and return immediately.
+    var cost = BackgroundWorkCost.CurrentBackgroundWorkCost;
+    var settings = ApplicationData.Current.LocalSettings;
+    settings.Values["BackgroundWorkCost"] = cost.ToString();
+
+    // Associate a cancellation handler with the background task.
+    taskInstance.Canceled += new BackgroundTaskCanceledEventHandler(OnCanceled);
+
+    // Get the deferral object from the task instance, and take a reference to the taskInstance;
+    _deferral = taskInstance.GetDeferral();
+    _taskInstance = taskInstance;
+
+    _periodicTimer = ThreadPoolTimer.CreatePeriodicTimer(new TimerElapsedHandler(PeriodicTimerCallback), TimeSpan.FromSeconds(1));
+}
+
+// Simulate the background task activity.
+private void PeriodicTimerCallback(ThreadPoolTimer timer)
+{
+    if ((_cancelRequested == false) && (_progress < 100))
+    {
+        _progress += 10;
+        _taskInstance.Progress = _progress;
+    }
+    else
+    {
+        _periodicTimer.Cancel();
+
+        var settings = ApplicationData.Current.LocalSettings;
+        var key = _taskInstance.Task.Name;
+
+        // Write to LocalSettings to indicate that this background task ran.
+        settings.Values[key] = (_progress < 100) ? "Canceled with reason: " + _cancelReason.ToString() : "Completed";
+        Debug.WriteLine("Background " + _taskInstance.Task.Name + settings.Values[key]);
+
+        // Indicate that the background task has completed.
+        _deferral.Complete();
+    }
+}
+```
+
+```cppwinrt
+void ExampleBackgroundTask::Run(Windows::ApplicationModel::Background::IBackgroundTaskInstance const& taskInstance)
+{
+    // Query BackgroundWorkCost
+    // Guidance: If BackgroundWorkCost is high, then perform only the minimum amount
+    // of work in the background task and return immediately.
+    auto cost{ Windows::ApplicationModel::Background::BackgroundWorkCost::CurrentBackgroundWorkCost() };
+    auto settings{ Windows::Storage::ApplicationData::Current().LocalSettings() };
+    std::wstring costAsString{ L"Low" };
+    if (cost == Windows::ApplicationModel::Background::BackgroundWorkCostValue::Medium) costAsString = L"Medium";
+    else if (cost == Windows::ApplicationModel::Background::BackgroundWorkCostValue::High) costAsString = L"High";
+    settings.Values().Insert(L"BackgroundWorkCost", winrt::box_value(costAsString));
+
+    // Associate a cancellation handler with the background task.
+    taskInstance.Canceled({ this, &ExampleBackgroundTask::OnCanceled });
+
+    // Get the deferral object from the task instance, and take a reference to the taskInstance.
+    m_deferral = taskInstance.GetDeferral();
+    m_taskInstance = taskInstance;
+
+    Windows::Foundation::TimeSpan period{ std::chrono::seconds{1} };
+    m_periodicTimer = Windows::System::Threading::ThreadPoolTimer::CreatePeriodicTimer([this](Windows::System::Threading::ThreadPoolTimer timer)
+    {
+        if (!m_cancelRequested && m_progress < 100)
+        {
+            m_progress += 10;
+            m_taskInstance.Progress(m_progress);
+        }
+        else
+        {
+            m_periodicTimer.Cancel();
+
+            // Write to LocalSettings to indicate that this background task ran.
+            auto settings{ Windows::Storage::ApplicationData::Current().LocalSettings() };
+            auto key{ m_taskInstance.Task().Name() };
+            settings.Values().Insert(key, (m_progress < 100) ? winrt::box_value(L"Canceled") : winrt::box_value(L"Completed"));
+
+            // Indicate that the background task has completed.
+            m_deferral.Complete();
+        }
+    }, period);
+}
+```
+
+```cpp
+void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
+{
+    // Query BackgroundWorkCost
+    // Guidance: If BackgroundWorkCost is high, then perform only the minimum amount
+    // of work in the background task and return immediately.
+    auto cost = BackgroundWorkCost::CurrentBackgroundWorkCost;
+    auto settings = ApplicationData::Current->LocalSettings;
+    settings->Values->Insert("BackgroundWorkCost", cost.ToString());
+
+    // Associate a cancellation handler with the background task.
+    taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &ExampleBackgroundTask::OnCanceled);
+
+    // Get the deferral object from the task instance, and take a reference to the taskInstance.
+    TaskDeferral = taskInstance->GetDeferral();
+    TaskInstance = taskInstance;
+
+    auto timerDelegate = [this](ThreadPoolTimer^ timer)
+    {
+        if ((CancelRequested == false) &&
+            (Progress < 100))
+        {
+            Progress += 10;
+            TaskInstance->Progress = Progress;
+        }
+        else
+        {
+            PeriodicTimer->Cancel();
+
+            // Write to LocalSettings to indicate that this background task ran.
+            auto settings = ApplicationData::Current->LocalSettings;
+            auto key = TaskInstance->Task->Name;
+            settings->Values->Insert(key, (Progress < 100) ? "Canceled with reason: " + CancelReason.ToString() : "Completed");
+
+            // Indicate that the background task has completed.
+            TaskDeferral->Complete();
+        }
+    };
+
+    TimeSpan period;
+    period.Duration = 1000 * 10000; // 1 second
+    PeriodicTimer = ThreadPoolTimer::CreatePeriodicTimer(ref new TimerElapsedHandler(timerDelegate), period);
+}
+```
+
+## <a name="related-topics"></a>Rubriques connexes
 
 - [Créez et inscrivez une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
 - [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)

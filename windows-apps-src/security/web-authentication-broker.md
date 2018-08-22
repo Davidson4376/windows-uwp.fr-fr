@@ -1,6 +1,6 @@
 ---
 title: Service Broker d’authentification web
-description: Cet article explique comment connecter votre application UWP à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth (par exemple, Facebook, Twitter, Flickr, Instagram, etc.).
+description: Cet article explique comment connecter votre application de plateforme Windows universelle (UWP) à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth (par exemple, Facebook, Twitter, Flickr, Instagram, etc.).
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 author: PatrickFarley
 ms.author: pafarley
@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a55235e22c64b8da68fc16f3a0dc382ff3c9e56
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 245fb2cfb3a62dc739abc7cfb2522da6495429ed
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816424"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788654"
 ---
 # <a name="web-authentication-broker"></a>Service Broker d’authentification web
 

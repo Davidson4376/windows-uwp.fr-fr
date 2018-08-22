@@ -4,18 +4,18 @@ Description: You can select the screenshots, logos, and other art assets (such a
 title: Captures d’écran, images et bandes-annonces de l’application
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
-ms.date: 4/30/2018
+ms.date: 8/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, bande-annonce, vidéo, capture d’écran, image, icône, description dans le Store, images de description dans le Store
-ms.localizationpriority: high
-ms.openlocfilehash: e0ac8e01aab07e68e0a4f22160cb58e558b4dc42
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d787ac620f9d0114d67d85def758416afd9f5f15
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817780"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788434"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>Captures d’écran, images et bandes-annonces de l’application
 
@@ -85,11 +85,13 @@ Cette image peut apparaître dans différentes pages du Store pour Windows10 (y 
 
 Cette image est requise pour un affichage correct sur WindowsPhone8.1 et versions antérieures. Si votre application prend en charge WindowsPhone8.1 ou versions antérieures et que vous ne fournissez pas cette image, les clients concernés verront une icône vide associée à la description de votre application. (Ceci s’applique également aux clients sur Windows10, si votre application ne comporte que des packages ciblant WindowsPhone8.1 ou les versions antérieures.) Si votre soumission inclut *uniquement* des packages UWP, vous n’avez pas besoin de fournir cette image. (Notez que si votre soumission comprend à la fois des packages Windows Phone8.x et des packages UWP et que vous fournissez cette image, celle-ci peut être utilisée sur Windows10dans certaines dispositions du Store. Pour éviter cela, vous pouvez créer des [descriptions propres à la plateforme](create-platform-specific-store-listings.md) pour les versions de WindowsPhone prises en charge par votre application et inclure uniquement à cet emplacement l’icône de vignette de l’application.)
 
-Lorsque vous présentez votre description aux clients sur Windows10 (y compris Xbox), vous avez également la possibilité d’empêcher le Store d’utiliser les images de logo disponibles dans les packages de votre application et de faire en sorte qu’il utilise uniquement les images que vous chargez. Cette opération vous permet de mieux contrôler l’apparence de votre application sur différents affichages partout dans le Store pour les clients sur Windows10 (y compris Xbox).
+### <a name="display-only-uploaded-logo-images-in-the-store"></a>Affichage téléchargé uniquement des images de logo dans le magasin
 
-Pour utiliser uniquement des images chargées pour l’affichage dans le Store sur Windows10 (y compris Xbox), cochez la case **Pour les clients Windows10, afficher les images de logo chargées au lieu des images de mes packages**. (Si vous n’activez pas cette case, les images des packages de votre application seront utilisées.)
+Vous pouvez empêcher le magasin d’avec les images de logo dans des packages de votre application lors de l’affichage de votre annonce pour les clients Windows 10 (y compris Xbox) et au lieu de cela que le magasin utilisez uniquement des images que vous téléchargez. Cette opération vous permet de mieux contrôler l’apparence de votre application sur différents affichages partout dans le Store pour les clients sur Windows10 (y compris Xbox). (Si votre produit prend en charge les versions antérieures du système d’exploitation, les clients peuvent encore voir les images de vos packages, même si vous utilisez cette option.)
 
-Lorsque vous cochez cette case, une nouvelle section intitulée **Uploaded Store logos** s’affiche. Dans cette section, vous pouvez charger 3images, y compris «l’icône de vignette de l’application» au format 300x300 (si vous cochez cette case, le champ qui permet de fournir cette image se déplace dans cette section). Si vous utilisez cette option, nous vous recommandons de fournir les trois tailles d’image: 71x71, 150x150 et 300x300pixels. Toutefois, seule la taille 300 x 300 est obligatoire.
+Pour que le magasin utiliser uniquement les images que vous téléchargez (pour les clients Windows 10, y compris Xbox), et pas utiliser toutes les images de vos packages, indiquant **la case à cocher pour les clients Windows 10 et Xbox, affichage téléchargé les images de logo au lieu des images à partir de mes packages **.
+
+Lorsque vous activez cette case, une nouvelle section appelée **magasin afficher des images** s’affiche. Ici, vous pouvez télécharger des 3 images, y compris la taille de **l’application de 1:1 mosaïque icône (pixels de 300 x 300)** (si la case à cocher, le champ de fournir que cette image est déplacés dans cette section). Si vous utilisez cette option, nous vous recommandons de fournir les trois tailles d’image: 71x71, 150x150 et 300x300pixels. Toutefois, seule la taille 300 x 300 est obligatoire.
 
 
 <span id="promotional-images" />
@@ -209,7 +211,7 @@ Lorsque vous fournissez vos bandes-annonces, veillez à respecter ces exigences:
 - Le titre ne doit pas dépasser 255caractères. 
 - N’incluez pas les classifications d'âge minimum dans vos bandes-annonces.
 
-Comme les autres champs sur la page de description du Store, les bandes-annonces doivent obtenir une certification pour pouvoir être publiées sur le Microsoft Store. Assurez-vous que vos bandes-annonces respectent les [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx).
+Comme les autres champs sur la page de description du Store, les bandes-annonces doivent obtenir une certification pour pouvoir être publiées sur le Microsoft Store. Assurez-vous que vos bandes-annonces respectent les [Politiques du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies).
 
 Il existe des exigences supplémentaires en fonction du type de fichier.
 

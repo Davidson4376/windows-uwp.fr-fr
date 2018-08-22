@@ -8,14 +8,14 @@ ms.date: 02/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp
+keywords: Windows 10, uwp, portail de périphérique
 ms.localizationpriority: medium
-ms.openlocfilehash: fd196c76afe8f8cb1841ba7a7869de725177969a
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 404db3963d2f9508d7c81053abf96b0e742103f7
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816924"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788664"
 ---
 # <a name="device-portal-for-xbox"></a>Device Portal pour Xbox
 
@@ -197,7 +197,13 @@ Espace de travail vide que vous pouvez personnaliser à votre convenance. Vous p
 
 ![Ajouter des outils à l’espace de travail](images/device-portal-xbox-13.png)
 
+### <a name="game-event-data"></a>Données d’événement
+
+Dans la page de **données de l’événement jeu** , vous pouvez afficher un graphique en temps réel ce flux dans le nombre d’événements de jeu de suivi d’événements pour Windows (ETW) actuellement enregistrée sur votre Xbox un. S’il existe des événements jeu enregistrés sur le système, vous pouvez également afficher les détails (nom de l’événement, occurrence de l’événement et le titre du jeu) décrivant chaque événement dans une table de données sous le graphique de données. Le tableau est disponible uniquement si les événements enregistrés.
+
+![Données d’événement](images/device-portal-xbox-22.PNG)
+
 ## <a name="see-also"></a>Voir aussi
 
 * [Vue d’ensemble du portail d’appareil Windows](device-portal.md)
-* [RéférenceAPI principales du portail d’appareil](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Informations de référence sur les API principales du portail d’appareilWindows](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

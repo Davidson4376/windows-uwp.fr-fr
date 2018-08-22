@@ -1,6 +1,6 @@
 ---
 author: msatranjr
-Description: Cette rubrique décrit les recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur.
+Description: This topic describes performance guidelines for apps that require access to a user's location.
 title: Recommandations pour les applications prenant en charge l’emplacement
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ms.author: misatran
@@ -9,16 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, emplacement, carte, géolocalisation
-ms.openlocfilehash: f2035762fe99e1692d8b8b5eea5260aeb39b8d2a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 903a7b308c78e4ab9826ea4c46c642cb3361b462
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230545"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2786875"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>Recommandations pour les applications prenant en charge l’emplacement
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -50,7 +51,7 @@ Cette rubrique décrit les recommandations en matière de performance des applic
 
     Libérez l’objet [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) si l’utilisateur désactive l’accès aux informations de géolocalisation via les Paramètres. L’application recevra des résultats **ACCESS\_DENIED** lors de tous les appels d’API de géolocalisation. Si votre application enregistre ou met en cache les données de géolocalisation, effacez toutes les données mises à en cache lorsque l’utilisateur révoque l’accès aux informations de géolocalisation. Proposez un autre moyen de saisir manuellement un emplacement lorsque les informations de géolocalisation ne sont pas disponibles via les services de localisation.
 
--   Prévoyez une interface utilisateur permettant de réactiver les services de localisation. Par exemple, fournissez un bouton d’actualisation qui réinstancie l’objet [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) et essaie de réobtenir les informations de géolocalisation.
+-   Prévoyez une interface utilisateur permettant de réactiver les services de localisation. Par exemple, fournir un bouton d’actualisation qui réinstancie l’objet [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) et tente d’obtenir des informations d’emplacement à nouveau.
 
     Votre application doit proposer une interface utilisateur pour la réactivation des services de géolocalisation.
 
@@ -90,7 +91,7 @@ Cette rubrique décrit les recommandations en matière de performance des applic
         Par exemple :
 
         -   Si votre application obtient l’emplacement pour l’optimisation publicitaire, la météo, les actualités, et ainsi de suite, une précision de 5000 mètres suffit généralement.
-        -   Si votre application affiche les « meilleures affaires du coin », une précision de 300 mètres procure en général de bons résultats.
+        -   Si votre application s’affiche à proximité de demandes dans le cercle, une précision de 300 jauge est généralement une bonne fournir des résultats.
         -   Si l’utilisateur souhaite obtenir des recommandations pour choisir un restaurant dans les environs, une précision de 100 mètres suffit.
         -   Si l’utilisateur essaie de partager sa position, l’application doit demander une précision d’environ 10 mètres.
     -   Utilisez la propriété [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) si votre application a des exigences de précision spécifiques. Par exemple, les applications de navigation doivent utiliser la propriété **Geocoordinate.accuracy** pour déterminer si les données de géolocalisation disponibles répondent à leurs exigences.
