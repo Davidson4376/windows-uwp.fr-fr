@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, portail de périphérique
 ms.localizationpriority: medium
 ms.openlocfilehash: 1192c200cd42ab28cc7e763c06fd8a5638aa3400
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2786697"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2815241"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>Portail de périphériques pour mettre en service avec un certificat SSL personnalisé
 Dans la mise à jour Windows 10: les créateurs de portail de périphériques Windows ajouté un moyen pour les administrateurs de périphérique installer un certificat personnalisé à utiliser dans les communications HTTPS. 

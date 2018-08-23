@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 322bc056411095019dfc027078cbfef7de0883fb
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2789200"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2822951"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Nouveautés dans la documentation de développeur Windows 2018 mai
 
@@ -103,7 +103,7 @@ La fonctionnalité ensembles est disponible dans Windows initiés preview génè
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
-### <a name="get-started"></a>Commencer
+### <a name="get-started"></a>Prise en main
 
 Nous avons aux retraités rajeunit notre Get en route avec les nouvelles pistes de formation. Ces nouvelles rubriques visent à fournir des nouveaux développeurs Windows 10 avec des informations sur certaines tâches courantes, ils peuvent souhaiter faire. Ils ne sont pas des didacticiels et ne fournissent pas une procédure pas à pas portables, mais au lieu de cela, signalez lorsqu’il existe une documentation existante et comment l’utiliser. Extraire le revisitée [Démarrer le codage](../get-started/create-uwp-apps.md) de page ou explorez chaque piste learning individuels:
 

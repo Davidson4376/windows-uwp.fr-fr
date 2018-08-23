@@ -4,18 +4,18 @@ Description: The Microsoft Store offers Mobile Operator Billing as a payment met
 title: Facturation de l’opérateur mobile
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 06/08/2018
+ms.date: 08/23/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, opérateurs mobiles, facturation mobile, facturation de l’opérateur mobile
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bfb2fbbea42aaf1ed3c0ffc42f71dc38b2a1ede
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.openlocfilehash: c8d0e3093a6a44f748ca78ff3fad977f2cc94d77
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2788114"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2810475"
 ---
 # <a name="mobile-operator-billing"></a>Facturation de l’opérateur mobile
 
@@ -51,6 +51,7 @@ La facturation de l'opérateur mobile est actuellement prise en charge par les o
 | Espagne           | Orange                           |
 | Suède          | Telenor, 3                       |
 | Suisse     | Swisscom, Sunrise                |
+| Taiwan          | FarEasTone                       |
 | Turquie          | Turkcell                         |
 | Émirats arabes unis | Etisalat                    |
 | États-Unis   | Sprint, Verizon                  |

@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ad817bbae2fb8b28b95095880aa1a65c391720f3
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2800511"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2816112"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
@@ -150,7 +150,7 @@ Parfois, en raison de problèmes réseau ou d’administration, le Mode dévelop
 Voir le forum [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) pour rechercher des solutions de contournement à ces problèmes et bien plus encore. 
 
 > [!NOTE]
-> Si le Mode développeur ne s’installe correctement, nous vous invitons à une demande d’évaluation de fichiers. Dans l’application de **Commentaires Hub** , sélectionnez **Ajouter nouveau commentaires**, choisissez la catégorie de la **Plateforme de développement** et de la sous-catégorie **Mode développeur** . Envoi de commentaires permettra à Microsoft de résoudre le problème que vous avez rencontré.
+> Si le Mode développeur ne s’installe pas correctement, nous vous encourageons à introduire une demande de commentaires. Dans l’application de **Commentaires concentrateur** , sélectionnez **commentaires de nouveau ajouter**et choisissez la catégorie de la **Plate-forme de développement** et de la sous-catégorie **Mode développeur** . Envoi de commentaires permettra à Microsoft de résoudre le problème rencontré.
 
 ### <a name="failed-to-locate-the-package"></a>Échec de la localisation du package
 

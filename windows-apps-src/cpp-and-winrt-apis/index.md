@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection
 ms.localizationpriority: medium
-ms.openlocfilehash: c9aaca0194f57c244bca0d6cb8ccf08e5e4eafda
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.openlocfilehash: 165800f76e78bc9de15e5294a81672d3968b241e
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2788714"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2810604"
 ---
 # [<a name="cwinrt"></a>C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 C++/WinRT est une projection de langage C++17 moderne entièrement standard pour les API Windows Runtime (WinRT), implémentée en tant que bibliothèque basée sur un fichier d'en-tête et conçue pour vous fournir un accès de première classe à l’API Windows moderne. Avec C++/WinRT, vous pouvez créer et utiliser des API Windows Runtime en utilisant n’importe quel compilateur C++17 conforme aux normes. Le SDK Windows inclut C++/WinRT. Il a été introduit dans la version10.0.17134.0 (Windows10, version1803).
@@ -29,7 +29,7 @@ Le langage de programmation C++ est utilisé à la fois dans les segments des en
 
 D’un point de vue du langage, C++ a toujours été destiné à la création et l’utilisation d’abstractions qui sont à la fois riches en types et légères. Mais le langage a changé considérablement depuis les pointeurs bruts, les boucles brutes et l’allocation et la libération laborieuses de mémoire de C++98. Le C++ moderne (à partir de C++11) s’attache à l’expression claire des idées, à la simplicité, à la lisibilité et à limiter l'introduction de bogues.
 
-Pour la création et l’utilisation d’API Windows Runtime avec C++, il existe C++/WinRT. Il s’agit du remplacement recommandé par Microsoft pour la [(bibliothèque de modèles C++ WindowsRuntime (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live) et [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live).
+Pour la création et l’utilisation d’API Windows Runtime avec C++, il existe C++/WinRT. Il s’agit de remplacement recommandé par Microsoft pour le [C + / CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) projection de langue et le [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live).
 
 Vous utilisez des types de données, des algorithmes et des mots-clés C++ standard lorsque vous utilisez C++/WinRT. La projection a ses propres types de données personnalisés, mais dans la plupart des cas vous n’avez pas besoin de les apprendre car ils fournissent des conversions appropriées vers et depuis les types standard. De cette façon, vous pouvez continuer à utiliser les fonctionnalités de langage C++ standard auxquelles vous êtes habitué, et le code source que vous avez déjà. C++/WinRT facilite beaucoup l’appel des API Windows Runtime dans n’importe quelle application C++, de Win32 à UWP.
 

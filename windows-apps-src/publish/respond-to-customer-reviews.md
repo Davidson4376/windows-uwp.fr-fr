@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, réponse, réponses, passez en revue
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a043a0b721ee6eabdc3520960ae6da253587c33
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2797330"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2823101"
 ---
 # <a name="respond-to-customer-reviews"></a>Répondre aux avis des clients
 
