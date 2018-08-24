@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f41d25fd6757e5d3f80d00de341168de4f34e946
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2822771"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2840997"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Nouveautés dans la documentation de développeur Windows 2018 juillet
 

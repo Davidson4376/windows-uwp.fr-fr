@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 245fb2cfb3a62dc739abc7cfb2522da6495429ed
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.openlocfilehash: d354f0babec3ec2346c6e76fcae8666f40f3f6be
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2814494"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2840492"
 ---
 # <a name="web-authentication-broker"></a>Service Broker d’authentification web
 
@@ -159,12 +159,15 @@ Il est souvent possible de déterminer ce qui ne fonctionne pas à l’aide des 
 
 Le débogueur web Fiddler peut être utilisé avec des applications.
 
-1.  Étant donné qu’AuthHost s’exécute dans son propre conteneur d’application pour lui donner la fonctionnalité réseau privé, vous devez définir une clé de Registre: Windows Registry Editor Version5.00
+1.  Dans la mesure où le AuthHost s’exécute dans son propre conteneur d’application, vous devez définir une clé de Registre pour lui donner la fonctionnalité de réseau privé: Windows Registry Editor Version 5.00
 
     **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**WindowsNT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
 
-                         Data type  
-                         DWORD
+    Si vous n’avez pas cette clé de Registre, vous pouvez le créer dans une invite de commandes avec des privilèges d’administrateur.
+
+    ```cmd 
+    REG ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\authhost.exe" /v EnablePrivateNetwork /t REG_DWORD /d 1 /f
+    ```
 
 2.  Ajoutez une règle pour AuthHost, car c’est de là que provient le trafic sortant.
     ```syntax

@@ -4,39 +4,30 @@ Description: You can generate promotional codes for an app or add-on that you ha
 title: Générer des codes promotionnels
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 08/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, code promotionnel, codes promotionnels, jeton, jetons
 ms.localizationpriority: medium
-ms.openlocfilehash: b74b0ea0304cd1d0c33b226b6582411f5a3b2c41
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.openlocfilehash: 37263794ffed6660f71c5e16195e992588c16d4a
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2819241"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2839421"
 ---
 # <a name="generate-promotional-codes"></a>Générer des codes promotionnels
 
 
-Vous pouvez générer des codes promotionnels pour une application ou un module complémentaire que vous avez publiés dans le Microsoft Store. Les codes promotionnels permettent d’offrir facilement à des utilisateurs influents un accès gratuit à votre application ou votre module complémentaire. Vous pouvez également utiliser des codes promotionnels dans des scénarios de service client, en offrant aux utilisateurs un accès gratuit à votre application ou votre module complémentaire, ou pour effectuer un [test bêta](beta-testing-and-targeted-distribution.md) dans Windows10.
+Vous pouvez générer des codes promotionnels pour une application ou un module complémentaire que vous avez publiés dans le Microsoft Store. Les codes promotionnels permettent d’offrir facilement à des utilisateurs influents un accès gratuit à votre application ou votre module complémentaire. Vous pouvez également utiliser des codes promotionnels dans des scénarios de service client, en offrant aux utilisateurs un accès gratuit à votre application ou votre module complémentaire, ou pour effectuer un [test bêta](beta-testing-and-targeted-distribution.md) dans Windows10. 
 
-À chaque code promotionnel correspond une URL donnant droit, que vous pouvez distribuer à un client ou à un groupe de clients. Un client peut cliquer simplement sur l’URL pour utiliser le code et installer votre application ou module complémentaire à partir du Microsoft Store.
+Chaque code promotionnel a d’URL utilisables unique que vous cliquez sur un client afin d’utiliser le code et installer votre application ou un module complémentaire à partir de Microsoft Store.  Notez que votre application doit exécuter la phase finale de publication du [processus de certification des applications](the-app-certification-process.md) avant que les clients ne puissent utiliser un code promotionnel pour l’installer.
+
+Vous pouvez générer des codes à usage unique (et distribuer un pour chaque client), ou vous pouvez choisir de générer un code qui peut être utilisé plusieurs fois à un nombre spécifié de clients.
 
 > [!TIP]
 > Vous pouvez utiliser des [notifications Push ciblées](send-push-notifications-to-your-apps-customers.md) pour distribuer un code promotionnel à un segment de vos clients. Dans ce cas, veillez à utiliser un code promotionnel qui permet à plusieurs clients d'utiliser le même code.
-
-Dans le tableau de bord du Centre de développement Windows, vous pouvez:
-
--   Commander un ensemble de codes promotionnels pour votre application ou module complémentaire.
--   Télécharger une commande de codes promotionnels complétée.
--   Examiner l’utilisation des codes promotionnels.
-
-> [!NOTE]
-> Vous pouvez générer des codes promotionnels même si vous avez sélectionné l'option **Rendre ce produit disponible mais non détectable dans le Store** avec l’option **Empêcher l’acquisition: tout client disposant d’un lien direct peut voir la description du produit dans le Store, mais ne peut le télécharger que s’il possède déjà le produit ou dispose d’un code promotionnel et utilise un appareil Windows10** dans la section [Détectabilité](choose-visibility-options.md#discoverability) de votre soumission.
-
-Notez que votre application doit exécuter la phase finale de publication du [processus de certification des applications](the-app-certification-process.md) avant que les clients ne puissent utiliser un code promotionnel pour l’installer.
 
 
 ## <a name="promotional-code-policies"></a>Stratégies de code promotionnel
@@ -48,10 +39,13 @@ Tenez compte des stratégies suivantes relatives aux codes promotionnels:
 -   Pour chaque application ou module complémentaire, vous pouvez générer des codes pour permettre jusqu’à 1600échanges tous les 6mois. La période de 6mois commence lorsque la première commande de code promotionnel est envoyée, même si vous choisissez une date d’expiration antérieure. Le total de 1600échanges par produit s’applique aux codes à usage unique et aux codes qui peuvent être utilisés plusieurs fois.
 -   Vous devez respecter les exigences définies dans le [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), notamment la section **3k. Codes promotionnels**.
 
+> [!NOTE]
+> Vous pouvez utiliser les codes promotionnels même si votre application n’est pas disponible pour les clients (autrement dit, si vous avez sélectionné l’option **rendre ce produit disponibles mais ne sont pas accessibles dans le magasin** avec l’acquisition de l’arrêt **: n’importe quel client avec un lien direct peut afficher le magasin du produit liste, mais ils peuvent uniquement télécharger si le propriétaire du produit, ou un code de promotion et utilisez un périphérique Windows 10** option dans la section de [découverte](choose-visibility-options.md#discoverability) de votre présentation). Cette option, les clients doivent être sur 10 Windows (y compris Xbox) afin d’acquérir votre produit avec un code promotionnel.
+
 
 ## <a name="order-promotional-codes"></a>Commander des codes promotionnels
 
-Pour commander des codes promotionnels pour une application ou un module complémentaire que vous avez publiés dans le MicrosoftStore:
+Pour les codes promotionnel de commande pour une application ou un module complémentaire:
 
 1.  Dans le menu de navigation de gauche du tableau de bord du Centre de développement Windows, développez **Attract**, puis sélectionnez **Promo codes**.
 
@@ -62,7 +56,7 @@ Pour commander des codes promotionnels pour une application ou un module complé
     -   Spécifiez un nom pour la commande. Ce nom permet de différencier les différentes commandes de codes lors de l’examen des données d’utilisation de votre code promotionnel.
     -   Sélectionnez le type de commande. Vous pouvez choisir de générer plusieurs codes promotionnels pouvant servir une seule fois ou un seul code promotionnel pouvant servir plusieurs fois.
     -   Spécifiez le nombre de codes à commander (si vous générez un ensemble de codes) ou le nombre de fois où que le code peut être utilisé (si vous générez un code à utiliser plusieurs fois).
-    -   Indiquez à quel moment les codes promotionnels doivent devenir actifs. Pour choisir une date et une heure de début précises, décochez la case **Les codes sont immédiatement actifs**. Sinon, les codes deviendront actifs immédiatement.
+    -   Indiquez à quel moment les codes promotionnels doivent devenir actifs. Pour choisir une date et une heure de début précises, décochez la case **Les codes sont immédiatement actifs**. Dans le cas contraire, les codes deviendra actifs immédiatement (bien que votre produit doit avoir effectué le processus de publication dans l’ordre pour un client utiliser le code).
     -   Indiquez à quel moment les codes promotionnels doivent expirer. Pour choisir une date et une heure d’expiration précises antérieures à 6mois, décochez la case **Les codes expirent au bout de 6mois**.
 
 4.  Cliquez sur **Commander des codes**. Vous êtes alors renvoyé à la page **codes promotionnels**, dans laquelle vous pouvez voir votre nouvelle commande dans le tableau récapitulatif des commandes de codes promotionnels pour cette application.
@@ -98,7 +92,7 @@ Pour télécharger une commande de codes promotionnels complétée et distribuer
 
 ## <a name="code-redemption-user-experience"></a>Expérience utilisateur d’échange du code
 
-Une fois que vous distribuez un code promotionnel (ou son URL donnant droit) à un client, celui-ci peut utiliser cette URL pour obtenir le produit gratuitement. Lorsqu’il clique sur l'URL donnant droit, une page authentifiée **Utiliser votre code** s’ouvre à l’adresse <https://account.microsoft.com/billing/redeem>. Cette page inclut une description de l’application à laquelle l’utilisateur est sur le point d’accéder. Si le client n’est pas connecté à son compte Microsoft, il peut être invité à le faire. Votre client peut également consulter <https://account.microsoft.com/billing/redeem> et entrer le code directement.
+Une fois que vous distribuez un code promotionnel (ou son URL utilisables) à un client, ils peuvent cliquer l’URL pour obtenir le produit gratuitement. Lorsqu’il clique sur l'URL donnant droit, une page authentifiée **Utiliser votre code** s’ouvre à l’adresse <https://account.microsoft.com/billing/redeem>. Cette page inclut une description de l’application à laquelle l’utilisateur est sur le point d’accéder. Si le client n’est pas connecté à son compte Microsoft, il peut être invité à le faire. Votre client peut également consulter <https://account.microsoft.com/billing/redeem> et entrer le code directement.
 
 > [!IMPORTANT]
 > Nous vous recommandons de ne pas distribuer les codes promotionnels à vos clients tant que votre produit n'a pas terminé le processus de publication (même si vous avez sélectionné **Rendre ce produit disponible mais non détectable dans le Windows Store**). Les clients verront une erreur s’ils tentent d’utiliser un code promotionnel pour un produit qui n’a pas encore été publié.
@@ -106,7 +100,7 @@ Une fois que vous distribuez un code promotionnel (ou son URL donnant droit) à 
 Lorsque le client clique sur **Utiliser**, le MicrosoftStore s’ouvre à la page Vue d’ensemble de l’application (sur un appareil Windows10 ou Windows8.1), dans laquelle il peut cliquer sur **Installer** pour télécharger et installer l’application gratuitement. Si le client se connecte à partir d’un ordinateur ou d’un appareil sur lequel Microsoft Store n’est pas installé, le lien ouvre la page web du Microsoft Store pour l’application. Le code sera appliqué au compte Microsoft du client, afin que celui-ci puisse télécharger ultérieurement l’application sur un appareil Windows (associé au même compte Microsoft) gratuitement.
 
 > [!NOTE]
-> Dans certains cas, le client peut voir un bouton **Acheter** à la place du bouton **Installer**, même si l’application a été correctement acquise par le biais du code promotionnel. Le client peut alors cliquer sur **Acheter** pour installer l’application gratuitement.
+> Dans certains cas, un client peut s’afficher un bouton **acheter** au lieu d' **installer**, même si l’application a été échangée avec succès via le code promotionnel. Le client peut alors cliquer sur **Acheter** pour installer l’application gratuitement.
 
 
 ## <a name="review-your-promotional-codes"></a>Passer en revue vos codes promotionnels

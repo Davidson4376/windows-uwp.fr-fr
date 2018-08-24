@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, exigences relatives aux packages, packages, format du package, version prise en charge, soumettre
 ms.localizationpriority: medium
 ms.openlocfilehash: d7d748f36dafd93066928f01f9aa42414f2ffc1f
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2816159"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2839909"
 ---
 # <a name="app-package-requirements"></a>Exigences relatives au package de l’application
 
@@ -41,7 +41,7 @@ Il n’est pas nécessaire que les packages de votre application soient signés 
 
 ### <a name="app-bundles"></a>Ensembles d’applications
 
-Pour les applications qui ciblent Windows 10, Windows 8.1 et/ou Windows Phone 8.1, Visual Studio peut générer un bundle app (.appxbundle) pour réduire la taille de l’application que les utilisateurs téléchargent. Cela peut être utile si vous avez défini des ressources propres à une langue, plusieurs ressources de mise à l’échelle d’images ou encore des ressources qui s’appliquent à des versions spécifiques de Microsoft DirectX.
+Pour les applications qui ciblent Windows 10, Windows 8.1 et/ou Windows Phone 8.1, Visual Studio peut générer un groupement d’application (.appxbundle) pour réduire la taille de l’application que les utilisateurs téléchargent. Cela peut être utile si vous avez défini des ressources propres à une langue, plusieurs ressources de mise à l’échelle d’images ou encore des ressources qui s’appliquent à des versions spécifiques de Microsoft DirectX.
 
 > [!NOTE]
 > Un même ensemble d’applications peut contenir vos packages pour toutes les architectures. Vous ne devez soumettre qu’un seul ensemble par système d’exploitation ciblé.
@@ -61,7 +61,7 @@ Votre manifeste doit inclure des informations spécifiques concernant votre comp
 > Les valeurs du manifeste respectent la casse. Les espaces et autres symboles de ponctuation doivent également correspondre. Saisissez les valeurs correctement et vérifiez-les pour vous assurer qu’elles sont correctes.
 
 
-Offres d’application (.appxbundle) utilisent un manifeste différent. Pour connaître les détails et exigences concernant les manifestes d’ensemble d’applications, consultez la documentation relative au [manifeste d’offre groupée](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest). Notez que dans une .appxbundle, la .appxmanifest de chaque package inclus doit utiliser les mêmes éléments et attributs, à l’exception de l’attribut **ProcessorArchitecture** de l’élément [d’identité](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) .
+Offres de l’application (.appxbundle) utilisent un manifeste différents. Pour connaître les détails et exigences concernant les manifestes d’ensemble d’applications, consultez la documentation relative au [manifeste d’offre groupée](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest). Notez que dans un .appxbundle, le .appxmanifest de chaque package inclus doit utiliser les mêmes éléments et attributs, à l’exception de l’attribut **ProcessorArchitecture** de l’élément [d’identité](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) .
 
 > [!TIP]
 > Veillez à exécuter le [Kit de certification des applications Windows](../debug-test-perf/windows-app-certification-kit.md) avant de soumettre vos packages. Vous pouvez ainsi déterminer si votre manifeste présente des problèmes susceptibles de faire échouer la certification ou la soumission.
@@ -88,7 +88,7 @@ Les versions actuellement prises en charge sont comprises entre les versions:
 
 ## <a name="storemanifest-xml-file"></a>Fichier XML StoreManifest
 
-Le fichier StoreManifest.xml est un fichier de configuration facultatif qui peut être inclus dans les packages d’application. Son objet est d’activer des fonctionnalités, par exemple en déclarant que votre application est une application pour périphériques du MicrosoftStore ou en déclarant des critères dont dépend un package à appliquer à un appareil. Ces fonctionnalités ne sont pas couvertes par le manifeste du package. Si vous utilisez, StoreManifest.xml est envoyé avec le package d’application et doit être dans le dossier racine du projet principal de votre application. Pour plus d’informations, voir [Schéma StoreManifest](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal).
+Le fichier StoreManifest.xml est un fichier de configuration facultatif qui peut être inclus dans les packages d’application. Son objet est d’activer des fonctionnalités, par exemple en déclarant que votre application est une application pour périphériques du MicrosoftStore ou en déclarant des critères dont dépend un package à appliquer à un appareil. Ces fonctionnalités ne sont pas couvertes par le manifeste du package. En cas d’utilisation, StoreManifest.xml est envoyé avec le package d’application et doit être dans le dossier racine du projet principal de votre application. Pour plus d’informations, voir [Schéma StoreManifest](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal).
 
  
 
