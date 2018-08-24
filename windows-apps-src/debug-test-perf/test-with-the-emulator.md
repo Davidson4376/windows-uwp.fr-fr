@@ -10,15 +10,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 98908855acbc341c14464881aeb058a331e7b2a3
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691208"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2831606"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Tester à l’aide de l’émulateur Microsoft pour Windows10 Mobile
-
 
 Simulez une interaction réaliste avec un appareil et testez les fonctionnalités de votre application à l’aide des outils fournis avec l’émulateur Microsoft pour Windows 10 Mobile. L’émulateur est une application de bureau qui émule un appareil mobile exécutant Windows 10. Il offre un environnement virtualisé dans lequel vous pouvez déboguer et tester les applications Windows sans appareil physique. Il fournit également un environnement isolé pour vos prototypes d’application.
 
@@ -30,9 +29,9 @@ Vous pouvez tester votre application universelle à l’aide d’une image de l�
 
 Votre ordinateur doit présenter la configuration suivante :
 
-BIOS
+Processeur (ces paramètres, le cas échéant, peuvent être activés dans le BIOS)
 
--   Assistance matérielle à la virtualisation
+-   Virtualisation assistée par matériel ([vérifier la compatibilité](https://www.microsoft.com/download/details.aspx?id=592)).
 -   Traduction d’adresse de second niveau (SLAT, Second Level Address Translation)
 -   Prévention de l’exécution des données au niveau matériel (DEP, Data Execution Prevention)
 
@@ -50,23 +49,28 @@ Pour vérifier la configuration requise du BIOS, consultez [Activation d’Hyper
 
 Pour vérifier la configuration requise en termes de RAM et de système d’exploitation, dans le Panneau de configuration, sélectionnez **Système et sécurité**, puis **Système**.
 
-L’émulateur Microsoft pour Windows 10 Mobile nécessite Visual Studio 2015. Il n’est pas compatible avec les versions antérieures de Visual Studio.
+Microsoft Emulator pour Windows Mobile de 10 requiert Visual Studio 2015 ou version ultérieure; Il n’est pas compatible avec les versions antérieures de Visual Studio.
 
 L’émulateur Microsoft pour Windows 10 Mobile ne peut pas charger des applications destinées à des versions de Windows Phone OS antérieures à Windows Phone OS 7.1.
 
-## <a name="installing-and-uninstalling"></a>Installation et désinstallation
+## <a name="installing-uninstalling-and-running-the-emulator"></a>Installation, désinstallation et l’émulateur en cours d’exécution
 
--   **Installation**.
+### <a name="installing"></a>L’installation
+L’émulateur Microsoft pour Windows10 Mobile est fourni avec le Kit de développement logiciel (SDK) Windows10. Ils peuvent tous deux être installés avec VisualStudio. Consultez la [page de téléchargement de VisualStudio](https://go.microsoft.com/fwlink/p/?LinkId=534785).
 
-    L’émulateur Microsoft pour Windows10 Mobile est fourni avec le Kit de développement logiciel (SDK) Windows10. Ils peuvent tous deux être installés avec VisualStudio. Consultez la [page de téléchargement de VisualStudio](https://go.microsoft.com/fwlink/p/?LinkId=534785).
+Vous pouvez également installer l’émulateur Microsoft pour Windows10 Mobile à l’aide du [programme d’installation de l’émulateur Microsoft](https://go.microsoft.com/fwlink/p/?LinkID=615095).
 
-    Vous pouvez également installer l’émulateur Microsoft pour Windows10 Mobile à l’aide du [programme d’installation de l’émulateur Microsoft](https://go.microsoft.com/fwlink/p/?LinkID=615095).
+### <a name="uninstalling"></a>Désinstallation
 
--   **Désinstallation**.
+Vous pouvez désinstaller l’émulateur Microsoft pour Windows10 Mobile à l’aide du programme d’installation/réparation de Visual Studio. Vous pouvez également utiliser l’option **Programmes et fonctionnalités** du **Panneau de configuration** pour supprimer l’émulateur.
 
-    Vous pouvez désinstaller l’émulateur Microsoft pour Windows10 Mobile à l’aide du programme d’installation/réparation de Visual Studio. Vous pouvez également utiliser l’option **Programmes et fonctionnalités** du **Panneau de configuration** pour supprimer l’émulateur.
+Lorsque vous désinstallez l’émulateur Microsoft pour Windows 10 Mobile, la carte Ethernet virtuelle Hyper-V créée pour l’émulateur à utiliser n’est pas automatiquement supprimée. Vous pouvez la supprimer manuellement sous **Connexions réseau**, dans le **Panneau de configuration**.
 
-    Lorsque vous désinstallez l’émulateur Microsoft pour Windows 10 Mobile, la carte Ethernet virtuelle Hyper-V créée pour l’émulateur à utiliser n’est pas automatiquement supprimée. Vous pouvez la supprimer manuellement sous **Connexions réseau**, dans le **Panneau de configuration**.
+### <a name="running"></a>Running
+
+Pour exécuter une application dans l’émulateur, sélectionnez simplement dans le menu déroulant **exécuter** dans Visual Studio un périphérique émulé.
+
+![Émulateurs disponibles avec la résolution, la taille et la mémoire](images/em-list.png)
 
 ## <a name="whats-new-in-microsoft-emulator-for-windows-10-mobile"></a>Nouveautés de l’émulateur Microsoft pour Windows10 Mobile
 
@@ -82,7 +86,7 @@ Outre les nouvelles fonctionnalités mentionnées dans la section précédente, 
 
 -   **Résolution d’écran, taille d’écran et mémoire**. Visez un large marché pour votre application en la testant sur plusieurs images de l’émulateur afin de simuler différentes résolutions d’écran, tailles physiques et contraintes de mémoire.
 
-    ![Émulateurs disponibles avec la résolution, la taille et la mémoire](images/em-list.png)
+![Émulateurs disponibles avec la résolution, la taille et la mémoire](images/em-list.png)
 
 -   **Configuration de l’écran**. Basculez l’émulateur du mode Portrait au mode Paysage. Modifiez la valeur de zoom pour adapter l’émulateur à l’écran de l’ordinateur.
 

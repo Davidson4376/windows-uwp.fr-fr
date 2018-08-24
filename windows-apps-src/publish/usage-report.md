@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, utilisation, événement personnalisé, rapport, télémétrie, sessions utilisateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 96d36ebbaa2b7f1a650e2b0f794a1976c1f525a6
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2816085"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2830721"
 ---
 # <a name="usage-report"></a>Rapport d’utilisation
 
@@ -50,10 +50,10 @@ Ce graphique comporte quatre onglets visualisables qui vous présentent l’util
 - **Durée**: indique le nombre total d’heures d’engagement (heures pendant lesquelles un utilisateur utilise activement votre application).
 - **Rétention**: affiche le nombre total **d’utilisateurs actifs quotidiennement/d’utilisateurs actifs mensuels** au cours de la période sélectionnée.
 
-Lorsque le **30 D** période est sélectionnée, vous pouvez voir marqueurs de cercle lorsque vous affichez les onglets **utilisateurs**, **périphériques**ou la **durée** . Ceux-ci représentent une augmentation importante ou diminuent d’une valeur donnée dont nous pensons que vous voudrez savoir sur. La date sur laquelle apparaît le cercle représente la fin de la semaine dans laquelle nous avons détecté une augmentation significative du nombre ou la baisse par rapport à la semaine avant que. Pour voir plus de détails sur ce qui a changé, survolez le cercle.  
+Lors de la période de **30 D** est sélectionnée, vous pouvez voir marques en forme de cercle lors de l’affichage des onglets **des utilisateurs**, des **périphériques**ou **durée** . Ces représentent une augmentation significative ou réduire dans une valeur de donnée qui nous pensons que vous souhaiterez savoir à propos de. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous a détecté une augmentation significative ou une baisse par rapport à la semaine avant que. Pour afficher plus d’informations sur ce qui a changé, pointez sur le cercle.  
 
 > [!TIP]
-> Vous pouvez afficher des conseils supplémentaires liés à des modifications significatives au cours des 30 derniers jours dans le [rapport d’analyses](insights-report.md).
+> Vous pouvez afficher des conseils supplémentaires liées à des modifications significatives au cours des 30 derniers jours dans le [rapport de détails](insights-report.md).
 
 
 ## <a name="user-sessions"></a>Sessions utilisateur

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, banque, analytique Microsoft Store API, insights
 ms.localizationpriority: medium
 ms.openlocfilehash: e7ca6eed40af37276b5b4c98ec7b1b709bdadfb9
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2820118"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2837939"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>Obtenir des informations pour votre application de bureau
 

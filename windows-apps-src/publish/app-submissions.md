@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cf1e647931b6e7680fb65ddcf200bf2a74be716a
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2815021"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2832025"
 ---
 # <a name="app-submissions"></a>Soumissions d’applications
 
@@ -113,7 +113,7 @@ Vous devez indiquer toutes les informations requises pour au moins l’une des l
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **Options de mise en attente de publication**     | Par défaut: publier cette soumission dès qu’elle a obtenu la certification (ou selon les dates que vous avez sélectionnées dans la section Planification)      | [Options de mise en attente de publication](manage-submission-options.md#publishing-hold-options)    
 | **Notes pour la certification**     | Recommandé          | [Notes pour la certification](notes-for-certification.md)             |
-| **Fonctionnalités restreintes**     | Requis si votre produit déclare des [fonctions restreintes] (... /Packaging/App-Capability-Declarations.MD#Restricted-Capabilities    | [Fonctionnalités restreintes](manage-submission-options.md#publishing-hold-options)       
+| **Fonctionnalités restreintes**     | Requis si votre produit déclare des [capacités restreintes](../packaging/app-capability-declarations.md#restricted-capabilities)    | [Fonctionnalités restreintes](manage-submission-options.md#publishing-hold-options)       
 
 <span/>
 

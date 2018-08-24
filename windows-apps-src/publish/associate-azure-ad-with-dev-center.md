@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, azure ad, client azure, client aad, client azure ad, gestion des clients, clients
 ms.localizationpriority: medium
 ms.openlocfilehash: dd729d76705849c981516109da39bbd27c140286
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2816102"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2836706"
 ---
 # <a name="associate-azure-active-directory-with-your-dev-center-account"></a>Associer Azure Active Directory à votre compte du Centre de développement
 
@@ -35,7 +35,7 @@ Un seul client AzureAD peut être associé à plusieurs comptes du Centre de dé
 
 Si votre organisation utilise déjà AzureAD, procédez comme suit pour lier votre compte du Centre de développement.
 
-1.  Du tableau de [bord du centre de développement Windows](https://partner.microsoft.com/dashboard), sélectionnez l’icône engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez **les paramètres de compte**. Dans le menu **paramètres** , sélectionnez **locataires**.
+1.  Du tableau de [bord du centre de développement Windows](https://partner.microsoft.com/dashboard), sélectionnez l’icône d’engrenage (dans le coin supérieur droit du tableau de bord), puis sélectionnez **paramètres du compte**. Dans le menu **paramètres** , sélectionnez **clients**.
 2.  Sélectionnez **Associer Azure AD à votre compte du Centre de développement**.
 3.  Entrez vos informations d’identification Azure AD pour le client que vous souhaitez associer.
 4.  Vérifiez le nom d’organisation et le nom de domaine pour votre locataire AzureAD. Pour valider l’association, sélectionnez **Confirmer**.
@@ -49,7 +49,7 @@ Si votre organisation utilise déjà AzureAD, procédez comme suit pour lier vot
 
 Si vous avez besoin de configurer un nouvel AzureAD à lier à votre compte du Centre de développement, procédez comme suit.
 
-1.  Du tableau de [bord du centre de développement Windows](https://partner.microsoft.com/dashboard), sélectionnez l’icône engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez **les paramètres de compte**. Dans le menu **paramètres** , sélectionnez **locataires**.
+1.  Du tableau de [bord du centre de développement Windows](https://partner.microsoft.com/dashboard), sélectionnez l’icône d’engrenage (dans le coin supérieur droit du tableau de bord), puis sélectionnez **paramètres du compte**. Dans le menu **paramètres** , sélectionnez **clients**.
 2.  Sélectionnez **Créer Azure AD**.
 3.  Entrez les informations de répertoire de votre nouvel Azure AD:
     - **Nom de domaine**: nom unique que nous utiliserons pour votre domaine Azure AD, avec «.onmicrosoft.com». Par exemple, si vous avez entré «exemple», votre domaine Azure AD sera «exemple.onmicrosoft.com».
@@ -78,7 +78,7 @@ Tout utilisateur qui dispose du rôle **Manager** rôle pour un compte du Centre
 > [!IMPORTANT]
 > Lorsque vous supprimez un client, tous les utilisateurs qui ont été ajoutés au compte du Centre de développement à partir de ce client ne pourront plus se connecter au compte. 
 
-Pour supprimer un client, trouver son nom sur la page de **locataires** (dans **les paramètres du compte**), puis sélectionnez **Supprimer**. Vous serez invité à confirmer que vous souhaitez supprimer le client. Cela fait, aucun utilisateur du Centre de développement dans ce client ne pourra plus se connecter au compte du Centre de développement, et toutes les autorisations que vous aurez configurées pour ces utilisateurs seront supprimées.
+Pour supprimer un client, recherchez son nom dans la page de **clients** (dans les **paramètres du compte**), puis sélectionnez **Supprimer**. Vous serez invité à confirmer que vous souhaitez supprimer le client. Cela fait, aucun utilisateur du Centre de développement dans ce client ne pourra plus se connecter au compte du Centre de développement, et toutes les autorisations que vous aurez configurées pour ces utilisateurs seront supprimées.
 
 > [!TIP]
 > Vous ne pouvez pas supprimer un client si vous êtes actuellement connecté au Centre de développement à l’aide d’un compte de ce même client. Pour supprimer un client, vous devez vous connecter au Centre de développement en tant que **Manager** pour un autre client qui est associé au compte. S’il n'existe qu’un seul client associé au compte, ce client ne peut être supprimé qu'après vous être connecté avec le compte Microsoft ayant ouvert le compte.
