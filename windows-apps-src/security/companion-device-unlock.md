@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, sécurité
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
 ms.openlocfilehash: ac2e29d5219809058edee2d7a92c2e2475d9752e
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2811352"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2830751"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Déverrouillage Windows avec les appareils (IoT) complémentaires
 
