@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 512880b7a7ea955a45697762cbbdb7f74ac70102
-ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "2831516"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "2867918"
 ---
 # <a name="makepriexe-configuration-file"></a>Fichier de configuration de MakePri.exe
 
