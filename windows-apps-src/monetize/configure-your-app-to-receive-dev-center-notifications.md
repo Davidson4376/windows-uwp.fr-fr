@@ -11,11 +11,11 @@ keywords: windows10, uwp, MicrosoftStore Services SDK, notifications Push ciblé
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
 ms.openlocfilehash: d44d4491d8f5f0a7cde65adbe8241a74e36e1506
-ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "2839461"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "2857827"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>Configurez votre application pour les notifications push ciblées
 
