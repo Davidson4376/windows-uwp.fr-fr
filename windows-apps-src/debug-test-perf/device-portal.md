@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, portail de périphérique
 ms.localizationpriority: medium
 ms.openlocfilehash: 08e7d8fcfbab0d0b22fffa3e3e0aecc38d5b095c
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2867598"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2889274"
 ---
 # <a name="windows-device-portal-overview"></a>Vue d’ensemble de Windows Device Portal
 
@@ -156,7 +156,7 @@ La page Gestionnaire de périphériques énumère tous les périphériques conne
 
 ![Page Gestionnaire de périphériques de portail périphérique](images/device-portal/mob-device-portal-devices.png)
 
-### <a name="networking"></a>Réseaux
+### <a name="networking"></a>Mise en réseau
 
 La page réseau gère les connexions réseau sur l’appareil. Sauf si vous êtes connecté au portail de périphérique via USB, modification de ces paramètres système probablement vous déconnecter de portail de périphérique.
 - **Réseaux disponibles**: affiche les réseaux Wi-Fi disponibles sur le périphérique. Appuyez ou cliquez sur un réseau pour vous y connecter et fournir une clé d’accès si nécessaire. Portail de périphérique ne gère pas encore l’authentification entreprise. Vous pouvez également utiliser la liste déroulante des **profils** pour essayer de se connecter à n’importe lequel des profils Wi-Fi connus pour le périphérique.
