@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, extensions, iap, prix
 ms.localizationpriority: medium
 ms.openlocfilehash: b5b7a6424fea3d62849e992f56b0b40ab72a55f5
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888228"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2909519"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>Définir le prix et la disponibilité d’une extension
 
@@ -54,12 +54,12 @@ Pour plus d’informations, voir [Configurer le calendrier de publication exact]
 
 ## <a name="pricing"></a>Tarification
 
-Vous devez sélectionner un prix de base pour votre module complémentaire (sauf si vous avez sélectionné l’option **Arrêter d’acquisition** dans la section de **visibilité** ). La sélection par défaut est **disponible**, si vous souhaitez payer pour le module complémentaire, veillez donc à choisir une des couches de prix disponibles (commençant à.99 EUR).
+Vous devez sélectionner un prix de base pour votre extension (sauf si vous avez sélectionné l’option **empêcher l’acquisition** dans la section **visibilité** ). La sélection par défaut est **libre**, par conséquent, si vous souhaitez facturer pour le module complémentaire, veillez à choisir l’un des niveaux de prix disponibles (en commençant à.99 USD).
 
 Vous pouvez également planifier des modifications de tarifs pour indiquer la date et l’heure auxquelles le prix de l’extension doit changer. En outre, vous pouvez personnaliser ces changements pour des marchés spécifiques. 
 
 > [!TIP]
-> Des modules complémentaires d’abonnement, vous ne pouvez pas déclencher le prix après avoir publié le module complémentaire, en sélectionnant un prix de base supérieur dans un envoi ultérieur ou en planifiant une modification de prix qui augmente le prix. Vous pouvez sélectionner un prix inférieur à l’aide d’une de ces méthodes, mais diminue le prix vous ne serez en mesure de déclencher supérieure à ce nouveau prix. Pour cette raison, il est particulièrement important pour vous assurer que vous sélectionnez le niveau de prix approprié des modules complémentaires d’abonnement. 
+> Pour les extensions d’abonnement, vous ne pouvez pas augmenter le prix après la publication de l’extension, en sélectionnant un prix de base supérieure dans une soumission ultérieure ou en planifiant un changement de prix qui augmente le prix. Vous pouvez sélectionner un prix inférieur à l’aide d’une de ces méthodes, mais une fois que le prix est baissé, vous ne serez en mesure de déclencher supérieur à ce nouveau prix. Pour cette raison, il est particulièrement important pour vous assurer que vous sélectionnez le niveau de prix approprié pour les extensions d’abonnement. 
 
 Pour plus d’informations, consultez l’article [Définir et planifier le prix de l’application](set-and-schedule-app-pricing.md).
 

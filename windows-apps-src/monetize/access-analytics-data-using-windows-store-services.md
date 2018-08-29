@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore
 ms.localizationpriority: medium
 ms.openlocfilehash: f36facd8ba89fbaccb7c61ad937c2ce005922aa8
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2886248"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910565"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Accéder aux données d’analyse à l’aide des services du Windows Store
 
@@ -86,7 +86,7 @@ Les méthodes analytique suivantes sont disponibles pour les apps UWP dans le Ce
 |---------------|--------------------|
 | Acquisitions, conversions et installations |  <ul><li>[Obtenir les acquisitions d’applications](get-app-acquisitions.md)</li><li>[Obtenir les données relatives à l'entonnoir d'acquisition d'applications](get-acquisition-funnel-data.md)</li><li>[Obtenir les conversions d’applications par canal](get-app-conversions-by-channel.md)</li><li>[Obtenir des acquisitions d’extensions](get-in-app-acquisitions.md)</li><li>[Obtenir des acquisitions d’extensions d'inscription](get-subscription-acquisitions.md)</li><li>[Obtenir des conversions d'extensions par canal](get-add-on-conversions-by-channel.md)</li><li>[Obtenir les installations d’application](get-app-installs.md)</li></ul> |
 | Erreurs d’application | <ul><li>[Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)</li><li>[Obtenir les informations sur une erreur de votre application](get-details-for-an-error-in-your-app.md)</li><li>[Obtenir la trace de pile concernant une erreur dans votre application](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[Télécharger le fichier CAB pour une erreur dans votre app](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
-| Insights | <ul><li>[Obtenir des informations pour votre application](get-insights-data-for-your-app.md)</li></ul>  |
+| Insights | <ul><li>[Obtenir les informations concernant votre application](get-insights-data-for-your-app.md)</li></ul>  |
 | Évaluations et avis | <ul><li>[Obtenir les évaluations des applications](get-app-ratings.md)</li><li>[Obtenir les avis sur les applications](get-app-reviews.md)</li></ul> |
 | Publicités dans l'application et campagnes publicitaires | <ul><li>[Obtenir les données relatives aux performances publicitaires](get-ad-performance-data.md)</li><li>[Obtenir les données relatives aux performances de la campagne publicitaire](get-ad-campaign-performance-data.md)</li></ul> |
 
@@ -97,9 +97,9 @@ Les méthodes d'analyse suivantes peuvent être utilisées par des comptes de d�
 | Scénario       | Méthodes      |
 |---------------|--------------------|
 | Installations |  <ul><li>[Obtenir des installations d’application de bureau](get-desktop-app-installs.md)</li></ul> |
-| Blocs de |  <ul><li>[Obtenir des blocs de mise à niveau pour votre application de bureau](get-desktop-block-data.md)</li><li>[Obtenir des détails sur le bloc de mise à niveau pour votre application de bureau](get-desktop-block-data-details.md)</li></ul> |
+| Blocs |  <ul><li>[Obtenir des blocs de mise à niveau pour votre application de bureau](get-desktop-block-data.md)</li><li>[Obtenir des détails de la mise à niveau de blocage de votre application de bureau](get-desktop-block-data-details.md)</li></ul> |
 | Erreurs des applications |  <ul><li>[Obtenir des données de rapport d'erreur pour votre application de bureau](get-desktop-application-error-reporting-data.md)</li><li>[Obtenir les informations sur une erreur de votre application de bureau](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Obtenir la trace de pile concernant une erreur dans votre application de bureau](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Télécharger le fichier CAB pour une erreur dans votre application de bureau](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
-| Insights | <ul><li>[Obtenir des informations pour votre application de bureau](get-insights-data-for-your-desktop-app.md)</li></ul>  |
+| Insights | <ul><li>[Obtenir les informations concernant votre application de bureau](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 
 ### <a name="methods-for-xbox-live-services"></a>Méthodes pour les services Xbox Live
 
@@ -121,7 +121,7 @@ Les méthodes supplémentaires suivantes sont disponibles pour les comptes de d�
 
 ### <a name="methods-for-hardware-and-drivers"></a>Méthodes pour le matériel et les pilotes
 
-Comptes pour les développeurs qui font partie du [Centre de développement Windows matériel programme](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) ont accès à un ensemble de méthodes pour extraire des données analytique pour les pilotes et le matériel supplémentaire. Pour plus d’informations, voir le [tableau de bord de matériel API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
+Comptes de développeur qui font partie du [programme du centre de développement matériel Windows](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) ont accès à un ensemble supplémentaire de méthodes pour récupérer des données d’analytique pour le matériel et les pilotes. Pour plus d’informations, consultez le [tableau de bord du matériel API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
 
 ## <a name="code-example"></a>Exemple de code
 

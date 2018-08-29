@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: prise en main, uwp, windows10, piste d'apprentissage, disposition, formulaire
 ms.localizationpriority: medium
 ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888378"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2916497"
 ---
 # <a name="create-and-customize-a-form"></a>Créer et personnaliser un formulaire
 
@@ -48,9 +48,9 @@ Lisez [cette documentation sur les panneaux de disposition](../design/layout/lay
 
 ## <a name="what-goes-in-a-form"></a>Contenu d'un formulaire
 
-Vous devez remplir votre formulaire avec une sélection de [contrôles XAML](../design/controls-and-patterns/controls-and-events-intro.md). Vous les connaissez sans doute déjà, mais n’hésitez pas à les passer en revue pour rafraîchir vos connaissances. En particulier, vos contrôles devront permettent à votre utilisateur de saisir du texte ou de choisir une valeur dans une liste. Il s’agit d’une liste des options que vous pouvez ajouter de base, vous n’avez pas besoin de lire tout ce qui concerne les juste suffisamment afin de comprendre quoi elles ressemblent et leur fonctionnement.
+Vous devez remplir votre formulaire avec une sélection de [contrôles XAML](../design/controls-and-patterns/controls-and-events-intro.md). Vous les connaissez sans doute déjà, mais n’hésitez pas à les passer en revue pour rafraîchir vos connaissances. En particulier, vos contrôles devront permettent à votre utilisateur de saisir du texte ou de choisir une valeur dans une liste. Il s’agit d’une liste d’options que vous pouvez ajouter de base: vous n’êtes pas obligé de lire tous les concernant, il vous suffit de savoir à quoi elles ressemblent et comment elles fonctionnent.
 
-* [Zone de texte](../design/controls-and-patterns/text-box.md) permet à un utilisateur d’entrée du texte dans votre application.
+* [TextBox](../design/controls-and-patterns/text-box.md) permet à un utilisateur d’entrée de texte dans votre application.
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) permet à un utilisateur de choisir entre deux options.
 * [DatePicker](../design/controls-and-patterns/date-picker.md) permet à un utilisateur de sélectionner une valeur de date.
 * [TimePicker](../design/controls-and-patterns/time-picker.md) permet à un utilisateur de sélectionner une valeur d'heure.
@@ -136,7 +136,7 @@ Si vous créez des dispositions plus complexes avec plusieurs éléments visuels
 
 ## <a name="going-further"></a>Aller plus loin
 
-Bien qu'il s'agisse ici de la création d'un formulaire, les concepts de dispositions et de contrôles s'appliquent à toutes les interfaces utilisateur XAML que vous pouvez créer. N’hésitez pas à passer en revue les documents, nous vous permet de contrer et de tester le formulaire que vous avez, ajouter de nouvelles fonctionnalités de l’interface utilisateur et affiner davantage l’expérience utilisateur. Si vous souhaitez obtenir des conseils détaillés via les fonctionnalités de mise en page plues, consultez notre [didacticiel adaptive mise en page](../design/basics/xaml-basics-adaptive-layout.md)
+Bien qu'il s'agisse ici de la création d'un formulaire, les concepts de dispositions et de contrôles s'appliquent à toutes les interfaces utilisateur XAML que vous pouvez créer. N’hésitez pas à revenir en arrière par le biais de la documentation, nous vous permettent de faire des essais avec le formulaire dont vous disposez, ajouter de nouvelles fonctionnalités de l’interface utilisateur et à améliorer davantage l’expérience utilisateur. Si vous souhaitez obtenir des instructions pas à pas sur les fonctionnalités de disposition plus détaillées, consultez notre [didacticiel de disposition adaptative](../design/basics/xaml-basics-adaptive-layout.md)
 
 Les formulaires n'existent pas nécessairement en dehors de tout contexte: vous pouvez aller plus loin et incorporer le vôtre dans un [modèle Maître/Détails](../design/controls-and-patterns/master-details.md) ou un [contrôle pivot](../design/controls-and-patterns/tabs-pivot.md). Ou si vous souhaitez vous attaquer au code-behind de votre formulaire, vous pouvez commencer avec notre [vue d’ensemble des événements](../xaml-platform/events-and-routed-events-overview.md).
 

@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 53aac2375d60df3cd9493f315b20431961378fe8
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2886697"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905222"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Poursuivre l’activité utilisateur, même sur différents appareils
 
@@ -171,7 +171,7 @@ Vous pouvez utiliser l'API [UserActivity](https://docs.microsoft.com/uwp/api/win
 
 ## <a name="related-topics"></a>Rubriques associées
 
-* [Activités de l’utilisateur (documents de projet Rome)](https://docs.microsoft.com/windows/project-rome/user-activities/)
+* [Activités de l’utilisateur (documentation du projet «Rome»)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Cartes adaptatives](https://docs.microsoft.com/adaptive-cards/)
 * [Visualiseur de cartes adaptatives, exemples](http://adaptivecards.io/)
 * [Gérer l’activation des URI](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)

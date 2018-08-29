@@ -2,27 +2,27 @@
 author: PatrickFarley
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Tests d’application Pont du bureau Windows
-description: Tests intégrés du pont bureau permet de vous assurer que votre application de bureau est optimisée pour la conversion à une application UWP.
+description: Utilisez les tests intégrés de pont du bureau pour vous assurer que votre application de bureau est optimisée pour sa conversion vers une application UWP.
 ms.author: pafarley
 ms.date: 12/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, certification de l’application
+keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 96087d2a41eb443374d8cd9bda5608d6156f9173
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2895227"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2909756"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests d’application Pont du bureau Windows
 
-[Les applications de pont de bureau](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root) sont les applications de bureau Windows converties en applications universels Windows plateforme (UWP) à l’aide du [Pont de bureau](https://developer.microsoft.com/en-us/windows/bridges/desktop). Après la conversion, les applications de bureau Windows sont empaquetées, soumises à maintenance et déployées sous la forme d’un package d’application UWP (fichier.appx ou .appxbundle) ciblant Windows10 Desktop.
+[Les applications pont du bureau](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root) sont des applications de bureau Windows converties en applications de plateforme Windows universelle (UWP) à l’aide du [Pont du bureau](https://developer.microsoft.com/en-us/windows/bridges/desktop). Après la conversion, les applications de bureau Windows sont empaquetées, soumises à maintenance et déployées sous la forme d’un package d’application UWP (fichier.appx ou .appxbundle) ciblant Windows10 Desktop.
 
 ## <a name="required-versus-optional-tests"></a>Tests obligatoires et tests facultatifs
-Tests facultatifs pour les applications Windows Desktop pont sont d’information uniquement et ne seront pas utilisés pour évaluer votre application au cours de l’intégration de Microsoft Store. Nous vous recommandons de rechercher ces résultats pour produire une meilleure qualité des applications de test. Les critères généraux de réussite/échec d’intégration au WindowsStore sont déterminés par les tests obligatoires et non par ces tests facultatifs.
+Les tests facultatifs des applications pont du bureau de Windows sont à titre d’informations uniquement et ne seront pas utilisés pour évaluer votre application lors de l’intégration de Microsoft Store. Nous vous recommandons d’examen des résultats pour produire des applications de meilleure qualité des tests. Les critères généraux de réussite/échec d’intégration au WindowsStore sont déterminés par les tests obligatoires et non par ces tests facultatifs.
 
 ## <a name="current-optional-tests"></a>Tests facultatifs actuels
 
@@ -50,13 +50,13 @@ Voir [Pont du bureau vers UWP: extensions d’application](https://docs.microsof
 Ce test vérifie que le package appx n’est pas une version de débogage.
  
 **Contexte**  
-Pour être certifiée pour Microsoft Store, applications ne doivent pas être compilées pour le débogage et qu’ils ne doivent pas référencer les versions de débogage d’un fichier exécutable. En outre, vous devez générer votre code de manière optimisée pour que votre application réussisse ce test.
+Pour pouvoir être certifiées pour le Microsoft Store, les applications ne doivent pas être compilées pour le débogage et ne doivent pas référencer les versions de débogage d’un fichier exécutable. En outre, vous devez générer votre code de manière optimisée pour que votre application réussisse ce test.
  
 **Détails du test**  
 Testez l’application de manière à vérifier qu’il ne s’agit pas d’une version de débogage et qu’elle n’est pas liée à des infrastructures de débogage.
  
 **Actions correctives**  
-* Créer l’application en tant qu’une version Release avant de vous soumettez à Microsoft Store.
+* Générez l’application comme une version commerciale avant de la soumettre au Microsoft Store.
 * Vérifiez que la version correcte du .NET Framework est installée.
 * Assurez-vous que l’application ne crée pas de liens vers des versions de débogage d’une infrastructure et qu’elle est créée avec une version commerciale. Si l’application contient des composants .NET, assurez-vous que vous avez installé la version correcte de .NETFramework.
 
@@ -125,7 +125,7 @@ L’image «BadgeLogo» a une valeur ABGR «{value}» non valide pour une image 
 L’image doit définir au moins un type Variant sans qualificateur TargetSize. Elle doit définir un qualificateur Scale ou laisser Scale et TargetSize non spécifiés, ce qui donne la valeur par défaut Scale-100.  | Pour plus d’informations, consultez les guides sur la [conception réactive](https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx) et [les ressources d’application](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data). 
 Un fichier «resources.pri» manque dans le package.  | Si le manifeste de votre application comporte du contenu localisable, veillez à ce que le package de votre application contienne un fichier resources.pri valide. 
 Le fichier «resources.pri» doit contenir un mappage des ressources avec un nom qui correspond au nom du package «{package full name}».  | Vous pouvez obtenir cette erreur si le manifeste a changé et que le nom du mappage de ressources dans resources.pri ne correspond plus au nom du package dans le manifeste. Dans le message réel, {package full name} représente le nom du package que resources.pri doit contenir. Pour résoudre ce problème, vous devez régénérer resources.pri; la façon la plus facile de le faire consiste à régénérer le package de l’application. 
-La fusion automatique ne doit pas être activée pour le fichier «resources.pri».  | MakePRI.exe prend en charge une option appelée AutoMerge. La valeur par défaut de AutoMerge est off. Lorsque l’option AutoMerge est activée, elle fusionne les ressources du module linguistique d’une application en un fichier resources.pri unique au moment de l’exécution. Cela déconseillée pour les applications que vous voulez distribuer par le biais de Microsoft Store. Le resources.pri d’une application qui est distribuée par le biais de Microsoft Store doivent être à la racine du package de l’application et contenir toutes les références de langage qui prend en charge de l’application. 
+La fusion automatique ne doit pas être activée pour le fichier «resources.pri».  | MakePRI.exe prend en charge une option appelée AutoMerge. La valeur par défaut de AutoMerge est off. Lorsque l’option AutoMerge est activée, elle fusionne les ressources du module linguistique d’une application en un fichier resources.pri unique au moment de l’exécution. Est déconseillé pour les applications que vous envisagez de distribuer par le biais du Microsoft Store. Le fichier resources.pri d’une application distribuée par le biais du Microsoft Store doivent être à la racine du package de l’application et contenir toutes les références de langage qui prend en charge de l’application. 
 La chaîne «{string}» ne respecte pas la limite maximale de {number}caractères.  | Consultez les [Exigences relatives aux packages d’applications](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements). Dans le message réel, {string} est remplacé par la chaîne affectée par l’erreur et {number} représente la longueur maximale. 
 La chaîne {string} ne doit pas comporter d’espace de début/fin.  | Le schéma des éléments du manifeste de l’application n’autorise pas les espaces de début ou de fin. Dans le message réel, {string} est remplacé par la chaîne affectée par l’erreur. Assurez-vous qu’aucune des valeurs localisées des champs du manifeste dans resources.pri ne possède d’espaces de début ou de fin. 
 La chaîne ne doit pas être vide (sa longueur doit être supérieure à zéro).  | Pour plus d’informations, voir [Exigences relatives aux packages d’applications](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements). 
@@ -214,17 +214,17 @@ Les applications Pont du bureau peuvent tirer parti de certaines API Win32hérit
  
 **Détails du test**  
 Ce test vérifie tous les composants UWP de l’application:
-* Vérifie que chaque binaire managé dans le package d’application n’a pas une dépendance sur une API Win32 qui n’est pas pris en charge pour le développement d’applications UWP en vérifiant la table adresses d’importation du fichier binaire.
+* Vérifie que chaque fichier binaire managé du package d’application n’est pas dépendant d’une API Win32 qui n’est pas pris en charge pour le développement d’applications UWP en vérifiant la table adresses d’importation du fichier binaire.
 * Vérifie que chaque fichier binaire managé dans le package d’application n’est pas dépendant d’une fonction en dehors du profil approuvé. 
 
 **Actions correctives**  
 Ce peut être corrigé en vous assurant que l’application a été compilée comme une version commerciale et non comme une version de débogage. 
 
 > [!NOTE]
-> La version debug d’une application échoue ce test, même si l’application utilise uniquement des [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx). Passez en revue les messages d’erreur pour identifier l’API présent qui n’est pas une API pour les applications UWP autorisée. 
+> La version de débogage d’une application échoue à ce test même si l’application utilise uniquement des [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx). Passez en revue les messages d’erreur pour identifier l’API présentent qui n’est pas une API autorisée pour les applications UWP. 
 
 > [!NOTE]
-> Applications C++ qui sont intégrées dans une configuration de débogage échouera ce test, même si la configuration utilise uniquement les API disponibles dans le SDK de Windows pour les applications UWP. Pour plus d’informations, voir [Alternatives aux API Windows dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) .
+> Les applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. Pour plus d’informations, consultez [solutions de rechange aux API Windows dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) .
 
 ### <a name="6-user-account-control-uac-test"></a>6. Test du contrôle de compte d’utilisateur (UAC)  
 
@@ -232,7 +232,7 @@ Ce peut être corrigé en vous assurant que l’application a été compilée co
 Le test s’assure que l’application ne demande pas de contrôle de compte d’utilisateur lors de l’exécution.
 
 **Détails du test**  
-Une application ne peut pas demander l’élévation admin ou UIAccess par stratégie Microsoft Store. Les autorisations de sécurité élevées ne sont pas prises en charge. 
+Une application ne peut pas demander l’élévation d’administrateur ni UIAccess conformément à la politique du Microsoft Store. Les autorisations de sécurité élevées ne sont pas prises en charge. 
 
 **Actions correctives**  
 Les applications doivent s’exécuter en tant qu’utilisateur interactif. Pour plus d’informations, voir [Vue d’ensemble de la sécurité UIAutomation](https://go.microsoft.com/fwlink/?linkid=839440).
@@ -273,7 +273,7 @@ L’analyseur de fichiers non autorisés du Kit de certification des application
 Cette vérification échoue généralement si une application utilise une version «Release Preview» du fichier et non la dernière version officielle. 
 
 **Actions correctives**  
-Pour résoudre ce problème, utilisez la dernière version du [SDK de cartes Bing](http://go.microsoft.com/fwlink/p/?linkid=614880) pour les applications UWP.
+Pour résoudre ce problème, utilisez la dernière version du [Kit de développement Bing cartes](http://go.microsoft.com/fwlink/p/?linkid=614880) pour les applications UWP.
 
 #### <a name="82-private-code-signing"></a>8.2 Signature de code privé
 Teste l’existence de fichiers binaires de signature de code privé dans le package de l’application. 

@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10, uwp, marchés, pays, régions
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882685"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906586"
 ---
 # <a name="define-market-selection"></a>Définir la sélection du marché
 
 
 Le Microsoft Store touche des clients dans plus de 200pays et régions dans le monde. Vous pouvez choisir les marchés dans lesquels vous souhaitez proposer votre application, avec la possibilité de personnaliser de nombreuses fonctionnalités de [Tarification et disponibilité](set-app-pricing-and-availability.md) par marché ou par groupe de marchés.
 
-Pour obtenir des informations aider à adapter votre application pour les clients dans le monde entier, voir les [instructions de globalisation](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) et de [rendre votre application localisable](../design/globalizing/prepare-your-app-for-localization.md).
+Pour plus d’informations aider à adapter votre application pour les clients dans le monde entier, consultez les [recommandations en matière de globalisation](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) et à [rendre votre application localisable](../design/globalizing/prepare-your-app-for-localization.md).
 
 > [!NOTE]
 > Bien que cet article fasse référence aux applications, la sélection du marché des soumissions d’extensions applique le même processus.
@@ -48,9 +48,9 @@ Tenez compte du fait que même si vous sélectionnez tous les marchés, la légi
 Vous verrez également une case à cocher qui vous permet d’indiquer si vous souhaitez proposer votre application dans un marché que le Windows Store peut ajouter à l’avenir. Si vous laissez cette case à cocher activée, et que nous ajoutons ultérieurement de nouveaux marchés, le prix de base et la date de disponibilité générale de votre soumission seront utilisés pour votre application sur ces marchés. Si vous ne souhaitez pas cette option, vous pouvez désactiver cette case, auquel cas votre application ne sera pas répertoriée dans les éventuels futurs marchés (bien que vous puissiez toujours les ajouter ultérieurement).
  
 
-## <a name="microsoft-store-consumer-markets"></a>Microsoft Store consommateur marchés
+## <a name="microsoft-store-consumer-markets"></a>Marchés grand public de Microsoft Store
 
-Vous pouvez choisir de répertorier votre application (ou module complémentaire) dans un ou plusieurs des marchés suivants. Les marchés avec un astérisque prise en charge Microsoft Store sur une Xbox; Vous verrez **Xbox** en regard de leur nom dans la fenêtre contextuelle de **sélection de marché** .
+Vous pouvez choisir de répertorier votre application (ou module complémentaire) dans un ou plusieurs des marchés suivants. Les marchés comportant un astérisque prennent en charge le Microsoft Store sur Xbox One; Vous verrez **Xbox** en regard de leurs noms dans la fenêtre contextuelle de **sélection du marché** .
 
 
 <table>
@@ -480,7 +480,7 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Marchés « Rest of World » pour Windows 8.x
 
-Si votre application inclut des packages de ciblage Windows 8.x, il est important de savoir qu’un certain nombre de marchés est traité comme un marché unique «monde» pour les clients qui utilisent le magasin sur Windows 8.x, même s’ils sont affichés sous forme de marchés spécifiques dans le centre de développement Windows tableau de bord (au lieu de tableau de bord magasin antérieur, où il était une option de marché «Monde» pour regrouper tous les marchés).
+Si votre application comprend des packages ciblant Windows 8.x, il est important de savoir qu’un certain nombre de marchés est traité comme un marché unique «Rest of World» pour les clients utilisent le Windows Store sur Windows 8.x, même si elles s’affichent comme des marchés individuels dans le centre de développement Windows tableau de bord (par opposition au tableau de bord du Windows Store antérieur, où il a été une option de marché «Rest of World» pour regrouper tous ces marchés).
 
 Si vous conservez la sélection par défaut lorsque vous soumettez votre application, vous n’avez pas à vous soucier de cela. Votre application sera disponible sur tous les marchés possibles. Toutefois, si vous voulez exclure certains marchés, gardez à l’esprit que l’exclusion d’un seul de ces marchés « Rest of World » signifie que votre application ne sera disponible sur aucun marché « Rest of World » pour les clients utilisant Windows 8 ou Windows 8.1.
 

@@ -15,11 +15,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: ce84debc3422f923c7c88aae1fa216665ef1ef0f
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2886134"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913076"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 
@@ -355,21 +355,21 @@ Notez que certaines des combinaisons ne sont pas valides pour les versions local
 
 Comme les raccourcis clavier ne sont généralement pas décrit directement dans l’interface utilisateur de votre application UWP, vous pouvez améliorer la détectabilité via des [info-bulles](../controls-and-patterns/tooltips.md), qui s’affichent automatiquement lorsque l’utilisateur déplace le focus sur, maintient l’appui sur ou pointe le pointeur de la souris sur un contrôle. L’info-bulle peut identifier si un contrôle est associé à un raccourci clavier et, si tel est le cas, quelle est la combinaison de touches de raccourci.
 
-**Windows 10, Version 1803 (mise à jour avril 2018) et versions ultérieures**
+**Windows 10, Version 1803 (mise à jour du mois d’avril 2018) et versions ultérieures**
 
-Par défaut, lorsque les raccourcis clavier sont déclarées, tous les contrôles (à l’exception de [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) et [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) présentent les combinaisons de touches correspondantes dans une info-bulle.
+Par défaut, lorsque les raccourcis clavier sont déclarés, tous les contrôles (à l’exception [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) et [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) présentent les combinaisons de touches correspondants dans une info-bulle.
 
 > [!NOTE] 
-> Si un contrôle possède plusieurs accelerator défini, seul le premier est présenté.
+> Si plusieurs raccourcis sont définis pour un contrôle, seul le premier est présenté.
 
 ![Info-bulle de touche de raccourci](images/accelerators/accelerators_tooltip_savebutton_small.png)
 
 *Combinaison de touches de raccourci dans une info-bulle*
 
-Pour les objets [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) , [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)et [bouton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button), touche de raccourci est ajouté à info-bulle de la valeur par défaut du contrôle. Pour [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) et [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) des objets, le raccourci clavier est affiché avec le texte flottant.
+Pour les objets [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) , [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)et [bouton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button), le raccourci clavier est ajouté à info-bulle de la valeur par défaut du contrôle. Pour [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) et [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) des objets, le raccourci clavier s’affiche avec le texte de menu volant.
 
 > [!NOTE]
-> Spécification d’une info-bulle (voir Button1 dans l’exemple suivant) remplace ce comportement.
+> En spécifiant une info-bulle (voir Button1 dans l’exemple suivant) permet de remplacer ce comportement.
 
 ```xaml
 <StackPanel x:Name="Container" Grid.Row="0" Background="AliceBlue">
@@ -400,7 +400,7 @@ Pour les objets [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.
 
 ![Info-bulle de touche de raccourci](images/accelerators/accelerators-button-small.png)
 
-*Liste déroulante clé Accelerator ajouté à l’info-bulle de la valeur par défaut du bouton*
+*Touches de raccourci ajouté à l’info-bulle de la valeur par défaut du bouton*
 
 ```xaml
 <AppBarButton Icon="Save" Label="Save">
@@ -412,7 +412,7 @@ Pour les objets [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.
 
 ![Info-bulle de touche de raccourci](images/accelerators/accelerators-appbarbutton-small.png)
 
-*Liste déroulante clé Accelerator ajouté à l’info-bulle par défaut du AppBarButton*
+*Touches de raccourci ajouté à l’info-bulle de la valeur par défaut de AppBarButton*
 
 ```xaml
 <AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
@@ -438,7 +438,7 @@ Pour les objets [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.
 
 ![Info-bulle de touche de raccourci](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
 
-*Liste déroulante clé Accelerator ajouté au texte du MenuFlyoutItem*
+*Touches de raccourci ajouté au texte de MenuFlyoutItem*
 
 Contrôlez le comportement de présentation à l’aide de la propriété [KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode), qui accepte deux valeurs: [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) ou [Hidden](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode).    
 
@@ -619,7 +619,7 @@ public class MyListView : ListView
 * [Touches d’accès rapide](access-keys.md)
 
 **Exemples**
-* [Galerie de contrôles XAML (également appelé XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+* [Galerie de contrôles XAML (c'est-à-dire XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
 
 
  

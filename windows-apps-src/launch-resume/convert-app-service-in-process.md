@@ -7,15 +7,15 @@ ms.date: 11/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, service d’application
+keywords: Windows 10, uwp, le service d’application
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
 ms.openlocfilehash: a77ea3cefcc423e710ab0afebb3fa064e61507ec
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2883711"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905995"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte
 
@@ -42,7 +42,7 @@ Transformer un service d’application de modèle en dehors du processus en mod�
 >   </Applications>
 > ```
 
-Supprimer le `EntryPoint` attribut à partir de la `<Extension>` élément étant désormais [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) le point d’entrée qui sera utilisé lorsque le service d’application est appelé.
+Supprimer le `EntryPoint` attribut à partir de la `<Extension>` élément, car il est désormais [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) est le point d’entrée qui sera utilisé lorsque le service d’application est appelé.
 
 La seconde modification consiste à déplacer la logique de service de son projet de tâche distinct en arrière-plan dans les méthodes qui peuvent être appelées à partir de **OnBackgroundActivated()**.
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a1a82c91aeafa253427d8e526b38b8ac304591a2
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881822"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905162"
 ---
 # <a name="advertising-performance-report"></a>Rapport sur les performances publicitaires
 
@@ -62,7 +62,7 @@ Le **Rapport sur les performances publicitaires** comprend des données correspo
 | Taux de remplissage  | Pourcentage de demandes de publicité envoyées à partir de votre application dans lesquelles une publicité était affichée.  |
 | Clics  |  Nombre de fois où quelqu’un a cliqué sur une publicité dans votre application. |
 | CTR  |  Taux de clic: nombre de fois où quelqu’un a cliqué sur une publicité divisé par le nombre d’impressions. |
-| La plupart des ordinateurs | Pourcentage d’impressions de publicités qui sont visualisables dans votre application. Pour plus d’informations sur cette valeur est calculée, voir [optimiser la plupart des ordinateurs de vos unités ad](../monetize/optimize-ad-unit-viewability.md). |
+| Visibilité | Le pourcentage d’expositions publicitaires qui ne sont visibles dans votre application. Pour plus d’informations sur la façon dont cette valeur est calculée, consultez la section [optimiser la visibilité de vos unités publicitaires](../monetize/optimize-ad-unit-viewability.md). |
 | Crédits obtenus  | Si vous exécutez une campagne [publicité de la communauté](https://docs.microsoft.com/windows/uwp/publish/about-community-ads), cette valeur indique le nombre de crédits que vous avez gagnés pour un espace publicitaire promotionnel en affichant la publicité de la communauté dans votre application.  |
 | Crédits dépensés  | Si vous exécutez une campagne [publicité de la communauté](https://docs.microsoft.com/windows/uwp/publish/about-community-ads), cette valeur indique le nombre de crédits que vous avez dépensés pour des publicités pour votre application.  |
 

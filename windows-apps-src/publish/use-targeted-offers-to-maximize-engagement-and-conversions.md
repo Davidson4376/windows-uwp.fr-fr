@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, offres ciblées, offres, notifications
 ms.localizationpriority: medium
 ms.openlocfilehash: 727c438bacf51fd2ead03df72421363116c4701b
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2880741"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913146"
 ---
 # <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>Utilisez des offres ciblées pour optimiser l’engagement et les conversions
 
@@ -28,7 +28,7 @@ Ciblez des segments de clients spécifiques avec un contenu attractif et personn
 De façon générale, vous devez effectuer trois opérations pour utiliser des offres ciblées:
 
 1. **Créez l’offre dans votre tableau de bord.** Accédez à la page **Engager > Offres ciblées** pour créer des offres. Vous trouverez d’autres informations sur ce processus ci-dessous.
-2. **Mettre en place les offres intégrées aux applications.** Utiliser *banque Microsoft ciblés offre des API* dans le code de votre application pour récupérer les offres disponibles pour un utilisateur donné. Vous devez également créer une expérience interne à l’application pour l’offre ciblée. Pour plus d’informations, consultez l’article [Gérer les offres ciblées à l’aide des services du WindowsStore](../monetize/manage-targeted-offers-using-windows-store-services.md).
+2. **Mettre en place les offres intégrées aux applications.** Utilisez l' *API des offres ciblées du Microsoft Store* dans le code de votre application pour récupérer les offres disponibles pour un utilisateur donné. Vous devez également créer une expérience interne à l’application pour l’offre ciblée. Pour plus d’informations, consultez l’article [Gérer les offres ciblées à l’aide des services du WindowsStore](../monetize/manage-targeted-offers-using-windows-store-services.md).
 3. **Soumettez votre application au WindowsStore.** Votre application doit être publiée avec la mise en place des offres dans l’application afin que les offres soit mises à la disposition des clients.
 
 Une fois que vous avez exécuté ces étapes, les clients qui utilisent votre application voient s’afficher les offres qui leur sont disponibles à ce stade, en fonction de leur appartenance aux segments associés à vos offres. Veuillez noter que, bien que nous nous efforcions d’afficher toutes les offres disponibles pour vos clients, certains problèmes susceptibles d’affecter la disponibilité des offres peuvent parfois survenir.

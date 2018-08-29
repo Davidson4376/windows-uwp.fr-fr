@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, créer, événement
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b52bf8e33bbf111dd02c695d8c3baf77e1338ac
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2891091"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2915368"
 ---
 # <a name="author-events-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Créer des événements en [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -30,7 +30,7 @@ Cette rubrique montre comment créer un composant Windows Runtime qui contient u
 
 Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créez un projet **Composant Windows Runtime Visual C++ (C++/WinRT)** et nommez-le *BankAccountWRC* (pour «composant Windows Runtime de compte bancaire»).
 
-Le projet nouvellement créé contient un fichier nommé `Class.idl`. Renommez ce fichier `BankAccount.idl` (renommer le `.idl` fichier renomme automatiquement le dépendant `.h` et `.cpp` fichiers trop). Remplacez le contenu de `BankAccount.idl` avec la liste ci-dessous.
+Le projet nouvellement créé contient un fichier nommé `Class.idl`. Renommez ce fichier `BankAccount.idl` (renommer le `.idl` fichier renomme automatiquement le dépendant `.h` et `.cpp` fichiers trop). Remplacez le contenu du `BankAccount.idl` avec le listing ci-dessous.
 
 ```idl
 // BankAccountWRC.idl
@@ -45,9 +45,9 @@ namespace BankAccountWRC
 }
 ```
 
-Enregistrez le fichier. La génération du projet ne sont pas succès pour le moment, mais générez maintenant est particulièrement utile car il génère les fichiers de code source dans lequel vous allez implémenter la classe runtime de **compte bancaire** . Ainsi, continuez et construire maintenant (les erreurs de build souhaité à ce stade faire avec `Class.h` et `Class.g.h` introuvable). Au cours du processus de génération, le `midl.exe` outil est exécutée pour créer le fichier de métadonnées de votre composant Windows Runtime (qui est `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`). Puis, l’outil `cppwinrt.exe` est exécuté (avec l’option `-component`) pour générer les fichiers de code source vous aidant à créer votre composant. Ces fichiers incluent stub pour vous aider à l’implémentation de la classe runtime **compte bancaire** que vous avez déclarée dans votre fichier IDL. Ces stubs sont `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` et `BankAccount.cpp`.
+Enregistrez le fichier. La génération du projet ne réussite pour le moment, mais générez maintenant est particulièrement utile pour faire car elle génère des fichiers de code source dans lequel vous allez implémenter la classe runtime **BankAccount** . Par conséquent, lancez-vous et construire maintenant (les erreurs de génération vous devriez voir à ce stade ont à faire avec `Class.h` et `Class.g.h` n’a ne pas été trouvée). Pendant le processus de génération, le `midl.exe` outil est exécuté pour créer le fichier de métadonnées de votre composant Windows Runtime (qui est `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`). Puis, l’outil `cppwinrt.exe` est exécuté (avec l’option `-component`) pour générer les fichiers de code source vous aidant à créer votre composant. Ces fichiers incluent des stubs pour vous aider à implémenter la classe runtime **BankAccount** que vous avez déclarée dans votre fichier IDL. Ces stubs sont `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` et `BankAccount.cpp`.
 
-Dans l’Explorateur de fichiers, copiez les fichiers stub `BankAccount.h` et `BankAccount.cpp` à partir du dossier `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` dans le dossier qui contient vos fichiers de projet, qui est `\BankAccountWRC\BankAccountWRC\`, remplacez les fichiers à la destination. Maintenant, nous allons ouvrir `BankAccount.h` et `BankAccount.cpp`, et implémenter notre classe runtime. Dans `BankAccount.h`, ajoutez deux membres privés à l’implémentation (*pas* à l’implémentation d’usine) de BankAccount.
+Dans l’Explorateur de fichiers, copiez les fichiers stub `BankAccount.h` et `BankAccount.cpp` à partir du dossier `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` dans le dossier qui contient vos fichiers de projet, qui est `\BankAccountWRC\BankAccountWRC\`et remplacez les fichiers dans la destination. Maintenant, nous allons ouvrir `BankAccount.h` et `BankAccount.cpp`, et implémenter notre classe runtime. Dans `BankAccount.h`, ajoutez deux membres privés à l’implémentation (*pas* à l’implémentation d’usine) de BankAccount.
 
 ```cppwinrt
 // BankAccount.h
@@ -66,7 +66,7 @@ namespace winrt::BankAccountWRC::implementation
 ...
 ```
 
-Comme vous pouvez le constater ci-dessus, l’événement est implémenté en termes de modèle struct [**winrt::event**](/uwp/cpp-ref-for-winrt/event) , paramétré par un type particulier de délégué.
+Comme vous pouvez le voir ci-dessus, l’événement est implémenté en termes du modèle de structure [**winrt::event**](/uwp/cpp-ref-for-winrt/event) paramétré par un type délégué particulier.
 
 Dans `BankAccount.cpp`, implémentez les fonctions, comme illustré dans l’exemple de code ci-dessous. Dans C++/WinRT, un événement déclaré dans le fichier IDL est implémenté comme un ensemble de fonctions surchargées (de la même manière qu'une propriété est implémentée comme une paire de fonctions Get et Set surchargées). Une surcharge prend un délégué à enregistrer et retourne un jeton. L’autre prend un jeton et révoque l’inscription du délégué associé.
 
@@ -97,13 +97,13 @@ Vous n’avez pas besoin d’implémenter la surcharge pour le révocateur d’�
 
 Vous pouvez également voir ci-dessus que l’implémentation de la fonction **AdjustBalance** déclenche l’événement **AccountIsInDebit** si le solde devient négatif.
 
-Si des avertissements vous empêchent de génération, puis les résoudre ou définir la propriété projet **C/C++** > **Général** > **Considérer les avertissements comme des erreurs** à **No (/ WX-)** et générez le projet à nouveau.
+Si un avertissement vous empêche de construction, puis résolvez-les ou définir la propriété de projet **C/C++** > **Général** > **Treat Warnings As Errors** **No (/ WX-)** et générez de nouveau le projet.
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>Créer une application de base (BankAccountCoreApp) pour tester le composant Windows Runtime
 
 Créez à présent un nouveau projet (dans votre solution `BankAccountWRC` ou dans une nouvelle solution). Créez un projet **Application de base Visual C++ (C++/WinRT)** et nommez-le *BankAccountCoreApp*.
 
-Ajoutez une référence et accédez à `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd` (ou ajouter une référence de projet au projet, si les deux projets sont dans la même solution). Cliquez sur **Ajouter**, puis sur **OK**. À présent, générez BankAccountCoreApp. Dans le cas improbable que vous voyez une erreur que le fichier de la charge utile `readme.txt` n’existe pas, exclure ce fichier à partir du projet de composant d’exécution Windows, reconstruire, puis reconstruire BankAccountCoreApp.
+Ajoutez une référence, puis accédez à `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd` (ou ajouter une référence de projet à projet, si les deux projets se trouvent dans la même solution). Cliquez sur **Ajouter**, puis sur **OK**. À présent, générez BankAccountCoreApp. Dans l’éventualité peu probable que vous voyez une erreur qui le fichier de charge utile `readme.txt` n’existe pas, excluez ce fichier à partir du projet de composant Windows Runtime, régénérez-le, puis regénérez BankAccountCoreApp.
 
 Pendant le processus de génération, l’outil `cppwinrt.exe` est exécuté pour traiter le fichier `.winmd` référencé dans les fichiers de code source contenant les types projetés afin de vous aider à utiliser votre composant. L’en-tête pour les types projetés des classes runtime de votre composant &mdash;nommé `BankAccountWRC.h`&mdash; est généré dans le dossier `\BankAccountCoreApp\BankAccountCoreApp\Generated Files\winrt\`.
 
@@ -146,15 +146,15 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 };
 ```
 
-Chaque fois que vous cliquez sur la fenêtre, vous retirez 1 du solde du compte bancaire. Pour montrer que l’événement est déclenché comme prévu, placez un point d’arrêt à l’intérieur de l’expression lambda qui gère l’événement **AccountIsInDebit** , exécuter l’application et cliquez à l’intérieur de la fenêtre.
+Chaque fois que vous cliquez sur la fenêtre, vous retirez 1 du solde du compte bancaire. Pour démontrer que l’événement est déclenché comme prévu, insérez un point d’arrêt à l’intérieur de l’expression lambda qui gère l’événement **AccountIsInDebit** , exécutez l’application et cliquez à l’intérieur de la fenêtre.
 
-## <a name="parameterized-delegates-and-simple-signals-across-an-abi"></a>Les délégués paramétrées et signaux simples, entre un ABI
+## <a name="parameterized-delegates-and-simple-signals-across-an-abi"></a>Les délégués paramétrés et signaux simples, entre un ABI
 
-Si l’événement doit être accessible via une interface binaire d’application (ABI)&mdash;entre un composant et son application consommatrice par&mdash;puis l’événement doit utiliser un type de délégué Windows Runtime. L’exemple ci-dessus utilise le type de délégué [**Windows::Foundation::EventHandler\ < T\ >**](/uwp/api/windows.foundation.eventhandler) Windows Runtime. [**TypedEventHandler\ < TSender, TResult\ >**](/uwp/api/windows.foundation.eventhandler) est un autre exemple d’un type de délégué Windows Runtime.
+Si votre événement doit être accessible via une interface binaire d’application (ABI)&mdash;par exemple, entre un composant et son utilisation application&mdash;ensuite votre événement doit utiliser un type de délégué Windows Runtime. L’exemple ci-dessus utilise le type de délégué [**Windows::Foundation::EventHandler\ < T\ >**](/uwp/api/windows.foundation.eventhandler) Windows Runtime. [**TypedEventHandler\ < TSender, TResult\ >**](/uwp/api/windows.foundation.eventhandler) est un autre exemple d’un type de délégué Windows Runtime.
 
-Les paramètres de type pour les types de deux délégués ont qu’il coupe l’ABI, afin que les paramètres de type doivent être des types de Windows Runtime, trop. Qui inclut les classes d’exécution préalable et tiers, ainsi que des types primitifs tels que les nombres et les chaînes. Le compilateur vous aide à une erreur «*doit être de type WinRT*» si vous avez oublié de cette contrainte.
+Les paramètres de type de ces types de deux délégués avoir franchisse ABI, de sorte que les paramètres de type doivent être des types Windows Runtime, trop. Qui inclut les classes runtime interne et tierce, ainsi que des types primitifs tels que les nombres et les chaînes. Le compilateur vous aide à une erreur «*doit être WinRT type*» si vous oubliez cette contrainte.
 
-Si vous n’avez pas besoin de transmettre des paramètres ou des arguments avec l’événement, vous pouvez définir votre propre type de délégué Windows Runtime simple. L’exemple ci-dessous montre une version plus simple de la classe runtime de **compte bancaire** . Il déclare un type délégué nommé **SignalDelegate** , puis il l’utilise pour déclencher un événement de type de signal au lieu d’un événement avec un paramètre.
+Si vous n’avez pas besoin de transmettre des paramètres ou des arguments avec votre événement, vous pouvez définir votre propre type de délégué Windows Runtime simple. L’exemple ci-dessous montre une version simplifiée de la classe runtime de **BankAccount** . Il déclare un type délégué nommé **SignalDelegate** , puis il qui utilise pour déclencher un événement de type de signal au lieu d’un événement avec un paramètre.
 
 ```idl
 // BankAccountWRC.idl
@@ -246,11 +246,11 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 };
 ```
 
-## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>Les délégués paramétrées, signaux simples et rappels dans un projet
+## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>Les délégués paramétrés, signaux simples et rappels au sein d’un projet
 
-Si l’événement est utilisé uniquement en interne au sein de votre C + / WinRT project (pas dans des fichiers binaires), puis vous toujours utilisez le modèle de struct [**winrt::event**](/uwp/cpp-ref-for-winrt/event) , mais vous devez le paramétrer avec C + / Windows Runtime [**winrt::delegate de WinRT&lt;... T&gt; **](/uwp/cpp-ref-for-winrt/delegate) modèle struct, qui est un délégué efficace, contenant des références. Elle prend en charge un nombre quelconque de paramètres, et elles ne sont pas limités aux types de Windows Runtime.
+Si votre événement est utilisé uniquement en interne au sein de votre C++ / WinRT du projet (pas sur les fichiers binaires), puis vous utilisez toujours le modèle de structure [**winrt::event**](/uwp/cpp-ref-for-winrt/event) , mais vous devez le paramétrer avec C++ / WinRT non Windows Runtime [**winrt::delegate&lt;… T&gt; **](/uwp/cpp-ref-for-winrt/delegate) modèle de structure, qui est un délégué efficace, avec décompte des références. Il prend en charge n’importe quel nombre de paramètres, et ils ne sont pas limités aux types Windows Runtime.
 
-L’exemple ci-dessous montre tout d’abord un délégué signature qui ne prend aucun paramètre (essentiellement un signal simple), puis celle qui accepte une chaîne.
+L’exemple ci-dessous montre tout d’abord un délégué signature qui ne prend aucun paramètre (essentiellement un signal simple) et puis qui prend une chaîne.
 
 ```cppwinrt
 winrt::event<winrt::delegate<>> signal;
@@ -264,7 +264,7 @@ log.add([](std::wstring const& message) { Persist(message); });
 log(L"Hello, World!");
 ```
 
-Notez la façon dont vous pouvez ajouter à l’événement des délégués abonnement autant que vous le souhaitez. Il existe toutefois une surcharge associée à un événement. Si vous avez seulement besoin est un rappel simple avec uniquement un seul délégué abonnement, vous pouvez ensuite utiliser [**winrt::delegate&lt;... T&gt; **](/uwp/cpp-ref-for-winrt/delegate) sur son propre.
+Notez la façon dont vous pouvez ajouter à l’événement autant de délégués abonnement comme vous le souhaitez. Il existe toutefois une certaine surcharge associée à un événement. Si vous avez uniquement besoin est un rappel simple avec uniquement un délégué abonnement unique, vous pouvez ensuite utiliser [**winrt::delegate&lt;… T&gt; **](/uwp/cpp-ref-for-winrt/delegate) sur son propre.
 
 ```cppwinrt
 winrt::delegate<> signalCallback;
@@ -276,15 +276,15 @@ logCallback = [](std::wstring const& message) { std::wcout << message.c_str() <<
 logCallback(L"Hello, World!");
 ```
 
-Si vous êtes portage de C + / CX codebase où les délégués et les événements sont utilisés en interne au sein d’un projet, puis **winrt::delegate** vous aidera à répliquer ce modèle dans C + / WinRT.
+Si vous effectuez un portage à partir de C++ / CX codebase où les événements et les délégués sont utilisés en interne au sein d’un projet, puis **winrt::delegate** vous aidera à répliquer ce modèle en C++ / WinRT.
 
 ## <a name="design-guidelines"></a>Recommandations en matière de conception
 
-Nous vous recommandons de passer pas délégués et les événements en tant que paramètres de la fonction. **Ajouter** une fonction de [**winrt::event**](/uwp/cpp-ref-for-winrt/event) est la seule exception, car vous devez passer un délégué dans ce cas. La raison de cette règle est, car les délégués peuvent prendre les formes dans différentes langues Windows Runtime (en termes de si elles prennent en charge l’inscription d’un client ou plusieurs). Événements, avec leur modèle abonné multiples, constituent une option plus prévisible et cohérente.
+Nous recommandons que vous transmettez des événements et délégués pas, en tant que paramètres de fonction. **Ajouter** une fonction de [**winrt::event**](/uwp/cpp-ref-for-winrt/event) est la seule exception, car vous devez passer un délégué dans ce cas. La raison de cette directive est étant donné que les délégués peuvent prendre différentes formes entre les différentes langues de Windows Runtime (en termes de si elles prennent en charge l’inscription du un client ou plusieurs). Événements, avec leur modèle abonné à plusieurs, constituent une option beaucoup plus prévisible et cohérente.
 
-La signature d’un délégué de gestionnaire d’événements doit être composé de deux paramètres: *l’expéditeur* (**IInspectable**) et *args* (certains argument type d’événement, par exemple [**RoutedEventArgs**](/uwp/api/windows.ui.xaml.routedeventargs)).
+La signature d’un délégué de gestionnaire d’événements doit être composé de deux paramètres: *expéditeur* (**IInspectable**) et les *arguments* (certains événements type d’argument, par exemple [**RoutedEventArgs**](/uwp/api/windows.ui.xaml.routedeventargs)).
 
-Notez que ces instructions ne s’appliquent nécessairement si vous concevez une API interne. Bien que les API internes deviennent souvent public au fil du temps.
+Notez que ces instructions ne s’appliquent nécessairement si vous créez une API interne. Bien que les API internes deviennent souvent publique au fil du temps.
 
 ## <a name="related-topics"></a>Rubriquesassociées
 * [Créer des API avec C++/WinRT](author-apis.md)

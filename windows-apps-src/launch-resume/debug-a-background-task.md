@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: tâche d’arrière-plan Windows 10, uwp,
+keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2894088"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2909296"
 ---
 # <a name="debug-a-background-task"></a>Déboguer une tâche en arrière-plan
 
@@ -83,7 +83,7 @@ L’activation de la tâche en arrière-plan dépend de troiséléments:
 
     1.  Ouvrez l’Observateur d’événements en accédant à l’écran de démarrage et en recherchant eventvwr.exe.
     2.  Accédez à **l’Application et les journaux des Services**  - &gt; **Microsoft**  - &gt; **Windows**  - &gt; **BackgroundTaskInfrastructure** dans l’Observateur d’événements.
-    3.  Dans le volet actions, sélectionnez **affichage**  - &gt; **Afficher les journaux et débogage** pour activer la journalisation des Diagnostics.
+    3.  Dans le volet actions, sélectionnez **vue**  - &gt; **Afficher analytiques journaux et débogage** pour activer la journalisation des Diagnostics.
     4.  Sélectionnez le **journal de diagnostic**, puis cliquez sur **Activer le journal**.
     5.  Essayez à présent d’utiliser votre application pour inscrire et activer la tâche en arrière-plan une nouvelle fois.
     6.  Consultez les journaux de diagnostic à la recherche d’informations détaillées sur l’erreur. Cela comprend le point d’entrée inscrit pour la tâche en arrière-plan.
@@ -105,7 +105,7 @@ Si vous déployez une application utilisant des tâches en arrière-plan à l’
 -   Si la tâche en arrière-plan requiert un accès à l’écran de verrouillage, veillez à placer l’application sur l’écran de verrouillage avant d’essayer de déboguer la tâche en arrière-plan. Pour plus d’informations sur la spécification des options de manifeste pour les applications compatibles avec l’écran de verrouillage, consultez [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md).
 -   Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Une erreur est retournée si l’un des paramètres d’inscription n’est pas valide. Vérifiez que votre application gère de manière fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 
-Pour plus d’informations sur l’utilisation de VS pour déboguer une tâche en arrière-plan voir [comment déclencher suspendre, reprendre et d’arrière-plan des événements dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
+Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer une tâche en arrière-plan voir [comment déclencher suspension, reprise et des événements en arrière-plan dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
 
 ## <a name="related-topics"></a>Rubriques associées
 
@@ -114,7 +114,7 @@ Pour plus d’informations sur l’utilisation de VS pour déboguer une tâche e
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
-* [Comment déclencher suspendre, reprendre et événements dans les applications UWP d’arrière-plan](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
+* [Comment déclencher de suspension, reprise et événements dans les applications UWP en arrière-plan](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
 * [Analyse de la qualité du code des applications UWP avec l’analyse du code Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
 
  

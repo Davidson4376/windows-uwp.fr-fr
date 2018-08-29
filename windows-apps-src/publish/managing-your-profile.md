@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, centre de développement, paramètres de compte, profil, profil de compte, compte de développeur, paramètres de compte de développeur
 ms.localizationpriority: medium
 ms.openlocfilehash: bf464fa5c7b681b3d36ad95cff5ffc874e319f46
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888278"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2907417"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>Gérer les paramètres de compte et les informations de profil
 
@@ -26,9 +26,9 @@ Vous pouvez afficher et mettre à jour les paramètres de votre compte de dével
 
 ## <a name="account-settings"></a>Paramètres du compte
 
-Pour afficher les paramètres de votre compte, cliquez sur l’icône représentant un engrenage dans le coin supérieur droit de votre tableau de bord, puis sélectionnez les **paramètres pour les développeurs**. Vous trouverez plus d’informations sur votre compte et les liens vers d’autres pages où vous pouvez afficher des informations et effectuer diverses tâches concernant le compte.
+Pour afficher vos paramètres de compte, cliquez sur l’icône d’engrenage dans le coin supérieur droit du tableau de bord, puis sélectionnez **les paramètres de développeur**. Vous y trouverez des détails sur votre compte ainsi que des liens vers d’autres pages où vous pouvez afficher les informations et exécuter diverses tâches relatifs au compte.
 
-Dans la section **Détails du compte**, vous pouvez visualiser l’état et le type de votre compte. Vous pouvez également consulter votre ID vendeur et autres informations ID éditeur ici. Ces valeurs sont affectées par Microsoft pour identifier votre compte de développeur et ne peuvent pas être modifiés.
+Dans la section **Détails du compte**, vous pouvez visualiser l’état et le type de votre compte. Vous pouvez également afficher votre ID de vendeur et d’autres informations de ID d’éditeur ici. Ces valeurs sont allouées par Microsoft afin d’identifier de manière unique votre compte de développeur et ne peut pas être modifiées.
 
 > [!NOTE]
 > Les détails d’identité de vos différentes applications sont accessibles sur la page [Identité de l’application](view-app-identity-details.md) de chacune des applications.
@@ -48,14 +48,14 @@ La modification du nom d'affichage de l’éditeur nous incite aussi souvent à 
 
 Voici certains des autres éléments que vous trouverez dans la section **Paramètres du compte**.
 
-- **Statut de la vérification**: lorsque votre compte est en cours de la vérification du processus (par exemple, lorsque vous tout d’abord vous inscrire ou une fois que vous mettez à jour vos coordonnées considérablement), vous pouvez consulter le statut de la vérification.
-- **Programme d’initiés Centre pour développeurs**: vous pouvez accepter ou refuser le [Programme d’initiés Centre pour développeurs](dev-center-insider-program.md) à partir de la main page **paramètres du compte** .
+- **Statut de vérification**: lorsque votre compte est en cours de la vérification du processus (par exemple, lors de l’inscription initiale ou une fois que vous mettez à jour vos informations de contact considérablement), vous pouvez examiner votre état de vérification ici.
+- **Programme Insider du centre de développement**: vous pouvez choisir ou en dehors du [Programme Insider du centre de développement](dev-center-insider-program.md) à partir de la main page **paramètres du compte** .
 - **Compte de paiement** et **Profil fiscal**: cet emplacement vous permet de [configurer votre compte de paiement et vos déclarations fiscales](setting-up-your-payout-account-and-tax-forms.md). Vous devez effectuer cette opération avant de facturer des applications ou des extensions.
 - **Associations d’entreprise**: acceptez les invitations d’entreprises qui souhaitent publier des applications pour leur usage exclusif. Pour plus d’informations, consultez l’article [Distribuer des applications cœur de métier aux entreprises](distribute-lob-apps-to-enterprises.md).
 - **Utilisateurs**: ajoutez des utilisateurs à votre compte du Centre de développement et attribuez-leur des rôles et des autorisations. Pour plus d’informations, voir [Gérer les utilisateurs du compte](manage-account-users.md).
-- **Clients**: gérer les associations de client Azure AD. Pour plus d’informations, voir [associer Azure AD avec votre compte Centre pour développeurs](associate-azure-ad-with-dev-center.md).
+- **Locataires**: gérer les associations de votre client Azure AD. Pour plus d’informations, voir [associer Azure AD à votre compte du centre de développement](associate-azure-ad-with-dev-center.md).
 - **Programmes**: visualisez des détails sur les programmes auxquels vous participez et renseignez-vous sur les autres programmes qui sont susceptibles de vous intéresser.
 - **Contrats**: visualisez les contrats que votre compte a acceptés.
-- **Périphériques pour les développeurs**: afficher et gérer les [appareils Windows Phone 8.x que vous avez déverrouillées pour le test](http://go.microsoft.com/fwlink/p/?LinkId=533897) et les [consoles Xbox une extension pour le développement](../xbox-apps/devkit-activation.md). 
+- **Les appareils de développement**: afficher et gérer les [appareils Windows Phone 8.x que vous avez déverrouillés pour le test](http://go.microsoft.com/fwlink/p/?LinkId=533897) et les [consoles Xbox One activées pour le développement](../xbox-apps/devkit-activation.md). 
 
 

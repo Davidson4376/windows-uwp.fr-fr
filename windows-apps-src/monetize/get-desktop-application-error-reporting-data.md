@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs, application de bureau
 ms.localizationpriority: medium
 ms.openlocfilehash: 71c566ff375f36108d724f3c550570b3332f4c6b
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887778"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905782"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>Obtenir des données de rapport d'erreur pour votre application de bureau
 
-Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir des données de rapport d'erreur agrégées pour une application de bureau que vous avez ajoutée au [Du programme d’application de bureau Windows](https://msdn.microsoft.com/library/windows/desktop/mt826504). Cette méthode peut récupérer uniquement les erreurs qui se sont produites au cours des 30 derniers jours. Ces informations sont également disponibles dans le [rapport d’intégrité](https://msdn.microsoft.com/library/windows/desktop/mt826504) pour les applications de bureau dans le tableau de bord du Centre de développement Windows.
+Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir des données de rapport d'erreur agrégées pour une application de bureau que vous avez ajoutée au [Du programme d’application de bureau Windows](https://msdn.microsoft.com/library/windows/desktop/mt826504). Cette méthode ne récupère que les erreurs qui se sont produites au cours des 30 derniers jours. Ces informations sont également disponibles dans le [rapport d’intégrité](https://msdn.microsoft.com/library/windows/desktop/mt826504) pour les applications de bureau dans le tableau de bord du Centre de développement Windows.
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -49,7 +49,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 | Paramètre        | Type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
 | applicationId | chaîne | L’ID produit d'une application de bureau pour laquelle vous souhaitez récupérer les données de rapport d’erreur. Pour obtenir l’ID de produit d’une application de bureau, ouvrez un [rapport d'analyse du centre de développement relatif à votre application de bureau](https://msdn.microsoft.com/library/windows/desktop/mt826504) (comme le **rapport d’intégrité**) et récupérez l’ID de produit à partir de l’URL. |  Oui  |
-| startDate | date | Dans la plage de dates, la date de début de la récupération des données de rapport d’erreurs, au format ```mm/dd/yyyy```. La valeur par défaut est la date actuelle<p/><p/>**Remarque:**&nbsp;&nbsp;cette méthode peut récupérer uniquement les erreurs qui se sont produites au cours des 30 derniers jours.  |  Non  |
+| startDate | date | Dans la plage de dates, la date de début de la récupération des données de rapport d’erreurs, au format ```mm/dd/yyyy```. La valeur par défaut est la date actuelle<p/><p/>**Remarque:**&nbsp;&nbsp;cette méthode ne récupère que les erreurs qui se sont produites au cours des 30 derniers jours.  |  Non  |
 | endDate | date | Dans la plage de dates, la date de fin de la récupération des données de rapport d’erreurs, au format ```mm/dd/yyyy```. La valeur par défaut est la date actuelle   |  Non  |
 | top | entier | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
 | skip | entier | Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10000 et skip=0 pour obtenir les 10000 premières lignes de données, top=10000 et skip=10000 pour obtenir les 10000 lignes suivantes, et ainsi de suite. |  Non  |

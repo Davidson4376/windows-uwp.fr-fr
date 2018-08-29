@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e76f63fa30c3a294e1917bf1bed9ea79897390b2
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2892448"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905122"
 ---
 # <a name="supported-languages"></a>Langues prises en charge
 
 
-Vous pouvez envoyer des applications sur le Microsoft Store dans plus de 100 langues.
+Vous pouvez soumettre des applications dans le Microsoft Store dans plus de 100 langues.
 
-Pour en savoir plus sur la configuration des langues dans vos applications, consultez [globalisation et localisation](../design/globalizing/globalizing-portal.md) et [langues de profil utilisateur de comprendre et app manifest langues](../design/globalizing/manage-language-and-region.md). Nous avons également un [Kit de ressources pour application multilingue](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat) pour vous aider à écrire des applications qui prennent en charge plusieurs langues.
+Pour en savoir plus sur la configuration des langues dans vos applications, consultez [globalisation et localisation](../design/globalizing/globalizing-portal.md) et [comprendre les langues de profil utilisateur et d’application les langues du manifeste](../design/globalizing/manage-language-and-region.md). Nous avons également un [Kit de ressources pour application multilingue](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat) pour vous aider à écrire des applications qui prennent en charge plusieurs langues.
 
 ## <a name="supported-languages"></a>Langues prises en charge
 
 
-Voici les langues qui prend en charge de Microsoft Store. Votre application doit prendre en charge au moins l’une de ces langues, et ne doit spécifier aucun code de langue non répertorié ici.
+Voici les langues qui prend en charge par le Microsoft Store. Votre application doit prendre en charge au moins l’une de ces langues, et ne doit spécifier aucun code de langue non répertorié ici.
 
 | Nom de la langue         | Codes de langue pris en charge                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

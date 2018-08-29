@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c7286493e08fd62ad4b207d0e014dd4fbd5318
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2889388"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905985"
 ---
 # <a name="handle-uri-activation"></a>Gérer l’activation des URI
 
@@ -31,7 +31,7 @@ Nous vous recommandons de vous inscrire pour un nom de schéma d’URI uniquemen
 Ces étapes montrent comment s’inscrire pour un nom de schéma d’URI personnalisé, `alsdk://`, et comment activer votre application quand l’utilisateur lance un URI `alsdk://`.
 
 > [!NOTE]
-> Dans les applications UWP, certaines extensions de fichier et URI sont réservées pour une utilisation par le système d’exploitation et les applications intégrées. Toute tentative d’inscription de votre application avec une extension de fichier ou un URI réservés sera ignorée. Pour obtenir la liste alphabétique des schémas d’URI que vous ne pouvez pas inscrire pour vos applications UWP parce qu’ils sont réservés ou interdits, voir [Noms de schéma d’URI réservé et types de fichier](reserved-uri-scheme-names.md).
+> Dans les applications UWP, certaines extensions de fichier et les URI sont réservées pour une utilisation par les applications intégrées et le système d’exploitation. Toute tentative d’inscription de votre application avec une extension de fichier ou un URI réservés sera ignorée. Pour obtenir la liste alphabétique des schémas d’URI que vous ne pouvez pas inscrire pour vos applications UWP parce qu’ils sont réservés ou interdits, voir [Noms de schéma d’URI réservé et types de fichier](reserved-uri-scheme-names.md).
 
 ## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>Étape 1 : spécifier le point d’extension dans le manifeste du package
 
@@ -138,7 +138,7 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 ```
 
 > [!NOTE]
-> Lors du lancement via le protocole contrat, assurez-vous que ce bouton Précédent ramène l’utilisateur à l’écran qui a lancé l’application et non pas au contenu précédent de l’application.
+> En cas de lancement via un contrat de protocole, assurez-vous que le bouton précédent fait revenir l’utilisateur à l’écran qui a lancé l’application et non au contenu précédent de l’application.
 
 Le code suivant lance par programmation l’application via son URI:
 
@@ -159,10 +159,10 @@ En cas de lancement via l’activation de protocole, les applications doivent en
 N’importe quelle application ou n’importe quel site web peut utiliser votre nom de schéma d’URI, y compris des applications et sites malveillants. Par conséquent, toute donnée reçue dans cet URI peut provenir d’une source non approuvée. Nous vous recommandons de ne jamais effectuer une action permanente en fonction des paramètres que vous recevez dans un URI. Par exemple, les paramètres d’URI peuvent être utilisés pour lancer l’application sur la page de compte d’un utilisateur, mais nous vous recommandons de ne jamais les utiliser pour modifier directement le compte de l’utilisateur.
 
 > [!NOTE]
-> Si vous créez un nouveau nom de jeu d’URI pour votre application, veillez à suivre les recommandations [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550). Cela permet de garantir que votre nom respecte les normes applicables aux schémas d’URI.
+> Si vous créez un nouveau nom de schéma d’URI pour votre application, veillez à suivre les recommandations de [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550). Cela permet de garantir que votre nom respecte les normes applicables aux schémas d’URI.
 
 > [!NOTE]
-> Lors du lancement via le protocole contrat, assurez-vous que ce bouton Précédent ramène l’utilisateur à l’écran qui a lancé l’application et non pas au contenu précédent de l’application.
+> En cas de lancement via un contrat de protocole, assurez-vous que le bouton précédent fait revenir l’utilisateur à l’écran qui a lancé l’application et non au contenu précédent de l’application.
 
 Nous recommandons que les applications créent un [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) XAML pour chaque événement d’activation qui ouvre une nouvelle cible d’URI. De cette façon, la pile arrière («backstack») de navigation pour le nouveau **Frame** XAML ne contient aucune partie du contenu précédent pouvant figurer dans la fenêtre active de l’application au moment de la suspension.
 
@@ -170,7 +170,7 @@ Si vous décidez que vos applications doivent utiliser un seul [**Frame**](https
 
 ## <a name="related-topics"></a>Rubriquesassociées
 
-### <a name="complete-sample-app"></a>Application d’exemple complet
+### <a name="complete-sample-app"></a>Exemple complet d’application
 
 - [Exemple de lancement d’association](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
 

@@ -11,21 +11,21 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 959e056d5edf5e1fe7a1c51a2f855c9e11512cb0
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888804"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918810"
 ---
 # <a name="product-declarations"></a>Déclarations de produit
 
-La section des **déclarations de produit** de la page [Propriétés](enter-app-properties.md) du [processus de soumission](app-submissions.md) permet d’assurer votre application est affichée correctement et proposée aux ensembles de clients et vous aide à les comprennent comment ils peuvent utiliser votre application.
+La section **déclarations de produit** de la page de [Propriétés](enter-app-properties.md) du [processus de soumission](app-submissions.md) permet de vous assurer que votre application s’affiche correctement et proposée à un ensemble approprié de clients et permet de les comprennent comment ils peuvent utiliser votre application.
 
-Les sections suivantes décrivent certaines des déclarations et ce que vous devez prendre en compte lors de la détermination si chaque déclaration s’applique à votre application. Notez que deux de ces déclarations sont activées par défaut (tel que décrit ci-dessous). En fonction de la catégorie de votre produit, vous pouvez également voir des déclarations supplémentaires. Veillez à consulter toutes les déclarations et vous assurer qu’ils reflètent précisément votre présentation.
+Les sections suivantes décrivent certaines des déclarations et ce que vous devez prendre en compte lors de la détermination si chaque déclaration s’applique à votre application. Notez que deux de ces déclarations sont vérifiées par défaut (comme décrit ci-dessous). En fonction de la catégorie de votre produit, vous pouvez également voir des déclarations supplémentaires. Veillez à examiner toutes les déclarations et vous assurer qu’ils reflètent précisément votre soumission.
 
-## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>Cette application permet aux utilisateurs d’effectuer des achats, mais n’utilise pas le système de commerce Microsoft Store.
+## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>Cette application permet aux utilisateurs d’effectuer des achats, mais n’utilise pas le système de commerce de Microsoft Store.
 
-Pour presque chaque envoi, vous devez laisser cette case décochée, depuis des applications qui offrent la possibilité d’acheter les éléments qui sont ou peuvent être consommées ou utilisées au sein de votre application doivent utiliser l’achat de dans l’application Microsoft Store API pour créer et soumettre les modules complémentaires. Par le [Contrat de développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), les applications qui ont été créées et envoyées avant le 29 juin 2015, peuvent continuer à offrir des fonctionnalités des achats dans l’application sans utiliser le moteur de commerce de Microsoft, tant que la fonctionnalité de fournisseur est conforme à la [ Stratégies de banque de Microsoft](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions). Si cela s’applique à votre application, vous devez activer cette case. Sinon, laissez-la désactivée.
+Pour presque chaque soumission, vous devez laisser cette case désactivée, depuis les applications qui offrent des possibilités d’acheter des éléments qui sont ou peuvent être consommés ou utilisés au sein de votre application doivent utiliser l’API d’achat dans l’application Microsoft Store pour créer et soumettre les modules complémentaires. Par le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), les applications qui ont été créées et soumises avant le 29 juin 2015, peuvent continuer à offrir la fonctionnalité d’achat dans l’application sans utiliser le moteur de commerce de Microsoft, tant que la fonctionnalité d’achat est conforme à la [ Stratégies du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions). Si cela s’applique à votre application, vous devez activer cette case. Sinon, laissez-la désactivée.
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>Cette application a fait l'objet de tests pour voir si elle est conforme aux recommandations d'accessibilité.
 
@@ -41,30 +41,30 @@ Cochez uniquement cette case si vous avez :
 
 Lorsque vous déclarez votre application comme étant accessible, vous certifiez qu'elle est accessible à tous les utilisateurs, y compris ceux souffrant de handicaps. Cela signifie, par exemple, que vous avez testé l'application avec le mode de contraste élevé et avec un lecteur d'écran. Vous avez également vérifié que l’interface utilisateur fonctionnait correctement avec un clavier, la Loupe et d’autres outils d’accessibilité.
 
-Pour plus d’informations, voir [accessibilité](../design/accessibility/accessibility.md), le [test d’accessibilité](../design/accessibility/accessibility-testing.md)et [accessibilité dans le magasin](../design/accessibility/accessibility-in-the-store.md).
+Pour plus d’informations, voir [l’accessibilité](../design/accessibility/accessibility.md), [test d’accessibilité](../design/accessibility/accessibility-testing.md)et [l’accessibilité dans le Windows Store](../design/accessibility/accessibility-in-the-store.md).
 
 > [!IMPORTANT]
-> Ne liste votre application en tant qu’accessibles, sauf si vous avez spécifiquement conçu et testé à cet effet. Si votre application est déclarée comme étant accessible, mais qu’elle ne prend pas réellement en charge l’accessibilité, vous allez probablement recevoir des commentaires négatifs de la part de la communauté.
+> Pas de liste votre application comme accessible, sauf si vous avez spécifiquement conçue et testée à cet effet. Si votre application est déclarée comme étant accessible, mais qu’elle ne prend pas réellement en charge l’accessibilité, vous allez probablement recevoir des commentaires négatifs de la part de la communauté.
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>Les clients peuvent installer cette application sur d'autres disques ou dispositifs de stockage amovible.
 
-Cette case est activée par défaut, pour permettre aux clients d’installer votre application vers un stockage amovible ou externe comme un lecteur externe du lecteur multimédia comme une carte mémoire SD ou sur un volume non-système. (Pour Windows Phone 8.1, il a été indiqué précédemment via StoreManifest.xml.)
+Cette case est cochée par défaut, pour permettre aux clients d’installer votre application dans le stockage amovible ou externe du lecteur multimédia tel qu’une carte SD ou un volume non système, comme un lecteur externe. (Pour Windows Phone 8.1, cela a été précédemment storemanifest.Xml.)
 
-Si vous souhaitez empêcher que votre application en cours d’installation pour les lecteurs de substitution ou de stockage amovible et autoriser uniquement l’installation sur le disque dur interne sur leur appareil, désactivez cette case à cocher.
+Si vous souhaitez empêcher que votre application en cours d’installation pour les autres lecteurs ou le stockage amovible et autoriser uniquement l’installation sur le disque dur interne sur leur appareil, désactivez cette case à cocher.
 
-Notez qu’il n’existe aucune option pour restreindre l’installation afin qu’une application peut *uniquement* être installé sur un support amovible.
+Notez qu’il n’existe aucune option pour restreindre installation afin qu’une application peut *uniquement* être installé sur un support de stockage amovible.
 
 
 ## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows peut intégrer les données de cette application dans les sauvegardes automatiques sur OneDrive.
 
-Cette case est cochée par défaut pour permettre l'insertion des données de votre application quand un client choisit de paramétrer Windows pour des sauvegardes automatiques sur OneDrive. (Pour Windows Phone 8.1, il a été indiqué précédemment via StoreManifest.xml.)
+Cette case est cochée par défaut pour permettre l'insertion des données de votre application quand un client choisit de paramétrer Windows pour des sauvegardes automatiques sur OneDrive. (Pour Windows Phone 8.1, cela a été précédemment storemanifest.Xml.)
 
 Si vous voulez empêcher l’insertion des données de votre application dans les sauvegardes automatiques, décochez cette case.
 
 
-## <a name="this-app-sends-kinect-data-to-external-services"></a>Cette application envoie des données de Kinect aux services externes. 
+## <a name="this-app-sends-kinect-data-to-external-services"></a>Cette application envoie les données de Kinect à des services externes. 
 
-Si votre application utilise des données Kinect et l’envoie à un service externe, vous devez vérifier cette zone.
+Si votre application utilise des données de Kinect et l’envoie à n’importe quel service externe, vous devez cocher cette case.
 
 
 

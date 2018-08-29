@@ -10,11 +10,11 @@ ms.prod: Microsoft Edge, Azure, Visual Studio Code
 ms.technology: web
 ms.localizationpriority: medium
 ms.openlocfilehash: 42f11cbdd749a44c4ba0d8bc1a0397a4f2882257
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2891900"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2911325"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Créer une application Web avec page unique avec une API REST principale
 
@@ -298,7 +298,7 @@ Voici quelques ressources utiles pour aller plus loin:
 
  - [Documentation Azure DocumentDB](https://docs.microsoft.com/en-us/azure/documentdb/index)
 
-## <a name="part-ii-build-a-single-page-web-application"></a>Partie II: Créer une application web d’une page
+## <a name="part-ii-build-a-single-page-web-application"></a>Partie II: Générer une application web à page unique
 
 Maintenant que vous avez créé (ou [téléchargé](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) le [serveur principal de l’API REST](#part-i-build-a-rest-api-backend) dans la partie I, vous êtes prêt à créer le serveur frontal du jeu de mémoire à page unique avec l'environnement [Node](https://nodejs.org/en/), [Express](http://expressjs.com/) et [Bootstrap ](http://getbootstrap.com/).
 

@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: 8748b68bf4efbcc79d0bba475db32f3a2d7cc933
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2884827"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905975"
 ---
 # <a name="package-an-app-using-the-desktop-app-converter-desktop-bridge"></a>Créer un package d'application à l’aide de Desktop App Converter (Pont du bureau)
 
@@ -271,7 +271,7 @@ Vous pouvez également afficher la liste entière en exécutant la commande ``Ge
 |-InstallerArguments &lt;chaîne&gt; |Facultatif |Une liste séparée par des virgules ou une chaîne d’arguments pour forcer votre programme d’installation à s’exécuter sans assistance/silencieusement. Ce paramètre est facultatif si votre programme d’installation est un fichier msi. Pour obtenir un fichier journal à partir de votre programme d’installation, indiquez ici l’argument de la journalisation pour le programme d’installation, et utilisez le chemin d’accès &lt;log_folder&gt;, qui est un jeton que le convertisseur remplace par le chemin d’accès approprié. <br><br>**REMARQUE**: les indicateurs de mode sans assistance/silencieux et les arguments de journalisation varient selon les technologies d’installation. <br><br>Exemple d’utilisation de ce paramètre: -InstallerArguments "/silent /log &lt;log_folder&gt;\install.log". Un autre exemple qui ne crée pas de fichier journal peut ressembler à ceci: ```-InstallerArguments "/quiet", "/norestart"``` là encore, vous devez littéralement diriger tous les journaux sur le chemin d’accès du jeton &lt;log_folder&gt; si vous voulez que le convertisseur les capture et les place dans un dossier des journaux finaux.|
 |-InstallerValidExitCodes &lt;Int32&gt; |Facultatif |Une liste séparée par des virgules des codes de sortie qui indiquent que votre programme d’installation a été exécuté correctement (par exemple: 0, 1234, 5678).  Par défaut, le code est 0 pour les éléments non msi et 0, 1641, 3010 pour les éléments msi.|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à ce script d’appeler MakeAppx sur la sortie. |
-|-MakeMSIX [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, s’il est présent, indique ce script pour empaqueter la sortie sous la forme d’un Package MSIX. |
+|-MakeMSIX [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à ce script pour empaqueter la sortie sous la forme d’un Package MSIX. |
 |<a id="identity-params" /><strong>Paramètres d’identité de package</strong>||
 |-PackageName &lt;chaîne&gt; |Requis |Le nom de votre package d’application Windows universelle. Si le centre de développement attribue une identité commençant par un chiffre à votre package, veillez à également transmettre le paramètre <i>-AppId</i> et à utiliser uniquement le suffixe de la chaîne (après le point de séparation à en tant que valeur pour ce paramètre. |
 |-Éditeur &lt;chaîne&gt; |Requis |L’éditeur de votre package d’application Windows universelle |

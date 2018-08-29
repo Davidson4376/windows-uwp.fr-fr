@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, description, page du store, notes de publication, titre
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882542"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910289"
 ---
 # <a name="create-app-store-listings"></a>Créer des descriptions d’application dans le Store
 
@@ -42,22 +42,22 @@ Dans la section **Langues supplémentaires de description dans le Store**, vous 
 
 Lorsque vous avez terminé vos sélections, cliquez sur **Enregistrer** pour revenir à la page de vue d’ensemble de la soumission.
 
-## <a name="add-and-edit-store-listing-info"></a>Ajouter et modifier des informations d’annonce
+## <a name="add-and-edit-store-listing-info"></a>Ajoutez et modifiez les informations de description
 
-Pour modifier une liste des magasins, sélectionnez le nom de la langue dans la page Vue d’ensemble d’envoi.
+Pour modifier une description, sélectionnez le nom de la langue dans la page de présentation de soumission.
 
 Les champs associés à votre description par défaut dans le Store pour la langue sélectionnée se trouvent en haut de la page **Description dans le Store**. Ces champs sont visibles de tous vos clients, sauf si certains packages ciblent des versions antérieures du système d’exploitation (Windows8.x ou version antérieure; Windows Phone8.x ou version antérieure) ou si vous créez des descriptions dans le Store spécifiques à la plateforme incluant différentes captures d’écran ou informations à présenter aux clients sur les versions de système d’exploitation spécifiées. Pour plus d’informations, consultez [Créer des descriptions spécifiques à la plateforme ](create-platform-specific-store-listings.md).
 
 ## <a name="product-name"></a>Nom du produit
 
-Cette zone de liste déroulante vous permet de spécifier quel nom doit être utilisé dans la liste magasin (si vous avez réservé plus d’un nom pour l’application).
+Cette liste déroulante vous permet de spécifier le nom qui doit être utilisé dans les descriptions (si vous avez réserver plusieurs noms pour l’application).
 
-Si vous avez téléchargé les modules dans la même langue que la liste magasin sur lequel vous travaillez, le nom utilisé dans les packages est sélectionné. Si vous devez [Renommer l’application](manage-app-names.md#rename-an-app-that-has-already-been-published) une fois qu’il est déjà été publié, vous pouvez sélectionner un autre nom réservé lorsque vous créez une nouvelle soumission des packages qui utilisent le nouveau nom.
+Si vous avez chargé des packages dans la même langue que la description dans le Windows Store sur lequel vous travaillez, le nom utilisé dans ces packages est sélectionné. Si vous devez renommer [l’application](manage-app-names.md#rename-an-app-that-has-already-been-published) une fois qu’il est déjà été publiée, vous pouvez sélectionner un autre nom réservé lorsque vous créez une nouvelle soumission avec les packages qui utilisent le nouveau nom.
 
-Si vous n’avez pas téléchargé les packages de la langue en cours et vous avez réservé plusieurs noms, vous devez sélectionner l’un de vos noms réservés à une application, car il n’est pas un package associé dans cette langue à partir de laquelle extraire le nom.
+Si vous n’avez pas encore chargé les packages de la langue vous travaillez et vous avez réservé plusieurs noms, vous devrez sélectionner l’un de vos noms d’application réservés, dans la mesure où il n’existe aucun package associé dans cette langue à partir duquel extraire le nom.
 
 > [!NOTE]
-> Le **nom du produit** que vous sélectionnez uniquement s’applique à la liste dans la langue des magasins dans lequel vous travaillez. Il n’influe pas sur le nom affiché lorsqu’un client installe l’application; Ce nom est fourni à partir du manifeste du package qui est installé. Pour éviter toute confusion, nous vous recommandons que de chaque langue packages et Store listing le même nom.
+> Le **nom du produit** que vous sélectionnez uniquement s’applique à la description dans le langage dans lequel vous travaillez. Elle n’affecte pas le nom affiché lorsqu’un client installe l’application; Ce nom est fourni à partir du manifeste du package qui est installé. Pour éviter toute confusion, nous recommandons que les packages et la description de chaque langue utilisent le même nom.
 
 ## <a name="description"></a>Description
 
@@ -134,7 +134,7 @@ Une description plus courte et plus accrocheuse peut être utilisé dans la part
 
 Concernant les jeux, la brève description peut également apparaître dans la section Informations du Hub de jeux sur XboxOne.
 
-Pour obtenir les meilleurs résultats, conservez votre description courte sous 270 caractères. Le champ a une limite de 500 caractères, mais dans certains affichages, seuls les premiers 270 caractères seront affichera (avec un lien pour afficher le reste de la description courte disponible).
+Pour obtenir de meilleurs résultats, maintenir la version de votre description courte sous 270 caractères. Le champ est limité à 500 caractères, mais dans certains affichages, seront affiche uniquement les caractères tout d’abord 270 (avec un lien disponible pour afficher le reste de la description courte).
 
 
 ### <a name="additional-system-requirements"></a>Configuration système supplémentaire requise

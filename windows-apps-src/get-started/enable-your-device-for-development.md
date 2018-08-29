@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ad817bbae2fb8b28b95095880aa1a65c391720f3
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887478"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2916978"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
@@ -56,7 +56,7 @@ Voici la page des paramètres relative à la famille d’appareils mobiles:
 
  Vous pouvez activer un appareil pour le développement ou simplement pour le chargement indépendant.
 
--   *Applications Microsoft Store* est le paramètre par défaut. Si vous ne développez pas des applications, ou si vous utilisez des applications internes spécifiques développées par votre entreprise, ce paramètre doit être activé.
+-   *Applications du Microsoft Store* est le paramètre par défaut. Si vous ne développez pas des applications, ou si vous utilisez des applications internes spécifiques développées par votre entreprise, ce paramètre doit être activé.
 -   *Charger la version test des applications* consiste à installer, puis à exécuter ou tester une application qui n’a pas été certifiée par le MicrosoftStore. Il peut par exemple s’agir d’une application utilisée en interne au sein de votre entreprise.
 -   Le *mode développeur* vous permet de procéder au chargement indépendant des applications et d’exécuter des applications à partir de VisualStudio en mode débogage. 
 
@@ -150,7 +150,7 @@ Parfois, en raison de problèmes réseau ou d’administration, le Mode dévelop
 Voir le forum [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) pour rechercher des solutions de contournement à ces problèmes et bien plus encore. 
 
 > [!NOTE]
-> Si le Mode développeur ne s’installe correctement, nous vous invitons à une demande d’évaluation de fichiers. Dans l’application de **Commentaires Hub** , sélectionnez **Ajouter nouveau commentaires**, choisissez la catégorie de la **Plateforme de développement** et de la sous-catégorie **Mode développeur** . Envoi de commentaires permettra à Microsoft de résoudre le problème que vous avez rencontré.
+> Si le Mode développeur ne s’installe pas correctement, nous vous encourageons à soumettre une demande de commentaires. Dans l’application **Hub de commentaires** , sélectionnez **Ajouter des nouveaux commentaires**et choisissez la catégorie de la **Plateforme de développement** et la sous-catégorie **Le Mode développeur** . Envoi de commentaires permettra à Microsoft de résoudre le problème que vous avez rencontré.
 
 ### <a name="failed-to-locate-the-package"></a>Échec de la localisation du package
 

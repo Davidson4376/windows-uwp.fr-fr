@@ -11,19 +11,19 @@ ms.technology: uwp
 keywords: Windows10, uwp, iap, achat in-app, produit in-app, soumission iap
 ms.localizationpriority: medium
 ms.openlocfilehash: 37d05722578ed945fbf75040f96360bb569c6d06
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2884228"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2908107"
 ---
 # <a name="add-on-submissions"></a>Soumissions d'extensions
 
-Les extensions (parfois appelées produits in-app) sont des éléments qui complètent votre application et qui peuvent être achetés par les clients. Un module complémentaire peut être une nouvelle fonctionnalité, une nouvelle partie niveau ou n’importe quel autre vous pensez conserveront utilisateurs commencés. Les extensions constituent non seulement une excellente façon de gagner de l’argent, mais également un bon moyen de renforcer le niveau d’interactivité et d’implication des clients avec votre application.
+Les extensions (parfois appelées produits in-app) sont des éléments qui complètent votre application et qui peuvent être achetés par les clients. Un module complémentaire peut être une amusante nouvelle fonctionnalité, un nouveau jeu niveau, ou tout ce qui selon vous contribuera à maintenir les utilisateurs impliqués. Les extensions constituent non seulement une excellente façon de gagner de l’argent, mais également un bon moyen de renforcer le niveau d’interactivité et d’implication des clients avec votre application.
 
 Les extensions sont publiées par le biais du tableau de bord du Centre de développement Windows. Vous devez également [activer les extensions](../monetize/in-app-purchases-and-trials.md) dans le code de votre application.
 
-La première étape de la procédure de soumission d’une extension consiste à créer cette extension dans le tableau de bord en [définissant son type de produit et son ID produit](set-your-add-on-product-id.md). Après cela, vous allez créer un envoi afin que votre module complémentaire peut être acheté via Microsoft Store. Vous pouvez soumettre une extension au moment où vous [soumettez votre application](app-submissions.md), ou le soumettre séparément. Enfin, après avoir publié une application dans le Windows Store, vous pouvez proposer des [mises à jour](#updating-an-add-on-after-publication) des extensions sans avoir à soumettre une nouvelle fois l’application.
+La première étape de la procédure de soumission d’une extension consiste à créer cette extension dans le tableau de bord en [définissant son type de produit et son ID produit](set-your-add-on-product-id.md). Après cela, vous allez créer une soumission afin que votre extension peut être achetée par le biais du Microsoft Store. Vous pouvez soumettre une extension au moment où vous [soumettez votre application](app-submissions.md), ou le soumettre séparément. Enfin, après avoir publié une application dans le Windows Store, vous pouvez proposer des [mises à jour](#updating-an-add-on-after-publication) des extensions sans avoir à soumettre une nouvelle fois l’application.
 
 > [!NOTE]
 > Cette section de la documentation explique comment soumettre des extensions dans le tableau de bord du Centre de développement. Sinon, vous pouvez utiliser [l’API de soumission au Microsoft Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour automatiser la soumission des extensions.
@@ -85,11 +85,11 @@ Quand vous avez terminé d'entrer ces informations, cliquez sur **Soumettre au W
 
 ## <a name="updating-an-add-on-after-publication"></a>Mise à jour d’une extension après sa publication
 
-Une extension est modifiable à tout moment après sa publication. Modifications du module complémentaire sont soumises et publiées indépendamment de votre application, afin que vous ne devez généralement mettre à jour l’ensemble de votre application afin d’apporter des modifications à un module complémentaire tels que la mise à jour ses prix ou la description.
+Une extension est modifiable à tout moment après sa publication. Les modifications de module complémentaire sont soumises et publiées indépendamment de votre application, vous généralement inutile de mettre à jour de l’ensemble de votre application afin d’apporter des modifications à une extension, par exemple, la mise à jour son prix ou sa description.
 
 > [!IMPORTANT]
 > Si votre application est accessible aux clients utilisant Windows8.x, vous devrez créer et publier une nouvelle soumission d’application pour faire en sorte que les mises à jour d’extension soient visibles par ces clients. De même, si vous ajoutez de nouvelles extensions dans une application ciblant Windows8.x après la publication de cette dernière, vous devrez mettre à jour le code de votre application pour référencer ces extensions, puis soumettre de nouveau l’application. Dans le cas contraire, les nouvelles extensions ne seront pas visibles par les clients utilisant Windows8.x.
 
-Pour soumettre des mises à jour, accédez à la page de l'extension dans votre tableau de bord, puis cliquez sur **Mettre à jour**. Cette opération crée une nouvelle soumission pour le module complémentaire, en utilisant les informations d’envoi de votre précédente comme point de départ. Apportez les modifications que vous souhaite que, puis cliquez sur **Envoyer dans le magasin**.
+Pour soumettre des mises à jour, accédez à la page de l'extension dans votre tableau de bord, puis cliquez sur **Mettre à jour**. Cela crée une nouvelle soumission pour l’extension, en utilisant les informations de votre soumission précédente comme point de départ. Apportez les modifications que vous souhaitez comme, puis cliquez sur **Envoyer au Store**.
 
 Si vous voulez supprimer une extension précédemment proposé, vous pouvez créer une soumission et modifier l’option [Distribution et visibilité](set-add-on-pricing-and-availability.md) en la définissant sur **Hidden in the Store** (Plus disponible à l’achat) avec l'option **Stop acquisition** (arrêt acquisition). Veillez à mettre à jour le code de votre application selon les besoins pour supprimer les références à l'extension (en particulier si votre application prend en charge Windows8.1 ou version antérieure; ce paramètre de visibilité ne s’appliquera pas à ces clients).

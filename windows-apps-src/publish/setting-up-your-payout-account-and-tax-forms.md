@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f7359b2ae40e9b53d5ab73ee93402b11beab629
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2895673"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918720"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Configurer votre compte de paiement et vos déclarations fiscales
 
 
-Pour recevoir l’argent ventes d’application dans Microsoft Store, vous devez configurer votre compte de paiement et remplir les formulaires fiscaux nécessaires.
+Pour recevoir l’argent des ventes dans le Microsoft Store, vous devez configurer votre compte de revenu et remplir les déclarations fiscales appropriées.
 
-Si vous envisagez de référencer uniquement des applications gratuites (et que vous ne voulez pas proposer d’achats in-app ou utiliser Microsoft Advertising), vous n’avez pas besoin de configurer de compte de revenu ni de remplir de déclaration fiscale. Si vous changez d’avis ultérieurement et que vous ne souhaitez pas vendre des applications (ou modules complémentaires), vous pouvez configurer votre compte de paiement et remplir les formulaires fiscaux à ce moment. Vous ne pourrez pas soumettre d’applications ou d’extensions payantes avant d’avoir créé votre compte de paiement et votre profil fiscal.
+Si vous envisagez de référencer uniquement des applications gratuites (et que vous ne voulez pas proposer d’achats in-app ou utiliser Microsoft Advertising), vous n’avez pas besoin de configurer de compte de revenu ni de remplir de déclaration fiscale. Si vous changez d’avis ultérieurement et que vous décidez de vendre des applications (ou modules complémentaires), vous pouvez configurer votre compte de revenu et remplir les déclarations fiscales à ce moment-là. Vous ne pourrez pas soumettre d’applications ou d’extensions payantes avant d’avoir créé votre compte de paiement et votre profil fiscal.
 
 > [!NOTE]
 > Dans [certains marchés](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), les développeurs peuvent uniquement soumettre des applications gratuites. Si votre compte est enregistré sur l’un de ces marchés, vous n’aurez pas la possibilité de configurer un compte de paiement.
 
-Après avoir [configuré votre compte pour les développeurs](opening-a-developer-account.md), il existe deux choses que vous devez effectuer avant de vendre des applications (ou modules complémentaires) dans Microsoft Store:
+Une fois que vous avez [configuré votre compte de développeur](opening-a-developer-account.md), il existe deux choses à faire avant de pouvoir vendre des applications (ou modules complémentaires) dans le Microsoft Store:
 
 -   [Configurer votre compte de paiement](#payout-account)
 -   [Remplir vos déclarations fiscales](#tax-forms)
@@ -125,7 +125,7 @@ Pour garantir le succès du paiement, notez les points suivants :
 
 ## <a name="tax-forms"></a>Déclarations fiscales
 
-Après avoir [inscrit pour un compte de développeur](opening-a-developer-account.md) et configurer votre [compte de paiement](#payout-account), vous pouvez créer votre *profil de taxe* pour Microsoft Store en procédant comme suit:
+Une fois que vous avez [inscrit pour un compte de développeur](opening-a-developer-account.md) et configurer votre [compte de revenu](#payout-account), vous pouvez créer votre *profil fiscal* pour le Microsoft Store en procédant comme suit:
 
 -   Spécifiez votre pays de résidence et votre nationalité.
 -   Remplissez les déclarations fiscales appropriées.
@@ -133,7 +133,7 @@ Après avoir [inscrit pour un compte de développeur](opening-a-developer-accoun
 Vous pouvez remplir et envoyer vos déclarations fiscales au format électronique dans votre tableau de bord, ce qui vous évite d’avoir à imprimer les formulaires et à les envoyer par courrier.
 
 > [!IMPORTANT]
-> L’imposition varie selon les pays et les régions. Le montant exact des taxes dont vous devez vous affranchir varie selon les pays et les régions où vous vendez vos applications. Pour savoir dans quels pays Microsoft vous dispense des taxes d’utilisation et sur les ventes, voir le [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) Dans d’autres pays, selon l’endroit où vous êtes inscrit, vous devrez peut-être verser directement les taxes d’utilisation et les taxes sur les ventes de vos applications à l’administration fiscale locale. Notez également que le produit des ventes d’applications que vous recevez peut être considéré comme un revenu imposable. Nous vous invitons à contacter l’autorité pour votre pays ou région qui mieux vous permettront de déterminer les informations fiscales droite pour vos activités de développement Microsoft Store.
+> L’imposition varie selon les pays et les régions. Le montant exact des taxes dont vous devez vous affranchir varie selon les pays et les régions où vous vendez vos applications. Pour savoir dans quels pays Microsoft vous dispense des taxes d’utilisation et sur les ventes, voir le [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) Dans d’autres pays, selon l’endroit où vous êtes inscrit, vous devrez peut-être verser directement les taxes d’utilisation et les taxes sur les ventes de vos applications à l’administration fiscale locale. Notez également que le produit des ventes d’applications que vous recevez peut être considéré comme un revenu imposable. Nous encourageons vivement à contacter l’autorité compétente de votre pays ou région qui peut mieux vous aider à déterminer les informations fiscales appropriées pour vos activités de développement de Microsoft Store.
 
  
 **Pour créer votre profil fiscal**
@@ -148,7 +148,7 @@ Vous pouvez remplir et envoyer vos déclarations fiscales au format électroniqu
 4.  Répondez aux questions portant sur la nationalité américaine et la résidence aux États-Unis, puis cliquez sur **Suivant**.
 5.  Si votre nom et votre adresse sont affichés, vérifiez-les pour la déclaration de vos revenus.
 
-Les versions électroniques des déclarations fiscales à remplir apparaissent ensuite. Quel que soit votre pays de résidence ou citoyenneté, vous devez remplir les formulaires fiscaux d’États-Unis vendre toutes vos applications ou les modules complémentaires via Microsoft Store. Les développeurs répondant à certains critères de résidence aux États-Unis doivent remplir le formulaire W-9 du fisc américain (IRS). Les autres développeurs résidant en dehors des États-Unis doivent compléter le formulaire W-8 de l'IRS. Vous pouvez remplir ces formulaires en ligne lors de la création de votre profil fiscal.
+Les versions électroniques des déclarations fiscales à remplir apparaissent ensuite. Quel que soit votre pays de résidence ou votre nationalité, vous devez remplir les déclarations fiscales des États-Unis pour pouvoir vendre des applications ou les modules complémentaires via le Microsoft Store. Les développeurs répondant à certains critères de résidence aux États-Unis doivent remplir le formulaire W-9 du fisc américain (IRS). Les autres développeurs résidant en dehors des États-Unis doivent compléter le formulaire W-8 de l'IRS. Vous pouvez remplir ces formulaires en ligne lors de la création de votre profil fiscal.
 
 Il n'est pas nécessaire de fournir un numéro d'identification du contribuable ou ITIN (États-Unis) pour recevoir des paiements de Microsoft ou pour revendiquer des avantages en vertu d'une convention fiscale.
 
@@ -158,7 +158,7 @@ Les informations que vous indiquez dans vos déclarations fiscales déterminent 
 
 ### <a name="tax-treaty-benefits"></a>Avantages en vertu d’une convention fiscale
 
-Si vous résidez en dehors des États-Unis, vous pouvez tirer parti d’avantages découlant d’une convention fiscale. Ces avantages varient d’un pays à l’autre et vous permettent de réduire la quantité de taxes retenu Microsoft Store. Pour revendiquer des avantages en vertu d’une convention fiscale, remplissez la deuxième partie du formulaire W-8BEN. Nous vous recommandons de contacter les autorités appropriées dans votre pays ou région pour déterminer si ces avantages vous concernent.
+Si vous résidez en dehors des États-Unis, vous pouvez tirer parti d’avantages découlant d’une convention fiscale. Ces avantages varient d’un pays à l’autre et peuvent vous permettre de réduire le montant des taxes retenues par le Microsoft Store. Pour revendiquer des avantages en vertu d’une convention fiscale, remplissez la deuxième partie du formulaire W-8BEN. Nous vous recommandons de contacter les autorités appropriées dans votre pays ou région pour déterminer si ces avantages vous concernent.
 
  
 

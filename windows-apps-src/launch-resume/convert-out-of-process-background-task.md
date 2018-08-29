@@ -11,11 +11,11 @@ keywords: Windows 10, uwp, tâche en arrière-plan, le service d’application
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
 ms.openlocfilehash: 1144443f943f134991d050dea1457f252eaaf36d
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882763"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2912916"
 ---
 # <a name="convert-an-out-of-process-background-task-to-an-in-process-background-task"></a>Convertir une tâche en arrière-plan hors processus en une tâche en arrière-plan intégrée au processus
 

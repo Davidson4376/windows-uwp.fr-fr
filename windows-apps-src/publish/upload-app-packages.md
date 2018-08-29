@@ -8,20 +8,20 @@ ms.date: 5/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, packages, téléchargement, le téléchargement du package
+keywords: Windows 10, uwp, packages, téléchargement, le chargement de package
 ms.localizationpriority: medium
 ms.openlocfilehash: 6013a238cff8db3b85dd98af58cccaf344a72f51
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887838"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2909909"
 ---
 # <a name="upload-app-packages"></a>Chargement des packages d’application
 
 Sur la page **Packages**, vous pouvez charger tous les fichiers de package (.appx, .appxupload, .appxbundle, et/ou .xap) pour l’application que vous soumettez. Vous pouvez charger des packages pour tous les systèmes d’exploitation ciblés par votre application. Quand un client télécharge votre application, le WindowsStore propose automatiquement au client le package le mieux adapté à son appareil. Une fois vos packages chargés, vous verrez un tableau indiquant [les packages offerts aux familles d’appareilsWindows10 spécifiques](#device-family-availability) (et aux systèmes d’exploitation plus anciens, le cas échéant), classés par ordre.
 
-Pour plus d’informations sur le contenu et sur la structure d’un package, voir [Exigences relatives au package de l’application](app-package-requirements.md). Vous allez également découvrir [comment les numéros de version peuvent avoir un impact sur les packages sont remis aux clients spécifiques](package-version-numbering.md) et [comment les packages sont distribués à différents systèmes d’exploitation](guidance-for-app-package-management.md).
+Pour plus d’informations sur le contenu et sur la structure d’un package, voir [Exigences relatives au package de l’application](app-package-requirements.md). Vous devrez également Découvrez [comment les numéros de version peuvent avoir un impact sur les packages livrés à des clients spécifiques](package-version-numbering.md) et [comment les packages sont distribués à différents systèmes d’exploitation](guidance-for-app-package-management.md).
 
 ## <a name="uploading-packages-to-your-submission"></a>Chargement de packages pour votre soumission
 
@@ -32,7 +32,7 @@ Pour charger des packages, faites-les glisser dans le champ de chargement, ou cl
 
 Si vous avez créé des [versions d’évaluation de package](package-flights.md) pour votre application, une liste déroulante apparaît avec l’option de copie des packages de l’une des versions d’évaluation de package. Sélectionnez la version d’évaluation de package comportant les packages que vous souhaitez intégrer. Vous pouvez transférer une partie ou la totalité des packages dans cette soumission.
 
-Si nous détecter les erreurs avec un package lors de la validation, nous allons affiche un message pour vous permettre de savoir ce qui est incorrect. Vous devrez supprimer le package, corriger le problème, puis tentez à nouveau télécharger. Il se peut également que vous receviez des avertissements concernant des problèmes potentiels, sans que cela vous empêche de poursuivre votre soumission.
+Si nous détectons des erreurs avec un package lors de la validation il, nous affichons un message pour vous indiquer quel est le problème. Vous devez supprimer le package, résoudre le problème et essayez de le charger à nouveau. Il se peut également que vous receviez des avertissements concernant des problèmes potentiels, sans que cela vous empêche de poursuivre votre soumission.
 
 
 ## <a name="device-family-availability"></a>Disponibilité de la famille d’appareils
@@ -44,7 +44,7 @@ Pour plus d’informations, consultez la section [Disponibilité de la famille d
 
 ## <a name="package-details"></a>Détails du package
 
-Les packages téléchargés sont répertoriés ici, regroupés par système d’exploitation cible. Nous affichons le nom, la version et l’architecture du package. Cliquez sur **Afficher les détails** pour visualiser des informations complémentaires comme les langues prises en charge, les fonctionnalités de l’application et la taille de fichier de chaque package.
+Vos packages chargés sont répertoriées ici, regroupés par système d’exploitation cible. Nous affichons le nom, la version et l’architecture du package. Cliquez sur **Afficher les détails** pour visualiser des informations complémentaires comme les langues prises en charge, les fonctionnalités de l’application et la taille de fichier de chaque package.
 
 Si vous voulez supprimer un package de votre soumission, cliquez sur le lien **Supprimer** au bas de la section **Détails** de chaque package.
 

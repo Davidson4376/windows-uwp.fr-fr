@@ -11,11 +11,11 @@ keywords: windows10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
 ms.openlocfilehash: db2c360a881071db14a1e65ffe2cd9a5bb16f0fe
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881612"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913960"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>Créer un certificat pour la signature de packages
 
@@ -58,7 +58,7 @@ Utilisez l'applet de commande PowerShell **New-SelfSignedCertificate** pour cré
 New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
 ```
 
-Après avoir exécuté cette commande, le certificat sera ajouté au magasin de certificats local, tel qu’indiqué dans le paramètre «-CertStoreLocation». Le résultat de la commande créera également l’empreinte du certificat.  
+Après avoir exécuté cette commande, le certificat sera ajouté au magasin de certificats local, tel qu’indiqué dans le paramètre «-CertStoreLocation». Le résultat de la commande également empreinte du certificat.  
 
 **Remarque**  
 Vous pouvez afficher votre certificat dans une fenêtre PowerShell en utilisant les commandes suivantes:

@@ -3,7 +3,7 @@ author: TylerMSFT
 title: Exécuter indéfiniment en arrière-plan
 description: Utilisez la fonctionnalité extendedExecutionUnconstrained pour exécuter indéfiniment une tâche en arrière-plan ou une session d’exécution étendue en arrière-plan.
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: tâche d’arrière-plan, étendue d’exécution, les ressources, les limites, tâche en arrière-plan
+keywords: tâche en arrière-plan, exécution étendue, ressources, limites, tâche en arrière-plan
 ms.author: twhitney
 ms.date: 10/3/2017
 ms.topic: article
@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: af0f7670f2b131671ce82708d2b0a826db0fcfb1
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2891761"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2916665"
 ---
 # <a name="run-in-the-background-indefinitely"></a>Exécuter indéfiniment en arrière-plan
 

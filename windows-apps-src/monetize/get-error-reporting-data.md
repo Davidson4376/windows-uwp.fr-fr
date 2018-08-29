@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c03ea17e111f86ad390dafe5360db9d10864edc
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2892152"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910213"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>Obtenir les données de signalement d’erreurs pour votre application
 
-Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour récupérer le rapport complet des erreurs de votre app au formatJSON, correspondant à une période donnée et à d’autres filtres facultatifs. Cette méthode peut récupérer uniquement les erreurs qui se sont produites au cours des 30 derniers jours. Ces informations sont également disponibles dans la section **Échecs** du [rapport d’intégrité](../publish/health-report.md) dans le tableau de bord du Centre de développement Windows.
+Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour récupérer le rapport complet des erreurs de votre app au formatJSON, correspondant à une période donnée et à d’autres filtres facultatifs. Cette méthode ne récupère que les erreurs qui se sont produites au cours des 30 derniers jours. Ces informations sont également disponibles dans la section **Échecs** du [rapport d’intégrité](../publish/health-report.md) dans le tableau de bord du Centre de développement Windows.
 
 Vous pouvez récupérer des informations d’erreur supplémentaires à l’aide des méthodes [obtenir des informations les erreurs](get-details-for-an-error-in-your-app.md), [obtenir la trace de la pile](get-the-stack-trace-for-an-error-in-your-app.md) et [télécharger le fichier CAB](download-the-cab-file-for-an-error-in-your-app.md).
 
@@ -53,7 +53,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 | Paramètre        | Type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
 | applicationId | chaîne | L’ID WindowsStore de l’application pour laquelle vous souhaitez récupérer les données de rapport d’erreur. L’ID WindowsStore est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8. |  Oui  |
-| startDate | date | Dans la plage de dates, la date de début de la récupération des données de rapport d’erreurs. La valeur par défaut est la date actuelle. Si *aggregationLevel* is **day**, **week** ou **month**, ce paramètre spécifiera une date dans le format ```mm/dd/yyyy```. Si *aggregationLevel* est **hour**, ce paramètre peut spécifier une date au format ```mm/dd/yyyy```ou la date et l'heure au format ```yyyy-mm-dd hh:mm:ss```.<p/><p/>**Remarque:**&nbsp;&nbsp;cette méthode peut récupérer uniquement les erreurs qui se sont produites au cours des 30 derniers jours.  |  Non  |
+| startDate | date | Dans la plage de dates, la date de début de la récupération des données de rapport d’erreurs. La valeur par défaut est la date actuelle. Si *aggregationLevel* is **day**, **week** ou **month**, ce paramètre spécifiera une date dans le format ```mm/dd/yyyy```. Si *aggregationLevel* est **hour**, ce paramètre peut spécifier une date au format ```mm/dd/yyyy```ou la date et l'heure au format ```yyyy-mm-dd hh:mm:ss```.<p/><p/>**Remarque:**&nbsp;&nbsp;cette méthode ne récupère que les erreurs qui se sont produites au cours des 30 derniers jours.  |  Non  |
 | endDate | date | Dans la plage de dates, la date de fin de la récupération des données de rapports d’erreurs. La valeur par défaut est la date du jour. Si *aggregationLevel* is **day**, **week** ou **month**, ce paramètre spécifiera une date dans le format ```mm/dd/yyyy```. Si *aggregationLevel* est **hour**, ce paramètre peut spécifier une date au format ```mm/dd/yyyy```ou la date et l'heure au format ```yyyy-mm-dd hh:mm:ss```. |  Non  |
 | top | entier | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
 | skip | entier | Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10000 et skip=0 pour obtenir les 10000 premières lignes de données, top=10000 et skip=10000 pour obtenir les 10000 lignes suivantes, et ainsi de suite. |  Non  |

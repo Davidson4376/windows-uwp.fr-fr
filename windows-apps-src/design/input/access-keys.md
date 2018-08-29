@@ -16,11 +16,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e842d6c5b8e62a9c043c97849fdf17f524ccfc7
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2890778"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2907112"
 ---
 # <a name="access-keys"></a>Touches d’accès rapide
 
@@ -365,6 +365,6 @@ Si vous spécifiez la propriété AccessKey sur une commande UIElement ou TextEl
 * [Raccourcis clavier](keyboard-accelerators.md)
 
 **Exemples**
-* [Galerie de contrôles XAML (également appelé XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+* [Galerie de contrôles XAML (c'est-à-dire XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
 
 

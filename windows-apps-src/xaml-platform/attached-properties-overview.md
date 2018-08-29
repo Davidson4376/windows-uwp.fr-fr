@@ -15,11 +15,11 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: 7f92b12ab9c8962fe98d8eed22b21e7d10330c99
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2894065"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2916957"
 ---
 # <a name="attached-properties-overview"></a>Vue d’ensemble des propriétés jointes
 
@@ -40,7 +40,7 @@ En XAML, les propriétés jointes sont définies à l’aide de la syntaxe _Atta
 ```
 
 > [!NOTE]
-> Nous utilisons simplement [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) sous forme de propriété exemple attaché sans entièrement expliquant pourquoi vous pouvez l’utiliser. Si vous voulez en savoir plus sur le rôle de **Canvas.Left** et la façon dont [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) gère ses enfants de disposition, voir la rubrique de référence [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) ou [Définir des dispositions avec XAML](https://msdn.microsoft.com/library/windows/apps/mt228350).
+> Nous utilisons simplement [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) comme une propriété de l’exemple jointe sans expliquer de manière exhaustive raison pour laquelle vous souhaitez l’utiliser. Si vous voulez en savoir plus sur le rôle de **Canvas.Left** et la façon dont [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) gère ses enfants de disposition, voir la rubrique de référence [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) ou [Définir des dispositions avec XAML](https://msdn.microsoft.com/library/windows/apps/mt228350).
 
 ## <a name="why-use-attached-properties"></a>Pourquoi utiliser des propriétés jointes?
 
@@ -76,7 +76,7 @@ Pour obtenir la valeur d’une propriété jointe dans le code, vous devez appel
 
 ### <a name="using-the-xaml-accessor-pattern"></a>Utilisateur du modèle d’accesseur XAML
 
-Un processeur XAML doit être en mesure de définir des valeurs de propriétés jointes lorsque le code XAML est analysé dans une arborescence d’objets. Le type de propriétaire de la propriété attachée doit implémenter les méthodes d’accesseur dédiées nommés sous la forme **obtenir *** PropertyName* et **définir *** PropertyName*. Ces méthodes d’accesseur dédiées offrent aussi un moyen d’obtenir ou de définir la propriété jointe dans le code. Du point de vue du code, une propriété jointe s’apparente à un champ de stockage doté d’accesseurs de méthode et non d’accesseurs de propriété, et ce champ de stockage peut exister dans n’importe quel objet au lieu de devoir être spécifiquement défini.
+Un processeur XAML doit être en mesure de définir des valeurs de propriétés jointes lorsque le code XAML est analysé dans une arborescence d’objets. Le type de propriétaire de la propriété jointe doit implémenter des méthodes d’accesseur dédiées nommées sous la forme **obtenir *** PropertyName* et **définir *** PropertyName*. Ces méthodes d’accesseur dédiées offrent aussi un moyen d’obtenir ou de définir la propriété jointe dans le code. Du point de vue du code, une propriété jointe s’apparente à un champ de stockage doté d’accesseurs de méthode et non d’accesseurs de propriété, et ce champ de stockage peut exister dans n’importe quel objet au lieu de devoir être spécifiquement défini.
 
 L’exemple suivant montre comment définir une propriété jointe dans du code via l’API d’accesseur XAML. Dans cet exemple, `myCheckBox` est une instance de la classe [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316). La dernière ligne correspond au code qui définit à proprement parler la valeur, tandis que les lignes qui la précèdent ne font qu’établir les instances et leur relation parent-enfant. La dernière ligne sans marques de commentaires est la syntaxe si vous utilisez le système de propriétés. La dernière ligne avec marques de commentaires est la syntaxe si vous utilisez le modèle d’accesseur XAML.
 
@@ -127,9 +127,9 @@ Le point figurant dans un nom de propriété jointe est un élément clé du mod
 - Pour spécifier une propriété jointe comme faisant partie du chemin cible d’une animation, mettez le nom de la propriété jointe entre parenthèses ("()") par exemple "(Canvas.Left)". Pour plus d’informations, voir [Syntaxe de PropertyPath](property-path-syntax.md).
 
 > [!WARNING]
-> Une limite de l’implémentation XAML Windows Runtime est que vous ne pouvez pas animer une propriété personnalisée associée.
+> Une limitation actuelle de l’implémentation XAML Windows Runtime est que vous ne pouvez pas animer une propriété jointe personnalisée.
 
-- Pour spécifier une propriété jointe en tant que propriété cible d’une référence de ressource à partir d’un fichier de ressources vers **x:Uid**, utilisez une syntaxe spéciale qui injecte une déclaration **using:** complète qui s’apparente à du code entre crochets ("\[\]"), de façon à créer une rupture d’étendue délibérée. Par exemple, en partant du principe qu’il existe un élément `<TextBlock x:Uid="Title" />`, la clé de ressource dans le fichier de ressources qui cible la valeur **Canvas.Top** sur cette instance est «Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top». Pour plus d’informations sur les fichiers de ressources et le code XAML, voir [Démarrage rapide : traduction des ressources d’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
+- Pour spécifier une propriété jointe en tant que propriété cible d’une référence de ressource à partir d’un fichier de ressources vers **x:Uid**, utilisez une syntaxe spéciale qui injecte une déclaration **using:** complète qui s’apparente à du code entre crochets ("\[\]"), de façon à créer une rupture d’étendue délibérée. Par exemple, en supposant qu’il existe un élément `<TextBlock x:Uid="Title" />`, la clé de ressource dans le fichier de ressources qui cible la valeur **Canvas.Top** sur cette instance est «Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top». Pour plus d’informations sur les fichiers de ressources et le code XAML, voir [Démarrage rapide : traduction des ressources d’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
 
 ## <a name="related-topics"></a>Rubriques connexes
 

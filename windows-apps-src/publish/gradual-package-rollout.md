@@ -11,15 +11,15 @@ keywords: windows10, uwp
 ms.assetid: 65d578a6-4e26-484c-90af-b2cd916f3634
 ms.localizationpriority: medium
 ms.openlocfilehash: 407ffb5fdebdc90a63ed7f65b4e97f8358dc58c8
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2890858"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2915119"
 ---
 # <a name="gradual-package-rollout"></a>Lancement progressif de packages
 
-Lorsque vous publiez une mise à jour pour une présentation, vous pouvez choisir progressivement déployer les packages de mise à jour à un pourcentage de clients de votre application sur Windows 10 (y compris Xbox). Cela vous permet de surveiller les commentaires et les données d’analyse des packages spécifiques et de vérifier l’adéquation de votre mise à jour avant de la déployer plus largement. Vous pouvez augmenter le pourcentage (ou arrêter la mise à jour) à tout moment sans avoir à créer une nouvelle soumission. 
+Lorsque vous publiez une mise à jour d’une soumission, vous pouvez choisir de déployer progressivement les packages mis à jour pour un pourcentage des clients de votre application sur Windows 10 (y compris Xbox). Cela vous permet de surveiller les commentaires et les données d’analyse des packages spécifiques et de vérifier l’adéquation de votre mise à jour avant de la déployer plus largement. Vous pouvez augmenter le pourcentage (ou arrêter la mise à jour) à tout moment sans avoir à créer une nouvelle soumission. 
 
 > [!IMPORTANT]
 > Vos choix de lancement s’appliquent à tous vos packages, mais uniquement pour les clients qui exécutent des versions de système d’exploitation prenant en charge des versions d’évaluation de package (Windows.Desktop build10586 ou version ultérieure, Windows.Mobile build10586.63 ou version ultérieure et Xbox), y compris les clients qui obtiennent l’application par le biais du [service de gestion de licences (en ligne) du WindowsStore](organizational-licensing.md) dans [MicrosoftStore pour Entreprises](https://businessstore.microsoft.com/store) ou [MicrosoftStore pour Éducation](https://educationstore.microsoft.com/store). Lorsque vous utilisez le déploiement progressif de packages, les clients utilisant des versions antérieures du système d’exploitation n’obtiennent pas les packages de la dernière soumission tant que vous n’avez pas finalisé le déploiement de packages comme décrit ci-dessous.

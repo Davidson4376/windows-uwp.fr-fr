@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887908"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2908790"
 ---
 # <a name="controls-by-function"></a>Contrôles par fonction
 
@@ -30,7 +30,7 @@ Vous pouvez voir de nombreux contrôles d’interface utilisateur Windows en act
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l’application de la <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/NavigationView">Ouvrir l’application et de voir le NavigationView en action</a> </p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/NavigationView">Ouvrir l’application et voir l’objet NavigationView en action</a> </p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Obtenir le code source (GitHub)</a></li>
@@ -270,7 +270,7 @@ Affiche un message nécessitant une action de la part de l’utilisateur. (Contr
 
 Référence : [Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
 
-Conception et procédures: [volants](dialogs-and-flyouts/flyouts.md) 
+Conception et procédure: [menus volants](dialogs-and-flyouts/flyouts.md) 
 
 ### <a name="menu-flyout"></a>Menu volant
 Affiche temporairement une liste de commandes ou d’options liées à l’action en cours de l’utilisateur.
@@ -290,7 +290,7 @@ Affiche temporairement une liste de commandes ou d’options liées à l’actio
 
 Référence : [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx), [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
-Conception et procédures: [Menus et menus contextuels](menus.md) 
+Conception et procédure: [Menus et menus contextuels](menus.md) 
 
 Exemple de code : [Exemple de menu contextuel XAML](http://go.microsoft.com/fwlink/p/?LinkId=620021)
 
@@ -299,7 +299,7 @@ Commandes de présentation de menu personnalisé que vous spécifiez.
 
 Référence : [PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
-Conception et procédures: [boîtes de dialogue](dialogs-and-flyouts/dialogs.md) 
+Conception et procédure: [boîtes de dialogue](dialogs-and-flyouts/dialogs.md) 
 
 ### <a name="tooltip"></a>Info-bulle
 Fenêtre contextuelle qui affiche des informations pour un élément. 
@@ -555,11 +555,11 @@ Voir Élément multimédia.
 
 ### <a name="navigationview"></a>NavigationView
 
-Un modèle de navigation flexible qui implémente le volet de navigation de gauche, la partie supérieure et le modèle d’onglets et de conteneur adaptable.
+Un conteneur adaptable et un modèle flexible de navigation qui implémente le volet de navigation de gauche, la navigation en haut et le modèle onglets.
 
 Référence: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-Conception et procédures: [guide du contrôle NavigationView](navigationview.md)
+Conception et procédure: [guide de contrôle NavigationView](navigationview.md)
 
 ### <a name="splitview"></a>SplitView
 

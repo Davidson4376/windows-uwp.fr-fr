@@ -8,35 +8,35 @@ ms.date: 7/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, réponse, réponses, passez en revue
+keywords: Windows 10, uwp, répondre, réponses, passez en revue
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a043a0b721ee6eabdc3520960ae6da253587c33
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2885920"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905659"
 ---
 # <a name="respond-to-customer-reviews"></a>Répondre aux avis des clients
 
 
-Vous pouvez répondre à l’avis de votre application pour permettre aux clients savent que vous écoutez leurs commentaires. Les réponses aux avis permettent d’indiquer aux clients les nouvelles fonctionnalités ou les bogues corrigés d’après leurs commentaires ou d’obtenir des commentaires plus précis sur les améliorations à apporter à votre application. Vos réponses seront affichera dans le Microsoft Store pour tous les clients Windows 10 à voir. Vous pouvez également choisir d’envoyer votre réponse par courrier électronique au client (s’ils n’ont pas choisi et qu’ils utilisent un périphérique exécutant Windows 10, version 1803 ou ultérieure).
+Vous pouvez répondre aux avis de votre application pour permettre aux clients que vous prêtez attention à leurs commentaires. Les réponses aux avis permettent d’indiquer aux clients les nouvelles fonctionnalités ou les bogues corrigés d’après leurs commentaires ou d’obtenir des commentaires plus précis sur les améliorations à apporter à votre application. Vos réponses seront affichera dans le Microsoft Store pour tous les clients Windows 10 voir. Vous pouvez également choisir d’envoyer votre réponse par courrier électronique au client (si elles n’ont pas refusé et utilisent un appareil exécutant Windows 10, version 1803 ou une version ultérieure).
 
-Pour visualiser les avis concernant votre application et y répondre, recherchez l’application dans votre tableau de bord du Centre de développement Windows. Dans le menu de navigation de gauche, développez **Analyse**, puis cliquez sur **Avis** afin d’afficher le [Rapport sur les avis](reviews-report.md). Sélectionnez **répondre pour passer en revue** pour fournir la réponse.
+Pour visualiser les avis concernant votre application et y répondre, recherchez l’application dans votre tableau de bord du Centre de développement Windows. Dans le menu de navigation de gauche, développez **Analyse**, puis cliquez sur **Avis** afin d’afficher le [Rapport sur les avis](reviews-report.md). Sélectionnez **répondre pour passer en revue** pour fournir votre réponse.
 
 > [!TIP]
-> Outre l’utilisation du tableau de bord pour répondre aux analyses, vous pouvez répondre à avis [par programme](../monetize/submit-responses-to-app-reviews.md)ou à l’aide de l' [application du centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
+> Outre l’utilisation du tableau de bord pour répondre aux avis, vous pouvez répondre aux avis [par programme](../monetize/submit-responses-to-app-reviews.md)ou à l’aide de l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
 
-Par défaut, votre réponse est validée dans le magasin, directement en dessous de la révision du client d’origine. Ces réponses seront visibles à tous les clients affichage du magasin sur un appareil Windows 10. Si le client qui a quitté la révision utilise un périphérique exécutant Windows 10, version 1803 ou ultérieure, et ils n’ont pas choisi de ne pas recevoir des réponses de courrier électronique, une copie de la réponse est également envoyée à ce client par courrier électronique.  Vous devez fournir une adresse de messagerie valide pour pouvoir envoyer votre réponse, inclut dans le message électronique au client. Ils peuvent ensuite utiliser cette adresse de messagerie pour vous contacter directement.
+Par défaut, votre réponse est publiée dans le Windows Store, juste en dessous de la révision du client d’origine. Ces réponses seront visibles pour tous les clients consultant le Windows Store sur un appareil Windows 10. Si le client qui a rédigé un avis d’un appareil exécutant Windows 10, version 1803 ou une version ultérieure, et ils n’ont pas choisi de ne pas recevoir de réponses de courrier électronique, une copie de votre réponse également sera envoyée à ce client par e-mail.  Vous devez fournir une adresse e-mail valide pour pouvoir soumettre votre réponse, ce qui nous inclut dans le message électronique au client. Ils peuvent ensuite utiliser cette adresse de messagerie pour vous contacter directement.
 
-Si vous ne voulez pas que votre réponse à apparaissent dans le magasin plutôt que vous souhaitez répondre uniquement par courrier électronique au client, désactivez la case **rendre cette réponse public** . Notez que vous ne pourrez pas désactiver cette case si le client a choisi de ne pas recevoir de réponses de courrier électronique et/ou s’ils utilisent un périphérique qui n’exécute pas Windows 10, version 1803 ou ultérieure.
+Si vous ne voulez pas que votre réponse s’affichent dans le Windows Store, et que vous voulez plutôt répondre uniquement par courrier électronique au client, décochez la case **rendre cette réponse publique** . Notez que vous ne serez pas en mesure de désactiver cette case si le client a choisi de ne pas recevoir de réponses de messagerie et/ou s’ils utilisent un appareil qui n’exécute pas Windows 10, version 1803 ou une version ultérieure.
 
 ## <a name="guidelines-for-responses"></a>Recommandations en matière de réponses
 
-Lorsque vous répondez à l’avis d’un clients, respectez les consignes suivantes : Elles s’appliquent à toutes les réponses, qu’ils soient publics ou non.
+Lorsque vous répondez à l’avis d’un clients, respectez les consignes suivantes : Elles s’appliquent à toutes les réponses, qu’elles soient publiques ou non.
 
 > [!IMPORTANT]
-> Vous ne pourrez pas modifier les réponses de que validation dans le magasin (sauf si le client vérifie la révision d’origine), veuillez consulter votre réponse avec soin. Si un client vérifie la révision d’origine, votre réponse sera supprimée à partir de la page d’annonce de l’application. Vous avez ensuite la possibilité d’envoyer une nouvelle réponse à la révision révisée en sélectionnant **mettre à jour votre réponse**.
+> Il se peut que vous ne pourrez pas modifier les réponses que vous validez dans le Windows Store (sauf si le client modifie son avis d’origine), par conséquent, vérifier votre réponse. Si un client modifie son avis initial, votre réponse sera supprimée à partir de la page d’annonce de l’application. Ensuite, vous avez la possibilité de soumettre une nouvelle réponse à l’avis modifié en sélectionnant **mettre à jour votre réponse**.
 
 -   Les réponses ne peuvent pas comporter plus de 1000caractères.
 -   Vous ne pouvez proposer aux utilisateurs aucun type de rémunération, y compris sous forme d’éléments d’application numériques, en vue de les inciter à modifier leur évaluation de l’application. Nous vous rappelons que toute tentative de manipulation des évaluations est proscrite, conformément au [Contrat du développeur de l'application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
@@ -46,11 +46,11 @@ Lorsque vous répondez à l’avis d’un clients, respectez les consignes suiva
 -   N'incluez pas de commentaires profanes, agressifs, personnels ou malveillants dans votre réponse. Soyez toujours poli et gardez à l’esprit que les clients satisfaits seront probablement les plus grands promoteurs de votre application.
 
 > [!NOTE]
-> Les clients peuvent signaler à Microsoft toute réponse inappropriée d’un développeur à l’un de leurs avis. Ils peuvent également refuser de recevoir des réponses de révision par courrier électronique.
+> Les clients peuvent signaler à Microsoft toute réponse inappropriée d’un développeur à l’un de leurs avis. Ils peuvent également choisir de ne pas recevoir de réponses par courrier électronique.
 >
 > Microsoft se réserve le droit de révoquer la possibilité pour un développeur d’envoyer des réponses, notamment si les réponses de ce développeur entraînent un nombre anormalement élevé de signalements de réponses inappropriées, ou si ces réponses incitent un nombre inhabituel de clients à choisir de ne pas recevoir de réponses aux avis.
 
-Votre relation avec vos clients est de votre responsabilité. Microsoft ne prend pas parti en cas de litiges entre les développeurs et les clients. Toutefois, si un examen de votre application contient un langage choquant, vulgaire ou choquant, ouvrez une [demande d’assistance](http://go.microsoft.com/fwlink/p/?LinkID=401178).
+Votre relation avec vos clients est de votre responsabilité. Microsoft ne prend pas parti en cas de litiges entre les développeurs et les clients. Toutefois, si un avis de votre application contient des propos injurieux, profanes ou abusif, ouvrez une [demande de support](http://go.microsoft.com/fwlink/p/?LinkID=401178).
 
 
 ## <a name="use-customer-reviews-to-improve-your-app"></a>Utiliser les avis des clients pour améliorer votre application

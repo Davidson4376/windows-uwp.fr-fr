@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 89745d0bb93b76e4497d6cb5c57f4e6c091c8bd7
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881832"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2917167"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>Questions courantes sur les campagnes de publicité
 
@@ -41,7 +41,7 @@ Si vous utilisez un des modèles de publicité par défaut, vous pouvez choisir 
 
 ### <a name="where-will-my-ad-appear"></a>Où apparaît ma publicité ?
 
-Votre publicité apparaît dans les applications qui utilisent la même évaluation de l'âge et la même version de système d'exploitation que votre application. Vous définissez ces propriétés lorsque vous publiez votre application dans Microsoft Store. Pour les campagnes «universelles», vos annonces apparaîtront également dans MSN.com, Outlook.com, Skype et d'autres propriétés premium de Microsoft.
+Votre publicité apparaît dans les applications qui utilisent la même évaluation de l'âge et la même version de système d'exploitation que votre application. Vous définissez ces propriétés lorsque vous publiez votre application dans le Microsoft Store. Pour les campagnes «universelles», vos annonces apparaîtront également dans MSN.com, Outlook.com, Skype et d'autres propriétés premium de Microsoft.
 
 Les campagnes de publicité sont actuellement prises en charge dans les pays et régions suivants:
 
@@ -63,7 +63,7 @@ Si vous ne voulez pas attendre d’être facturé, payez votre facture immédiat
 
 ### <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>Comment supprimer une carte de crédit ou modifier les détails d’une carte de crédit?
 
-Accédez à <http://commerce.microsoft.com>, connectez-vous avec vos informations d’identification de compte Microsoft et apportez les modifications nécessaires.
+Accédez à <http://commerce.microsoft.com>, ouvrez une session avec vos informations d’identification de compte Microsoft et apportez les modifications nécessaires.
 
 ### <a name="related-topics"></a>Rubriques connexes
 

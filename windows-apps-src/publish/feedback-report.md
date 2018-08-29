@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bceb1d2cc6682698d0ad06ed4b1865f3d6510442
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2889186"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906476"
 ---
 # <a name="feedback-report"></a>Rapport sur les commentaires
 
@@ -26,12 +26,12 @@ Le **rapport sur les commentaires** du tableau de bord du Centre de développeme
 
 Inciter vos clients à faire des commentaires sur votre application est un excellent moyen d’en savoir plus sur les problèmes et les fonctionnalités qui sont plus importantes pour eux. Lorsque vos clients savent qu’ils peuvent vous envoyer directement leurs commentaires, ils sont moins susceptibles de le faire par le biais d’un avis négatif dans le WindowsStore.
 
-Vous pouvez utiliser l’API de commentaires dans le [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) pour permettre aux clients de [lancer directement le Hub de commentaires à partir de votre application](../monetize/launch-feedback-hub-from-your-app.md). N’oubliez pas que tout client ayant téléchargé votre application sur un appareil Windows10 prenant en charge le Hub de commentaires a la possibilité de laisser des commentaires à son sujet à l’aide de cette application. Pour cette raison, vous pouvez voir des commentaires des clients dans ce rapport, même si vous n’avez pas spécifiquement demandé de commentaires au sein de votre application.
+Vous pouvez utiliser l’API de commentaires dans le [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) pour permettre aux clients de [lancer directement le Hub de commentaires à partir de votre application](../monetize/launch-feedback-hub-from-your-app.md). N’oubliez pas que tout client ayant téléchargé votre application sur un appareil Windows10 prenant en charge le Hub de commentaires a la possibilité de laisser des commentaires à son sujet à l’aide de cette application. Pour cette raison, vous pouvez voir les commentaires des clients dans ce rapport même si vous n’avez pas spécifiquement demandé de commentaires depuis au sein de votre application.
 
 Les commentaires peuvent également se révéler utiles si vous utilisez la [distribution de version d’évaluation de package](package-flights.md), dans la mesure où le rapport sur les commentaires vous indique le package spécifique que chaque client a installé sur son appareil au moment où il a laissé son commentaire.
 
 > [!TIP]
-> Pour examiner rapidement les révisions, les évaluations et les commentaires des utilisateurs dans l’ensemble de vos applications au cours des 30 derniers jours, développez **Engage** dans le menu de navigation de gauche, sélectionnez **révisions et commentaires.** 
+> Pour un aperçu de l’avis, des évaluations et commentaires des utilisateurs sur l’ensemble de vos applications au cours des 30 derniers jours, développez **engager** dans le menu de navigation de gauche, puis sélectionnez **avis et commentaires.** 
 
 
 ## <a name="apply-filters"></a>Appliquer des filtres
@@ -58,14 +58,14 @@ Ce rapport vous présente les commentaires individuels laissés par vos clients.
 - **Fréquents** : affiche les commentaires pour lesquels les autres clients ont voté au cours des sept derniers jours en commençant par le commentaire ayant fait l’objet de l’activité la plus récente.
 - **Les plus récents** : montre tous les commentaires en commençant par le commentaire laissé le plus récemment.
 
-La date à laquelle le commentaire a été laissé et le type de commentaire s’affiche en regard de chaque commentaire. Vous verrez également les parts de marché du client, le package spécifique a été installé sur l’appareil qu’ils utilisaient lorsqu’ils les commentaires, le type de ce périphérique et **Initiés Windows** si le client d’envoi de commentaires est un membre de l’initié Windows programme.
+La date à laquelle le commentaire a été laissé et le type de commentaire s’affiche en regard de chaque commentaire. Vous verrez également le marché du client, le package spécifique qui a été installé sur l’appareil qu’ils ont été à l’aide de lorsqu’il a laissé le commentaire, le type de cet appareil et **Windows Insider** si le client laissé le commentaire est un membre de le Windows Insider programme.
 
 En outre, une option vous permet de [répondre aux commentaires](respond-to-customer-feedback.md).
 
 
 ## <a name="translating-feedback"></a>Traduction des commentaires
 
-Par défaut, les commentaires qui n’ont pas été écrites dans votre langue sont traduite pour vous. Si vous le souhaitez, vous pouvez désactiver la traduction des commentaires en décochant la case **Traduire les commentaires** située dans la zone supérieure droite près des filtres de page.
+Par défaut, les commentaires qui n’a été pas été rédigés dans votre langue préférée sont traduits pour vous. Si vous le souhaitez, vous pouvez désactiver la traduction des commentaires en décochant la case **Traduire les commentaires** située dans la zone supérieure droite près des filtres de page.
 
 Notez que les commentaires sont traduits par un système de traduction automatique et que le résultat de la traduction n’est pas toujours précis. Le texte d’origine est fourni si vous souhaitez comparer la traduction ou utiliser un autre moyen de traduction.
 

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e1d808dd2991aa2ffd1e30967d329b3eced9f99
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: f3354dad1702d275fb7b2af53516689d2c5d5014
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018565"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2914097"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Étendre votre application de bureau avec des composants UWP modernes
 
@@ -140,7 +140,7 @@ Ajoutez une interface utilisateur XAML à votre projet UWP Voici le code XAML d'
 
 ### <a name="add-a-protocol-extension"></a>Ajoutez une extension de protocole
 
-Dans l'**Explorateur de solutions**, ouvrez le fichier **package.appxmanifest** du projet UWP dans votre solution et ajoutez cette extension.
+Dans l' **Explorateur de solutions**, ouvrez le fichier **package.appxmanifest** du projet de création de packages dans votre solution et ajoutez cette extension.
 
 ```xml
 <Extensions>
@@ -311,9 +311,9 @@ public sealed class AppServiceTask : IBackgroundTask
 
 <a id="extension" />
 
-### <a name="add-an-app-service-extension-to-the-uwp-project"></a>Ajouter une extension de service d’application au projet UWP
+### <a name="add-an-app-service-extension-to-the-packaging-project"></a>Ajoutez une extension de service d’application au projet de création de packages
 
-Ouvrez le fichier **package.appxmanifest** du project UWP, puis ajoutez une extension de service d'application à l'élément ``<Application>``.
+Ouvrez le fichier **package.appxmanifest** du projet de création de package, puis ajoutez une extension de service d’application pour le ``<Application>`` élément.
 
 ```xml
 <Extensions>
@@ -398,7 +398,7 @@ Pour faire de votre application une cible de partage, procédez comme suit:
 
 ### <a name="add-a-share-target-extension"></a>Ajouter une extension de cible de partage
 
-Dans l'**Explorateur de solutions**, ouvrez le fichier **package.appxmanifest** du projet UWP dans votre solution et ajoutez l'extension.
+Dans l' **Explorateur de solutions**, ouvrez le fichier **package.appxmanifest** du projet de création de packages dans votre solution et ajoutez l’extension.
 
 ```xml
 <Extensions>
@@ -512,7 +512,7 @@ public sealed class SiteVerifier : IBackgroundTask
 
 ### <a name="configure-the-background-task"></a>Configurer la tâche en arrière-plan
 
-Dans le concepteur de manifeste, ouvrez le fichier **package.appxmanifest** du projet UWP dans votre solution.
+Dans le Concepteur de manifeste, ouvrez le fichier **package.appxmanifest** du projet de création de packages dans votre solution.
 
 Dans l'onglet **Déclarations**, ajoutez une déclaration **Tâches en arrière-plan**.
 

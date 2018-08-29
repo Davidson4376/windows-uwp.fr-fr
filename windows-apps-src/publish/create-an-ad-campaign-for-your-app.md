@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, ActiveDirectory, de campagne, promouvoir
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c7e7c1e2cd9a2ca083cef5fed27a9067cf1e7e7
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2894230"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2914560"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>Créer une campagne de publicité pour votre application
 
@@ -54,7 +54,7 @@ Voici comment créer une campagne de publicité pour promouvoir une application:
 
     * Si vous avez reçu un coupon d’un représentant Microsoft pour payer une campagne de publicité, cliquez sur **Utiliser un coupon**, entrez le code du coupon, puis cliquez sur **Appliquer** pour appliquer le coupon à la campagne.
 
-    Lorsque vous avez terminé, cliquez sur **Enregistrer et Suivant** afin de poursuivre à l’étape **Audience**. Cette étape n’est pas disponible pour les campagnes marketing voie, dans la mesure où elles s’exécutent uniquement dans vos propres applications.
+    Lorsque vous avez terminé, cliquez sur **Enregistrer et Suivant** afin de poursuivre à l’étape **Audience**. Cette étape n’est pas disponible pour les campagnes de publicité maison, dans la mesure où elles s’exécutent uniquement dans vos propres applications.
 
 9.  Dans la page **Audience**, nous affichons les paramètres d’audience que nous recommandons pour votre campagne. Si vous le souhaitez, vous pouvez ajuster ces informations:
     * **Pays/régions**: choisissez jusqu’à 5pays ou régions dans lesquels vous souhaitez faire apparaître votre publicité. Pour obtenir la liste des régions ou pays pris en charge, consultez l’article [Questions courantes sur les campagnes de publicité](common-questions.md#where-will-my-ad-appear).
@@ -71,10 +71,10 @@ Voici comment créer une campagne de publicité pour promouvoir une application:
 
     Cette section affiche également un graphique **Portée estimée**. Ce graphique présente l’audience que vous pouvez envisager d’atteindre avec les choix de ciblage en cours. Il s’agit d’un pourcentage de l’ensemble des utilisateurs d’applications Windows affichant des publicités sur les marchés sélectionnés.
 
-10.  Si vous avez choisi **Augmenter l’intérêt pour votre application** comme objectif de campagne, vous pouvez sélectionner l’un des segments de clients à cibler. Les publicités créées à l’aide de cette campagne sont vues seulement par les clients qui sont inclus dans le segment. Vous ne pouvez sélectionner qu’un segment par campagne de publicité. Pour plus d’informations sur les segments, consultez l’article [Créer des segments de clients](create-customer-segments.md). Lorsque vous avez terminé, cliquez sur **Enregistrer et Suivant** afin de poursuivre à l’étape **Conception d’annonces**. Cette étape n’est pas disponible pour les campagnes marketing voie, car ils s’exécutent uniquement dans vos propres applications.
+10.  Si vous avez choisi **Augmenter l’intérêt pour votre application** comme objectif de campagne, vous pouvez sélectionner l’un des segments de clients à cibler. Les publicités créées à l’aide de cette campagne sont vues seulement par les clients qui sont inclus dans le segment. Vous ne pouvez sélectionner qu’un segment par campagne de publicité. Pour plus d’informations sur les segments, consultez l’article [Créer des segments de clients](create-customer-segments.md). Lorsque vous avez terminé, cliquez sur **Enregistrer et Suivant** afin de poursuivre à l’étape **Conception d’annonces**. Cette étape n’est pas disponible pour les campagnes de publicité maison, car elles s’exécutent uniquement dans vos propres applications.
 
 11.  Dans la page **Conception d’annonces**, choisissez l’une des options suivantes:
-    * **Auto-généré**. Il s’agit de l’option par défaut, et elle vous permet de créer une annonce à partir de nos modèles par défaut. Vous pouvez effectuer des sélections pour personnaliser le contenu de votre application, et nous afficherons alors un aperçu de l’aspect de votre publicité en fonction de vos choix (automatiquement mis à jour dès que vous effectuez des sélections).
+    * **Auto-généré**. Il s’agit de l’option par défaut, et il vous permet de créer une publicité à partir de nos modèles par défaut. Vous pouvez effectuer des sélections pour personnaliser le contenu de votre application, et nous afficherons alors un aperçu de l’aspect de votre publicité en fonction de vos choix (automatiquement mis à jour dès que vous effectuez des sélections).
         * Dans la liste déroulante **Langue**, sélectionnez la langue de votre publicité. Le texte du badge MicrosoftStore s’affichera dans la langue que vous avez sélectionnée.
         * Pour ajouter une ligne de texte supplémentaire à votre publicité, entrez ce texte dans le champ **Slogan personnalisé**.
             > [!NOTE]
@@ -86,7 +86,7 @@ Voici comment créer une campagne de publicité pour promouvoir une application:
             * **Indiquer que mon application est gratuite**. Si votre application est gratuite sur l’ensemble des marchés sélectionnés, vous avez la possibilité de cocher cette case.
             * **Appel à l’action**. Si vous avez choisi **Augmenter l’intérêt pour votre application** comme objectif de campagne, vous pouvez définir le bouton d’appel à l’action de votre annonce sur **Ouvrir**, **Lecture**, **Lire**, **Écouter** ou **Acheter**.  
 
-    * **Personnalisée**. Choisissez cette option pour utiliser vos propres conceptions de publicités. Notez que si vous avez sélectionné un segment client précédemment, vous devez utiliser créatifs personnalisés. Vous pouvez charger des fichiers distincts pour chacune des tailles de publicité disponibles. Les fichiers doivent répondre aux exigences et directives suivantes:
+    * **Personnalisée**. Choisissez cette option pour utiliser vos propres conceptions de publicités. Notez que si vous avez sélectionné un segment de clientèle précédemment, vous devez utiliser des options créatives personnalisées. Vous pouvez charger des fichiers distincts pour chacune des tailles de publicité disponibles. Les fichiers doivent répondre aux exigences et directives suivantes:
         * Chaque fichier doit être un .png ou .jpg inférieur ou égal à 40Ko.
         * Vos conceptions d’annonces doivent respecter les critères spécifiés dans la [Microsoft Creative Acceptance Policy](http://go.microsoft.com/fwlink?LinkId=532595).
         * Le contenu de vos conceptions d’annonces doit être approprié à l’application dont vous faites la promotion. Les conceptions d’annonces qui ne sont pas liées à l’application ne seront pas distribuées aux publicités au sein des autres applications.

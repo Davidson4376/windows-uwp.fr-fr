@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cf2c10fd8fa581e29fe20c5bdcb2683c5246af1d
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2889248"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913722"
 ---
 # <a name="view-app-identity-details"></a>Visualiser les informations d’identité des applications
 
 
-Lorsque vous travaillez avec une application dans le tableau de bord du centre de développement Windows, vous pouvez afficher les détails relatifs à l’identité unique qui lui est affectée par Microsoft Store. Vous pouvez également obtenir un lien d’accès à la description de votre application dans le WindowsStore.
+Lorsque vous travaillez avec une application dans le tableau de bord du centre de développement Windows, vous pouvez afficher les détails concernant l’identité unique attribuée à elle par le Microsoft Store. Vous pouvez également obtenir un lien d’accès à la description de votre application dans le WindowsStore.
 
 Pour consulter ces informations, accédez à l’une de vos applications, puis développez **Gestion des applications** dans le menu de navigation de gauche. Sélectionnez **Identité de l’application** pour afficher les détails correspondants.
 

@@ -11,14 +11,14 @@ keywords: Windows 10, uwp, éducation
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
 ms.openlocfilehash: da03a3c478ca45cc2d2b518988738e510a6c5ea9
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882675"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905422"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>Développement d’applications Universal Windows pour l’éducation
-![capture d’écran de l’application prendre un test](images/take-a-test-screen-small.png)
+![capture d’écran de l’application examen-a-examen](images/take-a-test-screen-small.png)
 
 Les ressources suivantes vous aideront à écrire une application Windows universelle pour l’éducation.
 

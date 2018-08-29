@@ -8,23 +8,23 @@ ms.date: 08/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, révision, commentaire, réviseur
+keywords: Windows 10, uwp, passez en revue, commentaire, réviseur
 ms.localizationpriority: medium
 ms.openlocfilehash: 8891aecb904f69e3f77ec5892d9234f79db46ff0
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2886588"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2912407"
 ---
 # <a name="reviews-report"></a>Rapport sur les avis
 
 
-Le rapport **passe en revue** dans le tableau de bord du centre de développement Windows vous permet d’afficher les révisions (commentaires) qui ont été entrées des clients lors de l’évaluation de votre application dans le magasin.
+Le rapport **avis** dans le tableau de bord du centre de développement Windows vous permet de voir les avis (commentaires) que les clients ont formulés pendant l’évaluation de votre application dans le Windows Store.
 
-Vous pouvez visualiser ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Sinon, vous pouvez récupérer par programmation ces données à l’aide de la méthode [get avis d’application](../monetize/get-app-reviews.md) dans [magasin Microsoft analytique API REST](../monetize/access-analytics-data-using-windows-store-services.md).
+Vous pouvez visualiser ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Par ailleurs, vous pouvez récupérer ces données par programme à l’aide de la méthode [get des avis concernant l’application](../monetize/get-app-reviews.md) dans [Microsoft Store analytique API REST](../monetize/access-analytics-data-using-windows-store-services.md).
 
-Vous pouvez également répondre à client avis [directement à partir de cette page](respond-to-customer-reviews.md), par programme [via l’API d’avis magasin Microsoft](../monetize/submit-responses-to-app-reviews.md), ou à l’aide de l' [application du Centre pour développeurs](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
+Vous pouvez également répondre au client avis [directement à partir de cette page](respond-to-customer-reviews.md), par programmation [via l’API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md), ou à l’aide de l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
 
 > [!TIP]
 > Pour obtenir un aperçu des avis, des évaluations et des commentaires des utilisateurs formulés pour l’ensemble de vos applications au cours des 30derniers jours, développez **Engager** dans le menu de navigation de gauche, puis sélectionnez **Reviews and feedback**. 
@@ -37,14 +37,14 @@ Dans la zone supérieure de la page, vous pouvez sélectionner la période sur l
 Vous pouvez développer **Filtres** pour filtrer les avis affichés sur cette page en fonction des options suivantes. Ces filtres ne s’appliqueront pas aux graphiques **Répartition des classifications** et **Évaluation moyenne au fil du temps**.
 
 -   **Évaluation**: les avis avec des évaluations incluant toutes les étoiles sont sélectionnés par défaut, mais vous pouvez sélectionner ou désélectionner des évaluations spécifiques (comprenant entre 1 et 5étoiles) si vous souhaitez ne visualiser que les avis associés à des évaluations données.
-- **Passez en revue le contenu**: le paramètre par défaut est **évaluations avec passez en revue le contenu**, ce qui signifie que des évaluations uniquement avec le contenu de révision sont affichées. Vous pouvez sélectionner **toutes les** afficher toutes les évaluations, y compris ceux qui n’incluent pas n’importe quel texte révision écrite. Notez que le graphique de **répartition des évaluations** système toujours afficher toutes les révisions, quel que soit votre sélection.
+- **Passez en revue le contenu**: le paramètre par défaut est **que les évaluations avec avis**, ce qui signifie que les évaluations uniquement avec le contenu de l’avis seront affiche. Vous pouvez sélectionner **tous les** afficher toutes les évaluations, y compris ceux qui n’incluent pas n’importe quel texte révision écrite. Notez que le graphique de **répartition des classifications** s’affiche toujours tous les avis, quel que soit votre sélection.
 -   **Version du système d’exploitation**: la valeur par défaut de ce filtre est **Toutes**. Vous pouvez choisir une version de système d’exploitation spécifique si vous souhaitez que cette page affiche uniquement les avis laissés par les clients qui utilisent cette version.
 -   **Version du package**: la valeur par défaut de ce filtre est **Toutes**. Si votre application comprend plusieurs packages, vous pouvez choisir un package spécifique ici si vous souhaitez visualiser uniquement les avis laissés par les clients qui disposaient de ce package lorsqu’ils ont évalué votre application.
 -   **Réponses**: la valeur par défaut de ce filtre est **Toutes**. Vous pouvez choisir de ne visualiser que les avis pour lesquels vous avez [répondu aux clients](respond-to-customer-reviews.md), ou uniquement ceux auxquels vous n'avez pas encore répondu.
 -   **Mises à jour** : la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir de ne visualiser que les avis qui ont été mis à jour par le client depuis que vous avez [répondu à ces avis](respond-to-customer-reviews.md), ou uniquement ceux qui n’ont pas encore été mis à jour par le client.
 -   **Marché** : la valeur par défaut de ce filtre est **Tous les marchés**. Vous pouvez choisir un marché spécifique si vous ne souhaitez visualiser que les avis de clients appartenant à ce marché.
 -   **Type d’appareil** : le filtre par défaut est **Tous les appareils**. Vous pouvez choisir un type d’appareil spécifique si vous souhaitez que cette page affiche uniquement les avis laissés par les clients utilisant celui-ci.
--   **Nom de catégorie**: la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir un spécifique de [consulter la catégorie Aperçu](#review-insight-categories) pour afficher uniquement les révisions que nous avons associé à cette catégorie. 
+-   **Nom de catégorie**: la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir un spécifiques de [passer en revue la catégorie d’insight](#review-insight-categories) affiche uniquement les avis que nous avons associées à cette catégorie. 
 
 > [!TIP]
 > Si cette page ne contient aucun avis, assurez-vous que vos filtres n’ont pas exclu la totalité des avis concernant votre application. Par exemple, si vous filtrez les avis en fonction d’un système d’exploitation non pris en charge par votre application, aucun avis n’apparaîtra sur cette page.
@@ -52,7 +52,7 @@ Vous pouvez développer **Filtres** pour filtrer les avis affichés sur cette pa
 
 ## <a name="ratings-breakdown"></a>Répartition des classifications
 
-Le graphique de **répartition des évaluations** s’affiche en haut de ce rapport afin que vous pouvez obtenir un aperçu rapide des opérations suivantes: 
+Le graphique de **répartition des classifications** s’affiche en haut de ce rapport, afin que vous pouvez obtenir un aperçu de ce qui suit: 
 - Évaluation moyenne à l’aide d’étoiles concernant l’application
 - Nombre total d’évaluations de votre application au cours des 12derniers mois.
 - Nombre total d’évaluations correspondant à chaque nombre d’étoiles.
@@ -63,16 +63,16 @@ Le graphique de **répartition des évaluations** s’affiche en haut de ce rapp
 > [!TIP]
 > L’évaluation moyenne mise à disposition d’un client dans le WindowsStore tient compte du marché et du type d’appareil du client. Dès lors, elle peut différer du contenu présenté dans ce rapport.
 
-Notez que ce graphique inclut toujours toutes les votre avis, même si vous avez sélectionné l’option **que évaluations avec passez en revue le contenu** dans le filtre **passez en revue le contenu** de page.
+Notez que ce graphique inclut toujours toutes vos avis, même si vous avez sélectionné **que les évaluations avec avis** dans le filtre de page **passer en revue le contenu** .
 
-Ce graphique peut également se produire dans le [rapport de contrôle d’accès](ratings-report.md), ainsi que plus de détails sur le contrôle d’accès de votre application.
+Ce graphique peut également être visible dans le [rapport sur les évaluations](ratings-report.md), ainsi que de plus d’informations sur les évaluations de votre application.
 
 
-< span id = «catégories de passer en revue les insight / >
+< span id = «catégories d’analyse des avis / >
 
-## <a name="insight-categories"></a>Catégories Insight
+## <a name="insight-categories"></a>Catégories d’analyse des
 
-Les groupes de graphiques **catégories Insight** votre avis en fonction des catégories que nous avons déterminé peuvent être associés à la révision.
+Les groupes de graphiques **Insight categories** votre avis catégories que nous avons déterminé peuvent être associés à l’avis.
 
 > [!NOTE]
 > Lorsque vous visualisez les avis par catégorie, les avis datant de moins de 24heures et/ou formulés dans une langue autre que l’anglais ne sont pas inclus.
@@ -88,7 +88,7 @@ Chaque avis de client contient les éléments suivants:
 
 -   Le titre et le texte de l'avis rédigés par le client. (Les avis rédigés par les clients qui utilisent Windows Phone 8.1 et les versions antérieures sont dépourvus de titre.)
 -   La date de l'avis.
--   Le nom du réviseur telle qu’elle s’affiche dans Microsoft Store.
+-   Le nom de réviseur telle qu’elle s’affiche dans le Microsoft Store.
 -   Le pays ou la région de l'auteur de l'avis.
 -   La version du package de l'application installée sur l'appareil du client au moment de la rédaction de l'avis. (Cette information n'est pas disponible pour les avis soumis par les clients qui utilisent Windows8.1 ou une version antérieure.)
 -   La version du système d'exploitation installée sur l'appareil du client au moment de la rédaction de l'avis.
@@ -97,9 +97,9 @@ Chaque avis de client contient les éléments suivants:
 
 Notez que les clients peuvent évaluer votre application sans formuler de commentaires. Le nombre d’avis sera donc généralement inférieur au nombre d’évaluations.
 
-Vous pouvez trier les avis sur la page par date et/ou par évaluation, dans l’ordre croissant ou décroissant. Cliquez sur le lien **Trier par** pour afficher les options pour trier par **Date** et/ou **d’évaluation**.
+Vous pouvez trier les avis sur la page par date et/ou par évaluation, dans l’ordre croissant ou décroissant. Cliquez sur le lien de **Trier par** pour afficher les options de tri par **Date** et/ou **évaluation**.
 
-Vous pouvez également utiliser la zone Rechercher pour rechercher des mots ou expressions dans les révisions de votre application. Notez qu’uniquement le texte d’origine révision écrit par le client est recherché, même si la révision a été rédigée dans une autre langue. Passer en revue les traduit texte n’est pas recherchée.
+Vous pouvez également utiliser la zone de recherche pour rechercher des mots spécifiques ou des expressions dans les avis de votre application. Notez qu’uniquement le texte d’origine avis rédigé par le client recherche est effectuée, même si l’avis a été écrit dans une autre langue. Texte de révision traduites ne porte pas.
 
 > [!NOTE]
 > Les avis peuvent disparaître ponctuellement de ce rapport. Cela peut se produire lorsque Microsoft supprime des avis du WindowsStore qui ont été rédigés par des clients qui utilisent certaines versions préliminaires ou builds de Windows10 réservées aux Insiders. Nous procédons ainsi afin de réduire le risque de publication d’avis négatifs liés à un problème d’une version préliminaire de Windows. Nous pouvons également supprimer les avis du Windows Store qui ont été identifiés comme indésirables, inappropriés, offensants ou contraires à notre politique. Nous pensons que cette action contribuera à améliorer l’expérience utilisateur.
@@ -111,12 +111,12 @@ Les commentaires qui n'ont pas été rédigés dans votre langue sont traduits p
 
 Notez que les évaluations sont traduites par un système de traduction automatique et que le résultat de la traduction n’est pas toujours précis. Le texte d’origine est fourni si vous souhaitez le comparer à la traduction ou utiliser un autre moyen de traduction.
 
-Comme mentionné ci-dessus, lorsque recherche votre avis, que le texte d’origine reste par le client est recherché (et pas les traduit le texte), même si vous disposez de la zone **traduire révise** vérifiée.
+Comme indiqué plus haut, lorsque recherche votre avis, uniquement le texte d’origine à gauche par le client est recherché (et non une le texte traduit), même si vous avez la case à cocher **traduire avis** activée.
 
 
 ## <a name="responding-to-customer-reviews"></a>Réponse aux avis des clients
 
-Vous pouvez utiliser le tableau de bord Microsoft Store Dev Center, la [banque Microsoft passe en revue les API](../monetize/submit-responses-to-app-reviews.md)ou l' [application du Centre pour développeurs](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) d’envoyer des réponses à un grand nombre d’avis de vos clients. Pour plus d’informations, consultez l’article [Répondre aux avis des clients](respond-to-customer-reviews.md).
+Vous pouvez utiliser le tableau de bord du Microsoft Store développement Center, l' [API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md)ou de l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) d’envoyer des réponses à la plupart des avis de vos clients. Pour plus d’informations, consultez l’article [Répondre aux avis des clients](respond-to-customer-reviews.md).
 
 Vous découvrirez ci-après certaines actions supplémentaires à envisager en fonction des évaluations et des avis que vous voyez.
 

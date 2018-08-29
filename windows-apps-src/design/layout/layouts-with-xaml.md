@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b45196a83edf45a69f6b79ab82542cef6817703
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881782"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2916866"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Dispositions dynamiques avec XAML
 
@@ -99,7 +99,7 @@ Vous pouvez afficher ou masquer un élément en définissant sa propriété [**V
 Vous pouvez modifier la propriété Visibility d’un élément dans le code ou dans un état visuel. Lorsque la valeur Visibility d’un élément est modifiée, tous ses éléments enfants sont également modifiés. Vous pouvez remplacer des sections de votre interface utilisateur en révélant un panneau et en en réduisant un autre.
 
 > [!Tip]
-> Lorsque vous avez des éléments dans votre interface utilisateur **réduit** par défaut, les objets sont toujours créées au démarrage, même s’ils ne sont pas visibles. Vous pouvez différer le chargement de ces éléments jusqu’à ce qu’ils soient affichés en définissant **l’attribut x:DeferLoadStrategy** sur Lazy. Cela peut améliorer les performances de démarrage. Pour plus d’informations, voir [Attribut x:DeferLoadStrategy](../../xaml-platform/x-deferloadstrategy-attribute.md).
+> Lorsque vous disposez d’éléments dans votre interface utilisateur qui sont **Collapsed** par défaut, les objets sont toujours créés au démarrage, même si elles ne sont pas visibles. Vous pouvez différer le chargement de ces éléments jusqu’à ce qu’ils soient affichés en définissant **l’attribut x:DeferLoadStrategy** sur Lazy. Cela peut améliorer les performances de démarrage. Pour plus d’informations, voir [Attribut x:DeferLoadStrategy](../../xaml-platform/x-deferloadstrategy-attribute.md).
 
 ### <a name="style-resources"></a>Ressources de style
 

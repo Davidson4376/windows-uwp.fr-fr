@@ -2,25 +2,25 @@
 author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Tests du Kit de certification des applications Windows
-description: Le Kit de Certification application Windows contient un nombre de tests qui peuvent aider à garantir que votre application est prête à être publié sur Microsoft Store.
+description: Le Kit de Certification d’application Windows contient un certain nombre de tests qui peuvent aider à garantir que votre application est prête à être publiée sur le Microsoft Store.
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, certification de l’application
+keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887648"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906066"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Tests du Kit de certification des applications Windows
 
 
-Le [Kit de Certification application Windows](windows-app-certification-kit.md) contient un nombre de tests qui permettent de garantir que votre application est prête à être publiés sur Microsoft Store. Les tests sont répertoriées ci-dessous avec leurs critères, plus d’informations et actions dans le cas d’échec suggérées.
+Le [Kit de Certification des applications Windows](windows-app-certification-kit.md) contient un certain nombre de tests qui permettent de garantir que votre application est prête à être publiée dans le Microsoft Store. Les tests sont répertoriées ci-dessous avec leurs critères, plus d’informations et les actions dans le cas d’échec suggérées.
 
 ## <a name="deployment-and-launch-tests"></a>Tests de déploiement et de lancement
 
@@ -60,7 +60,7 @@ Vérifie que l’application Windows peut s’exécuter sur une version ultérie
 
 ### <a name="background"></a>Arrière-plan
 
-Informations de version de système d’exploitation a restreint l’utilisation de Microsoft Store. Elle a souvent été incorrectement utilisée par les applications pour vérifier la version du système d’exploitation afin de pouvoir fournir aux utilisateurs des fonctionnalités propres à une version de système d’exploitation.
+Informations de version de système d’exploitation a restreint l’utilisation pour le Microsoft Store. Elle a souvent été incorrectement utilisée par les applications pour vérifier la version du système d’exploitation afin de pouvoir fournir aux utilisateurs des fonctionnalités propres à une version de système d’exploitation.
 
 ### <a name="test-details"></a>Détails du test
 
@@ -128,7 +128,7 @@ Examine le manifeste de l’application afin de vérifier que son contenu est co
 
 -   **Vérification de la communication entre processus (IPC)**
 
-    Ce test met en œuvre l’exigence UWP applications ne communiquent pas à l’extérieur du conteneur d’application aux composants du bureau. La communication entre processus ne concerne que les applications chargées latéralement. Les applications qui spécifient l’attribut [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) avec «DesktopApplicationPath» comme nom échouent à ce test.
+    Ce test applique la spécification selon que les applications UWP ne communiquent pas en dehors du conteneur d’application dans les composants de bureau. La communication entre processus ne concerne que les applications chargées latéralement. Les applications qui spécifient l’attribut [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) avec «DesktopApplicationPath» comme nom échouent à ce test.
 
 ### <a name="corrective-action"></a>Action corrective
 
@@ -248,7 +248,7 @@ Le test AppContainerCheck vérifie que le bit **appcontainer** est défini dans 
 
 Si un fichier exécutable natif échoue à ce test, vérifiez que vous avez utilisé le compilateur et l’éditeur de liens les plus récents pour générer le fichier et que vous utilisez l’indicateur */appcontainer* sur l’éditeur de liens.
 
-Si un fichier exécutable managé échoue le test, assurez-vous que vous avez utilisé le compilateur le plus récent et l’éditeur de liens, tels que Microsoft Visual Studio pour créer l’application UWP.
+Si un fichier exécutable managé échoue à ce test, assurez-vous que vous avez utilisé le compilateur dernière et l’éditeur de liens, tels que Microsoft Visual Studio, pour générer l’application UWP.
 
 **Remarques**
 
@@ -308,22 +308,22 @@ Teste l’application afin de savoir si elle utilise des API non conformes.
 
 ### <a name="background"></a>Contexte
 
-Les applications doivent utiliser les API pour les applications UWP (Windows Runtime ou pris en charge API Win32) pour être conforme à Microsoft Store. Ce test identifie également les cas où un fichier binaire managé devient dépendant d’une fonction en dehors du profil approuvé.
+Les applications doivent utiliser les API pour les applications UWP (Windows Runtime ou des API Win32 prises en charge) afin d’être certifiées pour le Microsoft Store. Ce test identifie également les cas où un fichier binaire managé devient dépendant d’une fonction en dehors du profil approuvé.
 
 ### <a name="test-details"></a>Détails du test
 
--   Vérifie que chaque fichier binaire dans le package d’application n’a pas une dépendance sur une API Win32 qui n’est pas pris en charge pour le développement d’applications UWP en vérifiant la table adresses d’importation du fichier binaire.
+-   Vérifie que chaque fichier binaire dans le package d’application n’est pas dépendant d’une API Win32 qui n’est pas pris en charge pour le développement d’applications UWP en vérifiant la table adresses d’importation du fichier binaire.
 -   Vérifie que chaque fichier binaire managé dans le package d’application n’est pas dépendant d’une fonction en dehors du profil approuvé.
 
 ### <a name="corrective-actions"></a>Actions correctives
 
 Vérifiez que l’application a été compilée en tant que version de publication et non en tant que version de débogage.
 
-> **Remarque**  La version debug d’une application échoue ce test, même si l’application utilise uniquement des [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
+> **Remarque**  La version de débogage d’une application échoue à ce test même si l’application utilise uniquement des [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-Passez en revue les messages d’erreur pour identifier l’API utilise l’application qui n’est pas une [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
+Passez en revue les messages d’erreur pour identifier l’API utilisée par l’application qui n’est pas une [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-> **Remarque**  Applications C++ qui sont intégrées dans une configuration de débogage échouera ce test, même si la configuration utilise uniquement les API disponibles dans le SDK de Windows pour les applications UWP. [Alternatives aux API Windows dans les applications UWP](http://go.microsoft.com/fwlink/p/?LinkID=244022) pour plus d’informations, voir.
+> **Remarque**  Les applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. [Solutions de rechange aux API Windows dans les applications UWP](http://go.microsoft.com/fwlink/p/?LinkID=244022) pour plus d’informations, voir.
 
 ## <a name="performance-tests"></a>Tests de performances
 
@@ -433,7 +433,7 @@ Inspirez-vous du tableau suivant.
 <tr><td>
 <p>La fusion automatique ne doit pas être activée pour le fichier «resources.pri».</p>
 </td><td>
-<p>MakePRI.exe prend en charge une option appelée <strong>AutoMerge</strong>. La valeur par défaut de <strong>AutoMerge</strong> est <strong>off</strong>. Lorsque l’option <strong>AutoMerge</strong> est activée, elle fusionne les ressources du module linguistique d’une application en un fichier resources.pri unique au moment de l’exécution. Cela déconseillée pour les applications que vous voulez distribuer par le biais de Microsoft Store. Le resources.pri d’une application qui est distribuée par le biais de Microsoft Store doivent être à la racine du package de l’application et contenir toutes les références de langage qui prend en charge de l’application.</p>
+<p>MakePRI.exe prend en charge une option appelée <strong>AutoMerge</strong>. La valeur par défaut de <strong>AutoMerge</strong> est <strong>off</strong>. Lorsque l’option <strong>AutoMerge</strong> est activée, elle fusionne les ressources du module linguistique d’une application en un fichier resources.pri unique au moment de l’exécution. Est déconseillé pour les applications que vous envisagez de distribuer par le biais du Microsoft Store. Le fichier resources.pri d’une application distribuée par le biais du Microsoft Store doivent être à la racine du package de l’application et contenir toutes les références de langage qui prend en charge de l’application.</p>
 </td></tr>
 <tr><td>
 <p>La chaîne «{string}» ne respecte pas la limite maximale de {number}caractères.</p>
@@ -485,7 +485,7 @@ Inspirez-vous du tableau suivant.
 
 ### <a name="branding-validation"></a>Validation de la personnalisation
 
-Applications UWP sont supposées être complète et entièrement fonctionnelle. Les applications qui utilisent les images par défaut (provenant des exemples ou exemples SDK) offrent une expérience utilisateur médiocre et sont difficilement identifiables dans le catalogue du Windows Store.
+Les applications UWP doivent être terminées et pleinement fonctionnelles. Les applications qui utilisent les images par défaut (provenant des exemples ou exemples SDK) offrent une expérience utilisateur médiocre et sont difficilement identifiables dans le catalogue du Windows Store.
 
 ### <a name="test-details"></a>Détails du test
 
@@ -501,7 +501,7 @@ Teste l’application afin de vérifier qu’il ne s’agit pas d’une version 
 
 ### <a name="background"></a>Contexte
 
-Pour être certifiée pour Microsoft Store, applications ne doivent pas être compilées pour le débogage et qu’ils ne doivent pas référencer les versions de débogage d’un fichier exécutable. En outre, vous devez générer votre code de manière optimisée pour que votre application réussisse ce test.
+Pour pouvoir être certifiées pour le Microsoft Store, les applications ne doivent pas être compilées pour le débogage et ne doivent pas référencer les versions de débogage d’un fichier exécutable. En outre, vous devez générer votre code de manière optimisée pour que votre application réussisse ce test.
 
 ### <a name="test-details"></a>Détails du test
 
@@ -509,7 +509,7 @@ Testez l’application de manière à vérifier qu’il ne s’agit pas d’une 
 
 ### <a name="corrective-actions"></a>Actions correctives
 
--   Créer l’application en tant qu’une version Release avant de vous soumettez à Microsoft Store.
+-   Générez l’application comme une version commerciale avant de la soumettre au Microsoft Store.
 -   Vérifiez que la version correcte du .NET Framework est installée.
 -   Assurez-vous que l’application ne crée pas de liens vers des versions de débogage d’une infrastructure et qu’elle est créée avec une version commerciale. Si l’application contient des composants .NET, assurez-vous que vous avez installé la version correcte du .NET Framework.
 
@@ -537,7 +537,7 @@ Teste les applications Microsoft Direct3D pour s’assurer qu’elles ne se bloq
 
 ### <a name="background"></a>Contexte
 
-Microsoft Store nécessite toutes les applications utilisant Direct3D pour restituer correctement ou échouer correctement sur des cartes de graphiques de 9\-1 au niveau de fonctionnalité.
+Microsoft Store nécessite toutes les applications à l’aide de Direct3D pour un rendu correct ou échouent de manière cartes graphiques de 9\-1 au niveau de fonctionnalité.
 
 Dans la mesure où les utilisateurs peuvent changer de matériel graphique sur leur appareil après l’installation de l’application, si vous choisissez un niveau de fonctionnalité minimal supérieur au niveau 9\-1, votre application doit détecter au démarrage si le matériel actuel répond ou non aux critères minimaux. Dans le cas contraire, l’application doit afficher un message qui détaille les critères exigés pour Direct3D. Par ailleurs, si une application est téléchargée sur un appareil avec lequel elle n’est pas compatible, elle doit détecter cette incompatibilité au démarrage et afficher un message expliquant au client la configuration requise.
 

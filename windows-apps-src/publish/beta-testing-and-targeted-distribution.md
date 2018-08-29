@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, test bêta, distribution limitée, bêta, test, testeurs
 ms.localizationpriority: medium
 ms.openlocfilehash: e453be22d752ed78263cb34011cdf9a333057e03
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2889316"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2914378"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>Tests bêta et distribution ciblée
 
@@ -35,7 +35,7 @@ Quelle que soit la méthode choisie, voici quelques éléments à garder à l’
 
 Si vous souhaitez permettre aux testeurs d’utiliser votre application avant qu’elle ne soit disponible pour les autres utilisateurs, tout en vous assurant que personne d’autre ne peut voir sa description, utilisez l’option **Public privé** sous [Visibilité](choose-visibility-options.md) (sur la page **Tarification et disponibilité** de votre soumission). Il s’agit de la seule méthode vous permettant de distribuer votre application aux testeurs tout en empêchant complètement toute autre utilisateur de voir la description du Store pour l’application, même s’il a été en mesure d’entrer son lien direct. 
 
-L’option **public privé** peut uniquement utilisable lorsque vous n’avez pas déjà publié votre application en public. Vous pouvez utiliser cette option avec les applications de ciblage de n’importe quelle version du système d’exploitation, mais les testeurs doivent exécuter Windows 10, version 1607 ou ultérieure (y compris Xbox un) et doivent être connectés avec le compte Microsoft associé à l’adresse de messagerie que vous fournissez.
+L’option **public privé** peut peut uniquement être utilisée lorsque vous n’avez pas déjà publié votre application à un public non privé. Vous pouvez utiliser cette option avec les applications destinées à n’importe quelle version du système d’exploitation, mais vos testeurs doivent exécuter Windows 10, version 1607 ou ultérieure (y compris Xbox One) et vous doivent être connectés avec le compte Microsoft associé à l’adresse de messagerie que vous fournissez.
 
 Pour plus d’informations, voir [Public privé](choose-visibility-options.md#audience).
 
@@ -53,7 +53,7 @@ Pour en savoir plus, consultez [Versions d’évaluations des packages](package-
 
 ## <a name="hiding-the-app-in-the-store-and-using-promotional-codes"></a>Masquage de l’application dans le Store et utilisation des codes promotionnels
 
-Cette option offre une autre manière de limiter la distribution d’une application à uniquement un certain groupe de testeurs, tout en empêchant quiconque de découverte de votre application dans le magasin (ou l’acquisition sans code promotionnel). Toutefois, contrairement à l’option Public privé, n’importe qui peut voir la description de votre application s’il a le lien direct. Si la confidentialité est essentielle pour votre soumission, nous vous recommandons de choisir plutôt une publication pour un public privé.
+Cette option offre un autre moyen de limiter la distribution d’une application à un certain groupe de testeurs, tout en empêchant quiconque de détection de votre application dans le Windows Store (ou acquise sans un code promotionnel). Toutefois, contrairement à l’option Public privé, n’importe qui peut voir la description de votre application s’il a le lien direct. Si la confidentialité est essentielle pour votre soumission, nous vous recommandons de choisir plutôt une publication pour un public privé.
 
 Le masquage de l’application et l’utilisation de codes promotionnels peuvent être utilisés avec des applications destinées à n’importe quelle version du système d’exploitation, mais vos testeurs ne pourront obtenir l’application que s’ils exécutent Windows10.
 

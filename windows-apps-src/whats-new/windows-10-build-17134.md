@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2f12190c405ad611cf5b884b82c4a430aa5264f
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2884288"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906199"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Nouveautés pour les développeurs dans Windows10, build17134
 
@@ -38,7 +38,7 @@ Tirer pour actualiser | Le contrôle [Tirer pour actualiser](../design/controls-
 Affichage de navigation | Le contrôle d’[affichage de la navigation](../design/controls-and-patterns/navigationview.md) fournit un menu de navigation réductible pour la navigation dans les zones supérieures de votre application. Ce contrôle implémente le modèle de volet de navigation, ou menu de type Hamburger, et adapte automatiquement la mode d’affichage du volet aux différentes tailles de fenêtres.
 Effet Révéler focus | Le nouvel effet [Révéler focus](../design/style/reveal-focus.md) fournit un effet d'éclairage pour les expériences telles que XboxOne et les écrans de télévision. Cet effet anime la bordure des éléments susceptibles d’être activés, comme les boutons, lorsque l’utilisateur déplace le focus du clavier ou du boîtier de commande sur ces derniers.
 Son | XAML prend désormais en charge le son3D avec la propriété **SpatialAudioMode**. Voir [Son](../design/style/sound.md) pour en savoir plus sur sa configuration.
-Vignettes | [Les notifications par vignette pouvant être suivies](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md) sont désormais prises en charge dans les applications UWP en JavaScript.<br><br>Notifications de mosaïque et badge secondaires sont [désormais pris en charge à partir d’applications de bureau pont](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications).
+Vignettes | [Les notifications par vignette pouvant être suivies](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md) sont désormais prises en charge dans les applications UWP en JavaScript.<br><br>Les notifications par vignette et badge secondaires sont [désormais pris en charge à partir d’applications pont du bureau](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications).
 Arborescence | Le contrôle [TreeView](../design/controls-and-patterns/tree-view.md) active une liste hiérarchique comportant des nœuds de développement et de réduction qui contiennent des éléments imbriqués. Il peut être utilisé pour illustrer une structure de dossiers ou des relations imbriquées dans votre interface utilisateur.
 Style d’écriture | Nous avons mis à niveau et développé notre article sur le style et le ton, le transformant en [Guide de style d’écriture](../design/style/writing-style.md). Ces nouvelles informations fournissent des principes pour créer du texte efficace dans votre application et recommande les meilleures pratiques pour écrire des contrôles, tels que des messages d’erreur ou des boîtes de dialogue.
 
@@ -73,7 +73,7 @@ Capture d'écran | L’[espace de noms Windows.Graphics.Capture](https://docs.mi
 Déclencheurs système | [CustomSystemEventTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.customsystemeventtrigger) vous permet de définir un déclencheur système lorsque le système d’exploitation ne fournit pas un déclencheur système dont vous avez besoin. Par exemple, lorsqu’un pilote matériel et l’application UWP appartiennent tous les deux à un tiers, et que le pilote matériel doit déclencher un événement personnalisé géré par son application. Par exemple, une carte audio qui doit informer un utilisateur lorsqu’une prise audio est branchée.
 Activités de l'utilisateur | Une nouvelle [documentation UserActivity](../launch-resume/useractivities.md) explique comment permettre aux utilisateurs de reprendre ce qu’ils étaient en train de faire dans votre application, même sur plusieurs appareils.</br>La classe **UserActivitySessionHistoryItem** possède de nouvelles méthodes qui récupèrent les activités récentes de l’utilisateur. Pour en savoir plus, voir [GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel.getrecentuseractivitiesasync) et sa surcharge.
 API WindowsMixedReality | Pour prendre en charge la plateforme Windows Mixed Reality en pleine évolution, de nouvelles API ont été ajoutées aux espaces de noms [Windows.Graphic.Holographic](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic) et [Windows.UI.Input.Spatial](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Spatial).
-Documents WindowsMixedReality | Les conseils de développement Windows mixte réalité sont [maintenant hébergé sur docs.microsoft.com.](https://docs.microsoft.com/windows/mixed-reality/) Comme dans ces documents UWP, vous pouvez maintenant commentaires ayant des problèmes de référentiels de fichiers ou soumettre votre propre contributions par le biais d’une demande d’extraction.
+Documents WindowsMixedReality | Le Guide du développeur Windows Mixed Reality est [désormais hébergés sur docs.microsoft.com.](https://docs.microsoft.com/windows/mixed-reality/) Tout comme dans ces documents UWP, vous pouvez désormais fichier commentaire avec GitHub Issues ou soumettre vos propres contributions via une requête de tirage.
 
 ## <a name="publish--monetize-windows-apps"></a>Publier et monétiser des applications Windows
 

@@ -15,17 +15,17 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e8f0fbbfacc3fa4edb602f7505ea1e88f211a81a
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2889409"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913016"
 ---
 # <a name="pivot"></a>Pivot
 
-Le contrôle de [tableau croisé dynamique](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) permet passant tactile entre un petit jeu de sections de contenu.
+Le contrôle de [sélecteur de vue](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) permet balayage tactile entre un petit ensemble de sections de contenu.
 
-> **API importantes**: [classe tableau croisé dynamique](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [classe NavigationView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
+> **API importantes**: [classe Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [classe NavigationView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
 ## <a name="examples"></a>Exemples
 
@@ -34,7 +34,7 @@ Le contrôle de [tableau croisé dynamique](https://docs.microsoft.com/uwp/api/W
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l’application de la <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/Pivot">Ouvrir l’application et que le contrôle de tableau croisé dynamique à le œuvre</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/Pivot">Ouvrir l’application et voir le contrôle de sélecteur de vue en action.</a></p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Obtenir le code source (GitHub)</a></li>
@@ -43,26 +43,26 @@ Le contrôle de [tableau croisé dynamique](https://docs.microsoft.com/uwp/api/W
 </tr>
 </table>
 
-Le contrôle de tableau croisé dynamique, comme [NavigationView](navigationview.md), souligne l’élément sélectionné.
+Le contrôle de sélecteur de vue, tout comme [NavigationView](navigationview.md), souligne l’élément sélectionné.
 
 ![Le focus par défaut souligne l’en-tête sélectionné](images/pivot_focus_selectedHeader.png)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
-Pour obtenir supérieure courantes et les modèles des onglets, nous recommandons l’utilisation de [NavigationView](navigationview.md), qui s’adapte à différentes tailles d’écran et permet la personnalisation supérieure automatiquement.
+Pour obtenir la structure de navigation supérieure commune et des modèles d’onglets, nous vous recommandons d’à l’aide de [NavigationView](navigationview.md), qui s’adapte à différentes tailles d’écran et permet la personnalisation supérieure automatiquement.
 
-Toutefois, si votre navigation nécessite tactile-passant, nous recommandons l’utilisation de tableau croisé dynamique.
+Toutefois, si votre navigation requiert balayage tactile, nous recommandons d’utiliser le sélecteur de vue.
 
-Les autres différences fondamentales entre les contrôles NavigationView et de tableau croisé dynamique sont le comportement de dépassement de capacité par défaut et le API de la navigation:
+Les autres principales différences entre les contrôles NavigationView et de sélecteur de vue sont le comportement de dépassement de capacité par défaut et l’API de la navigation:
 
-- Saturation carrousels éléments, alors que NavigationView utilise une liste déroulante du menu débordement afin que les utilisateurs peuvent voir tous les éléments de tableau croisé dynamique.
-- Tableau croisé dynamique gère la navigation entre les sections de contenu, tandis que NavigationView permet de mieux contrôler le comportement de navigation.
+- Dépassement carrousels éléments, tandis que NavigationView utilise une liste déroulante du menu de dépassement de capacité afin que les utilisateurs puissent voir tous les éléments de sélecteur de vue.
+- Sélecteur de vue gère la navigation entre les sections de contenu, tandis que NavigationView permet de mieux contrôler le comportement de navigation.
 
-## <a name="use-navigationview-instead-of-pivot"></a>Utilisez NavigationView au lieu de tableau croisé dynamique
+## <a name="use-navigationview-instead-of-pivot"></a>Utiliser NavigationView au lieu de sélecteur de vue
 
-Si l’interface utilisateur de votre application utilise le contrôle de tableau croisé dynamique, puis vous pouvez convertir Pivot NavigationView par le code ci-dessous.
+Si l’interface utilisateur de votre application utilise le contrôle de sélecteur de vue, vous pouvez convertir Pivot à NavigationView avec le code ci-dessous.
 
-Ce code XAML crée un NavigationView avec 3 sections de contenu, comme dans l’exemple de tableau croisé dynamique dans [créer un contrôle de tableau croisé dynamique](#create-a-pivot-control).
+Ce code XAML crée un NavigationView avec 3 sections de contenu, comme dans l’exemple Pivot dans [créer un contrôle de sélecteur de vue](#create-a-pivot-control).
 
 ```xaml
 <NavigationView x:Name="rootNavigationView" Header="Category Title"
@@ -87,7 +87,7 @@ Ce code XAML crée un NavigationView avec 3 sections de contenu, comme dans l’
 </Page>
 ```
 
-NavigationView permet de contrôler davantage sur la personnalisation de la navigation et requiert code-behind correspondant. Pour accompagner le code XAML ci-dessus, utilisez le code-behind suivant:
+NavigationView fournit plus de contrôle sur la personnalisation de la navigation et nécessite le code-behind correspondante. Pour accompagner le code XAML ci-dessus, utilisez le code-behind suivant:
 
 ```csharp
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -116,11 +116,11 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 }
 ```
 
-Ce code simule l’expérience de navigation intégrée du contrôle de tableau croisé dynamique, moins l’expérience tactile-passant entre les sections de contenu. Toutefois, comme vous pouvez le constater, vous pouvez également personnaliser plusieurs points, y compris la transition animée, les paramètres de navigation et les fonctionnalités de pile.
+Ce code simule l’expérience de navigation intégrée du contrôle Pivot, moins l’expérience tactile-balayage entre les sections de contenu. Toutefois, comme vous pouvez le constater, vous pouvez également personnaliser plusieurs points, y compris la transition animée, paramètres de navigation et des fonctionnalités de pile.
 
 ## <a name="create-a-pivot-control"></a>Créer un contrôle Pivot
 
-Ce code crée un contrôle de tableau croisé dynamique de base avec 3 sections de contenu.
+Ce code crée un contrôle Pivot de base avec 3 sections de contenu.
 
 ```xaml
 <Pivot x:Name="rootPivot" Title="Category Title">
