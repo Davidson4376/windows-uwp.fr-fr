@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, évaluation de l’âge, classification des jeux, iarc, évaluation, questionnaire, organisme de classification, contrôle d'accès au contenu
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cf7a3c3a57c4d892de2438967d995ee18470cae
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888248"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2917382"
 ---
 # <a name="age-ratings"></a>Évaluations de l’âge
 
@@ -30,7 +30,7 @@ La première fois que vous soumettez une application (ou la première fois que v
 
 Vous devez répondre aux questions avec exactitude. Pour plus d’informations sur toute question, cliquez sur l’icône d’informations qui s’affiche en regard de celle-ci. Dans le cadre de ce processus, nous communiquons votre nom complet d’éditeur et votre adresse de messagerie à l’IARC. Après avoir répondu au questionnaire, le système d’évaluation de l’IARC fournit les informations de classification par âge et contenu en fonction de vos réponses. Nous utilisons ces informations de classification lors de l’affichage de votre application aux clients des différents marchés. Vous recevez également un e-mail de l’IARC vous confirmant la classification de l’application une fois qu’elle a été publiée.
 
-La première question vous demande d’indiquer la catégorie qui décrit le mieux votre application (et ses métadonnées). Une fois que vous avez effectué une sélection, d'autres questions s'affichent. Les questions spécifiques affichées varient en fonction des réponses précédentes. Pour obtenir plus d’informations qui peuvent vous aider à comprendre comment répondre à une question, cliquez sur l’icône d’informations en regard de la question. Si vous commettez une erreur, vous pouvez revenir en arrière ou recommencer le questionnaire pour fournir les réponses appropriées.
+La première question vous demande d’indiquer la catégorie qui décrit le mieux votre application (et ses métadonnées). Une fois que vous avez effectué une sélection, d'autres questions s'affichent. Les questions spécifiques affichées varient en fonction des réponses précédentes. Pour obtenir plus d’informations qui peuvent vous aider à comprendre comment répondre à toute question, cliquez sur l’icône d’informations en regard de cette question. Si vous commettez une erreur, vous pouvez revenir en arrière ou recommencer le questionnaire pour fournir les réponses appropriées.
 
 Une fois que vous avez fini de répondre aux questions, cliquez sur **Enregistrer et générer**. Vous pouvez alors voir toutes les évaluations attribuées à l’application et poursuivre la soumission. Vous pouvez également cliquer sur **Modifier** pour corriger l’une de vos réponses au questionnaire.
 

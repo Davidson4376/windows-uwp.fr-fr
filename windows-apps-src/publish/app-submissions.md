@@ -11,23 +11,23 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888428"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913629"
 ---
 # <a name="app-submissions"></a>Soumissions d’applications
 
 
 Après avoir [créé votre application en réservant un nom](create-your-app-by-reserving-a-name.md), vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une **soumission**.
 
-Vous pouvez démarrer votre soumission lorsque votre application est terminée et prête pour publication, ou commencer à entrer des informations avant même d’avoir écrit la moindre ligne de code. Mises à jour apportées à votre présentation sont enregistrées, vous pouvez y revenir et l’utiliser chaque fois que vous êtes prêt.
+Vous pouvez démarrer votre soumission lorsque votre application est terminée et prête pour publication, ou commencer à entrer des informations avant même d’avoir écrit la moindre ligne de code. Mises à jour que vous apportez à votre soumission sont enregistrées, afin de pouvoir y revenir et y travailler à chaque fois que vous êtes prêt.
 
 > [!NOTE]
-> Vous devez disposer d’un [compte de développeur](http://go.microsoft.com/fwlink/p/?LinkId=615100) pour pouvoir accéder aux [Centre de développement Windows](https://partner.microsoft.com/dashboard) et soumettre des applications pour Microsoft Store.
+> Vous devez disposer d’un [compte de développeur](http://go.microsoft.com/fwlink/p/?LinkId=615100) pour accéder au [Centre de développement Windows](https://partner.microsoft.com/dashboard) et de soumettre des applications dans le Microsoft Store.
 
-Une fois votre application publiée, vous pouvez publier une version mise à jour en créant une autre soumission dans le tableau de bord. Le fait de créer une soumission vous permet d'introduire et de publier tous les changements nécessaires, que vous chargiez d'autres packages ou que vous changiez juste des détails comme le prix ou la catégorie. Pour créer une soumission pour une application publiée, cliquez sur **Mettre à jour** en regard de la soumission la plus récente affichée sur la page de présentation de l’application. Vous pouvez également [Supprimer une application à partir du magasin](guidance-for-app-package-management.md#removing-an-app-from-the-store) si vous avez besoin pour cela (et puis rendez-la disponible ultérieurement, si vous le souhaitez).
+Une fois votre application publiée, vous pouvez publier une version mise à jour en créant une autre soumission dans le tableau de bord. Le fait de créer une soumission vous permet d'introduire et de publier tous les changements nécessaires, que vous chargiez d'autres packages ou que vous changiez juste des détails comme le prix ou la catégorie. Pour créer une soumission pour une application publiée, cliquez sur **Mettre à jour** en regard de la soumission la plus récente affichée sur la page de présentation de l’application. Vous pouvez également [Supprimer une application à partir du magasin](guidance-for-app-package-management.md#removing-an-app-from-the-store) si vous avez besoin pour effectuer cette opération (et mettez-le à disposition plus tard, si vous souhaitez que).
 
 > [!NOTE]
 > Cette section de la documentation explique comment créer une soumission d’applications sur le tableau de bord du Centre de développement. Sinon, vous pouvez utiliser [l’API de soumission au Microsoft Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour automatiser la soumission d’applications.
@@ -113,7 +113,7 @@ Vous devez indiquer toutes les informations requises pour au moins l’une des l
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **Options de mise en attente de publication**     | Par défaut: publier cette soumission dès qu’elle a obtenu la certification (ou selon les dates que vous avez sélectionnées dans la section Planification)      | [Options de mise en attente de publication](manage-submission-options.md#publishing-hold-options)    
 | **Notes pour la certification**     | Recommandé          | [Notes pour la certification](notes-for-certification.md)             |
-| **Fonctionnalités restreintes**     | Requis si votre produit déclare des [capacités restreintes](../packaging/app-capability-declarations.md#restricted-capabilities)    | [Fonctionnalités restreintes](manage-submission-options.md#publishing-hold-options)       
+| **Fonctionnalités restreintes**     | Obligatoire si votre produit déclare certaines [fonctionnalités restreintes](../packaging/app-capability-declarations.md#restricted-capabilities)    | [Fonctionnalités restreintes](manage-submission-options.md#publishing-hold-options)       
 
 <span/>
 

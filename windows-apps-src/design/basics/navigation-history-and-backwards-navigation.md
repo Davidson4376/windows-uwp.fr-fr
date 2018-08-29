@@ -15,11 +15,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0400e04a86675adccd1da14d8cb2652028fbfd30
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888098"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918970"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Historique de navigation et navigation vers l’arrière pour les applicationsUWP
 
@@ -33,7 +33,7 @@ Lorsqu’il appuie sur le bouton Précédent, l’utilisateur s’attend à acc�
 
 ## <a name="back-button"></a>Bouton Précédent
 
-Pour créer un bouton précédent, utilisez le contrôle de [bouton](../controls-and-patterns/buttons.md) avec le `NavigationBackButtonNormalStyle` de style et, le bouton dans le coin supérieur gauche de l’interface utilisateur de votre application (pour plus d’informations, consultez les exemples de code XAML ci-dessous).
+Pour créer un bouton précédent, utilisez le contrôle de [bouton](../controls-and-patterns/buttons.md) avec le `NavigationBackButtonNormalStyle` de style et placer le bouton dans le coin supérieur gauche de l’interface utilisateur de votre application (pour plus d’informations, consultez les exemples de code XAML ci-dessous).
 
 ![Bouton Précédent dans l’angle supérieur gauche de l’interface utilisateur de l’application](images/back-nav/BackEnabled.png)
 
@@ -174,9 +174,9 @@ namespace winrt::PageNavTest::implementation
 }
 ```
 
-Ci-dessus, nous gérer descendante la navigation pour une seule page. Vous pouvez gérer la navigation dans chaque page si vous souhaitez exclure des pages spécifiques de navigation arrière, ou vous souhaitez exécuter du code au niveau de la page avant d’afficher la page.
+Ci-dessus, nous gérons vers l’arrière navigation pour une seule page. Vous pouvez gérer la navigation dans chaque page si vous souhaitez exclure des pages spécifiques de navigation vers l’arrière, ou que vous souhaitez exécuter du code au niveau page avant d’afficher la page.
 
-Pour gérer la compatibilité descendante navigation pour une application entière, vous allez enregistrer un écouteur global pour l’événement [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) dans les `App.xaml` fichier code-behind.
+Pour gérer vers l’arrière la navigation pour un ensemble de votre application, vous allez vous inscrire un écouteur global pour l’événement [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) dans le `App.xaml` fichier code-behind.
 
 App.xaml code-behind:
 
@@ -293,24 +293,24 @@ Auparavant, les applicationsUWP utilisaient [AppViewBackButtonVisibility](https:
 
 Si votre application continue à utiliser [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), le bouton Précédent sera basculé dans la barre de titre, comme d’habitude.
 
-- Si votre application n’est **pas à onglets**, le bouton de retour s’affiche à l’intérieur de la barre de titre. Les interactions d’utilisateur et une expérience visual pour le bouton de retour sont identiques à ceux des versions précédentes.
+- Si votre application n’est **pas à onglets**, le bouton précédent est affiché à l’intérieur de la barre de titre. Les interactions utilisateur et d’expérience visuelle du bouton précédent restent inchangées à partir des versions précédentes.
 
     ![Bouton précédent de la barre de titre](images/nav-back-pc.png)
 
-- Si une application est **à onglets**, puis le bouton de retour s’affiche à l’intérieur d’une sauvegarde de système nouvelle barre.
+- Si une application est **à onglets**, alors que le bouton précédent s’affiche à l’intérieur d’un nouveau système vers l’arrière barre.
 
-    ![Système dessinées back barre](images/back-nav/tabs.png)
+    ![Système dessiné précédent de la barre de boutons](images/back-nav/tabs.png)
 
-### <a name="system-back-bar"></a>Système barre
+### <a name="system-back-bar"></a>Précédent système barre
 
 > [!NOTE]
-> «Système barre» est uniquement une description, pas un nom officiel.
+> «Précédent système barre» est uniquement une description, pas un nom officiel.
 
-Le système vers l’arrière barre est une bande est insérée entre la bande de l’onglet et la zone de contenu d’application s. La bande s'étend sur toute la largeur de l’application et le bouton Précédent se trouve sur son bord gauche. La bande a une hauteur de 32 pixels pour garantir tactile adéquate la taille cible pour le bouton de retour.
+Le système vers l’arrière barre est une bande qui est insérée entre la bande d’onglet et la zone de contenu d’application s. La bande s'étend sur toute la largeur de l’application et le bouton Précédent se trouve sur son bord gauche. La bande a une hauteur verticale de 32 pixels pour garantir une taille de cible tactile adéquate pour le bouton précédent.
 
-La barre Précédent système s'affiche de façon dynamique, en fonction de la visibilité du bouton Précédent. Lorsque le bouton de retour est visible, le système vers l’arrière barre est insérée, en progressant de contenu d’application vers le bas 32 pixels au-dessous la bande de l’onglet. Lorsque le bouton de retour est masqué, l’arrière du système est dynamiquement supprimé, en progressant de contenu d’application 32 pixels pour répondre à la bande de l’onglet. Pour éviter d’avoir MAJ de l’interface utilisateur de votre application haut ou vers le bas, nous vous recommandons d’un [bouton de retour dans l’application](#back-button)de dessin.
+La barre Précédent système s'affiche de façon dynamique, en fonction de la visibilité du bouton Précédent. Lorsque le bouton précédent est visible, le système vers l’arrière barre s’insère et contenu de l’application vers le bas par 32 pixels en dessous de la bande d’onglet. Lorsque le bouton précédent est masqué, le système vers l’arrière barre est supprimée de manière dynamique, un décalage contenu de l’application 32 pixels pour répondre à la bande d’onglet. Pour éviter d’avoir MAJ de l’interface utilisateur de votre application vers le haut ou vers le bas, nous vous recommandons de prévoir un [bouton précédent dans l’application](#back-button).
 
-[Personnalisations de barre de titre](../shell/title-bar.md) seront reportés à l’onglet application et le système de retour barre. Si votre application spécifie les propriétés de couleur d’arrière-plan et de premier plan avec [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), puis les couleurs seront appliquées à l’arrière-plan de l’onglet et le système de barre.
+[Personnalisations de barre de titre](../shell/title-bar.md) sera s’appliquent à l’onglet de l’application et le système de retour barre. Si votre application spécifie les propriétés de couleur d’arrière-plan et au premier plan avec [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), alors que les couleurs s’appliqueront à l’arrière du système et de tabulation barre.
 
 ## <a name="guidelines-for-custom-back-navigation-behavior"></a>Recommandations sur le comportement personnalisé de navigation vers l’arrière
 
@@ -335,16 +335,16 @@ Si vous choisissez de fournir votre propre navigation de pile Back, l’expérie
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>Page à page, même groupe d’homologues, pas d’élément de navigation à l’écran</strong>
-<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Il n’existe pas à l’écran élément de navigation (par exemple, [NavigationView](../controls-and-patterns/navigationview.md)) qui fournit une navigation directe aux deux pages.</p></td>
+<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Il n’existe pas à l’écran élément de navigation (par exemple, [NavigationView](../controls-and-patterns/navigationview.md)) fournit une navigation directe vers les deux pages.</p></td>
 <td style="vertical-align:top;"><strong>Oui</strong>
-<p>Dans l’illustration suivante, l’utilisateur navigue entre les deux pages dans le même groupe homologue et la navigation doit être ajoutée à l’historique de navigation.</p>
+<p>Dans l’illustration suivante, l’utilisateur navigue entre deux pages dans le même groupe d’homologues, et la navigation doit être ajoutée à l’historique de navigation.</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>Page à page, même groupe d’homologues, avec un élément de navigation à l’écran</strong>
-<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Les deux pages sont indiqués dans le même élément de navigation, tel que [NavigationView](../controls-and-patterns/navigationview.md).</p></td>
+<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Les deux pages sont affichées dans le même élément de navigation, par exemple, [NavigationView](../controls-and-patterns/navigationview.md).</p></td>
 <td style="vertical-align:top;"><strong>Cela dépend</strong>
-<p>Oui, ajouter à l’historique de navigation, avec deux exceptions notables. Si vous prévoyez que les utilisateurs de votre application pour basculer entre les pages dans le groupe homologue fréquemment ou si vous souhaitez conserver la hiérarchie de navigation, puis n’ajoutez pas à l’historique de navigation. Dans ce cas, lorsque l’utilisateur appuie sur le bouton Précédent, il retourne à la dernière page avant d’avoir accédé au groupe d’homologues actuel. </p>
+<p>Oui, ajouter à l’historique de navigation, avec deux exceptions notables. Si vous pensez que les utilisateurs de votre application pour basculer entre les pages dans le groupe d’homologues fréquemment, ou si vous souhaitez conserver la hiérarchie de navigation, puis n’ajoutez pas à l’historique de navigation. Dans ce cas, lorsque l’utilisateur appuie sur le bouton Précédent, il retourne à la dernière page avant d’avoir accédé au groupe d’homologues actuel. </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">

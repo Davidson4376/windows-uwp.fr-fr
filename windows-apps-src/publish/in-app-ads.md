@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 83c4645a09a38a76dfd230436e858e222d817eab
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2893747"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2917232"
 ---
 # <a name="in-app-ads"></a>Publicités dans l’application
 
@@ -37,9 +37,9 @@ Pour créer une unité publicitaire pour une [bannière publicitaire](../monetiz
 3.  Dans le champ **Nom de la publicité**, entrez un nom pour l’unité publicitaire. Il peut s’agir d’une chaîne descriptive que vous souhaitez utiliser pour identifier l’unité publicitaire à des fins de création de rapports.
 4.  Dans la liste déroulante **Type de publicité**, sélectionnez le type de publicité.
 
-    * Si vous affichez un enchaînement dans votre application, sélectionnez la **bannière**.
-    * Si vous affichez un INTERSTITIELLE ad vidéo ou l’enchaînement INTERSTITIELLE dans votre application, sélectionnez **vidéo INTERSTITIEL** ou **bannière INTERSTITIELLE** (veillez à sélectionner l’option appropriée pour le type d’ad INTERSTITIELLE à afficher).
-    * Si vous affichez une annonce native dans votre application, sélectionnez **Native**.
+    * Si vous affichez une bannière publicitaire dans votre application, sélectionnez la **bannière**.
+    * Si vous affichez un spot vidéo ou une bannière publicitaire dans votre application, sélectionnez un **spot vidéo** ou une **bannière** (veillez à sélectionner l’option appropriée pour le type de spot publicitaire que vous souhaitez afficher).
+    * Si vous affichez une publicité native dans votre application, sélectionnez **natif**.
 
 5. Dans la liste déroulante **Famille d’appareils**, sélectionnez la famille d’appareils ciblée par l’application dans laquelle votre unité publicitaire sera utilisée. Les options disponibles sont: **UWP (Windows10)**, **PC/tablette (Windows8.1)** ou **Mobile (Windows Phone8.x)**.
 
@@ -61,7 +61,7 @@ Après avoir créé des unités publicitaires pour une ou plusieurs applications
 
 * Si votre application affiche des [bannières publicitaires](../monetize/banner-ads.md), affectez ces valeurs aux propriétés [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) et [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) de votre objet [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol).
 * Si votre application affiche des [spots](../monetize/interstitial-ads.md), transmettez ces valeurs à la méthode [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) de votre objet [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad).
-* Si votre application affiche des [annonces natives](../monetize/native-ads.md), passer ces valeurs au constructeur **NativeAdsManagerV2** .
+* Si votre application affiche [des publicités natives](../monetize/native-ads.md), transmettez ces valeurs au constructeur **NativeAdsManagerV2** .
   > [!IMPORTANT]
   > Vous pouvez utiliser chaque unité publicitaire dans une seule application. Si vous utilisez une unité publicitaire dans plusieurs applications, les publicités ne seront pas diffusées pour cette unité publicitaire.
 
@@ -71,13 +71,13 @@ Après avoir créé des unités publicitaires pour une ou plusieurs applications
 Pour modifier les [paramètres de médiation](#mediation) pour une unité publicitaire UWP ou la [conformité à la réglementation COPPA](#coppa) pour l’application dans laquelle l’unité publicitaire est utilisée, cliquez sur le nom de l'unité publicitaire.
 
 > [!NOTE]
-> Si une unité d’ad n’a aucune activité pour les six derniers mois, nous l’étiquette comme **inactif/Inactive**et éventuellement le supprimer à partir de votre tableau de bord. Vous pouvez utiliser des filtres pour afficher uniquement les unités publicitaires **Actives** ou **Inactives**. Si vous voyez des unités publicitaires qui, à votre avis, sont marquées à tort comme **Inactives**, [contactez le support](http://aka.ms/storesupport).
+> Si une unité publicitaire n’a aucune activité pour les six derniers mois, nous lui l’étiquette comme **inactif**et supprimerons de votre tableau de bord. Vous pouvez utiliser des filtres pour afficher uniquement les unités publicitaires **Actives** ou **Inactives**. Si vous voyez des unités publicitaires qui, à votre avis, sont marquées à tort comme **Inactives**, [contactez le support](http://aka.ms/storesupport).
 
 <span id="mediation" />
 
 ## <a name="mediation-settings"></a>Paramètres de médiation
 
-Lorsque vous [créez une nouvelle unité d’ad UWP](#create-ad-unit) ou [Modifier une unité d’ad UWP existante](#available-ad-units), utilisez les options de cette section pour configurer [médiation ad](../monetize/ad-mediation-service.md) pour l’unité d’ad. La médiation publicitaire vous permet d’optimiser vos revenus publicitaires et vos capacités de promotion d’application en affichant des publicités issues de plusieurs réseaux publicitaires, y compris les publicités d’autres réseaux publicitaires payés et les publicités sans génération de revenus des campagnes de promotion d’applications Microsoft. Nous nous chargeons de la médiation des demandes de bannières publicitaires des réseaux publicitaires que vous choisissez. Si vous disposez d’une unité publicitaire UWP déjà associée à une bannière publicitaire, à un spot ou à une publicité native dans votre application, l’activation de la médiation publicitaire ne nécessite aucune modification de code dans votre application.
+Lorsque vous [créez une unité publicitaire UWP](#create-ad-unit) ou [Modifier une unité de publicitaire UWP existante](#available-ad-units), utilisez les options de cette section pour configurer la [médiation publicitaire](../monetize/ad-mediation-service.md) pour l’unité publicitaire. La médiation publicitaire vous permet d’optimiser vos revenus publicitaires et vos capacités de promotion d’application en affichant des publicités issues de plusieurs réseaux publicitaires, y compris les publicités d’autres réseaux publicitaires payés et les publicités sans génération de revenus des campagnes de promotion d’applications Microsoft. Nous nous chargeons de la médiation des demandes de bannières publicitaires des réseaux publicitaires que vous choisissez. Si vous disposez d’une unité publicitaire UWP déjà associée à une bannière publicitaire, à un spot ou à une publicité native dans votre application, l’activation de la médiation publicitaire ne nécessite aucune modification de code dans votre application.
 
 > [!NOTE]
 > Lorsque vous activez la médiation publicitaire pour une unité publicitaire UWP, vous n’avez pas besoin d’obtenir une unité publicitaire auprès de réseaux publicitaires tiers. Notre service de médiation publicitaire crée automatiquement les unités publicitaires tierces nécessaires.
@@ -85,10 +85,10 @@ Lorsque vous [créez une nouvelle unité d’ad UWP](#create-ad-unit) ou [Modifi
 Pour configurer les paramètres de médiation publicitaire pour une unité publicitaire UWP dans votre application:
 
 1. [Créez une unité publicitaire](#create-ad-unit) ou [sélectionnez une unité publicitaire existante](#available-ad-units).
-2. Sur la page **annonces dans l’application** , accédez à la section **paramètres de médiation** et la configuration vos paramètres.
+2. Sur la page **publicités In-app** , accédez à la section des **paramètres de médiation** et la configuration de vos paramètres.
 
-    * Par défaut, la case à cocher **Laisser Microsoft choisir les meilleurs paramètres de médiation pour votre application** est activée. Nous vous recommandons d’utiliser cette option. Cette option utilise des algorithmes d’apprentissage de l’ordinateur pour choisir automatiquement les paramètres de médiation publicitaire pour votre application, afin de vous aider à optimiser vos revenus publicitaires sur les marchés que votre application prend en charge. Lorsque vous utilisez cette option, vous pouvez également choisir les réseaux ad que vous souhaitez utiliser dans la configuration. Désactivez les réseaux ad qui vous ne souhaitez pas faire partie de la configuration de notre algorithme permet de garantir que votre application reçoit uniquement les annonces des réseaux ad sélectionné.
-    * Si vous souhaitez choisir votre propre ad paramètres de médiation, cliquez sur **Modifier les paramètres par défaut**.
+    * Par défaut, la case à cocher **Laisser Microsoft choisir les meilleurs paramètres de médiation pour votre application** est activée. Nous vous recommandons d’utiliser cette option. Cette option utilise des algorithmes d’apprentissage de l’ordinateur pour choisir automatiquement les paramètres de médiation publicitaire pour votre application, afin de vous aider à optimiser vos revenus publicitaires sur les marchés que votre application prend en charge. Lorsque vous utilisez cette option, vous pouvez également choisir les réseaux publicitaires que vous voulez utiliser dans la configuration. Désactivez les réseaux publicitaires que vous ne voulez pas faire partie de la configuration et notre algorithme permet de garantir que votre application reçoit uniquement des publicités à partir de réseaux publicitaires sélectionné.
+    * Si vous souhaitez choisir vos propres ad paramètres de médiation, choisir de **Modifier les paramètres par défaut**.
 
     > [!NOTE]
     > Les étapes restantes de cette section sont uniquement applicables si vous décidez de **Modifier les paramètres par défaut**.
@@ -111,17 +111,17 @@ Le tableau suivant répertorie les réseaux payants actuellement pris en charge 
 
 |  Réseau publicitaire  |  Description  |  Types de publicités pris en charge  |
 |--------------|---------------|---------------------|
-| OAuth et AppNexus |  Il s’agit d’un réseau ad gérés par Microsoft qui sert les annonces par le biais de notre partenaire réseaux, OAuth et AppNexus.<p/>**Remarque**: OAuth et AppNexus est toujours classé tout d’abord dans la liste **des réseaux ad payé** pour les unités d’ad bannière, et il ne peut pas être modifié en un classement inférieur pour ces types d’annonces. | Bannière, spot vidéo |
-| AppNexus (direct) | Sélectionnez cette option pour traiter les annonces à partir de [AppNexus](https://www.appnexus.com). | Spot vidéo, native  |
+| Formule et AppNexus |  Il s’agit d’un réseau publicitaire géré par Microsoft qui fait Office d’annonces par le biais de notre partenaire réseaux, formule et AppNexus.<p/>**Remarque**: formule et AppNexus est toujours au premier rang de la liste des **réseaux publicitaires de payé** pour les unités de bannières publicitaires, et il ne peut pas être modifié à un niveau inférieur pour ces types de publicités. | Bannière, spot vidéo |
+| AppNexus (direct) | Sélectionnez cette option pour proposer des publicités à partir de [AppNexus](https://www.appnexus.com). | Spot vidéo, native  |
 | Publicités pour l’installation d’applications Microsoft | Sélectionnez cette option pour proposer des publicités pour l’installation d’applications ou des publicités pour la réactivation d’applications créées par d’autres développeurs dans l’écosystème Windows qui [créent des campagnes de publicité pour leurs applications](create-an-ad-campaign-for-your-app.md).  |  Bannière, spot bannière, native  |
-| Recommandations de contenu MSN |  Sélectionnez cette option pour traiter les annonces à partir des recommandations de contenu MSN. |  Bannière, spot bannière  |
+| Recommandations de contenu MSN |  Sélectionnez cette option pour proposer des publicités à partir de MSN des recommandations de contenu. |  Bannière, spot bannière  |
 | Outbrain |  Sélectionnez cette option pour proposer des publicités à partir de [Outbrain](https://www.outbrain.com/). |  Bannière, spot bannière  |
 | Revcontent |  Sélectionnez cette option pour proposer des publicités à partir de [Revcontent](http://www.revcontent.com/). |  Bannière, native  |
 | Smaato |  Sélectionnez cette option pour proposer des publicités à partir de [Smaato](https://www.smaato.com/). |  Bannière  |
 | smartclip |  Sélectionnez cette option pour proposer des publicités à partir de [smartclip](http://www.smartclip.com/). |  Spot vidéo  |
 | SpotX |  Sélectionnez cette option pour proposer des publicités à partir de [SpotX](https://www.spotx.tv/). |  Spot vidéo  |
 | Taboola |  Sélectionnez cette option pour proposer des publicités à partir de [Taboola](https://www.taboola.com/). |  Bannière  |
-| Undertone | Sélectionnez cette option pour traiter les annonces à partir de [Undertone](https://www.undertone.com/). | Bannière INTERSTITIELLE |
+| Undertone | Sélectionnez cette option pour proposer des publicités à partir de [Undertone](https://www.undertone.com/). | Bannière |
 
 
 <span id="other-networks" />

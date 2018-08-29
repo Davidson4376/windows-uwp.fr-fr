@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 155b8f67b5cd6080554afb889c7c27c921c998f8
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2885173"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2917952"
 ---
 # <a name="about-house-ads"></a>À propos des publicités maison
 
 
 Vous pouvez créer une publicité pour promouvoir gratuitement l’une de vos applications dans vos autres applications. C’est ce que nous appelons les « *publicités maison* ».
 
-Les publicités maison apparaissent uniquement dans vos propres applications qui sont configurées pour [afficher des publicités de Microsoft](../monetize/display-ads-in-your-app.md).
+Publicités maison apparaissent uniquement dans vos propres applications qui sont configurées pour [afficher des publicités à partir de Microsoft](../monetize/display-ads-in-your-app.md).
 
 Pour configurer une publicité maison, sélectionnez **House ad (free)** comme **Type de campagne** lorsque vous [créez une campagne de publicité](create-an-ad-campaign-for-your-app.md). Cette publicité apparaît alors automatiquement dans l’une de vos applications si celle-ci répond aux critères suivants:
 

@@ -11,18 +11,18 @@ keywords: windows10, uwp, version, build, versions, windows, choisir, mettre à 
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bb9aad1fa9da79708b3c785da80811006153767
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882251"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918930"
 ---
 # <a name="choose-a-uwp-version"></a>Choisir une version d’UWP
 
 Chaque version de Windows10 fournit de nouvelles fonctionnalités améliorées pour la plateforme UWP. Lors de la création d’applications UWP dans Microsoft Visual Studio, vous pouvez choisir la version à cibler. Pour les projets utilisant [.NET Standard2.0](https://docs.microsoft.com/dotnet/standard/net-standard), la **Version minimale** doit être définie sur la build16299 ou version ultérieure.
 
 > [!WARNING]
-> Projets UWP créés dans les versions actuelles de Visual Studio ne peuvent pas être ouverts dans Visual Studio 2015.
+> Les projets UWP créés dans les versions actuelles de Visual Studio ne peut pas être ouvert dans Visual Studio 2015.
 
 Le tableau suivant décrit les versions de Windows10disponibles. Veuillez noter que ce tableau s’applique uniquement à la création d’applications UWP, qui sont uniquement prises en charge sur Windows10. Vous ne pouvez pas développer des applications UWP pour les versions antérieures de Windows, et vous devez [installer la version appropriée du Kit de développement (SDK)](http://go.microsoft.com/fwlink/?LinkId=821431) afin de cibler cette version. 
 
@@ -43,13 +43,13 @@ Les API nouvelles et modifiées pour UWP sont disponibles dans toutes les versio
 
 Pour consulter des rubriques de référence qui énumèrent toutes les familles d’appareils et leurs versions, ainsi que les contrats d’API et leurs versions, consultez [Familles d’appareils](https://msdn.microsoft.com/library/windows/apps/dn706137.aspx) et [Contrats d’API](https://msdn.microsoft.com/library/windows/apps/dn706135.aspx).
 
-## <a name="net-api-availability-in-uwp-versions"></a>Disponibilité de l’API .NET dans les versions UWP
+## <a name="net-api-availability-in-uwp-versions"></a>Disponibilité des API .NET dans les versions UWP
 
-UWP prend en charge un sous-ensemble limité d’API .NET, qui sont disponibles, quelle que soit la **Version cible** ou de la **Version minimale** de votre projet. [Cette page fournit des informations supplémentaires sur les types disponibles](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx).
+UWP prend en charge un sous-ensemble limité d’API .NET, qui sont disponibles, quelle que soit la **Version cible** ou une **Version minimale** de votre projet. [Cette page fournit plus d’informations sur les types disponibles](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx).
 
-Si vous souhaitez créer des bibliothèques réutilisables multiplateforme, .NET Standard est pris en charge sur UWP. La [documentation .NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard) fournit des informations sur lequel .NET Standard est pris en charge dans les versions UWP.
+Si vous souhaitez créer des bibliothèques inter-plateforme réutilisables, .NET Standard est pris en charge sur UWP. La [documentation .NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard) fournit des informations sur lequel .NET Standard est pris en charge dans les versions d’UWP.
 
-Si vous développez une application de bureau, consultez plutôt [dépendances et les versions du .NET Framework](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies) pour plus d’informations sur la disponibilité du .NET framework.
+Si vous développez une application de bureau, reportez-vous à la place [dépendances et les versions de .NET Framework](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies) pour plus d’informations sur la disponibilité de .NET framework.
 
 ## <a name="choose-which-version-to-use-for-your-app"></a>Choisir la version à utiliser pour votre application
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, extension, propriétés, période d'abonnement, type de produit, durée de vie du produit, type de contenu, iap, achat in-app, produit in-app
 ms.localizationpriority: medium
 ms.openlocfilehash: 73a494ea1899f3a764a668ae61c1235808eff1a7
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2885586"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2917207"
 ---
 # <a name="enter-add-on-properties"></a>Saisir les propriétés d’une extension
 
@@ -44,7 +44,7 @@ Si vous avez sélectionné **Consommable géré par le WindowsStore** comme type
 
 ## <a name="subscription-period"></a>Période d’envoi
 
-Si vous avez sélectionné **Abonnement** comme type de produit, le champ **Période d’envoi** s’affiche ici. Choisissez une option pour spécifier la fréquence à laquelle un client sera débité pour son abonnement. L’option par défaut est **tous les mois**, mais vous pouvez également sélectionner ** **3 mois**, 6 mois**, **par an**ou **24 mois**.
+Si vous avez sélectionné **Abonnement** comme type de produit, le champ **Période d’envoi** s’affiche ici. Choisissez une option pour spécifier la fréquence à laquelle un client sera débité pour son abonnement. L’option par défaut est **mensuelle**, mais vous pouvez également sélectionner **3 mois**, **6 mois**, **chaque année**ou **24 mois**.
 
 > [!IMPORTANT]
 > Une fois votre extension publiée, vous ne pouvez plus modifier la valeur du champ **Période d’abonnement**.

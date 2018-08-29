@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, concurrence, asynchrone, async
 ms.localizationpriority: medium
 ms.openlocfilehash: fe43eaa233d3384eecb5e8755190efc1a109bbb9
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882955"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918289"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Opérations concurrentes et asynchrones avec [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 > [!NOTE]
@@ -69,7 +69,7 @@ Appeler **get** rend le codage pratique et est idéal pour les applications de c
 C++/WinRT intègre des coroutines C++ dans le modèle de programmation pour fournir un moyen naturel d’attendre de manière coopérative un résultat. Vous pouvez générer votre propre opération asynchrone Windows Runtime en écrivant une coroutine. Dans l’exemple de code ci-dessous, **ProcessFeedAsync** est la coroutine.
 
 > [!NOTE]
-> La fonction **get** existe sur C + / WinRT projection tapez **winrt::Windows::Foundation::IAsyncAction**, afin que vous pouvez appeler la fonction à partir de n’importe quelle / WinRT project. Vous ne trouvez pas la fonction répertoriée en tant que membre de l’interface [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) , car **get** ne fait pas partie de la surface d’interface binaire (ABI) application du type de module d’exécution Windows **IAsyncAction**réel.
+> La fonction **get** existe sur C++ / WinRT projection tapez **winrt::Windows::Foundation::IAsyncAction**, afin que vous pouvez appeler la fonction dans n’importe quel C++ / WinRT projet. Vous ne trouverez pas la fonction répertoriée en tant que membre de l’interface [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) , dans la mesure où **obtenir** ne fait pas partie de la surface de (ABI) de l’interface binaire d’application du type Windows Runtime réel **IAsyncAction**.
 
 ```cppwinrt
 // main.cpp
