@@ -9,14 +9,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, implémenter, classe runtime, activation
 ms.localizationpriority: medium
-ms.openlocfilehash: d2f9b336d9a95efe28668991d66ab0a9e48e96e7
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: a2e475cc39118824dcdfe777b8729fe2b7da1a1b
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2912366"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3112717"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Créer des API avec [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+
+> [!NOTE]
+> **Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.**
+
 Cette rubrique montre comment créer des API C++/WinRT à l’aide de la structure de base [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements), directement ou indirectement. Les synonymes de *créer* dans ce contexte sont *produire* ou *implémenter*. Cette rubrique couvre les scénarios suivants pour l’implémentation d’API sur un type C++/WinRT, dans cet ordre.
 
 - Vous ne créez *pas* une classe Windows Runtime (classe runtime); vous souhaitez simplement implémenter une ou plusieurs interfaces Windows Runtime pour une utilisation locale au sein de votre application. Vous dérivez directement de **winrt::implements** dans ce cas, et implémentez des fonctions.
@@ -261,7 +265,7 @@ IStringable istringable = winrt::make<MyType>();
 > [!NOTE]
 > Toutefois, si vous référencez votre type à partir de votre interface utilisateur XAML, un type d’implémentation et un type projeté se retrouveront dans le même projet. Dans ce cas, la **rendre** renvoie une instance du type projeté. Pour obtenir un exemple de code de ce scénario, voir [Contrôles XAML; liaison à une propriété C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
-Nous ne pouvons utiliser que `istringable` (dans l’exemple de code ci-dessus) pour appeler les membres de l’interface **IStringable**. Mais une interface C++/WinRT (qui est une interface projetée) dérive de [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). Par conséquent, vous pouvez appeler [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) sur celle-ci pour rechercher d’autres interfaces, que vous pouvez également utiliser ou retourner.
+Nous ne pouvons utiliser que `istringable` (dans l’exemple de code ci-dessus) pour appeler les membres de l’interface **IStringable**. Mais une interface C++/WinRT (qui est une interface projetée) dérive de [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). Par conséquent, vous pouvez appeler [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (ou [**IUnknown::_try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)) dessus pour interroger pour d’autres types projetés ou les interfaces, que vous pouvez également utiliser ou retourner.
 
 ```cppwinrt
 istringable.ToString();
@@ -281,7 +285,12 @@ iclosable.Close();
 
 La classe **MyType** ne fait pas partie de la projection; il s’agit de l’implémentation. Mais de cette façon vous pouvez appeler ses méthodes d’implémentation directement, sans la surcharge d’un appel de fonction virtuelle. Dans l’exemple ci-dessus, même si **MyType::ToString** utilise la même signature que la méthode projetée sur **IStringable**, nous appelons la méthode non virtuelle directement, sans traverser la limite de l’interface binaire d’application (ABI). **com_ptr** pointant simplement un curseur sur la structure **MyType**, vous pouvez également accéder à tous les autres détails internes de **MyType** via la variable `myimpl` et l’opérateur flèche.
 
-Dans le cas où vous disposez d’un objet d’interface et que vous savez qu’il s’agit d’une interface sur votre implémentation, vous pouvez revenir à l’implémentation à l’aide du modèle de fonction [**from_abi**](/uwp/cpp-ref-for-winrt/from-abi). Là encore, il s’agit d’une technique qui évite les appels de fonctions virtuelles et vous permet d’accéder directement à l’implémentation. Voici un exemple.
+Dans le cas où vous disposez d’un objet d’interface et que vous savez qu’il s’agit d’une interface sur votre implémentation, vous pouvez revenir à l’implémentation à l’aide du modèle de fonction [**from_abi**](/uwp/cpp-ref-for-winrt/from-abi). Là encore, il s’agit d’une technique qui évite les appels de fonctions virtuelles et vous permet d’accéder directement à l’implémentation.
+
+> [!NOTE]
+> Si vous avez installé la [Windows 10 SDK version d’évaluation 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK), ou une version ultérieure, vous pouvez ensuite appeler [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) au lieu de [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi).
+
+En voici un exemple. [Implémenter la classe de contrôle personnalisé **BgLabelControl** ](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)est un autre exemple.
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
@@ -309,7 +318,7 @@ myimpl.Close();
 IClosable ic1 = myimpl.as<IClosable>(); // error
 ```
 
-Si vous disposez d’une instance de votre type d’implémentation et que vous devez la transmettre à une fonction qui attend le type projeté correspondant, vous pouvez procéder ainsi. Un opérateur de conversion existant sur votre type d’implémentation (à condition que le type d’implémentation ait été généré par l’outil `cppwinrt.exe`) rend cela possible.
+Si vous disposez d’une instance de votre type d’implémentation et que vous devez la transmettre à une fonction qui attend le type projeté correspondant, vous pouvez procéder ainsi. Un opérateur de conversion existant sur votre type d’implémentation (à condition que le type d’implémentation a été généré par le `cppwinrt.exe` outil) qui rend cela possible.
 
 ## <a name="deriving-from-a-type-that-has-a-non-trivial-constructor"></a>Dérivation à partir d’un type qui possède un constructeur non trivial
 [**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_) est un exemple de constructeur non trivial. Il n’existe aucun constructeur par défaut, de ce fait, pour construire un **ToggleButtonAutomationPeer**, vous devez transmettre un *owner*. Par conséquent, si vous dérivez de **ToggleButtonAutomationPeer**, vous devez fournir un constructeur qui prend un *owner* et le transmet à la base. Voyons à quoi cela ressemble dans la pratique.
@@ -373,6 +382,7 @@ Tant que vous n'aurez pas apporté les modifications décrites ci-dessus (pour t
 * [Modèle de structure winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::com_ptr::copy_from](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
 * [Modèle de fonction winrt::from_abi](/uwp/cpp-ref-for-winrt/from-abi)
+* [modèle de fonction WinRT::get_self](/uwp/cpp-ref-for-winrt/get-self)
 * [Modèle de structure winrt::implements](/uwp/cpp-ref-for-winrt/implements)
 * [Modèle de fonction winrt::make](/uwp/cpp-ref-for-winrt/make)
 * [Modèle de fonction winrt::make_self](/uwp/cpp-ref-for-winrt/make-self)

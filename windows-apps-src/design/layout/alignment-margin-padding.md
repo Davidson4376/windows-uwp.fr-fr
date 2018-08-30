@@ -1,20 +1,20 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: Use alignment, margin, and padding properties to arrange the layout of elements on a page.
 title: Alignement, marge et remplissage pour la disposition
-ms.author: sezhen
+ms.author: quradic
 ms.date: 03/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b898f6ddb37ae55a07d2e94510b75b1c81fbc784
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 7a45e89c63ec12cb7b77997eac741ebedc415c54
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817680"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3117706"
 ---
 # <a name="alignment-margin-padding"></a>Alignement, marge, remplissage
 

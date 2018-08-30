@@ -1,8 +1,8 @@
 ---
-author: serenaz
+author: QuinnRadich
 description: Découvrez comment utiliser des couleurs d’accentuation et des thèmes dans vos applications UWP.
 title: Couleur dans les applications UWP
-ms.author: sezhen
+ms.author: quradic
 ms.date: 4/7/2018
 ms.topic: article
 ms.prod: windows
@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
-ms.openlocfilehash: fc348dc4f4733feae86a94e0ada1693326a201d8
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 19f4d9cde6ee2bc9615f044f18bc5e8828ca1985
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843189"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3123428"
 ---
 # <a name="color"></a>Couleur
 
@@ -27,17 +27,27 @@ Dans les applications UWP, les couleurs sont principalement déterminées par la
 
 ## <a name="color-principles"></a>Principes sur les couleurs
 
-:::row::: :::column::: **Utilisez la couleur de manière intelligente.**
+:::row:::
+    :::column:::
+        **Utilisez couleur de manière intelligente.**
 Lorsque la couleur est utilisée avec parcimonie pour mettre en évidence des éléments importants, elle permet de créer une interface utilisateur fluide et intuitive.
-:::column-end::: :::column::: **Utilisez la couleur pour indiquer l’interactivité.**
+    :::column-end:::
+    :::column:::
+        **Utilisez la couleur pour indiquer l’interactivité.**
 Il est recommandé de choisir une couleur pour indiquer les éléments interactifs de votre application. Par exemple, la plupart des pages web utilisent du texte en bleu pour représenter un lien hypertexte.
-:::column-end::: :::row-end:::
+    :::column-end:::
+:::row-end:::
 
-:::row::: :::column::: **La couleur est personnelle.**
+:::row:::
+    :::column:::
+        **La couleur est personnalisable.**
 Dans Windows, les utilisateurs peuvent choisir une couleur d’accentuation et un thème clair ou foncé, qui sont conservés tout au long de leur expérience. Vous pouvez choisir comment incorporer la couleur d’accentuation et le thème de l’utilisateur dans votre application pour personnaliser son expérience.
-:::column-end::: :::column::: **La couleur est culturelle.**
+    :::column-end:::
+    :::column:::
+        **Couleur est culturelle.**
 Prenez en compte la façon dont les couleurs utilisées seront interprétées par des personnes de différentes cultures. Par exemple, dans certaines cultures, la couleur bleue est associée à la vertu et la protection, tandis que dans d’autres cultures, elle représente le deuil.
-:::column-end::: :::row-end:::
+    :::column-end:::
+:::row-end:::
 
 ## <a name="themes"></a>Thèmes
 
@@ -96,7 +106,9 @@ Les pinceaux de thème sont utilisés aux fins suivantes:
 
 ### <a name="using-theme-brushes"></a>Utilisation des pinceaux de thème
 
-:::row::: :::column::: Lors de la création de modèles pour les contrôles personnalisés, utilisez les pinceaux de thème au lieu de coder en dur les valeurs de couleur. De cette façon, votre application peut facilement s’adapter à n’importe quel thème.
+:::row:::
+    :::column:::
+        Lors de la création de modèles de contrôles personnalisés, utilisez les pinceaux de thème au lieu des valeurs de couleur de coder en dur. De cette façon, votre application peut facilement s’adapter à n’importe quel thème.
 
         For example, these [item templates for ListView](../controls-and-patterns/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
     :::column-end:::
@@ -133,7 +145,14 @@ Les contrôles communs utilisent une couleur d’accentuation pour transmettre l
 
 ![contrôles Windows](images/color/windows-controls.svg)
 
-:::row::: :::column::: ![en-tête d’accentuation sélectionné par l’utilisateur](images/color/user-accent.svg) ![couleur d’accentuation sélectionnée par l’utilisateur](images/color/user-selected-accent.svg) :::column-end::: :::column::: ![en-tête d’accentuation personnalisé](images/color/custom-accent.svg) ![couleur d’accentuation personnalisée](images/color/brand-color.svg) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![en-tête d’accentuation sélectionné par l’utilisateur](images/color/user-accent.svg) ![couleur d’accentuation sélectionné par l’utilisateur](images/color/user-selected-accent.svg)
+    :::column-end:::
+    :::column:::
+        ![en-tête d’accentuation personnalisé](images/color/custom-accent.svg) ![couleur d’accentuation personnalisée](images/color/brand-color.svg)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="overriding-the-accent-color"></a>Remplacement de la couleur d’accentuation
 
@@ -237,7 +256,11 @@ Pour plus d’informations sur l’utilisation des pinceaux, voir [Pinceaux XAML
 
 ## <a name="usability"></a>Facilité d’utilisation
 
-:::row::: :::column::: ![illustration du contraste](images/color/illo-contrast.svg) :::column-end::: :::column span="2"::: **Contraste**
+:::row:::
+    :::column:::
+        ![illustration du contraste élevé](images/color/illo-contrast.svg)
+    :::column-end:::
+    ::: column span = «2»::: **à contraste élevé**
 
         Make sure that elements and images have sufficient contrast to differentiate between them, regardless of the accent color or theme.
 
@@ -245,13 +268,21 @@ Pour plus d’informations sur l’utilisation des pinceaux, voir [Pinceaux XAML
     :::column-end:::
 :::row-end:::
 
-:::row::: :::column::: ![illustration du contraste](images/color/illo-lighting.svg) :::column-end::: :::column span="2"::: **Éclairage**
+:::row:::
+    :::column:::
+        ![illustration du contraste élevé](images/color/illo-lighting.svg)
+    :::column-end:::
+    ::: column span = «2»::: **éclairage**
 
         Be aware that variation in ambient lighting can affect the useability of your app. For example, a page with a black background might unreadable outside due to screen glare, while a page with a white background might be painful to look at in a dark room.
     :::column-end:::
 :::row-end:::
 
-:::row::: :::column::: ![illustration du contraste](images/color/illo-colorblindness.svg) :::column-end::: :::column span="2"::: **Daltonisme**
+:::row:::
+    :::column:::
+        ![illustration du contraste élevé](images/color/illo-colorblindness.svg)
+    :::column-end:::
+    ::: column span = «2»::: **daltonisme**
 
         Be aware of how colorblindness could affect the useability of your application. For example, a user with red-green colorblindness will have difficulty distinguishing red and green elements from each other. About **8 percent of men** and **0.5 percent of women** are red-green colorblind, so avoid using these color combinations as the sole differentiator between application elements.
     :::column-end:::

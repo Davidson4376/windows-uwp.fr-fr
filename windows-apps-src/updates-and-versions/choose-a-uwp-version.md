@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows10, uwp, version, build, versions, windows, choisir, mettre à jour, mises à jour
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bb9aad1fa9da79708b3c785da80811006153767
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: c7951098e576047b5c82da72b7c4e9118ffb7569
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2918930"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3127119"
 ---
 # <a name="choose-a-uwp-version"></a>Choisir une version d’UWP
 
@@ -35,7 +35,7 @@ Le tableau suivant décrit les versions de Windows10disponibles. Veuillez noter 
 | Build10586 (mise à jour de novembre, version1511) | Cette version de Windows10 a été publiée en novembre2015. Les fonctionnalités phares comprennent l’introduction des API ORTC (Object Real-Time Communications) pour la communication vidéo dans Microsoft Edge et des API fournisseurs permettant aux applications d’utiliser l’authentification faciale Windows Hello. [Plus d’informations sur les fonctionnalités introduites dans cette version.](../whats-new/windows-10-build-10586.md) |
 | Build10240 (Windows10, version1507) | Il s’agit de la version initiale de Windows10 publiée en juillet2015. [Plus d’informations sur les fonctionnalités introduites dans cette version.](../whats-new/windows-10-build-10240.md) |
 
-Nous recommandons vivement aux nouveaux développeurs et aux développeurs qui écrivent du code pour le grand public de toujours utiliser la dernière version de Windows (build 16299). Les développeurs écrivant des applications d’entreprise doivent sérieusement envisager de prendre en charge une **version minimale** antérieure.
+Nous vous recommandons vivement de qu’aux nouveaux développeurs et les développeurs qui écrivent du code pour le grand public de toujours utilisent la dernière version de Windows (17134). Les développeurs écrivant des applications d’entreprise doivent sérieusement envisager de prendre en charge une **version minimale** antérieure.
 
 ## <a name="whats-different-in-each-uwp-version"></a>Qu’est-ce qui différencie chaque version UWP?
 

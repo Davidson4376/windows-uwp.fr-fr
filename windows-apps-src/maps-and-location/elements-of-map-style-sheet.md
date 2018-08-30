@@ -11,18 +11,20 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, cartes, feuille de style de carte
 ms.localizationpriority: medium
-ms.openlocfilehash: 984741de5be585f7d6d726ec4c736e6ebce78830
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: 11360f9d76fc07d7a6b24bd1e0bfb78df4f1d22d
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2905742"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3118885"
 ---
 # <a name="map-style-sheet-reference"></a>Référence de feuille de style de carte
 
-Utilisation des technologies de mise en correspondance Microsoft mapper des feuilles de style pour définir l’apparence de cartes.  Une feuille de style de carte est définie à l’aide de JavaScript Object Notation (JSON) et peut être utilisée dans différentes manières, y compris dans d’une application Windows Store [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) par le biais de la méthode [MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_) .
+Technologies de mise en correspondance de Microsoft permettent de définir l’apparence de cartes _feuilles de style de carte_ .  Une feuille de style de carte est définie à l’aide de JavaScript Object Notation (JSON) et peut être utilisée dans différentes manières, y compris dans d’une application Windows Store [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) par le biais de la méthode [MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_) .
 
-Par exemple, le code JSON ci-après vous permet de faire apparaître les plans d’eau en rouge, les légendes des plans d’eau en vert et les zones continentales en bleu:
+Feuilles de style peuvent être créés de manière interactive à l’aide de l’application de [l’Éditeur de feuilles de Style de carte](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) .
+
+Le code JSON ci-après peut être utilisé pour faire eau en rouge, des plans d’eau en vert et apparaissent de zones continentales en bleu:
 
 ```json
     {"version":"1.*",
@@ -30,7 +32,8 @@ Par exemple, le code JSON ci-après vous permet de faire apparaître les plans d
         "elements":{"water":{"fillColor":"#FF0000","labelColor":"#00FF00"}}
     }
 ```
-Vous pouvez également utiliser un code JSON pour supprimer la totalité des légendes et des objets ponctuels d’une carte.
+
+Ce JSON peut être utilisé pour supprimer la totalité des légendes et des points d’une carte.
 
 ```json
 

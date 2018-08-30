@@ -1,21 +1,21 @@
 ---
-author: serenaz
-Description: An overview of the universal design features that are included in every UWP app to help you build apps that scale beautifully across a range of devices.
+author: mijacobs
+Description: The universal design features included in every UWP app help you build apps that scale beautifully across a range of devices.
 title: Présentation de la conception des applications de plateforme Windows universelle (UWP) (applications Windows)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
-ms.author: sezhen
+ms.author: mijacobs
 ms.date: 05/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e6f5d17a9fbdc044c3e1c0fcd152e6bafe2705a7
-ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
-ms.translationtype: HT
+ms.openlocfilehash: 952db87d0dabdb927a472de17f0c0d7b345bde4e
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1877271"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3126746"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Présentation de la conception des applicationsUWP
 
@@ -48,9 +48,10 @@ Vous pouvez ignorer la densité de pixels et la résolution d’écran réelle l
 
 ### <a name="multiples-of-four"></a>Multiples de quatre
 
-:::row::: :::column span::: Lorsque le système met à l’échelle l’interface utilisateur d’une application, il le fait par multiples de 4.
+:::row:::
+    ::: column span::: les tailles, les marges et les positions des éléments d’interface utilisateur doivent toujours être des **multiples de 4 epx** dans vos applications UWP.
 
-        As a result, the sizes, margins, and positions of **UI elements should always be in multiples of 4 epx**. This results in the best rendering by aligning with whole pixels. It also ensures that UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
+        UWP scales across a range of devices with scaling plateaus of 100%, 125%, 150%, 175%, 200%, 225%, 250%, 300%, 350%, and 400%. The base unit is 4 because it's the only integer that can be scaled by non-whole numbers (e.g. 4*1.5 = 6). Using multiples of four aligns all UI elements with whole pixels and ensures UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
     :::column-end:::
     :::column:::
         ![grid](images/4epx.svg)
@@ -63,10 +64,18 @@ Puisque les applications UWP s'adaptent automatiquement à tous les appareils, l
 
 ### <a name="windows-frames-and-pages"></a>Fenêtres, cadres et pages
 
-:::row::: :::column::: Lorsqu’une application UWP est lancée sur n’importe quel appareil Windows10, elle se lance dans une [Fenêtre](/uwp/api/Windows.UI.Xaml.Controls.Window) avec un [Cadre](/uwp/api/Windows.UI.Xaml.Controls.Frame), qui peut naviguer entre des instances de [Page](/uwp/api/Windows.UI.Xaml.Controls.Page).
-:::column-end::: :::column::: ![Cadre](images/frame.svg) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        Lorsqu’une application UWP est lancée sur n’importe quel appareil Windows 10, elle se lance dans une [fenêtre](/uwp/api/Windows.UI.Xaml.Controls.Window) avec une [image](/uwp/api/Windows.UI.Xaml.Controls.Frame), ce qui peut naviguer entre les instances de la [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) .
+    :::column-end:::
+    :::column:::
+        ![Trame](images/frame.svg)
+    :::column-end:::
+:::row-end:::
 
-:::row::: :::column::: Vous pouvez considérer l’interface utilisateur de votre application comme une collection de pages. C’est à vous de choisir les éléments qui vont sur chaque page et les relations entre les pages.
+:::row:::
+    :::column:::
+        Vous pouvez considérer l’interface utilisateur de votre application comme une collection de pages. C’est à vous de choisir les éléments qui vont sur chaque page et les relations entre les pages.
 
         To learn how you can organize your pages, see [Navigation basics](navigation-basics.md).
     :::column-end:::
@@ -107,7 +116,9 @@ Les contrôles courants sont hautement personnalisables. Vous pouvez modifier la
 
 ## <a name="shell"></a>Shell
 
-:::row::: :::column::: Votre application UWP interagira avec l’expérience Windows plus large des vignettes et des notifications dans le Windows [Shell](../shell/tiles-and-notifications/creating-tiles.md).
+:::row:::
+    :::column:::
+        Votre application UWP interagira avec l’expérience Windows plus large de vignettes et notifications dans le Windows [Shell](../shell/tiles-and-notifications/creating-tiles.md).
 
         Tiles are displayed in the Start menu and when your app launches, and they provide a glimpse of what's going on in your app. Their power comes from the content behind them, and the intelligence and craft with which they're offered up.
 
@@ -120,8 +131,14 @@ Les contrôles courants sont hautement personnalisables. Vous pouvez modifier la
 
 ## <a name="inputs"></a>Entrées
 
-:::row::: :::column::: Les applicationsUWP s’appuient sur des interactions intelligentes. Vous pouvez concevoir une fonction sur la base d’une interaction de clic sans savoir nécessairement si le clic provient d’un clic de la souris, d’un stylet ou d’une pression du doigt. Vous pouvez également concevoir vos applications pour des [modes de saisie spécifiques](../input/input-primer.md).
-:::column-end::: :::column::: ![entrées](images/inputs.svg) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        Les applicationsUWP s’appuient sur des interactions intelligentes. Vous pouvez concevoir une fonction sur la base d’une interaction de clic sans savoir nécessairement si le clic provient d’un clic de la souris, d’un stylet ou d’une pression du doigt. Vous pouvez également concevoir vos applications pour des [modes de saisie spécifiques](../input/input-primer.md).
+    :::column-end:::
+    :::column:::
+        ![saisies](images/inputs.svg)
+    :::column-end:::
+:::row-end:::
 
 ## <a name="devices"></a>Appareils
 

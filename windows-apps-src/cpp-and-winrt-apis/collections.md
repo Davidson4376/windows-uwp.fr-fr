@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, collection
 ms.localizationpriority: medium
-ms.openlocfilehash: dacfe4135402b85bac68b63c06f99f97001fa5b9
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: 5495649a6b7fad633e24e244aa3f6efbcc05e441
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2907703"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3118069"
 ---
 # <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Collections avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -58,7 +58,7 @@ int main()
 }
 ```
 
-Comme vous pouvez le voir dans l’exemple de code ci-dessus, après avoir créé la collection vous pouvez ajouter des éléments, itérer au sein de leur et traitent généralement l’objet comme vous le feriez pour n’importe quel objet de collection Windows Runtime que vous avez peut-être reçu à partir d’une API. Si vous avez besoin d’une vue immuable au-dessus de la collection, vous pouvez appeler [IVector::GetView](/uwp/api/windows.foundation.collections.ivector-1.getview), comme indiqué. Le modèle présenté ci-dessus&mdash;de création et l’utilisation d’une collection&mdash;est appropriée pour les scénarios simples où vous souhaitez passer des données dans ou à recevoir des données en dehors d’une API.
+Comme vous pouvez le voir dans l’exemple de code ci-dessus, après avoir créé la collection vous pouvez ajouter des éléments, itérer au sein de leur et traitent généralement l’objet comme vous le feriez pour n’importe quel objet de collection Windows Runtime que vous avez peut-être reçu à partir d’une API. Si vous avez besoin d’une vue immuable au-dessus de la collection, vous pouvez appeler [**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview), comme indiqué. Le modèle présenté ci-dessus&mdash;de création et l’utilisation d’une collection&mdash;est appropriée pour les scénarios simples où vous souhaitez passer des données dans ou à recevoir des données en dehors d’une API.
 
 ### <a name="general-purpose-collection-primed-from-data"></a>Collection à usage général, amorcée à partir des données
 

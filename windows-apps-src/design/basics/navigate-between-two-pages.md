@@ -1,12 +1,12 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: Learn how to enable peer-to-peer navigation between two basic pages in an Universal Windows Platform (UWP) app.
 title: Navigation pair à pair entre deuxpages
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
-ms.author: sezhen
+ms.author: quradic
 ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
@@ -17,12 +17,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 7372f296658f9213ccc50bd6388a4f25ad47a946
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: 02b2c0d24c3f963025774c87c0c0a1c588c8a249
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2918940"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3114566"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Implémenter la navigation entre deux pages
 

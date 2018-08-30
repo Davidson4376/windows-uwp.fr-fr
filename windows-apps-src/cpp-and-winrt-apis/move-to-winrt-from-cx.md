@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 4aba8f559b7b6f0518a620d5127692d541953255
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: 63f730e5256cb88c04549cc64e36003885e02fb6
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2905942"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3113299"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-ccx"></a>Passer de C++/CX à [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 Cette rubrique montre comment porter du code [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) vers son équivalent en C++/WinRT.
@@ -67,7 +67,7 @@ if (userList != nullptr)
     ...
 ```
 
-Lors de la conversion en code C++ /WinRT équivalent, vous supprimez les accents circonflexes et modifiez l’opérateur flèche (-&gt;) en opérateur point (.), car les types C++/WinRT projetés sont des valeurs et non des pointeurs.
+Lors du portage vers l’équivalent C++ / WinRT code, vous supprimez les chapeaux accents et que vous modifiez l’opérateur flèche (-&gt;) pour l’opérateur point (.), dans la mesure où C++ / WinRT projetés sont des types de valeurs et non des pointeurs.
 
 ```cppwinrt
 IVectorView<User> userList = User::Users();
@@ -181,6 +181,43 @@ struct Sample
 private:
     Buffer m_gamerPicBuffer{ nullptr };
 };
+```
+
+## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>Conversion à partir d’une classe runtime de base vers une dérivée
+Il est courant d’avoir une-à-base de référence que vous connaissez fait référence à un objet d’un type dérivé. En C++ / CX, vous utilisez `dynamic_cast` à *cast* la référence à la base dans une référence à dérivée. Le `dynamic_cast` est simplement un appel masqué à [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Voici un exemple type&mdash;vous gérez un événement de modification de propriété de dépendance, et que vous souhaitez effectuer un cast de **DependencyObject** vers le type réel qui possède la propriété de dépendance.
+
+```cpp
+void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
+{
+    BgLabelControl^ theControl{ dynamic_cast<BgLabelControl^>(d) };
+
+    if (theControl != nullptr)
+    {
+        // succeeded ...
+    }
+}
+```
+
+L’équivalent C++ / WinRT code remplace le `dynamic_cast` avec un appel à la fonction [**IUnknown::_try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function) , qui englobe **QueryInterface**. Vous avez également la possibilité d’appeler [**IUnknown::_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function), au lieu de cela, qui lève une exception si l’interrogation de l’interface requis (l’interface par défaut du type que vous demandez) n’est pas renvoyé. Voici C++ / WinRT les exemple de code.
+
+```cppwinrt
+void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+{
+    if (BgLabelControlApp::BgLabelControl theControl{ d.try_as<BgLabelControlApp::BgLabelControl>() })
+    {
+        // succeeded ...
+    }
+
+    try
+    {
+        BgLabelControlApp::BgLabelControl theControl{ d.as<BgLabelControlApp::BgLabelControl>() };
+        // succeeded ...
+    }
+    catch (winrt::hresult_no_interface const&)
+    {
+        // failed ...
+    }
+}
 ```
 
 ## <a name="event-handling-with-a-delegate"></a>Gestion des événements avec un délégué

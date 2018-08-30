@@ -1,23 +1,23 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: The master/detail pattern displays a master list and the details for the currently selected item. This pattern is frequently used for email and contact lists/address books.
 title: Maître/Détails
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 68a8a812c6e5080630254014552a8bb05747749b
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: 28a6160019fd3bf64dd1f75bc5c6df29cd3165ad
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983520"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3123831"
 ---
 # <a name="masterdetails-pattern"></a>Modèle Maître/Détails
 

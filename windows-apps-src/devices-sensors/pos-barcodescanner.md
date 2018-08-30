@@ -3,18 +3,18 @@ author: TerryWarwick
 title: Scanneur de codes-barres
 description: Cet article répertorie les fonctionnalités de scanneur de codes-barres disponibles pour les applications UWP et renvoie vers les articles de procédures décrivant leur utilisation.
 ms.author: jken
-ms.date: 05/1/2018
+ms.date: 08/29/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: c6021b00b9ec993aa6c09df93b8845dcc789678c
-ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
-ms.translationtype: HT
+ms.openlocfilehash: 1cd6f8391de9375ddd1c20471dd10c37e99f782f
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1874387"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3129093"
 ---
 # <a name="barcode-scanner"></a>Scanneur de code-barres
 
@@ -24,8 +24,10 @@ Cette section fournit des conseils pour créer des applications de plateforme Wi
 
 |Article |Description |
 |------|------------|
-| [Prise en main](pos-barcodescanner-get-started.md)  |  |
+| [Configurer un scanneur de code-barres](../devices-sensors/pos-barcodescanner-configure.md)  | Découvrez comment configurer un scanneur de code-barres pour l’application prévue. |
+| [Utiliser un déclencheur logiciel](../devices-sensors/pos-barcodescanner-software-trigger.md) | Découvrez comment contrôler l’action de l’analyse de logiciel. |
 | [Utilisation des symbologies](pos-barcodescanner-symbologies.md) | Découvrez comment déterminer les types de code-barres pris en charge par un scanneur de code-barres et vérifier les types de code-barres qui sont reconnus par le scanneur de codes-barres à partir de votre application. |
+| [Obtenir et comprendre les données de code-barres](pos-barcodescanner-scan-data.md) | Découvrez comment obtenir et interpréter les données de code-barres qui vous scannez. |
 | [Scanneur de code-barres à caméra](pos-camerabarcode.md) | Lisez des codes-barres via un objectif de caméra standard à partir d’une application de plateforme Windows universelle. Requiert la Mise à jour d'avril2018 de Windows10 (build17134 ou version ultérieure). |
 |
  
