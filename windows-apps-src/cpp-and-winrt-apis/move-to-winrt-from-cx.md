@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 63f730e5256cb88c04549cc64e36003885e02fb6
-ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.openlocfilehash: ac7affb044c6b60a249b154cc62379c7517161b0
+ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "3113299"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "3228104"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-ccx"></a>Passer de C++/CX à [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 Cette rubrique montre comment porter du code [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) vers son équivalent en C++/WinRT.
@@ -198,7 +198,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Wind
 }
 ```
 
-L’équivalent C++ / WinRT code remplace le `dynamic_cast` avec un appel à la fonction [**IUnknown::_try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function) , qui englobe **QueryInterface**. Vous avez également la possibilité d’appeler [**IUnknown::_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function), au lieu de cela, qui lève une exception si l’interrogation de l’interface requis (l’interface par défaut du type que vous demandez) n’est pas renvoyé. Voici C++ / WinRT les exemple de code.
+L’équivalent C++ / WinRT code remplace le `dynamic_cast` avec un appel à la fonction [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function) , qui englobe **QueryInterface**. Vous avez également la possibilité d’appeler [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function), au lieu de cela, qui lève une exception si l’interrogation de l’interface requis (l’interface par défaut du type que vous demandez) n’est pas renvoyé. Voici C++ / WinRT les exemple de code.
 
 ```cppwinrt
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
