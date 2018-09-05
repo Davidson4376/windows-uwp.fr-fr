@@ -9,14 +9,14 @@ ms.date: 01/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, tâche d’arrière-plan
+keywords: tâche d’arrière-plan Windows 10, série uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 3042a6f52453fa4a4c50334b605f637f1dec92aa
-ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "3229608"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "3376065"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan
 

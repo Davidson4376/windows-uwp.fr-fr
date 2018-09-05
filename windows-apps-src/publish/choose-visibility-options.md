@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, visibilité, public privé, disponible, détectable
 ms.localizationpriority: medium
 ms.openlocfilehash: 07986353be41fcc9ef9dd9406fb0b30c4aa3d7f2
-ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "3235041"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "3375945"
 ---
 # <a name="choose-visibility-options"></a>Choisir les options de visibilité
 
@@ -75,7 +75,7 @@ Les sélections effectuées dans la section **Détectabilité** indiquent commen
 
 ### <a name="make-this-product-available-and-discoverable-in-the-store"></a>Rendre ce produit accessible et détectable dans le Store
 
-Il s’agit de l’option par défaut. Laissez cette option est sélectionnée si vous souhaitez que votre application de figurer dans le Windows Store pour les clients via le lien direct ou par d’autres méthodes, notamment la recherche, la navigation et l’intégration dans des listes organisées. 
+Il s’agit de l’option par défaut. Laissez cette option activée si vous souhaitez que votre application soit répertorié dans le magasin pour les clients à trouver via un lien direct de l’application ou par d’autres méthodes, y compris la recherche, la navigation et inclusion dans les listes curated. 
 
 ### <a name="make-this-product-available-but-not-discoverable-in-the-store"></a>Rendre ce produit accessible mais non détectable dans le Store
 

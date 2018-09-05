@@ -1,7 +1,7 @@
 ---
 author: eliotcowley
-title: Utiliser un déclencheur logiciel
-description: Découvrez comment contrôler l’action de l’analyse de logiciel.
+title: Utiliser un déclencheur de logiciel
+description: Apprenez à contrôler l’acte de numérisation à partir du logiciel.
 ms.author: elcowle
 ms.date: 08/29/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: ddd8ec979cb6d5a72b48b9b8b6a60adb73c35657
-ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "3228888"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "3376257"
 ---
-# <a name="use-a-software-trigger"></a>Utiliser un déclencheur logiciel
+# <a name="use-a-software-trigger"></a>Utiliser un déclencheur de logiciel
 
 Il peut être utile de contrôler l'action de lecture à partir d'un logiciel, si vous utilisez un scanneur de codes-barres en mode de présentation, ou si le scanneur ne comporte pas de déclencheur physique, comme un scanneur de code-barres reposant sur une caméra. Vous pouvez lancer le processus de lecture en appelant [StartSoftwareTriggerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.startsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StartSoftwareTriggerAsync).
 
@@ -33,7 +33,7 @@ Définissez la valeur souhaitée de [IsDisabledOnDataReceived](https://docs.micr
 > [!Important]
 > Vérifiez que votre scanneur de codes-barres prend en charge l’utilisation de déclencheurs logiciels en vérifiant d’abord la propriété [IsSoftwareTriggerSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannercapabilities.issoftwaretriggersupported#Windows_Devices_PointOfService_BarcodeScannerCapabilities_IsSoftwareTriggerSupported).
 
-L’exemple suivant montre comment initialiser le balayage à l’aide d’un déclencheur logiciel, qui cessera de rechercher une fois qu’il analyse un code-barre:
+L’exemple suivant montre comment initialiser le balayage à l’aide d’un déclencheur de logiciel, ce qui interrompt l’analyse une fois qu’il analyse un code-barres:
 
 ```cs
 private void SoftwareTrigger(BarcodeScanner barcodeScanner, ClaimedBarcodeScanner claimedBarcodeScanner) 

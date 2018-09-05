@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, résolution des problèmes, HRESULT, erreur
 ms.localizationpriority: medium
 ms.openlocfilehash: 4129c50a2273c8ac425f6ea972898aa09fe0fcf3
-ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "3228411"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "3381895"
 ---
 # <a name="troubleshooting-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-issues"></a>Résolution des problèmes [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 > [!NOTE]

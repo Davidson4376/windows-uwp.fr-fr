@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, ActiveDirectory, de campagne, promouvoir
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c7e7c1e2cd9a2ca083cef5fed27a9067cf1e7e7
-ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "3231091"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "3377155"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>Créer une campagne de publicité pour votre application
 

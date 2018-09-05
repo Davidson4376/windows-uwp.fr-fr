@@ -8,14 +8,14 @@ ms.date: 08/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, tâche d’arrière-plan
+keywords: tâche d’arrière-plan Windows 10, série uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5db1e03ac86768e2b1b1181cd2cc416a151a80
-ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "3243511"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "3382375"
 ---
 # <a name="support-your-app-with-background-tasks"></a>Prendre en charge votre application avec des tâches en arrière-plan
 

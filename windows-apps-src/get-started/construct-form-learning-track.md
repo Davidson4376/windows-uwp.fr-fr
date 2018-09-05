@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: prise en main, uwp, windows10, piste d'apprentissage, disposition, formulaire
 ms.localizationpriority: medium
 ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
-ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "3233081"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "3370015"
 ---
 # <a name="create-and-customize-a-form"></a>Créer et personnaliser un formulaire
 

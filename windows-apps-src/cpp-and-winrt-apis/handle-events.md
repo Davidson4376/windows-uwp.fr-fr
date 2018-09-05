@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projeté, projection, gérer, événement, délégué
 ms.localizationpriority: medium
 ms.openlocfilehash: a29c095e49b49baa63bd547c0bb928ad7f78aa86
-ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "3229691"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "3369915"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Gérer des événements en utilisant des délégués en [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 Cette rubrique montre comment inscrire et révoquer des délégués de gestion d’événements à l’aide de C++/WinRT. Vous pouvez gérer un événement à l’aide de n’importe quel objet de type fonction C++ standard.

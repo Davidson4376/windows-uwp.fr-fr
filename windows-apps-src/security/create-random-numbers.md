@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, sécurité
+keywords: Windows 10, série uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 595b4ab47e3c6c833a4b8f2e692a0cc0c8ffcaa4
-ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "3232521"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "3376105"
 ---
 # <a name="create-random-numbers"></a>Créer des nombres aléatoires
 

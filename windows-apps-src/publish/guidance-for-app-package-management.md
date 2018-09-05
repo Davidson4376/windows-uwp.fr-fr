@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b0b6315b1177138c3ede7834e2dbc792ee106dd
-ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "3237161"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "3377496"
 ---
 # <a name="guidance-for-app-package-management"></a>Aide sur la gestion des packages d’application
 

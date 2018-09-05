@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: 00e685085c004cced24b9a42ef2261a26eef10bb
-ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "3229731"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "3377802"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Déclarer des tâches en arrière-plan dans le manifeste de l’application
 

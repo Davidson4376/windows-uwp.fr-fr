@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ad817bbae2fb8b28b95095880aa1a65c391720f3
-ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "3229424"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "3371740"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 

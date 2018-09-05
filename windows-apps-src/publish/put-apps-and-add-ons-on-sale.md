@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a25980c964e399931a088e281e959df3095ffe9a
-ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
+ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "3242848"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "3376045"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>Commercialiser des applications et des extensions
 
 Vous pouvez promouvoir votre application ou votre extension dans le MicrosoftStore en les mettant en vente à prix réduit pendant une période limitée. Vous pouvez choisir de proposer le produit à un niveau de prix inférieur ou avec une remise en pourcentage.
 
 > [!NOTE]
-> Prix de vente n’est pas pris en charge pour les extensions d’abonnement.
+> Prix de vente ne sont pas pris en charge pour les modules complémentaires de l’abonnement.
 
 Lorsque vous utilisez la section **Prix de vente** de la page **Tarification et disponibilité** d’une soumission pour réduire temporairement le prix de votre application ou de votre extension, les clients qui consultent votre description dans le WindowsStore voient apparaître un prix barré indiquant que le prix a baissé (contrairement à une [modification du prix planifiée](set-and-schedule-app-pricing.md#schedule-price-changes), qui peut diminuer ou augmenter le prix sans le signaler en tant que modification dans le WindowsStore). 
 
