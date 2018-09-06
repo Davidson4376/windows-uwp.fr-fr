@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, cœur de métier, métier, applications d’entreprise, store pour entreprises, store pour éducation, entreprise
 ms.localizationpriority: medium
 ms.openlocfilehash: 9149533a12263e105356a1683257c4d9172eefb5
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3396991"
+ms.locfileid: "3414027"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>Distribuer des applications métier aux entreprises
 

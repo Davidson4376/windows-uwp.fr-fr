@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b707479d11cc7aef62385b476720bff8477ed401
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3392925"
+ms.locfileid: "3413791"
 ---
 # <a name="opening-a-developer-account"></a>Ouverture d’un compte de développeur
 

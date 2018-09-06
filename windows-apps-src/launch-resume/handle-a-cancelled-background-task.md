@@ -8,18 +8,18 @@ ms.date: 07/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, tâche d’arrière-plan
+keywords: tâche d’arrière-plan Windows 10, série uwp,
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: 2c78f5f43d93002b90902a7f9e5a943c7239946c
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3388960"
+ms.locfileid: "3413244"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Gérer une tâche en arrière-plan annulée
 

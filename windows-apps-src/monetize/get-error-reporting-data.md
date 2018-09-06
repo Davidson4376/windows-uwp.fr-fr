@@ -4,18 +4,18 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs.
 title: Obtenir les données de signalement d’erreurs pour votre application
 ms.author: mcleans
-ms.date: 06/05/2018
+ms.date: 09/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c03ea17e111f86ad390dafe5360db9d10864edc
-ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
+ms.openlocfilehash: 15dd4d5febe0b57e164f0aadeeb8d7b816dcdd66
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "3381845"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3399247"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>Obtenir les données de signalement d’erreurs pour votre application
 
@@ -106,8 +106,8 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | deviceType      | chaîne  | Une des chaînes suivantes indiquant le type d’appareil sur lequel l’erreur s’est produite:<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**IoT**</li><li>**Holographic**</li><li>**Unknown**</li></ul>    |
 | packageName     | chaîne  | Nom unique du package applicatif associé à cette erreur.      |
 | packageVersion  | chaîne  | Version du package applicatif associé à cette erreur.   |
-| deviceCount     | entier | Le nombre d’appareils uniques correspondant à cette erreur pour le niveau d’agrégation spécifié.  |
-| eventCount      | entier | Le nombre d’événements affectés à cette erreur pour le niveau d’agrégation spécifié.      |
+| deviceCount     | nombre | Le nombre d’appareils uniques correspondant à cette erreur pour le niveau d’agrégation spécifié.  |
+| eventCount      | nombre | Le nombre d’événements affectés à cette erreur pour le niveau d’agrégation spécifié.      |
 
 
 ### <a name="response-example"></a>Exemple de réponse

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, opérateurs mobiles, facturation mobile, facturation de l’opérateur mobile
 ms.localizationpriority: medium
 ms.openlocfilehash: c8d0e3093a6a44f748ca78ff3fad977f2cc94d77
-ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "3369675"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3401921"
 ---
 # <a name="mobile-operator-billing"></a>Facturation de l’opérateur mobile
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a1a82c91aeafa253427d8e526b38b8ac304591a2
-ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "3376295"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3402008"
 ---
 # <a name="advertising-performance-report"></a>Rapport sur les performances publicitaires
 
@@ -62,7 +62,7 @@ Le **Rapport sur les performances publicitaires** comprend des données correspo
 | Taux de remplissage  | Pourcentage de demandes de publicité envoyées à partir de votre application dans lesquelles une publicité était affichée.  |
 | Clics  |  Nombre de fois où quelqu’un a cliqué sur une publicité dans votre application. |
 | CTR  |  Taux de clic: nombre de fois où quelqu’un a cliqué sur une publicité divisé par le nombre d’impressions. |
-| La plupart des ordinateurs | Le pourcentage d’impressions de publicités qui peuvent être affichées dans votre application. Pour plus d’informations sur le mode de calcul de cette valeur, reportez-vous à la section [optimiser la plupart des ordinateurs de vos unités de publicité](../monetize/optimize-ad-unit-viewability.md). |
+| Visibilité | Le pourcentage d’expositions publicitaires qui ne sont visibles dans votre application. Pour plus d’informations sur la façon dont cette valeur est calculée, consultez la section [optimiser la visibilité de vos unités publicitaires](../monetize/optimize-ad-unit-viewability.md). |
 | Crédits obtenus  | Si vous exécutez une campagne [publicité de la communauté](https://docs.microsoft.com/windows/uwp/publish/about-community-ads), cette valeur indique le nombre de crédits que vous avez gagnés pour un espace publicitaire promotionnel en affichant la publicité de la communauté dans votre application.  |
 | Crédits dépensés  | Si vous exécutez une campagne [publicité de la communauté](https://docs.microsoft.com/windows/uwp/publish/about-community-ads), cette valeur indique le nombre de crédits que vous avez dépensés pour des publicités pour votre application.  |
 

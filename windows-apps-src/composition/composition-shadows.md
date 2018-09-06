@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 84e12d6c3e25a18902aaa55011949dd5b5ff97ca
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3393553"
+ms.locfileid: "3413838"
 ---
 # <a name="shadows-in-windows-ui"></a>Ombres dans l’interface utilisateur de Windows
 

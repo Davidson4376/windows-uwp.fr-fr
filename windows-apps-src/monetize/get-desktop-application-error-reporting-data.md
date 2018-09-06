@@ -3,18 +3,18 @@ author: mcleanbyron
 description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour récupérer les données agrégées de rapport d’erreurs pour une application de bureau, pour une plage de dates données et en fonction d’autres filtres facultatifs.
 title: Obtenir des données de rapport d'erreur pour votre application de bureau
 ms.author: mcleans
-ms.date: 06/05/2018
+ms.date: 09/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs, application de bureau
 ms.localizationpriority: medium
-ms.openlocfilehash: 71c566ff375f36108d724f3c550570b3332f4c6b
-ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
+ms.openlocfilehash: 66594fd6f59281011fccab21ad5618827db322dd
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "3382355"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3402042"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>Obtenir des données de rapport d'erreur pour votre application de bureau
 
@@ -104,7 +104,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | market          | chaîne  | Code pays ISO3166 du marché des appareils.   |
 | deviceType      | chaîne  | Une des chaînes suivantes spécifiant le type d’appareil sur lequel l’erreur s’est produite:<p/><ul><li><strong>PC</strong></li><li><strong>Serveur</strong></li><li><strong>Tablette</strong></li><li><strong>Inconnu</strong></li></ul>    |
 | applicationVersion     | chaîne  |   La version du fichier exécutable de l’application dans laquelle l’erreur s’est produite.    |
-| eventCount      | entier | Le nombre d’événements affectés à cette erreur pour le niveau d’agrégation spécifié.      |
+| eventCount      | nombre | Le nombre d’événements affectés à cette erreur pour le niveau d’agrégation spécifié.      |
 
 
 ### <a name="response-example"></a>Exemple de réponse
