@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: fe36fec72645558c539dd8270fd15d35d92b66b5
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3413274"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3662584"
 ---
 # <a name="distribute-a-packaged-desktop-app-desktop-bridge"></a>Distribuer une application de bureau empaquetée (Pont du bureau)
 
