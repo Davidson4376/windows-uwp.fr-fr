@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, collection
 ms.localizationpriority: medium
-ms.openlocfilehash: dc52274c80f3689d2cb10b98bda38788e3400b4e
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 1ef6fbfab45197c868296186363c168a6c443247
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3661574"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3822623"
 ---
 # <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Collections avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -325,19 +325,19 @@ private:
 ```
 
 ## <a name="important-apis"></a>API importantes
-* [ItemsControl.ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)
-* [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)
-* [IVector](/uwp/api/windows.foundation.collections.ivector_t_)
-* [WinRT::map_base](/uwp/cpp-ref-for-winrt/map-base)
-* [WinRT::map_view_base](/uwp/cpp-ref-for-winrt/map-view-base)
-* [WinRT::observable_map_base](/uwp/cpp-ref-for-winrt/observable-map-base)
-* [WinRT::observable_vector_base](/uwp/cpp-ref-for-winrt/observable-vector-base)
-* [WinRT::single_threaded_observable_map](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)
-* [WinRT::single_threaded_map](/uwp/cpp-ref-for-winrt/single-threaded-map)
-* [WinRT::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
-* [WinRT::single_threaded_vector](/uwp/cpp-ref-for-winrt/single-threaded-vector)
-* [WinRT::vector_base](/uwp/cpp-ref-for-winrt/vector-base)
-* [WinRT::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
+* [ItemsControl.ItemsSource propriété](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)
+* [Interface de IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)
+* [Interface de IVector](/uwp/api/windows.foundation.collections.ivector_t_)
+* [modèle de structure WinRT::map_base](/uwp/cpp-ref-for-winrt/map-base)
+* [modèle de structure WinRT::map_view_base](/uwp/cpp-ref-for-winrt/map-view-base)
+* [modèle de structure WinRT::observable_map_base](/uwp/cpp-ref-for-winrt/observable-map-base)
+* [modèle de structure WinRT::observable_vector_base](/uwp/cpp-ref-for-winrt/observable-vector-base)
+* [modèle de fonction WinRT::single_threaded_observable_map](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)
+* [modèle de fonction WinRT::single_threaded_map](/uwp/cpp-ref-for-winrt/single-threaded-map)
+* [modèle de fonction WinRT::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
+* [modèle de fonction WinRT::single_threaded_vector](/uwp/cpp-ref-for-winrt/single-threaded-vector)
+* [modèle de structure WinRT::vector_base](/uwp/cpp-ref-for-winrt/vector-base)
+* [modèle de structure WinRT::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
 
 ## <a name="related-topics"></a>Rubriques associées
 * [Les catégories de valeur et des références associées](cpp-value-categories.md)

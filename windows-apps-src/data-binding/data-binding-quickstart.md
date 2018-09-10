@@ -4,44 +4,39 @@ ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
 title: Vue d’ensemble de la liaison de données
 description: Cette rubrique vous montre comment lier un contrôle (ou un autre élément d’interface utilisateur) à un élément individuel ou lier un contrôle d’élément à une collection d’éléments dans une application de plateforme Windows universelle (UWP).
 ms.author: markl
-ms.date: 02/08/2017
+ms.date: 07/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fd9b9b4f1c6ddd48db8801d714568ccb011ea7e5
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 0e070acdfcc6dded12ae48cc34fe46f099da6401
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1494046"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3821063"
 ---
-<a name="data-binding-overview"></a>Vue d’ensemble de la liaison de données
-=====================
-
-
+# <a name="data-binding-overview"></a>Vue d’ensemble de la liaison de données
 
 Cette rubrique vous montre comment lier un contrôle (ou un autre élément d’interface utilisateur) à un élément individuel ou lier un contrôle d’éléments à ou un contrôle de liste à une collection d’éléments dans une application de plateforme Windows universelle (UWP). Elle explique également comment contrôler le rendu des éléments, implémenter un affichage détails en fonction d’une sélection et convertir des données pour l’affichage. Pour obtenir des informations plus détaillées, consultez [Présentation détaillée de la liaison de données](data-binding-in-depth.md).
 
-<a name="prerequisites"></a>Connaissances requises
--------------------------------------------------------------------------------------------------------------
+## <a name="prerequisites"></a>Connaissances requises
 
 Dans cette rubrique, nous partons du principe que vous savez créer une application UWP de base. Pour obtenir des instructions sur la création de votre première application UWP, voir [Prise en main des applications Windows](https://developer.microsoft.com/windows/getstarted).
 
-<a name="create-the-project"></a>Créer le projet
----------------------------------------------------------------------------------------------------------------------------------
+## <a name="create-the-project"></a>Créer le projet
 
 Commencez par créer un projet **Application vide (universelle Windows)**. Nommez-le «Quickstart».
 
-<a name="binding-to-a-single-item"></a>Liaison à un élément unique
----------------------------------------------------------------------------------------------------------------------------------------------------------
+## <a name="binding-to-a-single-item"></a>Liaison à un élément unique
 
 Chaque liaison se compose d’une cible et d’une source de liaison. En règle générale, la cible est une propriété d’un contrôle ou d’un autre élément d’interface utilisateur, et la source est une propriété d’une instance de classe (un modèle de données ou un modèle d’affichage). Cet exemple montre comment lier un contrôle à un élément unique. La cible est la propriété **Text** d’un contrôle **TextBlock**. La source est une instance d’une classe simple nommée **Recording**, qui représente un enregistrement audio. Examinons d’abord la classe.
 
-Ajoutez une nouvelle classe à votre projet, nommez-la Recording.cs (si vous utilisez les extraits de code C#, C++ fournis ci-dessous également) et ajoutez-lui ce code.
+Si vous utilisez c#, puis ajoutez une nouvelle classe à votre projet et nommez-le `Recording.cs`.
 
-> [!div class="tabbedCodeSnippets"]
+Si vous utilisez [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis ajouter de nouveaux éléments de **Fichier Midl (.idl)** au projet, nommé comme indiqué dans C++ / WinRT exemple l’intégralité du code ci-dessous. Remplacez le contenu de ces nouveaux fichiers par le code [MIDL 3.0](/uwp/midl-3/intro) indiqué dans la liste, générez le projet pour générer `Recording.h` et `.cpp` et `RecordingViewModel.h` et `.cpp`, puis ajoutez le code pour les fichiers générés pour correspondre à la liste. Pour plus d’informations sur ces fichiers générés et comment les copier dans votre projet, consultez [contrôles XAML; liaison à C++ / WinRT propriété](/windows/uwp/cpp-and-winrt-apis/binding-property).
+
 ```csharp
 namespace Quickstart
 {
@@ -72,190 +67,315 @@ namespace Quickstart
     }
 }
 ```
-```cpp
-    #include <sstream>
-    namespace Quickstart
+
+```cppwinrt
+// Recording.idl
+namespace Quickstart
+{
+    runtimeclass Recording : Windows.UI.Xaml.DependencyObject
     {
-        public ref class Recording sealed
-        {
-        private:
-            Platform::String^ artistName;
-            Platform::String^ compositionName;
-            Windows::Globalization::Calendar^ releaseDateTime;
-        public:
-            Recording(Platform::String^ artistName, Platform::String^ compositionName,
-                Windows::Globalization::Calendar^ releaseDateTime) :
-                artistName{ artistName },
-                compositionName{ compositionName },
-                releaseDateTime{ releaseDateTime } {}
-            property Platform::String^ ArtistName
-            {
-                Platform::String^ get() { return this->artistName; }
-            }
-            property Platform::String^ CompositionName
-            {
-                Platform::String^ get() { return this->compositionName; }
-            }
-            property Windows::Globalization::Calendar^ ReleaseDateTime
-            {
-                Windows::Globalization::Calendar^ get() { return this->releaseDateTime; }
-            }
-            property Platform::String^ OneLineSummary
-            {
-                Platform::String^ get()
-                {
-                    std::wstringstream wstringstream;
-                    wstringstream << this->CompositionName->Data();
-                    wstringstream << L" by " << this->ArtistName->Data();
-                    wstringstream << L", released: " << this->ReleaseDateTime->MonthAsNumericString()->Data();
-                    wstringstream << L"/" << this->ReleaseDateTime->DayAsString()->Data();
-                    wstringstream << L"/" << this->ReleaseDateTime->YearAsString()->Data();
-                    return ref new Platform::String(wstringstream.str().c_str());
-                }
-            }
-        };
-        public ref class RecordingViewModel sealed
-        {
-        private:
-            Recording^ defaultRecording;
-        public:
-            RecordingViewModel()
-            {
-                Windows::Globalization::Calendar^ releaseDateTime = ref new Windows::Globalization::Calendar();
-                releaseDateTime->Month = 1;
-                releaseDateTime->Day = 1;
-                releaseDateTime->Year = 1761;
-                this->defaultRecording = ref new Recording{ L"Wolfgang Amadeus Mozart", L"Andante in C for Piano", releaseDateTime };
-            }
-            property Recording^ DefaultRecording
-            {
-                Recording^ get() { return this->defaultRecording; };
-            }
-        };
+        Recording(String artistName, String compositionName, Windows.Globalization.Calendar releaseDateTime);
+        String ArtistName{ get; };
+        String CompositionName{ get; };
+        Windows.Globalization.Calendar ReleaseDateTime{ get; };
+        String OneLineSummary{ get; };
     }
+}
+
+// RecordingViewModel.idl
+import "Recording.idl";
+
+namespace Quickstart
+{
+    runtimeclass RecordingViewModel : Windows.UI.Xaml.DependencyObject
+    {
+        RecordingViewModel();
+        Quickstart.Recording DefaultRecording{ get; };
+    }
+}
+
+// Recording.h
+// Add these fields:
+...
+#include <sstream>
+...
+private:
+    std::wstring m_artistName;
+    std::wstring m_compositionName;
+    Windows::Globalization::Calendar m_releaseDateTime;
+...
+
+// Recording.cpp
+// Implement like this:
+...
+Recording::Recording(hstring const& artistName, hstring const& compositionName, Windows::Globalization::Calendar const& releaseDateTime) :
+    m_artistName{ artistName.c_str() },
+    m_compositionName{ compositionName.c_str() },
+    m_releaseDateTime{ releaseDateTime } {}
+
+hstring Recording::ArtistName(){ return hstring{ m_artistName }; }
+hstring Recording::CompositionName(){ return hstring{ m_compositionName }; }
+Windows::Globalization::Calendar Recording::ReleaseDateTime(){ return m_releaseDateTime; }
+
+hstring Recording::OneLineSummary()
+{
+    std::wstringstream wstringstream;
+    wstringstream << m_compositionName.c_str();
+    wstringstream << L" by " << m_artistName.c_str();
+    wstringstream << L", released: " << m_releaseDateTime.MonthAsNumericString().c_str();
+    wstringstream << L"/" << m_releaseDateTime.DayAsString().c_str();
+    wstringstream << L"/" << m_releaseDateTime.YearAsString().c_str();
+    return hstring{ wstringstream.str().c_str() };
+}
+...
+
+// RecordingViewModel.h
+// Add this field:
+...
+#include "Recording.h"
+...
+private:
+    Quickstart::Recording m_defaultRecording{ nullptr };
+...
+
+// RecordingViewModel.cpp
+// Implement like this:
+...
+Quickstart::Recording RecordingViewModel::DefaultRecording()
+{
+    Windows::Globalization::Calendar releaseDateTime;
+    releaseDateTime.Month(1);
+    releaseDateTime.Day(1);
+    releaseDateTime.Year(1761);
+    m_defaultRecording = winrt::make<Recording>(L"Wolfgang Amadeus Mozart", L"Andante in C for Piano", releaseDateTime);
+    return m_defaultRecording;
+}
+...
+```
+
+```cpp
+#include <sstream>
+namespace Quickstart
+{
+    public ref class Recording sealed
+    {
+    private:
+        Platform::String^ artistName;
+        Platform::String^ compositionName;
+        Windows::Globalization::Calendar^ releaseDateTime;
+    public:
+        Recording(Platform::String^ artistName, Platform::String^ compositionName,
+            Windows::Globalization::Calendar^ releaseDateTime) :
+            artistName{ artistName },
+            compositionName{ compositionName },
+            releaseDateTime{ releaseDateTime } {}
+        property Platform::String^ ArtistName
+        {
+            Platform::String^ get() { return this->artistName; }
+        }
+        property Platform::String^ CompositionName
+        {
+            Platform::String^ get() { return this->compositionName; }
+        }
+        property Windows::Globalization::Calendar^ ReleaseDateTime
+        {
+            Windows::Globalization::Calendar^ get() { return this->releaseDateTime; }
+        }
+        property Platform::String^ OneLineSummary
+        {
+            Platform::String^ get()
+            {
+                std::wstringstream wstringstream;
+                wstringstream << this->CompositionName->Data();
+                wstringstream << L" by " << this->ArtistName->Data();
+                wstringstream << L", released: " << this->ReleaseDateTime->MonthAsNumericString()->Data();
+                wstringstream << L"/" << this->ReleaseDateTime->DayAsString()->Data();
+                wstringstream << L"/" << this->ReleaseDateTime->YearAsString()->Data();
+                return ref new Platform::String(wstringstream.str().c_str());
+            }
+        }
+    };
+    public ref class RecordingViewModel sealed
+    {
+    private:
+        Recording ^ defaultRecording;
+    public:
+        RecordingViewModel()
+        {
+            Windows::Globalization::Calendar^ releaseDateTime = ref new Windows::Globalization::Calendar();
+            releaseDateTime->Month = 1;
+            releaseDateTime->Day = 1;
+            releaseDateTime->Year = 1761;
+            this->defaultRecording = ref new Recording{ L"Wolfgang Amadeus Mozart", L"Andante in C for Piano", releaseDateTime };
+        }
+        property Recording^ DefaultRecording
+        {
+            Recording^ get() { return this->defaultRecording; };
+        }
+    };
+}
 ```
 
 Ensuite, exposez la classe de source de liaison à partir de la classe qui représente votre page de balisage. Pour ce faire, nous ajoutons une propriété de type **RecordingViewModel** à **MainPage**.
 
-> [!div class="tabbedCodeSnippets"]
+Si vous utilisez [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis la première mise à jour `MainPage.idl`. Générez le projet pour régénérer `MainPage.h` et `.cpp`et fusionner les modifications dans ces fichiers générés dans celles dans votre projet.
+
 ```csharp
-    namespace Quickstart
+namespace Quickstart
+{
+    public sealed partial class MainPage : Page
     {
-        public sealed partial class MainPage : Page
+        public MainPage()
         {
-            public MainPage()
-            {
-                this.InitializeComponent();
-                this.ViewModel = new RecordingViewModel();
-            }
-            public RecordingViewModel ViewModel { get; set; }
+            this.InitializeComponent();
+            this.ViewModel = new RecordingViewModel();
         }
+        public RecordingViewModel ViewModel{ get; set; }
     }
+}
 ```
+
+```cppwinrt
+// MainPage.idl
+// Add this property:
+import "RecordingViewModel.idl";
+...
+RecordingViewModel ViewModel{ get; };
+...
+
+// MainPage.h
+// Add this property and this field:
+...
+#include "RecordingViewModel.h"
+...
+    Quickstart::RecordingViewModel ViewModel();
+
+private:
+    Quickstart::RecordingViewModel m_viewModel{ nullptr };
+...
+
+// MainPage.cpp
+// Implement like this:
+...
+MainPage::MainPage()
+{
+    InitializeComponent();
+    m_viewModel = winrt::make<RecordingViewModel>();
+}
+Quickstart::RecordingViewModel MainPage::ViewModel()
+{
+    return m_viewModel;
+}
+...
+```
+
 ```cpp
-    namespace Quickstart
+namespace Quickstart
+{
+    public ref class MainPage sealed
     {
-        public ref class MainPage sealed
+    private:
+        RecordingViewModel ^ viewModel;
+    public:
+        MainPage()
         {
-        private:
-            RecordingViewModel^ viewModel;
-        public:
-            MainPage()
-            {
-                InitializeComponent();
-                this->viewModel = ref new RecordingViewModel();
-            }
-            property RecordingViewModel^ ViewModel
-            {
-                RecordingViewModel^ get() { return this->viewModel; };
-            }
-        };
-    }
+            InitializeComponent();
+            this->viewModel = ref new RecordingViewModel();
+        }
+        property RecordingViewModel^ ViewModel
+        {
+            RecordingViewModel^ get() { return this->viewModel; };
+        }
+    };
+}
 ```
 
 La dernière étape consiste à lier un contrôle **TextBlock** à la propriété **ViewModel.DefaultRecording.OneLiner**.
 
 ```xml
-    <Page x:Class="Quickstart.MainPage" ... >
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <TextBlock Text="{x:Bind ViewModel.DefaultRecording.OneLineSummary}"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"/>
-        </Grid>
-    </Page>
+<Page x:Class="Quickstart.MainPage" ... >
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Text="{x:Bind ViewModel.DefaultRecording.OneLineSummary}"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center"/>
+    </Grid>
+</Page>
 ```
+
+Si vous utilisez [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), vous devez supprimer la fonction **MainPage::ClickHandler** afin que le projet à générer.
 
 Résultat:
 
 ![Liaison d’une zone de texte](images/xaml-databinding0.png)
 
-<a name="binding-to-a-collection-of-items"></a>Liaison à une collection d’éléments
-------------------------------------------------------------------------------------------------------------------
+## <a name="binding-to-a-collection-of-items"></a>Liaison à une collection d’éléments
 
 Un scénario courant consiste à créer une liaison à une collection d’objets métier. Dans C# et Visual Basic, la classe [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) générique est un bon choix de collection pour la liaison de données, car elle implémente les interfaces [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) et [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx). Ces interfaces envoient une notification de modification aux liaisons lorsque des éléments sont ajoutés ou supprimés ou qu’une propriété de la liste est elle-même modifiée. Si vous voulez que vos contrôles liés soient mis à jour avec les modifications apportées aux propriétés des objets de la collection, l’objet métier doit également implémenter **INotifyPropertyChanged**. Pour plus d’informations, consultez [Présentation détaillée de la liaison de données](data-binding-in-depth.md).
 
+Si vous utilisez [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis vous pouvez lire sur la liaison à une collection observable dans [contrôles d’éléments XAML; liaison à C++ / WinRT collection](/windows/uwp/cpp-and-winrt-apis/binding-collection).
+
 L’exemple suivant lie une classe [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) à une collection d’objets `Recording`. Commençons par ajouter la collection à notre modèle d’affichage. Il suffit d’ajouter ces nouveaux membres à la classe **RecordingViewModel**.
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
-    public class RecordingViewModel
-    {
-        ...
+public class RecordingViewModel
+{
+    ...
         private ObservableCollection<Recording> recordings = new ObservableCollection<Recording>();
-        public ObservableCollection<Recording> Recordings { get { return this.recordings; } }
+    public ObservableCollection<Recording> Recordings{ get{ return this.recordings; } }
         public RecordingViewModel()
-        {
-            this.recordings.Add(new Recording() { ArtistName = "Johann Sebastian Bach",
-            CompositionName = "Mass in B minor", ReleaseDateTime = new DateTime(1748, 7, 8) });
-            this.recordings.Add(new Recording() { ArtistName = "Ludwig van Beethoven",
-            CompositionName = "Third Symphony", ReleaseDateTime = new DateTime(1805, 2, 11) });
-            this.recordings.Add(new Recording() { ArtistName = "George Frideric Handel",
-            CompositionName = "Serse", ReleaseDateTime = new DateTime(1737, 12, 3) });
-        }
-    }
-```
-```cpp
-    public ref class RecordingViewModel sealed
     {
-    private:
+        this.recordings.Add(new Recording(){ ArtistName = "Johann Sebastian Bach",
+            CompositionName = "Mass in B minor", ReleaseDateTime = new DateTime(1748, 7, 8) });
+        this.recordings.Add(new Recording(){ ArtistName = "Ludwig van Beethoven",
+            CompositionName = "Third Symphony", ReleaseDateTime = new DateTime(1805, 2, 11) });
+        this.recordings.Add(new Recording(){ ArtistName = "George Frideric Handel",
+            CompositionName = "Serse", ReleaseDateTime = new DateTime(1737, 12, 3) });
+    }
+}
+```
+
+```cpp
+public ref class RecordingViewModel sealed
+{
+private:
+    ...
+    Windows::Foundation::Collections::IVector<Recording^>^ recordings;
+public:
+    RecordingViewModel()
+    {
         ...
-        Windows::Foundation::Collections::IVector<Recording^>^ recordings;
-    public:
-        RecordingViewModel()
+        releaseDateTime = ref new Windows::Globalization::Calendar();
+        releaseDateTime->Month = 7;
+        releaseDateTime->Day = 8;
+        releaseDateTime->Year = 1748;
+        Recording^ recording = ref new Recording{ L"Johann Sebastian Bach", L"Mass in B minor", releaseDateTime };
+        this->Recordings->Append(recording);
+        releaseDateTime = ref new Windows::Globalization::Calendar();
+        releaseDateTime->Month = 2;
+        releaseDateTime->Day = 11;
+        releaseDateTime->Year = 1805;
+        recording = ref new Recording{ L"Ludwig van Beethoven", L"Third Symphony", releaseDateTime };
+        this->Recordings->Append(recording);
+        releaseDateTime = ref new Windows::Globalization::Calendar();
+        releaseDateTime->Month = 12;
+        releaseDateTime->Day = 3;
+        releaseDateTime->Year = 1737;
+        recording = ref new Recording{ L"George Frideric Handel", L"Serse", releaseDateTime };
+        this->Recordings->Append(recording);
+    }
+    ...
+    property Windows::Foundation::Collections::IVector<Recording^>^ Recordings
+    {
+        Windows::Foundation::Collections::IVector<Recording^>^ get()
         {
-            ...
-            releaseDateTime = ref new Windows::Globalization::Calendar();
-            releaseDateTime->Month = 7;
-            releaseDateTime->Day = 8;
-            releaseDateTime->Year = 1748;
-            Recording^ recording = ref new Recording{ L"Johann Sebastian Bach", L"Mass in B minor", releaseDateTime };
-            this->Recordings->Append(recording);
-            releaseDateTime = ref new Windows::Globalization::Calendar();
-            releaseDateTime->Month = 2;
-            releaseDateTime->Day = 11;
-            releaseDateTime->Year = 1805;
-            recording = ref new Recording{ L"Ludwig van Beethoven", L"Third Symphony", releaseDateTime };
-            this->Recordings->Append(recording);
-            releaseDateTime = ref new Windows::Globalization::Calendar();
-            releaseDateTime->Month = 12;
-            releaseDateTime->Day = 3;
-            releaseDateTime->Year = 1737;
-            recording = ref new Recording{ L"George Frideric Handel", L"Serse", releaseDateTime };
-            this->Recordings->Append(recording);
-        }
-        ...
-        property Windows::Foundation::Collections::IVector<Recording^>^ Recordings
-        {
-            Windows::Foundation::Collections::IVector<Recording^>^ get()
+            if (this->recordings == nullptr)
             {
-                if (this->recordings == nullptr)
-                {
-                    this->recordings = ref new Platform::Collections::Vector<Recording^>();
-                }
-                return this->recordings;
-            };
-        }
-    };
+                this->recordings = ref new Platform::Collections::Vector<Recording^>();
+            }
+            return this->recordings;
+        };
+    }
+};
 ```
 
 Ensuite, liez un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) à la propriété **ViewModel.Recordings**.
@@ -276,41 +396,40 @@ Nous n’avons pas encore fourni de modèle de données pour la classe **Recordi
 Pour résoudre ce problème, nous pouvons soit remplacer [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) pour renvoyer la valeur de **OneLineSummary**, soit fournir un modèle de données. L’option du modèle de données est plus courante et sans doute plus souple. Pour spécifier un modèle de données, vous devez utiliser la propriété [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) d’un contrôle de contenu ou la propriété [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) d’un contrôle d’éléments. Voici deux manières de créer un modèle de données pour **Recording** avec une illustration du résultat:
 
 ```xml
-    <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
-        HorizontalAlignment="Center" VerticalAlignment="Center">
-        <ListView.ItemTemplate>
-            <DataTemplate x:DataType="local:Recording">
-                <TextBlock Text="{x:Bind OneLineSummary}"/>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+<ListView ItemsSource="{x:Bind ViewModel.Recordings}"
+HorizontalAlignment="Center" VerticalAlignment="Center">
+    <ListView.ItemTemplate>
+        <DataTemplate x:DataType="local:Recording">
+            <TextBlock Text="{x:Bind OneLineSummary}"/>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>
 ```
 
 ![Liaison d’un affichage liste](images/xaml-databinding2.png)
 
 ```xml
-    <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
-    HorizontalAlignment="Center" VerticalAlignment="Center">
-        <ListView.ItemTemplate>
-            <DataTemplate x:DataType="local:Recording">
-                <StackPanel Orientation="Horizontal" Margin="6">
-                    <SymbolIcon Symbol="Audio" Margin="0,0,12,0"/>
-                    <StackPanel>
-                        <TextBlock Text="{x:Bind ArtistName}" FontWeight="Bold"/>
-                        <TextBlock Text="{x:Bind CompositionName}"/>
-                    </StackPanel>
+<ListView ItemsSource="{x:Bind ViewModel.Recordings}"
+HorizontalAlignment="Center" VerticalAlignment="Center">
+    <ListView.ItemTemplate>
+        <DataTemplate x:DataType="local:Recording">
+            <StackPanel Orientation="Horizontal" Margin="6">
+                <SymbolIcon Symbol="Audio" Margin="0,0,12,0"/>
+                <StackPanel>
+                    <TextBlock Text="{x:Bind ArtistName}" FontWeight="Bold"/>
+                    <TextBlock Text="{x:Bind CompositionName}"/>
                 </StackPanel>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+            </StackPanel>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>
 ```
 
 ![Liaison d’un affichage liste](images/xaml-databinding3.png)
 
 Pour en savoir plus sur la syntaxe XAML, consultez [Créer une interface utilisateur avec XAML](https://msdn.microsoft.com/library/windows/apps/Mt228349). Pour en savoir plus sur la mise en forme de contrôle, consultez [Définir des dispositions avec XAML](https://msdn.microsoft.com/library/windows/apps/Mt228350).
 
-<a name="adding-a-details-view"></a>Ajout d’un affichage de détails
------------------------------------------------------------------------------------------------------
+## <a name="adding-a-details-view"></a>Ajout d’un affichage de détails
 
 Vous pouvez choisir d’afficher tous les détails des objets **Recording** dans les éléments [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). Cependant, l’espace occupé à l’écran sera considérable. Au lieu de cela, vous pouvez afficher juste assez de données dans l’élément à identifier puis, lorsque l’utilisateur effectue une sélection, afficher tous les détails de l’élément sélectionné dans un élément d’interface utilisateur distinct appelé affichage détails. Cette disposition est également connue sous le nom d’affichage maître/détails ou d’affichage liste/détails.
 
@@ -319,14 +438,18 @@ Il existe deux façons de procéder : Vous pouvez lier l’affichage de détails
 > [!NOTE]
 > Jusqu’à présent, nous avons uniquement utilisé l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), mais les deux techniques que nous allons présenter ci-dessous requièrent l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), plus souple (mais moins performante).
 
-Tout d’abord, voici la technique [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770). Si vous utilisez des extensions de composant Visual C++ (C++/CX), dans la mesure où [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) sera utilisé, vous devrez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à la classe **Recording**.
 
+Si vous utilisez [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis vous devez implémenter l' [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) et [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) interfaces pour qu’ils soient en mesure d’utiliser l’extension de balisage {Binding}.
+
+Si vous utilisez des extensions de composant Visual C++ (C++/CX), dans la mesure où [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) sera utilisé, vous devrez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à la classe **Recording**.
+
+Tout d’abord, voici la technique [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770).
 ```cpp
-    [Windows::UI::Xaml::Data::Bindable]
-    public ref class Recording sealed
-    {
-        ...
-    };
+[Windows::UI::Xaml::Data::Bindable]
+public ref class Recording sealed
+{
+    ...
+};
 ```
 
 La seule autre modification nécessaire concerne le balisage.
@@ -361,30 +484,29 @@ La seule autre modification nécessaire concerne le balisage.
 Pour la technique [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), commencez par ajouter une classe **CollectionViewSource** comme ressource de page.
 
 ```xml
-    <Page.Resources>
-        <CollectionViewSource x:Name="RecordingsCollection" Source="{x:Bind ViewModel.Recordings}"/>
-    </Page.Resources>
+<Page.Resources>
+    <CollectionViewSource x:Name="RecordingsCollection" Source="{x:Bind ViewModel.Recordings}"/>
+</Page.Resources>
 ```
 
 Ensuite, réglez les liaisons sur le contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) (qui n’a plus besoin d’être nommé) et sur l’affichage de détails de manière à utiliser la classe [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833). Notez qu’en liant l’affichage de détails directement à la classe **CollectionViewSource**, vous impliquez que vous souhaitez créer une liaison à l’élément actuel dans les liaisons où le chemin est introuvable au sein même de la collection. Il est inutile de spécifier la propriété **CurrentItem** en tant que chemin de la liaison, bien que vous puissiez le faire s’il existe la moindre ambiguïté.
 
 ```xml
-    ...
+...
 
-    <ListView ItemsSource="{Binding Source={StaticResource RecordingsCollection}}">
+<ListView ItemsSource="{Binding Source={StaticResource RecordingsCollection}}">
 
-    ...
+...
 
-    <StackPanel DataContext="{Binding Source={StaticResource RecordingsCollection}}" ...>
-    ...
+<StackPanel DataContext="{Binding Source={StaticResource RecordingsCollection}}" ...>
+...
 ```
 
 Et voici le résultat identique dans chacun des cas.
 
 ![Liaison d’un affichage liste](images/xaml-databinding4.png)
 
-<a name="formatting-or-converting-data-values-for-display"></a>Mise en forme ou conversion des valeurs de données pour l’affichage
---------------------------------------------------------------------------------------------------------------------------------------------
+## <a name="formatting-or-converting-data-values-for-display"></a>Mise en forme ou conversion des valeurs de données pour l’affichage
 
 Le rendu ci-dessus présente un léger problème. La propriété **ReleaseDateTime** n’est pas simplement une date. Il s’agit d’une valeur [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx), ce qui signifie que nous obtenons plus d’informations que nécessaire. Une solution consiste à ajouter à la classe **Recording** une propriété de chaîne qui renvoie `this.ReleaseDateTime.ToString("d")`. Nommer cette propriété **ReleaseDate** indiquerait qu’elle renvoie une date, et non pas une date et une heure. Nommer cette propriété **ReleaseDateAsString** indiquerait en plus qu’elle renvoie une chaîne.
 
@@ -422,16 +544,16 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 Nous pouvons maintenant ajouter une instance de **StringFormatter** comme ressource de page et l’utiliser dans notre liaison. Nous passons la chaîne de format dans le convertisseur à partir du balisage pour une souplesse de mise en forme optimale.
 
 ```xml
-    <Page.Resources>
-        <local:StringFormatter x:Key="StringFormatterValueConverter"/>
-    </Page.Resources>
-    ...
+<Page.Resources>
+    <local:StringFormatter x:Key="StringFormatterValueConverter"/>
+</Page.Resources>
+...
 
-    <TextBlock Text="{Binding ReleaseDateTime,
-        Converter={StaticResource StringFormatterValueConverter},
-        ConverterParameter=Released: \{0:d\}}"/>
+<TextBlock Text="{Binding ReleaseDateTime,
+    Converter={StaticResource StringFormatterValueConverter},
+    ConverterParameter=Released: \{0:d\}}"/>
 
-    ...
+...
 ```
 
 Résultat :
