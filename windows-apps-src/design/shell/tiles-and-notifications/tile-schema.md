@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: The following article describes all of the properties and elements within tile content.
 title: Schéma du contenu de la vignette
 ms.assetid: 7CBC3BD5-D9C3-4781-8BD0-1F28039E1FA8
@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, vignette, notification par vignette, contenu de vignette, schéma, charge utile de vignette
 ms.localizationpriority: medium
-ms.openlocfilehash: 3211871526015c83e18237a561ed846ccbfb494d
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: d2baa2e2d7b8d68505159eb480ea3be78750f507
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1656414"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3845853"
 ---
 # <a name="tile-content-schema"></a>Schéma du contenu de la vignette
 
@@ -158,7 +158,7 @@ Une image incorporée.
 
 | Propriété | Type | Requis |Description |
 |---|---|---|---|
-| **Source** | chaîne | true | URL de l’image. ms-appx, ms-appdata et http sont pris en charge. À partir de Fall Creators Update, les images Web peuvent atteindre 3Mo sur les connexions normales et 1Mo sur les connexions limitées. Sur les appareils qui n'exécutent pas encore Fall Creators Update, les images web ne doivent pas dépasser 200Ko. |
+| **Source** | chaîne | true | URL de l’image. ms-appx, ms-appdata et http sont pris en charge. À partir de Fall Creators Update, les images Web peuvent atteindre 3Mo sur les connexions normales et 1Mo sur les connexions limitées. Sur les appareils qui n’exécutent pas encore Fall Creators Update, les images web ne doivent pas dépasser 200Ko. |
 | **HintCrop** | [AdaptiveImageCrop](#adaptiveimagecrop) | false | Contrôle le rognage désiré de l’image. |
 | **HintRemoveMargin** | bool? | false | Par défaut, les images placées à l’intérieur de groupes/sous-groupes ont une marge de 8px autour d’elles. Vous pouvez supprimer cette marge en définissant cette propriété sur «true». |
 | **HintAlign** | [AdaptiveImageAlign](#adaptiveimagealign) | false | Alignement horizontal de l’image. |

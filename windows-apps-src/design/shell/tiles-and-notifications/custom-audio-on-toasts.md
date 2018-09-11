@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to use custom audio on your toast notifications.
 title: Contenu audio personnalisé des toast
 label: Custom audio on toasts
@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, toast, contenu audio personnalisé, notification, audio, son
 ms.localizationpriority: medium
-ms.openlocfilehash: 7026dc9c0aefed69d6d69d3d2f6a1d0e66f40c91
-ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
-ms.translationtype: HT
+ms.openlocfilehash: 24be148340366163fcab00ec75f7f26fac6c2d80
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/18/2018
-ms.locfileid: "1523237"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3845643"
 ---
 # <a name="custom-audio-on-toasts"></a>Contenu audio personnalisé des toasts
 

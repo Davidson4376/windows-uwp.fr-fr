@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how Win32 C# apps can send local toast notifications and handle the user clicking the toast.
 title: Envoyer une notification toast locale depuis des applications de bureau en C#
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, win32, bureau, notifications toast, envoyer un toast, envoyer un toast local, pont du bureau, C#, C sharp
 ms.localizationpriority: medium
-ms.openlocfilehash: 44457221d7b108563e7df030125a909da6609cbe
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: 3bda3e85fd89ef7a8b819fcd809acea4fd9a276b
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983455"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3847143"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Envoyer une notification toast locale depuis des applications de bureau en C#
 
@@ -70,7 +70,7 @@ Copiez le [fichier DesktopNotificationManagerCompat.cs de GitHub](https://raw.gi
 
 ## <a name="step-4-implement-the-activator"></a>Étape4: implémenter l’activateur
 
-Vous devez implémenter un gestionnaire pour l’activation des toasts de manière à ce que votre application puisse effectuer une action lorsque l’utilisateur clique sur votre toast. Cela est nécessaire pour que votre toast soit conservé dans le centre de notifications (car l’utilisateur peut cliquer sur le toast des jours plus tard lorsque votre application est fermée). Cette classe peut être placée n’importe où dans votre projet.
+Vous devez implémenter un gestionnaire pour l’activation de toast, afin que lorsque l’utilisateur clique sur votre toast, votre application peut effectuer une action. Cela est nécessaire pour que votre toast soit conservé dans le centre de notifications (car l’utilisateur peut cliquer sur le toast des jours plus tard lorsque votre application est fermée). Cette classe peut être placée n’importe où dans votre projet.
 
 Étendez la classe **NotificationActivator**, ajoutez les trois attributs répertoriés ci-dessous, puis créez un CLSID GUID unique pour votre application à l’aide de l’un des nombreux générateurs GUID en ligne. Ce CLSID (identificateur de classe) permet au centre de notifications de savoir quelle classe activer par COM.
 
