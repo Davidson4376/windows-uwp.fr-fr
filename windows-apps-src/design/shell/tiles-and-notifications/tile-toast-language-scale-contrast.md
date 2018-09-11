@@ -10,16 +10,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b0992a8d86b17648b748bb792fdf250f29801d0
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 87aafe36d05298a8fa157426e39c530190f98908
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673216"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3849443"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>Prise en charge des vignettes et notifications toast pour la langue, l’échelle et le contraste élevé
 
-Vos vignettes et toasts peuvent charger des chaînes et des images adaptées à la langue, au [facteur d’échelle de l’affichage](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md), au contraste élevé et à d’autres contextes d’exécution. Pour obtenir des informations générales sur l’utilisation de qualificateurs dans les noms de vos fichiers de ressources, voir [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](../../../app-resources/tailor-resources-lang-scale-contrast.md) et [Tableaux des tailles de ressource](app-assets.md#asset-size-tables).
+Vos vignettes et toasts peuvent charger des chaînes et des images adaptées à la langue, au [facteur d’échelle de l’affichage](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md), au contraste élevé et à d’autres contextes d’exécution. Pour des informations générales sur l’utilisation des qualificateurs dans les noms de vos fichiers de ressources, voir [personnaliser vos ressources pour la langue, échelle et d’autres qualificateurs](../../../app-resources/tailor-resources-lang-scale-contrast.md) et les [logos et icônes d’application](/windows/uwp/design/style/app-icons-and-logos).
 
 Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../../globalizing/globalizing-portal.md).
 

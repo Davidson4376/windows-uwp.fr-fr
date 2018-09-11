@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to pin a secondary tile from your UWP app.
 title: Épingler les vignettes secondaires
 label: Pin secondary tiles
@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, uwp, vignettes secondaires, épingler, épinglage, démarrage rapide, exemple de code, exemple, secondarytile
 ms.localizationpriority: medium
-ms.openlocfilehash: 67d9090f0abacd1c3003e8427908358d76cdb65e
-ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
-ms.translationtype: HT
+ms.openlocfilehash: 437d149e22f035fdd0cb1f5251a114b6dd4765e4
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/18/2018
-ms.locfileid: "1522968"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3849503"
 ---
 # <a name="pin-secondary-tiles"></a>Épingler les vignettes secondaires
 

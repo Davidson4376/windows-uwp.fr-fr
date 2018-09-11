@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to use custom timestamps on your toast notifications.
 title: Horodatages personnalisés des toasts
 label: Custom timestamps on toasts
@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, toast, horodatage personnalisé, horodatage, notification, centre de notifications
 ms.localizationpriority: medium
-ms.openlocfilehash: c6c9e37a16b0ca10993b61b33c4d295ebd9e09d7
-ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
-ms.translationtype: HT
+ms.openlocfilehash: 7ef01feaf422674977dc4549d4cc68a2ca0052c7
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/18/2018
-ms.locfileid: "1523251"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3851279"
 ---
 # <a name="custom-timestamps-on-toasts"></a>Horodatages personnalisés des toasts
 

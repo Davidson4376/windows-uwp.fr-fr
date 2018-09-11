@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d6565f56f7105872d14b7b1ce768f4240e0b83b
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.openlocfilehash: 9ded8fb8a9d391ec48b46b0795b901dc403e1f30
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3821303"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3848793"
 ---
 # <a name="desktop-bridge"></a>Pont du bureau
 
@@ -74,7 +74,7 @@ Desktop App Converter traduit les actions de votre programme d’installation po
 
 :heavy_check_mark: Enregistrer vos serveurs COM publics.
 
-:heavy_check_mark: Génère un certificat qui vous permettra d’exécuter votre application.
+: heavy_check_mark: génère un certificat qui vous permet d’exécuter votre application.
 
 :heavy_check_mark: Valide votre application en fonction des exigences du Pont du bureau et du MicrosoftStore.
 

@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to use Notification Listener to access all of the user's notifications.
 title: Écouteur de notification
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, écouteur de notification, usernotificationlistener, documentation, notifications d’accès
 ms.localizationpriority: medium
-ms.openlocfilehash: 00774817574c209826050a084bba77084d404ace
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: f4d8cb9ef7589bd8f0c56586ab8fcfec7c1f01e3
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674616"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3850583"
 ---
 # <a name="notification-listener-access-all-notifications"></a>Écouteur de notification: accéder à toutes les notifications
 
@@ -281,19 +281,17 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>Événement en arrière-plan pour une notification ajoutée/ignorée
 
 > [!IMPORTANT] 
-> Problème connu: l’événement au premier plan ne fonctionne pas (et nous ne prévoyons pas pour le moment de résoudre ce problème). 
+> Problème connu: l’événement au premier plan entraîne une boucle de processeur sur les versions récentes de Windows et précédemment n’a pas fonctionné auparavant. N’utilisez pas l’événement au premier plan. Dans une prochaine mise à jour Windows, nous sera résoudre ce problème.
 
-Si vous avez un scénario qui nécessite l’événement au premier plan, faites-le nous savoir. Toutefois, la plupart (voire l’ensemble) des scénarios devraient en réalité utiliser plutôt la tâche en arrière-plan, car votre application doit probablement être sortie de veille en arrière-plan pour les événements de notification. Par exemple, l'application de votre accessoire portable est rarement au premier plan et doit être informée des nouvelles notifications en arrière-plan.
-
-En outre, grâce au [modèle de processus unique](../../../launch-resume/create-and-register-an-inproc-background-task.md), il est facile d’utiliser des déclencheurs de tâche en arrière-plan depuis l'intérieur de votre application au premier plan. Par conséquent, si vous avez besoin de recevoir des événements au premier plan, utilisez le déclencheur en arrière-plan avec le modèle de processus unique.
+Au lieu d’utiliser l’événement au premier plan, utilisez le code indiqué précédemment pour une tâche en arrière-plan de [modèle à processus unique](../../../launch-resume/create-and-register-an-inproc-background-task.md) . La tâche en arrière-plan vous permettent également de recevoir des notifications d’événement de modification à la fois pendant que votre application est fermée ou en cours d’exécution.
 
 ```csharp
-// Subscribe to foreground event
+// Subscribe to foreground event (DON'T USE THIS)
 listener.NotificationChanged += Listener_NotificationChanged;
  
 private void Listener_NotificationChanged(UserNotificationListener sender, UserNotificationChangedEventArgs args)
 {
-    // NOTE: This event DOES NOT WORK. Use the background task instead.
+    // NOTE: This event WILL CAUSE CPU LOOPS, DO NOT USE. Use the background task instead.
 }
 ```
 
