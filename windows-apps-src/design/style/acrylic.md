@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8589a450b53a5ea028f8af2cee2aef7dc0816b52
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3851259"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933536"
 ---
 # <a name="acrylic-material"></a>Support acrylique
 
@@ -52,7 +52,7 @@ ACRYLIQUE est un type de [pinceau](https://docs.microsoft.com/en-us/uwp/api/Wind
     ::: column span::: ![certains d’image](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
     ::: column span = «2»::: **Galerie de contrôles XAML**<br>
-        Si vous disposez de l’application galerie de contrôles XAML est installée, cliquez <a href="xamlcontrolsgallery:/item/Acrylic">ici</a> pour ouvrir l’application et voir ACRYLIQUE en action.
+        Si vous disposez de l’application galerie de contrôles XAML installée, cliquez <a href="xamlcontrolsgallery:/item/Acrylic">ici</a> pour ouvrir l’application et voir ACRYLIQUE en action.
 
         <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
         <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
@@ -106,7 +106,7 @@ Il est possible de renforcer l'utilisation en tant qu'applications utilitaires d
 ![L'application utilitaire Calculatrice avec l'arrière-plan totalement en acrylique](images/acrylic_app-pattern_full.png)
 
 > [!Note]
-> Le rendu des surfaces ACRYLIQUES sollicite GPU, qui peut accroître la consommation d’énergie appareil et réduire l’autonomie de la batterie. Les effets ACRYLIQUES sont automatiquement désactivées lorsque les périphériques entrent en mode économiseur de batterie, et les utilisateurs peuvent désactiver les effets ACRYLIQUES pour toutes les applications, s’ils le souhaitent.
+> Le rendu des surfaces ACRYLIQUES sollicite GPU, ce qui peut accroître la consommation d’énergie appareil et réduire l’autonomie de la batterie. Les effets ACRYLIQUES sont automatiquement désactivées lorsque les périphériques entrent en mode économiseur de batterie, et les utilisateurs peuvent désactiver les effets ACRYLIQUES pour toutes les applications, s’ils le souhaitent.
 
 
 ## <a name="acrylic-blend-types"></a>Types de lissage acrylique
@@ -124,7 +124,7 @@ La plus remarquable caractéristique d’ACRYLIQUE est sa transparence. Il exist
 ## <a name="usability-and-adaptability"></a>Convivialité et capacité d'adaptation
 L'acrylique adapte automatiquement son apparence à une vaste gamme d’appareils et de contextes.
 
-En mode Contraste élevé, les utilisateurs continuent de voir la couleur d’arrière-plan qu'ils ont choisie, au lieu de l'acrylique. En outre, à la fois l’ACRYLIQUE en arrière-plan et l’ACRYLIQUE dans l’application apparaissent comme une couleur unie:
+En mode Contraste élevé, les utilisateurs continuent de voir la couleur d’arrière-plan qu'ils ont choisie, au lieu de l'acrylique. En outre, l’ACRYLIQUE en arrière-plan et ACRYLIQUE dans l’application s’affichent une couleur unie:
  - Lorsque l’utilisateur désactive la transparence dans Paramètres > Personnalisation > couleurs
  - Lorsque le mode économiseur de batterie est activé
  - Lorsque l’application est exécutée sur un matériel bas de gamme

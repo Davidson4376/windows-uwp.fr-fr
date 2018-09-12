@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10, uwp, marchés, pays, régions
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850736"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935846"
 ---
 # <a name="define-market-selection"></a>Définir la sélection du marché
 
 
 Le Microsoft Store touche des clients dans plus de 200pays et régions dans le monde. Vous pouvez choisir les marchés dans lesquels vous souhaitez proposer votre application, avec la possibilité de personnaliser de nombreuses fonctionnalités de [Tarification et disponibilité](set-app-pricing-and-availability.md) par marché ou par groupe de marchés.
 
-Pour plus d’informations aider à adapter votre application pour les clients dans le monde entier, consultez les [recommandations en matière de globalisation](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) et à [rendre votre application localisable](../design/globalizing/prepare-your-app-for-localization.md).
+Pour plus d’informations aider à adapter votre application pour les clients dans le monde entier, consultez les [recommandations en matière de globalisation](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) et [rendre votre application localisable](../design/globalizing/prepare-your-app-for-localization.md).
 
 > [!NOTE]
 > Bien que cet article fasse référence aux applications, la sélection du marché des soumissions d’extensions applique le même processus.

@@ -15,22 +15,22 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848893"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935280"
 ---
 # <a name="reveal-highlight"></a>Principales fonctionnalités de révéler
 
 ![image hero](images/header-reveal-highlight.svg)
 
-Révéler qu'est un effet visuel qui met en évidence les éléments interactifs, tels que les barres de commandes, lorsque l’utilisateur déplace le pointeur à proximité. 
+Révéler qu'est un effet visuel qui met en évidence les éléments interactifs, tels que des barres de commandes, lorsque l’utilisateur déplace le pointeur à proximité. 
 
 > **API importantes**: [classe RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [classe RevealBackgroundBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [classe RevealBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [classe RevealBrushHelper](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [classe VisualState](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>Principe de fonctionnement
-L’effet révéler attire l’attention sur les éléments interactifs en révélant conteneur de l’élément lorsque le pointeur se trouve à proximité, comme illustré dans l’illustration suivante:
+L’effet révéler attire l’attention sur les éléments interactifs en révélant le conteneur de l’élément lorsque le pointeur se trouve à proximité, comme illustré dans l’illustration suivante:
 
 ![Visuel de l’effet Révéler](images/Nav_Reveal_Animation.gif)
 
@@ -69,7 +69,7 @@ Révéler fonctionne automatiquement pour certains contrôles. Pour d’autres c
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-Ces illustrations montrent révéler mettre en surbrillance sur plusieurs contrôles différents:
+Ces illustrations montrent révéler en surbrillance sur plusieurs contrôles différents:
 
 ![Exemples de Révéler](images/RevealExamples_Collage.png)
 

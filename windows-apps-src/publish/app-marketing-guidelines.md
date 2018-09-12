@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ffafab761741b8d7bc05f13ea2d8ae50ff048b
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846573"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935536"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Recommandations pour les applications de marketing de Microsoft Store
 
-Découvrez comment promouvoir vos applications et vos contenus dans le Microsoft Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique.
+Découvrez comment promouvoir vos applications et contenu dans le Microsoft Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique.
 
 ## <a name="store-badges"></a>Badges Windows Store
 
@@ -47,7 +47,7 @@ Pour promouvoir votre application, vous pouvez afficher son aspect lors de son e
 
 *Marques Microsoft* signifie que le *badge Microsoft* décrites dans la page [Générateur de badge](http://go.microsoft.com/fwlink/p/?LinkID=534236) . Pour utiliser ces badges, vous devez:
 
--   Avoir de votre application ou autres contenus disponibles dans le Microsoft Store, ou faire partie du [Programme d’affiliation Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=624463).
+-   Avoir votre application ou autres contenus disponibles dans le Microsoft Store, ou faire partie du [Programme d’affiliation Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=624463).
 
 -   si vous êtes inscrit au Centre de développement, vous conformer à la section [Licence d’utilisation de la marque Microsoft](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark) du Contrat du développeur de l’application ;
 

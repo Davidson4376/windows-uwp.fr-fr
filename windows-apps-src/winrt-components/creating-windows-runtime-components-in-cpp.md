@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b5515d0ed5dc6e200c7c4fc9a7785c993d4cab59
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3851359"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934400"
 ---
 # <a name="creating-windows-runtime-components-in-ccx"></a>Création de composants Windows Runtime en C++/CX
 > [!NOTE]
@@ -29,7 +29,7 @@ Il existe plusieurs raisons pour la création d’un composant Windows Runtime.
 
 Lorsque vous générez une solution qui contient un projet JavaScript ou .NET et un projet de composant Windows Runtime, les fichiers projet JavaScript et la DLL compilée sont fusionnés dans un package qui peut être débogué en local dans le simulateur, ou à distance sur un périphérique attaché. Le projet seul peut aussi être distribué en tant que kit de développement logiciel (SDK) de l’extension. Pour plus d’informations, voir [Création d’un kit de développement logiciel (SDK)](https://msdn.microsoft.com/library/hh768146.aspx).
 
-En règle générale, lorsque vous codez votre C + / composant CX, utilisez la bibliothèque C++ standard et les types intégrés, sauf à la limite de l’interface binaire abstraite (ABI) où vous transmettez des données vers et à partir de code dans un autre package .winmd. Il, utilisez les types Windows Runtime et la syntaxe spéciale que C++ / CX prend en charge pour créer et manipuler ces types. En outre, dans votre C++ / CX de code, utilisez des types tels que delegate et event pour implémenter des événements qui peuvent être déclenchés à partir de votre composant et gérés dans JavaScript, Visual Basic, C++ ou c#. Pour plus d’informations sur C++ / syntaxe CX, voir [référence du langage Visual C++ (C++ / CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
+En règle générale, lorsque vous codez votre C + / composant CX, utilisez la bibliothèque C++ standard et les types intégrés, sauf à la limite de l’interface binaire abstraite (ABI) où vous transmettez des données vers et depuis du code dans un autre package .winmd. Il, utilisez les types Windows Runtime et la syntaxe spéciale que C++ / CX prend en charge pour créer et manipuler ces types. En outre, dans votre C++ / CX de code, utilisez des types tels que delegate et event pour implémenter des événements qui peuvent être déclenchés à partir de votre composant et gérés dans JavaScript, Visual Basic, C++ ou c#. Pour plus d’informations sur C++ / syntaxe CX, voir [référence du langage Visual C++ (C++ / CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
 
 ## <a name="casing-and-naming-rules"></a>Règles de casse et d’appellation
 
@@ -77,7 +77,7 @@ ResultText.Text = num.ToString();
 ## <a name="ccx-built-in-types-library-types-and-windows-runtime-types"></a>C++ / CX types intégrés, types de bibliothèques et types Windows Runtime
 Une classe activable (appelée également classe ref) est une classe qui peut être instanciée depuis un autre langage comme JavaScript, C# ou Visual Basic. Pour être utilisable à partir d’un autre langage, un composant doit contenir au moins une classe activable.
 
-Un composant Windows Runtime peut contenir plusieurs classes publiques activables, ainsi que des classes supplémentaires qui sont connues par le composant uniquement en interne. Appliquez l’attribut [WebHostHidden](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.webhosthiddenattribute.aspx) à C++ / types CX qui ne sont pas destinées à être visibles par JavaScript.
+Un composant Windows Runtime peut contenir plusieurs classes publiques activables, ainsi que des classes supplémentaires qui sont connues par le composant uniquement en interne. Appliquez l’attribut [WebHostHidden](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.webhosthiddenattribute.aspx) vers C++ / types CX qui ne sont pas destinées à être visibles par JavaScript.
 
 Toutes les classes publiques doivent résider dans le même espace de noms racine, qui porte le même nom que le fichier de métadonnées du composant. Par exemple, une classe nommée A.B.C.MyClass peut être instanciée uniquement si elle est définie dans un fichier de métadonnées nommé A.winmd, A.B.winmd ou A.B.C.winmd. Le nom de la DLL ne doit pas obligatoirement correspondre à celui du fichier .winmd.
 
@@ -131,7 +131,7 @@ namespace CppComponent
 }
 ```
 
-Pour passer des structures de valeur définies par l’utilisateur à travers l’ABI, définissez un objet JavaScript qui a les mêmes membres que la structure de valeur qui est définie en C++ / CX. Vous pouvez ensuite passer cet objet comme argument pour C++ / méthode CX afin que l’objet soit implicitement converti en C++ / type CX.
+Pour passer les structures de valeur définies par l’utilisateur à travers l’ABI, définissez un objet JavaScript qui a les mêmes membres que la structure de valeur qui est définie en C++ / CX. Vous pouvez ensuite passer cet objet comme argument pour C++ / méthode CX afin que l’objet soit implicitement converti en C++ / type CX.
 
 ```javascript
 // Get and set the value struct
@@ -349,7 +349,7 @@ private void GetDictionary()
 ```
 
 ## <a name="properties"></a>Propriétés
-Une classe ref publique en C++ / extensions de composant CX expose les données membres publiques sous forme de propriétés, en utilisant le mot clé property. Le concept est identique aux propriétés .NET Framework. Une propriété triviale ressemble à des données membres, car ses fonctionnalités sont implicites. Une propriété non triviale a des accesseurs get et set explicites et une variable privée nommée qui est le «magasin de stockage» de la valeur. Dans cet exemple, le membre privé variable \_propertyAValue est le magasin de stockage de PropertyA. Une propriété peut déclencher un événement lorsque sa valeur change. Une application cliente peut s’inscrire pour recevoir cet événement.
+Une classe ref publique en C++ / extensions de composant CX expose les données membres publiques sous forme de propriétés en utilisant le mot clé property. Le concept est identique aux propriétés .NET Framework. Une propriété triviale ressemble à des données membres, car ses fonctionnalités sont implicites. Une propriété non triviale a des accesseurs get et set explicites et une variable privée nommée qui est le «magasin de stockage» de la valeur. Dans cet exemple, le membre privé variable \_propertyAValue est le magasin de stockage de PropertyA. Une propriété peut déclencher un événement lorsque sa valeur change. Une application cliente peut s’inscrire pour recevoir cet événement.
 
 ```cpp
 //Properties
@@ -511,7 +511,7 @@ nativeObject.fireEvent("The answer is ");
 En C#, un nombre quelconque de gestionnaires d’événements peuvent s’abonner à l’événement à l’aide de l’opérateur +=, comme indiqué dans l’exemple précédent.
 
 ## <a name="enums"></a>Énumérations
-Une énumération Windows Runtime en C++ / CX est déclarée à l’aide de l’énumération de la classe publique; Il ressemble à une énumération limitée en C++ standard.
+Une énumération Windows Runtime en C++ / CX est déclarée à l’aide de la classe publique enum; Il ressemble à une énumération limitée en C++ standard.
 
 ```cpp
 public enum class Direction {North, South, East, West};
@@ -546,7 +546,7 @@ C# et Visual Basic disposent tous les deux de la prise en charge des langages po
 ## <a name="asynchronous-methods"></a>Méthodes asynchrones
 Pour utiliser des méthodes asynchrones exposées par d’autres objets Windows Runtime, utilisez la [classe de tâche (runtime d’accès concurrentiel)](https://msdn.microsoft.com/library/hh750113.aspx). Pour plus d’informations, voir [Parallélisme des tâches (runtime d’accès concurrentiel)](https://msdn.microsoft.com/library/dd492427.aspx).
 
-Pour implémenter des méthodes asynchrones en C++ / CX, utilisez la fonction [create\_async](https://msdn.microsoft.com/library/hh750102.aspx) qui est définie dans ppltasks.h. Pour plus d’informations, voir [Création d’opérations asynchrones en C++ / CX pour les applications UWP](https://msdn.microsoft.com/library/vstudio/hh750082.aspx). Pour obtenir un exemple, voir [procédure pas à pas: création d’un composant Windows Runtime de base en C++ / CX et appel de ce à partir de JavaScript ou c#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). Les langages .NET utilisent C++ / méthodes asynchrones CX comme ils le feraient n’importe quelle méthode asynchrone qui est défini dans le .NET Framework.
+Pour implémenter des méthodes asynchrones en C++ / CX, utilisez la fonction [create\_async](https://msdn.microsoft.com/library/hh750102.aspx) qui est définie dans ppltasks.h. Pour plus d’informations, voir [Création d’opérations asynchrones en C++ / CX pour les applications UWP](https://msdn.microsoft.com/library/vstudio/hh750082.aspx). Pour obtenir un exemple, voir [procédure pas à pas: création d’un composant Windows Runtime de base en C++ / CX et appel de ce à partir de JavaScript ou c#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). Les langages .NET utilisent C++ / méthodes asynchrones CX comme ils feraient pour n’importe quelle méthode asynchrone qui est défini dans le .NET Framework.
 
 ## <a name="exceptions"></a>Exceptions
 Vous pouvez lever n’importe quel type d’exception défini par Windows Runtime. Vous ne pouvez pas dériver des types personnalisés d’un type d’exception Windows Runtime. Toutefois, vous pouvez lever une exception COMException et fournir un HRESULT personnalisé, accessible par le code qui intercepte l’exception. Il n’existe aucun moyen de spécifier un message personnalisé dans une COMException.
@@ -556,7 +556,7 @@ Lorsque vous déboguez une solution JavaScript qui contient une DLL de composant
 
 Veillez à sélectionner les fonctionnalités appropriées dans le concepteur de packages. Par exemple, si vous essayez d’ouvrir un fichier image de la bibliothèque Images de l’utilisateur à l’aide des API Windows Runtime, veillez à cocher la case Bibliothèque d’images du volet Capacités du concepteur de manifeste.
 
-Si votre code JavaScript ne semble pas reconnaître les propriétés ou méthodes publiques du composant, assurez-vous que vous utilisez la casse mixte dans JavaScript. Par exemple, les langages c++ LogCalc / méthode CX doit être référencée sous la forme logCalc dans JavaScript.
+Si votre code JavaScript ne semble pas reconnaître les propriétés ou méthodes publiques du composant, assurez-vous que vous utilisez la casse mixte dans JavaScript. Par exemple, les les langages c++ LogCalc / méthode CX doit être référencée sous la forme logCalc dans JavaScript.
 
 Si vous supprimez C++ / CX Windows Runtime projet du composant à partir d’une solution, vous devez supprimer également manuellement la référence de projet à partir du projet JavaScript. Sinon, il ne sera plus possible d’effectuer d’opérations de débogage ou de génération. Si nécessaire, ajoutez ensuite une référence d’assembly à la DLL.
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b0b6315b1177138c3ede7834e2dbc792ee106dd
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846633"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3936078"
 ---
 # <a name="guidance-for-app-package-management"></a>Aide sur la gestion des packages d’application
 
@@ -32,7 +32,7 @@ Découvrez comment les packages de votre application sont mis à la disposition 
 
 Les différents systèmes d’exploitation peuvent exécuter différents types de packages. Si plusieurs de vos packages peuvent s’exécuter sur l’appareil d’un client, le MicrosoftStore fournit la meilleure correspondance disponible.
 
-En règle générale, les systèmes d’exploitation plus récents peuvent exécuter des packages ciblant des versions antérieures pour la même famille d’appareils. Toutefois, elles n’obtiennent ces packages si l’application n’inclut pas un package ciblant sa version du système d’exploitation en cours.
+En règle générale, les systèmes d’exploitation plus récents peuvent exécuter des packages ciblant des versions antérieures pour la même famille d’appareils. Toutefois, elles n’obtiennent ces packages si l’application n’inclut pas un package ciblant la version actuelle de leur système d’exploitation.
 
 Par exemple, les appareils Windows 10 peuvent exécuter toutes les versions antérieures du système d’exploitation prises en charge (par famille d’appareils). Les appareils de bureau Windows 10 peuvent exécuter des applications conçues pour Windows 8.1 ou Windows 8. Les appareils mobiles Windows 10 peuvent exécuter des applications conçues pour Windows Phone 8.1, Windows Phone 8, voire Windows Phone 7.x. 
 
@@ -99,7 +99,7 @@ Une application rendue indisponible continue à s'afficher sur votre tableau de 
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>Suppression de packages pour une famille d'appareils précédemment prise en charge
 
-Si vous supprimez tous les packages pour une certaine [famille d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) que votre application précédemment pris en charge, vous serez invité à confirmer qu’il s’agit votre intention avant d’enregistrer vos modifications sur la page **Packages** .
+Si vous supprimez tous les packages pour une certaine [famille d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) que votre application précédemment pris en charge, vous serez invité à confirmer qu’il s’agit de votre intention avant d’enregistrer vos modifications sur la page **Packages** .
 
 Lorsque vous publiez une soumission qui supprime tous les packages qui peuvent s’exécuter sur une famille d’appareils précédemment prise en charge par votre application, les nouveaux clients ne sera pas en mesure d’acquérir l’application sur cette famille. Vous pouvez toujours publier une autre mise à jour pour proposer de nouveau des packages pour cette famille d'appareils.
 
@@ -122,9 +122,9 @@ Pour plus d’informations sur la création de packages d’applicationsUWP pour
 > [!IMPORTANT]
 > N’oubliez pas que si vous fournissez des packages ciblant la famille d’appareils universelle, chaque client déjà doté de votre application sur un système d’exploitation antérieur (WindowsPhone8, Windows8.1, etc.) et qui procède à une mise à niveau vers Windows10 bénéficiera d’une mise à jour vers votre package Windows10.
 > 
-> Cela se produit même si vous avez exclu une famille d’appareils spécifique à l’étape de [la disponibilité de la famille d’appareils de périphérique](device-family-availability.md) de votre soumission, depuis que section s’applique uniquement aux nouvelles acquisitions. Si vous ne voulez pas que chaque client antérieur obtienne votre package Windows10 universel, veillez à mettre à jour l’élément [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) dans votre manifeste appx afin d’inclure uniquement la famille d’appareils spécifique que vous voulez prendre en charge.
+> Cela se produit même si vous avez exclu une famille d’appareils spécifique à l’étape de [la disponibilité de la famille de périphériques](device-family-availability.md) de votre soumission, depuis que section s’applique uniquement aux nouvelles acquisitions. Si vous ne voulez pas que chaque client antérieur obtienne votre package Windows10 universel, veillez à mettre à jour l’élément [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) dans votre manifeste appx afin d’inclure uniquement la famille d’appareils spécifique que vous voulez prendre en charge.
 > 
-> Par exemple, supposons que vous souhaitez que vos clients Windows 8 et Windows 8.1 qui ont mis à niveau vers un appareil de bureau Windows 10 pour obtenir votre nouvelle application UWP, mais vous souhaitez que les clients Windows Phone qui sont désormais sur les appareils Windows 10 Mobile conservent les packages que vous le feriez précédemment apportées coefficient e (ciblant Windows Phone 8 ou Windows Phone 8.1). Pour ce faire, vous devez mettre à jour le [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) dans votre manifeste appx afin d’inclure uniquement les **Windows.Desktop** (pour la famille d’appareils de bureau), au lieu de laisser la valeur **Windows.Universal** (pour la famille d’appareils universelle) Microsoft Visual Studio inclut dans le manifeste par défaut. Ne soumettez pas de packages UWP ciblant la famille d’appareils universelle ou la famille d’appareils mobiles (**Windows.Universal** or **Windows.Universal**). Ainsi, vos clients Windows10 Mobile n’obtiendront aucun de vos packages UWP.
+> Par exemple, supposons que vous souhaitez que vos clients Windows 8 et Windows 8.1 qui ont mis à niveau vers un appareil de bureau Windows 10 pour obtenir votre nouvelle application UWP, mais que vous souhaitez que les clients Windows Phone qui sont désormais sur les appareils Windows 10 Mobile conservent les packages que vous le feriez précédemment apportées coefficient e (ciblant Windows Phone 8 ou Windows Phone 8.1). Pour ce faire, vous devez mettre à jour le [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) dans votre manifeste appx afin d’inclure uniquement les **Windows.Desktop** (pour la famille d’appareils de bureau), au lieu de laisser la valeur **Windows.Universal** (pour la famille d’appareils universelle) Microsoft Visual Studio inclut dans le manifeste par défaut. Ne soumettez pas de packages UWP ciblant la famille d’appareils universelle ou la famille d’appareils mobiles (**Windows.Universal** or **Windows.Universal**). Ainsi, vos clients Windows10 Mobile n’obtiendront aucun de vos packages UWP.
 
 
 ## <a name="maintaining-package-compatibility-for-windows-phone-81"></a>Maintien de la compatibilité de package pour Windows Phone8.1

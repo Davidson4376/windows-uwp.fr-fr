@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, auteur, COM, composant
 ms.localizationpriority: medium
 ms.openlocfilehash: 729cfae39f302ae6b5bae275d9e28a39f3d9503b
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850123"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935689"
 ---
 # <a name="author-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Créer des composants COM avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
-C++ / WinRT peut vous aider à créer des classique modèle COM (Component Object) composants (ou coclasses), tout comme il vous aide à créer des classes Windows Runtime. Voici une illustration très simple, qui vous pouvez tester si vous le collez dans le `main.cpp` d’une nouvelle **Windows Console Application (C++ / WinRT)** projet.
+C++ / WinRT peut vous aider à créer de classique modèle COM (Component Object) composants (ou coclasses), tout comme il vous aide à créer des classes Windows Runtime. Voici une illustration très simple, qui vous pouvez tester si vous le collez dans le `main.cpp` d’une nouvelle **Windows Console Application (C++ / WinRT)** projet.
 
 ```cppwinrt
 // main.cpp : Defines the entry point for the console application.
@@ -49,15 +49,15 @@ Consultez également [composants COM consommer avec C++ / WinRT](consume-com.md)
 
 ## <a name="a-more-realistic-and-interesting-example"></a>Un exemple plus réaliste et intéressant
 
-Le reste de cette rubrique Guide dans la création d’un projet d’application de console minimal qui utilise C++ / WinRT pour implémenter une fabrique coclasse et la classe de base. L’exemple d’application montre comment fournir une notification toast avec un bouton de rappel dessus et la coclasse (qui implémente l’interface **INotificationActivationCallback** COM) permet à l’application d’être lancée et appelée d’arrière-plan lorsque l’utilisateur clique sur ce bouton du toast.
+Le reste de cette rubrique vous guide tout au processus de création d’un projet d’application de console minimal qui utilise C++ / WinRT pour implémenter une fabrique coclasse et de la classe de base. L’exemple d’application montre comment fournir une notification toast avec un bouton de rappel dessus et la coclasse (qui implémente l’interface **INotificationActivationCallback** COM) permet à l’application d’être lancée et appelée d’arrière-plan lorsque l’utilisateur clique sur ce bouton du toast.
 
-Vous trouverez plus d’informations sur la zone de fonctionnalité de notification toast à [Envoyer une notification toast locale](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast). Aucun des exemples de code dans cette section de la documentation utilisent C++ / WinRT, cependant, nous vous conseillons donc que vous préférez le code présenté dans cette rubrique.
+Vous trouverez des explications plus détaillées sur la zone de fonctionnalité de notification toast à [Envoyer une notification toast locale](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast). Aucun des exemples de code dans cette section de la documentation utiliser C++ / WinRT, cependant, nous vous conseillons donc que vous préférez le code présenté dans cette rubrique.
 
 ## <a name="create-a-windows-console-application-project-toastandcallback"></a>Créez un projet d’Application Console Windows (ToastAndCallback)
 
 Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créer un **Visual C++** > **Windows Desktop** > **Windows Console Application (C++ / WinRT)** de projet et nommez-le *ToastAndCallback*.
 
-Ouvrez `main.cpp`et supprimer les using-directives qui génère le modèle de projet. À leur place, collez le code suivant (ce qui nous obtenons les bibliothèques, les en-têtes et les noms de type que nous devons).
+Ouvrez `main.cpp`et supprimer les using-directives qui génère le modèle de projet. À leur place, collez le code suivant (ce qui nous obtenons l’et les bibliothèques, les en-têtes et les noms de type que nous devons).
 
 ```cppwinrt
 #pragma comment(lib, "shell32")
@@ -78,7 +78,7 @@ using namespace Windows::UI::Notifications;
 
 ## <a name="implement-the-coclass-and-class-factory"></a>Implémentez la fabrique de classe et coclasse
 
-En C++ / WinRT, vous implémentez coclasses et les fabriques de classes, en dérivant de la structure de base [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) . Immédiatement après les trois-directives using ci-dessus (et avant `main`), collez ce code pour implémenter votre composant d’activateur de notification COM toast.
+En C++ / WinRT, vous implémentez coclasses et les fabriques de classe, en dérivant de la structure de base [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) . Immédiatement après les trois-directives using ci-dessus (et avant `main`), collez ce code pour implémenter votre composant d’activateur de notification COM toast.
 
 ```cppwinrt
 static constexpr GUID callback_guid // BAF2FA85-E121-4CC9-A942-CE335B6F917F
@@ -134,17 +134,17 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-L’implémentation de la coclasse ci-dessus suit le même modèle est illustré dans [créer des API avec C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). Notez que vous pouvez utiliser cette technique non seulement pour les interfaces Windows Runtime (toute interface qui finalement dérive de [**IInspectable**](https://msdn.microsoft.com/library/br205821)), mais aussi pour implémenter des interfaces COM (toute interface qui finalement dérive de [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)).
+L’implémentation de la coclasse ci-dessus suit le même modèle qui est présenté dans [créer des API avec C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). Notez que vous pouvez utiliser cette technique non seulement pour les interfaces Windows Runtime (toute interface qui finalement dérive [**IInspectable**](https://msdn.microsoft.com/library/br205821)), mais aussi pour implémenter les interfaces COM (toute interface qui finalement dérive de [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)).
 
 Dans la coclasse dans le code ci-dessus, nous implémentez la méthode **INotificationActivationCallback::Activate** , qui est la fonction qui est appelée lorsque l’utilisateur clique sur le bouton de rappel sur une notification toast. Toutefois, avant que cette fonction peut être appelée, une instance de la coclasse doit être créé, et c’est le rôle de la fonction **IClassFactory::CreateInstance** .
 
-La coclasse que nous avons simplement implémentées est appelée l' *activateur COM* pour les notifications, et qui présente son id de classe (CLSID) sous la forme de la `callback_guid` identificateur (de type **GUID**) que vous voyez ci-dessus. Nous allons utiliser cet identificateur plus tard, sous la forme d’un raccourci du menu Démarrer et une entrée de Registre de Windows. L’activateur COM CLSID et le chemin d’accès à son serveur COM associé (qui est le chemin d’accès de l’exécutable que nous créons ici) est le mécanisme par lequel une notification toast sait quel classe pour créer une instance de lorsque son rappel de bouton est cliqué (si le notification est cliquée dans le centre de notifications ou non).
+La coclasse que nous avons simplement implémentées est appelée l' *activateur COM* pour les notifications, et qui présente son id de classe (CLSID) sous la forme de la `callback_guid` identificateur (de type **GUID**) que vous voyez ci-dessus. Nous allons utiliser cet identificateur plus tard, sous la forme d’un raccourci du menu Démarrer et une entrée de Registre Windows. L’activateur COM CLSID et le chemin d’accès à son serveur COM associé (qui est le chemin d’accès de l’exécutable que nous créons ici) est le mécanisme par lequel une notification toast sait quel de classe pour créer une instance de lorsque son rappel de bouton est cliqué (si le notification est effectuée dans le centre de notifications ou non).
 
-## <a name="best-practices-for-implementing-com-methods"></a>Meilleures pratiques pour l’implémentation de méthodes COM.
+## <a name="best-practices-for-implementing-com-methods"></a>Meilleures pratiques pour l’implémentation des méthodes de COM
 
-Techniques de gestion des erreurs et de gestion de ressource peuvent-ils dans pair. Il est plus pratique et plus pratique d’utiliser les exceptions que les codes d’erreur. Et si vous n’utilisiez l’idiome (RAII) de ressource-acquisition-est-d’initialisation, puis vous pouvez éviter explicitement vérification des codes d’erreur et en libérant explicitement les ressources. Ces contrôles explicite rendent votre code alambiqué profiter plus que nécessaire, et vous permet de bogues beaucoup d’endroits pour masquer. Au lieu de cela, utilisez RAII et lever/catch exceptions. De cette façon, votre allocations de ressources sont à toute exception, et votre code est simple.
+Techniques de gestion des erreurs et de gestion de ressources peuvent accéder en pair. Il est plus pratique et plus pratique d’utiliser les exceptions que les codes d’erreur. Et si vous n’utilisiez l’idiome (RAII) de ressource acquisition-est-d’initialisation, puis vous pouvez éviter explicitement vérification des codes d’erreur et en libérant explicitement les ressources. Ces contrôles explicite que votre code alambiqué profiter plus que nécessaire, et vous permet de bogues beaucoup d’endroits à masquer. Au lieu de cela, utilisez RAII et lever/catch exceptions. De cette façon, votre allocations de ressources sont à toute exception, et votre code est simple.
 
-Toutefois, vous up ne doit pas autoriser les exceptions comme caractère d’échappement vos implémentations de la méthode COM. Vous pouvez vous assurer qu’à l’aide de la `noexcept` spécificateur sur vos méthodes COM. Il est OK pour les exceptions à lever n’importe où dans le graphique des appels de votre méthode, tant que vous gérez avant la fermeture de votre méthode. Si vous utilisez `noexcept`, mais que vous autorisez ensuite une exception comme caractère d’échappement votre méthode, alors votre application s’arrêtera.
+Toutefois, vous up ne doit pas autoriser les exceptions comme caractère d’échappement vos implémentations de la méthode COM. Vous pouvez vous assurer qu’à l’aide de la `noexcept` spécificateur sur vos méthodes COM. Il est OK pour les exceptions à lever n’importe où dans le graphique des appels de votre méthode, tant que vous les gérez avant la fermeture de votre méthode. Si vous utilisez `noexcept`, mais que vous autorisez ensuite une exception d’échappement votre méthode, alors votre application se termine.
 
 ## <a name="add-helper-types-and-functions"></a>Ajouter des fonctions et des types d’assistance
 
@@ -380,7 +380,7 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 ## <a name="how-to-test-the-example-application"></a>Comment faire pour tester l’exemple d’application
 
-Générer l’application et ensuite l’exécuter au moins une fois en tant qu’administrateur entraîner l’inscription, ainsi que les autres le programme d’installation, exécution de code. Vous exécutez en tant qu’administrateur ou non, puis appuyez sur la touche est utilisée» pour provoquer un toast à afficher. Vous pouvez ensuite cliquer sur le bouton **rappeler ToastAndCallback** soit directement à partir de la notification toast que POP vers le haut, ou à partir du centre de maintenance et que votre application est lancée, la coclasse instanciée et le **INotificationActivationCallback :: Activer les** méthode exécutée.
+Générer l’application et ensuite l’exécuter au moins une fois en tant qu’administrateur entraîner l’inscription, ainsi que les autres paramètres, exécution de code. Vous exécutez en tant qu’administrateur ou non, puis appuyez sur la touche est utilisée» pour provoquer un toast à afficher. Vous pouvez ensuite cliquer sur le bouton **rappeler ToastAndCallback** soit directement à partir de la notification toast que POP vers le haut, ou à partir du centre de maintenance et que votre application est lancée, la coclasse instanciée et le **INotificationActivationCallback :: Activer les** méthode exécutée.
 
 ## <a name="important-apis"></a>API importantes
 * [Interface IInspectable](https://msdn.microsoft.com/library/br205821)
@@ -389,5 +389,5 @@ Générer l’application et ensuite l’exécuter au moins une fois en tant qu�
 
 ## <a name="related-topics"></a>Rubriquesassociées
 * [Créer des API avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
-* [Consommer des composants COM avec C++ / WinRT](consume-com.md)
+* [Utiliser les composants COM avec C++ / WinRT](consume-com.md)
 * [Envoyer une notification toast locale](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)

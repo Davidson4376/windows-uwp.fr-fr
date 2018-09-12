@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 259b171ea490272241fcef1170e2413cb40d7330
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3845323"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935464"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Kits de ressources et exemples de conception pour les applications UWP
  
@@ -39,7 +39,7 @@ Ces kits de ressources fournissent des contrôles et des modèles de disposition
         <a href="https://aka.ms/adobeillustratortoolkit">Télécharger</a>
     :::column-end:::
     :::column:::
-        ![image Hero](images/sketch.png) <b>esquisse</b><br>
+        ![image Hero](images/sketch.png) <b>Sketch</b><br>
         v1803, mars 2018<br>
         <a href="https://aka.ms/sketchtoolkit">Télécharger</a>
     :::column-end:::
@@ -64,13 +64,13 @@ Ces kits de ressources fournissent des contrôles et des modèles de disposition
 
 :::row:::
     :::column:::
-        ![Vignette de bibliothèque WinUI](images/WinUI-library.png) <b>Bibliothèque d’interface utilisateur Windows</b><br>
+        ![Vignette de bibliothèque WinUI](images/WinUI-library.png) <b>Bibliothèque de l’interface utilisateur de Windows</b><br>
         Les contrôles et autres éléments d’interface utilisateur pour les applications UWP.<br/>
         <a href="/uwp/toolkits/winui/getting-started">Instructions d’installation</a><br/>
     :::column-end:::
     :::column:::
         ![Vignette de la Communauté Windows](images/Windows-community-toolkit.png) <b>Windows Community Toolkit</b><br>
-        Fonctions d’assistance, des contrôles personnalisés et des services d’application.<br />
+        Fonctions d’assistance, des contrôles personnalisés et les services d’application.<br />
         <a href="/windows/uwpcommunitytoolkit/getting-started">Instructions d’installation</a>
     :::column-end:::
     :::column:::
@@ -88,7 +88,7 @@ Ces kits de ressources fournissent des contrôles et des modèles de disposition
     :::column:::
         <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
-    ::: column span = «2»::: **Générateur de vignette et d’icônes pour Adobe Photoshop** cet ensemble d’actions pour Adobe Photoshop génère les vignette et icône 68 recommandées à partir de seulement 7 fichiers. <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">Télécharger le générateur de vignettes et d’icônes</a></p>
+    ::: column span = «2»::: **Générateur de vignettes et d’icônes pour Adobe Photoshop** cet ensemble d’actions pour Adobe Photoshop génère les vignette et icône 68 recommandées à partir de seulement 7 fichiers. <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">Télécharger le générateur de vignettes et d’icônes</a></p>
     :::column-end:::
 :::row-end:::
 

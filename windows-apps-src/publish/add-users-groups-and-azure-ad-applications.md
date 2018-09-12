@@ -7,14 +7,14 @@ ms.date: 07/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10 uwp, application azure ad, aad, utilisateur, groupe, plusieurs utilisateurs, multi-utilisateur
+keywords: Windows 10 uwp, application azure ad, aad, utilisateur, groupe, plusieurs utilisateurs, multiutilisateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 97502a0a2863ed6f7ab2ce5d842fbebc1ae8091c
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846013"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934918"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-dev-center-account"></a>Ajouter des utilisateurs, des groupes et des applications AzureAD à votre compte du Centre de développement
 
@@ -45,7 +45,7 @@ Vous pouvez sélectionner les utilisateurs qui déjà existent déjà dans le cl
 
 <span id="from-directory" />
 
-1.  Sélectionnez l’icône d’engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez les **paramètres du compte**. Dans le menu **paramètres** , sélectionnez **les utilisateurs**.
+1.  Sélectionnez l’icône d’engrenage (à côté de l’angle supérieur droit du tableau de bord), puis sélectionnez les **paramètres du compte**. Dans le menu **paramètres** , sélectionnez **les utilisateurs**.
 2.  Dans la page **Utilisateurs**, sélectionnez **Ajouter des utilisateurs**. 
 3.  Sélectionnez un ou plusieurs utilisateurs dans la liste qui s’affiche. Vous pouvez utiliser la zone de recherche pour rechercher des utilisateurs spécifiques.
     > [!TIP]
@@ -118,7 +118,7 @@ Vous pouvez ajouter un groupe à votre compte du Centre de développement à par
 
 ### <a name="add-groups-from-your-organizations-directory"></a>Ajouter des groupes à partir de l’annuaire de votre organisation
 
-1.  Sélectionnez l’icône d’engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez les **paramètres du compte**. Dans le menu **paramètres** , sélectionnez **les utilisateurs**.
+1.  Sélectionnez l’icône d’engrenage (à côté de l’angle supérieur droit du tableau de bord), puis sélectionnez les **paramètres du compte**. Dans le menu **paramètres** , sélectionnez **les utilisateurs**.
 2. Dans la page **utilisateurs** , sélectionnez **Ajouter des groupes**.
 2.  Sélectionnez un ou plusieurs groupes dans la liste qui s’affiche. Vous pouvez utiliser la zone de recherche pour rechercher des groupes spécifiques.
     > [!TIP]
@@ -151,7 +151,7 @@ Vous pouvez autoriser des applications ou des services faisant partie intégrant
 
 ### <a name="add-azure-ad-applications-from-your-organizations-directory"></a>Ajouter des applications AzureAD à partir de l’annuaire de votre organisation
 
-1.  1.  Sélectionnez l’icône d’engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez les **paramètres du compte**. Dans le menu **paramètres** , sélectionnez **les utilisateurs**.
+1.  1.  Sélectionnez l’icône d’engrenage (à côté de l’angle supérieur droit du tableau de bord), puis sélectionnez les **paramètres du compte**. Dans le menu **paramètres** , sélectionnez **les utilisateurs**.
 2. Sur la page **Utilisateurs**, sélectionnez **Ajouter des applications AzureAD**.
 3.  Sélectionnez une ou plusieurs applications AzureAD dans la liste qui s’affiche. Vous pouvez utiliser la zone de recherche pour rechercher des applications AzureAD spécifiques.
     > [!TIP]
