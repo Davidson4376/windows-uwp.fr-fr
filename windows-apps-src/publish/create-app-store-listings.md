@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, description, page du store, notes de publication, titre
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3849193"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3932106"
 ---
 # <a name="create-app-store-listings"></a>Créer des descriptions d’application dans le Store
 
@@ -50,14 +50,14 @@ Les champs associés à votre description par défaut dans le Store pour la lang
 
 ## <a name="product-name"></a>Nom du produit
 
-Cette liste déroulante vous permet de spécifier le nom qui doit être utilisé dans les descriptions (si vous avez réserver plusieurs noms pour l’application).
+Cette liste déroulante vous permet de spécifier le nom qui doit être utilisé dans la description dans le Windows Store (si vous avez réserver plusieurs noms pour l’application).
 
 Si vous avez chargé des packages dans la même langue que la description dans le Windows Store sur lequel vous travaillez, le nom utilisé dans ces packages est sélectionné. Si vous devez renommer [l’application](manage-app-names.md#rename-an-app-that-has-already-been-published) une fois qu’il est déjà été publiée, vous pouvez sélectionner un autre nom réservé lorsque vous créez une nouvelle soumission avec les packages qui utilisent le nouveau nom.
 
-Si vous n’avez pas encore chargé les packages de la langue vous travaillez et vous avez réservé plusieurs noms, vous devrez sélectionner l’un de vos noms d’application réservés, dans la mesure où il n’existe aucun package associé dans cette langue à partir duquel extraire le nom.
+Si vous n’avez pas encore chargé les packages pour la langue en cours et vous avez réservé plusieurs noms, vous devrez sélectionner l’un de vos noms d’application réservés, dans la mesure où il n’existe aucun package associé dans cette langue à partir duquel extraire le nom.
 
 > [!NOTE]
-> Le **nom du produit** que vous sélectionnez uniquement s’applique à la description dans le langage dans lequel vous travaillez. Elle n’affecte pas le nom affiché lorsqu’un client installe l’application; Ce nom est fourni à partir du manifeste du package qui est installé. Pour éviter toute confusion, nous recommandons que les packages et la description de chaque langue utilisent le même nom.
+> Le **nom du produit** que vous sélectionnez uniquement s’applique à la description dans le langage dans lequel vous travaillez. Elle n’affecte pas le nom affiché lorsqu’un client installe l’application; Ce nom est fourni à partir du manifeste du package qui est installé. Pour éviter toute confusion, nous recommandons que l’ou les packages de chaque langue et la description du Windows Store utilisent le même nom.
 
 ## <a name="description"></a>Description
 

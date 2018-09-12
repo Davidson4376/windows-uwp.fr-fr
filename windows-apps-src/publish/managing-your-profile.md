@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, centre de développement, paramètres de compte, profil, profil de compte, compte de développeur, paramètres de compte de développeur
 ms.localizationpriority: medium
 ms.openlocfilehash: bf464fa5c7b681b3d36ad95cff5ffc874e319f46
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850323"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935244"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>Gérer les paramètres de compte et les informations de profil
 
@@ -49,13 +49,13 @@ La modification du nom d'affichage de l’éditeur nous incite aussi souvent à 
 Voici certains des autres éléments que vous trouverez dans la section **Paramètres du compte**.
 
 - **Statut de vérification**: lorsque votre compte est en cours de la vérification du processus (par exemple, lors de l’inscription initiale ou une fois que vous mettez à jour vos informations de contact considérablement), vous pouvez examiner votre état de vérification ici.
-- **Programme Insider du centre de développement**: vous pouvez choisir ou en dehors du [Programme Insider du centre de développement](dev-center-insider-program.md) à partir de la main page **paramètres du compte** .
+- **Programme Insider du centre de développement**: vous pouvez accepter ou refuser le [Programme Insider du centre de développement](dev-center-insider-program.md) à partir de la main page **paramètres du compte** .
 - **Compte de paiement** et **Profil fiscal**: cet emplacement vous permet de [configurer votre compte de paiement et vos déclarations fiscales](setting-up-your-payout-account-and-tax-forms.md). Vous devez effectuer cette opération avant de facturer des applications ou des extensions.
 - **Associations d’entreprise**: acceptez les invitations d’entreprises qui souhaitent publier des applications pour leur usage exclusif. Pour plus d’informations, consultez l’article [Distribuer des applications cœur de métier aux entreprises](distribute-lob-apps-to-enterprises.md).
 - **Utilisateurs**: ajoutez des utilisateurs à votre compte du Centre de développement et attribuez-leur des rôles et des autorisations. Pour plus d’informations, voir [Gérer les utilisateurs du compte](manage-account-users.md).
 - **Locataires**: gérer les associations de votre client Azure AD. Pour plus d’informations, voir [associer Azure AD à votre compte du centre de développement](associate-azure-ad-with-dev-center.md).
 - **Programmes**: visualisez des détails sur les programmes auxquels vous participez et renseignez-vous sur les autres programmes qui sont susceptibles de vous intéresser.
 - **Contrats**: visualisez les contrats que votre compte a acceptés.
-- **Les appareils de développement**: afficher et gérer les [appareils Windows Phone 8.x que vous avez déverrouillés pour le test](http://go.microsoft.com/fwlink/p/?LinkId=533897) et les [consoles Xbox One activées pour le développement](../xbox-apps/devkit-activation.md). 
+- **Les appareils de développement**: afficher et gérer [les appareils Windows Phone 8.x que vous avez déverrouillés pour le test](http://go.microsoft.com/fwlink/p/?LinkId=533897) et les [consoles Xbox One activées pour le développement](../xbox-apps/devkit-activation.md). 
 
 

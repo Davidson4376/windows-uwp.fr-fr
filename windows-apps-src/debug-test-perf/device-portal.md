@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 08e7d8fcfbab0d0b22fffa3e3e0aecc38d5b095c
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3851059"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935396"
 ---
 # <a name="windows-device-portal-overview"></a>Vue d’ensemble de Windows Device Portal
 
@@ -23,9 +23,9 @@ Windows Device Portal vous permet de configurer et de gérer à distance votre a
 
 Windows Device Portal est un serveur web sur votre appareil que vous pouvez vous connecter à partir d’un navigateur web sur un PC. Si votre appareil dispose d’un navigateur web, vous pouvez également vous connecter localement avec le navigateur sur cet appareil.
 
-Windows Device Portal est disponible sur chaque famille d’appareils, mais les fonctionnalités et la configuration varient en fonction des besoins de chaque appareil. Cet article fournit une description générale de Device Portal et des liens vers des articles contenant des informations plus spécifiques pour chaque famille d’appareils.
+Windows Device Portal est disponible sur chaque famille d’appareils, mais les fonctionnalités et la configuration varient en fonction de la configuration requise de chaque appareil. Cet article fournit une description générale de Device Portal et des liens vers des articles contenant des informations plus spécifiques pour chaque famille d’appareils.
 
-La fonctionnalité de Windows Device Portal est implémentée avec l' [API REST](device-portal-api-core.md) que vous pouvez utiliser directement pour accéder aux données et contrôler votre appareil par programme.
+Les fonctionnalités de Windows Device Portal sont implémentée avec les [API REST](device-portal-api-core.md) que vous pouvez utiliser directement pour accéder aux données et contrôler votre appareil par programme.
 
 ## <a name="setup"></a>Installation
 
@@ -63,7 +63,7 @@ La barre d’outils en haut de la page permet d’accéder aux fonctionnalités 
 
 Utilisez les liens du volet de navigation sur le côté gauche de la page pour naviguer vers les outils d’analyse et de gestion disponibles pour votre appareil.
 
-Les outils qui sont communes à familles d’appareils sont décrits ici. D’autres options peuvent être disponibles selon l’appareil. Pour plus d’informations, consultez la page spécifique de votre type d’appareil.
+Les outils qui sont communes à des familles d’appareils sont décrits ici. D’autres options peuvent être disponibles selon l’appareil. Pour plus d’informations, consultez la page spécifique de votre type d’appareil.
 
 ### <a name="apps-manager"></a>App Manager (Gestionnaire d’applications)
 
@@ -71,14 +71,14 @@ Le Gestionnaire d’applications fournit l’installation ou la désinstallation
 
 ![Page du Gestionnaire Device Portal applications](images/device-portal/wdp-apps.png)
 
-- **Les applications installées**: utiliser le menu déroulant pour supprimer ou de démarrer des applications qui sont installées sur l’appareil. Installer une nouvelle application en cliquant sur **Ajouter**. Cette opération lance l’installation expérience utilisateur pour déployer les applications empaquetées dans local, réseau ou web héberge et enregistrer des fichiers libres à partir des partages réseau.
-- **Les applications en cours d’exécution**: obtenir des informations sur les applications qui sont en cours d’exécution et fermez-les si nécessaire.
+- **Les applications installées**: utiliser le menu déroulant pour supprimer ou de démarrer des applications qui sont installées sur l’appareil. Installer une nouvelle application en cliquant sur **Ajouter**. Cette opération lance l’installation expérience utilisateur pour déployer les applications empaquetées à partir de local, réseau ou web héberge et enregistrer des fichiers libres de partages réseau.
+- **Les applications en cours d’exécution**: obtenir des informations sur les applications qui sont en cours d’exécution et de les fermer si nécessaire.
 
 #### <a name="install-an-app"></a>Installer une application
 
 1.  Lorsque vous avez créé un package d’application, vous pouvez l’installer à distance sur votre appareil. Une fois créé dans Visual Studio, un dossier de sortie est généré.
   ![Installation d’applications](images/device-portal/iot-installapp0.png)
-2.  Dans la section du portail de l’appareil de Gestionnaire des applications, cliquez sur **Ajouter** , puis sélectionnez **installer le package d’application à partir du stockage local**.
+2.  Dans la section de gestionnaire d’applications du portail de l’appareil, cliquez sur **Ajouter** , puis sélectionnez **installer le package d’application à partir du stockage local**.
 3.  Cliquez sur **Parcourir** et recherchez votre package d’application.
 3.  Cliquez sur **Parcourir** et recherchez le fichier de certificat (_.cer_) (non requis sur tous les appareils.)
 4.  Cases à cocher le respectifs si vous souhaitez installer facultatif ou des packages d’infrastructure, ainsi que l’installation de l’application. Si vous avez plusieurs objets, ajoutez chacun d’eux individuellement.     
@@ -86,8 +86,8 @@ Le Gestionnaire d’applications fournit l’installation ou la désinstallation
 
 #### <a name="uninstall-an-app"></a>Désinstaller une application
 1.  Assurez-vous que votre application n’est pas en cours d’exécution. 
-2.  S’il s’agit, accédez à **l’exécution des applications** et fermez-le. Si vous essayez de désinstaller pendant l’exécution de l’application, celle-ci provoquera des problèmes lorsque vous essayez de réinstaller l’application. 
-3.  Sélectionnez l’application dans la liste déroulante, puis cliquez sur **Supprimer**.
+2.  S’il s’agit, accédez à **applications en cours d’exécution** et fermez-le. Si vous essayez de désinstaller pendant l’exécution de l’application, celle-ci provoquera des problèmes lorsque vous essayez de réinstaller l’application. 
+3.  Sélectionnez l’application à partir de la liste déroulante, puis cliquez sur **Supprimer**.
 
 ### <a name="running-processes"></a>Processus en cours d’exécution
 
@@ -103,14 +103,14 @@ Cette page vous permet d’afficher et de manipuler les fichiers stockés par to
 
 ### <a name="performance"></a>Performances
 
-La page de performances affiche des informations de diagnostic système comme la consommation d’énergie, la fréquence d’images, des graphiques en temps réel et chargez de processeur.
+La page de performances affiche des informations de diagnostic système comme la consommation d’énergie, la fréquence d’images, des graphiques en temps réel et charger des UC.
 
 Voici les mesures disponibles:
 - **Processeur**: pourcentage du total disponible de l’UC
 - **Mémoire**: totale, en cours d’utilisation, disponible validée, paginée et non paginée
 - **E/s**: les quantités de données en lecture et écriture
-- **Réseau**: réceptions et envois de données
-- **GPU**: l’utilisation de moteur pour cent de GPU disponible total
+- **Réseau**: réceptions et envois des données
+- **GPU**: % du GPU disponible total de l’utilisation du moteur
 
 
 ![Page de performances du portail d’appareil](images/device-portal/mob-device-portal-perf.png)
@@ -160,11 +160,11 @@ La page Gestionnaire de périphériques énumère tous les périphériques conne
 
 La page de mise en réseau gère les connexions réseau sur l’appareil. Sauf si vous êtes connecté à Device Portal via USB, la modification de ces paramètres entraînera certainement la déconnexion de Device Portal.
 - **Réseaux disponibles**: affiche les réseaux Wi-Fi disponibles sur l’appareil. Appuyez ou cliquez sur un réseau pour vous y connecter et fournir une clé d’accès si nécessaire. Device Portal ne gère pas encore l’authentification en entreprise. Vous pouvez également utiliser la liste déroulante des **profils** pour tenter de se connecter à un des profils Wi-Fi connus à l’appareil.
-- **Configuration IP**: affiche des informations d’adresse sur chacun de l’hôte ports de réseau de l’appareil.
+- **Configuration IP**: affiche des informations d’adresse sur chacun de l’ordinateur hôte ports de réseau de l’appareil.
 
 ![Page de mise en réseau du portail d’appareil](images/device-portal/mob-device-portal-network.png)
 
-## <a name="service-features-and-notes"></a>Remarques et fonctionnalités du Service
+## <a name="service-features-and-notes"></a>Remarques et fonctionnalités de Service
 
 ### <a name="dns-sd"></a>DNS-SD
 
