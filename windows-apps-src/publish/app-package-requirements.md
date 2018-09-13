@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, exigences relatives aux packages, packages, format du package, version prise en charge, soumettre
 ms.localizationpriority: medium
 ms.openlocfilehash: d7d748f36dafd93066928f01f9aa42414f2ffc1f
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933396"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3961287"
 ---
 # <a name="app-package-requirements"></a>Exigences relatives au package de l’application
 
@@ -41,7 +41,7 @@ Il n’est pas nécessaire que les packages de votre application soient signés 
 
 ### <a name="app-bundles"></a>Ensembles d’applications
 
-Pour les applications qui ciblent Windows 10, Windows 8.1 et/ou Windows Phone 8.1, Visual Studio peut générer un ensemble d’applications (.appxbundle) afin de réduire la taille de l’application téléchargée par les utilisateurs. Cela peut être utile si vous avez défini des ressources propres à une langue, plusieurs ressources de mise à l’échelle d’images ou encore des ressources qui s’appliquent à des versions spécifiques de Microsoft DirectX.
+Pour les applications qui ciblent Windows 10, Windows 8.1 et/ou Windows Phone 8.1, Visual Studio peut générer un ensemble d’applications (.appxbundle) pour réduire la taille de l’application téléchargée par les utilisateurs. Cela peut être utile si vous avez défini des ressources propres à une langue, plusieurs ressources de mise à l’échelle d’images ou encore des ressources qui s’appliquent à des versions spécifiques de Microsoft DirectX.
 
 > [!NOTE]
 > Un même ensemble d’applications peut contenir vos packages pour toutes les architectures. Vous ne devez soumettre qu’un seul ensemble par système d’exploitation ciblé.

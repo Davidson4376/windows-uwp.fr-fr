@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5db1e03ac86768e2b1b1181cd2cc416a151a80
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3929393"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3963401"
 ---
 # <a name="support-your-app-with-background-tasks"></a>Prendre en charge votre application avec des tâches en arrière-plan
 
@@ -37,7 +37,7 @@ L’approche in-process a été introduite dans Windows10 version1607 pour simpl
 
 Tâches en arrière-plan out-of-process sont plus résistants, car le processus en arrière-plan ne peut pas bloquer le processus de votre application en cas de problème. Mais la résilience implique le prix d’une plus grande complexité pour gérer la communication interprocessus entre l’application et de la tâche en arrière-plan.
 
-Tâches en arrière-plan out-of-process sont implémentées en tant que classes légères qui implémentent l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) qui le système d’exploitation s’exécute dans un processus distinct (backgroundtaskhost.exe). Inscrire une tâche en arrière-plan à l’aide de la classe [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) . Le nom de la classe est utilisé pour spécifier le point d’entrée lors de l’inscription de la tâche en arrière-plan.
+Tâches en arrière-plan hors processus sont implémentées en tant que classes légères qui implémentent l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) que le système d’exploitation s’exécute dans un processus distinct (backgroundtaskhost.exe). Inscrire une tâche en arrière-plan à l’aide de la classe [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) . Le nom de la classe est utilisé pour spécifier le point d’entrée lors de l’inscription de la tâche en arrière-plan.
 
 Dans Windows10 version1607, vous pouvez activer l’activité en arrière-plan sans avoir à créer de tâche en arrière-plan. Vous pouvez exécuter à la place de votre code en arrière-plan directement à l’intérieur des processus de l’application au premier plan.
 
@@ -77,7 +77,7 @@ Vous pouvez contrôler à quel moment la tâche en arrière-plan est exécutée,
 
 Ajoutez la condition **InternetAvailable** à votre tâche en arrière-plan [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour retarder le déclenchement de la tâche en arrière-plan jusqu'à ce que la pile réseau s’exécute. Cette condition économise l’énergie car la tâche en arrière-plan ne s’exécute jusqu'à ce que le réseau est disponible. Cette condition ne fournit pas d’activation en temps réel.
 
-Si votre tâche en arrière-plan nécessite une connectivité réseau, définissez [IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour vous assurer que le réseau reste opérationnel pendant l’exécution de la tâche en arrière-plan. Cela indique à l’infrastructure de tâches en arrière-plan qu’elle doit maintenir le réseau actif pendant l’exécution de la tâche, même si le périphérique est passé en mode de veille connectée. Si votre tâche en arrière-plan ne définit pas **IsNetworkRequested**, alors votre tâche en arrière-plan sera pas en mesure d’accéder au réseau en mode de veille connectée (par exemple, lorsque l’écran du téléphone est désactivée.)
+Si votre tâche en arrière-plan nécessite une connectivité réseau, la valeur [IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour vous assurer que le réseau reste opérationnel pendant l’exécution de la tâche en arrière-plan. Cela indique à l’infrastructure de tâches en arrière-plan qu’elle doit maintenir le réseau actif pendant l’exécution de la tâche, même si le périphérique est passé en mode de veille connectée. Si votre tâche en arrière-plan ne définit pas **IsNetworkRequested**, alors votre tâche en arrière-plan sera pas en mesure d’accéder au réseau en mode de veille connectée (par exemple, lorsque l’écran du téléphone est désactivée.)
  
 Pour plus d’informations sur les conditions de tâche en arrière-plan, consultez [définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md).
 
@@ -143,7 +143,7 @@ Sur les appareils à faible capacité de mémoire, le nombre d’applications po
 
 Sauf si vous appliquez une exception à votre application pour qu’elle puisse continuer à exécuter des tâches en arrière-plan et à recevoir des notifications push lorsque l’Économiseur de batterie est activé, la fonctionnalité Économiseur de batterie, lorsqu’elle est activée, empêche l’exécution de tâches en arrière-plan quand l’appareil n’est pas connecté à une source d’énergie externe et que la batterie passe sous une quantité d’énergie restante spécifiée. Cela ne vous empêche pas d’inscrire des tâches en arrière-plan.
 
-Toutefois, pour les applications d’entreprise et les applications qui ne seront pas publiées dans le Microsoft Store, voir [Exécuter en arrière-plan pendant une période indéfinie](run-in-the-background-indefinetly.md) pour savoir comment utiliser des fonctionnalités pour exécuter indéfiniment une tâche en arrière-plan ou une session d’exécution étendue en arrière-plan.
+Toutefois, pour les applications d’entreprise et des applications qui ne seront pas publiées dans le Microsoft Store, voir [s’exécuter en arrière-plan pendant une période indéfinie](run-in-the-background-indefinetly.md) pour savoir comment utiliser des fonctionnalités pour exécuter indéfiniment une tâche en arrière-plan ou une session d’exécution étendue en arrière-plan.
 
 ## <a name="background-task-resource-guarantees-for-real-time-communication"></a>Garanties de ressources des tâches en arrière-plan pour la communication en temps réel
 
@@ -171,7 +171,7 @@ Les tâches en arrière-plan peuvent signaler leur progression, leur annulation 
 [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)  
 [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 
-Vérifiez votre inscription de tâche en arrière-plan pendant le lancement de l’application. Assurez-vous que les tâches en arrière-plan dissociées de votre application sont présents dans BackgroundTaskBuilder.AllTasks. Réinscrivez ceux qui n’est pas présents. Annulez l’enregistrement de toutes les tâches qui ne sont plus nécessaires. Cela garantit que toutes les inscriptions de tâches en arrière-plan sont à jour chaque fois que l’application est lancée.
+Vérifiez votre inscription de tâche en arrière-plan pendant le lancement de l’application. Assurez-vous que les tâches en arrière-plan dissociées de votre application sont présents dans BackgroundTaskBuilder.AllTasks. Réinscrivez ceux qui n’est pas présents. Annulez l’enregistrement toutes les tâches qui ne sont plus nécessaires. Cela garantit que toutes les inscriptions de tâches en arrière-plan sont à jour chaque fois que l’application est lancée.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

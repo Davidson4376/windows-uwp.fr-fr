@@ -15,17 +15,17 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c75169f118e2c8ef575fa251a7badc8cfe44247
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3929437"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3956881"
 ---
 # <a name="navigation-view-preview-version"></a>Mode de navigation (version d’évaluation)
 
 > **Il s’agit d’une version d’évaluation**: cet article décrit une nouvelle version du contrôle NavigationView qui est toujours en développement. Pour l’utiliser, vous devez maintenant [dernière build Insider de Windows et Kit de développement](https://insider.windows.com/for-developers/) ou la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-Le contrôle NavigationView fournit la navigation de niveau supérieur pour votre application. Il s’adapte à différentes prend en charge des tailles d’écran plusieurs styles de navigation.
+Le contrôle NavigationView fournit la navigation de niveau supérieur pour votre application. Elle s’adapte à différentes tailles prend en charge l’écran plusieurs styles de navigation.
 
 > **API de bibliothèque de l’interface utilisateur de Windows**: [Microsoft.UI.Xaml.Controls.NavigationView classe](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 
@@ -33,7 +33,7 @@ Le contrôle NavigationView fournit la navigation de niveau supérieur pour votr
 
 ## <a name="get-the-windows-ui-library"></a>Obtenir la bibliothèque d’interface utilisateur Windows
 
-Ce contrôle est inclus dans le cadre de la bibliothèque d’interface utilisateur de Windows, un package NuGet qui contient les nouveaux contrôles et les fonctionnalités de l’interface utilisateur pour les applications UWP. Pour plus d’informations, y compris les instructions d’installation, consultez la [vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). 
+Ce contrôle est inclus dans le cadre de la bibliothèque de l’interface utilisateur de Windows, un package NuGet qui contient les nouveaux contrôles et les fonctionnalités de l’interface utilisateur pour les applications UWP. Pour plus d’informations, y compris les instructions d’installation, consultez la [vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). 
 
 ## <a name="navigation-styles"></a>Styles de navigation
 
@@ -53,7 +53,7 @@ NavigationView est un contrôle de navigation adaptatif qui fonctionne bien pour
 
 - La fourniture d’une expérience de navigation cohérente dans toute votre application.
 - Conservation de l’espace écran sur les fenêtres plus petites.
-- Organisation d’accès à de nombreuses catégories de navigation.
+- Organisation d’accéder à de nombreuses catégories de navigation.
 
 Pour d’autres contrôles de navigation, voir [les bases de conception de Navigation](../basics/navigation-basics.md).
 
@@ -64,7 +64,7 @@ Si votre navigation requiert un comportement plus complexe qui n’est pas pris 
         ![Certaines de l’image](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
     ::: column span = «2»::: **Galerie de contrôles XAML**<br>
-        Si vous disposez de l’application galerie de contrôles XAML est installée, cliquez <a href="xamlcontrolsgallery:/item/NavigationView">ici</a> pour ouvrir l’application et voir l’objet NavigationView en action.
+        Si vous disposez de l’application galerie de contrôles XAML installée, cliquez <a href="xamlcontrolsgallery:/item/NavigationView">ici</a> pour ouvrir l’application et voir l’objet NavigationView en action.
 
         <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
         <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
@@ -177,7 +177,7 @@ Le volet NavigationView peut également contenir:
 1. Éléments de navigation, sous la forme de [NavigationViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem), pour accéder à des pages spécifiques.
 2. Séparateurs, sous la forme de [NavigationViewItemSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator), pour regrouper les éléments de navigation. Définissez la propriété [Opacity](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity) sur 0 pour restituer le séparateur sous la forme d’espace.
 3. En-têtes, sous la forme de [NavigationViewItemHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemheader), pour libeller des groupes d’éléments.
-4. Facultatif [AutoSuggestBox](auto-suggest-box.md) pour permettre des recherches au niveau de l’application.
+4. Facultatif [AutoSuggestBox](auto-suggest-box.md) pour autoriser les recherches au niveau de l’application.
 5. Un point d’entrée facultatif pour les [paramètres d’application](../app-settings/app-settings-and-data.md). Pour masquer l’élément paramètres, utilisez la propriété [IsSettingsVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) .
 
 Le volet gauche contient:
@@ -231,13 +231,13 @@ Contenu forme libre dans le volet, lors de l’ajout à la propriété [PaneCust
 
 ### <a name="visual-style"></a>Style visuel
 
-Lors de la configuration matérielle et logicielle requise est remplies, NavigationView utilise automatiquement l' [ACRYLIQUE](../style/acrylic.md) dans son volet et les [principales fonctionnalités de révéler](../style/reveal.md) uniquement dans le volet gauche.
+Lors de la configuration matérielle et logicielle requise est remplies, NavigationView utilise automatiquement le [support ACRYLIQUE](../style/acrylic.md) dans son volet et les [principales fonctionnalités de révéler](../style/reveal.md) uniquement dans le volet gauche.
 
 ## <a name="header"></a>En-tête
 
 ![image de générique navview de la zone d’en-tête](images/nav-header.png)
 
-La zone d’en-tête est alignée verticalement avec le bouton de navigation dans la position du volet de gauche et se trouve sous le volet de la position du volet supérieur. Il possède une hauteur fixe de 52 px. Elle contient le titre de la page de la catégorie de navigation sélectionnée. L’en-tête est ancré sur le haut de la page et se comporte comme un point de découpage de défilement pour la zone de contenu.
+La zone d’en-tête est alignée verticalement avec le bouton de navigation à la position du volet de gauche et se trouve sous le volet de la position du volet supérieur. Il possède une hauteur fixe de 52 px. Elle contient le titre de la page de la catégorie de navigation sélectionnée. L’en-tête est ancré sur le haut de la page et se comporte comme un point de découpage de défilement pour la zone de contenu.
 
 L’en-tête doit être visible lorsque NavigationView est en mode d’affichage Minimal. Vous pouvez choisir de masquer l’en-tête dans les autres modes, utilisés pour des fenêtres de largeur supérieure. Pour ce faire, définissez la propriété [AlwaysShowHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.AlwaysShowHeader) sur **false**.
 
@@ -255,7 +255,7 @@ NavigationView change automatiquement son mode d'affichage selon la quantité d�
 
 ### <a name="default"></a>Valeur par défaut
 
-Le comportement adaptatif par défaut de NavigationView consiste à afficher un volet de gauche développé des largeurs de grande fenêtre, un volet de navigation de gauche icône seule des largeurs de fenêtre de taille moyenne et un bouton de menu hamburger sur les fenêtres étroites. Pour plus d’informations sur les tailles de fenêtre pour un comportement ADAPTATIF, voir les [tailles d’écran et points d’arrêt](../layout/screen-sizes-and-breakpoints-for-responsive-design.md).
+Le comportement adaptatif par défaut de NavigationView consiste à afficher un volet de gauche développé des largeurs de grande fenêtre, un volet de navigation gauche d’icône seule des largeurs de la fenêtre de taille moyenne et un bouton de menu hamburger sur les fenêtres étroites. Pour plus d’informations sur les tailles de fenêtre pour un comportement ADAPTATIF, voir les [tailles d’écran et points d’arrêt](../layout/screen-sizes-and-breakpoints-for-responsive-design.md).
 
 ![GIF leftnav un comportement adaptatif par défaut](images/displaymode-auto.png)
 
@@ -273,14 +273,14 @@ Courant ADAPTATIF deuxième consiste à utiliser un volet de gauche développé 
 <NavigationView CompactModeThresholdWidth="1008" ExpandedModeThresholdWidth="1007" />
 ```
 
-Nous vous recommandons cette quand:
+Nous recommandons cette when:
 
 - Davantage d’espace pour le contenu de l’application des largeurs de plus petite fenêtre votre choix.
 - Vos catégories de navigation ne peut pas être représentés clairement avec des icônes.
 
 ### <a name="compact"></a>Compact
 
-Courant ADAPTATIF tiers consiste à utiliser un volet de gauche développé sur les grandes fenêtres étroites et un volet de navigation d’icône seule gauche sur les deux largeurs de la fenêtre de petites et moyennes. Un bon exemple est l’application de messagerie.
+Courant ADAPTATIF troisième consiste à utiliser un volet de gauche développé sur les grandes fenêtres étroites et un volet de navigation de gauche icône seule à la fois des largeurs de fenêtre de petites et moyennes. Un bon exemple est l’application de messagerie.
 
 ![GIF leftnav comportement ADAPTATIF 3](images/adaptive-behavior-compact.png)
 
@@ -288,7 +288,7 @@ Courant ADAPTATIF tiers consiste à utiliser un volet de gauche développé sur 
 <NavigationView CompactModeThresholdWidth="0" ExpandedModeThresholdWidth="1007" />
 ```
 
-Nous vous recommandons cette quand:
+Nous recommandons cette when:
 
 - Il est important de toujours afficher toutes les options de navigation à l’écran.
 - vos catégories de navigation peuvent être représentés clairement avec des icônes.
@@ -307,7 +307,7 @@ Parfois, ne peut-être pas votre choix tout comportement adaptatif du tout. Vous
 
 Nous recommandons l’utilisation de navigation supérieur sur les grandes tailles de fenêtres et de navigation de gauche sur les petites tailles de fenêtre lorsque:
 
-- Vous disposez d’un ensemble de tout aussi les catégories de navigation de niveau supérieur important à afficher ensemble, telles que si une seule catégorie dans ce jeu ne tient pas à l’écran, vous réduisez de navigation de gauche à leur donner une importance égale.
+- Vous disposez d’un ensemble de tout aussi les catégories de navigation de niveau supérieur important s’affichent ensemble, telles que si une seule catégorie dans ce jeu ne tient pas à l’écran, vous réduisez de navigation de gauche à leur donner une importance égale.
 - Vous souhaitez conserver en tant que contenu beaucoup d’espace que possible dans les tailles de petite fenêtre.
 
 Voici un exemple:
@@ -443,7 +443,7 @@ Votre application est responsable de la mise à jour de l’en-tête et du conte
 
 ### <a name="tabs"></a>Onglets
 
-Dans le modèle onglets, la sélection et le focus sont liées. Une action que normalement équipes focus est décalé également sélection. Dans l’exemple indiqué ci-dessous, aide droit se déplace l’indicateur de sélection de l’affichage à la Loupe. Vous pouvez y parvenir en définissant la propriété [SelectionFollowsFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.selectionfollowsfocus) sur activé.
+Dans le modèle onglets, la sélection et le focus sont liées. Une action que normalement paradigmes focus est décalé également sélection. Dans l’exemple indiqué ci-dessous, aide droit se déplace l’indicateur de sélection de l’affichage à la Loupe. Vous pouvez y parvenir en définissant la propriété [SelectionFollowsFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.selectionfollowsfocus) sur activé.
 
 ![capture d’écran de texte uniquement navview supérieur](images/nav-tabs.png)
 
@@ -460,7 +460,7 @@ Voici l’exemple de code XAML pour que:
 
 ```
 
-Pour remplacer le contenu lorsque vous modifiez la sélection de l’onglet, vous pouvez utiliser la méthode de [NavigateWithOptions](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.NavigateToType) de l’image avec FrameNavigationOptions.IsNavigationStackEnabled est défini sur False, et NavigateOptions.TransitionInfoOverride définie sur l’approprié de gauche à droite animation de glissement. Pour obtenir un exemple, consultez l' [exemple de code](#code-example) ci-dessous.
+Pour remplacer le contenu lorsque vous modifiez la sélection de l’onglet, vous pouvez utiliser la méthode de [NavigateWithOptions](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.NavigateToType) de l’image avec FrameNavigationOptions.IsNavigationStackEnabled est défini sur False et NavigateOptions.TransitionInfoOverride définie sur l’approprié de gauche à droite animation de glissement. Pour obtenir un exemple, consultez l' [exemple de code](#code-example) ci-dessous.
 
 Si vous souhaitez modifier le Style par défaut, vous pouvez remplacer la propriété de [MenuItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.menuitemcontainerstyle) de NavigationView. Vous pouvez également définir la propriété [MenuItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.menuitemtemplate) pour spécifier un modèle de données différents.
 
@@ -497,7 +497,7 @@ Dans cet exemple, nous pensons que les utilisateurs finaux pour sélectionner fr
 
 - Définissez la propriété [SelectionFollowsFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PanePostion) sur activé
 - Utilisez des navigations de trame qui n’ajoutez pas à la pile de navigation.
-- Conserver la valeur par défaut sur la propriété [ShoulderNavigationEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PanePostion) , qui est utilisée pour indiquer si les gâchettes hautes gauche/droite sur un boîtier de commande naviguer dans les catégories de navigation de niveau supérieur de votre application. La valeur par défaut est «WhenSelectionFollowsFocus». Les autres valeurs possibles sont «Toujours» et «Jamais».
+- Conserver la valeur par défaut sur la propriété [ShoulderNavigationEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PanePostion) , qui est utilisée pour indiquer si les gâchettes hautes gauche/droite d’un boîtier de commande naviguer dans les catégories de navigation de niveau supérieur de votre application. La valeur par défaut est «WhenSelectionFollowsFocus». Les autres valeurs possibles sont «Toujours» et «Jamais».
 
 Nous montrons également comment implémenter la navigation avec le bouton précédent de NavigationView vers l’arrière.
 
@@ -508,7 +508,7 @@ Voici un enregistrement de ce que l’exemple illustre:
 Voici l’exemple de code:
 
 > [!NOTE]
-> Si vous utilisez la [Bibliothèque d’interface utilisateur de Windows](https://docs.microsoft.com/uwp/toolkits/winui/), vous devez ajouter une référence pour la trousse à outils: `xmlns:controls="using:Microsoft.UI.Xaml.Controls"`.
+> Si vous utilisez la [Bibliothèque de l’interface utilisateur de Windows](https://docs.microsoft.com/uwp/toolkits/winui/), vous devez ajouter une référence au Kit de ressources: `xmlns:controls="using:Microsoft.UI.Xaml.Controls"`.
 
 ```xaml
 <Page
@@ -591,7 +591,7 @@ Voici l’exemple de code:
 ```
 
 > [!NOTE]
-> Si vous utilisez la [Bibliothèque d’interface utilisateur de Windows](https://docs.microsoft.com/uwp/toolkits/winui/), vous devez ajouter une référence pour la trousse à outils: `using MUXC = Microsoft.UI.Xaml.Controls;`.
+> Si vous utilisez la [Bibliothèque de l’interface utilisateur de Windows](https://docs.microsoft.com/uwp/toolkits/winui/), vous devez ajouter une référence au Kit de ressources: `using MUXC = Microsoft.UI.Xaml.Controls;`.
 
 ```csharp
 // List of ValueTuple holding the Navigation Tag and the relative Navigation Page 
@@ -731,7 +731,7 @@ Ce résultat s’obtient en définissant la propriété [CanContentRenderOutside
 
 ![navview défilement VoletNav](images/nav-scroll-content.png)
 
-Si votre application possède le contenu de défilement très longs, vous souhaiterez pensez à incorporer des en-têtes rémanents qui joindre dans le volet de navigation supérieure et constituent une surface lisse. 
+Si votre application possède le contenu de défilement très longs, vous souhaiterez pensez à incorporer des en-têtes rémanents qui attacher au volet de navigation supérieure et constituent une surface lisse. 
 
 ![en-tête rémanent de défilement navview](images/nav-scroll-stickyheader.png)
 
@@ -739,7 +739,7 @@ Vous pouvez y parvenir en définissant la propriété [ContentOverlay](https://d
 
 Si l’utilisateur est défilement vers le bas, vous pouvez être amené à masquer le volet de navigation, obtenu en définissant la propriété [IsPaneVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.ContentOverlay) sur NavigationView sur false.
 
-![navigation de masquer navview défilement](images/nav-scroll-hidepane.png)
+![navview défilement masquer nav](images/nav-scroll-hidepane.png)
 
 ## <a name="related-topics"></a>Rubriques connexes
 

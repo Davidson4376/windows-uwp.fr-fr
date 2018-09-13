@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, tableau de bord, centre de développement
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f5357b038091b72681915e46875f92077bb3c9e
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3936326"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3961679"
 ---
 # <a name="using-the-windows-dev-center-dashboard"></a>Utilisation du tableau de bord du Centre de développement Windows
 
@@ -33,13 +33,13 @@ Voici quelques points clés concernant l’utilisation du tableau de bord:
 - Un emplacement unique dans le coin supérieur droit donne accès aux informations de profil et de compte, aux instructions de paiement, au support et aux notifications.
 - Vous bénéficiez d’un accès instantané à tous vos programmes de développement sans avoir à vous connecter/déconnecter pour chacun d’entre eux. Nous vous suggérons également de nouveaux programmes qui pourraient vous intéresser une fois disponibles.
 
-Lorsque vous [créez une soumission pour votre application](app-submissions.md) (pour la première fois ou en tant qu’une mise à jour), vous pouvez la [charger des packages d’application](upload-app-packages.md) pour tout pris en charge la version du système d’exploitation, et le Windows Store propose automatiquement aux clients le package qui fonctionne le mieux pour eux.
+Lorsque vous [créez une soumission pour votre application](app-submissions.md) (pour la première fois ou en tant qu’une mise à jour), vous pouvez la [charger des packages d’application](upload-app-packages.md) pour tout pris en charge la version du système d’exploitation et le Windows Store propose automatiquement aux clients le package qui fonctionne le mieux pour eux.
 
 [Les modules complémentaires (produits in-app)](add-on-submissions.md) sont gérés indépendamment de la soumission de votre application. Vous disposez ainsi d’une plus grande souplesse et de la possibilité d’effectuer des modifications de manière indépendante.
 
-Centre de développement Windows offre également des fonctionnalités pour [Ajouter plusieurs utilisateurs](manage-account-users.md)[de gestion des applications et de configuration des services](app-management-and-services.md), [examen des données d’analyse](analytics.md), [rapports sur les paiements](payout-summary.md), [promouvoir vos applications](attract-customers-and-promote-your-apps.md), [qui interagissent avec votre clients](engage-with-your-customers.md), [tests bêta](beta-testing-and-targeted-distribution.md), [distribuer des applications cœur de métier aux entreprises](distribute-lob-apps-to-enterprises.md)et bien plus encore.
+Centre de développement Windows offre également des fonctionnalités pour [Ajouter plusieurs utilisateurs](manage-account-users.md)[de gestion des applications et de configuration des services](app-management-and-services.md), [examen des données d’analyse](analytics.md), [rapports sur les paiements](payout-summary.md), [promouvoir vos applications](attract-customers-and-promote-your-apps.md), [qui interagissent avec votre clients](engage-with-your-customers.md), [test bêta](beta-testing-and-targeted-distribution.md), [distribuer des applications cœur de métier aux entreprises](distribute-lob-apps-to-enterprises.md)et bien plus encore.
 
-Vos commentaires nous aident à créer les meilleures fonctionnalités et expériences possibles. Lorsque vous travaillez dans le tableau de bord, utilisez le lien **commentaires** dans l’angle supérieur droit du tableau de bord pour partager vos réflexions et suggestions.
+Vos commentaires nous aident à créer les meilleures fonctionnalités et expériences possibles. Lorsque vous travaillez dans le tableau de bord, utilisez le lien **commentaires** dans le coin supérieur droit du tableau de bord pour partager vos réflexions et suggestions.
 
 
  

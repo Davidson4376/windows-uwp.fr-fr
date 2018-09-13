@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bd1dffe4da7b3725ef7716fe9cf28bdf8eaf34f
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3936526"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3957017"
 ---
 # <a name="working-with-symbologies"></a>Utilisation des symbologies
 Une [Symbologie de code-barres](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies) correspond au mappage des données dans un format spécifique de code-barres. Certaines symbologies courantes sont UPC, Code 128, Code QR et ainsi de suite.  Le scanneur de codes-barres de plateforme Windows universelle API permettent à une application contrôler la façon dont le scanneur traite ces symbologies sans configurer manuellement le scanneur. 
@@ -64,7 +64,7 @@ private async void SetSymbologies(ClaimedBarcodeScanner claimedBarcodeScanner)
 ```
 
 ## <a name="barcode-symbology-attributes"></a>Attributs de SYMBOLOGIE de code-barres
-Symbologies de codes-barres différentes peuvent avoir des attributs différents, tels que prise en charge de plusieurs longueurs, transmettre le chiffre de contrôle à l’hôte dans le cadre des données brutes, de décodage et vérifier la validation de chiffres. Avec la classe [BarcodeSymbologyAttributes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes) , vous pouvez obtenir et définir ces attributs pour une symbologie [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner) et code-barres donnée.
+Symbologies de codes-barres différentes peuvent avoir des attributs différents, tels que prise en charge de plusieurs longueurs, transmettre le chiffre de contrôle à l’hôte dans le cadre des données brutes, de décodage et vérifier la validation de chiffres. Avec la classe [BarcodeSymbologyAttributes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes) , vous pouvez obtenir et définir ces attributs pour une symbologie de code-barres et les [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner) donnée.
 
 Vous pouvez obtenir les attributs d’une symbologie donnée avec [GetSymbologyAttributesAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.getsymbologyattributesasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_GetSymbologyAttributesAsync_System_UInt32_). L’extrait de code suivant obtient les attributs de la SYMBOLOGIE Upca pour un **ClaimedBarcodeScanner**.
 
@@ -86,7 +86,7 @@ Certaines symbologies sont de longueur variable, telles que Code 39 ou Code 128.
 Avant de définir la longueur de décodage, vérifiez si la SYMBOLOGIE de code-barres prend en charge plusieurs longueurs avec [IsDecodeLengthSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.isdecodelengthsupported#Windows_Devices_PointOfService_BarcodeSymbologyAttributes_IsDecodeLengthSupported). Une fois que vous savez qu’il est pris en charge, vous pouvez définir le [DecodeLengthKind](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelengthkind#Windows_Devices_PointOfService_BarcodeSymbologyAttributes_DecodeLengthKind), qui est de type [BarcodeSymbologyDecodeLengthKind](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologydecodelengthkind). Cette propriété peut être une des valeurs suivantes:
 
 * **AnyLength**: longueurs de n’importe quel nombre de décodage.
-* **Discret**: décoder les longueurs de [DecodeLength1](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelength1) ou [DecodeLength2](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelength2) caractères codés sur.
+* **DISCRETE**: décoder les longueurs de [DecodeLength1](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelength1) ou [DecodeLength2](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.decodelength2) caractères codés sur.
 * **Plage**: décoder longueurs entre des caractères codés sur **DecodeLength1** et **DecodeLength2** . L’ordre des **DecodeLength1** et **DecodeLength2** pas seulement (soit peut être supérieure ou inférieure à l’autre).
 
 Enfin, vous pouvez définir les valeurs de **DecodeLength1** et **DecodeLength2** pour contrôler la longueur des données que vous avez besoin.
@@ -118,9 +118,9 @@ private async Task<bool> SetDecodeLength(
 
 ### <a name="check-digit-transmission"></a>Vérifier la transmission de chiffres
 
-Un autre attribut, que vous pouvez définir sur un symbolisme est indique si le chiffre de contrôle sera transmis à l’hôte dans le cadre des données brutes. Avant cela, assurez-vous que la SYMBOLOGIE prend en charge la vérification de transmission de chiffres avec [IsCheckDigitTransmissionSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigittransmissionsupported). Ensuite, définissez si transmission de chiffres à cocher est activée avec [IsCheckDigitTransmissionEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigittransmissionenabled).
+Un autre attribut, que vous pouvez définir sur un symbolisme est indique si le chiffre de contrôle est transmis à l’hôte dans le cadre des données brutes. Avant cela, assurez-vous que la SYMBOLOGIE prend en charge la vérification de transmission de chiffres avec [IsCheckDigitTransmissionSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigittransmissionsupported). Ensuite, définissez si transmission de chiffres à cocher est activée avec [IsCheckDigitTransmissionEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologyattributes.ischeckdigittransmissionenabled).
 
-L’extrait de code suivant illustre la transmission de chiffres à cocher de paramètre:
+L’extrait de code suivant illustre la transmission de chiffre de vérification du paramètre:
 
 ```cs
 private async Task<bool> SetCheckDigitTransmission(ClaimedBarcodeScanner scanner, uint symbology, bool isEnabled)

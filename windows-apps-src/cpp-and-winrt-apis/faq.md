@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, questions, fréquentes, FAQ, forum aux questions
 ms.localizationpriority: medium
 ms.openlocfilehash: 9316a29a50970bdaa288a4744f3aab7d873cbe4e
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933216"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3962903"
 ---
 # <a name="frequently-asked-questions-about-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Forum aux questions sur [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 Réponses aux questions que vous êtes susceptibles de vous poser sur la création et l’utilisation d’API Windows Runtime avec C++/WinRT.
@@ -24,7 +24,7 @@ Réponses aux questions que vous êtes susceptibles de vous poser sur la créati
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>Pourquoi mon projet ne sera pas compilé? Je suis à l’aide de Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et du SDK version 17134
 
-Si vous utilisez Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et vous ciblez le SDK Windows version 10.0.17134.0 (Windows 10, version 1803), puis un nouvellement créé C + / WinRT projet peut échouer compiler avec l’erreur «*erreur C3861: 'from_abi': identificateur pas trouvé*» et à d’autres erreurs dans *base.h*d’origine. La solution consiste à une cible une version ultérieure (conforme plus) version du SDK Windows ou de la propriété de projet de jeu **C/C++** > **langue** > **Conformance mode: N°** (en outre, si **/ permissive-** s’affiche dans la propriété de projet ** C/C++** > **langue** > de**ligne de commande** sous **Options supplémentaires**, puis supprimez).
+Si vous utilisez Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et vous ciblez le SDK Windows version 10.0.17134.0 (Windows 10, version 1803), puis un nouvellement créé C + c++ / WinRT projet peut échouer compiler avec l’erreur «*erreur C3861: 'from_abi': identificateur pas trouvé*» et à d’autres erreurs dans *base.h*d’origine. La solution consiste à deux cible une version ultérieure (conforme plus) version du SDK Windows ou de la propriété de projet de jeu **C/C++** > **langue** > **Conformance mode: N°** (en outre, si **/ permissive-** s’affiche dans la propriété de projet ** C/C++** > **langue** > de**ligne de commande** sous **Options supplémentaires**, puis supprimez).
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsixhttpsakamscppwinrtvsix"></a>Quelles sont les exigences pour l’[extension Visual Studio (VSIX) C++/WinRT](https://aka.ms/cppwinrt/vsix)?
 [VSIX](https://aka.ms/cppwinrt/vsix) applique une version cible du SDK Windows minimale de 10.0.17134.0 (Windows10, version1803). Vous avez également besoin de Visual Studio2017 (au moins la version15,6; nous recommandons au moins la version15.7). Vous pouvez identifier un projet qui utilise VSIX par la présence de `<CppWinRTEnabled>true</CppWinRTEnabled>` dans `<PropertyGroup Label="Globals">` dans le fichier `.vcxproj`. Pour plus d’informations, voir [Prise en charge de Visual Studio pour C++/WinRT et VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
@@ -93,7 +93,7 @@ Visual Studio est l’outil de développement que nous prenons en charge et reco
 
 Lorsque vous déclarez une propriété en lecture seule dans [MIDL 3.0](/uwp/midl-3/), vous pouvez vous attendre le `cppwinrt.exe` outil pour générer une fonction d’implémentation pour vous `const`-qualifié (une fonction const traite le pointeur *this* comme const).
 
-Nous recommandons certainement à l’aide de const dans la mesure du possible, mais la `cppwinrt.exe` outil lui-même ne tente pas de raison sur l’implémentation fonctions peuvent être intentionnellement const, et qui ne peut pas. Vous pouvez choisir de rendre une des fonctions de votre implémentation const, comme dans cet exemple.
+Nous recommandons certainement à l’aide de const dans la mesure du possible, mais le `cppwinrt.exe` outil lui-même ne tente pas de raison pour laquelle sur l’implémentation fonctions peut-être intentionnellement const, et qui ne peut pas. Vous pouvez choisir de rendre une des fonctions de votre implémentation const, comme dans cet exemple.
 
 ```cppwinrt
 struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation::IStringable>
@@ -105,7 +105,7 @@ struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation
 };
 ```
 
-Vous pouvez supprimer ces `const` qualificateur sur **ToString** doit vous décidez que vous avez besoin modifier un état de l’objet dans son implémentation. Mais chacun des membres de votre fonctions const ou non const, pas les deux. En d’autres termes, ne surchargez pas une fonction de mise en œuvre sur `const`.
+Vous pouvez supprimer ces `const` qualificateur sur **ToString** doit vous décidez que vous devez modifier un état de l’objet dans son implémentation. Mais chacune de vos membre fonctions const ou non const, pas les deux. En d’autres termes, ne surchargez pas une fonction de la mise en œuvre sur `const`.
 
 Permet d’identifier les fonctions de votre implémentation, un autre autres lieu const est fourni dans l’image se trouve dans les projections de fonction Windows Runtime. Envisagez de ce code.
 
@@ -123,11 +123,11 @@ Pour l’appel à **ToString** ci-dessus, la commande **d’Atteindre la déclar
 winrt::hstring ToString() const;
 ```
 
-Fonctions de la projection sont const, quelle que soit la méthode vous choisissez pour qualifier votre implémentation de leur. En coulisse, la projection appelle l’interface de binaire d’application (ABI), le qui équivaut à un appel par le biais d’un pointeur d’interface COM. Le seul état la projeté **ToString** interagit avec est ce pointeur d’interface COM; et il certainement n’a pas besoin de modifier ce pointeur, afin que la fonction est const. Ceci permet de vous la garantie que cela ne changera rien aborder la référence **IStringable** que vous appelez via, et il permet de s’assurer que vous pouvez appeler **ToString** même avec une variable const faire référence à une **IStringable**.
+Fonctions de la projection sont const, quel que soit le mode choisi qualifier votre implémentation d’eux. En coulisse, la projection appelle l’interface de binaire d’application (ABI), le qui équivaut à un appel par le biais d’un pointeur d’interface COM. Le seul état la projeté **ToString** interagit avec est ce pointeur d’interface COM; et il certainement n’a pas besoin de modifier ce pointeur, afin que la fonction est const. Ceci permet de vous l’assurance qu’elle ne modifie aucune information concernant la référence **IStringable** que vous appelez via, et il permet de s’assurer que vous pouvez appeler **ToString** même avec const faire référence à une **IStringable**.
 
-Comprendre que ces exemples de `const` détails d’implémentation de C++ / WinRT projections et les implémentations; ils constituent hygiène du code à votre avantage. Il n’existe pas `const` sur le COM, ni ABI Windows Runtime (pour les fonctions de membre).
+Comprendre que ces exemples de `const` les détails d’implémentation de C++ / WinRT projections et les implémentations; ils constituent hygiène de code à votre avantage. Il n’existe pas de `const` sur le COM, ni ABI Windows Runtime (pour les fonctions de membres).
 
-## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>Vous disposez des recommandations pour réduire la taille de code pour C++ / WinRT binaires?
+## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>Vous disposez des recommandations pour réduire la taille de code pour C++ / WinRT des fichiers binaires?
 
 Lorsque vous travaillez avec des objets Windows Runtime, vous devez éviter le modèle de codage illustré ci-dessous, car elle peut avoir un impact négatif sur votre application en à l’origine du code binaire plus que nécessaire pour être générés.
 
@@ -137,7 +137,7 @@ anobject.b().c().e();
 anobject.b().c().f();
 ```
 
-Dans le monde Windows Runtime, le compilateur ne peut pas mettre en cache soit la valeur de `c()` ou des interfaces pour chaque méthode qui est appelée par le biais d’une indirection («.»). Sauf si vous intervenez, qui se traduit par plusieurs appels virtuels et une surcharge de décompte de références. Le modèle ci-dessus peut facilement générer deux fois plus code comme strictement nécessaire. Au lieu de cela, préférez le modèle indiqué ci-dessous partout où vous pouvez. Elle génère beaucoup moins de code, et elle peut également considérablement améliorer les performances d’exécution.
+Dans le monde de Windows Runtime, le compilateur ne peut pas mettre en cache soit la valeur de `c()` ou des interfaces pour chaque méthode qui est appelée par le biais d’une indirection («.»). Sauf si vous intervenez, qui se traduit par plusieurs appels virtuels et une surcharge de décompte de références. Le modèle ci-dessus peut facilement générer deux fois plus code comme strictement nécessaire. Au lieu de cela, préférez le modèle indiqué ci-dessous partout où vous pouvez. Elle génère beaucoup moins de code, et elle peut également considérablement améliorer les performances d’exécution.
 
 ```cppwinrt
 auto a{ anobject.b().c() };

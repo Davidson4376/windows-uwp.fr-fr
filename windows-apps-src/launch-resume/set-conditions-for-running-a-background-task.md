@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 556a787eb1e92e4c8adb7457235afb45c02df2dc
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3936536"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3957327"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>Définir des conditions pour exécuter une tâche en arrière-plan
 
@@ -31,7 +31,7 @@ ms.locfileid: "3936536"
 
 Découvrez comment définir des conditions spécifiant à quel moment votre tâche en arrière-plan s’exécutera.
 
-Tâches en arrière-plan nécessitent parfois, certaines conditions pour être remplies pour que la tâche en arrière-plan réussisse. Vous pouvez spécifier une ou plusieurs des conditions spécifiées par [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) au moment d’inscrire votre tâche en arrière-plan. La condition est vérifiée une fois que le déclencheur est activé. La tâche en arrière-plan sera alors être en file d’attente, mais ne s’exécute jusqu'à ce que toutes les conditions requises sont satisfaites.
+Parfois, les tâches en arrière-plan nécessitent certaines conditions à remplir pour la tâche en arrière-plan réussisse. Vous pouvez spécifier une ou plusieurs des conditions spécifiées par [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) au moment d’inscrire votre tâche en arrière-plan. La condition est vérifiée une fois que le déclencheur est activé. La tâche en arrière-plan sera alors être en file d’attente, mais elle ne fonctionnera pas jusqu'à ce que toutes les conditions requises sont satisfaites.
 
 Affectation de conditions aux tâches en arrière-plan permet d’économiser l’autonomie de la batterie et de processeur en empêchant toute exécution inutile des tâches. Par exemple, si votre tâche en arrière-plan est exécutée sur un minuteur et nécessite une connectivité Internet, ajoutez la condition **InternetAvailable** au [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) avant d’inscrire la tâche. Cela empêchera ainsi la tâche de faire inutilement appel aux ressources système et à l’autonomie de la batterie. Elle s’exécutera uniquement une fois que le minuteur sera arrivé à expiration *et* qu’Internet sera accessible.
 

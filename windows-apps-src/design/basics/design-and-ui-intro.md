@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 952db87d0dabdb927a472de17f0c0d7b345bde4e
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3936376"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3962053"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Présentation de la conception des applicationsUWP
 
@@ -66,7 +66,7 @@ Puisque les applications UWP s'adaptent automatiquement à tous les appareils, l
 
 :::row:::
     :::column:::
-        Lorsqu’une application UWP est lancée sur n’importe quel appareil Windows 10, elle se lance dans une [fenêtre](/uwp/api/Windows.UI.Xaml.Controls.Window) avec une [image](/uwp/api/Windows.UI.Xaml.Controls.Frame), ce qui peut naviguer entre les instances de la [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) .
+        Lorsqu’une application UWP est lancée sur n’importe quel appareil Windows 10, il lance dans une [fenêtre](/uwp/api/Windows.UI.Xaml.Controls.Window) avec une [image](/uwp/api/Windows.UI.Xaml.Controls.Frame), ce qui peut naviguer entre les instances de la [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) .
     :::column-end:::
     :::column:::
         ![Trame](images/frame.svg)

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f3354dad1702d275fb7b2af53516689d2c5d5014
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3929767"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3956831"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Étendre votre application de bureau avec des composants UWP modernes
 
@@ -313,7 +313,7 @@ public sealed class AppServiceTask : IBackgroundTask
 
 ### <a name="add-an-app-service-extension-to-the-packaging-project"></a>Ajoutez une extension de service d’application au projet de création de packages
 
-Ouvrez le fichier **package.appxmanifest** du projet de création de package, puis ajoutez une extension de service d’application pour le ``<Application>`` élément.
+Ouvrez le fichier **package.appxmanifest** du projet de création de package, puis ajoutez une extension de service d’application à la ``<Application>`` élément.
 
 ```xml
 <Extensions>

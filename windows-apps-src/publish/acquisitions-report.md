@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, acquisitions, ventes d’applications, téléchargements d'applications, installations, entonnoir, acquisition, conversions, canal, vues de pages d'applications
 ms.localizationpriority: medium
 ms.openlocfilehash: e6b4a3d8a10234e5f95e70f397a4de962a29c929
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3931862"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3961347"
 ---
 # <a name="acquisitions-report"></a>Rapport Acquisitions
 
@@ -34,7 +34,7 @@ Dans ce rapport, une **acquisition** signifie qu’un nouveau client a obtenu un
 
 ## <a name="apply-filters"></a>Appliquer des filtres
 
-Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de **30D** (30jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12mois, ou sur une plage de dates personnalisée que vous spécifiez. Dans la zone en temps réel des données seront affiche pour toutes les options (sauf dans les données **d’application cumulative** ). L’heure de **1 H** et **72 H** périodes s’appliquent uniquement à l’onglet **application quotidienne** du graphique **Acquisitions** et à l’onglet **Acquisitions** du graphique **des marchés** . 
+Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de **30D** (30jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12mois, ou sur une plage de dates personnalisée que vous spécifiez. Dans la zone en temps réel des données seront affiche pour toutes les options (sauf dans les données **d’application cumulative** ). Le temps de **1 H** et **72 H** périodes s’appliquent uniquement à l’onglet **application tous les jours** du graphique **Acquisitions** et à l’onglet **Acquisitions** du graphique **des marchés** . 
 
 Vous pouvez également développer l’option **Filtres** pour filtrer toutes les données de cette page par marché et/ou par type d’appareil.
 
@@ -58,7 +58,7 @@ Si vous le souhaitez, vous pouvez filtrer les résultats par acquisition émanan
 Dans la vue de **l’application de tous les jours** , lorsque le **30D** période est activée, vous pouvez voir des marqueurs de cercle. Ces représentent une augmentation importante ou la diminution une valeur donnée dont nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou une baisse par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
 
 > [!TIP]
-> Vous pouvez afficher des informations plus liées à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).
+> Vous pouvez afficher des conseils supplémentaires liés à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).
 
 ## <a name="installs"></a>Installations
 

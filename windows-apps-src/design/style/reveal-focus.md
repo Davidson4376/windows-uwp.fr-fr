@@ -14,17 +14,17 @@ design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5fa84efbe20368be55a50ce20c8e6e5d1fe439
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928245"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3961735"
 ---
 # <a name="reveal-focus"></a>Révéler Focus
 
 ![image hero](images/header-reveal-focus.svg)
 
-Révéler que focus est un effet visuel pour [des expériences «10-foot»](/windows/uwp/design/devices/designing-for-tv), par exemple, les écrans de télévision et Xbox One. Cet effet anime la bordure des éléments susceptibles d’être activés, comme les boutons, lorsque l’utilisateur déplace le focus du clavier ou du boîtier de commande sur ces derniers. Il est désactivé par défaut, mais il est facile de l’activer. 
+Révéler que focus est un effet visuel pour [des expériences «10-foot»](/windows/uwp/design/devices/designing-for-tv), tels que les écrans de télévision et Xbox One. Cet effet anime la bordure des éléments susceptibles d’être activés, comme les boutons, lorsque l’utilisateur déplace le focus du clavier ou du boîtier de commande sur ces derniers. Il est désactivé par défaut, mais il est facile de l’activer. 
 
 (Pour l’effet révéler animé, un effet d’éclairage qui met en évidence les éléments interactifs, consultez l' [article révéler mettre en surbrillance](/windows/uwp/design/style/reveal).)
 
@@ -36,7 +36,7 @@ L’effet révéler Focus attire l’attention sur les éléments ayant le focus
 
 ![Visuel de l’effet de révélation](images/traveling-focus-fullscreen-light-rf.gif)
 
-Cela est particulièrement utile dans les scénarios «10-foot» où l’utilisateur ne peut pas être totalement concentré sur l’écran de TV entier. 
+Cela est particulièrement utile dans les scénarios «10-foot» où l’utilisateur ne peut pas être totalement concentré sur tout l’écran de télévision. 
 
 ## <a name="examples"></a>Exemples
 
@@ -45,7 +45,7 @@ Cela est particulièrement utile dans les scénarios «10-foot» où l’utilisa
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/RevealFocus">Ouvrir l’application et voir révéler le Focus en action.</a></p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/RevealFocus">Ouvrir l’application et voir révéler le Focus en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Obtenir le code source (GitHub)</a></li>
@@ -80,7 +80,7 @@ Toutefois, avant de commencer la personnalisation, il est utile de connaître un
 
 Il existe trois parties, les visuels de révéler le Focus par défaut: la bordure principale, la bordure secondaire et l’éclat. La bordure principale a une épaisseur de **2px** et apparaît autour de la bordure secondaire *extérieure*. La bordure secondaire a une épaisseur de **1px** et apparaît autour de la bordure principale *intérieure*. L’éclat de révéler le Focus a une épaisseur proportionnelle à l’épaisseur de la bordure principale et apparaît autour de l' *extérieur* de la bordure principale.
 
-En plus des éléments statiques, visuels de Focus révéler dotés d’une lumière animée qui clignote au repos et se déplace dans la direction du focus lors du déplacement du focus.
+En plus des éléments statiques, de visuels de Focus révéler fonctionnalité une lumière animée qui clignote au repos et se déplace dans la direction du focus lors du déplacement du focus.
 
 ![Révéler les couches de Focus](images/reveal-breakdown.svg)
 

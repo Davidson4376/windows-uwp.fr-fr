@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3931303"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3959437"
 ---
 # <a name="app-management-and-services"></a>Gestion des applications et services
 
@@ -50,13 +50,13 @@ Pour plus d’informations, voir [Utiliser les services cartographiques](use-map
 
 ## <a name="product-collections-and-purchases"></a>Collections et achats de produits
 
-Pour utiliser le Microsoft Store API de collection et l’API d’achat de Microsoft Store pour accéder aux informations de propriété pour les applications et modules complémentaires, vous devez entrer associé ID clients Azure AD ici. Notez que la prise en compte de ces modifications peut prendre jusqu’à 16heures.
+Pour utiliser le Microsoft Store API de collection et l’API d’achat de Microsoft Store pour accéder aux informations de propriété pour les applications et modules complémentaires, vous devez entrer le texte associé ID clients Azure AD ici. Notez que la prise en compte de ces modifications peut prendre jusqu’à 16heures.
 
 Pour plus d’informations, consultez l’article [Gérer des droits sur les produits à partir d’un service](../monetize/view-and-grant-products-from-a-service.md).
 
 ## <a name="administrator-consent"></a>Consentement de l’administrateur
 
-f votre produit s’intègre avec Azure AD et appelle des API qui requièrent des [autorisations de l’application ou les autorisations déléguées](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) qui nécessite le consentement de l’administrateur, entrez votre ID d’Azure AD Client ici. Cela permet aux administrateurs qui achètent l’application leur organisation accorder à donner son consentement pour votre produit à agir pour le compte de tous les utilisateurs du client.
+f est intégré à Azure AD de votre produit et appelle des API qui requièrent des [autorisations de l’application ou les autorisations déléguées](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) qui nécessite le consentement de l’administrateur, entrez votre ID d’Azure AD Client ici. Cela permet aux administrateurs qui achètent l’application leur organisation accorder à donner son consentement pour votre produit à agir pour le compte de tous les utilisateurs du client.
 
 Pour plus d’informations, voir la [demande de consentement pour un client entière](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
 

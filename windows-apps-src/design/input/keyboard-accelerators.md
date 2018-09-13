@@ -15,11 +15,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: ce84debc3422f923c7c88aae1fa216665ef1ef0f
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3932864"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3962939"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 
@@ -357,7 +357,7 @@ Comme les raccourcis clavier ne sont généralement pas décrit directement dans
 
 **Windows 10, Version 1803 (mise à jour du mois d’avril 2018) et versions ultérieures**
 
-Par défaut, lorsque les raccourcis clavier sont déclarés, tous les contrôles (à l’exception [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) et [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) présentent les combinaisons de touches correspondants dans une info-bulle.
+Par défaut, lorsque les raccourcis clavier sont déclarés, tous les contrôles (sauf [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) et [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) présentent les combinaisons de touches correspondants dans une info-bulle.
 
 > [!NOTE] 
 > Si plusieurs raccourcis sont définis pour un contrôle, seul le premier est présenté.

@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: Windows 10, uwp, passez en revue, commentaire, réviseur
 ms.localizationpriority: medium
 ms.openlocfilehash: 8891aecb904f69e3f77ec5892d9234f79db46ff0
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3931584"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3958687"
 ---
 # <a name="reviews-report"></a>Rapport sur les avis
 
 
-Le rapport **avis** dans le tableau de bord du centre de développement Windows vous permet de voir les avis (commentaires) que les clients ont formulés pendant l’évaluation de votre application dans le Windows Store.
+Le rapport **avis** dans le tableau de bord du centre de développement Windows vous permet de voir les avis (commentaires) que les clients ont formulés lors de l’évaluation de votre application dans le Windows Store.
 
 Vous pouvez visualiser ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Par ailleurs, vous pouvez récupérer ces données par programme à l’aide de la méthode [get des avis concernant l’application](../monetize/get-app-reviews.md) dans [Microsoft Store analytique API REST](../monetize/access-analytics-data-using-windows-store-services.md).
 
@@ -52,7 +52,7 @@ Vous pouvez développer **Filtres** pour filtrer les avis affichés sur cette pa
 
 ## <a name="ratings-breakdown"></a>Répartition des classifications
 
-Le graphique de **répartition des classifications** s’affiche en haut de ce rapport, afin que vous pouvez obtenir un aperçu de ce qui suit: 
+Le graphique de **répartition des classifications** s’affiche en haut de ce rapport, afin que vous pouvez obtenir un aperçu des éléments suivants: 
 - Évaluation moyenne à l’aide d’étoiles concernant l’application
 - Nombre total d’évaluations de votre application au cours des 12derniers mois.
 - Nombre total d’évaluations correspondant à chaque nombre d’étoiles.
@@ -111,12 +111,12 @@ Les commentaires qui n'ont pas été rédigés dans votre langue sont traduits p
 
 Notez que les évaluations sont traduites par un système de traduction automatique et que le résultat de la traduction n’est pas toujours précis. Le texte d’origine est fourni si vous souhaitez le comparer à la traduction ou utiliser un autre moyen de traduction.
 
-Comme indiqué plus haut, lorsque recherche votre avis, uniquement le texte d’origine à gauche par le client est recherché (et non une le texte traduit), même si vous avez la case à cocher **traduire avis** activée.
+Comme indiqué plus haut, lorsque recherche votre avis, uniquement le texte d’origine à gauche par le client est recherché (et non un texte traduit), même si vous avez la case à cocher **d’avis par translation** activée.
 
 
 ## <a name="responding-to-customer-reviews"></a>Réponse aux avis des clients
 
-Vous pouvez utiliser le tableau de bord du Microsoft Store développement Center, l' [API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md)ou de l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) d’envoyer des réponses à la plupart des avis de vos clients. Pour plus d’informations, consultez l’article [Répondre aux avis des clients](respond-to-customer-reviews.md).
+Vous pouvez utiliser le tableau de bord du Microsoft Store développement Center, l' [API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md)ou l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) d’envoyer des réponses à la plupart des avis de vos clients. Pour plus d’informations, consultez l’article [Répondre aux avis des clients](respond-to-customer-reviews.md).
 
 Vous découvrirez ci-après certaines actions supplémentaires à envisager en fonction des évaluations et des avis que vous voyez.
 

@@ -10,15 +10,15 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 322bc056411095019dfc027078cbfef7de0883fb
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3932724"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3963897"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en mai 2018
 
-La documentation du développeur Windows est constamment mise à jour afin d'intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations de fonctionnalités, conseils aux développeurs, vidéos et exemples suivantes ont été apportées disponibles dans le mois de mai coïncider avec la conférence [Microsoft Build 2018](https://www.microsoft.com/build) des développeurs.
+La documentation du développeur Windows est constamment mise à jour afin d'intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations de fonctionnalités suivantes, conseils aux développeurs, vidéos et exemples ont été apportées disponibles dans le mois de mai coïncider avec la conférence [Microsoft Build 2018](https://www.microsoft.com/build) des développeurs.
 
 [Installez les outils et le kit de développement logiciel (SDK)](http://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
@@ -37,7 +37,7 @@ L’utilisateur de mouvement dans le système Fluent Design évolue, qui repose 
 
 ### <a name="fluent-design-updates"></a>Mises à jour de la conception Fluent
 
-Visual mises à jour et des modifications mineures ont été apportées aux pages Fluent Design suivantes:
+Mises à jour visuelles et modifications mineures ont été apportées aux pages Fluent Design suivantes:
 
 * [Alignement, marges, espacement](../design/layout/alignment-margin-padding.md)
 * [Couleur](../design/style/color.md)
@@ -63,9 +63,9 @@ Les fichiers de programme d’installation de l’application peuvent désormais
 
 ### <a name="edge-webview-control-for-windows-forms-and-wpf-applications"></a>Edge contrôle WebView pour les applications Windows Forms et WPF
 
-Afficher le contenu web dans votre application de bureau en utilisant le contrôle WebView, auparavant uniquement disponible pour les applications UWP. Ce contrôle utilise le moteur d’incorporer une vue que restitue mise en forme enrichie HTML de rendu contenu à partir d’un serveur web distant, votre code généré de manière dynamique ou fichiers de contenu de Microsoft Edge. Recherchez le contrôle WebView dans la dernière version de la [Windows Community Toolkit.](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)
+Afficher le contenu web dans votre application de bureau en utilisant le contrôle WebView, auparavant disponible uniquement pour les applications UWP. Ce contrôle utilise le moteur d’incorporer un affichage que restitue mise en forme enrichie HTML de rendu contenu à partir d’un serveur web distant, votre code généré de manière dynamique ou fichiers de contenu de Microsoft Edge. Recherchez le contrôle WebView dans la dernière version de la [Windows Community Toolkit.](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)
 
-Recherchez les autres contrôles comme WebView dans les futures versions de Windows Community Toolkit. Pour plus d’informations, voir [hôte UWP des contrôles dans les applications WPF et Windows Forms.](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
+Recherchez d’autres contrôles comme WebView dans les futures versions de Windows Community Toolkit. Pour plus d’informations, voir [hôte UWP les contrôles dans les applications WPF et Windows Forms.](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="gaze-input-and-interactions"></a>Le pointage du regard à l’entrée et interactions
 
@@ -81,13 +81,13 @@ Annoncé lors de la conférence Microsoft Build 2018, MSIX est un nouveau format
 
 Outils de création de ces packages seront disponibles dans une prochaine version de Visual Studio et le Kit de développement Windows.
 
-Le format des packages MSIX est un format d’open source qui le rend plus facile à nos partenaires pour prendre en charge de l’écosystème MSIX avec leurs solutions et les outils. Pour en savoir plus sur le format des packages MSIX, reportez-vous à la section [MSIX SDK](https://github.com/Microsoft/msix-packaging). 
+Le format d’empaquetage MSIX est un format d’open source qui le rend plus facile à nos partenaires pour prendre en charge de l’écosystème MSIX avec leurs solutions et les outils. Pour en savoir plus sur le format d’empaquetage MSIX, voir [MSIX SDK](https://github.com/Microsoft/msix-packaging). 
 
 ![Image de création de packages MSIX](images/msix.png)
 
 ### <a name="optional-packages-with-executable-code"></a>Packages facultatifs avec code exécutable
 
-Packages facultatifs dans votre application peuvent contenir désormais en c# du code exécutable. [Découvrez comment utiliser Visual Studio pour configurer les packages facultatifs de module complémentaire pour prendre en charge votre package d’application principale.](../packaging/optional-packages-with-executable-code.md)
+Packages facultatifs dans votre application peuvent contenir maintenant de code c# exécutable. [Découvrez comment utiliser Visual Studio pour configurer les packages facultatifs de module complémentaire pour prendre en charge votre package d’application principale.](../packaging/optional-packages-with-executable-code.md)
 
 ### <a name="page-transitions"></a>Transitions de page
 
@@ -105,18 +105,18 @@ La fonctionnalité jeux est disponible dans les versions d’évaluation Windows
 
 ### <a name="get-started"></a>Prise en main
 
-Nous avons aux retraités rajeunit notre Get démarré contenu avec les nouvelles pistes d’apprentissage. Ces nouvelles rubriques visent à fournir des nouveaux développeurs Windows 10 avec les informations sur les tâches courantes ils souhaitent accomplir. Ils ne sont pas des didacticiels et ne fournissent pas une procédure pas à pas à main, mais au lieu de cela, signalez où il existe une documentation existante et comment l’utiliser. Consultez le revisitée [commencer à coder](../get-started/create-uwp-apps.md) page, ou à découvrir chaque piste d’apprentissage individuels:
+Nous avons aux retraités rajeunit notre Get démarré contenu avec les nouvelles pistes d’apprentissage. Ces nouvelles rubriques objectif est d’offrir des nouveaux développeurs Windows 10 avec les informations sur les tâches courantes ils souhaitent accomplir. Ils ne sont pas des didacticiels et ne fournissent pas une procédure pas à pas à main, mais au lieu de cela, signalez où il existe une documentation existante et comment l’utiliser. Consultez le revisitée [commencer à coder](../get-started/create-uwp-apps.md) page, ou à découvrir chaque piste d’apprentissage individuels:
 
 * [Construire un formulaire](../get-started/construct-form-learning-track.md)
 * [Afficher les clients dans une liste](../get-started/display-customers-in-list-learning-track.md)
 * [Paramètres d'enregistrement et de chargement](../get-started/settings-learning-track.md)
 * [Travailler avec des fichiers](../get-started/fileio-learning-track.md)
 
-![Obtenir une image prise en main](../get-started/images/build-your-app.png)
+![Obtenir l’image de la prise en main](../get-started/images/build-your-app.png)
 
 ### <a name="advertising-performance-report"></a>Rapport sur les performances publicitaires
 
-Le [rapport sur les performances publicitaires](../publish/advertising-performance-report.md) dans le tableau de bord du centre de développement offre désormais les mesures de visibilité. Nous avons également ajouté l’article [optimiser la visibilité de vos unités publicitaires](../monetize/optimize-ad-unit-viewability.md) pour fournissent des recommandations permettant d’optimiser la visibilité de vos annonces.
+Le [rapport sur les performances publicitaires](../publish/advertising-performance-report.md) dans le tableau de bord du centre de développement offre désormais les mesures de visibilité. Nous avons également ajouté l’article [optimiser la visibilité de vos unités publicitaires](../monetize/optimize-ad-unit-viewability.md) pour fournir des recommandations pour l’optimisation de la visibilité de vos annonces.
 
 ### <a name="targeted-push-notifications"></a>Notifications push ciblées
 
@@ -126,14 +126,14 @@ La page de [Notifications](../publish/send-push-notifications-to-your-apps-custo
 
 ### <a name="cwinrt"></a>C++/WinRT
 
-C++ / WinRT est une nouvelle façon de création et l’utilisation APIs Windows Runtime. Il est implémenté unique dans les fichiers d’en-tête et conçue pour vous fournir un accès aux fonctionnalités d’application moderne. [Regardez la vidéo](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be) pour savoir comment il fonctionne, puis [Lisez la documentation du développeur](../cpp-and-winrt-apis/index.md) pour plus d’informations.
+C++ / WinRT est une nouvelle façon de création et l’utilisation APIs Windows Runtime. Il a implémenté la seule dans les fichiers d’en-tête et conçue pour vous fournir un accès aux fonctionnalités d’application moderne. [Regardez la vidéo](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be) pour savoir comment il fonctionne, puis [Lisez la documentation du développeur](../cpp-and-winrt-apis/index.md) pour plus d’informations.
 
 ### <a name="multi-instance-uwp-apps"></a>Applications UWP à instances multiples
 
-Windows vous permet désormais d’exécuter plusieurs instances de votre application UWP, avec chaque dans son propre processus distinct. [Regardez la vidéo](https://www.youtube.com/watch?v=clnnf4cigd0&feature=youtu.be) pour savoir comment créer une application qui prend en charge cette fonctionnalité, puis [Lisez la documentation du développeur](../launch-resume/multi-instance-uwp.md) pour plus d’informations sur la façon d’et les raisons d’utiliser cette fonctionnalité.
+Windows vous permet désormais d’exécuter plusieurs instances de votre application UWP, avec chaque dans son propre processus distinct. [Regardez la vidéo](https://www.youtube.com/watch?v=clnnf4cigd0&feature=youtu.be) pour savoir comment créer une application qui prend en charge cette fonctionnalité, puis [Lisez la documentation du développeur](../launch-resume/multi-instance-uwp.md) pour obtenir des instructions sur la façon d’et les raisons d’utiliser cette fonctionnalité.
 
 ## <a name="samples"></a>Exemples
 
 ### <a name="customer-database-tutorial"></a>Didacticiel de base de données client
 
-Ce didacticiel crée une application UWP de base pour la gestion d’une liste de clients et présente les concepts et pratiques utiles pour le développement d’entreprise. Il vous guide par le biais de la mise en œuvre des éléments d’interface utilisateur et l’ajout d’opérations par rapport à une base de données SQLite locale et fournit des conseils libres pour se connecter à une base de données reste à distance, si vous souhaitez aller plus loin. [Consultez le didacticiel ici](../enterprise/customer-database-tutorial.md)
+Ce didacticiel crée une application UWP de base pour la gestion d’une liste de clients et présente les concepts et pratiques utiles dans le développement d’entreprise. Il vous guide par le biais de la mise en œuvre des éléments d’interface utilisateur et en ajoutant des opérations sur une base de données SQLite locale et fournit des conseils libres pour la connexion à une base de données reste à distance, si vous souhaitez aller plus loin. [Consultez le didacticiel ici](../enterprise/customer-database-tutorial.md)

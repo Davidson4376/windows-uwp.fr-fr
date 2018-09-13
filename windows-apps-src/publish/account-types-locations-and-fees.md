@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, compte de développeur, individuel, société, entreprise
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928955"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3962615"
 ---
 # <a name="account-types-locations-and-fees"></a>Types de compte, emplacements et frais
 
@@ -37,7 +37,7 @@ Voici les principales différences entre les deux types de compte.
 |--------------------|-----------------|
 | <ul><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Processus de vérification de compte plus court</li></ul> | <ul><li>Coûte environ 99USD (frais d’inscription ponctuels; le montant exact varie en fonction de votre pays ou région)</li><li>Nécessite une vérification renforcée du compte</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>En mesure de soumettre des applications avec des fonctionnalités restreintes (comme décrit dans les [Stratégies du MicrosoftStore](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type))</li></ul> |
 
-Les comptes d’entreprise sont un peu plus onéreux, car des étapes supplémentaires sont nécessaires pour vérifier que vous êtes autorisé à configurer le compte au nom de votre entreprise. Par les [Stratégies du Windows Store](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type), les applications avec certaines fonctionnalités, telles que celles qui accèdent aux compte financier informations ou qui exigent l’authentification pour accéder aux fonctionnalités principales (sans utiliser un fournisseur d’authentification sécurisé dédié un tiers), peut uniquement être publiées par les comptes d’entreprise.
+Les comptes d’entreprise sont un peu plus onéreux, car des étapes supplémentaires sont nécessaires pour vérifier que vous êtes autorisé à configurer le compte au nom de votre entreprise. Par les [Stratégies du Windows Store](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type), les applications avec certaines fonctionnalités, telles que celles qui accèdent compte financier informations ou qui nécessitent authentification pour accéder à la fonctionnalité primaire (sans utiliser un fournisseur d’authentification sécurisé dédié un tiers), peut uniquement être publiées par les comptes d’entreprise.
 
 ## <a name="account-verification"></a>Vérification de compte
 
