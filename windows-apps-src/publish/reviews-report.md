@@ -1,7 +1,7 @@
 ---
 author: jnHs
 Description: The Reviews report in the Windows Dev Center dashboard lets you see the reviews (comments) that customers entered when rating your app in the Store.
-title: Rapport sur les avis
+title: Rapport sur les révisions
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 ms.author: wdg-dev-content
 ms.date: 08/16/2018
@@ -10,14 +10,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, passez en revue, commentaire, réviseur
 ms.localizationpriority: medium
-ms.openlocfilehash: 8891aecb904f69e3f77ec5892d9234f79db46ff0
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.openlocfilehash: 4500ebe7406db45a089f3ceba10c1d1e781ea679
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958687"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989538"
 ---
-# <a name="reviews-report"></a>Rapport sur les avis
+# <a name="reviews-report"></a>Rapport sur les révisions
 
 
 Le rapport **avis** dans le tableau de bord du centre de développement Windows vous permet de voir les avis (commentaires) que les clients ont formulés lors de l’évaluation de votre application dans le Windows Store.
@@ -68,7 +68,7 @@ Notez que ce graphique inclut toujours toutes vos avis, même si vous avez séle
 Ce graphique peut également être visible dans le [rapport sur les évaluations](ratings-report.md), ainsi que de plus d’informations sur les évaluations de votre application.
 
 
-< span id = «catégories d’analyse des avis / >
+<span id = "review-insight-categories" />
 
 ## <a name="insight-categories"></a>Catégories d’analyse des
 

@@ -634,7 +634,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macédoine (Ex-République yougoslave de)</td>
+    <td>Macedonia (FYROM)</td>
     <td>200USD</td>
     <td>Virement bancaire</td>
     <td>Non applicable</td>
@@ -956,7 +956,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taïwan</td>
+    <td>Taiwan</td>
     <td>200USD</td>
     <td>Virement bancaire</td>
     <td>25USD</td>
@@ -1696,7 +1696,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macédoine (Ex-République yougoslave de)</td>
+    <td>Macedonia (FYROM)</td>
     <td>50USD</td>
     <td>Virement bancaire</td>
     <td>Non applicable</td>
@@ -2018,7 +2018,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taïwan</td>
+    <td>Taiwan</td>
     <td>50USD</td>
     <td>Virement bancaire</td>
     <td>50USD</td>
@@ -2751,7 +2751,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>Macédoine (Ex-République yougoslave de)</td>
+    <td>Macedonia (FYROM)</td>
     <td>200USD</td>
     <td>Virement bancaire</td>
     <td>Non applicable</td>
@@ -3066,7 +3066,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>Taïwan</td>
+    <td>Taiwan</td>
     <td>200USD</td>
     <td>Virement bancaire</td>
     <td>25USD</td>
@@ -3756,7 +3756,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macédoine (Ex-République yougoslave de)</td>
+    <td>Macedonia (FYROM)</td>
     <td>200USD</td>
     <td>Virement bancaire</td>
     <td>Non applicable</td>
@@ -4057,7 +4057,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taïwan</td>
+    <td>Taiwan</td>
     <td>200USD</td>
     <td>Virement bancaire</td>
     <td>25USD</td>

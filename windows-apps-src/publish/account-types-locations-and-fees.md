@@ -166,7 +166,7 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
 |  Lituanie | 14 EUR | 75 EUR | EUR payé à la banque | Non | 
 |  Luxembourg | 14 EUR | 75 EUR | EUR payé à la banque | Oui | 
 |  Macao R.A.S. | 19 USD | 99 USD | Aucun revenu | Non | 
-|  Macédoine (Ex-République yougoslave de) | 19 USD | 99 USD | USD payé à la banque | Non | 
+|  Macedonia (FYROM) | 19 USD | 99 USD | USD payé à la banque | Non | 
 |  Madagascar | 19 USD | 99 USD | USD payé à la banque | Non | 
 |  Malawi | 19 USD | 99 USD | MWK payé à la banque | Non | 
 |  Malaisie | 62 MYR | 300 MYR | USD payé à la banque | Non | 
@@ -230,7 +230,7 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
 |  Swaziland | 19 USD | 99 USD | Aucun revenu | Non | 
 |  Suède | 123 SEK | 700 SEK | SEK payé à la banque | Oui | 
 |  Suisse | 17 CHF | 90 CHF | CHF payé à la banque | Oui | 
-|  Taïwan | 568 TWD | 2840 TWD | USD payé à la banque | Oui | 
+|  Taiwan | 568 TWD | 2840 TWD | USD payé à la banque | Oui | 
 |  Tadjikistan | 19 USD | 99 USD | USD payé à la banque | Non | 
 |  Tanzanie | 19 USD | 99 USD | TZS payé à la banque | Non | 
 |  Thaïlande | 601 THB | 3000 THB | THB payé à la banque | Oui | 
