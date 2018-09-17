@@ -4,18 +4,18 @@ Description: The Acquisitions report in the Windows Dev Center dashboard lets yo
 title: Rapport Acquisitions
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 08/15/2018
+ms.date: 09/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, acquisitions, ventes d’applications, téléchargements d'applications, installations, entonnoir, acquisition, conversions, canal, vues de pages d'applications
 ms.localizationpriority: medium
-ms.openlocfilehash: e6b4a3d8a10234e5f95e70f397a4de962a29c929
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.openlocfilehash: 75a3ce152257d10fe392b3f64381b3e82bc79961
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961347"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987926"
 ---
 # <a name="acquisitions-report"></a>Rapport Acquisitions
 
@@ -49,6 +49,8 @@ Les informations figurant dans tous les graphiques répertoriés ci-après corre
 Le graphique **Acquisitions** affiche le nombre total d’acquisitions quotidiennes ou hebdomadaires (chaque fois qu’un nouveau client obtient une licence pour votre application) au cours de la période sélectionnée. (Lorsque vous utilisez l’option **Appliquer les filtres** pour afficher les données portant sur une durée plus étendue, les données d’acquisition sont regroupées par semaine.) Seules les acquisitions effectuées par les clients qui sont connectés avec un compte Microsoft valide figurent dans ce graphique. 
 
 Par défaut, nous affichons la vue de **l’application tous les jours** , qui comprend près de données en temps réel. Vous pouvez également visualiser le nombre total d’acquisitions sur toute la durée de vie de votre application en sélectionnant **App cumulative**. Vous avez alors accès au total cumulé de l’ensemble des acquisitions effectuées depuis la première publication de votre application.
+
+**Ventes brutes** de votre application (octobre 2016 - présents) sont également disponibles dans ce graphique, montrant le montant total gagné ventes d’application (en USD). Notez que ce montant ne tient pas compte pour n’importe quel remboursements, reprises, des rétrofacturation, etc..
 
 Si vous le souhaitez, vous pouvez filtrer les résultats par acquisition émanant du client ou du WindowsStore sur le web et/ou par version du système d’exploitation.
 

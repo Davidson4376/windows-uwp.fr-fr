@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 53aac2375d60df3cd9493f315b20431961378fe8
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957891"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987972"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Poursuivre l’activité utilisateur, même sur différents appareils
 

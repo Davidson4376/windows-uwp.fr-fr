@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, groupe ciblé, clients, groupe de versions d’évaluation, groupes d’utilisateurs connus, utilisateurs connus
 ms.localizationpriority: medium
 ms.openlocfilehash: e15b5a4a2f76cbfc33db593c3110ac6f2d054b5b
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959071"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986192"
 ---
 # <a name="create-known-user-groups"></a>Créer des groupes d’utilisateurs connus
 

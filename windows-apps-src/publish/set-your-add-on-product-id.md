@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, extensions, iap, durable, consommable, abonnement, type de produit, id produit, achat in-app, produit in-app
 ms.localizationpriority: medium
 ms.openlocfilehash: 0673048fc9a1ed8fb7c439607ebc4197039699e9
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959473"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982906"
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>Définir le type et l’ID produit d’une extension
 

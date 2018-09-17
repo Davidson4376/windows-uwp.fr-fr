@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows10, uwp, envoyer des notifications toast, notifications, envoyer des notifications, notifications toast, procédure, démarrage rapide, prise en main, exemple de code, procédure pas à pas
 ms.localizationpriority: medium
 ms.openlocfilehash: 3004b7041838656890b3a967e858dddc64c29ee5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964249"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986226"
 ---
 # <a name="send-a-local-toast-notification"></a>Envoyer une notification toast locale
 

@@ -12,11 +12,11 @@ keywords: Windows10, uwp, barre de titre
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c3e0e6ec7331e860c9153e2a2e29a51fb5848bd
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964581"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981380"
 ---
 # <a name="designing-for-sets"></a>Conception de Jeux
 

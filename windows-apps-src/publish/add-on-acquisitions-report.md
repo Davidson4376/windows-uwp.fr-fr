@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, ventes d’extensions, acquisitions d’extensions, produits in-app, extensions
 ms.localizationpriority: medium
 ms.openlocfilehash: 019bb410e6ac65f9951f06052c78f40e9a5f32e2
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962345"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984358"
 ---
 # <a name="add-on-acquisitions-report"></a>Rapport sur les acquisitions d’extensions
 
