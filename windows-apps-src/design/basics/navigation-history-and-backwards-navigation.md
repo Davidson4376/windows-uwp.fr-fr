@@ -14,12 +14,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 714a1af932dfb8d5b0aab5c84437f92d5c2bd90e
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.openlocfilehash: 4eb8bc40c2e9066487a14d217f53a6433266b308
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3983814"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4016061"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Historique de navigation et navigation vers l’arrière pour les applicationsUWP
 
@@ -335,14 +335,14 @@ Si vous choisissez de fournir votre propre navigation de pile Back, l’expérie
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>Page à page, même groupe d’homologues, pas d’élément de navigation à l’écran</strong>
-<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Il n’existe pas à l’écran élément de navigation (par exemple, [NavigationView](../controls-and-patterns/navigationview.md)) qui fournit une navigation directe vers les deux pages.</p></td>
+<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Il n’existe pas à l’écran élément de navigation (par exemple, <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>) qui fournit une navigation directe vers les deux pages.</p></td>
 <td style="vertical-align:top;"><strong>Oui</strong>
 <p>Dans l’illustration suivante, l’utilisateur navigue entre deux pages dans le même groupe d’homologues, et la navigation doit être ajoutée à l’historique de navigation.</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>Page à page, même groupe d’homologues, avec un élément de navigation à l’écran</strong>
-<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Les deux pages sont affichées dans le même élément de navigation, par exemple, [NavigationView](../controls-and-patterns/navigationview.md).</p></td>
+<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Les deux pages sont affichées dans le même élément de navigation, par exemple, <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>.</p></td>
 <td style="vertical-align:top;"><strong>Cela dépend</strong>
 <p>Oui, ajouter à l’historique de navigation, avec deux exceptions notables. Si vous pensez que les utilisateurs de votre application pour basculer entre les pages dans le groupe d’homologues fréquemment, ou si vous souhaitez conserver la hiérarchie de navigation, puis n’ajoutez pas à l’historique de navigation. Dans ce cas, lorsque l’utilisateur appuie sur le bouton Précédent, il retourne à la dernière page avant d’avoir accédé au groupe d’homologues actuel. </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>

@@ -11,11 +11,11 @@ keywords: windows10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a7428b9278e4fc3264f652030f0409cab056d31
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3983224"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4022297"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>Délais, méthodes et seuils de paiement
 
@@ -634,7 +634,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macedonia (FYROM)</td>
+    <td>Macédoine (Ex-République yougoslave de)</td>
     <td>200USD</td>
     <td>Virement bancaire</td>
     <td>Non applicable</td>
@@ -956,7 +956,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taiwan</td>
+    <td>Taïwan</td>
     <td>200USD</td>
     <td>Virement bancaire</td>
     <td>25USD</td>
@@ -1696,7 +1696,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macedonia (FYROM)</td>
+    <td>Macédoine (Ex-République yougoslave de)</td>
     <td>50USD</td>
     <td>Virement bancaire</td>
     <td>Non applicable</td>
@@ -2018,7 +2018,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taiwan</td>
+    <td>Taïwan</td>
     <td>50USD</td>
     <td>Virement bancaire</td>
     <td>50USD</td>
@@ -2751,7 +2751,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>Macedonia (FYROM)</td>
+    <td>Macédoine (Ex-République yougoslave de)</td>
     <td>200USD</td>
     <td>Virement bancaire</td>
     <td>Non applicable</td>
@@ -3066,7 +3066,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>Taiwan</td>
+    <td>Taïwan</td>
     <td>200USD</td>
     <td>Virement bancaire</td>
     <td>25USD</td>
@@ -3756,7 +3756,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macedonia (FYROM)</td>
+    <td>Macédoine (Ex-République yougoslave de)</td>
     <td>200USD</td>
     <td>Virement bancaire</td>
     <td>Non applicable</td>
@@ -4057,7 +4057,7 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taiwan</td>
+    <td>Taïwan</td>
     <td>200USD</td>
     <td>Virement bancaire</td>
     <td>25USD</td>

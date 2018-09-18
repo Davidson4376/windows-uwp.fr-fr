@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, distribution de version d’évaluation
 ms.localizationpriority: medium
 ms.openlocfilehash: d5f43173c85bc8a696d7dbc9967e704f79db2b3f
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3984368"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4022483"
 ---
 # <a name="package-flights"></a>Versions d’évaluation de package
 
