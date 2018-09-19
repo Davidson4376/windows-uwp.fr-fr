@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, extensions, iap, prix
 ms.localizationpriority: medium
 ms.openlocfilehash: b5b7a6424fea3d62849e992f56b0b40ab72a55f5
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4019327"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4052017"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>Définir le prix et la disponibilité d’une extension
 

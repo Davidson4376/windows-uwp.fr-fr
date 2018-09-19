@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ca47bfb26649f2e8a9fc1344c3264d90548eb836
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4024175"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4052635"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>Attirer les clients et promouvoir vos applications
 

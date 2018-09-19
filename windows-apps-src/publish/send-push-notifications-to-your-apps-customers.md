@@ -11,11 +11,11 @@ keywords: windows10, uwp, notifications ciblées, notifications push, toast, vig
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d62f46ad1b55fbad3ab7c21a593625a2538b68f
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4019687"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4061067"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>Envoyer des notifications aux clients de votre application
 

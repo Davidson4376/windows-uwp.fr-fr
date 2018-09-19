@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, passez en revue, commentaire, réviseur
 ms.localizationpriority: medium
 ms.openlocfilehash: 4500ebe7406db45a089f3ceba10c1d1e781ea679
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4022367"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4052471"
 ---
 # <a name="reviews-report"></a>Rapport sur les révisions
 

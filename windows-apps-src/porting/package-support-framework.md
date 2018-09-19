@@ -10,34 +10,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 46d5705233af9e8254b9ac89a2d6e9891e90701f
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.openlocfilehash: 7e5119696498156d36ec63b16b1d76c00b03f4df
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4021519"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4060961"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>Appliquer des correctifs de l’exécution à un package MSIX à l’aide de l’infrastructure de prise en charge de Package
 
 L’infrastructure de prise en charge de Package est un kit open source qui vous permet d’appliquer des correctifs à votre application win32 existantes lorsque vous n’avez pas accès au code source, afin qu’il puisse exécuter dans un conteneur MSIX. L’infrastructure de prise en charge de Package permet à votre application de suivre les meilleures pratiques de l’environnement d’exécution moderne.
 
-Pour créer l’infrastructure de prise en charge de Package, nous avons exploité la technologie [Detours](https://www.microsoft.com/en-us/research/project/detours) qui est une infrastructure open source développée par Microsoft Research (MSR) et contribue à la redirection des API et de raccordement.
-
-Cette infrastructure est open source, léger, et vous pouvez l’utiliser pour résoudre les problèmes d’application rapidement. Il vous donne également la possibilité de consulter avec la Communauté dans le monde entier et à utiliser les investissements d’autres personnes.
-
-## <a name="a-quick-look-inside-of-the-package-support-framework"></a>Un coup de œil rapide à l’intérieur de l’infrastructure de prise en charge de Package
-
-L’infrastructure de prise en charge de Package contient un fichier exécutable, un DLL du Gestionnaire de runtime et un ensemble de correctifs de l’exécution.
-
-![Infrastructure de prise en charge de package](images/desktop-to-uwp/package-support-framework.png)
-
-Voici le principe: Vous allez créer un fichier de configuration qui spécifie le fix(s) que vous souhaitez appliquer à votre application. Ensuite, vous allez modifier votre package pour pointer vers le fichier exécutable du Lanceur shim.
-
-Lorsque les utilisateurs lancent votre application, le Lanceur shim est le premier exécutable qui s’exécute. Il lit votre fichier de configuration et injecte la fix(s) runtime et le Gestionnaire de runtime DLL dans le processus d’application.
-
-![Injection de DLL Framework package prise en charge](images/desktop-to-uwp/package-support-framework-2.png)
-
-Le Gestionnaire de runtime applique le correctif lorsqu’il est requis par l’application s’exécute à l’intérieur d’un conteneur MSIX.
+Pour en savoir plus, voir [l’Infrastructure de prise en charge de Package](https://docs.microsoft.com/windows/msix/package-support-framework-overview).
 
 Ce guide vous aidera à identifier les problèmes de compatibilité des applications, et pour rechercher, appliquer et étendre runtime des correctifs qui y remédier.
 
