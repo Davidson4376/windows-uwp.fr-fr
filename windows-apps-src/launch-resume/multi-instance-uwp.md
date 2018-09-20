@@ -4,31 +4,31 @@ title: Créer une application Windows universelle à instances multiples
 description: Cette rubrique décrit comment écrire des applications UWP qui prennent en charge l’instanciation multiple.
 keywords: applications UWP à instances multiples
 ms.author: twhitney
-ms.date: 02/22/2018
+ms.date: 09/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e0717ac9a2af0a0e1078e39af8f7300ac506823
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 9302ed0375739153eb95ac2b54c1ed396b14daee
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816544"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4085188"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>Créer une application Windows universelle à instances multiples
 
 Cette rubrique décrit comment créer une application de plateforme Windows universelle (UWP) à instances multiples.
 
-Préalablement à Windows10, version1803, il était impossible d'exécuter simultanément plusieurs instances d’une application UWP. Désormais, une application UWP peut choisir de prendre en charge plusieurs instances. Si une instance d’une application UWP à instances multiples est en cours d’exécution et qu’une demande d’activation consécutive est reçue, la plateforme n’activera pas l’instance existante. Au lieu de cela, elle créera une nouvelle instance qui s’exécutera dans un processus distinct.
+À partir de Windows 10, version 1803 (version 10.0; Build 17134), votre application UWP peut participer à prendre en charge plusieurs instances. Si une instance d’une application UWP à instances multiples est en cours d’exécution et qu’une demande d’activation consécutive est reçue, la plateforme n’activera pas l’instance existante. Au lieu de cela, elle créera une nouvelle instance qui s’exécutera dans un processus distinct.
 
-## <a name="opt-in-to-multi-instance-behavior"></a>Choisir un comportement à instances multiples
+## <a name="opt-in-to-multi-instance-behavior"></a>Participer au comportement à instances multiples
 
 Si vous créez une nouvelle application à instances multiples, vous pouvez installer les **modèles .VSIX de projets d’applications à instances multiples**, disponibles dans le [Visual Studio Marketplace](https://aka.ms/E2nzbv). Une fois que vous avez installé les modèles, ils sont disponibles dans la boîte de dialogue **Nouveau projet** sous **Visual C# > Windows universel** (ou **Autres langages > Visual C++ > Windows universel**).
 
 Deux modèles sont installés: **Application UWP à instances multiples**, qui fournit le modèle pour la création d’une application à instances multiples, et **Application UWP de redirection à instances multiples**, qui fournit une logique supplémentaire sur laquelle vous pouvez vous appuyer pour lancer une nouvelle instance ou activer de manière sélective une instance qui a déjà été lancée. Par exemple, vous souhaitez peut-être éviter que plusieurs instances modifient simultanément un même document, afin de mettre au premier plan l’instance où ce fichier est ouvert, au lieu de lancer une nouvelle instance.
 
-Chacun des deux templates ajoute `SupportsMultipleInstances` au fichier package.appxmanifest. Notez les préfixes d’espace de noms `desktop4`et `iot2`: seuls les projets qui ciblent le bureau ou des projets IoT prennent en charge l'instanciation multiple:
+Ajoutent les deux modèles `SupportsMultipleInstances` à la `package.appxmanifest` fichier. Notez les préfixes d’espace de noms `desktop4` et `iot2`: seuls les projets qui ciblent le bureau ou des projets de l’Internet des objets (IoT), prend en charge l’instanciation multiple.
 
 ```xml
 <Package
@@ -53,10 +53,13 @@ Chacun des deux templates ajoute `SupportsMultipleInstances` au fichier package.
 
  La prise en charge de l'instanciation multiple pour les applications UWP permet non seulement de lancer plusieurs instances de l’application, mais offre aussi des options de personnalisation si vous souhaitez décider de lancer ou non une nouvelle instance de votre application ou d'activer ou non une instance déjà en cours d’exécution. Par exemple, si l’application est lancée pour modifier un fichier qui est déjà en cours de modification dans une autre instance, vous pouvez rediriger l’activation vers cette instance au lieu d’ouvrir une autre instance qui est déjà en train de modifier le fichier.
 
-Pour voir tout cela en pratique, regardez cette vidéo sur la création d’applications UWP à instances multiples:
+Pour voir tout cela en action, regardez cette vidéo sur la création des applications UWP à instances multiples.
+
 > [!VIDEO https://www.youtube.com/embed/clnnf4cigd0]
 
-Le modèle d'**application UWP de redirection à instances multiples** ajoute `SupportsMultipleInstances` au fichier package.appxmanifest comme indiqué ci-dessus, et ajoute également un objet **Program.cs** (ou **Program.cpp**, si vous utilisez la version C++ du modèle) à votre projet qui contient une fonction `Main()`. La logique de redirection de l’activation est intégrée à la fonction `Main`. Voilà à quoi ressemble le modèle de **Program.cs**:
+Le modèle d'**application UWP de redirection à instances multiples** ajoute `SupportsMultipleInstances` au fichier package.appxmanifest comme indiqué ci-dessus, et ajoute également un objet **Program.cs** (ou **Program.cpp**, si vous utilisez la version C++ du modèle) à votre projet qui contient une fonction `Main()`. La logique de redirection de l’activation est intégrée à la fonction `Main`. Le modèle pour **Program.cs** est illustré ci-dessous.
+
+La propriété [AppInstance.RecommendedInstance](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance) représente l’instance par défaut fournie par l’interpréteur de commandes pour cette demande d’activation, le cas échéant (ou `null` si il n’existe pas). Si l’interpréteur de commandes fournit une préférence, puis vous pouvez pouvez rediriger l’activation vers cette instance, ou vous pouvez l’ignorer si vous choisissez.
 
 ``` csharp
 public static class Program
@@ -73,8 +76,8 @@ public static class Program
         // logic for generating the key for this instance.
         IActivatedEventArgs activatedArgs = AppInstance.GetActivatedEventArgs();
 
-        // In some scenarios, the platform might indicate a recommended instance.
-        // If so, we can redirect this activation to that instance instead, if we wish.
+        // If the Windows shell indicates a recommended instance, then
+        // the app can choose to redirect this activation to that instance instead.
         if (AppInstance.RecommendedInstance != null)
         {
             AppInstance.RecommendedInstance.RedirectActivationTo();
@@ -87,7 +90,7 @@ public static class Program
             // to the first instance. In practice, the app should produce a key
             // that is sometimes unique and sometimes not, depending on its own needs.
             string key = Guid.NewGuid().ToString(); // always unique.
-            //string key = "Some-App-Defined-Key"; // never unique.
+                                                    //string key = "Some-App-Defined-Key"; // never unique.
             var instance = AppInstance.FindOrRegisterInstanceForKey(key);
             if (instance.IsCurrentInstance)
             {
@@ -112,7 +115,6 @@ Le code ci-dessus détermine si une instance existante ou nouvelle de votre appl
 
 Si une instance enregistrée avec la clé est identifiée, cette instance est activée. Si la clé est introuvable, l’instance actuelle (l’instance qui s'exécute actuellement `Main`) crée son objet d'application et commence à s’exécuter.
 
-
 ## <a name="background-tasks-and-multi-instancing"></a>Tâches en arrière-plan et instanciation multiple
 
 - Les tâches en arrière-plan hors processus prennent en charge l’instanciation multiple. En général, chaque nouveau déclencheur aboutit à une nouvelle instance de la tâche en arrière-plan (même si d'un point de vue technique, plusieurs tâches en arrière-plan peuvent s’exécuter dans le même processus hôte). Toutefois, une autre instance de la tâche en arrière-plan est créée.
@@ -131,7 +133,7 @@ Si une instance enregistrée avec la clé est identifiée, cette instance est ac
 
 ## <a name="sample"></a>Exemple
 
-Voir l'[exemple d'instances multiples](https://aka.ms/Kcrqst) pour consulter une illustration de la redirection de l’activation à instances multiples.
+Consultez l' [exemple d’instances multiples](https://aka.ms/Kcrqst) pour obtenir un exemple de redirection de l’activation des instances multiples.
 
 ## <a name="see-also"></a>Articles associés
 

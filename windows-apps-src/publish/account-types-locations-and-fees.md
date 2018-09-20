@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, compte de développeur, individuel, société, entreprise
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4057853"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4088132"
 ---
 # <a name="account-types-locations-and-fees"></a>Types de compte, emplacements et frais
 
@@ -166,7 +166,7 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
 |  Lituanie | 14 EUR | 75 EUR | EUR payé à la banque | Non | 
 |  Luxembourg | 14 EUR | 75 EUR | EUR payé à la banque | Oui | 
 |  Macao R.A.S. | 19 USD | 99 USD | Aucun revenu | Non | 
-|  Macedonia (FYROM) | 19 USD | 99 USD | USD payé à la banque | Non | 
+|  Macédoine (Ex-République yougoslave de) | 19 USD | 99 USD | USD payé à la banque | Non | 
 |  Madagascar | 19 USD | 99 USD | USD payé à la banque | Non | 
 |  Malawi | 19 USD | 99 USD | MWK payé à la banque | Non | 
 |  Malaisie | 62 MYR | 300 MYR | USD payé à la banque | Non | 
@@ -230,7 +230,7 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
 |  Swaziland | 19 USD | 99 USD | Aucun revenu | Non | 
 |  Suède | 123 SEK | 700 SEK | SEK payé à la banque | Oui | 
 |  Suisse | 17 CHF | 90 CHF | CHF payé à la banque | Oui | 
-|  Taiwan | 568 TWD | 2840 TWD | USD payé à la banque | Oui | 
+|  Taïwan | 568 TWD | 2840 TWD | USD payé à la banque | Oui | 
 |  Tadjikistan | 19 USD | 99 USD | USD payé à la banque | Non | 
 |  Tanzanie | 19 USD | 99 USD | TZS payé à la banque | Non | 
 |  Thaïlande | 601 THB | 3000 THB | THB payé à la banque | Oui | 
