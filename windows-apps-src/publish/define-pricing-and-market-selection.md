@@ -248,7 +248,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
     <td>Macao R.A.S.</td>
   </tr>
   <tr>
-    <td>Macédoine, Ex.-Rép. yougoslave de</td>
+    <td>Macedonia, FYRO</td>
     <td>Madagascar</td>
     <td>Malawi</td>
     <td>Malaisie</td>
@@ -304,7 +304,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Pakistan</td>
     <td>Palau</td>
-    <td>Autorité palestinienne</td>
+    <td>Palestinian Authority</td>
     <td>Panama</td>
   </tr>
   <tr>
@@ -370,7 +370,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Suède *</td>
     <td>Suisse *</td>
-    <td>Taïwan *</td>
+    <td>Taiwan *</td>
     <td>Tadjikistan</td>
   </tr>
   <tr>
@@ -470,7 +470,7 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 | Espagne                | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Suède               | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Suisse          | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Taïwan               | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Taiwan               | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Turquie               | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Émirats arabes unis | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Royaume-Uni       | Carte cadeau       | 2,24 %                         | Mars 2016     |
@@ -618,7 +618,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
     <td>Liberia</td>
     <td>Liechtenstein</td>
     <td>Macao R.A.S.</td>
-    <td>Macédoine, Ex.-Rép. yougoslave de</td>
+    <td>Macedonia, FYRO</td>
   </tr>
   <tr>
     <td>Madagascar</td>
@@ -664,7 +664,7 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
   </tr>
   <tr>
     <td>Palau</td>
-    <td>Autorité palestinienne</td>
+    <td>Palestinian Authority</td>
     <td>Panama</td>
     <td>Papouasie-Nouvelle-Guinée</td>
   </tr>

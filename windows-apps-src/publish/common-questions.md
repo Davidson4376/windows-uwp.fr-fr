@@ -45,7 +45,7 @@ Votre publicité apparaît dans les applications qui utilisent la même évaluat
 
 Les campagnes de publicité sont actuellement prises en charge dans les pays et régions suivants:
 
-Afrique du Sud, Algérie, Allemagne, Arabie saoudite, Argentine, Australie, Autriche, Bahamas, Bahreïn, Barbade, Belgique, Belize, Bolivie, Brésil, Canada, Chili, Chine, Colombie, Danemark, Égypte, El Salvador, Émirats arabes unis, Équateur, Espagne, États-Unis, Finlande, France, Guatemala, Haïti, Honduras, Hong Kong (R.A.S.), Inde, Indonésie, Irak, Irlande, Italie, Jamaïque, Jordanie, Koweït, Liban, Malaisie, Maroc, Mexique, Nicaragua, Norvège, Nouvelle-Zélande, Oman, Panama, Paraguay, Pays-Bas, Pérou, Philippines, Porto Rico, Qatar, République dominicaine, Royaume-Uni, Singapour, Suède, Suisse, Taïwan, Thaïlande, Trinité-et-Tobago, Tunisie, Uruguay, Venezuela, Vietnam.
+Algeria, Argentina, Australia, Austria, Bahamas, Bahrain, Barbados, Belgium, Belize, Bolivia, Brazil, Canada, Chile, China, Colombia, Denmark, Dominican Republic, Ecuador, Egypt, El Salvador, Finland, France, Germany, Guatemala, Haiti, Honduras, Hong Kong SAR, India, Indonesia, Iraq, Ireland, Italy, Jamaica, Jordan, Kuwait, Lebanon, Malaysia, Mexico, Morocco, New Zealand, Netherlands, Nicaragua, Norway, Oman, Panama, Paraguay, Peru, Philippines, Puerto Rico, Qatar, Saudi Arabia, Singapore, Spain, South Africa, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Tunisia, United Arab Emirates, United Kingdom, United States, Uruguay, Venezuela, Vietnam.
 
 ### <a name="what-languages-are-supported-for-ad-campaigns"></a>Quelles langues sont prises en charge pour les campagnes de publicité ?
 
