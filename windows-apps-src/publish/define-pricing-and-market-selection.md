@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, marchés, pays, régions
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4083490"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4119219"
 ---
 # <a name="define-market-selection"></a>Définir la sélection du marché
 
@@ -370,7 +370,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Suède *</td>
     <td>Suisse *</td>
-    <td>Taiwan *</td>
+    <td>Taïwan *</td>
     <td>Tadjikistan</td>
   </tr>
   <tr>
@@ -470,7 +470,7 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 | Espagne                | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Suède               | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Suisse          | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Taiwan               | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Taïwan               | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Turquie               | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Émirats arabes unis | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Royaume-Uni       | Carte cadeau       | 2,24 %                         | Mars 2016     |

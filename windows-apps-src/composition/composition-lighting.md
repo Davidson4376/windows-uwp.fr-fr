@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e634b18fffc4f601f6512d6ceeed51efbe9c1886
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4111403"
+ms.locfileid: "4125794"
 ---
 # <a name="using-lights-in-windows-ui"></a>L’utilisation des éclairages dans l’interface utilisateur Windows
 
@@ -39,7 +39,7 @@ Les APIs Windows.UI.Composition permettent de créer des effets et animations en
 
 | Type | Description |
 | --- | --- |
-| [AmbientLight](/uwp/api/windows.ui.composition.ambientlight) | Une source de lumière qui émet de la lumière non directionnelle qui apparaît réfléchie par tous les éléments de la scène. |
+| [AmbientLight](/uwp/api/windows.ui.composition.ambientlight) | Une source de lumière émettant de la lumière non directionnelle qui s’affiche réfléchie par tous les éléments de la scène. |
 | [DistantLight](/uwp/api/windows.ui.composition.distantlight) | Une grande INFINIMENT source de lumière distante qui émet de la lumière dans un seul sens. Comme le soleil. |
 | [PointLight](/uwp/api/windows.ui.composition.pointlight) | Une point de source lumineuse qui émet de la lumière dans toutes les directions. Comme une ampoule. |
 | [Point lumineux](/uwp/api/windows.ui.composition.spotlight) | Une source de lumière qui émet des cônes interne et externe de lumière. Comme une lampe torche. |

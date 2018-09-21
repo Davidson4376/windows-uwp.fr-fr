@@ -15,11 +15,11 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bb6ed36c772e5ae80a3cb801b4b6b36bb1ab18c
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4086860"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4119355"
 ---
 # <a name="pivot"></a>Pivot
 
@@ -116,7 +116,7 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 }
 ```
 
-Ce code simule l’expérience de navigation intégrée du contrôle Pivot, moins l’expérience tactile-balayage entre les sections de contenu. Toutefois, comme vous pouvez le constater, vous pouvez également personnaliser plusieurs points, y compris la transition animée, les paramètres de navigation et les fonctionnalités de la pile.
+Ce code simule l’expérience de navigation intégrée du contrôle Pivot, moins l’expérience tactile-balayage entre les sections de contenu. Toutefois, comme vous pouvez le constater, vous pouvez également personnaliser plusieurs points, y compris la transition animée, paramètres de navigation et les fonctionnalités de pile.
 
 ## <a name="create-a-pivot-control"></a>Créer un contrôle Pivot
 

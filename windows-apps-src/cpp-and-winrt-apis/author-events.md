@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, créer, événement
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b0aa1a53ce69369c442cef7f3b5912631593242
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4084946"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4118713"
 ---
 # <a name="author-events-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Créer des événements en [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -30,7 +30,7 @@ Cette rubrique montre comment créer un composant Windows Runtime qui contient u
 
 Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créer un **Visual C++** > **Windows universel** > **composant Windows Runtime (C++ / WinRT)** de projet et nommez-le *BankAccountWRC* (pour «compte bancaire composant Windows Runtime»).
 
-Le projet nouvellement créé contient un fichier nommé `Class.idl`. Renommez ce fichier `BankAccount.idl` (renommer le `.idl` fichier renomme automatiquement le dépendant `.h` et `.cpp` fichiers trop). Remplacez le contenu du `BankAccount.idl` avec le listing ci-dessous.
+Le projet nouvellement créé contient un fichier nommé `Class.idl`. Renommez ce fichier `BankAccount.idl` (renommer le `.idl` fichier renomme automatiquement le dépendant `.h` et `.cpp` fichiers, trop). Remplacez le contenu du `BankAccount.idl` avec le listing ci-dessous.
 
 ```idl
 // BankAccountWRC.idl
@@ -66,7 +66,7 @@ namespace winrt::BankAccountWRC::implementation
 ...
 ```
 
-Comme vous pouvez le voir ci-dessus, l’événement est implémenté en termes du modèle de structure [**winrt::event**](/uwp/cpp-ref-for-winrt/event) paramétré par un type délégué particulier.
+Comme vous pouvez le voir ci-dessus, l’événement est implémenté en termes du modèle de structure [**winrt::event**](/uwp/cpp-ref-for-winrt/event) , paramétré par un type délégué particulier.
 
 Dans `BankAccount.cpp`, implémentez les fonctions, comme illustré dans l’exemple de code ci-dessous. Dans C++/WinRT, un événement déclaré dans le fichier IDL est implémenté comme un ensemble de fonctions surchargées (de la même manière qu'une propriété est implémentée comme une paire de fonctions Get et Set surchargées). Une surcharge prend un délégué à enregistrer et retourne un jeton. L’autre prend un jeton et révoque l’inscription du délégué associé.
 

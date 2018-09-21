@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, insight, tendance, anomalies, des anomalies, les modifications de données
 ms.localizationpriority: medium
 ms.openlocfilehash: be70dccbb7a12b65b9e7bbd07f27ae7ea3a578ff
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4115669"
+ms.locfileid: "4122280"
 ---
 # <a name="insights-report"></a>Rapport de perspectives
 
@@ -28,7 +28,7 @@ Le rapport trie les données en trois onglets: **Acquisitions**, **intégrité**
 
 Insights sont affichent lorsque nous détectons une évolution importante dans vos données. Pour chaque insight, nous allons montrer les éléments suivants:
 - **Type de Insight**: la zone dans laquelle l’insight a été détectée.
-- **Valeur**: métrique spécifique qui a changé considérablement (ou **tous les** si la modification s’applique à l’ensemble du **type de Insight**).
+- **Valeur**: la métrique spécifique qui a changé considérablement (ou **tous les** si la modification s’applique à l’ensemble du **type de Insight**).
 - **Date**: la date à laquelle nous avons identifié la modification. Cette date représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou une baisse par rapport à la semaine.
 - **Incidence globale**: le pourcentage de la valeur augmentée ou a diminué sur votre clientèle entière. Elle vous permet de comprendre comment généralisée l’impact d’une modification particulière peut être, en particulier lors de la comparaison avec les informations de pourcentage affichées dans **Top contributors.**
 - **Contributeurs principaux**: le cas échéant, le segment spécifique, package ou autre facteur identification pour aider à comprendre quels clients la modification est liée à. Par exemple, une modification peut être détectée principalement avec les clients à partir d’un marché spécifique ou sur un certain type d’appareil. Pour les données **d’intégrité** , cela peut inclure les hachages de défaillance spécifiques ou des versions de package. Le cas échéant, nous allons montrer également le pourcentage de la valeur augmentée ou réduite pour que le facteur.

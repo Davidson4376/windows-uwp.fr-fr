@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 1192c200cd42ab28cc7e763c06fd8a5638aa3400
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4090807"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4118465"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>Configurer Device Portal avec un certificat SSL personnalisé
 Dans Windows 10 Creators Update, Windows Device Portal ajouté un moyen pour les administrateurs d’appareil installer un certificat personnalisé pour une utilisation dans les communications HTTPS. 
@@ -52,7 +52,7 @@ Une fois que cela est créé, vous pouvez utiliser le fichier _WdpTestCA.cer_ po
 
 Certificats SSL ont deux fonctions essentielles: sécuriser votre connexion par le biais du chiffrement et en vérifiant que vous communiquez réellement avec l’adresse affichée dans la barre du navigateur (Bing.com, 192.168.1.37, etc.) et non un tiers malveillant.
 
-Le script PowerShell suivant crée un certificat SSL pour le `localhost` point de terminaison. Chaque point de terminaison qui écoute Device Portal doit son propre certificat; Vous pouvez remplacer le `$IssuedTo` argument dans le script avec chacune des différents points de terminaison de votre appareil: le nom d’hôte, hôte local et l’adresses IP.
+Le script PowerShell suivant crée un certificat SSL pour le `localhost` point de terminaison. Chaque point de terminaison qui écoute Device Portal a besoin de son propre certificat; Vous pouvez remplacer le `$IssuedTo` argument dans le script avec chacune des différents points de terminaison de votre appareil: le nom d’hôte, hôte local et l’adresses IP.
 
 ```PowerShell
 $IssuedTo = "localhost"

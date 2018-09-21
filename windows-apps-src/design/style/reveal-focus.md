@@ -14,11 +14,11 @@ design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5fa84efbe20368be55a50ce20c8e6e5d1fe439
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4084342"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4117473"
 ---
 # <a name="reveal-focus"></a>Révéler Focus
 
@@ -26,7 +26,7 @@ ms.locfileid: "4084342"
 
 Révéler que focus est un effet visuel pour [des expériences «10-foot»](/windows/uwp/design/devices/designing-for-tv), tels que les écrans de télévision et Xbox One. Cet effet anime la bordure des éléments susceptibles d’être activés, comme les boutons, lorsque l’utilisateur déplace le focus du clavier ou du boîtier de commande sur ces derniers. Il est désactivé par défaut, mais il est facile de l’activer. 
 
-(Pour l’effet révéler animé, un effet d’éclairage qui met en évidence les éléments interactifs, consultez l' [article révéler mettre en surbrillance](/windows/uwp/design/style/reveal).)
+(Pour l’effet révéler mettre en surbrillance, un effet d’éclairage qui met en évidence les éléments interactifs, consultez l' [article révéler mettre en surbrillance](/windows/uwp/design/style/reveal).)
 
 
 > **API importantes**: [propriété Application.FocusVisualKind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind), [FocusVisualKind enum](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind), [propriété Control.UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
@@ -36,7 +36,7 @@ L’effet révéler Focus attire l’attention sur les éléments ayant le focus
 
 ![Visuel de l’effet de révélation](images/traveling-focus-fullscreen-light-rf.gif)
 
-Cela est particulièrement utile dans les scénarios «10-foot» où l’utilisateur ne peut pas être totalement concentré sur tout l’écran de télévision. 
+Cela est particulièrement utile dans les scénarios «10-foot» où l’utilisateur ne peut pas être totalement concentré sur l’écran de TV entier. 
 
 ## <a name="examples"></a>Exemples
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e5119696498156d36ec63b16b1d76c00b03f4df
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4091609"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4117169"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>Appliquer des correctifs de l’exécution à un package MSIX à l’aide de l’infrastructure de prise en charge de Package
 
@@ -192,7 +192,7 @@ Voici un guide pour le schéma config.json:
 | Tableau | key | Valeur |
 |-------|-----------|-------|
 | applications | id |  Utilisez la valeur de la `Id` attribut de le `Application` élément dans le manifeste du package. |
-| applications | exécutable | Le chemin d’accès relatif au package de l’exécutable que vous voulez démarrer. Dans la plupart des cas, vous pouvez obtenir cette valeur à partir de votre fichier manifeste de package avant de le modifier. Il s’agit de la valeur de la `Executable` attribut de le `Application` élément. |
+| applications | exécutable | Le chemin d’accès relatif au package de l’exécutable que vous souhaitez commencer. Dans la plupart des cas, vous pouvez obtenir cette valeur à partir de votre fichier manifeste de package avant de le modifier. Il s’agit de la valeur de la `Executable` attribut de le `Application` élément. |
 | applications | workingDirectory | (Facultatif) Un chemin d’accès relatif au package à utiliser comme répertoire de travail de l’application qui démarre. Si vous ne définissez pas cette valeur, le système d’exploitation utilise le `System32` répertoire comme répertoire de travail de l’application. |
 | processus | exécutable | Dans la plupart des cas, il s’agit du nom de la `executable` configuré ci-dessus avec l’extension de fichier et le chemin supprimée. |
 | shim | DLL | Chemin relatif au package .appx shim à charger. |
@@ -406,7 +406,7 @@ Fournir une valeur pour chaque clé. Appuyez-vous sur le tableau suivant.
 | Tableau | key | Valeur |
 |-------|-----------|-------|
 | applications | id |  Utilisez la valeur de la `Id` attribut de le `Application` élément dans le manifeste du package. |
-| applications | exécutable | Le chemin d’accès relatif au package de l’exécutable que vous voulez démarrer. Dans la plupart des cas, vous pouvez obtenir cette valeur à partir de votre fichier manifeste de package avant de le modifier. Il s’agit de la valeur de la `Executable` attribut de le `Application` élément. |
+| applications | exécutable | Le chemin d’accès relatif au package de l’exécutable que vous souhaitez commencer. Dans la plupart des cas, vous pouvez obtenir cette valeur à partir de votre fichier manifeste de package avant de le modifier. Il s’agit de la valeur de la `Executable` attribut de le `Application` élément. |
 | applications | workingDirectory | (Facultatif) Un chemin d’accès relatif au package à utiliser comme répertoire de travail de l’application qui démarre. Si vous ne définissez pas cette valeur, le système d’exploitation utilise le `System32` répertoire comme répertoire de travail de l’application. |
 | processus | exécutable | Dans la plupart des cas, il s’agit du nom de la `executable` configuré ci-dessus avec l’extension de fichier et le chemin supprimée. |
 | shim | DLL | Chemin relatif au package le shim DLL à charger. |

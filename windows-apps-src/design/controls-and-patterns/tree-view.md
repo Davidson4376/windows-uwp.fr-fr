@@ -14,11 +14,11 @@ dev_langs:
 - csharp
 - vb
 ms.openlocfilehash: 20de58d13c4ace6b71ec952dc88cd59d1ab6114f
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4091883"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4119179"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -85,7 +85,7 @@ Pour créer une arborescence, vous utilisez un contrôle [TreeView](/uwp/api/win
 À compter de Windows Insider Preview, vous pouvez lier une source de données hiérarchiques à la propriété [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) de fournir le contenu d’arborescence, comme vous le feriez avec la propriété ItemsSource de ListView. De même, utilisez [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (et facultatif [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)) pour fournir un DataTemplate qui rend l’élément.
 
 > [!IMPORTANT]
-> ItemsSource est un autre mécanisme pour TreeView.RootNodes de placer le contenu dans le contrôle TreeView. Vous ne pouvez pas définir ItemsSource et RootNodes en même temps. Lorsque vous utilisez la propriété ItemsSource, les nœuds créés pour vous, et vous pouvez y accéder depuis TreeView.RootNodes propriété.
+> ItemsSource est un autre mécanisme pour TreeView.RootNodes de placer le contenu dans le contrôle TreeView. Vous ne pouvez pas définir à la fois ItemsSource et RootNodes en même temps. Lorsque vous utilisez la propriété ItemsSource, les nœuds créés pour vous, et vous pouvez y accéder depuis TreeView.RootNodes propriété.
 
 Voici un exemple d'arborescence simple déclarée en XAML. Vous ajoutez généralement les nœuds dans le code, mais nous affichons ici la hiérarchie XAML, parce qu'il peut être utile de visualiser la façon dont la hiérarchie de nœuds est créée.
 

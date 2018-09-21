@@ -17,11 +17,11 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 703667bf22ce11c119463008e868a943d447c7ff
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4113637"
+ms.locfileid: "4125704"
 ---
 # <a name="menus-and-context-menus"></a>Menus et menus contextuels
 
@@ -56,7 +56,7 @@ Pour afficher un ensemble de plusieurs menus de niveau supérieur dans une ligne
 
 Barre de menus et CommandBar tous deux représentent des surfaces que vous pouvez utiliser pour exposer des commandes à vos utilisateurs. La barre de menus fournit un moyen rapide et simple pour exposer un ensemble de commandes pour les applications qui peuvent requérir plus organisation ou regroupement, puis permet à un contrôle CommandBar.
 
-Vous pouvez également utiliser une barre de menus en conjonction avec un contrôle CommandBar. Utilisez la barre de menus de fournir la majeure partie des commandes et de la classe CommandBar pour mettre en évidence les commandes les plus utilisées.
+Vous pouvez également utiliser une barre de menus en conjonction avec un contrôle CommandBar. Utilisez la barre de menus de fournir la majeure partie des commandes et le contrôle CommandBar pour mettre en évidence les commandes les plus utilisées.
 
 ## <a name="examples"></a>Exemples
 
