@@ -4,18 +4,18 @@ ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: Déclarations des fonctionnalités d’application
 description: Pour pouvoir accéder à certaines API, ressources (images ou musique) ou appareils (appareil photo ou microphone), les fonctionnalités doivent être déclarées dans le manifeste du package de votre application UWP.
 ms.author: misatran
-ms.date: 7/17/2018
+ms.date: 09/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 30e4bb7b493e6fb839f300f4c446b7510f28fabb
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.openlocfilehash: 17f40055f22d8d065ac85d207f3ea17a58a14519
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4089168"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4110861"
 ---
 # <a name="app-capability-declarations"></a>Déclarations des fonctionnalités d’application
 
@@ -25,13 +25,12 @@ Vous demandez l’accès à des ressources ou API spécifiques en déclarant des
 
 Certaines fonctionnalités permettent aux applications d’accéder à des *ressources sensibles*. Ces ressources sont considérées comme « sensibles » parce qu’elles ont accès aux données personnelles de l’utilisateur ou ont un coût pour celui-ci. Les paramètres de confidentialité, gérés par l’application Paramètres, permettent à l’utilisateur de contrôler de façon dynamique l’accès aux ressources sensibles. Il est donc important que votre application ne présume pas de la disponibilité d’une ressource sensible. Pour plus d’informations sur l’accès aux ressources sensibles, voir [Recommandations en matière d’applications prenant en charge la confidentialité](https://msdn.microsoft.com/library/windows/apps/Hh768223). Les fonctionnalités qui permettent aux applications d’accéder à une *ressource sensible* sont marquées d’un astérisque (\*) en regard du scénario de fonctionnalité.
 
-Il existe trois types de fonctionnalités, toutes décrites ci-dessous:
+Il existe plusieurs types de fonctionnalités.
 
--   Les fonctionnalités à usage général qui s’appliquent aux scénarios d’application les plus courants.
-
--   Les fonctionnalités d'appareil qui permettent à votre application d’accéder à des appareils et à des dispositifs internes.
-
--   Les fonctionnalités restreintes qui nécessitent l'approbation pour être soumises au Store et/ou qui sont généralement disponibles uniquement chez Microsoft et certains partenaires.
+- [Fonctionnalités à usage général](#general-use-capabilities), qui s’appliquent aux scénarios d’application les plus courants.
+- [Fonctionnalités de périphérique](#device-capabilities), qui permettent aux applications d’accéder aux appareils de périphériques et internes.
+- [Fonctionnalités restreintes](#restricted-capabilities), ce qui nécessite une approbation préalable de soumission au Microsoft Store et/ou qui sont généralement uniquement disponibles pour Microsoft et certains partenaires.
+- [Fonctionnalités de personnalisé](#custom-capabilities).
 
 ## <a name="general-use-capabilities"></a>Fonctionnalités à usage général
 
@@ -96,23 +95,19 @@ Si votre application déclare certaines fonctionnalités restreintes, vous devez
 
 N’oubliez pas ne pas de déclarer que ces fonctionnalités restreint, à moins que votre application ait réellement besoin. Dans certains cas, de telles fonctionnalités sont nécessaires et appropriées, telles que des applications bancaires avec une authentification à deux facteurs, dans lesquelles les utilisateurs fournissent une carte à puce dotée d’un certificat numérique qui confirme leur identité. D’autres applications peuvent être conçues principalement pour des clients professionnels et peuvent avoir besoin d’accéder à des ressources d’entreprise auxquelles il n’est pas possible d’accéder sans les informations d’identification de domaine de l’utilisateur.
 
-Toutes les fonctionnalités restreintes doit inclure l’espace de noms **rescap** lorsque vous les déclarez dans le manifeste du package de votre application. L'exemple suivant illustre comment déclarer la fonctionnalité **appCaptureSettings**.
+Pour déclarer une fonctionnalité restreinte, modifier votre fichier source [du manifeste du package d’application](https://msdn.microsoft.com/library/windows/apps/BR211474) (`Package.appxmanifest`). Ajoutez la déclaration d’espace de noms XML **xmlns: rescap** et utilisez le préfixe **rescap** lorsque vous la déclarez votre fonctionnalité restreinte. L'exemple suivant illustre comment déclarer la fonctionnalité **appCaptureSettings**.
 
 ```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+    ...
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="... rescap">
+...
 <Capabilities>
     <rescap:Capability Name="appCaptureSettings"/>
 </Capabilities>
-```
-
-Vous devez également ajouter la déclaration d’espace de noms **xmlns:rescap** en haut du fichier Package.appxmanifest, comme illustré ci-dessous.
-
-```xml
-<Package
-    xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-    xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
-    xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-    IgnorableNamespaces="uap mp wincap rescap">
+</Package>
 ```
 
 ### <a name="restricted-capability-approval-process"></a>Processus d'approbation pour une fonctionnalité restreinte
@@ -123,7 +118,7 @@ Lorsque vous téléchargez des packages pour votre soumission, nous identifions 
 
 Lors du processus de certification, nos testeurs examinent les informations que vous avez fournies afin de déterminer si votre soumission est approuvée pour utiliser ces fonctionnalités. Notez que cette opération peut avoir pour effet de rallonger la durée nécessaire pour que votre soumission arrive à bout du processus de certification. Si nous approuvons votre utilisation des fonctionnalités, votre application continuera le reste du processus de certification. De manière générale, il vous est inutile de répéter le processus d'approbation des fonctionnalités lorsque vous appliquez des mises à jour à votre application (à moins que vous ne déclariez des fonctionnalités supplémentaires).
 
-Si nous n'approuvons pas votre utilisation des fonctionnalités, votre soumission n'obtiendra pas de certification et nous fournirons des commentaires dans le rapport de certification. Vous pouvez ensuite choisir de créer une nouvelle soumission et de télécharger les packages ne déclarant aucune fonctionnalité, ou, le cas échéant, de répondre aux problèmes liés à votre utilisation des fonctionnalités afin de demander l'approbation dans une nouvelle soumission.
+Si nous n’approuvons votre utilisation des fonctionnalités, votre soumission ne sera pas certifiée et nous fournirons des commentaires dans le rapport de certification. Vous pouvez ensuite choisir de créer une nouvelle soumission et de télécharger les packages ne déclarant aucune fonctionnalité, ou, le cas échéant, de répondre aux problèmes liés à votre utilisation des fonctionnalités afin de demander l'approbation dans une nouvelle soumission.
 
 > [!NOTE]
 > Si votre soumission utilise un bac à sable de développement dans le Centre de développement (par exemple, c'est le cas pour tout jeu intégré au XboxLive), vous devez demander l'approbation au préalable au lieu de fournir des informations sur la page **Options de submission**. Pour cela,, consultez la page [Support technique pour les développeurs Windows](https://developer.microsoft.com/windows/support). Sélectionnez la rubrique d’assistance développeur **problème du tableau de bord**, Type de problème, **soumissions d’applications**et sous-catégorie **autres**. Puis décrivez comment vous utilisez la fonctionnalité et pourquoi il est nécessaire pour votre produit. Si vous ne fournissez pas toutes les informations nécessaires, votre demande est refusée. Il vous sera peut-être également demandé de fournir des informations supplémentaires. Notez que, en général, ce processus prend au minimum 5jours ouvrables. Envoyez donc votre demande bien à l'avance.
@@ -219,8 +214,25 @@ Le tableau suivant répertorie les fonctionnalités restreintes. Vous pouvez dem
 | **Informations d’identification d’appareil d’équipe Windows** | La fonctionnalité **teamEditionDeviceCredentials** restreint permet aux applications d’accéder aux API qui requièrent des informations d’identification de compte appareil sur un appareil Surface Hub exécutant Windows 10, version 1703 ou ultérieure.<br/><br/>Nous déconseillons de déclarer cette fonctionnalité dans les applications soumises au Store. Pour la plupart des développeurs, l'utilisation de cette fonctionnalité ne sera pas approuvée. |
 | **Affichage de l’Application équipe Windows** | La fonctionnalité **teamEditionView** restreint permet aux applications d’accéder aux API pour l’hébergement d’une vue de l’application sur un appareil Surface Hub exécutant Windows 10, version 1703 ou ultérieure.<br/><br/>Nous déconseillons de déclarer cette fonctionnalité dans les applications soumises au Store. Pour la plupart des développeurs, l'utilisation de cette fonctionnalité ne sera pas approuvée. |
 
+## <a name="custom-capabilities"></a>Fonctionnalités personnalisées
 
+La section [fonctionnalités restreintes](#restricted-capabilities) ci-dessus décrit le même processus d’approbation de fonctionnalité que vous pouvez utiliser pour demander l’autorisation d’utiliser une fonctionnalité personnalisée. La [carte SIM incorporé](/uwp/api/windows.networking.networkoperators.esim) API sont des exemples d’API qui nécessite une fonctionnalité personnalisée. Si vous souhaitez uniquement exécuter votre application localement en mode développeur, vous ne devez la fonctionnalité personnalisée. Toutefois, vous avez besoin de publier votre application dans le Microsoft Store, ou pour l’exécuter en dehors du mode développeur.
 
+Si vous possédez un Windows compte Gestionnaire technique, vous pouvez travailler avec votre accord pour demander l’accès. Vous trouverez plus de détails à [Contact votre accord de Microsoft](/windows-hardware/drivers/mobilebroadband/testing-your-desktop-cosa-apn-database-submission#contact-your-microsoft-tam).
+
+Pour déclarer une fonctionnalité personnalisée, modifier votre fichier source [du manifeste du package d’application](https://msdn.microsoft.com/library/windows/apps/BR211474) (`Package.appxmanifest`). Ajoutez la déclaration d’espace de noms XML **xmlns:uap4** et utilisez le préfixe **uap4** lorsque vous la déclarez vos capacités personnalisée. En voici un exemple.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+    ...
+    xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4">
+...
+<Capabilities>
+    <uap4:CustomCapability Name="CompanyName.customCapabilityName_PublisherID"/>
+</Capabilities>
+</Package>
+```
 
 ## <a name="related-topics"></a>Rubriquesassociées
 

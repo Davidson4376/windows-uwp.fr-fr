@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, compte de développeur, individuel, société, entreprise
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4088132"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4114477"
 ---
 # <a name="account-types-locations-and-fees"></a>Types de compte, emplacements et frais
 
@@ -230,7 +230,7 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
 |  Swaziland | 19 USD | 99 USD | Aucun revenu | Non | 
 |  Suède | 123 SEK | 700 SEK | SEK payé à la banque | Oui | 
 |  Suisse | 17 CHF | 90 CHF | CHF payé à la banque | Oui | 
-|  Taiwan | 568 TWD | 2840 TWD | USD payé à la banque | Oui | 
+|  Taïwan | 568 TWD | 2840 TWD | USD payé à la banque | Oui | 
 |  Tadjikistan | 19 USD | 99 USD | USD payé à la banque | Non | 
 |  Tanzanie | 19 USD | 99 USD | TZS payé à la banque | Non | 
 |  Thaïlande | 601 THB | 3000 THB | THB payé à la banque | Oui | 
