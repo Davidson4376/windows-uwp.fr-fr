@@ -230,7 +230,7 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
 |  Swaziland | 19 USD | 99 USD | Aucun revenu | Non | 
 |  Suède | 123 SEK | 700 SEK | SEK payé à la banque | Oui | 
 |  Suisse | 17 CHF | 90 CHF | CHF payé à la banque | Oui | 
-|  Taïwan | 568 TWD | 2840 TWD | USD payé à la banque | Oui | 
+|  Taiwan | 568 TWD | 2840 TWD | USD payé à la banque | Oui | 
 |  Tadjikistan | 19 USD | 99 USD | USD payé à la banque | Non | 
 |  Tanzanie | 19 USD | 99 USD | TZS payé à la banque | Non | 
 |  Thaïlande | 601 THB | 3000 THB | THB payé à la banque | Oui | 
