@@ -370,7 +370,7 @@ Vous pouvez choisir de répertorier votre application (ou module complémentaire
   <tr>
     <td>Suède *</td>
     <td>Suisse *</td>
-    <td>Taïwan *</td>
+    <td>Taiwan *</td>
     <td>Tadjikistan</td>
   </tr>
   <tr>
@@ -470,7 +470,7 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 | Espagne                | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Suède               | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Suisse          | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Taïwan               | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Taiwan               | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Turquie               | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Émirats arabes unis | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | Royaume-Uni       | Carte cadeau       | 2,24 %                         | Mars 2016     |
