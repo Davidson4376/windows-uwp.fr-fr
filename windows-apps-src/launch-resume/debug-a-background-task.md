@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4116583"
+ms.locfileid: "4128726"
 ---
 # <a name="debug-a-background-task"></a>Déboguer une tâche en arrière-plan
 

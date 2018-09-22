@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4110763"
+ms.locfileid: "4128430"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Tester à l’aide de l’émulateur Microsoft pour Windows10 Mobile
 

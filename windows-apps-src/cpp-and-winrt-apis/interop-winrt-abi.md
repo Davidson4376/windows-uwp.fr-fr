@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, port, migrer, interopérabilité, ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: b641591e7be23226edc354e02513d723fbe8afba
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4118939"
+ms.locfileid: "4130100"
 ---
 # <a name="interop-between-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-and-the-abi"></a>Interopérabilité entre [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) et ABI
 Cette rubrique montre comment effectuer des conversions entre des objets de l’interface binaire d’application (ABI) du SDK et C++/WinRT. Vous pouvez utiliser ces techniques pour permettre l’interopérabilité entre le code qui utilise ces deux méthodes de programmation avec Windows Runtime, ou vous pouvez les utiliser à mesure que vous transférez votre code depuis ABI vers C++/WinRT.

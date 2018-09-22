@@ -10,17 +10,17 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: ac7affb044c6b60a249b154cc62379c7517161b0
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4112227"
+ms.locfileid: "4130804"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-ccx"></a>Passer de C++/CX à [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 Cette rubrique montre comment porter du code [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) vers son équivalent en C++/WinRT.
 
 > [!IMPORTANT]
-> Si vous souhaitez porter progressivement votre [C++ / CX](/cpp/cppcx/visual-c-language-reference-c-cx) code c++ / WinRT, vous pouvez. C++ / CX et C++ / WinRT code peut coexister dans le même projet, à l’exception de la prise en charge du compilateur XAML et de composants Windows Runtime. Pour ces exceptions, vous devez cibler soit C++ / CX ou C++ / WinRT dans le même projet. Toutefois, vous pouvez utiliser un composant Windows Runtime au code de facteur en dehors de votre application XAML que vous le port. Déplacez autant C++ / CX de code que vous pouvez dans un composant, puis modifiez le projet de code XAML en C++ / WinRT. Ou autre laisser le projet XAML en C++ / CX, créez un nouveau C + / composant WinRT et commencer le portage C++ / code CX du projet XAML et placez-le dans le composant. Vous pouvez également avoir C++ / projet de composant CX en parallèle avec C++ / projet de composant WinRT au sein de la même solution, les deux référencer à partir de votre projet d’application, mais progressivement les ports d’un utilisateur à l’autre.
+> Si vous souhaitez porter progressivement votre [C++ / CX](/cpp/cppcx/visual-c-language-reference-c-cx) code c++ / WinRT, vous pouvez. C++ / CX et C++ / WinRT code peut coexister dans le même projet, à l’exception de la prise en charge du compilateur XAML et de composants Windows Runtime. Pour ces exceptions, vous devez cibler soit C++ / CX ou C++ / WinRT dans le même projet. Toutefois, vous pouvez utiliser un composant Windows Runtime au code de facteur en dehors de votre application XAML comme vous le port. Déplacez autant C++ / CX de code que vous pouvez dans un composant, puis modifiez le projet de code XAML en C++ / WinRT. Ou autre laisser le projet XAML en C++ / CX, créez un nouveau C + / composant WinRT et commencer le portage C++ / code CX du projet XAML et placez-le dans le composant. Vous pouvez également avoir C++ / projet de composant CX en parallèle avec C++ / projet de composant WinRT au sein de la même solution, les deux référencer à partir de votre projet d’application, mais progressivement les ports d’un utilisateur à l’autre.
 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) et le SDK Windows déclarent tous les deux les types dans l’espace de noms racine **Windows**. Un type Windows projeté en C++/WinRT a le même nom complet que le type Windows, mais il est placé dans l'espace de noms C++ **winrt**. Ces espaces de noms distincts vous permettent de porter le code C++/CX vers C++/WinRT à votre propre rythme.

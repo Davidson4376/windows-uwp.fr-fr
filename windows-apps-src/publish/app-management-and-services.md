@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4115501"
+ms.locfileid: "4129954"
 ---
 # <a name="app-management-and-services"></a>Gestion des applications et services
 
@@ -56,7 +56,7 @@ Pour plus d’informations, consultez l’article [Gérer des droits sur les pro
 
 ## <a name="administrator-consent"></a>Consentement de l’administrateur
 
-f est intégré à Azure AD de votre produit et appelle des API qui requièrent des [autorisations de l’application ou les autorisations déléguées](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) qui nécessite le consentement de l’administrateur, entrez votre ID d’Azure AD Client ici. Cela permet aux administrateurs qui achètent l’application leur organisation accorder à donner son consentement pour votre produit à agir pour le compte de tous les utilisateurs du client.
+f votre produit s’intègre avec Azure AD et appelle des API qui requièrent des [autorisations de l’application ou les autorisations déléguées](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) qui nécessite le consentement de l’administrateur, entrez votre ID d’Azure AD Client ici. Cela permet aux administrateurs qui achètent l’application leur organisation accorder à donner son consentement pour votre produit à agir pour le compte de tous les utilisateurs du client.
 
 Pour plus d’informations, voir la [demande de consentement pour un client entière](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
 

@@ -11,11 +11,11 @@ keywords: windows 10, uwp, Microsoft Store Services SDK, événements de journal
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b9cd4d7c527001bb382596c9c805be4ad5e7b08
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4116253"
+ms.locfileid: "4130912"
 ---
 # <a name="log-custom-events-for-dev-center"></a>Consigner des événements personnalisés pour le Centre de développement
 

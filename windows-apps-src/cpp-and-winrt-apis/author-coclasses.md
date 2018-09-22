@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, auteur, COM, composant
 ms.localizationpriority: medium
 ms.openlocfilehash: 729cfae39f302ae6b5bae275d9e28a39f3d9503b
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4112355"
+ms.locfileid: "4126520"
 ---
 # <a name="author-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Créer des composants COM avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -51,7 +51,7 @@ Consultez également [composants COM consommer avec C++ / WinRT](consume-com.md)
 
 Le reste de cette rubrique vous guide tout au processus de création d’un projet d’application de console minimal qui utilise C++ / WinRT pour implémenter une fabrique coclasse et de la classe de base. L’exemple d’application montre comment fournir une notification toast avec un bouton de rappel dessus et la coclasse (qui implémente l’interface **INotificationActivationCallback** COM) permet à l’application d’être lancée et appelée d’arrière-plan lorsque l’utilisateur clique sur ce bouton du toast.
 
-Vous trouverez des explications plus détaillées sur la zone de fonctionnalité de notification toast à [Envoyer une notification toast locale](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast). Aucun des exemples de code dans cette section de la documentation utiliser C++ / WinRT, cependant, nous vous conseillons donc que vous préférez le code présenté dans cette rubrique.
+Vous trouverez plus d’informations sur la zone de fonctionnalité de notification toast à [Envoyer une notification toast locale](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast). Aucun des exemples de code dans cette section de la documentation utiliser C++ / WinRT, cependant, nous vous conseillons donc que vous préférez le code présenté dans cette rubrique.
 
 ## <a name="create-a-windows-console-application-project-toastandcallback"></a>Créez un projet d’Application Console Windows (ToastAndCallback)
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, extensions, iap, prix
 ms.localizationpriority: medium
 ms.openlocfilehash: b5b7a6424fea3d62849e992f56b0b40ab72a55f5
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4113567"
+ms.locfileid: "4129670"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>Définir le prix et la disponibilité d’une extension
 
@@ -54,7 +54,7 @@ Pour plus d’informations, voir [Configurer le calendrier de publication exact]
 
 ## <a name="pricing"></a>Tarification
 
-Vous devez sélectionner un prix de base pour votre extension (sauf si vous avez sélectionné l’option **empêcher l’acquisition** dans la section **visibilité** ). La sélection par défaut est **gratuite**, par conséquent, si vous souhaitez facturer pour le module complémentaire, veillez à choisir l’un des niveaux de prix disponibles (en commençant à.99 USD).
+Vous devez sélectionner un prix de base pour votre extension (sauf si vous avez sélectionné l’option **empêcher l’acquisition** dans la section **visibilité** ). La sélection par défaut est **libre**, par conséquent, si vous souhaitez facturer pour le module complémentaire, veillez à choisir l’un des niveaux de prix disponibles (en commençant à.99 USD).
 
 Vous pouvez également planifier des modifications de tarifs pour indiquer la date et l’heure auxquelles le prix de l’extension doit changer. En outre, vous pouvez personnaliser ces changements pour des marchés spécifiques. 
 

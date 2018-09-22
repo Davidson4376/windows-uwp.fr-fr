@@ -11,11 +11,11 @@ keywords: windows10, uwp
 ms.assetid: 65d578a6-4e26-484c-90af-b2cd916f3634
 ms.localizationpriority: medium
 ms.openlocfilehash: 407ffb5fdebdc90a63ed7f65b4e97f8358dc58c8
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4114203"
+ms.locfileid: "4129920"
 ---
 # <a name="gradual-package-rollout"></a>Lancement progressif de packages
 

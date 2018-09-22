@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows10, uwp, cartes, feuille de style de carte
 ms.localizationpriority: medium
 ms.openlocfilehash: 11360f9d76fc07d7a6b24bd1e0bfb78df4f1d22d
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4113681"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "4131146"
 ---
 # <a name="map-style-sheet-reference"></a>Référence de feuille de style de carte
 
@@ -132,7 +132,7 @@ Ce tableau utilise des caractères «>» pour représenter les différents nivea
 | >>>> highway                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant réseau autoroutier. |
 | >>>> majorRoad               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant les routes principales. |
 | >>>> arterialRoad            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant les routes secondaires. |
-| >>>> street                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant AutoRoute. |
+| >>>> street                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant une autoroute. |
 | >>>>> ramp                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant les bretelles généralement se connectent au réseau autoroutier. |
 | >>>>> unpavedStreet          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant unpaved AutoRoute. |
 | >>>> tollRoad                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant les routes à péage. |

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 0992ea54092063ba53f23871599905e58f1b456e
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4114517"
+ms.locfileid: "4127112"
 ---
 # <a name="obtain-and-understand-barcode-data"></a>Obtenir et comprendre les données de code-barres
 
@@ -127,7 +127,7 @@ Ces données ne sont en général, au format comme livrés à partir de l’anal
 
 Informations d’en-tête communes sont un caractère de préfixe (par exemple, un caractère STX). Informations de bande-annonce courantes sont un caractère de terminaison (par exemple, un caractère ETX ou CR) et un caractère de vérification de bloc si un est généré par le scanneur.
 
-Cette propriété doit inclure un caractère SYMBOLOGIE si un est retourné par le scanneur (par exemple, un **A** pour UPC-A). Il doit également inclure les chiffres de contrôle s’ils sont présents dans l’étiquette et renvoyée par le scanneur. (Notez que les caractères de SYMBOLOGIE et les chiffres de vérification peuvent ou ne pas être présents, en fonction de la configuration de l’analyseur. L’analyseur retournera les si présents, mais ne seront pas générer ou les calculer si elles sont également absents.)
+Cette propriété doit inclure un caractère SYMBOLOGIE si un est retourné par le scanneur (par exemple, un **A** pour UPC-A). Il doit également inclure les chiffres de contrôle s’ils sont présents dans l’étiquette et renvoyée par le scanneur. (Notez que les caractères de SYMBOLOGIE et les chiffres de contrôle peuvent ou ne pas être présents, en fonction de la configuration de l’analyseur. L’analyseur retournera les si présents, mais ne seront pas générer ou les calculer si elles sont également absents.)
 
 Certains marchandise peut-être être marqué avec un code-barres supplémentaire. Ce code-barres est généralement placés à droite du code-barres principal et se compose d’un caractères de deux ou cinq supplémentaires d’informations. Si le scanneur lit marchandise qui contient les codes-barres supplémentaires et principaux, les caractères supplémentaires sont ajoutés dans les personnages principaux, et le résultat est fourni à l’application en tant qu’une seule étiquette. (Notez qu’un scanneur peut prendre en charge une configuration qui active ou désactive la lecture de codes supplémentaires).
 

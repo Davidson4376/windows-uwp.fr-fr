@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: c9db9f3ce4397bec6fb0b6b339875c206d17c3fd
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4113223"
+ms.locfileid: "4128360"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application
 Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
@@ -175,7 +175,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 Si vous déplacez la ressource «AppDisplayName» de `Resources.resw` vers `ManifestResources.resw`, puis dans le manifeste de votre package d’application, vous devez remplacer `ms-resource:AppDisplayName` par `ms-resource:/ManifestResources/AppDisplayName`.
 
-Si un nom de fichier de ressources est segmenté (qu’il contient «.» caractères), puis laissez les points dans le nom lorsque vous le référencez. **Ne pas** remplacer les points par des caractères barre oblique («/»), comme vous le feriez pour un nom de ressource.
+Si un nom de fichier de ressources est segmenté (qu’il contient «.» caractères), puis laissez les points dans le nom lorsque vous y faites référence. **Ne pas** remplacer les points par des caractères barre oblique («/»), comme vous le feriez pour un nom de ressource.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");

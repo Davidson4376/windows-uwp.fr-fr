@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: 8748b68bf4efbcc79d0bba475db32f3a2d7cc933
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4119661"
+ms.locfileid: "4130882"
 ---
 # <a name="package-an-app-using-the-desktop-app-converter-desktop-bridge"></a>Créer un package d'application à l’aide de Desktop App Converter (Pont du bureau)
 

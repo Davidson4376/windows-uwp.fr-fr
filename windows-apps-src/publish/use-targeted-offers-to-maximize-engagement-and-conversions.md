@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, offres ciblées, offres, notifications
 ms.localizationpriority: medium
 ms.openlocfilehash: 727c438bacf51fd2ead03df72421363116c4701b
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4118235"
+ms.locfileid: "4124688"
 ---
 # <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>Utilisez des offres ciblées pour optimiser l’engagement et les conversions
 

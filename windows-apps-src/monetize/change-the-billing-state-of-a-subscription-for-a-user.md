@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, API d'achat du MicrosoftStore, abonnements
 ms.localizationpriority: medium
 ms.openlocfilehash: d8734c1fe25cf6c22d88d2d50b323b7d3ee86710
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4119903"
+ms.locfileid: "4123126"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>Modifier l’état de facturation de l’abonnement d’un utilisateur
 

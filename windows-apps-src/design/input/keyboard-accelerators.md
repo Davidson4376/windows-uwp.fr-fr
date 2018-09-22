@@ -15,11 +15,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: ce84debc3422f923c7c88aae1fa216665ef1ef0f
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4118831"
+ms.locfileid: "4126792"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 

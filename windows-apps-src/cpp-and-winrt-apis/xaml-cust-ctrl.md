@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, un contrôle personnalisé basé sur un modèle,
 ms.localizationpriority: medium
 ms.openlocfilehash: fd1843afc58bc758db1c6e575f3733bdc4f47b4e
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4112903"
+ms.locfileid: "4129264"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Des contrôles personnalisés (basé sur un modèle) XAML avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -29,7 +29,7 @@ Une des fonctionnalités plus puissantes de la plateforme Windows universelle (U
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>Créer une application vide (BgLabelControlApp)
 Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créer un **Visual C++** > **Windows universel** > **application vide (C++ / WinRT)** de projet et nommez-le *BgLabelControlApp*.
 
-Nous allons créer une nouvelle classe pour représenter un contrôle personnalisé (modélisé). La création et l’utilisation de la classe se feront au sein de la même unité de compilation. Mais nous voulons être en mesure d’instancier cette classe à partir de balisage XAML, c’est pourquoi qu'il va être une classe runtime. Et nous allons utiliser C++/WinRT à la fois pour la créer et l’utiliser.
+Nous allons créer une nouvelle classe pour représenter un contrôle personnalisé (basé sur un modèle). La création et l’utilisation de la classe se feront au sein de la même unité de compilation. Mais nous voulons être en mesure d’instancier cette classe à partir de balisage XAML, c’est pourquoi qu'il va être une classe runtime. Et nous allons utiliser C++/WinRT à la fois pour la créer et l’utiliser.
 
 La première étape de création d’une nouvelle classe runtime consiste à ajouter un nouvel élément **Fichier Midl (.idl)** au projet. Nommez-le `BgLabelControl.idl`. Supprimez le contenu par défaut de `BgLabelControl.idl` et collez-le dans cette déclaration de classe runtime.
 
