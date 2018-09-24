@@ -11,11 +11,11 @@ keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, p
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ms.openlocfilehash: d3efb7e094ce1464028dadaa14c6f0bfb3f3b214
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4126692"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4154940"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>Applications et appareils connectés (projet «Rome»)
 
@@ -39,5 +39,5 @@ Pour plus d’informations sur le projet Rome en général, y compris les ressou
 | [Détecter des appareils distants](discover-remote-devices.md)  | Découvrez comment détecter les appareils auxquels vous pouvez vous connecter. |
 | [Communiquer avec un service d’application distant](communicate-with-a-remote-app-service.md) | Découvrez comment interagir avec une application sur un appareil distant. |
 | [Connecter des appareils par le biais de sessions à distance](remote-sessions.md) | Créez des expériences partagées sur plusieurs appareils en les rejoignant dans une session à distance. |
-| [Poursuivre l’activité utilisateur, même sur différents appareils](useractivities.md)| Permettent aux utilisateurs de reprendre qu’ils étaient en train de faire dans votre application, même sur plusieurs appareils.|
+| [Poursuivre l’activité utilisateur, même sur différents appareils](useractivities.md)| Permettre aux utilisateurs de reprendre qu’ils étaient en train de faire dans votre application, même sur plusieurs appareils.|
 | [Meilleures pratiques d’activités utilisateur](useractivities-best-practices.md)| Découvrez les pratiques recommandées pour la création et la mise à jour des activités de l’utilisateur.|

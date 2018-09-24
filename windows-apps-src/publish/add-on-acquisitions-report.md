@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, ventes d’extensions, acquisitions d’extensions, produits in-app, extensions
 ms.localizationpriority: medium
 ms.openlocfilehash: 019bb410e6ac65f9951f06052c78f40e9a5f32e2
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4122290"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155256"
 ---
 # <a name="add-on-acquisitions-report"></a>Rapport sur les acquisitions d’extensions
 
@@ -32,7 +32,7 @@ Dans ce rapport, une acquisition d’extension signifie qu’un client vous a ac
 
 ## <a name="apply-filters"></a>Appliquer des filtres
 
-Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de **30D** (30jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12mois, ou sur une plage de dates personnalisée que vous spécifiez. Vous pouvez également sélectionner **1 H** ou **72 H** pour afficher les données d’acquisition en temps quasi réel pour une heure ou de 70-deux heures; ces périodes de temps s’appliquent uniquement à l’onglet de **l’extension de tous les jours** du graphique **acquisitions de modules complémentaires** et à l’onglet **Acquisitions** du graphique **des marchés** . 
+Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de **30D** (30jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12mois, ou sur une plage de dates personnalisée que vous spécifiez. Vous pouvez également sélectionner **1 H** ou **72 H** pour afficher des données d’acquisition en temps quasi réel pour une heure ou soixante-douze heures; ces périodes de temps s’appliquent uniquement à l’onglet **extension tous les jours** du graphique **acquisitions de modules complémentaires** et à l’onglet **Acquisitions** du graphique **des marchés** . 
 
 Vous pouvez également développer l’option **Filtres** pour filtrer toutes les données de cette page par extension, par marché et/ou par type d’appareil.
 

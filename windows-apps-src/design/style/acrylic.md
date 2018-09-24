@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8589a450b53a5ea028f8af2cee2aef7dc0816b52
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4122114"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155610"
 ---
 # <a name="acrylic-material"></a>Support acrylique
 
@@ -52,7 +52,7 @@ ACRYLIQUE est un type de [pinceau](https://docs.microsoft.com/en-us/uwp/api/Wind
     ::: column span::: ![certains d’image](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
     ::: column span = «2»::: **Galerie de contrôles XAML**<br>
-        Si vous disposez de l’application galerie de contrôles XAML installée, cliquez <a href="xamlcontrolsgallery:/item/Acrylic">ici</a> pour ouvrir l’application et voir ACRYLIQUE en action.
+        Si vous disposez de l’application galerie de contrôles XAML est installée, cliquez <a href="xamlcontrolsgallery:/item/Acrylic">ici</a> pour ouvrir l’application et voir ACRYLIQUE en action.
 
         <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
         <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
@@ -77,7 +77,7 @@ En ce qui concerne les applications avec navigation verticale, nous vous recomma
 
 [NavigationView](../controls-and-patterns/navigationview.md) est une nouvelle commande commune que vous pouvez ajouter à la navigation de votre application et qui inclut l'acrylique dans sa conception visuelle. Le volet de NavigationView affiche l'acrylique en arrière-plan lorsque le volet est ouvert côte à côte avec le contenu principal, et passe automatiquement à l'acrylique dans l’application lorsque le volet est ouvert sous forme de superposition.
 
-Si votre application n’est pas en mesure d’utiliser NavigationView et que vous prévoyez d’ajouter l’ACRYLIQUE vous-même, nous vous recommandons d’utiliser des ACRYLIQUE relativement translucide avec une opacité de 60 %.
+Si votre application n’est pas en mesure d’utiliser NavigationView et que vous prévoyez d’ajouter l’ACRYLIQUE vous-même, nous vous recommandons d’utiliser l’ACRYLIQUE relativement translucide avec une opacité de 60 %.
  - Lorsque le volet s’ouvre sous forme de superposition au-dessus de tout autre contenu d’application, il doit afficher [une acrylique dans l'application à 60%](#acrylic-theme-resources)
  - Lorsque le volet s’ouvre côte à côte avec le contenu de l’application principale, il doit afficher [une acrylique en arrière-plan de 60%](#acrylic-theme-resources)
 
@@ -106,7 +106,7 @@ Il est possible de renforcer l'utilisation en tant qu'applications utilitaires d
 ![L'application utilitaire Calculatrice avec l'arrière-plan totalement en acrylique](images/acrylic_app-pattern_full.png)
 
 > [!Note]
-> Le rendu des surfaces ACRYLIQUES sollicite GPU, ce qui peut accroître la consommation d’énergie appareil et réduire l’autonomie de la batterie. Les effets ACRYLIQUES sont automatiquement désactivées lorsque les périphériques entrent en mode économiseur de batterie, et les utilisateurs peuvent désactiver les effets ACRYLIQUES pour toutes les applications, s’ils le souhaitent.
+> Le rendu des surfaces ACRYLIQUES consomme des GPU, ce qui peut accroître la consommation d’énergie appareil et réduire l’autonomie de la batterie. Les effets ACRYLIQUES sont automatiquement désactivées lorsque les appareils en mode économiseur de batterie et les utilisateurs peuvent désactiver les effets ACRYLIQUES pour toutes les applications, s’ils le souhaitent.
 
 
 ## <a name="acrylic-blend-types"></a>Types de lissage acrylique
@@ -124,7 +124,7 @@ La plus remarquable caractéristique d’ACRYLIQUE est sa transparence. Il exist
 ## <a name="usability-and-adaptability"></a>Convivialité et capacité d'adaptation
 L'acrylique adapte automatiquement son apparence à une vaste gamme d’appareils et de contextes.
 
-En mode Contraste élevé, les utilisateurs continuent de voir la couleur d’arrière-plan qu'ils ont choisie, au lieu de l'acrylique. En outre, à la fois l’ACRYLIQUE en arrière-plan et l’ACRYLIQUE dans l’application apparaissent comme une couleur unie:
+En mode Contraste élevé, les utilisateurs continuent de voir la couleur d’arrière-plan qu'ils ont choisie, au lieu de l'acrylique. En outre, l’ACRYLIQUE en arrière-plan et ACRYLIQUE dans l’application s’affichent une couleur unie:
  - Lorsque l’utilisateur désactive la transparence dans Paramètres > Personnalisation > couleurs
  - Lorsque le mode économiseur de batterie est activé
  - Lorsque l’application est exécutée sur un matériel bas de gamme
@@ -163,7 +163,7 @@ Nous avons créé une collection de ressources de thème de pinceaux pour les ty
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> <b>Utilisation recommandée:</b> Si votre application utilise un texte secondaire de couleur AltMedium avec une taille de texte de 18px ou plus, vous pouvez placer ces ressources acryliques à 70 % plus translucides derrière le texte. Nous vous recommandons d’utiliser ces ressources dans les éléments de navigation horizontale supérieure et dans les zones des éléments de contrôle de votre application.  </td>
+        <td> <b>Utilisation recommandée:</b> Si votre application utilise un texte secondaire de couleur AltMedium avec une taille de texte de 18px ou plus, vous pouvez placer ces ressources ACRYLIQUE à 70 % plus translucides derrière le texte. Nous vous recommandons d’utiliser ces ressources dans les éléments de navigation horizontale supérieure et dans les zones des éléments de contrôle de votre application.  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush, SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush, SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush, SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush, SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush, SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush, SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
@@ -209,7 +209,7 @@ Pour peindre une surface spécifique, appliquez les ressources de thème ci-dess
 ## <a name="custom-acrylic-brush"></a>Pinceau acrylique personnalisé
 Vous pouvez choisir d'ajouter une teinte à l'acrylique de votre application pour afficher une marque ou assurer un équilibre visuel avec les autres éléments de la page. Pour afficher la couleur plutôt que des nuances de gris, vous devez définir vos propres pinceaux acryliques en utilisant les propriétés suivantes.
  - **TintColor**: la couleur ou teinte de la couche de superposition. Pensez à spécifier la valeur de couleur RVB et l’opacité de canal alpha.
- - **TintOpacity**: l’opacité de la couche de teinte. Nous vous recommandons une opacité de 80 % en tant que point de départ, bien que les couleurs différentes peuvent sembler plus attrayantes autres translucencies.
+ - **TintOpacity**: l’opacité de la couche de teinte. Nous recommandons de 80 % d’opacité comme point de départ, bien que des couleurs différentes peuvent sembler plus attrayantes autres translucencies.
  - **BackgroundSource**: l’indicateur permettant de spécifier si vous souhaitez utiliser une acrylique en arrière-plan ou dans l’application.
  - **FallbackColor**: la couleur unie qui remplace l’ACRYLIQUE dans l’économiseur de batterie. Pour l'acrylique en arrière-plan, la couleur de secours remplace également l'acrylique lorsque votre application ne se trouve pas dans la fenêtre active du bureau ou lorsque l’application est en cours d’exécution sur le téléphone et sur Xbox.
 
@@ -338,7 +338,7 @@ En outre, vous devrez dessiner le titre de votre application, lequel apparaît n
 
 ## <a name="how-we-designed-acrylic"></a>Comment nous avons conçu l'acrylique
 
-Nous avons affiné les composants clés de l'acrylique pour définir ses propriétés et son apparence uniques. Nous avons commencé avec la transparence, le flou et bruit pour ajouter une profondeur visuelle et une dimension aux surfaces planes. Nous avons ajouté une couche de mode fusion d'exclusion pour assurer le contraste et la lisibilité de l’interface utilisateur placée sur un arrière-plan acrylique. Enfin, nous avons ajouté des teintes de couleur pour permettre la personnalisation. De concert, ces couches viennent compléter un support pratique et moderne.
+Nous avons affiné les composants clés de l'acrylique pour définir ses propriétés et son apparence uniques. Nous avons commencé avec transparence, le flou et bruit pour ajouter une profondeur visuelle et une dimension aux surfaces planes. Nous avons ajouté une couche de mode fusion d'exclusion pour assurer le contraste et la lisibilité de l’interface utilisateur placée sur un arrière-plan acrylique. Enfin, nous avons ajouté des teintes de couleur pour permettre la personnalisation. De concert, ces couches viennent compléter un support pratique et moderne.
 
 ![Recette de l'acrylique](images/AcrylicRecipe_Diagram.jpg)
 <br/>La recette de l'acrylique: arrière-plan, flou, fusion d'exclusion, superposition couleur/teinte, bruit

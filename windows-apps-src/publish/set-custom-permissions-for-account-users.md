@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, rôles d’utilisateur, autorisation d’utilisateur, rôles personnalisés, accès utilisateur, personnaliser les autorisations, rôles standard
 ms.localizationpriority: medium
 ms.openlocfilehash: a4100248857af655f388ad318bb3ae5176aaf046
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4127540"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4154860"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Définir des rôles ou des autorisations personnalisés pour les utilisateurs de compte
 
@@ -170,7 +170,7 @@ Remarque: certaines autorisations ne peuvent pas être définies pour les extens
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>Acquisitions</b>     </td><td>    Peut afficher les rapports <a href="acquisitions-report.md">Acquisitions</a> et <a href="add-on-acquisitions-report.md">Acquisitions d'extensions</a> pour le produit.        </td><td>    Non applicable    </td><td>    Non applicable (les paramètres pour le produit parent incluent le rapport **acquisitions de modules complémentaires** )        </td><td>    Non applicable                         </td></tr>
+    <tr><td align="left">    <b>Acquisitions</b>     </td><td>    Peut afficher les rapports <a href="acquisitions-report.md">Acquisitions</a> et <a href="add-on-acquisitions-report.md">Acquisitions d'extensions</a> pour le produit.        </td><td>    Non applicable    </td><td>    Non applicable (paramètres du produit parent incluent le rapport **acquisitions de modules complémentaires** )        </td><td>    Non applicable                         </td></tr>
     <tr><td align="left">    <b>Utilisation</b> </td><td>    Peut afficher le <a href="usage-report.md">rapport d’utilisation</a> du produit.     </td><td>    Non applicable       </td><td>    N/A     </td><td>    Non applicable         </td></tr>
     <tr><td align="left">    <b>Intégrité</b> </td><td>    Peut afficher le <a href="health-report.md">rapport d’intégrité</a> du produit.    </td><td>    Non applicable     </td><td>    N/A     </td><td>    Non applicable         </td></tr>
     <tr><td align="left">    <b>Retour d’expérience du client</b>    </td><td>    Peut visualiser les rapports <a href="reviews-report.md">Avis</a> et <a href="feedback-report.md">Commentaires</a> concernant le produit.       </td><td>    Non applicable (pour répondre à des commentaires ou à des avis, l’autorisation <b>Contacter le client</b> doit être accordée)   </td><td>    Non applicable     </td><td>    Non applicable         </td></tr>

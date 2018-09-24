@@ -11,16 +11,16 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 259b171ea490272241fcef1170e2413cb40d7330
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4123012"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155010"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Kits de ressources et exemples de conception pour les applications UWP
  
 
-Conception et des téléchargements liés à l’interface utilisateur pour les applications de conception Fluent/UWP. Pour obtenir des outils supplémentaires, tels que VisualStudio, consultez <a href="https://developer.microsoft.com/downloads">la page principale des téléchargements</a>. 
+Conception et téléchargements liés à l’interface utilisateur pour les applications de conception Fluent/UWP. Pour obtenir des outils supplémentaires, tels que VisualStudio, consultez <a href="https://developer.microsoft.com/downloads">la page principale des téléchargements</a>. 
 
 
 ## <a name="design-toolkits"></a>Kits de ressources de conception
@@ -60,11 +60,11 @@ Ces kits de ressources fournissent des contrôles et des modèles de disposition
     :::column-end:::
 :::row-end:::
 
-## <a name="developer-toolkits-and-libraries"></a>Bibliothèques et les kits de développement
+## <a name="developer-toolkits-and-libraries"></a>Bibliothèques et les kits de ressources de développeur
 
 :::row:::
     :::column:::
-        ![Vignette de bibliothèque WinUI](images/WinUI-library.png) <b>Bibliothèque de l’interface utilisateur de Windows</b><br>
+        ![Vignette de bibliothèque WinUI](images/WinUI-library.png) <b>Bibliothèque d’interface utilisateur Windows</b><br>
         Les contrôles et autres éléments d’interface utilisateur pour les applications UWP.<br/>
         <a href="/uwp/toolkits/winui/getting-started">Instructions d’installation</a><br/>
     :::column-end:::
@@ -95,7 +95,7 @@ Ces kits de ressources fournissent des contrôles et des modèles de disposition
     
 ## <a name="samples"></a>Exemples
 
-![créer l’image de cast](images/buildcast.png)
+![Générer cast image](images/buildcast.png)
 **BuildCast**<br>
 BuildCast est un exemple de bout en bout conçu pour présenter le système Fluent Design ainsi que d’autres fonctionnalités de la plateforme Windows universelle. Il permet de parcourir, de télécharger et de lire des podcasts vidéo sélectionnés, notamment un échantillon des plus populaires issus de Channel9 et des fils de quelques amateurs de Windows férus de technologie. Il offre également la prise de notes manuscrites, des signets et la lecture à distance. Cet exemple a été initialement présenté lors de la conférence Build2017, pendant l'intervention <a href="https://channel9.msdn.com/Events/Build/2017/B8034">Créer des applications exceptionnelles avec Fluent Design</a>. <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">Télécharger l’exemple BuildCast</a> <br><a href="https://github.com/Microsoft/BuildCast">Découvrir l'exemple BuildCast sur GitHub</a>

@@ -11,11 +11,11 @@ keywords: windows10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.openlocfilehash: 19f4d9cde6ee2bc9615f044f18bc5e8828ca1985
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4122932"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155982"
 ---
 # <a name="color"></a>Couleur
 
@@ -29,7 +29,7 @@ Dans les applications UWP, les couleurs sont principalement déterminées par la
 
 :::row:::
     :::column:::
-        **Utilisez couleur de manière intelligente.**
+        **Utilisez la couleur de manière intelligente.**
 Lorsque la couleur est utilisée avec parcimonie pour mettre en évidence des éléments importants, elle permet de créer une interface utilisateur fluide et intuitive.
     :::column-end:::
     :::column:::
@@ -44,7 +44,7 @@ Il est recommandé de choisir une couleur pour indiquer les éléments interacti
 Dans Windows, les utilisateurs peuvent choisir une couleur d’accentuation et un thème clair ou foncé, qui sont conservés tout au long de leur expérience. Vous pouvez choisir comment incorporer la couleur d’accentuation et le thème de l’utilisateur dans votre application pour personnaliser son expérience.
     :::column-end:::
     :::column:::
-        **Couleur est culturelle.**
+        **La couleur est culturelle.**
 Prenez en compte la façon dont les couleurs utilisées seront interprétées par des personnes de différentes cultures. Par exemple, dans certaines cultures, la couleur bleue est associée à la vertu et la protection, tandis que dans d’autres cultures, elle représente le deuil.
     :::column-end:::
 :::row-end:::

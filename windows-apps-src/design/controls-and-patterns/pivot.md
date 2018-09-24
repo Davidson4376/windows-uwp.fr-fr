@@ -15,15 +15,15 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bb6ed36c772e5ae80a3cb801b4b6b36bb1ab18c
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4124934"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4154414"
 ---
 # <a name="pivot"></a>Pivot
 
-Le contrôle de [sélecteur de vue](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) permet balayage tactile entre un petit ensemble de sections de contenu.
+Le contrôle [sélecteur de vue](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) permet de balayage tactile entre un petit ensemble de sections de contenu.
 
 > **API importantes**: [classe Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [classe NavigationView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
@@ -34,7 +34,7 @@ Le contrôle de [sélecteur de vue](https://docs.microsoft.com/uwp/api/Windows.U
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/Pivot">Ouvrir l’application et voir le contrôle de sélecteur de vue en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/Pivot">Ouvrir l’application et voir le contrôle de sélecteur de vue en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Obtenir le code source (GitHub)</a></li>
@@ -49,13 +49,13 @@ Le contrôle de sélecteur de vue, tout comme [NavigationView](navigationview.md
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
-Pour obtenir navigation supérieur courants et les modèles des onglets, nous vous recommandons d’à l’aide de [NavigationView](navigationview.md), qui s’adapte à différentes tailles d’écran et permet la personnalisation supérieure automatiquement.
+Pour obtenir courants navigation supérieur et des modèles d’onglets, nous vous recommandons d’à l’aide de [NavigationView](navigationview.md), ce qui s’adapte à différentes tailles d’écran et permet la personnalisation supérieure automatiquement.
 
-Toutefois, si votre navigation requiert le balayage-tactile, nous recommandons d’utiliser le sélecteur de vue.
+Toutefois, si votre navigation requiert le balayage tactile, nous recommandons d’utiliser le sélecteur de vue.
 
-Les autres principales différences entre les contrôles de NavigationView et de sélecteur de vue sont le comportement de dépassement par défaut et l’API de la navigation:
+Les autres principales différences entre les contrôles NavigationView et sélecteur de vue sont le comportement de dépassement de capacité par défaut et l’API de la navigation:
 
-- Dépassement carrousels éléments, NavigationView utilise une liste déroulante du menu de dépassement de capacité afin que les utilisateurs puissent voir tous les éléments de sélecteur de vue.
+- Dépassement carrousels éléments, tandis que NavigationView utilise une liste déroulante du menu de dépassement de capacité afin que les utilisateurs puissent voir tous les éléments de sélecteur de vue.
 - Sélecteur de vue gère la navigation entre les sections de contenu, tandis que NavigationView permet de mieux contrôler le comportement de navigation.
 
 ## <a name="use-navigationview-instead-of-pivot"></a>Utiliser NavigationView au lieu de sélecteur de vue
@@ -116,7 +116,7 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 }
 ```
 
-Ce code simule l’expérience de navigation intégrée du contrôle Pivot, moins l’expérience tactile-balayage entre les sections de contenu. Toutefois, comme vous pouvez le constater, vous pouvez également personnaliser plusieurs points, y compris la transition animée, paramètres de navigation et les fonctionnalités de pile.
+Ce code imite l’expérience de navigation intégrée du contrôle Pivot, moins l’expérience de balayage tactile entre les sections de contenu. Toutefois, comme vous pouvez le constater, vous pouvez également personnaliser plusieurs points, y compris la transition animée, paramètres de navigation et des fonctionnalités de pile.
 
 ## <a name="create-a-pivot-control"></a>Créer un contrôle Pivot
 
