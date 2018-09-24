@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f7359b2ae40e9b53d5ab73ee93402b11beab629
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4128192"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4153042"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Configurer votre compte de paiement et vos déclarations fiscales
 
@@ -125,7 +125,7 @@ Pour garantir le succès du paiement, notez les points suivants :
 
 ## <a name="tax-forms"></a>Déclarations fiscales
 
-Une fois que vous avez [inscrit pour un compte de développeur](opening-a-developer-account.md) et configurer votre [compte de revenu](#payout-account), vous pouvez créer votre *profil fiscal* pour le Microsoft Store en procédant comme suit:
+Une fois que vous avez [inscrit pour un compte de développeur](opening-a-developer-account.md) et configurer votre [compte de paiement](#payout-account), vous pouvez créer votre *profil fiscal* pour le Microsoft Store en procédant comme suit:
 
 -   Spécifiez votre pays de résidence et votre nationalité.
 -   Remplissez les déclarations fiscales appropriées.
@@ -148,7 +148,7 @@ Vous pouvez remplir et envoyer vos déclarations fiscales au format électroniqu
 4.  Répondez aux questions portant sur la nationalité américaine et la résidence aux États-Unis, puis cliquez sur **Suivant**.
 5.  Si votre nom et votre adresse sont affichés, vérifiez-les pour la déclaration de vos revenus.
 
-Les versions électroniques des déclarations fiscales à remplir apparaissent ensuite. Quel que soit votre pays de résidence ou votre nationalité, vous devez remplir les déclarations fiscales des États-Unis pour pouvoir vendre des applications ou les modules complémentaires via le Microsoft Store. Les développeurs répondant à certains critères de résidence aux États-Unis doivent remplir le formulaire W-9 du fisc américain (IRS). Les autres développeurs résidant en dehors des États-Unis doivent compléter le formulaire W-8 de l'IRS. Vous pouvez remplir ces formulaires en ligne lors de la création de votre profil fiscal.
+Les versions électroniques des déclarations fiscales à remplir apparaissent ensuite. Quel que soit votre pays de résidence ou votre nationalité, vous devez remplir les déclarations fiscales des États-Unis pour pouvoir vendre des applications ou modules complémentaires via le Microsoft Store. Les développeurs répondant à certains critères de résidence aux États-Unis doivent remplir le formulaire W-9 du fisc américain (IRS). Les autres développeurs résidant en dehors des États-Unis doivent compléter le formulaire W-8 de l'IRS. Vous pouvez remplir ces formulaires en ligne lors de la création de votre profil fiscal.
 
 Il n'est pas nécessaire de fournir un numéro d'identification du contribuable ou ITIN (États-Unis) pour recevoir des paiements de Microsoft ou pour revendiquer des avantages en vertu d'une convention fiscale.
 
