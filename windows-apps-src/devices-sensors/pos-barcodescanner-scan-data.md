@@ -1,7 +1,7 @@
 ---
 author: eliotcowley
 title: Obtenir et comprendre les données de code-barres
-description: Découvrez comment obtenir et interpréter les données de codes-barres numérisés.
+description: Découvrez comment obtenir et interpréter les données de code-barres qui vous scannez.
 ms.author: elcowle
 ms.date: 08/29/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 0992ea54092063ba53f23871599905e58f1b456e
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4127112"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152722"
 ---
 # <a name="obtain-and-understand-barcode-data"></a>Obtenir et comprendre les données de code-barres
 
@@ -28,7 +28,7 @@ Une fois que vous avez un **ClaimedBarcodeScanner**, qu’il s’abonner à l’
 claimedBarcodeScanner.DataReceived += ClaimedBarcodeScanner_DataReceived;
 ```
 
-Le Gestionnaire d’événements est transmis la **ClaimedBarcodeScanner** et un objet **BarcodeScannerDataReceivedEventArgs** . Vous pouvez accéder aux données code-barres par le biais de [rapport de](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report#Windows_Devices_PointOfService_BarcodeScannerDataReceivedEventArgs_Report) propriété de cet objet, qui est de type [BarcodeScannerReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport).
+Le Gestionnaire d’événements est transmis la **ClaimedBarcodeScanner** et un objet **BarcodeScannerDataReceivedEventArgs** . Vous pouvez accéder aux données code-barres par le biais de [rapport de](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report#Windows_Devices_PointOfService_BarcodeScannerDataReceivedEventArgs_Report) propriété de cet objet, ce qui est de type [BarcodeScannerReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport).
 
 ```cs
 private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner sender, BarcodeScannerDataReceivedEventArgs args)
@@ -42,10 +42,10 @@ private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner send
 Une fois que vous avez la **BarcodeScannerReport**, vous pouvez accéder et analyser les données de code-barres. **BarcodeScannerReport** possède trois propriétés:
 
 * [ScanData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandata): les données de code-barres complet, brutes.
-* [ScanDataLabel](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatalabel): l’étiquette de code-barres décodées, ce qui n’inclut pas l’en-tête, somme de contrôle et d’autres informations diverses.
+* [ScanDataLabel](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatalabel): l’étiquette de code-barres décodée, ce qui n’inclut pas l’en-tête, somme de contrôle et d’autres informations diverses.
 * [ScanDataType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatatype): le type d’étiquette de code-barres décodé. Les valeurs possibles sont définies dans la classe [BarcodeSymbologies](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies) .
 
-Si vous souhaitez accéder à des **ScanDataLabel** ou **ScanDataType**, vous devez d’abord définir [IsDecodeDataEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdecodedataenabled#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDecodeDataEnabled) sur **true**.
+Si vous souhaitez accéder aux **ScanDataLabel** ou **ScanDataType**, vous devez tout d’abord définir [IsDecodeDataEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdecodedataenabled#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDecodeDataEnabled) sur **true**.
 
 ```cs
 claimedBarcodeScanner.IsDecodeDataEnabled = true;
@@ -127,11 +127,11 @@ Ces données ne sont en général, au format comme livrés à partir de l’anal
 
 Informations d’en-tête communes sont un caractère de préfixe (par exemple, un caractère STX). Informations de bande-annonce courantes sont un caractère de terminaison (par exemple, un caractère ETX ou CR) et un caractère de vérification de bloc si un est généré par le scanneur.
 
-Cette propriété doit inclure un caractère SYMBOLOGIE si un est retourné par le scanneur (par exemple, un **A** pour UPC-A). Il doit également inclure les chiffres de contrôle s’ils sont présents dans l’étiquette et renvoyée par le scanneur. (Notez que les caractères de SYMBOLOGIE et les chiffres de contrôle peuvent ou ne pas être présents, en fonction de la configuration de l’analyseur. L’analyseur retournera les si présents, mais ne seront pas générer ou les calculer si elles sont également absents.)
+Cette propriété doit inclure un caractère SYMBOLOGIE si un est retourné par le scanneur (par exemple, un **A** pour UPC-A). Il doit également inclure les chiffres de contrôle s’ils sont présents dans l’étiquette et renvoyée par le scanneur. (Notez que les caractères de SYMBOLOGIE et les chiffres de vérification peuvent ou peuvent ne pas être présents, en fonction de la configuration de l’analyseur. L’analyseur retournera les si présenter, mais ne seront pas générer ou les calculer si elles sont également absents.)
 
 Certains marchandise peut-être être marqué avec un code-barres supplémentaire. Ce code-barres est généralement placés à droite du code-barres principal et se compose d’un caractères de deux ou cinq supplémentaires d’informations. Si le scanneur lit marchandise qui contient les codes-barres supplémentaires et principaux, les caractères supplémentaires sont ajoutés dans les personnages principaux, et le résultat est fourni à l’application en tant qu’une seule étiquette. (Notez qu’un scanneur peut prendre en charge une configuration qui active ou désactive la lecture de codes supplémentaires).
 
-Certains marchandise peut-être être marqué avec des étiquettes plusieurs, parfois appelées *étiquettes multisymbol* ou *plusieurs niveaux*. Ces codes-barres sont généralement disposés verticalement et peuvent être de la SYMBOLOGIE identiques ou différent. Si le scanneur lit marchandise qui contient plusieurs étiquettes, chaque code-barres est fourni à l’application comme une étiquette distincte. Cela est nécessaire en raison du manque d’en cours de la normalisation de ces types de code-barres. Un n’est pas en mesure de déterminer toutes les variantes basées sur les données de code-barres individuels. Par conséquent, l’application devra déterminer quand un code-barres étiquette plusieurs a été lu en fonction des données renvoyées. (Notez qu’un scanneur peut ou ne peut pas en charge la lecture des étiquettes de plusieurs).
+Certains marchandise peut-être être marqué avec des étiquettes multiples, parfois appelées *étiquettes multisymbol* ou *plusieurs niveaux*. Ces codes-barres sont généralement disposés verticalement et peuvent être de la SYMBOLOGIE identiques ou différent. Si le scanneur lit marchandise qui contient plusieurs étiquettes, chaque code-barres est fourni à l’application comme une étiquette distincte. Cela est nécessaire en raison du manque de normalisation de ces types de code-barres actuel. Un n’est pas en mesure de déterminer toutes les variantes basées sur les données de code-barres individuels. Par conséquent, l’application devra déterminer quand un code-barre étiquette plusieurs a été lu en fonction des données renvoyées. (Notez qu’un scanneur peut ou ne peut pas en charge la lecture des étiquettes de plusieurs).
 
 Cette valeur est définie avant un événement **DataReceived** déclenché à l’application.
 
@@ -139,7 +139,7 @@ Cette valeur est définie avant un événement **DataReceived** déclenché à l
 
 ## <a name="see-also"></a>Articles associés
 * [Scanneur de code-barres](pos-barcodescanner.md)
-* [Classe de ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)
-* [Classe de BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)
-* [Classe de BarcodeScannerReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport)
-* [Classe de BarcodeSymbologies](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)
+* [Classe ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)
+* [Classe BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)
+* [Classe BarcodeScannerReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport)
+* [Classe BarcodeSymbologies](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)

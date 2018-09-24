@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows10, uwp, toast, centre de notifications dans le cloud, masquage universel, notification, sur plusieurs appareils, masquer une fois, masquer partout
 ms.localizationpriority: medium
 ms.openlocfilehash: 90ad60949504d4478341ff9455fe0f7da90d78a9
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4121408"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4153540"
 ---
 # <a name="universal-dismiss"></a>Masquage universel
 

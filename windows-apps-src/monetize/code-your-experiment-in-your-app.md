@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, MicrosoftStore Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
 ms.openlocfilehash: b0931d712ca99b429e2aaa7dec4b855f41ce55ef
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4130170"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152612"
 ---
 # <a name="code-your-app-for-experimentation"></a>Coder votre application à des fins d’expérimentation
 
@@ -29,7 +29,7 @@ Pour ajouter ce comportement à votre application, vous allez utiliser les API f
 Les sections suivantes décrivent le processus général d’obtention de variantes pour votre expérience et de consignation des événements dans le Centre de développement. Après avoir codé votre application à des fins d’expérimentation, vous pouvez [définir une expérience dans le tableau de bord du Centre de développement](define-your-experiment-in-the-dev-center-dashboard.md). Pour découvrir une procédure pas à pas illustrant le processus de création et d’exécution d’une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
 > [!NOTE]
-> Certaines des API d’expérimentation dans le Microsoft Store Services SDK utilisent le [modèle asynchrone](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) pour récupérer des données à partir du centre de développement. Cela signifie qu’une partie de l’exécution de ces méthodes peut avoir lieu après l’appel des méthodes, afin que l’interface utilisateur de votre application puisse rester réactive pendant que les opérations se terminent. Le modèle asynchrone exige que votre application utilise le mot-clé **async** et l’opérateur **await** pour appeler les API, comme illustré par les exemples de code dans cet article. Par convention, les méthodes asynchrones se terminent par **Async**.
+> Certaines des API d’expérimentation dans le Microsoft Store Services SDK utilisent le [modèle asynchrone](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) pour récupérer les données à partir du centre de développement. Cela signifie qu’une partie de l’exécution de ces méthodes peut avoir lieu après l’appel des méthodes, afin que l’interface utilisateur de votre application puisse rester réactive pendant que les opérations se terminent. Le modèle asynchrone exige que votre application utilise le mot-clé **async** et l’opérateur **await** pour appeler les API, comme illustré par les exemples de code dans cet article. Par convention, les méthodes asynchrones se terminent par **Async**.
 
 ## <a name="configure-your-project"></a>Configurer votre projet
 

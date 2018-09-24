@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, ActiveDirectory, de campagne, promouvoir
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c7e7c1e2cd9a2ca083cef5fed27a9067cf1e7e7
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4131186"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4153122"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>Créer une campagne de publicité pour votre application
 
@@ -74,7 +74,7 @@ Voici comment créer une campagne de publicité pour promouvoir une application:
 10.  Si vous avez choisi **Augmenter l’intérêt pour votre application** comme objectif de campagne, vous pouvez sélectionner l’un des segments de clients à cibler. Les publicités créées à l’aide de cette campagne sont vues seulement par les clients qui sont inclus dans le segment. Vous ne pouvez sélectionner qu’un segment par campagne de publicité. Pour plus d’informations sur les segments, consultez l’article [Créer des segments de clients](create-customer-segments.md). Lorsque vous avez terminé, cliquez sur **Enregistrer et Suivant** afin de poursuivre à l’étape **Conception d’annonces**. Cette étape n’est pas disponible pour les campagnes de publicité maison, car elles s’exécutent uniquement dans vos propres applications.
 
 11.  Dans la page **Conception d’annonces**, choisissez l’une des options suivantes:
-    * **Auto-généré**. Il s’agit de l’option par défaut, et vous permet de créer une publicité à partir de nos modèles par défaut. Vous pouvez effectuer des sélections pour personnaliser le contenu de votre application, et nous afficherons alors un aperçu de l’aspect de votre publicité en fonction de vos choix (automatiquement mis à jour dès que vous effectuez des sélections).
+    * **Auto-généré**. Il s’agit de l’option par défaut, et il vous permet de créer une publicité à partir de nos modèles par défaut. Vous pouvez effectuer des sélections pour personnaliser le contenu de votre application, et nous afficherons alors un aperçu de l’aspect de votre publicité en fonction de vos choix (automatiquement mis à jour dès que vous effectuez des sélections).
         * Dans la liste déroulante **Langue**, sélectionnez la langue de votre publicité. Le texte du badge MicrosoftStore s’affichera dans la langue que vous avez sélectionnée.
         * Pour ajouter une ligne de texte supplémentaire à votre publicité, entrez ce texte dans le champ **Slogan personnalisé**.
             > [!NOTE]

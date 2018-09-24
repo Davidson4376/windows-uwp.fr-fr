@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10 uwp, application azure ad, aad, utilisateur, groupe, plusieurs utilisateurs, multiutilisateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 97502a0a2863ed6f7ab2ce5d842fbebc1ae8091c
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4125960"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152334"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-dev-center-account"></a>Ajouter des utilisateurs, des groupes et des applications AzureAD à votre compte du Centre de développement
 
@@ -45,7 +45,7 @@ Vous pouvez sélectionner les utilisateurs qui déjà existent déjà dans le cl
 
 <span id="from-directory" />
 
-1.  Sélectionnez l’icône d’engrenage (à côté de l’angle supérieur droit du tableau de bord), puis sélectionnez les **paramètres du compte**. Dans le menu **paramètres** , sélectionnez **les utilisateurs**.
+1.  Sélectionnez l’icône d’engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez **les paramètres de compte**. Dans le menu **paramètres** , sélectionnez **les utilisateurs**.
 2.  Dans la page **Utilisateurs**, sélectionnez **Ajouter des utilisateurs**. 
 3.  Sélectionnez un ou plusieurs utilisateurs dans la liste qui s’affiche. Vous pouvez utiliser la zone de recherche pour rechercher des utilisateurs spécifiques.
     > [!TIP]
@@ -118,7 +118,7 @@ Vous pouvez ajouter un groupe à votre compte du Centre de développement à par
 
 ### <a name="add-groups-from-your-organizations-directory"></a>Ajouter des groupes à partir de l’annuaire de votre organisation
 
-1.  Sélectionnez l’icône d’engrenage (à côté de l’angle supérieur droit du tableau de bord), puis sélectionnez les **paramètres du compte**. Dans le menu **paramètres** , sélectionnez **les utilisateurs**.
+1.  Sélectionnez l’icône d’engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez **les paramètres de compte**. Dans le menu **paramètres** , sélectionnez **les utilisateurs**.
 2. Dans la page **utilisateurs** , sélectionnez **Ajouter des groupes**.
 2.  Sélectionnez un ou plusieurs groupes dans la liste qui s’affiche. Vous pouvez utiliser la zone de recherche pour rechercher des groupes spécifiques.
     > [!TIP]
@@ -134,7 +134,7 @@ Vous pouvez ajouter un groupe à votre compte du Centre de développement à par
 Si vous souhaitez accorder à un nouveau groupe l’accès au Centre de développement, vous pouvez créer un groupe dans la section **Utilisateurs**. Notez que le groupe sera créé non seulement dans votre compte du Centre de développement, mais également dans l’annuaire de votre organisation.
 
 1.  Dans la page **utilisateurs** (sous **paramètres de compte**), cliquez sur **Ajouter des groupes**.
-2.  Sur la page suivante, sélectionnez le **Nouveau groupe**.
+2.  Sur la page suivante, sélectionnez **un nouveau groupe**.
 3.  Entrez le nom d’affichage du nouveau groupe.
 4.  Spécifiez le ou les [rôles ou autorisations personnalisées](set-custom-permissions-for-account-users.md) attribués au groupe. Tous les membres du groupe seront en mesure d’accéder à votre compte du Centre de développement avec les autorisations que vous appliquez au groupe, quels que soient les rôles/autorisations associés à leur compte individuel.
 5.  Dans la liste qui s’affiche, sélectionnez les utilisateurs à attribuer au nouveau groupe. Vous pouvez utiliser la zone de recherche pour rechercher des utilisateurs spécifiques.
@@ -151,7 +151,7 @@ Vous pouvez autoriser des applications ou des services faisant partie intégrant
 
 ### <a name="add-azure-ad-applications-from-your-organizations-directory"></a>Ajouter des applications AzureAD à partir de l’annuaire de votre organisation
 
-1.  1.  Sélectionnez l’icône d’engrenage (à côté de l’angle supérieur droit du tableau de bord), puis sélectionnez les **paramètres du compte**. Dans le menu **paramètres** , sélectionnez **les utilisateurs**.
+1.  1.  Sélectionnez l’icône d’engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez **les paramètres de compte**. Dans le menu **paramètres** , sélectionnez **les utilisateurs**.
 2. Sur la page **Utilisateurs**, sélectionnez **Ajouter des applications AzureAD**.
 3.  Sélectionnez une ou plusieurs applications AzureAD dans la liste qui s’affiche. Vous pouvez utiliser la zone de recherche pour rechercher des applications AzureAD spécifiques.
     > [!TIP]
@@ -170,7 +170,7 @@ Si vous souhaitez accorder à un nouveau compte d’application AzureAD l’acc�
 > Si vous utilisez principalement cette application AzureAD pour vous authentifier auprès du Centre de développement et que vous n’avez pas besoin de permettre à des utilisateurs d’y accéder directement, vous pouvez saisir une adresse valide dans les champs **URL de réponse** et **URI ID d’application**, à condition que ces valeurs ne soient pas utilisées par une autre application AzureAD de votre annuaire.
 
 1.  Dans la page **utilisateurs** (sous **paramètres de compte**), sélectionnez **Ajouter des applications Azure AD**.
-2.  Sur la page suivante, sélectionnez **l’application du nouvel Azure AD**.
+2.  Sur la page suivante, sélectionnez **application nouvel Azure AD**.
 3.  Renseignez le champ **URL de réponse** pour la nouvelle application Azure AD. Il s’agit de l’URL qui permet aux utilisateurs de se connecter et d’utiliser votre application Azure AD (parfois également désignée sous le terme d’URL de l’application ou d’URL de connexion). L’**URL de réponse** ne peut pas comporter plus de 256caractères et doit être unique dans votre annuaire.
 4.  Renseignez le champ **URI ID d’application** pour la nouvelle application AzureAD. Il s’agit d’un identificateur logique pour l’application Azure AD qui est présenté lors de l’envoi d’une demande d’authentification unique à Azure AD. Notez que l’**URI ID d’application** doit être unique pour chaque application Azure AD de votre annuaire et ne doit pas comporter plus de 256 caractères. Pour plus d’informations sur l’**URI ID d’application**, voir [Intégration d’applications à Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant).
 5.  Dans la section **Rôles**, spécifiez le ou les [rôles ou autorisations personnalisées](set-custom-permissions-for-account-users.md) attribués à l’application AzureAD.

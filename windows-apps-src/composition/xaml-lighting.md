@@ -15,11 +15,11 @@ dev_langs:
 - cpp
 - cppwinrt
 ms.openlocfilehash: b4e3678e17e7545dfe9cb4049ace7ff864198156
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4124606"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152468"
 ---
 # <a name="xaml-lighting"></a>Éclairage de XAML
 
@@ -29,7 +29,7 @@ Vous pouvez appliquer des éclairages aux [**éléments visuels**](https://msdn.
 
 ## <a name="applying-lights-to-xaml-uielements"></a>Application d’éclairages aux éléments UIElements XAML
 
-Les objets [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) permettent d’appliquer des classes [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) pour éclairer les éléments UIElements XAML de manière dynamique. XamlLight offre des méthodes pour le ciblage des éléments UIElements ou pinceaux XAML, appliquer des éclairages aux arborescences d’éléments d’interface utilisateur, et utilisent de ressources en fonction de qu’il s’agisse actuellement en aidant à gérer la durée de vie de CompositionLight.
+Les objets [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) permettent d’appliquer des classes [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) pour éclairer les éléments UIElements XAML de manière dynamique. XamlLight offre des méthodes permettant de cibler des éléments UIElements ou pinceaux XAML, appliquer des éclairages aux arborescences d’éléments UIElements, et de faciliter la gestion de la durée de vie de CompositionLight selon qu’il s’agisse actuellement dans les ressources utilisent.
 
 - Si vous ciblez un objet **Brush** avec une classe XamlLight, les parties des éléments UIElements qui utilisent cet objet Brush sont éclairées.
 - Si vous ciblez un élément **UIElement** avec une classe XamlLight, la totalité de l’élément UIElement et tous ses éléments UIElements enfants sont éclairés.
@@ -38,7 +38,7 @@ Les objets [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) permettent 
 
 [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) est une classe de base permettant de créer des éclairages personnalisés.
 
-Cet exemple montre la définition de classe XamlLight personnalisée qui applique un projecteur multicolore ciblées UIElements et pinceaux.
+Cet exemple montre la définition de classe XamlLight personnalisée qui applique un projecteur multicolore à ciblées UIElements et pinceaux.
 
 ```csharp
 public sealed class OrangeSpotLight : XamlLight

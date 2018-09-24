@@ -10,12 +10,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cf12bc5c875e4ce3be2d627c87e15770e4cc214
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+dev_langs:
+- csharp
+- cppwinrt
+- cpp
+ms.openlocfilehash: ff104bfb5114cd51eb04d75af3c096f47a7d286d
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4122510"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4153622"
 ---
 # <a name="data-binding-overview"></a>Vue d’ensemble de la liaison de données
 
@@ -36,7 +40,7 @@ Commencez par créer un projet **Application vide (universelle Windows)**. Nomme
 
 Chaque liaison se compose d’une cible et d’une source de liaison. En règle générale, la cible est une propriété d’un contrôle ou d’un autre élément d’interface utilisateur, et la source est une propriété d’une instance de classe (un modèle de données ou un modèle d’affichage). Cet exemple montre comment lier un contrôle à un élément unique. La cible est la propriété **Text** d’un contrôle **TextBlock**. La source est une instance d’une classe simple nommée **Recording**, qui représente un enregistrement audio. Examinons d’abord la classe.
 
-Si vous utilisez c#, puis ajoutez une nouvelle classe à votre projet et nommez-le `Recording.cs`.
+Si vous utilisez c# ou C++ / CX, puis ajoutez une nouvelle classe à votre projet et nommez la classe de **l’enregistrement**.
 
 Si vous utilisez [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis ajouter de nouveaux éléments de **Fichier Midl (.idl)** au projet, nommé comme indiqué dans C++ / WinRT exemple l’intégralité du code ci-dessous. Remplacez le contenu de ces nouveaux fichiers par le code [MIDL 3.0](/uwp/midl-3/intro) indiqué dans la liste, générez le projet pour générer `Recording.h` et `.cpp` et `RecordingViewModel.h` et `.cpp`, puis ajoutez le code pour les fichiers générés pour faire correspondre la description. Pour plus d’informations sur ces fichiers générés et la manière de les copier dans votre projet, consultez [contrôles XAML; liaison à C++ / WinRT propriété](/windows/uwp/cpp-and-winrt-apis/binding-property).
 
@@ -157,6 +161,7 @@ Quickstart::Recording RecordingViewModel::DefaultRecording()
 ```
 
 ```cpp
+// Recording.h
 #include <sstream>
 namespace Quickstart
 {
@@ -217,6 +222,10 @@ namespace Quickstart
         }
     };
 }
+
+// Recording.cpp
+#include "pch.h"
+#include "Recording.h"
 ```
 
 Ensuite, exposez la classe de source de liaison à partir de la classe qui représente votre page de balisage. Pour ce faire, nous ajoutons une propriété de type **RecordingViewModel** à **MainPage**.
@@ -273,6 +282,10 @@ Quickstart::RecordingViewModel MainPage::ViewModel()
 ```
 
 ```cpp
+// MainPage.h
+...
+#include "Recording.h"
+
 namespace Quickstart
 {
     public ref class MainPage sealed
@@ -280,16 +293,21 @@ namespace Quickstart
     private:
         RecordingViewModel ^ viewModel;
     public:
-        MainPage()
-        {
-            InitializeComponent();
-            this->viewModel = ref new RecordingViewModel();
-        }
+        MainPage();
+
         property RecordingViewModel^ ViewModel
         {
             RecordingViewModel^ get() { return this->viewModel; };
         }
     };
+}
+
+// MainPage.cpp
+...
+MainPage::MainPage()
+{
+    InitializeComponent();
+    this->viewModel = ref new RecordingViewModel();
 }
 ```
 
@@ -381,6 +399,8 @@ Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Rec
 ```
 
 ```cpp
+// Recording.h
+...
 public ref class RecordingViewModel sealed
 {
 private:
@@ -561,11 +581,14 @@ Ensuite, réglez les liaisons sur le contrôle [**ListView**](https://msdn.micro
 
 Et voici le résultat identique dans chacun des cas.
 
+> [!NOTE]
+> Si vous utilisez C++, votre interface utilisateur ne recherche exactement à l’illustration ci-dessous: le rendu de la propriété **ReleaseDateTime** est différent. Consultez la section suivante pour plus d’informations.
+
 ![Liaison d’un affichage liste](images/xaml-databinding4.png)
 
 ## <a name="formatting-or-converting-data-values-for-display"></a>Mise en forme ou conversion des valeurs de données pour l’affichage
 
-Le rendu ci-dessus présente un léger problème. La propriété **ReleaseDateTime** n’est pas simplement une date. Il s’agit d’une valeur [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx), ce qui signifie que nous obtenons plus d’informations que nécessaire. Une solution consiste à ajouter à la classe **Recording** une propriété de chaîne qui renvoie `this.ReleaseDateTime.ToString("d")`. Nommer cette propriété **ReleaseDate** indiquerait qu’elle renvoie une date, et non pas une date et une heure. Nommer cette propriété **ReleaseDateAsString** indiquerait en plus qu’elle renvoie une chaîne.
+Il existe un problème avec le rendu ci-dessus. La propriété **ReleaseDateTime** n’est pas simplement une date, il est [**DateTime**](/uwp/api/windows.foundation.datetime) (si vous utilisez C++, il s’agit d’un [**calendrier**](/uwp/api/windows.globalization.calendar)). Par conséquent, en c#, il s’affiche avec une plus grande précision que nous avons besoin. Et, en C++, il est en cours restitué comme nom de type. Une solution consiste à ajouter une propriété de chaîne à la classe de **l’enregistrement** qui renvoie l’équivalent de `this.ReleaseDateTime.ToString("d")`. Nommer cette propriété **ReleaseDate** indiquerait qu’elle renvoie une date et pas une date et une heure. Nommer cette propriété **ReleaseDateAsString** indiquerait en plus qu’elle renvoie une chaîne.
 
 Une solution plus souple consiste à utiliser un élément connu sous le nom de convertisseur de valeurs. Voici un exemple montrant comment créer votre propre convertisseur de valeurs. Ajoutez ce code à votre fichier de code source Recording.cs.
 
@@ -598,7 +621,94 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 }
 ```
 
-Nous pouvons maintenant ajouter une instance de **StringFormatter** comme ressource de page et l’utiliser dans notre liaison. Nous passons la chaîne de format dans le convertisseur à partir du balisage pour une souplesse de mise en forme optimale.
+```cppwinrt
+// StringFormatter.idl
+namespace Quickstart
+{
+    runtimeclass StringFormatter : Windows.UI.Xaml.Data.IValueConverter
+    {
+        StringFormatter();
+    }
+}
+
+// StringFormatter.h
+#pragma once
+
+#include "StringFormatter.g.h"
+#include <sstream>
+
+namespace winrt::Quickstart::implementation
+{
+    struct StringFormatter : StringFormatterT<StringFormatter>
+    {
+        StringFormatter() = default;
+
+        Windows::Foundation::IInspectable Convert(Windows::Foundation::IInspectable const& value, Windows::UI::Xaml::Interop::TypeName const& targetType, Windows::Foundation::IInspectable const& parameter, hstring const& language);
+        Windows::Foundation::IInspectable ConvertBack(Windows::Foundation::IInspectable const& value, Windows::UI::Xaml::Interop::TypeName const& targetType, Windows::Foundation::IInspectable const& parameter, hstring const& language);
+    };
+}
+
+namespace winrt::Quickstart::factory_implementation
+{
+    struct StringFormatter : StringFormatterT<StringFormatter, implementation::StringFormatter>
+    {
+    };
+}
+
+// StringFormatter.cpp
+#include "pch.h"
+#include "StringFormatter.h"
+
+namespace winrt::Quickstart::implementation
+{
+    Windows::Foundation::IInspectable StringFormatter::Convert(Windows::Foundation::IInspectable const& value, Windows::UI::Xaml::Interop::TypeName const& /* targetType */, Windows::Foundation::IInspectable const& /* parameter */, hstring const& /* language */)
+    {
+        // Retrieve the value as a Calendar.
+        Windows::Globalization::Calendar valueAsCalendar{ value.as<Windows::Globalization::Calendar>() };
+
+        std::wstringstream wstringstream;
+        wstringstream << L"Released: ";
+        wstringstream << valueAsCalendar.MonthAsNumericString().c_str();
+        wstringstream << L"/" << valueAsCalendar.DayAsString().c_str();
+        wstringstream << L"/" << valueAsCalendar.YearAsString().c_str();
+        return winrt::box_value(hstring{ wstringstream.str().c_str() });
+    }
+
+    Windows::Foundation::IInspectable StringFormatter::ConvertBack(Windows::Foundation::IInspectable const& /* value */, Windows::UI::Xaml::Interop::TypeName const& /* targetType */, Windows::Foundation::IInspectable const& /* parameter */, hstring const& /* language */)
+    {
+        throw hresult_not_implemented();
+    }
+}
+```
+
+```cpp
+...
+public ref class StringFormatter sealed : Windows::UI::Xaml::Data::IValueConverter
+{
+public:
+    virtual Platform::Object^ Convert(Platform::Object^ value, TypeName targetType, Platform::Object^ parameter, Platform::String^ language)
+    {
+        // Retrieve the value as a Calendar.
+        Windows::Globalization::Calendar^ valueAsCalendar = dynamic_cast<Windows::Globalization::Calendar^>(value);
+
+        std::wstringstream wstringstream;
+        wstringstream << L"Released: ";
+        wstringstream << valueAsCalendar->MonthAsNumericString()->Data();
+        wstringstream << L"/" << valueAsCalendar->DayAsString()->Data();
+        wstringstream << L"/" << valueAsCalendar->YearAsString()->Data();
+        return ref new Platform::String(wstringstream.str().c_str());
+    }
+
+    // No need to implement converting back on a one-way binding
+    virtual Platform::Object^ ConvertBack(Platform::Object^ value, TypeName targetType, Platform::Object^ parameter, Platform::String^ language)
+    {
+        throw ref new Platform::NotImplementedException();
+    }
+};
+...
+```
+
+Nous pouvons maintenant ajouter une instance de **StringFormatter** comme ressource de page et l’utiliser dans notre liaison.
 
 ```xml
 <Page.Resources>
@@ -610,6 +720,8 @@ Nous pouvons maintenant ajouter une instance de **StringFormatter** comme ressou
     ConverterParameter=Released: \{0:d\}}"/>
 ...
 ```
+
+Comme vous pouvez le voir ci-dessus, nous utilisons pour mettre en forme de la flexibilité le balisage pour passer une chaîne de format dans le convertisseur par le biais du paramètre de convertisseur. Dans les exemples de code indiqués dans cette rubrique, uniquement le code c# convertisseur de valeur rend utiliser ce paramètre. Toutefois, vous pouvez facilement passer une chaîne de format de style C++ en tant que paramètre de convertisseur et l’utiliser dans votre convertisseur de valeur à une fonction de mise en forme comme **wprintf** ou **swprintf**.
 
 Résultat :
 
