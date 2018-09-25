@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, mise en attente de publication, date de publication, envoi de la soumission à publier, approbation de fonctionnalité restreinte
 ms.localizationpriority: medium
 ms.openlocfilehash: 147f34c40cc5d2b612dcdd92edc0c76340cf58f7
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4156386"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4173844"
 ---
 # <a name="manage-submission-options"></a>Gérer les options de soumission
 
@@ -42,7 +42,7 @@ Si vous ne voulez pas encore définir de date de publication et que vous préfé
 
 Choisissez **Lancer la publication de cette soumission le** pour vous assurer que la soumission ne sera pas publiée avant une date donnée. Avec cette option, votre soumission sera publiée aussitôt que possible à la date spécifiée ou après. La date doit être postérieure de 24 heures au moins. Parallèlement à la date, vous pouvez également définir l’heure à laquelle la publication de la soumission doit démarrer. 
 
-Vous pouvez modifier cette date de publication après avoir soumis votre produit, tant qu’il n’a pas encore l’étape publier commencé. 
+Vous pouvez modifier cette date de publication après avoir soumis votre produit, dans la mesure qu’il n’a pas encore l’étape publier commencé. 
  
 Comme indiqué précédemment, si vous souhaitez spécifier certaines dates de publication pour votre soumission, utilisez l’option **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)** et laissez l’option **Options de mise en attente de publication** définie sur la sélection par défaut. L’utilisation de l’option **Lancer la publication de cette soumission le** signifie que le processus de publication de votre soumission ne démarrera qu'à cette date. Toutefois, des retards lors de la certification ou de la publication peuvent différer la publication réelle par rapport à la date demandée. 
 

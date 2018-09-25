@@ -8,14 +8,14 @@ ms.date: 07/11/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, le portail d’appareil
+keywords: Windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 1192c200cd42ab28cc7e763c06fd8a5638aa3400
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148294"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4173696"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>Configurer Device Portal avec un certificat SSL personnalisé
 Dans Windows 10 Creators Update, Windows Device Portal ajouté un moyen pour les administrateurs d’appareil installer un certificat personnalisé pour une utilisation dans les communications HTTPS. 
@@ -29,7 +29,7 @@ Par défaut, Device Portal génère une autorité de certification racine auto-s
 
 Vous trouverez également des nom d’hôte de l’appareil (par exemple, `https://LivingRoomPC`) et chaque lien-local l’adresse IP attribuée à l’appareil (jusqu'à deux [IPv4, IPv6] par carte réseau). Vous pouvez voir les adresses IP de lien-local pour un appareil en fonction de l’outil de mise en réseau dans le portail d’appareil. Ils peuvent commencer avec `10.` ou `192.` pour IPv4, ou `fe80:` pour IPv6. 
 
-Dans le programme d’installation par défaut, un avertissement concernant le certificat peut apparaître dans votre navigateur en raison de l’autorité de certification racine non approuvée. Plus précisément, le certificat SSL fourni par Device Portal est signé par une autorité de certification qui le navigateur ou le PC n’approuve pas de racine. Cela peut être résolu en créant une autorité de certification racine approuvée.
+Dans le programme d’installation par défaut, un avertissement concernant le certificat peut apparaître dans votre navigateur en raison de l’autorité de certification racine non approuvée. Plus précisément, le certificat SSL fourni par Device Portal est signé par une autorité de certification que le navigateur ou le PC n’approuve racine. Cela peut être résolu en créant une nouvelle racine de confiance autorité de certification.
 
 ## <a name="create-a-root-ca"></a>Créer une autorité de certification racine
 
@@ -46,11 +46,11 @@ $rootCA = New-SelfSignedCertificate -certstorelocation cert:\currentuser\my -Sub
 $rootCAFile = Export-Certificate -Cert $rootCA -FilePath $FilePath
 ```
 
-Une fois que cela est créé, vous pouvez utiliser le fichier _WdpTestCA.cer_ pour signer les certificats SSL. 
+Une fois que cela est créé, vous pouvez utiliser le fichier _WdpTestCA.cer_ pour signer des certificats SSL. 
 
 ## <a name="create-an-ssl-certificate-with-the-root-ca"></a>Créer un certificat SSL avec l’autorité de certification racine
 
-Certificats SSL ont deux fonctions essentielles: sécuriser votre connexion par le biais du chiffrement et en vérifiant que vous communiquez réellement avec l’adresse affichée dans la barre du navigateur (Bing.com, 192.168.1.37, etc.) et non un tiers malveillant.
+Certificats SSL ont deux fonctions critiques: sécurisation de votre connexion par le biais de chiffrement et la vérification que réellement la communication avec l’adresse affichée dans la barre du navigateur (Bing.com, 192.168.1.37, etc.) et non un tiers malveillant.
 
 Le script PowerShell suivant crée un certificat SSL pour le `localhost` point de terminaison. Chaque point de terminaison qui écoute Device Portal a besoin de son propre certificat; Vous pouvez remplacer le `$IssuedTo` argument dans le script avec chacune des différents points de terminaison de votre appareil: le nom d’hôte, hôte local et l’adresses IP.
 
@@ -74,7 +74,7 @@ Lorsque l’ensemble de fichiers .pfx est générée, vous devez charger dans Wi
 
 ## <a name="provision-device-portal-with-the-certifications"></a>Configurer Device Portal avec le relatif
 
-Pour chaque fichier .pfx que vous avez créée pour un appareil, vous devez exécuter la commande suivante à partir d’une invite de commandes avec élévation de privilèges.
+Pour chaque fichier .pfx que vous avez créé pour un appareil, vous devez exécuter la commande suivante à partir d’une invite de commandes avec élévation de privilèges.
 
 ```
 WebManagement.exe -SetCert <Path to .pfx file> <password for pfx> 
@@ -96,4 +96,4 @@ sc start webmanagement
 
 > [!TIP]
 > Les adresses IP peuvent changer au fil du temps.
-De nombreux réseaux utilisent DHCP pour fournir les adresses IP, afin que les appareils n’obtient pas toujours la même adresse IP qu’ils avaient précédemment. Si vous avez créé un certificat pour une adresse IP sur un appareil et que l’adresse du périphérique a changé, Windows Device Portal génère un nouveau certificat utilisant le certificat auto-signé existant, et arrête à l’aide de celui que vous avez créé. Cela entraînera la page d’avertissement de certificat s’affiche dans votre navigateur à nouveau. Pour cette raison, nous vous recommandons de se connecter à vos appareils par le biais de leurs noms d’hôtes, que vous pouvez définir dans Device Portal. Elles restent les mêmes, quel que soit les adresses IP.
+De nombreux réseaux utilisent DHCP pour donner les adresses IP, afin que les appareils n’obtient toujours la même adresse IP qu’ils avaient précédemment. Si vous avez créé un certificat pour une adresse IP sur un appareil et que l’adresse de l’appareil a changé, Windows Device Portal génère un nouveau certificat utilisant le certificat auto-signé existant, et arrête à l’aide de celui que vous avez créé. Ceci entraînera la page d’avertissement de certificat s’affiche dans votre navigateur à nouveau. Pour cette raison, nous vous recommandons de se connecter à vos appareils par le biais de leurs noms d’hôtes, que vous pouvez définir dans Device Portal. Elles restent les mêmes, quel que soit les adresses IP.

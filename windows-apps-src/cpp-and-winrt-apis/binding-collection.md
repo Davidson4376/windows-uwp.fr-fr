@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, XAML, contrôle, liaison, collection
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ba935b1a5316c2d7af9c7681705595efea7ca08
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4149078"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4175052"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-collection"></a>Contrôles d’éléments XAML; liaison à une collection [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 > [!NOTE]
@@ -37,7 +37,7 @@ Si une classe runtime qui représente une collection choisit de déclencher l’
 Il vous sera utile de disposer d’un modèle de vecteur observable pour servir d’implémentation utile à usage général de [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_). Vous trouverez ci-dessous un listing d’une classe appelée **single_threaded_observable_vector\<T\>**.
 
 > [!NOTE]
-> Si vous avez installé la [Windows 10 SDK version d’évaluation 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)ou une version ultérieure, puis vous pouvez simplement utiliser directement la fonction d’usine **WinRT:: single_threaded_observable_vector\ < T\ >** au lieu du listing de code ci-dessous (nous allons montrer le code exact ultérieurement dans cette rubrique). Si vous n’êtes pas déjà sur cette version du SDK, il sera facile de basculer de l’utilisation de la version du listing de code à la fonction **winrt** lorsque vous êtes.
+> Si vous avez installé la [Windows 10 SDK version d’évaluation 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)ou une version ultérieure, puis vous pouvez simplement utiliser directement la fonction factory **WinRT:: single_threaded_observable_vector\ < T\ >** au lieu du listing de code ci-dessous (nous allons montrer le code exact ultérieurement dans cette rubrique). Si vous n’êtes pas sur cette version du SDK, il sera facile de basculer d’à l’aide de la version du listing de code à la fonction **winrt** lorsque vous êtes.
 
 ```cppwinrt
 // single_threaded_observable_vector.h
@@ -305,7 +305,7 @@ runtimeclass BookstoreViewModel
 ```
 
 > [!IMPORTANT]
-> Dans la liste de MIDL 3.0 ci-dessus, notez que le type de la propriété **BookSkus** est [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) de [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821). Dans la section suivante de cette rubrique, nous allons lie la source des éléments d’une [**zone de liste**](/uwp/api/windows.ui.xaml.controls.listbox) à **BookSkus**. Une zone de liste est un contrôle d’éléments, et pour définir correctement la propriété [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) , vous devez lui affecter une valeur de type **IVector** de **IInspectable**, ou d’un type d’interopérabilité tels que [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).
+> Dans la description de MIDL 3.0 ci-dessus, notez que le type de la propriété **BookSkus** est [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) de [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821). Dans la section suivante de cette rubrique, nous allons liaison la source des éléments d’une [**zone de liste**](/uwp/api/windows.ui.xaml.controls.listbox) à **BookSkus**. Une zone de liste est un contrôle d’éléments, et pour définir correctement la propriété [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) , vous devez lui affecter une valeur de type **IVector** de **IInspectable**, ou d’un type d’interopérabilité tels que [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).
 
 Enregistrez et lancez la génération. Copiez les stubs accesseur de `BookstoreViewModel.h` et `BookstoreViewModel.cpp` dans le dossier `Generated Files`, et implémentez-les.
 

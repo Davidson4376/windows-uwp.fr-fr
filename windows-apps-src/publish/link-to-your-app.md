@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, lien, protocole windows store, lien vers une application, lien vers application
 ms.localizationpriority: medium
 ms.openlocfilehash: 0025321aa73a66cc0a976bd347e613de3c3c4765
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4156592"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4178216"
 ---
 # <a name="link-to-your-app"></a>Créer un lien vers votre application
 
@@ -33,7 +33,7 @@ Lorsqu’un client clique sur ce lien, la page de description web de votre appli
 
 Vous pouvez lier directement à la description de votre application avec un badge personnalisé pour permettre aux clients de votre application est dans le Microsoft Store.
 
-Pour créer votre badge, visitez la page de [badges de Microsoft Store](http://go.microsoft.com/fwlink/p/?LinkID=534236) . Pour générer le badge et le lien, vous devez disposer de **l’ID Store** de 12caractères de votre application. Vous trouverez **l’ID Store** de votre application sur la page [Identité de l’application](view-app-identity-details.md) de la section **Gestion des applications**.
+Pour créer votre badge, visitez la page [Microsoft Store badges](http://go.microsoft.com/fwlink/p/?LinkID=534236) . Pour générer le badge et le lien, vous devez disposer de **l’ID Store** de 12caractères de votre application. Vous trouverez **l’ID Store** de votre application sur la page [Identité de l’application](view-app-identity-details.md) de la section **Gestion des applications**.
 
 > [!NOTE]
 > Consultez les [recommandations en matière de marketing application](app-marketing-guidelines.md) d’informations et les exigences relatives à l’utilisation du badge Microsoft Store.

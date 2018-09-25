@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: b7a72a89704aa3768cc43cdfbb75b620bae303e3
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4153530"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4176346"
 ---
 # <a name="windows-app-certification-kit"></a>Kit de certification des applications Windows
 
 
 
-Pour obtenir la [Certification Windows](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) de votre application ou préparer à la [publication dans le Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062), vous devez valider et tester localement tout d’abord. Cette rubrique vous montre comment installer et exécuter le [Kit de Certification des applications Windows](http://go.microsoft.com/fwlink/p/?LinkID=309666) pour vous assurer que votre application est sûre et efficace.
+Pour obtenir la [Certification Windows](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) de votre application ou préparer à la [publication dans le Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062), vous devez valider et testez-la tout d’abord. Cette rubrique vous montre comment installer et exécuter le [Kit de Certification des applications Windows](http://go.microsoft.com/fwlink/p/?LinkID=309666) pour vous assurer que votre application est sûre et efficace.
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -90,9 +90,9 @@ L’installation d’une nouvelle version du [Kit de certification des applicati
 
 Les seuils du test de performances du Kit de certification des applications Windows sont basés sur les performances d’un ordinateur à faible consommation d’énergie.
 
-Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent influencer les résultats du test. Pour déterminer si les performances de votre application respecte les [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944), nous vous recommandons de tester votre application sur un ordinateur de faible consommation d’énergie, par exemple, un ordinateur Intel Atom basée sur un processeur avec une résolution d’écran de 1366 x 768 (ou une version ultérieure) et une rotation dur lecteur (par opposition à un disque dur SSD).
+Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent influencer les résultats du test. Pour déterminer si les performances de votre application répond aux [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944), nous vous recommandons de tester votre application sur un ordinateur à faible consommation d’énergie, tel qu’un ordinateur Intel Atom basée sur un processeur avec une résolution d’écran de 1366 x 768 (ou une version ultérieure) et une rotation dur lecteur (par opposition à un disque dur SSD).
 
-À mesure que les ordinateurs à faible consommation d’énergie évoluent, leurs caractéristiques de performances peuvent elles aussi varier. Reportez-vous à la plus récente [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944) et tester votre application avec la version la plus récente du Kit de Certification d’application Windows pour vous assurer que votre application est conforme aux dernières spécifications en matière de performances.
+À mesure que les ordinateurs à faible consommation d’énergie évoluent, leurs caractéristiques de performances peuvent elles aussi varier. Reportez-vous à la plus récente [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944) et tester votre application avec la version la plus récente du Kit de Certification application Windows pour vous assurer que votre application est conforme aux dernières spécifications en matière de performances.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

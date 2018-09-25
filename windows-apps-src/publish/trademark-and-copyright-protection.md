@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f99396b117efcf7c3bed3cb64f24b519734cc858
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4156672"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4178294"
 ---
 # <a name="trademark-and-copyright-protection"></a>Protection de la marque et du copyright
 
@@ -25,7 +25,7 @@ Découvrez ce que vous pouvez faire lorsque vous pensez qu’une autre applicati
 ### <a name="1-how-may-i-report-an-infringement-of-my-intellectual-property-rights-within-a-windows-app"></a>1. Comment puis-je signaler une violation de mes droits de propriété intellectuelle au sein d’une application Windows ?
 
 
-Utilisez le [formulaire](http://go.microsoft.com/fwlink/p/?LinkId=273879) suivant pour soumettre une plainte pour violation des droits d’auteur, de marque ou de publicité sur une application Windows. Pour les violations de droits d’auteur, de marque ou de publicité sur plusieurs applications, envoyez votre demande à mktlegal@microsoft.com. Si vous avez besoin des informations supplémentaires sur la politique DMCA de Microsoft, veuillez visiter: [https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976).
+Utilisez le [formulaire](http://go.microsoft.com/fwlink/p/?LinkId=273879) suivant pour soumettre une plainte pour violation des droits d’auteur, de marque ou de publicité sur une application Windows. Pour les violations de droits d’auteur, de marque ou de publicité sur plusieurs applications, envoyez votre demande à mktlegal@microsoft.com. Si vous avez besoin des informations supplémentaires sur la politique DMCA de Microsoft, visitez: [https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976).
 
 ### <a name="2-i-created-my-app-to-work-with-a-microsoft-productservice-may-i-use-the-microsoft-productservice-name-in-the-name-of-my-app"></a>2. J’ai créé mon application pour qu’elle fonctionne avec un produit/service Microsoft. Puis-je utiliser le nom du produit/service Microsoft dans le nom de mon application ?
 

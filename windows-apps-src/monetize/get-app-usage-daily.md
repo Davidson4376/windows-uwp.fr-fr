@@ -2,7 +2,7 @@
 author: Xansky
 ms.assetid: 99DB5622-3700-4FB2-803B-DA447A1FD7B7
 description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données d’utilisation quotidienne application pour une plage de dates données et d’autres filtres facultatifs.
-title: Obtenir l’utilisation quotidienne d’application
+title: Obtenir l’utilisation d’application quotidiennes
 ms.author: mhopkins
 ms.date: 08/15/2018
 ms.topic: article
@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store, API de l’utilisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151600"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4174134"
 ---
-# <a name="get-daily-app-usage"></a>Obtenir l’utilisation quotidienne d’application
+# <a name="get-daily-app-usage"></a>Obtenir l’utilisation d’application quotidiennes
 
-Utilisez cette méthode dans l’API d’analytique de Microsoft Store pour obtenir les données d’utilisation agrégées (ne pas y compris Xbox multijoueur) au format JSON pour une application au cours de la plage de dates donnée (90 derniers jours uniquement) et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport d’utilisation](../publish/usage-report.md) dans le tableau de bord du centre de développement Windows.
+Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données d’utilisation agrégées (ne pas y compris Xbox en mode multijoueur) au format JSON pour une application au cours de la plage de dates donnée (90 derniers jours uniquement) et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport d’utilisation](../publish/usage-report.md) dans le tableau de bord du centre de développement Windows.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -75,7 +75,7 @@ Authorization: Bearer <your access token>
 
 | Valeur      | Type   | Description                                                                                                                         |
 |------------|--------|-------------------------------------------------------------------------------------------------------------------------------------|
-| Valeur      | array  | Un tableau d’objets contenant des données d’utilisation agrégées. Pour plus d’informations sur les données incluses dans chaque objet, voir le tableau suivant. |
+| Valeur      | array  | Tableau d’objets contenant des données d’utilisation agrégées. Pour plus d’informations sur les données incluses dans chaque objet, voir le tableau suivant. |
 | @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur10000, mais que plus de10000lignes de données d’avis sont associées à la requête.                 |
 | TotalCount | entier    | Nombre total de lignes dans les résultats de données de la requête.                                                                          |
 
@@ -87,17 +87,17 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | Valeur                     | Type    | Description                                                               |
 |---------------------------|---------|---------------------------------------------------------------------------|
 | date                      | chaîne  | La première date dans la plage de dates pour les données d’utilisation. Si la requête spécifiait un jour unique, cette valeur est cette date. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates.        |
-| applicationId             | chaîne  | L’ID Windows Store de l’application pour laquelle vous récupérez les données d’utilisation.          |
+| applicationId             | chaîne  | L’ID Store de l’application pour laquelle vous récupérez les données d’utilisation.          |
 | applicationName           | chaîne  | Nom d’affichage de l’application.                                              |
 | deviceType                | chaîne  | L’une des chaînes suivantes qui spécifie le type d’appareil où l’utilisation s’est produite:<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**Tablette**</li><li>**IoT**</li><li>**Serveur**</li><li>**Holographic**</li><li>**Inconnu**</li></ul>                                                                                                         |
 | packageVersion            | chaîne  | La version du package dans lequel l’utilisation s’est produite.                          |
-| marché                    | chaîne  | Le code de pays ISO 3166 du marché dans lequel le client a utilisé votre application. |
+| marché                    | chaîne  | Le code pays ISO 3166 du marché dans lequel le client a utilisé votre application. |
 | subscriptionName          | chaîne  | Indique si l’utilisation a été par le biais de Xbox Game Pass.                            |
 | dailySessionCount         | long    | Le nombre de sessions utilisateur sur ce jour.                                  |
-| engagementDurationMinutes | double  | Les minutes dans lequel les utilisateurs sont activement à l’aide de votre application mesurée en une période distincte, qui commence au lance de l’application (début du processus) et de fin lorsqu’il termine (fin du processus) ou après une période d’inactivité.             |
+| engagementDurationMinutes | double  | Les minutes dans lequel les utilisateurs sont activement à l’aide de votre application mesurée par une période distincte, qui commence au lance de l’application (début du processus) et de fin lorsqu’il termine (fin du processus) ou après une période d’inactivité.             |
 | dailyActiveUsers          | long    | Le nombre de clients à l’aide de l’application ce jour.                           |
 | dailyActiveDevices        | long    | Nombre d’appareils utilisés quotidiennement pour interagir avec votre application par tous les utilisateurs.  |
-| dailyNewUsers             | long    | Le nombre de clients ayant utilisé votre application pour la première fois ce jour.    |
+| dailyNewUsers             | long    | Le nombre de clients ayant utilisé votre application pour la première fois ce jour-là.    |
 | monthlyActiveUsers        | long    | Le nombre de clients à l’aide de l’application ce mois.                         |
 | monthlyActiveDevices      | long    | Le nombre d’appareils exécutant votre application pour une période donnée au cours du temps, qui commence au lance de l’application (début du processus) et de fin lorsqu’il termine (fin du processus) ou après une période d’inactivité.                                      |
 | monthlyNewUsers           | long    | Le nombre de clients ayant utilisé votre application pour la première fois ce mois.  |

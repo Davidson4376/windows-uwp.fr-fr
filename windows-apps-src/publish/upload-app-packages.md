@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: Windows 10, uwp, packages, téléchargement, le chargement de package
 ms.localizationpriority: medium
 ms.openlocfilehash: 6013a238cff8db3b85dd98af58cccaf344a72f51
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148600"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4176050"
 ---
 # <a name="upload-app-packages"></a>Chargement des packages d’application
 
 Sur la page **Packages**, vous pouvez charger tous les fichiers de package (.appx, .appxupload, .appxbundle, et/ou .xap) pour l’application que vous soumettez. Vous pouvez charger des packages pour tous les systèmes d’exploitation ciblés par votre application. Quand un client télécharge votre application, le WindowsStore propose automatiquement au client le package le mieux adapté à son appareil. Une fois vos packages chargés, vous verrez un tableau indiquant [les packages offerts aux familles d’appareilsWindows10 spécifiques](#device-family-availability) (et aux systèmes d’exploitation plus anciens, le cas échéant), classés par ordre.
 
-Pour plus d’informations sur le contenu et sur la structure d’un package, voir [Exigences relatives au package de l’application](app-package-requirements.md). Vous allez également que vous souhaitez en savoir plus sur [comment les numéros de version peuvent avoir un impact sur les packages livrés à des clients spécifiques](package-version-numbering.md) et [comment les packages sont distribués à différents systèmes d’exploitation](guidance-for-app-package-management.md).
+Pour plus d’informations sur le contenu et sur la structure d’un package, voir [Exigences relatives au package de l’application](app-package-requirements.md). Vous devrez également Découvrez [comment les numéros de version peuvent avoir un impact sur les packages livrés à des clients spécifiques](package-version-numbering.md) et [comment les packages sont distribués à différents systèmes d’exploitation](guidance-for-app-package-management.md).
 
 ## <a name="uploading-packages-to-your-submission"></a>Chargement de packages pour votre soumission
 
@@ -32,7 +32,7 @@ Pour charger des packages, faites-les glisser dans le champ de chargement, ou cl
 
 Si vous avez créé des [versions d’évaluation de package](package-flights.md) pour votre application, une liste déroulante apparaît avec l’option de copie des packages de l’une des versions d’évaluation de package. Sélectionnez la version d’évaluation de package comportant les packages que vous souhaitez intégrer. Vous pouvez transférer une partie ou la totalité des packages dans cette soumission.
 
-Si nous détectons des erreurs avec un package lors de la validation il, nous affichons un message pour vous indiquer quel est le problème. Vous devez supprimer le package, résoudre le problème et essayez de le charger à nouveau. Il se peut également que vous receviez des avertissements concernant des problèmes potentiels, sans que cela vous empêche de poursuivre votre soumission.
+Si nous détectons des erreurs avec un package lors de la validation il, nous affichons un message pour vous indiquer quel est le problème. Vous devrez supprimer le package, résoudre le problème et essayez de le charger à nouveau. Il se peut également que vous receviez des avertissements concernant des problèmes potentiels, sans que cela vous empêche de poursuivre votre soumission.
 
 
 ## <a name="device-family-availability"></a>Disponibilité de la famille d’appareils

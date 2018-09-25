@@ -10,19 +10,19 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 84e12d6c3e25a18902aaa55011949dd5b5ff97ca
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151002"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181314"
 ---
-# <a name="shadows-in-windows-ui"></a>Ombres dans l’interface utilisateur de Windows
+# <a name="shadows-in-windows-ui"></a>Ombres dans l’interface utilisateur Windows
 
-La classe [DropShadow](/uwp/api/Windows.UI.Composition.DropShadow) fournit un moyen de créer une ombre configurable qui peut être appliquée à un [élément SpriteVisual](/uwp/api/windows.ui.composition.spritevisual) ou un [LayerVisual](/uwp/api/windows.ui.composition.layervisual) (sous-arborescence d’éléments visuels). Comme est d’usage pour les objets de la couche visuelle, toutes les propriétés de la DropShadow peuvent être animées à l’aide des CompositionAnimations.
+La classe [DropShadow](/uwp/api/Windows.UI.Composition.DropShadow) fournit des moyens de création d’une ombre configurable qui peut être appliquée à un [élément SpriteVisual](/uwp/api/windows.ui.composition.spritevisual) ou [LayerVisual](/uwp/api/windows.ui.composition.layervisual) (sous-arborescence d’éléments visuels). Comme est d’usage pour les objets de la couche visuelle, toutes les propriétés de la DropShadow peuvent être animées à l’aide des CompositionAnimations.
 
 ## <a name="basic-drop-shadow"></a>Ombre de base
 
-Pour créer une ombre de base, simplement créer un nouveau DropShadow et l’associer à votre élément visuel. L’ombre est rectangulaire par défaut. Un ensemble de propriétés standard sont disponibles pour modifier l’apparence de l’ombre.
+Pour créer une ombre de base, simplement créer un nouveau DropShadow et l’associer à votre élément visuel. L’ombre est rectangulaire par défaut. Un ensemble de propriétés standard sont disponibles à adapter l’apparence de l’ombre.
 
 ```cs
 var basicRectVisual = _compositor.CreateSpriteVisual();
@@ -37,15 +37,15 @@ basicShadow.Offset = new Vector3(20, 20, 20);
 basicRectVisual.Shadow = basicShadow;
 ```
 
-![Visual rectangulaire avec DropShadow de base](images/rectangular-dropshadow.png)
+![Élément visuel rectangulaire avec DropShadow de base](images/rectangular-dropshadow.png)
 
-## <a name="shaping-the-shadow"></a>La mise en forme de l’ombre
+## <a name="shaping-the-shadow"></a>Dans les situations où l’ombre
 
-Il existe plusieurs façons de définir la forme de votre DropShadow:
+Il existe plusieurs façons de définir la forme pour votre DropShadow:
 
 - **Utilisez la valeur par défaut** - par défaut la forme DropShadow est définie par le mode «Default» sur CompositionDropShadowSourcePolicy. Pour SpriteVisual, la valeur par défaut est rectangulaire, sauf si un masque est fourni. Pour LayerVisual, la valeur par défaut est hériter un masque à l’aide de la valeur alpha du pinceau de l’élément visuel.
-- **Définir un masque** : vous pouvez définir la propriété [masque](/uwp/api/windows.ui.composition.dropshadow.mask) pour définir un masque d’opacité de l’ombre.
-- **Spécifiez à utiliser hérité masque** – définir la propriété de [SourcePolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy) à utiliser [CompositionDropShadowSourcePolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy). InheritFromVisualContent d’utiliser le masque généré à partir de la valeur alpha du pinceau de l’élément visuel.
+- **Définir un masque** ; vous pouvez définir la propriété [masque](/uwp/api/windows.ui.composition.dropshadow.mask) pour définir un masque d’opacité de l’ombre.
+- **Spécifiez à utiliser hérité masque** – définir la propriété [SourcePolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy) à utiliser [CompositionDropShadowSourcePolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy). InheritFromVisualContent d’utiliser le masque généré à partir de la valeur alpha du pinceau de l’élément visuel.
 
 ## <a name="masking-to-match-your-content"></a>Masquage pour faire correspondre votre contenu
 
@@ -69,13 +69,13 @@ shadow.Offset = new Vector3(20, 20, 20);
 imageSpriteVisual.Shadow = shadow;
 ```
 
-![Image web connectés avec ombre masquée](images/ms-brand-web-dropshadow.png)
+![Image web connectés avec ombre portée masquée](images/ms-brand-web-dropshadow.png)
 
 ## <a name="using-an-alternative-mask"></a>À l’aide d’un masque de remplacement
 
-Dans certains cas, vous souhaiterez façonner l’ombre telles qu’il ne correspond pas au contenu de votre élément visuel. Pour obtenir cet effet, vous devez définir explicitement la propriété masque à l’aide d’un pinceau avec alpha.
+Dans certains cas, vous voudrez peut-être l’ombre de forme tels qu’il ne correspond pas le contenu de votre élément visuel. Pour obtenir cet effet, vous devez définir explicitement la propriété masque à l’aide d’un pinceau avec alpha.
 
-Dans l’exemple indiqué ci-dessous, nous chargeons deux surfaces - un pour le contenu visuel et un pour le masque de clichés instantanés:
+Dans l’exemple indiqué ci-dessous, nous chargeons deux surfaces - un pour le contenu visuel et l’autre pour le masque de clichés instantanés:
 
 ```cs
 var imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/myImage.png"));
@@ -115,17 +115,17 @@ shadow.StartAnimation("BlurRadius", blurAnimation);
 
 ## <a name="shadows-in-xaml"></a>Ombres en XAML
 
-Si vous souhaitez ajouter une ombre à des éléments de l’infrastructure plus complexes, il existe deux façons pour permettre l’interopérabilité avec les ombres entre XAML et de Composition:
+Si vous souhaitez ajouter une ombre aux éléments d’infrastructure plus complexes, il existe deux façons pour permettre l’interopérabilité avec les ombres entre XAML et de Composition:
 
-1. Utilisez le [DropShadowPanel](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) disponible dans le Kit de ressources de la Communauté Windows. Consultez la [documentation de DropShadowPanel](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel) pour plus d’informations sur la façon de l’utiliser.
-1. Créez un élément visuel pour utiliser en tant que l’hôte de l’ombre et la lier au visuel de document XAML.
+1. Utilisez le [DropShadowPanel](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) disponible dans le Kit de ressources de la Communauté Windows. Consultez la [documentation DropShadowPanel](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel) pour plus d’informations sur la façon de l’utiliser.
+1. Créez un élément visuel pour utiliser en tant que l’hôte de clichés instantanés & Lier à la visuel de document XAML.
 1. Utilisez le contrôle de CompositionShadow personnalisé de la galerie d’exemples Composition [SamplesCommon](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SamplesCommon/SamplesCommon) . Voir l’exemple ci-dessous pour afficher la syntaxe.
 
 ## <a name="performance"></a>Performances
 
-Bien que la couche visuelle possède de nombreuses optimisations en place pour rendre les effets efficace et utilisable, la génération d’ombres peut être une opération relativement coûteuse selon les options que vous définissez. Vous trouverez ci-dessous des niveau «coûts élevés» pour différents types d’ombres. Notez que bien que certaines ombres peut s’avérer coûteux qu’ils peuvent toujours être appropriés à utiliser avec parcimonie, dans certains scénarios.
+Bien que la couche visuelle possède de nombreuses optimisations en place pour rendre les effets efficace et utilisable, la génération d’ombres peut être une opération relativement coûteuse selon les options que vous définissez. Vous trouverez ci-dessous des niveau «coûts élevés» pour différents types d’ombres. Notez que bien que certaines ombres peut s’avérer coûteux qu’ils peuvent toujours être appropriés à utiliser avec parcimonie dans certains scénarios.
 
-Caractéristiques de l’ombre| Coût
+Caractéristiques d’ombre| Coût
 ------------- | -------------
 Capture rectangulaire    | Faible
 Shadow.Mask      | High

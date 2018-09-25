@@ -11,21 +11,21 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4149508"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4173332"
 ---
 # <a name="app-submissions"></a>Soumissions d’applications
 
 
 Après avoir [créé votre application en réservant un nom](create-your-app-by-reserving-a-name.md), vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une **soumission**.
 
-Vous pouvez démarrer votre soumission lorsque votre application est terminée et prête pour publication, ou commencer à entrer des informations avant même d’avoir écrit la moindre ligne de code. Mises à jour que vous apportez à votre soumission sont enregistrées, afin de pouvoir y revenir et y travailler à chaque fois que vous êtes prêt.
+Vous pouvez démarrer votre soumission lorsque votre application est terminée et prête pour publication, ou commencer à entrer des informations avant même d’avoir écrit la moindre ligne de code. Mises à jour apportées à votre soumission sont enregistrées, afin de pouvoir y revenir et y travailler à chaque fois que vous êtes prêt.
 
 > [!NOTE]
-> Vous devez disposer d’un [compte de développeur](http://go.microsoft.com/fwlink/p/?LinkId=615100) pour accéder au [Centre de développement Windows](https://partner.microsoft.com/dashboard) et de soumettre des applications dans le Microsoft Store.
+> Vous devez disposer d’un [compte de développeur](http://go.microsoft.com/fwlink/p/?LinkId=615100) pour accéder au [Centre de développement Windows](https://partner.microsoft.com/dashboard) et soumettre des applications dans le Microsoft Store.
 
 Une fois votre application publiée, vous pouvez publier une version mise à jour en créant une autre soumission dans le tableau de bord. Le fait de créer une soumission vous permet d'introduire et de publier tous les changements nécessaires, que vous chargiez d'autres packages ou que vous changiez juste des détails comme le prix ou la catégorie. Pour créer une soumission pour une application publiée, cliquez sur **Mettre à jour** en regard de la soumission la plus récente affichée sur la page de présentation de l’application. Vous pouvez également [Supprimer une application à partir du Store](guidance-for-app-package-management.md#removing-an-app-from-the-store) si vous avez besoin pour effectuer cette opération (et mettez-le à disposition plus tard, si vous souhaitez obtenir).
 

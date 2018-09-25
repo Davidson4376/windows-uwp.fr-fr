@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows10, uwp, acquisitions, ventes d’applications, téléchargements d'applications, installations, entonnoir, acquisition, conversions, canal, vues de pages d'applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 75a3ce152257d10fe392b3f64381b3e82bc79961
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4149374"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4175738"
 ---
 # <a name="acquisitions-report"></a>Rapport Acquisitions
 
 
-Le rapport **Acquisitions** disponible dans le tableau de bord du centre de développement Windows vous permet de déterminer qui acquiert et installe votre application, ainsi que des données démographiques et des informations sur la plateforme et affiche des informations sur la façon dont les clients sur Windows 10 (y compris Xbox) sont arrivés à de votre application Description. Vous pouvez également afficher les données d’acquisition en temps réel pour la dernière période ou 70-deux heures. 
+Le rapport **Acquisitions** disponible dans le tableau de bord du centre de développement Windows vous permet de déterminer qui acquiert et installe votre application, ainsi que des données démographiques et des informations sur la plateforme et affiche les informations sur la façon dont les clients sur Windows 10 (y compris Xbox) sont arrivés à de votre application Description. Vous pouvez également afficher les données d’acquisition en temps réel pour la dernière période ou 70-deux heures. 
 
 Vous pouvez visualiser ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de notre [API REST d’analyse](../monetize/access-analytics-data-using-windows-store-services.md).
 
@@ -34,7 +34,7 @@ Dans ce rapport, une **acquisition** signifie qu’un nouveau client a obtenu un
 
 ## <a name="apply-filters"></a>Appliquer des filtres
 
-Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de **30D** (30jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12mois, ou sur une plage de dates personnalisée que vous spécifiez. Dans la zone en temps réel des données seront affiche pour toutes les options (sauf dans les données **d’application cumulative** ). Le temps de **1 H** et **72 H** périodes s’appliquent uniquement à l’onglet **application tous les jours** du graphique **Acquisitions** et à l’onglet **Acquisitions** du graphique **des marchés** . 
+Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de **30D** (30jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12mois, ou sur une plage de dates personnalisée que vous spécifiez. Dans la zone en temps réel des données seront affiche pour toutes les options (sauf dans les données **d’application cumulative** ). L’heure de **1 H** et **72 H** périodes s’appliquent uniquement à l’onglet **application quotidienne** du graphique **Acquisitions** et à l’onglet **Acquisitions** du graphique **des marchés** . 
 
 Vous pouvez également développer l’option **Filtres** pour filtrer toutes les données de cette page par marché et/ou par type d’appareil.
 
@@ -50,14 +50,14 @@ Le graphique **Acquisitions** affiche le nombre total d’acquisitions quotidien
 
 Par défaut, nous affichons la vue de **l’application tous les jours** , qui comprend près de données en temps réel. Vous pouvez également visualiser le nombre total d’acquisitions sur toute la durée de vie de votre application en sélectionnant **App cumulative**. Vous avez alors accès au total cumulé de l’ensemble des acquisitions effectuées depuis la première publication de votre application.
 
-**Ventes brutes** de votre application (octobre 2016 - présents) sont également disponibles dans ce graphique, montrant le montant total gagné ventes d’application (en USD). Notez que ce montant ne tient pas compte pour n’importe quel remboursements, reprises, des rétrofacturation, etc..
+**Ventes brutes** de votre application (octobre 2016 - présents) sont également disponibles dans ce graphique, montrant le montant total gagné ventes d’application (en USD). Notez que ce montant ne tient pas compte de n’importe quel remboursements, reprises, des rétrofacturation, etc..
 
 Si vous le souhaitez, vous pouvez filtrer les résultats par acquisition émanant du client ou du WindowsStore sur le web et/ou par version du système d’exploitation.
 
 > [!NOTE]
 > Vous pouvez également récupérer ces données par programme à l’aide de la méthode [Obtenir des acquisitions d’applications](../monetize/get-app-acquisitions.md) dans notre [API REST d’analyse](../monetize/access-analytics-data-using-windows-store-services.md).
 
-Dans la vue de **l’application de tous les jours** , lorsque le **30D** période est activée, vous pouvez voir des marqueurs de cercle. Ces représentent une augmentation importante ou la diminution une valeur donnée dont nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou une baisse par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
+Dans la vue de **l’application de tous les jours** , lorsque le **30D** période est activée, vous pouvez voir marqueurs de cercle. Ces représentent une augmentation importante ou la diminution une valeur donnée que nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation importante ou une réduction par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
 
 > [!TIP]
 > Vous pouvez afficher des conseils supplémentaires liés à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).

@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: windows10, uwp, distribution de version d’évaluation
 ms.localizationpriority: medium
 ms.openlocfilehash: d5f43173c85bc8a696d7dbc9967e704f79db2b3f
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148872"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4180814"
 ---
 # <a name="package-flights"></a>Versions d’évaluation de package
 
-Vous pouvez utiliser des versions d’évaluation de package pour distribuer des packages spécifiques à un groupe limité de testeurs. Les packages que vous avez déjà publiés dans le Store servira pour vos autres clients, afin que leur expérience ne sont pas être interrompue.
+Vous pouvez utiliser des versions d’évaluation de package pour distribuer des packages spécifiques à un groupe limité de testeurs. Les packages que vous avez déjà publiés dans le Windows Store serviront de vos autres clients, afin que leur expérience ne sont pas être interrompue.
 
-Avec les versions d’évaluation du package, seuls les packages sont différents; informations de description du Windows Store sera identique pour tous vos clients. Toute personne de votre groupe de versions d’évaluation recevront les packages que vous incluez dans la version d’évaluation du package, tandis que les clients qui ne sont pas dans le groupe de versions d’évaluation continuent à recevoir vos packages standard (standard).  Si vous décidez ultérieurement que vous souhaitez rendre des packages à partir d’une version d’évaluation de package disponible à tous vos clients, vous pouvez facilement utiliser ces packages mêmes lors d’une soumission standard. Notez que les versions d’évaluation de package doivent réussir le [processus de certification](the-app-certification-process.md), exactement le même que toute soumission.
+Avec les versions d’évaluation du package, seuls les packages sont différents; Description des détails du Windows Store sera identique pour tous vos clients. Toute personne de votre groupe de versions d’évaluation recevront les packages que vous incluez dans la version d’évaluation du package, tandis que les clients qui ne sont pas dans le groupe de versions d’évaluation continuent à recevoir vos packages standard (standard).  Si vous décidez ultérieurement que vous souhaitez rendre des packages à partir d’une version d’évaluation disponible pour tous vos clients, vous pouvez facilement utiliser ces packages mêmes lors d’une soumission standard. Notez que les versions d’évaluation de package doivent réussir le [processus de certification](the-app-certification-process.md), exactement le même que toute soumission.
 
 Lorsque vous configurez des versions d’évaluation de package, vous pouvez spécifier les personnes qui doivent bénéficier de packages spécifiques en les ajoutant à un **groupe d’utilisateurs connus** (parfois appelés groupe de versions d’évaluation). Tout membre d’un groupe de versions d’évaluation disposant d’un appareil qui exécute une version de Windows10 prenant en charge les versions d’évaluation de package (build Windows.Desktop 10586 ou ultérieure, build Windows.Mobile 10586.63 ou ultérieure, ou XboxOne) bénéficie des versions d’évaluation de package que vous attribuez à ce groupe spécifique. (Vos versions d’évaluation de package peuvent inclure des packages ciblant une version quelconque de système d’exploitation, y compris Windows8.1/Windows Phone8.1 ou une version antérieure). Les utilisateurs qui n’ont été ajoutés à aucun de vos groupes d’évaluation ou dont l’appareil ne prend pas en charge les versions d’évaluation de package obtiendront les packages de la soumission standard.
 
@@ -55,11 +55,11 @@ Sur la page de création de version d’évaluation de package, vous devez entre
 
 Une fois que vous avez enregistré les informations de la version d’évaluation de package, la page de synthèse correspondante s’affiche. Cliquez sur **Packages** pour indiquer les packages que vous souhaitez inclure dans la version d’évaluation. Vous pouvez inclure des packages ciblant n’importe quelle version de système d’exploitation, y compris Windows10, Windows8.x et Windows Phone8.x ou une version antérieure.
 
-Vous pouvez sélectionner des packages associés à une soumission précédemment publiée (une soumission standard ou l’une de vos autres versions d’évaluation de package, si vous en possédez plusieurs). Si vous avez besoin de charger de nouveaux packages à utiliser pour cette version d’évaluation de package, vous pouvez les télécharger ici (en utilisant le [même processus que lorsque vous téléchargez des packages d’application pour une soumission standard](upload-app-packages.md)). Cliquez sur **Enregistrer** dès que vous avez fini d’indiquer les packages à inclure dans cette version d’évaluation de package.
+Vous pouvez sélectionner des packages associés à une soumission précédemment publiée (une soumission standard ou l’une de vos autres versions d’évaluation de package, si vous en possédez plusieurs). Si vous devez transférer de nouveaux packages à utiliser pour cette version d’évaluation de package, vous pouvez les télécharger ici (en utilisant le [même processus que lorsque vous téléchargez des packages d’application pour une soumission standard](upload-app-packages.md)). Cliquez sur **Enregistrer** dès que vous avez fini d’indiquer les packages à inclure dans cette version d’évaluation de package.
 
 Si votre application prend en charge plusieurs familles d’appareils, veillez à inclure les packages permettant de prendre en charge les mêmes familles d’appareils dans votre version d’évaluation. Les utilisateurs inclus dans vos groupes de versions d’évaluation pourront **uniquement** obtenir des packages à partir de cette version d’évaluation. Ils ne pourront pas accéder aux packages des autres versions d’évaluation, ni de votre soumission standard. 
 
-Rappelez-vous que vos informations de description et la disponibilité de la famille d’appareils de périphérique repose sur votre soumission standard. Les clients de vos groupes de versions d’évaluation peuvent uniquement télécharger l’application sur une famille d’appareils prise en charge par votre soumission standard. Pour plus d’informations, consultez [Prise en charge des familles d’appareils](#device-family-support). 
+Souvenez-vous également que vos informations de description et la disponibilité de la famille d’appareils de périphérique repose sur votre soumission standard. Les clients de vos groupes de versions d’évaluation peuvent uniquement télécharger l’application sur une famille d’appareils prise en charge par votre soumission standard. Pour plus d’informations, consultez [Prise en charge des familles d’appareils](#device-family-support). 
 
 
 ## <a name="gradual-package-rollout"></a>Lancement de package progressif
@@ -79,7 +79,7 @@ Par défaut, votre version d’évaluation du package est publiée et mise à di
 
 ## <a name="submit-your-package-flight-to-the-store"></a>Soumettre votre version d’évaluation de package au WindowsStore
 
-Une fois les packages définis et les options nécessaires configurées, cliquez sur **Envoyer au Store**. Votre version d’évaluation de package sera alors soumise au [processus de certification des applications](the-app-certification-process.md). Notez que les packages inclus dans votre version d’évaluation de package doivent être conformes aux [Politiques du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies), à l’instar de toutes les soumissions.
+Une fois les packages définis et les options nécessaires configurées, cliquez sur **Envoyer au Store**. Votre version d’évaluation de package sera alors soumise au [processus de certification des applications](the-app-certification-process.md). Notez que les packages inclus dans votre version d’évaluation de package doivent se conformer aux [Politiques du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies), à l’instar de toutes les soumissions.
 
 Les utilisateurs de vos groupes de versions d’évaluation associés à cette version d’évaluation de package qui possèdent déjà votre application obtiendront une mise à jour lorsqu’ils utiliseront les packages inclus dans votre version d’évaluation. Si ces utilisateurs ne disposent pas encore de votre application, ils obtiendront les packages de votre version d’évaluation de package au moment de l’installation. 
 
@@ -110,7 +110,7 @@ Pour modifier une version d’évaluation existante sans créer et soumettre une
 
 Vous pouvez créer plusieurs versions d’évaluation de package pour une même application afin de distribuer différents packages à divers ensembles de clients. 
 
-Une fois que vous avez créé votre première version d’évaluation de package, vous pouvez en créer une autre en suivant le processus décrit ci-dessus. La seule différence réside dans le fait que, si vous avez déjà créé une version d’évaluation de package, vous devrez spécifier l’ordre de priorité de l’ensemble des versions d’évaluation de package dans la section **Rang**. Cela permet de déterminer les packages à distribuer à un client donné s’ils appartiennent à plusieurs de vos groupes de versions d’évaluation le Windows Store. Les membres de vos groupes de versions d’évaluation bénéficieront toujours de la version d’évaluation de package la mieux classée disponible, même si une version d’évaluation de package moins bien classée comporte des packages présentant un numéro de version plus élevé.
+Une fois que vous avez créé votre première version d’évaluation de package, vous pouvez en créer une autre en suivant le processus décrit ci-dessus. La seule différence réside dans le fait que, si vous avez déjà créé une version d’évaluation de package, vous devrez spécifier l’ordre de priorité de l’ensemble des versions d’évaluation de package dans la section **Rang**. Le Windows Store ainsi déterminer les packages à distribuer à un client donné s’ils appartiennent à plusieurs de vos groupes de versions d’évaluation. Les membres de vos groupes de versions d’évaluation bénéficieront toujours de la version d’évaluation de package la mieux classée disponible, même si une version d’évaluation de package moins bien classée comporte des packages présentant un numéro de version plus élevé.
 
 Par défaut, votre nouvelle version d’évaluation de package sera classée au premier rang. Si vous souhaitez modifier son classement, vous pouvez la déplacer vers le bas (ou de nouveau vers le haut) dans la liste des versions d’évaluation de package.
 

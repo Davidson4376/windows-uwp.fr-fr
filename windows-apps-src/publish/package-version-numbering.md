@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a16339e0918f8291f7b1cc7a3a6dfef3ccf375d
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4149476"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4177228"
 ---
 # <a name="package-version-numbering"></a>Numérotation des versions de packages
 
@@ -28,7 +28,7 @@ Chaque package que vous fournissez doit avoir un numéro de version (fourni sous
 ## <a name="version-numbering-for-windows-10-packages"></a>Numérotation des versions pour les packages Windows10
 
 > [!IMPORTANT]
-> Pour les packages de Windows 10, la dernière (quatrième) partie du numéro de version est réservée au Windows Store et doive conserver la valeur 0 lorsque vous générez votre package (bien que le Windows Store puisse modifier la valeur de cette section).
+> Pour les packages Windows 10, la dernière (quatrième) partie du numéro de version est réservée au Windows Store et vous devez conserver en tant que 0 lorsque vous générez votre package (bien que le Windows Store puisse modifier la valeur de cette section).
 
 Lors du choix d’un package Windows10 à partir de votre soumission publiée, le MicrosoftStore utilise toujours le package dont le numéro de version est le plus élevé et qui s’applique à l’appareil du client. Cela vous offre une plus grande souplesse et vous permet de contrôler les packages fournis aux clients sur des types spécifiques d’appareils. Il est important de noter que vous pouvez soumettre ces packages dans n’importe quel ordre ; vous n’êtes pas obligé de fournir des packages dont le numéro de version est supérieur avec chaque soumission ultérieure.
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151190"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4180684"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Tester à l’aide de l’émulateur Microsoft pour Windows10 Mobile
 
@@ -29,7 +29,7 @@ Vous pouvez tester votre application universelle à l’aide d’une image de l�
 
 Votre ordinateur doit présenter la configuration suivante :
 
-UC (ces paramètres, le cas échéant, peuvent être activés dans le BIOS)
+UC (ces paramètres, le cas échéant, peuvent être activées dans le BIOS)
 
 -   Assistance matérielle à la virtualisation ([vérifier la compatibilité](https://www.microsoft.com/download/details.aspx?id=592)).
 -   Traduction d’adresse de second niveau (SLAT, Second Level Address Translation)
@@ -60,7 +60,7 @@ L’émulateur Microsoft pour Windows10 Mobile est fourni avec le Kit de dévelo
 
 Vous pouvez également installer l’émulateur Microsoft pour Windows10 Mobile à l’aide du [programme d’installation de l’émulateur Microsoft](https://go.microsoft.com/fwlink/p/?LinkID=615095).
 
-### <a name="uninstalling"></a>Désinstallation
+### <a name="uninstalling"></a>La désinstallation
 
 Vous pouvez désinstaller l’émulateur Microsoft pour Windows10 Mobile à l’aide du programme d’installation/réparation de Visual Studio. Vous pouvez également utiliser l’option **Programmes et fonctionnalités** du **Panneau de configuration** pour supprimer l’émulateur.
 
@@ -68,7 +68,7 @@ Lorsque vous désinstallez l’émulateur Microsoft pour Windows 10 Mobile, la c
 
 ### <a name="running"></a>Running
 
-Pour exécuter une application dans l’émulateur, sélectionnez simplement un périphérique émulé à partir du menu déroulant de **s’exécuter** dans Visual Studio.
+Pour exécuter une application dans l’émulateur, sélectionnez simplement un périphérique émulé à partir du menu déroulant **exécuter** dans Visual Studio.
 
 ![Émulateurs disponibles avec la résolution, la taille et la mémoire](images/em-list.png)
 

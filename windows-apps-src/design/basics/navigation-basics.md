@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b731910f53a6152554b74e946374234b827f4a86
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148284"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4175122"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de la navigation pour les applications UWP
 
@@ -58,7 +58,7 @@ Commençons par les principes de base d’une navigation réussie:
 
 ### <a name="consistency"></a>Cohérence
 
-La navigation doit être cohérente avec les attentes des utilisateurs. À l’aide de [contrôles standard](#use-the-right-controls) que les utilisateurs sont habitués à et suivant les conventions standard pour les icônes, emplacement et le style seront rendre la navigation prévisible et intuitive pour les utilisateurs.
+La navigation doit être cohérente avec les attentes des utilisateurs. À l’aide de [contrôles standard](#use-the-right-controls) que les utilisateurs sont suivant les conventions standard pour les icônes et familier avec, emplacement et son style rendra navigation prévisible et intuitive pour les utilisateurs.
 
 ![image des composants d'une page](images/nav/page-components.svg)
 
@@ -170,7 +170,7 @@ Une fois que vous avez choisi votre structure de page, vous devez déterminer co
     :::column:::
         ![Image de cadre](images/nav/thumbnail-frame.svg)
     :::column-end:::
-    ::: column span = «2»::: [ **trame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
+    ::: column span = «2»::: [ **Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
         With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.
 :::row-end:::
@@ -179,7 +179,7 @@ Une fois que vous avez choisi votre structure de page, vous devez déterminer co
     :::column:::
         ![image d’onglets et pivot](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
-    ::: column span = «2»::: [ **onglets et navigation supérieur**](../controls-and-patterns/navigationview.md)
+    ::: column span = «2»::: [ **d’onglets et de navigation supérieur**](../controls-and-patterns/navigationview.md)
 
         Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs patterns.
         

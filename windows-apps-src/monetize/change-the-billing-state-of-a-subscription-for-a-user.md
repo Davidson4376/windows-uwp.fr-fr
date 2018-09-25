@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, API d'achat du MicrosoftStore, abonnements
 ms.localizationpriority: medium
 ms.openlocfilehash: d8734c1fe25cf6c22d88d2d50b323b7d3ee86710
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4154063"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4176796"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>Modifier l’état de facturation de l’abonnement d’un utilisateur
 
@@ -120,7 +120,7 @@ Le corps de réponse contient les données suivantes.
 | autoRenew | Valeur booléenne |  Indique si l’abonnement est configuré pour se renouveler automatiquement à la fin de la période d’abonnement en cours.   |
 | bénéficiaire | chaîne |  L’ID du bénéficiaire du droit associé à cet abonnement.   |
 | expirationTime | chaîne | La date et l’heure auxquelles l’abonnement expire, au format ISO8601. Ce champ est uniquement disponible lorsque l’abonnement est dans certains états. Généralement, le délai d’expiration indique le moment où l’état actuel arrive à expiration. Par exemple, pour un abonnement actif, la date d’expiration indique quand le renouvellement automatique suivant a lieu.    |
-| expirationTimeWithGrace | chaîne | Date et heure de qu'expiration de l’abonnement, y compris la période de grâce au format ISO 8601. Cette valeur indique quand l’utilisateur perd l’accès à l’abonnement une fois que l’abonnement n’a pas pu renouveler automatiquement.    |
+| expirationTimeWithGrace | chaîne | La date et l’heure qu'auxquelles l’abonnement expire, y compris la période de grâce au format ISO 8601. Cette valeur indique quand l’utilisateur perd l’accès à l’abonnement une fois que l’abonnement n’a pas pu renouveler automatiquement.    |
 | id | chaîne |  L’ID de l’abonnement. Utilisez cette valeur afin d’indiquer l’abonnement que vous souhaitez modifier lorsque vous appelez la méthode [modifier l’état de facturation de l’abonnement d’un utilisateur](change-the-billing-state-of-a-subscription-for-a-user.md).    |
 | isTrial | Valeur booléenne |  Indique si l’abonnement est une version d’évaluation.     |
 | lastModified | chaîne |  La date et l’heure auxquelles l’abonnement a été modifié pour la dernière fois, au format ISO8601.      |

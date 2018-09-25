@@ -11,11 +11,11 @@ keywords: windows10, uwp, notifications ciblées, notifications push, toast, vig
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d62f46ad1b55fbad3ab7c21a593625a2538b68f
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4156652"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4175768"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>Envoyer des notifications aux clients de votre application
 
@@ -53,8 +53,8 @@ Suivez cette procédure pour créer une notification dans le tableau de bord et 
 
 1. Dans le [tableau de bord du Centre de développement Windows](https://partner.microsoft.com/dashboard/), développez la section **Engager**, puis sélectionnez **Notifications**.
 2. Sur la page **Notifications**, sélectionnez **Nouvelle notification**.
-3. Dans la section **Sélectionnez un modèle** , choisissez le [type de notification](#notification-template-types) que vous souhaitez envoyer, puis cliquez sur **OK**.
-4. À la page suivante, utilisez le menu déroulant pour choisir une **Application unique** ou **Plusieurs applications** pour lesquels vous souhaitez générer une notification. Vous pouvez sélectionner uniquement les applications qui ont été [configurés pour recevoir des notifications à l’aide de Microsoft Store Services SDK](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+3. Dans la section **Sélectionner un modèle** , choisissez le [type de notification](#notification-template-types) que vous souhaitez envoyer, puis cliquez sur **OK**.
+4. À la page suivante, utilisez le menu déroulant pour choisir une **Application unique** ou **Plusieurs applications** pour lesquels vous souhaitez générer une notification. Vous pouvez sélectionner uniquement les applications qui ont été [configurés pour recevoir des notifications à l’aide du Microsoft Store Services SDK](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 5. Dans la section **Paramètres de notification**, choisissez un **nom** pour votre notification et, si applicable, choisissez le **groupe de clients** à qui vous souhaitez envoyer la notification. (Les notifications envoyées à plusieurs applications peuvent uniquement être envoyées à tous les clients de ces applications.) Si vous souhaitez utiliser un segment que vous n'avez pas encore créé, sélectionnez **Créer un nouveau groupe client**. Remarque: Il faut 24heures avant qu’un nouveau segment puisse être utilisé pour les notifications. Pour plus d’informations, consultez [Créer des segments de clients](create-customer-segments.md).
 6. Si vous voulez indiquer à quel moment envoyer la notification, décochez la case **Notification immédiate** et choisissez une date et une heure spécifiques (au format UTC pour tous les clients, sauf si vous indiquez d’utiliser le fuseau horaire local de chaque client).
 7. Si vous voulez que la notification expire à un moment donné, décochez la case **La notification n’expire jamais** et choisissez une date et une heure d’expiration spécifiques (au format UTC).
@@ -136,8 +136,8 @@ Pour analyser les données de l’activité utilisateur pour toutes vos notifica
 
 1.  Dans le tableau de bord du Centre de développement Windows, développez la section **Engager**, puis sélectionnez **Notifications**.
 2.  Dans la page **Notifications** , cliquez sur l’onglet **analyse** . Cet onglet affiche les données suivantes:
-    * Vues des différents états utilisateur action pour vos toasts et les notifications du centre du graphique.
-    * Vues de carte monde click par le biais de taux pour vos toasts et l’action de centre de notifications.
+    * Vues des différents états action utilisateur pour vos toasts et les notifications du centre du graphique.
+    * Vues de carte monde click-par le biais de-taux de pour vos toasts et l’action centre de notifications.
 3. Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de 30D (30jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12mois, ou sur une plage de dates personnalisée que vous spécifiez. Vous pouvez également développer des **filtres** pour filtrer toutes les données par application et par marché.
 
 ## <a name="translate-your-notifications"></a>Traduire vos notifications

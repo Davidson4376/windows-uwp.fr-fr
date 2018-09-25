@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 83f2ab8a27810635b569d44961ff532ce3240e28
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4150908"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4175982"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>Créer votre application en réservant un nom
 
@@ -26,7 +26,7 @@ Vous pouvez réserver un nom pour votre application même si vous n'avez pas enc
 Lorsque vous [chargez les packages de votre application](upload-app-packages.md), la valeur [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) doit correspondre au nom que vous avez réservé pour votre application. Si vous utilisez Microsoft VisualStudio pour créer le package de votre application, cet attribut est rempli automatiquement.
 
 > [!IMPORTANT]
-> Vous pouvez réserver des noms supplémentaires pour une application, et vous pouvez choisir d’utiliser un de ces éléments dans la version publiée de votre application au lieu de celui que vous réservez lorsque vous créez votre application dans le tableau de bord. Toutefois, sachez que le premier nom que vous entrez ici servira dans certains de votre application [d’informations d’identité](view-app-identity-details.md), par exemple, le **Nom de famille du Package (PFN)**. Ces valeurs peuvent être visibles par certains utilisateurs et ne peut pas être modifiée, par conséquent, assurez-vous que le nom réservé est approprié pour cette utilisation.
+> Vous pouvez réserver des noms supplémentaires pour une application, et vous pouvez choisir d’utiliser un de ces éléments dans la version publiée de votre application au lieu de celui que vous réservez lorsque vous créez votre application dans le tableau de bord. Toutefois, n’oubliez pas que le premier nom que vous entrez ici servira dans certains de votre application [d’informations d’identité](view-app-identity-details.md), par exemple, le **Nom de famille du Package (PFN)**. Ces valeurs peuvent être visibles par certains utilisateurs et ne peut pas être modifiée, par conséquent, assurez-vous que le nom réservé est approprié pour cette utilisation.
 
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>Création de votre application en réservant un nouveau nom

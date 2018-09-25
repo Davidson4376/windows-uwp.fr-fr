@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 96087d2a41eb443374d8cd9bda5608d6156f9173
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148364"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4178088"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests d’application Pont du bureau Windows
 
 [Les applications pont du bureau](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root) sont des applications de bureau Windows converties en applications de plateforme Windows universelle (UWP) à l’aide du [Pont du bureau](https://developer.microsoft.com/en-us/windows/bridges/desktop). Après la conversion, les applications de bureau Windows sont empaquetées, soumises à maintenance et déployées sous la forme d’un package d’application UWP (fichier.appx ou .appxbundle) ciblant Windows10 Desktop.
 
 ## <a name="required-versus-optional-tests"></a>Tests obligatoires et tests facultatifs
-Les tests facultatifs des applications pont du bureau de Windows sont à titre d’informations uniquement et ne seront pas utilisés pour évaluer votre application lors de l’intégration de Microsoft Store. Nous vous recommandons de recherche des résultats pour produire des applications de meilleure qualité des tests. Les critères généraux de réussite/échec d’intégration au WindowsStore sont déterminés par les tests obligatoires et non par ces tests facultatifs.
+Tests facultatifs des applications pont du bureau Windows sont à titre d’informations uniquement et ne seront pas utilisés pour évaluer votre application lors de l’intégration de Microsoft Store. Nous vous recommandons de recherche des résultats pour produire des applications de meilleure qualité des tests. Les critères généraux de réussite/échec d’intégration au WindowsStore sont déterminés par les tests obligatoires et non par ces tests facultatifs.
 
 ## <a name="current-optional-tests"></a>Tests facultatifs actuels
 
@@ -221,10 +221,10 @@ Ce test vérifie tous les composants UWP de l’application:
 Ce peut être corrigé en vous assurant que l’application a été compilée comme une version commerciale et non comme une version de débogage. 
 
 > [!NOTE]
-> La version de débogage d’une application échoue à ce test même si l’application utilise uniquement des [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx). Passez en revue les messages d’erreur pour identifier l’API présentent qui n’est pas une API autorisée pour les applications UWP. 
+> La version de débogage d’une application échouera à ce test même si l’application utilise uniquement des [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx). Passez en revue les messages d’erreur pour identifier l’API présentent qui n’est pas une API autorisée pour les applications UWP. 
 
 > [!NOTE]
-> Les applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. Pour plus d’informations, consultez [les solutions de rechange aux API Windows dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) .
+> Les applications de C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. Pour plus d’informations, consultez [solutions de rechange aux API Windows dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) .
 
 ### <a name="6-user-account-control-uac-test"></a>6. Test du contrôle de compte d’utilisateur (UAC)  
 
