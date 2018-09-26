@@ -1,7 +1,7 @@
 ---
 author: daneuber
 title: Personnalisation de la composition
-description: Utilisez les API de Composition à adapter votre interface utilisateur, optimiser les performances et prendre en charge des paramètres utilisateur et les caractéristiques de l’appareil.
+description: Utilisez les API de Composition à adapter votre interface utilisateur, optimiser les performances et prendre en compte les paramètres utilisateur et les caractéristiques du périphérique.
 ms.author: jimwalk
 ms.date: 07/16/2018
 ms.topic: article
@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 66384c4df3195ae0fff35ae5dd7e1b1983204068
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148174"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4180010"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>Personnalisation des effets et des expériences à l’aide de l’interface utilisateur Windows
 
-Interface utilisateur Windows fournit des nombreux effets magnifiques, les animations et les moyens de différenciation. Toutefois, les attentes des utilisateurs pour des performances et possibilités de personnalisation de la réunion sont toujours un élément nécessaire de créer des applications réussies. La plateforme Windows universelle prend en charge une famille volumineux et variée d’appareils, qui ont des fonctionnalités différentes. Pour fournir une expérience inclusive pour tous vos utilisateurs, vous devez afin de garantir votre échelle d’applications sur différents appareils et de respecter les préférences de l’utilisateur. Personnalisation de l’interface utilisateur peut fournir un moyen efficace pour tirer parti des fonctionnalités de l’appareil et garantir une expérience utilisateur agréable et plus inclusive.
+Interface utilisateur Windows fournit des nombreux effets magnifiques, les animations et les moyens de différenciation. Toutefois, les attentes des utilisateurs pour des performances et possibilités de personnalisation de la réunion sont toujours un élément nécessaire de créer des applications réussies. La plateforme Windows universelle prend en charge une famille volumineux et variée d’appareils, qui ont des fonctionnalités différentes. Pour offrir une expérience inclusive pour tous vos utilisateurs, vous devez vous assurer de votre échelle d’applications sur différents appareils et respecter les préférences de l’utilisateur. Personnalisation de l’interface utilisateur peut fournir un moyen efficace pour tirer parti des fonctionnalités de l’appareil et garantir une expérience utilisateur agréable et plus inclusif.
 
 Personnalisation de l’interface utilisateur est une catégorie large cernée de travail pour performante, l’interface utilisateur magnifique ce qui concerne les zones suivantes:
 
@@ -26,11 +26,11 @@ Personnalisation de l’interface utilisateur est une catégorie large cernée d
 - Prise en charge des paramètres utilisateur pour les animations
 - L’optimisation de l’interface utilisateur pour les capacités matérielles donnée
 
-Ici, nous allons décrire comment personnaliser les effets et les animations avec la couche visuelle dans les zones ci-dessus, mais il existe de nombreux autres moyens d’adapter votre application afin de garantir une expérience optimale à l’utilisateur final. Documentation de conseils est disponibles sur la façon d' [adapter votre interface utilisateur](/design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) aux différents appareils et [créer une interface utilisateur réactive](/design/layout/responsive-design.md).
+Ici, nous allons décrire comment personnaliser les effets et animations avec la couche visuelle dans les zones ci-dessus, mais il existe de nombreux autres moyens d’adapter votre application afin de garantir une expérience optimale à l’utilisateur final. Documentation de conseils est disponibles sur la façon d' [adapter votre interface utilisateur](/design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) aux différents appareils et [créer une interface utilisateur réactive](/design/layout/responsive-design.md).
 
-## <a name="user-effects-settings"></a>Paramètres utilisateur effets
+## <a name="user-effects-settings"></a>Paramètres utilisateur des effets
 
-Les utilisateurs peuvent personnaliser leur expérience de Windows pour diverses raisons, dont les applications doivent respecter les et s’adapte à. Les utilisateurs finaux peuvent contrôler les zones change les types d’effets qu'ils voient s’afficher utilisés tout au long de leur système.
+Les utilisateurs peuvent personnaliser leur expérience de Windows pour diverses raisons, dont les applications doivent respecter les et s’adapte à. Les utilisateurs finaux peuvent contrôler les zones change les types d’effets qu’ils voient utilisés tout au long de leur système.
 
 ### <a name="transparency-effects-settings"></a>Paramètres des effets de transparence
 
@@ -43,9 +43,9 @@ Lorsque activé, un effet qui utilise la transparence s’affiche comme prévu. 
 Quand il sont désactivés, matière ACRYLIQUE automatiquement reviennent à une couleur unie, car le pinceau ACRYLIQUE du code XAML a pris en compte pour cet événement par défaut. Ici, nous voir l’application Calculatrice correctement revenir à une couleur unie lorsque les effets de transparence ne sont pas activées:
 
 ![Calculatrice avec l’ACRYLIQUE](images/tailoring-acrylic.png)
-![Calculatrice avec l’ACRYLIQUE répondre aux paramètres de transparence](images/tailoring-acrylic-fallback.png)
+![Calculatrice avec l’ACRYLIQUE réponse aux paramètres de transparence](images/tailoring-acrylic-fallback.png)
 
-Toutefois, pour appliquer des effets personnalisés, l’application doit répondre à la propriété de [UISettings.AdvancedEffectsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) ou d’un événement de [AdvancedEffectsEnabledChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) et éliminer le graphique d’effet/effet d’utiliser un effet qui n’a aucun transparence. Un exemple est ci-dessous:
+Toutefois, pour appliquer des effets personnalisés, l’application doit répondre à la propriété [UISettings.AdvancedEffectsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) ou l’événement de [AdvancedEffectsEnabledChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) et éliminer le graphique d’effet/effet d’utiliser un effet qui n’a aucun transparence. Un exemple est ci-dessous:
 
 ```cs
 public MainPage()
@@ -79,13 +79,13 @@ public MainPage()
 
 ## <a name="leveraging-the-capabilities-api"></a>En exploitant les fonctionnalités API
 
-En tirant parti de l’API [CompositionCapabilities](/uwp/api/windows.ui.composition.compositioncapabilities) , vous pouvez détecter la composition et des fonctionnalités disponibles performante sur un matériel donné et personnaliser la conception pour les utilisateurs finaux d’obtenir une expérience esthétiques et le performante sur n’importe quel appareil. Les API fournissent un moyen de vérifier les fonctionnalités du système matériel afin d’implémenter effet progressif mise à l’échelle sur divers facteurs de forme. Cela facilite l’adapter en fonction de l’application pour créer un esthétiques et l’expérience utilisateur transparente.
+En tirant parti de l’API [CompositionCapabilities](/uwp/api/windows.ui.composition.compositioncapabilities) , vous pouvez détecter la composition et des fonctionnalités disponibles performante sur un matériel donné et adapter la conception pour les utilisateurs finaux d’obtenir une expérience esthétiques et le performante sur n’importe quel appareil. Les API fournissent un moyen de vérifier les fonctionnalités du système matériel afin d’implémenter effet progressif mise à l’échelle sur un large éventail de facteurs de forme. Cela facilite afin d’adapter en fonction de l’application pour créer un esthétiques et une expérience utilisateur transparente.
 
-Cette API fournit des méthodes et un écouteur d’événements qui peut être utilisé pour rendre l’effet de mise à l’échelle de décisions pour l’interface utilisateur de l’application. La fonctionnalité détecte la façon dont le système peut gérer composition complexe et opérations de rendu, puis renvoie les informations dans un modèle facile à utiliser pour les développeurs à utiliser.
+Cette API fournit des méthodes et un écouteur d’événements qui peut être utilisé pour rendre l’effet de mise à l’échelle de décisions pour l’interface utilisateur de l’application. La fonctionnalité détecte la façon dont le système peut gérer composition complexe et opérations de rendu, puis retourne les informations dans un modèle facile à utiliser pour les développeurs à utiliser.
 
 ### <a name="using-composition-capabilities"></a>À l’aide des fonctionnalités de composition
 
-La fonctionnalité CompositionCapabilities est déjà en cours optimisée pour des fonctionnalités telles que matière ACRYLIQUE, où le matériau revient à l’effet plus performante selon le scénario et le matériel.
+La fonctionnalité CompositionCapabilities est déjà en cours optimisée pour des fonctionnalités telles que matière ACRYLIQUE, où le matériau revient à un plus performante d’effet en fonction du scénario et du matériel.
 
 L’API peut être ajoutée au code existant en quelques étapes simples.
 
@@ -116,15 +116,15 @@ L’API peut être ajoutée au code existant en quelques étapes simples.
     }
     ```
 
-Exemple de code complet sont accessibles dans le [référentiel Github de l’interface utilisateur Windows](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2015063/CompCapabilities).
+Exemple de code complet peut être trouvé sur le [référentiel Github de l’interface utilisateur de Windows](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2015063/CompCapabilities).
 
-## <a name="fast-vs-slow-effects"></a>Rapide et effets lentes
+## <a name="fast-vs-slow-effects"></a>Fast VS effets lentes
 
-Fonction des commentaires à partir des méthodes [AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported) et [AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) fournis dans l’API CompositionCapabilties, l’application peut décider de coûteux ou non pris en charge les effets d’échange pour d’autres effets de leur choix qui sont optimisées pour l’appareil. Certains effets sont connues pour être toujours davantage de ressources que d’autres et doivent être utilisées avec parcimonie, et autres effets peuvent être utilisés plus librement. Pour tous les effets, toutefois, soins doit être utilisé lorsque le chaînage et l’animation en tant que certains scénarios ou des combinaisons peuvent changer les caractéristiques de performances du graphique d’effet. Voici certaines caractéristiques de performances de règle générale pour les effets individuels:
+Fonction des commentaires à partir des méthodes [AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported) et [AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) fournis dans l’API CompositionCapabilties, l’application peut décider de coûteux ou non pris en charge les effets d’échange pour d’autres effets de leur choix optimisés pour l’appareil. Certains effets sont connues pour être toujours davantage de ressources que d’autres et doivent être utilisées avec parcimonie, et autres effets peuvent être utilisés plus librement. Pour tous les effets, toutefois, soins doit être utilisé lorsque le chaînage et l’animation en tant que certains scénarios ou des combinaisons peuvent changer les caractéristiques de performances du graphique d’effet. Voici certaines caractéristiques de performances règle générale pour les effets individuels:
 
-- Effets qui sont connues pour que l’impact de hautes performances sont comme suit: Flou gaussien, masque d’ombre, BackDropBrush, HostBackDropBrush et couche visuelle. Elles ne sont pas recommandés pour les appareils de bas de gamme [(niveau de fonctionnalité 9.1-9.3)](https://msdn.microsoft.com/library/windows/desktop/ff476876(v=vs.85).aspx)et doivent être utilisées judicieusement sur les appareils de haut de gamme.
-- Effets avec un impact sur les performances moyennes incluent la matrice de couleur, certaines BlendModes d’effet de fusion (luminosité, la couleur, la Saturation et teinte), projecteur, SceneLightingEffect et (selon le scénario) BorderEffect. Ces effets peuvent fonctionner avec certains scénarios sur les périphériques d’entrée de gamme, mais soins doit être utilisé lorsque le chaînage et l’animation. Recommandons inférieure ou égale à deux pour limiter l’utilisation et l’animation de transitions uniquement.
-- Tous les autres effets ont d’impact sur les performances de faible et dans tous les scénarios raisonnables lors de l’animation et le chaînage.
+- Effets qui sont connues pour les performances élevées sont les suivants: Flou gaussien, masque d’ombre, BackDropBrush, HostBackDropBrush et couche visuelle. Elles ne sont pas recommandés pour les appareils de bas de gamme [(niveau de fonctionnalité 9.1-9.3)](https://msdn.microsoft.com/library/windows/desktop/ff476876(v=vs.85).aspx)et doivent être utilisées judicieusement sur les appareils de haut de gamme.
+- Effets avec un impact sur les performances moyennes incluent la matrice de couleur, certaines BlendModes d’effet Blend (luminosité, la couleur, la Saturation et teinte), projecteur, SceneLightingEffect et (selon le scénario) BorderEffect. Ces effets peuvent fonctionner avec certains scénarios sur les périphériques d’entrée de gamme, mais soins doit être utilisé lorsque le chaînage et l’animation. Recommandons inférieure ou égale à deux pour limiter l’utilisation et l’animation sur les transitions uniquement.
+- Tous les autres effets ont d’impact sur les performances faible et dans tous les scénarios raisonnables lors de l’animation et le chaînage.
 
 ## <a name="related-articles"></a>Articles associés
 

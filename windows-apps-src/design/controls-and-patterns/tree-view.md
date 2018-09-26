@@ -14,11 +14,11 @@ dev_langs:
 - csharp
 - vb
 ms.openlocfilehash: 20de58d13c4ace6b71ec952dc88cd59d1ab6114f
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148314"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4180228"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -31,18 +31,18 @@ Les API TreeView prennent en charge les fonctionnalités suivantes:
 
 - Imbrication de niveau N
 - Sélection d’un ou plusieurs nœuds
-- (Version d’évaluation) Liaison de données à la propriété ItemsSource TreeView et TreeViewItem
-- (Version d’évaluation) TreeViewItem en tant que la racine du modèle d’élément TreeView
-- (Version d’évaluation) Arbitraires types de contenu dans un TreeViewItem
+- (Version d’évaluation) Liaison de données à la propriété ItemsSource sur TreeView et TreeViewItem
+- (Version d’évaluation) TreeViewItem comme la racine du modèle d’élément TreeView
+- (Version d’évaluation) Types arbitraires du contenu dans un TreeViewItem
 - (Version d’évaluation) Glisser -déplacer entre les vues de l’arborescence
 
 | **Obtenir la bibliothèque d’interface utilisateur Windows** |
 | - |
-| Ce contrôle est inclus dans le cadre de la bibliothèque de l’interface utilisateur de Windows, un package NuGet qui contient les nouveaux contrôles et les fonctionnalités de l’interface utilisateur pour les applications UWP. Pour plus d’informations, y compris les instructions d’installation, consultez la [vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| Ce contrôle est inclus dans le cadre de la bibliothèque de l’interface utilisateur de Windows, un package NuGet qui contient les nouveaux contrôles et fonctionnalités de l’interface utilisateur pour les applications UWP. Pour plus d’informations, y compris les instructions d’installation, consultez la [vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
 | **API de la plateforme** | **API de bibliothèque de l’interface utilisateur Windows** |
 | - | - |
-| [Classe TreeView](/uwp/api/windows.ui.xaml.controls.treeview), [classe TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource propriété](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) | [Classe TreeView](/uwp/api/microsoft.ui.xaml.controls.treeview), [classe TreeViewNode](/uwp/api/microsoft.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource propriété](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource) |
+| [Classe TreeView](/uwp/api/windows.ui.xaml.controls.treeview), [classe TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode), [propriété TreeView.ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) | [Classe TreeView](/uwp/api/microsoft.ui.xaml.controls.treeview), [classe TreeViewNode](/uwp/api/microsoft.ui.xaml.controls.treeviewnode), [propriété TreeView.ItemsSource](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource) |
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
@@ -57,7 +57,7 @@ Les API TreeView prennent en charge les fonctionnalités suivantes:
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/TreeView">Ouvrir l’application et voir le contrôle TreeView en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/TreeView">Ouvrir l’application et voir le contrôle TreeView en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Obtenir le code source (GitHub)</a></li>
@@ -82,10 +82,10 @@ Vous pouvez créer une arborescence en liant [propriété ItemsSource](/uwp/api/
 
 Pour créer une arborescence, vous utilisez un contrôle [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) et une hiérarchie d'objets [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode). Vous créez la hiérarchie de nœuds en ajoutant un ou plusieurs nœuds racine à la collection [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) du contrôle TreeView. Chaque TreeViewNode peut alors disposer de plus de nœuds ajoutés à la collection Children. Vous pouvez imbriquer des nœuds de l’arborescence à la profondeur que vous souhaitez.
 
-À compter de Windows Insider Preview, vous pouvez lier une source de données hiérarchiques à la propriété [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) de fournir le contenu d’arborescence, comme vous le feriez avec la propriété ItemsSource de ListView. De même, utilisez [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (et facultatif [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)) pour fournir un DataTemplate qui rend l’élément.
+À compter de Windows Insider Preview, vous pouvez lier une source de données hiérarchiques à la propriété [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) de fournir le contenu d’arborescence, comme vous le feriez avec ItemsSource d’un contrôle ListView. De même, utilisez [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (et facultatif [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)) pour fournir un DataTemplate qui rend l’élément.
 
 > [!IMPORTANT]
-> ItemsSource est un autre mécanisme pour TreeView.RootNodes de placer le contenu dans le contrôle TreeView. Vous ne pouvez pas définir à la fois ItemsSource et RootNodes en même temps. Lorsque vous utilisez la propriété ItemsSource, les nœuds créés pour vous, et vous pouvez y accéder depuis TreeView.RootNodes propriété.
+> ItemsSource est un autre mécanisme pour TreeView.RootNodes de placer le contenu dans le contrôle TreeView. Vous ne pouvez pas définir ItemsSource et RootNodes en même temps. Lorsque vous utilisez la propriété ItemsSource, les nœuds créés pour vous, et vous pouvez y accéder à partir de la propriété TreeView.RootNodes.
 
 Voici un exemple d'arborescence simple déclarée en XAML. Vous ajoutez généralement les nœuds dans le code, mais nous affichons ici la hiérarchie XAML, parce qu'il peut être utile de visualiser la façon dont la hiérarchie de nœuds est créée.
 
@@ -213,9 +213,9 @@ Si vous utilisez ItemsSource ou RootNodes, les éléments réelles utilisées po
 
 ### <a name="item-template-selectors"></a>Sélecteurs de modèle d’élément
 
-Vous pouvez choisir de définir un DataTemplate différent pour les éléments d’affichage arborescence basé sur le type d’élément. Par exemple, dans une application de l’Explorateur de fichiers, vous pouvez utiliser un modèle de données pour les dossiers et l’autre pour les fichiers.
+Vous pouvez choisir de définir un DataTemplate pour les éléments de vue arborescence basés sur le type d’élément différent. Par exemple, dans une application de l’Explorateur de fichiers, vous pouvez utiliser un modèle de données pour les dossiers et l’autre pour les fichiers.
 
-![Dossiers et fichiers à l’aide de différents modèles de données](images/treeview-icons.png)
+![Les dossiers et fichiers à l’aide de différents modèles de données](images/treeview-icons.png)
 
 Voici un exemple illustrant comment créer et utiliser un sélecteur de modèles d’élément.
 
