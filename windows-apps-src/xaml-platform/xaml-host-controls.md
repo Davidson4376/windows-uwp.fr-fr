@@ -9,40 +9,37 @@ ms.prod: windows
 ms.technology: uwp, windows forms, wpf
 keywords: windows10, uwp, windows forms, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b8c263b030cbb8f945ffb13a24b6dff3af28fcc
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.openlocfilehash: 67669dd30f376df823f2f9ad08ad69c193cdb602
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4173632"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4204671"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>Contrôles UWP dans les applications de bureau
 
 > [!NOTE]
 > Les API et les contrôles mentionnés dans cet article sont actuellement disponibles sous forme d’un version préliminaire pour développeurs. Bien que nous vous encourageons à les tester dans votre propre code prototype maintenant, nous ne recommandons pas que vous les utiliser dans le code de production pour l’instant. Ces API et les contrôles continueront à mûrir et stabiliser dans les futures versions de Windows. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.
 
-Windows 10 vous permet désormais d’utiliser les contrôles UWP dans les applications de bureau non UWP afin que vous pouvez améliorer l’apparence et la fonctionnalité de vos applications de bureau existantes avec les dernières fonctionnalités de l’interface utilisateur de Windows 10 qui sont uniquement disponibles via les contrôles UWP. Cela signifie que vous pouvez utiliser les fonctionnalités UWP telles que le [Système Fluent Design](../design/fluent-design-system/index.md) et [Windows Ink](../design/input/pen-and-stylus-interactions.md) dans votre existant WPF, Windows Forms et les applications Win32 C++. Ce scénario développeur est parfois appelé *îles XAML*.
+Windows 10 vous permet désormais d’utiliser les contrôles UWP dans les applications de bureau non UWP afin que vous pouvez améliorer l’apparence et la fonctionnalité de vos applications de bureau existantes avec les dernières fonctionnalités de l’interface utilisateur de Windows 10 qui sont uniquement disponibles via les contrôles UWP. Cela signifie que vous pouvez utiliser les fonctionnalités UWP telles que les contrôles qui prennent en charge le [Système Fluent Design](../design/fluent-design-system/index.md) dans votre existant WPF, Windows Forms et les applications Win32 C++ et [Windows Ink](../design/input/pen-and-stylus-interactions.md) . Ce scénario développeur est parfois appelé *îles XAML*.
 
-Nous proposons différentes méthodes à utiliser (îles) XAML dans vos applications de bureau, en fonction de la technologie ou infrastructure que vous utilisez.
+Nous proposons différentes méthodes à utiliser (îles) XAML dans vos applications WPF, Windows Forms et Win32 C++, en fonction de la technologie ou infrastructure que vous utilisez.
 
 ## <a name="wrapped-controls"></a>Contrôles inclus dans un wrapper
 
-Applications WPF et Windows Forms peuvent utiliser une sélection de contrôles UWP encapsulés dans le [Kit de ressources de la Communauté Windows](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). Vous pouvez ajouter ces contrôles directement à l’aire de conception de votre projet WPF ou Windows Forms, puis utiliser comme tout autre contrôle WPF ou Windows Forms dans votre concepteur. Nous appelons à ces contrôles *encapsulé des contrôles* dans la mesure où ils encapsulent l’interface et les fonctionnalités d’un contrôle UWP spécifique.
-
-Les contrôles inclus dans un wrapper suivants prennent en charge Windows 10, version 1803 et versions ultérieure.
-
-* [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview). Ce contrôle utilise le moteur de rendu Microsoft Edge pour afficher le contenu web dans une application WPF ou Windows Forms.
-* [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible). Ce contrôle est une version de **WebView** compatible avec Windows 10 et les versions précédentes de Windows. Ce contrôle utilise le moteur de rendu Microsoft Edge pour afficher le contenu web sur Windows 10 (version 1803 et versions ultérieure) et le moteur de rendu d’Internet Explorer pour afficher le contenu web sur Windows 7 et Windows 8.x.
-
-Les contrôles inclus dans un wrapper suivants prennent en charge les versions 17709 et versions ultérieures du Kit de développement logiciel Windows 10 Insider Preview build.
-
-* [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) et [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar). Ces contrôles fournissent une surface et barres d’outils pour l’interaction utilisateur basée sur Windows Ink dans votre application de bureau Windows Forms ou WPF.
-* [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement). Ce contrôle incorpore une vue qui diffuse et affiche le contenu multimédia comme vidéo dans votre application de bureau Windows Forms ou WPF.
-
-UWP plus encapsulée contrôles pour WPF et Windows Forms applications sont prévues pour les futures versions de Windows Community Toolkit.
+Applications WPF et Windows Forms peuvent utiliser une sélection de contrôles UWP encapsulés dans le [Kit de ressources de la Communauté Windows](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). Nous appelons à ces contrôles *encapsulé des contrôles* dans la mesure où ils encapsulent l’interface et les fonctionnalités d’un contrôle UWP spécifique. Vous pouvez ajouter ces contrôles directement sur l’aire de conception de votre projet WPF ou Windows Forms et les utiliser comme tout autre contrôle WPF ou Windows Forms dans votre concepteur.
 
 > [!NOTE]
 > Les contrôles inclus dans un wrapper ne sont pas disponibles pour les applications de bureau Win32 C++. Ces types d’applications doivent utiliser l' [API d’hébergement de XAML UWP](#uwp-xaml-hosting-api).
+
+Les contrôles UWP encapsulés suivants sont actuellement disponibles pour les applications WPF et Windows Forms. D’autres contrôles UWP encapsulé qui vont pour les futures versions de Windows Community Toolkit.
+
+| Contrôle | Minimal pris en charge du système d’exploitation | Description |
+|-----------------|-------------------------------|-------------|
+| [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows10 version1803 | Utilise le moteur de rendu Microsoft Edge pour afficher le contenu web. |
+| [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows7 | Fournit une version de **WebView** compatible avec plusieurs versions de système d’exploitation. Ce contrôle utilise le moteur de rendu Microsoft Edge pour afficher le contenu web sur Windows 10 version 1803 et versions ultérieure et le moteur de rendu d’Internet Explorer pour afficher le contenu web sur les versions antérieures de Windows 10, Windows 8.x et Windows 7. |
+| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Kit de développement Windows 10 Insider Preview build 17709 | Fournissent une surface et barres d’outils pour l’interaction utilisateur basé sur Windows Ink dans votre application de bureau Windows Forms ou WPF. |
+| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Kit de développement Windows 10 Insider Preview build 17709 | Incorpore une vue qui diffuse et affiche le contenu multimédia comme vidéo dans votre application de bureau Windows Forms ou WPF. |
 
 ## <a name="host-controls"></a>Contrôles hôtes
 
