@@ -15,24 +15,21 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d68d0a5e6f2a22bc0012b3245ba050df271f7f92
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: fc18db25e6404e5236038badd8169ef7bcfc4817
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817407"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4210991"
 ---
 # <a name="text-controls"></a>Contrôles de texte
-
- 
 
 Les contrôles de texte comprennent les zones de saisie de texte, les zones de mot de passe, les zones de suggestion automatique et les blocs de texte. L’infrastructure XAML propose plusieurs contrôles de rendu, de saisie et de modification de texte, ainsi qu’un jeu de propriétés de mise en forme du texte.
 
 - Les contrôles d’affichage de texte en lecture seule sont [TextBlock](text-block.md) et [RichTextBlock](rich-text-block.md).
-- Les contrôles de saisie et de modification de texte sont: [TextBox](text-box.md), [AutoSuggestBox](auto-suggest-box.md), [PasswordBox](password-box.md) et [RichEditBox](rich-edit-box.md).
+- Les contrôles de saisie de texte et de modification sont: [TextBox](text-box.md), [RichEditBox](rich-edit-box.md), [AutoSuggestBox](auto-suggest-box.md)et [PasswordBox](password-box.md).
 
-> **API importantes**: [classe AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx), [classe PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx), [classe RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx), [classe RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [classe TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [classe TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
-
+> **API importantes**: [classe TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [classe RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [classe TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx), [classe RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx), [classe AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx), [classe PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
@@ -124,28 +121,13 @@ Pour découvrir les recommandations concernant les polices, voir les articles su
 
 ## <a name="pen-input"></a>Saisie effectuée à l’aide du stylet
 
-> La fonctionnalité de saisie effectuée à l'aide du stylet est actuellement disponible uniquement dans WindowsInsiderPreview. Les noms des fonctionnalités, la terminologie et les fonctionnalités sont sujets à des modifications
-
 **S’applique aux contrôles :** TextBox, RichEditBox, AutoSuggestBox
 
 À partir de Windows10, version1803, les zones de saisie de texte XAML présentent une prise en charge intégrée de saisie effectuée à l'aide du stylet à l’aide de [Windows Ink](../input/pen-and-stylus-interactions.md). Quand un utilisateur appuie sur une zone de texte à l’aide d’un stylet Windows, la zone de texte se transforme pour permettre à l’utilisateur d’écrire dedans directement à l'aide d'un stylet, au lieu d’ouvrir un panneau de saisie distinct.
 
 ![La zone de texte s’agrandit lorsqu'un utilisateur appuie dessus avec un stylet](images/pen-input-expand.gif)
 
-Le texte est reconnu alors que l’utilisateur écrit n’importe où dans la zone de texte et une fenêtre candidate montre les résultats de la reconnaissance. L’utilisateur peut appuyer sur un résultat pour le choisir ou continuer à écrire pour accepter le candidat proposé. Les résultats de la reconnaissance littérale (lettre par lettre) sont inclus dans la fenêtre candidate, donc la reconnaissance ne se limite pas aux mots d'un dictionnaire. À mesure que l’utilisateur écrit, la saisie de texte acceptée est convertie en police de script qui conserve l’apparence de l’écriture naturelle.
-
-![Zone de texte avec saisie effectuée à l'aide du stylet](images/pen-input-1.png)
-
-Un utilisateur peut modifier son texte à l’aide d'actions et de mouvements standard, telles que ceux-ci:
-
-- _barrer_ ou _raturer_ - dessiner une rayure pour supprimer un mot ou une partie d’un mot
-- _joindre_ -dessiner un arc entre des mots pour supprimer l’espace entre eux
-- _Insérer_ -dessiner un symbole d'accent circonflexe pour insérer un espace
-- _remplacer_ -écrivez par-dessus le texte existant pour le remplacer
-
-![Remplacer la saisie effectuée à l'aide du stylet](images/pen-input-2.png)
-
-La saisie de texte incorporée est activée par défaut lorsque votre application cible Windows10, version1803 ou version ultérieure et s'exécute dessus. Vous pouvez la refuser sur chaque zone de texte pour désactiver la fonctionnalité et revenir à un panneau de saisie de texte. Pour désactiver la saisie de texte incorporée, définissez la propriété **IsHandwritingViewEnabled** du contrôle de texte sur **false**.
+Pour plus d’informations, voir la [Saisie de texte avec l’affichage de l’écriture manuscrite](text-handwriting-view.md).
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>Choisissez le clavier adapté à votre contrôle de texte
 
