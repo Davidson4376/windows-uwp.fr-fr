@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: dfd702f9ba6e28e1902ea8e595287ba10b46f4bb
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: 5a61b8bdcfcfad490528cdceed5e732a6f5f3a89
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895281"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267370"
 ---
 # <a name="tooltips"></a>Info-bulles
 
@@ -116,16 +116,29 @@ Vous pouvez utiliser n’importe quel objet comme [contenu](/uwp/api/windows.ui.
 
 Par défaut, une info-bulle s’affiche centrée au-dessus du pointeur. Le placement n’étant pas limité par la fenêtre de l’application, l’info-bulle peut s’afficher partiellement ou complètement en dehors des limites de cette fenêtre.
 
-Si une info-bulle masque le contenu auquel elle fait référence, vous pouvez ajuster son emplacement. Utilisez la propriété [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) ou la propriété **ToolTipService.Placement** jointe pour placer l’info-bulle au-dessus, au-dessous, à gauche ou à droite du pointeur. Vous pouvez définir les propriétés [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) et [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset) pour modifier la distance entre le pointeur et l’info-bulle.
+Les ajustements de grande échelle, utilisez la propriété de [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) ou **ToolTipService.Placement** attaché pour spécifier si l’info-bulle doit être dessiné au-dessus, au-dessous, à gauche ou droite du pointeur. Vous pouvez définir les propriétés [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) ou [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset) pour modifier la distance entre le pointeur et l’info-bulle. Seul de ces deux valeurs de décalage peut influencer la position finale - VerticalOffset lorsque Placement est supérieur ou inférieur, HorizontalOffset lorsqu’il ne reste Placement ou à droite.
 
 ```xaml
-<!-- A TextBlock with an offset ToolTip. -->
-<TextBlock Text="TextBlock with an offset ToolTip.">
+<!-- An Image with an offset ToolTip. -->
+<Image Source="Assets/StoreLogo.png">
     <ToolTipService.ToolTip>
         <ToolTip Content="Offset ToolTip."
-                 HorizontalOffset="20" VerticalOffset="30"/>
+                 Placement="Right"
+                 HorizontalOffset="20"/>
     </ToolTipService.ToolTip>
-</TextBlock>
+</Image>
+```
+
+Si une info-bulle masque le contenu qu'elle fait référence, vous pouvez ajuster son emplacement avec précision à l’aide de la nouvelle propriété **PlacementRect** . PlacementRect ancre la position de l’info-bulle et sert également d’une zone qui info-bulle ne sera pas masquer, à condition est suffisamment d’espace écran pour dessiner l’info-bulle en dehors de cette zone. Vous pouvez spécifier l’origine du rectangle par rapport au propriétaire de l’info-bulle et la hauteur et la largeur de la zone d’exclusion. La propriété de [positionnement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) définira si l’info-bulle doit attirer au-dessus, au-dessous, à gauche ou droit de la PlacementRect. 
+
+```xaml
+<!-- An Image with a non-occluding ToolTip. -->
+<Image Source="Assets/StoreLogo.png" Height="64" Width="96">
+    <ToolTipService.ToolTip>
+        <ToolTip Content="Non-occluding ToolTip."
+                 PlacementRect="0,0,96,64"/>
+    </ToolTipService.ToolTip>
+</Image>
 ```
 
 ## <a name="recommendations"></a>Recommandations

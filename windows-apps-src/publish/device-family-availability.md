@@ -3,18 +3,18 @@ author: jnHs
 Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
 title: Disponibilité de la famille d’appareils
 ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, packages, télécharger, disponibilité famille d’appareils
 ms.localizationpriority: medium
-ms.openlocfilehash: 0485ef2f884d8957f6d3d1d7544415dd676bf95b
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: e86b56c09f907e45655a0ef9b94fad30a4959b59
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209745"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266798"
 ---
 # <a name="device-family-availability"></a>Disponibilité de la famille d’appareils
 
@@ -55,11 +55,9 @@ Si vous soumettez une applicationUWP pour Windows10IoT Standard, vous ne devez p
 Si votre soumission comprend des packages pouvant s’exécuter sur **Windows8/8.1** et **Windows Phone8.x et les versions antérieures**, ces packages seront rendus disponibles pour les clients, comme illustré dans le tableau. Il n’existe aucune case à cocher pour ces versions de système d’exploitation. Pour arrêter de proposer votre application à ces clients, supprimez les packages correspondants de votre soumission.
 
 > [!IMPORTANT]
-> Pour empêcher complètement une certaine famille d’appareils Windows10 d’obtenir votre soumission, mettez à jour l’élément [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) dans votre manifesteappx pour cibler uniquement la famille d’appareils que vous voulez prendre en charge (c’est-à-dire Windows.Mobile ou Windows.Desktop), au lieu de conserver la valeur Windows.Universal (pour la famille d’appareils universelle) que Microsoft VisualStudio inclut dans le manifesteappx par défaut.
+> Pour empêcher complètement une famille d’appareils Windows 10 spécifique d’obtenir votre soumission, mettez à jour l’élément [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) dans votre manifeste pour cibler uniquement la famille d’appareils que vous souhaitez prendre en charge (c'est-à-dire, Windows.Mobile ou Windows.Desktop), au lieu de cela à ce qu’il soit en tant que la valeur Windows.Universal (pour la famille d’appareils universelle) que Microsoft Visual Studio inclut dans le manifeste par défaut.
 
-Il est important de savoir que les sélections que vous effectuez dans la section **Disponibilité de la famille d’appareils** s’appliquent uniquement aux nouvelles acquisitions. Quiconque disposant déjà de votre application peut continuer à l’utiliser et obtenir les mises à jour que vous soumettez, même si vous supprimez sa famille d’appareils ici. Cela s’applique même aux clients ayant acquis votre application avant la mise à niveau vers Windows10.
-
-Par exemple, si vous avez une application publiée avec des packages Windows Phone 8.1, puis ajoutez un package Windows 10 (UWP) à la même application, qui cible la famille d’appareils universelle, les clients mobiles Windows 10 qui disposaient de votre package Windows Phone 8.1 recevront une mise à jour vers ce package Windows 10 (UWP), même si vous avez désactivé la case à cocher **Windows 10 Mobile** (car il ne s’agit pas d’une nouvelle acquisition, mais d’une mise à jour). En revanche, si vous ne fournissez pas de package Windows 10 (UWP) ciblant la famille d’appareils universelle ou d’appareils mobiles, vos clients mobiles Windows 10 resteront avec le package Windows Phone 8.1.
+Il est important de savoir que les sélections que vous effectuez dans la section **Disponibilité de la famille d’appareils** s’appliquent uniquement aux nouvelles acquisitions. Quiconque disposant déjà de votre application peut continuer à l’utiliser et obtenir les mises à jour que vous soumettez, même si vous supprimez sa famille d’appareils ici. Cela s’applique même aux clients ayant acquis votre application avant la mise à niveau vers Windows10. Par exemple, si vous avez une application publiée avec des packages Windows Phone 8.1, puis ajoutez un package Windows 10 (UWP) à la même application, qui cible la famille d’appareils universelle, les clients mobiles Windows 10 qui disposaient de votre package Windows Phone 8.1 recevront une mise à jour vers ce package Windows 10 (UWP), même si vous avez désactivé la case à cocher **Windows 10 Mobile** (car il ne s’agit pas d’une nouvelle acquisition, mais d’une mise à jour). En revanche, si vous ne fournissez pas de package Windows 10 (UWP) ciblant la famille d’appareils universelle ou d’appareils mobiles, vos clients mobiles Windows 10 resteront avec le package Windows Phone 8.1.
 
 Pour plus d’informations sur les familles d’appareils, voir [**Vue d’ensemble des familles d’appareils**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview).
 

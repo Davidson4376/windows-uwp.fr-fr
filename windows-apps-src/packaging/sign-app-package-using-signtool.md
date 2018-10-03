@@ -3,19 +3,19 @@ author: laurenhughes
 title: Signer un package d'application à l'aide de SignTool
 description: Utilisez SignTool pour signer manuellement un package d'application à l'aide d'un certificat.
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: b0aab34b187e06ba2b87a1537d6e30df09b35d7e
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: c238855f4f018e8e3142509842221c6b9d97fae3
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663009"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267850"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>Signer un package d'application à l'aide de SignTool
 
@@ -79,16 +79,25 @@ Pour signer votre package d’application avec un certificat issu d'un fichier .
 ```
 SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.appx
 ```
+```
+SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.msix
+```
 Notez que l'option `/a` permet à **SignTool** de choisir automatiquement le meilleur certificat.
 
 Si votre certificat n’est pas un fichier .pfx, utilisez la syntaxe suivante:
 ```
 SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.appx
 ```
+```
+SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.msix
+```
 
 Vous pouvez également spécifier le hachage SHA1 du certificat souhaité au lieu de &lt;Nom du certificat&gt; à l’aide de cette syntaxe:
 ```
 SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.appx
+```
+```
+SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 ```
 
 Notez que certains certificats n’utilisent pas de mot de passe. Si votre certificat ne dispose pas d’un mot de passe, omettez "/p &lt;Votre mot de passe&gt;" dans les exemples de commandes.

@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, création de packages, disposition de package, package d'actifs
 ms.localizationpriority: medium
-ms.openlocfilehash: ecbba774dd4d22dcfbe3ac33e943bb68b6c727f8
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 31c27430c850f861c8b97863521202a6dcab80f7
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1818323"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268086"
 ---
 # <a name="developing-with-asset-packages-and-package-folding"></a>Développement de packages d'actifs et mise en dossier de packages 
 
@@ -29,14 +29,14 @@ Si vous envisagez d'utiliser les packages d'actifs pour vos applications, vous v
 
 Pour comprendre que la mise en dossier des packages n'a aucune incidence sur votre processus de développement, il faut d'abord comprendre ce qui se produit lorsque vous fractionnez votre application en plusieurs packages (avec les packages d'actifs ou les packages de ressources). 
 
-À un niveau élevé, lorsque vous fractionnez certains fichiers d'application dans d'autres packages (qui ne sont pas des packages d'architecture), vous n'êtes pas en mesure d'accéder à ces fichiers directement selon l'emplacement d'exécution de votre code. En effet, ces packages sont tous installés dans des répertoires différents de l'emplacement dans lequel votre package d'architecture est installé. Par exemple, si vous élaborez un jeu, le localisez du français à l'allemand et le générez pour les machines x86 ainsi que les machines x64, vous devez disposer de ces fichiers de package .appx à l'intérieure de l'ensemble d'applications de votre jeu:
+À un niveau élevé, lorsque vous fractionnez certains fichiers d'application dans d'autres packages (qui ne sont pas des packages d'architecture), vous n'êtes pas en mesure d'accéder à ces fichiers directement selon l'emplacement d'exécution de votre code. En effet, ces packages sont tous installés dans des répertoires différents de l'emplacement dans lequel votre package d'architecture est installé. Par exemple, si vous élaborez un jeu et que votre jeu est localisé en Français, allemand et vous générez pour x64 et x x86 machines, puis vous devez avoir ces fichiers de package d’application au sein de l’ensemble d’applications de votre jeu:
 
 -   MyGame_1.0_x86.appx
 -   MyGame_1.0_x64.appx
 -   MyGame_1.0_language-fr.appx
 -   MyGame_1.0_language-de.appx
 
-Lorsque votre jeu est installé sur la machine d'un utilisateur, chaque fichier .appx dispose de son propre dossier dans le répertoire **WindowsApps**. De ce fait, pour un utilisateur français exécutant un système Windows 64bits, votre jeu sera similaire à ceci:
+Lorsque votre jeu est installé sur la machine d’un utilisateur, chaque fichier de package d’application dispose de son propre dossier dans le répertoire **WindowsApps** . De ce fait, pour un utilisateur français exécutant un système Windows 64bits, votre jeu sera similaire à ceci:
 
 ```example
 C:\Program Files\WindowsApps\
@@ -47,9 +47,9 @@ C:\Program Files\WindowsApps\
 `-- …(other apps)
 ```
 
-Notez que le fichier de package .appx qui n'est pas applicable à l'utilisateur ne sera pas installé (système x86 et packages en allemand). 
+Notez que le package d’application les fichiers qui ne sont pas applicables à l’utilisateur ne sera pas installé (le x86 et packages en allemand). 
 
-Pour cet utilisateur, l'exécutable principale de votre jeu se trouve dans le dossier **MyGame_1.0_x64** et sera exécuté à partir de là. En théorie, il aura accès aux fichiers contenus dans ce dossier. Pour accéder aux fichiers du dossier **MyGame_1.0_language-fr**, vous devez utiliser les API MRT ou les API PackageManager. Les API MRT peuvent sélectionner automatiquement le fichier le plus approprié à partir des langues installées. Pour en savoir plus sur les API MRT, consultez [Windows.ApplicationModel.Resources.Core]https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core). Vous pouvez également trouver l'emplacement d'installation du package linguistique en français à l'aide de la [Classe PackageManager](https://docs.microsoft.com/uwp/api/Windows.Management.Deployment.PackageManager). Vous ne devez jamais supposer l'emplacement d'installation des packages de votre application dans la mesure où cet emplacement peut être modifié et varier parmi les utilisateurs. 
+Pour cet utilisateur, l'exécutable principale de votre jeu se trouve dans le dossier **MyGame_1.0_x64** et sera exécuté à partir de là. En théorie, il aura accès aux fichiers contenus dans ce dossier. Pour accéder aux fichiers du dossier **MyGame_1.0_language-fr**, vous devez utiliser les API MRT ou les API PackageManager. Les API MRT peuvent sélectionner automatiquement le fichier le plus approprié à partir des langues installées, vous pouvez en savoir plus sur les API MRT [Windows.ApplicationModel.Resources.Core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core). Vous pouvez également trouver l'emplacement d'installation du package linguistique en français à l'aide de la [Classe PackageManager](https://docs.microsoft.com/uwp/api/Windows.Management.Deployment.PackageManager). Vous ne devez jamais supposer l'emplacement d'installation des packages de votre application dans la mesure où cet emplacement peut être modifié et varier parmi les utilisateurs. 
 
 ## <a name="asset-package-folding"></a>Mise en dossier des packages d'actifs
 

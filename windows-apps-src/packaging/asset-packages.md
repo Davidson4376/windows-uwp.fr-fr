@@ -3,18 +3,18 @@ author: laurenhughes
 title: Introduction aux packages d'actifs
 description: Les packages d'actifs désignent un type de package qui agit en tant qu'emplacement centralisé pour les fichiers communs d'une application. Ainsi, la nécessité de dupliquer les fichiers au travers de ses packages d'architecture est efficacement éliminée.
 ms.author: lahugh
-ms.date: 04/30/2018
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, création de packages, disposition de package, package d'actifs
 ms.localizationpriority: medium
-ms.openlocfilehash: bfb006e0575d025d9d823981e32b6d0749de0996
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 8aafac1c1217ce082cd9d6176c530967f32e4cdd
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1818322"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267988"
 ---
 # <a name="introduction-to-asset-packages"></a>Introduction aux packages d'actifs
 
@@ -30,7 +30,7 @@ Dans la mesure où les packages d'actifs contiennent tous les fichiers agnostiqu
 ### <a name="how-do-asset-packages-affect-publishing"></a>Comment la publication est-elle affectée par les packages d'actifs?
 L'avantage le plus évident de ces packages d'actifs concerne la réduction de taille des applications mises en package. Une taille réduite de package d'application permet d'accélérer le processus de publication de l'application. En effet, le processus Store reçoit moins de fichiers. Toutefois, il ne s'agit pas de l'avantage le plus important.
 
-Lorsqu'un package d'actifs est créé, vous pouvez spécifier si le package doit être autorisé à une exécution. Dans la mesure où les packages d'actifs doivent contenir uniquement les fichiers agnostiques d'architecture, ils ne contiennent généralement aucun fichier .dll ou .exe. De ce fait, en général, les packages d'actifs ne nécessitent pas d'être exécutés. Cette distinction est importante lors du processus de publication. Tous les packages exécutables doivent être scannés pour vérifier qu'ils ne contiennent aucun programme malveillant. Pour les packages plus gros, ce processus prend plus longtemps. Néanmoins, si un package est désigné comme non exécutable, l'installation de l'application garantira que les fichiers qu'il contient ne peuvent pas être exécutés. Cette garantie élimine le besoin d'une numérisation complète du package et réduira grandement le délai de vérification des programme malveillant lors de la publication de l'application (ainsi que des mises à jour). Ainsi, le processus de publication est grandement accéléré pour les applications employant des packages d'actifs. Notez bien que les [packages d'application d'ensemble plat](flat-bundles.md) doivent également être utilisés pour profiter de cet avantage de publication. En effet, c'est ce qui permet au Store de traiter chaque fichier de package .appx en parallèle. 
+Lorsqu'un package d'actifs est créé, vous pouvez spécifier si le package doit être autorisé à une exécution. Dans la mesure où les packages d'actifs doivent contenir uniquement les fichiers agnostiques d'architecture, ils ne contiennent généralement aucun fichier .dll ou .exe. De ce fait, en général, les packages d'actifs ne nécessitent pas d'être exécutés. Cette distinction est importante lors du processus de publication. Tous les packages exécutables doivent être scannés pour vérifier qu'ils ne contiennent aucun programme malveillant. Pour les packages plus gros, ce processus prend plus longtemps. Néanmoins, si un package est désigné comme non exécutable, l'installation de l'application garantira que les fichiers qu'il contient ne peuvent pas être exécutés. Cette garantie élimine le besoin d'une numérisation complète du package et réduira grandement le délai de vérification des programme malveillant lors de la publication de l'application (ainsi que des mises à jour). Ainsi, le processus de publication est grandement accéléré pour les applications employant des packages d'actifs. Notez que [les packages d’application ensemble plat](flat-bundles.md) doit également être utilisé pour obtenir cet avantage publication car c’est ce qui permet à la banque traiter chaque fichier de package .appx ou .msix en parallèle. 
 
 
 ### <a name="should-i-use-asset-packages"></a>Devrais-je utiliser des packages d'actifs?
@@ -54,6 +54,11 @@ Utilisez cette commande pour créer le package d'actifs à l'aide de MakeAppx.ex
 
 ```syntax 
 MakeAppx.exe pack /r /m AppxManifest.xml /f MappingFile.txt /p Videos.appx
+
+...
+
+MakeAppx.exe pack /r /m AppxManifest.xml /f MappingFile.txt /p Videos.msix
+
 ```
 Il faut noter ici que tous les fichiers référencés dans AppxManifest (les fichiers de logo) ne peuvent pas être déplacés vers des packages d'actifs. En effet, ces fichiers doivent être dupliqués parmi les packages d'architecture. Les packages d'actifs ne doivent contenir aucun fichier resources.pri. MRT ne peut pas être utilisé pour accéder aux fichiers du package d'actifs. Pour en savoir plus sur l’accès aux fichiers de package d'actifs et sur la raison pour laquelle les packages d'actifs nécessitent que votre application soit installé sur un lecteur NTFS, consultez [Développement avec des packages d'actifs et mise en dossier du package](Package-Folding.md).
 

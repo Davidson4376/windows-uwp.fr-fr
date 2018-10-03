@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ba630de58e544a9bb84640ab743d1cf67b2fe74
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: f801e9093676ec9fbf55c4ec4af7c5c444ed3ead
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "299959"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267936"
 ---
 # <a name="launch-an-app-with-a-uri"></a>Lancer une application avec un URI
 
@@ -31,7 +31,8 @@ Cette section explique comment utiliser un URI (Uniform Resource Identifier) pou
 | [Lancer l’application UWP](launch-store-app.md) | Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application UWP en ouvrant des pages spécifiques dans le Store. |
 | [Lancer l’application CartesWindows](launch-maps-app.md) | Découvrez comment lancer l’application Cartes Windows à partir de votre application. |
 | [Lancer l’application Contacts](launch-people-apps.md) | Cette rubrique décrit le schéma d’URI ms-people. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour effectuer des actions spécifiques. |
-| [Activer des applications pour les sites Web à l’aide de gestionnaires URI d’application](web-to-app-linking.md) | Lecteur engagement utilisateur avec votre application prend en charge les applications pour la fonctionnalité des sites Web. |
+| [Lancer la capture d’écran](launch-screen-snipping.md) | Découvrez comment utiliser les schémas d’URI pour ouvrir une nouvelle capture ou pour ouvrir l’application capture & croquis. |
+| [Permettent aux applications pour les sites Web à l’aide de gestionnaires d’URI d’application](web-to-app-linking.md) | Attractive avec votre application prenant en charge les applications pour la fonctionnalité de sites Web. |
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Lancer une application sur un appareil distant](launch-a-remote-app.md)

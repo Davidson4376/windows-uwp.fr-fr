@@ -14,12 +14,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: ce84debc3422f923c7c88aae1fa216665ef1ef0f
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 8b4693c4ed6c02db9e4fe3f5f7fee6fe569c0e79
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208659"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267134"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 
@@ -249,6 +249,10 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
   args.Handled = true;
 }
 ```
+
+## <a name="override-default-keyboard-behavior"></a>Remplacer le comportement de clavier par défaut
+
+Dans certains cas, vous devrez peut-être substituer le comportement par défaut des clés spécifiques telles que la touche Retour arrière ou la touche ENTRÉE. Par exemple: 
 
 ## <a name="disable-a-keyboard-accelerator"></a>Désactiver un raccourci clavier 
 

@@ -1,6 +1,6 @@
 ---
 author: normesta
-Description: Enhance your desktop app for Windows 10 users by using Universal Windows Platform (UWP) APIs.
+Description: Enhance your desktop application for Windows 10 users by using Universal Windows Platform (UWP) APIs.
 Search.Product: eADQiWindows 10XVcnh
 title: Améliorer votre application de bureau pour Windows10
 ms.author: normesta
@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: aafe2d09fc27a2693ccf2c4c9d8f189aa0164a3c
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 392f8166e16c028a57bc9e27039a9884f1d9714a
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976507"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267764"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Améliorer votre application de bureau pour Windows10
 
@@ -78,11 +78,11 @@ Vous êtes maintenant prêt à ajouter des expériences modernes qui se déclenc
 
 :white_check_mark: **D’abord, choisissez les expériences que vous voulez ajouter**
 
-Vous avez le choix parmi une grande variété. Par exemple, vous pouvez simplifier votre flux de bons de commande à l’aide des API de monétisation ou attirer l'attention vers votre application lorsque vous avez quelque chose d’intéressant à partager, par exemple, une nouvelle image publiée par un autre utilisateur.
+Vous avez le choix parmi une grande variété. Par exemple, vous pouvez simplifier votre flux de bons de commande à l’aide des API de monétisation ou attirer l’attention vers votre application lorsque vous avez quelque chose d’intéressant à partager, par exemple, une nouvelle image un autre utilisateur a validé.
 
 ![Toast](images/desktop-to-uwp/toast.png)
 
-Même si les utilisateurs ignorent ou ferment votre message, ils peuvent le revoir dans le centre de notifications et cliquer sur le message pour ouvrir votre application. Cela rend votre application plus attractive et présente l’avantage supplémentaire de faire paraître votre application profondément intégrée au système d’exploitation. Nous vous présenterons le code de cette expérience un peu plus tard.
+Même si les utilisateurs ignorent ou ferment votre message, ils peuvent le revoir dans le centre de notifications et cliquer sur le message pour ouvrir votre application. Cela avec votre application et présente l’avantage supplémentaire de faire apparaître profondément intégrée au système d’exploitation de votre application. Nous vous présenterons le code de cette expérience un peu plus tard.
 
 Visitez notre [centre de développement](https://developer.microsoft.com/windows) pour trouver de l'inspiration.
 
@@ -173,7 +173,7 @@ Pour en savoir plus sur les notifications, voir [Notifications toast adaptatives
 
 ## <a name="support-windows-xp-windows-vista-and-windows-78-install-bases"></a>Prise en charge des bases d'installation WindowsXP, WindowsVista et Windows7/8
 
-Vous pouvez moderniser votre application pour Windows10sans avoir à créer une nouvelle branche ni à gérer des bases de code distinctes.
+Vous pouvez moderniser votre application pour Windows 10 sans avoir à créer une nouvelle branche et gérer des bases de code distinct.
 
 Si vous souhaitez créer des fichiers binaires distincts pour les utilisateurs de Windows10, utilisez la compilation conditionnelle. Si vous préférez créer un ensemble de fichiers binaires que vous déployez sur tous les utilisateurs de Windows, utilisez des vérifications à l’exécution.
 
@@ -224,7 +224,7 @@ Le compilateur génère ce code uniquement si cette constante est définie dans 
 
 ### <a name="runtime-checks"></a>Vérifications à l’exécution
 
-Vous pouvez compiler un ensemble de fichiers binaires pour l’ensemble de vos utilisateurs Windows, quelle que soit la version de Windows exécutée. Votre application appelle des API UWP uniquement si l’utilisateur exécute votre application en tant qu'application empaquetée sur Windows10.
+Vous pouvez compiler un ensemble de fichiers binaires pour l’ensemble de vos utilisateurs Windows, quelle que soit la version de Windows exécutée. Votre application appelle des API UWP uniquement si l’utilisateur exécute votre application comme une application empaquetée sur Windows 10.
 
 Le moyen le plus simple pour ajouter à votre code des vérifications à l’exécution consiste à installer ce package Nuget: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/), puis à utiliser la méthode ``IsRunningAsUWP()`` pour désactiver tout le code UWP. consultez ce billet de blog pour plus d’informations: [Pont du bureau: identifier le contexte de l’application](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
 

@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, auteur, COM, composant
 ms.localizationpriority: medium
-ms.openlocfilehash: 227ffcd72150e37a513649e69bc7a6709581d65c
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 2e273d593d7b2e24cc82063ce25b66771b8221e1
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205325"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267178"
 ---
 # <a name="author-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Créer des composants COM avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -49,7 +49,7 @@ Consultez également [composants COM consommer avec C++ / WinRT](consume-com.md)
 
 ## <a name="a-more-realistic-and-interesting-example"></a>Un exemple plus réaliste et intéressant
 
-Le reste de cette rubrique vous guide tout au processus de création d’un projet d’application de console minimal qui utilise C++ / WinRT pour implémenter une fabrique coclasse et classe de base. L’exemple d’application montre comment fournir une notification toast avec un bouton de rappel dessus et la coclasse (qui implémente l’interface **INotificationActivationCallback** COM) permet à l’application d’être lancée et appelée d’arrière-plan lorsque l’utilisateur clique sur ce bouton du toast.
+Le reste de cette rubrique vous guide tout au processus de création d’un projet d’application de console minimal qui utilise C++ / WinRT pour implémenter une fabrique de classe et de base coclasse (composant COM ou classe COM). L’exemple d’application montre comment fournir une notification toast avec un bouton de rappel dessus et la coclasse (qui implémente l’interface **INotificationActivationCallback** COM) permet à l’application d’être lancée et appelée d’arrière-plan lorsque l’utilisateur clique sur ce bouton du toast.
 
 Vous trouverez plus générales sur la zone de fonctionnalité de notification toast à [Envoyer une notification toast locale](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast). Aucun des exemples de code dans cette section de la documentation utilisent C++ / WinRT, cependant, nous vous conseillons donc que vous préférez le code présenté dans cette rubrique.
 
@@ -134,7 +134,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-L’implémentation de la coclasse ci-dessus suit le même modèle qui est présenté dans [créer des API avec C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). Notez que vous pouvez utiliser cette technique non seulement pour les interfaces Windows Runtime (toute interface qui dérive finalement [**IInspectable**](https://msdn.microsoft.com/library/br205821)), mais aussi pour implémenter des interfaces COM (toute interface qui dérive finalement [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)).
+L’implémentation de la coclasse ci-dessus suit le même modèle qui est présenté dans [créer des API avec C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). Par conséquent, vous pouvez utiliser la même technique pour implémenter les interfaces COM, ainsi que des interfaces Windows Runtime. Composants COM et les classes Windows Runtime exposent leurs fonctionnalités via des interfaces. Chaque interface COM dérive en fin de compte de l’interface de [**l’interface IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) . Windows Runtime est basé sur COM&mdash;une distinction étant des interfaces Windows Runtime au final dérivent de l' [**interface IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821) (et **IInspectable** dérive de **IUnknown**).
 
 Dans la coclasse dans le code ci-dessus, nous implémenter la méthode **INotificationActivationCallback::Activate** , qui est la fonction qui est appelée lorsque l’utilisateur clique sur le bouton de rappel sur une notification toast. Toutefois, avant que cette fonction peut être appelée, une instance de la coclasse doit être créé, et c’est le rôle de la fonction **IClassFactory::CreateInstance** .
 

@@ -13,11 +13,11 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e947b00c3a070a8d95a21e38c56bda07cd45d3c4
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205285"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268164"
 ---
 # <a name="app-icons-and-logos"></a>Logos et icônes d’application 
 
@@ -25,9 +25,15 @@ Chaque application dispose d’un icône/logo qui le représente, et elle appara
 
 :::row:::
     :::column:::
-        * La barre de titre de la fenêtre de votre application * la liste des applications dans le menu Démarrer * le Gestionnaire de la barre des tâches et tâche * les vignettes de votre application * écran de démarrage de votre application * dans le Microsoft Store :::column-end:::
+        * La barre de titre de la fenêtre de votre application
+        * La liste des applications dans le menu Démarrer
+        * Le Gestionnaire de la barre des tâches et de tâche
+        * Vignettes de votre application
+        * Écran de démarrage de votre application
+        * Dans le Microsoft Store
+    :::column-end:::
     :::column:::
-        ![Écran d’accueil et vignettes de Windows10](images/assetguidance01.jpg)
+        ![windows 10 start and tiles](images/assetguidance01.jpg)
     :::column-end:::
 :::row-end:::
 
@@ -58,7 +64,7 @@ Le facteur d’échelle détermine la taille des éléments d’interface utilis
 
 :::row:::
     :::column:::
-        Windows définit automatiquement le facteur d’échelle pour chaque affichage en fonction de son nombre de PPP (points par pouce) et la distance d’affichage de l’appareil. 
+        Windows automatically sets the scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. 
 
         (Users can override the default value by going to the **Settings &gt; Display &gt; Scale and layout** page.)
     :::column-end:::
@@ -129,25 +135,26 @@ Pour lancer le Concepteur de manifeste:
 :::row-end:::
 :::row:::
     :::column:::
-        2. dans l' **Explorateur de solutions**, double-cliquez sur le fichier Package.appmxanifest.
+        2. Dans l' **Explorateur de solutions**, double-cliquez sur le fichier Package.appmxanifest.
     :::column-end:::
     :::column:::
-        ![Le Concepteur de manifeste Visual Studio 2017](images/icons/vs-solution-explorer.png)
+        ![The Visual Studio 2017 Manifest Designer](images/icons/vs-solution-explorer.png)
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-            Visual Studio affiche le Concepteur de manifeste.
+            Visual Studio displays the Manifest Designer.
     :::column-end:::
     :::column:::
-            ![L’onglet ressources visuelles](images/icons/vs-manfiest-designer.png)
+            ![The Visual Assets tab](images/icons/vs-manfiest-designer.png)
     :::column-end:::
 :::row-end:::    
 :::row:::
     :::column:::
-        3. Cliquez sur l’onglet **Ressources visuelles** . :::column-end:::
+        3. Cliquez sur l’onglet **Ressources visuelles** .
+    :::column-end:::
     :::column:::
-        ![L’onglet ressources visuelles](images/icons/vs-manfiest-designer-visual-assets.png)
+        ![The Visual Assets tab](images/icons/vs-manfiest-designer-visual-assets.png)
     :::column-end:::
 :::row-end:::        
 
