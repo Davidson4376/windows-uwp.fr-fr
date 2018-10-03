@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, programme d’installation d’application, appinstaller, charger une version test, ensemble connexe, packages facultatifs
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b7ef1d1a9eb3e268e642cf9b0889df71a59fb44
-ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
-ms.translationtype: HT
+ms.openlocfilehash: 965ef217fa00131504841ef2209dbe6aa54f50af
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2018
-ms.locfileid: "1917614"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4265988"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>Installer un ensemble connexe à l’aide d’un fichier du Programme d’installation d’application
 
@@ -91,7 +91,7 @@ Le modèle de base comprend les informations du fichier du Programme d’install
 ```
 
 ### <a name="step-3-add-the-main-package-information"></a>Étape3: Ajouter les informations du package principal 
-Si le package principal de l’application est un fichier .appxbundle, utilisez alors `<MainBundle>` illustré ci-dessous. Si le package principal de l’application est un fichier .appx, utilisez alors `<MainPackage>` à la place de `<MainBundle>` dans l’extrait de code. 
+Si le package principal de l’application est un fichier .appxbundle ou .msixbundle, utilisez le `<MainBundle>` illustré ci-dessous. Si le package principal de l’application est un fichier .appx ou .msix, puis utilisez `<MainPackage>` à la place de `<MainBundle>` dans l’extrait de code. 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

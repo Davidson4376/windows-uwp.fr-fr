@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, résolution des problèmes, HRESULT, erreur
 ms.localizationpriority: medium
-ms.openlocfilehash: cccc58c0b9dd5f922c87d3e6860bb2f2045ea767
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: bc2e7a8f28de4b43a42ff180fe0b12493c398dd0
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208291"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259584"
 ---
 # <a name="troubleshooting-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-issues"></a>Résolution des problèmes [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 > [!NOTE]
@@ -51,6 +51,9 @@ Si votre application s’arrête et que tout ce que vous savez c’est qu’une 
 | La chaîne d’outils LLVM et Clang génère des erreurs lorsqu’il est utilisé avec C++ / WinRT.|Nous ne prend en charge la chaîne d’outils LLVM et Clang pour C++ / WinRT, mais si vous souhaitez émuler la façon dont nous l’utilisons en interne, puis que vous pouvez essayer une expérience telles que celle qui est décrite dans [puis-je utiliser LLVM/Clang pour compiler avec C++ / WinRT?](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt).|
 | Le compilateur C++ génère «*aucun constructeur par défaut approprié disponible*» pour un type projeté. | Si vous essayez de retarder l’initialisation d’un objet de classe runtime, ou d’utiliser et de mettre en œuvre d’une classe runtime dans le même projet, vous devez appeler la `nullptr_t` constructeur. Pour plus d’informations, voir [Utiliser des API avec C++/WinRT](consume-apis.md). |
 | Le compilateur C++ génère «*erreur C3861: 'from_abi': identificateur introuvable*» et d’autres erreurs dans *base.h*d’origine. Vous pouvez rencontrer cette erreur si vous utilisez Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et vous ciblez le SDK Windows version 10.0.17134.0 (Windows 10, version 1803). | Soit cibler une version ultérieure (conforme plus) version du SDK Windows ou de la propriété de projet de jeu **C/C++** > **langue** > **Conformance mode: No** (en outre, si **/ permissive-** s’affiche dans la propriété de projet **C/C++**  >  **Langue** > de**ligne de commande** sous **Options supplémentaires**, alors supprimez-le). |
+| Le compilateur C++ génère «*erreur C2039: 'IUnknown': n’est pas un membre de ' espace de noms \'global''*». | Voir [comment recibler mon C++ / WinRT projet vers une version ultérieure du SDK Windows?](faq.md#how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
+| L’éditeur de liens C++ génère «*erreur LNK2019: symbole externe non résolu _WINRT_CanUnloadNow@0 référencé dans la fonction _VSDesignerCanUnloadNow@0 *» | Voir [comment recibler mon C++ / WinRT projet vers une version ultérieure du SDK Windows?](faq.md#how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
+
 
 > [!NOTE]
 > Si cette rubrique n’a pas répondu à votre question, vous pouvez obtenir de l’aide en utilisant la [balise `c++-winrt` sur Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

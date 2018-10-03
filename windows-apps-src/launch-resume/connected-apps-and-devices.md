@@ -11,11 +11,11 @@ keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, p
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ms.openlocfilehash: d3efb7e094ce1464028dadaa14c6f0bfb3f3b214
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206075"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263336"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>Applications et appareils connectés (projet «Rome»)
 

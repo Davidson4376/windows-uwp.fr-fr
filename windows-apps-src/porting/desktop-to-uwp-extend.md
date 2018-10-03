@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f3354dad1702d275fb7b2af53516689d2c5d5014
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: bed06d5f9f43acd5aa4ec5ff7b2b7139ad0dd26f
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4204735"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258390"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Étendre votre application de bureau avec des composants UWP modernes
 
@@ -24,7 +24,7 @@ Certaines expériences Windows10 (par exemple: une page d'interface utilisateur 
 Dans de nombreux cas, vous pouvez appeler des API UWP directement à partir de votre application de bureau. Par conséquent, avant de consulter ce guide, consultez [Optimisation pour Windows10](desktop-to-uwp-enhance.md).
 
 >[!NOTE]
->Ce guide suppose que vous avez créé un package d’application Windows pour votre application de bureau à l’aide de Pont du bureau. Si ce n'est pas encore fait, consultez [Pont du bureau](desktop-to-uwp-root.md).
+>Ce guide suppose que vous avez créé un package d’application Windows pour votre application de bureau. Si vous n’avez pas encore fait, consultez [les applications de bureau de Package](desktop-to-uwp-root.md).
 
 Si vous êtes prêt, commençons.
 
@@ -40,7 +40,7 @@ Cette image illustre un exemple de solution.
 
 ![Démarrage étendu d'un projet](images/desktop-to-uwp/extend-start-project.png)
 
-Si votre solution ne contient aucun projet de mise en package, consultez [Mise en package de votre application à l’aide de VisualStudio](desktop-to-uwp-packaging-dot-net.md).
+Si votre solution ne contient pas un projet de création de packages, consultez le [Package de votre application de bureau à l’aide de Visual Studio](desktop-to-uwp-packaging-dot-net.md).
 
 ### <a name="add-a-uwp-project"></a>Ajouter un projet UWP
 
@@ -83,6 +83,9 @@ Par exemple, avec une petite quantité de balisage XAML, vous pouvez offrir aux 
 Cette image montre une application Windows Forms qui ouvre une interface utilisateur XAML moderne contenant un contrôle de carte.
 
 ![adaptive-design](images/desktop-to-uwp/extend-xaml-ui.png)
+
+>[!NOTE]
+>Cet exemple montre une UI XAML en ajoutant un projet UWP à la solution. Qui est l’approche pris en charge stable affichant des interfaces utilisateur XAML dans une application de bureau. L’alternative à cette approche consiste à ajouter des contrôles UWP XAML directement à votre application de bureau à l’aide d’une île XAML. Îles XAML sont actuellement disponibles sous forme d’un version préliminaire pour développeurs. Bien que nous vous encourageons à les tester dans votre propre code prototype maintenant, nous ne recommandons pas que vous les utiliser dans le code de production pour l’instant. Ces API et les contrôles continueront à mûrir et stabiliser dans les futures versions de Windows. Pour en savoir plus sur XAML (îles), voir [les contrôles UWP dans les applications de bureau](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="the-design-pattern"></a>Modèle de conception
 
@@ -330,7 +333,7 @@ Nommez le service d’application et indiquez le nom de la classe de point d’e
 
 ### <a name="test-the-app-service"></a>Tester le service d’application
 
-Testez votre service en l'appelant à partir d’une autre application. Ce code peut désigner une application de bureau telle qu'une application de formulaire Windows ou toute autre application UWP.
+Testez votre service en l'appelant à partir d’une autre application. Ce code peut être une application de bureau par exemple, une application Windows forms ou toute autre application UWP.
 
 > [!NOTE]
 > Ce code fonctionne uniquement si vous avez correctement défini la propriété ``PackageFamilyName`` de la classe ``AppServiceConnection``. Vous pouvez obtenir ce nom en appelant ``Windows.ApplicationModel.Package.Current.Id.FamilyName`` dans le contexte du projet UWP. Consultez [Créer et utiliser un service d’application](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service).
@@ -376,7 +379,7 @@ En savoir plus sur les services d’application: [Créer et utiliser un service 
 
 Vous pouvez faire de votre application de bureau une cible de partage afin que les utilisateurs puissent facilement partager des données (par exemple, des images) à partir d’autres applications qui prennent en charge le partage.
 
-Par exemple, les utilisateurs peuvent choisir votre application pour partager des photos à partir de MicrosoftEdge ou l’application Photos. Voici un exemple d’application WPF disposant de cette fonctionnalité.
+Par exemple, les utilisateurs peuvent choisir votre application pour partager des photos à partir de Microsoft Edge, l’application Photos. Voici un exemple d’application WPF disposant de cette fonctionnalité.
 
 ![cible de partage](images/desktop-to-uwp/share-target.png)
 
@@ -447,7 +450,7 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 
 Vous ajouter une tâche en arrière-plan pour exécuter le code, même lorsque l'application est suspendue. Les tâches en arrière-plan sont idéales pour les petites tâches qui ne nécessitent pas d'interaction d'utilisateur. Par exemple, votre tâche peut télécharger des e-mails, afficher une notification toast à propos d'un message de chat entrant, ou réagir à un changement dans une condition du système.
 
-Voici l'exemple d'une application WPF qui inscrit une tâche en arrière-plan.
+Voici un exemple d’application WPF qui inscrit une tâche en arrière-plan.
 
 ![tâche en arrière-plan](images/desktop-to-uwp/sample-background-task.png)
 

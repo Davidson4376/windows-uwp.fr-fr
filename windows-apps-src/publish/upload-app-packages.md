@@ -4,31 +4,31 @@ Description: The Packages page is where you upload all of the package files (.ap
 title: Chargement des packages d’application
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 ms.author: wdg-dev-content
-ms.date: 5/10/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, packages, téléchargement, le chargement de package
 ms.localizationpriority: medium
-ms.openlocfilehash: 6013a238cff8db3b85dd98af58cccaf344a72f51
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: d966688110870b669bdd296ec14e145a5d77b74e
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207735"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263028"
 ---
 # <a name="upload-app-packages"></a>Chargement des packages d’application
 
-Sur la page **Packages**, vous pouvez charger tous les fichiers de package (.appx, .appxupload, .appxbundle, et/ou .xap) pour l’application que vous soumettez. Vous pouvez charger des packages pour tous les systèmes d’exploitation ciblés par votre application. Quand un client télécharge votre application, le WindowsStore propose automatiquement au client le package le mieux adapté à son appareil. Une fois vos packages chargés, vous verrez un tableau indiquant [les packages offerts aux familles d’appareilsWindows10 spécifiques](#device-family-availability) (et aux systèmes d’exploitation plus anciens, le cas échéant), classés par ordre.
+La page **Packages** est, vous pouvez charger tous les fichiers de package (.msix, .msixupload, .msixbundle, .appx, .appxupload, .appxbundle, et/ou .xap) pour l’application que vous soumettez. Vous pouvez charger des packages pour tous les systèmes d’exploitation ciblés par votre application. Quand un client télécharge votre application, le WindowsStore propose automatiquement au client le package le mieux adapté à son appareil. Une fois vos packages chargés, vous verrez un tableau indiquant [les packages offerts aux familles d’appareilsWindows10 spécifiques](#device-family-availability) (et aux systèmes d’exploitation plus anciens, le cas échéant), classés par ordre.
 
 Pour plus d’informations sur le contenu et sur la structure d’un package, voir [Exigences relatives au package de l’application](app-package-requirements.md). Vous devrez également Découvrez [comment les numéros de version peuvent avoir un impact sur les packages livrés à des clients spécifiques](package-version-numbering.md) et [comment les packages sont distribués à différents systèmes d’exploitation](guidance-for-app-package-management.md).
 
 ## <a name="uploading-packages-to-your-submission"></a>Chargement de packages pour votre soumission
 
-Pour charger des packages, faites-les glisser dans le champ de chargement, ou cliquez pour parcourir vos fichiers. La page **Packages** permet de charger des fichiers .xap, .appx, .appxupload et/ou .appxbundle.
+Pour charger des packages, faites-les glisser dans le champ de chargement, ou cliquez pour parcourir vos fichiers. La page **Packages** vous permet de télécharger des fichiers .msix, .msixupload, .msixbundle, .appx, .appxupload, .appxbundle, et/ou .xap.
 
 > [!IMPORTANT]
-> Dans le cas de Windows10, nous vous recommandons de charger ici le fichier.appxupload plutôt qu’un fichier.appx ou .appxbundle.  Pour plus d’informations sur la création de packages d’applicationsUWP pour le WindowsStore, consultez l’article [Créer un package d’application UWP avec VisualStudio](../packaging/packaging-uwp-apps.md).
+> Pour Windows 10, nous vous recommandons de télécharger le fichier .msixupload ou .appxupload ici plutôt que .msix, .appx, .msixbundle ou .appxbundle.  Pour plus d’informations sur la création de packages d’applicationsUWP pour le WindowsStore, consultez l’article [Créer un package d’application UWP avec VisualStudio](../packaging/packaging-uwp-apps.md).
 
 Si vous avez créé des [versions d’évaluation de package](package-flights.md) pour votre application, une liste déroulante apparaît avec l’option de copie des packages de l’une des versions d’évaluation de package. Sélectionnez la version d’évaluation de package comportant les packages que vous souhaitez intégrer. Vous pouvez transférer une partie ou la totalité des packages dans cette soumission.
 

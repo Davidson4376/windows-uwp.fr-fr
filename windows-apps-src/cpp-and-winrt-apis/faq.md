@@ -9,18 +9,36 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, questions, fréquentes, FAQ, forum aux questions
 ms.localizationpriority: medium
-ms.openlocfilehash: 9316a29a50970bdaa288a4744f3aab7d873cbe4e
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: eb4b7b78bf3ef0a561d102804a245c59b6519796
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206917"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4264354"
 ---
 # <a name="frequently-asked-questions-about-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Forum aux questions sur [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 Réponses aux questions que vous êtes susceptibles de vous poser sur la création et l’utilisation d’API Windows Runtime avec C++/WinRT.
 
 > [!NOTE]
 > Si votre question concerne un message d’erreur que vous avez vu, consultez également la rubrique [Résolution des problèmes C++/WinRT](troubleshooting.md).
+
+## <a name="how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>Comment recibler mon C++ / WinRT projet vers une version ultérieure du SDK Windows?
+
+La dernière version disponible généralement du SDK Windows est 10.0.17763.0 (Windows 10, version 1809). La méthode recibler votre projet qui est susceptible d’entraîner le problème de compilateur et l’éditeur de liens tours est également aussi la plus longue. Cette méthode implique la création d’un nouveau projet (ciblant la version du SDK Windows de votre choix) et ensuite copier les fichiers à votre nouveau projet à partir de votre ancien. Il y aura des sections de votre ancien `.vcxproj` et `.vcxproj.filters` fichiers que vous pouvez simplement copier plus de vous faire gagner Ajout de fichiers dans Visual Studio.
+
+Toutefois, il existe deux autres façons de recibler votre projet dans Visual Studio.
+
+- Accédez à la propriété **générale**du projet \> **Version du SDK Windows**et sélectionnez **Toutes les Configurations** et **Toutes les plateformes**. Définir la **Version du SDK Windows** à la version que vous voulez cibler.
+- Dans l' **Explorateur de solutions**, cliquez sur le nœud de projet et cliquez sur **Recibler les projets**, choisir les ou les versions que vous voulez cibler, puis cliquez sur **OK**.
+
+Si vous rencontrez n’importe quel compilateur ou des erreurs de l’éditeur de liens après l’utilisation d’une de ces deux méthodes, vous pouvez essayer de nettoyage de la solution (**Build** > **Nettoyer la Solution** et/ou supprimer manuellement tous les fichiers et dossiers temporaires) avant d’essayer de générer une nouvelle fois.
+
+Si le compilateur C++ génère «*erreur C2039: 'IUnknown': n’est pas un membre de ' espace de noms \'global''*», puis ajoutez `#include <unknwn.h>` en haut de votre `pch.h` fichier.
+
+Vous devrez également ajouter `#include <hstring.h>` après cela.
+
+Si l’éditeur de liens C++ génère «*erreur LNK2019: symbole externe non résolu _WINRT_CanUnloadNow@0 référencé dans la fonction _VSDesignerCanUnloadNow@0 *», vous pouvez alors résoudre qui en ajoutant `#define _VSDESIGNER_DONT_LOAD_AS_DLL` à votre `pch.h` fichier.
+
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>Pourquoi mon projet ne sera pas compilé? Je suis à l’aide de Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et du SDK version 17134
 

@@ -5,6 +5,7 @@ title: Arborescence
 label: Tree view
 template: detail.hbs
 ms.author: jimwalk
+ms.date: 10/02/2018
 ms.localizationpriority: medium
 pm-contact: predavid
 design-contact: ksulliv
@@ -13,17 +14,14 @@ doc-status: Published
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 20de58d13c4ace6b71ec952dc88cd59d1ab6114f
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 36b81cf07b92760235a18f4474a14b7b55e0a7be
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212643"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259862"
 ---
 # <a name="treeview"></a>TreeView
-
-> [!IMPORTANT]
-> Cet article décrit les fonctionnalités qui n’ont pas encore été publiées et sont susceptibles d’être considérablement modifiées d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici. Fonctionnalités d’aperçu nécessitent [dernière build Windows 10 Insider Preview et Kit de développement](https://insider.windows.com/for-developers/) ou la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 Le contrôle XAML TreeView active une liste hiérarchique comportant des nœuds de développement et de réduction qui contiennent des éléments imbriqués. Il peut être utilisé pour illustrer une structure de dossiers ou des relations imbriquées dans votre interface utilisateur.
 
@@ -382,7 +380,13 @@ End Sub
 
 Le contrôle TreeView prend en charge la sélection unique et la sélection multiple. Par défaut, la sélection de nœuds est désactivée, mais vous pouvez définir la propriété [TreeView.SelectionMode](/uwp/api/windows.ui.xaml.controls.treeview.selectionmode) pour permettre la sélection de nœuds. Les valeurs [TreeViewSelectionMode](/uwp/api/windows.ui.xaml.controls.treeviewselectionmode) sont **None**, **Single** et **Multiple**.
 
-Lorsque la sélection est activée, une case à cocher s’affiche en regard de chaque nœud d’arborescence, et les éléments sélectionnés sont mis en surbrillance. Un utilisateur peut sélectionner ou désélectionner un élément à l’aide de la case à cocher. Le fait de cliquer sur l’élément permet toujours de l'appeler.
+#### <a name="multiple-selection"></a>Sélection multiple
+
+Lors de la sélection multiple est activée, une case à cocher s’affiche en regard de chaque nœud d’arborescence, et les éléments sélectionnés sont mis en surbrillance. Un utilisateur peut sélectionner ou désélectionner un élément à l’aide de la case à cocher. Le fait de cliquer sur l’élément permet toujours de l'appeler.
+
+Activant ou en désélectionnant un nœud parent sera sélectionner ou désélectionner tous les enfants sous ce nœud. Si certains, mais pas la totalité, des enfants sous un nœud parent sont sélectionnés, la case à cocher pour le nœud parent s’affiche comme indéterminé (rempli avec une boîte noire).
+
+![Sélection multiple dans une arborescence](images/treeview-selection.png)
 
 Activant ou en désélectionnant un nœud parent sera sélectionner ou désélectionner tous les enfants sous ce nœud. Si certains, mais pas la totalité, des enfants sous un nœud parent sont sélectionnés, la case à cocher pour le nœud parent s’affiche comme indéterminé (rempli avec une boîte noire).
 

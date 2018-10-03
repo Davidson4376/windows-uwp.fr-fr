@@ -4,30 +4,30 @@ Description: View details related to the unique identity assigned to your app by
 title: Visualiser les informations d’identité des applications
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.author: wdg-dev-content
-ms.date: 12/21/2017
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cf2c10fd8fa581e29fe20c5bdcb2683c5246af1d
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 4b04033fb53a90015427feb820c91d0f4a1de7d5
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211113"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259828"
 ---
 # <a name="view-app-identity-details"></a>Visualiser les informations d’identité des applications
 
 
-Lorsque vous travaillez avec une application dans le tableau de bord du centre de développement Windows, vous pouvez afficher les détails concernant l’identité unique attribuée à elle par le Microsoft Store. Vous pouvez également obtenir un lien d’accès à la description de votre application dans le WindowsStore.
+Vous pouvez afficher les détails concernant l’identité unique attribuée à votre application par le Microsoft Store sur ses pages de **l’identité de l’application** . Vous pouvez également obtenir un lien vers le Windows Store de votre application sur cette page de description.
 
 Pour consulter ces informations, accédez à l’une de vos applications, puis développez **Gestion des applications** dans le menu de navigation de gauche. Sélectionnez **Identité de l’application** pour afficher les détails correspondants.
 
 
 ## <a name="values-to-include-in-your-app-package-manifest"></a>Valeurs à inclure dans le manifeste du package de votre application
 
-Votre manifeste du package.appx doit contenir les valeurs ci-après. Si vous [utilisez Microsoft VisualStudio pour générer vos packages](../packaging/packaging-uwp-apps.md), et que vous êtes connecté avec le même compte Microsoft que celui que vous avez associé à votre compte de développeur, ces informations sont incluses automatiquement. Si vous générez votre package manuellement, vous devrez y ajouter vous-même ces éléments:
+Les valeurs suivantes doivent être inclus dans votre manifeste du package. Si vous [utilisez Microsoft VisualStudio pour générer vos packages](../packaging/packaging-uwp-apps.md), et que vous êtes connecté avec le même compte Microsoft que celui que vous avez associé à votre compte de développeur, ces informations sont incluses automatiquement. Si vous générez votre package manuellement, vous devrez y ajouter vous-même ces éléments:
 
 -   **Package/Identité/Nom**
 -   **Package/Identité/Serveur de publication**

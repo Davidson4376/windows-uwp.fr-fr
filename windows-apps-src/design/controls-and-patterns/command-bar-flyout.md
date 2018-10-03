@@ -5,7 +5,7 @@ title: Menu volant de barre de commandes
 label: Command bar flyout
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 07/19/2018
+ms.date: 10/2/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,17 +15,14 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: ec532749fc2dacfc56e80ee2830da36f71c75b2f
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: ed17299051ae7da32f238eb57876b81597c8effa
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205171"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258512"
 ---
 # <a name="command-bar-flyout"></a>Menu volant de barre de commandes
-
-> [!IMPORTANT]
-> Cet article décrit des fonctionnalités qui n’ont pas encore été publiées et sont susceptibles d’être considérablement modifiées d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici. Fonctionnalités d’aperçu nécessitent [dernière build Windows 10 Insider Preview et Kit de développement](https://insider.windows.com/for-developers/) ou la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 Le menu volant barre de commande vous permet de fournir aux utilisateurs d’accéder facilement aux tâches courantes en affichant des commandes dans une barre d’outils flottant relatifs à un élément sur votre zone de dessin de l’interface utilisateur.
 
@@ -94,12 +91,12 @@ Cet exemple montre comment créer un menu volant barre de commande et l’utilis
 
 :::row:::
     :::column:::
-        Un menu volant barre de commandes réduits<br/>
-        ![Exemple d’un volant de barre de commande réduits](images/command-bar-flyout-img-collapsed.png)
+        A collapsed command bar flyout<br/>
+        ![Example of a collapsed command bar flyout](images/command-bar-flyout-img-collapsed.png)
     :::column-end:::
     :::column:::
-        Un volant de barre de commandes développée<br/>
-        ![Exemple d’un volant de barre de commandes développée](images/command-bar-flyout-img-expanded.png)
+        An expanded command bar flyout<br/>
+        ![Example of an expanded command bar flyout](images/command-bar-flyout-img-expanded.png)
     :::column-end:::
 :::row-end:::
 
@@ -191,12 +188,12 @@ Ici, un AppBarElementContainer est utilisé pour ajouter des éléments supplém
 
 :::row:::
     :::column:::
-        Un menu volant barre de commandes réduits avec un bouton partagé ouvert<br/>
-        ![Un volant de barre de commandes avec un bouton partagé](images/command-bar-flyout-split-button.png)
+        A collapsed command bar flyout with an open SplitButton<br/>
+        ![A command bar flyout with a split button](images/command-bar-flyout-split-button.png)
     :::column-end:::
     :::column:::
-        Un volant de barre de commandes développée avec l’interface utilisateur de zoom personnalisé dans le menu<br/>
-        ![Un volant de barre de commandes avec l’interface utilisateur complexe](images/command-bar-flyout-complex-ui.png)
+        An expanded command bar flyout with custom zoom UI in the menu<br/>
+        ![A command bar flyout with complex UI](images/command-bar-flyout-complex-ui.png)
     :::column-end:::
 :::row-end:::
 
@@ -317,12 +314,12 @@ Le [TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyo
 
 :::row:::
     :::column:::
-        Un volant de barre de commande de texte sur la sélection de texte<br/>
-        ![Un volant de barre de commandes texte réduit](images/command-bar-flyout-text-selection.png)
+        A text command bar flyout on text selection<br/>
+        ![A collapsed text command bar flyout](images/command-bar-flyout-text-selection.png)
     :::column-end:::
     :::column:::
-        Un volant de barre de commande de texte développée<br/>
-        ![Un volant de barre de commande de texte développée](images/command-bar-flyout-text-full.png)
+        An expanded text command bar flyout<br/>
+        ![An expanded text command bar flyout](images/command-bar-flyout-text-full.png)
     :::column-end:::
 :::row-end:::
 

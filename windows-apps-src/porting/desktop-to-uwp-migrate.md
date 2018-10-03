@@ -1,6 +1,6 @@
 ---
 author: normesta
-Description: Share code between a desktop app and a UWP app
+Description: Share code between a desktop application and a UWP app
 Search.Product: eADQiWindows 10XVcnh
 title: Partager du code entre une application de bureau et une application UWP
 ms.author: normesta
@@ -10,14 +10,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e0931440977c33642a3154cfa1b0adca42032df0
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: ca5b722ea97202d57f05613bec88ae6bee1db5f2
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018625"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260108"
 ---
-# <a name="share-code-between-a-desktop-app-and-a-uwp-app"></a>Partager du code entre une application de bureau et une application UWP
+# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>Partager du code entre une application de bureau et une application UWP
 
 Vous pouvez déplacer votre code dans des bibliothèques .NET Standard et créer ensuite une application de plateforme Windows universelle (UWP) pour toucher tous les appareils Windows10. Il n’existe aucun outil qui puisse convertir une application de bureau vers une application UWP, mais vous pouvez réutiliser une grande partie de votre code existant, ce qui réduit le coût de création. Ce guide vous explique comment procéder.
 
@@ -67,7 +67,7 @@ Une partie de votre code sera spécifique à la plateforme et devra rester dans 
 
 ### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>Exemple: migration du code d’accès aux données vers une bibliothèque .NET Standard2.0
 
-Supposons que nous avons une application WindowsForms très simple qui affiche les clients à partir de notre exemple de base de données Northwind.
+Supposons que nous avons une application Windows Forms très simple qui affiche les clients à partir de notre base de données exemple Northwind.
 
 ![Application WindowsForms](images/desktop-to-uwp/win-forms-app.png)
 

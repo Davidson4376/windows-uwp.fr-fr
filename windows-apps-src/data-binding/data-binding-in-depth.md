@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c77450c3885f8a9bcd698e25ca721c4c3fe1305
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 72c7037e9e99ad69ff13c65fb2195bc6e3f8110f
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817830"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259154"
 ---
 # <a name="data-binding-in-depth"></a>Présentation détaillée de la liaison de données
 
@@ -23,6 +23,7 @@ ms.locfileid: "1817830"
 
 **API importantes**
 
+-   [**Extension de balisage {x:Bind}**](../xaml-platform/x-bind-markup-extension.md)
 -   [**Classe Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820)
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
@@ -64,7 +65,8 @@ Dans les sections suivantes, nous allons examiner de plus près la source de lia
 
 Voici une implémentation très rudimentaire d’une classe que nous pourrions utiliser comme source de liaison.
 
-**Remarque** Si vous utilisez [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) avec des extensions de composant VisualC++ (C++/CX), vous devrez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à votre classe source de liaison. Si vous utilisez [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), vous n’aurez pas besoin de cet attribut. Voir [Ajout d’un affichage de détails](data-binding-quickstart.md#adding-a-details-view) pour un extrait de code.
+> [!Note]
+> Si vous utilisez [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) avec les extensions de composant Visual C++ (C++ / CX), vous devrez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à votre classe de source de liaison. Si vous utilisez [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), vous n’aurez pas besoin de cet attribut. Voir [Ajout d’un affichage de détails](data-binding-quickstart.md#adding-a-details-view) pour un extrait de code.
 
 ```csharp
 public class HostViewModel
@@ -84,7 +86,8 @@ Une manière de le faire consiste à dériver d’un objet [**DependencyObject**
 
 Une méthode moins lourde pour rendre une classe observable (méthode obligatoire pour les classes possédant déjà une classe de base) consiste à implémenter [**System.ComponentModel.INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx). Cela implique en fait simplement l’implémentation d’un événement unique nommé **PropertyChanged**. Vous trouverez ci-dessous un exemple utilisant **HostViewModel**.
 
-**Remarque** Pour C++/CX, vous devez implémenter [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899), et la classe source de liaison doit avoir l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) ou implémenter [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).
+> [!Note]
+> Pour C++ / CX, vous devez implémenter [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)et la classe de source de liaison doit avoir l' [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) ou l’implémenter [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).
 
 ```csharp
 public class HostViewModel : INotifyPropertyChanged
@@ -158,12 +161,11 @@ Vous pouvez lier des contrôles de listes à des sources de données très impor
 
 Dans les deux exemples ci-dessous, la propriété **Button.Content** est la cible de liaison et sa valeur est définie sur une extension de balisage qui déclare l’objet de liaison. L’extension [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) est illustrée en premier, puis [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Déclarer les liaisons dans le balisage de liaisons dans le balisage est le scénario le plus courant (cela s’avère pratique, lisible et offre une compatibilité avec les outils). Cependant, vous pouvez éviter le balisage et créer de façon impérative (par programme) une instance de la classe [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) à la place si nécessaire.
 
-<!-- XAML lang specifier not yet supported in OP. Using XML for now. -->
-```xml
+```xaml
 <Button Content="{x:Bind ...}" ... />
 ```
 
-```xml
+```xaml
 <Button Content="{Binding ...}" ... />
 ```
 
@@ -189,7 +191,7 @@ namespace QuizGame.View
 
 Nous pouvons alors examiner de plus près le balisage qui déclare l’objet de liaison. L’exemple ci-dessous utilise la même cible de liaison **Button.Content** que dans la section «Cible de liaison» précédemment et montre qu’elle est liée à la propriété **HostViewModel.NextButtonText**.
 
-```xml
+```xaml
 <Page x:Class="QuizGame.View.HostView" ... >
     <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
 </Page>
@@ -199,13 +201,14 @@ Notez la valeur que nous spécifions pour **Path**. Cette valeur est interprét�
 
 La propriété [**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) prend en charge une diversité d’options de liaison à des propriétés imbriquées, des propriétés attachées ainsi qu’à des indexeurs de chaînes et d’entiers. Pour plus d’informations, voir [Syntaxe de PropertyPath](https://msdn.microsoft.com/library/windows/apps/Mt185586). La réalisation d’une liaison à des indexeurs de chaînes revient à effectuer une liaison à des propriétés dynamiques sans avoir besoin d’implémenter [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878). Pour les autres paramètres, voir l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783).
 
-**Remarque** Les modifications apportées à [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) sont envoyées à une source de liaison bidirectionnelle source quand [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) perd le focus, et non après chaque séquence de touches de l’utilisateur.
+> [!Note]
+> Modifications apportées aux [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) sont envoyées à une source dépendante bidirectionnelle lorsque la [**zone de texte**](https://msdn.microsoft.com/library/windows/apps/BR209683) perd le focus et non après chaque séquence de touches utilisateur.
 
 **DataTemplate et x:DataType**
 
 À l’intérieur d’un modèle [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) (qu’il s’agisse d’un modèle d’élément, d’un modèle de contenu ou d’un modèle d’en-tête), la valeur de **Path** n’est pas interprétée dans le contexte de la page, mais dans celui de l’objet de données qui est basé sur le modèle. Pour que ses liaisons puissent être validées (et qu’un code efficace puisse être généré pour elles) au moment de la compilation, un modèle **DataTemplate** doit déclarer le type de son objet de données à l’aide de **x:DataType**. L’exemple ci-dessous peut être utilisé en tant que modèle **ItemTemplate** d’un contrôle d’éléments lié à une collection d’objets **SampleDataGroup**.
 
-```xml
+```xaml
 <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{x:Bind Title}"/>
@@ -222,15 +225,14 @@ Considérez par exemple que vous avez un type nommé SampleDataGroup, qui implé
 
 Le code pour prendre en charge **{x:Bind}** est généré au moment de la compilation dans les classes partielles pour vos pages. Ces fichiers se trouvent dans votre dossier `obj`, et portent des noms tels que `<view name>.g.cs` (pour C#). Le code généré inclut un gestionnaire pour l’événement [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706) de votre page, et ce gestionnaire appelle la méthode **Initialize** sur une classe générée qui représente les liaisons de votre page. Ensuite, **Initialize** appelle **Update** pour commencer à déplacer les données entre la source et la cible de liaison. **Loading** est déclenché juste avant la première passe de mesure du contrôle de page ou d’utilisateur. Si vos données sont chargées de façon asynchrone, elles peuvent ne pas être prêtes au moment où **Initialize** est appelée. Ainsi, une fois que vous avez chargé les données, vous pouvez forcer l’initialisation des liaisons uniques en appelant `this.Bindings.Update();`. Si vous avez uniquement besoin des liaisons uniques pour les données chargées de manière asynchrone, il est préférable de les initialiser de cette manière plutôt que d’utiliser des liaisons à sens unique et d’écouter les modifications. Si vos données ne subissent pas de modifications affinées et si elles sont susceptibles d’être mises à jour dans le cadre d’une action spécifique, vous pouvez rendre vos liaisons uniques et forcer une mise à jour manuelle à tout moment avec un appel à **Update**.
 
-**Limitations**
-
-**{x:Bind}** n'est pas adapté aux scénarios tardifs, tels que la navigation dans la structure du dictionnaire d’un objet JSON, ni le «duck typing» (typage canard) qui est une forme faible de typage basé sur les correspondances lexicales des noms de propriétés («si ça ressemble à un canard, si ça nage comme un canard et si ça cancane comme un canard, c’est qu’il s’agit sans doute d’un canard»). Avec le «duck typing», une liaison à la propriété Age peut aussi bien être satisfaite par un objet Person que par un objet Wine. Pour ces scénarios, utilisez **{Binding}**.
+> [!Note]
+> **{x:Bind}** n'est pas adapté aux scénarios tardifs, tels que la navigation dans la structure du dictionnaire d’un objet JSON, ni le «duck typing» (typage canard) qui est une forme faible de typage basé sur les correspondances lexicales des noms de propriétés («si ça ressemble à un canard, si ça nage comme un canard et si ça cancane comme un canard, c’est qu’il s’agit sans doute d’un canard»). Avec le «duck typing», une liaison à la propriété Age peut aussi bien être satisfaite par un objet Person que par un objet Wine. Pour ces scénarios, utilisez **{Binding}**.
 
 ### <a name="binding-object-declared-using-binding"></a>Objet de liaison déclaré à l’aide de {Binding}
 
 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) suppose, par défaut, que vous créiez une liaison à la propriété [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) de votre page de balisage. Nous allons donc définir la propriété **DataContext** de notre page en tant qu’instance de notre classe de source de liaison (de type **HostViewModel** dans le cas présent). L’exemple ci-dessous illustre le balisage qui déclare l’objet de liaison. Nous utilisons la même cible de liaison **Button.Content** que dans la section «Cible de liaison» précédemment et nous la lions à la propriété **HostViewModel.NextButtonText**.
 
-```xml
+```xaml
 <Page xmlns:viewmodel="using:QuizGame.ViewModel" ... >
     <Page.DataContext>
         <viewmodel:HostViewModel/>
@@ -248,7 +250,7 @@ Un objet de liaison présente une propriété **Source**, dont la valeur par dé
 
 À l’intérieur d’un modèle [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348), la propriété [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) est définie sur l’objet de données qui est basé sur le modèle. L’exemple ci-dessous peut être utilisé en tant que modèle **ItemTemplate** d’un contrôle d’éléments lié à une collection de tout type présentant des propriétés de chaîne nommées **Title** et **Description**.
 
-```xml
+```xaml
 <DataTemplate x:Key="SimpleItemTemplate">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{Binding Title}"/>
@@ -257,7 +259,8 @@ Un objet de liaison présente une propriété **Source**, dont la valeur par dé
   </DataTemplate>
 ```
 
-**Remarque** Par défaut, les modifications apportées à [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) sont envoyées à une source de liaison bidirectionnelle source quand [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) perd le focus. Pour que les modifications soient envoyées après chaque séquence de touches de l’utilisateur, attribuez la valeur **PropertyChanged** à **UpdateSourceTrigger** sur la liaison dans le balisage. Vous pouvez également contrôler entièrement le moment où les modifications sont envoyées à la source en définissant **UpdateSourceTrigger** sur **Explicit**. Vous gérez ensuite les événements sur la zone de texte (généralement [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)), appelez [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) sur la cible pour obtenir un objet [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx) et appelez enfin [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) pour mettre à jour la source de données par programmation.
+> [!Note]
+> Par défaut, les modifications apportées aux [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) sont envoyées à une source dépendante bidirectionnelle lorsque la [**zone de texte**](https://msdn.microsoft.com/library/windows/apps/BR209683) perd le focus. Pour que les modifications soient envoyées après chaque séquence de touches de l’utilisateur, attribuez la valeur **PropertyChanged** à **UpdateSourceTrigger** sur la liaison dans le balisage. Vous pouvez également contrôler entièrement le moment où les modifications sont envoyées à la source en définissant **UpdateSourceTrigger** sur **Explicit**. Vous gérez ensuite les événements sur la zone de texte (généralement [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)), appelez [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) sur la cible pour obtenir un objet [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx) et appelez enfin [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) pour mettre à jour la source de données par programmation.
 
 La propriété [**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) prend en charge une diversité d’options de liaison à des propriétés imbriquées, des propriétés attachées ainsi qu’à des indexeurs de chaînes et d’entiers. Pour plus d’informations, voir [Syntaxe de PropertyPath](https://msdn.microsoft.com/library/windows/apps/Mt185586). La réalisation d’une liaison à des indexeurs de chaînes revient à effectuer une liaison à des propriétés dynamiques sans avoir besoin d’implémenter [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878). La propriété [**ElementName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.elementname) est utile pour les liaisons d’élément à élément. La propriété [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.relativesource) a plusieurs usages et offre notamment une solution plus performante que la liaison de modèle à l’intérieur d’un modèle [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209391). Pour les autres paramètres, voir l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) et la classe [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820).
 
@@ -351,7 +354,7 @@ End Class
 
 Et voici comment ce convertisseur est utilisé dans votre balisage d’objet de liaison.
 
-```xml
+```xaml
 <UserControl.Resources>
   <local:DateToStringConverter x:Key="Converter1"/>
 </UserControl.Resources>
@@ -369,7 +372,8 @@ Le moteur de liaison appelle les méthodes [**Convert**](https://msdn.microsoft.
 
 Le convertisseur est également doté de paramètres optionnels: [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterlanguage), qui autorise la spécification du langage à utiliser dans la conversion, et [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterparameter), qui autorise la transmission d’un paramètre pour la logique de conversion. Pour obtenir un exemple qui utilise un paramètre de convertisseur, voir [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903).
 
-**Remarque** S’il y a une erreur dans la conversion, ne levez pas d’exception. Retournez plutôt [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue), qui arrêtera le transfert de données.
+> [!Note]
+> S’il existe une erreur dans la conversion, ne levez pas d’exception. Retournez plutôt [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue), qui arrêtera le transfert de données.
 
 Pour afficher une valeur par défaut à utiliser chaque fois que la source de liaison ne peut pas être résolue, définissez la propriété **FallbackValue** sur l’objet de liaison dans le balisage. Cette méthode s’avère utile pour gérer les erreurs de conversion et de mise en forme. Elle est également utile pour la liaison aux propriétés sources qui peuvent ne pas exister sur tous les objets dans une collection liée de types hétérogènes.
 
@@ -380,7 +384,7 @@ Si vous liez un contrôle de texte à une valeur autre qu’une chaîne, le mote
 
 ## <a name="function-binding-in-xbind"></a>Liaison de fonction dans {x:Bind}
 
-Avec {x:Bind}, l’étape finale d’un chemin de liaison peut être une fonction. Cela peut servir à effectuer des conversions et des liaisons qui dépendent de plusieurs propriétés. Voir [**Extension de balisage {x:Bind}**](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
+Avec {x:Bind}, l’étape finale d’un chemin de liaison peut être une fonction. Cela peut servir à effectuer des conversions et des liaisons qui dépendent de plusieurs propriétés. Consultez [ **fonctions dans x: Bind**](function-bindings.md)
 
 <span id="resource-dictionaries-with-x-bind"/>
 
@@ -390,7 +394,7 @@ L’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/
 
 TemplatesResourceDictionary.xaml
 
-```xml
+```xaml
 <ResourceDictionary
     x:Class="ExampleNamespace.TemplatesResourceDictionary"
     .....
@@ -423,7 +427,7 @@ namespace ExampleNamespace
 
 MainPage.xaml
 
-```xml
+```xaml
 <Page x:Class="ExampleNamespace.MainPage"
     ....
     xmlns:examplenamespace="using:ExampleNamespace">
@@ -453,7 +457,7 @@ MainPage.xaml
 
 Vous pouvez alors lier l’événement **Click** d’un bouton à une méthode sur l’objet **Frame** renvoyé par la propriété **RootFrame** comme suit. Notez que nous avons également lié la propriété **IsEnabled** du bouton à un autre membre du même élément **Frame**.
 
-```xml
+```xaml
     <AppBarButton Icon="Forward" IsCompact="True"
     IsEnabled="{x:Bind RootFrame.CanGoForward, Mode=OneWay}"
     Click="{x:Bind RootFrame.GoForward}"/>
@@ -518,15 +522,13 @@ L’exemple suivant illustre le modèle «has-a-group». La classe de page compo
     ...
 
     <GridView
-    ItemsSource="{Binding Source={StaticResource AuthorHasACollectionOfBookSku}}" ...>
+    ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
         <GridView.GroupStyle>
             <GroupStyle
                 HeaderTemplate="{StaticResource AuthorGroupHeaderTemplateWide}" ... />
         </GridView.GroupStyle>
     </GridView>
 ```
-
-Notez que la propriété [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) doit utiliser [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) (et non[{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)), car elle doit définir la propriété **Source** sur une ressource. Pour voir l’exemple ci-dessus dans le contexte de l’application complète, téléchargez l’exemple d’application [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952). Contrairement au balisage ci-dessus, [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) utilise exclusivement {Binding}.
 
 Vous pouvez implémenter le modèle «is-a-group» de deux manières. La première consiste à créer votre propre classe de groupe. Dérivez la classe de **List&lt;T&gt;** (où *T* est le type des éléments). Exemple : `public class Author : List<BookSku>`. La deuxième consiste à utiliser une expression [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) afin de créer dynamiquement des objets de groupe (et une classe de groupe) à partir des valeurs de propriétés similaires des éléments **BookSku**. Cette approche, consistant à conserver simplement une liste plate d’éléments et à les regrouper à la volée, est courante pour les applications qui accèdent aux données à partir d’un service cloud. Elle vous offre la possibilité de regrouper les ouvrages par auteur et par genre (par exemple) sans avoir à recourir à des classes de groupes spécifiques, comme **Author** et **Genre**.
 
@@ -556,13 +558,13 @@ L’exemple suivant illustre le modèle «is-a-group» avec [LINQ](http://msdn.m
 
 Gardez à l’esprit que pour utiliser [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) avec des modèles de données, nous devons indiquer le type en cours de liaison en définissant une valeur **x:DataType**. Si le type est générique, nous ne pouvons pas l’exprimer dans le balisage et nous devons par conséquent utiliser[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) à la place dans le modèle d’en-tête du style de groupe.
 
-```xml
+```xaml
     <Grid.Resources>
         <CollectionViewSource x:Name="GenreIsACollectionOfBookSku"
-        Source="{Binding Genres}"
+        Source="{x:Bind Genres}"
         IsSourceGrouped="true"/>
     </Grid.Resources>
-    <GridView ItemsSource="{Binding Source={StaticResource GenreIsACollectionOfBookSku}}">
+    <GridView ItemsSource="{x:Bind GenreIsACollectionOfBookSku}">
         <GridView.ItemTemplate x:DataType="local:BookTemplate">
             <DataTemplate>
                 <TextBlock Text="{x:Bind Title}"/>
@@ -604,7 +606,7 @@ Vous pouvez également connecter des éléments d’interface utilisateur aux do
 
 L’exemple suivant explique comment implémenter une liaison dans le code.
 
-```xml
+```xaml
 <TextBox x:Name="MyTextBox" Text="Text"/>
 ```
 
@@ -655,8 +657,8 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | FallbackValue | `{x:Bind Name, FallbackValue='empty'}` | `{Binding Name, FallbackValue='empty'}` | Utilisée lorsqu’une partie du chemin de la liaison (à l’exception du nœud terminal) présente la valeur null. | 
 | ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | Avec {x:Bind}, vous créez une liaison à un champ; Path a pour racine Page par défaut, de sorte que tout élément nommé est accessible via son champ. | 
 | RelativeSource: Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | Avec {x:Bind}, nommez l’élément et utilisez son nom dans Path. | 
-| RelativeSource : TemplatedParent | Non pris en charge | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | La liaison de modèle standard peut être utilisée dans les modèles de contrôle dans la plupart des cas. Toutefois, faites appel à TemplatedParent quand vous devez utiliser un convertisseur ou une liaison bidirectionnelle.&lt; | 
-| Source | Non pris en charge | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | Pour {x:Bind}, utilisez une propriété ou un chemin statique à la place. | 
+| RelativeSource : TemplatedParent | Pas requis | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | Avec {x: Bind} TargetType sur ControlTemplate indique la liaison à un parent de modèle. Pour {Binding} liaison de modèle standard peut être utilisé dans les modèles de contrôle pour la plupart des utilisations. Toutefois, faites appel à TemplatedParent quand vous devez utiliser un convertisseur ou une liaison bidirectionnelle.&lt; | 
+| Source | Pas requis | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | Pour {x: Bind}, vous pouvez utiliser directement l’élément nommé, utilisez une propriété ou un chemin statique. | 
 | Mode | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode peut être défini sur OneTime (liaison ponctuelle), OneWay (liaison à sens unique) ou TwoWay (liaison bidirectionnelle). La valeur par défaut est OneTime pour {x:Bind} et OneWay pour {Binding}. | 
 | UpdateSourceTrigger | `{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}` | `{Binding UpdateSourceTrigger=PropertyChanged}` | UpdateSourceTrigger peut avoir la valeur Default, PropertyChanged ou LostFocus. {x:Bind} ne prend pas en charge UpdateSourceTrigger=Explicit. {x:Bind} utilise le comportement PropertyChanged dans tous les cas, sauf pour TextBox.Text, où il utilise le comportement LostFocus. | 
 

@@ -4,18 +4,18 @@ Description: If you encounter errors after submitting your app to the Store, you
 title: Résoudre les erreurs d’envoi
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
 ms.author: wdg-dev-content
-ms.date: 09/13/2017
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d027e35f8fe76a0d4139301f1a7dabc7798348a
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 2aa30af537874f3c3f4845706de6f6788c7b08fb
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210225"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260774"
 ---
 # <a name="resolve-submission-errors"></a>Résoudre les erreurs d’envoi
 
@@ -23,7 +23,7 @@ Si vous rencontrez des erreurs après avoir envoyé votre application au Windows
 
 ## <a name="uwp-apps"></a>Applications UWP
 
-Si vous soumettez une application UWP, vous pouvez rencontrer une erreur au cours de prétraitement si votre fichier de package n'est pas un fichier .appxupload généré par Visual Studio pour le Windows Store. N’oubliez pas que vous suivez les étapes décrites dans le [Package d’une application UWP avec Visual Studio](../packaging/packaging-uwp-apps.md) lors de la création du fichier de package de votre application et uniquement chargez le fichier .appxupload sur la page de [Packages](upload-app-packages.md) de la soumission, et non un appx ou un .appxbundle.
+Si vous soumettez une application UWP, vous pouvez voir une erreur au cours de prétraitement si votre fichier de package n’est pas un fichier .msixupload ou .appxupload généré par Visual Studio pour le Windows Store. N’oubliez pas que vous suivez les étapes décrites dans le [Package d’une application UWP avec Visual Studio](../packaging/packaging-uwp-apps.md) lors de la création du fichier de package de votre application et uniquement chargez le fichier .msixupload ou .appxupload sur la page de [Packages](upload-app-packages.md) de la soumission, non sur un appx/.msix ou .msixbundle/appxbundle .
 
 Si une erreur de compilation s'affiche, assurez-vous que vous êtes en mesure de générer correctement votre application en mode Release. Pour plus d'informations, voir [Erreurs du compilateur natif interne .NET](http://go.microsoft.com/fwlink/p/?LinkID=613098).
 
@@ -31,7 +31,7 @@ Si une erreur de compilation s'affiche, assurez-vous que vous êtes en mesure de
 
 Si vous prévoyez de soumettre un package qui contient les fichiers binaires Win32 et UWP, vérifiez que vous créez ce package à l’aide du projet de création de packages Windows qui est disponible dans Visual Studio 2017 mise à jour de 4. Si vous créez le package à l’aide d’un modèle de projet UWP, vous ne pouvez pas être en mesure de soumettre qui package au Windows Store ou charger de manière indépendante sur d’autres PC. Même si le package publie avec succès, qu’elle peut se comporter de façon inattendue sur PC de l’utilisateur. Pour plus d’informations, voir le [Package d’une application à l’aide de Visual Studio (pont du bureau)]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net).
 
-## <a name="windows-phone-apps"></a>Applications Windows Phone
+## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x et versions antérieures
 
 L’**erreur 2001** peut se produire lorsque des problèmes sont détectés pendant le prétraitement des packages Windows Phone. Dans la plupart des cas, vous devez régénérer le package de votre application pour corriger l’erreur. Remplacez ensuite l'ancien package par le nouveau sur la page [Packages](upload-app-packages.md) de la soumission avant de cliquer de nouveau sur **Soumettre au Windows Store**.
 

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
-ms.openlocfilehash: 259b171ea490272241fcef1170e2413cb40d7330
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 88a07db357125d3f9cb35a5e133e9b0add350069
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210449"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259978"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Kits de ressources et exemples de conception pour les applications UWP
  
@@ -29,32 +29,37 @@ Ces kits de ressources fournissent des contrôles et des modèles de disposition
 
 :::row:::
     :::column:::
-        ![image Hero](images/adobe-xd.png) <b>Kit de ressources Adobe XD</b><br>
-        v1806, juin 2018<br>
-        <a href="https://aka.ms/adobexdtoolkit">Télécharger</a>
+        ![hero image](images/adobe-xd.png)
+        <b>Adobe XD toolkit</b><br>
+        v1806, June 2018<br>
+        <a href="https://aka.ms/adobexdtoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![image Hero](images/adobe-illustrator.png) <b>Kit de ressources Adobe Illustrator</b><br>
-        v1806, juin 2018<br>
-        <a href="https://aka.ms/adobeillustratortoolkit">Télécharger</a>
+        ![hero image](images/adobe-illustrator.png)
+        <b>Adobe Illustrator toolkit</b><br>
+        v1806, June 2018<br>
+        <a href="https://aka.ms/adobeillustratortoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![image Hero](images/sketch.png) <b>Sketch</b><br>
-        v1803, mars 2018<br>
-        <a href="https://aka.ms/sketchtoolkit">Télécharger</a>
+        ![hero image](images/sketch.png)
+        <b>Sketch</b><br>
+        v1803, March 2018<br>
+        <a href="https://aka.ms/sketchtoolkit">Download</a>
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![image Hero](images/adobe-photoshop.png) <b>Kit de ressources Adobe Photoshop</b><br>
-        v1705, mai 2017<br>
-        <a href="https://aka.ms/adobephotoshoptoolkit">Télécharger</a>
+        ![hero image](images/adobe-photoshop.png)
+        <b>Adobe Photoshop toolkit</b><br>
+        v1705, May 2017<br>
+        <a href="https://aka.ms/adobephotoshoptoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![image Hero](images/framer.png) <b>de ressources Framer</b><br>
-        v1806, juin 2018<br>
-        <a href="https://aka.ms/framertoolkit">Télécharger</a>
+        ![hero image](images/framer.png)
+        <b>Framer toolkit</b><br>
+        v1806, June 2018<br>
+        <a href="https://aka.ms/framertoolkit">Download</a>
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -64,14 +69,16 @@ Ces kits de ressources fournissent des contrôles et des modèles de disposition
 
 :::row:::
     :::column:::
-        ![Vignette de bibliothèque WinUI](images/WinUI-library.png) <b>Bibliothèque d’interface utilisateur Windows</b><br>
-        Les contrôles et autres éléments d’interface utilisateur pour les applications UWP.<br/>
-        <a href="/uwp/toolkits/winui/getting-started">Instructions d’installation</a><br/>
+        ![WinUI library thumbnail](images/WinUI-library.png)
+        <b>Windows UI Library</b><br>
+        Controls and other UI elements for UWP apps.<br/>
+        <a href="/uwp/toolkits/winui/getting-started">Installation instructions</a><br/>
     :::column-end:::
     :::column:::
-        ![Vignette de la Communauté Windows](images/Windows-community-toolkit.png) <b>Windows Community Toolkit</b><br>
-        Fonctions d’assistance, des contrôles personnalisés et les services d’application.<br />
-        <a href="/windows/uwpcommunitytoolkit/getting-started">Instructions d’installation</a>
+        ![Windows community thumbnail](images/Windows-community-toolkit.png)
+        <b>Windows Community Toolkit</b><br>
+        Helper functions, custom controls, and app services.<br />
+        <a href="/windows/uwpcommunitytoolkit/getting-started">Installation instructions</a>
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -88,16 +95,22 @@ Ces kits de ressources fournissent des contrôles et des modèles de disposition
     :::column:::
         <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
-    ::: column span = «2»::: **Générateur de vignettes et d’icônes pour Adobe Photoshop** cet ensemble d’actions pour Adobe Photoshop génère les vignette et icône 68 recommandées à partir de seulement 7 fichiers. <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">Télécharger le générateur de vignettes et d’icônes</a></p>
+    :::column span="2":::
+      **Générateur de vignettes et d’icônes pour Adobe Photoshop** Cet ensemble d’actions pour Adobe Photoshop génère les vignette et icône 68 recommandées à partir de seulement 7 fichiers. <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">Télécharger le générateur de vignettes et d’icônes</a></p>
     :::column-end:::
 :::row-end:::
 
     
 ## <a name="samples"></a>Exemples
 
+![Image VanArsdel](images/VanArsdel_Screenshot.png)
+**VanArsdel**<br>
+L’exemple d’application UWP bout à bout Van Arsdel, Ltd. a été conçu pour présenter la nouvelle vague du système Fluent Design Microsoft. Il s’appuie largement la densité améliorée et les nouveaux contrôles dans la <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Bibliothèque de l’interface utilisateur de Windows</a> , mais aussi puissantes fonctionnalités sous-jacent de l’infrastructure de l’expérience utilisateur et de composition. L’exemple montre comment vous pouvez créer une expérience riche et productive pour la gestion et achetant des appareils IoT (dans ce cas, il s’agit de lampes).<br>
+<a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">Télécharger l’exemple VanArsdel</a> <br><a href="https://github.com/microsoft/vanarsdel">Découvrir l’exemple VanArsdel sur GitHub</a>
+
 ![Générer cast image](images/buildcast.png)
 **BuildCast**<br>
-BuildCast est un exemple de bout en bout conçu pour présenter le système Fluent Design ainsi que d’autres fonctionnalités de la plateforme Windows universelle. Il permet de parcourir, de télécharger et de lire des podcasts vidéo sélectionnés, notamment un échantillon des plus populaires issus de Channel9 et des fils de quelques amateurs de Windows férus de technologie. Il offre également la prise de notes manuscrites, des signets et la lecture à distance. Cet exemple a été initialement présenté lors de la conférence Build2017, pendant l'intervention <a href="https://channel9.msdn.com/Events/Build/2017/B8034">Créer des applications exceptionnelles avec Fluent Design</a>. <br>
+BuildCast est un exemple de bout en bout conçu pour présenter le système Fluent Design et UWP. Il permet de parcourir, de télécharger et de lire des podcasts vidéo sélectionnés, notamment un échantillon des plus populaires issus de Channel9 et des fils de quelques amateurs de Windows férus de technologie. Il offre également la prise de notes manuscrites, des signets et la lecture à distance. Cet exemple a été initialement présenté lors de la conférence Build2017, pendant l'intervention <a href="https://channel9.msdn.com/Events/Build/2017/B8034">Créer des applications exceptionnelles avec Fluent Design</a>. <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">Télécharger l’exemple BuildCast</a> <br><a href="https://github.com/Microsoft/BuildCast">Découvrir l'exemple BuildCast sur GitHub</a>
 
 ![Déjeuner planificateur](images/lunchscheduler.png)

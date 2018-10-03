@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, iap, achat in-app, produit in-app, soumission iap
 ms.localizationpriority: medium
 ms.openlocfilehash: 37d05722578ed945fbf75040f96360bb569c6d06
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212321"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261870"
 ---
 # <a name="add-on-submissions"></a>Soumissions d'extensions
 

@@ -5,7 +5,7 @@ title: Menus et menus contextuels
 label: Menus and context menus
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 07/19/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,17 +16,14 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 703667bf22ce11c119463008e868a943d447c7ff
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 20b6f54f39be116ad77cb5a179ff8c3d188eb8c4
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211545"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4264298"
 ---
 # <a name="menus-and-context-menus"></a>Menus et menus contextuels
-
-> [!IMPORTANT]
-> Cet article décrit des fonctionnalités qui n’ont pas encore été publiées et sont susceptibles d’être considérablement modifiées d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici. Fonctionnalités d’aperçu nécessitent [dernière build Windows 10 Insider Preview et Kit de développement](https://insider.windows.com/for-developers/) ou la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 Les menus et les menus contextuels affichent une liste de commandes ou d’options lorsque l’utilisateur les demande. Utilisez un menu volant pour afficher un seul, menu inline. Utilisez une barre de menus pour afficher un ensemble de menus dans une ligne horizontale, généralement en haut d’une fenêtre d’application. Chaque menu peut avoir des sous-menus et des éléments de menu.
 
@@ -54,7 +51,7 @@ Pour afficher un ensemble de plusieurs menus de niveau supérieur dans une ligne
 
 ### <a name="menubar-vs-commandbar"></a>Barre de menus VS CommandBar
 
-Barre de menus et CommandBar tous deux représentent des surfaces que vous pouvez utiliser pour exposer des commandes à vos utilisateurs. La barre de menus fournit un moyen simple et rapide pour exposer un ensemble de commandes pour les applications qui peuvent requérir plus organisation ou regroupement, puis permet à un contrôle CommandBar.
+Barre de menus et CommandBar tous deux représentent des surfaces que vous pouvez utiliser pour exposer des commandes à vos utilisateurs. La barre de menus fournit un moyen simple et rapide pour exposer un ensemble de commandes pour les applications qui peuvent requérir plus organisation ou regroupement que permet un contrôle CommandBar.
 
 Vous pouvez également utiliser une barre de menus en conjonction avec un contrôle CommandBar. Utilisez la barre de menus pour fournir la majeure partie des commandes et de la classe CommandBar pour mettre en évidence les commandes les plus utilisées.
 

@@ -5,7 +5,7 @@ title: Zone de liste déroulante (zone de liste déroulante)
 label: Combo box
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 05/19/2017
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,17 +14,14 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f7592f584227d9b3a93a0ef4cea3ce53cd203ea
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 518ce49ddb631e3e914a6c7662b4e74de247c29c
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205017"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259738"
 ---
 # <a name="combo-box"></a>Zone de liste modifiable
-
-> [!IMPORTANT]
-> Cet article décrit des fonctionnalités qui n’ont pas encore été publiées et sont susceptibles d’être considérablement modifiées d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.
 
 Utilisez une zone de liste déroulante (également appelé une liste déroulante) pour présenter une liste d’éléments qu’un utilisateur peut sélectionner à partir de. Une zone de liste déroulante démarre dans un état compact et se développe pour afficher une liste d’éléments sélectionnables.
 

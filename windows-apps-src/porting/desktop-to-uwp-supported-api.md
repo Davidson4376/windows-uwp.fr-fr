@@ -11,14 +11,14 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
-ms.openlocfilehash: 8562059fb8a786882a91404f513f2b0c8cdbacd6
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: c39301c37c83f57a67dca35c3628bd9f3eda2583
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691448"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4262130"
 ---
-# <a name="uwp-apis-available-to-a-packaged-desktop-app-desktop-bridge"></a>API UWP disponibles pour une application de bureau empaquetée (Pont du bureau)
+# <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>API UWP disponibles pour une application de bureau empaquetée
 
 Les applications de bureau empaquetées peuvent utiliser un large éventail d’API de la plateforme Windows universelle (UWP), ce même si elles n’ont pas été entièrement converties en applications UWP. Cet article répertorie les classes disponibles que votre application empaquetée peut utiliser.
 

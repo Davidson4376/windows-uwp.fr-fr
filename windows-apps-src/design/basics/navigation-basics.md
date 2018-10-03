@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b731910f53a6152554b74e946374234b827f4a86
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209939"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263866"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de la navigation pour les applications UWP
 
@@ -30,7 +30,7 @@ Nous avons un nombre considérable de choix à faire pour la navigation. Par exe
 
 :::row:::
     :::column:::
-        ![exemple de navigation 1](images/nav/nav-1.svg)
+        ![navigation example 1](images/nav/nav-1.svg)
 
         Require users to go through a series of pages in order.
     :::column-end:::
@@ -70,7 +70,7 @@ Un recours moins large aux éléments de navigation simplifie la prise de décis
 
 :::row:::
     :::column:::
-        ![exemple faire](images/nav/do.svg)
+        ![do example](images/nav/do.svg)
 
         ![navview good](images/nav/navview-good.svg)
 
@@ -109,28 +109,28 @@ Maintenant que vous êtes familiarisé avec les principes de navigation généra
 
 :::row:::
     :::column:::
-        ![Pages organisées dans une structure plate](images/nav/flat-lateral-structure.svg)
+        ![Pages arranged in a flat structure](images/nav/flat-lateral-structure.svg)
     :::column-end:::
-    ::: column span = «2»:::
+    :::column span="2":::
         ### Flat/lateral
 
         In a flat/lateral structure, pages exist side-by-side. You can go from one page to another in any order.
 
         We recommend using a flat structure when:
 
-        - The pages can be viewed in any order.
-        - The pages are clearly distinct from each other and don't have an obvious parent/child relationship.
-        - There are less than 8 pages in the group. <br>
-        (When there are more pages, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups.)
+        - Les pages peuvent être affichées dans n’importe quel ordre.
+        - Les pages sont clairement distinctes les unes des autres et n’ont aucune relation parent/enfant évidente.
+        - Il existe moins de 8 pages du groupe. <br>
+        (S’il y a plus de pages, il peut être difficile pour les utilisateurs de comprendre dans quelle mesure les pages sont uniques ou de connaître leur emplacement actuel au sein du groupe. Si vous ne pensez pas que ce soit un problème pour votre application, lancez-vous et faites des pages des homologues. Sinon, envisagez d’utiliser une structure hiérarchique pour répartir les pages en deux groupes au moins plus petits.)
 
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Pages organisées dans une hiérarchie](images/nav/hierarchical-structure.svg)
+        ![Pages arranged in a hierarchy](images/nav/hierarchical-structure.svg)
     :::column-end:::
-    ::: column span = «2»:::
+    :::column span="2":::
         ### Hierarchical
 
         In a hierarchical structure, pages are organized into a tree-like structure. Each child page has one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent.
@@ -139,26 +139,26 @@ Maintenant que vous êtes familiarisé avec les principes de navigation généra
 
         We recommend a hierarchical structure when:
         
-        - Pages should be traversed in a specific order.
-        - There is a clear parent-child relationship between pages.
-        - There are more than 7 pages in the group.
+        - Les pages doivent être parcourues dans un ordre spécifique.
+        - Il existe une relation parent-enfant claire entre les pages.
+        - Le groupe contient plus de 7pages.
         
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![application à structure hybride](images/nav/combining-structures.svg)
+        ![an app with a hybrid structure](images/nav/combining-structures.svg)
     :::column-end:::
-    ::: column span = «2»:::
+    :::column span="2":::
         ### Combining structures
 
         You don't have choose to one structure or the other; many well-design apps use both. An app can use flat structures for top-level pages that can be viewed in any order, and hierarchical structures for pages that have more complex relationships.
 
         If your navigation structure has multiple levels, we recommend that peer-to-peer navigation elements only link to the peers within their current subtree. Consider the adjacent illustration, which shows a navigation structure that has two levels:
 
-        - At level 1, the peer-to-peer navigation element should provide access to pages A, B, C, and D.
-        - At level 2, the peer-to-peer navigation elements for the A2 pages should only link to the other A2 pages. They should not link to level 2 pages in the C subtree.
+        - Au niveau1, l’élément de navigation pair à pair doit donner accès aux pagesA, B, C etD.
+        - Au niveau2, les éléments de navigation pair à pair des pagesA2 doivent uniquement être liés aux autres pagesA2. Ils ne doivent pas renvoyer aux pages de niveau2 de la sous-arborescenceC.
     :::column-end:::
 :::row-end:::
 
@@ -168,67 +168,72 @@ Une fois que vous avez choisi votre structure de page, vous devez déterminer co
 
 :::row:::
     :::column:::
-        ![Image de cadre](images/nav/thumbnail-frame.svg)
+        ![Frame image](images/nav/thumbnail-frame.svg)
     :::column-end:::
-    ::: column span = «2»::: [ **Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
+    :::column span="2":::
+        [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
         With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![image d’onglets et pivot](images/nav/thumbnail-tabs-pivot.svg)
+        ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
-    ::: column span = «2»::: [ **d’onglets et de navigation supérieur**](../controls-and-patterns/navigationview.md)
+    :::column span="2":::
+        [**Top navigation and tabs**](../controls-and-patterns/navigationview.md)
 
         Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs patterns.
         
         Use top navigation when:
 
-        - You want to show all navigation options on the screen.
-        - You desire more space for your app's content.
-        - Icons cannot clearly describe your navigation categories.
+        - Vous souhaitez afficher toutes les options de navigation à l’écran.
+        - Votre choix davantage d’espace pour le contenu de votre application.
+        - Les icônes ne peuvent pas décrivent clairement vos catégories de navigation.
         
-        Use tabs when:
+        Utilisez les onglets lorsque:
 
-        - You want to preserve navigation history and page state.
-        - You expect users to switch between tabs frequently.
+        - Vous souhaitez conserver l’état de la page et l’historique de navigation.
+        - Vous pensez que les utilisateurs passeront fréquemment des onglets.
 
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![image de navview](images/nav/thumbnail-navview.svg)
+        ![navview image](images/nav/thumbnail-navview.svg)
     :::column-end:::
-    ::: column span = «2»::: [ **navigation de gauche**](../controls-and-patterns/navigationview.md)
+    :::column span="2":::
+        [**Left navigation**](../controls-and-patterns/navigationview.md)
 
         Displays a vertical list of links to top-level pages. Use when:
         
-        - The pages exist at the top level.
-        - There are many navigation items (more than 5)
-        - You don't expect users to switch between pages frequently.
+        - Les pages se trouvent au niveau supérieur.
+        - Il existe de nombreux éléments de navigation (plus de 5)
+        - Vous ne pensez pas que les utilisateurs passeront fréquemment d’une page à l’autre.
         
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Image de maître / détails](images/nav/thumbnail-master-detail.svg)
+        ![Master details image](images/nav/thumbnail-master-detail.svg)
     :::column-end:::
-    ::: column span = «2»::: [ **maître/détails**](../controls-and-patterns/master-details.md)
+    :::column span="2":::
+        [**Master/details**](../controls-and-patterns/master-details.md)
 
         Displays a list (master view) of items. Selecting an item displays its corresponding page in the details section. Use when:
         
-        - You expect users to switch between child items frequently.
-        - You want to enable the user to perform high-level operations, such as deleting or sorting, on individual items or groups of items, and also want to enable the user to view or update the details for each item.
+        - Vous pensez que les utilisateurs passeront fréquemment d’un élément enfant à un autre.
+        - Vous voulez permettre à l’utilisateur d’effectuer des opérations générales, comme la suppression ou le tri, sur des éléments individuels ou des groupes d’éléments. Vous voulez également lui permettre d’afficher ou de mettre à jour les détails de chaque élément.
 
-        Master/details is well suited for email inboxes, contact lists, and data entry.
+        Les éléments maîtres/détails sont particulièrement bien adaptés aux boîtes de réception, aux listes de contacts et à l’entrée de données.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Image de liens hypertexte et boutons](images/nav/thumbnail-hyperlinks-buttons.svg)
+        ![Hyperlinks and buttons image](images/nav/thumbnail-hyperlinks-buttons.svg)
     :::column-end:::
-    ::: column span = «2»::: [ **liens hypertexte**](../controls-and-patterns/hyperlinks.md)
+    :::column span="2":::
+        [**Hyperlinks**](../controls-and-patterns/hyperlinks.md)
 
         Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
 :::row-end:::

@@ -4,23 +4,23 @@ Description: This article contains known issues with the Desktop Bridge.
 Search.Product: eADQiWindows 10XVcnh
 title: Problèmes connus (Pont du bureau)
 ms.author: normesta
-ms.date: 05/18/2018
+ms.date: 06/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: 76ff4fb4b7933c54e5137507e7996eefa7b46d5a
-ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
-ms.translationtype: HT
+ms.openlocfilehash: 50a455dc43007a433bfabd995af7968e93fe1900
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "1905380"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263876"
 ---
-# <a name="known-issues-desktop-bridge"></a>Problèmes connus (Pont du bureau)
+# <a name="known-issues-with-packaged-desktop-applications"></a>Problèmes connus avec les applications de bureau empaquetées
 
-Cet article présente les problèmes connus liés au Pont du bureau.
+Cet article présente les problèmes pouvant se produire lorsque vous créez un package d’application Windows pour votre application de bureau.
 
 <a id="app-converter" />
 
@@ -38,7 +38,7 @@ Vous pouvez être confronté à cette erreur lorsque vous configurez une nouvell
 
 Pour résoudre ce problème, essayez d’exécuter la commande `Netsh int ipv4 reset` depuis une invite de commandes aux privilèges élevés, puis redémarrez votre machine.
 
-### <a name="your-net-app-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>Votre application .NET est compilée avec l’option de build «AnyCPU» et ne parvient pas à s’installer
+### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>Votre application .NET est compilée avec l’option de build «AnyCPU» et ne parvient pas à installer
 
 Cela peut se produire si le fichier exécutable principal ou l’une de ses dépendances ont été placés n’importe où dans la hiérarchie de dossiers **Programmes** ou **Windows\System32**.
 
@@ -56,7 +56,7 @@ Il s’agit d’une limitation connue et il n’existe actuellement aucune solut
 
 Cela peut se produire si les fichiers exécutables de votre application ont une extension **. EXE** en majuscules. Bien que la casse de cette extension n’affecte l’exécution de votre application, cela peut amener le DAC à générer cette erreur.
 
-Pour résoudre ce problème, essayez de spécifier l’indicateur **-AppExecutable** lors de la création de package et utilisez les minuscules «.exe» comme extension de votre fichier exécutable principal (par exemple: MONAPP.exe).    Par ailleurs, vous pouvez modifier la casse de tous les fichiers exécutables de votre application et passer de minuscules en majuscules (par exemple: de .EXE vers .exe).
+Pour résoudre ce problème, essayez de spécifier l’indicateur **-AppExecutable** lors de la création de package et utilisez les minuscules «.exe» comme extension de votre fichier exécutable principal (par exemple: MONAPP.exe).    Par ailleurs, vous pouvez modifier la casse de tous les fichiers exécutables dans votre application à partir de minuscules en majuscules (par exemple: à partir de. EXE vers .exe).
 
 ### <a name="corrupted-or-malformed-authenticode-signatures"></a>Signatures Authenticode endommagées ou mal formées
 
@@ -95,7 +95,7 @@ La [mise à jour de Windows (version 14393.351 - KB3197954)](https://support.mic
 
 Si la mise à jour ne résout pas le problème ou si vous ne savez pas vraiment comment récupérer votre ordinateur, contactez le [Support Microsoft](https://support.microsoft.com/contactus/).
 
-Si vous êtes développeur, vous ne voulez peut-être pas que votre application empaquetée soit installée sur des versions de Windows n’incluant pas cette mise à jour. Notez que dans ce cas, votre application n’est pas disponible pour les utilisateurs n’ayant pas encore installé la mise à jour. Pour limiter la disponibilité de votre application aux utilisateurs qui ont installé cette mise à jour, modifiez le fichier AppxManifest.xml comme suit:
+Si vous êtes développeur, vous ne voulez peut-être pas que votre application empaquetée soit installée sur des versions de Windows n’incluant pas cette mise à jour. Notez que dans ce cas, votre application ne sera pas disponible pour les utilisateurs qui n’ont pas encore installé la mise à jour. Pour limiter la disponibilité de votre application aux utilisateurs qui ont installé cette mise à jour, modifiez le fichier AppxManifest.xml comme suit:
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -129,6 +129,41 @@ Exécutez **certutil** à partir de la ligne de commande sur le fichierPFX, puis
 certutil -dump <cert_file.pfx>
 ```
 
+<a id="bad-pe-cert" />
+
+### <a name="bad-pe-certificate-0x800700c1"></a>Certificat PE incorrect (0x800700C1)
+
+Cela peut se produire lorsque votre package contient un fichier binaire qui dispose d’un certificat endommagé. Voici quelques raisons pourquoi cela peut se produire:
+
+* Le début du certificat n’est pas à la fin d’une image.  
+
+* La taille du certificat n’est pas positive.
+
+* L’écran de démarrage de certificat n’est pas après le `IMAGE_NT_HEADERS32` structure pour un exécutable 32 bits ou après le `IMAGE_NT_HEADERS64` structure pour un exécutable 64 bits.
+
+* Le pointeur de certificat n’est pas correctement aligné pour une structure WIN_CERTIFICATE.
+
+Pour rechercher des fichiers qui contiennent un certificat PE incorrect, ouvrez une **invite de commandes**et définissez la variable d’environnement nommée `APPXSIP_LOG` sur une valeur égale à 1.
+
+```
+set APPXSIP_LOG=1
+```
+
+Ensuite, à partir de l' **invite de commandes**, vous devez signer votre application à nouveau. Exemple :
+
+```
+signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
+```
+
+Informations sur les fichiers qui contiennent un certificat PE incorrect seront affiche dans la **Fenêtre de Console**. Exemple :
+
+```
+...
+
+ERROR: [AppxSipCustomLoggerCallback] File has malformed certificate: uninstall.exe
+
+...   
+```
 ## <a name="next-steps"></a>Étapes suivantes
 
 **Trouvez des réponses à vos questions**

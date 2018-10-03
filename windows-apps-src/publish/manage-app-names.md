@@ -4,22 +4,25 @@ Description: View the names that you've reserved for your app, reserve additiona
 title: Gestion des noms d’application
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
 ms.author: wdg-dev-content
-ms.date: 8/07/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, noms d’application, modifiez le nom de l’application, nom de l’application mise à jour, jeu, nom de produit
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d2c6f72e2f69f0b768af55f9bddeb9bb008027
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 878b105541691834dbbe35b5210f33045afdc47b
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206485"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258532"
 ---
 # <a name="manage-app-names"></a>Gestion des noms d’application
 
 Le permet de **gérer des noms d’application** vous permet d’afficher tous les noms que vous avez réservés pour votre application, réserver des noms supplémentaires (pour d’autres langues ou pour modifier le nom de votre application) et supprimer des noms que vous n’avez pas besoin. Vous trouverez cette page dans le [tableau de bord du centre de développement Windows](https://partner.microsoft.com/dashboard) , développez la section **Gestion des applications** dans le menu de navigation de gauche pour vos applications.
+
+> [!IMPORTANT]
+> Vous pouvez réserver des noms supplémentaires pour une application, et vous pouvez choisir d’utiliser un de ces éléments dans la version publiée de votre application au lieu de celui que vous avez réservé lorsque vous avez créé tout d’abord votre application dans le tableau de bord. Toutefois, n’oubliez pas que le premier nom que vous réservez pour votre produit servira dans certains de votre service informatique d' [informations d’identité](view-app-identity-details.md), par exemple, le **Nom de famille du Package (PFN)**. Ces valeurs peuvent être visibles par certains utilisateurs et ne peut pas être modifiée, par conséquent, assurez-vous que le nom réservé tout d’abord est approprié pour cette utilisation.
 
 
 ## <a name="reserve-additional-names-for-your-app"></a>Réserver des noms supplémentaires pour votre application

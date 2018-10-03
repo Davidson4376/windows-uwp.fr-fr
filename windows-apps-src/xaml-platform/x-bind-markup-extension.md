@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: Au lieu de recourir à la méthode Binding, vous pouvez utiliser l’extension de balisage xBind. Celle-ci n’offre pas certaines des fonctionnalités de Binding, mais elle s’exécute en moins de temps et en utilisant moins de mémoire que Binding, et prend mieux en charge le débogage.
+description: L’extension de balisage est une alternative hautes performances à la liaison. xBind - nouveaux pour Windows 10 - s’exécute en moins de temps et en utilisant moins de mémoire que Binding et prend en charge une meilleure le débogage.
 title: Extension de balisage xBind
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -10,18 +10,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 340f8e72c5015fad341810ef335dea73f77fc82f
-ms.sourcegitcommit: b8c77ac8e40a27cf762328d730c121c28de5fbc4
-ms.translationtype: HT
+ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2018
-ms.locfileid: "1672886"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261486"
 ---
 # <a name="xbind-markup-extension"></a>Extension de balisage {x:Bind}
 
 **Remarque**  Pour plus d’informations sur l’utilisation de la liaison de données dans votre application avec **{x:Bind}** (et pour une comparaison entre **{x:Bind}** et **{Binding}**), voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
-L’extension de balisage **{x:Bind}**, nouveauté de Windows10, peut être utilisée en remplacement de la méthode **{Binding}**. L’extension de balisage **{x:Bind}** n’offre pas certaines des fonctionnalités de **{Binding}**, mais elle s’exécute en moins de temps et en utilisant moins de mémoire que **{Binding}**, et prend mieux en charge le débogage.
+L’extension de balisage **{x:Bind}**, nouveauté de Windows10, peut être utilisée en remplacement de la méthode **{Binding}**. **{x: Bind}** s’exécute en moins de temps et en utilisant moins de mémoire que **{Binding}** et prend en charge le débogage de mieux.
 
 Lors de la compilation du XAML, l’extension de balisage **{x: Bind}** est convertie en code qui récupère une valeur à partir d’une propriété sur une source de données et la définit sur la propriété spécifiée dans le balisage. L’objet de liaison peut éventuellement être configuré pour observer les modifications de la valeur de la propriété de source de données, et s’actualiser en fonction de ces modifications (`Mode="OneWay"`). Il peut également être configuré pour renvoyer les modifications dans sa propre valeur à la propriété source (`Mode="TwoWay"`).
 
@@ -46,6 +46,8 @@ Les objets de liaison créés par **{x:Bind}** et **{Binding}** sont en grande p
 <object property="{x:Bind bindingProperties}" .../>
 -or-
 <object property="{x:Bind propertyPath, bindingProperties}" .../>
+-or-
+<object property="{x:Bind pathToFunction.functionName(functionParameter1, functionParameter2, ...), bindingProperties}" .../>
 ```
 
 | Terme | Description |
@@ -55,6 +57,25 @@ Les objets de liaison créés par **{x:Bind}** et **{Binding}** sont en grande p
 | _propName_=_value_\[, _propName_=_value_\]* | Une ou plusieurs propriétés de liaison spécifiées à l’aide d’une syntaxe constituée d’une ou plusieurs paires nom/valeur. |
 | _propName_ | Nom de chaîne de la propriété à définir sur l’objet de liaison. Par exemple, «Converter». |
 | _value_ | Valeur à attribuer à la propriété. La syntaxe de l’argument dépend de la propriété définie. Voici un exemple d’utilisation de _propName_=_value_ dans lequel la valeur est elle-même une extension de balisage : `Converter={StaticResource myConverterClass}`. Pour plus d’informations, voir la section [Propriétés que vous pouvez définir avec {x:Bind}](#properties-you-can-set) ci-dessous. |
+
+## <a name="examples"></a>Exemples
+
+```XAML
+<Page x:Class="QuizGame.View.HostView" ... >
+    <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
+</Page>
+```
+
+Cet exemple de XAML utilise **{x:Bind}** avec une propriété **ListView.ItemTemplate**. Notez la déclaration d’une valeur **x:DataType**.
+
+```XAML
+  <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
+    <StackPanel Orientation="Vertical" Height="50">
+      <TextBlock Text="{x:Bind Title}"/>
+      <TextBlock Text="{x:Bind Description}"/>
+    </StackPanel>
+  </DataTemplate>
+```
 
 ## <a name="property-path"></a>Chemin de propriété
 
@@ -68,7 +89,8 @@ Par exemple : dans une page, **Text="{x:Bind Employee.FirstName}"** recherche un
 
 Pour C++ / CX, **{x:Bind}** ne peut pas effectuer de liaison à des champs et propriétés privés dans la page ou le modèle de données. Vous devez avoir une propriété publique pour que la liaison soit possible. La surface d’exposition pour la liaison doit être exposée en tant que classes/interfaces CX pour que nous puissions obtenir les métadonnées pertinentes. L’attribut **\[Bindable\]** ne doit pas être nécessaire.
 
-Avec **x:Bind**, vous n’avez pas besoin d’utiliser **ElementName=xxx** dans l’expression de liaison. Avec **x:Bind**, vous pouvez utiliser le nom de l’élément comme première partie du chemin pour la liaison, car les éléments nommés deviennent des champs à l’intérieur du contrôle de page ou d’utilisateur qui représente la source de liaison racine.
+Avec **x:Bind**, vous n’avez pas besoin d’utiliser **ElementName=xxx** dans l’expression de liaison. Au lieu de cela, vous pouvez utiliser le nom de l’élément en tant que la première partie du chemin d’accès de la liaison dans la mesure où les éléments nommés deviennent des champs à l’intérieur du contrôle de page ou d’utilisateur qui représente la source de liaison racine. 
+
 
 ### <a name="collections"></a>Collections
 
@@ -93,78 +115,7 @@ _Remarque: la syntaxe de cast de type C# est plus souple que la syntaxe de propr
 
 ## <a name="functions-in-binding-paths"></a>Fonctions dans les chemins de liaison
 
-À compter de Windows10, version1607, **{x: Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Cela offre les avantages suivants:
-
-- Facilite la conversion de valeur
-- Permet aux liaisons de dépendre de plus d’un paramètre
-
-> [!NOTE]
-> Pour utiliser des fonctions avec **{x:Bind}**, la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas utiliser des fonctions si votre application cible des versions antérieures de Windows10. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
-
-Dans l’exemple suivant, l’arrière-plan et le premier plan de l’élément sont liés à des fonctions de conversion reposant sur le paramètre de couleur:
-
-```xaml
-<DataTemplate x:DataType="local:ColorEntry">
-    <Grid Background="{x:Bind local:ColorEntry.Brushify(Color)}" Width="240">
-        <TextBlock Text="{x:Bind ColorName}" Foreground="{x:Bind TextColor(Color)}" Margin="10,5" />
-    </Grid>
-</DataTemplate>
-```
-
-```csharp
-class ColorEntry
-{
-    public string ColorName { get; set; }
-    public Color Color { get; set; }
-
-    public static SolidColorBrush Brushify(Color c)
-    {
-        return new SolidColorBrush(c);
-    }
-
-    public SolidColorBrush TextColor(Color c)
-    {
-        return new SolidColorBrush(((c.R * 0.299 + c.G * 0.587 + c.B * 0.114) > 150) ? Colors.Black : Colors.White);
-    }
-}
-
-```
-
-### <a name="function-syntax"></a>Syntaxe de la fonction
-
-``` Syntax
-Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Order.ShipAddr.Zip, 'Contoso'), Mode=OneTime}"
-             |      Path to function         |    Path argument   |       Path argument       | Const arg |  Bind Props
-```
-
-### <a name="path-to-the-function"></a>Chemin de la fonction
-
-Le chemin de la fonction est spécifié comme tout autre chemin de propriété et peut inclure des points (.), des indexeurs ou des casts pour localiser la fonction.
-
-Des fonctions statiques peuvent être spécifiées en utilisant la syntaxe XMLNamespace:ClassName.MethodName. Par exemple, **&lt;CalendarDatePicker Date="\{x:Bind sys:DateTime.Parse(TextBlock1.Text)\}" /&gt;** sera mappé à la fonction DateTime.Parse, en supposant que **xmlns:sys="using:System"** soit spécifié en haut de la page.
-
-Si le mode est OneWay/TwoWay, la détection de modification est réalisée sur le chemin de la fonction et la liaison est réévaluée si des modifications sont apportées à ces objets.
-
-La fonction en cours de liaison doit:
-
-- Être accessible par le code et les métadonnées (donc travail interne/privée dans C#), mais C++/CX aura besoin de méthodes qui soient des méthodes WinRT publiques.
-- La surcharge repose sur le nombre d’arguments, pas sur le type; la fonction essaiera de trouver une correspondance avec la première surcharge présentant ces nombreux arguments.
-- Les types d’arguments doivent correspondre aux données transmises. Nous ne faisons pas de conversions restrictives.
-- Le type de retour de la fonction doit correspondre au type de la propriété qui utilise la liaison.
-
-### <a name="function-arguments"></a>Arguments de la fonction
-
-Plusieurs arguments peuvent être spécifiés dans la fonction. Ils sont séparés par une virgule (,).
-
-- Chemin de liaison. Même syntaxe que si vous établissiez une liaison directement à cet objet.
-  - Si le mode est OneWay/TwoWay, la détection de modification sera réalisée et la liaison réévaluée lors des modifications de l’objet.
-- Chaîne de constante entourée de guillemets (les guillemets sont nécessaires pour la désigner comme chaîne). L’accent circonflexe (^) peut être utilisé comme caractère d’échappement des guillemets dans les chaînes.
-- Numéro de constante. Par exemple, 123.456
-- Valeur booléenne. Sous la forme «x: True» ou «x: False»
-
-### <a name="two-way-function-bindings"></a>Liaisons de fonctions bidirectionnelles
-
-Dans un scénario de liaison bidirectionnelle, une deuxième fonction doit être spécifiée pour la direction inverse de la liaison. Cette opération est réalisée à l’aide de la propriété de liaison **BindBack**, par exemple **Text="\{x:Bind a.MaFonc(b), BindBack=a.MaFonc2\}"**. La fonction doit prendre un seul argument, qui est la valeur qui doit être transmises en retour au modèle.
+À compter de Windows10, version1607, **{x: Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Il s’agit d’une fonctionnalité puissante de liaison de données qui permet à plusieurs scénarios dans le balisage. [Liaisons de fonction](../data-binding/function-bindings.md) pour plus d’informations, voir.
 
 ## <a name="event-binding"></a>Liaison d’événement
 
@@ -226,21 +177,3 @@ Le code généré des pages et des contrôles utilisateur incluant des liaisons 
 
 **{x:Bind}** est uniquement une extension de balisage. Il n’existe aucun moyen de créer ou manipuler de telles liaisons par programmation. Pour plus d’informations sur les extensions de balisage, voir [Vue d’ensemble du langage XAML](xaml-overview.md).
 
-## <a name="examples"></a>Exemples
-
-```XML
-<Page x:Class="QuizGame.View.HostView" ... >
-    <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
-</Page>
-```
-
-Cet exemple de XAML utilise **{x:Bind}** avec une propriété **ListView.ItemTemplate**. Notez la déclaration d’une valeur **x:DataType**.
-
-```XML
-  <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
-    <StackPanel Orientation="Vertical" Height="50">
-      <TextBlock Text="{x:Bind Title}"/>
-      <TextBlock Text="{x:Bind Description}"/>
-    </StackPanel>
-  </DataTemplate>
-```

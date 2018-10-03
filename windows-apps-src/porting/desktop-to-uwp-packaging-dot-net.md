@@ -1,8 +1,8 @@
 ---
 author: normesta
-Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop app for the Desktop Bridge.
+Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop application.
 Search.Product: eADQiWindows 10XVcnh
-title: Créer un package d'application à l’aide de Visual Studio (Pont du bureau)
+title: Créer un package une application de bureau à l’aide de Visual Studio
 ms.author: normesta
 ms.date: 08/30/2017
 ms.topic: article
@@ -11,25 +11,25 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 75f7ff53aeffced746e78d8b27243469dc547097
-ms.sourcegitcommit: 6382f751f09e2f4aa8406c1ceeb25b5189e23da3
+ms.openlocfilehash: 2c9b7a30a50c26d2dbdaf6df04e85549addaf181
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "2410706"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259808"
 ---
-# <a name="package-an-app-by-using-visual-studio-desktop-bridge"></a>Créer un package d'application à l’aide de Visual Studio (Pont du bureau)
+# <a name="package-a-desktop-application-by-using-visual-studio"></a>Créer un package une application de bureau à l’aide de Visual Studio
 
 Vous pouvez utiliser Visual Studio pour générer un package de votre application de bureau. Vous pouvez ensuite publier ce package sur le Store ou le charger de manière indépendante sur un ou plusieurs ordinateurs.
 
 La dernière version de Visual Studio fournit une nouvelle version projet de création de packages qui élimine toutes les étapes manuelles autrefois nécessaires pour mettre en package votre application Il suffit d’ajouter un projet de création de packages, de référencer votre projet d'application de bureau, puis d'appuyer sur F5 pour déboguer votre application. Plus aucun ajustement n'est nécessaire. Cette nouvelle expérience plus fluide améliore considérable l'expérience de la version précédente de Visual Studio.
 
 >[!IMPORTANT]
->Le Pont du bureau a été introduit dans Windows10, version1607 et peut être utilisé uniquement dans les projets qui ciblent la Mise à jour anniversaire Windows10 (version10.0; build 14393) ou une version ultérieure dans Visual Studio.
+>La possibilité de créer un package d’application Windows pour votre application de bureau (dans le cas contraire, connu sous le pont du bureau, le nom a été introduit dans Windows 10, version 1607, et peut être utilisé uniquement dans les projets qui ciblent la mise à jour anniversaire Windows 10 (version 10.0; Build 14393) ou une version ultérieure dans Visual Studio.
 
 ## <a name="first-prepare-your-application"></a>Tout d'abord, préparez votre application
 
-Passez ce guide en revue avant de commencer à créer un package pour votre application: [Préparer le package d’une application (Pont du bureau)](desktop-to-uwp-prepare.md).
+Consultez ce guide avant de commencer la création d’un package pour votre application: [préparer pour empaqueter une application de bureau](desktop-to-uwp-prepare.md).
 
 <a id="new-packaging-project"/>
 
@@ -83,18 +83,18 @@ Des questions? Contactez-nous sur Stack Overflow. Notre équipe contrôle ces [b
 
 Consultez [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
 
-**Exécuter, déboguer ou tester votre application**
+**Exécuter, déboguer ou tester votre application de bureau**
 
-Consultez [Exécuter, déboguer et tester une application de bureau mise en package (Pont du bureau)](desktop-to-uwp-debug.md)
+Reportez-vous à [Exécuter, déboguer et tester une application de bureau empaquetée](desktop-to-uwp-debug.md)
 
 **Améliorer votre application de bureau en ajoutant des API UWP**
 
 Consultez [Améliorer votre application de bureau pour Windows10](desktop-to-uwp-enhance.md)
 
-**Étendre votre application de bureau en ajoutant des projets UWP et des composants Windows Runtime**
+**Étendre votre application de bureau en ajoutant des projets UWP et composants Windows Runtime**
 
 Consultez [Étendre votre application de bureau avec des composants UWP modernes](desktop-to-uwp-extend.md).
 
 **Distribuer votre application**
 
-Consultez [Distribuer une application de bureau empaquetée (Pont du bureau)](desktop-to-uwp-distribute.md)
+Voir [distribuer une application de bureau empaquetée](desktop-to-uwp-distribute.md)

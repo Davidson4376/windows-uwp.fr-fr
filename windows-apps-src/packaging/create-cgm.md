@@ -4,17 +4,18 @@ ms.assetid: ff2523cb-8109-42be-9dfc-cb5d09002574
 title: Créer et convertir un mappage de groupe de contenu source
 description: Pour préparer votre application de plateforme Windows universelle (UWP) pour l’installation en continu d’une application UWP, vous devez créer un mappage de groupe de contenu. Cet article vous guidera dans les spécificités de la création et la conversion d’un mappage de groupe de contenu tout en vous fournissant des conseils et astuces tout au long du processus.
 ms.author: lahugh
-ms.date: 4/05/2017
+ms.date: 9/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, UWP, mappage de groupe de contenu, installation en continu, installation en continu d’une application UWP, mappage de groupe de contenu source
-ms.openlocfilehash: d27869f349d7ee813c1418cd0d02f82ada05e155
-ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.localizationpriority: medium
+ms.openlocfilehash: 4ce32958d5a99dc9f3f772d6272450a4f2b0f81b
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2017
-ms.locfileid: "617268"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258698"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>Créer et convertir un mappage de groupe de contenu source
 
@@ -26,7 +27,7 @@ Vous devrez créer un fichier `SourceAppxContentGroupMap.xml` et ensuite utilise
 
 Passons en revue un scénario simple dans lequel il peut être avantageux d’utiliser une installation en continu d’une application UWP. 
 
-Supposons que vous avez créé un jeu UWP, mais que la taille de votre application finale est supérieure à 100Go. Le téléchargement à partir du Windows Store prendra un certain temps, ce qui peut s’avérer peu pratique. Si vous choisissez d’utiliser l’installation en continu d’une application UWP, vous pouvez spécifier l’ordre dans lequel les fichiers de votre application sont téléchargés. En indiquant au Windows Store de télécharger les fichiers essentiels en premier, l’utilisateur sera en mesure d’entrer en contact avec votre application plus tôt pendant que le téléchargement des fichiers non essentiels se poursuit en arrière-plan.
+Supposons que vous avez créé un jeu UWP, mais que la taille de votre application finale est supérieure à 100Go. Qui va prendre un certain temps à télécharger à partir du Microsoft Store, ce qui peut s’avérer peu pratique. Si vous choisissez d’utiliser l’installation en continu d’une application UWP, vous pouvez spécifier l’ordre dans lequel les fichiers de votre application sont téléchargés. En indiquant au Windows Store de télécharger les fichiers essentiels en premier, l’utilisateur sera en mesure d’entrer en contact avec votre application plus tôt pendant que le téléchargement des fichiers non essentiels se poursuit en arrière-plan.
 
 > [!NOTE]
 > L’utilisation de l’installation en continu d’une application UWP repose principalement sur l’organisation des fichiers de votre application. Il est recommandé de penser au plus tôt à la disposition du contenu de votre application lors de l’installation en continu d’une application UWP, pour faciliter la segmentation des fichiers de votre application.
@@ -169,4 +170,4 @@ Pour plus d’informations sur les options que vous pouvez utiliser avec **MakeA
 MakeAppx convertCGM /?
 ```
 
-C’est tout ce dont vous avez besoin pour obtenir votre fichier `AppxContentGroupMap.xml` final et prêt pour votre application! Il reste des opérations à effectuer avant que votre application ne soit entièrement prête pour le Windows Store. Pour plus d’informations sur l’ensemble du processus d’ajout d’une installation en continu d’une application UWP à votre application, consultez [ce billet de blog](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/).
+C’est tout ce dont vous avez besoin pour obtenir votre fichier `AppxContentGroupMap.xml` final et prêt pour votre application! Il est encore plus à faire avant que votre application soit entièrement prête pour le Microsoft Store. Pour plus d’informations sur l’ensemble du processus d’ajout d’une installation en continu d’une application UWP à votre application, consultez [ce billet de blog](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/).

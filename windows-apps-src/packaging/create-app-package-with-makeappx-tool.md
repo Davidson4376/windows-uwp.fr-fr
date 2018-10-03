@@ -3,19 +3,19 @@ author: laurenhughes
 title: Créer un package d’application avec l’outil MakeAppx.exe
 description: MakeAppx.exe crée, chiffre, déchiffre et extrait les fichiers des packages d’applications et des ensembles d’applications.
 ms.author: lahugh
-ms.date: 03/07/2017
+ms.date: 06/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, création de packages
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
-ms.openlocfilehash: 94972915e5fc80a477d8d647212ab3b91e0aa384
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: dbde8f2f11276ded6ad0994a1cd52f7f12de229e
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817790"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4264324"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>Créer un package d’application avec l’outil MakeAppx.exe
 
@@ -25,10 +25,12 @@ L'outil **MakeAppx.exe** crée des packages d’application et des ensembles de 
 > [!IMPORTANT] 
 > Si vous avez utilisé VisualStudio pour développer votre application, nous vous recommandons d’utiliser l’Assistant VisualStudio pour créer votre package d’application. Pour plus d’informations, voir [Créer un package d’application UWP avec VisualStudio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-Notez que **MakeAppx.exe** ne crée pas de fichier .appxupload. Le fichier .appxupload est créé dans le cadre du processus de création de packages VisualStudio et contient deuxautres fichiers: .appx et .appxsym. Le fichier .appxsym est un fichier .pdb compressé contenant les symboles publics de votre application utilisés pour [bloquer l’analyse](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/) dans le centre de développement Windows. Vous pouvez également envoyer un fichier .appx normal, mais aucune information d’incident analytique ou de débogage ne sera disponible. Pour plus d’informations sur l’envoi de packages au Store, consultez [Chargement des packages d’application](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages). 
+Notez que **MakeAppx.exe** ne crée pas de fichier .appxupload. Le fichier .appxupload est créé dans le cadre du processus de création de packages Visual Studio et contient deux autres fichiers: .msix ou .appx et .appxsym. Le fichier .appxsym est un fichier .pdb compressé contenant les symboles publics de votre application utilisés pour [bloquer l’analyse](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/) dans le centre de développement Windows. Vous pouvez également envoyer un fichier .appx normal, mais aucune information d’incident analytique ou de débogage ne sera disponible. Pour plus d’informations sur l’envoi de packages au Store, consultez [Chargement des packages d’application](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages). 
+
+ Mises à jour de cet outil dans la version la plus récente de Windows 10 n’affectent pas l’utilisation de package .appx. Vous pouvez continuer à utiliser cet outil avec des packages .appx, ou utilisez l’outil avec prise en charge pour les packages .msix comme décrit ci-dessous.
 
 Pour créer manuellement un fichier .appxupload:
-- Placez les fichiers .appx et .appxsym dans un dossier.
+- Placez les .msix et .appxsym dans un dossier
 - Compressez le dossier.
 - Remplacez l’extension.zip du dossier compressé par .appxupload.
 
@@ -58,7 +60,6 @@ Le tableau suivant décrit les commandes de **MakeAppx.exe**.
 | unbundle      | Décompresse tous les packages dans un sous-répertoire du chemin de sortie spécifié, correspondant au nom complet de l’ensemble d’application. |
 | encrypt       | Crée un package d’application ou un ensemble d’applications chiffré, à partir du package ou de l’ensemble d’applications d’entrée dans le package ou l’ensemble d’applications de sortie. |
 | decrypt       | Crée un package d’application ou un ensemble d’applications déchiffré, à partir du package ou de l’ensemble d’applications d’entrée dans le package ou l’ensemble d’applications de sortie. |
-| build         |  |
 
 
 Cette liste d’options s’applique à toutes les commandes:
@@ -81,14 +82,14 @@ La liste suivante contient les arguments possibles:
 
 | **Argument**                          | **Description**                       |
 |---------------------------------------|---------------------------------------|
-| &lt;Nom du package de sortie&gt;           | Nom du package créé. C’est le nom du fichier suivi de l’extension.appx. |
-| &lt;Nom du package de sortie chiffré&gt; | Nom du package chiffré créé. C’est le nom du fichier suivi de l’extension.eappx. |
-| &lt;Nom du package d’entrée&gt;            | Nom du package. C’est le nom du fichier suivi de l’extension.appx. |
-| &lt;Nom du package d’entrée chiffré&gt;  | Nom du package chiffré. C’est le nom du fichier suivi de l’extension.eappx. |
-| &lt;Nom de l’ensemble d’applications de sortie&gt;            | Nom de l’ensemble d’applications créé. C’est le nom du fichier suivi de l’extension.appxbundle. |
-| &lt;Nom de l’ensemble d’applications de sortie chiffré&gt;  | Nom de l’ensemble d’applications chiffré créé. C’est le nom du fichier suivi de l’extension.eappxbundle. |
-| &lt;Nom de l’ensemble d’applications d’entrée&gt;             | Nom de l’ensemble d’applications. C’est le nom du fichier suivi de l’extension.appxbundle. |
-| &lt;Nom de l’ensemble d’applications d’entrée chiffré&gt;   | Nom de l’ensemble d’applications chiffré. C’est le nom du fichier suivi de l’extension.eappxbundle. |
+| &lt;Nom du package de sortie&gt;           | Nom du package créé. C’est le nom de fichier, complétée par .msix ou .appx. |
+| &lt;Nom du package de sortie chiffré&gt; | Nom du package chiffré créé. C’est le nom de fichier, complétée par .emsix ou .eappx. |
+| &lt;Nom du package d’entrée&gt;            | Nom du package. C’est le nom de fichier, complétée par .msix ou .appx. |
+| &lt;Nom du package d’entrée chiffré&gt;  | Nom du package chiffré. C’est le nom de fichier, complétée par .emsix ou .eappx. |
+| &lt;Nom de l’ensemble d’applications de sortie&gt;            | Nom de l’ensemble d’applications créé. C’est le nom de fichier, complétée par .msixbundle ou .appxbundle. |
+| &lt;Nom de l’ensemble d’applications de sortie chiffré&gt;  | Nom de l’ensemble d’applications chiffré créé. C’est le nom de fichier, complétée par .emsixbundle ou .eappxbundle. |
+| &lt;Nom de l’ensemble d’applications d’entrée&gt;             | Nom de l’ensemble d’applications. C’est le nom de fichier, complétée par .msixbundle ou .appxbundle. |
+| &lt;Nom de l’ensemble d’applications d’entrée chiffré&gt;   | Nom de l’ensemble d’applications chiffré. C’est le nom de fichier, complétée par .emsixbundle ou .eappxbundle. |
 | &lt;Répertoire de contenu&gt;             | Chemin d’accès au contenu du package d’application ou de l’ensemble d’applications. |
 | &lt;Fichier de mappage&gt;                  | Nom du fichier qui spécifie la source et la cible du package. |
 | &lt;Répertoire de sortie&gt;              | Chemin d’accès au répertoire des packages et ensembles d’applications de sortie. |
@@ -98,7 +99,7 @@ La liste suivante contient les arguments possibles:
 
 ### <a name="create-an-app-package"></a>Créer un package d’application
 
-Un package d’application est un jeu complet des fichiers empaquetés dans un fichier de package.appx. Pour créer un package d’application à l’aide de la commande **pack**, vous devez indiquer un répertoire de contenu ou un fichier de mappage pour l’emplacement du package. Vous pouvez également chiffrer un package lors de sa création. Si vous souhaitez chiffrer le package, vous devez utiliser /ep et indiquer si vous utilisez un fichier de clé (/kf) ou la touche de test global (/kt). Pour plus d’informations sur la création d’un package chiffré, consultez [Chiffrer ou déchiffrer un package ou un ensemble d’applications](#encrypt-or-decrypt-a-package-or-bundle).
+Un package d’application est un ensemble complet de fichiers de l’application empaquetés dans un fichier de package .msix ou .appx. Pour créer un package d’application à l’aide de la commande **pack**, vous devez indiquer un répertoire de contenu ou un fichier de mappage pour l’emplacement du package. Vous pouvez également chiffrer un package lors de sa création. Si vous souhaitez chiffrer le package, vous devez utiliser /ep et indiquer si vous utilisez un fichier de clé (/kf) ou la touche de test global (/kt). Pour plus d’informations sur la création d’un package chiffré, consultez [Chiffrer ou déchiffrer un package ou un ensemble d’applications](#encrypt-or-decrypt-a-package-or-bundle).
 
 Options propres à la commande **pack**:
 
@@ -125,12 +126,12 @@ MakeAppx pack [options] /d <content directory> /ep <encrypted output package nam
 L’exemple suivant montre des exemples de ligne de commande **pack**:
 
 ``` examples
-MakeAppx pack /v /h SHA256 /d "C:\My Files" /p MyPackage.appx
-MakeAppx pack /v /o /f MyMapping.txt /p MyPackage.appx
-MakeAppx pack /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p AppPackage.appx
-MakeAppx pack /r /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p ResourcePackage.appx
-MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.eappx /kf MyKeyFile.txt
-MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.eappx /kt
+MakeAppx pack /v /h SHA256 /d "C:\My Files" /p MyPackage.msix
+MakeAppx pack /v /o /f MyMapping.txt /p MyPackage.msix
+MakeAppx pack /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p AppPackage.msix
+MakeAppx pack /r /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p ResourcePackage.msix
+MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.emsix /kf MyKeyFile.txt
+MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.emsix /kt
 ```
 
 ### <a name="create-an-app-bundle"></a>Créer un ensemble d’applications
@@ -157,10 +158,10 @@ MakeAppx bundle [options] /f <mapping file> /ep <encrypted output bundle name> /
 Le bloc suivant contient des exemples pour la commande **bundle**:
 
 ``` examples
-MakeAppx bundle /v /d "C:\My Files" /p MyBundle.appxbundle
-MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /p MyBundle.appxbundle
-MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.eappxbundle /kf MyKeyFile.txt
-MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.eappxbundle /kt
+MakeAppx bundle /v /d "C:\My Files" /p MyBundle.msixbundle
+MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /p MyBundle.msixbundle
+MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.emsixbundle /kf MyKeyFile.txt
+MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.emsixbundle /kt
 ```
 
 ### <a name="extract-files-from-a-package-or-bundle"></a>Extraire les fichiers d’un package ou d’un ensemble d’applications
@@ -189,13 +190,13 @@ MakeAppx unbundle [options] /ep <encrypted input bundle name> /d <output directo
 Le bloc suivant contient des exemples d’utilisation des commandes **unpack** et **unbundle**:
 
 ``` examples
-MakeAppx unpack /v /p MyPackage.appx /d "C:\My Files"
-MakeAppx unpack /v /ep MyPackage.eappx /d "C:\My Files" /kf MyKeyFile.txt
-MakeAppx unpack /v /ep MyPackage.eappx /d "C:\My Files" /kt
+MakeAppx unpack /v /p MyPackage.msix /d "C:\My Files"
+MakeAppx unpack /v /ep MyPackage.emsix /d "C:\My Files" /kf MyKeyFile.txt
+MakeAppx unpack /v /ep MyPackage.emsix /d "C:\My Files" /kt
 
-MakeAppx unbundle /v /p MyBundle.appxbundle /d "C:\My Files"
-MakeAppx unbundle /v /ep MyBundle.eappxbundle /d "C:\My Files" /kf MyKeyFile.txt
-MakeAppx unbundle /v /ep MyBundle.eappxbundle /d "C:\My Files" /kt
+MakeAppx unbundle /v /p MyBundle.msixbundle /d "C:\My Files"
+MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kf MyKeyFile.txt
+MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kt
 ```
 
 ### <a name="encrypt-or-decrypt-a-package-or-bundle"></a>Chiffrer ou déchiffrer un package ou un ensemble d’applications
@@ -220,31 +221,15 @@ MakeAppx decrypt [options] /ep <package name> /p <output package name> /kf <key 
 MakeAppx decrypt [options] /ep <package name> /p <output package name> /kt
 ```
 
-Le bloc suivant contient des exemples d’utilisation des commandes **chiffrer** et **déchiffrer**:
+Le bloc suivant contient des exemples d’utilisation des commandes **encrypt** et **decrypt**:
 
 ``` examples
-MakeAppx.exe encrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kt
-MakeAppx.exe encrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kf MyKeyFile.txt
+MakeAppx.exe encrypt /p MyPackage.msix /ep MyEncryptedPackage.emsix /kt
+MakeAppx.exe encrypt /p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile.txt
 
-MakeAppx.exe decrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kt
-MakeAppx.exe decrypt p MyPackage.appx /ep MyEncryptedPackage.eappx /kf MyKeyFile.txt
+MakeAppx.exe decrypt /p MyPackage.msix /ep MyEncryptedPackage.emsix /kt
+MakeAppx.exe decrypt p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile.txt
 ```
-
-### <a name="build-an-app-package"></a>Générer un package d’application 
-
-L'outil **MakeAppx.exe** peut générer une application en fonction de son fichier de disposition de package d'application. Pour découvrir comment créer un fichier de disposition de pacage et comment utiliser l'outil **MakeAppx.exe** pour le générer, consultez [Création de package avec disposition de package](packaging-layout.md).  
-
-Options propres à la commande **générer**:
-
-| **Option**    | **Description**                       |
-|---------------|---------------------------------------|
-| /bc           | Spécifie les packages secondaires d’une famille de package à générer.  |
-| /id           | Utilisé pour sélectionner les packages à générer en fonction de l'attribut **ID** du package. |
-| /ip           | Indique l’emplacement des versions précédentes d’un package d’application. |
-| /iv           | Incrémente automatiquement la version des packages en cours de génération. |
-| /f            | Spécifie le fichier de disposition de mise en package. |
-| /nbp          | Indique qu'un package d'application ne doit pas être généré. |
-| /op           | La destination de sortie du package. |
 
 ## <a name="key-files"></a>Fichiers de clé
 

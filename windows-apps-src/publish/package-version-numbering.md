@@ -4,42 +4,39 @@ Description: The Microsoft Store enforces certain rules related to version numbe
 title: Numérotation des versions de packages
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.author: wdg-dev-content
-ms.date: 5/10/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a16339e0918f8291f7b1cc7a3a6dfef3ccf375d
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 7cf93cf06b273605b91c31da5b6a6b8cef8dae39
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207757"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258762"
 ---
 # <a name="package-version-numbering"></a>Numérotation des versions de packages
 
 Chaque package que vous fournissez doit avoir un numéro de version (fourni sous la forme d’une valeur dans l’attribut **Version** de l’élément **Package/Identity** dans le manifeste de l’application). Le MicrosoftStore applique certaines règles relatives aux numéros de version, qui fonctionnent différemment dans les différentes versions du système d’exploitation.
 
 > [!NOTE]
-> Cet article fait référence aux «packages». Toutefois, sauf indication contraire, les mêmes règles s’appliquent aux numéros de version des fichiers.appx et .appxbundle.
+> Cet article fasse référence aux «packages», mais, sauf indication contraire, les mêmes règles s’appliquent aux numéros de version des fichiers.msix/.appx et.msixbundle/.appxbundle.
 
 
 ## <a name="version-numbering-for-windows-10-packages"></a>Numérotation des versions pour les packages Windows10
 
 > [!IMPORTANT]
-> Pour les packages Windows 10, la dernière (quatrième) partie du numéro de version est réservée au Windows Store et vous devez conserver en tant que 0 lorsque vous générez votre package (bien que le Windows Store puisse modifier la valeur de cette section).
+> Pour les packages Windows 10 (UWP), la dernière (quatrième) partie du numéro de version est réservée au Windows Store et vous devez conserver en tant que 0 lorsque vous générez votre package (bien que le Windows Store puisse modifier la valeur de cette section).
 
-Lors du choix d’un package Windows10 à partir de votre soumission publiée, le MicrosoftStore utilise toujours le package dont le numéro de version est le plus élevé et qui s’applique à l’appareil du client. Cela vous offre une plus grande souplesse et vous permet de contrôler les packages fournis aux clients sur des types spécifiques d’appareils. Il est important de noter que vous pouvez soumettre ces packages dans n’importe quel ordre ; vous n’êtes pas obligé de fournir des packages dont le numéro de version est supérieur avec chaque soumission ultérieure.
+Lors du choix d’un package UWP à partir de votre soumission publiée, le Microsoft Store utilise toujours le package présentant la version la plus élevée applicable à l’appareil du client Windows 10. Cela vous offre une plus grande souplesse et vous permet de contrôler les packages fournis aux clients sur des types spécifiques d’appareils. Il est important de noter que vous pouvez soumettre ces packages dans n’importe quel ordre ; vous n’êtes pas obligé de fournir des packages dont le numéro de version est supérieur avec chaque soumission ultérieure.
 
-> [!TIP]
-> Si votre application possède également des packages pour Windows 8, Windows 8.1 et/ou Windows Phone 8.1, le numéro de version de tout package Windows 10 doit toujours être supérieur à aucun des numéros de version dans les packages d’installation. Pour plus d’informations, voir [Ajout de packages pour Windows 10 à une application publiée précédemment](https://docs.microsoft.com/en-us/windows/uwp/publish/guidance-for-app-package-management#adding-packages-for-windows-10-to-a-previously-published-app).
+Vous pouvez fournir plusieurs packages UWP avec le même numéro de version. Toutefois, les packages qui partagent un même numéro de version ne peuvent pas avoir la même architecture, car l’identité complète que le Windows Store utilise pour chaque package doit être unique. Pour plus d’informations, voir [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity).
 
-Vous pouvez fournir plusieurs packages Windows 10 avec le même numéro de version. Toutefois, les packages qui partagent un même numéro de version ne peuvent pas avoir la même architecture, car l’identité complète que le Windows Store utilise pour chaque package doit être unique. Pour plus d’informations, voir [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity).
+Lorsque vous fournissez plusieurs packages UWP qui utilisent le même numéro de version, l’architecture (dans l’ordre x64, x 86, ARM, neutre) est utilisée pour déterminer celui qui est de niveau supérieur (lorsque le Windows Store détermine le package à fournir à un appareil d’un client). Lors du classement des ensembles d’applications qui utilisent la même version, le niveau d’architecture le plus élevé dans l’ensemble est pris en considération : un ensemble d’applications contenant un package x64 aura un classement plus élevé qu’un ensemble contenant uniquement un package x86.
 
-Lorsque vous fournissez plusieurs packages Windows 10 qui utilisent le même numéro de version, l’architecture (dans l’ordre x64, x 86, ARM, neutre) est utilisée pour déterminer celui qui est de niveau supérieur (lorsque le Windows Store détermine le package à fournir à un appareil d’un client). Lors du classement des ensembles d’applications qui utilisent la même version, le niveau d’architecture le plus élevé dans l’ensemble est pris en considération : un ensemble d’applications contenant un package x64 aura un classement plus élevé qu’un ensemble contenant uniquement un package x86.
-
-Cela vous offre une grande souplesse pour faire évoluer votre application au fil du temps. Vous pouvez charger et soumettre de nouveaux packages utilisant des numéros de version inférieurs pour prendre en charge des appareils abordables qui ne sont pas encore pris en charge, ajouter des packages de version supérieure comprenant des dépendances plus strictes pour tirer parti de certaines fonctionnalités matérielles ou de système d’exploitation, ou ajouter des packages de version supérieure faisant office de mises à jour pour tout ou partie de vos clients existants.
+Cela vous offre une grande souplesse pour faire évoluer votre application au fil du temps. Vous pouvez charger et soumettre de nouveaux packages qui utilisent des numéros de version inférieurs pour prendre en charge pour les appareils Windows 10 qui vous précédemment ne gérait pas, vous pouvez ajouter des packages de version supérieure comprenant des dépendances plus strictes pour tirer parti de matériel ou les fonctionnalités du système d’exploitation ou vous peut ajouter des packages de version supérieure qui servent de base mises à jour pour tout ou partie de vos clients existants.
 
 L’exemple suivant montre comment gérer la numérotation des versions pour livrer les packages voulus à vos clients au gré de soumissions multiples.
 
@@ -47,7 +44,7 @@ L’exemple suivant montre comment gérer la numérotation des versions pour liv
 
 Windows 10 vous permet d’écrire un seul code base qui s’exécute partout. Cela facilite considérablement le démarrage d’un nouveau projet interplateforme. Toutefois, pour diverses raisons, il peut sembler inopportun de fusionner plusieurs codes base existants pour créer immédiatement un seul projet.
 
-Vous pouvez utiliser les règles de contrôle de version du package pour amener progressivement vos clients vers un package unique pour la famille d’appareils universelle, tout en envoyant un certain nombre de mises à jour intermédiaires pour des familles spécifiques d’appareils (y compris ceux qui tirent parti des API Windows 10). L’exemple suivant illustre la manière dont les mêmes règles sont appliquées de façon cohérente.
+Vous pouvez utiliser les règles de contrôle de version du package pour amener progressivement vos clients vers un package unique pour la famille d’appareils universelle, tout en envoyant un certain nombre de mises à jour intermédiaires pour des familles spécifiques d’appareils (y compris ceux qui tirent parti des API Windows 10). L’exemple suivant illustre la façon dont les mêmes règles sont appliquées de façon cohérente sur une série de soumissions pour la même application.
 
 | Soumission | Contenu                                                  | Expérience utilisateur                                                                                                                                                                             |
 |------------|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -61,11 +58,11 @@ Vous pouvez utiliser les règles de contrôle de version du package pour amener 
 
 ### <a name="using-version-numbering-to-roll-back-to-a-previously-shipped-package-for-new-acquisitions"></a>Utilisation de la numérotation des versions pour revenir à un package livré précédemment pour de nouvelles acquisitions
 
-Si vous conservez des copies, vous serez en mesure de restaurer le package de votre application dans le Windows Store un version antérieure du package Windows 10 si vous rencontrez des problèmes avec une version. Cela constitue un moyen temporaire de limiter l’interruption pour vos clients pendant que vous résolvez le problème.
+Si vous conservez des copies de vos packages, vous avez la possibilité de restaurer le package de votre application dans le Windows Store à un version antérieure du package Windows 10 si vous devez identifier les problèmes avec une version. Il s’agit d’un moyen temporaire de limiter l’interruption pour vos clients pendant que vous prenez le temps de résoudre le problème.
 
 Pour ce faire, créez une nouvelle [soumission](app-submissions.md). Supprimez le package problématique et chargez l’ancien package que vous souhaitez fournir dans le Windows Store. Les clients qui ont déjà reçu le package que vous restaurez auront toujours le package problématique (car votre ancien package aura un numéro de version antérieur). Cela n’empêchera cependant aucun autre utilisateur d’acquérir le package problématique, tout en permettant à l’application de rester disponible dans le Windows Store.
 
-Pour résoudre les problèmes des clients qui ont déjà reçu le package problématique, vous pouvez soumettre dès que possible un nouveau package Windows 10 associé à un numéro de version supérieur à celui du package incorrect. Une fois cette soumission certifiée, tous les clients seront mis à jour vers le nouveau package, car celui-ci aura un numéro de version supérieur.
+Pour résoudre le problème des clients qui ont déjà reçu le package problématique, vous pouvez soumettre un nouveau package Windows 10 qui a un numéro de version supérieur celui du package incorrect dès que possible. Une fois cette soumission certifiée, tous les clients seront mis à jour vers le nouveau package, car celui-ci aura un numéro de version supérieur.
 
 
 ## <a name="version-numbering-for-windows-81-and-earlier-and-windows-phone-81-packages"></a>Numérotation des versions des packages pour Windows 8.1 (et versions antérieures) et Windows Phone 8.1
@@ -79,7 +76,7 @@ De plus, le numéro de version des packages Windows 8.1 doit toujours être sup�
 > [!NOTE]
 > Si votre application possède également des packages Windows 10, le numéro de version des packages Windows 10 doit être supérieur à ceux aucun de vos packages Windows 8, Windows 8.1 et/ou Windows Phone 8.1. Pour plus d’informations, voir [Ajout de packages pour Windows 10 à une application publiée précédemment](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).
 
-Voici quelques exemples de ce qui se passe dans les différents scénarios de mise à jour de numéro de version pour Windows 8 et Windows 8.1.
+Voici quelques exemples de ce qui se passe dans les scénarios de mise à jour de numéro de version différent pour les packages ciblant Windows 8 et Windows 8.1.
 
 | Version de votre application dans le Store  | Version transférée | Une fois la nouvelle version présente dans le Store, elle sera installée dans une nouvelle acquisition. | Une fois la nouvelle version présente dans le Store, elle sera mise à jour si un client possède déjà l’application. |
 |---------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|----------|

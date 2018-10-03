@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: ca551ff53a0a91b5bc60263b6e282b95c32bf976
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 8c1812adc9d5610fffd6f9d275b4e093a4fa96e6
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230111"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259798"
 ---
 # <a name="templatebinding-markup-extension"></a>Extension de balisage {TemplateBinding}
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Lie la valeur d’une propriété dans un modèle de contrôle à la valeur d’une autre propriété exposée sur le contrôle basé sur un modèle. **TemplateBinding** peut uniquement être utilisé dans une définition [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) en XAML.
 
@@ -57,6 +58,24 @@ Vous pouvez utiliser **TemplateBinding** lorsque la valeur du parent basé sur u
 **TemplateBinding** est une extension de balisage. Les extensions de balisage sont généralement implémentées lorsqu’il est nécessaire de procéder à l’échappement de valeurs d’attribut pour en faire autre chose que des valeurs littérales ou des noms de gestionnaires. Il s’agit d’une mesure plus globale que celle qui consiste à placer simplement des convertisseurs de types au niveau de certains types ou propriétés. Toutes les extensions de balisage XAML utilisent les caractères «{» et «}» dans leur syntaxe d’attribut, ce qui correspond à la convention qui permet au processeur XAML de reconnaître qu’une extension de balisage doit traiter l’attribut.
 
 **Remarque** Dans l’implémentation du processeur XAML Windows Runtime, il n’existe aucune représentation de classe de stockage pour **TemplateBinding**. **TemplateBinding** est à utiliser exclusivement dans le balisage XAML. Il n’y a pas de moyen simple de reproduire le comportement dans du code.
+
+### <a name="xbind-in-controltemplate"></a>x: Bind dans ControlTemplate
+
+À partir de la prochaine mise à jour majeure vers Windows 10, vous pouvez utiliser l’extension de balisage **x: Bind** n’importe où vous avez utilisé **TemplateBinding** dans [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). 
+
+La propriété [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType) devra (pas facultatif) sur [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) lors de l’utilisation de **x: Bind**.
+
+**x: Bind** prenant en charge, vous pouvez désormais utiliser les deux [liaisons de fonction](../data-binding/function-bindings.md) liaisons bidirectionnelles bien comme dans [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)
+
+Dans l’exemple suivant, le TextBlock.Text est évaluée à Button.Content.ToString(). La propriété TargetType sur le ControlTemplate agit en tant que la source de données et accomplit le même résultat qu’un TemplateBinding et parent.
+
+```xaml
+<ControlTemplate TargetType="Button">
+    <Grid>
+        <TextBlock Text="{x:Bind Content}" />
+    </Grid>
+</ControlTemplate>
+```
 
 ## <a name="related-topics"></a>Rubriques connexes
 

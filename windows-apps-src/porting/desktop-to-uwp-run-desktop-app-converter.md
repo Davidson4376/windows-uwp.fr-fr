@@ -11,14 +11,14 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 8748b68bf4efbcc79d0bba475db32f3a2d7cc933
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: bde2e58934e24df7db2cb77fb793106aa65e3834
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205231"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260866"
 ---
-# <a name="package-an-app-using-the-desktop-app-converter-desktop-bridge"></a>Créer un package d'application à l’aide de Desktop App Converter (Pont du bureau)
+# <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Package d’une application de bureau à l’aide de Desktop App Converter
 
 [Obtenir Desktop App Converter](https://aka.ms/converter)
 
@@ -33,7 +33,7 @@ Vous pouvez installer ce package sur votre ordinateur de développement à l’a
 Le convertisseur exécute le programme d’installation de bureau dans un environnement Windows isolé à l’aide d’une nouvelle image de base, fournie dans le cadre du téléchargement du convertisseur. Il capture toutes les E/S du Registre et du système de fichiers effectuées par le programme d’installation du bureau et les intègre sous forme de package comme partie intégrante de la sortie.
 
 >[!IMPORTANT]
->Le Pont du bureau a été introduit dans Windows10, version1607 et peut être utilisé uniquement dans les projets qui ciblent la Mise à jour anniversaire Windows10 (version10.0; build 14393) ou une version ultérieure dans Visual Studio.
+>La possibilité de créer un package d’application Windows pour votre application de bureau (dans le cas contraire, connu sous le pont du bureau, le nom a été introduit dans Windows 10, version 1607, et peut être utilisé uniquement dans les projets qui ciblent la mise à jour anniversaire Windows 10 (version 10.0; Build 14393) ou une version ultérieure dans Visual Studio.
 
 > [!NOTE]
 > Obtenez <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">cette série</a> de courtes vidéos publiées par MicrosoftVirtual Academy. Ces vidéos vous expliquent certaines méthodes courantes d’utilisation de Desktop App Converter.
@@ -54,7 +54,7 @@ Voici quelques actions supplémentaires, qu’il peut accomplir pour vous.
 
 :heavy_check_mark: Signer automatiquement votre package pour vous permettre de tester votre application.
 
-:heavy_check_mark: Valider votre application en fonction des exigences du Pont du bureau et du MicrosoftStore.
+: heavy_check_mark: valider votre application par rapport à l’application empaquetée et les exigences de Microsoft Store.
 
 Vous trouverez une liste complète des options dans la section [Paramètres](#command-reference) de ce guide.
 
@@ -62,7 +62,7 @@ Si vous êtes prêt à créer votre package, mettons-nous au travail.
 
 ## <a name="first-prepare-your-application"></a>Tout d'abord, préparez votre application
 
-Passez ce guide en revue avant de commencer à créer un package pour votre application: [Préparer le package d’une application (Pont du bureau)](desktop-to-uwp-prepare.md).
+Consultez ce guide avant de commencer la création d’un package pour votre application: [préparer pour empaqueter une application de bureau](desktop-to-uwp-prepare.md).
 
 ## <a name="make-sure-that-your-system-can-run-the-converter"></a>Assurez-vous que le convertisseur peut fonctionner sur votre système
 
@@ -86,7 +86,7 @@ Assurez-vous que votre système répond aux exigences suivantes:
 
 ## <a name="set-a-few-things-up-apps-with-installers-only"></a>Définir quelques éléments (applications avec programmes d’installation uniquement)
 
-Vous pouvez passer à la section suivante si votre application ne contient pas de programme d’installation.
+Vous pouvez passer à la section suivante si votre application n’a pas de programme d’installation.
 
 1. Identifiez le numéro de version de votre système d’exploitation.
 
@@ -121,7 +121,7 @@ Vous pouvez passer à la section suivante si votre application ne contient pas d
 
 Pour créer votre package d'application, exécutez la commande ``DesktopAppConverter.exe`` dans la fenêtre de console qui s’est ouverte lorsque vous avez démarré Desktop App Converter.  
 
-Vous allez spécifier le nom de package, l’éditeur et la version de l’application à l’aide des paramètres.
+Vous devez spécifier le numéro de version, l’éditeur et nom du package de l’application à l’aide de paramètres.
 
 > [!NOTE]
 > Si vous avez réservé votre nom d’application dans le Store, vous pouvez obtenir le nom et l’éditeur du package à l’aide du tableau de bord du centre de développement de Windows. Si vous prévoyez de charger votre application de manière indépendante sur d’autres systèmes, vous pouvez fournir vos propres noms tant que le nom d’éditeur que vous choisissez correspond au nom indiqué sur le certificat utilisé pour signer votre application.
@@ -144,14 +144,14 @@ Vous pouvez en savoir plus sur chacun d’entre eux [ici](#command-reference).
 
 Voici quelques méthodes courantes pour créer votre package d'application.
 
-* [Créer un package pour une application munie d’un programme d’installation (.msi)](#installer-conversion)
-* [Créer un package pour une application disposant d’un fichier d’installation exécutable](#setup-conversion)
-* [Créer un package pour une application sans programme d’installation](#no-installer-conversion)
+* [Package d’une application qui a un fichier de programme d’installation (.msi)](#installer-conversion)
+* [Une application qui a un fichier exécutable d’installation de package](#setup-conversion)
+* [Une application qui n’a pas de programme d’installation de package](#no-installer-conversion)
 * [Créer un package d'application, signer et préparer l'application pour la soumission au Store](#optional-parameters)
 
 <a id="installer-conversion" />
 
-#### <a name="package-an-app-that-has-an-installer-msi-file"></a>Créer un package pour une application munie d’un programme d’installation (.msi)
+#### <a name="package-an-application-that-has-an-installer-msi-file"></a>Package d’une application qui a un fichier de programme d’installation (.msi)
 
 Pointez vers le fichier d’installation à l’aide du paramètre ``Installer``.
 
@@ -170,7 +170,7 @@ Si votre programme d'installation comprend des programmes d'installation pour le
 
 <a id="setup-conversion" />
 
-#### <a name="package-an-app-that-has-a-setup-executable-file"></a>Créer un package pour une application disposant d’un fichier d’installation exécutable
+#### <a name="package-an-application-that-has-a-setup-executable-file"></a>Une application qui a un fichier exécutable d’installation de package
 
 Pointez vers l’exécutable d’installation à l’aide du paramètre ``Installer``.
 
@@ -180,7 +180,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 >[!IMPORTANT]
 >Si le centre de développement attribue une identité commençant par un chiffre à votre package, veillez à également transmettre le paramètre <i>-AppId</i> et à utiliser uniquement le suffixe de la chaîne (après le point de séparation à en tant que valeur pour ce paramètre.
 
-Le paramètre ``InstallerArguments`` est facultatif. Toutefois, étant donné que Desktop App Converter a besoin de votre programme d’installation pour s’exécuter en mode sans assistance, vous devrez peut-être l’utiliser si votre application a besoin d’indicateurs spécifiques pour s’exécuter en mode silencieux. L’indicateur ``/S`` est un indicateur de mode silencieux très courant, mais celui que vous utilisez peut être différent selon les technologies utilisées pour créer le fichier d’installation.
+Le paramètre ``InstallerArguments`` est facultatif. Toutefois, étant donné que Desktop App Converter a besoin de votre programme d’installation s’exécute en mode sans assistance, vous devrez peut-être l’utiliser si votre application a besoin d’indicateurs spécifiques pour s’exécuter en mode silencieux. L’indicateur ``/S`` est un indicateur de mode silencieux très courant, mais celui que vous utilisez peut être différent selon les technologies utilisées pour créer le fichier d’installation.
 
 **Vidéo**
 
@@ -188,9 +188,9 @@ Le paramètre ``InstallerArguments`` est facultatif. Toutefois, étant donné qu
 
 <a id="no-installer-conversion" />
 
-#### <a name="package-an-app-that-doesnt-have-an-installer"></a>Créer un package pour une application sans programme d’installation
+#### <a name="package-an-application-that-doesnt-have-an-installer"></a>Une application qui n’a pas de programme d’installation de package
 
-Dans cet exemple, utilisez le paramètre ``Installer`` pour pointer vers le dossier racine des fichiers de votre application.
+Dans cet exemple, utilisez le ``Installer`` paramètre pour pointer vers le dossier racine de vos fichiers d’application.
 
 Utilisez le paramètre `AppExecutable` pour pointer vers le fichier exécutable de votre application.
 
@@ -209,7 +209,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 
 #### <a name="package-an-app-sign-the-app-and-run-validation-checks-on-the-package"></a>Créer un package d'application, signer l’application puis exécuter les vérifications de validation sur le package
 
-Cet exemple est similaire au premier, à ceci près qu’il montre comment signer votre application pour le test local, puis valider votre application en fonction des exigences du Pont du bureau et du MicrosoftStore.
+Cet exemple est similaire au premier près qu’il montre comment vous pouvez signer votre application pour le test local, puis valider votre application par rapport à l’application empaquetée et les exigences de Microsoft Store.
 
 ```cmd
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
@@ -217,9 +217,9 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 >[!IMPORTANT]
 >Si le centre de développement attribue une identité commençant par un chiffre à votre package, veillez à également transmettre le paramètre <i>-AppId</i> et à utiliser uniquement le suffixe de la chaîne (après le point de séparation à en tant que valeur pour ce paramètre.
 
-Le paramètre ``Sign`` génère un certificat dont il se sert ensuite pour signer votre application. Vous devrez installer ce certificat généré pour exécuter votre application. Pour savoir comment procéder, consultez la section [Exécuter l’application empaquetée](#run-app) de ce guide.
+Le ``Sign`` paramètre génère un certificat, puis signe votre application avec ce dernier. Vous devrez installer ce certificat généré pour exécuter votre application. Pour savoir comment procéder, consultez la section [Exécuter l’application empaquetée](#run-app) de ce guide.
 
-Vous pouvez valider application à l’aide du paramètre ``Verify``.
+Vous pouvez valider application à l’aide de la ``Verify`` paramètre.
 
 ### <a name="a-quick-look-at-optional-parameters"></a>Aperçu des paramètres facultatifs
 
@@ -267,7 +267,7 @@ Vous pouvez également afficher la liste entière en exécutant la commande ``Ge
 |<a id="conversion-params" /> <strong>Paramètres de conversion</strong>|||
 |-AppInstallPath &lt;chaîne&gt;  |Facultatif |Chemin d’accès complet au dossier racine de votre application pour les fichiers installés en cas d’installation (par exemple, «C:\Program Files (x86)\MyApp»).|
 |-Destination &lt;chaîne&gt; |Requis |La destination souhaitée pour la sortie d’appx du convertisseur: DesktopAppConverter peut créer cet emplacement s’il n’existe pas déjà.|
-|-Installer &lt;chaîne&gt; |Requis |Le chemin d’accès du programme d’installation de votre application doit être en mesure de s’exécuter sans assistance/silencieusement. Lors d’une conversion sans programme d’installation, il s’agit du chemin d’accès aux répertoires racine de vos fichiers d’application. |
+|-Installer &lt;chaîne&gt; |Requis |Le chemin d’accès du programme d’installation de votre application doit être en mesure de s’exécuter sans assistance/silencieusement. Conversion sans programme, c’est le chemin vers le répertoire racine des fichiers de votre application. |
 |-InstallerArguments &lt;chaîne&gt; |Facultatif |Une liste séparée par des virgules ou une chaîne d’arguments pour forcer votre programme d’installation à s’exécuter sans assistance/silencieusement. Ce paramètre est facultatif si votre programme d’installation est un fichier msi. Pour obtenir un fichier journal à partir de votre programme d’installation, indiquez ici l’argument de la journalisation pour le programme d’installation, et utilisez le chemin d’accès &lt;log_folder&gt;, qui est un jeton que le convertisseur remplace par le chemin d’accès approprié. <br><br>**REMARQUE**: les indicateurs de mode sans assistance/silencieux et les arguments de journalisation varient selon les technologies d’installation. <br><br>Exemple d’utilisation de ce paramètre: -InstallerArguments "/silent /log &lt;log_folder&gt;\install.log". Un autre exemple qui ne crée pas de fichier journal peut ressembler à ceci: ```-InstallerArguments "/quiet", "/norestart"``` là encore, vous devez littéralement diriger tous les journaux sur le chemin d’accès du jeton &lt;log_folder&gt; si vous voulez que le convertisseur les capture et les place dans un dossier des journaux finaux.|
 |-InstallerValidExitCodes &lt;Int32&gt; |Facultatif |Une liste séparée par des virgules des codes de sortie qui indiquent que votre programme d’installation a été exécuté correctement (par exemple: 0, 1234, 5678).  Par défaut, le code est 0 pour les éléments non msi et 0, 1641, 3010 pour les éléments msi.|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à ce script d’appeler MakeAppx sur la sortie. |
@@ -296,7 +296,7 @@ Vous pouvez également afficher la liste entière en exécutant la commande ``Ge
 |-LogFile &lt;chaîne&gt;  |Facultatif |Spécifie un fichier journal. S’il est omis, un emplacement temporaire du fichier journal est créé. |
 | -Sign [&lt;SwitchParameter&gt;] |Facultatif |Indique à ce script qu’il doit signer le package d’application Windows produit à l’aide d’un certificat généré à des fins de test. Ce commutateur doit être présent en même temps que le commutateur ```-MakeAppx```. |
 |&lt;Paramètres communs&gt; |Requis |Cette applet de commande prend en charge les paramètres courants: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable* et *OutVariable*. Pour plus d’informations, consultez [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216). |
-| -Verify [&lt;SwitchParameter&gt;] |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à l’outil DAC de vérifier que le package d’application satisfait les exigences du Pont du bureau et du MicrosoftStore. Le résultat obtenu est un rapport de validation «VerifyReport.xml», qui s’affiche de manière plus efficace dans un navigateur. Ce commutateur doit être présent en même temps que le commutateur `-MakeAppx`. |
+| -Verify [&lt;SwitchParameter&gt;] |Facultatif |Un commutateur qui, lorsqu’il est présent, indique à l’outil DAC de vérifier que le package d’application par rapport à l’application empaquetée et les exigences de Microsoft Store. Le résultat obtenu est un rapport de validation «VerifyReport.xml», qui s’affiche de manière plus efficace dans un navigateur. Ce commutateur doit être présent en même temps que le commutateur `-MakeAppx`. |
 |-PublishComRegistrations| Facultatif| Analyse toutes les inscriptions COM publiques effectuées par votre programme d’installation et publie celles qui sont valides dans votre manifeste. Utilisez cet indicateur seulement si vous souhaitez rendre ces enregistrements accessibles à d’autres applications. Il n’est pas nécessaire d’employer cet indicateur si ces enregistrements ne doivent être utilisés que par votre application. <br><br>Consultez [cet article](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97) pour vous assurer que vos inscriptions COM fonctionnent comme prévu après la création du package de votre application.
 
 <a id="run-app" />
@@ -305,9 +305,9 @@ Vous pouvez également afficher la liste entière en exécutant la commande ``Ge
 
 Il existe deux façons d’exécuter votre application.
 
-L’une d’elles consiste à ouvrir une invite de commandes PowerShell pour saisir la commande suivante: ```Add-AppxPackage –Register AppxManifest.xml```. Il s’agit probablement du moyen le plus simple d’exécuter votre application, car vous n’êtes pas obligé de la signer.
+L’une d’elles consiste à ouvrir une invite de commandes PowerShell pour saisir la commande suivante: ```Add-AppxPackage –Register AppxManifest.xml```. Il s’agit probablement du moyen le plus simple d’exécuter votre application, car vous n’avez pas à vous connecter.
 
-L’autre méthode consiste à signer votre application avec un certificat. Si vous utilisez le paramètre ```sign```, Desktop App Converter en génère un pour vous et signe votre application avec ce certificat. Ce fichier est nommé **auto-generated.cer**, et vous pouvez le trouver dans le dossier racine de votre application empaquetée.
+Autre méthode consiste à signer votre application avec un certificat. Si vous utilisez la ```sign``` paramètre, Desktop App Converter génère un pour vous et puis signez votre application avec ce dernier. Ce fichier est nommé **auto-generated.cer**, et vous pouvez le trouver dans le dossier racine de votre application empaquetée.
 
 Suivez ces étapes pour installer le certificat généré, puis exécutez votre application.
 
@@ -334,9 +334,9 @@ Suivez ces étapes pour installer le certificat généré, puis exécutez votre 
 
 ## <a name="modify-the-packaged-app"></a>Modifier l’application empaquetée
 
-Vous allez probablement apporter des modifications à votre application empaquetée pour corriger des bogues, ajouter les ressources visuelles ou améliorer votre application avec des expériences modernes telles que les vignettes dynamiques.
+Vous allez probablement apporter des modifications à votre application empaquetée pour résoudre les bogues, ajouter les ressources visuelles ou améliorer votre application avec des expériences modernes telles que les vignettes dynamiques.
 
-Une fois vos modifications accomplies, il n’est pas nécessaire d’effectuer une nouvelle conversion. Dans la plupart des cas, vous pouvez simplement repackager votre application à l’aide de l’outil MakeAppx et du fichier appxmanifest.xml généré par DAC pour votre application. Voir [Générer un package d’application Windows](desktop-to-uwp-manual-conversion.md#make-appx).
+Une fois vos modifications accomplies, il n’est pas nécessaire d’effectuer une nouvelle conversion. Dans la plupart des cas, vous pouvez simplement repackager votre application à l’aide de l’outil MakeAppx et du fichier appxmanifest.xml DAC génère pour votre application. Voir [Générer un package d’application Windows](desktop-to-uwp-manual-conversion.md#make-appx).
 
 * Si vous modifiez l'un des actifs visuels de votre application, générez un nouveau fichier d’Index de ressource de Package, puis exécutez l’outil MakeAppx pour générer un nouveau package. Voir [Générer un fichier d’Index de ressource de package (IRP)](desktop-to-uwp-manual-conversion.md#make-pri).
 
@@ -351,7 +351,7 @@ Une fois vos modifications accomplies, il n’est pas nécessaire d’effectuer 
 |---|---|
 |<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Modifying-and-Repackaging-Output-from-Desktop-App-Converter-OwpAJ3WhD_6706218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Modify-Output-from-Desktop-App-Converter-gEnsa3WhD_8606218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
-Les deux sections suivantes décrivent quelques corrections facultatives que vous pouvez envisager pour l’application empaquetée.
+Les deux sections suivantes décrivent quelques corrections facultatives à l’application empaquetée que vous pouvez envisager.
 
 ### <a name="delete-unnecessary-files-and-registry-keys"></a>Supprimez les fichiers et les clés de registre inutiles
 
@@ -398,12 +398,12 @@ Vous pouvez également vous référer à [cette](desktop-to-uwp-known-issues.md#
 
 **Transmettre des commentaires ou suggérer des fonctionnalités**
 
-Consultez [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
+Voir [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
 
-**Exécutez votre application/recherchez et réparez les problèmes**
+**Exécutez votre application / détecter et résoudre les problèmes**
 
-Voir [Exécuter, déboguer et tester une application de bureau empaquetée (Pont du bureau)](desktop-to-uwp-debug.md)
+Reportez-vous à [Exécuter, déboguer et tester une application de bureau empaquetée](desktop-to-uwp-debug.md)
 
 **Distribuer votre application**
 
-Consultez [Distribuer une application de bureau empaquetée (Pont du bureau)](desktop-to-uwp-distribute.md)
+Voir [distribuer une application de bureau empaquetée](desktop-to-uwp-distribute.md)

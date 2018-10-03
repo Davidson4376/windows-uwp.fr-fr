@@ -15,12 +15,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c69f516ab3bd412453883d6384237c8ee5446a09
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: ae344e9f10c5d1dbfd530950851e402da4bc2a0d
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674596"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259748"
 ---
 # <a name="control-templates"></a>Modèles de contrôles
 
@@ -60,6 +60,9 @@ Lorsque vous créez un modèle [**ControlTemplate**](https://msdn.microsoft.com/
 Le code XAML suivant permet de créer un modèle [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) pour un contrôle [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) spécifiant que le contenu du contrôle doit être placé en dessous la case de sélection. L’élément racine est un élément [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250). L’exemple fourni inclut la mention [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) pour créer un **X** indiquant que l’utilisateur a sélectionné la case **CheckBox** et la mention [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) indiquant un état indéterminé. Notez qu’[**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) a la valeur 0 dans les sections **Path** et **Ellipse**. Ainsi, par défaut, aucune opacité ne s’affiche dans les deux cas.
 
 Un [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) est un lien spécial qui lie la valeur d’une propriété dans un modèle de contrôle à la valeur d’une autre propriété exposée sur le contrôle basé sur un modèle. TemplateBinding peut uniquement être utilisé dans une définition ControlTemplate en XAML. Voir [Extension de balisage TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) pour plus d’informations.
+
+> [!NOTE]
+> À partir de la prochaine mise à jour majeure vers Windows 10, vous pouvez utiliser des extensions de balisage [**x: Bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783) dans des lieux vous utilisez [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). Voir [Extension de balisage TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) pour plus d’informations.
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
