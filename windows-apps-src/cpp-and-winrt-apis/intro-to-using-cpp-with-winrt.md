@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, présentation
 ms.localizationpriority: medium
-ms.openlocfilehash: 220c5c7395ed9388b02b74e0cbed5b913971bbba
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 3e1563f85df6d437ce313c99df52ea319ef94a30
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4259608"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4318741"
 ---
 # <a name="introduction-to-cwinrt"></a>Présentation de C++/WinRT
 &nbsp;
@@ -41,7 +41,7 @@ Avec C++/WinRT, vous pouvez également implémenter vos propres classes runtime 
 ## <a name="visual-studio-support-for-cwinrt-and-the-vsix"></a>Prise en charge de Visual Studio pour C++/WinRT et VSIX
 Pour les modèles de projet C++/WinRT dans Visual Studio, mais aussi les propriétés et cibles MSBuild C++/WinRT, téléchargez et installez l’[extension Visual Studio (VSIX) C++/WinRT](https://aka.ms/cppwinrt/vsix) à partir de [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
-Vous aurez besoin de Visual Studio2017 (au moins la version15,6; nous vous recommandons au moins la version15.7) et du SDK Windows version10.0.17134.0 (Windows10, version1803). Si vous n’avez pas déjà installé, vous devrez installer l’option **Outils de plateforme Windows universelle C++** dans Visual Studio Installer. Et, dans les **paramètres**Windows > **mise à jour \ & sécurité** > **pour les développeurs**, choisissez l’option de **mode développeur** plutôt que l’option de **chargement indépendant d’applications** .
+Vous aurez besoin de Visual Studio 2017 (vous devez au moins la version 15,6, mais nous vous recommandons d’au moins la version 15.7) et du SDK Windows version 10.0.17134.0 (Windows 10, version 1803). Si vous n’avez pas déjà installé, vous devrez installer l’option **Outils de plateforme Windows universelle C++** dans Visual Studio Installer. Et, dans les **paramètres**Windows > **mise à jour \ & sécurité** > **pour les développeurs**, choisissez l’option de **mode développeur** plutôt que l’option de **chargement indépendant d’applications** .
 
 Vous serez alors en mesure de créer et de concevoir ou d’ouvrir, C++ / WinRT de projet dans Visual Studio et le déployer. Par ailleurs, vous pouvez convertir un projet existant en ajoutant le `<CppWinRTEnabled>true</CppWinRTEnabled>` propriété à son `.vcxproj` fichier.
 

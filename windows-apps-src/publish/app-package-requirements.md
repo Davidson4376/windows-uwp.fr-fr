@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, exigences relatives aux packages, packages, format du package, version prise en charge, soumettre
 ms.localizationpriority: medium
 ms.openlocfilehash: f3e294fdf5a9b2d98f09d839fa62499b556de3a5
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4268050"
+ms.locfileid: "4318265"
 ---
 # <a name="app-package-requirements"></a>Exigences relatives au package de l’application
 

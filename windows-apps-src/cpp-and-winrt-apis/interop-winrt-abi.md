@@ -9,15 +9,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, port, migrer, interopérabilité, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: b641591e7be23226edc354e02513d723fbe8afba
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 098d182b9cc4cc51bda0a7959702e53accf2699f
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4266628"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4318383"
 ---
-# <a name="interop-between-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-and-the-abi"></a>Interopérabilité entre [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) et ABI
-Cette rubrique montre comment effectuer des conversions entre des objets de l’interface binaire d’application (ABI) du SDK et C++/WinRT. Vous pouvez utiliser ces techniques pour permettre l’interopérabilité entre le code qui utilise ces deux méthodes de programmation avec Windows Runtime, ou vous pouvez les utiliser à mesure que vous transférez votre code depuis ABI vers C++/WinRT.
+# <a name="interop-between-cwinrt-and-the-abi"></a>Interopérabilité entre C++/WinRT et ABI
+
+Cette rubrique montre comment effectuer des conversions entre l’interface binaire d’application SDK (ABI) et [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) objets. Vous pouvez utiliser ces techniques pour permettre l’interopérabilité entre le code qui utilise ces deux méthodes de programmation avec Windows Runtime, ou vous pouvez les utiliser à mesure que vous transférez votre code depuis ABI vers C++/WinRT.
 
 ## <a name="what-is-the-windows-runtime-abi-and-what-are-abi-types"></a>Qu'est-ce que l’ABI Windows Runtime et quels sont les types ABI?
 Une classe Windows Runtime (classe runtime) est en réalité une abstraction. Cette abstraction définit une interface binaire (interface binaire d’application, ou ABI) qui permet à plusieurs langages de programmation d'interagir avec un objet. Quel que soit le langage de programmation, l'interaction du code client avec un objet Windows Runtime se produit au niveau le plus bas, avec des constructions de langage client traduites en appels dans ABI de l’objet.

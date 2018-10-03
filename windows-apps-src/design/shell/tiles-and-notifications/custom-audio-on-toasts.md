@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows10, uwp, toast, contenu audio personnalisé, notification, audio, son
 ms.localizationpriority: medium
 ms.openlocfilehash: 24be148340366163fcab00ec75f7f26fac6c2d80
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4267978"
+ms.locfileid: "4316415"
 ---
 # <a name="custom-audio-on-toasts"></a>Contenu audio personnalisé des toasts
 

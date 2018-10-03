@@ -11,11 +11,11 @@ keywords: prise en main, windows10, uwp, xaml, c#
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d7ad7835e56b874c37b9376eb00278fea055dd1
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4266240"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4309197"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Prise en main des applications Windows10 
  

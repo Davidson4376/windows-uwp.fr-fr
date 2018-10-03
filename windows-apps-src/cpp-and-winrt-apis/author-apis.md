@@ -3,25 +3,22 @@ author: stevewhims
 description: Cette rubrique montre comment créer des API C++/WinRT à l’aide de la structure de base **winrt::implements**, directement ou indirectement.
 title: Créer des API avec C++/WinRT
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, implémenter, classe runtime, activation
 ms.localizationpriority: medium
-ms.openlocfilehash: d613cb87297cdc810e4d8e16dfeb36d4804678d1
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 2476161954c1d4d49fcf9f8f74cd1b7cf9180c0a
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4261158"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4309269"
 ---
-# <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Créer des API avec [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+# <a name="author-apis-with-cwinrt"></a>Créer des API avec C++/WinRT
 
-> [!NOTE]
-> **Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.**
-
-Cette rubrique montre comment créer des API C++/WinRT à l’aide de la structure de base [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements), directement ou indirectement. Les synonymes de *créer* dans ce contexte sont *produire* ou *implémenter*. Cette rubrique couvre les scénarios suivants pour l’implémentation d’API sur un type C++/WinRT, dans cet ordre.
+Cette rubrique montre comment créer [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API à l’aide de la [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) de base struct, directement ou indirectement. Les synonymes de *créer* dans ce contexte sont *produire* ou *implémenter*. Cette rubrique couvre les scénarios suivants pour l’implémentation d’API sur un type C++/WinRT, dans cet ordre.
 
 - Vous ne créez *pas* une classe Windows Runtime (classe runtime); vous souhaitez simplement implémenter une ou plusieurs interfaces Windows Runtime pour une utilisation locale au sein de votre application. Vous dérivez directement de **winrt::implements** dans ce cas, et implémentez des fonctions.
 - Si vous *créez* une classe runtime. Vous pouvez créer un composant qui sera utilisé à partir d’une application. Ou vous pouvez créer un type qui sera utilisé à partir de l’interface utilisateur XAML et, dans ce cas, vous implémentez et utilisez une classe runtime au sein de la même unité de compilation. Dans ces cas, laissez les outils générer pour vous des classes qui dérivent de **winrt::implements**.
@@ -285,17 +282,17 @@ iclosable.Close();
 
 La classe **MyType** ne fait pas partie de la projection; il s’agit de l’implémentation. Mais de cette façon vous pouvez appeler ses méthodes d’implémentation directement, sans la surcharge d’un appel de fonction virtuelle. Dans l’exemple ci-dessus, même si **MyType::ToString** utilise la même signature que la méthode projetée sur **IStringable**, nous appelons la méthode non virtuelle directement, sans traverser la limite de l’interface binaire d’application (ABI). **com_ptr** pointant simplement un curseur sur la structure **MyType**, vous pouvez également accéder à tous les autres détails internes de **MyType** via la variable `myimpl` et l’opérateur flèche.
 
-Dans le cas où vous disposez d’un objet d’interface et que vous savez qu’il s’agit d’une interface sur votre implémentation, vous pouvez revenir à l’implémentation à l’aide du modèle de fonction [**from_abi**](/uwp/cpp-ref-for-winrt/from-abi). Là encore, il s’agit d’une technique qui évite les appels de fonctions virtuelles et vous permet d’accéder directement à l’implémentation.
+Dans le cas où vous avez un objet d’interface et que vous savez qu’il s’agit d’une interface sur votre implémentation, puis vous pouvez revenir à l’implémentation à l’aide du modèle de fonction [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) . Là encore, il s’agit d’une technique qui évite les appels de fonctions virtuelles et vous permet d’accéder directement à l’implémentation.
 
 > [!NOTE]
-> Si vous avez installé la [Windows 10 SDK version d’évaluation 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)ou une version ultérieure, vous pouvez ensuite appeler [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) au lieu de [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi).
+> Si vous n’avez pas encore installé le SDK Windows version 10.0.17763.0 (Windows 10, version 1809) ou une version ultérieure, puis vous devez appeler [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) au lieu de [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self).
 
 En voici un exemple. Il existe un autre exemple dans [implémentez la classe de contrôle personnalisé **BgLabelControl** ](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class).
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
 {
-    MyType* myimpl = winrt::from_abi<MyType>(from);
+    MyType* myimpl = winrt::get_self<MyType>(from);
     myimpl->ToString();
     myimpl->Close();
 }
@@ -305,7 +302,7 @@ Toutefois, seul l’objet d’interface d’origine conserve une référence. Si
 
 ```cppwinrt
 winrt::com_ptr<MyType> impl;
-impl.copy_from(winrt::from_abi<MyType>(from));
+impl.copy_from(winrt::get_self<MyType>(from));
 // com_ptr::copy_from ensures that AddRef is called.
 ```
 

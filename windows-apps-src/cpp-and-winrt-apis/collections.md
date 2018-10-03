@@ -3,30 +3,29 @@ author: stevewhims
 description: C++ / WinRT fournit des fonctions et des classes de base qui vous faire gagner beaucoup de temps et d’efforts lorsque vous souhaitez implémenter ou passer des collections.
 title: Collections avec C++ / WinRT
 ms.author: stwhi
-ms.date: 09/21/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, collection
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ac3635a96b8dd3d757f25da1b826ea318c1ad4
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: e6a0cf8c2798adc59ffcf84381d6bbf64f2ce80e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4265364"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4312313"
 ---
-# <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Collections avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+# <a name="collections-with-cwinrt"></a>Collections avec C++ / WinRT
 
-> [!NOTE]
-> **Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.**
-
-En interne, une collection Windows Runtime comporte un grand nombre d’éléments mobiles compliquées. Toutefois, lorsque vous souhaitez transmettre une collection d’objets à une fonction Windows Runtime, ou pour implémenter vos propres propriétés de collection et les types de collection, il existe des fonctions et des classes de base en C++ / WinRT pour prendre en charge vous. Ces fonctionnalités prennent la complexité en dehors de vos mains et vous faire gagner un grand nombre de la surcharge de temps et d’efforts.
-
-> [!IMPORTANT]
-> Les fonctionnalités décrites dans cette rubrique sont disponibles si vous avez installé la [Windows 10 SDK version d’évaluation 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)ou ultérieure.
+En interne, une collection Windows Runtime comporte un grand nombre d’éléments mobiles compliquées. Toutefois, lorsque vous souhaitez transmettre une collection d’objets à une fonction Windows Runtime, ou pour implémenter vos propres propriétés de collection et les types de collection, il existe des fonctions et des classes de base dans [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) pour prendre en charge vous. Ces fonctionnalités prennent la complexité en dehors de vos mains et vous faire gagner un grand nombre de la surcharge de temps et d’efforts.
 
 [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) est l’interface de Windows Runtime implémentée par n’importe quelle collection accès aléatoire des éléments. Si vous devez implémenter **IVector** vous-même, vous devrez également implémenter [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_), [**IVectorView**](/uwp/api/windows.foundation.collections.ivectorview_t_)et [**IIterator**](/uwp/api/windows.foundation.collections.iiterator_t_). Même si vous *avez besoin* une collection personnalisée de type, qui est un grand nombre de travail. Toutefois, si vous avez des données dans un **std::vector** (ou **std::map**ou un **std::unordered_map**) et tout ce que vous voulez effectuer est qui transmettre à une API Windows Runtime, vous pouvez éviter d’exécuter ce niveau de travail, si possible. Et en évitant qu’il *est* possible, étant donné que C++ / WinRT vous aide à créer des collections efficacement et avec peu d’effort.
+
+Consultez également [contrôles d’éléments XAML; liaison à C++ / WinRT collection](binding-collection.md).
+
+> [!NOTE]
+> Si vous n’avez pas encore installé le SDK Windows version 10.0.17763.0 (Windows 10, version 1809) ou une version ultérieure, vous n’aurez accès à des fonctions et des classes de base qui sont documentés dans cette rubrique. Voir à la place, [Si vous disposez d’une version antérieure du SDK Windows](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) pour obtenir la liste d’un modèle de vecteur observable que vous pouvez utiliser à la place.
 
 ## <a name="helper-functions-for-collections"></a>Fonctions d’assistance pour les collections
 

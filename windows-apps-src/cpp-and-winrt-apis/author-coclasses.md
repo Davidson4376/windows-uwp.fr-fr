@@ -9,39 +9,61 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, auteur, COM, composant
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e273d593d7b2e24cc82063ce25b66771b8221e1
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 2886d2b42d4c192a3f6924a41a4c4dd1483db471
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4267178"
+ms.locfileid: "4313829"
 ---
-# <a name="author-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Créer des composants COM avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+# <a name="author-com-components-with-cwinrt"></a>Créer des composants COM avec C++ / WinRT
 
-C++ / WinRT peut vous aider à créer des classique modèle COM (Component Object) composants (ou coclasses), tout comme il vous aide à créer des classes Windows Runtime. Voici une illustration très simple, qui vous pouvez tester si vous le collez dans le `main.cpp` d’une nouvelle **Windows Console Application (C++ / WinRT)** projet.
+[C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) peuvent vous aider à créer des classique modèle COM (Component Object) composants (ou coclasses), tout comme il vous aide à créer des classes Windows Runtime. Voici une illustration simple, ce qui vous pouvez tester si vous collez le code dans les `pch.h` et `main.cpp` d’une nouvelle **Windows Console Application (C++ / WinRT)** projet.
 
 ```cppwinrt
+// pch.h
+#pragma once
+#include <unknwn.h>
+#include <winrt/Windows.Foundation.h>
+
 // main.cpp : Defines the entry point for the console application.
 #include "pch.h"
 
+struct __declspec(uuid("ddc36e02-18ac-47c4-ae17-d420eece2281")) IMyComInterface : ::IUnknown
+{
+    virtual HRESULT __stdcall Call() = 0;
+};
+
 using namespace winrt;
+using namespace Windows::Foundation;
 
 int main()
 {
-    init_apartment();
+    winrt::init_apartment();
 
-    struct MyCoclass : winrt::implements<MyCoclass, IPersist>
+    struct MyCoclass : winrt::implements<MyCoclass, IPersist, IStringable, IMyComInterface>
     {
-        HRESULT STDMETHODCALLTYPE GetClassID(CLSID* id) noexcept override
+        HRESULT __stdcall Call() noexcept override
+        {
+            return S_OK;
+        }
+
+        HRESULT __stdcall GetClassID(CLSID* id) noexcept override
         {
             *id = IID_IPersist; // Doesn't matter what we return, for this example.
             return S_OK;
+        }
+
+        winrt::hstring ToString()
+        {
+            return L"MyCoclass as a string";
         }
     };
 
     auto mycoclass_instance{ winrt::make<MyCoclass>() };
     CLSID id{};
     winrt::check_hresult(mycoclass_instance->GetClassID(&id));
+    winrt::check_hresult(mycoclass_instance.as<IMyComInterface>()->Call());
 }
 ```
 
@@ -56,6 +78,15 @@ Vous trouverez plus générales sur la zone de fonctionnalité de notification t
 ## <a name="create-a-windows-console-application-project-toastandcallback"></a>Créez un projet d’Application Console Windows (ToastAndCallback)
 
 Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créer un **Visual C++** > **Windows Desktop** > **Windows Console Application (C++ / WinRT)** de projet et nommez-le *ToastAndCallback*.
+
+Ouvrez `pch.h`et ajoutez `#include <unknwn.h>` avant l’inclut pour n’importe quel C++ / WinRT en-têtes.
+
+```cppwinrt
+// pch.h
+#pragma once
+#include <unknwn.h>
+#include <winrt/Windows.Foundation.h>
+```
 
 Ouvrez `main.cpp`et supprimer les using-directives qui génère le modèle de projet. À leur place, collez le code suivant (ce qui nous obtenons l’et les bibliothèques, les en-têtes et les noms de type que nous devons).
 
@@ -134,7 +165,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-L’implémentation de la coclasse ci-dessus suit le même modèle qui est présenté dans [créer des API avec C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). Par conséquent, vous pouvez utiliser la même technique pour implémenter les interfaces COM, ainsi que des interfaces Windows Runtime. Composants COM et les classes Windows Runtime exposent leurs fonctionnalités via des interfaces. Chaque interface COM dérive en fin de compte de l’interface de [**l’interface IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) . Windows Runtime est basé sur COM&mdash;une distinction étant des interfaces Windows Runtime au final dérivent de l' [**interface IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821) (et **IInspectable** dérive de **IUnknown**).
+L’implémentation de la coclasse ci-dessus suit le même modèle qui est présenté dans [créer des API avec C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). Par conséquent, vous pouvez utiliser la même technique pour implémenter les interfaces COM, ainsi que des interfaces Windows Runtime. Composants COM et les classes Windows Runtime exposent leurs fonctionnalités via des interfaces. Chaque interface COM dérive en fin de compte de l’interface de [**l’interface IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) . Windows Runtime est basé sur COM&mdash;une distinction étant des interfaces Windows Runtime au final dérivent de l' [**interface IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (et **IInspectable** dérive de **IUnknown**).
 
 Dans la coclasse dans le code ci-dessus, nous implémenter la méthode **INotificationActivationCallback::Activate** , qui est la fonction qui est appelée lorsque l’utilisateur clique sur le bouton de rappel sur une notification toast. Toutefois, avant que cette fonction peut être appelée, une instance de la coclasse doit être créé, et c’est le rôle de la fonction **IClassFactory::CreateInstance** .
 
@@ -324,7 +355,7 @@ void LaunchedFromNotification(HANDLE, INPUT_RECORD &, DWORD &);
 
 int wmain(int argc, wchar_t * argv[], wchar_t * /* envp */[])
 {
-    init_apartment();
+    winrt::init_apartment();
 
     register_callback();
 
@@ -503,8 +534,23 @@ HRESULT __stdcall DllGetClassObject(GUID const& clsid, GUID const& iid, void** r
 }
 ```
 
+### <a name="support-for-weak-references"></a>Prise en charge des références faibles
+
+Consultez également [références faibles en C++ / WinRT](weak-references.md#weak-references-in-cwinrt).
+
+C++ / WinRT (plus précisément, le modèle de structure de base [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) ) implémente [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource) pour vous si votre type implémente [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (ou n’importe quelle interface qui dérive de **IInspectable**).
+
+Il s’agit dans la mesure où **IWeakReferenceSource** et [**IWeakReference**](/windows/desktop/api/weakreference/nn-weakreference-iweakreference) sont conçus pour les types Windows Runtime. Par conséquent, vous pouvez activer la prise en charge de la référence faible pour votre coclasse en ajoutant simplement **winrt::Windows::Foundation::IInspectable** (ou une interface qui dérive de **IInspectable**) à votre implémentation.
+
+```cppwinrt
+struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows::Foundation::IInspectable>
+{
+    //  ...
+};
+```
+
 ## <a name="important-apis"></a>API importantes
-* [Interface IInspectable](https://msdn.microsoft.com/library/br205821)
+* [Interface IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
 * [Interface IUnknown](https://msdn.microsoft.com/library/windows/desktop/ms680509)
 * [Modèle de structure winrt::implements](/uwp/cpp-ref-for-winrt/implements)
 

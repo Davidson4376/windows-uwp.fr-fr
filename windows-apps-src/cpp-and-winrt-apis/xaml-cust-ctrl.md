@@ -3,26 +3,23 @@ author: stevewhims
 description: Cette rubrique vous guide à travers les étapes de création d’un contrôle personnalisé simple à l’aide de C++ / WinRT. Vous pouvez générer sur les informations fournies ici pour créer vos propres contrôles d’interface utilisateur riche et personnalisables.
 title: XAML (basé sur un modèle) des contrôles personnalisés avec C++ / WinRT
 ms.author: stwhi
-ms.date: 08/01/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, un contrôle personnalisé basé sur un modèle,
 ms.localizationpriority: medium
-ms.openlocfilehash: fd1843afc58bc758db1c6e575f3733bdc4f47b4e
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 539876113ce2aba563cfa65b13571cbf3998cc2d
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4265828"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4313873"
 ---
-# <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>Des contrôles personnalisés (basé sur un modèle) XAML avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-
-> [!NOTE]
-> **Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.**
+# <a name="xaml-custom-templated-controls-with-cwinrt"></a>XAML (basé sur un modèle) des contrôles personnalisés avec C++ / WinRT
 
 > [!IMPORTANT]
-> Pour obtenir les principaux concepts et termes facilitant votre compréhension pour utiliser et créer des classes runtime avec C++/WinRT, voir [Utiliser des API avec C++/WinRT](consume-apis.md) et [Créer des API avec C++/WinRT](author-apis.md).
+> Pour obtenir les principaux concepts et termes facilitant votre compréhension de la façon d’utiliser et de créer des classes runtime avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), voir [utiliser des API avec C++ / WinRT](consume-apis.md) et [créer des API avec C++ / WinRT](author-apis.md).
 
 Une des fonctionnalités plus puissantes de la plateforme Windows universelle (UWP) est la flexibilité que la pile de l’interface utilisateur (UI) fournit pour créer des contrôles personnalisés en fonction du type XAML [**contrôle**](/uwp/api/windows.ui.xaml.controls.control) . L’infrastructure XAML UI offre des fonctionnalités telles que les [Propriétés de dépendance personnalisées](/windows/uwp/xaml-platform/custom-dependency-properties) et les propriétés jointes et [les modèles de contrôle](/windows/uwp/design/controls-and-patterns/control-templates), rendant facile à créer des contrôles riche et personnalisables. Cette rubrique vous guide à travers les étapes de création d’un contrôle personnalisé (modélisé) avec C++ / WinRT.
 
@@ -106,7 +103,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
     {
         // Call members of the projected type via theControl.
 
-        BgLabelControlApp::implementation::BgLabelControl* ptr{ winrt::from_abi<BgLabelControlApp::implementation::BgLabelControl>(theControl) };
+        BgLabelControlApp::implementation::BgLabelControl* ptr{ winrt::get_self<BgLabelControlApp::implementation::BgLabelControl>(theControl) };
         // Call members of the implementation type via ptr.
     }
 }
@@ -116,7 +113,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 Dans cette procédure pas à pas, nous n’utilisez pas **OnLabelChanged**. Mais il est là afin que vous puissiez voir comment inscrire une propriété de dépendance avec un rappel de propriété modifiée. L’implémentation de **OnLabelChanged** montre également comment vous procurer un type projeté dérivé à partir d’un type projeté de base (le type projeté de base est **DependencyObject**, dans ce cas). Et il indique comment obtenir un pointeur vers le type qui implémente le type projeté. Cette opération deuxième naturellement n’est possible que dans le projet qui implémente le type projeté (autrement dit, le projet qui implémente la classe runtime).
 
 > [!NOTE]
-> Si vous avez installé la [Windows 10 SDK version d’évaluation 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)ou une version ultérieure, vous pouvez ensuite appeler [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) dans le Gestionnaire d’événements ont été modifiés propriété dépendance ci-dessus, au lieu de [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi).
+> Si vous n’avez pas encore installé le SDK Windows version 10.0.17763.0 (Windows 10, version 1809) ou une version ultérieure, vous devez appeler [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) dans le Gestionnaire d’événements ont été modifiés propriété dépendance ci-dessus, au lieu de [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self).
 
 ## <a name="design-the-default-style-for-bglabelcontrol"></a>Conception du style par défaut pour **BgLabelControl**
 

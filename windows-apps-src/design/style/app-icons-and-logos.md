@@ -12,12 +12,12 @@ keywords: windows10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e947b00c3a070a8d95a21e38c56bda07cd45d3c4
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 04263122c1a96aadc5e4d0ad8f804730d3a2a20f
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4268164"
+ms.locfileid: "4312427"
 ---
 # <a name="app-icons-and-logos"></a>Logos et icônes d’application 
 
@@ -164,7 +164,7 @@ Le premier élément de menu dans l’onglet **Ressources visuelles** , **Toutes
 
 ![Générer tous les éléments visuels dans Visual Studio](images/app-icons/all-visual-assets.png)
 
-Il vous souhaitez bloc est une image unique, et Visual Studio génère la petite vignette, vignette moyenne, grande vignette, vignette large, grande vignette, icône de l’application, écran de démarrage et ressources de logo pour chaque facteur d’échelle de package.
+Il vous souhaitez est de fournir une image unique et Visual Studio génère la petite vignette, vignette moyenne, grande vignette, vignette large, grande vignette, icône de l’application, écran de démarrage et ressources de logo pour chaque facteur d’échelle de package.
 
 Pour générer toutes les ressources à la fois:
 1. Cliquez sur le bouton **...** en regard du champ **Source** et sélectionnez l’image que vous souhaitez utiliser. Si vous utilisez une image bitmap, assurez-vous qu’il est au moins de 400 par 400 pixels afin que vous obtenez des résultats arêtes. Images vectorielles fonctionnent mieux; Visual Studio vous permet d’utiliser IA (Adobe Illustrator) et les fichiers PDF. 
