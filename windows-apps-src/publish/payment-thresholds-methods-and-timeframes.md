@@ -11,11 +11,11 @@ keywords: windows10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a7428b9278e4fc3264f652030f0409cab056d31
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4310197"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4360070"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>Délais, méthodes et seuils de paiement
 

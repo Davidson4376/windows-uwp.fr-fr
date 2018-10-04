@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, publication, prétraitement, certification, publication, en attente, soumettre, publier, état, heure
 ms.localizationpriority: medium
 ms.openlocfilehash: 8372f316786d83d72dff8ef7a0a8fd53e5390743
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4312945"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4359839"
 ---
 # <a name="the-app-certification-process"></a>Processus de certification des applications
 
@@ -37,7 +37,7 @@ Une fois le processus de certification terminé, vous recevez un rapport de cert
 
 ## <a name="release"></a>Mise sur le marché
 
-Lorsque votre application certifiée, il est prêt à déplacer vers le processus de **publication** .
+Lorsque votre application a obtenu la certification, il est prêt à déplacer vers le processus de **publication** .
 
 - Si vous avez indiqué que votre soumission doit être publiée dès que possible (l’option par défaut), le processus de publication commence immédiatement.
 - S’il s’agit de la première fois que vous avez publié l’application et que vous avez spécifié une **date de publication** dans la section [planification](configure-precise-release-scheduling.md#release) , l’application sera disponible en fonction de vos sélections de **date de publication** .
@@ -49,9 +49,9 @@ Lorsque votre application certifiée, il est prêt à déplacer vers le processu
 
 Les packages de votre application sont signés numériquement pour être protégés contre toute falsification après leur publication. Une fois que cette phase a commencé, vous ne pouvez plus annuler votre soumission ni en modifier la date de sortie.
 
-Pour les applications nouvelles et mises à jour qui incluent des modifications aux packages de l’application, le processus de publication s’effectue dans les 24 heures. Pour les mises à jour uniquement modifier les options telles que des informations de description, mais ne modifiez pas les packages de l’application, le processus de publication prendra moins d’une heure.
+Pour les applications nouvelles et mises à jour qui incluent des modifications aux packages de l’application, le processus de publication s’effectue dans les 24 heures. Pour les mises à jour uniquement modifier les options telles que des informations de description dans le Store, mais ne modifiez pas les packages de l’application, le processus de publication prendra moins d’une heure.
 
-Lorsque votre application est en phase de publication, le lien **Afficher les détails** dans la colonne État de la soumission de votre application vous permet de savoir quand vos nouveaux packages et les informations de description sont disponibles pour les clients sur chacune de vos versions de système d’exploitation pris en charge. Les étapes qui n’ont pas encore été réalisées s’affichent comme **En attente**. Votre application reste en phase de publication jusqu'à ce que le processus se termine, ce qui signifie que les nouveaux packages et/ou descriptions sont disponibles pour tous les clients potentiels de votre application.
+Lorsque votre application est en phase de publication, le lien **Afficher les détails** dans la colonne État de la soumission de votre application vous permet de savoir quand vos nouveaux packages et les détails de l’annonce de Windows Store sont disponibles pour les clients sur chacune de vos versions de système d’exploitation pris en charge. Les étapes qui n’ont pas encore été réalisées s’affichent comme **En attente**. Votre application reste en phase de publication jusqu'à ce que le processus se termine, ce qui signifie que les nouveaux packages et/ou détails de l’annonce sont disponibles pour tous les clients potentiels de votre application.
 
 ## <a name="in-the-store"></a>Dans le Store 
 

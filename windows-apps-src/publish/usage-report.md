@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, utilisation, événement personnalisé, rapport, télémétrie, sessions utilisateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 96d36ebbaa2b7f1a650e2b0f794a1976c1f525a6
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319461"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4357557"
 ---
 # <a name="usage-report"></a>Rapport d’utilisation
 
@@ -50,7 +50,7 @@ Ce graphique comporte quatre onglets visualisables qui vous présentent l’util
 - **Durée**: indique le nombre total d’heures d’engagement (heures pendant lesquelles un utilisateur utilise activement votre application).
 - **Rétention**: affiche le nombre total **d’utilisateurs actifs quotidiennement/d’utilisateurs actifs mensuels** au cours de la période sélectionnée.
 
-Lorsque le **30D** période est activée, vous pouvez voir Marqueurs cercle lorsque vous visualisez les onglets **utilisateurs**, des **appareils**ou **durée** . Ces représentent une augmentation importante ou la diminution une valeur donnée que nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation importante ou une réduction par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
+Lorsque le **30D** période est activée, vous pouvez voir Marqueurs cercle lorsque vous visualisez les onglets **utilisateurs**, des **appareils**ou **durée** . Ces représentent une augmentation importante ou la diminution une valeur donnée que nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou une baisse par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
 
 > [!TIP]
 > Vous pouvez afficher des conseils supplémentaires liés à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).

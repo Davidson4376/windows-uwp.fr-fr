@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, taxes, taxes sur les applications, exigences fiscales, développement commercial, taux d’imposition
 ms.localizationpriority: medium
 ms.openlocfilehash: 461c9303bbb26e5c4739ca60c03343008377df6c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4317829"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4357787"
 ---
 # <a name="tax-details-for-paid-apps"></a>Informations fiscales pour les applications payantes
 

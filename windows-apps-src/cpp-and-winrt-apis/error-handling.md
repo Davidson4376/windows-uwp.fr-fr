@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, erreur, gestion, exception
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a4cf60fea70722e66eb44d52542be248e9ad01c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319491"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358081"
 ---
 # <a name="error-handling-with-cwinrt"></a>Gestion des erreurs avec C++/WinRT
 

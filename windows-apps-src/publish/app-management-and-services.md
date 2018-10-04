@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4312303"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4360534"
 ---
 # <a name="app-management-and-services"></a>Gestion des applications et services
 
@@ -31,7 +31,7 @@ La section **Services** vous permet de gérer les différents services pour vos 
 
 Si vous publiez un jeu, vous pouvez activer le [Programme créateurs Xbox Live](http://xbox.com/developers/creators-program) sur cette page. Cela vous permet de démarrer la configuration et le tests des fonctionnalités Xbox Live et finalement publier votre jeu programme créateurs Xbox Live.
 
-Pour plus d’informations, consultez [vous familiariser avec le programme créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) et [créez un nouveau titre du programme créateurs Xbox Live et publier dans l’environnement de test](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md).
+Pour plus d’informations, voir [vous familiariser avec le programme créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) et [créer un nouveau titre du programme créateurs Xbox Live et les publier dans l’environnement de test](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md).
 
 ## <a name="experimentation"></a>Expérimentation
 
@@ -92,7 +92,7 @@ Les développeurs ayant des autorisations OEM peuvent également [générer des 
 La section **WNS/MPNS** fournit des options pour vous aider à créer et envoyer des notifications aux clients de votre application. 
 
 > [!TIP]
-> Pour les applications UWP, nous vous suggérons d’à l’aide de l’option de **Notifications** dans le tableau de bord. Cette fonctionnalité vous permet d’envoyer des notifications à tous les clients de votre application, ou à un sous-ensemble ciblé de vos clients Windows 10 qui remplissent les critères que vous avez définis dans un [segment de clientèle](create-customer-segments.md). Pour plus d’informations, consultez l’article [Envoyer des notifications aux clients de votre application](send-push-notifications-to-your-apps-customers.md).
+> Pour les applications UWP, nous vous conseillons d’à l’aide de l’option de **notification** dans le tableau de bord. Cette fonctionnalité vous permet d’envoyer des notifications à tous les clients de votre application, ou à un sous-ensemble ciblé de vos clients Windows 10 qui remplissent les critères que vous avez définis dans un [segment de clientèle](create-customer-segments.md). Pour plus d’informations, consultez l’article [Envoyer des notifications aux clients de votre application](send-push-notifications-to-your-apps-customers.md).
 
 Selon le type de package de votre application et ses besoins spécifiques, vous pouvez également utiliser une des options suivantes: 
 

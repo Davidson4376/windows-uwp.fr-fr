@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b5515d0ed5dc6e200c7c4fc9a7785c993d4cab59
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313789"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358378"
 ---
 # <a name="creating-windows-runtime-components-in-ccx"></a>Création de composants Windows Runtime en C++/CX
 > [!NOTE]
@@ -85,7 +85,7 @@ Le code client crée une instance du composant à l’aide du mot clé **new** (
 
 Une classe activable doit être déclarée comme **public ref class sealed**. Le mot clé **ref class** indique au compilateur de créer la classe comme un type compatible Windows Runtime, et le mot clé sealed spécifie que la classe ne peut pas être héritée. Windows Runtime ne prend pas en charge de modèle d’héritage généralisé actuellement; un modèle d’héritage limité prend en charge la création de contrôles XAML personnalisés. Pour plus d’informations, voir [Classes et structures de référence (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx).
 
-Pour C++ / CX, toutes les primitives numériques sont définies dans l’espace de noms par défaut. L’espace de noms [Platform](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) contient C++ / système de type de classes CX qui sont propres à Windows Runtime. Il s’agit des classes [Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) et [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx). Les types de collection concrets tels que les classes [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) et [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) sont définis dans l’espace de noms [Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx). Les interfaces publiques implémentées par ces types sont définies dans [Windows::Foundation::Collections (espace de noms) (C++ /CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx). Il s’agit des types d’interfaces qui sont utilisés par JavaScript, C# et Visual Basic. Pour plus d’informations, voir [Système de types (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
+Pour C++ / CX, toutes les primitives numériques sont définies dans l’espace de noms par défaut. L’espace de noms [plateforme](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) contient C++ / système de type classes CX qui sont propres à Windows Runtime. Il s’agit des classes [Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) et [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx). Les types de collection concrets tels que les classes [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) et [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) sont définis dans l’espace de noms [Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx). Les interfaces publiques implémentées par ces types sont définies dans [Windows::Foundation::Collections (espace de noms) (C++ /CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx). Il s’agit des types d’interfaces qui sont utilisés par JavaScript, C# et Visual Basic. Pour plus d’informations, voir [Système de types (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
 
 ## <a name="method-that-returns-a-value-of-built-in-type"></a>Méthode qui retourne une valeur de type intégré
 ```cpp
@@ -131,7 +131,7 @@ namespace CppComponent
 }
 ```
 
-Pour passer des structures de valeur définies par l’utilisateur à travers l’ABI, définissez un objet JavaScript qui a les mêmes membres que la structure de valeur définie en C++ / CX. Vous pouvez ensuite passer cet objet comme argument pour C++ / méthode CX afin que l’objet soit implicitement converti en C++ / type CX.
+Pour passer des structures de valeur définies par l’utilisateur à travers l’ABI, définissez un objet JavaScript qui a les mêmes membres que la structure de valeur qui est définie en C++ / CX. Vous pouvez ensuite passer cet objet comme argument pour C++ / méthode CX afin que l’objet est implicitement converti en C++ / type CX.
 
 ```javascript
 // Get and set the value struct
@@ -225,7 +225,7 @@ public:
 };
 ```
 
-Lorsque vous passez une valeur DateTime de C++ / CX à JavaScript, JavaScript accepte en tant qu’objet Date et l’affiche par défaut en tant qu’une chaîne de date longue durée.
+Lorsque vous passez une valeur DateTime de C++ / CX à JavaScript, JavaScript accepte en tant que d’un objet Date et l’affiche par défaut en tant qu’une chaîne de date longue durée.
 
 ```javascript
 function SetAndGetDate() {
@@ -529,7 +529,7 @@ private:
 };
 ```
 
-Les valeurs enum sont passées entre C++ / CX et JavaScript sous forme d’entiers. Vous pouvez éventuellement déclarer un objet JavaScript qui contient les mêmes valeurs nommées que C++ / CX enum et l’utilisation il comme suit.
+Les valeurs enum sont passées entre C++ / CX et JavaScript sous forme d’entiers. Vous pouvez éventuellement déclarer un objet JavaScript qui contient les mêmes valeurs nommées que C++ / CX enum et à utiliser comme suit.
 
 ```javascript
 var Direction = { 0: "North", 1: "South", 2: "East", 3: "West" };
@@ -556,9 +556,9 @@ Lorsque vous déboguez une solution JavaScript qui contient une DLL de composant
 
 Veillez à sélectionner les fonctionnalités appropriées dans le concepteur de packages. Par exemple, si vous essayez d’ouvrir un fichier image de la bibliothèque Images de l’utilisateur à l’aide des API Windows Runtime, veillez à cocher la case Bibliothèque d’images du volet Capacités du concepteur de manifeste.
 
-Si votre code JavaScript ne semble pas reconnaître les propriétés ou méthodes publiques du composant, assurez-vous que vous utilisez la casse mixte dans JavaScript. Par exemple, les langages c++ LogCalc c++ / CX méthode doit être référencée sous la forme logCalc dans JavaScript.
+Si votre code JavaScript ne semble pas reconnaître les propriétés ou méthodes publiques du composant, assurez-vous que vous utilisez la casse mixte dans JavaScript. Par exemple, les langages c++ LogCalc / méthode CX doit être référencée sous la forme logCalc dans JavaScript.
 
 Si vous supprimez C++ / CX Windows Runtime projet du composant à partir d’une solution, vous devez supprimer manuellement la référence de projet à partir du projet JavaScript. Sinon, il ne sera plus possible d’effectuer d’opérations de débogage ou de génération. Si nécessaire, ajoutez ensuite une référence d’assembly à la DLL.
 
 ## <a name="related-topics"></a>Rubriques connexes
-* [Procédure pas à pas: Création d’un composant Windows Runtime de base en C++ / CX et appel de ce à partir de JavaScript ou c#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
+* [Procédure pas à pas: création d’un composant WindowsRuntime de base en C++/CX et appel de ce composant à partir de JavaScript ou C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)

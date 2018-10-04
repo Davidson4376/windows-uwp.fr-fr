@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
 ms.openlocfilehash: b5110eebde087593f07704e89c2e4708b2fcbb8b
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315165"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358923"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>Exécuter, déboguer et tester une application de bureau empaquetée
 
@@ -44,7 +44,7 @@ Pour démarrer votre application, sélectionnez-la dans le menu Démarrer de Win
 ![Application empaquetée dans le menu Démarrer](images/desktop-to-uwp/converted-app-installed.png)
 
 > [!NOTE]
-> Une application empaquetée toujours s’exécute en tant qu’utilisateur interactif, et tout lecteur sur lequel vous installez votre application empaquetée à doit être formaté au format NTFS.
+> Une application empaquetée toujours s’exécute en tant qu’utilisateur interactif, et que vous installez votre application empaquetée sur n’importe quel lecteur doit être formaté au format NTFS.
 
 ## <a name="debug-your-app"></a>Déboguer votre application
 
@@ -70,7 +70,7 @@ Si vous avez créé votre package à l'autre d'un autre outil, appliquez les ét
 
 Si vous apportez vos modifications à votre application pour corriger des bogues, remettez-la à l’aide de l’outil MakeAppx. Consultez [Exécuter l’outil MakeAppX](desktop-to-uwp-manual-conversion.md#make-appx).
 
-### <a name="debug-the-entire-application-lifecycle"></a>Déboguer le cycle de vie de l’ensemble de l’application
+### <a name="debug-the-entire-application-lifecycle"></a>Déboguer l’intégralité de l’application du cycle de vie
 
 Dans certains cas, vous souhaiterez souhaiter un contrôle sur le processus de débogage, notamment la possibilité de déboguer votre application avant son démarrage.
 
@@ -111,7 +111,7 @@ Vous pouvez également signer votre application manuellement. Voici comment proc
 
 ### <a name="test-your-application-for-windows-10-s"></a>Tester votre application pour Windows 10 S
 
-Avant de publier votre application, assurez-vous qu’elle fonctionne correctement sur les appareils qui exécutent Windows 10 S. En fait, si vous prévoyez de publier votre application dans le Microsoft Store, vous devez le faire dans la mesure où il s’agit d’une exigence du store. Les applications qui ne fonctionnent pas correctement sur les appareils exécutant Windows10 S ne seront pas certifiées.
+Avant de publier votre application, assurez-vous qu’il fonctionne correctement sur les appareils qui exécutent Windows 10 S. En fait, si vous prévoyez de publier votre application dans le Microsoft Store, vous devez le faire, car c’est une exigence du store. Les applications qui ne fonctionnent pas correctement sur les appareils exécutant Windows10 S ne seront pas certifiées.
 
 Consultez le [Test de votre application Windows pour Windows 10 S](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-test-windows-s).
 

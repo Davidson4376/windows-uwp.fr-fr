@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows10, uwp, vignette, notification par vignette, contenu de vignette, schéma, charge utile de vignette
 ms.localizationpriority: medium
 ms.openlocfilehash: d2baa2e2d7b8d68505159eb480ea3be78750f507
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4317863"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358107"
 ---
 # <a name="tile-content-schema"></a>Schéma du contenu de la vignette
 

@@ -2,7 +2,7 @@
 author: PatrickFarley
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Tests d’application Pont du bureau Windows
-description: Utilisez les tests intégrés de pont du bureau pour vous assurer que votre application de bureau est optimisée pour sa conversion vers une application UWP.
+description: Utilisez les tests intégrés de pont du bureau pour vous assurer que votre application de bureau est optimisée pour la conversion vers une application UWP.
 ms.author: pafarley
 ms.date: 12/18/2017
 ms.topic: article
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 96087d2a41eb443374d8cd9bda5608d6156f9173
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316803"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4359911"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests d’application Pont du bureau Windows
 
@@ -125,7 +125,7 @@ L’image «BadgeLogo» a une valeur ABGR «{value}» non valide pour une image 
 L’image doit définir au moins un type Variant sans qualificateur TargetSize. Elle doit définir un qualificateur Scale ou laisser Scale et TargetSize non spécifiés, ce qui donne la valeur par défaut Scale-100.  | Pour plus d’informations, consultez les guides sur la [conception réactive](https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx) et [les ressources d’application](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data). 
 Un fichier «resources.pri» manque dans le package.  | Si le manifeste de votre application comporte du contenu localisable, veillez à ce que le package de votre application contienne un fichier resources.pri valide. 
 Le fichier «resources.pri» doit contenir un mappage des ressources avec un nom qui correspond au nom du package «{package full name}».  | Vous pouvez obtenir cette erreur si le manifeste a changé et que le nom du mappage de ressources dans resources.pri ne correspond plus au nom du package dans le manifeste. Dans le message réel, {package full name} représente le nom du package que resources.pri doit contenir. Pour résoudre ce problème, vous devez régénérer resources.pri; la façon la plus facile de le faire consiste à régénérer le package de l’application. 
-La fusion automatique ne doit pas être activée pour le fichier «resources.pri».  | MakePRI.exe prend en charge une option appelée AutoMerge. La valeur par défaut de AutoMerge est off. Lorsque l’option AutoMerge est activée, elle fusionne les ressources du module linguistique d’une application en un fichier resources.pri unique au moment de l’exécution. Est déconseillé pour les applications que vous envisagez de distribuer par le biais du Microsoft Store. Le fichier resources.pri d’une application distribuée par le biais du Microsoft Store doivent être à la racine du package de l’application et contenir toutes les références de langage qui prend en charge de l’application. 
+La fusion automatique ne doit pas être activée pour le fichier «resources.pri».  | MakePRI.exe prend en charge une option appelée AutoMerge. La valeur par défaut de AutoMerge est off. Lorsque l’option AutoMerge est activée, elle fusionne les ressources du module linguistique d’une application en un fichier resources.pri unique au moment de l’exécution. Est déconseillé pour les applications que vous envisagez de distribuer par le biais du Microsoft Store. Le fichier resources.pri d’une application distribuée par le biais du Microsoft Store doivent être à la racine du package de l’application et contenir toutes les références linguistiques qui prend en charge de l’application. 
 La chaîne «{string}» ne respecte pas la limite maximale de {number}caractères.  | Consultez les [Exigences relatives aux packages d’applications](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements). Dans le message réel, {string} est remplacé par la chaîne affectée par l’erreur et {number} représente la longueur maximale. 
 La chaîne {string} ne doit pas comporter d’espace de début/fin.  | Le schéma des éléments du manifeste de l’application n’autorise pas les espaces de début ou de fin. Dans le message réel, {string} est remplacé par la chaîne affectée par l’erreur. Assurez-vous qu’aucune des valeurs localisées des champs du manifeste dans resources.pri ne possède d’espaces de début ou de fin. 
 La chaîne ne doit pas être vide (sa longueur doit être supérieure à zéro).  | Pour plus d’informations, voir [Exigences relatives aux packages d’applications](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements). 
@@ -224,7 +224,7 @@ Ce peut être corrigé en vous assurant que l’application a été compilée co
 > La version de débogage d’une application échouera à ce test même si l’application utilise uniquement des [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx). Passez en revue les messages d’erreur pour identifier l’API présentent qui n’est pas une API autorisée pour les applications UWP. 
 
 > [!NOTE]
-> Les applications de C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. Pour plus d’informations, consultez [solutions de rechange aux API Windows dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) .
+> Applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. Pour plus d’informations, consultez [solutions de rechange aux API Windows dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) .
 
 ### <a name="6-user-account-control-uac-test"></a>6. Test du contrôle de compte d’utilisateur (UAC)  
 
@@ -232,7 +232,7 @@ Ce peut être corrigé en vous assurant que l’application a été compilée co
 Le test s’assure que l’application ne demande pas de contrôle de compte d’utilisateur lors de l’exécution.
 
 **Détails du test**  
-Une application ne peut pas demander l’élévation d’administrateur ni UIAccess conformément à la politique du Microsoft Store. Les autorisations de sécurité élevées ne sont pas prises en charge. 
+Une application ne peut pas demander une élévation administrateur ni UIAccess conformément à la politique du Microsoft Store. Les autorisations de sécurité élevées ne sont pas prises en charge. 
 
 **Actions correctives**  
 Les applications doivent s’exécuter en tant qu’utilisateur interactif. Pour plus d’informations, voir [Vue d’ensemble de la sécurité UIAutomation](https://go.microsoft.com/fwlink/?linkid=839440).

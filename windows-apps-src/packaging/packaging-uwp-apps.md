@@ -14,11 +14,11 @@ f1_keywords:
 - vs.storeassociationwizard
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ce80206823694f06e4aa5c3480b4dcb30c4f95c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4320013"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4359401"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Créer un package d’application UWP avec Visual Studio
 
@@ -29,7 +29,7 @@ Dans Windows 10, vous pouvez soumettre un package d’application, un ensemble d
 ## <a name="types-of-app-packages"></a>Types de packages d’application
 
 - **Package d’application (.appx ou .msix)**  
-    Un fichier contenant votre application dans un format pouvant être chargé de manière indépendante sur un appareil. N’importe quel fichier de package d’application unique créé par Visual Studio est **pas** destiné à être soumis au centre de développement et doit être utilisé pour le chargement indépendant et de test uniquement. Si vous souhaitez soumettre votre application au centre de développement, utilisez le fichier de chargement de package d'application.  
+    Un fichier contenant votre application dans un format pouvant être chargé de manière indépendante sur un appareil. N’importe quel fichier de package d’application unique créé par Visual Studio est **pas** destiné à être soumis au centre de développement et doit être utilisé pour le chargement indépendant et à des fins de tests uniquement. Si vous souhaitez soumettre votre application au centre de développement, utilisez le fichier de chargement de package d'application.  
 
 - **Ensemble d’applications (.appxbundle ou .msixbundle)**  
     Un ensemble d'applications désigne un type de package pouvant contenir plusieurs packages d'application, chacun étant généré pour prendre en charge une architecture d'appareil spécifique. Par exemple, un ensemble d'applications peut contenir troispackages d'application distincts pour les configurations x86, x64 et ARM. Les ensembles d'applications doivent être générés autant que possible. En effet, ils permettent aux applications d'être disponibles à un éventail d'appareils des plus larges.  
@@ -102,7 +102,7 @@ Vous pouvez y procéder à l'aide de l'assistant **Créer des packages d'applica
 4.  Connectez-vous au tableau de bord du Centre de développement Windows à l’aide de votre compte de développeur. Si vous ne disposez pas encore d’un compte de développeur, l’Assistant vous aidera à en créer un.
 5.  Sélectionnez le nom d’application de votre package ou réservez-en un nouveau sur le portail du Centre de développement Windows, si ce n’est déjà fait.  
     ![Fenêtre Créer des packages d’application avec la sélection de nom d’application affichée](images/packaging-screen4.jpg)
-6.  Veillez à sélectionner les troisconfigurations d'architecture (x86, x64 et ARM) dans la boîte de dialogue **Sélectionner et configurer des packages** afin de garantir que le bon déploiement de votre application sur un large éventail d'appareils. Dans la zone de liste **Générer l'ensemble d'applications**, sélectionnez **Toujours**. Un ensemble d’applications (.appxbundle) est préférée un fichier de package d’application unique, car elle contient une collection de packages d’applications configurés pour chaque type d’architecture de processeur. Lorsque vous choisissez de générer un ensemble d'applications, celui-ci sera inclus dans le fichier (.appxupload) de chargement de package d'application final avec les informations analytiques de débogage et d'incident. Si vous ne savez pas quelle(s) architecture(s) choisir ou si vous souhaitez en savoir plus sur les architectures utilisées par divers appareils, consultez [Architectures de package d’application](https://docs.microsoft.com/windows/uwp/packaging/device-architecture).  
+6.  Veillez à sélectionner les troisconfigurations d'architecture (x86, x64 et ARM) dans la boîte de dialogue **Sélectionner et configurer des packages** afin de garantir que le bon déploiement de votre application sur un large éventail d'appareils. Dans la zone de liste **Générer l'ensemble d'applications**, sélectionnez **Toujours**. Un ensemble d’applications (.appxbundle) est préférée un fichier de package d’application unique, car il contient une collection de packages d’applications configurés pour chaque type d’architecture de processeur. Lorsque vous choisissez de générer un ensemble d'applications, celui-ci sera inclus dans le fichier (.appxupload) de chargement de package d'application final avec les informations analytiques de débogage et d'incident. Si vous ne savez pas quelle(s) architecture(s) choisir ou si vous souhaitez en savoir plus sur les architectures utilisées par divers appareils, consultez [Architectures de package d’application](https://docs.microsoft.com/windows/uwp/packaging/device-architecture).  
     ![Fenêtre Créer des packages d’application avec la configuration de package affichée](images/packaging-screen5.jpg)
 
 

@@ -2,7 +2,7 @@
 author: QuinnRadich
 title: Quelles sont les nouveautés dans la documentation Windows en juillet 2018 - développer des applications UWP
 description: Nouvelles fonctionnalités, des vidéos, des exemples et des conseils aux développeurs ont été ajoutées à la documentation du développeur Windows 10 juillet 2018.
-keywords: Nouveautés, mise à jour, fonctionnalités, conseils de développeur, Windows 10, juillet
+keywords: Quelles sont les nouveautés, mise à jour, fonctionnalités, conseils de développeur, Windows 10, juillet
 ms.author: quradic
 ms.date: 7/11/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f41d25fd6757e5d3f80d00de341168de4f34e946
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316729"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4359757"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en juillet 2018
 
@@ -26,19 +26,19 @@ La documentation du développeur Windows est constamment mise à jour afin d'int
 
 ### <a name="progressive-web-apps-on-windows"></a>Applications Web progressives sur Windows
 
-[Applications Web progressives (PWA)](https://developer.microsoft.com/windows/pwa) sont simplement des applications web qui sont [progressivement amélioré](https://wikipedia.org/wiki/Progressive_enhancement) avec des fonctionnalités similaires application natives sur la prise en charge des plateformes et des moteurs de navigateur, tels que l’installation de lancement à partir d’écran d’accueil, la prise en charge en mode hors connexion et push notifications. Profitez de l’avantage supplémentaire en cours d’exécution sur Windows 10 avec le moteur de Microsoft Edge (EdgeHTML), les PWA [indépendamment de la fenêtre du navigateur en tant qu’applications UWP.](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
+[Applications Web progressives (PWA)](https://developer.microsoft.com/windows/pwa) sont simplement des applications web qui sont [progressivement amélioré](https://wikipedia.org/wiki/Progressive_enhancement) avec des fonctionnalités similaires application natives sur la prise en charge de plateformes et des moteurs de navigateur, tels que l’installation de lancement à partir d’écran d’accueil, la prise en charge en mode hors connexion et push notifications. Profitez de l’avantage supplémentaire en cours d’exécution sur Windows 10 avec le moteur de Microsoft Edge (EdgeHTML), les PWA [indépendamment de la fenêtre du navigateur en tant qu’applications UWP.](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
 
 ![Une image de PWA en action](images/progressive-web-apps.jpg)
 
 Consultez nos guides PWA pour:
 
-* [Créer une application web simple en tant que PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started)
+* [Créer une application web simple en tant qu’une instance PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started)
 * [Améliorer votre PWA avec Windows Runtime](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/windows-features)
 * [Publier votre PWA dans le Microsoft Store](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/microsoft-store)
 
 ### <a name="notepad"></a>Bloc-notes
 
-Disponible dans Windows 10 Insider Preview Build 17713, [le bloc-notes a été mis à jour avec de nombreuses nouvelles fonctionnalités](http://aka.ms/ant-man). Zoom enveloppant recherche/remplacement et prise en charge des fins de ligne Unix/Linux (saut de ligne) et Mac (CR) sont désormais disponibles pour [Les Windows Insiders](https://insider.windows.com/). 
+Disponible dans Windows 10 Insider Preview Build 17713, [le bloc-notes a été mis à jour avec de nombreuses nouvelles fonctionnalités](http://aka.ms/ant-man). Zoom, enveloppant recherche/remplacement et prise en charge des fins de ligne Unix/Linux (saut de ligne) et Mac (CR) sont désormais disponibles pour [Les Windows Insiders](https://insider.windows.com/). 
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
@@ -64,11 +64,11 @@ Nous avons ajouté plusieurs nouvelles rubriques à la [documentation de WebVR](
 
 * [Démonstrations WebVR](https://docs.microsoft.com/microsoft-edge/webvr/demos): consultez certaines démonstrations de WebVR à l’aide de Microsoft Edge et un casque immersif Windows Mixed Reality.
 
-En outre, nous lui avons apportées certaines mises à jour vers les pages existantes:
+En outre, nous avons certaines mises à jour vers les pages existantes:
 
-* La table des matières est désormais mieux organisée quatre séries de niveau supérieur distinctes: **Notions de base**, de **développement**, **ressources**et **démonstrations**.
+* La table des matières est désormais mieux organisée quatre séries de niveau supérieur distincts: **Notions de base**, de **développement**, **ressources**et **démonstrations**.
 
-* [Guide du développeur de WebVR (page d’accueil)](https://docs.microsoft.com/microsoft-edge/webvr/): actualisée apparence, avec des grandes images et icônes et Nouvelle démonstration.
+* [Guide du développeur WebVR (page d’accueil)](https://docs.microsoft.com/microsoft-edge/webvr/): actualisé l’apparence, avec des grandes images et icônes et Nouvelle démonstration.
 
 * [À l’aide de WebVR avec Microsoft Edge](https://docs.microsoft.com/microsoft-edge/webvr/webvr-with-edge): mise à jour pour inclure des informations sur les fenêtres de mise à jour 10 avril 2018.
 
@@ -80,19 +80,19 @@ Notre [documentation prise en main](../get-started/index.md) pour les développe
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>Améliorer votre robot avec chat personnalité de projet
 
-Chat de personnalité projet vous permet d’ajouter un personnage personnalisable à vos robots de chat. À l’intégration avec le Kit de développement logiciel Microsoft robot Framework, vous pouvez ajouter des fonctionnalités de parler-petites un moyen plus conversationnel d’interagir avec les clients. [Regardez la vidéo](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be) pour savoir comment implémenter, puis [d’essayer de la démonstration interactive](http://aka.ms/PersonalityChat) pour une expérience pratique.
+Chat de personnalité projet vous permet d’ajouter un personnage personnalisable à vos robots de chat. À l’intégration avec le Kit de développement logiciel Microsoft robot Framework, vous pouvez ajouter des fonctionnalités de petites parler un moyen plus conversationnel d’interagir avec les clients. [Regardez la vidéo](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be) pour savoir comment implémenter, puis [d’essayer de la démonstration interactive](http://aka.ms/PersonalityChat) pour une expérience pratique.
 
 ### <a name="one-dev-question"></a>Question sur le développement
 
-Dans la série de vidéos Question sur le développement, les développeurs Microsoft longtime couvrent une série de questions sur le développement Windows, la culture de l’équipe et historique. Voici les questions les plus récentes que nous avons répondu à!
+Dans la série de vidéos Question sur le développement, les développeurs Microsoft longtime décrire une série de questions sur le développement Windows, la culture de l’équipe et l’historique. Voici les dernières questions que nous avons répondu!
 
 Raymond Chen:
 
-* [Pourquoi vous appliquez à Microsoft?](https://www.youtube.com/watch?v=oL8ymamkEMU&feature=youtu.be)
+* [Pourquoi vous appliquer à Microsoft?](https://www.youtube.com/watch?v=oL8ymamkEMU&feature=youtu.be)
 
 Larry Osterman:
 
-* [Pourquoi ne nous permettent aux développeurs changer le périphérique audio par défaut?](https://www.youtube.com/watch?v=6aNUoVfbnmg&feature=youtu.be)
+* [Pourquoi ne pas nous laisser les développeurs changer le périphérique audio par défaut?](https://www.youtube.com/watch?v=6aNUoVfbnmg&feature=youtu.be)
 * [Pourquoi sont tellement asynchrone de fonctions UWP?](https://www.youtube.com/watch?v=5M724QIy1Mk&feature=youtu.be)
 
 ## <a name="samples"></a>Exemples

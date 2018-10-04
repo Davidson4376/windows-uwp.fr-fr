@@ -8,14 +8,14 @@ ms.date: 03/15/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, portail d’appareil
+keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 146cce82275047c112d70cfb3d022eab723f49e6
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316537"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358120"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Portail d’appareil pour WindowsDesktop
 

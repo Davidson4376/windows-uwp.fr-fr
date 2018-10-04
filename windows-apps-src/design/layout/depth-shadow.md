@@ -1,6 +1,6 @@
 ---
 author: serenaz
-description: Z en profondeur ou relative à la profondeur et ombre existe deux façons de profondeur d’intégrer dans votre application pour aider les utilisateurs à se concentrer naturellement et plus efficacement.
+description: Z en profondeur, ou relatif profondeur et ombre existe deux façons de profondeur d’intégrer dans votre application pour aider les utilisateurs à se concentrer naturellement et plus efficacement.
 title: Z en profondeur et ombre pour les applications UWP
 template: detail.hbs
 ms.author: sezhen
@@ -13,17 +13,17 @@ pm-contact: chigy
 design-contact: balrayit
 ms.localizationpriority: medium
 ms.openlocfilehash: a1433b131b994ee2b1323909bc7c195e00f43cde
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4317207"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4360768"
 ---
 # <a name="z-depth-and-shadow"></a>Z en profondeur et ombre
 
 ![profondeur true](images/elevation-shadow/depth.svg)
 
-Le système de profondeur Fluent utilise des concepts physiques, tels que 3D de positionnement, la lumière, et ombre réinventer l’interface utilisateur numérique permettre être perçu dans un environnement physique stratifié plus. Z en profondeur ou relative à la profondeur et ombre sont deux façons d’incorporer de profondeur dans votre application UWP.
+Le système de profondeur Fluent utilise des concepts physiques, tels que 3D de positionnement, la lumière, et ombre réinventer numérique interface utilisateur permettre être perçu dans un environnement physique stratifié plus. Z en profondeur, ou relatif profondeur et les clichés instantanés sont deux façons d’incorporer de profondeur dans votre application UWP.
 
 ## <a name="what-is-z-depth"></a>Qu’est profondeur z?
 
@@ -31,19 +31,19 @@ Z en profondeur est la distance entre deux surfaces le long de l’axe z, et il 
 
 ![profondeur-z](images/elevation-shadow/elevation.svg)
 
-### <a name="why-use-z-depth"></a>Pourquoi utiliser la profondeur z?
+### <a name="why-use-z-depth"></a>Pourquoi utiliser z en profondeur?
 
-Dans le monde physique, nous ont tendance à se concentrer sur les objets qui sont plus proches de nous. Nous pouvons appliquer ce instinct spatial d’interface utilisateur numérique, également. Par exemple, si vous concevez un élément plus proche pour l’utilisateur, puis l’utilisateur sera instinctivement centrée sur l’élément. En déplacement éléments d’interface utilisateur plus près de l’axe z, vous pouvez établir une hiérarchie visuelle entre les objets, aider les utilisateurs à effectuer des tâches naturellement et efficacement dans votre application. 
+Dans le monde physique, nous ont tendance à se concentrer sur les objets qui sont plus proches de nous. Nous pouvons appliquer ce instinct spatial à l’interface utilisateur numérique, également. Par exemple, si vous concevez un élément plus proche pour l’utilisateur, puis l’utilisateur sera instinctivement centrée sur l’élément. Par déplacement éléments d’interface utilisateur plus près de l’axe z, vous pouvez établir une hiérarchie visuelle entre les objets, aider les utilisateurs à effectuer des tâches naturellement et efficacement dans votre application. 
 
 ![z en profondeur dans le menu de contenu](images/elevation-shadow/whyelevation.svg)
 
-En plus de fournir une hiérarchie visuelle significative, z en profondeur permet également de vous permettent de créer expériences fluides en toute transparence de la 2D pour les environnements 3D, mise à l’échelle de votre application sur tous les périphériques et facteurs de forme. 
+En plus de fournir significative hiérarchie visuelle, z en profondeur permet également de vous permettent de créer expériences fluides en toute transparence de la 2D pour les environnements 3D, mise à l’échelle de votre application sur tous les périphériques et facteurs de forme. 
 
-![z en profondeur en 2d pour 3d](images/elevation-shadow/elevation-2d3d.svg)
+![profondeur-z en 2d pour 3d](images/elevation-shadow/elevation-2d3d.svg)
 
 ### <a name="how-is-z-depth-perceived"></a>Comment z en profondeur est perçue?
 
-Selon la façon dont nous percevoir profondeur dans le monde physique, Voici plusieurs techniques peuvent être utilisées pour afficher la proximité dans l’interface utilisateur numérique.
+Selon la façon dont nous percevoir profondeur dans le monde physique, Voici plusieurs techniques qui peuvent être utilisés pour afficher la proximité dans l’interface utilisateur numérique.
 
 - **Mise à l’échelle** Objets loin apparaissent plus petits que les objets plus près de la même taille. Cette méthode est difficile à illustrer efficacement dans l’espace 2D, afin qu’il n’est généralement pas recommandé. Toutefois, vous pouvez utiliser l’échelle et [ombre](#what-is-shadow) pour créer une simulation efficace des objets en déplacement plus près à l’utilisateur en 2D.
 
@@ -53,21 +53,21 @@ Selon la façon dont nous percevoir profondeur dans le monde physique, Voici plu
 
     ![proximité avec atmosphère](images/elevation-shadow/elevation-atmosphere.svg)
 
-- **Mouvement** Vitesse relative peut être utilisée pour illustrer la proximité: objets plus près se déplacent plus rapidement que les objets distants en arrière-plan. Pour savoir comment implémenter cet effet, consultez [parallaxe](../motion/parallax.md).
+- **Mouvement** Vitesse relative peut être utilisée pour illustrer la proximité: les objets plus près se déplacent plus rapidement que les objets distants en arrière-plan. Pour savoir comment implémenter cet effet, consultez [parallaxe](../motion/parallax.md).
 
     ![proximité avec le mouvement](images/elevation-shadow/elevation-motion.svg)
 
-### <a name="recommendations-for-z-depth"></a>Recommandations sur la profondeur z
+### <a name="recommendations-for-z-depth"></a>Recommandations pour la profondeur-z
 
-Réduire le nombre de plans avec élévation de privilèges pour fournir le focus visuel claire. Pour la plupart des scénarios, deux plans est suffisant: un pour les éléments au premier plan (proximité élevée) et une autre pour les éléments de l’arrière-plan (proximité faible). Si vous avez plusieurs éléments avec élévation de privilèges qui ne se chevauchent pas, les regrouper le même plan (autrement dit, au premier plan) afin de réduire le nombre de plans.
+Réduire le nombre de plans avec élévation de privilèges pour fournir le focus visuel claire. Pour la plupart des scénarios, deux plans est suffisant: un pour les éléments au premier plan (proximité élevée) et une autre pour les éléments de l’arrière-plan (proximité faible). Si vous avez plusieurs éléments avec élévation de privilèges qui ne se chevauchent pas, les regrouper le même plan (autrement dit, le premier plan) afin de réduire le nombre de plans.
 
 ![z en profondeur au sein d’une application](images/elevation-shadow/app-depth.svg)
 
 ## <a name="what-is-shadow"></a>Nouveautés d’ombre?
 
-![cliché instantané](images/elevation-shadow/shadow.svg)
+![ombre](images/elevation-shadow/shadow.svg)
 
-Ombre est un moyen de percevoir une élévation. Lorsqu’il est clair au-dessus d’un objet avec élévation de privilèges, il existe une ombre sur la surface ci-dessous. Plus l’objet, la plus grande et plus douce l’ombre devient. Notez que les objets avec élévation de privilèges ne doivent avoir des ombres, mais les ombres indiquent une élévation.
+Ombre est un moyen de percevoir une élévation. Lorsqu’il est clair au-dessus d’un objet avec élévation de privilèges, il existe une ombre sur la surface ci-dessous. Plus l’objet, la plus grande et plus l’ombre devient. Notez que les objets avec élévation de privilèges n’avez pas besoin de disposer des ombres, mais les ombres indiquent une élévation.
 
 Dans les applications UWP, les ombres doivent être délibérée, pas esthétique. Si les ombres détournent l’attention de mise au point et la productivité, puis limiter l’utilisation de clichés instantanés.
 
@@ -80,7 +80,7 @@ Le ThemeShadow type peut être appliqué à n’importe quel élément XAML pour
 - S’adapte aux changements de l’éclairage, thème de l’utilisateur, environnement d’application et interpréteur de commandes.
 - Ombres automatiquement en fonction de leur élévation des éléments.
 - Maintient les éléments synchronisées comme ils de déplacement et de modifier une élévation.
-- Conserve les ombres cohérent dans l’ensemble et entre les applications.
+- Conserve les ombres cohérente tout au long d’et entre les applications.
 
 Voici quelques exemples de ThemeShadow à différents élévations avec les thèmes clair et foncées:
 
@@ -152,19 +152,19 @@ Button1.Translation += new Vector3(0, 0, 16);
 Button2.Translation += new Vector3(0, 0, 32);
 ```
 
-### <a name="performance-best-practices-for-themeshadow"></a>Recommandations en matière de performances pour ThemeShadow
+### <a name="performance-best-practices-for-themeshadow"></a>Meilleures pratiques de performances pour ThemeShadow
 
 1. Limitez le nombre d’éléments récepteur personnalisée au minimum nécessaire. 
 
 2. Si plusieurs éléments récepteur sont à l’élévation même essayer de les combiner en ciblant un élément parent unique à la place.
 
-3. Si plusieurs éléments effectuer un cast le même type d’ombre sur les mêmes éléments récepteur ajouter l’ombre en tant qu’une ressource partagée et le réutiliser.
+3. Si plusieurs éléments effectuer un cast le même type d’ombre sur les mêmes éléments récepteur puis ajouter l’ombre comme une ressource partagée et le réutiliser.
 
 ## <a name="drop-shadow"></a>Ombre portée
 
-DropShadow n’est pas réactive automatiquement à son environnement et n’utilise pas de sources de lumière. Par exemple les implémentations, consultez la [Classe DropShadow](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow).
+DropShadow n’est pas réactive automatiquement à son environnement et n’utilise pas de sources de lumière. Par exemple, les implémentations, consultez la [Classe DropShadow](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow).
 
-## <a name="which-shadow-should-i-use"></a>Les clichés instantanés dois-je utiliser?
+## <a name="which-shadow-should-i-use"></a>Lequel les clichés instantanés dois-je utiliser?
 
 | Propriété | ThemeShadow | DropShadow |
 | - | - | - | - |
@@ -176,6 +176,6 @@ DropShadow n’est pas réactive automatiquement à son environnement et n’uti
 
 - En règle générale, nous vous recommandons d’utiliser ThemeShadow, ce qui s’adapte automatiquement à son environnement.
 - Si vous avez plus des scénarios avancés d’ombres personnalisées, utilisez DropShadow, ce qui permet une plus grande personnalisation.
-- Pour les vers l’arrière compatibilité, utilisez DropShadow.
+- Pour vers l’arrière compatibilité, utilisez DropShadow.
 - Pour les problèmes de performances, limiter le nombre d’ombres ou utilisez DropShadow.
-- Sur HMDs en 3D true, utilisez ThemeShadow. Dans la mesure où DropShadow dessine avec un décalage spécifié à partir de l’élément visuel. elle est apparentée à, à partir du côté, elle apparaît comme il flotte dans l’espace. En revanche, ThemeShadow est restituée au-dessus les visuels définis en tant que récepteurs.
+- Sur HMDs en 3D true, utilisez ThemeShadow. Dans la mesure où DropShadow dessine avec un décalage spécifié à partir de l’élément visuel. elle est apparentée à, à partir du côté, elle apparaît comme il flotte dans l’espace. En revanche, ThemeShadow est restituée au-dessus les effets visuels définis en tant que récepteurs.

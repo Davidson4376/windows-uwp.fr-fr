@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, création de packages, disposition de package, package d'actifs
 ms.localizationpriority: medium
 ms.openlocfilehash: 8aafac1c1217ce082cd9d6176c530967f32e4cdd
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4308783"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358897"
 ---
 # <a name="introduction-to-asset-packages"></a>Introduction aux packages d'actifs
 

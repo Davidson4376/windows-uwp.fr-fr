@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 602a0af685e812f5c65f94d07297cac9fc411923
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4312195"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358162"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Présentation de la conception des applicationsUWP
 
@@ -33,7 +33,7 @@ Les applications UWP s’exécutent sur tous les [appareils Windows 10](../devic
 
 ![même application sur différents appareils](images/universal-image-1.jpg)
 
-UWP permet en ajustant automatiquement les éléments d’interface utilisateur afin qu’ils soient lisibles et facilement interagir avec sur tous les périphériques et les tailles d’écran.
+UWP permet en ajustant automatiquement les éléments d’interface utilisateur afin qu’ils soient lisibles et faciles à utiliser sur tous les périphériques et les tailles d’écran.
 
 Lorsque votre application est exécutée sur un appareil, le système utilise un algorithme afin de normaliser l’affichage à l’écran des éléments d’interface utilisateur. Cet algorithme de mise à l’échelle prend en compte la distance d’affichage et la densité de l’écran (en pixels par pouce) pour optimiser la taille perçue (plutôt que la taille physique). L’algorithme de mise à l’échelle garantit qu’une police de 24pixels sur un appareil Surface Hub placé à une distance de 3 mètres est aussi lisible pour l’utilisateur qu’une police de 24pixels sur un téléphone doté d’un écran 5pouces distant de quelques centimètres.
 

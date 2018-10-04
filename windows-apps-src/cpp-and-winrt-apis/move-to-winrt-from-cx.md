@@ -10,23 +10,23 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: 68a631153c104f14f22839077c4c62d34626ed2a
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318061"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358986"
 ---
-# <a name="move-to-cwinrt-from-ccx"></a>Passer de C++/CX à C++/WinRT
+# <a name="move-to-cwinrt-from-ccx"></a>Transférer vers C++/CX à partir de C++/WinRT
 
 Cette rubrique montre comment porter [C++ / CX](/cpp/cppcx/visual-c-language-reference-c-cx) code vers son équivalent en [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
 > [!IMPORTANT]
-> Si vous souhaitez porter progressivement votre [C++ / CX](/cpp/cppcx/visual-c-language-reference-c-cx) code c++ / WinRT, vous pouvez. C++ / CX et C++ / WinRT code peut coexister dans le même projet, à l’exception de prise en charge du compilateur XAML et de composants Windows Runtime. Pour ces exceptions, vous devez cibler soit C++ / CX ou C++ / WinRT dans le même projet. Toutefois, vous pouvez utiliser un composant Windows Runtime au code facteur en dehors de votre application XAML comme vous le porter. Déplacez autant C++ / CX de code que vous pouvez dans un composant, puis modifiez le projet XAML vers C++ / WinRT. Ou else laisser le projet XAML en C++ / CX, créez un nouveau C + / composant WinRT et commencer le portage C++ / code CX du projet XAML et placez-le dans le composant. Vous pouvez également avoir C++ / projet de composant CX en parallèle avec C++ / projet de composant WinRT au sein de la même solution, les deux référencer à partir de votre projet d’application, mais progressivement les ports d’un utilisateur à l’autre.
+> Si vous souhaitez porter progressivement votre [C++ / CX](/cpp/cppcx/visual-c-language-reference-c-cx) code c++ / WinRT, vous pouvez. C++ / CX et C++ / WinRT code peut coexister dans le même projet, à l’exception de prise en charge du compilateur XAML et de composants Windows Runtime. Pour ces exceptions, vous devez cibler soit C++ / CX ou C++ / WinRT dans le même projet. Toutefois, vous pouvez utiliser un composant Windows Runtime au code facteur en dehors de votre application XAML comme vous le porter. Déplacez autant C++ / CX de code que vous pouvez dans un composant, puis modifiez le projet XAML en C++ / WinRT. Ou autre laisser le projet XAML en C++ / CX, créez un nouveau C + / composant WinRT et commencer le portage C++ / code CX du projet XAML et placez-le dans le composant. Vous pouvez également avoir C++ / projet de composant CX en même temps que C++ / projet de composant WinRT au sein de la même solution, les deux référencer à partir de votre projet d’application, mais progressivement les ports d’un utilisateur à l’autre.
 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) et le SDK Windows déclarent tous les deux les types dans l’espace de noms racine **Windows**. Un type Windows projeté en C++/WinRT a le même nom complet que le type Windows, mais il est placé dans l'espace de noms C++ **winrt**. Ces espaces de noms distincts vous permettent de porter le code C++/CX vers C++/WinRT à votre propre rythme.
 
-Compte tenu des exceptions mentionnées ci-dessus, la première étape lors du portage d’un projet c++ / WinRT consiste à ajouter manuellement C++ / WinRT support (voir [prise en charge de Visual Studio pour C++ / WinRT et VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)). Pour ce faire, vous devez modifier votre fichier `.vcxproj`, rechercher `<PropertyGroup Label="Globals">` et, à l’intérieur de ce groupe de propriétés, définir la propriété `<CppWinRTEnabled>true</CppWinRTEnabled>`. Un effet de cette modification est la désactivation de la prise en charge de C++/CX dans le projet. Il est conseillé de laisser prise en charge désactivée afin que les messages de génération vous aider à trouver (et le port) toutes les dépendances sur C++ / CX, ou vous pouvez activer la prise en charge retour sur (dans les propriétés du projet, **C/C++** \> **générale** \> **consommer Windows Runtime Extension** \> **Oui (/ZW)**) et le port progressivement.
+Compte tenu des exceptions mentionnées ci-dessus, la première étape lors du portage d’un projet c++ / WinRT consiste à ajouter manuellement C++ / WinRT support (voir [prise en charge de Visual Studio pour C++ / WinRT et VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)). Pour ce faire, vous devez modifier votre fichier `.vcxproj`, rechercher `<PropertyGroup Label="Globals">` et, à l’intérieur de ce groupe de propriétés, définir la propriété `<CppWinRTEnabled>true</CppWinRTEnabled>`. Un effet de cette modification est la désactivation de la prise en charge de C++/CX dans le projet. Il est conseillé de laisser prise en charge désactivée afin que les messages de génération vous aider à trouver (et le port) toutes les dépendances sur C++ / CX, ou vous pouvez activer la prise en charge sur (dans les propriétés du projet, **C/C++** \> **Général** \> **consommer Windows Runtime Extension** \> **Oui (/ZW)**) et le port progressivement.
 
 Définissez la propriété du projet **Général** \> **Version de la plateforme cible** sur 10.0.17134.0 (Windows10, version1803) ou une version supérieure.
 
@@ -68,7 +68,7 @@ if (userList != nullptr)
     ...
 ```
 
-Lors du portage vers l’équivalent C++ / WinRT code, vous supprimez les chapeaux accents et que vous modifiez l’opérateur flèche (-&gt;) opérateur point (.), étant donné que C++ / WinRT projetés types sont des valeurs et non des pointeurs.
+Lors du portage vers l’équivalent C++ / WinRT code, vous supprimez les chapeaux accents et que vous modifiez l’opérateur flèche (-&gt;) pour l’opérateur point (.), dans la mesure où C++ / WinRT projetés sont des types de valeurs et non des pointeurs.
 
 ```cppwinrt
 IVectorView<User> userList = User::Users();
@@ -184,8 +184,8 @@ private:
 };
 ```
 
-## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>Conversion à partir d’une classe runtime de base vers une dérivée
-Il est courant d’avoir une-à-base de référence que vous connaissez fait référence à un objet d’un type dérivé. En C++ / CX, vous utilisez `dynamic_cast` à *cast* la référence de base dans une référence vers dérivé. Le `dynamic_cast` est simplement un appel masqué à [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Voici un exemple type&mdash;vous gérez un événement de modification de propriété de dépendance, et vous souhaitez effectuer un cast de **DependencyObject** vers le type réel qui possède la propriété de dépendance.
+## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>Conversion à partir d’une classe runtime de base à un dérivée
+Il est courant d’avoir une-à-base de référence que vous connaissez fait référence à un objet d’un type dérivé. En C++ / CX, vous utilisez `dynamic_cast` à *cast* la référence à la base dans une référence vers dérivé. Le `dynamic_cast` est simplement un appel masqué à [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Voici un exemple type&mdash;vous gérez un événement de modification de propriété de dépendance, et vous souhaitez effectuer un cast de **DependencyObject** vers le type réel qui possède la propriété de dépendance.
 
 ```cpp
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
@@ -264,7 +264,7 @@ C++/CX fournit plusieurs types de données dans l'espace de noms **Platform**. C
 
 | C++/CX | C++/WinRT |
 | ---- | ---- |
-| **Platform:: Agile\ ^** | [**WinRT::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
+| **Plateforme:: Agile\ ^** | [**WinRT::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
 | **Platform::Exception\^** | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
 | **Platform::InvalidArgumentException\^** | [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
 | **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |

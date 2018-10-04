@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 00e685085c004cced24b9a42ef2261a26eef10bb
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316157"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4359379"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Déclarer des tâches en arrière-plan dans le manifeste de l’application
 
@@ -213,7 +213,7 @@ Voici un exemple de code XML déclarant une tâche en arrière-plan qui s’exé
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>Exécuter dans un nouveau processus à chaque fois qu’un déclencheur se déclenche avec l’attribut SupportsMultipleInstances
 
-Cet exemple déclare une tâche en arrière-plan qui s’exécute dans un nouveau processus qui obtient ses propres limites de ressources (mémoire, processeur) chaque fois qu’un nouveau déclencheur est déclenché. Notez l’utilisation de `SupportsMultipleInstances` qui permet ce comportement. Pour pouvoir utiliser cet attribut vous devez cibler le Kit de développement logiciel version «10.0.15063» (Windows 10 Creators Update) ou une version ultérieure.
+Cet exemple déclare une tâche en arrière-plan qui s’exécute dans un nouveau processus qui obtient ses propres limites de ressources (mémoire, processeur) chaque fois qu’un nouveau déclencheur est déclenché. Notez l’utilisation de `SupportsMultipleInstances` qui permet ce comportement. Pour pouvoir utiliser cet attribut, vous devez cibler le Kit de développement logiciel version «10.0.15063» (Windows 10 Creators Update) ou une version ultérieure.
 
 ```xml
 <Package

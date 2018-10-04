@@ -4,7 +4,7 @@ Description: Build UWP apps and custom/templated controls that support platform 
 title: Mise à l’échelle du texte
 label: Text scaling
 template: detail.hbs
-keywords: UWP, texte, la mise à l’échelle, l’accessibilité, la «options d’ergonomie», afficher, «Ajout de texte plus large», l’interaction utilisateur, entrées
+keywords: UWP, texte, la mise à l’échelle, l’accessibilité, la «options d’ergonomie», afficher, «Ajout de texte plus grand», l’interaction utilisateur, entrées
 ms.author: kbridge
 ms.date: 08/02/2018
 ms.topic: article
@@ -12,28 +12,28 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 885ccc89fcbd4315eeed40c3546ef485c515294e
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316047"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4357933"
 ---
 # <a name="text-scaling"></a>Mise à l’échelle du texte
 
 ![Exemple de texte mise à l’échelle 100 % à 225 %](images/coretext/text-scaling-news-hero-small.png)  
 *Exemple de texte mise à l’échelle dans Windows 10 (100 % à 225 %)*
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Présentation
 
-Lecture de texte sur un écran d’ordinateur (à partir d’appareils mobiles à un ordinateur portable au bureau moniteur à l’écran de Surface Hub giant) peut être difficile pour de nombreuses personnes. À l’inverse, certains utilisateurs de trouver les tailles de police utilisées dans les applications et sites web à être plus grande que nécessaire.
+Lecture de texte sur un écran d’ordinateur (à partir d’un appareil mobile à un ordinateur portable à un moniteur de bureau à l’écran de Surface Hub giant) peut être difficile pour de nombreuses personnes. À l’inverse, certains utilisateurs de trouver les tailles de police utilisés dans les applications et sites web pour être plus grande que nécessaire.
 
-Pour vous assurer que le texte est aussi lisible que possible pour un large éventail d’utilisateurs, Windows offre la possibilité pour les utilisateurs de modifier la taille de police relative sur le système d’exploitation et des applications individuelles. Au lieu d’à l’aide d’une application de la Loupe (qui généralement juste agrandit tous les éléments au sein d’une zone de l’écran et présente ses propres problèmes de facilité d’utilisation), la modification de la résolution d’affichage ou vous fier PPP (qui redimensionne tous les éléments en fonction de l’affichage et de l’affichage type d’échelle distance), un utilisateur peut accéder rapidement à un paramètre de redimensionner uniquement du texte, cela peut aller de 100 % (la taille par défaut) jusqu'à 225 %.
+Pour vous assurer que le texte est aussi lisible que possible pour un large éventail d’utilisateurs, Windows offre la possibilité pour les utilisateurs de modifier la taille de police relative sur le système d’exploitation et des applications individuelles. Au lieu d’à l’aide d’une application de la Loupe (qui généralement simplement vous permet d’agrandir tous les éléments au sein d’une zone de l’écran et présente ses propres problèmes de facilité d’utilisation), la modification de la résolution d’affichage ou partie de confiance sur l’échelle en PPP (qui redimensionne tous les éléments en fonction de l’affichage et de l’affichage type distance), un utilisateur peut accéder rapidement à un paramètre de redimensionner uniquement du texte, cela peut aller de 100 % (la taille par défaut) jusqu'à 225 %.
 
 ## <a name="support"></a>Support
 
 Les applications Windows universelles (standard et PWA), prise en charge de texte mise à l’échelle par défaut.
 
-Si votre application UWP inclut des contrôles personnalisés, des surfaces de texte personnalisé, hauteurs de contrôle codées en dur, des infrastructures plus anciens ou 3e infrastructures tierces, vous devez probablement apporter certaines mises à jour pour garantir une expérience cohérente et utile pour vos utilisateurs.  
+Si votre application UWP inclut des contrôles personnalisés, des surfaces de texte personnalisé, hauteurs de contrôle codées en dur, des infrastructures plus anciens ou 3e infrastructures tierces, vous avez probablement effectuer certaines mises à jour pour garantir une expérience cohérente et utile pour vos utilisateurs.  
 
 DirectWrite, GDI et SwapChainPanels XAML ne pas prennent en charge mise à l’échelle du texte, tandis que la prise en charge Win32 est limitée aux menus, des icônes et barres d’outils.  
 
@@ -44,7 +44,7 @@ DirectWrite, GDI et SwapChainPanels XAML ne pas prennent en charge mise à l’�
 Les utilisateurs peuvent ajuster l’échelle du texte avec l’ajout de texte plus grand curseur sur les paramètres -> d’ergonomie -> Vision/afficher l’écran.
 
 ![Exemple de texte mise à l’échelle 100 % à 225 %](images/coretext/text-scaling-settings-100-small.png)  
-*Valeur à partir des paramètres d’échelle de texte -> d’ergonomie -> Vision/afficher l’écran*
+*Valeur à partir des paramètres d’échelle de texte -> d’ergonomie -> Vision/écran*
 
 ## <a name="ux-guidance"></a>Recommandations en matière d’expérience utilisateur
 
@@ -54,9 +54,9 @@ Comme le texte est redimensionné, contrôles et conteneurs doivent également r
 
 Nous nous avons entendu dire cela déjà? Il est important de répétition: lorsque cela est possible, utilisez toujours les contrôles intégrés fournis avec les différentes infrastructures d’application Windows pour obtenir l’expérience utilisateur la plus exhaustive possible pour l’effort minimal.
 
-Par exemple, tous les contrôles de texte UWP prennent en charge le texte complet expérience sans aucune personnalisation ou la création de modèles de mise à l’échelle.
+Par exemple, tous les contrôles de texte UWP prend en charge le texte complet expérience sans aucune personnalisation ou la création de modèles de mise à l’échelle.
 
-Voici un extrait de code à partir d’une application UWP de base qui inclut plusieurs contrôles de texte standard:
+Voici un extrait de code à partir d’une application UWP de base qui inclut deux contrôles de texte standard:
 
 ``` xaml
 <Grid>
@@ -103,7 +103,7 @@ Voici un extrait de code à partir d’une application UWP de base qui inclut pl
 
 Ne spécifiez pas tailles absolues pour vos contrôles. Si possible, permettre à la plateforme de redimensionner vos contrôles automatiquement en fonction des paramètres utilisateur et d’appareil.  
 
-Dans cet extrait de code de l’exemple précédent, nous utilisons la `Auto` et `*` les valeurs de largeur pour un ensemble de colonnes de la grille et permettent de la plateforme ajustent la disposition d’application basée sur la taille des éléments contenus dans la grille.
+Dans cet extrait de code de l’exemple précédent, nous utilisons la `Auto` et `*` les valeurs de largeur pour un ensemble de colonnes de la grille et de laisser la plate-forme ajustent la disposition d’application basée sur la taille des éléments contenus dans la grille.
 
 ``` xaml
 <Grid.ColumnDefinitions>
@@ -119,14 +119,14 @@ Pour vous assurer que la disposition de votre application est aussi flexible et 
 
 Si vous ne spécifiez pas un saut de ligne, la plateforme utilise les autres méthodes pour ajuster la disposition, notamment le découpage (voir l’exemple précédent).
 
-Ici, nous utilisons la `AcceptsReturn` et `TextWrapping` propriétés de zone de texte pour assurer notre disposition est plus souple possible.
+Ici, nous utilisons la `AcceptsReturn` et `TextWrapping` propriétés du contrôle TextBox pour assurer notre disposition est aussi souples que possible.
 
 ``` xaml
 <TextBox PlaceholderText="Type something here" 
           AcceptsReturn="True" TextWrapping="Wrap" />
 ```
 
-![Mise à l’échelle 100 % à 225 % avec habillage de texte animé](images/coretext/text-scaling-textwrap.gif)  
+![Mise à l’échelle de 100 % à 225 % avec habillage de texte animé](images/coretext/text-scaling-textwrap.gif)  
 *Mise à l’échelle avec habillage de texte animé*
 
 ### <a name="specify-text-trimming-behavior"></a>Spécifier le comportement de découpage de texte
@@ -164,9 +164,9 @@ Ici, nous ajoutons une info-bulle à un contrôle TextBlock qui ne prennent pas 
 
 ### <a name="dont-scale-font-based-icons-or-symbols"></a>Ne pas mettre à l’échelle icônes basées sur la police ou les symboles
 
-Lorsque vous utilisez des icônes basées sur la police d’accentuation ou ornement, désactiver la mise à l’échelle sur ces caractères.
+Lorsque vous utilisez des icônes basées sur une police pour accentuation ou ornement, désactivez la mise à l’échelle sur ces caractères.
 
-Attribuez à la propriété [IsTextScaleFactorEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled) `false` pour XAML la plupart des contrôles.
+Affectez à la propriété [IsTextScaleFactorEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled) `false` pour XAML la plupart des contrôles.
 
 ### <a name="support-text-scaling-natively"></a>Prise en charge du texte mise à l’échelle en mode natif
 

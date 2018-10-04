@@ -10,14 +10,14 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, utiliser rapidement, prise en main
 ms.localizationpriority: medium
 ms.openlocfilehash: b5954aa8236a9abeee6e5c74a200f77fcccf97e3
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318137"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4359562"
 ---
 # <a name="get-started-with-cwinrt"></a>Prise en main de C++/WinRT
-Pour vous familiariser utiliser [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), cette rubrique présente un exemple de code simple.
+Pour vous aider à rapidement avec à l’aide de [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), cette rubrique présente un exemple de code simple.
 
 ## <a name="a-cwinrt-quick-start"></a>Démarrage rapide avec C++/WinRT
 > [!NOTE]
@@ -26,7 +26,7 @@ Pour vous familiariser utiliser [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/in
 Créez un nouveau projet **Windows Console Application (C++/WinRT)**.
 
 > [!IMPORTANT]
-> Si vous utilisez Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et vous ciblez le SDK Windows version 10.0.17134.0 (Windows 10, version 1803), puis un nouvellement créé C + / WinRT projet peut échouer compiler avec l’erreur «*erreur C3861: 'from_abi': identificateur pas trouvé*» et à d’autres erreurs dans *base.h*d’origine. La solution consiste à deux cible une version ultérieure (conforme plus) version du SDK Windows ou de la propriété de projet de jeu **C/C++** > **langue** > **Conformance mode: No** (en outre, si **/ permissive-** s’affiche dans la propriété de projet ** C/C++** > **langue** > de**ligne de commande** sous **Options supplémentaires**, alors supprimez-le).
+> Si vous utilisez Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et vous ciblez le SDK Windows version 10.0.17134.0 (Windows 10, version 1803), puis un nouvellement créé C + / WinRT projet peut échouer compiler avec l’erreur «*erreur C3861: 'from_abi': identificateur pas trouvé*» et à d’autres erreurs dans *base.h*d’origine. La solution consiste à soit cible une version ultérieure (conforme plus) version du SDK Windows ou de la propriété de projet de jeu **C/C++** > **langue** > **Conformance mode: N°** (en outre, si **/ permissive-** s’affiche dans la propriété de projet ** C/C++** > **langue** > de**ligne de commande** sous **Options supplémentaires**, puis supprimez).
 
 Modifiez `pch.h` et `main.cpp` pour qu’ils ressemblent à ce qui suit.
 
@@ -122,7 +122,7 @@ Vous n'avez pas non plus besoin de gérer les codes de retour HRESULT. C++/WinRT
 * [Méthode SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [Propriété SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items)
 * [Structure winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
-* [HRESULT-error struct](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [structure d’erreur HRESULT](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
 ## <a name="related-topics"></a>Rubriquesassociées
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)

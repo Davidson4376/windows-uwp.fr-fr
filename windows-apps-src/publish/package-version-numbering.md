@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cf93cf06b273605b91c31da5b6a6b8cef8dae39
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316717"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4360665"
 ---
 # <a name="package-version-numbering"></a>Numérotation des versions de packages
 
 Chaque package que vous fournissez doit avoir un numéro de version (fourni sous la forme d’une valeur dans l’attribut **Version** de l’élément **Package/Identity** dans le manifeste de l’application). Le MicrosoftStore applique certaines règles relatives aux numéros de version, qui fonctionnent différemment dans les différentes versions du système d’exploitation.
 
 > [!NOTE]
-> Cet article fasse référence aux «packages», mais, sauf indication contraire, les mêmes règles s’appliquent aux numéros de version des fichiers.msix/.appx et.msixbundle/.appxbundle.
+> Cette rubrique fait référence aux «packages», mais, sauf indication contraire, les mêmes règles s’appliquent aux numéros de version des fichiers.msix/.appx et.msixbundle/.appxbundle.
 
 
 ## <a name="version-numbering-for-windows-10-packages"></a>Numérotation des versions pour les packages Windows10
@@ -58,11 +58,11 @@ Vous pouvez utiliser les règles de contrôle de version du package pour amener 
 
 ### <a name="using-version-numbering-to-roll-back-to-a-previously-shipped-package-for-new-acquisitions"></a>Utilisation de la numérotation des versions pour revenir à un package livré précédemment pour de nouvelles acquisitions
 
-Si vous conservez des copies de vos packages, vous avez la possibilité de restaurer le package de votre application dans le Windows Store à un version antérieure du package Windows 10 si vous devez identifier les problèmes avec une version. Il s’agit d’un moyen temporaire de limiter l’interruption pour vos clients pendant que vous prenez le temps de résoudre le problème.
+Si vous conservez des copies de vos packages, vous avez la possibilité de restaurer le package de votre application dans le Windows Store à un version antérieure du package Windows 10 si vous devez découvrir des problèmes avec une version. Il s’agit d’un moyen temporaire de limiter l’interruption pour vos clients pendant que vous prenez le temps de résoudre le problème.
 
 Pour ce faire, créez une nouvelle [soumission](app-submissions.md). Supprimez le package problématique et chargez l’ancien package que vous souhaitez fournir dans le Windows Store. Les clients qui ont déjà reçu le package que vous restaurez auront toujours le package problématique (car votre ancien package aura un numéro de version antérieur). Cela n’empêchera cependant aucun autre utilisateur d’acquérir le package problématique, tout en permettant à l’application de rester disponible dans le Windows Store.
 
-Pour résoudre le problème des clients qui ont déjà reçu le package problématique, vous pouvez soumettre un nouveau package Windows 10 qui a un numéro de version supérieur celui du package incorrect dès que possible. Une fois cette soumission certifiée, tous les clients seront mis à jour vers le nouveau package, car celui-ci aura un numéro de version supérieur.
+Pour résoudre ce problème pour les clients qui ont déjà reçu le package problématique, vous pouvez soumettre un nouveau package Windows 10 qui a un numéro de version supérieur celui du package incorrect dès que possible. Une fois cette soumission certifiée, tous les clients seront mis à jour vers le nouveau package, car celui-ci aura un numéro de version supérieur.
 
 
 ## <a name="version-numbering-for-windows-81-and-earlier-and-windows-phone-81-packages"></a>Numérotation des versions des packages pour Windows 8.1 (et versions antérieures) et Windows Phone 8.1

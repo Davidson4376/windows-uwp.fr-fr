@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: L’extension de balisage est une alternative hautes performances à la liaison. xBind - nouveaux pour Windows 10 - s’exécute en moins de temps et en utilisant moins de mémoire que Binding et prend en charge une meilleure le débogage.
+description: L’extension de balisage est une alternative hautes performances à la liaison. xBind - nouveauté de Windows 10 - s’exécute en moins de temps et en utilisant moins de mémoire que Binding et prend en charge une meilleure le débogage.
 title: Extension de balisage xBind
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313767"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358146"
 ---
 # <a name="xbind-markup-extension"></a>Extension de balisage {x:Bind}
 
@@ -89,7 +89,7 @@ Par exemple : dans une page, **Text="{x:Bind Employee.FirstName}"** recherche un
 
 Pour C++ / CX, **{x:Bind}** ne peut pas effectuer de liaison à des champs et propriétés privés dans la page ou le modèle de données. Vous devez avoir une propriété publique pour que la liaison soit possible. La surface d’exposition pour la liaison doit être exposée en tant que classes/interfaces CX pour que nous puissions obtenir les métadonnées pertinentes. L’attribut **\[Bindable\]** ne doit pas être nécessaire.
 
-Avec **x:Bind**, vous n’avez pas besoin d’utiliser **ElementName=xxx** dans l’expression de liaison. Au lieu de cela, vous pouvez utiliser le nom de l’élément en tant que la première partie du chemin d’accès de la liaison dans la mesure où les éléments nommés deviennent des champs à l’intérieur du contrôle de page ou d’utilisateur qui représente la source de liaison racine. 
+Avec **x:Bind**, vous n’avez pas besoin d’utiliser **ElementName=xxx** dans l’expression de liaison. Au lieu de cela, vous pouvez utiliser le nom de l’élément en tant que la première partie du chemin d’accès de la liaison, car les éléments nommés deviennent des champs à l’intérieur du contrôle de page ou d’utilisateur qui représente la source de liaison racine. 
 
 
 ### <a name="collections"></a>Collections
@@ -115,7 +115,7 @@ _Remarque: la syntaxe de cast de type C# est plus souple que la syntaxe de propr
 
 ## <a name="functions-in-binding-paths"></a>Fonctions dans les chemins de liaison
 
-À compter de Windows10, version1607, **{x: Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Il s’agit d’une fonctionnalité puissante de liaison de données qui permet à plusieurs scénarios dans le balisage. [Liaisons de fonction](../data-binding/function-bindings.md) pour plus d’informations, voir.
+À compter de Windows10, version1607, **{x: Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Il s’agit d’une fonctionnalité puissante pour la liaison de données qui permet à plusieurs scénarios dans le balisage. [Liaisons de fonction](../data-binding/function-bindings.md) pour plus d’informations, voir.
 
 ## <a name="event-binding"></a>Liaison d’événement
 

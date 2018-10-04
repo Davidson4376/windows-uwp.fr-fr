@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ddeccfe4c5e198afd77eaa4a81fc017543291ba1
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315909"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4360720"
 ---
 # <a name="custom-dependency-properties"></a>Propriétés de dépendance personnalisées
 
@@ -170,7 +170,7 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 ```
 
 > [!NOTE]
-> C++ / CX de code, la raison pour laquelle pourquoi vous avez un champ privé et une propriété publique en lecture seule qui couvre les [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) est afin que les autres appelants qui utilisent votre propriété de dépendance peuvent utiliser l’utilitaire système de propriétés API qui nécessitent le identificateur soit public. Si l’identificateur demeure privé, personne ne pourra utiliser ces API d’utilitaire. Parmi ces API et scénarios, on peut citer [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) ou [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) par choix, [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) et [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). Vous ne pouvez pas utiliser de champ public pour cela, car les règles de métadonnées Windows Runtime n’autorisent pas les champs publics.
+> C++ / CX de code, la raison pour laquelle pourquoi vous avez un champ privé et une propriété publique en lecture seule qui couvre les [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) afin qu’autres appelants qui utilisent votre propriété de dépendance puissent également utiliser l’utilitaire de système de propriétés API qui nécessitent le identificateur soit public. Si l’identificateur demeure privé, personne ne pourra utiliser ces API d’utilitaire. Parmi ces API et scénarios, on peut citer [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) ou [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) par choix, [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) et [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). Vous ne pouvez pas utiliser de champ public pour cela, car les règles de métadonnées Windows Runtime n’autorisent pas les champs publics.
 
 ## <a name="dependency-property-name-conventions"></a>Conventions d’affectation de noms des propriétés de dépendance
 
@@ -186,7 +186,7 @@ Lors de la création de la propriété identificatrice, combinez le nom de la pr
 Votre wrapper de propriété doit appeler [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) dans l’implémentation **get** et [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) dans l’implémentation **set**.
 
 > [!WARNING]
-> Dans de rares cas hormis exceptionnels, vos implémentations de wrappers doivent effectuer uniquement les opérations [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) et [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) . Sinon, vous obtiendrez un comportement différent lorsque votre propriété sera définie par le biais de XAML et par le biais de code. Pour plus d’efficacité, l’analyseur XAML contourne les wrappers lors de la définition des propriétés de dépendance, et échange avec le magasin de stockage à l’aide de **SetValue**.
+> Dans de rares cas exceptionnels hormis, vos implémentations de wrappers doivent effectuer uniquement les opérations [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) et [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) . Sinon, vous obtiendrez un comportement différent lorsque votre propriété sera définie par le biais de XAML et par le biais de code. Pour plus d’efficacité, l’analyseur XAML contourne les wrappers lors de la définition des propriétés de dépendance, et échange avec le magasin de stockage à l’aide de **SetValue**.
 
 ```csharp
 public String Label

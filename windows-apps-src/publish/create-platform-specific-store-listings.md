@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, personnaliser, description,version antérieure
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f30a825cc7aec1b6f7dbf5cff0ea1c17c43ffd7
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315859"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4359048"
 ---
 # <a name="create-platform-specific-store-listings"></a>Créer des descriptions dans le Store spécifiques à la plateforme
 

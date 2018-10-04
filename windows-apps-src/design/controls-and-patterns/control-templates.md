@@ -16,11 +16,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ae344e9f10c5d1dbfd530950851e402da4bc2a0d
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4317217"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4359181"
 ---
 # <a name="control-templates"></a>Modèles de contrôles
 
@@ -62,7 +62,7 @@ Le code XAML suivant permet de créer un modèle [**ControlTemplate**](https://m
 Un [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) est un lien spécial qui lie la valeur d’une propriété dans un modèle de contrôle à la valeur d’une autre propriété exposée sur le contrôle basé sur un modèle. TemplateBinding peut uniquement être utilisé dans une définition ControlTemplate en XAML. Voir [Extension de balisage TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) pour plus d’informations.
 
 > [!NOTE]
-> À partir de la prochaine mise à jour majeure vers Windows 10, vous pouvez utiliser des extensions de balisage [**x: Bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783) dans des lieux vous utilisez [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). Voir [Extension de balisage TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) pour plus d’informations.
+> À partir de la prochaine mise à jour majeure vers Windows 10, vous pouvez utiliser des extensions de balisage [**x: Bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783) endroits vous utilisez [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md). Voir [Extension de balisage TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) pour plus d’informations.
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projeté, projection, gérer, événement, délégué
 ms.localizationpriority: medium
 ms.openlocfilehash: c64b4a23e3b63c939d192e828e890a9ceb92e5ab
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313645"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4360632"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Gérer des événements en utilisant des délégués en C++/WinRT
 
@@ -53,7 +53,7 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> Lorsque inscrit le délégué, l’exemple de code ci-dessus passe brutes *ce* pointeur (en pointant sur l’objet actif). Pour apprendre à établir une référence forte ou faible à l’objet actif, voir la sous-section **Si vous utilisez une fonction membre en tant que délégué** dans la section [en toute sécurité l’accès à *ce* pointeur avec un délégué de gestion des événements](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
+> Lorsque inscrit le délégué, l’exemple de code ci-dessus transmet un brutes *ce* pointeur (en pointant sur l’objet actif). Pour savoir comment établir une référence forte ou faible à l’objet actif, voir la sous-section **Si vous utilisez une fonction membre en tant que délégué** dans la section [en toute sécurité l’accès à *ce* pointeur avec un délégué de gestion des événements](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
 Il existe d’autres façons de construire un **RoutedEventHandler**. Vous trouverez ci-dessous le bloc de syntaxe extrait de la rubrique de documentation relative à [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (choisir *C++/WinRT* dans la liste déroulante **Langage** de la page). Notez les différents constructeurs: l’un d’entre eux prend une expression lambda; un autre une fonction gratuite, et un autre (celui que nous avons utilisé ci-dessus) prend un objet et un pointeur-vers-fonction-membre.
 
@@ -202,9 +202,9 @@ void ProcessFeedAsync()
 Comme l’indique le commentaire sur la «coroutine» ci-dessus, au lieu d’utiliser un délégué avec les événements terminés des actions et des opérations asynchrones, vous trouverez sans doute plus naturel d’utiliser des coroutines. Pour plus d’informations et des exemples de code, voir [Opérations concurrentes et asynchrones avec C++/WinRT](concurrency.md).
 
 > [!NOTE]
-> Il n’est pas correct d’implémenter plus d’un *Gestionnaire d’achèvement* pour une action asynchrone ou une opération. Vous pouvez avoir deux un délégué unique pour son événement terminé, ou vous pouvez `co_await` elle. Si vous avez à la fois, le deuxième échouera.
+> Il n’est pas correct d’implémenter plus d’un *Gestionnaire d’achèvement* pour une action asynchrone ou une opération. Vous pouvez avoir soit un délégué unique pour son événement terminé, ou vous pouvez `co_await` il. Si vous avez à la fois, le deuxième échouera.
 
-Si vous en tenez aux délégués au lieu d’une coroutine, puis vous pouvez opter pour une syntaxe plus simple.
+Si vous tenez aux délégués au lieu d’une coroutine, puis vous pouvez opter pour une syntaxe plus simple.
 
 ```cppwinrt
 async_op_with_progress.Completed(

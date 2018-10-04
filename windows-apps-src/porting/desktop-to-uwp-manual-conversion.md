@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f14e7f8747639ef139e774416e09af954211940
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4310127"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4357797"
 ---
 # <a name="package-a-desktop-application-manually"></a>Créer un package manuellement une application de bureau
 
@@ -91,7 +91,7 @@ Voici un exemple d’élément **identité** intégrant un emplacement réservé
 
 ### <a name="properties"></a>Propriétés
 
-L’élément [propriétés](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) comprend 3éléments enfants requis. Voici un exemple de nœud **propriétés** avec texte d’emplacement réservé pour les éléments. **DisplayName** est le nom de votre application que vous réservez dans le Windows store, pour les applications qui sont chargées sur le Windows store.
+L’élément [propriétés](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) comprend 3éléments enfants requis. Voici un exemple de nœud **propriétés** avec texte d’emplacement réservé pour les éléments. **DisplayName** est le nom de votre application que vous réservez dans le Windows store, pour les applications qui sont chargées sur le store.
 
 ```XML
 <Properties>
@@ -112,7 +112,7 @@ Voici un exemple de nœud [Ressources](https://docs.microsoft.com/uwp/schemas/ap
 ```
 ### <a name="dependencies"></a>Dépendances
 
-Pour les applications de bureau que vous créez un package pour, définissez toujours le ``Name`` l’attribut ``Windows.Desktop``.
+Pour les applications de bureau que vous créez un package pour, définissez toujours le ``Name`` attribut ``Windows.Desktop``.
 
 ```XML
 <Dependencies>
@@ -134,7 +134,7 @@ Remplissez ce modèle avec les informations décrivant votre application.
 
 ### <a name="application-element"></a>Élément d’application
 
-Pour les applications de bureau que vous créez un package pour, le ``EntryPoint`` attribut de l’élément Application est toujours ``Windows.FullTrustApplication``.
+Pour les applications de bureau que vous créez un package, le ``EntryPoint`` attribut de l’élément Application est toujours ``Windows.FullTrustApplication``.
 
 ```XML
 <Applications>
@@ -187,7 +187,7 @@ Si vous créez des ressources basées sur une cible comme décrit dans la sectio
 
 5.  Créez les fichiers resources.pri à l’aide de la commande ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``.
 
-    Par exemple, la commande pour votre application peut ressembler à ceci: ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
+    Par exemple, la commande de votre application peut ressembler à ceci: ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
 
 6.  Créez un package d’application Windows en suivant les instructions de l’étape suivante.
 
@@ -208,7 +208,7 @@ Vous pouvez exécuter votre application pour le tester localement sans avoir à 
 Pour mettre à jour les fichiers .exe ou .dll de votre application, remplacez les fichiers existants dans votre package par les nouveaux, augmentez le nombre de versions dans AppxManifest.xml, puis exécutez à nouveau la commande ci-dessus.
 
 > [!NOTE]
-> Une application empaquetée toujours s’exécute en tant qu’utilisateur interactif, et tout lecteur sur lequel vous installez votre application empaquetée à doit être formaté au format NTFS.
+> Une application empaquetée toujours s’exécute en tant qu’utilisateur interactif, et que vous installez votre application empaquetée sur n’importe quel lecteur doit être formaté au format NTFS.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -222,7 +222,7 @@ Consultez [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-window
 
 **Parcourir le code/détecter et résoudre les problèmes**
 
-Reportez-vous à [Exécuter, déboguer et tester une application de bureau empaquetée](desktop-to-uwp-debug.md)
+Voir [Exécuter, déboguer et tester une application de bureau empaquetée](desktop-to-uwp-debug.md)
 
 **Signer votre application, puis la distribuer**
 
