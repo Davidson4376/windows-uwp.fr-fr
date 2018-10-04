@@ -8,14 +8,14 @@ ms.date: 12/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, portail d’appareil
+keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 08e7d8fcfbab0d0b22fffa3e3e0aecc38d5b095c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319527"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4361098"
 ---
 # <a name="windows-device-portal-overview"></a>Vue d’ensemble de Windows Device Portal
 
@@ -55,8 +55,8 @@ Pour obtenir des instructions d’installation propres à chaque appareil, consu
 
 ### <a name="toolbar-and-navigation"></a>Barre d’outils et navigation
 
-La barre d’outils en haut de la page permet d’accéder aux fonctionnalités couramment utilisées.
-- **Marche/arrêt**: accéder aux options d’alimentation.
+La barre d’outils en haut de la page donne accès aux fonctionnalités couramment utilisées.
+- **Alimentation**: accéder aux options d’alimentation.
   - **Arrêt**: éteint l’appareil.
   - **Redémarrer**: mise sous tension de l’appareil par cycle.
 - **Aide**: ouvre la page d’aide.
@@ -67,18 +67,18 @@ Les outils qui sont communes à familles d’appareils sont décrits ici. D’au
 
 ### <a name="apps-manager"></a>App Manager (Gestionnaire d’applications)
 
-Le Gestionnaire d’applications constitue une installation ou la désinstallation et des fonctionnalités de gestion pour application de packages et des ensembles de sur l’appareil hôte.
+Le Gestionnaire d’applications fournit l’installation ou la désinstallation et les fonctionnalités de gestion pour l’application de packages et des ensembles de sur l’appareil hôte.
 
 ![Page du Gestionnaire Device Portal applications](images/device-portal/wdp-apps.png)
 
-- **Les applications installées**: utiliser le menu déroulant pour supprimer ou démarrer des applications qui sont installées sur l’appareil. Installer une nouvelle application en cliquant sur **Ajouter**. Cette opération lance l’installation expérience utilisateur pour déployer les applications empaquetées à partir de local, réseau ou web héberge et enregistrer des fichiers libres à partir des partages réseau.
+- **Les applications installées**: utiliser le menu déroulant pour supprimer ou de démarrer des applications qui sont installées sur l’appareil. Installer une nouvelle application en cliquant sur **Ajouter**. Cette opération lance l’installation expérience utilisateur pour déployer les applications empaquetées dans local, réseau ou web héberge et enregistrer des fichiers libres à partir des partages réseau.
 - **Les applications en cours d’exécution**: obtenir des informations sur les applications qui sont en cours d’exécution et de les fermer si nécessaire.
 
 #### <a name="install-an-app"></a>Installer une application
 
 1.  Lorsque vous avez créé un package d’application, vous pouvez l’installer à distance sur votre appareil. Une fois créé dans Visual Studio, un dossier de sortie est généré.
   ![Installation d’applications](images/device-portal/iot-installapp0.png)
-2.  De section du Gestionnaire de Device Portal applications, cliquez sur **Ajouter** , puis sélectionnez **installer le package d’application à partir du stockage local**.
+2.  Dans section de gestionnaire d’applications de Device Portal, cliquez sur **Ajouter** , puis sélectionnez **installer le package d’application à partir du stockage local**.
 3.  Cliquez sur **Parcourir** et recherchez votre package d’application.
 3.  Cliquez sur **Parcourir** et recherchez le fichier de certificat (_.cer_) (non requis sur tous les appareils.)
 4.  Cases à cocher le respectifs si vous souhaitez installer facultatifs ou les packages d’infrastructure, ainsi que l’installation d’application. Si vous avez plusieurs objets, ajoutez chacun d’eux individuellement.     
@@ -93,15 +93,15 @@ Le Gestionnaire d’applications constitue une installation ou la désinstallati
 
 Cette page affiche des détails sur les processus en cours d’exécution sur l’appareil hôte. Cela comprend les processus relatifs aux applications au système. Sur certaines plateformes (Desktop, IoT et HoloLens), vous pouvez mettre fin aux processus.
 
-![Device Portal en cours d’exécution traite page](images/device-portal/mob-device-portal-processes.png)
+![Device Portal en cours d’exécution traite de page](images/device-portal/mob-device-portal-processes.png)
 
 ### <a name="file-explorer"></a>Explorateur de fichiers
 
 Cette page vous permet d’afficher et de manipuler les fichiers stockés par toutes les applications chargées de manière indépendante. Consultez le blog [à l’aide de l’Explorateur de fichiers d’application](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/) pour en savoir plus sur l’Explorateur de fichiers et comment l’utiliser. 
 
-![Page de l’Explorateur de fichier du portail de périphérique](images/device-portal/mob-device-portal-AppFileExplorer.png)
+![Page de l’Explorateur de fichier du portail appareil](images/device-portal/mob-device-portal-AppFileExplorer.png)
 
-### <a name="performance"></a>Performances
+### <a name="performance"></a>Analyse des performances
 
 La page de performances affiche des informations de diagnostic système comme la consommation d’énergie, la fréquence d’images, des graphiques en temps réel et charger des UC.
 
@@ -109,15 +109,15 @@ Voici les mesures disponibles:
 - **Processeur**: pourcentage du total disponible de l’UC
 - **Mémoire**: totale, en cours d’utilisation, disponible validée, paginée et non paginée
 - **E/s**: les quantités de données en lecture et écriture
-- **Réseau**: réceptions et envois des données
-- **GPU**: % du GPU disponible total de l’utilisation du moteur
+- **Réseau**: réceptions et envois de données
+- **GPU**: l’utilisation de moteur pour cent de processeur graphique disponibles total
 
 
 ![Page de performances du portail d’appareil](images/device-portal/mob-device-portal-perf.png)
 
-### <a name="event-tracing-for-windows-etw-logging"></a>Journalisation des événements suivi pour Windows (ETW)
+### <a name="event-tracing-for-windows-etw-logging"></a>Journalisation des événements de suivi pour Windows (ETW)
 
-La page de la journalisation ETW gère les informations de suivi d’événements pour Windows (ETW) en temps réel sur l’appareil.
+La page de journalisation ETW gère les informations de suivi d’événements pour Windows (ETW) en temps réel sur l’appareil.
 
 ![Page de journalisation ETW du portail d’appareil](images/device-portal/mob-device-portal-etw.png)
 
@@ -133,7 +133,7 @@ Cochez la case **Masquer les fournisseurs** pour n’afficher que la liste des �
 - **Fournisseurs personnalisés** sélectionnez un fournisseur ETW personnalisé et le niveau de suivi. Identifiez le fournisseur par son GUID. N’incluez pas de crochets dans le GUID.
 - **Fournisseurs activé**: cela répertorie les fournisseurs activés. Sélectionnez un fournisseur dans la liste déroulante, puis cliquez sur ou appuyez sur **Désactiver** pour arrêter le suivi. Cliquez ou appuyez sur **Arrêter tout** pour suspendre tout le suivi.
 - **Historique des fournisseurs**: Cela affiche les fournisseurs ETW qui ont été activées au cours de la session en cours. Cliquez ou appuyez sur **Activer** pour activer un fournisseur qui a été désactivé. Cliquez ou appuyez sur **Effacer** pour supprimer l’historique.
-- **Filtres / événements**: la section **événements** répertorie les événements ETW des fournisseurs sélectionnés sous forme de tableau. Le tableau est mis à jour en temps réel. Utilisez le menu **filtres** pour configurer des filtres personnalisés pour lesquels les événements seront affiche. Cliquez sur le bouton **Effacer** pour supprimer tous les événements ETW du tableau. Cela ne désactive pas les fournisseurs. Vous pouvez cliquer sur **Enregistrer dans un fichier** pour exporter les événements ETW actuellement collectés dans un fichier CSV local.
+- **Filtres / événements**: la section **événements** répertorie les événements ETW des fournisseurs sélectionnés sous forme de tableau. Le tableau est mis à jour en temps réel. Utilisez le menu **filtres** pour configurer des filtres personnalisés pour lequel les événements seront affichés. Cliquez sur le bouton **Effacer** pour supprimer tous les événements ETW du tableau. Cela ne désactive pas les fournisseurs. Vous pouvez cliquer sur **Enregistrer dans un fichier** pour exporter les événements ETW actuellement collectés dans un fichier CSV local.
 
 Pour plus d’informations sur l’utilisation de la journalisation ETW, consultez le blog de [l’Utiliser Device Portal pour afficher les journaux de débogage](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/) . 
 
@@ -160,7 +160,7 @@ La page Gestionnaire de périphériques énumère tous les périphériques conne
 
 La page de mise en réseau gère les connexions réseau sur l’appareil. Sauf si vous êtes connecté à Device Portal via USB, la modification de ces paramètres entraînera certainement la déconnexion de Device Portal.
 - **Réseaux disponibles**: affiche les réseaux Wi-Fi disponibles sur l’appareil. Appuyez ou cliquez sur un réseau pour vous y connecter et fournir une clé d’accès si nécessaire. Device Portal ne gère pas encore l’authentification en entreprise. Vous pouvez également utiliser la liste déroulante des **profils** pour tenter de se connecter à un des profils Wi-Fi connus à l’appareil.
-- **Configuration IP**: affiche des informations d’adresse sur chacun de l’hôte de ports de réseau de l’appareil.
+- **Configuration IP**: affiche des informations adresse chacun de l’hôte de ports de réseau de l’appareil.
 
 ![Page de mise en réseau du portail d’appareil](images/device-portal/mob-device-portal-network.png)
 

@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bf91725a62c8d03c37448ddf69b072461288f11
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4309966"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352804"
 ---
 # <a name="acrylic-material"></a>Support acrylique
 
@@ -79,39 +79,39 @@ La caractéristique d’acrylique la plus remarquable est sa transparence. Il ex
 * Utiliser l’ACRYLIQUE dans l’application de prise en charge de l’interface utilisateur, par exemple, NavigationView ou les éléments de commandes en ligne. 
 * Utiliser l’ACRYLIQUE en arrière-plan pour les éléments d’interface utilisateur temporaires, comme les menus contextuels, menus volants et l’interface utilisateur de la lumière-dimsissable.<br />À l’aide de l’ACRYLIQUE dans les scénarios temporaires permet de maintenir une relation visuelle avec le contenu qui a déclenché l’interface utilisateur temporaire.
 
-Si vous utilisez l’ACRYLIQUE dans l’application sur des surfaces de navigation, envisagez d’étendre le contenu en dessous du volet ACRYLIQUE à améliorer les flux sur votre application. À l’aide de NavigationView fait pour vous automatiquement. Toutefois, pour éviter de créer un effet de répartition, essayez de ne pas placer plusieurs éléments de bord à bord ACRYLIQUE - cela peut créer une intersection indésirable entre les deux surfaces floues. ACRYLIQUE est un outil pour harmoniser la présentation visuelle de vos conceptions, mais peut entraîner un bruit visuel est utilisé de manière incorrecte.
+Si vous utilisez l’ACRYLIQUE dans l’application sur des surfaces de navigation, envisagez d’étendre le contenu sous le volet ACRYLIQUE à améliorer les flux sur votre application. À l’aide de NavigationView fait pour vous automatiquement. Toutefois, pour éviter de créer un effet de répartition, essayez de ne pas placer plusieurs éléments de bord à bord ACRYLIQUE - cela peut créer une intersection indésirable entre les deux surfaces floues. ACRYLIQUE est un outil pour harmoniser la présentation visuelle de vos conceptions, mais peut entraîner un bruit visuel est utilisé de manière incorrecte.
 
 Tenez compte des modèles d’utilisation suivants pour déterminer la meilleure façon d’incorporer l’ACRYLIQUE dans votre application:
 
 ### <a name="horizontal-navigation-or-commanding"></a>Navigation horizontale ou les commandes
 
-Si votre application n’est pas en mesure d’utiliser NavigationView et que vous prévoyez d’ajouter l’ACRYLIQUE vous-même, nous vous recommandons d’utiliser l’ACRYLIQUE relativement translucide avec une opacité de 60 %.
+Si votre application n’est pas en mesure d’utiliser NavigationView et que vous prévoyez d’ajouter l’ACRYLIQUE vous-même, nous vous recommandons d’utiliser ACRYLIQUE relativement transparente avec une opacité de 60 %.
  - Lorsque le volet s’ouvre sous forme de superposition au-dessus de tout autre contenu d’application, il doit afficher [une acrylique dans l'application à 60%](#acrylic-theme-resources)
  - Lorsque le volet s’ouvre côte à côte avec le contenu de l’application principale, il doit afficher [une acrylique en arrière-plan de 60%](#acrylic-theme-resources)
 
 ![Application de cartes à l’aide de commandes horizontal dans l’application](images/Maps_In_App_Acrylic_1.png)
 
-En outre, la fourniture de votre étendre le contenu ou défilement sous l’ACRYLIQUE en haut donnera votre application une expérience plus immersive et transparente.
+En outre, la fourniture votre étendre le contenu ou défilement sous l’ACRYLIQUE en haut donnera votre application une expérience plus immersive et transparente.
 
 ### <a name="vertical-panes"></a>Volets verticaux
 
-Des volets verticaux ou des surfaces qui permettent de section désactiver le contenu de votre application, nous vous recommandons de qu'utiliser un arrière-plan opaque au lieu d’ACRYLIQUE. Si votre volets verticaux ouvrent par-dessus le contenu, comme dans **Collapsed** de NavigationView ou les modes **Minimal** , nous vous suggérons qu'acrylique dans l’application vous permettent de vous aider à maintenir le contexte de la page lorsque l’utilisateur a ce volet ouvert.
+Pour les volets verticaux ou les surfaces qui permettent de section désactiver le contenu de votre application, nous vous recommandons de qu'utiliser un arrière-plan opaque au lieu d’ACRYLIQUE. Si votre volets verticaux ouvrent par-dessus le contenu, comme dans **Collapsed** de NavigationView ou les modes **Minimal** , nous vous suggérons qu'acrylique dans l’application vous permet de vous aider à préserver le contexte de la page lorsque l’utilisateur a ce volet ouvert.
 
 ### <a name="transient-surfaces"></a>Surfaces temporaires
 
 Pour les applications avec des menus volants menu, les fenêtres contextuelles non modale, ou lumière-masquage des volets, il est recommandé d’utiliser l’ACRYLIQUE en arrière-plan.
 
-![Modèle d’application de courrier à l’aide d’un menu volant d’information](images/Mail_TransientContextMenu.png)
+![Modèle d’application de messagerie à l’aide d’un menu volant d’information](images/Mail_TransientContextMenu.png)
 
-Bon nombre de nos contrôles utiliseront ACRYLIQUE par défaut. [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) et contrôles similaires avec fenêtres contextuelles lumière-dimiss utiliseront tous l’ACRYLIQUE temporaire lorsqu’ils sont appelés.
+La plupart de nos contrôles utiliseront ACRYLIQUE par défaut. [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) et contrôles similaires avec fenêtres contextuelles lumière-dimiss utiliseront tous l’ACRYLIQUE temporaire lorsqu’ils sont appelés.
 
 > [!Note]
-> Le rendu des surfaces ACRYLIQUES consomme des GPU, ce qui peut accroître la consommation d’énergie appareil et réduire l’autonomie de la batterie. Les effets ACRYLIQUES sont automatiquement désactivées lorsque les appareils en mode économiseur de batterie et les utilisateurs peuvent désactiver les effets ACRYLIQUES pour toutes les applications, s’ils le souhaitent.
+> Le rendu des surfaces ACRYLIQUES sollicite GPU, qui peut accroître la consommation d’énergie appareil et réduire l’autonomie de la batterie. Les effets ACRYLIQUES sont automatiquement désactivées lorsque les appareils en mode économiseur de batterie et les utilisateurs peuvent désactiver les effets ACRYLIQUES pour toutes les applications, s’ils le souhaitent.
 
 ## <a name="usability-and-adaptability"></a>Convivialité et capacité d'adaptation
 L'acrylique adapte automatiquement son apparence à une vaste gamme d’appareils et de contextes.
 
-En mode Contraste élevé, les utilisateurs continuent de voir la couleur d’arrière-plan qu'ils ont choisie, au lieu de l'acrylique. En outre, l’ACRYLIQUE en arrière-plan et ACRYLIQUE dans l’application s’affichent une couleur unie:
+En mode Contraste élevé, les utilisateurs continuent de voir la couleur d’arrière-plan qu'ils ont choisie, au lieu de l'acrylique. En outre, à la fois l’ACRYLIQUE en arrière-plan et l’ACRYLIQUE dans l’application apparaissent comme une couleur unie:
  - Lorsque l’utilisateur désactive la transparence dans Paramètres > Personnalisation > couleurs
  - Lorsque le mode économiseur de batterie est activé
  - Lorsque l’application est exécutée sur un matériel bas de gamme
@@ -318,14 +318,14 @@ En outre, vous devrez dessiner le titre de votre application, lequel apparaît n
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 * Utilisez l'acrylique en tant que support d'arrière-plan des surfaces des applications non principales, comme les volets de navigation.
 * Étendez l'acrylique vers au moins un bord de votre application pour fournir une expérience fluide, en la mélangeant de manière subtile à l’environnement de l’application.
-* Ne placez pas arylic bureau sur des surfaces de grande taille en arrière-plan de votre application: cela interrompt le modèle mental ACRYLIQUES utilisé principalement pour les surfaces temporaires.
+* Ne placez pas arylic bureau sur des surfaces volumineux en arrière-plan de votre application: cela interrompt le modèle mental de l’ACRYLIQUE utilisé principalement pour les surfaces temporaires.
 * Ne placez pas des acryliques dans l’application et en arrière-plan directement côte à côte pour éviter toute fatigue visuelle au niveau des lignes.
 * Ne placez pas plusieurs volets acryliques avec la même teinte et la même opacité côte à côte, car cela entraîne une jointure visible indésirable.
 * Ne placez pas du texte coloré sur les surfaces acryliques.
 
 ## <a name="how-we-designed-acrylic"></a>Comment nous avons conçu l'acrylique
 
-Nous avons affiné les composants clés de l'acrylique pour définir ses propriétés et son apparence uniques. Nous avons commencé avec transparence, le flou et bruit pour ajouter une profondeur visuelle et une dimension aux surfaces planes. Nous avons ajouté une couche de mode fusion d'exclusion pour assurer le contraste et la lisibilité de l’interface utilisateur placée sur un arrière-plan acrylique. Enfin, nous avons ajouté des teintes de couleur pour permettre la personnalisation. De concert, ces couches viennent compléter un support pratique et moderne.
+Nous avons affiné les composants clés de l'acrylique pour définir ses propriétés et son apparence uniques. Nous avons commencé avec la transparence, le flou et bruit pour ajouter une profondeur visuelle et une dimension aux surfaces planes. Nous avons ajouté une couche de mode fusion d'exclusion pour assurer le contraste et la lisibilité de l’interface utilisateur placée sur un arrière-plan acrylique. Enfin, nous avons ajouté des teintes de couleur pour permettre la personnalisation. De concert, ces couches viennent compléter un support pratique et moderne.
 
 ![Recette de l'acrylique](images/AcrylicRecipe_Diagram.jpg)
 <br/>La recette de l'acrylique: arrière-plan, flou, fusion d'exclusion, superposition couleur/teinte, bruit

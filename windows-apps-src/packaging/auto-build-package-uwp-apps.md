@@ -11,11 +11,11 @@ keywords: windows10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4320227"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351332"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Configuration de builds automatisées pour votre application UWP
 
@@ -216,7 +216,7 @@ Cette erreur s’affiche car l’application qui doit apparaître dans l’offre
 Ensuite, supprimez l’argument msbuild `AppxBundle` de l’étape de génération.
 
 ## <a name="set-up-a-continuous-deployment-build-for-sideloading"></a>Configuration d’une build de déploiement continu pour le chargement indépendant
-Lorsque ce type de build terminée, les utilisateurs peuvent télécharger le fichier d’un ensemble d’applications application à partir de la section artefacts de la page de résultats de build. Si vous voulez effectuer un test bêta de l’application en créant une distribution plus complète, vous pouvez utiliser le service HockeyApp. Ce service offre des fonctionnalités améliorées de test bêta, d’analyse des utilisateurs et de diagnostic d’incidents.
+Lorsque ce type de build terminée, les utilisateurs peuvent télécharger le fichier d’application un ensemble d’applications à partir de la section artefacts de la page de résultats de build. Si vous voulez effectuer un test bêta de l’application en créant une distribution plus complète, vous pouvez utiliser le service HockeyApp. Ce service offre des fonctionnalités améliorées de test bêta, d’analyse des utilisateurs et de diagnostic d’incidents.
 
 ### <a name="applying-version-numbers-to-your-builds"></a>Application des numéros de version à vos builds
 

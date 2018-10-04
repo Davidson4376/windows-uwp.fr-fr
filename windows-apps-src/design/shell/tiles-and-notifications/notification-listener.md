@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows10, uwp, écouteur de notification, usernotificationlistener, documentation, notifications d’accès
 ms.localizationpriority: medium
 ms.openlocfilehash: f4d8cb9ef7589bd8f0c56586ab8fcfec7c1f01e3
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4309364"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354656"
 ---
 # <a name="notification-listener-access-all-notifications"></a>Écouteur de notification: accéder à toutes les notifications
 
@@ -281,7 +281,7 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>Événement en arrière-plan pour une notification ajoutée/ignorée
 
 > [!IMPORTANT] 
-> Problème connu: l’événement au premier plan entraîne une boucle de processeur sur les versions récentes de Windows et précédemment n’ont pas fonctionné auparavant. N’utilisez pas l’événement au premier plan. La mise à jour à venir pour Windows, nous sera résoudre ce problème.
+> Problème connu: l’événement au premier plan entraîne une boucle de processeur sur les versions récentes de Windows et précédemment n’a pas fonctionné auparavant. N’utilisez pas l’événement au premier plan. Dans une prochaine mise à jour Windows, nous sera résoudre ce problème.
 
 Au lieu d’utiliser l’événement au premier plan, utilisez le code indiqué précédemment pour une tâche en arrière-plan de [modèle à processus unique](../../../launch-resume/create-and-register-an-inproc-background-task.md) . La tâche en arrière-plan vous permettent également de recevoir des notifications d’événement de modification à la fois pendant que votre application est fermée ou en cours d’exécution.
 

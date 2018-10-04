@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, acquisitions, ventes d’applications, téléchargements d'applications, installations, entonnoir, acquisition, conversions, canal, vues de pages d'applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 75a3ce152257d10fe392b3f64381b3e82bc79961
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315477"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352945"
 ---
 # <a name="acquisitions-report"></a>Rapport Acquisitions
 

@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: Cette rubrique vous guide à travers les étapes de création d’un contrôle personnalisé simple à l’aide de C++ / WinRT. Vous pouvez générer sur les informations fournies ici pour créer vos propres contrôles d’interface utilisateur riche et personnalisables.
-title: XAML (basé sur un modèle) des contrôles personnalisés avec C++ / WinRT
+title: Contrôles XAML personnalisés (basés sur un modèle) avec C++/WinRT
 ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, un contrôle personnalisé basé sur un modèle,
 ms.localizationpriority: medium
 ms.openlocfilehash: 539876113ce2aba563cfa65b13571cbf3998cc2d
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313873"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351731"
 ---
-# <a name="xaml-custom-templated-controls-with-cwinrt"></a>XAML (basé sur un modèle) des contrôles personnalisés avec C++ / WinRT
+# <a name="xaml-custom-templated-controls-with-cwinrt"></a>Contrôles XAML personnalisés (basés sur un modèle) avec C++/WinRT
 
 > [!IMPORTANT]
 > Pour obtenir les principaux concepts et termes facilitant votre compréhension de la façon d’utiliser et de créer des classes runtime avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), voir [utiliser des API avec C++ / WinRT](consume-apis.md) et [créer des API avec C++ / WinRT](author-apis.md).
@@ -24,9 +24,9 @@ ms.locfileid: "4313873"
 Une des fonctionnalités plus puissantes de la plateforme Windows universelle (UWP) est la flexibilité que la pile de l’interface utilisateur (UI) fournit pour créer des contrôles personnalisés en fonction du type XAML [**contrôle**](/uwp/api/windows.ui.xaml.controls.control) . L’infrastructure XAML UI offre des fonctionnalités telles que les [Propriétés de dépendance personnalisées](/windows/uwp/xaml-platform/custom-dependency-properties) et les propriétés jointes et [les modèles de contrôle](/windows/uwp/design/controls-and-patterns/control-templates), rendant facile à créer des contrôles riche et personnalisables. Cette rubrique vous guide à travers les étapes de création d’un contrôle personnalisé (modélisé) avec C++ / WinRT.
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>Créer une application vide (BgLabelControlApp)
-Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créer un **Visual C++** > **Windows universel** > **application vide (C++ / WinRT)** de projet et nommez-le *BgLabelControlApp*.
+Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créer une **Visual C++** > **Windows universel** > **application vide (C++ / WinRT)** de projet et nommez-le *BgLabelControlApp*.
 
-Nous allons créer une nouvelle classe pour représenter un contrôle personnalisé (modélisé). La création et l’utilisation de la classe se feront au sein de la même unité de compilation. Mais nous voulons être en mesure d’instancier cette classe à partir de balisage XAML, c’est pourquoi qu'il va être une classe runtime. Et nous allons utiliser C++/WinRT à la fois pour la créer et l’utiliser.
+Nous allons créer une nouvelle classe pour représenter un contrôle personnalisé (basé sur un modèle). La création et l’utilisation de la classe se feront au sein de la même unité de compilation. Mais nous voulons être en mesure d’instancier cette classe à partir du balisage XAML, c’est pourquoi qu'il va être une classe runtime. Et nous allons utiliser C++/WinRT à la fois pour la créer et l’utiliser.
 
 La première étape de création d’une nouvelle classe runtime consiste à ajouter un nouvel élément **Fichier Midl (.idl)** au projet. Nommez-le `BgLabelControl.idl`. Supprimez le contenu par défaut de `BgLabelControl.idl` et collez-le dans cette déclaration de classe runtime.
 
@@ -43,17 +43,17 @@ namespace BgLabelControlApp
 }
 ```
 
-La liste ci-dessus illustre le modèle que vous suivrez lorsque vous déclarez une propriété de dépendance (DP). Il existe deux éléments pour chaque point de distribution. Tout d’abord, vous déclarez une propriété statique en lecture seule de type [**DependencyProperty**](/uwp/api/windows.ui.xaml.dependencyproperty). Il porte le nom de votre *propriété*et du point de distribution. Vous allez utiliser cette propriété statique dans votre implémentation. En second lieu, vous déclarez une propriété en lecture-écriture instance avec le type et le nom de votre point de distribution.
+La liste ci-dessus illustre le modèle que vous suivrez lorsque vous déclarez une propriété de dépendance (DP). Il existe deux éléments pour chaque point de distribution. Tout d’abord, vous déclarez une propriété statique en lecture seule de type [**DependencyProperty**](/uwp/api/windows.ui.xaml.dependencyproperty). Il porte le nom de votre *propriété*et du point de distribution. Vous allez utiliser cette propriété statique dans votre implémentation. En second lieu, vous déclarez une propriété d’instance en lecture-écriture avec le type et le nom de votre point de distribution.
 
 > [!NOTE]
-> Si vous souhaitez un point de distribution avec un type à virgule flottante, puis le rendre `double` (`Double` dans [MIDL 3.0](/uwp/midl-3/)). Déclarer et implémenter un point de distribution de type `float` (`Single` dans un fichier MIDL), et puis en définissant une valeur pour ce point de distribution dans le balisage XAML, génère l’erreur *n’a pas pu créer un «Windows.Foundation.Single» à partir du texte '<NUMBER>'*.
+> Si vous souhaitez un point de distribution avec un type à virgule flottante, puis le rendre `double` (`Double` dans [MIDL 3.0](/uwp/midl-3/)). Déclarer et implémenter un point de distribution de type `float` (`Single` dans un fichier MIDL), et la définition d’une valeur pour ce point de distribution dans le balisage XAML, puis génère l’erreur *n’a pas pu créer un «Windows.Foundation.Single» à partir du texte '<NUMBER>'*.
 
 Enregistrez le fichier et générez le projet. Pendant le processus de génération, l’outil `midl.exe` est exécuté pour créer un fichier de métadonnées Windows Runtime (`\BgLabelControlApp\Debug\BgLabelControlApp\Unmerged\BgLabelControl.winmd`) décrivant la classe runtime. Puis, l’outil `cppwinrt.exe` est exécuté pour générer les fichiers de code source et vous aider à créer et utiliser votre classe runtime. Ces fichiers incluent des stubs pour vous aider à implémenter la classe runtime **BgLabelControl** que vous avez déclarée dans votre fichier IDL. Ces stubs sont `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\BgLabelControl.h` et `BgLabelControl.cpp`.
 
 Copiez les fichiers stub `BgLabelControl.h` et `BgLabelControl.cpp` à partir de `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\` dans le dossier de projet, à savoir `\BgLabelControlApp\BgLabelControlApp\`. Dans l’**Explorateur de solutions**, assurez-vous que l’option **Afficher tous les fichiers** est activée. Cliquez avec le bouton droit sur les fichiers stub que vous avez copiés, puis cliquez sur **Inclure dans le projet**.
 
 ## <a name="implement-the-bglabelcontrol-custom-control-class"></a>Implémentez la classe de contrôle personnalisé **BgLabelControl**
-Maintenant, nous allons ouvrir `\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` et `BgLabelControl.cpp`, et implémenter notre classe runtime. Dans `BgLabelControl.h`, modifiez le constructeur pour définir la clé de style par défaut, implémentez **étiquette** et **LabelProperty**, ajoutez un gestionnaire d’événements statiques nommé **OnLabelChanged** pour traiter les modifications apportées à la valeur de la propriété de dépendance, et ajoutez un membre privé pour stocker le champ de stockage pour **LabelProperty**.
+Maintenant, nous allons ouvrir `\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` et `BgLabelControl.cpp`, et implémenter notre classe runtime. Dans `BgLabelControl.h`, modifiez le constructeur pour définir la clé de style par défaut, implémentez **étiquette** et **LabelProperty**, ajoutez un gestionnaire d’événement statique nommé **OnLabelChanged** pour traiter les modifications apportées à la valeur de la propriété de dépendance, et ajoutez un membre privé pour stocker le champ de stockage pour **LabelProperty**.
 
 Après avoir ajouté ceux, votre `BgLabelControl.h` se présente comme suit.
 
@@ -84,7 +84,7 @@ private:
 ...
 ```
 
-Dans `BgLabelControl.cpp`, définissent les membres statiques comme suit.
+Dans `BgLabelControl.cpp`, définir les membres statiques comme suit.
 
 ```cppwinrt
 // BgLabelControl.cpp
@@ -117,7 +117,7 @@ Dans cette procédure pas à pas, nous n’utilisez pas **OnLabelChanged**. Mais
 
 ## <a name="design-the-default-style-for-bglabelcontrol"></a>Conception du style par défaut pour **BgLabelControl**
 
-Dans son constructeur, **BgLabelControl** définit une clé de style par défaut pour lui-même. Mais quelle *est* un style par défaut? Un contrôle personnalisé (modélisé) doit avoir un style par défaut&mdash;contenant un modèle de contrôle par défaut&mdash;qu’elle peut utiliser pour être rendue au cas où le consommateur du contrôle ne définit pas un style et/ou le modèle. Dans cette section, nous allons ajouter un fichier de balisage pour le projet qui contient notre style par défaut.
+Dans son constructeur, **BgLabelControl** définit une clé de style par défaut pour lui-même. Mais quelle *est* un style par défaut? Un contrôle personnalisé (modélisé) doit avoir un style par défaut&mdash;contenant un modèle de contrôle par défaut&mdash;qu’elle peut utiliser pour être rendue au cas où le consommateur du contrôle ne définit pas un style et/ou le modèle. Dans cette section, nous allons ajouter un fichier de balisage dans le projet qui contient notre style par défaut.
 
 Sous le nœud de votre projet, créez un dossier et nommez-le «Thèmes». Sous `Themes`, ajouter un nouvel élément de type **Visual C++** > **XAML** > **Vue XAML**et nommez-le «Generic.xaml». Les noms de dossier et le fichier doivent être comme suit afin que l’infrastructure XAML trouver le style par défaut pour un contrôle personnalisé. Supprimez le contenu par défaut du `Generic.xaml`et le coller dans le balisage ci-dessous.
 
@@ -142,7 +142,7 @@ Sous le nœud de votre projet, créez un dossier et nommez-le «Thèmes». Sous 
 </ResourceDictionary>
 ```
 
-Dans ce cas, la seule propriété qui définit le style par défaut est le modèle de contrôle. Le modèle se compose d’un carré (dont en arrière-plan est liée à la propriété **Background** qui disposent de toutes les instances du type de code XAML, [**contrôle**](/uwp/api/windows.ui.xaml.controls.control) ) et un élément de texte (dont le texte est lié à la propriété de dépendance **BgLabelControl::Label** ).
+Dans ce cas, la seule propriété qui définit le style par défaut est le modèle de contrôle. Le modèle se compose d’un carré (dont en arrière-plan est lié à la propriété **Background** qui disposent de toutes les instances du type de XAML, [**contrôle**](/uwp/api/windows.ui.xaml.controls.control) ) et un élément de texte (dont le texte est lié à la propriété de dépendance **BgLabelControl::Label** ).
 
 ## <a name="add-an-instance-of-bglabelcontrol-to-the-main-ui-page"></a>Ajouter une instance de **BgLabelControl** à la page principale de l’interface utilisateur
 
@@ -152,7 +152,7 @@ Ouvrez `MainPage.xaml`, qui contient le balisage XAML pour notre page d’interf
 <local:BgLabelControl Background="Red" Label="Hello, World!"/>
 ```
 
-En outre, ajoutez les éléments suivants incluent la directive à `MainPage.h` afin que le type de **MainPage** (une combinaison de compilation de balisage XAML et le code impératif) est prenant en charge du type de contrôle personnalisé **BgLabelControl** .
+En outre, ajoutez les éléments suivants incluent la directive `MainPage.h` afin que le type de **MainPage** (une combinaison de la compilation de balisage XAML et le code impératif) est prenant en charge du type de contrôle personnalisé **BgLabelControl** .
 
 ```cppwinrt
 // MainPage.h
@@ -163,11 +163,11 @@ En outre, ajoutez les éléments suivants incluent la directive à `MainPage.h` 
 
 Lancez à présent le processus de génération et exécutez le projet. Vous verrez que le modèle de contrôle par défaut est obligatoire pour le pinceau d’arrière-plan et à l’étiquette de l’instance **BgLabelControl** dans le balisage.
 
-Cette procédure pas à pas vous a montré un exemple simple d’un contrôle personnalisé (basé sur un modèle) en C++ / WinRT. Vous pouvez rendre vos propres contrôles personnalisés au hasard riches et complètes. Par exemple, un contrôle personnalisé peut prendre la forme d’un élément aussi compliquée qu’une grille de données modifiable, un lecteur vidéo ou un visualiseur de géométrie 3D.
+Cette procédure pas à pas vous a montré un exemple simple d’un contrôle personnalisé (basé sur un modèle) en C++ / WinRT. Vous pouvez rendre vos propres contrôles personnalisés au hasard riche et complet. Par exemple, un contrôle personnalisé peut prendre la forme d’un élément aussi compliquée qu’une grille de données modifiable, un lecteur vidéo ou un visualiseur de géométrie 3D.
 
 ## <a name="implementing-overridable-functions-such-as-measureoverride-and-onapplytemplate"></a>Mise en œuvre *substituables* des fonctions telles que **MeasureOverride** et **OnApplyTemplate**
 
-Vous dérivez un contrôle personnalisé de la classe runtime [**Control**](/uwp/api/windows.ui.xaml.controls.control) , elle-même davantage dérive de classes runtime de base. Et il existe des méthodes substituables de **contrôle**, [**FrameworkElement**](/uwp/api/windows.ui.xaml.frameworkelement)et [**UIElement**](/uwp/api/windows.ui.xaml.uielement) que vous pouvez remplacer dans votre classe dérivée. Voici un exemple de code vous montrant comment effectuer cette opération.
+Vous dérivez un contrôle personnalisé de la classe runtime [**Control**](/uwp/api/windows.ui.xaml.controls.control) , elle-même plus dérive de classes runtime de base. Et il existe des méthodes substituables d’un **contrôle**, [**FrameworkElement**](/uwp/api/windows.ui.xaml.frameworkelement)et [**UIElement**](/uwp/api/windows.ui.xaml.uielement) que vous pouvez remplacer dans votre classe dérivée. Voici un exemple de code vous indiquant comment effectuer cette opération.
 
 ```cppwinrt
 struct BgLabelControl : BgLabelControlT<BgLabelControl>

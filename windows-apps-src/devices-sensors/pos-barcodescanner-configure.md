@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: b33c1d33fe88a09de36e8f80a3034b915d338861
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319399"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354767"
 ---
 # <a name="configure-a-barcode-scanner"></a>Configurer un scanneur de code-barres
 
@@ -30,7 +30,7 @@ Le fabricant de votre scanneur de code-barres peut également avoir un pilote sp
 ## <a name="bluetooth-barcode-scanner"></a>Scanneur de codes-barres Bluetooth
 Un scanneur connecté par Bluetooth doit être configuré dans le mode **Protocole Port série - Interface série simple (SPP-SSI)** pour fonctionner avec les API de scanneur de code-barres UWP.  Reportez-vous à la documentation de votre scanneur de code-barres ou contactez son fabricant pour obtenir les instructions d'activation du **mode SPP-SSI**.
 
-Avant de pouvoir utiliser votre scanneur de codes-barres Bluetooth vous devez l’associer à l’aide de **Paramètres > appareils > Bluetooth & autres appareils > Ajouter Bluetooth ou autre périphérique**.
+Avant de pouvoir utiliser votre scanneur de codes-barres Bluetooth vous devez l’associer à l’aide de **Paramètres > appareils > Bluetooth & autres appareils > Ajouter un Bluetooth ou autre périphérique**.
 
 Vous pouvez lancer et contrôler le processus de jumelage à l’aide de l’espace de noms [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration) .  Voir [Coupler des appareils](https://docs.microsoft.com/windows/uwp/devices-sensors/pair-devices) pour plus d'informations.
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, prix, disponible, détectable, version d’évaluation gratuite, versions d’évaluation, applications, date de publication
 ms.localizationpriority: medium
 ms.openlocfilehash: 20c52687b375f9bf33dd491eeb37d4142acace99
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316829"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351715"
 ---
 # <a name="set-app-pricing-and-availability"></a>Définir la tarification et la disponibilité d’une application
 
@@ -74,7 +74,7 @@ Par défaut, votre version d’essai sera disponible dès que votre application 
 >[!NOTE]
 > Ces dates ne s’appliquent qu’aux clients sous Windows10 (y compris Xbox). Si votre application est disponible pour les clients utilisant des versions antérieures du système d’exploitation, la version d'essai sera proposée à ces clients aussi longtemps que votre produit sera disponible. 
 
-Pour définir les dates auxquelles votre version d’essai doit être proposée aux clients sous Windows10, changez les paramètres **Commence le** et/ou **Se termine le** sur la liste déroulante en **au**, puis choisissez la date et l’heure. Si vous procédez ainsi, vous pouvez choisir **UTC**, afin que l’heure que vous sélectionnez s'exprime en temps universel coordonné (UTC), ou **Local**, afin que ces dates soient utilisées dans chaque fuseau horaire associé à un marché. (Notez que pour les marchés qui incluent plusieurs fuseaux horaires, un seul fuseau horaire de ces marchés sera utilisé. Pour les États-Unis, le fuseau horaire est est utilisé.) Vous pouvez sélectionner **Personnaliser pour des marchés spécifiques** si vous voulez définir les dates différentes pour un ou plusieurs marchés.
+Pour définir les dates auxquelles votre version d’essai doit être proposée aux clients sous Windows10, changez les paramètres **Commence le** et/ou **Se termine le** sur la liste déroulante en **au**, puis choisissez la date et l’heure. Si vous procédez ainsi, vous pouvez choisir **UTC**, afin que l’heure que vous sélectionnez s'exprime en temps universel coordonné (UTC), ou **Local**, afin que ces dates soient utilisées dans chaque fuseau horaire associé à un marché. (Notez que pour les marchés qui incluent plusieurs fuseaux horaires, un seul fuseau horaire de ces marchés sera utilisé. Pour les États-Unis, le fuseau horaire est est utilisé.) Vous pouvez sélectionner **Personnaliser pour des marchés spécifiques** si vous souhaitez définir des dates différentes pour un ou plusieurs marchés.
 
 
 ## <a name="sale-pricing"></a>Prix de vente

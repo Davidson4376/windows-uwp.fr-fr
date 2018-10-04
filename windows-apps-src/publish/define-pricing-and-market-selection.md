@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, marchés, pays, régions
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315179"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4357383"
 ---
 # <a name="define-market-selection"></a>Définir la sélection du marché
 
@@ -50,7 +50,7 @@ Vous verrez également une case à cocher qui vous permet d’indiquer si vous s
 
 ## <a name="microsoft-store-consumer-markets"></a>Marchés grand public de Microsoft Store
 
-Vous pouvez choisir de répertorier votre application (ou module complémentaire) dans un ou plusieurs des marchés suivants. Les marchés comportant un astérisque prennent en charge le Microsoft Store sur Xbox One; Vous verrez **Xbox** en regard de leurs noms dans la fenêtre contextuelle de **sélection du marché** .
+Vous pouvez choisir de répertorier votre application (ou module complémentaire) dans un ou plusieurs des marchés suivants. Les marchés comportant un astérisque prennent en charge le Microsoft Store sur Xbox One; Vous verrez **Xbox** en regard de leurs noms dans la fenêtre contextuelle de **la sélection du marché** .
 
 
 <table>
@@ -480,7 +480,7 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Marchés « Rest of World » pour Windows 8.x
 
-Si votre application comprend des packages ciblant Windows 8.x, il est important de savoir qu’un certain nombre de marchés est traité comme un marché unique «Rest of World» pour les clients utilisent le Windows Store sur Windows 8.x, même si elles s’affichent comme des marchés individuels dans le centre de développement Windows tableau de bord (par opposition au tableau de bord du Windows Store plus haut, où il a été une option de marché «Rest of World» pour regrouper tous ces marchés).
+Si votre application comprend des packages ciblant Windows 8.x, il est important de savoir qu’un certain nombre de marchés est traité comme un marché unique «Rest of World» pour les clients utilisent le Windows Store sur Windows 8.x, même si elles s’affichent comme des marchés individuels dans le centre de développement Windows tableau de bord (par opposition au tableau de bord du Windows Store antérieur, où il a été une option de marché «Rest of World» pour regrouper tous ces marchés).
 
 Si vous conservez la sélection par défaut lorsque vous soumettez votre application, vous n’avez pas à vous soucier de cela. Votre application sera disponible sur tous les marchés possibles. Toutefois, si vous voulez exclure certains marchés, gardez à l’esprit que l’exclusion d’un seul de ces marchés « Rest of World » signifie que votre application ne sera disponible sur aucun marché « Rest of World » pour les clients utilisant Windows 8 ou Windows 8.1.
 

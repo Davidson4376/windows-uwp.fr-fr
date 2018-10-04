@@ -17,11 +17,11 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 20b6f54f39be116ad77cb5a179ff8c3d188eb8c4
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4311983"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351965"
 ---
 # <a name="menus-and-context-menus"></a>Menus et menus contextuels
 
@@ -43,17 +43,17 @@ Les menus et les menus contextuels permettent de gagner de l’espace en organis
 
 Menus et menus contextuels permettent d’organiser les commandes; Pour afficher du contenu arbitraire, par exemple, une demande de notification ou une confirmation, utilisez une [boîte de dialogue ou un menu volant](dialogs.md).
 
-### <a name="menubar-vs-menuflyout"></a>Barre de menus VS MenuFlyout
+### <a name="menubar-vs-menuflyout"></a>Barre de menus et MenuFlyout
 
 Pour afficher un menu dans un menu volant attaché à un élément d’interface utilisateur sur les canevas, utilisez le contrôle MenuFlyout pour héberger vos éléments de menu. Vous pouvez appeler un menu volant sous la forme d’un menu normal ou un menu contextuel. Un menu volant héberge un menu de niveau supérieur unique (et sous-menus facultatifs).
 
-Pour afficher un ensemble de plusieurs menus de niveau supérieur dans une ligne horizontale, utilisez une barre de menus. Vous placez en règle générale, la barre de menus en haut de la fenêtre d’application.
+Pour afficher un ensemble de plusieurs menus de niveau supérieur dans une ligne horizontale, utilisez une barre de menus. En règle générale, vous placez la barre de menus en haut de la fenêtre d’application.
 
-### <a name="menubar-vs-commandbar"></a>Barre de menus VS CommandBar
+### <a name="menubar-vs-commandbar"></a>Barre de menus et CommandBar
 
-Barre de menus et CommandBar tous deux représentent des surfaces que vous pouvez utiliser pour exposer des commandes à vos utilisateurs. La barre de menus fournit un moyen simple et rapide pour exposer un ensemble de commandes pour les applications qui peuvent requérir plus organisation ou regroupement que permet un contrôle CommandBar.
+Barre de menus et CommandBar tous deux représentent des surfaces que vous pouvez utiliser pour exposer des commandes à vos utilisateurs. La barre de menus fournit un moyen simple et rapide pour exposer un ensemble de commandes pour les applications qui peuvent requérir plus organisation ou le regroupement que permet un contrôle CommandBar.
 
-Vous pouvez également utiliser une barre de menus en conjonction avec un contrôle CommandBar. Utilisez la barre de menus pour fournir la majeure partie des commandes et de la classe CommandBar pour mettre en évidence les commandes les plus utilisées.
+Vous pouvez également utiliser une barre de menus en conjonction avec un contrôle CommandBar. Utilisez la barre de menus pour fournir la majeure partie des commandes et le contrôle CommandBar pour mettre en évidence les commandes les plus utilisées.
 
 ## <a name="examples"></a>Exemples
 
@@ -73,7 +73,7 @@ Vous pouvez également utiliser une barre de menus en conjonction avec un contr�
 
 ## <a name="menus-vs-context-menus"></a>Menus par rapport aux menus contextuels
 
-Menus et menus contextuels sont similaires dans leur apparence et ce qu’ils peuvent contiennent. En fait, vous pouvez utiliser le même contrôle [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030), pour les créer. La différence est la façon dont vous permettez à l’utilisateur y accéder.
+Menus et menus contextuels sont similaires dans leur apparence et ce qu’ils contiennent. En fait, vous pouvez utiliser le même contrôle [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030), pour les créer. La différence est la façon dont vous permettez à l’utilisateur y accéder.
 
 Quand utiliser un menu ou un menu contextuel?
 
@@ -93,7 +93,7 @@ Si vous voulez ajouter des commandes (telles que couper, copier et coller) à un
 - Ont un point d’entrée unique (un menu Fichier en haut de l’écran, par exemple) qui est toujours affiché.
 - Sont généralement attachés à un bouton ou un élément de menu parent.
 - Sont appelés en cliquant avec le bouton gauche de la souris (ou par le biais d’une action équivalente, telles que l’appui avec votre doigt).
-- Sont associés à un élément via ses propriétés de [menu volant](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) ou [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) ou regroupés dans une barre de menus en haut de la fenêtre d’application.
+- Sont associés à un élément via ses propriétés [menu volant](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) ou [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) , ou regroupés dans une barre de menus en haut de la fenêtre d’application.
 
 ### <a name="context-menus"></a>Les menus contextuels:
 
@@ -219,14 +219,14 @@ Les contrôles permettant de faire disparaître les contrôles, tels que des men
 
 ## <a name="create-a-menu-bar"></a>Créer une barre de menus
 
-> **Version d’évaluation**: barre de menus nécessite [dernière build Windows 10 Insider Preview et Kit de développement](https://insider.windows.com/for-developers/) ou la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> **Version d’évaluation**: nécessite une barre de menus [dernière build Windows 10 Insider Preview et Kit de développement](https://insider.windows.com/for-developers/) ou la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 Vous utilisez les mêmes éléments pour créer des menus dans une barre de menus, comme dans un menu volant. Toutefois, au lieu de regroupement d’objets MenuFlyoutItem dans un MenuFlyout, vous les regrouper dans un élément MenuBarItem. Chaque MenuBarItem est ajouté à la barre de menus, comme un menu de niveau supérieur.
 
 ![Exemple d’une barre de menus](images/menu-bar-submenu.png)
 
 > [!NOTE]
-> Cet exemple indique uniquement comment créer la structure de l’interface utilisateur, mais n’affiche pas de mise en œuvre d’une des commandes.
+> Cet exemple indique uniquement comment créer la structure de l’interface utilisateur, mais n’affiche pas l’implémentation d’une des commandes.
 
 ```xaml
 <MenuBar>

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs, détails, application de bureau
 ms.localizationpriority: medium
 ms.openlocfilehash: 31b7684878eb0f8921d81c8fda9d262a21e12132
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4320782"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4353483"
 ---
 # <a name="get-details-for-an-error-in-your-desktop-application"></a>Obtenir les informations sur une erreur de votre application de bureau
 
@@ -147,4 +147,4 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 * [Accéder aux données d’analyse à l’aide des services du MicrosoftStore](access-analytics-data-using-windows-store-services.md)
 * [Obtenir des données de rapport d'erreur pour votre application de bureau](get-desktop-application-error-reporting-data.md)
 * [Obtenir la trace de pile concernant une erreur dans votre application de bureau](get-the-stack-trace-for-an-error-in-your-desktop-application.md)
-* [Télécharger le fichier CAB pour une erreur dans votre application de bureau](download-the-cab-file-for-an-error-in-your-desktop-application.md)
+* [Télécharger le fichier CAB concernant une erreur dans votre application de bureau](download-the-cab-file-for-an-error-in-your-desktop-application.md)

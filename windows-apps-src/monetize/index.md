@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, monétiser, engager, promouvoir, services du Windows Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 58993f3a62f6fd85589aeac931e3abbb42a6cda6
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 02ef073e319af3fe2cf3bdd7906a7027200c4854
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689045"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352508"
 ---
 # <a name="monetization-engagement-and-store-services"></a>Monétisation, implication et services du Windows Store
 
@@ -25,7 +25,7 @@ Pour plus d’informations sur les frais facturés par le MicrosoftStore et la f
 
 ## <a name="in-this-section"></a>Dans cette section
 
-| Sujet                | Description                 |
+| Rubrique                | Description                 |
 |--------------------|-----------------------------|
 | [Achats in-app et versions d’évaluation](in-app-purchases-and-trials.md)      | Découvrez comment utiliser les API du SDK Windows pour ajouter des achats de produits in-app et des fonctionnalités d’évaluation à vos applications.  |
 | [Afficher des publicités dans votre application avec le SDK MicrosoftAdvertising](display-ads-in-your-app.md)      |   Augmentez vos revenus en affichant des bannières ou des spots publicitaires dans votre application. Cette fonctionnalité nécessite le SDK Microsoft Advertising. |
@@ -36,7 +36,7 @@ Pour plus d’informations sur les frais facturés par le MicrosoftStore et la f
 | [Consigner des événements personnalisés pour le Centre de développement](log-custom-events-for-dev-center.md)  | Consignez des événements personnalisés depuis votre applicationUWP et passez en revue les événements dans le [Rapport sur l’utilisation](../publish/usage-report.md) du tableau de bord du Centre de développement. Cette fonctionnalité nécessite MicrosoftStore Services SDK. |
 | [Demander des évaluations et des avis](request-ratings-and-reviews.md) |  Incitez vos clients à évaluer ou à donner un avis sur votre app en affichant par programme une interface utilisateur destinée aux avis et évaluations.  |
 | [Services MicrosoftStore](using-windows-store-services.md)    |  Découvrez comment utiliser les API RESTful pour automatiser les soumissions effectuées vers le WindowsStore et d’autres tâches associées au WindowsStore, et accéder aux données d’analyse.    |
-| [Créer une application de démonstration commerciale (RDX)](retail-demo-experience.md)        |  Découvrez comment créer une application de démonstration commerciale qui peut être installée sur un PC et des appareils de démonstration mobiles d’un détaillant.  |
+| [Ajouter des fonctionnalités de démonstration (RDX) de vente au détail à votre application](retail-demo-experience.md)        |  Inclure un mode de démonstration commerciale de votre application Windows afin que les clients qui tester le PC et appareils sur le sol vente peuvent aller à droite dans.  |
 
 ## <a name="related-topics"></a>Rubriques connexes
 

@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316425"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351823"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Tests du Kit de certification des applications Windows
 
 
-Le [Kit de Certification des applications Windows](windows-app-certification-kit.md) contient un certain nombre de tests qui permettent de garantir que votre application est prête à être publiée dans le Microsoft Store. Les tests sont répertoriées ci-dessous avec leurs critères, plus de détails et actions dans le cas d’échec suggérées.
+Le [Kit de Certification des applications Windows](windows-app-certification-kit.md) contient un certain nombre de tests qui permettent de garantir que votre application est prête à être publiée dans le Microsoft Store. Les tests sont répertoriées ci-dessous avec leurs critères, plus de détails et les actions dans le cas d’échec suggérées.
 
 ## <a name="deployment-and-launch-tests"></a>Tests de déploiement et de lancement
 
@@ -248,7 +248,7 @@ Le test AppContainerCheck vérifie que le bit **appcontainer** est défini dans 
 
 Si un fichier exécutable natif échoue à ce test, vérifiez que vous avez utilisé le compilateur et l’éditeur de liens les plus récents pour générer le fichier et que vous utilisez l’indicateur */appcontainer* sur l’éditeur de liens.
 
-Si un fichier exécutable managé échoue à ce test, assurez-vous que vous avez utilisé le compilateur dernière et l’éditeur de liens, tels que Microsoft Visual Studio, pour générer l’application UWP.
+Si un fichier exécutable managé échoue au test, assurez-vous que vous avez utilisé le compilateur dernière et l’éditeur de liens, tels que Microsoft Visual Studio, pour générer l’application UWP.
 
 **Remarques**
 
@@ -323,7 +323,7 @@ Vérifiez que l’application a été compilée en tant que version de publicati
 
 Passez en revue les messages d’erreur pour identifier l’API utilisée par l’application qui n’est pas une [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-> **Remarque**  Les applications de C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. [Solutions de rechange aux API Windows dans les applications UWP](http://go.microsoft.com/fwlink/p/?LinkID=244022) pour plus d’informations, voir.
+> **Remarque**  Applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. [Solutions de rechange aux API Windows dans les applications UWP](http://go.microsoft.com/fwlink/p/?LinkID=244022) pour plus d’informations, voir.
 
 ## <a name="performance-tests"></a>Tests de performances
 
@@ -433,7 +433,7 @@ Inspirez-vous du tableau suivant.
 <tr><td>
 <p>La fusion automatique ne doit pas être activée pour le fichier «resources.pri».</p>
 </td><td>
-<p>MakePRI.exe prend en charge une option appelée <strong>AutoMerge</strong>. La valeur par défaut de <strong>AutoMerge</strong> est <strong>off</strong>. Lorsque l’option <strong>AutoMerge</strong> est activée, elle fusionne les ressources du module linguistique d’une application en un fichier resources.pri unique au moment de l’exécution. Est déconseillé pour les applications que vous envisagez de distribuer par le biais du Microsoft Store. Le fichier resources.pri d’une application distribuée par le biais du Microsoft Store doivent être à la racine du package de l’application et contenir toutes les références de langage qui prend en charge de l’application.</p>
+<p>MakePRI.exe prend en charge une option appelée <strong>AutoMerge</strong>. La valeur par défaut de <strong>AutoMerge</strong> est <strong>off</strong>. Lorsque l’option <strong>AutoMerge</strong> est activée, elle fusionne les ressources du module linguistique d’une application en un fichier resources.pri unique au moment de l’exécution. Est déconseillé pour les applications que vous envisagez de distribuer par le biais du Microsoft Store. Le fichier resources.pri d’une application distribuée par le biais du Microsoft Store doivent être à la racine du package de l’application et contenir toutes les références linguistiques qui prend en charge de l’application.</p>
 </td></tr>
 <tr><td>
 <p>La chaîne «{string}» ne respecte pas la limite maximale de {number}caractères.</p>
@@ -537,7 +537,7 @@ Teste les applications Microsoft Direct3D pour s’assurer qu’elles ne se bloq
 
 ### <a name="background"></a>Contexte
 
-Microsoft Store nécessite que toutes les applications à l’aide de Direct3D pour un rendu correct ou échouent de manière cartes graphiques de 9\-1 au niveau de fonctionnalité.
+Microsoft Store nécessite toutes les applications à l’aide de Direct3D pour un rendu correct ou échouent de manière cartes graphiques de 9\-1 au niveau de fonctionnalité.
 
 Dans la mesure où les utilisateurs peuvent changer de matériel graphique sur leur appareil après l’installation de l’application, si vous choisissez un niveau de fonctionnalité minimal supérieur au niveau 9\-1, votre application doit détecter au démarrage si le matériel actuel répond ou non aux critères minimaux. Dans le cas contraire, l’application doit afficher un message qui détaille les critères exigés pour Direct3D. Par ailleurs, si une application est téléchargée sur un appareil avec lequel elle n’est pas compatible, elle doit détecter cette incompatibilité au démarrage et afficher un message expliquant au client la configuration requise.
 

@@ -4,22 +4,20 @@ ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: Présentation détaillée de la liaison de données
 description: La liaison de données est un moyen dont dispose l’interface utilisateur de votre application pour afficher des données et éventuellement rester synchronisée avec ces données.
 ms.author: markl
-ms.date: 02/08/2017
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 72c7037e9e99ad69ff13c65fb2195bc6e3f8110f
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: 559bbbc3421151a9055b89c94bc1293a950ccb5b
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318463"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351450"
 ---
 # <a name="data-binding-in-depth"></a>Présentation détaillée de la liaison de données
-
-
 
 **API importantes**
 
@@ -31,16 +29,15 @@ ms.locfileid: "4318463"
 > [!Note]
 > Cette rubrique décrit en détail les fonctionnalités de liaison de données. Pour une brève présentation pratique, voir [Vue d’ensemble de la liaison de données](data-binding-quickstart.md).
 
-
 La liaison de données est un moyen dont dispose l’interface utilisateur de votre application pour afficher des données et éventuellement rester synchronisée avec ces données. La liaison de données vous permet de séparer les problématiques liées aux données de celles liées à l’interface utilisateur, ce qui se traduit par un modèle conceptuel plus simple et l’amélioration de la lisibilité, de la testabilité et de la gestion de la maintenance de votre application.
 
-Vous pouvez utiliser la liaison de données pour simplement afficher des valeurs à partir d’une source de données lorsque l’interface utilisateur est affichée pour la première fois, et non pas pour répondre aux modifications apportées à ces valeurs. Cette liaison, dite ponctuelle, est particulièrement adaptée aux données dont les valeurs ne changent pas au cours de l’exécution. Vous pouvez également choisir d’« observer » les valeurs et de mettre à jour l’interface utilisateur lorsque ces valeurs changent. Cette liaison, dite à sens unique, est particulièrement adaptée aux données en lecture seule. Enfin, vous pouvez choisir d’observer les valeurs et de mettre à jour l’interface utilisateur de telle sorte que les modifications apportées par l’utilisateur aux valeurs de l’interface utilisateur soient transmises automatiquement à la source de données. Cette liaison, dite bidirectionnelle, est particulièrement adaptée aux données en lecture-écriture. Voici quelques exemples.
+Vous pouvez utiliser la liaison de données pour simplement afficher des valeurs à partir d’une source de données lorsque l’interface utilisateur est affichée pour la première fois, et non pas pour répondre aux modifications apportées à ces valeurs. Il s’agit d’un mode de liaison appelée *à usage unique*, et elle fonctionne bien pour une valeur qui ne change pas pendant l’exécution. Par ailleurs, vous pouvez choisir de «observer» les valeurs et mettre à jour l’interface utilisateur lorsqu’ils sont modifiés. Cela plus est appelée *à sens unique*, et elle fonctionne bien pour les données en lecture seule. Enfin, vous pouvez choisir d’observer les valeurs et de mettre à jour l’interface utilisateur de telle sorte que les modifications apportées par l’utilisateur aux valeurs de l’interface utilisateur soient transmises automatiquement à la source de données. Ce mode est appelé *bidirectionnelle*, et elle fonctionne bien pour les données en lecture-écriture. Voici quelques exemples.
 
--   Vous pouvez utiliser une liaison ponctuelle pour lier un contrôle [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) à une photo de l’utilisateur actuel.
--   Vous pouvez utiliser une liaison à sens unique pour lier un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) à une collection d’articles d’actualité en temps réel regroupés par section de journal.
--   Vous pouvez utiliser une liaison bidirectionnelle pour lier un contrôle [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) au nom d’un client dans un formulaire.
+-   Vous pouvez utiliser le mode à usage unique pour lier une [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) à la photo de l’utilisateur actuel.
+-   Vous pouvez utiliser le mode à sens unique pour lier un [**contrôle ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) à une collection d’articles d’actualité en temps réel regroupés par section de journal.
+-   Vous pouvez utiliser le mode bidirectionnel pour lier une [**zone de texte**](https://msdn.microsoft.com/library/windows/apps/BR209683) au nom d’un client dans un formulaire.
 
-Il existe deux types de liaison, qui sont généralement tous deux déclarés dans le balisage de l’interface utilisateur. Vous pouvez choisir d’utiliser l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) ou l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Vous pouvez même utiliser une combinaison des deux dans la même application, voire pour un même élément d’interface utilisateur. {x:Bind}, une nouveauté de Windows10, offre de meilleures performances. Toutes les informations présentées dans cette rubrique s’appliquent à ces deux types de liaison, sauf explicitement indiqué.
+Quel que soit le mode, il existe deux types de liaison et qu’ils sont tous deux généralement déclarés dans le balisage de l’interface utilisateur. Vous pouvez choisir d’utiliser l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) ou l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Vous pouvez même utiliser une combinaison des deux dans la même application, voire pour un même élément d’interface utilisateur. {x:Bind}, une nouveauté de Windows10, offre de meilleures performances. Toutes les informations présentées dans cette rubrique s’appliquent à ces deux types de liaison, sauf explicitement indiqué.
 
 **Exemples d’applications illustrant {x:Bind}**
 
@@ -66,7 +63,7 @@ Dans les sections suivantes, nous allons examiner de plus près la source de lia
 Voici une implémentation très rudimentaire d’une classe que nous pourrions utiliser comme source de liaison.
 
 > [!Note]
-> Si vous utilisez [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) avec les extensions de composant Visual C++ (C++ / CX), vous devrez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à votre classe de source de liaison. Si vous utilisez [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), vous n’aurez pas besoin de cet attribut. Voir [Ajout d’un affichage de détails](data-binding-quickstart.md#adding-a-details-view) pour un extrait de code.
+> Si vous utilisez [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) avec des extensions de composant Visual C++ (C++ / CX), vous devrez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à votre classe de source de liaison. Si vous utilisez [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), vous n’aurez pas besoin de cet attribut. Voir [Ajout d’un affichage de détails](data-binding-quickstart.md#adding-a-details-view) pour un extrait de code.
 
 ```csharp
 public class HostViewModel
@@ -260,7 +257,7 @@ Un objet de liaison présente une propriété **Source**, dont la valeur par dé
 ```
 
 > [!Note]
-> Par défaut, les modifications apportées aux [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) sont envoyées à une source dépendante bidirectionnelle lorsque la [**zone de texte**](https://msdn.microsoft.com/library/windows/apps/BR209683) perd le focus. Pour que les modifications soient envoyées après chaque séquence de touches de l’utilisateur, attribuez la valeur **PropertyChanged** à **UpdateSourceTrigger** sur la liaison dans le balisage. Vous pouvez également contrôler entièrement le moment où les modifications sont envoyées à la source en définissant **UpdateSourceTrigger** sur **Explicit**. Vous gérez ensuite les événements sur la zone de texte (généralement [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)), appelez [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) sur la cible pour obtenir un objet [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx) et appelez enfin [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) pour mettre à jour la source de données par programmation.
+> Par défaut, les modifications apportées aux [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) sont envoyées à une source de dépendante bidirectionnelle lorsque la [**zone de texte**](https://msdn.microsoft.com/library/windows/apps/BR209683) perd le focus. Pour que les modifications soient envoyées après chaque séquence de touches de l’utilisateur, attribuez la valeur **PropertyChanged** à **UpdateSourceTrigger** sur la liaison dans le balisage. Vous pouvez également contrôler entièrement le moment où les modifications sont envoyées à la source en définissant **UpdateSourceTrigger** sur **Explicit**. Vous gérez ensuite les événements sur la zone de texte (généralement [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)), appelez [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) sur la cible pour obtenir un objet [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx) et appelez enfin [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) pour mettre à jour la source de données par programmation.
 
 La propriété [**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) prend en charge une diversité d’options de liaison à des propriétés imbriquées, des propriétés attachées ainsi qu’à des indexeurs de chaînes et d’entiers. Pour plus d’informations, voir [Syntaxe de PropertyPath](https://msdn.microsoft.com/library/windows/apps/Mt185586). La réalisation d’une liaison à des indexeurs de chaînes revient à effectuer une liaison à des propriétés dynamiques sans avoir besoin d’implémenter [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878). La propriété [**ElementName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.elementname) est utile pour les liaisons d’élément à élément. La propriété [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.relativesource) a plusieurs usages et offre notamment une solution plus performante que la liaison de modèle à l’intérieur d’un modèle [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209391). Pour les autres paramètres, voir l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) et la classe [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820).
 
@@ -384,7 +381,7 @@ Si vous liez un contrôle de texte à une valeur autre qu’une chaîne, le mote
 
 ## <a name="function-binding-in-xbind"></a>Liaison de fonction dans {x:Bind}
 
-Avec {x:Bind}, l’étape finale d’un chemin de liaison peut être une fonction. Cela peut servir à effectuer des conversions et des liaisons qui dépendent de plusieurs propriétés. Consultez [ **fonctions dans x: Bind**](function-bindings.md)
+Avec {x:Bind}, l’étape finale d’un chemin de liaison peut être une fonction. Cela peut servir à effectuer des conversions et des liaisons qui dépendent de plusieurs propriétés. Voir [ **fonctions dans x: Bind**](function-bindings.md)
 
 <span id="resource-dictionaries-with-x-bind"/>
 
@@ -657,8 +654,8 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | FallbackValue | `{x:Bind Name, FallbackValue='empty'}` | `{Binding Name, FallbackValue='empty'}` | Utilisée lorsqu’une partie du chemin de la liaison (à l’exception du nœud terminal) présente la valeur null. | 
 | ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | Avec {x:Bind}, vous créez une liaison à un champ; Path a pour racine Page par défaut, de sorte que tout élément nommé est accessible via son champ. | 
 | RelativeSource: Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | Avec {x:Bind}, nommez l’élément et utilisez son nom dans Path. | 
-| RelativeSource : TemplatedParent | Pas requis | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | Avec {x: Bind} TargetType sur ControlTemplate indique la liaison à un parent de modèle. Pour {Binding} liaison de modèle standard peut être utilisé dans les modèles de contrôle pour la plupart des utilisations. Toutefois, faites appel à TemplatedParent quand vous devez utiliser un convertisseur ou une liaison bidirectionnelle.&lt; | 
-| Source | Pas requis | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | Pour {x: Bind}, vous pouvez utiliser directement l’élément nommé, utilisez une propriété ou un chemin statique. | 
+| RelativeSource : TemplatedParent | Pas nécessaire | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | Avec {x: Bind} TargetType sur ControlTemplate indique la liaison à un parent de modèle. Pour {Binding} liaison de modèle standard peut être utilisée dans les modèles de contrôle pour la plupart des utilisations. Toutefois, faites appel à TemplatedParent quand vous devez utiliser un convertisseur ou une liaison bidirectionnelle.&lt; | 
+| Source | Pas nécessaire | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | Pour {x: Bind}, vous pouvez utiliser directement l’élément nommé, utilisez une propriété ou un chemin statique. | 
 | Mode | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode peut être défini sur OneTime (liaison ponctuelle), OneWay (liaison à sens unique) ou TwoWay (liaison bidirectionnelle). La valeur par défaut est OneTime pour {x:Bind} et OneWay pour {Binding}. | 
 | UpdateSourceTrigger | `{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}` | `{Binding UpdateSourceTrigger=PropertyChanged}` | UpdateSourceTrigger peut avoir la valeur Default, PropertyChanged ou LostFocus. {x:Bind} ne prend pas en charge UpdateSourceTrigger=Explicit. {x:Bind} utilise le comportement PropertyChanged dans tous les cas, sauf pour TextBox.Text, où il utilise le comportement LostFocus. | 
 

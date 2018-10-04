@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c1812adc9d5610fffd6f9d275b4e093a4fa96e6
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319377"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354627"
 ---
 # <a name="templatebinding-markup-extension"></a>Extension de balisage {TemplateBinding}
 
@@ -65,7 +65,7 @@ Vous pouvez utiliser **TemplateBinding** lorsque la valeur du parent basé sur u
 
 La propriété [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType) devra (pas facultatif) sur [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) lors de l’utilisation de **x: Bind**.
 
-**x: Bind** prenant en charge, vous pouvez désormais utiliser les deux [liaisons de fonction](../data-binding/function-bindings.md) liaisons bidirectionnelles bien comme dans [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)
+Avec prise en charge de **x: Bind** , vous pouvez désormais utiliser les deux [liaisons de fonction](../data-binding/function-bindings.md) liaisons bidirectionnelles bien comme dans [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)
 
 Dans l’exemple suivant, le TextBlock.Text est évaluée à Button.Content.ToString(). La propriété TargetType sur le ControlTemplate agit en tant que la source de données et accomplit le même résultat qu’un TemplateBinding et parent.
 

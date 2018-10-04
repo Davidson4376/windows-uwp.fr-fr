@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a43f3b4c5684d93ea6986c4d1f1e4dae46c1a959
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315215"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4357338"
 ---
 # <a name="guidance-for-app-package-management"></a>Aide sur la gestion des packages d’application
 
@@ -32,7 +32,7 @@ Découvrez comment les packages de votre application sont mis à la disposition 
 
 Les différents systèmes d’exploitation peuvent exécuter différents types de packages. Si plusieurs de vos packages peuvent s’exécuter sur l’appareil d’un client, le MicrosoftStore fournit la meilleure correspondance disponible.
 
-En règle générale, les systèmes d’exploitation plus récents peuvent exécuter des packages ciblant des versions antérieures pour la même famille d’appareils. Toutefois, elles n’obtiennent ces packages si l’application n’inclut pas un package ciblant sa version du système d’exploitation en cours.
+En règle générale, les systèmes d’exploitation plus récents peuvent exécuter des packages ciblant des versions antérieures pour la même famille d’appareils. Toutefois, elles n’obtiennent ces packages si l’application n’inclut pas un package ciblant leur version du système d’exploitation en cours.
 
 Par exemple, les appareils Windows 10 peuvent exécuter toutes les versions antérieures du système d’exploitation prises en charge (par famille d’appareils). Les appareils de bureau Windows 10 peuvent exécuter des applications conçues pour Windows 8.1 ou Windows 8. Les appareils mobiles Windows 10 peuvent exécuter des applications conçues pour Windows Phone 8.1, Windows Phone 8, voire Windows Phone 7.x. 
 
@@ -99,7 +99,7 @@ Une application rendue indisponible continue à s'afficher sur votre tableau de 
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>Suppression de packages pour une famille d'appareils précédemment prise en charge
 
-Si vous supprimez tous les packages pour une certaine [famille d’appareils de](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) votre application précédemment prise en charge, vous serez invité à confirmer qu’il s’agit votre intention avant d’enregistrer vos modifications sur la page **Packages** .
+Si vous supprimez tous les packages pour une certaine [famille d’appareils](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) que votre application précédemment pris en charge, vous serez invité à confirmer qu’il s’agit votre intention avant d’enregistrer vos modifications sur la page **Packages** .
 
 Lorsque vous publiez une soumission qui supprime tous les packages qui peuvent s’exécuter sur une famille d’appareils précédemment prise en charge par votre application, les nouveaux clients ne sera pas en mesure d’acquérir l’application sur cette famille. Vous pouvez toujours publier une autre mise à jour pour proposer de nouveau des packages pour cette famille d'appareils.
 
@@ -110,7 +110,7 @@ Gardez à l'esprit que même si vous supprimez tous les packages prenant en char
 
 ## <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>Ajout de packages pour Windows 10 à une application publiée précédemment
 
-Si vous disposez d’une application dans le Windows Store qui inclus uniquement des packages pour Windows 8.x et/ou Windows Phone 8.x et que vous voulez mettre à jour votre application pour Windows 10, créez une nouvelle soumission et ajoutez votre ou vos packages UWP .msixupload ou .appxupload lors de l’étape de [Packages](upload-app-packages.md) . Une fois que votre application passe en certification, le package UWP sera également disponible pour de nouvelles acquisitions par les clients sur Windows 10.
+Si vous disposez d’une application dans le Windows Store incluant uniquement des packages pour Windows 8.x et/ou Windows Phone 8.x et que vous souhaitez mettre à jour votre application pour Windows 10, créez une nouvelle soumission et ajoutez votre ou vos packages UWP .msixupload ou .appxupload lors de l’étape de [Packages](upload-app-packages.md) . Une fois que votre application passe en certification, le package UWP sera également disponible pour de nouvelles acquisitions par les clients sur Windows 10.
 
 > [!NOTE]
 > Une fois qu’un client sur Windows10 obtient votre package UWP, vous ne pouvez pas le faire revenir à un package conçu pour une version antérieure du système d’exploitation. 

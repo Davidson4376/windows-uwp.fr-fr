@@ -11,11 +11,11 @@ keywords: tâche en arrière-plan Windows 10, uwp,
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 5879977662dc2bd609d09e5fe53fc2a2f0b9180f
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316281"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4356857"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>Créer et inscrire une tâche en arrière-plan in-process
 

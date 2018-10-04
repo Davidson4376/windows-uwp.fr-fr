@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection
 ms.localizationpriority: medium
 ms.openlocfilehash: e9c5cb8a0f81513038a18522c39f0138bb25ab27
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315977"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352433"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
-[C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) est une projection entièrement standard C ++ 17 langage moderne pour les API Windows Runtime (WinRT), implémentée comme une bibliothèque basée sur le fichier en-tête et conçue pour vous fournir un accès à l’API Windows moderne. Avec C++/WinRT, vous pouvez créer et utiliser des API Windows Runtime en utilisant n’importe quel compilateur C++17 conforme aux normes. Le SDK Windows inclut C++/WinRT. Il a été introduit dans la version10.0.17134.0 (Windows10, version1803).
+[C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) est une entièrement standard moderne C ++ 17 projection de langage API Windows Runtime (WinRT), implémentée comme une bibliothèque basée sur le fichier en-tête et conçue pour vous fournir un accès à l’API Windows moderne. Avec C++/WinRT, vous pouvez créer et utiliser des API Windows Runtime en utilisant n’importe quel compilateur C++17 conforme aux normes. Le SDK Windows inclut C++/WinRT. Il a été introduit dans la version10.0.17134.0 (Windows10, version1803).
 
 C++/WinRT est destiné à tous les développeurs intéressés pour écrire du code sublime et rapide pour Windows. Voici pourquoi.
 
@@ -54,25 +54,25 @@ C++/WinRT offre de meilleures performances et génère des fichiers binaires plu
 | [Gestion des erreurs avec C++/WinRT](error-handling.md) | Cette rubrique décrit les stratégies de gestion des erreurs lors de la programmation avec C++/WinRT. |
 | [Gérer des événements en utilisant des délégués](handle-events.md) | Cette rubrique montre comment inscrire et révoquer des délégués de gestion d’événements à l’aide de C++/WinRT. |
 | [Créer des événements](author-events.md) | Cette rubrique montre comment créer un composant Windows Runtime contenant une classe runtime qui déclenche des événements. Elle montre également une application qui utilise le composant et gère les événements. |
-| [Collections avec C++ / WinRT](collections.md) | C++ / WinRT fournit des fonctions et des classes de base qui vous faire gagner beaucoup de temps et d’efforts lorsque vous souhaitez implémenter ou passer des collections. |
+| [Collections avec C++/WinRT](collections.md) | C++ / WinRT fournit des fonctions et des classes de base qui vous faire gagner beaucoup de temps et d’efforts lorsque vous souhaitez implémenter ou passer des collections. |
 | [Opérations concurrentes et asynchrones](concurrency.md) | Cette rubrique présente les manières dont vous pouvez à la fois créer et utiliser des objets asynchrones Windows Runtime avec C++/WinRT. |
 | [Contrôles XAML; liaison à une propriété C++/WinRT](binding-property.md) | Une propriété qui peut être efficacement liée à un contrôle XAML est appelée «propriété *observable*». Cette rubrique montre comment implémenter et utiliser une propriété observable, et comment y lier un contrôle XAML. |
 | [Contrôles d’éléments XAML; liaison à une collection C++/WinRT](binding-collection.md) | Une collection qui peut être efficacement liée à un contrôle d’éléments XAML est appelée «collection *observable*». Cette rubrique montre comment implémenter et utiliser une collection observable, et comment y lier un contrôle d’éléments XAML. |
-| [XAML (basé sur un modèle) des contrôles personnalisés avec C++ / WinRT](xaml-cust-ctrl.md) | Cette rubrique vous guide à travers les étapes de création d’un contrôle personnalisé simple à l’aide de C++ / WinRT. Vous pouvez générer sur les informations fournies ici pour créer vos propres contrôles d’interface utilisateur riche et personnalisables. |
-| [Consommer des composants COM avec C++ / WinRT](consume-com.md) | Cette rubrique utilise un exemple de code complet Direct2D pour montrer comment utiliser C++ / WinRT pour consommer des classes et interfaces COM. |
-| [Créer des composants COM avec C++ / WinRT](author-coclasses.md) | C++ / WinRT peut vous aider à créer des composants COM classiques, tout comme il vous aide à créer des classes Windows Runtime. |
+| [Contrôles XAML personnalisés (basés sur un modèle) avec C++/WinRT](xaml-cust-ctrl.md) | Cette rubrique vous guide à travers les étapes de création d’un contrôle personnalisé simple à l’aide de C++ / WinRT. Vous pouvez générer sur les informations fournies ici pour créer vos propres contrôles d’interface utilisateur riche et personnalisables. |
+| [Utiliser des composants COM avec C++/WinRT](consume-com.md) | Cette rubrique utilise un exemple de code complet Direct2D pour montrer comment utiliser C++ / WinRT pour consommer des classes et interfaces COM. |
+| [Créer des composants COM avec C++/WinRT](author-coclasses.md) | C++ / WinRT peut vous aider à créer des composants COM classiques, tout comme il vous aide à créer des classes Windows Runtime. |
 | [Interopérabilité entre C++/WinRT et C++/CX](interop-winrt-cx.md) | Cette rubrique montre deux fonctions d’assistance qui peuvent être utilisées pour effectuer des conversions entre des objets [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) et C++/WinRT. |
 | [Passer de C++/CX à C++/WinRT](move-to-winrt-from-cx.md) | Cette rubrique montre comment porter du code C++/CX vers son équivalent en C++/WinRT. |
 | [Interopérabilité entre C++/WinRT et ABI](interop-winrt-abi.md) | Cette rubrique montre comment effectuer des conversions entre des objets de l’interface binaire d’application (ABI) et C++/WinRT. |
 | [Passer de WRL à C++/WinRT](move-to-winrt-from-wrl.md) | Cette rubrique montre comment porter du code [Bibliothèque de modèles C++ Windows Runtime (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) vers son équivalent en C++/WinRT. |
-| [Références fortes et faibles en C++ / WinRT](weak-references.md) | Windows Runtime est un système avec décompte des références; et dans un tel système, il est important pour vous de connaître la signification d’et la distinction entre, références fortes et faibles. |
+| [Références fortes et faibles en C++ / WinRT](weak-references.md) | Windows Runtime est un système avec décompte des références; et dans un tel système, il est important pour vous de connaître la signification d’et la distinction entre les deux, références fortes et faibles. |
 | [Objets agiles](agile-objects.md) | Un objet agile est un objet qui est accessible à partir de n’importe quel thread. Vos types C++/WinRT sont agiles par défaut, mais vous pouvez le refuser. |
 
 ### <a name="topics-about-the-c-language"></a>Rubriques sur le langage C++
 
 | Rubrique | Description |
 | - | - |
-| [Catégories de valeur et les références à ces](cpp-value-categories.md) | Cette rubrique décrit les différentes catégories de valeurs qui existent en C++. Vous seront sans doute ont entendu lvalues et rvalues, mais il existe d’autres types, trop. |
+| [Les catégories de valeur et des références associées](cpp-value-categories.md) | Cette rubrique décrit les différentes catégories de valeurs qui existent en C++. Vous seront sans doute ont entendu lvalues et rvalues, mais il existe d’autres types, trop. |
 
 ## <a name="important-apis"></a>API importantes
 * [Espace de noms winrt](/uwp/cpp-ref-for-winrt/winrt)

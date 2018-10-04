@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: L’extension de balisage permet aux fonctions à utiliser dans le balisage.
+description: L’extension de balisage permet aux fonctions d’être utilisé dans le balisage.
 title: 'Fonctions dans x: Bind'
 ms.author: jimwalk
 ms.date: 04/26/2018
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315146"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355654"
 ---
 # <a name="functions-in-xbind"></a>Fonctions dans x: Bind
 
@@ -163,7 +163,7 @@ public class Person:INotifyPropertyChanged
 ```
 
 > [!TIP]
-> Vous pouvez utiliser des fonctions dans x: Bind afin d’obtenir les mêmes scénarios que ce qui a été pris en charge par le biais des convertisseurs et MultiBinding dans WPF.
+> Vous pouvez utiliser des fonctions dans x: Bind pour atteindre les mêmes scénarios que ce qui a été pris en charge par le biais des convertisseurs et MultiBinding dans WPF.
 
 ## <a name="function-arguments"></a>Arguments de la fonction
 

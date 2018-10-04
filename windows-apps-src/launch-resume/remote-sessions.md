@@ -8,14 +8,14 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, projet rome
+keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, le projet «Rome»
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e5226b23a454bf48add22d590a3ff247c629e4f
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316381"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355312"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>Connecter des appareils par le biais de sessions à distance
 

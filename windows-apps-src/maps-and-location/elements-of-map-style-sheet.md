@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, cartes, feuille de style de carte
 ms.localizationpriority: medium
-ms.openlocfilehash: 11360f9d76fc07d7a6b24bd1e0bfb78df4f1d22d
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: f0a657ada755b77abe8ffef6a38bfa1f9ece8fcd
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313601"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4353396"
 ---
 # <a name="map-style-sheet-reference"></a>Référence de feuille de style de carte
 
@@ -49,20 +49,21 @@ Parfois, la valeur d’une propriété est transformée pour produire le résult
     }
 ```
 
-Cet article indique les entrées et [propriétés](#properties) JSON que vous pouvez utiliser pour personnaliser l’apparence de vos cartes.
+Cet article indique les entrées et [propriétés](#properties) JSON que vous pouvez utiliser pour personnaliser l’apparence de vos cartes.  Ces propriétés peuvent également être appliquées aux éléments de carte utilisateur par le biais de la propriété [MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.mapstylesheetentry) .
 
 <a id="entries" />
 
 ## <a name="entries"></a>Entrées
 Ce tableau utilise des caractères «>» pour représenter les différents niveaux de la hiérarchie des entrées.  Il indique également quelles versions de Windows prennent en charge chaque entrée et dont l’ignorer.
 
-| Build | Nom de la version Windows |
-|-------|----------------------|
-| 1506  | CreatorsUpdate      |
-| 1629  | FallCreatorsUpdate |
-| 1713  | Mise à jour d’avril2018    |
+| Version | Nom de la version Windows |
+|---------|----------------------|
+|  1703   | CreatorsUpdate      |
+|  1709   | FallCreatorsUpdate |
+|  1803   | Mise à jour d’avril2018    |
+|  1809   | Mise à jour octobre 2018  |
 
-| Nom                         | Groupe de propriétés            | 1506 | 1629 | 1713 | Next | Description    |
+| Nom                         | Groupe de propriétés            | 1703 | 1709 | 1803 | 1809 | Description    |
 |------------------------------|---------------------------|------|------|------|------|----------------|
 | version                      | [Version](#version)       |  ✔   |  ✔   |  ✔   |  ✔   | Version de feuille de style que vous souhaitez utiliser. |
 | settings                     | [Settings](#settings)     |  ✔   |  ✔   |  ✔   |  ✔   | Paramètres qui s’appliquent à la totalité de la feuille de style. |
@@ -171,7 +172,7 @@ Cette section décrit les propriétés que vous pouvez utiliser pour chaque entr
 
 ### <a name="settings-properties"></a>Propriétés de paramètres
 
-| Propriété                     | Type    | 1506 | 1629 | 1713 | Next | Description |
+| Propriété                     | Type    | 1703 | 1709 | 1803 | 1809 | Description |
 |------------------------------|---------|------|------|------|------|-------------|
 | atmosphereVisible            | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   | Indicateur précisant si l’atmosphère apparaît dans le contrôle3D. |
 | buildingTexturesVisible      | Booléen    |      |      |  ✔   |  ✔   | Indicateur indiquant s’il faut ou non afficher des textures sur des bâtiments symboliques en 3D qui ont des textures. |
@@ -193,7 +194,7 @@ Cette section décrit les propriétés que vous pouvez utiliser pour chaque entr
 
 ### <a name="mapelement-properties"></a>Propriétés MapElement
 
-| Propriété                     | Type    | 1506 | 1629 | 1713 | Next | Description |
+| Propriété                     | Type    | 1703 | 1709 | 1803 | 1809 | Description |
 |------------------------------|---------|------|------|------|------|-------------|
 | backgroundScale              | Flottant   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de mise à l’échelle de l’élément en arrière-plan d’une icône.  Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
 | fillColor                    | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur utilisée pour le remplissage des polygones, pour l’arrière-plan des icônes d’objet ponctuel et pour le centre des lignes si elles sont fractionnées. |
@@ -216,7 +217,7 @@ Cette section décrit les propriétés que vous pouvez utiliser pour chaque entr
 
 Ce groupe de propriétés hérite du groupe de propriétés [MapElement](#mapelement).
 
-| Propriété                     | Type    | 1506 | 1629 | 1713 | Next | Description |
+| Propriété                     | Type    | 1703 | 1709 | 1803 | 1809 | Description |
 |------------------------------|---------|------|------|------|------|-------------|
 | borderOutlineColor           | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur de ligne secondaire ou de contour de la bordure d’un polygone rempli. |
 | borderStrokeColor            | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur de ligne principale de la bordure d’un polygone rempli. |
@@ -229,7 +230,7 @@ Ce groupe de propriétés hérite du groupe de propriétés [MapElement](#mapele
 
 Ce groupe de propriétés hérite du groupe de propriétés [MapElement](#mapelement).
 
-| Propriété                     | Type    | 1506 | 1629 | 1713 | Next | Description |
+| Propriété                     | Type    | 1703 | 1709 | 1803 | 1809 | Description |
 |------------------------------|---------|------|------|------|------|-------------|
 | Arrière-plan de la forme             | Flottant   |      |      |      |  ✔️   | Forme à utiliser en tant que l’arrière-plan de l’icône--en remplaçant toute forme qui existe à cet endroit. |
 | stemAnchorRadiusScale        | Flottant   |      |      |  ✔   |  ✔   | Valeur de mise à l’échelle du point d'ancrage du pied d'une icône.  Par exemple, utilisez la valeur *1* pour obtenir la taille par défaut et la valeur *2* pour obtenir une taille deux fois plus grande. |
@@ -244,6 +245,6 @@ Ce groupe de propriétés hérite du groupe de propriétés [MapElement](#mapele
 
 Ce groupe de propriétés hérite du groupe de propriétés [MapElement](#mapelement).
 
-| Propriété                     | Type    | 1506 | 1629 | 1713 | Next | Description |
+| Propriété                     | Type    | 1703 | 1709 | 1803 | 1809 | Description |
 |------------------------------|---------|------|------|------|------|------------|
 | renderAsSurface              | Booléen    |      |      |  ✔   |  ✔   | Indicateur indiquant qu’un modèle 3D doit être affiché comme un bâtiment, sans atténuation de profondeur par rapport au sol. |

@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des informations concernant votre application de bureau.
-title: Obtenir les informations concernant votre application de bureau
+title: Obtenir les données d’analyse pour votre application de bureau
 ms.author: mcleans
 ms.date: 07/31/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, insights
 ms.localizationpriority: medium
 ms.openlocfilehash: e7ca6eed40af37276b5b4c98ec7b1b709bdadfb9
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316903"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355124"
 ---
-# <a name="get-insights-data-for-your-desktop-application"></a>Obtenir les informations concernant votre application de bureau
+# <a name="get-insights-data-for-your-desktop-application"></a>Obtenir les données d’analyse pour votre application de bureau
 
 Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des informations sur les données relatives aux mesures d’intégrité pour une application de bureau que vous avez ajoutée au [programme d’Application de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). Ces données sont également disponibles dans le [rapport d’intégrité](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report) pour les applications de bureau dans le tableau de bord du centre de développement Windows.
 
@@ -48,10 +48,10 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 | Paramètre        | Type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
-| applicationId | chaîne | L’ID de produit de l’application de bureau pour laquelle vous souhaitez obtenir les informations. Pour obtenir l’ID de produit d’une application de bureau, ouvrez un [rapport d'analyse du centre de développement relatif à votre application de bureau](https://msdn.microsoft.com/library/windows/desktop/mt826504) (comme le **rapport d’intégrité**) et récupérez l’ID de produit à partir de l’URL. Si vous ne spécifiez pas ce paramètre, le corps de réponse contient les données des informations pour toutes les applications inscrites dans votre compte.  |  Non  |
-| startDate | date | Date de début dans la plage de dates des données des informations de récupération. La valeur par défaut est de 30jours avant la date actuelle. |  Non  |
+| applicationId | chaîne | L’ID de produit de l’application de bureau pour laquelle vous souhaitez obtenir les données d’informations. Pour obtenir l’ID de produit d’une application de bureau, ouvrez un [rapport d'analyse du centre de développement relatif à votre application de bureau](https://msdn.microsoft.com/library/windows/desktop/mt826504) (comme le **rapport d’intégrité**) et récupérez l’ID de produit à partir de l’URL. Si vous ne spécifiez pas ce paramètre, le corps de réponse contient les données des informations pour toutes les applications inscrites dans votre compte.  |  Non  |
+| startDate | date | La date de début dans la plage de dates des données des informations de récupération. La valeur par défaut est de 30jours avant la date actuelle. |  Non  |
 | endDate | date | La date de fin dans la plage de dates des données des informations de récupération. La valeur par défaut est la date actuelle |  Non  |
-| filter | chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Par exemple, *filter = dataType eq 'acquisition'*. <p/><p/>Cette méthode prend uniquement en le filtre **intégrité**.  | Non   |
+| filter | chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Par exemple, *filter = dataType eq 'acquisition'*. <p/><p/>Cette méthode prend uniquement en **l’intégrité**filtre.  | Non   |
 
 ### <a name="request-example"></a>Exemple de requête
 
@@ -68,7 +68,7 @@ Authorization: Bearer <your access token>
 
 | Valeur      | Type   | Description                  |
 |------------|--------|-------------------------------------------------------|
-| Valeur      | array  | Tableau d’objets contenant des données insights pour l’application. Pour plus d’informations sur les données de chaque objet, consultez la section [valeurs Insight](#insight-values) ci-dessous.                                                                                                                      |
+| Valeur      | array  | Tableau d’objets qui contiennent des données pour l’application insights. Pour plus d’informations sur les données de chaque objet, consultez la section [valeurs Insight](#insight-values) ci-dessous.                                                                                                                      |
 | TotalCount | entier    | Nombre total de lignes dans les résultats de données de la requête.                 |
 
 
@@ -78,7 +78,7 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 
 | Valeur               | Type   | Description                           |
 |---------------------|--------|-------------------------------------------|
-| applicationId       | chaîne | L’ID de produit de l’application de bureau pour laquelle vous souhaitez récupérer des données de perspectives.     |
+| applicationId       | chaîne | L’ID de produit de l’application de bureau pour laquelle vous souhaitez récupérer des données des informations.     |
 | insightDate                | chaîne | La date à laquelle nous avons identifié la modification d’un indicateur spécifique. Cette date représente la fin de la semaine dans lequel nous avons détecté une augmentation importante ou diminuer dans une unité de mesure par rapport à la semaine. |
 | type de données     | chaîne | Une chaîne qui spécifie la zone d’analytique générale qui informe cette insight. Actuellement, cette méthode prend uniquement en charge **la santé**.    |
 | insightDetail          | array | Une ou plusieurs [valeurs InsightDetail](#insightdetail-values) qui représentent les détails pour insight actuel.    |
@@ -88,11 +88,11 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 
 | Valeur               | Type   | Description                           |
 |---------------------|--------|-------------------------------------------|
-| FactName           | chaîne | Une chaîne qui indique la métrique décrivant l’insight actuelle ou la dimension actuelle. Actuellement, cette méthode prend uniquement en charge la valeur du **nombre d’accès**.  |
+| FactName           | chaîne | Une chaîne qui indique la métrique qui décrit l’insight actuelle ou la dimension actuelle. Actuellement, cette méthode prend uniquement en charge la valeur du **nombre d’accès**.  |
 | SubDimensions         | array |  Un ou plusieurs objets qui décrivent un indicateur unique pour l’insight.   |
 | ChangementPourcentage            | chaîne |  Le pourcentage de la métrique changée entre votre clientèle entière.  |
-| Nomdimension           | chaîne |  Le nom de la métrique décrit dans la dimension actuelle. Des exemples **EventType**, **marché**, **DeviceType**et **PackageVersion**.   |
-| DimensionValue              | chaîne | La valeur de la métrique qui est décrit dans la dimension actuelle. Par exemple, si **NomDimension** est **EventType**, **DimensionValue** peut être **incident** ou **Raccrocher**.   |
+| Nomdimension           | chaîne |  Le nom de la métrique décrit dans la dimension actuelle. Exemples **EventType**, **marché**, **DeviceType**et **PackageVersion**.   |
+| DimensionValue              | chaîne | La valeur de la métrique qui est décrit dans la dimension actuelle. Par exemple, si **NomDimension** **EventType**c'est-à-dire **DimensionValue** peut être **incident** ou **Raccrocher**.   |
 | FactValue     | chaîne | La valeur absolue de la métrique sur la date de que détection de l’aperçu.  |
 | Direction | chaîne |  La direction de la modification (**positif** ou **négatif**).   |
 | Date              | chaîne |  La date à laquelle nous avons identifié la modification relatives à l’insight actuelle ou la dimension actuelle.   |

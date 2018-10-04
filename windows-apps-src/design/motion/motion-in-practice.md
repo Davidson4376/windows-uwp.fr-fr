@@ -15,11 +15,11 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 6001f955b3ab6a60446eb84296dc3bc52ad3a99e
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315825"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4361334"
 ---
 # <a name="bringing-it-together"></a>Synthèse
 
@@ -83,11 +83,11 @@ Voici 3manières d’appliquer les principes de base du mouvement Fluent dans vo
 
 ## <a name="implicit-animations"></a>Animations implicites
 
-> **Version d’évaluation**: animation implicite nécessite [dernière build Windows 10 Insider Preview et SDK](https://insider.windows.com/for-developers/).
+> **Version d’évaluation**: animation implicite nécessite [dernière build Windows 10 Insider Preview et Kit de développement](https://insider.windows.com/for-developers/).
 
 Animations implicites sont un moyen simple d’obtenir le mouvement Fluent par automatiquement et effectue une interpolation entre les anciennes et nouvelles valeurs lors d’une modification de paramètre.
 
-Vous pouvez implicitement animer les propriétés suivantes:
+Vous pouvez animer implicitement les modifications apportées aux propriétés suivantes:
 
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
   - **Opacity**
@@ -95,7 +95,7 @@ Vous pouvez implicitement animer les propriétés suivantes:
   - **Échelle**
   - **Translation**
 
-- [Bordure](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)ou [Panneau](/uwp/api/windows.ui.xaml.controls.panel)
+- [Bordure](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)ou [Panneau de configuration](/uwp/api/windows.ui.xaml.controls.panel)
   - **Arrière-plan**
 
 Chaque propriété qui peut avoir des modifications implicitement animées possède une propriété de _transition_ correspondante. Pour animer la propriété, vous affectez un type de transition à la propriété correspondante de la _transition_ . Ce tableau indique les propriétés de _transition_ et le type de transition à utiliser pour chacun d’eux.
@@ -110,7 +110,7 @@ Chaque propriété qui peut avoir des modifications implicitement animées poss�
 | [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 | [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-Cet exemple montre comment utiliser la propriété Opacity et transition pour qu’un bouton apparition en fondu lorsque le contrôle est activé et la disparition en fondu lorsqu’il est désactivé.
+Cet exemple montre comment utiliser la propriété Opacity et transition pour créer un bouton apparition en fondu lorsque le contrôle est activé et la disparition en fondu lorsqu’il est désactivé.
 
 ```xaml
 <Button x:Name="SubmitButton"

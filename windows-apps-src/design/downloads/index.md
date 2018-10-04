@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 88a07db357125d3f9cb35a5e133e9b0add350069
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319709"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351261"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Kits de ressources et exemples de conception pour les applications UWP
  
@@ -65,7 +65,7 @@ Ces kits de ressources fournissent des contrôles et des modèles de disposition
     :::column-end:::
 :::row-end:::
 
-## <a name="developer-toolkits-and-libraries"></a>Bibliothèques et les kits de ressources de développeur
+## <a name="developer-toolkits-and-libraries"></a>Bibliothèques et les kits de développement
 
 :::row:::
     :::column:::
@@ -105,7 +105,7 @@ Ces kits de ressources fournissent des contrôles et des modèles de disposition
 
 ![Image VanArsdel](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-L’exemple d’application UWP bout à bout Van Arsdel, Ltd. a été conçu pour présenter la nouvelle vague du système Fluent Design Microsoft. Il s’appuie largement la densité améliorée et les nouveaux contrôles dans la <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Bibliothèque de l’interface utilisateur de Windows</a> , mais aussi puissantes fonctionnalités sous-jacent de l’infrastructure de l’expérience utilisateur et de composition. L’exemple montre comment vous pouvez créer une expérience riche et productive pour la gestion et achetant des appareils IoT (dans ce cas, il s’agit de lampes).<br>
+L’exemple d’application UWP bout à bout Van Arsdel, Ltd. a été conçu pour présenter la nouvelle génération du système Fluent Design Microsoft. Il s’appuie largement la densité améliorée et de nouveaux contrôles dans la <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Bibliothèque d’interface utilisateur Windows</a> , mais aussi puissantes fonctionnalités sous-jacent de l’infrastructure de l’expérience utilisateur et de la composition. L’exemple montre comment vous pouvez créer une expérience riche et productive pour la gestion et achetant des appareils IoT (dans ce cas, lampes).<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">Télécharger l’exemple VanArsdel</a> <br><a href="https://github.com/microsoft/vanarsdel">Découvrir l’exemple VanArsdel sur GitHub</a>
 
 ![Générer cast image](images/buildcast.png)

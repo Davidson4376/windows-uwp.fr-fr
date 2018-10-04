@@ -1,6 +1,6 @@
 ---
 author: daneuber
-title: Éclairage de XAML
+title: Éclairage XAML
 description: Les objets Light sont utilisés en association avec SceneLightingEffect pour simuler l’éclairage dynamique et la réflectivité.
 ms.author: jimwalk
 ms.date: 06/28/2018
@@ -15,13 +15,13 @@ dev_langs:
 - cpp
 - cppwinrt
 ms.openlocfilehash: b4e3678e17e7545dfe9cb4049ace7ff864198156
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319471"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355571"
 ---
-# <a name="xaml-lighting"></a>Éclairage de XAML
+# <a name="xaml-lighting"></a>Éclairage XAML
 
 Les objets [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) sont utilisés en association avec [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) pour simuler l’éclairage dynamique et la réflectivité.
 
@@ -29,7 +29,7 @@ Vous pouvez appliquer des éclairages aux [**éléments visuels**](https://msdn.
 
 ## <a name="applying-lights-to-xaml-uielements"></a>Application d’éclairages aux éléments UIElements XAML
 
-Les objets [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) permettent d’appliquer des classes [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) pour éclairer les éléments UIElements XAML de manière dynamique. XamlLight offre des méthodes permettant de cibler des éléments UIElements ou pinceaux XAML, appliquer des éclairages aux arborescences d’éléments UIElements, et de faciliter la gestion de la durée de vie de CompositionLight selon qu’il s’agisse actuellement dans les ressources utilisent.
+Les objets [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) permettent d’appliquer des classes [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) pour éclairer les éléments UIElements XAML de manière dynamique. XamlLight offre des méthodes pour le ciblage des éléments UIElements ou pinceaux XAML, appliquer des éclairages aux arborescences d’éléments UIElements, et utilisent de ressources selon qu’il s’agisse actuellement en aidant à gérer la durée de vie de CompositionLight.
 
 - Si vous ciblez un objet **Brush** avec une classe XamlLight, les parties des éléments UIElements qui utilisent cet objet Brush sont éclairées.
 - Si vous ciblez un élément **UIElement** avec une classe XamlLight, la totalité de l’élément UIElement et tous ses éléments UIElements enfants sont éclairés.

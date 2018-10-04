@@ -15,11 +15,11 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 518ce49ddb631e3e914a6c7662b4e74de247c29c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318175"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355804"
 ---
 # <a name="combo-box"></a>Zone de liste modifiable
 
@@ -47,7 +47,7 @@ Une zone de liste déroulante en état compact avec un en-tête.
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/ComboBox">Ouvrir l’application et voir zone de liste déroulante en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/ComboBox">Ouvrir l’application et voir le contrôle ComboBox en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Obtenir le code source (GitHub)</a></li>
@@ -108,12 +108,12 @@ Comme les contrôles ListView et GridView, ComboBox est dérivé de [sélecteur]
 
 Vous pouvez obtenir ou définir la zone de liste modifiable sélectionné l’élément à l’aide de la propriété [SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) et obtenir ou définir l’index de l’élément sélectionné à l’aide de la propriété [SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) .
 
-Pour obtenir la valeur d’une propriété spécifique sur l’élément de données sélectionné, vous pouvez utiliser la propriété [SelectedValue](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvalue) . Dans ce cas, définissez le [SelectedValuePath](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvaluepath) pour spécifier la propriété sur l’élément sélectionné permettant d’obtenir la valeur.
+Pour obtenir la valeur d’une propriété spécifique sur l’élément de données sélectionné, vous pouvez utiliser la propriété [SelectedValue](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvalue) . Dans ce cas, définissez le [SelectedValuePath](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvaluepath) pour spécifier la propriété sur l’élément sélectionné pour obtenir la valeur.
 
 > [!TIP]
-> Si vous définissez SelectedItem ou SelectedIndex pour indiquer la sélection par défaut, une exception se produit si la propriété est définie avant que la collection d’éléments de liste déroulante zone est remplie. Sauf si vous définissez vos éléments en XAML, il est préférable de gérer l’événement Loaded de zone de liste modifiable et définissez SelectedItem ou SelectedIndex dans le Gestionnaire d’événements chargé.
+> Si vous définissez SelectedItem ou SelectedIndex pour indiquer la sélection par défaut, une exception se produit si la propriété est définie avant la collection d’éléments de liste déroulante zone est remplie. Sauf si vous définissez vos éléments en XAML, il est préférable de gérer l’événement Loaded de zone de liste modifiable et définissez SelectedItem ou SelectedIndex dans le Gestionnaire d’événements chargé.
 
-Vous pouvez établir une liaison à ces propriétés en XAML ou gérer l’événement [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) pour répondre aux modifications de sélection.
+Vous pouvez établir une liaison à ces propriétés en XAML, ou gérer l’événement [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) pour répondre aux modifications de sélection.
 
 Dans l’événement code du gestionnaire, vous pouvez obtenir l’élément sélectionné à partir de la propriété [SelectionChangedEventArgs.AddedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.addeditems) . Vous pouvez obtenir l’élément sélectionné précédemment (le cas échéant) à partir de la propriété [SelectionChangedEventArgs.RemovedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.removeditems) . Les collections AddedItems et RemovedItems contiennent uniquement 1 élément, car la zone de liste modifiable ne prend pas en charge la sélection multiple.
 
@@ -169,17 +169,17 @@ Par défaut, l’événement SelectionChanged se produit lorsqu’un utilisateur
 
 Pour créer une liste déroulante «à jour dynamique» pendant que l’utilisateur navigue la liste Ouvrir avec les touches de direction (comme une sélection déroulante Police), définissez [SelectionChangedTrigger](/uwp/api/windows.ui.xaml.controls.combobox.selectionchangedtrigger) sur [toujours](/uwp/api/windows.ui.xaml.controls.comboboxselectionchangedtrigger). Cela déclenche l’événement SelectionChanged se produisent lorsque le focus change à un autre élément dans la liste Ouvrir.
 
-#### <a name="selected-item-behavior-change"></a>Changement de comportement d’élément sélectionné
+#### <a name="selected-item-behavior-change"></a>Changement de comportement élément sélectionné
 
 Dans RS5 (version du SDK Windows 10.0.NNNNN.0 (Windows 10, version aamm), le comportement des éléments sélectionnés est mis à jour pour prendre en charge des zones de liste déroulante modifiable.
 
-Avant RS5, la valeur de la propriété SelectedItem (et par conséquent, SelectedValue et SelectedIndex) a été requis soit dans la collection d’éléments de la zone de liste modifiable. À l’aide de l’exemple précédent, en définissant `colorComboBox.SelectedItem = "Pink"` entraîne:
+Avant de RS5, la valeur de la propriété SelectedItem (et par conséquent, SelectedValue et SelectedIndex) a été requis soit dans la collection d’éléments de la zone de liste modifiable. À l’aide de l’exemple précédent, en définissant `colorComboBox.SelectedItem = "Pink"` entraîne:
 
 - SelectedItem = null
 - SelectedValue = null
 - SelectedIndex = -1
 
-RS5 et versions ultérieures, la valeur de la propriété SelectedItem (et par conséquent, SelectedValue et SelectedIndex) n’est pas nécessaire de se trouver dans la collection d’éléments de la zone de liste modifiable. À l’aide de l’exemple précédent, en définissant `colorComboBox.SelectedItem = "Pink"` entraîne:
+RS5 et versions ultérieures, la valeur de la propriété SelectedItem (et par conséquent, SelectedValue et SelectedIndex) n’est pas nécessaire pour être dans la collection d’éléments de la zone de liste modifiable. À l’aide de l’exemple précédent, en définissant `colorComboBox.SelectedItem = "Pink"` entraîne:
 
 - SelectedItem = rose
 - SelectedValue = rose
@@ -194,15 +194,15 @@ Vous pouvez définir la propriété [IsTextSearchEnabled](/uwp/api/windows.ui.xa
 ## <a name="make-a-combo-box-editable"></a>Configurer une zone de liste déroulante modifiable
 
 > [!IMPORTANT]
-> Cette fonctionnalité nécessite [dernière build Windows 10 Insider Preview et SDK](https://insider.windows.com/for-developers/).
+> Cette fonctionnalité nécessite [dernière build Windows 10 Insider Preview et Kit de développement](https://insider.windows.com/for-developers/).
 
-Par défaut, une zone de liste déroulante permet à l’utilisateur une sélection parmi une liste prédéfinie d’options. Toutefois, il existe des cas où la liste contient uniquement un sous-ensemble de valeurs valides et l’utilisateur doit être en mesure d’entrer d’autres valeurs qui ne sont pas répertoriés. Pour ce faire, vous permettre de la zone de liste modifiable.
+Par défaut, une zone de liste déroulante permet à l’utilisateur une sélection parmi une liste prédéfinie d’options. Toutefois, il existe des cas où la liste contient uniquement un sous-ensemble de valeurs valides, et l’utilisateur doit être en mesure d’entrer d’autres valeurs qui ne sont pas répertoriés. Pour ce faire, vous pouvez rendre la zone de liste déroulante modifiable.
 
-Pour rendre une zone de liste modifiable, définissez la propriété [IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable) **true**. Ensuite, gérez l’événement de [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) pour fonctionner avec la valeur entrée par l’utilisateur.
+Pour rendre une zone de liste modifiable, définir la propriété [IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable) sur **true**. Ensuite, gérez l’événement [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) puisse fonctionner avec la valeur entrée par l’utilisateur.
 
 Par défaut, la valeur SelectedItem est mis à jour lorsque l’utilisateur valide dans le texte personnalisé. Vous pouvez remplacer ce comportement en définissant la **propriété Handled** sur **true** dans les arguments d’événement TextSubmitted. Lorsque l’événement est marqué comme géré, la zone de liste déroulante n’aura aucune action supplémentaire après l’événement et reste dans l’état de modification. SelectedItem n’est pas mis à jour.
 
-Cet exemple montre une zone de liste déroulante modifiable simple. La liste contient des chaînes simples et n’importe quelle valeur entrée par l’utilisateur est utilisée comme entrée.
+Cet exemple montre une zone de liste déroulante modifiable simple. La liste contient des chaînes simples et n’importe quelle valeur entrée par l’utilisateur est utilisé comme entrée.
 
 Un sélecteur de «les noms utilisés récemment» permet à l’utilisateur de saisir des chaînes personnalisées. La liste 'RecentlyUsedNames' contienne des valeurs que l’utilisateur peut choisir, mais l’utilisateur peut également ajouter une nouvelle valeur personnalisée. La propriété «CurrentName» représente le nom actuellement saisi.
 
@@ -220,17 +220,17 @@ L’événement TextSubmitted se produit lorsque ces conditions sont remplies:
 
 - La propriété IsEditable est **true**
 - L’utilisateur entre du texte qui ne correspond pas à une entrée existante dans la zone de liste modifiable
-- L’utilisateur appuie sur entrée ou déplace le focus à partir de la zone de liste modifiable.
+- L’utilisateur appuie sur entrée, ou déplace le focus dans la zone de liste modifiable.
 
 L’événement TextSubmitted ne se produit pas si l’utilisateur entre du texte, puis navigue vers le haut ou vers le bas dans la liste.
 
 ### <a name="sample---validate-input-and-use-locally"></a>Exemple: valider l’entrée et utiliser localement
 
-Dans cette examle, un sélecteur de taille de police contient un ensemble de valeurs correspondant à la gamme de taille de police, mais l’utilisateur peut entrer des tailles qui ne figurent pas dans la liste.
+Dans cette examle, un sélecteur de taille de police contient un ensemble de valeurs correspondant à la gamme de taille de police, mais l’utilisateur peut entrer des tailles de police qui ne sont pas dans la liste.
 
 Lorsque l’utilisateur ajoute une valeur qui n’est pas dans la liste, les mises à jour de taille de police, mais la valeur n’est pas ajouté à la liste des tailles de police.
 
-Si la valeur qui vient d’être entrée n’est pas valide, que vous permettent de revenir à la dernière de la propriété Text SelectedValue connu valeur correcte.
+Si la valeur qui vient d’être entrée n’est pas valide, ce qui que vous permet de revenir à la dernière de la propriété Text SelectedValue connu valeur correcte.
 
 ```xaml
 <ComboBox x:Name="fontSizeComboBox"
@@ -257,9 +257,9 @@ private void FontSizeComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSubmitt
 }
 ```
 
-### <a name="sample---validate-input-and-add-to-list"></a>Exemple: valider l’entrée et les ajouter à la liste
+### <a name="sample---validate-input-and-add-to-list"></a>Exemple: valider les entrées et les ajouter à la liste
 
-Ici, un sélecteur de couleur préférée»» contient les plus courants couleurs Favoris (rouge, bleu, vert, Orange), mais l’utilisateur peut entrer une couleur préférée qui n’est pas dans la liste. Lorsque l’utilisateur ajoute une couleur valide (comme rose), la couleur qui vient d’être entrée est ajoutée à la liste et définir en tant que l’actif «couleur préférée».
+Ici, un sélecteur de couleur préférée»» contient les plus courants couleurs Favoris (rouge, bleu, vert, Orange), mais l’utilisateur peut entrer une couleur préférée qui n’est pas dans la liste. Lorsque l’utilisateur ajoute une couleur valide (comme rose), la couleur qui vient d’être entrée est ajoutée à la liste et définie comme «couleur préférée».
 
 ```xaml
 <ComboBox x:Name="favoriteColorComboBox"

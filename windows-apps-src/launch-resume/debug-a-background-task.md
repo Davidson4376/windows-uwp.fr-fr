@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315781"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355594"
 ---
 # <a name="debug-a-background-task"></a>Déboguer une tâche en arrière-plan
 
@@ -82,8 +82,8 @@ L’activation de la tâche en arrière-plan dépend de troiséléments:
     Si vous suivez cette procédure et que le journal des événements indique un déclencheur ou point d’entrée incorrect pour la tâche en arrière-plan, votre application n’inscrit pas correctement la tâche en arrière-plan. Pour obtenir de l’aide sur cette tâche, voir [Inscrire une tâche en arrière-plan](register-a-background-task.md).
 
     1.  Ouvrez l’Observateur d’événements en accédant à l’écran de démarrage et en recherchant eventvwr.exe.
-    2.  Accédez à **l’Application et les journaux de Services**  - &gt; **Microsoft**  - &gt; **Windows**  - &gt; **BackgroundTaskInfrastructure** dans l’Observateur d’événements.
-    3.  Dans le volet actions, sélectionnez **Afficher**  - &gt; **analytiques afficher les journaux et débogage** pour activer la journalisation des Diagnostics.
+    2.  Accédez à **l’Application et les journaux des Services**  - &gt; **Microsoft**  - &gt; **Windows**  - &gt; **BackgroundTaskInfrastructure** dans l’Observateur d’événements.
+    3.  Dans le volet actions, sélectionnez **vue**  - &gt; **analytiques afficher les journaux et débogage** pour activer la journalisation des Diagnostics.
     4.  Sélectionnez le **journal de diagnostic**, puis cliquez sur **Activer le journal**.
     5.  Essayez à présent d’utiliser votre application pour inscrire et activer la tâche en arrière-plan une nouvelle fois.
     6.  Consultez les journaux de diagnostic à la recherche d’informations détaillées sur l’erreur. Cela comprend le point d’entrée inscrit pour la tâche en arrière-plan.
@@ -114,7 +114,7 @@ Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer u
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
-* [Comment déclencher suspension, reprise et des événements en arrière-plan dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
+* [Comment déclencher de suspension, reprise et événements dans les applications UWP en arrière-plan](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
 * [Analyse de la qualité du code des applications UWP avec l’analyse du code Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
 
  

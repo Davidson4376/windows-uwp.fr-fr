@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, API de collection du MicrosoftStore, API d’achat du Microsoft Store, afficher des produits, octroyer des produits
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a0766830bc2110dffcf5baf886e8ccb98ac6446
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316965"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355584"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Gérer les droits sur les produits à partir d’un service
 
@@ -36,19 +36,19 @@ Les étapes suivantes décrivent le processus de bout en bout pour l’utilisati
 1.  [Configurer une application dans Azure AD](#step-1).
 2.  [Associer votre ID d’application Azure AD à votre application dans le tableau de bord du centre de développement Windows](#step-2).
 3.  Dans votre service, [créez des jetons d’accès Azure AD](#step-3) qui représentent votre identité d’éditeur.
-4.  Dans votre application Windows client, [créer une clé d’ID du Microsoft Store](#step-4) qui représente l’identité de l’utilisateur actuel, puis transmettez cette clé revient à votre service.
+4.  Dans votre application Windows du client, [créer une clé d’ID du Microsoft Store](#step-4) qui représente l’identité de l’utilisateur actuel et passez cette clé revenir à votre service.
 5.  Lorsque vous disposez du jeton d’accès AzureAD et de la clé d’ID du MicrosoftStore requis, [appelez l’API de collection et l’API d’achat du MicrosoftStore à partir de votre service](#step-5).
 
 Ce processus de bout en bout pour comprend deux composants logiciels qui effectuent différentes tâches:
 
-* **Votre service**. Il s’agit d’une application qui s’exécute en toute sécurité dans le contexte de votre environnement d’entreprise, et il peut être implémenté à l’aide de n’importe quelle plateforme de développement que vous choisissez. Votre service est responsable de créer les jetons d’accès Azure AD pour le scénario et nécessaires pour appeler les URI dans le reste de la collection de Microsoft Store API et achat.
-* **Votre application de Windows client**. Il s’agit de l’application pour laquelle vous souhaitez accéder et gérer les informations de droit de client (y compris les extensions pour l’application). Cette application est chargée de créer les clés d’ID du Microsoft Store que vous devez appeler l’API de collection de Microsoft Store et l’API d’achat de votre service.
+* **Votre service**. Il s’agit d’une application qui s’exécute en toute sécurité dans le contexte de votre environnement d’entreprise, et il peut être implémenté à l’aide de n’importe quelle plateforme de développement que vous choisissez. Votre service est responsable de créer les jetons d’accès Azure AD pour le scénario et nécessaires pour appeler les URI dans le reste de la collection de Microsoft Store API et les API d’achat.
+* **Votre application de Windows client**. Il s’agit de l’application pour laquelle vous souhaitez accéder et gérer les informations de droit client (y compris les extensions pour l’application). Cette application est responsable de la création les clés d’ID du Microsoft Store que vous devez appeler l’API de collection Microsoft Store et l’API d’achat de votre service.
 
 <span id="step-1"/>
 
 ## <a name="step-1-configure-an-application-in-azure-ad"></a>Étape 1: Configurer une application dans Azure AD
 
-Avant que vous pouvez utiliser l’API de collection de Microsoft Store ou d’achat, vous devez créer une application Azure AD Web, récupérer l’ID de locataire et ID d’application pour l’application et générer une clé. L’application Azure AD Web représente le service à partir duquel vous allez appeler l’API de collection de Microsoft Store ou d’achat. Vous devez l’ID de locataire, ID d’application et clé pour générer des jetons d’accès Azure AD que vous devez appeler l’API.
+Avant que vous pouvez utiliser l’API de collection Microsoft Store ou d’achat, vous devez créer une application Azure AD Web, récupérer l’ID de locataire et ID d’application pour l’application et générer une clé. L’application Azure AD Web représente le service à partir duquel vous allez appeler l’API de collection Microsoft Store ou d’achat. Vous devez le ID de locataire, ID d’application et la clé pour générer des jetons d’accès Azure AD que vous devez appeler l’API.
 
 > [!NOTE]
 > Les tâches de cette section ne doivent être accomplies qu’une seule fois. Une fois que vous mettez à jour votre manifeste d’application Azure AD et que vous avez votre ID de locataire, la clé secrète du client et d’ID d’application, vous pouvez réutiliser ces valeurs tout moment, vous devez créer un nouveau jeton d’accès Azure AD.
@@ -59,7 +59,7 @@ Avant que vous pouvez utiliser l’API de collection de Microsoft Store ou d’a
 
 2.  Dans le [Portail de gestion Azure](https://portal.azure.com/), accédez à **Azure Active Directory**. Sélectionnez votre répertoire et cliquez sur **inscriptions** dans le volet de navigation de gauche, puis sélectionnez votre application.
 3.  Vous êtes redirigé vers la page d’inscription principal de l’application. Sur cette page, copiez la valeur **d’ID d’Application** pour une utilisation ultérieure.
-4.  Créer une clé que vous devez ultérieurement (toutes appelée une *clé secrète du client*). Dans le volet gauche, cliquez sur **les paramètres** , puis **clés**. Sur cette page, effectuez les étapes pour [créer une clé](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis). Copiez cette clé pour une utilisation ultérieure.
+4.  Créer une clé dont vous aurez besoin ultérieurement (tous les appelée une *clé secrète du client*). Dans le volet gauche, cliquez sur **paramètres** , puis **clés**. Sur cette page, effectuez les étapes pour [créer une clé](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis). Copiez cette clé pour une utilisation ultérieure.
 5.  Ajouter plusieurs URI d’audience nécessaire à votre [manifeste d’application](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-manifest). Dans le volet gauche, cliquez sur **le manifeste**. Cliquez sur **Modifier**, remplacez le `"identifierUris"` section par le texte suivant, puis cliquez sur **Enregistrer**.
 
     ```json
@@ -76,7 +76,7 @@ Avant que vous pouvez utiliser l’API de collection de Microsoft Store ou d’a
 
 ## <a name="step-2-associate-your-azure-ad-application-id-with-your-client-app-in-windows-dev-center"></a>Étape 2: Associer votre ID d’application Azure AD à votre application cliente dans le centre de développement Windows
 
-Avant que vous pouvez utiliser l’API de collection de Microsoft Store ou d’achat pour configurer le propriétaire et les achats de votre application ou module complémentaire, vous devez associer votre ID d’application Azure AD à l’application (ou l’application qui contient l’extension) dans le tableau de bord du centre de développement.
+Avant que vous pouvez utiliser l’API de collection Microsoft Store ou d’achat pour configurer le propriétaire et les achats de votre application ou module complémentaire, vous devez associer votre ID d’application Azure AD à l’application (ou l’application qui contient l’extension) dans le tableau de bord du centre de développement.
 
 > [!NOTE]
 > Cette tâche ne doit être effectuée qu’une seule fois.
@@ -204,9 +204,9 @@ Pour chaque scénario, fournissez les informations suivantes à l’API:
 
 ### <a name="diagram"></a>Diagramme
 
-Le schéma suivant décrit le processus d’appeler une méthode dans l’API ou achat de l’API de collection de Microsoft Store à partir de votre service.
+Le schéma suivant décrit le processus d’appeler une méthode dans l’API ou achat de l’API de collection Microsoft Store à partir de votre service.
 
-  ![Appelez collections ou acheter API](images/b2b-2.png)
+  ![Appeler des collections ou des API d’achat](images/b2b-2.png)
 
 ## <a name="claims-in-a-microsoft-store-id-key"></a>Revendications dans une clé d’ID du MicrosoftStore
 

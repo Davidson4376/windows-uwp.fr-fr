@@ -11,21 +11,21 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315637"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351183"
 ---
 # <a name="enterprise"></a>Entreprise
 
 Cette feuille de route propose une vue d’ensemble sur les fonctionnalités principales d’entreprise des applications de la plateforme Windowsuniverselle(UWP) Windows10.
 
-**Remarque**  Cet article se concentre adresse aux développeurs qui écrivent des applications UWP d’entreprise. Pour le développement UWP général, voir les [guides de procédure pour les applications Windows 10](https://msdn.microsoft.com/library/windows/apps/mt244352). Pour le développement WPF, Windows Forms ou Win32, voir le [Centre de développement-Bureau](https://dev.windows.com/desktop). Pour les ressources informatiques professionnelles, tels que le déploiement de Windows 10 ou la gestion des fonctionnalités de sécurité d’entreprise, voir [Windows 10 sur TechNet](https://msdn.microsoft.com/library/dn986868).
+**Remarque**  Cet article est destiné à l’adresse aux développeurs qui écrivent des applications UWP d’entreprise. Pour le développement UWP général, voir les [guides de procédure pour les applications Windows 10](https://msdn.microsoft.com/library/windows/apps/mt244352). Pour le développement WPF, Windows Forms ou Win32, voir le [Centre de développement-Bureau](https://dev.windows.com/desktop). Pour les ressources informatiques professionnelles, tels que le déploiement de Windows 10 ou la gestion des fonctionnalités de sécurité d’entreprise, voir [Windows 10 sur TechNet](https://msdn.microsoft.com/library/dn986868).
 
-Existe-t-il une version de cette application qui présente certaines des avancées qui étaient présentes sur Build au cours de cette présentation [Construire rapidement des Applications cœur de métier UWP avec Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502)
+Existe-t-il une version de cette application qui présente certaines des avancées qui ont été présentées à la Build au cours de cette présentation [Construire rapidement des Applications cœur de métier avec UWP et Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502)
 
-Éléments important de l’appel au premier plan:
+Éléments important appelant au premier plan:
 
 ## <a name="whats-new-for-enterprise-applications"></a>Nouveautés pour les applications d’entreprise
 
@@ -34,8 +34,8 @@ Voici certains outils, des bibliothèques et des fonctionnalités qui ont été 
 > [!div class="checklist"]
 > * [WindowsTemplateStudio](#template-studio)
 > * [Contrôles pour créer des interfaces utilisateur de bureau-Style](#desktop-style-UI)
-> * [Contrôles pour prendre en charge des scénarios d’entreprise](#enterprise)
-> * [Bibliothèque de l’interface utilisateur de Windows](#UI-library)
+> * [Contrôles pour prendre en charge les scénarios d’entreprise](#enterprise)
+> * [Bibliothèque de l’interface utilisateur Windows](#UI-library)
 > * [Contrôles UWP dans les applications de bureau](#xaml-islands)
 > * [.NET Standard2.0](#standard)
 > * [Connectivité SQL Server](#sql-server)
@@ -55,28 +55,28 @@ Voir [Windows Template Studio](https://marketplace.visualstudio.com/items?itemNa
 
 ### <a name="controls-to-create-desktop-style-uis"></a>Contrôles pour créer des interfaces utilisateur de bureau-Style
 
-Nous avons publié combler le vide entre une application de bureau classique l’interface utilisateur et un UI UWP les nouveaux contrôles XAML UWP.
+Nous avons publié nouveaux contrôles UWP XAML qui remplissent l’écart entre une application de bureau classique l’interface utilisateur et un UI UWP.
 
-Par exemple, les nouveaux contrôles de [barre de menus](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/menus?branch=jimwalk%2Frs5-menu-bar), [DropDownButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button), le [bouton partagé](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button)et [CommandBarFlyout](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/command-bar-flyout?branch=jimwalk%2Frs5-command-bar-flyout) offrent des moyens plus souples pour exposer des commandes et [EditableComboBox](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/combo-box?branch=rs5#make-a-combo-box-editable) Commençons par l’utilisateur entrer les valeurs qui ne sont pas répertoriées dans une liste prédéfinie d’options.
+Par exemple, les nouveaux contrôles de [barre de menus](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/menus?branch=jimwalk%2Frs5-menu-bar), [DropDownButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button), [bouton partagé](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button)et [CommandBarFlyout](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/command-bar-flyout?branch=jimwalk%2Frs5-command-bar-flyout) offrent des moyens plus souples pour exposer des commandes et [EditableComboBox](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/combo-box?branch=rs5#make-a-combo-box-editable) Commençons par l’utilisateur entrer les valeurs qui ne sont pas répertoriées dans une liste prédéfinie d’options.
 
 ![Barre de menus](images/menu-bar.png)
 
 <a id="enterprise" />
 
-### <a name="controls-to-support-enterprise-scenarios"></a>Contrôles pour prendre en charge des scénarios d’entreprise
+### <a name="controls-to-support-enterprise-scenarios"></a>Contrôles pour prendre en charge les scénarios d’entreprise
 
-[DataGridView](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid) offre une grande souplesse pour afficher une collection de données en lignes et colonnes.
+Le [DataGridView](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid) offre une grande souplesse pour afficher une collection de données en lignes et colonnes.
 
 Le [contrôle TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) Active une liste hiérarchique comportant des nœuds qui contiennent des éléments imbriqués développement et. Il peut être utilisé pour illustrer une structure de dossiers ou des relations imbriquées dans votre interface utilisateur.
 
 ![Contrôle DataGrid](images/DataGrid.gif)
 
 
-### <a name="windows-ui-library"></a>Bibliothèque de l’interface utilisateur de Windows
+### <a name="windows-ui-library"></a>Bibliothèque de l’interface utilisateur Windows
 
-La bibliothèque de l’interface utilisateur de Windows est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d’interface utilisateur pour les applications UWP. Il permet également la compatibilité de bas niveau avec les versions antérieures de Windows 10, afin que votre application fonctionne même si les utilisateurs n’aient le dernier système d’exploitation.
+La bibliothèque de l’interface utilisateur de Windows est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d’interface utilisateur pour les applications UWP. Il permet également la compatibilité de bas niveau avec les versions antérieures de Windows 10, afin que votre application fonctionne même si les utilisateurs n’aient pas le dernier système d’exploitation.
 
-![Bibliothèque de l’interface utilisateur de Windows](images/win-ui.png)
+![Bibliothèque de l’interface utilisateur Windows](images/win-ui.png)
 
 Voir la [Bibliothèque de l’interface utilisateur de Windows (version d’évaluation)](https://docs.microsoft.com/en-us/uwp/toolkits/winui/).
 
@@ -84,7 +84,7 @@ Voir la [Bibliothèque de l’interface utilisateur de Windows (version d’éva
 
 ### <a name="uwp-controls-in-desktop-applications"></a>Contrôles UWP dans les applications de bureau
 
-Windows 10 vous permet désormais d’utiliser les contrôles UWP dans les applications de bureau C++ Win32, Windows Forms et WPF. Cela signifie que vous pouvez améliorer l’apparence et la fonctionnalité de vos applications de bureau existantes avec les dernières fonctionnalités de l’interface utilisateur de Windows 10 qui sont uniquement disponibles via les contrôles UWP, telles que les contrôles qui prennent en charge le système Fluent Design et Windows Ink. Cette fonctionnalité est appelée (îles) XAML.
+Windows 10 vous permet désormais d’utiliser les contrôles UWP dans les applications de bureau C++ Win32, Windows Forms et WPF. Cela signifie que vous pouvez améliorer l’apparence et les fonctionnalités de vos applications de bureau existantes avec les dernières fonctionnalités de l’interface utilisateur de Windows 10 qui sont uniquement disponibles via les contrôles UWP, telles que les contrôles qui prennent en charge le système Fluent Design et Windows Ink. Cette fonctionnalité est appelée (îles) XAML.
 
 Voir [contrôles UWP dans les applications de bureau](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls).
 
@@ -92,7 +92,7 @@ Voir [contrôles UWP dans les applications de bureau](https://docs.microsoft.com
 
 ### <a name="net-standard-20"></a>.NET Standard2.0
 
-.NET Standard inclut plus de 20 000 API plus que .NET Standard 1.x. Cela facilite grandement à migrer des bibliothèques .NET Framework existantes, puis les utiliser sur différentes applications .NET, y compris votre application UWP.
+.NET Standard inclut plus de 20 000 API plus que .NET Standard 1.x. Cela rend beaucoup plus facile à migrer des bibliothèques .NET Framework existantes, puis les utiliser sur différentes applications .NET, y compris votre application UWP.
 
 ![NET standard](images/dot-net-standard-project-template.png)
 
@@ -110,13 +110,13 @@ Voir [Utiliser une base de données SQLServer dans une applicationUWP](https://d
 
 ### <a name="msix-deployment"></a>Déploiement MSIX
 
-MSIX est le format de package d’application Windows qui fournit une expérience de mise en package moderne à toutes les applications Windows. Le format de package MSIX conserve les fonctionnalités de packages d’application existant et installer les fichiers en plus de l’activation des fonctionnalités de création de packages et de déploiement nouveau et modernes pour les applications Win32, WPF et Windows Forms.
+MSIX est le format de package d’application Windows qui fournit une expérience de mise en package moderne à toutes les applications Windows. Le format du package MSIX conserve les fonctionnalités de packages d’application existant et installer les fichiers en plus de l’activation des fonctionnalités de création de packages et de déploiement modernes, nouvelles pour les applications Win32, WPF et Windows Forms.
 
-MSIX est un format de création de package conçu pour être sûr, sécurisé et fiable, basés sur une combinaison de .msi, .appx, App-V et ClickOnce technologies d’installation.
+MSIX est un format d’empaquetage conçu pour être sûr, sécurisé et fiable, basés sur une combinaison de .msi, .appx, App-V et ClickOnce technologies d’installation.
 
 ![Icône MSIX](images/WinUI_MSIX_2col_740x417.png)
 
-Consultez la [documentation de MSIX](https://docs.microsoft.com/windows/msix/).
+Consultez la [documentation MSIX](https://docs.microsoft.com/windows/msix/).
 
 <a id="distribution" />
 
@@ -175,7 +175,7 @@ Aujourd’hui, de nombreux utilisateurs travaillent avec leur propre téléphone
 
 ## <a name="deployment"></a>Déploiement
 
-Vous disposez d’options pour la distribution des applications aux utilisateurs de votre organisation. Vous pouvez utiliser Microsoft Store pour entreprises, la gestion des périphériques mobiles existant ou vous pouvez charger des applications sur des appareils. Vous pouvez également rendre vos applications disponibles au grand public en les publiant sur le Microsoft Store.
+Vous disposez d’options pour la distribution des applications aux utilisateurs de votre organisation. Vous pouvez utiliser Microsoft Store pour entreprises, gestion des périphériques mobiles existant ou vous pouvez charger des applications sur des appareils. Vous pouvez également rendre vos applications disponibles au grand public en les publiant sur le Microsoft Store.
 
 | Rubrique | Description |
 |-------|-------------|
@@ -185,14 +185,14 @@ Vous disposez d’options pour la distribution des applications aux utilisateurs
 
 ## <a name="enterprise-uwp-samples"></a>Exemples d’entreprise UWP
 
-Présentation du texte vient ici.
+Texte d’introduction ici.
 
-Action - communiquer avec Josh et/ou Karl pour obtenir plus les échantillons orienté entreprise entre eux.
+Action - communiquer avec Josh et/ou Karl pour obtenir des exemples d’orienté entreprise plus ensemble.
 
 | Rubrique |  Description |
 |------ |--------------|
-| [Exemple d’inventaire VanArsdel](https://github.com/Microsoft/InventorySample) | Un exemple d’application Windows 10 (à l’aide de la plateforme Windows universelle) concentre dans les scénarios métier, montrant comment utiliser les dernières fonctionnalités de Windows dans les applications de bureau. L’exemple est basé sur la création et gestion des clients, des commandes et produits pour la société fictive VanArsdel.
-Cette rubrique présente les MVVM, base de données SQL, Entity Framework. La liste d’autres utilisateurs.|
+| [Exemple de stock VanArsdel](https://github.com/Microsoft/InventorySample) | Un exemple d’application Windows 10 (à l’aide de la plateforme Windows universelle) se concentre dans les scénarios métier, montrant comment utiliser les dernières fonctionnalités de Windows dans les applications de bureau. L’exemple est basé sur la création et la gestion des clients, des commandes et produits pour la société fictive VanArsdel.
+Met en évidence MVVM, base de données SQL, Entity Framework. La liste d’autres utilisateurs.|
 
 ## <a name="patterns-and-practices"></a>Modèles et pratiques
 

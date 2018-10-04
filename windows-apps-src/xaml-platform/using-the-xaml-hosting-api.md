@@ -10,11 +10,11 @@ ms.technology: uwp, windows forms, wpf
 keywords: Windows 10, uwp, WinForms, wpf, win32
 ms.localizationpriority: medium
 ms.openlocfilehash: 860e515d013046ef77d0aee38eb5d42c9c3e2dc9
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4311007"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4356754"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>À l’aide de l’API d’hébergement dans une application de bureau UWP XAML
 
@@ -89,7 +89,7 @@ Voici les principales étapes pour héberger un contrôle UWP dans votre applica
 
     * Si votre application crée l’objet **DesktopWindowXamlSource** avant qu’il crée les objets **Windows.UI.Xaml.UIElement** , cette infrastructure sera initialisée pour vous lorsque vous instanciez l’objet **DesktopWindowXamlSource** . Dans ce scénario, vous n’avez pas besoin d’ajouter du code de votre choix pour initialiser l’infrastructure.
 
-    * Toutefois, si votre application crée les objets **Windows.UI.Xaml.UIElement** avant de créer l’objet **DesktopWindowXamlSource** qui hébergera les, votre application doit appeler la méthode statique [** WindowsXamlManager.InitializeForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) méthode d’initialiser explicitement l’infrastructure XAML UWP avant que les objets **Windows.UI.Xaml.UIElement** sont instanciées. Votre application doit généralement doit appeler cette méthode lorsque l’élément d’interface utilisateur parent qui héberge le **DesktopWindowXamlSource** est instancié.
+    * Toutefois, si votre application crée les objets **Windows.UI.Xaml.UIElement** avant de créer l’objet **DesktopWindowXamlSource** qui hébergera les, votre application doit appeler la méthode statique [** WindowsXamlManager.InitializeForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) méthode d’initialiser explicitement l’infrastructure XAML UWP avant que les objets **Windows.UI.Xaml.UIElement** sont instanciés. Votre application doit généralement doit appeler cette méthode lorsque l’élément d’interface utilisateur parent qui héberge le **DesktopWindowXamlSource** est instancié.
 
     ```cppwinrt
     Windows::UI::Xaml::Hosting::WindowsXamlManager windowsXamlManager =
@@ -102,9 +102,9 @@ Voici les principales étapes pour héberger un contrôle UWP dans votre applica
     ```
 
     > [!NOTE]
-    > Cette méthode renvoie un objet [**WindowsXamlManager**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) qui contient une référence à l’infrastructure XAML UWP. Vous pouvez créer autant d’objets **WindowsXamlManager** que vous le souhaitez sur un thread donné. Toutefois, étant donné que chaque objet conserve une référence à l’infrastructure UWP XAML, vous devez supprimer les objets pour vous assurer que les ressources XAML sont finalement publiées.
+    > Cette méthode retourne un objet [**WindowsXamlManager**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) qui contient une référence à l’infrastructure XAML UWP. Vous pouvez créer autant d’objets **WindowsXamlManager** que vous le souhaitez sur un thread donné. Toutefois, étant donné que chaque objet conserve une référence à l’infrastructure XAML UWP, vous devez supprimer les objets pour vous assurer que les ressources XAML sont finalement publiées.
 
-2. Créez un objet [**DesktopWindowXamlSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) et l’associer à un élément d’interface utilisateur parent dans votre application qui est associé à un handle de fenêtre.
+2. Créer un objet [**DesktopWindowXamlSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) et l’associer à un élément d’interface utilisateur parent dans votre application qui est associé à un handle de fenêtre.
 
     Pour ce faire, vous devez procédez comme suit:
 
@@ -162,7 +162,7 @@ Voici les principales étapes pour héberger un contrôle UWP dans votre applica
 
 Pour obtenir des exemples complets qui illustrent les tâches dans le contexte d’un exemple d’application de travail, voir les fichiers de code suivants:
 
-  * **Win32 C++:** Consultez le fichier [Main.cpp](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting/blob/master/XamlHostingSample/Main.cpp) dans l’exemple de [XamlHostingSample](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting) ou le fichier [Desktop.cpp](https://github.com/clarkezone/cppwinrt/blob/master/Desktop/XamlIslandsWin32/Desktop.cpp) dans l’exemple [XamlIslands32](https://github.com/clarkezone/cppwinrt/tree/master/Desktop/XamlIslandsWin32) .
+  * **Win32 C++:** Consultez le fichier [Main.cpp](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting/blob/master/XamlHostingSample/Main.cpp) dans l’exemple [XamlHostingSample](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting) ou le fichier [Desktop.cpp](https://github.com/clarkezone/cppwinrt/blob/master/Desktop/XamlIslandsWin32/Desktop.cpp) dans l’exemple [XamlIslands32](https://github.com/clarkezone/cppwinrt/tree/master/Desktop/XamlIslandsWin32) .
   * **WPF:** Consultez les fichiers [WindowsXamlHostBase.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) et [WindowsXamlHost.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) dans le Kit de ressources de la Communauté Windows.  
   * **Windows Forms:** Consultez les fichiers [WindowsXamlHostBase.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs) et [WindowsXamlHost.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs) dans le Kit de ressources de la Communauté Windows.
 
@@ -170,27 +170,27 @@ Pour obtenir des exemples complets qui illustrent les tâches dans le contexte d
 ## <a name="how-to-host-custom-uwp-xaml-controls"></a>Hôte personnalisé XAML UWP de contrôles
 
 > [!IMPORTANT]
-> Actuellement, les contrôles XAML UWP personnalisés à partir de parties 3e sont uniquement pris en charge dans les applications c# WPF et Windows Forms. Vous devez disposer le code source pour les contrôles afin que vous pouvez compiler contre elles dans votre application.
+> Actuellement, les contrôles UWP XAML personnalisés à partir des parties 3e sont uniquement prises en charge dans les applications c# WPF et Windows Forms. Vous devez disposer le code source pour les contrôles afin que vous pouvez compiler en fonction il dans votre application.
 
 Si vous souhaitez héberger un contrôle XAML UWP personnalisé (un contrôle que vous définissez vous-même ou un contrôle fourni par un 3e tiers), vous devez effectuer les tâches supplémentaires suivantes en plus de la procédure décrite dans la [section précédente](#how-to-host-uwp-xaml-controls).
 
-1. Définissez un type personnalisé qui dérive de [**Windows.UI.Xaml.Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application) et implémente également [**IXamlMetadataProvider**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider). Ce type agit comme un fournisseur de métadonnées racine pour le chargement des métadonnées pour les types UWP XAML personnalisés dans les assemblys dans le répertoire actif de votre application.
+1. Définissez un type personnalisé qui dérive de [**Windows.UI.Xaml.Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application) et implémente également [**IXamlMetadataProvider**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider). Ce type agit comme un fournisseur de métadonnées racine du chargement des métadonnées pour les types UWP XAML personnalisés dans les assemblys dans le répertoire actif de votre application.
 
     Pour obtenir un exemple illustrant comment procéder, consultez le fichier de code [XamlApplication.cs](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Windows.Interop.WindowsXamlHost.Shared/XamlApplication.cs) dans le Kit de ressources de la Communauté Windows. Ce fichier fait partie de l’implémentation des classes **WindowsXamlHost** partagée pour WPF et Windows Forms, qui illustrent comment utiliser les API dans ces types d’applications d’hébergement de XAML UWP.
 
-2. Appelez la méthode de [**GetXamlType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider.getxamltype) de votre fournisseur de métadonnées racine lorsque le nom du type du contrôle XAML UWP est affecté (Cela peut être affecté dans le code en cours d’exécution, ou vous pouvez choisir d’activer cette option pour être affectés dans la fenêtre de propriétés de Visual Studio).
+2. Appelez la méthode de [**GetXamlType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider.getxamltype) de votre fournisseur de métadonnées racine lorsque le nom du type du contrôle XAML UWP est affecté (Cela peut être affecté dans le code en cours d’exécution, ou vous pouvez choisir d’activer cette option pour être affectés dans la fenêtre Propriétés de Visual Studio).
 
     Pour obtenir un exemple illustrant comment procéder, consultez le fichier de code [UWPTypeFactory.cs](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Windows.Interop.WindowsXamlHost.Shared/UWPTypeFactory.cs) dans le Kit de ressources de la Communauté Windows. Ce fichier fait partie de l’implémentation des classes **WindowsXamlHost** partagée pour WPF et Windows Forms.
 
 3. Intégrer le code source pour le contrôle XAML UWP personnalisé à votre solution d’application hôte, la génération du contrôle personnalisé et l’utiliser dans votre application en suivant [les instructions ci-après](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost#add-a-custom-uwp-control).
 
-## <a name="how-to-handle-keyboard-focus-navigation"></a>Comment gérer la navigation en mode focus clavier
+## <a name="how-to-handle-keyboard-focus-navigation"></a>Comment gérer la navigation du focus clavier
 
-Lorsque l’utilisateur navigue dans les éléments d’interface utilisateur dans votre application à l’aide du clavier (par exemple, en appuyant sur touche **Tab** ou flèche/de direction), vous aurez besoin programmer le déplacement du focus dans et en dehors de l’objet **DesktopWindowXamlSource** . Lors de la navigation au clavier de l’utilisateur atteint le **DesktopWindowXamlSource**, déplacer le focus dans le premier objet [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) dans l’ordre de navigation pour votre interface utilisateur, continuer à déplacer le focus vers la commande suivante ** Windows.UI.Xaml.UIElement** objets en tant que les cycles de l’utilisateur sur les éléments, puis déplacer le focus précédent en dehors de la **DesktopWindowXamlSource** et dans l’élément d’interface utilisateur parent.  
+Lorsque l’utilisateur navigue dans les éléments d’interface utilisateur dans votre application à l’aide du clavier (par exemple, en appuyant sur la touche **Tab** ou flèche/de direction), vous aurez besoin programmer le déplacement du focus dans et en dehors de l’objet **DesktopWindowXamlSource** . Lors de la navigation au clavier de l’utilisateur atteint le **DesktopWindowXamlSource**, déplacer le focus dans le premier objet [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) dans l’ordre de navigation pour votre interface utilisateur, continuer à déplacer le focus vers la commande suivante ** Windows.UI.Xaml.UIElement** objets en tant que les cycles de l’utilisateur sur les éléments, puis déplacer le focus de revenir en dehors de la **DesktopWindowXamlSource** et dans l’élément d’interface utilisateur parent.  
 
 Le XAML UWP API d’hébergement fournit plusieurs types et membres pour vous aider à accomplir ces tâches.
 
-1. Lorsque la navigation au clavier saisit votre **DesktopWindowXamlSource**, l’événement [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.gotfocus) est déclenché. Gérez cet événement et par programmation déplacer le focus vers le premier hébergé **Windows.UI.Xaml.UIElement** à l’aide de la méthode [**NavigateFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.navigatefocus) .
+1. La navigation au clavier quand votre **DesktopWindowXamlSource**, l’événement [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.gotfocus) est déclenché. Gérez cet événement et par programmation déplacer le focus vers le premier hébergé **Windows.UI.Xaml.UIElement** à l’aide de la méthode [**NavigateFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.navigatefocus) .
 
 2. Lorsque l’utilisateur se trouve sur le dernier élément pouvant être actif dans votre **DesktopWindowXamlSource** et appuie sur la touche **Tab** ou sur une touche de direction, l’événement [**TakeFocusRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.takefocusrequested) est déclenché. Gérez cet événement et par programmation déplacer le focus vers le prochain élément dans l’application hôte. Par exemple, dans une application WPF où le **DesktopWindowXamlSource** est hébergé dans un [**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost), vous pouvez utiliser la méthode [**MoveFocus**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.movefocus) pour transférer le focus vers le prochain élément dans l’application hôte.
 
@@ -203,11 +203,11 @@ Pour obtenir des exemples qui montrent comment effectuer cette opération dans l
 Lorsque l’utilisateur modifie la taille de l’élément d’interface utilisateur parent, vous devez gérer les modifications de disposition nécessaires pour vous assurer que vos contrôles UWP afficher comme prévu. Voici quelques scénarios importants à prendre en compte.
 
 1. Lorsque l’élément d’interface utilisateur parent doit obtenir la taille de la zone rectangulaire nécessaire pour s’adapter à la **Windows.UI.Xaml.UIElement** que vous hébergez sur le **DesktopWindowXamlSource**, appelez la méthode de [**mesure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) de la **Windows.UI.Xaml.UIElement **. Exemple :
-    * Dans une application WPF vous ferez cela à partir de la méthode [**MeasureOverride**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride) de l' [**HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) qui héberge le **DesktopWindowXamlSource**.
-    * Dans une application Windows Forms vous ferez cela à partir de la méthode [**GetPreferredSize**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.getpreferredsize) du [**contrôle**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) qui héberge le **DesktopWindowXamlSource**.
+    * Dans une application WPF vous pouvez le faire à partir de la méthode [**MeasureOverride**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride) de l' [**HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) qui héberge le **DesktopWindowXamlSource**.
+    * Dans une application Windows Forms vous pourrez le faire à partir de la méthode [**GetPreferredSize**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.getpreferredsize) du [**contrôle**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) qui héberge le **DesktopWindowXamlSource**.
 
-2. Lorsque les dimensions de l’élément UI parent, appelez la méthode de [**disposition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) de la racine **Windows.UI.Xaml.UIElement** qui vous hébergez sur le **DesktopWindowXamlSource**. Exemple :
-    * Dans une application WPF vous ferez cela à partir de la méthode [**ArrangeOverride**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.arrangeoverride) de l’objet [**HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) qui héberge le **DesktopWindowXamlSource**.
+2. Lorsque la taille des modifications élément parent l’interface utilisateur, appelez la méthode de [**disposition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) de la racine **Windows.UI.Xaml.UIElement** qui vous hébergez sur le **DesktopWindowXamlSource**. Exemple :
+    * Dans une application WPF vous pourrez le faire à partir de la méthode [**ArrangeOverride**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.arrangeoverride) de l’objet [**HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) qui héberge le **DesktopWindowXamlSource**.
     * Dans une application Windows Forms vous ferez cela à partir du gestionnaire pour l’événement [**SizeChanged**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.sizechanged) du [**contrôle**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) qui héberge le **DesktopWindowXamlSource**.
 
 Pour obtenir des exemples qui montrent comment effectuer cette opération dans le contexte d’un exemple d’application de travail, voir les fichiers de code suivants:
@@ -220,7 +220,7 @@ Si vous souhaitez gérer les modifications PPP dans la fenêtre qui héberge vot
 
 Les étapes suivantes illustrent un moyen de gérer ce processus dans le contexte d’une application Win32 C++. Pour obtenir un exemple complet, consultez les fichiers de code [Desktop.cpp](https://github.com/clarkezone/cppwinrt/blob/master/Desktop/XamlIslandsWin32/Desktop.cpp) et [Desktop.h](https://github.com/clarkezone/cppwinrt/blob/master/Desktop/XamlIslandsWin32/Desktop.h) dans l’exemple [XamlIslands32](https://github.com/clarkezone/cppwinrt/tree/master/Desktop/XamlIslandsWin32) sur GitHub.
 
-1. Mettre à jour d’un objet [**ScaleTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.scaletransform) dans votre application et affectez-le à la méthode [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) de votre contrôle UWP. L’exemple suivant effectue cette opération pour un contrôle [**Windows.UI.Xaml.Controls.Grid**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) dans une application Win32 C++.
+1. Mettre à jour d’un objet [**ScaleTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.scaletransform) dans votre application et l’affecter à la méthode [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) de votre contrôle UWP. L’exemple suivant effectue cette opération pour un contrôle [**Windows.UI.Xaml.Controls.Grid**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) dans une application Win32 C++.
 
     ```cppwinrt
     // Private fields maintained by your app, such as in a window class you have defined.
@@ -289,11 +289,11 @@ Les étapes suivantes illustrent un moyen de gérer ce processus dans le context
     </assembly>
     ```
 
-    Pour un manifeste d’assembly côte-à-côte exemple complet, consultez le fichier [XamlIslandsWin32.exe.manifest](https://github.com/clarkezone/cppwinrt/blob/master/Desktop/XamlIslandsWin32/XamlIslandsWin32.exe.manifest) dans l’exemple [XamlIslands32](https://github.com/clarkezone/cppwinrt/tree/master/Desktop/XamlIslandsWin32) sur GitHub.
+    Pour un manifeste de l’assembly côte-à-côte exemple complet, consultez le fichier [XamlIslandsWin32.exe.manifest](https://github.com/clarkezone/cppwinrt/blob/master/Desktop/XamlIslandsWin32/XamlIslandsWin32.exe.manifest) dans l’exemple [XamlIslands32](https://github.com/clarkezone/cppwinrt/tree/master/Desktop/XamlIslandsWin32) sur GitHub.
 
 ## <a name="limitations"></a>Limitations
 
-Le code XAML qui héberge API partage les mêmes limites que tous les autres types de contrôles d’hôte XAML pour Windows 10. Pour une liste détaillée, voir les [limites du contrôle hôte XAML](xaml-host-controls.md#limitations).
+Le code XAML API d’hébergement partage les mêmes limites que tous les autres types de contrôles d’hôte XAML pour Windows 10. Pour une liste détaillée, voir les [limites du contrôle hôte XAML](xaml-host-controls.md#limitations).
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
@@ -301,19 +301,19 @@ Le code XAML qui héberge API partage les mêmes limites que tous les autres typ
 
 | Problème | Résolution |
 |-------|------------|
-| Votre application reçoit une **exception COMException** avec le message suivant: «Impossible d’activer DesktopWindowXamlSource. Ce type ne peut pas être utilisé dans une application UWP.» ou «Impossible d’activer WindowsXamlManager. Ce type ne peut pas être utilisé dans une application UWP.» | Cette erreur indique que vous essayez d’utiliser l’API d’hébergement de XAML UWP (plus précisément, vous essayez d’instancier les types [**DesktopWindowXamlSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) ou [**WindowsXamlManager**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) ) dans une application UWP. Le XAML UWP API d’hébergement est destiné uniquement à être utilisés dans les applications de bureau non UWP, telles que les applications WPF, Windows Forms et Win32 C++. |
+| Votre application reçoit une **exception COMException** avec le message suivant: «Impossible d’activer DesktopWindowXamlSource. Ce type ne peut pas être utilisé dans une application UWP.» ou «Impossible d’activer WindowsXamlManager. Ce type ne peut pas être utilisé dans une application UWP.» | Cette erreur indique que vous essayez d’utiliser l’API d’hébergement de XAML UWP (plus précisément, vous essayez d’instancier les types [**DesktopWindowXamlSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) ou [**WindowsXamlManager**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) ) dans une application UWP. Le XAML UWP API d’hébergement est destiné uniquement à être utilisés dans les applications de bureau non UWP, telles que les applications C++ Win32, Windows Forms et WPF. |
 
 ### <a name="error-attaching-to-a-window-on-a-different-thread"></a>Erreur pendant la liaison à une fenêtre sur un thread différent
 
 | Problème | Résolution |
 |-------|------------|
-| Votre application reçoit une **exception COMException** avec le message suivant: «AttachToWindow méthode a échoué car le HWND spécifié a été créé sur un thread différent.» | Cette erreur indique que votre application a appelé la méthode **IDesktopWindowXamlSourceNative.AttachToWindow** et lui passé le HWND d’une fenêtre qui a été créé sur un thread différent. Vous devez transmettre à cette méthode le HWND d’une fenêtre qui a été créé sur le même thread que le code à partir duquel vous appelez la méthode. |
+| Votre application reçoit une **exception COMException** avec le message suivant: «AttachToWindow méthode a échoué car le HWND spécifié a été créé sur un thread différent.» | Cette erreur indique que votre application a appelé la méthode **IDesktopWindowXamlSourceNative.AttachToWindow** et lui passé le HWND d’une fenêtre qui a été créé sur un thread différent. Vous devez transmettre à cette méthode le HWND d’une fenêtre qui a été créé sur le même thread que le code à partir de laquelle vous appelez la méthode. |
 
 ### <a name="error-attaching-to-a-window-on-a-different-top-level-window"></a>Erreur pendant la liaison à une fenêtre sur une autre fenêtre de niveau supérieur
 
 | Problème | Résolution |
 |-------|------------|
-| Votre application reçoit une **exception COMException** avec le message suivant: «AttachToWindow méthode a échoué car le HWND spécifié descend à partir d’une fenêtre de niveau supérieur différente de HWND qui a été précédemment passé à AttachToWindow sur le même thread.» | Cette erreur indique que votre application a appelé la méthode **IDesktopWindowXamlSourceNative.AttachToWindow** et lui passé le HWND d’une fenêtre qui descend à partir d’une fenêtre de niveau supérieur différents qu’une fenêtre que vous avez spécifié dans un appel précédent à cette méthode sur le même thread.</p></p>Une fois que votre application appelle **IDesktopWindowXamlSourceNative.AttachToWindow** sur un thread spécifique, tous les autres objets [**DesktopWindowXamlSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) sur le même thread peuvent joindre uniquement à windows qui sont les descendants de la même fenêtre de niveau supérieur qui a été transmis dans le premier appel à **IDesktopWindowXamlSourceNative.AttachToWindow**. Lorsque tous les objets **DesktopWindowXamlSource** sont fermés pour un thread particulier, la prochaine **DesktopWindowXamlSource** est ensuite libre attacher à n’importe quelle fenêtre à nouveau.</p></p>Pour résoudre ce problème, fermez tous les objets **DesktopWindowXamlSource** qui sont liés aux autres fenêtres de niveau supérieur sur ce thread, ou créent un nouveau thread pour cette **DesktopWindowXamlSource**. |
+| Votre application reçoit une **exception COMException** avec le message suivant: «AttachToWindow méthode a échoué car le HWND spécifié descend à partir d’une fenêtre de niveau supérieur différente du HWND qui a été précédemment passé à AttachToWindow sur le même thread.» | Cette erreur indique que votre application a appelé la méthode **IDesktopWindowXamlSourceNative.AttachToWindow** et lui passé le HWND d’une fenêtre qui descend à partir d’une fenêtre de niveau supérieur différents qu’une fenêtre que vous avez spécifié dans un appel précédent à cette méthode sur le même thread.</p></p>Une fois que votre application appelle **IDesktopWindowXamlSourceNative.AttachToWindow** sur un thread spécifique, tous les autres objets [**DesktopWindowXamlSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) sur le même thread peuvent joindre uniquement à windows qui sont les descendants de la même fenêtre de niveau supérieur qui a été transmis dans le premier appel à **IDesktopWindowXamlSourceNative.AttachToWindow**. Lorsque tous les objets **DesktopWindowXamlSource** sont fermés pour un thread particulier, la prochaine **DesktopWindowXamlSource** est ensuite libre attacher à n’importe quelle fenêtre à nouveau.</p></p>Pour résoudre ce problème, fermez tous les objets **DesktopWindowXamlSource** qui sont liés aux autres fenêtres de niveau supérieur sur ce thread, ou créent un nouveau thread pour cette **DesktopWindowXamlSource**. |
 
 ## <a name="related-topics"></a>Rubriques associées
 

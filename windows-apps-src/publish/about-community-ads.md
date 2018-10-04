@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ada2e0610e81e986deba3ddab5e87547e05fe108
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313129"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4361174"
 ---
 # <a name="about-community-ads"></a>À propos des annonces de la communauté
 
@@ -23,7 +23,7 @@ Si votre application [affiche des bannières ou des bannières spots publicitair
 
 Voici comment fonctionne ce programme:
 
-* Une fois que vous accepté de participer aux annonces de la Communauté, comme décrit ci-dessous, vous pouvez [créer une campagne de publicité de la Communauté gratuite](create-an-ad-campaign-for-your-app.md). Votre application partagera ensuite un espace publicitaire promotionnel avec d’autres développeurs ayant également accepté de participer aux annonces de la Communauté. Votre application affichera des publicités pour les applications publiées par d’autres développeurs participant aux annonces de la communauté et vice-versa.
+* Une fois que vous accepté de participer aux annonces de la Communauté, comme décrit ci-dessous, vous pouvez [créer une campagne de publicité de la Communauté gratuite](create-an-ad-campaign-for-your-app.md). Votre application partagera puis espace publicitaire promotionnel avec d’autres développeurs ayant également accepté de participer aux annonces de la Communauté. Votre application affichera des publicités pour les applications publiées par d’autres développeurs participant aux annonces de la communauté et vice-versa.
 * Vous gagnez des crédits pour l’espace publicitaire promotionnel dans d’autres applications en affichant des annonces de la communauté dans votre application. Les crédits sont calculés selon le processus suivant:
   * Pour chaque pays ou région où une application affichant des annonces de la communauté est disponible, la valeur du coût par impression électronique (eCPM) du marché concerné est multipliée par le nombre de demandes d’annonces de la communauté faites par votre application dans ce pays ou cette région. Cette valeur représente les crédits que vous avez gagnés pour votre application dans ce pays ou cette région.
   * Le total de vos crédits gagnés pour une période donnée est égal à la somme de tous les crédits obtenus dans chaque pays ou région pour chacune de vos applications affichant des annonces de la communauté.
@@ -37,7 +37,7 @@ Avant de pouvoir créer une campagne de publicité de la Communauté pour l’un
 Pour participer aux annonces de la Communauté pour une application UWP:
 
 1. Dans la section **paramètres de médiation** sur la page **publicités dans l’application** , sélectionnez une unité publicitaire que vous utilisez dans l’application.
-2. Si l’option **laisser Microsoft choisir les meilleurs paramètres de médiation pour votre application** est activée, annonces de la Communauté sont automatiquement activés pour votre unité publicitaire. Dans le cas contraire, sélectionnez la configuration de base ou d’une configuration spécifique au marché dans le menu déroulant **cible** et puis cochez la case de **publicités Microsoft Community** dans la liste des **autres réseaux publicitaires** .
+2. Si l’option **laisser Microsoft choisir les meilleurs paramètres de médiation pour votre application** est activée, les annonces de la Communauté sont activées pour votre unité publicitaire automatiquement. Dans le cas contraire, sélectionnez la configuration de base ou d’une configuration spécifique au marché dans le menu déroulant **cible** et puis cochez la case **d’annonces de la Communauté Microsoft** dans la liste **d’autres réseaux publicitaires** .
 
     > [!NOTE]
     > Vous pouvez utiliser les champs de **poids** pour spécifier le taux de publicités que vous souhaitez afficher à partir de réseaux payants et d’autres réseaux publicitaires, y compris les annonces de la Communauté.

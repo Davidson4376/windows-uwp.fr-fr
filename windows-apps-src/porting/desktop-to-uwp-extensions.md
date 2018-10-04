@@ -12,17 +12,17 @@ keywords: windows10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ms.openlocfilehash: fadd9c2b6a35a1418a782ab0a6ef419e3f127f42
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4311819"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355006"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>Intégrer votre application de bureau empaquetée avec Windows 10
 
 Utiliser des extensions pour intégrer votre application de bureau empaquetée avec Windows 10 de manière prédéfinie.
 
-Par exemple, utilisez une extension pour créer une exception de pare-feu, que votre application l’application par défaut pour un type de fichier ou pointez des vignettes de démarrage vers la version empaquetée de votre application. Pour utiliser une extension, il suffit d’ajouter un peu de XML au fichier manifeste du package de votre application. Aucun code n’est nécessaire.
+Par exemple, utilisez une extension pour créer une exception de pare-feu, rendre votre application l’application par défaut pour un type de fichier ou pointez des vignettes de démarrage sur la version empaquetée de votre application. Pour utiliser une extension, il suffit d’ajouter un peu de XML au fichier manifeste du package de votre application. Aucun code n’est nécessaire.
 
 Cette rubrique décrit ces extensions et les tâches que vous pouvez effectuer en les utilisant.
 
@@ -156,7 +156,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 ### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>Associer votre application empaquetée à un ensemble de types de fichiers
 
-Vous pouvez associer votre application empaquetée avec des extensions de type de fichier. Si un utilisateur clique un fichier, puis sélectionne l’option **Ouvrir avec** , votre application s’affiche dans la liste de suggestions.
+Vous pouvez associer votre application empaquetée à des extensions de type de fichier. Si un utilisateur clique un fichier, puis sélectionne l’option **Ouvrir avec** , votre application s’affiche dans la liste de suggestions.
 
 #### <a name="xml-namespace"></a>Espace de noms XML
 
@@ -911,7 +911,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 ### <a name="start-your-application-by-using-an-alias"></a>Démarrer votre application à l’aide d’un alias
 
-Les utilisateurs et autres processus peuvent utiliser un alias pour démarrer votre application sans avoir à spécifier le chemin d’accès complet à votre application. Vous pouvez spécifier ce nom d’alias.
+Les utilisateurs et des autres processus peuvent utiliser un alias pour démarrer votre application sans avoir à spécifier le chemin d’accès complet à votre application. Vous pouvez spécifier ce nom d’alias.
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
@@ -1113,7 +1113,7 @@ Intégration avec d’autres applications, démarrer d’autres processus ou par
 
 ### <a name="make-your-application-appear-as-the-print-target-in-applications-that-support-printing"></a>Afficher votre application en tant que cible d’impression dans les applications qui prennent en charge l’impression
 
-Lorsque les utilisateurs souhaitent imprimer des données à partir d’une autre application, comme le bloc-notes, vous pouvez rendre votre application s’affichent en tant que cible d’impression dans la liste de l’application des cibles d’impression disponibles.
+Lorsque les utilisateurs souhaitent imprimer des données à partir d’une autre application, comme le bloc-notes, vous pouvez rendre votre application apparaissent en tant que cible d’impression dans la liste de l’application des cibles d’impression disponibles.
 
 Vous devrez modifier votre application afin qu’elle reçoive les données d’impression au format XML Paper Specification (XPS).
 
@@ -1137,7 +1137,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |-------|-------------|
 |Catégorie |Toujours: ``windows.appPrinter``.
 |DisplayName |Le nom que vous souhaitez voir apparaître dans la liste des cibles d’impression pour une application. |
-|Parameters |Tous les paramètres requis par votre application pour gérer correctement la demande. |
+|Parameters |Tous les paramètres dont votre application a besoin pour gérer correctement la demande. |
 
 #### <a name="example"></a>Exemple
 
@@ -1260,7 +1260,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
   </Applications>
 </Package>
 ```
-Cette extension peut être utile si vous souhaitez créer une interface utilisateur de plateforme Windows universelle qui s’exécute sur tous les appareils, mais que vous souhaitez que les composants de votre application Win32 poursuivent leur exécution en mode de confiance totale.
+Cette extension peut être utile si vous souhaitez créer une interface utilisateur de la plateforme Windows universelle qui s’exécute sur tous les appareils, mais que vous souhaitez que les composants de votre application Win32 poursuivent leur exécution en mode de confiance totale.
 
 Créez simplement un package d’application Windows pour votre application Win32. Ensuite, ajoutez cette extension au fichier de package de votre application UWP. Cette extension indique que vous souhaitez démarrer un fichier exécutable dans le package d’application Windows.  Si vous souhaitez communiquer entre votre application UWP et votre application Win32, vous pouvez configurer un ou plusieurs [services d’application](../launch-resume/app-services.md) pour ce faire. Pour en savoir plus sur ce scénario, reportez-vous [ici](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/).
 

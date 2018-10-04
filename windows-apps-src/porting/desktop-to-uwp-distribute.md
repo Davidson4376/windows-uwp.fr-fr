@@ -12,18 +12,18 @@ keywords: windows10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: c81e8d07efa04e93128089eaec78fb83b822a4b9
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4317907"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354044"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>Distribuer une application de bureau empaquetée
 
 Publier votre application de bureau empaquetée à un Windows store ou charger de manière indépendante sur un ou plusieurs périphériques.  
 
 > [!NOTE]
-> Avez-vous un plan pour la transition des utilisateurs à votre application empaquetée? Avant de distribuer votre application, consultez la section [Migration des utilisateurs vers votre application empaquetée](#transition-users) de ce guide où vous trouverez quelques idées.
+> Vous disposez d’un plan pour la transition des utilisateurs à votre application empaquetée? Avant de distribuer votre application, consultez la section [Migration des utilisateurs vers votre application empaquetée](#transition-users) de ce guide où vous trouverez quelques idées.
 
 ## <a name="distribute-your-application-by-publishing-it-to-the-microsoft-store"></a>Distribuer votre application en la publiant sur le Microsoft Store
 
@@ -36,7 +36,7 @@ Si vous envisagez de publier dans le MicrosoftStore, vous êtes invité à répo
 Vous n’êtes pas obligé de signer votre application avant de la soumettre au Windows Store.
 
 >[!IMPORTANT]
-> Si vous prévoyez de publier votre application dans le Microsoft Store, assurez-vous que votre application fonctionne correctement sur les appareils exécutant Windows 10 S. Il s’agit d’une exigence du store. Consultez [Tester votre application pour Windows10 S](desktop-to-uwp-test-windows-s.md).
+> Si vous prévoyez de publier votre application dans le Microsoft Store, assurez-vous que votre application fonctionne correctement sur les appareils qui exécutent Windows 10 S. Il s’agit d’une exigence du store. Consultez [Tester votre application pour Windows10 S](desktop-to-uwp-test-windows-s.md).
 
 <a id="side-load" />
 
@@ -46,11 +46,11 @@ Si vous préférez plutôt distribuer votre application sans utiliser le Windows
 
 Ceci peut être utile si vous souhaitez contrôler davantage l’expérience de distribution ou si vous ne voulez pas vous impliquer dans le processus de certification du MicrosoftStore.
 
-Pour distribuer votre application sur d’autres appareils sans passer par le Windows store, vous devez obtenir un certificat, signer votre application à l’aide de ce certificat, puis charger de manière indépendante votre application sur ces appareils.
+Pour distribuer votre application à d’autres appareils sans passer par le Windows store, vous devez obtenir un certificat, signer votre application à l’aide de ce certificat, puis charger de manière indépendante votre application sur ces appareils.
 
 Vous pouvez [créer un certificat](../packaging/create-certificate-package-signing.md) ou en obtenir un auprès d’un fournisseur populaire, tel que [Verisign](https://www.verisign.com/).
 
-Si vous prévoyez de distribuer votre application sur des périphériques exécutant Windows 10 S, votre application doit être signée par le Microsoft Store afin de passer par le processus de soumission avant que vous pouvez distribuer votre application sur ces appareils.
+Si vous prévoyez de distribuer votre application sur des appareils qui exécutent Windows 10 S, votre application doit être signée par le Microsoft Store afin de passer par le processus de soumission avant que vous pouvez distribuer votre application sur ces appareils.
 
 Si vous créez un certificat, vous devez l’installer dans le magasin de certificats **Racine approuvée** ou **Personnes autorisées** de chaque appareil exécutant votre application. Si vous obtenez un certificat auprès d’un fournisseur populaire, vous n’aurez rien à installer sur les autres systèmes, hormis votre application.  
 

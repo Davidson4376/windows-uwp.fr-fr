@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: prise en main, uwp, windows10, piste d'apprentissage, disposition, formulaire
 ms.localizationpriority: medium
 ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4311643"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4356133"
 ---
 # <a name="create-and-customize-a-form"></a>Créer et personnaliser un formulaire
 
@@ -48,7 +48,7 @@ Lisez [cette documentation sur les panneaux de disposition](../design/layout/lay
 
 ## <a name="what-goes-in-a-form"></a>Contenu d'un formulaire
 
-Vous devez remplir votre formulaire avec une sélection de [contrôles XAML](../design/controls-and-patterns/controls-and-events-intro.md). Vous les connaissez sans doute déjà, mais n’hésitez pas à les passer en revue pour rafraîchir vos connaissances. En particulier, vos contrôles devront permettent à votre utilisateur de saisir du texte ou de choisir une valeur dans une liste. Il s’agit d’une liste d’options que vous pourriez ajouter base: vous n’avez pas besoin de lire tous les concernant, il vous suffit de savoir à quoi elles ressemblent et comment elles fonctionnent.
+Vous devez remplir votre formulaire avec une sélection de [contrôles XAML](../design/controls-and-patterns/controls-and-events-intro.md). Vous les connaissez sans doute déjà, mais n’hésitez pas à les passer en revue pour rafraîchir vos connaissances. En particulier, vos contrôles devront permettent à votre utilisateur de saisir du texte ou de choisir une valeur dans une liste. Il s’agit d’une liste d’options que vous pouvez ajouter de base: vous n’êtes pas obligé de lire tous les concernant, il vous suffit de savoir à quoi elles ressemblent et comment elles fonctionnent.
 
 * [TextBox](../design/controls-and-patterns/text-box.md) permet à un utilisateur d’entrée de texte dans votre application.
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) permet à un utilisateur de choisir entre deux options.

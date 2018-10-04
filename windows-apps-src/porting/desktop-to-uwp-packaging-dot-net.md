@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c9b7a30a50c26d2dbdaf6df04e85549addaf181
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313149"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4350864"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>Créer un package une application de bureau à l’aide de Visual Studio
 

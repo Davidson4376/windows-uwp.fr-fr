@@ -11,18 +11,18 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4309129"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354835"
 ---
 # <a name="app-submissions"></a>Soumissions d’applications
 
 
 Après avoir [créé votre application en réservant un nom](create-your-app-by-reserving-a-name.md), vous pouvez commencer à vous occuper de sa publication. La première étape consiste à créer une **soumission**.
 
-Vous pouvez démarrer votre soumission lorsque votre application est terminée et prête pour publication, ou commencer à entrer des informations avant même d’avoir écrit la moindre ligne de code. Mises à jour apportées à votre soumission sont enregistrées, afin de pouvoir y revenir et y travailler à chaque fois que vous êtes prêt.
+Vous pouvez démarrer votre soumission lorsque votre application est terminée et prête pour publication, ou commencer à entrer des informations avant même d’avoir écrit la moindre ligne de code. Mises à jour que vous apportez à votre soumission sont enregistrées, afin de pouvoir y revenir et y travailler à chaque fois que vous êtes prêt.
 
 > [!NOTE]
 > Vous devez disposer d’un [compte de développeur](http://go.microsoft.com/fwlink/p/?LinkId=615100) pour accéder au [Centre de développement Windows](https://partner.microsoft.com/dashboard) et soumettre des applications dans le Microsoft Store.

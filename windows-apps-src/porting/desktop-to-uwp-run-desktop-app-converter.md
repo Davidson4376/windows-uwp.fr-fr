@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: bde2e58934e24df7db2cb77fb793106aa65e3834
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315919"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4357599"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Package d’une application de bureau à l’aide de Desktop App Converter
 
@@ -180,7 +180,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 >[!IMPORTANT]
 >Si le centre de développement attribue une identité commençant par un chiffre à votre package, veillez à également transmettre le paramètre <i>-AppId</i> et à utiliser uniquement le suffixe de la chaîne (après le point de séparation à en tant que valeur pour ce paramètre.
 
-Le paramètre ``InstallerArguments`` est facultatif. Toutefois, étant donné que Desktop App Converter a besoin de votre programme d’installation s’exécute en mode sans assistance, vous devrez peut-être l’utiliser si votre application a besoin d’indicateurs spécifiques pour s’exécuter en mode silencieux. L’indicateur ``/S`` est un indicateur de mode silencieux très courant, mais celui que vous utilisez peut être différent selon les technologies utilisées pour créer le fichier d’installation.
+Le paramètre ``InstallerArguments`` est facultatif. Toutefois, étant donné que Desktop App Converter a besoin de votre programme d’installation s’exécute en mode sans assistance, vous devrez peut-être utiliser si votre application a besoin d’indicateurs spécifiques pour s’exécuter en mode silencieux. L’indicateur ``/S`` est un indicateur de mode silencieux très courant, mais celui que vous utilisez peut être différent selon les technologies utilisées pour créer le fichier d’installation.
 
 **Vidéo**
 
@@ -402,7 +402,7 @@ Voir [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-pla
 
 **Exécutez votre application / détecter et résoudre les problèmes**
 
-Reportez-vous à [Exécuter, déboguer et tester une application de bureau empaquetée](desktop-to-uwp-debug.md)
+Voir [Exécuter, déboguer et tester une application de bureau empaquetée](desktop-to-uwp-debug.md)
 
 **Distribuer votre application**
 

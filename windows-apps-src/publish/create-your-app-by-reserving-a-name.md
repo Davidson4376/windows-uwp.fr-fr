@@ -11,22 +11,22 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 784accda4299891fa86501236d35c0828e80cf8d
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319243"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352113"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>Créer votre application en réservant un nom
 
-La première étape de création d’une application dans votre [tableau de bord du centre de développement Windows](https://partner.microsoft.com/dashboard) consiste à réserver un nom d’application. Chaque nom réservé (parfois appelé *titre* de votre application) doit être unique partout dans le MicrosoftStore.
+La première étape de création d’une nouvelle application dans votre [tableau de bord du centre de développement Windows](https://partner.microsoft.com/dashboard) consiste à réserver un nom d’application. Chaque nom réservé (parfois appelé *titre* de votre application) doit être unique partout dans le MicrosoftStore.
 
 Vous pouvez réserver un nom pour votre application même si vous n'avez pas encore commencé à la générer. Nous vous recommandons de faire dès que possible, pour que personne d’autre ne peut utiliser le nom. Notez que vous devrez soumettre l’application dans les trois mois afin de conserver ce nom réservé pour votre usage.
 
 Lorsque vous [chargez les packages de votre application](upload-app-packages.md), la valeur [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) doit correspondre au nom que vous avez réservé pour votre application. Si vous utilisez Microsoft VisualStudio pour créer le package de votre application, cet attribut est rempli automatiquement.
 
 > [!IMPORTANT]
-> Vous pouvez réserver des noms supplémentaires pour une application, et vous pouvez choisir d’utiliser un de ces éléments dans la version publiée de votre application au lieu de celui que vous réservez lorsque vous créez votre application dans le tableau de bord. Toutefois, n’oubliez pas que le premier nom que vous entrez ici servira dans certains de votre application [d’informations d’identité](view-app-identity-details.md), par exemple, le **Nom de famille du Package (PFN)**. Ces valeurs peuvent être visibles par certains utilisateurs et ne peut pas être modifiée, par conséquent, assurez-vous que le nom réservé est approprié pour cette utilisation.
+> Vous pouvez réserver des noms supplémentaires pour une application, et vous pouvez choisir d’utiliser l’une de ces éléments dans la version publiée de votre application au lieu de celui que vous réservez lorsque vous créez votre application dans le tableau de bord. Toutefois, n’oubliez pas que le premier nom que vous entrez ici servira dans certains de votre application [d’informations d’identité](view-app-identity-details.md), par exemple, le **Nom de famille du Package (PFN)**. Ces valeurs peuvent être visibles par certains utilisateurs et ne peut pas être modifiée, par conséquent, assurez-vous que le nom réservé est approprié pour cette utilisation.
 
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>Création de votre application en réservant un nouveau nom
@@ -51,10 +51,10 @@ Il est important de bien choisir le nom de votre application. Choisissez un nom 
 
 -   **Choisissez un nom court.** L'espace disponible pour afficher le nom de l'application étant souvent limité, nous vous suggérons d'utiliser le nom le plus court possible. Le nom de votre application peut comporter jusqu’à 256caractères, mais les clients ne le verront pas toujours en entier s’il est trop long.
     > [!NOTE]
-    > Le nombre de caractères réellement affichés à différents emplacements peut varier en fonction de la longueur allouée et des types de caractères utilisés dans le nom de votre application. Par exemple, dans la police Segoe UI utilisée par Windows, environ 30caractères «I» occupent le même espace que 10caractères «W». En raison de cette variation, veillez à tester votre application et vérifier l’affichage son nom de ses vignettes (si vous choisissez de superposer le nom de l’application), dans les résultats de recherche et dans l’application elle-même. Pensez également à toutes les langues dans lesquelles vous proposez votre application. N’oubliez pas que les caractères d’Asie de l’Est sont généralement plus larges que les caractères latins, ce qui signifie que moins de caractères seront affichés.
+    > Le nombre de caractères réellement affichés à différents emplacements peut varier en fonction de la longueur allouée et des types de caractères utilisés dans le nom de votre application. Par exemple, dans la police Segoe UI utilisée par Windows, environ 30caractères «I» occupent le même espace que 10caractères «W». En raison de cette variation, veillez à tester votre application et vérifier l’affichage son nom de ses vignettes (si vous choisissez de superposer le nom d’application), dans les résultats de recherche et dans l’application elle-même. Pensez également à toutes les langues dans lesquelles vous proposez votre application. N’oubliez pas que les caractères d’Asie de l’Est sont généralement plus larges que les caractères latins, ce qui signifie que moins de caractères seront affichés.
 -   **Faites preuve d’originalité.** Assurez-vous que le nom de votre application se distingue pour éviter toute confusion avec une application existante.
 -   **N’utilisez pas de noms de marque qui sont la propriété de tiers** Assurez-vous de disposer des droits d’utilisation du nom que vous réservez. Si quelqu’un d’autre a déposé le nom en tant que marque, il peut dénoncer une violation de propriété et vous ne pourrez pas continuer à utiliser ce nom. Si cela se produit après la publication de votre application, celle-ci sera retirée du Windows Store. Vous devez alors modifier le nom de votre application, ainsi que toutes les instances du nom figurant dans celle-ci et son contenu, avant de [soumettre l’application](app-submissions.md) à nouveau pour certification.
--   **Évitez d’ajouter des informations de différenciation à la fin du nom.** Si vous ajoutez des informations qui différencient plusieurs applications à la fin d’un nom, les clients risquent de passer à côté, surtout si le nom est long. En effet, toutes les applications risquent alors de présenter le même nom. Si cela est inévitable, utiliser différents logos et images d’application pour faciliter la différencier une seule application à partir d’un autre.
+-   **Évitez d’ajouter des informations de différenciation à la fin du nom.** Si vous ajoutez des informations qui différencient plusieurs applications à la fin d’un nom, les clients risquent de passer à côté, surtout si le nom est long. En effet, toutes les applications risquent alors de présenter le même nom. Si cela est inévitable, utiliser différents logos et images d’application pour faciliter la différencier d’une seule application à partir d’un autre.
 -   **N’incluez pas d'emojis dans votre nom.** Vous ne serez pas en mesure de réserver un nom qui inclut des emojis ou d’autres caractères non pris en charge.
 
 

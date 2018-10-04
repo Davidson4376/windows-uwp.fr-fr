@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, programme d’installation de l’application, AppInstaller, charger une version test
 ms.localizationpriority: medium
 ms.openlocfilehash: 6158b804e1d4ece3c76099a3f8d33d5fa562078d
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4310095"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355734"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>Créer un fichier de programme d'installation d'application avec VisualStudio
 
@@ -34,7 +34,7 @@ Vous pouvez configurer la propriété `TargetPlatformMinVersion` lorsque vous cr
 
 ### <a name="create-packages"></a>Créer des packages
 
-Pour distribuer une application via le chargement indépendant, vous devez créer un package d’application (.appx/.msix) ou d’un ensemble d’applications (.appxbundle/.msixbundle) et la publier dans un emplacement partagé.
+Pour distribuer une application via le chargement indépendant, vous devez créer un package d’application (.appx/.msix) ou un ensemble d’applications (.appxbundle/.msixbundle) et la publier dans un emplacement partagé.
 
 Pour ce faire, utilisez l'assistant **Créer des packages d'application** dans VisualStudio à l'aide des étapes suivantes.
 

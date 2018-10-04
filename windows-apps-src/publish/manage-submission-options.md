@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, mise en attente de publication, date de publication, envoi de la soumission à publier, approbation de fonctionnalité restreinte
 ms.localizationpriority: medium
 ms.openlocfilehash: 147f34c40cc5d2b612dcdd92edc0c76340cf58f7
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4311941"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355814"
 ---
 # <a name="manage-submission-options"></a>Gérer les options de soumission
 
@@ -30,7 +30,7 @@ Par défaut, nous publierons votre soumission dès qu’elle aura obtenu la cert
 
 La sélection par défaut est **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)**. Cela signifie que le processus de publication de votre soumission commencera dès qu’elle aura obtenu la certification, sauf si vous avez configuré des dates dans la section [Planification](configure-precise-release-scheduling.md) de la page **Tarification et disponibilité**.   
 
-Pour la plupart des soumissions, nous recommandons de laisser la section **Options de mise en attente de publication** définie sur cette option. Si vous souhaitez spécifier les dates auxquelles votre soumission doit être publiée, utilisez l’option **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)**. Le fait de laisser cette section définie sur l’option par défaut n’aura pas pour conséquence la publication de la soumission avant les dates que vous avez définies dans la section **Planification**. Les dates que vous avez sélectionnées dans la section **planification** servira à déterminer dès que votre produit est disponible pour les clients dans le Windows Store.
+Pour la plupart des soumissions, nous recommandons de laisser la section **Options de mise en attente de publication** définie sur cette option. Si vous souhaitez spécifier les dates auxquelles votre soumission doit être publiée, utilisez l’option **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)**. Le fait de laisser cette section définie sur l’option par défaut n’aura pas pour conséquence la publication de la soumission avant les dates que vous avez définies dans la section **Planification**. Les dates que vous avez sélectionnées dans la section **planification** servira à déterminer le moment où votre produit devient disponible pour les clients dans le Windows Store.
 
 
 ### <a name="publish-your-submission-manually"></a>Publier votre soumission manuellement
@@ -42,7 +42,7 @@ Si vous ne voulez pas encore définir de date de publication et que vous préfé
 
 Choisissez **Lancer la publication de cette soumission le** pour vous assurer que la soumission ne sera pas publiée avant une date donnée. Avec cette option, votre soumission sera publiée aussitôt que possible à la date spécifiée ou après. La date doit être postérieure de 24 heures au moins. Parallèlement à la date, vous pouvez également définir l’heure à laquelle la publication de la soumission doit démarrer. 
 
-Vous pouvez modifier cette date de publication après avoir soumis votre produit, dans la mesure qu’il n’a pas encore l’étape publier commencé. 
+Vous pouvez modifier cette date de publication après avoir soumis votre produit, tant qu’il n’a pas encore l’étape publier commencé. 
  
 Comme indiqué précédemment, si vous souhaitez spécifier certaines dates de publication pour votre soumission, utilisez l’option **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)** et laissez l’option **Options de mise en attente de publication** définie sur la sélection par défaut. L’utilisation de l’option **Lancer la publication de cette soumission le** signifie que le processus de publication de votre soumission ne démarrera qu'à cette date. Toutefois, des retards lors de la certification ou de la publication peuvent différer la publication réelle par rapport à la date demandée. 
 

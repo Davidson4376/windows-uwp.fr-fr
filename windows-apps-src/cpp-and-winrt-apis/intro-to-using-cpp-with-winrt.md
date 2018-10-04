@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, présentation
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e1563f85df6d437ce313c99df52ea319ef94a30
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: 7848a0b00e2f6a2bbaa84c413dc26f1ea7238e8e
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318741"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4350570"
 ---
 # <a name="introduction-to-cwinrt"></a>Présentation de C++/WinRT
 &nbsp;
@@ -40,6 +40,11 @@ Avec C++/WinRT, vous pouvez également implémenter vos propres classes runtime 
 
 ## <a name="visual-studio-support-for-cwinrt-and-the-vsix"></a>Prise en charge de Visual Studio pour C++/WinRT et VSIX
 Pour les modèles de projet C++/WinRT dans Visual Studio, mais aussi les propriétés et cibles MSBuild C++/WinRT, téléchargez et installez l’[extension Visual Studio (VSIX) C++/WinRT](https://aka.ms/cppwinrt/vsix) à partir de [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
+
+> [!NOTE]
+> Avec la version 1.0.181002.2 (ou version ultérieure) du projet VSIX installé, création d’un nouveau C++ / WinRT projet installe automatiquement le [package Microsoft.Windows.CppWinRT NuGet](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) correspondant à ce projet. Le package Microsoft.Windows.CppWinRT NuGet fournit améliorée C++ / WinRT projet build prise en charge, qui devient votre projet portable entre un ordinateur de développement et un agent de build (sur lequel seul le package NuGet et pas VSIX, est installé).
+>
+> Pour un projet existant&mdash;une fois que vous avez installé la version 1.0.181002.2 (ou version ultérieure) du projet VSIX&mdash;nous recommandons que vous ouvrez le projet dans Visual Studio, cliquez sur **le projet** \> **Gérer les Packages NuGet …**  \>  **Parcourir**, tapez ou collez **Microsoft.Windows.CppWinRT** dans la zone de recherche, sélectionnez l’élément dans les résultats de recherche, puis cliquez sur **installer** pour installer le package de ce projet.
 
 Vous aurez besoin de Visual Studio 2017 (vous devez au moins la version 15,6, mais nous vous recommandons d’au moins la version 15.7) et du SDK Windows version 10.0.17134.0 (Windows 10, version 1803). Si vous n’avez pas déjà installé, vous devrez installer l’option **Outils de plateforme Windows universelle C++** dans Visual Studio Installer. Et, dans les **paramètres**Windows > **mise à jour \ & sécurité** > **pour les développeurs**, choisissez l’option de **mode développeur** plutôt que l’option de **chargement indépendant d’applications** .
 

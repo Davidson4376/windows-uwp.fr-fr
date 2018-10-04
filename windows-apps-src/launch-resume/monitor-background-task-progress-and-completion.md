@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ef57c6293b37f91653b5f825881b1446e38a824b
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4309911"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355370"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>Surveiller la progression et l’achèvement des tâches en arrière-plan
 
@@ -38,7 +38,7 @@ La progression et l’achèvement des tâches en arrière-plan peuvent être sur
 ## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>Créer un gestionnaire d’événements pour gérer les tâches en arrière-plan achevées
 
 ### <a name="step-1"></a>Étape1
-Créez une fonction de gestionnaire des événements pour gérer les tâches en arrière-plan achevées. Ce code doit suivre une empreinte spécifique, qui accepte un objet [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) et un objet [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) .
+Créez une fonction de gestionnaire des événements pour gérer les tâches en arrière-plan achevées. Ce code doit suivre une empreinte spécifique, qui prend un objet [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) et un objet [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) .
 
 Utilisez l’empreinte suivante pour la méthode de Gestionnaire des événements **OnCompleted** en arrière-plan tâche.
 

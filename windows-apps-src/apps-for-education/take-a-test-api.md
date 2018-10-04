@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, uwp, éducation
 ms.localizationpriority: medium
 ms.openlocfilehash: 38596ad12ac309db5dc60e4a5183eee9bf8c7b7c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4311077"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351219"
 ---
 # <a name="take-a-test-javascript-api"></a>API JavaScript d’Examen
 
-[Examen](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) est une application UWP basée sur navigateur qui génère des évaluations en ligne verrouillé pour les tests stratégiques, ce qui permet aux enseignants de se concentrer sur l’évaluation du contenu au lieu de la façon de fournir un environnement de test sécurisé. Pour y parvenir, elle utilise une API JavaScript que n’importe quelle application web peut utiliser. L’API d’Examen prend en charge la [norme d’API de navigateur SBAC](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) pour des examens courants dont les enjeux sont importants.
+[Examen](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) est une application UWP basée sur navigateur qui génère des évaluations en ligne verrouillé pour les tests stratégiques, ce qui permet aux enseignants de se concentrer sur l’évaluation de contenu au lieu de la façon de fournir un environnement de test sécurisé. Pour y parvenir, elle utilise une API JavaScript que n’importe quelle application web peut utiliser. L’API d’Examen prend en charge la [norme d’API de navigateur SBAC](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) pour des examens courants dont les enjeux sont importants.
 
 Consultez [Informations techniques de référence sur l’application Examen](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) pour plus d’informations sur l’application. Pour obtenir de l’aide pour la résolution des problèmes, consultez [Résoudre les problèmes de Microsoft Examen avec l’observateur d’événements](troubleshooting.md).
 
@@ -32,7 +32,7 @@ Les API Examen existent dans les espaces de noms suivants. Notez que toutes les 
 
 ### <a name="security-namespace"></a>Espace de noms de sécurité
 
-L’espace de noms de sécurité vous permet de verrouiller l’appareil, vérifiez la liste des processus utilisateur et système, obtenir des adresses IP et MAC, et effacer des ressources web mises en cache.
+L’espace de noms de sécurité vous permet de verrouiller l’appareil, consultez la liste des processus utilisateur et système, obtenir des adresses IP et MAC et effacer des ressources web mises en cache.
 
 | Méthode | Description   |
 |--------|---------------|

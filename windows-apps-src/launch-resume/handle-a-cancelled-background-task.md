@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 2c78f5f43d93002b90902a7f9e5a943c7239946c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316435"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354271"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Gérer une tâche en arrière-plan annulée
 
@@ -40,7 +40,7 @@ Cette rubrique s’applique également aux tâches en arrière-plan in-process. 
 Écrivez une méthode permettant de gérer l’événement d’annulation.
 
 > [!NOTE]
-> Pour toutes les familles d’appareils, à l’exception des ordinateurs de bureau, les tâches en arrière-plan peuvent être arrêtées en cas de mémoire insuffisante de l’appareil. Si une exception de mémoire insuffisante n’est exposée ou si l’application ne gère pas, la tâche en arrière-plan est alors arrêtée sans avertissement ni déclenchement de l’événement OnCanceled. Cela permet de garantir l’expérience utilisateur de l’application au premier plan. Votre tâche en arrière-plan doit être conçue de manière à gérer ce scénario.
+> Pour toutes les familles d’appareils, à l’exception des ordinateurs de bureau, les tâches en arrière-plan peuvent être arrêtées en cas de mémoire insuffisante de l’appareil. Si une exception de mémoire insuffisante n’est exposée ou si elle ne gère pas l’application, la tâche en arrière-plan est alors arrêtée sans avertissement ni déclenchement de l’événement OnCanceled. Cela permet de garantir l’expérience utilisateur de l’application au premier plan. Votre tâche en arrière-plan doit être conçue de manière à gérer ce scénario.
 
 Créez une méthode nommée **OnCanceled** en procédant comme suit. Cette méthode constitue le point d’entrée appelé par Windows Runtime lorsqu’une demande d’annulation est formulée pour votre tâche en arrière-plan.
 
@@ -139,7 +139,7 @@ Lors de la réception d’une demande d’annulation, la méthode qui effectue l
 
 Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée. Si **\_cancelRequested** devient défini sur true, arrêter le travail de continuer.
 
-L' [exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) comprend une vérification qui arrête le rappel de minuteur périodique en cas d’annulation de la tâche en arrière-plan.
+L' [exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) comprend une vérification qui arrête le rappel de minuteur périodique si la tâche en arrière-plan est annulée.
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -261,7 +261,7 @@ else
 
 Vous pouvez télécharger l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) pour voir ces exemples de code dans le contexte des méthodes.
 
-À des fins d’illustration, l’exemple de code présente uniquement des portions de la méthode **Run** (et le minuteur de rappel) à partir de l' [exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+À des fins d’illustration, l’exemple de code présente uniquement des portions de la méthode **Run** (et le minuteur de rappel) de l' [exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666).
 
 ## <a name="run-method-example"></a>Exemple de méthode Run
 

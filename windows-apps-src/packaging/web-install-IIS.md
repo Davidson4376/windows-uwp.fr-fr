@@ -7,14 +7,14 @@ ms.date: 05/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, programme d’installation de l’application, AppInstaller, charger de manière indépendante, liées packages définis, facultatifs, serveur IIS
+keywords: Windows 10, uwp, programme d’installation de l’application, AppInstaller, charger de manière indépendante, liées packages définis, qui sont facultatifs, serveur IIS
 ms.localizationpriority: medium
 ms.openlocfilehash: 214ddd2b55bca1acecbab0a841cf2048335e7b3a
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4312123"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355774"
 ---
 # <a name="install-a-uwp-app-from-an-iis-server"></a>Installer une application UWP à partir d’un serveur IIS
 
@@ -30,7 +30,7 @@ Pour passer avec succès par le biais de ce didacticiel, vous devez les élémen
 2. Outils de développement Web et IIS 
 3. Package d’application UWP: le package d’application que vous allez distribuer
 
-Facultatif: [Projet de démarrage](https://github.com/AppInstaller/MySampleWebApp) sur GitHub. Ceci est utile si vous n’avez pas travailler avec des packages d’application, mais que vous souhaitez savoir comment utiliser cette fonctionnalité.
+Facultatif: [Projet de démarrage](https://github.com/AppInstaller/MySampleWebApp) sur GitHub. Ceci est utile si vous n’avez pas à travailler avec des packages d’application, mais que vous souhaitez savoir comment utiliser cette fonctionnalité.
 
 ## <a name="step-1---install-iis-and-aspnet"></a>Étape 1: installer IIS et ASP.NET 
 
@@ -47,11 +47,11 @@ Vous devez également installer ASP.NET 4.5 ou une version ultérieure. Pour l�
 
 ## <a name="step-2---install-visual-studio-2017-and-web-development-tools"></a>Étape 2: installer Visual Studio 2017 et les outils de développement Web 
 
-[Installer Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio) si vous n’avez pas déjà installé elle. Si vous avez déjà Visual Studio 2017, assurez-vous que les charges de travail suivantes sont installées. Si les charges de travail ne sont pas présents sur votre installation, suivez le long à l’aide de Visual Studio Installer (disponibles dans le menu Démarrer).  
+[Installer Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio) si vous n’avez pas déjà installé il. Si vous avez déjà Visual Studio 2017, vous assurer que les charges de travail suivantes sont installées. Si les charges de travail ne sont pas présents sur votre installation, suivez le long à l’aide de Visual Studio Installer (disponibles dans le menu Démarrer).  
 
-Pendant l’installation, sélectionnez le **développement Web ASP.NET et** et les autres charges de travail qui vous intéresse. 
+Pendant l’installation, sélectionnez le **développement Web ASP.NET et** et les autres charges de travail qui vous intéressez. 
 
-Une fois que l’installation est terminée, lancez Visual Studio et créez un nouveau projet (**fichier** -> **Nouveau projet**).
+Une fois que l’installation est terminée, démarrez Visual Studio et créez un nouveau projet (**fichier** -> **Nouveau projet**).
 
 ## <a name="step-3---build-a-web-app"></a>Étape 3: créer une application Web
 
@@ -61,15 +61,15 @@ Lancez Visual Studio 2017 en tant **qu’administrateur** et créez un nouveau p
 
 ## <a name="step-4---configure-iis-with-our-web-app"></a>Étape 4: configurer IIS avec notre application Web 
 
-À partir de l’Explorateur de solutions, cliquez avec le bouton droit sur le projet racine, puis sélectionnez **Propriétés**.
+Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet racine et sélectionnez **Propriétés**.
 
 Dans les propriétés de l’application web, sélectionnez l’onglet **Web** . Dans la section **serveurs** , choisissez **IIS Local** dans le menu déroulant, cliquez sur **Créer un répertoire virtuel**. 
 
 ![onglet Web](images/web-tab.png)
 
-## <a name="step-5---add-an-app-package-to-a-web-application"></a>Étape 5: ajouter un package d’application pour une application web 
+## <a name="step-5---add-an-app-package-to-a-web-application"></a>Étape 5: ajouter un package d’application à une application web 
 
-Ajoutez le package d’application que vous envisagez de distribuer les applications web. Vous pouvez utiliser le package d’application qui fait partie des fourni [des packages de projet de démarrage](https://github.com/AppInstaller/MySampleWebApp/tree/master/MySampleWebApp/packages) sur GitHub si vous n’avez pas un package d’application disponible. Le certificat (MySampleApp.cer) avec lequel le package a été signé se trouve également avec l’exemple sur GitHub. Vous devez disposer du certificat est installé sur votre appareil avant d’installer l’application (étape 9).
+Ajoutez le package d’application que vous souhaitez distribuer dans l’application web. Vous pouvez utiliser le package d’application qui fait partie des fourni [packages du projet starter](https://github.com/AppInstaller/MySampleWebApp/tree/master/MySampleWebApp/packages) sur GitHub si vous n’avez pas un package d’application disponible. Le certificat (MySampleApp.cer) avec lequel le package a été signé se trouve également avec l’exemple sur GitHub. Vous devez disposer du certificat est installé sur votre appareil avant l’installation de l’application (étape 9).
 
 Dans l’application web de projet de démarrage, un nouveau dossier a été ajouté à l’application web appelée `packages` qui contient les packages d’application doit être distribué. Pour créer le dossier dans Visual Studio, cliquez avec le bouton droit sur la racine de l’Explorateur de solutions, sélectionnez **Ajouter** -> **Nouveau dossier** et nommez-le `packages`. Pour ajouter des packages d’application dans le dossier, avec le bouton droit, cliquez sur le `packages` dossier et sélectionnez **Ajouter** -> emplacement de package**Élément existant …** et accédez à l’application. 
 
@@ -88,7 +88,7 @@ Double-cliquez sur le fichier HTML pour l’ouvrir dans la fenêtre de l’édit
 Incluez le code HTML suivant dans votre page web. La clé à appeler correctement le programme d’installation d’application consiste à utiliser le schéma personnalisé que le programme d’installation d’application inscrit avec le système d’exploitation: `ms-appinstaller:?source=`. Consultez l’exemple de code ci-dessous pour plus d’informations.
 
 > [!NOTE]
-> Vérifiez que le chemin d’accès URL spécifié, une fois le schéma personnalisé correspond à l’Url du projet dans l’onglet web de votre solution Visual Studio.
+> Vérifiez que le chemin d’accès URL spécifié, une fois le modèle personnalisé correspond à l’Url du projet dans l’onglet web de votre solution Visual Studio.
  
 ```HTML
 <html>
@@ -133,7 +133,7 @@ CheckNetIsolation.exe LoopbackExempt -s
 
 Vous devez rechercher `microsoft.desktopappinstaller_8wekyb3d8bbwe` dans la liste.
 
-Une fois la validation locale de l’installation d’application via le programme d’installation de l’application terminée, vous pouvez supprimer l’exemption de bouclage que vous avez ajouté dans cette étape par:
+Une fois que la validation locale de l’installation d’application via le programme d’installation d’application est terminée, vous pouvez supprimer l’exemption de bouclage que vous avez ajouté dans cette étape par:
 
 ''' Ligne de commande CheckNetIsolation.exe LoopbackExempt -d-n=microsoft.desktopappinstaller_8wekyb3d8bbwe
 ```

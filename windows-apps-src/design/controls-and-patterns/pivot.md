@@ -15,11 +15,11 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bb6ed36c772e5ae80a3cb801b4b6b36bb1ab18c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4309249"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352640"
 ---
 # <a name="pivot"></a>Pivot
 
@@ -49,9 +49,9 @@ Le contrôle de sélecteur de vue, tout comme [NavigationView](navigationview.md
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
-Pour obtenir courants navigation supérieur et des modèles d’onglets, nous vous recommandons d’à l’aide de [NavigationView](navigationview.md), ce qui s’adapte à différentes tailles d’écran et permet la personnalisation supérieure automatiquement.
+Pour obtenir navigation supérieur courants et modèles des onglets, nous vous recommandons d’à l’aide de [NavigationView](navigationview.md), qui s’adapte à différentes tailles d’écran et permet la personnalisation supérieure automatiquement.
 
-Toutefois, si votre navigation requiert le balayage tactile, nous recommandons d’utiliser le sélecteur de vue.
+Toutefois, si votre navigation requiert balayage tactile, nous recommandons d’utiliser le sélecteur de vue.
 
 Les autres principales différences entre les contrôles NavigationView et sélecteur de vue sont le comportement de dépassement de capacité par défaut et l’API de la navigation:
 
@@ -62,7 +62,7 @@ Les autres principales différences entre les contrôles NavigationView et séle
 
 Si l’interface utilisateur de votre application utilise le contrôle de sélecteur de vue, vous pouvez convertir Pivot à NavigationView avec le code ci-dessous.
 
-Ce code XAML crée un NavigationView avec 3 sections de contenu, comme dans l’exemple Pivot dans [créer un contrôle de sélecteur de vue](#create-a-pivot-control).
+Ce code XAML crée un NavigationView avec 3 sections de contenu, comme dans l’exemple de sélecteur de vue dans [un contrôle pivot de créer](#create-a-pivot-control).
 
 ```xaml
 <NavigationView x:Name="rootNavigationView" Header="Category Title"
@@ -116,7 +116,7 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 }
 ```
 
-Ce code imite l’expérience de navigation intégrée du contrôle Pivot, moins l’expérience de balayage tactile entre les sections de contenu. Toutefois, comme vous pouvez le constater, vous pouvez également personnaliser plusieurs points, y compris la transition animée, paramètres de navigation et des fonctionnalités de pile.
+Ce code simule l’expérience de navigation intégrée du contrôle Pivot, moins l’expérience tactile-balayage entre les sections de contenu. Toutefois, comme vous pouvez le constater, vous pouvez également personnaliser plusieurs points, y compris la transition animée, paramètres de navigation et des fonctionnalités de pile.
 
 ## <a name="create-a-pivot-control"></a>Créer un contrôle Pivot
 

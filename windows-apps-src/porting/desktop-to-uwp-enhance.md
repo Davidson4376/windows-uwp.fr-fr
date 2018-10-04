@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 392f8166e16c028a57bc9e27039a9884f1d9714a
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4320351"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355744"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Améliorer votre application de bureau pour Windows10
 
@@ -78,7 +78,7 @@ Vous êtes maintenant prêt à ajouter des expériences modernes qui se déclenc
 
 :white_check_mark: **D’abord, choisissez les expériences que vous voulez ajouter**
 
-Vous avez le choix parmi une grande variété. Par exemple, vous pouvez simplifier votre flux de bons de commande à l’aide des API de monétisation ou attirer l’attention vers votre application lorsque vous avez quelque chose d’intéressant à partager, par exemple, une nouvelle image un autre utilisateur a validé.
+Vous avez le choix parmi une grande variété. Par exemple, vous pouvez simplifier votre flux de bons de commande à l’aide des API de monétisation ou attirer l’attention vers votre application lorsque vous avez quelque chose d’intéressant à partager, par exemple, une nouvelle image qui un autre utilisateur a validé.
 
 ![Toast](images/desktop-to-uwp/toast.png)
 

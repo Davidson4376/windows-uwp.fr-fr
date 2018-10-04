@@ -11,21 +11,21 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 959e056d5edf5e1fe7a1c51a2f855c9e11512cb0
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4312691"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351056"
 ---
 # <a name="product-declarations"></a>Déclarations de produit
 
-La section **déclarations de produit** de la page de [Propriétés](enter-app-properties.md) du [processus de soumission](app-submissions.md) permet de vous assurer que votre application s’affiche correctement et proposée à un ensemble approprié de clients et de voir les à comment ils peuvent utiliser votre application.
+La section **déclarations de produit** de la page de [Propriétés](enter-app-properties.md) du [processus de soumission](app-submissions.md) permet de vous assurer que votre application s’affiche correctement et proposée à un ensemble approprié de clients et permet de les comprennent comment ils peuvent utiliser votre application.
 
-Les sections suivantes décrivent certaines des déclarations et ce que vous devez prendre en compte lors de la détermination si chaque déclaration s’applique à votre application. Notez que deux de ces déclarations sont vérifiées par défaut (comme décrit ci-dessous). En fonction de la catégorie de votre produit, vous pouvez également voir des déclarations supplémentaires. Veillez à passer en revue toutes les déclarations et vous assurer qu’ils reflètent précisément votre soumission.
+Les sections suivantes décrivent certaines des déclarations et ce que vous devez prendre en compte lors de la détermination si chaque déclaration s’applique à votre application. Notez que deux de ces déclarations sont activées par défaut (comme décrit ci-dessous). En fonction de la catégorie de votre produit, vous pouvez également voir des déclarations supplémentaires. Veillez à passer en revue toutes les déclarations et vous assurer qu’ils reflètent précisément votre soumission.
 
-## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>Cette application permet aux utilisateurs d’effectuer des achats, mais n’utilise pas le système de commerce de Microsoft Store.
+## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>Cette application permet aux utilisateurs d’effectuer des achats, mais n’utilise pas le système de commerce Microsoft Store.
 
-Pour presque chaque soumission, vous devez laisser cette case désactivée, depuis les applications qui offrent des possibilités d’acheter des éléments qui sont ou peuvent être consommés ou utilisés au sein de votre application doivent utiliser l’API d’achat dans l’application Microsoft Store pour créer et soumettre les modules complémentaires. Par le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), les applications qui ont été créées et soumises avant le 29 juin 2015 peuvent continuer à offrir la fonctionnalité d’achat dans l’application sans utiliser le moteur de commerce de Microsoft, tant que la fonctionnalité d’achat est conforme à la [ Stratégies du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions). Si cela s’applique à votre application, vous devez activer cette case. Sinon, laissez-la désactivée.
+Pour presque chaque soumission, vous devez laisser cette case désactivée, depuis les applications qui offrent des possibilités d’acheter des éléments qui sont ou peuvent être consommés ou utilisés au sein de votre application doivent utiliser l’API d’achat dans l’application Microsoft Store pour créer et soumettre les modules complémentaires. Par le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), les applications qui ont été créées et soumises avant le 29 juin 2015, peuvent continuer à offrir la fonctionnalité d’achat dans l’application sans utiliser le moteur de commerce de Microsoft, tant que la fonctionnalité d’achat est conforme à la [ Stratégies du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions). Si cela s’applique à votre application, vous devez activer cette case. Sinon, laissez-la désactivée.
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>Cette application a fait l'objet de tests pour voir si elle est conforme aux recommandations d'accessibilité.
 
@@ -50,7 +50,7 @@ Pour plus d’informations, voir [l’accessibilité](../design/accessibility/ac
 
 Cette case est cochée par défaut, pour permettre aux clients d’installer votre application vers le stockage amovible ou externe du lecteur multimédia tel qu’une carte SD ou un volume non système, comme un lecteur externe. (Pour Windows Phone 8.1, cela a été précédemment storemanifest.Xml.)
 
-Si vous souhaitez empêcher l’installation d’autres lecteurs ou le stockage amovible votre application et autoriser uniquement l’installation sur le disque dur interne sur leur appareil, décochez cette case.
+Si vous souhaitez empêcher que votre application en cours d’installation pour les autres lecteurs ou le stockage amovible et autoriser uniquement l’installation sur le disque dur interne sur leur appareil, décochez cette case.
 
 Notez qu’il n’existe aucune option pour restreindre installation afin qu’une application peut *uniquement* être installé sur un support de stockage amovible.
 
@@ -64,7 +64,7 @@ Si vous voulez empêcher l’insertion des données de votre application dans le
 
 ## <a name="this-app-sends-kinect-data-to-external-services"></a>Cette application envoie des données de Kinect à des services externes. 
 
-Si votre application utilise des données de Kinect et l’envoie à n’importe quel service externe, vous devez cocher cette case.
+Si votre application utilise les données de Kinect et l’envoie à n’importe quel service externe, vous devez cocher cette case.
 
 
 

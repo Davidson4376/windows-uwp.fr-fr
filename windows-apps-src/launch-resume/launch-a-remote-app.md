@@ -7,15 +7,15 @@ ms.date: 02/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, projet rome
+keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, le projet «Rome»
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
 ms.openlocfilehash: 58a420d73ba4a0cd51f909fd5d7d417af1cfb38f
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319274"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4357090"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>Lancer une application sur un appareil distant
 

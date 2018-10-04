@@ -8,19 +8,19 @@ ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, packages facultatifs, ensemble connexe, extension de package, visual studio
+keywords: Windows 10, uwp, packages facultatifs, ensemble connexe, empaqueter une extension, visual studio
 ms.localizationpriority: medium
 ms.openlocfilehash: 4864bdaa1f32b980c5c8b159ca71bb6a56da4ec5
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4317816"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351209"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>Packages facultatifs et création d’ensembles connexes
-Les packages facultatifs intègrent du contenu qui peut être inclus dans un package principal. Ceux-ci sont utiles pour diviser une application pour les restrictions de taille, le contenu téléchargeable (DLC), ou à distribuer un contenu supplémentaire distinct à partir de votre application d’origine.
+Les packages facultatifs intègrent du contenu qui peut être inclus dans un package principal. Celles-ci sont utiles pour diviser une application pour les restrictions de taille, le contenu téléchargeable (DLC), ou à distribuer un contenu supplémentaire distinct à partir de votre application d’origine.
 
-Ensembles connexes sont une extension de packages facultatifs, ils permettent de mettre en œuvre un ensemble de versions strict parmi les packages facultatifs et les principaux. Elles vous permettent également de charger du code natif (C++) des packages facultatifs. 
+Ensembles connexes sont une extension de packages facultatifs, ils permettent de mettre en œuvre un ensemble de versions strict parmi tous les packages facultatifs et les principaux. Elles vous permettent également de charger du code natif (C++) des packages facultatifs. 
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -41,32 +41,32 @@ Pour créer un package facultatif dans Visual Studio, vous devez:
 1. Assurez-vous de votre application **Min Version de la plateforme cible** est défini sur: 10.0.15063.0.
 2. À partir de votre projet de **package principal** , ouvrez le `Package.appxmanifest` fichier. Accédez à l’onglet «Packages» et prenez note de votre **nom de famille de package**, qui est tout ce qui précède le caractère «_».
 3. À partir de votre projet de **package facultatif** , bouton droit sur le `Package.appxmanifest` et sélectionnez **Ouvrir avec > Éditeur XML (texte)**.
-4. Recherchez le `<Dependencies>` élément dans le fichier. Ajoutez la ligne suivante:
+4. Recherchez le `<Dependencies>` élément dans le fichier. Ajoutez le code suivant:
 
 ```XML
 <uap3:MainPackageDependency Name="[MainPackageDependency]"/>
 ```
 
-Remplacez `[MainPackageDependency]` avec votre **nom de famille de package** à partir de l’étape 2. Cela spécifiera que votre **package facultatif** dépend de votre **package principal**.
+Remplacer `[MainPackageDependency]` avec votre **nom de famille de package** à l’étape 2. Cela spécifiera que votre **package facultatif** dépend de votre **package principal**.
 
 Une fois que vous avez votre dépendances du package configurer des étapes 1 à 4, vous pouvez continuer à développer comme vous le feriez normalement. Si vous souhaitez charger du code à partir du package facultatif dans le package principal, vous devez générer un ensemble connexe. Consultez la section [associé définit](#related_sets) pour plus d’informations.
 
-Visual Studio peut être configuré pour redéployer votre package principal à chaque fois que vous déployez un package facultatif. Pour définir les dépendances de build dans Visual Studio, vous devez:
+Visual Studio peut être configuré pour redéployer votre package principal à chaque fois que vous déployez un package facultatif. Pour définir la dépendance de génération dans Visual Studio, vous devez:
 
 - Cliquez avec le bouton droit sur le projet de package facultatif et sélectionnez **dépendances de Build > dépendances du projet …**
-- Le projet de package principal, sélectionnez «OK». 
+- Vérifiez le projet de package principal et sélectionnez «OK». 
 
 Maintenant, chaque fois que vous entrez F5 ou que vous générez un projet de package facultatif, Visual Studio générez le projet de package principal tout d’abord. Cela permet de garantir que votre projet principal et les projets facultatives sont synchronisés.
 
 ## Ensembles connexes<a name="related_sets"></a>
 
-Si vous souhaitez charger du code à partir d’un package facultatif dans le package principal, vous devez générer un ensemble connexe. Pour générer un ensemble connexe, votre package principal et le package facultatif doivent être étroitement associés. Les métadonnées pour les ensembles connexes sont spécifiée dans le fichier .appxbundle ou .msixbundle du package principal. Visual Studio vous permet d’obtenir les métadonnées correcte dans vos fichiers. Pour configurer la solution de votre application pour des ensembles connexes, procédez comme suit:
+Si vous souhaitez charger du code à partir d’un package facultatif dans le package principal, vous devez générer un ensemble connexe. Pour générer un ensemble connexe, votre package principal et le package facultatif doivent être étroitement. Les métadonnées pour les ensembles connexes sont spécifiée dans le fichier .appxbundle ou .msixbundle du package principal. Visual Studio vous permet d’obtenir les métadonnées correcte dans vos fichiers. Pour configurer la solution de votre application pour des ensembles connexes, procédez comme suit:
 
 1. Cliquez avec le bouton droit sur le projet de package principal, sélectionnez **Ajouter > nouvel élément …**
-2. À partir de la fenêtre, recherchez les modèles installés pour «.txt» et ajoutez un nouveau fichier de texte.
+2. À partir de la fenêtre, recherchez les modèles installés pour «.txt» et ajoutez un nouveau fichier texte.
 > [!IMPORTANT]
 > Le nouveau fichier texte doit être nommé: `Bundle.Mapping.txt`.
-3. Dans le `Bundle.Mapping.txt` fichier que vous allez spécifier les chemins d’accès relatifs à des projets de package facultatif ou les packages externes. Un échantillon `Bundle.Mapping.txt` fichier doit ressembler à ceci:
+3. Dans le `Bundle.Mapping.txt` fichier que vous allez spécifier les chemins d’accès relatifs à des projets de package facultatif ou packages externes. Un échantillon `Bundle.Mapping.txt` fichier doit ressembler à ceci:
 
 ```syntax
 [OptionalProjects]
@@ -79,8 +79,8 @@ Si vous souhaitez charger du code à partir d’un package facultatif dans le pa
 
 Lorsque votre solution est configurée de cette façon, Visual Studio va créer un manifeste de l’ensemble d’applications pour le package principal avec toutes les métadonnées requises pour les ensembles connexes. 
 
-Notez que comme les packages facultatifs, un `Bundle.Mapping.txt` fichier d’ensembles connexes fonctionne uniquement sur Windows 10, version 1703. En outre, cible plateforme Min Version de votre application doit être définie sur 10.0.15063.0.
+Notez que comme les packages facultatifs, un `Bundle.Mapping.txt` fichier d’ensembles connexes fonctionne uniquement sur Windows 10, version 1703. En outre, la plateforme Min Version de votre application cible doit être définie à 10.0.15063.0.
 
 ## Problèmes connus<a name="known_issues"></a>
 
-Débogage d’un projet facultatif ensemble connexe n’est actuellement pas prise en charge dans Visual Studio. Pour contourner ce problème, vous pouvez déployer et lancer l’activation (Ctrl + F5) et attacher manuellement le débogueur à un processus. Pour joindre le débogueur, passez le menu «Débogage» dans Visual Studio, sélectionnez «attacher au processus» et attachez le débogueur au **processus d’application principale**.
+Débogage d’un projet facultatif ensemble connexe n’est actuellement pas pris en charge dans Visual Studio. Pour contourner ce problème, vous pouvez déployer et lancer l’activation (Ctrl + F5) et attacher manuellement le débogueur à un processus. Pour joindre le débogueur, consultez le menu «Débogage» dans Visual Studio, sélectionnez «attacher au processus» et attachez le débogueur au **processus principal de l’application**.

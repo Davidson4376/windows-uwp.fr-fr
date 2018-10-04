@@ -7,14 +7,14 @@ ms.date: 07/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10 uwp, application azure ad, aad, utilisateur, groupe, plusieurs utilisateurs, multiutilisateur
+keywords: Windows 10 uwp, application azure ad, aad, utilisateur, groupe, plusieurs utilisateurs, multi-utilisateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 97502a0a2863ed6f7ab2ce5d842fbebc1ae8091c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315225"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4361144"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-dev-center-account"></a>Ajouter des utilisateurs, des groupes et des applications AzureAD à votre compte du Centre de développement
 
@@ -134,7 +134,7 @@ Vous pouvez ajouter un groupe à votre compte du Centre de développement à par
 Si vous souhaitez accorder à un nouveau groupe l’accès au Centre de développement, vous pouvez créer un groupe dans la section **Utilisateurs**. Notez que le groupe sera créé non seulement dans votre compte du Centre de développement, mais également dans l’annuaire de votre organisation.
 
 1.  Dans la page **utilisateurs** (sous **paramètres de compte**), cliquez sur **Ajouter des groupes**.
-2.  Sur la page suivante, sélectionnez **un nouveau groupe**.
+2.  Sur la page suivante, sélectionnez le **Nouveau groupe**.
 3.  Entrez le nom d’affichage du nouveau groupe.
 4.  Spécifiez le ou les [rôles ou autorisations personnalisées](set-custom-permissions-for-account-users.md) attribués au groupe. Tous les membres du groupe seront en mesure d’accéder à votre compte du Centre de développement avec les autorisations que vous appliquez au groupe, quels que soient les rôles/autorisations associés à leur compte individuel.
 5.  Dans la liste qui s’affiche, sélectionnez les utilisateurs à attribuer au nouveau groupe. Vous pouvez utiliser la zone de recherche pour rechercher des utilisateurs spécifiques.
@@ -170,7 +170,7 @@ Si vous souhaitez accorder à un nouveau compte d’application AzureAD l’acc�
 > Si vous utilisez principalement cette application AzureAD pour vous authentifier auprès du Centre de développement et que vous n’avez pas besoin de permettre à des utilisateurs d’y accéder directement, vous pouvez saisir une adresse valide dans les champs **URL de réponse** et **URI ID d’application**, à condition que ces valeurs ne soient pas utilisées par une autre application AzureAD de votre annuaire.
 
 1.  Dans la page **utilisateurs** (sous **paramètres de compte**), sélectionnez **Ajouter des applications Azure AD**.
-2.  Sur la page suivante, sélectionnez **application nouvel Azure AD**.
+2.  Sur la page suivante, sélectionnez **l’application nouvel Azure AD**.
 3.  Renseignez le champ **URL de réponse** pour la nouvelle application Azure AD. Il s’agit de l’URL qui permet aux utilisateurs de se connecter et d’utiliser votre application Azure AD (parfois également désignée sous le terme d’URL de l’application ou d’URL de connexion). L’**URL de réponse** ne peut pas comporter plus de 256caractères et doit être unique dans votre annuaire.
 4.  Renseignez le champ **URI ID d’application** pour la nouvelle application AzureAD. Il s’agit d’un identificateur logique pour l’application Azure AD qui est présenté lors de l’envoi d’une demande d’authentification unique à Azure AD. Notez que l’**URI ID d’application** doit être unique pour chaque application Azure AD de votre annuaire et ne doit pas comporter plus de 256 caractères. Pour plus d’informations sur l’**URI ID d’application**, voir [Intégration d’applications à Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant).
 5.  Dans la section **Rôles**, spécifiez le ou les [rôles ou autorisations personnalisées](set-custom-permissions-for-account-users.md) attribués à l’application AzureAD.
