@@ -39,6 +39,7 @@
 ## [Boutons](controls-and-patterns/buttons.md)
 ## [Case à cocher](controls-and-patterns/checkbox.md)
 ## [Sélecteur de couleurs](controls-and-patterns/color-picker.md)
+## [Menu volant de barre de commandes](controls-and-patterns/command-bar-flyout.md)
 ## [Carte de visite](controls-and-patterns/contact-card.md)
 ## [Date et heure](controls-and-patterns/date-and-time.md)
 ### [Sélecteur de dates du calendrier](controls-and-patterns/calendar-date-picker.md)
@@ -56,7 +57,8 @@
 ## [Images et pinceaux image](controls-and-patterns/images-imagebrushes.md)
 ## [Contrôles pour l’entrée manuscrite](controls-and-patterns/inking-controls.md)
 ## [Listes](controls-and-patterns/lists.md)
-### [Affichage Liste et affichage Grille](controls-and-patterns/listview-and-gridview.md)
+### [Zone de liste modifiable](controls-and-patterns/combo-box.md)
+### [Mode Liste et affichage Grille](controls-and-patterns/listview-and-gridview.md)
 ### [Modèles et conteneurs d’éléments](controls-and-patterns/item-containers-templates.md)
 ### [Modèles d’éléments d'affichage Liste](controls-and-patterns/item-templates-listview.md)
 ### [Modèles d’éléments d'affichage Grille](controls-and-patterns/item-templates-gridview.md)
@@ -99,7 +101,8 @@
 ## [Couleur](style/color.md)
 ## [Typographie](style/typography.md)
 ## Icônes
-### [Vue d'ensemble](style/icons.md)
+### [Présentation](style/icons.md)
+### [Icônes et logos d’application](style/app-icons-and-logos.md)
 ### [Icônes Segoe MDL2](style/segoe-ui-symbol-font.md)
 ## [Acrylique](style/acrylic.md)
 ## [Effet Révéler](style/reveal.md)
@@ -126,7 +129,6 @@
 
 # Shell
 ## [Vignettes](shell/tiles-and-notifications/creating-tiles.md)
-### [Recommandations en matière de ressources de vignette et d’icône](shell/tiles-and-notifications/app-assets.md)
 ### [Vignettes secondaires](shell/tiles-and-notifications/secondary-tiles.md)
 #### [Indications](shell/tiles-and-notifications/secondary-tiles-guidance.md)
 #### [Épingler les vignettes secondaires](shell/tiles-and-notifications/secondary-tiles-pinning.md)
