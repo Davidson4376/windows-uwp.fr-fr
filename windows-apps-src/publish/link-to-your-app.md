@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, lien, protocole windows store, lien vers une application, lien vers application
 ms.localizationpriority: medium
 ms.openlocfilehash: 0025321aa73a66cc0a976bd347e613de3c3c4765
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4361324"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4386439"
 ---
 # <a name="link-to-your-app"></a>Créer un lien vers votre application
 

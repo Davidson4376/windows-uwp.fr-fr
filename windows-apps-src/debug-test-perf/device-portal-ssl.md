@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, le portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 1192c200cd42ab28cc7e763c06fd8a5638aa3400
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4358871"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4383355"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>Configurer le Portail d’appareil avec un certificat SSL personnalisé
 Dans Windows 10 Creators Update, Windows Device Portal ajouté un moyen pour les administrateurs d’appareil installer un certificat personnalisé à utiliser dans les communications HTTPS. 
@@ -24,7 +24,7 @@ Pendant que vous pouvez le faire sur votre propre PC, cette fonctionnalité est 
 
 Par exemple, une société peut avoir une autorité de certification (CA) qu’il utilise pour signer des certificats pour les sites Web intranet pris en charge via le protocole HTTPS. Cette fonctionnalité est l’abréviation d’infrastructure. 
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 Par défaut, Device Portal génère une autorité de certification racine auto-signé et qui utilise ensuite pour signer des certificats SSL pour qu’il est à l’écoute sur chaque point de terminaison. Cela inclut les `localhost`, `127.0.0.1`, et `::1` (localhost IPv6).
 
 Vous trouverez également des nom d’hôte de l’appareil (par exemple, `https://LivingRoomPC`) et chaque lien-local l’adresse IP attribuée à l’appareil (jusqu'à deux [IPv4, IPv6] par carte réseau). Vous pouvez voir les adresses IP de lien-local pour un appareil en fonction de l’outil de mise en réseau dans le portail d’appareil. Ils peuvent commencer avec `10.` ou `192.` pour IPv4, ou `fe80:` pour IPv6. 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bed06d5f9f43acd5aa4ec5ff7b2b7139ad0dd26f
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4353470"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4384098"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Étendre votre application de bureau avec des composants UWP modernes
 
@@ -85,7 +85,7 @@ Cette image montre une application Windows Forms qui ouvre une interface utilisa
 ![adaptive-design](images/desktop-to-uwp/extend-xaml-ui.png)
 
 >[!NOTE]
->Cet exemple montre une UI XAML en ajoutant un projet UWP à la solution. Qui est l’approche pris en charge stable affichant des interfaces utilisateur XAML dans une application de bureau. L’alternative à cette approche consiste à ajouter des contrôles UWP XAML directement à votre application de bureau à l’aide d’une île XAML. Îles XAML sont actuellement disponibles sous forme d’un version préliminaire pour développeurs. Bien que nous vous encourageons à les tester dans votre propre code prototype maintenant, nous ne recommandons pas que vous les utiliser dans le code de production pour l’instant. Ces API et les contrôles continueront à mûrir et stabiliser dans les futures versions de Windows. Pour en savoir plus sur XAML (îles), voir [les contrôles UWP dans les applications de bureau](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
+>Cet exemple montre une UI XAML en ajoutant un projet UWP à la solution. C’est l’approche stable pris en charge à l’affichage des interfaces utilisateur XAML dans une application de bureau. L’alternative à cette approche consiste à ajouter des contrôles XAML UWP directement à votre application de bureau à l’aide d’une île XAML. Îles XAML sont actuellement disponibles sous forme d’un version préliminaire pour développeurs. Bien que nous vous encourageons à les tester dans votre propre code prototype maintenant, nous ne recommandons pas que vous les utiliser dans le code de production pour l’instant. Ces API et les contrôles continuera à mûrir et stabiliser dans les futures versions de Windows. Pour en savoir plus sur XAML (îles), voir [les contrôles UWP dans les applications de bureau](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="the-design-pattern"></a>Modèle de conception
 
@@ -333,7 +333,7 @@ Nommez le service d’application et indiquez le nom de la classe de point d’e
 
 ### <a name="test-the-app-service"></a>Tester le service d’application
 
-Testez votre service en l'appelant à partir d’une autre application. Ce code peut être une application de bureau par exemple, une application Windows forms ou toute autre application UWP.
+Testez votre service en l'appelant à partir d’une autre application. Ce code peut être une application de bureau par exemple, une application Windows forms ou une autre application UWP.
 
 > [!NOTE]
 > Ce code fonctionne uniquement si vous avez correctement défini la propriété ``PackageFamilyName`` de la classe ``AppServiceConnection``. Vous pouvez obtenir ce nom en appelant ``Windows.ApplicationModel.Package.Current.Id.FamilyName`` dans le contexte du projet UWP. Consultez [Créer et utiliser un service d’application](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service).
