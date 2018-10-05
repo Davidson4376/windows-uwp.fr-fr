@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4351183"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4388038"
 ---
 # <a name="enterprise"></a>Entreprise
 
@@ -180,7 +180,7 @@ Vous disposez d’options pour la distribution des applications aux utilisateurs
 | Rubrique | Description |
 |-------|-------------|
 | [Distribuer des applications métier aux entreprises](https://msdn.microsoft.com/library/windows/apps/mt608995) | Vous pouvez publier des applications cœur de métier directement aux entreprises pour une acquisition en volume par le biais du Microsoft Store pour entreprises, sans mettre les applications à grande échelle à la disposition du public. |
-| [Charger la version test des applications](https://technet.microsoft.com/library/mt269549) | Lorsque vous chargez de manière indépendante une application, vous déployez un package d’application signée sur un appareil. Vous conservez la signature, l’hébergement et le déploiement de ces applications. Le processus de chargement indépendant d’applications est simplifié pour Windows 10.             |
+| [Charger une version test des applications](https://technet.microsoft.com/library/mt269549) | Lorsque vous chargez de manière indépendante une application, vous déployez un package d’application signée sur un appareil. Vous conservez la signature, l’hébergement et le déploiement de ces applications. Le processus de chargement indépendant d’applications est simplifié pour Windows 10.             |
 | [Publier des applications dans le Microsoft Store](https://dev.windows.com/publish) | Le Microsoft Store unifié vous permet de publier et de gérer toutes vos applications pour tous les appareils Windows. Personnalisez la disponibilité de votre application à l’aide d’une tarification par marché, de contrôles de distribution et de visibilité et d’autres options. |
 
 ## <a name="enterprise-uwp-samples"></a>Exemples d’entreprise UWP

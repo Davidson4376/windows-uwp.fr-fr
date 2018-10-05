@@ -2,7 +2,7 @@
 author: QuinnRadich
 title: Quelles sont les nouveautés dans la documentation Windows en août 2018 - développer des applications UWP
 description: Nouvelles fonctionnalités, des vidéos, des exemples et des conseils aux développeurs ont été ajoutées à la documentation du développeur Windows 10 août 2018.
-keywords: Nouveautés, mise à jour, fonctionnalités, conseils aux développeurs, Windows 10, août
+keywords: Quelles sont les nouveautés, mise à jour, fonctionnalités, conseils aux développeurs, Windows 10, août
 ms.author: quradic
 ms.date: 08/14/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c294dedc8e19605bc2cee0308022bed8624df57e
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4350765"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4388613"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en août 2018
 
@@ -28,27 +28,27 @@ La documentation du développeur Windows est constamment mise à jour afin d'int
 
 Les fonctionnalités suivantes ont été ajoutées à Windows les builds Insider Preview, disponibles via le programme [Windows Insider](https://insider.windows.com/) .
 
-* La [Bibliothèque de l’interface utilisateur de Windows](https://aka.ms/winui-docs) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments interfact d’utilisateur pour les applications UWP. Ces packages sont également compatible avec les versions antérieures de Windows 10, afin que votre application fonctionne même si vos utilisateurs n’ont pas la dernière version du système d’exploitation.
+* La [Bibliothèque d’interface utilisateur Windows](https://aka.ms/winui-docs) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments interfact d’utilisateur pour les applications UWP. Ces packages sont également compatible avec les versions antérieures de Windows 10, afin que votre application fonctionne même si vos utilisateurs n’ont pas la dernière version du système d’exploitation.
 
 * [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button), [bouton partagé](../design/controls-and-patterns/buttons.md#create-a-split-button)et [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) fournissent des contrôles de bouton avec des fonctionnalités spécialisées pour améliorer l’interface utilisateur de votre application.
 
 ![Un bouton partagé pour la sélection de couleur de premier plan](../design/controls-and-patterns/images/split-button-rtb.png)
 
-* NavigationView prend désormais en charge la [navigation en haut](../design/controls-and-patterns/navigationview.md), pour les cas dans lesquels votre application a un petit nombre d’options de navigation et requiert davantage d’espace pour le contenu de votre application.
+* NavigationView prend désormais en charge la [navigation en haut](../design/controls-and-patterns/navigationview.md), pour les cas dans lesquels votre application a un petit nombre d’options de navigation et nécessitent plus d’espace pour le contenu de votre application.
 
 * TreeView a été amélioré pour prendre en charge [liaison de données, les modèles, d’élément et de glisser -déplacer.](../design/controls-and-patterns/tree-view.md)
 
-### <a name="package-support-framework"></a>Infrastructure de prise en charge de package
+### <a name="package-support-framework"></a>Infrastructure prise en charge du package
 
 L’infrastructure de prise en charge de package est un kit open source qui vous permet d’appliquer des correctifs à votre application win32 lorsque vous n’avez pas accès au code source, afin qu’il puisse exécuter dans un conteneur MSIX.
 
-Pour en savoir plus, voir [runtime d’appliquer des correctifs à un package MSIX à l’aide de l’infrastructure de prise en charge de Package](../porting/package-support-framework.md).
+Pour en savoir plus, voir [l’exécution d’appliquer des correctifs à un package MSIX à l’aide de l’infrastructure de prise en charge du Package](../porting/package-support-framework.md).
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
 ### <a name="web-api-extensions"></a>Extensions de l’API Web
 
-Une liste des [extensions d’API Microsoft héritées](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions) a été ajoutée à la documentation Mozilla Developer Network pour le développement entre les navigateurs web. Ces extensions d’API sont propres à Internet Explorer ou Microsoft Edge et complément les informations existantes sur le support de navigateur et de compatibilité dans la documentation du web MDN. Microsoft hérités [extensions CSS](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions) et [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions) sont également disponibles, et vous pouvez trouver web riches informations sur les API à partir de MDN exposées directement en [Code Visual Studio.](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
+Une liste des [extensions d’API Microsoft héritées](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions) a été ajoutée à la documentation Mozilla Developer Network pour le développement entre les navigateurs web. Ces extensions d’API sont propres à Internet Explorer ou Microsoft Edge et complément les informations existantes sur le support de navigateur et de compatibilité dans la documentation du web MDN. Microsoft hérité [extensions CSS](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions) et [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions) sont également disponibles, et vous pouvez trouver web riches informations sur les API à partir de MDN exposées directement dans [Code Visual Studio.](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
 
 ### <a name="cwinrt-code-examples"></a>C++ / exemples de WinRT Code
 
@@ -66,7 +66,7 @@ Le plug-in Xbox Live pour Unity prend en charge pour l’ajout de signature de X
 
 ### <a name="one-dev-question"></a>Question sur le développement
 
-Dans la série de vidéos Question sur le développement, les développeurs Microsoft longtime couvrent une série de questions sur le développement Windows, la culture de l’équipe et historique. Voici les questions les plus récentes que nous avons répondu à!
+Dans la série de vidéos Question sur le développement, les développeurs Microsoft longtime décrire une série de questions sur le développement Windows, la culture de l’équipe et l’historique. Voici les dernières questions que nous avons répondu!
 
 Raymond Chen:
 

@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4353246"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4393210"
 ---
 # <a name="reveal-highlight"></a>Principales fonctionnalités de révéler
 
@@ -266,7 +266,7 @@ Lorsque vous activez révéler sur un contrôle personnalisé ou remodélisé ou
 * Pour les éléments de commandes adjacents qui sont si proches qu’ils se touchent: ajoutez une marge de 1pixel entre les deuxéléments. 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
-### <a name="do"></a>Faire:
+### <a name="do"></a>Effectuez:
 - Utilisez Révéler sur des éléments sur lesquels l'utilisateur peut agir (barres de commandes, menus de navigation)
 - Utilisez Révéler dans les regroupements d’éléments interactifs qui n’ont pas de séparateurs visuels par défaut (listes, rubans)
 - Utilisez Révéler dans les zones à densité élevée d'éléments interactifs (scénarios de commandes)

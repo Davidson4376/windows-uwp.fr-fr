@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store, API de l’utilisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4350795"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4393707"
 ---
 # <a name="get-daily-app-usage"></a>Obtenir l’utilisation d’applications quotidiennes
 
 Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données d’utilisation agrégées (ne pas y compris Xbox en mode multijoueur) au format JSON pour une application au cours de la plage de dates donnée (90 derniers jours uniquement) et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport d’utilisation](../publish/usage-report.md) dans le tableau de bord du centre de développement Windows.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
@@ -90,14 +90,14 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | applicationId             | chaîne  | L’ID Store de l’application pour laquelle vous récupérez les données d’utilisation.          |
 | applicationName           | chaîne  | Nom d’affichage de l’application.                                              |
 | deviceType                | chaîne  | L’une des chaînes suivantes qui spécifie le type d’appareil où l’utilisation s’est produite:<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**Tablette**</li><li>**IoT**</li><li>**Serveur**</li><li>**Holographic**</li><li>**Inconnu**</li></ul>                                                                                                         |
-| packageVersion            | chaîne  | La version du package dans lequel l’utilisation s’est produite.                          |
+| packageVersion            | chaîne  | La version du package où l’utilisation s’est produite.                          |
 | marché                    | chaîne  | Le code pays ISO 3166 du marché dans lequel le client a utilisé votre application. |
 | subscriptionName          | chaîne  | Indique si l’utilisation a été par le biais de Xbox Game Pass.                            |
 | dailySessionCount         | long    | Le nombre de sessions utilisateur sur ce jour.                                  |
-| engagementDurationMinutes | double  | Les minutes dans lequel les utilisateurs sont activement à l’aide de votre application mesurée par une période distincte, qui commence au lance de l’application (début du processus) et de fin lorsqu’il termine (fin du processus) ou après une période d’inactivité.             |
+| engagementDurationMinutes | double  | Minutes où les utilisateurs sont activement à l’aide de votre application mesurée par une période distincte, qui commence au lance de l’application (début du processus) et se termine lorsqu’il termine (fin du processus) ou après une période d’inactivité.             |
 | dailyActiveUsers          | long    | Le nombre de clients à l’aide de l’application ce jour.                           |
 | dailyActiveDevices        | long    | Nombre d’appareils utilisés quotidiennement pour interagir avec votre application par tous les utilisateurs.  |
-| dailyNewUsers             | long    | Le nombre de clients ayant utilisé votre application pour la première fois ce jour-là.    |
+| dailyNewUsers             | long    | Le nombre de clients ayant utilisé votre application pour la première fois ce jour.    |
 | monthlyActiveUsers        | long    | Le nombre de clients à l’aide de l’application ce mois.                         |
 | monthlyActiveDevices      | long    | Le nombre d’appareils exécutant votre application pour une période donnée au cours du temps, qui commence au lance de l’application (début du processus) et de fin lorsqu’il termine (fin du processus) ou après une période d’inactivité.                                      |
 | monthlyNewUsers           | long    | Le nombre de clients ayant utilisé votre application pour la première fois ce mois.  |

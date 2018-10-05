@@ -11,20 +11,20 @@ ms.technology: uwp
 keywords: Windows 10, uwp, passez en revue, commentaire, réviseur
 ms.localizationpriority: medium
 ms.openlocfilehash: 4500ebe7406db45a089f3ceba10c1d1e781ea679
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4356764"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4394014"
 ---
 # <a name="reviews-report"></a>Rapport sur les révisions
 
 
-Le rapport **avis** dans le tableau de bord du centre de développement Windows vous permet de voir les avis (commentaires) que les clients ont formulés pendant l’évaluation de votre application dans le Windows Store.
+Le rapport **avis** disponible dans le tableau de bord du centre de développement Windows vous permet de voir les avis que les clients ont formulés pendant l’évaluation de votre application dans le Windows Store (commentaires).
 
 Vous pouvez visualiser ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Par ailleurs, vous pouvez récupérer ces données par programme à l’aide de la méthode [get des avis concernant l’application](../monetize/get-app-reviews.md) dans [Microsoft Store analytique API REST](../monetize/access-analytics-data-using-windows-store-services.md).
 
-Vous pouvez également répondre au client avis [directement à partir de cette page](respond-to-customer-reviews.md), par programmation [via l’API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md), ou à l’aide de l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
+Vous pouvez également répondre à client avis [directement à partir de cette page](respond-to-customer-reviews.md), par programmation [via l’API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md), ou à l’aide de l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
 
 > [!TIP]
 > Pour obtenir un aperçu des avis, des évaluations et des commentaires des utilisateurs formulés pour l’ensemble de vos applications au cours des 30derniers jours, développez **Engager** dans le menu de navigation de gauche, puis sélectionnez **Reviews and feedback**. 
@@ -65,7 +65,7 @@ Le graphique de **répartition des classifications** s’affiche en haut de ce r
 
 Notez que ce graphique inclut toujours toutes vos avis, même si vous avez sélectionné **que les évaluations avec avis** dans le filtre de page **passer en revue le contenu** .
 
-Ce graphique peut également être visible dans le [rapport sur les évaluations](ratings-report.md), ainsi que de plus d’informations sur les évaluations de votre application.
+Ce graphique peut également être visible dans le [rapport sur les évaluations](ratings-report.md), ainsi que plus de détails sur les évaluations de votre application.
 
 
 <span id = "review-insight-categories" />
@@ -99,7 +99,7 @@ Notez que les clients peuvent évaluer votre application sans formuler de commen
 
 Vous pouvez trier les avis sur la page par date et/ou par évaluation, dans l’ordre croissant ou décroissant. Cliquez sur le lien de **Trier par** pour afficher les options de tri par **Date** et/ou **évaluation**.
 
-Vous pouvez également utiliser la zone de recherche pour rechercher des mots spécifiques ou des phrases dans les avis de votre application. Notez que seuls le texte d’origine avis rédigé par le client recherche est effectuée, même si l’avis a été écrit dans une autre langue. Texte de révision traduites ne porte pas.
+Vous pouvez également utiliser la zone de recherche pour rechercher des mots spécifiques ou des expressions dans les avis de votre application. Notez qu’uniquement le texte d’origine avis rédigé par le client recherche est effectuée, même si l’avis a été écrit dans une autre langue. Texte traduit révision n’est pas recherchée.
 
 > [!NOTE]
 > Les avis peuvent disparaître ponctuellement de ce rapport. Cela peut se produire lorsque Microsoft supprime des avis du WindowsStore qui ont été rédigés par des clients qui utilisent certaines versions préliminaires ou builds de Windows10 réservées aux Insiders. Nous procédons ainsi afin de réduire le risque de publication d’avis négatifs liés à un problème d’une version préliminaire de Windows. Nous pouvons également supprimer les avis du Windows Store qui ont été identifiés comme indésirables, inappropriés, offensants ou contraires à notre politique. Nous pensons que cette action contribuera à améliorer l’expérience utilisateur.
@@ -111,12 +111,12 @@ Les commentaires qui n'ont pas été rédigés dans votre langue sont traduits p
 
 Notez que les évaluations sont traduites par un système de traduction automatique et que le résultat de la traduction n’est pas toujours précis. Le texte d’origine est fourni si vous souhaitez le comparer à la traduction ou utiliser un autre moyen de traduction.
 
-Comme indiqué plus haut, lorsque recherche votre avis, seul le texte d’origine à gauche par le client recherche est effectuée (et non un texte traduit), même si vous avez la case à cocher **d’avis par translation** activée.
+Comme indiqué plus haut, lorsque recherche votre avis, uniquement du texte d’origine à gauche par le client est recherchée (et aucun texte traduit), même si vous avez la case à cocher **traduire d’avis** activée.
 
 
 ## <a name="responding-to-customer-reviews"></a>Réponse aux avis des clients
 
-Vous pouvez utiliser le tableau de bord du Microsoft Store développement Center, l' [API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md)ou l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) pour répondre à la plupart des avis rédigés par vos clients. Pour plus d’informations, consultez l’article [Répondre aux avis des clients](respond-to-customer-reviews.md).
+Vous pouvez utiliser le tableau de bord du Microsoft Store développement Center, l' [API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md)ou de l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) d’envoyer des réponses à la plupart des avis de vos clients. Pour plus d’informations, consultez l’article [Répondre aux avis des clients](respond-to-customer-reviews.md).
 
 Vous découvrirez ci-après certaines actions supplémentaires à envisager en fonction des évaluations et des avis que vous voyez.
 

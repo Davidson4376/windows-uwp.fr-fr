@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, collection
 ms.localizationpriority: medium
 ms.openlocfilehash: e6a0cf8c2798adc59ffcf84381d6bbf64f2ce80e
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4361118"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4392526"
 ---
 # <a name="collections-with-cwinrt"></a>Collections avec C++/WinRT
 
@@ -345,5 +345,5 @@ private:
 * [modèle de structure WinRT::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
 
 ## <a name="related-topics"></a>Rubriques associées
-* [Catégories de valeur et les références à ces](cpp-value-categories.md)
+* [Les catégories de valeur et des références associées](cpp-value-categories.md)
 * [Contrôles d’éléments XAML; liaison avec une collection C++/WinRT](binding-collection.md)

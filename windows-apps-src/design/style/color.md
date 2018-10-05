@@ -11,11 +11,11 @@ keywords: windows10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.openlocfilehash: ca59855456abe366ec681404b3bf6253bc182f79
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4351813"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4389663"
 ---
 # <a name="color"></a>Couleur
 

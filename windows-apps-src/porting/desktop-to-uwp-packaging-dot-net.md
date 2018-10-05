@@ -2,7 +2,7 @@
 author: normesta
 Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop application.
 Search.Product: eADQiWindows 10XVcnh
-title: Créer un package une application de bureau à l’aide de Visual Studio
+title: Empaqueter une application de bureau à l’aide de Visual Studio
 ms.author: normesta
 ms.date: 08/30/2017
 ms.topic: article
@@ -12,13 +12,13 @@ keywords: windows10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c9b7a30a50c26d2dbdaf6df04e85549addaf181
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4350864"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4390167"
 ---
-# <a name="package-a-desktop-application-by-using-visual-studio"></a>Créer un package une application de bureau à l’aide de Visual Studio
+# <a name="package-a-desktop-application-by-using-visual-studio"></a>Empaqueter une application de bureau à l’aide de Visual Studio
 
 Vous pouvez utiliser Visual Studio pour générer un package de votre application de bureau. Vous pouvez ensuite publier ce package sur le Store ou le charger de manière indépendante sur un ou plusieurs ordinateurs.
 
@@ -85,7 +85,7 @@ Consultez [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-window
 
 **Exécuter, déboguer ou tester votre application de bureau**
 
-Reportez-vous à [Exécuter, déboguer et tester une application de bureau empaquetée](desktop-to-uwp-debug.md)
+Voir [Exécuter, déboguer et tester une application de bureau empaquetée](desktop-to-uwp-debug.md)
 
 **Améliorer votre application de bureau en ajoutant des API UWP**
 

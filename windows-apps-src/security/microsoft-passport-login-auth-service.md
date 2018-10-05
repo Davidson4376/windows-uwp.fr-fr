@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fdc9073da5db0607f57b52ce9d9f3be1c0f2959
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4352955"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4394400"
 ---
 # <a name="create-a-windows-hello-login-service"></a>Créer un service de connexion WindowsHello
 

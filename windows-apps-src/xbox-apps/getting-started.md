@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: da260b4f9f5f50d97d39af883217dfbae91a566e
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4356837"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4390157"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Prise en main du développement d’applications UWP sur XboxOne
 
@@ -52,7 +52,7 @@ Maintenant que votre PC de développement est prêt, vous pouvez regarder cette 
 
 ## <a name="setting-up-your-xbox-one-console"></a>Configuration de votre console XboxOne
 
-1.  Activez le mode développeur sur votre console XboxOne. Télécharger l’application et obtenir le code d’activation, puis entrez-le dans la page [consoles Xbox One de la gérer](https://partner.microsoft.com/xboxactivate) dans votre compte du centre de développement. Pour plus d’informations, consultez [Activation du mode Développeur XboxOne](devkit-activation.md). 
+1.  Activez le mode développeur sur votre console XboxOne. Télécharger l’application, puis entrez-le dans la page [consoles Xbox One de la gérer](https://partner.microsoft.com/xboxactivate) dans votre compte du centre de développement et obtenir le code d’activation. Pour plus d’informations, consultez [Activation du mode Développeur XboxOne](devkit-activation.md). 
 
 2.  Ouvrez l’application **Dev Mode Activation** et sélectionnez **basculer et redémarrer**. Félicitations, vous disposez maintenant d’une console XboxOne en mode développeur!
   
@@ -64,19 +64,19 @@ Maintenant que votre PC de développement est prêt, vous pouvez regarder cette 
 
 ## <a name="creating-your-first-project-in-visual-studio"></a>Création de votre premier projet dans Visual Studio
 
-Pour obtenir des informations plus détaillées, consultez [configurer votre plateforme UWP sur l’environnement de développement Xbox](development-environment-setup.md).
+Pour plus d’informations, consultez [configurer votre plateforme UWP sur l’environnement de développement Xbox](development-environment-setup.md).
 
-1.  **Pour c#**: créer un nouveau projet Windows universel et dans l' **Explorateur de solutions**, cliquez sur le projet et sélectionnez **Propriétés**. Sélectionnez l’onglet **Déboguer** , remplacez **l’appareil cible** à **l’Ordinateur distant**, tapez l’adresse IP ou le nom d’hôte de votre console Xbox One dans le champ de **machine distante** et sélectionnez **universel (protocole non chiffré)** dans le ** Mode d’authentification** liste déroulante.   
+1.  **Pour c#**: créer un nouveau projet Windows universel et dans l' **Explorateur de solutions**, cliquez sur le projet et sélectionnez **Propriétés**. Sélectionnez l’onglet **débogage** , remplacez **l’appareil cible** à **l’Ordinateur distant**, tapez l’adresse IP ou le nom d’hôte de votre console Xbox One dans le champ de **l’ordinateur distant** et sélectionnez **universel (protocole non chiffré)** dans le ** Mode d’authentification** liste déroulante.   
 
     Pour trouver l’adresseIP de votre console XboxOne, démarrez l’outil Accueil du développeur sur votre console (grande vignette figurant sur le côté droit de l’écran d’accueil) et examinez le coin supérieur gauche de l’écran. Pour plus d’informations sur l’outil Accueil du développeur, voir [Présentation des outils Xbox One](introduction-to-xbox-tools.md).  
 
-2.  **Pour C++ et HTML/Javascript projets**: vous suivez un chemin semblable aux projets c#, mais dans les propriétés du projet accédez à l’onglet **débogage** , sélectionnez **Ordinateur distant** dans le débogueur pour ouvrir la liste déroulante, tapez l’adresse IP ou le nom d’hôte de la console dans le champ du **Nom de l’ordinateur** et sélectionnez **universel (protocole non chiffré)** dans le champ de **Type d’authentification** .
+2.  **Pour C++ et HTML/Javascript projets**: vous suivez un chemin semblable aux projets c#, mais dans les propriétés du projet accédez à l’onglet **débogage** , sélectionnez **l’Ordinateur distant** dans le débogueur pour ouvrir la liste déroulante, tapez l’adresse IP ou le nom d’hôte de la console dans le champ du **Nom de l’ordinateur** et sélectionnez **universel (protocole non chiffré)** dans le champ de **Type d’authentification** .
 
-3. Sélectionnez **x64** dans la liste déroulante à gauche du bouton vert de lecture dans la barre de menu.
+3. Sélectionnez **x64** dans la liste déroulante à gauche du bouton vert de lecture dans la barre de menus supérieure.
    
 4.  Lorsque vous appuyez sur F5, votre application est générée et commence à se déployer sur votre console Xbox One.
   
-5.  La première fois que vous effectuez cette opération, VisualStudio vous demande d’entrer un code confidentiel pour votre console XboxOne. Vous pouvez obtenir un code confidentiel, démarrez l’outil accueil du développeur sur votre console Xbox One et en sélectionnant le bouton de **code confidentiel afficher Visual Studio** .
+5.  La première fois que vous effectuez cette opération, VisualStudio vous demande d’entrer un code confidentiel pour votre console XboxOne. Vous pouvez obtenir un code confidentiel, démarrez l’accueil du développeur sur votre console Xbox One et en sélectionnant le bouton de **code confidentiel afficher Visual Studio** .
   
 6.  Une fois cette opération effectuée, votre application commence à se déployer. La première exécution de cette procédure peut se révéler un peu lente (nous devons copier la totalité des outils sur votre console Xbox), mais ne devrait pas prendre plus de quelques minutes; dans le cas contraire, un problème est probablement survenu. Vérifiez que vous avez suivi toutes les étapes ci-dessus (notamment que vous avez défini le champ **Mode d’authentification** sur **Universel**) et que vous utilisez une connexion réseau câblée à votre console Xbox One.  
 

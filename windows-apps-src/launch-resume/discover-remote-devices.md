@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, le projet «Rome»
 ms.localizationpriority: medium
 ms.openlocfilehash: 02d04074ece0033da8c3454a95bc35af201903f3
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4360174"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4391494"
 ---
 # <a name="discover-remote-devices"></a>Détecter des appareils distants
 Votre application peut utiliser une connexion réseau sans fil, Bluetooth et cloud pour détecter les appareils Windows signés avec le même compte Microsoft que l’appareil détecteur. Aucun logiciel particulier n’est nécessaire sur les appareils distants pour qu’ils soient détectables.

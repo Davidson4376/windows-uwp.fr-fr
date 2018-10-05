@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, tableau de bord, centre de développement
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f5357b038091b72681915e46875f92077bb3c9e
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4351470"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4394264"
 ---
 # <a name="using-the-windows-dev-center-dashboard"></a>Utilisation du tableau de bord du Centre de développement Windows
 

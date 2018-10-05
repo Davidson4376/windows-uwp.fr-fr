@@ -15,11 +15,11 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aeb400da4b3abe61e086732eaceb0e53fd1b005
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4352971"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4391067"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>Saisie de texte avec l’affichage de l’écriture manuscrite
 
@@ -27,11 +27,11 @@ ms.locfileid: "4352971"
 
 Personnaliser l’affichage de l’écriture manuscrite intégrée de l’encre à l’entrée de texte qui est pris en charge par les contrôles de texte UWP tels que le [contrôle TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)et autres contrôles qui fournissent une expérience d’entrée de texte similaire (comme [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)).
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
-Zones de saisie de texte XAML présentent prise en charge intégrée du stylet à l’aide de [Windows Ink](../input/pen-and-stylus-interactions.md). Lorsqu’un utilisateur appuie sur une zone de saisie de texte à l’aide d’un stylet Windows, la zone de texte se transforme en une surface de l’écriture manuscrite, au lieu d’ouvrir un panneau de saisie distinct.
+Zones de saisie de texte XAML de fonctionnalité prise en charge intégrée du stylet à l’aide de [Windows Ink](../input/pen-and-stylus-interactions.md). Lorsqu’un utilisateur appuie sur une zone de saisie de texte à l’aide d’un stylet Windows, la zone de texte se transforme en une surface de l’écriture manuscrite, au lieu d’ouvrir un panneau de saisie distinct.
 
-Texte est reconnu alors que l’utilisateur écrit n’importe où dans la zone de texte et un candidat fenêtre montre les résultats de reconnaissance. L’utilisateur peut appuyer sur un résultat pour le choisir ou continuer à écrire pour accepter le candidat proposé. Les résultats de la reconnaissance littérale (lettre par lettre) sont inclus dans la fenêtre candidate, donc la reconnaissance ne se limite pas aux mots d'un dictionnaire. À mesure que l’utilisateur écrit, la saisie de texte acceptée est convertie en police de script qui conserve l’apparence de l’écriture naturelle.
+Le texte est reconnu à mesure que l’utilisateur écrit n’importe où dans la zone de texte et un candidat fenêtre affiche les résultats de reconnaissance. L’utilisateur peut appuyer sur un résultat pour le choisir ou continuer à écrire pour accepter le candidat proposé. Les résultats de la reconnaissance littérale (lettre par lettre) sont inclus dans la fenêtre candidate, donc la reconnaissance ne se limite pas aux mots d'un dictionnaire. À mesure que l’utilisateur écrit, la saisie de texte acceptée est convertie en police de script qui conserve l’apparence de l’écriture naturelle.
 
 > [!NOTE]
 > La vue de l’écriture manuscrite est activée par défaut, mais vous pouvez la désactiver sur la base de chaque contrôle et rétablir le panneau de saisie de texte à la place.
@@ -52,7 +52,7 @@ Un utilisateur peut modifier son texte à l’aide d'actions et de mouvements st
 
 La vue de l’écriture manuscrite intégrée est activée par défaut.
 
-Vous souhaiterez peut-être désactiver l’affichage de l’écriture manuscrite si vous fournissez une fonctionnalité d’encre en texte équivalente dans votre application ou votre expérience de saisie de texte s’appuie sur un certain type de mise en forme ou spécial caractère (par exemple, un onglet) non disponible par le biais de l’écriture manuscrite.
+Vous souhaiterez peut-être désactiver l’affichage de l’écriture manuscrite si vous fournissez une fonctionnalité d’encre en texte équivalente dans votre application ou votre expérience d’entrée de texte s’appuie sur un certain type de mise en forme caractère ou spécial (par exemple, un onglet) non disponible par le biais de l’écriture manuscrite.
 
 Dans cet exemple, nous désactivons l’affichage de l’écriture manuscrite en définissant la propriété [IsHandwritingViewEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.ishandwritingviewenabled) du contrôle [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) sur false. Tous les contrôles de texte qui prennent en charge l’affichage de l’écriture manuscrite prend en charge une propriété similaire.
 
@@ -67,7 +67,7 @@ Dans cet exemple, nous désactivons l’affichage de l’écriture manuscrite en
 
 ## <a name="specify-the-alignment-of-the-handwriting-view"></a>Spécifier l’alignement de la vue de l’écriture manuscrite
 
-La vue de l’écriture manuscrite est située au-dessus du contrôle de texte sous-jacent et dimensionnée en fonction des préférences de l’écriture manuscrite de l’utilisateur (voir **Paramètres-& gt; appareils-& gt; stylet et Windows Ink-& gt; l’écriture manuscrite -> taille de police lors de l’écriture directement dans le champ de texte **). L’affichage est automatiquement aligné par rapport au contrôle de texte et son emplacement dans l’application.
+La vue de l’écriture manuscrite est située au-dessus du contrôle de texte sous-jacent et dimensionnée en fonction des préférences de l’écriture manuscrite de l’utilisateur (voir **Paramètres-& gt; appareils-& gt; stylet et Windows Ink-& gt; l’écriture manuscrite -> taille de police lors de l’écriture directement dans le champ de texte **). L’affichage est également automatiquement aligné par rapport au contrôle de texte et son emplacement dans l’application.
 
 L’interface utilisateur de l’application n’est pas réorganisé pour prendre en charge le plus grand contrôle, afin que le système peut provoquer l’affichage pour masquer l’interface utilisateur important.
 
@@ -88,7 +88,7 @@ Nous montrons ici comment utiliser la propriété [PlacementAlignment](https://d
 
 La fenêtre contextuelle suggestion de texte est activée par défaut pour fournir une liste de l’entrée manuscrite supérieur candidats de reconnaissance à partir de laquelle l’utilisateur peut sélectionner au cas où le candidat supérieur est incorrect.
 
-Si votre application déjà fournit robuste, des fonctionnalités de reconnaissance vocale personnalisées, vous pouvez utiliser la propriété [AreCandidatesEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.arecandidatesenabled) pour désactiver les suggestions intégrées, comme illustré dans l’exemple suivant.
+Si votre application déjà fournit robuste, la fonctionnalité de reconnaissance personnalisée, vous pouvez utiliser la propriété [AreCandidatesEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.arecandidatesenabled) pour désactiver les suggestions intégrées, comme illustré dans l’exemple suivant.
 
 ```xaml
 <TextBox Name="SampleTextBox"
@@ -103,10 +103,10 @@ Si votre application déjà fournit robuste, des fonctionnalités de reconnaissa
 
 ## <a name="use-handwriting-font-preferences"></a>Utiliser les préférences de police de l’écriture manuscrite
 
-Un utilisateur peut choisir d’une collection de polices basée sur l’écriture manuscrite à utiliser lorsque prédéfinie rendu du texte basé sur la reconnaissance des entrées manuscrites (voir **Paramètres-& gt; appareils-& gt; stylet et Windows Ink-& gt; l’écriture manuscrite -> police lors de l’utilisation de l’écriture manuscrite**).
+Un utilisateur peut choisir d’une collection de polices basées sur l’écriture manuscrite à utiliser lorsque prédéfinie rendu du texte basé sur la reconnaissance des entrées manuscrites (voir **Paramètres-& gt; appareils-& gt; stylet et Windows Ink-& gt; l’écriture manuscrite -> police lors de l’utilisation de l’écriture manuscrite**).
 
 > [!NOTE]
-> Les utilisateurs peuvent encore créer une police en fonction de leur propre l’écriture manuscrite.
+> Les utilisateurs peuvent créer même une police en fonction de leur propre l’écriture manuscrite.
 > [!VIDEO https://www.youtube.com/embed/YRR4qd4HCw8]
 
 Votre application peut accéder à ce paramètre et utiliser la police sélectionnée pour le texte reconnu dans le contrôle de texte.
@@ -152,7 +152,7 @@ Dans le code-behind, correspondant, nous montrons comment désactiver le [Handwr
     }
     ```
 
-2. Ensuite, nous allons commencer itération dans l’arborescence visuelle (qui commencent à un objet AutoSuggestBox) dans la fonction FindInnerTextBox avec un appel à FindVisualChildByName.
+2. Ensuite, nous allons commencer une itération par le biais de l’arborescence visuelle (commençant à un objet AutoSuggestBox) dans la fonction FindInnerTextBox avec un appel à FindVisualChildByName.
 
     ```csharp
     private bool FindInnerTextBox(AutoSuggestBox autoSuggestBox)
@@ -194,17 +194,17 @@ Dans le code-behind, correspondant, nous montrons comment désactiver le [Handwr
 
 ## <a name="reposition-the-handwritingview"></a>Repositionner l’HandwritingView
 
-Dans certains cas, vous devrez peut-être vous assurer que le [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) couvre les éléments d’interface utilisateur qu’il peut sinon pas.
+Dans certains cas, vous devrez peut-être vous assurer que le [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) couvre les éléments d’interface utilisateur qu’il peut dans le cas contraire pas.
 
 Ici, nous créons une zone de texte qui prend en charge de la dictée (implémentée en plaçant une zone de texte et un bouton de la dictée dans un élément StackPanel).
 
 ![Élément TextBox avec la dictée](images/handwritingview/textbox-with-dictation.png)
 
-Comme l’objet StackPanel est plus grande que la zone de texte, le [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) ne risquent pas de masquer toutes l’OLE composite.
+Comme l’objet StackPanel est désormais plus grand que la zone de texte, le [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) ne risquent pas de masquer toutes l’OLE composite.
 
 ![Élément TextBox avec la dictée](images/handwritingview/textbox-with-dictation-handwritingview.png)
 
-Pour contourner ce problème, définissez la propriété PlacementTarget de la [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) à l’élément d’interface utilisateur sur lequel il doit être alignée.
+Pour contourner ce problème, définissez la propriété de PlacementTarget de la [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) à l’élément d’interface utilisateur sur lequel il doit être alignée.
 
 ```xaml
 <StackPanel Name="DictationBox" 
@@ -318,9 +318,9 @@ private double GetPopupVerticalOffset()
 
 ## <a name="retemplate-the-handwritingview-control"></a>Redéfinir le contrôle HandwritingView
 
-Comme avec tous les contrôles d’infrastructure XAML, vous pouvez personnaliser la structure visuelle et le comportement visuel d’un [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) à vos besoins spécifiques.
+Comme avec tous les contrôles d’infrastructure XAML, vous pouvez personnaliser la structure visuelle et le comportement visuel d’un [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) pour vos besoins spécifiques.
 
-Pour voir un exemple complet de création d’un modèle personnalisé d’extraction la procédure de [créer des contrôles de transport personnalisés](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/custom-transport-controls) ou l' [exemple de contrôle d’édition personnalisé](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
+Pour voir un exemple complet de création d’un modèle personnalisé d’extraction la procédure de [créer des contrôles de transport personnalisés](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/custom-transport-controls) ou si l' [exemple de contrôle d’édition personnalisé](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
 
 
 

@@ -10,11 +10,11 @@ ms.technology: uwp, windows forms, wpf
 keywords: Windows 10, uwp, WinForms, wpf, win32
 ms.localizationpriority: medium
 ms.openlocfilehash: 860e515d013046ef77d0aee38eb5d42c9c3e2dc9
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4356754"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4390449"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>À l’aide de l’API d’hébergement dans une application de bureau UWP XAML
 
@@ -23,7 +23,7 @@ ms.locfileid: "4356754"
 
 À compter de Windows 10 Insider Preview SDK build 17709, les applications de bureau non UWP (y compris les applications C++ Win32, Windows Forms et WPF) peuvent utiliser l' *API d’hébergement de XAML UWP* pour héberger des contrôles UWP dans n’importe quel élément d’interface utilisateur qui est associé à un handle de fenêtre) HWND). Cette API permet aux applications de bureau de non UWP à utiliser les dernières fonctionnalités de l’interface utilisateur de Windows 10 qui sont uniquement disponibles via les contrôles UWP. Par exemple, les applications de bureau non UWP peuvent utiliser cette API pour héberger des contrôles UWP qui utilisent le [Système Fluent Design](../design/fluent-design-system/index.md) et prennent en charge [Windows Ink](../design/input/pen-and-stylus-interactions.md).
 
-Le XAML UWP API d’hébergement fournit les bases pour un plus large ensemble de contrôles que nous fournissons pour permettre aux développeurs de donner à non UWP interface utilisateur Fluent applications de bureau. Ce scénario est parfois appelé *îles XAML*. Pour plus d’informations sur ce scénario de développeur, voir [les contrôles UWP dans les applications de bureau](xaml-host-controls.md).
+Le XAML UWP API d’hébergement fournit les bases pour un plus large ensemble de contrôles que nous fournissons pour permettre aux développeurs de donner à non UWP interface utilisateur Fluent les applications de bureau. Ce scénario est parfois appelé *(îles) XAML*. Pour plus d’informations sur ce scénario de développeur, voir [les contrôles UWP dans les applications de bureau](xaml-host-controls.md).
 
 ## <a name="is-the-uwp-xaml-hosting-api-right-for-your-desktop-application"></a>Le XAML UWP héberge API adaptée à votre application de bureau?
 
@@ -31,17 +31,17 @@ Le XAML UWP API d’hébergement fournit l’infrastructure de bas niveau pour l
 
 * Si vous avez une application de bureau Win32 C++ et que vous souhaitez pour héberger des contrôles UWP dans votre application, vous devez utiliser l’API d’hébergement de XAML UWP. Il n’existe aucune alternative pour ces types d’applications.
 
-* Pour les applications WPF et Windows Forms, nous vous recommandons d’utiliser les [contrôles encapsulés](xaml-host-controls.md#wrapped-controls) et [hébergez des contrôles](xaml-host-controls.md#host-controls) dans le Kit de ressources de la Communauté Windows au lieu du XAML UWP hébergeant des API. Ces contrôles utilisent le XAML UWP API d’hébergement en interne et fournissent une expérience de développement plus simple. Toutefois, vous pouvez utiliser l’API directement dans ces types d’applications d’hébergement si vous choisissez de XAML UWP.
+* Pour les applications WPF et Windows Forms, nous vous recommandons d’utiliser les [contrôles encapsulés](xaml-host-controls.md#wrapped-controls) et les [contrôles de l’hôte](xaml-host-controls.md#host-controls) dans le Kit de ressources de la Communauté Windows au lieu du XAML UWP API d’hébergement. Ces contrôles utilisent le XAML UWP, API d’hébergement en interne et fournissent une expérience de développement plus simple. Toutefois, vous pouvez utiliser l’API directement dans ces types d’applications d’hébergement si vous choisissez de XAML UWP.
 
 ## <a name="related-samples"></a>Exemples connexes
 
-La manière d’utiliser le XAML UWP hébergeant des API dans votre code dépend de votre type d’application, la conception de votre application et d’autres facteurs. Pour illustrer comment utiliser cette API dans le contexte d’une application complète, cet article fait référence au code dans les exemples suivants.
+La manière d’utiliser l’API d’hébergement dans votre code XAML UWP dépend de votre type d’application, la conception de votre application et d’autres facteurs. Pour illustrer comment utiliser cette API dans le contexte d’une application complète, cet article fait référence au code dans les exemples suivants.
 
 ### <a name="c-win32"></a>Win32 C++
 
-Il existe plusieurs exemples sur GitHub qui montrent comment utiliser le XAML UWP API d’hébergement dans une application Win32 C++:
+Il existe plusieurs exemples qui montrent comment utiliser le XAML UWP, API d’hébergement dans une application Win32 C++ sur GitHub:
 
-  * [XamlHostingSample](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting). Cet exemple montre comment ajouter des contrôles UWP [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)et [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) à une application Win32 C++.
+  * [XamlHostingSample](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting). Cet exemple montre comment ajouter les contrôles UWP [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)et [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) à une application Win32 C++.
   * [XamlIslands32](https://github.com/clarkezone/cppwinrt/tree/master/Desktop/XamlIslandsWin32). Cet exemple montre comment ajouter plusieurs contrôles UWP de base pour une application Win32 C++ et gérer les modifications PPP.
 
 ### <a name="wpf-and-windows-forms"></a>WPF et Windows Forms
@@ -49,15 +49,15 @@ Il existe plusieurs exemples sur GitHub qui montrent comment utiliser le XAML UW
 Le contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) dans le Kit de ressources de la Communauté Windows agit comme un exemple de référence pour l’utilisation de l’UWP, API d’hébergement dans les applications WPF et Windows Forms. Le code source est disponible aux emplacements suivants:
 
   * Pour la version WPF du contrôle, [Cliquez ici](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost). La version WPF dérive de [**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost).
-  * La version Windows Forms du contrôle, [Cliquez ici](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost). La version Windows Forms dérive de [**System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control).
+  * Pour la version Windows Forms du contrôle, [Cliquez ici](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost). La version Windows Forms dérive de [**System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Le XAML UWP API d’hébergement a ces conditions préalables.
 
 * Windows 10 Insider Preview build 17709 (ou une version ultérieure) et la build Insider Preview correspondante du SDK Windows. Dans la mesure où il s’agit d’une fonctionnalité en constante évolution, pour une expérience optimale nous vous recommandons d’utiliser la dernière version disponible.
 
-* Pour utiliser le XAML UWP hébergeant des API dans votre application de bureau, vous devez configurer votre projet afin que vous pouvez appeler des API UWP:
+* Pour utiliser le XAML UWP API d’hébergement dans votre application de bureau, vous devez configurer votre projet, vous pouvez appeler des API UWP:
 
     * **Win32 C++:** Nous vous recommandons de configurer votre projet pour utiliser [C++ / WinRT](../cpp-and-winrt-apis/index.md). Téléchargez et installez le [C++ / Extension WinRT Visual Studio (VSIX)](https://aka.ms/cppwinrt/vsix) à partir de Visual Studio Marketplace, puis ajoutez le ```<CppWinRTEnabled>true</CppWinRTEnabled>``` propriété à votre fichier .vcxproj comme décrit [ici](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
 
@@ -67,11 +67,11 @@ Le XAML UWP API d’hébergement a ces conditions préalables.
 
 Le XAML UWP API d’hébergement inclut [**DesktopWindowXamlSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource), [**WindowsXamlManager**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager)et autres types associés dans l’espace de noms [**Windows.UI.Xaml.Hosting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting) . Les applications de bureau peuvent utiliser cette API pour rendre les contrôles UWP et la navigation en mode focus clavier dans et en dehors des éléments de l’itinéraire. Les applications de bureau peuvent également dimensionner et positionner les contrôles UWP selon vos besoins.
 
-Lorsque vous créez une île XAML à l’aide du code XAML qui héberge des API dans une application de bureau, vous aurez la hiérarchie d’objets suivante:
+Lorsque vous créez une île XAML à l’aide du code XAML dans une application de bureau, les API d’hébergement, vous aurez la hiérarchie d’objets suivante:
 
 * Au niveau de base est l’élément d’interface utilisateur dans votre application dans laquelle vous souhaitez héberger l’île XAML. Cet élément d’interface utilisateur doit avoir un handle de fenêtre (HWND). Éléments d’interface utilisateur dans laquelle vous pouvez héberger une île XAML incluent [**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) pour les applications WPF, [**System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) pour les applications Windows Forms et une [fenêtre](https://docs.microsoft.com/windows/desktop/winmsg/about-windows) pour les applications Win32 C++.
 
-* À la prochaine niveau est un objet **DesktopWindowXamlSource** . Cet objet fournit l’infrastructure pour héberger l’île XAML. Votre code est responsable de la création de cet objet, puis association à l’élément d’interface utilisateur parent.
+* À la prochaine niveau est un objet **DesktopWindowXamlSource** . Cet objet fournit l’infrastructure pour héberger l’île XAML. Votre code est responsable de la création de cet objet et attacher à l’élément d’interface utilisateur parent.
 
 * Lorsque vous créez un **DesktopWindowXamlSource**, cet objet crée automatiquement une fenêtre enfant natif pour héberger votre contrôle UWP. Cette fenêtre enfant native est principalement employés par votre code, mais vous pouvez accéder à son handle (HWND) si nécessaire.
 
@@ -85,9 +85,9 @@ Le diagramme suivant illustre la hiérarchie d’objets dans une île XAML.
 
 Voici les principales étapes pour héberger un contrôle UWP dans votre application à l’aide de l’API d’hébergement de XAML UWP.
 
-1. Initialisez l’infrastructure XAML UWP pour le thread actuel avant que votre application crée un des objets [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) qu’il hébergera dans le [**DesktopWindowXamlSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource).
+1. Initialisez l’infrastructure XAML UWP pour le thread actuel avant que votre application crée un des objets [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) il hébergera dans le [**DesktopWindowXamlSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource).
 
-    * Si votre application crée l’objet **DesktopWindowXamlSource** avant qu’il crée les objets **Windows.UI.Xaml.UIElement** , cette infrastructure sera initialisée pour vous lorsque vous instanciez l’objet **DesktopWindowXamlSource** . Dans ce scénario, vous n’avez pas besoin d’ajouter du code de votre choix pour initialiser l’infrastructure.
+    * Si votre application crée l’objet **DesktopWindowXamlSource** avant de créer des objets **Windows.UI.Xaml.UIElement** , cette infrastructure sera initialisée pour vous lorsque vous instanciez l’objet **DesktopWindowXamlSource** . Dans ce scénario, vous n’avez pas besoin d’ajouter du code de votre choix pour initialiser l’infrastructure.
 
     * Toutefois, si votre application crée les objets **Windows.UI.Xaml.UIElement** avant de créer l’objet **DesktopWindowXamlSource** qui hébergera les, votre application doit appeler la méthode statique [** WindowsXamlManager.InitializeForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) méthode d’initialiser explicitement l’infrastructure XAML UWP avant que les objets **Windows.UI.Xaml.UIElement** sont instanciés. Votre application doit généralement doit appeler cette méthode lorsque l’élément d’interface utilisateur parent qui héberge le **DesktopWindowXamlSource** est instancié.
 
