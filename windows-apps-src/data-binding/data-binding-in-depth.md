@@ -1,21 +1,24 @@
 ---
-author: mcleblanc
+author: stevewhims
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: Présentation détaillée de la liaison de données
 description: La liaison de données est un moyen dont dispose l’interface utilisateur de votre application pour afficher des données et éventuellement rester synchronisée avec ces données.
-ms.author: markl
-ms.date: 10/03/2018
+ms.author: stwhi
+ms.date: 10/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 559bbbc3421151a9055b89c94bc1293a950ccb5b
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+dev_langs:
+- csharp
+- cppwinrt
+ms.openlocfilehash: 906fb2d0d5d466f4fd691afd35ed96198929225c
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4388820"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4432462"
 ---
 # <a name="data-binding-in-depth"></a>Présentation détaillée de la liaison de données
 
@@ -26,7 +29,7 @@ ms.locfileid: "4388820"
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
 
-> [!Note]
+> [!NOTE]
 > Cette rubrique décrit en détail les fonctionnalités de liaison de données. Pour une brève présentation pratique, voir [Vue d’ensemble de la liaison de données](data-binding-quickstart.md).
 
 La liaison de données est un moyen dont dispose l’interface utilisateur de votre application pour afficher des données et éventuellement rester synchronisée avec ces données. La liaison de données vous permet de séparer les problématiques liées aux données de celles liées à l’interface utilisateur, ce qui se traduit par un modèle conceptuel plus simple et l’amélioration de la lisibilité, de la testabilité et de la gestion de la maintenance de votre application.
@@ -62,8 +65,7 @@ Dans les sections suivantes, nous allons examiner de plus près la source de lia
 
 Voici une implémentation très rudimentaire d’une classe que nous pourrions utiliser comme source de liaison.
 
-> [!Note]
-> Si vous utilisez [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) avec des extensions de composant Visual C++ (C++ / CX), vous devrez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à votre classe de source de liaison. Si vous utilisez [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), vous n’aurez pas besoin de cet attribut. Voir [Ajout d’un affichage de détails](data-binding-quickstart.md#adding-a-details-view) pour un extrait de code.
+Si vous utilisez des [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis ajouter de nouveaux éléments de **Fichier Midl (.idl)** au projet, nommé comme indiqué dans C++ / WinRT exemple l’intégralité du code ci-dessous. Remplacez le contenu de ces nouveaux fichiers par le code [MIDL 3.0](/uwp/midl-3/intro) indiqué dans la liste, générez le projet pour générer `HostViewModel.h` et `.cpp`, puis ajoutez le code pour les fichiers générés pour correspondre à la liste. Pour plus d’informations sur ces fichiers générés et comment les copier dans votre projet, voir [contrôles XAML; liaison à C++ / WinRT propriété](/windows/uwp/cpp-and-winrt-apis/binding-property).
 
 ```csharp
 public class HostViewModel
@@ -77,16 +79,52 @@ public class HostViewModel
 }
 ```
 
+```cppwinrt
+// HostViewModel.idl
+namespace DataBindingInDepth
+{
+    runtimeclass HostViewModel
+    {
+        HostViewModel();
+        String NextButtonText;
+    }
+}
+
+// HostViewModel.h
+// Implement the constructor like this, and add this field:
+...
+HostViewModel() : m_nextButtonText{ L"Next" } {}
+...
+private:
+    std::wstring m_nextButtonText;
+...
+
+// HostViewModel.cpp
+// Implement like this:
+...
+hstring HostViewModel::NextButtonText()
+{
+    return hstring{ m_nextButtonText };
+}
+
+void HostViewModel::NextButtonText(hstring const& value)
+{
+    m_nextButtonText = value;
+}
+...
+```
+
 Cette implémentation de **HostViewModel** et sa propriété **NextButtonText** conviennent uniquement à une liaison ponctuelle. Toutefois, les liaisons à sens unique et bidirectionnelles sont très courantes, et avec ces types de liaison, l’interface utilisateur se met à jour automatiquement en réponse aux modifications apportées aux valeurs de données de la source de liaison. Pour que ces types de liaison fonctionnent correctement, vous devez rendre votre source de liaison «observable» par l’objet de liaison. Par conséquent, dans notre exemple, si nous voulons créer une liaison à sens unique ou bidirectionnelle à la propriété **NextButtonText**, toutes les modifications de la valeur de cette propriété qui surviennent au moment de l’exécution doivent être rendues observables par l’objet de liaison.
 
 Une manière de le faire consiste à dériver d’un objet [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/BR242356) la classe qui représente votre source de liaison et à exposer une valeur de données par l’intermédiaire d’une propriété [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362). C’est de cette façon qu’un élément [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) devient observable. Les éléments **FrameworkElements** constituent de bonnes sources de liaison sans aucune modification.
 
 Une méthode moins lourde pour rendre une classe observable (méthode obligatoire pour les classes possédant déjà une classe de base) consiste à implémenter [**System.ComponentModel.INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx). Cela implique en fait simplement l’implémentation d’un événement unique nommé **PropertyChanged**. Vous trouverez ci-dessous un exemple utilisant **HostViewModel**.
 
-> [!Note]
-> Pour C++ / CX, vous devez implémenter [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)et la classe de source de liaison doit avoir l' [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) ou l’implémenter [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).
-
 ```csharp
+...
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+...
 public class HostViewModel : INotifyPropertyChanged
 {
     private string nextButtonText;
@@ -116,9 +154,54 @@ public class HostViewModel : INotifyPropertyChanged
 }
 ```
 
+```cppwinrt
+// HostViewModel.idl
+namespace DataBindingInDepth
+{
+    runtimeclass HostViewModel : Windows.UI.Xaml.Data.INotifyPropertyChanged
+    {
+        HostViewModel();
+        String NextButtonText;
+    }
+}
+
+// HostViewModel.h
+// Add this field:
+...
+    winrt::event_token PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& handler);
+    void PropertyChanged(winrt::event_token const& token) noexcept;
+
+private:
+    winrt::event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
+...
+
+// HostViewModel.cpp
+// Implement like this:
+...
+void HostViewModel::NextButtonText(hstring const& value)
+{
+    if (m_nextButtonText != value)
+    {
+        m_nextButtonText = value;
+        m_propertyChanged(*this, Windows::UI::Xaml::Data::PropertyChangedEventArgs{ L"NextButtonText" });
+    }
+}
+
+winrt::event_token HostViewModel::PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& handler)
+{
+    return m_propertyChanged.add(handler);
+}
+
+void HostViewModel::PropertyChanged(winrt::event_token const& token) noexcept
+{
+    m_propertyChanged.remove(token);
+}
+...
+```
+
 La propriété **NextButtonText** est maintenant observable. Lorsque vous créez une liaison à sens unique ou bidirectionnelle à cette propriété (nous vous expliquerons comment ultérieurement), l’objet de liaison qui en résulte s’abonne à l’événement **PropertyChanged**. Lorsque cet événement est déclenché, le gestionnaire de l’objet de liaison reçoit un argument contenant le nom de la propriété qui a changé. Voilà comment l’objet de liaison connaît la propriété dont il doit lire à nouveau la valeur.
 
-Pour ne pas avoir à implémenter plusieurs fois le modèle présenté ci-dessus, vous pouvez simplement dériver de la classe de base **BindableBase**, disponible dans l’exemple [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) (dans le dossier « Common »). En voici un exemple:
+Afin que vous n’êtes pas obligé d’implémenter le modèle présenté ci-dessus plusieurs fois, si vous utilisez c#, alors vous pouvez simplement dériver de la classe de base **BindableBase** que vous trouverez dans l’exemple [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) (dans le dossier «Common»). En voici un exemple:
 
 ```csharp
 public class HostViewModel : BindableBase
@@ -138,21 +221,28 @@ public class HostViewModel : BindableBase
 }
 ```
 
+```cppwinrt
+// Your BindableBase base class should itself derive from Windows::UI::Xaml::DependencyObject. Then, in HostViewModel.idl, derive from BindableBase instead of implementing INotifyPropertyChanged.
+```
+
+> [!NOTE]
+> Pour C++ / WinRT, n’importe quelle classe runtime que vous déclarez dans votre application qui dérive d’une classe de base est appelé une *composables* classe. Et il existe des contraintes autour de classes composables. Pour une application de passer les tests du [Kit de Certification des applications Windows](../debug-test-perf/windows-app-certification-kit.md) utilisés par Visual Studio et du Microsoft Store pour valider les soumissions (et donc de l’application être correctement ingérés par le Microsoft Store), une classe composable doit au final dériver d’une classe de base de Windows. Cela signifie que la classe à la racine très de la hiérarchie d’héritage doit être un type provenant d’un espace de noms Windows.*. Si vous n’avez pas besoin de dériver une classe runtime à partir d’une classe de base&mdash;par exemple, pour implémenter une classe **BindableBase** pour l’ensemble de vos modèles d’affichage de dériver de&mdash;, alors vous pouvez dériver de [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject).
+
 Le déclenchement de l’événement **PropertyChanged** à l’aide d’un argument [**String.Empty**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.empty.aspx) ou **null** indique que toutes les propriétés autres que les propriétés d’indexeur doivent être lues à nouveau. Vous pouvez déclencher l’événement pour indiquer que les propriétés d’indexeur de l’objet ont été modifiées en utilisant un argument « Item\[*indexer*\] » pour des indexeurs spécifiques (où *indexer* correspond à la valeur d’index) ou une valeur « Item\[\] » pour tous les indexeurs.
 
-Une source de liaison peut être traitée comme un objet simple dont les propriétés contiennent des données ou comme une collection d’objets. Dans le code C# et Visual Basic, vous pouvez créer une liaison ponctuelle à un objet qui implémente [**List(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx) pour afficher une collection qui ne change pas au moment de l’exécution. Pour une collection observable (permettant d’observer quand des éléments sont ajoutés à la collection et supprimés de celle-ci), créez une liaison à sens unique à [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) à la place. Dans le code C++, vous pouvez établir une liaison à [**Vector&lt;T&gt;**](https://msdn.microsoft.com/library/dn858385.aspx) à la fois pour les collections observables et non observables. Pour lier vos propres classes de collection, utilisez les recommandations figurant dans le tableau suivant.
+Une source de liaison peut être traitée comme un objet simple dont les propriétés contiennent des données ou comme une collection d’objets. Dans le code c# et Visual Basic, vous pouvez créer une liaison ponctuelle à un objet qui implémente [**List (Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx) pour afficher une collection qui ne change pas au moment de l’exécution. Pour une collection observable (permettant d’observer quand des éléments sont ajoutés à la collection et supprimés de celle-ci), créez une liaison à sens unique à [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) à la place. Dans le code C++, vous pouvez établir une liaison à [**Vector&lt;T&gt;**](https://msdn.microsoft.com/library/dn858385.aspx) à la fois pour les collections observables et non observables. Pour lier vos propres classes de collection, utilisez les recommandations figurant dans le tableau suivant.
 
-| Scénario                                                        | C# et VB (CLR)                                                                                                                                                                                                                                                                                                                                                                                                                   | C++/CX                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Créer une liaison à un objet.                                              | Il peut s’agir de tout objet.                                                                                                                                                                                                                                                                                                                                                                                                                 | L’objet doit avoir [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) ou implémenter [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).                                                                                                                                                                                                                                                                                                             |
-| Obtenir les mises à jour des modifications de la propriété à partir d’un objet lié.                | L’objet doit implémenter [**System.ComponentModel. INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx).                                                                                                                                                                                                                                                                                                         | L’objet doit implémenter [**Windows.UI.Xaml.Data. INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899).                                                                                                                                                                                                                                                                                                                                                           |
-| Lier à une collection.                                           | [**List(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx)                                                                                                                                                                                                                                                                                                                                                                            | [**Platform::Collections::Vector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx)                                                                                                                                                                                                                                                                                                                                                                                         |
-| Obtenir les mises à jour des modifications de la collection à partir d’une collection liée.          | [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx)                                                                                                                                                                                                                                                                                                                                        | [**Windows::Foundation::Collections::IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/br226052.aspx)                                                                                                                                                                                                                                                                                                                                                                                         |
-| Implémenter une collection prenant en charge la liaison.                   | Étendre [**List(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx) ou implémenter [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx), [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/5y536ey6.aspx)(de [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx)), [**IEnumerable**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ienumerable.aspx) ou [**IEnumerable**](https://msdn.microsoft.com/library/windows/apps/xaml/9eekhta0.aspx)(de **Object**). La liaison à des éléments **IList(Of T)** et **IEnumerable(Of T)** génériques n’est pas prise en charge. | Implémenter [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979), [**IBindableIterable**](https://msdn.microsoft.com/library/windows/apps/Hh701957), [**IVector**](https://msdn.microsoft.com/library/windows/apps/BR206631)&lt;[**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx)^&gt;, [**IIterable**](https://msdn.microsoft.com/library/windows/apps/BR226024)&lt;**Object**^&gt;, **IVector**&lt;[**IInspectable**](https://msdn.microsoft.com/library/BR205821)\*&gt; ou **IIterable**&lt;**IInspectable**\*&gt;. La liaison à des éléments génériques **IVector&lt;T&gt;** et **IIterable&lt;T&gt;** n’est pas prise en charge. |
-| Implémenter une collection qui prend en charge les mises à jour des modifications de la collection. | Étendre [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) ou implémenter des éléments [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) et [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (non génériques).                                                                                                                                                               | Implémenter [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979) et [**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974).                                                                                                                                                                                                                                                                                                                       |
-| Implémenter une collection prenant en charge un chargement incrémentiel.       | Étendre [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) ou implémenter des éléments [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) et [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (non génériques). En outre, implémenter [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916).                                                          | Implémenter [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979), [**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974) et [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916).                                                                                                                                                                                                                                         |
+|Scénario|C# et VB (CLR)|C++/WinRT|C++/CX|
+|-|-|-|-|
+|Créer une liaison à un objet.|Il peut s’agir de tout objet.|Il peut s’agir de tout objet.|L’objet doit avoir [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) ou implémenter [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).|
+|Obtenir des notifications de modification de propriété à partir d’un objet lié.|Objet doit implémenter [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx).| Objet doit implémenter [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899).|Objet doit implémenter [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899).|
+|Lier à une collection.| [**List(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx)|[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) de [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)ou [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector). Voir [contrôles d’éléments XAML; liaison à C++ / WinRT collection](../cpp-and-winrt-apis/binding-collection.md) et [Collections avec C++ / WinRT](../cpp-and-winrt-apis/collections.md).| [**Vecteur&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx)|
+|Obtenir des notifications de modification de collection à partir d’une collection liée.|[**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx)|[**IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_) de [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable).|[**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/br226052.aspx)|
+|Implémenter une collection prenant en charge la liaison.|Étendre [**List(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx) ou implémenter [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx), [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/5y536ey6.aspx)(de [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx)), [**IEnumerable**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ienumerable.aspx) ou [**IEnumerable**](https://msdn.microsoft.com/library/windows/apps/xaml/9eekhta0.aspx)(de **Object**). La liaison à des éléments **IList(Of T)** et **IEnumerable(Of T)** génériques n’est pas prise en charge.|Implémentez [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) de [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). Voir [contrôles d’éléments XAML; liaison à C++ / WinRT collection](../cpp-and-winrt-apis/binding-collection.md) et [Collections avec C++ / WinRT](../cpp-and-winrt-apis/collections.md).|Implémenter [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979), [**IBindableIterable**](https://msdn.microsoft.com/library/windows/apps/Hh701957), [**IVector**](https://msdn.microsoft.com/library/windows/apps/BR206631)&lt;[**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx)^&gt;, [**IIterable**](https://msdn.microsoft.com/library/windows/apps/BR226024)&lt;**Object**^&gt;, **IVector**&lt;[**IInspectable**](https://msdn.microsoft.com/library/BR205821)\*&gt; ou **IIterable**&lt;**IInspectable**\*&gt;. La liaison à des éléments génériques **IVector&lt;T&gt;** et **IIterable&lt;T&gt;** n’est pas prise en charge.|
+| Implémenter une collection qui prend en charge les notifications de modification de collection. | Étendre [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) ou implémenter des éléments [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) et [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (non génériques).|Implémentez [**IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_) de [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)ou [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector).|Implémenter [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979) et [**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974).|
+|Implémenter une collection prenant en charge un chargement incrémentiel.|Étendre [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) ou implémenter des éléments [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) et [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (non génériques). En outre, implémenter [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916).|Implémentez [**IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_) de [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)ou [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector). En outre, implémenter [ **ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)|Implémenter [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979), [**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974) et [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916).|
 
-Vous pouvez lier des contrôles de listes à des sources de données très importantes et parvenir toutefois à atteindre un niveau de performance élevé à l’aide du chargement incrémentiel. Vous pouvez par exemple lier les contrôles de listes aux résultats de la requête d’image dans Bing sans avoir à charger tous les résultats simultanément. Vous pouvez charger une partie des résultats immédiatement, puis charger d’autres résultats si nécessaire. Pour prendre en charge le chargement incrémentiel, vous devez implémenter [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916) sur une source de données qui prend en charge la notification de modification apportée à la collection. Lorsque le moteur de liaison de données demande davantage de données, votre source de données doit effectuer les demandes appropriées, intégrer les résultats, puis envoyer les notifications appropriées afin de mettre à jour l’interface utilisateur.
+Vous pouvez lier des contrôles de listes à des sources de données très importantes et parvenir toutefois à atteindre un niveau de performance élevé à l’aide du chargement incrémentiel. Vous pouvez par exemple lier les contrôles de listes aux résultats de la requête d’image dans Bing sans avoir à charger tous les résultats simultanément. Vous pouvez charger une partie des résultats immédiatement, puis charger d’autres résultats si nécessaire. Pour prendre en charge du chargement incrémentiel, vous devez implémenter [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916) sur une source de données qui prend en charge les notifications de modification de collection. Lorsque le moteur de liaison de données demande davantage de données, votre source de données doit effectuer les demandes appropriées, intégrer les résultats, puis envoyer les notifications appropriées afin de mettre à jour l’interface utilisateur.
 
 ### <a name="binding-target"></a>Cible de liaison
 
@@ -166,16 +256,21 @@ Dans les deux exemples ci-dessous, la propriété **Button.Content** est la cibl
 <Button Content="{Binding ...}" ... />
 ```
 
+Si vous utilisez C++ / extensions de composant WinRT ou Visual C++ (C++ / CX), vous devez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à n’importe quelle classe runtime que vous souhaitez utiliser l’extension de balisage [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) avec.
+
+> [!IMPORTANT]
+> Si vous utilisez des [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) est disponible si vous avez installé le SDK Windows version 10.0.17763.0 (Windows 10, version 1809), ou une version ultérieure. Sans cet attribut, vous devez implémenter les interfaces [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) et [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) pour qu’ils soient en mesure d’utiliser l’extension de balisage [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) .
+
 ### <a name="binding-object-declared-using-xbind"></a>Objet de liaison déclaré à l’aide de {x:Bind}
 
-Nous avons une étape à accomplir avant de créer notre balisage [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783). Nous devons exposer notre classe de source de liaison à partir de la classe qui représente notre page de balisage. Pour ce faire, nous ajoutons une propriété (de type **HostViewModel** dans le cas présent) à notre classe de page **HostView**.
+Nous avons une étape à accomplir avant de créer notre balisage [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783). Nous devons exposer notre classe de source de liaison à partir de la classe qui représente notre page de balisage. Que faire, nous ajoutons une propriété (de type **HostViewModel** dans le cas présent) à notre classe de page **MainPage** .
 
 ```csharp
-namespace QuizGame.View
+namespace DataBindingInDepth
 {
-    public sealed partial class HostView : Page
+    public sealed partial class MainPage : Page
     {
-        public HostView()
+        public MainPage()
         {
             this.InitializeComponent();
             this.ViewModel = new HostViewModel();
@@ -186,19 +281,78 @@ namespace QuizGame.View
 }
 ```
 
+```cppwinrt
+// MainPage.idl
+import "HostViewModel.idl";
+
+namespace DataBindingInDepth
+{
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        MainPage();
+        HostViewModel ViewModel{ get; };
+    }
+}
+
+// MainPage.h
+// Include a header, and add this field:
+...
+#include "HostViewModel.h"
+...
+    DataBindingInDepth::HostViewModel ViewModel();
+
+private:
+    DataBindingInDepth::HostViewModel m_viewModel{ nullptr };
+...
+
+// MainPage.cpp
+// Implement like this:
+...
+MainPage::MainPage()
+{
+    InitializeComponent();
+
+}
+
+DataBindingInDepth::HostViewModel MainPage::ViewModel()
+{
+    return m_viewModel;
+}
+...
+```
+
 Nous pouvons alors examiner de plus près le balisage qui déclare l’objet de liaison. L’exemple ci-dessous utilise la même cible de liaison **Button.Content** que dans la section «Cible de liaison» précédemment et montre qu’elle est liée à la propriété **HostViewModel.NextButtonText**.
 
 ```xaml
-<Page x:Class="QuizGame.View.HostView" ... >
+<!-- MainPage.xaml -->
+<Page x:Class="DataBindingInDepth.Mainpage" ... >
     <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
 </Page>
 ```
 
-Notez la valeur que nous spécifions pour **Path**. Cette valeur est interprétée dans le contexte de la page elle-même, et dans le cas présent, le chemin commence par référencer la propriété **ViewModel** que nous venons d’ajouter à la page **HostView**. Cette propriété renvoie une instance **HostViewModel**, et nous pouvons donc ajouter un point à cet objet pour accéder à la propriété **HostViewModel.NextButtonText**. Nous spécifions également **Mode** pour remplacer la valeur ponctuelle par défaut de [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783).
+Notez la valeur que nous spécifions pour **Path**. Cette valeur est interprétée dans le contexte de la page elle-même, et dans ce cas, le chemin commence en référençant la propriété **ViewModel** que nous venons d’ajouter à la page **MainPage** . Cette propriété renvoie une instance **HostViewModel**, et nous pouvons donc ajouter un point à cet objet pour accéder à la propriété **HostViewModel.NextButtonText**. Nous spécifions également **Mode** pour remplacer la valeur ponctuelle par défaut de [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783).
 
 La propriété [**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) prend en charge une diversité d’options de liaison à des propriétés imbriquées, des propriétés attachées ainsi qu’à des indexeurs de chaînes et d’entiers. Pour plus d’informations, voir [Syntaxe de PropertyPath](https://msdn.microsoft.com/library/windows/apps/Mt185586). La réalisation d’une liaison à des indexeurs de chaînes revient à effectuer une liaison à des propriétés dynamiques sans avoir besoin d’implémenter [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878). Pour les autres paramètres, voir l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783).
 
-> [!Note]
+Pour illustrer que la propriété **HostViewModel.NextButtonText** est observable en effet, ajoutez un gestionnaire d’événements **Click** du bouton et mettre à jour la valeur de **HostViewModel.NextButtonText**. Générer, exécuter et cliquez sur le bouton pour afficher la valeur du **contenu** du bouton Mettre à jour.
+
+```csharp
+// MainPage.xaml.cs
+private void Button_Click(object sender, RoutedEventArgs e)
+{
+    this.ViewModel.NextButtonText = "Updated Next button text";
+}
+```
+
+```cppwinrt
+// MainPage.cpp
+void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
+{
+    ViewModel().NextButtonText(L"Updated Next button text");
+}
+```
+
+> [!NOTE]
 > Modifications apportées aux [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) sont envoyées à une source dépendante bidirectionnelle lorsque la [**zone de texte**](https://msdn.microsoft.com/library/windows/apps/BR209683) perd le focus et non après chaque séquence de touches utilisateur.
 
 **DataTemplate et x:DataType**
@@ -216,27 +370,56 @@ La propriété [**Path**](https://msdn.microsoft.com/library/windows/apps/window
 
 **Objets faiblement typés dans votre chemin d'accès**
 
-Considérez par exemple que vous avez un type nommé SampleDataGroup, qui implémente une propriété de chaîne nommée Title. Vous avez également une propriété MainPage.SampleDataGroupAsObject, qui est de type objet mais qui retourne une instance de SampleDataGroup. La liaison `<TextBlock Text="{x:Bind SampleDataGroupAsObject.Title}"/>` génère alors une erreur de compilation parce que la propriété Title est introuvable sur l’objet de type. La solution à ce problème consiste à ajouter un transtypage à votre syntaxe du chemin d’accès comme suit : `<TextBlock Text="{x:Bind ((data:SampleDataGroup)SampleDataGroupAsObject).Title}"/>`. Voici un autre exemple où Element est déclaré comme objet mais est en fait un TextBlock : `<TextBlock Text="{x:Bind Element.Text}"/>`. Un transtypage résout le problème: `<TextBlock Text="{x:Bind ((TextBlock)Element).Text}"/>`.
+Considérez par exemple que vous avez un type nommé SampleDataGroup, qui implémente une propriété de chaîne nommée Title. Et vous disposez d’une propriété MainPage.SampleDataGroupAsObject, qui est de type objet mais qui retourne une instance de SampleDataGroup. La liaison `<TextBlock Text="{x:Bind SampleDataGroupAsObject.Title}"/>` génère alors une erreur de compilation parce que la propriété Title est introuvable sur l’objet de type. La solution à ce problème consiste à ajouter un transtypage à votre syntaxe du chemin d’accès comme suit : `<TextBlock Text="{x:Bind ((data:SampleDataGroup)SampleDataGroupAsObject).Title}"/>`. Voici un autre exemple où Element est déclaré comme objet mais est en fait un TextBlock : `<TextBlock Text="{x:Bind Element.Text}"/>`. Un transtypage résout le problème: `<TextBlock Text="{x:Bind ((TextBlock)Element).Text}"/>`.
 
 **En cas de chargement asynchrone des données**
 
-Le code pour prendre en charge **{x:Bind}** est généré au moment de la compilation dans les classes partielles pour vos pages. Ces fichiers se trouvent dans votre dossier `obj`, et portent des noms tels que `<view name>.g.cs` (pour C#). Le code généré inclut un gestionnaire pour l’événement [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706) de votre page, et ce gestionnaire appelle la méthode **Initialize** sur une classe générée qui représente les liaisons de votre page. Ensuite, **Initialize** appelle **Update** pour commencer à déplacer les données entre la source et la cible de liaison. **Loading** est déclenché juste avant la première passe de mesure du contrôle de page ou d’utilisateur. Si vos données sont chargées de façon asynchrone, elles peuvent ne pas être prêtes au moment où **Initialize** est appelée. Ainsi, une fois que vous avez chargé les données, vous pouvez forcer l’initialisation des liaisons uniques en appelant `this.Bindings.Update();`. Si vous avez uniquement besoin des liaisons uniques pour les données chargées de manière asynchrone, il est préférable de les initialiser de cette manière plutôt que d’utiliser des liaisons à sens unique et d’écouter les modifications. Si vos données ne subissent pas de modifications affinées et si elles sont susceptibles d’être mises à jour dans le cadre d’une action spécifique, vous pouvez rendre vos liaisons uniques et forcer une mise à jour manuelle à tout moment avec un appel à **Update**.
+Le code pour prendre en charge **{x:Bind}** est généré au moment de la compilation dans les classes partielles pour vos pages. Ces fichiers se trouvent dans votre dossier `obj`, et portent des noms tels que `<view name>.g.cs` (pour C#). Le code généré inclut un gestionnaire pour l’événement [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706) de votre page, et ce gestionnaire appelle la méthode **Initialize** sur une classe générée qui représente les liaisons de votre page. Ensuite, **Initialize** appelle **Update** pour commencer à déplacer les données entre la source et la cible de liaison. **Loading** est déclenché juste avant la première passe de mesure du contrôle de page ou d’utilisateur. Si vos données sont chargées de façon asynchrone, elles peuvent ne pas être prêtes au moment où **Initialize** est appelée. Ainsi, une fois que vous avez chargé les données, vous pouvez forcer l’initialisation des liaisons uniques en appelant `this.Bindings.Update();`. Si vous avez uniquement besoin des liaisons à usage unique pour les données chargées de manière asynchrone, il est préférable de les initialiser de cette manière plutôt que d’avoir des liaisons à sens unique et d’écouter les modifications. Si vos données ne subissent pas de modifications affinées et si elles sont susceptibles d’être mises à jour dans le cadre d’une action spécifique, vous pouvez rendre vos liaisons uniques et forcer une mise à jour manuelle à tout moment avec un appel à **Update**.
 
-> [!Note]
-> **{x:Bind}** n'est pas adapté aux scénarios tardifs, tels que la navigation dans la structure du dictionnaire d’un objet JSON, ni le «duck typing» (typage canard) qui est une forme faible de typage basé sur les correspondances lexicales des noms de propriétés («si ça ressemble à un canard, si ça nage comme un canard et si ça cancane comme un canard, c’est qu’il s’agit sans doute d’un canard»). Avec le «duck typing», une liaison à la propriété Age peut aussi bien être satisfaite par un objet Person que par un objet Wine. Pour ces scénarios, utilisez **{Binding}**.
+> [!NOTE]
+> **{x: Bind}** n’est pas adaptée aux scénarios à liaison tardive, telle que la navigation de la structure du dictionnaire d’un objet JSON, ni canard frappe. «Duck tapant» est un formulaire de faible de typage basé sur les correspondances lexicales sur les noms de propriété (un, «si elle parcourt nageant derrière et quacks comme un canard, il est un canard»). Avec canard frappe, une liaison à la propriété **Age** serait tout aussi satisfaite avec une **personne** ou un **vin** objet (en supposant que ces types avaient une propriété **Age** ). Pour ces scénarios, utilisez l’extension de balisage **{Binding}** .
 
 ### <a name="binding-object-declared-using-binding"></a>Objet de liaison déclaré à l’aide de {Binding}
+
+Si vous utilisez C++ / extensions de composant WinRT ou Visual C++ (C++ / CX), puis, pour utiliser l’extension de balisage [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) , vous devez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à n’importe quelle classe runtime que vous voulez lier à. Pour utiliser [{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), vous n’avez pas besoin cet attribut.
+
+```cppwinrt
+// HostViewModel.idl
+// Add this attribute:
+[Windows.UI.Xaml.Data.Bindable]
+runtimeclass HostViewModel : Windows.UI.Xaml.Data.INotifyPropertyChanged
+...
+```
+
+> [!IMPORTANT]
+> Si vous utilisez des [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) est disponible si vous avez installé le SDK Windows version 10.0.17763.0 (Windows 10, version 1809), ou une version ultérieure. Sans cet attribut, vous devez implémenter les interfaces [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) et [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) pour qu’ils soient en mesure d’utiliser l’extension de balisage [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) .
 
 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) suppose, par défaut, que vous créiez une liaison à la propriété [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) de votre page de balisage. Nous allons donc définir la propriété **DataContext** de notre page en tant qu’instance de notre classe de source de liaison (de type **HostViewModel** dans le cas présent). L’exemple ci-dessous illustre le balisage qui déclare l’objet de liaison. Nous utilisons la même cible de liaison **Button.Content** que dans la section «Cible de liaison» précédemment et nous la lions à la propriété **HostViewModel.NextButtonText**.
 
 ```xaml
-<Page xmlns:viewmodel="using:QuizGame.ViewModel" ... >
+<Page xmlns:viewmodel="using:DataBindingInDepth" ... >
     <Page.DataContext>
-        <viewmodel:HostViewModel/>
+        <viewmodel:HostViewModel x:Name="viewModelInDataContext"/>
     </Page.DataContext>
     ...
     <Button Content="{Binding Path=NextButtonText}" ... />
 </Page>
+```
+
+```csharp
+// MainPage.xaml.cs
+private void Button_Click(object sender, RoutedEventArgs e)
+{
+    this.viewModelInDataContext.NextButtonText = "Updated Next button text";
+}
+```
+
+```cppwinrt
+// MainPage.cpp
+void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
+{
+    viewModelInDataContext().NextButtonText(L"Updated Next button text");
+}
 ```
 
 Notez la valeur que nous spécifions pour **Path**. Cette valeur est interprétée dans le contexte de la propriété [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) de la page, qui dans cet exemple est définie en tant qu’instance de **HostViewModel**. Le chemin référence la propriété **HostViewModel.NextButtonText**. Nous pouvons omettre **Mode**, car la valeur ponctuelle par défaut de [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) fonctionne ici.
@@ -245,7 +428,7 @@ La valeur par défaut de [**DataContext**](https://msdn.microsoft.com/library/wi
 
 Un objet de liaison présente une propriété **Source**, dont la valeur par défaut est la propriété [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) de l’élément d’interface utilisateur sur lequel la liaison est déclarée. Vous pouvez remplacer cette valeur par défaut en définissant **Source**,**RelativeSource** ou **ElementName** explicitement sur la liaison (voir [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) pour plus d’informations).
 
-À l’intérieur d’un modèle [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348), la propriété [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) est définie sur l’objet de données qui est basé sur le modèle. L’exemple ci-dessous peut être utilisé en tant que modèle **ItemTemplate** d’un contrôle d’éléments lié à une collection de tout type présentant des propriétés de chaîne nommées **Title** et **Description**.
+À l’intérieur d’un [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348), le [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) est automatiquement définie pour l’objet de données qui est basé sur un modèle. L’exemple ci-dessous peut être utilisé en tant que modèle **ItemTemplate** d’un contrôle d’éléments lié à une collection de tout type présentant des propriétés de chaîne nommées **Title** et **Description**.
 
 ```xaml
 <DataTemplate x:Key="SimpleItemTemplate">
@@ -256,7 +439,7 @@ Un objet de liaison présente une propriété **Source**, dont la valeur par dé
   </DataTemplate>
 ```
 
-> [!Note]
+> [!NOTE]
 > Par défaut, les modifications apportées aux [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) sont envoyées à une source de dépendante bidirectionnelle lorsque la [**zone de texte**](https://msdn.microsoft.com/library/windows/apps/BR209683) perd le focus. Pour que les modifications soient envoyées après chaque séquence de touches de l’utilisateur, attribuez la valeur **PropertyChanged** à **UpdateSourceTrigger** sur la liaison dans le balisage. Vous pouvez également contrôler entièrement le moment où les modifications sont envoyées à la source en définissant **UpdateSourceTrigger** sur **Explicit**. Vous gérez ensuite les événements sur la zone de texte (généralement [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)), appelez [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) sur la cible pour obtenir un objet [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx) et appelez enfin [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) pour mettre à jour la source de données par programmation.
 
 La propriété [**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) prend en charge une diversité d’options de liaison à des propriétés imbriquées, des propriétés attachées ainsi qu’à des indexeurs de chaînes et d’entiers. Pour plus d’informations, voir [Syntaxe de PropertyPath](https://msdn.microsoft.com/library/windows/apps/Mt185586). La réalisation d’une liaison à des indexeurs de chaînes revient à effectuer une liaison à des propriétés dynamiques sans avoir besoin d’implémenter [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878). La propriété [**ElementName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.elementname) est utile pour les liaisons d’élément à élément. La propriété [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.relativesource) a plusieurs usages et offre notamment une solution plus performante que la liaison de modèle à l’intérieur d’un modèle [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209391). Pour les autres paramètres, voir l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) et la classe [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820).
@@ -309,44 +492,8 @@ public class DateToStringConverter : IValueConverter
 }
 ```
 
-```vbnet
-Public Class DateToStringConverter
-    Implements IValueConverter
-
-    ' Define the Convert method to change a DateTime object to
-    ' a month string.
-    Public Function Convert(ByVal value As Object, -
-        ByVal targetType As Type, ByVal parameter As Object, -
-        ByVal language As String) As Object -
-        Implements IValueConverter.Convert
-
-        ' value is the data from the source object.
-        Dim thisdate As DateTime = CType(value, DateTime)
-        Dim monthnum As Integer = thisdate.Month
-        Dim month As String
-        Select Case (monthnum)
-            Case 1
-                month = "January"
-            Case 2
-                month = "February"
-            Case Else
-                month = "Month not found"
-        End Select
-        ' Return the value to pass to the target.
-        Return month
-
-    End Function
-
-    ' ConvertBack is not implemented for a OneWay binding.
-    Public Function ConvertBack(ByVal value As Object, -
-        ByVal targetType As Type, ByVal parameter As Object, -
-        ByVal language As String) As Object -
-        Implements IValueConverter.ConvertBack
-
-        Throw New NotImplementedException
-
-    End Function
-End Class
+```cppwinrt
+// See the "Formatting or converting data values for display" section in the "Data binding overview" topic.
 ```
 
 Et voici comment ce convertisseur est utilisé dans votre balisage d’objet de liaison.
@@ -355,12 +502,9 @@ Et voici comment ce convertisseur est utilisé dans votre balisage d’objet de 
 <UserControl.Resources>
   <local:DateToStringConverter x:Key="Converter1"/>
 </UserControl.Resources>
-
 ...
-
 <TextBlock Grid.Column="0" 
   Text="{x:Bind ViewModel.Month, Converter={StaticResource Converter1}}"/>
-
 <TextBlock Grid.Column="0" 
   Text="{Binding Month, Converter={StaticResource Converter1}}"/>
 ```
@@ -369,7 +513,7 @@ Le moteur de liaison appelle les méthodes [**Convert**](https://msdn.microsoft.
 
 Le convertisseur est également doté de paramètres optionnels: [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterlanguage), qui autorise la spécification du langage à utiliser dans la conversion, et [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterparameter), qui autorise la transmission d’un paramètre pour la logique de conversion. Pour obtenir un exemple qui utilise un paramètre de convertisseur, voir [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903).
 
-> [!Note]
+> [!NOTE]
 > S’il existe une erreur dans la conversion, ne levez pas d’exception. Retournez plutôt [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue), qui arrêtera le transfert de données.
 
 Pour afficher une valeur par défaut à utiliser chaque fois que la source de liaison ne peut pas être résolue, définissez la propriété **FallbackValue** sur l’objet de liaison dans le balisage. Cette méthode s’avère utile pour gérer les erreurs de conversion et de mise en forme. Elle est également utile pour la liaison aux propriétés sources qui peuvent ne pas exister sur tous les objets dans une collection liée de types hétérogènes.
@@ -445,51 +589,50 @@ MainPage.xaml
 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) prend en charge une fonctionnalité appelée liaison d’événement. Avec cette fonctionnalité, vous pouvez spécifier le gestionnaire d’un événement à l’aide d’une liaison, ce qui offre une option en plus de la gestion des événements à l’aide d’une méthode sur le fichier code-behind. Supposons que vous ayez une propriété **RootFrame** sur votre classe **MainPage**.
 
 ```csharp
-    public sealed partial class MainPage : Page
-    {
-        ....    
-        public Frame RootFrame { get { return Window.Current.Content as Frame; } }
-    }
+public sealed partial class MainPage : Page
+{
+    ...
+    public Frame RootFrame { get { return Window.Current.Content as Frame; } }
+}
 ```
 
 Vous pouvez alors lier l’événement **Click** d’un bouton à une méthode sur l’objet **Frame** renvoyé par la propriété **RootFrame** comme suit. Notez que nous avons également lié la propriété **IsEnabled** du bouton à un autre membre du même élément **Frame**.
 
 ```xaml
-    <AppBarButton Icon="Forward" IsCompact="True"
-    IsEnabled="{x:Bind RootFrame.CanGoForward, Mode=OneWay}"
-    Click="{x:Bind RootFrame.GoForward}"/>
+<AppBarButton Icon="Forward" IsCompact="True"
+IsEnabled="{x:Bind RootFrame.CanGoForward, Mode=OneWay}"
+Click="{x:Bind RootFrame.GoForward}"/>
 ```
 
 Les méthodes surchargées ne peuvent pas être utilisées pour gérer un événement avec cette technique. En outre, si la méthode qui gère l’événement comporte des paramètres, ceux-ci doivent tous être attribuables à partir des types de l’ensemble des paramètres de l’événement, respectivement. Dans notre exemple, la méthode [**Frame.GoForward**](https://msdn.microsoft.com/library/windows/apps/BR242693) n’est pas surchargée et elle ne comporte aucun paramètre (mais elle serait toujours valide même avec deux paramètres **object**). En revanche, la méthode [**Frame.GoBack**](https://msdn.microsoft.com/library/windows/apps/Dn996568) est surchargée et ne peut donc pas être utilisée avec cette technique.
 
 La technique de liaison d’événement est similaire à l’implémentation et l’utilisation de commandes (une commande est une propriété qui renvoie un objet implémentant l’interface [**ICommand**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.icommand.aspx)). Les extensions de balisage [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) et [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) fonctionnent toutes deux avec les commandes. Pour ne pas avoir à implémenter plusieurs fois le modèle de commande, vous pouvez utiliser la classe d’assistance **DelegateCommand**, disponible dans l’exemple [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) (dans le dossier «Common»).
 
-
 ## <a name="binding-to-a-collection-of-folders-or-files"></a>Liaison à une collection de dossiers ou de fichiers
 
 Vous pouvez utiliser les API dans l’espace de noms [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) pour récupérer des données liées aux dossiers et aux fichiers. Toutefois, les différentes méthodes **GetFilesAsync**, **GetFoldersAsync** et **GetItemsAsync** ne retournent pas de valeurs qui conviennent pour la liaison aux contrôles de listes. Vous devez plutôt lier les valeurs retournées des méthodes [**GetVirtualizedFilesVector**](https://msdn.microsoft.com/library/windows/apps/Hh701422), [**GetVirtualizedFoldersVector**](https://msdn.microsoft.com/library/windows/apps/Hh701428) et [**GetVirtualizedItemsVector**](https://msdn.microsoft.com/library/windows/apps/Hh701430) de la classe [**FileInformationFactory**](https://msdn.microsoft.com/library/windows/apps/BR207501). L’exemple de code suivant provenant de l’[exemple StorageDataSource et GetVirtualizedFilesVector](http://go.microsoft.com/fwlink/p/?linkid=228621) illustre le modèle d’utilisation classique. Pensez à déclarer la fonctionnalité **picturesLibrary** dans le manifeste de votre package d’application et à vérifier que le dossier de votre bibliothèque d’images contient des images.
 
 ```csharp
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            var library = Windows.Storage.KnownFolders.PicturesLibrary;
-            var queryOptions = new Windows.Storage.Search.QueryOptions();
-            queryOptions.FolderDepth = Windows.Storage.Search.FolderDepth.Deep;
-            queryOptions.IndexerOption = Windows.Storage.Search.IndexerOption.UseIndexerWhenAvailable;
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    var library = Windows.Storage.KnownFolders.PicturesLibrary;
+    var queryOptions = new Windows.Storage.Search.QueryOptions();
+    queryOptions.FolderDepth = Windows.Storage.Search.FolderDepth.Deep;
+    queryOptions.IndexerOption = Windows.Storage.Search.IndexerOption.UseIndexerWhenAvailable;
 
-            var fileQuery = library.CreateFileQueryWithOptions(queryOptions);
+    var fileQuery = library.CreateFileQueryWithOptions(queryOptions);
 
-            var fif = new Windows.Storage.BulkAccess.FileInformationFactory(
-                fileQuery,
-                Windows.Storage.FileProperties.ThumbnailMode.PicturesView,
-                190,
-                Windows.Storage.FileProperties.ThumbnailOptions.UseCurrentScale,
-                false
-                );
+    var fif = new Windows.Storage.BulkAccess.FileInformationFactory(
+        fileQuery,
+        Windows.Storage.FileProperties.ThumbnailMode.PicturesView,
+        190,
+        Windows.Storage.FileProperties.ThumbnailOptions.UseCurrentScale,
+        false
+        );
 
-            var dataSource = fif.GetVirtualizedFilesVector();
-            this.PicturesListView.ItemsSource = dataSource;
-        }
+    var dataSource = fif.GetVirtualizedFilesVector();
+    this.PicturesListView.ItemsSource = dataSource;
+}
 ```
 
 Généralement, vous utiliserez cette approche pour créer un affichage en lecture seule des informations sur le fichier et le dossier. Vous pouvez créer des liaisons bidirectionnelles aux propriétés de fichiers et de dossiers, par exemple pour permettre aux utilisateurs de noter une chanson dans un affichage de musique. Toutefois, les modifications apportées ne sont pas conservées tant que vous n’avez pas appelé la méthode **SavePropertiesAsync** appropriée (par exemple, [**MusicProperties.SavePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/BR207760)). Vous devez valider les modifications lorsque l’élément ne correspond plus à la zone active afin de ne pas déclencher la réinitialisation de la sélection.
@@ -500,7 +643,15 @@ Notez également qu’un vecteur virtualisé peut retourner **null** pour certai
 
 ## <a name="binding-to-data-grouped-by-a-key"></a>Liaison de données groupées en fonction d’une clé
 
-Si vous prenez une collection plate d’éléments (des ouvrages, par exemple, représentés par une classe **BookSku**) et que vous groupez les éléments en utilisant une propriété commune en tant que clé (la propriété **BookSku.AuthorName**, par exemple), vous obtenez ce qu’on appelle des données groupées. Lorsque vous groupez les données, la collection n’est plus plate. Les données groupées sont une collection d’objets de groupe, où chaque objet de groupe possède a) une clé et b) une collection d’éléments dont la propriété correspond à cette clé. Pour reprendre l’exemple des ouvrages, le regroupement par nom d’auteur a pour résultat une collection de groupes où chaque groupe possède a) une clé, qui est le nom d’un auteur, et b) une collection de **BookSku** dont la propriété **AuthorName** correspond à la clé du groupe.
+Si vous prenez une collection plate d’éléments (livres, par exemple, représentées par une classe **BookSku** ) et vous groupez les éléments à l’aide d’une propriété commune en tant que clé (par exemple, la propriété **BookSku.AuthorName** ), puis le résultat est appelé des données groupées. Lorsque vous groupez les données, la collection n’est plus plate. Les données groupées sont une collection d’objets de groupe, où chaque objet de groupe a
+
+- une clé, et
+- une collection d’éléments dont la propriété correspond à cette clé.
+
+Pour prendre l’exemple de livres à nouveau, le résultat de regroupement par nom de l’auteur aboutit à une collection de groupes où chaque groupe possède
+
+- une clé, qui est le nom de l’auteur, et
+- une collection des s **BookSku**dont la propriété **AuthorName** correspond à la clé du groupe.
 
 En règle générale, pour afficher une collection, vous liez la propriété [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) d’un contrôle d’éléments (tel que [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) ou [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)) directement à une propriété qui renvoie une collection. S’il s’agit d’une collection plate d’éléments, vous n’avez pas besoin d’effectuer d’opération particulière. Mais s’il s’agit d’une collection d’objets de groupe (comme c’est le cas pour une liaison à des données groupées), vous avez besoin des services d’un objet intermédiaire appelé [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), qui se trouve entre le contrôle d’éléments et la source de liaison. Vous liez l’objet **CollectionViewSource** à la propriété qui renvoie les données groupées et vous liez le contrôle d’éléments à l’objet **CollectionViewSource**. L’objet **CollectionViewSource** a pour autre avantage d’assurer le suivi de l’élément actif, de sorte que vous pouvez synchroniser plusieurs contrôles d’éléments en permanence en les liant tous au même objet **CollectionViewSource**. Vous pouvez également accéder à l’élément actif par programme via la propriété [**ICollectionView.CurrentItem**](https://msdn.microsoft.com/library/windows/apps/BR209857) de l’objet renvoyé par la propriété [**CollectionViewSource.View**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.collectionviewsource.view).
 
@@ -509,22 +660,21 @@ Pour activer la fonctionnalité de regroupement d’un objet [**CollectionViewSo
 L’exemple suivant illustre le modèle «has-a-group». La classe de page comporte une propriété nommée [**ViewModel**](https://msdn.microsoft.com/library/windows/apps/BR208713), qui renvoie une instance de notre modèle d’affichage. L’objet [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) se lie à la propriété **Authors** du modèle d’affichage (**Authors** est la collection d’objets de groupe) et indique que c’est la propriété **Author.BookSkus** qui contient les éléments groupés. Enfin, la classe [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) est liée à l’objet **CollectionViewSource** et son style de groupe est défini de manière à pouvoir afficher les éléments en groupes.
 
 ```csharp
-    <Page.Resources>
-        <CollectionViewSource
-        x:Name="AuthorHasACollectionOfBookSku"
-        Source="{x:Bind ViewModel.Authors}"
-        IsSourceGrouped="true"
-        ItemsPath="BookSkus"/>
-    </Page.Resources>
-    ...
-
-    <GridView
-    ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
-        <GridView.GroupStyle>
-            <GroupStyle
-                HeaderTemplate="{StaticResource AuthorGroupHeaderTemplateWide}" ... />
-        </GridView.GroupStyle>
-    </GridView>
+<Page.Resources>
+    <CollectionViewSource
+    x:Name="AuthorHasACollectionOfBookSku"
+    Source="{x:Bind ViewModel.Authors}"
+    IsSourceGrouped="true"
+    ItemsPath="BookSkus"/>
+</Page.Resources>
+...
+<GridView
+ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
+    <GridView.GroupStyle>
+        <GroupStyle
+            HeaderTemplate="{StaticResource AuthorGroupHeaderTemplateWide}" ... />
+    </GridView.GroupStyle>
+</GridView>
 ```
 
 Vous pouvez implémenter le modèle «is-a-group» de deux manières. La première consiste à créer votre propre classe de groupe. Dérivez la classe de **List&lt;T&gt;** (où *T* est le type des éléments). Exemple : `public class Author : List<BookSku>`. La deuxième consiste à utiliser une expression [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) afin de créer dynamiquement des objets de groupe (et une classe de groupe) à partir des valeurs de propriétés similaires des éléments **BookSku**. Cette approche, consistant à conserver simplement une liste plate d’éléments et à les regrouper à la volée, est courante pour les applications qui accèdent aux données à partir d’un service cloud. Elle vous offre la possibilité de regrouper les ouvrages par auteur et par genre (par exemple) sans avoir à recourir à des classes de groupes spécifiques, comme **Author** et **Genre**.
@@ -532,25 +682,24 @@ Vous pouvez implémenter le modèle «is-a-group» de deux manières. La premiè
 L’exemple suivant illustre le modèle «is-a-group» avec [LINQ](http://msdn.microsoft.com/library/bb397926.aspx). Cette fois-ci, nous regroupons les ouvrages par genre, avec le nom du genre affiché dans les en-têtes des groupes. Cela est indiqué par le chemin de la propriété «Key» en référence à la valeur du groupe [**Key**](https://msdn.microsoft.com/library/windows/apps/bb343251.aspx).
 
 ```csharp
-    using System.Linq;
+using System.Linq;
+...
+private IOrderedEnumerable<IGrouping<string, BookSku>> genres;
 
-    ...
-
-    private IOrderedEnumerable<IGrouping<string, BookSku>> genres;
-
-    public IOrderedEnumerable<IGrouping<string, BookSku>> Genres
+public IOrderedEnumerable<IGrouping<string, BookSku>> Genres
+{
+    get
     {
-        get
+        if (this.genres == null)
         {
-            if (this.genres == null)
-            {
-                this.genres = from book in this.bookSkus
-                group book by book.genre into grp
-                orderby grp.Key select grp;
-            }
-            return this.genres;
+            this.genres = from book in this.bookSkus
+                          group book by book.genre into grp
+                          orderby grp.Key
+                          select grp;
         }
+        return this.genres;
     }
+}
 ```
 
 Gardez à l’esprit que pour utiliser [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) avec des modèles de données, nous devons indiquer le type en cours de liaison en définissant une valeur **x:DataType**. Si le type est générique, nous ne pouvons pas l’exprimer dans le balisage et nous devons par conséquent utiliser[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) à la place dans le modèle d’en-tête du style de groupe.

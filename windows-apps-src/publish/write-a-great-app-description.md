@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, description, décrire, description dans le Store, marketing
 ms.localizationpriority: medium
 ms.openlocfilehash: 54877e43ced6044e0866f951a653f2b32d040d9d
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4384451"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4418090"
 ---
 # <a name="write-a-great-app-description"></a>Rédiger une description convaincante de l’application
 

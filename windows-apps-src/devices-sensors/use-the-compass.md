@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 069f13926fda125ebb383f16bf96eab333a28523
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: f2bddb9ae3adf8ef6cfdf1b6c078db5eb026c93d
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958654"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4420298"
 ---
 # <a name="use-the-compass"></a>Utiliser la boussole
 
@@ -28,8 +28,6 @@ ms.locfileid: "958654"
 **Exemple**
 
 -   Pour une implémentation plus complète, consultez l’[exemple de boussole](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Compass).
-
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
 Découvrez comment utiliser la boussole pour déterminer l’orientation actuelle.
 
