@@ -14,7 +14,7 @@ ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 665a83743e2c4b5096b76b481c0e46274daf9c1f
 ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.translationtype: Auto
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/05/2018
 ms.locfileid: "1707330"

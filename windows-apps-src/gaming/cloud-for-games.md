@@ -12,7 +12,7 @@ keywords: Windows10, uwp, jeux, services cloud
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a0ffc3779f604b68c699e30068e07f3461f568d
 ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.translationtype: Auto
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/03/2018
 ms.locfileid: "1700825"

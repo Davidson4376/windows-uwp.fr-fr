@@ -11,7 +11,7 @@ keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: f0dcbe28107bb8c6918e4e0ac63698f1f9692005
 ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.translationtype: Auto
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/03/2018
 ms.locfileid: "1833135"

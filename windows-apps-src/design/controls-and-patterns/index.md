@@ -14,7 +14,7 @@ ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
 ms.openlocfilehash: ad1ba185e70a34a4e7bfed0609412ac7bbca2d4a
 ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.translationtype: Auto
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/15/2018
 ms.locfileid: "1653688"

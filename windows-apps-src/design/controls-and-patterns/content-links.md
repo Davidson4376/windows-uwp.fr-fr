@@ -16,7 +16,7 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 9970380b30c45d3dff6020c57b815562c12b322b
 ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.translationtype: Auto
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/28/2018
 ms.locfileid: "1691528"

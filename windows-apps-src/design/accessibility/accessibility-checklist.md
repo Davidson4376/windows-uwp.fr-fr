@@ -14,7 +14,7 @@ keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 658b93aa72efbaacaf4e8bb1ec98bd2adb5cfa9a
 ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.translationtype: Auto
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/15/2018
 ms.locfileid: "1653788"

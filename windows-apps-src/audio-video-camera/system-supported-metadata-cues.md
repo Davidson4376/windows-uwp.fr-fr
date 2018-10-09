@@ -12,7 +12,7 @@ keywords: windows10, uwp, métadonnées, indicateurs, fonctions vocales, chapitr
 ms.localizationpriority: medium
 ms.openlocfilehash: 9229e123b5a28cbcf64937cfeb7a57c961e71786
 ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.translationtype: Auto
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/28/2018
 ms.locfileid: "1692244"

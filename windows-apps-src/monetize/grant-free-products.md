@@ -12,7 +12,7 @@ keywords: windows10, uwp, API d’achat du MicrosoftStore, octroyer des produits
 ms.localizationpriority: medium
 ms.openlocfilehash: c1ecb1f7db755fd21014ebc7edf979e7a25e7c7f
 ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.translationtype: Auto
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/19/2018
 ms.locfileid: "1665025"

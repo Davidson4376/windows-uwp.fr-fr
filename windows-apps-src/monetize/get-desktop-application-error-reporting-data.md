@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, erreurs, application de bureau
 ms.localizationpriority: medium
 ms.openlocfilehash: 66594fd6f59281011fccab21ad5618827db322dd
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4414952"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4462184"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>Obtenir des données de rapport d'erreur pour votre application de bureau
 
@@ -139,7 +139,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 ```
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Rapport d’intégrité](../publish/health-report.md)
 * [Accéder aux données d’analyse à l’aide des services du MicrosoftStore](access-analytics-data-using-windows-store-services.md)

@@ -12,7 +12,7 @@ keywords: windows 10, uwp, API de soumission au MicrosoftStore, créer une versi
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c53addfb58006ec305d702716a29668440bb90e
 ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.translationtype: Auto
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/30/2018
 ms.locfileid: "1816694"

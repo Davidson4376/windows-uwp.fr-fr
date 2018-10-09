@@ -12,7 +12,7 @@ keywords: windows 10, uwp, API de soumission au MicrosoftStore, extensions, prod
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e829d497a62a55fb56462a669f4e3545740975c
 ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.translationtype: Auto
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2018
 ms.locfileid: "1663199"

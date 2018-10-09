@@ -12,7 +12,7 @@ keywords: windows10, uwp, API de soumission au MicrosoftStore, versions d’éva
 ms.localizationpriority: medium
 ms.openlocfilehash: aa9bbac25316fcebc630edd55aabd333e43e3e49
 ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.translationtype: Auto
 ms.contentlocale: fr-FR
 ms.lasthandoff: 03/17/2018
 ms.locfileid: "1661979"

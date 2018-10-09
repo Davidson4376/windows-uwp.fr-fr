@@ -12,7 +12,7 @@ keywords: Windows10, uwp, jeux, entrée, exemple
 ms.localizationpriority: medium
 ms.openlocfilehash: 2be43690726112d8597747ee51dd94baf0f40f0e
 ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.translationtype: Auto
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/30/2018
 ms.locfileid: "1817044"
