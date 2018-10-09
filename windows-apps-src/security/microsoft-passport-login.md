@@ -10,19 +10,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 284609399f167a7229d0c7bb5858d0f0eda451ce
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.openlocfilehash: 106ea458502a95c53ecbf02d9118f3c31ff43978
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4389443"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4429072"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Créer une application de connexion WindowsHello
-
-
-
-
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
 Voici la première partie de la procédure complète sur la création d’une application UWP Windows10 qui utilise Windows Hello comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels. L’application utilise un nom d’utilisateur pour la connexion et crée une clé Hello pour chaque compte. Ces comptes sont protégés par le code PIN configuré dans les paramètres Windows lors de la configuration de Windows Hello.
 
