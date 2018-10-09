@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 0992ea54092063ba53f23871599905e58f1b456e
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4422540"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4467888"
 ---
 # <a name="obtain-and-understand-barcode-data"></a>Obtenir et comprendre les données de code-barres
 
@@ -137,7 +137,7 @@ Cette valeur est définie avant un événement **DataReceived** est déclenché 
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir aussi
 * [Scanneur de code-barres](pos-barcodescanner.md)
 * [Classe ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)
 * [Classe BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)

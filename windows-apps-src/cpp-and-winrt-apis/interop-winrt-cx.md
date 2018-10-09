@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, port, migrer, interopérabilité, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: b60b0d7c201f172261de1546fc250e40b8cd670f
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4420165"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4462710"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>Interopérabilité entre C++/WinRT et C++/CX
 Cette rubrique montre deux fonctions d’assistance qui peuvent être utilisées pour effectuer une conversion entre [C++ / CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) et [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) objets. Vous pouvez les utiliser pour permettre l’interopérabilité entre le code qui utilise les deux projections de langage, ou vous pouvez utiliser les fonctions comme vous transférez votre code de C++ / CX vers C++ / WinRT (voir [déplacer vers C++ / WinRT de C++ / CX](move-to-winrt-from-cx.md)).

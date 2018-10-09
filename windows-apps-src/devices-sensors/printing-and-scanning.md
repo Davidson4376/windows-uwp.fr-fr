@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, uwp, l’impression, 3dprinting, l’impression 3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c4ada5d58743bf19ed27dfbdd2676f2a267129f
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4431105"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4466353"
 ---
 # <a name="printing-and-scanning"></a>Impression et numérisation
 
 
 Cette section décrit comment imprimer et numériser à partir de votre application Windows universelle.
 
-| Rubrique | Description | 
+| Article | Description | 
 |-------|-------------|
 | [Imprimer à partir de votre application](print-from-your-app.md) | Découvrez comment imprimer des documents à partir d’une application Windows universelle. Cette rubrique montre également comment imprimer des pages spécifiques. |
 | [Personnaliser l’interface utilisateur d’aperçu avant impression](customize-the-print-preview-ui.md) | Cette section décrit comment personnaliser les options d’impression et les paramètres dans l’interface utilisateur d’aperçu avant impression. |

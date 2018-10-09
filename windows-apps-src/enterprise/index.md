@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4421172"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4462650"
 ---
 # <a name="enterprise"></a>Entreprise
 
@@ -177,7 +177,7 @@ Aujourd’hui, de nombreux utilisateurs travaillent avec leur propre téléphone
 
 Vous disposez d’options pour la distribution des applications aux utilisateurs de votre organisation. Vous pouvez utiliser Microsoft Store pour entreprises, gestion des périphériques mobiles existant ou vous pouvez charger des applications sur des appareils. Vous pouvez également rendre vos applications disponibles au grand public en les publiant sur le Microsoft Store.
 
-| Rubrique | Description |
+| Article | Description |
 |-------|-------------|
 | [Distribuer des applications métier aux entreprises](https://msdn.microsoft.com/library/windows/apps/mt608995) | Vous pouvez publier des applications cœur de métier directement aux entreprises pour une acquisition en volume par le biais du Microsoft Store pour entreprises, sans mettre les applications à grande échelle à la disposition du public. |
 | [Charger une version test des applications](https://technet.microsoft.com/library/mt269549) | Lorsque vous chargez de manière indépendante une application, vous déployez un package d’application signée sur un appareil. Vous conservez la signature, l’hébergement et le déploiement de ces applications. Le processus de chargement indépendant d’applications est simplifié pour Windows 10.             |
@@ -189,7 +189,7 @@ Texte d’introduction ici.
 
 Action - communiquer avec Josh et/ou Karl pour obtenir des exemples d’orienté entreprise plus ensemble.
 
-| Rubrique |  Description |
+| Article |  Description |
 |------ |--------------|
 | [Exemple de stock VanArsdel](https://github.com/Microsoft/InventorySample) | Un exemple d’application Windows 10 (à l’aide de la plateforme Windows universelle) se concentre dans les scénarios métier, montrant comment utiliser les dernières fonctionnalités de Windows dans les applications de bureau. L’exemple est basé sur la création et la gestion des clients, des commandes et produits pour la société fictive VanArsdel.
 Met en évidence MVVM, base de données SQL, Entity Framework. La liste d’autres utilisateurs.|

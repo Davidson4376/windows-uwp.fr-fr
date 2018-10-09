@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store, API de l’utilisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4426014"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4467944"
 ---
 # <a name="get-daily-app-usage"></a>Obtenir l’utilisation d’applications quotidiennes
 
 Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données d’utilisation agrégées (ne pas y compris Xbox en mode multijoueur) au format JSON pour une application au cours de la plage de dates donnée (90 derniers jours uniquement) et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport d’utilisation](../publish/usage-report.md) dans le tableau de bord du centre de développement Windows.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
@@ -53,7 +53,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 | endDate       | date   | Dans la plage de dates, la date de début de la récupération des avis. La valeur par défaut est la date actuelle.                     |  Non        |
 | top           | entier    | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données.                          |  Non        |
 | skip          | entier    | Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10000 et skip=0 pour obtenir les 10000 premières lignes de données, top=10000 et skip=10000 pour obtenir les 10000 lignes suivantes, et ainsi de suite.                         |  Non        |  
-| filter        |chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs eq ou ne, et les instructions peuvent être combinées à l’aide des opérateurs and ou or. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre filter. Vous pouvez spécifier les champs suivants dans le corps de réponse: <ul><li>**marché**</li><li>**deviceType**</li><li>**packageVersion**</li></ul>                                                                                                                                              | Non         |  
+| filter        |chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs eq ou ne, et les instructions peuvent être combinées à l’aide des opérateurs and ou or. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre filter. Vous pouvez spécifier les champs suivants dans le corps de réponse: <ul><li>**market**</li><li>**deviceType**</li><li>**packageVersion**</li></ul>                                                                                                                                              | Non         |  
 | orderby       | chaîne | Une instruction commandant les valeurs des données de résultat. La syntaxe est la suivante <em>orderby=field [order],field [order],...</em>. Le paramètre <em>champ</em> peut être l'une des chaînes suivantes:<ul><li>**date**</li><li>**applicationId**</li><li>**applicationName**</li><li>**market**</li><li>**packageVersion**</li><li>**deviceType**</li><li>**subscriptionName**</li><li>**dailySessionCount**</li><li>**engagementDurationMinutes**</li><li>**dailyActiveUsers**</li><li>**dailyActiveDevices**</li><li>**dailyNewUsers**</li><li>**monthlyActiveUsers**</li><li>**monthlyActiveDevices**</li><li>**monthlyNewUsers**</li></ul><p>Le paramètre facultatif <em>order</em> peut avoir la valeur **asc** ou **desc** pour spécifier l’ordre croissant ou décroissant de chaque champ. La valeur par défaut est **asc**.</p><p>Voici un exemple de chaîne <em>orderby</em>: <em>orderby=date,market</em></p>                                                                                                   |  Non        |
 | groupby       | chaîne | Une instruction qui applique l’agrégation des données uniquement sur les champs spécifiés. Vous pouvez spécifier les champs suivants dans le corps de réponse: <ul><li>**applicationName**</li><li>**subscriptionName**</li><li>**deviceType**</li><li>**packageVersion**</li><li>**marché**</li><li>**date**</li></ul><p>Les lignes de données renvoyées comportent les champs spécifiés dans le paramètre <em>groupby</em>, ainsi que dans les paramètres suivants :</p><ul><li>**applicationId**</li><li>**subscriptionName**</li><li>**dailySessionCount**</li><li>**engagementDurationMinutes**</li><li>**dailyActiveUsers**</li><li>**dailyActiveDevices**</li><li>**dailyNewUsers**</li><li>**monthlyActiveUsers**</li><li>**monthlyActiveDevices**</li><li>**monthlyNewUsers**</li></ul><p>Le paramètre <em>groupby</em> peut être utilisé avec le paramètre <em>aggregationLevel</em>. Par exemple: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p>                                                                                                             |  Non        |
 
@@ -75,7 +75,7 @@ Authorization: Bearer <your access token>
 
 | Valeur      | Type   | Description                                                                                                                         |
 |------------|--------|-------------------------------------------------------------------------------------------------------------------------------------|
-| Valeur      | array  | Tableau d’objets contenant des données d’utilisation agrégées. Pour plus d’informations sur les données incluses dans chaque objet, voir le tableau suivant. |
+| Valeur      | tableau  | Tableau d’objets contenant des données d’utilisation agrégées. Pour plus d’informations sur les données incluses dans chaque objet, voir le tableau suivant. |
 | @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur10000, mais que plus de10000lignes de données d’avis sont associées à la requête.                 |
 | TotalCount | entier    | Nombre total de lignes dans les résultats de données de la requête.                                                                          |
 
@@ -91,7 +91,7 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | applicationName           | chaîne  | Nom d’affichage de l’application.                                              |
 | deviceType                | chaîne  | L’une des chaînes suivantes qui spécifie le type d’appareil où l’utilisation s’est produite:<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**Tablette**</li><li>**IoT**</li><li>**Serveur**</li><li>**Holographic**</li><li>**Inconnu**</li></ul>                                                                                                         |
 | packageVersion            | chaîne  | La version du package où l’utilisation s’est produite.                          |
-| marché                    | chaîne  | Le code pays ISO 3166 du marché dans lequel le client a utilisé votre application. |
+| market                    | chaîne  | Le code pays ISO 3166 du marché dans lequel le client a utilisé votre application. |
 | subscriptionName          | chaîne  | Indique si l’utilisation a été par le biais de Xbox Game Pass.                            |
 | dailySessionCount         | long    | Le nombre de sessions utilisateur sur ce jour.                                  |
 | engagementDurationMinutes | double  | Minutes où les utilisateurs sont activement à l’aide de votre application mesurée par une période distincte, qui commence au lance de l’application (début du processus) et se termine lorsqu’il termine (fin du processus) ou après une période d’inactivité.             |

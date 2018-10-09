@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, mise à jour, tâche en arrière-plan, updatetask, tâche en arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: fcba2cb736f86cebc6d2664e2ec3b557d47c86d7
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4426880"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4464221"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>Exécuter une tâche en arrière-plan lorsque votre application UWP est mise à jour
 
@@ -97,6 +97,6 @@ Lorsque la tâche en arrière-plan est terminée, vous pouvez lancer l’applica
 > [!NOTE]
 > Les utilisateurs de Visual Studio 2015: les étapes ci-dessus s’appliquent à Visual Studio 2017. Si vous utilisez Visual Studio 2015, vous pouvez utiliser les mêmes techniques à déclencheur et testez le UpdateTask, à l’exception de Visual Studio ne sera pas attacher à celui-ci. Une autre possibilité dans Visual Studio 2015 consiste à configurer un [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app) qui définit l’UpdateTask en tant que son Point d’entrée et déclenche l’exécution directement à partir de l’application au premier plan.
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir aussi
 
 [Créer et inscrire une tâche en arrière-plan hors processus](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)

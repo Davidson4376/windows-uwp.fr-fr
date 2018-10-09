@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, implémenter, classe runtime, activation
 ms.localizationpriority: medium
 ms.openlocfilehash: 2476161954c1d4d49fcf9f8f74cd1b7cf9180c0a
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4430929"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4463615"
 ---
 # <a name="author-apis-with-cwinrt"></a>Créer des API avec C++/WinRT
 
@@ -287,7 +287,7 @@ Dans le cas où vous avez un objet d’interface, et vous savez qu’il s’agit
 > [!NOTE]
 > Si vous n’avez pas encore installé le SDK Windows version 10.0.17763.0 (Windows 10, version 1809) ou une version ultérieure, puis vous devez appeler [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) au lieu de [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self).
 
-En voici un exemple. Il existe un autre exemple dans [implémenter la classe de contrôle personnalisé **BgLabelControl** ](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class).
+Voici un exemple: Il existe un autre exemple dans [implémenter la classe de contrôle personnalisé **BgLabelControl** ](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class).
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)

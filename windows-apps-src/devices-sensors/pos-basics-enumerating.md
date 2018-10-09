@@ -3,18 +3,18 @@ author: TerryWarwick
 title: Énumération d'appareils PointOfService
 description: Découvrez comment énumérer les appareils PointOfService
 ms.author: jken
-ms.date: 08/30/2018
+ms.date: 10/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e42ebb2eba7b6465be271e6095100c03798826f
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.openlocfilehash: 8796b2ea025a00015881d39449f2dd99d57121f8
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4445617"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468708"
 ---
 # <a name="enumerating-point-of-service-devices"></a>Énumération d'appareils de point de service
 Dans cette section, vous allez découvrir comment [définir un sélecteur d’appareil](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector) qui sert à interroger les appareils disponibles pour le système et comment utiliser ce sélecteur pour énumérer les appareils de point de service à l’aide d’une des méthodes suivantes:
@@ -60,9 +60,6 @@ string selector = POSPrinter.GetDeviceSelector(PosConnectionTypes.Local);
 > Voir [Créer un sélecteur d’appareil](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector) pour créer des chaînes de sélecteur plus avancées.
 
 ## <a name="method-1-use-a-device-picker"></a>Méthode 1: Utiliser un sélecteur d’appareil
-
-> [!NOTE]
-> Cette méthode nécessite la toute dernière [Windows SDK Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK).
 
 La classe [DevicePicker](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker) vous permet d’afficher un menu volant sélecteur qui contient une liste des appareils pour l’utilisateur de choisir parmi les. Vous pouvez utiliser la propriété [Filter](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.filter) pour choisir les types d’appareils s’affichent dans le sélecteur. Cette propriété est de type [DevicePickerFilter](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter). Vous pouvez ajouter les types d’appareil pour le filtre à l’aide de la propriété [SupportedDeviceClasses](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses) ou [SupportedDeviceSelectors](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors) .
 
@@ -164,7 +161,7 @@ void DeviceWatcher_Updated(DeviceWatcher sender, DeviceInformationUpdate args)
 > [!TIP]
 > Pour plus d’informations sur l’utilisation d’un **DeviceWatcher**, consultez [énumérer et observer des appareils]( https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices#enumerate-and-watch-devices) .
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir aussi
 * [Prise en main de la technologie de point de service](pos-basics.md)
 * [Classe DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation)
 * [Classe PosPrinter](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter)

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection
 ms.localizationpriority: medium
 ms.openlocfilehash: e9c5cb8a0f81513038a18522c39f0138bb25ab27
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4422565"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468950"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -38,7 +38,7 @@ C++/WinRT offre de meilleures performances et génère des fichiers binaires plu
 
 ### <a name="topics-about-cwinrt"></a>Rubriques sur C++ / WinRT
 
-| Rubrique | Description |
+| Article | Description |
 | - | - |
 | [Présentation de C++/WinRT](intro-to-using-cpp-with-winrt.md) | Présentation de C++/WinRT &mdash;une projection de langage C++ standard pour les API Windows Runtime. |
 | [Prise en main de C++/WinRT](get-started.md) | Pour vous aider à utiliser rapidement C++/WinRT, cette rubrique présente un exemple simple de code. |
@@ -70,7 +70,7 @@ C++/WinRT offre de meilleures performances et génère des fichiers binaires plu
 
 ### <a name="topics-about-the-c-language"></a>Rubriques sur le langage C++
 
-| Rubrique | Description |
+| Article | Description |
 | - | - |
 | [Les catégories de valeur et des références associées](cpp-value-categories.md) | Cette rubrique décrit les différentes catégories de valeurs qui existent en C++. Vous seront sans doute ont entendu lvalues et rvalues, mais il existe d’autres types, trop. |
 

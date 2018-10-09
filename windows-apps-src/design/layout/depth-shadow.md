@@ -13,11 +13,11 @@ pm-contact: chigy
 design-contact: balrayit
 ms.localizationpriority: medium
 ms.openlocfilehash: a1433b131b994ee2b1323909bc7c195e00f43cde
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4419421"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4470012"
 ---
 # <a name="z-depth-and-shadow"></a>Z en profondeur et ombre
 
@@ -171,7 +171,7 @@ DropShadow n’est pas réactive automatiquement à son environnement et n’uti
 | **Min SDK** | RS5 | 14393 |
 | **Capacité d’adaptation** | Oui | Non |
 | **Personnalisation** | Non | Oui |
-| **Source de lumière** | Automatique (globale par défaut, mais peut remplacer par application) | Aucun(e) |
+| **Source de lumière** | Automatique (globale par défaut, mais peut remplacer par application) | None |
 | **Prise en charge dans les environnements 3D** | Oui | Non |
 
 - En règle générale, nous vous recommandons d’utiliser ThemeShadow, ce qui s’adapte automatiquement à son environnement.

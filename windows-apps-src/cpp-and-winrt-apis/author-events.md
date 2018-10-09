@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, créer, événement
 ms.localizationpriority: medium
 ms.openlocfilehash: 82239436acfe82bf99cd1e665cca14592bbcef74
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4430889"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4464696"
 ---
 # <a name="author-events-in-cwinrt"></a>Créer des événements en C++/WinRT
 

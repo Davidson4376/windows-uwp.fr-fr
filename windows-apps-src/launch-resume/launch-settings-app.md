@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 03ec6cf478097a6cd00af85d52112555650db35f
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: Auto
+ms.openlocfilehash: 22727f8d09b3d68970301677cdf632a0981c616a
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817144"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468748"
 ---
 # <a name="launch-the-windows-settings-app"></a>Lancer l’application Paramètres Windows
 
@@ -70,12 +70,13 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 |Page Paramètres| URI |
 |-------------|-----|
-|Accéder à un compte professionnel ou scolaire | ms-settings:workplace |
-|Comptes de messagerie et d’application  | ms-settings:emailandaccounts |
-|Famille et autres personnes | ms-settings:otherusers |
-|Options de connexion | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
-|Synchroniser vos paramètres | ms-settings:sync |
-|Vos informations | ms-settings:yourinfo |
+| Accéder à un compte professionnel ou scolaire | ms-settings:workplace |
+| Comptes de messagerie et d’application  | ms-settings:emailandaccounts |
+| Famille et autres personnes | ms-settings:otherusers |
+| Options de connexion | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
+| Synchroniser vos paramètres | ms-settings:sync |
+| Configuration de Windows Hello | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
+| Vos informations | ms-settings:yourinfo |
 
 ## <a name="apps"></a>Applications
 
@@ -86,16 +87,21 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Applications pour les sites web | ms-settings:appsforwebsites |
 | Applications pardéfaut | ms-settings:defaultapps |
 | Gérer les fonctionnalités optionnelles | ms-settings:optionalfeatures |
+| Cartes hors connexion | ms-settings:maps |
 | Applications de démarrage | ms-settings:startupapps |
+| Lecture vidéo | ms-settings:videoplayback |
 
 ## <a name="cortana"></a>Cortana
 
 |Page Paramètres| URI |
 |-------------|-----|
-| Autorisations et historique Cortana | ms-settings:cortana-permissions |
+| Autorisations et historique | ms-settings:cortana-permissions |
 | En savoir plus | ms-settings:cortana-moredetails |
-| Notifications | ms-settings:cortana-notifications |
+| Cortana sur mes appareils | ms-settings:cortana-notifications |
 | Parler à Cortana | ms-settings:cortana-language |
+
+> [!NOTE] 
+> Cette section de paramètres sur le bureau sera appelée recherche lorsque le PC est défini sur les régions où Cortana n’est pas actuellement disponible ou Cortana a été désactivé. Des pages spécifiques de Cortana (Cortana sur mes appareils) et parler à Cortana ne seront pas indiquées dans ce cas. 
 
 ## <a name="devices"></a>Appareils
 
@@ -158,7 +164,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Page d'accueil Paramètres | ms-settings: |
 
 
-## <a name="network-wireless--internet"></a>Réseau, réseau sans fil et Internet
+## <a name="network--internet"></a>Réseau et Internet
 
 |Page Paramètres| URI |
 |-------------|-----|
@@ -189,9 +195,14 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Barre de navigation | ms-settings:personalization-navbar |
 | Personnalisation (catégorie) | ms-settings:personalization |
 | Démarrer | ms-settings:personalization-start |
-| Sons | ms-settings:sounds |
 | Barre des tâches | ms-settings:taskbar |
 | Thèmes | ms-settings:themes |
+
+## <a name="phone"></a>Téléphone
+
+|Page Paramètres| URI |
+|-------------|-----|
+| Votre téléphone | ms-settings:mobile-devices  |
 
 ## <a name="privacy"></a>Confidentialité
 
@@ -257,7 +268,6 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Messages | ms-settings:messaging |
 | Multitâches | ms-settings:multitasking |
 | Paramètres d'éclairage nocturne | ms-settings:nightlight |
-| Cartes hors connexion | ms-settings:maps |
 | Téléphone | ms-settings:phone-defaultapps |
 | Projection vers cePC | ms-settings:project |
 | Expériences partagées | ms-settings:crossdevice |
@@ -267,9 +277,9 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Bureau à distance | ms-settings:remotedesktop |
 | Téléphone | ms-settings:phone |
 | Alimentation et mise en veille | ms-settings:powersleep |
+| Sons | ms-settings:sounds |
 | Stockage | ms-settings:storagesense |
 | Assistant Stockage | ms-settings:storagepolicies |
-| Lecture vidéo | ms-settings:videoplayback |
 
 ## <a name="time-and-language"></a>Heure et langue
 
@@ -290,21 +300,15 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Sauvegarde | ms-settings:backup |
 | Optimisation de la distribution | ms-settings:delivery-optimization |
 | Localiser mon appareil | ms-settings:findmydevice |
+| Pour les développeurs | ms-settings:developers |
 | Récupération | ms-settings:recovery |
 | Résoudre les problèmes | ms-settings:troubleshoot |
-| Windows Defender | ms-settings:windowsdefender |
-| Configuration de Windows Hello | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
+| Sécurité de Windows | ms-settings:windowsdefender |
 | Programme WindowsInsider | ms-settings:windowsinsider (présent uniquement si l’utilisateur est inscrit dans TEC) |
 | Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | WindowsUpdate - Options avancées | ms-settings:windowsupdate-options |
 | WindowsUpdate - Options de redémarrage | ms-settings:windowsupdate-restartoptions |
 | Windows Update - Afficher l'historique des mises à jour | ms-settings:windowsupdate-history |
-
-## <a name="developers"></a>Développeurs
-
-|Page Paramètres| URI |
-|-------------|-----|
-| Pour les développeurs | ms-settings:developers |
 
 ## <a name="user--accounts"></a>Comptes d’utilisateurs
 

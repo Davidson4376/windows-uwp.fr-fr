@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c9b7a30a50c26d2dbdaf6df04e85549addaf181
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4422030"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4464552"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>Empaqueter une application de bureau à l’aide de Visual Studio
 

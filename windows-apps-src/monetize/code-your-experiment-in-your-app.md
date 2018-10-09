@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, MicrosoftStore Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
 ms.openlocfilehash: b0931d712ca99b429e2aaa7dec4b855f41ce55ef
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4420130"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4463935"
 ---
 # <a name="code-your-app-for-experimentation"></a>Coder votre application à des fins d’expérimentation
 

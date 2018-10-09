@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: dda2b580a82c72ad2e31c771a9c76f8d770049ec
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4430985"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4465903"
 ---
 # <a name="smart-cards"></a>Cartes à puce
 

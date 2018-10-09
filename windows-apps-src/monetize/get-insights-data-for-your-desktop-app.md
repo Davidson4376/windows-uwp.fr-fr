@@ -10,17 +10,17 @@ ms.technology: uwp
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, insights
 ms.localizationpriority: medium
 ms.openlocfilehash: e7ca6eed40af37276b5b4c98ec7b1b709bdadfb9
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4425715"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468429"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>Obtenir les données d’analyse pour votre application de bureau
 
 Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des informations sur les données relatives aux mesures d’intégrité pour une application de bureau que vous avez ajoutée au [programme d’Application de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). Ces données sont également disponibles dans le [rapport d’intégrité](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report) pour les applications de bureau dans le tableau de bord du centre de développement Windows.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
@@ -68,7 +68,7 @@ Authorization: Bearer <your access token>
 
 | Valeur      | Type   | Description                  |
 |------------|--------|-------------------------------------------------------|
-| Valeur      | array  | Tableau d’objets qui contiennent des données pour l’application insights. Pour plus d’informations sur les données de chaque objet, consultez la section [valeurs Insight](#insight-values) ci-dessous.                                                                                                                      |
+| Valeur      | tableau  | Tableau d’objets qui contiennent des données pour l’application insights. Pour plus d’informations sur les données de chaque objet, consultez la section [valeurs Insight](#insight-values) ci-dessous.                                                                                                                      |
 | TotalCount | entier    | Nombre total de lignes dans les résultats de données de la requête.                 |
 
 
@@ -81,7 +81,7 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | applicationId       | chaîne | L’ID de produit de l’application de bureau pour laquelle vous souhaitez récupérer des données des informations.     |
 | insightDate                | chaîne | La date à laquelle nous avons identifié la modification d’un indicateur spécifique. Cette date représente la fin de la semaine dans lequel nous avons détecté une augmentation importante ou diminuer dans une unité de mesure par rapport à la semaine. |
 | type de données     | chaîne | Une chaîne qui spécifie la zone d’analytique générale qui informe cette insight. Actuellement, cette méthode prend uniquement en charge **la santé**.    |
-| insightDetail          | array | Une ou plusieurs [valeurs InsightDetail](#insightdetail-values) qui représentent les détails pour insight actuel.    |
+| insightDetail          | tableau | Une ou plusieurs [valeurs InsightDetail](#insightdetail-values) qui représentent les détails pour insight actuel.    |
 
 
 ### <a name="insightdetail-values"></a>Valeurs InsightDetail
@@ -89,7 +89,7 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | Valeur               | Type   | Description                           |
 |---------------------|--------|-------------------------------------------|
 | FactName           | chaîne | Une chaîne qui indique la métrique qui décrit l’insight actuelle ou la dimension actuelle. Actuellement, cette méthode prend uniquement en charge la valeur du **nombre d’accès**.  |
-| SubDimensions         | array |  Un ou plusieurs objets qui décrivent un indicateur unique pour l’insight.   |
+| SubDimensions         | tableau |  Un ou plusieurs objets qui décrivent un indicateur unique pour l’insight.   |
 | ChangementPourcentage            | chaîne |  Le pourcentage de la métrique changée entre votre clientèle entière.  |
 | Nomdimension           | chaîne |  Le nom de la métrique décrit dans la dimension actuelle. Exemples **EventType**, **marché**, **DeviceType**et **PackageVersion**.   |
 | DimensionValue              | chaîne | La valeur de la métrique qui est décrit dans la dimension actuelle. Par exemple, si **NomDimension** **EventType**c'est-à-dire **DimensionValue** peut être **incident** ou **Raccrocher**.   |
@@ -152,7 +152,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 }
 ```
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Programme d’Application de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)
 * [Rapport d’intégrité](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)

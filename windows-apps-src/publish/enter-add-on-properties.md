@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, extension, propriétés, période d'abonnement, type de produit, durée de vie du produit, type de contenu, iap, achat in-app, produit in-app
 ms.localizationpriority: medium
 ms.openlocfilehash: 73a494ea1899f3a764a668ae61c1235808eff1a7
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4417036"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468688"
 ---
 # <a name="enter-add-on-properties"></a>Saisir les propriétés d’une extension
 

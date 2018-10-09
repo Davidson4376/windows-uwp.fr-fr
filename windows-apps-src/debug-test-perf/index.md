@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2a919af3cb532ce19427967f305cb03adc149a1
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4430215"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468638"
 ---
 # <a name="debugging-testing-and-performance"></a>Débogage, tests et analyse des performances
 
 
 Cette section vous montre comment utiliser Microsoft Visual Studio pour déboguer, tester et optimiser votre application. Il inclut également des outils tels que le portail d’appareil Windows (pour la surveillance d’appareil et la configuration) et le Kit de Certification d’application Windows (pour préparer votre application pour le Microsoft Store).
 
-| Rubrique | Description |
+| Article | Description |
 |-------|-------------|
 | [Déploiement et débogage des applications UWP](deploying-and-debugging-uwp-apps.md) | Cet article vous guide tout au long des étapes nécessaires pour cibler différents objectifs de déploiement et de débogage. |
 | [Outils de test et de débogage pour la Gestion de la durée de vie des processus](testing-debugging-plm.md) | Outils et techniques pour le débogage et le test de fonctionnement de votre application avec la Gestion de la durée de vie des processus. |

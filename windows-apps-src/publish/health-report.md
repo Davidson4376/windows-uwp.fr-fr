@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, intégrité, incidents, blocages, intégrité de l’application, données d’intégrité, trace de pile, fichier cab, échec, échecs, pdb, symboles
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f5bf63eae4b1504642e764265a7936bcd67c645
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4417862"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4467333"
 ---
 # <a name="health-report"></a>Rapport d’intégrité
 

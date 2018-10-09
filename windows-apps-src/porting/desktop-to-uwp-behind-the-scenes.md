@@ -11,11 +11,11 @@ keywords: windows10, uwp
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e6cd2b305a9d52a2239be46cc7f77650cdd6531
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4420648"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4465634"
 ---
 # <a name="behind-the-scenes-of-your-packaged-desktop-application"></a>Fonctionnement détaillé de votre application de bureau empaquetée
 

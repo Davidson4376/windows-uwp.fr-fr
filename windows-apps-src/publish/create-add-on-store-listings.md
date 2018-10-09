@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d6132c2ede9f14cd1f4d29195916c8b484abfe9f
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4429082"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468758"
 ---
 # <a name="create-add-on-store-listings"></a>Créer des descriptions d'extension dans le WindowsStore
 

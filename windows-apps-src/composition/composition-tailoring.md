@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 66384c4df3195ae0fff35ae5dd7e1b1983204068
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4421429"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4464146"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>Personnalisation des effets et des expériences à l’aide de l’interface utilisateur Windows
 
@@ -126,7 +126,7 @@ Fonction des commentaires à partir des méthodes dans l’API CompositionCapabi
 - Effets avec un impact sur les performances moyennes incluent la matrice de couleur, certaines BlendModes d’effet Blend (luminosité, la couleur, la Saturation et teinte), projecteur, SceneLightingEffect et (selon le scénario) BorderEffect. Ces effets peuvent fonctionner avec certains scénarios sur les périphériques d’entrée de gamme, mais soins doit être utilisé lorsque le chaînage et l’animation. Vous recommandons de limiter l’utilisation inférieure ou égale à deux et l’animation sur les transitions uniquement.
 - Tous les autres effets ont d’impact sur les performances faible et dans tous les scénarios raisonnables lors de l’animation et le chaînage.
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 - [Techniques de conception réactive UWP](https://docs.microsoft.com/windows/uwp/design/layout/responsive-design)
 - [Personnalisation du périphérique UWP](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)

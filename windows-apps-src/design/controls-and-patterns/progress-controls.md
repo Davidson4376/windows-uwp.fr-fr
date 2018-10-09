@@ -17,11 +17,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d92005dca87d1be0cf9fddd0a28402497ab56595
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4430821"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4469655"
 ---
 # <a name="progress-controls"></a>Contrôles de progression
 
@@ -189,7 +189,7 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 - [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - Affichez tous les contrôles XAML dans un format interactif.
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 - [Classe ProgressBar](https://msdn.microsoft.com/library/windows/apps/br227529)
 - [Classe ProgressRing](https://msdn.microsoft.com/library/windows/apps/br227538)

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f801e9093676ec9fbf55c4ec4af7c5c444ed3ead
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4419567"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4465075"
 ---
 # <a name="launch-an-app-with-a-uri"></a>Lancer une application avec un URI
 

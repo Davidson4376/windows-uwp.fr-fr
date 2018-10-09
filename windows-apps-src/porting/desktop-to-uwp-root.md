@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.openlocfilehash: e11bae84c7cb88ef89f8b627cc2109fc56e43163
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4415566"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4462358"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>Applications de bureau de package (pont du bureau)
 
@@ -280,7 +280,7 @@ Voir [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-pla
 
 ## <a name="in-this-section"></a>Dans cette section
 
-| Rubrique | Description |
+| Article | Description |
 |-------|-------------|
 | [Préparation à la création de package d'application](desktop-to-uwp-prepare.md) | Fournit une liste d’éléments à passer en revue avant de créer un package de votre application de bureau. |
 | [Package d’application à l’aide de Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md) | Montre comment exécuter Desktop App Converter. |

@@ -17,11 +17,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: daffbc5ff74adc234ac6c2b414a7e1b85763849d
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4416099"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4463919"
 ---
 # <a name="toggle-switches"></a>Boutons bascule
 
@@ -177,7 +177,7 @@ Vous pouvez également utiliser un contenu plus complexe en définissant les pro
 
 - [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - Affichez tous les contrôles XAML dans un format interactif.
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 - [Classe ToggleSwitch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)
 - [Cases d’option](radio-button.md)

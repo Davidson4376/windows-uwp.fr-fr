@@ -11,11 +11,11 @@ keywords: les appareils Windows 10, uwp, connectés, systèmes distants, rome, l
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
 ms.openlocfilehash: 58a420d73ba4a0cd51f909fd5d7d417af1cfb38f
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4415929"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468698"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>Lancer une application sur un appareil distant
 

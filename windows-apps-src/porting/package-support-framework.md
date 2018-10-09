@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d4b4cae2e135f7a66cd68192faabeffdb309a909
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4420364"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4465091"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>Appliquer des correctifs d’exécution à un package MSIX à l’aide de l’infrastructure de prise en charge de Package
 
@@ -135,7 +135,7 @@ Le contenu de votre package doit maintenant ressembler à ceci.
 
 ### <a name="modify-the-package-manifest"></a>Modifier le manifeste du package
 
-Ouvrez votre manifeste du package dans un éditeur de texte et définissez le `Executable` attribut de le `Application` élément au nom du fichier exécutable Lanceur produits.  Si vous connaissez l’architecture de votre application cible, sélectionnez la version appropriée, PSFLauncher32.exe ou PSFLauncher64.exe.  Si ce n’est pas le cas, PSFLauncher32.exe fonctionnera dans tous les cas.  En voici un exemple.
+Ouvrez votre manifeste du package dans un éditeur de texte et définissez le `Executable` attribut de le `Application` élément au nom du fichier exécutable Lanceur produits.  Si vous connaissez l’architecture de votre application cible, sélectionnez la version appropriée, PSFLauncher32.exe ou PSFLauncher64.exe.  Si ce n’est pas le cas, PSFLauncher32.exe fonctionnera dans tous les cas.  Voici un exemple:
 
 ```xml
 <Package ...>

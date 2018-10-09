@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e634b18fffc4f601f6512d6ceeed51efbe9c1886
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4426420"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4463625"
 ---
 # <a name="using-lights-in-windows-ui"></a>L’utilisation des éclairages dans l’interface utilisateur Windows
 
@@ -164,7 +164,7 @@ CompositionBrush CreateNormalMapBrush(ICompositionSurface normalMapImage)
 }
 ```
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 - [Création des matériaux et les lumières de la couche visuelle](https://blogs.windows.com/buildingapps/2017/08/04/creating-materials-lights-visual-layer/)
 - [Vue d’ensemble de l’éclairage](https://docs.microsoft.com/windows/uwp/graphics-concepts/lighting-overview)

@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 556a787eb1e92e4c8adb7457235afb45c02df2dc
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4420688"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468066"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>Définir des conditions pour exécuter une tâche en arrière-plan
 
@@ -184,7 +184,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 > [!NOTE]
 > Choisissez les conditions appropriées pour votre tâche en arrière-plan afin qu’elle s’exécute uniquement lorsque cela est nécessaire et non quand il ne doit pas. Voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) pour obtenir une description des différentes conditions de tâche en arrière-plan.
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
 * [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)

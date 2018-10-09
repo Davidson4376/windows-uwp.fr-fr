@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumission de version d'évaluation, état
 ms.localizationpriority: medium
 ms.openlocfilehash: 9dbc15b2418c79aa3dee922a61c70364835afe87
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4427672"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4465446"
 ---
 # <a name="get-the-status-of-a-package-flight-submission"></a>Obtenir l’état d’une soumission de version d’évaluation de package
 
@@ -25,7 +25,7 @@ Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour obteni
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
-* Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission au Microsoft Store.
+* Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission au MicrosoftStore.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créez une soumission de version d’évaluation du package pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission de version d’évaluation du package](create-a-flight-submission.md).
 
@@ -51,7 +51,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | chaîne | Obligatoire. ID Windows Store de l’application qui contient la soumission de version d’évaluation du package dont vous voulez obtenir l’état. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | flightId | chaîne | Obligatoire. ID de la version d’évaluation du package qui contient la soumission dont vous voulez obtenir l’état. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). Concernant une version d’évaluation créée dans le tableau de bord du Centre de développement, cet ID est également disponible dans l’URL de la page de la version d’évaluation, dans le tableau de bord.  |
-| submissionId | chaîne | Obligatoire. ID de la soumission dont vous voulez obtenir l’état. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission de version d’évaluation de package](create-a-flight-submission.md). Concernant une soumission créée dans le tableau de bord du Centre de développement, cet ID est également disponible dans l’URL de la page de soumission, dans le tableau de bord.  |
+| submissionId | chaîne | Obligatoire. ID de la soumission dont vous voulez obtenir l’état. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission de version d’évaluation de package](create-a-flight-submission.md). Concernant une soumission qui a été créée dans le tableau de bord du centre de développement, cet ID est également disponible dans l’URL de la page de la soumission dans le tableau de bord.  |
 
 
 ### <a name="request-body"></a>Corps de requête
@@ -100,7 +100,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | 409  | L’app utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
 * [Gérer les soumissions de versions d’évaluation du package](manage-flight-submissions.md)
