@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, compte de développeur, individuel, société, entreprise
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4466287"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509608"
 ---
 # <a name="account-types-locations-and-fees"></a>Types de compte, emplacements et frais
 
@@ -37,11 +37,11 @@ Voici les principales différences entre les deux types de compte.
 |--------------------|-----------------|
 | <ul><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Processus de vérification de compte plus court</li></ul> | <ul><li>Coûte environ 99USD (frais d’inscription ponctuels; le montant exact varie en fonction de votre pays ou région)</li><li>Nécessite une vérification renforcée du compte</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>En mesure de soumettre des applications avec des fonctionnalités restreintes (comme décrit dans les [Stratégies du MicrosoftStore](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type))</li></ul> |
 
-Les comptes d’entreprise sont un peu plus onéreux, car des étapes supplémentaires sont nécessaires pour vérifier que vous êtes autorisé à configurer le compte au nom de votre entreprise. Par les [Stratégies du Windows Store](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type), les applications avec certaines fonctionnalités, telles que celles qui accèdent aux compte financier informations ou qui exigent l’authentification pour accéder aux fonctionnalités principales (sans utiliser un fournisseur d’authentification tiers dédiés sécurisé), peut uniquement être publié par les comptes d’entreprise.
+Les comptes d’entreprise sont un peu plus onéreux, car des étapes supplémentaires sont nécessaires pour vérifier que vous êtes autorisé à configurer le compte au nom de votre entreprise. Par les [Stratégies du Windows Store](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type), les applications avec certaines fonctionnalités, telles que celles qui accèdent aux compte financier informations ou qui exigent authentification pour accéder à la fonctionnalité principale (sans l’utilisation d’un fournisseur d’authentification sécurisée tiers dédiés) peut uniquement être publiées par les comptes d’entreprise.
 
 ## <a name="account-verification"></a>Vérification de compte
 
-Une fois le processus d’inscription terminé, votre compte est soumis au processus de vérification. Pour les comptes individuels, nous vérifions qu’aucune autre entreprise n’utilise déjà votre nom complet d’éditeur. Pour les comptes d’entreprise, notre partenaire de vérification Dun&Bradstreet vérifiera que vous êtes autorisé à créer un compte pour l’entreprise que vous représentez. La durée de ce processus peut varier de quelques jours à quelques semaines. Il implique souvent un appel téléphonique à votre entreprise (vérifiez que toutes les coordonnées que vous avez fournies dans les formulaires d’inscription sont à jour). Vous ne pouvez pas soumettre des applications à partir d’un compte d’entreprise jusqu'à ce qu’il est été vérifié, mais en attendant, vous pouvez [réserver un nom d’application](create-your-app-by-reserving-a-name.md) continuer à générer et à tester les applications et fonctionnent sur l’obtention de vos soumissions prêt.
+Une fois le processus d’inscription terminé, votre compte est soumis au processus de vérification. Pour les comptes individuels, nous vérifions qu’aucune autre entreprise n’utilise déjà votre nom complet d’éditeur. Pour les comptes d’entreprise, notre partenaire de vérification Dun&Bradstreet vérifiera que vous êtes autorisé à créer un compte pour l’entreprise que vous représentez. La durée de ce processus peut varier de quelques jours à quelques semaines. Il implique souvent un appel téléphonique à votre entreprise (vérifiez que toutes les coordonnées que vous avez fournies dans les formulaires d’inscription sont à jour). Vous ne pouvez pas soumettre des applications à partir d’un compte d’entreprise jusqu'à ce qu’il est été vérifié, mais en attendant, vous pouvez [réserver un nom d’application](create-your-app-by-reserving-a-name.md) continuer à générer et à tester les applications et fonctionnent sur la préparation de vos soumissions.
 
 Vous pouvez vérifier l’état de la vérification dans la page **Paramètres du compte**. 
 

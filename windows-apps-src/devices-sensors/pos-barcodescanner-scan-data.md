@@ -1,7 +1,7 @@
 ---
 author: eliotcowley
 title: Obtenir et comprendre les données de code-barres
-description: Découvrez comment obtenir et interpréter les données de code-barres que vous analysez.
+description: Découvrez comment obtenir et interpréter les données de code-barres qui vous scannez.
 ms.author: elcowle
 ms.date: 08/29/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 0992ea54092063ba53f23871599905e58f1b456e
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467888"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501324"
 ---
 # <a name="obtain-and-understand-barcode-data"></a>Obtenir et comprendre les données de code-barres
 
@@ -28,7 +28,7 @@ Une fois que vous avez un **ClaimedBarcodeScanner**, qu’il s’abonner à l’
 claimedBarcodeScanner.DataReceived += ClaimedBarcodeScanner_DataReceived;
 ```
 
-Le Gestionnaire d’événements est transmis la **ClaimedBarcodeScanner** et un objet **BarcodeScannerDataReceivedEventArgs** . Vous pouvez accéder aux données code-barres par le biais de [rapport de](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report#Windows_Devices_PointOfService_BarcodeScannerDataReceivedEventArgs_Report) propriété de cet objet, qui est du type [BarcodeScannerReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport).
+Le Gestionnaire d’événements est transmis la **ClaimedBarcodeScanner** et un objet **BarcodeScannerDataReceivedEventArgs** . Vous pouvez accéder les données de codes-barres par le biais de [rapport de](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report#Windows_Devices_PointOfService_BarcodeScannerDataReceivedEventArgs_Report) propriété de cet objet, qui est du type [BarcodeScannerReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport).
 
 ```cs
 private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner sender, BarcodeScannerDataReceivedEventArgs args)
@@ -64,7 +64,7 @@ private string GetSymbology(BarcodeScannerDataReceivedEventArgs args)
 
 ### <a name="get-the-scan-data-label"></a>Obtenir l’étiquette de données d’analyse
 
-Pour obtenir le libellé de code-barres décodée, il existe quelques points, que vous devez être conscient des. Seuls certains types de données contiennent du texte codé, vous devez donc tout d’abord vérifier si la SYMBOLOGIE peuvent être converties en une chaîne et le reconvertir la mémoire tampon que nous obtenons à partir de **ScanDataLabel** à une chaîne codée en UTF-8.
+Pour obtenir l’étiquette de code-barres décodée, il existe quelques points, que vous devez être conscient des. Seuls certains types de données contiennent du texte codé, vous devez donc tout d’abord vérifier si la SYMBOLOGIE peuvent être converties en une chaîne et le reconvertir la mémoire tampon que nous obtenons à partir de **ScanDataLabel** à une chaîne codée en UTF-8.
 
 ```cs
 private string GetDataLabel(BarcodeScannerDataReceivedEventArgs args)
@@ -125,13 +125,13 @@ private string GetRawData(BarcodeScannerDataReceivedEventArgs args)
 
 Ces données sont, en règle générale, dans le format fournie par l’à partir de l’analyseur. Informations sur l’en-tête et le code du message sont supprimées, toutefois, dans la mesure où ils ne contiennent pas d’informations utiles pour une application et sont susceptibles d’être scanneur spécifique.
 
-Informations d’en-tête communes sont un préfixe (par exemple, un caractère STX). Des informations courantes bande-annonce sont un caractère de terminaison (par exemple, un caractère ETX ou CR) et un caractère de vérification de bloc si un est généré par le scanneur.
+Informations d’en-tête communes sont un préfixe (par exemple, un caractère STX). Les informations de bande-annonce courantes sont un caractère de terminaison (par exemple, un caractère ETX ou CR) et un caractère de vérification bloc si l’une est générée par le scanneur.
 
-Cette propriété doit inclure un caractère SYMBOLOGIE si un est retourné par le scanneur (par exemple, un pour **un** UPC-A). Il doit également inclure les chiffres de contrôle s’ils sont présents dans l’étiquette et renvoyée par le scanneur. (Notez que les caractères SYMBOLOGIE et les chiffres de contrôle peuvent ou ne pas être présents, en fonction de la configuration de l’analyseur. L’analyseur retournera les si présenter, mais ne seront pas générer ou les calculer si elles sont absentes.)
+Cette propriété doit inclure un caractère SYMBOLOGIE si un est retourné par le scanneur (par exemple, un pour **un** UPC-A). Il doit également inclure les chiffres de contrôle s’ils sont présents dans l’étiquette et renvoyée par le scanneur. (Notez que les caractères de SYMBOLOGIE et les chiffres de vérification peuvent ou peuvent ne pas être présents, selon la configuration de scanneur. L’analyseur retournera les si présents, mais ne sera pas générer ou les calculer si elles sont également absents.)
 
-Certains marchandise peut-être être marqué avec un code-barres supplémentaire. Ce code-barres est généralement placés à droite du code-barres principal et se compose d’un caractères deux ou cinq supplémentaires d’informations. Si le scanneur lit marchandise qui contient les codes-barres supplémentaires et principaux, les caractères supplémentaires sont ajoutés dans les personnages principaux, et le résultat est fourni à l’application en tant qu’une seule étiquette. (Notez qu’un scanneur peut prendre en charge une configuration qui active ou désactive la lecture de codes supplémentaires).
+Certains marchandise peut-être être marqué avec un code-barres supplémentaire. Ce code-barres est généralement placés à droite du code-barres principal et se compose d’un caractères de deux ou cinq supplémentaires d’informations. Si le scanneur lit marchandise qui contient les codes-barres supplémentaires et principaux, les caractères supplémentaires sont ajoutés dans les personnages principaux, et le résultat est fourni à l’application comme une étiquette. (Notez qu’un scanneur peut prendre en charge une configuration qui active ou désactive la lecture de codes supplémentaires).
 
-Certains marchandise peut-être être marqué avec des étiquettes plusieurs, parfois appelées *étiquettes multisymbol* ou *hiérarchisé*. Ces codes sont généralement disposés verticalement et peuvent être de la SYMBOLOGIE identiques ou différent. Si le scanneur lit marchandise qui contient plusieurs étiquettes, chaque code-barres est fourni à l’application comme une étiquette distincte. Cela est nécessaire en raison du manque de normalisation de ces types de code-barres actuel. Un n’est pas en mesure de déterminer toutes les variantes basées sur les données de code-barres individuels. Par conséquent, l’application devra déterminer quand un code-barre étiquette plusieurs a été lu selon les données renvoyées. (Notez qu’un scanneur peut ou ne peut pas en charge la lecture des étiquettes de plusieurs).
+Certains marchandise peut-être être marqué avec des étiquettes plusieurs, parfois appelées *étiquettes multisymbol* ou *hiérarchisé*. Ces codes sont généralement disposés verticalement et peuvent être de la SYMBOLOGIE identiques ou différent. Si le scanneur lit marchandise qui contient plusieurs étiquettes, chaque code-barres est fourni à l’application comme une étiquette distincte. Cela est nécessaire en raison du manque d’en cours de la normalisation de ces types de code-barres. Un n’est pas en mesure de déterminer toutes les variantes basées sur les données de code-barres individuels. Par conséquent, l’application devra déterminer quand un code-barre étiquette plusieurs a été lu selon les données renvoyées. (Notez qu’un scanneur peut ou ne peut pas en charge la lecture des étiquettes de plusieurs).
 
 Cette valeur est définie avant un événement **DataReceived** est déclenché à l’application.
 
@@ -139,7 +139,7 @@ Cette valeur est définie avant un événement **DataReceived** est déclenché 
 
 ## <a name="see-also"></a>Voir aussi
 * [Scanneur de code-barres](pos-barcodescanner.md)
-* [Classe ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)
-* [Classe BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)
-* [Classe BarcodeScannerReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport)
-* [Classe BarcodeSymbologies](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)
+* [Classe de ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)
+* [Classe de BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)
+* [Classe de BarcodeScannerReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport)
+* [Classe de BarcodeSymbologies](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)

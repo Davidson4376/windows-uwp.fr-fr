@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows10, uwp, iap, achat in-app, produit in-app, soumission iap
 ms.localizationpriority: medium
 ms.openlocfilehash: 37d05722578ed945fbf75040f96360bb569c6d06
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461687"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499777"
 ---
 # <a name="add-on-submissions"></a>Soumissions d'extensions
 
-Les extensions (parfois appelées produits in-app) sont des éléments qui complètent votre application et qui peuvent être achetés par les clients. Un module complémentaire peut être une nouvelle fonctionnalité amusante, un nouveau niveau de jeu ou n’importe quel autre vous pensez sera à maintenir fidéliser les utilisateurs. Les extensions constituent non seulement une excellente façon de gagner de l’argent, mais également un bon moyen de renforcer le niveau d’interactivité et d’implication des clients avec votre application.
+Les extensions (parfois appelées produits in-app) sont des éléments qui complètent votre application et qui peuvent être achetés par les clients. Un module complémentaire peut être une amusante nouvelle fonctionnalité, un nouveau jeu niveau, ou tout ce qui selon vous contribuera à maintenir les utilisateurs impliqués. Les extensions constituent non seulement une excellente façon de gagner de l’argent, mais également un bon moyen de renforcer le niveau d’interactivité et d’implication des clients avec votre application.
 
 Les extensions sont publiées par le biais du tableau de bord du Centre de développement Windows. Vous devez également [activer les extensions](../monetize/in-app-purchases-and-trials.md) dans le code de votre application.
 
@@ -85,7 +85,7 @@ Quand vous avez terminé d'entrer ces informations, cliquez sur **Soumettre au W
 
 ## <a name="updating-an-add-on-after-publication"></a>Mise à jour d’une extension après sa publication
 
-Une extension est modifiable à tout moment après sa publication. Modifications de module complémentaire sont soumises et publiées indépendamment de votre application, vous généralement inutile de mettre à jour l’ensemble de votre application afin d’apporter des modifications à une extension, par exemple, la mise à jour son prix ou sa description.
+Une extension est modifiable à tout moment après sa publication. Les modifications de module complémentaire sont soumises et publiées indépendamment de votre application, vous généralement inutile de mettre à jour de l’ensemble de votre application afin d’apporter des modifications à une extension, par exemple, la mise à jour son prix ou sa description.
 
 > [!IMPORTANT]
 > Si votre application est accessible aux clients utilisant Windows8.x, vous devrez créer et publier une nouvelle soumission d’application pour faire en sorte que les mises à jour d’extension soient visibles par ces clients. De même, si vous ajoutez de nouvelles extensions dans une application ciblant Windows8.x après la publication de cette dernière, vous devrez mettre à jour le code de votre application pour référencer ces extensions, puis soumettre de nouveau l’application. Dans le cas contraire, les nouvelles extensions ne seront pas visibles par les clients utilisant Windows8.x.

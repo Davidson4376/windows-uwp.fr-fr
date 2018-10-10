@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f7359b2ae40e9b53d5ab73ee93402b11beab629
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468455"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501563"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Configurer votre compte de paiement et vos déclarations fiscales
 
@@ -148,7 +148,7 @@ Vous pouvez remplir et envoyer vos déclarations fiscales au format électroniqu
 4.  Répondez aux questions portant sur la nationalité américaine et la résidence aux États-Unis, puis cliquez sur **Suivant**.
 5.  Si votre nom et votre adresse sont affichés, vérifiez-les pour la déclaration de vos revenus.
 
-Les versions électroniques des déclarations fiscales à remplir apparaissent ensuite. Quel que soit votre pays de résidence ou votre nationalité, vous devez remplir les déclarations fiscales des États-Unis pour vendre des applications ou des modules complémentaires via le Microsoft Store. Les développeurs répondant à certains critères de résidence aux États-Unis doivent remplir le formulaire W-9 du fisc américain (IRS). Les autres développeurs résidant en dehors des États-Unis doivent compléter le formulaire W-8 de l'IRS. Vous pouvez remplir ces formulaires en ligne lors de la création de votre profil fiscal.
+Les versions électroniques des déclarations fiscales à remplir apparaissent ensuite. Quel que soit votre pays de résidence ou votre nationalité, vous devez remplir les déclarations fiscales des États-Unis pour pouvoir vendre des applications ou les modules complémentaires via le Microsoft Store. Les développeurs répondant à certains critères de résidence aux États-Unis doivent remplir le formulaire W-9 du fisc américain (IRS). Les autres développeurs résidant en dehors des États-Unis doivent compléter le formulaire W-8 de l'IRS. Vous pouvez remplir ces formulaires en ligne lors de la création de votre profil fiscal.
 
 Il n'est pas nécessaire de fournir un numéro d'identification du contribuable ou ITIN (États-Unis) pour recevoir des paiements de Microsoft ou pour revendiquer des avantages en vertu d'une convention fiscale.
 

@@ -15,15 +15,15 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bb6ed36c772e5ae80a3cb801b4b6b36bb1ab18c
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469951"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499890"
 ---
 # <a name="pivot"></a>Pivot
 
-Le contrôle [sélecteur de vue](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) permet de balayage tactile entre un petit ensemble de sections de contenu.
+Le contrôle de [sélecteur de vue](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) permet balayage tactile entre un petit ensemble de sections de contenu.
 
 > **API importantes**: [classe Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [classe NavigationView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
@@ -34,7 +34,7 @@ Le contrôle [sélecteur de vue](https://docs.microsoft.com/uwp/api/Windows.UI.X
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/Pivot">Ouvrir l’application et voir le contrôle de sélecteur de vue en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/Pivot">Ouvrir l’application et voir le contrôle de sélecteur de vue en action.</a></p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Obtenir le code source (GitHub)</a></li>
@@ -49,14 +49,14 @@ Le contrôle de sélecteur de vue, tout comme [NavigationView](navigationview.md
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
-Pour obtenir navigation supérieur courants et modèles des onglets, nous vous recommandons d’à l’aide de [NavigationView](navigationview.md), qui s’adapte à différentes tailles d’écran et permet la personnalisation supérieure automatiquement.
+Pour obtenir la structure de navigation supérieure commune et modèles des onglets, nous vous recommandons d’à l’aide de [NavigationView](navigationview.md), qui s’adapte à différentes tailles d’écran et permet la personnalisation supérieure automatiquement.
 
 Toutefois, si votre navigation requiert balayage tactile, nous recommandons d’utiliser le sélecteur de vue.
 
-Les autres principales différences entre les contrôles NavigationView et sélecteur de vue sont le comportement de dépassement de capacité par défaut et l’API de la navigation:
+Les autres principales différences entre les contrôles de NavigationView et de sélecteur de vue sont le comportement de dépassement de capacité par défaut et de l’API de la navigation:
 
 - Dépassement carrousels éléments, tandis que NavigationView utilise une liste déroulante du menu de dépassement de capacité afin que les utilisateurs puissent voir tous les éléments de sélecteur de vue.
-- Sélecteur de vue gère la navigation entre les sections de contenu, tandis que NavigationView permet de mieux contrôler le comportement de navigation.
+- Sélecteur de vue gère la navigation entre les sections de contenu, tandis que NavigationView permettant de mieux contrôler le comportement de navigation.
 
 ## <a name="use-navigationview-instead-of-pivot"></a>Utiliser NavigationView au lieu de sélecteur de vue
 

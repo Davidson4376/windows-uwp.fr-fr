@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: tâche en arrière-plan Windows 10, uwp,
+keywords: Windows 10, uwp, tâche d’arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471021"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499985"
 ---
 # <a name="debug-a-background-task"></a>Déboguer une tâche en arrière-plan
 
@@ -83,7 +83,7 @@ L’activation de la tâche en arrière-plan dépend de troiséléments:
 
     1.  Ouvrez l’Observateur d’événements en accédant à l’écran de démarrage et en recherchant eventvwr.exe.
     2.  Accédez à **l’Application et les journaux des Services**  - &gt; **Microsoft**  - &gt; **Windows**  - &gt; **BackgroundTaskInfrastructure** dans l’Observateur d’événements.
-    3.  Dans le volet actions, sélectionnez **vue**  - &gt; **analytiques afficher les journaux et débogage** pour activer la journalisation des Diagnostics.
+    3.  Dans le volet actions, sélectionnez **Afficher**  - &gt; **Afficher analytiques journaux et débogage** pour activer la journalisation des Diagnostics.
     4.  Sélectionnez le **journal de diagnostic**, puis cliquez sur **Activer le journal**.
     5.  Essayez à présent d’utiliser votre application pour inscrire et activer la tâche en arrière-plan une nouvelle fois.
     6.  Consultez les journaux de diagnostic à la recherche d’informations détaillées sur l’erreur. Cela comprend le point d’entrée inscrit pour la tâche en arrière-plan.

@@ -11,11 +11,11 @@ keywords: windows10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: d38465ce02e0aedf854094ede75fc33701b226a6
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462660"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504103"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>Créer un jeu UWP dans MonoGame2D
 
@@ -696,4 +696,4 @@ Vous devez utiliser la [liste de vérification de soumission d’applications](h
 
 L’application doit être soumise pour [certification](https://docs.microsoft.com/en-us/windows/uwp/publish/the-app-certification-process).
 
-Pour plus d’informations, consultez la [publication de votre application UWP](https://developer.microsoft.com/en-us/store/publish-apps).
+Pour plus d’informations, voir la [publication de votre application UWP](https://developer.microsoft.com/en-us/store/publish-apps).

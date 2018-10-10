@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472000"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509326"
 ---
 # <a name="app-management-and-services"></a>Gestion des applications et services
 
@@ -31,7 +31,7 @@ La section **Services** vous permet de gérer les différents services pour vos 
 
 Si vous publiez un jeu, vous pouvez activer le [Programme créateurs Xbox Live](http://xbox.com/developers/creators-program) sur cette page. Cela vous permet de démarrer la configuration et le tests des fonctionnalités Xbox Live et finalement publier votre jeu programme créateurs Xbox Live.
 
-Pour plus d’informations, voir [vous familiariser avec le programme créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) et [créer un nouveau titre du programme créateurs Xbox Live et les publier dans l’environnement de test](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md).
+Pour plus d’informations, voir [vous familiariser avec le programme créateurs Xbox Live](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) et [créez un nouveau titre du programme créateurs Xbox Live et les publier sur l’environnement de test](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md).
 
 ## <a name="experimentation"></a>Expérimentation
 
@@ -56,7 +56,7 @@ Pour plus d’informations, consultez l’article [Gérer des droits sur les pro
 
 ## <a name="administrator-consent"></a>Consentement de l’administrateur
 
-f votre produit s’intègre avec Azure AD et appelle des API qui requièrent des [autorisations de l’application ou les autorisations déléguées](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) qui nécessite le consentement de l’administrateur, entrez votre ID d’Azure AD Client ici. Cela permet aux administrateurs qui achètent l’application leur organisation accorder à donner son consentement pour votre produit à agir pour le compte de tous les utilisateurs du client.
+f est intégré à Azure AD de votre produit et appelle des API qui requièrent des [autorisations de l’application ou les autorisations déléguées](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) qui nécessite le consentement de l’administrateur, entrez votre ID d’Azure AD Client ici. Cela permet aux administrateurs qui achètent l’application leur organisation accorder à donner son consentement pour votre produit à agir pour le compte de tous les utilisateurs du client.
 
 Pour plus d’informations, voir la [demande de consentement pour un client entière](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant).
 
@@ -89,10 +89,10 @@ Les développeurs ayant des autorisations OEM peuvent également [générer des 
 
 ## <a name="wnsmpns"></a>WNS/MPNS
 
-La section **WNS/MPNS** fournit des options pour vous aider à créer et envoyer des notifications aux clients de votre application. 
+Cette section **WNS/MPNS** fournit des options pour vous aider à créer et envoyer des notifications aux clients de votre application. 
 
 > [!TIP]
-> Pour les applications UWP, nous vous conseillons d’à l’aide de l’option de **notification** dans le tableau de bord. Cette fonctionnalité vous permet d’envoyer des notifications à tous les clients de votre application, ou à un sous-ensemble ciblé de vos clients Windows 10 qui remplissent les critères que vous avez définis dans un [segment de clientèle](create-customer-segments.md). Pour plus d’informations, consultez l’article [Envoyer des notifications aux clients de votre application](send-push-notifications-to-your-apps-customers.md).
+> Pour les applications UWP, nous vous suggérons d’à l’aide de l’option de **Notifications** dans le tableau de bord. Cette fonctionnalité vous permet d’envoyer des notifications à tous les clients de votre application, ou à un sous-ensemble ciblé de vos clients Windows 10 qui remplissent les critères que vous avez définis dans un [segment de clientèle](create-customer-segments.md). Pour plus d’informations, consultez l’article [Envoyer des notifications aux clients de votre application](send-push-notifications-to-your-apps-customers.md).
 
 Selon le type de package de votre application et ses besoins spécifiques, vous pouvez également utiliser une des options suivantes: 
 

@@ -10,18 +10,18 @@ ms.technology: uwp
 keywords: windows10, uwp, tarification, prix de l’application, vente d’applications, modification de prix, prix personnalisé, prix, tarif, coût, remplacer le prix de base, prix au format libre, format libre
 ms.localizationpriority: medium
 ms.openlocfilehash: ca37d0b360679a878cff3aeabd96f82016c36fde
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4465664"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500305"
 ---
 # <a name="set-and-schedule-app-pricing"></a>Définir et planifier le prix de l’application
 
 La section **Tarification** de la page [Tarification et disponibilité](set-app-pricing-and-availability.md) vous permet de sélectionner le prix de base d’une application. Vous pouvez également [planifier des changements de prix](#schedule-price-changes) pour indiquer la date et l’heure auxquelles le prix de votre application doit changer. En outre, vous avez la possibilité de [remplacer le prix de base pour des marchés spécifiques](#override-base-price-for-specific-markets), en sélectionnant un nouveau niveau de prix ou en saisissant un prix au format libre dans la devise locale du marché.
 
 > [!NOTE]
-> Bien que cet article fasse référence aux applications, la sélection du prix des soumissions d’extensions applique le même processus. Notez que pour les [extensions d’abonnement](../monetize/enable-subscription-add-ons-for-your-app.md), le prix de base que vous sélectionnez ne peut jamais être augmenté (que ce soit par modifier le prix de base ou en planifiant un changement de prix), bien qu’il peut être réduit.
+> Bien que cet article fasse référence aux applications, la sélection du prix des soumissions d’extensions applique le même processus. Notez que pour les [extensions d’abonnement](../monetize/enable-subscription-add-ons-for-your-app.md), le prix de base que vous sélectionnez ne peut jamais être augmenté (que ce soit par modifier le prix de base ou en planifiant un changement de prix), même si elle peut être réduit.
 
 ## <a name="base-price"></a>Prix de base
 

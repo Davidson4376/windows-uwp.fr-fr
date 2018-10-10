@@ -2,7 +2,7 @@
 author: PatrickFarley
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
 title: Débogage, tests et analyse des performances
-description: Utilisez Microsoft Visual Studio et autres outils pour déboguer et tester votre application et préparer pour le processus de certification Microsoft Store.
+description: Utilisez Microsoft Visual Studio et autres outils pour déboguer et tester votre application et préparer pour le processus de certification du Microsoft Store.
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2a919af3cb532ce19427967f305cb03adc149a1
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468638"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499827"
 ---
 # <a name="debugging-testing-and-performance"></a>Débogage, tests et analyse des performances
 
 
-Cette section vous montre comment utiliser Microsoft Visual Studio pour déboguer, tester et optimiser votre application. Il inclut également des outils tels que le portail d’appareil Windows (pour la surveillance d’appareil et la configuration) et le Kit de Certification d’application Windows (pour préparer votre application pour le Microsoft Store).
+Cette section vous montre comment utiliser Microsoft Visual Studio pour déboguer, tester et optimiser votre application. Il inclut également des outils tels que le portail d’appareil Windows (pour la surveillance de l’appareil et la configuration) et le Kit de Certification d’application Windows (pour préparer votre application pour le Microsoft Store).
 
 | Article | Description |
 |-------|-------------|

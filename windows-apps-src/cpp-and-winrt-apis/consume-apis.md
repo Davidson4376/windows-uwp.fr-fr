@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, classe runtime, activation
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b1cd05f974bf9193e84919a5e679ef996746d7e
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471375"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509428"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Utiliser des API avec C++/WinRT
 
-Cette rubrique montre comment utiliser [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API, qu’ils fassent partie de Windows, implémentées par un fournisseur de composants tiers ou par vous-même.
+Cette rubrique montre comment utiliser [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API, qu’il fasse partie de Windows, implémentées par un fournisseur de composants tiers ou par vous-même.
 
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>Si l’API se trouve dans un espace de noms Windows
 Il s'agit du scénario le plus courant dans lequel vous utiliserez une API Windows Runtime. Pour chaque type dans un espace de noms Windows défini dans les métadonnées, C++/WinRT définit un équivalent compatible C++ (appelé le *type projeté*). Le type projeté a le même nom complet que le type Windows, mais il est placé dans l'espace de noms C++ **winrt** à l’aide de la syntaxe C++. Par exemple, [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) est projeté en C++/WinRT sous la forme **winrt::Windows::Foundation::Uri**.
@@ -246,9 +246,9 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 ```
 
 ## <a name="important-apis"></a>API importantes
-* [Interface QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [Fonction RoActivateInstance](https://msdn.microsoft.com/library/br224646)
-* [Classe Windows::Foundation:: URI](/uwp/api/windows.foundation.uri)
+* [Interface de QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
+* [Fonction de RoActivateInstance](https://msdn.microsoft.com/library/br224646)
+* [Classe de Windows::Foundation:: URI](/uwp/api/windows.foundation.uri)
 * [Modèle de fonction winrt::get_activation_factory](/uwp/cpp-ref-for-winrt/get-activation-factory)
 * [Modèle de fonction winrt::make](/uwp/cpp-ref-for-winrt/make)
 * [Structure winrt::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)

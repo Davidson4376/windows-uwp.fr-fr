@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: L’extension de balisage est une alternative hautes performances à la liaison. xBind - nouveauté de Windows 10 - s’exécute en moins de temps et en utilisant moins de mémoire que Binding et prend en charge une meilleure le débogage.
+description: L’extension de balisage est une alternative de hautes performances à la liaison. xBind - nouveauté de Windows 10 - s’exécute en moins de temps et en utilisant moins de mémoire que Binding et prend en charge une meilleure le débogage.
 title: Extension de balisage xBind
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468099"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498440"
 ---
 # <a name="xbind-markup-extension"></a>Extension de balisage {x:Bind}
 

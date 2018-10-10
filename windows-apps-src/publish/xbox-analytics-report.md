@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, analyse xbox, analyse xbox live, statistiques xbox
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e69c41ec2ae6dface93b9f3148e699e448faa18
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462429"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498714"
 ---
 # <a name="xbox-analytics-report"></a>Rapport d’analyse Xbox
 

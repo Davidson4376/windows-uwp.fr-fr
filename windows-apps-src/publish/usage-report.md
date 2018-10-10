@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, utilisation, événement personnalisé, rapport, télémétrie, sessions utilisateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 96d36ebbaa2b7f1a650e2b0f794a1976c1f525a6
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471794"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509586"
 ---
 # <a name="usage-report"></a>Rapport d’utilisation
 
@@ -50,10 +50,10 @@ Ce graphique comporte quatre onglets visualisables qui vous présentent l’util
 - **Durée**: indique le nombre total d’heures d’engagement (heures pendant lesquelles un utilisateur utilise activement votre application).
 - **Rétention**: affiche le nombre total **d’utilisateurs actifs quotidiennement/d’utilisateurs actifs mensuels** au cours de la période sélectionnée.
 
-Lorsque le **30D** période est activée, vous pouvez voir Marqueurs cercle lorsque vous visualisez les onglets **utilisateurs**, des **appareils**ou **durée** . Ces représentent une augmentation importante ou la diminution une valeur donnée que nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou une baisse par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
+Lorsque le **30D** période est activée, vous pouvez voir les marqueurs de cercle lorsque vous visualisez les onglets **utilisateurs**, des **appareils**ou **durée** . Ces représentent une augmentation importante ou la diminution une valeur donnée dont nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou une baisse par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
 
 > [!TIP]
-> Vous pouvez afficher des conseils supplémentaires liés à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).
+> Vous pouvez afficher des conseils supplémentaires liées à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).
 
 
 ## <a name="user-sessions"></a>Sessions utilisateur

@@ -11,16 +11,16 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 88a07db357125d3f9cb35a5e133e9b0add350069
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468973"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502740"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Kits de ressources et exemples de conception pour les applications UWP
  
 
-Conception et téléchargements liés à l’interface utilisateur pour les applications de conception Fluent/UWP. Pour obtenir des outils supplémentaires, tels que VisualStudio, consultez <a href="https://developer.microsoft.com/downloads">la page principale des téléchargements</a>. 
+Conception et des téléchargements liés à l’interface utilisateur pour les applications de conception Fluent/UWP. Pour obtenir des outils supplémentaires, tels que VisualStudio, consultez <a href="https://developer.microsoft.com/downloads">la page principale des téléchargements</a>. 
 
 
 ## <a name="design-toolkits"></a>Kits de ressources de conception
@@ -103,12 +103,12 @@ Ces kits de ressources fournissent des contrôles et des modèles de disposition
     
 ## <a name="samples"></a>Exemples
 
-![Image VanArsdel](images/VanArsdel_Screenshot.png)
+![Image de VanArsdel](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-L’exemple d’application UWP bout à bout Van Arsdel, Ltd. a été conçu pour présenter la nouvelle génération du système Fluent Design Microsoft. Il s’appuie largement la densité améliorée et de nouveaux contrôles dans la <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Bibliothèque d’interface utilisateur Windows</a> , mais aussi puissantes fonctionnalités sous-jacent de l’infrastructure de l’expérience utilisateur et de la composition. L’exemple montre comment vous pouvez créer une expérience riche et productive pour la gestion et achetant des appareils IoT (dans ce cas, lampes).<br>
+L’exemple d’application UWP bout à bout Van Arsdel, Ltd. a été conçu pour présenter la nouvelle vague du système Fluent Design Microsoft. Il s’appuie largement la densité améliorée et de nouveaux contrôles dans la <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Bibliothèque de l’interface utilisateur de Windows</a> , mais aussi puissantes fonctionnalités sous-jacent de l’infrastructure de l’expérience utilisateur et de la composition. L’exemple montre comment vous pouvez créer une expérience riche et productive pour la gestion et l’achat d’appareils IoT (dans ce cas, il s’agit de lampes).<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">Télécharger l’exemple VanArsdel</a> <br><a href="https://github.com/microsoft/vanarsdel">Découvrir l’exemple VanArsdel sur GitHub</a>
 
-![Générer cast image](images/buildcast.png)
+![créer l’image de cast](images/buildcast.png)
 **BuildCast**<br>
 BuildCast est un exemple de bout en bout conçu pour présenter le système Fluent Design et UWP. Il permet de parcourir, de télécharger et de lire des podcasts vidéo sélectionnés, notamment un échantillon des plus populaires issus de Channel9 et des fils de quelques amateurs de Windows férus de technologie. Il offre également la prise de notes manuscrites, des signets et la lecture à distance. Cet exemple a été initialement présenté lors de la conférence Build2017, pendant l'intervention <a href="https://channel9.msdn.com/Events/Build/2017/B8034">Créer des applications exceptionnelles avec Fluent Design</a>. <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">Télécharger l’exemple BuildCast</a> <br><a href="https://github.com/Microsoft/BuildCast">Découvrir l'exemple BuildCast sur GitHub</a>

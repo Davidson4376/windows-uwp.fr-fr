@@ -11,11 +11,11 @@ keywords: windows10, uwp, notifications ciblées, notifications push, toast, vig
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d62f46ad1b55fbad3ab7c21a593625a2538b68f
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467418"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4503513"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>Envoyer des notifications aux clients de votre application
 
@@ -53,7 +53,7 @@ Suivez cette procédure pour créer une notification dans le tableau de bord et 
 
 1. Dans le [tableau de bord du Centre de développement Windows](https://partner.microsoft.com/dashboard/), développez la section **Engager**, puis sélectionnez **Notifications**.
 2. Sur la page **Notifications**, sélectionnez **Nouvelle notification**.
-3. Dans la section **Sélectionnez un modèle** , choisissez le [type de notification que](#notification-template-types) vous souhaitez envoyer, puis cliquez sur **OK**.
+3. Dans la section **Sélectionnez un modèle** , choisissez le [type de notification](#notification-template-types) que vous souhaitez envoyer, puis cliquez sur **OK**.
 4. À la page suivante, utilisez le menu déroulant pour choisir une **Application unique** ou **Plusieurs applications** pour lesquels vous souhaitez générer une notification. Vous pouvez sélectionner uniquement les applications qui ont été [configurés pour recevoir des notifications à l’aide du Microsoft Store Services SDK](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 5. Dans la section **Paramètres de notification**, choisissez un **nom** pour votre notification et, si applicable, choisissez le **groupe de clients** à qui vous souhaitez envoyer la notification. (Les notifications envoyées à plusieurs applications peuvent uniquement être envoyées à tous les clients de ces applications.) Si vous souhaitez utiliser un segment que vous n'avez pas encore créé, sélectionnez **Créer un nouveau groupe client**. Remarque: Il faut 24heures avant qu’un nouveau segment puisse être utilisé pour les notifications. Pour plus d’informations, consultez [Créer des segments de clients](create-customer-segments.md).
 6. Si vous voulez indiquer à quel moment envoyer la notification, décochez la case **Notification immédiate** et choisissez une date et une heure spécifiques (au format UTC pour tous les clients, sauf si vous indiquez d’utiliser le fuseau horaire local de chaque client).
@@ -123,7 +123,7 @@ Une fois que vous avez configuré la notification et votre application afin de m
 Pour passer en revue des données détaillées pour chaque notification:
 
 1.  Dans le tableau de bord du Centre de développement Windows, développez la section **Engager**, puis sélectionnez **Notifications**.
-2.  Dans la table des notifications existantes, sélectionnez **en cours** ou **terminé**et puis examinez les colonnes de **vitesse de transmission** et **application lance taux** pour voir les performances de haut niveau de chaque notification.
+2.  Dans la table des notifications existantes, sélectionnez **en cours** ou **terminé**et puis examinez les colonnes de **vitesse de transmission** et **application lance taux** pour afficher les performances de haut niveau de chaque notification.
 3.  Pour afficher des informations plus granulaires sur les performances, sélectionnez le nom d’une notification. Dans la section **Statistiques de livraison**, vous pouvez visualiser le **nombre** et le **pourcentage** pour les types d’**états** de notification suivants:
     * **Échec**: la notification n’a pas été transmise pour une raison quelconque. Cela peut se produire, par exemple, si un problème survient dans le service de notification Windows.
     * **Échec dû à l’expiration du canal**: la notification n’a pas pu être transmise car le canal entre l’application et le Centre de développement a expiré. Cela peut se produire, par exemple, si le client n’a pas ouvert votre application depuis longtemps.
@@ -136,7 +136,7 @@ Pour analyser les données de l’activité utilisateur pour toutes vos notifica
 
 1.  Dans le tableau de bord du Centre de développement Windows, développez la section **Engager**, puis sélectionnez **Notifications**.
 2.  Dans la page **Notifications** , cliquez sur l’onglet **analyse** . Cet onglet affiche les données suivantes:
-    * Vues des différents états utilisateur action pour vos toasts et notifications du centre du graphique.
+    * Vues des différents états utilisateur action pour vos toasts et les notifications du centre du graphique.
     * Vues de carte monde cliquez sur par le biais de taux pour vos toasts et l’action de centre de notifications.
 3. Dans la zone supérieure de la page, vous pouvez sélectionner la période sur laquelle portent les données qui vous intéressent. La valeur par défaut est de 30D (30jours), mais vous pouvez choisir d’afficher les données portant sur des périodes de 3, 6 ou 12mois, ou sur une plage de dates personnalisée que vous spécifiez. Vous pouvez également développer des **filtres** pour filtrer toutes les données par application et par marché.
 

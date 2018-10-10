@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 602a0af685e812f5c65f94d07297cac9fc411923
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472333"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500282"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Présentation de la conception des applicationsUWP
 
@@ -29,11 +29,11 @@ Cette nouvelle introduction présente une vue d’ensemble des fonctionnalités 
 
 ## <a name="effective-pixels-and-scaling"></a>Pixels effectifs et mise à l’échelle
 
-Les applications UWP s’exécutent sur tous les [appareils Windows 10](../devices/index.md), à partir de votre téléviseur, jusqu'à votre tablette ou votre PC. Par conséquent, comment concevoir une interface utilisateur qui s’affiche correctement sur un large éventail d’appareils et de tailles d’écran?
+Les applications UWP s’exécutent sur tous les [appareils Windows 10](../devices/index.md), à partir de votre téléviseur, jusqu'à votre tablette ou votre PC. Comment concevoir une interface utilisateur qui s’affiche correctement sur un large éventail d’appareils et de tailles d’écran?
 
 ![même application sur différents appareils](images/universal-image-1.jpg)
 
-UWP permet en ajustant automatiquement les éléments d’interface utilisateur afin qu’ils soient lisibles et faciles à utiliser sur tous les périphériques et les tailles d’écran.
+UWP permet en ajustant automatiquement les éléments d’interface utilisateur afin qu’ils soient lisible et facile à interagir avec sur tous les périphériques et les tailles d’écran.
 
 Lorsque votre application est exécutée sur un appareil, le système utilise un algorithme afin de normaliser l’affichage à l’écran des éléments d’interface utilisateur. Cet algorithme de mise à l’échelle prend en compte la distance d’affichage et la densité de l’écran (en pixels par pouce) pour optimiser la taille perçue (plutôt que la taille physique). L’algorithme de mise à l’échelle garantit qu’une police de 24pixels sur un appareil Surface Hub placé à une distance de 3 mètres est aussi lisible pour l’utilisateur qu’une police de 24pixels sur un téléphone doté d’un écran 5pouces distant de quelques centimètres.
 

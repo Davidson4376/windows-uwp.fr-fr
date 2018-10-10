@@ -16,11 +16,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 312e351a39bf291e1fcd21921230a73ed10cfd17
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468738"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501819"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>Énumérer et interroger des fichiers et dossiers
 
@@ -35,7 +35,7 @@ Pour obtenir des conseils sur le stockage des données de votre application de p
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
-    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Pour savoir comment écrire des applications asynchrones en C++ / WinRT, consultez [opérations concurrentes et asynchrones avec C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). Pour savoir comment écrire des applications asynchrones en C++ / CX, voir [programmation asynchrone en C++ / CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Pour savoir comment écrire des applications asynchrones en C++ / WinRT, voir [opérations concurrentes et asynchrones avec C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). Pour savoir comment écrire des applications asynchrones en C++ / CX, voir [programmation asynchrone en C++ / CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 -   **Autorisations d’accès à l’emplacement**
 
@@ -181,7 +181,7 @@ Next folder
 > [!NOTE]
 > EnC# ou VisualBasic, n’oubliez pas de placer le mot-clé **async** dans la déclaration de toutes les méthodes dans lesquelles vous utilisez l’opérateur **await**.
 
-Sinon, vous pouvez utiliser la méthode [**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync) pour obtenir tous les éléments (fichiers et sous-dossiers) dans un emplacement particulier. L’exemple suivant utilise la méthode **GetItemsAsync** pour obtenir tous les fichiers et sous-dossiers dans le dossier racine de la [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (pas dans les sous-dossiers). L’exemple affiche ensuite le nom de chaque fichier et sous-dossier. Si l’élément est un sous-dossier, l’exemple ajoute `"folder"` au nom.
+Par ailleurs, vous pouvez utiliser la méthode [**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync) pour obtenir tous les éléments (fichiers et sous-dossiers) dans un emplacement particulier. L’exemple suivant utilise la méthode **GetItemsAsync** pour obtenir tous les fichiers et sous-dossiers dans le dossier racine de la [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (pas dans les sous-dossiers). L’exemple affiche ensuite le nom de chaque fichier et sous-dossier. Si l’élément est un sous-dossier, l’exemple ajoute `"folder"` au nom.
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;

@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ac0b2094b17120af8a0c85505cd03af389f1f4
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462680"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501491"
 ---
 # <a name="segoe-mdl2-icons"></a>Icônes Segoe MDL2
 
@@ -59,7 +59,7 @@ Si vous souhaitez utiliser un glyphe de la police **Segoe MDL2 Assets** qui n’
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
-Vous pouvez également utiliser la ressource statique `SymbolThemeFontFamily` pour accéder à **Segoe MDL2 Assets**, au lieu de spécifier la police par son nom:
+Vous pouvez également utiliser la ressource statique `SymbolThemeFontFamily` pour accéder à **Segoe MDL2 Assets**, au lieu de spécifier la police par nom:
 ```xaml
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
 ```

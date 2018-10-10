@@ -10,14 +10,14 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, utiliser rapidement, prise en main
 ms.localizationpriority: medium
 ms.openlocfilehash: b5954aa8236a9abeee6e5c74a200f77fcccf97e3
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468303"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4503883"
 ---
 # <a name="get-started-with-cwinrt"></a>Prise en main de C++/WinRT
-Pour vous aider à rapidement avec à l’aide de [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), cette rubrique présente un exemple de code simple.
+Pour vous aider à rapidement à l’utilisation de [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), cette rubrique présente un exemple de code simple.
 
 ## <a name="a-cwinrt-quick-start"></a>Démarrage rapide avec C++/WinRT
 > [!NOTE]
@@ -119,10 +119,10 @@ Comme vous pouvez le constater, C++/WinRT encourage les expressions C++ modernes
 Vous n'avez pas non plus besoin de gérer les codes de retour HRESULT. C++/WinRT convertit les HRESULT d’erreur en exceptions telles que [**winrt::hresult-error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) pour un style de programmation naturel et moderne. Pour plus d’informations sur la gestion des erreurs et obtenir des exemples de code, voir [Gestion des erreurs avec C++/WinRT](error-handling.md).
 
 ## <a name="important-apis"></a>API importantes
-* [Méthode SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
-* [Propriété SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items)
+* [Méthode de SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
+* [Propriété de SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items)
 * [Structure winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
-* [structure d’erreur HRESULT](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [structure de WinRT::HRESULT-erreur](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
 ## <a name="related-topics"></a>Rubriquesassociées
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)

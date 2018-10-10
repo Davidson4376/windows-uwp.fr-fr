@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, mise en attente de publication, date de publication, envoi de la soumission à publier, approbation de fonctionnalité restreinte
 ms.localizationpriority: medium
 ms.openlocfilehash: 147f34c40cc5d2b612dcdd92edc0c76340cf58f7
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4465515"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500068"
 ---
 # <a name="manage-submission-options"></a>Gérer les options de soumission
 
@@ -30,7 +30,7 @@ Par défaut, nous publierons votre soumission dès qu’elle aura obtenu la cert
 
 La sélection par défaut est **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)**. Cela signifie que le processus de publication de votre soumission commencera dès qu’elle aura obtenu la certification, sauf si vous avez configuré des dates dans la section [Planification](configure-precise-release-scheduling.md) de la page **Tarification et disponibilité**.   
 
-Pour la plupart des soumissions, nous recommandons de laisser la section **Options de mise en attente de publication** définie sur cette option. Si vous souhaitez spécifier les dates auxquelles votre soumission doit être publiée, utilisez l’option **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)**. Le fait de laisser cette section définie sur l’option par défaut n’aura pas pour conséquence la publication de la soumission avant les dates que vous avez définies dans la section **Planification**. Les dates que vous avez sélectionnées dans la section **planification** servira à déterminer le moment où votre produit devient disponible pour les clients dans le Windows Store.
+Pour la plupart des soumissions, nous recommandons de laisser la section **Options de mise en attente de publication** définie sur cette option. Si vous souhaitez spécifier les dates auxquelles votre soumission doit être publiée, utilisez l’option **Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)**. Le fait de laisser cette section définie sur l’option par défaut n’aura pas pour conséquence la publication de la soumission avant les dates que vous avez définies dans la section **Planification**. Les dates que vous avez sélectionnées dans la section **planification** servira à déterminer dès que votre produit est disponible pour les clients dans le Windows Store.
 
 
 ### <a name="publish-your-submission-manually"></a>Publier votre soumission manuellement

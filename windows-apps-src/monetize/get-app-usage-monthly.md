@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 4E4CB1E3-D213-4324-91E4-7D4A0EA19C53
-description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données d’utilisation mensuelle application pour une plage de dates données et de filtres facultatifs.
+description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données d’utilisation mensuelle application pour une plage de dates données et d’autres filtres facultatifs.
 title: Obtenir l’utilisation d’applications mensuelles
 ms.author: mhopkins
 ms.date: 08/15/2018
@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store, API de l’utilisation
 ms.localizationpriority: medium
 ms.openlocfilehash: ad45422dea9b0c4335fa3cf67a594f819a60ca9c
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4463635"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502085"
 ---
 # <a name="get-monthly-app-usage"></a>Obtenir l’utilisation d’applications mensuelles
 
-Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données d’utilisation agrégées (ne pas y compris Xbox en mode multijoueur) au format JSON pour une application au cours de la plage de dates donnée (90 derniers jours uniquement) et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport d’utilisation](../publish/usage-report.md) dans le tableau de bord du centre de développement Windows.
+Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données d’utilisation agrégées (ne pas y compris Xbox en mode multijoueur) au format JSON pour une application au cours de la plage de dates donnée (90 derniers jours uniquement) et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport d’utilisation](../publish/usage-report.md) dans le tableau de bord du centre de développement Windows.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -88,14 +88,14 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | date                      | chaîne  | La première date dans la plage de dates pour les données d’utilisation. Si la requête spécifiait un jour unique, cette valeur est cette date. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates.                          |
 | applicationId             | chaîne  | L’ID Store de l’application pour laquelle vous récupérez les données d’utilisation.                            |
 | applicationName           | chaîne  | Nom d’affichage de l’application.                                                                |
-| market                    | chaîne  | Le code pays ISO 3166 du marché dans lequel le client a utilisé votre application.                   |
+| market                    | chaîne  | Le code de pays ISO 3166 du marché dans lequel le client a utilisé votre application.                   |
 | packageVersion            | chaîne  | La version du package où l’utilisation s’est produite.                                            |
 | deviceType                | chaîne  | L’une des chaînes suivantes qui spécifie le type d’appareil où l’utilisation s’est produite:<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**Tablette**</li><li>**IoT**</li><li>**Serveur**</li><li>**Holographic**</li><li>**Inconnu**</li></ul>                                                                                                                           |
 | subscriptionName          | chaîne  | Indique si l’utilisation a été par le biais de Xbox Game Pass.                                              |
 | monthlySessionCount       | long    | Le nombre de sessions utilisateur au cours du mois.                                              |
-| engagementDurationMinutes | double  | Minutes où les utilisateurs sont activement à l’aide de votre application mesurée par une période distincte, qui commence au lance de l’application (début du processus) et se termine lorsqu’il termine (fin du processus) ou après une période d’inactivité.                               |
+| engagementDurationMinutes | double  | Les minutes dans lesquels les utilisateurs sont activement à l’aide de votre application exprimée par une période distincte, qui commence au lance de l’application (début du processus) et se termine lorsqu’il termine (fin du processus) ou après une période d’inactivité.                               |
 | monthlyActiveUsers        | long    | Le nombre de clients à l’aide de l’application ce mois.                                           |
-| monthlyActiveDevices      | long    | Le nombre d’appareils exécutant votre application pour une période donnée au cours du temps, qui commence au lance de l’application (début du processus) et de fin lorsqu’il termine (fin du processus) ou après une période d’inactivité.                                                        |
+| monthlyActiveDevices      | long    | Le nombre d’appareils exécutant votre application pour une période distincte du temps, qui commence au lance de l’application (début du processus) et de fin lorsqu’il termine (fin du processus) ou après une période d’inactivité.                                                        |
 | monthlyNewUsers           | long    | Le nombre de clients ayant utilisé votre application pour la première fois ce mois.                    |
 | averageDailyActiveUsers   | double  | Le nombre moyen de clients à l’aide de l’application quotidiennement.                             |
 | averageDailyActiveDevices | double  | Le nombre moyen d’appareils utilisés par tous les utilisateurs quotidiennement pour interagir avec votre application. |

@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
 ms.openlocfilehash: b5110eebde087593f07704e89c2e4708b2fcbb8b
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4463510"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501465"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>Exécuter, déboguer et tester une application de bureau empaquetée
 
@@ -26,7 +26,7 @@ Exécutez votre application empaquetée et examinez-la sans avoir à vous connec
 
 ## <a name="run-your-application"></a>Exécutez votre application
 
-Vous pouvez exécuter votre application pour le tester localement sans avoir à obtenir un certificat et la signer. Votre manière d’exécuter l’application dépend de l’outil utilisé pour créer le package.
+Vous pouvez exécuter votre application à tester localement sans avoir à obtenir un certificat et la signer. Votre manière d’exécuter l’application dépend de l’outil utilisé pour créer le package.
 
 ### <a name="you-created-the-package-by-using-visual-studio"></a>Vous avez créé le package à l'aide de VisualStudio
 
@@ -70,7 +70,7 @@ Si vous avez créé votre package à l'autre d'un autre outil, appliquez les ét
 
 Si vous apportez vos modifications à votre application pour corriger des bogues, remettez-la à l’aide de l’outil MakeAppx. Consultez [Exécuter l’outil MakeAppX](desktop-to-uwp-manual-conversion.md#make-appx).
 
-### <a name="debug-the-entire-application-lifecycle"></a>Déboguer l’intégralité de l’application du cycle de vie
+### <a name="debug-the-entire-application-lifecycle"></a>Déboguer le cycle de vie de l’ensemble de l’application
 
 Dans certains cas, vous souhaiterez souhaiter un contrôle sur le processus de débogage, notamment la possibilité de déboguer votre application avant son démarrage.
 
@@ -84,7 +84,7 @@ Pour tester votre application dans un paramètre réaliste lorsque vous vous pr�
 
 ### <a name="test-an-application-that-you-packaged-by-using-visual-studio"></a>Tester une application qui vous un package à l’aide de Visual Studio
 
-Visual Studio signe votre application à l’aide d’un certificat de test. Vous trouverez ce certificat dans le dossier de sortie généré par l'assistant **Créer des packages d’application**. Le fichier de certificat présente l’extension *.cer* et vous devrez installer ce certificat dans le magasin **d’Autorités de Certification racine de confiance** sur le PC auquel vous souhaitez tester votre application sur. Consultez [Chargez de manière indépendante votre package d’application](../packaging/packaging-uwp-apps.md#sideload-your-app-package).
+Visual Studio signe votre application à l’aide d’un certificat de test. Vous trouverez ce certificat dans le dossier de sortie généré par l'assistant **Créer des packages d’application**. Le fichier de certificat présente l’extension *.cer* et vous devrez installer ce certificat dans le magasin **d’Autorités de Certification racine de confiance** sur le PC que vous souhaitez tester votre application sur. Consultez [Chargez de manière indépendante votre package d’application](../packaging/packaging-uwp-apps.md#sideload-your-app-package).
 
 ### <a name="test-an-application-that-you-packaged-by-using-the-desktop-app-converter-dac"></a>Tester une application qui vous un package à l’aide de Desktop App Converter (DAC)
 
@@ -99,7 +99,7 @@ Vous pouvez également signer votre application manuellement. Voici comment proc
 
 2. Installez ce certificat dans le magasin de certificats **racine de confiance** ou **personnes autorisées** sur votre système.
 
-3. Signer votre application à l’aide de ce certificat, voir [signer un package d’application à l’aide de SignTool](../packaging/sign-app-package-using-signtool.md).
+3. Signer votre application à l’aide de ce certificat, voir la [connexion d’un package d’application à l’aide de SignTool](../packaging/sign-app-package-using-signtool.md).
 
   > [!IMPORTANT]
   > Assurez-vous que le nom de l’éditeur mentionné sur votre certificat correspond à celui de l’éditeur de votre application.

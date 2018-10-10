@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, capture d’écran
 ms.localizationpriority: medium
 ms.openlocfilehash: 3be1312b5dcc716d29bf15a8e16a2647ada68d49
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4464479"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500927"
 ---
 # <a name="screen-capture"></a>Capture d'écran
 
@@ -24,7 +24,7 @@ ms.locfileid: "4464479"
 Avec la capture d’écran, les développeurs appellent l’interface utilisateur sécurisée du système pour sélectionner la fenêtre d’affichage ou d’application à capturer, et une bordure de notification jaune est dessinée par le système autour de l’élément activement capturé. Dans le cas de plusieurs sessions de capture simultanée, une bordure jaune est dessinée autour de chaque élément capturé.
 
 > [!NOTE]
-> La capture d’écran API sont uniquement pris en charge sur le bureau et casques Windows Mixed Reality.
+> La capture d’écran API sont uniquement prises en charge sur le bureau et casques Windows Mixed Reality.
 
 ## <a name="add-the-screen-capture-capability"></a>Ajouter la fonctionnalité de capture d’écran
 
@@ -32,7 +32,7 @@ Les API disponibles dans l’espace de noms **Windows.Graphics.Capture** nécess
     
 1. Ouvrez **Package.appxmanifest** dans l' **Explorateur de solutions**.
 2. Sélectionnez l’onglet **Fonctionnalités**.
-3. Vérifiez **capturer des graphiques**.
+3. Vérifiez la **Capture des graphiques**.
 
 ![Capture de graphiques](images/screen-capture-1.png)
 
@@ -170,7 +170,7 @@ Lorsque la méthode **Recreate** est appelée, toutes les images existantes sont
 L’extrait de code suivant est un exemple de bout en bout de l’implémentation de capture d’écran dans une application UWP. Dans cet exemple, nous avons un bouton dans le serveur frontal qui, lorsque vous cliquez dessus, appelle la méthode **Button_ClickAsync** .
 
 > [!NOTE]
-> Cet extrait de code utilise [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm), une bibliothèque pour le rendu des graphiques 2D. Consultez leur documentation pour plus d’informations sur la façon de configurer pour votre projet.
+> Cet extrait de code utilise [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm), une bibliothèque pour le rendu des graphiques 2D. Consultez leur documentation pour savoir comment le configurer pour votre projet.
 
 ```cs
 using Microsoft.Graphics.Canvas;

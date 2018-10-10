@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: bde2e58934e24df7db2cb77fb793106aa65e3834
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470643"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499254"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Package d’une application de bureau à l’aide de Desktop App Converter
 
@@ -144,14 +144,14 @@ Vous pouvez en savoir plus sur chacun d’entre eux [ici](#command-reference).
 
 Voici quelques méthodes courantes pour créer votre package d'application.
 
-* [Package d’une application qui a un fichier de programme d’installation (.msi)](#installer-conversion)
-* [Une application qui a un fichier exécutable d’installation de package](#setup-conversion)
+* [Package d’une application qui dispose d’un fichier de programme d’installation (.msi)](#installer-conversion)
+* [Une application qui dispose d’un fichier exécutable d’installation de package](#setup-conversion)
 * [Une application qui n’a pas de programme d’installation de package](#no-installer-conversion)
 * [Créer un package d'application, signer et préparer l'application pour la soumission au Store](#optional-parameters)
 
 <a id="installer-conversion" />
 
-#### <a name="package-an-application-that-has-an-installer-msi-file"></a>Package d’une application qui a un fichier de programme d’installation (.msi)
+#### <a name="package-an-application-that-has-an-installer-msi-file"></a>Package d’une application qui dispose d’un fichier de programme d’installation (.msi)
 
 Pointez vers le fichier d’installation à l’aide du paramètre ``Installer``.
 
@@ -170,7 +170,7 @@ Si votre programme d'installation comprend des programmes d'installation pour le
 
 <a id="setup-conversion" />
 
-#### <a name="package-an-application-that-has-a-setup-executable-file"></a>Une application qui a un fichier exécutable d’installation de package
+#### <a name="package-an-application-that-has-a-setup-executable-file"></a>Une application qui dispose d’un fichier exécutable d’installation de package
 
 Pointez vers l’exécutable d’installation à l’aide du paramètre ``Installer``.
 
@@ -209,7 +209,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 
 #### <a name="package-an-app-sign-the-app-and-run-validation-checks-on-the-package"></a>Créer un package d'application, signer l’application puis exécuter les vérifications de validation sur le package
 
-Cet exemple est similaire au premier près qu’il montre comment vous pouvez signer votre application pour le test local, puis valider votre application par rapport à l’application empaquetée et les exigences de Microsoft Store.
+Cet exemple est similaire au premier ceci près qu’il montre comment signer votre application pour le test local et puis valider votre application par rapport à l’application empaquetée et les exigences de Microsoft Store.
 
 ```cmd
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
@@ -334,7 +334,7 @@ Suivez ces étapes pour installer le certificat généré, puis exécutez votre 
 
 ## <a name="modify-the-packaged-app"></a>Modifier l’application empaquetée
 
-Vous allez probablement apporter des modifications à votre application empaquetée pour résoudre les bogues, ajouter les ressources visuelles ou améliorer votre application avec des expériences modernes telles que les vignettes dynamiques.
+Vous allez probablement apporter des modifications à votre application empaquetée pour résoudre des bogues, ajouter les ressources visuelles ou améliorer votre application avec des expériences modernes telles que les vignettes dynamiques.
 
 Une fois vos modifications accomplies, il n’est pas nécessaire d’effectuer une nouvelle conversion. Dans la plupart des cas, vous pouvez simplement repackager votre application à l’aide de l’outil MakeAppx et du fichier appxmanifest.xml DAC génère pour votre application. Voir [Générer un package d’application Windows](desktop-to-uwp-manual-conversion.md#make-appx).
 

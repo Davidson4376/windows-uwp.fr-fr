@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 283856ad163d2e67078c61559f6f8ec667e92b87
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467307"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4503810"
 ---
 # <a name="avoid-common-certification-failures"></a>Éviter les échecs de certification courants
 
@@ -35,7 +35,7 @@ Consultez cette liste pour éviter les problèmes qui empêchent souvent les app
 
 -   [Fournissez toutes les informations requises](notes-for-certification.md) pour utiliser votre application, telles que le nom d’utilisateur et le mot de passe d’un compte de test si votre application nécessite que les utilisateurs se connectent à un service, ou toutes les étapes requises pour accéder aux fonctionnalités masquées ou verrouillées.
 
--   Incluez une [politique de confidentialité](create-app-store-listings.md#privacy-policy) si votre application le nécessite, notamment si elle accède d’une quelconque manière à des informations personnelles ou si la législation l’impose. Pour aider à déterminer si votre application nécessite une politique de confidentialité, passez en revue le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et les [Stratégies du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies).
+-   Incluez une [politique de confidentialité](create-app-store-listings.md#privacy-policy) si votre application le nécessite, notamment si elle accède d’une quelconque manière à des informations personnelles ou si la législation l’impose. Pour vous aider à déterminer si votre application nécessite une politique de confidentialité, passez en revue le [Contrat développeur d’applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et les [Stratégies du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies).
 
 -   Vérifiez que la description de votre application indique clairement en quoi consiste cette dernière. Si vous avez besoin d’aide, consultez nos recommandations en matière de [rédaction d’une description d’application attractive](write-a-great-app-description.md).
 

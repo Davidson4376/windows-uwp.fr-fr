@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ffafab761741b8d7bc05f13ea2d8ae50ff048b
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470350"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502332"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Recommandations pour les applications de marketing de Microsoft Store
 
-Découvrez comment promouvoir vos applications et contenu dans le Microsoft Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique.
+Découvrez comment promouvoir vos applications et vos contenus dans le Microsoft Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique.
 
 ## <a name="store-badges"></a>Badges Windows Store
 
@@ -39,7 +39,7 @@ Vous pouvez également télécharger l’ensemble des images de badge (aux forma
 
 ## <a name="device-images"></a>Images d’appareil
 
-Pour promouvoir votre application, vous pouvez afficher son aspect lors de son exécution sur un appareil Windows. Nous mettons à votre disposition différentes images de châssis d’appareil sélectionnables, notamment des téléphones, des tablettes, des portables et des PC. Vous trouverez les meilleures pratiques et les spécifications techniques pour l’utilisation de ces images dans les [Les recommandations en matière de marketing adapté aux applications Microsoft Store](http://go.microsoft.com/fwlink/p/?LinkId=529769).
+Pour promouvoir votre application, vous pouvez afficher son aspect lors de son exécution sur un appareil Windows. Nous mettons à votre disposition différentes images de châssis d’appareil sélectionnables, notamment des téléphones, des tablettes, des portables et des PC. Vous trouverez les meilleures pratiques et des spécifications techniques pour l’utilisation de ces images dans les [Les recommandations en matière de marketing adapté aux applications Microsoft Store](http://go.microsoft.com/fwlink/p/?LinkId=529769).
 
 [![Bouton Télécharger](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Image d’appareil Windows**
 
