@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dd4e0ced4de2419858424a88f5fa5ce66f5b4286
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462804"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498021"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>Créer une application Windows universelle à instances multiples
 
@@ -23,7 +23,7 @@ Cette rubrique décrit comment créer une application de plateforme Windows univ
 À partir de Windows 10, version 1803 (version 10.0; Build 17134), votre application UWP peut participer à prendre en charge plusieurs instances. Si une instance d’une application UWP à instances multiples est en cours d’exécution et qu’une demande d’activation consécutive est reçue, la plateforme n’activera pas l’instance existante. Au lieu de cela, elle créera une nouvelle instance qui s’exécutera dans un processus distinct.
 
 > [!IMPORTANT]
-> L’instanciation multiple est prise en charge pour les applications JavaScript, mais n’est pas la redirection de l’instanciation multiple. Dans la mesure où la redirection de l’instanciation multiple n’est pas pris en charge pour les applications JavaScript, la classe [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance) n’est pas utile pour ces applications.
+> L’instanciation multiple est prise en charge pour les applications de JavaScript, mais n’est pas la redirection de l’instanciation multiple. Dans la mesure où la redirection de l’instanciation multiple n’est pas pris en charge pour les applications de JavaScript, la classe [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance) n’est pas utile pour ces applications.
 
 ## <a name="opt-in-to-multi-instance-behavior"></a>Participer au comportement à instances multiples
 
@@ -31,7 +31,7 @@ Si vous créez une nouvelle application à instances multiples, vous pouvez inst
 
 Deux modèles sont installés: **Application UWP à instances multiples**, qui fournit le modèle pour la création d’une application à instances multiples, et **Application UWP de redirection à instances multiples**, qui fournit une logique supplémentaire sur laquelle vous pouvez vous appuyer pour lancer une nouvelle instance ou activer de manière sélective une instance qui a déjà été lancée. Par exemple, vous souhaitez peut-être éviter que plusieurs instances modifient simultanément un même document, afin de mettre au premier plan l’instance où ce fichier est ouvert, au lieu de lancer une nouvelle instance.
 
-Ajoutent les deux modèles `SupportsMultipleInstances` à la `package.appxmanifest` fichier. Notez les préfixes d’espace de noms `desktop4` et `iot2`: seuls les projets qui ciblent le bureau, ou les projets Internet des objets (IoT), prend en charge l’instanciation multiple.
+Ajoutent les deux modèles `SupportsMultipleInstances` à la `package.appxmanifest` fichier. Notez les préfixes d’espace de noms `desktop4` et `iot2`: seuls les projets qui ciblent le bureau ou des projets de l’Internet des objets (IoT), prend en charge l’instanciation multiple.
 
 ```xml
 <Package
@@ -56,7 +56,7 @@ Ajoutent les deux modèles `SupportsMultipleInstances` à la `package.appxmanife
 
  La prise en charge de l'instanciation multiple pour les applications UWP permet non seulement de lancer plusieurs instances de l’application, mais offre aussi des options de personnalisation si vous souhaitez décider de lancer ou non une nouvelle instance de votre application ou d'activer ou non une instance déjà en cours d’exécution. Par exemple, si l’application est lancée pour modifier un fichier qui est déjà en cours de modification dans une autre instance, vous pouvez rediriger l’activation vers cette instance au lieu d’ouvrir une autre instance qui est déjà en train de modifier le fichier.
 
-Pour la voir en action, regardez cette vidéo sur la création des applications UWP à instances multiples.
+Pour la voir en action, regardez cette vidéo sur la création d’applications UWP instances multiples.
 
 > [!VIDEO https://www.youtube.com/embed/clnnf4cigd0]
 
@@ -112,7 +112,7 @@ public static class Program
 }
 ```
 
-`Main()` est le premier élément qui s’exécute. Il s’exécute avant [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) et [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_). Cela vous permet de décider d'activer ou non cette instance ou une autre avant l'exécution de tout autre code d’initialisation dans votre application.
+`Main()` est le premier élément qui s’exécute. Elle s’exécute avant [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) et [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_). Cela vous permet de décider d'activer ou non cette instance ou une autre avant l'exécution de tout autre code d’initialisation dans votre application.
 
 Le code ci-dessus détermine si une instance existante ou nouvelle de votre application est activée. Une clé est utilisée pour déterminer s’il existe une instance existante que vous souhaitez activer. Par exemple, si votre application peut être lancée pour [gérer l’activation des fichiers](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation), vous pouvez utiliser le nom de fichier en tant que clé. Ensuite, vous pouvez vérifier si une instance de votre application est déjà enregistrée avec cette clé et l’activer au lieu d’ouvrir une nouvelle instance. Il s’agit de l’idée sous-jacente au code: `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 

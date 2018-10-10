@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, test bêta, distribution limitée, bêta, test, testeurs
 ms.localizationpriority: medium
 ms.openlocfilehash: e453be22d752ed78263cb34011cdf9a333057e03
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467664"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498245"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>Tests bêta et distribution ciblée
 
@@ -53,7 +53,7 @@ Pour en savoir plus, consultez [Versions d’évaluations des packages](package-
 
 ## <a name="hiding-the-app-in-the-store-and-using-promotional-codes"></a>Masquage de l’application dans le Store et utilisation des codes promotionnels
 
-Cette option offre un autre moyen de limiter la distribution d’une application à un certain groupe de testeurs, tout en empêchant quiconque de découverte de votre application dans le Windows Store (ou acquise sans un code promotionnel). Toutefois, contrairement à l’option Public privé, n’importe qui peut voir la description de votre application s’il a le lien direct. Si la confidentialité est essentielle pour votre soumission, nous vous recommandons de choisir plutôt une publication pour un public privé.
+Cette option offre un autre moyen de limiter la distribution d’une application à un certain groupe de testeurs, tout en empêchant quiconque de détection de votre application dans le Windows Store (ou acquise sans un code promotionnel). Toutefois, contrairement à l’option Public privé, n’importe qui peut voir la description de votre application s’il a le lien direct. Si la confidentialité est essentielle pour votre soumission, nous vous recommandons de choisir plutôt une publication pour un public privé.
 
 Le masquage de l’application et l’utilisation de codes promotionnels peuvent être utilisés avec des applications destinées à n’importe quelle version du système d’exploitation, mais vos testeurs ne pourront obtenir l’application que s’ils exécutent Windows10.
 

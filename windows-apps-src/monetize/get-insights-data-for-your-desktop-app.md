@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, insights
 ms.localizationpriority: medium
 ms.openlocfilehash: e7ca6eed40af37276b5b4c98ec7b1b709bdadfb9
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468429"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498159"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>Obtenir les données d’analyse pour votre application de bureau
 
@@ -48,9 +48,9 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 | Paramètre        | Type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
-| applicationId | chaîne | L’ID de produit de l’application de bureau pour laquelle vous souhaitez obtenir les données d’informations. Pour obtenir l’ID de produit d’une application de bureau, ouvrez un [rapport d'analyse du centre de développement relatif à votre application de bureau](https://msdn.microsoft.com/library/windows/desktop/mt826504) (comme le **rapport d’intégrité**) et récupérez l’ID de produit à partir de l’URL. Si vous ne spécifiez pas ce paramètre, le corps de réponse contient les données des informations pour toutes les applications inscrites dans votre compte.  |  Non  |
-| startDate | date | La date de début dans la plage de dates des données des informations de récupération. La valeur par défaut est de 30jours avant la date actuelle. |  Non  |
-| endDate | date | La date de fin dans la plage de dates des données des informations de récupération. La valeur par défaut est la date actuelle |  Non  |
+| applicationId | chaîne | L’ID de produit de l’application de bureau pour laquelle vous souhaitez obtenir les informations. Pour obtenir l’ID de produit d’une application de bureau, ouvrez un [rapport d'analyse du centre de développement relatif à votre application de bureau](https://msdn.microsoft.com/library/windows/desktop/mt826504) (comme le **rapport d’intégrité**) et récupérez l’ID de produit à partir de l’URL. Si vous ne spécifiez pas ce paramètre, le corps de réponse contient les données des informations pour toutes les applications inscrites dans votre compte.  |  Non  |
+| startDate | date | La date de début dans la plage de dates des données des informations à récupérer. La valeur par défaut est de 30jours avant la date actuelle. |  Non  |
+| endDate | date | La date de fin dans la plage de dates des données des informations à récupérer. La valeur par défaut est la date actuelle |  Non  |
 | filter | chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Par exemple, *filter = dataType eq 'acquisition'*. <p/><p/>Cette méthode prend uniquement en **l’intégrité**filtre.  | Non   |
 
 ### <a name="request-example"></a>Exemple de requête
@@ -68,34 +68,34 @@ Authorization: Bearer <your access token>
 
 | Valeur      | Type   | Description                  |
 |------------|--------|-------------------------------------------------------|
-| Valeur      | tableau  | Tableau d’objets qui contiennent des données pour l’application insights. Pour plus d’informations sur les données de chaque objet, consultez la section [valeurs Insight](#insight-values) ci-dessous.                                                                                                                      |
+| Valeur      | tableau  | Tableau d’objets contenant des données des informations de l’application. Pour plus d’informations sur les données de chaque objet, consultez la section de [valeurs de Insight](#insight-values) ci-dessous.                                                                                                                      |
 | TotalCount | entier    | Nombre total de lignes dans les résultats de données de la requête.                 |
 
 
-### <a name="insight-values"></a>Valeurs Insight
+### <a name="insight-values"></a>Valeurs des informations
 
 Les éléments du tableau *Value* ont les valeurs suivantes:
 
 | Valeur               | Type   | Description                           |
 |---------------------|--------|-------------------------------------------|
-| applicationId       | chaîne | L’ID de produit de l’application de bureau pour laquelle vous souhaitez récupérer des données des informations.     |
-| insightDate                | chaîne | La date à laquelle nous avons identifié la modification d’un indicateur spécifique. Cette date représente la fin de la semaine dans lequel nous avons détecté une augmentation importante ou diminuer dans une unité de mesure par rapport à la semaine. |
+| applicationId       | chaîne | L’ID de produit de l’application de bureau pour laquelle vous souhaitez récupérer des données de perspectives.     |
+| insightDate                | chaîne | La date sur lequel nous avons identifié la modification d’un indicateur spécifique. Cette date représente la fin de la semaine dans lequel nous avons détecté une augmentation importante ou diminuer dans une unité de mesure par rapport à la semaine. |
 | type de données     | chaîne | Une chaîne qui spécifie la zone d’analytique générale qui informe cette insight. Actuellement, cette méthode prend uniquement en charge **la santé**.    |
-| insightDetail          | tableau | Une ou plusieurs [valeurs InsightDetail](#insightdetail-values) qui représentent les détails pour insight actuel.    |
+| insightDetail          | tableau | Une ou plusieurs [valeurs de InsightDetail](#insightdetail-values) qui représentent les détails de l’analyse en cours.    |
 
 
-### <a name="insightdetail-values"></a>Valeurs InsightDetail
+### <a name="insightdetail-values"></a>Valeurs de InsightDetail
 
 | Valeur               | Type   | Description                           |
 |---------------------|--------|-------------------------------------------|
-| FactName           | chaîne | Une chaîne qui indique la métrique qui décrit l’insight actuelle ou la dimension actuelle. Actuellement, cette méthode prend uniquement en charge la valeur du **nombre d’accès**.  |
-| SubDimensions         | tableau |  Un ou plusieurs objets qui décrivent un indicateur unique pour l’insight.   |
-| ChangementPourcentage            | chaîne |  Le pourcentage de la métrique changée entre votre clientèle entière.  |
+| FactName           | chaîne | Une chaîne qui indique la métrique décrivant l’insight actuelle ou la dimension actuelle. Actuellement, cette méthode prend uniquement en charge la valeur du **nombre d’accès**.  |
+| SubDimensions         | tableau |  Un ou plusieurs objets qui décrivent un indicateur unique pour l’analyse.   |
+| ChangementPourcentage            | chaîne |  Le pourcentage de la métrique changée entre votre base de clients.  |
 | Nomdimension           | chaîne |  Le nom de la métrique décrit dans la dimension actuelle. Exemples **EventType**, **marché**, **DeviceType**et **PackageVersion**.   |
-| DimensionValue              | chaîne | La valeur de la métrique qui est décrit dans la dimension actuelle. Par exemple, si **NomDimension** **EventType**c'est-à-dire **DimensionValue** peut être **incident** ou **Raccrocher**.   |
-| FactValue     | chaîne | La valeur absolue de la métrique sur la date de que détection de l’aperçu.  |
+| DimensionValue              | chaîne | La valeur de la métrique qui est décrit dans la dimension actuelle. Par exemple, si **NomDimension** est **EventType**, **DimensionValue** peut-être **incident** ou **Raccrocher**.   |
+| FactValue     | chaîne | La valeur absolue de la métrique à la date de que l’analyse a été détectée.  |
 | Direction | chaîne |  La direction de la modification (**positif** ou **négatif**).   |
-| Date              | chaîne |  La date à laquelle nous avons identifié la modification relatives à l’insight actuelle ou la dimension actuelle.   |
+| Date              | chaîne |  La date à laquelle nous avons identifié la modification, relatives à l’analyse en cours ou la dimension actuelle.   |
 
 ### <a name="response-example"></a>Exemple de réponse
 
