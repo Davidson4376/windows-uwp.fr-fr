@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, monétiser, engager, promouvoir, services du Windows Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 02ef073e319af3fe2cf3bdd7906a7027200c4854
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4460763"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505901"
 ---
 # <a name="monetization-engagement-and-store-services"></a>Monétisation, implication et services du Windows Store
 
@@ -25,7 +25,7 @@ Pour plus d’informations sur les frais facturés par le MicrosoftStore et la f
 
 ## <a name="in-this-section"></a>Dans cette section
 
-| Rubrique                | Description                 |
+| Article                | Description                 |
 |--------------------|-----------------------------|
 | [Achats in-app et versions d’évaluation](in-app-purchases-and-trials.md)      | Découvrez comment utiliser les API du SDK Windows pour ajouter des achats de produits in-app et des fonctionnalités d’évaluation à vos applications.  |
 | [Afficher des publicités dans votre application avec le SDK MicrosoftAdvertising](display-ads-in-your-app.md)      |   Augmentez vos revenus en affichant des bannières ou des spots publicitaires dans votre application. Cette fonctionnalité nécessite le SDK Microsoft Advertising. |

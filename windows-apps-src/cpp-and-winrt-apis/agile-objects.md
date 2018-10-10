@@ -10,14 +10,14 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, agile, objet, agilité, IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 9af1fb0a9d23727924ae3c165bc8977fb9cc7774
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461304"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504930"
 ---
 # <a name="agile-objects-in-cwinrt"></a>Objets agiles en C++/WinRT
-Dans la grande majorité des cas, une instance d’une classe Windows Runtime &mdash;comme un objet C++ standard&mdash; est accessible à partir de n’importe quel thread. On dit qu’une telle classe est *agile*. Seul un petit nombre de classes Windows Runtime fournies avec Windows ne sont pas agiles, mais lorsque vous les utilisez, vous devez prendre en considération leur modèle de thread et leur comportement de rassemblement (le rassemblement consiste à transmettre des données à travers un thread ou les limites d’un processus). Il s’agit d’une bonne valeur par défaut pour chaque objet Windows Runtime soit agile, afin que vos propres [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) types sont agiles par défaut.
+Dans la grande majorité des cas, une instance d’une classe Windows Runtime &mdash;comme un objet C++ standard&mdash; est accessible à partir de n’importe quel thread. On dit qu’une telle classe est *agile*. Seul un petit nombre de classes Windows Runtime fournies avec Windows ne sont pas agiles, mais lorsque vous les utilisez, vous devez prendre en considération leur modèle de thread et leur comportement de rassemblement (le rassemblement consiste à transmettre des données à travers un thread ou les limites d’un processus). Il s’agit d’une bonne valeur par défaut pour chaque objet de Windows Runtime d’être agile, afin que vos propres [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) types sont agiles par défaut.
 
 Toutefois, vous pouvez la refuser. Vous avez peut-être une bonne raison de vouloir qu’un objet de votre type réside, par exemple, dans un thread unique cloisonné. Cela est généralement lié aux exigences de réentrance. Mais, de plus en plus, même les API d’interface utilisateur proposent des objets agiles. En règle générale, l’agilité est l’option la plus simple et la plus performante. En outre, lorsque vous implémentez une usine d’activation, elle doit être agile même si votre classe runtime correspondante ne l’est pas.
 

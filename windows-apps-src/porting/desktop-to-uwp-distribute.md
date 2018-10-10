@@ -2,7 +2,7 @@
 author: normesta
 Description: Distribute a packaged desktop application (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
-title: Publier votre application de bureau empaquetée à un Windows store ou charger de manière indépendante sur un ou plusieurs périphériques.
+title: Publier votre application de bureau empaquetée à un Windows store ou les charger de manière indépendante sur un ou plusieurs périphériques.
 ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
@@ -12,15 +12,15 @@ keywords: windows10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: c81e8d07efa04e93128089eaec78fb83b822a4b9
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461104"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504940"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>Distribuer une application de bureau empaquetée
 
-Publier votre application de bureau empaquetée à un Windows store ou charger de manière indépendante sur un ou plusieurs périphériques.  
+Publier votre application de bureau empaquetée à un Windows store ou les charger de manière indépendante sur un ou plusieurs périphériques.  
 
 > [!NOTE]
 > Vous disposez d’un plan pour la transition des utilisateurs à votre application empaquetée? Avant de distribuer votre application, consultez la section [Migration des utilisateurs vers votre application empaquetée](#transition-users) de ce guide où vous trouverez quelques idées.
@@ -50,7 +50,7 @@ Pour distribuer votre application à d’autres appareils sans passer par le Win
 
 Vous pouvez [créer un certificat](../packaging/create-certificate-package-signing.md) ou en obtenir un auprès d’un fournisseur populaire, tel que [Verisign](https://www.verisign.com/).
 
-Si vous prévoyez de distribuer votre application sur des appareils qui exécutent Windows 10 S, votre application doit être signée par le Microsoft Store afin de passer par le processus de soumission avant que vous pouvez distribuer votre application sur ces appareils.
+Si vous prévoyez de distribuer votre application sur des périphériques exécutant Windows 10 S, votre application doit être signée par le Microsoft Store afin de passer par le processus de soumission avant que vous pouvez distribuer votre application sur ces appareils.
 
 Si vous créez un certificat, vous devez l’installer dans le magasin de certificats **Racine approuvée** ou **Personnes autorisées** de chaque appareil exécutant votre application. Si vous obtenez un certificat auprès d’un fournisseur populaire, vous n’aurez rien à installer sur les autres systèmes, hormis votre application.  
 
@@ -75,7 +75,7 @@ Avant de distribuer votre application, envisagez d’ajouter quelques extensions
 
 * Pointez les vignettes existantes de l’écran de démarrage et les boutons de barre des tâches vers votre application empaquetée.
 * Associer votre application empaquetée à un ensemble de types de fichiers.
-* Rendre votre application empaquetée ouvrir certains types de fichiers par défaut.
+* Rendre votre application empaquetée à ouvrir certains types de fichiers par défaut.
 
 Pour obtenir la liste complète des extensions et des conseils pour leur utilisation, voir [Migration des utilisateurs vers votre application](desktop-to-uwp-extensions.md#transition-users-to-your-app).
 
@@ -127,7 +127,7 @@ private void MigrateUserData()
 
 ### <a name="uninstall-the-desktop-version-of-your-app"></a>Désinstaller la version bureau de votre application
 
-Il est préférable de ne pas désinstaller l’application de bureau des utilisateurs sans leur autorisation. Affichez une boîte de dialogue demandant l’autorisation de l’utilisateur. Les utilisateurs peuvent décider de conserver la version bureau de votre application. Dans ce cas, vous devrez décider si vous souhaitez bloquer l’utilisation de l’application de bureau ou prendre en charge l’utilisation de côte-à-côte des deux applications.
+Il est préférable de ne pas désinstaller l’application de bureau des utilisateurs sans leur autorisation. Affichez une boîte de dialogue demandant l’autorisation de l’utilisateur. Les utilisateurs peuvent décider de conserver la version bureau de votre application. Si cela se produit, vous devrez décider si vous souhaitez bloquer l’utilisation de l’application de bureau ou prendre en charge l’utilisation de côte-à-côte des deux applications.
 
 Voici un exemple montrant comment vous pourriez procéder dans une application empaquetée .NET.
 

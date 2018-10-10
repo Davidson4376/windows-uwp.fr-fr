@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, création de packages
 ms.localizationpriority: medium
 ms.openlocfilehash: fcd6d937c7261b5cfa8af954eb5d2ec2869d8afd
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471251"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505181"
 ---
 # <a name="manual-app-packaging"></a>Création manuelle de packages d’application
 
@@ -46,5 +46,5 @@ Cette section contient des sujets plus avancés concernant l'agencement d'une ap
 |-------|-------------|
 | [Introduction aux packages d'actifs](asset-packages.md) | Les packages d'actifs désignent un type de package qui agit en tant qu'emplacement centralisé pour les fichiers communs d'une application. Ainsi, la nécessité de dupliquer les fichiers au travers de ses packages d'architecture est efficacement éliminée. |
 | [Développement de packages d'actifs et mise en dossier de packages](package-folding.md) | Découvrez comment organiser efficacement votre application avec des packages d'actifs et la mise en dossier des packages. |
-| [Packages d'application d'ensemble plat](flat-bundles.md) | Explique comment créer un ensemble plat pour les fichiers de package de votre application. |
+| [Packages d'application d'ensemble plat](flat-bundles.md) | Décrit comment créer un ensemble plat pour les fichiers de package de votre application. |
 | [Création de package à l'aide de la disposition de mise en package](packaging-layout.md) | La disposition de mise en package constitue un unique document décrivant la structure de mise en package de l'application. Il spécifie les ensembles d'une application (principaux et facultatifs), les packages contenus dans les ensembles ainsi que les fichiers contenus dans les packages. |
