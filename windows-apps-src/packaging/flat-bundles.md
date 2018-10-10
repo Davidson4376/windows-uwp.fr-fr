@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, création de packages, configuration de package, ensemble plat
 ms.localizationpriority: medium
 ms.openlocfilehash: 63206619d75bedb92ad6c6d05c3188272c0760de
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4416076"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4471646"
 ---
 # <a name="flat-bundle-app-packages"></a>Packages d'application d'ensemble plat 
 

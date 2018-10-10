@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, API de collection du MicrosoftStore, API d’achat du Microsoft Store, afficher des produits, octroyer des produits
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a0766830bc2110dffcf5baf886e8ccb98ac6446
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4421480"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4472161"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Gérer les droits sur les produits à partir d’un service
 
@@ -193,7 +193,7 @@ Lorsque votre service dispose d’une clé d’ID du MicrosoftStore qui lui perm
 
 * [Demander des produits](query-for-products.md)
 * [Signaler le traitement de la commande d’un produit consommable](report-consumable-products-as-fulfilled.md)
-* [Octroyer des produits gratuits](grant-free-products.md)
+* [Attribuer des produits gratuits](grant-free-products.md)
 * [Recueillir les abonnements d’un utilisateur](get-subscriptions-for-a-user.md)
 * [Modifier l’état de facturation de l’abonnement d’un utilisateur](change-the-billing-state-of-a-subscription-for-a-user.md)
 
@@ -252,7 +252,7 @@ Voici un exemple de revendications de clé d’ID du MicrosoftStore décodées.
 
 * [Demander des produits](query-for-products.md)
 * [Signaler le traitement de la commande d’un produit consommable](report-consumable-products-as-fulfilled.md)
-* [Octroyer des produits gratuits](grant-free-products.md)
+* [Attribuer des produits gratuits](grant-free-products.md)
 * [Recueillir les abonnements d’un utilisateur](get-subscriptions-for-a-user.md)
 * [Modifier l’état de facturation de l’abonnement d’un utilisateur](change-the-billing-state-of-a-subscription-for-a-user.md)
 * [Renouveler une clé d’ID du MicrosoftStore](renew-a-windows-store-id-key.md)

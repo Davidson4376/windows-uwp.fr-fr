@@ -14,12 +14,12 @@ design-contact: kimsea
 dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c75169f118e2c8ef575fa251a7badc8cfe44247
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.openlocfilehash: 99982e54bd9eebd6d6c34fa08c9f1c480b626a15
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4429757"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4471086"
 ---
 # <a name="navigation-view-preview-version"></a>Affichage de navigation (version d’évaluation)
 
@@ -254,7 +254,7 @@ Nous recommandons des marges de 12px pour votre zone de contenu lorsque Navigati
 
 NavigationView change automatiquement son mode d'affichage selon la quantité d’espace d’écran à sa disposition. Toutefois, vous souhaiterez peut-être personnaliser le comportement de mode d’affichage adaptatif.
 
-### <a name="default"></a>Valeur par défaut
+### <a name="default"></a>Par défaut
 
 Le comportement adaptatif par défaut de NavigationView consiste à afficher un volet de gauche développé des largeurs de grande fenêtre, un volet de navigation gauche d’icône seule des largeurs de fenêtre de taille moyenne et un bouton de menu hamburger sur les fenêtres étroites. Pour plus d’informations sur les tailles de fenêtre pour un comportement ADAPTATIF, voir les [tailles d’écran et points d’arrêt](../layout/screen-sizes-and-breakpoints-for-responsive-design.md).
 
@@ -416,23 +416,23 @@ items.Add(new Item() {
 });
 
 public class NavViewDataTemplateSelector : DataTemplateSelector
+{
+    public DataTemplate NavItemTemplate { get; set; }
+
+    public DataTemplate NavItemTopTemplate { get; set; }    
+
+    public NavigationViewPaneDisplayMode NavPaneDisplayMode { get; set; }
+
+    protected override DataTemplate SelectTemplateCore(object item)
     {
-        public DataTemplate NavItemTemplate { get; set; }
+        Item currItem = item as Item;
+        if (NavPaneDisplayMode == NavigationViewPanePosition.Top)
+            return NavItemTopTemplate;
+        else 
+            return NavItemTemplate;
+    }   
 
-        public DataTemplate NavItemTopTemplate { get; set; }    
-
-     public NavigationViewPaneDisplayMode NavPaneDisplayMode { get; set; }
-
-        protected override DataTemplate SelectTemplateCore(object item)
-        {
-            Item currItem = item as Item;
-            if (NavPaneDisplayMode == NavigationViewPanePosition.Top)
-                return NavItemTopTemplate;
-            else 
-                return NavItemTemplate;
-        }   
-
-    }
+}
 
 ```
 
@@ -595,6 +595,8 @@ Voici l’exemple de code:
 > Si vous utilisez la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/), vous devez ajouter une référence au Kit de ressources: `using MUXC = Microsoft.UI.Xaml.Controls;`.
 
 ```csharp
+private Type currentPage;
+
 // List of ValueTuple holding the Navigation Tag and the relative Navigation Page 
 private readonly IList<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
 {
@@ -638,6 +640,8 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
 
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
 {
+    if (args.InvokedItem == null)
+        return;
 
     if (args.IsSettingsInvoked)
         ContentFrame.Navigate(typeof(SettingsPage));
@@ -656,13 +660,14 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 private void NavView_Navigate(string navItemTag)
 {
     var item = _pages.First(p => p.Tag.Equals(navItemTag));
+    if (currentPage == item.Page)
+          return;
     ContentFrame.Navigate(item.Page);
+
+    currentPage = item.Page;
 }
 
-private void NavView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
-{
-    On_BackRequested();
-}
+private void NavView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args) => On_BackRequested();
 
 private void BackInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
@@ -726,7 +731,7 @@ L’arrière-plan du volet affiche l’ACRYLIQUE dans l’application lorsque Na
 
 ## <a name="scroll-content-under-top-pane"></a>Faire défiler le contenu dans le volet supérieur
 
-Pour un aspect épuré + sensation, si votre application comporte des pages qui utilisent un élément ScrollViewer et que votre volet de navigation est haut positionné, nous vous conseillons le défiler le contenu situé sous le volet de navigation supérieure.
+Pour un aspect épuré + sensation, si votre application comporte des pages qui utilisent un élément ScrollViewer et que votre volet de navigation est haut positionné, nous vous conseillons le défiler le contenu situé sous le volet de navigation supérieure. Cela donne un type d’en-tête rémanent de comportement à l’application.
 
 Ce résultat s’obtient en définissant la propriété [CanContentRenderOutsideBounds](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.cancontentrenderoutsidebounds) sur l’élément ScrollViewer pertinent sur true.
 

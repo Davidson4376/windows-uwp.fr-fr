@@ -11,11 +11,11 @@ keywords: windows10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.openlocfilehash: ca59855456abe366ec681404b3bf6253bc182f79
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4421648"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4472068"
 ---
 # <a name="color"></a>Couleur
 
@@ -270,7 +270,7 @@ Outre la définition de vos propres couleurs dans votre application, vous pouvez
 ### <a name="how-to-use-colorschemeresources"></a>L’utilisation de ColorSchemeResources
 
 ColorSchemeResources est une API qui indique où à prendre en compte le système quelles ressources sont en cours. ColorSchemeResources doivent prendre une [x: Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute), qui peut être une des trois options:
-- Valeur par défaut
+- Par défaut
   * Affiche vos modifications de couleur dans le thème [clair](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme) et [foncé](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)
 - Light
   * Affiche vos modifications de couleur uniquement dans le [thème clair](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme) 
@@ -439,7 +439,7 @@ ColorSchemeResources permet également de couleurs système doit être placé et
     :::column-end:::
 :::row-end:::
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 - [Styles XAML](../controls-and-patterns/xaml-styles.md)
 - [Ressources de thème XAML](../controls-and-patterns/xaml-theme-resources.md)

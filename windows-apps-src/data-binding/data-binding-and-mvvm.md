@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eda370db8b68232066052cca3d0abfa6e3876167
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4431218"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4472628"
 ---
 # <a name="data-binding-and-mvvm"></a>Liaison de données et le modèle MVVM
 
@@ -53,7 +53,7 @@ En particulier, vous pouvez obtenir un grand nombre d’avantages simplement en 
 Pour obtenir des conseils supplémentaires sur l’utilisation de base, out-of-the-box MVVM, consultez l' [exemple de base de données de commandes clients](https://github.com/Microsoft/Windows-appsample-customers-orders-database) sur GitHub. De nombreux autres [exemples d’applications UWP](https://github.com/Microsoft?q=windows-appsample
 ) utilisent également une architecture MVVM base, et l' [exemple d’application de trafic](https://github.com/Microsoft/Windows-appsample-trafficapp) inclut à la fois code-behind et les versions MVVM, avec des notes décrivant la [conversion MVVM](https://github.com/Microsoft/Windows-appsample-trafficapp/blob/MVVM/MVVM.md). 
 
-## <a name="see-also"></a>Articles associés
+## <a name="see-also"></a>Voir aussi
 
 ### <a name="topics"></a>Rubriques
 
