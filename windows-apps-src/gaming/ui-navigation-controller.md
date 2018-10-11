@@ -1,21 +1,21 @@
 ---
-author: mithom
+author: eliotcowley
 title: Contrôleur de navigation d’interface utilisateur
 description: Utilisez les API du contrôleur de navigation d’interface utilisateur Windows.Gaming.Input pour détecter différents types de périphériques d’entrée et lire leurs entrées pour la navigation dans l’interface utilisateur.
 ms.assetid: 5A14926D-8C2E-4DE8-AAFB-BEEB9BFE91A5
-ms.author: wdg-dev-content
+ms.author: elcowle
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, jeux, interface utilisateur, navigation
 ms.localizationpriority: medium
-ms.openlocfilehash: cae9d515ba5925ce81c90dfe5eb3785491128010
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 4f95094ebf31c4b80ee8858ad849da33ff16434a
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1656134"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4535083"
 ---
 # <a name="ui-navigation-controller"></a>Contrôleur de navigation d’interface utilisateur
 
@@ -215,7 +215,7 @@ Vous pouvez avoir besoin de savoir quand un bouton passe de l’état appuyé à
 
 ## <a name="run-the-ui-navigation-controller-sample"></a>Exécuter l’exemple de contrôleur de navigation d’interface utilisateur
 
-L’[exemple InputInterfacingUWP _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/InputInterfacingUWP) illustre le comportement de différents périphériques d’entrée utilisés comme contrôleurs de navigation d’interface utilisateur.
+L’[exemple InputInterfacingUWP _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/InputInterfacingUWP) illustre le comportement de différents périphériques d’entrée utilisés comme contrôleurs de navigation d’interface utilisateur.
 
 ## <a name="see-also"></a>Voir également
 [Windows.Gaming.Input.Gamepad][]
