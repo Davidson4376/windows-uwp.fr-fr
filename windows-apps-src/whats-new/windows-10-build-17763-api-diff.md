@@ -2,7 +2,7 @@
 author: QuinnRadich
 title: Modifications apportées aux API de Windows 10 Build 17763
 description: Les développeurs peuvent utiliser la liste suivante pour identifier les espaces de noms nouveaux ou modifiés dans Windows 10, build 17763
-keywords: Quelles sont les nouveautés, nouveauté, mises à jour, Windows 10, plus récent, API, octobre 17763,
+keywords: Nouveautés, nouveauté, mises à jour, Windows 10, plus récent, API, octobre 17763,
 ms.author: quradic
 ms.date: 10/02/2018
 ms.topic: article
@@ -10,15 +10,15 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 178bee54296c355a17a78cb63d17986f51132893
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472812"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507189"
 ---
 # <a name="new-apis-in-windows-10-build-17763"></a>Nouvelles API dans Windows 10, build 17763
 
-Espaces de noms d’API nouveaux et mis à jour ont été mis à disposition pour les développeurs dans Windows 10, build 17763 (également connue sous le 2018 octobre mise à jour ou version 1809). Vous trouverez ci-dessous une liste complète de ressources concernant la documentation publiée pour les espaces de noms ajoutés ou modifiés dans cette version.
+Espaces de noms d’API nouveaux et mis à jour ont été mis à disposition pour les développeurs dans Windows 10, build 17763 (également connue sous le 2018 octobre version 1809 ou mise à jour). Vous trouverez ci-dessous une liste complète de ressources concernant la documentation publiée pour les espaces de noms ajoutés ou modifiés dans cette version.
 
 Pour plus d’informations sur les API ajoutées dans la version publique précédente, consultez les [Nouvelles API de la mise à jour de Windows 10 avril](windows-10-build-17134-api-diff.md).
 

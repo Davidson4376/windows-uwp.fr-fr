@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, azure ad, client azure, client aad, client azure ad, gestion des clients, clients
 ms.localizationpriority: medium
 ms.openlocfilehash: dd729d76705849c981516109da39bbd27c140286
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4466653"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508049"
 ---
 # <a name="associate-azure-active-directory-with-your-dev-center-account"></a>Associer Azure Active Directory à votre compte du Centre de développement
 
@@ -78,7 +78,7 @@ Tout utilisateur qui dispose du rôle **Manager** rôle pour un compte du Centre
 > [!IMPORTANT]
 > Lorsque vous supprimez un client, tous les utilisateurs qui ont été ajoutés au compte du Centre de développement à partir de ce client ne pourront plus se connecter au compte. 
 
-Pour supprimer un client, trouvez son nom dans la page **des clients** (dans **les paramètres de compte**), puis sélectionnez **Supprimer**. Vous serez invité à confirmer que vous souhaitez supprimer le client. Cela fait, aucun utilisateur du Centre de développement dans ce client ne pourra plus se connecter au compte du Centre de développement, et toutes les autorisations que vous aurez configurées pour ces utilisateurs seront supprimées.
+Pour supprimer un client, trouvez son nom sur la page **des clients** (dans **les paramètres de compte**), puis sélectionnez **Supprimer**. Vous serez invité à confirmer que vous souhaitez supprimer le client. Cela fait, aucun utilisateur du Centre de développement dans ce client ne pourra plus se connecter au compte du Centre de développement, et toutes les autorisations que vous aurez configurées pour ces utilisateurs seront supprimées.
 
 > [!TIP]
 > Vous ne pouvez pas supprimer un client si vous êtes actuellement connecté au Centre de développement à l’aide d’un compte de ce même client. Pour supprimer un client, vous devez vous connecter au Centre de développement en tant que **Manager** pour un autre client qui est associé au compte. S’il n'existe qu’un seul client associé au compte, ce client ne peut être supprimé qu'après vous être connecté avec le compte Microsoft ayant ouvert le compte.

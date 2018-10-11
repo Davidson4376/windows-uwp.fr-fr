@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: L’extension de balisage permet aux fonctions d’être utilisé dans le balisage.
+description: L’extension de balisage permet aux fonctions être utilisé dans le balisage.
 title: 'Fonctions dans x: Bind'
 ms.author: jimwalk
 ms.date: 04/26/2018
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472572"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507867"
 ---
 # <a name="functions-in-xbind"></a>Fonctions dans x: Bind
 
@@ -66,7 +66,7 @@ class ColorEntry
 
 Le chemin de la fonction est spécifié comme tout autre chemin de propriété et peut inclure des points (.), des indexeurs ou des casts pour localiser la fonction.
 
-Des fonctions statiques peuvent être spécifiées en utilisant la syntaxe XMLNamespace:ClassName.MethodName. Par exemple, utilisez le ci-dessous syntaxe pour la liaison à des fonctions statiques dans le code-behind.
+Des fonctions statiques peuvent être spécifiées en utilisant la syntaxe XMLNamespace:ClassName.MethodName. Par exemple, utilisez le ci-dessous la syntaxe de liaison à des fonctions statiques dans le code-behind.
 
 ```xaml
 <Page 
@@ -88,7 +88,7 @@ public class MyPage : Page
 }
 ```
 
-Vous pouvez également utiliser les fonctions système directement dans le balisage pour accomplir des scénarios simples, comme la date de mise en forme, la mise en forme de texte, concaténations de texte, etc., par exemple:
+Vous pouvez également utiliser les fonctions système directement dans le balisage pour accomplir des scénarios simples tels que la date de mise en forme, la mise en forme de texte, concaténations de texte, etc., par exemple:
 ```xaml
 <Page 
      xmlns:sys="using:System"

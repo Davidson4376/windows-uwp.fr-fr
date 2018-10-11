@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4465352"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509010"
 ---
 # <a name="reveal-highlight"></a>Principales fonctionnalités de révéler
 
@@ -30,7 +30,7 @@ Révéler qu'est un effet visuel qui met en évidence les éléments interactifs
 > **API importantes**: [classe RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [classe RevealBackgroundBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [classe RevealBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [classe RevealBrushHelper](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [classe VisualState](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>Principe de fonctionnement
-L’effet révéler attire l’attention sur les éléments interactifs en révélant conteneur de l’élément lorsque le pointeur se trouve à proximité, comme illustré dans l’illustration suivante:
+L’effet révéler attire l’attention sur les éléments interactifs en révélant le conteneur de l’élément lorsque le pointeur se trouve à proximité, comme illustré dans l’illustration suivante:
 
 ![Visuel de l’effet Révéler](images/Nav_Reveal_Animation.gif)
 
@@ -266,7 +266,7 @@ Lorsque vous activez révéler sur un contrôle personnalisé ou remodélisé ou
 * Pour les éléments de commandes adjacents qui sont si proches qu’ils se touchent: ajoutez une marge de 1pixel entre les deuxéléments. 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
-### <a name="do"></a>Effectuez:
+### <a name="do"></a>Faire:
 - Utilisez Révéler sur des éléments sur lesquels l'utilisateur peut agir (barres de commandes, menus de navigation)
 - Utilisez Révéler dans les regroupements d’éléments interactifs qui n’ont pas de séparateurs visuels par défaut (listes, rubans)
 - Utilisez Révéler dans les zones à densité élevée d'éléments interactifs (scénarios de commandes)

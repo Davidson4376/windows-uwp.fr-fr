@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 50a455dc43007a433bfabd995af7968e93fe1900
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471195"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508504"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>Problèmes connus avec les applications de bureau empaquetées
 
@@ -95,7 +95,7 @@ La [mise à jour de Windows (version 14393.351 - KB3197954)](https://support.mic
 
 Si la mise à jour ne résout pas le problème ou si vous ne savez pas vraiment comment récupérer votre ordinateur, contactez le [Support Microsoft](https://support.microsoft.com/contactus/).
 
-Si vous êtes développeur, vous ne voulez peut-être pas que votre application empaquetée soit installée sur des versions de Windows n’incluant pas cette mise à jour. Notez que dans ce cas, votre application ne sera pas disponible pour les utilisateurs qui n’ont pas encore installé la mise à jour. Pour limiter la disponibilité de votre application pour les utilisateurs qui ont installé cette mise à jour, modifiez le fichier AppxManifest.xml comme suit:
+Si vous êtes développeur, vous ne voulez peut-être pas que votre application empaquetée soit installée sur des versions de Windows n’incluant pas cette mise à jour. Notez que, dans ce cas, votre application ne sera pas disponible pour les utilisateurs qui n’ont pas encore installé la mise à jour. Pour limiter la disponibilité de votre application pour les utilisateurs qui ont installé cette mise à jour, modifiez le fichier AppxManifest.xml comme suit:
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -139,7 +139,7 @@ Cela peut se produire lorsque votre package contient un fichier binaire qui disp
 
 * La taille du certificat n’est pas positive.
 
-* Le début du certificat n’est pas après le `IMAGE_NT_HEADERS32` structure pour un exécutable 32 bits ou après le `IMAGE_NT_HEADERS64` structure pour un exécutable 64 bits.
+* Le début de certificat n’est pas après le `IMAGE_NT_HEADERS32` structure pour un exécutable 32 bits ou après le `IMAGE_NT_HEADERS64` structure pour un exécutable 64 bits.
 
 * Le pointeur de certificat n’est pas correctement aligné pour une structure WIN_CERTIFICATE.
 

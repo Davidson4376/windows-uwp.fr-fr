@@ -3,7 +3,7 @@ author: TylerMSFT
 title: Créer et utiliser un service d’application
 description: Apprenez à écrire une application de plateforme Windows universelle (UWP) pouvant fournir des services à d’autres applications UWP et à utiliser ces derniers.
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: une application à la communication, communication interprocessus, IPC, messagerie, service d’application pour une application, en arrière-plan, la communication d’arrière-plan
+keywords: une application à la communication, communication interprocessus, IPC, messagerie, le service d’application pour une application, en arrière-plan, la communication d’arrière-plan
 ms.author: twhitney
 ms.date: 09/18/2017
 ms.topic: article
@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7475ae8db964b23de89488d883c135158ea20e74
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461715"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508563"
 ---
 # <a name="create-and-consume-an-app-service"></a>Créer et utiliser un service d’application
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472789"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508576"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Tester à l’aide de l’émulateur Microsoft pour Windows10 Mobile
 
@@ -53,7 +53,7 @@ Microsoft Emulator pour Windows 10 Mobile nécessite Visual Studio 2015 ou versi
 
 L’émulateur Microsoft pour Windows 10 Mobile ne peut pas charger des applications destinées à des versions de Windows Phone OS antérieures à Windows Phone OS 7.1.
 
-## <a name="installing-uninstalling-and-running-the-emulator"></a>L’installation, de désinstallation et l’émulateur en cours d’exécution
+## <a name="installing-uninstalling-and-running-the-emulator"></a>L’installation, de désinstallation et de l’émulateur en cours d’exécution
 
 ### <a name="installing"></a>L’installation
 L’émulateur Microsoft pour Windows10 Mobile est fourni avec le Kit de développement logiciel (SDK) Windows10. Ils peuvent tous deux être installés avec VisualStudio. Consultez la [page de téléchargement de VisualStudio](https://go.microsoft.com/fwlink/p/?LinkId=534785).
@@ -68,7 +68,7 @@ Lorsque vous désinstallez l’émulateur Microsoft pour Windows 10 Mobile, la c
 
 ### <a name="running"></a>Running
 
-Pour exécuter une application dans l’émulateur, sélectionnez simplement un périphérique émulé dans le menu déroulant **exécution** dans Visual Studio.
+Pour exécuter une application dans l’émulateur, sélectionnez simplement un périphérique émulé à partir du menu déroulant **exécuter** dans Visual Studio.
 
 ![Émulateurs disponibles avec la résolution, la taille et la mémoire](images/em-list.png)
 

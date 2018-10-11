@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, chaîne
 ms.localizationpriority: medium
 ms.openlocfilehash: 865267a6897a551613479a099d10dd6d5a91c315
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4464999"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508211"
 ---
 # <a name="string-handling-in-cwinrt"></a>Gestion des chaînes en C++/WinRT
 
@@ -177,5 +177,5 @@ void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
 
 ## <a name="important-apis"></a>API importantes
 * [Structure winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
-* [fonction WinRT::to_hstring](/uwp/cpp-ref-for-winrt/to-hstring)
-* [fonction WinRT::to_string](/uwp/cpp-ref-for-winrt/to-string)
+* [fonction de WinRT::to_hstring](/uwp/cpp-ref-for-winrt/to-hstring)
+* [fonction de WinRT::to_string](/uwp/cpp-ref-for-winrt/to-string)
