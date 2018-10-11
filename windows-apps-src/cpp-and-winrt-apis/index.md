@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection
 ms.localizationpriority: medium
 ms.openlocfilehash: e9c5cb8a0f81513038a18522c39f0138bb25ab27
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468950"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506259"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
-[C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) est une entièrement standard moderne C ++ 17 projection de langage API Windows Runtime (WinRT), implémentée comme une bibliothèque basée sur le fichier en-tête et conçue pour vous fournir un accès à l’API Windows moderne. Avec C++/WinRT, vous pouvez créer et utiliser des API Windows Runtime en utilisant n’importe quel compilateur C++17 conforme aux normes. Le SDK Windows inclut C++/WinRT. Il a été introduit dans la version10.0.17134.0 (Windows10, version1803).
+[C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) est une entièrement standard moderne C ++ 17 projection de langage API Windows Runtime (WinRT), implémentée en tant qu’une bibliothèque basée sur le fichier en-tête et conçue pour vous fournir un accès à l’API Windows moderne. Avec C++/WinRT, vous pouvez créer et utiliser des API Windows Runtime en utilisant n’importe quel compilateur C++17 conforme aux normes. Le SDK Windows inclut C++/WinRT. Il a été introduit dans la version10.0.17134.0 (Windows10, version1803).
 
 C++/WinRT est destiné à tous les développeurs intéressés pour écrire du code sublime et rapide pour Windows. Voici pourquoi.
 
@@ -65,14 +65,14 @@ C++/WinRT offre de meilleures performances et génère des fichiers binaires plu
 | [Passer de C++/CX à C++/WinRT](move-to-winrt-from-cx.md) | Cette rubrique montre comment porter du code C++/CX vers son équivalent en C++/WinRT. |
 | [Interopérabilité entre C++/WinRT et ABI](interop-winrt-abi.md) | Cette rubrique montre comment effectuer des conversions entre des objets de l’interface binaire d’application (ABI) et C++/WinRT. |
 | [Passer de WRL à C++/WinRT](move-to-winrt-from-wrl.md) | Cette rubrique montre comment porter du code [Bibliothèque de modèles C++ Windows Runtime (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) vers son équivalent en C++/WinRT. |
-| [Références fortes et faibles en C++ / WinRT](weak-references.md) | Windows Runtime est un système avec décompte des références; et dans un tel système, il est important pour vous de connaître la signification d’et la distinction entre les deux, références fortes et faibles. |
+| [Références fortes et faibles en C++ / WinRT](weak-references.md) | Windows Runtime est un système avec décompte des références; et dans un tel système, il est important pour vous de connaître la signification d’et la distinction entre, références fortes et faibles. |
 | [Objets agiles](agile-objects.md) | Un objet agile est un objet qui est accessible à partir de n’importe quel thread. Vos types C++/WinRT sont agiles par défaut, mais vous pouvez le refuser. |
 
 ### <a name="topics-about-the-c-language"></a>Rubriques sur le langage C++
 
 | Article | Description |
 | - | - |
-| [Les catégories de valeur et des références associées](cpp-value-categories.md) | Cette rubrique décrit les différentes catégories de valeurs qui existent en C++. Vous seront sans doute ont entendu lvalues et rvalues, mais il existe d’autres types, trop. |
+| [Les catégories de valeur et des références associées](cpp-value-categories.md) | Cette rubrique décrit les différentes catégories de valeurs qui existent en C++. Vous serez sans doute ont entendu lvalues et rvalues, mais il existe d’autres types, trop. |
 
 ## <a name="important-apis"></a>API importantes
 * [Espace de noms winrt](/uwp/cpp-ref-for-winrt/winrt)

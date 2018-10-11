@@ -12,17 +12,17 @@ keywords: windows10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ms.openlocfilehash: fadd9c2b6a35a1418a782ab0a6ef419e3f127f42
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470264"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506845"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>Intégrer votre application de bureau empaquetée avec Windows 10
 
 Utiliser des extensions pour intégrer votre application de bureau empaquetée avec Windows 10 de manière prédéfinie.
 
-Par exemple, utilisez une extension pour créer une exception de pare-feu, rendre votre application l’application par défaut pour un type de fichier ou pointez des vignettes de démarrage sur la version empaquetée de votre application. Pour utiliser une extension, il suffit d’ajouter un peu de XML au fichier manifeste du package de votre application. Aucun code n’est nécessaire.
+Par exemple, utilisez une extension pour créer une exception de pare-feu, rendre votre application l’application par défaut pour un type de fichier ou pointez des vignettes de démarrage vers la version empaquetée de votre application. Pour utiliser une extension, il suffit d’ajouter un peu de XML au fichier manifeste du package de votre application. Aucun code n’est nécessaire.
 
 Cette rubrique décrit ces extensions et les tâches que vous pouvez effectuer en les utilisant.
 
@@ -503,7 +503,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 Les applications de bureau empaquetées présentent les trois mêmes options que les applications de bureau standard.
 
- * ``Player``: Votre application est activée une fois. Tous les fichiers sélectionnés sont transmis à votre application en tant que paramètres d’argument.
+ * ``Player``: Votre application est activée une fois. Tous les fichiers sélectionnés sont transmis à votre application en tant que paramètres de l’argument.
  * ``Single``: Votre application est activée une fois pour le premier fichier sélectionné. Les autres fichiers sont ignorés.
  * ``Document``: Une nouvelle instance distincte de votre application est activée pour chaque fichier sélectionné.
 
@@ -911,7 +911,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 ### <a name="start-your-application-by-using-an-alias"></a>Démarrer votre application à l’aide d’un alias
 
-Les utilisateurs et des autres processus peuvent utiliser un alias pour démarrer votre application sans avoir à spécifier le chemin d’accès complet à votre application. Vous pouvez spécifier ce nom d’alias.
+Les utilisateurs et les autres processus peuvent utiliser un alias pour démarrer votre application sans avoir à spécifier le chemin d’accès complet à votre application. Vous pouvez spécifier ce nom d’alias.
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
@@ -965,7 +965,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 ### <a name="start-an-executable-file-when-users-log-into-windows"></a>Démarrer un fichier exécutable lorsque les utilisateurs se connectent à Windows
 
-Tâches de démarrage permettent à votre application lancer un exécutable automatiquement chaque fois qu’un utilisateur ouvre une session.
+Tâches de démarrage permettent à votre application lancer un exécutable automatiquement chaque fois qu’un utilisateur se connecte.
 
 > [!NOTE]
 > L’utilisateur doit démarrer votre application au moins une fois pour enregistrer cette tâche de démarrage.
@@ -1115,7 +1115,7 @@ Intégration avec d’autres applications, démarrer d’autres processus ou par
 
 Lorsque les utilisateurs souhaitent imprimer des données à partir d’une autre application, comme le bloc-notes, vous pouvez rendre votre application apparaissent en tant que cible d’impression dans la liste de l’application des cibles d’impression disponibles.
 
-Vous devrez modifier votre application afin qu’elle reçoive les données d’impression au format XML Paper Specification (XPS).
+Vous devrez modifier votre application afin qu’elle reçoive les données d’impression au format de fichier XML Paper Specification (XPS).
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 

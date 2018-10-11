@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f14e7f8747639ef139e774416e09af954211940
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470150"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506181"
 ---
 # <a name="package-a-desktop-application-manually"></a>Créer un package manuellement une application de bureau
 
@@ -134,7 +134,7 @@ Remplissez ce modèle avec les informations décrivant votre application.
 
 ### <a name="application-element"></a>Élément d’application
 
-Pour les applications de bureau que vous créez un package, le ``EntryPoint`` attribut de l’élément Application est toujours ``Windows.FullTrustApplication``.
+Pour les applications de bureau que vous créez un package, le ``EntryPoint`` attribut de l’élément de l’Application est toujours ``Windows.FullTrustApplication``.
 
 ```XML
 <Applications>
@@ -201,7 +201,7 @@ Voir [Créer un package d’application avec l’outil MakeAppx.exe](https://doc
 
 ## <a name="run-the-packaged-app"></a>Exécuter l’application empaquetée
 
-Vous pouvez exécuter votre application pour le tester localement sans avoir à obtenir un certificat et la signer. Exécutez simplement l’applet de commande PowerShell:
+Vous pouvez exécuter votre application à tester localement sans avoir à obtenir un certificat et la signer. Exécutez simplement l’applet de commande PowerShell:
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 

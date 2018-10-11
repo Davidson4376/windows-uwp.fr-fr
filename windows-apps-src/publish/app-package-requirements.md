@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, exigences relatives aux packages, packages, format du package, version prise en charge, soumettre
 ms.localizationpriority: medium
 ms.openlocfilehash: f3e294fdf5a9b2d98f09d839fa62499b556de3a5
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468778"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506428"
 ---
 # <a name="app-package-requirements"></a>Exigences relatives au package de l’application
 
@@ -61,7 +61,7 @@ Votre manifeste doit inclure des informations spécifiques concernant votre comp
 > Les valeurs du manifeste respectent la casse. Les espaces et autres symboles de ponctuation doivent également correspondre. Saisissez les valeurs correctement et vérifiez-les pour vous assurer qu’elles sont correctes.
 
 
-Les ensembles d’applications (.msixbundle ou .appxbundle) utilisent un manifeste différent. Pour connaître les détails et exigences concernant les manifestes d’ensemble d’applications, consultez la documentation relative au [manifeste d’offre groupée](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest). Notez que dans un .msixbundle ou .appxbundle, le manifeste de chaque package inclus doit utiliser les mêmes éléments et attributs, à l’exception de l’attribut **ProcessorArchitecture** de l’élément [d’identité](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) .
+Les ensembles d’applications (.msixbundle ou .appxbundle) utilisent un manifeste différent. Pour connaître les détails et exigences concernant les manifestes d’ensemble d’applications, consultez la documentation relative au [manifeste d’offre groupée](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest). Notez que dans un .msixbundle ou le .appxbundle, le manifeste de chaque package inclus doit utiliser les mêmes éléments et attributs, à l’exception de l’attribut **ProcessorArchitecture** de l’élément [d’identité](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) .
 
 > [!TIP]
 > Veillez à exécuter le [Kit de certification des applications Windows](../debug-test-perf/windows-app-certification-kit.md) avant de soumettre vos packages. Vous pouvez ainsi déterminer si votre manifeste présente des problèmes susceptibles de faire échouer la certification ou la soumission.
@@ -73,7 +73,7 @@ Les packages de votre application doivent être conformes aux exigences ci-aprè
 
 | Propriété du package de l’application | Exigence                                                          |
 |----------------------|----------------------------------------------------------------------|
-| Taille de package         | .msixbundle ou .appxbundle: 25 Go maximum par offre groupée <br>les packages .msix ou .appx ciblant Windows 10:25 Go maximum par package<br>Packages .appx ciblant Windows8.1: 8Go maximum par package <br> Packages .appx ciblant Windows 8 : 2 Go maximum par package <br> Packages .appx ciblant Windows Phone 8.1 : 4 Go maximum par package <br> Packages .xap : 1 Go maximum par package                                                                           |
+| Taille de package         | .msixbundle ou .appxbundle: 25 Go maximum par offre groupée <br>les packages de .msix ou .appx ciblant Windows 10:25 Go maximum par package<br>Packages .appx ciblant Windows8.1: 8Go maximum par package <br> Packages .appx ciblant Windows 8 : 2 Go maximum par package <br> Packages .appx ciblant Windows Phone 8.1 : 4 Go maximum par package <br> Packages .xap : 1 Go maximum par package                                                                           |
 | Hachages de mappage de bloc     | Algorithme SHA2-256                                                   |
 
 
@@ -88,7 +88,7 @@ Les versions actuellement prises en charge sont comprises entre les versions:
 
 ## <a name="storemanifest-xml-file"></a>Fichier XML StoreManifest
 
-Le fichier StoreManifest.xml est un fichier de configuration facultatif qui peut être inclus dans les packages d’application. Son objet est d’activer des fonctionnalités, par exemple en déclarant que votre application est une application pour périphériques du MicrosoftStore ou en déclarant des critères dont dépend un package à appliquer à un appareil. Ces fonctionnalités ne sont pas couvertes par le manifeste du package. Si vous utilisez, StoreManifest.xml est envoyé avec le package d’application et doit être dans le dossier racine du projet principal de votre application. Pour plus d’informations, voir [Schéma StoreManifest](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal).
+Le fichier StoreManifest.xml est un fichier de configuration facultatif qui peut être inclus dans les packages d’application. Son objet est d’activer des fonctionnalités, par exemple en déclarant que votre application est une application pour périphériques du MicrosoftStore ou en déclarant des critères dont dépend un package à appliquer à un appareil. Ces fonctionnalités ne sont pas couvertes par le manifeste du package. Si utilisé, StoreManifest.xml est envoyé avec le package d’application et doit être dans le dossier racine du projet principal de votre application. Pour plus d’informations, voir [Schéma StoreManifest](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal).
 
  
 

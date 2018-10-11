@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ad1700d58ab3568aa3aefa46b5950d0a8bf3c320
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4466383"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505715"
 ---
 # <a name="toast-content-schema"></a>Schéma du contenu de notification toast
 
