@@ -11,11 +11,11 @@ keywords: windows10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564632"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612516"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Configuration de builds automatisées pour votre application UWP
 
@@ -81,7 +81,7 @@ Cette tâche restaure les packages NuGet définis dans votre projet. Certains pa
 
 #### <a name="configure-the-build-solution-build-task"></a>Configuration de la tâche Générer la solution
 
-Cette tâche compile toute solution qui se trouve dans le dossier de travail en fichiers binaires et génère le fichier de package d’application sortie. Cette tâche utilise des arguments MSbuild.  Vous devez spécifier la valeur de ces arguments. Inspirez-vous du tableau suivant. 
+Cette tâche compile toutes les solutions solution se trouve dans le dossier de travail en fichiers binaires et produit le fichier de package d’application sortie. Cette tâche utilise des arguments MSbuild.  Vous devez spécifier la valeur de ces arguments. Inspirez-vous du tableau suivant. 
 
 |**Argument MSBuild**|**Valeur**|**Description**|
 |--------------------|---------|---------------|
@@ -216,7 +216,7 @@ Cette erreur s’affiche car l’application qui doit apparaître dans l’offre
 Ensuite, supprimez l’argument msbuild `AppxBundle` de l’étape de génération.
 
 ## <a name="set-up-a-continuous-deployment-build-for-sideloading"></a>Configuration d’une build de déploiement continu pour le chargement indépendant
-Lorsque ce type de build terminée, les utilisateurs peuvent télécharger le fichier d’un ensemble d’applications application à partir de la section artefacts de la page de résultats de build. Si vous voulez effectuer un test bêta de l’application en créant une distribution plus complète, vous pouvez utiliser le service HockeyApp. Ce service offre des fonctionnalités améliorées de test bêta, d’analyse des utilisateurs et de diagnostic d’incidents.
+Ce type de build terminée, les utilisateurs peuvent télécharger le fichier d’un ensemble d’applications application à partir de la section artefacts de la page de résultats de build. Si vous voulez effectuer un test bêta de l’application en créant une distribution plus complète, vous pouvez utiliser le service HockeyApp. Ce service offre des fonctionnalités améliorées de test bêta, d’analyse des utilisateurs et de diagnostic d’incidents.
 
 ### <a name="applying-version-numbers-to-your-builds"></a>Application des numéros de version à vos builds
 
@@ -295,7 +295,7 @@ Utilisez l’extension Visual Studio Team Services pour le Microsoft Store pour 
 
 Vous devez connecter votre compte DevCenter avec Azure Active Directory (AD), puis créer une application dans votre AD pour authentifier les demandes. Pour ce faire, vous pouvez suivre les recommandations de la page d’extension. 
 
-Une fois que vous avez configuré l’extension, vous pouvez ajouter la tâche de génération et la configurer avec votre ID d’application et l’emplacement du fichier de chargement.
+Une fois que vous avez configuré l’extension, vous pouvez ajouter la tâche de génération et configurer avec votre ID d’application et l’emplacement du fichier de chargement.
 
 ![configuration du centre de développement](images/building-screen17.png) 
 
@@ -319,7 +319,7 @@ Si vous souhaitez distribuer votre application sans la publier dans le Store, vo
 Utilisez le script PowerShell `Add-AppDevPackage.ps1` pour installer des applications. Ce script s’ajouter le certificat à la section Certification racine de confiance pour l’ordinateur local et ensuite installer ou mettre à jour le fichier de package d’application.
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>Chargement indépendant de votre application avec la mise à jour anniversaire de Windows10
-Dans la mise à jour d’anniversaire de Windows 10, vous pouvez double-cliquez sur le fichier de package d’application et installer votre application en cliquant sur le bouton Installer dans une boîte de dialogue. 
+Dans la mise à jour Windows 10 anniversaire, vous pouvez double-cliquez sur le fichier de package d’application et installer votre application en choisissant le bouton Installer dans une boîte de dialogue. 
 
 ![chargement indépendant dans rs1](images/building-screen18.png) 
 

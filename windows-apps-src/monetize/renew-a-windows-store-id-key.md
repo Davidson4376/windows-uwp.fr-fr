@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: Utilisez cette méthode pour renouveler une clé du MicrosoftStore.
 title: Renouveler une clé d’ID du MicrosoftStore
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, API de collection du MicrosoftStore, API d’achat du MicrosoftStore, clé d’ID du MicrosoftStore, renouveler
 ms.localizationpriority: medium
-ms.openlocfilehash: 430eaaa040e731e429eba15d58f554e41349a959
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: 70bda5022e52c0b18a43563a0492bd56d09b88a0
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664822"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612443"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a>Renouveler une clé d’ID du MicrosoftStore
 
@@ -56,7 +56,7 @@ Pour plus d’informations, voir [Gérer les droits sur les produits à partir d
 | Paramètre     | Type   | Description                       | Obligatoire |
 |---------------|--------|-----------------------------------|----------|
 | serviceTicket | chaîne | Jeton d’accès Azure AD.        | Oui      |
-| key           | chaîne | Clé d’ID du MicrosoftStore arrivée à expiration. | Non       |
+| key           | chaîne | Clé d’ID du MicrosoftStore arrivée à expiration. | Oui       |
 
 
 ### <a name="request-example"></a>Exemple de requête
@@ -78,9 +78,9 @@ Host: collections.mp.microsoft.com
 
 ### <a name="response-body"></a>Corps de la réponse
 
-| Paramètre | Type   | Description                                                                                                            | Obligatoire |
-|-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
-| key       | chaîne | Clé du MicrosoftStore actualisée qui peut être utilisée dans les futurs appels de l’API de collection ou de l’API d’achat du MicrosoftStore. | Non       |
+| Paramètre | Type   | Description                                                                                                            |
+|-----------|--------|------------------------------------------------------------------------------------------------------------------------|
+| key       | chaîne | Clé du MicrosoftStore actualisée qui peut être utilisée dans les futurs appels de l’API de collection ou de l’API d’achat du MicrosoftStore. |
 
 
 ### <a name="response-example"></a>Exemple de réponse
@@ -103,8 +103,8 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 ## <a name="error-codes"></a>Codes d’erreur
 
 
-| Code | Erreur        | Code d’erreur interne           | Description                                                                                                                                                                           |
-|------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Code | Erreur        | Code d’erreur interne           | Description   |
+|------|--------------|----------------------------|---------------|
 | 401  | Non autorisé | AuthenticationTokenInvalid | Le jeton d’accès Azure AD n’est pas valide. Dans certains cas, les détails de l’erreur ServiceError contiennent plus d’informations, par exemple lorsque le jeton est arrivé à expiration ou que la revendication *appid* est manquante. |
 | 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du MicrosoftStore et la revendication *appid* dans le jeton d’accès Azure AD ne correspondent pas.                                                                     |
 

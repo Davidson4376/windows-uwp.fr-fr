@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour obtenir des données pour une soumission d’extension existante.
 title: Obtenir une soumission de module complémentaire
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, soumission d’extension, produit in-app, PIA
 ms.localizationpriority: medium
-ms.openlocfilehash: aa8e79cbab0a3cc1805ad35d690242fa04ea4c62
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: e126ce53da515724f5fb1f9992ed8ca27c02ce06
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816264"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613041"
 ---
 # <a name="get-an-add-on-submission"></a>Obtenir une soumission de module complémentaire
 
@@ -42,7 +42,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisation | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 
 ### <a name="request-parameters"></a>Paramètres de la requête
@@ -50,10 +50,10 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | inAppProductId | chaîne | Obligatoire. ID Windows Store de l’extension qui contient la soumission à obtenir. L’ID Windows Store est disponible dans le tableau de bord du Centre de développement. Il figure également dans les données de réponse aux requêtes visant à [créer une extension](create-an-add-on.md) ou à [obtenir les détails d’une extension](get-all-add-ons.md).  |
-| submissionId | chaîne | Obligatoire. ID de la soumission à obtenir. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’extension](create-an-add-on-submission.md). Concernant une soumission créée dans le tableau de bord du Centre de développement, cet ID est également disponible dans l’URL de la page de soumission, dans le tableau de bord.  |
+| submissionId | chaîne | Obligatoire. ID de la soumission à obtenir. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’extension](create-an-add-on-submission.md). Concernant une soumission qui a été créée dans le tableau de bord du centre de développement, cet ID est également disponible dans l’URL de la page de la soumission dans le tableau de bord.  |
 
 
-### <a name="request-body"></a>Corps de demande
+### <a name="request-body"></a>Corps de requête
 
 Ne fournissez pas de corps de requête pour cette méthode.
 

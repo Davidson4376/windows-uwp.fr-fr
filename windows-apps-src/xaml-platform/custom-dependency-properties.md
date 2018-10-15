@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ddeccfe4c5e198afd77eaa4a81fc017543291ba1
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4569893"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610787"
 ---
 # <a name="custom-dependency-properties"></a>Propriétés de dépendance personnalisées
 
@@ -170,14 +170,14 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 ```
 
 > [!NOTE]
-> C++ / CX de code, la raison pour laquelle la raison pour laquelle vous avez un champ privé et une propriété publique en lecture seule qui couvre les [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) afin que d’autres appelants qui utilisent votre propriété de dépendance peuvent également utiliser l’utilitaire de système de propriétés API qui nécessitent le identificateur soit public. Si l’identificateur demeure privé, personne ne pourra utiliser ces API d’utilitaire. Parmi ces API et scénarios, on peut citer [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) ou [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) par choix, [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) et [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). Vous ne pouvez pas utiliser de champ public pour cela, car les règles de métadonnées Windows Runtime n’autorisent pas les champs publics.
+> C++ / CX de code, la raison pour laquelle la raison pour laquelle vous disposez d’un champ privé et une propriété publique en lecture seule qui couvre les [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) est pour qu’autres appelants qui utilisent votre propriété de dépendance peuvent également utiliser l’utilitaire de système de propriétés API qui nécessitent le identificateur soit public. Si l’identificateur demeure privé, personne ne pourra utiliser ces API d’utilitaire. Parmi ces API et scénarios, on peut citer [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) ou [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) par choix, [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) et [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). Vous ne pouvez pas utiliser de champ public pour cela, car les règles de métadonnées Windows Runtime n’autorisent pas les champs publics.
 
 ## <a name="dependency-property-name-conventions"></a>Conventions d’affectation de noms des propriétés de dépendance
 
 Il existe des conventions d’affectation de noms pour les propriétés de dépendance; elles doivent être respectées en permanence, sauf cas exceptionnel. La propriété de dépendance proprement dite a un nom de base (« Label » dans l’exemple précédent) qui est donné comme premier paramètre de [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829). Ce nom doit être unique dans chaque type d’inscription et l’exigence du caractère unique s’applique également à tout membre hérité. Les propriétés de dépendance héritées par le biais de types de base sont considérées comme faisant déjà partie du type d’inscription; les noms des propriétés héritées ne peuvent pas être inscrits de nouveau.
 
 > [!WARNING]
-> Bien que le nom fourni qu'ici peut être tout identificateur de chaîne qui est valide en programmation pour la langue de votre choix, vous souhaitez généralement être en mesure de définir votre propriété de dépendance en XAML également. Pour être défini en XAML, le nom de propriété que vous choisissez doit être un nom XAML valide. Pour plus d’informations, voir [Vue d’ensemble du langage XAML](xaml-overview.md).
+> Bien que le nom fourni qu'ici peut être tout identificateur de chaîne qui est valide en programmation pour la langue de votre choix, vous souhaitez généralement être en mesure de définir la propriété de dépendance en XAML également. Pour être défini en XAML, le nom de propriété que vous choisissez doit être un nom XAML valide. Pour plus d’informations, voir [Vue d’ensemble du langage XAML](xaml-overview.md).
 
 Lors de la création de la propriété identificatrice, combinez le nom de la propriété telle que vous l’avez inscrite avec le suffixe «Property» («LabelProperty», par exemple). Cette propriété est votre identificateur pour la propriété de dépendance et elle est utilisée comme entrée pour les appels [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) et [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) que vous effectuez dans vos propres wrappers de propriétés. Elle est aussi utilisée par le système de propriétés et par d’autres processeurs XAML tels que [**{x:Bind}**](x-bind-markup-extension.md).
 
@@ -251,7 +251,7 @@ Dans les exemples précédents d’appel de [**DependencyProperty.Register**](ht
 En règle générale, vous fournissez [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) en tant qu’instance créée inline dans les paramètres de [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829).
 
 > [!NOTE]
-> Si vous définissez une implémentation [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) , vous devez utiliser la méthode d’utilitaire [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702099) au lieu d’appeler un constructeur [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) pour définir l’instance **PropertyMetadata** .
+> Si vous définissez une implémentation [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) , vous devez utiliser la méthode d’utilitaire [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702099) plutôt que d’appeler un constructeur [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) pour définir l’instance **PropertyMetadata** .
 
 L’exemple suivant modifie les exemples de [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) présentés auparavant en référençant une instance de [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) avec une valeur [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770). L’implémentation du rappel «OnLabelChanged» est décrite plus loin dans cette section.
 

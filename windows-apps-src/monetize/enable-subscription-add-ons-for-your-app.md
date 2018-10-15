@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Découvrez comment utiliser l’espace de noms Windows.Services.Store pour implémenter des extensions d'abonnement.
 title: Activer les extensions d'abonnement de votre application
 keywords: windows10, uwp, abonnements, extensions, achats dans l’application, Windows.Services.Store
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 12/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f0bed75a8201b9875f79419c0a77c8a35918b77e
-ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
-ms.translationtype: HT
+ms.openlocfilehash: 3575d4d30515a3c26bf99e1cc37afa3b98f4e7dc
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1877151"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612816"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>Activer les extensions d'abonnement de votre application
 

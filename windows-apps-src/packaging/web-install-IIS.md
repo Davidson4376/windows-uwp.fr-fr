@@ -7,14 +7,14 @@ ms.date: 05/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, programme d’installation de l’application, AppInstaller, charger de manière indépendante, liés les packages définis, qui sont facultatifs, serveur IIS
+keywords: Windows 10, uwp, programme d’installation de l’application, AppInstaller, charger de manière indépendante, liées à des packages définis, qui sont facultatifs, serveur IIS
 ms.localizationpriority: medium
 ms.openlocfilehash: 214ddd2b55bca1acecbab0a841cf2048335e7b3a
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4569395"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610497"
 ---
 # <a name="install-a-uwp-app-from-an-iis-server"></a>Installer une application UWP à partir d’un serveur IIS
 
@@ -30,7 +30,7 @@ Pour passer correctement par le biais de ce didacticiel, vous devez les élémen
 2. Outils de développement Web et IIS 
 3. Package d’application UWP: le package d’application que vous allez distribuer
 
-Facultatif: [Projet de démarrage](https://github.com/AppInstaller/MySampleWebApp) sur GitHub. Ceci est utile si vous n’avez pas de fonctionner avec des packages d’application, mais que vous souhaitez savoir comment utiliser cette fonctionnalité.
+Facultatif: [Projet de démarrage](https://github.com/AppInstaller/MySampleWebApp) sur GitHub. Ceci est utile si vous n’avez pas travailler avec des packages d’application, mais que vous souhaitez savoir comment utiliser cette fonctionnalité.
 
 ## <a name="step-1---install-iis-and-aspnet"></a>Étape 1: installer IIS et ASP.NET 
 
@@ -41,7 +41,7 @@ Recherchez et sélectionnez **Internet Information Services** pour installer IIS
 > [!NOTE]
 > Vous n’avez pas besoin de sélectionner toutes les cases à cocher sous Internet Information Services. Uniquement celles sélectionnés lorsque vous vérifiez **Internet Information Services** suffisent.
 
-Vous devez également installer ASP.NET 4.5 ou une version ultérieure. Pour l’installer, recherchez **Internet Information Services -> World Wide Web des Services -> fonctionnalités de développement d’applications**. Sélectionnez une version d’ASP.NET qui est supérieure ou égale à ASP.NET 4.5.
+Vous devez également installer ASP.NET 4.5 ou une version ultérieure. Pour l’installer, recherchez **Internet Information Services -> World Wide Web des Services -> fonctionnalités de développement d’applications**. Sélectionner une version d’ASP.NET qui est supérieure ou égale à ASP.NET 4.5.
 
 ![Installez ASP.NET](images/install-asp.png)
 
@@ -49,7 +49,7 @@ Vous devez également installer ASP.NET 4.5 ou une version ultérieure. Pour l�
 
 [Installer Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio) si vous n’avez pas déjà installé il. Si vous avez déjà Visual Studio 2017, vous assurer que les charges de travail suivantes sont installés. Si les charges de travail ne sont pas présents sur votre installation, suivez le long à l’aide de Visual Studio Installer (disponibles dans le menu Démarrer).  
 
-Pendant l’installation, sélectionnez le **développement Web ASP.NET et** et les autres charges de travail qui vous intéressez. 
+Lors de l’installation, sélectionnez le **développement Web ASP.NET et** et les autres charges de travail qui vous intéresse. 
 
 Une fois que l’installation est terminée, démarrez Visual Studio et créez un nouveau projet (**fichier** -> **Nouveau projet**).
 
@@ -63,7 +63,7 @@ Lancez Visual Studio 2017 en tant **qu’administrateur** et créez un nouveau p
 
 À partir de l’Explorateur de solutions, cliquez avec le bouton droit sur le projet racine, puis sélectionnez **Propriétés**.
 
-Dans les propriétés de l’application web, sélectionnez l’onglet **Web** . Dans la section **serveurs** , choisissez le **Serveur IIS Local** dans le menu déroulant et cliquez sur **Créer un répertoire virtuel**. 
+Dans les propriétés de l’application web, sélectionnez l’onglet **Web** . Dans la section **serveurs** , choisissez **IIS Local** dans le menu déroulant, cliquez sur **Créer un répertoire virtuel**. 
 
 ![onglet Web](images/web-tab.png)
 
@@ -75,7 +75,7 @@ Dans l’application web de projet de démarrage, un nouveau dossier a été ajo
 
 ![Ajouter un package](images/add-package.png)
 
-## <a name="step-6---create-a-web-page"></a>Étape 6 - créer une Page Web
+## <a name="step-6---create-a-web-page"></a>Étape 6: créer une Page Web
 
 Cet exemple d’application web utilise le code HTML simple. Vous êtes libre créer votre application web en tant que nécessaires selon les besoins. 
 
@@ -88,7 +88,7 @@ Double-cliquez sur le fichier HTML pour l’ouvrir dans la fenêtre de l’édit
 Incluez le code HTML suivant dans votre page web. La clé à l’appel avec succès le programme d’installation d’application consiste à utiliser le schéma personnalisé que le programme d’installation d’application inscrit avec le système d’exploitation: `ms-appinstaller:?source=`. Consultez l’exemple de code ci-dessous pour plus d’informations.
 
 > [!NOTE]
-> Vérifiez que le chemin d’accès de l’URL spécifiée après le schéma personnalisé correspond à l’Url de projet dans l’onglet web de votre solution Visual Studio.
+> Vérifiez que le chemin d’accès de l’URL spécifiée après le schéma personnalisé correspond à l’Url du projet dans l’onglet web de votre solution Visual Studio.
  
 ```HTML
 <html>
@@ -121,7 +121,7 @@ Ouvrez le fichier **Web.config** à partir de l’Explorateur de solutions et aj
 
 ## <a name="step-8---add-loopback-exemption-for-app-installer"></a>Étape 8: ajouter l’exemption de bouclage pour le programme d’installation d’application
 
-En raison de l’isolement réseau, les applications UWP comme programme d’installation de l’application sont limitées à utiliser des adresses IP bouclage comme http://localhost/. Lorsque vous utilisez un serveur IIS local, le programme d’installation de l’application doit être ajouté à la liste exemption de bouclage. 
+En raison de l’isolement réseau, les applications UWP comme programme d’installation d’application sont limitées à utiliser des adresses IP en boucle comme http://localhost/. Lorsque vous utilisez un serveur IIS local, le programme d’installation de l’application doit être ajouté à la liste exemption de bouclage. 
 
 Pour ce faire, ouvrez l' **invite de commandes** en tant qu' **administrateur** et entrez les informations suivantes: ''' ligne de commande CheckNetIsolation.exe LoopbackExempt - a-n=microsoft.desktopappinstaller_8wekyb3d8bbwe
 ```

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, centre de développement, paramètres de compte, profil, profil de compte, compte de développeur, paramètres de compte de développeur
 ms.localizationpriority: medium
 ms.openlocfilehash: bf464fa5c7b681b3d36ad95cff5ffc874e319f46
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567789"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613306"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>Gérer les paramètres de compte et les informations de profil
 
@@ -26,7 +26,7 @@ Vous pouvez afficher et mettre à jour les paramètres de votre compte de dével
 
 ## <a name="account-settings"></a>Paramètres du compte
 
-Pour afficher vos paramètres de compte, cliquez sur l’icône d’engrenage dans le coin supérieur droit du tableau de bord, puis sélectionnez **les paramètres de développeur**. Vous trouverez plus d’informations sur votre compte ainsi que des liens vers d’autres pages où vous pouvez afficher les informations et exécuter diverses tâches relatifs au compte.
+Pour afficher vos paramètres de compte, cliquez sur l’icône d’engrenage dans le coin supérieur droit du tableau de bord, puis sélectionnez les **paramètres de développement**. Vous trouverez plus d’informations sur votre compte et des liens vers d’autres pages où vous pouvez afficher les informations et exécuter diverses tâches relatifs au compte.
 
 Dans la section **Détails du compte**, vous pouvez visualiser l’état et le type de votre compte. Vous pouvez également afficher votre ID de vendeur et d’autres informations de ID d’éditeur ici. Ces valeurs sont allouées par Microsoft afin d’identifier de manière unique votre compte de développeur et ne peut pas être modifiées.
 
@@ -53,9 +53,9 @@ Voici certains des autres éléments que vous trouverez dans la section **Param�
 - **Compte de paiement** et **Profil fiscal**: cet emplacement vous permet de [configurer votre compte de paiement et vos déclarations fiscales](setting-up-your-payout-account-and-tax-forms.md). Vous devez effectuer cette opération avant de facturer des applications ou des extensions.
 - **Associations d’entreprise**: acceptez les invitations d’entreprises qui souhaitent publier des applications pour leur usage exclusif. Pour plus d’informations, consultez l’article [Distribuer des applications cœur de métier aux entreprises](distribute-lob-apps-to-enterprises.md).
 - **Utilisateurs**: ajoutez des utilisateurs à votre compte du Centre de développement et attribuez-leur des rôles et des autorisations. Pour plus d’informations, voir [Gérer les utilisateurs du compte](manage-account-users.md).
-- **Locataires**: gérer les associations de votre client Azure AD. Pour plus d’informations, voir [associer Azure AD à votre compte du centre de développement](associate-azure-ad-with-dev-center.md).
+- **Locataires**: gérer les associations de client Azure AD. Pour plus d’informations, voir [associer Azure AD à votre compte du centre de développement](associate-azure-ad-with-dev-center.md).
 - **Programmes**: visualisez des détails sur les programmes auxquels vous participez et renseignez-vous sur les autres programmes qui sont susceptibles de vous intéresser.
 - **Contrats**: visualisez les contrats que votre compte a acceptés.
-- **Les appareils de développement**: afficher et gérer [les appareils Windows Phone 8.x que vous avez déverrouillés pour le test](http://go.microsoft.com/fwlink/p/?LinkId=533897) et les [consoles Xbox One activées pour le développement](../xbox-apps/devkit-activation.md). 
+- **Appareils de développement**: afficher et gérer [les appareils Windows Phone 8.x que vous avez déverrouillés pour le test](http://go.microsoft.com/fwlink/p/?LinkId=533897) et les [consoles Xbox One activées pour le développement](../xbox-apps/devkit-activation.md). 
 
 

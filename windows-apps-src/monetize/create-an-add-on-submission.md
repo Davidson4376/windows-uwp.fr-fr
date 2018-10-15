@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: C09F4B7C-6324-4973-980A-A60035792EFC
 description: Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour créer une soumission d’extension d’app inscrite dans le compte du Centre de développement Windows.
 title: Crée une soumission d’extension
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, créer une soumission d’extension, produit in-app, PIA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ece9403652d02e7d42f33aa4aaacae5a25bd386
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 39af744d8c8e4b9d26cd9d82a9489396857ffa5b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662339"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610336"
 ---
 # <a name="create-an-add-on-submission"></a>Crée une soumission d’extension
 
@@ -48,7 +48,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisation | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 
 ### <a name="request-parameters"></a>Paramètres de la requête
@@ -158,7 +158,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | 409  | La soumission n’a pas pu être créée en raison de l’état actuel de l’app, ou celle-ci utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
 * [Gérer les soumissions de modules complémentaires](manage-add-on-submissions.md)

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
 description: Utilisez cette méthode dans l'API d'avis sur le MicrosoftStore pour soumettre des réponses aux avis sur votre app.
 title: Soumettre des réponses aux avis
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'avis sur le MicrosoftStore, acquisitions d’extensions
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a757743bec947a5e8b0edf8c7a0d02e7c00942d
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 4ec6661ec0ef65174b6218957450540edceaa5a0
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662599"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614826"
 ---
 # <a name="submit-responses-to-reviews"></a>Soumettre des réponses aux avis
 
@@ -33,7 +33,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 * Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](respond-to-reviews-using-windows-store-services.md#prerequisites) relatives à l’API d'avis sur le MicrosoftStore.
 * [Obtenez un jeton d’accès Azure AD](respond-to-reviews-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
-* Obtenez les ID des avis auxquels vous souhaitez répondre. Les ID d’avis sont disponibles dans les données de réponse de la méthode [Obtenir les avis sur les applications](get-app-reviews.md) dans l’API d’analyse du MicrosoftStore et dans le [téléchargement hors connexion](../publish/download-analytic-reports.md) du [rapport Avis](../publish/reviews-report.md).
+* Obtenez les ID des avis auxquels vous souhaitez répondre. Les ID d’avis sont disponibles dans les données de réponse de la méthode [Obtenir les avis sur les apps](get-app-reviews.md) dans l’API d’analyse du MicrosoftStore et dans le [téléchargement hors connexion](../publish/download-analytic-reports.md) du [rapport Avis](../publish/reviews-report.md).
 
 ## <a name="request"></a>Requête
 
@@ -73,7 +73,7 @@ Chaque objet figurant dans le tableau *Réponses* contient les valeurs suivantes
 | ReviewId | chaîne |  L’ID de l’avis auquel vous souhaitez répondre (il s’agit d’un GUID). Les ID d’avis sont disponibles dans les données de réponse de la méthode [Obtenir les avis sur les applications](get-app-reviews.md) dans l’API d’analyse du MicrosoftStore et dans le [téléchargement hors connexion](../publish/download-analytic-reports.md) du [rapport Avis](../publish/reviews-report.md).   |  Oui  |
 | ResponseText | chaîne | La réponse que vous souhaitez soumettre. Votre réponse doit suivre [les recommandations suivantes](../publish/respond-to-customer-reviews.md#guidelines-for-responses).   |  Oui  |
 | SupportEmail | chaîne | L'adresse e-mail de support de votre application que votre client pourra utiliser par la suite pour vous contacter directement. Vous devez spécifier une adresse e-mail valide.     |  Oui  |
-| IsPublic | Booléen |  La valeur **true** indique que votre réponse s’affichera dans la description de votre application dans le Store, juste en dessous de l’avis du client et qu’elle sera visible pour tous les clients. La valeur **false** indique que votre réponse sera envoyée au client par e-mail et ne sera pas visible pour les autres clients dans la description de votre application dans le Store     |  Oui  |
+| IsPublic | Booléen |  Si vous spécifiez **true**, votre réponse s’affichera dans Description de votre application, juste en dessous de l’avis du client et elle sera visible pour tous les clients. Si vous spécifiez **false** et l’utilisateur n’a pas encore choisi de ne pas recevoir de réponses de courrier électronique, votre réponse sera envoyée au client par courrier électronique, et il ne sera pas visible pour les autres clients dans la description de votre application. Si vous spécifiez **false** et que l’utilisateur a choisi de ne pas recevoir de réponses de courrier électronique, une erreur sera renvoyée.   |  Oui  |
 
 
 ### <a name="request-example"></a>Exemple de requête

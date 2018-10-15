@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4572434"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624377"
 ---
 # <a name="controls-by-function"></a>Contrôles par fonction
 
@@ -555,7 +555,7 @@ Voir Élément multimédia.
 
 ### <a name="navigationview"></a>NavigationView
 
-Un conteneur d’adaptable et d’un modèle flexible de navigation qui implémente le volet de navigation de gauche, la navigation en haut et le modèle onglets.
+Un conteneur adaptable et le modèle de navigation souple qui implémente le volet de navigation de gauche, la navigation en haut et le modèle onglets.
 
 Référence: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b707479d11cc7aef62385b476720bff8477ed401
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4565895"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615369"
 ---
 # <a name="opening-a-developer-account"></a>Ouverture d’un compte de développeur
 
@@ -61,24 +61,24 @@ Une fois que vous vous êtes inscrit, votre compte est soumis au processus de v�
 > [!IMPORTANT]
 > Pour autoriser plusieurs utilisateurs à accéder à votre compte du centre de développement, nous vous recommandons d’utiliser Azure Active Directory pour attribuer des rôles à des utilisateurs individuels (plutôt que le partage d’accès au compte Microsoft). Chaque utilisateur pourra alors accéder au compte du Centre de développement en se connectant avec ses propres informations d’identification AzureAD. Pour plus d’informations, voir [Gérer les utilisateurs du compte](manage-account-users.md).
 
-Lorsque vous créez un compte d’entreprise, ces recommandations peuvent aider si plusieurs utilisateurs doivent accéder au compte en se connectant avec un compte Microsoft ayant ouvert le compte (plutôt qu’en tant qu’utilisateurs individuels ajoutés au compte Centre de développement).
+Lorsque vous créez un compte d’entreprise, ces recommandations peuvent vous aider à si plusieurs utilisateurs doivent accéder au compte en se connectant avec un compte Microsoft ayant ouvert le compte (plutôt qu’en tant qu’utilisateurs individuels ajoutés au compte Centre de développement).
 
 -   Créez votre compte Microsoft à l’aide d’une adresse de messagerie qui ne vous appartient pas déjà, ni à une autre personne, telle que MyCompany_DevCenter@outlook.com. N’utilisez pas une adresse de messagerie au domaine de votre société, en particulier si votre société utilise déjà Azure AD. (Comme indiqué plus haut, vous pouvez ajouter des utilisateurs supplémentaires à partir Azure de votre société AD plus loin.)
 -   Limitez l’accès à ce compte Microsoft au plus petit nombre possible d'utilisateurs.
--   Configurez une liste de distribution de messagerie d’entreprise qui comprend toutes les personnes qui doivent accéder au compte de développeur et ajoutez cette adresse de messagerie pour les [informations de sécurité associée au compte Microsoft [(https://account.microsoft.com/security). Cela permet à tous les employés sur la liste de recevoir des codes de sécurité envoyées à cet alias. Si la configuration d’une liste de distribution n’est pas envisageable, vous pouvez ajouter l’adresse de messagerie d’un individu aux informations de sécurité, mais le propriétaire de l’adresse e-mail sera le seul qui peut accéder et partager le code de sécurité lorsque vous y êtes invité (par exemple, quand de nouvelles informations de sécurité sont ajoutées à t Il compte, ou lorsqu’elle est accessible à partir d’un nouvel appareil).
--   Ajoutez un numéro de téléphone de société aux informations de sécurité du compte Microsoft. Essayez d’utiliser un nombre qui ne nécessite pas d’une extension et est accessible aux membres de clés de l’équipe.
+-   Configurez une liste de distribution de messagerie d’entreprise qui comprend toutes les personnes qui doivent accéder au compte de développeur, puis ajoutez cette adresse de messagerie pour les [informations de sécurité associée au compte Microsoft [(https://account.microsoft.com/security). Cela permet à tous les employés sur la liste de recevoir des codes de sécurité envoyées à cet alias. Si la configuration d’une liste de distribution n’est pas envisageable, vous pouvez ajouter l’adresse de messagerie d’un individu aux informations de sécurité, mais le propriétaire de l’adresse e-mail sera le seul qui peut accéder et partager le code de sécurité lorsque vous y êtes invité (par exemple, quand de nouvelles informations de sécurité sont ajoutées à t Il compte, ou lorsqu’il est accessible à partir d’un nouvel appareil).
+-   Ajoutez un numéro de téléphone de société aux informations de sécurité du compte Microsoft. Essayez d’utiliser un nombre qui ne nécessite pas d’une extension et est accessible aux membres clés de l’équipe.
 -   En règle générale, nous conseillons aux développeurs à utiliser des [appareils approuvés](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device) pour se connecter au compte de développeur de votre société. Tous les membres clés de l’équipe doivent avoir accès à ces appareils approuvés. Cela limite le nombre de codes de sécurité devant être envoyés lors de l’accès au compte. En effet, une limite s’applique au nombre de codes pouvant être générés par compte chaque semaine.
 -   Si vous devez autoriser l’accès au compte à partir d’un PC non approuvé, limitez cet accès à cinq développeurs maximum. Dans l’idéal, ces développeurs doivent accéder au compte à partir d’ordinateurs qui partagent le même emplacement géographique et réseau.
 -   Passez fréquemment en revue les informations de sécurité de votre entreprise à l’adresse https://account.microsoft.com/security pour vérifier qu’elles sont à jour.
 
 
-## <a name="microsoft-account-security"></a>Sécurité du compte Microsoft
+## <a name="microsoft-account-security"></a>Sécurité d’un compte Microsoft
 
 Nous utilisons les informations de sécurité que vous fournissez pour renforcer le niveau de sécurité de votre compte Microsoft en l’associant à plusieurs formes d’authentification. Cela rend les accès non autorisés à votre compte Microsoft (et à votre compte de développeur) beaucoup plus difficiles. En outre, si vous oubliez votre mot de passe ou que quelqu’un d’autre tente d’accéder à votre compte, nous serons en mesure de vous contacter pour confirmer la propriété et/ou rétablir le contrôle approprié de votre compte.
 
 Vous devez disposer d’au moins deux adresses e-mail et/ou numéros de téléphone pour votre compte Microsoft. Nous recommandons d’en ajouter autant que possible. Gardez à l’esprit que certaines informations de sécurité doivent être confirmées avant d’être valides. En outre, vérifiez fréquemment vos informations de sécurité pour vous assurer qu’elles sont à jour. Vous pouvez gérer vos informations de sécurité en accédant à https://account.microsoft.com/security et en vous connectant à l’aide de votre compte Microsoft. Pour plus d’informations, consultez [les informations de sécurité et de codes de sécurité](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes) .
 
-Lorsque vous connectez à votre tableau de bord du centre de développement Windows à l’aide de votre compte Microsoft, le système peut vous demander de confirmer votre identité en envoyant un code de sécurité que vous devez fournir pour terminer le processus de connexion. Nous vous recommandons d’identifier les PC que vous utilisez souvent en tant *qu’appareils approuvés*. Lorsque vous vous connectez à partir d’un périphérique de confiance, vous généralement n’invité pour un code, bien que peut parfois vous être demandé dans des situations spécifiques ou si vous n’avez pas encore connecté sur cet appareil dans un certain temps. Pour plus d’informations, voir [Ajouter un périphérique de confiance à votre compte Microsoft](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device) .
+Quand vous connecter à votre tableau de bord du centre de développement Windows à l’aide de votre compte Microsoft, le système peut vous demander de confirmer votre identité en envoyant un code de sécurité que vous devez fournir pour terminer le processus de connexion. Nous vous recommandons d’identifier les PC que vous utilisez souvent en tant *qu’appareils approuvés*. Lorsque vous vous connectez à partir d’un périphérique de confiance, vous généralement ne sont pas invité pour un code, bien que peut parfois vous être demandé dans des situations spécifiques ou si vous n’avez pas encore connecté sur cet appareil dans un certain temps. Pour plus d’informations, voir [Ajouter un périphérique de confiance à votre compte Microsoft](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device) .
 
 
 ## <a name="closing-your-account"></a>Fermeture de votre compte

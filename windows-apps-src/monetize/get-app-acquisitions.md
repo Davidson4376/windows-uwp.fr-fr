@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les données d’acquisition agrégées d’une application pour une plage de dates données, et en fonction de filtres facultatifs.
 title: Obtenir des acquisitions d’applications
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/23/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, acquisitions d'app
 ms.localizationpriority: medium
-ms.openlocfilehash: d108d66ff8f7533056b8a5eeb1955e54ef006a38
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 7b712c41f8288502e9e2abd1f05396ef1720390e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691348"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613589"
 ---
 # <a name="get-app-acquisitions"></a>Obtenir des acquisitions d’applications
 
@@ -97,11 +97,11 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | deviceType          | chaîne | Une des chaînes suivantes qui spécifie le type de l’appareil sur lequel l’acquisition s’est produite:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>    |
 | orderName           | chaîne | Le nom de la commande.  |
 | storeClient         | chaîne | Une des chaînes suivantes qui indique la version du Store sur laquelle l’acquisition s’est produite:<ul><li>**Windows Phone Store (client)**</li><li>**MicrosoftStore (client) ** (ou **Windows Store (client)** si l’interrogation pour les données a été effectuée avant le 23mars2018)</li><li>**MicrosoftStore (web) ** (ou **Windows Store (web)** si l’interrogation pour les données a été effectuée avant le 23mars2018)</li><li>**Volume purchase by organizations**</li><li>**Autres**</li></ul>                                                                                            |
-| osVersion           | chaîne | Une des chaînes suivantes qui spécifie la version du système d'exploitation sur laquelle l’acquisition s’est produite:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul>  |
+| osVersion           | chaîne | Une des chaînes suivantes qui spécifie la version du système d'exploitation sur laquelle l’acquisition s’est produite:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul>  |
 | market              | chaîne | Le code pays ISO3166 du marché dans lequel l’acquisition s’est produite.  |
 | gender              | chaîne | L'une des chaînes suivantes qui spécifie le sexe de l'utilisateur ayant effectué l’acquisition:<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Inconnu</strong></li></ul>    |
 | ageGroup            | chaîne | L'une des chaînes suivantes qui spécifie le groupe d'âge de l'utilisateur ayant effectué l’acquisition:<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Inconnu</strong></li></ul>  |
-| acquisitionType     | chaîne | Une des chaînes suivantes qui indique le type d'acquisition:<ul><li><strong>Gratuit</strong></li><li><strong>Essai</strong></li><li><strong>Payant</strong></li><li><strong>Code promotionnel</strong></li><li><strong>Iap</strong></li></ul>   |
+| acquisitionType     | chaîne | Une des chaînes suivantes qui indique le type d'acquisition:<ul><li><strong>Free</strong></li><li><strong>Essai</strong></li><li><strong>Payant</strong></li><li><strong>Code promotionnel</strong></li><li><strong>Iap</strong></li></ul>   |
 | acquisitionQuantity | nombre | Le nombre d’acquisitions qui se sont produites durant le niveau d’agrégation spécifié.    |
 
 

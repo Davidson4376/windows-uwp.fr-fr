@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ce26242f1f5093afcbfb652a7d1736897975cb3a
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563930"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615422"
 ---
 # <a name="custom-attached-properties"></a>Propriétés jointes personnalisées
 
@@ -77,7 +77,7 @@ L’objet *target* peut être d’un type plus spécifique dans votre implément
 
 Cet exemple illustre l’inscription de propriété de dépendance (à l’aide de la méthode [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833)), ainsi que les accesseurs **Get** et **Set**, pour une propriété jointe personnalisée. Dans l’exemple, la propriété jointe se nomme `IsMovable`. Par conséquent, les accesseurs doivent se nommer `GetIsMovable` et `SetIsMovable`. Le propriétaire de la propriété jointe est une classe de service nommée `GameService` qui ne possède pas sa propre interface utilisateur. Son seul objectif est de fournir les services de propriété jointe lorsque la propriété jointe **GameService.IsMovable** est utilisée.
 
-Définissez la propriété jointe en C++ / CX est un peu plus complexe. Vous devez décider de la factorisation entre fichier de code et en-tête. De plus, vous devez exposer l’identificateur en tant que propriété uniquement avec un accesseur **get**, pour les raisons discutées dans [Propriétés de dépendance personnalisées](custom-dependency-properties.md). En C++ / CX, vous devez définir cette relation propriété-champ explicitement sauvegarde au lieu de la partie de confiance sur aux mots-clés **readonly** de .NET et implicite des propriétés simples. Vous devez également inscrire la propriété jointe au sein d’une fonction d’assistance. Celle-ci n’est exécutée qu’une seule fois au démarrage de l’application, avant le chargement de toute page XAML nécessitant la propriété jointe. En général, l’appel des fonctions d’assistance d’inscription de propriété pour une partie ou la totalité des propriétés jointes ou de dépendance s’effectue au sein du constructeur **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) dans le code de votre fichier app.xaml.
+Définissez la propriété jointe en C++ / CX est un peu plus complexe. Vous devez décider de la factorisation entre fichier de code et en-tête. De plus, vous devez exposer l’identificateur en tant que propriété uniquement avec un accesseur **get**, pour les raisons discutées dans [Propriétés de dépendance personnalisées](custom-dependency-properties.md). En C++ / CX, vous devez définir cette relation propriété-champ explicitement au lieu de la partie de confiance sur aux mots-clés **readonly** de .NET et implicite de stockage des propriétés simples. Vous devez également inscrire la propriété jointe au sein d’une fonction d’assistance. Celle-ci n’est exécutée qu’une seule fois au démarrage de l’application, avant le chargement de toute page XAML nécessitant la propriété jointe. En général, l’appel des fonctions d’assistance d’inscription de propriété pour une partie ou la totalité des propriétés jointes ou de dépendance s’effectue au sein du constructeur **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) dans le code de votre fichier app.xaml.
 
 ```csharp
 public class GameService : DependencyObject

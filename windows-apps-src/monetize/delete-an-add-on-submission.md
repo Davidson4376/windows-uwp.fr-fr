@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: D677E126-C3D6-46B6-87A5-6237EBEDF1A9
 description: Utilisez cette méthode de l’API de soumission au MicrosoftStore pour supprimer une soumission d’extension existante.
 title: Supprime une soumission d’extension
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, soumission d’extension, supprimer, produit in-app, PIA
 ms.localizationpriority: medium
-ms.openlocfilehash: a969a2a0b22153a66fb2d1c07f489b3bb2555afb
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 1c4b9214f821c23c7507562512e8337820db1fc0
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816024"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610441"
 ---
 # <a name="delete-an-add-on-submission"></a>Supprime une soumission d’extension
 
@@ -41,7 +41,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisation | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 
 ### <a name="request-parameters"></a>Paramètres de la requête
@@ -49,10 +49,10 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | inAppProductId | chaîne | Obligatoire. ID Windows Store de l’extension qui contient la soumission à supprimer. L’ID Windows Store est disponible dans le tableau de bord du Centre de développement.  |
-| submissionId | chaîne | Obligatoire. ID de la soumission à supprimer. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’extension](create-an-add-on-submission.md). Concernant une soumission créée dans le tableau de bord du Centre de développement, cet ID est également disponible dans l’URL de la page de soumission, dans le tableau de bord.  |
+| submissionId | chaîne | Obligatoire. ID de la soumission à supprimer. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’extension](create-an-add-on-submission.md). Concernant une soumission qui a été créée dans le tableau de bord du centre de développement, cet ID est également disponible dans l’URL de la page de la soumission dans le tableau de bord.  |
 
 
-### <a name="request-body"></a>Corps de demande
+### <a name="request-body"></a>Corps de requête
 
 Ne fournissez pas de corps de requête pour cette méthode.
 
@@ -84,7 +84,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 ## <a name="related-topics"></a>Rubriques associées
 
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
-* [Obtenir une soumission de module complémentaire](get-an-add-on-submission.md)
+* [Obtenir une soumission d’extension](get-an-add-on-submission.md)
 * [Créer une soumission d’extension](create-an-add-on-submission.md)
 * [Valider une soumission d’extension](commit-an-add-on-submission.md)
 * [Mettre à jour une soumission d’extension](update-an-add-on-submission.md)

@@ -1,27 +1,28 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 14C23FE6-3EAF-445E-85C1-DF188A7822CA
-description: Servez-vous des exemples de code de cette section pour en savoir plus sur l’utilisation de l’API de soumission du Windows Store.
+description: Utilisez les exemples de code dans cette section pour en savoir plus sur l’utilisation de l’API de soumission au Microsoft Store.
 title: Exemples de code pour l’API de soumission
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows10, uwp, API de soumission du Windows Store, exemples de code
-ms.openlocfilehash: c5344667922a7445ad7694f36a542b3ff35c4bdb
-ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+keywords: Windows 10, uwp, API de soumission au Microsoft Store, exemples de code
+ms.localizationpriority: medium
+ms.openlocfilehash: f728a17d98d53cf1783452ddfd543c1062156200
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2017
-ms.locfileid: "772308"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615497"
 ---
 # <a name="code-examples-for-the-submission-api"></a>Exemples de code pour l’API de soumission
 
-Cette section propose des exemples de code qui illustrent l’utilisation de l’[API de soumission du Windows Store](create-and-manage-submissions-using-windows-store-services.md) dans plusieurs langages de programmation.
+Cette section fournit des exemples de code pour utiliser l' [API de soumission au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md) dans différents langages de programmation.
 
 > [!NOTE]
-> Outre les exemples de code répertoriés ci-dessous, nous fournissons également un module PowerShell OpenSource qui implémente une interface de ligne de commande sur l’API de soumission au WindowsStore. Ce module est appelé [StoreBroker](https://aka.ms/storebroker). Vous pouvez utiliser ce module pour gérer les soumissions de votre application, de votre version et de vos modules complémentaires à partir de la ligne de commande, en lieu et place de l'appel direct de l'API de soumission du WindowsStore. Sinon, vous pouvez simplement parcourir la source pour consulter des exemples supplémentaires d'appel de cette API. Le module StoreBroker est activement utilisé au sein de Microsoft en tant que vecteur principal de soumission de nombreuses applications internes dans le WindowsStore. Pour plus d'informations, consultez notre [page StoreBroker sur GitHub](https://aka.ms/storebroker).
+> Outre les exemples de code répertoriés ci-dessous, nous fournissons également un module de PowerShell open source qui implémente une interface de ligne de commande sur l’API de soumission au Microsoft Store. Ce module est appelé [StoreBroker](https://aka.ms/storebroker). Vous pouvez utiliser ce module pour gérer les soumissions de votre app, de votre version et de vos modules complémentaires à partir de la ligne de commande, en lieu et place de l'appel direct de l'API de soumission au MicrosoftStore. Sinon, vous pouvez simplement parcourir la source pour consulter des exemples supplémentaires d'appel de cette API. Le module StoreBroker est activement utilisé au sein de Microsoft en tant que vecteur principal de soumission de nombreuses applications internes dans le WindowsStore. Pour plus d'informations, consultez notre [page StoreBroker sur GitHub](https://aka.ms/storebroker).
 
 ## <a name="app-submissions-add-on-submissions-and-package-flight-submissions"></a>Soumissions d’applications, soumissions d’extensions et soumissions de versions d’évaluation de package
 
@@ -41,4 +42,4 @@ Les articles suivants fournissent des exemples de code pour utiliser l’API de 
 
 ## <a name="related-topics"></a>Rubriques associées
 
-* [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)

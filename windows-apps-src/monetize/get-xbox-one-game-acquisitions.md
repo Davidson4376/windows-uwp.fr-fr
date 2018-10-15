@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les données d’acquisition agrégées d’un jeu Xbox One pour une plage de dates données, et en fonction de filtres facultatifs.
 title: Obtenir des acquisitions de jeu Xbox One
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/23/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, services du MicrosoftStore, API d’analyse du MicrosoftStore, acquisitions de jeu Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b0caceae9f5b1e2fabb1b55de33d47e5980e2b5
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: a175096860fe2d2e73259ab9e82cbd5c33b8b889
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691571"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614103"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>Obtenir des acquisitions de jeu Xbox One
 
@@ -42,7 +42,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisation | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 
 ### <a name="request-parameters"></a>Paramètres de la requête
@@ -54,7 +54,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 | endDate | date | Dans la plage de dates, la date de fin de la récupération des données d’acquisition. La valeur par défaut est la date actuelle. |  Non  |
 | top | int | Le nombre de rangées de données à renvoyer. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
 | skip | entier | Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10000 et skip=0 pour obtenir les 10000 premières lignes de données, top=10000 et skip=10000 pour obtenir les 10000 lignes suivantes, et ainsi de suite. |  Non  |
-| filter | chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Par exemple, *filter=market eq 'US' and gender eq 'm'*. <p/><p/>Vous pouvez spécifier les champs suivants dans le corps de réponse:<p/><ul><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>sandboxId</strong></li></ul> | Non   |
+| filter | chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. par exemple, *filter=market eq 'US' and gender eq 'm'*. <p/><p/>Vous pouvez spécifier les champs suivants dans le corps de réponse:<p/><ul><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>sandboxId</strong></li></ul> | Non   |
 | aggregationLevel | chaîne | Indique la plage de temps pendant laquelle récupérer les données agrégées. Il peut s’agit des chaînes suivantes : <strong>day</strong>, <strong>week</strong> ou <strong>month</strong>. Par défaut, la valeur est <strong>day</strong>. | Non |
 | orderby | chaîne | Une instruction qui commande les valeurs de données de résultats pour chaque acquisition. La syntaxe est <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut être l’une des chaînes suivantes:<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li><li><strong>purchasePriceUSDAmount</strong></li><li><strong>taxUSDAmount</strong></li></ul><p>Le paramètre facultatif <em>order</em> peut avoir la valeur <strong>asc</strong> ou <strong>desc</strong> pour spécifier l’ordre croissant ou décroissant de chaque champ. La valeur par défaut est <strong>asc</strong>.</p><p>Voici un exemple de chaîne <em>orderby</em>: <em>orderby=date,market</em></p> |  Non  |
 | groupby | chaîne | Une instruction qui applique l’agrégation des données uniquement sur les champs spécifiés. Vous pouvez spécifier les champs suivants:<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li><li><strong>purchasePriceUSDAmount</strong></li><li><strong>taxUSDAmount</strong></li></ul><p>Les lignes de données renvoyées comportent les champs spécifiés dans le paramètre <em>groupby</em>, ainsi que dans les paramètres suivants:</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p>Le paramètre <em>groupby</em> peut être utilisé avec le paramètre <em>aggregationLevel</em>. Par exemple: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  Non  |
@@ -93,7 +93,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | date                | chaîne | Première date dans la plage de dates des données d’acquisition. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
 | applicationId       | chaîne | L'ID produit du jeu Xbox One pour lequel vous récupérez des données d’acquisition. |
 | applicationName     | chaîne | Le nom complet du jeu.       |
-| acquisitionType     | chaîne | Une des chaînes suivantes qui indique le type d'acquisition:<ul><li><strong>Free</strong></li><li><strong>Version d’évaluation</strong></li><li><strong>Payant</strong></li><li><strong>Code promotionnel</strong></li><li><strong>Pré-commande</strong></li><li>**Xbox Game Pass** (ou **Game Pass** si vous interrogez des données antérieures au 23mars2018)</li><li><strong>Disque</strong></li><li><strong>Code prépayé</strong></li></ul>    |
+| acquisitionType     | chaîne | Une des chaînes suivantes qui indique le type d'acquisition:<ul><li><strong>Free</strong></li><li><strong>Essai</strong></li><li><strong>Payant</strong></li><li><strong>Code promotionnel</strong></li><li><strong>Pré-commande</strong></li><li>**Xbox Game Pass** (ou **Game Pass** si vous interrogez des données antérieures au 23mars2018)</li><li><strong>Disque</strong></li><li><strong>Code prépayé</strong></li></ul>    |
 | ageGroup            | chaîne | L'une des chaînes suivantes qui indique le groupe d'âge de l'utilisateur ayant effectué l’acquisition:<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul>     |
 | deviceType          | chaîne | L'une des chaînes suivantes qui spécifie le type d’appareil ayant effectué l'acquisition:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Serveur</strong></li><li><strong>Tablette</strong></li><li><strong>Holographique</strong></li><li><strong>Inconnu</strong></li></ul>  |
 | gender              | chaîne | L'une des chaînes suivantes qui spécifie le sexe de l'utilisateur ayant effectué l’acquisition:<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul>     |
@@ -101,7 +101,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | osVersion           | chaîne | La version de système d’exploitation sur laquelle l’acquisition s’est produite. Pour cette méthode, cette valeur est toujours **Windows10**.</li></ul>    |
 | paymentInstrumentType           | chaîne | L'une des chaînes suivantes qui indique l'instruction de paiement utilisée pour l’acquisition:<ul><li><strong>Cartes de crédit</strong></li><li><strong>Carte de débit direct</strong></li><li><strong>Achat déduit</strong></li><li><strong>Solde MS</strong></li><li><strong>Opérateur mobile</strong></li><li><strong>Virement bancaire en ligne</strong></li><li><strong>PayPal</strong></li><li><strong>Division de la transaction</strong></li><li><strong>Utilisation de jeton</strong></li><li><strong>Aucun montant payé</strong></li><li><strong>eWallet</strong></li><li><strong>Inconnue</strong></li></ul>    |
 | sandboxId              | chaîne | L’ID de bac à sable créé pour le jeu. Cet élément peut comporter la valeur **RETAIL** ou l'ID de bac à sable privé.  |
-| storeClient         | chaîne | L'une des chaînes suivantes qui indique la version du Store où l'acquisition a été effectuée:<ul><li>**Windows Phone Store (client)**</li><li>**MicrosoftStore (client) ** (ou **Windows Store (client)** si l’interrogation porte sur des données antérieures au 23mars2018)</li><li>**MicrosoftStore (web) ** (ou **Windows Store (web)** si l’interrogation porte sur des données antérieures au 23mars2018)</li><li>**Volume purchase by organizations**</li><li>**Autres**</li></ul>                             |
+| storeClient         | chaîne | Une des chaînes suivantes qui indique la version du Store sur laquelle l’acquisition s’est produite:<ul><li>**Windows Phone Store (client)**</li><li>**MicrosoftStore (client) ** (ou **Windows Store (client)** si l’interrogation pour les données a été effectuée avant le 23mars2018)</li><li>**MicrosoftStore (web) ** (ou **Windows Store (web)** si l’interrogation pour les données a été effectuée avant le 23mars2018)</li><li>**Volume purchase by organizations**</li><li>**Autres**</li></ul>                             |
 | xboxTitleIdHex              | chaîne | L'ID de titre Xbox Live (représenté dans la valeur hexadécimale) attribué par le portail de développement Xbox (XDP) pour les jeux prenant en charge Xbox Live.  |
 | acquisitionQuantity | nombre | Le nombre d’acquisitions qui se sont produites durant le niveau d’agrégation spécifié.     |
 | purchasePriceUSDAmount | nombre | Le montant payé par le client pour l’acquisition, converti en USD, selon le taux de change mensuel.    |

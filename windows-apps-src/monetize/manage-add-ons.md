@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
 description: Utilisez ces méthodes dans l’API de soumission au MicrosoftStore pour gérer les extensions des apps qui sont inscrites dans votre compte du Centre de développement Windows.
 title: Gérer les modules complémentaires
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, API de soumission au MicrosoftStore, extensions, produit dans l'app, FAI
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d603ab8901eae16da92365042e3244202539586
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: be0d383fc271084fe20a958d20f6fa3a340da187
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663049"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610451"
 ---
 # <a name="manage-add-ons"></a>Gérer les modules complémentaires
 
@@ -161,7 +161,7 @@ Cette ressource a les valeurs suivantes.
  
 <span/>
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
 * [Gérer les soumissions d’extensions à l’aide de l’API de soumission au MicrosoftStore](manage-add-on-submissions.md)

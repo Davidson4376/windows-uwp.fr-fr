@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: c5246681-82c7-44df-87e1-a84a926e6496
 description: Utilisez cette méthode dans l’API des promotions du MicrosoftStore pour gérer les contenus créatifs dans le cadre de campagnes publicitaires.
 title: Gérer des contenus créatifs
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, API de promotions du MicrosoftStore, campagnes de publicité
 ms.localizationpriority: medium
-ms.openlocfilehash: f29920bba22be689c79f2264836ebcee6d8dfe5c
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 838329101695c21abfb7ac89dd9c83330b7bd26b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664019"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614055"
 ---
 # <a name="manage-creatives"></a>Gérer des contenus créatifs
 
@@ -51,7 +51,7 @@ Ces méthodes présentent les URI suivants.
 
 | En-tête        | Type   | Description         |
 |---------------|--------|---------------------|
-| Authorization | chaîne | Obligatoire. Jeton d’accès AzureAD sous la forme **Bearer** &lt;*jeton*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 | ID de suivi   | GUID   | Facultatif. ID de suivi du flux d’appels.                                  |
 
 

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: L’API de soumission au MicrosoftStore permet de créer et de gérer par programmation les soumissions d’apps inscrites dans le compte du Centre de développement Windows.
 title: Créer et gérer des soumissions
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bd8d2f800969102d6957cafa92e04f482323611
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: a6ba5678fc7b66e15d0e189cd75792f97c2353db
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976464"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614123"
 ---
 # <a name="create-and-manage-submissions"></a>Créer et gérer des soumissions
 

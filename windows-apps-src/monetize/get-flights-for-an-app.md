@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
 description: Utilisez cette méthode de l’API de soumission au MicrosoftStore pour récupérer des informations sur une version d’évaluation du package pour une app inscrite dans votre compte du Centre de développement Windows.
 title: Obtenir des versions d’évaluation du package pour une application
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, API de soumission au MicrosoftStore, versions d’évaluation, versions d’évaluation de package
 ms.localizationpriority: medium
-ms.openlocfilehash: aa9bbac25316fcebc630edd55aabd333e43e3e49
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: Auto
+ms.openlocfilehash: d6349e5c597b923ba05abe5ed74492409350e36e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1661979"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613640"
 ---
 # <a name="get-package-flights-for-an-app"></a>Obtenir des versions d’évaluation du package pour une application
 

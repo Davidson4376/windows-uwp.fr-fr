@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dff7b641cad99407ce22e7a4d4b58c10e0ae94d1
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567809"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612882"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Lancer l’application par défaut pour un URI
 
@@ -244,8 +244,8 @@ Pour en savoir plus, voir [Lancer l’application UWP](launch-store-app.md).
 
 ### <a name="weather-app-uri-scheme"></a>Schéma d’URI l’application Météo
 
-Utilisez le **msnweather:** schéma d’URI pour lancer l’application Météo.
+Utilisez la **msnweather:** schéma d’URI pour lancer l’application Météo.
 
 | Schéma d’URI | Résultats |
 |------------|---------|
-| msnweather://Forecast?la= \[latitude\] & lo = \ [longitude\] | Lance l’application Météo dans la page de prévision basée sur un coordonnées d’emplacement géographique.<br>`latitude` fait référence à la latitude de la localisation.<br> `longitude` fait référence à la longitude de la localisation.<br> |
+| msnweather://Forecast?la= \[latitude\] & lo = \ [longitude\] | Lance l’application Météo dans la page des prévisions basée sur un coordonnées d’emplacement géographique.<br>`latitude` fait référence à la latitude de la localisation.<br> `longitude` fait référence à la longitude de la localisation.<br> |

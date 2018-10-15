@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2848b9a7326bdac084120ec9b75f067718f14853
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4569036"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613679"
 ---
 # <a name="use-the-accelerometer"></a>Utiliser l’accéléromètre
 

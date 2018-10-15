@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
 description: Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour valider une soumission de version d’évaluation de package nouvelle ou mise à jour vers le Centre de développement Windows.
 title: Valider une soumission de version d’évaluation de package
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, valider une soumission de version d’évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: 60eac407d8f5ad82b9984b5ea3bad36261579ead
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: e3a52bc3a7a815bfde8a4fa8c12b73ab8932e2df
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815834"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610307"
 ---
 # <a name="commit-a-package-flight-submission"></a>Valider une soumission de version d’évaluation de package
 
@@ -53,10 +53,10 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | chaîne | Obligatoire. L’ID Windows Store de l’application qui contient la soumission de version d’évaluation de package à valider. L’ID Windows Store est disponible dans le tableau de bord du Centre de développement.  |
 | flightId | chaîne | Obligatoire. ID de la version d’évaluation du package qui contient la soumission à valider. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). Concernant une version d’évaluation créée dans le tableau de bord du Centre de développement, cet ID est également disponible dans l’URL de la page de la version d’évaluation, dans le tableau de bord.  |
-| submissionId | chaîne | Obligatoire. ID de la soumission à valider. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission de version d’évaluation du package](create-a-flight-submission.md). Concernant une soumission créée dans le tableau de bord du Centre de développement, cet ID est également disponible dans l’URL de la page de soumission, dans le tableau de bord.  |
+| submissionId | chaîne | Obligatoire. ID de la soumission à valider. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission de version d’évaluation du package](create-a-flight-submission.md). Concernant une soumission qui a été créée dans le tableau de bord du centre de développement, cet ID est également disponible dans l’URL de la page de la soumission dans le tableau de bord.  |
 
 
-### <a name="request-body"></a>Corps de demande
+### <a name="request-body"></a>Corps de requête
 
 Ne fournissez pas de corps de requête pour cette méthode.
 
@@ -100,7 +100,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 ## <a name="related-topics"></a>Rubriques associées
 
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
-* [Gérer les soumissions de versions d’évaluation du package](manage-flight-submissions.md)
+* [Gérer les soumissions de versions d’évaluation de package](manage-flight-submissions.md)
 * [Obtenir une soumission de version d’évaluation du package](get-a-flight-submission.md)
 * [Créer une soumission de version d’évaluation du package](create-a-flight-submission.md)
 * [Mettre à jour une soumission de version d’évaluation de package](update-a-flight-submission.md)

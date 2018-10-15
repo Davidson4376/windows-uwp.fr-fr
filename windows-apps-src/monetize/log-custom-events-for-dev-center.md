@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: You can log custom events from your UWP app and review those events in the Usage report on the Windows Dev Center dashboard.
 title: Consigner des événements personnalisés pour le Centre de développement
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/01/2018
 ms.topic: article
 ms.prod: windows
@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store Services SDK, événements de journal
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b9cd4d7c527001bb382596c9c805be4ad5e7b08
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: 06cf3be8755fc375eb0604e188e34d6a5afee9c1
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566584"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614745"
 ---
 # <a name="log-custom-events-for-dev-center"></a>Consigner des événements personnalisés pour le Centre de développement
 

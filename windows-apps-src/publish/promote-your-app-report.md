@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows10, uwp, promotion, application, campagne, rapport, installations
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f63b53fca8a97c4f6e61aa38f45a749ca0621b
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4569174"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611197"
 ---
 # <a name="ad-campaign-report"></a>Rapport de campagne de publicité
 
-Le rapport de **campagne de publicité** dans le tableau de bord du centre de développement Windows vous permet d’évaluer les performances des [campagnes](create-an-ad-campaign-for-your-app.md) de promotion votre application. Pour afficher le rapport, développez **Attract** dans le menu de navigation de gauche, puis sélectionnez **les campagnes de publicité**.
+Le rapport de **campagne de publicité** dans le tableau de bord du centre de développement Windows vous permet de visualiser les performances de vos [campagnes de publicité](create-an-ad-campaign-for-your-app.md) de promotion d’application. Pour afficher le rapport, développez **Attract** dans le menu de navigation de gauche, puis sélectionnez **les campagnes de publicité**.
 
 ## <a name="definitions"></a>Définitions
 

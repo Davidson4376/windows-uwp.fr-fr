@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 94B5B2E9-BAEE-4B7F-BAF1-DA4D491427D7
 description: Utilisez cette méthode dans l’API d’achat du MicrosoftStore pour obtenir les abonnements qu’un utilisateur donné est autorisé à utiliser.
 title: Recueillir les abonnements d’un utilisateur
-ms.author: mcleans
-ms.date: 03/16/2018
+ms.author: mhopkins
+ms.date: 07/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, API d’achat du MicrosoftStore, abonnements
 ms.localizationpriority: medium
-ms.openlocfilehash: cebf4105d5e8b08f9b750f2a4938117dcd6fc084
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: c08964b991b0cecaef6d994d399ce97301a7e8e7
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664985"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612902"
 ---
 # <a name="get-subscriptions-for-a-user"></a>Recueillir les abonnements d’un utilisateur
 
@@ -47,7 +47,7 @@ Pour plus d’informations, consultez [Gérer les droits sur les produits à par
 
 | En-tête         | Type   | Description      |
 |----------------|--------|-------------------|
-| Autorisation  | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;.                           |
+| Authorization  | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;.                           |
 | Host           | chaîne | Doit être défini sur la valeur **purchase.mp.microsoft.com**.                                            |
 | Content-Length | nombre | Longueur du corps de la requête.                                                                       |
 | Content-Type   | chaîne | Spécifie le type de requête et de réponse. Actuellement, la seule valeur prise en charge est **application/json**. |
@@ -118,6 +118,7 @@ Chaque objet figurant dans le tableau *éléments* contient les valeurs suivante
 | autoRenew | Valeur booléenne |  Indique si l’abonnement est configuré pour se renouveler automatiquement à la fin de la période d’abonnement en cours.   |
 | bénéficiaire | chaîne |  L’ID du bénéficiaire du droit associé à cet abonnement.   |
 | expirationTime | chaîne | La date et l’heure auxquelles l’abonnement expire, au format ISO8601. Ce champ est uniquement disponible lorsque l’abonnement est dans certains états. Généralement, le délai d’expiration indique le moment où l’état actuel arrive à expiration. Par exemple, pour un abonnement actif, la date d’expiration indique quand le renouvellement automatique suivant a lieu.    |
+| expirationTimeWithGrace | chaîne | La date et l’heure qu'auxquelles l’abonnement expire, y compris la période de grâce au format ISO 8601. Cette valeur indique quand l’utilisateur perd l’accès à l’abonnement une fois que l’abonnement n’a pas pu renouveler automatiquement.    |
 | id | chaîne |  L’ID de l’abonnement. Utilisez cette valeur afin d’indiquer l’abonnement que vous souhaitez modifier lorsque vous appelez la méthode [modifier l’état de facturation de l’abonnement d’un utilisateur](change-the-billing-state-of-a-subscription-for-a-user.md).    |
 | isTrial | Valeur booléenne |  Indique si l’abonnement est une version d’évaluation.     |
 | lastModified | chaîne |  La date et l’heure auxquelles l’abonnement a été modifié pour la dernière fois, au format ISO8601.      |

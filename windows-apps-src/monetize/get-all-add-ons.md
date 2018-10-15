@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
 description: Utilisez cette méthode de l’API de soumission au MicrosoftStore pour récupérer toutes les données d’extension de toutes les apps inscrites dans votre compte du Centre de développement Windows.
 title: Obtenir toutes les extensions
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, extensions, produit in-app, PIA
 ms.localizationpriority: medium
-ms.openlocfilehash: 69ec59a39c91152788f757beb56afc75e7191922
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: Auto
+ms.openlocfilehash: c711e2443de4607d2266dcddf513a48ff11522a7
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663119"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614032"
 ---
 # <a name="get-all-add-ons"></a>Obtenir toutes les extensions
 

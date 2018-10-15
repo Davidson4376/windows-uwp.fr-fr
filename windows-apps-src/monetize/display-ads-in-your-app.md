@@ -1,25 +1,25 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: Le SDK MicrosoftAdvertising vous offre plusieurs moyens de monétiser votre application grâce aux publicités.
 title: Afficher des publicités dans votre application avec le SDK MicrosoftAdvertising
-ms.author: mcleans
-ms.date: 05/02/2018
+ms.author: mhopkins
+ms.date: 06/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, publicités, publicité, bannière, contrôle de publicité, spot
 ms.localizationpriority: medium
-ms.openlocfilehash: 601f3fe67d6ed44403c65427af75042456bdfddb
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: c0dde67e3f7ab43734ffb0bf2a5826cc54691e17
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843019"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613560"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Afficher des publicités dans votre application avec le SDK MicrosoftAdvertising
 
-Augmentez vos opportunités de revenus en plaçant des publicités dans votre application pour plateforme Windows universelle (UWP) sous Windows10 à l’aide du SDK MicrosoftAdvertising. Notre plateforme de monétisation des publicités offre une grande diversité de types de publicités et prend en charge la médiation avec de nombreux réseaux publicitaires populaires.
+Augmentez vos opportunités de revenus en plaçant des publicités dans votre application pour plateforme Windows universelle (UWP) sous Windows10 à l’aide du SDK MicrosoftAdvertising. Notre plateforme de monétisation des publicités offre une variété de formats de publicité qui peut être intégré en toute transparence dans vos applications et prend en charge médiation avec de nombreux réseaux publicitaires populaires. Notre plateforme est conforme à la OpenRTB, 2.x une grande, Definitions 2 et 3 VPAID normes et est compatible avec MOAT et IAS. 
 
 <br/>
 
@@ -121,7 +121,7 @@ Pour obtenir une aide supplémentaire sur l'utilisation du SDK MicrosoftAdvertis
 
 ## <a name="windows-81-and-windows-phone-8x-apps"></a>Applications Windows8.1 et WindowsPhone8.x
 
-Pour les applicationsWindows8.1 et WindowsPhone8.x, nous fournissons le [SDK Microsoft Advertising pour Windows et Windows Phone8.x](http://aka.ms/store-8-sdk). Pour plus d’informations concernant l’utilisation de ce SDK pour afficher des publicités dans des applications Windows8.1 et WindowsPhone8.x, consultez [cet article](https://msdn.microsoft.com/library/windows/apps/xaml/dn792120.aspx).
+Pour les applicationsWindows8.1 et WindowsPhone8.x, nous fournissons le [SDK Microsoft Advertising pour Windows et Windows Phone8.x](http://aka.ms/store-8-sdk). Pour plus d’informations concernant l’utilisation de ce SDK pour afficher des publicités dans des applications Windows8.1 et WindowsPhone8.x, consultez [cet article](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10)).
 
 ## <a name="related-topics"></a>Rubriques associées
 

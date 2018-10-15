@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7b07a6ca-4be1-497c-a901-0a2da3762555
 description: Utilisez cette méthode dans l’API des promotions du MicrosoftStore pour créer, modifier et obtenir des campagnes publicitaires.
 title: Gérer les campagnes publicitaires
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, API de promotions du MicrosoftStore, campagnes de publicité
 ms.localizationpriority: medium
-ms.openlocfilehash: 125e67e7b56ac4f8d7d15a36ceca3922ea58ac82
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: f707c252e404da3aaf6e82317c80a266f4d91d26
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664229"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611264"
 ---
 # <a name="manage-ad-campaigns"></a>Gérer les campagnes publicitaires
 
@@ -156,7 +156,7 @@ Les corps de requête et de réponse associés à ces méthodes comportent les c
 |  configuredStatus   |  chaîne   |  L’une des valeurs suivantes qui spécifie le statut de la campagne publicitaire définie par le développeur: <ul><li>**Active**</li><li>**Inactive**</li></ul>     |  Non     |  Active    |   Oui    |       
 |  effectiveStatus   |  chaîne   |   L’une des valeurs suivantes qui spécifie le statut effectif de la campagne publicitaire, suivant la validation du système: <ul><li>**Active**</li><li>**Inactive**</li><li>**Processing**</li></ul>    |    Oui   |      |   Non      |       
 |  effectiveStatusReasons   |  tableau   |  L’une ou plusieurs des valeurs suivantes qui spécifient le motif du statut effectif de la campagne publicitaire: <ul><li>**AdCreativesInactive**</li><li>**BillingFailed**</li><li>**AdLinesInactive**</li><li>**ValidationFailed**</li><li>**Failed**</li></ul>      |  Oui     |     |    Non     |       
-|  storeProductId   |  chaîne   |  L' [ID Store](in-app-purchases-and-trials.md#store-ids) de l’application à laquelle est associée cette campagne publicitaire. Un produit peut par exemple présenter l’ID9nblggh42cfd du WindowsStore.     |   Oui    |      |  Oui     |       
+|  storeProductId   |  chaîne   |  L’[ID du WindowsStore](in-app-purchases-and-trials.md#store-ids) pour l’application à laquelle est associée cette campagne publicitaire. Un produit peut par exemple présenter l’ID9nblggh42cfd du WindowsStore.     |   Oui    |      |  Oui     |       
 |  labels   |  tableau   |   Une ou plusieurs chaînes représentant les légendes personnalisées de la campagne. Ces légendes sont utilisées pour rechercher et marquer des campagnes.    |   Non    |  null    |    Non     |       
 |  type   | chaîne    |  L’une des valeurs suivantes spécifiant le type de campagne: <ul><li>**Paid**</li><li>**House**</li><li>**Community**</li></ul>      |   Oui    |      |   Oui    |       
 |  objective   |  chaîne   |  L’une des valeurs suivantes spécifiant l’objectif de la campagne: <ul><li>**DriveInstall**</li><li>**DriveReengagement**</li><li>**DriveInAppPurchase**</li></ul>     |   Non    |  DriveInstall    |   Oui    |       

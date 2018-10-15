@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 9F0A59A1-FAD7-4AD5-B78B-C1280F215D23
 description: Utilisez l’API des offres ciblées du MicrosoftStore pour récupérer les offres ciblées disponibles pour l'utilisateur actuel de votre app.
 title: Gérer les offres ciblées à l’aide des services du WindowsStore
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 10/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API des offres ciblées du MicrosoftStore, offres ciblées
 ms.localizationpriority: medium
-ms.openlocfilehash: f329795e612f4669b970ea74fa7a97377cadd1eb
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: cb3000e8d791f997267166505a190ddc7c9b4d34
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653968"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611482"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>Gérer les offres ciblées à l’aide des services du WindowsStore
 

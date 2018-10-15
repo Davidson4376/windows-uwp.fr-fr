@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567919"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614842"
 ---
 # <a name="enterprise"></a>Entreprise
 
@@ -25,7 +25,7 @@ Cette feuille de route propose une vue d’ensemble sur les fonctionnalités pri
 
 Existe-t-il une version de cette application qui présente certaines des avancées qui ont été exposées à la Build au cours de cette présentation [Construire rapidement des Applications cœur de métier avec UWP et de Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502)
 
-Éléments important de l’appel au premier plan:
+Éléments important de l’appelant à avant:
 
 ## <a name="whats-new-for-enterprise-applications"></a>Nouveautés pour les applications d’entreprise
 
@@ -38,8 +38,8 @@ Voici certains outils, des bibliothèques et des fonctionnalités qui ont été 
 > * [Bibliothèque de l’interface utilisateur de Windows](#UI-library)
 > * [Contrôles UWP dans les applications de bureau](#xaml-islands)
 > * [.NET Standard2.0](#standard)
-> * [Connectivité de SQL Server](#sql-server)
-> * [Déploiement de MSIX](#MSIX)
+> * [Connectivité SQL Server](#sql-server)
+> * [Déploiement MSIX](#MSIX)
 
 <a id="template-studio" />
 
@@ -55,7 +55,7 @@ Voir [Windows Template Studio](https://marketplace.visualstudio.com/items?itemNa
 
 ### <a name="controls-to-create-desktop-style-uis"></a>Contrôles pour créer des interfaces utilisateur de bureau-Style
 
-Nous avons publié des nouveaux contrôles UWP XAML qui remplissent l’écart entre une application de bureau classique l’interface utilisateur et un UI UWP.
+Nous avons publié nouveaux contrôles UWP XAML qui remplissent l’écart entre une application de bureau classique l’interface utilisateur et un UI UWP.
 
 Par exemple, les nouveaux contrôles de [barre de menus](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/menus?branch=jimwalk%2Frs5-menu-bar), [DropDownButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button), [bouton partagé](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button)et [CommandBarFlyout](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/command-bar-flyout?branch=jimwalk%2Frs5-command-bar-flyout) offrent des moyens plus souples pour exposer des commandes et [EditableComboBox](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/combo-box?branch=rs5#make-a-combo-box-editable) Commençons par l’utilisateur entrer les valeurs qui ne sont pas répertoriées dans une liste prédéfinie d’options.
 
@@ -65,16 +65,16 @@ Par exemple, les nouveaux contrôles de [barre de menus](https://review.docs.mic
 
 ### <a name="controls-to-support-enterprise-scenarios"></a>Contrôles pour prendre en charge des scénarios d’entreprise
 
-[DataGridView](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid) offre une grande souplesse pour afficher une collection de données en lignes et colonnes.
+Le [DataGridView](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid) offre une grande souplesse pour afficher une collection de données en lignes et colonnes.
 
-[TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) Active une liste hiérarchique comportant des nœuds qui contiennent des éléments imbriqués et de développement. Il peut être utilisé pour illustrer une structure de dossiers ou des relations imbriquées dans votre interface utilisateur.
+Le [contrôle TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) Active une liste hiérarchique comportant des nœuds qui contiennent des éléments imbriqués développement et. Il peut être utilisé pour illustrer une structure de dossiers ou des relations imbriquées dans votre interface utilisateur.
 
 ![Contrôle DataGrid](images/DataGrid.gif)
 
 
 ### <a name="windows-ui-library"></a>Bibliothèque de l’interface utilisateur de Windows
 
-La bibliothèque d’interface utilisateur de Windows est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d’interface utilisateur pour les applications UWP. Il permet également la compatibilité de bas niveau avec les versions antérieures de Windows 10, afin que votre application fonctionne même si les utilisateurs n’aient pas le dernier système d’exploitation.
+La bibliothèque de l’interface utilisateur de Windows est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d’interface utilisateur pour les applications UWP. Il permet également la compatibilité de bas niveau avec les versions antérieures de Windows 10, afin que votre application fonctionne même si les utilisateurs n’aient pas le dernier système d’exploitation.
 
 ![Bibliothèque de l’interface utilisateur de Windows](images/win-ui.png)
 
@@ -84,7 +84,7 @@ Voir la [Bibliothèque de l’interface utilisateur de Windows (version d’éva
 
 ### <a name="uwp-controls-in-desktop-applications"></a>Contrôles UWP dans les applications de bureau
 
-Windows 10 vous permet désormais d’utiliser des contrôles UWP dans les applications de bureau C++ Win32, Windows Forms et WPF. Cela signifie que vous pouvez améliorer l’apparence et les fonctionnalités de vos applications de bureau existantes avec les dernières fonctionnalités de l’interface utilisateur de Windows 10 qui sont uniquement disponibles via les contrôles UWP, telles que Windows Ink et les contrôles qui prennent en charge le système Fluent Design. Cette fonctionnalité est appelée (îles) XAML.
+Windows 10 vous permet désormais d’utiliser les contrôles UWP dans les applications de bureau C++ Win32, Windows Forms et WPF. Cela signifie que vous pouvez améliorer l’apparence et les fonctionnalités de vos applications de bureau existantes avec les dernières fonctionnalités de l’interface utilisateur de Windows 10 qui sont uniquement disponibles via les contrôles UWP, telles que Windows Ink et les contrôles qui prennent en charge le système Fluent Design. Cette fonctionnalité est appelée (îles) XAML.
 
 Voir [contrôles UWP dans les applications de bureau](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls).
 
@@ -92,7 +92,7 @@ Voir [contrôles UWP dans les applications de bureau](https://docs.microsoft.com
 
 ### <a name="net-standard-20"></a>.NET Standard2.0
 
-.NET Standard inclut plus de 20 000 plus important d’API que .NET Standard 1.x. Cela facilite beaucoup migrer des bibliothèques .NET Framework existantes et les utiliser ensuite entre différentes applications .NET, y compris votre application UWP.
+.NET Standard inclut plus de 20 000 API plus que .NET Standard 1.x. Cela rend beaucoup plus facile de migrer des bibliothèques .NET Framework existantes, puis les utiliser sur différentes applications .NET, y compris votre application UWP.
 
 ![NET standard](images/dot-net-standard-project-template.png)
 
@@ -100,7 +100,7 @@ Voir [partager du code entre une application de bureau et une application UWP](h
 
 <a id="sql-server" />
 
-### <a name="sql-server-connectivity"></a>Connectivité de SQL Server
+### <a name="sql-server-connectivity"></a>Connectivité SQL Server
 
 Votre application peut se connecter directement à une base de données SQLServer, puis stocker et récupérer des données à l’aide de classes dans l’espace de noms [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN&view=netframework-4.7.2).
 
@@ -108,11 +108,11 @@ Voir [Utiliser une base de données SQLServer dans une applicationUWP](https://d
 
 <a id="MSIX" />
 
-### <a name="msix-deployment"></a>Déploiement de MSIX
+### <a name="msix-deployment"></a>Déploiement MSIX
 
 MSIX est le format de package d’application Windows qui fournit une expérience de mise en package moderne à toutes les applications Windows. Le format de package MSIX conserve les fonctionnalités de packages d’application existant et installer les fichiers en plus de l’activation des fonctionnalités de création de packages et de déploiement nouveau et modernes pour les applications Win32, WPF et Windows Forms.
 
-MSIX est un format d’empaquetage conçu pour être sûr, sécurisé et fiable, basée sur une combinaison de .msi, .appx, App-V et ClickOnce technologies d’installation.
+MSIX est un format de création de package conçu pour être sûr, sécurisé et fiable, basés sur une combinaison de .msi, .appx, App-V et ClickOnce technologies d’installation.
 
 ![Icône MSIX](images/WinUI_MSIX_2col_740x417.png)
 
@@ -126,8 +126,8 @@ Windows 10 fournit un ensemble de fonctionnalités de sécurité pour les dével
 
 | Rubrique | Description |
 |-------|-------------|
-| [Présentation du développement d’applications Windows sécurisées](https://msdn.microsoft.com/library/windows/apps/mt622741) | Cet article introductif décrit les différentes fonctionnalités d’entreprise Windows lors des phases d’authentification, de données en transit et de données au repos. Il explique également comment vous pouvez intégrer ces phases dans vos applications. Il couvre une large gamme de rubriques et vise essentiellement à aider les architectes d’application à mieux comprendre les fonctionnalités de Windows qui facilitent la création d’applications de plateforme Windows universelle rapide et simple. |
-| [Authentification et identité des utilisateurs](https://msdn.microsoft.com/library/windows/apps/mt270184) | Les applications UWP disposent de plusieurs options pour l’authentification des utilisateurs qui sont décrites dans cet article. Pour l’entreprise, l’utilisation de la nouvelle fonctionnalité Microsoft Passport est fortement recommandée. Microsoft Passport remplace les mots de passe par une authentification à 2 facteurs (2FA) forte en vérifiant les informations d’identification existantes et en créant une information d’identification propre à l’appareil qui protège un mouvement biométrique ou basée sur le code confidentiel utilisateur, ce qui entraîne un pratique à la fois et hautement expérience sécurisée. |
+| [Présentation du développement d’applications Windows sécurisées](https://msdn.microsoft.com/library/windows/apps/mt622741) | Cet article introductif décrit les différentes fonctionnalités d’entreprise Windows lors des phases d’authentification, de données en transit et de données au repos. Il explique également comment vous pouvez intégrer ces phases dans vos applications. Il couvre une large gamme de rubriques et vise essentiellement à aider les architectes d’application à mieux comprendre les fonctionnalités de Windows qui facilitent la création d’applications de plateforme Windows universelle simple et rapide. |
+| [Authentification et identité des utilisateurs](https://msdn.microsoft.com/library/windows/apps/mt270184) | Les applications UWP disposent de plusieurs options pour l’authentification des utilisateurs qui sont décrites dans cet article. Pour l’entreprise, l’utilisation de la nouvelle fonctionnalité Microsoft Passport est fortement recommandée. Microsoft Passport remplace les mots de passe par une authentification à 2 facteurs (2FA) forte en vérifiant les informations d’identification existantes et en créant une information d’identification propre à l’appareil qui protège un mouvement biométrique ou basée sur le code confidentiel utilisateur, ce qui entraîne une pratique à la fois et hautement expérience sécurisée. |
 | [Chiffrement](https://msdn.microsoft.com/library/windows/apps/mt270191) | La section relative au chiffrement fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications UWP. Les articles comprennent des procédures pas à pas introductives pour chiffrer facilement les données professionnelles sensibles et couvrent également des sujets avancés tels que la manipulation des clés de chiffrement et l’utilisation des codes d’authentification de message (MAC), codes de hachage et signatures. |
 | [Protection des informations Windows (WIP)](wip-hub.md) | Il s’agit d’une rubrique de hub destinée aux développeurs abordant de manière exhaustive la relation de la Protection des informations Windows avec les fichiers, les mémoires tampons, le Presse-papiers, la mise en réseau, les tâches en arrière-plan et la protection des données verrouillées. |
 
@@ -138,7 +138,7 @@ La liaison de données est un moyen dont dispose l’interface utilisateur de vo
 | Rubrique | Description |
 |-------|-------------|
 | [Vue d’ensemble de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt269383) | Cette rubrique vous montre comment lier un contrôle (ou un autre élément d’interface utilisateur) à un élément individuel ou lier un contrôle d’éléments à une collection d’éléments dans une application de plateforme Windows universelle (UWP). Elle explique également comment contrôler le rendu des éléments, implémenter un affichage des détails en fonction d’une sélection et convertir des données pour l’affichage. |
-| [Entity Framework7 pour UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | Entity Framework7, qui prend en charge UWP, vous permet d’exécuter facilement des requêtes complexes dans de grands ensembles de données. Dans cette procédure pas à pas, vous allez créer une application UWP qui propose un accès aux données de base par rapport à une base de données SQLite locale à l’aide d’Entity Framework. |
+| [Entity Framework7 pour UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | Entity Framework7, qui prend en charge UWP, vous permet d’exécuter facilement des requêtes complexes dans de grands ensembles de données. Dans cette procédure pas à pas, vous allez créer une application UWP qui exécute l’accès aux données de base par rapport à une base de données SQLite locale à l’aide d’Entity Framework. |
 | [Base de données SQLite locale.](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | Cette vidéo est un guide du développeur complet sur l’utilisation de SQLite, la solution recommandée pour les bases de données d’applications locales. Visitez [SQLite](https://www.sqlite.org/download.html) pour télécharger la dernière version pour UWP, ou utilisez la version fournie avec le Kit de développement logiciel (SDK) Windows 10. |
 
 ## <a name="networking-and-data-serialization"></a>Réseau et sérialisation des données
@@ -159,7 +159,7 @@ Afin d’interagir avec des outils métier comme des imprimantes, des scanneurs 
 | Rubrique  | Description |
 |--------|-------------|
 | [Énumérer les appareils](https://msdn.microsoft.com/library/windows/apps/mt187355) | Cet article décrit comment utiliser l’espace de noms [Windows.Devices.Enumeration](https://msdn.microsoft.com/library/windows/apps/br225459) pour rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau. Commencez ici si vous créez une application qui fonctionne avec des appareils. |
-| [Impression et numérisation](https://msdn.microsoft.com/library/windows/apps/mt204544) | Décrit comment imprimer et numériser à partir de votre application, notamment la connexion à et fonctionne avec des appareils d’entreprise tels que les systèmes de point de vente (PDV), les imprimantes et scanneurs de chargeur haute capacité. |
+| [Impression et numérisation](https://msdn.microsoft.com/library/windows/apps/mt204544) | Décrit comment imprimer et numériser à partir de votre application, y compris la connexion aux et fonctionne avec des appareils d’entreprise comme les systèmes de point de vente (PDV), les imprimantes et scanneurs à chargeur haute capacité. |
 | [Bluetooth](https://msdn.microsoft.com/library/windows/apps/mt270288) | Outre l’utilisation des connexions Bluetooth traditionnelles pour envoyer et recevoir des données ou contrôler les appareils, Windows 10 permet d’utiliser la technologie Bluetooth Low Energy (BTLE) pour envoyer ou recevoir des balises en arrière-plan. Utilisez-la pour afficher des notifications ou activer des fonctionnalités quand un utilisateur s’approche d’un emplacement particulier ou le quitte. |
 | [Stockage partagé d’entreprise](enterprise-shared-storage.md) | Dans les scénarios où l’appareil est verrouillé, découvrez comment partager les données au sein de la même application, entre les instances d’une application ou entre les applications. |
 
@@ -171,15 +171,15 @@ Aujourd’hui, de nombreux utilisateurs travaillent avec leur propre téléphone
 |-------|-------------|
 | [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631) | Dans ce guide introductif, vous allez vous familiariser avec la plateforme UWP Windows 10. Vous découvrirez, entre autres, ce qu’est une famille d’appareils et comment déterminer celle à cibler, quels sont les nouveaux volets et contrôles d’interface utilisateur permettant d’adapter votre interface utilisateur à différents facteurs de forme d’appareil, et comment utiliser et contrôler la surface d’API disponible dans votre application. |
 | [Exemple de code d’interface utilisateur XAML adaptative](http://go.microsoft.com/fwlink/p/?LinkId=619992) | Cet exemple de code montre toutes les options de disposition possibles et les contrôles de votre application, quel que soit le type d’appareil et vous permet d’interagir avec les volets pour découvrir comment réaliser les dispositions que vous recherchez. En plus de vous présenter la façon dont chaque contrôle répond à différents facteurs de forme, l’application réagit et indique les différentes méthodes permettant d’obtenir une interface utilisateur adaptative. |
-| [Rubrique de Xamarin]() | Xamarin pour le ciblage de téléphone |
+| [Rubrique Xamarin]() | Xamarin pour le ciblage de téléphone |
 
 ## <a name="deployment"></a>Déploiement
 
-Vous disposez d’options pour la distribution des applications aux utilisateurs de votre organisation. Vous pouvez utiliser Microsoft Store pour entreprises, gestion des périphériques mobiles existant ou vous pouvez charger une version test des applications pour les appareils. Vous pouvez également rendre vos applications disponibles au grand public en les publiant sur le Microsoft Store.
+Vous disposez d’options pour la distribution des applications aux utilisateurs de votre organisation. Vous pouvez utiliser Microsoft Store pour entreprises, la gestion des périphériques mobiles existant ou vous pouvez charger des applications sur des appareils. Vous pouvez également rendre vos applications disponibles au grand public en les publiant sur le Microsoft Store.
 
 | Article | Description |
 |-------|-------------|
-| [Distribuer des applications métier aux entreprises](https://msdn.microsoft.com/library/windows/apps/mt608995) | Vous pouvez publier des applications de cœur de métier directement aux entreprises pour une acquisition en volume par le biais du Microsoft Store pour entreprises, sans mettre les applications à grande échelle à la disposition du public. |
+| [Distribuer des applications métier aux entreprises](https://msdn.microsoft.com/library/windows/apps/mt608995) | Vous pouvez publier des applications cœur de métier directement aux entreprises pour une acquisition en volume par le biais du Microsoft Store pour entreprises, sans mettre les applications à grande échelle à la disposition du public. |
 | [Charger une version test des applications](https://technet.microsoft.com/library/mt269549) | Lorsque vous chargez de manière indépendante une application, vous déployez un package d’application signée sur un appareil. Vous conservez la signature, l’hébergement et le déploiement de ces applications. Le processus de chargement indépendant d’applications est simplifié pour Windows 10.             |
 | [Publier des applications dans le Microsoft Store](https://dev.windows.com/publish) | Le Microsoft Store unifié vous permet de publier et de gérer toutes vos applications pour tous les appareils Windows. Personnalisez la disponibilité de votre application à l’aide d’une tarification par marché, de contrôles de distribution et de visibilité et d’autres options. |
 
@@ -187,12 +187,12 @@ Vous disposez d’options pour la distribution des applications aux utilisateurs
 
 Texte d’introduction ici.
 
-Action - communiquer avec Josh et/ou Karl pour obtenir plus les échantillons axées sur l’entreprise ensemble.
+Action - communiquer avec Josh et/ou Karl pour obtenir plus les échantillons orienté entreprise ensemble.
 
 | Article |  Description |
 |------ |--------------|
-| [Exemple de VanArsdel inventaire](https://github.com/Microsoft/InventorySample) | Un exemple d’application Windows 10 (à l’aide de la plateforme Windows universelle) se concentre dans les scénarios métier, montrant comment utiliser les dernières fonctionnalités de Windows dans les applications de bureau. L’exemple est basé sur la création et la gestion des clients, des commandes et produits pour la société fictive VanArsdel.
-Met en évidence le modèle MVVM, base de données SQL, Entity Framework. La liste d’autres utilisateurs.|
+| [Exemple de stock VanArsdel](https://github.com/Microsoft/InventorySample) | Un exemple d’application Windows 10 (à l’aide de la plateforme Windows universelle) se concentre dans les scénarios métier, montrant comment utiliser les dernières fonctionnalités de Windows dans les applications de bureau. L’exemple est basé sur la création et la gestion des clients, des commandes et produits pour la société fictive VanArsdel.
+Cette rubrique présente les MVVM, base de données SQL, Entity Framework. La liste d’autres utilisateurs.|
 
 ## <a name="patterns-and-practices"></a>Modèles et pratiques
 

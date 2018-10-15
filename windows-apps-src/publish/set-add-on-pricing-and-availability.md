@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, extensions, iap, prix
 ms.localizationpriority: medium
 ms.openlocfilehash: b5b7a6424fea3d62849e992f56b0b40ab72a55f5
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567679"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614289"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>Définir le prix et la disponibilité d’une extension
 
@@ -59,7 +59,7 @@ Vous devez sélectionner un prix de base pour votre extension (sauf si vous avez
 Vous pouvez également planifier des modifications de tarifs pour indiquer la date et l’heure auxquelles le prix de l’extension doit changer. En outre, vous pouvez personnaliser ces changements pour des marchés spécifiques. 
 
 > [!TIP]
-> Pour les extensions d’abonnement, vous ne pouvez pas augmenter le prix après la publication de l’extension, en sélectionnant un prix de base supérieure dans une soumission ultérieure ou en planifiant un changement de prix qui augmente le prix. Vous pouvez sélectionner un prix inférieur à l’aide d’une de ces méthodes, mais une fois que le prix est baissé, vous ne serez en mesure de déclencher supérieur à ce nouveau prix. Pour cette raison, il est particulièrement important pour vous assurer que vous sélectionnez le niveau de prix approprié pour les extensions d’abonnement. 
+> Pour les extensions d’abonnement, vous ne pouvez pas augmenter le prix après la publication de l’extension, en sélectionnant un prix de base supérieure dans une soumission ultérieure ou en planifiant un changement de prix qui augmente le prix. Vous pouvez sélectionner un prix inférieur à l’aide d’une de ces méthodes, mais une fois que le prix est baissé, vous ne serez en mesure de déclencher supérieur à ce nouveau prix. Pour cette raison, il est particulièrement important pour vous assurer que vous avez sélectionné le niveau de prix approprié pour les extensions d’abonnement. 
 
 Pour plus d’informations, consultez l’article [Définir et planifier le prix de l’application](set-and-schedule-app-pricing.md).
 

@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 104788b98377b55564fcc204ecc161521d071c6b
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4572865"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611599"
 ---
 #  <a name="command-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception des commandes pour les applications UWP
 
@@ -96,7 +96,7 @@ Pour obtenir la liste complète de ces éléments, voir [Contrôles et élément
 
 Vous pouvez placer des éléments de commande sur un certain nombre de surfaces dans votre application, y compris le canevas d’application ou les conteneurs de commande spécifiques, par exemple, une barre de commandes, menu volant de barre de commandes, barre de menus et boîte de dialogue.
 
-Notez que, si possible, vous permettre aux utilisateurs manipuler directement le contenu plutôt que d’utiliser les commandes qui agissent sur le contenu. Par exemple, laissez les utilisateurs réorganiser les listes en en faisant glisser les éléments au lieu d’utiliser les boutons de commande vers le haut et vers le bas.
+Notez que, autant que possible, vous devez permettre aux utilisateurs de manipuler directement le contenu plutôt que d’utiliser les commandes qui agissent sur le contenu. Par exemple, laissez les utilisateurs réorganiser les listes en en faisant glisser les éléments au lieu d’utiliser les boutons de commande vers le haut et vers le bas.
 
 Si les utilisateurs ne peuvent pas manipuler le contenu directement, placez des éléments de commande sur une surface de commande dans votre application. Voici une liste de quelques-unes des surfaces de commande les plus courantes.
 
