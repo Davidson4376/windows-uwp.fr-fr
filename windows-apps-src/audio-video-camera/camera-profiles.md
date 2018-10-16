@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f842b10ce056d02d1c30c2fe285a87d5fe20dca8
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: ead9efdd0a1d37a051f24e94b40a7c61212f6b19
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832253"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4690108"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>Découvrir et sélectionner des capacités de caméra avec des profils de caméra
 
@@ -77,7 +77,7 @@ L’exemple de méthode ci-dessous montre comment utiliser les objets **MediaFra
 > [!NOTE] 
 > Les API décrites dans cette section sont déconseillées à compter de Windows10, version1803. Consultez la section précédente, **Utiliser des groupes de sources d’images multimédias pour obtenir des profils**.
 
-La sélection d’un profil prenant en charge la vidéo HDR commence comme tous les autres scénarios. Créez un **MediaCaptureInitializationSettings** et une chaîne contenant l’ID d’appareil de capture. Ajoutez une variable booléenne qui déterminera si la vidéo HDR est prise en charge.
+La sélection d’un profil prenant en charge la vidéo HDR commence comme tous les autres scénarios. Créer un **MediaCaptureInitializationSettings** et une chaîne pour l’ID de périphérique de capture. Ajoutez une variable booléenne qui déterminera si la vidéo HDR est prise en charge.
 
 [!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
 
@@ -101,7 +101,7 @@ Vous pouvez affiner la requête pour rechercher des profils qui prennent en char
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Appareil photo](camera.md)
+* [Caméra](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 

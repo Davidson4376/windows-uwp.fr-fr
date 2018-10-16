@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e08208b7086023654b0b2404cccc8664e123d9ec
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: c7dc6436e1a233a6b0a74a787b5c30de47899eff
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983614"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4690937"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>Didacticiel: Prise en charge de Surface Dial (et autres périphériques à molette) dans votre application UWP
 
@@ -62,7 +62,7 @@ Surface Dial prend en charge trois mouvements de base:
 6. De nouveau sur votre appareil Windows, sélectionnez **Ajouter un périphérique Bluetooth ou autre**.
 7. Dans la boîte de dialogue **Ajouter un périphérique**, sélectionnez **Bluetooth** > **Surface Dial**. Votre Surface Dial doit maintenant se connecter et être ajouté à la liste des périphériques sous **Souris, clavier et stylet** sur la page des paramètres **Bluetooth et autres périphériques**.
 8. Testez Surface Dial en appuyant longuement dessus pendant quelques secondes pour afficher le menu intégré.
-9. Si le menu ne s’affiche pas sur votre écran (le Surface Dial devrait également vibrer), accédez aux paramètres Bluetooth, supprimez l’appareil et essayez de connecter le périphérique à nouveau.
+9. Si le menu n’est pas affiché sur votre écran (surface Dial devrait également vibrer), accédez aux paramètres Bluetooth, supprimez l’appareil, puis réessayez de vous connecter l’appareil.
 
 > [!NOTE]
 > Les appareils à molette peuvent être configurés via les paramètres **Molette**:

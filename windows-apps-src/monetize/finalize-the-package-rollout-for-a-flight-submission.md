@@ -11,11 +11,11 @@ keywords: windows 10, uwp, API de soumission au MicrosoftStore, lancement du pac
 ms.assetid: e4a645f6-1f00-4af5-80d6-d2ee179acc8a
 ms.localizationpriority: medium
 ms.openlocfilehash: e87ff797a0c9e753726f32fac117c55c70b9b36c
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4620021"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4683076"
 ---
 # <a name="finalize-the-rollout-for-a-flight-submission"></a>Finalise le lancement d’une soumission de version d’évaluation du package
 

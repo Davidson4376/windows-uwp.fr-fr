@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, avis
 ms.localizationpriority: medium
-ms.openlocfilehash: ce1f9c3a360209bc9ac7b03ac162460a333c7192
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: c14b2ce6dd9fa7058ef3dbcd8e7e7a17a05fe78e
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4613573"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4686213"
 ---
 # <a name="get-app-reviews"></a>Obtenir les avis sur les applications
 
@@ -109,43 +109,43 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>Corps de la réponse
 
-| Valeur      | Type   | Description                                                                                                                                                                                                                                                                            |
-|------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Valeur      | tableau  | Un tableau d’objets comportant des avis. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs d’avis](#review-values) ci-dessous.                                                                                                                                      |
+| Valeur      | Type   | Description      |
+|------------|--------|------------------|
+| Valeur      | tableau  | Un tableau d’objets comportant des avis. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs d’avis](#review-values) ci-dessous.       |
 | @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur10000, mais que plus de10000lignes de données d’avis sont associées à la requête. |
-| TotalCount | entier    | Nombre total de lignes des résultats de données pour la requête.                                    |
+| TotalCount | entier    | Nombre total de lignes des résultats de données pour la requête.  |
 
  
 ### <a name="review-values"></a>Valeurs d’avis
 
 Les éléments du tableau *Value* comportent les valeurs suivantes:
 
-| Valeur                  | Type    | Description                                                                                                                                                                                                                          |
-|------------------------|---------|---------------------|
-| date                   | chaîne  | Première date dans la plage de dates des données d’avis. Si la requête spécifiait un jour unique, cette valeur est cette date. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates.  |
-| applicationId          | chaîne  | ID WindowsStore de l’application dont vous récupérez les données d’avis.        |
-| applicationName        | chaîne  | Nom d’affichage de l’application.   |
-| market                 | chaîne  | Code pays ISO3166 du marché où l’avis a été soumis.       |
-| osVersion              | chaîne  | Version du système d’exploitation sur lequel l’avis a été soumis. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.         |
-| deviceType             | chaîne  | Type d’appareil sur lequel l’avis a été soumis. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.      |
-| isRevised              | Booléen | La valeur **true** indique que l’avis a été révisé; sinon, la valeur **false** est affichée.         |
-| packageVersion         | chaîne  | La version du package d’application qui a été passée en revue.   |
-| deviceModel            | chaîne  | Le type d’appareil sur lequel l’application a été révisée.      |
-| productFamily          | chaîne  | Le nom de la famille d’appareils. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.  |
-| deviceRAM              | nombre  | MémoireRAM physique, en Mo.        |
-| deviceScreenResolution | chaîne  | Résolution de l’écran de l’appareil, au format *largeur*x*hauteur*.        |
-| deviceStorageCapacity  | nombre  | Capacité du disque de stockage principal, en Go.   |
-| isTouchEnabled         | Booléen | La valeur **true** indique l’activation de l’interaction tactile; sinon, la valeur **false** est affichée.      |
-| reviewerName           | chaîne  | Nom de réviseur.      |
-| rating                 | nombre  | Classification de l’application, en étoiles.         |
-| reviewTitle            | chaîne  | Le titre de l’avis.       |
-| reviewText             | chaîne  | Texte de l’avis.     |
-| helpfulCount           | nombre  | Le nombre d’occurrences où l’avis a été marqué comme utile.     |
-| notHelpfulCount        | nombre  | Nombre d’occurrences où l’avis a été signalé comme inutile.               |
-| responseDate           | chaîne  | Date de soumission d’une réponse.                 |
-| responseText           | chaîne  | Texte de la réponse.        |
-| id                     | chaîne  | ID de l’avis (il s’agit d’un GUID). Vous pouvez utiliser cet ID dans les méthodes [Obtenir des informations de réponse pour les avis sur les applications](get-response-info-for-app-reviews.md) et [Envoyer des réponses aux avis concernant l’application](submit-responses-to-app-reviews.md)       |
- 
+| Valeur           | Type    | Description       |
+|-----------------|---------|-------------------|
+| date            | chaîne  | Première date dans la plage de dates des données d’avis. Si la requête spécifiait un jour unique, cette valeur est cette date. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
+| applicationId   | chaîne  | ID WindowsStore de l’application dont vous récupérez les données d’avis.         |
+| applicationName | chaîne  | Nom d’affichage de l’application.    |
+| market          | chaîne  | Code pays ISO3166 du marché où l’avis a été soumis.        |
+| osVersion       | chaîne  | Version du système d’exploitation sur lequel l’avis a été soumis. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.            |
+| deviceType      | chaîne  | Type d’appareil sur lequel l’avis a été soumis. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.            |
+| isRevised       | Booléen | La valeur **true** indique que l’avis a été révisé; sinon, la valeur **false** est affichée.   |
+| packageVersion  | chaîne  | La version du package d’application qui a été passée en revue.        |
+| deviceModel        | chaîne  |Le type d’appareil sur lequel l’application a été révisée.     |
+| productFamily      | chaîne  | Le nom de la famille d’appareils. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.   |
+| deviceRAM       | nombre  | MémoireRAM physique, en Mo.    |
+| deviceScreenResolution       | chaîne  | Résolution de l’écran de l’appareil, au format *largeur*x*hauteur*.    |
+| deviceStorageCapacity | nombre | Capacité du disque de stockage principal, en Go. |
+| isTouchEnabled | Booléen | La valeur **true** indique l’activation de l’interaction tactile; sinon, la valeur **false** est affichée. |
+| reviewerName | chaîne | Nom de réviseur. |
+| rating | nombre | Classification de l’application, en étoiles. |
+| reviewTitle | chaîne | Le titre de l’avis. |
+| reviewText | chaîne | Texte de l’avis. |
+| helpfulCount | nombre | Le nombre d’occurrences où l’avis a été marqué comme utile. |
+| notHelpfulCount | nombre | Nombre d’occurrences où l’avis a été signalé comme inutile. |
+| responseDate | chaîne | Date de soumission d’une réponse. |
+| responseText | chaîne | Texte de la réponse. |
+| id | chaîne | ID de l’avis (il s’agit d’un GUID). Vous pouvez utiliser cet ID dans les méthodes [Obtenir des informations de réponse pour les avis sur les applications](get-response-info-for-app-reviews.md) et [Envoyer des réponses aux avis concernant l’application](submit-responses-to-app-reviews.md) |
+
 
 ### <a name="response-example"></a>Exemple de réponse
 
