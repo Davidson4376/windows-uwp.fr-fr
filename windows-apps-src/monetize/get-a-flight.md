@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
 description: Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour obtenir des données pour une version d’évaluation du package pour une app inscrite dans votre compte du Centre de développement Windows.
 title: Obtenir une version d’évaluation du package
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, version d’évaluation, version d'évaluation du package
 ms.localizationpriority: medium
-ms.openlocfilehash: 16cf019509f7c6b85008fddde79116ea92c37b9c
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 53d6117355b431fd142b8e2749dacd9a88024297
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816054"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624197"
 ---
 # <a name="get-a-package-flight"></a>Obtenir une version d’évaluation du package
 
@@ -123,7 +123,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | 409  | L’app utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported). |                                                                                                 
 
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
 * [Crée une version d’évaluation du package](create-a-flight.md)
