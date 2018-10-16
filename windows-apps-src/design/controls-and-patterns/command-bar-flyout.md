@@ -15,12 +15,12 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: ed17299051ae7da32f238eb57876b81597c8effa
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 22d965d14c4f10f904a4d94a18ce83721c49491c
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4617949"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4680120"
 ---
 # <a name="command-bar-flyout"></a>Menu volant de barre de commandes
 
@@ -149,7 +149,7 @@ Lorsque vous affichez des commandes contextuelles de manière réactive, comme u
 
 Pour afficher les commandes dans un menu contextuel, vous affectez en règle générale, le menu volant à la propriété [ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout) d’un élément d’interface utilisateur. De cette façon, vous ouvrez le menu volant est géré par l’élément, et vous n’avez rien à faire plus.
 
-Si vous gérez montrant le menu volant (par exemple, sur un événement [RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped) ), définissez la du menu volant [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) **Standard** pour ouvrir le menu volant dans son mode étendu et lui donner le focus.
+Si vous gérez montrant le menu volant (par exemple, sur un événement [RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped) ), la valeur du menu volant [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) **Standard** pour ouvrir le menu volant dans son mode étendu et lui donner le focus.
 
 > [!TIP]
 > Pour plus d’informations sur les options lors de l’affichage d’un menu volant et comment contrôler le positionnement du menu volant, consultez [les menus volants](../controls-and-patterns/dialogs-and-flyouts/flyouts.md).

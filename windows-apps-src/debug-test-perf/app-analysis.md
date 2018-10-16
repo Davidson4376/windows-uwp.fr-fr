@@ -8,12 +8,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: bedd4ce683622935488f9cc210d71f568a167f51
-ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.localizationpriority: medium
+ms.openlocfilehash: f14f241eb6a1a39b29216fe703c3804b34f8a3bc
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2017
-ms.locfileid: "887955"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4680031"
 ---
 # <a name="app-analysis-overview"></a>vue d’ensemble de l’analyse d’application
 
@@ -63,7 +64,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Exemple2 code-behind (incorrect): définition de l’UriSouce de BitmapImage avant de l’associer à l’arborescence.
+Exemple 2 code-behind (incorrect): définition associer de la BitmapImage avant de le connecter à l’arborescence.
 
 ```vb
 var bitmapImage = new BitmapImage();

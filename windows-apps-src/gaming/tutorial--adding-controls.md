@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, jeux, contrôles, entrée
 ms.localizationpriority: medium
-ms.openlocfilehash: 84230759f03cb60b5b776d3407ac0f96e090d495
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 563ca17864f95cfa98313608f5a5c32e64f44a16
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675296"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4680197"
 ---
 # <a name="add-controls"></a>Ajouter des contrôles
 
@@ -99,7 +99,7 @@ Pour déterminer à quel moment le jeu doit écouter une entrée donnée, la cla
 Le jeu passe dans l'état **WaitForInput** lorsqu'il a été mis en pause. Cela se produit lorsque le joueur déplace le pointeur hors de la fenêtre principale du jeu, ou appuie sur le bouton de pause (la touche P ou le bouton **Démarrer** du boîtier de commande). La classe **MoveLookController** enregistre cette dernière action et informe la boucle de jeu lors de l’appel de la méthode [**IsPauseRequested**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L107-L127). À ce stade, si **IsPauseRequested** renvoie la valeur **true**, la boucle de jeu appelle alors **WaitForPress** sur **MoveLookController** pour placer le contrôleur dans l’état **WaitForInput**. 
 
 
-Une fois dans l'état **WaitForInput**, le jeu interrompt le traitement de pratiquement tous les événements d’entrée jusqu'à ce qu’il soit revenu à l'état **Active**. La seule exception est le bouton Pause. L'utilisation de ce dernier fait revenir le jeu à l'état actif. Alternativement au bouton Pause, le joueur doit sélectionner un élément du menu pour faire revenir le jeu à l'état **Active**. 
+Une fois dans l'état **WaitForInput**, le jeu interrompt le traitement de pratiquement tous les événements d’entrée jusqu'à ce qu’il soit revenu à l'état **Active**. La seule exception est le bouton Pause. L'utilisation de ce dernier fait revenir le jeu à l'état actif. Alternativement au bouton pause, afin que le jeu de revenir à l’état **actif** le joueur doit sélectionner un élément de menu. 
 
 
 
@@ -579,7 +579,7 @@ Bouton Démarrer/Menu | Mettre en pause ou reprendre le jeu
 
 
 
-Dans la méthode [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103), nous ajoutons deux nouveaux événements pour déterminer si un boîtier de commande a été [ajouté](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105) ou [supprimé](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114). Ces événements mettent à jour la propriété **m_gamepadsChanged**. Il est utilisé dans la méthode **UpdatePollingDevices** pour vérifier si le la liste des boîtiers de commande connus a changé. 
+Dans la méthode [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103), nous ajoutons deux nouveaux événements pour déterminer si un boîtier de commande a été [ajouté](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105) ou [supprimé](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114). Ces événements mettent à jour la propriété **m_gamepadsChanged**. Cela est utilisé dans la méthode **UpdatePollingDevices** pour vérifier si la liste des boîtiers de commande connus a changé. 
 
 ```cpp
     // Detect gamepad connection and disconnection events.

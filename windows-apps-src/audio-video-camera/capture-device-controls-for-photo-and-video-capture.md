@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: d0d7a429cf702455d969e1ac1c62def6181e8dd0
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+ms.localizationpriority: medium
+ms.openlocfilehash: 4bed72b17ea59494a7eee6850d1ff4be2172c694
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230832"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4681760"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>Contrôles d’appareil photo manuel pour la capture photo et vidéo
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous montre comment utiliser les contrôles des appareils manuels pour activer les scénarios de capture photo et vidéo, y compris la stabilisation d’image optique et le zoom fluide.
@@ -205,7 +206,7 @@ La valeur de mise au point doit être comprise dans la plage prise en charge par
 
 Définissez la valeur du contrôle de curseur sur la valeur actuelle de **FocusControl** après la suppression de l’enregistrement du gestionnaire d’événements [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) afin que l’événement ne soit pas déclenché lorsque la valeur est définie.
 
-[!code-cs[Mise au point](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocus)]
+[!code-cs[Focus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocus)]
 
 Dans le gestionnaire d’événements **Checked** de la case d’option de mise au point manuelle, obtenez l’objet **FocusControl** et appelez [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) si votre application a déverrouillé précédemment la mise au point avec un appel à [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081).
 
@@ -268,7 +269,7 @@ Activez ou désactivez la fonctionnalité OIS en définissant le [**OpticalImage
 ## <a name="powerline-frequency"></a>Fréquence du courant
 Certains appareils photo prennent en charge le traitement anti scintillement qui implique de connaître la fréquence du courant alternatif (CA) dans l’environnement actuel. Certains appareils prennent en charge la détermination automatique de la fréquence du courant, tandis que d’autres nécessitent que la fréquence soit définie manuellement. L’exemple de code suivant montre comment déterminer la prise en charge de la fréquence du courant sur l’appareil et, si nécessaire, comment définir la fréquence manuellement. 
 
-Tout d’abord, appelez la méthode [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898) de **VideoDeviceController**, en transmettant un paramètre de sortie de type [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency). Si cet appel échoue, le contrôle de la fréquence du courant n’est pas pris en charge sur l’appareil actuel. Si la fonctionnalité est prise en charge, vous pouvez déterminer si le mode automatique est disponible sur l’appareil en essayant de définir ce mode. Pour ce faire, appelez [**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899) et transmettez la valeur **Auto**. Si l’appel aboutit, votre fréquence de courant automatique est prise en charge. Si le contrôleur de fréquence du courant est pris en charge sur l’appareil, mais que la détection de fréquence automatique ne l’est pas, vous pouvez définir manuellement la fréquence à l’aide de **TrySetPowerlineFrequency**. Dans cet exemple, **MyCustomFrequencyLookup** est une méthode personnalisée que vous implémentez pour déterminer la fréquence appropriée pour l’emplacement actuel de l’appareil. 
+Tout d’abord, appelez la méthode [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898) de **VideoDeviceController**, en transmettant un paramètre de sortie de type [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency). Si cet appel échoue, le contrôle de la fréquence du courant n’est pas pris en charge sur l’appareil actuel. Si la fonctionnalité est prise en charge, vous pouvez déterminer si le mode automatique est disponible sur l’appareil en essayant de définir ce mode. Cela en appelant [**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899) et en transmettant la valeur **automatique**. Si l’appel aboutit, cela signifie que votre fréquence de courant automatique est prise en charge. Si le contrôleur de fréquence du courant est pris en charge sur l’appareil, mais que la détection de fréquence automatique ne l’est pas, vous pouvez définir manuellement la fréquence à l’aide de **TrySetPowerlineFrequency**. Dans cet exemple, **MyCustomFrequencyLookup** est une méthode personnalisée que vous implémentez pour déterminer la fréquence appropriée pour l’emplacement actuel de l’appareil. 
 
 [!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
 
@@ -338,7 +339,7 @@ Sur un appareil tactile multipoint, un scénario courant consiste à ajuster le 
 
 Dans le gestionnaire pour l’événement **ManipulationDelta**, mettez à jour le facteur de zoom basé sur la modification du mouvement de pincement de l’utilisateur. La valeur [**ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) représente la modification de l’échelle de pincement (une faible augmentation de la taille du pincement correspondra à un nombre légèrement supérieur à 1 et une faible réduction de la taille du pincement correspondra à un nombre légèrement inférieur à 1). Dans cet exemple, la valeur actuelle du contrôle de zoom est multipliée par le delta de mise à l’échelle.
 
-Avant de définir le facteur de zoom, vous devez vous assurer que la valeur n’est pas inférieure à la valeur minimale prise en charge par l’appareil, comme indiqué par la propriété [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817). En outre, assurez-vous que la valeur est inférieure ou égale à la valeur [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150). Enfin, vérifiez que le facteur de zoom est un multiple de la taille d’étape de zoom prise en charge par l’appareil, comme indiqué par la propriété [**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818). Si le facteur de zoom ne répond pas à ces critères, une exception sera levée lorsque vous tenterez de définir le niveau de zoom sur l’appareil de capture.
+Avant de définir le facteur de zoom, vous devez vous assurer que la valeur n’est pas inférieure à la valeur minimale prise en charge par l’appareil, comme indiqué par la propriété [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817). En outre, assurez-vous que la valeur est inférieure ou égale à la valeur [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150). Enfin, il se peut que vous devez vous assurer que le facteur de zoom est un multiple de la taille d’étape de zoom prise en charge par l’appareil comme indiqué par la propriété [**étape**](https://msdn.microsoft.com/library/windows/apps/dn633818) . Si le facteur de zoom ne répond pas à ces critères, une exception sera levée lorsque vous tenterez de définir le niveau de zoom sur l’appareil de capture.
 
 Définissez le niveau de zoom sur l’appareil de capture en créant un objet [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722). Définissez la propriété [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) sur [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726), puis définissez la propriété [**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) sur votre facteur de zoom souhaité. Enfin, appelez [**ZoomControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) pour définir la nouvelle valeur de zoom sur l’appareil. L’appareil fera une transition harmonieuse vers la nouvelle valeur de zoom.
 
@@ -346,5 +347,5 @@ Définissez le niveau de zoom sur l’appareil de capture en créant un objet [*
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Appareil photo](camera.md)
+* [Caméra](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)

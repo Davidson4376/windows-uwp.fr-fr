@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, évaluations
 ms.localizationpriority: medium
-ms.openlocfilehash: d3d09aa395f9c0924951a44f5b0abaf9c99cb32e
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 0671015ead96b57515b4b451a06ff3c9cf1a94cb
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4620841"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4694626"
 ---
 # <a name="get-app-ratings"></a>Obtenir les évaluations des applications
 
@@ -106,20 +106,20 @@ Authorization: Bearer <your access token>
 
 Les éléments du tableau *Value* comportent les valeurs suivantes:
 
-| Valeur           | Type    | Description                                                                                                                                                                                                                          |
-|-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Valeur           | Type    | Description       |
+|-----------------|---------|-------------------|
 | date            | chaîne  | Première date dans la plage de dates de classification. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
-| applicationId   | chaîne  | L’ID WindowsStore de l’application pour laquelle vous récupérez les données de classification.                                                                                                                                                                 |
-| applicationName | chaîne  | Nom d’affichage de l’application.                                                                                                                                                                                                         |
-| market          | chaîne  | Le code pays ISO3166 du marché dans lequel la classification a été soumise.                                                                                                                                                              |
-| osVersion       | chaîne  | La version du système d’exploitation sur lequel la classification a été soumise. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                               |
-| deviceType      | chaîne  | Le type d’appareil sur lequel la classification a été soumise. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                           |
-| isRevised       | Booléen | La valeur **true** indique que l’évaluation a été révisée; sinon, la valeur **false** est affichée.                                                                                                                                                       |
-| oneStar         | nombre  | Le nombre de classifications à une étoile.                                                                                                                                                                                                      |
-| twoStars        | nombre  | Le nombre de classifications à deuxétoiles.                                                                                                                                                                                                      |
-| threeStars      | nombre  | Le nombre de classifications à troisétoiles.                                                                                                                                                                                                    |
-| fourStars       | nombre  | Le nombre de classifications à quatreétoiles.                                                                                                                                                                                                     |
-| fiveStars       | nombre  | Le nombre de classifications à cinqétoiles.            |
+| applicationId   | chaîne  | L’ID WindowsStore de l’application pour laquelle vous récupérez les données de classification.         |
+| applicationName | chaîne  | Nom d’affichage de l’application.    |
+| market          | chaîne  | Le code pays ISO3166 du marché dans lequel la classification a été soumise.        |
+| osVersion       | chaîne  | La version du système d’exploitation sur lequel la classification a été soumise. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.            |
+| deviceType      | chaîne  | Le type d’appareil sur lequel la classification a été soumise. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.            |
+| isRevised       | Booléen | La valeur **true** indique que l’évaluation a été révisée; sinon, la valeur **false** est affichée.   |
+| oneStar         | nombre  | Le nombre de classifications à une étoile.        |
+| twoStars        | nombre  | Le nombre de classifications à deuxétoiles.    |
+| threeStars      | nombre  | Le nombre de classifications à troisétoiles.   |
+| fourStars       | nombre  | Le nombre de classifications à quatreétoiles.    |
+| fiveStars       | nombre  | Le nombre de classifications à cinqétoiles.    |
 
 
 ### <a name="response-example"></a>Exemple de réponse

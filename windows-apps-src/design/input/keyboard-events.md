@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 36026eb812c4496f95f6708fd30dc1e1fcb35ca6
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: 78448081b81e7e28c4b97fcfdd7aa71ae32aeb0c
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895426"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4682153"
 ---
 # <a name="keyboard-events"></a>Événements de clavier
 
@@ -329,7 +329,7 @@ L’une des limitations générales de cette technique est le fait que l’API *
 
 Vous pouvez remplacer les événements de touche pour certains contrôles spécifiques (tels que [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView)) pour garantir une navigation cohérente pour différents périphériques de saisie, notamment le clavier et le boîtier de commande.
 
-Dans l’exemple suivant, nous sous-classons le contrôle et remplaçons le comportement KeyDown pour cibler le contenu GridView lorsque l’utilisateur appuie sur une touche fléchée.
+Dans l’exemple suivant, nous sous-classons le contrôle et remplaçons le comportement KeyDown pour déplacer le focus vers le contrôle GridView du contenu lorsqu’une touche de direction est enfoncée.
 
 ```csharp
 public class CustomGridView : GridView

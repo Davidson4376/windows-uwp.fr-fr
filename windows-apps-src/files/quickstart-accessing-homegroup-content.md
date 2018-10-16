@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 09dcf1ace7c5d00509e54cd6fa936a2aa5ef7820
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 79873d014c5ee735a509328d4a123f839831325b
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653878"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4682521"
 ---
 # <a name="accessing-homegroup-content"></a>Accès au contenu du Groupement résidentiel
 
@@ -197,7 +197,7 @@ Suivez les étapes suivantes pour lire en continu le contenu vidéo du Groupemen
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **Ouvrir la sélection de fichier de l’utilisateur pour un accès en lecture, définir le flux de fichiers comme source pour le** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), puis lire le fichier.
+3.  **Ouvrir la sélection de fichier de l’utilisateur pour un accès en lecture et définissez le flux de fichier en tant que source pour la** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), puis lire le fichier.
     ```cs
     if (file != null)
     {
