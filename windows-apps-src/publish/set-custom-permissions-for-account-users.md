@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, rôles d’utilisateur, autorisation d’utilisateur, rôles personnalisés, accès utilisateur, personnaliser les autorisations, rôles standard
 ms.localizationpriority: medium
 ms.openlocfilehash: a4100248857af655f388ad318bb3ae5176aaf046
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566787"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618432"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Définir des rôles ou des autorisations personnalisés pour les utilisateurs de compte
 
@@ -48,7 +48,7 @@ Par défaut, un ensemble de rôles standard vous est présenté pour vous permet
 | Rôle                 | Description              |
 |----------------------|--------------------------|
 | Manager              | Dispose d’un accès complet au compte, mais ne peut pas modifier les paramètres fiscaux et de revenus. Ceci inclut la gestion des utilisateurs dans le Centre de développement. Cependant, notez que la possibilité de créer et supprimer des utilisateurs dans le client AzureAD dépend des autorisations du compte dans Azure AD. Ainsi, si le rôle Manager est attribué à un utilisateur, mais que celui-ci ne dispose pas des autorisations d’administrateur global dans le service AzureAD de l’organisation, il ne pourra pas créer d’utilisateurs ni supprimer des utilisateurs de l’annuaire (toutefois, il pourra modifier le rôle d’un utilisateur dans le Centre de développement). <p> Notez que si le compte du Centre de développement est associé à plusieurs client AzureAD, un manager ne peut pas voir tous les détails d'un utilisateur (y compris ses prénom, nom, e-mail de récupération de mot de passe, et s’il est un administrateur global Azure AD), sauf s'il est connecté au même client que cet utilisateur avec un compte disposant des autorisations d’administrateur global pour ce client. Toutefois, il peut ajouter et supprimer des utilisateurs dans n’importe quel client qui est associé au compte du Centre de développement. |
-| Développeur            | Peut charger des packages, soumettre des applications et extensions et afficher le [Rapport d’utilisation](usage-report.md) pour obtenir des informations de télémétrie détaillées. Peut accéder à des fonctionnalités de [Cross-Device expériences](https://go.microsoft.com/fwlink/?linkid=874042) . Il ne peut afficher ni les informations financières ni les paramètres de compte.   |
+| Développeur            | Peut charger des packages, soumettre des applications et extensions et afficher le [Rapport d’utilisation](usage-report.md) pour obtenir des informations de télémétrie détaillées. La fonctionnalité [Cross-Device expériences](https://go.microsoft.com/fwlink/?linkid=874042) sont accessibles. Il ne peut afficher ni les informations financières ni les paramètres de compte.   |
 | Contributeur professionnel | Peut afficher des rapports [d’intégrité](health-report.md) et [d’utilisation](usage-report.md). Impossible de créer ou soumettre des produits, de modifier des paramètres de compte ou d’afficher des informations financières.   |
 | Contributeur financier  | Peut afficher des [rapports sur les revenus](payout-summary.md), des informations financières et des rapports d’acquisition. Il ne peut apporter aucune modification aux applications, extensions et paramètres de compte.    |
 | Responsable marketing             | Peut [répondre aux avis de clients](respond-to-customer-reviews.md) et afficher des [rapports analytiques](analytics.md) non financiers. Il ne peut apporter aucune modification aux applications, extensions et paramètres de compte.      |

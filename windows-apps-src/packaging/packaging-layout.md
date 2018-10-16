@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, création de packages, disposition de package, package d'actifs
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f8cbb3989b58b726336b4bd757902bd9ea3f8c0
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574331"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623557"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>Création de package à l'aide de la disposition de mise en package  
 
@@ -55,7 +55,7 @@ Voici un exemple de disposition de mise en package simple:
 Décomposons cet exemple pour comprendre son fonctionnement
 
 ### <a name="packagefamily"></a>PackageFamily
-Cette disposition de mise en package créera un fichier d’offre groupée d’application plate unique avec une x64 package d’architecture et un package d’actifs «Media». 
+Cette disposition de mise en package créera un fichier d’un ensemble d’applications d’application plat unique avec une x64 package d’architecture et un package d’actifs «Media». 
 
 L'élément **PackageFamily** est utilisé pour définir un ensemble d'applications. Vous devez utiliser l'attribut **ManifestPath** pour fournir un élément **AppxManifest** à l'ensemble. L'élément **AppxManifest** doit correspondre à l'élément **AppxManifest** pour le package d'architecture de l'ensemble. L'attribut **ID** doit également être fourni. Cet élément est utilisé avec MakeAppx.exe lors de la création de package. Ainsi, vous pouvez créer uniquement ce package si vous le souhaitez, il s'agira alors du nom de fichier pour le package obtenu. L'attribut **FlatBundle** est utilisé pour décrire le type d'ensemble que vous souhaitez créer, l'attribut **true** pour un ensemble plat (vous trouverez plus d'informations ici) et l'attribut **false** pour un ensemble classique. L'attribut **ResourceManager** est utilisé pour spécifier si les packages de ressources dans cet ensemble utiliseront MRT afin d'accéder aux fichiers. La valeur par défaut est **true**, mais à compter de la version 1803 de Windows10, il n'est pas encore prêt. L'attribut doit donc être défini sur **false**.
 
@@ -147,7 +147,7 @@ Les packages de ressources peuvent être spécifiés dans l'élément **Resource
 
 Les packages facultatifs ont leurs propres noms de famille de package distincts et doivent être définis avec des éléments **PackageFamily** tout e spécifiant l'attribut **Facultatif** sur **true**. L'attribut **RelatedSet** est utilisé pour spécifié si le package facultatif se trouve dans l'ensemble connexe (il doit l'être par défaut), peut importe si le package facultatif doit être mis à jour avec le package principal.
 
-L’élément **PrebuiltPackage** est utilisé pour ajouter des packages qui ne sont pas définis dans la disposition de création de packages à inclure ou à référencer dans les fichiers d’un ensemble d’applications application à générer. Dans ce cas, un autre package DLC facultatif est en cours inclus ici afin que le fichier d’un ensemble d’applications principal application puisse le référencer et inclure dans l’ensemble connexe.
+L’élément **PrebuiltPackage** est utilisé pour ajouter des packages qui ne sont pas définis dans la disposition de création de packages à inclure ou à référencer dans les fichiers d’un ensemble d’applications application à générer. Dans ce cas, un autre package DLC facultatif est en cours inclus ici afin que le fichier d’un ensemble d’applications application principal puisse le référencer et inclure dans l’ensemble connexe.
 
 
 ## <a name="build-app-packages-with-a-packaging-layout-and-makeappxexe"></a>Générer des packages d'application avec une disposition de mise en package et l'outil MakeAppx.exe

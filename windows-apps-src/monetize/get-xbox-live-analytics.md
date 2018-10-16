@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir les données d'analyse Xbox Live.
 title: Obtenir des données d’analytique Xbox Live
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, services de MicrosoftStore, API d'analyse du MicrosoftStore, analyse Xbox Live
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ba81f88b583a2d13785b3efe8d7008bac759a2d
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 68bc3389276acc910272d57e9cc859a7e8ffd6c7
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976567"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615835"
 ---
 # <a name="get-xbox-live-analytics-data"></a>Obtenir des données d’analytique Xbox Live
 

@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: bde2e58934e24df7db2cb77fb793106aa65e3834
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564014"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619892"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Package d’une application de bureau à l’aide de Desktop App Converter
 
@@ -209,7 +209,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 
 #### <a name="package-an-app-sign-the-app-and-run-validation-checks-on-the-package"></a>Créer un package d'application, signer l’application puis exécuter les vérifications de validation sur le package
 
-Cet exemple est similaire au premier ceci près qu’il montre comment signer votre application pour le test local et puis valider votre application par rapport à l’application empaquetée et les exigences de Microsoft Store.
+Cet exemple est similaire au premier près qu’il montre comment vous pouvez signer votre application pour le test local, puis valider votre application par rapport à l’application empaquetée et les exigences de Microsoft Store.
 
 ```cmd
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
@@ -334,7 +334,7 @@ Suivez ces étapes pour installer le certificat généré, puis exécutez votre 
 
 ## <a name="modify-the-packaged-app"></a>Modifier l’application empaquetée
 
-Vous allez probablement apporter des modifications à votre application empaquetée pour résoudre des bogues, ajouter les ressources visuelles ou améliorer votre application avec des expériences modernes telles que les vignettes dynamiques.
+Vous allez probablement apporter des modifications à votre application empaquetée pour résoudre les bogues, ajouter les ressources visuelles ou améliorer votre application avec des expériences modernes telles que les vignettes dynamiques.
 
 Une fois vos modifications accomplies, il n’est pas nécessaire d’effectuer une nouvelle conversion. Dans la plupart des cas, vous pouvez simplement repackager votre application à l’aide de l’outil MakeAppx et du fichier appxmanifest.xml DAC génère pour votre application. Voir [Générer un package d’application Windows](desktop-to-uwp-manual-conversion.md#make-appx).
 

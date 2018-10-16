@@ -7,15 +7,15 @@ ms.date: 11/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, le service d’application
+keywords: Windows 10, uwp, service d’application
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
 ms.openlocfilehash: d259df2a65046acb1c34dd2958ab4513bc31f43b
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4572320"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623214"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte
 
@@ -42,13 +42,13 @@ Transformer un service d’application de modèle en dehors du processus en mod�
 >   </Applications>
 > ```
 
-Supprimer le `EntryPoint` attribut à partir de la `<Extension>` élément, car il est désormais [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) est le point d’entrée qui sera utilisé lorsque le service d’application est appelé.
+Supprimer le `EntryPoint` attribut à partir de la `<Extension>` élément dans la mesure où [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) est maintenant le point d’entrée qui sera utilisé lorsque le service d’application est appelé.
 
 La seconde modification consiste à déplacer la logique de service de son projet de tâche distinct en arrière-plan dans les méthodes qui peuvent être appelées à partir de **OnBackgroundActivated()**.
 
 À présent, votre application peut directement exécuter votre service d’application. Par exemple, dans App.xaml.cs:
 
-[!NOTE] Le code ci-dessous est différent de celui fourni par exemple 1 (out-of-process service). Le code ci-dessous est fourni uniquement à des fins d’illustration et ne doit pas être utilisé en tant que partie de l’exemple 2 (service dans le processus).  Pour poursuivre la transition de l’article à partir de l’exemple 1 (service out-of-process) dans l’exemple 2 (dans le processus de service) continuent à utiliser le code fourni par exemple 1 au lieu du exemples de code ci-dessous.
+[!NOTE] Le code ci-dessous est différent de celui fourni par exemple 1 (out-of-process service). Le code ci-dessous est fourni uniquement à des fins d’illustration et ne doit pas être utilisé dans le cadre de l’exemple 2 (service dans le processus).  Pour poursuivre la transition de l’article à partir de l’exemple 1 (service out-of-process) dans l’exemple 2 (dans le processus service) continuer à utiliser le code fourni par exemple 1 au lieu du exemples de code ci-dessous.
 
 ``` cs
 using Windows.ApplicationModel.AppService;

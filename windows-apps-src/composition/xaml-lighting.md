@@ -15,11 +15,11 @@ dev_langs:
 - cppcx
 - cppwinrt
 ms.openlocfilehash: 672efaa0899fa8b63b5ec0fda09a20f4f0ab7d67
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4565035"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623475"
 ---
 # <a name="xaml-lighting"></a>Éclairage XAML
 
@@ -38,7 +38,7 @@ Les objets [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) permettent 
 
 [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) est une classe de base permettant de créer des éclairages personnalisés.
 
-Cet exemple montre la définition de classe XamlLight personnalisée qui applique un projecteur multicolore ciblées UIElements et pinceaux.
+Cet exemple montre la définition de classe XamlLight personnalisée qui applique un projecteur multicolore à ciblées UIElements et pinceaux.
 
 ```csharp
 public sealed class OrangeSpotLight : XamlLight

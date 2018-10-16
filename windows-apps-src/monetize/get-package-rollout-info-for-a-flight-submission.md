@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Appliquez cette méthode dans l’API de soumission au MicrosoftStore pour récupérer les informations sur le lancement du package pour une soumission de version d’évaluation du package.
 title: Obtenir des informations sur le déploiement pour une soumission d’évaluation de package
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows10, uwp, API de soumission au MicrosoftStore, lancement du package, soumission d’évaluation de package
 ms.assetid: 397f1b99-2be7-4f65-bcf1-9433a3d496ad
 ms.localizationpriority: medium
-ms.openlocfilehash: 1708a9aad92b91170e726b49402b9321fddf3f89
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 9dd9a318ffd80d32f6370709c4ca3463ae6d8cc7
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817054"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620801"
 ---
 # <a name="get-rollout-info-for-a-flight-submission"></a>Obtenir des informations sur le déploiement pour une soumission d’évaluation de package
 
@@ -51,7 +51,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | chaîne | Obligatoire. ID Windows Store de l’application qui contient la soumission de version d’évaluation du package avec les informations de lancement du package que vous souhaitez obtenir. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| flightId | chaîne | Obligatoire. ID de la version d’évaluation du package contenant la soumission avec les informations de lancement du package que vous souhaitez obtenir. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). Concernant une version d’évaluation qui a été créée dans le tableau de bord du centre de développement, cet ID est également disponible dans l’URL de la page de la version d’évaluation dans le tableau de bord.    |
+| flightId | chaîne | Obligatoire. ID de la version d’évaluation du package contenant la soumission avec les informations de lancement du package que vous souhaitez obtenir. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). Concernant une version d’évaluation créée dans le tableau de bord du Centre de développement, cet ID est également disponible dans l’URL de la page de la version d’évaluation, dans le tableau de bord.    |
 | submissionId | chaîne | Obligatoire. ID de la soumission avec les informations de lancement du package à obtenir. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission de version d’évaluation de package](create-a-flight-submission.md). Concernant une soumission qui a été créée dans le tableau de bord du centre de développement, cet ID est également disponible dans l’URL de la page de la soumission dans le tableau de bord.   |
 
 
@@ -104,6 +104,6 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 
 ## <a name="related-topics"></a>Rubriquesassociées
 
-* [Déploiement de package progressif](../publish/gradual-package-rollout.md)
-* [Gérer les soumissions de versions d’évaluation de package à l’aide de l’API de soumission au MicrosoftStore](manage-flight-submissions.md)
+* [Lancement progressif de packages](../publish/gradual-package-rollout.md)
+* [Gérer les soumissions de versions d’évaluation de package à l’aide de l’API de soumission au Microsoft Store](manage-flight-submissions.md)
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)

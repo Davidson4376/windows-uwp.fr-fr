@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, intégrité, incidents, blocages, intégrité de l’application, données d’intégrité, trace de pile, fichier cab, échec, échecs, pdb, symboles
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f5bf63eae4b1504642e764265a7936bcd67c645
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4565164"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616283"
 ---
 # <a name="health-report"></a>Rapport d’intégrité
 
@@ -46,10 +46,10 @@ Les informations figurant dans tous les graphiques répertoriés ci-après corre
 
 Le graphique **Occurrences des échecs** affiche le nombre d’incidents et d’événements quotidiens recensés par les clients sur votre application au cours de la période sélectionnée. Les différents événements survenus dans votre application font l’objet d’un suivi par type: incidents, absences de réponse, exceptions JavaScript et défaillances mémoire.
 
-Lorsque le **30D** période est activée, vous pouvez voir les marques de cercle. Ces représentent une augmentation importante ou la diminution une valeur donnée dont nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou une baisse par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
+Lorsque le **30D** période est activée, vous pouvez voir marqueurs de cercle. Ces représentent une augmentation importante ou la diminution une valeur donnée que nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou une baisse par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
 
 > [!TIP]
-> Vous pouvez afficher des conseils supplémentaires liées à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).
+> Vous pouvez afficher des informations plus liées à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).
 
 ## <a name="failure-hits-by-market"></a>Occurrences des échecs par marché
 
@@ -74,14 +74,14 @@ Le graphique **Échecs** présente le nombre total d’incidents et d’événem
 Pour afficher le rapport **Détails de l’échec** pour un échec particulier, sélectionnez le nom de l’échec. Si vous avez inclus des fichiers de symboles, le rapport **Détails de l’échec** inclut le nombre d’occurrences de l’échec au cours du dernier mois, ainsi qu’un journal des échecs répertoriant les détails relatifs aux occurrences (date, version du package, type d’appareil, modèle d’appareil, version de système d’exploitation) et un lien vers la trace de la pile et/ou le fichierCAB, s’il est disponible.
 
 > [!TIP]
-> Les fichiersCAB sont uniquement disponibles lorsque l’échec s’est produit sur un ordinateur utilisant la build WindowsInsider. Par conséquent, certains échecs n’incluront pas l’option de téléchargement de fichiersCAB. Pour afficher uniquement les échecs qui ont des fichiers CAB, sélectionnez **des défaillances de téléchargements** dans le filtre de section. Vous pouvez également cliquer sur l’en-tête de **liaisons** dans le **journal des échecs** pour trier les résultats afin que les échecs qui incluent des fichiers CAB s’affichent en haut de la liste.
+> Les fichiersCAB sont uniquement disponibles lorsque l’échec s’est produit sur un ordinateur utilisant la build WindowsInsider. Par conséquent, certains échecs n’incluront pas l’option de téléchargement de fichiersCAB. Pour afficher uniquement les échecs qui ont des fichiers CAB, sélectionnez **les échecs avec les téléchargements** dans le filtre de section. Vous pouvez également cliquer sur l’en-tête de **liaisons** dans le **journal des échecs** pour trier les résultats afin que les échecs qui incluent des fichiers CAB s’affichent en haut de la liste.
 
-Sur la page de **Détails de l’échec** , vous verrez également le graphique de la **prévalence de pile** , qui indique que la partie supérieure empile qui ont contribué à l’échec, triés par pourcentage et le graphique de **configuration de l’appareil (30D)** , qui fournit des détails sur le configuration des appareils qui la défaillance. 
+Sur la page de **Détails de l’échec** , vous verrez également le graphique de la **prévalence de pile** , qui indique la partie supérieure empile qui ont contribué à l’échec, triés par pourcentage et le graphique de **configuration de l’appareil (30D)** , qui fournit des détails sur le configuration des appareils qui la défaillance. 
 
 
-## <a name="crash-free-sessions-and-devices-30d"></a>Sessions sur incident clair et des appareils (30D)
+## <a name="crash-free-sessions-and-devices-30d"></a>Sessions exempt de panne et les appareils (30D)
 
-Le graphique de **périphériques et les sessions clair sur incident** indique le pourcentage d’appareils ou les sessions utilisateur qui n’a pas rencontré un incident au cours des 30 derniers jours. Ces informations vous permet de comprendre comment à grande échelle votre tombe en panne qui affectent vos utilisateurs. Par exemple, une application peut contenir 10 000 incidents dans un jour. Si 90 % de vos appareils sont affectés, puis vous probablement qui classer comme critiques et agir pour y remédier immédiatement. Toutefois, si représente uniquement les 5 % des appareils à l’aide de votre application, la priorité peut être inférieure.
+Le graphique de **périphériques et les sessions clair sur incident** indique le pourcentage d’appareils ou les sessions utilisateur qui n’a pas rencontré un incident au cours des 30 derniers jours. Ces informations vous permet de comprendre comment à grande échelle votre tombe en panne qui affectent vos utilisateurs. Par exemple, une application peut contenir 10 000 incidents dans un jour. Si 90 % de vos appareils sont affectés, puis vous probablement qui classer comme critiques et agir pour résoudre ce problème immédiatement. Toutefois, si représente uniquement les 5 % des appareils à l’aide de votre application, la priorité peut être plus faible.
 
 Ce graphique comporte deux onglets:
 - **Appareils clair sur incident**: affiche le pourcentage de périphériques uniques qui n’a pas rencontré un échec sur chaque jour (au cours des 30 derniers jours).

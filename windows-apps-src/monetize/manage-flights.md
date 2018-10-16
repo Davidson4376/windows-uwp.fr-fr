@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 37F2C162-4910-4336-BEED-8536C88DCA65
 description: Utilisez ces méthodes dans l’API de soumission au MicrosoftStore pour gérer les versions d’évaluation de package pour les apps inscrites dans votre compte du Centre de développement Windows.
 title: Gérer les versions d’évaluation de package
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, versions d'évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b5e3c100ece6ec79abad0efbf4797b0102959cb
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 6a761edf50888fb7f3130886a2c7e6e65b7c0a1d
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1661869"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621136"
 ---
 # <a name="manage-package-flights"></a>Gérer les versions d’évaluation de package
 
@@ -62,4 +62,4 @@ Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](cr
 ## <a name="related-topics"></a>Rubriquesassociées
 
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
-* [Gérer les soumissions de versions d’évaluation du package](manage-flight-submissions.md)
+* [Gérer les soumissions de versions d’évaluation de package](manage-flight-submissions.md)

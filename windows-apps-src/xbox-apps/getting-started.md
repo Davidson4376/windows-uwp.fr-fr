@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: da260b4f9f5f50d97d39af883217dfbae91a566e
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564956"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619619"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Prise en main du développement d’applications UWP sur XboxOne
 
@@ -23,7 +23,7 @@ Pour configurer correctement votre PC et votre console Xbox One pour le dévelop
 ## <a name="before-you-start"></a>Avant de commencer
 
 Avant de commencer, vous devez effectuer les opérations suivantes:
--   Configurer un PC avec la dernière version de Windows 10.
+-   Configuration d’un ordinateur avec la dernière version de Windows 10.
 <!-- -  Install Microsoft Visual Studio 2015 Update 3 or Microsoft Visual Studio 2017.
 
     > [!NOTE]
@@ -37,7 +37,7 @@ Avant de commencer, vous devez effectuer les opérations suivantes:
 
     Si vous installez Visual Studio 2015 Update 3, assurez-vous que vous choisissez d’installation **personnalisée** et que vous activez la case à cocher **Outils de développement d’applications Windows universelles** ; il n’est pas partie de l’installation par défaut. Si vous êtes développeur en C++, assurez-vous de choisir **Installation personnalisée** et de sélectionner **C++**.
 
-    Si vous installez VisualStudio2017, veillez à choisir la charge de travail **Développement de plateforme Windows universelle**. Si vous êtes un développeur en C++, dans le volet de **synthèse** sur la droite, en cours de **développement de plateforme Windows universelle**, assurez-vous que vous sélectionnez la case à cocher **d’Outils de plateforme Windows universelle C++** . Il n’est pas partie de l’installation par défaut.
+    Si vous installez VisualStudio2017, veillez à choisir la charge de travail **Développement de plateforme Windows universelle**. Si vous êtes un développeur en C++, dans le volet de **synthèse** sur la droite, en cours de **développement de plateforme Windows universelle**, assurez-vous que vous sélectionnez la case à cocher **Outils de plateforme Windows universelle C++** . Il n’est pas partie de l’installation par défaut.
 
     Pour plus d’informations, consultez [configurer votre plateforme UWP sur l’environnement de développement Xbox](development-environment-setup.md).
 
@@ -54,7 +54,7 @@ Maintenant que votre PC de développement est prêt, vous pouvez regarder cette 
 
 1.  Activez le mode développeur sur votre console XboxOne. Télécharger l’application et obtenir le code d’activation, puis entrez-le dans la page de [consoles Xbox One de la gérer](https://partner.microsoft.com/xboxactivate) dans votre compte du centre de développement. Pour plus d’informations, consultez [Activation du mode Développeur XboxOne](devkit-activation.md). 
 
-2.  Ouvrez l’application **Dev Mode Activation** , puis sélectionnez **basculer et redémarrer**. Félicitations, vous disposez maintenant d’une console XboxOne en mode développeur!
+2.  Ouvrez l’application **Dev Mode Activation** et sélectionnez **basculer et redémarrer**. Félicitations, vous disposez maintenant d’une console XboxOne en mode développeur!
   
   > [!NOTE]
   > Vos applications et jeux commerciaux ne s’exécuteront pas en mode développeur, mais les applications ou jeux que vous créerez le feront sans problème. Pour exécuter vos applications et jeux favoris, rebasculez en mode commercial.
@@ -66,13 +66,13 @@ Maintenant que votre PC de développement est prêt, vous pouvez regarder cette 
 
 Pour plus d’informations, consultez [configurer votre plateforme UWP sur l’environnement de développement Xbox](development-environment-setup.md).
 
-1.  **Pour c#**: créer un nouveau projet Windows universel et dans l' **Explorateur de solutions**, cliquez sur le projet, puis sélectionnez **Propriétés**. Sélectionnez l’onglet **débogage** , remplacez **l’appareil cible** à **l’Ordinateur distant**, tapez l’adresse IP ou le nom d’hôte de votre console Xbox One dans le champ de **l’ordinateur distant** et sélectionnez **universel (protocole non chiffré)** dans le ** Mode d’authentification** liste déroulante.   
+1.  **Pour c#**: créer un nouveau projet Windows universel et dans l' **Explorateur de solutions**, cliquez sur le projet et sélectionnez **Propriétés**. Sélectionnez l’onglet **Déboguer** , remplacez **l’appareil cible** à **l’Ordinateur distant**, tapez l’adresse IP ou le nom d’hôte de votre console Xbox One dans le champ de **l’ordinateur distant** et sélectionnez **universel (protocole non chiffré)** dans le ** Mode d’authentification** liste déroulante.   
 
     Pour trouver l’adresseIP de votre console XboxOne, démarrez l’outil Accueil du développeur sur votre console (grande vignette figurant sur le côté droit de l’écran d’accueil) et examinez le coin supérieur gauche de l’écran. Pour plus d’informations sur l’outil Accueil du développeur, voir [Présentation des outils Xbox One](introduction-to-xbox-tools.md).  
 
 2.  **Pour C++ et HTML/Javascript projets**: vous suivez un chemin semblable aux projets c#, mais dans les propriétés du projet accédez à l’onglet **débogage** , sélectionnez **l’Ordinateur distant** dans le débogueur pour ouvrir la liste déroulante, tapez l’adresse IP ou le nom d’hôte de la console dans le champ du **Nom de l’ordinateur** et sélectionnez **universel (protocole non chiffré)** dans le champ de **Type d’authentification** .
 
-3. Sélectionnez **x64** dans la liste déroulante à gauche du bouton vert de lecture dans la barre de menus supérieure.
+3. Sélectionnez **x64** dans la liste déroulante à gauche du bouton vert de lecture dans la barre de menu.
    
 4.  Lorsque vous appuyez sur F5, votre application est générée et commence à se déployer sur votre console Xbox One.
   

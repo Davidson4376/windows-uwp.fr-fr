@@ -1,25 +1,25 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
 description: En savoir plus sur les tailles des bannières publicitaires prises en charge.
 title: Tailles des bannières prises en charge
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, annonces, publicités, tailles, bannière
 ms.localizationpriority: medium
-ms.openlocfilehash: baeed2fd1bce779a2d7bb08d808e868eb3ababed
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: a438f6df66b064004ad9664ce46280475dad83c6
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "927416"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616061"
 ---
 # <a name="supported-banner-ad-sizes"></a>Tailles des bannières prises en charge
 
-Les tailles d’ad bannière suivantes sont prises en charge pour les applications de la plateforme de Windows universel (UWP). Lorsque vous instanciez votre objet **AdControl** dans votre application, assurez-vous que vous définissez les propriétés height et width pour correspondre à l’un de ces formats pris en charge.
+Les tailles des bannières publicitaires suivantes sont prises en charge pour les applications de plateforme Windows universelle (UWP). Lorsque vous instanciez l’objet **AdControl** dans votre application, assurez-vous que vous définissez les propriétés de hauteur et la largeur à correspondre à l’une de ces tailles prises en charge.
 
 * 160x600
 * 300x50
@@ -30,9 +30,9 @@ Les tailles d’ad bannière suivantes sont prises en charge pour les applicatio
 * 728x90
 
 > [!NOTE]
-> Pour optimiser les performances, nous recommandons d’utiliser les tailles suivantes sur les appareils Windows Mobile de 10: 300 x 50 et 320 x 50 640 x 100.
+> Pour une expérience optimale, nous vous recommandons d’utiliser les tailles suivantes sur les appareils Windows 10 Mobile: 300 x 50, 320 x 50 et 640 x 100.
 
-Le tableau suivant fournit des exemples qui illustrent la taille de chaque publicité bannière.
+Le tableau suivant fournit des exemples qui illustrent chaque taille de publicité de bannière.
 
 <table>
 <colgroup>

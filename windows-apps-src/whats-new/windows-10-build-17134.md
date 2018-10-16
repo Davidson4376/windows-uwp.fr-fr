@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2f12190c405ad611cf5b884b82c4a430aa5264f
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4572062"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623442"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Nouveautés pour les développeurs dans Windows10, build17134
 
@@ -38,7 +38,7 @@ Tirer pour actualiser | Le contrôle [Tirer pour actualiser](../design/controls-
 Affichage de navigation | Le contrôle d’[affichage de la navigation](../design/controls-and-patterns/navigationview.md) fournit un menu de navigation réductible pour la navigation dans les zones supérieures de votre application. Ce contrôle implémente le modèle de volet de navigation, ou menu de type Hamburger, et adapte automatiquement la mode d’affichage du volet aux différentes tailles de fenêtres.
 Effet Révéler focus | Le nouvel effet [Révéler focus](../design/style/reveal-focus.md) fournit un effet d'éclairage pour les expériences telles que XboxOne et les écrans de télévision. Cet effet anime la bordure des éléments susceptibles d’être activés, comme les boutons, lorsque l’utilisateur déplace le focus du clavier ou du boîtier de commande sur ces derniers.
 Son | XAML prend désormais en charge le son3D avec la propriété **SpatialAudioMode**. Voir [Son](../design/style/sound.md) pour en savoir plus sur sa configuration.
-Vignettes | [Les notifications par vignette pouvant être suivies](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md) sont désormais prises en charge dans les applications UWP en JavaScript.<br><br>Les notifications par vignette et badge secondaires sont [désormais pris en charge à partir d’applications pont du bureau](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications).
+Vignettes | [Les notifications par vignette pouvant être suivies](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md) sont désormais prises en charge dans les applications UWP en JavaScript.<br><br>Les notifications de vignette et par badge secondaires sont [désormais pris en charge à partir d’applications pont du bureau](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications).
 Arborescence | Le contrôle [TreeView](../design/controls-and-patterns/tree-view.md) active une liste hiérarchique comportant des nœuds de développement et de réduction qui contiennent des éléments imbriqués. Il peut être utilisé pour illustrer une structure de dossiers ou des relations imbriquées dans votre interface utilisateur.
 Style d’écriture | Nous avons mis à niveau et développé notre article sur le style et le ton, le transformant en [Guide de style d’écriture](../design/style/writing-style.md). Ces nouvelles informations fournissent des principes pour créer du texte efficace dans votre application et recommande les meilleures pratiques pour écrire des contrôles, tels que des messages d’erreur ou des boîtes de dialogue.
 

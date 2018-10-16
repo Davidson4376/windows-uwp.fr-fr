@@ -11,11 +11,11 @@ keywords: windows 10, uwp, groupes de clients, segment, groupe de versions d’�
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
 ms.localizationpriority: medium
 ms.openlocfilehash: 88101d9f8cc7ca40d37f88202667f36ecf5d8a3f
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571960"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623135"
 ---
 # <a name="create-customer-groups"></a>Créer des groupes de clients
 

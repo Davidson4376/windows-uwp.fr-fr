@@ -11,15 +11,15 @@ keywords: windows10, uwp
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e6cd2b305a9d52a2239be46cc7f77650cdd6531
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567515"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623181"
 ---
 # <a name="behind-the-scenes-of-your-packaged-desktop-application"></a>Fonctionnement détaillé de votre application de bureau empaquetée
 
-Cet article présente de manière plus approfondie interne sur ce qui se produit à des fichiers et des entrées de Registre lorsque vous créez un package d’application Windows pour votre application de bureau.
+Cet article présente de manière plus approfondie interne sur ce qui se passe aux fichiers et aux entrées de Registre lorsque vous créez un package d’application Windows pour votre application de bureau.
 
 L’objectif principal d’un package modern est de séparer l’état de l’application à partir de l’état du système autant que possible tout en conservant la compatibilité avec d’autres applications. Pour ce faire, le pont place l’application dans un package de plateforme Windows universelle (UWP), puis détecte et redirige certaines modifications qu’il apporte au système de fichiers et au Registre lors de l’exécution.
 
@@ -75,7 +75,7 @@ FOLDERID_System\spool | AppVSystem32Spool | x86, amd64
 
 Les packages d’application contiennent un fichier registry.dat, qui est l’équivalent logique de *HKLM\Software* dans le vrai Registre. À l’exécution, ce Registre virtuel fusionne le contenu de cette ruche dans la ruche du système natif afin de fournir un affichage unique des deux. Par exemple, si registry.dat contient une seule clé «Foo», la lecture de *HKLM\Software* à l’exécution semble également contenir «Foo» (en plus de toutes les clés système natives).
 
-Seules les clés sous *HKLM\Software* font partie du package. Les touches sous *HKCU* ou d’autres parties du Registre n’en font pas partie. Les écritures dans les clés ou les valeurs du package ne sont pas autorisées. Écrit dans les clés ou les valeurs pas partie du package sont autorisés en tant que l’utilisateur est autorisé.
+Seules les clés sous *HKLM\Software* font partie du package. Les touches sous *HKCU* ou d’autres parties du Registre n’en font pas partie. Les écritures dans les clés ou les valeurs du package ne sont pas autorisées. Écritures dans les clés ou les valeurs pas partie du package sont autorisées tant que l’utilisateur est autorisé.
 
 Toutes les écritures sous HKCU sont copiées à l’écriture dans un emplacement privé par utilisateur, par application. Traditionnellement, les programmes de désinstallation ne parviennent pas à nettoyer *HKEY_CURRENT_USER* car les données du Registre des utilisateurs déconnectées sont déchargées et inaccessibles.
 

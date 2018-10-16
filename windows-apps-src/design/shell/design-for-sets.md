@@ -12,11 +12,11 @@ keywords: Windows10, uwp, barre de titre
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c3e0e6ec7331e860c9153e2a2e29a51fb5848bd
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4569557"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618475"
 ---
 # <a name="designing-for-sets"></a>Conception de Jeux
 
@@ -119,7 +119,7 @@ Si vous avez placé le contenu ou des fonctionnalités dans l’interface utilis
 
 Pour être sûr que l’icône de votre application s'affiche de façon optimale dans un Jeu, vous devez fournir une autre icône sans plaque pour votre application. (L’icône d'application utilisée dans l’onglet de votre application est la même que celle qui figure dans la barre des tâches.) Le but d'une autre icône est d'obtenir un aspect correct avec toutes les couleurs de l'arrière-plan. L’autre icône sera utilisée si elle est disponible.
 
-Dans le manifeste de l’application, spécifiez une icône sans plaque sous une autre forme en plus de votre icône normale. Pour plus d’informations, voir les [logos et icônes d’application](/windows/uwp/design/style/app-icons-and-logos). L’icône à spécifier est documentée sous «ressources taille de la cible sans plaque» dans la section [en savoir plus sur les ressources d’icône d’application](/windows/uwp/design/style/app-icons-and-logos#more-about-app-icon-assets) de l’article.
+Dans le manifeste de l’application, spécifiez une icône sans plaque sous une autre forme en plus de votre icône normale. Pour plus d’informations, voir [les logos et icônes d’application](/windows/uwp/design/style/app-icons-and-logos). L’icône à spécifier est documentée sous «ressources taille de la cible sans plaque» dans la section [en savoir plus sur les ressources d’icône d’application](/windows/uwp/design/style/app-icons-and-logos#more-about-app-icon-assets) de l’article.
 
 Si vous ne spécifiez pas d'autre icône dans le manifeste de l'application, le système redonnera une plaque à l’icône de vignette avec la couleur de l’onglet et l’utilisera.
 

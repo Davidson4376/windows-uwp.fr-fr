@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: ddd8ec979cb6d5a72b48b9b8b6a60adb73c35657
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573720"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620993"
 ---
 # <a name="use-a-software-trigger"></a>Utiliser un déclencheur logiciel
 
@@ -33,7 +33,7 @@ Définissez la valeur souhaitée de [IsDisabledOnDataReceived](https://docs.micr
 > [!Important]
 > Vérifiez que votre scanneur de codes-barres prend en charge l’utilisation de déclencheurs logiciels en vérifiant d’abord la propriété [IsSoftwareTriggerSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannercapabilities.issoftwaretriggersupported#Windows_Devices_PointOfService_BarcodeScannerCapabilities_IsSoftwareTriggerSupported).
 
-L’exemple suivant montre comment lancer l’analyse à l’aide d’un déclencheur logiciel, qui interrompt l’analyse une fois qu’il analyse un code-barre:
+L’exemple suivant montre comment initialiser le balayage à l’aide d’un déclencheur logiciel, qui interrompt l’analyse une fois qu’il analyse un code-barre:
 
 ```cs
 private void SoftwareTrigger(BarcodeScanner barcodeScanner, ClaimedBarcodeScanner claimedBarcodeScanner) 

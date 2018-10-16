@@ -15,11 +15,11 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 6001f955b3ab6a60446eb84296dc3bc52ad3a99e
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566304"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622919"
 ---
 # <a name="bringing-it-together"></a>Synthèse
 
@@ -83,9 +83,9 @@ Voici 3manières d’appliquer les principes de base du mouvement Fluent dans vo
 
 ## <a name="implicit-animations"></a>Animations implicites
 
-> **Version d’évaluation**: animation implicite nécessite [dernière build de Windows 10 Insider Preview et SDK](https://insider.windows.com/for-developers/).
+> **Version d’évaluation**: animation implicite nécessite [dernière build de Windows 10 Insider Preview et Kit de développement](https://insider.windows.com/for-developers/).
 
-Animations implicites sont un moyen simple pour atteindre le mouvement Fluent par automatiquement et effectue une interpolation entre les anciennes et nouvelles valeurs lors d’une modification de paramètre.
+Animations implicites sont un moyen simple d’obtenir le mouvement Fluent par automatiquement et effectue une interpolation entre les anciennes et nouvelles valeurs lors d’une modification de paramètre.
 
 Vous pouvez animer implicitement les modifications apportées aux propriétés suivantes:
 
@@ -95,10 +95,10 @@ Vous pouvez animer implicitement les modifications apportées aux propriétés s
   - **Échelle**
   - **Translation**
 
-- [Bordure](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)ou [Panneau](/uwp/api/windows.ui.xaml.controls.panel)
+- [Bordure](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)ou [Panneau de configuration](/uwp/api/windows.ui.xaml.controls.panel)
   - **Arrière-plan**
 
-Chaque propriété qui peut avoir des modifications implicitement animées possède une propriété de _transition_ correspondant. Pour animer la propriété, vous affectez un type de transition à la propriété correspondante de la _transition_ . Ce tableau indique les propriétés de _transition_ et le type de transition à utiliser pour chacun d’eux.
+Chaque propriété qui peut avoir des modifications implicitement animées possède une propriété de _transition_ correspondante. Pour animer la propriété, vous affectez un type de transition à la propriété correspondante de la _transition_ . Ce tableau indique les propriétés de _transition_ et le type de transition à utiliser pour chacun d’eux.
 
 | Propriété animée | Propriété de transition | Type de transition implicite |
 | -- | -- | -- |

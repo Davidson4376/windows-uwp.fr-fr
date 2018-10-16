@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: Utilisez ces méthodes dans l’API de soumission au MicrosoftStore pour gérer les soumissions de versions d’évaluation de package pour les apps qui sont inscrites dans votre compte du Centre de développement Windows.
 title: Gérer les soumissions de versions d’évaluation du package
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumissions de version d'évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a9cba76b693a871d10ee1f14fd9023bd166b0de
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: df685e0886b1db59e5868717a425b95e40217bdf
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817337"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617727"
 ---
 # <a name="manage-package-flight-submissions"></a>Gérer les soumissions de versions d’évaluation du package
 
@@ -151,7 +151,7 @@ Les articles suivants fournissent des exemples de code détaillés qui montrent 
 
 ## <a name="storebroker-powershell-module"></a>module StoreBroker PowerShell
 
-Au lieu d'appeler l'API de soumission au MicrosoftStore directement, nous fournissons également un module PowerShell OpenSource qui implémente une interface de ligne de commande sur l’API. Ce module est appelé [StoreBroker](https://aka.ms/storebroker). Vous pouvez utiliser ce module pour gérer vos soumissions d'application, de version d'évaluation et d'extension à partir de la ligne de commande au lieu d'appeler l'API de soumission au MicrosoftStore directement, ou vous pouvez simplement parcourir la source pour voir davantage d'exemples d'appel de cette API. Le module StoreBroker est activement utilisé au sein de Microsoft en tant que vecteur principal de soumission de nombreuses applications internes dans le WindowsStore.
+Au lieu d'appeler l'API de soumission au MicrosoftStore directement, nous fournissons également un module PowerShell OpenSource qui implémente une interface de ligne de commande sur l’API. Ce module est appelé [StoreBroker](https://aka.ms/storebroker). Vous pouvez utiliser ce module pour gérer les soumissions de votre app, de votre version et de vos modules complémentaires à partir de la ligne de commande, en lieu et place de l'appel direct de l'API de soumission au MicrosoftStore. Sinon, vous pouvez simplement parcourir la source pour consulter des exemples supplémentaires d'appel de cette API. Le module StoreBroker est activement utilisé au sein de Microsoft en tant que vecteur principal de soumission de nombreuses applications internes dans le WindowsStore.
 
 Pour plus d’informations, consultez notre [page StoreBroker sur GitHub](https://aka.ms/storebroker).
 
@@ -426,7 +426,7 @@ Les codes suivants représentent l’état d’une soumission.
 
 <span/>
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
 * [Gérer les versions d’évaluation du package à l’aide de l’API de soumission au MicrosoftStore](manage-flights.md)

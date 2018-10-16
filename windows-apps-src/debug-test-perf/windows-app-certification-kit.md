@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: b7a72a89704aa3768cc43cdfbb75b620bae303e3
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573869"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619007"
 ---
 # <a name="windows-app-certification-kit"></a>Kit de certification des applications Windows
 
@@ -90,7 +90,7 @@ L’installation d’une nouvelle version du [Kit de certification des applicati
 
 Les seuils du test de performances du Kit de certification des applications Windows sont basés sur les performances d’un ordinateur à faible consommation d’énergie.
 
-Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent influencer les résultats du test. Pour déterminer si les performances de votre application respecte les [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944), nous vous recommandons de tester votre application sur un ordinateur de faible consommation d’énergie, par exemple, un ordinateur Intel Atom basée sur un processeur avec une résolution d’écran de 1366 x 768 (ou une version ultérieure) et une rotation dur lecteur (par opposition à un disque dur SSD).
+Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent influencer les résultats du test. Pour déterminer si les performances de votre application répond aux [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944), nous vous recommandons de tester votre application sur un ordinateur de faible consommation d’énergie, par exemple, un ordinateur Intel Atom basée sur un processeur avec une résolution d’écran de 1366 x 768 (ou une version ultérieure) et une rotation dur lecteur (par opposition à un disque dur SSD).
 
 À mesure que les ordinateurs à faible consommation d’énergie évoluent, leurs caractéristiques de performances peuvent elles aussi varier. Reportez-vous à la plus récente [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944) et tester votre application avec la version la plus récente du Kit de Certification application Windows pour vous assurer que votre application est conforme aux dernières spécifications en matière de performances.
 

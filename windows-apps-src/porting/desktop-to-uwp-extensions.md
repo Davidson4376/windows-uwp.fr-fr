@@ -12,17 +12,17 @@ keywords: windows10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ms.openlocfilehash: fadd9c2b6a35a1418a782ab0a6ef419e3f127f42
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4565569"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617266"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>Intégrer votre application de bureau empaquetée avec Windows 10
 
 Utiliser des extensions pour intégrer votre application de bureau empaquetée avec Windows 10 de manière prédéfinie.
 
-Par exemple, utilisez une extension pour créer une exception de pare-feu, rendre votre application l’application par défaut pour un type de fichier ou pointez des vignettes de démarrage vers la version empaquetée de votre application. Pour utiliser une extension, il suffit d’ajouter un peu de XML au fichier manifeste du package de votre application. Aucun code n’est nécessaire.
+Par exemple, utilisez une extension pour créer une exception de pare-feu, que votre application l’application par défaut pour un type de fichier ou pointez des vignettes de démarrage vers la version empaquetée de votre application. Pour utiliser une extension, il suffit d’ajouter un peu de XML au fichier manifeste du package de votre application. Aucun code n’est nécessaire.
 
 Cette rubrique décrit ces extensions et les tâches que vous pouvez effectuer en les utilisant.
 
@@ -307,7 +307,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |-------|-------------|
 |Catégorie |Toujours: ``windows.fileTypeAssociation``.
 |Nom |Un ID unique pour votre application. |
-|UseUrl |Indique s’il faut ouvrir les fichiers directement à partir d’une cible URL. Si vous ne définissez pas cette valeur, lors de tentatives par votre application d’ouvrir un fichier aide une URL, le système téléchargera d’abord le fichier localement. |
+|UseUrl |Indique s’il faut ouvrir les fichiers directement à partir d’une cible URL. Si vous ne définissez pas cette valeur, lors de tentatives par votre application pour ouvrir un fichier aide d’une URL, le système téléchargera d’abord le fichier localement. |
 |Parameters |Paramètres facultatifs. |
 |FileType |Les extensions de fichier appropriées. |
 
@@ -503,7 +503,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 Les applications de bureau empaquetées présentent les trois mêmes options que les applications de bureau standard.
 
- * ``Player``: Votre application est activée une fois. Tous les fichiers sélectionnés sont transmis à votre application en tant que paramètres de l’argument.
+ * ``Player``: Votre application est activée une fois. Tous les fichiers sélectionnés sont transmis à votre application en tant que paramètres d’argument.
  * ``Single``: Votre application est activée une fois pour le premier fichier sélectionné. Les autres fichiers sont ignorés.
  * ``Document``: Une nouvelle instance distincte de votre application est activée pour chaque fichier sélectionné.
 
@@ -965,7 +965,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 ### <a name="start-an-executable-file-when-users-log-into-windows"></a>Démarrer un fichier exécutable lorsque les utilisateurs se connectent à Windows
 
-Tâches de démarrage permettent à votre application lancer un exécutable automatiquement chaque fois qu’un utilisateur se connecte.
+Tâches de démarrage permettent à votre application lancer un exécutable automatiquement chaque fois qu’un utilisateur ouvre une session.
 
 > [!NOTE]
 > L’utilisateur doit démarrer votre application au moins une fois pour enregistrer cette tâche de démarrage.
@@ -1088,7 +1088,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 Si votre application est ouverte lorsque les utilisateurs installent une mise à jour à celui-ci, l’application se ferme.
 
-Si vous souhaitez que cette application à redémarrer après que la mise à jour est terminée, appelez la fonction [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) dans chaque processus que vous souhaitez redémarrer.
+Si vous souhaitez que cette application de redémarrer après que la mise à jour est terminée, appelez la fonction [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) dans chaque processus que vous souhaitez redémarrer.
 
 Chaque fenêtre active dans votre application reçoit un message [WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx) . À ce stade, votre application peut appeler la fonction [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) à nouveau pour mettre à jour de la ligne de commande si nécessaire.
 
@@ -1115,7 +1115,7 @@ Intégration avec d’autres applications, démarrer d’autres processus ou par
 
 Lorsque les utilisateurs souhaitent imprimer des données à partir d’une autre application, comme le bloc-notes, vous pouvez rendre votre application apparaissent en tant que cible d’impression dans la liste de l’application des cibles d’impression disponibles.
 
-Vous devrez modifier votre application afin qu’elle reçoive les données d’impression au format de fichier XML Paper Specification (XPS).
+Vous devrez modifier votre application afin qu’elle reçoive les données d’impression au format XML Paper Specification (XPS).
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 

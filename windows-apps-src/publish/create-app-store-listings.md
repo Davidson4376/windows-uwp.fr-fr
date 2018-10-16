@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, description, page du store, notes de publication, titre
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567889"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623377"
 ---
 # <a name="create-app-store-listings"></a>Créer des descriptions d’application dans le Store
 
@@ -42,9 +42,9 @@ Dans la section **Langues supplémentaires de description dans le Store**, vous 
 
 Lorsque vous avez terminé vos sélections, cliquez sur **Enregistrer** pour revenir à la page de vue d’ensemble de la soumission.
 
-## <a name="add-and-edit-store-listing-info"></a>Ajoutez et modifiez les informations de description dans le Store
+## <a name="add-and-edit-store-listing-info"></a>Ajoutez et modifiez les informations de description
 
-Pour modifier une description, sélectionnez le nom de la langue dans la page de présentation de soumission.
+Pour modifier une description, sélectionnez le nom de la langue à partir de la page de vue d’ensemble de soumission.
 
 Les champs associés à votre description par défaut dans le Store pour la langue sélectionnée se trouvent en haut de la page **Description dans le Store**. Ces champs sont visibles de tous vos clients, sauf si certains packages ciblent des versions antérieures du système d’exploitation (Windows8.x ou version antérieure; Windows Phone8.x ou version antérieure) ou si vous créez des descriptions dans le Store spécifiques à la plateforme incluant différentes captures d’écran ou informations à présenter aux clients sur les versions de système d’exploitation spécifiées. Pour plus d’informations, consultez [Créer des descriptions spécifiques à la plateforme ](create-platform-specific-store-listings.md).
 
@@ -54,10 +54,10 @@ Cette liste déroulante vous permet de spécifier le nom qui doit être utilisé
 
 Si vous avez chargé des packages dans la même langue que la description dans le Windows Store sur lequel vous travaillez, le nom utilisé dans ces packages est sélectionné. Si vous devez renommer [l’application](manage-app-names.md#rename-an-app-that-has-already-been-published) une fois qu’il est déjà été publiée, vous pouvez sélectionner un autre nom réservé lorsque vous créez une nouvelle soumission avec les packages qui utilisent le nouveau nom.
 
-Si vous n’avez pas encore chargé les packages pour la langue vous travaillez et vous avez réservé plus d’un nom, vous devrez sélectionner l’un de vos noms d’application réservés, dans la mesure où il n’existe aucun package associé dans cette langue à partir duquel extraire le nom.
+Si vous n’avez pas encore chargé les packages de la langue vous mettez au point et vous avez réservé plus d’un nom, vous devrez sélectionner l’un de vos noms d’application réservés, dans la mesure où il n’existe aucun package associé dans cette langue à partir duquel extraire le nom.
 
 > [!NOTE]
-> Le **nom du produit** que vous sélectionnez uniquement s’applique à la description du Windows Store dans le langage dans lequel vous travaillez. Elle n’affecte pas le nom affiché lorsqu’un client installe l’application; Ce nom est fourni à partir du manifeste du package qui est installé. Pour éviter toute confusion, nous recommandons que les packages et la description de chaque langue utilisent le même nom.
+> Le **nom du produit** que vous sélectionnez uniquement s’applique à la description dans le langage dans lequel vous travaillez. Elle n’affecte pas le nom affiché lorsqu’un client installe l’application; Ce nom est fourni à partir du manifeste du package qui est installé. Pour éviter toute confusion, nous recommandons que l’ou les packages de chaque langue et la description du Windows Store utilisent le même nom.
 
 ## <a name="description"></a>Description
 
@@ -134,7 +134,7 @@ Une description plus courte et plus accrocheuse peut être utilisé dans la part
 
 Concernant les jeux, la brève description peut également apparaître dans la section Informations du Hub de jeux sur XboxOne.
 
-Pour obtenir de meilleurs résultats, gardez votre description courte sous 270 caractères. Le champ est limité à 500 caractères, mais dans certains affichages, seront affiche uniquement les caractères tout d’abord 270 (avec un lien disponible pour afficher le reste de la description courte).
+Pour obtenir de meilleurs résultats, gardez votre description courte sous 270 caractères. Le champ est limité à 500 caractères, mais dans certains affichages, seuls les caractères tout d’abord 270 seront affiche (avec un lien disponible pour afficher le reste de la description courte).
 
 
 ### <a name="additional-system-requirements"></a>Configuration système supplémentaire requise

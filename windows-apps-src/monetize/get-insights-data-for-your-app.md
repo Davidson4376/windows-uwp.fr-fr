@@ -1,24 +1,24 @@
 ---
-author: mcleanbyron
-description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des informations concernant votre application.
-title: Obtenir les données de perspectives
-ms.author: mcleans
+author: Xansky
+description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données d’analyse pour votre application.
+title: Obtenir les données d’analyse
+ms.author: mhopkins
 ms.date: 07/31/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, insights
+keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, des informations
 ms.localizationpriority: medium
-ms.openlocfilehash: 53fbd91437e5dc702f8672c6cbadeea32a8a96bf
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: 30b9303fc44f557210c9ba80a2a135f77909dc10
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574766"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617562"
 ---
-# <a name="get-insights-data"></a>Obtenir les données de perspectives
+# <a name="get-insights-data"></a>Obtenir les données d’analyse
 
-Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les informations en rapport avec les acquisitions, intégrité et les mesures de l’utilisation d’une application au cours d’une plage de dates données et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport de perspectives](../publish/insights-report.md) dans le tableau de bord du centre de développement Windows.
+Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données d’analyse en rapport avec les acquisitions, intégrité et les mesures de l’utilisation d’une application au cours d’une plage de dates données et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport de perspectives](../publish/insights-report.md) dans le tableau de bord du centre de développement Windows.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -49,14 +49,14 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 | Paramètre        | Type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
-| applicationId | chaîne | L' [ID Windows Store](in-app-purchases-and-trials.md#store-ids) de l’application pour laquelle vous souhaitez récupérer des données d’informations. Si vous ne spécifiez pas ce paramètre, le corps de réponse contient les données des informations pour toutes les applications inscrites dans votre compte.  |  Non  |
-| startDate | date | La date de début dans la plage de dates des données des informations à récupérer. La valeur par défaut est de 30jours avant la date actuelle. |  Non  |
-| endDate | date | La date de fin dans la plage de dates des données des informations à récupérer. La valeur par défaut est la date actuelle |  Non  |
+| applicationId | chaîne | L' [ID Windows Store](in-app-purchases-and-trials.md#store-ids) de l’application pour laquelle vous souhaitez récupérer des données d’analyse. Si vous ne spécifiez pas ce paramètre, le corps de réponse contient les données d’analyse pour toutes les applications inscrites dans votre compte.  |  Non  |
+| startDate | date | La date de début dans la plage de dates des données d’analyse à récupérer. La valeur par défaut est de 30jours avant la date actuelle. |  Non  |
+| endDate | date | La date de fin dans la plage de dates des données d’analyse à récupérer. La valeur par défaut est la date actuelle |  Non  |
 | filter | chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Par exemple, *filter = dataType eq 'acquisition'*. <p/><p/>Vous pouvez spécifier les champs de filtre suivants:<p/><ul><li><strong>acquisition</strong></li><li><strong>santé</strong></li><li><strong>utilisation</strong></li></ul> | Non   |
 
 ### <a name="request-example"></a>Exemple de requête
 
-L’exemple suivant illustre une demande d’obtention des données insights. Remplacez la valeur *applicationId* par l’ID WindowsStore de votre application.
+L’exemple suivant illustre une demande d’obtention des données d’analyse. Remplacez la valeur *applicationId* par l’ID WindowsStore de votre application.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/insights?applicationId=9NBLGGGZ5QDR&startDate=6/1/2018&endDate=6/15/2018&filter=dataType eq 'acquisition' or dataType eq 'health' HTTP/1.1
@@ -69,7 +69,7 @@ Authorization: Bearer <your access token>
 
 | Valeur      | Type   | Description                  |
 |------------|--------|-------------------------------------------------------|
-| Valeur      | tableau  | Tableau d’objets contenant des données des informations de l’application. Pour plus d’informations sur les données de chaque objet, consultez la section de [valeurs de Insight](#insight-values) ci-dessous.                                                                                                                      |
+| Valeur      | tableau  | Tableau d’objets contenant des données d’analyse de l’application. Pour plus d’informations sur les données de chaque objet, consultez la section [valeurs des informations](#insight-values) ci-dessous.                                                                                                                      |
 | TotalCount | entier    | Nombre total de lignes dans les résultats de données de la requête.                 |
 
 
@@ -79,10 +79,10 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 
 | Valeur               | Type   | Description                           |
 |---------------------|--------|-------------------------------------------|
-| applicationId       | chaîne | L’ID Store de l’application pour laquelle vous récupérez les données de perspectives.     |
-| insightDate                | chaîne | La date sur lequel nous avons identifié la modification d’un indicateur spécifique. Cette date représente la fin de la semaine dans lequel nous avons détecté une augmentation importante ou diminuer dans une unité de mesure par rapport à la semaine. |
+| applicationId       | chaîne | L’ID Store de l’application pour laquelle vous récupérez les données d’analyse.     |
+| insightDate                | chaîne | La date à laquelle nous avons identifié la modification d’un indicateur spécifique. Cette date représente la fin de la semaine dans lequel nous avons détecté une augmentation importante ou diminuer dans une unité de mesure par rapport à la semaine. |
 | type de données     | chaîne | L’une des chaînes suivantes qui spécifie la zone d’analytique générale qui décrit ce insight:<p/><ul><li><strong>acquisition</strong></li><li><strong>santé</strong></li><li><strong>utilisation</strong></li></ul>   |
-| insightDetail          | tableau | Une ou plusieurs [valeurs de InsightDetail](#insightdetail-values) qui représentent les détails de l’analyse en cours.    |
+| insightDetail          | tableau | Une ou plusieurs [valeurs InsightDetail](#insightdetail-values) qui représentent les détails pour des informations en cours.    |
 
 
 ### <a name="insightdetail-values"></a>Valeurs de InsightDetail
@@ -96,7 +96,7 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | DimensionValue              | chaîne | La valeur de la métrique qui est décrit dans la dimension actuelle. Par exemple, si **NomDimension** est **EventType**, **DimensionValue** peut-être **incident** ou **Raccrocher**.   |
 | FactValue     | chaîne | La valeur absolue de la métrique à la date de que l’analyse a été détectée.  |
 | Direction | chaîne |  La direction de la modification (**positif** ou **négatif**).   |
-| Date              | chaîne |  La date à laquelle nous avons identifié la modification, relatives à l’analyse en cours ou la dimension actuelle.   |
+| Date              | chaîne |  La date à laquelle nous avons identifié la modification relatives à l’analyse en cours ou la dimension actuelle.   |
 
 ### <a name="response-example"></a>Exemple de réponse
 

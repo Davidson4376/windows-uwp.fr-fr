@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: AD80F9B3-CED0-40BD-A199-AB81CDAE466C
 description: Utilisez cette méthode dans l’API de soumission au MicrosoftStore pour supprimer une version d’évaluation du package pour une app inscrite dans votre compte du Centre de développement Windows.
 title: Supprime une version d’évaluation du package
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, supprimer une version d’évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: d907d87929a64178b3ebd3d169e30b04f6577eb4
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 436a28cc1be0c106928784086731fe078d789527
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815504"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618357"
 ---
 # <a name="delete-a-package-flight"></a>Supprime une version d’évaluation du package
 
@@ -33,7 +33,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
-| Méthode | URI de requête                                                      |
+| Méthode | URI de la requête                                                      |
 |--------|------------------------------------------------------------------|
 | DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` |
 

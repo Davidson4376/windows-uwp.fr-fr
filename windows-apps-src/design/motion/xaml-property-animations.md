@@ -12,11 +12,11 @@ pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.openlocfilehash: a03ffc8d5ea78ee6cbdf78feaae7ba1cd1448f37
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4568899"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622063"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>Animation d’éléments XAML avec des animations de composition
 
@@ -24,17 +24,17 @@ Cet article présente les nouvelles propriétés qui vous permettent d’animer 
 
 Avant Windows 10, version 1809, vous deviez 2 choix pour créer des animations dans vos applications UWP:
 
-- utiliser des constructions de XAML comme les [animations de Storyboarded](storyboarded-animations.md), ou _* ThemeTransition_ et _* ThemeAnimation_ classes dans l’espace de noms [Windows.UI.Xaml.Media.Animation](/uwp/api/windows.ui.xaml.media.animation) .
+- utiliser des constructions de XAML comme les [animations Storyboarded](storyboarded-animations.md), ou _* ThemeTransition_ et _* ThemeAnimation_ classes dans l’espace de noms [Windows.UI.Xaml.Media.Animation](/uwp/api/windows.ui.xaml.media.animation) .
 - Utilisez les animations de composition comme décrit à l’aide de [La couche visuelle avec XAML](../../composition/using-the-visual-layer-with-xaml.md).
 
-À l’aide de la couche visuelle offre de meilleures performances que l’utilisation du code XAML crée. Toutefois, l’utilisation de [ElementCompositionPreview](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview) pour obtenir [visuel](/uwp/api/windows.ui.composition.visual) objet de composition sous-jacent de l’élément et puis animer l’élément visuel avec des animations de composition, sont plus complexe à utiliser.
+À l’aide de la couche visuelle offre de meilleures performances que construit à l’aide du code XAML. Toutefois, l’utilisation de [ElementCompositionPreview](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview) pour obtenir [visuel](/uwp/api/windows.ui.composition.visual) objet de composition sous-jacent l’élément et puis animer l’élément visuel avec des animations de composition, sont plus complexe à utiliser.
 
-À compter de Windows 10, version 1809, vous pouvez animer des propriétés sur un élément UIElement directement à l’aide des animations de composition sans l’exigence pour obtenir la composition sous-jacent Visual.
+À compter de Windows 10, version 1809, vous pouvez animer des propriétés sur un élément UIElement directement à l’aide des animations de composition sans la configuration requise pour obtenir la composition sous-jacent Visual.
 
 > [!NOTE]
 > Pour utiliser ces propriétés sur l’élément UIElement, votre version cible du projet UWP doit être 1809 ou une version ultérieure. Pour plus d’informations sur la configuration de la version de votre projet, reportez-vous à la section [applications adaptatives de Version](../../debug-test-perf/version-adaptive-apps.md).
 
-## <a name="new-rendering-properties-replace-old-rendering-properties"></a>Nouvelles propriétés de rendu remplacement les propriétés de rendu ancien
+## <a name="new-rendering-properties-replace-old-rendering-properties"></a>Nouvelles propriétés de rendu remplacement anciennes propriétés de rendu
 
 Ce tableau indique les propriétés que vous pouvez utiliser pour modifier le rendu d’un élément UIElement, qui peut également être animé avec une [CompositionAnimation](/uwp/api/windows.ui.composition.compositionanimation).
 
@@ -43,20 +43,20 @@ Ce tableau indique les propriétés que vous pouvez utiliser pour modifier le re
 | [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | Double | Le degré d’opacité de l’objet |
 | [Translation](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | Décaler la position X/Y/Z de l’élément |
 | [TransformMatrix](/uwp/api/windows.ui.xaml.uielement.transformmatrix) | Matrix4x4 | La matrice de transformation à appliquer à l’élément |
-| [Scale](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 | Mise à l’échelle l’élément, centrée sur le point central |
+| [Scale](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 | Mettre à l’échelle de l’élément, centrée sur le point central |
 | [Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | Flottant | Faire pivoter l’élément autour de la RotationAxis et le point central |
 | [RotationAxis](/uwp/api/windows.ui.xaml.uielement.rotationaxis) | Vector3 | L’axe de rotation |
 | [CenterPoint](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | Le point central de mise à l’échelle et la rotation |
 
-La valeur de propriété TransformMatrix est combinée avec les propriétés de mise à l’échelle, la Rotation et traduction dans l’ordre suivant: TransformMatrix, échelle, Rotation, Translation.
+La valeur de propriété TransformMatrix est combinée avec les propriétés de mise à l’échelle, la Rotation et traduction dans l’ordre suivant: TransformMatrix, l’échelle, Rotation, Translation.
 
-Ces propriétés n’affectent pas la disposition de l’élément, par conséquent, modifiant ces propriétés ne demande une nouvelle [mesure](/uwp/api/windows.ui.xaml.uielement.measure)/passe[d’organisation](/uwp/api/windows.ui.xaml.uielement.arrange) .
+Ces propriétés n’affectent pas la disposition de l’élément, par conséquent, modification de ces propriétés ne demande une nouvelle [mesure](/uwp/api/windows.ui.xaml.uielement.measure)/passe[d’organisation](/uwp/api/windows.ui.xaml.uielement.arrange) .
 
-Ces propriétés ont le même objectif et le même comportement que les propriétés de même nom sur la composition [visuelle](/uwp/api/windows.ui.composition.visual) classe (à l’exception de la traduction, ce qui n’est pas sur l’élément visuel).
+Ces propriétés ont le même objectif et le même comportement que les propriétés de même nom sur la composition [visuelle](/uwp/api/windows.ui.composition.visual) classe (à l’exception de traduction, ce qui n’est pas sur visuel).
 
-### <a name="example-setting-the-scale-property"></a>Exemple: Définition de la propriété de mise à l’échelle
+### <a name="example-setting-the-scale-property"></a>Exemple: Définition de la propriété à l’échelle
 
-Cet exemple montre comment définir la propriété de mise à l’échelle sur un bouton.
+Cet exemple montre comment définir la propriété à l’échelle sur un bouton.
 
 ```xaml
 <Button Scale="2,2,1" Content="I am a large button" />
@@ -90,13 +90,13 @@ Vous ne pouvez pas utiliser les nouvelles propriétés si vous utilisez ElementC
 > [!IMPORTANT]
 > Toute tentative de combiner l’utilisation des deux jeux de propriétés provoquera l’appel d’API échouer et produire un message d’erreur.
 
-Il est possible de passer à partir d’un jeu de propriétés en désactivant les, mais pour simplifier, il n’est pas recommandé. Si la propriété est renforcée par un DependencyProperty (par exemple, UIElement.Projection est renforcé par UIElement.ProjectionProperty), puis appelez ClearValue pour restaurer à son état «inutilisé». Dans le cas contraire (par exemple, la propriété échelle), définissez la propriété à sa valeur par défaut.
+Il est possible de passer d’un jeu de propriétés en désactivant les, mais pour simplifier, il n’est pas recommandé. Si la propriété est renforcée par un DependencyProperty (par exemple, UIElement.Projection est renforcé par UIElement.ProjectionProperty), puis appelez ClearValue pour restaurer à son état «inutilisé». Dans le cas contraire (par exemple, la propriété à l’échelle), définissez la propriété à sa valeur par défaut.
 
 ## <a name="animating-uielement-properties-with-compositionanimation"></a>Animer des propriétés UIElement avec CompositionAnimation
 
 Vous pouvez animer les propriétés de rendu répertoriées dans le tableau avec une CompositionAnimation. Ces propriétés peuvent également être référencées par un [élément ExpressionAnimation](/uwp/api/windows.ui.composition.expressionanimation).
 
-Utiliser les méthodes [StartAnimation](/uwp/api/windows.ui.xaml.uielement.startanimation) et [StopAnimation](/uwp/api/windows.ui.xaml.uielement.stopanimation) sur UIElement d’animer les propriétés de l’élément UIElement.
+Utilisez les méthodes [StartAnimation](/uwp/api/windows.ui.xaml.uielement.startanimation) et [StopAnimation](/uwp/api/windows.ui.xaml.uielement.stopanimation) sur UIElement d’animer les propriétés de l’élément UIElement.
 
 ### <a name="example-animating-the-scale-property-with-a-vector3keyframeanimation"></a>Exemple: Anime la propriété à l’échelle avec un Vector3KeyFrameAnimation
 

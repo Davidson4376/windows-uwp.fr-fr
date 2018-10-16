@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: Utilisez cette méthode dans l’API de collection du MicrosoftStore pour obtenir tous les produits possédés par un client pour les apps associées à votre ID client AzureAD. Vous pouvez limiter votre requête à un produit spécifique ou utiliser d’autres filtres.
 title: Demander des produits
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, API de collection du MicrosoftStore, afficher produits
 ms.localizationpriority: medium
-ms.openlocfilehash: 696d2c0ca4f8d0d92bef66efb9d551a2f19d2aa3
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: 066660c307be9f3592aa38cb21a6e00cd960aa73
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664965"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618834"
 ---
 # <a name="query-for-products"></a>Demander des produits
 
@@ -143,12 +143,12 @@ L’objet CollectionItemContractV6 contient les paramètres ci-dessous.
 | orderId              | chaîne             | Le cas échéant, référence de la commande par le biais de laquelle cet article a été obtenu.              | Non       |
 | orderLineItemId      | chaîne             | Le cas échéant, ligne d’article de la commande spécifique dans laquelle cet article a été obtenu.              | Non       |
 | ownershipType        | chaîne             | La chaîne *OwnedByBeneficiary*.   | Oui      |
-| productId            | chaîne             | [ID Store](in-app-purchases-and-trials.md#store-ids) pour le [produit](in-app-purchases-and-trials.md#products-skus-and-availabilities) dans le catalogue du MicrosoftStore. Exemple d’ID WindowsStore pour un produit: 9NBLGGH42CFD.          | Oui      |
+| productId            | chaîne             | [ID Store](in-app-purchases-and-trials.md#store-ids) pour le [produit](in-app-purchases-and-trials.md#products-skus-and-availabilities) dans le catalogue du MicrosoftStore. Exemple d’ID Store pour un produit: 9NBLGGH42CFD.          | Oui      |
 | productType          | chaîne             | L’un des types de produit suivants: **Application**, **Durable** et **UnmanagedConsumable**.        | Oui      |
 | purchasedCountry     | chaîne             | Non applicable   | Non       |
 | purchaser            | IdentityContractV6 | Le cas échéant, représente l’identité de l’acheteur de l’article. Voir les détails de cet objet ci-dessous.        | Non       |
 | quantity             | nombre             | Quantité de l’article. Actuellement, il s’agit toujours de la valeur 1.      | Non       |
-| skuId                | chaîne             | [ID Store](in-app-purchases-and-trials.md#store-ids) pour la [référence (SKU)](in-app-purchases-and-trials.md#products-skus-and-availabilities) du produit dans le catalogue du MicrosoftStore. Exemple d’ID WindowsStore pour une référence (SKU): 0010.     | Oui      |
+| skuId                | chaîne             | [ID Store](in-app-purchases-and-trials.md#store-ids) pour la [référence (SKU)](in-app-purchases-and-trials.md#products-skus-and-availabilities) du produit dans le catalogue du MicrosoftStore. Exemple d’ID Store pour une référence: 0010.     | Oui      |
 | skuType              | chaîne             | Type de référence. Valeurs possibles: **Trial**, **Full** et **Rental**.        | Oui      |
 | startDate            | DateHeure           | Date de début de validité de l’article.       | Oui      |
 | status               | chaîne             | État de l’article. Valeurs possibles: **Active**, **Expired**, **Revoked** et **Banned**.    | Oui      |
@@ -161,7 +161,7 @@ L’objet IdentityContractV6 contient les paramètres ci-dessous.
 | Paramètre     | Type   | Description                                                                        | Obligatoire |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
 | identityType  | chaîne | Contient la valeur *pub*.                                                      | Oui      |
-| identityValue | chaîne | La Valeur de chaîne du paramètre *publisherUserId* dans la clé d’ID du MicrosoftStore. | Oui      |
+| identityValue | chaîne | Valeur chaîne du paramètre *publisherUserId* dans la clé d’ID du MicrosoftStore. | Oui      |
 
 
 ### <a name="response-example"></a>Exemple de réponse

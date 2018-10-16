@@ -1,28 +1,28 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: Découvrez comment installer le kit SDK Microsoft Advertising.
 title: Installer le SDK MicrosoftAdvertising
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, pub, publicités, installer, SDK, bibliothèque de publicités
 ms.localizationpriority: medium
-ms.openlocfilehash: 17c12d09fdc7643a2d2ac1c13fa2a4e6c92cad03
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e65b26006cbeb7f7fbd9bf95f83051873e6f1140
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654878"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620193"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Installer le SDK MicrosoftAdvertising
 
 Pour afficher des publicités dans vos applications UWP pour Windows10, installez le [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp). Ce kit de développement logiciel(SDK) est une extension de VisualStudio2015 et des versions ultérieures.
 
 > [!NOTE]
-> Si vous développez une application UWP en JavaScript/HTML et que vous avez installé la version du SDK pour Windows10 10.0.14393 (Mise à jour anniversaire) ou ultérieure, vous devez également installer la bibliothèque WinJS. Cette bibliothèque était incluse dans les versions précédentes du Kit de développement logiciel pour Windows10, mais depuis le SDK Windows10 version10.0.14393 (Mise à jour anniversaire), elle doit être installée séparément. Pour installer WinJS, voir [Obtenir WinJS](http://try.buildwinjs.com/download/GetWinJS/).
+> Si vous développez une application UWP JavaScript/HTML et que vous avez installé le SDK Windows 10 version 10.0.14393 (mise à jour anniversaire) ou une version ultérieure, vous devez également installer la bibliothèque [WinJS](https://github.com/winjs/winjs) . Cette bibliothèque était incluse dans les versions précédentes du Kit de développement logiciel pour Windows10, mais depuis le SDK Windows10 version10.0.14393 (Mise à jour anniversaire), elle doit être installée séparément.
 
 <span id="install-msi" />
 
@@ -33,11 +33,11 @@ Pour installer le SDK Microsoft Advertising via le programme d’installationMSI
 1.  Fermez toutes les instances de Visual Studio.
 
 2. Si vous aviez précédemment installé une version antérieure du Kit de développement MicrosoftAdvertising, du kit MicrosoftUniversalAdClient, de l’extensionAdMediator ou du SDK d’engagement et de monétisation de la Boutique Microsoft, désinstallez ces versions maintenant. Si vous le souhaitez, ouvrez une fenêtre **Invite de commandes** et exécutez ces commandes pour nettoyer les anciennes versions de SDK Microsoft Advertising qui peuvent avoir été installées avec Visual Studio, mais qui n’apparaissent peut-être pas dans la liste des programmes installés sur votre ordinateur:
-  ```
-  MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
-  MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
-  MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
-  ```
+    ```
+    MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
+    MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
+    MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
+    ```
 
 3.  Téléchargez et installez le [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp). L’installation peut prendre quelques minutes. Attendez la fin du processus.
 
@@ -56,11 +56,11 @@ Pour installer le SDKMicrosoft Advertising dans un projet UWP spécifique via Nu
 1.  Fermez toutes les instances de Visual Studio.
 
 2.  Si vous aviez précédemment installé une version antérieure du Kit de développement MicrosoftAdvertising, du kit MicrosoftUniversalAdClient, de l’extensionAdMediator ou du SDK d’engagement et de monétisation de la Boutique Microsoft, désinstallez ces versions maintenant. Si vous le souhaitez, ouvrez une fenêtre **Invite de commandes** et exécutez ces commandes pour nettoyer les anciennes versions de SDK Microsoft Advertising qui peuvent avoir été installées avec Visual Studio, mais qui n’apparaissent peut-être pas dans la liste des programmes installés sur votre ordinateur:
-  ```
-  MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
-  MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
-  MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
-  ```
+    ```
+    MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
+    MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
+    MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
+    ```
 
 3.  Démarrez VisualStudio, puis ouvrez le projet dans lequel vous souhaitez utiliser le SDK Microsoft Advertising.
     > [!NOTE]
@@ -105,7 +105,7 @@ Vous trouverez des procédures pas à pas montrant comment commencer à utiliser
 
 ## <a name="understanding-framework-packages-in-the-microsoft-advertising-sdk"></a>Comprendre les packages d’infrastructure du SDK Microsoft Advertising
 
-La bibliothèque Microsoft.Advertising.dll du [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp) (pour applications UWP) est configurée comme un *package d’infrastructure*. Cette bibliothèque contient les API publicitaires des espaces de noms [Microsoft.Advertising](https://msdn.microsoft.com/library/windows/apps/mt313187.aspx) et [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aspx).
+La bibliothèque Microsoft.Advertising.dll du [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp) (pour applications UWP) est configurée comme un *package d’infrastructure*. Cette bibliothèque contient les API publicitaires des espaces de noms [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) et [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui).
 
 Cette bibliothèque étant un package d’infrastructure, cela signifie que dès qu’un utilisateur installe une version de votre application qui l’utilise, elle sera automatiquement mise à jour sur l’appareil via WindowsUpdate lors de la publication d’une nouvelle version de la bibliothèque intégrant des correctifs et améliorant ses performances. Ainsi, vos clients sont toujours assurés de disposer de la dernière version disponible de la bibliothèque sur leurs appareils.
 

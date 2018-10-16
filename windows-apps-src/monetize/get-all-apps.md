@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
 description: Utilisez cette méthode de l’API de soumission au MicrosoftStore pour récupérer des informations sur toutes les apps inscrites dans votre compte du Centre de développement Windows.
 title: Obtenir toutes les applications
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, apps
 ms.localizationpriority: medium
-ms.openlocfilehash: bf2e7bb5e809d975c7217118ebc36409a54061c9
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: Auto
+ms.openlocfilehash: d4261c984eb992092230425205313d751a351f07
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816134"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621650"
 ---
 # <a name="get-all-apps"></a>Obtenir toutes les applications
 

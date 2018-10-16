@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les données de synthèse d’acquisition d’une application pour une plage de dates données, et en fonction de filtres facultatifs.
 title: Obtenir les données relatives à l'entonnoir d'acquisition d'applications
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, acquisitions, synthèse
 ms.localizationpriority: medium
-ms.openlocfilehash: 85ffe2219ce7bc1dc47ff92240eeeff1374b5f43
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 362bcc956fa5945f9685aac7d6351b9fda7690de
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663579"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616080"
 ---
 # <a name="get-app-acquisition-funnel-data"></a>Obtenir les données relatives à l'entonnoir d'acquisition d'applications
 
@@ -135,4 +135,4 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 * [Rapport Acquisitions](../publish/acquisitions-report.md)
 * [Accéder aux données d’analyse à l’aide des services du MicrosoftStore](access-analytics-data-using-windows-store-services.md)
-* [Obtenir des acquisitions d’apps](get-app-acquisitions.md)
+* [Obtenir des acquisitions d’applications](get-app-acquisitions.md)

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour récupérer les données d'évaluation agrégées pour une plage de dates donnée, et suivant d’autres filtres facultatifs.
 title: Obtenir les évaluations des applications
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 11/29/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, évaluations
 ms.localizationpriority: medium
-ms.openlocfilehash: 902f8852edb0955f1499963efbbe41bc1affb147
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: d3d09aa395f9c0924951a44f5b0abaf9c99cb32e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664239"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620841"
 ---
 # <a name="get-app-ratings"></a>Obtenir les évaluations des applications
 
@@ -73,7 +73,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant: L
 | Champs        |  Description        |
 |---------------|-----------------|
 | market | Chaîne contenant le code pays ISO3166 du marché où votre application est classifiée. |
-| osVersion | Une des chaînes suivantes:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul> |
+| osVersion | Une des chaînes suivantes:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul> |
 | deviceType | Une des chaînes suivantes:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
 | isRevised | Spécifiez la valeur <strong>true</strong> pour filtrer les évaluations révisées ; sinon, définissez la valeur <strong>false</strong>. |
 
@@ -154,7 +154,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 * [Rapport Évaluations](../publish/reviews-report.md)
 * [Accéder aux données d’analyse à l’aide des services du MicrosoftStore](access-analytics-data-using-windows-store-services.md)
-* [Obtenir des acquisitions d’apps](get-app-acquisitions.md)
+* [Obtenir des acquisitions d’applications](get-app-acquisitions.md)
 * [Obtenir des acquisitions d’extensions](get-in-app-acquisitions.md)
 * [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
 * [Obtenir les avis sur les applications](get-app-reviews.md)

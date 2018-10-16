@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574413"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616109"
 ---
 # <a name="xbind-markup-extension"></a>Extension de balisage {x:Bind}
 
@@ -115,7 +115,7 @@ _Remarque: la syntaxe de cast de type C# est plus souple que la syntaxe de propr
 
 ## <a name="functions-in-binding-paths"></a>Fonctions dans les chemins de liaison
 
-À compter de Windows10, version1607, **{x: Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Il s’agit d’une fonctionnalité puissante pour la liaison de données qui permet à plusieurs scénarios dans le balisage. [Liaisons de fonction](../data-binding/function-bindings.md) pour plus d’informations, voir.
+À compter de Windows10, version1607, **{x: Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Il s’agit d’une fonctionnalité puissante de liaison de données qui permet à plusieurs scénarios dans le balisage. [Liaisons de fonction](../data-binding/function-bindings.md) pour plus d’informations, voir.
 
 ## <a name="event-binding"></a>Liaison d’événement
 

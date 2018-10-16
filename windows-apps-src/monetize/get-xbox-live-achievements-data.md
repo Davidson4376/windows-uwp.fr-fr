@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Utilisez cette méthode dans l'API d'analyse du MicrosoftStore pour obtenir les données de réussite Xbox Live.
 title: Obtenir des données de réussite Xbox Live
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, services de MicrosoftStore, API d'analyse du MicrosoftStore, analyse Xbox Live, réussites
 ms.localizationpriority: medium
-ms.openlocfilehash: 09800229b45b9eb1a0a456e8e421412ca1a88f8d
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: f4f60cc8ecbdd3d6d05312238166bd666e238e37
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976051"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615997"
 ---
 # <a name="get-xbox-live-achievements-data"></a>Obtenir des données de réussite Xbox Live
 

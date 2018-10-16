@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: FAD033C7-F887-4217-A385-089F09242827
 description: Utilisez cette méthode dans l’API d’analyse du MicrosoftStore pour obtenir les données d’installation agrégées d’une application pour une plage de dates données, et en fonction de filtres facultatifs.
 title: Obtenir des installations d’application
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, installations d'app
 ms.localizationpriority: medium
-ms.openlocfilehash: fe2e9a012a094a5eeb5bc60510fc8fb115c57fb0
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 7a5a947d58ecec7ca52a355ef44f8a880864df5d
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1975971"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618272"
 ---
 # <a name="get-app-installs"></a>Obtenir des installations d’application
 

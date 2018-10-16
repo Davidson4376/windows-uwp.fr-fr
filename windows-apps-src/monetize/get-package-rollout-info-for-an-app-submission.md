@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: Appliquez cette méthode dans l’API de soumission au MicrosoftStore pour récupérer les informations sur le lancement du package en vue d'une soumission d’app.
 title: Obtenir des informations sur le déploiement pour une soumission d’application
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows10, uwp, API de soumission au MicrosoftStore, lancement du package, soumission d’app
 ms.assetid: 9ada5ac3-a86e-4bb6-8ebc-915ba9649e3c
 ms.localizationpriority: medium
-ms.openlocfilehash: eec1e573a27dc2edfcbccbd634492b854758af0e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: ead13a255eb707df2e60907265672d53aab120d9
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815514"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617770"
 ---
 # <a name="get-rollout-info-for-an-app-submission"></a>Obtenir des informations sur le déploiement pour une soumission d’application
 
@@ -43,7 +43,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisation | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 
 ### <a name="request-parameters"></a>Paramètres de la requête
@@ -103,6 +103,6 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 
 ## <a name="related-topics"></a>Rubriquesassociées
 
-* [Déploiement de package progressif](../publish/gradual-package-rollout.md)
+* [Lancement progressif de packages](../publish/gradual-package-rollout.md)
 * [Gérer les soumissions d’apps à l’aide de l’API de soumission au MicrosoftStore](manage-app-submissions.md)
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)

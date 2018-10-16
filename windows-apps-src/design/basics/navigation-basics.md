@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b388a196e1f5fa6649ac1fb072c80d01bba45e20
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4575328"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620788"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de la navigation pour les applications UWP
 
@@ -58,7 +58,7 @@ Commençons par les principes de base d’une navigation réussie:
 
 ### <a name="consistency"></a>Cohérence
 
-La navigation doit être cohérente avec les attentes des utilisateurs. À l’aide de [contrôles standard](#use-the-right-controls) que les utilisateurs sont habitués à et suivant les conventions standard pour les icônes, emplacement et le style seront rendre la navigation prévisible et intuitive pour les utilisateurs.
+La navigation doit être cohérente avec les attentes des utilisateurs. À l’aide de [contrôles standard](#use-the-right-controls) que les utilisateurs sont suivant les conventions standard pour les icônes et familier avec, emplacement et le style seront rendre la navigation prévisible et intuitive pour les utilisateurs.
 
 ![image des composants d'une page](images/nav/page-components.svg)
 
@@ -120,7 +120,7 @@ Maintenant que vous êtes familiarisé avec les principes de navigation généra
 
         - Les pages peuvent être affichées dans n’importe quel ordre.
         - Les pages sont clairement distinctes les unes des autres et n’ont aucune relation parent/enfant évidente.
-        - Il existe moins de 8 pages du groupe. <br>
+        - Il existe moins de 8 pages dans le groupe. <br>
         (S’il y a plus de pages, il peut être difficile pour les utilisateurs de comprendre dans quelle mesure les pages sont uniques ou de connaître leur emplacement actuel au sein du groupe. Si vous ne pensez pas que ce soit un problème pour votre application, lancez-vous et faites des pages des homologues. Sinon, envisagez d’utiliser une structure hiérarchique pour répartir les pages en deux groupes au moins plus petits.)
 
     :::column-end:::

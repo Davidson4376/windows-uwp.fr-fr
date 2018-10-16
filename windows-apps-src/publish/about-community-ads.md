@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ada2e0610e81e986deba3ddab5e87547e05fe108
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4572355"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620648"
 ---
 # <a name="about-community-ads"></a>À propos des annonces de la communauté
 
-Si votre application [affiche des bannières ou des bannières spots publicitaires](../monetize/display-ads-in-your-app.md), vous pouvez promouvoir votre application avec d’autres développeurs avec des applications du Microsoft Store pour libre. Nous appelons cette fonctionnalité *annonces de la communauté*.  
+Si votre application [affiche des bannières ou des spots](../monetize/display-ads-in-your-app.md), vous pouvez promouvoir votre application avec d’autres développeurs avec des applications du Microsoft Store pour libre. Nous appelons cette fonctionnalité *annonces de la communauté*.  
 
 Voici comment fonctionne ce programme:
 
@@ -42,9 +42,9 @@ Pour participer aux annonces de la Communauté pour une application UWP:
     > [!NOTE]
     > Vous pouvez utiliser les champs de **poids** pour spécifier le taux de publicités que vous souhaitez afficher à partir de réseaux payants et d’autres réseaux publicitaires, y compris les annonces de la Communauté.
 
-Pour participer aux annonces de la Communauté, pour un client Windows 8.x ou Windows Phone 8.x application,
+Pour participer aux annonces de la Communauté pour un client Windows 8.x ou Windows Phone 8.x application,
 
-1. Sur la page **publicités In-app** , cochez la case **Afficher les annonces de la Communauté dans mon application** .
+1. Sur la page **publicités dans l’application** , cochez la case **afficher des annonces de la Communauté dans mon application** .
 
 Vous n’avez pas besoin de republier votre application après avoir effectué vos sélections. Une fois que vous avez accepté cette fonctionnalité, vous êtes en mesure de sélectionner **Community ad (free)** comme type de campagne lorsque vous [créez une campagne de publicité](create-an-ad-campaign-for-your-app.md).
 

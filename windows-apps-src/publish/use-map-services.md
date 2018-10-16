@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d322a22898f2f45a89b4cd30051149133bc3e2bf
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4569327"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620077"
 ---
 # <a name="use-map-services"></a>Utiliser les services cartographiques
 
@@ -26,7 +26,7 @@ Pour utiliser les services cartographiques dans des applications pour Windows Ph
 Tout moment une fois que vous avez [réservé de nom de votre application](create-your-app-by-reserving-a-name.md), vous pouvez accéder à cette application dans votre tableau de bord, développez la section **Services** dans le menu de navigation de gauche et sélectionner les **cartes**. Lorsque vous cliquez sur **obtenir un jeton**, nous allons générer un service de carte ID d’Application (**ApplicationID**) et mapper service (**AuthenticationToken**) du jeton d’authentification pour votre application. Ces valeurs sont enregistrées sur cette page, afin que vous pouvez retourner à tout moment pour les afficher.
 
 > [!IMPORTANT]
-> Veillez à ajouter le **ApplicationID** et **AuthenticationToken** à votre code avant de vous package et soumettez votre application. Pour plus d’informations, voir [Comment ajouter un contrôle de carte à une page (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882).
+> Veillez à ajouter les **ApplicationID** et **AuthenticationToken** à votre code avant de vous package et soumettez votre application. Pour plus d’informations, voir [Comment ajouter un contrôle de carte à une page (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882).
 
  
 

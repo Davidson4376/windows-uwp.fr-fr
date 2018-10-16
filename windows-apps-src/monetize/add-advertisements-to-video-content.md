@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
 description: Apprenez à utiliser la classe AdScheduler pour afficher des publicités dans du contenu vidéo.
 title: Afficher des publicités dans du contenu vidéo
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, uwp, annonces, publicités, vidéo, planificateur, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 9142770c6063aba34977c20309bcaeb6ac46450e
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: cc5dd40ca3d9fe6e20f5e79c95b59cef3bea9a34
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690645"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623148"
 ---
 # <a name="show-ads-in-video-content"></a>Afficher des publicités dans du contenu vidéo
 
@@ -56,7 +56,7 @@ La publicité pour contenu vidéo varie selon que le programme dure moins de dix
 3. Ajoutez une référence à la bibliothèque du **SDK Microsoft Advertising pour JavaScript** à votre projet.
 
     1. Dans la fenêtre **Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence.**
-    2. Dans **Gestionnaire de références**, développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **SDK Microsoft Advertising pour JavaScript** (version10.0).
+    2. Dans **Gestionnaire de références**, développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour JavaScript** (version10.0).
     3. Dans **Gestionnaire de références**, cliquez sur OK.
 
 4.  Ajoutez le fichier AdScheduler.js à votre projet:
@@ -166,7 +166,7 @@ Cet événement est déclenché lorsque le contenu principal prend fin et que to
 
 ### <a name="onerroroccurred"></a>onErrorOccurred  
 
-Cet événement est déclenché lorsque **AdScheduler** rencontre une erreur. Pour plus d'informations sur les valeurs de code d'erreur, consultez [ErrorCode](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.errorcode.aspx).
+Cet événement est déclenché lorsque **AdScheduler** rencontre une erreur. Pour plus d'informations sur les valeurs de code d'erreur, consultez [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.errorcode).
 
 ### <a name="onpodcountdown"></a>onPodCountdown
 

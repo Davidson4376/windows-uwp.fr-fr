@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: dc632a4c-ce48-400b-8e6e-1dddbd13afff
 description: Utilisez cette méthode dans l’API des promotions du MicrosoftStore pour gérer les lignes de livraison des campagnes publicitaires.
 title: Gérer les lignes de livraison
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, API de promotions du MicrosoftStore, campagnes de publicité
 ms.localizationpriority: medium
-ms.openlocfilehash: a7dca49ee1ecaeb675127ea19191a028f6f7846f
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 387b5ccf999452780b89aa7edcc9b58bcc35ea8a
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664099"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622734"
 ---
 # <a name="manage-delivery-lines"></a>Gérer les lignes de livraison
 
@@ -51,7 +51,7 @@ Ces méthodes présentent les URI suivants.
 
 | En-tête        | Type   | Description         |
 |---------------|--------|---------------------|
-| Authorization | chaîne | Obligatoire. Jeton d’accès AzureAD sous la forme **Bearer** &lt;*jeton*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 | ID de suivi   | GUID   | Facultatif. ID de suivi du flux d’appels.                                  |
 
 

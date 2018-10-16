@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 50a455dc43007a433bfabd995af7968e93fe1900
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563602"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622260"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>Problèmes connus avec les applications de bureau empaquetées
 
@@ -56,7 +56,7 @@ Il s’agit d’une limitation connue et il n’existe actuellement aucune solut
 
 Cela peut se produire si les fichiers exécutables de votre application ont une extension **. EXE** en majuscules. Bien que la casse de cette extension n’affecte l’exécution de votre application, cela peut amener le DAC à générer cette erreur.
 
-Pour résoudre ce problème, essayez de spécifier l’indicateur **-AppExecutable** lors de la création de package et utilisez les minuscules «.exe» comme extension de votre fichier exécutable principal (par exemple: MONAPP.exe).    Par ailleurs, vous pouvez modifier la casse de tous les fichiers exécutables dans votre application à partir de minuscules en majuscules (par exemple: à partir de. EXE vers .exe).
+Pour résoudre ce problème, essayez de spécifier l’indicateur **-AppExecutable** lors de la création de package et utilisez les minuscules «.exe» comme extension de votre fichier exécutable principal (par exemple: MONAPP.exe).    Sinon, vous pouvez modifier la casse de tous les fichiers exécutables dans votre application à partir de minuscules en majuscules (par exemple: à partir de. EXE vers .exe).
 
 ### <a name="corrupted-or-malformed-authenticode-signatures"></a>Signatures Authenticode endommagées ou mal formées
 

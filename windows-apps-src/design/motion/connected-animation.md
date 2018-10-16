@@ -14,19 +14,19 @@ design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 31e940c87626a05ee6911d3ffda36ab8dfd3fad0
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564026"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616182"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>Animation connectée pour les applications UWP
 
 Les animations connectées vous permettent de créer une expérience de navigation dynamique et attrayante en animant la transition d’un élément entre deux affichages. Cela permet à l’utilisateur de conserver son contexte et d'assurer la continuité entre les vues.
 
-Dans une animation connectée, un élément s’affiche «perdure» entre deux affichages lors d’une modification du contenu de l’interface utilisateur, survole l’écran à partir de son emplacement dans la vue de source vers sa destination dans la nouvelle vue. Cela met en évidence le contenu commun entre les vues et crée un effet dynamique magnifique dans le cadre d’une transition.
+Dans une animation connectée, un élément s’affiche «perdure» entre deux affichages lors d’une modification du contenu de l’interface utilisateur, survole l’écran à partir de son emplacement dans la vue de source vers sa destination dans la nouvelle vue. Cela met en évidence le contenu commun entre les vues et crée un effet de magnifique et dynamique dans le cadre d’une transition.
 
-> **API importantes**: [ConnectedAnimation classe](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), la [classe de ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
+> **API importantes**: [classe ConnectedAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [classe ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
 ## <a name="see-it-in-action"></a>Regardez-le en pleine action
 
@@ -57,7 +57,7 @@ Les animations connectées sont généralement utilisées lorsque l'utilisateur 
 ## <a name="configure-connected-animation"></a>Configurer l’animation connectée
 
 > [!IMPORTANT]
-> Cette fonctionnalité nécessite que version de cible de votre application soit RS5 (version du SDK Windows 10.0.NNNNN.0 (Windows 10, version aamm) ou une version ultérieure. La propriété de Configuration n’est pas disponible dans le SDK antérieures. Vous pouvez cibler une version minimale inférieure à RS5 (à l’aide de SDK Windows version 10.0.NNNNN.0 (Windows 10, version aamm) du code adaptatif ou du XAML conditionnel. Pour plus d’informations, voir [applications adaptatives de Version](/debug-test-perf/version-adaptive-apps).
+> Cette fonctionnalité nécessite que version de cible de votre application soit RS5 (version du SDK Windows 10.0.NNNNN.0 (Windows 10, version aamm) ou une version ultérieure. La propriété de Configuration n’est pas disponible dans le SDK antérieures. Vous pouvez cibler une version minimale inférieure à RS5 (à l’aide de SDK Windows version 10.0.NNNNN.0 (Windows 10, version aamm) du code adaptatif ou du XAML conditionnel. Pour plus d’informations, consultez [applications adaptatives de Version](/debug-test-perf/version-adaptive-apps).
 
 À compter de RS5, plus les animations connectées génèrent Fluent design en fournissant l’animation des configurations adaptées spécifiquement pour vers l’avant et vers l’arrière navigation entre les pages.
 
@@ -68,11 +68,11 @@ Le tableau suivant décrit les configurations disponibles. Pour plus d’informa
 | [GravityConnectedAnimationConfiguration]() |
 | - |
 | Cela est la configuration par défaut et est recommandée pour la navigation vers l’avant. |
-Lorsque l’utilisateur navigue vers l’avant dans l’application (de A à B), l’élément connecté s’affiche physiquement «extraire hors de la page». En procédant ainsi, l’élément s’affiche pour déplacer vers l’avant dans un espace de z et supprime un peu comme un effet de gravité tenu de mise en attente. Pour résoudre les effets de gravité, l’élément vitesse les gains et accélère dans sa position finale. Le résultat est une animation «mise à l’échelle et dip». |
+Lorsque l’utilisateur navigue vers l’avant dans l’application (de A à B), l’élément connecté s’affiche physiquement» pour mener à bien la page». En procédant ainsi, l’élément apparaît à déplacer vers l’avant dans un espace de z et supprime un peu comme un effet de la gravité tenant. Pour résoudre les effets de la gravité, l’élément gains de vitesse et accélère dans sa position finale. Le résultat est une animation «mise à l’échelle et dip». |
 
 | [DirectConnectedAnimationConfiguration]() |
 | - |
-| Lorsque l’utilisateur navigue vers l’arrière dans l’application (B vers A), l’animation est plus directe. L’élément connecté convertit linéaire des B à l’aide une decelerate cubique courbe de Bézier fonction d’accélération. L’affordance visuelle vers l’arrière renvoie l’utilisateur à leur état antérieur aussi vite que possible tout en conservant le contexte du flux de navigation. |
+| Lorsque l’utilisateur navigue vers l’arrière dans l’application (B vers A), l’animation est plus directe. L’élément connecté traduit linéaire de B à l’aide une decelerate cubique courbe de Bézier fonction d’accélération. L’affordance visuelle vers l’arrière renvoie l’utilisateur à leur état antérieur aussi vite que possible tout en conservant le contexte du flux de navigation. |
 
 | [BasicConnectedAnimationConfiguration]() |
 | - |
@@ -227,7 +227,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-Entre le moment que l’animation est configurée et lorsqu’il est démarré, l’élément source apparaît gelé au-dessus des autres interfaces utilisateur dans l’application. Cela vous permet d’effectuer toutes les autres animations de transition simultanément. Pour cette raison, vous ne devez pas attendre plus de 250 millisecondes environ entre les deux étapes dans la mesure où la présence de l’élément source peut devenir gênante. Si vous préparez une animation et que vous ne la démarrez pas dans les trois secondes, le système la supprimera et tous les appels subséquents vers [TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart) échoueront.
+Entre le moment que l’animation est configurée et lorsque son démarrage, l’élément source apparaît gelé au-dessus des autre interfaces utilisateur dans l’application. Cela vous permet d’effectuer toutes les autres animations de transition simultanément. Pour cette raison, vous ne devez pas attendre plus de 250 millisecondes entre les deux étapes dans la mesure où la présence de l’élément source peut devenir gênante. Si vous préparez une animation et que vous ne la démarrez pas dans les trois secondes, le système la supprimera et tous les appels subséquents vers [TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart) échoueront.
 
 ## <a name="connected-animation-in-list-and-grid-experiences"></a>Expériences d'animation connectée dans des listes et des grilles
 
@@ -248,7 +248,7 @@ Par exemple, supposons que vous avez une **ListView** qui contient un élément 
 </ListView>
 ```
 
-Pour préparer une animation connectée avec l’ellipse correspondant à un élément de liste donné, appelez la méthode de [PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation) avec une clé unique, l’élément et le nom «PortraitEllipse».
+Pour préparer une animation connectée avec l’ellipse correspondant à un élément de liste donné, appelez la méthode [PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation) avec une clé unique, l’élément et le nom «PortraitEllipse».
 
 ```csharp
 void PrepareAnimationWithItem(ContactsItem item)
@@ -287,9 +287,9 @@ private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
 
 Une *animation coordonnée* est un type spécial d’animation d’entrée où un élément s’affiche, ainsi que la cible de l’animation connectée, anime en tandem avec l’élément d’animation connectée lorsqu’il se déplace sur l’écran. Les animations coordonnées peuvent renforcer l'effet visuel d'une transition et attirer davantage l’attention de l’utilisateur sur le contexte commun entre les affichages source et destination. Dans ces images, l’interface utilisateur de la légende pour l’élément s'anime à l'aide d’une animation coordonnée.
 
-Lorsqu’une animation coordonnée utilise la configuration de la gravité, la gravité est appliquée à l’élément d’animation connectée et les éléments coordonnés. Les éléments coordonnés seront «coup» en même temps que l’élément connecté afin que les éléments restent véritablement coordonnés.
+Lorsqu’une animation coordonnée utilise la configuration de la gravité, la gravité est appliquée à l’élément d’animation connectée et les éléments coordonnés. Les éléments coordonnés seront «coup» en même temps que l’élément connecté. ainsi, les éléments ne véritablement coordonnés.
 
-Utilisez la surcharge de deux paramètres de **TryStart** pour ajouter des éléments coordonnés à une animation connectée. Cet exemple montre une animation coordonnée d’une disposition de grille nommée «Descriptionroot» doit animer qui entre en tandem avec un élément d’animation connectée nommé «CoverImage».
+Utilisez la surcharge de deux paramètres de **TryStart** pour ajouter des éléments coordonnés à une animation connectée. Cet exemple montre une animation coordonnée d’une disposition de grille nommée «Descriptionroot» doit animer qu’entre en tandem avec un élément d’animation connectée nommé «CoverImage».
 
 ```xaml
 <!-- DestinationPage.xaml -->
@@ -318,10 +318,10 @@ void OnNavigatedTo(NavigationEventArgs e)
 ## <a name="dos-and-donts"></a>À faire et à ne pas faire
 
 - Utilisez une animation connectée dans les transitions de page où un élément est commun aux pages source et destination.
-- Utilisez [GravityConnectedAnimationConfiguration]() pour la navigation vers l’avant.
+- Utiliser [GravityConnectedAnimationConfiguration]() pour la navigation vers l’avant.
 - Utilisez [DirectConnectedAnimationConfiguration]() pour la navigation vers l’arrière.
 - N’attendez pas demandes réseau ou d’autres opérations asynchrones longues entre la préparation et de démarrage d’une animation connectée. Vous devrez peut-être charger au préalable les informations nécessaires pour exécuter la transition à l'avance, ou utiliser une image d'espace réservé basse résolution pendant le chargement d’une image haute résolution dans l’affichage de destination.
-- [SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) permet d’éviter une animation de transition dans une **image** si vous utilisez **ConnectedAnimationService**, dans la mesure où les animations connectées ne sont pas destinées à être utilisées simultanément avec la navigation par défaut transitions. Consultez [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) pour en savoir plus sur l’utilisation des transitions de navigation.
+- Utilisez [SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) pour éviter une animation de transition dans une **image** si vous utilisez **ConnectedAnimationService**, dans la mesure où les animations connectées ne sont pas destinées à être utilisées simultanément avec la navigation par défaut transitions. Consultez [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) pour en savoir plus sur l’utilisation des transitions de navigation.
 
 ## <a name="download-the-code-samples"></a>Téléchargez des exemples de code
 
