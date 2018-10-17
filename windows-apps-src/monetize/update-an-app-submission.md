@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au Microsoft Store, soumission d’applications, mise à jour
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f6797c288f3ee85daba9f90f81a3d1d8aa15562
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4683356"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4741129"
 ---
 # <a name="update-an-app-submission"></a>Mettre à jour une soumission d’application
 
@@ -304,7 +304,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 ## <a name="related-topics"></a>Rubriques associées
 
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
-* [Obtenir une soumission d’apps](get-an-app-submission.md)
+* [Obtenir une soumission d’application](get-an-app-submission.md)
 * [Créer une soumission d’application](create-an-app-submission.md)
 * [Valider une soumission d’application](commit-an-app-submission.md)
 * [Supprimer une soumission d’application](delete-an-app-submission.md)

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, point de service, PDV, lecteur de bande magnétique
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ce34623a0af9de6e0d678052719fb02f2a9672b
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4679482"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4741996"
 ---
 # <a name="magnetic-stripe-reader"></a>Lecteur de bande magnétique
 
@@ -26,6 +26,6 @@ Les rubriques ci-dessous fournissent des informations sur l’utilisation d’un
 
 ## <a name="in-this-section"></a>Dans cette section
 
-| Article | Description |
+| Rubrique | Description |
 |-------|-------------|
 | [Obtenir et comprendre les données de bande magnétique](../devices-sensors/pos-magnetic-stripe-reader-data.md) | Découvrez comment obtenir et interpréter les données à partir d’une bande magnétique. |
