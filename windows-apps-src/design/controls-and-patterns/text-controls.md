@@ -15,12 +15,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ad7326acf728aef66f10c72ee04461fd90e5f775
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.openlocfilehash: 2cd5f7e7022f246fce3d08286fe77c74503ddc5d
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691519"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4744874"
 ---
 # <a name="text-controls"></a>Contrôles de texte
 
@@ -125,7 +125,7 @@ Pour découvrir les recommandations concernant les polices, voir les articles su
 
 À partir de Windows10, version1803, les zones de saisie de texte XAML présentent une prise en charge intégrée de saisie effectuée à l'aide du stylet à l’aide de [Windows Ink](../input/pen-and-stylus-interactions.md). Quand un utilisateur appuie sur une zone de texte à l’aide d’un stylet Windows, la zone de texte se transforme pour permettre à l’utilisateur d’écrire dedans directement à l'aide d'un stylet, au lieu d’ouvrir un panneau de saisie distinct.
 
-![La zone de texte s’agrandit lorsqu'un utilisateur appuie dessus avec un stylet](images/pen-input-expand.gif)
+![La zone de texte s’agrandit lorsqu'un utilisateur appuie dessus avec un stylet](images/handwritingview/handwritingview2.gif)
 
 Pour plus d’informations, voir la [Saisie de texte avec l’affichage de l’écriture manuscrite](text-handwriting-view.md).
 

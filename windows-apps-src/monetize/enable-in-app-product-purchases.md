@@ -11,13 +11,13 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dcdedda655011cf700df2548140b312f4b0f817d
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688654"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4747218"
 ---
-# <a name="enable-in-app-product-purchases"></a>Activer les achats de produits dans l’application
+# <a name="enable-in-app-product-purchases"></a>Activer les achats de produits in-app
 
 Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application.
 

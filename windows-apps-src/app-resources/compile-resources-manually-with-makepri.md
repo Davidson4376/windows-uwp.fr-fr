@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: d065fdffe2fcb32a9d574c90f59eb7115597167a
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688763"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4750522"
 ---
 # <a name="compile-resources-manually-with-makepriexe"></a>Compiler des ressources manuellement avec MakePri.exe
 
@@ -27,7 +27,7 @@ MakePri.exe est un outil de ligne de commande que vous pouvez utiliser pour cré
 La limite de taille d’un fichier PRI est 64kilo-octets.
 
 ## <a name="in-this-section"></a>Dans cette section
-|Article|Description|
+|Rubrique|Description|
 |-|-|
 | [Options de ligne de commande de MakePri.exe](makepri-exe-command-options.md) | MakePri.exe inclut le jeu de commandes `createconfig`, `dump`, `new`, `resourcepack` et `versioned`. Cette rubrique détaille les options de ligne de commande utilisées avec ces commandes. |
 | [Fichier de configuration de MakePri.exe](makepri-exe-configuration.md) | Cette rubrique décrit le schéma du fichier de configurationXML de MakePri.exe. |

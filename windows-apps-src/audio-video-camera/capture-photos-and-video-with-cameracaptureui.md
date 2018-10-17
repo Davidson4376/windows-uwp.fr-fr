@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ba33a1e79a2447c5dac546ce0f1caeaf16929a3
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4687709"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4745628"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows
 
@@ -92,7 +92,7 @@ Une fois le fichier vidéo renvoyé depuis l’interface utilisateur de capture 
 
 ## <a name="related-topics"></a>Rubriquesassociées
 
-* [Caméra](camera.md)
+* [Appareil photo](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 
  

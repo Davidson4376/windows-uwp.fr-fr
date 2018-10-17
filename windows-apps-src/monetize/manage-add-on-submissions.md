@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumissions d'extension, produit dans l'app, FAI
 ms.localizationpriority: medium
 ms.openlocfilehash: 78c4f1603b921320009305e9646a7227ff47e8e3
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4693163"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4749583"
 ---
 # <a name="manage-add-on-submissions"></a>Gérer les soumissions de modules complémentaires
 

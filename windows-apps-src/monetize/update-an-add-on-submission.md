@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au Microsoft Store, soumission d’extension, mise à jour, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9126bae03644fb22f773cbd69cc397456a4cd48f
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688208"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4748182"
 ---
 # <a name="update-an-add-on-submission"></a>Mettre à jour une soumission d’extension
 
@@ -200,7 +200,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
 * [Gérer les soumissions de modules complémentaires](manage-add-on-submissions.md)
-* [Obtenir une soumission d’extension](get-an-add-on-submission.md)
+* [Obtenir une soumission de module complémentaire](get-an-add-on-submission.md)
 * [Créer une soumission d’extension](create-an-add-on-submission.md)
 * [Valider une soumission d’extension](commit-an-add-on-submission.md)
 * [Supprimer une soumission d’extension](delete-an-add-on-submission.md)

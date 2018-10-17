@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API des offres ciblées du MicrosoftStore, offres ciblées
 ms.localizationpriority: medium
 ms.openlocfilehash: cb3000e8d791f997267166505a190ddc7c9b4d34
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4679661"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4748139"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>Gérer les offres ciblées à l’aide des services du WindowsStore
 

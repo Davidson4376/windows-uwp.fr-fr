@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f14f241eb6a1a39b29216fe703c3804b34f8a3bc
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4680031"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4751156"
 ---
 # <a name="app-analysis-overview"></a>vue d’ensemble de l’analyse d’application
 

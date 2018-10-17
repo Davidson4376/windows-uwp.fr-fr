@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumission d’app, état
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d14ce17f4e6dff08351ca0764f3b6a173550426
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4692225"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4749936"
 ---
 # <a name="get-the-status-of-an-app-submission"></a>Obtenir l’état d’une soumission d’applications
 
@@ -98,10 +98,10 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | 409  | L’app utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="related-topics"></a>Rubriques associées
 
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
-* [Obtenir une soumission d’apps](get-an-app-submission.md)
+* [Obtenir une soumission d’application](get-an-app-submission.md)
 * [Créer une soumission d’application](create-an-app-submission.md)
 * [Valider une soumission d’application](commit-an-app-submission.md)
 * [Mettre à jour une soumission d’application](update-an-app-submission.md)

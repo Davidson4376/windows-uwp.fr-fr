@@ -1,7 +1,7 @@
 ---
 author: KarlErickson
 ms.assetid: F46306EC-DFF3-4FF0-91A8-826C1F8C4A52
-title: Liaison de données et le modèle MVVM
+title: Liaison de données et MVVM
 description: Liaison de données est au cœur du modèle de conception de l’architecture de l’interface utilisateur Model-View-ViewModel (MVVM) et permet de couplage faible entre le code de l’interface utilisateur et sans interface utilisateur.
 ms.author: karler
 ms.date: 10/02/2018
@@ -11,13 +11,13 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eda370db8b68232066052cca3d0abfa6e3876167
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4686127"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4747930"
 ---
-# <a name="data-binding-and-mvvm"></a>Liaison de données et le modèle MVVM
+# <a name="data-binding-and-mvvm"></a>Liaison de données et MVVM
 
 Model-View-ViewModel (MVVM) est un modèle de conception de l’architecture de l’interface utilisateur pour dissocier le code de l’interface utilisateur et sans interface utilisateur. Grâce au modèle MVVM, vous définissez votre interface utilisateur de façon déclarative dans le code XAML et balisage de liaison de données permet de lier à d’autres couches contenant les données et les commandes. L’infrastructure de liaison de données fournit un couplage faible qui maintient l’interface utilisateur et les données liées synchronisés et dirige l’entrée d’utilisateur pour les commandes appropriées. 
 

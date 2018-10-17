@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: Ce guide vous aide à créer des interfaces utilisateur UWP Fluent directement dans vos applications WPF et Windows Forms
-title: Contrôles UWP dans les applications de bureau
+title: Contrôles UWP dans des applications de bureau
 ms.author: mcleans
 ms.date: 09/21/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp, windows forms, wpf
 keywords: windows10, uwp, windows forms, wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: b9757466502283c673c7b2106b4a7775be412faf
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688532"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4746832"
 ---
-# <a name="uwp-controls-in-desktop-applications"></a>Contrôles UWP dans les applications de bureau
+# <a name="uwp-controls-in-desktop-applications"></a>Contrôles UWP dans des applications de bureau
 
 > [!NOTE]
 > Les API et les contrôles mentionnés dans cet article sont actuellement disponibles sous la forme d’un version préliminaire pour développeurs. Bien que nous vous encourageons à les tester dans votre propre code prototype maintenant, nous ne recommandons pas que vous les utiliser dans le code de production pour l’instant. Ces API et les contrôles continuera à mûrir et stabiliser dans les futures versions de Windows. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.

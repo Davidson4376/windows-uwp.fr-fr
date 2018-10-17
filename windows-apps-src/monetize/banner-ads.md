@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, annonces, publicité, AdControl, bannières publicitaires
 ms.localizationpriority: medium
 ms.openlocfilehash: fc47c8d40d10eef3e6d92f2d47485d8cf265172d
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4682213"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4751026"
 ---
 # <a name="banner-ads"></a>Bannières publicitaires
 
@@ -26,14 +26,14 @@ Bannières publicitaires sont des publicités à affichage statique qui utilisen
 
 ## <a name="in-this-section"></a>Dans cette section
 
-|  Article    | Description |               
+|  Rubrique    | Description |               
 |----------|-------|
 | [AdControl en XAML et .NET](adcontrol-in-xaml-and--net.md)     | Ajoutez une bannière publicitaire dans votre application XAML/.NET.        |
 | [AdControl en HTML5 et JavaScript](adcontrol-in-html-5-and-javascript.md)     | Ajoutez une bannière publicitaire dans votre application HTML5/JavaScript.        |
 | [Tailles des bannières prises en charge](supported-ad-sizes-for-banner-ads.md)    |  Passez en revue les tailles prises en charge pour les bannières publicitaires dans les applications UWP.        |
 
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="related-topics"></a>Rubriques associées
 
 * [Exemples de publicité sur GitHub](http://aka.ms/githubads)
 * [Configurer des unités publicitaires pour votre application](set-up-ad-units-in-your-app.md)

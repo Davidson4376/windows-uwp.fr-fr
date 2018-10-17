@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, les utilisateurs de comptes, gérer les utilisateurs, azure ad, multiutilisateur, plusieurs utilisateurs
 ms.localizationpriority: medium
 ms.openlocfilehash: bef703958f8f04cd55d887dfa8840d1ed3fbeba5
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4690983"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4745858"
 ---
 # <a name="manage-account-users"></a>Gérer des utilisateurs de compte
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4680512"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4745072"
 ---
 # <a name="enterprise"></a>Entreprise
 
@@ -36,7 +36,7 @@ Voici certains outils, des bibliothèques et des fonctionnalités qui ont été 
 > * [Contrôles pour créer des interfaces utilisateur de bureau-Style](#desktop-style-UI)
 > * [Contrôles pour prendre en charge des scénarios d’entreprise](#enterprise)
 > * [Bibliothèque de l’interface utilisateur de Windows](#UI-library)
-> * [Contrôles UWP dans les applications de bureau](#xaml-islands)
+> * [Contrôles UWP dans des applications de bureau](#xaml-islands)
 > * [.NET Standard2.0](#standard)
 > * [Connectivité SQL Server](#sql-server)
 > * [Déploiement MSIX](#MSIX)
@@ -82,7 +82,7 @@ Voir la [Bibliothèque de l’interface utilisateur de Windows (version d’éva
 
 <a id="xaml-islands" />
 
-### <a name="uwp-controls-in-desktop-applications"></a>Contrôles UWP dans les applications de bureau
+### <a name="uwp-controls-in-desktop-applications"></a>Contrôles UWP dans des applications de bureau
 
 Windows 10 vous permet désormais d’utiliser les contrôles UWP dans les applications de bureau C++ Win32, Windows Forms et WPF. Cela signifie que vous pouvez améliorer l’apparence et les fonctionnalités de vos applications de bureau existantes avec les dernières fonctionnalités de l’interface utilisateur de Windows 10 qui sont uniquement disponibles via les contrôles UWP, telles que Windows Ink et les contrôles qui prennent en charge le système Fluent Design. Cette fonctionnalité est appelée (îles) XAML.
 
@@ -177,7 +177,7 @@ Aujourd’hui, de nombreux utilisateurs travaillent avec leur propre téléphone
 
 Vous disposez d’options pour la distribution des applications aux utilisateurs de votre organisation. Vous pouvez utiliser Microsoft Store pour entreprises, la gestion des périphériques mobiles existant ou vous pouvez charger des applications sur des appareils. Vous pouvez également rendre vos applications disponibles au grand public en les publiant sur le Microsoft Store.
 
-| Article | Description |
+| Rubrique | Description |
 |-------|-------------|
 | [Distribuer des applications métier aux entreprises](https://msdn.microsoft.com/library/windows/apps/mt608995) | Vous pouvez publier des applications cœur de métier directement aux entreprises pour une acquisition en volume par le biais du Microsoft Store pour entreprises, sans mettre les applications à grande échelle à la disposition du public. |
 | [Charger une version test des applications](https://technet.microsoft.com/library/mt269549) | Lorsque vous chargez de manière indépendante une application, vous déployez un package d’application signée sur un appareil. Vous conservez la signature, l’hébergement et le déploiement de ces applications. Le processus de chargement indépendant d’applications est simplifié pour Windows 10.             |
@@ -189,7 +189,7 @@ Texte d’introduction ici.
 
 Action - communiquer avec Josh et/ou Karl pour obtenir plus les échantillons orienté entreprise ensemble.
 
-| Article |  Description |
+| Rubrique |  Description |
 |------ |--------------|
 | [Exemple de stock VanArsdel](https://github.com/Microsoft/InventorySample) | Un exemple d’application Windows 10 (à l’aide de la plateforme Windows universelle) se concentre dans les scénarios métier, montrant comment utiliser les dernières fonctionnalités de Windows dans les applications de bureau. L’exemple est basé sur la création et la gestion des clients, des commandes et produits pour la société fictive VanArsdel.
 Cette rubrique présente les MVVM, base de données SQL, Entity Framework. La liste d’autres utilisateurs.|

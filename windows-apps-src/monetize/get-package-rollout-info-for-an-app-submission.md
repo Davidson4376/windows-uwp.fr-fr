@@ -11,11 +11,11 @@ keywords: windows10, uwp, API de soumission au MicrosoftStore, lancement du pack
 ms.assetid: 9ada5ac3-a86e-4bb6-8ebc-915ba9649e3c
 ms.localizationpriority: medium
 ms.openlocfilehash: ead13a255eb707df2e60907265672d53aab120d9
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4692904"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4745979"
 ---
 # <a name="get-rollout-info-for-an-app-submission"></a>Obtenir des informations sur le déploiement pour une soumission d’application
 
@@ -101,7 +101,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | 409  | La soumission n’appartient pas à l’app spécifiée, ou l’app utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques associées
 
 * [Lancement progressif de packages](../publish/gradual-package-rollout.md)
 * [Gérer les soumissions d’apps à l’aide de l’API de soumission au MicrosoftStore](manage-app-submissions.md)

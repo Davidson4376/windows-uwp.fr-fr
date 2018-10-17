@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b11151df981a4b5ce233458581d21e405be9844c
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688062"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4748891"
 ---
 # <a name="user-activities-best-practices"></a>Bonnes pratiques des activités utilisateur
 
@@ -101,7 +101,7 @@ Dans l’exemple suivant, les métadonnées de contenu JSON, en suivant les norm
 
 * [Espace de noms UserActivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="related-topics"></a>Rubriques associées
 
 * [Activités de l’utilisateur (documentation du projet «Rome»)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Cartes adaptatives](https://docs.microsoft.com/adaptive-cards/)

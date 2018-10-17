@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 description: L’extension de balisage permet aux fonctions à utiliser dans le balisage.
-title: 'Fonctions dans x: Bind'
+title: Fonctions dans x:Bind
 ms.author: jimwalk
 ms.date: 04/26/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: Windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691956"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4747017"
 ---
-# <a name="functions-in-xbind"></a>Fonctions dans x: Bind
+# <a name="functions-in-xbind"></a>Fonctions dans x:Bind
 
 **Remarque**  Pour plus d’informations sur l’utilisation de la liaison de données dans votre application avec **{x:Bind}** (et pour une comparaison entre **{x:Bind}** et **{Binding}**), voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 

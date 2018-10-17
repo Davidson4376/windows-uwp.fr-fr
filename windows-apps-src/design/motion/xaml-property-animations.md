@@ -12,11 +12,11 @@ pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.openlocfilehash: a03ffc8d5ea78ee6cbdf78feaae7ba1cd1448f37
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4679621"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4750843"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>Animation d’éléments XAML avec des animations de composition
 
@@ -130,7 +130,7 @@ animation.Target = "Scale";
 destinationButton.StartAnimation(animation);
 ```
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="related-topics"></a>Rubriques associées
 
 - [Animations dans une table de montage](storyboarded-animations.md)
 - [Utilisation de la couche visuelle avec le contenu XAML](../../composition/using-the-visual-layer-with-xaml.md)
