@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows10, uwp, vignettes secondaires
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f11ca4d29f22daf953ce03436c3b786c70a9e04
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: d8d6a79ddd497bc3ada777af25791e9938355c79
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4622875"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4692875"
 ---
 # <a name="secondary-tiles"></a>Vignettes secondaires
 
@@ -70,7 +70,7 @@ Toutefois, les vignettes secondaires diffèrent des vignettes principales à plu
 * Les utilisateurs peuvent supprimer leurs vignettes secondaires à tout moment sans supprimer l’application parente.
 * Les vignettes secondaires peuvent être créées en cours d’exécution. Les vignettes d’application peuvent être créées uniquement lors de l’installation.
 * Un menu volant invite l’utilisateur à confirmer l’ajout d’une vignette secondaire.
-* Elles ne peuvent pas être sélectionnées par programmation pour l’écran de verrouillage par le biais d’une demande faite à l’utilisateur. L’utilisateur doit ajouter manuellement le la vignette secondaire par le biais de la page Personnaliser dans les paramètres du PC.
+* Elles ne peuvent pas être sélectionnées par programmation pour l’écran de verrouillage par le biais d’une demande faite à l’utilisateur. L’utilisateur doit ajouter manuellement la vignette secondaire par le biais de la page Personnaliser dans les paramètres du PC.
 
 Pour envoyer des notifications, des méthodes spécifiques sont fournies pour les outils de mises à jour par vignette et badge et les canaux de notification Push utilisés avec les vignettes secondaires. Celles-ci mettent en parallèle les versions utilisées avec les vignettes secondaires. Par exemple, CreateBadgeUpdaterForApplication par rapport à CreateBadgeUpdaterForSecondaryTile.
 

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 5309b33e0f65a1a06e1a3c0060a84e4c4a88ef9d
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 8f3aa529e1c292bcea816e21222ca2a5e07f4319
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700795"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4692314"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
 
@@ -48,7 +48,7 @@ Voici un exemple d’utilisation des qualificateurs pour nommer des dossiers con
 \Assets\Images\contrast-white\<logo.png, and other image files>
 ```
 
-Si vous nommez vos dossiers comme dans l’exemple ci-dessus, votre application utilise le paramètre de contraste élevé pour charger des fichiers de ressources à partir du dossier nommé par le qualificateur approprié. Par conséquent, si le paramètre est Contraste noir élevé, les fichiers de ressources du dossier `\Assets\Images\contrast-black` sont chargés. Si le paramètre est Aucun (autrement dit, l’ordinateur n’est pas en mode de contraste élevé), les fichiers de ressource du dossier `\Assets\Images\standard` sont chargés.
+Si vous nommez vos dossiers comme dans l’exemple ci-dessus, votre application utilise le paramètre de contraste élevé pour charger des fichiers de ressources à partir du dossier nommé par le qualificateur approprié. Par conséquent, si le paramètre est Contraste noir élevé, les fichiers de ressources du dossier `\Assets\Images\contrast-black` sont chargés. Si le paramètre est Aucun (autrement dit, l’ordinateur n’est pas en mode de contraste élevé), les fichiers de ressource du dossier `\Assets\Images\contrast-standard` sont chargés.
 
 ## <a name="use-qualifiers-in-file-names"></a>Utiliser des qualificateurs dans les noms de fichier
 

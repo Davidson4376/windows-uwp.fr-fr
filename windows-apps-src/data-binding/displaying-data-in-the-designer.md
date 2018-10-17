@@ -9,17 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 00a6bbf06f918c0b86bcaed7ae7891b474baefe8
-ms.sourcegitcommit: 73ea31d42a9b352af38b5eb5d3c06504b50f6754
+ms.localizationpriority: medium
+ms.openlocfilehash: a92be54e55e06b4e7ffd61b1526425920ea80f96
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/27/2017
-ms.locfileid: "852879"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4694172"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>Exemples de données sur l’aire de conception et pour la création d’un prototype
 =============================================================================================
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **Remarque**  La mesure dans laquelle vous avez besoin d’exemples de données et dans laquelle ces exemples vous aideront dépend de si vos liaisons utilisent l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) ou l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783). Les techniques décrites dans cette rubrique sont basées sur l’utilisation d’une [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713), afin qu’elles soient appropriées uniquement pour **{Binding}**. Si vous utilisez **{x:Bind}**, vos liaisons affichent au moins les valeurs d’espace réservé sur la surface de conception (même pour les contrôles d’éléments), si bien que vous n’avez pas tout à fait le même besoin d’exemples de données.
@@ -143,7 +143,7 @@ Jusqu’ici, nous avons utilisé **d:DesignData** pour charger les exemples de d
         d:Source="{d:DesignInstance Type=local:Recordings, IsDesignTimeCreatable=True}"/>
 ```
 
-La propriété **IsDesignTimeCreatable** indique que l’outil de conception doit réellement créer une instance de la classe, qui implique que la classe possède un constructeur public par défaut, et qu’il se remplit lui-même de données (données réelles ou exemple de données). Si vous ne définissez pas **IsDesignTimeCreatable** (ou si vous le définissez sur **False**), les exemples de données ne s’afficheront pas sur la surface de conception. Dans ce cas, l’outil de conception se contente d’analyser les propriétés pouvant être liées de la classe et de les afficher dans le panneau **Données** et la boîte de dialogue **Créer une liaison de données**.
+La propriété **IsDesignTimeCreatable** indique que l’outil de conception doit réellement créer une instance de la classe, qui implique que la classe possède un constructeur public par défaut, et qu’il se remplit lui-même de données (données réelles ou exemple de données). Si vous ne définissez pas **IsDesignTimeCreatable** (ou si vous le définissez sur **False**), les exemples de données ne s’afficheront pas sur la surface de conception. L’outil de conception se contente dans ce cas consiste à analyser la classe ses propriétés pouvant être liées et afficher ces dans le panneau de **données** et dans la boîte de dialogue **Créer une liaison de données** .
 
 <a name="sample-data-for-prototyping"></a>Exemple de données pour créer un prototype
 --------------------------------------------------------
