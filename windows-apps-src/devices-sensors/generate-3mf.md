@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 02eb6442b4769e92bec2b41ed9ab0e91a6a98a7f
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4742380"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "4967993"
 ---
 # <a name="generate-a-3mf-package"></a>Générer un package 3MF
 

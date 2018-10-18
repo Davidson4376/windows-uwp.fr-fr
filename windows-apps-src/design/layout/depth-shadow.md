@@ -13,11 +13,11 @@ pm-contact: chigy
 design-contact: balrayit
 ms.localizationpriority: medium
 ms.openlocfilehash: a1433b131b994ee2b1323909bc7c195e00f43cde
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4748511"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "4969020"
 ---
 # <a name="z-depth-and-shadow"></a>Profondeur de tampon et ombre
 
@@ -65,7 +65,7 @@ Réduire le nombre de plans avec élévation de privilèges pour fournir le focu
 
 ## <a name="what-is-shadow"></a>Nouveautés d’ombre?
 
-![ombre](images/elevation-shadow/shadow.svg)
+![shadow](images/elevation-shadow/shadow.svg)
 
 Ombre est un moyen de percevoir une élévation. Lorsqu’il est clair au-dessus d’un objet avec élévation de privilèges, il existe une ombre sur la surface ci-dessous. Plus l’objet, la plus grande et plus l’ombre devient. Notez que les objets avec élévation de privilèges ne doivent avoir des ombres, mais les ombres indiquent une élévation.
 
