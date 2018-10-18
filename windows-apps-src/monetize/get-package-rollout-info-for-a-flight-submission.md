@@ -11,11 +11,11 @@ keywords: windows10, uwp, API de soumission au MicrosoftStore, lancement du pack
 ms.assetid: 397f1b99-2be7-4f65-bcf1-9433a3d496ad
 ms.localizationpriority: medium
 ms.openlocfilehash: 9dd9a318ffd80d32f6370709c4ca3463ae6d8cc7
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4681296"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4755060"
 ---
 # <a name="get-rollout-info-for-a-flight-submission"></a>Obtenir des informations sur le déploiement pour une soumission d’évaluation de package
 
@@ -102,7 +102,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | 409  | La soumission de version d’évaluation du package n’appartient pas à la version d’évaluation du package spécifiée, ou l’app utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques associées
 
 * [Lancement progressif de packages](../publish/gradual-package-rollout.md)
 * [Gérer les soumissions de versions d’évaluation de package à l’aide de l’API de soumission au Microsoft Store](manage-flight-submissions.md)

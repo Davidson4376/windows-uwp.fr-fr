@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, services du Windows Store
 ms.localizationpriority: medium
 ms.openlocfilehash: d53fa39d0c6359e6f081c62a415cbf1874549b8f
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4692539"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4752931"
 ---
 # <a name="microsoft-store-services"></a>Services MicrosoftStore
 
@@ -24,7 +24,7 @@ Le Microsoft Store expose plusieurs services que vous pouvez appeler via l’API
 ## <a name="in-this-section"></a>Dans cette section
 
 
-| Article            | Description                 |
+| Rubrique            | Description                 |
 |------------------|-----------------------------|
 | [Accéder aux données d’analyse](access-analytics-data-using-windows-store-services.md) | Utiliser *Microsoft Store analytique API* pour récupérer par programme les données d’analytique de vos applications. Cette API permet de récupérer les données pour les acquisitions d'applications et de modules complémentaires (également appelés produits in-app ou PIA), les échecs des applications, les classifications et les vérifications d'applications, ainsi que les données de performances pour les publicités in-app et les campagnes publicitaires. |
 | [Répondre aux avis](respond-to-reviews-using-windows-store-services.md) | Utilisez l'*API d'avis du MicrosoftStore* pour répondre par programmation aux avis sur votre app dans le MicrosoftStore. Cette API est particulièrement utile pour les développeurs qui souhaitent répondre en bloc à de nombreux avis sans utiliser le tableau de bord du Centre de développement Windows.  |

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: edc3dc53a7cf536bbabce108647cf54693c3ab05
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4687476"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4755312"
 ---
 # <a name="data-binding"></a>Liaison de données
 
@@ -27,4 +27,4 @@ La liaison de données est un moyen dont dispose l’interface utilisateur de vo
 | [Présentation détaillée de la liaison de données](data-binding-in-depth.md) | Cette rubrique décrit en détail les fonctionnalités de liaison de données. |
 | [Exemples de données sur l’aire de conception et pour la création d’un prototype](displaying-data-in-the-designer.md) | Pour que vos contrôles soient remplis avec les données dans le concepteur Visual Studio (de sorte que vous puissiez travailler sur la disposition de votre application, les modèles et les autres propriétés visuelles), vous pouvez utiliser vos exemples de données au moment de la conception de diverses manières. Les exemples de données peuvent également être vraiment utiles et permettre de gagner du temps si vous créez une application de croquis (ou de prototype). Vous pouvez utiliser des exemples de données dans votre croquis ou prototype au moment de l’exécution pour illustrer vos idées sans avoir à vous connecter aux données actives/réelles. |
 | [Lier des données hiérarchiques et créer un affichage maître/détails](how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md) | Vous pouvez effectuer un affichage maître/détails (également appelé affichage liste/détails) de données hiérarchiques sur plusieurs niveaux en liant les contrôles d’éléments aux instances [<strong>CollectionViewSource</strong>](https://msdn.microsoft.com/library/windows/apps/BR209833) qui sont liées dans une chaîne. |
-| [Liaison de données et le modèle MVVM](data-binding-and-mvvm.md) | Cette rubrique décrit le modèle de conception de l’architecture de l’interface utilisateur Model-View-ViewModel (MVVM). Liaison de données est au cœur du modèle MVVM et permet de couplage faible entre le code de l’interface utilisateur et sans interface utilisateur. |
+| [Liaison de données et MVVM](data-binding-and-mvvm.md) | Cette rubrique décrit le modèle de conception de l’architecture de l’interface utilisateur Model-View-ViewModel (MVVM). Liaison de données est au cœur du modèle MVVM et permet de couplage faible entre le code de l’interface utilisateur et sans interface utilisateur. |

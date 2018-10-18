@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, pub, publicités, spots, javascript, exemple de code
 ms.localizationpriority: medium
 ms.openlocfilehash: 894053298428818c2f3304220f14afb6c44ba2af
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4685082"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4753767"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>Exemple de code pour spot publicitaire en JavaScript
 

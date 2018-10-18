@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, soumission d’apps
 ms.localizationpriority: medium
 ms.openlocfilehash: 9838798778a2d66b2a52fcfe02defce0c9167d2d
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4689634"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4753216"
 ---
 # <a name="get-an-app-submission"></a>Obtenir une soumission d’application
 
@@ -192,7 +192,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | 409  | La soumission n’appartient pas à l’app spécifiée, ou l’app utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission au MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 
-## <a name="related-topics"></a>Rubriquesassociées
+## <a name="related-topics"></a>Rubriques associées
 
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
 * [Crée une soumission d’apps](create-an-app-submission.md)

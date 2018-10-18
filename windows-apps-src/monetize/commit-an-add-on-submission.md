@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, valider une soumission d’extension, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: b9d20bffe2be163db568af0b16bdfef8cd600271
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4692458"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4753251"
 ---
 # <a name="commit-an-add-on-submission"></a>Valider une soumission d’extension
 
@@ -99,7 +99,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 ## <a name="related-topics"></a>Rubriques associées
 
 * [Créer et gérer des soumissions à l’aide des services du MicrosoftStore](create-and-manage-submissions-using-windows-store-services.md)
-* [Obtenir une soumission d’extension](get-an-add-on-submission.md)
+* [Obtenir une soumission de module complémentaire](get-an-add-on-submission.md)
 * [Créer une soumission d’extension](create-an-add-on-submission.md)
 * [Mettre à jour une soumission d’extension](update-an-add-on-submission.md)
 * [Supprimer une soumission d’extension](delete-an-add-on-submission.md)
