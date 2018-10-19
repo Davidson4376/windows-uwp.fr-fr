@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, agile, objet, agilité, IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 9af1fb0a9d23727924ae3c165bc8977fb9cc7774
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4961558"
+ms.locfileid: "5128643"
 ---
 # <a name="agile-objects-in-cwinrt"></a>Objets agiles en C++/WinRT
 Dans la grande majorité des cas, une instance d’une classe Windows Runtime &mdash;comme un objet C++ standard&mdash; est accessible à partir de n’importe quel thread. On dit qu’une telle classe est *agile*. Seul un petit nombre de classes Windows Runtime fournies avec Windows ne sont pas agiles, mais lorsque vous les utilisez, vous devez prendre en considération leur modèle de thread et leur comportement de rassemblement (le rassemblement consiste à transmettre des données à travers un thread ou les limites d’un processus). Il s’agit d’une bonne valeur par défaut pour chaque objet Windows Runtime être agile, afin que vos propres [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) types sont agiles par défaut.
