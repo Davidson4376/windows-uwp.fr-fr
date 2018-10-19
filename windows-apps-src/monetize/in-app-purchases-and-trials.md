@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, achats dans l’application, extensions, versions d’évaluation, consommables, durables, abonnement
 ms.localizationpriority: medium
-ms.openlocfilehash: d35e2469fa303a40967cf4c15800786eb2d17aca
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.openlocfilehash: b116e4794f024ecc5cf44d73e22c09ab8ee33ff4
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4750191"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4953167"
 ---
 # <a name="in-app-purchases-and-trials"></a>Achats dans l’application et versions d’évaluation
 
@@ -162,7 +162,7 @@ Pour exclure ou limiter les fonctionnalités d’une version d’évaluation de 
 
 Si votre application utilise des API de l'espace de noms **Windows.Services.Store** pour implémenter des achats in-app et la fonctionnalité de version d’évaluation, vous devez la publier dans le Store et télécharger l’application sur votre appareil de développement pour utiliser sa licence à des fins de test. Procédez comme suit pour tester votre code:
 
-1. Si votre application n’est pas encore publiée et rendue disponible dans le WindowsStore, assurez-vous qu’elle respecte les exigences minimum du [Kit de certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit), [soumettez-la](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) dans le tableau de bord du Centre de développement Windows, et assurez-vous qu’elle satisfasse au processus de certification. Vous pouvez [configurer votre application pour qu'elle ne soit pas détectable dans le Windows Store](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) pendant que vous la testez.
+1. Si votre application n’est pas encore publiée et rendue disponible dans le WindowsStore, assurez-vous qu’elle respecte les exigences minimum du [Kit de certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit), [soumettez-la](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) dans le tableau de bord du Centre de développement Windows, et assurez-vous qu’elle satisfasse au processus de certification. Vous pouvez [configurer votre application pour qu'elle ne soit pas détectable dans le Windows Store](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) pendant que vous la testez. Notez la configuration correcte des [versions d’évaluation de package](../publish/package-flights.md). Incorrectement package configuré, versions d’évaluation est peut-être ne pas en mesure d’être téléchargées.
 
 2. Ensuite, assurez-vous d’exécuter les actions suivantes:
 

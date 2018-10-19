@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, ExtendedJsonData, produits du MicrosoftStore, schéma
 ms.localizationpriority: medium
 ms.openlocfilehash: 77faa88524f348736c4c997dcd18ded200e9fd86
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4745664"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4945924"
 ---
 # <a name="data-schemas-for-store-products"></a>Schémas de données pour les produits du MicrosoftStore
 

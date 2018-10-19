@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, portail d’appareil, le Gestionnaire d’applications, déploiement, sdk
 ms.localizationpriority: medium
 ms.openlocfilehash: a6a96a78cf03ce4994ddee1c929997b12a2d028f
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4745434"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4948008"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>Déployer une application par le biais d’inscription de fichiers libres 
 
