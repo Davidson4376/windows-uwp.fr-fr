@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, pub, publicité, médiation publicitaire
 ms.localizationpriority: medium
 ms.openlocfilehash: cfcb2402a9a0246060a619cbc65337e2b2c69d78
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4960851"
+ms.locfileid: "5131600"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Service de médiation publicitaire de Microsoft
 

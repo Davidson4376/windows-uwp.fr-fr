@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, compte de développeur, individuel, société, entreprise
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4950931"
+ms.locfileid: "5159843"
 ---
 # <a name="account-types-locations-and-fees"></a>Types de compte, emplacements et frais
 

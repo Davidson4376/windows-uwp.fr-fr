@@ -10,11 +10,11 @@ ms.technology: uwp, windows forms, wpf
 keywords: Windows 10, uwp, WinForms, wpf, win32
 ms.localizationpriority: medium
 ms.openlocfilehash: 59072374e19da1c5c7e6e6a5e6a7b8c172d74052
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4958990"
+ms.locfileid: "5133043"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>À l’aide de XAML UWP API d’hébergement dans une application de bureau
 
@@ -202,11 +202,11 @@ Pour obtenir des exemples qui montrent comment effectuer cette opération dans l
 
 Lorsque l’utilisateur modifie la taille de l’élément d’interface utilisateur parent, vous devez gérer les modifications de disposition nécessaires pour vous assurer que vos contrôles UWP afficher comme prévu. Voici quelques scénarios importants à prendre en compte.
 
-1. Lorsque l’élément d’interface utilisateur parent doit obtenir la taille de la zone rectangulaire nécessaire pour s’adapter à la **Windows.UI.Xaml.UIElement** que vous hébergez sur le **DesktopWindowXamlSource**, appelez la méthode de [**mesure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) de la **Windows.UI.Xaml.UIElement **. Exemple :
+1. Lorsque l’élément d’interface utilisateur parent doit obtenir la taille de la zone rectangulaire nécessaire pour s’adapter à la **Windows.UI.Xaml.UIElement** que vous hébergez sur le **DesktopWindowXamlSource**, appelez la méthode de [**mesure**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) de la **Windows.UI.Xaml.UIElement **. Exemple:
     * Dans une application WPF vous pouvez le faire à partir de la méthode [**MeasureOverride**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride) de l' [**HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) qui héberge le **DesktopWindowXamlSource**.
     * Dans une application Windows Forms vous pourrez le faire à partir de la méthode [**GetPreferredSize**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.getpreferredsize) du [**contrôle**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) qui héberge le **DesktopWindowXamlSource**.
 
-2. Lorsque les dimensions de l’élément UI parent, appelez la méthode de [**disposition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) de la racine **Windows.UI.Xaml.UIElement** qui vous hébergez sur le **DesktopWindowXamlSource**. Exemple :
+2. Lorsque les dimensions de l’élément UI parent, appelez la méthode de [**disposition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) de la racine **Windows.UI.Xaml.UIElement** qui vous hébergez sur le **DesktopWindowXamlSource**. Exemple:
     * Dans une application WPF vous pourrez le faire à partir de la méthode [**ArrangeOverride**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.arrangeoverride) de l’objet [**HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) qui héberge le **DesktopWindowXamlSource**.
     * Dans une application Windows Forms vous pouvez procéder à partir du gestionnaire pour l’événement [**SizeChanged**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.sizechanged) du [**contrôle**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) qui héberge le **DesktopWindowXamlSource**.
 

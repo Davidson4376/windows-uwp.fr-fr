@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, personnalisé, application, promotion, campagne
 ms.localizationpriority: medium
 ms.openlocfilehash: 13ee8d7482a2ce0716d4e133af329cd0ea42c184
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4956909"
+ms.locfileid: "5133804"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>Créer une campagne personnalisée de promotion d’applications
 

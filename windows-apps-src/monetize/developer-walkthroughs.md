@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, annonces, publicités, procédures pas à pas
 ms.localizationpriority: medium
 ms.openlocfilehash: d54a70b01f0885ccabfe90c78330a63dc98a4d23
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4947781"
+ms.locfileid: "5131470"
 ---
 # <a name="implement-ads-in-your-app"></a>Intégrer des publicités dans votre application
 
