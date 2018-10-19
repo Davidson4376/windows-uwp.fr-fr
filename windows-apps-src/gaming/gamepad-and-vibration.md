@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, jeux, boîtier de commande, vibration
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bf78b43bb09f97c196858d7cc4fcdb1e71462fc
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4750326"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4965105"
 ---
 # <a name="gamepad-and-vibration"></a>Boîtier de commande et vibration
 
