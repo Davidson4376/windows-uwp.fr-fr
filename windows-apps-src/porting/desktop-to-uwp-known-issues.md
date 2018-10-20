@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 731d449d779806fbd4104787b692d3b7d0408036
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4949015"
+ms.locfileid: "5161469"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>Problèmes connus avec les applications de bureau empaquetées
 
@@ -149,13 +149,13 @@ Pour rechercher des fichiers qui contiennent un certificat PE incorrect, ouvrez 
 set APPXSIP_LOG=1
 ```
 
-Ensuite, à partir de l' **invite de commandes**, connectez-vous à votre application à nouveau. Exemple :
+Ensuite, à partir de l' **invite de commandes**, connectez-vous à votre application à nouveau. Exemple:
 
 ```
 signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
 ```
 
-Informations sur les fichiers qui contiennent un certificat PE incorrect seront affiche dans la **Fenêtre de Console**. Exemple :
+Informations sur les fichiers qui contiennent un certificat PE incorrect seront affiche dans la **Fenêtre de Console**. Exemple:
 
 ```
 ...

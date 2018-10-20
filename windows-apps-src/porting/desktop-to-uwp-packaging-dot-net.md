@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c9b7a30a50c26d2dbdaf6df04e85549addaf181
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: 091782d926949b87db9b29c08ec8cf98f485f0df
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "4967561"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5169088"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>Empaqueter une application de bureau à l’aide de Visual Studio
 
@@ -62,7 +62,9 @@ Consultez ce guide avant de commencer la création d’un package pour votre app
 
    ![Définir le point d’entrée](images/desktop-to-uwp/entry-point-set.png)
 
-6. Générez le projet de création de package pour vous assurer qu’aucune erreur n’apparaît.
+6. Générez le projet de création de package pour vous assurer qu’aucune erreur n’apparaît.  Si vous recevez des erreurs, ouvrez le **Gestionnaire de Configuration** et vous assurer que vos projets ciblent la même plate-forme.
+
+   ![Gestionnaire de configuration](images/desktop-to-uwp/config-manager.png)
 
 7. Utilisez l'assistant [Créer des packages d'application](../packaging/packaging-uwp-apps.md) pour générer un fichier appxupload.
 
@@ -81,7 +83,7 @@ Des questions? Contactez-nous sur Stack Overflow. Notre équipe contrôle ces [b
 
 **Transmettre des commentaires ou suggérer des fonctionnalités**
 
-Consultez [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
+Voir [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
 
 **Exécuter, déboguer ou tester votre application de bureau**
 
@@ -93,7 +95,7 @@ Consultez [Améliorer votre application de bureau pour Windows10](desktop-to-uwp
 
 **Étendre votre application de bureau en ajoutant des projets UWP et les composants Windows Runtime**
 
-Consultez [Étendre votre application de bureau avec des composants UWP modernes](desktop-to-uwp-extend.md).
+Voir [Étendre votre application de bureau avec des composants UWP modernes](desktop-to-uwp-extend.md).
 
 **Distribuer votre application**
 

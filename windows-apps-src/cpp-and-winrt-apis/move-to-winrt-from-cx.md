@@ -3,32 +3,38 @@ author: stevewhims
 description: Cette rubrique montre comment porter du code C++/CX vers son équivalent en C++/WinRT.
 title: Passer de C++/CX à C++/WinRT
 ms.author: stwhi
-ms.date: 07/20/2018
+ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 68a631153c104f14f22839077c4c62d34626ed2a
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: 29144f110a76227ae6a1bc1e7d7aa9f051babc9d
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4957011"
+ms.locfileid: "5162621"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Transférer vers C++/WinRT à partir de C++/CX
 
-Cette rubrique montre comment porter [C++ / CX](/cpp/cppcx/visual-c-language-reference-c-cx) code vers son équivalent en [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+Cette rubrique montre comment porter le code dans un [C++ / CX](/cpp/cppcx/visual-c-language-reference-c-cx) projet vers son équivalent en [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+
+## <a name="porting-strategies"></a>Portage des stratégies
+
+Si vous souhaitez porter progressivement votre C + / code CX vers C++ / WinRT, vous pouvez. C++ / CX et C++ / WinRT code peut coexister dans le même projet, à l’exception de la prise en charge du compilateur XAML et de composants Windows Runtime. Pour ces deux exceptions, vous devez cibler soit C++ / CX ou C++ / WinRT dans le même projet.
 
 > [!IMPORTANT]
-> Si vous souhaitez porter progressivement votre [C++ / CX](/cpp/cppcx/visual-c-language-reference-c-cx) code c++ / WinRT, vous pouvez. C++ / CX et C++ / WinRT code peut coexister dans le même projet, à l’exception de prise en charge du compilateur XAML et de composants Windows Runtime. Pour ces exceptions, vous devez cibler soit C++ / CX ou C++ / WinRT dans le même projet. Toutefois, vous pouvez utiliser un composant Windows Runtime au code facteur en dehors de votre application XAML comme vous le porter. Déplacez autant C++ / CX de code que vous pouvez dans un composant, puis modifiez le projet XAML en C++ / WinRT. Ou autre laisser le projet XAML en C++ / CX, créez un nouveau C + / composant WinRT et commencer le portage C++ / code CX du projet XAML et placez-le dans le composant. Vous pouvez également avoir C++ / projet de composant CX en même temps que C++ / projet de composant WinRT au sein de la même solution, les deux référencer à partir de votre projet d’application, mais progressivement les ports d’un utilisateur à l’autre.
+> Si votre projet génère une application XAML, puis un flux de travail que nous vous recommandons est d’abord créer un nouveau projet dans Visual Studio à l’aide d’un de ces C++ / WinRT les modèles de projet (voir [prise en charge de Visual Studio pour C++ / WinRT et VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)). Ensuite, démarrez copier le code source et balisage dessus à partir de la C + / projet CX. Vous pouvez ajouter des pages XAML nouveau **projet** \> **Ajouter un nouvel élément …**  \>  **Visual C++** > **Page vierge (C++ / WinRT)**.
+>
+> Sinon, vous pouvez utiliser un composant Windows Runtime au code de facteur en dehors du XAML C++ / CX de projet comme vous le porter. Déplacez autant C++ / CX de code que vous pouvez dans un composant, puis modifiez le projet XAML en C++ / WinRT. Ou autre laisser le projet XAML en C++ / CX, créez un nouveau C + / composant WinRT et commencer le portage C++ / code CX du projet XAML et placez-le dans le composant. Vous pouvez également avoir C++ / projet de composant CX en même temps que C++ / projet de composant WinRT au sein de la même solution, les deux référencer à partir de votre projet d’application, mais progressivement les ports d’un utilisateur à l’autre. Voir [l’interopérabilité entre C++ / WinRT et C++ / CX](interop-winrt-cx.md) pour plus d’informations sur l’utilisation des deux projections de langage dans le même projet.
 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) et le SDK Windows déclarent tous les deux les types dans l’espace de noms racine **Windows**. Un type Windows projeté en C++/WinRT a le même nom complet que le type Windows, mais il est placé dans l'espace de noms C++ **winrt**. Ces espaces de noms distincts vous permettent de porter le code C++/CX vers C++/WinRT à votre propre rythme.
 
-Compte tenu des exceptions mentionnées ci-dessus, la première étape lors du portage d’un projet c++ / WinRT consiste à ajouter manuellement C++ / WinRT support (voir [prise en charge de Visual Studio pour C++ / WinRT et VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)). Pour ce faire, vous devez modifier votre fichier `.vcxproj`, rechercher `<PropertyGroup Label="Globals">` et, à l’intérieur de ce groupe de propriétés, définir la propriété `<CppWinRTEnabled>true</CppWinRTEnabled>`. Un effet de cette modification est la désactivation de la prise en charge de C++/CX dans le projet. Il est conseillé de laisser prise en charge désactivée afin que les messages de génération vous aider à trouver (et le port) toutes les dépendances sur C++ / CX, ou vous pouvez réactiver prise en charge (dans les propriétés du projet, **C/C++** \> **Général** \> **consommer Windows Runtime Extension** \> **Oui (/ZW)**) et le port progressivement.
+Compte tenu des exceptions mentionnées ci-dessus, la première étape lors du portage C++ / projet CX vers C++ / WinRT consiste à ajouter manuellement C++ / WinRT prise en charge à sa (voir [prise en charge de Visual Studio pour C++ / WinRT et VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)). Pour ce faire, vous devez modifier votre fichier `.vcxproj`, rechercher `<PropertyGroup Label="Globals">` et, à l’intérieur de ce groupe de propriétés, définir la propriété `<CppWinRTEnabled>true</CppWinRTEnabled>`. Un effet de cette modification est la désactivation de la prise en charge de C++/CX dans le projet. Il est conseillé de laisser prise en charge désactivée afin que les messages de génération vous aider à trouver (et le port) toutes les dépendances sur C++ / CX, ou vous pouvez réactiver prise en charge (dans les propriétés du projet, **C/C++** \> **Général** \> **consommer Windows Runtime Extension** \> **Oui (/ZW)**) et le port progressivement.
 
-Définissez la propriété du projet **Général** \> **Version de la plateforme cible** sur 10.0.17134.0 (Windows10, version1803) ou une version supérieure.
+Assurez-vous de cette propriété de projet **Général** \> **Version de la plateforme cible** est défini sur 10.0.17134.0 (Windows 10, version 1803) ou une version ultérieure.
 
 Dans votre fichier d’en-tête précompilé (généralement `pch.h`), incluez `winrt/base.h`.
 
@@ -389,6 +395,7 @@ void LogWrapLine(winrt::hstring const& str);
 * [Opérations concurrentes et asynchrones avec C++/WinRT](concurrency.md)
 * [Utiliser des API avec C++/WinRT](consume-apis.md)
 * [Gérer des événements en utilisant des délégués en C++/WinRT](handle-events.md)
+* [Interopérabilité entre C++/WinRT et C++/CX](interop-winrt-cx.md)
 * [Référence de MicrosoftInterface Definition Language3.0](/uwp/midl-3)
 * [Passer de WRL à C++/WinRT](move-to-winrt-from-wrl.md)
 * [Gestion des chaînes en C++/WinRT](strings.md)
