@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
 ms.openlocfilehash: 54c5f061cbb10759785bf0014a163adc8c3e3288
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5171911"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5395451"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>Préparer le package d’une application de bureau
 

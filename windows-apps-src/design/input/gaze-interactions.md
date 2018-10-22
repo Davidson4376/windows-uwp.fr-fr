@@ -15,11 +15,11 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d716bf25c4df41af32084190522e3c5fcd4885b
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5170226"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5403192"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>Interactions avec le pointage du regard et le suivi oculaire dans les applications UWP
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 8796b2ea025a00015881d39449f2dd99d57121f8
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5169889"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5401273"
 ---
 # <a name="enumerating-point-of-service-devices"></a>Énumération d'appareils de point de service
 Dans cette section, vous allez découvrir comment [définir un sélecteur d’appareil](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector) qui sert à interroger les appareils disponibles pour le système et comment utiliser ce sélecteur pour énumérer les appareils de point de service à l’aide d’une des méthodes suivantes:

@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projeté, projection, gérer, événement, délégué
 ms.localizationpriority: medium
-ms.openlocfilehash: c64b4a23e3b63c939d192e828e890a9ceb92e5ab
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.openlocfilehash: 96655c14f9c21f804ef5ebfdfe73cee0b04edfe3
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5162991"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5400057"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Gérer des événements en utilisant des délégués en C++/WinRT
 
@@ -142,7 +142,7 @@ struct Example : ExampleT<Example>
     }
 
 private:
-    winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> m_event_revoker;
+    winrt::Windows::UI::Xaml::Controls::Button::Click_revoker m_event_revoker;
 };
 ```
 
@@ -156,11 +156,13 @@ winrt::event_token Click(winrt::Windows::UI::Xaml::RoutedEventHandler const& han
 void Click(winrt::event_token const& token) const;
 
 // Revoke with event_revoker
-winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> Click(winrt::auto_revoke_t,
+Button::Click_revoker Click(winrt::auto_revoke_t,
     winrt::Windows::UI::Xaml::RoutedEventHandler const& handler) const;
 ```
 
-Un modèle semblable s’applique à tous les événements C++/WinRT.
+> [!NOTE]
+> Dans l’exemple de code ci-dessus, `Button::Click_revoker` est un alias de type pour `winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`. Un modèle semblable s’applique à tous les événements C++/WinRT. Chaque événement Windows Runtime a une surcharge de fonction revoke qui retourne un révocateur d’événement, et que le type de révocateur est un membre de la source d’événement. Par conséquent, pour effectuer un autre exemple, l’événement [**CoreWindow::SizeChanged**](/uwp/api/windows.ui.core.corewindow.sizechanged) a une surcharge de fonction d’inscription qui renvoie une valeur de type **CoreWindow::SizeChanged_revoker**.
+
 
 Vous pouvez envisager de révoquer les gestionnaires dans un scénario de navigation de page. Si vous naviguez à plusieurs reprises dans une page, puis revenez en arrière, vous pourriez alors révoquer tous les gestionnaires lorsque vous quittez la page. Autre possibilité, si vous réutilisez la même instance de page, vérifiez la valeur de votre jeton et ne faites l’inscription que si elle n’a pas encore été définie (`if (!m_token){ ... }`). Une troisième option consiste à stocker un révocateur d’événement dans la page en tant que membre de données. Et une quatrième option, comme décrit plus loin dans cette rubrique, consiste à capturer une référence forte ou faible à l’objet *this* dans votre fonction lambda.
 

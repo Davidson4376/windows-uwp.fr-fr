@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bd1dffe4da7b3725ef7716fe9cf28bdf8eaf34f
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5171418"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5398194"
 ---
 # <a name="working-with-symbologies"></a>Utilisation des symbologies
 Une [Symbologie de code-barres](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies) correspond au mappage des données dans un format spécifique de code-barres. Certaines symbologies courantes sont UPC, Code 128, Code QR et ainsi de suite.  Le scanneur de codes-barres de plateforme Windows universelle API permettent à une application contrôler la façon dont le scanneur traite ces symbologies sans configurer manuellement le. 

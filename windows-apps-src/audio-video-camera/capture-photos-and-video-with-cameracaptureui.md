@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ba33a1e79a2447c5dac546ce0f1caeaf16929a3
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5168968"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5403261"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows
 

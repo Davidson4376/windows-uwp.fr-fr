@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 99f853da53302d4080bfa9462da0ec524e8d2064
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5167684"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5401846"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a>Accéder à des capteurs et des appareils depuis une tâche en arrière-plan
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, services du Store, API d’analyse du MicrosoftStore, trace de pile, erreur
 ms.localizationpriority: medium
 ms.openlocfilehash: 54c39d157bc2fcab6a67bd273f5d00eedd80be54
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5171108"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5400804"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>Obtenir la trace de pile concernant une erreur dans votre application
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: be4338c7b7e7b3861c206a6d7d63e9e417e6cd0d
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5157871"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5397408"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Étendre votre application de bureau avec des composants UWP modernes
 

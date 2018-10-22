@@ -11,11 +11,11 @@ keywords: windows10, uwp, API de soumission au MicrosoftStore, lancement du pack
 ms.assetid: 9ada5ac3-a86e-4bb6-8ebc-915ba9649e3c
 ms.localizationpriority: medium
 ms.openlocfilehash: ead13a255eb707df2e60907265672d53aab120d9
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5166370"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5401788"
 ---
 # <a name="get-rollout-info-for-an-app-submission"></a>Obtenir des informations sur le déploiement pour une soumission d’application
 

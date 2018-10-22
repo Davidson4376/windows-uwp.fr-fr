@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, acquisitions d'app
 ms.localizationpriority: medium
 ms.openlocfilehash: 997f4e088edfced94189c2c0977bcfff60166059
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5166626"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5410977"
 ---
 # <a name="get-app-acquisitions"></a>Obtenir des acquisitions d’applications
 

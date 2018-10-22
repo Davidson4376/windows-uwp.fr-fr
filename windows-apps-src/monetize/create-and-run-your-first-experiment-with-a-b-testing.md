@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, MicrosoftStore Services SDK, tests A/B, expériences
 ms.localizationpriority: medium
 ms.openlocfilehash: ac97b8d34ec0f5dbfc42022fc54911f04f09ba3b
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5164368"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5401091"
 ---
 # <a name="create-and-run-your-first-experiment"></a>Créer et exécuter votre première expérience
 
