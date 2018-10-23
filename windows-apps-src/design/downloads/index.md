@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: e829883ec33b5e221d0947b6f39cf6ac091a0b4a
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5158135"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408138"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Kits de ressources et exemples de conception pour les applications UWP
  
@@ -107,9 +107,9 @@ Ces kits de ressources fournissent des contrôles et des modèles de disposition
     
 ## <a name="samples"></a>Exemples
 
-![Image de VanArsdel](images/VanArsdel_Screenshot.png)
+![Image VanArsdel](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-L’exemple d’application UWP bout à bout Van Arsdel, Ltd. a été conçu pour présenter la nouvelle génération du système Fluent Design Microsoft. Il s’appuie largement la densité améliorée et de nouveaux contrôles dans la <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Bibliothèque de l’interface utilisateur de Windows</a> , mais aussi puissantes fonctionnalités sous-jacent de l’infrastructure de l’expérience utilisateur et de la composition. L’exemple montre comment vous pouvez créer une expérience riche et productive pour la gestion et l’achat d’appareils IoT (dans ce cas, il s’agit de lampes).<br>
+L’exemple d’application UWP bout à bout Van Arsdel, Ltd. a été conçu pour présenter la nouvelle génération du système Fluent Design Microsoft. Il s’appuie largement la densité améliorée et de nouveaux contrôles dans la <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Bibliothèque de l’interface utilisateur de Windows</a> , mais aussi puissantes fonctionnalités sous-jacent de l’infrastructure de l’expérience utilisateur et de composition. L’exemple montre comment vous pouvez créer une expérience riche et productive pour la gestion et achetant des appareils IoT (dans ce cas, il s’agit de lampes).<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">Télécharger l’exemple VanArsdel</a> <br><a href="https://github.com/microsoft/vanarsdel">Découvrir l’exemple VanArsdel sur GitHub</a>
 
 ![Générer cast image](images/buildcast.png)

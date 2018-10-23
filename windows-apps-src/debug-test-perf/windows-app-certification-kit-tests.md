@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5167919"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408696"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Tests du Kit de certification des applications Windows
 
 
-Le [Kit de Certification des applications Windows](windows-app-certification-kit.md) contient un certain nombre de tests qui vous assurer que votre application est prête à être publiée dans le Microsoft Store. Les tests sont répertoriées ci-dessous avec leurs critères, plus de détails et actions dans le cas d’échec suggérées.
+Le [Kit de Certification des applications Windows](windows-app-certification-kit.md) contient un certain nombre de tests qui vous assurer que votre application est prête à être publiée dans le Microsoft Store. Les tests sont répertoriées ci-dessous avec leurs critères, plus d’informations et actions dans le cas d’échec suggérées.
 
 ## <a name="deployment-and-launch-tests"></a>Tests de déploiement et de lancement
 
@@ -323,7 +323,7 @@ Vérifiez que l’application a été compilée en tant que version de publicati
 
 Passez en revue les messages d’erreur pour identifier l’API utilisée par l’application qui n’est pas une [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-> **Remarque**  Applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. [Solutions de rechange aux API Windows dans les applications UWP](http://go.microsoft.com/fwlink/p/?LinkID=244022) pour plus d’informations, voir.
+> **Remarque**  Les applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. [Solutions de rechange aux API Windows dans les applications UWP](http://go.microsoft.com/fwlink/p/?LinkID=244022) pour plus d’informations, voir.
 
 ## <a name="performance-tests"></a>Tests de performances
 
@@ -537,7 +537,7 @@ Teste les applications Microsoft Direct3D pour s’assurer qu’elles ne se bloq
 
 ### <a name="background"></a>Contexte
 
-Microsoft Store nécessite toutes les applications à l’aide de Direct3D pour un rendu correct ou échouent de manière cartes graphiques de 9\-1 au niveau de fonctionnalité.
+Microsoft Store nécessite que toutes les applications à l’aide de Direct3D pour un rendu correct ou échouent de manière cartes graphiques de 9\-1 au niveau de fonctionnalité.
 
 Dans la mesure où les utilisateurs peuvent changer de matériel graphique sur leur appareil après l’installation de l’application, si vous choisissez un niveau de fonctionnalité minimal supérieur au niveau 9\-1, votre application doit détecter au démarrage si le matériel actuel répond ou non aux critères minimaux. Dans le cas contraire, l’application doit afficher un message qui détaille les critères exigés pour Direct3D. Par ailleurs, si une application est téléchargée sur un appareil avec lequel elle n’est pas compatible, elle doit détecter cette incompatibilité au démarrage et afficher un message expliquant au client la configuration requise.
 

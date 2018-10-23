@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e76f63fa30c3a294e1917bf1bed9ea79897390b2
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5171981"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406548"
 ---
 # <a name="supported-languages"></a>Langues prises en charge
 
 
 Vous pouvez soumettre des applications dans le Microsoft Store dans plus de 100 langues.
 
-Pour en savoir plus sur la configuration des langues dans vos applications, consultez [globalisation et localisation](../design/globalizing/globalizing-portal.md) et [comprendre les langues de profil utilisateur et d’application les langues du manifeste](../design/globalizing/manage-language-and-region.md). Nous avons également un [Kit de ressources pour application multilingue](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat) pour vous aider à écrire des applications qui prennent en charge plusieurs langues.
+Pour en savoir plus sur la configuration de langues dans vos applications, consultez [globalisation et localisation](../design/globalizing/globalizing-portal.md) et [comprendre les langues de profil utilisateur et d’application les langues du manifeste](../design/globalizing/manage-language-and-region.md). Nous avons également un [Kit de ressources pour application multilingue](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat) pour vous aider à écrire des applications qui prennent en charge plusieurs langues.
 
 ## <a name="supported-languages"></a>Langues prises en charge
 
 
-Il s’agit des langues qui prend en charge par le Microsoft Store. Votre application doit prendre en charge au moins l’une de ces langues, et ne doit spécifier aucun code de langue non répertorié ici.
+Il s’agit des langues qui prend en charge le Microsoft Store. Votre application doit prendre en charge au moins l’une de ces langues, et ne doit spécifier aucun code de langue non répertorié ici.
 
 | Nom de la langue         | Codes de langue pris en charge                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

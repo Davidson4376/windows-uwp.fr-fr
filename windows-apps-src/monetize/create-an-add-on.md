@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, créer une extension, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: a24355ca09380c46d8e648899ca2fe96f9e989c7
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5160896"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5403862"
 ---
 # <a name="create-an-add-on"></a>Crée une extension
 

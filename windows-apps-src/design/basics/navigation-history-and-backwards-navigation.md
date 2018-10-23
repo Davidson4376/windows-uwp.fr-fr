@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ee6c767baef64a15ae8483b94dbf4e9c791132cd
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5165238"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5410191"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Historique de navigation et navigation vers l’arrière pour les applicationsUWP
 
@@ -30,7 +30,7 @@ Lorsqu’il appuie sur le bouton Précédent, l’utilisateur s’attend à acc�
 
 ## <a name="back-button"></a>Bouton Précédent
 
-Pour créer un bouton précédent, utilisez le contrôle de [bouton](../controls-and-patterns/buttons.md) avec le `NavigationBackButtonNormalStyle` de style, puis placer le bouton dans le coin supérieur gauche de l’interface utilisateur de votre application (pour plus d’informations, voir les exemples de code XAML ci-dessous).
+Pour créer un bouton précédent, utilisez le contrôle de [bouton](../controls-and-patterns/buttons.md) avec le `NavigationBackButtonNormalStyle` de style, puis placer le bouton dans le coin supérieur gauche de l’interface utilisateur de votre application (pour plus d’informations, consultez les exemples de code XAML ci-dessous).
 
 ![Bouton Précédent dans l’angle supérieur gauche de l’interface utilisateur de l’application](images/back-nav/BackEnabled.png)
 
@@ -296,7 +296,7 @@ Si votre application continue à l’aide de [AppViewBackButtonVisibility](https
 
 - Si une application est **à onglets**, alors que le bouton précédent s’affiche à l’intérieur d’un nouveau système vers l’arrière barre.
 
-    ![Système dessiné précédent de barre de boutons](images/back-nav/tabs.png)
+    ![Système dessiné précédent de la barre de boutons](images/back-nav/tabs.png)
 
 ### <a name="system-back-bar"></a>Précédent système barre
 
@@ -311,7 +311,7 @@ Le système vers l’arrière barre est une «bande» qui est insérée entre la
 
 - Si une application est **à onglets**, alors que le bouton précédent s’affiche à l’intérieur d’un nouveau système vers l’arrière barre.
 
-    ![Système dessiné précédent de barre de boutons](images/back-nav/tabs.png)
+    ![Système dessiné précédent de la barre de boutons](images/back-nav/tabs.png)
 
 ### <a name="system-back-bar"></a>Précédent système barre
 
@@ -320,11 +320,11 @@ Le système vers l’arrière barre est une «bande» qui est insérée entre la
 
 Le système vers l’arrière barre est une «bande» qui est insérée entre la bande d’onglet et la zone de contenu de l’application. La bande s'étend sur toute la largeur de l’application et le bouton Précédent se trouve sur son bord gauche. La bande a une hauteur verticale de 32 pixels pour garantir une taille cible tactile adéquate pour le bouton précédent.
 
-La barre Précédent système s'affiche de façon dynamique, en fonction de la visibilité du bouton Précédent. Lorsque le bouton précédent est visible, le système vers l’arrière barre s’insère et contenu de l’application vers le bas par 32 pixels en dessous de la bande d’onglet. Lorsque le bouton précédent est masqué, le système vers l’arrière barre est supprimée de manière dynamique, décalage de contenu de l’application 32 pixels pour répondre à la bande d’onglet. Pour éviter d’avoir MAJ de l’interface utilisateur de votre application vers le haut ou vers le bas, nous vous recommandons de prévoir un [bouton précédent dans l’application](#back-button).
+La barre Précédent système s'affiche de façon dynamique, en fonction de la visibilité du bouton Précédent. Lorsque le bouton précédent est visible, le système vers l’arrière barre s’insère et contenu de l’application vers le bas par 32 pixels en dessous de la bande d’onglet. Lorsque le bouton précédent est masqué, le système vers l’arrière barre est supprimée de manière dynamique, un décalage contenu de l’application 32 pixels pour répondre à la bande d’onglet. Pour éviter d’avoir MAJ de l’interface utilisateur de votre application vers le haut ou vers le bas, nous vous recommandons de prévoir un [bouton précédent dans l’application](#back-button).
 
-[Personnalisations de barre de titre](../shell/title-bar.md) sera s’appliquent à l’onglet de l’application et le système de retour barre. Si votre application spécifie les propriétés de couleur d’arrière-plan et au premier plan avec [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), alors que les couleurs s’appliqueront à l’arrière du système et de tabulation barre.
+[Personnalisations de barre titre](../shell/title-bar.md) sera s’appliquent à l’onglet application et le système de retour barre. Si votre application spécifie les propriétés de couleur de premier plan et en arrière-plan avec [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), alors que les couleurs s’appliqueront à l’arrière du système et de tabulation barre.
 
-[Personnalisations de barre de titre](../shell/title-bar.md) sera s’appliquent à l’onglet de l’application et le système de retour barre. Si votre application spécifie les propriétés de couleur d’arrière-plan et au premier plan avec [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), alors que les couleurs s’appliqueront à l’arrière du système et de tabulation barre.
+[Personnalisations de barre titre](../shell/title-bar.md) sera s’appliquent à l’onglet application et le système de retour barre. Si votre application spécifie les propriétés de couleur de premier plan et en arrière-plan avec [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), alors que les couleurs s’appliqueront à l’arrière du système et de tabulation barre.
 
 ## <a name="guidelines-for-custom-back-navigation-behavior"></a>Recommandations sur le comportement personnalisé de navigation vers l’arrière
 
@@ -349,7 +349,7 @@ Si vous choisissez de fournir votre propre navigation de pile Back, l’expérie
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>Page à page, même groupe d’homologues, pas d’élément de navigation à l’écran</strong>
-<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Il n’existe pas à l’écran élément de navigation (par exemple, <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>) fournit une navigation directe vers les deux pages.</p></td>
+<p>L’utilisateur navigue d’une page à une autre dans le même groupe d’homologues. Il n’existe pas à l’écran élément de navigation (par exemple, <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>) qui offre une navigation directe vers les deux pages.</p></td>
 <td style="vertical-align:top;"><strong>Oui</strong>
 <p>Dans l’illustration suivante, l’utilisateur navigue entre deux pages dans le même groupe d’homologues, et la navigation doit être ajoutée à l’historique de navigation.</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>

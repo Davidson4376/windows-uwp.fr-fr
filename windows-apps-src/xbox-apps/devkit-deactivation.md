@@ -11,11 +11,11 @@ keywords: windows10, uwp
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
 ms.openlocfilehash: d1df8d475ec27ff3de7e3d6599e53ec3035cffc6
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5167909"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5409999"
 ---
 # <a name="xbox-one-developer-mode-deactivation"></a>Désactivation du mode développeur XboxOne
 

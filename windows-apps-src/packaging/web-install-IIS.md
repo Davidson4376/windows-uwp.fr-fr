@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, programme d’installation de l’application, AppInstaller, charger de manière indépendante, liées à des packages définis, qui sont facultatifs, serveur IIS
 ms.localizationpriority: medium
 ms.openlocfilehash: 214ddd2b55bca1acecbab0a841cf2048335e7b3a
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5168928"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5405457"
 ---
 # <a name="install-a-uwp-app-from-an-iis-server"></a>Installer une application UWP à partir d’un serveur IIS
 
@@ -39,7 +39,7 @@ Facultatif: [Projet de démarrage](https://github.com/AppInstaller/MySampleWebAp
 Recherchez et sélectionnez **Internet Information Services** pour installer IIS.
 
 > [!NOTE]
-> Vous n’avez pas besoin de sélectionner toutes les cases à cocher sous Internet Information Services. Uniquement celles sélectionnés lorsque vous vérifiez **Internet Information Services** suffisent.
+> Vous n’avez pas besoin de sélectionner toutes les cases à cocher sous Internet Information Services. Uniquement celles sélectionnées lorsque vous vérifiez **Internet Information Services** suffisent.
 
 Vous devez également installer ASP.NET 4.5 ou une version ultérieure. Pour l’installer, recherchez **Internet Information Services -> World Wide Web des Services -> fonctionnalités de développement d’applications**. Sélectionner une version d’ASP.NET qui est supérieure ou égale à ASP.NET 4.5.
 
@@ -61,7 +61,7 @@ Lancez Visual Studio 2017 en tant **qu’administrateur** et créez un nouveau p
 
 ## <a name="step-4---configure-iis-with-our-web-app"></a>Étape 4: configurer IIS avec notre application Web 
 
-À partir de l’Explorateur de solutions, cliquez avec le bouton droit sur le projet racine, puis sélectionnez **Propriétés**.
+Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet racine et sélectionnez **Propriétés**.
 
 Dans les propriétés de l’application web, sélectionnez l’onglet **Web** . Dans la section **serveurs** , choisissez **IIS Local** dans le menu déroulant, cliquez sur **Créer un répertoire virtuel**. 
 

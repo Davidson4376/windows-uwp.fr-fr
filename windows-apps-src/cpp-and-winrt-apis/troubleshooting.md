@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, résolution des problèmes, HRESULT, erreur
 ms.localizationpriority: medium
 ms.openlocfilehash: 05542a42e362f024e92547d9eb496b936b85236c
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5161692"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408310"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>Résolution des problèmes C++/WinRT
 
@@ -23,7 +23,7 @@ ms.locfileid: "5161692"
 
 Cette rubrique est fournie en amont afin que vous en ayez connaissance immédiatement, même si vous n’en avez pas encore utilité. Le tableau de résolution des problèmes et des solutions ci-après peut vous être utile, que vous coupiez un nouveau code ou portiez une application existante. Si vous effectuez un portage et que vous êtes impatient d’avancer et de passer à l’étape de développement et d’exécution de votre projet, vous pouvez avancer provisoirement en commentant ou en remplaçant du code non essentiel posant problème, pour revenir ensuite combler cette lacune ultérieurement.
 
-Pour obtenir la liste des questions fréquentes, consultez le [Forum aux questions](faq.md).
+Pour obtenir la liste des questions fréquemment posées, consultez le [Forum aux questions](faq.md).
 
 ## <a name="tracking-down-xaml-issues"></a>Suivi des problèmes XAML
 Les exceptions d’analyse XAML peuvent être difficiles à diagnostiquer&mdash;en particulier si l’exception ne présente aucun message d’erreur explicite. Assurez-vous que le débogueur est configuré pour intercepter les exceptions de première chance (pour essayer d’intercepter l’exception d’analyse le plus tôt possible). Vous pourrez peut-être inspecter la variable d’exception dans le débogueur pour déterminer si la valeur HRESULT ou le message comportent des informations utiles. Vérifiez également la fenêtre de sortie de Visual Studio pour voir si elle contient des messages d’erreur de l’analyseur XAML.
@@ -51,9 +51,9 @@ Si votre application s’arrête et que tout ce que vous savez c’est qu’une 
 | L’éditeur de liens C++ génère «*erreur LNK2019: symbole externe non résolu*»|Voir [Pourquoi l’éditeur de liens me donne-t-il une «LNK2019: symbole externe non résolu» erreur?](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error).|
 | La chaîne d’outils LLVM et Clang génère des erreurs lorsqu’il est utilisé avec C++ / WinRT.|Nous ne prend en charge la chaîne d’outils LLVM et Clang pour C++ / WinRT, mais si vous souhaitez émuler la façon dont nous l’utilisons en interne, puis que vous pouvez essayer une expérience telles que celle qui est décrite dans [puis-je utiliser LLVM/Clang pour compiler avec C++ / WinRT?](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt).|
 | Le compilateur C++ génère «*aucun constructeur par défaut approprié disponible*» pour un type projeté. | Si vous essayez de retarder l’initialisation d’un objet de classe runtime, ou d’utiliser et de mettre en œuvre d’une classe runtime dans le même projet, vous devez appeler la `nullptr_t` constructeur. Pour plus d’informations, voir [Utiliser des API avec C++/WinRT](consume-apis.md). |
-| Le compilateur C++ génère «*erreur C3861: 'from_abi': identificateur introuvable*» et d’autres erreurs dans *base.h*d’origine. Vous pouvez rencontrer cette erreur si vous utilisez Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et vous ciblez le SDK Windows version 10.0.17134.0 (Windows 10, version 1803). | Soit cibler une version ultérieure (conforme plus) version du SDK Windows ou de la propriété de projet de jeu **C/C++** > **langue** > **Conformance mode: N°** (en outre, si **/ permissive-** s’affiche dans la propriété de projet **C/C++**  >  **Langue** > de**ligne de commande** sous **Options supplémentaires**, puis supprimez-le). |
+| Le compilateur C++ génère «*erreur C3861: 'from_abi': identificateur introuvable*» et d’autres erreurs provenant de *base.h*. Vous pouvez rencontrer cette erreur si vous utilisez Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et vous ciblez le SDK Windows version 10.0.17134.0 (Windows 10, version 1803). | Soit cibler une version ultérieure (conforme plus) version du SDK Windows ou de la propriété de projet de jeu **C/C++** > **langue** > **Conformance mode: N°** (en outre, si **/ permissive-** s’affiche dans la propriété de projet **C/C++**  >  **Langue** > de**ligne de commande** sous **Options supplémentaires**, puis supprimez-le). |
 | Le compilateur C++ génère «*erreur C2039: 'IUnknown': n’est pas un membre de ' espace de noms \'global''*». | Voir [comment recibler votre C++ / WinRT projet vers une version ultérieure du SDK Windows](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
 | L’éditeur de liens C++ génère «*erreur LNK2019: symbole externe non résolu _WINRT_CanUnloadNow@0 référencé dans la fonction _VSDesignerCanUnloadNow@0 *» | Voir [comment recibler votre C++ / WinRT projet vers une version ultérieure du SDK Windows](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
 
 > [!NOTE]
-> Si cette rubrique n’a pas répondu à votre question, vous pouvez trouver de l’aide en consultant la [Communauté de développeurs Visual Studio C++](https://developercommunity.visualstudio.com/spaces/62/index.html), ou à l’aide de la [ `c++-winrt` balise sur Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).
+> Si cette rubrique n’a pas répondu à votre question, vous pouvez le trouver aide en consultant la [Communauté de développeurs Visual Studio C++](https://developercommunity.visualstudio.com/spaces/62/index.html), ou à l’aide de la [ `c++-winrt` balise sur Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

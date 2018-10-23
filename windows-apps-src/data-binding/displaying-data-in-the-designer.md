@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a92be54e55e06b4e7ffd61b1526425920ea80f96
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5158744"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5407167"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>Exemples de données sur l’aire de conception et pour la création d’un prototype
 =============================================================================================
@@ -143,7 +143,7 @@ Jusqu’ici, nous avons utilisé **d:DesignData** pour charger les exemples de d
         d:Source="{d:DesignInstance Type=local:Recordings, IsDesignTimeCreatable=True}"/>
 ```
 
-La propriété **IsDesignTimeCreatable** indique que l’outil de conception doit réellement créer une instance de la classe, qui implique que la classe possède un constructeur public par défaut, et qu’il se remplit lui-même de données (données réelles ou exemple de données). Si vous ne définissez pas **IsDesignTimeCreatable** (ou si vous le définissez sur **False**), les exemples de données ne s’afficheront pas sur la surface de conception. L’outil de conception se contente dans ce cas consiste à analyser la classe ses propriétés pouvant être liées et afficher ces dans le panneau de **données** et dans la boîte de dialogue **Créer une liaison de données** .
+La propriété **IsDesignTimeCreatable** indique que l’outil de conception doit réellement créer une instance de la classe, qui implique que la classe possède un constructeur public par défaut, et qu’il se remplit lui-même de données (données réelles ou exemple de données). Si vous ne définissez pas **IsDesignTimeCreatable** (ou si vous le définissez sur **False**), les exemples de données ne s’afficheront pas sur la surface de conception. L’outil de conception se contente dans ce cas consiste à analyser la classe ses propriétés pouvant être liées et cela dans le panneau de **données** et dans la boîte de dialogue **Créer une liaison de données** s’affiche.
 
 <a name="sample-data-for-prototyping"></a>Exemple de données pour créer un prototype
 --------------------------------------------------------

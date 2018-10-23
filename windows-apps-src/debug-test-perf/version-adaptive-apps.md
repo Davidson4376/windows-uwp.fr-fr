@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f2485eab4b192fe4a65c68d957de1ec9192f8c20
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5163458"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5409514"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>Applications adaptatives de version: Utiliser de nouvellesAPI tout en conservant la compatibilité avec les versions précédentes
 
@@ -64,7 +64,7 @@ Pour modifier la version Minimum et la version Cible d’un projet déjà créé
 
 Vous pouvez télécharger les versions finales du SDK à partir des [archives du SDKWindows et de l’émulateur](https://developer.microsoft.com/downloads/sdk-archive). Vous pouvez télécharger la dernière version du Kit de développement logiciel (SDK) WindowsInsiderPreview dans la section du site [WindowsInsider](https://insider.windows.com/Home/BuildWithWindows) dédiée aux développeurs.
 
- Pour plus d’informations sur les mises à jour Windows 10, consultez [les informations de publication de Windows 10](https://technet.microsoft.com/windows/release-info). Pour plus d’informations sur Windows 10 prend en charge du cycle de vie, consultez la [fiche d’informations de cycle de vie de Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
+ Pour plus d’informations sur les mises à jour Windows 10, consultez [les informations de publication de Windows 10](https://technet.microsoft.com/windows/release-info). Pour des informations importantes sur Windows 10 prend en charge du cycle de vie, consultez la [fiche d’informations de cycle de vie de Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
 
 ## <a name="perform-api-checks"></a>Effectuer des vérifications des API
 

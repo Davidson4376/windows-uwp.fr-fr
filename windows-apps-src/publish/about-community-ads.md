@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ada2e0610e81e986deba3ddab5e87547e05fe108
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5167595"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5407279"
 ---
 # <a name="about-community-ads"></a>À propos des annonces de la communauté
 
@@ -37,14 +37,14 @@ Avant de pouvoir créer une campagne de publicité de la Communauté pour l’un
 Pour participer aux annonces de la Communauté pour une application UWP:
 
 1. Dans la section **paramètres de médiation** sur la page **publicités dans l’application** , sélectionnez une unité publicitaire que vous utilisez dans l’application.
-2. Si l’option de **laisser Microsoft choisir les meilleurs paramètres de médiation pour votre application** est activée, les annonces de la Communauté sont activées pour votre unité publicitaire automatiquement. Dans le cas contraire, sélectionnez la configuration de base ou d’une configuration spécifique au marché dans le menu déroulant **cible** et puis cochez la case **d’annonces de la Communauté Microsoft** dans la liste **d’autres réseaux publicitaires** .
+2. Si l’option **laisser Microsoft choisir les meilleurs paramètres de médiation pour votre application** est activée, les annonces de la Communauté sont activées pour votre unité publicitaire automatiquement. Dans le cas contraire, sélectionnez la configuration de base ou une configuration spécifique au marché dans le menu déroulant **cible** et puis cochez la case de **publicités Microsoft Community** dans la liste **d’autres réseaux publicitaires** .
 
     > [!NOTE]
     > Vous pouvez utiliser les champs de **poids** pour spécifier le taux de publicités que vous souhaitez afficher à partir de réseaux payants et d’autres réseaux publicitaires, y compris les annonces de la Communauté.
 
 Pour participer aux annonces de la Communauté pour un client Windows 8.x ou Windows Phone 8.x application,
 
-1. Sur la page **publicités dans l’application** , cochez la case **afficher des annonces de la Communauté dans mon application** .
+1. Sur la page **publicités In-app** , cochez la case **afficher des annonces de la Communauté dans mon application** .
 
 Vous n’avez pas besoin de republier votre application après avoir effectué vos sélections. Une fois que vous avez accepté cette fonctionnalité, vous êtes en mesure de sélectionner **Community ad (free)** comme type de campagne lorsque vous [créez une campagne de publicité](create-an-ad-campaign-for-your-app.md).
 

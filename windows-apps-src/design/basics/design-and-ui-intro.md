@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 602a0af685e812f5c65f94d07297cac9fc411923
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5159521"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406845"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Présentation de la conception des applicationsUWP
 
@@ -29,7 +29,7 @@ Cette nouvelle introduction présente une vue d’ensemble des fonctionnalités 
 
 ## <a name="effective-pixels-and-scaling"></a>Pixels effectifs et mise à l’échelle
 
-Les applications UWP s’exécutent sur tous les [appareils Windows 10](../devices/index.md), à partir de votre téléviseur, jusqu'à votre tablette ou votre PC. Comment concevoir une interface utilisateur qui s’affiche correctement sur un large éventail d’appareils et de tailles d’écran?
+Les applications UWP s’exécutent sur tous les [appareils Windows 10](../devices/index.md), à partir de votre téléviseur, jusqu'à votre tablette ou votre PC. Par conséquent, comment concevoir une interface utilisateur qui s’affiche correctement sur un large éventail d’appareils et de tailles d’écran?
 
 ![même application sur différents appareils](images/universal-image-1.jpg)
 

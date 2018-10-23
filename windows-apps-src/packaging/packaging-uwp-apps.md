@@ -14,11 +14,11 @@ f1_keywords:
 - vs.storeassociationwizard
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ce80206823694f06e4aa5c3480b4dcb30c4f95c
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5166516"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5410777"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Créer un package d’application UWP avec Visual Studio
 
@@ -102,7 +102,7 @@ Vous pouvez y procéder à l'aide de l'assistant **Créer des packages d'applica
 4.  Connectez-vous au tableau de bord du Centre de développement Windows à l’aide de votre compte de développeur. Si vous ne disposez pas encore d’un compte de développeur, l’Assistant vous aidera à en créer un.
 5.  Sélectionnez le nom d’application de votre package ou réservez-en un nouveau sur le portail du Centre de développement Windows, si ce n’est déjà fait.  
     ![Fenêtre Créer des packages d’application avec la sélection de nom d’application affichée](images/packaging-screen4.jpg)
-6.  Veillez à sélectionner les troisconfigurations d'architecture (x86, x64 et ARM) dans la boîte de dialogue **Sélectionner et configurer des packages** afin de garantir que le bon déploiement de votre application sur un large éventail d'appareils. Dans la zone de liste **Générer l'ensemble d'applications**, sélectionnez **Toujours**. Un ensemble d’applications (.appxbundle) est préférée un fichier de package d’application unique, car elle contient une collection de packages d’applications configurés pour chaque type d’architecture de processeur. Lorsque vous choisissez de générer un ensemble d'applications, celui-ci sera inclus dans le fichier (.appxupload) de chargement de package d'application final avec les informations analytiques de débogage et d'incident. Si vous ne savez pas quelle(s) architecture(s) choisir ou si vous souhaitez en savoir plus sur les architectures utilisées par divers appareils, consultez [Architectures de package d’application](https://docs.microsoft.com/windows/uwp/packaging/device-architecture).  
+6.  Veillez à sélectionner les troisconfigurations d'architecture (x86, x64 et ARM) dans la boîte de dialogue **Sélectionner et configurer des packages** afin de garantir que le bon déploiement de votre application sur un large éventail d'appareils. Dans la zone de liste **Générer l'ensemble d'applications**, sélectionnez **Toujours**. Un ensemble d’applications (.appxbundle) est préférée un fichier de package d’application unique, car il contient une collection de packages d’applications configurés pour chaque type d’architecture de processeur. Lorsque vous choisissez de générer un ensemble d'applications, celui-ci sera inclus dans le fichier (.appxupload) de chargement de package d'application final avec les informations analytiques de débogage et d'incident. Si vous ne savez pas quelle(s) architecture(s) choisir ou si vous souhaitez en savoir plus sur les architectures utilisées par divers appareils, consultez [Architectures de package d’application](https://docs.microsoft.com/windows/uwp/packaging/device-architecture).  
     ![Fenêtre Créer des packages d’application avec la configuration de package affichée](images/packaging-screen5.jpg)
 
 
@@ -137,7 +137,7 @@ Pour plus d'informations sur la soumission de votre application au centre de dé
 
 ## <a name="sideload-your-app-package"></a>Charger de manière indépendante votre package d’application
 
-Introduits dans la mise à jour anniversaire Windows10, les packages d’application peuvent être installés simplement en double-cliquant sur le fichier du package d’application. Pour cela, accédez à votre package d’application ou un fichier d’application un ensemble d’applications et double-cliquez dessus. Le programme d’installation de l’application se lance et fournit les informations essentielles de l’application, ainsi qu'un bouton Installer, une barre de progression de l’installation et des messages d’erreur appropriés. 
+Introduits dans la mise à jour anniversaire Windows10, les packages d’application peuvent être installés simplement en double-cliquant sur le fichier du package d’application. Pour cela, accédez à votre package d’application ou un fichier d’un ensemble d’applications application et double-cliquez dessus. Le programme d’installation de l’application se lance et fournit les informations essentielles de l’application, ainsi qu'un bouton Installer, une barre de progression de l’installation et des messages d’erreur appropriés. 
 
 ![Affichage d'un programme d’installation d'application pour l’installation d’un exemple d’application appelée Contoso](images/appinstaller-screen.png)
 

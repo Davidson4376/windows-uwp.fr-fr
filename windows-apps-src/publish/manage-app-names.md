@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, uwp, noms d’application, modifiez le nom de l’application, nom de l’application mise à jour, jeu, nom de produit
 ms.localizationpriority: medium
 ms.openlocfilehash: 878b105541691834dbbe35b5210f33045afdc47b
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5164765"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5409183"
 ---
 # <a name="manage-app-names"></a>Gestion des noms d’application
 
 Le permet de **gérer des noms d’application** vous permet d’afficher tous les noms que vous avez réservés pour votre application, réserver des noms supplémentaires (pour d’autres langues ou pour modifier le nom de votre application) et supprimer des noms que vous n’avez pas besoin. Vous trouverez cette page du tableau de [bord du centre de développement Windows](https://partner.microsoft.com/dashboard) en développant la section **Gestion des applications** dans le menu de navigation de gauche pour vos applications.
 
 > [!IMPORTANT]
-> Vous pouvez réserver des noms supplémentaires pour une application, et vous pouvez choisir d’utiliser l’une de ces éléments dans la version publiée de votre application au lieu de celui que vous avez réservé lorsque vous avez créé tout d’abord votre application dans le tableau de bord. Toutefois, n’oubliez pas que le premier nom que vous réservez pour votre produit servira dans certains de votre service informatique d' [informations d’identité](view-app-identity-details.md), par exemple, le **Nom de famille du Package (PFN)**. Ces valeurs peuvent être visibles par certains utilisateurs et ne peut pas être modifiée, par conséquent, assurez-vous que le nom réservé tout d’abord est approprié pour cette utilisation.
+> Vous pouvez réserver des noms supplémentaires pour une application, et vous pouvez choisir d’utiliser un de ces éléments dans la version publiée de votre application au lieu de celui que vous avez réservé lorsque vous avez créé tout d’abord votre application dans le tableau de bord. Toutefois, n’oubliez pas que le premier nom que vous réservez pour votre produit servira dans certains de votre service informatique d' [informations d’identité](view-app-identity-details.md), par exemple, le **Nom de famille du Package (PFN)**. Ces valeurs peuvent être visibles par certains utilisateurs et ne peut pas être modifiée, par conséquent, assurez-vous que le nom réservé tout d’abord est approprié pour cette utilisation.
 
 
 ## <a name="reserve-additional-names-for-your-app"></a>Réserver des noms supplémentaires pour votre application
@@ -48,7 +48,7 @@ Notez que votre application doit disposer d’au moins un nom réservé. Pour su
 
 Si votre application figure déjà dans le WindowsStore et que vous voulez la renommer, vous devez lui réserver un nouveau nom (en suivant la procédure décrite ci-dessus), puis créer une autre soumission pour l’application. 
 
-Vous devez mettre à jour ou les packages de votre application pour remplacer l’ancien nom par le nouveau et de charger l’ou les packages mis à jour à votre soumission.
+Vous devez mettre à jour ou les packages de votre application pour remplacer l’ancien nom par le nouveau et charger l’ou les packages mis à jour à votre soumission.
 - Tout d’abord, mettre à jour le fichier Package.StoreAssociation.xml pour utiliser le nouveau nom, soit manuellement, soit à l’aide de Visual Studio (**projet > Store > associer une application avec le Windows Store …**). Pour plus d’informations, voir le [Package d’une application UWP avec Visual Studio](../packaging/packaging-uwp-apps.md).
 - Vous devez également mettre à jour l’élément [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) dans le manifeste de votre application, puis mettre à jour l’ensemble des graphiques ou textes contenant le nom de l’application. 
   > [!IMPORTANT]
@@ -62,7 +62,7 @@ Pour mettre à jour une description du Windows Store afin qu’il utilise le nou
 Une fois que votre application a été publiée avec le nouveau nom, vous pouvez supprimer des noms plus anciens que vous n’avez plus besoin d’utiliser.
 
 > [!TIP]
-> Chaque application s’affiche dans votre tableau de bord à l’aide du premier nom que vous avez réservé pour elle. Si vous avez suivi les étapes ci-dessus pour renommer une application et que vous souhaitez faire apparaître dans votre tableau de bord à l’aide de ce nom, vous devez supprimer le nom d’origine (en cliquant sur **Supprimer** sur la page **gérer des noms d’application** ). 
+> Chaque application s’affiche dans votre tableau de bord à l’aide du premier nom que vous avez réservé pour celle-ci. Si vous avez suivi les étapes ci-dessus pour renommer une application et que vous souhaitez voir apparaître dans votre tableau de bord en utilisant le nouveau nom, vous devez supprimer le nom d’origine (en cliquant sur **Supprimer** sur la page **gérer des noms d’application** ). 
 
  
 

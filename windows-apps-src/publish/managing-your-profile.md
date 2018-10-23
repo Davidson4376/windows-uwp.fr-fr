@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, centre de développement, paramètres de compte, profil, profil de compte, compte de développeur, paramètres de compte de développeur
 ms.localizationpriority: medium
 ms.openlocfilehash: bf464fa5c7b681b3d36ad95cff5ffc874e319f46
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5167833"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408797"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>Gérer les paramètres de compte et les informations de profil
 
@@ -53,7 +53,7 @@ Voici certains des autres éléments que vous trouverez dans la section **Param�
 - **Compte de paiement** et **Profil fiscal**: cet emplacement vous permet de [configurer votre compte de paiement et vos déclarations fiscales](setting-up-your-payout-account-and-tax-forms.md). Vous devez effectuer cette opération avant de facturer des applications ou des extensions.
 - **Associations d’entreprise**: acceptez les invitations d’entreprises qui souhaitent publier des applications pour leur usage exclusif. Pour plus d’informations, consultez l’article [Distribuer des applications cœur de métier aux entreprises](distribute-lob-apps-to-enterprises.md).
 - **Utilisateurs**: ajoutez des utilisateurs à votre compte du Centre de développement et attribuez-leur des rôles et des autorisations. Pour plus d’informations, voir [Gérer les utilisateurs du compte](manage-account-users.md).
-- **Locataires**: gérer les associations de client Azure AD. Pour plus d’informations, voir [associer Azure AD à votre compte du centre de développement](associate-azure-ad-with-dev-center.md).
+- **Locataires**: gérer les associations de votre client Azure AD. Pour plus d’informations, voir [associer Azure AD à votre compte du centre de développement](associate-azure-ad-with-dev-center.md).
 - **Programmes**: visualisez des détails sur les programmes auxquels vous participez et renseignez-vous sur les autres programmes qui sont susceptibles de vous intéresser.
 - **Contrats**: visualisez les contrats que votre compte a acceptés.
 - **Appareils de développement**: afficher et gérer [les appareils Windows Phone 8.x que vous avez déverrouillés pour le test](http://go.microsoft.com/fwlink/p/?LinkId=533897) et les [consoles Xbox One activées pour le développement](../xbox-apps/devkit-activation.md). 

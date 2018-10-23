@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, UWP, mappage de groupe de contenu, installation en continu, installation en continu d’une application UWP, mappage de groupe de contenu source
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ce32958d5a99dc9f3f772d6272450a4f2b0f81b
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5169452"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406250"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>Créer et convertir un mappage de groupe de contenu source
 
@@ -170,4 +170,4 @@ Pour plus d’informations sur les options que vous pouvez utiliser avec **MakeA
 MakeAppx convertCGM /?
 ```
 
-C’est tout ce dont vous avez besoin pour obtenir votre fichier `AppxContentGroupMap.xml` final et prêt pour votre application! Il est encore plus à faire avant que votre application soit entièrement prête pour le Microsoft Store. Pour plus d’informations sur l’ensemble du processus d’ajout d’une installation en continu d’une application UWP à votre application, consultez [ce billet de blog](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/).
+C’est tout ce dont vous avez besoin pour obtenir votre fichier `AppxContentGroupMap.xml` final et prêt pour votre application! Il est encore plus effectuer avant que votre application soit entièrement prête pour le Microsoft Store. Pour plus d’informations sur l’ensemble du processus d’ajout d’une installation en continu d’une application UWP à votre application, consultez [ce billet de blog](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/).

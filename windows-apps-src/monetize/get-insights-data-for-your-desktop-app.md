@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, des informations
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b4390fba26922372a74de76d09844a7243bce73
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5168002"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5407613"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>Obtenir les données d’analyse pour votre application de bureau
 
@@ -81,10 +81,10 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | applicationId       | chaîne | L’ID de produit de l’application de bureau pour laquelle vous souhaitez récupérer des données d’analyse.     |
 | insightDate                | chaîne | La date à laquelle nous avons identifié la modification d’un indicateur spécifique. Cette date représente la fin de la semaine dans lequel nous avons détecté une augmentation importante ou diminuer dans une unité de mesure par rapport à la semaine. |
 | type de données     | chaîne | Une chaîne qui spécifie la zone d’analytique générale qui informe cette insight. Actuellement, cette méthode prend uniquement en charge **la santé**.    |
-| insightDetail          | tableau | Une ou plusieurs [valeurs InsightDetail](#insightdetail-values) qui représentent les détails pour des informations en cours.    |
+| insightDetail          | tableau | Une ou plusieurs [valeurs InsightDetail](#insightdetail-values) qui représentent les détails de l’analyse en cours.    |
 
 
-### <a name="insightdetail-values"></a>Valeurs de InsightDetail
+### <a name="insightdetail-values"></a>Valeurs InsightDetail
 
 | Valeur               | Type   | Description                           |
 |---------------------|--------|-------------------------------------------|
@@ -92,8 +92,8 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | SubDimensions         | tableau |  Un ou plusieurs objets qui décrivent un indicateur unique pour l’analyse.   |
 | ChangementPourcentage            | chaîne |  Le pourcentage de la métrique changée entre votre base de clients.  |
 | Nomdimension           | chaîne |  Le nom de la métrique décrit dans la dimension actuelle. Exemples **EventType**, **marché**, **DeviceType**et **PackageVersion**.   |
-| DimensionValue              | chaîne | La valeur de la métrique qui est décrit dans la dimension actuelle. Par exemple, si **NomDimension** est **EventType**, **DimensionValue** peut-être **incident** ou **Raccrocher**.   |
-| FactValue     | chaîne | La valeur absolue de la métrique à la date de que l’analyse a été détectée.  |
+| DimensionValue              | chaîne | La valeur de la métrique qui est décrit dans la dimension actuelle. Par exemple, si **NomDimension** est **EventType**, **DimensionValue** peut être **incident** ou **Raccrocher**.   |
+| FactValue     | chaîne | La valeur absolue de la métrique sur la date de que détection de l’analyse.  |
 | Direction | chaîne |  La direction de la modification (**positif** ou **négatif**).   |
 | Date              | chaîne |  La date à laquelle nous avons identifié la modification relatives à l’analyse en cours ou la dimension actuelle.   |
 

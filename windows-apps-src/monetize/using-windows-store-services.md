@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 9FCBAF2E-5419-4169-A17C-9C4058DCF909
-description: Le Microsoft Store expose plusieurs services que vous pouvez appeler via l’API REST afin d’accéder par programmation à certains types de données pour les applications qui sont inscrites dans votre organisation '' s compte du centre de développement Windows.
+description: Le Microsoft Store expose plusieurs services que vous pouvez appeler via l’API REST afin d’accéder par programmation à certains types de données pour les applications qui sont enregistrées sur vous ou votre organisation '' s compte du centre de développement Windows.
 title: Services MicrosoftStore
 ms.author: mhopkins
 ms.date: 02/08/2017
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, services du Windows Store
 ms.localizationpriority: medium
 ms.openlocfilehash: d53fa39d0c6359e6f081c62a415cbf1874549b8f
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5171375"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5404054"
 ---
 # <a name="microsoft-store-services"></a>Services MicrosoftStore
 

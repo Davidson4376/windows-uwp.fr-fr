@@ -17,11 +17,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: badaefc406daa5f4500c76262d916f47d82e7a52
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5171961"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406134"
 ---
 # <a name="buttons"></a>Boutons
 
@@ -59,7 +59,7 @@ Utilisez un **RepeatButton** lorsque l’utilisateur peut souhaiter déclencher 
 
 Utilisez un **DropDownButton** lorsque le bouton a un menu volant qui contient plus d’options. Le chevron par défaut fournit une indication visuelle que le bouton inclut un menu volant.
 
-Utilisez un **bouton partagé** lorsque vous souhaitez que l’utilisateur puisse lancer une action immédiate ou choisir parmi des options supplémentaires de manière indépendante.
+Utilisez un **bouton partagé** lorsque vous souhaitez que l’utilisateur puisse lancer une action immédiate ou choisir parmi les options supplémentaires indépendamment.
 
 ## <a name="examples"></a>Exemples
 
@@ -223,7 +223,7 @@ La liste déroulante bouton hérite de l’événement Click, mais vous ne l’u
 
 Cet exemple montre comment créer une liste déroulante bouton avec un menu volant qui contient des commandes pour l’alignement de paragraphe dans un contrôle RichEditBox. (Pour plus d’informations et de code, voir [zone d’édition enrichie](rich-edit-box.md)).
 
-![Une liste déroulante bouton avec les commandes d’alignement](images/drop-down-button-align.png)
+![Une liste déroulante bouton comportant des commandes d’alignement](images/drop-down-button-align.png)
 
 ```xaml
 <DropDownButton ToolTipService.ToolTip="Alignment">
@@ -276,9 +276,9 @@ Un [bouton partagé](/uwp/api/windows.ui.xaml.controls.splitbutton) comporte deu
 > [!NOTE]
 > Lorsqu’elle est appelée avec une interface tactile, le bouton partagé se comporte comme un bouton déroulant; les deux moitiés du bouton appellent le menu volant. Avec d’autres méthodes d’entrée, un utilisateur peut appeler soit moitié du bouton séparément.
 
-Le comportement par défaut pour un bouton partagé est:
+Le comportement classique pour un bouton partagé est le suivant:
 
-- Lorsque l’utilisateur clique sur la partie de bouton, gérez l’événement Click pour appeler l’option qui n’est actuellement sélectionnée dans la liste déroulante.
+- Lorsque l’utilisateur clique sur la partie de bouton, gérez l’événement Click pour appeler l’option actuellement sélectionnée dans la liste déroulante.
 - Lorsque la liste déroulante est ouverte, appel handle des éléments dans la liste déroulante pour les deux modifications qui option est sélectionnée, puis appelez-le. Il est important d’appeler l’élément de menu volant dans la mesure où l’événement Click ne se produit lors de l’utilisation tactile du bouton.
 
 > [!TIP]

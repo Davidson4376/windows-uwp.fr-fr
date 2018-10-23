@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ms.openlocfilehash: fadd9c2b6a35a1418a782ab0a6ef419e3f127f42
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5157643"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408112"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>Intégrer votre application de bureau empaquetée avec Windows 10
 
@@ -245,7 +245,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |Catégorie | Toujours: ``windows.fileTypeAssociation``.
 |Nom |Un ID unique pour votre application. |
 |Verbe |Le nom qui apparaît dans le menu contextuel Explorateur de fichiers. Cette chaîne est localisable en utilisant ```ms-resource```.|
-|Id |L’ID unique du verbe. Si votre application est une application UWP, cela est transmise à votre application dans le cadre de ses arguments d’événement d’activation afin qu’elle puisse gérer la sélection de l’utilisateur de manière appropriée. Si votre application est une application empaquetée de confiance totale, elle reçoit des paramètres à la place (voir la puce suivante). |
+|Id |L’ID unique du verbe. Si votre application est une application UWP, cela est passée à votre application dans le cadre de ses arguments d’événement d’activation afin qu’elle puisse gérer la sélection de l’utilisateur de manière appropriée. Si votre application est une application empaquetée de confiance totale, elle reçoit des paramètres à la place (voir la puce suivante). |
 |Parameters |La liste des paramètres et des valeurs d’arguments associés au verbe. Si votre application est une application empaquetée de confiance totale, ces paramètres sont transmis à l’application en tant qu’arguments d’événement lorsque l’application est activée. Vous pouvez personnaliser le comportement de votre application en fonction de différents verbes d’activation. Si une variable peut contenir un chemin d’accès de fichier, placez la valeur du paramètre entre guillemets. Vous éviterez les problèmes qui se produisent dans les cas où le chemin d’accès contient des espaces. Si votre application est une application UWP, vous ne pouvez pas transmettre de paramètres. L’application reçoit l’ID à la place (voir la puce précédente).|
 |Extended |Indique que le verbe doit seulement apparaître, si l’utilisateur maintient enfoncée la touche **Maj** avant de cliquer avec le bouton droit sur le fichier pour afficher le menu contextuel. Cet attribut est facultatif et est défini par défaut sur la valeur **False** (c’est-à-dire que le verbe est toujours affiché) s’il n’est pas répertorié. Vous devez spécifier ce comportement individuellement pour chaque verbe (à l’exception de «Ouvrir», qui est toujours défini sur **False**).|
 
@@ -344,7 +344,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 ### <a name="create-firewall-exception-for-your-app"></a>Créer une exception de pare-feu pour votre application
 
-Si votre application requiert une communication via un port, vous pouvez ajouter votre application à la liste des exceptions de pare-feu.
+Si votre application requiert une communication via un port, vous pouvez ajouter votre application à la liste des exceptions du pare-feu.
 
 #### <a name="xml-namespace"></a>Espace de noms XML
 
@@ -911,7 +911,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 ### <a name="start-your-application-by-using-an-alias"></a>Démarrer votre application à l’aide d’un alias
 
-Les utilisateurs et les autres processus peuvent utiliser un alias pour démarrer votre application sans avoir à spécifier le chemin d’accès complet à votre application. Vous pouvez spécifier ce nom d’alias.
+Les utilisateurs et des autres processus peuvent utiliser un alias pour démarrer votre application sans avoir à spécifier le chemin d’accès complet à votre application. Vous pouvez spécifier ce nom d’alias.
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 

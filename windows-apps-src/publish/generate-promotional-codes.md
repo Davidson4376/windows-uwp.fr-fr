@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, code promotionnel, codes promotionnels, jeton, jetons
 ms.localizationpriority: medium
 ms.openlocfilehash: 37263794ffed6660f71c5e16195e992588c16d4a
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5167811"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406194"
 ---
 # <a name="generate-promotional-codes"></a>Générer des codes promotionnels
 
@@ -40,7 +40,7 @@ Tenez compte des stratégies suivantes relatives aux codes promotionnels:
 -   Vous devez respecter les exigences définies dans le [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), notamment la section **3k. Codes promotionnels**.
 
 > [!NOTE]
-> Vous pouvez utiliser des codes promotionnels même si votre application n’est pas disponible pour les clients (autrement dit, si vous avez sélectionné l’option **rendre ce produit disponible mais non détectable dans le Windows Store** avec le **Stop acquisition: tout client ayant un lien direct peut voir Store du produit Description, mais ils peuvent le télécharger que s’il possède déjà le produit, ou ont un code promotionnel et utilisent un appareil Windows 10** option dans la section de [découverte](choose-visibility-options.md#discoverability) de votre soumission). Avec cette option, les clients doivent se trouver sur Windows 10 (y compris Xbox) afin d’acquérir votre produit avec un code promotionnel.
+> Vous pouvez utiliser des codes promotionnels même si votre application n’est pas disponible pour les clients (autrement dit, si vous avez sélectionné l’option **rendre ce produit disponible mais non détectable dans le Windows Store** avec le **Stop acquisition: tout client ayant un lien direct peut voir Store du produit Description, mais ils peuvent le télécharger que s’il possède déjà le produit, ou ont un code promotionnel et utilisent un appareil Windows 10** option dans la section de [détectabilité](choose-visibility-options.md#discoverability) de votre soumission). Avec cette option, les clients doivent se trouver sur Windows 10 (y compris Xbox) afin d’acquérir votre produit avec un code promotionnel.
 
 
 ## <a name="order-promotional-codes"></a>Commander des codes promotionnels
@@ -92,7 +92,7 @@ Pour télécharger une commande de codes promotionnels complétée et distribuer
 
 ## <a name="code-redemption-user-experience"></a>Expérience utilisateur d’échange du code
 
-Une fois que vous distribuez un code promotionnel (ou son URL donnant droit) à un client, ils peuvent cliquer l’URL pour obtenir le produit gratuitement. Lorsqu’il clique sur l'URL donnant droit, une page authentifiée **Utiliser votre code** s’ouvre à l’adresse <https://account.microsoft.com/billing/redeem>. Cette page inclut une description de l’application à laquelle l’utilisateur est sur le point d’accéder. Si le client n’est pas connecté à son compte Microsoft, il peut être invité à le faire. Votre client peut également consulter <https://account.microsoft.com/billing/redeem> et entrer le code directement.
+Une fois que vous distribuez un code promotionnel (ou son URL donnant droit) à un client, ils peuvent cliquer l’URL permettant d’obtenir le produit gratuitement. Lorsqu’il clique sur l'URL donnant droit, une page authentifiée **Utiliser votre code** s’ouvre à l’adresse <https://account.microsoft.com/billing/redeem>. Cette page inclut une description de l’application à laquelle l’utilisateur est sur le point d’accéder. Si le client n’est pas connecté à son compte Microsoft, il peut être invité à le faire. Votre client peut également consulter <https://account.microsoft.com/billing/redeem> et entrer le code directement.
 
 > [!IMPORTANT]
 > Nous vous recommandons de ne pas distribuer les codes promotionnels à vos clients tant que votre produit n'a pas terminé le processus de publication (même si vous avez sélectionné **Rendre ce produit disponible mais non détectable dans le Windows Store**). Les clients verront une erreur s’ils tentent d’utiliser un code promotionnel pour un produit qui n’a pas encore été publié.

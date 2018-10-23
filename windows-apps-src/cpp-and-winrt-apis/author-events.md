@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, créer, événement
 ms.localizationpriority: medium
 ms.openlocfilehash: 82239436acfe82bf99cd1e665cca14592bbcef74
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5166109"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5405283"
 ---
 # <a name="author-events-in-cwinrt"></a>Créer des événements en C++/WinRT
 
@@ -30,7 +30,7 @@ Cette rubrique montre comment créer un composant Windows Runtime qui contient u
 
 Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créer un **Visual C++** > **Windows universel** > **composant Windows Runtime (C++ / WinRT)** de projet et nommez-le *BankAccountWRC* (pour «compte bancaire composant Windows Runtime»).
 
-Le projet nouvellement créé contient un fichier nommé `Class.idl`. Renommez ce fichier `BankAccount.idl` (renommer le `.idl` fichier renomme automatiquement le dépendant `.h` et `.cpp` fichiers, trop). Remplacez le contenu du `BankAccount.idl` avec le listing ci-dessous.
+Le projet nouvellement créé contient un fichier nommé `Class.idl`. Renommez ce fichier `BankAccount.idl` (renommer le `.idl` fichier renomme automatiquement le dépendant `.h` et `.cpp` de fichiers, trop). Remplacez le contenu du `BankAccount.idl` avec le listing ci-dessous.
 
 ```idl
 // BankAccountWRC.idl
@@ -146,7 +146,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 };
 ```
 
-Chaque fois que vous cliquez sur la fenêtre, vous retirez 1 du solde du compte bancaire. Pour démontrer que l’événement est déclenché comme prévu, insérez un point d’arrêt à l’intérieur de l’expression lambda qui gère l’événement **AccountIsInDebit** , exécutez l’application, puis cliquez sur à l’intérieur de la fenêtre.
+Chaque fois que vous cliquez sur la fenêtre, vous retirez 1 du solde du compte bancaire. Pour démontrer que l’événement est déclenché comme prévu, insérez un point d’arrêt à l’intérieur de l’expression lambda qui gère l’événement **AccountIsInDebit** , exécutez l’application et cliquez à l’intérieur de la fenêtre.
 
 ## <a name="parameterized-delegates-and-simple-signals-across-an-abi"></a>Les délégués paramétrés et signaux simples, entre un message ABI
 
@@ -248,7 +248,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 ## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>Les délégués paramétrés, signaux simples et rappels au sein d’un projet
 
-Si votre événement est utilisé uniquement en interne au sein de votre C++ / WinRT du projet (pas sur les fichiers binaires), puis vous toujours utiliser le modèle de structure [**winrt::event**](/uwp/cpp-ref-for-winrt/event) , mais vous devez le paramétrer avec C++ / WinRT non Windows Runtime [**winrt::delegate&lt;… T&gt; **](/uwp/cpp-ref-for-winrt/delegate) modèle de structure, qui est un délégué efficace, avec décompte des références. Il prend en charge n’importe quel nombre de paramètres, et ils ne sont pas limités aux types Windows Runtime.
+Si votre événement est utilisé uniquement en interne au sein de votre C++ / WinRT de projet (pas sur les fichiers binaires), puis vous utilisez toujours le modèle de structure [**winrt::event**](/uwp/cpp-ref-for-winrt/event) , mais vous devez le paramétrer avec C++ / WinRT non Windows Runtime [**winrt::delegate&lt;… T&gt; **](/uwp/cpp-ref-for-winrt/delegate) modèle de structure, qui est un délégué efficace, avec décompte des références. Il prend en charge n’importe quel nombre de paramètres, et ils ne sont pas limités aux types Windows Runtime.
 
 L’exemple ci-dessous montre tout d’abord un délégué signature qui ne prend pas tous les paramètres (essentiellement un signal simple) et puis qui prend une chaîne.
 

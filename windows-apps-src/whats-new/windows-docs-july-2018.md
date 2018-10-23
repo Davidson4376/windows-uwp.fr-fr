@@ -2,7 +2,7 @@
 author: QuinnRadich
 title: Quelles sont les nouveautés dans la documentation Windows en juillet 2018 - développer des applications UWP
 description: Nouvelles fonctionnalités, des vidéos, des exemples et des conseils aux développeurs ont été ajoutées à la documentation du développeur Windows 10 juillet 2018.
-keywords: Quelles sont les nouveautés, mise à jour, fonctionnalités, conseils de développeur, Windows 10, juillet
+keywords: Nouveautés, mise à jour, fonctionnalités, conseils de développeur, Windows 10, juillet
 ms.author: quradic
 ms.date: 7/11/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f41d25fd6757e5d3f80d00de341168de4f34e946
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5163898"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406954"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en juillet 2018
 
@@ -26,7 +26,7 @@ La documentation du développeur Windows est constamment mise à jour afin d'int
 
 ### <a name="progressive-web-apps-on-windows"></a>Applications Web progressives sur Windows
 
-[Applications Web progressives (PWA)](https://developer.microsoft.com/windows/pwa) sont simplement des applications web qui sont [progressivement amélioré](https://wikipedia.org/wiki/Progressive_enhancement) avec des fonctionnalités similaires application natives sur la prise en charge de plateformes et des moteurs de navigateur, tels que l’installation de lancement à partir d’écran d’accueil, la prise en charge en mode hors connexion et push notifications. Profitez de l’avantage supplémentaire en cours d’exécution sur Windows 10 avec le moteur de Microsoft Edge (EdgeHTML), les PWA [indépendamment de la fenêtre du navigateur en tant qu’applications UWP.](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
+[Applications Web progressives (PWA)](https://developer.microsoft.com/windows/pwa) sont simplement des applications web qui sont [progressivement amélioré](https://wikipedia.org/wiki/Progressive_enhancement) avec des fonctionnalités similaires application natives prise en charge de plateformes et des moteurs de navigateur, tels que l’installation de lancement à partir d’écran d’accueil, la prise en charge en mode hors connexion et push notifications. Profitez de l’avantage supplémentaire en cours d’exécution sur Windows 10 avec le moteur de Microsoft Edge (EdgeHTML), les PWA [indépendamment de la fenêtre du navigateur en tant qu’applications UWP.](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
 
 ![Une image de PWA en action](images/progressive-web-apps.jpg)
 
@@ -38,7 +38,7 @@ Consultez nos guides PWA pour:
 
 ### <a name="notepad"></a>Bloc-notes
 
-Disponible dans Windows 10 Insider Preview Build 17713, [le bloc-notes a été mis à jour avec de nombreuses nouvelles fonctionnalités](http://aka.ms/ant-man). Zoom, enveloppant recherche/remplacement et prise en charge des fins de ligne Unix/Linux (saut de ligne) et Mac (CR) sont désormais disponibles pour [Les Windows Insiders](https://insider.windows.com/). 
+Disponible dans Windows 10 Insider Preview Build 17713, [le bloc-notes a été mis à jour avec de nombreuses nouvelles fonctionnalités](http://aka.ms/ant-man). Zoom enveloppant recherche/remplacement et prise en charge des fins de ligne Unix/Linux (saut de ligne) et Mac (CR) sont désormais disponibles pour [Les Windows Insiders](https://insider.windows.com/). 
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
@@ -66,7 +66,7 @@ Nous avons ajouté plusieurs nouvelles rubriques à la [documentation de WebVR](
 
 En outre, nous avons certaines mises à jour vers les pages existantes:
 
-* La table des matières est désormais mieux organisée quatre séries de niveau supérieur distincts: **Notions de base**, de **développement**, **ressources**et **démonstrations**.
+* La table des matières est désormais mieux organisée en quatre compartiments de niveau supérieur distinctes: **Notions de base**, de **développement**, **ressources**et **démonstrations**.
 
 * [Guide du développeur de WebVR (page d’accueil)](https://docs.microsoft.com/microsoft-edge/webvr/): actualisée apparence, avec des grandes images et icônes et Nouvelle démonstration.
 
@@ -74,17 +74,17 @@ En outre, nous avons certaines mises à jour vers les pages existantes:
 
 ## <a name="videos"></a>Vidéos
 
-### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>Prise en main pour les développeurs: créer et personnaliser un formulaire sur Windows 10
+### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>Mise en route pour les développeurs: créer et personnaliser un formulaire sur Windows 10
 
-Notre [documentation de prise en main](../get-started/index.md) pour les développeurs Windows fournissent désormais une expérience pratique avec la tâche de développement d’application de base. Cette vidéo vous guide au travers de ces rubriques et décrit les principes fondamentaux de la création d’un formulaire de l’interface utilisateur dans votre application. [Regardez la vidéo](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be) pour voir le code en action, puis [consultez la rubrique vous-même.](http://aka.ms/CreateForms)
+Notre [documentation prise en main](../get-started/index.md) pour les développeurs Windows fournissent désormais une expérience pratique avec la tâche de développement d’application de base. Cette vidéo vous guide au travers de ces rubriques et décrit les principes fondamentaux de la création d’un formulaire de l’interface utilisateur dans votre application. [Regardez la vidéo](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be) pour voir le code en action, puis [consultez la rubrique vous-même.](http://aka.ms/CreateForms)
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>Améliorer votre robot avec chat personnalité de projet
 
-Chat de personnalité projet vous permet d’ajouter un personnage personnalisable à vos robots de chat. À l’intégration avec le Kit de développement logiciel Microsoft robot Framework, vous pouvez ajouter des fonctionnalités de petites parler de manière plus conversationnel pour interagir avec les clients. Pour savoir comment implémenter, puis [d’essayer de la démonstration interactive](http://aka.ms/PersonalityChat) pour une expérience pratique, [Regardez la vidéo](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be) .
+Chat de personnalité projet vous permet d’ajouter un personnage personnalisable à vos robots de chat. À l’intégration avec le Kit de développement logiciel Microsoft robot Framework, vous pouvez ajouter des fonctionnalités de petites parler de manière plus conversationnel pour interagir avec les clients. [Regardez la vidéo](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be) pour savoir comment implémenter, puis [d’essayer de la démonstration interactive](http://aka.ms/PersonalityChat) pour une expérience pratique.
 
 ### <a name="one-dev-question"></a>Question sur le développement
 
-Dans la série de vidéos Question sur le développement, les développeurs Microsoft longtime couvrent une série de questions sur le développement Windows, la culture de l’équipe et l’historique. Voici les questions les plus récentes que nous avons répondu à!
+Dans la série de vidéos Question sur le développement, les développeurs Microsoft longtime couvrent une série de questions sur le développement Windows, la culture de l’équipe et historique. Voici les questions les plus récentes que nous avons répondu à!
 
 Raymond Chen:
 
@@ -99,6 +99,6 @@ Larry Osterman:
 
 ### <a name="photo-editor-cwinrt"></a>Photo Editor C++ / WinRT
 
-L’exemple d’application Photo Editor illustre le développement avec le [C++ / WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) projection de langage. L’application vous permet de vous récupérer des photos à partir de la bibliothèque **d’images** , puis modifiez une image choisie avec des effets de photo associé. [Cloner ou télécharger l’exemple ici.](https://github.com/Microsoft/Windows-appsample-photo-editor)
+L’exemple d’application Photo Editor illustre le développement avec le [C++ / WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) projection de langage. L’application vous permet de récupérer des photos à partir de la bibliothèque **d’images** , puis modifiez une image choisie avec des effets de photo associé. [Cloner ou télécharger l’exemple ici.](https://github.com/Microsoft/Windows-appsample-photo-editor)
 
 ![Un exemple de l’exemple en action](images/photo-editor-banner.png)

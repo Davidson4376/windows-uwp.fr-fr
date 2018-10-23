@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 731d449d779806fbd4104787b692d3b7d0408036
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5161469"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5407439"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>Problèmes connus avec les applications de bureau empaquetées
 
@@ -56,7 +56,7 @@ Il s’agit d’une limitation connue et il n’existe actuellement aucune solut
 
 Cela peut se produire si les fichiers exécutables de votre application ont une extension **. EXE** en majuscules. Bien que la casse de cette extension n’affecte l’exécution de votre application, cela peut amener le DAC à générer cette erreur.
 
-Pour résoudre ce problème, essayez de spécifier l’indicateur **-AppExecutable** lors de la création de package et utilisez les minuscules «.exe» comme extension de votre fichier exécutable principal (par exemple: MONAPP.exe).    Sinon, vous pouvez modifier la casse de tous les fichiers exécutables dans votre application à partir de minuscules en majuscules (par exemple: à partir de. EXE vers .exe).
+Pour résoudre ce problème, essayez de spécifier l’indicateur **-AppExecutable** lors de la création de package et utilisez les minuscules «.exe» comme extension de votre fichier exécutable principal (par exemple: MONAPP.exe).    Par ailleurs, vous pouvez modifier la casse de tous les fichiers exécutables dans votre application à partir de minuscules en majuscules (par exemple: à partir de. EXE vers .exe).
 
 ### <a name="corrupted-or-malformed-authenticode-signatures"></a>Signatures Authenticode endommagées ou mal formées
 
@@ -95,7 +95,7 @@ La [mise à jour de Windows (version 14393.351 - KB3197954)](https://support.mic
 
 Si la mise à jour ne résout pas le problème ou si vous ne savez pas vraiment comment récupérer votre ordinateur, contactez le [Support Microsoft](https://support.microsoft.com/contactus/).
 
-Si vous êtes développeur, vous ne voulez peut-être pas que votre application empaquetée soit installée sur des versions de Windows n’incluant pas cette mise à jour. Notez que, dans ce cas, votre application ne sera pas disponible pour les utilisateurs qui n’ont pas encore installé la mise à jour. Pour limiter la disponibilité de votre application pour les utilisateurs qui ont installé cette mise à jour, modifiez le fichier AppxManifest.xml comme suit:
+Si vous êtes développeur, vous ne voulez peut-être pas que votre application empaquetée soit installée sur des versions de Windows n’incluant pas cette mise à jour. Notez que, dans ce cas, votre application ne sera pas disponible pour les utilisateurs qui n’ont pas encore installé la mise à jour. Pour limiter la disponibilité de votre application aux utilisateurs qui ont installé cette mise à jour, modifiez le fichier AppxManifest.xml comme suit:
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -149,7 +149,7 @@ Pour rechercher des fichiers qui contiennent un certificat PE incorrect, ouvrez 
 set APPXSIP_LOG=1
 ```
 
-Ensuite, à partir de l' **invite de commandes**, connectez-vous à votre application à nouveau. Exemple:
+Ensuite, à partir de l' **invite de commandes**, signez votre application à nouveau. Exemple:
 
 ```
 signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, Xbox One acquisitions de modules complémentaires
 ms.localizationpriority: medium
 ms.openlocfilehash: 931cd7b351a122c22a59a3a0bc2975c61dc38aaa
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/22/2018
-ms.locfileid: "5173492"
+ms.locfileid: "5404880"
 ---
 # <a name="get-xbox-one-add-on-acquisitions"></a>Obtenir des acquisitions Xbox One
 
@@ -99,7 +99,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 |---------------------|---------|---------------------|
 | date                | chaîne  | Première date dans la plage de dates des données d’acquisition. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
 | addonProductId      | chaîne  | L' *ID du produit* de l’extension pour laquelle vous récupérez les données d’acquisition.                                                                                                                                                                 |
-| addonProductName    | chaîne  | Nom d’affichage de l’extension. Cette valeur s’affiche uniquement dans les données de réponse si le paramètre *aggregationLevel* est défini sur le **jour**, sauf si vous spécifiez le champ **addonProductName** dans le paramètre *groupby* .                                                                                                                                                                                                            |
+| addonProductName    | chaîne  | Nom d’affichage de l’extension. Cette valeur apparaît uniquement dans les données de réponse si le paramètre *aggregationLevel* est défini à **jour**, sauf si vous spécifiez le champ **addonProductName** dans le paramètre *groupby* .                                                                                                                                                                                                            |
 | applicationId       | chaîne  | L' *ID du produit* de l’application pour laquelle vous souhaitez récupérer des données d’acquisition d’extension.                                                                                                                                                           |
 | applicationName     | chaîne  | Le nom complet du jeu.                                                                                                                                                                                                             |
 | deviceType          | chaîne  | <p>L'une des chaînes suivantes qui spécifie le type d’appareil ayant effectué l'acquisition:</p> <ul><li>«PC»</li><li>«Téléphone»</li><li>«Console»</li><li>«IoT»</li><li>«Serveur»</li><li>«Tablette»</li><li>«HOLOGRAPHIQUE»</li><li>«Inconnu»</li></ul>                                                                                                  |

@@ -10,18 +10,18 @@ ms.technology: uwp, windows forms, wpf
 keywords: windows10, uwp, windows forms, wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: b9757466502283c673c7b2106b4a7775be412faf
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5167929"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5405009"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>Contrôles UWP dans des applications de bureau
 
 > [!NOTE]
 > Les API et les contrôles mentionnés dans cet article sont actuellement disponibles sous la forme d’un version préliminaire pour développeurs. Bien que nous vous encourageons à les tester dans votre propre code prototype maintenant, nous ne recommandons pas que vous les utiliser dans le code de production pour l’instant. Ces API et les contrôles continuera à mûrir et stabiliser dans les futures versions de Windows. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.
 
-Windows 10 vous permet désormais d’utiliser les contrôles UWP dans les applications de bureau non UWP afin que vous pouvez améliorer l’apparence et les fonctionnalités de vos applications de bureau existantes avec les dernières fonctionnalités de l’interface utilisateur de Windows 10 qui sont uniquement disponibles via les contrôles UWP. Cela signifie que vous pouvez utiliser les fonctionnalités UWP telles que [Windows Ink](../design/input/pen-and-stylus-interactions.md) et les contrôles qui prennent en charge le [Système Fluent Design](../design/fluent-design-system/index.md) dans votre existant WPF, Windows Forms et les applications Win32 C++. Ce scénario développeur est parfois appelé *îles XAML*.
+Windows 10 vous permet désormais d’utiliser les contrôles UWP dans les applications de bureau non UWP afin que vous pouvez améliorer l’apparence et les fonctionnalités de vos applications de bureau existantes avec les dernières fonctionnalités de l’interface utilisateur de Windows 10 qui sont uniquement disponibles via les contrôles UWP. Cela signifie que vous pouvez utiliser les fonctionnalités UWP telles que [Windows Ink](../design/input/pen-and-stylus-interactions.md) et les contrôles qui prennent en charge le [Système Fluent Design](../design/fluent-design-system/index.md) dans votre existant WPF, Windows Forms et les applications Win32 C++. Ce scénario développeur est parfois appelé *(îles) XAML*.
 
 Nous proposons différentes méthodes à utiliser (îles) XAML dans vos applications WPF, Windows Forms et Win32 C++, en fonction de la technologie ou infrastructure que vous utilisez.
 
@@ -30,9 +30,9 @@ Nous proposons différentes méthodes à utiliser (îles) XAML dans vos applicat
 Les applications WPF et Windows Forms peuvent utiliser une sélection de contrôles UWP encapsulés dans le [Kit de ressources de la Communauté Windows](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). Nous appelons à ces contrôles *encapsulé les contrôles* dans la mesure où ils encapsulent l’interface et des fonctionnalités d’un contrôle UWP spécifique. Vous pouvez ajouter ces contrôles directement à l’aire de conception de votre projet WPF ou Windows Forms et les utiliser comme tout autre contrôle WPF ou Windows Forms dans votre concepteur.
 
 > [!NOTE]
-> Contrôles encapsulés ne sont pas disponibles pour les applications de bureau Win32 C++. Ces types d’applications doivent utiliser l' [API d’hébergement de XAML UWP](#uwp-xaml-hosting-api).
+> Contrôles inclus dans un wrapper ne sont pas disponibles pour les applications de bureau Win32 C++. Ces types d’applications doivent utiliser l' [API d’hébergement de XAML UWP](#uwp-xaml-hosting-api).
 
-Les contrôles UWP encapsulés suivants sont actuellement disponibles pour les applications WPF et Windows Forms. D’autres contrôles UWP encapsulé sont planifiés pour les versions futures du Kit de ressources de la Communauté Windows.
+Les contrôles UWP encapsulés suivants sont actuellement disponibles pour les applications WPF et Windows Forms. D’autres contrôles UWP encapsulé sont prévues pour les versions ultérieures de Windows Community Toolkit.
 
 | Contrôle | Minimal pris en charge du système d’exploitation | Description |
 |-----------------|-------------------------------|-------------|

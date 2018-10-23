@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, marchés, pays, régions
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5164866"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5410867"
 ---
 # <a name="define-market-selection"></a>Définir la sélection du marché
 
@@ -480,7 +480,7 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Marchés « Rest of World » pour Windows 8.x
 
-Si votre application comprend des packages ciblant Windows 8.x, il est important de savoir qu’un certain nombre de marchés est traité comme un marché unique «Rest of World» pour les clients utilisent le Windows Store sur Windows 8.x, même si elles s’affichent comme des marchés individuels dans le centre de développement Windows tableau de bord (par opposition au tableau de bord du Windows Store plus haut, où il a été une option de marché «Rest of World» pour regrouper tous ces marchés).
+Si votre application comprend des packages ciblant Windows 8.x, il est important de savoir qu’un certain nombre de marchés est traité comme un marché unique «Rest of World» pour les clients utilisent le Windows Store sur Windows 8.x, même si elles s’affichent comme des marchés individuels dans le centre de développement Windows tableau de bord (par opposition au tableau de bord du Windows Store antérieur, où il a été une option de marché «Rest of World» pour regrouper tous ces marchés).
 
 Si vous conservez la sélection par défaut lorsque vous soumettez votre application, vous n’avez pas à vous soucier de cela. Votre application sera disponible sur tous les marchés possibles. Toutefois, si vous voulez exclure certains marchés, gardez à l’esprit que l’exclusion d’un seul de ces marchés « Rest of World » signifie que votre application ne sera disponible sur aucun marché « Rest of World » pour les clients utilisant Windows 8 ou Windows 8.1.
 

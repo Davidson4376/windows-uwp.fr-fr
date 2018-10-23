@@ -15,11 +15,11 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 518ce49ddb631e3e914a6c7662b4e74de247c29c
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5158791"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5404235"
 ---
 # <a name="combo-box"></a>Zone de liste modifiable
 
@@ -194,7 +194,7 @@ Vous pouvez définir la propriété [IsTextSearchEnabled](/uwp/api/windows.ui.xa
 ## <a name="make-a-combo-box-editable"></a>Configurer une zone de liste déroulante modifiable
 
 > [!IMPORTANT]
-> Cette fonctionnalité nécessite [dernière build de Windows 10 Insider Preview et Kit de développement](https://insider.windows.com/for-developers/).
+> Cette fonctionnalité nécessite [dernière build de Windows 10 Insider Preview et SDK](https://insider.windows.com/for-developers/).
 
 Par défaut, une zone de liste déroulante permet à l’utilisateur une sélection parmi une liste prédéfinie d’options. Toutefois, il existe des cas où la liste contient uniquement un sous-ensemble de valeurs valides, et l’utilisateur doit être en mesure d’entrer d’autres valeurs qui ne sont pas répertoriés. Pour ce faire, vous pouvez rendre la zone de liste déroulante modifiable.
 
@@ -204,7 +204,7 @@ Par défaut, la valeur SelectedItem est mis à jour lorsque l’utilisateur vali
 
 Cet exemple montre une zone de liste déroulante modifiable simple. La liste contient des chaînes simples et n’importe quelle valeur entrée par l’utilisateur est utilisé comme entrée.
 
-Un sélecteur de «les noms utilisés récemment» permet à l’utilisateur de saisir des chaînes personnalisées. La liste 'RecentlyUsedNames' contienne des valeurs que l’utilisateur peut choisir, mais l’utilisateur peut également ajouter une nouvelle valeur personnalisée. La propriété «CurrentName» représente le nom actuellement saisi.
+Un sélecteur «les noms utilisés récemment» permet à l’utilisateur de saisir des chaînes personnalisées. La liste 'RecentlyUsedNames' contienne des valeurs que l’utilisateur peut choisir, mais l’utilisateur peut également ajouter une nouvelle valeur personnalisée. La propriété «CurrentName» représente le nom actuellement saisi.
 
 ```xaml
 <ComboBox IsEditable="true"

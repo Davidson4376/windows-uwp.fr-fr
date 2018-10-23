@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 89c021bb2c094aafc9b534acef9b009817669461
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5167972"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5405070"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>Déclenchement d’événements dans les composants Windows Runtime
 > [!NOTE]
@@ -138,7 +138,7 @@ Cette procédure pas à pas inclut les parties suivantes:
 
 Dans Visual Studio, dans la barre de menus, choisissez **Fichier &gt; Nouveau Projet**. Dans la boîte de dialogue **Nouveau projet**, développez **JavaScript &gt; Windows universel**, puis sélectionnez **Application vide**. Nommez le projet ToasterApplication, puis cliquez sur le bouton **OK**.
 
-Ajoutez un composant Windows Runtime C# à la solution : dans l’Explorateur de solutions, ouvrez le menu contextuel de la solution, puis choisissez **Ajouter &gt; Nouveau projet**. Développez **Visual c# &gt; Microsoft Store** , puis sélectionnez le **Composant Windows Runtime**. Nommez le projet ToasterComponent, puis cliquez sur le bouton **OK**. ToasterComponent sera l’espace de noms racine pour les composants que vous créerez lors des étapes ultérieures.
+Ajoutez un composant Windows Runtime C# à la solution : dans l’Explorateur de solutions, ouvrez le menu contextuel de la solution, puis choisissez **Ajouter &gt; Nouveau projet**. Développez **Visual c# &gt; Microsoft Store** , puis sélectionnez **Composant Windows Runtime**. Nommez le projet ToasterComponent, puis cliquez sur le bouton **OK**. ToasterComponent sera l’espace de noms racine pour les composants que vous créerez lors des étapes ultérieures.
 
 Dans l’Explorateur de solutions, ouvrez le menu contextuel de la solution, puis choisissez **Propriétés**. Dans la boîte de dialogue **Pages de propriétés**, sélectionnez **Propriétés de configuration** dans le volet gauche, puis en haut de la boîte de dialogue, définissez **Configuration** sur **Déboguer** et **Plateforme** sur x86, x64 ou ARM. Cliquez sur le bouton **OK**.
 
@@ -273,13 +273,13 @@ La fonction makeToast doit être raccordée à un bouton. Default.html de mise �
     </body>
 ```
 
-Si nous n’étions pas en utilisant un TypedEventHandler, nous serait désormais en mesure d’exécuter l’application sur l’ordinateur local et cliquez sur le bouton pour rendre le toast. Toutefois, dans notre application, rien ne se produit. Pour savoir pourquoi, nous allons déboguer le code managé qui déclenche le ToastCompletedEvent. Arrêtez le projet, puis dans la barre de menus, choisissez **Déboguer &gt; propriétés d’Application Générateur de toasts**. Modifier le **Type de débogueur** à **managé uniquement**. Une nouvelle fois sur la barre de menus, choisissez **Déboguer &gt; Exceptions**, puis sélectionnez **Exceptions Common Language Runtime**.
+Si nous n’étions pas en utilisant un TypedEventHandler, nous avons maintenant serait en mesure d’exécuter l’application sur l’ordinateur local et cliquez sur le bouton pour rendre le toast. Toutefois, dans notre application, rien ne se produit. Pour connaître la raison, nous allons déboguer le code managé qui déclenche le ToastCompletedEvent. Arrêtez le projet, puis dans la barre de menus, choisissez **Déboguer &gt; propriétés d’Application Générateur de toasts**. Modifier le **Type de débogueur** à **managé uniquement**. Une nouvelle fois sur la barre de menus, choisissez **Déboguer &gt; Exceptions**, puis sélectionnez **Exceptions Common Language Runtime**.
 
 Maintenant, exécutez l’application et cliquez sur le bouton de marque-toast. Le débogueur intercepte l’exception cast non valide. Bien qu’il n’est pas évidente à partir de son message, cette exception est en cours dans la mesure où les proxys sont manquants pour cette interface.
 
 ![proxy manquant](./images/debuggererrormissingproxy.png)
 
-La première étape de création d’un proxy et un stub pour un composant consiste à ajouter un GUID ou un ID unique pour les interfaces. Cependant, le format GUID à utiliser diffère selon si vous écrivez votre code en c#, Visual Basic ou un autre langage .NET, ou en C++.
+La première étape de création d’un proxy et un stub pour un composant consiste à ajouter un GUID ou un ID unique pour les interfaces. Cependant, le format GUID à utiliser diffère selon que vous écrivez votre code en c#, Visual Basic ou un autre langage .NET, ou en C++.
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>Pour générer un GUID pour les interfaces du composant (c# et autres langages .NET)
 
@@ -341,13 +341,13 @@ Vous pouvez vérifier que MIDL compilé correctement la solution en recherchant 
 
 ## <a name="to-compile-the-proxy-and-stub-code-into-a-dll"></a>Pour compiler le proxy et stub de code dans une DLL
 
-Maintenant que vous avez les fichiers requis, vous pouvez compiler les pour produire une DLL, qui est un fichier C++. Pour rendre cet aussi simple que possible, ajoutez un nouveau projet pour prendre en charge la création des serveurs proxy. Ouvrez le menu contextuel de la solution ToasterApplication, puis choisissez **Ajouter > Nouveau projet**. Dans le volet gauche de la boîte de dialogue **Nouveau projet** , développez **Visual C++ &gt; Windows &gt; cessent Windows**, puis, dans le volet central, sélectionnez **DLL (applications UWP)**. (Notez qu’il ne s’agit pas d’un projet de composant Windows Runtime C++). Nommez le projet proxys, puis cliquez sur le bouton **OK** . Ces fichiers de mise à jour par les événements post-build lorsque quelque chose change dans la classe en c#.
+Maintenant que vous avez les fichiers requis, vous pouvez compiler ceux-ci pour produire une DLL, qui est un fichier C++. Pour rendre cet aussi simple que possible, ajoutez un nouveau projet pour prendre en charge la création des serveurs proxy. Ouvrez le menu contextuel de la solution ToasterApplication, puis choisissez **Ajouter > Nouveau projet**. Dans le volet gauche de la boîte de dialogue **Nouveau projet** , développez **Visual C++ &gt; Windows &gt; cessent Windows**, puis, dans le volet central, sélectionnez **DLL (applications UWP)**. (Notez qu’il ne s’agit pas d’un projet de composant Windows Runtime C++). Nommez le projet proxys, puis cliquez sur le bouton **OK** . Ces fichiers de mise à jour par les événements post-build lorsque quelque chose change dans la classe en c#.
 
 Par défaut, le projet de proxys génère des fichiers d’en-tête .h et les fichiers .cpp C++. Dans la mesure où la DLL est générée à partir des fichiers produites à partir de MIDL, les fichiers .h et .cpp ne sont pas requis. Dans l’Explorateur de solutions, ouvrez le menu contextuel pour eux, choisissez **Supprimer**et puis confirmez la suppression.
 
 Maintenant que le projet est vide, vous pouvez ajouter les fichiers générés par MIDL. Ouvrez le menu contextuel du projet de proxys, puis choisissez **Ajouter > élément existant.** Dans la boîte de dialogue, naviguez vers le répertoire de projet ToasterComponent, puis sélectionnez ces fichiers: fichiers ToasterComponent.h, ToasterComponent_i.c, ToasterComponent_p.c et dlldata.c. Choisissez le bouton **Ajouter** .
 
-Dans le projet de proxys, créez un fichier .def pour définir les exportations DLL décrites dans dlldata.c. Ouvrez le menu contextuel du projet, puis choisissez **Ajouter > nouvel élément**. Dans le volet gauche de la boîte de dialogue, sélectionnez le Code et puis, dans le volet central, sélectionnez le fichier de définition de Module. Nommez le fichier proxies.def, puis choisissez le bouton **Ajouter** . Ouvrir ce fichier .def et modifiez-le afin d’inclure les exportations qui sont définies dans dlldata.c:
+Dans le projet de proxys, créez un fichier .def pour définir les exportations DLL décrites dans dlldata.c. Ouvrez le menu contextuel du projet, puis choisissez ensuite **Ajouter > nouvel élément**. Dans le volet gauche de la boîte de dialogue, sélectionnez le Code et puis, dans le volet central, sélectionnez le fichier de définition de Module. Nommez le fichier proxies.def, puis choisissez le bouton **Ajouter** . Ouvrir ce fichier .def et modifiez-le afin d’inclure les exportations qui sont définies dans dlldata.c:
 
 ```cpp
 EXPORTS
@@ -385,7 +385,7 @@ Vérifiez que la solution est générée correctement en choisissant **Build > R
 
 ## <a name="to-register-the-proxy-and-stub"></a>Pour inscrire le proxy et le stub
 
-Dans le projet ToasterApplication, ouvrez le menu contextuel de package.appxmanifest, puis choisissez **Ouvrir avec**. Dans la boîte de dialogue Ouvrir avec, sélectionnez **Éditeur de texte XML** , puis choisissez le bouton **OK** . Nous allons coller dans du code XML qui fournit qu'une inscription d’extension windows.activatableClass.proxyStub et qui sont basé sur les GUID dans le proxy. Pour rechercher les GUID à utiliser dans le fichier .appxmanifest, ouvrez ToasterComponent_i.c. Recherchez des entrées semblables à celles dans l’exemple suivant. Notez également les définitions pour IToast, IToaster et une troisième interface: un gestionnaire d’événements typée qui possède deux paramètres: un générateur de toasts et le Toast. Cela correspond à l’événement qui est définie dans la classe de générateur de toasts. Notez que les GUID de IToast et IToaster correspondent les GUID qui sont définies sur les interfaces dans le fichier de code c#. Étant donné que l’interface de gestionnaire d’événements typés est généré automatiquement, le GUID de cette interface est également généré automatiquement.
+Dans le projet ToasterApplication, ouvrez le menu contextuel de package.appxmanifest, puis choisissez **Ouvrir avec**. Dans la boîte de dialogue Ouvrir avec, sélectionnez **Éditeur de texte XML** , puis choisissez le bouton **OK** . Nous allons coller dans du code XML qui fournit qu'une inscription d’extension windows.activatableClass.proxyStub et qui sont basé sur les GUID dans le proxy. Pour rechercher les GUID à utiliser dans le fichier .appxmanifest, ouvrez ToasterComponent_i.c. Recherchez des entrées semblables à celles dans l’exemple suivant. Notez également les définitions pour IToast, IToaster et une troisième interface — un gestionnaire d’événements typée qui possède deux paramètres: un générateur de toasts et le Toast. Cela correspond à l’événement qui est définie dans la classe de générateur de toasts. Notez que les GUID de IToast et IToaster correspondent les GUID qui sont définies sur les interfaces dans le fichier de code c#. Étant donné que l’interface de gestionnaire d’événements typés est généré automatiquement, le GUID de cette interface est également généré automatiquement.
 
 ```cpp
 MIDL_DEFINE_GUID(IID, IID___FITypedEventHandler_2_ToasterComponent__CToaster_ToasterComponent__CToast,0x1ecafeff,0x1ee1,0x504a,0x9a,0xf5,0xa6,0x8c,0x6f,0xb2,0xb4,0x7d);
@@ -395,7 +395,7 @@ MIDL_DEFINE_GUID(IID, IID___x_ToasterComponent_CIToast,0xF8D30778,0x9EAF,0x409C,
 MIDL_DEFINE_GUID(IID, IID___x_ToasterComponent_CIToaster,0xE976784C,0xAADE,0x4EA4,0xA4,0xC0,0xB0,0xC2,0xFD,0x13,0x07,0xC3);
 ```
 
-Maintenant que nous copions les GUID, collez-les dans le fichier package.appxmanifest dans un nœud est ajouté et un nom Extensions et puis de les reformater. L’entrée de manifeste ressemble à l’exemple suivant, mais une fois encore, n’oubliez pas d’utiliser votre propre GUID. Notez que le GUID ClassId dans le code XML est identique à ITypedEventHandler2. Il s’agit dans la mesure où ce GUID est le premier répertorié dans ToasterComponent_i.c. Les GUID ici respectent la casse. Au lieu de reformater manuellement les GUID pour IToast et IToaster, vous pouvez revenir en arrière dans les définitions d’interface et obtenir la valeur GuidAttribute, qui a le format correct. En C++, il existe un GUID correctement mis en forme dans le commentaire. Dans tous les cas, vous devez reformater manuellement le GUID qui est utilisé pour l’identificateur de classe et le Gestionnaire d’événements.
+Maintenant que nous copions les GUID, collez-les dans le fichier package.appxmanifest dans un nœud est ajouté et un nom Extensions et puis de les reformater. L’entrée de manifeste ressemble à l’exemple suivant, mais une fois encore, n’oubliez pas d’utiliser votre propre GUID. Notez que le GUID ClassId dans le fichier XML est identique à ITypedEventHandler2. Il s’agit dans la mesure où ce GUID est le premier répertorié dans ToasterComponent_i.c. Les GUID ici respectent la casse. Au lieu de reformater manuellement les GUID pour IToast et IToaster, vous pouvez revenir en arrière dans les définitions d’interface et obtenir la valeur GuidAttribute, qui a le format correct. En C++, il existe un GUID correctement mis en forme dans le commentaire. Dans tous les cas, vous devez reformater manuellement le GUID qui est utilisé pour l’identificateur de classe et le Gestionnaire d’événements.
 
 ```cpp
       <Extensions> <!--Use your own GUIDs!!!-->

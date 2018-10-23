@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, passez en revue, commentaire, réviseur
 ms.localizationpriority: medium
 ms.openlocfilehash: 4500ebe7406db45a089f3ceba10c1d1e781ea679
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5162846"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408011"
 ---
 # <a name="reviews-report"></a>Rapport sur les révisions
 
@@ -24,7 +24,7 @@ Le rapport **avis** disponible dans le tableau de bord du centre de développeme
 
 Vous pouvez visualiser ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Par ailleurs, vous pouvez récupérer ces données par programme à l’aide de la méthode [get des avis concernant l’application](../monetize/get-app-reviews.md) dans [Microsoft Store analytique API REST](../monetize/access-analytics-data-using-windows-store-services.md).
 
-Vous pouvez également répondre au client avis [directement à partir de cette page](respond-to-customer-reviews.md), par programmation [via l’API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md), ou à l’aide de l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
+Vous pouvez également répondre à client avis [directement à partir de cette page](respond-to-customer-reviews.md), par programmation [via l’API d’avis du Microsoft Store](../monetize/submit-responses-to-app-reviews.md), ou à l’aide de l' [application Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
 
 > [!TIP]
 > Pour obtenir un aperçu des avis, des évaluations et des commentaires des utilisateurs formulés pour l’ensemble de vos applications au cours des 30derniers jours, développez **Engager** dans le menu de navigation de gauche, puis sélectionnez **Reviews and feedback**. 
@@ -44,7 +44,7 @@ Vous pouvez développer **Filtres** pour filtrer les avis affichés sur cette pa
 -   **Mises à jour** : la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir de ne visualiser que les avis qui ont été mis à jour par le client depuis que vous avez [répondu à ces avis](respond-to-customer-reviews.md), ou uniquement ceux qui n’ont pas encore été mis à jour par le client.
 -   **Marché** : la valeur par défaut de ce filtre est **Tous les marchés**. Vous pouvez choisir un marché spécifique si vous ne souhaitez visualiser que les avis de clients appartenant à ce marché.
 -   **Type d’appareil** : le filtre par défaut est **Tous les appareils**. Vous pouvez choisir un type d’appareil spécifique si vous souhaitez que cette page affiche uniquement les avis laissés par les clients utilisant celui-ci.
--   **Nom de catégorie**: la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir un spécifiques de [passer en revue la catégorie des informations](#review-insight-categories) à afficher uniquement les avis que nous avons associées à cette catégorie. 
+-   **Nom de catégorie**: la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir un spécifiques de [passer en revue la catégorie insight](#review-insight-categories) affiche uniquement les avis que nous avons associées à cette catégorie. 
 
 > [!TIP]
 > Si cette page ne contient aucun avis, assurez-vous que vos filtres n’ont pas exclu la totalité des avis concernant votre application. Par exemple, si vous filtrez les avis en fonction d’un système d’exploitation non pris en charge par votre application, aucun avis n’apparaîtra sur cette page.
@@ -99,7 +99,7 @@ Notez que les clients peuvent évaluer votre application sans formuler de commen
 
 Vous pouvez trier les avis sur la page par date et/ou par évaluation, dans l’ordre croissant ou décroissant. Cliquez sur le lien de **Trier par** pour afficher les options de tri par **Date** et/ou **évaluation**.
 
-Vous pouvez également utiliser la zone de recherche pour rechercher des mots spécifiques ou des expressions dans les avis de votre application. Notez que recherche est effectuée uniquement le texte d’origine avis rédigé par le client, même si l’avis a été écrit dans une autre langue. Texte d’avis traduites ne porte pas.
+Vous pouvez également utiliser la zone de recherche pour rechercher des mots spécifiques ou des expressions dans les avis de votre application. Notez que seuls le texte d’origine avis rédigé par le client recherche est effectuée, même si l’avis a été écrit dans une autre langue. Texte d’avis traduites ne porte pas.
 
 > [!NOTE]
 > Les avis peuvent disparaître ponctuellement de ce rapport. Cela peut se produire lorsque Microsoft supprime des avis du WindowsStore qui ont été rédigés par des clients qui utilisent certaines versions préliminaires ou builds de Windows10 réservées aux Insiders. Nous procédons ainsi afin de réduire le risque de publication d’avis négatifs liés à un problème d’une version préliminaire de Windows. Nous pouvons également supprimer les avis du Windows Store qui ont été identifiés comme indésirables, inappropriés, offensants ou contraires à notre politique. Nous pensons que cette action contribuera à améliorer l’expérience utilisateur.
@@ -111,7 +111,7 @@ Les commentaires qui n'ont pas été rédigés dans votre langue sont traduits p
 
 Notez que les évaluations sont traduites par un système de traduction automatique et que le résultat de la traduction n’est pas toujours précis. Le texte d’origine est fourni si vous souhaitez le comparer à la traduction ou utiliser un autre moyen de traduction.
 
-Comme indiqué plus haut, lorsque recherche votre avis, uniquement du texte d’origine à gauche par le client est recherchée (et aucun texte traduit), même si vous avez la case à cocher **traduire d’avis** activée.
+Comme indiqué plus haut, lorsque recherche votre avis, seul le texte d’origine à gauche par le client recherche est effectuée (et non une le texte traduit), même si vous avez la case à cocher **traduire d’avis** activée.
 
 
 ## <a name="responding-to-customer-reviews"></a>Réponse aux avis des clients

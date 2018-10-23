@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5158073"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5410667"
 ---
 # <a name="xbind-markup-extension"></a>Extension de balisage {x:Bind}
 
@@ -89,7 +89,7 @@ Par exemple : dans une page, **Text="{x:Bind Employee.FirstName}"** recherche un
 
 Pour C++ / CX, **{x:Bind}** ne peut pas effectuer de liaison à des champs et propriétés privés dans la page ou le modèle de données. Vous devez avoir une propriété publique pour que la liaison soit possible. La surface d’exposition pour la liaison doit être exposée en tant que classes/interfaces CX pour que nous puissions obtenir les métadonnées pertinentes. L’attribut **\[Bindable\]** ne doit pas être nécessaire.
 
-Avec **x:Bind**, vous n’avez pas besoin d’utiliser **ElementName=xxx** dans l’expression de liaison. Au lieu de cela, vous pouvez utiliser le nom de l’élément en tant que la première partie du chemin d’accès de la liaison, car les éléments nommés deviennent des champs à l’intérieur du contrôle de page ou d’utilisateur qui représente la source de liaison racine. 
+Avec **x:Bind**, vous n’avez pas besoin d’utiliser **ElementName=xxx** dans l’expression de liaison. Au lieu de cela, vous pouvez utiliser le nom de l’élément en tant que la première partie du chemin de la liaison dans la mesure où les éléments nommés deviennent des champs à l’intérieur du contrôle de page ou d’utilisateur qui représente la source de liaison racine. 
 
 
 ### <a name="collections"></a>Collections

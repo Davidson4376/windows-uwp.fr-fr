@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 2c78f5f43d93002b90902a7f9e5a943c7239946c
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5166354"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5409556"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Gérer une tâche en arrière-plan annulée
 
@@ -137,7 +137,7 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 Lors de la réception d’une demande d’annulation, la méthode qui effectue la tâche en arrière-plan doit arrêter le travail et se fermer en reconnaissant que **\_cancelRequested** est défini sur la valeur **true**. Pour les tâches en arrière-plan in-process, cela implique un retour à partir de la méthode **OnBackgroundActivated** . Pour les tâches en arrière-plan out-of-process, cela implique un retour à partir de la méthode **Run** .
 
-Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée. Si **\_cancelRequested** est défini sur true, arrêter le travail empêche de poursuivre.
+Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée. Si **\_cancelRequested** devient défini sur true, arrêter le travail de continuer.
 
 L' [exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) comprend une vérification qui arrête le rappel de minuteur périodique en cas d’annulation de la tâche en arrière-plan.
 

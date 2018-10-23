@@ -11,14 +11,14 @@ ms.technology: uwp
 keywords: Windows 10, uwp, packages facultatifs, ensemble connexe, empaqueter une extension, visual studio
 ms.localizationpriority: medium
 ms.openlocfilehash: 4864bdaa1f32b980c5c8b159ca71bb6a56da4ec5
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5166964"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5407998"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>Packages facultatifs et création d’ensembles connexes
-Les packages facultatifs intègrent du contenu qui peut être inclus dans un package principal. Celles-ci sont utiles pour diviser une application pour les restrictions de taille, le contenu téléchargeable (DLC), ou à distribuer un contenu supplémentaire distinct à partir de votre application d’origine.
+Les packages facultatifs intègrent du contenu qui peut être inclus dans un package principal. Elles sont utiles pour diviser une application pour les restrictions de taille, le contenu téléchargeable (DLC), ou à distribuer un contenu supplémentaire distinct à partir de votre application d’origine.
 
 Ensembles connexes sont une extension de packages facultatifs, ils permettent d’appliquer un ensemble strict des versions parmi les packages facultatifs et les principaux. Elles vous permettent également de charger du code natif (C++) des packages facultatifs. 
 
@@ -56,14 +56,14 @@ Visual Studio peut être configuré pour redéployer votre package principal à 
 - Cliquez avec le bouton droit sur le projet de package facultatif et sélectionnez **dépendances de Build > dépendances du projet …**
 - Le projet de package principal, sélectionnez «OK». 
 
-Désormais, chaque fois que vous entrez F5 ou que vous générez un projet de package facultatif, Visual Studio générez le projet de package principal tout d’abord. Cela permet de garantir que votre projet principal et les projets facultatives sont synchronisés.
+Maintenant, chaque fois que vous entrez F5 ou que vous générez un projet de package facultatif, Visual Studio générez le projet de package principal tout d’abord. Cela permet de garantir que votre projet principal et les projets facultatives sont synchronisés.
 
 ## Ensembles connexes<a name="related_sets"></a>
 
 Si vous souhaitez charger du code à partir d’un package facultatif dans le package principal, vous devez créer un ensemble connexe. Pour générer un ensemble connexe, votre package principal et le package facultatif doivent être étroitement. Les métadonnées pour les ensembles connexes sont spécifiée dans le fichier .appxbundle ou .msixbundle du package principal. Visual Studio vous permet d’obtenir les métadonnées correcte dans vos fichiers. Pour configurer la solution de votre application pour des ensembles connexes, procédez comme suit:
 
 1. Cliquez avec le bouton droit sur le projet de package principal, sélectionnez **Ajouter > nouvel élément …**
-2. À partir de la fenêtre, recherchez les modèles installés pour «.txt» et ajoutez un nouveau fichier de texte.
+2. À partir de la fenêtre, recherchez les modèles installés pour «.txt», puis ajoutez un nouveau fichier texte.
 > [!IMPORTANT]
 > Le nouveau fichier texte doit être nommé: `Bundle.Mapping.txt`.
 3. Dans le `Bundle.Mapping.txt` fichier que vous allez spécifier les chemins d’accès relatifs à des projets de package facultatif ou les packages externes. Un échantillon `Bundle.Mapping.txt` fichier doit ressembler à ceci:
@@ -77,10 +77,10 @@ Si vous souhaitez charger du code à partir d’un package facultatif dans le pa
 "..\ActivatableOptionalPackage1\x86\Release\ActivatableOptionalPackage3_1.1.1.0\ ActivatableOptionalPackage3_1.1.1.0.appx"
 ```
 
-Lorsque votre solution est configurée de cette façon, Visual Studio va créer un manifeste de l’ensemble d’applications pour le package principal à toutes les métadonnées requises pour les ensembles connexes. 
+Lorsque votre solution est configurée de cette façon, Visual Studio va créer un manifeste de l’ensemble d’applications pour le package principal avec toutes les métadonnées requises pour les ensembles connexes. 
 
 Notez que comme les packages facultatifs, un `Bundle.Mapping.txt` fichier d’ensembles connexes ne fonctionne que sur Windows 10, version 1703. En outre, cible plateforme Min Version de votre application doit être définie sur 10.0.15063.0.
 
 ## Problèmes connus<a name="known_issues"></a>
 
-Débogage d’un projet facultatif ensemble connexe n’est actuellement pas prise en charge dans Visual Studio. Pour contourner ce problème, vous pouvez déployer et lancer l’activation (Ctrl + F5) et attacher manuellement le débogueur à un processus. Pour joindre le débogueur, consultez le menu «Débogage» dans Visual Studio, sélectionnez «attacher au processus» et attachez le débogueur au **processus principal de l’application**.
+Débogage d’un projet de facultatif ensemble connexe n’est actuellement pas prise en charge dans Visual Studio. Pour contourner ce problème, vous pouvez déployer et lancer l’activation (Ctrl + F5) et attacher manuellement le débogueur à un processus. Pour joindre le débogueur, passez le menu «Débogage» dans Visual Studio, sélectionnez «attacher au processus» et attachez le débogueur au **processus de l’application principale**.

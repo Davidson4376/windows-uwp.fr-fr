@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, description, page du store, notes de publication, titre
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5161958"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408866"
 ---
 # <a name="create-app-store-listings"></a>Créer des descriptions d’application dans le Store
 
@@ -44,7 +44,7 @@ Lorsque vous avez terminé vos sélections, cliquez sur **Enregistrer** pour rev
 
 ## <a name="add-and-edit-store-listing-info"></a>Ajoutez et modifiez les informations de description
 
-Pour modifier une description, sélectionnez le nom de la langue à partir de la page de vue d’ensemble de soumission.
+Pour modifier une description, sélectionnez le nom de la langue dans la page de présentation de soumission.
 
 Les champs associés à votre description par défaut dans le Store pour la langue sélectionnée se trouvent en haut de la page **Description dans le Store**. Ces champs sont visibles de tous vos clients, sauf si certains packages ciblent des versions antérieures du système d’exploitation (Windows8.x ou version antérieure; Windows Phone8.x ou version antérieure) ou si vous créez des descriptions dans le Store spécifiques à la plateforme incluant différentes captures d’écran ou informations à présenter aux clients sur les versions de système d’exploitation spécifiées. Pour plus d’informations, consultez [Créer des descriptions spécifiques à la plateforme ](create-platform-specific-store-listings.md).
 
@@ -52,9 +52,9 @@ Les champs associés à votre description par défaut dans le Store pour la lang
 
 Cette liste déroulante vous permet de spécifier le nom qui doit être utilisé dans les descriptions (si vous avez réserver plusieurs noms pour l’application).
 
-Si vous avez chargé des packages dans la même langue que la description dans le Windows Store sur lequel vous travaillez, le nom utilisé dans ces packages est sélectionné. Si vous devez renommer [l’application](manage-app-names.md#rename-an-app-that-has-already-been-published) une fois qu’il est déjà été publiée, vous pouvez sélectionner un autre nom réservé lorsque vous créez une nouvelle soumission avec les packages qui utilisent le nouveau nom.
+Si vous avez chargé des packages dans la même langue que les descriptions sur lequel vous travaillez, le nom utilisé dans ces packages est sélectionné. Si vous devez renommer [l’application](manage-app-names.md#rename-an-app-that-has-already-been-published) une fois qu’il est déjà publiée, vous pouvez sélectionner un autre nom réservé lorsque vous créez une nouvelle soumission avec les packages qui utilisent le nouveau nom.
 
-Si vous n’avez pas encore chargé les packages de la langue vous mettez au point et vous avez réservé plus d’un nom, vous devrez sélectionner l’un de vos noms d’application réservés, dans la mesure où il n’existe aucun package associé dans cette langue à partir duquel extraire le nom.
+Si vous n’avez pas encore chargé les packages de la langue vous travaillez sur et vous avez réservé plusieurs noms, vous devrez sélectionner l’un de vos noms d’application réservés, dans la mesure où il n’existe aucun package associé dans cette langue à partir duquel extraire le nom.
 
 > [!NOTE]
 > Le **nom du produit** que vous sélectionnez uniquement s’applique à la description dans le langage dans lequel vous travaillez. Elle n’affecte pas le nom affiché lorsqu’un client installe l’application; Ce nom est fourni à partir du manifeste du package qui est installé. Pour éviter toute confusion, nous recommandons que l’ou les packages de chaque langue et la description du Windows Store utilisent le même nom.

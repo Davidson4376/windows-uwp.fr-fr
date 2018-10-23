@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bf91725a62c8d03c37448ddf69b072461288f11
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5171483"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5410687"
 ---
 # <a name="acrylic-material"></a>Support acrylique
 
@@ -79,23 +79,23 @@ La caractéristique d’acrylique la plus remarquable est sa transparence. Il ex
 * Utiliser l’ACRYLIQUE dans l’application de prise en charge de l’interface utilisateur, par exemple, NavigationView ou les éléments de commandes en ligne. 
 * Utiliser l’ACRYLIQUE en arrière-plan pour les éléments d’interface utilisateur temporaires, comme les menus contextuels, menus volants et l’interface utilisateur de la lumière-dimsissable.<br />À l’aide de l’ACRYLIQUE dans les scénarios temporaires permet de maintenir une relation visuelle avec le contenu qui a déclenché l’interface utilisateur temporaire.
 
-Si vous utilisez l’ACRYLIQUE dans l’application sur des surfaces de navigation, envisagez d’étendre le contenu sous le volet ACRYLIQUE à améliorer les flux sur votre application. À l’aide de NavigationView fait pour vous automatiquement. Toutefois, pour éviter de créer un effet de répartition, essayez de ne pas placer plusieurs éléments de bord à bord ACRYLIQUE - cela peut créer une intersection indésirable entre les deux surfaces floues. ACRYLIQUE est un outil pour harmoniser la présentation visuelle de vos conceptions, mais peut entraîner un bruit visuel est utilisé de manière incorrecte.
+Si vous utilisez l’ACRYLIQUE dans l’application sur des surfaces de navigation, envisagez d’extension contenu sous le volet ACRYLIQUE à améliorer les flux sur votre application. À l’aide de NavigationView fait pour vous automatiquement. Toutefois, pour éviter de créer un effet de répartition, essayez de ne pas placer plusieurs éléments de bord à bord ACRYLIQUE - cela peut créer une intersection indésirable entre les deux surfaces floues. ACRYLIQUE est un outil pour harmoniser la présentation visuelle de vos conceptions, mais peut entraîner un bruit visuel est utilisé de manière incorrecte.
 
 Tenez compte des modèles d’utilisation suivants pour déterminer la meilleure façon d’incorporer l’ACRYLIQUE dans votre application:
 
 ### <a name="horizontal-navigation-or-commanding"></a>Navigation horizontale ou les commandes
 
-Si votre application n’est pas en mesure d’utiliser NavigationView et que vous prévoyez d’ajouter l’ACRYLIQUE vous-même, nous vous recommandons d’utiliser ACRYLIQUE relativement transparente avec une opacité de 60 %.
+Si votre application n’est pas en mesure d’utiliser NavigationView et que vous prévoyez d’ajouter l’ACRYLIQUE vous-même, nous vous recommandons d’utiliser ACRYLIQUE relativement translucide avec une opacité de 60 %.
  - Lorsque le volet s’ouvre sous forme de superposition au-dessus de tout autre contenu d’application, il doit afficher [une acrylique dans l'application à 60%](#acrylic-theme-resources)
  - Lorsque le volet s’ouvre côte à côte avec le contenu de l’application principale, il doit afficher [une acrylique en arrière-plan de 60%](#acrylic-theme-resources)
 
 ![Application de cartes à l’aide de commandes horizontal dans l’application](images/Maps_In_App_Acrylic_1.png)
 
-En outre, la fourniture de votre étendre le contenu ou défilement sous l’ACRYLIQUE en haut donnera votre application une expérience plus immersive et transparente.
+En outre, la fourniture de votre extension contenue ou défilement sous l’ACRYLIQUE en haut donnera votre application une expérience plus immersive et transparente.
 
 ### <a name="vertical-panes"></a>Volets verticaux
 
-Des volets verticaux ou des surfaces qui permettent de section désactiver le contenu de votre application, nous vous recommandons de qu'utiliser un arrière-plan opaque au lieu d’ACRYLIQUE. Si votre volets verticaux ouvrent par-dessus le contenu, comme en **Collapsed** ou en mode **Minimal** , de NavigationView nous vous suggérons qu'acrylique dans l’application vous permet de vous aider à préserver le contexte de la page lorsque l’utilisateur a ce volet ouvert.
+Pour les volets verticaux ou les surfaces qui permettent de section désactiver le contenu de votre application, nous vous recommandons de qu'utiliser un arrière-plan opaque au lieu d’ACRYLIQUE. Si votre volets verticaux ouvrent par-dessus le contenu, comme en **Collapsed** ou en mode **Minimal** , de NavigationView nous suggérer qu'acrylique dans l’application vous permet de vous aider à préserver le contexte de la page lorsque l’utilisateur a ce volet ouvert.
 
 ### <a name="transient-surfaces"></a>Surfaces temporaires
 
@@ -103,10 +103,10 @@ Pour les applications avec des menus volants menu, les fenêtres contextuelles n
 
 ![Modèle d’application de messagerie à l’aide d’un menu volant d’information](images/Mail_TransientContextMenu.png)
 
-La plupart de nos contrôles utiliseront ACRYLIQUE par défaut. [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) et contrôles similaires avec des fenêtres contextuelles de lumière-dimiss utiliseront tous l’ACRYLIQUE temporaire lorsqu’ils sont appelés.
+La plupart de nos contrôles utilisent ACRYLIQUE par défaut. [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) et contrôles similaires avec fenêtres contextuelles lumière-dimiss utiliseront tous l’ACRYLIQUE temporaire lorsqu’ils sont appelés.
 
 > [!Note]
-> Le rendu des surfaces ACRYLIQUES est GPU en ressources système, ce qui peut accroître la consommation d’énergie appareil et réduire l’autonomie de la batterie. Les effets ACRYLIQUES sont automatiquement désactivées lorsque les appareils en mode économiseur de batterie et les utilisateurs peuvent désactiver les effets ACRYLIQUES pour toutes les applications, s’ils le souhaitent.
+> Le rendu des surfaces ACRYLIQUES sollicite GPU, ce qui peut accroître la consommation d’énergie appareil et réduire l’autonomie de la. Les effets ACRYLIQUES sont automatiquement désactivées lorsque les appareils en mode économiseur de batterie et les utilisateurs peuvent désactiver les effets ACRYLIQUES pour toutes les applications, s’ils le souhaitent.
 
 ## <a name="usability-and-adaptability"></a>Convivialité et capacité d'adaptation
 L'acrylique adapte automatiquement son apparence à une vaste gamme d’appareils et de contextes.
@@ -150,7 +150,7 @@ Nous avons créé une collection de ressources de thème de pinceaux pour les ty
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> <b>Utilisation recommandée:</b> Si votre application utilise un texte secondaire de couleur AltMedium avec une taille de texte de 18px ou plus, vous pouvez placer ces ressources ACRYLIQUE à 70 % plus translucides derrière le texte. Nous vous recommandons d’utiliser ces ressources dans les éléments de navigation horizontale supérieure et dans les zones des éléments de contrôle de votre application.  </td>
+        <td> <b>Utilisation recommandée:</b> Si votre application utilise un texte secondaire de couleur AltMedium avec une taille de texte de 18px ou plus, vous pouvez placer des ressources ACRYLIQUES 70 % plus translucides derrière le texte. Nous vous recommandons d’utiliser ces ressources dans les éléments de navigation horizontale supérieure et dans les zones des éléments de contrôle de votre application.  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush, SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush, SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush, SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush, SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush, SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush, SystemControlAltMediumLowAcrylicElementMediumBrush  </td>

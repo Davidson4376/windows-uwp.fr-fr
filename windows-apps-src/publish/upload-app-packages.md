@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, packages, téléchargement, le chargement de package
 ms.localizationpriority: medium
 ms.openlocfilehash: d966688110870b669bdd296ec14e145a5d77b74e
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5170437"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406422"
 ---
 # <a name="upload-app-packages"></a>Chargement des packages d’application
 
@@ -28,7 +28,7 @@ Pour plus d’informations sur le contenu et sur la structure d’un package, vo
 Pour charger des packages, faites-les glisser dans le champ de chargement, ou cliquez pour parcourir vos fichiers. La page **Packages** vous permet de télécharger des fichiers .msix, .msixupload, .msixbundle, .appx, .appxupload, .appxbundle, et/ou .xap.
 
 > [!IMPORTANT]
-> Pour Windows 10, nous vous recommandons de télécharger le fichier .msixupload ou .appxupload ici plutôt que .msix, .appx, .msixbundle ou .appxbundle.  Pour plus d’informations sur la création de packages d’applicationsUWP pour le WindowsStore, consultez l’article [Créer un package d’application UWP avec VisualStudio](../packaging/packaging-uwp-apps.md).
+> Pour Windows 10, nous vous recommandons de charger le fichier .msixupload ou .appxupload ici plutôt que .msix, .appx, .msixbundle ou .appxbundle.  Pour plus d’informations sur la création de packages d’applicationsUWP pour le WindowsStore, consultez l’article [Créer un package d’application UWP avec VisualStudio](../packaging/packaging-uwp-apps.md).
 
 Si vous avez créé des [versions d’évaluation de package](package-flights.md) pour votre application, une liste déroulante apparaît avec l’option de copie des packages de l’une des versions d’évaluation de package. Sélectionnez la version d’évaluation de package comportant les packages que vous souhaitez intégrer. Vous pouvez transférer une partie ou la totalité des packages dans cette soumission.
 
