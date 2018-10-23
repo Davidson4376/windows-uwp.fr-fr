@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, achats dans l’application, FAI, extensions, les codes d’erreur
 ms.localizationpriority: medium
 ms.openlocfilehash: bc2d3a4562be403172520f8377afb16c782a49c0
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397654"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5432913"
 ---
 # <a name="error-codes-for-store-operations"></a>Codes d’erreur pour les opérations du Store
 
@@ -59,11 +59,11 @@ Codes d’erreur suivants sont liés à la gestion des licences des applications
 | 0x803F81F5<br/>0x803F81F6<br/>0x803F81F7<br/>0x803F81F8<br/>0x803F81F9   |  Vous avez atteint le nombre maximal de périphériques qui peuvent être utilisées avec les jeux et applications à partir du Store. Pour utiliser ce jeu ou une application sur l’appareil actuel, commencez par supprimer un autre appareil à partir de votre compte.  |
 | 0x803F9000<br/>0x803F9001    |  La licence est arrivée à expiration ou endommagé. Pour vous aider à résoudre ce problème, essayez d’exécuter la [résolution des problèmes pour les applications Windows](https://support.microsoft.com/help/4027498/windows-run-the-troubleshooter-for-windows-apps) pour réinitialiser le cache du Windows Store.     |
 | 0x803F9006    |  L’opération n’a pas pu aboutir, car l’utilisateur qui est autorisé à ce produit n’est pas connecté à l’appareil avec son compte Microsoft.            |
-| 0x803F9008<br/>0x803F9009    |  Votre appareil est en mode hors connexion. Votre appareil doit être en ligne pour utiliser ce produit.            |
+| 0x803F9008<br/>0x803F9009    |  Votre appareil est hors connexion. Votre appareil doit être en ligne pour utiliser ce produit.            |
 | 0x803F900A    |  L’abonnement a expiré.            |
 
 
-## <a name="self-install-update-error-codes"></a>Installer automatiquement les codes d’erreur de mise à jour
+## <a name="self-install-update-error-codes"></a>Installez vous-même des codes d’erreur de mise à jour
 
 Codes d’erreur suivants sont liés à [l’installation automatique des mises à jour de package](../packaging/self-install-package-updates.md).
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ffe3f2a93642911da57d3dd94c09206dc7f5dc94
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5402051"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5430945"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Améliorer votre application de bureau pour Windows10
 
@@ -173,7 +173,7 @@ Pour en savoir plus sur les notifications, voir [Notifications toast adaptatives
 
 ## <a name="support-windows-xp-windows-vista-and-windows-78-install-bases"></a>Prise en charge des bases d'installation WindowsXP, WindowsVista et Windows7/8
 
-Vous pouvez moderniser votre application pour Windows 10 sans avoir à créer une nouvelle branche et gérer des bases de code distinct.
+Vous pouvez moderniser votre application pour Windows 10 sans avoir à créer une nouvelle branche et tenir à jour les bases de code distinctes.
 
 Si vous souhaitez créer des fichiers binaires distincts pour les utilisateurs de Windows10, utilisez la compilation conditionnelle. Si vous préférez créer un ensemble de fichiers binaires que vous déployez sur tous les utilisateurs de Windows, utilisez des vérifications à l’exécution.
 

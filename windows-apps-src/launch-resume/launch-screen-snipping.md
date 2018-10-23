@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, uri, capture, esquisse
 ms.localizationpriority: medium
 ms.openlocfilehash: e18662125ef72051a289b3f1d0f3dc09b452d256
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396771"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5430630"
 ---
 # <a name="launch-screen-snipping"></a>Lancer la capture d’écran
 
@@ -29,9 +29,9 @@ La **ms-screenclip:** URI permet à votre application ouvrir et démarrer une no
 | Paramètre | Type | Requis | Description |
 | --- | --- | --- | --- |
 | source | chaîne | non | Une chaîne de forme libre pour indiquer la source qui a lancé l’URI. |
-| delayInSeconds | entier | non | Une valeur entière comprise entre 1 et 30. Spécifie le délai, en secondes complètes, entre l’appel de l’URI et lorsque la capture d’écran commence. |
+| delayInSeconds | entier | non | Une valeur entière comprise entre 1 et 30. Spécifie le délai, en secondes complètes, entre l’appel URI et le moment où commence la capture d’écran. |
 
-## <a name="launching-the-snip--sketch-app"></a>Lancer la capture et une application de croquis
+## <a name="launching-the-snip--sketch-app"></a>Lancer la capture et application de croquis
 
 La **ms-screensketch:** URI vous permet par programmation lancer l’application de capture et Sketch et ouvrez une image spécifique dans cette application pour annotation.
 
