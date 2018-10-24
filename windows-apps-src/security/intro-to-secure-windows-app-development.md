@@ -1,6 +1,6 @@
 ---
 title: Présentation du développement d’applications Windows sécurisées
-description: Cet article introductif aide les architectes et développeurs d’applications à se familiariser avec les diverses fonctionnalités de plateforme Windows 10 qui accélèrent la création d’applications de plateforme Windows universelle (UWP).
+description: Cet article introductif aide les architectes d’application et les développeurs de mieux comprennent les différentes fonctionnalités de plateforme Windows 10 qui accélèrent la création d’applications de plateforme Windows universelle (UWP).
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 author: msatranjr
 ms.author: misatran
@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e48d0b21d588ef7b4913e16b75f9d21c5d5209f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440361"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470417"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>Présentation du développement d’applications Windows sécurisées
 
 
 
 
-Cet article introductif aide les architectes et développeurs d’applications à se familiariser avec les diverses fonctionnalités de plateforme Windows 10 qui accélèrent la création d’applications de plateforme Windows universelle (UWP). Il explique en détail comment utiliser les fonctionnalités de sécurité Windows disponibles à chacune des phases suivantes : authentification, données en transit et données au repos. Vous pourrez accéder à des informations plus détaillées sur les différents sujets en consultant les ressources supplémentaires mentionnées dans chaque chapitre.
+Cet article introductif aide les architectes d’application et les développeurs de mieux comprennent les différentes fonctionnalités de plateforme Windows 10 qui accélèrent la création d’applications de plateforme Windows universelle (UWP). Il explique en détail comment utiliser les fonctionnalités de sécurité Windows disponibles à chacune des phases suivantes : authentification, données en transit et données au repos. Vous pourrez accéder à des informations plus détaillées sur les différents sujets en consultant les ressources supplémentaires mentionnées dans chaque chapitre.
 
 ## <a name="1-introduction"></a>1 Introduction
 
@@ -290,7 +290,7 @@ Lorsque les données arrivent sur un appareil, nous les désignons sous le terme
 
 Par le passé, Windows n’a jamais présenté de définition d’une application. Ce terme désignait le plus souvent un exécutable (.exe), et ceci n’englobait jamais l’installation, le stockage d’état, la durée d’exécution, le contrôle de version, l’intégration du système d’exploitation et la communication entre les applications. Le modèle de plateforme Windows universelle définit un modèle d’application qui couvre l’installation, l’environnement d’exécution, la gestion des ressources, les mises à jour, le modèle de données et la désinstallation.
 
-Les applications Windows 10 s’exécutent dans un conteneur, ce qui signifie qu’elles disposent de privilèges limités par défaut (des privilèges supplémentaires peuvent être demandés et accordés par l’utilisateur). Par exemple, si une application souhaite accéder à des fichiers du système, il convient d’utiliser un sélecteur de fichiers à partir de l’espace de noms [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928) pour permettre à l’utilisateur de sélectionner un fichier (aucun accès direct aux fichiers n’est autorisé). De même, si une application a besoin d’accéder aux données d’emplacement de l’utilisateur, il convient d’activer et de déclarer la fonctionnalité de localisation des appareils, en informant l’utilisateur lors du téléchargement que cette application demandera l’accès à l’emplacement de l’utilisateur. En outre, lorsque l’application doit accéder pour la première fois à l’emplacement de l’utilisateur, elle présente une invite de consentement supplémentaire à l’utilisateur pour demander l’autorisation d’accéder à ces données.
+Applications Windows 10 s’exécutent dans un conteneur, ce qui signifie qu’elles disposent de privilèges limités par défaut (des privilèges supplémentaires peuvent être demandés et accordés par l’utilisateur). Par exemple, si une application souhaite accéder à des fichiers du système, il convient d’utiliser un sélecteur de fichiers à partir de l’espace de noms [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928) pour permettre à l’utilisateur de sélectionner un fichier (aucun accès direct aux fichiers n’est autorisé). De même, si une application a besoin d’accéder aux données d’emplacement de l’utilisateur, il convient d’activer et de déclarer la fonctionnalité de localisation des appareils, en informant l’utilisateur lors du téléchargement que cette application demandera l’accès à l’emplacement de l’utilisateur. En outre, lorsque l’application doit accéder pour la première fois à l’emplacement de l’utilisateur, elle présente une invite de consentement supplémentaire à l’utilisateur pour demander l’autorisation d’accéder à ces données.
 
 Notez que ce modèle d’application agit à la façon d’une « prison » pour les applications (empêchant ces dernières d’atteindre l’extérieur), mais non à la manière d’un « château » inaccessible depuis l’extérieur (les applications avec des privilèges administratifs peuvent bien entendu accéder à l’intérieur). La fonctionnalité Device Guard disponible dans Windows 10 contribue à restreindre davantage cet accès en permettant aux organisations/services informatiques de spécifier les applications (Win32) qui sont autorisées à s’exécuter.
 

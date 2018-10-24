@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, mise à jour, tâche en arrière-plan, updatetask, tâche en arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: fcba2cb736f86cebc6d2664e2ec3b557d47c86d7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439807"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476106"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>Exécuter une tâche en arrière-plan lorsque votre application UWP est mise à jour
 

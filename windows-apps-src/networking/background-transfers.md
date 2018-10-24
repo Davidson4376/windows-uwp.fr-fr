@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: fb273b6a37cb2f6322b0c9e3842b69676f82c616
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433561"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473987"
 ---
 # <a name="background-transfers"></a>Transferts en arrière-plan
 Utilisez l’API de transfert en arrière-plan pour copier des fichiers de manière fiable sur le réseau. L’API de transfert en arrière-plan offre des fonctionnalités avancées de chargement et téléchargement, qui s’exécutent en arrière-plan pendant la suspension d’une application, et perdurent après l’arrêt de l’application. L’API surveille l’état du réseau. Elle suspend et reprend automatiquement les transferts en cas de perte de connexion. Les transferts sont par ailleurs régis par l’Assistant Données et l’Assistant batterie, ce qui signifie que l’activité de téléchargement s’ajuste en fonction de l’état actuel de la batterie de l’appareil et de la connexion. L’API est idéale pour le chargement et le téléchargement de fichiers volumineux à l’aide du protocole HTTP(S). Le protocole FTP est également pris en charge, mais uniquement pour les téléchargements.
@@ -44,7 +44,7 @@ Par exemple, la stratégie de coût définie pour une opération peut indiquer q
 
 Bien que la fonctionnalité de transfert en arrière-plan possède ses propres mécanismes pour gérer les modifications de l’état du réseau, d’autres considérations générales ayant trait à la connectivité des applications connectées au réseau sont à prendre en compte. Pour plus d’informations, voir [Exploitation des informations de connexion réseau disponibles](https://msdn.microsoft.com/library/windows/apps/hh452983).
 
-> **Remarque**  Les applications pour appareils mobiles disposent de fonctionnalités qui permettent à l’utilisateur de surveiller et de limiter la quantité de données transférées en fonction du type de connexion, de l’état de l’itinérance et du forfait de données. C’est pourquoi les transferts en arrière-plan peuvent être suspendus sur le téléphone même quand [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) indique que le transfert doit s’effectuer.
+> **Remarque**pour les applications en cours d’exécution sur les appareils mobiles, il existe des fonctionnalités qui permettent à l’utilisateur de surveiller et de limiter la quantité de données transférées en fonction du type de connexion, état, de l’itinérance et forfait de données de l’utilisateur. C’est pourquoi les transferts en arrière-plan peuvent être suspendus sur le téléphone même quand [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) indique que le transfert doit s’effectuer.
 
 Le tableau suivant indique les moments où les transferts en arrière-plan sont autorisés sur le téléphone pour chaque valeur [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138), en fonction de l’état actuel du téléphone. Vous pouvez utiliser la classe [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) pour déterminer l’état actuel du téléphone.
 
@@ -203,7 +203,7 @@ Lors de l’achèvement ou de l’annulation d’une opération [**DownloadOpera
 1.  Vous pouvez désormais utiliser la liste remplie pour redémarrer des opérations en attente.
 
 ## <a name="post-processing"></a>Post-traitement
-Une nouvelle fonctionnalité dans Windows 10 est la possibilité d’exécuter un code d’application à la fin d’un transfert en arrière-plan, même lorsque l’application n’est pas en cours d’exécution. Par exemple, votre application pourrait mettre à jour une liste de films disponibles à l’issue du téléchargement d’un film, au lieu de rechercher la présence de nouveaux films à chaque démarrage. Elle pourrait également gérer un transfert de fichier ayant échoué en réessayant via un serveur ou un port différent. Le post-traitement est appelé pour tous les transferts, réussis ou non. Vous pouvez donc l’utiliser pour implémenter une logique personnalisée de gestion des erreurs et de nouvelle tentative.
+Une nouvelle fonctionnalité dans Windows 10 est la possibilité d’exécuter le code de l’application à la fin d’un transfert en arrière-plan même lorsque l’application n’est pas en cours d’exécution. Par exemple, votre application pourrait mettre à jour une liste de films disponibles à l’issue du téléchargement d’un film, au lieu de rechercher la présence de nouveaux films à chaque démarrage. Elle pourrait également gérer un transfert de fichier ayant échoué en réessayant via un serveur ou un port différent. Le post-traitement est appelé pour tous les transferts, réussis ou non. Vous pouvez donc l’utiliser pour implémenter une logique personnalisée de gestion des erreurs et de nouvelle tentative.
 
 Un post-traitement utilise l’infrastructure de tâche en arrière-plan existante. Vous créez une tâche en arrière-plan et l’associez à vos transferts avant de les démarrer. Les transferts sont ensuite exécutés en arrière-plan et, quand ils sont terminés, votre tâche en arrière-plan est appelée pour effectuer le post-traitement.
 
@@ -264,7 +264,7 @@ Il existe deux cas principaux de délai de connexion à prendre en considératio
 
 -   Une fois la connexion établie, un message de requêteHTTP qui n’a reçu aucune réponse au bout de deux minutes est annulé.
 
-> **Réponse**  Quel que soit le scénario, la fonctionnalité de transfert en arrière-plan part du principe qu’aucune connectivité Internet n’existe et tente jusqu’à trois fois de soumettre automatiquement une demande. Si aucune connectivitéInternet n’est décelée, les demandes supplémentaires attendront jusqu’à ce qu’elle le soit.
+> **Remarque**soit le scénario, en supposant qu’il existe une connectivité Internet, de transfert en arrière-plan et tente une demande jusqu'à trois fois de soumettre automatiquement. Si aucune connectivitéInternet n’est décelée, les demandes supplémentaires attendront jusqu’à ce qu’elle le soit.
 
 ## <a name="debugging-guidance"></a>Recommandations en matière de débogage
 L’arrêt d’une session de débogage dans Microsoft Visual Studio est comparable à la fermeture de votre application; les chargements PUT sont mis en pause et les chargements POST sont arrêtés. Même pendant le débogage, votre application doit énumérer, puis redémarrer ou annuler les chargements persistants. Par exemple, votre application peut annuler l’énumération des opérations de chargement persistantes, au démarrage, si les opérations précédentes n’ont pas d’intérêt pour cette session de débogage.

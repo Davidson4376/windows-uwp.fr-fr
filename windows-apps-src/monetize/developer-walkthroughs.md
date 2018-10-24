@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, annonces, publicités, procédures pas à pas
 ms.localizationpriority: medium
 ms.openlocfilehash: d54a70b01f0885ccabfe90c78330a63dc98a4d23
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434477"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470708"
 ---
 # <a name="implement-ads-in-your-app"></a>Intégrer des publicités dans votre application
 
@@ -32,6 +32,6 @@ Les articles de cette section vous montrent comment ajouter des bannières publi
 
 
 
- 
+ 
 
- 
+ 

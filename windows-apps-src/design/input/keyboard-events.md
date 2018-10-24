@@ -17,11 +17,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 78448081b81e7e28c4b97fcfdd7aa71ae32aeb0c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445397"
+ms.locfileid: "5473834"
 ---
 # <a name="keyboard-events"></a>Événements de clavier
 
@@ -116,7 +116,7 @@ Vous pouvez détecter des combinaisons de touches de raccourci à l’aide de co
 > [!NOTE]
 > La touche Alt est représentée par la valeur **VirtualKey.Menu**.
 
- 
+ 
 
 ### <a name="shortcut-keys-example"></a>Exemple de touches de raccourci
 
@@ -283,7 +283,7 @@ End Sub
 >
 > La définition d’**AutomationProperties.AcceleratorKey** ou d’**AutomationProperties.AccessKey** ne constitue pas une action proprement dite. Vous devrez quand même associer des gestionnaires pour les événements [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) ou [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) afin de mettre réellement en œuvre le comportement de la touche de raccourci dans l’application. De même, l’ornement de soulignement du texte n’est pas fourni automatiquement pour une touche d’accès. Si vous voulez afficher du texte souligné dans l’interface utilisateur, vous devez souligner le texte de manière explicite pour la touche en question dans votre mnémonique en insérant une mise en forme [**Underline**](https://msdn.microsoft.com/library/windows/apps/br209982).
 
- 
+ 
 
 ## <a name="keyboard-routed-events"></a>Événements routés de clavier
 
@@ -405,6 +405,6 @@ Vous pouvez nettement faciliter et accélérer la saisie de données par les uti
 * [Entrée : exemple de clavier tactile](http://go.microsoft.com/fwlink/p/?linkid=246019)
 * [Exemple de réponse à l’apparition du Clavier visuel](http://go.microsoft.com/fwlink/p/?linkid=231633)
 * [Exemple de modification de texte XAML](http://go.microsoft.com/fwlink/p/?LinkID=251417)
- 
+ 
 
- 
+ 

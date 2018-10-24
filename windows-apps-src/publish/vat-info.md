@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eaf9ee9bb6d9c949e34d9095edc7054a3a57a4dc
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439498"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469489"
 ---
 # <a name="vat-info"></a>Informations sur la TVA
 
@@ -249,9 +249,9 @@ Notez que Microsoft ne fournit pas de conseils fiscaux et que le tableau suivant
 </table>
                                                                                                                                                                   
 
- 
+ 
 
- 
+ 
 
 
 

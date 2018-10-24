@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, concurrence, asynchrone, async
 ms.localizationpriority: medium
 ms.openlocfilehash: 0767f8c1ca0fb80ff8c7b033832ffccd61aeabfc
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442805"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472593"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Opérations concurrentes et asynchrones avec C++/WinRT
 

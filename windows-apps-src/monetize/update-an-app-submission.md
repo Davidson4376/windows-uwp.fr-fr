@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au Microsoft Store, soumission d’applications, mise à jour
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f6797c288f3ee85daba9f90f81a3d1d8aa15562
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438494"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477826"
 ---
 # <a name="update-an-app-submission"></a>Mettre à jour une soumission d’application
 

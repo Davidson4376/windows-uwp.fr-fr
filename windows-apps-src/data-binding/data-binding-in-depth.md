@@ -14,11 +14,11 @@ dev_langs:
 - csharp
 - cppwinrt
 ms.openlocfilehash: 906fb2d0d5d466f4fd691afd35ed96198929225c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444253"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469665"
 ---
 # <a name="data-binding-in-depth"></a>Présentation détaillée de la liaison de données
 
@@ -40,7 +40,7 @@ Vous pouvez utiliser la liaison de données pour simplement afficher des valeurs
 -   Vous pouvez utiliser le mode à sens unique pour lier un [**contrôle ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) à une collection d’articles d’actualité en temps réel regroupés par section de journal.
 -   Vous pouvez utiliser le mode bidirectionnel pour lier une [**zone de texte**](https://msdn.microsoft.com/library/windows/apps/BR209683) au nom d’un client dans un formulaire.
 
-Quel que soit le mode, il existe deux types de liaison et qu’ils sont tous deux généralement déclarés dans le balisage de l’interface utilisateur. Vous pouvez choisir d’utiliser l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) ou l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Vous pouvez même utiliser une combinaison des deux dans la même application, voire pour un même élément d’interface utilisateur. {x:Bind}, une nouveauté de Windows10, offre de meilleures performances. Toutes les informations présentées dans cette rubrique s’appliquent à ces deux types de liaison, sauf explicitement indiqué.
+Quel que soit le mode, il existe deux types de liaison et qu’ils sont tous deux généralement déclarés dans le balisage de l’interface utilisateur. Vous pouvez choisir d’utiliser l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) ou l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Vous pouvez même utiliser une combinaison des deux dans la même application, voire pour un même élément d’interface utilisateur. {x: Bind} est une nouveauté de Windows 10 et elle offre de meilleures performances. Toutes les informations présentées dans cette rubrique s’appliquent à ces deux types de liaison, sauf explicitement indiqué.
 
 **Exemples d’applications illustrant {x:Bind}**
 
@@ -256,7 +256,7 @@ Dans les deux exemples ci-dessous, la propriété **Button.Content** est la cibl
 <Button Content="{Binding ...}" ... />
 ```
 
-Si vous utilisez C++ / extensions de composant WinRT ou Visual C++ (C++ / CX), vous devez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à n’importe quelle classe runtime que vous souhaitez utiliser l’extension de balisage [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) avec.
+Si vous utilisez C++ / extensions de composant WinRT ou Visual c++ (C++ / CX), vous devez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à n’importe quelle classe runtime que vous souhaitez utiliser l’extension de balisage [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) avec.
 
 > [!IMPORTANT]
 > Si vous utilisez [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) est disponible si vous avez installé le SDK Windows version 10.0.17763.0 (Windows 10, version 1809), ou une version ultérieure. Sans cet attribut, vous devez implémenter les interfaces [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) et [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) pour qu’ils soient en mesure d’utiliser l’extension de balisage [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) .
@@ -381,7 +381,7 @@ Le code pour prendre en charge **{x:Bind}** est généré au moment de la compil
 
 ### <a name="binding-object-declared-using-binding"></a>Objet de liaison déclaré à l’aide de {Binding}
 
-Si vous utilisez C++ / extensions de composant WinRT ou Visual C++ (C++ / CX) ensuite, pour utiliser l’extension de balisage [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) , vous devez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à n’importe quelle classe runtime que vous souhaitez lier. Pour utiliser [{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), vous n’avez pas besoin cet attribut.
+Si vous utilisez C++ / extensions de composant WinRT ou Visual c++ (C++ / CX) ensuite, pour utiliser l’extension de balisage [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) , vous devez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à n’importe quelle classe runtime que vous souhaitez lier. Pour utiliser [{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), vous n’avez pas besoin cet attribut.
 
 ```cppwinrt
 // HostViewModel.idl
@@ -746,7 +746,7 @@ Les objets de liaison créés par [{x:Bind}](https://msdn.microsoft.com/library/
 
 ## <a name="creating-bindings-in-code"></a>Création de liaisons dans le code
 
-**Remarque** Cette section s’applique uniquement à [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), car vous ne pouvez pas créer de liaisons [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) dans le code. Toutefois, il est possible de profiter des avantages de {x:Bind} avec [**DependencyObject.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx), qui vous permet de vous inscrire aux notifications de modification des propriétés de dépendance.
+**Remarque**cette section s’applique uniquement aux [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), dans la mesure où vous ne pouvez pas créer des liaisons [{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) dans le code. Toutefois, il est possible de profiter des avantages de {x:Bind} avec [**DependencyObject.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx), qui vous permet de vous inscrire aux notifications de modification des propriétés de dépendance.
 
 Vous pouvez également connecter des éléments d’interface utilisateur aux données en utilisant un code procédural et non XAML. Pour ce faire, créez un objet [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820), définissez les propriétés appropriées, puis appelez [**FrameworkElement.SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257.aspx) ou [**BindingOperations.SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244376.aspx). La création de liaisons par programme est utile quand vous voulez choisir les valeurs des propriétés de liaison au moment de l’exécution ou partager une liaison unique entre plusieurs contrôles. Notez, toutefois, que vous ne pouvez pas modifier les valeurs des propriétés de liaison après avoir appelé **SetBinding**.
 

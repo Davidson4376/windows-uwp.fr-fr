@@ -17,11 +17,11 @@ dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: cde4b5d95a0c978faa647fcc108d74874ff52c40
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445846"
+ms.locfileid: "5476017"
 ---
 # <a name="split-view-control"></a>Contrôle de mode Fractionné
 

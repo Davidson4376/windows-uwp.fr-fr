@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: c6412f28e60ed0401fb96098fd38128a37491c8d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435442"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473372"
 ---
 # <a name="credential-locker"></a>Stockage sécurisé des informations d’identification
 

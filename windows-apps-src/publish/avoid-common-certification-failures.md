@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 283856ad163d2e67078c61559f6f8ec667e92b87
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435582"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475066"
 ---
 # <a name="avoid-common-certification-failures"></a>Éviter les échecs de certification courants
 
@@ -46,9 +46,9 @@ Consultez cette liste pour éviter les problèmes qui empêchent souvent les app
 -   Si votre application utilise les API de commerce à partir de l’espace de noms [**Windows.ApplicationModel.Store**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store), prenez soin de tester l’application et de vérifier qu’elle gère les exceptions par défaut. Assurez-vous également que votre application utilise la classe [**CurrentApp**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp), et non la classe [**CurrentAppSimulator**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator), qui est uniquement fournie à des fins de test. (Notez que si votre application cible Windows10, version1607 ou ultérieure, nous vous recommandons d’utiliser les membres de l’espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) plutôt que ceux de l’espace de noms Windows.ApplicationModel.Store.)
 
 
- 
+ 
 
- 
+ 
 
 
 

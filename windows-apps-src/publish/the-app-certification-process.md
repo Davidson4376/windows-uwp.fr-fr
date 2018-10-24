@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, publication, prétraitement, certification, publication, en attente, soumettre, publier, état, heure
 ms.localizationpriority: medium
 ms.openlocfilehash: 8372f316786d83d72dff8ef7a0a8fd53e5390743
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442565"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475004"
 ---
 # <a name="the-app-certification-process"></a>Processus de certification des applications
 
@@ -60,11 +60,11 @@ Après avoir correctement effectué les étapes ci-dessus, l’état de la soumi
 > [!NOTE]
 > Nous effectuons également des vérifications ponctuelles sur les applications publiées pour identifier les problèmes potentiels et vérifier que votre application est conforme à toutes les [politiques du MicrosoftStore](https://docs.microsoft.com/legal/windows/agreements/store-policies). Si nous détectons un problème, nous vous en informons et vous indiquons comment le résoudre, ou nous vous prévenons que votre application a été retirée du WindowsStore.
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

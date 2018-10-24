@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: prise en main, uwp, windows10, piste d'apprentissage, fichiers, e/s de fichier, lire un fichier, écrire un fichier, créer un fichier, écrire du texte, lire du texte
 ms.localizationpriority: medium
 ms.openlocfilehash: ae89b5c0e072eceec155009c07b3b3a7cf563a20
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432040"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473277"
 ---
 # <a name="work-with-files"></a>Travailler avec des fichiers
 

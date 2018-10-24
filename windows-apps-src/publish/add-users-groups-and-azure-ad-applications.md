@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10 uwp, application azure ad, aad, utilisateur, groupe, plusieurs utilisateurs, multi-utilisateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 97502a0a2863ed6f7ab2ce5d842fbebc1ae8091c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438461"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473932"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-dev-center-account"></a>Ajouter des utilisateurs, des groupes et des applications AzureAD à votre compte du Centre de développement
 
@@ -23,7 +23,7 @@ La section **des utilisateurs** du centre de développement Windows (sous **para
 Après avoir ajouté des utilisateurs au compte, vous pouvez [modifier les détails du compte](#edit), [changer les rôles et les autorisations](set-custom-permissions-for-account-users.md) ou [supprimer des utilisateurs](#remove).
 
 > [!IMPORTANT]
-> Pour ajouter des utilisateurs à votre compte, vous devez commencer par [associer votre compte du Centre de développement au client Azure Active Directory de votre organisation](associate-azure-ad-with-dev-center.md). 
+> Pour ajouter des utilisateurs à votre compte, vous devez commencer par [associer votre compte du Centre de développement au client Azure Active Directory de votre organisation](associate-azure-ad-with-dev-center.md). 
 
 Lorsque vous ajoutez des utilisateurs, vous devez spécifier l’accès dont ils disposent à votre compte du Centre de développement en leur attribuant un [rôle ou ensemble d’autorisations personnalisées](set-custom-permissions-for-account-users.md). 
 
@@ -108,7 +108,7 @@ Si l’un de vos utilisateurs a besoin de modifier son mot de passe, il peut le 
 3.  Une page de confirmation affiche les informations de connexion de l’utilisateur, y compris un mot de passe temporaire.
 
     > [!IMPORTANT]
-    >  Veillez à imprimer ou copier ces informations et à les fournir à l’utilisateur, car vous n’aurez plus accès au mot de passe temporaire après avoir quitté cette page.
+    >  Veillez à imprimer ou copier ces informations et à les fournir à l’utilisateur, car vous n’aurez plus accès au mot de passe temporaire après avoir quitté cette page.
 
 <span id="groups" />
 
@@ -189,12 +189,12 @@ Si votre application AzureAD lit et écrit des données dans Microsoft AzureAD, 
 
 1.  Dans la page **utilisateurs** (sous **paramètres de compte**), sélectionnez le nom de l’application Azure AD.
     > [!TIP]
-    > Lorsque vous cliquez sur le nom de l’application AzureAD, vous voyez toutes les clés actives pour cette application, y compris les dates de création et d’arrivée à expiration des clés. Pour supprimer une clé devenue inutile, cliquez sur **Supprimer**.
+    > Lorsque vous cliquez sur le nom de l’application AzureAD, vous voyez toutes les clés actives pour cette application, y compris les dates de création et d’arrivée à expiration des clés. Pour supprimer une clé devenue inutile, cliquez sur **Supprimer**.
 
 2.  Pour ajouter une nouvelle clé, sélectionnez **Ajouter une clé**.
 3.  Un écran vous présente les valeurs **ID client** et **Clé**.
     > [!IMPORTANT]
-    > Veillez à imprimer ou copier ces informations, car vous n’y aurez plus accès après avoir quitté cette page.
+    > Veillez à imprimer ou copier ces informations, car vous n’y aurez plus accès après avoir quitté cette page.
 
 4.  Si vous souhaitez créer d’autres clés, sélectionnez **Ajouter une autre clé**.
 
@@ -232,5 +232,5 @@ Pour supprimer un utilisateur, groupe ou application Azure AD de votre compte du
 > [!IMPORTANT]
 > Lorsque vous supprimez un utilisateur, un groupe ou une application AzureAD, ces derniers n’ont plus accès à votre compte du Centre de développement. Cette opération ne supprime **pas** l’utilisateur, le groupe ou l’application AzureAD de l’annuaire de votre organisation.
 
- 
+ 
 

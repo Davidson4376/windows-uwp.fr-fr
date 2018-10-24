@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: Windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432360"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470291"
 ---
 # <a name="functions-in-xbind"></a>Fonctions dans x:Bind
 
-**Remarque**  Pour plus d’informations sur l’utilisation de la liaison de données dans votre application avec **{x:Bind}** (et pour une comparaison entre **{x:Bind}** et **{Binding}**), voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Remarque**pour des informations générales sur l’utilisation des données de liaison dans votre application avec **{x: Bind}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), consultez [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 À compter de Windows10, version1607, **{x: Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Cela permet de:
 

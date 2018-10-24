@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, extensions, iap, prix
 ms.localizationpriority: medium
 ms.openlocfilehash: b5b7a6424fea3d62849e992f56b0b40ab72a55f5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431011"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477816"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>Définir le prix et la disponibilité d’une extension
 
@@ -39,7 +39,7 @@ L’option par défaut est **Can be displayed in the parent product’s Store li
 Pour les extensions que vous ne voulez pas mettre à la disposition générale, sélectionnez **Masquée dans le WindowsStore** et l’une des options suivantes:
 
 -   **Available for purchase from within the parent product only**: cette option permet à tout client d’acheter l’extension à partir de votre application, mais n’affichera pas cette extension dans la description de votre application dans le WindowsStore. Utilisez cette option uniquement si l’offre n’est pas mise à la disposition générale, par exemple lors des périodes initiales de test interne.
--   **Empêcher l’acquisition: tout client disposant d’un lien direct peut voir la description du produit dans le WindowsStore, mais ne peut le télécharger que s’il possède déjà le produit ou qu’il dispose d’un code promotionnel et utilise un appareil Windows10. This add-on is not displayed in the parent product’s listing**: cette option signifie que l’extension ne s’affiche pas dans la description de votre application, et qu’aucun nouveau client ne peut acheter cette extension. Toutefois, **cette option n’est pas prise en charge pour les clients qui utilisent Windows8.1 ou une version antérieure**. Si votre application n’est pas disponible sur Windows8.1 ou une version antérieure, l'extension restera disponible à l’achat pour ces clients. Pour arrêter de proposer cette extension aux clients qui utilisent Windows8.1 ou une version antérieure, vous devrez mettre à jour votre application en supprimant le code proposant l'extension, puis publier une nouvelle soumission de l’application. Nous vous recommandons de suivre cette procédure, même si votre application ne cible pas Windows8.1 ou une version antérieure; en effet, vos clients bénéficieront d’une meilleure expérience si vous ne leur proposez jamais une extension dont vous avez décidé d’arrêter la mise à disposition.
+-   **Empêcher l’acquisition: tout client disposant d’un lien direct peut voir la description du produit dans le WindowsStore, mais ne peut le télécharger que s’il possède déjà le produit ou qu’il dispose d’un code promotionnel et utilise un appareil Windows10. This add-on is not displayed in the parent product’s listing**: cette option signifie que l’extension ne s’affiche pas dans la description de votre application, et qu’aucun nouveau client ne peut acheter cette extension. Toutefois, **cette option n’est pas pris en charge pour les clients sur Windows8.1 ou une version antérieure**. Si votre application est disponible sur Windows8.1 ou une version antérieure, le module complémentaire sera disponible à l’achat pour ces clients. Pour arrêter de proposer le module complémentaire aux clients Windows8.1 ou une version antérieure, vous devez mettre à jour votre application en supprimant le code proposant le module complémentaire, puis publier une nouvelle soumission pour l’application. Il est recommandé de même si votre application ne cible pas Windows8.1 ou une version antérieure; Il est une meilleure expérience pour vos clients si vous leur proposez jamais un module complémentaire que vous avez choisi de rendre indisponible.
     
  > [!NOTE] 
  > Le choix de l’option **Empêcher l’acquisition** et/ou la soumission d’une mise à jour d’application supprimant l’extension du code de votre application n’ont pas d’incidence sur les clients qui ont déjà acheté cette extension, quel que soit le système d’exploitation qu’ils utilisent.

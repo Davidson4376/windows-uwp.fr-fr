@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 863658438ce53f2c74faddb845a7d17c6ec3130c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443475"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470854"
 ---
 # <a name="share-certificates-between-apps"></a>Partager des certificats entre applications
 
@@ -78,9 +78,9 @@ Maintenant que vous avez un ou plusieurs services web sécurisés, vos applicati
 
 Si aucun certificat client n’est disponible, l’utilisateur doit ajouter un certificat au magasin de certificats. Vous pouvez inclure dans votre application du code permettant à un utilisateur de sélectionner un fichier PFX contenant un certificat client, puis importer ce certificat dans le magasin de certificats clients.
 
-**Conseil** Vous pouvez utiliser makecert.exe pour créer un fichier PFX à utiliser avec ce guide de démarrage rapide. Pour plus d’informations sur l’utilisation de makecert.exe, voir [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968).
+**Conseil**vous pouvez utiliser makecert.exe pour créer un fichier PFX à utiliser avec ce démarrage rapide. Pour plus d’informations sur l’utilisation de makecert.exe, voir [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968).
 
- 
+ 
 
 1.  Ouvrez Visual Studio et créez un projet à partir de la page de démarrage. Nommez le nouveau projet «FirstContosoBankApp». Cliquez sur **OK** pour créer le projet.
 2.  Dans le fichier MainPage.xaml, ajoutez le code XAML suivant à l’élément **Grid** par défaut. Ce code XAML comprend un bouton pour rechercher un fichier PFX à importer, une zone de texte pour entrer un mot de passe pour un fichier PFX protégé par mot de passe, un bouton pour importer un fichier PFX sélectionné, un bouton pour se connecter au service web sécurisé, ainsi qu’un bloc de texte pour afficher l’état de l’action actuelle.

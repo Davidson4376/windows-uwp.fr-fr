@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 18d9fb3ba5b0fbd1e964450a75d8e0e417265e7f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444327"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470593"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>Exclure ou limiter des fonctionnalités de la version d’évaluation
 
@@ -123,6 +123,6 @@ Pour plus d’informations sur la description de votre application, voir [Créer
 * [Définir la tarification et la disponibilité d’une application](https://msdn.microsoft.com/library/windows/apps/mt148548)
 * [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765)
 * [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766)
- 
+ 
 
- 
+ 

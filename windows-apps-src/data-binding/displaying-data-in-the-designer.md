@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a92be54e55e06b4e7ffd61b1526425920ea80f96
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433472"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470744"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>Exemples de données sur l’aire de conception et pour la création d’un prototype
 =============================================================================================
 
 
 
-**Remarque**  La mesure dans laquelle vous avez besoin d’exemples de données et dans laquelle ces exemples vous aideront dépend de si vos liaisons utilisent l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) ou l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783). Les techniques décrites dans cette rubrique sont basées sur l’utilisation d’une [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713), afin qu’elles soient appropriées uniquement pour **{Binding}**. Si vous utilisez **{x:Bind}**, vos liaisons affichent au moins les valeurs d’espace réservé sur la surface de conception (même pour les contrôles d’éléments), si bien que vous n’avez pas tout à fait le même besoin d’exemples de données.
+**Remarque**le degré auquel vous avez besoin d’exemples de données, et combien il vous sera utile — dépend de si vos liaisons utilisent l' [extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) , ou l' [extension de balisage {x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783). Les techniques décrites dans cette rubrique sont basées sur l’utilisation d’une [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713), afin qu’elles soient appropriées uniquement pour **{Binding}**. Si vous utilisez **{x:Bind}**, vos liaisons affichent au moins les valeurs d’espace réservé sur la surface de conception (même pour les contrôles d’éléments), si bien que vous n’avez pas tout à fait le même besoin d’exemples de données.
 
 Il peut être impossible ou non souhaitable (peut-être pour des raisons de confidentialité ou de performances) pour votre application d’afficher des données actives sur la surface de conception dans Microsoft Visual Studio ou Blend pour Visual Studio. Pour que vos contrôles soient remplis avec les données (de sorte que vous puissiez travailler sur la disposition de votre application, les modèles et les autres propriétés visuelles), vous pouvez utiliser vos exemples de données au moment de la conception de diverses manières. Les exemples de données peuvent également être vraiment utiles et permettre de gagner du temps si vous créez une application de croquis (ou de prototype). Vous pouvez utiliser des exemples de données dans votre croquis ou prototype au moment de l’exécution pour illustrer vos idées sans avoir à vous connecter aux données actives/réelles.
 

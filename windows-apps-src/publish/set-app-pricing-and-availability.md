@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, prix, disponible, détectable, version d’évaluation gratuite, versions d’évaluation, applications, date de publication
 ms.localizationpriority: medium
 ms.openlocfilehash: 20c52687b375f9bf33dd491eeb37d4142acace99
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433731"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478461"
 ---
 # <a name="set-app-pricing-and-availability"></a>Définir la tarification et la disponibilité d’une application
 
@@ -61,7 +61,7 @@ Vous pouvez choisir parmi deux types de version d’essai et vous avez la possib
 
 Choisissez **Durée limitée** pour permettre aux clients d’essayer votre application gratuitement pendant un certain nombre de jours: **1 jour**, **7jours**, **15jours** ou **30jours**. Vous pouvez limiter les fonctionnalités en ajoutant du code pour [exclure ou limiter des fonctionnalités de la version d’essai](../monetize/in-app-purchases-and-trials.md)ou vous pouvez donner accès à toutes les fonctionnalités pendant cette durée. 
 > [!NOTE]
-> Les versions d’essai limitées dans le temps ne sont pas proposées aux clients sous Windows10 build10.0.10586 ou versions antérieures, ni aux clients sous WindowsPhone8.1 et versions antérieures.
+> Les versions d’essai limitées dans le temps ne sont pas proposées aux clients sous Windows10 build10.0.10586 ou versions antérieures, ni aux clients sous WindowsPhone8.1 et versions antérieures.
 
 ### <a name="unlimited"></a>Illimité
 

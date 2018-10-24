@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431927"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476920"
 ---
 # <a name="debug-a-background-task"></a>Déboguer une tâche en arrière-plan
 
@@ -117,6 +117,6 @@ Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer u
 * [Comment déclencher de suspension, reprise et événements dans les applications UWP en arrière-plan](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
 * [Analyse de la qualité du code des applications UWP avec l’analyse du code Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
 
- 
+ 
 
- 
+ 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, marchés, pays, régions
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435706"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470880"
 ---
 # <a name="define-market-selection"></a>Définir la sélection du marché
 
@@ -43,10 +43,10 @@ Notez que vos sélections s’appliquent ici uniquement aux nouvelles acquisitio
 Tenez compte du fait que même si vous sélectionnez tous les marchés, la législation et les restrictions locales ou d’autres facteurs peuvent empêcher certaines applications d’être référencées dans des pays ou régions spécifiques. Par ailleurs, certains marchés peuvent avoir établi des conditions spécifiques relatives à la classification par âge. Si votre application ne satisfait pas ces conditions, nous ne pourrons pas proposer votre application dans ce marché. Pour plus d’informations, consultez la section [Classification par âge](age-ratings.md).
 
 > [!NOTE]
-> Pour les applications destinées à Windows8 ou Windows8.1, certains marchés spécifiques sont traités comme un seul marché «Reste du monde». Pour plus d’informations, voir [Marchés «Reste du monde» pour Windows8.x](#rest-of-world-markets-for-windows-8x).
+> Pour les applications qui ciblent package Windows8 ou Windows8.1, certains marchés individuels sont traités comme un seul marché «Rest of World». Pour plus d’informations, voir [Marchés «Reste du monde» pour Windows8.x](#rest-of-world-markets-for-windows-8x).
 
 Vous verrez également une case à cocher qui vous permet d’indiquer si vous souhaitez proposer votre application dans un marché que le Windows Store peut ajouter à l’avenir. Si vous laissez cette case à cocher activée, et que nous ajoutons ultérieurement de nouveaux marchés, le prix de base et la date de disponibilité générale de votre soumission seront utilisés pour votre application sur ces marchés. Si vous ne souhaitez pas cette option, vous pouvez désactiver cette case, auquel cas votre application ne sera pas répertoriée dans les éventuels futurs marchés (bien que vous puissiez toujours les ajouter ultérieurement).
- 
+ 
 
 ## <a name="microsoft-store-consumer-markets"></a>Marchés grand public de Microsoft Store
 
@@ -476,13 +476,13 @@ L’Ajustement du développement commercial sera appliqué à toutes les transac
 | Royaume-Uni       | Carte cadeau       | 2,24 %                         | Mars 2016     |
 | États-Unis        | Carte cadeau       | 2,24 %                         | Mars 2016     |
 
- 
+ 
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Marchés « Rest of World » pour Windows 8.x
 
 Si votre application comprend des packages ciblant Windows 8.x, il est important de savoir qu’un certain nombre de marchés est traité comme un marché unique «Rest of World» pour les clients utilisent le Windows Store sur Windows 8.x, même si elles s’affichent comme des marchés individuels dans le centre de développement Windows tableau de bord (par opposition au tableau de bord du Windows Store antérieur, où il a été une option de marché «Rest of World» pour regrouper tous ces marchés).
 
-Si vous conservez la sélection par défaut lorsque vous soumettez votre application, vous n’avez pas à vous soucier de cela. Votre application sera disponible sur tous les marchés possibles. Toutefois, si vous voulez exclure certains marchés, gardez à l’esprit que l’exclusion d’un seul de ces marchés « Rest of World » signifie que votre application ne sera disponible sur aucun marché « Rest of World » pour les clients utilisant Windows 8 ou Windows 8.1.
+Si vous conservez la sélection par défaut lorsque vous soumettez votre application, vous n’avez pas à vous soucier de cela. Votre application sera disponible sur tous les marchés possibles. Toutefois, si vous souhaitez exclure certains marchés, n’oubliez pas que l’exclusion d’un seul de ces marchés «Rest of World» signifie que votre application sera disponible dans tous les marchés «Rest of World» pour les clients utilisant le package Windows8 ou Windows8.1.
 
 Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants :
 
@@ -743,4 +743,4 @@ Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants 
 </table>
 
 > [!NOTE]
-> Pour obtenir la liste des pays et régions dans lesquels vous pouvez vous inscrire en vue d’obtenir un compte de développeur, consultez l’article [Types de compte, emplacements et frais](account-types-locations-and-fees.md).
+> Pour obtenir la liste des pays et régions dans lesquels vous pouvez vous inscrire en vue d’obtenir un compte de développeur, consultez l’article [Types de compte, emplacements et frais](account-types-locations-and-fees.md).

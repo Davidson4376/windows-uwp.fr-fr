@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, l’impression
 ms.localizationpriority: medium
 ms.openlocfilehash: fe4086cc87699083304594eb4ccc8e7bb137b19f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432070"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470564"
 ---
 # <a name="customize-the-print-preview-ui"></a>Personnaliser l’interface utilisateur d’aperçu avant impression
 
@@ -29,9 +29,9 @@ ms.locfileid: "5432070"
 
 Cette section décrit comment personnaliser les options d’impression et les paramètres dans l’interface utilisateur d’aperçu avant impression. Pour plus d’informations sur l’impression, consultez [Imprimer à partir de votre application](print-from-your-app.md).
 
-**Conseil** La plupart des exemples de cette rubrique sont basés sur l’exemple d’impression. Pour voir le code complet, téléchargez l’[exemple d’impression de plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619984) à partir du [référentiel Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
+**Conseil**la plupart des exemples de cette rubrique est basés sur l’exemple d’impression. Pour voir le code complet, téléchargez l’[exemple d’impression de plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619984) à partir du [référentiel Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
 
- 
+ 
 
 ## <a name="customize-print-options"></a>Personnaliser les options d’impression
 
@@ -52,9 +52,9 @@ Ces options sont définies dans la classe [**StandardPrintTaskOptions**](https:/
 
 Toutefois, les modifications que vous apportez par le biais de cette méthode affectent uniquement l’interface utilisateur d’aperçu avant impression. L’utilisateur peut toujours accéder à l’ensemble des options prises en charge par l’imprimante en appuyant sur **Autres paramètres** dans l’interface utilisateur d’aperçu avant impression.
 
-**Remarque** Bien que votre application puisse spécifier les options d’impression à afficher, seules celles qui sont prises en charge par l’imprimante sélectionnée sont affichées dans l’interface utilisateur d’aperçu avant impression. L’interface utilisateur d’impression n’affiche pas les options que l’imprimante sélectionnée ne prend pas en charge.
+**Remarque**bien que votre application puisse spécifier les options d’impression à afficher, seules celles qui sont prises en charge par l’imprimante sélectionnée sont affichées dans l’interface utilisateur d’aperçu avant impression. L’interface utilisateur d’impression n’affiche pas les options que l’imprimante sélectionnée ne prend pas en charge.
 
- 
+ 
 
 ### <a name="define-the-options-to-display"></a>Définir les options à afficher
 
@@ -100,7 +100,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**Important** Le fait d’appeler [**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() supprime toutes les options d’impression de l’interface utilisateur d’aperçu avant impression, y compris le lien **Autres paramètres**. Veillez à ajouter les options que vous voulez afficher dans l’interface utilisateur d’aperçu avant impression.
+**Important**appelant [**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() supprime toutes les options d’impression de l’interface utilisateur, y compris le lien **d’autres paramètres** d’aperçu avant impression. Veillez à ajouter les options que vous voulez afficher dans l’interface utilisateur d’aperçu avant impression.
 
 ### <a name="specify-default-options"></a>Spécifier les options par défaut
 

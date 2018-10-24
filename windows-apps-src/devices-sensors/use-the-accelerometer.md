@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2848b9a7326bdac084120ec9b75f067718f14853
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444420"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480681"
 ---
 # <a name="use-the-accelerometer"></a>Utiliser l’accéléromètre
 
@@ -35,7 +35,7 @@ Une application de jeu simple repose sur un capteur unique, l’accéléromètre
 
 ## <a name="prerequisites"></a>Prérequis
 
-Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
+Vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un accéléromètre.
 

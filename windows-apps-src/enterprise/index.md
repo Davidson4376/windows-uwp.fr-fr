@@ -1,6 +1,6 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: Cette feuille de route propose une vue d’ensemble des principales fonct. d’entreprise pour les app. de plateforme Windowsuniverselle(UWP) et Windows10.
+description: Cette feuille de route propose une vue d’ensemble de fonctionnalités principales d’entreprise pour les applications Windows 10 et la plateforme Windows universelle (UWP).
 title: Entreprise
 author: awkoren
 ms.author: alkoren
@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5437506"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476611"
 ---
 # <a name="enterprise"></a>Entreprise
 
-Cette feuille de route propose une vue d’ensemble sur les fonctionnalités principales d’entreprise des applications de la plateforme Windowsuniverselle(UWP) Windows10.
+Cette feuille de route propose une vue d’ensemble de fonctionnalités principales d’entreprise pour les applications Windows10Universal Windows Platform (UWP).
 
-**Remarque**  Cet article se concentre adresse aux développeurs qui écrivent des applications UWP d’entreprise. Pour le développement UWP général, voir les [guides de procédure pour les applications Windows 10](https://msdn.microsoft.com/library/windows/apps/mt244352). Pour le développement WPF, Windows Forms ou Win32, voir le [Centre de développement-Bureau](https://dev.windows.com/desktop). Pour les ressources informatiques professionnelles, tels que le déploiement de Windows 10 ou la gestion des fonctionnalités de sécurité d’entreprise, voir [Windows 10 sur TechNet](https://msdn.microsoft.com/library/dn986868).
+**Remarque**cet article se concentre adresse aux développeurs qui écrivent des applications UWP d’entreprise. Pour le développement UWP général, voir les [guides de procédure pour les applications Windows 10](https://msdn.microsoft.com/library/windows/apps/mt244352). Pour le développement WPF, Windows Forms ou Win32, voir le [Centre de développement-Bureau](https://dev.windows.com/desktop). Pour les ressources informatiques professionnelles, tels que le déploiement de Windows 10 ou la gestion des fonctionnalités de sécurité d’entreprise, voir [Windows 10 sur TechNet](https://msdn.microsoft.com/library/dn986868).
 
 Existe-t-il une version de cette application qui présente certaines des avancées qui étaient présentes sur Build au cours de cette présentation [Construire rapidement des Applications cœur de métier avec UWP et Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502)
 
@@ -122,7 +122,7 @@ Consultez la [documentation MSIX](https://docs.microsoft.com/windows/msix/).
 
 ## <a name="security"></a>Sécurité
 
-Windows 10 fournit un ensemble de fonctionnalités de sécurité pour les développeurs d’applications destinées à protéger l’identité de leurs utilisateurs, la sécurité des réseaux d’entreprise et les données professionnelles stockées sur des appareils. Nouveauté de Windows 10, Microsoft Passport constitue une alternative à l’utilisation de mot de passe. Il s’agit d’une solution d’authentification à deux facteurs facile à déployer et accessible à l’aide d’un PIN ou de Windows Hello, qui fournit une sécurité de qualité professionnelle et prend en charge la reconnaissance des empreintes digitales, de l’iris et la reconnaissance faciale.
+Windows 10 fournit un ensemble de fonctionnalités de sécurité pour les développeurs d’applications protéger l’identité de leurs utilisateurs, la sécurité des réseaux d’entreprise et les données professionnelles stockées sur des appareils. Nouveauté de Windows 10 est Microsoft Passport, une solution facile à déployer le mot de passe à deux facteurs qui est accessible à l’aide d’un code confidentiel ou Windows Hello, qui fournit la sécurité de qualité professionnelle et prend en charge de la reconnaissance, des empreintes digitales et la reconnaissance de l’iris en fonction.
 
 | Rubrique | Description |
 |-------|-------------|
@@ -196,10 +196,10 @@ Cette rubrique présente les MVVM, base de données SQL, Entity Framework. La li
 
 ## <a name="patterns-and-practices"></a>Modèles et pratiques
 
-Les bases de code pour les applications d’entreprise à grande échelle peuvent être difficiles à gérer. Prism est une infrastructure permettant de créer des applications XAML pouvant être testées, faciles à gérer et faiblement couplées dans WPF, UWP Windows 10 et Xamarin Forms. Prism fournit une implémentation d’une collection de modèles de conception utiles pour écrire des applications XAML bien structurées et faciles à gérer, notamment des modèles MVVM, d’injection de dépendance, de commandes, EventAggregator, etc.
+Les bases de code pour les applications d’entreprise à grande échelle peuvent être difficiles à gérer. Prism est une infrastructure permettant de créer des applications XAML faiblement couplées, faciles à gérer et positionnement dans WPF, UWP Windows 10 et Xamarin Forms. Prism fournit une implémentation d’une collection de modèles de conception utiles pour écrire des applications XAML bien structurées et faciles à gérer, notamment des modèles MVVM, d’injection de dépendance, de commandes, EventAggregator, etc.
 
 Pour plus d’informations sur Prism, voir le [référentiel GitHub](https://github.com/PrismLibrary/Prism).
 
- 
+ 
 
- 
+ 

@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cppcx
 ms.openlocfilehash: 8375cc54e75df71b28cfd3f550f47914b4b65519
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441626"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471864"
 ---
 # <a name="data-binding-overview"></a>Vue d’ensemble de la liaison de données
 
@@ -501,7 +501,7 @@ Il existe deux façons de procéder : Vous pouvez lier l’affichage de détails
 > [!NOTE]
 > Jusqu’à présent, nous avons uniquement utilisé l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), mais les deux techniques que nous allons présenter ci-dessous requièrent l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), plus souple (mais moins performante).
 
-Si vous utilisez C++ / extensions de composant WinRT ou Visual C++ (C++ / CX) ensuite, pour utiliser l’extension de balisage [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) , vous devez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à n’importe quelle classe runtime que vous souhaitez lier. Pour utiliser [{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), vous n’avez pas besoin cet attribut.
+Si vous utilisez C++ / extensions de composant WinRT ou Visual c++ (C++ / CX) ensuite, pour utiliser l’extension de balisage [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) , vous devez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à n’importe quelle classe runtime que vous souhaitez lier. Pour utiliser [{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), vous n’avez pas besoin cet attribut.
 
 > [!IMPORTANT]
 > Si vous utilisez [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) est disponible si vous avez installé le SDK Windows version 10.0.17763.0 (Windows 10, version 1809), ou une version ultérieure. Sans cet attribut, vous devez implémenter les interfaces [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) et [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) pour qu’ils soient en mesure d’utiliser l’extension de balisage [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) .

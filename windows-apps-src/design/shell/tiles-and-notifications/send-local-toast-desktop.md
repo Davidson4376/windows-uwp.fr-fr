@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows10, uwp, win32, bureau, notifications toast, envoyer un toast, envoyer un toast local, pont du bureau, C#, C sharp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bda3e85fd89ef7a8b819fcd809acea4fd9a276b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433910"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472508"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Envoyer une notification toast locale depuis des applications de bureau en C#
 
@@ -209,21 +209,21 @@ Assurez-vous d’utiliser l’objet **ToastContent** indiqué ci-dessous (ou le 
 // Construct the visuals of the toast (using Notifications library)
 ToastContent toastContent = new ToastContent()
 {
-    // Arguments when the user taps body of toast
-    Launch = "action=viewConversation&conversationId=5",
+    // Arguments when the user taps body of toast
+    Launch = "action=viewConversation&conversationId=5",
 
     Visual = new ToastVisual()
     {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Hello world!"
-                }
+        BindingGeneric = new ToastBindingGeneric()
+        {
+            Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "Hello world!"
+                }
             }
-        }
+        }
     }
 };
 

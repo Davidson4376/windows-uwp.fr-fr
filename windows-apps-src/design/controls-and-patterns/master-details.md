@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f1236c2ade0423f6e092024e786741f3f3bf6d11
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443184"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470087"
 ---
 # <a name="masterdetails-pattern"></a>Modèle Maître/Détails
 
@@ -46,7 +46,7 @@ Lorsque vous implémentez le modèle Maître/Détails, nous vous recommandons d�
 | 320epx-640epx        | Mode Empilé           |
 | 641epx ou plus large       | Côte à côte      |
 
- 
+ 
 ## <a name="stacked-style"></a>Style empilé
 
 Le style empilé ne permet de visualiser qu’un seul volet à la fois : le volet principal ou le volet d’informations.

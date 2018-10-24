@@ -16,11 +16,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ae344e9f10c5d1dbfd530950851e402da4bc2a0d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433498"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478075"
 ---
 # <a name="control-templates"></a>Modèles de contrôles
 
@@ -112,7 +112,7 @@ Le tableau suivant comporte les valeurs [**IsChecked**](https://msdn.microsoft.c
 | **false**           | `Unchecked`        | Vide.                  |
 | **null**            | `Indeterminate`    | Contient un cercle.      |
 
- 
+ 
 
 Vous spécifiez l’apparence d’un contrôle lorsqu’il se trouve dans un état spécifique à l’aide d’objets [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007). Un objet **VisualState** contient un élément [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) ou [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br243053) changeant l’apparence des éléments dans le modèle [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391). Lorsque l’état du contrôle devient celui spécifié par la propriété [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031), les modifications de propriété de l’élément **Setter** ou [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) sont appliquées. Lorsque le contrôle quitte cet état, les modifications sont supprimées. Vous ajoutez des objets **VisualState** à des objets [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014). Vous ajoutez des objets **VisualStateGroup** à la propriété [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) associée, que vous définissez sur l’élément [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) racine du modèle **ControlTemplate**.
 
@@ -188,7 +188,7 @@ Pour mieux comprendre le fonctionnement des objets [**VisualState**](https://msd
 | De `Checked` à `Indeterminate`   | La valeur [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) de l’état [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) `Indeterminate` est appliquée. Par conséquent, la valeur [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) de l’élément `IndeterminateGlyph` est 1. La valeur **Setter** de l’état **VisualState** `Checked` est supprimée. Par conséquent, la valeur [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) de l’élément `CheckGlyph` est 0. | Un cercle s’affiche.                            |
 | De `Indeterminate` à `Unchecked` | La valeur [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) de l’état [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) `Indeterminate` est supprimée. Par conséquent, la valeur [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) de l’élément `IndeterminateGlyph` est 0.                                                                                                                                           | Rien ne s’affiche.                             |
 
- 
+ 
 Pour plus d’informations sur la façon de créer des états visuels pour des contrôles, notamment la façon d’utiliser la classe [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) et les types d’animations, voir [Animations dans une table de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808).
 
 ## <a name="use-tools-to-work-with-themes-easily"></a>Utilisation de thèmes en toute simplicité à l’aide d’outils
@@ -211,11 +211,11 @@ Les rubriques qui documentent les styles et les modèles des contrôles XAML vou
 
 Pour certains des attributs des exemples XAML, vous avez peut-être remarqué des références de ressources qui utilisent l’[extension de balisage {ThemeResource}](../../xaml-platform/themeresource-markup-extension.md). Il s’agit d’une technique qui permet à un modèle de contrôle unique d’utiliser des ressources dont les valeurs peuvent être différentes selon le thème actif. Cela est particulièrement important pour les pinceaux et les couleurs, car le but principal des thèmes est de permettre aux utilisateurs de choisir s’ils veulent appliquer un thème foncé, clair ou à contraste élevé à l’ensemble du système. Les applications qui se servent du système de ressources XAML peuvent utiliser un ensemble de ressources approprié à ce thème, afin que les choix de thème dans l’interface utilisateur d’une application reflètent le choix de thème à l’échelle du système de l’utilisateur.
 
- ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
+ ## Obtenir l’exemple de code
 * [Exemple d’éléments de base d’une interface utilisateur XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 * [Exemple de contrôle d’édition de texte personnalisé](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
 
- 
+ 
 
 
 

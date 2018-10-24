@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ba33a1e79a2447c5dac546ce0f1caeaf16929a3
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434111"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470731"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows
 
@@ -88,16 +88,16 @@ Tout d’abord, ajoutez un contrôle [**MediaPlayerElement**](https://docs.micro
 Une fois le fichier vidéo renvoyé depuis l’interface utilisateur de capture de l’appareil photo, créez un objet [**MediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource) en appelant **[CreateFromStorageFile](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfromstoragefile)**. Appelez la méthode **[Play](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Play)** de la valeur par défaut **[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)** associée au **MediaPlayerElement** pour lire la vidéo.
 
 [!code-cs[PlayVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetPlayVideo)]
- 
+ 
 
 ## <a name="related-topics"></a>Rubriquesassociées
 
 * [Appareil photo](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 
- 
+ 
 
- 
+ 
 
 
 

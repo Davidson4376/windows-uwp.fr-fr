@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, tableau de bord, centre de développement
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f5357b038091b72681915e46875f92077bb3c9e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440515"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479237"
 ---
 # <a name="using-the-windows-dev-center-dashboard"></a>Utilisation du tableau de bord du Centre de développement Windows
 
@@ -42,9 +42,9 @@ Centre de développement Windows offre également des fonctionnalités pour [Ajo
 Vos commentaires nous aident à créer les meilleures fonctionnalités et expériences possibles. Lorsque vous travaillez dans le tableau de bord, utilisez le lien **commentaires** dans l’angle supérieur droit du tableau de bord pour partager vos réflexions et suggestions.
 
 
- 
+ 
 
- 
+ 
 
 
 

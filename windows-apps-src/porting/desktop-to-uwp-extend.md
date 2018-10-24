@@ -10,18 +10,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: be4338c7b7e7b3861c206a6d7d63e9e417e6cd0d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: 3a516fea67239a737c1f8a05ef17fbc1d9203030
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438880"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476817"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Étendre votre application de bureau avec des composants UWP modernes
 
 Certaines expériences Windows10 (par exemple: une page d'interface utilisateur tactile) doivent s'exécuter à l'intérieur d'un conteneur d'application moderne. Si vous souhaitez ajouter ces expériences, étendez votre application de bureau avec des composant de projets UWP et Windows Runtime.
 
-Dans de nombreux cas, vous pouvez appeler des API UWP directement à partir de votre application de bureau. Par conséquent, avant de consulter ce guide, consultez [Optimisation pour Windows10](desktop-to-uwp-enhance.md).
+Dans de nombreux cas, vous pouvez appeler APIs Windows Runtime directement à partir de votre application de bureau, par conséquent, avant de consulter ce guide, consultez [optimisation pour Windows 10](desktop-to-uwp-enhance.md).
 
 >[!NOTE]
 >Ce guide suppose que vous avez créé un package d’application Windows pour votre application de bureau. Si vous n’avez pas encore fait, consultez [les applications de bureau de Package](desktop-to-uwp-root.md).
@@ -162,7 +162,7 @@ Dans l' **Explorateur de solutions**, ouvrez le fichier **package.appxmanifest**
   <uap:Extension Category="windows.protocol" Executable="MapUI.exe" EntryPoint="MapUI.App">
     <uap:Protocol Name="xamluidemo" />
   </uap:Extension>
-</Extensions>    
+</Extensions>    
 ```
 
 Nommez le protocole, indiquez le nom de l’exécutable généré par le projet UWP et le nom de la classe de point d’entrée.
@@ -284,18 +284,18 @@ Dans l' **Explorateur de solutions**, ouvrez le fichier **package.appxmanifest**
 
 ```xml
 <Extensions>
-      <uap:Extension
-          Category="windows.shareTarget"
-          Executable="ShareTarget.exe"
-          EntryPoint="App">
-        <uap:ShareTarget>
-          <uap:SupportedFileTypes>
-            <uap:SupportsAnyFileType />
-          </uap:SupportedFileTypes>
-          <uap:DataFormat>Bitmap</uap:DataFormat>
-        </uap:ShareTarget>
-      </uap:Extension>
-</Extensions>  
+      <uap:Extension
+          Category="windows.shareTarget"
+          Executable="ShareTarget.exe"
+          EntryPoint="App">
+        <uap:ShareTarget>
+          <uap:SupportedFileTypes>
+            <uap:SupportsAnyFileType />
+          </uap:SupportedFileTypes>
+          <uap:DataFormat>Bitmap</uap:DataFormat>
+        </uap:ShareTarget>
+      </uap:Extension>
+</Extensions>  
 ```
 
 Indiquez le nom de l'exécutable généré par le projet UWP et le nom de la classe de point d’entrée. Ce balisage suppose que le nom du fichier exécutable de votre application UWP est `ShareTarget.exe`.
@@ -353,7 +353,7 @@ Dans l' **Explorateur de solutions**, ouvrez le fichier **package.appxmanifest**
   ...
       <desktop:Extension Category="windows.fullTrustProcess" Executable="PhotoStoreDemo\PhotoStoreDemo.exe" />
   ...
-</Extensions>  
+</Extensions>  
 ```
 
 Cette extension activera l’application UWP démarrer l’application de bureau pour laquelle vous souhaitez que le partage un fichier. Dans l’exemple, nous faisons référence au fichier exécutable de l’application de bureau [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) .

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: déclencheur de tâche en arrière-plan, tâche en arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ccd171f53795ef71830ffb022d0468facb3ac4f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431780"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469859"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>Déclencher une tâche en arrière-plan à partir de votre application
 
@@ -145,7 +145,7 @@ Pour plus d’informations sur les contraintes de ressource appliquées aux tâc
 
 ## <a name="remarks"></a>Remarques
 
-À partir de Windows 10, il n’est plus nécessaire à l’utilisateur d’ajouter votre application à l’écran de verrouillage pour utiliser des tâches en arrière-plan.
+À compter de Windows 10, il n’est plus nécessaire à l’utilisateur d’ajouter votre application à l’écran de verrouillage pour utiliser des tâches en arrière-plan.
 
 Une tâche en arrière-plan s’exécutent uniquement à l’aide d’un **ApplicationTrigger** si vous avez appelé [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) tout d’abord.
 

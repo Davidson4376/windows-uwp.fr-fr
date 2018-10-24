@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c03d99781114c4fefff04cc25930748ec16182f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434500"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470397"
 ---
 # <a name="storyboarded-animations"></a>Animations dans une table de montage séquentiel
 
@@ -153,7 +153,7 @@ Pour plus d’informations sur les valeurs [**Duration**](https://msdn.microsoft
 
 ### <a name="fromtoby-are-nullable"></a>From/To/By sont des propriétés Nullable.
 
-Nous avons mentionné précédemment que vous pouvez omettre **From**, **To** ou **By** et par conséquent utiliser les valeurs non animées actuelles en remplacement d’une valeur manquante. Le type des propriétés **From**, **To** ou **By** d’une animation n’est pas celui auquel vous vous attendiez. Par exemple, le type de la propriété [**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) n’est pas [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). En fait, il s’agit du type [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) pour **Double**. Et sa valeur par défaut est **null** et non 0. Cette valeur **null** indique au système d’animations que vous n’avez pas spécifiquement défini une valeur pour une propriété **From**, **To** ou **By**. Le type des extensions des composants Visual C++ (C++/CX) n’est pas **Nullable**, par conséquent elles utilisent [**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864) à la place.
+Nous avons mentionné précédemment que vous pouvez omettre **From**, **To** ou **By** et par conséquent utiliser les valeurs non animées actuelles en remplacement d’une valeur manquante. Le type des propriétés **From**, **To** ou **By** d’une animation n’est pas celui auquel vous vous attendiez. Par exemple, le type de la propriété [**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) n’est pas [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). En fait, il s’agit du type [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) pour **Double**. Et sa valeur par défaut est **null** et non 0. Cette valeur **null** indique au système d’animations que vous n’avez pas spécifiquement défini une valeur pour une propriété **From**, **To** ou **By**. Extensions de composant Visual c++ (C++ / CX) n’a pas un type **Nullable** , par conséquent elles utilisent [**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864) à la place.
 
 ### <a name="other-properties-of-an-animation"></a>Autres propriétés d’une animation
 
@@ -314,7 +314,7 @@ Vous pouvez gérer l’événement [**Completed**](https://msdn.microsoft.com/li
 > [!TIP]
 > Lorsque vous écrivez le code d’un scénario d’application et envisagez de démarrer une animation directement à partir de ce code, vérifiez si la bibliothèque d’animations ne contient pas déjà une animation ou une transition correspondant à votre scénario d’interface utilisateur. Les animations de la bibliothèque s’exécutent de façon homogène sur toutes les applications Windows Runtime et sont plus faciles à utiliser.
 
- 
+ 
 
 ### <a name="animations-for-visual-states"></a>Animations pour les états visuels
 
@@ -341,9 +341,9 @@ Jusqu’à présent nous vous avons montré les animations personnalisées qui s
 * [Modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/Mt210948)
 * [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490)
 * [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/Hh759824)
- 
+ 
 
- 
+ 
 
 
 

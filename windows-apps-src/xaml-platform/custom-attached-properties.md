@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ce26242f1f5093afcbfb652a7d1736897975cb3a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439557"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477322"
 ---
 # <a name="custom-attached-properties"></a>Propriétés jointes personnalisées
 

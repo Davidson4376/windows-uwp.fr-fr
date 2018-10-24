@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b11151df981a4b5ce233458581d21e405be9844c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436216"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478085"
 ---
 # <a name="user-activities-best-practices"></a>Bonnes pratiques des activités utilisateur
 

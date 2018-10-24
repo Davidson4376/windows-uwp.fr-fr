@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, directx, objet d'application
 ms.localizationpriority: medium
 ms.openlocfilehash: fcbe68516e3ad8b2643faf68900e3305f18e8bbf
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444295"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475053"
 ---
 # <a name="the-app-object-and-directx"></a>Objet application et DirectX
 
@@ -36,9 +36,9 @@ Pour commencer, intéressons-nous aux espaces de noms Windows Runtime que vous d
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **Remarque**   Si vous ne développez pas une application UWP, utilisez les composants d’interface utilisateur fournis par les bibliothèques et les espaces de noms spécifiques à JavaScript (ou XAML) au lieu des types fournis par ces espaces de noms.
+> **Remarque**  si vous ne développez pas une application UWP, utilisez les composants d’interface utilisateur fournis par les bibliothèques spécifiques JavaScript (ou XAML) et les espaces de noms au lieu des types fournis par ces espaces de noms.
 
- 
+ 
 
 ## <a name="the-windows-runtime-app-object"></a>Objet application Windows Runtime
 
@@ -114,7 +114,7 @@ Vous pouvez déterminer le comportement de thread de la distribution d’événe
 | [**CoreProcessEventsOption.ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217)        | Attend de nouveaux événements et distribue tous les événements disponibles. Poursuit ce comportement jusqu’à ce que la fenêtre se ferme ou que l’application appelle la méthode [**Close**](https://msdn.microsoft.com/library/windows/apps/br208260) sur l’instance de [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). |
 | [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | Distribue tous les événements actuellement disponibles dans la file d’attente. Si aucun événement n’est en attente, effectue un retour immédiat.                                                                                                                                          |
 
- 
+ 
 
 Les applications DirectX UWP doivent utiliser l’option [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217) pour empêcher les comportements de blocage qui pourraient interrompre les mises à jour graphiques.
 
@@ -155,9 +155,9 @@ Si vous portez du code existant afin qu’il s’exécute sur le thread ASTA, n�
 
 Globalement, lors de la conception de votre application UWP basée sur DirectX, utilisez [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) pour le [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) de votre application et [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) pour gérer tous les threads d’interface utilisateur au lieu d’essayer de créer et de gérer vos threads MTA vous-même. Lorsque vous avez besoin d’un thread distinct que vous ne pouvez pas gérer avec **CoreDispatcher**, utilisez des modèles asynchrones et suivez les instructions mentionnées précédemment pour éviter les problèmes de réentrance.
 
- 
+ 
 
- 
+ 
 
 
 

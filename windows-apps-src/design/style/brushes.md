@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0473ee984461bf46be4ebf866a564f0d51e0cfc5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440916"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471624"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>Utilisation des pinceaux pour peindre des arrière-plans, des premiers plans et des contours
 
@@ -41,7 +41,7 @@ Un pinceau [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps
 
 ### <a name="predefined-color-names"></a>Noms de couleur prédéfinis
 
-Vous pouvez utiliser un nom de couleur prédéfini, comme [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) ou [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx). Vous disposez de 256couleurs nommées. L’analyseur XAML convertit le nom de la couleur en une structure [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) avec les canaux de couleur appropriés. Étant donné que les 256couleurs nommées reposent sur les noms de couleurs *X11* issus de la spécification CSS3 (Cascading Style Sheets, Level3), vous connaissez peut-être déjà cette liste de couleurs nommées si vous avez de l’expérience en matière de développement ou de conception de sites web.
+Vous pouvez utiliser un nom de couleur prédéfini, comme [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) ou [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx). Vous disposez de 256couleurs nommées. L’analyseur XAML convertit le nom de la couleur en une structure [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) avec les canaux de couleur appropriés. 256 couleurs nommées reposent sur les noms de couleurs *X11* à partir de la Cascading Style Sheets, niveau3 spécification (CSS3), vous peut-être déjà familiarisé avec cette liste de couleurs nommées si vous connaissez précédent développement web ou de conception.
 
 Vous trouverez ci-dessous un exemple dans lequel la propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) d’un objet [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) présente la couleur prédéfinie [**Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
 
@@ -197,9 +197,9 @@ Pour [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703
 -   Pour la classe [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703), vous pouvez avoir besoin d’appeler la méthode [**Redraw**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.redraw.aspx) si vous avez récemment réinitialisé la propriété [**SourceName**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.sourcename.aspx) ou que le contenu de la classe [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) est également remplacé à l’aide de code.
 
 Pour obtenir des exemples de code, voir les pages de référence pour [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703),  [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) et [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
- 
+ 
 
- 
+ 
 
 
 

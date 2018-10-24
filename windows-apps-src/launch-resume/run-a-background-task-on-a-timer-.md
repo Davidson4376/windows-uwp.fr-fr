@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 25e3c76ae09ed6835f89f0d98c308f11c7a99624
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433508"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469257"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>Exécuter une tâche en arrière-plan en fonction d’un minuteur
 
@@ -37,7 +37,7 @@ Le minuteur intégré pour les applications de plateforme Windows universelle (U
 
 > [!NOTE]
 > Si *FreshnessTime* est défini sur moins de 15 minutes, une exception est levée lorsque vous tentez d’inscrire la tâche en arrière-plan.
- 
+ 
 Par exemple, ce déclencheur entraîne une tâche en arrière-plan exécuter une fois par heure.
 
 ```cs
@@ -128,7 +128,7 @@ Pour plus d’informations sur les contraintes de ressource appliquées aux tâc
 
 ## <a name="remarks"></a>Remarques
 
-À partir de Windows 10, il n’est plus nécessaire à l’utilisateur d’ajouter votre application à l’écran de verrouillage pour utiliser des tâches en arrière-plan.
+À compter de Windows 10, il n’est plus nécessaire à l’utilisateur d’ajouter votre application à l’écran de verrouillage pour utiliser des tâches en arrière-plan.
 
 Une tâche en arrière-plan s’exécutent uniquement à l’aide d’un **TimeTrigger** si vous avez appelé [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) tout d’abord.
 

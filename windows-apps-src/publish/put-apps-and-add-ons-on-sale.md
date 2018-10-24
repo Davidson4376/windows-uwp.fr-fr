@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a25980c964e399931a088e281e959df3095ffe9a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434303"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472560"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>Commercialiser des applications et des extensions
 
@@ -29,7 +29,7 @@ Lorsque vous utilisez la section **Prix de vente** de la page **Tarification et 
 Pendant la période de commercialisation de votre produit, les clients peuvent acheter ce dernier au prix inférieur au cours de la période que vous avez sélectionnée. Si vous définissez le prix sur **Gratuit**, les clients peuvent télécharger le produit sans rien payer pendant la période de vente.
 
 > [!IMPORTANT]
-> Le prix de vente s’affiche uniquement pour vos clients qui utilisent des appareils Windows10, y compris XboxOne. Les ventes proposées aux possesseurs de l’un de vos autres produits sont uniquement présentées aux clients qui utilisent Windows10, version1607 ou ultérieure.
+> Prix de vente s’affiche uniquement pour vos clients sur les appareils Windows 10, y compris Xbox One. Les ventes proposées aux possesseurs de l’un de vos autres produits sont uniquement présentées aux clients qui utilisent Windows10, version1607 ou ultérieure.
 > 
 > Sur les autres systèmes d’exploitation, les clients voient le prix normal de votre application ou de votre extension et ne seront pas en mesure d’acheter ces dernières au prix de vente. Vous pouvez toujours modifier un prix en choisissant un autre niveau de prix dans une nouvelle soumission, mais il ne sera pas affiché en tant que vente à prix réduit limitée dans le temps.
 
@@ -83,7 +83,7 @@ Une fois votre soumission certifiée, les modifications prennent effet.
 > [!IMPORTANT]
 > Si une vente a déjà démarré, vous ne serez pas en mesure de modifier la date de début. Bien qu'il soit possible de modifier la date de fin d'une vente, nous recommandons de ne pas la modifier à une date antérieure à celle d’origine. Si vous mettez fin à une vente avant la date initialement publiée, cela peut être frustrant pour vos clients potentiels (étant donné qu'ils voient la date de fin planifiée lorsqu'ils consultent la description de votre application dans le Windows Store).
 
- **Pour annuler une vente qui n’a pas encore démarré**
+ **Pour annuler une vente qui n’a pas encore démarré**
 
 1.  Sur la page **Tarification et disponibilité** d’une soumission d’application ou de module complémentaire en cours, accédez à la section **Prix de vente**.
 2.  Recherchez la vente à annuler, puis cliquez sur **Supprimer**.

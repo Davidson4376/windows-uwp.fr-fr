@@ -15,11 +15,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b4693c4ed6c02db9e4fe3f5f7fee6fe569c0e79
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435986"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468792"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 
@@ -39,7 +39,7 @@ Les raccourcis incluent généralement les touches de fonction F1 à F12 ou une 
 > [!NOTE]
 > Les contrôles de plateforme UWP intègrent des raccourcis clavier. Par exemple, ListView prend en charge Ctrl+A pour sélectionner tous les éléments d’une liste et RichEditBox prend en charge Ctrl+Tab pour insérer une tabulation dans la zone de texte. Ces raccourcis clavier intégrés sont appelés **raccourcis de contrôle** et sont exécutés uniquement si le focus est positionné sur l’élément ou l’un de ses enfants. Les raccourcis que vous définissez à l’aide des API de raccourcis clavier présentées ici sont appelés **raccourcis d’application**.
 
-Les raccourcis clavier ne sont pas disponibles pour chaque action, mais sont souvent associés aux commandes affichées dans les menus (et doivent être spécifiés avec le contenu de l’élément de menu). Les raccourcis peuvent également être associés à des actions qui n’ont pas d’éléments de menu équivalents. Toutefois, étant donné que les utilisateurs utilisent les menus d’une application pour découvrir et connaître le jeu de commandes disponibles, vous devez essayer de faciliter la découverte des raccourcis (l’utilisation d’intitulés ou de modèles établis peut s’avérer utile).
+Les raccourcis clavier ne sont pas disponibles pour chaque action, mais sont souvent associés aux commandes affichées dans les menus (et doivent être spécifiés avec le contenu de l’élément de menu).Les raccourcis peuvent également être associés à des actions qui n’ont pas d’éléments de menu équivalents. Toutefois, étant donné que les utilisateurs utilisent les menus d’une application pour découvrir et connaître le jeu de commandes disponibles, vous devez essayer de faciliter la découverte des raccourcis (l’utilisation d’intitulés ou de modèles établis peut s’avérer utile).
 
 ![Raccourcis clavier décrits dans un intitulé d’élément de menu](images/accelerators/accelerators_menuitemlabel.png)  
 *Raccourcis clavier décrits dans un intitulé d’élément de menu*
@@ -48,11 +48,11 @@ Les raccourcis clavier ne sont pas disponibles pour chaque action, mais sont sou
 
 Nous vous recommandons de spécifier les raccourcis clavier chaque fois que cela est approprié dans votre interface utilisateur, et de prendre en charge les raccourcis dans tous les contrôles personnalisés.
 
-- Les raccourcis clavier rendent votre application plus accessible aux utilisateurs souffrant de troubles psychomoteurs, y compris ceux qui ne peuvent pas appuyer simultanément sur les touches ou qui ont des difficultés à utiliser une souris.**
+- Les raccourcis clavier rendent votre application plus accessiblefor aux utilisateurs souffrant de troubles psychomoteurs, y compris ceux qui peuvent appuyer sur une seule clé à la fois ou qui ont des difficultés à utiliser une souris.* *
 
   Une interface utilisateur de clavier bien conçue représente un aspect important de l’accessibilité logicielle. Elle permet aux utilisateurs malvoyants ou souffrant d’un handicap moteur de naviguer dans une application et d’interagir avec ses fonctionnalités. Les utilisateurs qui ne sont pas en mesure d’utiliser une souris peuvent avoir recours à diverses technologies d’assistance, telles que les outils de clavier amélioré, les claviers visuels, les écrans élargis, les lecteurs d’écran et les utilitaires d’entrée vocale. Pour ces utilisateurs, une couverture complète de la commande est essentielle.
 
-- Les raccourcis clavier rendent votre application plus facile d’utilisation pour les utilisateurs avancés qui préfèrent interagir par le biais d’un clavier.
+- Les raccourcis clavier rendent votre application plus usablefor d’utilisateurs avancés qui préfèrent interagir par le biais du clavier.
 
   Les utilisateurs expérimentés ont souvent une préférence marquée pour l’utilisation du clavier, car les commandes clavier peuvent être entrées plus rapidement et ne nécessitent pas de retirer les mains du clavier. Pour ces utilisateurs, l’efficacité et la cohérence sont essentielles. L’exhaustivité n’est importante que pour les commandes les plus fréquemment utilisées.
 
@@ -206,7 +206,7 @@ Dans l’exemple suivant, Ctrl+S déclenche l’événement Click, car le bouton
 ``` xaml 
 <Button Content="Save" Click="OnSave">
   <Button.KeyboardAccelerators>
-    <KeyboardAccelerator Key="S" Modifiers="Control" />
+    <KeyboardAccelerator Key="S" Modifiers="Control" />
   </Button.KeyboardAccelerators>
 </Button>
 ```
@@ -215,7 +215,7 @@ Si un élément implémente plusieurs modèles de contrôle, un seul peut être 
 1.  Invoke (Button)
 2.  Toggle (Checkbox)
 3.  Selection (ListView)
-4.  Expand/Collapse (ComboBox) 
+4.  Expand/Collapse (ComboBox) 
 
 Si aucune correspondance n’est identifiée, le raccourci n’est pas valide et un message de débogage s’affiche («Aucun modèle d’automation pour ce composant n’a été trouvé. Implémentez tout comportement souhaité dans l’événement Invoked. Définir la propriété Handled sur true dans votre gestionnaire d’événements supprime ce message.»)
 
@@ -230,10 +230,10 @@ Nous montrons ici comment définir une collection de raccourcis clavier et comme
 ``` xaml
 <ListView x:Name="MyListView">
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
-    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
+    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
+    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
   </ListView.KeyboardAccelerators>
-</ListView>   
+</ListView>   
 ```
 
 ``` csharp
@@ -261,7 +261,7 @@ Si un contrôle est désactivé, le raccourci associé est également désactiv�
 ``` xaml
 <ListView >
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" 
+    <KeyboardAccelerator Key="A" 
       Modifiers="Control"
       Invoked="CustomListViewSelecAllInvoked" />
   </ListView.KeyboardAccelerators>
@@ -269,10 +269,10 @@ Si un contrôle est désactivé, le raccourci associé est également désactiv�
   <TextBox>
     <TextBox.KeyboardAccelerators>
       <KeyboardAccelerator 
-        Key="A" 
-        Modifiers="Control" 
-        Invoked="CustomTextSelecAllInvoked" 
-        IsEnabled="False" />
+        Key="A" 
+        Modifiers="Control" 
+        Invoked="CustomTextSelecAllInvoked" 
+        IsEnabled="False" />
     </TextBox.KeyboardAccelerators>
   </TextBox>
 
@@ -292,18 +292,18 @@ Dans cet exemple, AutomationProperty.AcceleratorKey renvoie la chaîne «CTRL+Ma
   <ListView.KeyboardAccelerators>
 
     <KeyboardAccelerator 
-      Key="A" 
-      Modifiers="Control,Shift" 
-      Invoked="CustomSelectAllInvoked" />
+      Key="A" 
+      Modifiers="Control,Shift" 
+      Invoked="CustomSelectAllInvoked" />
       
     <KeyboardAccelerator 
-      Key="F5" 
-      Modifiers="None" 
-      Invoked="RefreshInvoked" />
+      Key="F5" 
+      Modifiers="None" 
+      Invoked="RefreshInvoked" />
 
   </ListView.KeyboardAccelerators>
 
-</ListView>   
+</ListView>   
 ```
 
 > [!NOTE] 
@@ -342,14 +342,14 @@ Cela n’est pas toujours possible en raison des différences de fonctionnalité
 
 | **Autres actions** | |
 | ------------- | ----------------------------------- |
-| Ajouter aux Favoris | Ctrl+D | 
-| Actualiser | F5 ou Ctrl+R | 
-| Zoom avant | Ctrl++ | 
-| Zoom arrière | Ctrl+- | 
-| Zoom vers l’affichage par défaut | Ctrl+0 | 
-| Enregistrer | Ctrl+S | 
-| Fermer | Ctrl+W | 
-| Imprimer | Ctrl+P | 
+| Ajouter aux Favoris | Ctrl+D | 
+| Actualiser | F5 ou Ctrl+R | 
+| Zoom avant | Ctrl++ | 
+| Zoom arrière | Ctrl+- | 
+| Zoom vers l’affichage par défaut | Ctrl+0 | 
+| Enregistrer | Ctrl+S | 
+| Fermer | Ctrl+W | 
+| Imprimer | Ctrl+P | 
 
 Notez que certaines des combinaisons ne sont pas valides pour les versions localisées de Windows. Par exemple, dans la version espagnole de Windows, Ctrl+N est utilisé pour la mise en gras au lieu de Ctrl+B. Nous vous recommandons de fournir des raccourcis clavier localisés si l’application est localisée.
 
@@ -626,5 +626,5 @@ public class MyListView : ListView
 * [Galerie de contrôles XAML (c'est-à-dire XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
 
 
- 
+ 
 

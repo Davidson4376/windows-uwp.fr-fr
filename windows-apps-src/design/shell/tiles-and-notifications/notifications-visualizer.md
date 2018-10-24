@@ -1,6 +1,6 @@
 ---
 author: andrewleader
-Description: Notifications Visualizer is a new Universal Windows Platform (UWP) app in the Store that helps developers design adaptive live tiles for Windows 10.
+Description: Notifications Visualizer is a new Universal Windows Platform (UWP) app in the Store that helps developers design adaptive live tiles for Windows 10.
 title: Notifications Visualizer
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 template: detail.hbs
@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: af8b2489346e1ef81c5cae304802814b79b8b950
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432527"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473997"
 ---
 # <a name="notifications-visualizer"></a>Notifications Visualizer
 
  
 
 
-Notifications Visualizer est une nouvelle application de plateforme Windows universelle (UWP) dans le [Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives et des notifications toast interactives pour Windows10.
+Notifications Visualizer est une nouvelle application de plateforme Windows universelle (UWP) [dans le Windows Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives et notifications toast interactives pour Windows 10.
 
 
 ## <a name="overview"></a>Vue d’ensemble
@@ -34,13 +34,13 @@ Cette capture d’écran à partir de l’application montre la charge utile XML
 
 ![Capture d’écran de l’éditeur d’application Notifications Visualizer avec le code et les vignettes](images/notif-visualizer-001.png)
 
- 
+ 
 
 Avec Notifications Visualizer, vous pouvez créer et tester des charges utiles de vignettes et de notifications toast adaptatives sans avoir à modifier et déployer votre propre application. Une fois que vous avez créé une charge utile avec des résultats visuels satisfaisants, vous pouvez l’intégrer dans votre application. Pour plus d’informations, voir [Envoyer une notification par vignette locale](sending-a-local-tile-notification.md) et [Envoyer un toast local](send-local-toast.md).
 
-**Remarque**: la simulation de Notifications Visualizer du menu Démarrer de Windows et des notifications toast n’est pas toujours tout à fait précise, et elle ne prend pas en charge certaines propriétés de charge utile avancées. Une fois la vignette ou le toast voulu obtenu, testez-le en épinglant la vignette ou en affichant le toast pour vérifier qu’il s’affiche comme vous le souhaitez.
+**Remarque**  simulation Notifications Visualizer des notifications toast et menu Démarrer de Windows n’est pas toujours tout à fait précise, et elle ne prend pas en charge certaines propriétés de charge utile avancées. Une fois la vignette ou le toast voulu obtenu, testez-le en épinglant la vignette ou en affichant le toast pour vérifier qu’il s’affiche comme vous le souhaitez.
 
- 
+ 
 
 ## <a name="features"></a>Fonctionnalités
 
@@ -54,7 +54,7 @@ Cette capture d’écran de l’application montre l’éditeur de vignettes:
 
 ![Capture d’écran de l’éditeur Notifications Visualizer avec les vignettes](images/notif-visualizer-004.png)
 
- 
+ 
 
 ## <a name="related-topics"></a>Rubriques connexes
 

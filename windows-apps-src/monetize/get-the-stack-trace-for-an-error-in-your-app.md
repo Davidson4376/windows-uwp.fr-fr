@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, services du Store, API d’analyse du MicrosoftStore, trace de pile, erreur
 ms.localizationpriority: medium
 ms.openlocfilehash: 54c39d157bc2fcab6a67bd273f5d00eedd80be54
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430860"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470430"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>Obtenir la trace de pile concernant une erreur dans votre application
 
@@ -56,7 +56,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 | applicationId | chaîne | ID WindowsStore de l’application dont vous souhaitez obtenir la trace de pile. L’ID WindowsStore est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8. |  Oui  |
 | cabId | chaîne | ID unique du fichierCAB associé à l’erreur dont vous voulez récupérer la trace de pile. Pour obtenir cet ID, utilisez la méthode [Obtenir les détails d’une erreur dans votre application](get-details-for-an-error-in-your-app.md) pour récupérer les détails d’une erreur spécifique dans votre application, en spécifiant la valeur **cabId** dans le corps de la réponse. |  Oui  |
 
- 
+ 
 ### <a name="request-example"></a>Exemple de requête
 
 L’exemple suivant montre comment obtenir la trace de pile avec cette méthode. Remplacez la valeur *applicationId* par l’ID WindowsStore de votre application.

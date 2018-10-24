@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, cœur de métier, métier, applications d’entreprise, store pour entreprises, store pour éducation, entreprise
 ms.localizationpriority: medium
 ms.openlocfilehash: 9149533a12263e105356a1683257c4d9172eefb5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433609"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471510"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>Distribuer des applications métier aux entreprises
 
@@ -23,7 +23,7 @@ ms.locfileid: "5433609"
 Vous pouvez publier des applications métiers directement à l’attention des entreprises pour une acquisition en volume par le biais de MicrosoftStore pour Entreprises ou de MicrosoftStore pour Éducation, sans mettre vos applications à la disposition générale dans le WindowsStore.
 
 > [!NOTE]
-> Pour l’instant, seules les applications gratuites peuvent être distribuées de façon exclusive aux entreprises par le biais de MicrosoftStore pour Entreprises ou de MicrosoftStore pour Éducation. Si vous soumettez une application payante en tant qu’application métier, elle ne sera pas disponible pour l’entreprise. 
+> Pour l’instant, seules les applications gratuites peuvent être distribuées de façon exclusive aux entreprises par le biais de MicrosoftStore pour Entreprises ou de MicrosoftStore pour Éducation. Si vous soumettez une application payante en tant qu’application métier, elle ne sera pas disponible pour l’entreprise. 
 
 > [!IMPORTANT]
 > Vous ne pouvez pas utiliser l'[API de soumission au MicrosoftStore](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour publier des applications métier directement à destination des entreprises. Toutes les soumissions d'applications métier doivent être effectuées à l’aide du tableau de bord du Centre de développement Windows.
@@ -100,9 +100,9 @@ Dans certains cas, les entreprises ne souhaitent pas soumettre leurs application
 
 Pour plus d’informations, consultez l’article [Chargement indépendant d’applications métier dans Windows10](http://go.microsoft.com/fwlink/p/?LinkId=623433).
 
- 
+ 
 
- 
+ 
 
 
 

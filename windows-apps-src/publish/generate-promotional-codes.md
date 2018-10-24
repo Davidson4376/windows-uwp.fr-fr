@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows10, uwp, code promotionnel, codes promotionnels, jeton, jetons
 ms.localizationpriority: medium
 ms.openlocfilehash: 37263794ffed6660f71c5e16195e992588c16d4a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440525"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472462"
 ---
 # <a name="generate-promotional-codes"></a>Générer des codes promotionnels
 
 
-Vous pouvez générer des codes promotionnels pour une application ou un module complémentaire que vous avez publiés dans le Microsoft Store. Les codes promotionnels permettent d’offrir facilement à des utilisateurs influents un accès gratuit à votre application ou votre module complémentaire. Vous pouvez également utiliser des codes promotionnels dans des scénarios de service client, en offrant aux utilisateurs un accès gratuit à votre application ou votre module complémentaire, ou pour effectuer un [test bêta](beta-testing-and-targeted-distribution.md) dans Windows10. 
+Vous pouvez générer des codes promotionnels pour une application ou un module complémentaire que vous avez publiés dans le Microsoft Store. Les codes promotionnels permettent d’offrir facilement à des utilisateurs influents un accès gratuit à votre application ou votre module complémentaire. Vous pouvez également utiliser des codes promotionnels dans des scénarios de service client en offrant aux utilisateurs un accès gratuit à votre application ou extension, ou pour le [bêta-test](beta-testing-and-targeted-distribution.md) avec Windows 10. 
 
 Chaque code promotionnel dispose d’une URL donnant droit unique correspondante laquelle un client peut cliquer pour pouvoir utiliser le code et installer votre application ou module complémentaire à partir du Microsoft Store.  Notez que votre application doit exécuter la phase finale de publication du [processus de certification des applications](the-app-certification-process.md) avant que les clients ne puissent utiliser un code promotionnel pour l’installer.
 
@@ -115,4 +115,4 @@ Pour consulter un récapitulatif détaillé des commandes de codes promotionnels
 
 Vous pouvez également [télécharger](#download-and-distribute-promotional-codes) une commande à partir de ce tableau.
 
- 
+ 

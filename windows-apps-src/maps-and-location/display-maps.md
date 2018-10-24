@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, carte, emplacement, contrôle de carte, vues cartographiques
 ms.localizationpriority: medium
 ms.openlocfilehash: ba03d430031ad2bdad6959e2c59500dc6f2d2666
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434461"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476558"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>Afficher des cartes avec des vues 2D, 3D et Streetside
 
@@ -153,7 +153,7 @@ Définissez l’emplacement à afficher sur la carte en spécifiant la propriét
 > [!NOTE]
 > Dans la mesure où une chaîne ne peut pas être convertie en valeur [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675), vous ne pouvez pas spécifier de valeur pour la propriété [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) dans le balisage XAML, sauf si vous utilisez la fonction de liaison de données. (Cette limitation s’applique également à la propriété [**MapControl.Location**](https://msdn.microsoft.com/library/windows/apps/dn653264) jointe.)
 
- 
+ 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
@@ -327,9 +327,9 @@ Pour afficher une vue Streetside
 
 Cet exemple montre comment afficher une vue Streetside similaire à l’image précédente.
 
-**Remarque** La vue d’ensemble n’apparaît pas si le contrôle de carte est trop petit.
+**Remarque**la carte de la vue d’ensemble n’apparaître pas si le contrôle de carte est trop petit.
 
- 
+ 
 
 ```csharp
 private async void showStreetsideView()

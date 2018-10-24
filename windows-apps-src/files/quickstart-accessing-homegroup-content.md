@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 79873d014c5ee735a509328d4a123f839831325b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440125"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476053"
 ---
 # <a name="accessing-homegroup-content"></a>Accès au contenu du Groupement résidentiel
 
@@ -38,7 +38,7 @@ Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utili
     Pour accéder au contenu Groupement résidentiel, l’ordinateur de l’utilisateur doit avoir un Groupement résidentiel configuré et votre application au moins l’une des fonctionnalités suivantes: **picturesLibrary**, **musicLibrary** ou **videosLibrary**. Lorsque votre application accédera au dossier Groupement résidentiel, elle ne verra que les bibliothèques correspondant aux fonctionnalités déclarées dans le manifeste de votre application. Pour en savoir plus, voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
 
     > [!NOTE]
-    >  Le contenu de la bibliothèque Documents d’un Groupement résidentiel n’est pas visible pour votre application, quelles que soient les fonctionnalités déclarées dans le manifeste de votre application et quels que soient les paramètres de partage de l’utilisateur.     
+    >  Le contenu de la bibliothèque Documents d’un Groupement résidentiel n’est pas visible pour votre application, quelles que soient les fonctionnalités déclarées dans le manifeste de votre application et quels que soient les paramètres de partage de l’utilisateur.     
 
 -   **Comprendre comment utiliser les sélecteurs de fichiers**
 

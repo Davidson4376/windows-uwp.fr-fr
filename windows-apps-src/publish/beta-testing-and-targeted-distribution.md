@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, test bêta, distribution limitée, bêta, test, testeurs
 ms.localizationpriority: medium
 ms.openlocfilehash: e453be22d752ed78263cb34011cdf9a333057e03
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440385"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473801"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>Tests bêta et distribution ciblée
 
@@ -79,4 +79,4 @@ Pour utiliser cette option:
 > [!IMPORTANT]
 > Cette option n’est pas disponible pour les nouvelles soumissions. Si vous aviez précédemment sélectionné cette option pour une application ciblant WindowsPhone8.1 ou version antérieure, vous pourrez continuer à l’utiliser pour cette application. Vous pouvez apporter des modifications à la liste de testeurs (jusqu'à 10000) en créant une nouvelle soumission. 
 
-Avec cette option, les personnes avec les adresses de messagerie que vous avez spécifiées peuvent télécharger l’application (sur un appareil exécutant WindowsPhone8.1 ou version antérieure uniquement) en utilisant le lien direct vers sa description. Aucun autre client ne sera en mesure de télécharger l’application, même s’il a le lien, et personne d’autre ne pourra trouver l’application dans le Store par recherche ou par navigation. Afin que les testeurs puissent télécharger l’application, vous devez leur donner son lien (l’**URL** sur la [page Identité des applications](view-app-identity-details.md)), et il doivent être connectés avec un compte Microsoft associé à une adresse de messagerie que vous avez fournie. Vous pouvez également rendre l’application disponible pour les testeurs sur les appareils Windows10 en [générant des codes promotionnels](generate-promotional-codes.md). Toute personne disposant de l’un des codes promotionnels pour votre application pourra la télécharger sur un appareil Windows10, même si vous n’avez pas entré son adresse de messagerie ici.
+Avec cette option, les personnes avec les adresses de messagerie que vous avez spécifiées peuvent télécharger l’application (sur un appareil exécutant WindowsPhone8.1 ou version antérieure uniquement) en utilisant le lien direct vers sa description. Aucun autre client ne sera en mesure de télécharger l’application, même s’il a le lien, et personne d’autre ne pourra trouver l’application dans le Store par recherche ou par navigation. Afin que les testeurs puissent télécharger l’application, vous devez leur donner son lien (l’**URL** sur la [page Identité des applications](view-app-identity-details.md)), et il doivent être connectés avec un compte Microsoft associé à une adresse de messagerie que vous avez fournie. Vous pouvez également rendre l’application disponible pour les testeurs sur des appareils Windows 10 en [générant des codes promotionnels](generate-promotional-codes.md); quiconque avec l’un des codes promotionnels de votre application peut la télécharger sur un appareil Windows 10, même si vous n’avez pas entré son adresse de messagerie ici.

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, chaîne
 ms.localizationpriority: medium
 ms.openlocfilehash: 865267a6897a551613479a099d10dd6d5a91c315
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438138"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468946"
 ---
 # <a name="string-handling-in-cwinrt"></a>Gestion des chaînes en C++/WinRT
 
@@ -168,10 +168,10 @@ Une des options de mise en forme des chaînes est **std::wstringstream**. Voici 
 ...
 void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
 {
-    float2 const point = args.CurrentPoint().Position();
-    std::wstringstream wstringstream;
-    wstringstream << L"Pointer pressed at (" << point.x << L"," << point.y << L")" << std::endl;
-    ::OutputDebugString(wstringstream.str().c_str());
+    float2 const point = args.CurrentPoint().Position();
+    std::wstringstream wstringstream;
+    wstringstream << L"Pointer pressed at (" << point.x << L"," << point.y << L")" << std::endl;
+    ::OutputDebugString(wstringstream.str().c_str());
 }
 ```
 

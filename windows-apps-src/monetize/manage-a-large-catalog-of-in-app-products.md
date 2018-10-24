@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10, uwp, achats dans l'application, FAI, extensions, catalogue, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: fad186ed63557024fb71a6ec3c6997833afb7f4c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432587"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473352"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>Gérer un vaste catalogue de produits in-app
 
-Si votre application propose un vaste catalogue de produits in-app, vous pouvez éventuellement suivre la procédure décrite dans cette rubrique pour faciliter la gestion de votre catalogue. Avant Windows10, le WindowsStore avait une limite de 200produits par compte de développeur et la procédure décrite dans cette rubrique permettait de contourner cette limite. Depuis Windows10, le WindowsStore n’a aucune limite quant au nombre de produits listés par compte de développeur. La procédure décrite dans cette rubrique n’est donc plus nécessaire.
+Si votre application propose un vaste catalogue de produits in-app, vous pouvez éventuellement suivre la procédure décrite dans cette rubrique pour faciliter la gestion de votre catalogue. Avant Windows10, le WindowsStore avait une limite de 200produits par compte de développeur et la procédure décrite dans cette rubrique permettait de contourner cette limite. À compter de Windows 10, le Windows Store n’a aucune limite au nombre de produits listés par compte de développeur, et la procédure décrite dans cet article n’est plus nécessaire.
 
 > [!IMPORTANT]
 > Cet article montre comment utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Cet espace de noms n’est plus mis à jour avec de nouvelles fonctionnalités et nous vous recommandons d’utiliser l'espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) à la place. L’espace de noms **Windows.Services.Store** prend en charge les types d’extension les plus récents, comme les extensions et les abonnements consommables gérés par le Store. Il est conçu pour être compatible avec les futurs types de produits et de fonctionnalités pris en charge par le Centre de développement Windows et le Store. L'espace de noms **Windows.Services.Store** a été introduit dans Windows10, version1607 et peut être utilisé uniquement dans les projets qui ciblent **Windows10 Anniversary Edition (version10.0; build14393)** ou une version ultérieure dans Visual Studio. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).

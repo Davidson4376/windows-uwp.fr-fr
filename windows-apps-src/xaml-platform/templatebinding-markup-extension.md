@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c1812adc9d5610fffd6f9d275b4e093a4fa96e6
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5437682"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475314"
 ---
 # <a name="templatebinding-markup-extension"></a>Extension de balisage {TemplateBinding}
 
@@ -57,7 +57,7 @@ Vous pouvez utiliser **TemplateBinding** lorsque la valeur du parent basé sur u
 
 **TemplateBinding** est une extension de balisage. Les extensions de balisage sont généralement implémentées lorsqu’il est nécessaire de procéder à l’échappement de valeurs d’attribut pour en faire autre chose que des valeurs littérales ou des noms de gestionnaires. Il s’agit d’une mesure plus globale que celle qui consiste à placer simplement des convertisseurs de types au niveau de certains types ou propriétés. Toutes les extensions de balisage XAML utilisent les caractères «{» et «}» dans leur syntaxe d’attribut, ce qui correspond à la convention qui permet au processeur XAML de reconnaître qu’une extension de balisage doit traiter l’attribut.
 
-**Remarque** Dans l’implémentation du processeur XAML Windows Runtime, il n’existe aucune représentation de classe de stockage pour **TemplateBinding**. **TemplateBinding** est à utiliser exclusivement dans le balisage XAML. Il n’y a pas de moyen simple de reproduire le comportement dans du code.
+**Remarque**implémentation du processeur dans le XAML Windows Runtime, il n’existe aucune représentation de classe de stockage pour **TemplateBinding**. **TemplateBinding** est à utiliser exclusivement dans le balisage XAML. Il n’y a pas de moyen simple de reproduire le comportement dans du code.
 
 ### <a name="xbind-in-controltemplate"></a>x: Bind dans ControlTemplate
 
@@ -84,5 +84,5 @@ Dans l’exemple suivant, le TextBlock.Text est évaluée à Button.Content.ToSt
 * [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)
 * [Vue d’ensemble du langage XAML](xaml-overview.md)
 * [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md)
- 
+ 
 

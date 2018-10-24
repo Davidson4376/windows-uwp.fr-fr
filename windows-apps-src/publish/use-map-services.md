@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d322a22898f2f45a89b4cd30051149133bc3e2bf
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430965"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469025"
 ---
 # <a name="use-map-services"></a>Utiliser les services cartographiques
 
@@ -28,9 +28,9 @@ Tout moment une fois que vous avez [réservé de nom de votre application](creat
 > [!IMPORTANT]
 > Veillez à ajouter les **ApplicationID** et **AuthenticationToken** à votre code avant de vous package et soumettez votre application. Pour plus d’informations, voir [Comment ajouter un contrôle de carte à une page (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882).
 
- 
+ 
 
- 
+ 
 
 
 

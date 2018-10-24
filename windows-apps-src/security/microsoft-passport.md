@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: b81bf3c55b493d8e36f186ec56b68367c6245cc7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434058"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478186"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
@@ -451,7 +451,7 @@ Mission accomplie ! Vous venez de contribuer à rendre Internet plus sûr !
 | Module de plateforme sécurisée                 | Le module de plateforme sécurisée peut être utilisé pour créer des paires de clés de chiffrement publiques/privées de façon à ce que la clé privée ne puisse jamais être révélée ni utilisée en dehors du TPM (autrement dit, la clé ne peut pas faire l’objet d’une migration).                                                                                                                                                                                                                                                                                                               |
 | Attestation de clé TPM | Protocole qui prouve par le biais du chiffrement qu’une clé est liée au TPM. Vous pouvez utiliser ce type d’attestation pour vérifier si une certaine opération de chiffrement s’est produite dans le TPM d’un ordinateur donné.                                                                                                                                                                                                                                                                                                                       |
 
- 
+ 
 
 ## <a name="related-topics"></a>Rubriques connexes
 

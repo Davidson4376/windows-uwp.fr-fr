@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, opérateurs mobiles, facturation mobile, facturation de l’opérateur mobile
 ms.localizationpriority: medium
 ms.openlocfilehash: da08e63cc42987f1a3876e13a713d670a80cf9ba
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432643"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471851"
 ---
 # <a name="mobile-operator-billing"></a>Facturation de l’opérateur mobile
 
@@ -23,7 +23,7 @@ ms.locfileid: "5432643"
 Le MicrosoftStore propose la facturation de l’opérateur mobile comme mode de paiement pour les appareils exécutant Windows10, les téléphones exécutant Windows10Mobile et les consoles Xbox One. Si l’opérateur mobile d’un client prend en charge cette fonctionnalité, le client peut ajouter la facturation de l’opérateur mobile comme mode de paiement et l’utiliser pour effectuer des achats dans le Store à l’aide de son compte mobile.
 
 > [!TIP]
->  Si l’opérateur mobile d’un client propose la facturation de l’opérateur mobile, mais que le client n’a pas accès à cette option sur son appareil, consultez ces [étapes](http://go.microsoft.com/fwlink/p/?LinkId=523993).
+>  Si l’opérateur mobile d’un client propose la facturation de l’opérateur mobile, mais que le client n’a pas accès à cette option sur son appareil, consultez ces [étapes](http://go.microsoft.com/fwlink/p/?LinkId=523993).
 
 Nous collaborons régulièrement avec les opérateurs mobiles pour développer la disponibilité de ce mode de paiement. Si vous souhaitez suggérer un opérateur mobile dont le nom n’est pas répertorié ci-dessous, contactez cet opérateur mobile et demandez-lui d’ajouter ce mode de paiement.
 
@@ -57,16 +57,16 @@ La facturation de l'opérateur mobile est actuellement prise en charge par les o
 | États-Unis   | Sprint, Verizon                  |
 | Royaume-Uni  | O2, 3UK, EE                     |
 
- 
+ 
 
 
 
- 
+ 
 
 
- 
+ 
 
- 
+ 
 
 
 

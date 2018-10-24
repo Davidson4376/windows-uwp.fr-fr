@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, services du Store, API d’analyse du MicrosoftStore, trace de pile, erreur, application de bureau
 ms.localizationpriority: medium
 ms.openlocfilehash: 60f4ed7251fa934190a96e8c7d6f0edd21520980
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440135"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472162"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>Obtenir la trace de pile concernant une erreur dans votre application de bureau
 
@@ -46,7 +46,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
- 
+ 
 
 ### <a name="request-parameters"></a>Paramètres de la requête
 
@@ -55,7 +55,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 | applicationId | chaîne | L'ID produit de l’application de bureau dont vous souhaitez obtenir une trace de pile. Pour obtenir l’ID produit d’une application de bureau, ouvrez le [rapport analytique du centre de développement de votre application de bureau](https://msdn.microsoft.com/library/windows/desktop/mt826504) (par exemple, le **Rapport d’intégrité**) et récupérez l’ID produit à partir de l’URL. |  Oui  |
 | cabIdHash | chaîne | Le hachage d'ID unique du fichierCAB associé à l’erreur dont vous souhaitez récupérer la trace de pile. Pour obtenir cette valeur, utilisez la méthode [Obtenir les détails d’une erreur dans votre application de bureau](get-details-for-an-error-in-your-desktop-application.md) pour récupérer les détails d’une erreur spécifique dans votre app, en spécifiant la valeur **cabIdHash** dans le corps de la réponse. |  Oui  |
 
- 
+ 
 ### <a name="request-example"></a>Exemple de requête
 
 L’exemple suivant montre comment obtenir la trace de pile avec cette méthode. Remplacez les paramètres *applicationId* et *cabIdHash* par les valeurs qui correspondent à votre application de bureau.

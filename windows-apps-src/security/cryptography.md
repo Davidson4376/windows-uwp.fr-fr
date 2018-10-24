@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: aa01cc3d70db7a94667e944d1a1739e911f94b0c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439148"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469768"
 ---
 # <a name="cryptography"></a>Chiffrement
 
@@ -46,7 +46,7 @@ The following terminology is commonly used in cryptography and public key infras
 | Key Storage Provider        | A container for storing key material. Currently, keys can be stored in software, smart cards, or the trusted platform module (TPM).                                                                   |
 | X.509 Certificate           | A digital document, typically issued by a certification authority, to verify the identity of an individual, system, or entity to other interested parties.                                            |
 
- 
+ 
 ## <a name="namespaces"></a>Namespaces
 
 The following namespaces are available for use in apps.
@@ -152,4 +152,4 @@ Les articles suivants fournissent plus de détails sur la sécurité:
 | [Restrictions à l’exportation liées à l’utilisation du chiffrement](export-restrictions-on-cryptography.md) | Utilisez ces informations pour déterminer si votre application emploie un type de chiffrement qui pourrait l’empêcher de figurer dans le Microsoft Store.                                                                                                                                                                                                                                                                                                                                                                                            |
 | [Tâches courantes de chiffrement](common-cryptography-tasks.md)                     | Ces articles fournissent des exemples de code pour les tâches de chiffrement UWP courantes, telles que la création de nombres aléatoires, la comparaison de mémoires tampon, la conversion entre chaînes et données binaires, la copie de tableaux d’octets, et le codage/décodage de données.                                                                                                                                                                                                                                                                                    |
 
- 
+ 

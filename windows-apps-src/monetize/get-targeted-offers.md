@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, services du MicrosoftStore, API des offres ciblées du Store, obtenir des offres ciblées
 ms.localizationpriority: medium
 ms.openlocfilehash: 1032831492443460bd63671012a09edfceca2690
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435999"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479075"
 ---
 # <a name="get-targeted-offers"></a>Obtenir des offres ciblées
 
@@ -83,6 +83,6 @@ L’exemple suivant représente un exemple de corps de réponse JSON pour cette 
 
 * [Gérer les offres ciblées à l’aide des services du Store](manage-targeted-offers-using-windows-store-services.md)
 
- 
+ 
 
- 
+ 

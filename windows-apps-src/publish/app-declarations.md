@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 959e056d5edf5e1fe7a1c51a2f855c9e11512cb0
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430725"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469310"
 ---
 # <a name="product-declarations"></a>Déclarations de produit
 
@@ -44,7 +44,7 @@ Lorsque vous déclarez votre application comme étant accessible, vous certifiez
 Pour plus d’informations, voir [l’accessibilité](../design/accessibility/accessibility.md), [test d’accessibilité](../design/accessibility/accessibility-testing.md)et [l’accessibilité dans le Windows Store](../design/accessibility/accessibility-in-the-store.md).
 
 > [!IMPORTANT]
-> Pas de liste votre application comme accessible, sauf si vous avez spécifiquement conçue et testée à cet effet. Si votre application est déclarée comme étant accessible, mais qu’elle ne prend pas réellement en charge l’accessibilité, vous allez probablement recevoir des commentaires négatifs de la part de la communauté.
+> Pas de liste votre application comme accessible, sauf si vous avez spécifiquement conçue et testée à cet effet. Si votre application est déclarée comme étant accessible, mais qu’elle ne prend pas réellement en charge l’accessibilité, vous allez probablement recevoir des commentaires négatifs de la part de la communauté.
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>Les clients peuvent installer cette application sur d'autres disques ou dispositifs de stockage amovible.
 
@@ -68,11 +68,11 @@ Si votre application utilise des données de Kinect et l’envoie à n’importe
 
 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

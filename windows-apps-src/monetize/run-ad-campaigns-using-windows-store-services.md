@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, API de promotions du MicrosoftStore, campagnes de publicité
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a1f08dbd70904284179c90fa00d2abd9acf4b97
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430810"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472064"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>Gérer des campagnes publicitaires à l’aide des services du Windows Store
 
@@ -117,4 +117,4 @@ L’exemple de code suivant montre comment obtenir un jeton d’accès AzureAD e
 * [Obtenir les données relatives aux performances des campagnes publicitaires](get-ad-campaign-performance-data.md)
 
 
- 
+ 

@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp, windows forms, wpf
 keywords: Windows 10, uwp, WinForms, wpf, win32
 ms.localizationpriority: medium
-ms.openlocfilehash: 59072374e19da1c5c7e6e6a5e6a7b8c172d74052
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: 5803646c3b613a5a57992a9791215138cf996966
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435472"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474023"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>À l’aide de XAML UWP API d’hébergement dans une application de bureau
 
@@ -89,7 +89,7 @@ Voici les principales étapes pour héberger un contrôle UWP dans votre applica
 
     * Si votre application crée l’objet **DesktopWindowXamlSource** avant de créer des objets **Windows.UI.Xaml.UIElement** , cette infrastructure sera initialisée pour vous lorsque vous instanciez l’objet **DesktopWindowXamlSource** . Dans ce scénario, vous n’avez pas besoin d’ajouter du code de votre choix pour initialiser l’infrastructure.
 
-    * Toutefois, si votre application crée les objets **Windows.UI.Xaml.UIElement** avant de créer l’objet **DesktopWindowXamlSource** qui hébergera les, votre application doit appeler la méthode statique [** WindowsXamlManager.InitializeForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) méthode d’initialiser explicitement l’infrastructure XAML UWP avant que les objets **Windows.UI.Xaml.UIElement** sont instanciées. Votre application doit généralement doit appeler cette méthode lorsque l’élément d’interface utilisateur parent qui héberge le **DesktopWindowXamlSource** est instancié.
+    * Toutefois, si votre application crée les objets **Windows.UI.Xaml.UIElement** avant de créer l’objet **DesktopWindowXamlSource** qui hébergera les, votre application doit appeler la méthode statique [** WindowsXamlManager.InitializeForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) méthode d’initialiser explicitement l’infrastructure XAML UWP avant que les objets **Windows.UI.Xaml.UIElement** sont instanciées. Votre application doit généralement appeler cette méthode lorsque l’élément d’interface utilisateur parent qui héberge le **DesktopWindowXamlSource** est instancié.
 
     ```cppwinrt
     Windows::UI::Xaml::Hosting::WindowsXamlManager windowsXamlManager =

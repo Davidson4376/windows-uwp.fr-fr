@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows10, uwp, win32, bureau, notifications toast, envoyer un toast, envoyer un toast local, pont du bureau, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
 ms.openlocfilehash: a6134e65a27563f96c03880dea026bed11f46641
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430925"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476901"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Envoyer une notification toast locale depuis des applications WRL de bureau en C++
 

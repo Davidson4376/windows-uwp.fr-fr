@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 89c021bb2c094aafc9b534acef9b009817669461
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439266"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472331"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>Déclenchement d’événements dans les composants Windows Runtime
 > [!NOTE]
@@ -142,7 +142,7 @@ Ajoutez un composant Windows Runtime C# à la solution : dans l’Explorateur de
 
 Dans l’Explorateur de solutions, ouvrez le menu contextuel de la solution, puis choisissez **Propriétés**. Dans la boîte de dialogue **Pages de propriétés**, sélectionnez **Propriétés de configuration** dans le volet gauche, puis en haut de la boîte de dialogue, définissez **Configuration** sur **Déboguer** et **Plateforme** sur x86, x64 ou ARM. Cliquez sur le bouton **OK**.
 
-**Important** Plateforme = Toute CPU ne fonctionnera pas, car cette option n’est pas valide pour la DLL Win32 de code natif que vous ajouterez à la solution ultérieurement.
+**Important**plateforme = toute CPU ne fonctionnera pas, car il n’est pas valide pour la DLL Win32 de code natif que vous ajouterez à la solution ultérieurement.
 
 Dans l’Explorateur de solutions, remplacez le nom class1.cs par ToasterComponent.cs afin qu’il corresponde au nom du projet. Visual Studio renomme automatiquement la classe dans le fichier pour qu’elle corresponde au nouveau nom de fichier.
 
@@ -150,7 +150,7 @@ Dans le fichier .cs, ajoutez une directive using pour l’espace de noms Windows
 
 Lorsque vous avez besoin de proxys et de stubs, votre composant doit utiliser des interfaces pour exposer ses membres publics. Dans ToasterComponent.cs, définissez une interface pour le générateur de toasts et une autre pour le toast que le générateur produit.
 
-**Remarque** En C#, vous pouvez ignorer cette étape. À la place, créez d’abord une classe, puis ouvrez son menu contextuel et choisissez **Refactoriser &gt; Extraire l’interface**. Dans le code généré, donnez manuellement aux interfaces une accessibilité publique.
+**Remarque**en c# vous pouvez ignorer cette étape. À la place, créez d’abord une classe, puis ouvrez son menu contextuel et choisissez **Refactoriser &gt; Extraire l’interface**. Dans le code généré, donnez manuellement aux interfaces une accessibilité publique.
 
 ```csharp
     public interface IToaster
@@ -218,8 +218,8 @@ Ensuite, nous avons besoin de classes qui implémentent ces interfaces, et qui s
 
 Dans le code précédent, nous créons le toast, puis accélérons un élément de travail de pool de threads pour déclencher la notification. Bien que l’IDE puisse suggérer que vous appliquez le mot clé await à l’appel asynchrone, cela n’est pas nécessaire dans ce cas, parce que la méthode n’effectue aucun travail dépendant des résultats de l’opération.
 
-**Remarque** L’appel asynchrone dans le code précédent utilise ThreadPool.RunAsync uniquement pour illustrer un moyen simple de déclencher l’événement sur un thread d’arrière-plan. Vous pouvez écrire cette méthode particulière comme indiqué dans l’exemple suivant, et elle s’exécutera correctement, car le planificateur de tâches .NET marshale automatiquement les appels asynchrones/d’attente vers le thread d’interface utilisateur.
-  
+**Remarque**l’appel asynchrone dans le code précédent utilise ThreadPool.RunAsync uniquement pour illustrer un moyen simple de déclencher l’événement sur un thread d’arrière-plan. Vous pouvez écrire cette méthode particulière comme indiqué dans l’exemple suivant, et elle s’exécutera correctement, car le planificateur de tâches .NET marshale automatiquement les appels asynchrones/d’attente vers le thread d’interface utilisateur.
+  
 ```csharp
     public async void MakeToast(string message)
     {
@@ -330,7 +330,7 @@ winmdidl /outdir:output "$(TargetPath)"
 midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid "$(ProjectDir)$(TargetName)_i.c" /env win32 /h "$(ProjectDir)$(TargetName).h" /winmd "Output\$(TargetName).winmd" /W1 /char signed /nologo /winrt /dlldata "$(ProjectDir)dlldata.c" /proxy "$(ProjectDir)$(TargetName)_p.c" "Output\$(TargetName).idl"
 ```
 
-**Important**  Pour un ARM ou x64 configuration du projet, modifiez le paramètre de /env MIDL en arm32 ou x x64.
+**Important**pour un ARM ou x64 configuration du projet, modifiez le paramètre de /env MIDL en arm32 ou x x64.
 
 Pour vous assurer que le fichier IDL est régénéré chaque fois que le fichier .winmd est modifié, changer de d' **exécuter l’événement post-build** **lorsque la génération met à jour la sortie du projet.**
 La page de propriétés événements de Build doit ressembler à ceci: ![événements de build](./images/buildevents.png)

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438949"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472449"
 ---
 # <a name="app-management-and-services"></a>Gestion des applications et services
 
@@ -44,7 +44,7 @@ Pour plus d’informations, voir [Exécuter des expériences d’application ave
 Pour utiliser les services cartographiques dans les applications pour Windows Phone 8.1 et versions antérieures, vous devez insérer un identifiant et un jeton d’application de service cartographique dans le code de votre application. Ce jeton est accessible sur la page **Cartes**, dans la section **Services**.
 
 > [!NOTE]
-> Pour utiliser les services cartographiques dans des applications ciblant Windows10 ou Windows8.x, visitez le [Centre de développement Bing Cartes](http://go.microsoft.com/fwlink/p/?LinkId=614880). Pour plus d’informations, voir [Demander une clé d’authentification de cartes](https://docs.microsoft.com/windows/uwp/maps-and-location/authentication-key).
+> Pour utiliser les services cartographiques dans des applications ciblant Windows10 ou Windows8.x, visitez le [Centre de développement Bing Cartes](http://go.microsoft.com/fwlink/p/?LinkId=614880). Pour plus d’informations, voir [Demander une clé d’authentification de cartes](https://docs.microsoft.com/windows/uwp/maps-and-location/authentication-key).
 
 Pour plus d’informations, voir [Utiliser les services cartographiques](use-map-services.md).
 
@@ -101,6 +101,6 @@ Selon le type de package de votre application et ses besoins spécifiques, vous 
 -   **Microsoft Azure Mobile Apps** vous permet d’envoyer des notifications Push, d’authentifier et de gérer les utilisateurs des applications et de stocker les données des applications dans le cloud. Pour plus d’informations, voir la [documentation sur les applications mobiles](http://go.microsoft.com/fwlink/p/?LinkId=221116).
 
 -   **Microsoft Push Notifications Service (MPNS)** peut être utilisé avec vos packages .xap pour Windows Phone. Vous pouvez envoyer un nombre limité de notifications non authentifiées sans intervenir sur la configuration, bien que nous vous recommandons d’utiliser des notifications authentifiées pour éviter les seuils de limitation. Si vous utilisez MPNS, vous devez charger un certificat dans le champ fourni sur la page **WNS/MPNS** . Pour plus d’informations, voir [Configuration d’un service web authentifié pour envoyer des notifications Push pour Windows Phone 8](http://go.microsoft.com/fwlink/p/?LinkId=528736).
- 
+ 
 
- 
+ 

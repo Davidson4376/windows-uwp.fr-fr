@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f99396b117efcf7c3bed3cb64f24b519734cc858
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441197"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471568"
 ---
 # <a name="trademark-and-copyright-protection"></a>Protection de la marque et du copyright
 
@@ -67,9 +67,9 @@ Non, pas sans autorisation. Bien que le droit d'auteur ne protège pas l'idée d
 
 Lisez attentivement l’avis de Microsoft, et suivez les instructions. L’avis de Microsoft peut inclure des étapes spécifiques que vous pouvez suivre pour nous informer de ce que vous avez fait pour corriger le problème, que vous n’êtes pas d’accord avec le demandeur, et/ou que vous souhaitez soumettre à nouveau votre application sur le Store.
 
- 
+ 
 
- 
+ 
 
 
 

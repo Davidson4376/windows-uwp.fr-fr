@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eebb967a7bf11163dc2e0ba502b40495901b39b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432987"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476449"
 ---
 # <a name="optimize-animations-media-and-images"></a>Optimiser les animations, les éléments multimédias et les images
 
@@ -58,7 +58,7 @@ Le contenu Web d’un contrôle [**WebView**](https://msdn.microsoft.com/library
 
 L’animation d’un objet [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) est également une mauvaise idée. Au-delà de l’impact négatif sur les performances, elle peut provoquer des dégradations ou d’autres artefacts sur le contenu vidéo qui est lu.
 
-> **Remarque**  Les recommandations de cet article concernant l’objet **MediaPlayerElement** s’appliquent également à l’objet [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926). L’objet **MediaPlayerElement** étant uniquement disponible dans Windows10, version1607, si vous créez une application pour une version précédente de Windows, vous avez besoin d’utiliser l’objet **MediaElement**.
+> **Remarque**  les recommandations de cet article **mediaplayerelement** s’appliquent également aux [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926). L’objet **MediaPlayerElement** étant uniquement disponible dans Windows10, version1607, si vous créez une application pour une version précédente de Windows, vous avez besoin d’utiliser l’objet **MediaElement**.
 
 ### <a name="use-infinite-animations-sparingly"></a>Utiliser avec parcimonie les animations infinies
 
@@ -70,7 +70,7 @@ L’ajout d’un gestionnaire pour l’événement [**CompositionTarget.Renderin
 
 L’espace de noms [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232) comprend une bibliothèque d’animations fluides à hautes performances qui offrent une apparence cohérente avec les autres animations Windows. Les classes pertinentes ont un nom qui contient « Theme » et sont décrites dans [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/Mt187350). Cette bibliothèque prend en charge de nombreuses situations courantes d’animation, comme l’animation du premier affichage de l’application et la création de transitions d’état et de contenu. Nous vous recommandons d’utiliser cette bibliothèque d’animations le plus souvent possible pour améliorer les performances et garantir une cohérence maximale pour l’interface utilisateur UWP.
 
-> **Remarque**  La bibliothèque d’animations ne peut pas animer toutes les propriétés possibles. Dans le cas de scénarios XAML dans lesquels la bibliothèque d’animations ne s’applique pas, voir [Animations dans une table de montage séquentiel](https://msdn.microsoft.com/library/windows/apps/Mt187354).
+> **Remarque**  la bibliothèque d’animations ne peut pas animer toutes les propriétés possibles. Dans le cas de scénarios XAML dans lesquels la bibliothèque d’animations ne s’applique pas, voir [Animations dans une table de montage séquentiel](https://msdn.microsoft.com/library/windows/apps/Mt187354).
 
 
 ### <a name="animate-compositetransform3d-properties-independently"></a>Animer indépendamment les propriétés CompositeTransform3D

@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ddeccfe4c5e198afd77eaa4a81fc017543291ba1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441531"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469038"
 ---
 # <a name="custom-dependency-properties"></a>Propriétés de dépendance personnalisées
 
@@ -70,7 +70,7 @@ La définition d’une propriété de dépendance peut être envisagée d’un p
 - (Facultatif) Placez des attributs tels que [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) sur le wrapper.
 
 > [!NOTE]
-> Si vous définissez une propriété jointe personnalisée, on omet en général le wrapper. Au lieu de cela, on écrit un style d’accesseur différent utilisable par un processeur XAML. Voir [Propriétés jointes personnalisées](custom-attached-properties.md). 
+> Si vous définissez une propriété jointe personnalisée, on omet en général le wrapper. Au lieu de cela, on écrit un style d’accesseur différent utilisable par un processeur XAML. Voir [Propriétés jointes personnalisées](custom-attached-properties.md). 
 
 ## <a name="registering-the-property"></a>Inscription de la propriété
 
@@ -476,7 +476,7 @@ Il existe un principe général qui veut que les constructeurs de classe ne doiv
 
 ### <a name="registering-the-dependency-properties-for-ccx-apps"></a>Inscription des propriétés de dépendance pour les applications C++/CX
 
-L’inscription d’une propriété en C++/CX est plus compliquée à implémenter qu’en C#, non seulement en raison de la séparation en-tête/fichier d’implémentation, mais aussi parce que l’initialisation au niveau de l’étendue racine du fichier d’implémentation est une pratique déconseillée. (Les extensions de composant Visual C++ [C++/CX] placent le code de l’initialiseur statique de l’étendue racine directement dans **DllMain**, alors que les compilateurs C# affectent les initialiseurs statiques à des classes et évitent ainsi les problèmes de verrouillage de charge **DllMain**.) Dans le cas présent, la meilleure pratique consiste à déclarer une fonction d’assistance qui se charge de toutes les inscriptions de vos propriétés de dépendance pour une classe, une fonction par classe. Ensuite, pour chaque classe personnalisée que votre application consomme, vous devez faire référence à la fonction d’inscription d’assistance qui est exposée par chaque classe personnalisée que vous souhaitez utiliser. Appelez chaque fonction d’inscription d’assistance dans le cadre de la méthode [**Application constructor**](https://msdn.microsoft.com/library/windows/apps/br242325) (`App::App()`), avant `InitializeComponent`. Ce constructeur s’exécute uniquement lorsque l’application est vraiment référencée pour la première fois (ainsi, il ne s’exécute pas une nouvelle fois lors de la reprise d’une application suspendue par exemple). Par ailleurs, comme vous pouvez le voir dans l’exemple d’inscription précédent en C++, la vérification **nullptr** autour de chaque appel [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) est importante, car elle garantit qu’un appelant de la fonction ne peut inscrire la propriété deux fois. Sans une telle vérification, un deuxième appel d’inscription entraînerait probablement le blocage de votre application en raison de la duplication du nom de la propriété. Ce modèle d’implémentation est présenté dans l’[Exemple de contrôles personnalisés et utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=238581) (examinez le code correspondant à la version C++/CX de l’exemple).
+L’inscription d’une propriété en C++/CX est plus compliquée à implémenter qu’en C#, non seulement en raison de la séparation en-tête/fichier d’implémentation, mais aussi parce que l’initialisation au niveau de l’étendue racine du fichier d’implémentation est une pratique déconseillée. (Les extensions de composant Visual c++ (C++ / CX) injecte du code de l’initialiseur statique à partir de l’étendue racine directement dans **DllMain**, tandis que les compilateurs c# affectent les initialiseurs statiques à classes, donc éviter les problèmes de verrouillage de charge **DllMain** .). Dans le cas présent, la meilleure pratique consiste à déclarer une fonction d’assistance qui se charge de toutes les inscriptions de vos propriétés de dépendance pour une classe, une fonction par classe. Ensuite, pour chaque classe personnalisée que votre application consomme, vous devez faire référence à la fonction d’inscription d’assistance qui est exposée par chaque classe personnalisée que vous souhaitez utiliser. Appelez chaque fonction d’inscription d’assistance dans le cadre de la méthode [**Application constructor**](https://msdn.microsoft.com/library/windows/apps/br242325) (`App::App()`), avant `InitializeComponent`. Ce constructeur s’exécute uniquement lorsque l’application est vraiment référencée pour la première fois (ainsi, il ne s’exécute pas une nouvelle fois lors de la reprise d’une application suspendue par exemple). Par ailleurs, comme vous pouvez le voir dans l’exemple d’inscription précédent en C++, la vérification **nullptr** autour de chaque appel [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) est importante, car elle garantit qu’un appelant de la fonction ne peut inscrire la propriété deux fois. Sans une telle vérification, un deuxième appel d’inscription entraînerait probablement le blocage de votre application en raison de la duplication du nom de la propriété. Ce modèle d’implémentation est présenté dans l’[Exemple de contrôles personnalisés et utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=238581) (examinez le code correspondant à la version C++/CX de l’exemple).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -484,4 +484,4 @@ L’inscription d’une propriété en C++/CX est plus compliquée à implément
 - [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)
 - [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md)
 - [Exemple de contrôles personnalisés et utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=238581)
- 
+ 

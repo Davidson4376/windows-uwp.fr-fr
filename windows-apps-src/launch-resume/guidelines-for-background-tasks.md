@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 7adfecbe216dce25d0f80eb3ef1f528196299db4
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440793"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470633"
 ---
 # <a name="guidelines-for-background-tasks"></a>Recommandations en matière de tâches en arrière-plan
 
@@ -63,7 +63,7 @@ Les tâches en arrière-plan qui s’exécutent dans le même processus que l’
 
 **Demander l’exécution des tâches en arrière-plan:**
 
-> **Important** Depuis Windows10, les applications n’ont plus à figurer dans l’écran de verrouillage pour exécuter des tâches en arrière-plan.
+> **Important**à compter de Windows 10, les applications ne sont plus requis à figurer dans l’écran de verrouillage pour exécuter des tâches en arrière-plan.
 
 Les applications de plateforme Windows universelle (UWP) peuvent exécuter tous les types de tâches prises en charge, sans être épinglées à l’écran de verrouillage. Toutefois, les applications doivent appeler [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire tout type de tâche en arrière-plan. Cette méthode retourne [**BackgroundAccessStatus.DeniedByUser**](https://msdn.microsoft.com/library/windows/apps/hh700439) si l’utilisateur a explicitement refusé des autorisations de tâche en arrière-plan pour votre application dans les paramètres de l’appareil. Pour plus d’informations sur le choix de l’utilisateur autour de l’activité en arrière-plan et l’économiseur de batterie, voir [Optimiser l’activité en arrière-plan](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity). 
 ## <a name="background-task-checklist"></a>Liste de vérifications relatives aux tâches en arrière-plan
@@ -109,6 +109,6 @@ Les applications de plateforme Windows universelle (UWP) peuvent exécuter tous 
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications UWP (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
- 
+ 
 
- 
+ 

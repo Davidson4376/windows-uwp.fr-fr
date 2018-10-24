@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, création de packages, disposition de package, package d'actifs
 ms.localizationpriority: medium
 ms.openlocfilehash: 31c27430c850f861c8b97863521202a6dcab80f7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443742"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475488"
 ---
 # <a name="developing-with-asset-packages-and-package-folding"></a>Développement de packages d'actifs et mise en dossier de packages 
 

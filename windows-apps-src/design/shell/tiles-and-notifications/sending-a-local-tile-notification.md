@@ -12,23 +12,23 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e91d4bd481188f4d29af68af2c4572b26d446ae
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432610"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478519"
 ---
 # <a name="send-a-local-tile-notification"></a>Envoyer une notification par vignette locale
  
 
-Les vignettes d’application principales de Windows10 sont définies dans le manifeste de votre application, tandis que les vignettes secondaires sont créées et définies par programme par le code de votre application. Cet article décrit comment envoyer une notification par vignette locale à une vignette principale et une vignette secondaire à l’aide de modèles de vignette adaptative. (Une notification locale est une notification envoyée à partir du code d’application, par opposition à une notification qui fait l’objet d’une transmission de type push ou pull à partir d’un serveur web).
+Vignettes d’application principale de Windows 10 sont définies dans votre manifeste d’application, tandis que les vignettes secondaires sont par programme créés et définis par le code de votre application. Cet article décrit comment envoyer une notification par vignette locale à une vignette principale et une vignette secondaire à l’aide de modèles de vignette adaptative. (Une notification locale est une notification envoyée à partir du code d’application, par opposition à une notification qui fait l’objet d’une transmission de type push ou pull à partir d’un serveur web).
 
 ![Vignette par défaut et vignette avec notification](images/sending-local-tile-01.png)
 
 > [!NOTE] 
 >Pour plus d’informations, voir [Créer des vignettes adaptatives](create-adaptive-tiles.md) et [Schéma du contenu de la vignette](../tiles-and-notifications/tile-schema.md).
 
- 
+ 
 
 ## <a name="install-the-nuget-package"></a>Installation du package NuGet
 
@@ -50,7 +50,7 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ## <a name="create-the-notification-content"></a>Créer le contenu d’une notification
 
 
-Dans Windows10, les charges utiles de vignette sont définies à l’aide de modèles de vignette adaptative qui vous permettent de créer des dispositions visuelles personnalisées pour vos notifications. (Pour savoir ce qu’il est possible de réaliser avec les vignettes adaptatives, voir [Créer des vignettes adaptatives](create-adaptive-tiles.md).)
+Dans Windows 10, les charges utiles de vignettes sont définies à l’aide de modèles de vignette adaptative qui vous permettent de créer des dispositions visuelles personnalisées pour vos notifications. (Pour savoir ce qu’il est possible de réaliser avec les vignettes adaptatives, voir [Créer des vignettes adaptatives](create-adaptive-tiles.md).)
 
 Cet exemple de code crée le contenu de vignette adaptative pour les vignettes moyennes et larges.
 
@@ -297,9 +297,9 @@ var notification = new TileNotification(doc);
 * [**Espace de noms Windows.UI.Notifications**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
 * [Comment utiliser la file d’attente de notifications (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
 * [Remise de notifications](choosing-a-notification-delivery-method.md)
- 
+ 
 
- 
+ 
 
 
 

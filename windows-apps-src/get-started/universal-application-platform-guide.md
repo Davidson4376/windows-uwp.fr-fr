@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, universelle
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f0168f0a1baef5e68bccdf0a33c3ac7eb7683a7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432406"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473922"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Qu’est-ce qu’une application de plateforme Windows universelle (UWP)?
 
@@ -39,9 +39,9 @@ Les applications UWP déclarent dans leur manifeste les fonctionnalités de l’
 
 ## <a name="a-common-api-surface-across-all-devices"></a>Surface d’API commune à tous les appareils
 
-Windows10 introduit la Universal Windows Platform (UWP), qui fournit une plateforme d’application commune sur chaque appareil exécutant Windows10. Les API au cœur d’UWP sont les mêmes pour toutes les familles d’appareils Windows. Si votre application utilise uniquement les API principales, elle s’exécutera sur n’importe quel appareil Windows10, que vous cibliez un PC de bureau, une Xbox, un casque de réalité mixte, etc.
+Windows 10 introduit la Universal Windows Platform (UWP), qui fournit une plateforme d’application commune sur chaque appareil exécutant Windows 10. Les API au cœur d’UWP sont les mêmes pour toutes les familles d’appareils Windows. Si votre application utilise uniquement les API principales, elle s’exécutera sur n’importe quel appareil Windows 10, quelle que soit la si vous ciblez un PC de bureau, Xbox, casque de réalité mixte et ainsi de suite.
 
-Une application UWP ou un composant Windows Runtime écrits en C++ /WinRT ou C++ /CX ont accès aux API Win32 faisant partie de l’UWP. Ces API Win32 sont implémentées par tous les appareils Windows10.
+Une application UWP ou un composant Windows Runtime écrits en C++ /WinRT ou C++ /CX ont accès aux API Win32 faisant partie de l’UWP. Ces API Win32 sont implémentées par tous les appareils Windows 10.
 
 ## <a name="extension-sdks-expose-the-unique-capabilities-of-specific-device-types"></a>Les kits de développement logiciel (SDK) d’extension exposent les fonctionnalités uniques des types spécifiques d’appareils
 
@@ -70,7 +70,7 @@ Certains aspects de l’interface utilisateur de votre application s’adaptent 
 
 ## <a name="theres-one-store-for-all-devices"></a>Il existe un seul magasin pour tous les appareils.
 
-Un magasin d’applications unifié rend votre application disponible sur les appareils Windows10tels que PC, tablette, Xbox, HoloLens, Surface Hub, et Internet des objets (IoT). Vous pouvez soumettre votre application au Store et la rendre disponible sur tous les types d’appareils ou uniquement sur ceux que vous choisissez. Vous pouvez soumettre et gérer toutes vos applications pour appareils Windows au même endroit. Vous avez une application de bureau C++ que vous souhaitez moderniser grâce aux fonctionnalités UWP et commercialiser dans le Microsoft Store? Cela ne pose aucun problème.
+Un magasin d’applications unifié rend votre application disponible sur les appareils Windows 10 tels que PC, tablette, Xbox, HoloLens, Surface Hub et Internet des objets (IoT). Vous pouvez soumettre votre application au Store et la rendre disponible sur tous les types d’appareils ou uniquement sur ceux que vous choisissez. Vous pouvez soumettre et gérer toutes vos applications pour appareils Windows au même endroit. Vous avez une application de bureau C++ que vous souhaitez moderniser grâce aux fonctionnalités UWP et commercialiser dans le Microsoft Store? Cela ne pose aucun problème.
 
 À des fins de télémétrie et d’analyse détaillées, les applications UWP s’intègrent avec [Application Insights](http://azure.microsoft.com/services/application-insights/): un outil crucial pour comprendre vos utilisateurs et améliorer vos applications.
 

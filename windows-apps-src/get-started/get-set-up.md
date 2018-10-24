@@ -2,7 +2,7 @@
 author: QuinnRadich
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: Préparation
-description: Se préparer est bien plus simple que vous l’imaginez. Suivez ces instructions et lancez-vous dans la création d’applications de plateforme Windows universelle (UWP) pour Windows10.
+description: Se préparer est bien plus simple que vous l’imaginez. Suivez ces instructions et commencer à créer des applications de plateforme Windows universelle (UWP) pour Windows 10.
 ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 378544282981c62d7a57f9abc3f666e8964b7117
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445616"
+ms.locfileid: "5474758"
 ---
 # <a name="get-set-up"></a>Préparation
 
 ![Préparez-vous à utiliser Visual Studio](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-Il est bien plus facile de se lancer que vous ne le pensez. Suivez ces instructions et lancez-vous dans la création d’applications de plateforme Windows universelle (UWP) pour Windows10.
+Il est bien plus facile de se lancer que vous ne le pensez. Suivez ces instructions et commencer à créer des applications de plateforme Windows universelle (UWP) pour Windows 10.
 
 ## <a name="1-download-or-update-visual-studio"></a>1. Télécharger ou mettre à jour Visual Studio
 
-Microsoft Visual Studio2017 vous permet de concevoir, coder, tester et déboguer vos applications.
+Microsoft Visual Studio2017 vous aide à vous concevez, codez, testez et déboguez vos applications.
 
-Si vous ne possédez pas Visual Studio2017, vous pouvez installer gratuitement Microsoft Visual Studio Community2017. Ce téléchargement comprend des simulateurs d’appareil pour tester vos applications:
+Si vous n’avez pas encore Visual Studio2017, vous pouvez installer le Community2017 Studio Visual Microsoft gratuit. Ce téléchargement comprend des simulateurs d’appareil pour tester vos applications:
 
 -   [Télécharger les outils de développement de Windows10](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 

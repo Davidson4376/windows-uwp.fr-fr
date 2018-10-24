@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ffafab761741b8d7bc05f13ea2d8ae50ff048b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432050"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479717"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Recommandations pour les applications de marketing de Microsoft Store
 
@@ -41,7 +41,7 @@ Vous pouvez également télécharger l’ensemble des images de badge (aux forma
 
 Pour promouvoir votre application, vous pouvez afficher son aspect lors de son exécution sur un appareil Windows. Nous mettons à votre disposition différentes images de châssis d’appareil sélectionnables, notamment des téléphones, des tablettes, des portables et des PC. Vous trouverez les meilleures pratiques et les spécifications techniques pour l’utilisation de ces images dans les [Les recommandations en matière de marketing adapté aux applications Microsoft Store](http://go.microsoft.com/fwlink/p/?LinkId=529769).
 
-[![Bouton Télécharger](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Image d’appareil Windows**
+[ ![Bouton Télécharger](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Image d’appareil Windows**
 
 ## <a name="license-to-microsoft-marks"></a>Licence d’utilisation des marques Microsoft
 
@@ -57,9 +57,9 @@ Pour promouvoir votre application, vous pouvez afficher son aspect lors de son e
 
 Microsoft est l’unique propriétaire des Marques Microsoft et de son actif incorporel associé, et l’unique bénéficiaire de l’actif incorporel associé à votre utilisation des Marques Microsoft. Microsoft peut à tout moment révoquer cette licence, à sa seule discrétion.
 
- 
+ 
 
- 
+ 
 
 
 

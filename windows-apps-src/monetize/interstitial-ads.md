@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, pub, publicité, contrôle de publicités, spot
 ms.localizationpriority: medium
 ms.openlocfilehash: 547a582064262d18467df4868df17a08e73b279c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436847"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477709"
 ---
 # <a name="interstitial-ads"></a>Spots
 
@@ -163,7 +163,7 @@ Les instructions ci-dessous partent du principe que vous avez créé un projet W
 ### <a name="c-directx-interop"></a>C++ (technologie interop DirectX)
 
 Cet exemple part du principe que vous avez créé un projet C++ **application DirectX et XAML (Windows universel)** dans VisualStudio et que vous ciblez une architectureUC spécifique.
- 
+ 
 1. Ouvrez votre projet dans Visual Studio.
 
 3. Ajoutez une référence au SDK Microsoft Advertising de votre projet:

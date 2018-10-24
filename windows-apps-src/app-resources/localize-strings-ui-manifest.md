@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: c9db9f3ce4397bec6fb0b6b339875c206d17c3fd
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436206"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475705"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application
 Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
@@ -32,12 +32,12 @@ Contrairement aux ressources d’image, où un fichier de ressource d’image co
 1. Définissez la langue par défaut de votre application.
     1. Votre solution de jeu étant ouverte dans VisualStudio, ouvrez `Package.appxmanifest`.
     2. Sous l’onglet Application, vérifiez que la langue par défaut est correctement définie (par exemple, «en» ou «en-US»). Les étapes restantes supposent que vous avez défini la langue par défaut sur «en-US».
-    <br>**Remarque:** vous devez au minimum fournir des ressources de chaîne localisées pour cette langue par défaut. Il s’agit des ressources qui seront chargées en l’absence d’une meilleure correspondance pour les paramètres de langue ou de langue d’affichage par défaut de l’utilisateur.
+    <br>**Remarque**au minimum, vous devez fournir les ressources de chaîne localisées pour cette langue par défaut. Il s’agit des ressources qui seront chargées en l’absence d’une meilleure correspondance pour les paramètres de langue ou de langue d’affichage par défaut de l’utilisateur.
 2. Créez un fichier de ressources (.resw) pour la langue par défaut.
     1. Sous le nœud de votre projet, créez un dossier et nommez-le «Strings».
     2. Sous `Strings`, créez un sous-dossier et nommez-le «en-US».
     3. Sous `en-US`, créez un fichier de ressources (.resw) et vérifiez qu’il est nommé «Resources.resw».
-    <br>**Remarque:** si vous voulez porter des fichiers de ressources.NET (.resx), consultez [Portage du balisage XAML et de la couche interface utilisateur](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
+    <br>**Remarque**si vous avez des fichiers de ressources .NET (.resx) que vous souhaitez porter, consultez [portage du balisage XAML et l’interface utilisateur](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
 3.  Ouvrez `Resources.resw` et ajoutez ces ressources de chaîne.
 
     `Strings/en-US/Resources.resw`
@@ -63,7 +63,7 @@ Lorsque vous affectez un identificateur de ressource de chaîne à un élément 
 
 Au lieu de définir **Width** à partir d’un fichier de ressources, vous souhaiterez probablement autoriser les contrôles à se redimensionner de manière dynamique en fonction du contenu.
 
-**Remarque:** pour les [propriétés jointes](../xaml-platform/attached-properties-overview.md), une syntaxe spéciale est requise dans la colonne Nom d’un fichier .resw. Par exemple, pour définir une valeur pour la propriété jointe [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) de l’identificateur «Greeting», voici ce que vous devez entrer dans la colonne Nom.
+**Remarque**pour les [propriétés jointes](../xaml-platform/attached-properties-overview.md), vous avez besoin d’une syntaxe spéciale dans la colonne nom d’un fichier .resw. Par exemple, pour définir une valeur pour la propriété jointe [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) de l’identificateur «Greeting», voici ce que vous devez entrer dans la colonne Nom.
 
 ```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
@@ -120,7 +120,7 @@ En cas de doute, vous pouvez utiliser [MakePri.exe](makepri-exe-command-options.
 ## <a name="localize-the-string-resources"></a>Localiser les ressources de chaîne
 1. Faites une copie de votre fichier de ressources (.resw) pour une autre langue.
     1. Sous «Strings», créez un sous-dossier et nommez-le «de-DE» pour Allemand (Allemagne).
-   <br>**Remarque:** vous pouvez utiliser n’importe quelle [balise de langue BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) pour le nom du dossier. Voir [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md) pour plus d’informations sur le qualificateur de langue et une liste des balises de langue courantes.
+   <br>**Remarque**pour le nom du dossier, vous pouvez utiliser n’importe quelle [balise de langue BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302). Voir [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md) pour plus d’informations sur le qualificateur de langue et une liste des balises de langue courantes.
    2. Faites une copie de `Strings/en-US/Resources.resw` dans le dossier `Strings/de-DE`.
 2. Traduisez les chaînes.
     1. Ouvrez `Strings/de-DE/Resources.resw` et traduisez les valeurs dans la colonne Valeur. Il n’est pas nécessaire de traduire les commentaires.
@@ -281,7 +281,7 @@ Vous n’avez pas besoin d’effectuer ceci pour une bibliothèque de classes (W
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>Chargement de chaînes à partir d’autres packages
-Les ressources nécessaires pour un package d’application sont gérées et accessibles par le biais du package propriétaire de niveau supérieur [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) qui est accessible à partir de [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)en cours. Dans chaque package, différents composants peuvent avoir leurs propres sous-arborescences ResourceMap, accessibles via [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
+Les ressources nécessaires pour un package d’application sont gérées et accessibles par le biais du package propriétaire de niveau supérieur[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) qui est accessible à partir de[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)en cours. Dans chaque package, différents composants peuvent avoir leurs ownResourceMapsubtrees, auquel vous pouvez accéder via [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
 
 Un package d’infrastructure peut accéder à ses propres ressources avec un URI d’identificateur de ressource absolu. Voir également [Schémas d’URI](uri-schemes.md).
 
