@@ -15,11 +15,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b4693c4ed6c02db9e4fe3f5f7fee6fe569c0e79
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397742"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5435986"
 ---
 # <a name="keyboard-accelerators"></a>Raccourcis clavier
 
@@ -361,10 +361,10 @@ Comme les raccourcis clavier ne sont généralement pas décrit directement dans
 
 **Windows 10, Version 1803 (mise à jour du mois d’avril 2018) et versions ultérieures**
 
-Par défaut, lorsque les raccourcis clavier sont déclarés, tous les contrôles (à l’exception [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) et [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) présentent les combinaisons de touches correspondants dans une info-bulle.
+Par défaut, lorsque les raccourcis clavier sont déclarés, tous les contrôles (sauf [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) et [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) présentent les combinaisons de touches correspondants dans une info-bulle.
 
 > [!NOTE] 
-> Si plusieurs raccourcis sont définis sur un contrôle, seul le premier est présenté.
+> Si plusieurs raccourcis sont définis par un contrôle, seul le premier est présenté.
 
 ![Info-bulle de touche de raccourci](images/accelerators/accelerators_tooltip_savebutton_small.png)
 
@@ -442,7 +442,7 @@ Pour les objets [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.
 
 ![Info-bulle de touche de raccourci](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
 
-*Touches de raccourci ajouté au texte du MenuFlyoutItem*
+*Touches de raccourci ajouté au texte de MenuFlyoutItem*
 
 Contrôlez le comportement de présentation à l’aide de la propriété [KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode), qui accepte deux valeurs: [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) ou [Hidden](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode).    
 

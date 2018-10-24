@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: a599fdef47bb681ef4909fe5bba2a01a1687ba66
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399881"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5439531"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>Créer et inscrire une tâche en arrière-plan hors processus
 
@@ -144,7 +144,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 }
 ```
 
-4.  Si vous exécutez du code asynchrone dans votre tâche en arrière-plan, celle-ci doit alors utiliser un report, Si vous n’utilisez pas un report, le processus de tâche en arrière-plan peut arrêt inattendu si la méthode **Run** retourne avant tout travail asynchrone a s’exécuter jusqu’au.
+4.  Si vous exécutez du code asynchrone dans votre tâche en arrière-plan, celle-ci doit alors utiliser un report, Si vous n’utilisez pas un report, le processus de tâche en arrière-plan peut arrêt inattendu si la méthode **Run** retourne avant tout travail asynchrone a exécuté jusqu'à la fin.
 
 Demandez le report dans la méthode **Run** avant d’appeler la méthode asynchrone. Enregistrez le report dans un membre de données de classe afin qu’il est accessible à partir de la méthode asynchrone. Déclarez le report terminé après que l’exécution du code asynchrone a abouti.
 
@@ -348,7 +348,7 @@ Pour plus d’informations, voir [Recommandations en matière de tâches en arri
 
 ## <a name="handle-background-task-completion-using-event-handlers"></a>Gérer l’achèvement des tâches en arrière-plan à l’aide de gestionnaires d’événements
 
-Vous devez inscrire une méthode avec le [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) afin que votre application puisse obtenir les résultats de la tâche en arrière-plan. Lorsque l’application est lancée ou reprise, la méthode marquée est appelée si la tâche en arrière-plan est terminée depuis la dernière fois que l’application a été au premier plan. (La méthode OnCompleted est appelée immédiatement si la tâche en arrière-plan se termine pendant que votre application est au premier plan.)
+Vous devez inscrire une méthode avec le [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) afin que votre application puisse obtenir les résultats de la tâche en arrière-plan. Lorsque l’application est lancée ou reprise, la méthode marquée est appelée si la tâche en arrière-plan est terminée depuis la dernière fois que l’application était au premier plan. (La méthode OnCompleted est appelée immédiatement si la tâche en arrière-plan se termine pendant que votre application est au premier plan.)
 
 1.  Écrivez une méthode OnCompleted pour gérer l’achèvement des tâches en arrière-plan. Par exemple, le résultat des tâches en arrière-plan peut entraîner une mise à jour de l’interface utilisateur. L’empreinte de la méthode présentée ici est requise pour la méthode de gestionnaire d’événements OnCompleted, même si cet exemple n’utilise pas le paramètre *args*.
 

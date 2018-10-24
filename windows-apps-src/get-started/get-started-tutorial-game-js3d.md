@@ -11,11 +11,11 @@ keywords: windows10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
 ms.openlocfilehash: fa3722c5b011d16ca793b3541efe124b7c255dfd
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5405313"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5432383"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Création d’un jeu JavaScript 3D à l’aide de three.js
 
@@ -260,7 +260,7 @@ Cela nous a demandé pas mal de code, mais nous avons désormais un superbe cube
 
 Vous pouvez copier et coller l'ensemble du code JavaScript dans ce CodePen pour vous rattraper si vous avez rencontré des problèmes, ou le modifier pour régler les lumières ou changer les couleurs. 
 
-<iframe height='300' scrolling='no' title='Les lumières, caméra, cube!' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Consultez le stylet <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>lumières, caméra, cube!</a> de Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) sur <a href='https://codepen.io'>CodePen</a>.
+<iframe height='300' scrolling='no' title='Lumières, caméra, cube!' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Consultez le stylet <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>lumières, caméra, cube!</a> de Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) sur <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 
@@ -1090,5 +1090,5 @@ Maintenant que vous disposez d’une application UWP, il est possible de publier
 1.  Vous devez être [enregistré](https://developer.microsoft.com/store/register) en tant que développeur Windows.
 2.  Vous devez utiliser la [liste de vérification](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) de soumission d’applications.
 3.  L’application doit être soumise pour [certification](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process).
-Pour plus d’informations, consultez la [publication de votre application UWP](https://developer.microsoft.com/store/publish-apps).
+Pour plus d’informations, consultez [la publication de votre application UWP](https://developer.microsoft.com/store/publish-apps).
 

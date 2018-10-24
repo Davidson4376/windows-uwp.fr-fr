@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, point de service, PDV, lecteur de bande magnétique
 ms.localizationpriority: medium
 ms.openlocfilehash: ad954e8c03d92307fa72ead236d5428ac2bdddab
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5404146"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5440175"
 ---
 # <a name="obtain-and-understand-magnetic-stripe-data"></a>Obtenir et comprendre les données de bande magnétique
 
@@ -26,7 +26,7 @@ Chaque fois que le lecteur reconnaît une carte balayée, il déclenche une des 
 
 * [Événement AamvaCardDataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived): se produit lorsqu’une carte automobile est balayée.
 * [Événement BankCardDataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived): se produit lorsqu’une carte bancaire est balayée.
-* [Événement VendorSpecificDataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.vendorspecificdatareceived): se produit lorsqu’une carte spécifique au fournisseur est passée.
+* [Événement VendorSpecificDataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.vendorspecificdatareceived): se produit lorsqu’une carte spécifique au fournisseur est balayée.
 
 Votre application ne doit s’abonner aux événements qui sont pris en charge par le lecteur de bande magnétique. Vous pouvez voir les types de cartes sont pris en charge avec [MagneticStripeReader.SupportedCardTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.supportedcardtypes
 ).
@@ -54,7 +54,7 @@ private void SubscribeToEvents(ClaimedMagneticStripeReader claimedReader, Magnet
 }
 ```
 
-Le Gestionnaire d’événements sera transmis la [ClaimedMagneticStripeReader](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader) et un objet *d’arguments* , dont le type varie en fonction de l’événement:
+Le Gestionnaire d’événements recevront le [ClaimedMagneticStripeReader](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader) et un objet *d’arguments* , dont le type varie en fonction de l’événement:
 
 * Événement **AamvaCardDataReceived** : [Classe MagneticStripeReaderAamvaCardDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
 * Événement **BankCardDataReceived** : [Classe MagneticStripeReaderBankCardDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)
@@ -82,7 +82,7 @@ private void Reader_BankCardDataReceived(
 
 Toutefois, certaines données, y compris toutes les données à partir de l’événement **VendorSpecificDataReceived** , doivent être récupérées par le biais de l’objet de **Report** , qui est une propriété du paramètre *args* . Il s’agit du type [MagneticStripeReaderReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport).
 
-Vous pouvez utiliser la propriété [CardType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.cardtype) pour déterminer quel type de carte a été passée et utilisez-la pour indiquer comment vous interpréter les données à partir de [Track1](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track1), [Track2](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track2), [Track3](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track3)et [Track4](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track4).
+Vous pouvez utiliser la propriété [CardType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.cardtype) pour déterminer quel type de carte a été balayé et utilisez-la pour indiquer comment vous interprétez les données à partir de [Track1](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track1), [Track2](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track2), [Track3](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track3)et [Track4](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track4).
 
 Les données à partir de chacune des pistes sont représentées en tant qu’objets [MagneticStripeReaderTrackData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata) . À partir de cette classe, vous pouvez obtenir les types de données suivants:
 

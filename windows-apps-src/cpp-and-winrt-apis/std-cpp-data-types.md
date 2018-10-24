@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, données, types
 ms.localizationpriority: medium
 ms.openlocfilehash: f9763e7f69b143dffe8fea611f25ae75284929cb
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400450"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5436986"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>Types de données C++ et C++/WinRT standard
 
-Avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), vous pouvez appeler APIs Windows Runtime à l’aide de types de données C++ Standard, y compris certains types de données de bibliothèque C++ Standard. Vous pouvez transmettre des chaînes standard aux API (voir [Gestion des chaînes en C++ / WinRT](strings.md)), et vous pouvez passer initialiseur listes et conteneurs standard à des API qui attendre une collection sémantique équivalente.
+Avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), vous pouvez appeler APIs Windows Runtime à l’aide de types de données C++ Standard, y compris certains types de données de bibliothèque C++ Standard. Vous pouvez passer des chaînes standard aux API (voir [Gestion des chaînes en C++ / WinRT](strings.md)), et vous pouvez passer initialiseur conteneurs standard et des listes à des API qui attendre une collection sémantique équivalente.
 
 ## <a name="standard-initializer-lists"></a>Listes d’initialiseurs standard
 Une liste d’initialiseurs (**std::initializer_list**) est une construction de la bibliothèque C++ standard. Vous pouvez utiliser des listes d’initialiseurs lorsque vous appelez certains constructeurs et méthodes Windows Runtime. Par exemple, vous pouvez appeler [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes) avec une telle liste.
@@ -102,7 +102,7 @@ IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vecto
 }
 ```
 
-Mais vous ne pouvez pas transmettre un **std::vector&lt;std::wstring&gt;** là où une collection Windows Runtime est attendue. Cela est dû au fait que, la collection Windows Runtime appropriée de **std::wstring** ayant été convertie, le langage C++ ne forcera pas le ou les paramètres de type de cette collection. Par conséquent, l’exemple de code suivant ne sera pas compilé (et la solution consiste à transmettre un **std::vector&lt;winrt::hstring&gt; ** au lieu de cela, comme indiqué ci-dessus).
+Mais vous ne pouvez pas transmettre un **std::vector&lt;std::wstring&gt;** là où une collection Windows Runtime est attendue. Cela est dû au fait que, la collection Windows Runtime appropriée de **std::wstring** ayant été convertie, le langage C++ ne forcera pas le ou les paramètres de type de cette collection. Par conséquent, l’exemple de code suivant ne sera pas compilé (et la solution consiste à passer un **std::vector&lt;winrt::hstring&gt; ** au lieu de cela, comme indiqué ci-dessus).
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<std::wstring> const& vecW)

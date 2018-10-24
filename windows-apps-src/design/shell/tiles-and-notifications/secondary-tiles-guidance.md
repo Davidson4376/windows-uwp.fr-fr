@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, vignettes secondaires, instructions, recommandations, meilleures pratiques
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e3d31376b9ac155dab6bffa7739cb880af1cff9
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397632"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5431764"
 ---
 # <a name="secondary-tile-guidance"></a>Instructions relatives aux vignettes secondaires
 

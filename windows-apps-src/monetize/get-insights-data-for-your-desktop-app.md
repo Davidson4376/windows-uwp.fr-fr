@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, des informations
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b4390fba26922372a74de76d09844a7243bce73
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5407613"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5432092"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>Obtenir les données d’analyse pour votre application de bureau
 

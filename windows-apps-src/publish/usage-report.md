@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, utilisation, événement personnalisé, rapport, télémétrie, sessions utilisateur
 ms.localizationpriority: medium
 ms.openlocfilehash: 96d36ebbaa2b7f1a650e2b0f794a1976c1f525a6
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5404222"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5439122"
 ---
 # <a name="usage-report"></a>Rapport d’utilisation
 
@@ -53,7 +53,7 @@ Ce graphique comporte quatre onglets visualisables qui vous présentent l’util
 Lorsque le **30D** période est activée, vous pouvez voir Marqueurs cercle lorsque vous visualisez les onglets **utilisateurs**, des **appareils**ou **durée** . Ces représentent une augmentation importante ou la diminution une valeur donnée que nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation importante ou une réduction par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
 
 > [!TIP]
-> Vous pouvez afficher des informations plus liées à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).
+> Vous pouvez afficher des conseils supplémentaires liées à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).
 
 
 ## <a name="user-sessions"></a>Sessions utilisateur

@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3575d4d30515a3c26bf99e1cc37afa3b98f4e7dc
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5410737"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5435944"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>Activer les extensions d'abonnement de votre application
 

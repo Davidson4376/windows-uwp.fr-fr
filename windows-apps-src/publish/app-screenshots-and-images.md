@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, bande-annonce, vidéo, capture d’écran, image, icône, description dans le Store, images de description dans le Store
 ms.localizationpriority: medium
 ms.openlocfilehash: d787ac620f9d0114d67d85def758416afd9f5f15
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5404893"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5440883"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>Captures d’écran, images et bandes-annonces de l’application
 
@@ -87,9 +87,9 @@ Cette image est requise pour un affichage correct sur WindowsPhone8.1 et version
 
 ### <a name="display-only-uploaded-logo-images-in-the-store"></a>Affichage chargé uniquement les images de logo disponibles dans le Windows Store
 
-Vous avez la possibilité d’empêcher le Windows Store d’utiliser les images de logo disponibles dans les packages de votre application lorsque vous présentez votre description aux clients sur Windows 10 (y compris Xbox) et à la place le Windows Store utilise uniquement les images que vous chargez. Cette opération vous permet de mieux contrôler l’apparence de votre application sur différents affichages partout dans le Store pour les clients sur Windows10 (y compris Xbox). (Si votre produit prend en charge les versions antérieures du système d’exploitation, les clients peuvent toujours voir des images à partir de vos packages, même si vous utilisez cette option.)
+Vous avez la possibilité d’empêcher le Store d’utiliser les images de logo disponibles dans les packages de votre application lorsque vous présentez votre description aux clients sur Windows 10 (y compris Xbox) et à la place le Windows Store utilise uniquement les images que vous chargez. Cette opération vous permet de mieux contrôler l’apparence de votre application sur différents affichages partout dans le Store pour les clients sur Windows10 (y compris Xbox). (Si votre produit prend en charge les versions antérieures du système d’exploitation, les clients peuvent toujours voir des images à partir de vos packages, même si vous utilisez cette option.)
 
-Pour disposer du magasin utiliser uniquement les images que vous chargez (pour les clients sur Windows 10, y compris Xbox), et pas utiliser toutes les images à partir de vos packages, cochez la case à cocher **pour les clients sur Windows 10 et Xbox, afficher des images de logo au lieu des images de mes packages chargées **.
+Pour disposer du magasin utiliser uniquement les images que vous chargez (pour les clients sur Windows 10, y compris Xbox), et pas utiliser toutes les images à partir de vos packages, cochez la case à cocher **pour les clients sur Windows 10 et Xbox, afficher les images de logo au lieu des images de mes packages chargées **.
 
 Lorsque vous cochez cette case, une nouvelle section appelée **magasin afficher des images** s’affiche. Ici, vous pouvez charger 3 images, y compris **l’application de 1:1 vignette icône (300 x 300 pixels)** (si vous cochez cette case, le champ de fournir que cette image se déplace dans cette section). Si vous utilisez cette option, nous vous recommandons de fournir les trois tailles d’image: 71x71, 150x150 et 300x300pixels. Toutefois, seule la taille 300 x 300 est obligatoire.
 

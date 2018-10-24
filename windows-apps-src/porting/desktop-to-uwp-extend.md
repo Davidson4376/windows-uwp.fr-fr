@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: be4338c7b7e7b3861c206a6d7d63e9e417e6cd0d
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397408"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5438880"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>Étendre votre application de bureau avec des composants UWP modernes
 
@@ -44,7 +44,7 @@ Si votre solution ne contient pas un projet de création de packages, consultez 
 
 ### <a name="configure-the-desktop-application"></a>Configurer l’application de bureau
 
-Assurez-vous que votre application de bureau comporte des références aux fichiers que vous devez appeler APIs Windows Runtime.
+Assurez-vous que votre application de bureau comporte des références aux fichiers dont vous avez besoin d’appeler APIs Windows Runtime.
 
 Pour ce faire, consultez la section [tout d’abord, configurez votre projet](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project) de la rubrique [améliorer votre application de bureau pour Windows 10](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project).
 
@@ -97,7 +97,7 @@ Cette image montre une application Windows Forms qui ouvre une interface utilisa
 ![adaptive-design](images/desktop-to-uwp/extend-xaml-ui.png)
 
 >[!NOTE]
->Cet exemple montre une UI XAML en ajoutant un projet UWP à la solution. Qui est l’approche stable pris en charge à l’affichage des interfaces utilisateur XAML dans une application de bureau. L’alternative à cette approche consiste à ajouter des contrôles UWP XAML directement à votre application de bureau à l’aide d’une île XAML. Îles XAML sont actuellement disponibles sous la forme d’un version préliminaire pour développeurs. Bien que nous vous encourageons à les tester dans votre propre code prototype maintenant, nous ne recommandons pas que vous les utiliser dans le code de production pour l’instant. Ces API et les contrôles continuera à mûrir et stabiliser dans les futures versions de Windows. Pour en savoir plus sur XAML (îles), voir [les contrôles UWP dans les applications de bureau](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
+>Cet exemple montre une UI XAML en ajoutant un projet UWP à la solution. Qui est l’approche pris en charge stable affichant des interfaces utilisateur XAML dans une application de bureau. L’alternative à cette approche consiste à ajouter des contrôles UWP XAML directement à votre application de bureau à l’aide d’une île XAML. Îles XAML sont actuellement disponibles sous forme d’un version préliminaire pour développeurs. Bien que nous vous encourageons à les tester dans votre propre code prototype maintenant, nous ne recommandons pas que vous les utiliser dans le code de production pour l’instant. Ces API et les contrôles continuera à mûrir et stabiliser dans les futures versions de Windows. Pour en savoir plus sur XAML (îles), voir [les contrôles UWP dans les applications de bureau](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="the-design-pattern"></a>Modèle de conception
 
@@ -332,13 +332,13 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
     }
 }
 ```
-Dans ce code, nous enregistrons l’image qui est partagé par l’utilisateur dans un dossier de stockage local des applications. Plus tard, nous allons modifier l’application de bureau pour extraire des images à partir de ce dossier. L’application de bureau pour ce faire, car il est inclus dans le même package que l’application UWP.
+Dans ce code, nous enregistrons l’image qui est partagé par l’utilisateur dans un dossier de stockage local des applications. Plus tard, nous allons modifier l’application de bureau pour extraire des images à partir de ce dossier. L’application de bureau pour ce faire, car il est inclus dans le même package en tant que l’application UWP.
 
 <a id="desktop-extensions" />
 
 ### <a name="add-desktop-extensions-to-the-uwp-project"></a>Ajouter des extensions de bureau au projet UWP
 
-Ajoutez l’extension **Des Extensions de bureau Windows pour UWP** au projet d’application UWP.
+Ajoutez l’extension **d’Extensions de bureau Windows pour UWP** au projet d’application UWP.
 
 ![extension de bureau](images/desktop-to-uwp/desktop-extensions.png)
 
@@ -356,7 +356,7 @@ Dans l' **Explorateur de solutions**, ouvrez le fichier **package.appxmanifest**
 </Extensions>  
 ```
 
-Cette extension permettra l’application UWP démarrer l’application de bureau pour laquelle vous souhaitez que le partage un fichier. Dans l’exemple, nous faisons référence au fichier exécutable de l’application de bureau [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) .
+Cette extension activera l’application UWP démarrer l’application de bureau pour laquelle vous souhaitez que le partage un fichier. Dans l’exemple, nous faisons référence au fichier exécutable de l’application de bureau [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) .
 
 <a id="modify-desktop" />
 

@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 93d9c5df33e1131861c3e5caff625c689b8f330c
-ms.sourcegitcommit: 20abf751a7d2f483826e54809f2417c90d0aecb0
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/23/2018
-ms.locfileid: "5429649"
+ms.locfileid: "5445916"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>Activer les achats d’extensions consommables
 

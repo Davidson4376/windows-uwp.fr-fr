@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: af8b2489346e1ef81c5cae304802814b79b8b950
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5401286"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5432527"
 ---
 # <a name="notifications-visualizer"></a>Notifications Visualizer
 

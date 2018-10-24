@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, agile, objet, agilité, IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cc8ebb24eb051cd8e9b141f361f47041b122d5c
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5401924"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5436644"
 ---
 # <a name="agile-objects-in-cwinrt"></a>Objets agiles en C++/WinRT
 
@@ -89,7 +89,7 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, winrt::non_agile>
 
 Peu importe où la structure de marqueur apparaît dans le pack de paramètres variadiques.
 
-Si ou vous refusiez non l’agilité, vous pouvez implémenter vous-même **IMarshal** . Par exemple, vous pouvez utiliser le marqueur **winrt::non_agile** afin d’éviter l’implémentation de l’agilité par défaut et implémenter **IMarshal** vous-même&mdash;par exemple, pour prendre en charge la sémantique marshaler par valeur.
+Si ou vous refusiez non l’agilité, vous pouvez implémenter vous-même **IMarshal** . Par exemple, vous pouvez utiliser le marqueur **winrt::non_agile** pour éviter l’implémentation de l’agilité par défaut et implémenter **IMarshal** vous-même&mdash;par exemple, pour prendre en charge la sémantique marshaler par valeur.
 
 ## <a name="agile-references-winrtagileref"></a>Références agiles (winrt::agile_ref)
 

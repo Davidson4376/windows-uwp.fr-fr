@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows10, uwp, cartes, feuille de style de carte
 ms.localizationpriority: medium
 ms.openlocfilehash: f0a657ada755b77abe8ffef6a38bfa1f9ece8fcd
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396393"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5433587"
 ---
 # <a name="map-style-sheet-reference"></a>Référence de feuille de style de carte
 
@@ -33,7 +33,7 @@ Le code JSON ci-après peut être utilisé pour faire d’eau en rouge, des plan
     }
 ```
 
-Ce JSON peut être utilisé pour supprimer la totalité des légendes et des points d’une carte.
+Ce JSON peut servir à supprimer la totalité des légendes et des points d’une carte.
 
 ```json
 
@@ -54,7 +54,7 @@ Cet article indique les entrées et [propriétés](#properties) JSON que vous po
 <a id="entries" />
 
 ## <a name="entries"></a>Entrées
-Ce tableau utilise des caractères «>» pour représenter les différents niveaux de la hiérarchie des entrées.  Il indique également quelles versions de Windows prend en charge de chaque entrée et dont l’ignorer.
+Ce tableau utilise des caractères «>» pour représenter les différents niveaux de la hiérarchie des entrées.  Il indique également quelles versions de Windows prennent en charge chaque entrée et dont l’ignorer.
 
 | Version | Nom de la version Windows |
 |---------|----------------------|
@@ -79,7 +79,7 @@ Ce tableau utilise des caractères «>» pour représenter les différents nivea
 | >>> industrial               | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | Domaines qui sont utilisés à des fins industrielles. |
 | >>> island                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Étiquettes de zone (île). |
 | >>> medical                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zones utilisées à des fins médicales (par exemple: un campus hospitalier). |
-| >>> military                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zones qui englobent les bases militaires ou ont des usages militaires. |
+| >>> military                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zones qui englobent des bases militaires ou ont des usages militaires. |
 | >>> nautical                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Domaines qui sont utilisés pour nautiques connexes. |
 | >>> neighborhood             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Étiquettes de zone de voisinage. |
 | >>> runway                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zones qui est utilisé comme une piste de décollage avion. |
@@ -93,15 +93,15 @@ Ce tableau utilise des caractères «>» pour représenter les différents nivea
 | >>>> park                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zones qui englobent parcs. |
 | >>>> playingField            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Terrains de sport, tels qu’un terrain de base-ball ou un court de tennis. |
 | >>>> reserve                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Zones qui englobent réserves naturelles. |
-| >> point                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Toutes les fonctionnalités de point qui sont dessinées par une icône quelconque. |
+| >> point                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Tous les objets géographiques ponctuels qui sont tracés avec une icône quelconque. |
 | >>> address                  | [PointStyle](#pointstyle) |      |      |  ✔   |  ✔   | Étiquettes de nombres d’adresse. |
 | >>> naturalPoint             | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant des fonctionnalités naturelles. |
 | >>>> peak                    | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant des pics montagneux. |
 | >>>>> volcanicPeak           | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant des sommets de volcan. |
 | >>>> waterPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant des points d’eau, tels qu’une cascade. |
 | >>> pointOfInterest          | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant n’importe quel emplacement intéressante. |
-| >>>> business                | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant n’importe quel locaiton d’entreprise. |
-| >>>>> attractionPoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant touristiques tels que musées, zoos, etc.. |
+| >>>> business                | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | Icônes représentant des locaiton entreprises. |
+| >>>>> attractionPoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant des sites touristiques tels que musées, zoos, etc.. |
 | >>>>> communityPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant des emplacements d’utilisation générale de la Communauté. |
 | >>>>> educationPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant des établissements scolaires et les autre éducation liées à des emplacements. |
 | >>>>> entertainmentPoint     | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | Icônes représentant des lieux de divertissement telles que des salles, cinémas, etc.. |
@@ -128,7 +128,7 @@ Ce tableau utilise des caractères «>» pour représenter les différents nivea
 | >>>> transitBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Bâtiments utilisés pour le transit tels que des aéroports. |
 | >> transportation            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies appartenant au réseau de transport (par exemple, routes, lignes de chemin de fer et lignes de ferry). |
 | >>> road                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant toutes les routes. |
-| >>>> controlledAccessHighway | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant réseau autoroutier volumineux et contrôlé par l’accès. |
+| >>>> controlledAccessHighway | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant volumineux, contrôlée réseau autoroutier accès. |
 | >>>>> highSpeedRamp          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant les bretelles haut débit qui se connectent généralement à contrôlée réseau autoroutier accès. |
 | >>>> highway                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant réseau autoroutier. |
 | >>>> majorRoad               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Voies représentant les routes principales. |
@@ -188,7 +188,7 @@ Cette section décrit les propriétés que vous pouvez utiliser pour chaque entr
 | shadedReliefLightColor       | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   | Couleur du côté clair d’un relief par ombres portées.  Le canal alpha représente la valeur alpha maximale. |
 | shadowColor                  | Couleur   |      |      |      |  ✔️   | La couleur de l’ombre derrière les icônes qui utilisent des ombres. |
 | spaceColor                   | Couleur   |  ✔   |  ✔   |  ✔   |  ✔   | Valeur de couleur ARVB de la zone entourant la carte. |
-| useDefaultImageColors        | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   | Un indicateur qui indique si les couleurs d’origine dans le format SVG doivent être utilisé au lieu recherche de l’entrée de palette de couleurs d’une image. |
+| useDefaultImageColors        | Booléen    |  ✔   |  ✔   |  ✔   |  ✔   | Un indicateur qui indique si les couleurs d’origine dans le format SVG doivent être utilisés plutôt que recherche de l’entrée de palette de couleurs d’une image. |
 
 <a id="mapelement" />
 

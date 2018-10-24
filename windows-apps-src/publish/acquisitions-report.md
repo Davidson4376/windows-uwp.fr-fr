@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, acquisitions, ventes d’applications, téléchargements d'applications, installations, entonnoir, acquisition, conversions, canal, vues de pages d'applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 75a3ce152257d10fe392b3f64381b3e82bc79961
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5402997"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5439511"
 ---
 # <a name="acquisitions-report"></a>Rapport Acquisitions
 
@@ -50,17 +50,17 @@ Le graphique **Acquisitions** affiche le nombre total d’acquisitions quotidien
 
 Par défaut, nous affichons la vue de **l’application tous les jours** , qui comprend près de données en temps réel. Vous pouvez également visualiser le nombre total d’acquisitions sur toute la durée de vie de votre application en sélectionnant **App cumulative**. Vous avez alors accès au total cumulé de l’ensemble des acquisitions effectuées depuis la première publication de votre application.
 
-**Ventes brutes** de votre application (octobre 2016 - présents) sont également disponibles dans ce graphique, montrant le montant total gagné ventes d’application (en USD). Notez que ce montant ne tient pas compte de n’importe quel remboursements, reprises, de refacturation, etc..
+**Ventes brutes** de votre application (octobre 2016 - présents) sont également disponibles dans ce graphique, montrant le montant total gagné ventes d’application (en USD). Notez que ce montant ne tient pas compte des remboursements, reprises, des rétrofacturation, etc..
 
 Si vous le souhaitez, vous pouvez filtrer les résultats par acquisition émanant du client ou du WindowsStore sur le web et/ou par version du système d’exploitation.
 
 > [!NOTE]
 > Vous pouvez également récupérer ces données par programme à l’aide de la méthode [Obtenir des acquisitions d’applications](../monetize/get-app-acquisitions.md) dans notre [API REST d’analyse](../monetize/access-analytics-data-using-windows-store-services.md).
 
-Dans la vue de **l’application de tous les jours** , lorsque le **30D** période est activée, vous pouvez voir marqueurs de cercle. Ces représentent une augmentation importante ou la diminution une valeur donnée que nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou une baisse par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
+Dans la vue de **l’application de tous les jours** , lorsque le **30D** période est activée, vous pouvez voir marqueurs de cercle. Ces représentent une augmentation importante ou la diminution une valeur donnée que nous pensons que vous devrez connaître. La date à laquelle le cercle apparaît représente la fin de la semaine dans lequel nous avons détecté une augmentation importante ou une réduction par rapport à la semaine. Pour afficher plus d’informations sur ce qui a changé, survolez le cercle.  
 
 > [!TIP]
-> Vous pouvez afficher des informations plus liées à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).
+> Vous pouvez afficher des conseils supplémentaires liées à des modifications importantes au cours des 30 derniers jours dans le [rapport de perspectives](insights-report.md).
 
 ## <a name="installs"></a>Installations
 

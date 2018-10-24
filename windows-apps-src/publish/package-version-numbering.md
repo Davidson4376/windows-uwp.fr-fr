@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cf93cf06b273605b91c31da5b6a6b8cef8dae39
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5402888"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5432557"
 ---
 # <a name="package-version-numbering"></a>Numérotation des versions de packages
 
@@ -28,7 +28,7 @@ Chaque package que vous fournissez doit avoir un numéro de version (fourni sous
 ## <a name="version-numbering-for-windows-10-packages"></a>Numérotation des versions pour les packages Windows10
 
 > [!IMPORTANT]
-> Pour les packages Windows 10 (UWP), la dernière (quatrième) partie du numéro de version est réservée au Windows Store et vous devez conserver en tant que 0 lorsque vous générez votre package (bien que le Windows Store puisse modifier la valeur de cette section).
+> Pour les packages Windows 10 (UWP), la dernière (quatrième) partie du numéro de version est réservée au Windows Store et doive conserver la valeur 0 lorsque vous générez votre package (bien que le Windows Store puisse modifier la valeur de cette section).
 
 Lors du choix d’un package UWP à partir de votre soumission publiée, le Microsoft Store utilise toujours le package présentant la version la plus élevée applicable à l’appareil du client Windows 10. Cela vous offre une plus grande souplesse et vous permet de contrôler les packages fournis aux clients sur des types spécifiques d’appareils. Il est important de noter que vous pouvez soumettre ces packages dans n’importe quel ordre ; vous n’êtes pas obligé de fournir des packages dont le numéro de version est supérieur avec chaque soumission ultérieure.
 
@@ -62,7 +62,7 @@ Si vous conservez des copies de vos packages, vous avez la possibilité de resta
 
 Pour ce faire, créez une nouvelle [soumission](app-submissions.md). Supprimez le package problématique et chargez l’ancien package que vous souhaitez fournir dans le Windows Store. Les clients qui ont déjà reçu le package que vous restaurez auront toujours le package problématique (car votre ancien package aura un numéro de version antérieur). Cela n’empêchera cependant aucun autre utilisateur d’acquérir le package problématique, tout en permettant à l’application de rester disponible dans le Windows Store.
 
-Pour résoudre ce problème pour les clients qui ont déjà reçu le package problématique, vous pouvez soumettre un nouveau package Windows 10 qui dispose d’un numéro de version supérieur celui du package incorrect dès que possible. Une fois cette soumission certifiée, tous les clients seront mis à jour vers le nouveau package, car celui-ci aura un numéro de version supérieur.
+Pour résoudre le problème pour les clients qui ont déjà reçu le package problématique, vous pouvez soumettre un nouveau package Windows 10 qui dispose d’un numéro de version supérieur celui du package incorrect dès que possible. Une fois cette soumission certifiée, tous les clients seront mis à jour vers le nouveau package, car celui-ci aura un numéro de version supérieur.
 
 
 ## <a name="version-numbering-for-windows-81-and-earlier-and-windows-phone-81-packages"></a>Numérotation des versions des packages pour Windows 8.1 (et versions antérieures) et Windows Phone 8.1

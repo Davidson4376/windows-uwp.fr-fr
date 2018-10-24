@@ -16,11 +16,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 312e351a39bf291e1fcd21921230a73ed10cfd17
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399297"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5435502"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>Énumérer et interroger des fichiers et dossiers
 
@@ -181,7 +181,7 @@ Next folder
 > [!NOTE]
 > EnC# ou VisualBasic, n’oubliez pas de placer le mot-clé **async** dans la déclaration de toutes les méthodes dans lesquelles vous utilisez l’opérateur **await**.
 
-Sinon, vous pouvez utiliser la méthode [**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync) pour obtenir tous les éléments (fichiers et sous-dossiers) dans un emplacement particulier. L’exemple suivant utilise la méthode **GetItemsAsync** pour obtenir tous les fichiers et sous-dossiers dans le dossier racine de la [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (pas dans les sous-dossiers). L’exemple affiche ensuite le nom de chaque fichier et sous-dossier. Si l’élément est un sous-dossier, l’exemple ajoute `"folder"` au nom.
+Par ailleurs, vous pouvez utiliser la méthode [**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync) pour obtenir tous les éléments (fichiers et sous-dossiers) dans un emplacement spécifique. L’exemple suivant utilise la méthode **GetItemsAsync** pour obtenir tous les fichiers et sous-dossiers dans le dossier racine de la [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (pas dans les sous-dossiers). L’exemple affiche ensuite le nom de chaque fichier et sous-dossier. Si l’élément est un sous-dossier, l’exemple ajoute `"folder"` au nom.
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;

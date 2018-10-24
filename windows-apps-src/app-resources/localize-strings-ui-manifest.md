@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
 ms.openlocfilehash: c9db9f3ce4397bec6fb0b6b339875c206d17c3fd
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403383"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5436206"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application
 Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../design/globalizing/globalizing-portal.md).
@@ -92,7 +92,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 Vous pouvez utiliser ce même code à partir d’un projet de bibliothèque de classes (Windows universel) ou de [bibliothèque Windows Runtime (Windows universel)](../winrt-components/index.md). Lors de l’exécution, les ressources de l’application qui héberge la bibliothèque sont chargées. Il est recommandé qu’une bibliothèque charge les ressources à partir de l’application qui l’héberge, car l’application est susceptible d’avoir un niveau plus élevé de localisation. Si une bibliothèque doit fournir des ressources, elle doit donner à l’application qui l’héberge l’option de remplacer ces ressources en tant qu’entrée.
 
-Si un nom de ressource est segmenté (qu’il contient «.» caractères), puis remplacer points avec une barre oblique («/») caractères dans le nom de ressource. Les identificateurs de propriété, par exemple, contient points; Par conséquent, vous devez effectuer cette substitution afin de charger l’un de ces éléments à partir du code.
+Si un nom de ressource est segmenté (qu’il contient «.» caractères), puis remplacer pointillés avec une barre oblique («/») caractères dans le nom de ressource. Les identificateurs de propriété, par exemple, contient points; Par conséquent, vous devez effectuer cette substitution afin de charger l’un de ces éléments à partir du code.
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
@@ -274,14 +274,14 @@ Pour une bibliothèque Windows Runtime (Windows universel), si l’espace de nom
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-Vous n’avez pas besoin pour ce faire pour une bibliothèque de classes (Windows universel). En cas de doute, vous pouvez utiliser [MakePri.exe](makepri-exe-command-options.md) pour vider votre composant ou fichier PRI de la bibliothèque. Chaque ressource `uri` s’affiche dans le fichier vidé.
+Vous n’avez pas besoin d’effectuer ceci pour une bibliothèque de classes (Windows universel). En cas de doute, vous pouvez utiliser [MakePri.exe](makepri-exe-command-options.md) pour vider votre composant ou fichier PRI de la bibliothèque. Chaque ressource `uri` s’affiche dans le fichier vidé.
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>Chargement de chaînes à partir d’autres packages
-Les ressources nécessaires pour un package d’application sont gérées et accessibles par le biais du package propre de niveau supérieur [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) qui est accessible à partir de [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)en cours. Dans chaque package, différents composants peuvent avoir leurs propres sous-arborescences ResourceMap, accessibles via [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
+Les ressources nécessaires pour un package d’application sont gérées et accessibles par le biais du package propriétaire de niveau supérieur [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) qui est accessible à partir de [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)en cours. Dans chaque package, différents composants peuvent avoir leurs propres sous-arborescences ResourceMap, accessibles via [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
 
 Un package d’infrastructure peut accéder à ses propres ressources avec un URI d’identificateur de ressource absolu. Voir également [Schémas d’URI](uri-schemes.md).
 

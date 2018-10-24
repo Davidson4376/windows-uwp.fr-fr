@@ -10,17 +10,17 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e4c1b1df8ad29635f38ae5b373685d3504a4eb60
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400912"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5440115"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>Créer une application de console de plateforme Windows universelle
 
 Cette rubrique explique comment créer un [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) ou C++ / CX Universal Windows Platform (UWP) console application.
 
-À partir de Windows 10, version 1803, vous pouvez écrire C++ / WinRT ou C++ / CX UWP les applications de console qui s’exécutent dans une fenêtre de console, telle qu’une fenêtre de console DOS ou PowerShell. Les applications de console utilisent la fenêtre de console pour l’entrée et de sortie et peuvent utiliser des fonctions de [Runtime C universelle](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference) comme **printf** et **getchar**. Les applications de console UWP peuvent être publiées dans le MicrosoftStore. Elles ont une entrée dans la liste des applications et une vignette principale qui peut être épinglée au menu Démarrer. Les applications de console UWP peuvent être lancées à partir du menu Démarrer, même si vous en règle générale, les lancerez à partir de la ligne de commande.
+À compter de Windows 10, version 1803, vous pouvez écrire C++ / WinRT ou C++ / CX UWP les applications de console qui s’exécutent dans une fenêtre de console, telle qu’une fenêtre de console DOS ou PowerShell. Les applications de console utilisent la fenêtre de console pour l’entrée et sortie et peuvent utiliser les fonctions de [Runtime C universelle](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference) comme **printf** et **getchar**. Les applications de console UWP peuvent être publiées dans le MicrosoftStore. Elles ont une entrée dans la liste des applications et une vignette principale qui peut être épinglée au menu Démarrer. Les applications de console UWP peuvent être lancées à partir du menu Démarrer, même si vous en règle générale, les lancerez à partir de la ligne de commande.
 
 Pour visualiser un en action, voici une vidéo sur la création d’une application de Console UWP.
 
@@ -28,7 +28,7 @@ Pour visualiser un en action, voici une vidéo sur la création d’une applicat
 
 ## <a name="use-a-uwp-console-app-template"></a>Utiliser un modèle d’application de console UWP 
 
-Pour créer une application de console UWP, commencez par installer les **modèles de projets (universels) d’application de console**, disponibles dans le [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal). Les modèles installés sont ensuite disponibles sous le **Nouveau projet** > **installé** > **Autres langages** > **Visual C++** > **Windows universel** en tant que **application de Console c++ / WinRT (Windows universel) **et **de la Console application C++ / CX (Windows universel)**.
+Pour créer une application de console UWP, commencez par installer les **modèles de projets (universels) d’application de console**, disponibles dans le [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal). Les modèles installés sont ensuite disponibles sous le **Nouveau projet** > **Installed** > **Autres langages** > **Visual C++** > **Windows universel** en tant que **application de Console c++ / WinRT (Windows universel) **et **de la Console application C++ / CX (Windows universel)**.
 
 ## <a name="add-your-code-to-main"></a>Ajouter votre code à main()
 

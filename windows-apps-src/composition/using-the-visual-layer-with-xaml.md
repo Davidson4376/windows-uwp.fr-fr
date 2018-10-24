@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d45881ace6be3b0af88f14692837e96ab9b58d18
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400512"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5433528"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>Utilisation de la couche visuelle avec le contenu XAML
 

@@ -1,6 +1,6 @@
 ---
 author: stevewhims
-description: Cette rubrique utilise un exemple de code complet Direct2D pour montrer comment utiliser C++ / WinRT pour utiliser les classes et interfaces COM.
+description: Cette rubrique utilise un exemple de code complet Direct2D pour montrer comment utiliser C++ / WinRT pour consommer des classes et interfaces COM.
 title: Utiliser des composants COM avec C++/WinRT
 ms.author: stwhi
 ms.date: 07/23/2018
@@ -10,21 +10,21 @@ ms.technology: uwp
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, COM, composant, classe, interface
 ms.localizationpriority: medium
 ms.openlocfilehash: 8af5a8149faab3bece62e4da5d41138aaede16e7
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399075"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5441951"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Utiliser des composants COM avec C++/WinRT
 
-Vous pouvez utiliser les fonctionnalités de la [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) bibliothèque à utiliser des composants COM, tels que des graphiques 2D et 3D haute performance des APIs DirectX. C++ / WinRT est le moyen le plus simple d’utiliser DirectX sans compromettre les performances. Cette rubrique présente un exemple de code de Direct2D pour montrer comment utiliser C++ / WinRT pour utiliser les classes et interfaces COM. Vous pouvez, bien entendu, combiner, la programmation COM et Windows Runtime au sein de la même C++ / WinRT projet.
+Vous pouvez utiliser les fonctionnalités de la [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) bibliothèque à utiliser des composants COM, par exemple, les graphiques 2D et 3D haute performance des APIs DirectX. C++ / WinRT est le moyen le plus simple d’utiliser DirectX sans compromettre les performances. Cette rubrique présente un exemple de code de Direct2D pour montrer comment utiliser C++ / WinRT pour consommer des classes et interfaces COM. Vous pouvez, bien entendu, mélanger la programmation COM et Windows Runtime au sein de la même C++ / WinRT projet.
 
-À la fin de cette rubrique, vous trouverez un listing du code source complet d’une application de Direct2D minimal. Nous allons levez des extraits de code et les utiliser pour illustrer comment utiliser des composants COM à l’aide de C++ / WinRT à l’aide de diverses fonctionnalités de C++ / WinRT bibliothèque.
+À la fin de cette rubrique, vous trouverez un listing du code source complet d’une application de Direct2D minimale. Nous allons levez des extraits de code et les utiliser pour illustrer comment utiliser des composants COM à l’aide de C++ / WinRT à l’aide de diverses fonctionnalités de C++ / WinRT bibliothèque.
 
 ## <a name="com-smart-pointers-winrtcomptruwpcpp-ref-for-winrtcom-ptr"></a>Pointeurs intelligents COM ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
 
-Lorsque vous programmez avec COM, vous travaillez directement avec des interfaces plutôt qu’avec des objets (qui d’également true en arrière-plan pour APIs Windows Runtime, qui sont une évolution de COM). Pour appeler une fonction sur une classe COM, par exemple, vous avez activé la classe, obtenir une interface précédent, puis vous appelez des fonctions de cette interface. Pour accéder à l’état d’un objet, vous n’accèdent à ses membres de données directement. au lieu de cela, vous appelez des fonctions accesseur et mutateur sur une interface.
+Lorsque vous programmez avec COM, vous travaillez directement avec des interfaces plutôt qu’avec des objets (qui d’également true détaillé pour APIs Windows Runtime, qui sont une évolution de COM). Pour appeler une fonction sur une classe COM, par exemple, vous avez activé la classe, obtenir une interface précédent, et vous appelez des fonctions de cette interface. Pour accéder à l’état d’un objet, vous n’accèdent à ses membres de données directement. au lieu de cela, vous appelez des fonctions accesseur et mutateur sur une interface.
 
 Pour être plus spécifique, nous parlons d’interagir avec *des pointeurs*d’interface. Et pour ce faire, nous tirer parti de l’existence du type pointeur intelligent COM en C++ / WinRT&mdash;le type de [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) .
 
@@ -85,7 +85,7 @@ DWriteCreateFactory(
 ## <a name="re-seat-a-winrtcomptr"></a>Remettre en place un **winrt::com_ptr**
 
 > [!IMPORTANT]
-> Si vous disposez d’un [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) qui est déjà en place (son pointeur brut interne dispose déjà d’une cible) et vous voulez remettre en place qu’elle pointe vers un autre objet, puis vous devez tout d’abord affecter `nullptr` lui&mdash;comme illustré dans l’exemple de code ci-dessous. Si vous n’est pas le cas, puis un déjà assis **com_ptr** dessinent le problème à votre attention (lorsque vous appelez [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) ou [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)) en déclarant que son pointeur interne n’est pas null.
+> Si vous disposez d’un [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) qui est déjà en place (son pointeur brut interne dispose déjà d’une cible) et vous souhaitez remettre en place qu’elle pointe vers un autre objet, vous devez tout d’abord affecter `nullptr` lui&mdash;comme illustré dans l’exemple de code ci-dessous. Si vous n’est pas le cas, puis un déjà assis **com_ptr** dessinent le problème à votre attention (lorsque vous appelez [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) ou [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)) en déclarant que son pointeur interne n’est pas null.
 
 ```cppwinrt
 winrt::com_ptr<ID2D1SolidColorBrush> brush;
@@ -101,7 +101,7 @@ target->CreateSolidColorBrush(
 
 ## <a name="handle-hresult-error-codes"></a>Gérer les codes d’erreur HRESULT
 
-Pour vérifier que la valeur d’une valeur HRESULT renvoyé à partir d’une fonction COM et lever une exception dans le cas où elle représente un code d’erreur, appelez [**winrt::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult).
+Pour vérifier que la valeur d’un HRESULT renvoyé à partir d’une fonction COM et lever une exception dans le cas où elle représente un code d’erreur, appelez [**winrt::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult).
 
 ```cppwinrt
 winrt::check_hresult(D2D1CreateFactory(
@@ -126,7 +126,7 @@ Vous pouvez appeler la fonction [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-pt
 }
 ```
 
-## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>Fonctions COM qui prennent un pointeur d’interface **IUnknown**
+## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>Fonctions de COM qui utilisent un pointeur d’interface **IUnknown**
 
 Vous pouvez appeler la fonction libre [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function) pour transmettre vos **com_ptr** à une fonction qui prend un pointeur d’interface **IUnknown** .
 
@@ -170,7 +170,7 @@ Vous pouvez également utiliser [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>Listing du code source complet d’une application de Direct2D minimale
 
-Si vous souhaitez générer et exécuter cet exemple de code source, puis tout d’abord, dans Visual Studio, créez un **Core App (C++ / WinRT)**. `Direct2D` est un nom raisonnable pour le projet, mais vous pouvez nommer comme vous le souhaitez. Ouvrez `App.cpp`, supprimer la totalité de son contenu et coller dans la liste ci-dessous.
+Si vous souhaitez générer et exécuter cet exemple de code source, puis tout d’abord, dans Visual Studio, créez un **Core App (C++ / WinRT)**. `Direct2D` est un nom raisonnable pour le projet, mais vous pouvez nommer comme vous le souhaitez. Ouvrez `App.cpp`, supprimer la totalité de son contenu et coller dans le listing ci-dessous.
 
 ```cppwinrt
 #include "pch.h"

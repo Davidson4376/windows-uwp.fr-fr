@@ -11,11 +11,11 @@ keywords: windows10, uwp, notifications ciblées, notifications push, toast, vig
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d62f46ad1b55fbad3ab7c21a593625a2538b68f
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396423"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5437288"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>Envoyer des notifications aux clients de votre application
 
@@ -53,7 +53,7 @@ Suivez cette procédure pour créer une notification dans le tableau de bord et 
 
 1. Dans le [tableau de bord du Centre de développement Windows](https://partner.microsoft.com/dashboard/), développez la section **Engager**, puis sélectionnez **Notifications**.
 2. Sur la page **Notifications**, sélectionnez **Nouvelle notification**.
-3. Dans la section **Sélectionnez un modèle** , choisissez le [type de notification](#notification-template-types) que vous souhaitez envoyer, puis cliquez sur **OK**.
+3. Dans la section **Sélectionnez un modèle** , choisissez le [type de notification que](#notification-template-types) vous souhaitez envoyer, puis cliquez sur **OK**.
 4. À la page suivante, utilisez le menu déroulant pour choisir une **Application unique** ou **Plusieurs applications** pour lesquels vous souhaitez générer une notification. Vous pouvez sélectionner uniquement les applications qui ont été [configurés pour recevoir des notifications à l’aide du Microsoft Store Services SDK](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 5. Dans la section **Paramètres de notification**, choisissez un **nom** pour votre notification et, si applicable, choisissez le **groupe de clients** à qui vous souhaitez envoyer la notification. (Les notifications envoyées à plusieurs applications peuvent uniquement être envoyées à tous les clients de ces applications.) Si vous souhaitez utiliser un segment que vous n'avez pas encore créé, sélectionnez **Créer un nouveau groupe client**. Remarque: Il faut 24heures avant qu’un nouveau segment puisse être utilisé pour les notifications. Pour plus d’informations, consultez [Créer des segments de clients](create-customer-segments.md).
 6. Si vous voulez indiquer à quel moment envoyer la notification, décochez la case **Notification immédiate** et choisissez une date et une heure spécifiques (au format UTC pour tous les clients, sauf si vous indiquez d’utiliser le fuseau horaire local de chaque client).

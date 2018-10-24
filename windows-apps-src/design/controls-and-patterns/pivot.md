@@ -15,15 +15,15 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bb6ed36c772e5ae80a3cb801b4b6b36bb1ab18c
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397689"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5441164"
 ---
 # <a name="pivot"></a>Pivot
 
-Le contrôle de [sélecteur de vue](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) permet de balayage tactile entre un petit ensemble de sections de contenu.
+Le contrôle de [sélecteur de vue](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) permet balayage tactile entre un petit ensemble de sections de contenu.
 
 > **API importantes**: [classe Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [classe NavigationView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
@@ -43,17 +43,17 @@ Le contrôle de [sélecteur de vue](https://docs.microsoft.com/uwp/api/Windows.U
 </tr>
 </table>
 
-Le contrôle de sélecteur de vue, tout comme [NavigationView](navigationview.md), souligne l’élément sélectionné.
+Le contrôle Pivot, tout comme [NavigationView](navigationview.md), souligne l’élément sélectionné.
 
 ![Le focus par défaut souligne l’en-tête sélectionné](images/pivot_focus_selectedHeader.png)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié?
 
-Pour obtenir navigation supérieur courants et des modèles d’onglets, nous vous recommandons d’à l’aide de [NavigationView](navigationview.md), qui s’adapte à différentes tailles d’écran et permet la personnalisation supérieure automatiquement.
+Pour obtenir navigation supérieure courantes et des modèles d’onglets, nous vous recommandons d’à l’aide de [NavigationView](navigationview.md), qui s’adapte à différentes tailles d’écran et permet la personnalisation supérieure automatiquement.
 
 Toutefois, si votre navigation requiert le balayage-tactile, nous recommandons d’utiliser le sélecteur de vue.
 
-Les autres principales différences entre les contrôles NavigationView et sélecteur de vue sont le comportement de dépassement de capacité par défaut et de l’API de la navigation:
+Les autres principales différences entre les contrôles NavigationView et sélecteur de vue sont le comportement de dépassement de capacité par défaut et l’API de la navigation:
 
 - Dépassement carrousels éléments, tandis que NavigationView utilise une liste déroulante du menu de dépassement de capacité afin que les utilisateurs puissent voir tous les éléments de sélecteur de vue.
 - Sélecteur de vue gère la navigation entre les sections de contenu, tandis que NavigationView permet de mieux contrôler le comportement de navigation.
@@ -87,7 +87,7 @@ Ce code XAML crée un NavigationView avec 3 sections de contenu, comme dans l’
 </Page>
 ```
 
-NavigationView fournit plus de contrôle sur la personnalisation de la navigation et nécessite le code-behind correspondante. Pour accompagner le code XAML ci-dessus, utilisez le code-behind suivant:
+NavigationView fournit plus de contrôle sur la personnalisation de la navigation et nécessite le code-behind correspondant. Pour accompagner le code XAML ci-dessus, utilisez le code-behind suivant:
 
 ```csharp
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)

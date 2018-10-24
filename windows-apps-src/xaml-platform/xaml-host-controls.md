@@ -10,24 +10,24 @@ ms.technology: uwp, windows forms, wpf
 keywords: windows10, uwp, windows forms, wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: b9757466502283c673c7b2106b4a7775be412faf
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5405009"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5438339"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>Contrôles UWP dans des applications de bureau
 
 > [!NOTE]
-> Les API et les contrôles mentionnés dans cet article sont actuellement disponibles sous la forme d’un version préliminaire pour développeurs. Bien que nous vous encourageons à les tester dans votre propre code prototype maintenant, nous ne recommandons pas que vous les utiliser dans le code de production pour l’instant. Ces API et les contrôles continuera à mûrir et stabiliser dans les futures versions de Windows. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.
+> Les API et les contrôles mentionnés dans cet article sont actuellement disponibles sous forme d’un version préliminaire pour développeurs. Bien que nous vous encourageons à les tester dans votre propre code prototype maintenant, nous ne recommandons pas que vous les utiliser dans le code de production pour l’instant. Ces API et les contrôles continuera à mûrir et stabiliser dans les futures versions de Windows. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.
 
-Windows 10 vous permet désormais d’utiliser les contrôles UWP dans les applications de bureau non UWP afin que vous pouvez améliorer l’apparence et les fonctionnalités de vos applications de bureau existantes avec les dernières fonctionnalités de l’interface utilisateur de Windows 10 qui sont uniquement disponibles via les contrôles UWP. Cela signifie que vous pouvez utiliser les fonctionnalités UWP telles que [Windows Ink](../design/input/pen-and-stylus-interactions.md) et les contrôles qui prennent en charge le [Système Fluent Design](../design/fluent-design-system/index.md) dans votre existant WPF, Windows Forms et les applications Win32 C++. Ce scénario développeur est parfois appelé *(îles) XAML*.
+Windows 10 vous permet désormais d’utiliser les contrôles UWP dans les applications de bureau non UWP afin que vous pouvez améliorer l’apparence et les fonctionnalités de vos applications de bureau existantes avec les dernières fonctionnalités de l’interface utilisateur de Windows 10 qui sont uniquement disponibles via les contrôles UWP. Cela signifie que vous pouvez utiliser les fonctionnalités UWP telles que les contrôles qui prennent en charge le [Système Fluent Design](../design/fluent-design-system/index.md) dans votre existant WPF, Windows Forms et les applications Win32 C++ et [Windows Ink](../design/input/pen-and-stylus-interactions.md) . Ce scénario développeur est parfois appelé *(îles) XAML*.
 
 Nous proposons différentes méthodes à utiliser (îles) XAML dans vos applications WPF, Windows Forms et Win32 C++, en fonction de la technologie ou infrastructure que vous utilisez.
 
 ## <a name="wrapped-controls"></a>Contrôles inclus dans un wrapper
 
-Les applications WPF et Windows Forms peuvent utiliser une sélection de contrôles UWP encapsulés dans le [Kit de ressources de la Communauté Windows](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). Nous appelons à ces contrôles *encapsulé les contrôles* dans la mesure où ils encapsulent l’interface et des fonctionnalités d’un contrôle UWP spécifique. Vous pouvez ajouter ces contrôles directement à l’aire de conception de votre projet WPF ou Windows Forms et les utiliser comme tout autre contrôle WPF ou Windows Forms dans votre concepteur.
+Applications WPF et Windows Forms peuvent utiliser une sélection de contrôles UWP encapsulés dans le [Kit de ressources de la Communauté Windows](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). Nous appelons à ces contrôles *encapsulé les contrôles* dans la mesure où ils encapsulent l’interface et des fonctionnalités d’un contrôle UWP spécifique. Vous pouvez ajouter ces contrôles directement à l’aire de conception de votre projet WPF ou Windows Forms et les utiliser comme tout autre contrôle WPF ou Windows Forms dans votre concepteur.
 
 > [!NOTE]
 > Contrôles inclus dans un wrapper ne sont pas disponibles pour les applications de bureau Win32 C++. Ces types d’applications doivent utiliser l' [API d’hébergement de XAML UWP](#uwp-xaml-hosting-api).
@@ -43,14 +43,14 @@ Les contrôles UWP encapsulés suivants sont actuellement disponibles pour les a
 
 ## <a name="host-controls"></a>Contrôles hôtes
 
-Pour les scénarios au-delà de celles couvertes par les contrôles encapsulés disponibles, applications WPF et Windows Forms peuvent également utiliser le contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) dans le [Kit de ressources de la Communauté Windows](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). Ce contrôle peut héberger n’importe quel contrôle UWP qui dérive de [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), y compris n’importe quel contrôle UWP fourni par le Kit de développement Windows, ainsi que des contrôles utilisateur personnalisés. Ce contrôle prend en charge les versions 17709 et versions ultérieures du Kit de développement logiciel Windows 10 Insider Preview build.
+Pour les scénarios au-delà de celles couvertes par les contrôles encapsulés disponibles, les applications WPF et Windows Forms peuvent également utiliser le contrôle [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) dans le [Kit de ressources de la Communauté Windows](https://docs.microsoft.com/windows/uwpcommunitytoolkit/). Ce contrôle peut héberger n’importe quel contrôle UWP qui dérive de [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement), y compris n’importe quel contrôle UWP fourni par le Kit de développement Windows, ainsi que des contrôles utilisateur personnalisés. Ce contrôle prend en charge les versions SDK de Windows 10 Insider Preview build 17709 et versions ultérieures.
 
 > [!NOTE]
 > Hébergez des contrôles ne sont pas disponibles pour les applications de bureau Win32 C++. Ces types d’applications doivent utiliser l' [API d’hébergement de XAML UWP](#uwp-xaml-hosting-api).
 
 ## <a name="uwp-xaml-hosting-api"></a>XAML UWP API d’hébergement
 
-Si vous avez une application Win32 C++, vous pouvez utiliser l' *API d’hébergement de XAML UWP* pour héberger n’importe quel contrôle UWP qui dérive de [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) dans n’importe quel élément d’interface utilisateur dans votre application qui a un handle de fenêtre associée (HWND). Cette API a été introduite dans le Kit de développement Windows 10 Insider Preview build 17709. Pour plus d’informations sur l’utilisation de cette API, reportez-vous [à l’aide de l’API dans une application de bureau d’hébergement de XAML](using-the-xaml-hosting-api.md).
+Si vous avez une application Win32 C++, vous pouvez utiliser l' *API d’hébergement de XAML UWP* pour héberger tout contrôle UWP qui dérive de [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) dans n’importe quel élément d’interface utilisateur dans votre application qui contient un handle de fenêtre associée (HWND). Cette API a été introduite dans le Kit de développement Windows 10 Insider Preview build 17709. Pour plus d’informations sur l’utilisation de cette API, reportez-vous [à l’aide de l’API dans une application de bureau d’hébergement de XAML](using-the-xaml-hosting-api.md).
 
 > [!NOTE]
 > Les applications de bureau Win32 C++ doivent utiliser le XAML UWP API d’hébergement pour héberger des contrôles UWP. Contrôles encapsulés et les contrôles de l’hôte ne sont pas disponibles pour ces types d’applications. Pour les applications WPF et Windows Forms, nous vous recommandons d’utiliser les contrôles encapsulés et hôte dans le Kit de ressources de la Communauté Windows au lieu du XAML UWP API d’hébergement. Ces contrôles utilisent le XAML UWP, API d’hébergement en interne et fournissent une expérience de développement plus simple. Toutefois, vous pouvez utiliser l’API d’hébergement directement dans vos applications WPF et Windows Forms si vous choisissez de XAML UWP.

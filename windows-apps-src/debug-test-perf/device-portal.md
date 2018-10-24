@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
 ms.openlocfilehash: 08e7d8fcfbab0d0b22fffa3e3e0aecc38d5b095c
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5404471"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5439210"
 ---
 # <a name="windows-device-portal-overview"></a>Vue d’ensemble de Windows Device Portal
 
@@ -25,7 +25,7 @@ Windows Device Portal est un serveur web sur votre appareil que vous pouvez vous
 
 Windows Device Portal est disponible sur chaque famille d’appareils, mais les fonctionnalités et la configuration varient en fonction des besoins de chaque appareil. Cet article fournit une description générale de Device Portal et des liens vers des articles contenant des informations plus spécifiques pour chaque famille d’appareils.
 
-Les fonctionnalités de Windows Device Portal sont implémentée avec l' [API REST](device-portal-api-core.md) que vous pouvez utiliser directement pour accéder aux données et contrôler votre appareil par programme.
+Les fonctionnalités de Windows Device Portal sont implémentée avec les [API REST](device-portal-api-core.md) que vous pouvez utiliser directement pour accéder aux données et contrôler votre appareil par programme.
 
 ## <a name="setup"></a>Installation
 
@@ -55,7 +55,7 @@ Pour obtenir des instructions d’installation propres à chaque appareil, consu
 
 ### <a name="toolbar-and-navigation"></a>Barre d’outils et navigation
 
-La barre d’outils en haut de la page donne accès aux fonctionnalités couramment utilisées.
+La barre d’outils en haut de la page permet d’accéder aux fonctionnalités couramment utilisées.
 - **Alimentation**: accéder aux options d’alimentation.
   - **Arrêt**: éteint l’appareil.
   - **Redémarrer**: mise sous tension de l’appareil par cycle.
@@ -110,7 +110,7 @@ Voici les mesures disponibles:
 - **Mémoire**: totale, en cours d’utilisation, disponible validée, paginée et non paginée
 - **E/s**: les quantités de données en lecture et écriture
 - **Réseau**: réceptions et envois des données
-- **GPU**: l’utilisation de moteur pour cent de processeur graphique disponibles total
+- **GPU**: % du GPU disponible total de l’utilisation du moteur
 
 
 ![Page de performances du portail d’appareil](images/device-portal/mob-device-portal-perf.png)
@@ -154,13 +154,13 @@ Capturé. Les fichiers ETL peuvent être ouverts pour analyse dans l' [Analyseur
 
 La page Gestionnaire de périphériques énumère tous les périphériques connectés à votre appareil. Vous pouvez cliquer sur les icônes de paramètres pour afficher les propriétés de chaque.
 
-![Page de gestionnaire de périphériques Device Portal](images/device-portal/mob-device-portal-devices.png)
+![Page de gestionnaire de périphérique Device Portal](images/device-portal/mob-device-portal-devices.png)
 
 ### <a name="networking"></a>Mise en réseau
 
 La page de mise en réseau gère les connexions réseau sur l’appareil. Sauf si vous êtes connecté à Device Portal via USB, la modification de ces paramètres entraînera certainement la déconnexion de Device Portal.
 - **Réseaux disponibles**: affiche les réseaux Wi-Fi disponibles sur l’appareil. Appuyez ou cliquez sur un réseau pour vous y connecter et fournir une clé d’accès si nécessaire. Device Portal ne gère pas encore l’authentification en entreprise. Vous pouvez également utiliser la liste déroulante des **profils** pour tenter de se connecter à un des profils Wi-Fi connus à l’appareil.
-- **Configuration IP**: affiche des informations adresse chacun de l’hôte de ports de réseau de l’appareil.
+- **Configuration IP**: affiche des informations d’adresse sur chacun de l’hôte de ports de réseau de l’appareil.
 
 ![Page de mise en réseau du portail d’appareil](images/device-portal/mob-device-portal-network.png)
 

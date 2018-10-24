@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumissions d’app
 ms.localizationpriority: medium
 ms.openlocfilehash: f0edcde4916311a629d248b800320f6e1c596600
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5411017"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5435060"
 ---
 # <a name="manage-app-submissions"></a>Gérer les soumissions d’applications
 

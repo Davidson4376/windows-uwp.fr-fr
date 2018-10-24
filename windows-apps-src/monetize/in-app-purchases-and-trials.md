@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, achats dans l’application, extensions, versions d’évaluation, consommables, durables, abonnement
 ms.localizationpriority: medium
 ms.openlocfilehash: b116e4794f024ecc5cf44d73e22c09ab8ee33ff4
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398770"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5441649"
 ---
 # <a name="in-app-purchases-and-trials"></a>Achats dans l’application et versions d’évaluation
 

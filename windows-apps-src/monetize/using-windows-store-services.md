@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, services du Windows Store
 ms.localizationpriority: medium
 ms.openlocfilehash: d53fa39d0c6359e6f081c62a415cbf1874549b8f
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5404054"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5439389"
 ---
 # <a name="microsoft-store-services"></a>Services MicrosoftStore
 
@@ -26,7 +26,7 @@ Le Microsoft Store expose plusieurs services que vous pouvez appeler via l’API
 
 | Rubrique            | Description                 |
 |------------------|-----------------------------|
-| [Accéder aux données d’analyse](access-analytics-data-using-windows-store-services.md) | Utiliser *Microsoft Store analytique API* pour récupérer par programme les données d’analytique de vos applications. Cette API permet de récupérer les données pour les acquisitions d'applications et de modules complémentaires (également appelés produits in-app ou PIA), les échecs des applications, les classifications et les vérifications d'applications, ainsi que les données de performances pour les publicités in-app et les campagnes publicitaires. |
+| [Accéder aux données d’analyse](access-analytics-data-using-windows-store-services.md) | Utiliser *Microsoft Store analytique API* pour récupérer par programmation les données d’analytique de vos applications. Cette API permet de récupérer les données pour les acquisitions d'applications et de modules complémentaires (également appelés produits in-app ou PIA), les échecs des applications, les classifications et les vérifications d'applications, ainsi que les données de performances pour les publicités in-app et les campagnes publicitaires. |
 | [Répondre aux avis](respond-to-reviews-using-windows-store-services.md) | Utilisez l'*API d'avis du MicrosoftStore* pour répondre par programmation aux avis sur votre app dans le MicrosoftStore. Cette API est particulièrement utile pour les développeurs qui souhaitent répondre en bloc à de nombreux avis sans utiliser le tableau de bord du Centre de développement Windows.  |
 | [Exécuter des campagnes publicitaires](run-ad-campaigns-using-windows-store-services.md) | Utiliser l' *API de promotions du Microsoft Store* pour gérer par programmation les campagnes publicitaires promotionnelles pour vos applications. Cette API permet de créer, de mettre à jour et de surveiller vos campagnes et d'autres ressources connexes, telles que des options créatives et de ciblage. Cette API est particulièrement utile pour les développeurs qui créent des volumes importants de campagnes publicitaires, et qui souhaitent le faire sans utiliser le tableau de bord du Centre de développement Windows. |
 | [Créer et gérer des soumissions](create-and-manage-submissions-using-windows-store-services.md) | L’*API de soumission au MicrosoftStore* vous permet d’interroger et de créer par programmation des soumissions pour des apps, des extensions et des versions d’évaluation de package pour votre compte personnel du Centre de développement Windows ou celui de votre d’organisation. Cette API est utile si votre compte gère beaucoup d’applications ou d’extensions et que vous voulez automatiser et optimiser le processus de soumission de ces ressources. |

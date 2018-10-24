@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, rôles d’utilisateur, autorisation d’utilisateur, rôles personnalisés, accès utilisateur, personnaliser les autorisations, rôles standard
 ms.localizationpriority: medium
 ms.openlocfilehash: a4100248857af655f388ad318bb3ae5176aaf046
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398341"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5434428"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Définir des rôles ou des autorisations personnalisés pour les utilisateurs de compte
 
@@ -119,7 +119,7 @@ Les autorisations de cette section ne peuvent pas être limitées à des produit
 <tr><td align="left">    <b>Annonces de la communauté</b>                       </td><td align="left">  Peut afficher l’utilisation des <a href="about-community-ads.md">annonces gratuites de la communauté</a> de tous les produits dans le compte.          </td><td align="left">  Peut créer, gérer et afficher l’utilisation des <a href="about-community-ads.md">annonces gratuites de la communauté</a> de tous les produits dans le compte.               </td></tr>
 <tr><td align="left">    <b>Coordonnées</b>                        </td><td align="left">  Peut afficher les <a href="managing-your-profile.md">coordonnées</a> dans la section Paramètres du compte.        </td><td align="left">  Peut modifier et afficher les <a href="managing-your-profile.md">coordonnées</a> dans la section Paramètres du compte.            </td></tr>
 <tr><td align="left">    <b>Conformité avec la réglementation COPPA</b>                    </td><td align="left">  Peut afficher les sélections de <a href="in-app-ads.md#coppa-compliance">conformité avec la réglementation COPPA</a> (qui indique si les produits sont adaptés aux enfants de moins de 13ans) pour tous les produits dans le compte.                                            </td><td align="left">  Peut modifier et afficher les sélections de <a href="in-app-ads.md#coppa-compliance">conformité avec la réglementation COPPA</a> (qui indique si les produits sont adaptés aux enfants de moins de 13ans) pour tous les produits dans le compte.         </td></tr>
-<tr><td align="left">    <b>Groupes de clients</b>                     </td><td align="left">  Peut afficher <a href="create-customer-groups.md">des groupes de clients</a> (segments et groupes d’utilisateurs connus).      </td><td align="left">  Peut créer, modifier et afficher les <a href="create-customer-groups.md">groupes de clients</a> (segments et groupes d’utilisateurs connus).       </td></tr>
+<tr><td align="left">    <b>Groupes de clients</b>                     </td><td align="left">  Permet d’afficher <a href="create-customer-groups.md">des groupes de clients</a> (segments et groupes d’utilisateurs connus).      </td><td align="left">  Peut créer, modifier et afficher les <a href="create-customer-groups.md">groupes de clients</a> (segments et groupes d’utilisateurs connus).       </td></tr>
 <tr><td align="left">    <b>Gérer les groupes de produits</b>&nbsp;*                            </td><td align="left">  Peut afficher la page de création d’un nouveau groupe de produits, mais ne peut pas créer de nouveaux groupes de produits.    </td><td align="left">  Peut créer et modifier des groupes de produits.     </td></tr>
 <tr><td align="left">    <b>Nouvelles applications</b>                            </td><td align="left">  Peut afficher la page de création d’une nouvelle application, mais ne peut pas créer de nouvelles applications dans le compte.    </td><td align="left">  Peut <a href="create-your-app-by-reserving-a-name.md">créer de nouvelles applications</a> dans le compte en réservant les noms d’application et peut créer des soumissions et envoyer des applications dans le Windows Store.     </td></tr>
 <tr><td align="left">    <b>Nouveaux ensembles</b>&nbsp;*                       </td><td align="left">  Peut afficher la page de création de nouveaux ensembles, mais ne peut pas créer de nouveaux ensembles dans le compte.     </td><td align="left">  Peut créer de nouveaux ensembles de produits.          </td></tr>
@@ -170,7 +170,7 @@ Remarque: certaines autorisations ne peuvent pas être définies pour les extens
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>Acquisitions</b>     </td><td>    Peut afficher les rapports <a href="acquisitions-report.md">Acquisitions</a> et <a href="add-on-acquisitions-report.md">Acquisitions d'extensions</a> pour le produit.        </td><td>    Non applicable    </td><td>    Non applicable (les paramètres pour le produit parent incluent le rapport **acquisitions de modules complémentaires** )        </td><td>    Non applicable                         </td></tr>
+    <tr><td align="left">    <b>Acquisitions</b>     </td><td>    Peut afficher les rapports <a href="acquisitions-report.md">Acquisitions</a> et <a href="add-on-acquisitions-report.md">Acquisitions d'extensions</a> pour le produit.        </td><td>    Non applicable    </td><td>    Non applicable (paramètres du produit parent incluent le rapport **acquisitions de modules complémentaires** )        </td><td>    Non applicable                         </td></tr>
     <tr><td align="left">    <b>Utilisation</b> </td><td>    Peut afficher le <a href="usage-report.md">rapport d’utilisation</a> du produit.     </td><td>    Non applicable       </td><td>    N/A     </td><td>    Non applicable         </td></tr>
     <tr><td align="left">    <b>Intégrité</b> </td><td>    Peut afficher le <a href="health-report.md">rapport d’intégrité</a> du produit.    </td><td>    Non applicable     </td><td>    N/A     </td><td>    Non applicable         </td></tr>
     <tr><td align="left">    <b>Retour d’expérience du client</b>    </td><td>    Peut visualiser les rapports <a href="reviews-report.md">Avis</a> et <a href="feedback-report.md">Commentaires</a> concernant le produit.       </td><td>    Non applicable (pour répondre à des commentaires ou à des avis, l’autorisation <b>Contacter le client</b> doit être accordée)   </td><td>    Non applicable     </td><td>    Non applicable         </td></tr>

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, API de collection du MicrosoftStore, API d’achat du Microsoft Store, afficher des produits, octroyer des produits
 ms.localizationpriority: medium
 ms.openlocfilehash: c159acb096730d59b4d2667d890187199c5bda0a
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5409615"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5439003"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Gérer les droits sur les produits à partir d’un service
 

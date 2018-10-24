@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 229f0e9993abc9c5600c55a1a0eddc2e262f1c4c
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5395782"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5433424"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>Installer des applications avec l’outil WinAppDeployCmd.exe
 
 
 Le déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de ligne de commande qui permet de déployer une application de plateforme Windows universelle (UWP) à partir d’un PC Windows10 et vers tout appareil Windows10. Vous pouvez utiliser cet outil pour déployer un package d’application lorsque l’appareil Windows 10 est connecté via un port USB ou disponible sur le même sous-réseau sans avoir besoin de Microsoft Visual Studio ou la solution pour cette application. Vous pouvez également déployer l’application sans créer de package au préalable vers un ordinateur distant ou une XboxOne. Cet article décrit comment installer des applications UWP à l’aide de cet outil.
 
-Vous devez simplement installer le Kit de développement logiciel (SDK) Windows10 pour exécuter l’outil WinAppDeployCmd à partir d’une invite de commandes ou d’un fichier de script. Lorsque vous installez une application avec WinAppDeployCmd.exe, il utilise le fichier.appx/.msix ou AppxManifest (pour les fichiers isolés) pour le chargement indépendant de votre application sur un appareil Windows 10. Cette commande n’installe pas le certificat nécessaire pour votre application. Pour exécuter l’application, l’appareil Windows10 doit être en mode développeur ou le certificat doit déjà avoir été installé.
+Vous devez simplement installer le Kit de développement logiciel (SDK) Windows10 pour exécuter l’outil WinAppDeployCmd à partir d’une invite de commandes ou d’un fichier de script. Lorsque vous installez une application avec WinAppDeployCmd.exe, il utilise le fichier.appx/.msix ou AppxManifest (pour les fichiers isolés) de chargement indépendant de votre application sur un appareil Windows 10. Cette commande n’installe pas le certificat nécessaire pour votre application. Pour exécuter l’application, l’appareil Windows10 doit être en mode développeur ou le certificat doit déjà avoir été installé.
 
 Pour un déploiement vers des appareils mobiles, vous devez d’abord créer un package. Pour plus d’informations, voir [cet article](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 

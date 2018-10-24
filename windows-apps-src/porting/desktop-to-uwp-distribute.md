@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: c81e8d07efa04e93128089eaec78fb83b822a4b9
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403763"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5436712"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>Distribuer une application de bureau empaquetée
 
@@ -29,14 +29,14 @@ Publier votre application de bureau empaquetée à un Windows store ou charger d
 
 Le [MicrosoftStore](https://www.microsoft.com/store/apps) est une méthode pratique pour rendre votre application accessible aux clients.
 
-Publier votre application vers ce magasin pour atteindre le public le plus large. En outre, les clients professionnels peuvent acquérir votre application pour la distribuer en interne au leur organisation par le biais du [Microsoft Store pour entreprises](https://www.microsoft.com/business-store).
+Publier votre application vers ce magasin d’atteindre le public le plus large. En outre, les clients professionnels peuvent acquérir votre application pour la distribuer en interne au leur organisation par le biais du [Microsoft Store pour entreprises](https://www.microsoft.com/business-store).
 
 Si vous envisagez de publier dans le MicrosoftStore, vous êtes invité à répondre à quelques questions supplémentaires dans le cadre du processus de soumission. Ce, parce que votre manifeste du package déclare une fonctionnalité restreinte nommée **runFullTrust** et que nous avons besoin d'approuver l’utilisation de cette fonctionnalité par votre application. Vous trouverez davantage de détails sur ces exigences ici: [Fonctionnalités restreintes](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 
 Vous n’êtes pas obligé de signer votre application avant de la soumettre au Windows store.
 
 >[!IMPORTANT]
-> Si vous prévoyez de publier votre application dans le Microsoft Store, assurez-vous que votre application fonctionne correctement sur les appareils qui exécutent Windows 10 S. Il s’agit d’une exigence du store. Consultez [Tester votre application pour Windows10 S](desktop-to-uwp-test-windows-s.md).
+> Si vous prévoyez de publier votre application dans le Microsoft Store, assurez-vous que votre application fonctionne correctement sur les appareils exécutant Windows 10 S. Il s’agit d’une exigence du store. Consultez [Tester votre application pour Windows10 S](desktop-to-uwp-test-windows-s.md).
 
 <a id="side-load" />
 
@@ -46,7 +46,7 @@ Si vous préférez plutôt distribuer votre application sans utiliser le Windows
 
 Ceci peut être utile si vous souhaitez contrôler davantage l’expérience de distribution ou si vous ne voulez pas vous impliquer dans le processus de certification du MicrosoftStore.
 
-Pour distribuer votre application à d’autres appareils sans passer par le Windows store, vous devez obtenir un certificat, signer votre application à l’aide de ce certificat, puis charger de manière indépendante votre application sur ces appareils.
+Pour distribuer votre application sur d’autres appareils sans passer par le Windows store, vous devez obtenir un certificat, signer votre application à l’aide de ce certificat, puis charger de manière indépendante votre application sur ces appareils.
 
 Vous pouvez [créer un certificat](../packaging/create-certificate-package-signing.md) ou en obtenir un auprès d’un fournisseur populaire, tel que [Verisign](https://www.verisign.com/).
 
@@ -127,7 +127,7 @@ private void MigrateUserData()
 
 ### <a name="uninstall-the-desktop-version-of-your-app"></a>Désinstaller la version bureau de votre application
 
-Il est préférable de ne pas désinstaller l’application de bureau des utilisateurs sans leur autorisation. Affichez une boîte de dialogue demandant l’autorisation de l’utilisateur. Les utilisateurs peuvent décider de conserver la version bureau de votre application. Si cela se produit, vous devez décider si vous souhaitez bloquer l’utilisation de l’application de bureau ou prendre en charge l’utilisation de côte-à-côte des deux applications.
+Il est préférable de ne pas désinstaller l’application de bureau des utilisateurs sans leur autorisation. Affichez une boîte de dialogue demandant l’autorisation de l’utilisateur. Les utilisateurs peuvent décider de conserver la version bureau de votre application. Dans ce cas, vous devrez décider si vous souhaitez bloquer l’utilisation de l’application de bureau ou prendre en charge l’utilisation de côte-à-côte des deux applications.
 
 Voici un exemple montrant comment vous pourriez procéder dans une application empaquetée .NET.
 

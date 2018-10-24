@@ -12,24 +12,24 @@ keywords: windows10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.openlocfilehash: e11bae84c7cb88ef89f8b627cc2109fc56e43163
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398380"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5436275"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>Applications de bureau de package (pont du bureau)
 
-Prenez votre application de bureau et ajouter des expériences modernes pour les utilisateurs de Windows 10. Ensuite, touchez un plus large public sur les marchés internationaux en la distribuant via le Microsoft Store. Vous pouvez MONÉTISER votre application de manière beaucoup plus simple en tirant parti des fonctionnalités intégrées dans le Windows store. Bien entendu, vous n’êtes pas obligé d’utiliser le Store. N’hésitez pas à utiliser vos canaux existants.
+Prenez votre application de bureau et ajoutez-y des expériences modernes pour les utilisateurs de Windows 10. Ensuite, touchez un plus large public sur les marchés internationaux en la distribuant via le Microsoft Store. Vous pouvez MONÉTISER votre application de manière beaucoup plus simple en tirant parti des fonctionnalités intégrées dans le Windows store. Bien entendu, vous n’êtes pas obligé d’utiliser le Store. N’hésitez pas à utiliser vos canaux existants.
 
 ![Pont du bureau](images/desktop-to-uwp/desktop-bridge-4.png)
 
 Lorsque vous créez un package pour votre application de bureau, votre application obtient une identité, avec cette identité, votre application de bureau d’accéder à Windows plate-forme API universelle (UWP). Vous pouvez les utiliser pour offrir des expériences modernes et attrayantes telles que des vignettes dynamiques et des notifications.  Utiliser la compilation conditionnelle simple et vérifications d’exécution pour exécuter du code UWP uniquement lorsque votre application s’exécute sur Windows 10.
 
-Outre le code que vous utilisez pour valoriser des expériences Windows 10, votre application reste inchangée et vous pouvez continuer à distribuer à votre existante Windows 7, Windows Vista ou à base d’utilisateurs Windows XP. Sur Windows 10, votre application continue à s’exécuter en mode de confiance totale en mode utilisateur tout comme il le fait aujourd'hui.
+Outre le code que vous utilisez pour valoriser des expériences Windows 10, votre application reste inchangée et vous pouvez continuer à distribuer à vos existante Windows 7, Windows Vista ou base d’utilisateurs Windows XP. Sur Windows 10, votre application continue à s’exécuter en mode de confiance totale en mode utilisateur tout comme il le fait aujourd'hui.
 
 >[!IMPORTANT]
->La possibilité de créer un package d’application Windows pour votre application de bureau (dans le cas contraire, connu sous le pont du bureau, le nom a été introduit dans Windows 10, version 1607, et peut être utilisé uniquement dans les projets qui ciblent la mise à jour anniversaire Windows 10 (version 10.0; Build 14393) ou une version ultérieure dans Visual Studio.
+>La possibilité de créer un package d’application Windows pour votre application de bureau (dans le cas contraire, connu sous le pont du bureau, le nom a été introduite dans Windows 10, version 1607, et peut être utilisé uniquement dans les projets qui ciblent la mise à jour anniversaire Windows 10 (version 10.0; Build 14393) ou une version ultérieure dans Visual Studio.
 
 > [!NOTE]
 > Obtenez <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">cette série</a> de courtes vidéos publiées par MicrosoftVirtual Academy. Ces vidéos vous guident tout au long de l’ensemble du processus de conversion de votre application de bureau pour la plateforme Windows universelle (UWP).
@@ -52,7 +52,7 @@ Pour voir une liste plus complète des avantages, consultez [Pont du bureau](htt
 
 ## <a name="prepare"></a>Préparation
 
-Tout d’abord, préparez votre application en consultant l’article [préparer un package de votre application de bureau](desktop-to-uwp-prepare.md), puis en corrigeant les éventuels problèmes qui s’appliquent à votre application avant de créer un package d’application Windows pour elle. Vous devrez peut-être pas apporter de nombreuses modifications à votre application avant de créer le package. Toutefois, il existe certaines situations peuvent vous obliger à adapter votre application avant de créer un package pour elle.
+Tout d’abord, préparez votre application en consultant l’article [préparer pour empaqueter votre application de bureau](desktop-to-uwp-prepare.md), puis en corrigeant les éventuels problèmes qui s’appliquent à votre application avant de créer un package d’application Windows pour elle. Vous devrez peut-être pas apporter de nombreuses modifications à votre application avant de créer le package. Toutefois, il existe certaines situations peuvent vous obliger à adapter votre application avant de créer un package pour elle.
 
 <a id="convert" />
 
@@ -138,7 +138,7 @@ L’extension Appx de FireGiant utilise l'analyse statique et l'émulation intel
 
 Étant donné que l’extension Appx de FireGiant ne convertit pas votre programme d’installation en l’exécutant, vous pouvez maintenir votre programme d’installation WiX sans avoir à le convertir à plusieurs reprises en packages d’application Windows. Tous les utilisateurs sur les différentes versions de Windows obtiennent vos dernières améliorations et vous n’avez pas à vous soucier de la désynchronisation des packages d’application MSI et Windows.
 
-Consultez cette [vidéo](https://www.youtube.com/watch?v=AFBpdBiAYQE) et voir comment en quelques lignes de code FireGiant PDG Rob anglais crée une version de (package d’application Windows) Appx de l’outil de compression de 7-Zip populaires open source, puis comment il améliore l’application Windows et packages MSI avec modifications dans le même code source WiX.
+Consultez cette [vidéo](https://www.youtube.com/watch?v=AFBpdBiAYQE) et voir comment en quelques lignes de code FireGiant PDG Rob anglais crée une version de (package d’application Windows) Appx de l’outil de compression de 7-Zip populaires open source, puis comment il améliore les application Windows et les packages MSI avec modifications dans le même code source WiX.
 
 #### <a name="installaware"></a>InstallAware
 
@@ -212,7 +212,7 @@ Faites l'expérience et profitez de [la licence d’essai gratuite](https://rayn
 
 En dernier recours, vous pouvez convertir votre application sans utiliser aucun de ces outils. Si vous souhaitez un contrôle minutieux de la conversion, vous pouvez créer un fichier de manifeste puis exécuter l’outil **MakeAppx.exe** pour créer votre package d’application Windows.
 
-Reportez-vous à [créer manuellement un Package une application de bureau](desktop-to-uwp-manual-conversion.md).
+Voir [Package manuellement une application de bureau](desktop-to-uwp-manual-conversion.md).
 
 ## <a name="integrate"></a>Intégrer
 
@@ -252,7 +252,7 @@ Pour tester votre application dans un paramètre réaliste lorsque vous vous pr�
 
 ## <a name="validate"></a>Validation
 
-Pour donner à votre application de chances de publication sur le Microsoft Store ou devenir [Certifié Windows](http://go.microsoft.com/fwlink/p/?LinkID=309666), validez-la et testez-la avant de l’envoyer pour certification.
+Pour donner à votre application de chances de publication sur le Microsoft Store ou pour réussir la [Certification Windows](http://go.microsoft.com/fwlink/p/?LinkID=309666), validez-la et testez-la avant de l’envoyer pour certification.
 
 Si vous utilisez l’outil DAC pour empaqueter votre application, vous pouvez utiliser la nouvelle ``-Verify`` indicateur pour valider votre package par rapport à l’application de bureau empaquetée et les exigences du Windows Store. Voir [Créer un package d'application, signer et préparer une application pour la soumission au Store](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters).
 
@@ -266,7 +266,7 @@ Pour consulter la liste des tests utilisés au cours de la certification des app
 
 Vous pouvez distribuer votre application en la publiant dans le Microsoft Store ou par chargement indépendant sur d’autres systèmes.
 
-Voir [distribuer une application de bureau empaquetée](desktop-to-uwp-distribute.md).
+Reportez-vous à [distribuer une application de bureau empaquetée](desktop-to-uwp-distribute.md).
 
 ## <a name="support-and-feedback"></a>Support et commentaires
 
@@ -288,7 +288,7 @@ Voir [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-pla
 | [Créer un package une application de bureau à l’aide de Visual Studio](desktop-to-uwp-packaging-dot-net.md)| Vous montre comment créer un package de votre application de bureau à l’aide de Visual Studio. |
 | [Intégrer votre application de bureau avec Windows 10](desktop-to-uwp-extensions.md) | Intégrer votre application avec Windows 10 en décrivant les tâches dans le fichier manifeste de package de votre projet de création de packages. |
 | [Améliorer votre application de bureau pour Windows10](desktop-to-uwp-enhance.md)| Utilisez les API UWP pour ajouter des expériences modernes qui se déclenchent pour les utilisateurs de Windows10. |
-| [API UWP disponibles pour une application de bureau empaquetée](desktop-to-uwp-supported-api.md) | Voir quelles API UWP sont disponibles pour votre application de bureau empaquetée à utiliser. |
+| [API UWP disponibles pour une application de bureau empaquetée](desktop-to-uwp-supported-api.md) | Consultez les API UWP sont disponibles pour votre application de bureau empaquetée à utiliser. |
 | [Étendre votre application de bureau avec des composants UWP modernes](desktop-to-uwp-extend.md)| Ajouter des expériences avancées qui doivent s’exécuter au sein d’un conteneur d’application UWP. Connectez votre application de bureau avec le processus UWP à l’aide des services d’application.|
 | [Exécuter, déboguer et tester une application de bureau empaquetée](desktop-to-uwp-debug.md) | Explique les options de débogage de votre application empaquetée. |
 | [Distribuer une application de bureau empaquetée ](desktop-to-uwp-distribute.md) | Voir comment vous pouvez distribuer votre application convertie aux utilisateurs.  |

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bceb1d2cc6682698d0ad06ed4b1865f3d6510442
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5405257"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5434682"
 ---
 # <a name="feedback-report"></a>Rapport sur les commentaires
 
@@ -65,7 +65,7 @@ En outre, une option vous permet de [répondre aux commentaires](respond-to-cust
 
 ## <a name="translating-feedback"></a>Traduction des commentaires
 
-Par défaut, les commentaires qui n’a pas été rédigés dans votre langue préférée sont traduits pour vous. Si vous le souhaitez, vous pouvez désactiver la traduction des commentaires en décochant la case **Traduire les commentaires** située dans la zone supérieure droite près des filtres de page.
+Par défaut, les commentaires qui n’était pas été rédigés dans votre langue préférée sont traduits pour vous. Si vous le souhaitez, vous pouvez désactiver la traduction des commentaires en décochant la case **Traduire les commentaires** située dans la zone supérieure droite près des filtres de page.
 
 Notez que les commentaires sont traduits par un système de traduction automatique et que le résultat de la traduction n’est pas toujours précis. Le texte d’origine est fourni si vous souhaitez comparer la traduction ou utiliser un autre moyen de traduction.
 

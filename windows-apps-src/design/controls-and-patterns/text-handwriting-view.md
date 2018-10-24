@@ -15,21 +15,21 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 3117cde7b8b00973c135fbc759fa99b6a48ec6ac
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403172"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5434821"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>Saisie de texte avec l’affichage de l’écriture manuscrite
 
 ![La zone de texte s’agrandit lorsqu'un utilisateur appuie dessus avec un stylet](images/handwritingview/handwritingview2.gif)
 
-Personnaliser l’affichage de l’écriture manuscrite intégrée de l’encre à l’entrée de texte qui est pris en charge par les contrôles de texte UWP tels que le [contrôle TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)et autres contrôles qui fournissent une expérience d’entrée de texte similaire (comme [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)).
+Personnaliser l’affichage de l’écriture manuscrite intégrée de l’encre à l’entrée de texte est pris en charge par les contrôles de texte UWP tels que le [contrôle TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)et autres contrôles qui fournissent une expérience d’entrée de texte similaire (comme [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)).
 
 ## <a name="overview"></a>Vue d’ensemble
 
-Les zones de saisie de texte XAML de fonctionnalité prise en charge intégrée du stylet à l’aide de [Windows Ink](../input/pen-and-stylus-interactions.md). Lorsqu’un utilisateur appuie sur une zone de saisie de texte à l’aide d’un stylet Windows, la zone de texte transforme en une surface de l’écriture manuscrite, au lieu d’ouvrir un panneau de saisie distinct.
+Zones de saisie de texte XAML présentent prise en charge intégrée du stylet à l’aide de [Windows Ink](../input/pen-and-stylus-interactions.md). Lorsqu’un utilisateur appuie sur une zone de saisie de texte à l’aide d’un stylet Windows, la zone de texte se transforme en une surface de l’écriture manuscrite, au lieu d’ouvrir un panneau de saisie distinct.
 
 Le texte est reconnu à mesure que l’utilisateur écrit n’importe où dans la zone de texte et un candidat fenêtre affiche les résultats de reconnaissance. L’utilisateur peut appuyer sur un résultat pour le choisir ou continuer à écrire pour accepter le candidat proposé. Les résultats de la reconnaissance littérale (lettre par lettre) sont inclus dans la fenêtre candidate, donc la reconnaissance ne se limite pas aux mots d'un dictionnaire. À mesure que l’utilisateur écrit, la saisie de texte acceptée est convertie en police de script qui conserve l’apparence de l’écriture naturelle.
 
@@ -102,10 +102,10 @@ Si votre application déjà fournit robuste, la fonctionnalité de reconnaissanc
 
 ## <a name="use-handwriting-font-preferences"></a>Utiliser les préférences de police de l’écriture manuscrite
 
-Un utilisateur peut choisir à partir d’une collection prédéfinie de polices basées sur l’écriture manuscrite à utiliser lorsque le rendu du texte basé sur la reconnaissance des entrées manuscrites (voir **Paramètres-& gt; appareils-& gt; stylet et Windows Ink-& gt; l’écriture manuscrite -> police lors de l’utilisation de l’écriture manuscrite**).
+Un utilisateur peut choisir à partir d’une collection prédéfinie de polices basées sur l’écriture manuscrite à utiliser lorsque le rendu du texte basé sur reconnaissance d’entrée manuscrite (voir **Paramètres-& gt; appareils-& gt; stylet et Windows Ink-& gt; l’écriture manuscrite -> police lors de l’utilisation de l’écriture manuscrite**).
 
 > [!NOTE]
-> Les utilisateurs peuvent créer même une police en fonction de leur propre l’écriture manuscrite.
+> Les utilisateurs peuvent encore créer une police en fonction de leur propre l’écriture manuscrite.
 > [!VIDEO https://www.youtube.com/embed/YRR4qd4HCw8]
 
 Votre application peut accéder à ce paramètre et utiliser la police sélectionnée pour le texte reconnu dans le contrôle de texte.
@@ -151,7 +151,7 @@ Dans le code-behind, correspondant, nous montrons comment désactiver le [Handwr
     }
     ```
 
-2. Ensuite, nous allons commencer une itération par le biais de l’arborescence visuelle (qui commencent à un objet AutoSuggestBox) dans la fonction FindInnerTextBox avec un appel à FindVisualChildByName.
+2. Ensuite, nous allons commencer itération au sein de l’arborescence visuelle (qui commencent à un objet AutoSuggestBox) dans la fonction FindInnerTextBox avec un appel à FindVisualChildByName.
 
     ```csharp
     private bool FindInnerTextBox(AutoSuggestBox autoSuggestBox)
@@ -199,7 +199,7 @@ Ici, nous créons une zone de texte qui prend en charge de la dictée (implémen
 
 ![Élément TextBox avec la dictée](images/handwritingview/textbox-with-dictation.png)
 
-Comme l’objet StackPanel est désormais plus grand que la zone de texte, le [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) ne risquent pas de masquer toutes l’OLE composite.
+Comme l’objet StackPanel est plus grande que la zone de texte, le [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) ne risquent pas de masquer toutes l’OLE composite.
 
 ![Élément TextBox avec la dictée](images/handwritingview/textbox-with-dictation-handwritingview.png)
 
@@ -230,7 +230,7 @@ Pour contourner ce problème, définissez la propriété de PlacementTarget de l
 
 ## <a name="resize-the-handwritingview"></a>Redimensionner la HandwritingView
 
-Vous pouvez également définir la taille de la [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview), ce qui peut être utile lorsque vous devez vous assurer que l’affichage ne prend pas masquer l’interface utilisateur important.
+Vous pouvez également définir la taille de la [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview), qui peut être utile lorsque vous devez vous assurer que l’affichage ne prend pas masquer l’interface utilisateur important.
 
 Comme dans l’exemple précédent, nous créons une zone de texte qui prend en charge de la dictée (implémentée en plaçant une zone de texte et un bouton de la dictée dans un élément StackPanel).
 

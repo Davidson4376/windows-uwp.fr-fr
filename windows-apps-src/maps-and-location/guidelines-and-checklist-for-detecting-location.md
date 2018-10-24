@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, emplacement, carte, géolocalisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 903a7b308c78e4ab9826ea4c46c642cb3361b462
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5402710"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5439984"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>Recommandations pour les applications prenant en charge l’emplacement
 
@@ -51,7 +51,7 @@ Cette rubrique décrit les recommandations en matière de performance des applic
 
     Libérez l’objet [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) si l’utilisateur désactive l’accès aux informations de géolocalisation via les Paramètres. L’application recevra des résultats **ACCESS\_DENIED** lors de tous les appels d’API de géolocalisation. Si votre application enregistre ou met en cache les données de géolocalisation, effacez toutes les données mises à en cache lorsque l’utilisateur révoque l’accès aux informations de géolocalisation. Proposez un autre moyen de saisir manuellement un emplacement lorsque les informations de géolocalisation ne sont pas disponibles via les services de localisation.
 
--   Prévoyez une interface utilisateur permettant de réactiver les services de localisation. Par exemple, fournir un bouton d’actualisation qui réinstancie l’objet [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) et essaie d’obtenir des informations sur l’emplacement à nouveau.
+-   Prévoyez une interface utilisateur permettant de réactiver les services de localisation. Par exemple, fournir un bouton d’actualisation qui réinstancie l’objet [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) et essaie d’obtenir des informations de géolocalisation à nouveau.
 
     Votre application doit proposer une interface utilisateur pour la réactivation des services de géolocalisation.
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, insight, tendance, anomalies, des anomalies, les modifications de données
 ms.localizationpriority: medium
 ms.openlocfilehash: be70dccbb7a12b65b9e7bbd07f27ae7ea3a578ff
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5395683"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5432008"
 ---
 # <a name="insights-report"></a>Rapport de perspectives
 
@@ -22,16 +22,16 @@ ms.locfileid: "5395683"
 Le rapport de **perspectives** dans le tableau de bord du centre de développement Windows met en évidence des modifications importantes (augmentations ou baisses significatives dans une unité de mesure spécifique) que nous avons détecté au cours des 30 derniers jours dans vos acquisitions, intégrité, et/ou des données d’utilisation. Cela vous permet d’obtenir un aperçu des modifications importantes potentiellement sans avoir à afficher tous les graphiques dans chacun de ces rapports.
 
 > [!NOTE]
-> Données de ce rapport couvrent au cours des 30 derniers jours. Vous ne pouvez pas sélectionner une autre période de temps pour ce rapport.
+> Données de ce rapport couvrent au cours des 30 derniers jours. Vous ne pouvez pas sélectionner une autre période pour cet état.
 
-Le rapport trie les données en trois onglets: **Acquisitions**, **intégrité**et **utilisation**. Pour afficher des informations pour l’une de ces zones, sélectionnez l’onglet.
+Le rapport trie les données en trois onglets: **Acquisitions**, **intégrité**et **utilisation**. Pour afficher des informations pour l’une de ces zones, sélectionnez son onglet.
 
-Informations sont affichent lorsque nous détectons une évolution importante dans vos données. Pour chaque insight, nous allons montrer les éléments suivants:
+Insights sont affichent lorsque nous détectons une évolution importante dans vos données. Pour chaque insight, nous allons montrer les éléments suivants:
 - **Type de Insight**: la zone dans laquelle l’analyse a été détectée.
 - **Valeur**: la métrique spécifique qui a changé considérablement (ou **tous les** si la modification s’applique à l’ensemble du **type Insight**).
-- **Date**: la date à laquelle nous avons identifié la modification. Cette date représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou une baisse par rapport à la semaine.
-- **Incidence globale**: le pourcentage de la valeur augmentée ou a diminué sur votre base de clients. Elle vous permet de comprendre comment généralisée l’impact d’une modification particulière peut être, en particulier lors de la comparaison avec les informations de pourcentage affichées dans **Top contributors.**
-- **Contributeurs principaux**: le cas échéant, le segment spécifique, package ou autre facteur identification pour aider à comprendre les clients qui la modification est liée à. Par exemple, une modification peut être détectée principalement avec les clients à partir d’un marché spécifique ou sur un certain type d’appareil. Pour les données **d’intégrité** , cela peut inclure les hachages de défaillance spécifiques ou des versions de package. Le cas échéant, nous allons montrer également le pourcentage que la valeur augmentée ou réduite pour que le facteur.
+- **Date**: la date à laquelle nous avons identifié la modification. Cette date représente la fin de la semaine dans lequel nous avons détecté une augmentation importante ou une réduction par rapport à la semaine.
+- **Incidence globale**: le pourcentage de la valeur augmentée ou a diminué sur votre clientèle entière. Elle vous permet de comprendre comment généralisée l’impact d’une modification particulière peut être, en particulier lors de la comparaison avec les informations de pourcentage affichées dans **Top contributors.**
+- **Contributeurs principaux**: le cas échéant, le segment spécifique, package ou autre facteur identification pour aider à comprendre quels clients la modification est liée à. Par exemple, une modification peut être détectée principalement avec les clients à partir d’un marché spécifique ou sur un certain type d’appareil. Pour les données **d’intégrité** , cela peut inclure les hachages de défaillance spécifiques ou des versions de package. Le cas échéant, nous allons montrer également le pourcentage que la valeur augmentée ou réduite pour que le facteur.
 - **Action**:
    - Sélectionnez **Afficher 14 jours tendance** pour afficher un graphique illustrant la modification de la métrique 14 derniers jours entière conduisant à la date des informations.
    - Sélectionnez **dites-nous si c’est le cas** pour nous faire part de vos commentaires et dites-nous si les informations que nous mettons à votre semblent précises. Vos commentaires nous aideront à continuer à améliorer les données que nous fournissons ici. 

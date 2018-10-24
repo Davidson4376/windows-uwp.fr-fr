@@ -13,11 +13,11 @@ pm-contact: chigy
 design-contact: balrayit
 ms.localizationpriority: medium
 ms.openlocfilehash: a1433b131b994ee2b1323909bc7c195e00f43cde
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400709"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5439617"
 ---
 # <a name="z-depth-and-shadow"></a>Profondeur de tampon et ombre
 
@@ -33,7 +33,7 @@ Z en profondeur est la distance entre deux surfaces le long de l’axe z, et il 
 
 ### <a name="why-use-z-depth"></a>Pourquoi utiliser z en profondeur?
 
-Dans le monde physique, nous ont tendance à se concentrer sur les objets qui sont le plus proches. Nous pouvons appliquer ce instinct spatiale d’interface utilisateur numérique, également. Par exemple, si vous concevez un élément plus proche pour l’utilisateur, puis l’utilisateur sera instinctivement centrée sur l’élément. Par déplacement éléments d’interface utilisateur plus près de l’axe z, vous pouvez établir une hiérarchie visuelle entre les objets, aider les utilisateurs à effectuer des tâches naturellement et efficacement dans votre application. 
+Dans le monde physique, nous ont tendance à se concentrer sur les objets qui sont plus proches de nous. Nous pouvons appliquer ce instinct spatiale d’interface utilisateur numérique, également. Par exemple, si vous concevez un élément plus proche pour l’utilisateur, puis l’utilisateur sera instinctivement centrée sur l’élément. Par déplacement éléments d’interface utilisateur plus près de l’axe z, vous pouvez établir une hiérarchie visuelle entre les objets, aider les utilisateurs à effectuer des tâches naturellement et efficacement dans votre application. 
 
 ![z en profondeur dans le menu de contenu](images/elevation-shadow/whyelevation.svg)
 
@@ -57,9 +57,9 @@ Selon la façon dont nous percevoir profondeur dans le monde physique, Voici plu
 
     ![proximité avec le mouvement](images/elevation-shadow/elevation-motion.svg)
 
-### <a name="recommendations-for-z-depth"></a>Recommandations en matière de profondeur-z
+### <a name="recommendations-for-z-depth"></a>Recommandations sur la profondeur z
 
-Réduire le nombre de plans avec élévation de privilèges pour fournir le focus visuel claire. Pour la plupart des scénarios, deux plans est suffisant: un pour les éléments au premier plan (proximité élevée) et un autre pour les éléments de l’arrière-plan (proximité faible). Si vous avez plusieurs éléments avec élévation de privilèges qui ne se chevauchent pas, les regrouper le même plan (autrement dit, le premier plan) afin de réduire le nombre de plans.
+Réduire le nombre de plans avec élévation de privilèges pour fournir le focus visuel claire. Pour la plupart des scénarios, deux plans est suffisant: un pour les éléments au premier plan (proximité élevée) et une autre pour les éléments de l’arrière-plan (proximité faible). Si vous avez plusieurs éléments avec élévation de privilèges qui ne se chevauchent pas, les regrouper le même plan (autrement dit, le premier plan) afin de réduire le nombre de plans.
 
 ![z en profondeur au sein d’une application](images/elevation-shadow/app-depth.svg)
 
@@ -67,9 +67,9 @@ Réduire le nombre de plans avec élévation de privilèges pour fournir le focu
 
 ![shadow](images/elevation-shadow/shadow.svg)
 
-Ombre est un moyen de percevoir une élévation. Lorsqu’il est clair au-dessus d’un objet avec élévation de privilèges, il existe une ombre sur la surface ci-dessous. Plus l’objet, la plus grande et plus l’ombre devient. Notez que les objets avec élévation de privilèges ne doivent avoir des ombres, mais les ombres indiquent une élévation.
+Ombre est un moyen de percevoir une élévation. Lorsqu’il est clair au-dessus d’un objet avec élévation de privilèges, il existe une ombre sur la surface ci-dessous. Plus l’objet, la plus grande et plus douce l’ombre devient. Notez que les objets avec élévation de privilèges ne doivent avoir des ombres, mais les ombres indiquent une élévation.
 
-Dans les applications UWP, les ombres doivent être délibérée, pas esthétique. Si les ombres détournent l’attention de mise au point et la productivité, puis limiter l’utilisation de l’ombre.
+Dans les applications UWP, les ombres doivent être délibérée, pas esthétique. Si les ombres détournent l’attention de mise au point et la productivité, puis limiter l’utilisation de clichés instantanés.
 
 Vous pouvez utiliser des ombres avec la ThemeShadow ou DropShadow APIs.
 
@@ -77,16 +77,16 @@ Vous pouvez utiliser des ombres avec la ThemeShadow ou DropShadow APIs.
 
 Le ThemeShadow type peut être appliqué à n’importe quel élément XAML pour dessiner des ombres appropriée en fonction de x, y, z coordonnées. ThemeShadow ajuste automatiquement pour les autres conditions ambiantes:
 
-- S’adapte aux changements de l’éclairage, thème de l’utilisateur, environnement de l’application et interpréteur de commandes.
+- S’adapte aux changements de l’éclairage, thème de l’utilisateur, environnement d’application et interpréteur de commandes.
 - Ombres automatiquement en fonction de leur élévation des éléments.
 - Maintient les éléments synchronisées comme ils de déplacement et de modifier une élévation.
-- Conserve les ombres cohérente tout au long d’et entre les applications.
+- Garder ombres homogènes tout au long d’et entre les applications.
 
 Voici quelques exemples de ThemeShadow à différents élévations avec les thèmes clair et foncées:
 
-![ombres actives avec le thème clair](images/elevation-shadow/smartshadow-light.svg)
+![ombres actives avec thème clair](images/elevation-shadow/smartshadow-light.svg)
 
-![ombres actives avec le thème foncé](images/elevation-shadow/smartshadow-dark.svg)
+![ombres actives avec thème foncé](images/elevation-shadow/smartshadow-dark.svg)
 
 ### <a name="themeshadow-in-common-controls"></a>Les contrôles communs ThemeShadow
 
@@ -158,7 +158,7 @@ Button2.Translation += new Vector3(0, 0, 32);
 
 2. Si plusieurs éléments récepteur sont à l’élévation même essayer de les combiner en ciblant un élément parent unique à la place.
 
-3. Si plusieurs éléments effectuer un cast le même type d’ombre sur les mêmes éléments récepteur puis ajouter l’ombre comme une ressource partagée et le réutiliser.
+3. Si plusieurs éléments effectuer un cast le même type d’ombre sur les mêmes éléments récepteur puis ajouter l’ombre en tant qu’une ressource partagée et le réutiliser.
 
 ## <a name="drop-shadow"></a>Ombre portée
 

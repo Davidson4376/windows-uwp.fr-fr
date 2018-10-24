@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: bde2e58934e24df7db2cb77fb793106aa65e3834
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399307"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5435004"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Package d’une application de bureau à l’aide de Desktop App Converter
 
@@ -33,7 +33,7 @@ Vous pouvez installer ce package sur votre ordinateur de développement à l’a
 Le convertisseur exécute le programme d’installation de bureau dans un environnement Windows isolé à l’aide d’une nouvelle image de base, fournie dans le cadre du téléchargement du convertisseur. Il capture toutes les E/S du Registre et du système de fichiers effectuées par le programme d’installation du bureau et les intègre sous forme de package comme partie intégrante de la sortie.
 
 >[!IMPORTANT]
->La possibilité de créer un package d’application Windows pour votre application de bureau (dans le cas contraire, connu sous le pont du bureau, le nom a été introduit dans Windows 10, version 1607, et peut être utilisé uniquement dans les projets qui ciblent la mise à jour anniversaire Windows 10 (version 10.0; Build 14393) ou une version ultérieure dans Visual Studio.
+>La possibilité de créer un package d’application Windows pour votre application de bureau (dans le cas contraire, connu sous le pont du bureau, le nom a été introduite dans Windows 10, version 1607, et peut être utilisé uniquement dans les projets qui ciblent la mise à jour anniversaire Windows 10 (version 10.0; Build 14393) ou une version ultérieure dans Visual Studio.
 
 > [!NOTE]
 > Obtenez <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">cette série</a> de courtes vidéos publiées par MicrosoftVirtual Academy. Ces vidéos vous expliquent certaines méthodes courantes d’utilisation de Desktop App Converter.
@@ -180,7 +180,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 >[!IMPORTANT]
 >Si le centre de développement attribue une identité commençant par un chiffre à votre package, veillez à également transmettre le paramètre <i>-AppId</i> et à utiliser uniquement le suffixe de la chaîne (après le point de séparation à en tant que valeur pour ce paramètre.
 
-Le paramètre ``InstallerArguments`` est facultatif. Toutefois, étant donné que Desktop App Converter a besoin de votre programme d’installation s’exécute en mode sans assistance, vous devrez peut-être utiliser si votre application a besoin d’indicateurs spécifiques pour s’exécuter en mode silencieux. L’indicateur ``/S`` est un indicateur de mode silencieux très courant, mais celui que vous utilisez peut être différent selon les technologies utilisées pour créer le fichier d’installation.
+Le paramètre ``InstallerArguments`` est facultatif. Toutefois, étant donné que Desktop App Converter a besoin de votre programme d’installation s’exécute en mode sans assistance, vous devrez peut-être l’utiliser si votre application a besoin d’indicateurs spécifiques pour s’exécuter en mode silencieux. L’indicateur ``/S`` est un indicateur de mode silencieux très courant, mais celui que vous utilisez peut être différent selon les technologies utilisées pour créer le fichier d’installation.
 
 **Vidéo**
 
@@ -307,7 +307,7 @@ Il existe deux façons d’exécuter votre application.
 
 L’une d’elles consiste à ouvrir une invite de commandes PowerShell pour saisir la commande suivante: ```Add-AppxPackage –Register AppxManifest.xml```. Il s’agit probablement du moyen le plus simple d’exécuter votre application, car vous n’avez pas à vous connecter.
 
-Autre méthode consiste à signer votre application avec un certificat. Si vous utilisez la ```sign``` paramètre, Desktop App Converter génère un pour vous et puis signez votre application avec ce dernier. Ce fichier est nommé **auto-generated.cer**, et vous pouvez le trouver dans le dossier racine de votre application empaquetée.
+Une autre méthode consiste à signer votre application avec un certificat. Si vous utilisez la ```sign``` paramètre, Desktop App Converter génère un pour vous et puis signez votre application avec ce dernier. Ce fichier est nommé **auto-generated.cer**, et vous pouvez le trouver dans le dossier racine de votre application empaquetée.
 
 Suivez ces étapes pour installer le certificat généré, puis exécutez votre application.
 

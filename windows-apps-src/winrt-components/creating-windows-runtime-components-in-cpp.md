@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b5515d0ed5dc6e200c7c4fc9a7785c993d4cab59
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397791"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5435757"
 ---
 # <a name="creating-windows-runtime-components-in-ccx"></a>Création de composants Windows Runtime en C++/CX
 > [!NOTE]
@@ -29,7 +29,7 @@ Il existe plusieurs raisons pour la création d’un composant Windows Runtime.
 
 Lorsque vous générez une solution qui contient un projet JavaScript ou .NET et un projet de composant Windows Runtime, les fichiers projet JavaScript et la DLL compilée sont fusionnés dans un package qui peut être débogué en local dans le simulateur, ou à distance sur un périphérique attaché. Le projet seul peut aussi être distribué en tant que kit de développement logiciel (SDK) de l’extension. Pour plus d’informations, voir [Création d’un kit de développement logiciel (SDK)](https://msdn.microsoft.com/library/hh768146.aspx).
 
-En règle générale, lorsque vous codez votre C + / composant CX, utilisez la bibliothèque C++ standard et les types intégrés, sauf à la limite de l’interface binaire abstraite (ABI) dans lequel vous transmettez des données vers et depuis du code dans un autre package .winmd. Il, utilisez les types Windows Runtime et la syntaxe spéciale qui C++ / CX prend en charge pour créer et manipuler ces types. En outre, dans votre C++ / CX de code, utilisez les types tels que delegate et event pour implémenter des événements qui peuvent être déclenchés à partir de votre composant et gérés dans JavaScript, Visual Basic, C++ ou c#. Pour plus d’informations sur C++ / syntaxe CX, voir [référence du langage Visual C++ (C++ / CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
+En règle générale, lorsque vous codez votre C + / composant CX, utilisez la bibliothèque C++ standard et les types intégrés, sauf à la limite de l’interface binaire abstraite (ABI) dans lequel vous transmettez des données vers et depuis du code dans un autre package .winmd. Il, utilisez les types Windows Runtime et la syntaxe spéciale que C++ / CX prend en charge pour créer et manipuler ces types. En outre, dans votre C++ / CX de code, utilisez les types tels que delegate et event pour implémenter des événements qui peuvent être déclenchés à partir de votre composant et gérés dans JavaScript, Visual Basic, C++ ou c#. Pour plus d’informations sur C++ / syntaxe CX, voir [référence du langage Visual C++ (C++ / CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
 
 ## <a name="casing-and-naming-rules"></a>Règles de casse et d’appellation
 
@@ -131,7 +131,7 @@ namespace CppComponent
 }
 ```
 
-Pour passer des structures de valeur définies par l’utilisateur à travers l’ABI, définissez un objet JavaScript qui a les mêmes membres que la structure de valeur qui est définie en C++ / CX. Vous pouvez ensuite passer cet objet comme argument pour C++ / méthode CX afin que l’objet est implicitement converti en C++ / type CX.
+Pour passer des structures de valeur définies par l’utilisateur à travers l’ABI, définissez un objet JavaScript qui a les mêmes membres que la structure de valeur définie en C++ / CX. Vous pouvez ensuite passer cet objet comme argument pour C++ / méthode CX afin que l’objet est implicitement converti en C++ / type CX.
 
 ```javascript
 // Get and set the value struct

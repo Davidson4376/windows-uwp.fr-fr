@@ -8,23 +8,23 @@ ms.date: 06/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, l’image native du compilateur
+keywords: Windows 10, image native du compilateur
 ms.localizationpriority: medium
 ms.openlocfilehash: d98b576fb51a8f9507802796ab359d0d00d21998
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397398"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5437639"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>Optimiser vos applications de bureau .NET avec les images natives
 
 > [!NOTE]
 > Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.
 
-Vous pouvez améliorer le temps de démarrage de votre application .NET Framework en compilant au préalable vos fichiers binaires. Vous pouvez utiliser cette technologie sur les applications volumineuses qui vous empaquetez et distribuez via le Windows Store. Dans certains cas, nous avons observé une amélioration des performances de 20 %. Pour en savoir plus sur cette technologie dans la [vue d’ensemble technique](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md).
+Vous pouvez améliorer le temps de démarrage de votre application .NET Framework en compilant préalablement vos fichiers binaires. Vous pouvez utiliser cette technologie sur les applications volumineuses qui vous empaquetez et distribuez via le Windows Store. Dans certains cas, nous avons observé une amélioration des performances de 20 %. Vous pouvez en savoir plus sur cette technologie dans la [vue d’ensemble technique](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md).
 
-Nous avons publié une version d’évaluation du compilateur image native sous forme de [package NuGet](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler). Vous pouvez appliquer ce package à n’importe quelle application .NET Framework qui cible la version 4.6.2 de .NET Framework ou une version ultérieure. Ce package ajoute une étape de génération post qui inclut une charge utile de native à tous les fichiers binaires utilisés par votre application. Cette charge utile optimisée est chargée lorsque l’application s’exécute dans .NET 4.7.2 et versions supérieures tandis que les versions précédentes chargera toujours le code MSIL.
+Nous avons publié une version d’évaluation du compilateur image native sous forme de [package NuGet](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler). Vous pouvez appliquer ce package à n’importe quelle application .NET Framework qui cible la version 4.6.2 de .NET Framework ou une version ultérieure. Ce package ajoute une étape de génération post qui inclut une charge utile native à tous les fichiers binaires utilisés par votre application. Cette charge utile optimisée est chargée lorsque l’application s’exécute dans .NET 4.7.2 et versions supérieures tandis que les versions précédentes chargera toujours le code MSIL.
 
 Le [.NET framework 4.7.2](https://blogs.msdn.microsoft.com/dotnet/2018/04/30/announcing-the-net-framework-4-7-2/) est inclus dans [mise à jour Windows 10 avril 2018](https://blogs.windows.com/windowsexperience/2018/04/30/how-to-get-the-windows-10-april-2018-update/). Vous pouvez également installer cette version de .NET Framework sur les PC exécutant Windows 7 et Windows Server 2008 R2 +.
 
@@ -53,9 +53,9 @@ Par ailleurs, vous pouvez obtenir les packs de développeur de .NET à partir de
 
 ## <a name="configure-the-target-platform-as-x86-or-x64"></a>Configurer la plateforme cible en tant que x86 ou x64
 
-Le compilateur d’image native permet d’optimiser le code pour une plateforme donnée. Pour l’utiliser, vous devez configurer votre application afin de cibler une plateforme spécifique comme x86 ou x64.
+Le compilateur image native permet d’optimiser le code pour une plateforme donnée. Pour l’utiliser, vous devez configurer votre application afin de cibler une plateforme spécifique comme x86 ou x64.
 
-Si vous avez plusieurs projets dans votre solution, seulement le projet point d’entrée (probablement du projet qui génère un fichier exécutable) a besoin d’être compilée en tant que x86 ou x64. Des fichiers binaires supplémentaires référencés dans le projet principal seront traités avec l’architecture spécifiée dans le projet principal, même si celles-ci sont compilées en tant que AnyCPU.
+Si vous avez plusieurs projets dans votre solution, seulement le projet point d’entrée (probablement du projet qui génère un fichier exécutable) a besoin d’être compilée en tant que x86 ou x64. Des fichiers binaires supplémentaires référencés dans le projet principal seront traités avec l’architecture spécifiée dans le projet principal, même si elles sont compilées en tant que AnyCPU.
 
 Pour configurer votre projet:
 
@@ -67,21 +67,21 @@ Pour configurer votre projet:
 
 ![Configurer x86](images/desktop-to-uwp/configure-x86.png)
 
-Répétez cette étape pour `Release/x64` si vous souhaitez produire x64 des fichiers binaires.
+Répétez cette étape pour `Release/x64` si vous souhaitez que générer x64 des fichiers binaires.
 
 >[!IMPORTANT]
 > Configuration AnyCPU n’est pas pris en charge par le compilateur d’image native.
 
 ## <a name="add-the-nuget-packages"></a>Ajoutez les packages NuGet
 
-Le compilateur d’image native est fourni sous forme de package NuGet dont vous avez besoin d’ajouter au projet Visual Studio qui génère le fichier exécutable. Il s’agit généralement de votre projet Windows Forms ou WPF. Utilisez cette commande PowerShell pour ce faire.
+Le compilateur image native est fourni sous forme de package NuGet dont vous avez besoin d’ajouter au projet Visual Studio qui génère le fichier exécutable. Il s’agit généralement de votre projet Windows Forms ou WPF. Utilisez cette commande PowerShell pour ce faire.
 
 ```PS
 PM> Install-Package Microsoft.DotNet.Framework.NativeImageCompiler -Version 0.0.1-prerelease-00002  -PRE
 ```
 
 > [!NOTE]
-> Les packages de version d’évaluation sont publiées dans NuGet.org comme non répertorié. Vous ne les trouver en NuGet.org navigation ou en utilisant le Gestionnaire de Package UI dans Visual Studio. Toutefois, vous pouvez les installer à partir de la Console du Gestionnaire de Package et quand vous restauration à partir d’un autre ordinateur. Nous allons créer les packages entièrement accessible lorsque nous publions la première version de non-version d’évaluation.
+> Les packages de version d’évaluation sont publiées dans NuGet.org comme non répertorié. Vous ne les trouver en NuGet.org navigation ou en utilisant le Gestionnaire de Package UI dans Visual Studio. Toutefois, vous pouvez les installer à partir de la Console du Gestionnaire de Package et quand vous restauration à partir d’un autre ordinateur. Nous allons créer les packages entièrement accessibles lorsque nous publions la première version sans aperçu.
 
 ## <a name="create-a-release-build"></a>Créer une version commerciale
 

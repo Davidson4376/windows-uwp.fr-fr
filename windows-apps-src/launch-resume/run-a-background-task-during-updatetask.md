@@ -10,17 +10,17 @@ ms.technology: uwp
 keywords: Windows 10, uwp, mise à jour, tâche en arrière-plan, updatetask, tâche en arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: fcba2cb736f86cebc6d2664e2ec3b557d47c86d7
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399176"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5439807"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>Exécuter une tâche en arrière-plan lorsque votre application UWP est mise à jour
 
 Découvrez comment écrire une tâche en arrière-plan qui s’exécute une fois que votre application du Windows store de plateforme Windows universelle (UWP) est mis à jour.
 
-Une fois que l’utilisateur installe une mise à jour vers une application qui est installée sur l’appareil, la tâche de mise à jour la tâche en arrière-plan est appelé par le système d’exploitation. Cela permet à votre application effectuer des tâches d’initialisation telles que l’initialisation d’un nouveau canal de notification push, mise à jour du schéma de base de données et ainsi de suite, avant que l’utilisateur lance votre application mise à jour.
+La tâche de mise à jour la tâche en arrière-plan est appelé par le système d’exploitation une fois que l’utilisateur installe une mise à jour vers une application qui est installée sur l’appareil. Cela permet à votre application effectuer des tâches d’initialisation telles que l’initialisation d’un nouveau canal de notification push, mise à jour de schéma de base de données et ainsi de suite, avant que l’utilisateur lance votre application mise à jour.
 
 La tâche de mise à jour est différent de lancement d’une tâche en arrière-plan à l’aide de la gâchette [ServicingComplete](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) , car dans ce cas votre application doit s’exécuter au moins une fois avant qu’il est mis à jour afin d’inscrire la tâche en arrière-plan qui est activée par le ** ServicingComplete** déclencheur.  La tâche de mise à jour n’est pas inscrite et par conséquent, une application qui n’a jamais été exécutée, mais qui est mis à niveau, auront toujours sa tâche de mise à jour déclenchée.
 
@@ -92,7 +92,7 @@ Ensuite, pour vous assurer que le UpdateTask se déclenche, augmentez le numéro
 
 Maintenant, dans Visual Studio 2017 lorsque vous appuyez sur F5, mise à jour votre application et le système activera votre composant UpdateTask en arrière-plan. Le débogueur s’attache automatiquement pour le processus en arrière-plan. Obtenir rencontrer votre point d’arrêt et vous pouvez parcourir votre logique de code de mise à jour.
 
-Lorsque la tâche en arrière-plan est terminée, vous pouvez lancer l’application au premier plan du menu Démarrer de Windows au sein de la même session de débogage. Le débogueur s’attache à nouveau automatiquement, cette fois à votre processus de premier plan, et vous pouvez passer par le biais de la logique de votre application.
+Lorsque la tâche en arrière-plan est terminée, vous pouvez lancer l’application au premier plan du menu Démarrer de Windows au sein de la même session de débogage. Le débogueur s’attache à nouveau automatiquement, cette fois à votre processus de premier plan, et vous pouvez parcourir la logique de votre application.
 
 > [!NOTE]
 > Les utilisateurs de Visual Studio 2015: les étapes ci-dessus s’appliquent à Visual Studio 2017. Si vous utilisez Visual Studio 2015, vous pouvez utiliser les mêmes techniques à déclencheur et testez le UpdateTask, à l’exception de Visual Studio ne sera pas attachée à celui-ci. Une autre possibilité dans Visual Studio 2015 consiste à configurer un [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app) qui définit l’UpdateTask en tant que son Point d’entrée et déclenche l’exécution directement à partir de l’application au premier plan.

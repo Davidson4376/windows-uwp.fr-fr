@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: ddd8ec979cb6d5a72b48b9b8b6a60adb73c35657
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5408031"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5435792"
 ---
 # <a name="use-a-software-trigger"></a>Utiliser un déclencheur logiciel
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 160a4ab0ff5bdc40ea46ff6d8fb9fd8e47f560e3
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5402101"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5439873"
 ---
 # <a name="hardware-drm"></a>Gestion des droits numériques en fonction du matériel
 
@@ -83,7 +83,7 @@ Pour chaque lecture multimédia, vous devez définir **MediaProtectionManager** 
 mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectionLayer"] = true;
 ```
 
-Le meilleur moyen de savoir si vous vous trouvez dans le matériel ou logiciel de gestion des droits numériques pour consulter des C:\\Users\\&lt;nom d’utilisateur&gt;\\AppData\\Local\\Packages\\&lt;nom de l’application&gt;\\LocalCache\\PlayReady\\\*
+Le meilleur moyen de savoir si vous vous trouvez dans le matériel ou logiciel de gestion des droits numériques consiste à consulter C:\\Users\\&lt;nom d’utilisateur&gt;\\AppData\\Local\\Packages\\&lt;nom de l’application&gt;\\LocalCache\\PlayReady\\\*
 
 -   Si vous voyez un fichier mspr.hds, vous êtes en gestion des droits numériques en fonction du logiciel.
 -   Si vous voyez un autre fichier \*.hds, vous êtes en gestion des droits numériques en fonction du matériel.

@@ -2,7 +2,7 @@
 author: QuinnRadich
 title: Quelles sont les nouveautés dans la documentation Windows en septembre 2018 - développer des applications UWP
 description: Nouvelles fonctionnalités, des vidéos, des exemples et des conseils aux développeurs ont été ajoutées à la documentation du développeur Windows 10 septembre 2018.
-keywords: Quelles sont les nouveautés, mise à jour, fonctionnalités, conseils de développeur, Windows 10, septembre
+keywords: Nouveautés, mise à jour, fonctionnalités, conseils de développeur, Windows 10, septembre
 ms.author: quradic
 ms.date: 09/10/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f017dbb30586d3ec3c2da54d0f262c4b159328cc
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398106"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5436295"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en septembre 2018
 
@@ -30,7 +30,7 @@ La documentation du développeur Windows est constamment mise à jour afin d'int
 
 [Référence de l’API Windows.AI.MachineLearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning) a été mis à jour pour le dernier SDK Insider de Windows.
 
-[Référentiel GitHub de Windows-Machine-Learning](https://github.com/Microsoft/Windows-Machine-Learning) l’a été mis à jour avec nouveaux exemples qui fonctionnent avec la dernière version du SDK.
+[Référentiel the Windows-Machine-Learning GitHub](https://github.com/Microsoft/Windows-Machine-Learning) a été mis à jour avec nouveaux exemples qui fonctionnent avec la dernière version du SDK.
 
 ![Graphisme d’apprentissage automatique Windows](images/winml-graphic.png)
 
@@ -42,21 +42,21 @@ Pour plus d’informations sur la bibliothèque de l’interface utilisateur de 
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
-### <a name="how-blur-effects-work"></a>Comment travail d’effets de flou
+### <a name="how-blur-effects-work"></a>Comment travail effets de flou
 
-Un de nos rédacteurs, le Mike Jacobs ses, a commencé à une série d’articles de support sur l’effet de flou, à partir de la vision à la photographie à la conception d’applications et de jeux. Si vous souhaitez en savoir plus sur cet effet visuel très répandue, consultez [le premier article sur la vision et de photographie](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09) et [la seconde sur l’anticrénelage dans les graphiques.](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
+Un de nos rédacteurs, le Mike Jacobs précieux, a commencé à une série d’articles en milieu sur flou, à partir de la vision à la photographie à la conception d’applications et de jeux. Si vous souhaitez en savoir plus sur cet effet visuel très répandue, consultez [le premier article sur la vision et de photographie](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09) et [la seconde sur l’anticrénelage dans les graphiques.](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
 
 ![Flou en action](images/blur-example.jpg)
 
 ### <a name="contributing-guidance"></a>Conseils contributeurs
 
-Nous avons mis à jour [nos conseils relatifs aux contributeurs](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md) pour notre documentation UWP. Ce guide nouvel clarifie le flux de travail et les attentes pour les contributions externes à notre documentation.
+Nous avons mis à jour [nos conseils relatifs aux contributeurs](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md) pour notre documentation UWP. Ce guide nouvel clarifie le flux de travail et les attentes contributions externes à notre documentation.
 
 ## <a name="videos"></a>Vidéos
 
 ### <a name="one-dev-question"></a>Question sur le développement
 
-Dans la série de vidéos Question sur le développement, les développeurs Microsoft longtime couvrent une série de questions sur le développement Windows, la culture de l’équipe et l’historique. Voici les questions les plus récentes que nous avons répondu à!
+Dans la série de vidéos Question sur le développement, les développeurs Microsoft longtime couvrent une série de questions sur le développement Windows, la culture de l’équipe et historique. Voici les questions les plus récentes que nous avons répondu à!
 
 Aaron Gustafson:
 

@@ -11,11 +11,11 @@ keywords: windows10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5405273"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5431904"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Configuration de builds automatisées pour votre application UWP
 
@@ -319,7 +319,7 @@ Si vous souhaitez distribuer votre application sans la publier dans le Store, vo
 Utilisez le script PowerShell `Add-AppDevPackage.ps1` pour installer des applications. Ce script s’ajouter le certificat à la section Certification racine de confiance pour l’ordinateur local et ensuite installer ou mettre à jour le fichier de package d’application.
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>Chargement indépendant de votre application avec la mise à jour anniversaire de Windows10
-Dans la mise à jour Windows 10 anniversaire, vous pouvez double-cliquez sur le fichier de package d’application et installer votre application en choisissant le bouton Installer dans une boîte de dialogue. 
+Dans la mise à jour Windows 10 anniversaire, vous pouvez double-cliquez sur le fichier de package d’application et installer votre application en cliquant sur le bouton Installer dans une boîte de dialogue. 
 
 ![chargement indépendant dans rs1](images/building-screen18.png) 
 

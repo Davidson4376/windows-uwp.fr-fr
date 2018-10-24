@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, services du MicrosoftStore, API d’analyse du MicrosoftStore, acquisitions de jeu Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: aac2bd45cf102816db8ba1f434be5743dead48e3
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5402353"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5433867"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>Obtenir des acquisitions de jeu Xbox One
 
@@ -93,7 +93,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | date                | chaîne | Première date dans la plage de dates des données d’acquisition. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
 | applicationId       | chaîne | L'ID produit du jeu Xbox One pour lequel vous récupérez des données d’acquisition. |
 | applicationName     | chaîne | Le nom complet du jeu.       |
-| acquisitionType     | chaîne | Une des chaînes suivantes qui indique le type d'acquisition:<ul><li><strong>Free</strong></li><li><strong>Essai</strong></li><li><strong>Payant</strong></li><li><strong>Code promotionnel</strong></li><li><strong>Iap</strong></li><li><strong>Abonnement Iap</strong></li><li><strong>Public privé</strong></li><li><strong>Ordre des versions antérieures</strong></li><li><strong>Xbox Game Pass</strong> (ou <strong>Game Pass</strong> si vous interrogez des données antérieures au 23mars2018)</li><li><strong>Disque</strong></li><li><strong>Code prépayé</strong></li><li><strong>Ordre Pre facturés</strong></li><li><strong>Commande de pré annulée</strong></li><li><strong>Ordre Pre ayant échoué</strong></li></ul>    |
+| acquisitionType     | chaîne | Une des chaînes suivantes qui indique le type d'acquisition:<ul><li><strong>Free</strong></li><li><strong>Essai</strong></li><li><strong>Payant</strong></li><li><strong>Code promotionnel</strong></li><li><strong>Iap</strong></li><li><strong>Abonnement Iap</strong></li><li><strong>Public privé</strong></li><li><strong>Ordre des pré</strong></li><li><strong>Xbox Game Pass</strong> (ou <strong>Game Pass</strong> si vous interrogez des données antérieures au 23mars2018)</li><li><strong>Disque</strong></li><li><strong>Code prépayé</strong></li><li><strong>Ordre Pre facturés</strong></li><li><strong>Commande des pré annulée</strong></li><li><strong>Ordre Pre ayant échoué</strong></li></ul>    |
 | age                 | chaîne | L'une des chaînes suivantes qui indique le groupe d'âge de l'utilisateur ayant effectué l’acquisition:<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul>     |
 | deviceType          | chaîne | L'une des chaînes suivantes qui spécifie le type d’appareil ayant effectué l'acquisition:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Serveur</strong></li><li><strong>Tablette</strong></li><li><strong>Holographique</strong></li><li><strong>Inconnu</strong></li></ul>  |
 | gender              | chaîne | L'une des chaînes suivantes qui spécifie le sexe de l'utilisateur ayant effectué l’acquisition:<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul>     |

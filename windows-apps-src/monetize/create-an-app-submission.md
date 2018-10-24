@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, créer une soumission d’apps
 ms.localizationpriority: medium
 ms.openlocfilehash: 02aa06359f4f15d8763d75d0ab5381ce890ede4a
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5409569"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5434078"
 ---
 # <a name="create-an-app-submission"></a>Crée une soumission d’applications
 
