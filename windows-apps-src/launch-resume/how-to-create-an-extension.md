@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 548f5f5d1810347527c3c9bfe761a766c4a35c7f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445576"
+ms.locfileid: "5473893"
 ---
 # <a name="create-and-host-an-app-extension"></a>Créer et héberger une extension d’application
 
@@ -411,7 +411,7 @@ Les principales différences entre les [packages facultatifs](https://docs.micro
 
 Les extensions d’application font partie d’un écosystème ouvert. Si votre application peut héberger des extensions d’application, n'importe qui peut écrire une extension pour votre hôte dans la mesure où elle se conforme à votre méthode de transmission/réception des informations à partir de l’extension. Cela diffère des packages facultatifs qui font partie d’un écosystème fermé où l’éditeur décide qui est autorisé à créer un package facultatif qui peut être utilisé avec l’application.
 
-Les extensions d’application sont des packages indépendants et peuvent être des applications autonomes. Elles ne peuvent pas avoir une dépendance de déploiement sur une autre application. Les packages facultatifs requièrent le package principal et ne peuvent pas s’exécuter sans ce dernier.
+Les extensions d’application sont des packages indépendants et peuvent être des applications autonomes. Elles ne peuvent pas avoir une dépendance de déploiement sur une autre application.Les packages facultatifs requièrent le package principal et ne peuvent pas s’exécuter sans ce dernier.
 
 Un pack d’extension pour un jeu serait parfaitement adapté pour un package facultatif, car il est étroitement lié au jeu, il ne peut pas s’exécuter indépendamment du jeu et vous pouvez ne pas vouloir que les kits d’extension soit créés par n’importe quel développeur de l’écosystème.
 

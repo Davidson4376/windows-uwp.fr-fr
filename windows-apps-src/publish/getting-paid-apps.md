@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, paiements, ventes d’applications, revenu de l’application, revenu, frais d’utilisation du Store, mise en attente des paiements, pourcentage
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c128bedd1c889f4c2dcf0565c7c10575eb75013
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438193"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478700"
 ---
 # <a name="getting-paid"></a>Rémunération
 Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et extensions, ainsi que vos revenus publicitaires.
@@ -70,9 +70,9 @@ Une fois que vous avez configuré l’état de mise en attente des paiements sur
 > La valeur que vous sélectionnez dans **État de mise en attente des paiements** s’applique à **toutes** les sources de revenus payées par le biais du Centre de développement Windows (MicrosoftStore, publicité, Place de marché MicrosoftAzure, etc.). Vous ne pouvez pas sélectionner des états de mise en attente différents pour chaque source de revenus.
 
 
- 
+ 
 
- 
+ 
 
 
 

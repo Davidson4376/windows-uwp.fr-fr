@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows10, uwp, ventes d’extensions, acquisitions d’extensions, produits in-app, extensions
 ms.localizationpriority: medium
 ms.openlocfilehash: 019bb410e6ac65f9951f06052c78f40e9a5f32e2
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440946"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477404"
 ---
 # <a name="add-on-acquisitions-report"></a>Rapport sur les acquisitions d’extensions
 
 
-Le rapport **acquisitions de modules complémentaires** dans le tableau de bord du centre de développement Windows vous permet de visualiser le nombre de modules complémentaires que vous avez vendus, ainsi que des données démographiques et des informations sur la plateforme et affiche les informations de conversion pour les clients sur Windows 10 (y compris Xbox). Vous pouvez également afficher les données d’acquisition en temps réel pour la dernière période ou 70-deux heures.
+Le rapport **acquisitions de modules complémentaires** dans le tableau de bord du centre de développement Windows vous permet de visualiser le nombre de modules complémentaires que vous avez vendus, ainsi que des données démographiques et des informations sur la plateforme et affiche les informations de conversion pour les clients sous Windows 10 (y compris Xbox). Vous pouvez également afficher les données d’acquisition en temps réel pour la dernière période ou 70-deux heures.
 
 Vous pouvez visualiser ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de la méthode [obtenir des acquisitions d’extensions](../monetize/get-in-app-acquisitions.md) dans [l’API REST d’analyse du MicrosoftStore](../monetize/access-analytics-data-using-windows-store-services.md).
 
@@ -90,6 +90,6 @@ Le graphique **Top des modules complémentaires** présente le nombre total d’
 
 
 
- 
+ 
 
- 
+ 

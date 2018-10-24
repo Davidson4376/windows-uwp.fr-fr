@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: d354f0babec3ec2346c6e76fcae8666f40f3f6be
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443049"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473437"
 ---
 # <a name="web-authentication-broker"></a>Service Broker d’authentification web
 
@@ -27,7 +27,7 @@ Cet article explique comment connecter votre application de plateforme Windows u
 >[!NOTE]
 >Pour obtenir un exemple de code utilisable complet, clonez le [référentiel WebAuthenticationBroker sur GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620622).
 
- 
+ 
 
 ## <a name="register-your-app-with-your-online-provider"></a>Inscrire votre application auprès de votre fournisseur en ligne
 
@@ -91,7 +91,7 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->En plus de [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066), l’espace de noms [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) contient une méthode [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425). N’appelez pas cette méthode. Elle est conçue pour les applications ciblant uniquement Windows Phone 8.1, et son usage avec Windows 10 est désapprouvé.
+>En plus de [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066), l’espace de noms [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) contient une méthode [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425). N’appelez pas cette méthode. Il est conçu pour les applications ciblant uniquement Windows Phone 8.1 et avec Windows 10 est désapprouvé.
 
 ## <a name="connecting-with-single-sign-on-sso"></a>Connexion par authentification unique (SSO).
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 842d26a2bb257dd182813832c5e6480237a9f220
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431213"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478451"
 ---
 # <a name="export-restrictions-on-cryptography"></a>Restrictions à l’exportation liées à l’utilisation du chiffrement
 
@@ -25,9 +25,9 @@ Utilisez ces informations pour déterminer si votre application emploie un type 
 
 Le « Bureau of Industry and Security » (Bureau de l’industrie et de la sécurité ou BIS) du Département du Commerce des États-Unis réglemente l’exportation des technologies qui utilisent certains types de chiffrements. Toutes les applications répertoriées dans le Microsoft Store doivent respecter ces lois et réglementations, car les fichiers d’application peuvent être stockés aux États-Unis. Même les applications qui sont chargées par les développeurs d’applications depuis d’autres pays en vue d’une diffusion hors des États-Unis doivent respecter ces réglementations. Lors de la soumission d’une application sur le Microsoft Store, tous les développeurs d’application doivent s’assurer que leurs applications ne contiennent pas de technologie limitée par ces réglementations.
 
-> **Remarque**  Les informations fournies ici sont édifiantes, mais il est de votre responsabilité, en tant que développeur publiant des applications dans le MicrosoftStore, de vous assurer que votre application est conforme à l’ensemble des lois et réglementations en vigueur.
+> **Remarque**les informations fournies ici sont édifiantes, mais il est de votre responsabilité, en tant que développeur publiant des applications dans le Microsoft Store pour vous assurer que votre application est conforme à toutes les lois et réglementations en vigueur.
 
- 
+ 
 
 Pour obtenir plus d’informations sur le Département du Commerce des États-Unis et le « Bureau of Industry and Security » (Bureau de l’industrie et de la sécurité ou BIS), voir [À propos du Bureau de l’industrie et de la sécurité](http://go.microsoft.com/fwlink/p/?LinkID=245644).
 
@@ -37,7 +37,7 @@ Pour plus d’informations sur la réglementation en vigueur aux États-Unis en 
 
 Premièrement, déterminez si votre application utilise un type de chiffrement soumis à la réglementation en vigueur aux États-Unis en matière de contrôle des exportations («Export Administration Regulations» ou EAR). La question inclut les exemples affichés dans la liste à cet endroit, mais rappelez-vous que cette liste ne reprend pas toutes les applications possibles du chiffrement.
 
-> **Important**  Tenez compte non seulement du code que vous avez écrit pour votre application, mais également de l’ensemble des bibliothèques logicielles, des utilitaires et des composants du système d’exploitation que votre application contient ou auxquels elle se réfère.
+> **Important**tenez compte non seulement du code que vous avez écrit pour votre application, mais également toutes les bibliothèques logicielles, utilitaires et composants du système d’exploitation que votre application contient ou associe des.
 
 -   Toute utilisation d’une signature numérique, telle que l’authentification ou la vérification de l’intégrité
 -   Chiffrement de données ou de fichiers utilisés par votre application

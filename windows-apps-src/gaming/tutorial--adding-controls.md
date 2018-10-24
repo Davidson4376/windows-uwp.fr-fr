@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows10, uwp, jeux, contrôles, entrée
 ms.localizationpriority: medium
 ms.openlocfilehash: 563ca17864f95cfa98313608f5a5c32e64f44a16
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436348"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472889"
 ---
 # <a name="add-controls"></a>Ajouter des contrôles
 
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Un jeu pour la plateforme Windows universelle (UWP) de qualité prend en charge des interfaces très diverses. Un joueur potentiel peut disposer de Windows10 sur une tablette sans aucun bouton physique, d’un ordinateur équipé d’une manette Xbox ou de la dernière plateforme de jeu pour PC avec une souris et un clavier de jeu très performants. Dans notre jeu, les contrôles sont implémentés dans la classe [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp). Cette classe regroupe les trois types d’entrée (souris et clavier, tactile et boîtier de commande) dans un seul contrôleur. Il en résulte un jeu de tir en vue subjective qui utilise les contrôles de déplacement/vue standard du genre qui fonctionnent sur plusieurs appareils.
+Un jeu pour la plateforme Windows universelle (UWP) de qualité prend en charge des interfaces très diverses. Un joueur potentiel peut disposer de Windows 10 sur une tablette sans aucun bouton physique, un PC équipé d’une manette Xbox, ou le dernier jeu rayon avec une souris et un clavier. Dans notre jeu, les contrôles sont implémentés dans la classe [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp). Cette classe regroupe les trois types d’entrée (souris et clavier, tactile et boîtier de commande) dans un seul contrôleur. Il en résulte un jeu de tir en vue subjective qui utilise les contrôles de déplacement/vue standard du genre qui fonctionnent sur plusieurs appareils.
 
 > [!NOTE]
 > Pour plus d’informations sur les contrôles, consultez [Contrôles de déplacement/vue pour les jeux](tutorial--adding-move-look-controls-to-your-directx-game.md) et [Contrôles tactiles pour les jeux](tutorial--adding-touch-controls-to-your-directx-game.md).
@@ -815,11 +815,11 @@ void MoveLookController::Update()
 
 Maintenant que nous avons ajouté nos contrôles, nous devons ajouter une autre fonctionnalité pour créer un jeu immersif: le son!
 La musique et les effets sonores étant un élément essentiel dans tout jeu, abordons l’[ajout de son](tutorial--adding-sound.md) dans la suite.
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, exemples de code, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: f5e508bd89c06841009576a0a69cb960a20faa83
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444381"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474768"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>Exemple de code C\#: soumissions d'applications, d'extensions et de versions d’évaluation
 

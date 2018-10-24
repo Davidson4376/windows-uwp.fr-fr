@@ -2,7 +2,7 @@
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: Découvrir comment créer une application «Hello World» (en XAML)
-description: Utilisez le langage XAML (Extensible Application Markup Language) avec C# pour créer une application «Hello World» simple ciblant la plateforme Windows universelle (UWP) sur Windows10.
+description: Utilisez XAML Extensible Application Markup Language () avec c# pour créer un simple Hello, world application qui cible la plateforme Windows universelle (UWP) sur Windows 10.
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
@@ -11,19 +11,19 @@ ms.technology: uwp
 keywords: windows10, uwp, première application, hello word
 ms.localizationpriority: medium
 ms.openlocfilehash: 950b2f3fac44c8350a51fd5c1b7071f05c92d746
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434854"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479158"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Créer une application «Hello World» (XAML)
 
-Ce didacticiel vous explique comment utiliser XAML et C# pour créer une simple application «Hello World» pour la plateforme Windows universelle (UWP) sur Windows10. Dans Microsoft Visual Studio, un seul projet vous permet de générer une application qui s’exécute sur n’importe quel appareil Windows10.
+Ce didacticiel vous expliquer comment utiliser XAML et c# pour créer une simple «Hello, world» application pour la plateforme Windows universelle (UWP) sur Windows 10. Un seul projet dans Microsoft Visual Studio, vous pouvez générer une application qui s’exécute sur n’importe quel appareil Windows 10.
 
 Vous allez apprendre à effectuer les opérations suivantes:
 
--   créer un projet **Visual Studio2017** qui cible **Windows10** et la **plateforme Windows universelle (UWP)**;
+-   Créez un projet **Visual Studio 2017** qui cible **Windows 10** et **UWP**.
 -   écrire du code XAML pour modifier l’interface utilisateur de votre page de démarrage;
 -   exécuter le projet sur l’ordinateur local dans Visual Studio;
 -   utiliser un objet SpeechSynthesizer pour faire parler l’application quand vous appuyez sur un bouton.
@@ -235,7 +235,7 @@ Quand vous exécutez l’application et que vous cliquez sur le bouton, votre or
 
 ## <a name="summary"></a>Récapitulatif
 
-Félicitations! Vous venez de créer votre première application pour Windows10 et l’application UWP.
+Félicitations, vous avez créé votre première application pour Windows 10 et UWP.
 
 Pour apprendre à utiliser XAML et mettre en place les contrôles utilisés par votre application, essayez le [didacticiel de grille](../design/layout/grid-tutorial.md) ou passez directement aux [étapes suivantes](learn-more.md).
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, API d’achat du MicrosoftStore, octroyer des produits
 ms.localizationpriority: medium
 ms.openlocfilehash: 432d5976cb018148ba0f53aae6446a046f0a3b2f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441762"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474885"
 ---
 # <a name="grant-free-products"></a>Attribuer des produits gratuits
 
@@ -229,7 +229,7 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 | 401  | Non autorisé | InconsistentClientId       | La revendication *clientId* dans la clé d’ID du MicrosoftStore du corps de la requête et la revendication *appid* du jeton d’accès AzureAD de l’en-tête d’autorisation ne correspondent pas.       |
 | 400  | BadRequest   | InvalidParameter           | Les détails contiennent des informations relatives au corps de la requête et aux champs comprenant une valeur non valide.           |
 
-<span/> 
+<span/> 
 
 ## <a name="related-topics"></a>Articles connexes
 

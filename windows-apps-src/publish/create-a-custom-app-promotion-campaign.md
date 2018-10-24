@@ -11,20 +11,20 @@ ms.technology: uwp
 keywords: Windows10, uwp, personnalisé, application, promotion, campagne
 ms.localizationpriority: medium
 ms.openlocfilehash: 13ee8d7482a2ce0716d4e133af329cd0ea42c184
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435264"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478782"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>Créer une campagne personnalisée de promotion d’applications
 
 En plus de créer une [campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md) qui s'exécute dans des applications Windows, vous pouvez également promouvoir votre application à l'aide d'autres canaux. Par exemple, vous pouvez promouvoir votre application en faisant appel à un fournisseur de commercialisation d’applications tiers, ou en publiant des liens vers votre application sur des médias sociaux. Ces activités sont appelées *campagnes personnalisées*.
 
-Si vous lancez des campagnes personnalisées pour votre application, vous pouvez suivre les performances de chacune d’elles en créant pour chaque campagne personnalisée une URL distincte contenant un *ID de campagne* différent. Lorsqu’un client exécutant Windows 10 clique sur une URL contenant un ID de campagne, Microsoft associe le clic à la campagne personnalisée correspondante et vous rend ces données disponibles.
+Si vous lancez des campagnes personnalisées pour votre application, vous pouvez suivre les performances de chacune d’elles en créant pour chaque campagne personnalisée une URL distincte contenant un *ID de campagne* différent. Lorsqu’un client exécutant Windows 10 clique sur une URL qui contient un ID de campagne, Microsoft associe le clic à la campagne personnalisée correspondante et met ces données à votre disposition.
 
 > [!IMPORTANT]
-> Ces données sont uniquement suivies pour les clients qui utilisent Windows10. Les clients utilisant d’autres systèmes d’exploitation peuvent suivre le lien vers la description de votre application, mais les données sur les activités de ces clients ne seront pas incluses.
+> Ces données sont uniquement suivies pour les clients sur Windows 10. Les clients utilisant d’autres systèmes d’exploitation peuvent suivre le lien vers la description de votre application, mais les données sur les activités de ces clients ne seront pas incluses.
 
 Il existe deux principaux types de données associés à des campagnes personnalisées: les *vues de page* de la description de votre application dans le Store et les *conversions*. Une conversion est une acquisition d’application qui résulte de la consultation par un client de la page de description de votre application dans le WindowsStore à partir d’une URL incluant un ID de campagne personnalisée. Pour plus d’informations sur les conversions, voir la section [Comprendre comment les acquisitions d’application sont éligibles en tant que conversions](#understanding-how-acquisitions-qualify-as-conversions) dans cette rubrique.
 

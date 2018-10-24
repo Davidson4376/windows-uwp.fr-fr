@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au Microsoft Store, soumission d’extension, mise à jour, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: 9126bae03644fb22f773cbd69cc397456a4cd48f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5437132"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477637"
 ---
 # <a name="update-an-add-on-submission"></a>Mettre à jour une soumission d’extension
 

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 22727f8d09b3d68970301677cdf632a0981c616a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: 00baa088f0cb01068f1d1d78d101e6cd294c77f7
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433042"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476413"
 ---
 # <a name="launch-the-windows-settings-app"></a>Lancer l’application Paramètres Windows
 
@@ -127,6 +127,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 |-------------|-----|
 | Audio | ms-settings:easeofaccess-audio |
 | Sous-titres codés | ms-settings:easeofaccess-closedcaptioning |
+| Filtres de couleur | MS-paramètres: easeofaccess-colorfilter |
 | Écran | ms-settings:easeofaccess-display |
 | Contrôle visuel | ms-settings:easeofaccess-eyecontrol |
 | Polices | ms-settings:fonts |

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b707479d11cc7aef62385b476720bff8477ed401
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444709"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478307"
 ---
 # <a name="opening-a-developer-account"></a>Ouverture d’un compte de développeur
 
@@ -36,7 +36,7 @@ Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un co
 5.  Entrez le **nom complet de l’éditeur** que vous souhaitez utiliser (50caractères au maximum). Choisissez ce nom soigneusement, car les clients pourront le voir dans le cadre de leur navigation et en viendront à connaître vos applications par ce nom. Pour les comptes d’entreprise, veillez à utiliser le nom d’entreprise enregistré ou l’appellation commerciale de votre organisation. Si vous entrez un nom déjà sélectionné, ou s’il apparaît que quelqu’un d’autre dispose des droits d’utilisation de ce nom, vous n’êtes pas autorisé à utiliser ce nom. 
 
    > [!NOTE]
-   > Vérifiez que vous disposez des droits d’utilisation du nom entré ici. Si quelqu’un d’autre a déposé la marque ou protégé par copyright le nom que vous avez choisi, votre compte risque d’être fermé. Pour plus d’informations, consultez le [Contrat du développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Si une autre personne utilise un nom d’éditeur sur lequel vous détenez un quelconque droit, [contactez Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).    
+   > Vérifiez que vous disposez des droits d’utilisation du nom entré ici. Si quelqu’un d’autre a déposé la marque ou protégé par copyright le nom que vous avez choisi, votre compte risque d’être fermé. Pour plus d’informations, consultez le [Contrat du développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Si une autre personne utilise un nom d’éditeur sur lequel vous détenez un quelconque droit, [contactez Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).    
 
 6.  Entrez les infos de contact à utiliser pour votre compte de développeur.
 

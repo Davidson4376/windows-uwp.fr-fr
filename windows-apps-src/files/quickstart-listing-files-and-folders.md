@@ -16,11 +16,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 312e351a39bf291e1fcd21921230a73ed10cfd17
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435502"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477464"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>Énumérer et interroger des fichiers et dossiers
 
@@ -29,7 +29,7 @@ Accédez aux fichiers et dossiers dans un dossier, une bibliothèque, un apparei
 Pour obtenir des conseils sur le stockage des données de votre application de plateforme Windows universelle, consultez la classe [ApplicationData](/uwp/api/windows.storage.applicationdata).
 
 > [!NOTE]
-> Consultez également l’[exemple d’énumération de dossier](http://go.microsoft.com/fwlink/p/?linkid=619993).
+> Consultez également l’[exemple d’énumération de dossier](http://go.microsoft.com/fwlink/p/?linkid=619993).
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -44,7 +44,7 @@ Pour obtenir des conseils sur le stockage des données de votre application de p
 ## <a name="enumerate-files-and-folders-in-a-location"></a>Énumérer les fichiers et dossiers dans un emplacement
 
 > [!NOTE]
-> N’oubliez pas de déclarer la fonctionnalité **picturesLibrary**.
+> N’oubliez pas de déclarer la fonctionnalité **picturesLibrary**.
 
 Dans cet exemple, nous utilisons tout d’abord la méthode [**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) pour obtenir tous les fichiers dans le dossier racine de la [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (pas dans les sous-dossiers) et répertorie le nom de chaque fichier. Ensuite, nous utilisons la méthode [**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync) pour obtenir tous les sous-dossiers dans le **PicturesLibrary** et obtenir le nom de chaque sous-dossier.
 

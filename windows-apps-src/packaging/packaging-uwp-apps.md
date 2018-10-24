@@ -14,11 +14,11 @@ f1_keywords:
 - vs.storeassociationwizard
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ce80206823694f06e4aa5c3480b4dcb30c4f95c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433955"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478336"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Créer un package d’application UWP avec Visual Studio
 
@@ -44,7 +44,7 @@ Voici un aperçu des étapes nécessaires pour préparer et créer un package d�
 3.  [Créer un fichier de chargement de package d’application](#create-an-app-package-upload-file). Utilisez l’assistant de package d'application dans Microsoft Visual Studio pour créer un package d’application, puis certifiez votre package à l’aide du kit de certification des applications Windows.
 4.  [Chargez de manière indépendante votre package d’application](#sideload-your-app-package). Après le chargement indépendant de votre application sur un appareil, vous pouvez tester qu’elle fonctionne comme vous le souhaitez.
 
-Après avoir effectué les étapes ci-dessus, vous êtes prêt à distribuer votre application. Si vous avez une application métier que vous ne prévoyez pas de vendre puisqu’elle est destinée aux utilisateurs internes uniquement, vous pouvez charger de manière indépendante cette application pour l’installer sur tout appareil Windows10.
+Après avoir effectué les étapes ci-dessus, vous êtes prêt à distribuer votre application. Si vous avez une application cœur de métier (LOB) que vous ne prévoyez pas de vendre puisqu’elle est destinée aux utilisateurs internes uniquement, vous pouvez charger cette application pour l’installer sur n’importe quel appareil Windows 10.
 
 ## <a name="before-packaging-your-app"></a>Avant de créer un package pour votre application
 
@@ -117,20 +117,20 @@ Vous pouvez y procéder à l'aide de l'assistant **Créer des packages d'applica
 
     Le Kit de certification des applications Windows effectue divers tests et renvoie les résultats. Voir [Tests du kit de certification des applications Windows](https://msdn.microsoft.com/library/windows/apps/mt186450) pour plus d'informations spécifiques.
 
-    Si vous avez un appareil Windows10 distant que vous voulez utiliser pour le test, vous devrez installer manuellement le kit de certification des applications Windows sur cet appareil. La section suivante vous guidera lors de ces étapes. Une fois cette opération terminée, vous pouvez sélectionner **Remote machine**, puis cliquer sur **Launch Windows App Certification Kit** pour vous connecter à l’appareil distant et exécuter les tests de validation.
+    Si vous disposez d’un appareil Windows 10 distant que vous souhaitez utiliser pour le test, vous devrez installer le Kit de Certification d’application Windows manuellement sur cet appareil. La section suivante vous guidera lors de ces étapes. Une fois cette opération terminée, vous pouvez sélectionner **Remote machine**, puis cliquer sur **Launch Windows App Certification Kit** pour vous connecter à l’appareil distant et exécuter les tests de validation.
 
 12. Une fois que le kit de certification des applications Windows a terminé et que votre application a réussi, vous êtes prêt à soumettre votre application au centre de développement. Assurez-vous de charger le fichier approprié. L'emplacement par défaut du fichier se trouve dans le dossier racine de votre solution `\[AppName]\AppPackages`. Il se termine par l’extension de fichier .appxupload. Le nom sera sous la forme `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload` si vous avez opté pour un ensemble d’applications avec l’entièreté de l’architecture du package sélectionnée.
 
 Pour plus d'informations sur la soumission de votre application au centre de développement, consultez [Soumissions d’applications](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
 
-**Valider votre package d’application sur un appareil Windows10 distant**
+**Valider votre package d’application sur un appareil Windows 10 distant**
 
-1.  Activez votre appareil Windows 10 pour le développement en suivant les instructions [Activer votre appareil pour le développement](https://msdn.microsoft.com/library/windows/apps/Dn706236).
-    **Important** Vous ne pouvez pas valider votre package d’application sur un appareil ARM distant pour Windows10.
+1.  Activer votre appareil Windows 10 pour le développement en suivant les instructions [activer votre appareil pour le développement](https://msdn.microsoft.com/library/windows/apps/Dn706236) .
+    **Important**vous ne pouvez pas valider votre package d’application sur un appareil ARM distant pour Windows 10.
 2.  Téléchargez et installez les outils de contrôle à distance de Visual Studio. Ils sont utilisés pour exécuter le kit de certification des applications Windows à distance. Vous pouvez obtenir plus d’informations sur ces outils, y compris sur l’endroit où les télécharger, en consultant [Exécuter les applications UWP sur un ordinateur distant](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor).
-3.  Téléchargez le [Kit de certification des applications Windows](http://go.microsoft.com/fwlink/p/?LinkID=309666) requis, puis installez-le sur votre appareil Windows 10 distant.
+3.  Télécharger le [Kit de Certification des applications Windows](http://go.microsoft.com/fwlink/p/?LinkID=309666) requis et, puis installez-le sur votre appareil Windows 10 distant.
 4.  Sur la page **Package Creation Completed** de l’Assistant, choisissez la case d’option **Remote Machine**, puis choisissez le bouton de sélection en regard du bouton **Test Connection**.
-    **Remarque** La case d’option **Remote Machine** est disponible uniquement si vous avez sélectionné au moins une configuration de solution qui prend en charge la validation. Pour plus d’informations sur le test de votre application avec le Kit de certification des applications Windows, voir [Kit de certification des applications Windows](https://msdn.microsoft.com/library/windows/apps/Mt186449).
+    **Remarque**la case d’option **Ordinateur distant** est disponible uniquement si vous avez sélectionné au moins une configuration de solution qui prend en charge la validation. Pour plus d’informations sur le test de votre application avec le Kit de certification des applications Windows, voir [Kit de certification des applications Windows](https://msdn.microsoft.com/library/windows/apps/Mt186449).
 5.  Spécifiez une forme d’appareil dans votre sous-réseau, ou fournissez le nom de serveur de nom de domaine (DNS, Domain Name System) ou l’adresse IP d’un appareil en dehors de votre sous-réseau.
 6.  Dans la liste **Authentication Mode**, choisissez **None** si votre appareil ne requiert pas d’authentification avec vos informations d’identification Windows.
 7.  Choisissez le bouton **Select**, puis le bouton **Launch Windows App Certification Kit**. Si les outils à distance sont en cours d’exécution sur cet appareil, VisualStudio s’y connecte, puis effectue les tests de validation. Consultez [Tests du kit de certification des applications Windows](https://msdn.microsoft.com/library/windows/apps/mt186450).
@@ -150,7 +150,7 @@ Avec des packages d’application UWP, les applications ne sont pas installées 
 La liste suivante fournit les conditions requises pour le chargement indépendant de votre application.
 
 -   Vous devez [activer votre appareil pour le développement](https://msdn.microsoft.com/library/windows/apps/Dn706236).
--   Pour charger votre application de manière indépendante sur un appareil Windows10 Mobile, utilisez l’outil [WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md).
+-   Pour charger votre application sur un appareil Windows 10 Mobile, utilisez l’outil [WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) .
 
 **Charger une application de manière indépendante sur un ordinateur de bureau, un ordinateur portable ou une tablette**
 
@@ -172,5 +172,5 @@ La liste suivante fournit les conditions requises pour le chargement indépendan
 
     Une fois le package d’application installé, la fenêtre PowerShell affiche le message suivant: **Votre application a été correctement installée**.
 
-    **Conseil**: pour ouvrir le menu contextuel sur une tablette, touchez l’écran à l’endroit où vous désirez cliquer avec le bouton droit, restez appuyé jusqu’à ce qu’apparaisse un cercle complet, puis levez le doigt. Le menu contextuel s’ouvre quand vous levez le doigt.
+    **Conseil**: pour ouvrir le menu contextuel sur une tablette, touchez l’écran dans lequel vous souhaitez avec le bouton droit, jusqu'à ce qu’apparaisse un cercle complet, puis levez le doigt. Le menu contextuel s’ouvre quand vous levez le doigt.
 4.  Cliquez sur le bouton Démarrer pour rechercher l'application par son nom, puis lancez-la.

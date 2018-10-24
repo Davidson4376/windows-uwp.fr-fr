@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows10, uwp, envoyer des notifications toast, notifications, envoyer des notifications, notifications toast, procédure, démarrage rapide, prise en main, exemple de code, procédure pas à pas
 ms.localizationpriority: medium
 ms.openlocfilehash: 656e6123db1fc9ea0f3d8c6b6fb106864200e431
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445596"
+ms.locfileid: "5479198"
 ---
 # <a name="send-a-local-toast-notification"></a>Envoyer une notification toast locale
 
@@ -50,7 +50,7 @@ Nous allons examiner les étapes suivantes:
 
 Pour bien comprendre cette rubrique, il est utile de disposer de ce qui suit...
 
-* Une connaissance pratique des concepts et des termes relatifs aux notifications toast. Pour plus d’informations, voir [Vue d’ensemble des toasts et du centre de notifications](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/).
+* Une connaissance pratique des concepts et des termes relatifs aux notifications toast. Pour plus d’informations, voir[Toast et notifications du centre de vue d’ensemble](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/).
 * Une bonne connaissance du contenu d’une notification toast Windows10. Pour plus d’informations, voir la [documentation sur le contenu des toasts](adaptive-interactive-toasts.md).
 * Un projet d’application UWP Windows10
 
@@ -99,36 +99,36 @@ string title = "Andrew sent you a picture";
 string content = "Check this out, Happy Canyon in Utah!";
 string image = "https://picsum.photos/360/202?image=883";
 string logo = "ms-appdata:///local/Andrew.jpg";
- 
+ 
 // Construct the visuals of the toast
 ToastVisual visual = new ToastVisual()
 {
-    BindingGeneric = new ToastBindingGeneric()
-    {
-        Children =
-        {
-            new AdaptiveText()
-            {
-                Text = title
-            },
- 
-            new AdaptiveText()
-            {
-                Text = content
-            },
- 
-            new AdaptiveImage()
-            {
-                Source = image
-            }
-        },
- 
-        AppLogoOverride = new ToastGenericAppLogo()
-        {
-            Source = logo,
-            HintCrop = ToastGenericAppLogoCrop.Circle
-        }
-    }
+    BindingGeneric = new ToastBindingGeneric()
+    {
+        Children =
+        {
+            new AdaptiveText()
+            {
+                Text = title
+            },
+ 
+            new AdaptiveText()
+            {
+                Text = content
+            },
+ 
+            new AdaptiveImage()
+            {
+                Source = image
+            }
+        },
+ 
+        AppLogoOverride = new ToastGenericAppLogo()
+        {
+            Source = logo,
+            HintCrop = ToastGenericAppLogoCrop.Circle
+        }
+    }
 };
 ```
 
@@ -145,52 +145,52 @@ Nous avons ensuite ajouté deux boutons, chacun avec son propre type d’activat
 ```csharp
 // In a real app, these would be initialized with actual data
 int conversationId = 384928;
- 
+ 
 // Construct the actions for the toast (inputs and buttons)
 ToastActionsCustom actions = new ToastActionsCustom()
 {
-    Inputs =
-    {
-        new ToastTextBox("tbReply")
-        {
-            PlaceholderContent = "Type a response"
-        }
-    },
- 
-    Buttons =
-    {
-        new ToastButton("Reply", new QueryString()
-        {
-            { "action", "reply" },
-            { "conversationId", conversationId.ToString() }
- 
-        }.ToString())
-        {
-            ActivationType = ToastActivationType.Background,
-            ImageUri = "Assets/Reply.png",
- 
-            // Reference the text box's ID in order to
-            // place this button next to the text box
-            TextBoxId = "tbReply"
-        },
- 
-        new ToastButton("Like", new QueryString()
-        {
-            { "action", "like" },
-            { "conversationId", conversationId.ToString() }
- 
-        }.ToString())
-        {
-            ActivationType = ToastActivationType.Background
-        },
- 
-        new ToastButton("View", new QueryString()
-        {
-            { "action", "viewImage" },
-            { "imageUrl", image }
- 
-        }.ToString())
-    }
+    Inputs =
+    {
+        new ToastTextBox("tbReply")
+        {
+            PlaceholderContent = "Type a response"
+        }
+    },
+ 
+    Buttons =
+    {
+        new ToastButton("Reply", new QueryString()
+        {
+            { "action", "reply" },
+            { "conversationId", conversationId.ToString() }
+ 
+        }.ToString())
+        {
+            ActivationType = ToastActivationType.Background,
+            ImageUri = "Assets/Reply.png",
+ 
+            // Reference the text box's ID in order to
+            // place this button next to the text box
+            TextBoxId = "tbReply"
+        },
+ 
+        new ToastButton("Like", new QueryString()
+        {
+            { "action", "like" },
+            { "conversationId", conversationId.ToString() }
+ 
+        }.ToString())
+        {
+            ActivationType = ToastActivationType.Background
+        },
+ 
+        new ToastButton("View", new QueryString()
+        {
+            { "action", "viewImage" },
+            { "imageUrl", image }
+ 
+        }.ToString())
+    }
 };
 ```
 
@@ -207,18 +207,18 @@ Vous devez toujours définir la propriété **Launch** de manière à ce que lor
 // Now we can construct the final toast content
 ToastContent toastContent = new ToastContent()
 {
-    Visual = visual,
-    Actions = actions,
- 
-    // Arguments when the user taps body of toast
-    Launch = new QueryString()
-    {
-        { "action", "viewConversation" },
-        { "conversationId", conversationId.ToString() }
- 
-    }.ToString()
+    Visual = visual,
+    Actions = actions,
+ 
+    // Arguments when the user taps body of toast
+    Launch = new QueryString()
+    {
+        { "action", "viewConversation" },
+        { "conversationId", conversationId.ToString() }
+ 
+    }.ToString()
 };
- 
+ 
 // And create the toast notification
 var toast = new ToastNotification(toastContent.GetXml());
 ```
@@ -300,63 +300,63 @@ Dans l’exemple affiché ci-dessous, vous pouvez récupérer la chaîne d’arg
 ```csharp
 protected override void OnActivated(IActivatedEventArgs e)
 {
-    // Get the root frame
-    Frame rootFrame = Window.Current.Content as Frame;
- 
-    // TODO: Initialize root frame just like in OnLaunched
- 
-    // Handle toast activation
-    if (e is ToastNotificationActivatedEventArgs)
-    {
-        var toastActivationArgs = e as ToastNotificationActivatedEventArgs;
-                 
-        // Parse the query string (using QueryString.NET)
-        QueryString args = QueryString.Parse(toastActivationArgs.Argument);
- 
-        // See what action is being requested 
-        switch (args["action"])
-        {
-            // Open the image
-            case "viewImage":
- 
-                // The URL retrieved from the toast args
-                string imageUrl = args["imageUrl"];
- 
-                // If we're already viewing that image, do nothing
-                if (rootFrame.Content is ImagePage && (rootFrame.Content as ImagePage).ImageUrl.Equals(imageUrl))
-                    break;
- 
-                // Otherwise navigate to view it
-                rootFrame.Navigate(typeof(ImagePage), imageUrl);
-                break;
-                             
- 
-            // Open the conversation
-            case "viewConversation":
- 
-                // The conversation ID retrieved from the toast args
-                int conversationId = int.Parse(args["conversationId"]);
- 
-                // If we're already viewing that conversation, do nothing
-                if (rootFrame.Content is ConversationPage && (rootFrame.Content as ConversationPage).ConversationId == conversationId)
-                    break;
- 
-                // Otherwise navigate to view it
-                rootFrame.Navigate(typeof(ConversationPage), conversationId);
-                break;
-        }
- 
-        // If we're loading the app for the first time, place the main page on
-        // the back stack so that user can go back after they've been
-        // navigated to the specific page
-        if (rootFrame.BackStack.Count == 0)
-            rootFrame.BackStack.Add(new PageStackEntry(typeof(MainPage), null, null));
-    }
- 
-    // TODO: Handle other types of activation
- 
-    // Ensure the current window is active
-    Window.Current.Activate();
+    // Get the root frame
+    Frame rootFrame = Window.Current.Content as Frame;
+ 
+    // TODO: Initialize root frame just like in OnLaunched
+ 
+    // Handle toast activation
+    if (e is ToastNotificationActivatedEventArgs)
+    {
+        var toastActivationArgs = e as ToastNotificationActivatedEventArgs;
+                 
+        // Parse the query string (using QueryString.NET)
+        QueryString args = QueryString.Parse(toastActivationArgs.Argument);
+ 
+        // See what action is being requested 
+        switch (args["action"])
+        {
+            // Open the image
+            case "viewImage":
+ 
+                // The URL retrieved from the toast args
+                string imageUrl = args["imageUrl"];
+ 
+                // If we're already viewing that image, do nothing
+                if (rootFrame.Content is ImagePage && (rootFrame.Content as ImagePage).ImageUrl.Equals(imageUrl))
+                    break;
+ 
+                // Otherwise navigate to view it
+                rootFrame.Navigate(typeof(ImagePage), imageUrl);
+                break;
+                             
+ 
+            // Open the conversation
+            case "viewConversation":
+ 
+                // The conversation ID retrieved from the toast args
+                int conversationId = int.Parse(args["conversationId"]);
+ 
+                // If we're already viewing that conversation, do nothing
+                if (rootFrame.Content is ConversationPage && (rootFrame.Content as ConversationPage).ConversationId == conversationId)
+                    break;
+ 
+                // Otherwise navigate to view it
+                rootFrame.Navigate(typeof(ConversationPage), conversationId);
+                break;
+        }
+ 
+        // If we're loading the app for the first time, place the main page on
+        // the back stack so that user can go back after they've been
+        // navigated to the specific page
+        if (rootFrame.BackStack.Count == 0)
+            rootFrame.BackStack.Add(new PageStackEntry(typeof(MainPage), null, null));
+    }
+ 
+    // TODO: Handle other types of activation
+ 
+    // Ensure the current window is active
+    Window.Current.Activate();
 }
 ```
 
@@ -382,7 +382,7 @@ BackgroundAccessStatus status = await BackgroundExecutionManager.RequestAccessAs
 // Create the background task
 BackgroundTaskBuilder builder = new BackgroundTaskBuilder()
 {
-    Name = taskName
+    Name = taskName
 };
 
 // Assign the toast action trigger
@@ -398,23 +398,23 @@ Dans votre fichier App.xaml.cs, remplacez la méthode OnBackgroundActivated pour
 ```csharp
 protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs args)
 {
-    var deferral = args.TaskInstance.GetDeferral();
- 
-    switch (args.TaskInstance.Task.Name)
-    {
-        case "ToastBackgroundTask":
-            var details = args.TaskInstance.TriggerDetails as ToastNotificationActionTriggerDetail;
-            if (details != null)
-            {
-                string arguments = details.Argument;
-                var userInput = details.UserInput;
+    var deferral = args.TaskInstance.GetDeferral();
+ 
+    switch (args.TaskInstance.Task.Name)
+    {
+        case "ToastBackgroundTask":
+            var details = args.TaskInstance.TriggerDetails as ToastNotificationActionTriggerDetail;
+            if (details != null)
+            {
+                string arguments = details.Argument;
+                var userInput = details.UserInput;
 
-                // Perform tasks
-            }
-            break;
-    }
- 
-    deferral.Complete();
+                // Perform tasks
+            }
+            break;
+    }
+ 
+    deferral.Complete();
 }
 ```
 
@@ -433,71 +433,71 @@ string title = "Andrew sent you a picture";
 string content = "Check this out, Happy Canyon in Utah!";
 string image = "http://blogs.msdn.com/cfs-filesystemfile.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-71-81-permanent/2727.happycanyon1_5B00_1_5D00_.jpg";
 string logo = "ms-appdata:///local/Andrew.jpg";
- 
+ 
 // TODO: all values need to be XML escaped
- 
+ 
 // Construct the visuals of the toast
 string toastVisual =
 $@"<visual>
-  <binding template='ToastGeneric'>
-    <text>{title}</text>
-    <text>{content}</text>
-    <image src='{image}'/>
-    <image src='{logo}' placement='appLogoOverride' hint-crop='circle'/>
-  </binding>
+  <binding template='ToastGeneric'>
+    <text>{title}</text>
+    <text>{content}</text>
+    <image src='{image}'/>
+    <image src='{logo}' placement='appLogoOverride' hint-crop='circle'/>
+  </binding>
 </visual>";
 
 // In a real app, these would be initialized with actual data
 int conversationId = 384928;
- 
+ 
 // Generate the arguments we'll be passing in the toast
 string argsReply = $"action=reply&conversationId={conversationId}";
 string argsLike = $"action=like&conversationId={conversationId}";
 string argsView = $"action=viewImage&imageUrl={Uri.EscapeDataString(image)}";
- 
+ 
 // TODO: all args need to be XML escaped
- 
+ 
 string toastActions =
 $@"<actions>
- 
-  <input
-      type='text'
-      id='tbReply'
-      placeHolderContent='Type a response'/>
- 
-  <action
-      content='Reply'
-      arguments='{argsReply}'
-      activationType='background'
-      imageUri='Assets/Reply.png'
-      hint-inputId='tbReply'/>
- 
-  <action
-      content='Like'
-      arguments='{argsLike}'
-      activationType='background'/>
- 
-  <action
-      content='View'
-      arguments='{argsView}'/>
- 
+ 
+  <input
+      type='text'
+      id='tbReply'
+      placeHolderContent='Type a response'/>
+ 
+  <action
+      content='Reply'
+      arguments='{argsReply}'
+      activationType='background'
+      imageUri='Assets/Reply.png'
+      hint-inputId='tbReply'/>
+ 
+  <action
+      content='Like'
+      arguments='{argsLike}'
+      activationType='background'/>
+ 
+  <action
+      content='View'
+      arguments='{argsView}'/>
+ 
 </actions>";
 
 // Now we can construct the final toast content
 string argsLaunch = $"action=viewConversation&conversationId={conversationId}";
- 
+ 
 // TODO: all args need to be XML escaped
- 
+ 
 string toastXmlString =
 $@"<toast launch='{argsLaunch}'>
-    {toastVisual}
-    {toastActions}
+    {toastVisual}
+    {toastActions}
 </toast>";
- 
+ 
 // Parse to XML
 XmlDocument toastXml = new XmlDocument();
 toastXml.LoadXml(toastXmlString);
- 
+ 
 // Generate toast
 var toast = new ToastNotification(toastXml);
 ```

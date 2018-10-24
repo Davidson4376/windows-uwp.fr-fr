@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f7359b2ae40e9b53d5ab73ee93402b11beab629
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432478"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478438"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Configurer votre compte de paiement et vos déclarations fiscales
 
@@ -33,8 +33,8 @@ Une fois que vous avez [configuré votre compte de développeur](opening-a-devel
 -   [Remplir vos déclarations fiscales](#tax-forms)
 
 > [!NOTE]
-> Pour plus d’informations sur le mode et l’échéance des paiements de l’argent que vos applications vous ont rapporté, consultez l’article [Rémunération](getting-paid-apps.md).
- 
+> Pour plus d’informations sur le mode et l’échéance des paiements de l’argent que vos applications vous ont rapporté, consultez l’article [Rémunération](getting-paid-apps.md).
+ 
 
 ## <a name="payout-account"></a>Compte de revenu
 
@@ -43,7 +43,7 @@ Un compte de revenu est le compte bancaire vers lequel nous transférons l'argen
 > [!NOTE]
 > Dans certains marchés, PayPal peut être utilisé pour votre compte de paiement. Pour savoir si PayPal est pris en charge pour un marché spécifique, consultez l’article [Types de compte, emplacements et frais](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), et lisez la section [Informations PayPal](#paypal-info) ci-après pour en savoir plus.
 
- 
+ 
 **Pour configurer votre compte de paiement**
 
 1.  Dans le tableau de bord du Centre de développement Windows, accédez à **Paramètres du compte** en sélectionnant l’icône dans le coin supérieur droit.
@@ -63,7 +63,7 @@ Si vous devez mettre à jour ou modifier votre compte de paiement, suivez la pro
 
 > [!IMPORTANT]
 > En cas de modification de votre compte de paiement, vos paiements peuvent être retardés d’un cycle de paiement au maximum. Ce retard s’explique par le fait que nous devons vérifier la modification apportée au compte, et ce, selon le même processus que celui utilisé lors de la configuration initiale du compte de revenu. Une fois votre compte vérifié, vous serez toujours rémunéré, mais nous ajouterons les paiements du cycle de paiement actuel au prochain cycle de paiement. Pour plus d'informations, voir l'article [Rémunération](getting-paid-apps.md).
- 
+ 
 
 ### <a name="paypal-info"></a>Informations PayPal
 
@@ -135,7 +135,7 @@ Vous pouvez remplir et envoyer vos déclarations fiscales au format électroniqu
 > [!IMPORTANT]
 > L’imposition varie selon les pays et les régions. Le montant exact des taxes dont vous devez vous affranchir varie selon les pays et les régions où vous vendez vos applications. Pour savoir dans quels pays Microsoft vous dispense des taxes d’utilisation et sur les ventes, voir le [Contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) Dans d’autres pays, selon l’endroit où vous êtes inscrit, vous devrez peut-être verser directement les taxes d’utilisation et les taxes sur les ventes de vos applications à l’administration fiscale locale. Notez également que le produit des ventes d’applications que vous recevez peut être considéré comme un revenu imposable. Nous encourageons vivement à contacter l’autorité compétente de votre pays ou région qui peut mieux vous aider à déterminer les informations fiscales appropriées pour vos activités de développement de Microsoft Store.
 
- 
+ 
 **Pour créer votre profil fiscal**
 
 1.  Dans le tableau de bord du Centre de développement Windows, cliquez sur l'icône **Paramètres du compte** dans le coin supérieur droit.
@@ -160,9 +160,9 @@ Les informations que vous indiquez dans vos déclarations fiscales déterminent 
 
 Si vous résidez en dehors des États-Unis, vous pouvez tirer parti d’avantages découlant d’une convention fiscale. Ces avantages varient d’un pays à l’autre et peuvent vous permettre de réduire le montant des taxes retenues par le Microsoft Store. Pour revendiquer des avantages en vertu d’une convention fiscale, remplissez la deuxième partie du formulaire W-8BEN. Nous vous recommandons de contacter les autorités appropriées dans votre pays ou région pour déterminer si ces avantages vous concernent.
 
- 
+ 
 
- 
+ 
 
 
 

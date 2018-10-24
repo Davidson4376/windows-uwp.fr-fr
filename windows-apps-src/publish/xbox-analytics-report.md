@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, analyse xbox, analyse xbox live, statistiques xbox
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e69c41ec2ae6dface93b9f3148e699e448faa18
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433649"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475197"
 ---
 # <a name="xbox-analytics-report"></a>Rapport d’analyse Xbox
 
@@ -143,6 +143,6 @@ Vous pouvez également afficher uniquement les erreurs liées à la limitation d
 
 
 
- 
+ 
 
- 
+ 

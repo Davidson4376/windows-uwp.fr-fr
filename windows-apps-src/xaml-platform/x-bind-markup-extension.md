@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5445906"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477365"
 ---
 # <a name="xbind-markup-extension"></a>Extension de balisage {x:Bind}
 
-**Remarque**  Pour plus d’informations sur l’utilisation de la liaison de données dans votre application avec **{x:Bind}** (et pour une comparaison entre **{x:Bind}** et **{Binding}**), voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Remarque**pour des informations générales sur l’utilisation des données de liaison dans votre application avec **{x: Bind}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), consultez [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
-L’extension de balisage **{x:Bind}**, nouveauté de Windows10, peut être utilisée en remplacement de la méthode **{Binding}**. **{x: Bind}** s’exécute en moins de temps et en utilisant moins de mémoire que **{Binding}** et prend en charge le débogage de mieux.
+L’extension de balisage **{x: Bind}** — nouveauté de Windows 10, est une alternative aux **{Binding}**. **{x: Bind}** s’exécute en moins de temps et en utilisant moins de mémoire que **{Binding}** et prend en charge le débogage de mieux.
 
 Lors de la compilation du XAML, l’extension de balisage **{x: Bind}** est convertie en code qui récupère une valeur à partir d’une propriété sur une source de données et la définit sur la propriété spécifiée dans le balisage. L’objet de liaison peut éventuellement être configuré pour observer les modifications de la valeur de la propriété de source de données, et s’actualiser en fonction de ces modifications (`Mode="OneWay"`). Il peut également être configuré pour renvoyer les modifications dans sa propre valeur à la propriété source (`Mode="TwoWay"`).
 
@@ -151,7 +151,7 @@ Ces propriétés fonctionnent essentiellement de la même manière que les propr
 
 > [!NOTE]
 > Si vous convertissez un balisage de **{Binding}** en **{x:Bind}**, soyez attentif aux différences de valeurs par défaut de la propriété **Mode**.
- 
+ 
 > [**x:DefaultBindMode**](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute) peut servir à modifier le mode par défaut défini pour x:Bind pour un segment spécifique de l’arborescence du balisage. Le mode sélectionné appliquera sur cet élément et ses enfants toute expression x:Bind qui ne spécifie pas explicitement un mode dans le cadre de la liaison. OneTime est plus performante que OneWay. En effet, l'utilisation de OneWay provoque plus de code à générer pour le raccordement et la gestion de la détection des modifications.
 
 ## <a name="remarks"></a>Notes
@@ -171,7 +171,7 @@ Le code généré des pages et des contrôles utilisateur incluant des liaisons 
 > [!NOTE]
 > Depuis Windows10, version1607, l’infrastructure XAML fournit un convertisseur intégré permettant de convertir un booléen en Visibility. Le convertisseur mappe **true** à la valeur d’énumération **Visible**et **false** à la valeur d’énumération **Collapsed**. Vous pouvez ainsi lier une propriété Visibility à un booléen sans avoir à créer un convertisseur. Notez qu'il ne s'agit pas d'une fonctionnalité de liaison des fonctions, mais uniquement de liaison des propriétés. Pour utiliser le convertisseur intégré, la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas l’utiliser si votre application cible des versions antérieures de Windows10. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
-**Conseil**   Si vous avez besoin de spécifier une accolade simple pour une valeur, comme dans [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) ou [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), faites-la précéder d’une barre oblique inverse: `\{`. Vous pouvez également placer l’ensemble de la chaîne qui contient les accolades à échapper dans une paire de guillemets secondaire. Par exemple : `ConverterParameter='{Mix}'`.
+**Conseil**  si vous avez besoin de spécifier une accolade simple pour une valeur, comme dans le [**chemin d’accès**](https://msdn.microsoft.com/library/windows/apps/br209830) ou [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), faites-la précéder d’une barre oblique inverse: `\{`. Vous pouvez également placer l’ensemble de la chaîne qui contient les accolades à échapper dans une paire de guillemets secondaire. Par exemple : `ConverterParameter='{Mix}'`.
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) et **ConverterLanguage** sont tous liés au scénario de conversion d’une valeur ou d’un type de la source de liaison en type ou valeur compatible avec la propriété cible de liaison. Pour obtenir plus d’informations et des exemples, voir la section « Conversions de données » de la rubrique [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 

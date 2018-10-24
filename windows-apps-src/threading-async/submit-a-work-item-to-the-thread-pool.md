@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, threads, pool de threads
 ms.localizationpriority: medium
 ms.openlocfilehash: 29d7fc361e446207c8e14f83ca3f663bd5072e6e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435297"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478147"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Envoyer un élément de travail au pool de threads
 
@@ -354,11 +354,11 @@ Notez que le gestionnaire d’achèvement vérifie si l’élément de travail a
 
 ## <a name="summary-and-next-steps"></a>Récapitulatif et étapes suivantes
 
-Pour en savoir plus, vous pouvez télécharger le code de ce démarrage rapide à partir de l’[exemple de création d’élément de travail ThreadPool](http://go.microsoft.com/fwlink/p/?LinkID=328569) écrit pour Windows 8.1 et réutiliser le code source dans une application Windows 10 win\_unap.
+Vous pouvez en savoir plus, téléchargez le code à partir de ce démarrage rapide de la [Création d’un pool de threads de travail exemple d’élément](http://go.microsoft.com/fwlink/p/?LinkID=328569) écrit pour Windows8.1, puis réutilisez le code source dans une application Windows 10 win\_unap.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Envoyer un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
 * [Meilleures pratiques pour l’utilisation du pool de threads](best-practices-for-using-the-thread-pool.md)
 * [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md)
- 
+ 

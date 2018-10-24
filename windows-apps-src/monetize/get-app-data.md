@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, données d'app
 ms.localizationpriority: medium
 ms.openlocfilehash: 6940c1079c7973bc4fd639345c5d5e3f33b0221f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442769"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474778"
 ---
 # <a name="get-app-data"></a>Obtenir des données d’application
 
@@ -188,7 +188,7 @@ Cette ressource a les valeurs suivantes.
 |-----------------|---------|------------------------------|
 | id            | chaîne  | ID de la soumission.    |
 | resourceLocation   | chaîne  | Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de la soumission.            |
- 
+ 
 <span/>
 
 ## <a name="related-topics"></a>Rubriques connexes

@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows10, uwp, vignettes pouvant être suivies, vignettes dynamiques, notifications par vignette pouvant être suivies
 ms.localizationpriority: medium
 ms.openlocfilehash: b6d86d8881e0027a28f0f2a737e5f3fcb46a6ab5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431102"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472570"
 ---
 # <a name="chaseable-tile-notifications"></a>Notifications par vignette pouvant être suivies
 
@@ -61,48 +61,48 @@ Cet exemple crée une charge utile de notification qui utilise la propriété ar
 // Uses the following NuGet packages
 // - Microsoft.Toolkit.Uwp.Notifications
 // - QueryString.NET
- 
+ 
 TileContent content = new TileContent()
 {
-    Visual = new TileVisual()
-    {
-        // These arguments cascade down to Medium and Wide
-        Arguments = new QueryString()
-        {
-            { "action", "storyClicked" },
-            { "story", "201c9b1" }
-        }.ToString(),
- 
- 
-        // Medium tile
-        TileMedium = new TileBinding()
-        {
-            Content = new TileBindingContentAdaptive()
-            {
-                // Omitted
-            }
-        },
- 
- 
-        // Wide tile is same as Medium
-        TileWide = new TileBinding() { /* Omitted */ },
- 
- 
-        // Large tile is an aggregate of multiple stories
-        // and therefore needs different arguments
-        TileLarge = new TileBinding()
-        {
-            Arguments = new QueryString()
-            {
-                { "action", "storiesClicked" },
-                { "story", "43f939ag" },
-                { "story", "201c9b1" },
-                { "story", "d9481ca" }
-            }.ToString(),
- 
-            Content = new TileBindingContentAdaptive() { /* Omitted */ }
-        }
-    }
+    Visual = new TileVisual()
+    {
+        // These arguments cascade down to Medium and Wide
+        Arguments = new QueryString()
+        {
+            { "action", "storyClicked" },
+            { "story", "201c9b1" }
+        }.ToString(),
+ 
+ 
+        // Medium tile
+        TileMedium = new TileBinding()
+        {
+            Content = new TileBindingContentAdaptive()
+            {
+                // Omitted
+            }
+        },
+ 
+ 
+        // Wide tile is same as Medium
+        TileWide = new TileBinding() { /* Omitted */ },
+ 
+ 
+        // Large tile is an aggregate of multiple stories
+        // and therefore needs different arguments
+        TileLarge = new TileBinding()
+        {
+            Arguments = new QueryString()
+            {
+                { "action", "storiesClicked" },
+                { "story", "43f939ag" },
+                { "story", "201c9b1" },
+                { "story", "d9481ca" }
+            }.ToString(),
+ 
+            Content = new TileBindingContentAdaptive() { /* Omitted */ }
+        }
+    }
 };
 ```
 
@@ -115,31 +115,31 @@ L’objet LaunchActivatedEventArgs a une propriété qui active les notification
 
 L'[objet TileActivatedInfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo) contient une propriété appelée [RecentlyShownNotifications](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications), qui contient une liste de notifications qui ont été affichées sur la vignette au cours des 15dernières minutes. Le premier élément de la liste représente la notification actuellement présente sur la vignette et les éléments suivants représentent les notifications que l’utilisateur a vues précédemment. Si votre vignette a été désactivée, cette liste est vide.
 
-Chaque ShownTileNotification a une propriété Arguments. La propriété Arguments sera initialisée avec la chaîne d’arguments à partir de votre charge utile de notification par vignette ou aura la valeur null si votre charge utile n’inclut pas de chaîne d’arguments.
+Chaque ShownTileNotificationhas une Argumentsproperty. La Argumentsproperty sera initialisée avec l’argumentsstring à partir de votre charge utile de notification par vignette ou null si votre charge utile n’inclut pas l’argumentsstring.
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs args)
 {
-    // If the API is present (doesn't exist on 10240 and 10586)
-    if (ApiInformation.IsPropertyPresent(typeof(LaunchActivatedEventArgs).FullName, nameof(LaunchActivatedEventArgs.TileActivatedInfo)))
-    {
-        // If clicked on from tile
-        if (args.TileActivatedInfo != null)
-        {
-            // If tile notification(s) were present
-            if (args.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
-            {
-                // Get arguments from the notifications that were recently displayed
-                string[] allArgs = args.TileActivatedInfo.RecentlyShownNotifications
-                .Select(i => i.Arguments)
-                .ToArray();
- 
-                // TODO: Highlight each story in the app
-            }
-        }
-    }
- 
-    // TODO: Initialize app
+    // If the API is present (doesn't exist on 10240 and 10586)
+    if (ApiInformation.IsPropertyPresent(typeof(LaunchActivatedEventArgs).FullName, nameof(LaunchActivatedEventArgs.TileActivatedInfo)))
+    {
+        // If clicked on from tile
+        if (args.TileActivatedInfo != null)
+        {
+            // If tile notification(s) were present
+            if (args.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
+            {
+                // Get arguments from the notifications that were recently displayed
+                string[] allArgs = args.TileActivatedInfo.RecentlyShownNotifications
+                .Select(i => i.Arguments)
+                .ToArray();
+ 
+                // TODO: Highlight each story in the app
+            }
+        }
+    }
+ 
+    // TODO: Initialize app
 }
 ```
 
@@ -150,31 +150,31 @@ Si vous utilisez du code XML brut au lieu de la bibliothèque Notifications, voi
 
 ```xml
 <tile>
-  <visual arguments="action=storyClicked&amp;story=201c9b1">
- 
-    <binding template="TileMedium">
-       
-      <text>Kitten learns how to drive a car...</text>
-      ... (omitted)
-     
-    </binding>
- 
-    <binding template="TileWide">
-      ... (same as Medium)
-    </binding>
-     
-    <!--Large tile is an aggregate of multiple stories-->
-    <binding
-      template="TileLarge"
-      arguments="action=storiesClicked&amp;story=43f939ag&amp;story=201c9b1&amp;story=d9481ca">
-   
-      <text>Can your dog understand what you're saying?</text>
-      ... (another story)
-      ... (one more story)
-   
-    </binding>
- 
-  </visual>
+  <visual arguments="action=storyClicked&amp;story=201c9b1">
+ 
+    <binding template="TileMedium">
+       
+      <text>Kitten learns how to drive a car...</text>
+      ... (omitted)
+     
+    </binding>
+ 
+    <binding template="TileWide">
+      ... (same as Medium)
+    </binding>
+     
+    <!--Large tile is an aggregate of multiple stories-->
+    <binding
+      template="TileLarge"
+      arguments="action=storiesClicked&amp;story=43f939ag&amp;story=201c9b1&amp;story=d9481ca">
+   
+      <text>Can your dog understand what you're saying?</text>
+      ... (another story)
+      ... (one more story)
+   
+    </binding>
+ 
+  </visual>
 </tile>
 ```
 

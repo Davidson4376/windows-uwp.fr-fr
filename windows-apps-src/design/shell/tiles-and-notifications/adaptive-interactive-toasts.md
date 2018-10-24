@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows10, uwp, notifications toast, toasts interactifs, toasts adaptatifs, contenu des toasts, charge utile des toasts
 ms.localizationpriority: medium
 ms.openlocfilehash: de999528d07e6bd7d243e53708e9afc465004af7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435921"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479128"
 ---
 # <a name="toast-content"></a>Contenu des toasts
 
@@ -26,7 +26,7 @@ Les notifications toast adaptatives et interactives vous permettent de créer de
 > **API importante**: [package NuGet UWP Community Toolkit Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> Pour découvrir les modèles hérités de Windows8.1 et de Windows Phone8.1, consultez le [catalogue de modèles de toast hérités](https://msdn.microsoft.com/library/windows/apps/hh761494).
+> Pour découvrir les modèles hérités de Windows8.1 et Windows Phone 8.1, consultez le [catalogue de modèles de toast hérités](https://msdn.microsoft.com/library/windows/apps/hh761494).
 
 
 ## <a name="getting-started"></a>Prise en main
@@ -56,33 +56,33 @@ Le contenu de toast est défini dans le code XML brut, mais vous pouvez utiliser
 ```csharp
 ToastContent content = new ToastContent()
 {
-    Launch = "app-defined-string",
- 
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric() { ... }
-    },
- 
-    Actions = new ToastActionsCustom() { ... },
- 
-    Audio = new ToastAudio() { ... }
+    Launch = "app-defined-string",
+ 
+    Visual = new ToastVisual()
+    {
+        BindingGeneric = new ToastBindingGeneric() { ... }
+    },
+ 
+    Actions = new ToastActionsCustom() { ... },
+ 
+    Audio = new ToastAudio() { ... }
 };
 ```
 
 ```xml
 <toast launch="app-defined-string">
 
-  <visual>
-    <binding template="ToastGeneric">
-      ...
-    </binding>
-  </visual>
+  <visual>
+    <binding template="ToastGeneric">
+      ...
+    </binding>
+  </visual>
 
-  <actions>
-    ...
-  </actions>
+  <actions>
+    ...
+  </actions>
 
-  <audio src="ms-winsoundevent:Notification.Reminder"/>
+  <audio src="ms-winsoundevent:Notification.Reminder"/>
 
 </toast>
 ```
@@ -286,14 +286,14 @@ Pour en savoir plus sur l’utilisation d’un horodatage personnalisé, voir [H
 ```csharp
 ToastContent toastContent = new ToastContent()
 {
-    DisplayTimestamp = new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc),
-    ...
+    DisplayTimestamp = new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc),
+    ...
 };
 ```
 
 ```xml
 <toast displayTimestamp="2017-04-15T19:45:00Z">
-  ...
+  ...
 </toast>
 ```
 
@@ -759,40 +759,40 @@ ToastContent content = new ToastContent()
             }
         },
 
-        Buttons =
-        {
-            new ToastButtonSnooze()
-            {
-                SelectionBoxId = "snoozeTime"
-            },
- 
-            new ToastButtonDismiss()
-        }
+        Buttons =
+        {
+            new ToastButtonSnooze()
+            {
+                SelectionBoxId = "snoozeTime"
+            },
+ 
+            new ToastButtonDismiss()
+        }
     }
 };
 ```
 
 ```xml
 <toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">
-   
-  ...
- 
-  <actions>
-     
-    <input id="snoozeTime" type="selection" defaultInput="15">
-      <selection id="1" content="1 minute"/>
-      <selection id="15" content="15 minutes"/>
-      <selection id="60" content="1 hour"/>
-      <selection id="240" content="4 hours"/>
-      <selection id="1440" content="1 day"/>
-    </input>
- 
-    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
- 
-    <action activationType="system" arguments="dismiss" content=""/>
-     
-  </actions>
-   
+   
+  ...
+ 
+  <actions>
+     
+    <input id="snoozeTime" type="selection" defaultInput="15">
+      <selection id="1" content="1 minute"/>
+      <selection id="15" content="15 minutes"/>
+      <selection id="60" content="1 hour"/>
+      <selection id="240" content="4 hours"/>
+      <selection id="1440" content="1 day"/>
+    </input>
+ 
+    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
+ 
+    <action activationType="system" arguments="dismiss" content=""/>
+     
+  </actions>
+   
 </toast>
 ```
 
@@ -880,7 +880,7 @@ Vos vignettes et notifications toast peuvent charger des chaînes et des images 
 
 ## <a name="handling-activation"></a>Gestion de l’activation
 Pour découvrir comment gérer les activations de toast (l’utilisateur cliquant sur votre toast ou sur les boutons du toast), voir [Envoyer une notification toast locale](send-local-toast.md).
- 
+ 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Envoyer une notification toast locale et gérer l’activation](send-local-toast.md)

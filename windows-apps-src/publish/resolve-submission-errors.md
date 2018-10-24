@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aa30af537874f3c3f4845706de6f6788c7b08fb
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438474"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475210"
 ---
 # <a name="resolve-submission-errors"></a>Résoudre les erreurs d’envoi
 
@@ -55,9 +55,9 @@ Si vous voyez une erreur indiquant: **Le nom trouvé dans le package ne fait pas
 > [!IMPORTANT]
 >  Si le nom que vous voulez utiliser n’est pas disponible, une autre application peut avoir déjà réservé ce nom. Si votre application est déjà publiée sous ce nom, ou si vous pensez que vous avez le droit d’utiliser, [contactez le support](https://go.microsoft.com/fwlink/p/?LinkId=331509).  
 
- 
+ 
 
- 
+ 
 
 
 

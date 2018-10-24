@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.openlocfilehash: e11bae84c7cb88ef89f8b627cc2109fc56e43163
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436275"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477110"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>Applications de bureau de package (pont du bureau)
 

@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: c81e8d07efa04e93128089eaec78fb83b822a4b9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436712"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476347"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>Distribuer une application de bureau empaquetée
 
@@ -151,7 +151,7 @@ private void RemoveDesktopApp()
 
         if (uninstallResult.Equals(DialogResult.Yes))
         {
-                    string[] uninstallArgs = uninstallString.Split(' ');
+                    string[] uninstallArgs = uninstallString.Split(' ');
 
             Process process = new Process();
             process.StartInfo.FileName = uninstallArgs[0];
