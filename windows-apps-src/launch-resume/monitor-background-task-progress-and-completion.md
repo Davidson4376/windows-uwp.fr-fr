@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ef57c6293b37f91653b5f825881b1446e38a824b
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403684"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5442821"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>Surveiller la progression et l’achèvement des tâches en arrière-plan
 
@@ -40,7 +40,7 @@ La progression et l’achèvement des tâches en arrière-plan peuvent être sur
 ### <a name="step-1"></a>Étape1
 Créez une fonction de gestionnaire des événements pour gérer les tâches en arrière-plan achevées. Ce code doit suivre une empreinte spécifique, qui accepte un objet [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) et un objet [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) .
 
-Utilisez l’empreinte suivante pour la méthode de Gestionnaire des événements **OnCompleted** en arrière-plan tâche.
+Utilisez l’empreinte suivante pour la méthode de Gestionnaire des événements **OnCompleted** arrière-plan tâche.
 
 ```csharp
 private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)

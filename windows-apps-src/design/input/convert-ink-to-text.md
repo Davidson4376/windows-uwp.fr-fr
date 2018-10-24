@@ -13,11 +13,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: de14d35b7a39776f43feeefc94ebe77af0c97373
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403615"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5442624"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>Reconnaître les traits WindowsInk en tant que texte et formes
 

@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 4E4CB1E3-D213-4324-91E4-7D4A0EA19C53
-description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données d’utilisation mensuelle application pour une plage de dates données et de filtres facultatifs.
+description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données d’utilisation mensuelle application pour une plage de dates données et de filtres facultatifs.
 title: Obtenir l’utilisation d’applications mensuelles
 ms.author: mhopkins
 ms.date: 08/15/2018
@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store, API de l’utilisation
 ms.localizationpriority: medium
 ms.openlocfilehash: ad45422dea9b0c4335fa3cf67a594f819a60ca9c
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397342"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5442749"
 ---
 # <a name="get-monthly-app-usage"></a>Obtenir l’utilisation d’applications mensuelles
 
-Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données d’utilisation agrégées (ne pas y compris Xbox en mode multijoueur) au format JSON pour une application au cours de la plage de dates donnée (90 derniers jours uniquement) et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport d’utilisation](../publish/usage-report.md) dans le tableau de bord du centre de développement Windows.
+Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données d’utilisation agrégées (ne pas y compris Xbox en mode multijoueur) au format JSON pour une application au cours de la plage de dates donnée (90 derniers jours uniquement) et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport d’utilisation](../publish/usage-report.md) dans le tableau de bord du centre de développement Windows.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -97,8 +97,8 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | monthlyActiveUsers        | long    | Le nombre de clients à l’aide de l’application ce mois.                                           |
 | monthlyActiveDevices      | long    | Le nombre d’appareils exécutant votre application pour une période donnée au cours du temps, qui commence au lance de l’application (début du processus) et de fin lorsqu’il termine (fin du processus) ou après une période d’inactivité.                                                        |
 | monthlyNewUsers           | long    | Le nombre de clients ayant utilisé votre application pour la première fois ce mois.                    |
-| averageDailyActiveUsers   | double  | Le nombre moyen de clients à l’aide de l’application quotidiennement.                             |
-| averageDailyActiveDevices | double  | Le nombre moyen d’appareils utilisés par tous les utilisateurs quotidiennement pour interagir avec votre application. |
+| averageDailyActiveUsers   | double  | Le nombre moyen de clients à l’aide de l’application au quotidien.                             |
+| averageDailyActiveDevices | double  | Le nombre moyen d’appareils utilisés par tous les utilisateurs au quotidien pour interagir avec votre application. |
 
 
 ### <a name="response-example"></a>Exemple de réponse

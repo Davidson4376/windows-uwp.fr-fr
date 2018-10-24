@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ada2e0610e81e986deba3ddab5e87547e05fe108
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5407279"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445427"
 ---
 # <a name="about-community-ads"></a>À propos des annonces de la communauté
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, jeux, interface utilisateur, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a82958f01530b84276823ea8d025d292bd664ac
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5404577"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5442795"
 ---
 # <a name="add-a-user-interface"></a>Ajouter une interface utilisateur
 
@@ -35,18 +35,18 @@ Maintenant que notre jeu possède ses visuels 3D en place, il est temps pour vou
 ## <a name="the-user-interface-overlay"></a>Superposition de l’interface utilisateur
 
 
-Bien qu’il existe de nombreuses façons d’afficher des éléments d’interface utilisateur et du texte dans un jeu DirectX, nous allons le focus sur l’utilisation de [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx). Nous allons également utiliser [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) pour les éléments de texte.
+Bien qu’il existe de nombreuses façons d’afficher des éléments d’interface utilisateur et de texte dans un jeu DirectX, nous allons le focus sur l’utilisation de [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx). Nous allons également utiliser [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) pour les éléments de texte.
 
 
 Direct2D est qu'un ensemble d’API de dessin 2D utilisées pour dessiner des effets et des primitives en pixels. Lorsque vous commencez à avec Direct2D, il est préférable de simplifier les choses. Des comportements d’interface et dispositions complexes nécessitent du temps et une certaine planification. Si votre jeu nécessite une interface utilisateur complexe, comme celles de simulation ou de jeux de stratégie, envisagez plutôt d’utiliser XAML.
 
 > [!NOTE]
-> Pour plus d’informations sur le développement d’une interface utilisateur avec XAML dans un jeu UWP DirectX, consultez [l’extension de l’exemple de jeu](tutorial-resources.md).
+> Pour plus d’informations sur le développement d’une interface utilisateur avec XAML dans un jeu UWP DirectX, voir [l’extension de l’exemple de jeu](tutorial-resources.md).
 
 Direct2D n’est pas spécifiquement conçu pour les interfaces utilisateur ni les dispositions comme HTML et XAML. Il ne fournit pas les composants d’interface utilisateur tels que des listes, des zones ou des boutons. Il n’a pas également fournir des composants de disposition, div, les tables ou les grilles.
 
 
-Pour cet exemple de jeu, nous avons deux principaux composants d’interface utilisateur.
+Pour cet exemple de jeu, nous avons deux composants principaux: l’interface utilisateur.
 1. Un affichage à tête haute pour le score et les contrôles dans le jeu.
 2. Une superposition utilisée pour afficher le texte de l’état du jeu et les options telles que des informations sur la suspension et au niveau des options de démarrage.
 
@@ -68,10 +68,10 @@ La superposition comprend les primitives de base suivantes.
 
 L’état d’affichage à tête haute de dans le jeu de la superposition est écrit dans la méthode [**GameHud::Render**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L234-L358) de la classe [**GameHud**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.h) . Dans cette méthode, la superposition Direct2D qui représente notre interface utilisateur est mise à jour pour refléter les modifications du nombre de coups, temps restant et au niveau numéro.
 
-Si le jeu a été initialisé, nous ajoutons `TotalHits()`, `TotalShots()`, et `TimeRemaining()` à un [**swprintf_s**](https://docs.microsoft.com/cpp/c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l) de la mémoire tampon et spécifiez le format d’impression. Nous pouvons ensuite dessiner à l’aide de la méthode [**DrawText**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd742848) . Nous faire de même pour l’indicateur de niveau en cours, dessiner des nombres vide pour afficher des niveaux en cours comme ➀ et des nombres remplies comme ➊ pour afficher que le niveau spécifique s’est déroulée.
+Si le jeu a été initialisé, nous ajoutons `TotalHits()`, `TotalShots()`, et `TimeRemaining()` à un [**swprintf_s**](https://docs.microsoft.com/cpp/c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l) de la mémoire tampon et spécifiez le format d’impression. Nous pouvons ensuite dessiner à l’aide de la méthode [**DrawText**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd742848) . Nous faire de même pour l’indicateur de niveau en cours, dessiner des nombres vide pour afficher des niveaux en cours comme ➀ et des nombres remplis comme ➊ pour afficher que le niveau spécifique s’est déroulée.
 
 
-L’extrait de code suivant montre comment par le biais de processus de la méthode **GameHud::Render** pour 
+L’extrait de code suivant vous guide tout au long processus de la méthode **GameHud::Render** pour 
 - Création d’une image Bitmap à l’aide [** ID2D1RenderTarget::DrawBitmap **](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371880)
 - La section désactivant les zones de l’interface utilisateur en rectangles à l’aide de [ **D2D1::RectF**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368184)
 - À l’aide de **DrawText** pour rendre les éléments de texte
@@ -235,13 +235,13 @@ La superposition est créée à l’aide de la classe [**GameInfoOverlay**](http
 
 ![action de superposition et d’état](images/simple-dx-game-ui-finaloverlay.png)
 
-La superposition est divisée en deux sections: **état** et **Action**. Le point de **l’état** est détaillée vers le bas en rectangles de **titre** et de **corps** . La section **Action** a uniquement un rectangle. Chaque rectangle a un rôle différent.
+La superposition est divisée en deux sections: **état** et **Action**. Le point **d’état** est détaillée vers le bas en rectangles de **titre** et de **corps** . La section **Action** a uniquement un rectangle. Chaque rectangle a un rôle différent.
 
 -   `titleRectangle` contient le texte du titre.
 -   `bodyRectangle` contient le texte de corps.
--   `actionRectangle` contient le texte que le joueur d’entreprendre une action spécifique.
+-   `actionRectangle` contient le texte indiquant au joueur d’entreprendre une action spécifique.
 
-Le jeu possède six États qui peuvent être définis. L’état du jeu transmis à l’aide de la partie de **l’état** de la superposition. Les rectangles **d’état** sont mis à jour à l’aide d’un certain nombre de méthodes correspondant avec les états suivants.
+Le jeu possède six États qui peuvent être définies. L’état du jeu transmis à l’aide de la partie de **l’état** de la superposition. Les rectangles **d’état** sont mis à jour à l’aide d’un certain nombre de méthodes correspondant avec les états suivants.
 
 - Chargement
 - Statistiques de score de début/haute initiale
@@ -265,8 +265,8 @@ Examinons comment nous initialiser et tracer la superposition pour ces six état
 
 ### <a name="initializing-and-drawing-the-overlay"></a>Initialisation et tracé de la superposition
 
-Les six États **d’état** ont en commun les choses, rendre les ressources et les méthodes dont ils ont besoin très similaire.
-    - Ils utilisent tous un rectangle noir au centre de l’écran en tant que son arrière-plan.
+Les six États **d’état** ont en commun quelques points, rendre les ressources et les méthodes dont ils ont besoin très similaire.
+    - Ils utilisent tous un rectangle noir au centre de l’écran que l’arrière-plan.
     - Le texte affiché est **titre** ou **corps de** texte.
     - Le texte utilise la police Segoe UI et est écrit au-dessus du rectangle noir. 
 
@@ -312,11 +312,11 @@ La méthode [**GameInfoOverlay::CreateWindowsSizeDependentResources**](https://g
         );
     ```
 
-- Une image Bitmap est créée `m_levelBitmap`, à l’aide de **CreateBitmap**de compte tenu de la résolution en cours.
-- `m_levelBitmap` est défini comme cible à l’aide de [**ID2D1DeviceContext::SetTarget**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh404533)de rendu de notre 2D.
+- Une image Bitmap est créée nommée `m_levelBitmap`, à l’aide de **CreateBitmap**de compte tenu de la résolution en cours.
+- `m_levelBitmap` est défini à l’aide de [**ID2D1DeviceContext::SetTarget**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh404533)de cible de rendu de notre 2D.
 - L’image Bitmap est désactivée avec chaque pixel apportée noir avec [**ID2D1RenderTarget::Clear**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371772).
 - [**ID2D1RenderTarget::beginDraw**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371768) est appelée pour lancer le dessin. 
-- **DrawText** est appelée pour dessiner le texte stocké dans `m_titleString`, `m_bodyString`, et `m_actionString` dans le rectangle appropriée à l’aide de correspondante **ID2D1SolidColorBrush**.
+- **DrawText** est appelée pour dessiner le texte stocké dans `m_titleString`, `m_bodyString`, et `m_actionString` dans le rectangle appropriée à l’aide de **ID2D1SolidColorBrush**correspondante.
 - [**ID2D1RenderTarget::EndDraw**](ID2D1RenderTarget::EndDraw) est appelé pour arrêter toutes les opérations de dessin sur `m_levelBitmap`.
 - Une autre image Bitmap est créée à l’aide de **CreateBitmap** nommé `m_tooSmallBitmap` à utiliser comme un secours, en affichant uniquement si la configuration de l’affichage est trop petite pour le jeu.
 - Répétez le processus pour le dessin sur `m_levelBitmap` pour `m_tooSmallBitmap`, cette fois uniquement le dessin la chaîne `Paused` dans le corps.

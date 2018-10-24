@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: fa5d80040aac83e246d89a59086f4ad7e524dbb8
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399435"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445786"
 ---
 # <a name="point-of-service"></a>Point de service
 Cette section contient des articles sur l’utilisation de [Windows.Devices.PointOfService](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice) pour interagir avec les périphériques courants dans les environnements de vente au détail et hôteliers, à partir d’applications Windows universelles.

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, programme d’installation d’application, appinstaller, charger une version test, ensemble connexe, packages facultatifs
 ms.localizationpriority: medium
 ms.openlocfilehash: 965ef217fa00131504841ef2209dbe6aa54f50af
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5402343"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5442736"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>Installer un ensemble connexe à l’aide d’un fichier du Programme d’installation d’application
 

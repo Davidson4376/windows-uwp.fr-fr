@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, programme d’installation de l’application, AppInstaller, charger une version test
 ms.localizationpriority: medium
 ms.openlocfilehash: e94eb0e819796dda456899bb877057e4532f5ce9
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396063"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5442307"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>Résoudre les problèmes d’installation avec le fichier du programme d'installation d'application
 

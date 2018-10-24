@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection
 ms.localizationpriority: medium
 ms.openlocfilehash: b5603063f8038b5617f8a1c2dd7d77d90c702901
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396258"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445606"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -30,7 +30,7 @@ Le langage de programmation C++ est utilisé à la fois dans les segments des en
 
 D’un point de vue du langage, C++ a toujours été destiné à la création et l’utilisation d’abstractions qui sont à la fois riches en types et légères. Mais le langage a changé considérablement depuis les pointeurs bruts, les boucles brutes et l’allocation et la libération laborieuses de mémoire de C++98. Le C++ moderne (à partir de C++11) s’attache à l’expression claire des idées, à la simplicité, à la lisibilité et à limiter l'introduction de bogues.
 
-Pour la création et l’utilisation d’API Windows Runtime avec C++, il existe C++/WinRT. Il s’agit de remplacement recommandé par Microsoft pour le [C++ / CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) projection de langage et la [Bibliothèque de modèles Windows Runtime C++ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live).
+Pour la création et l’utilisation d’API Windows Runtime avec C++, il existe C++/WinRT. Il s’agit de remplacement recommandé de Microsoft pour le [C++ / CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) projection de langage et la [Bibliothèque de modèles Windows Runtime C++ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live).
 
 Vous utilisez des types de données, des algorithmes et des mots-clés C++ standard lorsque vous utilisez C++/WinRT. La projection a ses propres types de données personnalisés, mais dans la plupart des cas vous n’avez pas besoin de les apprendre car ils fournissent des conversions appropriées vers et depuis les types standard. De cette façon, vous pouvez continuer à utiliser les fonctionnalités de langage C++ standard auxquelles vous êtes habitué, et le code source que vous avez déjà. C++/WinRT facilite beaucoup l’appel des API Windows Runtime dans n’importe quelle application C++, de Win32 à UWP.
 
@@ -59,7 +59,7 @@ C++/WinRT offre de meilleures performances et génère des fichiers binaires plu
 | [Contrôles XAML; liaison à une propriété C++/WinRT](binding-property.md) | Une propriété qui peut être efficacement liée à un contrôle XAML est appelée «propriété *observable*». Cette rubrique montre comment implémenter et utiliser une propriété observable, et comment y lier un contrôle XAML. |
 | [Contrôles d’éléments XAML; liaison à une collection C++/WinRT](binding-collection.md) | Une collection qui peut être efficacement liée à un contrôle d’éléments XAML est appelée «collection *observable*». Cette rubrique montre comment implémenter et utiliser une collection observable, et comment y lier un contrôle d’éléments XAML. |
 | [Contrôles XAML personnalisés (basés sur un modèle) avec C++/WinRT](xaml-cust-ctrl.md) | Cette rubrique vous guide à travers les étapes de création d’un contrôle personnalisé simple à l’aide de C++ / WinRT. Vous pouvez générer sur les informations fournies ici pour créer vos propres contrôles d’interface utilisateur riche et personnalisables. |
-| [Utiliser des composants COM avec C++/WinRT](consume-com.md) | Cette rubrique utilise un exemple de code complet Direct2D pour montrer comment utiliser C++ / WinRT pour utiliser les classes et interfaces COM. |
+| [Utiliser des composants COM avec C++/WinRT](consume-com.md) | Cette rubrique utilise un exemple de code complet Direct2D pour montrer comment utiliser C++ / WinRT pour consommer des classes et interfaces COM. |
 | [Créer des composants COM avec C++/WinRT](author-coclasses.md) | C++ / WinRT peut vous aider à créer des composants COM classiques, tout comme il vous aide à créer des classes Windows Runtime. |
 | [Passer de C++/CX à C++/WinRT](move-to-winrt-from-cx.md) | Cette rubrique montre comment porter du code C++/CX vers son équivalent en C++/WinRT. |
 | [Interopérabilité entre C++/WinRT et C++/CX](interop-winrt-cx.md) | Cette rubrique montre deux fonctions d’assistance qui peuvent être utilisées pour effectuer des conversions entre des objets [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) et C++/WinRT. |

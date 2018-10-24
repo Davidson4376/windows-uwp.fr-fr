@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: windows10, uwp, distribution de version d’évaluation
 ms.localizationpriority: medium
 ms.openlocfilehash: d5f43173c85bc8a696d7dbc9967e704f79db2b3f
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403635"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445766"
 ---
 # <a name="package-flights"></a>Versions d’évaluation de package
 
 Vous pouvez utiliser des versions d’évaluation de package pour distribuer des packages spécifiques à un groupe limité de testeurs. Les packages que vous avez déjà publiés dans le Windows Store serviront de vos autres clients, afin que leur expérience ne sont pas être interrompue.
 
-Avec les versions d’évaluation du package, seuls les packages sont différents; Description des détails du Windows Store sera identique pour tous vos clients. Toute personne de votre groupe de versions d’évaluation recevront les packages que vous incluez dans la version d’évaluation du package, tandis que les clients qui ne sont pas dans le groupe de versions d’évaluation continuent à recevoir vos packages standard (standard).  Si vous décidez ultérieurement que vous souhaitez rendre des packages à partir d’une version d’évaluation disponible pour tous vos clients, vous pouvez facilement utiliser ces packages mêmes lors d’une soumission standard. Notez que les versions d’évaluation de package doivent réussir le [processus de certification](the-app-certification-process.md), exactement le même que toute soumission.
+Avec les versions d’évaluation du package, seuls les packages sont différents; Description des détails du Windows Store sera identique pour tous vos clients. Toute personne de votre groupe de versions d’évaluation recevront les packages que vous incluez dans la version d’évaluation, tandis que les clients qui ne sont pas dans le groupe de versions d’évaluation continuent à recevoir vos packages standard (standard).  Si vous décidez ultérieurement que vous souhaitez rendre des packages à partir d’une version d’évaluation disponible pour tous vos clients, vous pouvez facilement utiliser ces packages mêmes lors d’une soumission standard. Notez que les versions d’évaluation de package doivent réussir le [processus de certification](the-app-certification-process.md), exactement le même que toute soumission.
 
 Lorsque vous configurez des versions d’évaluation de package, vous pouvez spécifier les personnes qui doivent bénéficier de packages spécifiques en les ajoutant à un **groupe d’utilisateurs connus** (parfois appelés groupe de versions d’évaluation). Tout membre d’un groupe de versions d’évaluation disposant d’un appareil qui exécute une version de Windows10 prenant en charge les versions d’évaluation de package (build Windows.Desktop 10586 ou ultérieure, build Windows.Mobile 10586.63 ou ultérieure, ou XboxOne) bénéficie des versions d’évaluation de package que vous attribuez à ce groupe spécifique. (Vos versions d’évaluation de package peuvent inclure des packages ciblant une version quelconque de système d’exploitation, y compris Windows8.1/Windows Phone8.1 ou une version antérieure). Les utilisateurs qui n’ont été ajoutés à aucun de vos groupes d’évaluation ou dont l’appareil ne prend pas en charge les versions d’évaluation de package obtiendront les packages de la soumission standard.
 
@@ -103,7 +103,7 @@ Dans la plupart des cas, vous pouvez proposer les packages compatibles avec les 
 
 Pour créer une nouvelle soumission pour une version d’évaluation de package que vous avez déjà publiés, cliquez sur **mise à jour** en regard du nom de la version d’évaluation sur la page de vue d’ensemble de votre application. Vous pouvez ensuite charger de nouveaux packages (et supprimer les packages dont vous n’avez pas besoin), comme vous le feriez avec une soumission standard. Apportez les modifications nécessaires, puis cliquez sur **Envoyer au Store** afin de transmettre la version d’évaluation de package mise à jour vers le [processus de certification des applications](the-app-certification-process.md).
 
-Pour modifier une version d’évaluation existante sans créer et soumettre une nouvelle mise à jour, cliquez sur **Modifier** en regard du nom de la version d’évaluation. Cette opération vous permet de modifier différents détails, tels que les groupes de versions d’évaluation, le nom et le classement, sans que la version d’évaluation de package doive repasser par le processus de certification. Notez que si vous disposez d’une mise à jour en cours d’exécution, ou si votre version d’évaluation de package n’a pas encore été publiée, vous ne verrez pas la possibilité de **Modifier** . 
+Pour modifier une version d’évaluation existante sans créer et soumettre une nouvelle mise à jour, cliquez sur **Modifier** en regard du nom de la version d’évaluation. Cette opération vous permet de modifier différents détails, tels que les groupes de versions d’évaluation, le nom et le classement, sans que la version d’évaluation de package doive repasser par le processus de certification. Notez que si vous disposez d’une mise à jour en cours d’exécution, ou si votre version d’évaluation n’a pas encore été publiée, vous ne verrez pas l’option **Modifier** . 
 
 
 ## <a name="add-and-rank-additional-package-flights"></a>Ajouter et classer des versions d’évaluation de package supplémentaires

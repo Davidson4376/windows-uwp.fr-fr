@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
 ms.openlocfilehash: b5110eebde087593f07704e89c2e4708b2fcbb8b
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397421"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443174"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>Exécuter, déboguer et tester une application de bureau empaquetée
 
@@ -54,7 +54,7 @@ Si vous avez créé votre package à l’aide d’un [nouveau projet de mise en 
 
 Si vous avez créé votre package à l'autre d'un autre outil, appliquez les étapes suivantes.
 
-1. Assurez-vous que vous démarrez votre application empaquetée au moins une fois pour qu’il est installé sur votre ordinateur local.
+1. Vérifiez que vous démarrez votre application empaquetée au moins une fois pour qu’il est installé sur votre ordinateur local.
 
    Consultez la section [Exécuter votre application](#run-app) ci-dessus.
 
@@ -111,7 +111,7 @@ Vous pouvez également signer votre application manuellement. Voici comment proc
 
 ### <a name="test-your-application-for-windows-10-s"></a>Tester votre application pour Windows 10 S
 
-Avant de publier votre application, assurez-vous qu’elle fonctionne correctement sur les appareils qui exécutent Windows 10 S. En fait, si vous prévoyez de publier votre application dans le Microsoft Store, vous devez le faire dans la mesure où il s’agit d’une exigence du store. Les applications qui ne fonctionnent pas correctement sur les appareils exécutant Windows10 S ne seront pas certifiées.
+Avant de publier votre application, assurez-vous qu’il fonctionne correctement sur les appareils qui exécutent Windows 10 S. En fait, si vous prévoyez de publier votre application dans le Microsoft Store, vous devez le faire, car c’est une exigence du store. Les applications qui ne fonctionnent pas correctement sur les appareils exécutant Windows10 S ne seront pas certifiées.
 
 Consultez le [Test de votre application Windows pour Windows 10 S](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-test-windows-s).
 

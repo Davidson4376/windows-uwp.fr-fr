@@ -2,7 +2,7 @@
 author: normesta
 Description: Shows how to manually package a Windows desktop application (like Win32, WPF, and Windows Forms) for Windows 10.
 Search.Product: eADQiWindows 10XVcnh
-title: Créer un package une application manuellement (pont du bureau)
+title: Empaqueter une application manuellement (pont du bureau)
 ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
@@ -12,11 +12,11 @@ keywords: windows10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f14e7f8747639ef139e774416e09af954211940
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5402423"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5440992"
 ---
 # <a name="package-a-desktop-application-manually"></a>Créer un package manuellement une application de bureau
 
@@ -24,12 +24,12 @@ Cette rubrique vous montre comment créer un package de votre application sans l
 
 Pour créer manuellement un package de votre application, créez un fichier manifeste de package, puis exécutez un outil en ligne de commande pour générer un package d’application Windows.
 
-Envisagez d’empaquetage manuel si vous installez votre application à l’aide de la commande xcopy ou si vous êtes familiarisé avec les modifications apportées au système par programme d’installation de votre application et souhaitez un contrôle plus précis sur le processus.
+Envisagez Empaquetage manuel si vous installez votre application à l’aide de la commande xcopy ou si vous êtes familiarisé avec les modifications apportées au système par programme d’installation de votre application et souhaitez un contrôle plus précis sur le processus.
 
 Si vous n’êtes pas certain des modifications apportées au système par votre programme d’installation, ou si vous préférez utiliser des outils automatisés pour générer votre manifeste de package, envisager l’une de [ces](desktop-to-uwp-root.md#convert) options.
 
 >[!IMPORTANT]
->La possibilité de créer un package d’application Windows pour votre application de bureau (dans le cas contraire, connu sous le pont du bureau, le nom a été introduit dans Windows 10, version 1607, et peut être utilisé uniquement dans les projets qui ciblent la mise à jour anniversaire Windows 10 (version 10.0; Build 14393) ou une version ultérieure dans Visual Studio.
+>La possibilité de créer un package d’application Windows pour votre application de bureau (dans le cas contraire, connu sous le pont du bureau, le nom a été introduite dans Windows 10, version 1607, et peut être utilisé uniquement dans les projets qui ciblent la mise à jour anniversaire Windows 10 (version 10.0; Build 14393) ou une version ultérieure dans Visual Studio.
 
 ## <a name="first-prepare-your-application"></a>Tout d'abord, préparez votre application
 
@@ -91,7 +91,7 @@ Voici un exemple d’élément **identité** intégrant un emplacement réservé
 
 ### <a name="properties"></a>Propriétés
 
-L’élément [propriétés](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) comprend 3éléments enfants requis. Voici un exemple de nœud **propriétés** avec texte d’emplacement réservé pour les éléments. **DisplayName** est le nom de votre application que vous réservez dans le Windows store, pour les applications qui sont chargées sur le Windows store.
+L’élément [propriétés](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) comprend 3éléments enfants requis. Voici un exemple de nœud **propriétés** avec texte d’emplacement réservé pour les éléments. **DisplayName** est le nom de votre application que vous réservez dans le Windows store, pour les applications qui sont chargées sur le store.
 
 ```XML
 <Properties>
@@ -112,7 +112,7 @@ Voici un exemple de nœud [Ressources](https://docs.microsoft.com/uwp/schemas/ap
 ```
 ### <a name="dependencies"></a>Dépendances
 
-Pour les applications de bureau que vous créez un package pour, définissez toujours le ``Name`` attribut ``Windows.Desktop``.
+Pour les applications de bureau que vous créez un package pour, définissez toujours le ``Name`` l’attribut ``Windows.Desktop``.
 
 ```XML
 <Dependencies>
@@ -134,7 +134,7 @@ Remplissez ce modèle avec les informations décrivant votre application.
 
 ### <a name="application-element"></a>Élément d’application
 
-Pour les applications de bureau que vous créez un package, le ``EntryPoint`` attribut de l’élément de l’Application est toujours ``Windows.FullTrustApplication``.
+Pour les applications de bureau que vous créez un package, le ``EntryPoint`` attribut de l’élément Application est toujours ``Windows.FullTrustApplication``.
 
 ```XML
 <Applications>
@@ -187,7 +187,7 @@ Si vous créez des ressources basées sur une cible comme décrit dans la sectio
 
 5.  Créez les fichiers resources.pri à l’aide de la commande ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``.
 
-    Par exemple, la commande de votre application peut ressembler à ceci: ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
+    Par exemple, la commande pour votre application peut ressembler à ceci: ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
 
 6.  Créez un package d’application Windows en suivant les instructions de l’étape suivante.
 

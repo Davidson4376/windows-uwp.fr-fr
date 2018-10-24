@@ -10,24 +10,24 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e634b18fffc4f601f6512d6ceeed51efbe9c1886
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5395667"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5445235"
 ---
 # <a name="using-lights-in-windows-ui"></a>L’utilisation des éclairages dans l’interface utilisateur Windows
 
-Les APIs Windows.UI.Composition permettent de créer des effets et animations en temps réel. Éclairage de la composition permet un éclairage 3D dans les applications 2D. Dans cette vue d’ensemble, nous allons exécuter par le biais de la fonctionnalité de procédure pour configurer les lumières de la composition, à identifier les éléments visuels pour la réception de chaque lumière et utiliser des effets pour définir les matériaux de votre contenu.
+Les APIs Windows.UI.Composition permettent de créer des effets et animations en temps réel. Éclairage de la composition active 3D d’éclairage dans les applications 2D. Dans cette vue d’ensemble, nous allons exécuter par le biais de la fonctionnalité de procédure pour configurer les lumières de la composition, à identifier les éléments visuels pour la réception de chaque lumière et utiliser des effets pour définir les matériaux de votre contenu.
 
 > [!NOTE]
-> Pour lire la [classe XamlLight](/uwp/api/windows.ui.xaml.media.xamllight) objets s’appliquent [Compositionlight](/uwp/api/Windows.UI.Composition.CompositionLight) pour éclairer les éléments UIElements XAML, voir [l’éclairage XAML](xaml-lighting.md).
+> Pour lire comment les objets de [classe XamlLight](/uwp/api/windows.ui.xaml.media.xamllight) appliquent [Compositionlight](/uwp/api/Windows.UI.Composition.CompositionLight) pour éclairer les éléments UIElements XAML, voir [l’éclairage XAML](xaml-lighting.md).
 
 Éclairage de la composition vous permet de créer intéressant de l’interface utilisateur en autorisant:
 
 - Transformation d’un éclairage indépendant d’autres objets de la scène pour activer les scénarios immersives comme les scènes de la lecture de musique.
 - La possibilité d’associer un objet avec une lumière afin qu’ils se déplacent indépendamment du reste de la scène pour activer des scénarios tels que le Fluent [révéler](/design/style/reveal.md) la mise en surbrillance.
-- Transformation de la lumière et de la scène entière en tant qu’un groupe pour créer des matériaux et profondeur.
+- Transformation de la lumière et la scène entière en tant qu’un groupe pour créer des matériaux et profondeur.
 
 Éclairage de la composition prend en charge trois concepts clés: **la lumière**, les **cibles**et **SceneLightingEffect**.
 
@@ -39,10 +39,10 @@ Les APIs Windows.UI.Composition permettent de créer des effets et animations en
 
 | Type | Description |
 | --- | --- |
-| [AmbientLight](/uwp/api/windows.ui.composition.ambientlight) | Une source de lumière qui émet de la lumière non directionnelle qui s’affiche réfléchie par tous les éléments de la scène. |
+| [AmbientLight](/uwp/api/windows.ui.composition.ambientlight) | Une source de lumière qui émet de la lumière non directionnelle qui apparaît réfléchie par tous les éléments de la scène. |
 | [DistantLight](/uwp/api/windows.ui.composition.distantlight) | Une grande INFINIMENT source de lumière distante qui émet de la lumière dans un seul sens. Comme le soleil. |
 | [PointLight](/uwp/api/windows.ui.composition.pointlight) | Une point de source lumineuse qui émet de la lumière dans toutes les directions. Comme une ampoule. |
-| [Point lumineux](/uwp/api/windows.ui.composition.spotlight) | Une source de lumière qui émet des cônes interne et externe de lumière. Comme avec une lampe torche. |
+| [Point lumineux](/uwp/api/windows.ui.composition.spotlight) | Une source de lumière émettant cônes interne et externe de lumière. Comme avec une lampe torche. |
 
 ## <a name="targets"></a>Cibles
 
@@ -78,7 +78,7 @@ Concept | Détails
 **Lumière ambiante** | Ajout d’une lumière non ambiante à votre scène désactive tous les lumière existante.  Éléments non ciblés par une lumière non ambiante seront affiche en noirs.  Pour éclairer les éléments visuels environnants ne pas ciblés par la lumière dans un moyen naturel, utilisez une lumière ambiante conjointement avec d’autres lumières.
 **Nombre de lumières** | Vous pouvez utiliser n’importe quel deux lumières de composition non ambiante dans n’importe quelle combinaison de cibler votre interface utilisateur. Les éclairages ambiantes ne sont pas restreintes; spot, point et les lumières distantes sont.
 **Durée de vie** | CompositionLight peut rencontrer des conditions de durée de vie (exemple: le garbage collector peuvent recycler l’objet light avant d’être utilisé).  Nous vous recommandons de conserver une référence à vos lumières en ajoutant des éclairages en tant que membre pour aider à l’application à gérer la durée de vie.
-**Transformations** | Les lumières doivent être placés dans un nœud au-dessus de l’interface utilisateur qui utilise des effets comme les [transformations de perspective](/design/layout/3-d-perspective-effects.md) dans votre structure visuelle pour être dessinés correctement.
+**Transformations** | Les lumières doivent être placés dans un nœud au-dessus de l’interface utilisateur qui utilise des effets comme les [transformations de perspective](/design/layout/3-d-perspective-effects.md) dans votre structure visuelle à dessiner correctement.
 **Cibles et espace de coordonnées** | CoordinateSpace est alors utilisée est l’espace visuel dans lequel toutes les propriétés de lumières doivent être définies. CompositionLight.Targets doit être dans l’arborescence CoordinateSpace est alors utilisée.
 
 ## <a name="lighting-properties"></a>Propriétés d’éclairage
@@ -94,9 +94,9 @@ Propriété | Description
 **Offset** | Décalage de la source de lumière par rapport à son espace de coordonnées Visual.
 
 > [!NOTE]
-> Lorsque plusieurs lumières atteint le même visuel, ou chaque fois que la valeur de couleur de la lumière obtient suffisamment large pour dépasser 1.0, la couleur de la lumière peut changer en raison du déplacement de couleur d’un canal de couleur de lumières.
+> Lorsque plusieurs éclairages atteint le même visuel, ou lorsqu’il est suffisamment importante pour dépasser 1.0 valeur de couleur de la lumière, la couleur de la lumière peut changer en raison du déplacement de couleur d’un canal de couleur de lumières.
 
-### <a name="advanced-lighting-properties"></a>Avancées d’éclairage de propriétés
+### <a name="advanced-lighting-properties"></a>Advanced propriétés d’éclairage
 
 Propriété | Description
 --- | ---
@@ -118,14 +118,14 @@ Suivez ces étapes générales pour ajouter des éclairages:
 [SceneLightingEffect](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) est fréquemment utilisé pour la création de matériau. Un SceneLightingEffect est un effet utilisé lorsque vous souhaitez obtenir un élément plus complexes, comme l’activation de propriétés réfléchissantes sur une image et/ou en fournissant une illusion de profondeur avec une carte normale. Un SceneLightingEffect offre la possibilité de personnaliser votre interface utilisateur en utilisant les propriétés d’éclairage comme montants diffuses et spéculaires. Vous pouvez personnaliser davantage les effets d’éclairage avec le reste du pipeline effets vous individuellement permettant de fusion et de composer des réactions d’éclairage différentes avec votre contenu.
 
 > [!NOTE]
-> Éclairage de scène ne génère pas d’ombres. Il s’agit d’un effet axé sur le rendu 2D.  Il ne prend pas en les scénarios d’éclairage 3D considération qui incluent des modèles d’éclairage réel, y compris les ombres.
+> Éclairage de scène ne génère pas d’ombres. Il s’agit d’un effet axé sur le rendu 2D.  Il ne prend pas en les scénarios d’éclairage 3D considération qui comprennent les modèles d’éclairage réel, y compris les ombres.
 
 
 Propriété | Description
 --- | ---
-**Mappage normal** | NormalMaps créer un effet d’une texture où un normal pointant vers la lumière seront plus brillantes et un pointant normal éloigné sera plus faible. Pour ajouter un NormalMap à l’utilisation de visual ciblée un [CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) à l’aide de LoadedImageSurface pour charger une ressource NormalMap.
+**Carte normale** | NormalMaps créer un effet d’une texture où un normal pointant vers la lumière seront plus brillantes et un pointant normal éloigné sera plus faible. Pour ajouter un NormalMap à votre utilisation visual ciblée un [CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) à l’aide de LoadedImageSurface pour charger une ressource NormalMap.
 **Ambiant** | Propriétés ambiantes sont principalement utilisées pour contrôler la réflexion de couleur globale.
-**Spéculaire** | Réflexion spéculaire crée mises en surbrillance sur des objets, en les faisant apparaître brillant. Vous pouvez contrôler le niveau de réflexion spéculaire ainsi que le niveau de briller.  Ces propriétés sont manipulées pour créer des effets de matériau comme shinny métaux ou un livre blanc brillant.
+**Spéculaire** | Réflexion spéculaire crée mises en surbrillance sur des objets, en les faisant apparaître brillant. Vous pouvez contrôler le niveau de réflexion spéculaire ainsi que le niveau de briller.  Ces propriétés sont manipulées pour créer des effets de matériau comme shinny métaux ou papier brillant.
 **Diffus** | Diffus de réflexion diffuse de la lumière dans toutes les directions.
 **Modèle de réflexion** | [Facteur de réflexion modèle](/uwp/api/windows.ui.composition.effects.scenelightingeffectreflectancemodel) vous permet de choisir entre [Blinn Phong](https://docs.microsoft.com/visualstudio/designers/how-to-create-a-basic-phong-shader) et physiquement Phong de Blinn en fonction.  Choisissez physiquement basée sur une Phong de Blinn lorsque vous souhaitez avoir condensé des surbrillances spéculaires.
 
@@ -168,7 +168,7 @@ CompositionBrush CreateNormalMapBrush(ICompositionSurface normalMapImage)
 
 - [Création des matériaux et les lumières de la couche visuelle](https://blogs.windows.com/buildingapps/2017/08/04/creating-materials-lights-visual-layer/)
 - [Vue d’ensemble de l’éclairage](https://docs.microsoft.com/windows/uwp/graphics-concepts/lighting-overview)
-- [CompositionCapabilities API](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities)
+- [API CompositionCapabilities](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities)
 - [Formules mathématiques d’éclairage](https://docs.microsoft.com/windows/uwp/graphics-concepts/mathematics-of-lighting)
 - [SceneLightingEffect](https://docs.microsoft.com/uwp/api/windows.ui.composition.effects.scenelightingeffect)
 - [Référentiel de GitHub WindowsUIDevLabs](https://github.com/Microsoft/WindowsUIDevLabs)

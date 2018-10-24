@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store, API de l’utilisation
 ms.localizationpriority: medium
 ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398146"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443964"
 ---
 # <a name="get-daily-app-usage"></a>Obtenir l’utilisation d’applications quotidiennes
 
-Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données d’utilisation agrégées (ne pas y compris Xbox en mode multijoueur) au format JSON pour une application au cours de la plage de dates donnée (90 derniers jours uniquement) et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport d’utilisation](../publish/usage-report.md) dans le tableau de bord du centre de développement Windows.
+Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des données d’utilisation agrégées (ne pas y compris Xbox en mode multijoueur) au format JSON pour une application au cours de la plage de dates donnée (90 derniers jours uniquement) et d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport d’utilisation](../publish/usage-report.md) dans le tableau de bord du centre de développement Windows.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -97,7 +97,7 @@ Les éléments du tableau *Value* ont les valeurs suivantes:
 | engagementDurationMinutes | double  | Les minutes dans lequel les utilisateurs sont activement à l’aide de votre application exprimée par une période distincte, qui commence au lance de l’application (début du processus) et de fin lorsqu’il termine (fin du processus) ou après une période d’inactivité.             |
 | dailyActiveUsers          | long    | Le nombre de clients à l’aide de l’application ce jour.                           |
 | dailyActiveDevices        | long    | Nombre d’appareils utilisés quotidiennement pour interagir avec votre application par tous les utilisateurs.  |
-| dailyNewUsers             | long    | Le nombre de clients ayant utilisé votre application pour la première fois ce jour.    |
+| dailyNewUsers             | long    | Le nombre de clients ayant utilisé votre application pour la première fois ce jour-là.    |
 | monthlyActiveUsers        | long    | Le nombre de clients à l’aide de l’application ce mois.                         |
 | monthlyActiveDevices      | long    | Le nombre d’appareils exécutant votre application pour une période donnée au cours du temps, qui commence au lance de l’application (début du processus) et de fin lorsqu’il termine (fin du processus) ou après une période d’inactivité.                                      |
 | monthlyNewUsers           | long    | Le nombre de clients ayant utilisé votre application pour la première fois ce mois.  |

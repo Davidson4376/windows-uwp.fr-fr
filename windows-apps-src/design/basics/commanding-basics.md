@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 104788b98377b55564fcc204ecc161521d071c6b
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5404094"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443491"
 ---
 #  <a name="command-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception des commandes pour les applications UWP
 
@@ -157,7 +157,7 @@ Voici quelques solutions pour fournir des commentaires dans votre application.
     :::column span="2":::
         <b>Flyouts</b>
 
-       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Menus volants</a> sont des fenêtres contextuelles contextuelles légers qui peuvent être fermées en appuyant ou en cliquant en dehors du menu volant.
+       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Menus volants</a> sont des menus contextuels contextuelles légers qui peuvent être fermées en appuyant ou en cliquant en dehors du menu volant.
 :::row-end:::
 
 :::row:::

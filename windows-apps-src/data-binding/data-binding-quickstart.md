@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cppcx
 ms.openlocfilehash: 8375cc54e75df71b28cfd3f550f47914b4b65519
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398116"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5441626"
 ---
 # <a name="data-binding-overview"></a>Vue d’ensemble de la liaison de données
 
@@ -39,7 +39,7 @@ Chaque liaison se compose d’une cible et d’une source de liaison. En règle 
 
 Si vous utilisez c# ou C++ / CX, puis ajoutez une nouvelle classe à votre projet et nommez la classe **l’enregistrement**.
 
-Si vous utilisez des [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis ajouter de nouveaux éléments de **Fichier Midl (.idl)** au projet, nommé comme indiqué dans C++ / WinRT exemple l’intégralité du code ci-dessous. Remplacez le contenu de ces nouveaux fichiers par le code [MIDL 3.0](/uwp/midl-3/intro) indiqué dans la liste, générez le projet pour générer `Recording.h` et `.cpp` et `RecordingViewModel.h` et `.cpp`, puis ajoutez le code pour les fichiers générés pour correspondre à la liste. Pour plus d’informations sur ces fichiers générés et comment les copier dans votre projet, consultez [contrôles XAML; liaison à C++ / WinRT propriété](/windows/uwp/cpp-and-winrt-apis/binding-property).
+Si vous utilisez [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis ajouter de nouveaux éléments de **Fichier Midl (.idl)** au projet, nommé comme indiqué dans C++ / WinRT exemple l’intégralité du code ci-dessous. Remplacez le contenu de ces nouveaux fichiers par le code [MIDL 3.0](/uwp/midl-3/intro) indiqué dans la liste, générez le projet pour générer `Recording.h` et `.cpp` et `RecordingViewModel.h` et `.cpp`, puis ajoutez le code pour les fichiers générés pour correspondre à la liste. Pour plus d’informations sur ces fichiers générés et comment les copier dans votre projet, consultez [contrôles XAML; liaison à C++ / WinRT propriété](/windows/uwp/cpp-and-winrt-apis/binding-property).
 
 ```csharp
 namespace Quickstart
@@ -227,7 +227,7 @@ namespace Quickstart
 
 Ensuite, exposez la classe de source de liaison à partir de la classe qui représente votre page de balisage. Pour ce faire, nous ajoutons une propriété de type **RecordingViewModel** à **MainPage**.
 
-Si vous utilisez des [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis la première mise à jour `MainPage.idl`. Générez le projet pour régénérer `MainPage.h` et `.cpp`et fusionner les modifications dans ces fichiers générés dans celles dans votre projet.
+Si vous utilisez [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis la première mise à jour `MainPage.idl`. Générez le projet pour régénérer `MainPage.h` et `.cpp`et fusionner les modifications dans ces fichiers générés dans celles dans votre projet.
 
 ```csharp
 namespace Quickstart
@@ -320,7 +320,7 @@ La dernière étape consiste à lier un contrôle **TextBlock** à la propriét�
 </Page>
 ```
 
-Si vous utilisez des [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), vous devez supprimer la fonction **MainPage::ClickHandler** afin que le projet à générer.
+Si vous utilisez [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), vous devez supprimer la fonction **MainPage::ClickHandler** afin que le projet à générer.
 
 Résultat:
 
@@ -330,7 +330,7 @@ Résultat:
 
 Un scénario courant consiste à créer une liaison à une collection d’objets métier. Dans C# et Visual Basic, la classe [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) générique est un bon choix de collection pour la liaison de données, car elle implémente les interfaces [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) et [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx). Ces interfaces envoient une notification de modification aux liaisons lorsque des éléments sont ajoutés ou supprimés ou qu’une propriété de la liste est elle-même modifiée. Si vous voulez que vos contrôles liés soient mis à jour avec les modifications apportées aux propriétés des objets de la collection, l’objet métier doit également implémenter **INotifyPropertyChanged**. Pour plus d’informations, consultez [Présentation détaillée de la liaison de données](data-binding-in-depth.md).
 
-Si vous utilisez des [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis vous pouvez en savoir plus sur la liaison à une collection observable dans [contrôles d’éléments XAML; liaison à C++ / WinRT collection](/windows/uwp/cpp-and-winrt-apis/binding-collection). Si vous lisez cette rubrique tout d’abord, puis l’intention de C++ / WinRT listing du code indiqué ci-dessous seront plus claire.
+Si vous utilisez [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis vous pouvez en savoir plus sur la liaison à une collection observable dans [contrôles d’éléments XAML; liaison à C++ / WinRT collection](/windows/uwp/cpp-and-winrt-apis/binding-collection). Si vous lisez cette rubrique tout d’abord, puis l’intention de C++ / WinRT listing du code indiqué ci-dessous seront plus claire.
 
 L’exemple suivant lie une classe [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) à une collection d’objets `Recording`. Commençons par ajouter la collection à notre modèle d’affichage. Il suffit d’ajouter ces nouveaux membres à la classe **RecordingViewModel**.
 
@@ -504,7 +504,7 @@ Il existe deux façons de procéder : Vous pouvez lier l’affichage de détails
 Si vous utilisez C++ / extensions de composant WinRT ou Visual C++ (C++ / CX) ensuite, pour utiliser l’extension de balisage [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) , vous devez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à n’importe quelle classe runtime que vous souhaitez lier. Pour utiliser [{x: Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), vous n’avez pas besoin cet attribut.
 
 > [!IMPORTANT]
-> Si vous utilisez des [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) est disponible si vous avez installé le SDK Windows version 10.0.17763.0 (Windows 10, version 1809), ou une version ultérieure. Sans cet attribut, vous devez implémenter les interfaces [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) et [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) pour qu’ils soient en mesure d’utiliser l’extension de balisage [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) .
+> Si vous utilisez [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) est disponible si vous avez installé le SDK Windows version 10.0.17763.0 (Windows 10, version 1809), ou une version ultérieure. Sans cet attribut, vous devez implémenter les interfaces [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) et [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) pour qu’ils soient en mesure d’utiliser l’extension de balisage [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) .
 
 Tout d’abord, voici la technique [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770).
 
@@ -718,7 +718,7 @@ Nous pouvons maintenant ajouter une instance de **StringFormatter** comme ressou
 ...
 ```
 
-Comme vous pouvez le voir ci-dessus, nous utilisons pour mettre en forme de flexibilité le balisage de passer une chaîne de format dans le convertisseur par le biais du paramètre de convertisseur. Dans les exemples de code présentés dans cette rubrique, uniquement le code c# convertisseur de valeur rend utiliser ce paramètre. Toutefois, vous pouvez facilement passer une chaîne de format de style C++ en tant que paramètre de convertisseur et l’utiliser dans votre convertisseur de valeur à une fonction de mise en forme comme **wprintf** ou **swprintf**.
+Comme vous pouvez le voir ci-dessus, nous utilisons pour mettre en forme de flexibilité le balisage pour passer une chaîne de format dans le convertisseur par le biais du paramètre de convertisseur. Dans les exemples de code présentés dans cette rubrique, uniquement le code c# convertisseur de valeur rend utiliser ce paramètre. Toutefois, vous pouvez facilement passer une chaîne de format de style C++ en tant que paramètre de convertisseur et l’utiliser dans votre convertisseur de valeur à une fonction de mise en forme comme **wprintf** ou **swprintf**.
 
 Résultat :
 

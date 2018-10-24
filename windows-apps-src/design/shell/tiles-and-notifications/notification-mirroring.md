@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows10, uwp, toast, centre de notifications dans le cloud, mise en miroir des notifications, notification, sur plusieurs appareils
 ms.localizationpriority: medium
 ms.openlocfilehash: eb8e2ceb16add551f3c8e3a71a69d36b99f21c62
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5410548"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5442255"
 ---
 # <a name="notification-mirroring"></a>Mise en miroir des notifications
 

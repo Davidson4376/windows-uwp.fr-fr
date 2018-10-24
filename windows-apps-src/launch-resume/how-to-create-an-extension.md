@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 424ca52020bd5b9aeab745030dd6eef4cd4430b6
-ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
-ms.translationtype: HT
+ms.openlocfilehash: 548f5f5d1810347527c3c9bfe761a766c4a35c7f
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "1862418"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445576"
 ---
 # <a name="create-and-host-an-app-extension"></a>Créer et héberger une extension d’application
 
@@ -126,11 +126,11 @@ La signification des attributs `<uap3:AppExtension>` est la suivante:
 
 |Attribut|Description|Requis|
 |---------|-----------|:------:|
-|**Name**|C’est le nom du contrat d’extension. Lorsqu’il correspond au nom **Name** déclaré dans un hôte, l’hôte sera en mesure de trouver cette extension.|:heavy_check_mark:|
-|**ID**| Identifie de façon unique cette extension. Dans la mesure où il peut y avoir plusieurs extensions qui utilisent le même nom de contrat d’extension (imaginez une application de peinture qui prend en charge plusieurs extensions), vous pouvez utiliser l’ID pour les distinguer. Les hôtes d’extension d’application peuvent utiliser l’ID afin de déduire des informations à propos du type d’extension. Par exemple, vous pouvez avoir une extension conçue pour une application de bureau et une autre pour un appareil mobile, avec l’ID comme facteur de différenciation. Vous pouvez également utiliser l'élément **Properties**, décrit ci-dessous, à cette fin.|:heavy_check_mark:|
+|**Name**|C’est le nom du contrat d’extension. Lorsqu’il correspond au nom **Name** déclaré dans un hôte, l’hôte sera en mesure de trouver cette extension.| :heavy_check_mark: |
+|**ID**| Identifie de façon unique cette extension. Dans la mesure où il peut y avoir plusieurs extensions qui utilisent le même nom de contrat d’extension (imaginez une application de peinture qui prend en charge plusieurs extensions), vous pouvez utiliser l’ID pour les distinguer. Les hôtes d’extension d’application peuvent utiliser l’ID afin de déduire des informations à propos du type d’extension. Par exemple, vous pouvez avoir une extension conçue pour une application de bureau et une autre pour un appareil mobile, avec l’ID comme facteur de différenciation. Vous pouvez également utiliser l'élément **Properties**, décrit ci-dessous, à cette fin.| :heavy_check_mark: |
 |**DisplayName**| Peut servir à partir de votre application hôte pour identifier l’extension pour l’utilisateur. Il peut être interrogé à partir du [nouveau système de gestion de ressources](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) et utiliser ce dernier à des fins de localisation. Le contenu localisé est chargé à partir du package d’extension d’application, et non de l’application hôte. | |
 |**Description** | Peut servir à partir de votre application hôte pour décrire l’extension pour l’utilisateur. Il peut être interrogé à partir du [nouveau système de gestion de ressources](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) et utiliser ce dernier à des fins de localisation. Le contenu localisé est chargé à partir du package d’extension d’application, et non de l’application hôte. | |
-|**PublicFolder**|Nom d’un dossier, relatif à la racine de package, où vous pouvez partager du contenu avec l’hôte d’extension. Par convention, le nom est «Public», mais vous pouvez utiliser n’importe quel nom qui correspond à un dossier dans votre extension.|:heavy_check_mark:|
+|**PublicFolder**|Nom d’un dossier, relatif à la racine de package, où vous pouvez partager du contenu avec l’hôte d’extension. Par convention, le nom est «Public», mais vous pouvez utiliser n’importe quel nom qui correspond à un dossier dans votre extension.| :heavy_check_mark: |
 
 `<uap3:Properties>` est un élément facultatif qui contient des métadonnées personnalisées que les hôtes peuvent lire lors de l’exécution. Dans l’exemple de code, l’extension est implémentée comme un service d’application, de sorte que l’hôte a besoin d’un moyen pour obtenir le nom de ce service d’application afin de pouvoir l’appeler. Le nom du service d’application est défini dans l'élément <Service>, que nous avons défini (nous aurions pu l'appeler comme nous le souhaitions). L’hôte dans l’exemple de code recherche cette propriété lors de l’exécution pour connaître le nom du service d’application.
 

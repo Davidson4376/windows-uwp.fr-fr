@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e7b249e5b23c301ba8ec0ad387b9fa38dde2ed0
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396363"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443838"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Accéder aux données d’analyse à l’aide des services du Windows Store
 
@@ -121,7 +121,7 @@ Les méthodes supplémentaires suivantes sont disponibles pour les comptes de d�
 
 ### <a name="methods-for-hardware-and-drivers"></a>Méthodes pour le matériel et les pilotes
 
-Comptes de développeur qui font partie du [programme du centre de développement matériel Windows](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) ont accès à un ensemble supplémentaire de méthodes pour récupérer des données d’analytique pour le matériel et les pilotes. Pour plus d’informations, consultez le [tableau de bord du matériel API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
+Comptes de développeur qui font partie du [programme du centre de développement matériel Windows](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) ont accès à un ensemble supplémentaire de méthodes pour récupérer des données d’analytique pour le matériel et les pilotes. Pour plus d’informations, voir le [tableau de bord du matériel API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
 
 ## <a name="code-example"></a>Exemple de code
 

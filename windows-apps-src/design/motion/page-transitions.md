@@ -12,11 +12,11 @@ keywords: windows10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f4fc4cd9701778b3919896cf90929272e6b0923
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398978"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5442841"
 ---
 # <a name="page-transitions"></a>Transitions de page
 
@@ -61,7 +61,7 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 Utilisez diapositive horizontal pour montrer que les pages sœur s’affichent en regard des autres. Le contrôle [NavigationView](../controls-and-patterns/navigationview.md) utilise automatiquement cette animation de navigation supérieure, mais si vous créez votre propre expérience de navigation horizontale, vous pouvez implémenter diapositive horizontal avec SlideNavigationTransitionInfo.
 
-Retranscrire est que l’utilisateur navigue entre les pages qui se trouvent en regard de l’autre. 
+Retranscrire est que l’utilisateur navigue entre les pages qui se trouvent en regard des autres. 
 
 ```csharp
 // Navigate to the right, ie. from LeftPage to RightPage

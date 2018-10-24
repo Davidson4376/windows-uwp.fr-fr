@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, WRL
 ms.localizationpriority: medium
 ms.openlocfilehash: 44a41e42477de9d29f1d0443324fa83590c37caf
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403539"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445636"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a>Transférer vers C++/WinRT à partir de WRL
 Cette rubrique montre comment porter du code de [Bibliothèque de modèles Windows Runtime C++ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) vers son équivalent en [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -45,7 +45,7 @@ winrt::check_hresult(m_dxgiFactory->EnumAdapters1(0, previousDefaultAdapter.put(
 ```
 
 > [!IMPORTANT]
-> Si vous disposez d’un [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) qui est déjà en place (son pointeur brut interne dispose déjà d’une cible) et vous voulez remettre en place qu’elle pointe vers un autre objet, puis vous devez tout d’abord affecter `nullptr` lui&mdash;comme illustré dans l’exemple de code ci-dessous. Si vous n’est pas le cas, puis un déjà assis **com_ptr** dessinent le problème à votre attention (lorsque vous appelez [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) ou [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)) en déclarant que son pointeur interne n’est pas null.
+> Si vous disposez d’un [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) qui est déjà en place (son pointeur brut interne dispose déjà d’une cible) et vous souhaitez remettre en place qu’elle pointe vers un autre objet, vous devez tout d’abord affecter `nullptr` lui&mdash;comme illustré dans l’exemple de code ci-dessous. Si vous n’est pas le cas, puis un déjà assis **com_ptr** dessinent le problème à votre attention (lorsque vous appelez [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) ou [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)) en déclarant que son pointeur interne n’est pas null.
 
 ```cppwinrt
 winrt::com_ptr<IDXGISwapChain1> m_pDXGISwapChain1;

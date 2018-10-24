@@ -17,11 +17,11 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 20b6f54f39be116ad77cb5a179ff8c3d188eb8c4
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398136"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443977"
 ---
 # <a name="menus-and-context-menus"></a>Menus et menus contextuels
 
@@ -41,9 +41,9 @@ Les menus et les menus contextuels affichent une liste de commandes ou d’optio
 
 Les menus et les menus contextuels permettent de gagner de l’espace en organisant les commandes et en les masquant jusqu’à ce que l’utilisateur en ait besoin. Si une commande particulière doit être utilisée fréquemment et que vous disposez de l’espace disponible, envisagez de le placer directement dans son propre élément, plutôt que dans un menu, afin que les utilisateurs n’aient pas à passer par un menu afin d’y accéder.
 
-Menus et menus contextuels permettent d’organiser les commandes; Pour afficher du contenu arbitraire, par exemple, une demande de notification ou une confirmation, utilisez une [boîte de dialogue ou un menu volant](dialogs.md).
+Menus et menus contextuels permettent d’organiser les commandes; Pour afficher du contenu arbitraire, comme une demande de notification ou une confirmation, utilisez une [boîte de dialogue ou un menu volant](dialogs.md).
 
-### <a name="menubar-vs-menuflyout"></a>Barre de menus et MenuFlyout
+### <a name="menubar-vs-menuflyout"></a>Barre de menus ou MenuFlyout
 
 Pour afficher un menu dans un menu volant attaché à un élément d’interface utilisateur de zone de dessin, utilisez le contrôle MenuFlyout pour héberger vos éléments de menu. Vous pouvez appeler un menu volant sous la forme d’un menu standard ou un menu contextuel. Un menu volant héberge un menu de niveau supérieur unique (et sous-menus facultatifs).
 
@@ -51,7 +51,7 @@ Pour afficher un ensemble de plusieurs menus de niveau supérieur dans une ligne
 
 ### <a name="menubar-vs-commandbar"></a>Barre de menus et CommandBar
 
-Barre de menus et CommandBar tous deux représentent des surfaces que vous pouvez utiliser pour exposer des commandes à vos utilisateurs. La barre de menus fournit un moyen simple et rapide pour exposer un ensemble de commandes pour les applications qui peuvent requérir plus organisation ou regroupement que permet un contrôle CommandBar.
+Barre de menus et CommandBar tous deux représentent des surfaces que vous pouvez utiliser pour exposer des commandes à vos utilisateurs. La barre de menus fournit un moyen simple et rapide pour exposer un ensemble de commandes pour les applications qui peuvent requérir plus organisé ou le regroupement que permet un contrôle CommandBar.
 
 Vous pouvez également utiliser une barre de menus en association avec un contrôle CommandBar. Utilisez la barre de menus pour fournir la majeure partie des commandes et le contrôle CommandBar pour mettre en évidence les commandes les plus utilisées.
 
@@ -73,7 +73,7 @@ Vous pouvez également utiliser une barre de menus en association avec un contr�
 
 ## <a name="menus-vs-context-menus"></a>Menus par rapport aux menus contextuels
 
-Menus et menus contextuels sont similaires dans leur apparence et qu’ils peuvent contenir. En fait, vous pouvez utiliser le même contrôle [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030), pour les créer. La différence est la façon dont vous permettez à l’utilisateur y accéder.
+Menus et menus contextuels sont semblables dans leur apparence et qu’ils peuvent contenir. En fait, vous pouvez utiliser le même contrôle [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030), pour les créer. La différence est la façon dont vous permettez à l’utilisateur y accéder.
 
 Quand utiliser un menu ou un menu contextuel?
 
@@ -93,7 +93,7 @@ Si vous voulez ajouter des commandes (telles que couper, copier et coller) à un
 - Ont un point d’entrée unique (un menu Fichier en haut de l’écran, par exemple) qui est toujours affiché.
 - Sont généralement attachés à un bouton ou un élément de menu parent.
 - Sont appelés en cliquant avec le bouton gauche de la souris (ou par le biais d’une action équivalente, telles que l’appui avec votre doigt).
-- Sont associés à un élément via ses propriétés de [menu volant](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) ou [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) , ou regroupés dans une barre de menus en haut de la fenêtre d’application.
+- Sont associés à un élément via ses propriétés [menu volant](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) ou [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) ou regroupés dans une barre de menus en haut de la fenêtre d’application.
 
 ### <a name="context-menus"></a>Les menus contextuels:
 

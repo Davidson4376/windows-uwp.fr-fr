@@ -2,7 +2,7 @@
 author: PatrickFarley
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Tests d’application Pont du bureau Windows
-description: Utilisez les tests intégrés de pont du bureau pour vous assurer que votre application de bureau est optimisée pour la conversion vers une application UWP.
+description: Utilisez les tests intégrés de pont du bureau pour vous assurer que votre application de bureau est optimisée pour sa conversion vers une application UWP.
 ms.author: pafarley
 ms.date: 12/18/2017
 ms.topic: article
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 96087d2a41eb443374d8cd9bda5608d6156f9173
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5404870"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443584"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests d’application Pont du bureau Windows
 
@@ -224,7 +224,7 @@ Ce peut être corrigé en vous assurant que l’application a été compilée co
 > La version de débogage d’une application échoue à ce test même si l’application utilise uniquement des [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx). Passez en revue les messages d’erreur pour identifier l’API présentent qui n’est pas une API autorisée pour les applications UWP. 
 
 > [!NOTE]
-> Applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. Pour plus d’informations, consultez [solutions de rechange aux API Windows dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) .
+> Les applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. Pour plus d’informations, consultez [solutions de rechange aux API Windows dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) .
 
 ### <a name="6-user-account-control-uac-test"></a>6. Test du contrôle de compte d’utilisateur (UAC)  
 
