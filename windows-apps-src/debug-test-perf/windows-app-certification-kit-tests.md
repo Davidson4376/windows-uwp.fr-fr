@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434692"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483879"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Tests du Kit de certification des applications Windows
 
@@ -319,11 +319,11 @@ Les applications doivent utiliser les API pour les applications UWP (Windows Run
 
 Vérifiez que l’application a été compilée en tant que version de publication et non en tant que version de débogage.
 
-> **Remarque**  La version de débogage d’une application échoue à ce test même si l’application utilise uniquement des [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
+> **Remarque**la version de débogage d’une application échouera ce test même si l’application utilise uniquement des [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
 Passez en revue les messages d’erreur pour identifier l’API utilisée par l’application qui n’est pas une [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-> **Remarque**  Les applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. [Solutions de rechange aux API Windows dans les applications UWP](http://go.microsoft.com/fwlink/p/?LinkID=244022) pour plus d’informations, voir.
+> **Remarque**les applications C++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications UWP. [Solutions de rechange aux API Windows dans les applications UWP](http://go.microsoft.com/fwlink/p/?LinkID=244022) pour plus d’informations, voir.
 
 ## <a name="performance-tests"></a>Tests de performances
 
@@ -481,7 +481,7 @@ Inspirez-vous du tableau suivant.
 
 
 
- 
+ 
 
 ### <a name="branding-validation"></a>Validation de la personnalisation
 
@@ -551,7 +551,7 @@ Assurez-vous que votre application s’affiche correctement avec le niveau de fo
 
 ### <a name="direct3d-trim-after-suspend"></a>Découpage Direct3D après suspension
 
-> **Remarque**  Ce test s’applique uniquement aux applications UWP développées pour Windows 8.1 et versions ultérieures.
+> **Remarque**ce test s’applique uniquement aux applications UWP développées pour Windows8.1 et versions ultérieures.
 
 ### <a name="background"></a>Contexte
 
@@ -673,4 +673,4 @@ Mettez à jour le code JavaScript en arrière-plan pour appeler Close() correcte
 
 * [Tests d’application Pont du bureau Windows](windows-desktop-bridge-app-tests.md)
 * [Politiques du MicrosoftStore](https://msdn.microsoft.com/library/windows/apps/Dn764944)
- 
+ 

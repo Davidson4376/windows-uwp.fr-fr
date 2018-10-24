@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, noms d’application, modifiez le nom de l’application, nom de l’application mise à jour, jeu, nom de produit
 ms.localizationpriority: medium
 ms.openlocfilehash: 878b105541691834dbbe35b5210f33045afdc47b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438207"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468627"
 ---
 # <a name="manage-app-names"></a>Gestion des noms d’application
 
@@ -64,9 +64,9 @@ Une fois que votre application a été publiée avec le nouveau nom, vous pouvez
 > [!TIP]
 > Chaque application s’affiche dans votre tableau de bord à l’aide du premier nom que vous avez réservé pour celle-ci. Si vous avez suivi les étapes ci-dessus pour renommer une application et que vous souhaitez voir apparaître dans votre tableau de bord en utilisant le nouveau nom, vous devez supprimer le nom d’origine (en cliquant sur **Supprimer** sur la page **gérer des noms d’application** ). 
 
- 
+ 
 
- 
+ 
 
 
 

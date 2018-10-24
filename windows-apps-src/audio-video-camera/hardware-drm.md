@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 160a4ab0ff5bdc40ea46ff6d8fb9fd8e47f560e3
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439873"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474354"
 ---
 # <a name="hardware-drm"></a>Gestion des droits numériques en fonction du matériel
 
@@ -29,7 +29,7 @@ Les fournisseurs de contenu se tournent de plus en plus vers des protections mat
 
 ## <a name="windows-tee-implementation"></a>Implémentation TEE Windows
 
-Cette rubrique présente succinctement la façon dont Windows10 implémente l’environnement d’exécution de confiance (TEE).
+Cette rubrique fournit une brève présentation de la façon dont Windows 10 implémente l’environnement d’exécution approuvé (TEE).
 
 Les détails de l’implémentation TEE Windows n’entrent pas dans le cadre de ce document. Cependant, une brève description de la différence entre le port TEE du kit de portage standard et le port Windows sera utile. Windows implémente la couche proxy OEM et transfère les appels de fonctions PRITEE en série à un pilote en mode utilisateur dans le sous-système Windows Media Foundation. Ceux-ci seront finalement acheminés vers le pilote TrEE (Trusted Execution Environment) Windows ou le pilote graphique OEM. Les détails de ces deux approches n’entrent pas dans le cadre de ce document. Le diagramme suivant illustre l’interaction générale des composants pour le port Windows. Si vous souhaitez développer une implémentation TEE Windows PlayReady, vous pouvez contacter <WMLA@Microsoft.com>.
 

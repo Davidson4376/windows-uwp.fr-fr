@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 598a73b291d5f8b3c004f1e9adeddf0b92b841ab
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445676"
+ms.locfileid: "5467694"
 ---
 # <a name="generate-preinstall-packages-for-oems"></a>Générer des packages de préinstallation pour les fabricants d’ordinateurs OEM
 
@@ -51,9 +51,9 @@ Vous pouvez alors fournir le fichier.zip à l’OEM pour qu’il puisse l’incl
 
 Si vous avez des questions sur la génération de packages de pré-installation, envoyez un e-mail à l’adresse <partnerops@microsoft.com>.
 
- 
+ 
 
- 
+ 
 
 
 

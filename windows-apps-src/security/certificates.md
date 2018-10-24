@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 1db3af004831f010a3dd4918898ce5f7cf70bb1a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438118"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468597"
 ---
 # <a name="intro-to-certificates"></a>Présentation de certificats
 
@@ -26,7 +26,7 @@ Cet article traite de l’utilisation de certificats dans les applications de pl
 
 ### <a name="shared-certificate-stores"></a>Magasins de certificats partagés
 
-Les applications UWP utilisent le nouveau modèle d’application « isolationniste » introduit dans Windows 8. Selon ce modèle, une application de s’exécuter dans une construction de système d’exploitation de bas niveau, appelée « conteneur d’application », qui empêche l’application d’accéder à des ressources ou des fichiers extérieurs, sauf autorisation explicite de le faire. Les sections suivantes décrivent les conséquences de ce modèle sur l’infrastructure à clé publique (PKI).
+Applications UWP utilisent le nouveau modèle d’application «isolationniste» introduit dans le package Windows8. Selon ce modèle, une application de s’exécuter dans une construction de système d’exploitation de bas niveau, appelée « conteneur d’application », qui empêche l’application d’accéder à des ressources ou des fichiers extérieurs, sauf autorisation explicite de le faire. Les sections suivantes décrivent les conséquences de ce modèle sur l’infrastructure à clé publique (PKI).
 
 ### <a name="certificate-storage-per-app-container"></a>Stockage de certificats par conteneur d’application
 

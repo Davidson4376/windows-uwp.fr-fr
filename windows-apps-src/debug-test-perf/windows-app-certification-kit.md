@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
 ms.openlocfilehash: b7a72a89704aa3768cc43cdfbb75b620bae303e3
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443543"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468936"
 ---
 # <a name="windows-app-certification-kit"></a>Kit de certification des applications Windows
 
@@ -28,7 +28,7 @@ Pour obtenir la [Certification Windows](https://msdn.microsoft.com/windows/deskt
 Conditions préalables pour tester une application Windows universelle :
 
 -   Vous devez installer et exécuter Windows 10.
--   Vous devez installer le [Kit de certification des applications Windows version10]( http://go.microsoft.com/fwlink/p/?LinkID=309666), qui est inclus dans le Kit de développement logiciel (SDK) Windows pour Windows10.
+-   Vous devez installer le [Kit de Certification des applications Windows version 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666), qui est inclus dans le Kit de développement logiciel (SDK) Windows pour Windows 10.
 -   Vous devez [activer votre appareil pour le développement](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
 -   Vous devez déployer l’application Windows que vous voulez tester sur votre ordinateur.
 
@@ -56,17 +56,17 @@ L’installation d’une nouvelle version du [Kit de certification des applicati
 
 6.  Ouvrez le fichier de rapport et examinez les résultats du test.
 
-**Remarque**  Si vous utilisez Visual Studio, vous pouvez exécuter le Kit de certification des applications Windows lorsque vous créez votre package d’application. Pour plus d’informations, voir [Création de packages d’application UWP](https://msdn.microsoft.com/library/windows/apps/Mt627715).
+**Remarque**si vous utilisez Visual Studio, vous pouvez exécuter le Kit de Certification d’application Windows lorsque vous créez votre package d’application. Pour plus d’informations, voir [Création de packages d’application UWP](https://msdn.microsoft.com/library/windows/apps/Mt627715).
 
- 
+ 
 
 ## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-from-a-command-line"></a>Validez votre application Windows à l’aide du Kit de certification des applications Windows à partir d’une ligne de commande
 
-**Important**  Le Kit de certification des applications Windows doit être exécuté dans le contexte d’une session utilisateur active.
+**Important**le Kit de Certification d’application Windows doit être exécuté dans le contexte d’une session utilisateur active.
 
 1.  Dans la fenêtre de commande, accédez au répertoire contenant le Kit de certification des applications Windows.
 
-    **Remarque**   Le chemin d’accès par défaut est C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\.
+    **Remarque**  le chemin d’accès par défaut est C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\.
 
 2.  Entrez les commandes suivantes dans cet ordre pour tester une application qui est déjà installée sur votre ordinateur de test:
 
@@ -82,9 +82,9 @@ L’installation d’une nouvelle version du [Kit de certification des applicati
 
 3.  Une fois le test terminé, ouvrez le fichier de rapport nommé `[report file name]` et examinez les résultats du test.
 
-**Remarque**  Le Kit de certification des applications Windows peut être exécuté à partir d’un service, mais le service doit initialiser le processus du Kit dans une session utilisateur active et ne peut pas être exécuté au sein de Session0.
+**Remarque**le Kit de Certification d’application Windows peut être exécuté à partir d’un service, mais le service doit initialiser le processus du kit dans une session utilisateur active et ne peut pas être exécuté au sein de Session0.
 
-**Remarque**   Pour en savoir plus sur la ligne de commande du Kit de certification des applications Windows, entrez la commande. `appcert.exe /?`
+**Remarque**  pour plus d’informations sur la ligne de commande du Kit de Certification des applications Windows, entrez la commande `appcert.exe /?`
 
 ## <a name="testing-with-a-low-power-computer"></a>Test avec un ordinateur à faible consommation d’énergie
 
@@ -98,9 +98,9 @@ Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent
 
 * [Tests du Kit de certification des applications Windows](windows-app-certification-kit-tests.md)
 * [Politiques du MicrosoftStore](https://msdn.microsoft.com/library/windows/apps/Dn764944)
- 
+ 
 
- 
+ 
 
 
 

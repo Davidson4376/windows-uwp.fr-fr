@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, sécurité
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f446299dcf1a0bcf93d483d13c926c6e4cd230f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432712"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468313"
 ---
 # <a name="authentication-and-user-identity"></a>Authentification et identité des utilisateurs
 
@@ -25,7 +25,7 @@ Les applications de plateforme Windows universelle (UWP) disposent de plusieurs 
 
 Pour les connexions d’applications régulières aux services de fournisseur d’identité tiers, tels que Facebook, Twitter, Flickr et ainsi de suite, utilisez le [service Broker d’authentification web](web-authentication-broker.md). Pour plus de commodité, utilisez la fonctionnalité [Stockage sécurisé des informations d’identification](credential-locker.md) pour enregistrer et rendre itinérantes les informations d’ouverture de session de l’utilisateur.
 
-Les entreprises qui utilisent Windows 10 doivent sérieusement envisager de recourir à [Microsoft Passport et Windows Hello](microsoft-passport.md), qui permettent de bénéficier d’une authentification à 2 facteurs hautement sécurisée. Si l’utilisation de Microsoft Passport se révèle impossible, l’emploi de [cartes à puce](smart-cards.md) et de l’[empreinte digitale biométrique](fingerprint-biometrics.md) peut contribuer à ajouter une couche de sécurité supplémentaire.
+Les entreprises qui utilisent Windows 10 doivent sérieusement envisager d’utiliser [Microsoft Passport et Windows Hello](microsoft-passport.md), ce qui permet l’authentification à 2 facteurs hautement sécurisée. Si l’utilisation de Microsoft Passport se révèle impossible, l’emploi de [cartes à puce](smart-cards.md) et de l’[empreinte digitale biométrique](fingerprint-biometrics.md) peut contribuer à ajouter une couche de sécurité supplémentaire.
 
 <table>
 <tr><th>Rubrique</th><th>Description</th></tr>

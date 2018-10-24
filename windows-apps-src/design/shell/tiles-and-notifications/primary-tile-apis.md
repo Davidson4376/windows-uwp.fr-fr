@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, StartScreenManager, épingler la vignette principale, API de vignette principale, vérifier si la vignette est épinglée, vignette dynamique
 ms.localizationpriority: medium
 ms.openlocfilehash: 42b4c014dfd49c42497b8846e37e37af53cc3885
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445139"
+ms.locfileid: "5468349"
 ---
 # <a name="primary-tile-apis"></a>API de vignette principale
  
@@ -88,7 +88,7 @@ bool isPinned = await StartScreenManager.GetDefault().ContainsAppListEntryAsync(
 Si votre vignette principale n’est pas épinglée pour le moment et si elle est prise en charge par Démarrer, vous souhaiterez peut-être afficher un conseil aux utilisateurs indiquant qu’ils peuvent épingler votre vignette principale.
 
 > [!NOTE]
-> Vous devez appeler cette API à partir d’un thread d’interface utilisateur alors que votre application est au premier plan, et vous ne devez l’appeler qu’une fois que l’utilisateur a demandé intentionnellement l’épinglage de la vignette principale (par exemple, après qu’il a cliqué sur Oui pour votre conseil sur l’épinglage de la vignette).
+> Vous devez appeler cette API à partir d’un thread d’interface utilisateur pendant que votre application est au premier plan, et vous devez appeler uniquement cette APIafterthe utilisateur a demandé intentionnellement le bepinned vignette principale (par exemple, lorsque l’utilisateur a cliqué sur Oui pour votre Conseil sur l’épinglage de la vignette).
 
 Si l’utilisateur clique sur votre bouton pour épingler la vignette principale, vous appelez ensuite la méthode [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) pour demander que votre vignette soit épinglée au menu Démarrer. Cette action affiche une boîte de dialogue demandant à l’utilisateur de confirmer qu’il souhaite épingler votre vignette au menu Démarrer.
 
