@@ -3,19 +3,19 @@ author: jnHs
 Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
 title: Présentation des déclarations fiscales de l’IRS envoyées par Microsoft
 ms.author: wdg-dev-content
-ms.date: 03/08/2018
+ms.date: 10/25/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp, fiscalité, irs, services fiscaux américains, impôt, impôt sur le revenu, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: ffefc1d645a79296989e95c2fa033b8848e91c3b
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: e7f7560d2f069a36d0f6d5837c3282b84840d927
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5475468"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5512529"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Présentation des déclarations fiscales de l’IRS envoyées par Microsoft
 
@@ -31,7 +31,25 @@ Nous expliquons ci-dessous en quoi consistent ces déclarations, notamment à qu
 |1042-S | Concerne les paiements que vous avez reçus et qui sont imposables aux États-Unis | Les versions imprimées des déclarations sont envoyées par courrier au plus tard le **15mars**, et les copies.pdf sont mises en ligne dans le Centre de développement (**Tableau de bord> Paramètres du compte> Profil fiscal**) à la même date. |
 
 > [!NOTE]
-> L’adresse figurant sur les déclarations fiscales de l’IRS est celle indiquée dans votre [profil fiscal](setting-up-your-payout-account-and-tax-forms.md#tax-forms). Si vous avez changé d’adresse, n’oubliez pas de modifier l’adresse indiquée dans votre **profil fiscal**.
+> L’adresse, que nous utiliserons sur des déclarations fiscales de l’IRS provient de l’adresse figurant dans votre [profil fiscal](setting-up-your-payout-account-and-tax-forms.md#tax-forms). Si vous avez changé d’adresse, n’oubliez pas de modifier l’adresse indiquée dans votre **profil fiscal**.
+
+Les déclarations fiscales vous sera envoyées à partir de l’adresse suivante:
+
+**Citoyens aux États-Unis:**
+<table>
+<tr><th>Groupe Professionnel</th><th>Entité juridique</th><th>Adresse</th></tr>
+<tr><td>Windows, Office, Azure</td><td>MicrosoftCorporation</td><td>One Microsoft Way<br>Redmond WA 98052 États-Unis</td></tr>
+<tr><td>Publicité</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 États-Unis</td></tr>
+<table> 
+
+**Citoyens hors des États-Unis:**
+<table>
+<tr><th>Groupe Professionnel</th><th>Entité juridique</th><th>Adresse</th></tr>
+<tr><td>Windows, Office, Azure</td><td>Microsoft Irlande Operations Limited (paiement a été effectué par Microsoft Corporation via Microsoft Irlande agissant comme intermédiaire qualifié pour Microsoft Corporation)</td><td>Un emplacement de Microsoft<br>Sud&nbsp;comté&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Irlande</td></tr>
+<tr><td>Publicité *</td><td>Microsoft Irlande Operations Limited (paiement a été effectué par Microsoft Online Inc. via Microsoft Irlande agissant en tant qu’agent de paiement pour Microsoft Online Inc.)</td><td>Un emplacement de Microsoft<br>Sud&nbsp;comté&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Irlande</td></tr>
+<tr><td>Publicité</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 États-Unis</td></tr>
+<tr><td colspan="3">* Citoyens des pays suivants recettes publicitaires de la rémunération seront payés par le biais de Microsoft Irlande Operations Limited: Autriche, Belgique, Bulgarie, Croatie, Chypre, République tchèque, Danemark, Estonie, Finlande, France, Allemagne, Grèce, Hongrie, Irlande, Île de Man, Italie, Lettonie, Liechtenstein, Lituanie, Luxembourg, Malte, Monaco, pays-bas, Norvège, Pologne, Portugal, Roumanie, Slovaquie, Slovénie, Afrique du Sud, Espagne, Suède, Suisse, Royaume-Uni</td></tr>
+</table>
 
 ## <a name="for-developers-located-in-the-united-states"></a>Pour les développeurs résidant aux États-Unis
 
@@ -42,23 +60,15 @@ Nous expliquons ci-dessous en quoi consistent ces déclarations, notamment à qu
   </tr>
   <tr> 
      <td valign="top">J’ai réalisé <b>plus de 200ventes d’applications</b> pour un montant total d’achat <b>supérieur à 20000dollars USD</b> durant l’année fiscale applicable (<b>sans</b> prendre en compte les ventes réalisées au Brésil et en Chine par le biais de Microsoft Store sur Windows10).</td>
-    <td valign="top"><b>1099-K</b>:<br>
-Déclarant: Microsoft Corporation<br>
-Numéro EIN: \*\*\*\*\*4442<br>
-<br>
-**Important:** La déclaration 1099-K indique les montants des **achats bruts**, pas les paiements que vous avez reçus.</td>
+    <td valign="top"><b>1099-K</b>:<br>Déclarant: Microsoft Corporation<br>NUMÉRO EIN: *** 4442<br><br><b>Important</b>: formulaire 1099-K contienne des quantités <b>d’achat bruts</b> , pas les paiements que vous.</td>
   </tr>
   <tr> 
      <td valign="top">J’ai reçu <b>au moins 10dollars en paiement</b> de (i) ventes d’applications réalisées au Brésil et en Chine par le biais de Microsoft Store sur Windows10 ou de (ii) ventes sur le Marché Minecraft.<br>
 <br>
-**OU**<br>
+<b>OU</b><br>
 <br>
 J’ai reçu au moins 600dollars de Microsoft, en paiement d’activités autres que les ventes d’applications (par exemple, des paiements dans le cadre d’un programme incitatif, d’un concours ou d’une promotion) durant l’année fiscale applicable.</td>
-    <td valign="top"><b>1099-MISC</b>:<br>
-Payeur: Microsoft Corporation<br>
-Numéro EIN: \*\*\*\*\*4442<br>
-<br>
-**Important:** Certaines entités commerciales ne recevront pas de déclarations 1099-MISC, quel que soit le montant des paiements reçus de la part de Microsoft.  Pour plus d’informations, consultez votre conseiller fiscal.</td>
+    <td valign="top"><b>1099-MISC</b>:<br>Payeur: Microsoft Corporation<br>NUMÉRO EIN: *** 4442<br><br><b>Important</b>: certaines entités commerciales ne recevront pas de déclarations 1099-MISC, quel que soit le montant des paiements reçus à partir de Microsoft.  Pour plus d’informations, consultez votre conseiller fiscal.</td>
   </tr>
   <tr>
     <td valign="top">Aucun des deux ne s’applique.</td>
@@ -69,16 +79,12 @@ Numéro EIN: \*\*\*\*\*4442<br>
     <td valign="top">&nbsp;</td>
   </tr>
   <tr>
-     <th>Je suis un développeur résidant aux États-Unis qui vend des applications payantes et ... </th>
+     <th>Si je suis un développeur États-Unis vendre des publicités dans les applications et … </th>
      <th> Je dois recevoir cette déclaration</th>
   </tr>
   <tr> 
      <td valign="top">J’ai reçu <b>au moins 600dollars en paiement</b> de publicités dans des applications durant l’exercice fiscal applicable.</td>
-    <td valign="top"><b>1099-MISC</b>:<br>
-Payeur: Microsoft Online Inc<br>
-Numéro EIN: \*\*\*\*\*0505<br>
-<br>
-**Important:** Certaines entités commerciales ne recevront pas de déclarations 1099-MISC, quel que soit le montant des paiements reçus de la part de Microsoft.  Pour plus d’informations, consultez votre conseiller fiscal.  </td>
+    <td valign="top"><b>1099-MISC</b>:<br>Payeur: Microsoft Online Inc<br>NUMÉRO EIN: *** 0505<br><br><b>Important</b>: certaines entités commerciales ne recevront pas de déclarations 1099-MISC, quel que soit le montant des paiements reçus à partir de Microsoft.  Pour plus d’informations, consultez votre conseiller fiscal.</td>
   </tr>
   <tr> 
      <td valign="top">J’ai reçu <b>moins de 600dollars en paiement</b> de publicités dans des applications durant l’exercice fiscal applicable.</td>
@@ -102,11 +108,7 @@ Numéro EIN: \*\*\*\*\*0505<br>
     <td valign="top"><b>Pourquoi des taxes ont-elles été retenues sur mes paiements quand j’ai rempli la déclarationW8?</b></td>
     <td valign="top">Les taxes sont retenues dans les cas suivants:<br>
      1. Vous n’avez pas rempli correctement la section sur la convention fiscale dans la déclarationW8, ou<br>
-     2. Vous résidez dans un pays qui n’a pas signé de convention fiscale avec les États-Unis.
-
-     You can visit Dev Center at any time to submit an updated W8 form.<br>
-     <br>
-     **Note:** Not all income is subject to tax withholding.</td>
+     2. Vous résidez dans un pays qui n’a pas signé de convention fiscale avec les États-Unis.<br><br>Vous pouvez visiter le centre de développement à tout moment pour soumettre une déclaration w8.<br><br><b>Remarque</b>: pas tous les revenus sont susceptible d’être retenue d’impôt.</td>
   </tr>
   <tr>
     <td valign="top"><b>J’ai renseigné et renvoyé une déclarationW8 avec des informations correctes sur la convention fiscale. Puis-je être remboursé par Microsoft des taxes retenues?</b></td>

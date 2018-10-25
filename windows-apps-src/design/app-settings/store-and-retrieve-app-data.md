@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 47383cd8f89e5da104ac73878b0613c364240459
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: f73a99ea4dc58880f1de517853a05aa0b0d6dd6b
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817297"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5512901"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>Stocker et récupérer des paramètres et autres données d’application
 
@@ -172,7 +172,7 @@ Les données itinérantes d’une application sont disponibles dans le Cloud du 
 -   Ne rendez pas itinérantes des données d’application spécifiques à un appareil. Certaines informations ne sont pertinentes que d’un point de vue local, par exemple le chemin d’accès d’un fichier local. Si vous décidez de rendre itinérantes des informations locales, assurez-vous que l’application peut récupérer son état d’exécution si ces informations ne sont pas valides sur l’appareil secondaire.
 -   Ne rendez pas itinérants de grands ensembles de données d’application. Il existe une limite à la quantité de données d’application qu’une application peut utiliser de manière itinérante. Servez-vous de la propriété [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) pour atteindre cette limite. Si une application atteint cette limite, l’itinérance des données n’est plus possible tant que la taille du magasin de données d’application reste au-dessus de cette limite. Quand vous concevez votre application, vous devez penser à restreindre les grandes quantités de données pour éviter de dépasser cette limite. Par exemple, si l’enregistrement de l’état d’une partie demande 10 Ko, l’application pourrait autoriser l’utilisateur à conserver seulement 10 parties au maximum.
 -   N’utilisez pas l’itinérance pour les données qui reposent sur une synchronisation instantanée. Windows ne garantit pas une synchronisation instantanée. L’itinérance peut être retardée de manière importante si un utilisateur est hors connexion ou sur un réseau dont la latence est élevée. Assurez-vous que votre interface utilisateur ne dépend pas d’une synchronisation instantanée.
--   N’utilisez pas l’itinérance pour les données qui changent souvent. Ainsi, si votre application effectue le suivi d’informations qui changent souvent, par exemple la position de lecture d’une chanson à la seconde près, ne stockez pas ces informations en tant que données d’application itinérantes. À la place, choisissez une représentation moins fréquente qui offre tout de même une expérience utilisateur intéressante, par exemple la chanson en cours de lecture.
+-   N’utilisez pas d’itinérance pour les données qui changent fréquemment. Ainsi, si votre application effectue le suivi d’informations qui changent souvent, par exemple la position de lecture d’une chanson à la seconde près, ne stockez pas ces informations en tant que données d’application itinérantes. À la place, choisissez une représentation moins fréquente qui offre tout de même une expérience utilisateur intéressante, par exemple la chanson en cours de lecture.
 
 ### <a name="roaming-pre-requisites"></a>Conditions préalables d’itinérance
 
