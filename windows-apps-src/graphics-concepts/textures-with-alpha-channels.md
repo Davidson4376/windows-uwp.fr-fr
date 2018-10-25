@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 73a2a619c32e7d6a7f2fff768c9cec5b7986c3c1
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: eef41642d371f3a8be451c2687eee007608c3b2e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044708"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542293"
 ---
 # <a name="textures-with-alpha-channels"></a>Textures avec canaux alpha
 
@@ -30,7 +28,7 @@ Le bloc de transparence et le bloc de couleurs sont organisés comme indiqué da
 | 3:0          | Bloc de transparence                |
 | 7:4          | Bloc de 64bits décrit précédemment |
 
- 
+ 
 
 ## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>Codage de texture explicite
 
@@ -41,9 +39,9 @@ Le diagramme suivant illustre un bloc de transparence de 64bits.
 
 ![diagramme d’un bloc de transparence de 64bits](images/colors4.png)
 
-**Remarque** La méthode de compression de Direct3D utilise les quatre bits les plus importants.
+**Remarque**  la méthode de compression de Direct3D utilise les quatre bits les plus importants.
 
- 
+ 
 
 Les tableaux suivants illustrent la façon dont les informations alpha sont disposées dans la mémoire, pour chaque mot de 16bits.
 
@@ -56,7 +54,7 @@ Disposition pour le mot 0:
 | 11:8          | \[0\]\[2\] |
 | 15:12 (MSB\*) | \[0\]\[3\] |
 
- 
+ 
 
 \*Bit le moins important, bit le plus important (MSB)
 
@@ -69,7 +67,7 @@ Disposition pour le mot 1:
 | 11:8        | \[1\]\[2\] |
 | 15:12 (MSB) | \[1\]\[3\] |
 
- 
+ 
 
 Disposition pour le mot 2:
 
@@ -80,7 +78,7 @@ Disposition pour le mot 2:
 | 11:8        | \[2\]\[2\] |
 | 15:12 (MSB) | \[2\]\[3\] |
 
- 
+ 
 
 Disposition pour le mot 3:
 
@@ -91,7 +89,7 @@ Disposition pour le mot 3:
 | 11:8        | \[3\]\[2\] |
 | 15:12 (MSB) | \[3\]\[3\] |
 
- 
+ 
 
 La comparaison de couleurs utilisée dans BC1 permet de déterminer si le texel transparent n’est pas utilisé dans ce format. Nous supposons que sans la comparaison de couleurs, les données de couleurs sont toujours traitées avec un mode à 4couleurs.
 
@@ -139,7 +137,7 @@ La disposition de la mémoire du bloc alpha est la suivante:
 | 6    | \[3\]\[1\] (1 MSB), \[3\]\[0\], \[2\]\[3\], \[2\]\[2\] (1 LSB) |
 | 7    | \[3\]\[3\], \[3\]\[2\], \[3\]\[1\] (2 LSBs)                    |
 
- 
+ 
 
 La comparaison de couleurs utilisée dans BC1 permet de déterminer si le texel transparent n’est pas utilisé avec ces formats. Nous supposons que sans la comparaison de couleurs, les données de couleurs sont toujours traitées en tant que mode à 4couleurs.
 
@@ -148,9 +146,9 @@ La comparaison de couleurs utilisée dans BC1 permet de déterminer si le texel 
 
 [Ressources de texture compressées](compressed-texture-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

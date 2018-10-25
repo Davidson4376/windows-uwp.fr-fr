@@ -6,15 +6,14 @@ description: Les API d’effet permettent aux développeurs de personnaliser l�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 3ee0d4c66dedfb0309a8426c779af3d71c8d1afc
-ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+ms.localizationpriority: medium
+ms.openlocfilehash: b943807f6102c80af76fecb650087f4f2e91b9c6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2017
-ms.locfileid: "839397"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572648"
 ---
 # <a name="composition-effects"></a>Effets de composition
 

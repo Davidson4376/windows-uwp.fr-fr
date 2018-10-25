@@ -6,15 +6,13 @@ keywords: activité utilisateur, activités utilisateur, chronologie, cortana re
 ms.author: pafarley
 ms.date: 08/23/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b11151df981a4b5ce233458581d21e405be9844c
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 199499e8737d638301f32d01a00ac603e3f5348f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512786"
+ms.locfileid: "5560713"
 ---
 # <a name="user-activities-best-practices"></a>Bonnes pratiques des activités utilisateur
 

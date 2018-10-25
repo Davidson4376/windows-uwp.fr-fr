@@ -6,21 +6,19 @@ title: Plateforme XAML
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 381103fed2d2caca64bf918951fc4fd31623a3a3
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: fe9bad5afabca3ef0b9c782446e581aea61fe4dc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842909"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542519"
 ---
 # <a name="xaml-platform"></a>Plateforme XAML
 
 
-Cette section comprend des rubriques qui décrivent des concepts de programmation généralement applicables aux applications que vous écrivez, dans la mesure où vous utilisez C#, Microsoft Visual Basic ou des extensions de composant Visual C++ (C++/CX) comme langage de programmation et XAML pour la définition de votre interface utilisateur. Il s’agit notamment de concepts de programmation de base tels que l’utilisation des propriétés et des événements, et la façon dont ces derniers s’appliquent à la programmation d’applications de plateforme Windows universelle (UWP). La plateforme Windows universelle (UWP) étend les concepts des propriétés C#, Visual Basic et C++/CX et leurs valeurs en ajoutant le système de propriétés de dépendance. Les rubriques de cette section documentent également le langage XAML tel qu’utilisé par UWP, et couvrent des cas de base et des sujets avancés sur l’utilisation du code XAML pour définir l’interface utilisateur de votre application UWP.
+Cette section inclut des rubriques qui décrivent des concepts de programmation qui sont généralement applicables aux applications que vous écrivez, si vous utilisez des extensions de composant c#, Microsoft Visual Basic ou Visual c++ (C++ / CX) comme langage de programmation et XAML pour votre interface utilisateur définition. Il s’agit notamment de concepts de programmation de base tels que l’utilisation des propriétés et des événements, et la façon dont ces derniers s’appliquent à la programmation d’applications de plateforme Windows universelle (UWP). La plateforme Windows universelle (UWP) étend les concepts des propriétés C#, Visual Basic et C++/CX et leurs valeurs en ajoutant le système de propriétés de dépendance. Les rubriques de cette section documentent également le langage XAML tel qu’utilisé par UWP, et couvrent des cas de base et des sujets avancés sur l’utilisation du code XAML pour définir l’interface utilisateur de votre application UWP.
 
 | Rubrique | Description |
 |-------|-------------|

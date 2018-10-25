@@ -6,16 +6,14 @@ ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, carte, localisation, clôture virtuelle, notifications
 ms.localizationpriority: medium
-ms.openlocfilehash: 02baf078d127f516d57e947145ec639df5ba891b
-ms.sourcegitcommit: 11edca90aaf7856c762e68903483079d30ad3877
-ms.translationtype: HT
+ms.openlocfilehash: 8e9fa71b3d6ae002aa37e14e23b55793876156c8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2018
-ms.locfileid: "1594777"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542273"
 ---
 # <a name="set-up-a-geofence"></a>Configurer une clôture virtuelle
 
@@ -479,7 +477,7 @@ Il est parfois difficile de procéder au test et au débogage d’applications d
 
 Pour que votre application puisse accéder à l’emplacement, l’option **Localisation** doit être activée sur l’appareil. Dans l’application **Paramètres**, vérifiez que les **paramètres de confidentialité relatifs à la géolocalisation** suivants sont bien activés :
 
--   Le paramètre **Emplacement de cet appareil...** est **activé** (non applicable dans Windows 10 Mobile).
+-   **Emplacement de cet appareil …** est **activé (non applicable dans Windows 10 Mobile)**
 -   Le paramètre des services de localisation **Emplacement** est **activé**.
 -   Sous **Choisir les applications qui peuvent utiliser votre emplacement**, votre application est **activée**.
 

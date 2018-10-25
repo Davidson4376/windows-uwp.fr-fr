@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 04/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: c0a3892348baff56bbef8d40dd9aade4e612c50d
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: c6c71cf98d9720cc5bfea219f565529b3308c49c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468772"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542426"
 ---
 # <a name="makepriexe-command-line-options"></a>Options de ligne de commande de MakePri.exe
 
@@ -417,6 +415,19 @@ Pour `resourcepack` et `versioned`, au lieu de fournir un fichier PRI en tant qu
 ```
 
 **FILEPATH** est un jeton qui spécifie l’emplacement du fichier PRI d’entrée ou du fichier de schéma PRI.
+
+## <a name="47indexoptionsio-option"></a>& option #47;IndexOptions(io)
+
+Vous utilisez l’option d’options index (/ e/s) avec `new`, `resourcepack`, et `versioned` pour spécifier les options qui fournissent un contrôle précis sur le comportement des indexeurs de ressource. Options d’index sont désactivées par défaut.
+
+```
+/IndexOptions(io) <OPTIONS>
+```
+
+**OPTIONS** est une liste séparée par des virgules composée des options suivantes.
+
+- +/-HiddenFiles(hf). Index (+) ou ignorer (-) les fichiers et dossiers cachés.
+- +/-LinkedFiles(lf). Index (+) ou ignorer (-) lié des fichiers et dossiers.
 
 ## <a name="47mappingfilemf-option"></a>Option &#47;MappingFile(mf)
 

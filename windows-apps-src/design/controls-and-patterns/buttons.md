@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: badaefc406daa5f4500c76262d916f47d82e7a52
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: b3afb0cba92e5f3c08de19c926bd5fb949185379
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469943"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5517410"
 ---
 # <a name="buttons"></a>Boutons
 
@@ -36,9 +36,9 @@ Contrôle | Description
 [Bouton](/uwp/api/windows.ui.xaml.controls.button) | Lance une action immédiate. Peut être utilisé avec un événement Click ou de la liaison de commande.
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Un bouton qui déclenche un événement Click en continu tant que l’état appuyé.
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Un bouton qui a mise en forme comme un lien hypertexte, utilisé pour la navigation. Voir [Liens hypertexte](hyperlinks.md) pour plus d’informations.
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | (Aperçu) Un bouton avec un chevron pour ouvrir un menu volant joint.
-[Bouton partagé](/uwp/api/windows.ui.xaml.controls.splitbutton) | (Aperçu) Un bouton avec deux côtés. Un côté initie une action et l’autre côté pour ouvrir un menu.
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | (Aperçu) Un bouton bascule avec deux côtés. Active ou désactive un côté marche/arrêt, et l’autre côté ouvre un menu.
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | Un bouton avec un chevron pour ouvrir un menu volant joint.
+[Bouton partagé](/uwp/api/windows.ui.xaml.controls.splitbutton) | Un bouton avec deux côtés. Un côté initie une action et l’autre côté pour ouvrir un menu.
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | Un bouton bascule avec deux côtés. Active ou désactive un côté marche/arrêt, et l’autre côté ouvre un menu.
 
 | **Obtenir la bibliothèque d’interface utilisateur Windows** |
 | - |
@@ -210,7 +210,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-drop-down-button"></a>Créer un bouton déroulant
 
-> **Version d’évaluation**: DropDownButton nécessite [dernière build de Windows 10 Insider Preview et Kit de développement](https://insider.windows.com/for-developers/) ou la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> DropDownButton requiert Windows 10, version 1809 ([Kit de développement logiciel 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou de la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 Un [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) est un bouton qui affiche un chevron sous la forme d’un indicateur visuel qu’il dispose d’un menu volant joint qui contient plus d’options. Il a le même comportement comme un bouton standard avec un menu volant; l’apparence est différente.
 
@@ -269,7 +269,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-split-button"></a>Créer un bouton partagé
 
-> **Version d’évaluation**: bouton partagé nécessite [dernière build de Windows 10 Insider Preview et Kit de développement](https://insider.windows.com/for-developers/) ou la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> Bouton partagé requiert Windows 10, version 1809 ([Kit de développement logiciel 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou de la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 Un [bouton partagé](/uwp/api/windows.ui.xaml.controls.splitbutton) comporte deux parties qui peuvent être appelés séparément. Une partie se comporte comme un bouton standard et appelle une action immédiate. L’autre partie appelle un menu volant qui contient des options supplémentaires que l’utilisateur peut choisir.
 
@@ -376,7 +376,7 @@ public sealed partial class MainPage : Page
 
 ## <a name="create-a-toggle-split-button"></a>Créer un bouton de fractionnement de bascule
 
-> **Version d’évaluation**: ToggleSplitButton nécessite [dernière build de Windows 10 Insider Preview et Kit de développement](https://insider.windows.com/for-developers/) ou la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> ToggleSplitButton requiert Windows 10, version 1809 ([Kit de développement logiciel 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou de la [Bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 Un [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) comporte deux parties qui peuvent être appelés séparément. Une partie se comporte comme un bouton bascule qui peut être activé ou désactivé. L’autre partie appelle un menu volant qui contient des options supplémentaires que l’utilisateur peut choisir.
 

@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 26705e9481a96d54eff70d04c004bf62fe049091
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 56ce3520248a0fca25230d7ee2a822d827d842a3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044868"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572208"
 ---
 # <a name="triangle-interpolation"></a>Interpolation de triangles
 
@@ -30,7 +28,7 @@ Pour certaines données de vertex, l’interpolation dépend du mode de trame ac
 | Plat         | Seul le facteur brouillard est interpolé en mode d’ombrage plat. Pour toutes les autres valeurs interpolées, la couleur du premier vertex du triangle est appliquée à tout le visage. |
 | Gouraud      | Une interpolation linéaire est réalisée entre les trois vertex.                                                                                                               |
 
- 
+ 
 
 Les couleurs diffuse et spéculaire sont traitées différemment en fonction du modèle de couleurs. Dans le modèle de couleurs RVB, le système utilise les composants de couleur rouge, vert et bleu dans l’interpolation.
 
@@ -41,9 +39,9 @@ Le composant alpha d’une couleur est traité comme une valeur interpolée dist
 
 [Systèmes de coordonnées et géométrie](coordinate-systems-and-geometry.md)
 
- 
+ 
 
- 
+ 
 
 
 

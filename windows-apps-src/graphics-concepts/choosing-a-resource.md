@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e616f5a04e50b400c4bd7a700981396570a6c1d
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 8ddac5d69ce0c562129255832adfc49380946510
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044658"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572378"
 ---
 # <a name="choosing-a-resource"></a>Choix d’une ressource
 
@@ -40,7 +38,7 @@ Le tableau suivant répertorie les types de ressources pouvant être liées à c
 | Fusion de sortie   | Sortie    | Affichage de la cible de rendu     | Mémoire tampon, Texture1D, Texture2D, Texture3D |
 | Fusion de sortie   | Sortie    | Affichage du gabarit de profondeur     | Texture1D, Texture2D                    |
 
- 
+ 
 
 ## <a name="span-ididentifyusagespanspan-ididentifyusagespanspan-ididentifyusagespanidentify-how-each-resource-will-be-used"></a><span id="Identify_Usage"></span><span id="identify_usage"></span><span id="IDENTIFY_USAGE"></span>Identifier l’utilisation de chaque ressource
 
@@ -56,7 +54,7 @@ Le matériel sur lequel s'exécute votre application comporte un minimum un proc
 | Transfert        | Processeur graphique                                  | Non applicable                 |
 | Immuable      | UC (uniquement au moment de la création de ressources) | Non applicable                 |
 
- 
+ 
 
 Le mode d’utilisation par défaut doit être utilisé pour une ressource qui ne doit être que rarement mise à jour par l'UC (moins d'une fois par trame). Dans l’idéal, l'UC n'écrit jamais directement dans une ressource associée à une utilisation par défaut, ce afin d’éviter tout risque de dégradation des performances.
 
@@ -75,7 +73,7 @@ Une autre approche consiste à considérer la manière dont une application trai
 | Rendu de texture                     | Valeur par défaut              |
 | Accès des données du processeur graphique par l'UC                | Transfert              |
 
- 
+ 
 
 Si vous ne savez pas quelle utilisation choisir, commencez par l’utilisation par défaut, qui correspond au scénario le plus courant. Une mémoire tampon constante de nuanceur est un type de ressource qui doit toujours être associé à une utilisation par défaut.
 
@@ -95,9 +93,9 @@ La technique employée dans cet exemple peut améliorer les performances en isol
 
 [Ressources](resources.md)
 
- 
+ 
 
- 
+ 
 
 
 
