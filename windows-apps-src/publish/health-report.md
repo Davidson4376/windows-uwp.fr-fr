@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, intégrité, incidents, blocages, intégrité de l’application, données d’intégrité, trace de pile, fichier cab, échec, échecs, pdb, symboles
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f5bf63eae4b1504642e764265a7936bcd67c645
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442288"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482896"
 ---
 # <a name="health-report"></a>Rapport d’intégrité
 
@@ -88,6 +88,6 @@ Ce graphique comporte deux onglets:
 - **Sessions clair sur incident**: affiche le pourcentage de sessions utilisateur uniques qui n’a pas rencontré un échec sur chaque jour (au cours des 30 derniers jours).
 
 
- 
+ 
 
- 
+ 

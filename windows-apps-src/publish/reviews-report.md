@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, passez en revue, commentaire, réviseur
 ms.localizationpriority: medium
 ms.openlocfilehash: 4500ebe7406db45a089f3ceba10c1d1e781ea679
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434969"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479946"
 ---
 # <a name="reviews-report"></a>Rapport sur les révisions
 
@@ -90,9 +90,9 @@ Chaque avis de client contient les éléments suivants:
 -   La date de l'avis.
 -   Le nom de réviseur telle qu’elle s’affiche dans le Microsoft Store.
 -   Le pays ou la région de l'auteur de l'avis.
--   La version du package de l'application installée sur l'appareil du client au moment de la rédaction de l'avis. (Cette information n'est pas disponible pour les avis soumis par les clients qui utilisent Windows8.1 ou une version antérieure.)
+-   La version du package de l'application installée sur l'appareil du client au moment de la rédaction de l'avis. (Ces informations n’est pas disponible pour les avis soumis par les clients Windows8.1 ou une version antérieure).
 -   La version du système d'exploitation installée sur l'appareil du client au moment de la rédaction de l'avis.
--   Le nom de l'appareil utilisé par le client au moment de la rédaction de l'avis. (Cette information n'est pas disponible pour les avis soumis par les clients qui utilisent Windows8.1 ou une version antérieure.)
+-   Le nom de l'appareil utilisé par le client au moment de la rédaction de l'avis. (Ces informations n’est pas disponible pour les avis soumis par les clients Windows8.1 ou une version antérieure).
 -   La « note d'utilité » de l'avis signalant le nombre de fois où l'avis a été considéré comme utile par d'autres clients. Cette information est indiquée sous la forme de deux valeurs : la première spécifie le nombre de clients ayant jugé l'avis utile, la seconde correspond au nombre total de clients ayant laissé une évaluation. Par exemple, une note d'utilité de 4/10 signifie que sur 10 personnes, 4 ont trouvé l'avis utile, et 6 non. (Si aucun utilisateur n’a évalué l’utilité d’un avis, aucune note d’utilité ne s’affiche.)
 
 Notez que les clients peuvent évaluer votre application sans formuler de commentaires. Le nombre d’avis sera donc généralement inférieur au nombre d’évaluations.
@@ -124,8 +124,8 @@ Vous découvrirez ci-après certaines actions supplémentaires à envisager en f
 -   Si l’évaluation moyenne est élevée, mais que le nombre de téléchargements est faible, vous pouvez rechercher des façons d’[élargir le public cible de votre application](attract-customers-and-promote-your-apps.md), puisque celle-ci a été bien accueillie par les utilisateurs qui l’ont essayée.
 
 
- 
+ 
 
- 
+ 
 
- 
+ 

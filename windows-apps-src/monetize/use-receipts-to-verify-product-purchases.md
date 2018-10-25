@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, achats dans l'application, FAI, reçu, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: ee6ca7876588efd8b8a5c86cfc8896d84ede91b9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439544"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479626"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>Utiliser des reçus pour vérifier les achats de produits
 
@@ -154,6 +154,6 @@ L’élément **ProductReceipt** a les attributs suivants:
 |  **ProductType**  |    Détermine le type de produit. Actuellement, ne prend en charge que la valeur **Durable**.          |  
 |  **PurchaseDate**  |    Date à laquelle l’achat a eu lieu.          |  |
 
- 
+ 
 
- 
+ 

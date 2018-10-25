@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, extensions, iap, durable, consommable, abonnement, type de produit, id produit, achat in-app, produit in-app
 ms.localizationpriority: medium
 ms.openlocfilehash: 0673048fc9a1ed8fb7c439607ebc4197039699e9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436722"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483425"
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>Définir le type et l’ID produit d’une extension
 
@@ -72,4 +72,4 @@ Voici quelques éléments à prendre en considération lors du choix d’un ID p
 -   Un ID produit ne peut comporter aucun de ces caractères: **&lt; &gt; \* % & : \\ ? + ,**
 -   Pour offrir votre module complémentaire sur toutes les versions de système d’exploitation, utilisez uniquement des caractères alphanumériques, des points et/ou des traits de soulignement. Si vous utilisez d’autres types de caractère, le module complémentaire ne sera pas disponible à l’achat pour les clients utilisant WindowsPhone8.1 ou une version antérieure.
 -   Un ID produit ne doit pas nécessairement être unique dans le Microsoft Store, mais doit l’être dans votre compte de développeur.
- 
+ 

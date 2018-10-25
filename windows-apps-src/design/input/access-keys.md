@@ -16,11 +16,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e842d6c5b8e62a9c043c97849fdf17f524ccfc7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435512"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481118"
 ---
 # <a name="access-keys"></a>Touches d’accès rapide
 
@@ -263,16 +263,16 @@ Nous vous recommandons toutefois les éléments suivants, au cas où vous auriez
 
     a.  La touche d’accès doit être **proche** de l’élément qui possède la touche d’accès rapide (le propriétaire).  
     b.  La touche d’accès doit **éviter des éléments de couverture activés** qui ont des touches d’accès rapide.   
-    c.  Si une touche d’accès ne peut pas être placée proche de son propriétaire, elle doit le chevaucher. 
+    c.  Si une touche d’accès ne peut pas être placée proche de son propriétaire, elle doit le chevaucher. 
 
 2.  **Détectabilité**: l’utilisateur peut rapidement découvrir la commande à l’aide de la touche d’accès.
 
-    a.  La touche d’accès ne **chevauche** jamais d’autres touches d’accès.  
+    a.  La touche d’accès ne **chevauche** jamais d’autres touches d’accès.  
 
 3.  **Analyse simple:** l’utilisateur peut parcourir facilement les touches d’accès.
 
     a.  Les touches d’accès doivent être **alignées** entre elles et avec l’élément d’interface utilisateur.
-    b.  Les touches d’accès doivent être **regroupées** autant que possible. 
+    b.  Les touches d’accès doivent être **regroupées** autant que possible. 
 
 ### <a name="relative-position"></a>Position relative
 

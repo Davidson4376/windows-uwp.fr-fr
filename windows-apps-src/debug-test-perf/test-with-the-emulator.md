@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431602"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483829"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Tester à l’aide de l’émulateur Microsoft pour Windows10 Mobile
 
@@ -181,7 +181,7 @@ Dans tous les modes, la fenêtre de l’émulateur présente trois zones d’int
 -   La section supérieure droite répertorie les journaux. Lorsque vous rapprochez deux appareils (ou approchez votre appareil auprès du terminal de PDV) puis les éloignez, les événements correspondants sont enregistrés. Cette section enregistre également si votre application a répondu avant que la connexion ne soit interrompue et toute autre action effectuée via l’interface utilisateur de l’émulateur, avec horodatage. Les données des journaux sont conservées entre les changements de mode. Vous pouvez effacer les journaux à tout moment en appuyant sur le bouton **Effacer** situé au-dessus de l’écran **Journaux**.
 -   Dans la partie inférieure de l’écran figurent le journal des messages et la transcription de tous les messages envoyés ou reçus dans le cadre de la connexion sélectionnée, en fonction du mode sélectionné.
 
-> **Important** Lors du premier lancement de l’outil d’approche, une invite relative au Pare-feu Windows s’affiche. Vous devez activer les 3cases à cocher et empêcher tout blocage de l’outil par le pare-feu. Sinon, l’outil échouera sans avertissement.
+> **Important**lors du premier lancement de l’outil d’approche, vous obtiendrez un pare-feu Windows invite. Vous devez activer les 3cases à cocher et empêcher tout blocage de l’outil par le pare-feu. Sinon, l’outil échouera sans avertissement.
 
 Après le lancement du programme d’installation rapide, suivez rigoureusement l’instruction ci-dessus : activez les 3 cases à cocher à l’invite du pare-feu. En outre, l’outil d’approche doit être installé et utilisé sur le même ordinateur hôte physique que l’émulateur Microsoft.
 
@@ -369,7 +369,7 @@ En mode **Itinéraire**, vous pouvez sélectionner l’un des profils de vitesse
 | Limite de vitesse | Limite de vitesse de l’itinéraire | Non applicable   | Parcourez l’itinéraire en respectant la limite de vitesse indiquée. |
 | Marche     | 5 km/h                   | 1,39 m           | Parcourez l’itinéraire au pas de 5 km/h. |
 | Vélo      | 25 km/h                  | 6,94 m           | Parcourez l’itinéraire à la vitesse de 25 km/h. |
-| Rapide        |                          |                  |Parcourez l’itinéraire en dépassant la limite de vitesse indiquée. | 
+| Rapide        |                          |                  |Parcourez l’itinéraire en dépassant la limite de vitesse indiquée. | 
 
 **Mode Itinéraire**
 
@@ -456,7 +456,7 @@ L’onglet **Carte SD** utilise un dossier de l’ordinateur de développement p
         -   Si vous cliquez sur **Annuler la synchronisation** pendant que l’opération de synchronisation est en cours, la carte est éjectée et les résultats de l’opération de synchronisation sont incomplets.
     -   Le bouton **Éjecter la carte SD** se change à nouveau en **Insérer la carte SD**.
 
-> **Remarque** Comme les cartes SD utilisées par le téléphone sont formatées avec le système de fichiersFAT32, la taille maximale est de 32Go.
+> **Remarque**comme les cartes SD utilisées par le téléphone sont formatées avec le système de fichiers FAT32, la taille maximale est de 32 Go.
 
 La vitesse de lecture et d’écriture de la carte SD simulée est limitée afin de reproduire les vitesses réelles. L’accès à une carte SD est plus lent que l’accès au disque dur de l’ordinateur.
 
@@ -625,17 +625,17 @@ Vous trouverez ci-après des problèmes connus liés à l’émulateur, ainsi qu
 
 ### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>Message d’erreur : « Échec lors de la suppression du commutateur Ethernet virtuel »
 
-Dans certains cas, y compris lorsque vous avez procédé à une mise à jour vers une nouvelle version d’évaluation de Windows10, un commutateur réseau virtuel associé à l’émulateur peut passer à un état dans lequel il ne peut pas être supprimé par le biais de l’interface utilisateur.
+Dans certains cas, y compris une fois que vous mettez à jour vers une nouvelle version d’évaluation de Windows 10, un commutateur réseau virtuel associé à l’émulateur peut obtenir dans un état où il ne peut pas être supprimé par le biais de l’interface utilisateur.
 
 Pour résoudre ce problème, exécutez « netcfg -d » à partir d’une invite de commandes administrateur : `C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`. À l’issue de l’exécution de la commande, redémarrez votre ordinateur pour terminer le processus de récupération.
 
-**Remarque** Cette commande supprime tous les appareil réseau, pas seulement ceux qui sont associés à l’émulateur. Lorsque l’ordinateur redémarre, tous les périphériques réseau matériels sont découverts automatiquement.
- 
+**Remarque**cette commande supprime tous les périphériques de mise en réseau, pas seulement ceux qui sont associés à l’émulateur. Lorsque l’ordinateur redémarre, tous les périphériques réseau matériels sont découverts automatiquement.
+ 
 ### <a name="unable-to-launch-the-emulators"></a>Impossible de lancer les émulateurs
 
 L’émulateur Microsoft inclut XDECleanup.exe, un outil qui supprime tous les ordinateurs virtuels, les disques différentiels et les commutateurs réseau propres à l’émulateur ; il est déjà fourni avec les fichiers binaires de l’émulateur (XDE). Vous devez utiliser cet outil pour nettoyer les ordinateurs virtuels d’émulateur si leur état est incorrect. Exécutez l’outil à partir d’une invite de commandes administrateur:`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
 
-> **Remarque** XDECleanup.exe supprime tous les ordinateurs virtuels Hyper-V propres à l’émulateur, ainsi que les points de contrôle des ordinateurs virtuels ou les états de mise en mémoire.
+> **Remarque**XDECleanup.exe supprime émulateur tous les ordinateurs virtuels Hyper-V spécifique et il points de contrôle ou les États.
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>Désinstaller l’image système Windows10 pour Mobile
 
@@ -666,5 +666,5 @@ Pour trouver des réponses à vos questions et résoudre vos problèmes lorsque 
 
 * [Exécuter les applications du Windows Phone dans l’émulateur](https://msdn.microsoft.com/library/windows/apps/xaml/dn632391.aspx)
 * [Archive du kit de développement logiciel (SDK) Windows et Windows Phone](https://dev.windows.com/downloads/sdk-archive)
- 
+ 
 

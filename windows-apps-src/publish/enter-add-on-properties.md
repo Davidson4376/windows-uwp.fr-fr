@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows10, uwp, extension, propriétés, période d'abonnement, type de produit, durée de vie du produit, type de contenu, iap, achat in-app, produit in-app
 ms.localizationpriority: medium
 ms.openlocfilehash: 73a494ea1899f3a764a668ae61c1235808eff1a7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438516"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483526"
 ---
 # <a name="enter-add-on-properties"></a>Saisir les propriétés d’une extension
 
@@ -89,7 +89,7 @@ Vous pouvez fournir jusqu’à dix mots clés d’un maximum de 30caractères ch
 Pour exécuter une requête sur ce champ, utilisez la propriété [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) de [l’espace de noms Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store). (Si vous utilisez [l’espace de noms Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store), utilisez plutôt la propriété [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords).)
 
 > [!NOTE]
-> Les mots clés ne sont pas utilisables dans les packages ciblant Windows8 et Windows8.1.
+> Mots clés ne sont pas utilisables dans des packages ciblant package Windows8 et Windows8.1.
 
 <span id="custom-developer-data" />
 
@@ -102,10 +102,10 @@ Par exemple, supposons que vous proposiez une application de jeu et que vous ven
 Pour exécuter une requête sur ce champ, utilisez la propriété [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) de [l’espace de noms Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store). (Si vous utilisez [l’espace de noms Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store), utilisez plutôt la propriété [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag).)
 
 > [!NOTE]
-> Le champ **Données personnalisées du développeur** n’est pas utilisable dans les packages ciblant Windows8 et Windows8.1.
+> Le champ de **données personnalisées du développeur** n’est pas disponible pour une utilisation dans les packages ciblant package Windows8 et Windows8.1.
 
- 
+ 
 
- 
+ 
 
- 
+ 

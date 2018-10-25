@@ -13,11 +13,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: de14d35b7a39776f43feeefc94ebe77af0c97373
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442624"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481368"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>Reconnaître les traits WindowsInk en tant que texte et formes
 
@@ -477,8 +477,7 @@ Consultez la rubrique portant sur la propriété [**InkRecognizer.Name**](https:
 
 Votre application peut interroger l’ensemble des moteurs de reconnaissance de l’écriture manuscrite installés et utiliser l’un d’entre eux ou laisser un utilisateur sélectionner sa langue par défaut.
 
-**Remarque**  
-Les utilisateurs peuvent consulter la liste des langues installées en accédant à **Paramètres-&gt; Heure et langue**. Les langues installées figurent sous **Langues**.
+**Remarque**  les utilisateurs peuvent voir une liste des langues installées en accédant à **paramètres -&gt; heure et langue**. Les langues installées figurent sous **Langues**.
 
 Pour installer de nouveaux modules linguistiques et activer la reconnaissance de l’écriture manuscrite pour cette langue, procédez comme suit:
 
@@ -488,7 +487,7 @@ Pour installer de nouveaux modules linguistiques et activer la reconnaissance de
 4.  Cliquez sur la langue et sélectionnez **Options**.
 5.  Dans la page **Options de langue**, téléchargez le **moteur de reconnaissance de l’écriture manuscrite** (vous pouvez également télécharger le module linguistique dans son intégralité, le moteur de reconnaissance vocale et la disposition du clavier ici).
 
- 
+ 
 
 Nous montrons ici comment utiliser le moteur de reconnaissance de l’écriture manuscrite pour interpréter un ensemble de traits sur un élément [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) basé sur le module de reconnaissance sélectionné.
 
@@ -873,4 +872,4 @@ Pour cet exemple, nous allons utiliser les mêmes paramètres de trait et d’in
 * [Exemple de notes de famille](https://aka.ms/cpubsample-familynotessample)
 
 
- 
+ 

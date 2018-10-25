@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, packages, téléchargement, le chargement de package
 ms.localizationpriority: medium
 ms.openlocfilehash: d966688110870b669bdd296ec14e145a5d77b74e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431566"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483285"
 ---
 # <a name="upload-app-packages"></a>Chargement des packages d’application
 
@@ -28,7 +28,7 @@ Pour plus d’informations sur le contenu et sur la structure d’un package, vo
 Pour charger des packages, faites-les glisser dans le champ de chargement, ou cliquez pour parcourir vos fichiers. La page **Packages** vous permet de télécharger des fichiers .msix, .msixupload, .msixbundle, .appx, .appxupload, .appxbundle, et/ou .xap.
 
 > [!IMPORTANT]
-> Pour Windows 10, nous vous recommandons de charger le fichier .msixupload ou .appxupload ici plutôt que .msix, .appx, .msixbundle ou .appxbundle.  Pour plus d’informations sur la création de packages d’applicationsUWP pour le WindowsStore, consultez l’article [Créer un package d’application UWP avec VisualStudio](../packaging/packaging-uwp-apps.md).
+> Windows 10, nous vous recommandons de charger le fichier .msixupload ou .appxupload ici plutôt que .msix, .appx, .msixbundle ou .appxbundle.  Pour plus d’informations sur la création de packages d’applicationsUWP pour le WindowsStore, consultez l’article [Créer un package d’application UWP avec VisualStudio](../packaging/packaging-uwp-apps.md).
 
 Si vous avez créé des [versions d’évaluation de package](package-flights.md) pour votre application, une liste déroulante apparaît avec l’option de copie des packages de l’une des versions d’évaluation de package. Sélectionnez la version d’évaluation de package comportant les packages que vous souhaitez intégrer. Vous pouvez transférer une partie ou la totalité des packages dans cette soumission.
 
@@ -69,7 +69,7 @@ Si votre soumission est une mise à jour d’une application publiée précédem
 
 Pour plus d’informations, consultez la section [Télécharger et installer des mises à jour de package pour votre application](../packaging/self-install-package-updates.md).
 
- 
+ 
 
 
 

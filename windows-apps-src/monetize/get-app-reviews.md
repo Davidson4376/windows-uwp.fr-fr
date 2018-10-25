@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, avis
 ms.localizationpriority: medium
 ms.openlocfilehash: c14b2ce6dd9fa7058ef3dbcd8e7e7a17a05fe78e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433394"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480934"
 ---
 # <a name="get-app-reviews"></a>Obtenir les avis sur les applications
 
@@ -115,7 +115,7 @@ Authorization: Bearer <your access token>
 | @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur10000, mais que plus de10000lignes de données d’avis sont associées à la requête. |
 | TotalCount | entier    | Nombre total de lignes des résultats de données pour la requête.  |
 
- 
+ 
 ### <a name="review-values"></a>Valeurs d’avis
 
 Les éléments du tableau *Value* comportent les valeurs suivantes:

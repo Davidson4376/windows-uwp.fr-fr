@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, acquisitions, ventes d’applications, téléchargements d'applications, installations, entonnoir, acquisition, conversions, canal, vues de pages d'applications
 ms.localizationpriority: medium
 ms.openlocfilehash: 75a3ce152257d10fe392b3f64381b3e82bc79961
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439511"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480793"
 ---
 # <a name="acquisitions-report"></a>Rapport Acquisitions
 
@@ -113,11 +113,11 @@ Le graphique **Données démographiques sur les clients** présente des informat
 > [!NOTE]
 > Certains clients ont choisi de ne pas partager ces informations. Si nous n’avons pas pu déterminer le groupe d’âge ni le sexe, l’acquisition entre dans la catégorie **Inconnu**.
 
- 
+ 
 
 ## <a name="app-page-views-and-conversions-by-channel"></a>Conversions et accès aux pages de l’application par canal
 
-Le graphique **Conversions et accès aux pages de l’application par canal** vous permet de déterminer la façon dont les clients qui utilisent Windows10 ont accédé à la description de votre application au cours de la période sélectionnée.
+Le graphique de **conversions par canal et page application** vous permet de voir comment les clients sur Windows 10 sont arrivés à la description de votre application au cours de la période sélectionnée.
 
 Dans ce graphique, un *canal* désigne la méthode à l’aide de laquelle un client a accédé à la page de description de votre application (par exemple, navigation et recherche dans le WindowsStore, lien à partir d’un site web externe, lien figurant dans l’une de vos campagnes personnalisées, etc.). Les canaux suivants sont inclus :
 
@@ -125,7 +125,7 @@ Dans ce graphique, un *canal* désigne la méthode à l’aide de laquelle un cl
 -   **Campagne personnalisée :** le client suivait un lien qui a utilisé un [ID de campagne personnalisée](create-a-custom-app-promotion-campaign.md).
 -   **Autres:** le client suivait un lien externe (sans ID de campagne personnalisée) d’un site web vers la description de votre application ou d’un moteur de recherche vers la description de votre application.
 
-Une *vue de page* signifie qu’un client a consulté la description de votre application dans le Windows Store, soit via le Windows Store sur le web, soit depuis l’application du Windows Store sur Windows10. Ce nombre inclut les vues par des utilisateurs qui ne sont pas connectés avec un compte Microsoft. Certains clients ont choisi de ne pas fournir ces informations à Microsoft.
+Une *vue de page* signifie qu’un client a consulté la page de description du Windows Store de votre application, via le Windows Store basée sur le web ou à partir de l’application du Windows Store sur Windows 10. Ce nombre inclut les vues par des utilisateurs qui ne sont pas connectés avec un compte Microsoft. Certains clients ont choisi de ne pas fournir ces informations à Microsoft.
 
 Une *conversion* signifie qu’un nouveau client (connecté avec un compte Microsoft) a obtenu une licence pour votre application (qu’elle soit payante ou gratuite).
 
@@ -149,6 +149,6 @@ Le graphique **Conversions totales de campagnes** indique le nombre total de con
 
 
 
- 
+ 
 
- 
+ 

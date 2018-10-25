@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443594"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481967"
 ---
 # <a name="reveal-highlight"></a>Principales fonctionnalités de révéler
 
@@ -260,7 +260,7 @@ Voici un modèle complet illustrant l'aspect d'un bouton Révéler:
 ### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>Optimisation de l’effet Révéler sur un contrôle personnalisé 
 
 Lorsque vous activez révéler sur un contrôle personnalisé ou remodélisé ou une surface de commandes personnalisées, les conseils suivants peuvent vous aider à optimiser l’effet:
- 
+ 
 * Pour les éléments adjacents avec des tailles qui ne sont pas alignées en hauteur ni en largeur (en particulier dans les listes): supprimez le comportement d’approche de bordure et laissez les bordures apparaître par pointage uniquement.
 * Pour les éléments de commandes qui entrent et sortent fréquemment de l’état désactivé: placez le pinceau d’approche de bordure sur les plaques de fond des éléments ainsi que sur leurs bordures afin de mettre en avant leur état.
 * Pour les éléments de commandes adjacents qui sont si proches qu’ils se touchent: ajoutez une marge de 1pixel entre les deuxéléments. 

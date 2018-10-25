@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 3042a6f52453fa4a4c50334b605f637f1dec92aa
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443432"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482321"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan
 
@@ -156,7 +156,7 @@ Pour configurer le manifeste du package, ouvrez-le et ajoutez une nouvelle décl
 6.  Cliquez ou appuyez sur l’onglet **Interface utilisateur de l’application**.
 7.  Affectez à **Notifications de verrouillage de l’écran** la valeur **Badge et texte de mosaïque**.
 8.  Définissez un chemin d’accès à une icône de 24x24pixels dans le champ **Logo du badge**.
-    **Important**  Cette icône doit uniquement utiliser des pixels monochromes et transparents.
+    **Important**cette icône doit utiliser uniquement des pixels monochromes et transparents.
 9.  Dans le champ **Petit logo**, définissez un chemin d’accès à une icône de 30x30pixels.
 10. Dans le champ **Logo large**, définissez un chemin d’accès vers une icône de 310x150pixels.
 
@@ -165,8 +165,8 @@ Pour configurer le manifeste du package, ouvrez-le et ajoutez une nouvelle décl
 
 Créez un élément [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) pour inscrire votre tâche.
 
-> **Remarque**  Depuis Windows8.1, les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Votre application doit être en mesure de gérer les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. Par exemple utilisez une instruction conditionnelle pour rechercher les erreurs d’inscription, puis retentez l’inscription qui a échoué avec d’autres valeurs de paramètre.
- 
+> **Remarque**depuis Windows8.1, les paramètres de l’inscription de tâche en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Votre application doit être en mesure de gérer les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. Par exemple utilisez une instruction conditionnelle pour rechercher les erreurs d’inscription, puis retentez l’inscription qui a échoué avec d’autres valeurs de paramètre.
+ 
 
 Dans la page principale de votre application, ajoutez la méthode **RegisterBackgroundTask** et appelez-la dans le gestionnaire d’événements **OnNavigatedTo**.
 
@@ -266,6 +266,6 @@ Pour déboguer la tâche en arrière-plan, définissez un point d’arrêt dans 
 * [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md)
 * [Recommandations et liste de vérification sur les vignettes et les badges](https://msdn.microsoft.com/library/windows/apps/hh465403)
 
- 
+ 
 
- 
+ 

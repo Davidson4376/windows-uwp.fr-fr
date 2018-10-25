@@ -2,7 +2,7 @@
 author: QuinnRadich
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Créer votre première application
-description: Créez une application de plateforme Windows universelle (UWP) pour Windows10 à l’aide de votre langage de programmation favori.
+description: Créer une application de plateforme Windows universelle (UWP) pour Windows 10 à l’aide de votre langage de programmation favori.
 ms.author: quradic
 ms.date: 1/25/2017
 ms.topic: article
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, première application, c#, c++, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: e8e2272ab761e1fa0bc9514f226a73a66a10662b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445826"
+ms.locfileid: "5483138"
 ---
 # <a name="create-your-first-app"></a>Créer votre première application
 
@@ -42,9 +42,9 @@ Si vous souhaitez consulter des ressources un peu plus amusantes que «Hello, Wo
 * [Un jeu UWP simple en2D pour le Microsoft Store, écrit en C# et MonoGame](get-started-tutorial-game-mg2d.md)
 
 
-## <a name="visual-c-component-extensions-ccx-and-xaml"></a>Extensions des composants Visual C++ (C++/CX) et XAML
+## <a name="visualc-component-extensions-ccx-and-xaml"></a>Extensions de composant Visual c++ (C++ / CX) et XAML
 
-Exploitez votre savoir-faire en matière de programmation C++ pour créer des applications à l’aide d’extensions de composants Visual C++ (C++/CX) avec XAML.
+Tirer parti de vos compétences en programmation C++ pour créer des applications à l’aide d’extensions de composant Visual c++ (C++ / CX) avec XAML.
 
 * [Créer une application «Hello World» en utilisant XAML avec C++/CX](create-a-basic-windows-10-app-in-cpp.md)
 

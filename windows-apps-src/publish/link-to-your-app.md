@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, lien, protocole windows store, lien vers une application, lien vers application
 ms.localizationpriority: medium
 ms.openlocfilehash: 0025321aa73a66cc0a976bd347e613de3c3c4765
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445666"
+ms.locfileid: "5482548"
 ---
 # <a name="link-to-your-app"></a>Créer un lien vers votre application
 
@@ -51,9 +51,9 @@ Pour utiliser ce schéma d’URI pour lier directement à la description de votr
 
 Pour plus d’informations sur l’utilisation du protocole de Microsoft Store, voir [lancer l’application de Microsoft](../launch-resume/launch-store-app.md).
 
- 
+ 
 
- 
+ 
 
 
 

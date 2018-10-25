@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5db1e03ac86768e2b1b1181cd2cc416a151a80
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445255"
+ms.locfileid: "5480783"
 ---
 # <a name="support-your-app-with-background-tasks"></a>Prendre en charge votre application avec des tâches en arrière-plan
 
@@ -46,7 +46,7 @@ Pour savoir comment créer des tâches en arrière-plan in-process, consultez la
 Pour savoir comment créer des tâches en arrière-plan hors processus, consultez la rubrique [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md).
 
 > [!TIP]
-> À partir de Windows10, il n’est plus nécessaire de placer une application sur l’écran de verrouillage pour qu’elle inscrive une tâche en arrière-plan.
+> À compter de Windows 10, vous n’avez plus besoin de placer une application sur l’écran de verrouillage qu’inscrive une tâche en arrière-plan pour celui-ci.
 
 ## <a name="background-tasks-for-system-events"></a>Tâches en arrière-plan pour événements système
 
@@ -78,7 +78,7 @@ Vous pouvez contrôler à quel moment la tâche en arrière-plan est exécutée,
 Ajoutez la condition **InternetAvailable** à votre tâche en arrière-plan [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour retarder le déclenchement de la tâche en arrière-plan jusqu'à ce que la pile réseau s’exécute. Cette condition économise l’énergie car la tâche en arrière-plan ne s’exécute jusqu'à ce que le réseau est disponible. Cette condition ne fournit pas d’activation en temps réel.
 
 Si votre tâche en arrière-plan nécessite une connectivité réseau, la valeur [IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour vous assurer que le réseau reste opérationnel pendant l’exécution de la tâche en arrière-plan. Cela indique à l’infrastructure de tâches en arrière-plan qu’elle doit maintenir le réseau actif pendant l’exécution de la tâche, même si le périphérique est passé en mode de veille connectée. Si votre tâche en arrière-plan ne définit pas **IsNetworkRequested**, alors votre tâche en arrière-plan sera pas en mesure d’accéder au réseau en mode de veille connectée (par exemple, lorsque l’écran du téléphone est désactivée.)
- 
+ 
 Pour plus d’informations sur les conditions de tâche en arrière-plan, consultez [définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md).
 
 ## <a name="application-manifest-requirements"></a>Conditions requises pour le manifeste de l’application
@@ -95,7 +95,7 @@ Les déclencheurs en temps réel suivants peuvent être utilisés pour exécuter
 | **Minuteur** | Vous pouvez exécuter des tâches en arrière-plan toutes les 15minutes et programmer leur exécution à l’aide du [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). Pour plus d’informations, voir [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md). |
 | **Notification Push** | Les tâches en arrière-plan répondent à l’objet [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) pour recevoir des notifications Push brutes. |
 
-**Remarque**  
+**Remarque**  
 
 Les applications Windows universelles doivent appeler l’élément [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire n’importe quel type de déclencheur en arrière-plan.
 
@@ -114,7 +114,7 @@ L’énumération [**SystemTriggerType**](https://msdn.microsoft.com/library/win
 | **ControlChannelReset** | La tâche en arrière-plan est déclenchée lorsqu’un canal de contrôle est réinitialisé. |
 | **SessionConnected**    | La tâche en arrière-plan est déclenchée dès que la session est connectée.   |
 
-   
+   
 Les déclencheurs d’événements système suivants permettent de savoir lorsque l’utilisateur active ou désactive une application sur l’écran de verrouillage.
 
 | Nom du déclencheur                     | Description                                  |
@@ -122,7 +122,7 @@ Les déclencheurs d’événements système suivants permettent de savoir lorsqu
 | **LockScreenApplicationAdded**   | Une vignette d’application est ajoutée à l’écran de verrouillage.     |
 | **LockScreenApplicationRemoved** | Une vignette d’application est supprimée de l’écran de verrouillage. |
 
- 
+ 
 ## <a name="background-task-resource-constraints"></a>Contraintes de ressource des tâches en arrière-plan
 
 Les tâches en arrière-plan sont légères. Le fait de limiter autant que possible l’exécution en arrière-plan garantit une expérience utilisateur optimale pour les applications de premier plan et une meilleure autonomie de la batterie. Pour cela, il convient d’appliquer des contraintes de ressource aux tâches en arrière-plan.
@@ -173,9 +173,9 @@ Les tâches en arrière-plan peuvent signaler leur progression, leur annulation 
 
 Vérifiez votre inscription de tâche en arrière-plan pendant le lancement de l’application. Assurez-vous que les tâches en arrière-plan dissociées de votre application sont présents dans BackgroundTaskBuilder.AllTasks. Réinscrivez ceux qui n’est pas présents. Annulez l’enregistrement de toutes les tâches qui ne sont plus nécessaires. Cela garantit que toutes les inscriptions de tâches en arrière-plan sont à jour chaque fois que l’application est lancée.
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="related-topics"></a>Rubriques associées
 
-**Recommandations conceptuelles pour le multitâche sous Windows10**
+**Recommandations conceptuelles pour le multitâche sous Windows 10**
 
 * [Lancement, reprise et multitâche](index.md)
 

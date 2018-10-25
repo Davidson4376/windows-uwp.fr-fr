@@ -12,27 +12,27 @@ ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e408509f4cebbc89587237c6e0dc67bc88b1558
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430935"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481332"
 ---
 # <a name="special-tile-templates"></a>Modèles de vignette spéciaux
  
 
-Les modèles de vignette spéciaux sont des modèles uniques qui sont animés, ou qui vous permettent simplement d’effectuer des opérations qui ne sont pas possibles avec des vignettes adaptatives. Chaque modèle de vignette spécial a été spécifiquement conçu pour Windows 10, sauf pour le modèle de vignette Icônes, modèle spécial classique qui a été mis à jour pour Windows 10. Cet article traite des trois modèles de vignette spéciaux: Icônes, Photos et Contacts.
+Les modèles de vignette spéciaux sont des modèles uniques qui sont animés, ou qui vous permettent simplement d’effectuer des opérations qui ne sont pas possibles avec des vignettes adaptatives. Chaque modèle de vignette spécial a été spécifiquement conçu pour Windows 10, sauf pour le modèle de vignette icônes, modèle spécial classique qui a été mis à jour pour Windows 10. Cet article traite des trois modèles de vignette spéciaux: Icônes, Photos et Contacts.
 
 ## <a name="iconic-tile-template"></a>Modèle de vignette Icônes
 
 
-Le modèle Icônes (également connu sous le nom de modèle «IconWithBadge») vous permet d’afficher une petite image dans le centre de la vignette. Windows10 prend en charge le modèle à la fois sur les téléphones et sur les tablettes/ordinateurs de bureau.
+Le modèle Icônes (également connu sous le nom de modèle «IconWithBadge») vous permet d’afficher une petite image dans le centre de la vignette. Windows 10 prend en charge le modèle sur le téléphone et tablettes/ordinateurs de bureau.
 
 ![Vignettes de courrier petites et moyennes](images/iconic-template-mail-2sizes.png)
 
 ### <a name="how-to-create-an-iconic-tile"></a>Comment créer une vignette Icônes
 
-Les étapes suivantes couvrent tout ce que vous devez savoir pour créer une vignette Icônes pour Windows10. D’un point de vue général, vous avez besoin de la ressource de votre image d’icône, puis vous envoyez une notification à la vignette à l’aide du modèle Icônes, et enfin vous envoyez une notification de badge qui fournit le numéro devant être affiché sur la vignette.
+Les étapes suivantes couvrent tout ce que vous devez savoir pour créer une vignette icônes pour Windows 10. D’un point de vue général, vous avez besoin de la ressource de votre image d’icône, puis vous envoyez une notification à la vignette à l’aide du modèle Icônes, et enfin vous envoyez une notification de badge qui fournit le numéro devant être affiché sur la vignette.
 
 ![Flux de développeur de la vignette Icônes](images/iconic-template-dev-flow.png)
 
@@ -188,7 +188,7 @@ TileContent content = new TileContent()
 ## <a name="people-tile-template"></a>Modèle de vignette Contacts
 
 
-L’application Contacts dans Windows10 utilise un modèle de vignette spécial qui affiche une collection d’images dans des cercles qui peuvent glisser verticalement ou horizontalement sur la vignette. Ce modèle de vignette est disponible depuis Windows 10 Build 10572 et tout le monde est invité à l’utiliser dans son application.
+L’application Contacts dans Windows10 utilise un modèle de vignette spécial qui affiche une collection d’images dans des cercles qui peuvent glisser verticalement ou horizontalement sur la vignette. Ce modèle de vignette est disponible depuis Windows 10 Build 10572 et tout le monde est à l’utiliser dans leur application.
 
 Le modèle de vignette Contacts fonctionne sur les vignettes des tailles suivantes :
 
@@ -196,19 +196,19 @@ Le modèle de vignette Contacts fonctionne sur les vignettes des tailles suivant
 
 ![Vignette Contacts moyenne](images/people-tile-medium.png)
 
- 
+ 
 
 **Vignette large** (TileWide)
 
 ![Vignette Contacts large](images/people-tile-wide.png)
 
- 
+ 
 
 **Grande vignette (bureau uniquement)** (TileLarge)
 
 ![Grande vignette Contacts](images/people-tile-large.png)
 
- 
+ 
 
 Si vous utilisez la [bibliothèque Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), la seule chose à faire pour utiliser le modèle de vignette Contacts est de créer un objet *TileBindingContentPeople* pour votre contenu *TileBinding*. La classe *TileBindingContentPeople* a une propriété Images où vous ajoutez vos images.
 
@@ -281,9 +281,9 @@ Pour envoyer la notification, voir [Choisir une méthode de remise de notificati
 * [Vignettes, badges et notifications](index.md)
 * [Créer des vignettes adaptatives](create-adaptive-tiles.md)
 * [Schéma du contenu de la vignette](../tiles-and-notifications/tile-schema.md)
- 
+ 
 
- 
+ 
 
 
 

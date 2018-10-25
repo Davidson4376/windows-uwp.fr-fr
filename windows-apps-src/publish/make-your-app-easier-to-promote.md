@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, promotionnel, promotion, recommandé, présenter, store
 ms.localizationpriority: medium
 ms.openlocfilehash: 18b2212a0b063611a546c3f627016fc7d3179071
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440293"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480914"
 ---
 # <a name="make-your-app-easier-to-promote"></a>Faciliter la promotion de votre application
 
@@ -47,7 +47,7 @@ Le MicrosoftStore présente différentes applications regroupées par catégorie
 
 
 
- 
+ 
 
 
 

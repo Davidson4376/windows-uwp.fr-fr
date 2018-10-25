@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, résumé du paiement, instruction, paiements, bénéfices, revenus, paiement
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d9845fdbd9c8dad77c8599a04850a47573858e8
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445278"
+ms.locfileid: "5481664"
 ---
 # <a name="payout-summary"></a>Résumé du paiement
 
@@ -72,7 +72,7 @@ Notez que les sections mentionnées ci-dessus affichent uniquement des informati
 | Solde historique        | Soldes de revenu dérivés d’un ancien système de paiement                                                             |
 | Transfert de taxe              | Ajustement fiscal sur les ventes réalisées en Corée                                                                   |
 
- 
+ 
 
 ## <a name="downloading-payment-transactions"></a>Téléchargement des transactions de paiement
 
@@ -112,11 +112,11 @@ Le tableau ci-après décrit les champs qui figurent dans le fichier .csv. Notez
 | Date et heure d’admissibilité   | Date et heure auxquelles vos revenus de transaction peuvent vous être versés (UTC). Lorsqu’un paiement est créé, il inclut les revenus de transactions dont la date et l’heure d’admissibilité sont antérieures à la date de création du paiement. (Inclus uniquement dans le fichier .csv **Réservé**)                                                                     |
 | Frais                 | Ventilation détaillée de tous les frais agrégés dans la colonne Montant de transaction. (Uniquement pour Microsoft Azure Marketplace; non inclus dans le fichier .csv **Réservé**)          |
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

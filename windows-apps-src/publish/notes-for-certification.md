@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, remarques aux testeurs
 ms.localizationpriority: medium
 ms.openlocfilehash: 741925a3ac49273bd7ba826dfbadd2e18724f307
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441987"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482241"
 ---
 # <a name="notes-for-certification"></a>Remarques pour la certification
 
@@ -44,9 +44,9 @@ Prenez en considération les points suivants lors de la rédaction des remarques
 -   **Soyez succinct et donnez des instructions simples.** Si vous devez vraiment fournir des instructions détaillées, vous pouvez indiquer l’URL vers une page contenant d’autres informations. Toutefois, gardez à l’esprit que les clients de votre application ne verront pas ces remarques. Si vous pensez avoir besoin de fournir des instructions complexes pour le test de votre application, peut-être devez-vous envisager de simplifier l’utilisation de votre application pour les clients (et les testeurs).
 -   **Les services et les composants externes doivent être en ligne et disponibles.** Si votre application doit se connecter à un service pour pouvoir fonctionner, assurez-vous que ce service sera en ligne et disponible. Incluez toutes les informations relatives au service dont les testeurs auront besoin, comme les informations de connexion. Si votre application ne peut pas se connecter à un service nécessaire au cours du test, elle risque de ne pas obtenir sa certification.
 
- 
+ 
 
- 
+ 
 
 
 

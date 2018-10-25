@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows10, uwp, jeux, interface utilisateur, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a82958f01530b84276823ea8d025d292bd664ac
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442795"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483539"
 ---
 # <a name="add-a-user-interface"></a>Ajouter une interface utilisateur
 
@@ -225,7 +225,7 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
 
  Obtention de la taille de la fenêtre de jeu est essentielle pour la programmation de l’interface utilisateur. La taille de la fenêtre est fournie dans une mesure appelée DIP (device independent pixels), où un DIP est défini comme 1/96e de pouce. Direct2D met à l’échelle les unités de dessin en pixels réel lors du dessin, pour ce faire à l’aide de la Windows paramètre de points par pouce (PPP). De même, lorsque vous dessinez le texte à l’aide de [**DirectWrite**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038), vous spécifiez DIP au lieu des points de la taille de la police. Les DIP sont exprimés sous la forme de nombres à virgule flottante.
 
- 
+ 
 
 ### <a name="displaying-game-state-info"></a>Afficher des informations d’état du jeu
 
@@ -479,7 +479,7 @@ Dans la rubrique suivante, [Ajout de contrôles](tutorial--adding-controls.md), 
 
 
 
- 
+ 
 
 
 
