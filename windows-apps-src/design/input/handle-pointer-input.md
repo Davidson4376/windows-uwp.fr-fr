@@ -9,15 +9,13 @@ keywords: stylet, souris, pavé tactile, entrées tactiles, pointeur, entrées, 
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a0753081af4128cf2cad3eeff9d8c919c42eb596
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: ba685f30eb0cf94314996587073a82440cf6c951
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895138"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572608"
 ---
 # <a name="handle-pointer-input"></a>Gérer les entrées du pointeur
 
@@ -37,7 +35,7 @@ La plupart des expériences d’interaction impliquent généralement que l’ut
 
 > [!NOTE]
 > Les informations propres au périphérique sont également promues à partir des données brutes HID si votre application l’exige.
- 
+ 
 
 Chaque point (ou contact) d’entrée sur la pile d’entrée est représenté par un objet [**Pointer**](https://msdn.microsoft.com/library/windows/apps/br227968) exposé via le paramètre [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) dans les différents gestionnaires d’événements de pointeur. En cas d’entrées multistylets ou tactiles multipoints, chaque contact est considéré comme un pointeur d’entrée unique.
 
@@ -50,7 +48,7 @@ Les applications UWP peuvent écouter les événements de pointeur suivants:
 
 > [!NOTE]
 > Limitez les entrées du pointeur à un élément d’interface utilisateur spécifique en appelant [**CapturePointer**](https://msdn.microsoft.com/library/windows/apps/br208918) sur cet élément dans un gestionnaire d’événements de pointeur. Lorsqu’un pointeur est capturé par un élément, seul cet objet reçoit des événements d’entrée de pointeur, même lorsque le pointeur se déplace à l’extérieur de la zone de délimitation de l’objet. [**IsInContact**](https://msdn.microsoft.com/library/windows/apps/br227976) (bouton de souris enfoncé, interaction tactile ou stylet en contact) doit être défini sur true pour que **CapturePointer** réussisse.
- 
+ 
 
 <table>
 <colgroup>
@@ -79,10 +77,10 @@ Les applications UWP peuvent écouter les événements de pointeur suivants:
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208965"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>Se produit lorsqu’un autre élément d’interface utilisateur capture le pointeur, lorsque le pointeur est libéré ou lorsqu’un autre pointeur est capturé par programme.</p>
 <div class="alert">
-<strong>Remarque</strong>  Il n’existe aucun événement de capture de pointeur correspondant.
+<strong>Remarque</strong>il n’existe aucun événement de capture de pointeur correspondant.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -127,7 +125,7 @@ Les applications UWP peuvent écouter les événements de pointeur suivants:
 <p>L’entrée de la souris est associée à un seul pointeur affecté lors de la première détection de l’entrée de la souris. Cliquer sur un bouton de souris (gauche, roulette ou droit) crée une association secondaire entre le pointeur et ce bouton via l’événement [PointerMoved](https://msdn.microsoft.com/library/windows/apps/br208970).</p></td>
 </tr>
 </tbody>
-</table> 
+</table> 
 
 ## <a name="pointer-event-example"></a>Exemple d'événement de pointeur
 
@@ -247,8 +245,7 @@ Nous allons maintenant utiliser le retour d’interface utilisateur dans le cadr
 -   Ce gestionnaire gère l’événement [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971). L’événement est ajouté au journal des événements, le pointeur est ajouté au dictionnaire de pointeurs actifs et les détails de pointeur sont affichés.
 
     > [!NOTE]
-    > [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) et [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) ne se produisent pas toujours ensemble. Votre application doit écouter et gérer tout événement susceptible de conclure un pointeur appuyé (comme [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969), [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964) et [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)).
-         
+    > [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) et [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) ne se produisent pas toujours ensemble. Votre application doit écouter et gérer tout événement susceptible de conclure un pointeur appuyé (comme [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969), [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964) et [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)).      
 
 ```csharp
 /// <summary>
@@ -330,7 +327,7 @@ private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
 -   Ce gestionnaire gère l’événement [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970). L’événement est ajouté au journal des événements et les détails de pointeur sont mis à jour.
 
     > [!Important]
-    > L’entrée de la souris est associée à un seul pointeur affecté lors de la première détection de l’entrée de la souris. Cliquer sur un bouton de souris (gauche, roulette ou droit) crée une association secondaire entre le pointeur et ce bouton via l’événement [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971). L’événement [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) est déclenché uniquement lorsque ce même bouton de souris est relâché (aucun autre bouton ne peut être associé au pointeur tant que cet événement n’est pas terminé). En raison de cette association exclusive, les autres clics de bouton de souris sont routés via l’événement [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970).     
+    > L’entrée de la souris est associée à un seul pointeur affecté lors de la première détection de l’entrée de la souris. Cliquer sur un bouton de souris (gauche, roulette ou droit) crée une association secondaire entre le pointeur et ce bouton via l’événement [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971). L’événement [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) est déclenché uniquement lorsque ce même bouton de souris est relâché (aucun autre bouton ne peut être associé au pointeur tant que cet événement n’est pas terminé). En raison de cette association exclusive, les autres clics de bouton de souris sont routés via l’événement [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970).     
 
 ```csharp
 /// <summary>
@@ -536,7 +533,7 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 -   Ce gestionnaire gère l’événement [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965). L’événement est ajouté au journal des événements, le pointeur est supprimé du tableau de pointeurs et les détails de pointeur sont mis à jour.
 
     > [!NOTE]
-    > [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) peut se produire au lieu de [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972). La capture de pointeur peut être interrompue pour diverses raisons, y compris l’interaction de l’utilisateur, la capture programmée d’un autre pointeur, appelant [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972).     
+    > [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) peut se produire au lieu de [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972). La capture de pointeur peut être interrompue pour diverses raisons, y compris l’interaction de l’utilisateur, la capture programmée d’un autre pointeur, appelant [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972).     
 
 ```csharp
 /// <summary>

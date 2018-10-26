@@ -3,20 +3,20 @@ author: TerryWarwick
 title: Prise en main de la technologie de point de service
 description: Cet article comporte des informations sur la prise en main des API UWP PointOfService.
 ms.author: jken
-ms.date: 05/1/2018
+ms.date: 06/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: a0583adbcef9e45dfe0b2e56e03ce7e0451ac5bb
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: 46dd1f615e42f6e89ee9a92cb980299e9a0e5205
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983542"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572298"
 ---
 # <a name="getting-started-with-point-of-service"></a>Prise en main de la technologie de point de service
+
+## <a name="pointofservice-basics"></a>Notions de base PointOfService
 
 Cette section contient des rubriques qui sont communes à toutes les catégories d’appareils de point de service.
 
@@ -25,11 +25,22 @@ Cette section contient des rubriques qui sont communes à toutes les catégories
 | [Déclaration des fonctionnalités](pos-basics-capability.md)      | Découvrez comment ajouter la fonctionnalité **pointOfService** à votre manifeste d’application.  Cette fonctionnalité est requise pour l'utilisation de l’espace de noms Windows.Devices.PointOfService.  |
 | [Énumération des appareils](pos-basics-enumerating.md)        | Découvrez comment définir un sélecteur d’appareils qui sert à interroger les appareils disponibles pour le système et comment utiliser ce sélecteur pour énumérer les appareils de point de service.  |
 | [Création d'un objet appareil](pos-basics-deviceobject.md)  | Découvrez comment créer un objet appareil PointOfService qui vous permet d’accéder aux propriétés en lecture seule du périphérique et de revendiquer le périphérique pour une utilisation exclusive. |
-| [Revendication de périphérique pour une utilisation exclusive ](pos-basics-claim.md)  | Découvrez comment réserver un périphérique pour une utilisation exclusive avec le modèle de revendication PointOfService, tout en permettant aux autres applications sur le même ordinateur d’accéder à l'appareil PointOfService lorsqu’ils ont besoin d’une utilisation exclusive.  |
+| [Revendication et activation ](pos-basics-claim.md)  | Découvrez comment réserver un périphérique pour une utilisation exclusive et activer pour les opérations d’e/s.  |
+| [Partage de périphériques avec d’autres personnes](pos-basics-sharing.md) | Découvrez comment partager le réseau ou des périphériques Bluetooth connecté avec d’autres ordinateurs dans un environnement dans lequel plusieurs ordinateurs s’appuient sur des périphériques partagés plutôt que dédiés périphériques connectés à chaque ordinateur.
+| [PointOfService de bout en bout](pos-get-started.md)  | Il s’agit d’un exemple de bout en bout illustrant comment interagir avec les périphériques PointOfService utilisant les exemples ci-dessus. |
 |
 
-## <a name="see-also"></a>Articles associés
-[Prise en main de Windows.Devices.PointOfService](pos-get-started.md)
+## <a name="see-also"></a>Voir aussi
+
+| Rubrique   | Description |
+|:--------|:------------|
+| [Distribution de l’application](../publish/distribute-lob-apps-to-enterprises.md) | Apprenez-en plus sur les options de distribution de votre application aux clients d’entreprise. |
+| [Cycle de vie d’application](../launch-resume/app-lifecycle.md) | En savoir plus sur le cycle de vie d’une application UWP et que se passe-t-il quand Windows lance, suspend et reprend l’exécution de votre application. |
+| [Ressources d’application](../app-resources/index.md) | Découvrez comment créer, mettre en package et consommer la chaîne de votre application, image et les ressources de fichiers. |
+| [Liaison de données](../data-binding/index.md) | Découvrez comment utiliser la liaison de données pour afficher des données dans l’interface utilisateur de votre application. |
+| [Énumération des appareils](enumerate-devices.md) | Découvrez les techniques de l’énumération d’utilisation avancée pour rechercher vos périphériques.|
+| [Applications adaptatives de version](../debug-test-perf/version-adaptive-apps.md) | Apprenez à concevoir votre application afin qu’elle s’exécute sur plusieurs versions de Windows 10.|
+|
 
 
 ## <a name="sample-code"></a>Exemple de code

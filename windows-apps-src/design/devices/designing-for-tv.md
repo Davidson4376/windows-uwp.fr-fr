@@ -10,19 +10,17 @@ keywords: Xbox, télévision, expérience «10-foot», boîtier de commande, té
 ms.author: elcowle
 ms.date: 12/5/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 pm-contact: chigy
 design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c9751ef316dbec7334fc12242d71dd58ae2cb262
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 098bc97de27d58fdc1d582e0db264ef04f0d3e61
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700965"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572348"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Conception pour Xbox et télévision
 
@@ -258,19 +256,19 @@ L’extrait de code suivant montre comment remplacer le comportement de navigati
 
 ```xml
 <StackPanel>
-    <Button x:Name="MyBtnLeft"
+    <Button x:Name="MyBtnLeft"
             Content="Search" />
-    <Button x:Name="MyBtnRight"
+    <Button x:Name="MyBtnRight"
             Content="Delete"/>
-    <Button x:Name="MyBtnTop"
+    <Button x:Name="MyBtnTop"
             Content="Update" />
-    <Button x:Name="MyBtnDown"
+    <Button x:Name="MyBtnDown"
             Content="Undo" />
-    <Button Content="Home"  
+    <Button Content="Home"  
             XYFocusLeft="{x:Bind MyBtnLeft}"
-            XYFocusRight="{x:Bind MyBtnRight}"
-            XYFocusDown="{x:Bind MyBtnDown}"
-            XYFocusUp="{x:Bind MyBtnTop}" />
+            XYFocusRight="{x:Bind MyBtnRight}"
+            XYFocusDown="{x:Bind MyBtnDown}"
+            XYFocusUp="{x:Bind MyBtnTop}" />
 </StackPanel>
 ```
 
@@ -279,8 +277,8 @@ Dans ce cas, lorsque le focus est sur le bouton `Home` et que l’utilisateur na
 Pour empêcher le focus de se déplacer dans une certaine direction à partir d’un contrôle, utilisez la propriété `XYFocus*` pour pointer sur ce même contrôle:
 
 ```xml
-<Button Name="HomeButton"  
-        Content="Home"  
+<Button Name="HomeButton"  
+        Content="Home"  
         XYFocusLeft ="{x:Bind HomeButton}" />
 ```
 
@@ -324,7 +322,7 @@ Que se passe-t-il si vous placez le contrôle `CommandBar` *au-dessus* de la lis
 
 Bien qu’il soit impossible d’empiler les éléments d’une `CommandBar` verticalement, le fait de les placer en face du défilement (par exemple, à gauche ou à droite d’une liste avec défilement vertical, ou en haut ou en bas d’une liste avec défilement horizontal) constitue une autre option que vous devrez peut-être prendre en compte si elle fonctionne bien pour la disposition de votre interface utilisateur.
 
-Si votre application dispose d’une `CommandBar` dont les éléments doivent être facilement accessibles aux utilisateurs, vous devrez peut-être les placer à l’intérieur d’un [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) et les supprimer de la `CommandBar`. `ContextFlyout` est une propriété de [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) et constitue le [menu contextuel](../controls-and-patterns/dialogs.md) associé à cet élément. Sur PC, lorsque cliquez à l’aide du bouton droit sur un élément avec un `ContextFlyout`, ce menu contextuel apparaît. Sur XboxOne, cela se produit lorsque vous appuyez sur le bouton **Menu** tandis que le focus se trouve sur un tel élément.
+Si votre application dispose d’une `CommandBar` dont les éléments doivent être facilement accessibles aux utilisateurs, vous devrez peut-être les placer à l’intérieur d’un [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) et les supprimer de la `CommandBar`. `ContextFlyout` est une propriété de [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) et constitue le [menu contextuel](../controls-and-patterns/dialogs-and-flyouts/index.md) associé à cet élément. Sur PC, lorsque cliquez à l’aide du bouton droit sur un élément avec un `ContextFlyout`, ce menu contextuel apparaît. Sur XboxOne, cela se produit lorsque vous appuyez sur le bouton **Menu** tandis que le focus se trouve sur un tel élément.
 
 ### <a name="ui-layout-challenges"></a>Défis en matière de disposition de l’interface utilisateur
 

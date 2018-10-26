@@ -6,16 +6,14 @@ title: Éléments, playlists et pistes multimédias
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 241f3f62f8bf8965f7bc718c2dfe0c7e76866c51
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: 73b6a19e2385f1a9b8afa4672df50d17ac16ec97
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832470"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572528"
 ---
 # <a name="media-items-playlists-and-tracks"></a>Éléments, playlists et pistes multimédias
 
@@ -196,7 +194,7 @@ Cet exemple ajoute une piste de texte personnalisé en spécifiant **TimedMetada
 
 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) vous permet de créer une playlist d’éléments multimédias, qui sont représentés par des objets **MediaPlaybackItem**.
 
-**Remarque**  Les éléments figurant dans [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) sont rendus à l’aide de la lecture sans blanc. Le système utilise les métadonnées fournies dans les fichiers codés MP3 ou AAC pour déterminer la compensation de délai ou de remplissage nécessaire pour la lecture sans blanc. Si les fichiers codés MP3 ou AAC ne fournissent pas ces métadonnées, le système détermine alors le délai ou le remplissage de manière heuristique. Pour les formats sans perte, tels que PCM, FLAC ou ALAC, le système n’exécute aucune action, car ces encodeurs n’introduisent ni retard ni remplissage.
+**Remarque**éléments dans un [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) sont rendus à l’aide de la lecture sans blanc. Le système utilise les métadonnées fournies dans les fichiers codés MP3 ou AAC pour déterminer la compensation de délai ou de remplissage nécessaire pour la lecture sans blanc. Si les fichiers codés MP3 ou AAC ne fournissent pas ces métadonnées, le système détermine alors le délai ou le remplissage de manière heuristique. Pour les formats sans perte, tels que PCM, FLAC ou ALAC, le système n’exécute aucune action, car ces encodeurs n’introduisent ni retard ni remplissage.
 
 Pour commencer, déclarez une variable pour stocker votre **MediaPlaybackList**.
 

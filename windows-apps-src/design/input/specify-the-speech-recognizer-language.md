@@ -9,15 +9,13 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 471f222bb22293ccb3b66f5387d43b74fc53b910
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 7e042a9bbedee3ded0601eda06da8e349c4b788c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653868"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572668"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>Spécifier la langue de reconnaissance vocale
 
@@ -60,9 +58,9 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 Les langues installées peuvent varier entre les appareils. Vérifiez l’existence d’une langue avant de vous en servir pour une contrainte particulière.
 
-**Remarque** Un redémarrage est nécessaire lorsqu’un nouveau module linguistique est installé. Une exception avec le code d’erreur SPERR\_NOT\_FOUND (0x8004503a) est déclenchée si la langue spécifiée n’est pas prise en charge ou n’est pas encore installée.
+**Remarque**un redémarrage est nécessaire après l’installation d’un nouveau module linguistique. Une exception avec le code d’erreur SPERR\_NOT\_FOUND (0x8004503a) est déclenchée si la langue spécifiée n’est pas prise en charge ou n’est pas encore installée.
 
- 
+ 
 
 Déterminez les langues prises en charge sur un appareil en vérifiant l’une des deux propriétés statiques de la classe [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) :
 
@@ -105,9 +103,9 @@ Une grammaire SRGS est un format XML standard ouvert représenté par la classe 
 **Exemples**
 
 * [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+ 
 
- 
+ 
 
 
 

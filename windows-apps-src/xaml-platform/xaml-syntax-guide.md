@@ -6,16 +6,14 @@ ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c74b05974bcfd9dd8c592d18f6f5fe4ff388f03
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: Auto
+ms.openlocfilehash: 1fe2460dfc5ab11a9168f1d1d87207d2b9490026
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675346"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572598"
 ---
 # <a name="xaml-syntax-guide"></a>Guide de la syntaxe XAML
 
@@ -91,7 +89,7 @@ Cet exemple abrégé utilise le texte d’initialisation pour spécifier les val
 </UserControl ...>
 ```
 
-**Remarque**  Certaines structures ne peuvent pas être déclarées en tant qu’éléments objets. Le texte d’initialisation n’est pas pris en charge et ces structures ne peuvent pas être utilisées comme ressources. Vous devez utiliser une syntaxe d’attribut pour affecter aux propriétés ces valeurs en XAML. Ces valeurs sont les suivantes : [**Duration**](https://msdn.microsoft.com/library/windows/apps/br242377), [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/br210411), [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870), [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) et [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995).
+**Remarque**certaines structures ne peuvent pas être déclarées en tant qu’éléments objets. Le texte d’initialisation n’est pas pris en charge et ces structures ne peuvent pas être utilisées comme ressources. Vous devez utiliser une syntaxe d’attribut pour affecter aux propriétés ces valeurs en XAML. Ces valeurs sont les suivantes : [**Duration**](https://msdn.microsoft.com/library/windows/apps/br242377), [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/br210411), [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870), [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) et [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995).
 
 ## <a name="setting-properties"></a>Définition de propriétés
 
@@ -242,7 +240,7 @@ Tout d’abord, la présence de l’élément objet indique qu’un nouvel objet
 
 Une autre règle du langage XAML est que les attributs d’un élément doivent pouvoir être définis dans n’importe quel ordre. Parexemple, il n’y a pas de différence entre `<Rectangle Height="50" Width="100" />` et `<Rectangle Width="100"  Height="50" />`. L’ordre que vous utilisez est une question de style.
 
-**Remarque**  Les concepteurs XAML effectuent souvent la promotion des conventions relatives à l’ordre si vous utilisez des aires de conception autres que l’éditeur XML, mais vous pouvez modifier librement ce code XAML par la suite, afin de réorganiser les attributs ou d’en introduire de nouveaux.
+**Remarque**concepteurs XAML effectuent souvent la promotion des conventions relatives à si vous utilisez des aires de conception autres que l’éditeur XML, mais vous pouvez modifier librement ce code XAML ultérieurement, afin de réorganiser les attributs ou introduire de nouveaux.
 
 ## <a name="attached-properties"></a>Propriétés jointes
 
@@ -271,8 +269,8 @@ Pour plus d’informations, voir [Vue d’ensemble des propriétés jointes](att
 
 Étant donné que le symbole de l’accolade ouvrante { ouvre la séquence d’extension de balisage, vous utilisez une séquence d’échappement pour spécifier une valeur de chaîne littérale qui commence par «{». La séquence d’échappement est «\{\}». Par exemple, pour spécifier une valeur de chaîne qui correspond à une accolade ouvrante unique, spécifiez la valeur d’attribut «\{\}\{». Vous pouvez également utiliser les guillemets alternatifs (par exemple, un **’** au sein d’une valeur d’attribut délimitée par **""**) pour fournir une valeur « \{ » sous forme de chaîne.
 
-**Remarque**  «\\}» fonctionne également dans un attribut entre guillemets.
- 
+**Remarque**«{\\}» fonctionne également si c’est à l’intérieur d’un attribut entre guillemets.
+ 
 ## <a name="enumeration-values"></a>Valeurs d’énumération
 
 De nombreuses propriétés de l’API Windows Runtime utilisent des énumérations comme valeurs. Si le membre est une propriété en lecture seule, vous pouvez définir une telle propriété en spécifiant une valeur d’attribut. Vous identifiez la valeur d’énumération à utiliser comme valeur de la propriété à l’aide du nom non qualifié de la constante. Par exemple, voici comment définir [**UIElement.Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) en XAML : `<Button Visibility="Visible"/>`. Ici, « Visible » en tant que chaîne est directement mappé à une constante nommée de l’énumération [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br209006), **Visible**.
@@ -280,7 +278,7 @@ De nombreuses propriétés de l’API Windows Runtime utilisent des énumératio
 -   N’utilisez pas une forme qualifiée, car elle ne fonctionnera pas. Parexemple, le code XAML suivant n’est pas valide:`<Button Visibility="Visibility.Visible"/>`
 -   N’utilisez pas la valeur de la constante. En d’autres termes, ne vous fiez pas à la valeur entière de l’énumération qui dépend ici de façon explicite ou implicite du mode de définition de l’énumération. Même si cette pratique semble fonctionner, elle est déconseillée que ce soit en XAML ou dans le code, car vous comptez sur un détail d’implémentation peut-être temporaire. Par exemple, ceci est déconseillé : `<Button Visibility="1"/>`.
 
-**Remarque**  Dans les rubriques de référence pour les API qui utilisent XAML et des énumérations, cliquez sur le lien vers le type d’énumération dans la section **Valeur de propriété** de **Syntaxe**. Vous faites référence à la page d’énumération où vous pouvez découvrir les constantes nommées pour cette énumération.
+**Remarque**dans les rubriques de référence pour les API qui utilisent XAML et des énumérations, cliquez sur le lien vers le type d’énumération dans la section de la **valeur de propriété** de la **syntaxe**. Vous faites référence à la page d’énumération où vous pouvez découvrir les constantes nommées pour cette énumération.
 
 Les énumérations peuvent accepter les indicateurs, ce qui signifie qu’elles ont pour attribut **FlagsAttribute**. Si vous devez spécifier une combinaison de valeurs pour une énumération comprenant des indicateurs en tant que valeur d’attribut XAML, utilisez le nom de chaque constante d’énumération, avec une virgule (,) entre chaque nom et aucun espace intermédiaire. Les attributs comprenant des indicateurs ne sont pas courants dans le vocabulaire XAML Windows Runtime, mais [**ManipulationModes**](https://msdn.microsoft.com/library/windows/apps/br227934) est un exemple où la valeur d’énumération comprenant des indicateurs dans XAML est prise en charge.
 
@@ -290,7 +288,7 @@ Dans de rares cas, vous verrez une syntaxe XAML où le type d’une propriété 
 
 ## <a name="xaml-placeholder-conventions-in-windows-runtime-reference"></a>Conventions sur les espaces réservés XAML dans les informations de référence sur Windows Runtime
 
-Si vous avez examiné une section **Syntaxe** des rubriques de référence pour les API Windows Runtime qui peuvent utiliser XAML, vous avez probablement constaté que la syntaxe inclut un assez grand nombre d’espaces réservés. La syntaxe XAML est différente de la syntaxe des extensions des composants (C++/CX) C#, Microsoft Visual Basic ou Visual C++, car il s’agit d’une syntaxe d’utilisation. Elle évoque votre utilisation finale dans vos propres fichiers XAML, mais sans être trop contraignante sur les valeurs que vous pouvez utiliser. Ainsi, l’utilisation décrit en général un type de grammaire qui combine des littéraux et des espaces réservés, et définit certains de ces espaces réservés dans la section **Valeurs XAML**.
+Si vous avez examiné une section **Syntaxe** des rubriques de référence pour les API Windows Runtime qui peuvent utiliser XAML, vous avez probablement constaté que la syntaxe inclut un assez grand nombre d’espaces réservés. Syntaxe XAML est différente de celle les extensions de composant c#, Microsoft Visual Basic ou Visual c++ (C++ / CX) syntaxe dans la mesure où la syntaxe XAML est une syntaxe d’utilisation. Elle évoque votre utilisation finale dans vos propres fichiers XAML, mais sans être trop contraignante sur les valeurs que vous pouvez utiliser. Ainsi, l’utilisation décrit en général un type de grammaire qui combine des littéraux et des espaces réservés, et définit certains de ces espaces réservés dans la section **Valeurs XAML**.
 
 Lorsque vous voyez des noms de types/noms d’éléments dans une syntaxe XAML pour une propriété, le nom affiché est relatif au type qui définit initialement la propriété. Cependant, la syntaxe XAML Windows Runtime prend en charge un modèle d’héritage de classe pour les classes [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). Vous pouvez donc souvent utiliser un attribut sur une classe qui n’est pas littéralement la classe de définition, mais qui dérive d’une classe qui a au préalable défini la propriété/l’attribut. Par exemple, vous pouvez définir [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) en tant qu’attribut sur toute classe dérivée de [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) avec un héritage complet. Par exemple : `<Button Visibility="Visible" />`. Ne considérez donc pas le nom d’élément affiché dans la syntaxe d’utilisation XAML de manière trop littérale. La syntaxe peut être viable pour des éléments représentant cette classe, mais aussi pour des éléments représentant une classe dérivée. Dans les cas où il est rare ou impossible que le type indiqué en tant qu’élément de définition soit dans une utilisation réelle, ce nom de type est délibérément en minuscules dans la syntaxe. Par exemple, la syntaxe affichée pour **UIElement.Visibility** est :
 
@@ -320,5 +318,5 @@ Les sections d’utilisation XAML emploient également différents espaces rése
 * [Vue d’ensemble du langage XAML](xaml-overview.md)
 * [Espaces de noms XAML et mappage d’espaces de noms](xaml-namespaces-and-namespace-mapping.md)
 * [Références aux ressources ResourceDictionary et XAML](https://msdn.microsoft.com/library/windows/apps/mt187273)
- 
+ 
 
