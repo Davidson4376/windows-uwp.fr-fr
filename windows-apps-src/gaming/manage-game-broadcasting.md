@@ -6,16 +6,14 @@ title: Gérer la diffusion de jeu
 ms.author: drewbat
 ms.date: 09/27/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, jeu, diffusion
 ms.localizationpriority: medium
-ms.openlocfilehash: f231d380af33eae36a6394aa5799b9f75a70471a
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: ae70c29927925abcf948435ed768871ba2427fd9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692610"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542744"
 ---
 # <a name="manage-game-broadcasting"></a>Gérer la diffusion de jeu
 Cet article montre comment gérer la diffusion de jeu pour une application UWP. Les utilisateurs doivent lancer la diffusion de jeu à l’aide de l’interface utilisateur système qui est intégrée à Windows. Toutefois, à partir de Windows10, version1709, les applications peuvent lancer l’interface utilisateur de diffusion système et recevoir des notifications lorsque la diffusion démarre et s’arrête.
@@ -57,9 +55,9 @@ Dans le gestionnaire de l’événement **IsCurrentAppBroadcastingChanged**, vou
 
 * [Jeux](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

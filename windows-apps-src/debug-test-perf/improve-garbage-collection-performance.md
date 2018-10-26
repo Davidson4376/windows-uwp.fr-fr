@@ -6,25 +6,23 @@ description: Les applications de plateforme Windows universelle (UWP) écrites e
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 3b7dfb274c5a6d55204a467fc894bac5fd044048
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 31279de84b8f00e4489a7aae962caa231bb16dc1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894649"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543224"
 ---
 # <a name="improve-garbage-collection-performance"></a>Améliorer les performances du nettoyage de la mémoire (garbage collection)
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Les applications UWP écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performance du récupérateur de mémoire .NET pour les applications UWP. Pour plus d’informations sur le fonctionnement du récupérateur de mémoire .NET et les outils en matière de débogage et d’analyse des performances du récupérateur de mémoire, voir [Nettoyage de la mémoire](https://msdn.microsoft.com/library/windows/apps/xaml/0xy59wtx.aspx).
+Les applications de plateforme Windows universelle (UWP) écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performance du récupérateur de mémoire .NET pour les applications UWP. Pour plus d’informations sur le fonctionnement du récupérateur de mémoire .NET et les outils en matière de débogage et d’analyse des performances du récupérateur de mémoire, voir [Nettoyage de la mémoire](https://msdn.microsoft.com/library/windows/apps/xaml/0xy59wtx.aspx).
 
-**Remarque**  Le fait de devoir intervenir dans le comportement par défaut du récupérateur de mémoire signifie que votre application rencontre des problèmes généraux de mémoire. Pour plus d’informations, voir [Utilisation de l’outil d’utilisation de la mémoire pendant le débogage dans Visual Studio2015](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx). Cette rubrique s’applique uniquement au code C# et Visual Basic.
+**Remarque**intervenir dans le comportement par défaut du garbage collector est fortement indicatif générale des problèmes de mémoire avec votre application. Pour plus d’informations, voir [Utilisation de l’outil d’utilisation de la mémoire pendant le débogage dans Visual Studio2015](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx). Cette rubrique s’applique uniquement au code C# et Visual Basic.
 
- 
+ 
 
 Le récupérateur de mémoire détermine quand s’exécuter en équilibrant la consommation mémoire du tas géré avec la quantité de travail qu’il doit effectuer. L’une de ses techniques consiste à diviser le tas en générations, et à ne nettoyer généralement qu’une partie du tas. Le tas géré comporte trois générations :
 
@@ -46,8 +44,8 @@ Générez un nettoyage de la mémoire uniquement après avoir mesuré les perfor
 
 Vous pouvez générer un nettoyage de la mémoire d’une génération en appelant [**GC.Collect(n)**](https://msdn.microsoft.com/library/windows/apps/xaml/y46kxc5e.aspx), où n représente la génération que vous voulez collecter (0, 1 ou 2).
 
-**Remarque**  Nous vous recommandons de ne pas forcer un nettoyage de la mémoire dans votre application. En effet, le récupérateur de mémoire utilise de nombreuses méthodes pour déterminer le moment le mieux adapté à un nettoyage, et un nettoyage forcé entraîne dans bien des cas une utilisation inutile de l’unité centrale. Toutefois, si vous savez qu’un grand nombre d’objets de votre application ne sont plus utilisés et que vous voulez réattribuer cette mémoire au système, il peut s’avérer approprié de forcer un nettoyage de la mémoire. Par exemple, dans le cadre d’un jeu, vous pouvez effectuer un nettoyage à la fin d’une séquence de chargement pour libérer de la mémoire avant de commencer à jouer.
- 
+**Remarque**nous vous recommandons de ne pas forcer un nettoyage dans votre application effet, le garbage collector utilise de nombreuses méthodes pour déterminer le meilleur moment pour effectuer une collection, et un nettoyage forcé entraîne dans de nombreux cas une utilisation inutile de l’unité centrale. Toutefois, si vous savez qu’un grand nombre d’objets de votre application ne sont plus utilisés et que vous voulez réattribuer cette mémoire au système, il peut s’avérer approprié de forcer un nettoyage de la mémoire. Par exemple, dans le cadre d’un jeu, vous pouvez effectuer un nettoyage à la fin d’une séquence de chargement pour libérer de la mémoire avant de commencer à jouer.
+ 
 Pour éviter le déclenchement accidentel d’un trop grand nombre de nettoyages de la mémoire, vous pouvez affecter à [**GCCollectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/bb495757.aspx) la valeur **Optimized**. Cela indique au récupérateur de mémoire de lancer un nettoyage uniquement s’il considère qu’il est justifié.
 
 ## <a name="reduce-garbage-collection-time"></a>Réduire la durée de nettoyage de la mémoire
@@ -82,9 +80,9 @@ Le Garbage Collector détermine quels objets sont dynamiques en suivant les réf
 
 Le remplacement des références d’objet par des index peut représenter un changement perturbant et compliqué pour votre application et s’avère plus efficace dans le cas d’objets volumineux avec un grand nombre de références. Ne procédez à ce changement que si vous identifiez des durées longues de nettoyages de la mémoire dans votre application liées aux objets riches en référence.
 
- 
+ 
 
- 
+ 
 
 
 

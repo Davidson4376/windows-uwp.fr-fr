@@ -1,31 +1,29 @@
 ---
 author: msatranjr
 title: Composants WindowsRuntime du service Broker pour les applications installées hors UWP
-description: Ce livre blanc présente une fonctionnalité prise en charge par Windows10, destinée aux entreprises, qui permet aux applications .NET tactiles d’utiliser le code responsable des opérations d’entreprise stratégiques.
+description: Ce livre blanc présente une fonctionnalité prise en charge par Windows 10, ce qui permet aux applications de .NET tactiles d’utiliser le code responsable des opérations d’entreprise stratégiques.
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: 71fd511a109022d265d13b575bd696e8c346567b
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: 3228cd80e7a9e8efb5dca1ec3a2d469e40a52c8a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832400"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543590"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>Composants WindowsRuntime du service Broker pour les applications installées hors UWP
 
-Cet article présente une fonctionnalité prise en charge par Windows10, destinée aux entreprises, qui permet aux applications .NET tactiles d’utiliser le code responsable des opérations d’entreprise stratégiques.
+Cet article traite une fonctionnalité prise en charge par Windows 10, ce qui permet aux applications de .NET tactiles d’utiliser le code responsable des opérations d’entreprise stratégiques.
 
 ## <a name="introduction"></a>Introduction
 
->**Remarque**  L’exemple de code qui accompagne ce livre blanc peut être téléchargé pour [Visual Studio2015 et2017](https://aka.ms/brokeredsample). Le modèle Microsoft Visual Studio permettant de générer des composants Windows Runtime du service Broker peut être téléchargé ici: [modèle Visual Studio2015 destiné aux applications Windows universelles pour Windows10](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
+>**Remarque**l’exemple de code qui accompagne ce livre blanc peut être téléchargé pour[Visual Studio 2015 et 2017](https://aka.ms/brokeredsample). Le modèle Microsoft Visual Studio permettant de générer des composants Windows Runtime du service Broker peut être téléchargé ici: [modèle Visual Studio2015 destiné aux applications Windows universelles pour Windows10](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
 
-Windows inclut une nouvelle fonctionnalité appelée *composants Windows Runtime du service Broker pour les applications installées hors Windows Store*. Nous utilisons le terme IPC (Inter-Process Communication) pour décrire la capacité à exécuter des composants logiciels de bureau existants dans un processus (composant de bureau) lors de l’interaction avec ce code dans une application UWP. Il s’agit d’un modèle bien connu des développeurs d’entreprise car les applications de base de données et les applications qui utilisent les services NT dans Windows partagent une architecture à plusieurs processus similaire.
+Windows inclut une nouvelle fonctionnalité appelée*Composants Windows Runtime du service Broker pour les applications chargées*. Nous utilisons le terme IPC (Inter-Process Communication) pour décrire la capacité à exécuter des composants logiciels de bureau existants dans un processus (composant de bureau) lors de l’interaction avec ce code dans une application UWP. Il s’agit d’un modèle bien connu des développeurs d’entreprise car les applications de base de données et les applications qui utilisent les services NT dans Windows partagent une architecture à plusieurs processus similaire.
 
 L’installation hors Windows Store de l’application est un composant essentiel de cette fonctionnalité.
 Les applications spécifiques à l’entreprise n’ont pas leur place dans le Microsoft Store et les sociétés ont des exigences spécifiques en matière de sécurité, confidentialité, distribution, installation et maintenance. C’est pourquoi, le modèle d’installation hors Windows Store est un élément requis pour utiliser cette fonctionnalité et également un détail d’implémentation critique.
@@ -36,7 +34,7 @@ Enfin, étant donné l’utilisation majoritaire du runtime .NET et du langage C
 
 ## <a name="application-components"></a>Composants d’application
 
->**Remarque** Cette fonctionnalité est exclusivement réservée à l’utilisation de .NET. L’application cliente et le composant de bureau doivent être créés à l’aide de .NET.
+>**Remarque**cette fonctionnalité est exclusivement réservée à l’utilisation de .NET. L’application cliente et le composant de bureau doivent être créés à l’aide de .NET.
 
 **Modèle d’application**
 
@@ -50,13 +48,13 @@ Le composant de bureau de cette fonctionnalité est un nouveau type d’applicat
 
 Le contrat entre l’application installée hors Windows Store et le composant du bureau est décrit en fonction du système de type UWP. Cela implique la déclaration d’une ou plusieurs classes C\# qui représentent une plateforme universelle Windows. Reportez-vous à la rubrique MSDN [Création de composants Windows Runtime en C\# et Visual Basic](https://msdn.microsoft.com/library/br230301.aspx) pour connaître les conditions spécifiques pour la création d’une classe Windows Runtime en C\#.
 
->**Remarque** Pour le moment, les énumérations ne sont pas prises en charge dans le contrat Composants Windows Runtime entre le composant de bureau et l’application installée hors Windows Store.
+>**Remarque**énumérations ne sont pas pris en charge dans le contrat de composants Windows Runtime entre le composant de bureau et l’application installée pour l’instant.
 
 **Application installée hors Windows Store**
 
 L’application installée hors Store est une application UWP normale à une exception près: elle est installée à partir d’un emplacement autre que le Microsoft Store. La plupart des mécanismes d’installation sont identiques: le manifeste et le package de l’application sont identiques (un ajout au manifeste est décrit plus en détail ultérieurement). Lorsque l’installation hors Windows Store est activée, un script PowerShell simple peut installer les certificats nécessaires et l’application elle-même. La meilleure pratique standard stipule que l’application installée hors Windows Store doit réussir le test de certification WACK inclus dans le menu Projet/Store de Visual Studio.
 
->**Remarque** L’installation hors Windows Store peut être activée dans Paramètres -&gt;Mise à jour et sécurité -&gt; Pour les développeurs.
+>**Remarque**hors peut être activée dans paramètres -&gt; mise à jour et sécurité -&gt; pour les développeurs.
 
 Il est à noter que le mécanisme App Broker n’est fourni dans le cadre de la Mise à jour Windows10 qu’en version 32bits. Le composant de bureau doit être 32bits.
 Les applications installées hors Windows Store peuvent être 64bits (si un proxy 64bits et un proxy 32bits sont inscrits), mais cela n’est pas la norme. La création de l’application en C\# à l’aide d’une configuration «neutre» et la valeur par défaut «préférer 32bits» créent des applications installées hors Windows Store 32bits.
@@ -165,7 +163,7 @@ Cette opération s’effectue via les scripts suivants. Ajoutez les scripts à l
     rem erase "$(TargetPath)"
 ```
 
-Une fois le fichier de référence **winmd** créé (dans le sous-dossier «reference» du dossier Target du projet), il est copié sur chaque projet d’application installée hors Windows Store qui le consomme et il est référencé. La section suivante décrira cette procédure. La structure du projet intégrée dans les règles de génération ci-dessus garantit que l’implémentation et la référence **winmd** se trouvent dans des répertoires séparés dans la hiérarchie de génération pour éviter toute confusion.
+Une fois la référence**winmd**est créé (dans le dossier «référence» sous le dossier du projet cible), il s’agit (copiés) sur chaque projet d’application installée utilisation et référencé. La section suivante décrira cette procédure. La structure du projet intégrée dans les règles de génération ci-dessus garantit que la mise en œuvre et la référence**winmd**se trouvent dans des répertoires séparés dans la hiérarchie de génération pour éviter toute confusion.
 
 ## <a name="side-loaded-applications-in-detail"></a>Détails sur les applications installées hors Windows Store
 Comme indiqué précédemment, l’application installée hors Windows Store est créée comme n’importe quelle application UWP, à un détail près: la déclaration de la disponibilité de la ou des classes Runtime dans le manifeste de l’application installée hors Windows Store. Cela permet à l’application d’écrire un nouvel accès à la fonctionnalité dans le composant de bureau. Une nouvelle entrée de manifeste dans la section <Extension> décrit la classe Runtime implémentée dans le composant de bureau et les informations sur son emplacement. Le contenu de cette déclaration dans le manifeste de l’application est le même pour les applications qui ciblent Windows10. Par exemple:
@@ -181,24 +179,24 @@ Comme indiqué précédemment, l’application installée hors Windows Store est
 </Extension>
 ```
 
-La catégorie est inProcessServer, car il existe plusieurs entrées dans la catégorie outOfProcessServer qui ne sont pas applicables à cette configuration d’application. Le composant <Path> doit toujours contenir clrhost.dll (cependant cela n’est **pas** mis en œuvre et l’indication d’une autre valeur provoquera un échec).
+La catégorie est inProcessServer, car il existe plusieurs entrées dans la catégorie outOfProcessServer qui ne sont pas applicables à cette configuration d’application. Notez que la <Path> composant doit toujours contenir clrhost.dll (cependant cela n’est**pas**en œuvre et en spécifiant une valeur différente est un échec).
 
 La section <ActivatableClass> est identique à une classe Runtime véritablement in-process préférée par un composant Windows Runtime dans le package d’application. <ActivatableClassAttribute> est un nouvel élément et les attributs Name="DesktopApplicationPath" et Type="string" sont obligatoires et invariants. L’attribut Value pointe vers l’emplacement où réside le fichier winmd d’implémentation du composant de bureau (décrit en détail dans la section suivante). Chaque classe Runtime préférée par le composant de bureau doit avoir son arborescence d’éléments <ActivatableClass>. ActivatableClassId doit correspondre au nom complet d’espace de noms de la classe Runtime.
 
-Comme indiqué dans la section «Définition du contrat», une référence de projet au winmd de référence du composant de bureau doit être créée. Le système de projet Visual Studio crée une structure de répertoires à deux niveaux portant le même nom. Dans l’exemple il s’agit de EnterpriseIPCApplication\\EnterpriseIPCApplication. La référence **winmd** est manuellement copiée dans le répertoire de deuxième niveau, puis la boîte de dialogue Références du projet est utilisée (cliquez sur le bouton **Parcourir..** ) pour rechercher et référencer ce **winmd**. L’espace de noms de premier niveau du composant de bureau (Fabrikam) doit ensuite s’afficher sous la forme d’un nœud de premier niveau dans la partie Références du projet.
+Comme indiqué dans la section «Définition du contrat», une référence de projet au winmd de référence du composant de bureau doit être créée. Le système de projet Visual Studio crée une structure de répertoires à deux niveaux portant le même nom. Dans l’exemple il s’agit de EnterpriseIPCApplication\\EnterpriseIPCApplication. La référence **winmd**est copiée manuellement dans ce répertoire de niveau deuxième, puis les références de projet boîte de dialogue est utilisée (cliquez sur la**Parcourir..** bouton) pour rechercher et référencer ce **fichier winmd**. L’espace de noms de premier niveau du composant de bureau (Fabrikam) doit ensuite s’afficher sous la forme d’un nœud de premier niveau dans la partie Références du projet.
 
->**Remarque** Vous devez absolument utiliser la **reference winmd** dans l’application installée hors Windows Store. Si vous placez accidentellement l’**implementation winmd** dans le répertoire de l’application installée hors Windows Store et que vous y faites référence, vous recevrez probablement une erreur de type «IStringable introuvable». Cela indique à coup sûr qu’un **winmd** incorrect a été référencé. Les règles post-build dans l’application serveur IPC (décrites dans la section suivante) placent ces deux **winmd** dans des répertoires distincts.
+>**Remarque** Il est très important d’utiliser le**fichier winmd de référence**dans l’application installée hors Windows Store. Si vous faites par inadvertance le**fichier winmd d’implémentation**vers le répertoire de l’application installée hors Windows Store et les informations de référence, vous recevrez probablement une erreur liée à «IStringable introuvable». Il s’agit d’un coup sûr que la mauvaise**winmd**a été référencé. Les règles de post-build dans l’application serveur IPC (décrites dans la section suivante) avec soin placent ces deux**winmd**dans des répertoires distincts.
 
 Les variables d’environnement (tout particulièrement %ProgramFiles%) peuvent être utilisées dans <ActivatableClassAttribute Value="path">. Comme indiqué précédemment, App Broker ne prend en charge que la version 32bits. %ProgramFiles% sera donc résolu en C:\\Program Files (x86) si l’application est exécutée sur un système d’exploitation 64bits.
 
 ## <a name="desktop-ipc-server-detail"></a>Détails du serveur IPC de bureau
 
-Les deux précédentes sections ont décrit la déclaration de la classe et les mécanismes de transport de la référence **winmd** dans le projet d’application installée hors Windows Store. Le travail restant dans le composant de bureau concerne l’implémentation. Comme nous voulons que le composant de bureau puisse appeler le code de bureau (en réutilisant des composants de code existants), le projet doit être configuré d’une certaine façon.
+Les deux précédentes sections décrivent la déclaration de la classe et les mécanismes de transport de la référence**winmd**au projet d’application installée hors Windows Store. Le travail restant dans le composant de bureau concerne l’implémentation. Comme nous voulons que le composant de bureau puisse appeler le code de bureau (en réutilisant des composants de code existants), le projet doit être configuré d’une certaine façon.
 En règle générale, un projet Visual Studio en .NET utilise l’un des deux «profils» existants.
 L’un est pour le bureau («.NetFramework») et l’autre cible la partie de l’application UWP du CLR («.NetCore»). Un composant de bureau dans cette fonctionnalité est hybride. Il en résulte que la section Références est construite précisément pour fusionner ces deux profils.
 
 Un projet d’application UWP standard ne contient pas de références de projet explicites, car l’intégralité de la surface d’API Windows Runtime est incluse de façon implicite.
-En règle générale, seules des références entre projets sont créées. Cependant, un projet de composant de bureau contient un ensemble de références spécial. Comme il s’agit à la base d’un projet «Bureau classique\\Bibliothèques de classes», il s’apparente à un projet de bureau. Des références explicites à l’API Windows Runtime (via des références aux fichiers **winmd**) doivent donc être créées. Ajoutez les références adéquates tel qu’indiqué ci-dessous.
+En règle générale, seules des références entre projets sont créées. Cependant, un projet de composant de bureau contient un ensemble de références spécial. Comme il s’agit à la base d’un projet «Bureau classique\\Bibliothèques de classes», il s’apparente à un projet de bureau. Références explicites à l’API Windows Runtime (via des références aux**winmd**fichiers) doivent être effectuées. Ajoutez les références adéquates tel qu’indiqué ci-dessous.
 
 ```XML
 <ItemGroup>
@@ -410,7 +408,7 @@ En règle générale, seules des références entre projets sont créées. Cepen
 
 Ces références sont un mélange précis de références qui sont nécessaires au fonctionnement correct de ce serveur hybride. Le protocole consiste à ouvrir le fichier .csproj (tel que décrit dans «Comment modifier le type de sortie du projet») et à ajouter ces références si nécessaire.
 
-Une fois ces références configurées correctement, la tâche suivante consiste à implémenter la fonctionnalité du serveur. Voir la rubrique MSDN [Meilleures pratiques en matière d’interopérabilité avec les composants Windows Runtime (applications UWP en C\#/VB/C++ et XAML)](https://msdn.microsoft.com/library/windows/apps/hh750311.aspx).
+Une fois ces références configurées correctement, la tâche suivante consiste à implémenter la fonctionnalité du serveur. Consultez la rubrique MSDN[meilleures pratiques pour l’interopérabilité avec les composants Windows Runtime (applications UWP en C\ #/ VB/C++ et XAML)](https://msdn.microsoft.com/library/windows/apps/hh750311.aspx).
 Cette tâche consiste à créer une DLL de composant Windows Runtime qui est en mesure d’appeler le code de bureau dans le cadre de son implémentation. L’exemple fourni comprend les principaux modèles utilisés dans Windows Runtime:
 
 -   Appels de méthode
@@ -423,7 +421,7 @@ Cette tâche consiste à créer une DLL de composant Windows Runtime qui est en 
 
 **Installer**
 
-Pour installer l’application, copiez le fichier **winmd** d’implémentation dans le répertoire correct indiqué dans le manifeste de l’application installée hors Windows Store associé: Value="path" de <ActivatableClassAttribute>. Copiez également les fichiers de support associés et les DLL proxy/stub (décrites plus bas). Si vous ne copiez pas le fichier **winmd** d’implémentation à l’emplacement du répertoire serveur, tous les appels de l’application installée hors Windows Store à la nouvelle classe Runtime provoqueront une erreur « classe non inscrite ». Si vous n’installez pas le proxy/stub (ou ne l’inscrivez pas) tous les appels échoueront sans valeur de retour. Cette dernière erreur n’est souvent **pas** associée à des exceptions visibles.
+Pour installer l’application, copiez l' implémentation**winmd**vers le répertoire correct indiqué dans le manifeste associé installée hors Windows Store de l’application: <ActivatableClassAttribute>valeur du = «path». Copiez également les fichiers de support associés et les DLL proxy/stub (décrites plus bas). Si vous ne copiez l' implémentation**winmd**au serveur emplacement du répertoire, tous les chargées appels de l’application à nouveau sur la classe runtime lève une erreur «classe non inscrite». Si vous n’installez pas le proxy/stub (ou ne l’inscrivez pas) tous les appels échoueront sans valeur de retour. Cette dernière erreur n’est souvent**pas**associées à des exceptions visibles.
 Si des exceptions visibles sont provoquées par cette erreur de configuration, elles font référence à un «cast incorrect».
 
 **Considérations en matière d’implémentation serveur**
@@ -457,7 +455,7 @@ return Task<int>.Run( () =>
 
 ```
 
->**Remarque** Il est possible d’attendre des opérations qui peuvent durer longtemps pendant l’écriture de l’implémentation. Si tel est le cas, le code **Task.Run** doit être déclaré:
+>**Remarque** Il est possible d’attendre des opérations qui peuvent durer longtemps pendant l’écriture de l’implémentation. Si tel est le cas, le**Task.Run**code doit être déclarée:
 
 ```csharp
 return Task<int>.Run(async () =>
@@ -480,18 +478,18 @@ Dans la mesure où l’approche IPC comprend le marshaling des interfaces Window
 
 **Création du proxy dans Visual Studio**
 
-Les procédures de création et d’inscription de proxys et de stubs pour une utilisation dans un package d’application UWP standard sont décrites dans la rubrique [Déclenchement d’événements dans les composants Windows Runtime](https://msdn.microsoft.com/library/windows/apps/dn169426.aspx).
+Le processus de création et inscription de proxys et stubs pour une utilisation dans un package d’application UWP standard sont décrites dans la rubrique[Déclenchement d’événements dans les composants Windows Runtime](https://msdn.microsoft.com/library/windows/apps/dn169426.aspx).
 Les étapes décrites dans cet article sont plus compliquées que la procédure décrite ci-dessous, car elles décrivent l’inscription du proxy/stub dans le package de l’application (plutôt qu’une inscription globale).
 
 **Étape1:** en utilisant la solution du projet de composant de bureau, créez un projet Proxy/Stub dans Visual Studio:
 
 **Solution &gt; Ajouter &gt; Projet &gt; Visual C++ &gt; Console Win32 option Sélectionner la DLL.**
 
-Suivez les étapes ci-dessous, le composant serveur s’appelle **MyWinRTComponent**.
+Les étapes ci-dessous, nous supposons que le composant serveur est appelé**MyWinRTComponent**.
 
 **Étape3:** supprimez tous les fichiers CPP/H du projet.
 
-**Étape4:** la section précédente intitulée «Définition du contrat» contient une commande post-build qui exécute **winmdidl.exe**, **midl.exe**, **mdmerge.exe**, et ainsi de suite. L’une des sorties de l’étape midl de cette commande post-build génère quatre sorties importantes:
+**Étape 4:** La section précédente «Définition du contrat» contient une commande POST-Build qui exécute**winmdidl.exe**,**midl.exe**,**mdmerge.exe**et ainsi de suite. L’une des sorties de l’étape midl de cette commande post-build génère quatre sorties importantes:
 
 a) Dlldata.c
 
@@ -503,7 +501,7 @@ d) Un fichier \*\_p.c (MyWinRTComponent_\p.c)
 
 **Étape5:** ajoutez ces quatre fichiers générés au projet «MyWinRTProxy».
 
-**Étape6:** ajoutez un fichier de définition au projet «MyWinRTProxy» **(Projet &gt; Ajouter un nouvel élément &gt; Code &gt; Fichier de définition de module**) et mettez à jour le contenu ainsi:
+**Étape 6:** Ajouter un fichier de définition au projet «MyWinRTProxy»**(projet > Ajouter un nouvel élément > Code > fichier de définition de Module**) et mettre à jour le contenu:
 
 LIBRARY MyWinRTComponent.Proxies.dll
 
@@ -539,9 +537,9 @@ MyWinRTComponent.Proxies
 
 **Déploiement du proxy**
 
-Le proxy doit être inscrit globalement. Pour ce faire, le processus d’installation doit appeler DllRegisterServer dans la DLL proxy. Dans la mesure où la fonctionnalité ne prend en charge que des serveurs x86 (pas de prise en charge 64bits), la configuration la plus simple utilise un serveur 32bits, un proxy 32bits et une application installée hors Windows Store 32bits. Le proxy se trouve généralement avec l’implémentation **winmd** pour le composant de bureau.
+Le proxy doit être inscrit globalement. Pour ce faire, le processus d’installation doit appeler DllRegisterServer dans la DLL proxy. Dans la mesure où la fonctionnalité ne prend en charge que des serveurs x86 (pas de prise en charge 64bits), la configuration la plus simple utilise un serveur 32bits, un proxy 32bits et une application installée hors Windows Store 32bits. Le proxy se trouve généralement avec l' implémentation**winmd**pour le composant de bureau.
 
-Une étape de configuration supplémentaire est nécessaire. Pour que le processus d’installation hors Windows Store charge et exécute le proxy, le répertoire doit être marqué «lecture / exécution» pour ALL_APPLICATION_PACKAGES. Utilisez pour cela l’outil en ligne de commande **icacls.exe**. Cette commande doit être exécutée sur le répertoire dans lequel se trouve l’implémentation **winmd** et les DLL proxy/stub :
+Une étape de configuration supplémentaire est nécessaire. Pour que le processus d’installation hors Windows Store charge et exécute le proxy, le répertoire doit être marqué «lecture / exécution» pour ALL_APPLICATION_PACKAGES. Cette opération est effectuée via**icacls.exe**outil de ligne de commande. Cette commande doit s’exécuter dans le répertoire dans lequel la mise en œuvre**winmd**et réside dll proxy/stub:
 
 *icacls . /T /grant \*S-1-15-2-1:RX*
 
@@ -557,7 +555,7 @@ Voici une liste d’éléments à prendre en compte:
 
 -   Le transfert en bloc des résultats limite le trafic interprocessus. La construction Windows Runtime Array est utilisée pour cela.
 
--   Si *List<T>*, où *T* est un objet, est retourné d’une opération async ou d’une extraction de propriété, de nombreux échanges interprocessus seront nécessaires. Par exemple, si vous retournez un objet *List&gt;People&lt;*. Chaque itération correspondra à un appel interprocessus. Chaque objet *People* retourné est représenté par un proxy et chaque appel à une méthode ou propriété sur cet objet individuel donnera lieu à un appel interprocessus. Un «simple» objet *List&lt;People&gt;* avec une valeur *Count* élevée produira un grand nombre d’appels lents. Le transfert en bloc de structures de contenu dans un tableau donne de meilleures performances. Par exemple:
+-   Un retour*liste<T>* où*T*est un objet d’une opération ou une propriété async, entraîne un grand nombre d’interprocessus. Par exemple, si vous retournez un*liste&lt;personnes&gt;* objets. Chaque itération correspondra à un appel interprocessus. Chaque*personnes*objet retourné est représenté par un proxy et chaque appel à une méthode ou propriété sur cet objet individuel donnera lieu dans un appel interprocessus. Par conséquent, un «simple»*liste&lt;personnes&gt;* objet où*nombre*est volumineux entraîne un grand nombre d’appels lents. Le transfert en bloc de structures de contenu dans un tableau donne de meilleures performances. Par exemple:
 
 ```csharp
 struct PersonStruct
@@ -569,10 +567,10 @@ struct PersonStruct
 }
 ```
 
-Retournez ensuite *PersonStruct\[\]* au lieu de *List&lt;PersonObject&gt;*.
+Retournez ensuite*PersonStruct\ [\]* à la place de*liste&lt;PersonObject&gt;*.
 Toutes les données sont transmises en un saut (hop) interprocessus
 
-Comme pour tous les éléments à prendre en compte pour les performances, les mesures et le test sont critiques. La télémétrie doit être utilisée dans différentes opérations pour connaître la durée de chacune d’elles. Il est important de réaliser ces mesures sur une plage : par exemple, quel est le temps nécessaire pour consommer tous les objets *People* pour une requête spécifique dans l’application installée hors Windows Store ?
+Comme pour tous les éléments à prendre en compte pour les performances, les mesures et le test sont critiques. La télémétrie doit être utilisée dans différentes opérations pour connaître la durée de chacune d’elles. Il est important de réaliser ces mesures sur une plage: par exemple, la durée pendant laquelle réellement faut-il pour consommer toutes les*personnes*objets pour une requête spécifique dans l’application installée hors Windows Store?
 
 Le test de charge variable peut également être utilisé. Pour cela, ajoutez des crochets de test de performance dans l’application qui introduisent des chargements différés variables pendant le traitement du serveur. Cela simule différents types de charge et la réaction de l’application à différentes performances du serveur.
 L’exemple montre comment introduire des délais dans le code en utilisant des techniques async appropriées. La durée exacte du délai et la plage de randomisation à ajouter à la charge artificielle dépendent de la conception de l’application et de l’environnement dans lequel l’application s’exécute.
@@ -581,7 +579,7 @@ L’exemple montre comment introduire des délais dans le code en utilisant des 
 
 Lorsque vous souhaitez apporter des modifications au serveur, assurez-vous au préalable qu’aucune instance démarrée précédemment n’est encore en cours d’exécution. Même si le code COM nettoie le processus, le minuteur d’arrêt prend plus de temps et nuit à l’efficacité du développement itératif. La suppression d’instances précédentes en cours d’exécution est donc une étape normale du développement. Cela nécessite que le développeur sache quelle instance dllhost héberge le serveur.
 
-Il est possible de trouver et d’arrêter le processus serveur via le Gestionnaire des tâches ou d’une autre application tierce. L’outil de ligne de commande **TaskList.exe** intégré peut également être utilisé. La syntaxe de ses commandes est simple:
+Il est possible de trouver et d’arrêter le processus serveur via le Gestionnaire des tâches ou d’une autre application tierce. L’outil de ligne de commande**TaskList.exe**est également incluse et a syntaxe, par exemple:
 
   
  | **Commande** | **Action** |
@@ -590,7 +588,7 @@ Il est possible de trouver et d’arrêter le processus serveur via le Gestionna
  | tasklist /FI "IMAGENAME eq dllhost.exe" /M | Affiche des informations sur toutes les instances dllhost.exe. Le commutateur/M répertorie les modules ayant été chargés. |
  | tasklist /FI "PID eq 12564" /M | Cette option vous permet de rechercher une instance dllhost.exe en fonction de son PID (si vous le connaissez). |
 
-Pour un serveur du service Broker, *clrhost.dll* doit figurer dans la liste des modules chargés.
+La liste du module pour un serveur du service broker doit répertorier*clrhost.dll*dans la liste des modules chargés.
 
 ## <a name="resources"></a>Ressources
 

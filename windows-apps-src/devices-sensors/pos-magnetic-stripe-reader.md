@@ -5,16 +5,14 @@ description: Rubrique d’index pour le lecteur de bande magnétique documentati
 ms.author: elcowle
 ms.date: 10/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, point de service, PDV, lecteur de bande magnétique
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ce34623a0af9de6e0d678052719fb02f2a9672b
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 11653c10310726c79de9deef17a570207045ec4a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5475662"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542816"
 ---
 # <a name="magnetic-stripe-reader"></a>Lecteur de bande magnétique
 

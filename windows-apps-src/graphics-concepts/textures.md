@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c8d48114a6d4bc7386951264a5fc94990bd0b7f5
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 516a15c17546d9f9b5e7cb7f8c0651f1372275ae
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653038"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545146"
 ---
 # <a name="textures"></a>Textures
 
@@ -35,7 +33,7 @@ Pour améliorer vos performances, vous pouvez envisager d’utiliser des texture
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -79,16 +77,16 @@ Pour améliorer vos performances, vous pouvez envisager d’utiliser des texture
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques associées
 
 
-[Guide d’apprentissage des graphiques Direct3D](index.md)
+[Guide d’apprentissage des graphismes Direct3D](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

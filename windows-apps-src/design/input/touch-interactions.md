@@ -9,15 +9,13 @@ keywords: entrées tactiles, pointeur, entrées, interactions avec l’utilisate
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ef67c179e691d14f3636a663a24ebbb862c35f7
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: fbb2b6e5edee47d75d7115a38f95abf5ae71529a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675186"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543479"
 ---
 # <a name="touch-interactions"></a>Interactions tactiles
 
@@ -78,14 +76,13 @@ Le tableau suivant présente certaines des différences qui existent entre les p
 
 
 
-**Remarque**  
-L’entrée indirecte a bénéficié de plus de 25 ans d’amélioration. Les fonctions comme les info-bulles déclenchées par le pointage ont été conçues pour résoudre les problèmes d’exploration de l’interface utilisateur spécifiques aux entrées à l’aide du pavé tactile, de la souris, du stylo/stylet et du clavier. Les fonctionnalités d’interface utilisateur de ce genre ont été repensées pour enrichir l’expérience de la saisie tactile, sans compromettre l’expérience utilisateur sur les autres appareils.
+**Remarque**  entrée indirecte a bénéficié de plus de 25 ans d’amélioration. Les fonctions comme les info-bulles déclenchées par le pointage ont été conçues pour résoudre les problèmes d’exploration de l’interface utilisateur spécifiques aux entrées à l’aide du pavé tactile, de la souris, du stylo/stylet et du clavier. Les fonctionnalités d’interface utilisateur de ce genre ont été repensées pour enrichir l’expérience de la saisie tactile, sans compromettre l’expérience utilisateur sur les autres appareils.
 
- 
+ 
 
 ## <a name="use-touch-feedback"></a>Utiliser le retour tactile
 
-Les retours visuels appropriés au cours des interactions avec votre application aident les utilisateurs à reconnaître, à apprendre et à s’adapter à l’interprétation de leurs interactions par l’application et par la plateforme Windows. Le retour visuel peut indiquer les interactions réussies, transmettre l’état du système, améliorer le sentiment de contrôle, réduire les erreurs, aider les utilisateurs à comprendre le système et le périphérique d’entrée et encourager l’interaction.
+Les retours visuels appropriés au cours des interactions avec votre application permet aux utilisateurs de reconnaître, à apprendre et s’adapter à l’interprétation de leurs interactions par l’application et le Windowsplatform. Le retour visuel peut indiquer les interactions réussies, transmettre l’état du système, améliorer le sentiment de contrôle, réduire les erreurs, aider les utilisateurs à comprendre le système et le périphérique d’entrée et encourager l’interaction.
 
 Le retour visuel est essentiel quand l’utilisateur doit réaliser, avec la fonction tactile, des activités qui demandent de l’exactitude et de la précision selon l’endroit concerné. Affichez le retour, quels que soient l’emplacement et le moment de la détection de l’entrée tactile, pour aider l’utilisateur à comprendre toutes les méthodes de ciblage personnalisé qui sont définies par votre application et ses contrôles.
 
@@ -156,9 +153,9 @@ En outre, nous vous encourageons vivement à tenir compte des recommandations su
 -   Les interactions doivent prendre en charge les manipulations composées. Par exemple, resserrez les doigts pour zoomer tout en les faisant glisser pour effectuer un mouvement panoramique.
 -   Ne classez pas les interactions en fonction du temps. Une même interaction doit avoir le même résultat, quel que soit le temps pris pour l’effectuer. Les activations temporelles impliquent des délais obligatoires à respecter par l’utilisateur. Par ailleurs, elles portent atteinte non seulement à la nature immersive des manipulations directes, mais également à la perception de la réactivité du système.
 
-    **Remarque** Il existe une exception à cette règle: quand vous utilisez des interactions chronométrées à titre d’aide à l’apprentissage et à l’exploration (par exemple, l’appui prolongé).
+    **Remarque**une exception à cette règle est où vous utilisez des interactions chronométrées pour vous aider à apprentissage et à l’exploration (par exemple, appuyer et maintenir).
 
-     
+     
 
 -   Les descriptions appropriées et les signaux visuels influent très favorablement sur l’utilisation des interactions avancées.
 
@@ -207,7 +204,7 @@ Voici l’ensemble de mouvements tactiles de base pris en charge par la platefor
 | Pincer          | Action de manipulation | Pression de l’écran avec deux doigts ou plus, puis rapprochement des doigts.                         |
 | Étirer        | Action de manipulation | Pression de l’écran avec deux doigts ou plus, puis étirement des doigts.                           |
 
- 
+ 
 
 <!-- mijacobs: Removing for now. We don't have a real page to link to yet. 
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
@@ -239,7 +236,7 @@ Voici une liste des événements de pointeur et leur argument d’événement as
 | [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973)   | Se produit lorsque la valeur delta d’une roulette de souris change.         |
 | [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) | Fournit des données pour tous les événements de pointeur.                         |
 
- 
+ 
 
 L’exemple suivant indique comment utiliser les événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) et [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) pour gérer une interaction d’appui sur un objet [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle).
 
@@ -435,15 +432,15 @@ Voici une liste des événements de manipulation et de leur argument d’événe
 | [**ManipulationVelocities**](https://msdn.microsoft.com/library/windows/apps/br242032)                                              | Décrit la vitesse à laquelle les manipulations se produisent.                                                                                         |
 | [**ManipulationCompletedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702035)             | Fournit des données pour l’événement [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945).                                       |
 
- 
+ 
 
 Un mouvement se compose d’une série d’événements de manipulation. Chaque mouvement débute par un événement [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950), par exemple lorsqu’un utilisateur appuie sur l’écran.
 
 Puis, un ou plusieurs événements [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) sont déclenchés. Par exemple, si vous appuyez sur l’écran et faites glisser votre doigt sur celui-ci. Enfin, un événement [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) est déclenché lorsque l’interaction prend fin.
 
-**Remarque** Si vous n’avez pas d’écran tactile, vous pouvez tester le code de votre événement de manipulation dans le simulateur à l’aide d’une souris et d’une interface de roulette de souris.
+**Remarque**si vous n’avez un écran tactile, vous pouvez tester votre code d’événements de manipulation dans le simulateur à l’aide d’une souris et une interface de roulette de la souris.
 
- 
+ 
 
 L’exemple suivant indique comment utiliser les événements [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) pour gérer une interaction de glissement sur l’élément [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) et de déplacement de ce dernier sur l’écran.
 
@@ -607,9 +604,9 @@ Tous les événements de pointeur, événements de mouvement et événements de 
 * [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
 * [Entrée : mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
+ 
 
- 
+ 
 
 
 

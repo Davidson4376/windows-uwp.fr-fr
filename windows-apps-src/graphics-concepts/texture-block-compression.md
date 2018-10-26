@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f3dc2c29f30c32afda71406917afeec95bbd2ec
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 46c58da3dbe425b055855423aa9e9cebaa06f929
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044788"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544957"
 ---
 # <a name="texture-block-compression"></a>Compression de blocs de texture
 
@@ -25,7 +23,7 @@ La prise en charge de la compression de blocs (BC) pour les textures a été ét
 
 Pour plus d’informations sur la prise en charge de l’algorithme de compression de blocs avant Direct3D11 et la prise en charge des formats BC1 à BC5, voir [Compression de blocs (Direct3D10)](https://msdn.microsoft.com/library/windows/desktop/bb694531).
 
-** Remarque à propos des Formats de fichiers: ** les formats de compression de texture du BC6H et BC7 utilisent le format de fichier partage dynamique de lecteurs pour stocker les données de texture compressé. Pour plus d’informations, voir le [Guide de programmation pour DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991).
+**Remarque concernant les Formats de fichier:** Les formats de compression de texture BC6H et BC7 utilisent le format de fichier DDS pour stocker les données de texture compressées. Pour plus d’informations, voir le [Guide de programmation pour DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991).
 
 ## <a name="span-idblockcompressionformatssupportedindirect3d11spanspan-idblockcompressionformatssupportedindirect3d11spanspan-idblockcompressionformatssupportedindirect3d11spanblock-compression-formats-supported-in-direct3d-11"></a><span id="Block_Compression_Formats_Supported_in_Direct3D_11"></span><span id="block_compression_formats_supported_in_direct3d_11"></span><span id="BLOCK_COMPRESSION_FORMATS_SUPPORTED_IN_DIRECT3D_11"></span>Formats de compression de blocs pris en charge dans Direct3D11
 
@@ -40,7 +38,7 @@ Pour plus d’informations sur la prise en charge de l’algorithme de compressi
 | Trois canaux de couleur à plage dynamique élevée (HDR) | Trois canaux (16bits:16bits:16bits) de couleur dans format à virgule flottante demi-précision\* | BC6H               | Direct3D11                     |
 | Trois canaux de couleur, canal alpha facultatif  | Trois canaux de couleur (4 à 7bits par canal) avec 0 à 8bits d’alpha  | BC7                | Direct3D11                     |
 
- 
+ 
 
 \*La virgule flottante demi-précision est une valeur de 16bits qui se compose d’un signe facultatif d’unbit, d’un exposant tronqué de 5bits et d’une mantisse de 10 ou 11bits.
 ## <a name="span-idbc1bc2andb3formatsspanspan-idbc1bc2andb3formatsspanspan-idbc1bc2andb3formatsspanbc1-bc2-and-b3-formats"></a><span id="BC1__BC2__and_B3_Formats"></span><span id="bc1__bc2__and_b3_formats"></span><span id="BC1__BC2__AND_B3_FORMATS"></span>Formats BC1, BC2 et B3
@@ -54,7 +52,7 @@ Les formats BC1, BC2 et BC3 sont équivalents aux formats de compression de text
 | BC2                      | DXGI\_FORMAT\_BC2\_UNORM, DXGI\_FORMAT\_BC2\_UNORM\_SRGB, DXGI\_FORMAT\_BC2\_TYPELESS | D3DFMT\_DXT2\*, FourCC="DXT2", D3DFMT\_DXT3, FourCC="DXT3" | 16                        |
 | BC3                      | DXGI\_FORMAT\_BC3\_UNORM, DXGI\_FORMAT\_BC3\_UNORM\_SRGB, DXGI\_FORMAT\_BC3\_TYPELESS | D3DFMT\_DXT4\*, FourCC="DXT4", D3DFMT\_DXT5, FourCC="DXT5" | 16                        |
 
- 
+ 
 
 \*Ces schémas de compression (DXT2 et DXT4) ne font aucune différence entre les formats alpha prémultipliés et les formats standard alpha de Direct3D9. Cette distinction doit être traitée par les nuanceurs programmables au moment du rendu.
 
@@ -66,7 +64,7 @@ Les formats BC1, BC2 et BC3 sont équivalents aux formats de compression de text
 | BC4                      | DXGI\_FORMAT\_BC4\_UNORM, DXGI\_FORMAT\_BC4\_SNORM, DXGI\_FORMAT\_BC4\_TYPELESS | FourCC="ATI1"                | 8                         |
 | BC5                      | DXGI\_FORMAT\_BC5\_UNORM, DXGI\_FORMAT\_BC5\_SNORM, DXGI\_FORMAT\_BC5\_TYPELESS | FourCC="ATI2"                | 16                        |
 
- 
+ 
 
 ## <a name="span-idbc6hformatspanspan-idbc6hformatspanspan-idbc6hformatspanbc6h-format"></a><span id="BC6H_Format"></span><span id="bc6h_format"></span><span id="BC6H_FORMAT"></span>Format BC6H
 
@@ -77,7 +75,7 @@ Pour plus d’informations sur ce format, voir la documentation sur le [Format B
 |--------------------------|----------------------------------------------------------------------------------|------------------------------|---------------------------|
 | BC6H                     | DXGI\_FORMAT\_BC6H\_UF16, DXGI\_FORMAT\_BC6H\_SF16, DXGI\_FORMAT\_BC6H\_TYPELESS | Non applicable                          | 16                        |
 
- 
+ 
 
 Le format BC6H peut sélectionner différents modes de codage pour chaque bloc de pixels 4x4. Un total de 14modes de codage différents sont disponibles, chacun présentant des compromis légèrement différents en termes de qualité visuelle rendue de la texture affichée. Le choix des modes permet un décodage rapide par le matériel avec le niveau de qualité sélectionné ou adapté au contenu source, mais il augmente également considérablement la complexité de l’espace de recherche.
 
@@ -90,7 +88,7 @@ Pour plus d’informations sur ce format, voir la documentation sur le [Format B
 |--------------------------|---------------------------------------------------------------------------------------|------------------------------|---------------------------|
 | BC7                      | DXGI\_FORMAT\_BC7\_UNORM, DXGI\_FORMAT\_BC7\_UNORM\_SRGB, DXGI\_FORMAT\_BC7\_TYPELESS | Non applicable                          | 16                        |
 
- 
+ 
 
 Le format BC7 peut sélectionner différents modes de codage pour chaque bloc de pixels 4x4. Un total de 8modes de codage différents sont disponibles, chacun présentant des compromis légèrement différents en termes de qualité visuelle rendue de la texture affichée. Le choix des modes permet un décodage rapide par le matériel avec le niveau de qualité sélectionné ou adapté au contenu source, mais il augmente également considérablement la complexité de l’espace de recherche.
 
@@ -101,9 +99,9 @@ Le format BC7 peut sélectionner différents modes de codage pour chaque bloc de
 
 [Textures](https://msdn.microsoft.com/library/windows/desktop/ff476902)
 
- 
+ 
 
- 
+ 
 
 
 

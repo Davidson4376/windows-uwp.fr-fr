@@ -6,21 +6,20 @@ title: Diffusion multimédia
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 8ba90e1538962fdb7ef1434698ea52845713c634
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: da0bb4d25166dd62372d5902ff89221d20189c22
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228954"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543297"
 ---
 # <a name="media-casting"></a>Diffusion multimédia
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Cet article vous montre comment effectuer une diffusion multimédia sur des appareils distants à partir d’une application Windows universelle.
+Cet article vous montre comment procéder à une diffusion multimédia sur des appareils distants à partir d’une application Windows universelle.
 
 ## <a name="built-in-media-casting-with-mediaplayerelement"></a>Diffusion multimédia intégrée avec MediaPlayerElement
 
@@ -156,9 +155,9 @@ Enfin, implémentez le gestionnaire pour le bouton de déconnexion. Arrêtez la 
 
 [!code-cs[DisconnectButton](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetDisconnectButton)]
 
- 
+ 
 
- 
+ 
 
 
 
