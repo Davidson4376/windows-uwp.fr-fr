@@ -6,16 +6,14 @@ ms.assetid: CBAD3345-3333-4924-B6D8-705279F52676
 ms.author: elcowle
 ms.date: 11/20/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, jeux, entrée
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b7c8b942b8e5d93dc7d2a15dae7f59552dcc456
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: ed0d611c761315e42decb89e1a5a5ad84f4b067a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816894"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554876"
 ---
 # <a name="input-practices-for-games"></a>Pratiques d’entrée pour les jeux
 

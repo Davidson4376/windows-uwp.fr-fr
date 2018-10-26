@@ -1,23 +1,21 @@
 ---
 author: PatrickFarley
-title: Utiliser les services application et extensions
+title: Utiliser les services et extensions des applications
 description: Cette section décrit comment intégrer les services d’application dans votre application UWP pour autoriser le partage des données et des fonctionnalités entre les applications.
 ms.assetid: 30003e60-492b-4511-b426-24b97d70694a
 ms.author: pafarley
 ms.date: 10/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 940d847edc587bf7185fafc17a5cdd6dfcb3c1ad
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: a2fd10df36954b611745135b77872fa3597ac55d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "477566"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557237"
 ---
-# <a name="use-app-services-and-extensions"></a>Utiliser les services application et extensions
+# <a name="use-app-services-and-extensions"></a>Utiliser les services et extensions des applications
 
 Cette section décrit comment intégrer les services d’application dans votre application UWP pour autoriser le partage des données et des fonctionnalités entre les applications.
 

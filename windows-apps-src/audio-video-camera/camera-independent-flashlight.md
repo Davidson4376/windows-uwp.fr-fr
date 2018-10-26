@@ -6,18 +6,17 @@ title: Lampe torche indépendante de la caméra
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 7777b1b3f72090667f1e75f3c9e23b6adcd9f2d5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 913faf70531509a604cde52bb71886c128edae46
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228714"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555555"
 ---
 # <a name="camera-independent-flashlight"></a>Lampe torche indépendante de la caméra
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo de l’appareil. Outre des informations de références sur la lampe et le réglage de ses paramètres, cet article vous montre comment libérer la ressource de la lampe quand elle n’est pas utilisée et comment détecter les changements de disponibilité de la lampe quand elle est utilisée par une autre application.
@@ -79,7 +78,7 @@ Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [*
 ## <a name="related-topics"></a>Rubriques connexes
 - [Lecture de contenu multimédia](media-playback.md)
 
- 
+ 
 
 
 

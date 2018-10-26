@@ -5,17 +5,15 @@ title: Couleur dans les applications UWP
 ms.author: jimwalk
 ms.date: 4/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
-ms.openlocfilehash: e5d26d0e2fc8c040af81645477e3b75b0d128738
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: cbc884fa3079eaa9db348de3430ed6d59d1e8a0d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483405"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555696"
 ---
 # <a name="color"></a>Couleur
 

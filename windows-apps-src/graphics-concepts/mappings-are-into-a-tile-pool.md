@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 45062f82955b1e353def2eadbeae36d1c9e81ce6
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 24c8787efd108acb2353f6705dbb65a34d358ef2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652658"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558857"
 ---
 # <a name="mappings-are-into-a-tile-pool"></a>Mappages dans un pool de vignettes
 
@@ -35,7 +33,7 @@ Découvrons ensemble quel serait, dans le pire des cas, le besoin en stockage de
 
 Supposons que chacune des entrées de la table de page représente 64bits.
 
-Pour la prévision la plus pessimiste de taille de table de page pour une surface unique, compte tenu des limites des ressources dans Direct3D11, supposons qu’une ressource de diffusion en continu soit créée avec un format de 128bits par élément (par exemple, une valeur flottante RVBA); une vignettede 64Ko comporte alors uniquement4096pixels. La taille maximale prise en charge de [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526), de 16384\*16384\*2048 (avec uniquement une seule image bitmap), nécessite environ 1Go de stockage dans la table de page si les éléments sont renseignés exclusivement (sans mipmap) avec des entrées de table de 64bits. Dans le pire des cas, l’ajout de mipmaps provoque l’accroissement du stockage de la table de page entièrement mappé d’environ un tiers; il est alors d’environ 1,3Go.
+Pour la table de page pessimiste taille pour une surface unique, les limites de ressources dans Direct3D11, supposons qu’une ressource de diffusion en continu est créée avec un format de 128 bits par élément (par exemple, une valeur flottante RVBA), par conséquent, une vignette de 64 Ko comporte alors uniquement 4 096 pixels. La taille maximale prise en charge de [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526), de 16384\*16384\*2048 (avec uniquement une seule image bitmap), nécessite environ 1Go de stockage dans la table de page si les éléments sont renseignés exclusivement (sans mipmap) avec des entrées de table de 64bits. Dans le pire des cas, l’ajout de mipmaps provoque l’accroissement du stockage de la table de page entièrement mappé d’environ un tiers; il est alors d’environ 1,3Go.
 
 Dans cette configuration, vous aurez accès à environ 106téraoctets de mémoire adressable. Toutefois, il peut exister une limite de quantité de mémoire adressable. Le cas échéant, ces volumes sont réduits, éventuellement autour d’un téraoctet.
 
@@ -57,14 +55,14 @@ L’ensemble des entrées de la table de page sont initialement définies sur **
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="tile-pool-creation.md">Création d’un pool de vignettes</a></p></td>
-<td align="left"><p>Les applications peuvent créer un ou plusieurs pools de vignettes par appareil Direct3D. La taille totale de chaque pool de vignettes est limitée à la taille maximale de la ressource Direct3D 11, qui est d’environ 1/4 de RAM du processeur graphique (GPU).</p></td>
+<td align="left"><p>Les applications peuvent créer un ou plusieurs pools de vignettes par appareil Direct3D. La taille totale de chaque pool de tuiles est limitée à la limite de taille de ressource de Direct3D11, qui est d’environ 1/4 de RAM du processeur graphique.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="tile-pool-resizing.md">Redimensionnement d’un pool de vignettes</a></p></td>
@@ -77,16 +75,16 @@ L’ensemble des entrées de la table de page sont initialement définies sur **
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
 [Création de ressources de diffusion en continu](creating-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

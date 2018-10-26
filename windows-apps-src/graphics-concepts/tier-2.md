@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 29031b50bba88a1ee91c4953273b7554bfc4139f
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: fac8780995231ce56d1264ea8a1a5cb52fd9a3d0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044528"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557428"
 ---
 # <a name="tier-2"></a>Niveau2
 
@@ -70,9 +68,9 @@ Les limitations sur le mode d’accès des tuiles lorsqu’il existe des mappage
 
 [Niveaux de fonctionnalité des ressources de diffusion en continu](streaming-resources-features-tiers.md)
 
- 
+ 
 
- 
+ 
 
 
 

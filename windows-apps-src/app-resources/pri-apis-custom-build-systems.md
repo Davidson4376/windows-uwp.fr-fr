@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 05/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 58473101f0972040fe80c7f7f582ad33eafeb009
-ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
-ms.translationtype: HT
+ms.openlocfilehash: 9b85f40fc391df764515d21ba3b334bfe068725c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "1862498"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559209"
 ---
 # <a name="package-resource-indexing-pri-apis-and-custom-build-systems"></a>API d’indexation de ressources de package (IRP) et systèmes de génération personnalisés
 Grâce aux [API d’indexation de ressource de package (IRP)](https://msdn.microsoft.com/library/windows/desktop/mt845690), vous pouvez développer un système de génération personnalisé pour les ressources de votre application UWP. Le système de génération pourra créer, versionner, et vider (en tant que XML) les fichiers d’index de ressource de package (IRP) au niveau de complexité dont votre application UWP a besoin. Si vous avez un système de génération personnalisé qui utilise l’outil de ligne de commande MakePri.exe (consultez [Compiler des ressources manuellement avec MakePri.exe](makepri-exe-command-options.md)), pour améliorer les performances et le contrôle, nous vous recommandons d’appeler les API IRP au lieu d’appeler MakePri.exe.

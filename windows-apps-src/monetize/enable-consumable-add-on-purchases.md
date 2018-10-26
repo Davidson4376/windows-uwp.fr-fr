@@ -7,15 +7,13 @@ keywords: windows10, uwp, consommable, extensions, achats dans l’application, 
 ms.author: mhopkins
 ms.date: 05/09/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 93d9c5df33e1131861c3e5caff625c689b8f330c
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: fc67e2b48779e7b22f20dc4adfbe28580bc325fc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5518667"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555267"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>Activer les achats d’extensions consommables
 

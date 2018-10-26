@@ -4,22 +4,20 @@ Description: The Microsoft Store enforces certain rules related to version numbe
 title: Numérotation des versions de packages
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/25/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cf93cf06b273605b91c31da5b6a6b8cef8dae39
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 045e44d3ba243b4c4fbf68ba37e91c06eb022d27
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470407"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558771"
 ---
 # <a name="package-version-numbering"></a>Numérotation des versions de packages
 
-Chaque package que vous fournissez doit avoir un numéro de version (fourni sous la forme d’une valeur dans l’attribut **Version** de l’élément **Package/Identity** dans le manifeste de l’application). Le MicrosoftStore applique certaines règles relatives aux numéros de version, qui fonctionnent différemment dans les différentes versions du système d’exploitation.
+Chaque package que vous fournissez doit avoir un numéro de version (fourni sous la forme d’une valeur dans l’attribut **Version** de l’élément [Package/Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) dans le manifeste de l’application). Le MicrosoftStore applique certaines règles relatives aux numéros de version, qui fonctionnent différemment dans les différentes versions du système d’exploitation.
 
 > [!NOTE]
 > Cette rubrique fait référence aux «packages», mais, sauf indication contraire, les mêmes règles s’appliquent aux numéros de version des fichiers.msix/.appx et.msixbundle/.appxbundle.
@@ -28,7 +26,7 @@ Chaque package que vous fournissez doit avoir un numéro de version (fourni sous
 ## <a name="version-numbering-for-windows10-packages"></a>Numérotation des versions pour les packages Windows 10
 
 > [!IMPORTANT]
-> Pour les packages Windows 10 (UWP), la dernière (quatrième) partie du numéro de version est réservée au Windows Store et doive conserver la valeur 0 lorsque vous générez votre package (bien que le Windows Store puisse modifier la valeur de cette section).
+> Pour les packages Windows 10 (UWP), la dernière (quatrième) partie du numéro de version est réservée au Windows Store et doive conserver la valeur 0 lorsque vous générez votre package (bien que le Windows Store puisse modifier la valeur de cette section). Les autres sections doivent être définies sur un nombre entier compris entre 0 et 65 535 (à l’exception de la première section, qui ne peut pas être 0).
 
 Lors du choix d’un package UWP à partir de votre soumission publiée, le Microsoft Store utilise toujours le package présentant la version la plus élevée applicable à l’appareil du client Windows 10. Cela vous offre une plus grande souplesse et vous permet de contrôler les packages fournis aux clients sur des types spécifiques d’appareils. Il est important de noter que vous pouvez soumettre ces packages dans n’importe quel ordre ; vous n’êtes pas obligé de fournir des packages dont le numéro de version est supérieur avec chaque soumission ultérieure.
 

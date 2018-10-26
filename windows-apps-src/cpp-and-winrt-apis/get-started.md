@@ -5,16 +5,14 @@ title: Prise en main de C++/WinRT
 ms.author: stwhi
 ms.date: 10/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, utiliser rapidement, prise en main
 ms.localizationpriority: medium
-ms.openlocfilehash: b8f8425fa602c844803cc632f523949b8b04d551
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 6cb8e18904f61976103689c8d83475ec248eb38b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483799"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558019"
 ---
 # <a name="get-started-with-cwinrt"></a>Prise en main de C++/WinRT
 
@@ -146,7 +144,7 @@ Dans `pch.h`, incluez `winrt/base.h`.
 #include <winrt/base.h>
 ```
 
-## <a name="linking"></a>Créer un lien
+### <a name="linking"></a>Créer un lien
 
 C++ / projection de langage WinRT dépend de certaines fonctions (non-membres) gratuites de Windows Runtime et les points d’entrée, nécessitent une liaison à la bibliothèque PARAPLUIE [WindowsApp.lib](/uwp/win32-and-com/win32-apis) . Cette section décrit les trois façons de satisfaire la demande l’éditeur de liens.
 

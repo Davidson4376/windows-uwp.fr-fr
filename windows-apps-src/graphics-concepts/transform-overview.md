@@ -6,16 +6,14 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 32beeae8d2398457311a14fa53afe330acdc75f2
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 32f55b0a387221b792e37072f129edddf285195b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700845"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552688"
 ---
 # <a name="transform-overview"></a>Vue d’ensemble de la transformation
 
@@ -32,7 +30,7 @@ Le pipeline de géométrie prend les vertex en entrée. Le moteur de transformat
 | Transformation de la projection en espace de projection    | L’étape suivante est la [transformation de la projection](projection-transform.md), qui convertit l’espace de vue en espace de projection. Dans cette partie du pipeline, les objets sont généralement mis à l’échelle en fonction de leur distance par rapport à l'observateur afin de donner une illusion de profondeur à une scène; l'opération fait apparaître les objets proches plus grands que les objets distants. Par souci de simplicité, cette documentation fait référence à l’espace dans lequel les vertex existent après la transformation de la projection comme *espace de projection*. Certains livres graphiques peuvent se référer à l’espace de projection comme *espace homogène post-perspective*. Toutes les transformations de projection ne mettent pas la taille des objets à l’échelle dans une scène. Ce type de projection est parfois appelé *projection affine* ou *orthogonale*. |
 | Découpage dans l’espace d’écran                      | Dans la partie finale du pipeline, les vertex qui ne seront pas visibles sur l’écran sont supprimés afin que le module de rastérisation ne passe pas de temps à calculer les couleurs et l’ombrage d’un élément qui ne sera jamais affiché. Ce processus est nommé *découpage*. Après découpage, les vertex restants sont mis à l’échelle selon les paramètres de la fenêtre d’affichage et convertis en coordonnées d’écran. Les vertex résultants, visibles sur l’écran lorsque la scène est rastérisée, existent dans l'*espace d’écran*.                                                                                                                                                                                                                                                    |
 
- 
+ 
 
 Les transformations sont utilisées pour convertir la géométrie de l’objet d’un espace de coordonnées à un autre. Direct3D utilise des matrices pour effectuer les transformations3D. Les matrices créent des transformations3D. Vous pouvez combiner des matrices pour produire une matrice unique qui englobe plusieurs transformations.
 
@@ -163,9 +161,9 @@ Quel que soit le type de matrice que vous créez, n’oubliez pas la règle de g
 
 [Transformations](transforms.md)
 
- 
+ 
 
- 
+ 
 
 
 

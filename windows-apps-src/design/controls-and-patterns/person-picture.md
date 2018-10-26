@@ -7,20 +7,18 @@ label: Parallax View
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 pm-contact: trestar
 design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8afa88758dcc36bdf387e5584a2bd6637c1ec252
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: eadc0763e7f99930bee3d2a388a881c52e89f609
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1493726"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552841"
 ---
 # <a name="person-picture-control"></a>Contrôle de la photo de la personne
 
@@ -191,7 +189,7 @@ En l’absence d’image, le contrôle affiche le nom du contact ou ses initiale
 
 - [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - Affichez tous les contrôles XAML dans un format interactif.
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 * [Contacts et calendriers](../../contacts-and-calendar/index.md)
 * [Exemples de cartes de visite](http://go.microsoft.com/fwlink/p/?LinkId=624040)

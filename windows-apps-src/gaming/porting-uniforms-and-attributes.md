@@ -6,19 +6,18 @@ ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, opengl, direct3d, tampons, uniformes, attributs de sommets
-ms.openlocfilehash: d25495b282dce38c3dcad0ec996c185e64165b13
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: bc0192eb4b89ef91bc895a96e46cd39524f24c44
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228917"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558234"
 ---
 # <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a>Comparer les tampons, les uniformes et les attributs de sommets OpenGLES2.0 à Direct3D
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -41,7 +40,7 @@ Voici les principales correspondances.
 | objet de tampon de trame (FBO) | Cible(s) de rendu ; voir [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) avec [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635).                                       |
 | mémoire tampon d’arrière-plan               | Chaîne de permutation avec surface de « mémoire tampon d’arrière-plan » ; voir [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) avec [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) attaché.                       |
 
- 
+ 
 
 ## <a name="port-buffers"></a>Mémoires tampons de port
 
@@ -298,9 +297,9 @@ struct VertexShaderInput
 };
 ```
 
- 
+ 
 
- 
+ 
 
 
 

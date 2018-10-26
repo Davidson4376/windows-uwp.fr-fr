@@ -1,6 +1,6 @@
 ---
 author: normesta
-Description: Il s’agit d’une rubrique de hub destinée aux développeurs abordant de manière exhaustive la relation de la Protection des informations Windows avec les fichiers, les mémoires tampons, le Presse-papiers, la mise en réseau, les tâches en arrière-plan et la protection des données verrouillées.
+Description: This is a hub topic covering the full developer picture of how Windows Information Protection (WIP) relates to files, buffers, clipboard, networking, background tasks, and data protection under lock.
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -8,15 +8,15 @@ title: Protection des informations Windows (WIP)
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, Protection des informations Windows, données d’entreprise, protection des données d’entreprise, PDE, applications compatibles
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
-ms.openlocfilehash: f624d20d33f560f151b40bd1a405711d697fd4cb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: dec05e663e6ca7390dc3974b8a3cde2971b50426
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228792"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555863"
 ---
 # <a name="windows-information-protection-wip"></a>Protection des informations Windows (WIP)
 
@@ -63,7 +63,7 @@ Par exemple, si la stratégie permet aux utilisateurs de coller des données d�
 
 Si vous êtes prêt à rendre votre application compatible, reportez-vous à l’un de ces guides:
 
-**Pour les applications de plateforme Windows universelle (UWP) générées à l’aide de C#**
+**Pour les applications de plateforme Windows universelle (UWP) générées à l’aide de c#**
 
 [Guide du développeur sur la Protection des informations Windows](wip-dev-guide.md).
 
@@ -98,4 +98,4 @@ Si vous prévoyez d’inclure votre application dans une stratégie de gestion d
 
 
 
- 
+ 

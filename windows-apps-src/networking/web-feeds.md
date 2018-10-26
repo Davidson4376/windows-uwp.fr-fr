@@ -6,16 +6,14 @@ ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 82d01ab6fc70397824b4bd6b267dd5e7cdeac0ee
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 309dd2aedb2195362652da93c13648d07e5ea9f8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "975801"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559691"
 ---
 # <a name="rssatom-feeds"></a>Flux RSS/Atom
 
@@ -48,7 +46,7 @@ L’isolement réseau permet à un développeur de définir pour chaque applicat
 
 L’isolement réseau affecte tous les éléments de classe des espaces de noms [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) et [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609) qui essaient d’accéder au réseau. Windows applique activement l’isolement réseau. Un appel à un élément de classe de l’espace de noms **Windows.Web.Syndication** ou **Windows.Web.AtomPub** qui conduit à un accès réseau peut échouer en raison de l’isolement réseau si la fonctionnalité réseau appropriée n’a pas été activée.
 
-Les fonctionnalités réseau d’une application sont configurées dans le manifeste de l’application à la création de cette dernière. Les fonctionnalités réseau sont généralement ajoutées à l’aide de Microsoft Visual Studio 2015 lors du développement de l’application. Elles peuvent également être définies manuellement dans le fichier manifeste de l’application à l’aide d’un éditeur de texte.
+Les fonctionnalités réseau d’une application sont configurées dans le manifeste de l’application à la création de cette dernière. Fonctionnalités réseau sont généralement ajoutées à l’aide de Microsoft Visual Studio2015 lors du développement de l’application. Elles peuvent également être définies manuellement dans le fichier manifeste de l’application à l’aide d’un éditeur de texte.
 
 Pour plus d’informations sur l’isolement réseau et les fonctionnalités de réseau, voir la section « Fonctionnalités » dans la rubrique [Notions de base en matière de réseau](networking-basics.md).
 

@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 27d19e794e7760208b1ec587bf36a3f3bba68cb8
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: Auto
+ms.openlocfilehash: ce80bc0f64e1aba8328880203f22ea3909fdb3e3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653828"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551701"
 ---
 # <a name="texture-filtering"></a>Filtrage de textures
 
@@ -70,16 +68,16 @@ Direct3D prend en charge les approches de filtrage de textures suivantes.
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques associées
 
 
 [Textures](textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

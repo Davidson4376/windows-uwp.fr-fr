@@ -6,17 +6,15 @@ title: Problèmes connus (Pont du bureau)
 ms.author: normesta
 ms.date: 06/20/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: 731d449d779806fbd4104787b692d3b7d0408036
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 61803e3a4a18dee260b78468c7970a875d8aff73
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5518288"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557516"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>Problèmes connus avec les applications de bureau empaquetées
 

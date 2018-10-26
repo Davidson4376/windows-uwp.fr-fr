@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 887600366fdf1bf3951091df27d10f54516c2bf0
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 3e1a015d5d51ad0c15f20755afcb0d324acd1f36
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674546"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556049"
 ---
 # <a name="raw-notification-overview"></a>Vue d’ensemble des notifications brutes
 
@@ -28,7 +26,7 @@ Les notifications brutes peuvent être employées à diverses fins, notamment po
 > [!IMPORTANT]
 > Pour comprendre ce que sont les notifications brutes, nous vous recommandons de vous familiariser avec les concepts abordés dans la rubrique [Vue d’ensemble des services de notifications Windows Push (WNS)](windows-push-notification-services--wns--overview.md).
 
- 
+ 
 
 Comme pour les notifications Push par toast, vignette et badge, une notification brute est transmise à partir du service cloud de votre application vers WNS par le biais d’un URI (Uniform Resource Identifier) de canal affecté. WNS, à son tour, transmet la notification à l’appareil et au compte d’utilisateur associés à ce canal. Contrairement à d’autres notifications Push, les notifications brutes n’adoptent aucun format spécifique. Le contenu de la charge utile est entièrement défini par l’application.
 
@@ -97,7 +95,7 @@ Si votre application n’est pas en cours d’exécution et ne fait appel à auc
 > [!IMPORTANT]
 > Avant d’utiliser des tâches en arrière-plan de notification brute, une application doit bénéficier d’un accès en arrière-plan par le biais d’un élément [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_).
 
- 
+ 
 
 Votre tâche en arrière-plan doit être inscrite avec un élément [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger). Si elle ne l’est pas, la tâche ne sera pas exécutée dès qu’une notification brute sera reçue.
 
@@ -117,7 +115,7 @@ Pour chaque application, une seule tâche en arrière-plan peut être exécutée
 ## <a name="other-resources"></a>Autres ressources
 
 
-Pour plus d’informations, téléchargez l’[exemple de notifications brutes](http://go.microsoft.com/fwlink/p/?linkid=241553) pour Windows8.1 et l’[exemple de notifications Push et périodiques](http://go.microsoft.com/fwlink/p/?LinkId=231476) pour Windows8.1, puis réutilisez leur code source dans votre application Windows10.
+Vous pouvez en savoir plus en téléchargeant l' [exemple de notifications brutes](http://go.microsoft.com/fwlink/p/?linkid=241553) pour Windows8.1 et l' [exemple Push et les notifications périodiques](http://go.microsoft.com/fwlink/p/?LinkId=231476) pour Windows8.1 et réutilisez son code source dans votre application Windows 10.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -126,9 +124,9 @@ Pour plus d’informations, téléchargez l’[exemple de notifications brutes](
 * [Démarrage rapide: interception de notifications Push dans des applications en cours d’exécution](https://msdn.microsoft.com/library/windows/apps/jj709908)
 * [**RawNotification**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
 * [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
- 
+ 
 
- 
+ 
 
 
 

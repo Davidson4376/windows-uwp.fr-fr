@@ -6,16 +6,14 @@ title: Streaming adaptatif
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ae99a7a92ce933c8536dc30f9807d60a1441a809
-ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
-ms.translationtype: HT
+ms.openlocfilehash: ef8e3ab4abd9ee9159dc7d5aa757f55e00817a51
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "1912967"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551565"
 ---
 # <a name="adaptive-streaming"></a>Streaming adaptatif
 
@@ -120,10 +118,10 @@ Si vous voulez enregistrer les gestionnaires d’événements pour la source mul
 
 ## <a name="related-topics"></a>Rubriquesassociées
 * [Lecture de contenu multimédia](media-playback.md)
-* [Prise en charge des balises HLS](hls-tag-support.md) 
-* [Prise en charge du profil DASH](dash-profile-support.md) 
+* [Prise en charge des balises HLS](hls-tag-support.md) 
+* [Prise en charge du profil DASH](dash-profile-support.md) 
 * [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [Lire du contenu multimédia en arrière-plan](background-audio.md) 
+* [Lire du contenu multimédia en arrière-plan](background-audio.md) 
 
 
 

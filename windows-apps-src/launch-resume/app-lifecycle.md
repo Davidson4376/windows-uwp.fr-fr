@@ -7,15 +7,13 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ms.author: twhitney
 ms.date: 01/23/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 53cc58930180f5ae7c3ec661feeb42433486afca
-ms.sourcegitcommit: b0b2fa760f4699b79b02e69061d85d529d90ef0a
-ms.translationtype: HT
+ms.openlocfilehash: cf8496393c5b500ab30d08608e90a0e156422ce3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2018
-ms.locfileid: "1533764"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554959"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Cycle de vie d’une application de plateforme Windows universelle (UWP) Windows10
 
@@ -60,7 +58,7 @@ Obtenez l’état antérieur de votre application grâce à [LaunchActivatedEven
 |**ClosedByUser** | L’utilisateur a fermé l’application en effectuant le mouvement de fermeture en mode tablette ou en appuyant sur Alt+F4. Lorsque l’utilisateur ferme l’application, celle-ci est suspendue puis arrêtée. | Comme l’application a suivi les mêmes étapes qui aboutissent à l’état Terminated, gérez cette situation comme l’état Terminated.|
 |**Running** | L’application était déjà ouverte lorsque l’utilisateur a essayé de la relancer. | Aucune. Notez qu’aucune autre instance de votre application n’est lancée. L’instance en cours d’exécution est simplement activée. |
 
-**Remarque**  La *session utilisateur active* est basée sur l’ouverture de session Windows. Tant que l’utilisateur actuel ne s’est pas déconnecté ou n’a pas arrêté ou redémarré Windows, la session utilisateur reste active entre des événements, tels que l’authentification de l’écran de verrouillage, le changement d’utilisateur, etc. 
+**Remarque** *Session utilisateur* est basé sur l’ouverture de session Windows. Tant que l’utilisateur actuel ne s’est pas déconnecté ou n’a pas arrêté ou redémarré Windows, la session utilisateur reste active entre des événements, tels que l’authentification de l’écran de verrouillage, le changement d’utilisateur, etc. 
 
 Gardez à l’esprit que si l’appareil dispose de ressources suffisantes, le système d’exploitation prélance fréquemment les applications qui ont autorisé ce comportement, afin d’optimiser la réactivité. Les applications prélancées démarrent en arrière-plan puis sont rapidement suspendues, permettant ainsi à l’utilisateur de les réactiver, une opération plus rapide qu’un démarrage.
 
@@ -87,7 +85,7 @@ La classe [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/w
 
 Les données d’événement de ces méthodes incluent la propriété [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) que nous avons déjà vue plus haut et qui indique l’état dans lequel se trouvait l’application avant son activation. Interprétez cet état et ce que vous devez faire comme indiqué dans la section [Lancement d’une application](#app-launch).
 
-**Remarque** Si vous ouvrez une session en utilisant le compte Administrateur de l’ordinateur, vous ne pouvez activer aucune applicationUWP.
+**Remarque**si vous ouvrez une session à l’aide du compte d’administrateur de l’ordinateur, vous ne pouvez activer les applications UWP.
 
 ## <a name="running-in-the-background"></a>Exécution en arrière-plan ##
 
@@ -177,7 +175,7 @@ Si l’application suspendue a été arrêtée, il n’y a aucun événement **R
 
 Lorsqu’elle est suspendue, une application ne reçoit aucun événement réseau qu’elle est configurée pour recevoir. Ces événements réseau ne sont pas mis en file d’attente, mais simplement manqués. Par conséquent, votre application doit tester l’état du réseau lors de sa reprise.
 
-**Remarque**  Dans la mesure où l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) n’est pas déclenché à partir du thread d’interface utilisateur, il convient d’utiliser un répartiteur si le code de votre gestionnaire de reprise communique avec votre interface utilisateur. Pour un exemple de code illustrant la marche à suivre, consultez [Mettre à jour le thread d’interface utilisateur à partir d’un thread d’arrière-plan](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md).
+**Remarque**dans la mesure où l’événement de [**reprise**](https://msdn.microsoft.com/library/windows/apps/br242339) n’est pas déclenché à partir du thread d’interface utilisateur, un répartiteur si le code de votre gestionnaire de reprise communique avec votre interface utilisateur. Pour un exemple de code illustrant la marche à suivre, consultez [Mettre à jour le thread d’interface utilisateur à partir d’un thread d’arrière-plan](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md).
 
 Pour des consignes générales, consultez [Lancement, reprise et tâches en arrière-plan](https://msdn.microsoft.com/library/windows/apps/hh465088).
 
@@ -185,9 +183,9 @@ Pour des consignes générales, consultez [Lancement, reprise et tâches en arri
 
 En général, les utilisateurs n’ont pas besoin de fermer les applications et peuvent laisser Windows les gérer. Toutefois, ils peuvent décider de fermer une application en effectuant un mouvement de fermeture, en appuyant sur Alt+F4 ou en utilisant le sélecteur de tâche sur Windows Phone.
 
-Aucun événement n’indique que l’utilisateur a fermé l’application. Lorsqu’elle est fermée par l’utilisateur, une application est d’abord suspendue pour lui donner l’occasion d’enregistrer son état. Sous Windows8.1 et versions ultérieures, une fois fermée par l’utilisateur, une application est supprimée de l’écran et de la liste de répartition sans être arrêtée de manière explicite.
+Aucun événement n’indique que l’utilisateur a fermé l’application. Lorsqu’elle est fermée par l’utilisateur, une application est d’abord suspendue pour lui donner l’occasion d’enregistrer son état. Windows8.1 et versions ultérieures, une application a été fermée par l’utilisateur, l’application est supprimée de l’écran et liste de répartition ne sont pas explicitement être arrêtée.
 
-**Fermée par l’utilisateur:** si votre application doit se comporter différemment selon qu’elle est fermée par l’utilisateur ou par Windows, vous pouvez utiliser le gestionnaire d’événements d’activation pour déterminer si l’application a été arrêtée par l’utilisateur ou par Windows. Voir les descriptions des états **ClosedByUser** et **Terminated** dans la documentation relative à l’énumération [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694).
+**Comportement fermée par l’utilisateur:** si votre application doit se comporter différemment lorsqu’elle est fermée par l’utilisateur que quand elle est fermée par Windows, vous pouvez utiliser le Gestionnaire d’événements d’activation pour déterminer si l’application a été arrêtée par l’utilisateur ou par Windows. Voir les descriptions des états **ClosedByUser** et **Terminated** dans la documentation relative à l’énumération [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694).
 
 Nous recommandons que les applications ne puissent se fermer par programme qu’en cas d’absolue nécessité. Par exemple, si une application détecte une fuite de mémoire, elle peut se fermer pour sécuriser les données personnelles de l’utilisateur.
 
@@ -226,6 +224,6 @@ Le code de base approprié au cycle de vie de l’application est fourni dans le
 * [Activité en arrière-plan avec le modèle à processus unique](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
 * [Contenu audio en arrière-plan](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 
- 
+ 
 
- 
+ 

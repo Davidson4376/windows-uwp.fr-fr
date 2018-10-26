@@ -6,19 +6,17 @@ description: Créez des applications de plateforme Windows universelle (UWP) qui
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 00ad06179ed4a77cb3e5144df12d5490f79a5df2
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 1b0b1a45bc967dd69d38f2e85609a5e13ffd61b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894619"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558784"
 ---
 # <a name="optimize-file-access"></a>Optimiser l’accès aux fichiers
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Créez des applications de plateforme Windows universelle (UWP) qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur.
 
@@ -137,7 +135,7 @@ Si vous réalisez plusieurs opérations sur des objets Windows.Storage tels que 
 
 ### <a name="buffering-between-uwp-and-net-streams"></a>Mise en mémoire tampon entre des flux UWP et .NET
 
-Il existe de nombreuses situations où vous pourriez vouloir convertir un flux UWP (tel qu’un [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) ou [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) en un flux .NET ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)). Ceci est utile par exemple lorsque vous écrivez une application UWP et que vous souhaitez utiliser du code .NET existant qui opère sur des flux avec le système de fichiers UWP. Pour bénéficier de cette fonctionnalité, des API .NET pour applications Windows Store fournissent des méthodes d’extension qui vous permettent d’effectuer des conversions entre les types de flux .NET et UWP. Pour plus d’informations, voir [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx).
+Il existe de nombreuses situations où vous pourriez vouloir convertir un flux UWP (tel qu’un [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) ou [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) en un flux .NET ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)). Ceci est utile par exemple lorsque vous écrivez une application UWP et que vous souhaitez utiliser du code .NET existant qui opère sur des flux avec le système de fichiers UWP. Pour ce faire, les API .NET pour les applications UWP fournit des méthodes d’extension qui vous permettent d’effectuer des conversions entre les types de flux UWP et .NET. Pour plus d’informations, voir [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx).
 
 Quand vous convertissez un flux UWP en flux .NET, vous créez en fait un adaptateur pour le flux UWP sous-jacent. Dans certaines circonstances, un coût d’exécution est associé à l’appel de méthodes sur des flux UWP. Ceci peut affecter la rapidité de votre application, notamment lorsque vous effectuez de nombreuses et fréquentes opérations de lecture ou écriture de faible taille.
 
@@ -200,7 +198,7 @@ Ce comportement de mise en mémoire tampon par défaut est souhaitable dans la p
 
 Lors de la lecture ou de l’écriture de grands jeux de données, vous pourrez peut-être augmenter le débit en lecture ou en écriture en fournissant une taille de mémoire tampon élevée aux méthodes d’extension [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx), [**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx)et [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx). Cela procure à l’adaptateur de flux une taille de mémoire tampon interne plus élevée. Par exemple, lors du passage d’un flux qui provient d’un gros fichier à un analyseur XML, celui-ci peut effectuer de nombreuses petites lectures séquentielles à partir du flux. Une mémoire tampon de grande taille peut réduire le nombre d’appels au flux UWP sous-jacent et accroître les performances.
 
-> **Remarque**  Il peut être risqué de définir une taille de mémoire tampon supérieure à environ 80Ko, car cela peut provoquer une fragmentation de la pile du récupérateur de mémoire (voir [Améliorer les performances du nettoyage de la mémoire](improve-garbage-collection-performance.md)). L’exemple de code suivant crée un adaptateur de flux managé avec une mémoire tampon de 81920octets.
+> **Remarque**  vous devez être prudent lors de la définition d’une taille de mémoire tampon qui est supérieure à environ 80 Ko, car cela peut provoquer la fragmentation sur le tas garbage collector (voir [l’amélioration des performances de garbage collection](improve-garbage-collection-performance.md)). L’exemple de code suivant crée un adaptateur de flux managé avec une mémoire tampon de 81920octets.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

@@ -5,22 +5,20 @@ description: Apprenez à activer/désactiver le suivi de Fiddler par programmati
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
-ms.openlocfilehash: 819f039f04d1e0a7fd035b10e3cbe408645e8f4d
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 8e0faf3a0b6a4f13c0fce24aa093cf94a1e7ee7e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "409945"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558655"
 ---
 # <a name="fiddler-settings-api-reference"></a>Informations de référence sur les API des paramètres Fiddler   
 Vous pouvez activer et désactiver le suivi réseau de Fiddler sur votre kit de développement à l’aide de cette API REST.
 
-## <a name="determine-if-fiddler-tracing-is-enabled"></a>Déterminer si le suivi de Fiddler est activé.
+## <a name="determine-if-fiddler-tracing-is-enabled"></a>Déterminer si le suivi de Fiddler est activé
 
 **Requête**
 
@@ -44,7 +42,7 @@ GET | /ext/fiddler
 
 **Réponse**   
 
-- Propriété de bool JSON IsProxyEnabled les spécificateurs si le proxy est activé ou non.
+- Propriété de valeur booléenne JSON IsProxyEnabled les spécificateurs indique si le serveur proxy est activé ou non.
 
 **Code d’état**
 

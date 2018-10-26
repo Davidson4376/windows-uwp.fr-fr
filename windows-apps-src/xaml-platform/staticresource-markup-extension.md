@@ -6,18 +6,17 @@ ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 234d90382fb62e6f0be9683dfb7b01d9fa80a185
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 83919cc46694279bc35e046c97acf27c64a196f5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230105"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555218"
 ---
 # <a name="staticresource-markup-extension"></a>Extension de balisage {StaticResource}
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Fournit une valeur pour un attribut XAML en évaluant une référence à une ressource déjà définie. Les ressources sont définies dans un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), et une utilisation **StaticResource** référence la clé de cette ressource dans le **ResourceDictionary**.
 
@@ -41,8 +40,7 @@ Fournit une valeur pour un attribut XAML en évaluant une référence à une res
 
 Les règles selon lesquelles un **StaticResource** est résolu en un élément d’un dictionnaire de ressources ne sont pas décrites dans cette rubrique. Cela varie selon que la référence et la ressource existent toutes les deux dans un modèle, que des dictionnaires de ressources fusionnés sont utilisés, etc. Pour plus d’informations sur la façon de définir des ressources et d’utiliser correctement un élément [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), et pour obtenir un exemple de code, voir l’article [Références aux ressources ResourceDictionary et XAML](https://msdn.microsoft.com/library/windows/apps/mt187273).
 
-**Important**  
-Un **StaticResource** ne doit pas essayer de faire une référence anticipée à une ressource définie lexicalement plus loin dans le fichier XAML. Une telle tentative n’est pas prise en charge. Même si la référence anticipée n’échoue pas, toute tentative en ce sens pénalise les performances. Pour obtenir de meilleurs résultats, ajustez la composition de vos dictionnaires de ressources afin d’éviter les références anticipées.
+**Important**  **StaticResource** ne doit pas essayer de faire une référence anticipée à une ressource définie lexicalement plus loin dans le fichier XAML. Une telle tentative n’est pas prise en charge. Même si la référence anticipée n’échoue pas, toute tentative en ce sens pénalise les performances. Pour obtenir de meilleurs résultats, ajustez la composition de vos dictionnaires de ressources afin d’éviter les références anticipées.
 
 Une tentative de spécification d’un **StaticResource** sur une clé impossible à résoudre lève une exception d’analyse XAML au moment de l’exécution. Les outils de conception peuvent également générer des avertissements ou des erreurs.
 
@@ -79,7 +77,7 @@ Notez la façon dont l’utilisation de l’extension de balisage {StaticResourc
 
 ## <a name="design-time-tools-support-for-the-staticresource-markup-extension"></a>Prise en charge d’outils au moment de la conception pour l’extension de balisage **{StaticResource}**
 
-Microsoft Visual Studio 2013 peut inclure les valeurs de clés possibles dans les listes déroulantes Microsoft IntelliSense lorsque vous utilisez l’extension de balisage **{StaticResource}** dans une page XAML. Par exemple, dès que vous tapez «{StaticResource», toute clé de ressource provenant de l’étendue de recherche actuelle s’affiche dans les listes déroulantes IntelliSense. En plus des ressources standard présentes au niveau de la page ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) et au niveau de l’application ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)), vous pouvez aussi apercevoir les [ressources de thème XAML](https://msdn.microsoft.com/library/windows/apps/mt187274), ainsi que les ressources de toute extension utilisée par votre projet.
+Microsoft Visual Studio2013 peut inclure les valeurs de clés possibles dans les listes déroulantes Microsoft IntelliSense lorsque vous utilisez l’extension de balisage **{StaticResource}** dans une page XAML. Par exemple, dès que vous tapez «{StaticResource», toute clé de ressource provenant de l’étendue de recherche actuelle s’affiche dans les listes déroulantes IntelliSense. En plus des ressources standard présentes au niveau de la page ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) et au niveau de l’application ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)), vous pouvez aussi apercevoir les [ressources de thème XAML](https://msdn.microsoft.com/library/windows/apps/mt187274), ainsi que les ressources de toute extension utilisée par votre projet.
 
 Lorsqu’une clé de ressource fait partie d’une utilisation de **{StaticResource}** quelconque, la fonctionnalité **Atteindre la définition** (F12) peut résoudre cette ressource et vous montrer le dictionnaire dans lequel elle est définie. Pour les ressources de thème, il s’agit du fichier generic.xaml à utiliser au moment de la conception.
 

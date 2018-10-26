@@ -5,16 +5,14 @@ title: Passer de C++/CX à C++/WinRT
 ms.author: stwhi
 ms.date: 10/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 29144f110a76227ae6a1bc1e7d7aa9f051babc9d
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 35fe84747624c9a855df5520322546b83772379b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483589"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552443"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Transférer vers C++/WinRT à partir de C++/CX
 

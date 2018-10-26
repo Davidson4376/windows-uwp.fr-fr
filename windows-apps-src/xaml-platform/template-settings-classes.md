@@ -6,18 +6,17 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: ff1b373e2038824c6349961b3b878f5570babceb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 4d7b08138ab22d4cf2cbf4fb5273759f000a7c94
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230163"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552456"
 ---
 # <a name="template-settings-classes"></a>Classes de paramètres du modèle
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -57,7 +56,7 @@ Voici un exemple qui provient des modèles de contrôles XAML par défaut de dé
     Fill="{TemplateBinding Foreground}"/>
 ```
 
-Comme le code XAML complet du modèle [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) contient des centaines de lignes, il s’agit là d’un extrait minuscule. Ce code XAML définit une partie d’un contrôle qui est l’un des 6 éléments [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343), qui dépeignent l’animation de rotation de progression indéterminée. En tant que développeur, vous n’aimez peut-être pas les cercles et vous souhaitez peut-être utiliser une autre primitive graphique ou une autre forme de base pour la progression de l’animation. Par exemple, vous pouvez composer à la place un **ProgressRing** utilisant un ensemble d’éléments [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) organisés dans un carré. Si tel est le cas, chaque composant **Rectangle** individuel de votre nouveau modèle peut ressembler à ceci :
+Comme le code XAML complet du modèle [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) contient des centaines de lignes, il s’agit là d’un extrait minuscule. Ce code XAML définit une partie d’un contrôle qui est l’un des 6 éléments [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse), qui dépeignent l’animation de rotation de progression indéterminée. En tant que développeur, vous n’aimez peut-être pas les cercles et vous souhaitez peut-être utiliser une autre primitive graphique ou une autre forme de base pour la progression de l’animation. Par exemple, vous pouvez composer à la place un **ProgressRing** utilisant un ensemble d’éléments [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) organisés dans un carré. Si tel est le cas, chaque composant **Rectangle** individuel de votre nouveau modèle peut ressembler à ceci :
 
 ```xml
 <Rectangle
@@ -98,8 +97,7 @@ Voici un autre exemple d’utilisation des modèles de contrôles XAML par défa
 
 À nouveau, comme le code XAML contient de nombreuses lignes dans le modèle, il ne s’agit là que d’un extrait. Et ce n’est là que l’un des états et des animations de thème qui utilisent chacun les mêmes propriétés [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752). Pour [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348), l’utilisation des valeurs **ComboBoxTemplateSettings** par le biais des liaisons impose que les animations associées dans le modèle s’arrêteront et commenceront aux positions qui sont basées sur les valeurs partagées. La transition sera donc parfaite.
 
-**Remarque**  
-Si vous utilisez les valeurs **TemplateSettings** dans le cadre de votre modèle de contrôle, assurez-vous de définir des propriétés qui correspondent au type de la valeur. Sinon, vous devrez peut-être créer un convertisseur de valeur pour la liaison afin que le type cible de la liaison puisse être converti à partir d’un type de source différent de la valeur **TemplateSettings**. Pour plus d’informations, voir [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
+**Remarque**  lorsque vous utilisez des valeurs **TemplateSettings** dans le cadre de votre modèle de contrôle, assurez-vous que vous définissez les propriétés qui correspondent au type de la valeur. Sinon, vous devrez peut-être créer un convertisseur de valeur pour la liaison afin que le type cible de la liaison puisse être converti à partir d’un type de source différent de la valeur **TemplateSettings**. Pour plus d’informations, voir [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
 
 ## <a name="related-topics"></a>Rubriques connexes
 

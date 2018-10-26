@@ -6,16 +6,14 @@ description: Effectuez le suivi des fichiers auxquels l’utilisateur accède fr
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6437176ed5dce4fbcd2a7686cf7083a8b0af2557
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 12b8a6462f6cc39ba85cddfaa7a92212955a79f5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662789"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559345"
 ---
 # <a name="track-recently-used-files-and-folders"></a>Suivre les fichiers et dossiers récemment utilisés
 
@@ -29,9 +27,9 @@ Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en
 Les éléments récents de votre application sont représentés par la classe [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475), que vous pouvez obtenir à partir de la propriété [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) statique. Les éléments récents sont stockés en tant qu’objets [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129), ce qui signifie que des objets [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (qui représentent des fichiers) et [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) (qui représentent des dossiers) peuvent être ajoutés aux éléments récents.
 
 > [!NOTE]
-> Consultez également l’[exemple de sélecteur de fichiers](http://go.microsoft.com/fwlink/p/?linkid=619994) et l’[exemple d’accès aux fichiers](http://go.microsoft.com/fwlink/p/?linkid=619995).
+> Consultez également l’[exemple de sélecteur de fichiers](http://go.microsoft.com/fwlink/p/?linkid=619994) et l’[exemple d’accès aux fichiers](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
- 
+ 
 
 ## <a name="prerequisites"></a>Prérequis
 

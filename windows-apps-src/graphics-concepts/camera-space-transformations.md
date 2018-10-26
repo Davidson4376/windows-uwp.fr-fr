@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 032518fe793db99309d098b28f2f8e94bbb072ba
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9de6759fb15aef4b32a5e9022a27cab09af300f8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043928"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553494"
 ---
 # <a name="camera-space-transformations"></a>Transformations de l’espace de caméra
 
@@ -56,16 +54,16 @@ L<sub>dir</sub> = norm(V \* Lₚ), où les paramètres sont définis dans le tab
 | Lₚ              | Non applicable           | Vecteur 3D (valeurs à virgule flottante x, y et z) | Position de la lumière dans l’espace de caméra                            |
 | vMatrix         | Identité      | Matrice 4x4 de valeurs à virgule flottante           | Matrice contenant la transformation d’affichage                      |
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
 [Formules mathématiques d’éclairage](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

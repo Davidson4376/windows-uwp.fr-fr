@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 35fcedcdfa6470a4c17c964cd0ae341e1ccf3b3a
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: bc7d04a826bd8be0947e8d84ab8dbff6f67e8027
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652868"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555136"
 ---
 # <a name="streaming-resources-features-tiers"></a>Niveaux de fonctionnalité des ressources de diffusion en continu
 
@@ -41,7 +39,7 @@ Les fonctions de requête sont disponibles dans les versions de Direct3D, pour v
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -61,16 +59,16 @@ Les fonctions de requête sont disponibles dans les versions de Direct3D, pour v
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
 [Ressources de diffusion en continu](streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

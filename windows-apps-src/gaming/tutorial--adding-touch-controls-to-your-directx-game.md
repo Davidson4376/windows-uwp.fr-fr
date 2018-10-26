@@ -6,27 +6,26 @@ ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, tactile, contrôles, directx, entrée
-ms.openlocfilehash: 44d5071ee0cd695351c77630d699a1a060f477d6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 53c4a91f3ef20c11783796c3ca362f74b3f39adb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228913"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553011"
 ---
 # <a name="touch-controls-for-games"></a>Contrôles tactiles pour les jeux
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Découvrez comment ajouter des contrôles tactiles de base à votre jeu de plateforme Windows universelle (UWP) en C++ avec DirectX. Nous allons vous montrer comment ajouter des contrôles tactiles pour déplacer une caméra de plan fixe dans un environnement Direct3D, où le glissement avec un doigt ou un stylet décale la perspective de la caméra.
 
 Vous pouvez incorporer ces contrôles à des jeux où le joueur doit faire glisser pour effectuer un défilement ou un panoramique dans un environnement 3D, par exemple une carte ou un terrain de jeux. Par exemple, dans un jeu de stratégie ou de casse-tête, vous pouvez utiliser ces contrôles pour permettre au joueur de voir un environnement de jeu plus grand que l’écran par un mouvement panoramique gauche ou droit.
 
-> **Remarque**   Notre code fonctionne également pour les contrôles panoramiques avec la souris. Les événements associés au pointeur étant abstraits par les API Windows Runtime, ils peuvent gérer les événements de pointeur tactiles ou avec la souris.
+> **Remarque**notre code fonctionne également avec les contrôles panoramiques la souris. Les événements associés au pointeur étant abstraits par les API Windows Runtime, ils peuvent gérer les événements de pointeur tactiles ou avec la souris.
 
- 
+ 
 
 ## <a name="objectives"></a>Objectifs
 
@@ -344,14 +343,12 @@ Nous pouvons maintenant obtenir une coordonnée d’espace de scène sur laquell
 
 Félicitations ! Vous avez implémenté un ensemble simple de contrôles tactiles de panoramique de la caméra dans votre jeu.
 
-> **Remarque**  
-Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

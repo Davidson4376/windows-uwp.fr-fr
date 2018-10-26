@@ -6,18 +6,17 @@ title: Compositions multimédias et modification
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 66d14ae9335edcc5535d0dcc37cca2273874f61d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: f32d63bf03a469d8282262c358153140587d9033
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230410"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557350"
 ---
 # <a name="media-compositions-and-editing"></a>Compositions multimédias et modification
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous montre comment utiliser les API de l’espace de noms [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) pour développer rapidement des applications qui permettent aux utilisateurs de créer des compositions multimédias à partir de fichiers sources audio et vidéo. Les fonctionnalités de l’infrastructure incluent la possibilité d’ajouter simultanément plusieurs clips vidéo, d’ajouter des superpositions d’images et de vidéos, d’ajouter du son en arrière-plan et d’appliquer des effets audio et vidéos, par programme. Une fois créées, les compositions multimédias peuvent être rendues dans un fichier multimédia plat pour lecture ou partage, mais il est également possible de les sérialiser et désérialiser à partir du disque en permettant à l’utilisateur de charger et de modifier les compositions précédemment créées. Toutes ces fonctionnalités sont proposées dans l’interface simple d’utilisation Windows Runtime, qui réduit considérablement la quantité de code requis et sa complexité pour effectuer ces tâches, en comparaison avec l’APi [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) de bas niveau.
@@ -152,9 +151,9 @@ Les compositions multimédia peuvent être désérialisées à partir d’un fic
 
 -   Si un fichier multimédia de la composition ne se trouve pas dans un emplacement auquel votre application a accès et ne se trouve pas dans la propriété [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) de la classe [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) pour votre application, une erreur sera générée lors du chargement de la composition.
 
- 
+ 
 
- 
+ 
 
 
 

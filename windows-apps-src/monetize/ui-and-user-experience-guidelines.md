@@ -6,16 +6,14 @@ title: Recommandations pour l'expérience et l'interface utilisateur pour les an
 ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, annonce, publicité, directives, meilleures pratiques
 ms.localizationpriority: medium
-ms.openlocfilehash: c7f5e762593773e529610989741274d9fb5b9be7
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 323190b01cad8a0832d57386f6bde9fde4f2180c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521441"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552815"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>Recommandations pour l'expérience et l'interface utilisateur pour les annonces
 

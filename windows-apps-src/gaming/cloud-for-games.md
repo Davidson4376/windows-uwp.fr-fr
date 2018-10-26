@@ -6,16 +6,14 @@ ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 ms.author: joanlee
 ms.date: 03/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, jeux, services cloud
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a0ffc3779f604b68c699e30068e07f3461f568d
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: Auto
+ms.openlocfilehash: 5d15d3e6b6beb773a8d606db7a5d8a17544270be
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700825"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552181"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>Utilisation des services de cloud computing pour les jeux UWP
 
@@ -203,7 +201,7 @@ Voici quelques-unes des façons dont vous pouvez utiliser les offres de services
 ## <a name="learning-resources"></a>Ressources de formation
 
 * //build 2016: [Codelabs &mdash; Utilisation de Microsoft Azure App Service et du serveur principal Microsoft SQL Azure pour enregistrer le score du jeu dans Unity](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
-* //build2017: [Offrir des expériences de jeu d’exception à l’aide de MicrosoftAzure: enseignements tirés de titres tels que Halo, Hitman et The Walking Dead (vidéo)](https://channel9.msdn.com/Events/Build/2017/P4062)
+* build 2017: [offrir des expériences de jeu à l’aide de Microsoft Azure: enseignements tirés de titres tels que Halo, Hitman et WalkingDead (vidéo)](https://channel9.msdn.com/Events/Build/2017/P4062)
 * Ensemble réutilisable de blocs de construction, de projets, de services et des meilleures pratiques, conçu pour prendre en charge les charges de travail de jeu courantes utilisant Azure sur GitHub: [blocs de construction pour jeux sur Azure](https://github.com/MicrosoftDX/nether)
 * [Services de jeu sur Azure (vidéos)](https://channel9.msdn.com/Series/Gaming-Services-on-Azure)
 
@@ -232,6 +230,6 @@ Nous cherchons constamment à innover et à ajouter de nouvelles fonctionnalité
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
 
- 
+ 
 
- 
+ 

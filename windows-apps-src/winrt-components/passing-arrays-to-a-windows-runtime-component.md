@@ -6,27 +6,26 @@ ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: e9f0a148238b8f91c4643954c7f575e742f69d5e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: e01c9e5698ec1d7a23298b46f6bde9e1bbf36b04
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230085"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553413"
 ---
 # <a name="passing-arrays-to-a-windows-runtime-component"></a>Transmission de tableaux à un composant Windows Runtime
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Dans la plateforme universelle Windows (UWP), les paramètres sont destinés à l’entrée ou à la sortie, jamais aux deux. Cela signifie que le contenu d’un tableau qui est transmis à une méthode, ainsi que le tableau lui-même, sont destinés à l’entrée ou à la sortie. Si le contenu du tableau est destiné à l’entrée, la méthode lit dans le tableau mais n’écrit pas dans celui-ci. Si le contenu du tableau est destiné à la sortie, la méthode écrit dans le tableau mais ne lit pas dans celui-ci. Cela pose un problème pour les paramètres de tableau, car les tableaux de .NET Framework sont des types de référence et le contenu d’un tableau est mutable même si la référence du tableau est transmise par valeur (**ByVal** en Visual Basic). L’[outil d’exportation de métadonnées Windows Runtime (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) requiert de spécifier l’utilisation prévue pour le tableau si elle n’est pas claire d’après le contexte en appliquant l’attribut ReadOnlyArrayAttribute ou WriteOnlyArrayAttribute au paramètre. L’utilisation du tableau est déterminée comme suit:
 
 -   Pour la valeur de retour ou un paramètre out (un paramètre **ByRef** avec l’attribut [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) en Visual Basic), le tableau est toujours destiné à la sortie. N’appliquez pas l’attribut ReadOnlyArrayAttribute. L’attribut WriteOnlyArrayAttribute est autorisé sur les paramètres de sortie, mais il est redondant.
 
-    > **Attention** Le compilateur Visual Basic n’applique pas les règles de sortie uniquement. Vous ne devez jamais lire un paramètre de sortie ; il peut contenir **Nothing**. Assignez toujours un nouveau tableau.
- 
+    > **Attention**le compilateur Visual Basic n’applique pas les règles de sortie uniquement. Vous ne devez jamais lire un paramètre de sortie ; il peut contenir **Nothing**. Assignez toujours un nouveau tableau.
+ 
 -   Les paramètres qui présentent le modificateur **ref** (**ByRef** en Visual Basic) ne sont pas autorisés. Winmdexp.exe génère une erreur.
 -   Pour un paramètre transmis par valeur, vous devez indiquer si le contenu du tableau est destiné à l’entrée ou à la sortie en appliquant l’attribut [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) ou [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx). La spécification des deux attributs génère une erreur.
 

@@ -5,16 +5,14 @@ title: Gestion des erreurs avec C++/WinRT
 ms.author: stwhi
 ms.date: 05/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, erreur, gestion, exception
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a4cf60fea70722e66eb44d52542be248e9ad01c
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 36f6248452d97d10b6004067b6c0a973973443db
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5515681"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555847"
 ---
 # <a name="error-handling-with-cwinrt"></a>Gestion des erreurs avec C++/WinRT
 

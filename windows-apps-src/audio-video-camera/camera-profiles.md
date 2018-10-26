@@ -6,16 +6,14 @@ title: Découvrir et sélectionner des capacités de caméra avec des profils de
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ead9efdd0a1d37a051f24e94b40a7c61212f6b19
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 1af7453e8bfea973a67dc878438050accc01fb4c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472547"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555371"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>Découvrir et sélectionner des capacités de caméra avec des profils de caméra
 

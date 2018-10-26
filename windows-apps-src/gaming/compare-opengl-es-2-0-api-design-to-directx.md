@@ -6,19 +6,18 @@ ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, opengl, direct3d
-ms.openlocfilehash: d2642abbfbfc6030aa00f68f30d4a45eb0e86ee1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 2308c0b931b58209d1233205c355ac09680803dd
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228915"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554764"
 ---
 # <a name="plan-your-port-from-opengl-es-20-to-direct3d"></a>Planifier votre portage d’OpenGL ES 2.0 vers Direct3D
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -65,7 +64,7 @@ Direct3D 11 prend en charge les «niveaux de fonctionnalité» de matériel du n
 | [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)                  | DirectXMath fournit un ensemble d’API et de macros pour la gestion des types, valeurs et fonctions courants d’algèbre linéaire et de trigonométrie. Ces types et fonctions sont conçus pour fonctionner correctement avec Direct3D et ses opérations de nuanceur.                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | [HLSL DirectX](https://msdn.microsoft.com/library/windows/desktop/bb509580) | Syntaxe HLSL actuelle utilisée par les nuanceurs Direct3D. Elle implémente le modèle de nuanceur 5.0 de Direct3D.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
- 
+ 
 
 ## <a name="review-the-windows-runtime-apis-and-template-library"></a>Parcourir les API et la bibliothèque de modèles de Windows Runtime
 
@@ -108,7 +107,7 @@ Toutefois, Direct3D peut prendre en charge un système de coordonnées droitier.
 | [**XMMatrixPerspectiveOffCenterRH**](https://msdn.microsoft.com/library/windows/desktop/ee419983)   | Crée une version personnalisée d’une matrice de projection de perspective pour un système droitier.                                                    |
 | [**XMMatrixPerspectiveRH**](https://msdn.microsoft.com/library/windows/desktop/ee419984)                     | Crée une matrice de projection de perspective pour un système droitier.                                                                        |
 
- 
+ 
 
 ## <a name="opengl-es20-to-direct3d-11-porting-frequently-asked-questions"></a>Portage OpenGL ES 2.0 vers Direct3D 11 : Forum Aux Questions
 
@@ -116,9 +115,9 @@ Toutefois, Direct3D peut prendre en charge un système de coordonnées droitier.
 -   Question : « En général, puis-je rechercher des chaînes ou modèles dans mon code OpenGL et les remplacer par les équivalents Direct3D ? »
 -   Réponse : non. OpenGL ES 2.0 et Direct3D 11 sont issus de différentes générations de modélisation de pipeline graphique. Bien qu’il existe certaines similarités superficielles entre les concepts et les API, telles que le contexte de rendu et l’instanciation des nuanceurs, vous pouvez consulter ces recommandations ainsi que les informations de référence sur Direct3D 11 pour vous aider à faire les meilleurs choix lors de la recréation de votre pipeline au lieu de tenter un mappage 1 à 1. Toutefois, si vous effectuez un portage de GLSL à HLSL, la création d’un ensemble d’alias communs pour les variables, les intrinsèques et les fonctions GLSL peut non seulement simplifier le portage, mais aussi vous permettre de maintenir un seul ensemble de fichiers de code de nuanceur.
 
- 
+ 
 
- 
+ 
 
 
 

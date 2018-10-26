@@ -4,22 +4,20 @@ title: Obtenir l’emplacement de l’utilisateur
 description: Déterminez l’emplacement de l’utilisateur et réagissez aux changements d’emplacement. L’accès à l’emplacement de l’utilisateur est géré par les paramètres de confidentialité définis dans l’application Paramètres. Cet article indique également comment vérifier si votre application est autorisée à accéder à l’emplacement de l’utilisateur.
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
 ms.author: pafarley
-ms.date: 02/08/2017
+ms.date: 11/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, carte, emplacement, fonctionnalité de localisation
-ms.openlocfilehash: f5af2815783568cb234f1196e065f18b145c7e68
-ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.localizationpriority: medium
+ms.openlocfilehash: 2187bafa9fd2b4fdce049f3ef11d4e6766613de3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/27/2017
-ms.locfileid: "695747"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558059"
 ---
 # <a name="get-the-users-location"></a>Obtenir l’emplacement de l’utilisateur
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Déterminez l’emplacement de l’utilisateur et réagissez aux changements d’emplacement. L’accès à l’emplacement de l’utilisateur est géré par les paramètres de confidentialité définis dans l’application Paramètres. Cette rubrique montre également comment vérifier si votre application est autorisée à accéder à l’emplacement de l’utilisateur.
@@ -48,7 +46,7 @@ Cette section décrit comment détecter l’emplacement géographique de l’uti
 
 ### <a name="step-1-request-access-to-the-users-location"></a>Étape1: Demander l’accès à l’emplacement de l’utilisateur
 
-À moins que votre application dispose de la fonctionnalité de localisation sans consentement (voir remarque), vous devez demander l’accès à l’emplacement de l’utilisateur à l’aide de la méthode [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) avant d’essayer d’y accéder. Vous devez appeler la méthode **RequestAccessAsync** à partir du thread de l’interface utilisateur et votre application doit être au premier plan. Votre application ne pourra pas accéder aux informations de localisation de l’utilisateur tant que celui-ci ne lui en aura pas accordé l’autorisation.\*
+À moins que votre application possède la fonctionnalité de localisation approximative (voir Remarque), vous devez demander l’accès à l’emplacement de l’utilisateur à l’aide de la méthode [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) avant d’essayer d’accéder à l’emplacement. Vous devez appeler la méthode **RequestAccessAsync** à partir du thread de l’interface utilisateur et votre application doit être au premier plan. Votre application ne pourra pas accéder aux informations de localisation de l’utilisateur tant que celui-ci ne lui en aura pas accordé l’autorisation.\*
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -60,7 +58,7 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 La méthode [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) demande à l’utilisateur l’autorisation d’accéder à son emplacement. L’utilisateur est invité une fois seulement (par application). Une fois la première autorisation accordée ou refusée, cette méthode ne demande plus d’autorisation. Pour aider l’utilisateur à modifier les autorisations d’emplacement une fois qu’il a été invité, nous vous recommandons de fournir un lien vers les paramètres d’emplacement, comme illustré plus loin dans cette rubrique.
 
->Remarque: la fonctionnalité de localisation sans consentement permet à votre application d’obtenir une localisation intentionnellement obfusquée (imprécise) sans obtenir l’autorisation explicite de l’utilisateur (le commutateur de localisation à l’échelle du système doit cependant toujours être **activé**). Pour savoir comment utiliser la localisation sans consentement dans votre application, voir la méthode [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) de la classe [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx).
+>Remarque: La fonctionnalité de localisation approximative permet à votre application d’obtenir un localisation intentionnellement obfusqué emplacement (imprécis) sans obtenir l’autorisation explicite de l’utilisateur (le commutateur de localisation à l’échelle du système doit toujours se trouver **sur**, toutefois). Pour savoir comment utiliser la localisation approximative dans votre application, consultez la méthode [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) dans la classe [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) .
 
 ### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>Étape 2: Obtenir l’emplacement de l’utilisateur et inscrire les changements d’autorisation de localisation
 
@@ -265,7 +263,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 Pour que votre application puisse accéder à l’emplacement de l’utilisateur, l’option **Localisation** doit être activée sur l’appareil. Dans l’application **Paramètres**, vérifiez que les **paramètres de confidentialité d’emplacement** suivants sont bien activés :
 
--   Le paramètre **Emplacement de cet appareil...** est **activé** (non applicable dans Windows 10 Mobile).
+-   **Emplacement de cet appareil …** est **activé (non applicable dans Windows 10 Mobile)**
 -   Le paramètre des services de localisation **Emplacement** est **activé**.
 -   Sous **Choisir les applications qui peuvent utiliser votre emplacement**, votre application est **activée**.
 

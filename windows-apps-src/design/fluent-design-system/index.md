@@ -1,118 +1,205 @@
 ---
 description: Découvrez Fluent Design et comment l'intégrer à vos applications.
-title: Système Fluent Design pour les applications UWP
+title: Système Fluent Design pour Windows
 author: mijacobs
 keywords: disposition d’application uwp, plateforme windows universelle, conception d’application, interface, système fluent design
 ms.author: mijacobs
 ms.date: 3/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-ms.localizationpriority: high
-ms.openlocfilehash: 5b57dc2ddae4c6e260df663097db5649866b96aa
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 2ab8e8c18a0b1db0991bf470f194f8774f2357b4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1638787"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554027"
 ---
-# <a name="the-fluent-design-system-for-uwp-apps"></a>Système Fluent Design pour les applications UWP
+# <a name="the-fluent-design-system-for-windows-app-creators"></a>Les créateurs d’application système pour les fenêtres de conception Fluent
+
+![En-tête de conception Fluent](images/fluentdesign-app-header.jpg)
 
 ## <a name="introduction"></a>Introduction
 
-<img src="images/fluentdesign-app-header.jpg" alt=" " />
+Le système Fluent Design est notre système de création adaptatives, empathiques et interfaces utilisateur esthétiques.
 
-L’interface utilisateur évolue. Elle s’étend pour inclure de nouvelles dimensions et interfaces, de la 2D à la 3D et au-delà, du clavier et de la souris au pointage du regard, au stylet et à la fonction tactile.  
-
-Le système Fluent Design est un ensemble de fonctionnalités UWP innovantes, combinées avec les meilleures pratiques pour créer des applications qui s'exécutent parfaitement sur tous les types d’appareils fonctionnant sous Windows.
-
-C’est notre système pour la création d’interfaces utilisateur adaptatives, empathiques et esthétiques. 
+## <a name="principles"></a>Principes
 
 **Adaptatives: les expériences Fluent paraissent naturelles sur chaque appareil.**
 
-Les expériences Fluent s’adaptent à l’environnement. Une expérience Fluent est agréable sur une tablette, un PC de bureau et une Xbox&mdash;elle fonctionne même parfaitement sur un casque de réalité mixte. Et lorsque vous ajoutez du matériel supplémentaire, comme un nouveau moniteur pour votre PC, une expérience Fluent en tire profit. 
+Les expériences Fluent s’adaptent à l’environnement. Une expérience Fluent est agréable sur une tablette, un PC de bureau et une Xbox, elle fonctionne même parfaitement sur un casque de réalité mixte. Et lorsque vous ajoutez du matériel supplémentaire, comme un nouveau moniteur pour votre PC, une expérience Fluent en tire profit.
 
 **Empathiques: les expériences Fluent sont intuitives et puissantes**
 
-Les expériences Fluent s’ajustent au comportement et aux intentions&mdash;elles comprennent et anticipent ce qui est nécessaire. Elles unissent les personnes et les idées, qu’elles se trouvent aux extrémités opposées de la planète ou juste les unes à côté des autres. 
+Les expériences Fluent s’ajustent au comportement et aux intentions&mdash;elles comprennent et anticipent ce qui est nécessaire. Elles unissent les personnes et les idées, qu’elles se trouvent aux extrémités opposées de la planète ou juste les unes à côté des autres.
 
-Montrer de l'empathie c’est exécuter la bonne action au bon moment. 
+**Esthétiques: les expériences Fluent sont attractives et immersives**
 
-Les expériences Fluent utilisent des contrôles et des modèles de façon cohérente, de sorte qu’elles se comportent comme l’utilisateur s’y attend. Les expériences Fluent sont accessibles aux personnes avec un large éventail de capacités physiques et incorporent des fonctionnalités de globalisation de sorte que les personnes du monde entier peuvent les utiliser. 
+En intégrant des éléments du monde physique, une expérience Fluent exploite quelque chose de fondamental. Elle utilise la lumière, l’ombre, le mouvement, la profondeur et la texture pour organiser les informations d’une façon qui semble intuitive et instinctive.
 
-**Esthétiques: les expériences Fluent sont attractives et immersives** 
 
-En intégrant des éléments du monde physique, une expérience Fluent exploite quelque chose de fondamental. Elle utilise la lumière, l’ombre, le mouvement, la profondeur et la texture pour organiser les informations d’une façon qui semble intuitive et instinctive. 
+## <a name="applying-fluent-design-to-your-app-with-uwp"></a>Utilisation de Fluent Design à votre application avec UWP
 
-Fluent Design ne consiste pas à créer des effets tape-à-l'œil. Il intègre des effets physiques qui améliorent véritablement l’expérience utilisateur, car ils émulent des expériences que nos cerveaux sont programmés pour traiter de manière efficace. 
+![Logo de conception Fluent](images/fluentdesign_header.png)
 
-## <a name="applying-fluent-design-to-your-app"></a>Utilisation de Fluent Design dans votre application
+Nos recommandations en matière de conception expliquent comment appliquer des principes de conception Fluent aux applications. Quel type d’applications? Alors que la plupart de nos recommandations peuvent être appliqués à n’importe quelle plateforme, nous avons créé UWP (la plateforme Windows universelle) pour prendre en charge de la conception Fluent.
 
-Les fonctionnalités Fluent Design sont intégrées dans UWP. Certaines de ces fonctionnalités&mdash;comme les pixels effectifs et le système d’entrée universel&mdash; sont automatiques. Il n’est pas nécessaire d’écrire du code supplémentaire pour en tirer parti. D'autres fonctionnalités, telles qu’acrylique, sont facultatives: vous les ajoutez à votre application en écrivant du code pour les inclure. 
+Les fonctionnalités Fluent Design sont intégrées dans UWP. Certaines de ces fonctionnalités&mdash;comme les pixels effectifs et le système d’entrée universel&mdash; sont automatiques. Il n’est pas nécessaire d’écrire du code supplémentaire pour en tirer parti. D'autres fonctionnalités, telles qu’acrylique, sont facultatives: vous les ajoutez à votre application en écrivant du code pour les inclure.
 
-> Pour en savoir plus sur les fonctionnalités de base qui sont automatiquement incluses dans chaque application UWP, voir l’article [Introduction à la conception d’applications UWP](../basics/design-and-ui-intro.md). Si vous débutez dans le développement UWP, vous souhaiterez peut-être découvrir en premier notre page [Prise en main de UWP](https://developer.microsoft.com/windows/apps/getstarted). 
+> Nous apportons les contrôles UWP aux ordinateurs de bureau pour que vous puissiez améliorer l’apparence et les fonctionnalités de vos applications WPF ou Windows existantes avec des fonctionnalités Fluent Design. Pour plus d’informations, voir [les contrôles UWP hôte dans les applications WPF et Windows Forms](/windows/uwp/xaml-platform/xaml-host-controls).
 
-Pour en savoir plus sur les nouvelles fonctionnalités qui vous permettent d'intégrer Fluent Design dans votre application, poursuivez la lecture.
+<!-- To apply Fluent Design to your app, follow our guidelines and use UWP (Universal Windows Platform) you can use UWP UI features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices. -->
+
+En plus de conseils de conception, nos articles Fluent Design également vous montrent comment écrire le code qui permet à vos conceptions de se produire. UWP utilise XAML, un langage de balisage qui le rend plus facile de créer des interfaces utilisateur. Voici un exemple:
+
+```xaml
+<Grid BorderBrush="Blue" BorderThickness="4">
+    <TextBox Text="Design with XAML" Margin="20" Padding="24,16"/>
+</Grid>
+```
+
+![](images/xaml-example.png)
+
+
+> Si vous débutez dans le développement UWP, consultez notre [prendre en main page UWP](https://developer.microsoft.com/windows/apps/getstarted).
 
 ## <a name="find-a-natural-fit"></a>Trouvez une solution naturelle
 
-Comment faire qu’une application semble naturelle sur un grand nombre d’appareils? En donnant l’impression qu’elle a été conçue pour chaque appareil spécifique. Une disposition de l’interface utilisateur qui s’adapte à différentes tailles d’écran&mdash;comme cela aucun espace n'est perdu (ni encombré non plus)&mdash;rend une expérience naturelle, comme si elle avait été spécialement conçue pour cet appareil. 
+Comment faire qu’une application semble naturelle sur un grand nombre d’appareils? En donnant l’impression qu’elle a été conçue pour chaque appareil spécifique. Une disposition de l’interface utilisateur qui s’adapte à différentes tailles d’écran&mdash;comme cela aucun espace n'est perdu (ni encombré non plus)&mdash;rend une expérience naturelle, comme si elle avait été spécialement conçue pour cet appareil.
 
-*  **Concevez pour les points d’arrêt appropriés**
+:::row:::
+    :::column:::
+        ![fpo image](images/thumbnail-size-classes.jpg)
+    :::column-end:::
+    :::column span="2":::
+        **Design for the right breakpoints**
 
-    Au lieu de concevoir une application pour chaque taille d’écran, le fait de se concentrer sur plusieurs largeurs principales (également appelées «points d’arrêt») peut considérablement simplifier vos conceptions et votre code, tout en donnant à votre application une apparence remarquable sur les petits comme sur les grands écrans.
+        Instead of designing for every individual screen size, focusing on a few key widths (also called "breakpoints") can greatly simplify your designs and code while still making your app look great on small to large screens.
 
-    [En savoir plus sur les tailles d’écran et les points d’arrêt](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
+        [Learn about screen sizes and breakpoints](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
+    :::column-end:::
+:::row-end:::
 
-*  **Créez une disposition dynamique**
+:::row:::
+    :::column:::
+        ![fpo image](images/rspd-resize.gif)
+    :::column-end:::
+    :::column span="2":::
+        **Create a responsive layout**
 
-    Pour qu’une application semble naturelle, elle doit remplir l’espace d’affichage disponible sans paraître trop encombrée. UWP fournit des panneaux qui organisent le contenu en grilles, piles et flux, que vous pouvez imbriquer les uns dans les autres.
+        For an app to feel natural, it should adapt its layout to different screen sizes and devices. You can use automatic sizing, layout panels, visual states, and even separate UI definitions in XAML to create a responsive UI.
 
-    [En savoir plus sur les panneaux de disposition UWP](/windows/uwp/design/layout/layout-panels)
+        [Learn about responsive design](/windows/uwp/design/layout/responsive-design)
+    :::column-end:::
+:::row-end:::
 
-* **Concevez pour un large éventail d’appareils**
+:::row:::
+    :::column:::
+        ![fpo image](images/devices.jpg)
+    :::column-end:::
+    :::column span="2":::
+        **Design for a spectrum of devices**
 
-    Les applications UWP peuvent s’exécuter sur un large éventail d’appareils fonctionnant sous Windows. Il est utile de comprendre quels appareils sont disponibles, à quoi ils servent et comment les utilisateurs interagissent avec.
+        UWP apps can run on a wide variety of Windows-powered devices. It's helpful to understand which devices are available, what they're made for, and how users interact with them.
 
-    [En savoir plus sur les appareils UWP](/windows/uwp/design/devices/)
+        [Learn about UWP devices](/windows/uwp/design/devices/)
+:::row-end:::
 
-* **Optimisez pour l’entrée appropriée**
+:::row:::
+    :::column:::
+        ![fpo image](images/keyboard-shortcuts.jpg)
+    :::column-end:::
+    :::column span="2":::
+        **Optimize for the right input**
 
-    Les applications UWP prennent automatiquement en charge les interactions souris, clavier, stylet et tactile courantes&mdash;vous n’avez rien de spécial à faire. Toutefois, vous pouvez améliorer votre application avec une prise en charge optimisée pour des entrées spécifiques, comme le stylet et Surface Dial.
+        UWP apps automatically support common mouse, keyboard, pen, and touch interactions&mdash;there's nothing extra you have to do. But you can enhance your app with optimized support for specific inputs, like pen and the Surface Dial.
 
-    [En savoir plus sur les entrées et les interactions](/windows/uwp/design/input/input-primer)
+        [Learn about inputs and interactions](/windows/uwp/design/input/input-primer)
+:::row-end:::
 
+## <a name="make-it-intuitive"></a>Rendre intuitive
 
-## <a name="make-it-intuitive-and-powerful"></a>Rendez-la intuitive et puissante
+Une expérience semble intuitive quand elle comporte comme l’utilisateur s’attend à. À l’aide des contrôles et des modèles établis, et en tirant profit de la prise en charge de plates-formes pour l’accessibilité et la globalisation, vous pouvez créer une expérience intuitive qui permet aux utilisateurs d’être plus productifs.
 
-Une expérience semble intuitive quand elle se comporte comme l’utilisateur s’y attend. À l’aide des contrôles et des modèles établis, et en tirant profit de la prise en charge de plates-formes pour l’accessibilité et la globalisation, vous pouvez créer une expérience intuitive qui permet aux utilisateurs d’être plus productifs. 
+Montrer de l'empathie c’est exécuter la bonne action au bon moment.
 
-* **Utilisez les contrôles appropriés pour la tâche**
+Les expériences Fluent utilisent des contrôles et des modèles de façon cohérente, de sorte qu’elles se comportent comme l’utilisateur s’y attend. Les expériences Fluent sont accessibles aux personnes avec un large éventail de capacités physiques et incorporent des fonctionnalités de globalisation de sorte que les personnes du monde entier peuvent les utiliser.
 
-    Les contrôles sont des blocs de construction de l’interface utilisateur; l’utilisation du contrôle approprié vous permet de créer une interface utilisateur qui se comporte comme les utilisateurs s’y attendent.  UWP fournit plus de 45contrôles, des simples boutons aux contrôles de données puissants. 
+:::row:::
+    :::column:::
+        ![fpo image](images/thumbnail-navview.png)
+    :::column-end:::
+    :::column span="2":::
+        **Provide the right navigation**
 
-    [En savoir plus sur les contrôles UWP](/windows/uwp/design/controls-and-patterns/)
+        Create an effortless experience by using the right app structure and navigation components.
 
-* **Soyez complet** 
+        [Learn about navigation](/windows/uwp/design/basics/navigation-basics/)
+:::row-end:::
 
-    Une application bien conçue est accessible aux personnes souffrant de handicaps ou d’invalidités. Avec du codage supplémentaire, vous pouvez partager votre application avec des personnes dans le monde entier.
+:::row:::
+    :::column:::
+        ![fpo image](images/thumbnail-commanding.png)
+    :::column-end:::
+    :::column span="2":::
+        **Be interactive**
 
-    [En savoir plus sur la facilité d'utilisation](/windows/uwp/design/usability/)
+        Buttons, command bars, keyboard shortcuts, and context menus enable users to interact with your app; they're the tools that change a static experience into something dynamic.
 
+        [Learn about commanding](/windows/uwp/design/basics/commanding-basics/)
+:::row-end:::
 
-## <a name="be-engaging-and-immersive"></a>Soyez attrayant et immersif 
+:::row:::
+    :::column:::
+        ![fpo image](images/thumbnail-controls-2.jpg)
+    :::column-end:::
+    :::column span="2":::
+        **Use the right control for the job**
 
-Rendez votre application attrayante en incorporant des éléments physiques, tels que de la lumière et du mouvement. 
+        Controls are the building blocks of the user interface; using the right control helps you create a user interface that behaves the way users expect it to.  UWP provides more than 45 controls,ranging from simple buttons to powerful data controls.
+
+        [Learn about UWP controls](/windows/uwp/design/controls-and-patterns/)
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![inclusive image](images/thumbnail-inclusive.png)
+    :::column-end:::
+    :::column span="2":::
+        **Be inclusive**
+        A well-design app is accessible to people with disabilities. With some extra coding, you can share your app with people around the world.
+
+        [Learn about Usability](/windows/uwp/design/usability/)
+:::row-end:::
+
+## <a name="be-engaging-and-immersive"></a>Soyez attrayant et immersif
+
+Fluent Design ne consiste pas à créer des effets tape-à-l'œil. Il intègre des effets physiques qui améliorent véritablement l’expérience utilisateur, car ils émulent des expériences que nos cerveaux sont programmés pour traiter de manière efficace.
 
 ## <a name="use-light"></a>Utilisez la lumière
 
 La lumière a le don d'attirer notre attention. Elle crée une ambiance et un sentiment d’appartenance. C’est aussi un outil pratique pour éclairer des informations.
-        
-Ajoutez de la lumière à votre application UWP:
-        
-* L’effet [Révéler](../style/reveal.md) utilise la lumière pour faire ressortir des éléments interactifs. La lumière illumine les éléments avec lesquels l’utilisateur peut interagir, en révélant des bordures masquées. Révéler est automatiquement activé sur certains contrôles, tels que l’affichage Liste et l’affichage Grille. Vous pouvez l’activer sur d’autres contrôles en appliquant nos styles Révéler prédéfinis. 
 
-* L’effet [Révéler focus](../style/reveal-focus.md) utilise la lumière pour attirer l’attention sur l’élément sur lequel le focus est positionné.  
+Ajoutez de la lumière à votre application UWP:
+
+:::row:::
+    :::column:::
+        ![fpo image](../style/images/Nav_Reveal_Animation.gif)
+    :::column-end:::
+    :::column span="2":::
+        **Reveal highlight**
+
+        [Reveal highlight](../style/reveal.md) uses light to make interactive elements stand out. Light illuminates the elements the user can interact with, revealing hidden borders. Reveal is automatically enabled on some controls, such as list view and grid view. You can enable it on other controls by applying our predefined Reveal highlight styles.
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![fpo image](../style/images/traveling-focus-fullscreen-light-rf.gif)
+    :::column-end:::
+    :::column span="2":::
+        **Reveal focus**
+
+        [Reveal focus](../style/reveal-focus.md) uses light to call attention to the element that currently has input focus.
+:::row-end:::
 
 ## <a name="create-a-sense-of-depth"></a>Créez une idée de profondeur
 
@@ -120,9 +207,15 @@ Nous vivons dans un monde en trois dimensions. En intégrant délibérément de 
 
 Ajoutez de la profondeur à votre application UWP:
 
-* [Acrylique](../style/acrylic.md) est un matériau translucide qui permet à l’utilisateur de voir des couches de contenu, en établissant une hiérarchie d’éléments d’interface utilisateur.
+:::row:::
+    :::column:::
+        ![fpo image](../motion/images/_parallax_v2.gif)
+    :::column-end:::
+    :::column span="2":::
+        **Parallax**
 
-* [Parallaxe](../motion/parallax.md) crée l’illusion de profondeur en donnant l’impression que les éléments situés au premier plan se déplacent plus rapidement que ceux de l’arrière-plan.
+        [Parallax](../motion/parallax.md) creates the illusion of depth by making items in the foreground appear to move more quickly than items in the background.
+:::row-end:::
 
 ## <a name="incorporate-motion"></a>Incorporez du mouvement
 
@@ -130,23 +223,46 @@ Imaginez la conception du mouvement comme un film. Les transitions transparentes
 
 Ajoutez du mouvement à votre application UWP:
 
-* Les [animations connectées](../motion/connected-animation.md) aident l’utilisateur à préserver le contexte en créant une transition transparente entre les scènes. 
+:::row:::
+    :::column:::
+        ![continuity gif](images/continuityXbox.gif)
+    :::column-end:::
+    :::column span="2":::
+        **Connected animations**
+
+        [Connected animations](../motion/connected-animation.md) help the user maintain context by creating a seamless transition between scenes.
+:::row-end:::
 
 ## <a name="build-it-with-the-right-material"></a>Générez-la avec la matière appropriée
 
 Les éléments qui nous entourent dans le monde réel sont sensoriels et stimulants. Ils plient, s'étirent, rebondissent, éclatent et glissent. Ces caractéristiques matérielles se traduisent en environnements numériques et donnent envie aux utilisateurs d'attraper et de toucher nos conceptions.
 
-Ajoutez de la matière à votre application UWP: 
-        
-* [Acrylique](../style/acrylic.md) est un matériau translucide qui permet à l’utilisateur de voir des couches de contenu, en établissant une hiérarchie d’éléments d’interface utilisateur. 
+Ajoutez de la matière à votre application UWP:
+
+:::row:::
+    :::column:::
+        ![fpo image](../style/images/acrylic_lighttheme_base.png)
+    :::column-end:::
+    :::column span="2":::
+        **Acrylic**
+
+        [Acrylic](../style/acrylic.md) is a translucent material that lets the user see layers of content, establishing a hierarchy of UI elements.
+:::row-end:::
 
 ## <a name="design-toolkits-and-code-samples"></a>Kits de ressources et exemples de code
 
 Vous voulez commencer à créer vos propres applications avec Fluent Design? Nos kits de ressources pour AdobeXD, Adobe Illustrator, Adobe Photoshop, Framer et Sketch vous aideront à accélérer vos conceptions, et nos exemples vous aideront à coder plus rapidement.
 
-* Découvrez notre page [Kits de ressources et exemples de conception](/windows/uwp/design/downloads/)
+:::row:::
+    :::column:::
+        ![fpo image](images/thumbnail-toolkits.jpg)
+    :::column-end:::
+    :::column span="2":::
+        **Design toolkits and samples page**
 
-<img src="images/fluentdesign_header.png" alt=" " />
+        Check out our [Design toolkits and samples page](/windows/uwp/design/downloads/)
+:::row-end:::
+
 
 
 

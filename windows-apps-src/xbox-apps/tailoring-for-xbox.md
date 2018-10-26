@@ -5,16 +5,14 @@ description: Découvrez comment optimiser votre application pourXbox.
 ms.author: wdg-dev-content
 ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1794e4b7ddf97b0b5c41ff29295892e512453a07
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 604e6dc5381a36d4dbda70e3435e5cd6fa44cc04
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "927254"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551893"
 ---
 # <a name="xbox-best-practices"></a>Bonnes pratiques pour Xbox
 
@@ -26,7 +24,7 @@ Par défaut, toutes les applications UWP sont exécutées sur Xbox One sans aucu
 
 ### <a name="do-turn-off-mouse-mode"></a>*À faire:* Désactiver le mode souris
 
-Les utilisateurs Xbox aiment leurs contrôleurs. Pour optimiser les entrées de la manette, [désactivez le mode souris](how-to-disable-mouse-mode.md) et activez la navigation directionnelle (également appelée [focus X-Y](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)). Surveiller les interruptions de focus et de l’interface utilisateur inaccessible.
+Les utilisateurs Xbox adorent leurs contrôleurs. Pour optimiser les entrées de la manette, [désactivez le mode souris](how-to-disable-mouse-mode.md) et activez la navigation directionnelle (également appelée [focus X-Y](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)). Attention aux interruptions du focus et l’interface utilisateur inaccessible.
 
 ### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*À faire:* Tracer un rectangle de focus qui soit approprié à une expérience TV («10-foot experience»).
 
@@ -47,7 +45,7 @@ Sur de nombreux téléviseurs, les bords de l’affichage sont coupés. Tout le 
 
 ### <a name="consider-use-tv-safe-colors"></a>*À envisager:* Utiliser des couleurs adaptées aux écrans de télévision
 
-Les écrans de télévision ne gèrent pas les intensités de couleurs extrêmes aussi bien que les écrans d’ordinateur. Évitez d’utiliser des couleurs trop intenses dans votre application. Celles-ci peuvent en effet produire un effet de bandes ou apparaître délavées. En outre, n’oubliez pas que les téléviseurs présentent des différences, donc les couleurs qui semblent parfaites sur *votre* téléviseur peuvent apparaître autrement chez vos utilisateurs. Lire les [couleurs](../design/devices/designing-for-tv.md#colors) pour comprendre comment rendre votre application attrayant à tout le monde!
+Les écrans de télévision ne gèrent pas les intensités de couleurs extrêmes aussi bien que les écrans d’ordinateur. Évitez d’utiliser des couleurs trop intenses dans votre application. Celles-ci peuvent en effet produire un effet de bandes ou apparaître délavées. En outre, n’oubliez pas que les téléviseurs présentent des différences, donc les couleurs qui semblent parfaites sur *votre* téléviseur peuvent apparaître autrement chez vos utilisateurs. Lire les [couleurs](../design/devices/designing-for-tv.md#colors) pour comprendre comment donner un aspect satisfaire votre application!
 
 ### <a name="remember-you-can-disable-scaling"></a>*Ne pas oublier:* Vous pouvez désactiver la mise à l’échelle
 
@@ -69,12 +67,12 @@ Les discussions suivantes sur [Channel 9](https://channel9.msdn.com/) sont une e
 
 ## <a name="app-dev-on-xbox"></a>Développement d’applications sur Xbox
 
-L’événement de **Développement d’applications sur Xbox** est un excellent point de départ pour les développeurs à créer des applications sur Xbox.
+L’événement de **Développement d’applications sur Xbox** est un excellent point de départ pour les développeurs de création d’applications sur Xbox.
 
 * [Regardez les sessions enregistrées](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
 * [Lisez les billets de blog](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
 
 ## <a name="see-also"></a>Articles associés
 
-- [Plateforme UWP sur XboxOne](index.md)
+- [UWP sur XboxOne](index.md)
 - [Conception pour Xbox et télévision](../design/devices/designing-for-tv.md)

@@ -6,16 +6,14 @@ ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, opengl, direct3d11 , portage
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a0baee79873203f9f52fd1e9acae03c7647240
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e7541a8f54f64197c17acea5f1737e36b0e6f670
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652808"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556863"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>Porter un convertisseur OpenGLES2.0 simple vers Direct3D11
 
@@ -84,9 +82,9 @@ typedef struct
 
 Cette structure n’a qu’une seule instance; elle contient tous les éléments requis pour effectuer le rendu d’un maillage très simple d’un nuanceur de vertex.
 
-> **Remarque** Le code OpenGL ES2.0 employé dans cette rubrique est basé sur l’implémentation de l’API Windows fournie par Khronos Group. Par ailleurs, il utilise la syntaxe de programmation Windows C.
+> **Remarque**OpenGL ES 2.0 tout code de cette rubrique est basé sur l’implémentation de l’API Windows fournie par Khronos Group et utilise la syntaxe de programmation Windows C.
 
- 
+ 
 
 ## <a name="what-you-need-to-know"></a>Ce que vous devez savoir
 
@@ -110,7 +108,7 @@ Cette structure n’a qu’une seule instance; elle contient tous les éléments
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -134,7 +132,7 @@ Cette structure n’a qu’une seule instance; elle contient tous les éléments
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idadditionalresourcesspanadditional-resources"></a><span id="additional_resources"></span>Ressources supplémentaires
 
@@ -143,9 +141,9 @@ Cette structure n’a qu’une seule instance; elle contient tous les éléments
 -   [Créer un projet DirectX 11 pour UWP](user-interface.md)
 -   [Mapper les concepts et l’infrastructure OpenGL ES 2.0 à Direct3D 11](map-concepts-and-infrastructure.md)
 
- 
+ 
 
- 
+ 
 
 
 

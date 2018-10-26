@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 10/23/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: bb1168401aaa715f8d1c459691dfa1b1ca38ccbe
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: d31c9fd3a6f8f57f3e78d88d3ad754d4848a9cad
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690425"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551691"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>Comment le système de gestion des ressources met en correspondance et sélectionne les ressources
 Lorsqu’une ressource est requise, plusieurs candidats sont susceptibles de correspondre, dans une certaine mesure, au contexte de ressource actuel. Le système de gestion des ressources analyse tous les candidats et identifie le meilleur à renvoyer. Pour ce faire, il prend en compte l’ensemble des qualificateurs afin de classer tous les candidats.
@@ -24,7 +22,7 @@ Dans ce processus de classement, une priorité différente est donnée aux quali
 
 Pour plus d’informations sur la mise en correspondance de balises de langue, consultez [Comment le système de gestion des ressources met en correspondance les balises de langue](how-rms-matches-lang-tags.md).
 
-Pour certains qualificateurs, tels que l’échelle et le contraste, il existe toujours un degré minimal de correspondance. Par exemple, un candidat qualifié pour «scale-100» correspond dans une certaine mesure à un contexte de «scale-400», mais pas autant qu’un candidat qualifié pour «scale-200» ou (pour une correspondance parfaite) «scale-400».
+Pour certains qualificateurs, tels que l’échelle et le contraste, il existe toujours un degré minimal de correspondance. Par exemple, un candidat qualifié pour «scale-100 «correspond à un contexte de «scale-400» dans une certaine mesure petite, bien qu’elles pas ainsi que d’un candidat qualifié pour» scale-200» ou (pour une correspondance parfaite)» scale-400».
 
 Toutefois, pour d’autres qualificateurs tels que la langue ou le lieu de résidence, il est possible d’avoir une comparaison sans correspondance (tout comme divers degrés de correspondance). Par exemple, un candidat dont le qualificateur de langue est «en-US» est une correspondance partielle pour un contexte «en-GB», mais un candidat dont le qualificateur est «fr» n’est pas du tout une correspondance. De même, un candidat dont le qualificateur de lieu de résidence est «155» (Europe de l’ouest) correspond plutôt bien au contexte d’un utilisateur dont le paramètre de lieu de résidence est «FR», mais un candidat ayant le qualificateur «US» ne correspond pas du tout.
 

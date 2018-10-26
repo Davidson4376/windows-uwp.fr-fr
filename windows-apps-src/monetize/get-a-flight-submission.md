@@ -6,16 +6,14 @@ title: Obtenir une soumission de version d’évaluation de package
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, soumission de version d’évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: 6772625d2939052e617c4edaafb2f06042dd244a
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 1a1c1e60a722fbba6f2a5c13e75078a11932b84e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5482291"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557310"
 ---
 # <a name="get-a-package-flight-submission"></a>Obtenir une soumission de version d’évaluation de package
 

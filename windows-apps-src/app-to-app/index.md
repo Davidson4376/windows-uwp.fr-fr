@@ -6,16 +6,14 @@ author: msatranjr
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cc0b8fb9d1388db0e79e5f029ae69bfae1e4c69
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.openlocfilehash: 52e8479febb2134365bab6c68486d9e284366535
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1706964"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552981"
 ---
 # <a name="app-to-app-communication"></a>Communication entre les applications
 
@@ -32,7 +30,7 @@ Outre le contrat de partage, les applications peuvent également intégrer des t
 
 ## <a name="in-this-section"></a>Dans cette section
 
-| Sujet | Description |
+| Rubrique | Description |
 |-------|-------------|
 | [Partager des données](share-data.md) | Cet article explique comment prendre en charge le contrat de partage dans une application UWP. Le contrat de partage constitue un moyen simple pour partager rapidement des données, telles que du texte, des liens, des photos et vidéos, entre les applications. Par exemple, un utilisateur peut partager une page web avec ses amis à l’aide d’une application de réseau social ou enregistrer un lien dans une application de prise de notes pour s’y référer plus tard. |
 | [Recevoir des données](receive-data.md) | Cet article explique comment recevoir dans votre application UWP du contenu partagé à partir d’une autre application à l’aide du contrat de partage. Ce contrat de partage permet à votre application d’être présentée en tant qu’option quand l’utilisateur appelle l’option Partager. |

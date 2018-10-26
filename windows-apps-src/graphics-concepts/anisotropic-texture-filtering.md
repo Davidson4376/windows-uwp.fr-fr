@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b6f4b74d64b7a3f9768697b5b6f495a322686c59
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 6e91c707b31de859d61ae926518c40812758320e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1042598"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553217"
 ---
 # <a name="anisotropic-texture-filtering"></a>Filtrage de textures anisotropiques
 
@@ -30,9 +28,9 @@ Vous pouvez utiliser le filtrage de textures anisotropiques parallèlement à un
 
 [Filtrage de textures](texture-filtering.md)
 
- 
+ 
 
- 
+ 
 
 
 

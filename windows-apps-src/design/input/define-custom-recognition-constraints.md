@@ -9,15 +9,13 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fdc38c39591a63800eb5d985022bb7ee569d7203
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 86ed884c3e9811c65d414dce6c0697e20dbd4711
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653478"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559305"
 ---
 # <a name="define-custom-recognition-constraints"></a>Définir des contraintes de reconnaissance vocale personnalisées
 
@@ -182,7 +180,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Ce fichier SRGS (srgs.grxml) inclut des balises d’interprétation sémantique. Ces balises fournissent un mécanisme permettant de retourner à votre application les données correspondant à la grammaire. Les grammaires doivent être conformes à la spécification W3C (World Wide Web Consortium) [SISR (Semantic Interpretation for Speech Recognition) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765).
+Ce fichier SRGS (srgs.grxml) inclut des balises d’interprétation sémantique. Ces balises fournissent un mécanisme permettant de retourner à votre application les données correspondant à la grammaire. Grammaires doivent être conformes à la spécification World Wide Web Consortium (W3C)[Sémantique SEMANTIC Interpretation for Speech Recognition () 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765) .
 
 Ici, nous écoutons des variantes de «yes» et «no».
 
@@ -241,9 +239,9 @@ Pour informer l’utilisateur des expressions qu’il peut énoncer, utilisez le
 
 **Exemples**
 * [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+ 
 
- 
+ 
 
 
 

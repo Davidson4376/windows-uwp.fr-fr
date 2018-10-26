@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 88c8c42dbf466b0e41125fd1b616e5eba950ba8f
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: ec3d091d7cc5aca82aeef9a3e7f29a8d363705a3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043448"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552469"
 ---
 # <a name="mipmap-packing"></a>Compression de mipmaps
 
@@ -36,11 +34,11 @@ Les API dédiées à la copie des vignettes n’ont pas accès aux mips compress
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Restitution de la surface d’une ressource de diffusion en continu sous forme de vignettes](how-a-streaming-resource-s-area-is-tiled.md)
+[Restitution de la surface d’une ressource de diffusion en continu sous forme de mosaïque](how-a-streaming-resource-s-area-is-tiled.md)
 
- 
+ 
 
- 
+ 
 
 
 

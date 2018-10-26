@@ -6,20 +6,22 @@ title: Lecture multimédia en arrière-plan héritée
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 68695125c2056adca8186120db7875cb3a68baf8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 319343a06eeb49fc4ec0ca2fcd340f655654f718
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228867"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554635"
 ---
 # <a name="legacy-background-media-playback"></a>Lecture multimédia en arrière-plan héritée
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cet article décrit le modèle hérité à deuxprocessus d’ajout de la prise en charge de l’audio d’arrière-plan à votre application UWP. À partir de Windows 10, version 1607, un modèle à processus unique pour l’audio d’arrière-plan qui est bien plus facile à implémenter. Pour plus d’informations sur les recommandations actuelles en matière d’audio d’arrière-plan, consultez la section [Lire du contenu multimédia en arrière-plan](background-audio.md). Cet article vise à fournir un support pour les applications déjà développées à l’aide du modèle hérité à deuxprocessus.
+
+> [!NOTE]
+> À partir de Windows, version 1703, **BackgroundMediaPlayer** est déconseillée et ne peuvent pas être disponibles dans les futures versions de Windows.
 
 ## <a name="background-audio-architecture"></a>Architecture de la lecture audio en arrière-plan
 
@@ -121,9 +123,9 @@ Le tableau suivant répertorie les stratégies sont appliqués selon les types d
 | **Durée de vie partagée**    | Activée  | Désactivée | Désactivée |
 
 
- 
+ 
 
- 
+ 
 
 
 

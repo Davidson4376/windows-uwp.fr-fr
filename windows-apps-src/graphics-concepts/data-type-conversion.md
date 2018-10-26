@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c7f68984274cbdb3adec0a88a0c99f7a7342380
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: a6ceb1e779f8622d3e358bc131b21f6ec66ac2f8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045112"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556412"
 ---
 # <a name="data-type-conversion"></a>Conversion de types de données
 
@@ -37,7 +35,7 @@ Les ensembles de termes utilisés dans cet article pour caractériser les diffé
 | FLOAT | Valeur en virgule flottante dans toute représentation définie par Direct3D.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | SRVB  | Comparable à UNORM, dans la mesure où pour un nombre sur nbits, un ensemble de 0 correspond à 0.0f, et un ensemble de 1 correspond à 1.0f. Toutefois, contrairement à UNORM, la séquence SRVB de codages d’entiers non signés entre un ensemble de 0 et un ensemble de 1 représente une progression non linéaire dans l’interprétation en virgule flottante des nombres compris entre 0.0f et 1.0f. En gros, si cette progression non linéaire, SRVB, est affichée sous la forme d’une séquence de couleurs, elle apparaît à un observateur «moyen» en tant que pente linéaire de niveaux de luminosité, dans des conditions de visualisation «moyennes» et sur un affichage «moyen». Pour plus d’informations, consultez la norme de couleurs SRVB, CEI61996-2-1, sur le site de la CEI (Commission électrotechnique internationale).                |
 
- 
+ 
 
 Les termes ci-dessus sont fréquemment utilisés comme «modificateurs de nom de format», où ils décrivent à la fois le mode de disposition des données en mémoire et la conversion à effectuer dans le chemin de transport (pouvant inclure un filtrage) à partir de la mémoire à destination ou en provenance d’une unité de pipeline telle qu’un nuanceur.
 
@@ -189,7 +187,7 @@ Dans le cas des entiers, sauf mention contraire, toutes les conversions vers/dep
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanfixed-point-integer-conversion"></a><span id="Fixed_Point_Integer_Conversion"></span><span id="fixed_point_integer_conversion"></span><span id="FIXED_POINT_INTEGER_CONVERSION"></span>Conversion d’entier en virgule fixe
 
@@ -238,22 +236,22 @@ Les représentations d’entiers en virgule fixe sont utilisées de deux façons
 <td align="left">Entier en virgule fixe</td>
 <td align="left">FLOAT</td>
 <td align="left"><p>Supposons que la représentation en virgule fixe spécifique à convertir en représentation flottante ne contienne pas plus de 24bits d’informations au total, dont pas plus de 23bits figurent dans la partie fractionnaire. Supposons qu’un nombre en virgule fixe donné, fxp, se trouve sous la forme i.f (ibits d’entier, fbits de fraction). La conversion en valeur flottante ressemble au pseudo-code suivant.</p>
-<p>float résultat = (float) (fxp &gt; &gt; f) + / / extract entier</p>
-((float) (fxp &amp; (2<sup>f</sup> - 1)) / (2<sup>f</sup>)); extraire la fraction</td>
+<p>float résultat = (float) (fxp &gt; &gt; f) + / / extraction de nombre entier</p>
+((float) (fxp &amp; (2<sup>f</sup> - 1)) / (2<sup>f</sup>)); extraction de la fraction</td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
 [Annexes](appendix.md)
 
- 
+ 
 
- 
+ 
 
 
 

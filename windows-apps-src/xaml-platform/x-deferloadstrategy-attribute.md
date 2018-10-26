@@ -1,21 +1,19 @@
 ---
 author: jwmsft
 title: Attribut xDeferLoadStrategy
-description: xDeferLoadStrategy retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600octets à l’utilisation de la mémoire.
+description: xDeferLoadStrategy retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire.Chaque élément affecté ajoute environ 600octets à l’utilisation de la mémoire.
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ff89fea215ea4af58ab9b51a40baeb81ecb39bcc
-ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
-ms.translationtype: HT
+ms.openlocfilehash: cd958ba5f9025430be2736329c5a909233461039
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "1881100"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555251"
 ---
 # <a name="xdeferloadstrategy-attribute"></a>Attribut x:DeferLoadStrategy
 
@@ -36,7 +34,7 @@ Toutefois, le suivi des éléments différés par l’infrastructure XAML ajoute
 
 Les restrictions pour l’utilisation de **x:DeferLoadStrategy** sont les suivantes:
 
-- Vous devez définir un [x:Name](x-name-attribute.md) pour l’élément, afin de pouvoir retrouver l’élément ultérieurement.
+- Vous devez définir un [x: Name](x-name-attribute.md)pour l’élément, en tant que cet emplacement doit être un moyen de trouver l’élément ultérieurement.
 - Vous pouvez différer uniquement les types qui dérivent de [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) ou de [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249).
 - Vous ne pouvez pas différer d’éléments racines dans un objet [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page), [**UserControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) ou [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
 - Vous ne pouvez pas différer d’éléments dans un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).
@@ -59,9 +57,9 @@ Une fois qu’un élément différé est créé par une des méthodes répertori
 - Toutes les liaisons sur l’élément sont évaluées.
 - Si vous vous êtes inscrit pour recevoir des notifications de modification de propriété sur la propriété contenant les éléments différés, la notification est déclenchée.
 
-Vous pouvez imbriquer des éléments différés, mais ils doivent être réalisés à partir de l’élément le plus éloigné.  Si vous tentez de réaliser un élément enfant avant que le parent soit réalisé, une exception est levée.
+Vous pouvez imbriquer des éléments différés, mais ils doivent être réalisés à partir de l’élément le plus éloigné. Si vous tentez de réaliser un élément enfant avant que le parent soit réalisé, une exception est levée.
 
-En règle générale, nous vous conseillons de différer les éléments qui ne sont pas visibles dans la première image. Une bonne indication pour identifier les éléments à différer consiste à rechercher des éléments créés avec une [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) réduite. De même, une interface utilisateur déclenchée par l’utilisateur est également un bon endroit où rechercher des éléments à différer.
+En règle générale, nous vous conseillons de différer les éléments qui ne sont pas visibles dans la première image.Une bonne indication pour identifier les éléments à différer consiste à rechercher des éléments créés avec une [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) réduite. De même, une interface utilisateur déclenchée par l’utilisateur est également un bon endroit où rechercher des éléments à différer.
 
 Soyez prudent avant de différer des éléments dans un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878), car si le temps de démarrage s’en trouve réduit, cela peut également réduire les performances des mouvements panoramiques, selon ce que vous créez. Si vous cherchez à accroître les performances des mouvements panoramiques, consultez la documentation sur [l’extension de balisage {x:Bind}](x-bind-markup-extension.md) et [l’attribut x:Phase](x-phase-attribute.md).
 
@@ -73,19 +71,19 @@ Il est généralement conseillé de mesurer les performances de votre applicatio
 
 ```xml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">
-    <Grid.RowDefinitions>
-        <RowDefinition Height="Auto" />
-        <RowDefinition Height="Auto" />
-    </Grid.RowDefinitions>
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto" />
-        <ColumnDefinition Width="Auto" />
-    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
 
-    <Rectangle Height="100" Width="100" Fill="#F65314" Margin="0,0,4,4" />
-    <Rectangle Height="100" Width="100" Fill="#7CBB00" Grid.Column="1" Margin="4,0,0,4" />
-    <Rectangle Height="100" Width="100" Fill="#00A1F1" Grid.Row="1" Margin="0,4,4,0" />
-    <Rectangle Height="100" Width="100" Fill="#FFBB00" Grid.Row="1" Grid.Column="1" Margin="4,4,0,0" />
+    <Rectangle Height="100" Width="100" Fill="#F65314" Margin="0,0,4,4" />
+    <Rectangle Height="100" Width="100" Fill="#7CBB00" Grid.Column="1" Margin="4,0,0,4" />
+    <Rectangle Height="100" Width="100" Fill="#00A1F1" Grid.Row="1" Margin="0,4,4,0" />
+    <Rectangle Height="100" Width="100" Fill="#FFBB00" Grid.Row="1" Grid.Column="1" Margin="4,4,0,0" />
 </Grid>
 <Button x:Name="RealizeElements" Content="Realize Elements" Click="RealizeElements_Click"/>
 ```
@@ -94,6 +92,6 @@ Il est généralement conseillé de mesurer les performances de votre applicatio
 private void RealizeElements_Click(object sender, RoutedEventArgs e)
 {
     // This will realize the deferred grid.
-    this.FindName("DeferredGrid");
+    this.FindName("DeferredGrid");
 }
 ```

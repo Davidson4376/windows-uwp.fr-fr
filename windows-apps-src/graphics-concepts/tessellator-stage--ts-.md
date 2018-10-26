@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f2bdcf77a9c150195a7a4c27a064d26c525472a
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 1d57c60e8cba9be75e936c55800bac93f8df3e30
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044818"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556613"
 ---
 # <a name="tessellator-ts-stage"></a>Étape Tessellator (TS)
 
@@ -72,7 +70,7 @@ L’étape Tessellator (TS) se compose de deux phases:
     | Integer              | TessFactor range: \[1..64\] |
     | Pow2                 | Plage TessFactor: \[1..64\] |
 
-     
+     
 
 Le pavage est implémenté avec les deux étapes de nuanceur programmable: un [nuanceur de coque](hull-shader-stage--hs-.md) et un [nuanceur de domaine](domain-shader-stage--ds-.md). Ces étapes de nuanceur sont programmées avec le code HLSL défini dans le modèle de nuanceur 5. Les cibles du nuanceur sont: hs\_5\_0 et ds\_5\_0. Le titre de crée le nuanceur, avant que le code pour le matériel soit extrait des nuanceurs compilés transmis dans le runtime lorsque les nuanceurs sont liés au pipeline.
 
@@ -97,9 +95,9 @@ Le paveur sort des coordonnées UV (et éventuellement W) et la topologie de sur
 
 [Pipeline graphique](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

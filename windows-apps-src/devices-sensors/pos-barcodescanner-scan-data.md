@@ -5,16 +5,14 @@ description: Découvrez comment obtenir et interpréter les données de code-bar
 ms.author: elcowle
 ms.date: 08/29/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: 0992ea54092063ba53f23871599905e58f1b456e
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: caeda47e51c74976bd76708c60938d2dfc745d54
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5515439"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554784"
 ---
 # <a name="obtain-and-understand-barcode-data"></a>Obtenir et comprendre les données de code-barres
 

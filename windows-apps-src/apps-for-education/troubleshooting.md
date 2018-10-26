@@ -6,16 +6,14 @@ ms.author: pafarley
 ms.assetid: 9218e542-f520-4616-98fc-b113d5a08e0f
 ms.date: 10/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, éducation
 ms.localizationpriority: medium
-ms.openlocfilehash: 3193525316d085e56244d6f03da99e3e07c6539f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: eaf4c8e2641359e6d9a92444f66a1b6d4e5e5881
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5474686"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556573"
 ---
 # <a name="troubleshoot-microsoft-take-a-test-with-the-event-viewer"></a>Résolvez à l’aide de l’observateur d’événements.
 

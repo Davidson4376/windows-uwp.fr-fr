@@ -6,15 +6,13 @@ keywords: DirectX, XAML
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 32696b739b430ecab25b5138f9aba9eb0ab40204
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: cb837965746eb1c2c7deab613eec239a83cac294
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673726"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558990"
 ---
 # <a name="extend-the-game-sample"></a>Étendre l’exemple de jeu
 
@@ -27,7 +25,7 @@ ms.locfileid: "1673726"
 ## <a name="using-xaml-for-the-overlay"></a>Utilisation de XAML pour la superposition
 
 
-Une autre possibilité que nous n’avons pas détaillée est l’utilisation de XAML à la place de [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) pour la superposition. XAML présente de nombreux avantages par rapport à Direct2D pour le dessin des éléments de l’interface utilisateur. L’avantage le plus important est qu’il facilite l’incorporation de l’apparence Windows10 dans votre jeu DirectX. Un grand nombre des éléments, styles et comportements communs qui définissent une application du Windows Store sont étroitement intégrés au modèle XAML, ce qui réduit les tâches d’implémentation d’un développeur de jeux. Si la conception de votre propre jeu a une interface utilisateur complexe, envisagez d’utiliser XAML à la place de Direct2D.
+Une autre possibilité que nous n’avons pas détaillée est l’utilisation de XAML à la place de [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) pour la superposition. XAML présente de nombreux avantages par rapport à Direct2D pour le dessin des éléments de l’interface utilisateur. L’avantage le plus important est qu’il facilite l’incorporation de l’apparence Windows 10 dans votre jeu DirectX. Un grand nombre des éléments, styles et comportements communs qui définissent une application du Windows Store sont étroitement intégrés au modèle XAML, ce qui réduit les tâches d’implémentation d’un développeur de jeux. Si la conception de votre propre jeu a une interface utilisateur complexe, envisagez d’utiliser XAML à la place de Direct2D.
 
 Avec XAML, nous pouvons implémenter une interface de jeu qui ressemble à l’interface Direct2D utilisée précédemment.
 

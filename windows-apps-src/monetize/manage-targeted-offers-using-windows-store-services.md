@@ -6,16 +6,14 @@ title: Gérer les offres ciblées à l’aide des services du WindowsStore
 ms.author: mhopkins
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, services du MicrosoftStore, API des offres ciblées du MicrosoftStore, offres ciblées
 ms.localizationpriority: medium
-ms.openlocfilehash: cb3000e8d791f997267166505a190ddc7c9b4d34
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 706f48e64fb8e7534686b8fd7e9666b98dffd9b7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478665"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555614"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>Gérer les offres ciblées à l’aide des services du WindowsStore
 

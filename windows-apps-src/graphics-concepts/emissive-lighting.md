@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b2717a482e0ea1ad80f0f13dc09bb6789863ef7e
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9ce2082479261cd96fb1c5bafd5f2df06bf6f239
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044268"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558685"
 ---
 # <a name="emissive-lighting"></a>Éclairage émissif
 
@@ -33,7 +31,7 @@ où:
 |-----------|---------------|----------------------------------------------------------------------|-----------------|
 | Cₑ        | (0,0,0,0)     | Rouge, vert, bleu et transparence alpha (correspondant tous à des valeurs en virgule flottante) | Couleur émissive. |
 
- 
+ 
 
 Les valeurs possibles de Cₑ sont couleur1 ou couleur2. Si la couleur de vertex n’est pas fournie, la couleur émissive du matériau est utilisée.
 
@@ -57,9 +55,9 @@ La figure ci-après illustre la façon dont la lumière émissive fusionne avec 
 
 [Formules mathématiques d’éclairage](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

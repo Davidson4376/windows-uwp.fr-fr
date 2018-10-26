@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 305924b19914bf4e85366695add2476c3c81c281
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 283ea63d118f9a61fe745dd3eb60b68594c32279
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044808"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553608"
 ---
 # <a name="specular-lighting"></a>Éclairage spéculaire
 
@@ -36,7 +34,7 @@ Il est possible de calculer l'éclairage spéculaire en utilisant l’équation 
 |-----------------------------------------------------------------------------|
 | Éclairage spéculaire = Cₛ \ * sum\ [Lₛ \ * (N · H)<sup>P</sup> \ * Attén \ * Pt Lum\] |
 
- 
+ 
 
 Les variables, leurs types et leurs plages sont les suivantes:
 
@@ -51,7 +49,7 @@ Les variables, leurs types et leurs plages sont les suivantes:
 | Attén        | Non applicable           | Virgule flottante                                                   | Valeur d'atténuation de la lumière. Voir [Atténuation et facteur de point lumineux](attenuation-and-spotlight-factor.md). |
 | Pt lum         | Non applicable           | Virgule flottante                                                   | Facteur de point lumineux. Voir [Atténuation et facteur de point lumineux](attenuation-and-spotlight-factor.md).        |
 
- 
+ 
 
 La valeur pour Cₛ possède l'une des valeurs suivantes:
 
@@ -59,9 +57,9 @@ La valeur pour Cₛ possède l'une des valeurs suivantes:
 -   couleur2 du vertex, si la source du matériau spéculaire est la couleur du vertex spéculaire, et que la deuxième couleur du vertex est indiquée dans la déclaration du vertex.
 -   couleur spéculaire du matériau
 
-**Remarque** si vous utilisez l'une des options de source du matériau spéculaire et que la couleur du vertex n’est pas indiquée, la couleur spéculaire du matériau est utilisée.
+**Remarque**  si aucune des deux options de source du matériau spéculaire sont utilisée et la couleur du vertex n’est pas fournie, la couleur spéculaire du matériau est utilisée.
 
- 
+ 
 
 Les composants spéculaires sont restreints pour être compris entre 0 et 255. Ensuite, les lumières sont traitées et interpolées séparément.
 
@@ -74,7 +72,7 @@ Le vecteur à mi-chemin (H) se situe à mi-chemin entre deux vecteurs: le vecteu
 |-------------------------------------------|
 | H = norm(norm(Cₚ - Vₚ) + L<sub>dir</sub>) |
 
- 
+ 
 
 | Paramètre       | Valeur par défaut | Type                                          | Description                                                  |
 |-----------------|---------------|-----------------------------------------------|--------------------------------------------------------------|
@@ -82,7 +80,7 @@ Le vecteur à mi-chemin (H) se situe à mi-chemin entre deux vecteurs: le vecteu
 | Vₚ              | Non applicable           | Vecteur 3D (valeurs à virgule flottante x, y et z) | Position du vertex.                                             |
 | L<sub>dir</sub> | Non applicable           | Vecteur 3D (valeurs à virgule flottante x, y et z) | Vecteur de direction entre la position du vertex et la position de la lumière. |
 
- 
+ 
 
 Le fait de déterminer le vecteur à mi-chemin de cette manière peut s'avérer extrêmement gourmand en calcul. Vous avez également la possibilité d'utiliser des reflets spéculaires orthogonaux (plutôt que des reflets spéculaires liés à l'appareil photo) pour indiquer au système d'agir comme si le point de vue était infiniment distant sur l'axe z. Cette définition est illustrée par la formule suivante :
 
@@ -90,7 +88,7 @@ Le fait de déterminer le vecteur à mi-chemin de cette manière peut s'avérer 
 |-------------------------------------|
 | H = norm((0,0,1) + L<sub>dir</sub>) |
 
- 
+ 
 
 Ce paramètre est moins gourmand en calcul, mais beaucoup moins précis. Il est donc préférable de l'utiliser avec des applications qui utilisent la projection orthogonale.
 
@@ -120,9 +118,9 @@ L'éclairage spéculaire est plus difficile à calculer que l'éclairage diffus.
 
 [Formules mathématiques d’éclairage](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

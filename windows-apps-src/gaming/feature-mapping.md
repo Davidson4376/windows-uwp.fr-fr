@@ -6,16 +6,14 @@ ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, directx9, directx11, portage
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a001f461f78acf79438bb15b03aac00a05f29a3
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 8dcf1749f1e7db4d514466d6a753d6f8cace5713
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691618"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555519"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>Mapper les fonctionnalités DirectX9 sur les API DirectX11
 
@@ -240,7 +238,7 @@ Aidez-vous du tableau suivant pour convertir du code Direct3D 9 en Direct3D 11. 
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="surface-format-mapping"></a>Mappage des formats de Surface
 
@@ -346,20 +344,20 @@ Utilisez le tableau suivant pour convertir les formats Direct3D 9 en formats DXG
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong>Remarque</strong>    Utilisez le swizzle .r dans le nuanceur pour dupliquer le rouge dans les autres composants et obtenir le comportement Direct3D 9.
+<strong>Remarque</strong>  swizzle .r d’utilisation dans le nuanceur pour dupliquer le rouge dans les autres composants et obtenir le comportement Direct3D 9.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong>Remarque</strong>   Utilisez le swizzle .rrrg dans le nuanceur pour dupliquer le rouge et déplacer le vert dans les composants alpha pour obtenir le comportement Direct3D 9.
+<strong>Remarque</strong>  utilisez le swizzle .rrrg dans le nuanceur pour dupliquer le rouge et déplacer le vert dans les composants alpha pour obtenir le comportement Direct3D 9.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -402,10 +400,10 @@ Utilisez le tableau suivant pour convertir les formats Direct3D 9 en formats DXG
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong>Remarque</strong>   Dans Direct3D 9, les données étaient agrandies de 255.0f, mais cela peut être géré dans le nuanceur.
+<strong>Remarque</strong>  dans Direct3D 9, les données a été agrandissement de 255.0f, mais cela peut être géré dans le nuanceur.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -416,10 +414,10 @@ Utilisez le tableau suivant pour convertir les formats Direct3D 9 en formats DXG
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong>Remarque</strong>   Dans Direct3D 9, les données étaient agrandies de 255.0f, mais cela peut être géré dans le nuanceur.
+<strong>Remarque</strong>  dans Direct3D 9, les données a été agrandissement de 255.0f, mais cela peut être géré dans le nuanceur.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -430,10 +428,10 @@ Utilisez le tableau suivant pour convertir les formats Direct3D 9 en formats DXG
 <td align="left"><p>D3DFMT_DXT2</p></td>
 <td align="left"><p>DXGI_FORMAT_BC1_UNORM &amp; DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
-<strong>Remarque</strong>   DXT1 et DXT2 sont identiques d’un point de vue API/matériel. La seule différence est en cas d’utilisation d’un alpha prémultiplié, qui peut faire l’objet d’un suivi par une application et ne requiert pas de format distinct.
+<strong>Remarque</strong>  DXT1 et DXT2 sont identiques d’un point de vue API/matériel. La seule différence est en cas d’utilisation d’un alpha prémultiplié, qui peut faire l’objet d’un suivi par une application et ne requiert pas de format distinct.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -444,10 +442,10 @@ Utilisez le tableau suivant pour convertir les formats Direct3D 9 en formats DXG
 <td align="left"><p>D3DFMT_DXT4</p></td>
 <td align="left"><p>DXGI_FORMAT_BC2_UNORM &amp; DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
-<strong>Remarque</strong>   DXT3 et DXT4 sont identiques d’un point de vue API/matériel. La seule différence est en cas d’utilisation d’un alpha prémultiplié, qui peut faire l’objet d’un suivi par une application et ne requiert pas de format distinct.
+<strong>Remarque</strong>  DXT3 et DXT4 sont identiques d’un point de vue API/matériel. La seule différence est en cas d’utilisation d’un alpha prémultiplié, qui peut faire l’objet d’un suivi par une application et ne requiert pas de format distinct.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -510,10 +508,10 @@ Utilisez le tableau suivant pour convertir les formats Direct3D 9 en formats DXG
 <td align="left"><p>D3DFMT_L16</p></td>
 <td align="left"><p>DXGI_FORMAT_R16_UNORM</p>
 <div class="alert">
-<strong>Remarque</strong>   Utilisez le swizzle .r dans le nuanceur pour dupliquer le rouge dans les autres composants et obtenir le comportement D3D9.
+<strong>Remarque</strong>  swizzle .r d’utilisation dans le nuanceur pour dupliquer le rouge dans les autres composants et obtenir le comportement D3D9.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
@@ -584,30 +582,30 @@ Utilisez le tableau suivant pour convertir les formats Direct3D 9 en formats DXG
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>Remarque</strong>   Le nuanceur obtient des valeurs UINT, mais si des valeurs en virgule flottante de style Direct3D 9 sont nécessaires (0.0f, 1.0f... 255.f), les valeurs UINT peuvent seulement être converties en float32 dans le nuanceur.
+<strong>Remarque</strong>  le nuanceur Obtient des valeurs UINT, mais si partie intégrante de style Direct3D 9 sont nécessaires (0.0f, 1.0f … 255.f), UINT peut seulement être convertie en float32 dans le nuanceur.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>Remarque</strong>   Le nuanceur obtient des valeurs SINT, mais si des valeurs en virgule flottante de style Direct3D 9 sont nécessaires, les valeurs SINT peuvent seulement être converties en float32 dans le nuanceur.
+<strong>Remarque</strong>  le nuanceur Obtient des valeurs SINT, mais si Direct3D 9 style sont nécessaires, les valeurs SINT peut seulement être convertie en float32 dans le nuanceur.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>Remarque</strong>   Le nuanceur obtient des valeurs SINT, mais si des valeurs en virgule flottante de style Direct3D 9 sont nécessaires, les valeurs SINT peuvent seulement être converties en float32 dans le nuanceur.
+<strong>Remarque</strong>  le nuanceur Obtient des valeurs SINT, mais si Direct3D 9 style sont nécessaires, les valeurs SINT peut seulement être convertie en float32 dans le nuanceur.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -650,30 +648,30 @@ Utilisez le tableau suivant pour convertir les formats Direct3D 9 en formats DXG
 <td align="left"><p>FourCC 'ATI1'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC4_UNORM</p>
 <div class="alert">
-<strong>Remarque</strong>   Requiert le niveau de fonctionnalité 10.0 ou ultérieur
+<strong>Remarque</strong>  requiert le niveau de fonctionnalité 10.0 ou ultérieur
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>FourCC 'ATI2'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC5_UNORM</p>
 <div class="alert">
-<strong>Remarque</strong>   Requiert le niveau de fonctionnalité 10.0 ou ultérieur
+<strong>Remarque</strong>  requiert le niveau de fonctionnalité 10.0 ou ultérieur
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

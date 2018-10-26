@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 06e80e0a928c179d9dcbf2d092135fafa337d403
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 4db96cea273348b4e1bc7059446f7528ba30a645
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691318"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557903"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Charger des images et des ressources adaptées à l’échelle, au thème, au contraste élevé et à d’autres contextes
 Votre application peut charger des fichiers de ressources d’image (ou d’autres fichiers de ressources) adaptés pour le [facteur d’échelle de l’affichage](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), le thème, le contraste élevé et d’autres contextes d’exécution. Ces images peuvent être référencées à partir du code impératif ou à partir du balisage XAML, par exemple en tant que propriété **Source** d’une **Image**. Elles peuvent également apparaître dans le fichier source de votre manifeste de votre package d’application (fichier `Package.appxmanifest`) &mdash; par exemple, en tant que la valeur de l’icône Application sur l’onglet Actifs visuels du Concepteur de manifeste de VisualStudio &mdash; ou sur vos vignettes et toasts. En utilisant des qualificateurs pour les noms de fichiers de vos images et, si nécessaire, en les chargeant de manière dynamique à l’aide d’un [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), il est possible de charger le fichier image le plus approprié et correspondant le mieux aux paramètres d’exécution de l’utilisateur pour l’échelle de l’affichage, le thème, le contraste élevé, la langue et d’autres contextes.
@@ -199,7 +197,7 @@ private void RefreshUIImages()
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
 ## <a name="related-topics"></a>Rubriques associées
-* [Personnaliser vos ressources pour la langue, la mise à l'échelle et d'autres qualificateurs](tailor-resources-lang-scale-contrast.md)
+* [Personnaliser vos ressources pour la langue, l’échelle et d’autres qualificateurs](tailor-resources-lang-scale-contrast.md)
 * [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](localize-strings-ui-manifest.md)
 * [Stocker et récupérer des paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md)
 * [Prise en charge des vignettes et toasts pour la langue, la mise à l’échelle et le contraste élevé](tile-toast-language-scale-contrast.md)

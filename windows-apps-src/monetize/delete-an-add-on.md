@@ -6,16 +6,14 @@ title: Supprime une extension
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, extension, supprimer, produit in-app, PIA
 ms.localizationpriority: medium
-ms.openlocfilehash: ff108f3f7f09aa737f6a955d9cb91810f6047f8c
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: db8c394cac29afabba5229e21712320c82b89364
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5475445"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551350"
 ---
 # <a name="delete-an-add-on"></a>Supprime une extension
 

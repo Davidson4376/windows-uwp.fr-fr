@@ -6,22 +6,20 @@ ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2271c8029a733e1ab05c19b2110352fee5b04fc2
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 98c537ef3b2a5d002644cc554eae72b89a1799b0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663949"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558867"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>Démarrage automatique avec lecture automatique
 
 Vous pouvez utiliser la **lecture automatique** pour proposer votre application en tant qu’option lorsque l’utilisateur connecte un périphérique à son PC. Cela inclut les périphériques autres que les périphériques de volume, tels qu’un appareil photo ou un lecteur multimédia, ou les périphériques de volume tels qu’une clé USB, une carte mémoire SD ou un DVD. Vous pouvez également utiliser la **lecture automatique** pour proposer votre application en tant qu’option quand des utilisateurs partagent des fichiers entre deuxPC à l’aide de la fonction de proximité (appui).
 
-> **Remarque**  Si vous êtes fabricant de périphériques et si vous voulez associer votre [application pour périphériques du MicrosoftStore](http://go.microsoft.com/fwlink/p/?LinkID=301381) en tant que gestionnaire de **lecture automatique** de votre périphérique, vous pouvez identifier l’application dans les métadonnées du périphérique. Pour en savoir plus, voir [Lecture automatique pour les applications pour périphériques du MicrosoftStore](http://go.microsoft.com/fwlink/p/?LinkId=306684).
+> **Remarque**si vous êtes fabricant de périphériques et que vous voulez associer votre [application pour périphériques du Microsoft Store](http://go.microsoft.com/fwlink/p/?LinkID=301381) comme un gestionnaire de **lecture automatique** pour votre appareil, vous pouvez identifier l’application dans les métadonnées du périphérique. Pour en savoir plus, voir [Lecture automatique pour les applications pour périphériques du MicrosoftStore](http://go.microsoft.com/fwlink/p/?LinkId=306684).
 
 ## <a name="register-for-autoplay-content"></a>S’inscrire pour le contenu de lecture automatique
 
@@ -36,7 +34,7 @@ La lecture automatique déclenche également des événements de contenu pour du
 | Partage de musique  | PlayMusicFilesOnArrival |
 | Partage de vidéos | PlayVideoFilesOnArrival |
 
- 
+ 
 Lorsque des fichiers sont partagés à l’aide de la fonction de proximité, la propriété **Files** de l’objet **FileActivatedEventArgs** contient une référence à un dossier racine reprenant l’intégralité des fichiers partagés.
 
 ### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>Étape 1: Créer un projet et ajouter les déclarations de lecture automatique
@@ -110,7 +108,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **Remarque**  Les méthodes `DisplayImages` et `CopyImages` sont ajoutées au cours des étapes suivantes.
+> **Remarque**le `DisplayImages` et `CopyImages` méthodes sont ajoutés dans les étapes suivantes.
 
 ### <a name="step-4-add-code-to-display-images"></a>Étape4: Ajouter du code pour afficher des images
 
@@ -222,7 +220,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 1.  Appuyez sur F5 pour créer et déployer l’application (en mode débogage).
 2.  Pour exécuter votre application, insérez une carte mémoire d’appareil photo ou un autre périphérique de stockage d’un appareil photo dans votre PC. Sélectionnez ensuite l’une des options d’événement de contenu que vous avez spécifiées dans votre fichier package.appxmanifest à partir de la liste d’options de la lecture automatique. Cet exemple de code affiche ou copie uniquement les images du dossier DCIM de la carte mémoire d’un appareil photo. Si la carte mémoire de votre appareil photo stocke des images dans un dossier AVCHD ou PRIVATE\\ACHD, vous devez mettre à jour le code en conséquence.
-    **Remarque**  Si vous n’avez pas de carte mémoire d’appareil photo, vous pouvez utiliser une clé USB à condition qu’elle ait un dossier nommé **DCIM** à la racine et qu’il dispose d’un sous-dossier contenant des images.
+    **Remarque**si vous n’avez pas carte mémoire d’un appareil photo, vous pouvez utiliser une clé USB si elle dispose d’un dossier nommé **dossier DCIM** à la racine et si le dossier DCIM possède un sous-dossier qui contient des images.
 
 ## <a name="register-for-an-autoplay-device"></a>S’inscrire pour un appareil de lecture automatique
 
@@ -231,9 +229,9 @@ Vous pouvez inscrire des applications en tant qu’options pour les événements
 
 Voici comment identifier votre application en tant qu’option de **lecture automatique** lorsqu’un appareil photo est connecté à un PC. L’application s’inscrit en tant que gestionnaire de l’événement **WPD\\ImageSourceAutoPlay**. Il s’agit d’un événement courant que le système WPD (Windows Portable Device) déclenche lorsque des appareils photo et d’autres périphériques d’acquisition d’images l’avertissent qu’ils sont une source d’image (ImageSource) utilisant MTP. Pour plus d’informations, voir [Appareils mobiles Windows](https://msdn.microsoft.com/library/windows/hardware/ff597729).
 
-**Important**  Les API [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) font partie de la [famille des appareils de bureau](https://msdn.microsoft.com/library/windows/apps/dn894631). Les applications peuvent utiliser ces API uniquement sur les appareils Windows10 de la famille d’appareils de bureau, tels que les PC.
+**Important**les API [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) font partie de la [famille d’appareils de bureau](https://msdn.microsoft.com/library/windows/apps/dn894631). Les applications peuvent utiliser ces API uniquement sur les appareils Windows 10 dans la famille d’appareils de bureau, tels que les PC.
 
- 
+ 
 
 ### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>Étape 1 : Créer un projet et ajouter les déclarations de lecture automatique
 
@@ -340,7 +338,7 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-> **Remarque**  La méthode `ShowImages` est ajoutée à l’étape suivante.
+> **Remarque**le `ShowImages` méthode est ajoutée à l’étape suivante.
 
 ### <a name="step-5-add-code-to-display-device-information"></a>Étape5: Ajouter du code pour afficher des informations de périphérique
 
@@ -368,7 +366,7 @@ internal async void ShowImages(Windows.Storage.StorageFolder folder)
 }
 ```
 
-> **Remarque**  Les méthodes `GetImageList` et `GetThumbnail` sont ajoutées à l’étape suivante.
+> **Remarque**le `GetImageList` et `GetThumbnail` méthodes sont ajoutées à l’étape suivante.
 
 ### <a name="step-6-add-code-to-display-images"></a>Étape6: Ajouter du code pour afficher des images
 
@@ -411,7 +409,7 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 
 1.  Appuyez sur F5 pour créer et déployer l’application (en mode débogage).
 2.  Pour exécuter votre application, connectez un appareil photo à votre ordinateur. Sélectionnez ensuite l’application dans la liste d’options de la lecture automatique.
-    **Remarque**  Tous les appareils photo n’effectuent pas de publication pour l’événement de périphérique de lecture automatique **WPD\\ImageSource**.
+    **Remarque**pas tous les appareils photo annoncer pour l’événement de périphérique de lecture automatique **WPD\\ImageSource** .
 
 ## <a name="configure-removable-storage"></a>Configurer le stockage amovible
 
@@ -436,8 +434,7 @@ CustomEvent=AutoPlayCustomEventQuickstart
 2.  Ouvrez le fichier Package.appxmanifest, puis sélectionnez l'onglet **Fonctionnalités**. Choisissez la fonctionnalité **Stockage amovible**. Cela permet à l’application d’accéder aux fichiers et dossiers situés sur les périphériques de stockage amovibles.
 3.  Dans le fichier manifeste, sélectionnez l’onglet **Déclarations**. Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Contenu de lecture automatique**, puis cliquez sur **Ajouter**. Sélectionnez le nouvel élément **Contenu de lecture automatique** ajouté à la liste **Déclarations prises en charge**.
 
-    **Remarque**  Vous pouvez également choisir d’ajouter une déclaration **Périphérique de lecture automatique** pour votre événement de lecture automatique personnalisé.
-    
+    **Remarque**par ailleurs, vous pouvez également choisir d’ajouter une déclaration de **Périphérique de lecture automatique** pour votre événement de lecture automatique personnalisé.  
 4.  Dans la section **Actions de lancement** de votre déclaration d’événement **Contenu de lecture automatique**, entrez les valeurs suivantes pour la première action de lancement.
 5.  Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Associations de types de fichier**, puis cliquez sur **Ajouter**. Dans les propriétés de la nouvelle déclaration **Associations de types de fichier**, attribuez au champ **Nom d’affichage** la valeur **Show .ms Files** et au champ **Nom** la valeur **ms\_association**. Dans la section **Types de fichier pris en charge**, cliquez sur **Ajouter nouveau**. Attribuez au champ **Type de fichier** la valeur **.ms**. Pour les événements de contenu, la lecture automatique filtre les types de fichiers qui ne sont pas explicitement associés à votre application.
 6.  Enregistrez et fermez le fichier manifeste.
@@ -480,9 +477,9 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **Remarque**  La méthode `DisplayFiles` est ajoutée à l’étape suivante.
+> **Remarque**le `DisplayFiles` méthode est ajoutée à l’étape suivante.
 
- 
+ 
 
 ### <a name="step-5-add-code-to-display-folders"></a>Étape5: Ajouter du code pour afficher des dossiers
 
@@ -558,6 +555,6 @@ Vous pouvez inscrire votre application en tant que gestionnaire d’événements
   </Applications>
 ```
 
- 
+ 
 
- 
+ 

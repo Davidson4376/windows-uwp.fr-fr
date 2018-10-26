@@ -6,16 +6,14 @@ ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, opengl, direct3d, porter
 ms.localizationpriority: medium
-ms.openlocfilehash: a00a24d2c270e1c4f3aa3b8b716a6637d5da4af1
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 532c2a0a9779ae3eaedb2217175dc0805514f792
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652208"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555238"
 ---
 # <a name="map-opengl-es-20-to-direct3d-11"></a>Mapper OpenGLES2.0 à Direct3D11
 
@@ -30,7 +28,7 @@ Si vous vous apprêtez à porter votre architecture graphique OpenGLES2.0 sur Di
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -54,16 +52,16 @@ Si vous vous apprêtez à porter votre architecture graphique OpenGLES2.0 sur Di
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="notes-on-specific-opengl-es-20-providers"></a>Remarques sur les fournisseurs OpenGL ES2.0 spécifiques
 
 
 Ces rubriques font référence à la spécification OpenGL ES 2.0 de Khronos pour les plateformes agnostiques en langage C. Les plateformes iOS et Android emploient la même spécification ; le code OpenGL ES 2.0 développé pour ces deux plateformes est similaire aux extraits de code que nous allons étudier, bien que ces derniers soient généralement exposés en tant qu’API orientées objet. Par ailleurs, en raison des complexités et des spécificités linguistiques de chaque plateforme, des différences mineures peuvent se présenter, surtout en ce qui concerne les types de paramètres de méthode et la syntaxe générale du langage. Par exemple, iOS utilise le langage Objective-C. Android a la capacité d’utiliser le langage C++, mais les développeurs peuvent opter pour une implémentation en Java exclusivement. Tout en gardant les points précédents à l’esprit, n’hésitez pas à vous référer à ces rubriques, car les concepts, la structure et le mode d’utilisation des API OpenGL ES sont globalement identiques.
 
- 
+ 
 
- 
+ 
 
 
 

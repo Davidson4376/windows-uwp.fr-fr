@@ -6,16 +6,14 @@ title: Transcoder des fichiers multimédias
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 20c13471d67033790c01a07e53af667c2a078894
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: Auto
+ms.openlocfilehash: babf91e681004942bb3b66eb43622742fa183125
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1831973"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556692"
 ---
 # <a name="transcode-media-files"></a>Transcoder des fichiers multimédias
 
@@ -86,11 +84,18 @@ Vous pouvez enregistrer des événements pour répondre en cas de modification d
 
 
 ## <a name="encode-a-metadata-stream"></a>Encoder un flux de métadonnées
+À compter de Windows 10, version 1803, vous pouvez inclure des métadonnées synchronisées lorsque le transcodage des fichiers multimédias. Contrairement aux exemples transcodage vidéo ci-dessus, qui utilisent le support intégré codage des méthodes de création du profil, comme [**MediaEncodingProfile.CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4), vous devez créer manuellement le profil d’encodage des métadonnées pour prendre en charge le type d’encodage des métadonnées .
 
-
+Cette première étape de création d’un profil d’incoding métadonnées consiste à créer un objet [**TimedMetadataEncodingProperties**] qui décrit le codage des métadonnées à transcoder. La propriété Subtype est un GUID qui spécifie le type de métadonnées. Les détails de codage pour chaque type de métadonnées est propriétaires et n’est pas fourni par Windows. Dans cet exemple, le GUID des métadonnées GoPro (gprs) est utilisé. Ensuite, [**SetFormatUserData**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata) est appelée pour définir un objet blob binaire de données décrivant le format de flux qui est spécifique au format de métadonnées. Ensuite, un **TimedMetadataStreamDescriptor**(https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor) est créé à partir des propriétés de codage, et le nom et un libellé de piste sont pour autoriser une application de lecture du flux endcoded pour identifier le flux de métadonnées et vous pouvez également afficher le nom de flux dans l’interface utilisateur. 
  
+[!code-cs[GetStreamDescriptor](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetStreamDescriptor)]
 
- 
+Après avoir créé le **TimedMetadataStreamDescriptor**, vous pouvez créer un **MediaEncodingProfile** qui décrit la vidéo, audio et métadonnées d’encodage dans le fichier. Le **TimedMetadataStreamDescriptor** créé dans le dernier exemple est transmis dans cet exemple de fonction d’assistance et est ajouté à la **MediaEncodingProfile** en appelant la méthode [**SetTimedMetadataTracks**](https://docs.microsoft.com/en-us/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks).
+
+[!code-cs[GetMediaEncodingProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetMediaEncodingProfile)]
+ 
+
+ 
 
 
 

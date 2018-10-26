@@ -6,22 +6,19 @@ description: Optimisez ListView/GridView et le temps de démarrage via la virtua
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cff6e2785434eb4fdb922d8b89b55aca242655f
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 25eeea58e1e03eedfca3aaafda1cee13cac1f3c4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816904"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553644"
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>Optimisation des options d’interface ListView et GridView
 
 
-**Remarque**  
-Pour plus d’informations, voir la session //build/ [Accroître considérablement les performances lors de l’interaction des utilisateurs avec de grandes quantités de données dans GridView et ListView](https://channel9.msdn.com/events/build/2013/3-158).
+**Remarque**  pour plus d’informations, voir la session //build/ [Accroître considérablement les performances lorsque les utilisateurs interagissent avec de grandes quantités de données dans GridView et ListView](https://channel9.msdn.com/events/build/2013/3-158).
 
 Améliorez les performances des contrôles [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) et le temps de démarrage à travers la virtualisation de l’interface utilisateur, la réduction des éléments et la mise à jour progressive des éléments. Pour découvrir les techniques de la virtualisation des données, voir [la virtualisation des données ListView et GridView](listview-and-gridview-data-optimization.md).
 
@@ -325,5 +322,5 @@ Lors du recyclage d’un élément (**ListViewItem**/**GridViewItem**), l’infr
 
 Lorsque la répartition des éléments utilisant différents modèles d’éléments est inégale, alors les modèles d’éléments devront probablement être créés lors du mouvement panoramique, annulant ainsi nombre des avantages offerts par la virtualisation. En outre, un sélecteur de modèles d’éléments ne considère que cinq candidats possibles lorsqu’il s’agit d’évaluer si un conteneur donné peut être réutilisé pour l’élément de données actuel. Par conséquent, il convient d’examiner attentivement vos données pour déterminer si elles sont appropriées pour une utilisation avec un sélecteur de modèles d’éléments avant d’en utiliser un dans votre application. Si votre collection est en grande partie homogène, le sélecteur renvoie le même type la plupart du temps (voire tout le temps). Soyez conscient du prix que vous payez pour les exceptions à cette homogénéité et demandez-vous s’il est préférable d’utiliser [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) (ou deux contrôles d’éléments).
 
- 
+ 
 

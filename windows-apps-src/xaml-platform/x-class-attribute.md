@@ -6,18 +6,17 @@ ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: d3105e8ac345e1eb6f0d974f8ea29e741dae9f58
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 6746969b1b717183894d6b941be41c9aca452960
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230095"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552865"
 ---
 # <a name="xclass-attribute"></a>Attribut x:Class
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Configure la compilation XAML afin de joindre des classes partielles entre le balisage et le code-behind. La classe partielle du code est définie dans un fichier de code distinct et la classe partielle de balisage est créée par la génération du code lors de la compilation XAML.
 
@@ -35,7 +34,7 @@ Configure la compilation XAML afin de joindre des classes partielles entre le ba
 | Terme | Description |
 |------|-------------|
 | namespace | Facultatif. Spécifie un espace de noms qui contient la classe partielle identifiée par _classname_. Si _namespace_ est spécifié, un point (.) sépare _namespace_ et _classname_. Si _namespace_ est omis, _classname_ est considéré comme n’ayant pas d’espace de noms. |
-| classname | Obligatoire. Spécifie le nom de la classe partielle qui connecte le code XAML chargé et votre code-behind pour ce code XAML. | 
+| classname | Obligatoire. Spécifie le nom de la classe partielle qui connecte le code XAML chargé et votre code-behind pour ce code XAML. | 
 
 ## <a name="remarks"></a>Remarques
 

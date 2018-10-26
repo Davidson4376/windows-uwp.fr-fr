@@ -6,16 +6,14 @@ ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, jeux, directx, modèles
 ms.localizationpriority: medium
-ms.openlocfilehash: e0252607fcc456a1200231b401ca47132664e9c9
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: d27e4bb0d643b859958f887133a128572ca31225
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488803"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555391"
 ---
 # <a name="directx-game-project-templates"></a>Modèles de projet de jeu DirectX
 
@@ -28,12 +26,12 @@ Les modèles DirectX et de plateforme Windows universelle (UWP) vous permettent 
 
 Pour créer le projet, procédez comme suit :
 
--   [Téléchargez Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions). Visual Studio2015 comprend des outils de programmation graphique, tels que des outils de débogage. Pour obtenir une vue d’ensemble des fonctionnalités et outils graphiques et de jeux DirectX, voir [Outils Visual Studio pour le développement de jeux DirectX](set-up-visual-studio-for-game-development.md).
+-   [Télécharger Microsoft Visual Studio2015](https://www.visualstudio.com/vs-2015-product-editions). Visual Studio2015 comprend des outils de programmation, tels que des outils de débogage graphique. Pour obtenir une vue d’ensemble des fonctionnalités et outils graphiques et de jeux DirectX, voir [Outils Visual Studio pour le développement de jeux DirectX](set-up-visual-studio-for-game-development.md).
 
 ## <a name="choosing-a-template"></a>Choix d’un modèle
 
 
-Visual Studio 2015 comprend trois modèles DirectX et UWP :
+Visual Studio2015 comprend trois modèles DirectX et UWP:
 
 -   Application DirectX 11 (Windows universel) : le modèle Application DirectX 11 (Windows universel) crée un projet UWP dont le rendu s’effectue directement dans une fenêtre d’application à l’aide de DirectX 11.
 -   Application DirectX 12 (Windows universel) : le modèle Application DirectX 12 (Windows universel) crée un projet UWP dont le rendu s’effectue directement dans une fenêtre d’application à l’aide de DirectX 12.

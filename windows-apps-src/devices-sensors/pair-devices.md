@@ -6,16 +6,14 @@ description: Pour pouvoir être utilisés, certains appareils doivent être jume
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 86cac8248db896f56757dae7678d6e146835884c
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 64f4756df37cbfaf041e432b7e4a890123f52d2f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673996"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554969"
 ---
 # <a name="pair-devices"></a>Coupler des appareils
 
@@ -31,9 +29,9 @@ Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’esp
 -   Jumelage de base
 -   Jumelage personnalisé
 
-**Conseil** D’autres appareils, au contraire, n’ont pas besoin d’être couplés pour être utilisés. Ce sujet est abordé dans la section sur le jumelage automatique.
+**Conseil**certains appareils n’avez pas besoin d’être jumelés pour être utilisé. Ce sujet est abordé dans la section sur le jumelage automatique.
 
- 
+ 
 
 ## <a name="automatic-pairing"></a>Jumelage automatique
 
@@ -74,6 +72,6 @@ Si vous souhaitez annuler le jumelage d’un appareil, vous devez commencer par 
 
 Pour télécharger un exemple illustrant comment utiliser les API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459), cliquez [ici](http://go.microsoft.com/fwlink/?LinkID=620536).
 
- 
+ 
 
- 
+ 

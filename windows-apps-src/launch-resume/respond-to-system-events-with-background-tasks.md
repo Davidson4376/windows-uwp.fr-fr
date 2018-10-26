@@ -6,20 +6,18 @@ ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
 ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 45f6e10bc355e3a2dc054d54fef35fbeb1095dc7
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: f65751e894d45bab5b39382c7bec43d5f06f18b2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514507"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553021"
 ---
 # <a name="respond-to-system-events-with-background-tasks"></a>Répondre aux événements système avec des tâches en arrière-plan
 

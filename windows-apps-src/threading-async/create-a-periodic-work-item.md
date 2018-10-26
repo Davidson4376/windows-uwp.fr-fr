@@ -6,19 +6,17 @@ description: Découvrez comment créer un élément de travail qui se reproduit 
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, élément de travail périodique, threads, minuteurs
-ms.openlocfilehash: 59dd19692143b155c33f8fdd7f3197f724ebb0ac
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 4afa137b01738c42f8e15c95ef09ec921d1e44ae
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665279"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558880"
 ---
 # <a name="create-a-periodic-work-item"></a>Créer un élément de travail périodique
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -33,9 +31,9 @@ Utilisez la méthode [**CreatePeriodicTimer**](https://msdn.microsoft.com/librar
 
 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) retourne un objet [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587). Stockez cet objet au cas où le minuteur devrait être annulé.
 
-> **Remarque** Évitez de spécifier la valeur zéro (ou toute valeur inférieure à une milliseconde) pour l’intervalle. Sinon, cela amène le minuteur périodique à se comporter comme un minuteur à déclenchement unique.
+> **Remarque**Évitez de spécifier la valeur zéro (ou toute valeur inférieure à une milliseconde) pour l’intervalle. Sinon, cela amène le minuteur périodique à se comporter comme un minuteur à déclenchement unique.
 
-> **Remarque**  Vous pouvez utiliser [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
+> **Remarque** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) vous permet d’accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
 L’exemple suivant crée un élément de travail qui s’exécute une fois toutes les 60 secondes:
 
@@ -209,4 +207,4 @@ Pour obtenir des informations sur les minuteurs à déclenchement unique, voir [
 * [Envoyer un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
 * [Meilleures pratiques pour l’utilisation du pool de threads](best-practices-for-using-the-thread-pool.md)
 * [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md)
- 
+ 

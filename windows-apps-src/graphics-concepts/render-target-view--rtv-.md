@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ee9f7eec5a76d2a4cbea1106570d82c273d2758
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 168c02be356d140abdbca20c5fc4301009da7944
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044318"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553631"
 ---
 # <a name="render-target-view-rtv"></a>Affichage de la cible du rendu (RTV)
 
@@ -28,9 +26,9 @@ Les cibles de rendu permettent d'afficher une scène dans une mémoire tampon in
 
 [Affichages](views.md)
 
- 
+ 
 
- 
+ 
 
 
 

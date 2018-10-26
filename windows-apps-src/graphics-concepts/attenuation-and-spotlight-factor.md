@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 18746ef231f7d2b387866fba82e4f12a44476001
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 65b9f6700ddd11c41193820a5247a90c2382c98b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044618"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558178"
 ---
 # <a name="attenuation-and-spotlight-factor"></a>Atténuation et facteur de point lumineux
 
@@ -39,7 +37,7 @@ Où:
 | att2<sub>i</sub> | 0,0           | Virgule flottante | Facteur d’atténuation quadratique                    | 0 à +infini |
 | d                | Non applicable           | Virgule flottante | Distance entre la position du vertex et la position de la lumière | Non applicable            |
 
- 
+ 
 
 -   Atten = 1 si la lumière est une lumière directionnelle.
 -   Atten = 0 si la distance entre la lumière et le vertex dépasse la plage de la lumière.
@@ -54,7 +52,7 @@ Où:
 |-----------------|---------------|--------------------------------------------------|-------------------------------------------------------------|
 | L<sub>dir</sub> | Non applicable           | Vecteur 3D avec des valeurs à virgule flottante x, y et z | Vecteur de direction entre la position du vertex et la position de la lumière |
 
- 
+ 
 
 Si d est supérieur à la plage de la lumière, Direct3D n'effectue aucun autre calcul d'atténuation et n'applique aucun effet de lumière sur le vertex.
 
@@ -76,7 +74,7 @@ L’équation suivante spécifie le facteur de point lumineux.
 | theta<sub>i</sub> | 0,0           | Virgule flottante | Angle d'ombre du point lumineuxi en radians    | \[0, pi)                 |
 | atténuation           | 0,0           | Virgule flottante | Facteur d’atténuation                           | (-infini, +infini)   |
 
- 
+ 
 
 Où:
 
@@ -89,7 +87,7 @@ et:
 | L<sub>dcs</sub> | Non applicable           | Vecteur 3D avec des valeurs à virgule flottante x, y et z | La valeur négative de la direction de la lumière dans l’espace de la caméra         |
 | L<sub>dir</sub> | Non applicable           | Vecteur 3D avec des valeurs à virgule flottante x, y et z | Vecteur de direction entre la position du vertex et la position de la lumière |
 
- 
+ 
 
 Après avoir calculé l’atténuation de lumière, Direct3D prend également en compte les effets de point lumineux, le cas échéant, l’angle de réflexion de la lumière sur une surface et le facteur de réflexion du matériau actuel afin de calculer les composants diffus et spéculaires du vertex. Dans [types de lumière](light-types.md), voir «Point lumineux».
 
@@ -98,9 +96,9 @@ Après avoir calculé l’atténuation de lumière, Direct3D prend également en
 
 [Formules mathématiques d’éclairage](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

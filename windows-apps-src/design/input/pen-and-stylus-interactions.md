@@ -9,15 +9,13 @@ keywords: Windows Ink, entrée manuscrite Windows, DirectInk, InkPresenter, InkC
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 665a83743e2c4b5096b76b481c0e46274daf9c1f
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: Auto
+ms.openlocfilehash: 3d04ea3506fc909b115ba9aab397ded9e4464479
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707330"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555650"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>Interactions avec le stylet et WindowsInk dans les applications UWP
 
@@ -34,14 +32,14 @@ Optimisez votre application de plateforme Windows universelle (UWP) pour la sais
 | Vidéos |   |
 | --- | --- |
 | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
-| *Utilisation d’entrée manuscrite dans votre application UWP* | *Utiliser le stylet et l’entrée manuscrite Windows pour créer des applications d’entreprise plus conviviales* |
+| *Utilisation d’entrée manuscrite dans votre application UWP* | *Permet de créer plus conviviale enterpriseapps stylet et Windows Ink* |
 
 La plateforme WindowsInk, associée à un stylet, permet de créer des notes manuscrites, des dessins et des annotations plus naturellement. La plateforme prend en charge la capture d’entrée du numériseur sous forme de données d’entrée manuscrite, la génération et la gestion de données d’entrée manuscrite, la restitution de ces données sous forme de traits et la conversion de l’encre en texte via la reconnaissance d’écriture manuscrite.
 
 En plus de capturer la position et les mouvements de base du stylet lorsque l’utilisateur écrit ou dessine, votre application peut également effectuer le suivi des niveaux de pression variables utilisés pour un trait et en effectuer le suivi. Ces informations, ainsi que les paramètres relatifs à la forme de la pointe, à sa taille et à sa rotation, à la couleur de l’encre et à l’utilisation (entrée manuscrite normale, effacement, surlignage et sélection), vous permettent de proposer des expériences utilisateur ressemblant étroitement à l’écriture ou au dessin sur papier à l’aide d’un stylo, d’un crayon ou d’un pinceau.
 
 > [!NOTE]
-> Votre application prend également en charge l’entrée manuscrite à partir d’autres appareils de pointage, comme les numériseurs tactiles et les souris. 
+> Votre application prend également en charge l’entrée manuscrite à partir d’autres appareils de pointage, comme les numériseurs tactiles et les souris. 
 
 La plateforme d’entrée manuscrite est très flexible. Elle est conçue pour prendre en charge différents niveaux de fonctionnalité, en fonction de vos besoins.
 
@@ -51,9 +49,9 @@ Pour obtenir des recommandations en matière d’expérience utilisateur avec Wi
 
 | Composant | Description |
 | --- | --- |
-| [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) | Un contrôle de plateforme d’interface utilisateur XAML, qui reçoit et affiche par défaut toutes les entrées à partir d’un stylet comme un trait d’encre ou un trait d’effacement.<br/>Pour plus d’informations sur l’utilisation de l’élément InkCanvas, consultez [Reconnaître les traits d’encre Windows en tant que texte](convert-ink-to-text.md) et [Stocker et récupérer les données de traits Windows Ink](save-and-load-ink.md). |
+| [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) | Un contrôle de plateforme XAMLUI qui, par défaut, reçoit et affiche toutes les entrées à partir d’un stylet comme un trait d’encre ou un trait d’effacement.<br/>Pour plus d’informations sur l’utilisation de l’élément InkCanvas, consultez [Reconnaître les traits d’encre Windows en tant que texte](convert-ink-to-text.md) et [Stocker et récupérer les données de traits Windows Ink](save-and-load-ink.md). |
 | [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | Un objet code-behind, instancié avec un contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (exposé par le biais de la propriété [**InkCanvas.InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)). Cet objet fournit toutes les fonctionnalités d’entrée manuscrite par défaut exposées par l’élément **InkCanvas**, ainsi qu’un ensemble complet d’API pour plus de personnalisation.<br/>Pour plus d’informations sur l’utilisation de l’élément InkPresenter, consultez [Reconnaître les traits d’encre Windows en tant que texte](convert-ink-to-text.md) et [Stocker et récupérer les données de traits Windows Ink](save-and-load-ink.md). |
-| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | Une plateforme d’interface utilisateur XAML contenant une collection extensible et personnalisable de boutons activant des fonctionnalités d’entrée manuscrite dans un [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) associé.<br/>Pour plus d’informations sur l’utilisation de l’élément InkToolbar, consultez [Ajouter un élément InkToolbar à une application d’entrée manuscrite de plateforme Windows universelle (UWP)](ink-toolbar.md). |
+| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | Un contrôle de plateforme XAMLUI contenant une collection extensible et personnalisable de boutons qui activent des fonctionnalités d’entrée manuscrite dans un [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)associé.<br/>Pour plus d’informations sur l’utilisation de l’élément InkToolbar, consultez [Ajouter un élément InkToolbar à une application d’entrée manuscrite de plateforme Windows universelle (UWP)](ink-toolbar.md). |
 | [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) | Permet le rendu des traits d’encre sur le contexte d’appareil Direct2D désigné d’une application Windows universelle, au lieu du contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) par défaut. Cela offre une personnalisation totale de l’expérience d’entrée manuscrite.<br/>Pour plus d’informations, consultez [l’exemple d’entrée manuscrite complexe](http://go.microsoft.com/fwlink/p/?LinkID=620314). |
 
 ## <a name="basic-inking-with-inkcanvas"></a>Entrée manuscrite de base avec InkCanvas
@@ -104,7 +102,7 @@ Pour l’entrée manuscrite de base, vous n’avez pas à vous préoccuper de l�
 Un objet [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) est instancié avec chaque contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
 > [!NOTE]
-> L’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) ne peut pas être instancié directement. Au lieu de cela, il est accessible via la propriété [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) de l’élément [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535). 
+> L’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) ne peut pas être instancié directement. Au lieu de cela, il est accessible via la propriété [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) de l’élément [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535). 
 
 En plus de fournir tous les comportements d’entrée manuscrite par défaut de son contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) correspondant, l’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) propose un ensemble complet d’API pour personnaliser davantage les traits et gérer de manière plus fine la saisie effectuée à l’aide du stylet (standard et modifiée). Cela inclut les propriétés de trait, les types d’appareils d’entrée pris en charge, et si l’entrée est traitée par l’objet ou transmise à l’application pour traitement.
 
@@ -204,7 +202,7 @@ Ces images montrent comment l’élément [**InkPresenter**](https://msdn.micros
 
 | ![InkCanvas avec des traits d’encre noire par défaut](images/ink-basic-custom-1-small.png) | ![InkCanvas avec des traits d’encre rouge sélectionnés par l’utilisateur.](images/ink-basic-custom-2-small.png) |
 | --- | --- |
-| [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) avec des traits d’encre noire par défaut. | [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) avec des traits d’encre rouge sélectionnés par l’utilisateur. | 
+| [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) avec des traits d’encre noire par défaut. | [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) avec des traits d’encre rouge sélectionnés par l’utilisateur. | 
 
 Pour exploiter des fonctionnalités dépassant l’entrée manuscrite et l’effacement, telles que la sélection de trait, votre application doit identifier une entrée spécifique afin que l’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) la transmette directement non traitée afin d’être gérée par votre application.
 

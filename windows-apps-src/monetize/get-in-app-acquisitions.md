@@ -6,16 +6,14 @@ title: Obtenir des acquisitions d’extensions
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, services du MicrosoftStore, API d’analyse du MicrosoftStore, acquisitions d’extension
 ms.localizationpriority: medium
-ms.openlocfilehash: a09bb4ded7325cd1c5f5091be133ded889322bd9
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: c1fb44457b8589c9e1525de9c8dca2801c0c47bf
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5520785"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552702"
 ---
 # <a name="get-add-on-acquisitions"></a>Obtenir des acquisitions d’extensions
 

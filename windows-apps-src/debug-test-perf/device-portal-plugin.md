@@ -6,16 +6,14 @@ description: Découvrez comment écrire une application UWP qui utilise WindowsD
 ms.author: pafarley
 ms.date: 03/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, portail d’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bf511a910a266877d54a014f087c1748ff25838
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: cceceae4b6b9bf4cecd3c3bee36344f4e5a1eed1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469282"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557688"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Écrire un plug-in personnalisé pour DevicePortal
 

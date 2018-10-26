@@ -6,16 +6,14 @@ ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, glsl, hlsl, opengl, directx, nuanceurs
 ms.localizationpriority: medium
-ms.openlocfilehash: 601cdd696290a1b22d7ed38d968a32db53b78ea1
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: Auto
+ms.openlocfilehash: 30c925f9ebb07d578147dfba373fdeb3baa364fe
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691408"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557128"
 ---
 # <a name="glsl-to-hlsl-reference"></a>Informations de référence sur le passage de GLSL à HLSL
 
@@ -45,7 +43,7 @@ OpenGL ES 2.0 et Direct3D 11 présentent de nombreuses similitudes. Ils offrent 
 | Obtention de modules de niveau supérieur via des bibliothèques tierces, telles que Simple DirectMedia Layer (SDL) | Construction des modules de niveau supérieur, comme Direct2D, à partir de modules de niveau inférieur pour simplifier le développement pour les applications Windows             |
 | Différenciation des fabricants de matériel par les extensions                                                         | Ajout à l’API, par Microsoft, de fonctionnalités facultatives génériques, indépendantes des fabricants de matériel |
 
- 
+ 
 
 GLSL et HLSL diffèrent généralement sur les points suivants :
 
@@ -69,10 +67,10 @@ GLSL et HLSL diffèrent généralement sur les points suivants :
 <td align="left">Compilation des nuanceurs intégrée à l’API graphique</td>
 <td align="left">Le compilateurHLSL <a href="https://msdn.microsoft.com/library/windows/desktop/bb509633">compile le nuanceur</a> en une représentation binaire intermédiaire, que Direct3D transmet ensuite au pilote.
 <div class="alert">
-<strong>Remarque</strong>  Cette représentation binaire est indépendante du matériel. Elle est généralement compilée au moment de la création de l’application, plutôt qu’au moment de l’exécution de cette dernière.
+<strong>Remarque</strong>cette représentation binaire est indépendante du matériel. Elle est généralement compilée au moment de la création de l’application, plutôt qu’au moment de l’exécution de cette dernière.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -98,10 +96,10 @@ GLSL et HLSL diffèrent généralement sur les points suivants :
 <td align="left">Matrices row-major (par défaut)</td>
 <td align="left">Matrices column-major (par défaut)
 <div class="alert">
-<strong>Remarque</strong>   Utilisez le modificateur de type <strong>row_major</strong> pour modifier la disposition pour une seule variable. Pour plus d’informations, voir <a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">Syntaxe des variables</a>. Vous pouvez aussi spécifier un indicateur de compilateur ou une instruction pragma pour modifier la configuration globale par défaut.
+<strong>Remarque</strong>  le modificateur de type <strong>row_major</strong> permet de modifier la disposition pour une seule variable. Pour plus d’informations, voir <a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">Syntaxe des variables</a>. Vous pouvez aussi spécifier un indicateur de compilateur ou une instruction pragma pour modifier la configuration globale par défaut.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
@@ -111,11 +109,11 @@ GLSL et HLSL diffèrent généralement sur les points suivants :
 </tbody>
 </table>
 
- 
+ 
 
-> **Remarque**  HLSL expose les textures et les échantillonneurs dans deuxobjets distincts, alors que dans GLSL (Direct3D 9, par exemple), la liaison des textures est incluse dans l’état de l’échantillonneur.
+> **Remarque**HLSL expose les textures et les échantillonneurs dans deux objets distincts. alors que dans GLSL (Direct3D 9, par exemple), la liaison des textures est incluse dans l’état de l’échantillonneur.
 
- 
+ 
 
 Dans GLSL, l’état OpenGL est souvent présenté à l’aide de variables globales prédéfinies. Par exemple, dans GLSL, vous utilisez les variables **gl\_Position** et **gl\_FragColor** pour indiquer la position du vertex et la couleur du fragment, respectivement. Dans HLSL, vous passez l’état Direct3D de manière explicite entre le code de l’application et le nuanceur. Par exemple, avec Direct3D et HLSL, les données d’entrée du nuanceur de vertex doivent être au même format que dans la mémoire tampon de vertex, tout comme la structure d’une mémoire tampon constante dans le code de l’application doit correspondre à la structure de mémoire tampon constante ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) indiquée dans le code du nuanceur.
 
@@ -162,7 +160,7 @@ Dans GLSL, vous appliquez des modificateurs (qualificateurs) à la déclaration 
 </tbody>
 </table>
 
- 
+ 
 
 Dans GLSL, les variables sans modificateurs sont simplement des variables globales standards qui sont privées pour chaque nuanceur.
 
@@ -274,7 +272,7 @@ Référez-vous au tableau ci-dessous lors du portage de vos types GLSL vers HLSL
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="porting-glsl-pre-defined-global-variables-to-hlsl"></a>Portage des variables globales prédéfinies GLSL vers HLSL
 
@@ -382,7 +380,7 @@ Référez-vous au tableau ci-dessous lors du portage de vos variables globales p
 </tbody>
 </table>
 
- 
+ 
 
 Les sémantiques vous permettent de définir diverses valeurs (position, couleur, etc.) pour les données d’entrée du nuanceur de vertex et les données de sortie du nuanceur de pixels. Les valeurs de sémantiques définies dans la disposition d’entrée doivent correspondre aux données d’entrée du nuanceur de vertex. Pour plus d’informations, voir [Exemples de portage de variables GLSL vers HLSL](#examples-of-porting-glsl-variables-to-hlsl), ci-dessous. Pour plus d’informations sur les sémantiques HLSL, voir [Sémantiques](https://msdn.microsoft.com/library/windows/desktop/bb509647).
 
@@ -503,14 +501,14 @@ Code HLSL du nuanceur de pixels
 // The COLOR semantic must match the semantic in the vertex shader code.
 struct PixelShaderInput
 {
-    float4 pos : SV_Position;
-    float4 color : COLOR; // Color for the pixel
+    float4 pos : SV_Position;
+    float4 color : COLOR; // Color for the pixel
 };
 
-// Set the pixel color value for the renter target. 
+// Set the pixel color value for the renter target. 
 float4 main(PixelShaderInput input) : SV_Target
 {
-    return input.color;
+    return input.color;
 }
 ```
 
@@ -525,7 +523,7 @@ Code de rendu pour OpenGL
 // Bind shaders to the pipeline. 
 // Both vertex shader and fragment shader are in a program.
 glUseProgram(m_shader->getProgram());
- 
+ 
 // Input asssembly 
 // Get the position and color attributes of the vertex.
 
@@ -534,13 +532,13 @@ glEnableVertexAttribArray(m_positionLocation);
 
 m_colorLocation = glGetAttribColor(m_shader->getProgram(), "color");
 glEnableVertexAttribArray(m_colorLocation);
- 
+ 
 // Bind the vertex buffer object to the input assembler.
 glBindBuffer(GL_ARRAY_BUFFER, m_geometryBuffer);
 glVertexAttribPointer(m_positionLocation, 4, GL_FLOAT, GL_FALSE, 0, NULL);
 glBindBuffer(GL_ARRAY_BUFFER, m_colorBuffer);
 glVertexAttribPointer(m_colorLocation, 3, GL_FLOAT, GL_FALSE, 0, NULL);
- 
+ 
 // Draw a triangle with 3 vertices.
 glDrawArray(GL_TRIANGLES, 0, 3);
 ```
@@ -551,7 +549,7 @@ Code de rendu pour Direct3D
 // Bind the vertex shader and pixel shader to the pipeline.
 m_d3dDeviceContext->VSSetShader(vertexShader.Get(),nullptr,0);
 m_d3dDeviceContext->PSSetShader(pixelShader.Get(),nullptr,0);
- 
+ 
 // Declare the inputs that the shaders expect.
 m_d3dDeviceContext->IASetInputLayout(inputLayout.Get());
 m_d3dDeviceContext->IASetVertexBuffers(0, 1, vertexBuffer.GetAddressOf(), &stride, &offset);
@@ -568,9 +566,9 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 
 * [Portage d’OpenGL ES 2.0 vers Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,21 +6,20 @@ ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, directx,, direct3d9, direct3d11, changements
-ms.openlocfilehash: e46bb663a5497cb17f396b410fbdcb5d0295e5fe
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 969d8f2620adbc289c1f4c89242e0282901357c2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228924"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554474"
 ---
 # <a name="important-changes-from-direct3d-9-to-direct3d-11"></a>Modifications importantes de Direct3D9 à Direct3D11
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**Récapitulatif**
+**Résumé**
 
 -   [Planifier votre portage DirectX](plan-your-directx-port.md)
 -   Modifications importantes de Direct3D 9 à Direct3D 11
@@ -108,13 +107,13 @@ Tous les nuanceurs sont écrits en HLSL à l’aide d’un profil de nuanceur qu
 
 Direct3D9 gérait les constantes des nuanceurs en utilisant un tableau partagé avec SetVertexShaderConstant et SetPixelShaderConstant. Direct3D 11 utilise des tampons constants, lesquels sont des ressources comme un tampon de vertex ou un tampon d’index. Les tampons constants sont conçus pour être mis à jour de manière efficace. Au lieu d’organiser toutes les constantes de nuanceurs dans un seul tableau global, vous les organisez dans des groupes logiques et les gérez via un ou plusieurs tampons constants. Quand vous portez votre jeu Direct3D 9 vers Direct3D 11, envisagez d’organiser vos tampons constants afin de pouvoir les mettre à jour de manière appropriée. Par exemple, regroupez les constantes de nuanceurs dont toutes les trames ne sont pas mises à jour dans une mémoire tampon constante distincte, afin de ne pas avoir à charger constamment ces données sur la carte graphique avec vos constantes de nuanceurs plus dynamiques.
 
-> **Remarque**   La plupart des applications Direct3D9 utilisaient intensément les nuanceurs, mais essayaient de temps à autre de les combiner avec l’utilisation du comportement de fonction fixe hérité. Notez que Direct3D11 utilise uniquement un modèle de nuanceur programmable. Les fonctionnalités de fonction fixe héritées de Direct3D 9 sont obsolètes.
+> **Remarque**  plus de Direct3D 9 applications mises à une utilisation intensive des nuanceurs, mais parfois mixte en cours d’utilisation du comportement de fonction fixe hérité. Notez que Direct3D11 utilise uniquement un modèle de nuanceur programmable. Les fonctionnalités de fonction fixe héritées de Direct3D 9 sont obsolètes.
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

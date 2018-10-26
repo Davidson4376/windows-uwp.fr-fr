@@ -5,17 +5,15 @@ description: Étapes de résolution des problèmes de fonctionnement des applica
 ms.author: misatran
 ms.date: 02/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10s, toujours connecté, restrictions, windows10 sur ARM
 ms.localizationpriority: medium
 redirect_url: https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-troubleshooting-x86
-ms.openlocfilehash: 44d122a9944eadd29d9dcc550378e5947dcdeae5
-ms.sourcegitcommit: 11edca90aaf7856c762e68903483079d30ad3877
-ms.translationtype: HT
+ms.openlocfilehash: 24afc8a876b976f21d0f4ebd5892ceef7c403018
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2018
-ms.locfileid: "1595128"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555293"
 ---
 # <a name="limitations-of-apps-and-experiences-on-arm"></a>Restrictions des applications et expériences sur ARM
 Windows10 sur ARM présente les restrictions nécessaires suivantes:
@@ -37,7 +35,7 @@ Le tableau suivant répertorie la liste des problèmes communs et propose des su
 |Problème|Solution|
 |-----|--------|
 | Votre application repose sur un pilote qui n'a pas été désigné pour un ARM. | Recompilez votre pilote x86 pour l'ARM64. Consultez [Génération de pilotes ARM64 avec le kit WDK](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers). |
-| Votre application est uniquement disponible pour un système x64. | Si vous développez pour le MicrosoftStore, soumettez une version ARM de votre application. Pour plus d’informations, voir [Architectures des packages d’applications](../packaging/device-architecture.md). Si vous êtes un développeur Win32, distribuez une version x86 de votre application. |
+| Votre application est uniquement disponible pour un système x64. | Si vous développez pour le MicrosoftStore, soumettez une version ARM de votre application. Pour plus d’informations, consultez [Architectures des packages d’applications](../packaging/device-architecture.md). Si vous êtes un développeur Win32, distribuez une version x86 de votre application. |
 | Votre application utiliser une version de OpenGL ultérieure à la version 1.1 ou nécessite une version d'OpenGL à accélération matérielle. | Les applications x86 utilisant DirectX9, DirectX10, DirectX11 et DirectX12 fonctionneront sur ARM. Pour plus d’informations, consultez [Jeux et graphismes DirectX](https://msdn.microsoft.com/en-us/library/windows/desktop/ee663274(v=vs.85).aspx). |
 | Votre application x86 ne fonctionne pas comme prévu. | Essayez d'utiliser l'utilitaire de résolution des problèmes de compatibilité en suivant les recommandations de l'[Utilitaire de résolution des problèmes de compatibilité sur ARM](apps-on-arm-program-compat-troubleshooter.md). Pour certaines étapes de résolution d'autres problèmes, consultez l'article [Résolution des problèmes des applications x86 sur ARM](apps-on-arm-troubleshooting-x86.md). |
 | Votre application x86 ne détecte pas sa propre exécution sur ARM. | Utilisez [IsWow64Process2](https://msdn.microsoft.com/en-us/library/windows/desktop/mt804318(v=vs.85).aspx) afin de déterminer si votre application est exécutée sur ARM. |

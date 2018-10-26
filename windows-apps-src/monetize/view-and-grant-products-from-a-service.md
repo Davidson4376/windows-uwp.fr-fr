@@ -6,16 +6,14 @@ title: Gérer les droits sur les produits à partir d’un service
 ms.author: mhopkins
 ms.date: 08/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, API de collection du MicrosoftStore, API d’achat du Microsoft Store, afficher des produits, octroyer des produits
 ms.localizationpriority: medium
-ms.openlocfilehash: c159acb096730d59b4d2667d890187199c5bda0a
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 41e1437e8b55474d3fcc0c34919e23d14a86ea89
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5513338"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557405"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Gérer les droits sur les produits à partir d’un service
 

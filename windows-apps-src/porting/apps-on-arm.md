@@ -5,16 +5,14 @@ description: Cet article présente comment les expériences et applications sont
 ms.author: misatran
 ms.date: 02/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10s, toujours connecté, ARM, ARM64, émulation x86
 ms.localizationpriority: medium
-ms.openlocfilehash: 462afd7f298ab9c82de385f8d6dc0f571a913d4a
-ms.sourcegitcommit: 11edca90aaf7856c762e68903483079d30ad3877
-ms.translationtype: HT
+ms.openlocfilehash: 8f62a873e84f200a019bde23038ae10b21150072
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2018
-ms.locfileid: "1595125"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559073"
 ---
 # <a name="windows-10-on-arm"></a>Windows10 sur ARM
 À l’origine, Windows10 (par comparaison avec Windows10Mobile) peut s’exécuter uniquement sur les ordinateurs munis de processeurs x86 et x64. À présent, le bureau Windows10 (éditions Pro et S) peut s'exécuter sur des postes munis de processeurs ARM64 avec la mise à jour Fall Creators Update. La nature axée sur l'économie d'énergie de l'architecture CPU ARM permet à tous les PC de profiter d'une autonomie de batterie durant toute la journée et de la prise en charge de réseaux de données mobiles. Ces PC fournissent une excellente compatibilité d'application et vous permette d'exécuter les applications win32 x86 héritées et non modifiées. Exemple Le lecteur Adobe. Pour plus d'informations ou pour obtenir une version de démonstration, regardez la [Vidéo de Channel 9 pour les PC toujours connectés](https://channel9.msdn.com/Events/Build/2017/P4171). 
@@ -36,7 +34,7 @@ Windows10 sur ARM exécute toutes les [Applications UWP](../get-started/universa
 Outre les applications UWP, Windows10 sur ARM peut également exécuter vos applications Win32 x86 (par exemple, Adobe Reader) non modifiée, avec une bonne performance et une expérience utilisateur homogène, tout comme sur PC. Il n'est pas nécessaire de recompiler ces applications Win32 x86 pour ARM. Elles ne réalisent pas qu'elles sont exécutés sur un processeur ARM. Notez bien que les applications 64 bits Wind32 x64 ne sont pas prises en charge, mais la vaste majorité des applications comportent les versions x86 de leurs applications. De ce fait, du point de vue de l'utilisateur, il suffit de choisir le programme d'installation x86 32 bits pour une exécution sur Windows sur un PC ARM.
 
 ## <a name="in-this-section"></a>Dans cette section
-|Sujet | Description |
+|Rubrique | Description |
 |-----|-----|
 |[Fonctionnement de l'émulation x86 sur ARM](apps-on-arm-x86-emulation.md)|Une présentation détaillée du mode d'émulation es applications x86 sur ARM.|
 |[Résolution des problèmes relatifs aux applications x86 sur ARM](apps-on-arm-troubleshooting-x86.md)|Problèmes courants avec les applications x86 lors de l'exécution sur ARM, et comment les résoudre. |
@@ -44,7 +42,7 @@ Outre les applications UWP, Windows10 sur ARM peut également exécuter vos appl
 |[Utilitairede résolution de problèmes de compatibilité des programmes sur ARM](apps-on-arm-program-compat-troubleshooter.md)|Conseils de réglage des paramètres de compatibilité si votre application ne fonctionne pas correctement sur ARM. |
 
 ## <a name="related-topics"></a>Rubriquesassociées
-|Sujet | Description |
+|Rubrique | Description |
 |-----|-----|
 |[Génération de pilotes ARM64 avec le kit WDK](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers)|Instructions pour la création d’un pilote ARM64. |
 | [Débogage des applications x86 sur ARM](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64) | Conseils pour le débogage desapplications x86 sur ARM. |

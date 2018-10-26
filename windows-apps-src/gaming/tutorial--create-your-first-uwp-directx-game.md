@@ -7,15 +7,13 @@ keywords: Exemple de jeu DirectX, exemple de jeu, plateforme Windows universelle
 ms.author: joanlee
 ms.date: 12/01/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c043b20cb00873bf115ff2d65306bc727d23a02a
-ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
-ms.translationtype: HT
+ms.openlocfilehash: 1c589eeb71d93619b92254207ddc5eb1b1494a55
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1877221"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553744"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>Créer un jeu de plateforme Windows universelle (UWP) simple avec DirectX
 

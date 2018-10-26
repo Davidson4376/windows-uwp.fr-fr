@@ -6,21 +6,20 @@ ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, directx , portage
-ms.openlocfilehash: e255bceae44ace0722a2df0c53d60ec0f8fa35fe
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: dea6455b4e9aaef2a4239ef70d0919a4b8841bc5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228738"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559536"
 ---
 # <a name="plan-your-directx-port"></a>Planifier votre portage DirectX
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**Récapitulatif**
+**Résumé**
 
 -   Planifier votre portage DirectX
 -   [Modifications importantes de Direct3D 9 à Direct3D 11](understand-direct3d-11-1-concepts.md)
@@ -38,9 +37,9 @@ La mise à niveau de Direct3D 9 vers Direct3D 11 ne se limite pas à une simple 
 
 Vous devez remplacer les bibliothèques d’applications auxiliaires D3DX et DXUT par vos propres bibliothèques d’applications auxiliaires ou par des outils de la communauté. Pour plus d’informations, voir la section [Mappage des fonctionnalités](feature-mapping.md).
 
-> **Remarque** Vous pouvez utiliser le [Kit de ressourcesDirectX](http://go.microsoft.com/fwlink/p/?LinkID=248929) ou [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926) pour remplacer certaines fonctionnalités qui étaient auparavant fournies parD3DX etDXUT.
+> **Remarque**  vous pouvez utiliser le [Kit de ressources DirectX](http://go.microsoft.com/fwlink/p/?LinkID=248929) ou [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926) pour remplacer certaines fonctionnalités qui étaient auparavant fournies par D3DX et DXUT.
 
- 
+ 
 
 Les nuanceurs écrits en langage assembleur doivent être mis à niveau vers HLSL avec le modèle de nuanceur4 niveau de fonctionnalité 9\_1 ou 9\_3. Les nuanceurs conçus pour la bibliothèque d’effets doivent être mis à jour avec une version plus récente de la syntaxe HLSL. Pour plus d’informations, voir la section [Mappage des fonctionnalités](feature-mapping.md).
 
@@ -64,9 +63,9 @@ Les deux concepts suivants vous seront souvent utiles:
 -   Les références managées ([**l’opérateur ^**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)) et les [**classes managées**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (classes de référence) sont des éléments fondamentaux de WindowsRuntime. Vous aurez besoin d’utiliser des classes de référence managées pour assurer la communication avec les composants WindowsRuntime, tels qu’[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) (pour plus d’informations, voir la procédure pas à pas).
 -   Si vous travaillez avec des interfacesCOM Direct3D11, optez pour le type de modèle [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) afin de faciliter l’utilisation des pointeurs COM.
 
- 
+ 
 
- 
+ 
 
 
 

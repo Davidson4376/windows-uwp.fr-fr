@@ -5,16 +5,14 @@ description: Problèmes fréquents en cas de chargement de version test des appl
 ms.author: rmpablos
 ms.date: 5/2/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, programme d’installation de l’application, AppInstaller, charger une version test
 ms.localizationpriority: medium
-ms.openlocfilehash: e94eb0e819796dda456899bb877057e4532f5ce9
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 499bb0b32e494441e547421094f42fbc6156044a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5522238"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554461"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>Résoudre les problèmes d’installation avec le fichier du programme d'installation d'application
 

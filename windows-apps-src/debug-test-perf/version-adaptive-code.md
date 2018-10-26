@@ -5,17 +5,15 @@ description: Utilisez la classe ApiInformation pour tirer parti des nouvellesAPI
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
-ms.openlocfilehash: f9a5425e0d14b2ded4d14a986a622a0aceda1b3c
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: e25a3bd447519ce344a95a1c335451f731552487
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700765"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556193"
 ---
 # <a name="version-adaptive-code"></a>Code adaptatif de version
 

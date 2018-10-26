@@ -1,27 +1,26 @@
 ---
-author: mcleblanc
-description: Si vous disposez d’une application 8.1 universelle (qu’elle cible Windows 8.1, Windows Phone 8.1 ou les deux), vous constaterez que le portage de votre code source et de vos compétences vers Windows 10 s’effectue en toute transparence.
+author: stevewhims
+description: Si vous disposez d’une application 8.1 universelle \#8212;whether il cible Windows8.1, Windows Phone 8.1, ou les deux \#8212;then que vous constaterez que votre code source et vos compétences le portage seront effectue en toute transparence vers Windows 10.
 title: Passer de Windows Runtime8.x à UWP
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 37da1d6385bf18fcf44f6425b843715e1a462379
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: eebd0467696b78458835425f7feac903ba435f42
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230140"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556059"
 ---
 # <a name="move-from-windows-runtime-8x-to-uwp"></a>Passer de Windows Runtime8.x à UWP
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Si vous disposez d’une application8.1 universelle (qu’elle cible Windows 8.1, Windows Phone 8.1 ou les deux), vous constaterez que le portage de votre code source et de vos compétences vers Windows10 s’effectue en toute transparence. Grâce à Windows10, vous pouvez créer une application de plateforme Windows universelle (UWP), à savoir un package d’application unique que vos clients peuvent installer sur tout type d’appareil. Pour en savoir plus sur Windows 10, sur les applications UWP et sur les concepts de code adaptatif et d’interface utilisateur adaptative que nous mentionnerons dans ce guide de portage, voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
+Si vous disposez d’une application 8.1 universelle, qu’elle cible Windows8.1, Windows Phone 8.1 ou les deux —, vous constaterez que votre code source et vos compétences le portage seront effectue en toute transparence vers Windows 10. Avec Windows 10, vous pouvez créer une application de plateforme Windows universelle (UWP), qui est un package d’application unique que vos clients peuvent installer sur tout type d’appareil. Pour plus d’informations sur Windows 10, les applications UWP et les concepts de code adaptatif et d’interface utilisateur adaptative que nous mentionnerons dans ce guide de portage, consultez le [Guide pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
-Pendant le portage, vous constaterez que Windows 10 partage la majorité des API avec les plateformes précédentes, ainsi que le balisage XAML, l’infrastructure d’interface utilisateur et des outils, et qu’elles sont toutes très conviviales. Comme précédemment, vous avez toujours le choix entre les langages de programmation C++, C# et Visual Basic pour l’infrastructure d’interface utilisateur XAML. Les premières étapes de planification de ce que vous devez faire avec vos applications existantes dépendent des types d’applications et de projets dont vous disposez. Cela est expliqué dans les sections suivantes.
+Pendant le portage, vous constaterez que Windows 10 partage la majorité des API avec les plateformes précédentes, ainsi que le balisage XAML, infrastructure d’interface utilisateur et outils, et vous trouverez toutes très conviviales. Comme précédemment, vous avez toujours le choix entre les langages de programmation C++, C# et Visual Basic pour l’infrastructure d’interface utilisateur XAML. Les premières étapes de planification de ce que vous devez faire avec vos applications existantes dépendent des types d’applications et de projets dont vous disposez. Cela est expliqué dans les sections suivantes.
 
 ## <a name="if-you-have-a-universal-81-app"></a>Si vous disposez d’une application 8.1 universelle
 
@@ -31,9 +30,9 @@ Une application8.1 universelle est créée à partir d’un projet d’applicati
 -   AppName\_81.WindowsPhone. Il s’agit du projet qui crée le package d’application pour Windows Phone8.1.
 -   AppName\_81.Shared. Il s’agit du projet qui contient le code source, les fichiers de balisage et d’autres actifs et ressources qui sont utilisés par les deux autres projets.
 
-Une application Windows universelle8.1 offre souvent des fonctionnalités identiques—en utilisant les mêmes code et balisage—dans ses versions pour Windows8.1 et Windows Phone8.1. Une telle application est idéalement adaptée au portage vers une application Windows10 unique qui cible la famille d’appareils universels (et que vous pouvez installer sur le plus large éventail d’appareils). Vous porterez essentiellement le contenu du projet partagé et vous n’utiliserez que très peu, voire pas du tout, les deux autres projets, car ils ne contiendront qu’un nombre limité d’éléments, voire aucun.
+Souvent, une application Windows universelle 8.1 offre les mêmes fonctionnalités, utilisant le même code et balisage — dans ses Windows8.1 et Windows Phone 8.1. Une telle application est un candidat idéal pour le portage vers une application Windows 10 unique qui cible la famille d’appareils universels (et que vous pouvez installer sur le plus large éventail d’appareils). Vous porterez essentiellement le contenu du projet partagé et vous n’utiliserez que très peu, voire pas du tout, les deux autres projets, car ils ne contiendront qu’un nombre limité d’éléments, voire aucun.
 
-Dans d’autres cas, la version pour Windows 8.1 et/ou pour Windows Phone 8.1 de l’application contient des fonctionnalités uniques. Elles peuvent également contenir les mêmes fonctionnalités mais les implémenter selon des techniques ou des technologies différentes. Avec une telle application, vous pouvez choisir d’effectuer le portage vers une application unique qui cible la famille d’appareils universelle (auquel cas vous souhaiterez adapter l’application aux différents appareils) ou vers plusieurs applications, l’une d’elles ciblant la famille d’appareils de bureau et une autre ciblant la famille d’appareils mobiles, par exemple. La nature de l’application 8.1 universelle détermine l’option la mieux adaptée à votre cas.
+Dans d’autres cas, la Windows8.1 et/ou pour Windows Phone 8.1 de l’application contient des fonctionnalités uniques. Elles peuvent également contenir les mêmes fonctionnalités mais les implémenter selon des techniques ou des technologies différentes. Avec une telle application, vous pouvez choisir d’effectuer le portage vers une application unique qui cible la famille d’appareils universelle (auquel cas vous souhaiterez adapter l’application aux différents appareils) ou vers plusieurs applications, l’une d’elles ciblant la famille d’appareils de bureau et une autre ciblant la famille d’appareils mobiles, par exemple. La nature de l’application 8.1 universelle détermine l’option la mieux adaptée à votre cas.
 
 1.  Portez le contenu du projet partagé vers une application ciblant la famille d’appareils universelle. Le cas échéant, récupérez tout autre contenu des projets Windows et WindowsPhone et utilisez ce contenu de manière inconditionnelle dans l’application ou conditionnelle sur le périphérique sur lequel votre application est exécutée (ce comportement est dit *adaptatif*).
 2.  Portez le contenu du projet WindowsPhone vers une application ciblant la famille de périphériques universels. Le cas échéant, récupérez tout autre contenu du projet Windows, en l’utilisant de manière inconditionnelle ou adaptative.

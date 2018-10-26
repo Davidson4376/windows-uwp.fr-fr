@@ -6,16 +6,14 @@ ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 ms.author: kbridge
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ecce3c9e0eee30864c2777b657e9b951a8ab0b06
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 5c9234463ad011cc0b4d289bba9fe1ff1873ed46
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393828"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559431"
 ---
 # <a name="guidelines-for-cross-slide"></a>Recommandations en matière de glisser transversal
 
@@ -60,16 +58,16 @@ Voici quelques recommandations à prendre en compte quand vous ajoutez la foncti
 
 Utilisez le glisser transversal pour les listes ou les collections qui défilent dans une seule direction. Pour plus d’informations, voir [Ajout de contrôles ListView](https://msdn.microsoft.com/library/windows/apps/hh465382).
 
-**Remarque** Dans les cas où la zone de contenu prend en charge le mouvement panoramique dans deuxdirections (par exemple, des navigateurs web ou des lecteurs électroniques), l’interaction chronométrée de la séquence Appuyer et maintenir doit être utilisée pour appeler le menu contextuel pour des objets du type image ou lien hypertexte.
+**Remarque**dans les cas où la zone de contenu panoramique dans deux directions, tels que les navigateurs web ou e-des lecteurs, l’interaction chronométrée appuyer et maintenir doit être utilisée pour appeler le menu contextuel pour les objets tels que des images et des liens hypertexte.
 
- 
+ 
 
 |                                                                                         |                                                                                         |
 |-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
 | ![mouvement panoramique horizontal, liste à deux dimensions](images/groupedlistview1.png)                | ![mouvement panoramique vertical, liste à une dimension](images/listviewlistlayout.png)                |
 | Un mouvement panoramique horizontal sur une liste à deux dimensions. Glisser vertical pour sélectionner ou déplacer un élément. | Un mouvement panoramique vertical sur une liste à une dimension. Glisser horizontal pour sélectionner ou déplacer un élément. |
 
- 
+ 
 
 ### <span id="selection"></span><span id="SELECTION"></span>
 
@@ -150,9 +148,9 @@ Si plusieurs objets doivent être déplacés, permettez aux utilisateurs de sél
 * [Entrée : exemple de mouvements Windows 8](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [Entrée : exemple de manipulations et de mouvements (C++)](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [Exemple d’entrée tactile DirectX](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

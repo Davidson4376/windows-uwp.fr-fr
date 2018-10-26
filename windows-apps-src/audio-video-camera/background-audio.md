@@ -6,16 +6,14 @@ title: Lire du contenu multimédia en arrière-plan
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f8fdc99355ef5a024757cc2e415b1d259965c1ce
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: f2eb12092d27c0033563ebf8cebbe96f949eadf8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690495"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558029"
 ---
 # <a name="play-media-in-the-background"></a>Lire du contenu multimédia en arrière-plan
 Cet article vous explique comment configurer votre application de telle sorte que le contenu multimédia continue à être lu quand votre application est déplacée du premier plan vers l’arrière-plan. Cela signifie que même après que l’utilisateur a réduit votre application, est revenu à l’écran d’accueil ou a quitté votre application d’une autre manière, votre application peut continuer à lire le contenu audio. 
@@ -100,9 +98,9 @@ SI vous avez besoin d’effectuer des appels réseau intervenant en arrière-pla
 * [Intégrer avec les contrôles de transport de média système](integrate-with-systemmediatransportcontrols.md)
 * [Exemple Contenu audio en arrière-plan](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
 
- 
+ 
 
- 
+ 
 
 
 

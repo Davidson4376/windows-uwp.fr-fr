@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 120e15762a0c9c8fb0313ec756dc64e469c9b37b
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 2327036eb53ac34c406aef53163be642468fbddc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652908"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556262"
 ---
 # <a name="vertex-and-index-buffers"></a>Mémoires tampons de vertex et d'index
 
@@ -37,7 +35,7 @@ La flexibilité des mémoires tampons de vertex en fait des points d’arrêt pa
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -53,16 +51,16 @@ La flexibilité des mémoires tampons de vertex en fait des points d’arrêt pa
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Guide d’apprentissage des graphiques Direct3D](index.md)
+[Guide d’apprentissage des graphismes Direct3D](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

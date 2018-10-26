@@ -6,16 +6,14 @@ title: Rechercher les codecs installés
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, codec, encodeur, décodeur, requête
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e6a44bda55fc6c01e75940d9d4446160e708627
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: b74ac269bcba6d15e7c4f5dcb4c34d53573deb5e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842346"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557108"
 ---
 # <a name="query-for-codecs-installed-on-a-device"></a>Rechercher les codecs installés sur un appareil
 La classe **[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)** vous permet de rechercher les codecs installés sur l’appareil actuel. Les codecs qui sont fournis dans Windows10 pour les différentes familles d’appareils sont répertoriés dans l’article [Codecs pris en charge](supported-codecs.md); toutefois, étant donné que les utilisateurs et les applications peuvent installer des codecs supplémentaires sur un appareil, vous pouvez avoir besoin de rechercher les codecs pris en charge au moment de l’exécution afin de déterminer les codecs qui sont disponibles sur l’appareil actuel.
@@ -52,9 +50,9 @@ L’exemple ci-après cherche à déterminer si un encodeur audio FLAC est insta
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Transcoder des fichiers multimédias](transcode-media-files.md)
 * [Codecs pris en charge](supported-codecs.md)
- 
+ 
 
- 
+ 
 
 
 

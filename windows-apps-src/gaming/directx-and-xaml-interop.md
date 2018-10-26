@@ -6,16 +6,14 @@ ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, directx, interopérabilité xaml
 ms.localizationpriority: medium
-ms.openlocfilehash: 107501bb06af62035e78ef1ac65291b2bdec5c62
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 7f3a70be3dd31b0a5e4214621ab9fb4efa72cc54
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674986"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555179"
 ---
 # <a name="directx-and-xaml-interop"></a>Interopérabilité entre DirectX et XAML
 
@@ -25,9 +23,9 @@ Vous pouvez utiliser XAML (Extensible Application Markup Language) et Microsoft 
 
 Si votre application se concentre principalement sur le rendu 2D, il peut être judicieux d’utiliser la bibliothèque Windows Runtime [Win2D](https://github.com/microsoft/win2d). Gérée par Microsoft, cette bibliothèque est basée sur les technologies Direct2D principales. Elle simplifie considérablement simplifie le modèle d’utilisation pour implémenter des graphismes 2D et comprend des abstractions utiles pour certaines des techniques décrites dans ce document. Pour en savoir plus, voir la page du projet. Ce document fournit des recommandations pour les développeurs d’applications qui choisissent de ne *pas* utiliser Win2D.
 
-> **Remarque**  Les API DirectX n’étant pas définies en tant que types WindowsRuntime, il est d’usage d’utiliser des extensions de composant VisualC++ (C++/CX) pour développer des composants UWP XAML qui interagissent avec DirectX. En outre, vous pouvez créer une application UWP en XAML et C# qui utilise DirectX, à condition d’inclure les appels DirectX dans un wrapper au sein d’un fichier de métadonnées Windows Runtime distinct.
+> **Remarque**APIs DirectX n’étant pas définies en tant que types Windows Runtime, il vous utilisez généralement les extensions de composant Visual c++ (C++ / CX) pour développer des composants UWP XAML qui interagissent avec DirectX. En outre, vous pouvez créer une application UWP en XAML et C# qui utilise DirectX, à condition d’inclure les appels DirectX dans un wrapper au sein d’un fichier de métadonnées Windows Runtime distinct.
 
- 
+ 
 
 ## <a name="xaml-and-directx"></a>XAML et DirectX
 
@@ -386,7 +384,7 @@ Si vous avez besoin de recevoir des entrées de pointeur à faible latence sur v
 > **Remarque**   En règle générale, vos applications DirectX doivent créer des chaînes d’échange dans l’orientation paysage et égales à la taille de la fenêtre d’affichage (qui correspond habituellement à la résolution d’écran native dans la plupart des jeux Microsoft Store). Cela garantit que votre application utilise l’implémentation de chaîne de permutation optimale lorsqu’elle ne possède aucune superposition XAML visible. Si l’application est pivotée en mode portrait, elle doit appeler [IDXGISwapChain1::SetRotation](https://msdn.microsoft.com/library/windows/desktop/hh446801) sur la chaîne de permutation existante, appliquer une transformation au contenu, si nécessaire, puis appeler de nouveau [SetSwapChain](https://msdn.microsoft.com/library/windows/desktop/dn302144) sur la même chaîne de permutation. De même, votre application doit appeler de nouveau **SetSwapChain** sur la même chaîne de permutation chaque fois que celle-ci est redimensionnée à la suite d’un appel de [IDXGISwapChain::ResizeBuffers](https://msdn.microsoft.com/library/windows/desktop/bb174577).
 
 
- 
+ 
 
 Voici le processus de base de création et de mise à jour d’un objet [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834) dans le code-behind:
 
@@ -471,9 +469,9 @@ Voici le processus de base de création et de mise à jour d’un objet [SwapCha
 * [ISwapChainPanelNative](https://msdn.microsoft.com/library/windows/desktop/dn302143)
 * [Guide de programmation pour Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345)
 
- 
+ 
 
- 
+ 
 
 
 

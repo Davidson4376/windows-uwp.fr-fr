@@ -6,19 +6,17 @@ description: La disposition peut s’avérer coûteuse pour une application XAML
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 40afd15da7e225ea82814ab2fa680a3c95e00488
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: b0dcb3e49bb35902a17f829c0222c570265be8b5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894749"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553859"
 ---
 # <a name="optimize-your-xaml-layout"></a>Optimiser votre disposition XAML
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -28,7 +26,7 @@ La disposition est le processus de définition de la structure visuelle de l’i
 
 ## <a name="reduce-layout-structure"></a>Réduire la structure de la disposition
 
-La meilleure solution pour améliorer les performances de la disposition consiste à simplifier la structure hiérarchique de l’arborescence des éléments d’interface utilisateur. Les panneaux existent dans l’arborescence visuelle, mais ce sont des éléments structurels, pas des *éléments produisant des pixels* comme une classe [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) ou [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371). Le fait de simplifier l’arborescence en réduisant le nombre d’éléments qui ne produisent pas de pixels permet généralement d’améliorer significativement les performances.
+La meilleure solution pour améliorer les performances de la disposition consiste à simplifier la structure hiérarchique de l’arborescence des éléments d’interface utilisateur. Les panneaux existent dans l’arborescence visuelle, mais ce sont des éléments structurels, pas des *éléments produisant des pixels* comme une classe [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) ou [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). Le fait de simplifier l’arborescence en réduisant le nombre d’éléments qui ne produisent pas de pixels permet généralement d’améliorer significativement les performances.
 
 De nombreuses interfaces utilisateur sont implémentées en imbriquant des panneaux, ce qui crée des arborescences complexes et étendues de panneaux et d’éléments. L’imbrication de panneaux est pratique, mais le plus souvent il est possible d’obtenir la même interface utilisateur avec un seul panneau plus complexe. Les performances sont meilleures en utilisant un seul panneau.
 
@@ -138,7 +136,7 @@ Comme ces exemples le montrent, il existe de nombreuses façons d’obtenir la m
 
 Il est courant qu’une interface utilisateur ait une disposition dans laquelle les éléments se chevauchent. Généralement, pour positionner les éléments de cette manière, on utilise le remplissage, les marges, les alignements et les transformations. Le contrôle [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) XAML est optimisé pour améliorer les performances de la disposition des éléments qui se chevauchent.
 
-**Important** Pour voir l’amélioration, utilisez un élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) à une seule cellule. Ne définissez pas [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) ou [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions).
+**Important**pour voir l’amélioration, utilisez une seule cellule [**grille**](https://msdn.microsoft.com/library/windows/apps/BR242704). Ne définissez pas [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) ou [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions).
 
 ### <a name="examples"></a>Exemples
 

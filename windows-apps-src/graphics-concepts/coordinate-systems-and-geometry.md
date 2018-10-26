@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cea4368ce995ce50726499b6c1c6875f83b72e7b
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: ce3b1ebfc2f18a06ff4fa960c91749f61f5011d9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652328"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556483"
 ---
 # <a name="coordinate-systems-and-geometry"></a>Systèmes de coordonnées et géométrie
 
@@ -33,7 +31,7 @@ La programmation des applicationsDirect3D nécessite une maîtrise des principes
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -73,16 +71,16 @@ La programmation des applicationsDirect3D nécessite une maîtrise des principes
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
 [Guide d’apprentissage des graphismes Direct3D](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

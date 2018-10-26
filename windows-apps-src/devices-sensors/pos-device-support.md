@@ -3,18 +3,16 @@ author: TerryWarwick
 title: Prise en charge du matériel de point de service
 description: Cet article contient des informations sur la prise en charge matérielle pour chacune des classes de périphérique de point de service
 ms.author: jken
-ms.date: 05/1/2018
+ms.date: 06/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb2468497115c9595f6fd17ab61b30caed507ab
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: Auto
+ms.openlocfilehash: df6e2c15260759f164a37b68365e0268633b22d5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832093"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559249"
 ---
 # <a name="supported-point-of-service-peripherals"></a>Périphériques de point de service pris en charge
 
@@ -27,18 +25,76 @@ ms.locfileid: "1832093"
 |
 
 
-### <a name="compatible-barcode-scanners"></a>Scanneurs de code-barres compatibles
-| Catégorie | Connectivité | Fabricant/modèle |
-|--------------|-----------|-----------|
-| **Scanneurs à main 1D** | **USB** |HoneywellVoyager1200g<br/>HoneywellVoyager1202g<br/>HoneywellVoyager1202-bf<br/>HoneywellVoyager145Xg (peut être mis à niveau)|
-| **Scanneurs à main 1D** | **Bluetooth** |Socket Mobile CHS7Ci<br/> Socket Mobile CHS7Di<br/> Socket Mobile CHS7Mi<br/> Socket Mobile CHS7Pi<br/>Socket Mobile DuraScanD700<br/> Socket Mobile DuraScanD730<br/>Socket Mobile SocketScanS800 (anciennement CHS8Ci) <br/>|
-|**Scanneurs à main 2D** | **USB** |Code Reader™950<br/>Code Reader™1021<br/>Code Reader™1421<br/> Honeywell Granit198Xi<br/>Honeywell Granit191Xi<br/>Honeywell Xenon1900g<br/>Honeywell Xenon1902g<br/>Honeywell Xenon1902g-bf<br/>Honeywell Xenon1900h<br/>Honeywell Xenon1902h<br/>HoneywellVoyager145Xg (peut être mis à niveau)<br/>Honeywell Voyager1602g<br/>IntermecSG20<br/>Zebra DS2278<br/>Zebra DS8108 ¹<hr><small>¹ Microprogramme minimum 016 (2018.01.18) requis. Mise à jour possible à l’aide de [123Scan](http://www.zebra.com/123Scan)</small>|
-|**Scanneurs à main 2D** | **Bluetooth** |Socket Mobile SocketScanS850 (anciennement CHS8Qi)|
-| **Scanneurs de présentation** | **USB** |Code Reader™5000<br/>Honeywell Genesis7580g<br/>Honeywell Orbit7190g|
-| **Scanneurs en caisse** | **USB** |Honeywell Stratos2700|
-| **Moteurs de numérisation** | **USB** | HoneywellN5680<br/>HoneywellN3680|
-| **Appareils mobiles Windows**| **Intégrée** |BluebirdEF400<br/>BluebirdEF500<br/>BluebirdEF500R<br/>HoneywellCT50<br/>HoneywellD75e<br/>JanamXT2<br/>PanasonicFZ-E1<br/>PanasonicFZ-F1<br/>PointMobilePM80<br/>ZebraTC700j|
-| **Appareils mobiles Windows**| **Personnalisée** | HP EliteX3 avec protection pour scanneur de code-barres |
+| Fabricant  | Modèle                          | Fonctionnalité | Connexion    | Type         | Mode                      |
+|---------------|--------------------------------|------------|--------------|--------------|---------------------------|
+| Code          | Reader™ 950                    | 2D         | USB          | Poche     | Scanneur de PDV HID           |
+| Code          | Reader™™ 1021                   | 2D         | USB          | Poche     | Scanneur de PDV HID           |
+| Code          | Reader™™ 1421                   | 2D         | USB          | Poche     | Scanneur de PDV HID           |
+| Code          | Reader™ 5000                   | 2D         | USB          | Présentation | Scanneur de PDV HID           |
+| Honeywell     | Genesis 7580g                  | 2D         | USB          | Présentation | Scanneur de PDV HID           |
+| Honeywell     | Granit 198Xi                   | 2D         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | Granit 191Xi                   | 2D         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | N5680                          | 2D         | Interne     | Composant    | Scanneur de PDV HID           |
+| Honeywell     | N3680                          | 2D         | Interne     | Composant    | Scanneur de PDV HID           |
+| Honeywell     | Orbite 7190g                    | 2D         | USB          | Présentation | Scanneur de PDV HID           |
+| Honeywell     | Stratos 2700                   | 2D         | USB          | Dans la zone compteur   | Scanneur de PDV HID           |
+| Honeywell     | Voyager 1200g                  | 1D         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | Voyager 1202g                  | 1D         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | Voyager 1202-bf                | 1D         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | Voyager 145Xg                  | 1D / 2D ¹   | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | Voyager 1602g                  | 2D         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | Xenon 1900g                    | 2D         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | Xenon 1902g                    | 2D         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | Xenon 1902g-bf                 | 2D         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | Xenon 1900h                    | 2D         | USB          | Poche     | Scanneur de PDV HID           |
+| Honeywell     | Xenon 1902h                    | 2D         | USB          | Poche     | Scanneur de PDV HID           |
+| HP            | Scanneur de codes-barres de valeur (HR2150) | 2D         | USB          | Poche     | Scanneur de PDV HID           |
+| Intermec      | SG20                           | 2D         | USB          | Poche     | Scanneur de PDV HID           |
+| Socket Mobile | CHS 7Ci                        | 1D         | Bluetooth    | Poche     | Profil de Port série (SPP) |
+| Socket Mobile | CHS 7Di                        | 1D         | Bluetooth    | Poche     | Profil de Port série (SPP) |
+| Socket Mobile | CHS 7mi                        | 1D         | Bluetooth    | Poche     | Profil de Port série (SPP) |
+| Socket Mobile | CHS 7Pi                        | 1D         | Bluetooth    | Poche     | Profil de Port série (SPP) |
+| Socket Mobile | CHS 8Ci                        | 1D         | Bluetooth    | Poche     | Profil de Port série (SPP) |
+| Socket Mobile | DuraScan D700                  | 1D         | Bluetooth    | Poche     | Profil de Port série (SPP) |
+| Socket Mobile | DuraScan D730                  | 1D         | Bluetooth    | Poche     | Profil de Port série (SPP) |
+| Socket Mobile | DuraScan D740                  | 2D         | Bluetooth    | Poche     | Profil de Port série (SPP) |
+| Socket Mobile | SocketScan S700                | 1D         | Bluetooth    | Poche     | Profil de Port série (SPP) |
+| Socket Mobile | SocketScan S730                | 1D         | Bluetooth    | Poche     | Profil de Port série (SPP) |
+| Socket Mobile | SocketScan S740                | 2D         | Bluetooth    | Poche     | Profil de Port série (SPP) |
+| Socket Mobile | SocketScan S800                | 1D         | Bluetooth    | Poche     | Profil de Port série (SPP) |
+| Socket Mobile | SocketScan S850                | 2D         | Bluetooth    | Poche     | Profil de Port série (SPP) |
+| Zebra         | DS2278                         | 2D         | USB          | Poche     | Scanneur de PDV HID           |
+| Zebra         | DS8108²                        | 2D         | USB          | Poche     | Scanneur de PDV HID           |
+|
+
+
+¹ mise à jour pour prendre en charge des codes-barres 2D via Honeywell <br/>
+² le microprogramme minimum 016 (2018.01.18) requis. Mise à jour à l’aide de Zebra [123Scan](http://www.zebra.com/123Scan). 
+
+
+<hr>
+
+### <a name="windows-devices-with-built-in-barcode-scanner"></a>Appareils Windows avec le scanneur de codes-barres intégré
+| Fabricant   | Modèle | Systèmed’exploitation |
+|----------------|-------|------------------|
+| Innowi         | ChecOut-M | Windows10   |
+
+### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>Appareils Windows Mobile avec scanneur de codes-barres intégré
+| Fabricant   | Modèle | Systèmed’exploitation |
+|----------------|-------|------------------|
+| Bluebird       | EF400 | Windows Mobile   |
+| Bluebird       | EF500 | Windows Mobile   |
+| Bluebird       | EF500R | Windows Mobile   |
+| Honeywell      | CT50   | Windows Mobile   |
+| Honeywell      | D75e | Windows Mobile   |
+| Janam          | XT2      | Windows Mobile   |
+| Panasonic      | FZ-E1 | Windows Mobile   |
+| Panasonic      | FZ-F1 |Windows Mobile   |
+| PointMobile    | PM80 | Windows Mobile   |
+| Zebra          | TC700j | Windows Mobile   |
+| HP             | X3 Elite veste | Windows Mobile   |
+
+
 
 
 ## <a name="cash-drawer"></a>Caisse enregistreuse

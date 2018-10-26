@@ -1,27 +1,25 @@
 ---
-title: Concepts graphiques Direct3D
-description: Décrit les concepts graphiques sur lesquels reposent MicrosoftDirect3D.
+title: Glossaire de graphiques Direct3D
+description: Définit les termes de graphiques utilisées par Microsoft Direct3D.
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
-- Guide d’apprentissage des graphiques Direct3D
+- Glossaire de graphiques Direct3D
 author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e1fed9eaf3003bc67a86a5282fccbb923019a36
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 0e325494cefeab4cf3ed40939f5b24de5e921b68
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653018"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555575"
 ---
-# <a name="direct3d-graphics-concepts"></a>Concepts graphiques Direct3D
+# <a name="direct3d-graphics-glossary"></a>Glossaire de graphiques Direct3D
 
 
-Décrit les concepts graphiques de MicrosoftDirect3D. Ce guide explique les concepts généraux des graphiques informatiques 3D qui sont utilisés dans le développement de jeux et d’applications Direct3D.
+Définit les termes de graphiques de Microsoft Direct3D. Ce glossaire définit, à un termes de graphiques de haut niveau, général informatiques 3D qui sont utilisés dans le développement de jeux et d’applications Direct3D.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Dans cette section
 
@@ -33,7 +31,7 @@ Décrit les concepts graphiques de MicrosoftDirect3D. Ce guide explique les conc
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -89,8 +87,8 @@ Décrit les concepts graphiques de MicrosoftDirect3D. Ce guide explique les conc
 </tbody>
 </table>
 
- 
+ 
 
- 
+ 
 
- 
+ 

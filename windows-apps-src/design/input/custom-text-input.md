@@ -9,15 +9,13 @@ keywords: clavier, texte, Core Text, texte personnalisé, Text Services Framewor
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 734d18d7320ecc3157fbc9896db28989e0791e8d
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 14a2811f59b8de33db51b255aee8892abf553198
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655561"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555411"
 ---
 # <a name="custom-text-input"></a>Saisie de texte personnalisé
 
@@ -63,7 +61,7 @@ Les plages de texte et les sélections sont représentées par la structure [**C
 | **StartCaretPosition** | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | La position de départ d’une plage correspond à l’ACP située juste avant le premier caractère. |
 | **EndCaretPosition**   | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | La position de fin d’une plage correspond à l’ACP située juste après le dernier caractère.     |
 
- 
+ 
 
 Par exemple, dans la plage de texte présentée précédemment, la plage \[0, 5\] correspond au mot «Hello». **StartCaretPosition** doit toujours être inférieur ou égal à **EndCaretPosition**. La plage \[5, 0\] n’est pas valide.
 
@@ -158,9 +156,8 @@ Il peut arriver que le champ [**Range**](https://msdn.microsoft.com/library/wind
 ## <a name="related-articles"></a>Articles connexes
 
 **Exemples**
-* [Exemple de contrôle d’édition personnalisé](https://go.microsoft.com/fwlink/?linkid=831024)
- 
-**Exemples d’archive**
+* [Exemple de contrôle d’édition personnalisé](https://go.microsoft.com/fwlink/?linkid=831024) 
+ **Exemples d’archive**
 * [Exemple de modification de texte XAML](http://go.microsoft.com/fwlink/p/?LinkID=251417)
 
 

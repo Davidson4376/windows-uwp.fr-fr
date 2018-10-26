@@ -6,16 +6,14 @@ description: Découvrez les techniques d’utilisation des API de couche visuell
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d45881ace6be3b0af88f14692837e96ab9b58d18
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 1f25cda10d5fde88bbe2cff75406cc0454780a5b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5474738"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559325"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>Utilisation de la couche visuelle avec le contenu XAML
 

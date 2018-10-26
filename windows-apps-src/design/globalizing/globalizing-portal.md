@@ -9,20 +9,18 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 10/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 06931c53ba2670fd27fbf94a204ffd62a97bb184
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: b437055704c307dc3e3fa506a9885ff892585503
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1394778"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554517"
 ---
 # <a name="globalization-and-localization"></a>Globalisation et localisation
 
-Windows est utilisé dans le monde entier par des publics de diverses cultures, régions et langues. Vos utilisateurs parlent une variété de langues et dans une variété de pays et régions. Certains utilisateurs parlent plusieurs langues. Ainsi, votre application s’exécute sur des configurations qui impliquent de nombreuses permutations des paramètres de langue, de région et de culture du système. Pour étendre le marché potentiel de votre application, vous pouvez la rendre facilement adaptable grâce aux fonctionnalités de *globalisation* et de *localisation*.
+Windows est utilisé dans le monde entier, par des publics de diverses langues, régions et cultures. Vos utilisateurs parlent différentes langues dans divers pays et régions. Certains utilisateurs parlent plusieurs langues. Ainsi, votre application s’exécute sur des configurations qui impliquent de nombreuses permutations des paramètres de langue, de région et de culture du système. Pour étendre le marché potentiel de votre application, vous pouvez la rendre facilement adaptable grâce aux fonctionnalités de *globalisation* et de *localisation*.
 
 Cette vidéo vous informe brièvement comment préparer votre application à une utilisation dans le monde entier : [Introduction à la globalisation et à la localisation](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
 

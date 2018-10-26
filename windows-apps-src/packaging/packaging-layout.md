@@ -5,16 +5,14 @@ description: La disposition de mise en package constitue un unique document déc
 ms.author: lahugh
 ms.date: 04/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, création de packages, disposition de package, package d'actifs
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f8cbb3989b58b726336b4bd757902bd9ea3f8c0
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 9342b4ce35cb50037813ed2210e2d7246411ad92
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5522917"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552327"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>Création de package à l'aide de la disposition de mise en package  
 

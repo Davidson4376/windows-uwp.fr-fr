@@ -5,16 +5,14 @@ author: muhsinking
 ms.author: mukin
 ms.date: 06/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 00cea51c673f64725c6ada4f1cfb403e2949ed12
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 7084c4dde7bdf2d59842a04fe9fd52bc029c264a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958562"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554007"
 ---
 # <a name="my-people-sharing"></a>Partage de mes contacts
 
@@ -107,7 +105,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-«appId» est le nom de la famille de packages, suivi de «!» et l’ID de la classe activable. Pour trouver le nom de famille de votre Package, ouvrez **Package.appxmanifest** à l’aide de l’éditeur par défaut, puis rechercher dans l’onglet «Emballage». Ici, «Application» est la classe activable correspondant à la vue partage cible.
+«appId» est le nom de la famille de packages, suivi de «!» et l’ID de la classe activable. Pour rechercher le nom de famille de packages, ouvrez **Package.appxmanifest** à l’aide de l’éditeur par défaut, puis regardez dans l’onglet «Packages». Ici, «Application» est la classe activable correspondant à la vue de cible de partage.
 
 ## <a name="running-as-a-my-people-share-target"></a>En cours d’exécution en tant que cible de partage de mes contacts
 

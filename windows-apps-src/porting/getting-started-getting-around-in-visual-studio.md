@@ -6,16 +6,14 @@ ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e804fbe2574da554592f34bdc1ba509ddee275e
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 8219f1600297dfa60345fe8130e8954558b8ac61
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "229494"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555989"
 ---
 # <a name="getting-started-getting-around-in-visual-studio"></a>Prise en main: Apprentissage de VisualStudio
 

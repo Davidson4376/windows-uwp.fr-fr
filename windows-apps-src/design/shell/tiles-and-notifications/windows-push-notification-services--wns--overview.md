@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c1c73f9b279f9cc3a6854db8a8509ae99904e70
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 2b7d9adfd9e058d4364470b07ef3e9129ade88b3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674846"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555683"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Vue d’ensemble des services de notifications Push Windows (WNS)
  
@@ -55,7 +53,7 @@ Une fois que l’application a créé un URI de canal, elle l’envoie à son se
 
 ### <a name="important-notes"></a>Remarques importantes
 
--   Nous ne garantissons pas que l’URI de canal de notification d’une application restera toujours le même. Nous vous conseillons de faire en sorte que l’application demande un nouveau canal chaque fois qu’elle s’exécute et qu’elle mette à jour son service lorsque l’URI change. Le développeur ne doit jamais modifier l’URI de canal et doit le considérer comme une chaîne de boîte noire. Actuellement, les URI de canal expirent au bout de 30 jours. Si votre application Windows10 renouvelle périodiquement son canal en arrière-plan, vous pouvez télécharger l’[exemple de notifications Push et périodiques](http://go.microsoft.com/fwlink/p/?linkid=231476) pour Windows8.1, et réutiliser son code source et/ou le modèle qu’il présente.
+-   Nous ne garantissons pas que l’URI de canal de notification d’une application restera toujours le même. Nous vous conseillons de faire en sorte que l’application demande un nouveau canal chaque fois qu’elle s’exécute et qu’elle mette à jour son service lorsque l’URI change. Le développeur ne doit jamais modifier l’URI de canal et doit le considérer comme une chaîne de boîte noire. Actuellement, les URI de canal expirent au bout de 30 jours. Si votre application Windows 10 renouvelle périodiquement son canal en arrière-plan vous pouvez télécharger l' [exemple Push et les notifications périodiques](http://go.microsoft.com/fwlink/p/?linkid=231476) pour Windows8.1 et réutiliser son code source et/ou le modèle qu'il illustre.
 -   C’est vous, le développeur, qui implémentez l’interface entre le service cloud et l’application cliente. Nous recommandons que l’application passe par un processus d’authentification auprès de son propre service et qu’elle transmette les données par le biais d’un protocole sécurisé tel que HTTPS.
 -   Il est important que le service cloud offre toujours la garantie que l’URI de canal utilise le domaine «notify.windows.com». Le service ne doit jamais effectuer une transmission de type push de notifications vers un canal se trouvant sur un autre domaine. Si jamais le rappel pour votre application était compromis, une personne malveillante pourrait soumettre un URI de canal pour tromper WNS. Sans une inspection du domaine, votre service cloud pourrait divulguer des informations à cette personne malveillante sans le savoir.
 -   Si votre service cloud tente d'envoyer une notification à un canal ayant expiré, le service WNS renvoie le [code de réponse410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes). En réponse à ce code, votre service ne doit plus chercher à envoyer des notifications à cet URI.
@@ -76,9 +74,9 @@ Au niveau le plus élevé, la chaîne d’informations se présente comme suit :
 
 Dans le cadre de l’authentification auprès de WNS, le service cloud soumet une requête HTTP sur SSL (Secure Sockets Layer). Les paramètres sont fournis au format «application/x-www-for-urlencoded». Entrez votre SID de package dans le champ «client\_id» et votre clé secrète dans le champ «client\_secret». Pour obtenir des détails sur la syntaxe, voir la référence sur la [demande de jeton d’accès](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#access_token_request).
 
-**Remarque** Ceci est juste un exemple, et non pas du code à copier-coller que vous pouvez utiliser dans votre propre code.
+**Remarque**il s’agit juste un exemple, le code pas couper-coller que vous pouvez utiliser dans votre propre code.
 
- 
+ 
 
 ``` http
  POST /accesstoken.srf HTTP/1.1
@@ -164,20 +162,20 @@ Par exemple, au cours d’une journée active d’échanges sur le marché bours
 ## <a name="push-notifications-and-battery-saver"></a>Notifications Push et économiseur de batterie
 
 
-L’économiseur de batterie prolonge l’autonomie en limitant l’activité en arrière-plan sur l’appareil. Windows 10 permet à l’utilisateur de configurer l’économiseur de batterie de sorte qu’il s’active automatiquement lorsque le niveau de la batterie descend en dessous d’un seuil défini. Lorsque l’économiseur de batterie est activé, la réception de notifications Push est désactivée afin de réduire la consommation d’énergie. Il y a toutefois quelques exceptions. Les paramètres d’économiseur de batterie Windows10 suivants (disponibles dans l’application **Paramètres**) permettent à votre application de recevoir des notifications Push même lorsque l’économiseur de batterie est activé.
+L’économiseur de batterie prolonge l’autonomie en limitant l’activité en arrière-plan sur l’appareil. Windows 10 permet à l’utilisateur de configurer l’économiseur d’activer automatiquement lorsque la batterie descend en dessous d’un seuil spécifié. Lorsque l’économiseur de batterie est activé, la réception de notifications Push est désactivée afin de réduire la consommation d’énergie. Il y a toutefois quelques exceptions. Les paramètres de l’économiseur de batterie Windows 10 suivants (disponibles dans l’application **paramètres** ) permettent à votre application recevoir des notifications push même lorsque l’économiseur de batterie est activé.
 
--   **Autoriser les notifications Push d’une application en cas d’utilisation d’un économiseur de batterie**: ce paramètre permet à toutes les applications de recevoir des notifications Push lorsque l’économiseur de batterie est activé. Notez que ce paramètre s’applique uniquement à Windows 10 pour éditions de bureau (Famille, Professionnel, Entreprise et Éducation).
+-   **Autoriser les notifications Push d’une application en cas d’utilisation d’un économiseur de batterie**: ce paramètre permet à toutes les applications de recevoir des notifications Push lorsque l’économiseur de batterie est activé. Notez que ce paramètre s’applique uniquement à Windows 10 pour éditions de bureau (famille, Professionnel, entreprise et éducation).
 -   **Toujours autoriser**: ce paramètre permet à des applications spécifiques de s’exécuter en arrière-plan lorsque l’économiseur de batterie est activé (réception de notifications Push comprise). Cette liste est mise à jour manuellement par l’utilisateur.
 
-Il n’existe aucun moyen de vérifier l’état de ces deux paramètres, mais vous pouvez vérifier l’état de l’économiseur de batterie. Dans Windows10, utilisez la propriété [**EnergySaverStatus**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus) pour vérifier l’état de l’économiseur de batterie. Votre application peut également utiliser l’événement [**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) pour détecter les changements d’état de l’économiseur de batterie.
+Il n’existe aucun moyen de vérifier l’état de ces deux paramètres, mais vous pouvez vérifier l’état de l’économiseur de batterie. Dans Windows 10, utilisez la propriété [**EnergySaverStatus**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus) pour vérifier l’état de l’économiseur de batterie. Votre application peut également utiliser l’événement [**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) pour détecter les changements d’état de l’économiseur de batterie.
 
-Si votre application s’appuie en grande partie sur les notifications Push, nous vous recommandons d’avertir les utilisateurs qu’ils risquent de ne pas recevoir de notifications lorsque l’économiseur de batterie est activé, et de leur faciliter l’accès aux **paramètres de l’économiseur de batterie**. À l’aide du schéma d’URI des paramètres de l’économiseur de batterie dans Windows 10, `ms-settings:batterysaver-settings`, vous pouvez fournir un lien d’accès pratique vers l’application Paramètres.
+Si votre application s’appuie en grande partie sur les notifications Push, nous vous recommandons d’avertir les utilisateurs qu’ils risquent de ne pas recevoir de notifications lorsque l’économiseur de batterie est activé, et de leur faciliter l’accès aux **paramètres de l’économiseur de batterie**. À l’aide du schéma des URI des paramètres de l’économiseur de batterie dans Windows 10, `ms-settings:batterysaver-settings`, vous pouvez fournir un lien pratique vers l’application paramètres.
 
-**Conseil** Lorsque vous avertissez l’utilisateur à propos des paramètres de l’économiseur de batterie, nous vous recommandons d’offrir une option permettant de ne plus afficher le message à l’avenir. Par exemple, la case à cocher `dontAskMeAgainBox` dans l’exemple suivant conserve la préférence de l’utilisateur dans [**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings).
+**Conseil**  lors de la notification de l’utilisateur sur les paramètres d’économiseur de batterie, nous vous recommandons de fournir un moyen de supprimer le message à l’avenir. Par exemple, la case à cocher `dontAskMeAgainBox` dans l’exemple suivant conserve la préférence de l’utilisateur dans [**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings).
 
- 
+ 
 
-Voici un exemple illustrant comment vérifier si l’économiseur de batterie est activé dans Windows10. Cet exemple avertit l’utilisateur et ouvre l’application Paramètres au niveau des **paramètres de l’économiseur de batterie**. L’élément `dontAskAgainSetting` permet à l’utilisateur de supprimer le message s’il ne souhaite plus être averti.
+Voici un exemple illustrant comment vérifier si l’économiseur de batterie est activé dans Windows 10. Cet exemple avertit l’utilisateur et ouvre l’application Paramètres au niveau des **paramètres de l’économiseur de batterie**. L’élément `dontAskAgainSetting` permet à l’utilisateur de supprimer le message s’il ne souhaite plus être averti.
 
 ```cs
 using System;
@@ -256,9 +254,9 @@ Voici le code XAML pour l’élément [**ContentDialog**](https://docs.microsoft
 * [En-têtes des demandes et des réponses du service de notifications Push](https://msdn.microsoft.com/library/windows/apps/hh465435)
 * [Recommandations et liste de vérification sur les notifications Push](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [Notifications brutes](https://msdn.microsoft.com/library/windows/apps/hh761488)
- 
+ 
 
- 
+ 
 
 
 

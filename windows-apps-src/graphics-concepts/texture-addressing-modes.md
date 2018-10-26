@@ -12,15 +12,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 75aa946f3a0f1259adf1207e9568ca6da783883e
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 0e817dcc92741ca2e738784f387cfe49399a108c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044748"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552805"
 ---
 # <a name="texture-addressing-modes"></a>Modes d’adressage de texture
 
@@ -43,7 +41,7 @@ Avec l’habillage de texture activé, les coordonnées de texture en dehors de 
 | Clamp                   | Fixe les coordonnées de texture dans la plage \[0.0, 1.0\]. Le mode Clamp applique la texture une fois, puis estompe la couleur des pixels du bord. |
 | Couleur de bordure            | Utilise une *couleur de bordure* arbitraire pour les coordonnées de texture en dehors de la plage 0.0 à 1.0inclus.                         |
 
- 
+ 
 
 ## <a name="span-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanwrap-texture-address-mode"></a><span id="Wrap_texture_address_mode"></span><span id="wrap_texture_address_mode"></span><span id="WRAP_TEXTURE_ADDRESS_MODE"></span>Mode d’adresse de texture Wrap
 
@@ -101,9 +99,9 @@ Les limitations de texture répétées peuvent dépendre de la taille de la text
 
 [Textures](textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

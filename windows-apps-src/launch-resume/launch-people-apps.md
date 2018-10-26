@@ -6,16 +6,14 @@ ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 75f0a47400acaedf57737852f5e822d7907c1d6d
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 0b87a49f24035215d44dbabcf9e401ddfefdff47
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663639"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551575"
 ---
 # <a name="launch-the-people-app"></a>Lancer l’application Contacts
 
@@ -60,7 +58,7 @@ Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut
 <p>Peu importe l’ordre des paramètres.</p>
 <p>S’il existe plusieurs correspondances, nous renvoyons la première correspondance du contact.</p>
 </div>
-<div> 
+<div> 
 </div></td>
 <td align="left">ms-people:viewcontact:?ContactId=&lt;contactid&gt;&amp;AggregatedId=&lt;aggid&gt;&amp;PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;&amp;Contact=&lt;contactobj&gt;</td>
 </tr>
