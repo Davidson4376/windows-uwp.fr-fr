@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows10, uwp, toast, barre de progression, barre de progression du toast, notification, liaison des données du toast
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ca144f92676f87fcdade37b280c39640bc74624
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5556311"
+ms.locfileid: "5641710"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>Barre de progression du toast et liaison des données
 

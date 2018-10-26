@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8564d3dc7240bb556f3cb90c51165def9e2d4eba
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5664995"
+ms.locfileid: "5684004"
 ---
 # <a name="generate-preinstall-packages-for-oems"></a>Générer des packages de préinstallation pour les fabricants d’ordinateurs OEM
 

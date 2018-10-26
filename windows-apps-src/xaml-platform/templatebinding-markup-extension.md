@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 842f1bf1642e79d4bd2651560fdf7208cfb1877d
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5596022"
+ms.locfileid: "5642202"
 ---
 # <a name="templatebinding-markup-extension"></a>Extension de balisage {TemplateBinding}
 

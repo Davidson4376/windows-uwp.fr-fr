@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, extensions, produit dans l'app, FAI
 ms.localizationpriority: medium
 ms.openlocfilehash: ab09f72e9cf2bd46246751aab790aa6bab84de10
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5594776"
+ms.locfileid: "5641608"
 ---
 # <a name="manage-add-ons"></a>Gérer les modules complémentaires
 

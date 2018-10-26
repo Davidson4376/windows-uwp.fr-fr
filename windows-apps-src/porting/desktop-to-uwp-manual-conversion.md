@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: 0482c9a770d23ccebb094c00de7cab08cd6ab1cb
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 29fd7faec6f78b5f01469e7bfa6c01a8831f07eb
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5547047"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5641149"
 ---
 # <a name="package-a-desktop-application-manually"></a>Créer un package manuellement une application de bureau
 
@@ -158,7 +158,7 @@ Voici un exemple de nœud [VisualElements](https://docs.microsoft.com/uwp/schema
 
 ## <a name="optional-add-target-based-unplated-assets"></a>(Facultatif) Ajoutez des ressources sans plaque basées sur la cible
 
-Les ressources basées sur la cible sont destinées aux icônes et vignettes qui apparaissent dans la barre des tâches Windows, dans les applications actives, dans l’affichage Alt+Tab, dans l’alignement automatique et dans le coin inférieur droit des vignettes de démarrage. Vous trouverez davantage de détails [ici](https://docs.microsoft.com/windows/uwp/shell/tiles-and-notifications/app-assets#target-based-assets).
+Les ressources basées sur la cible sont destinées aux icônes et vignettes qui apparaissent dans la barre des tâches Windows, dans les applications actives, dans l’affichage Alt+Tab, dans l’alignement automatique et dans le coin inférieur droit des vignettes de démarrage. Vous trouverez davantage de détails [ici](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos#unplated-assets).
 
 1. Obtenez les images 44x44 correctes, puis copiez-les dans le dossier qui contient vos images (c’est-à-dire Assets).
 

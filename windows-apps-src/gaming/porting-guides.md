@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, portage, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 47892bac1a19018201187cbc901e4b680480268b
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5622068"
+ms.locfileid: "5642272"
 ---
 # <a name="game-porting-guides"></a>Guides en matière de portage de jeu
 
