@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, paiements, ventes d’applications, revenu de l’application, revenu, frais d’utilisation du Store, mise en attente des paiements, pourcentage
 ms.localizationpriority: medium
 ms.openlocfilehash: e7a5736c48232d3fa080d13fbcbbbdb70bfa9c92
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5555473"
+ms.locfileid: "5596462"
 ---
 # <a name="getting-paid"></a>Rémunération
 Voici quelques informations importantes dont vous aurez besoin pour vérifier que vous avez reçu le paiement pour vos applications et extensions, ainsi que vos revenus publicitaires.

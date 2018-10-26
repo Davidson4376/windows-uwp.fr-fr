@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, directx9, directx11 , portage
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e867129b5f684c7e77aebefcbe9a3f68b47b031
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5549707"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5617868"
 ---
 # <a name="moving-from-directx-9-to-directx-11-and-universal-windows-platform-uwp"></a>Portage de DirectX9 vers DirectX11 et la plateforme Windows universelle (UWP)
 

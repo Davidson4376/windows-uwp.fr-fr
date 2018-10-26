@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, entrée
 ms.localizationpriority: medium
 ms.openlocfilehash: ed0d611c761315e42decb89e1a5a5ad84f4b067a
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5554876"
+ms.locfileid: "5593940"
 ---
 # <a name="input-practices-for-games"></a>Pratiques d’entrée pour les jeux
 

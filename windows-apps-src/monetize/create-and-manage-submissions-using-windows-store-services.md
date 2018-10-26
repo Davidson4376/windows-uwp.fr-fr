@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore
 ms.localizationpriority: medium
 ms.openlocfilehash: f85f586d58d159e9fb4751933f14f6b74cd94f96
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5562646"
+ms.locfileid: "5617676"
 ---
 # <a name="create-and-manage-submissions"></a>Créer et gérer des soumissions
 

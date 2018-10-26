@@ -11,11 +11,11 @@ ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
 ms.openlocfilehash: fdaa8cd73bb2f1199e7214206ec2b0b52628a906
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5550920"
+ms.locfileid: "5593681"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>Contrôles et modèles pour applications UWP
  

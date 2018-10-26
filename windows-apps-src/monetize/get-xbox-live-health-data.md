@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, services de MicrosoftStore, API d'analyse du MicrosoftStore, analyse Xbox Live, intégrité, erreurs client
 ms.localizationpriority: medium
 ms.openlocfilehash: e2143f04b1b2641123929f5f833df2421f77b99e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5556643"
+ms.locfileid: "5593237"
 ---
 # <a name="get-xbox-live-health-data"></a>Obtenir des données d’intégrité Xbox Live
 

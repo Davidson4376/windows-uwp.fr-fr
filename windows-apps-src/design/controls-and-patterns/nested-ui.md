@@ -14,11 +14,11 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f9bb6daeb01e264cf9cdb0fa9ee9c66738fec972
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5567489"
+ms.locfileid: "5593523"
 ---
 # <a name="nested-ui-in-list-items"></a>Interface utilisateur imbriquée dans des éléments de liste
 

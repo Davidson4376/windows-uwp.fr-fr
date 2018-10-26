@@ -9,11 +9,11 @@ keywords: windows10, uwp, insiders, insider du centre de développement, fonctio
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
 ms.localizationpriority: medium
 ms.openlocfilehash: c9e7725eb7780ba39cb812a61cba31c0a6b6616e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5559361"
+ms.locfileid: "5598159"
 ---
 # <a name="dev-center-insider-program"></a>Programme Insider du Centre de développement
 

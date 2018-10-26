@@ -12,11 +12,11 @@ f1_keywords:
 - vs.storeassociationwizard
 ms.localizationpriority: medium
 ms.openlocfilehash: ba0ed6cb2fe2b932dcb3011ff7cf9cf7ce197182
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5564519"
+ms.locfileid: "5594641"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Créer un package d’application UWP avec Visual Studio
 

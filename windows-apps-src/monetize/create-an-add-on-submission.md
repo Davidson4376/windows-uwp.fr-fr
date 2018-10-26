@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, créer une soumission d’extension, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: 32e5c803600d0b56e421ae87a5514f6c70cc8d11
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5547759"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5596829"
 ---
 # <a name="create-an-add-on-submission"></a>Crée une soumission d’extension
 

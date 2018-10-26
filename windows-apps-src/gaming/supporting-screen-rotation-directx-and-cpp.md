@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, orientation de l’écran, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ed8739f8ba7b2049af154d458ccaa831b8526a5
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5548251"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5593724"
 ---
 # <a name="supporting-screen-orientation-directx-and-c"></a>Prise en charge de l’orientation de l’écran (DirectX et C++)
 

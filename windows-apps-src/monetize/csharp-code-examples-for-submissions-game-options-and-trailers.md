@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, exemples de code, options de jeu, bandes-annonces, listes avancées, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: ab186c6139755ca2a8c823093268e6cf21956c90
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5547963"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5618003"
 ---
 # <a name="c-sample-app-submission-with-game-options-and-trailers"></a>Exemple de code C\#: soumission d’applications avec options de jeu et bandes-annonces
 

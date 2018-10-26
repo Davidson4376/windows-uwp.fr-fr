@@ -9,11 +9,11 @@ keywords: windows 10, uwp, API de soumission au Microsoft Store, lancement du pa
 ms.assetid: ee9aa223-e945-4c11-b430-1f4b1e559743
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ff8b79e04d188ab79ac76ad1c5d47ab5ee37563
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5557247"
+ms.locfileid: "5595649"
 ---
 # <a name="update-the-rollout-percentage-for-a-flight-submission"></a>Met à jour le pourcentage de lancement d’une soumission de version d’évaluation
 
