@@ -15,11 +15,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d29b85c7ec3ec9ec0114a3a49dff834f859511e
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5640615"
+ms.locfileid: "5597601"
 ---
 # <a name="boxpanel-an-example-custom-panel"></a>BoxPanel, exemple de panneau personnalisé
 
