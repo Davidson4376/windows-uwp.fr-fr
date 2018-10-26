@@ -6,16 +6,14 @@ title: Intégration avec les contrôles de transport de média système
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 044d8aa8f777f6cb159c3488fdcf81c2b2c48d2d
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 15d7e3b3e822081a751aa791a76e674b07af8d9d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690295"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569750"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>Intégration avec les contrôles de transport de média système
 
@@ -84,9 +82,9 @@ Comme mentionné précédemment dans cet article, les contrôles de transport de
 * [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md)
 * [Contrôle manuel des contrôles de transport de média système](system-media-transport-controls.md)
 * [Exemple de contrôles de transport de média système sur github](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
- 
+ 
 
- 
+ 
 
 
 

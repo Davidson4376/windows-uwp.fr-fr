@@ -6,15 +6,14 @@ ms.assetid: 850ec988-761b-49d8-9508-da8a83108de3
 ms.author: elcowle
 ms.date: 06/23/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, approbation de concept
-ms.openlocfilehash: f49e27ad5753a8f4074ca3b55bd7cde47a7e6600
-ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.localizationpriority: medium
+ms.openlocfilehash: a14a9b3f1e059019afa042a47dcaeb9373a69934
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2017
-ms.locfileid: "693031"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571530"
 ---
 # <a name="concept-approval"></a>Approbation de concept
 

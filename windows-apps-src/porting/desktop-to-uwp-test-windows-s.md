@@ -6,16 +6,14 @@ title: Tester votre application Windows pour Windows10S
 ms.author: normesta
 ms.date: 05/11/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10 S, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 69cceb86710cea0e9066454fba4ef4e1746633d1
-ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
-ms.translationtype: HT
+ms.openlocfilehash: 3307506c5cf62d04cd19fbc302ad14bfcedd0045
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1874317"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567420"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Tester votre application Windows pour Windows10 en modeS.
 

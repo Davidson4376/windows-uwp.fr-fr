@@ -8,24 +8,22 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e2750de79dbdb01081aa099ff955fcef2999dcbf
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 6f690e08d211692b05f0a80722aa4a3e3a06b39f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652493"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569195"
 ---
 # <a name="lighting"></a>Éclairage
 
 
 Les lumières sont utilisées pour illuminer les objets d’une scène. La couleur de chaque vertex d’objet est basée sur la carte de texture, les couleurs de vertex et les sources de lumière actuelles.
 
-**Remarque**   Cette section concerne uniquement le pipeline à fonction fixe. Les nuanceurs programmables prennent explicitement en charge toutes les fonctions d’éclairage.
+**Remarque**  cette section concerne uniquement le pipeline à fonction fixe. Les nuanceurs programmables prennent explicitement en charge toutes les fonctions d’éclairage.
 
- 
+ 
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>Dans cette section
 
@@ -37,7 +35,7 @@ Les lumières sont utilisées pour illuminer les objets d’une scène. La coule
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -61,16 +59,16 @@ Les lumières sont utilisées pour illuminer les objets d’une scène. La coule
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
 [Guide d’apprentissage des graphismes Direct3D](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

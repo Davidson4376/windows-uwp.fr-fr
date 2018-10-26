@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4525cf151d53790a44995bd8a8dd77a88332cdd0
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: d02bfb8b8bd112a969895d4f2bd5d324fce9d6b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673446"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567641"
 ---
 # <a name="periodic-notification-overview"></a>Vue d’ensemble des notifications périodiques
  
@@ -29,9 +27,9 @@ Les notifications périodiques, également appelées notifications interrogées,
 
 Les notifications périodiques permettent à votre application d’obtenir des mises à jour de vignettes dynamiques avec un minimum d’intervention du service cloud et d’investissement client. Les notifications périodiques sont une bonne méthode de distribution du même contenu à un large public.
 
-**Remarque** Pour plus d’informations, téléchargez l’[exemple de notifications Push et périodiques](http://go.microsoft.com/fwlink/p/?linkid=231476) pour Windows 8.1, puis réutilisez son code source dans votre application Windows 10.
+**Remarque**  plus en téléchargement de l' [exemple Push et les notifications périodiques](http://go.microsoft.com/fwlink/p/?linkid=231476) pour Windows8.1 et réutilisez son code source dans votre application Windows 10.
 
- 
+ 
 
 ## <a name="how-it-works"></a>Fonctionnement
 
@@ -110,4 +108,4 @@ Vous devez fournir un URI unique pour chaque notification que Windows doit tél�
 * [Recommandations en matière de notifications périodiques](https://msdn.microsoft.com/library/windows/apps/hh761461)
 * [Comment configurer des notifications périodiques pour les badges](https://msdn.microsoft.com/library/windows/apps/hh761476)
 * [Comment configurer des notifications périodiques pour des vignettes](https://msdn.microsoft.com/library/windows/apps/hh761476)
- 
+ 

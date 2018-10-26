@@ -9,22 +9,20 @@ keywords: pavé tactile, PTP, entrées tactiles, pointeur, entrées, interaction
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 54911cbab3124da30b416f328675353349883175
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 1c77e7a220618273e0fb8fb75cf3de2247534f5b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1394368"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565029"
 ---
 # <a name="touchpad-design-guidelines"></a>Recommandations en matière de conception pour le pavé tactile
 
 
 Concevez votre application afin que les utilisateurs puissent interagir avec elle par le biais d’un pavé tactile. Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un dispositif de pointage comme la souris. Grâce à cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité plus petites.
 
- 
+ 
 
 ![Pavé tactile](images/input-patterns/input-touchpad.jpg)
 
@@ -118,7 +116,7 @@ Voici quelques exemples de mouvements optimisés pour le pavé tactile qui perme
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="hardware"></a>Matériel
 
@@ -168,7 +166,7 @@ Si vous avez besoin de personnaliser le curseur de la souris:
 * [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
 * [Entrée : mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
+ 
 
 
 

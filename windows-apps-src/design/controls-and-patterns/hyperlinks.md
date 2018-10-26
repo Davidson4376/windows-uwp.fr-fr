@@ -8,20 +8,18 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 pm-contact: kisai
 design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f8fb40b9e249b67c5006a1fd89b06c74aedd8c0
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: e6679f789f2530a34a2bf527556c144e7a8e03c3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816884"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566017"
 ---
 # <a name="hyperlinks"></a>Liens hypertexte
 
@@ -181,7 +179,7 @@ La couleur par défaut du lien hypertexte est la couleur d’accentuation du sys
 
 - [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - Affichez tous les contrôles XAML dans un format interactif.
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 - [Contrôles de texte](text-controls.md)
 - [Recommandations en matière d’info-bulles](tooltips.md)

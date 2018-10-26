@@ -6,19 +6,18 @@ ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux , portage, tampons de sommets, données, direct3d
-ms.openlocfilehash: 85e8a47da525c0f5de7e957a0048e245e374dedc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: b32747a4e11d258f71d4e55e41b7f54bb5e99246
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228897"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568438"
 ---
 # <a name="port-the-vertex-buffers-and-data"></a>Porter les tampons et données de sommets
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -314,9 +313,9 @@ Lorsque vous définissez vos structures Direct3D, séparez le code qui appelle l
 * [Porter les mémoires tampons et données de vertex](port-the-vertex-buffers-and-data-config.md)
 * [Porter le langage GLSL](port-the-glsl.md)
 
- 
+ 
 
- 
+ 
 
 
 

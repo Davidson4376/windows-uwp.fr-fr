@@ -6,16 +6,14 @@ description: Accédez aux fichiers et dossiers en permettant à l’utilisateur 
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f025504d8024a23810a7d5dd2b0b28414fe5a62
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: b79bfa9ecdf76d2d59e3c0991240d88599dbe6dd
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662589"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569400"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>Ouvrir des fichiers et dossiers à l’aide d’un sélecteur
 
@@ -28,7 +26,7 @@ ms.locfileid: "1662589"
 Accédez aux fichiers et dossiers en permettant à l’utilisateur d’interagir avec ceux-ci à l’aide d’un sélecteur. Vous pouvez utiliser les classes [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) et [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) pour accéder à des fichiers et la classe [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) pour accéder à un dossier.
 
 > [!NOTE]
-> Pour obtenir un exemple complet, consultez l’[exemple de sélecteur de fichiers](http://go.microsoft.com/fwlink/p/?linkid=619994).
+> Pour obtenir un exemple complet, consultez l’[exemple de sélecteur de fichiers](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
 ## <a name="prerequisites"></a>Prérequis
 

@@ -8,24 +8,22 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 36af11829728e07c00b3306d5a997764db130c9f
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: c55f371e97daba5f81945812f8179eb708bbadd6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043088"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567181"
 ---
 # <a name="multipass-texture-blending"></a>Fusion de textures multipasse
 
 
 Les applications Direct3D peuvent obtenir de nombreux effets spéciaux en appliquant différentes textures à une primitive au cours de plusieurs passages de rendu. Cette opération est généralement appelée *fusion de textures multipasse*. La fusion de textures multipasse permet généralement d’émuler les effets des modèles d’éclairage et d’ombrage complexes en appliquant plusieurs couleurs à partir de plusieurs textures différentes. Une telle application est appelée *mappage lumineux*. Voir [Mappage lumineux avec textures](light-mapping-with-textures.md).
 
-**Remarque**   Certains appareils peuvent appliquer plusieurs textures sur les primitives en une seule passe. Voir [Fusion de textures](texture-blending.md).
+**Remarque**  certains appareils sont en mesure d’appliquer plusieurs textures aux primitives dans une seule passe. Voir [Fusion de textures](texture-blending.md).
 
- 
+ 
 
 Si le matériel de l’utilisateur ne prend pas en charge la fusion de plusieurs textures, votre application peut recourir à la fusion de textures multipasse pour obtenir les mêmes effets visuels. Toutefois, l’application ne prend pas en charge les fréquences d’images proposées par la fusion de textures multiples.
 
@@ -43,9 +41,9 @@ Pour effectuer la fusion de textures multipasse dans une application C/C++:
 
 [Fusion de textures](texture-blending.md)
 
- 
+ 
 
- 
+ 
 
 
 

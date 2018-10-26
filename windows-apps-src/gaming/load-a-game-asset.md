@@ -6,16 +6,14 @@ ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, jeux, directx, chargement des ressources
 ms.localizationpriority: medium
-ms.openlocfilehash: 12dd2fd39ff0b39e747488952779cfeb180f06fa
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: 1bea3f515ba8ff810fc6dfd6281f0488c4f3e235
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983552"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565327"
 ---
 # <a name="load-resources-in-your-directx-game"></a>Charger des ressources dans votre jeu DirectX
 
@@ -73,7 +71,7 @@ Vous pouvez trouver le code complet de ces exemples dans les liens suivants.
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="instructions"></a>Instructions
 
@@ -216,7 +214,7 @@ Nous allons récupérer les données octets du fichier de maillage. Le format de
 -   Après quoi, les bits suivants (numVertices \* sizeof(**BasicVertex**)) contiennent les données de vertex.
 -   Les derniers bits de données (numIndices \* 16) contiennent les données d’index, représentées comme une séquence de valeurs uint16.
 
-La clé est donc de connaître la disposition au niveau des bits des données de maillage chargées. Assurez-vous aussi d’être cohérent sur le plan endian. Toutes les plates-formes Windows 8 sont en mode Little Endian.
+La clé est donc de connaître la disposition au niveau des bits des données de maillage chargées. Assurez-vous aussi d’être cohérent sur le plan endian. Toutes les plateformes de package Windows8 sont en mode little endian.
 
 Dans l’exemple, vous appelez une méthode, CreateMesh, à partir de la méthode **LoadMeshAsync** pour effectuer cette interprétation au niveau des bits.
 
@@ -707,9 +705,9 @@ D’autres types de nuanceurs, comme les nuanceurs de coque et de géométrie, p
 * [Code complet de BasicReaderWriter](complete-code-for-basicreaderwriter.md)
 * [Code complet de DDSTextureLoader](complete-code-for-ddstextureloader.md)
 
- 
+ 
 
- 
+ 
 
 
 

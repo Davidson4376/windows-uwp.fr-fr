@@ -6,16 +6,14 @@ description: Utilisez les animations de la bibliothèque d’animations Windows 
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 23af2883e0e1bc4fe8aa67bb72a8690082369ab4
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: Auto
+ms.openlocfilehash: d7c3c4a9e46ce38298d7dcdd50477c4de0e9960c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1656274"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570060"
 ---
 # <a name="animations-in-xaml"></a>Animations en XAML
 
@@ -138,7 +136,7 @@ Le tableau suivant résume nos recommandations en matière de choix d’animatio
 | Contenu d’un conteneur d’éléments d’interface utilisateur quelconque | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
 | Pour les contrôles ou si aucune autre animation ne s’applique | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) et [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
 
- 
+ 
 
 ## <a name="transition-animation-examples"></a>Exemples d’animation de transition
 
@@ -307,7 +305,7 @@ Plusieurs effets de transition permettent de créer des animations applicables �
 | [**ReorderThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210409) | Fournit le comportement de la transition animée pour les cas où les éléments des contrôles list-view changent d’ordre. Généralement, cela se produit suite à une opération de glissement. Les différents contrôles et thèmes peuvent présenter des caractéristiques d’animation diverses. |
 | [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429) | Fournit le comportement de la transition animée lorsque les contrôles changent de position. |
 
- 
+ 
 
 ## <a name="theme-animation-examples"></a>Exemples d’animations de thème
 
@@ -353,9 +351,9 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 Contrairement aux animations de transition, une animation de thème n’a pas de déclencheur intégré (la transition) qui l’exécute automatiquement. Vous devez utiliser un objet [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) pour contenir une animation thématique quand vous la définissez en XAML. Vous pouvez aussi changer le comportement par défaut de l’animation. Par exemple, il vous est possible de ralentir la disparition progressive en augmentant la valeur de temps [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) de l’objet [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302).
 
-**Remarque**  Pour illustrer les techniques d’animation de base, nous utilisons du code d’application pour lancer l’animation en appelant des méthodes de [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490). Vous pouvez contrôler la façon dont les animations d’objet **Storyboard** s’exécutent à l’aide des méthodes [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491), [**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop), [**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx), et [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) **Storyboard**. Toutefois, ça n’est pas comme cela qu’on inclut normalement des animations de la bibliothèque dans des applications. En général, on intègre plutôt les animations de la bibliothèque dans les modèles et styles XAML appliqués aux contrôles ou aux éléments. L’apprentissage des modèles et des états visuels est un peu plus compliqué. Vous trouverez cependant une description de l’utilisation des animations de la bibliothèque dans les états visuels dans la rubrique [Animations dans une table de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
+**Remarque**pour illustrer les techniques d’animation de base, nous utilisons du code d’application pour lancer l’animation en appelant des méthodes de [**table de montage séquentiel**](https://msdn.microsoft.com/library/windows/apps/BR210490). Vous pouvez contrôler la façon dont les animations d’objet **Storyboard** s’exécutent à l’aide des méthodes [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491), [**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop), [**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx), et [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) **Storyboard**. Toutefois, ça n’est pas comme cela qu’on inclut normalement des animations de la bibliothèque dans des applications. En général, on intègre plutôt les animations de la bibliothèque dans les modèles et styles XAML appliqués aux contrôles ou aux éléments. L’apprentissage des modèles et des états visuels est un peu plus compliqué. Vous trouverez cependant une description de l’utilisation des animations de la bibliothèque dans les états visuels dans la rubrique [Animations dans une table de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
 
- 
+ 
 
 Vous pouvez appliquer plusieurs autres animations de thème à vos éléments d’interface utilisateur pour créer des effets d’animation. Les noms de ces API contiennent tous «ThemeAnimation»:
 
@@ -376,7 +374,7 @@ Vous pouvez appliquer plusieurs autres animations de thème à vos éléments d�
 | [**DrillInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.drillinthemeanimation) | Représente une animation préconfigurée qui s’exécute lorsqu’un utilisateur navigue vers l’avant dans une hiérarchie logique, par exemple, d’une page maître vers une page de détails. |
 | [**DrillOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.drilloutthemeanimation.aspx) | Représente une animation préconfigurée qui s’exécute lorsqu’un utilisateur navigue en arrière dans une hiérarchie logique, par exemple, d’une page de détails vers une page maître. |
 
- 
+ 
 
 ## <a name="create-your-own-animations"></a>Créer vos propres animations
 
@@ -386,9 +384,9 @@ Afin d’être animée, la propriété que vous animez doit être une *propriét
 
 Le scénario de définition d’interface utilisateur d’application le plus courant où vous définirez des animations dans une table de montage séquentiel personnalisées concerne la définition d’états visuels pour des contrôles en XAML. Cette opération sera nécessaire si vous créez une classe de contrôle ou si vous remodélisez un contrôle existant qui possède des états visuels dans son modèle de contrôle. Pour plus d’informations, voir [Animations dans une table de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
 
- 
+ 
 
- 
+ 
 
 
 

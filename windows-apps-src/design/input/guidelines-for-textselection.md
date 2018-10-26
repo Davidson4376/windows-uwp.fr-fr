@@ -9,15 +9,13 @@ keywords: clavier, texte, entrées, interactions avec l’utilisateur
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e28d90cdac94f4eafa153de161a338b9d4c7bf5e
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: c0bc236fd3e9e37a759f83e3f24bfcad4817f068
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653888"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564367"
 ---
 # <a name="selecting-text-and-images"></a>Sélection de texte et d’images
 
@@ -51,20 +49,20 @@ La sélection et la manipulation de texte représentent des difficultés particu
 
 **Remarques et recommandations**
 
-Utilisez les contrôles intégrés exposés par le biais des infrastructures de langage dans Windows pour générer des applications offrant une expérience d’interaction utilisateur de plateforme intégrale, y compris les comportements de sélection et de manipulation. La fonctionnalité d’interaction des contrôles intégrés se révèle suffisante pour la plupart des applicationsUWP.
+Utilisez les contrôles intégrés exposés par le biais des infrastructures de langage dans les applications de build Windowsto qui fournissent l’expérience d’interaction utilisateur plateforme intégrale, y compris les comportements de sélection et la manipulation. La fonctionnalité d’interaction des contrôles intégrés se révèle suffisante pour la plupart des applicationsUWP.
 
 Lorsque vous utilisez des contrôles de texte UWP standard, vous ne pouvez pas personnaliser les comportements et les éléments visuels de sélection décrits dans cette rubrique.
 
 **Sélection de texte**
 
-Si votre application requiert une interface utilisateur personnalisée prenant en charge la sélection de texte, nous vous recommandons de suivre les comportements de sélection Windows décrits ici.
+Si votre application nécessite une interface utilisateur personnalisée qui prend en charge la sélection de texte, nous vous recommandons de suivre les comportements Windowsselection décrits ici.
 
 **Contenu modifiable et contenu non modifiable**
 
 
-Avec l’entrée tactile, les interactions de sélection sont principalement effectuées par des gestes (par exemple, un appui pour placer un curseur d’insertion ou sélectionner un mot, et un glissement pour modifier une sélection). À l’instar des autres interactions tactiles de Windows, les interactions chronométrées sont limitées au geste d’appui prolongé pour afficher une interface utilisateur informative. Pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
+Avec l’entrée tactile, les interactions de sélection sont principalement effectuées par des gestes (par exemple, un appui pour placer un curseur d’insertion ou sélectionner un mot, et un glissement pour modifier une sélection). À l’instar des autres interactions Windowstouch, les interactions chronométrées sont limitées à un appui sur le maintenez le mouvement pour afficher une interface utilisateur informative. Pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
 
-Windows reconnaît deux états possibles pour les interactions de sélection, modifiable et non modifiable, et ajuste l’interface utilisateur, le retour et la fonctionnalité de sélection de manière appropriée.
+Possible de Windowsrecognizes deux États pour les interactions de sélection, modifiables et non modifiable et ajuste l’interface utilisateur de sélection, le retour et la fonctionnalité en conséquence.
 
 **Contenu modifiable**
 
@@ -82,9 +80,9 @@ Les images suivantes montrent comment appeler le menu contextuel en appuyant dan
 
 ![Appuyez (ou effectuez un appui prolongé) dans la sélection ou sur un symbole de sélection/redimensionnement pour appeler le menu contextuel.](images/textselection-show-context.png)
 
-**Remarque** Ces interactions varient légèrement en cas de mot incorrectement orthographié. L’appui sur un mot qui est marqué comme incorrectement orthographié entraîne la mise en surbrillance de la totalité du mot et l’appel du menu contextuel d’orthographe suggérée.
+**Remarque**ces interactions varient légèrement dans le cas d’un mot mal orthographié. L’appui sur un mot qui est marqué comme incorrectement orthographié entraîne la mise en surbrillance de la totalité du mot et l’appel du menu contextuel d’orthographe suggérée.
 
- 
+ 
 
 **Contenu non modifiable**
 
@@ -130,9 +128,9 @@ Par exemple, il est possible également d’utiliser des barres de redimensionne
 * [Entrée : exemple de mouvements Windows 8](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [Entrée : exemple de manipulations et de mouvements (C++)](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [Exemple d’entrée tactile DirectX](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

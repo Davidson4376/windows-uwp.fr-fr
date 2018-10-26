@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 330b768c0f00f36ce8ce539b9ce41c7ac812e6fc
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: d10478d76be88138d1382793bd8b5e0d5b3ef41a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043228"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564450"
 ---
 # <a name="stencil-formats-not-supported-with-streaming-resources"></a>Formats de gabarit non pris en charge par les ressources de diffusion en continu
 
@@ -34,9 +32,9 @@ Pour une profondeur de 32bits, vous disposeriez de vignettes 128x128 , tandis qu
 
 [Partage de ressources de diffusion en continu avec des processus et des appareils](streaming-resource-cross-process-and-device-sharing.md)
 
- 
+ 
 
- 
+ 
 
 
 

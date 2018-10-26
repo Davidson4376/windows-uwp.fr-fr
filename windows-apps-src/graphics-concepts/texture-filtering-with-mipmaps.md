@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: af0c9c7013b663bceb5c3747ff5d5250f62c54c7
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: d32d5a77fe9bc840ea676c7156c1b59e498d07e1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044568"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571638"
 ---
 # <a name="texture-filtering-with-mipmaps"></a>Filtrage de textures avec mipmaps
 
@@ -51,9 +49,9 @@ Ensuite, votre application définit la méthode de filtrage que Direct3D utilise
 
 Les textures mipmap sont utilisées dans les scènes 3D afin de réduire le temps nécessaire au rendu d’une scène. Elles améliorent également le réalisme de la scène. Toutefois, elles nécessitent souvent de grandes quantités de mémoire.
 
-**Remarque**   Chaque surface dans une chaîne de mipmaps présente des dimensions réduites de moitié par rapport à la surface précédente dans la chaîne. Si le mipmap de niveau supérieur possède des dimensions de 256x128, les dimensions du mipmap de deuxième niveau sont de 128x64, celles du troisième niveau sont de 64x32 et ainsi de suite, jusqu’à 1x1. Vous ne pouvez pas demander un nombre de niveaux de mipmap dans Levels qui entraînerait une largeur ou une hauteur de mipmap inférieure à 1 dans la chaîne. Dans le cas d’une surface de mipmap de niveau supérieur de 4x2, la valeur maximale autorisée pour Levels est de trois. Les dimensions de niveau supérieur sont de 4x2, les dimensions de second niveau sont de 2x1 et les dimensions de troisième niveau sont de 1x1. Une valeur supérieure à 3niveaux entraînerait une valeur fractionnaire de la hauteur du deuxième niveau de mipmap et n’est donc pas autorisée.
+**Remarque**  chaque surface dans une chaîne de mipmaps présente des dimensions sont réduites celui de la surface précédente dans la chaîne. Si le mipmap de niveau supérieur possède des dimensions de 256x128, les dimensions du mipmap de deuxième niveau sont de 128x64, celles du troisième niveau sont de 64x32 et ainsi de suite, jusqu’à 1x1. Vous ne pouvez pas demander un nombre de niveaux de mipmap dans Levels qui entraînerait une largeur ou une hauteur de mipmap inférieure à 1 dans la chaîne. Dans le cas d’une surface de mipmap de niveau supérieur de 4x2, la valeur maximale autorisée pour Levels est de trois. Les dimensions de niveau supérieur sont de 4x2, les dimensions de second niveau sont de 2x1 et les dimensions de troisième niveau sont de 1x1. Une valeur supérieure à 3niveaux entraînerait une valeur fractionnaire de la hauteur du deuxième niveau de mipmap et n’est donc pas autorisée.
 
- 
+ 
 
 Direct3D peut effectuer automatiquement le filtrage de textures mipmap. Les applications peuvent parcourir manuellement une chaîne de mipmaps pour charger les données bitmap dans chaque surface de la chaîne. Il s’agit souvent de la seule raison de parcourir la chaîne. La génération automatique de mipmaps au moment de la création de la texture exploite le filtrage matériel car le mipmap se trouve dans la mémoire vidéo.
 
@@ -62,9 +60,9 @@ Direct3D peut effectuer automatiquement le filtrage de textures mipmap. Les appl
 
 [Filtrage de textures](texture-filtering.md)
 
- 
+ 
 
- 
+ 
 
 
 

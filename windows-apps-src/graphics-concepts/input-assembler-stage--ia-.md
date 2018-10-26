@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f2127fb58d3af6015316bb714685159f572d013a
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: def755f868c7ea30679f19877cec84b20faa44f5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652848"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564731"
 ---
 # <a name="input-assembler-ia-stage"></a>Étape de l’assembleur d’entrée (IA)
 
@@ -54,7 +52,7 @@ L’étape IA assemble les données en primitives et associe les valeurs génér
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -70,16 +68,16 @@ L’étape IA assemble les données en primitives et associe les valeurs génér
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
 [Pipeline graphique](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

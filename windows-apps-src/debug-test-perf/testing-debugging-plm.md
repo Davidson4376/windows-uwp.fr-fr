@@ -5,17 +5,15 @@ title: Outils de test et de débogage pour la Gestion de la durée de vie des pr
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
-ms.openlocfilehash: 1936d7fa789e99a475cbf82c3c0096060f23c4b4
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 92d03ce30443f6efe8b19f4938b35d4040d7ea70
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "975631"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565892"
 ---
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>Outils de test et de débogage pour la Gestion de la durée de vie des processus (PLM)
 

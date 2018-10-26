@@ -6,16 +6,14 @@ title: Traiter des images multimédias avec MediaFrameReader
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e12481d18773a6dc97fa25f05af080086363b54
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: Auto
+ms.openlocfilehash: 722a411bc6363d3a10b5db0f609b08f5d14b3f8d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832480"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566150"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Traiter des images multimédias avec MediaFrameReader
 
@@ -258,9 +256,9 @@ Pour plus d’informations sur l’utilisation des profils d’appareil photo, v
 * [Appareil photo](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Profils d’appareil photo](http://go.microsoft.com/fwlink/?LinkId=823230)
- 
+ 
 
- 
+ 
 
 
 

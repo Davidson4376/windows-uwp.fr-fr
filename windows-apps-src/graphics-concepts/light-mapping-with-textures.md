@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d5d4a5e5a9fa656737ae86451a38a00edbe99c92
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 9bbb723cc039d6ecca8a5ebcd30ef03559076934
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652448"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570829"
 ---
 # <a name="light-mapping-with-textures"></a>Mappage lumineux avec textures
 
@@ -45,7 +43,7 @@ Des détails sur l’utilisation de la fusion de texturesDirect3D pour exécuter
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -69,16 +67,16 @@ Des détails sur l’utilisation de la fusion de texturesDirect3D pour exécuter
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
 [Textures](textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

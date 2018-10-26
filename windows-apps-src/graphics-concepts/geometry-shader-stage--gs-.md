@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c04f07da60e6814703a8aff27eb038b43a2b5ad4
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: c4659ee4200915a7cc82f46c90f0e53965f322d5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044698"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567410"
 ---
 # <a name="geometry-shader-gs-stage"></a>Étape du nuanceur de géométrie (GS)
 
@@ -61,7 +59,7 @@ Abréviations de vertex courantes:
 | LV  | Vertex de ligne     |
 | AV  | Vertex adjacent |
 
- 
+ 
 
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Sortie
 
@@ -87,9 +85,9 @@ Le nuanceur de géométrie peut exécuter des opérations de chargement et d’�
 
 [Pipeline graphique](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

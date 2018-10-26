@@ -6,19 +6,18 @@ ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, jeux, directx, ressources, images
-ms.openlocfilehash: 1aeb4ef581254ae914efae4bc38853611dbde488
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 24fd038bdd447491da43e5d5803445d00147ba2d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228898"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567704"
 ---
 # <a name="set-up-directx-resources-and-display-an-image"></a>Configurer des ressources DirectX et afficher une image
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Nous vous montrons ici comment créer un périphérique Direct3D, une chaîne d’échange et un affichage de cible de rendu, puis comment présenter l’image rendue à l’écran.
 
@@ -233,7 +232,7 @@ Dans cette boucle, nous appelons :
 Étant donné que nous avons préalablement défini une latence d’image maximale de 1, Windows ralentit habituellement la boucle de rendu pour la caler à la fréquence de rafraîchissement de l’écran, généralement autour de 60 Hz. Windows ralentit la boucle de rendu en mettant l’application en veille lorsqu’elle appelle [**Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576). Windows met l’application en veille jusqu’à ce que l’écran soit rafraîchi.
 
 ```cpp
-        // Enter the render loop.  Note that Windows Store apps should never exit.
+        // Enter the render loop.  Note that UWP apps should never exit.
         while (true)
         {
             // Process events incoming to the window.
@@ -288,9 +287,9 @@ Nous avons créé un périphérique Direct3D, une chaîne d’échange et un aff
 
 [Création de nuanceurs et traçage de primitives](creating-shaders-and-drawing-primitives.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,20 +6,18 @@ ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, clé d’authentification de cartes, contrôle de cartes
-ms.openlocfilehash: 7b964c19933db460b8f6b0cc7791165ad86adb6c
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: c42255ec42432d0674533492e141c4a48f3bb9ff
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665599"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571024"
 ---
 # <a name="request-a-maps-authentication-key"></a>Demander une clé d’authentification de cartes
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Votre [application Windows universelle](https://msdn.microsoft.com/library/windows/apps/dn894631) doit être authentifiée pour pouvoir utiliser le [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) et les services cartographiques dans l’espace de noms [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979). Pour authentifier votre application, vous devez spécifier une clé d’authentification de cartes. Cette rubrique décrit comment demander une clé d’authentification de cartes au [Centre de développement Bing Cartes](https://www.bingmapsportal.com/) et comment l’ajouter à votre application.
@@ -35,7 +33,7 @@ Le [Centre de développement Bing Cartes](https://www.bingmapsportal.com/) perme
 
 Pour créer une clé
 
-1.  Dans votre navigateur, accédez au Centre de développement Bing Cartes ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/)).
+1.  Dans votre navigateur, accédez au centre de développement Bing cartes ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/)).
 
 2.  Si vous êtes invité à vous connecter, entrez votre compte Microsoft, puis cliquez sur **Se connecter**.
 

@@ -5,16 +5,14 @@ description: Décrit comment créer un ensemble plat pour grouper les fichiers d
 ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, création de packages, configuration de package, ensemble plat
 ms.localizationpriority: medium
-ms.openlocfilehash: 63206619d75bedb92ad6c6d05c3188272c0760de
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: b877996dd5fa32ac764fb587092f501320931527
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5480256"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567012"
 ---
 # <a name="flat-bundle-app-packages"></a>Packages d'application d'ensemble plat 
 

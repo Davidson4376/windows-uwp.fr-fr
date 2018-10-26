@@ -6,18 +6,17 @@ ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: a14ae2e327805c5d123cc3b6232bfa18863f9da9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 6fb88fc3a764a89dfe7ac8a9c399149b6b98eca5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230148"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567320"
 ---
 # <a name="customresource-markup-extension"></a>Extension de balisage {CustomResource}
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Fournit une valeur pour tout attribut XAML en évaluant une référence à une ressource qui provient de l’implémentation d’une recherche de ressource personnalisée. La recherche de ressource est effectuée via l’implémentation d’une classe [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327).
 

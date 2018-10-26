@@ -6,18 +6,17 @@ ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 9f6c8ebe6285981e0af74448b88e0290de3a66ee
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 18cf7a63dea7a1913293e5cd174b8f6c69b5baf6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230136"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565179"
 ---
 # <a name="xaml-intrinsic-data-types"></a>Types de données intrinsèques XAML
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 XAML pour Windows Runtime offre une prise en charge, au niveau du langage, de plusieurs types de données qui sont des primitives souvent utilisées dans le Common Language Runtime (CLR) et dans d’autres langages de programmation tels que C++.
 
@@ -34,18 +33,18 @@ XAML pour le Windows Runtime offre une prise en charge au niveau du langage pour
 
 Ces primitives de langage XAML sont en général les seuls cas où vous définissez un élément objet qui utilise le préfixe **x:** dans votre XAML. Toutes les autres fonctionnalités de langage XAML sont en général utilisées sous forme d’attributs ou en tant qu’extension de balisage.
 
-**Remarque**  Par convention, les primitives du langage XAML et tous les autres éléments du langage XAML sont affichés avec le préfixe «x:». C’est ainsi que les éléments du langage XAML sont habituellement utilisés dans un balisage réel. Cette convention est suivie dans la documentation relative à XAML et également dans la spécification XAML.
+**Remarque**par convention, les primitives du langage XAML et tous les autres éléments du langage XAML sont affichés avec le préfixe «x:». C’est ainsi que les éléments du langage XAML sont habituellement utilisés dans un balisage réel. Cette convention est suivie dans la documentation relative à XAML et également dans la spécification XAML.
 
 ## <a name="other-xaml-primitives"></a>Autres primitives XAML
 
 La spécification XAML 2009 indique d’autres primitives au niveau du langage XAML, telles que **x:Uri** et **x:Single**. Sauf indication contraire dans le tableau de cette rubrique, les autres primitives du langage XAML telles que définies par les vocabulaires XAML ou par la spécification XAML 2009 ne sont actuellement pas prises en charge en XAML pour Windows Runtime.
 
-**Remarque**  Les dates et les heures (propriétés qui utilisent [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) ou [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx), [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996) ou [**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx)) ne sont pas définissables avec une primitive XAML. En règle générale, ces propriétés ne sont pas du tout définissables en XAML, car, par défaut, l’analyseur XAML Windows Runtime ne prend pas en charge la conversion à partir d’une chaîne pour les dates et les heures. Pour les valeurs d’initialisation de toutes les propriétés de date et d’heure, vous devez utiliser du code-behind qui s’exécute au chargement d’une page ou d’un élément.
+**Remarque**des Dates et heures (propriétés qui utilisent [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) ou [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx), [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996) ou [**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx)) ne sont pas définissables avec une primitive XAML. En règle générale, ces propriétés ne sont pas du tout définissables en XAML, car, par défaut, l’analyseur XAML Windows Runtime ne prend pas en charge la conversion à partir d’une chaîne pour les dates et les heures. Pour les valeurs d’initialisation de toutes les propriétés de date et d’heure, vous devez utiliser du code-behind qui s’exécute au chargement d’une page ou d’un élément.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Vue d’ensemble du langage XAML](xaml-overview.md)
 * [Guide de la syntaxe XAML](xaml-syntax-guide.md)
 * [Animations dans une table de montage séquentiel](https://msdn.microsoft.com/library/windows/apps/mt187354)
- 
+ 
 

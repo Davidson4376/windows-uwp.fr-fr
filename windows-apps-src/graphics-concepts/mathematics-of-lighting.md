@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a3d28f3a1197ba915bf145cdac77c709cebd3fa2
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 19734964c9b4ab087f7d5fd6ea749b57cccce26c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653368"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568468"
 ---
 # <a name="mathematics-of-lighting"></a>Formules mathématiques d’éclairage
 
@@ -55,7 +53,7 @@ L’ensemble des calculs d’éclairage sont exécutés dans l’espace du modè
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -87,16 +85,16 @@ L’ensemble des calculs d’éclairage sont exécutés dans l’espace du modè
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
 [Lumières et matériaux](lights-and-materials.md)
 
- 
+ 
 
- 
+ 
 
 
 

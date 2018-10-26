@@ -1,23 +1,22 @@
 ---
-author: mcleblanc
+author: stevewhims
 title: 'Prise en main : Et ensuite ?'
 ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
 description: En disposant de ces informations de base, vous pouvez commencer à écrire des applications de plateforme Windows universelle (UWP) plus intéressantes.
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 2ca600085c14c43d9d9d37e80efbae30bae650ef
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 5f8a6165df7bf839154ede4db3fda8a5e1662880
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "229552"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568757"
 ---
 # <a name="getting-started-what-next"></a>Prise en main: Et ensuite?
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -32,7 +31,7 @@ Avec ces informations de base, vous pouvez commencer à écrire des applications
 
 Pensez aussi surtout à consulter nos [ressources de communauté](https://developer.microsoft.com/en-us/windows/support) pour savoir comment obtenir de l’aide et accéder des forums des développeurs, des blogs, des séminaires (Devcamps) et des ateliers pour développeurs, et des événements et contacts Microsoft locaux.
 
-Nous pensons que Windows 10 vous ouvrira un vaste champ de nouvelles opportunités pour la création de vos applications. Et nous attendons avec impatience de découvrir toutes les applications que vous créerez!
+Nous pensons que Windows 10 vous ouvrira de nouvelles opportunités de conception d’applications pour vous. Et nous attendons avec impatience de découvrir toutes les applications que vous créerez!
 
 ## <a name="related-topics"></a>Rubriques connexes
 

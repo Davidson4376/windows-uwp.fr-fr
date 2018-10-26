@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e66fd373f2c1aaa18ca7cd0a7e8a463fce024e14
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: ce8f71f126aa536f4e235c58f9f5c5ddf13654df
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044838"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568852"
 ---
 # <a name="tile-access-limitations-with-duplicate-mappings"></a>Restrictions d’accès aux tuiles avec des mappages en double
 
@@ -85,9 +83,9 @@ Enfin, si des ressources partageant des mappages de tuiles n’ont rien en commu
 
 [Accès du pipeline aux ressources de diffusion en continu](pipeline-access-to-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

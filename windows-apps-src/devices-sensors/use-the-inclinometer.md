@@ -6,16 +6,14 @@ description: Découvrez comment utiliser l’inclinomètre pour déterminer le t
 ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 82e7b6446306d85af036bf49d05c14db79eaf388
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: dd335d56fb2a01ed1b9255f974bcaacd47f623f5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958674"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571074"
 ---
 # <a name="use-the-inclinometer"></a>Utiliser l’inclinomètre
 
@@ -35,7 +33,7 @@ Certaines jeux3D requièrent un inclinomètre en tant que périphérique d’ent
 
  ## <a name="prerequisites"></a>Prérequis
 
-Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
+Vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un inclinomètre.
 

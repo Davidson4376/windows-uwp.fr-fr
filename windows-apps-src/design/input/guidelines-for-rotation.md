@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc30dbd9fd501d310bb037726414356354af294
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: Auto
+ms.openlocfilehash: 9bffed44921df05a72025e86917901a65fe7ea82
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653418"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565439"
 ---
 # <a name="rotation"></a>Rotation
 
@@ -48,8 +46,7 @@ Utilisez la rotation pour permettre aux utilisateurs de faire pivoter directemen
 
 ![schéma des différentes positions de doigts prises en charge par la rotation.](images/ux-rotate-positions.png)
 
-**Remarque**  
-Instinctivement, et dans la plupart des cas, le point de rotation est l’un des deuxpoints tactiles, à moins que l’utilisateur ne spécifie un point de rotation qui n’est pas lié aux points de contact (par exemple, dans une application de dessin ou de mise en page). Les images suivantes montrent comment l’expérience utilisateur peut être altérée si le point de rotation n’est pas contraint dans ce sens.
+**Remarque**  au premier abord, ainsi que dans la plupart des cas, le point de rotation est l’un des points deux tactiles, sauf si l’utilisateur peut spécifier un point de rotation non lié aux points de contact (par exemple, dans une application de dessin ou de la disposition de l’écran). Les images suivantes montrent comment l’expérience utilisateur peut être altérée si le point de rotation n’est pas contraint dans ce sens.
 
 Cette première image montre le premier (le pouce) et le deuxième (l’index) points tactiles: l’index touche un arbre et le pouce touche un rondin de bois.
 
@@ -64,9 +61,9 @@ Dans ce dernier dessin, le centre de la rotation a été défini par l’applica
 
 ![image du dessin pivoté avec le point de rotation contraint au centre le plus à gauche du dessin et non à l’un des deux premiers points tactiles.](images/ux-rotate-points4.png)
 
- 
+ 
 
-Windows 8 prend en charge trois types de rotations: libre, contrainte et combinée.
+Package Windows8 prend en charge trois types de rotations: libre, contrainte et combinée.
 
 <table>
 <colgroup>
@@ -93,16 +90,16 @@ Windows 8 prend en charge trois types de rotations: libre, contrainte et combin�
 <td align="left">Rotation combinée</td>
 <td align="left"><p>La rotation combinée prend en charge la rotation libre avec des zones (semblables aux rails dans les <a href="guidelines-for-panning.md">Recommandations en matière de mouvement panoramique</a>) à chacun des points d’ancrage à 90degrés appliqués par la rotation contrainte. Si l’utilisateur relâche l’objet en dehors de l’une des zones à 90degrés, l’objet reste dans cette position; sinon, il pivote automatiquement vers un point d’ancrage.</p>
 <div class="alert">
-<strong>Remarque</strong> Le rail d’interface utilisateur est une fonctionnalité dans laquelle une zone autour d’une cible contraint le mouvement vers une certaine valeur ou un certain emplacement pour influencer sa sélection.
+<strong>Remarque</strong>le rail d’interface utilisateur est une fonctionnalité dans laquelle une zone autour d’une cible contraint le mouvement vers une valeur spécifique ou un emplacement pour influencer sa sélection.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -122,9 +119,9 @@ Windows 8 prend en charge trois types de rotations: libre, contrainte et combin�
 * [Entrée : mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [Entrée : exemple de manipulations et de mouvements (C++)](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [Exemple d’entrée tactile DirectX](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ title: Obtenir une soumission de module complémentaire
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, soumission d’extension, produit in-app, PIA
 ms.localizationpriority: medium
-ms.openlocfilehash: e126ce53da515724f5fb1f9992ed8ca27c02ce06
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 83f113f47a905e8b542dde4c982a162341fc0196
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5476096"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565383"
 ---
 # <a name="get-an-add-on-submission"></a>Obtenir une soumission de module complémentaire
 

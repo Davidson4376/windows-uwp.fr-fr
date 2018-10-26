@@ -5,17 +5,15 @@ description: Procédure de configuration et de test de votre plateforme Windows 
 ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
-ms.openlocfilehash: f2b8792832bd4014732ee0535ccaa74b2a3e00d3
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: Auto
+ms.openlocfilehash: 2234b7d39f130da03562176f0df878701d524635
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689865"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568661"
 ---
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>Configurer votre plateforme UWP sur l’environnement de développement Xbox
 
@@ -27,7 +25,7 @@ Cet article couvre les étapes relatives à la configuration et au test de votre
 
 ## <a name="visual-studio-setup"></a>Installation de Visual Studio
 
-1. Installez la mise à jour3 ou de VisualStudio2017 ou VisualStudio2015. Pour en savoir plus et pour l’installation, voir [Téléchargements et outils pour Windows 10](https://dev.windows.com/downloads).
+1. Installez Visual Studio 2017, Visual Studio 2015 Update 3 ou la dernière version de Visual Studio. Pour en savoir plus et pour l’installation, voir [Téléchargements et outils pour Windows 10](https://dev.windows.com/downloads). Nous vous recommandons d’utiliser la dernière version de Visual Studio afin que vous pouvez recevoir les mises à jour pour les développeurs et la sécurité.
 
 2. Si vous installez VisualStudio2017, veillez à choisir la charge de travail **Développement de plateforme Windows universelle**. Si vous êtes un développeur en C++, assurez-vous de sélectionner également la case **outils de plateforme Windows universelle C++** dans le volet de droite **Résumé**, sous **Développement de plateforme Windows universelle**. Elle ne fait pas partie de l'installation par défaut.
 

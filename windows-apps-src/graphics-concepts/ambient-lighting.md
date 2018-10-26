@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08b44ae8348e7b9d1d8dff0b98e5f1c553ec79b2
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 87b5c72ef99e3802a348ddfd28951bc2865891e5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044128"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565222"
 ---
 # <a name="ambient-lighting"></a>Éclairage ambiant
 
@@ -40,7 +38,7 @@ Où:
 | sum               | Non applicable           | Non applicable           | Somme de la lumière ambiante                                                                                          |
 | L<sub>ai</sub>    | (0,0,0,0)     | D3DVECTOR     | Couleur ambiante lumineuse de la lumière ith                                                                              |
 
- 
+ 
 
 Cₐ possède l'une des valeurs suivantes:
 
@@ -48,9 +46,9 @@ Cₐ possède l'une des valeurs suivantes:
 -   couleur2 du vertex, si AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2, et si la deuxième couleur du vertex est indiquée dans la déclaration du vertex.
 -   couleur ambiante du matériau.
 
-**Remarque**   si l’une des options AMBIENTMATERIALSOURCE est utilisée et si la couleur du vertex n’est pas spécifiée, la couleur ambiante du matériau est utilisée.
+**Remarque**  si aucune des deux options AMBIENTMATERIALSOURCE sont utilisée, la couleur du vertex n’est pas fournie, puis la couleur ambiante du matériau est utilisée.
 
- 
+ 
 
 Pour utiliser la couleur ambiante du matériau, utilisez SetMaterial comme indiqué dans l’exemple de code ci-dessous.
 
@@ -89,9 +87,9 @@ Pour donner à des objets un aspect plus réaliste, appliquez un éclairage diff
 
 [Formules mathématiques d’éclairage](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

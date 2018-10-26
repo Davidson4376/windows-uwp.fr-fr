@@ -6,16 +6,14 @@ description: Obtenez les propriétés (de niveau supérieur, de base et étendue
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f3edb012f04026251d151da99f34accb9e1848c3
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: Auto
+ms.openlocfilehash: 8fc44300376efb5b56f390457e516f35a3ec4202
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662729"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565459"
 ---
 # <a name="get-file-properties"></a>Obtenir les propriétés du fichier
 
@@ -32,7 +30,7 @@ Obtenez les propriétés (de niveau supérieur, de base et étendues) d’un fic
 > [!NOTE]
 > Consultez également l’[exemple d’accès aux fichiers](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
- 
+ 
 
 
 ## <a name="prerequisites"></a>Prérequis
@@ -49,9 +47,9 @@ Obtenez les propriétés (de niveau supérieur, de base et étendues) d’un fic
 
 De nombreuses propriétés de fichier de haut niveau sont accessibles en tant que membres de la classe [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). Ces propriétés incluent les attributs des fichiers, le type de contenu, la date de création, le nom d’affichage, le type de fichier, etc.
 
-**Remarque** N’oubliez pas de déclarer la fonctionnalité **picturesLibrary**.
+**Remarque**n’oubliez pas de déclarer la fonctionnalité **picturesLibrary** .
 
- 
+ 
 
 Cet exemple énumère tous les fichiers de la bibliothèque d’images, en accédant à quelques-unes des propriétés de niveau supérieur de chaque fichier.
 
@@ -142,6 +140,6 @@ foreach (Windows.Storage.StorageFile file in files)
 }
 ```
 
- 
+ 
 
- 
+ 

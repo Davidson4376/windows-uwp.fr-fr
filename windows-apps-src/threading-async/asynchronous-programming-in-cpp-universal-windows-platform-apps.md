@@ -1,27 +1,25 @@
 ---
 author: normesta
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
-description: Cet article décrit la meilleure façon d’utiliser des méthodes asynchrones dans les extensions des composants Visual C++ (C++/CX) à l’aide de la classe task qui est définie dans l’espace de noms concurrency dans ppltasks.h.
+description: Cet article décrit la meilleure façon d’utiliser des méthodes asynchrones dans les extensions de composant Visual c++ (C++ / CX) à l’aide de la classe de tâche définie dans l’espace de noms concurrency dans ppltasks.h.
 title: Programmation asynchrone en C++
 ms.author: normesta
 ms.date: 05/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, threads, asynchrone, C++
 ms.localizationpriority: medium
-ms.openlocfilehash: 869ba45929e015f27c5342af57da450f0b99b607
-ms.sourcegitcommit: c104b653601d9b81cfc8bb6032ca434cff8fe9b1
-ms.translationtype: HT
+ms.openlocfilehash: 33b110e713608260cd5c19544292e9211904a730
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "1921207"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571207"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>Programmation asynchrone en C++/CX
 > [!NOTE]
 > Cette rubrique a pour but de vous aider à maintenir votre application C++/CX. Mais nous vous recommandons d’utiliser [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) pour de nouvelles applications. C++/WinRT est une projection de langage C++17 moderne entièrement standard pour les API Windows Runtime (WinRT), implémentée en tant que bibliothèque basée sur un fichier d'en-tête et conçue pour vous fournir un accès de première classe à l’API Windows moderne.
 
-Cet article décrit la meilleure façon d’utiliser des méthodes asynchrones dans les extensions des composants Visual C++ (C++/CX) à l’aide de la classe `task` qui est définie dans l’espace de noms `concurrency` dans ppltasks.h.
+Cet article décrit la meilleure façon d’utiliser des méthodes asynchrones dans les extensions de composant Visual c++ (C++ / CX) à l’aide de la `task` classe qui est définie dans le `concurrency` espace de noms dans ppltasks.h.
 
 ## <a name="universal-windows-platform-uwp-asynchronous-types"></a>Types asynchrones de plateforme Windows universelle (UWP)
 Les fonctionnalités de plateforme Windows universelle UWP comprennent un modèle bien défini pour l’appel de méthodes asynchrones, et fournissent les types dont vous avez besoin pour consommer de telles méthodes. Si vous n'avez pas l'habitude d'utiliser le modèle asynchrone UWP, veuillez consulter l'article [Programmation asynchrone][AsyncProgramming] avant de poursuivre la lecture de cet article.
@@ -116,7 +114,7 @@ L’exemple précédent illustre quatre points importants:
 
 -   Étant donné que la deuxième continuation est basée sur les valeurs, si l’opération qui a été démarrée par l’appel à l’opération [**DeleteAsync**][deleteAsync] lève une exception, la deuxième continuation ne s’exécute pas du tout.
 
-**Remarque**  La création d’une chaîne de tâches est juste l’un des moyens d’utiliser la classe **task** pour composer des opérations asynchrones. Vous pouvez également composer des opérations en utilisant des opérateurs de jointure et de choix **&&** et **||**. Pour plus d’informations, voir [Parallélisme des tâches (runtime d’accès concurrentiel)][taskParallelism].
+**Remarque**création d’une chaîne de tâches est juste l’un des moyens d’utiliser la classe **task** pour composer des opérations asynchrones. Vous pouvez également composer des opérations en utilisant des opérateurs de jointure et de choix **&&** et **||**. Pour plus d’informations, voir [Parallélisme des tâches (runtime d’accès concurrentiel)][taskParallelism].
 
 ## <a name="lambda-function-return-types-and-task-return-types"></a>Types de retour de la fonction lambda et types de retour d’une tâche
 Dans une continuation de tâche, le type de retour de la fonction lambda est encapsulé dans un objet **task**. Si l’expression lambda retourne une valeur **double**, le type de la tâche de continuation est **task<double>**. Toutefois, l’objet task est conçu de façon à ne pas produire inutilement des types de retour imbriqués. Si une expression lambda retourne un **IAsyncOperation&lt;SyndicationFeed^&gt;^**, la continuation retourne un **task&lt;SyndicationFeed^&gt;**, et non un **task&lt;task&lt;SyndicationFeed^&gt;&gt;** ou **task&lt;IAsyncOperation&lt;SyndicationFeed^&gt;^&gt;^**. Ce processus, qui porte le nom de *désencapsulation asynchrone*, garantit également l’achèvement de l’opération asynchrone à l’intérieur de la continuation avant l’appel de la continuation suivante.

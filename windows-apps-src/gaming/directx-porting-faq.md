@@ -6,19 +6,18 @@ ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, directx11
-ms.openlocfilehash: 7dda21925e31785e0ce7c3dfc72ba173b8686743
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 06a4c9b434afedabc17a48e9929da8dc4460fe03
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228856"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567201"
 ---
 # <a name="directx-11-porting-faq"></a>Portage DirectX11: FAQ
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Réponses aux questions fréquemment posées sur le portage de jeux vers la plateforme Windows universelle (UWP).
@@ -47,10 +46,10 @@ Les jeux qui utilisent encore l’instruction RDTSC doivent être mis à jour. V
 
 Le projet de la communauté [Kit de ressources DirectX (DirectXTK)](http://go.microsoft.com/fwlink/p/?LinkID=248929) propose des classes d’assistance pour Direct3D 11.
 
-##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-windows-store"></a>Comment maintenir les chemins de code pour les ordinateurs de bureau et le Windows Store ?
+##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>Comment maintenir les chemins de code pour le bureau et du Microsoft Store?
 
 
-La série d’articles de Chuck Walbourn intitulée [Techniques de codage à double usage pour les jeux](http://go.microsoft.com/fwlink/p/?LinkID=286210) offre des conseils sur le partage de code entre les chemins de code des ordinateurs de bureau et du Windows Store.
+Série d’articles de Chuck intitulé [Techniques de codage à double usage pour les jeux](http://go.microsoft.com/fwlink/p/?LinkID=286210) offre des conseils sur le partage de code entre le bureau et les chemins de code Microsoft Store.
 
 ##  <a name="how-do-i-load-image-resources-in-my-directx-uwp-app"></a>Comment charger des ressources d’image dans mon jeu UWP DirectX ?
 
@@ -124,7 +123,7 @@ Il n’existe pas de format de remplacement officiel pour les fichiers .x, mais 
 ## <a name="how-do-i-debug-my-shaders"></a>Comment déboguer mes nuanceurs ?
 
 
-Microsoft Visual Studio 2015 inclut des outils de diagnostic pour les graphiques DirectX. Voir [Débogage des graphiques DirectX](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
+Microsoft Visual Studio2015 inclut des outils de diagnostic pour les graphiques DirectX. Voir [Débogage des graphiques DirectX](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
 
 ##  <a name="what-is-the-direct3d-11-equivalent-for-x-function"></a>Quel est l’équivalent Direct3D 11 de la fonction *x* ?
 
@@ -136,9 +135,9 @@ Voir le [mappage des fonctions](feature-mapping.md#function-mapping) de la rubri
 
 Voir le [mappage des formats de surface](feature-mapping.md#surface-format-mapping) de la rubrique Mapper les fonctionnalités DirectX 9 aux API DirectX 11.
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, jeux, entrée
 ms.localizationpriority: medium
-ms.openlocfilehash: 26510cac6e4d42ee5eb36a7ae09c9c1518b47089
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: bb7d70c20aeb2b91d8a6db863e165e017810e924
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "300179"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571183"
 ---
 # <a name="input-for-games"></a>Entrées pour les jeux
 
@@ -45,19 +43,19 @@ Les volants de course sont des périphériques d’entrée dont l’utilisation 
 
 Pour plus d’informations sur l’utilisation des volants de course dans votre jeu UWP, consultez [Volant de course et retour de force](racing-wheel-and-force-feedback.md).
 
-### <a name="flight-sticks"></a>Modules de vol
+### <a name="flight-sticks"></a>Les manches à balai
 
-Modules de vol sont des périphériques d’entrée jeu reproduire l’apparence de modules de vol qui se trouve dans un plan ou cockpit du vaisseau spatial. Ces manches à balai constituent le périphérique d’entrée idéal pour un contrôle de pilotage rapide et précis.
+Les manches à balai sont des périphériques d’entrée de jeu qui reproduire la sensation des manches à balai qui se trouve dans un avion ou spatial d’un vaisseau. Ces manches à balai constituent le périphérique d’entrée idéal pour un contrôle de pilotage rapide et précis.
 
-Pour plus d’informations sur l’utilisation des modules de vol de votre jeu UWP, voir [module vol](flight-stick.md).
+Pour plus d’informations sur l’utilisation des manches à balai dans votre jeu UWP, consultez le [manche à balai](flight-stick.md).
 
 ### <a name="raw-game-controllers"></a>Contrôleurs de jeu bruts
 
 Un contrôleur de jeu brut est une représentation générique d’un contrôleur de jeu dont les entrées existent sur différentes sortes de contrôleurs de jeu courants. Ces entrées sont affichées sous forme de simples tableaux de boutons, commutateurs et axes sans nom. En utilisant un contrôleur de jeu brut, vous pouvez permettre aux clients de créer des mappages d’entrée personnalisés, quel que soit le type de contrôleur qu’ils utilisent.
 
-Pour plus d’informations sur l’utilisation de contrôleurs de jeu brutes dans votre jeu UWP, voir [contrôleur brute](raw-game-controller.md).
+Pour plus d’informations sur l’utilisation des contrôleurs de jeu bruts dans votre jeu UWP, voir [contrôleur de jeu brut](raw-game-controller.md).
 
-### <a name="ui-navigation-controllers"></a>Contrôleurs de navigation de l’interface utilisateur
+### <a name="ui-navigation-controllers"></a>Contrôleurs de navigation d’interface utilisateur
 
 Les contrôleurs de navigation d’interface utilisateur sont des périphériques d’entrée logiques qui fournissent un vocabulaire commun pour les commandes de navigation d’interface utilisateur, qui promeut une expérience utilisateur homogène entre les différents jeux et les périphériques d’entrée physiques. L’interface utilisateur d’un jeu doit utiliser les interfaces UINavigationController et non les interfaces propres à un périphérique.
 

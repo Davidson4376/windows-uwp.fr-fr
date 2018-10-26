@@ -11,16 +11,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 36f7e92f1652b4c67ef63ca3cf3b536126e3c995
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: e576814617204749a37963ac5f2724f290520349
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832707"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567651"
 ---
 # <a name="xaml-theme-resources"></a>Ressources de thème XAML
 
@@ -96,7 +94,8 @@ Le tableau ci-dessous répertorie la clé, le nom simple et la représentation s
 | SystemListLowColor              | ListLow                | \#19000000 | \#19FFFFFF |
 | SystemListMediumColor           | ListMedium             | \#33000000 | \#33FFFFFF |
 
-:::row::: :::column:::
+:::row:::
+    :::column:::
         #### Light theme
     :::column-end:::
     :::column:::
@@ -106,19 +105,47 @@ Le tableau ci-dessous répertorie la clé, le nom simple et la représentation s
 
 #### <a name="base"></a>Base
 
-:::row::: :::column::: ![Thème clair Base](images/themes/light-base.png) :::column-end::: :::column::: ![Thème foncé Base](images/themes/dark-base.png) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![The base light theme](images/themes/light-base.png)
+    :::column-end:::
+    :::column:::
+        ![The base dark theme](images/themes/dark-base.png)
+    :::column-end:::
+:::row-end:::
 
 #### <a name="alt"></a>Alt
 
-:::row::: :::column::: ![Thème clair Alt](images/themes/light-alt.png) :::column-end::: :::column::: ![Thème foncé Alt](images/themes/dark-alt.png) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![The alt light theme](images/themes/light-alt.png)
+    :::column-end:::
+    :::column:::
+        ![The alt dark theme](images/themes/dark-alt.png)
+    :::column-end:::
+:::row-end:::
 
 #### <a name="list"></a>List
 
-:::row::: :::column::: ![Thème clair List](images/themes/light-list.png) :::column-end::: :::column::: ![Thème foncé List](images/themes/dark-list.png) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![The list light theme](images/themes/light-list.png)
+    :::column-end:::
+    :::column:::
+        ![The list dark theme](images/themes/dark-list.png)
+    :::column-end:::
+:::row-end:::
 
 #### <a name="chrome"></a>Chrome
 
-:::row::: :::column::: ![Thème clair Chrome](images/themes/light-chrome.png) :::column-end::: :::column::: ![Thème foncé Chrome](images/themes/dark-chrome.png) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![The chrome light theme](images/themes/light-chrome.png)
+    :::column-end:::
+    :::column:::
+        ![The chrome dark theme](images/themes/dark-chrome.png)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="windows-system-high-contrast-colors"></a>Couleurs à contraste élevé du système Windows
 
@@ -350,7 +377,7 @@ Fournit les propriétés communes à tous les autres styles de conteneur [RichTe
 </Style>
 ```
 
-**Remarque**: Les styles [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) ne possèdent pas tous les styles de gamme de texte de [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652), principalement car il est plus facile de définir des attributs sur les éléments de texte individuels avec le modèle d’objet de document basé sur des blocs pour **RichTextBlock**. Par ailleurs, si vous définissez [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) à l’aide de la propriété de contenu XAML, vous ne pouvez pas appliquer de style à un élément de texte, ce qui vous oblige à appliquer un style au conteneur. Ceci ne constitue pas un problème pour **RichTextBlock**, car son contenu de texte doit toujours figurer dans des éléments de texte spécifiques comme [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503), c’est-à-dire l’emplacement à partir duquel vous pouvez définir des styles XAML pour un en-tête de page, un sous-en-tête de page et des définitions de gamme de texte semblables.
+**Remarque**: les styles [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) n’ont pas tous les styles de gamme de texte [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) est le cas, principalement dans la mesure où le modèle d’objet de document basé sur des blocs pour **RichTextBlock** rend plus facile de définir des attributs sur le texte individuel éléments. Par ailleurs, si vous définissez [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) à l’aide de la propriété de contenu XAML, vous ne pouvez pas appliquer de style à un élément de texte, ce qui vous oblige à appliquer un style au conteneur. Ceci ne constitue pas un problème pour **RichTextBlock**, car son contenu de texte doit toujours figurer dans des éléments de texte spécifiques comme [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503), c’est-à-dire l’emplacement à partir duquel vous pouvez définir des styles XAML pour un en-tête de page, un sous-en-tête de page et des définitions de gamme de texte semblables.
 
 ## <a name="miscellaneous-named-styles"></a>Divers styles nommés
 

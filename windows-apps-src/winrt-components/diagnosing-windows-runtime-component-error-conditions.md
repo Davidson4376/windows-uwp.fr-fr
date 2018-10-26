@@ -6,16 +6,14 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f1dba2c60ce480b0aa89115f1cf9e72b1bb454f
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: Auto
+ms.openlocfilehash: 833dd0a6447e9d0bb49c21a18d17bd7b0dc3455d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691228"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566027"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>Diagnostic des conditions d’erreur d’un composant WindowsRuntime
 
@@ -33,11 +31,11 @@ Les composants Windows Runtime managés ne peuvent pas implémenter les interfac
 
 | Numéro d’erreur | Texte du message|       
 |--------------|-------------|
-| WME1084      | Le type « {0} » implémente l’interface asynchrone Windows Runtime « {1} ». Les types Windows Runtime ne peuvent pas implémenter les interfaces asynchrones. Veuillez utiliser la classe System.Runtime.InteropServices.WindowsRuntime.AsyncInfoFactory pour générer des opérations asynchrones afin d’exporter vers Windows Runtime. |
+| WME1084      | Type '{0}«implémente l’interface asynchrone Windows Runtime»{1}». Les types Windows Runtime ne peuvent pas implémenter les interfaces asynchrones. Veuillez utiliser la classe System.Runtime.InteropServices.WindowsRuntime.AsyncInfoFactory pour générer des opérations asynchrones afin d’exporter vers Windows Runtime. |
 
-> **Remarque** Les messages d’erreur qui font référence au Windows Runtime utilisent une ancienne terminologie. On utilise maintenant l’appellation «plateforme Windows universelle (UWP)». Par exemple, les types Windows Runtime sont désormais appelés types UWP.
+> **Remarque**les messages d’erreur qui font référence à Windows Runtime utilisent une ancienne terminologie. On utilise maintenant l’appellation «plateforme Windows universelle (UWP)». Par exemple, les types Windows Runtime sont désormais appelés types UWP.
 
- 
+ 
 
 ## <a name="missing-references-to-mscorlibdll-or-systemruntimedll"></a>Références manquantes à mscorlib.dll ou System.Runtime.dll
 
@@ -49,22 +47,22 @@ Ce problème se produit uniquement lorsque vous utilisez Winmdexp.exe à partir 
 | WME1009      | Aucune référence n’a été faite à mscorlib.dll. Une référence à ce fichier de métadonnées est requise pour exporter correctement.                               |
 | WME1090      | Impossible de déterminer le principal assembly de référence. Assurez-vous que mscorlib.dll et System.Runtime.dll sont référencés à l’aide du commutateur /reference. |
 
- 
+ 
 
 ## <a name="operator-overloading-is-not-allowed"></a>Surcharge d’opérateur non autorisée
 
 
 Dans un composant Windows Runtime écrit en code managé, vous ne pouvez pas exposer les opérateurs surchargés sur les types publics.
 
-> **Remarque** Dans le message d’erreur, l’opérateur est identifié par son nom de métadonnées, tel qu’op_Addition, op_Multiply, op_ExclusiveOr, op_Implicit (conversion implicite) et ainsi de suite.
+> **Remarque**dans le message d’erreur, l’opérateur est identifié par son nom de métadonnées, tel qu’op_Addition, op_Multiply, op_ExclusiveOr, op_Implicit (conversion implicite) et ainsi de suite.
 
- 
+ 
 
 | Numéro d’erreur | Texte du message                                                                                          |
 |--------------|-------------------------------------------------------------------------------------------------------|
-| WME1087      | « {0} » est une surcharge de l’opérateur. Les types managés ne peuvent pas exposer les surcharges de l’opérateur dans le Windows Runtime. |
+| WME1087      | «{0}» est une surcharge d’opérateur. Les types managés ne peuvent pas exposer les surcharges de l’opérateur dans le Windows Runtime. |
 
- 
+ 
 
 ## <a name="constructors-on-a-class-have-the-same-number-of-parameters"></a>Constructeurs d’une classe ayant le même nombre de paramètres
 
@@ -73,9 +71,9 @@ Dans l’UWP, une classe ne peut avoir qu’un seul constructeur avec un nombre 
 
 | Numéro d’erreur | Texte du message                                                                                                                                            |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1099      | Le type « {0} » possède plusieurs constructeurs avec des arguments « {1} ». Les types Windows Runtime ne peuvent pas posséder plusieurs constructeurs ayant le même nombre d’arguments. |
+| WME1099      | Type '{0}'possède plusieurs constructeurs avec'{1}' des arguments. Les types Windows Runtime ne peuvent pas posséder plusieurs constructeurs ayant le même nombre d’arguments. |
 
- 
+ 
 
 ## <a name="must-specify-a-default-for-overloads-that-have-the-same-number-of-parameters"></a>Spécification obligatoire d’une valeur par défaut pour les surcharges ayant le même nombre de paramètres
 
@@ -84,19 +82,19 @@ Dans l’UWP, les méthodes surchargées peuvent avoir le même nombre de param�
 
 | Numéro d’erreur | Texte du message                                                                                                                                                                      |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1059      | Plusieurs surcharges de paramètre {0} de « {1}.{2} » sont décorées de Windows.Foundation.Metadata.DefaultOverloadAttribute.                                                            |
-| WME1085      | Les surcharges de paramètre {0} de {1}.{2} doivent avoir une seule méthode spécifiée en tant que surcharge par défaut en la décorant avec Windows.Foundation.Metadata.DefaultOverloadAttribute. |
+| WME1059      | Plusieurs {0}-surcharges de paramètre de «{1}. {2}» sont décorées de Windows.Foundation.Metadata.DefaultOverloadAttribute.                                                            |
+| WME1085      | La {0}-surcharges de paramètre de {1}. {2} doit avoir une seule méthode spécifiée en tant que la surcharge par défaut en la décorant avec Windows.Foundation.Metadata.DefaultOverloadAttribute. |
 
- 
+ 
 
 ## <a name="namespace-errors-and-invalid-names-for-the-output-file"></a>Erreurs d’espace de noms et noms non valides pour le fichier de sortie
 
 
 Dans la plateforme Windows universelle, tous les types publics dans un fichier de métadonnées Windows (.winmd) doivent se trouver dans un espace de noms qui partage le nom du fichier .winmd, ou dans des sous-espaces de noms du nom de fichier. Par exemple, si votre projet Visual Studio est nommé A.B (autrement dit, votre composant Windows Runtime est A.B.winmd), il peut contenir des classes publiques A.B.Class1 et A.B.C.Class2, mais pas A.Class3 (WME0006) ou D.Class4 (WME1044).
 
-> **Remarque**  Ces restrictions s’appliquent uniquement aux types publics, non aux types privés utilisés dans votre implémentation.
+> **Remarque**ces restrictions s’appliquent uniquement aux types publics, non aux types privés utilisés dans votre implémentation.
 
- 
+ 
 
 Dans le cas de A.Class3, vous pouvez déplacer Class3 dans un autre espace de noms ou remplacer le nom du composant Windows Runtime par A.winmd. Bien que WME0006 soit un avertissement, vous devez le traiter comme une erreur. Dans l’exemple précédent, le code qui appelle A.B.winmd ne pourra pas localiser A.Class3.
 
@@ -108,20 +106,20 @@ Votre composant doit contenir au moins un type **public sealed** (**Public NotIn
 
 Un type dans un composant Windows Runtime ne peut pas avoir un nom identique à un espace de noms (WME1068).
 
-> **Attention**  Si vous appelez Winmdexp.exe directement et n’utilisez pas l’option /out pour spécifier un nom pour votre composant WindowsRuntime, Winmdexp.exe essaie de générer un nom qui inclut tous les espaces de noms dans le composant. Le fait de renommer les espaces de noms peut modifier le nom de votre composant.
+> **Attention**si vous appelez Winmdexp.exe directement et n’utilisez pas l’option /out pour spécifier un nom pour votre composant Windows Runtime, Winmdexp.exe essaie de générer un nom qui inclut tous les espaces de noms dans le composant. Le fait de renommer les espaces de noms peut modifier le nom de votre composant.
 
- 
+ 
 
 | Numéro d’erreur | Texte du message                                                                                                                                                                                                                                                                                                                                             |
 |--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME0006      | « {0} » n’est pas un nom de fichier winmd valide pour cet assembly. Tous les types d’un fichier de métadonnées Windows doivent exister dans un sous-espace de noms de l’espace de noms impliqué par le nom de fichier. Les types qui n’existent pas dans un sous-espace de noms ne peuvent pas être localisés au moment de l’exécution. Dans cet assembly, le plus petit espace de noms commun pouvant faire office de nom de fichier est « {1} ». |
+| WME0006      | «{0}» n’est pas un nom de fichier winmd valide pour cet assembly. Tous les types d’un fichier de métadonnées Windows doivent exister dans un sous-espace de noms de l’espace de noms impliqué par le nom de fichier. Les types qui n’existent pas dans un sous-espace de noms ne peuvent pas être localisés au moment de l’exécution. Dans cet assembly, le plus petit espace de noms commun pouvant faire Office de nom de fichier est «{1}». |
 | WME1042      | Le module d’entrée doit contenir au moins un type public se trouvant à l’intérieur d’un espace de noms.                                                                                                                                                                                                                                                                   |
 | WME1043      | Le module d’entrée doit contenir au moins un type public se trouvant à l’intérieur d’un espace de noms. Les seuls types présents dans des espaces de noms sont privés.                                                                                                                                                                                                               |
-| WME1044      | Un type public possède un espace de noms (« {1} ») qui ne partage aucun préfixe commun avec d’autres espaces de noms (« {0} »). Tous les types d’un fichier de métadonnées Windows doivent exister dans un sous-espace de noms de l’espace de noms impliqué par le nom de fichier.                                                                                                                              |
-| WME1067      | Les espaces de noms ne peuvent pas différer uniquement par la casse : « {0} », « {1} ».                                                                                                                                                                                                                                                                                                |
-| WME1068      | Le type « {0} » ne peut pas avoir le même nom que l’espace de noms « {1} ».                                                                                                                                                                                                                                                                                                 |
+| WME1044      | Un type public possède un espace de noms («{1}») qui ne partage aucun préfixe commun avec d’autres espaces de noms («{0}»). Tous les types d’un fichier de métadonnées Windows doivent exister dans un sous-espace de noms de l’espace de noms impliqué par le nom de fichier.                                                                                                                              |
+| WME1067      | Noms Namespace ne peuvent pas différer uniquement par la casse: «{0}','{1}'.                                                                                                                                                                                                                                                                                                |
+| WME1068      | Type de «{0}«ne peut pas avoir le même nom que l’espace de noms»{1}».                                                                                                                                                                                                                                                                                                 |
 
- 
+ 
 
 ## <a name="exporting-types-that-arent-valid-universal-windows-platform-types"></a>Exportation des types qui ne sont pas des types de plateforme Windows universelle valides
 
@@ -132,11 +130,11 @@ Bon nombre de ces mappages sont des interfaces. Par exemple, [IList&lt;T&gt;](ht
 
 En général, le meilleur choix est l’interface qui est la plus proche du type. Par exemple, pour Dictionary&lt;int, string&gt;, le meilleur choix est sans doute IDictionary&lt;int, string&gt;.
 
-> **Important**  JavaScript utilise l’interface qui s’affiche en premier dans la liste des interfaces implémentées par un type managé. Par exemple, si vous retournez Dictionary&lt;int, string&gt; au code JavaScript, il apparaît comme IDictionary&lt;int, string&gt;, quelle que soit l’interface que vous spécifiez comme type de retour. Cela signifie que si la première interface n’inclut pas un membre qui apparaît sur les interfaces ultérieures, ce membre n’est pas visible pour JavaScript.
+> **Important**JavaScript utilise l’interface qui apparaît en premier dans la liste des interfaces implémentées par un type managé. Par exemple, si vous retournez Dictionary&lt;int, string&gt; au code JavaScript, il apparaît comme IDictionary&lt;int, string&gt;, quelle que soit l’interface que vous spécifiez comme type de retour. Cela signifie que si la première interface n’inclut pas un membre qui apparaît sur les interfaces ultérieures, ce membre n’est pas visible pour JavaScript.
 
-> **Attention**  Évitez d’utiliser les interfaces non génériques [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) et [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) si votre composant doit être utilisé par JavaScript. Ces interfaces mappent vers [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) et [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx), respectivement. Elles prennent en charge la liaison pour les contrôles XAML et sont invisibles dans JavaScript. JavaScript émet l’erreur d’exécution « La fonction “X” a une signature non valide et ne peut pas être appelée ».
+> **Attention**Évitez d’utiliser les interfaces non génériques [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) et [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) si votre composant doit être utilisé par JavaScript. Ces interfaces mappent vers [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) et [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx), respectivement. Elles prennent en charge la liaison pour les contrôles XAML et sont invisibles dans JavaScript. JavaScript émet l’erreur d’exécution « La fonction “X” a une signature non valide et ne peut pas être appelée ».
 
- 
+ 
 
 <table>
 <colgroup>
@@ -152,26 +150,26 @@ En général, le meilleur choix est l’interface qui est la plus proche du type
 <tbody>
 <tr class="odd">
 <td align="left">WME1033</td>
-<td align="left">La méthode « {0} » possède un paramètre « {1} » de type « {2} ». « {2} » n’est pas un type de paramètre Windows Runtime valide.</td>
+<td align="left">Méthode «{0}«possède le paramètre»{1}«de type»{2}». «{2}» n’est pas un type de paramètre Windows Runtime valide.</td>
 </tr>
 <tr class="even">
 <td align="left">WME1038</td>
-<td align="left">La méthode « {0} » possède un paramètre de type « {1} » dans sa signature. Bien que ce type ne soit pas un type Windows Runtime valide, il implémente les interfaces qui sont des types Windows Runtime valides. Modifiez la signature de la méthode pour utiliser l’un des types suivants à la place : « {2} ».</td>
+<td align="left">Méthode «{0}«a un paramètre de type»{1}» dans sa signature. Bien que ce type ne soit pas un type Windows Runtime valide, il implémente les interfaces qui sont des types Windows Runtime valides. Modifiez la signature de méthode pour utiliser l’un des types suivants à la place: «{2}».</td>
 </tr>
 <tr class="odd">
 <td align="left">WME1039</td>
-<td align="left"><p>La méthode « {0} » possède un paramètre de type « {1} » dans sa signature. Bien que ce type générique ne soit pas un type Windows Runtime valide, ce type ou ses paramètres génériques implémentent les interfaces qui sont des types Windows Runtime valides. {2}</p>
-> **Remarque**  Pour {2}, Winmdexp.exe ajoute une liste d’alternatives, par exemple «Remplacer le type ’System.Collections.Generic.List&lt;T&gt;’ dans la signature de méthode par l’un des types suivants: ’System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;’».
+<td align="left"><p>Méthode «{0}«a un paramètre de type»{1}» dans sa signature. Bien que ce type générique ne soit pas un type Windows Runtime valide, ce type ou ses paramètres génériques implémentent les interfaces qui sont des types Windows Runtime valides. {2}</p>
+> **Remarque**pour {2}, Winmdexp.exe ajoute une liste d’alternatives, par exemple «le type ' System.Collections.Generic.List&lt;T&gt;» dans la signature de méthode sur l’une des options suivantes types:» System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;«.»
 </td>
 </tr>
 <tr class="even">
 <td align="left">WME1040</td>
-<td align="left">La méthode « {0} » possède un paramètre de type « {1} » dans sa signature. Au lieu d’utiliser un type de tâche managé, utilisez Windows.Foundation.IAsyncAction, Windows.Foundation.IAsyncOperation ou l’une des autres interfaces asynchrones Windows Runtime. Le modèle .NET standard await s’applique également à ces interfaces. Pour plus d’informations sur la conversion d’objets de tâches managées en interfaces asynchrones Windows Runtime, voir System.Runtime.InteropServices.WindowsRuntime.AsyncInfo.</td>
+<td align="left">Méthode «{0}«a un paramètre de type»{1}» dans sa signature. Au lieu d’utiliser un type de tâche managé, utilisez Windows.Foundation.IAsyncAction, Windows.Foundation.IAsyncOperation ou l’une des autres interfaces asynchrones Windows Runtime. Le modèle .NET standard await s’applique également à ces interfaces. Pour plus d’informations sur la conversion d’objets de tâches managées en interfaces asynchrones Windows Runtime, voir System.Runtime.InteropServices.WindowsRuntime.AsyncInfo.</td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="structures-that-contain-fields-of-disallowed-types"></a>Structures contenant des champs de types non autorisés
 
@@ -180,26 +178,26 @@ Dans l’UWP, une structure peut contenir uniquement des champs, et seules les s
 
 | Numéro d’erreur | Texte du message                                                                                                                                                                                                                                                            |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1060      | La structure « {0} » possède le champ « {1} » de type « {2} ». « {2} » n’est pas un type de champ Windows Runtime valide. Les champs d’une structure Windows Runtime doivent uniquement avoir la valeur UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Single, Double, Boolean, String, Enum, ou bien correspondre à une structure. |
+| WME1060      | Structure «{0}«possède le champ»{1}«de type»{2}». «{2}» n’est pas un type de champ Windows Runtime valide. Les champs d’une structure Windows Runtime doivent uniquement avoir la valeur UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Single, Double, Boolean, String, Enum, ou bien correspondre à une structure. |
 
- 
+ 
 
 ## <a name="restrictions-on-arrays-in-member-signatures"></a>Restrictions sur les tableaux dans les signatures de membre
 
 
 Dans l’UWP, les tableaux dans les signatures de membre doivent être unidimensionnels avec une limite inférieure de0 (zéro). Les types de tableaux imbriqués tels que `myArray[][]` (`myArray()()` en Visual Basic) ne sont pas autorisés.
 
-> **Remarque** Cette restriction ne s’applique pas aux tableaux que vous utilisez en interne dans votre implémentation.
+> **Remarque**cette restriction ne s’applique pas aux tableaux que vous utilisez en interne dans votre implémentation.
 
- 
+ 
 
 | Numéro d’erreur | Texte du message                                                                                                                                                     |
 |--------------|--------------------|
-| WME1034      | La méthode « {0} » a un tableau de type « {1} » avec une limite inférieure non égale à zéro dans sa signature. Les tableaux dans les signatures de méthode Windows Runtime doivent avoir une limite inférieure de zéro. |
-| WME1035      | La méthode « {0} » possède un tableau multidimensionnel de type « {1} » dans sa signature. Les tableaux dans les signatures de méthode Windows Runtime doivent être unidimensionnels.                  |
-| WME1036      | La méthode « {0} » possède un tableau imbriqué de type « {1} » dans sa signature. Les tableaux dans les signatures de méthode Windows Runtime ne peuvent pas être imbriqués.                                    |
+| WME1034      | Méthode «{0}«a un tableau de type»{1}» avec une limite inférieure de zéro dans sa signature. Les tableaux dans les signatures de méthode Windows Runtime doivent avoir une limite inférieure de zéro. |
+| WME1035      | Méthode «{0}«a un tableau multidimensionnel de type»{1}» dans sa signature. Les tableaux dans les signatures de méthode Windows Runtime doivent être unidimensionnels.                  |
+| WME1036      | Méthode '{0}«possède un tableau imbriqué de type»{1}» dans sa signature. Les tableaux dans les signatures de méthode Windows Runtime ne peuvent pas être imbriqués.                                    |
 
- 
+ 
 
 ## <a name="array-parameters-must-specify-whether-array-contents-are-readable-or-writable"></a>Les paramètres de tableau doivent spécifier si le contenu du tableau est accessible en lecture ou en écriture
 
@@ -208,12 +206,12 @@ Dans l’UWP, les paramètres doivent être en lecture seule ou en écriture seu
 
 | Numéro d’erreur | Texte du message         |
 |--------------|----------------------|
-| WME1101      | La méthode « {0} » a un paramètre « {1} » qui est un tableau, et qui a à la fois {2} et {3}. Dans le Windows Runtime, les paramètres du tableau de contenu doivent être accessibles en lecture ou en écriture. Supprimez l’un des attributs de « {1} ».                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| WME1102      | La méthode « {0} » a un paramètre de sortie « {1} » qui est un tableau, mais qui a {2}. Dans le Windows Runtime, le contenu des tableaux de sortie est accessible en écriture. Supprimez l’attribut de « {1} ».                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| WME1103      | La méthode « {0} » possède le paramètre « {1} » qui est un tableau possédant un attribut System.Runtime.InteropServices.InAttribute ou System.Runtime.InteropServices.OutAttribute. Dans le Windows Runtime, les paramètres de tableau doivent avoir {2} ou {3}. Supprimez les attributs suivants ou remplacez-les par l’attribut de Windows Runtime approprié si nécessaire.                                                                                                                                                                                                                                                                                                                                                                                          |
-| WME1104      | La méthode « {0} » a un paramètre « {1} » qui n’est pas un tableau, et qui a un {2} ou un {3}. Windows Runtime ne prend pas en charge le marquage des paramètres autres que des tableaux associés à {2} ou {3}.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| WME1105      | La méthode « {0} » possède le paramètre « {1} » avec l’attribut System.Runtime.InteropServices.InAttribute ou System.Runtime.InteropServices.OutAttribute. Windows Runtime ne prend pas en charge le marquage des paramètres avec l’attribut System.Runtime.InteropServices.InAttribute ou System.Runtime.InteropServices.OutAttribute. Supprimez System.Runtime.InteropServices.InAttribute et remplacez System.Runtime.InteropServices.OutAttribute par le modificateur « out ». La méthode « {0} » possède le paramètre « {1} » avec l’attribut System.Runtime.InteropServices.InAttribute ou System.Runtime.InteropServices.OutAttribute. Windows Runtime ne prend en charge que le marquage des paramètres ByRef par System.Runtime.InteropServices.OutAttribute, et ne prend en charge aucune autre utilisation de ces attributs. |
-| WME1106      | La méthode « {0} » a un paramètre « {1} » qui est un tableau. Dans le Windows Runtime, le contenu des paramètres du tableau doit être accessible en lecture ou en écriture. Appliquez {2} ou {3} à « {1} ».                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| WME1101      | Méthode «{0}«possède le paramètre»{1}» qui est un tableau, et qui comporte à la fois {2} et {3}. Dans le Windows Runtime, les paramètres du tableau de contenu doivent être accessibles en lecture ou en écriture. Supprimez l’un des attributs de «{1}».                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| WME1102      | Méthode «{0}«a un paramètre de sortie»{1}» qui est un tableau, mais qui a {2}. Dans le Windows Runtime, le contenu des tableaux de sortie est accessible en écriture. Supprimez l’attribut de «{1}».                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| WME1103      | Méthode «{0}«possède le paramètre»{1}» qui est un tableau, et possédant un attribut System.Runtime.InteropServices.InAttribute ou System.Runtime.InteropServices.OutAttribute. Dans le Windows Runtime, paramètres de tableau doivent avoir {2} ou {3}. Supprimez les attributs suivants ou remplacez-les par l’attribut de Windows Runtime approprié si nécessaire.                                                                                                                                                                                                                                                                                                                                                                                          |
+| WME1104      | Méthode «{0}«possède le paramètre»{1}» qui n’est pas un tableau, et qui a un {2} ou un {3}. Windows Runtime ne prend pas en charge le marquage des paramètres avec {2} ou {3}.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| WME1105      | Méthode «{0}«possède le paramètre»{1}» avec l’attribut System.Runtime.InteropServices.InAttribute ou System.Runtime.InteropServices.OutAttribute. Windows Runtime ne prend pas en charge le marquage des paramètres avec l’attribut System.Runtime.InteropServices.InAttribute ou System.Runtime.InteropServices.OutAttribute. Supprimez System.Runtime.InteropServices.InAttribute et remplacez System.Runtime.InteropServices.OutAttribute par le modificateur « out ». Méthode «{0}«possède le paramètre»{1}» avec l’attribut System.Runtime.InteropServices.InAttribute ou System.Runtime.InteropServices.OutAttribute. Windows Runtime ne prend en charge que le marquage des paramètres ByRef par System.Runtime.InteropServices.OutAttribute, et ne prend en charge aucune autre utilisation de ces attributs. |
+| WME1106      | Méthode «{0}«possède le paramètre»{1}» qui est un tableau. Dans le Windows Runtime, le contenu des paramètres du tableau doit être accessible en lecture ou en écriture. Appliquez {2} ou {3} à «{1}».                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 
 ## <a name="member-with-a-parameter-named-value"></a>Membre avec un paramètre nommé « value »
@@ -240,16 +238,16 @@ Dans l’UWP, les valeurs de retour sont considérées comme des paramètres de 
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> **Remarque**  Si vous modifiez le nom de la valeur de retour, et que ce nouveau nom est en conflit avec le nom d’un autre paramètre, vous obtenez l’erreur WME1091.
+> **Remarque**si vous modifiez le nom de la valeur de retour, et le nouveau nom est en conflit avec le nom d’un autre paramètre, vous obtenez l’erreur WME1091.
 
 Le code JavaScript peut accéder aux paramètres de sortie d’une méthode par nom, notamment la valeur de retour. Pour obtenir un exemple, voir l’attribut [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx).
 
 | Numéro d’erreur | Texte du message |
 |--------------|--------------|
-| WME1091 | La méthode «{0}» a la valeur de retour nommée «{1}» qui est identique à un nom de paramètre. Les paramètres de méthode Windows Runtime et la valeur de retour doivent avoir des noms uniques. |
-| WME1092 | La méthode «{0}» a un paramètre nommé «{1}» qui est identique au nom par défaut de la valeur de retour. Fournissez un autre nom pour le paramètre ou utilisez System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute pour spécifier explicitement le nom de la valeur de retour. |
+| WME1091 | La méthode ' \{0}» a la valeur de retour nommée «\{1}» qui est identique à un nom de paramètre. Les paramètres de méthode Windows Runtime et la valeur de retour doivent avoir des noms uniques. |
+| WME1092 | La méthode ' \{0}' possède un paramètre nommé «\{1}» qui est identique à la valeur par défaut de renvoyer le nom de la valeur. Fournissez un autre nom pour le paramètre ou utilisez System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute pour spécifier explicitement le nom de la valeur de retour. |
 
-**Remarque**  Le nom par défaut est «returnValue» pour les accesseurs de propriété, et «value» pour toutes les autres méthodes.
+**Remarque**le nom par défaut est «returnValue» pour les accesseurs de propriété et «value» pour toutes les autres méthodes.
 
 
 ## <a name="related-topics"></a>Rubriques connexes

@@ -6,16 +6,14 @@ description: Découvrez comment utiliser les capteurs d’orientation pour déte
 ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a9270ba675b0797344d3370aec433de90d80d5
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 49199a91f6713b3f18928eaafb6875a49deaf451
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958884"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570673"
 ---
 # <a name="use-the-orientation-sensor"></a>Utiliser le capteur d’orientation
 
@@ -48,7 +46,7 @@ L’API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/
 
 ## <a name="prerequisites"></a>Prérequis
 
-Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
+Vous devez être familiarisé avec XAML Extensible Application Markup Language (), Microsoft Visual c# et événements.
 
 L’appareil ou émulateur que vous utilisez doit prendre en charge un capteur d’orientation.
 

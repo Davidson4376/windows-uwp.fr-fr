@@ -6,15 +6,14 @@ ms.assetid: 79f4e177-d8e7-45d3-8a78-31d4c2fe298a
 ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, monétisation
-ms.openlocfilehash: c2dde3a4f9796b02c969017533b0092b0deaa860
-ms.sourcegitcommit: 0ebc8dca2fd9149ea163b7db9daa14520fc41db4
+ms.localizationpriority: medium
+ms.openlocfilehash: 82dd225f25162035b1bb65677c3bd4a7f7503b14
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/08/2017
-ms.locfileid: "877739"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571203"
 ---
 #  <a name="monetization-for-games"></a>Monétisation pour les jeux
 
@@ -23,14 +22,14 @@ En tant que développeur de jeux, vous devez connaître vos options de monétisa
 Par le passé, vous auriez simplement fixé un prix pour votre jeu, puis attendu que des clients l’achètent dans un magasin. Aujourd'hui, des options supplémentaires s’offrent à vous. Vous pouvez choisir de distribuer un jeu dans des magasins «physiques», de vendre le jeu en ligne (copies physiques ou logicielles), ou permettre à tout le monde de jouer au jeu gratuitement, tout en intégrant une forme de publicité ou des articles pouvant être achetés dans le jeu. En outre, les jeux ne sont plus des produits autonomes. Ils sont souvent fournis avec du contenu supplémentaire qui peut être acheté en plus du jeu principal.
 
 Vous pouvez promouvoir et monétiser un jeu UWP de l’une ou de plusieurs des manières suivantes:
-* Mettez votre jeu dans le Windows Store, un magasin en ligne sécurisé proposant une [distribution à l’échelle mondiale](#worldwide-distribution-channel). Dans le monde entier, les joueurs peuvent acheter votre jeu en ligne au [prix que vous avez fixé](#set-a-price-for-your-game).
+* Préparez votre jeu dans le Microsoft Store, qui est une offre de magasin en ligne, sécurisée [distribution dans le monde entier](#worldwide-distribution-channel). Dans le monde entier, les joueurs peuvent acheter votre jeu en ligne au [prix que vous avez fixé](#set-a-price-for-your-game).
 * Utilisez des API dans le SDK Windows pour créer des [achats dans le jeu](#in-game-purchases). Les joueurs peuvent acheter des articles à partir de votre jeu, ou acheter du contenu supplémentaire tel que des équipements supplémentaires, des apparences, des cartes ou des niveaux de jeu.
 * Utilisez les API dans le [SDK Microsoft Advertising](http://aka.ms/ads-sdk-uwp) pour afficher des publicités à partir de réseaux publicitaires. Vous pouvez [afficher des publicités dans votre jeu](#display-ads-in-your-game) et offrir aux joueurs la possibilité de regarder des publicités vidéo en échange de récompenses dans le jeu.
 * [Optimisez le potentiel de votre jeu par le biais de campagnes de publicité](#maximize-your-games-potential-through-ad-campaigns). Faites la promotion de votre jeu à l’aide de campagnes de publicité payantes, communautaires (gratuites) ou maison (gratuites) pour développer la base des utilisateurs.
 
 ## <a name="worldwide-distribution-channel"></a>Canal de distribution mondial
 
-Le Windows Store peut rendre votre jeu disponible au téléchargement dans plus de 200pays et régions du monde entier, avec une prise en charge de la facturation via différents modes de paiement, notamment Visa, MasterCard et PayPal. Pour obtenir la liste complète des pays et régions, voir [Marchés et prix personnalisés](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices).
+Le Microsoft Store peut rendre votre jeu disponible au téléchargement dans plus de 200 pays et régions dans le monde entier, avec prise en charge pour la facturation via différents modes de paiement, notamment Visa, Mastercard et PayPal. Pour obtenir la liste complète des pays et régions, voir [Marchés et prix personnalisés](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices).
 
 ## <a name="set-a-price-for-your-game"></a>Définir un prix pour votre jeu
 
@@ -50,13 +49,13 @@ Vous pouvez planifier des campagnes de vente à l’avance, en définissant à l
 
 ## <a name="in-game-purchases"></a>Achats dans le jeu
 
-Les achats dans le jeu sont des produits achetés au sein d’un jeu. Ils sont également appelés de manière générique _achats in-app_. Dans le Windows Store, ces produits sont appelés _composants additionnels_. [Les composants additionnels sont publiés](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions) par le biais du tableau de bord du Centre de développement Windows. Vous devrez également activer les composants additionnels dans le code de votre jeu.
+Les achats dans le jeu sont des produits achetés au sein d’un jeu. Ils sont également appelés de manière générique _achats in-app_. Dans le Microsoft Store, ces produits sont appelés des _modules complémentaires_. [Les composants additionnels sont publiés](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions) par le biais du tableau de bord du Centre de développement Windows. Vous devrez également activer les composants additionnels dans le code de votre jeu.
 
 ### <a name="types-of-add-ons"></a>Types de composants additionnels
 
 Vous pouvez créer deux types de composants additionnels dans le Windows Store: _Durables_ ou _Consommables_. Les composants additionnels durables sont des articles qui persistent pendant un laps de temps spécifié et ne peuvent être achetés qu’une seule fois avant expiration. Les composants additionnels consommables sont des articles qui peuvent être achetés et utilisés encore et encore.
 
-Lorsque vous créez des consommables, décidez de la manière dont vous souhaitez les suivre &mdash;, selon qu’ils sont _gérés par le développeur_ ou _gérés par le Windows Store_ (cette fonctionnalité est disponible à partir de Windows10, version1607). Avec un consommable géré par le développeur, vous êtes responsable du suivi du solde de l’article pour le joueur; avec un consommable géré par le Windows Store, le Windows Store suit le solde de l’élément pour vous. Pour plus d’informations, voir [Vue d’ensemble des composants additionnels consommables](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons).
+Lorsque vous créez des consommables, décidez de la manière dont vous souhaitez les suivre &mdash;, selon qu’ils sont _gérés par le développeur_ ou _gérés par le Windows Store_ (cette fonctionnalité est disponible à partir de Windows10, version1607). Avec un consommable géré par le développeur, vous êtes responsable du suivi du solde de l’élément pour le joueur; avec un consommable géré par le Windows Store, le Microsoft Store gère de solde de l’élément pour vous. Pour plus d’informations, voir [Vue d’ensemble des composants additionnels consommables](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons).
 
 ### <a name="create-in-game-purchases"></a>Créer des achats dans le jeu
 
@@ -93,7 +92,7 @@ Pour créer un package qui peut être chargé dans le Windows Store:
 
 1. Ouvrez votre solution de jeu dans Visual Studio.
 2. Dans Visual Studio, accédez à __Projet__ > __Windows Store__ > __Créer des packages d’application…__
-3. À la question __Voulez-vous générer des packages à charger dans le Windows Store?__, répondez __Oui__.
+3. Pour les __Voulez-vous générer des packages à charger dans le Microsoft Store?__ une autre option, sélectionnez __«Oui»__.
 4. Connectez-vous à votre compte de développeur du Centre de développement. Si vous n’avez pas de compte de développeur, [inscrivez-vous](https://developer.microsoft.com/store/register) pour en obtenir un.
 5. Sélectionnez une application pour laquelle créer le package de chargement. Si vous n’avez pas encore créé de soumission d’application, fournissez un nouveau nom d’application pour créer une soumission. Pour plus d’informations, voir [Créer votre application en réservant un nom](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name).
 6. Une fois le package correctement créé, cliquez sur __Lancer le Kit de certification des applications Windows__ pour démarrer le processus de test.
@@ -105,7 +104,7 @@ Pour créer un package qui peut être chargé dans le Windows Store:
 2. Depuis la __page de présentation du tableau de bord__ ou la page __Toutes les applications__, cliquez sur l’application avec laquelle vous souhaitez travailler. Si vous n’avez pas encore créé de soumission d’application, cliquez sur __Créer une application__ et réservez un nom.
 3. Sur la page __Vue d’ensemble de l’application__, cliquez sur __Démarrer votre soumission__.
 4. Configurez cette nouvelle soumission. Sur la page de la soumission:
-    * Cliquez sur __Tarification et disponibilité__. Dans la section __Visibilité__, choisissez __Masquer cette application et empêcher l'acquisition…__ pour vous assurer que seule votre équipe de développement a accès au jeu. Pour plus d’informations, accédez à [Distribution et visibilité](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility).
+    * Cliquez sur __Tarification et disponibilité__. Dans la section __visibilité__ , cliquez sur «__Masquer cette application et empêcher l’acquisition …__» pour vous assurer que seulement votre équipe de développement a accès au jeu. Pour plus d’informations, accédez à [Distribution et visibilité](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility).
     * Cliquez sur __Propriétés__. Dans la section __Catégorie et sous-catégorie__, choisissez __Jeux__, puis sélectionnez une sous-catégorie adaptée à votre jeu.
     * Cliquez sur __Classifications par âge__. Remplissez le questionnaire avec précision.
     * Cliquez sur __Packages__. Chargez le package de jeu créé à l’étape précédente.
@@ -141,7 +140,7 @@ Autres configurations pour les composants additionnels:
 * [Tarification et disponibilité](https://msdn.microsoft.com/windows/uwp/publish/set-add-on-pricing-and-availability)
 * [Description dans le Windows Store](https://msdn.microsoft.com/windows/uwp/publish/create-add-on-store-listings)
 
-Si votre jeu comprend de nombreux composants additionnels, vous pouvez les créer par programme à l’aide de __l’API de soumission du Windows Store__. Pour en savoir plus, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services).
+Si votre jeu comprend de nombreux modules complémentaires, vous pouvez les créer par programmation à l’aide de l' __API de soumission au Microsoft Store__. Pour plus d’informations, voir [créer et gérer des soumissions à l’aide des services Microsoft Store](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services).
 
 ## <a name="display-ads-in-your-game"></a>Afficher des publicités dans votre jeu
 
@@ -158,11 +157,11 @@ Plusieurs types de publicités peuvent être affichés à l’aide du SDK Micros
 
 ### <a name="which-ads-are-displayed"></a>Quelles publicités s’affichent?
 
-Par défaut, votre application affiche des publicités issues du réseau Microsoft pour les publicités payées. Pour optimiser vos revenus publicitaires, vous pouvez activer la médiation publicitaire pour votre unité publicitaire afin d’afficher des publicités à partir de réseaux de publicités payées. Pour plus d’informations sur les offres actuelles, voir nos conseils sur la [médiation publicitaire](../publish/monetize-with-ads.md#ad-mediation).
+Par défaut, votre application affiche des publicités issues du réseau Microsoft pour les publicités payées. Pour optimiser vos revenus publicitaires, vous pouvez activer la médiation publicitaire pour votre unité publicitaire afin d’afficher des publicités à partir de réseaux de publicités payées. Pour plus d’informations sur les offres actuelles, voir nos conseils sur la [médiation publicitaire](../publish/in-app-ads.md#mediation).
 
 ### <a name="which-markets-allow-ads-to-be-displayed"></a>Quels marchés autorisent l’affichage des publicités?
 
-Pour obtenir la liste complète des pays et régions qui prennent en charge les publicités, voir [Marchés pris en charge pour les réseaux publicitaires](../publish/monetize-with-ads.md#network-markets).
+Pour obtenir la liste complète des pays et régions qui prennent en charge les publicités, voir [Marchés pris en charge pour les réseaux publicitaires](../publish/in-app-ads.md#network-markets).
 
 ### <a name="apis-for-displaying-ads"></a>API pour afficher des publicités
 

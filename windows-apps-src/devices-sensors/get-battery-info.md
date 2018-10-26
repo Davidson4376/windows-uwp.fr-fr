@@ -6,16 +6,14 @@ description: Découvrez comment obtenir des informations détaillées sur la bat
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c191a9f2da29f0ad10d0ba61507873b4fd652ddc
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: c745b99104495b4d0b3c60202c378285dbfdd7b6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "959074"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565350"
 ---
 # <a name="get-battery-information"></a>Obtenir des informations sur la batterie
 
@@ -32,7 +30,7 @@ Découvrez comment obtenir des informations détaillées sur la batterie à l’
 
 Certains appareils utilisent plusieurs batteries et il n’est pas toujours évident de déterminer de quelle manière chacune d’elles contribue à la capacité globale d’alimentation de l’appareil. C’est là que la classe [**AggregateBattery**](https://msdn.microsoft.com/library/windows/apps/Dn895011) entre en jeu. Le *groupe de batteries* représente tous les contrôleurs de batterie connectés à un appareil et peut fournir un objet [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) global.
 
-**Remarque**  Une classe [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) correspond en réalité à un contrôleur de batterie. Le contrôleur est tantôt relié à la batterie physique de l’appareil, tantôt à son boîtier. Par conséquent, il est possible de créer un objet batterie, même en l’absence de toute batterie. Dans certains cas, l’objet batterie peut être **null**.
+**Remarque**une classe de [**batterie**](https://msdn.microsoft.com/library/windows/apps/Dn895004) correspond en réalité à un contrôleur de batterie. Le contrôleur est tantôt relié à la batterie physique de l’appareil, tantôt à son boîtier. Par conséquent, il est possible de créer un objet batterie, même en l’absence de toute batterie. Dans certains cas, l’objet batterie peut être **null**.
 
 Lorsque vous disposez d’un objet groupe de batteries, appelez la méthode [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) pour obtenir le rapport [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) correspondant.
 
@@ -340,7 +338,7 @@ Si votre application n’est pas nommée **App1**, vous devez renommer l’espac
 
 Enfin, pour exécuter cette application de batterie de base, dans le menu **Déboguer**, cliquez sur **Démarrer le débogage** afin de tester la solution.
 
-**Conseil**  Pour recevoir les valeurs numériques de l’objet [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005), déboguez votre application sur l’**ordinateur local** ou sur un **appareil** externe (par exemple, un téléphone WindowsPhone). Lors du débogage sur un émulateur d’appareil, l’objet **BatteryReport** renvoie **null** aux propriétés de capacité et de vitesse.
+**Conseil**pour recevoir les valeurs numériques de l’objet [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) , déboguer votre application sur l' **Ordinateur Local** ou d’un **appareil** externe (par exemple, un Windows Phone). Lors du débogage sur un émulateur d’appareil, l’objet **BatteryReport** renvoie **null** aux propriétés de capacité et de vitesse.
 
- 
+ 
 

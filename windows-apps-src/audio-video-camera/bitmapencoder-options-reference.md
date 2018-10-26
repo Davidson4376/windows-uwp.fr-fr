@@ -6,18 +6,17 @@ title: Référence des options BitmapEncoder
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: adfd360c22fd6737d9e95e6e3153f4e2767a4c99
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 13f19ce909703b6748ab00aec1026e30d5c70a64
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228612"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570577"
 ---
 # <a name="bitmapencoder-options-reference"></a>Référence des options BitmapEncoder
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cet article répertorie les options de codage qui peuvent être utilisées avec [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). Une option de codage se définit par son nom (à savoir une chaîne) et par une valeur dans un type de données particulier ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871)). Pour plus d’informations sur l’utilisation des images, voir [Créer, modifier et enregistrer des images bitmap](imaging.md).
 
@@ -35,14 +34,14 @@ Cet article répertorie les options de codage qui peuvent être utilisées avec 
 | SuppressApp0            | valeur booléenne      | Indique s’il faut ou non supprimer la création d’un bloc de métadonnées App0.                                        | JPEG          |
 | EnableV5Header32bppBGRA | valeur booléenne      | Indique s’il faut ou non coder dans une version 5BMP avec prise en charge alpha.                                         | BMP           |
 
- 
+ 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer, modifier et enregistrer des images bitmap](imaging.md)
 * [Codecs pris en charge](supported-codecs.md)
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ description: Ce didacticiel décrit comment déclarer des fonctionnalités d’a
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 693a33bc212f6fe1b35414a20f2a6c44393c0b87
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: a7250c41795373b089f7a4c76b603c169b1e4dc3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989443"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566270"
 ---
 # <a name="enable-device-capabilities"></a>Activer les fonctionnalités d’un appareil
 
@@ -28,8 +26,7 @@ Ce didacticiel décrit comment déclarer des fonctionnalités d’appareil dans 
 
 Avec des applications Windows , vous êtes tenu de spécifier dans le manifeste du package d’application quand vous utilisez certains types d’appareils. Dans Visual Studio, vous pouvez déclarer la plupart des fonctionnalités à l’aide du [concepteur du manifeste](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx) ou vous pouvez les ajouter manuellement comme indiqué dans [Comment spécifier des fonctionnalités de périphérique dans un manifeste de package (manuellement)](https://msdn.microsoft.com/library/windows/apps/Dn263092). Ce didacticiel suppose que vous utilisez le concepteur du manifeste.
 
-**Remarque**  
-Certains types d’appareils, tels que les imprimantes, les lecteurs et les capteurs, n’ont pas besoin d’être déclarés dans le manifeste du package de l’application.
+**Remarque**  certains types d’appareils, tels que des imprimantes, scanneurs et capteurs, n’avez pas besoin d’être déclarés dans le manifeste de package d’application.
 
 -   Dans l’Explorateur de solutions de Visual Studio, double-cliquez sur le fichier manifeste de package **Package.appxmanifest**.
 -   Ouvrez l’onglet **Capacités**.

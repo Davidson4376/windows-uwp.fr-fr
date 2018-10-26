@@ -6,21 +6,20 @@ ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, jeux, direct3d 11, initialisation, portage, direct3d 9
-ms.openlocfilehash: d4c4c905ad7d7452251ad13d95cbdc53b137c6c8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 5f6aa5bca3ecc242e90b42081a0111358afdfa9b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228756"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571920"
 ---
 # <a name="initialize-direct3d-11"></a>Initialiser Direct3D 11
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**Récapitulatif**
+**Résumé**
 
 -   Partie1: initialiser Direct3D11
 -   [Partie 2 : convertir l’infrastructure de rendu](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
@@ -76,9 +75,9 @@ Pour commencer, nous créons le périphérique. Nous obtenons la liste des nivea
 
 Après avoir créé le périphérique Direct3D11 et le contexte, nous pouvons exploiter la fonctionnalité de pointeur COM pour obtenir la version la plus récente des interfaces, lesquelles incluent des fonctionnalités supplémentaires et sont toujours recommandées.
 
-> **Remarque** D3D\_FEATURE\_LEVEL\_9\_1 (qui correspond au modèle de nuanceur 2.0) est le niveau minimal que votre jeu du Windows Store doit prendre en charge. (Les packages ARM de votre jeu échouent à la certification si vous ne prenez pas en charge 9\_1.) Si votre jeu inclut également un chemin de rendu pour les fonctionnalités du modèle de nuanceur 3, alors vous devez inclure D3D\_FEATURE\_LEVEL\_9\_3 dans le tableau.
+> **Remarque**  D3D\_FEATURE\_LEVEL\_9\_1 (qui correspond au modèle de nuanceur 2.0) est le niveau minimal que votre jeu de Microsoft Store est requis pour prendre en charge. (Les packages ARM de votre jeu échouent à la certification si vous ne prenez pas en charge 9\_1.) Si votre jeu inclut également un chemin de rendu pour les fonctionnalités du modèle de nuanceur 3, alors vous devez inclure D3D\_FEATURE\_LEVEL\_9\_3 dans le tableau.
 
- 
+ 
 
 Direct3D11
 
@@ -109,7 +108,7 @@ D3D11CreateDevice(
     creationFlags,
     featureLevels,
     ARRAYSIZE(featureLevels),
-    D3D11_SDK_VERSION, // Windows Store apps must set this to D3D11_SDK_VERSION.
+    D3D11_SDK_VERSION, // UWP apps must set this to D3D11_SDK_VERSION.
     &device, // Returns the Direct3D device created.
     nullptr,
     &context // Returns the device immediate context.
@@ -128,9 +127,9 @@ Direct3D 11 inclut une API de périphérique appelée DXGI (infrastructure Direc
 
 Le périphérique Direct3D implémente une interface COM pour DXGI. Tout d’abord, nous avons besoin d’obtenir cette interface, puis de l’utiliser pour demander la carte DXGI hébergeant le périphérique. Ensuite, nous utilisons la carte DXGI pour créer une fabrique DXGI.
 
-> **Remarque** Il s’agit d’interfaces COM, alors votre première réponse peut consister à utiliser la méthode [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Vous devez utiliser des pointeurs intelligents [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) à la place. Ensuite, il suffit d’appeler la méthode [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) en fournissant un pointeur COM vide du type d’interface correct.
+> **Remarque**  il s’agit d’interfaces COM, alors votre première réponse peut consister à utiliser [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Vous devez utiliser des pointeurs intelligents [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) à la place. Ensuite, il suffit d’appeler la méthode [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) en fournissant un pointeur COM vide du type d’interface correct.
 
- 
+ 
 
 **Direct3D11**
 
@@ -152,9 +151,9 @@ dxgiAdapter->GetParent(
 
 Maintenant que nous avons la fabrique DXGI, nous pouvons l’utiliser pour créer la chaîne d’échange. Définissons à présent les paramètres de cette chaîne d’échange. Nous avons besoin de spécifier le format de surface ; nous choisissons [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059) car c’est un format compatible avec Direct2D. Nous désactivons l’échelle d’affichage, l’échantillonnage multiple et le rendu stéréo car ils ne sont pas utilisés dans cet exemple. Étant donné que l’exécution est directement effectuée dans un CoreWindow, nous pouvons laisser les valeurs 0 de la largeur et de la hauteur et obtenir automatiquement les valeurs de plein écran.
 
-> **Remarque** Affectez toujours au paramètre *SDKVersion* la valeur D3D11\_SDK\_VERSION pour les applications UWP.
+> **Remarque**  toujours défini le paramètre *SDKVersion* sur D3D11\_SDK\_VERSION pour les applications UWP.
 
- 
+ 
 
 **Direct3D11**
 
@@ -172,9 +171,9 @@ swapChain.As(&m_swapChain);
 
 Pour nous assurer de ne pas générer le rendu plus souvent que ne le peut l’écran, nous affectons à la latence d’image la valeur 1 et nous utilisons [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077). Cela permet d’économiser de l’énergie et constitue une exigence de certification du Windows Store. Nous en saurons plus sur la présentation à l’écran dans la partie2 de cette procédure pas à pas.
 
-> **Remarque** Vous pouvez utiliser le multithreading (par exemple, des éléments de travail [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642)) pour continuer un autre travail pendant que le thread de rendu est bloqué.
+> **Remarque**  vous pouvez utiliser le multithreading (par exemple, les éléments de travail de [**pool de threads**](https://msdn.microsoft.com/library/windows/apps/br229642) ) de continuer d’autres tâches pendant que le thread de rendu est bloqué.
 
- 
+ 
 
 **Direct3D11**
 
@@ -227,9 +226,9 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 Maintenant que nous avons un handle de périphérique et une cible de rendu en plein écran, nous sommes prêts à charger et dessiner la géométrie. Passez à la [Partie 2 : rendu](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md).
 
- 
+ 
 
- 
+ 
 
 
 

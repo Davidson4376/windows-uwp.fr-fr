@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b49afdd4a9fe1db28c8195bdf166d6a74e153020
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: Auto
+ms.openlocfilehash: f1643638eaf7eb625defe1f25b44cae20faf0a5c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653798"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568265"
 ---
 # <a name="optical-zoom-and-resizing"></a>Zoom optique et redimensionnement
 
@@ -41,10 +39,9 @@ Les schémas suivants montrent les différences entre le redimensionnement et le
 
 ![resserrer les doigts pour rétrécir un objet et les écarter pour l’agrandir](images/objectresize.png)
 
-**Remarque**  
-Ne confondez pas le zoom optique avec le [zoom sémantique](../controls-and-patterns/semantic-zoom.md). Même si les mêmes gestes sont utilisés pour les deuxinteractions, le zoom sémantique désigne la présentation et la navigation du contenu organisé au sein d’une seule vue (par exemple, la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo).
+**Remarque**  zoom optique ne pas confondre avec [Le Zoom sémantique](../controls-and-patterns/semantic-zoom.md). Même si les mêmes gestes sont utilisés pour les deuxinteractions, le zoom sémantique désigne la présentation et la navigation du contenu organisé au sein d’une seule vue (par exemple, la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo).
 
- 
+ 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
@@ -70,10 +67,9 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
     -   Applications de dessin dans lesquelles des éléments redimensionnables peuvent s’afficher sur une zone de dessin ou un carton redimensionnable.
     -   Pages web comportant un objet incorporé, tel qu’une carte.
 
-    **Remarque**  
-    Dans tous les cas, la zone de contenu sera redimensionnée, sauf si tous les points tactiles figurent dans l’objet redimensionnable.
+    **Remarque**  dans tous les cas, la zone de contenu sera redimensionnée, sauf si tous les points tactiles figurent dans l’objet redimensionnable.
 
-     
+     
 
 ## <a name="related-articles"></a>Articles connexes
 
@@ -93,9 +89,9 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
 * [Entrée : exemple de mouvements Windows 8](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [Entrée : exemple de manipulations et de mouvements (C++)](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [Exemple d’entrée tactile DirectX](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

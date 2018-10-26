@@ -6,19 +6,18 @@ ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 8aa2070606f7ef077dfa4392d576f212b2f8ea84
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 0fbbe1978cc59afcc7d681331dadc9a06e3eb2d0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230379"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564440"
 ---
 # <a name="launch-an-app-for-results"></a>Lancer une application pour obtenir des résultats
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -28,7 +27,7 @@ ms.locfileid: "230379"
 
 Découvrez comment démarrer une application à partir d’une autre et échanger des données entre les deux. On parle de *démarrage d’une application pour afficher les résultats*. L’exemple suivant vous montre comment utiliser [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) afin de démarrer une application pour afficher les résultats.
 
-Les nouvelles API de communication entre les applications de Windows 10 permettent aux applications Windows (et aux applications web Windows) de démarrer une application et d’échanger des données et des fichiers. Cela vous permet de créer des solutions hybrides à partir de plusieurs applications. Grâce à ces nouvelles API, les tâches complexes qui, auparavant, auraient obligé l’utilisateur à lancer plusieurs applications, peuvent désormais être gérées de manière transparente. Ainsi, votre application peut démarrer une application de réseau social pour choisir un contact, ou une application de validation d’achat pour effectuer un processus de paiement.
+Nouvelle application-application communication API dans Windows 10 permettent aux Windows applications (et aux applications Web Windows) lancer une application et échanger des données et des fichiers. Cela vous permet de créer des solutions hybrides à partir de plusieurs applications. Grâce à ces nouvelles API, les tâches complexes qui, auparavant, auraient obligé l’utilisateur à lancer plusieurs applications, peuvent désormais être gérées de manière transparente. Ainsi, votre application peut démarrer une application de réseau social pour choisir un contact, ou une application de validation d’achat pour effectuer un processus de paiement.
 
 L’application que vous démarrez pour afficher les résultats sera désignée sous le nom d’application lancée. L’application qui lance l’application sera désignée sous le nom d’application appelante. Pour cet exemple, vous allez écrire l’application appelante et l’application lancée.
 
@@ -204,6 +203,6 @@ transférez-le ensuite à l’application lancée via **LaunchUriForResultsAsync
 * [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686)
 * [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131)
 
- 
+ 
 
- 
+ 

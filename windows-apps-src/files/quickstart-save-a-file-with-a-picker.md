@@ -6,16 +6,14 @@ description: Utilisez FileSavePicker pour permettre aux utilisateurs de spécifi
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 007030d1449768f484db7902fdd74867ff1f701b
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: Auto
+ms.openlocfilehash: 2a053047324fcb795a30951d70c5e0e78fbb5547
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663739"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564618"
 ---
 # <a name="save-a-file-with-a-picker"></a>Enregistrer un fichier avec un sélecteur
 
@@ -27,9 +25,9 @@ ms.locfileid: "1663739"
 Utilisez [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) pour permettre aux utilisateurs de spécifier le nom et l’emplacement où ils souhaitent que votre application enregistre un fichier.
 
 > [!NOTE]
-> Consultez également l’[exemple de sélecteur de fichiers](http://go.microsoft.com/fwlink/p/?linkid=619994).
+> Consultez également l’[exemple de sélecteur de fichiers](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
- 
+ 
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -63,14 +61,14 @@ Définissez des propriétés sur l’objet sélecteur de fichiers qui sont perti
 Cet exemple définit troispropriétés: [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880), [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) et [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878).
 
 > [!NOTE]
-> Les objets [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) affichent le sélecteur de fichiers à l’aide de [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/br207891).
-     
+>Les objets [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) affichent le sélecteur de fichiers à l’aide de [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/br207891).
+     
 - Comme l’utilisateur enregistre un document ou un fichier texte, l’exemple définit [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880) sur le dossier local de l’application, avec la propriété [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621). Définissez [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) sur un emplacement approprié pour le type de fichier enregistré, par exemple, Musique, Images, Vidéos ou Documents. À partir de l’emplacement de départ, l’utilisateur peut accéder à d’autres emplacements.
 
 - Pour nous assurer que l’application puisse ouvrir le fichier une fois celui-ci enregistré, nous utilisons [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) pour spécifier les types de fichiers que l’exemple prend en charge (documents Microsoft Word et fichiers texte). Assurez-vous que tous les types de fichiers que vous spécifiez sont pris en charge par votre application. L’utilisateur peut enregistrer son fichier sous tout type de fichier que vous spécifiez. Il peut également modifier le type de fichier en sélectionnant un autre type que vous avez spécifié. Le premier choix de type de fichier dans la liste est sélectionné par défaut: pour le contrôler, définissez la propriété [**DefaultFileExtension**](https://msdn.microsoft.com/library/windows/apps/br207873).
 
 > [!NOTE]
-> Le sélecteur de fichiers utilise également le type de fichier actuellement sélectionné pour filtrer les fichiers affichés afin que seuls ceux du type sélectionné soient présentés à l’utilisateur.
+> Le sélecteur de fichiers utilise également le type de fichier actuellement sélectionné pour filtrer les fichiers affichés afin que seuls ceux du type sélectionné soient présentés à l’utilisateur.
 
 - Pour faciliter la saisie, l’exemple définit un [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878). Assurez-vous que le nom de fichier suggéré est pertinent pour le fichier enregistré. Par exemple, comme Word, vous pouvez suggérer le nom du fichier existant éventuel, ou la première ligne d’un document si l’utilisateur souhaite enregistrer un fichier qui ne possède pas encore de nom.
 
@@ -109,4 +107,4 @@ Cet exemple définit troispropriétés: [**SuggestedStartLocation**](https://msd
 
 L’exemple vérifie que le fichier est valide et y écrit son propre nom de fichier. Voir aussi [Création, écriture et lecture de fichier](quickstart-reading-and-writing-files.md).
 
-**Conseil** Vous devez toujours vérifier le fichier enregistré pour vous assurer qu’il est valide, avant de poursuivre tout autre traitement. Ensuite, vous pouvez enregistrer du contenu dans le fichier si cela est opportun pour votre application et fournir le comportement approprié si le fichier sélectionné n’est pas valide.
+**Conseil**vous devez toujours vérifier le fichier enregistré pour vous assurer qu’il est valide avant de poursuivre tout autre traitement. Ensuite, vous pouvez enregistrer du contenu dans le fichier si cela est opportun pour votre application et fournir le comportement approprié si le fichier sélectionné n’est pas valide.

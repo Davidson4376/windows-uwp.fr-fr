@@ -6,24 +6,23 @@ ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 88d4b155acb38a3ab11cc180d112fb3434af87a0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 560f820ec2ecc7f28145ec29c31a60c1e4573d7e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "229972"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565426"
 ---
 # <a name="xaml-and-whitespace"></a>XAML et espace blanc
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Découvrez les règles de traitement des espaces blancs utilisées par le langage XAML.
 
 ## <a name="whitespace-processing"></a>Traitement des espaces blancs
 
-En accord avec le langage XML, les caractères d’espace blanc en langage XAML sont l’espace, le saut de ligne et la tabulation. Ces caractères correspondent respectivement aux valeurs Unicode 0020, 000A et 0009. Par défaut, cette normalisation de l’espace blanc se produit lorsqu’un processeur XAML rencontre le texte interne trouvé entre des éléments dans un fichier XAML :
+En accord avec le code XML, les caractères d’espace blanc en XAML sont espace, saut de ligne et la tabulation. Ils correspondent respectivement aux valeurs Unicode 0020, 000 a et 0009. Par défaut, cette normalisation de l’espace blanc se produit lorsqu’un processeur XAML rencontre le texte interne trouvé entre des éléments dans un fichier XAML :
 
 -   Les caractères de saut de ligne d’Asie orientale situés entre des caractères sont supprimés.
 -   Tous les caractères d’espace blanc (espace, saut de ligne, tabulation) sont convertis en espaces.

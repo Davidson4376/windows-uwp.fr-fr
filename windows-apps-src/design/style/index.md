@@ -6,16 +6,14 @@ author: mijacobs
 ms.author: mijacobs
 ms.date: 08/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
-ms.openlocfilehash: d1b9620907c3d5852db35d62f3d971031f3122c4
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 378841414f97abb313584e6bcd033914440713a6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842406"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564853"
 ---
 # <a name="style-for-uwp-apps"></a>Style des applications UWP
 
@@ -23,18 +21,22 @@ ms.locfileid: "1842406"
 
 Le style permet à votre application de se démarquer. Les instructions de style fournies dans cette section vous permettent de créer une conception Fluent Design à l'aide de couleurs, de la typographie et de nouvelles fonctionnalités telles que Matière acrylique et l'effet Révéler.
 
-:::row::: :::column::: ![Image hero](images/header-color.svg)
+:::row:::
+    :::column:::
+        ![hero image](images/header-color.svg)
         ### [Color](color.md)
         Color provides intuitive wayfinding through an app's various levels of information and serves as a crucial tool for reinforcing the interaction model.
     :::column-end:::
     :::column:::
         ![hero image](images/header-typography.svg)
         ### [Typography](typography.md)
-       As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. The following guidelines focus on how to use typography to help users understand content easily. 
+       En tant que représentation visuelle du langage, la typographie doit avant tout apporter de la clarté. Son style doit toujours être aligné sur cet objectif. Les instructions suivantes se concentrer sur l’utilisation de typographie pour aider les utilisateurs à comprendre facilement le contenu. 
     :::column-end:::
 :::row-end:::
 
-:::row::: :::column::: ![Image hero](images/header-icons.svg)
+:::row:::
+    :::column:::
+        ![hero image](images/header-icons.svg)
         ### [Icons](icons.md)
         Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.
     :::column-end:::
@@ -45,7 +47,9 @@ Le style permet à votre application de se démarquer. Les instructions de style
     :::column-end:::
 :::row-end:::
 
-:::row::: :::column::: ![Image hero](images/header-reveal-highlight.svg)
+:::row:::
+    :::column:::
+        ![hero image](images/header-reveal-highlight.svg)
         ### [Reveal highlight](reveal.md)
         Use light to illuminate important elements.
     :::column-end:::
@@ -56,7 +60,9 @@ Le style permet à votre application de se démarquer. Les instructions de style
     :::column-end:::
 :::row-end:::
 
-:::row::: :::column::: ![Image hero](images/header-sound.svg)
+:::row:::
+    :::column:::
+        ![hero image](images/header-sound.svg)
         ### [Sound](sound.md)
         Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.
     :::column-end:::
@@ -67,7 +73,8 @@ Le style permet à votre application de se démarquer. Les instructions de style
     :::column-end:::
 :::row-end:::
 
-:::row::: :::column:::
+:::row:::
+    :::column:::
         ### [XAML styles](../controls-and-patterns/xaml-styles.md)
         You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
     :::column-end:::

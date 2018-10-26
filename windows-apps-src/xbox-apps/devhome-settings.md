@@ -1,28 +1,26 @@
 ---
 author: v-angraf
 ms.assetid: ec3945e7-cfb1-b91a-7ae6-e767a7227f8a
-title: Page Paramètres (développement d’accueil)
-description: Fournit des informations sur la page Paramètres de l’application d’accueil du centre de développement pour une Xbox.
+title: Page des paramètres (Dev Home)
+description: Fournit des informations sur la page Paramètres de l’application Dev Home pour Xbox One.
 ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-settings.html
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e26a5000e6f219f5b617cc806d386cbd9ded298
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: ec27464c2bcece46e4a658cc59ac8ef0b7f390f7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1015599"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568177"
 ---
-# <a name="settings-page-dev-home"></a>Page Paramètres (développement d’accueil)
+# <a name="settings-page-dev-home"></a>Page des paramètres (Dev Home)
    
   
-La page **paramètres** de développement accueil permet d’accéder à différents paramètres de la console de développement.   
- ![Page Paramètres de développement d’origine](images/devhome_settings.png)   
+La page **paramètres** de l’outil accueil du développeur fournit l’accès à différents paramètres pour la console de développement.   
+ ![Page Paramètres de l’outil accueil du développeur](images/devhome_settings.png)   
   
 La page **paramètres** contient les volets suivants:   
  
@@ -41,7 +39,7 @@ La page **paramètres** contient les volets suivants:
 ## <a name="console-settings"></a>Paramètres de la console  
    
   
-Le volet **paramètres de la Console** fournit une vue «en un coup de œil» des informations et les paramètres de la console. Vous pouvez utiliser ces outils pour afficher et modifier le nom d’hôte, bac à sable et paramètres de sécurité accès aux clés de la console.   
+Le volet **paramètres de la Console** fournit une vue «en un coup de œil» des paramètres de la console et des informations. Vous pouvez utiliser ces outils pour afficher et modifier le nom d’hôte de la console, bac à sable et les paramètres de clé de l’accès de sécurité.   
   
 <a id="ID4EOB"></a>
 
@@ -50,7 +48,7 @@ Le volet **paramètres de la Console** fournit une vue «en un coup de œil» de
 ## <a name="os-recovery-update-settings"></a>Paramètres de mise à jour de récupération du système d’exploitation  
    
   
-Le volet **paramètres de mise à jour de récupération du système d’exploitation** configure les paramètres de mise à jour automatique de la console. Notez que les modifications apportées à ces paramètres peut prendre jusqu'à 24 heures prenne effet.   
+Le volet de **récupération du système d’exploitation mettre à jour les paramètres** configure les paramètres de mise à jour automatique de la console. Notez que les modifications apportées à ces paramètres peut prendre jusqu'à 24 heures prennent effet.   
   
 <a id="ID4EYB"></a>
 
@@ -59,7 +57,7 @@ Le volet **paramètres de mise à jour de récupération du système d’exploit
 ## <a name="visual-studio"></a>Visual Studio  
    
   
-Le volet de **Visual Studio** est utilisé pour le couplage de la console avec Visual Studio. Vous pouvez également supprimer toutes les instances de Visual Studio associés.   
+Le volet de **Visual Studio** permet de coupler la console avec Visual Studio. Vous pouvez également supprimer toutes les instances de Visual Studio associés.   
   
 <a id="ID4ECC"></a>
 
@@ -68,7 +66,7 @@ Le volet de **Visual Studio** est utilisé pour le couplage de la console avec V
 ## <a name="debug-settings"></a>Paramètres de débogage  
    
   
-Le volet **paramètres de débogage** est utilisé pour afficher et de faire basculer courantes paramètres de débogage.   
+Le volet **paramètres de débogage** est utilisé pour afficher et activer/désactiver courants paramètres de débogage.   
   
 <a id="ID4EMC"></a>
 
@@ -77,7 +75,7 @@ Le volet **paramètres de débogage** est utilisé pour afficher et de faire bas
 ## <a name="unattended-script-configuration"></a>Configuration de script sans assistance  
    
   
-Le volet **d’assistance de script configuration** gère les scripts d’installation pour les consoles Xbox un.   
+Le volet **assistance script de configuration** gère les scripts d’installation pour les consoles Xbox One.   
   
 <a id="ID4E3C"></a>
 
@@ -86,13 +84,13 @@ Le volet **d’assistance de script configuration** gère les scripts d’instal
 ## <a name="default-home-experience"></a>Expérience d’accueil par défaut  
    
   
-Le volet **Par défaut de l’expérience d’accueil** détermine si l’écran d’accueil de vente au détail ou de l’écran [D’accueil pour les développeurs sur la Console (pour les développeurs d’accueil)](dev-home.md) s’affiche au démarrage de la console.   
+Le volet **Par défaut l’expérience Home** détermine si l’écran d’accueil de vente au détail ou de l’écran [d’Accueil du développeur sur la Console (Dev Home)](dev-home.md) s’affiche au démarrage de la console.   
   
 <a id="ID4EJD"></a>
 
    
 
-## <a name="see-also"></a>Articles associés  
- [Page d’accueil pour les développeurs sur la Console (pour les développeurs d’accueil)](dev-home.md)
+## <a name="see-also"></a>Voir aussi  
+ [Accueil du développeur sur la Console (Dev Home)](dev-home.md)
 
   

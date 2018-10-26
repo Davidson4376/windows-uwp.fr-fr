@@ -6,16 +6,14 @@ keywords: nouveautés, nouveauté, mise à jour, mises à jour, fonctionnalités
 ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ms.localizationpriority: medium
-ms.openlocfilehash: a75776b330d79eca2737a5d615770501887944a7
-ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
-ms.translationtype: HT
+ms.openlocfilehash: a350ff9cd5a2a3ec22637eabbcfc55b693cdd283
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/18/2018
-ms.locfileid: "1523158"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571799"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-14393"></a>Nouveautés pour les développeurs dans Windows10, build14393
 

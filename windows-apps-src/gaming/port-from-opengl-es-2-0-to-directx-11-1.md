@@ -6,16 +6,14 @@ ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, opengl, direct3d11 , portage, graphiques
 ms.localizationpriority: medium
-ms.openlocfilehash: 61ed6c1d419fccd953b7950c3ee0081d7a317774
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 6421f5a5a71828d5234a11bab9e442a5accecda5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652288"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570517"
 ---
 # <a name="port-from-opengl-es-20-to-direct3d-11"></a>Passer d’OpenGL ES 2.0 à Direct3D 11
 
@@ -23,9 +21,9 @@ ms.locfileid: "1652288"
 
 Cette section propose des articles, des vues d’ensemble et des procédures pas à pas concernant le portage d’un pipeline graphique d’OpenGL ES2.0 sur Direct3D11 et sur Windows Runtime.
 
-> **Remarque**  Une étape intermédiaire pour le portage de votre projet OpenGLES2.0 consiste à utiliser ANGLE pour MicrosoftStore. ANGLE vous permet d’exécuter le contenu OpenGL ES sous Windows en convertissant les appels d’API OpenGL ES en appels d’API DirectX11. Pour plus d’informations sur ANGLE, voir le [Wiki ANGLE pour MicrosoftStore](http://go.microsoft.com/fwlink/p/?linkid=618387).
+> **Remarque**  une étape intermédiaire pour le portage de votre projet OpenGL ES 2.0 consiste à utiliser ANGLE pour Microsoft Store. ANGLE vous permet d’exécuter le contenu OpenGL ES sous Windows en convertissant les appels d’API OpenGL ES en appels d’API DirectX11. Pour plus d’informations sur ANGLE, voir le [Wiki ANGLE pour MicrosoftStore](http://go.microsoft.com/fwlink/p/?linkid=618387).
 
- 
+ 
 
 <table>
 <colgroup>
@@ -54,11 +52,11 @@ Cette section propose des articles, des vues d’ensemble et des procédures pas
 </tbody>
 </table>
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

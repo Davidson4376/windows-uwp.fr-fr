@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d78c6e070dd5d29a8e615f70f67507830e5f3938
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: a796897aa786283499c25b0f405e302feeb5f938
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653088"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565062"
 ---
 # <a name="creating-streaming-resources"></a>Création de ressources de diffusion en continu
 
@@ -41,14 +39,14 @@ Ne confondez pas ce concept avec la notion de mappage d’une ressource Direct3D
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="mappings-are-into-a-tile-pool.md">Mappages dans un pool de vignettes</a></p></td>
-<td align="left"><p>Lorsque qu'une ressource est créée en tant que ressource de diffusion en continu, les vignettes qui la constituent proviennent du pointage dans des emplacements d'un pool de vignettes. Un pool de vignettes est un pool de mémoire (pris en charge par une ou plusieurs allocations masquées, auxquelles l'application n'a pas accès).</p></td>
+<td align="left"><p>Lorsqu’une ressource est créée en tant que ressource de diffusion en continu, les vignettes qui la constituent proviennent du pointage dans des emplacements d’un pool de vignettes. Un pool de vignettes est un pool de mémoire (pris en charge par une ou plusieurs allocations masquées, auxquelles l'application n'a pas accès).</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="streaming-resource-creation-parameters.md">Paramètres de création de ressources de diffusion en continu</a></p></td>
@@ -77,16 +75,16 @@ Ne confondez pas ce concept avec la notion de mappage d’une ressource Direct3D
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
 [Ressources de diffusion en continu](streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bede5aabec76371ae336b09544cfdfa5b4995bd
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 15e149a6381a511c66f5c337c8256e5ce5024939
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652263"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571368"
 ---
 # <a name="appendices"></a>Annexes
 
@@ -31,7 +29,7 @@ Les sections suivantes fournissent des informations techniques détaillées.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -55,16 +53,16 @@ Les sections suivantes fournissent des informations techniques détaillées.
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
-[Guide d’apprentissage des graphiques Direct3D](index.md)
+[Guide d’apprentissage des graphismes Direct3D](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

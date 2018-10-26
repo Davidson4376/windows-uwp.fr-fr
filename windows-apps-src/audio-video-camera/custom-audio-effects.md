@@ -5,17 +5,15 @@ title: Effets audio personnalisés
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: 576277ab4bf3d2ea3bfe679da4039da194aabb70
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: a9c62dac489be07a08acc4ad17ecb79bcc54f57a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843259"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565107"
 ---
 # <a name="custom-audio-effects"></a>Effets audio personnalisés
 
@@ -85,7 +83,7 @@ L’accès à la mémoire tampon de données d’une **AudioFrame** nécessite u
 > 2.  Sélectionnez l’onglet **Générer**.
 > 3.  Cochez la case **Autoriser du code unsafe**.
 
- 
+ 
 
 Vous pouvez maintenant ajouter l’implémentation de la méthode **ProcessFrame** à votre effet. Tout d’abord, cette méthode obtient un objet [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.AudioBuffer) à partir des trames audio en entrée et en sortie. Notez que la trame en sortie est ouverte pour l’écriture, et que la trame en entrée l’est pour la lecture. Ensuite, un [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671) est obtenu pour chaque tampon en appelant [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046). Ensuite, le tampon de données réel est obtenu en transtypant les objets **IMemoryBufferReference** en tant qu’interface d’interopérabilité COM définie ci-dessus, **IMemoryByteAccess**, puis en appelant **GetBuffer**.
 
@@ -154,7 +152,7 @@ L’extrait de code suivant illustre l’ajout de l’effet audio personnalisé 
 * [Documentation Win2D](http://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [Lecture de contenu multimédia](media-playback.md)
 
- 
+ 
 
 
 

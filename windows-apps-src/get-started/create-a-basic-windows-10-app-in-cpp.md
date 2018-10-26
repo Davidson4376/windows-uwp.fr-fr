@@ -1,36 +1,35 @@
 ---
 author: GrantMeStrength
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
-title: Créer une application Hello World en C++ (Windows 10)
-description: Microsoft Visual Studio2017 permet d’utiliser C++ pour développer une application exécutable sur des appareils Windows10, y compris sur des téléphones exécutant Windows10. L’interface utilisateur de ces applications est définie en XAML (Extensible Application Markup Language).
+title: Créer un Hello application World en C++ / CX (Windows 10)
+description: Avec Microsoft Visual Studio2017, vous pouvez utiliser C++ / CX pour développer une application qui s’exécute sur Windows 10, y compris sur des téléphones exécutant Windows 10. L’interface utilisateur de ces applications est définie en XAML (Extensible Application Markup Language).
 ms.author: jken
-ms.date: 03/26/2017
+ms.date: 06/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0701266e67be8fde53d4436f0461cb362d6d67df
-ms.sourcegitcommit: 3522d888781ff6f063b129b54760a5cbefd38139
-ms.translationtype: HT
+ms.openlocfilehash: bc2258557c492956130424069e6e0c4b73f28056
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "1937045"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571464"
 ---
-# <a name="create-a-hello-world-app-in-c"></a>Créer une application «HelloWorld» en C++
+# <a name="create-a-hello-world-app-in-ccx"></a>Créer une application «Hello world» en C++ / CX
 
-Avec MicrosoftVisual Studio2017, vous pouvez utiliser C++ pour développer une application qui s’exécute sur Windows10 avec une interface utilisateur définie en XAML (Extensible Application Markup Language).
+> [!IMPORTANT]
+> Ce didacticiel utilise C++ / CX. Microsoft a publié C++ / WinRT: une entièrement standard C ++ 17 projection de langage moderne API Windows Runtime (WinRT). Pour plus d’informations sur cette langue, veuillez consulter [C++ / WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/). 
+
+Avec Microsoft Visual Studio2017, vous pouvez utiliser C++ / CX pour développer une application qui s’exécute sur Windows 10 avec une interface utilisateur qui est définie dans le balisage langage XAML (Extensible Application).
 
 > [!NOTE]
-> Ce didacticiel utilise Visual Studio Community2017. Si vous utilisez une autre version de Visual Studio, son aspect peut vous sembler légèrement différent.
+> Ce didacticiel utilise Visual Studio Community 2017. Si vous utilisez une autre version de Visual Studio, son aspect peut vous sembler légèrement différent.
 
+## <a name="before-you-start"></a>Avant de commencer
 
-## <a name="before-you-start"></a>Avant de commencer...
-
--   Pour suivre ce didacticiel, vous devez utiliser Visual Studio Community2017 ou l'une des versions de Visual Studio2017 autres que Community sur un ordinateur exécutant Windows10. Pour télécharger les éléments nécessaires, voir [Obtenir les outils](http://go.microsoft.com/fwlink/p/?LinkId=532666).
--   Nous supposons que vous avez une connaissance de base du langage C++ standard, du code XAML et des concepts présentés dans [Vue d’ensemble du langage XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595).
+-   Pour suivre ce didacticiel, vous devez utiliser Visual StudioCommunity 2017 ou l’une des versions de Visual Studio2017, autres que Community sur un ordinateur qui exécute Windows 10. Pour télécharger les éléments nécessaires, voir [Obtenir les outils](http://go.microsoft.com/fwlink/p/?LinkId=532666).
+-   Nous supposons que vous avez une connaissance de base de C++ / CX, XAML et les concepts abordés dans [vue d’ensemble du code XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595).
 -   Nous partons du principe que vous utilisez la disposition de fenêtre par défaut dans Visual Studio. Pour rétablir la disposition par défaut, dans la barre de menus, choisissez **Fenêtre** > **Rétablir la disposition de la fenêtre**.
-
 
 ## <a name="comparing-c-desktop-apps-to-windows-apps"></a>Comparatif entre les applications de bureau C++ et les applications Windows
 
@@ -38,7 +37,7 @@ Si vous avez déjà programmé des applications de bureau Windows en C++, vous c
 
 ### <a name="whats-the-same"></a>Points communs
 
--   Vous pouvez utiliser la bibliothèque STL, la bibliothèque CRT (avec quelques exceptions) et toute autre bibliothèque C++ tant que le code n’essaie pas d’appeler des fonctions Windows qui ne sont pas accessibles à partir de l’environnement Windows Runtime.
+-   Vous pouvez utiliser la bibliothèque STL, la bibliothèque CRT (avec quelques exceptions) et toute autre bibliothèque C++ tant que le code appelle uniquement des fonctions Windows qui sont accessibles à partir de l’environnement Windows Runtime.
 
 -   Si vous êtes habitué aux concepteurs visuels, vous pouvez toujours utiliser le concepteur intégré à Microsoft Visual Studio ou utiliser Blend pour Visual Studio qui comporte davantage de fonctionnalités. Si vous avez l’habitude de coder manuellement l’interface utilisateur, vous pouvez procéder de la même façon avec le code XAML.
 
@@ -46,7 +45,7 @@ Si vous avez déjà programmé des applications de bureau Windows en C++, vous c
 
 -   Vous utilisez toujours le débogueur, le profileur et les autres outils de développement de Visual Studio.
 
--   Vous créez toujours des applications qui sont compilées en code machine natif par le compilateur Visual C++. En C++, les applications UWP ne s’exécutent pas dans un environnement d’exécution managé.
+-   Vous créez toujours des applications qui sont compilées en code machine natif par le compilateur Visual C++. Les applications UWP en C++ / CX ne s’exécutent dans un environnement d’exécution managé.
 
 ### <a name="whats-new"></a>Quelles sont les nouveautés ?
 
@@ -62,17 +61,17 @@ Si vous avez déjà programmé des applications de bureau Windows en C++, vous c
 
 -   Dans le Microsoft Store et le Windows Phone Store, votre application est validée comme étant digne de confiance par un processus de certification, puis mise à la disposition de millions de clients potentiels.
 
-## <a name="hello-world-store-app-in-c"></a>Application de Store Hello World en C++
+## <a name="hello-world-store-app-in-ccx"></a>Application de Store Hello World en C++ / CX
 
-Notre première application, intitulée « Hello World », présente certaines fonctionnalités de base en matière d’interactivité, de présentation et de style. Nous allons créer une application à partir du modèle de projet d’application Windows universelle. Si vous avez développé auparavant des applications pour Windows 8.1 et Windows Phone 8.1, vous vous rappelez probablement que vous deviez avoir trois projets dans Visual Studio, l’un pour l’application Windows, l’un pour l’application téléphonique et l’un avec du code partagé. La plateforme Windows universelle (UWP) Windows10 permet de ne disposer que d’un projet, qui s’exécute sur tous les appareils, notamment les ordinateurs de bureau et portables exécutant Windows10, et les appareils tels que les tablettes, les téléphones mobiles, les appareils de réalité virtuelle, etc.
+Notre première application, intitulée « Hello World », présente certaines fonctionnalités de base en matière d’interactivité, de présentation et de style. Nous allons créer une application à partir du modèle de projet d’application Windows universelle. Si vous avez développé des applications pour Windows8.1 et Windows Phone 8.1, vous vous rappelez probablement que vous deviez avoir trois projets dans Visual Studio, un pour l’application Windows, un pour l’application téléphonique et l’autre avec code partagé. Windows 10 Universal Windows Platform (UWP) rend possible d’avoir qu’un seul projet, qui s’exécute sur tous les appareils, y compris les ordinateurs de bureau et portables exécutant Windows 10, les appareils tels que les tablettes, les téléphones mobiles, les appareils de réalité virtuelle, et ainsi de suite.
 
 Commençons par les bases:
 
--   Créer un projet Windows universel dans Visual Studio2017.
+-   Découvrez comment créer un projet Windows universel dans Visual Studio2017.
 
 -   Comprendre les projets et fichiers qui sont créés.
 
--   Comprendre les extensions de composant Visual C++ (C++/CX) et savoir quand les utiliser.
+-   Comprendre les extensions dans les extensions de composant Visual c++ (C++ / CX) et quand les utiliser.
 
 **Créer une solution dans Visual Studio**
 
@@ -89,7 +88,7 @@ Commençons par les bases:
 
 4.  Entrez un nom pour le projet. Appelons-le HelloWorld.
 
- ![Modèles de projet C++ dans la boîte de dialogue Nouveau projet ](images/vs2017-uwp-01.png)
+ ![C++ / modèles de projet CX dans la boîte de dialogue Nouveau projet ](images/vs2017-uwp-01.png)
 
 5.  Choisissez le bouton **OK**.
 
@@ -104,7 +103,7 @@ Avant de continuer, examinons de plus près ce que contient la solution.
 
 ### <a name="about-the-project-files"></a>À propos des fichiers de projet
 
-Chaque fichier .xaml inclus dans un dossier de projet est associé à un fichier .xaml.h et à un fichier .xaml.cpp correspondants dans le même dossier, ainsi qu’à un fichier .g et à un fichier .g.hpp dans le dossier Fichiers générés qui figure sur le disque mais ne fait pas partie du projet. Vous modifiez les fichiers XAML pour créer des éléments d’interface utilisateur et les connecter à des sources de données (DataBinding). Vous modifiez les fichiers .h et .cpp pour ajouter une logique personnalisée pour des gestionnaires d’événements. Les fichiers auto-générés représentent la transformation du balisage XAML en C++. Ne modifiez pas ces fichiers, mais étudiez-les pour mieux comprendre comment fonctionne le code-behind. En gros, le fichier généré contient une définition de classe partielle pour un élément racine XAML ; cette classe est la même que celle que vous modifiez dans les fichiers \*.xaml.h et .cpp. Les fichiers générés déclarent les éléments enfants d’interface utilisateur XAML en tant que membres de classe pour que vous puissiez les référencer dans le code que vous écrivez. Au moment de la génération, le code généré et votre code sont fusionnés dans une définition de classe complète, puis compilés.
+Chaque fichier .xaml inclus dans un dossier de projet est associé à un fichier .xaml.h et à un fichier .xaml.cpp correspondants dans le même dossier, ainsi qu’à un fichier .g et à un fichier .g.hpp dans le dossier Fichiers générés qui figure sur le disque mais ne fait pas partie du projet. Vous modifiez les fichiers XAML pour créer des éléments d’interface utilisateur et les connecter à des sources de données (DataBinding). Vous modifiez les fichiers .h et .cpp pour ajouter une logique personnalisée pour des gestionnaires d’événements. Les fichiers auto-générés représentent la transformation du balisage XAML en C++ / CX. Ne modifiez pas ces fichiers, mais étudiez-les pour mieux comprendre comment fonctionne le code-behind. En gros, le fichier généré contient une définition de classe partielle pour un élément racine XAML ; cette classe est la même que celle que vous modifiez dans les fichiers \*.xaml.h et .cpp. Les fichiers générés déclarent les éléments enfants d’interface utilisateur XAML en tant que membres de classe pour que vous puissiez les référencer dans le code que vous écrivez. Au moment de la génération, le code généré et votre code sont fusionnés dans une définition de classe complète, puis compilés.
 
 Examinons tout d’abord les fichiers de projet.
 
@@ -120,7 +119,7 @@ Si vous examinez le code dans les fichiers App.xaml.h et App.xaml.cpp dans le pr
 
 **Classes ref**
 
-Presque toutes les classes Windows Runtime, qui incluent tous les types de l’API Windows (les contrôles XAML, les pages dans votre application, la classe App elle-même, tous les objets appareil et réseau, tous les types de conteneurs) sont déclarées sous forme de **ref class**. (Quelques types Windows correspondent à une **value class** ou **value struct**). Une classe ref est consommable à partir de tous les langages. En C++, la durée de vie de ces types est régie par le décompte de références automatique (et non le nettoyage de la mémoire), si bien que vous ne supprimez jamais explicitement ces objets. Vous pouvez créer vos propres classes ref également.
+Presque toutes les classes Windows Runtime, qui incluent tous les types de l’API Windows (les contrôles XAML, les pages dans votre application, la classe App elle-même, tous les objets appareil et réseau, tous les types de conteneurs) sont déclarées sous forme de **ref class**. (Quelques types Windows correspondent à une **value class** ou **value struct**). Une classe ref est consommable à partir de tous les langages. En C++ / CX, la durée de vie de ces types est régie par automatique décompte de références (pas le garbage collection) afin que vous ne supprimez jamais explicitement ces objets. Vous pouvez créer vos propres classes ref également.
 
 ```cpp
 namespace HelloWorld
@@ -310,7 +309,7 @@ Il est très simple de personnaliser l’apparence d’une application. Par déf
 
 Quel thème utiliser ? Tout est question de goût personnel. Toutefois, nous recommandons le thème à dominante foncée pour les applications qui affichent essentiellement des images ou de la vidéo, et le thème à dominante claire pour les applications qui contiennent beaucoup de texte. Si vous recourez à un modèle de couleurs personnalisé, utilisez le thème qui s’accorde le mieux à l’apparence de votre application. Dans le reste de ce didacticiel, nous utilisons le thème à dominante claire dans les captures d’écran.
 
-**Remarque** Le thème s’applique au démarrage de l’application et n’est pas modifiable pendant l’exécution de celle-ci.
+**Remarque**le thème s’applique au démarrage de l’application et ne peut pas être modifiée pendant l’exécution de l’application.
 
 ### <a name="using-system-styles"></a>Utilisation de styles système
 
@@ -332,12 +331,12 @@ Pour l’heure, le texte de l’application Windows est de très petite taille e
      Dans l’aire de conception XAML, l’apparence du texte change. Dans l’éditeur XAML, le code XAML de [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) est mis à jour :
 
     ```xaml
-    <TextBlock Text="What's your name?" Style="{StaticResource BaseTextStyle}"/>
+    <TextBlock Text="What's your name?" Style="{ThemeResource BaseTextBlockStyle}"/>
     ```
 
 7.  Répétez le processus pour définir la taille de la police et affectez **BaseTextBlockStyle** à l’élément `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652).
 
-    **Conseil** Bien que le [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) ne contienne pas de texte, quand vous placez le pointeur au-dessus de l’aire de conception XAML, un contour bleu indique son emplacement pour vous permettre de le sélectionner.  
+    **Conseil**bien qu’il n’existe aucun texte dans ce [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), lorsque vous déplacez le pointeur au-dessus de l’aire de conception XAML, un contour bleu indique où il s’agit afin que vous pouvez le sélectionner.  
 
     Votre code XAML doit maintenant se présenter ainsi:
 
@@ -407,7 +406,7 @@ C’est ici que prend fin le premier didacticiel. Il vous a appris à ajouter du
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Si votre projet d’application Windows universelle cible Windows 8.1 et/ou Windows Phone 8.1, vous pouvez le porter vers Windows 10. Aucune procédure automatique n’existe pour ce faire, mais vous pouvez effectuer le portage manuellement. Commencez par un nouveau projet Windows universel pour obtenir la dernière structure du système de projet et les derniers fichiers manifeste, copiez vos fichiers de code dans la structure de répertoire du projet, ajoutez les éléments à votre projet, puis réécrivez votre code XAML à l’aide du [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) en suivant les recommandations de cette rubrique. Pour plus d’informations, voir [Portage d’un projet Windows Runtime 8 vers un projet de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/library/windows/apps/Mt188203) et [Portage vers la plateforme Windows universelle (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525).
+Si vous avez un projet d’application Windows universelle qui cible Windows8.1 et/ou Windows Phone 8.1, vous pouvez le porter vers Windows 10. Aucune procédure automatique n’existe pour ce faire, mais vous pouvez effectuer le portage manuellement. Commencez par un nouveau projet Windows universel pour obtenir la dernière structure du système de projet et les derniers fichiers manifeste, copiez vos fichiers de code dans la structure de répertoire du projet, ajoutez les éléments à votre projet, puis réécrivez votre code XAML à l’aide du [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) en suivant les recommandations de cette rubrique. Pour plus d’informations, voir [Portage d’un projet Windows Runtime 8 vers un projet de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/library/windows/apps/Mt188203) et [Portage vers la plateforme Windows universelle (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525).
 
 Si vous disposez de code C++ existant que vous souhaitez intégrer avec une application UWP, par exemple, pour créer une interface utilisateur UWP pour une application existante, voir [Utilisation de code C++ existant dans un projet Windows universel](http://go.microsoft.com/fwlink/p/?LinkId=619623).
 

@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 84036edd2071d9545b3a492ea5cf0b397d9e722e
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 5846edda167823b7ae161d332fbde450ccf20d72
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044428"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572165"
 ---
 # <a name="diffuse-lighting"></a>Éclairage diffus
 
@@ -41,7 +39,7 @@ Il est possible de calculer l’éclairage diffus en utilisant l’équation sui
 | Atten           | Non applicable           | FLOAT         | Atténuation de la lumière. Voir [Atténuation et facteur de point lumineux](attenuation-and-spotlight-factor.md). |
 | Pt lum            | Non applicable           | FLOAT         | Facteur de point lumineux. Voir [Atténuation et facteur de point lumineux](attenuation-and-spotlight-factor.md).  |
 
- 
+ 
 
 Pour calculer l’atténuation (Atten) ou les caractéristiques de point lumineux (Spot), consultez l’article [Atténuation et facteur de point lumineux](attenuation-and-spotlight-factor.md).
 
@@ -73,9 +71,9 @@ L’éclairage diffus est plus difficile à calculer que l’éclairage ambiant.
 
 [Formules mathématiques d’éclairage](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

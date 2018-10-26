@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 211e0b6dc2c6e2872ca20d4711ef6d41d4974e5c
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: d2a9745e35f19066b094b2be187620858166dbd5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652458"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566357"
 ---
 # <a name="fade-animations"></a>Animations en fondu
 
@@ -44,9 +42,9 @@ Utilisez les animations en fondu pour faire apparaître ou disparaître des él�
 * [**Classe FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210298)
 * [**Classe FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
- 
+ 
 
- 
+ 
 
 
 

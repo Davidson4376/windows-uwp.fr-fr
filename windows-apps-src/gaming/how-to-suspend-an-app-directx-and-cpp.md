@@ -6,19 +6,18 @@ ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, suspendre, directx
-ms.openlocfilehash: 028350f3e4bf6bda5a72663c009e8117c9311b3e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 204d61430f59c820e9ef9ef36832cd1c24ee7f9c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228735"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569650"
 ---
-# <a name="how-to-suspend-an-app-directx-and-c"></a>Suspension d’une application (DirectX et C++)
+# <a name="how-to-suspend-an-app-directx-and-c"></a>Comment suspendre une application (DirectX et C++)
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette rubrique montre comment enregistrer des données importantes relatives à l’état du système et aux applications lorsque le système interrompt l’exécution de votre application DirectX de plateforme Windows universelle.
 
@@ -100,7 +99,7 @@ void App::Run()
 ## <a name="call-trim"></a>Appeler Trim()
 
 
-À compter de Windows 8.1, toutes les applications du Windows Store DirectX doivent appeler [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) quand elles sont mises en suspens. Cet appel donne instruction au pilote graphique de libérer toutes les mémoires tampons temporaires allouées pour l’application, ce qui limite les chances de voir l’application se terminer pour cause de récupération des ressources de mémoire pendant qu’elle est à l’état de suspension. Il s’agit d’une condition de certification pour Windows 8.1.
+À compter de Windows8.1, toutes les applications DirectX UWP doivent appeler [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) lors de la suspension. Cet appel donne instruction au pilote graphique de libérer toutes les mémoires tampons temporaires allouées pour l’application, ce qui limite les chances de voir l’application se terminer pour cause de récupération des ressources de mémoire pendant qu’elle est à l’état de suspension. Il s’agit d’une condition de certification pour Windows8.1.
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -151,9 +150,9 @@ Le système ne vous notifie pas de l’arrêt d’une application. Celle-ci doit
 * [Comment relancer une application (DirectX et C++)](how-to-resume-an-app-directx-and-cpp.md)
 * [Comment activer une application (DirectX et C++)](how-to-activate-an-app-directx-and-cpp.md)
 
- 
+ 
 
- 
+ 
 
 
 

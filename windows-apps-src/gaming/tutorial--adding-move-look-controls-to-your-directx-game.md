@@ -6,19 +6,18 @@ ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, déplacement/vue, contrôles
-ms.openlocfilehash: 40af05538aa6a6fff6e159fe8aa8812090e8b44b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 219d014eb03803ace440dc1c1773043a9ecbc99f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230404"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566140"
 ---
 # <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>Contrôles de déplacement/vue pour les jeux
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Découvrez comment ajouter des contrôles de déplacement/vue de souris et de clavier classiques (également connus sous le nom de contrôles de vue à la souris) à votre jeu DirectX.
 
@@ -580,14 +579,11 @@ myFirstPersonCamera->SetViewParameters(
 
 Félicitations ! Vous avez implémenté des contrôles de déplacement/vue de base à la fois pour les écrans tactiles et les contrôles d’entrée par souris/clavier dans votre jeu!
 
-> **Remarque**  
-Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
- 
 
- 
+ 
 
- 
+ 
 
 
 

@@ -5,16 +5,14 @@ title: Obtenir les données d’analyse
 ms.author: mhopkins
 ms.date: 07/31/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, des informations
 ms.localizationpriority: medium
-ms.openlocfilehash: 30b9303fc44f557210c9ba80a2a135f77909dc10
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: ff70f38ff636b0b1d885981fb9e353ac9afe69c2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478795"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569972"
 ---
 # <a name="get-insights-data"></a>Obtenir les données d’analyse
 

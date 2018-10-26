@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f4d40360833596b9ef9eed97c426a5ec90db353
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9c6ada4bd964a9430d6ef47bd46f954ca76c404a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043958"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565127"
 ---
 # <a name="world-transform"></a>Transformation universelle
 
@@ -44,9 +42,9 @@ Direct3D utilise les matrices universelles et d'affichage que vous définissez p
 
 [Transformations](transforms.md)
 
- 
+ 
 
- 
+ 
 
 
 

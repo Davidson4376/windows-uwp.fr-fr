@@ -6,16 +6,14 @@ description: Déterminez si un fichier MicrosoftOneDrive est disponible à l’a
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c5de157d320b401fdc0e542eb0f1bdc241e2f21
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 87eb93fbc100d143ab9fe75d34bb9c4d2caaf01d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "459762"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569710"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>Détermination de la disponibilité des fichiers Microsoft OneDrive
 
@@ -51,7 +49,7 @@ Les utilisateurs peuvent marquer les fichiers OneDrive comme étant disponibles 
 | Fichier OneDrive marqué comme étant en ligne uniquement       | True   | Dépend des paramètres utilisateur | False   |
 | Fichier réseau                              | True   | Dépend des paramètres utilisateur | False   |
 
- 
+ 
 
 Les étapes suivantes illustrent comment déterminer si un fichier est actuellement disponible.
 

@@ -6,16 +6,14 @@ ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, jeux, directx, port, direct3d9, direct3d11
 ms.localizationpriority: medium
-ms.openlocfilehash: 97cb8341497ad72ab6b4b4f50a7cfbd7bdb4afb7
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: bd0a8c07be58d670e60aa3a23504d3f5119e6b50
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653098"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569135"
 ---
 # <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>Procédure pas à pas: Porter une application Direct3D9 simple vers DirectX11 et la plateforme Windows universelle (UWP)
 
@@ -50,7 +48,7 @@ Cet exercice de portage indique comment faire passer une infrastructure de rendu
 </tbody>
 </table>
 
- 
+ 
 
 Cette rubrique examine progressivement deux chemins de code qui effectuent la même tâche graphique de base: afficher un cube en forme de vertex qui tourne. Dans les deux cas, le code couvre le processus suivant :
 
@@ -72,7 +70,7 @@ Notez que cette procédure pas à pas utilise [**CoreWindow**](https://msdn.micr
 ## <a name="prerequisites"></a>Conditions préalables
 
 
-Vous devez [Préparer votre environnement pour le développement de jeux UWP DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Vous n’avez pas encore besoin de modèle, mais Microsoft Visual Studio 2015 est nécessaire pour charger les exemples de code de cette procédure pas à pas.
+Vous devez [Préparer votre environnement pour le développement de jeux UWP DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Vous n’avez pas besoin un modèle encore, mais vous devez Studio2015 Visual Microsoft pour charger les exemples de code pour cette procédure pas à pas.
 
 Pour vous familiariser avec les concepts de programmation pour DirectX11 et UWP présentés dans cette procédure pas à pas, voir les [concepts et considérations en matière de portage](porting-considerations.md).
 

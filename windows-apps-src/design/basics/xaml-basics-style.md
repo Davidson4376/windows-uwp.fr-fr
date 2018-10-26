@@ -6,15 +6,13 @@ keywords: XAML, UWP, Prise en main
 ms.author: mijacobs
 ms.date: 08/31/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 45510b8129a69641fdb64c13939ccb9b4376a654
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 11f279de206a84e61144789ba43a268f2b896fee
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674946"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570187"
 ---
 # <a name="tutorial-create-custom-styles"></a>Didacticiel: Créer des styles personnalisés
 
@@ -64,8 +62,7 @@ Le curseur d’exposition ajuste l’exposition de l’image: faites-le glisser 
 
     L'[espace de noms Windows.XAML.Ui.Shapes](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes) fournit sept formes au choix. Vous pouvez choisir une ellipse, un rectangle, et un objet appelé Path, qui permet de réaliser toutes sortes de formes, et oui, même une licorne! 
     
-    <!-- TODO reduce size -->
-    ![Une licorne](../basics/images/xaml-basics/unicorn.png)
+    <!-- TODO reduce size --> ![Une licorne](../basics/images/xaml-basics/unicorn.png)
     
     > **Pour en savoir plus:** l'article [Dessiner des formes](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes) vous explique tout ce que vous devez savoir sur les formes XAML. 
     

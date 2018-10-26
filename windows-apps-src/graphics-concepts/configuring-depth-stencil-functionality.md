@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 181b958009a5537f7adccb1b784dacde06fe21d4
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 3c15ff6aa43540b61b410525e6bb20a0de3da821
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044768"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570789"
 ---
 # <a name="span-iddirect3dconceptsconfiguringdepth-stencilfunctionalityspanconfiguring-depth-stencil-functionality"></a><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>Configuration de la fonctionnalité de profondeur-gabarit
 
@@ -87,7 +85,7 @@ Les volumes d’ombre sont utilisés pour dessiner des ombres avec la mémoire t
 
 Le premier rendu dessine des polygones orientés vers l'avant et incrémente les valeurs de mémoire tampon de gabarit. Le deuxième rendu dessine des polygones orientés vers l'arrière du volume d'ombre et décrémente les valeurs de mémoire tampon de gabarit.
 
-Normalement, toutes les valeurs incrémentés ou décrémente annulent à la sortie. Toutefois, la séquence a été déjà rendue avec géométrie normale à l’origine de certains pixels Échec du test de tampon z comme le volume des clichés instantanés s’affiche. Les valeurs conservées dans la mémoire tampon de gabarit correspondent aux pixels qui se trouvent dans l’ombre. Ces contenus restants de la mémoire tampon de gabarit sont utilisés en tant que masque, afin de fusionner à l'aide du canal alpha une grande zone entièrement cernée de noir dans la scène.$$$ Lorsque la mémoire tampon de gabarit agit en tant que masque, le résultat consiste à obscurcir les pixels qui sont dans les ombres.
+En règle générale, toutes les valeurs incrémentées et décrémenter incrémentées. Toutefois, la scène avait déjà été rendue avec une géométrie normale à l’origine de certains pixels au échouent au test de tampon z-buffer mesure que le volume d’ombre était rendu. Les valeurs conservées dans la mémoire tampon de gabarit correspondent aux pixels qui se trouvent dans l’ombre. Ces contenus restants de la mémoire tampon de gabarit sont utilisés en tant que masque, afin de fusionner à l'aide du canal alpha une grande zone entièrement cernée de noir dans la scène.$$$ Lorsque la mémoire tampon de gabarit agit en tant que masque, le résultat consiste à obscurcir les pixels qui sont dans les ombres.
 
 Cela signifie que la géométrie d'ombre est dessinée deux fois pour chaque source de lumière, ce qui met la pression sur le débit de vertex du GPU. La fonctionnalité de gabarit recto-verso a été créée pour atténuer cette situation. Dans cette approche, il existe deux jeux d'états de gabarit (indiqués ci-dessous), le premier permet de définir les valeurs des triangles orientés vers l'avant et l’autre celles des triangles orientés vers l'arrière.$$$ De cette façon, un seul passage est dessiné par volume d'ombre, par lumière.
 

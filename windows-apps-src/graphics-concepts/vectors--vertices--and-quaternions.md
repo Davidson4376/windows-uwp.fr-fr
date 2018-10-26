@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fe5a112b9e991f528225421307880d2ac6e1a381
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 2373d18b51015652bc1ef3035402e1da95a54abf
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043548"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568724"
 ---
 # <a name="vectors-vertices-and-quaternions"></a>Vecteurs, sommets et quaternions
 
@@ -40,9 +38,9 @@ Lorsque vous utilisez la composition et l'interpolation ensemble, cela permet de
 
 [Systèmes de coordonnées et géométrie](coordinate-systems-and-geometry.md)
 
- 
+ 
 
- 
+ 
 
 
 

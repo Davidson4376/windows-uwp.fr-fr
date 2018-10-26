@@ -5,20 +5,18 @@ description: Utilisez des classes KeyFrameAnimation pour modifier votre interfac
 ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: c2b349938b22ca1097299bd4c80b75cff2629f07
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: bf6d3f16c7b240ca370c01a787fef09862f35863
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673746"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568816"
 ---
 # <a name="time-based-animations"></a>Animations basées sur le temps
 
-Quand un composant ou l'intégralité de l'interface utilisateur change, les utilisateurs finaux l'observent souvent de deux manières: au fil du temps ou instantanément. Sur la plateforme Windows, le premier cas est privilégié par rapport au dernier: les expériences utilisateur qui changent instantanément troublent et surprennent souvent les utilisateurs finaux, car ils n'arrivent pas à suivre ce qui se passe. L’utilisateur final perçoit alors l’expérience comme saccadée et anormale.
+Quand un composant ou l'intégralité de l'interface utilisateur change, les utilisateurs finaux l'observent souvent de deux manières: au fil du temps ou instantanément. Sur la plateforme Windows, le premier est préféré à ce dernier: les expériences utilisateur qui changent instantanément souvent et surprennent les utilisateurs finaux, car elles ne sont pas en mesure de suivre ce qui se passe. L’utilisateur final perçoit alors l’expérience comme saccadée et anormale.
 
 Vous pouvez plutôt modifier votre interface utilisateur au fil du temps pour guider l’utilisateur final ou l'informer des modifications apportées à l’expérience. Sur la plateforme Windows, cela s'effectue à l'aide d’animations basées sur le temps, également appelées KeyFrameAnimations. Les KeyFrameAnimations vous permettent de modifier une interface utilisateur au fil du temps et de contrôler chaque aspect de l’animation, notamment quand et comment elle démarre, et comment elle atteint son état de fin. Par exemple, l’animation d’un objet pour le déplacer vers une nouvelle position pendant 300millisecondes est plus agréable qu’une «téléportation» instantanée. Lorsque vous utilisez des animations au lieu de modifications instantanées, vous obtenez une expérience plus agréable et plus attrayante.
 
@@ -86,17 +84,17 @@ Tout d’abord, vous démarrez en identifiant le CompositionObject et la propri�
 Ensuite, comme vous voulez animer la propriété Offset, vous devez créer un Vector3KeyFrameAnimation (Offset est de type Vector3). Vous définissez également les images clés correspondantes pour la KeyFrameAnimation.
 
 ```csharp
-    Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
-    animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
+    Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
+    animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
 ```
 
 Ensuite, nous allons définir les propriétés de la KeyFrameAnimation pour décrire sa durée, ainsi que le comportement à animer 10fois entre les deux positions (actuelle et <200,0,0>).
 
 ```csharp
-    animation.Duration = TimeSpan.FromSeconds(2);
-    animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
-    // Run animation for 10 times
-    animation.IterationCount = 10;
+    animation.Duration = TimeSpan.FromSeconds(2);
+    animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
+    // Run animation for 10 times
+    animation.IterationCount = 10;
 ```
 
 Enfin, pour exécuter une animation, vous devez la démarrer sur une propriété d’un CompositionObject.
@@ -109,13 +107,13 @@ Voici le code complet:
 
 ```csharp
 private void AnimateSquare(Compositor compositor, SpriteVisual redSquare)
-{ 
-    Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
-    animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
-    animation.Duration = TimeSpan.FromSeconds(2);
-    animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
-    // Run animation for 10 times
-    animation.IterationCount = 10;
-    visual.StartAnimation("Offset.X", animation);
-} 
+{ 
+    Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
+    animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
+    animation.Duration = TimeSpan.FromSeconds(2);
+    animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
+    // Run animation for 10 times
+    animation.IterationCount = 10;
+    visual.StartAnimation("Offset.X", animation);
+} 
 ```

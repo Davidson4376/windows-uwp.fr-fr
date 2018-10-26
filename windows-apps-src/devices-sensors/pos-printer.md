@@ -5,23 +5,21 @@ description: Cet article répertorie les fonctionnalités POSPrinter disponibles
 ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: be6c8e0a0d7c8197043e0fcaa150c360b66b4be4
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: 1adaf2b7df04a6e60d5d2ea37167cd4d5c55c42c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833136"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565738"
 ---
 # <a name="posprinter"></a>POSPrinter
 
 Cette section fournit des conseils pour créer des applications de plateforme Windows universelle (UWP) qui utilisent une imprimante de point de service (POSPrinter).
 
 ## <a name="in-this-section"></a>Dans cette section
-|Article |Description |
+|Rubrique |Description |
 |------|------------|
 | [Epson ESC/POS avec mise en forme](epson-esc-pos-with-formatting.md) | Découvrez comment utiliser le langage de commandes ESC/POS pour mettre en forme le texte, par exemple pour le mettre en gras ou pour doubler la taille des caractères, pour l’imprimante de votre Point de service. |
 |

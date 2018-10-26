@@ -6,19 +6,18 @@ ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux , portage, nuanceur, direct3d, opengl
-ms.openlocfilehash: f683e8b6ad04b1350adae1c962da09e2f15f5cec
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: bbf7e05a93ccce4188d62f9800a5f225be713cc6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228869"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567221"
 ---
 # <a name="port-the-shader-objects"></a>Porter les objets nuanceur
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -28,9 +27,9 @@ ms.locfileid: "228869"
 
 Dans le cadre du portage du convertisseur simple OpenGLES2.0, vous devez commencer par créer les objets des nuanceurs de vertex et de fragments équivalents dans Direct3D11, mais également vous assurer que le programme principal sera en mesure de communiquer avec ces différents objets une fois compilés.
 
-> **Remarque** Si vous n’avez pas encore créé de projet Direct3D, suivez les instructions fournies dans l’article [Créer un projet DirectX 11 pour la plateforme Windows universelle (UWP)](user-interface.md). Cette procédure pas à pas suppose que vous disposez des ressources DXGI et Direct3D nécessaires pour le dessin à l’écran (celles fournies dans le modèle).
+> **Remarque**  vous avez créé un nouveau projet Direct3D? suivez les instructions fournies dans l’article [Créer un projet DirectX 11 pour la plateforme Windows universelle (UWP)](user-interface.md). Cette procédure pas à pas suppose que vous disposez des ressources DXGI et Direct3D nécessaires pour le dessin à l’écran (celles fournies dans le modèle).
 
- 
+ 
 
 De la même façon que dans OpenGL ES 2.0, les nuanceurs compilés dans Direct3D doivent être associés à un contexte de dessin. Toutefois, comme Direct3D n’utilise pas le concept d’objet programme de nuanceur, vous devez à la place affecter directement les nuanceurs à un objet [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385). Cette étape, qui suit le processus OpenGLES2.0 de création et de liaison d’objets nuanceur, vous permet d’obtenir les comportements d’API correspondants dans Direct3D.
 
@@ -81,9 +80,9 @@ GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
 
 Dans Direct3D, les nuanceurs ne sont pas compilés au moment de l’exécution : ils sont toujours compilés dans des fichiers CSO en même temps que les autres éléments du programme. Lorsque vous compilez votre application avec Microsoft Visual Studio, les fichiers HLSL sont compilés dans des fichiers CSO (.cso) que votre application doit ensuite charger. Vous devez donc veiller à bien inclure ces fichiers CSO dans le package de votre application!
 
-> **Remarque** L’exemple suivant utilise le mot clé **auto** et la syntaxe lambda pour effectuer le chargement et la compilation du nuanceur en mode asynchrone. La méthode ReadDataAsync(), implémentée pour le modèle, lit les données d’un fichier CSO sous forme de tableau d’octets (fileData).
+> **Remarque**  l’exemple suivant exécute le nuanceur de chargement et la compilation en mode asynchrone à l’aide de la syntaxe de mot clé et lambda **automatique** . La méthode ReadDataAsync(), implémentée pour le modèle, lit les données d’un fichier CSO sous forme de tableau d’octets (fileData).
 
- 
+ 
 
 Direct3D11: compiler un nuanceur
 
@@ -319,9 +318,9 @@ La mémoire tampon de vertex est créée et mise à jour de manière similaire. 
 
 [Dessiner à l’écran](draw-to-the-screen.md)
 
- 
+ 
 
- 
+ 
 
 
 

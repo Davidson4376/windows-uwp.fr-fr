@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: defea1e9adbb4d0f9edb24c936069191944b94be
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 4dd319c686bebf2a30431017f399f48b08618cb6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044718"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569215"
 ---
 # <a name="viewports-and-clipping"></a>Fenêtres d’affichage et découpage
 
@@ -49,9 +47,9 @@ Les valeurs que vous spécifiez pour les membres X, Y, largeur, hauteur sont des
 
 Direct3D suppose que le volume de découpage de la fenêtre d’affichage est compris entre -1,0 et 1,0dans X et entre 1,0 est -1,0dans Y. Il s’agit des paramètres les plus souvent utilisés autrefois par les applications. Vous pouvez ajuster les proportions de la fenêtre d’affichage avant découpage en utilisant la [transformation de projection](projection-transform.md).
 
-**Remarque**   MaxZ et MinZ indiquent les plages de profondeur dans lesquelles la scène sera rendue et ne sont pas utilisés pour le découpage. La plupart des applications attribuent0,0 et1,0 à ces valeurs pour permettre au système de réaliser le rendu sur l’ensemble des valeurs de profondeur du tampon de profondeur. Dans certains cas, vous pouvez obtenir des effets spéciaux en utilisant d’autres plages de profondeur. Par exemple, pour restituer un affichage à tête haute dans un jeu, vous pouvez attribuer0,0 aux deux valeurs pour forcer le système à rendre les objets dans une scène au premier plan, ou leur attribuer1.0 pour rendre un objet qui doit toujours se trouver en arrière-plan.
+**Remarque**  MaxZ et MinZ indiquent les plages de profondeur dans lesquelles la scène sera rendue et ne sont pas utilisés pour le découpage. La plupart des applications attribuent0,0 et1,0 à ces valeurs pour permettre au système de réaliser le rendu sur l’ensemble des valeurs de profondeur du tampon de profondeur. Dans certains cas, vous pouvez obtenir des effets spéciaux en utilisant d’autres plages de profondeur. Par exemple, pour restituer un affichage à tête haute dans un jeu, vous pouvez attribuer0,0 aux deux valeurs pour forcer le système à rendre les objets dans une scène au premier plan, ou leur attribuer1.0 pour rendre un objet qui doit toujours se trouver en arrière-plan.
 
- 
+ 
 
 Les dimensions utilisées dans les membres X, Y, largeur, hauteur d’une structure de fenêtre d’affichage définissent l’emplacement et les dimensions de la fenêtre d’affichage sur la surface de la cible de rendu. Ces valeurs sont exprimées en coordonnées d’écran par rapport à l’angle supérieur gauche de la surface.
 
@@ -61,9 +59,9 @@ Direct3D utilise l’emplacement et les dimensions de la fenêtre d’affichage 
 
 Cette matrice adapte les vertex en fonction des dimensions de la fenêtre d’affichage et de la plage de profondeur désirée et les translate vers l’emplacement approprié sur la surface de la cible de rendu. La matrice renverse également la coordonnéey afin de refléter une origine de l’écran dans le coin supérieur gauche avec ycroissant vers le bas. Une fois cette matrice appliquée, les vertex sont toujours homogènes (autrement dit, ils existent toujours en tant que sommets \[x,y,z,w\]) et doivent être convertis en coordonnées non homogènes avant d’être envoyés vers le rastériseur.
 
-**Remarque**   Les applications attribuent généralement les valeurs 0,0 et 1,0 à MinZ et MaxZ, respectivement, afin que le système rende l'intégralité de la plage de profondeur. Vous pouvez cependant utiliser d'autres valeurs pour obtenir certains effets. Par exemple, vous pouvez attribuer 0,0 aux deux valeurs pour forcer tous les objets au premier plan, ou leur attribuer 1,0 pour afficher tous les objets à l'arrière-plan.
+**Remarque**  Applications attribuent généralement les MinZ et MaxZ à 0,0 et 1,0 respectivement afin que le système pour le rendu à la plage de profondeur entière. Vous pouvez cependant utiliser d'autres valeurs pour obtenir certains effets. Par exemple, vous pouvez attribuer 0,0 aux deux valeurs pour forcer tous les objets au premier plan, ou leur attribuer 1,0 pour afficher tous les objets à l'arrière-plan.
 
- 
+ 
 
 ## <a name="span-idclearingaviewportspanspan-idclearingaviewportspanspan-idclearingaviewportspanclearing-a-viewport"></a><span id="Clearing_a_Viewport"></span><span id="clearing_a_viewport"></span><span id="CLEARING_A_VIEWPORT"></span>Effacement d’une fenêtre d’affichage
 
@@ -88,9 +86,9 @@ Où: x, y, z et w représentent le vertex des coordonnées après l'application 
 
 [Systèmes de coordonnées et géométrie](coordinate-systems-and-geometry.md)
 
- 
+ 
 
- 
+ 
 
 
 

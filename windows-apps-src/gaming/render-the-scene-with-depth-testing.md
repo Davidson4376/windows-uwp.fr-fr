@@ -6,19 +6,18 @@ ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, rendu, scène, test de profondeur, direct3d, ombres
-ms.openlocfilehash: 538ebe9a604daaa5a444b0f7f1764770eec8ce7c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: dc776a60e771cc8d5961e8c7b9c67eb99fabea3a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228661"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569021"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>Générer le rendu de la scène avec un test de profondeur
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Créez un effet d’ombre en ajoutant un test de profondeur à votre nuanceur de vertex (ou géométrie) et votre nuanceur de pixels. Partie 3 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
@@ -161,9 +160,9 @@ return float4(input.color * ambient, 1.f);
 
 Dans la partie suivante de cette procédure pas à pas, découvrez comment [prendre en charge les mappages d’ombre sur une gamme de matériel](target-a-range-of-hardware.md).
 
- 
+ 
 
- 
+ 
 
 
 

@@ -1,23 +1,21 @@
 ---
 author: GrantMeStrength
-title: Création d’une application de plateforme de Windows universel (UWP) complexes
+title: Création d’une application de plateforme Windows universelle (UWP) complexe
 description: 'Les équipes de conception Microsoft suivent un processus de création d’applications en cinqétapes distinctes: concept, structure, dynamique, visuels et prototype. Nous vous encourageons à adopter un processus similaire en prenant plaisir à créer des expériences novatrices dont tout le monde pourra profiter.'
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
 ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f2dbbf2d8cb653f0783c3e2655278b6d65634b6
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: ce5e0d272e14b9c69f660c8c7de6a838fa7956ac
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1015535"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564708"
 ---
-#  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>Création d’une application de plateforme de Windows universel (UWP) complexes
+#  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>Création d’une application de plateforme Windows universelle (UWP) complexe
 
 Les équipes de conception Microsoft suivent un processus de création d’applications en cinq étapes distinctes : concept, structure, dynamique, visuels et prototype. Nous vous encourageons à adopter un processus similaire en prenant plaisir à créer des expériences novatrices dont tout le monde pourra profiter.
 
@@ -69,7 +67,7 @@ Le terme « entonnoir » provient de la forme de cette technique. À l’extrém
 
 Quand vous êtes satisfait de votre concept, vous êtes prêt pour la prochaine étape: la création du plan de votre application. L’architecture de l’information donne à votre contenu l’intégrité structurelle dont il a besoin. Il permet de définir le modèle de navigation de votre application et, en fin de compte, son identité. En planifiant l’organisation de votre contenu et la façon dont vos utilisateurs vont le découvrir, vous pouvez vous faire une meilleure idée du ressenti des utilisateurs face à votre application.
 
-Une bonne architecture de l’information facilite les scénarios d’utilisation et vous aide à envisager les écrans principaux. L’application [sonore](http://go.microsoft.com/fwlink/p/?LinkID=268089) , par exemple, lance directement à un concentrateur qui fournit l’accès à la bibliothèque de l’utilisateur, magasin, news et les statistiques. L’expérience se concentre, afin que les utilisateurs peuvent obtenir et profitez audio rapidement. À des niveaux plus profonds, l’application se concentre sur des tâches plus spécifiques.
+Une bonne architecture de l’information facilite les scénarios d’utilisation et vous aide à envisager les écrans principaux. L’application [Audible](http://go.microsoft.com/fwlink/p/?LinkID=268089) , par exemple, lance directement dans un concentrateur qui fournit l’accès à la bibliothèque, Windows store, actualités et statistiques de l’utilisateur. L’expérience est ciblée, afin que les utilisateurs peuvent obtenir et profitez de livres rapidement. À des niveaux plus profonds, l’application se concentre sur des tâches plus spécifiques.
 
 Pour obtenir des recommandations à ce sujet, voir [Informations de base relatives à la conception de la navigation](../design/basics/navigation-basics.md).
 
@@ -126,41 +124,41 @@ Techniques courantes:
 -   Diagrammes d’association: mettez en relation vos flux et les fonctionnalités.
 -   Prototype: testez les fonctionnalités pour vérifier qu’elles répondent à vos besoins.
 
-**Contrats d’application** Votre application peut participer à des contrats d’application qui autorisent les flux d’utilisateurs importants entre applications et fonctionnalités.
+**Contrats d’application**votre application peut participer à des contrats d’application qui permettent à grande échelle, entre applications inter-fonctionnalité flux d’utilisateurs importants.
 
--   **Partage** Permet aux utilisateurs de partager du contenu de votre application par le biais d’autres applications, mais également de recevoir du contenu pouvant être partagé par d’autres contacts et d’autres applications.
--   **Lire sur** Permet aux utilisateurs de lire du contenu audio et vidéo ou des images, diffusés en continu depuis votre application sur d’autres appareils de leur réseau domestique.
--   **Sélecteur de fichiers et extensions du sélecteur de fichiers** Permet aux utilisateurs de charger et d’enregistrer leurs fichiers à partir du système de fichiers local, leurs dispositifs de stockage connectés, leur groupe résidentiel et d’autres applications. Vous pouvez également fournir une extension du sélecteur de fichiers pour permettre à d’autres applications de charger le contenu de votre application.
+-   **Partager**permet aux utilisateurs de partager du contenu de votre application par le biais d’autres applications, contenu pouvant être partagé par d’autres personnes et les applications, mais également de recevoir.
+-   **Lire sur**permet aux utilisateurs de lire du contenu audio et vidéo ou des images, diffusés en continu depuis votre application sur d’autres appareils de leur réseau domestique.
+-   **Sélecteur de fichiers et extensions du sélecteur de fichiers** Permet aux utilisateurs de charger et enregistrement leurs fichiers à partir du système de fichiers local, dispositifs de stockage connectés, groupe résidentiel ou même d’autres applications. Vous pouvez également fournir une extension du sélecteur de fichiers pour permettre à d’autres applications de charger le contenu de votre application.
 
 Pour plus d’informations, voir [Contrats et extensions d’application](https://msdn.microsoft.com/library/windows/apps/hh464906).
 <!-- Win 8 page. Should have replacement. -->
 
-**Différents affichages, facteurs de forme et configurations matérielles** Windows met les utilisateurs aux commandes et place votre application en première ligne. Vous voulez que l’interface utilisateur de votre application ressorte sur tous les appareils, à l’aide de n’importe quel mode d’entrée, avec toutes les orientations et configurations matérielles et dans toutes les circonstances d’utilisation.
+**Différents affichages, facteurs de forme et configurations matérielles**Windows met les utilisateurs et votre application en première ligne. Vous voulez que l’interface utilisateur de votre application ressorte sur tous les appareils, à l’aide de n’importe quel mode d’entrée, avec toutes les orientations et configurations matérielles et dans toutes les circonstances d’utilisation.
 
-**Tactile avant tout** Windows propose une expérience tactile unique qui dépasse la simple émulation des fonctionnalités de la souris.
+**Tactile avant tout**Windows offre une expérience tactile unique et distinctives qui plus simple émulation des fonctionnalités de la souris.
 
 Par exemple, le zoom sémantique permet de naviguer dans un grand volume de contenu en mode tactile. Les utilisateurs peuvent survoler ou faire défiler les catégories de contenu, puis zoomer pour afficher des informations de façon de plus en plus détaillée. Vous pouvez ainsi présenter votre contenu de façon plus tactile, visuelle et instructive qu’avec la navigation traditionnelle et les modèles de disposition tels que les onglets.
 
 Vous pouvez évidemment tirer parti d’un certain nombre d’interactions tactiles permettant de faire pivoter, d’effectuer un mouvement panoramique, un balayage, etc. En savoir plus sur les [interactions tactiles et les autres interactions avec l’utilisateur](../design/input/input-primer.md).
 
-**Attrayante et d’actualité** Votre application sera moderne et attrayante avec ces expériences utilisateur proposées en standard:
+**Attrayante et d’actualité**être votre application moderne et attrayante avec ces expériences utilisateur standard:
 
--   **Animations** Utilisez notre bibliothèque d’animations pour rendre votre application rapide et fluide pour vos utilisateurs. Permet aux utilisateurs de comprendre les changements de contexte et assure l’homogénéité des expériences par des transitions visuelles. Découvrez tout ce qu’il faut savoir sur l’[animation de votre interface utilisateur](../graphics/animations-overview.md).
--   **Notifications toast** Permet aux utilisateurs d’identifier le contenu limité dans le temps ou qui peut les intéresser grâce à des notifications. Permet également d’inviter les utilisateurs à revenir dans votre application quand elle est fermée. En savoir plus sur les [vignettes, badges et notifications toast](../design/shell/tiles-and-notifications/index.md).
--   **Vignettes d’application** Fournit des mises à jour actuelles et appropriées encourageant les utilisateurs à revenir sur votre application. Pour plus d’informations à ce sujet, voir la section suivante. En savoir plus sur les [vignettes d’application](../design/shell/tiles-and-notifications/creating-tiles.md).
+-   **Animations**utilisez notre bibliothèque d’animations pour rendre votre application rapide et fluide pour vos utilisateurs. Permet aux utilisateurs de comprendre les changements de contexte et assure l’homogénéité des expériences par des transitions visuelles. Découvrez tout ce qu’il faut savoir sur l’[animation de votre interface utilisateur](../graphics/animations-overview.md).
+-   **Notifications toast**permet aux utilisateurs sur le temps ou personnellement pertinent contenu par le biais de notifications toast, d’inviter les utilisateurs à votre application quand votre application est fermée. En savoir plus sur les [vignettes, badges et notifications toast](../design/shell/tiles-and-notifications/index.md).
+-   **Vignettes d’application**fournissent des mises à jour actuelles et appropriées encourageant les utilisateurs à revenir sur votre application. Pour plus d’informations à ce sujet, voir la section suivante. En savoir plus sur les [vignettes d’application](../design/shell/tiles-and-notifications/creating-tiles.md).
 
 **Personnalisation**
 
--   **Paramètres** Permet aux utilisateurs de créer une expérience dédiée en enregistrant des paramètres de l’application qui leur sont propres. Regroupe tous vos paramètres sur un seul écran, ce qui permet aux utilisateurs de configurer votre application via un mécanisme courant qu’ils maîtrisent déjà. En savoir plus sur l’[ajout de paramètres d’application](../design/app-settings/app-settings-and-data.md).
--   **Itinérance** Créez une expérience continue sur plusieurs appareils en rendant les données itinérantes. De cette façon, les utilisateurs peuvent reprendre une tâche à l’endroit précis où ils se sont arrêtés, et leur expérience utilisateur privilégiée est préservée quel que soit l’appareil utilisé. Votre application doit être facile à utiliser partout (du PC familial dans la cuisine au PC professionnel, en passant par la tablette personnelle et d’autres facteurs de forme), et conserver les paramètres et les états en itinérance. Pour en savoir plus, voir [Gestion des données d’application](../design/app-settings/store-and-retrieve-app-data.md) et [Recommandations en matière de données d’application itinérantes](https://msdn.microsoft.com/library/windows/apps/hh465094).
--   **Vignettes utilisateur** Permet aux utilisateurs de personnaliser votre application en chargeant leur propre image en vignette ou en définissant du contenu de votre application comme vignette personnelle dans Windows.
+-   **Paramètres**permet aux utilisateurs de créer une expérience ils dédiée en enregistrant des paramètres d’application. Regroupe tous vos paramètres sur un seul écran, ce qui permet aux utilisateurs de configurer votre application via un mécanisme courant qu’ils maîtrisent déjà. En savoir plus sur l’[ajout de paramètres d’application](../design/app-settings/app-settings-and-data.md).
+-   **Itinérance**créer une expérience continue sur plusieurs appareils en itinérance des données qui permet aux utilisateurs de reprendre une tâche à où ils et conserve le leur expérience utilisateur sur, quel que soit l’appareil qu’ils utilisent. Votre application doit être facile à utiliser partout (du PC familial dans la cuisine au PC professionnel, en passant par la tablette personnelle et d’autres facteurs de forme), et conserver les paramètres et les états en itinérance. Pour en savoir plus, voir [Gestion des données d’application](../design/app-settings/store-and-retrieve-app-data.md) et [Recommandations en matière de données d’application itinérantes](https://msdn.microsoft.com/library/windows/apps/hh465094).
+-   **Vignettes utilisateur**  votre application plus personnelle à vos utilisateurs en chargeant leur propre image en vignette, ou laisser les utilisateurs à définir le contenu à partir de votre application comme vignette personnelle tout au long de Windows.
 
-**Fonctionnalités des appareils** Veillez à ce que votre application tire pleinement parti des fonctionnalités des appareils actuels.
+**Fonctionnalités de périphérique**Vérifiez que votre application tire pleinement parti des fonctionnalités des appareils actuels.
 
--   **Mouvements de proximité** Permettez aux utilisateurs de connecter leurs appareils avec ceux des autres utilisateurs à proximité en appuyant ces appareils l’un contre l’autre (jeux multijoueur). En savoir plus sur [les mouvements de proximité et le contact](https://msdn.microsoft.com/library/windows/apps/hh465229).
--   **Caméras et dispositifs de stockage externes** Connectez vos utilisateurs grâce aux caméras intégrées ou reliées à leur ordinateur pour qu’ils puissent discuter, participer à des conférences, enregistrer des vidéoblogues, prendre des photos pour leur profil, parler du monde qui les entoure ou participer à toute autre activité entrant dans le domaine de l’application. Découvrez tout ce qu’il faut savoir sur l’[accès à du contenu de stockage amovible](https://msdn.microsoft.com/library/windows/apps/hh465189).
--   **Accéléromètres et autres capteurs** De nos jours, les appareils intègrent un certain nombre de capteurs. Votre application peut assombrir ou éclaircir l’affichage en fonction de la lumière ambiante, réorganiser l’interface utilisateur si l’utilisateur fait pivoter l’affichage ou réagir à un mouvement. En savoir plus sur les [capteurs](../devices-sensors/sensors.md).
--   **Géolocalisation** Utilisez les informations de géolocalisation des données du Web ou des capteurs de géolocalisation standard pour aider les utilisateurs à circuler, à repérer leur emplacement sur une carte ou à recevoir des renseignements sur les personnes, les activités et les destinations à proximité. En savoir plus sur la [géolocalisation](https://msdn.microsoft.com/library/windows/apps/hh465139).
+-   **Mouvements de proximité**permet aux utilisateurs de connecter leurs appareils avec ceux des autres utilisateurs physiquement proximité en appuyant physiquement les périphériques de l’autre (jeux multijoueur). En savoir plus sur [les mouvements de proximité et le contact](https://msdn.microsoft.com/library/windows/apps/hh465229).
+-   **Caméras et dispositifs de stockage externes**connectez vos utilisateurs pour leurs caméras intégrées ou reliées pour discuter des conférences, grâce, vidéoblogues de profil, parler du monde qui les entoure ou toute activité pour votre application est excellente pour. Découvrez tout ce qu’il faut savoir sur l’[accès à du contenu de stockage amovible](https://msdn.microsoft.com/library/windows/apps/hh465189).
+-   **Accéléromètres et autres capteurs**   Les appareils intègrent un certain nombre de capteurs de nos jours. Votre application peut assombrir ou éclaircir l’affichage en fonction de la lumière ambiante, réorganiser l’interface utilisateur si l’utilisateur fait pivoter l’affichage ou réagir à un mouvement. En savoir plus sur les [capteurs](../devices-sensors/sensors.md).
+-   **GÉOLOCALISATION**utiliser les informations de géolocalisation à partir des données du web standard ou de capteurs de géolocalisation pour aider vos utilisateurs à circuler, à repérer leur emplacement sur une carte ou à recevoir des renseignements sur les à proximité des personnes, les activités et les destinations. En savoir plus sur la [géolocalisation](https://msdn.microsoft.com/library/windows/apps/hh465139).
 
 Reprenons l’exemple de l’application de voyage. Pour réellement aider des amis à créer ensemble des itinéraires pour les voyages en groupe, vous pouvez utiliser quelques fonctionnalités, comme les suivantes pour n’en citer que certaines :
 
@@ -179,7 +177,7 @@ Il existe un grand nombre d’options vous permettant de gagner de l’argent av
 
 Il s’agit de partir sur la bonne base. Maintenant que vous connaissez les points forts de votre application et les flux à prendre en charge, vous pouvez réfléchir aux principes de base de la conception de l’expérience utilisateur.
 
-**Comment organiser le contenu de l’interface utilisateur?**   La plupart du contenu de l’application peut être organisé sous forme de regroupements ou de hiérarchies. Ce que vous choisissez comme groupe de premier niveau pour votre contenu doit correspondre à votre liste de points forts.
+**Comment organiser le contenu de l’interface utilisateur?**   La plupart du contenu de l’application peut être organisé sous forme de regroupements ou de hiérarchies. Ce que vous choisissez comme groupe de premier niveau pour votre contenu doit correspondre à votre liste de points forts.
 
 Pour reprendre l’exemple de l’application de voyage, il existe de nombreuses façons de regrouper des itinéraires. Si l’objet principal de l’application est de découvrir des destinations intéressantes, vous pouvez les regrouper par centre d’intérêt : aventure, plaisirs ensoleillés ou destinations romantiques. Si votre application sert cependant à planifier des voyages avec des amis, il est plus sensé d’organiser des itinéraires en fonction des cercles sociaux, comme la famille, les amis ou les collègues.
 
@@ -193,7 +191,7 @@ Dans l’application de voyage, l’utilisateur souhaitera probablement trouver 
 
 Une fois la liste des voyages affichée, vous pouvez charger d’autres fonctionnalités, par exemple un flux d’actualités relatif aux voyages des amis.
 
-**De quelle interface utilisateur et de quelles commandes avez-vous besoin?**   Passez en revue les flux identifiés précédemment. Pour chaque flux, créez une ébauche des étapes entreprises par les utilisateurs.
+**De quelle interface utilisateur et de quelles commandes avez-vous besoin?**   Passez en revue les flux identifiés précédemment. Pour chaque flux, créez une ébauche des étapes entreprises par les utilisateurs.
 
 Analysons le flux « Permettre à des amis et à la famille de suivre les itinéraires ». Supposons que l’utilisateur a déjà créé un voyage. Pour partager l’itinéraire d’un voyage, les étapes suivantes sont nécessaires :
 
@@ -211,16 +209,16 @@ Pour en savoir plus sur l’utilisation des différentes surfaces, voir <!--[Com
 
 **À quoi doit ressembler le flux?** Une fois les étapes de l’utilisateur définies, vous pouvez transformer ce flux en objectifs de performances. Pour plus d’informations, voir [Planifier les performances](../debug-test-perf/planning-and-measuring-performance.md).
 
-**Comment organiser les commandes?**  Utilisez votre esquisse des étapes du flux pour identifier les commandes pour lesquelles vous devez effectuer la conception. Cherchez ensuite où ces commandes doivent être utilisées dans votre application.
+**Comment organiser les commandes?** Utilisez votre esquisse des étapes du flux pour identifier les commandes que vous devez effectuer la conception. Cherchez ensuite où ces commandes doivent être utilisées dans votre application.
 
--   **Essayez toujours d’utiliser le contenu.**  Laissez les utilisateurs manipuler directement, autant que possible, le contenu sur la zone de dessin, au lieu d’ajouter des commandes qui agissent sur le contenu. Par exemple, dans l’application de voyage, permettez aux utilisateurs de réorganiser leur itinéraire en faisant glisser et en déplaçant des activités d’une liste de la zone de dessin, plutôt qu’en sélectionnant l’activité et en utilisant les boutons haut et bas de la barre de commandes.
+-   **Essayez toujours d’utiliser le contenu.** Autant que possible, donnez aux utilisateurs manipuler directement le contenu sur le canevas de l’application, plutôt que d’ajouter des commandes qui agissent sur le contenu. Par exemple, dans l’application de voyage, permettez aux utilisateurs de réorganiser leur itinéraire en faisant glisser et en déplaçant des activités d’une liste de la zone de dessin, plutôt qu’en sélectionnant l’activité et en utilisant les boutons haut et bas de la barre de commandes.
 -   **Si vous ne pouvez pas utiliser le contenu.** Placez les commandes sur l’une des surfaces suivantes de l’interface utilisateur:
 
     -   Dans la [barre de commandes](https://msdn.microsoft.com/library/windows/apps/hh465302): placez la majorité des commandes sur la barre de commandes, généralement masquée jusqu’à ce que l’utilisateur appuie sur celle-ci pour la rendre visible.
     -   Sur la zone de dessin de l’application : si l’utilisateur consulte une page ou une vue avec un objectif unique, vous pouvez placer les commandes adéquates directement sur cette zone. Il doit y avoir très peu de commandes de ce type.
-    -   Dans un [menu contextuel](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/menus): vous pouvez utiliser des menus contextuels pour les actions du Presse-papiers (comme couper, copier et coller) ou pour les commandes qui concernent le contenu qui ne peut pas être sélectionné (ajouter une punaise pour localiser un lieu sur une carte, par exemple).
+    -   Dans un [menu contextuel](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/menus): vous pouvez utiliser des menus contextuels pour les actions du Presse-papiers (comme couper, copier et coller), ou pour les commandes qui concernent le contenu qui ne peut pas être sélectionné (ajouter une punaise pour localiser un lieu sur une carte, par exemple).
 
-**Déterminez la disposition de votre application dans chaque affichage.**  Windows prend en charge les orientations paysage et portrait et le redimensionnement des applications à n’importe quelle largeur, du plein écran jusqu’à la largeur minimale. Vous devez faire en sorte que votre application fonctionne correctement et soit visuellement plaisante dans n’importe quelle taille, sur n’importe quel écran et dans n’importe quelle orientation. Cela signifie que vous devez planifier la disposition des éléments de votre interface utilisateur pour différentes tailles et affichages. Ainsi, l’interface utilisateur de l’application s’adapte de façon fluide pour répondre aux besoins et aux préférences de l’utilisateur.
+**Déterminez la disposition de votre application dans chaque affichage.** Windows prend en charge les orientations paysage et portrait et le redimensionnement des applications à n’importe quelle largeur, du plein écran sur une largeur minimale. Vous devez faire en sorte que votre application fonctionne correctement et soit visuellement plaisante dans n’importe quelle taille, sur n’importe quel écran et dans n’importe quelle orientation. Cela signifie que vous devez planifier la disposition des éléments de votre interface utilisateur pour différentes tailles et affichages. Ainsi, l’interface utilisateur de l’application s’adapte de façon fluide pour répondre aux besoins et aux préférences de l’utilisateur.
 
 ![Conception d’une application pour PC ou appareils mobiles](images/ux-budgettracker1-md-notablet.png)
 
@@ -230,16 +228,16 @@ Pour plus d’informations sur la conception pour différentes tailles d’écra
 
 Gardez à l’esprit ce que vous voulez que vos utilisateurs pensent, ressentent ou fassent au moment où ils lancent votre application pour la première fois. Reportez-vous à votre liste de points forts. Même si vous n’aurez pas l’occasion de dire personnellement à vos utilisateurs quels sont les points forts de votre application, vous pouvez leur faire passer le message en donnant une bonne première impression. Utilisez les possibilités suivantes:
 
-**Vignette et notifications** La vignette représente le visage de votre application. Pour quelles raisons les utilisateurs choisiront-ils de lancer votre application, présentée parmi d’autres sur leur écran de démarrage? Votre vignette doit mettre en valeur la marque et les capacités de votre application. Utilisez les notifications par vignette pour garder votre application à jour et d’actualité, et pour ramener constamment l’utilisateur à votre application.
+**Vignette et notifications**  La vignette représente le visage de votre application. Pour quelles raisons les utilisateurs choisiront-ils de lancer votre application, présentée parmi d’autres sur leur écran de démarrage? Votre vignette doit mettre en valeur la marque et les capacités de votre application. Utilisez les notifications par vignette pour garder votre application à jour et d’actualité, et pour ramener constamment l’utilisateur à votre application.
 
-**Écran de démarrage** L’écran de démarrage doit se charger aussi vite que possible et ne rester affiché que pendant la phase d’initialisation de votre application. Ce que vous affichez sur cet écran de démarrage doit exprimer la personnalité de votre application.
+**Écran de démarrage**l’écran de démarrage doit se charger aussi vite que possible et ne rester affiché tant que vous avez besoin d’initialisation de votre application. Ce que vous affichez sur cet écran de démarrage doit exprimer la personnalité de votre application.
 
-**Premier démarrage** Que voient les utilisateurs avant de s’abonner à votre service, de se connecter à leur compte ou d’ajouter leur contenu? Essayez de montrer la valeur de votre application avant de demander des informations aux utilisateurs. Pensez à donner des exemples de contenu pour permettre aux utilisateurs de les manipuler et de comprendre l’objet de votre application avant de leur demander de s’engager.
+**Tout d’abord lancer**avant que les utilisateurs s’abonner à votre service, se connecter à leur compte ou ajouter leur contenu, voient? Essayez de montrer la valeur de votre application avant de demander des informations aux utilisateurs. Pensez à donner des exemples de contenu pour permettre aux utilisateurs de les manipuler et de comprendre l’objet de votre application avant de leur demander de s’engager.
 
-**Page d’accueil** La page d’accueil est celle vers laquelle vous dirigez les utilisateurs chaque fois qu’ils lancent votre application. Son contenu doit être évident et doit indiquer immédiatement ce pour votre application est conçue. Faites une excellente page et comptez sur les gens pour explorer le reste de votre application. Éliminez à tout prix les distractions sur la page d’accueil au lieu de miser sur la découverte.
+**Page d’accueil**la page d’accueil est celle vers laquelle vous dirigez les utilisateurs chaque fois qu’ils lancent votre application. Son contenu doit être évident et doit indiquer immédiatement ce pour votre application est conçue. Faites une excellente page et comptez sur les gens pour explorer le reste de votre application. Éliminez à tout prix les distractions sur la page d’accueil au lieu de miser sur la découverte.
 
 ## <a name="validate-your-design"></a>Valider votre conception
 
-Pour éviter d’avoir à effectuer trop de changements plus tard, validez votre conception ou votre prototype par rapport aux recommandations, impressions des utilisateurs et exigences avant de pousser le développement trop loin. Chaque fonctionnalité possède un jeu d’instructions d’expérience utilisateur pour vous aider à polonais votre application et un ensemble d’exigences de stockage à respecter pour publier votre application dans Microsoft Store. Vous pouvez utiliser le [Kit de certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) pour tester la conformité technique aux exigences du WindowsStore. Vous pouvez également utiliser les outils d’analyse des performances de Microsoft Visual Studio pour proposer à vos utilisateurs la meilleure expérience possible, quel que soit le scénario.
+Pour éviter d’avoir à effectuer trop de changements plus tard, validez votre conception ou votre prototype par rapport aux recommandations, impressions des utilisateurs et exigences avant de pousser le développement trop loin. Chaque fonctionnalité possède un ensemble de recommandations en matière d’expérience utilisateur pour vous aider à perfectionner votre application et un ensemble d’exigences du Windows Store que vous devez remplir pour la publication de votre application dans le Microsoft Store. Vous pouvez utiliser le [Kit de certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) pour tester la conformité technique aux exigences du WindowsStore. Vous pouvez également utiliser les outils d’analyse des performances de Microsoft Visual Studio pour proposer à vos utilisateurs la meilleure expérience possible, quel que soit le scénario.
 
 Utilisez la liste de [recommandations détaillées relatives à l’expérience utilisateur pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh465424) afin de ne pas oublier de fonctionnalités importantes. Utilisez les [outils de performances VisualStudio](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx) pour analyser les performances de chacun des scénarios de votre application.

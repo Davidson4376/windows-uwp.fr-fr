@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 30c3ed335360d7b259c045722b65bb08a71b6e0c
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: a86aa5a78bc4df9deaeea239356345c33736d942
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044038"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568842"
 ---
 # <a name="stream-output-so-stage"></a>Étape Stream Output
 
@@ -47,7 +45,7 @@ Les données de vertex issues d'une étape précédente du nuanceur.
 
 L'étape de sortie de flux (SO) sort (diffuse) en continu les données de vertex de l'étape active précédente, telle que l'étape du nuanceur de géométrie (GS), et les stocke dans une ou plusieurs mémoires tampon en mémoire. Si l'étape du nuanceur de géométrie (GS) est inactive et que l'étape de sortie de flux (SO) diffuse en continu les données de vertex de l'étape du nuanceur de domaine (DS) (ou de l'étape du nuanceur de vertex (VS) si l'étape DS est également inactive) et les stocke dans des mémoires tampon en mémoire.
 
-Lorsqu’une bande triangle ou ligne est liée à la phase d’entrée assembleur (IA), chaque bande est converti en une liste avant qu’ils sont transmis en flux. Les sommets sont toujours écrites en tant que primitives complètes (par exemple, 3 sommets à la fois pour triangles); primitives incomplètes sont jamais transmis. Types primitifs avec contiguïté ignorer les données contiguïté avant la diffusion en continu des données.
+Lorsqu’une bande de triangles ou de lignes est liée à l’étape d’assembleur d’entrée (IA), chaque bande est convertie en une liste avant qu’ils sont diffusées. Les vertex sont toujours écrits sous forme de primitives complètes (par exemple, 3 vertex à la fois pour les triangles); les primitives incomplètes ne sont jamais diffusées. Types de primitives avec Voisinage ignorent les données de voisinage avant la diffusion en continu des données.
 
 L’étape de sortie de flux peut prendre en charge simultanément jusqu'à 4mémoires tampons.
 
@@ -59,9 +57,9 @@ L’étape de sortie de flux peut prendre en charge simultanément jusqu'à 4mé
 
 [Pipeline graphique](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

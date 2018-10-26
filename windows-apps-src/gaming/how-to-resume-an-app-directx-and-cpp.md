@@ -6,19 +6,18 @@ ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, reprise, directx
-ms.openlocfilehash: 0ef4617417526cd2e39ce968e4d682b4015e22d3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 1149bebfd837e3d4051b5e0fca10aac248d909c5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228701"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571388"
 ---
-# <a name="how-to-resume-an-app-directx-and-c"></a>Reprise d’une application (DirectX et C++)
+# <a name="how-to-resume-an-app-directx-and-c"></a>Comment relancer une application (DirectX et C++)
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX de plateforme Windows universelle.
 
@@ -96,9 +95,9 @@ Le système suspend votre application chaque fois que l’utilisateur bascule ve
 * [Comment suspendre une application (DirectX et C++)](how-to-suspend-an-app-directx-and-cpp.md)
 * [Comment activer une application (DirectX et C++)](how-to-activate-an-app-directx-and-cpp.md)
 
- 
+ 
 
- 
+ 
 
 
 

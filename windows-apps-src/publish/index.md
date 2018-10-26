@@ -4,23 +4,21 @@ layout: LandingPage
 Description: See how to publish your Windows apps to the Microsoft Store.
 title: Publier des applications Windows
 ms.author: wdg-dev-content
-ms.date: 01/08/2018
+ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, publication, publier, vente, vendre, distribuer, distribution, store, tableau de bord
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
-ms.localizationpriority: high
-ms.openlocfilehash: 37cfce48a60f95109dfff99b45750fa8fbe1f220
-ms.sourcegitcommit: 4e39a2bdb5b895ed09b64957dc1a86ccf1f8e1af
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 98e47934f936b6995ab37623b610869219254b85
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "1718663"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566120"
 ---
 # <a name="publish-windows-apps-and-games"></a>Publier des applications et jeux Windows  
  
-Vous pouvez utiliser le tableau de bord du Centre de développement Windows pour publier vos applications et jeux dans le MicrosoftStore. <a href="//developer.microsoft.com/store/register">Inscrivez-vous maintenant!</a>
+Vous pouvez utiliser le [tableau de bord du centre de développement Windows](https://partner.microsoft.com/dashboard) pour publier vos applications et jeux dans le Microsoft Store. <a href="//developer.microsoft.com/store/register">Inscrivez-vous maintenant!</a>
 <br>
 <ul id="cardtypes-K" class="cardsK panelContent">
     <li>
@@ -123,8 +121,8 @@ Vous pouvez utiliser le tableau de bord du Centre de développement Windows pour
                 </div>
                 <div class="cardText">
                     <h3>Promouvoir vos applications</h3>   
-                    <p><a href="generate-promotional-codes.md">Générer des codes promotionnels</a></p>
                     <p><a href="create-an-ad-campaign-for-your-app.md">Création de campagnes de publicité</a></p>
+                    <p><a href="generate-promotional-codes.md">Générer des codes promotionnels</a></p>
                     <p><a href="put-apps-and-add-ons-on-sale.md">Proposer des prix de vente</a></p>
                 </div>
             </div>

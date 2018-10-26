@@ -6,19 +6,18 @@ ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, jeux, les mappages d’ombre, directx
-ms.openlocfilehash: e4cffcf1e9655d5bc5dacbfc17cb64b5671d7551
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: a9c53578fc67c13aafa1c8e39ad1d2910981081d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228884"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568793"
 ---
 # <a name="support-shadow-maps-on-a-range-of-hardware"></a>Prendre en charge les mappages d’ombre sur une gamme de matériel
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Générez le rendu des ombres en haute fidélité sur des appareils plus rapides et celui d’ombres plus rapides sur des appareils moins puissants. Partie 4 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
@@ -175,9 +174,9 @@ L’entrée du fichier de projet pour la version filtrée linéaire du nuanceur 
 </FxCompile>
 ```
 
- 
+ 
 
- 
+ 
 
 
 

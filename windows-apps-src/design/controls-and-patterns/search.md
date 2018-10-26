@@ -8,19 +8,17 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 863c5c2df20ba082265aeda2691bafae3e3fe691
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: b506b439ff98da873823bd586bb5388fe360b2ba
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1394098"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571628"
 ---
 # <a name="search-and-find-in-page"></a>Recherche et recherche dans la page
 
@@ -33,21 +31,21 @@ L’option de recherche est l’un des moyens les plus courants pour rechercher 
 ## <a name="elements-of-the-search-experience"></a>Aspects de l’expérience de recherche
 
 
-**Entrée.**  La saisie de texte est le mode d’entrée de recherche le plus courant et le sujet principal de ce guide. Les modes d’entrée Voix et Webcam sont également couramment utilisés, mais ils nécessitent généralement de pouvoir communiquer avec le matériel et, dans certains cas, l’ajout de contrôles ou d’une interface utilisateur personnalisée au sein de l’application.
+**Entrée.** Est le mode le plus courant d’entrée de recherche de texte et la mise au point de ce guide. Les modes d’entrée Voix et Webcam sont également couramment utilisés, mais ils nécessitent généralement de pouvoir communiquer avec le matériel et, dans certains cas, l’ajout de contrôles ou d’une interface utilisateur personnalisée au sein de l’application.
 
-**Entrée nulle.**  Lorsque le champ d’entrée est activé par l’utilisateur, mais qu’aucun texte n’a été saisi, vous pouvez afficher ce que l’on appelle un «canevas d’entrée nulle». Le canevas d’entrée nulle apparaît généralement dans les canevas de l’application, afin que la fonction de [suggestion automatique](auto-suggest-box.md) remplace ce contenu lorsque l’utilisateur commence à entrer sa requête. L’historique des dernières recherches, les tendances des recherches, les suggestions de recherche contextuelle, les astuces et les conseils sont tous de bons candidats pour l’état d’entrée nulle.
+**Entrée de zéro.** Une fois que l’utilisateur a activé le champ d’entrée, mais avant que l’utilisateur a entré du texte, vous pouvez afficher ce que l'on appelle un «canevas d’entrée nulle.» Le canevas d’entrée nulle apparaît généralement dans les canevas de l’application, afin que la fonction de [suggestion automatique](auto-suggest-box.md) remplace ce contenu lorsque l’utilisateur commence à entrer sa requête. L’historique des dernières recherches, les tendances des recherches, les suggestions de recherche contextuelle, les astuces et les conseils sont tous de bons candidats pour l’état d’entrée nulle.
 
 ![Exemple de Cortana dans un canevas d’entrée nulle](images/search-cortana-example.png)
 
- 
+ 
 
-**Formulation de requêtes/suggestion automatique.**  La formulation de requêtes remplace le contenu d’entrée nulle dès que l’utilisateur commence à entrer sa requête. Lorsque les utilisateurs entrent une chaîne de requête, ces derniers aperçoivent un ensemble de suggestions de requête ou d’options de désambiguïsation mis à jour en continu afin d’accélérer le processus d’entrée et de les aider à formuler leur requête. Le comportement des suggestions de requête est intégré au [contrôle de suggestion automatique](auto-suggest-box.md). Il permet également d’afficher l’icône à l’intérieur de la recherche (comme un micro ou une icône de validation). Tout autre comportement incombe à l’application.
+**Interroger la formulation de requêtes/suggestion automatique.** Requête formulation de requêtes remplace le contenu d’entrée nulle dès que l’utilisateur commence à entrer. Lorsque les utilisateurs entrent une chaîne de requête, ces derniers aperçoivent un ensemble de suggestions de requête ou d’options de désambiguïsation mis à jour en continu afin d’accélérer le processus d’entrée et de les aider à formuler leur requête. Le comportement des suggestions de requête est intégré au [contrôle de suggestion automatique](auto-suggest-box.md). Il permet également d’afficher l’icône à l’intérieur de la recherche (comme un micro ou une icône de validation). Tout autre comportement incombe à l’application.
 
 ![Exemple de suggestion automatique de requête/formulation](images/search-autosuggest-example.png)
 
- 
+ 
 
-**Jeu de résultats.**  En règle générale, les résultats de la recherche apparaissent directement sous le champ de recherche. Bien que facultative, la juxtaposition des entrées et des résultats permet de maintenir un contexte et d’accéder immédiatement à la modification de la dernière requête ou à la saisie d’une nouvelle requête. Ce lien peut être indiqué plus loin en remplaçant le texte d’information par la requête à l’origine du jeu de résultats.
+**Jeu de résultats.** Règle générale, les résultats de recherche apparaissent directement sous le champ d’entrée de recherche. Bien que facultative, la juxtaposition des entrées et des résultats permet de maintenir un contexte et d’accéder immédiatement à la modification de la dernière requête ou à la saisie d’une nouvelle requête. Ce lien peut être indiqué plus loin en remplaçant le texte d’information par la requête à l’origine du jeu de résultats.
 
 Vous pouvez faciliter l’accès aux fonctions de modification de la dernière requête et de saisie d’une nouvelle requête en mettant en surbrillance la dernière requête lorsque le champ est réactivé. Ainsi, la dernière chaîne est remplacée par la séquence de touches saisie, mais la chaîne est conservée afin que l’utilisateur puisse placer son curseur et modifier ou ajouter la chaîne précédente.
 
@@ -60,11 +58,11 @@ La fonction recherche est d’utilisation. Les interfaces utilisateur de recherc
 
 Voici quelques exemples d’étendues de recherche courantes:
 
-**Global** et **contextuel/optimal.**  Rechercher dans plusieurs sources du cloud et du contenu local. Résultats variés incluant des URL, des documents, des médias, des actions, des applications et plus encore.
+**Global** et **contextuel/optimal.** Recherche dans plusieurs sources du cloud et du contenu local. Résultats variés incluant des URL, des documents, des médias, des actions, des applications et plus encore.
 
-**Web.**  Rechercher dans un index Web. Les résultats peuvent contenir des pages, des entités et des réponses.
+**Web.** Rechercher dans un index web. Les résultats peuvent contenir des pages, des entités et des réponses.
 
-**Mon contenu.**  Rechercher des informations sur plusieurs appareils, dans le cloud, des graphiques sociaux et plus encore. Les résultats sont différents, mais sont limités par le lien aux comptes d’utilisateur.
+**Mon contenu.** Recherche entre les périphériques, cloud, des graphiques sociaux et bien plus encore. Les résultats sont différents, mais sont limités par le lien aux comptes d’utilisateur.
 
 Utilisez un texte d’information afin d’indiquer l’étendue de la recherche. Par exemple :
 
@@ -80,7 +78,7 @@ Utilisez un texte d’information afin d’indiquer l’étendue de la recherche
 
 ![Exemple de texte d’information de recherche](images/search-windowsandweb.png)
 
- 
+ 
 
 En délimitant précisément l’étendue d’un point d’entrée de recherche, vous permettez à l’utilisateur de s’assurer que ses critères correspondent bien à la fonction de recherche et vous limitez ainsi les désagréments éventuels.
 
@@ -93,13 +91,13 @@ Avant de cliquer sur l’icône de recherche:
 
 ![Exemple d’icône de recherche et de zone de recherche réduite](images/search-icon-collapsed.png)
 
- 
+ 
 
 Après avoir cliqué sur l’icône de recherche:
 
 ![Exemple d’icône de recherche et de zone de recherche développée](images/search-icon-expanded.png)
 
- 
+ 
 
 La recherche utilise toujours un glyphe en forme de loupe orienté vers la droite comme point d’entrée. Le glyphe à utiliser est encodé en Segoe UI Symbol, code de caractère hexadécimal 0xE0094, et possède généralement une taille de police de 15 epx.
 
@@ -120,19 +118,19 @@ Recherche en tant qu’action dans la barre d’outils Windows:
 
 ![Exemple de recherche en tant qu’action dans la barre d’outils Windows](images/search-toolbar-action.png)
 
- 
+ 
 
 Recherche en tant qu’entrée sur le canevas d’application:
 
 ![Exemple de recherche sur un canevas d’application](images/search-canvas-contacts.png)
 
- 
+ 
 
 Recherche dans un volet de navigation:
 
 ![Exemple de recherche dans un menu de navigation](images/search-navmenu.png)
 
- 
+ 
 
 La recherche en ligne est réservée au cas où la recherche est rarement utilisée ou est hautement contextuelle:
 
@@ -177,25 +175,25 @@ Fournissez un moyen facile d’accéder à la fonctionnalité de recherche dans 
 
 ![Exemple de recherche dans la page1](images/findinpage-01.png)
 
- 
+ 
 
 Après avoir sélectionné Rechercher dans la page, l’utilisateur entre un terme recherché. Des suggestions de texte peuvent apparaître lors de la saisie du terme recherché:
 
 ![Exemple de recherche dans la page2](images/findinpage-02.png)
 
- 
+ 
 
 Si aucune correspondance de texte n’est trouvée dans la recherche, une chaîne de texte «Aucun résultat» doit s’afficher dans la zone de résultats:
 
 ![Exemple de recherche dans la page3](images/findinpage-03.png)
 
- 
+ 
 
 Si la recherche trouve des correspondances de texte, le premier terme doit être surligné dans une couleur distincte, et les autres occurrences dans une couleur plus claire de la même nuance, comme illustré dans cet exemple:
 
 ![Exemple de recherche dans la page4](images/findinpage-04.png)
 
- 
+ 
 
 La Recherche dans la page a un compteur de correspondances:
 
@@ -219,6 +217,6 @@ Pour plus d’informations sur l’ajout de commandes à votre barre de commande
 * [Zone de suggestion automatique](auto-suggest-box.md)
 
 
- 
+ 
 
- 
+ 

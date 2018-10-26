@@ -1,23 +1,22 @@
 ---
-author: mcleblanc
+author: stevewhims
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
 description: 'Prise en main : Contrôles courants'
 title: 'Prise en main: Contrôles courants'
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 4df9785b0d8ccea0561a780fa2b807201332cda8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: bbb07da7fa28aed6e45c97d128f9bd04ca986fe7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "229456"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572029"
 ---
 # <a name="getting-started-common-controls"></a>Prise en main: Contrôles courants
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ## <a name="common-controls-list"></a>Liste des contrôles courants
 
@@ -25,7 +24,7 @@ Dans la section qui précède, vous utilisiez seulement deux contrôles : les bo
 
 L’intelligence des contrôles UWP est qu’ils sont capables de détecter le type d’appareil sur lequel ils s’exécutent, et de modifier leur apparence et leurs fonctionnalités en conséquence. Par exemple, si votre projet utilise le contrôle [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681), il est capable de s’optimiser lui-même pour adapter son apparence et son comportement à l’appareil sur lequel il opère, qu’il s’agisse d’un ordinateur de bureau ou d’un téléphone. Vous n’avez rien à faire : les contrôles s’ajustent automatiquement au moment de l’exécution.
 
-| Contrôle iOS (classe/protocole) | Contrôle équivalent pour les applications du Windows Store |
+| Contrôle iOS (classe/protocole) | Contrôle UWP équivalent |
 |------------------------------|--------------------------------------|
 | Indicateur d’activité (**UIActivityIndicatorView**) | [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> Voir aussi [Démarrage rapide: ajout de contrôles de progression](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
 | Vue bannière publicitaire (**ADBannerView**) et vue déléguée bannière publicitaire (**ADBannerViewDelegate**) | [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> Voir aussi [Afficher des publicités dans votre application](../monetize/display-ads-in-your-app.md) |
@@ -33,7 +32,7 @@ L’intelligence des contrôles UWP est qu’ils sont capables de détecter le t
 | Sélecteur de dates (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | Vue image (UIImageView) | [Image](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> Voir également [Image et ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
 | Libellé (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> Voir aussi [Démarrage rapide: affichage de texte](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
-| Vue carte (MKMapView) et vue déléguée carte (MKMapViewDelegate) | Voir [Bing Cartes pour applications du Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=263496) |
+| Vue carte (MKMapView) et vue déléguée carte (MKMapViewDelegate) | Voir [Bing cartes pour les applications UWP](http://go.microsoft.com/fwlink/p/?LinkId=263496) |
 | Contrôleur de navigation (UINavigationController) et contrôleur de navigation délégué (UINavigationControllerDelegate) | [Trame](https://msdn.microsoft.com/library/windows/apps/br242682) <br/> Voir aussi [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | Contrôle de page (UIPageControl) | [Page](https://msdn.microsoft.com/library/windows/apps/br227503) <br/> Voir aussi [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | Vue sélecteur (UIPickerView) et vue déléguée sélecteur (UIPickerViewDelegate) | [ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> Voir aussi [Ajout de zones de liste déroulante et de zones de liste](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616) |
@@ -54,7 +53,7 @@ L’intelligence des contrôles UWP est qu’ils sont capables de détecter le t
 
 Pour obtenir d’autres contrôles, voir [Liste des contrôles](https://msdn.microsoft.com/library/windows/apps/mt185406).
 
-**Remarque**  Pour obtenir une liste de contrôles pour les applications du WindowsStore en JavaScript et HTML, voir [Liste des contrôles](https://msdn.microsoft.com/library/windows/apps/hh465453).
+**Remarque**pour obtenir la liste des contrôles pour les applications UWP en JavaScript et HTML, consultez la [liste des contrôles](https://msdn.microsoft.com/library/windows/apps/hh465453).
 
 ### <a name="next-step"></a>Étape suivante
 

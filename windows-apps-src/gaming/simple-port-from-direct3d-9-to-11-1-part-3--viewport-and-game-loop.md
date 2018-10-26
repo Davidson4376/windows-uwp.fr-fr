@@ -6,16 +6,14 @@ ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, jeux, portage, boucle de jeu, direct3d 9, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: baf230559ebeb285d5faa3e2de8e38b355638070
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 4db2ed74144ead22643ece17a7496b6267f7e6b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488843"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569419"
 ---
 # <a name="port-the-game-loop"></a>Porter la boucle de jeu
 
@@ -37,9 +35,9 @@ Pour configurer une fenêtre de bureau avec une fenêtre d’affichage Direct3D 
 
 L’environnement UWP possède un système beaucoup plus simple. Au lieu de configurer une fenêtre traditionnelle, un jeu du Microsoft Store qui utilise DirectX implémente l’interface [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478). Cette interface existe pour les applications et jeux DirectX pour s’exécuter directement dans une classe [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) à l’intérieur du conteneur d’application.
 
-> **Remarque** Windows fournit des pointeurs gérés aux ressources tels que l’objet d’application source et la classe [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Voir [**Handle sur l’opérateur Object (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
+> **Remarque**  Windows fournit des pointeurs gérés aux ressources tels que l’objet d’application source et le [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Voir [**Handle sur l’opérateur Object (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
 
- 
+ 
 
 Votre « principale » classe doit hériter de l’interface [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) et implémenter les cinq méthodes **IFrameworkView** : [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) et [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523). En plus de créer l’interface **IFrameworkView**, qui correspond (essentiellement) à l’emplacement auquel votre jeu va résider, vous devez implémenter une classe de fabrique qui crée une instance de votre interface **IFrameworkView**. Votre jeu possède quand même un exécutable avec une méthode appelée **main()**, mais celle-ci peut uniquement utiliser la fabrique pour créer l’instance **IFrameworkView**.
 
@@ -141,9 +139,9 @@ Consultez les articles détaillés suivants sur le développement des jeux du Mi
 -   [Audio pour les jeux](working-with-audio-in-your-directx-game.md)
 -   [Contrôles de déplacement/vue pour les jeux](tutorial--adding-move-look-controls-to-your-directx-game.md)
 
- 
+ 
 
- 
+ 
 
 
 
