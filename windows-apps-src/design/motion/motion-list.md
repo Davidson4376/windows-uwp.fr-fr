@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ca3845866bafc229968e760a3f19f56df3a96cb
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 9f1c2fa6a30047cb447b597213692085f4656bd2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653138"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544868"
 ---
 # <a name="add-and-delete-animations"></a>Ajout et suppression d’animations
 
@@ -47,9 +45,9 @@ Les animations de liste vous permettent d’insérer ou de supprimer un ou plusi
 * [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
- 
+ 
 
- 
+ 
 
 
 

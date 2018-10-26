@@ -6,19 +6,18 @@ description: L’API Windows.UI.Composition vous donne accès à la couche de co
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: b292be46ccddd4355f3bef13e37da6b6cec452fa
-ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+ms.localizationpriority: medium
+ms.openlocfilehash: 2dd8c53dad735cf1094410bf97a81f6b0247bdc7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2017
-ms.locfileid: "839487"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545743"
 ---
 # <a name="visual-layer"></a>Couche visuelle
 
-La couche visuelle fournit une performance élevée, une API en mode retenu pour les graphiques, les effets et les animations. Elle constitue la base de l’ensemble de l’interface utilisateur sur les appareils Windows. Vous définissez votre interface utilisateur de façon déclarative, et la couche visuelle s’appuie sur l’accélération matérielle graphique pour assurer le rendu de vos contenus, effets et animations de manière fluide et sans défauts, indépendamment du thread d’interface utilisateur de l’application.
+La couche visuelle fournit une performance élevée, une API en mode retenu pour les graphiques, les effets et les animations. Elle constitue la base de l’ensemble de l’interface utilisateur sur les appareils Windows.Vous définissez votre interface utilisateur de façon déclarative, et la couche visuelle s’appuie sur l’accélération matérielle graphique pour assurer le rendu de vos contenus, effets et animations de manière fluide et sans défauts, indépendamment du thread d’interface utilisateur de l’application.
 
 Éléments essentiels:
 
@@ -41,7 +40,7 @@ Principales fonctions de la couche visuelle:
 
 ### <a name="content"></a>Contenu
 
-Le contenu est hébergé, transformé et peut être utilisé par le système d’effets et d’animations à l’aide d’éléments visuels. La classe [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) figure à la base de la hiérarchie de classes. Il s’agit d’un proxy léger, agile de thread dans le processus d’application pour l’état visuel du compositeur. Les sous-classes de Visual incluent [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) pour permettre aux enfants de créer des arborescences d’éléments visuels et [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) qui comporte du contenu et peut être peint avec des couleurs unies, du contenu dessiné personnalisé ou des effets visuels. Ensemble, ces types Visual constituent la structure de l’arborescence des éléments visuels de l’interface utilisateur 2D et soutiennent les éléments FrameworkElements XAML les plus visibles.
+Le contenu est hébergé, transformé et peut être utilisé par le système d’effets et d’animations à l’aide d’éléments visuels. La classe [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) figure à la base de la hiérarchie de classes. Il s’agit d’un proxy léger, agile de thread dans le processus d’application pour l’état visuel du compositeur. De Visual inclure [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) pour permettre aux enfants de créer des arborescences d’éléments visuels et [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) contenant contenu et peut être peint avec des couleurs unies, personnalisés dessinés contenus ou des effets visuels. Ensemble, ces types Visual constituent la structure de l’arborescence des éléments visuels de l’interface utilisateur 2D et soutiennent les éléments FrameworkElements XAML les plus visibles.
 
 Pour plus d’informations, consultez la vue d’ensemble [Éléments visuels de composition](composition-visual-tree.md).
 
@@ -55,7 +54,7 @@ Pour plus d’informations, consultez la vue d’ensemble [Effets de composition
 
 ### <a name="animations"></a>Animations
 
-Le système d’animations de la couche visuelle vous permet de déplacer des éléments visuels, d’animer des effets, et d’actionner des transformations, des clips et d’autres propriétés.  Ce système indépendant de l’infrastructure a été entièrement conçu en ayant les performances à l’esprit.  Il s’exécute indépendamment du thread d’interface utilisateur pour garantir fluidité et évolutivité.  Si ce système vous permet d’utiliser des animations par images clés familières pour animer des modifications de propriétés au fil du temps, il vous permet aussi de définir des relations mathématiques entre les différentes propriétés, notamment les entrées utilisateur, ce qui vous permet de concevoir directement des expériences chorégraphiées harmonieuses.
+Le système d’animations de la couche visuelle vous permet de déplacer des éléments visuels, d’animer des effets, et d’actionner des transformations, des clips et d’autres propriétés.Ce système indépendant de l’infrastructure a été entièrement conçu en ayant les performances à l’esprit.Il s’exécute indépendamment du thread d’interface utilisateur pour garantir fluidité et évolutivité.Si ce système vous permet d’utiliser des animations par images clés familières pour animer des modifications de propriétés au fil du temps, il vous permet aussi de définir des relations mathématiques entre les différentes propriétés, notamment les entrées utilisateur, ce qui vous permet de concevoir directement des expériences chorégraphiées harmonieuses.
 
 Pour plus d’informations, consultez la vue d’ensemble [Animations de composition](composition-animation.md).
 

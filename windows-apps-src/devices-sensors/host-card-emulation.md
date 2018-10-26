@@ -6,31 +6,30 @@ description: Auparavant, Windows Phone 8.1 prenait en charge les applications d�
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: bc8064cd5446ca4c481c60b08cdf626ec85be646
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+ms.localizationpriority: medium
+ms.openlocfilehash: bf8d5f1587cc27082944cf0fc63edc274cb2bc7d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230821"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545176"
 ---
 # <a name="create-an-nfc-smart-card-app"></a>Créer une application de carte à puceNFC
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**Important**  Cette rubrique s’applique uniquement à Windows10Mobile.
+**Important**cette rubrique s’applique uniquement à Windows 10 Mobile.
 
-Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation de carte NFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage fort d’applications de paiement sécurisé avec les opérateurs de réseau mobile. Cette configuration éliminait de facto le recours aux solutions de paiement proposées par d’autres négociants ou développeurs ne présentant aucun couplage avec les opérateurs de réseau mobile. Dans Windows 10 Mobile, nous avons introduit une nouvelle technologie d’émulation de carte, appelée HCE (Host Card Emulation, émulation de carte hôte). Grâce à la technologie HCE, votre application peut directement interagir avec un lecteur de cartes NFC. Cette rubrique illustre le fonctionnement de la technologie HCE sur les appareils Windows 10 Mobile et vous explique comment développer une application HCE permettant à vos clients d’accéder à vos services sur leur téléphone, non par le biais d’une carte physique, sans aucune collaboration avec un opérateur de réseau mobile.
+Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation de carte NFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage fort d’applications de paiement sécurisé avec les opérateurs de réseau mobile. Cette configuration éliminait de facto le recours aux solutions de paiement proposées par d’autres négociants ou développeurs ne présentant aucun couplage avec les opérateurs de réseau mobile. Dans Windows 10 Mobile, nous avons introduit une nouvelle technologie d’émulation de carte appelée, émulation de carte hôte (HCE). Grâce à la technologie HCE, votre application peut directement interagir avec un lecteur de cartes NFC. Cette rubrique illustre le fonctionnement de l’émulation de carte hôte (HCE) sur les appareils Windows 10 Mobile et comment vous pouvez développer une application HCE afin que vos clients peuvent accéder à vos services par le biais de leur téléphone au lieu d’une carte physique sans aucune collaboration avec un opérateur de réseau mobile.
 
 ## <a name="what-you-need-to-develop-an-hce-app"></a>Éléments nécessaires au développement d’une application HCE
 
 
-Pour développer une application d’émulation de carte HCE pour Windows 10 Mobile, vous devez obtenir votre configuration d’environnement de développement. Pour ce faire, vous pouvez installer Microsoft Visual Studio 2015, qui comprend les outils des développeurs Windows et l’émulateur Windows 10 Mobile prenant en charge l’émulation NFC. Pour plus d’informations sur la configuration, voir [Se préparer](https://msdn.microsoft.com/library/windows/apps/Dn726766).
+Pour développer une application d’émulation de carte HCE pour Windows 10 Mobile, vous devez obtenir votre configuration d’environnement de développement. Vous pouvez obtenir configuré en installant Microsoft Visual Studio2015, qui inclut les outils de développement Windows et l’émulateur Windows 10 Mobile prenant en charge l’émulation NFC. Pour plus d’informations sur la configuration, voir [Se préparer](https://msdn.microsoft.com/library/windows/apps/Dn726766).
 
-Si vous le souhaitez, il est possible de tester un véritable appareil Windows 10 Mobile sans recourir à l’émulateur Windows 10 Mobile. Pour ce faire, vous avez besoin des éléments suivants :
+Si vous le souhaitez, si vous souhaitez tester un véritable appareil Windows 10 Mobile émulateur Windows 10 Mobile, vous devez également les éléments suivants.
 
--   un appareil Windows 10 Mobile avec prise en charge NFC HCE. Actuellement, les appareils Lumia 730, 830, 640 et le modèle 640 XL disposent du matériel prenant en charge les applications NFC HCE ;
+-   Un appareil Windows 10 Mobile avec prise en charge NFC HCE. Actuellement, les appareils Lumia 730, 830, 640 et le modèle 640 XL disposent du matériel prenant en charge les applications NFC HCE ;
 -   un terminal de lecteur prenant en charge les protocoles ISO/IEC 14443-4 et ISO/IEC 7816-4.
 
 Windows 10 Mobile implémente un service HCE qui offre les fonctionnalités suivantes.
@@ -39,9 +38,9 @@ Windows 10 Mobile implémente un service HCE qui offre les fonctionnalités suiv
 -   La résolution des conflits et le routage de la commande et de la réponse APDU (Application Protocol Data Unit) sont couplés à l’une des applications inscrites, en fonction de la carte de lecteur externe choisie et de la préférence utilisateur.
 -   Gestion des événements et des notifications sur les applications, suite aux actions de l’utilisateur.
 
-Windows 10 prend en charge l’émulation de cartes à puce utilisant le protocole ISO-DEP (ISO-IEC 14443-4) et communique via les commandes APDU définies dans la spécification ISO-IEC 7816-4. Windows 10 prend en charge la technologie ISO/IEC 14443-4 de type A pour les applications HCE. Les technologies de type B, de type F et non ISO-DEP (comme MIFARE) sont routées vers la carte SIM par défaut.
+Windows 10 prend en charge l’émulation de cartes à puce sont basés sur ISO-DEP (ISO-IEC 14443-4) et communique à l’aide des commandes APDU définies dans la norme ISO-IEC 7816-4 spécification. Windows 10 prend en charge ISO/IEC 14443-4 A technologie pour les applications HCE. Les technologies de type B, de type F et non ISO-DEP (comme MIFARE) sont routées vers la carte SIM par défaut.
 
-Seuls les appareils Windows 10 Mobile sont activés avec la fonction d’émulation de carte. L’émulation de carte HCE et SIM n’est pas disponible sur les autres versions de Windows 10.
+Seuls les appareils Windows 10 Mobile sont activés avec la fonction d’émulation de carte. L’émulation de carte basée sur HCE et SIM n’est pas disponible sur les autres versions de Windows 10.
 
 L’architecture de la prise en charge de l’émulation de cartes HCE et SIM est indiquée dans le diagramme ci-dessous.
 
@@ -49,9 +48,9 @@ L’architecture de la prise en charge de l’émulation de cartes HCE et SIM es
 
 ## <a name="app-selection-and-aid-routing"></a>Sélection des applications et routage des identificateurs d’applet
 
-Pour développer une application HCE, vous devez comprendre comment les appareils Windows10Mobile dirigent les identificateurs d’applet vers une application spécifique, dans la mesure où les utilisateurs peuvent installer différentes applications HCE. Chaque application peut inscrire plusieurs cartes HCE et SIM. Les applications Windows Phone 8.1 héritées qui sont basées sur la carte SIM continueront à fonctionner sur Windows 10 Mobile, tant que l’utilisateur sélectionne l’option Carte SIM en tant que carte de paiement par défaut dans le menu des paramètres NFC. Il s’agit de la configuration établie par défaut lors du premier allumage de l’appareil.
+Pour développer une application HCE, vous devez comprendre comment les appareils Windows 10 Mobile dirigent les identificateurs d’applet vers une application spécifique dans la mesure où les utilisateurs peuvent installer différentes applications HCE. Chaque application peut inscrire plusieurs cartes HCE et SIM. Les applications Windows Phone 8.1 héritées qui sont basées sur la carte SIM continueront à fonctionner sur Windows 10 Mobile tant que l’utilisateur sélectionne l’option de «Carte SIM» en tant que carte de paiement par défaut dans le menu des paramètres NFC. Il s’agit de la configuration établie par défaut lors du premier allumage de l’appareil.
 
-Lorsque l’utilisateur appuie vers un terminal sur son appareil Windows 10 Mobile, les données sont automatiquement routées vers l’application appropriée installée sur l’appareil. Ce routage est basé sur les identificateurs d’applet (AID), qui sont des identificateurs de 5-16 octets. Lors d’un appui, le terminal externe transmet une commande SELECT APDU afin de spécifier l’identificateur d’applet vers lequel diriger l’ensemble des commandes APDU suivantes. Les commandes SELECT suivantes modifieront de nouveau le routage. En fonction des identificateurs d’applet inscrits par les applications et des paramètres utilisateurs, le trafic APDU est dirigé vers une application spécifique, qui renvoie une réponse APDU. N’oubliez pas qu’un terminal peut tenter de communiquer avec plusieurs applications durant le même appui. Ainsi, vous devez vous assurer que la tâche en arrière-plan de votre application se ferme le plus rapidement possible lorsqu’elle est désactivée, afin de libérer de l’espace pour une autre tâche en arrière-plan d’application, utilisée pour répondre à la commande APDU. Les tâches en arrière-plan seront évoquées ultérieurement dans cette rubrique.
+Lorsque l’utilisateur appuie sur leur appareil Windows 10 Mobile vers un terminal, les données sont automatiquement routées vers l’application appropriée installée sur l’appareil. Ce routage est basé sur les identificateurs d’applet (AID), qui sont des identificateurs de 5-16 octets. Lors d’un appui, le terminal externe transmet une commande SELECT APDU afin de spécifier l’identificateur d’applet vers lequel diriger l’ensemble des commandes APDU suivantes. Les commandes SELECT suivantes modifieront de nouveau le routage. En fonction des identificateurs d’applet inscrits par les applications et des paramètres utilisateurs, le trafic APDU est dirigé vers une application spécifique, qui renvoie une réponse APDU. N’oubliez pas qu’un terminal peut tenter de communiquer avec plusieurs applications durant le même appui. Ainsi, vous devez vous assurer que la tâche en arrière-plan de votre application se ferme le plus rapidement possible lorsqu’elle est désactivée, afin de libérer de l’espace pour une autre tâche en arrière-plan d’application, utilisée pour répondre à la commande APDU. Les tâches en arrière-plan seront évoquées ultérieurement dans cette rubrique.
 
 Les applications HCE doivent s’inscrire avec les identificateurs d’applet spécifiques pris en charge, afin de configurer la réception des commandes APDU associées. Les applications utilisent des groupes d’identificateurs d’applet pour communiquer les identificateurs d’applet traités. D’un point de vue conceptuel, un groupe d’identificateurs d’applet équivaut à une carte physique individuelle. Par exemple, une carte de crédit est communiquée avec un groupe donné d’identificateurs d’application et une seconde carte de crédit d’une banque différente est communiquée avec un groupe différent d’identificateurs d’applet, même si les deux peuvent prendre en charge des identificateurs d’applet identiques.
 
@@ -75,7 +74,7 @@ Votre application peut créer, inscrire et activer des groupes d’identificateu
 
 **Coexistence avec des applicationsNFC basées sur SIM**
 
-Dans Windows 10 Mobile, le système configure la table de routage du contrôleur NFC qui est utilisée pour prendre les décisions de routage sur la couche du contrôleur. La table contient les informations de routage pour les éléments suivants.
+Dans Windows 10 Mobile, le système configure la table de routage de contrôleur NFC qui est utilisée pour prendre des décisions de routage sur la couche du contrôleur. La table contient les informations de routage pour les éléments suivants.
 
 -   Itinéraires des identificateurs d’applet.
 -   Itinéraire de protocole (ISO-DEP).
@@ -83,9 +82,9 @@ Dans Windows 10 Mobile, le système configure la table de routage du contrôleur
 
 Lorsqu’un lecteur externe envoie une commande «SELECT AID», le contrôleur NFC recherche une correspondance d’itinéraire d’identificateur d’applet dans la table de routage. Si aucune correspondance n’est identifiée, le contrôleur utilise l’itinéraire de protocole en tant qu’itinéraire par défaut pour le trafic ISO-DEP (14443-4-A). Pour tous les autres trafics non ISO-DEP, il utilise le routage technologique.
 
-Dans la page des paramètres NFC, Windows 10 Mobile offre une option de menu «Carte SIM» qui permet de continuer à utiliser les applications héritées sur carte SIM de Windows Phone 8.1, qui n’inscrivent pas leurs identificateurs d’applet auprès du système. Si l’utilisateur sélectionne «Carte SIM» en tant que carte de paiement par défaut, l’itinéraire ISO-DEP est défini sur UICC. Pour toutes les autres sélections du menu déroulant, l’itinéraire ISO-DEP est défini sur l’hôte.
+Windows 10 Mobile offre une option de menu «Carte SIM» dans la page des paramètres NFC pour continuer à utiliser des applications héritées sur carte SIM de Windows Phone 8.1, qui n’inscrivent pas leurs identificateurs d’applet auprès du système. Si l’utilisateur sélectionne «Carte SIM» en tant que carte de paiement par défaut, l’itinéraire ISO-DEP est défini sur UICC. Pour toutes les autres sélections du menu déroulant, l’itinéraire ISO-DEP est défini sur l’hôte.
 
-L’itinéraire ISO-DEP est défini sur «Carte SIM» pour les appareils qui présentent une carte SIM compatible SE lorsque l’appareil est démarré pour la première fois avec Windows 10 Mobile. Lorsque l’utilisateur installe une application HCE et que cette application active des inscriptions de groupes d’identificateurs d’applet HCE, l’itinéraire ISO-DEP est dirigé vers l’hôte. Les nouvelles applications sur cartes SIM doivent inscrire les identificateurs d’applet sur la carte SIM afin de renseigner les itinéraires d’identificateur d’applet dans la table de routage du contrôleur.
+L’itinéraire ISO-DEP est défini sur «Carte SIM» pour les appareils qu’ont une carte SIM compatible SE lorsque l’appareil est démarré pour la première fois avec Windows 10 Mobile. Lorsque l’utilisateur installe une application HCE et que cette application active des inscriptions de groupes d’identificateurs d’applet HCE, l’itinéraire ISO-DEP est dirigé vers l’hôte. Les nouvelles applications sur cartes SIM doivent inscrire les identificateurs d’applet sur la carte SIM afin de renseigner les itinéraires d’identificateur d’applet dans la table de routage du contrôleur.
 
 ## <a name="creating-an-hce-based-app"></a>Création d’une application HCE
 
@@ -315,7 +314,7 @@ reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundO
 
 Votre application doit vérifier si un appareil présente le matériel NFC, prend en charge la fonction d’émulation de carte et l’émulation de carte hôte afin de proposer de telles fonctionnalités à l’utilisateur.
 
-La fonction d’émulation de carte à puce NFC est activée uniquement sur Windows 10 Mobile. En conséquence, vous provoquerez des erreurs si vous tentez d’utiliser les API d’émulateur de carte à puce dans d’autres versions de Windows 10. Pour vérifier la prise en charge de l’API de carte à puce, consultez l’extrait de code suivant.
+La fonction d’émulation de carte à puce NFC est activée uniquement sur Windows 10 Mobile, par conséquent, essayez d’utiliser l’API d’émulateur de carte à puce dans d’autres versions de Windows 10, vous provoquerez des erreurs. Pour vérifier la prise en charge de l’API de carte à puce, consultez l’extrait de code suivant.
 
 ```csharp
 Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Devices.SmartCards.SmartCardEmulator");
@@ -327,7 +326,7 @@ Pour savoir si l’appareil est équipé de matériel NFC prenant en charge une 
 var smartcardemulator = await SmartCardEmulator.GetDefaultAsync();<
 ```
 
-La prise en charge du routage UICC AID et HCE est disponible uniquement sur les appareils lancés récemment, comme les modèles Lumia 730, 830, 640, et 640 XL. Tous les nouveaux appareils compatibles NFC exécutant Windows 10 Mobile et les versions ultérieures doivent prendre en charge HCE. Pour vérifier la prise en charge HCE, votre application peut procéder de la façon suivante.
+La prise en charge du routage UICC AID et HCE est disponible uniquement sur les appareils lancés récemment, comme les modèles Lumia 730, 830, 640, et 640 XL. Les nouveaux appareils compatibles NFC exécutant Windows 10 Mobile et ultérieures doivent prendre en charge HCE. Pour vérifier la prise en charge HCE, votre application peut procéder de la façon suivante.
 
 ```csharp
 Smartcardemulator.IsHostCardEmulationSupported();
@@ -335,7 +334,7 @@ Smartcardemulator.IsHostCardEmulationSupported();
 
 ## <a name="lock-screen-and-screen-off-behavior"></a>Comportement de l’écran de verrouillage et de l’écran éteint
 
-Windows 10 Mobile dispose de paramètres d’émulation de carte de niveau appareil, qui peuvent être définis par l’opérateur mobile ou le fabricant de l’appareil. Par défaut, le commutateur Toucher pour payer est désactivé et la stratégie d’activation au niveau appareil est définie sur Toujours, sauf si l’opérateur mobile ou le fabricant remplacent ces valeurs.
+Windows 10 Mobile a des paramètres d’émulation de carte au niveau du périphérique, qui peuvent être définis par l’opérateur mobile ou le fabricant de l’appareil. Par défaut, le commutateur Toucher pour payer est désactivé et la stratégie d’activation au niveau appareil est définie sur Toujours, sauf si l’opérateur mobile ou le fabricant remplacent ces valeurs.
 
 Votre application peut interroger la valeur de l’élément [**EnablementPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn608006) au niveau appareil et réagir selon les cas, en fonction du comportement souhaité de votre application dans chaque état.
 
@@ -385,5 +384,4 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Uicc);
 ```
 
-** Important **  
-La prise en charge héritée de l’interception des SMS binaires de Windows Phone8.1 a été supprimée et remplacée par une nouvelle prise en charge élargie des SMS dans Windows10 Mobile, mais l’ensemble des applications Windows Phone8.1 héritées utilisant cette fonctionnalité doivent être mises à jour pour prendre en charge les nouvelles API SMS Windows10 Mobile.
+** Importantes ** hérité binaire SMS interception prend en charge le Windows Phone 8.1 a été supprimée et remplacée par la nouvelle plus large prise en charge SMS dans Windows 10 Mobile, mais toutes les applications Windows Phone 8.1 héritées élargie des doivent mettre à jour pour utiliser le service SMS de nouveau Windows 10 Mobile API.

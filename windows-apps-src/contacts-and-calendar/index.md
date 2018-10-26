@@ -6,16 +6,14 @@ ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, contacts, calendrier, rendez-vous, messages électroniques
 ms.localizationpriority: medium
-ms.openlocfilehash: 2224ab78d5f3424904dfc2e211d9890648080574
-ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
-ms.translationtype: HT
+ms.openlocfilehash: c020a871863df6fac3dabc3ffab4bafc57227b50
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "1905334"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549321"
 ---
 # <a name="contacts-my-people-and-calendar"></a>Contacts, Mes Contacts et calendrier
 
@@ -24,7 +22,7 @@ Vous pouvez permettre aux utilisateurs d’accéder à leurs contacts et rendez-
 
 Pour en savoir plus sur les différentes façons d’accéder aux contacts et aux rendez-vous dans votre application, voir les rubriques suivantes:
 
-| Sujet | Description |
+| Rubrique | Description |
 |-------|-------------|
 | [Sélectionner des contacts](selecting-contacts.md) | L’espace de noms [<strong>Windows.ApplicationModel.Contacts</strong>](https://msdn.microsoft.com/library/windows/apps/BR225002) fournit plusieurs options de sélection des contacts. Ici, nous allons vous montrer comment sélectionner un ou plusieurs contacts, et comment configurer le sélecteur de contacts pour récupérer uniquement les informations de contact dont votre application a besoin. |
 | [Envoyer un courrier électronique](sending-email.md) | Montre comment lancer la boîte de dialogue de rédaction d’un courrier électronique pour permettre à l’utilisateur d’envoyer un courrier électronique. Vous pouvez préremplir les champs de l’e-mail avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi. |
@@ -35,7 +33,7 @@ Pour en savoir plus sur les différentes façons d’accéder aux contacts et au
 | [Partage de Mes Contacts](my-people-sharing.md) | Explique comment ajouter la prise en charge du partage de Mes Contacts qui permet aux utilisateurs de partager du contenu avec leurs contacts épinglés en faisant glisser des fichiers à partir de l’Explorateur de fichiers vers une épingle de Mes Contacts. |
 | [Notifications de mes contacts](my-people-notifications.md) | Explique comment créer et utiliser les Notifications de Mes Contacts, un nouveau type de notification toast envoyée à partir d'un contact épinglé. |
 
- 
+ 
 
 ## <a name="related-topics"></a>Rubriquesconnexes
 

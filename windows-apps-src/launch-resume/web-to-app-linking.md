@@ -1,33 +1,31 @@
 ---
 author: TylerMSFT
-title: Activer des applications pour les sites Web à l’aide de gestionnaires URI d’application
-description: Lecteur engagement utilisateur avec votre application prend en charge les applications pour la fonctionnalité des sites Web.
+title: Permettent aux applications pour les sites Web à l’aide de gestionnaires d’URI d’application
+description: Attractive avec votre application prenant en charge les applications pour la fonctionnalité de sites Web.
 keywords: Liaisons Windows ciblées
 ms.author: twhitney
 ms.date: 08/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 8482c3b14a6845dc3bfd5912c8260b5cd3214249
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 7f6438b8d1d7b8a8ce47ed4e5baddcb59285e660
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958312"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548823"
 ---
-# <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Activer des applications pour les sites Web à l’aide de gestionnaires URI d’application
+# <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Permettent aux applications pour les sites Web à l’aide de gestionnaires d’URI d’application
 
-Applications pour les sites Web associe votre application à un site Web afin que lorsqu’une personne ouvre un lien vers votre site Web, votre application est lancée au lieu d’ouvrir le navigateur. Si votre application n’est pas installée, votre site Web s’ouvre normalement dans le navigateur. Cette expérience est très fiable puisque seuls les propriétaires de contenus vérifiés peuvent s’inscrire pour créer ce type de lien. Les utilisateurs seront en mesure de vérifier tous leurs liens web-à-app enregistrés en accédant à Paramètres > applications > applications pour les sites Web.
+Applications pour les sites Web associe votre application à un site Web afin que lorsqu’un utilisateur ouvre un lien vers votre site Web, votre application est lancée au lieu d’ouvrir le navigateur. Si votre application n’est pas installée, votre site Web s’ouvre comme d’habitude dans le navigateur. Cette expérience est très fiable puisque seuls les propriétaires de contenus vérifiés peuvent s’inscrire pour créer ce type de lien. Les utilisateurs seront en mesure de vérifier toutes leurs liens web applications inscrits en accédant à Paramètres > applications > applications pour les sites Web.
 
-Pour activer web-app liaison vous devrez:
+Pour activer le web-la liaison application-vous devez:
 - identifier les URI gérés par votre application dans le fichier manifeste;
-- Un fichier JSON qui définit l’association entre votre application et de votre site Web. déclaration de manifeste avec l’application de nom de famille de Package à la même racine hôte en tant que l’application.
+- Un fichier JSON qui définit l’association entre votre application et votre site Web. déclaration de manifeste avec le nom de famille de Package d’application à la même racine hôte que l’application.
 - gérer l’activation dans l’application.
 
 > [!Note]
-> À partir de la mise à jour Windows 10 créateurs, pris en charge des liens cliqués dans Microsoft Edge lance l’application correspondante. Prise en charge des liens cliqué sur d’autres navigateurs (par exemple, Internet Explorer, etc.), vous communiquera dans l’expérience de navigation.
+> À partir de la mise à jour Windows 10 Creators, pris en charge des liens cliqués dans Microsoft Edge seront lance l’application concernée. Prise en charge des liens a cliqué dans d’autres navigateurs (par exemple, Internet Explorer, etc.), vous gardera dans l’expérience de navigation.
 
 ## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>S’inscrire pour bénéficier du traitement des liens http et https dans le manifeste de l’application
 
@@ -80,7 +78,7 @@ L’exemple de fichier JSON ci-dessus illustre l’utilisation des caractères g
 | **\***       | Représente une sous-chaîne      |
 | **?**        | Représente un caractère unique |
 
-Par exemple, `"excludePaths" : [ "/news/*", "/blog/*" ]` dans l’exemple ci-dessus, votre application prendra en charge tous les chemins d’accès qui commencent par adresse de votre site Web (par exemple, msn.com), **à l’exception de** ceux de `/news/` et `/blog/`. **msn.com/weather.html** sera donc pris en charge, mais pas ****msn.com/news/topnews.html****.
+Par exemple, pour `"excludePaths" : [ "/news/*", "/blog/*" ]` dans l’exemple ci-dessus, votre application prendra en charge tous les chemins d’accès qui commencent par adresse de votre site Web (par exemple, msn.com), **sauf** ceux sous `/news/` et `/blog/`. **msn.com/weather.html** sera donc pris en charge, mais pas ****msn.com/news/topnews.html****.
 
 ### <a name="multiple-apps"></a>Applications multiples
 
@@ -168,9 +166,9 @@ Testez la configuration de votre application et de votre site web en exécutant 
 -   Package Family Name: le nom de la famille de packages (PFN) de votre application
 -   File path: le fichier JSON utilisé pour la validation locale (par exemple, C:\\SomeFolder\\windows-app-web-link)
 
-Si l’outil ne renvoie rien, validation fonctionnera sur ce fichier lors du téléchargement. S’il existe un code d’erreur, il ne fonctionnera pas.
+Si l’outil ne renvoie rien, validation fonctionnent sur ce fichier lorsqu’il est chargé. S’il existe un code d’erreur, il fonctionnera pas.
 
-Vous pouvez activer la clé de Registre suivante forcer le chemin d’accès pour les applications côté-chargé dans le cadre d’une validation locale:
+Vous pouvez activer la clé de Registre suivante forcer le chemin d’accès de la mise en correspondance pour les applications chargées dans le cadre de validation locale:
 
 `HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
 AppModel\SystemAppData\YourApp\AppUriHandlers`
@@ -199,7 +197,7 @@ Si vous souhaitez suivre la logique d’activation du protocole, définissez un 
 
 ## <a name="see-also"></a>Voir également
 
-[Projet Web-à-App](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
-[windows.protocol inscription](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
-[Gérer l’Activation de URI](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-[Association lancement](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) illustre comment utiliser l’API LaunchUriAsync().
+[Web application-exemple de projet](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
+[inscription de windows.protocol](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
+[Gérer l’Activation des URI](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+[lancement d’Association exemple](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) montre comment utiliser l’API LaunchUriAsync().

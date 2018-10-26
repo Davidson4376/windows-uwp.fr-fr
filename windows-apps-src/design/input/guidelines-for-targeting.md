@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c9feb6460512a7266dfd5d2979b89084f6487f5
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 3af31535dcdb1cb5eb8beebbbb91312adafe353a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653448"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546951"
 ---
 # <a name="guidelines-for-targeting"></a>Recommandations en matière de ciblage
 
@@ -104,7 +102,7 @@ Le tableau suivant montre les tailles minimales et recommandées pour les compos
 </tbody>
 </table>
 
- 
+ 
 
 Vous pouvez modifier ces recommandations en matière de tailles de cibles en fonction du scénario particulier de votre application. Certaines des remarques suivantes liées à ces recommandations doivent être prises en compte :
 
@@ -168,9 +166,9 @@ Pour concevoir des interactions de frottement, tenez compte des recommandations 
 * [Entrée : exemple de mouvements Windows 8](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [Entrée : exemple de manipulations et de mouvements (C++)](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [Exemple d’entrée tactile DirectX](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

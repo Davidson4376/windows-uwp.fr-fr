@@ -3,18 +3,16 @@ author: TerryWarwick
 title: Objets appareil PointOfService
 description: En savoir plus sur la création d’objets appareils PointOfService
 ms.author: jken
-ms.date: 06/4/2018
+ms.date: 06/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: eaaeeae3e21549510258ee9370ef6ffb0d9f9020
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 31af943ab4a9231f58fb2e3d5489e9ae80d8d565
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976730"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5550128"
 ---
 # <a name="pointofservice-device-objects"></a>Objets appareil PointOfService
 
@@ -24,16 +22,18 @@ Une fois que vous avez identifié l'appareil PointOfService que vous souhaitez u
 Cet exemple tente de créer un nouvel objet BarcodeScanner avec FromIdAsync à l’aide d’un ID d’appareil. Si un échec se produit lors de la création de l’objet, un message de débogage est écrit.
 
 ```Csharp
-using windows.devices.enumeration;
 
-try
-{
     BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);
-}
-catch (Exception ex)
-{
-    Debug.WriteLine("Failure: - " + ex.Message);
-}
+
+    if(barcodeScanner != null)
+    {
+        // after successful creation, claim the scanner for exclusive use and enable it to exchange data
+    }
+    else
+    {
+        Debug.WriteLine("Failure to create barcodeScanner object");
+    }
+    
 ```
 
 Une fois que vous avez un objet appareil, vous pouvez accéder aux méthodes, aux propriétés et aux événements de l'appareil.  

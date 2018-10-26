@@ -7,19 +7,17 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dc34d15ed7f623b564101f4731beb72bb4bfbcc
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 14d5120632833e91e82ed7dd717ba04a9abb0efb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652590"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546575"
 ---
 # <a name="content-transition-animations"></a>Animations de transition de contenu
 
@@ -50,9 +48,9 @@ Les animations de transition de contenu vous permettent de modifier le contenu d
 * [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
- 
+ 
 
- 
+ 
 
 
 

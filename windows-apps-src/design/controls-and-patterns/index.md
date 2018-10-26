@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 11/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: ad1ba185e70a34a4e7bfed0609412ac7bbca2d4a
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: Auto
+ms.openlocfilehash: fdaa8cd73bb2f1199e7214206ec2b0b52628a906
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653688"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550920"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>Contrôles et modèles pour applications UWP
  
@@ -32,20 +30,19 @@ Les articles de cette section donnent des recommandations en matière de concept
 
 Instructions générales et exemples de code d’ajout et de stylisation de contrôles en XAML et C#.
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-   <p><b><a href="controls-and-events-intro.md">Ajouter des contrôles et gérer des événements</a></b> <br/>
-L’ajout de contrôles à votre application se fait en trois étapes: l’ajout de contrôle à l’interface utilisateur de votre application, la définition de propriétés sur le contrôle et l’ajout de code aux gestionnaires d’événements du contrôle pour que ce dernier soit opérationnel.</li>
-</ul> 
-</p>
-  </div>
-  <div class="side-by-side-content-right">
-   <p><b><a href="xaml-styles.md">Application de styles aux contrôles</a></b> <br/>
+:::row:::
+    :::column:::
+      <p><b><a href="controls-and-events-intro.md">Ajouter des contrôles et gérer des événements</a></b> <br/>
+L’ajout de contrôles à votre application se fait en trois étapes: l’ajout de contrôle à l’interface utilisateur de votre application, la définition de propriétés sur le contrôle et l’ajout de code aux gestionnaires d’événements du contrôle pour que ce dernier soit opérationnel.</p>
+    :::column-end:::
+    :::column:::
+      <p><b><a href="xaml-styles.md">Application de styles aux contrôles</a></b> <br/>
 Vous pouvez personnaliser l’apparence de vos applications de nombreuses manières à l’aide de l’infrastructure XAML. Les styles permettent de définir les propriétés des contrôles et de réutiliser ces paramètres pour uniformiser l’apparence de plusieurs contrôles.</p>
-  </div>
-</div>
-</div>
+    :::column-end:::
+:::row-end:::
+
+## <a name="get-the-windows-ui-library"></a>Obtenir la bibliothèque d’interface utilisateur Windows
+Certains contrôles sont uniquement disponibles dans la bibliothèque de l’interface utilisateur Windows. Pour la faire, consultez les [instructions d’installation et de vue d’ensemble de la bibliothèque de l’interface utilisateur Windows](/uwp/toolkits/winui/).
 
 ## <a name="alphabetical-index"></a>Index alphabétique 
 
@@ -67,7 +64,7 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 
 <li style="list-style-type: none;"><a href="date-and-time.md">Contrôles de date et d’heure</a></li>
 
-<li style="list-style-type: none;"><a href="dialogs.md">Boîtes de dialogue et menus volants</a></li>
+<li style="list-style-type: none;"><a href="dialogs-and-flyouts/index.md">Boîtes de dialogue et menus volants</a></li>
 
 <li style="list-style-type: none;"><a href="flipview.md">Vue symétrique</a></li>
 
@@ -91,15 +88,17 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 
 <li style="list-style-type: none;"><a href="menus.md">Menus et menus contextuels</a></li>
 
-<li style="list-style-type: none;"><a href="navigationview.md">Mode de navigation</a></li>
+<li style="list-style-type: none;"><a href="navigationview.md">Affichage de navigation</a></li>
 
 <li style="list-style-type: none;"><a href="person-picture.md">Photo de la personne</a></li>
+
+<li style="list-style-type: none;"><a href="pivot.md">Pivot</a></li>
 
 <li style="list-style-type: none;"><a href="progress-controls.md">Contrôles de progression</a></li>
 
 <li style="list-style-type: none;"><a href="radio-button.md">Case d’option</a></li>
 
-<li style="list-style-type: none;"><a href="rating.md">Contrôle Rating</a></li>
+<li style="list-style-type: none;"><a href="rating.md">Contrôle d’évaluation</a></li>
 
 <li style="list-style-type: none;"><a href="scroll-controls.md">Contrôles de défilement et de mouvement panoramique</a></li>
 
@@ -112,8 +111,6 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 <li style="list-style-type: none;"><a href="slider.md">Curseur</a></li>
 
 <li style="list-style-type: none;"><a href="split-view.md">Mode Fractionné</a></li>
-
-<li style="list-style-type: none;"><a href="tabs-pivot.md">Onglets et sélecteurs de vue</a></li>
 
 <li style="list-style-type: none;"><a href="text-controls.md">Contrôles de texte</a></li>
 

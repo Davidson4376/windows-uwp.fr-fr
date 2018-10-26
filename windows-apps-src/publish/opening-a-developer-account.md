@@ -6,16 +6,14 @@ description: Cette vue d’ensemble, qui explique comment s’inscrire afin d’
 ms.author: wdg-dev-content
 ms.date: 08/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b707479d11cc7aef62385b476720bff8477ed401
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 935e628bb285adea8e515f6192d7f2654c05022e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514883"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550970"
 ---
 # <a name="opening-a-developer-account"></a>Ouverture d’un compte de développeur
 

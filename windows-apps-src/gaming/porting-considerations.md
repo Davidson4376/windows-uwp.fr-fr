@@ -6,16 +6,14 @@ ms.assetid: 7a3f8ddf-d5b2-1c05-b532-70459befda4e
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, directx9, directx11 , portage
 ms.localizationpriority: medium
-ms.openlocfilehash: 6429fac3aaa58c200776358a1875b78f8699c75d
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 4e867129b5f684c7e77aebefcbe9a3f68b47b031
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652088"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549707"
 ---
 # <a name="moving-from-directx-9-to-directx-11-and-universal-windows-platform-uwp"></a>Portage de DirectX9 vers DirectX11 et la plateforme Windows universelle (UWP)
 
@@ -30,7 +28,7 @@ Cette section fournit des recommandations sur le portage de jeux de bureau Direc
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -50,11 +48,11 @@ Cette section fournit des recommandations sur le portage de jeux de bureau Direc
 </tbody>
 </table>
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

@@ -5,16 +5,14 @@ title: Obtenir des acquisitions Xbox One
 ms.author: mhopkins
 ms.date: 10/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, Xbox One acquisitions de modules complémentaires
 ms.localizationpriority: medium
-ms.openlocfilehash: 931cd7b351a122c22a59a3a0bc2975c61dc38aaa
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: e703c0c07e981ebf21ad3388ad178eabdd5c068d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478095"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543633"
 ---
 # <a name="get-xbox-one-add-on-acquisitions"></a>Obtenir des acquisitions Xbox One
 

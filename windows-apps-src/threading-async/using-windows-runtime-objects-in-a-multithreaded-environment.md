@@ -2,19 +2,18 @@
 title: Utilisation des objets Windows Runtime dans un environnement multi-thread | Documentation Microsoft
 description: Cet article décrit la façon dont le .NETFramework gère les appels depuis C# et le code Visual Basic vers les objets fournis par Windows Runtime ou par les composants Windows Runtime.
 ms.date: 01/14/2017
-ms.prod: windows
 ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
-ms.technology: uwp
 author: normesta
 ms.author: normesta
 keywords: windows10, uwp, minuteur, threads
-ms.openlocfilehash: be517596d6792355e75aeb052b0dab8cb14b8e1e
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 9f4b8249a81cb7d71ba1f4775fd858ae87779c85
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665559"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549651"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>Utilisation des objets Windows Runtime dans un environnement multi-thread
 Cet article décrit la façon dont le .NETFramework gère les appels depuis C# et le code Visual Basic vers les objets fournis par Windows Runtime ou par les composants Windows Runtime.

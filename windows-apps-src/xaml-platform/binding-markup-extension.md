@@ -6,23 +6,21 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f90821fdadea0939dbad316ad9be4424b31a926
-ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
-ms.translationtype: HT
+ms.openlocfilehash: 69d316ad48645d8995e602b270a5615322c8b43f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "1573046"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549176"
 ---
 # <a name="binding-markup-extension"></a>Extension de balisage {Binding}
 
 
-**Remarque**  Un nouveau mécanisme de liaison est disponible pour Windows10, qui est optimisé pour la productivité des développeurs et les performances. Voir [extension de balisage {x:Bind}](x-bind-markup-extension.md).
+**Remarque**un nouveau mécanisme de liaison est disponible pour Windows 10, qui est optimisé pour la productivité des développeurs et les performances. Voir [extension de balisage {x:Bind}](x-bind-markup-extension.md).
 
-**Remarque**  Pour plus d’informations sur l’utilisation de la liaison de données dans votre application avec **{Binding}** (et pour une comparaison entre **{x:Bind}** et **{Binding}**), voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Remarque**pour des informations générales sur l’utilisation des données de liaison dans votre application avec **{Binding}** (et pour une comparaison entre **{x: Bind}** et **{Binding}**), consultez [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 L’extension de balisage **{Binding}** est utilisée pour lier les données de propriétés sur des contrôles à des valeurs provenant d’une source de données, comme du code. L’extension de balisage **{Binding}** est convertie au moment du chargement XAML en une instance de la classe [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Cet objet de liaison obtient une valeur d’une propriété sur une source de données et la transmet à la propriété sur le contrôle. L’objet de liaison peut éventuellement être configuré pour observer les modifications de la valeur de la propriété de source de données, et se mettre à jour en fonction de ces modifications. Il peut également être configuré pour renvoyer les modifications de la valeur de contrôle à la propriété source. La propriété qui est la cible de la liaison de données doit être une propriété de dépendance. Pour plus d’informations, voir [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md).
 
@@ -83,7 +81,7 @@ Pour plus d’informations sur la syntaxe de chaîne d’un chemin de propriét�
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | Spécifie une valeur à afficher quand la valeur de la source est résolue, mais est explicitement **null**. |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | Spécifie le minutage des mises à jour de la source de liaison. Si cette valeur n’est pas spécifiée, la valeur par défaut est **Default**. |
 
-**Remarque**  Si vous convertissez un balisage de **{x:Bind}** en **{Binding}**, soyez attentif aux différences de valeur par défaut de la propriété **Mode**.
+**Remarque**si vous convertissez un balisage à partir de **{x: Bind}** **{** Binding}, tenez compte des différences des valeurs par défaut pour la propriété **Mode** .
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) et **ConverterLanguage** sont tous liés au scénario de conversion d’une valeur ou d’un type de la source de liaison en type ou valeur compatible avec la propriété cible de liaison. Pour obtenir plus d’informations et des exemples, voir la section « Conversions de données » de [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
@@ -92,7 +90,7 @@ Pour plus d’informations sur la syntaxe de chaîne d’un chemin de propriét�
 
 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832), [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) et [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) spécifient une source de liaison, ils s’excluent donc mutuellement.
 
-**Conseil**  Si vous avez besoin de spécifier une accolade simple pour une valeur, comme dans [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) ou [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), faites-la précéder d’une barre oblique inverse: `\{`. Vous pouvez également placer l’ensemble de la chaîne qui contient les accolades à échapper dans une paire de guillemets secondaire. Par exemple : `ConverterParameter='{Mix}'`.
+**Conseil**si vous avez besoin de spécifier une accolade simple pour une valeur, comme dans le [**chemin d’accès**](https://msdn.microsoft.com/library/windows/apps/br209830) ou [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), faites-la précéder d’une barre oblique inverse: `\{`. Vous pouvez également placer l’ensemble de la chaîne qui contient les accolades à échapper dans une paire de guillemets secondaire. Par exemple : `ConverterParameter='{Mix}'`.
 
 ## <a name="examples"></a>Exemples
 
@@ -129,4 +127,4 @@ Notez comment la valeur de propriété [**Converter**](https://msdn.microsoft.co
 
 Microsoft IntelliSense dans Microsoft Visual Studio affiche les propriétés du contexte de données lors de l’écriture de **{Binding}** dans l’éditeur de balisage XAML. Dès que vous tapez « {Binding », les propriétés de contexte de données appropriées pour [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) sont affichées dans la liste déroulante. IntelliSense est également utile avec les autres propriétés de [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Pour ce faire, vous devez disposer soit du contexte de données, soit du contexte de données au moment de la conception défini dans la page de balisage. **Atteindre la définition** (F12) fonctionne également avec **{Binding}**. Vous pouvez aussi utiliser la boîte de dialogue de liaison de données.
 
- 
+ 

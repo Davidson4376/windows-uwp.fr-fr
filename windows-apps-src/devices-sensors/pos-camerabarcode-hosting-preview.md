@@ -5,16 +5,14 @@ description: Découvrez comment héberger un aperçu de scanneur de codes-barres
 ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e5765a725ad99a1092ad8c56cef674ec6210a2c
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: Auto
+ms.openlocfilehash: 9684db2495e974c23d81b21e9a4a2e764d390255
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833140"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547614"
 ---
 # <a name="hosting-a-camera-barcode-scanner-preview-in-your-application"></a>Héberger un aperçu de scanneur de codes-barres à caméra dans votre application
 ## <a name="step-1-setup-your-camera-preview"></a>Étape1: Installer l'aperçu de votre caméra
@@ -40,14 +38,9 @@ L’exemple suivant initialise les paramètres [**MediaCaptureInitializationSett
  private void InitCaptureSettings()
 {
     _captureInitSettings = new MediaCaptureInitializationSettings();
-    _captureInitSettings.VideoDeviceId = ClaimedBarcodeScanner.VideoDeviceId;
+    _captureInitSettings.VideoDeviceId = BarcodeScanner.VideoDeviceId;
     _captureInitSettings.StreamingCaptureMode = StreamingCaptureMode.Video;
     _captureInitSettings.PhotoCaptureSource = PhotoCaptureSource.VideoPreview;
-    
-    if (_deviceList.Count > 0)
-    {
-        _captureInitSettings.VideoDeviceId = _deviceList[0].Id;
-    }
 }
 ```
 ## <a name="step-5-associate-your-mediacapture-object-with-the-camera-barcode-scanner"></a>Étape5: Associer votre objet MediaCapture avec le scanneur de codes-barres à caméra

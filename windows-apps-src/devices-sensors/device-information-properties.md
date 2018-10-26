@@ -6,16 +6,14 @@ description: Chaque appareil dispose de propriétés DeviceInformation associée
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c8fe51fd98f70e6f920a7421a9932e69bba11377
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 2ad87bdfa468c98a2e10d57f81b8e8d187bfbcef
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "959245"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543366"
 ---
 # <a name="device-information-properties"></a>Propriétés d’informations d’appareil
 
@@ -38,7 +36,7 @@ Un objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps
 Lorsque vous demandez des propriétés, vous n’êtes pas limité aux propriétés communes avec des noms conviviaux. Vous pouvez spécifier le GUID sous-jacent et l’ID de propriété (PID) pour demander toute propriété disponible, même une propriété personnalisée fournie par un appareil ou un pilote individuel. Le format pour spécifier une propriété personnalisée est « `{GUID} PID` ». Par exemple: «`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`». 
 
 > [!Note]
-> Vous trouverez la liste des GUID de propriété dans le fichier d’en-tête de clé de propriété périphérique du pilote de périphérique.
+> Vous trouverez la liste des GUID de propriété dans le fichier d’en-tête de clé de propriété appareil du pilote de périphérique.
 
 Certaines propriétés sont communes à tous les objets [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind), mais la plupart sont propres à un genre spécifique. Les sections suivantes répertorient certaines propriétés communes triées par **DeviceInformationKind**. Pour plus d’informations sur les relations entre les différents genres, voir **DeviceInformationKind**.
 
@@ -57,7 +55,7 @@ Certaines propriétés sont communes à tous les objets [**DeviceInformationKind
 | **System.Devices.Icon**               | Chaîne  | Chemin d’accès à l’icône.                                                                                                                                                                                                                                                                                                                                                                                                |
 | **System.ItemNameDisplay**            | Chaîne  | Meilleur nom d’affichage pour l’objet appareil.                                                                                                                                                                                                                                                                                                                                                              |
 
- 
+ 
 
 ## <a name="device-properties"></a>Propriétés de l’appareil
 
@@ -75,7 +73,7 @@ Certaines propriétés sont communes à tous les objets [**DeviceInformationKind
 | **System.Devices.Present**            | Booléen    | Indique si l’appareil est actuellement présent et disponible.                                                                                                                                                                                                                         |
 | **System.ItemNameDisplay**            | Chaîne     | Meilleur nom d’affichage pour cet objet appareil. Dans ce cas, ce n’est pas nécessairement le meilleur nom pour les utilisateurs. Vous pouvez trouver un meilleur candidat pour un nom convivial en référençant la valeur **System.ItemNameDisplay** des **DeviceContainer** ou **DeviceInterface** associés. |
 
- 
+ 
 
 ## <a name="devicecontainer-properties"></a>Propriétés DeviceContainer
 
@@ -95,7 +93,7 @@ Certaines propriétés sont communes à tous les objets [**DeviceInformationKind
 | **System.Devices.Paired**         | Booléen    | Indique si des objets **DeviceInformationKind.Device** enfants sont des appareils sans fil ou réseau actuellement associés au système.             |
 | **System.ItemNameDisplay**        | Chaîne     | Meilleur nom d’affichage pour cet appareil.                                                                                                                             |
 
- 
+ 
 
 ## <a name="deviceinterfaceclass-properties"></a>Propriétés DeviceInterfaceClass
 
@@ -103,7 +101,7 @@ Certaines propriétés sont communes à tous les objets [**DeviceInformationKind
 |----------------------------|--------|----------------------------------------|
 | **System.ItemNameDisplay** | Chaîne | Meilleur nom d’affichage pour cet appareil. |
 
- 
+ 
 
 ## <a name="associationendpoint-properties"></a>Propriétés AssociationEndpoint
 
@@ -124,7 +122,7 @@ Certaines propriétés sont communes à tous les objets [**DeviceInformationKind
 | **System.Devices.Aep.SignalStrength** | Int32      | Force du signal de l’appareil. Cette propriété est applicable uniquement pour certains protocoles.                                                                                                                                                                                                                                                                                                                                                                                                |
 | **System.ItemNameDisplay**            | Chaîne     | Meilleur nom d’affichage pour l’appareil.                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
- 
+ 
 
 ## <a name="associationendpointcontainer-properties"></a>Propriétés AssociationEndpointContainer
 
@@ -146,7 +144,7 @@ Certaines propriétés sont communes à tous les objets [**DeviceInformationKind
 | **System.Devices.AepContainer.SupportsVideo**       | Booléen    | Indique si cet appareil prend en charge la diffusion vidéo.                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | **System.ItemNameDisplay**                          | Chaîne     | Meilleur nom d’affichage pour l’appareil.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
- 
+ 
 
 ## <a name="associationendpointservice-properties"></a>Propriétés AssociationEndpointService
 
@@ -160,8 +158,8 @@ Certaines propriétés sont communes à tous les objets [**DeviceInformationKind
 | **System.Devices.AeoService.ServiceId**         | Chaîne  | Identité de ce service. Il s’agit également de la valeur de [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id). |
 | **System.ItemNameDisplay**                      | Chaîne  | Meilleur nom d’affichage pour le service.                                                                           |
 
- 
+ 
 
- 
+ 
 
- 
+ 

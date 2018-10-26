@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8706b10756eeec5d4b8a872c0d436a157ef74970
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: bcfdb8f6258547ff210d80136a6113e04092aad2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044938"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545832"
 ---
 # <a name="span-iddirect3dconceptsfloating-pointrulesspanfloating-point-rules"></a><span id="direct3dconcepts.floating-point_rules"></span>Règles en matière de virgule flottante
 
@@ -33,12 +31,10 @@ Il existe deux ensembles de règles: les règles qui sont conformes à la normeI
 Certaines de ces règles constituent une simple option dans laquelle IEEE-754 propose des choix.
 
 -   La division par 0 produit +/-INF (infini), sauf 0/0 qui donne une valeur NaN (n’est pas un nombre).
--   Le logarithme de (+/-) 0 produit -INF.
-     
+-   Le logarithme de (+/-) 0 produit -INF.  
 
     Le logarithme d’une valeur négative (différente de -0) produit NaN.
--   La racine carrée réciproque (rsq) ou la racine carrée (sqrt) d’une valeur négative produit NaN.
-     
+-   La racine carrée réciproque (rsq) ou la racine carrée (sqrt) d’une valeur négative produit NaN.  
 
     La seule exception est -0; sqrt(-0) produit -0, et rsq(-0) donne -INF.
 -   INF - INF = NaN
@@ -158,9 +154,9 @@ Les règles en matière de virgule flottante 32bits s’appliquent également au
 
 [Textures](https://msdn.microsoft.com/library/windows/desktop/ff476902)
 
- 
+ 
 
- 
+ 
 
 
 

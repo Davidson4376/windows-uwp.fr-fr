@@ -6,29 +6,28 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, carte, emplacement, services de carte
-ms.openlocfilehash: 9f2c15c8d4bab5a764b8973c4eecb220ed6d8f38
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 17d123b440b6ec7892c84a9a6bca9177799ad0fb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665339"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548221"
 ---
 # <a name="maps-and-location-overview"></a>Vue d’ensemble des cartes et de l’emplacement
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cette section explique comment afficher des cartes, utiliser les services de carte, rechercher l’emplacement et configurer une limite géographique dans votre application. Cette section vous montre également comment lancer l’application Cartes Windows pour obtenir une carte, un itinéraire ou un ensemble d’itinéraires détaillés spécifique.
 
-> **Conseil**  Pour en savoir plus sur l’utilisation des cartes et de l’emplacement dans votre application, téléchargez les exemples suivants à partir du [référentiel Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
+> [!TIP]
+> Pour en savoir plus sur l’utilisation de cartes et emplacement dans votre application, téléchargez les exemples suivants à partir du [référentiel Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub:
 -   [Exemple de carte pour la plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 -   [Exemple de géolocalisation UWP](http://go.microsoft.com/fwlink/p/?linkid=533278)
 
- 
+ 
 
 ## <a name="display-maps"></a>Afficher des cartes
 
@@ -46,7 +45,7 @@ Affichez des cartes avec des vues2D, 3D ou Streetview dans votre application à 
 
 ## <a name="access-map-services"></a>Accéder aux services de carte
 
-Ajoutez des itinéraires, des indications et des fonctionnalités de géocodage à votre application grâce aux API de l’espace de noms [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979). Vous pouvez également aider l’utilisateur à gérer des cartes hors connexion en lançant l’application Paramètres de façon à ce qu’elle s’ouvre directement à la page appropriée.
+Ajoutez des itinéraires, des indications et des fonctionnalités de géocodage à votre application grâce aux API de l’espace de noms [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979).
 
 | Rubrique | Description |
 |-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -54,7 +53,7 @@ Ajoutez des itinéraires, des indications et des fonctionnalités de géocodage 
 | [Afficher des centres d’intérêt sur une carte](display-poi.md) | Ajoutez des centres d’intérêt à une carte à l’aide de punaises, d’images, de formes et d’éléments d’interface utilisateur XAML. |
 | [Afficher des itinéraires et indications](routes-and-directions.md) | Demandez des itinéraires et indications, et affichez-les dans votre application. |
 | [Effectuer un géocodage et un géocodage inverse](geocoding.md) | Convertissez des adresses en emplacements géographiques (géocodage) et des emplacements géographiques en adresses (géocodage inverse) en appelant les méthodes de la classe [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) dans l’espace de noms [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979). |
-
+| [Rechercher et télécharger des packages de cartes pour une utilisation hors connexion](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| Dans le passé, votre application devait diriger les utilisateurs vers l’application paramètres pour télécharger des cartes hors connexion. Maintenant, vous pouvez utiliser des classes dans l’espace de noms [Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps) recherche des packages téléchargés dans une zone donnée (basée sur un [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint), [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox), etc..). <br> Vous pouvez également vérifier et écouter l’état téléchargé des packages de cartes mais aussi démarrer un téléchargement sans obliger l’utilisateur à laisser votre application. <br> Vous trouverez des exemples illustrant comment effectuer cette opération dans le contenu de référence et de l' [exemple de carte de plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977).
 
 ## <a name="get-the-users-location"></a>Obtenir l’emplacement de l’utilisateur
 
@@ -64,8 +63,9 @@ Utilisez les API de l’espace de noms [**Windows.Devices.Geolocation**](https:/
 |-------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Demander une clé d’authentification de cartes](authentication-key.md) | Pour pouvoir utiliser le [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) et les services de carte dans l’espace de noms [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979), votre application doit être authentifiée. Pour authentifier votre application, vous devez spécifier une clé d’authentification de cartes. Cet article décrit comment demander une clé d’authentification de cartes au [Centre de développement Bing Cartes](https://www.bingmapsportal.com/) et comment l’ajouter à votre application. |
 | [Recommandations en matière de conception pour les applications prenant en charge la géolocalisation](guidelines-and-checklist-for-detecting-location.md) | Recommandations en matière de performance des applications qui nécessitent de géolocaliser un utilisateur. |
-| [Obtenir l’emplacement de l’utilisateur](get-location.md) | Demandez l’accès à l’emplacement de l’utilisateur, puis récupérez-le. |
-| [Recommandations en matière de conception pour le géorepérage](guidelines-for-geofencing.md) | Recommandations en matière de performances pour les applications qui utilisent la fonctionnalité de géorepérage. |
+| [Obtenir l’emplacement de l’utilisateur](get-location.md) | Demandez l’accès à l’emplacement de l’utilisateur, puis récupérez-le. | 
+| [Instructions pour l’utilisation du suivi des visites](guidelines-for-visits.md) | Découvrez comment utiliser la puissante fonctionnalité de suivi des visites pour améliorer le suivi de l’emplacement. |
+| [Recommandations en matière de conception pour le géorepérage](guidelines-for-geofencing.md) | Recommandations en matière de performances pour les applications qui utilisent la fonctionnalité de limite géographique. |
 | [Configurer une limite géographique](set-up-a-geofence.md) | Configurez une limite géographique dans votre application et découvrez comment gérer les notifications au premier plan et en arrière-plan. |
 
 ## <a name="launch-the-windows-maps-app"></a>Lancer l’application CartesWindows

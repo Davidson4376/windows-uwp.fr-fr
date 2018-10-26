@@ -1,30 +1,28 @@
 ---
 author: v-angraf
 ms.assetid: 4c03e06b-c12c-f64f-c53f-b38716101822
-title: Xbox Live Page (pour les développeurs d’accueil)
-description: Fournit des informations sur la page de l’application d’accueil du centre de développement Xbox Live pour une Xbox.
+title: Xbox Live Page (Dev Home)
+description: Fournit des informations sur la page de l’application accueil du développeur Xbox Live pour Xbox One.
 ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 permalink: en-us/docs/xdk/devhome-live.html
 ms.localizationpriority: medium
-ms.openlocfilehash: 8af78e5ecb30dc879bd12f52bfeadde70af18a39
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 96f22cb971f5c8266653a6b3c3f4bcc7dd61546d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1015257"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546681"
 ---
-# <a name="xbox-live-page-dev-home"></a>Xbox Live Page (pour les développeurs d’accueil)
+# <a name="xbox-live-page-dev-home"></a>Xbox Live Page (Dev Home)
    
   
-La page d’accueil du centre de développement **Xbox Live** capture des informations multijoueur et affiche l’état actuel du service Xbox Live.   
- ![Xbox Live la page d’accueil pour les développeurs](images/devhome_live.png)   
+La page d’accueil du développeur **Xbox Live** capture les informations en mode multijoueur et affiche l’état actuel du service Xbox Live.   
+ ![Page d’accueil de Xbox Live](images/devhome_live.png)   
   
-La page **Xbox Live** contient les volets suivants:   
+La page de **Xbox Live** contient les volets suivants:   
  
    *  [XBTrace (advancedmp)](#ID4EPB)  
    *  [État XboxLive](#ID4E3B)  
@@ -37,7 +35,7 @@ La page **Xbox Live** contient les volets suivants:
 ## <a name="xbtrace-advancedmp"></a>XBTrace (advancedmp)  
    
   
-La page **XBTrace (advancedmp)** démarre ou arrête la capture d’une trace multijoueur. Il peut également capturer un instantané de l’état actuel multijoueur.   
+La page **XBTrace (advancedmp)** démarre ou s’arrête la capture d’une trace en mode multijoueur. Il peut également capturer une capture instantanée de l’état actuel en mode multijoueur.   
   
 <a id="ID4E3B"></a>
 
@@ -46,13 +44,13 @@ La page **XBTrace (advancedmp)** démarre ou arrête la capture d’une trace mu
 ## <a name="xbox-live-status"></a>État XboxLive  
    
   
-Le volet **d’état Xbox Live** affiche l’état de flux de Xbox Live sur les problèmes de service ou de pannes.   
+Le volet **d’état Xbox Live** affiche l’état de flux de Xbox Live sur les problèmes de service ou de panne.   
   
 <a id="ID4EPC"></a>
 
    
 
-## <a name="see-also"></a>Articles associés  
- [Page d’accueil pour les développeurs sur la Console (pour les développeurs d’accueil)](dev-home.md)
+## <a name="see-also"></a>Voir aussi  
+ [Accueil du développeur sur la Console (Dev Home)](dev-home.md)
 
   

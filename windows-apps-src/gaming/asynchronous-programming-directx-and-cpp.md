@@ -6,19 +6,18 @@ ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, jeux, programmation asynchrone, directx
-ms.openlocfilehash: fe3798e475654d4d0ae7773ac26889906d40b3df
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 9f395136ff7f331f58b9c8e0ac1ee9efea296c02
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228785"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547004"
 ---
 # <a name="asynchronous-programming-directx-and-c"></a>Programmation asynchrone (DirectX et C++)
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette rubrique traite des divers points à prendre en considération lorsque vous utilisez la programmation asynchrone et les threads avec DirectX.
 
@@ -39,9 +38,9 @@ Toutefois, si votre jeu est suffisamment complexe ou si vous cherchez à obtenir
 
 Votre application peut gérer ces composants sur plusieurs threads simultanés. Les E/S de fichiers, en particulier le chargement des ressources, bénéficient grandement du chargement asynchrone, car votre jeu ou application peut être dans un état interactif pendant que plusieurs (voire plusieurs centaines) de mégaoctets de ressources sont en cours de chargement ou de transmission en continu. La façon la plus simple de créer et gérer ces threads est d’utiliser la [Bibliothèque de modèles parallèles](https://msdn.microsoft.com/library/dd492418.aspx) et le modèle **task**, que vous trouverez dans l’espace de noms **concurrency** défini dans PPLTasks.h. L’utilisation de la [Bibliothèque de modèles parallèles](https://msdn.microsoft.com/library/dd492418.aspx) permet de tirer parti des UC basées sur le multicœur et l’hyperthreading. En outre, elle permet d’améliorer de nombreux aspects, qu’il s’agisse des temps de chargement perçus, des défaillances ou des retards liés aux calculs intensifs de l’UC ou au réseau.
 
-> **Remarque**   Dans une application de plateforme Windows universelle (UWP), l’interface utilisateur s’exécute entièrement dans un thread unique cloisonné (STA). Si vous créez une interface utilisateur pour votre jeu DirectX à l’aide de l’[interopérabilité XAML](directx-and-xaml-interop.md), vous ne pouvez accéder aux contrôles qu’à l’aide du thread unique cloisonné (STA).
+> **Remarque**  application dans une plateforme Windows universelle (UWP), l’interface utilisateur s’exécute entièrement dans un single-threaded apartment (STA). Si vous créez une interface utilisateur pour votre jeu DirectX à l’aide de l’[interopérabilité XAML](directx-and-xaml-interop.md), vous ne pouvez accéder aux contrôles qu’à l’aide du thread unique cloisonné (STA).
 
- 
+ 
 
 ## <a name="multithreading-with-direct3d-devices"></a>Multithreading avec des périphériques Direct3D
 
@@ -64,9 +63,9 @@ Créez un contexte différé à l’aide de [**ID3D11Device::CreateDeferredConte
 
 * [Introduction au multithreading dans Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff476891)
 
- 
+ 
 
- 
+ 
 
 
 

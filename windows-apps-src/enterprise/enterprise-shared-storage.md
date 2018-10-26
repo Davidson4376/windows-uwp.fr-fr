@@ -6,14 +6,14 @@ description: Le stockage partagé d’entreprise définit des emplacements de do
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 3f04d00da3fce4674f344129910917e9585e8723
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 5236767d4c02d873106c7b1799c8428d84cccd53
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228626"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548909"
 ---
 # <a name="enterprise-shared-storage"></a>Stockage partagé d’entreprise
 

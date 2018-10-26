@@ -6,16 +6,14 @@ description: Le rapport de campagne de publicité, accessible à partir du table
 ms.author: wdg-dev-content
 ms.date: 11/21/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, promotion, application, campagne, rapport, installations
 ms.localizationpriority: medium
-ms.openlocfilehash: b5f63b53fca8a97c4f6e61aa38f45a749ca0621b
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 0e7bb2a4d592ae8201d27e45eb0f05d7fbca76a7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469578"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549625"
 ---
 # <a name="ad-campaign-report"></a>Rapport de campagne de publicité
 

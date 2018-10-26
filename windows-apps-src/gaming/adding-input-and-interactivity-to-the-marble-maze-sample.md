@@ -6,16 +6,14 @@ ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
 ms.author: elcowle
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, jeux, entrée, exemple
 ms.localizationpriority: medium
-ms.openlocfilehash: 2be43690726112d8597747ee51dd94baf0f40f0e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: Auto
+ms.openlocfilehash: 0b7e9a3f655b8be1b93334ed8decf9fe6fa8bbf2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817044"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544470"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>Ajout d’entrées et d’interactivité à l’exemple Marble Maze
 
@@ -27,7 +25,7 @@ Les jeux de plateforme Windows universelle (UWP) s’exécutent sur différents 
 > [!NOTE]
 > L’exemple de code correspondant à ce document est disponible dans [l’exemple de jeu Marble Maze en DirectX](http://go.microsoft.com/fwlink/?LinkId=624011).
 
- 
+ 
 Voici quelques éléments clés présentés dans ce document que vous devez prendre en compte quand vous travaillez avec les entrées dans votre jeu:
 
 -   Quand cela est possible, il est important de prendre en charge différents périphériques d’entrée afin que votre jeu puisse fonctionner avec un plus grand nombre de préférences et fonctionnalités choisies par vos utilisateurs. Bien que l’utilisation d’un contrôleur de jeu et d’un capteur soit facultative, nous recommandons cette utilisation pour améliorer l’expérience des joueurs. Nous avons conçu les API du contrôleur de jeu et du capteur pour vous aider à intégrer ces périphériques d’entrée.
@@ -50,12 +48,12 @@ Marble Maze prend en charge les périphériques de manette Xbox standard, la sou
 > [!NOTE]
 > Ce document utilise l’interaction tactile pour faire référence à la fois aux entrées tactiles et aux entrées de la souris, et le pointeur pour faire référence à tous les appareils qui utilisent des événements de pointeur. Dans la mesure où l’interaction tactile et la souris utilisent des événements de pointeur standards, vous pouvez utiliser l’un ou l’autre appareil pour sélectionner les éléments de menu et contrôler le jeu.
 
- 
+ 
 
 > [!NOTE]
 > Le manifeste du package définit **Paysage** comme la rotation prise en charge pour le jeu afin d’empêcher un changement d’orientation quand vous faites pivoter l’appareil pour faire rouler la bille. Ouvrez le fichier **Package.appxmanifest** dans l’**explorateur de solutions** dans Visual Studio pour afficher le manifeste du package.
 
- 
+ 
 
 ## <a name="initializing-input-devices"></a>Initialisation des périphériques d’entrée
 
@@ -541,7 +539,7 @@ Nous vérifions si l’entrée provenant du stick analogique gauche est en dehor
 > [!IMPORTANT]
 > Quand vous utilisez la manette Xbox, n’oubliez pas la zone morte. La zone morte fait référence aux différences de sensibilité au mouvement initial des boîtiers de commande. Pour certaines manettes, un mouvement léger peut ne pas générer de lecture, pour d’autres, une lecture mesurable peut être obtenue. Pour tenir compte de cela dans votre jeu, créez une zone de non-mouvement pour le mouvement initial du stick. Pour plus d’informations sur la zone morte, consultez la rubrique [Lecture des entrées des sticks analogiques](gamepad-and-vibration.md#reading-the-thumbsticks).
 
- 
+ 
 
 ###  <a name="applying-input-to-the-game-state"></a>Application des entrées à l’état du jeu
 
@@ -550,7 +548,7 @@ Les périphériques indiquent les valeurs d’entrée de différentes manières.
 > [!TIP]
 > Même si votre application utilise une méthode d’entrée, nous recommandons toujours de normaliser les valeurs d’entrée. Cela permet de simplifier l’interprétation des entrées par d’autres composants de votre jeu, par exemple des simulations physiques, et de faciliter l’écriture de jeux qui fonctionnent sur différentes résolutions d’écran.
 
- 
+ 
 
 Une fois que la méthode **MarbleMazeMain::Update** a traité les entrées, elle crée un vecteur qui représente l’effet de l’inclinaison du labyrinthe sur la bille. L’exemple suivant montre comment Marble Maze utilise la fonction [XMVector3Normalize](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.geometric.xmvector3normalize) pour créer un vecteur de gravité normalisé. La variable **maxTilt** définit l’inclinaison du labyrinthe et empêche son retournement.
 
@@ -621,9 +619,9 @@ Consultez [Ajout d’audio à l’exemple Marble Maze](adding-audio-to-the-marbl
 * [Ajout de contenu visuel à l’exemple Marble Maze](adding-visual-content-to-the-marble-maze-sample.md)
 * [Développement de Marble Maze, jeu pour UWP en C++ et DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ title: Capture à partir de plusieurs sources à l’aide de MediaFrameSourceGro
 ms.author: drewbat
 ms.date: 09/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, capture vidéo
 ms.localizationpriority: medium
-ms.openlocfilehash: 40c496dcda6d4876aaadc590070bacab243fb253
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: ae52026d5fb1ab3c140edfdcd1f92f7d3d0fd143
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832687"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545272"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a>Capture à partir de plusieurs sources à l’aide de MediaFrameSourceGroup
 
@@ -79,9 +77,9 @@ Une fois l’opération terminée, un fichier vidéo a été créé contenant la
 * [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md)
 
 
- 
+ 
 
- 
+ 
 
 
 

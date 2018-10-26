@@ -6,19 +6,18 @@ ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, glsl , portage
-ms.openlocfilehash: 7416a4dafe24f86243a3a9962d01db1dc7b61031
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 47fa601a7e0ff307108713a0a6fcd7a5468b0468
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228829"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548667"
 ---
 # <a name="port-the-glsl"></a>Porter le GLSL
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -185,9 +184,9 @@ Pour faciliter le débogage de votre code et avoir plus de latitude pour l’opt
 
 [Dessiner à l’écran](draw-to-the-screen.md)
 
- 
+ 
 
- 
+ 
 
 
 

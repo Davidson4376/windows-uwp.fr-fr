@@ -6,16 +6,14 @@ ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 27b458c7ec5cabdc27ebd90c9eb024df2f35e402
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: Auto
+ms.openlocfilehash: 6fd7377294e0d460720f6a16e71981ab0924ac9a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664952"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549279"
 ---
 # <a name="launch-the-windows-maps-app"></a>Lancer l’application Cartes Windows
 
@@ -103,7 +101,7 @@ Lorsque vous recherchez des lieux à l’aide du paramètre *q*, nous recommando
 | bingmaps:?cp=40.726966~-74.006076&where=New%20York            | Recherche New York près du point central indiqué.                             |
 | bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&q=pizza              | Recherche une pizzeria dans la zone de délimitation (autrement dit, à New York).      |
 
- 
+ 
 ## <a name="display-multiple-points"></a>Afficher plusieurs points
 
 
@@ -117,7 +115,7 @@ Utilisez le paramètre *collection* pour afficher un ensemble personnalisé de p
 | bingmaps:?collection=point.40.726966\_-74.006076\_Fake%255FBusiness%255Fwith%255FUnderscore                                                                        | Affiche la ville de New York avec une punaise nommée «Fake\_Business\_with\_Underscore».                                                  |
 | bingmaps:?collection=name.Hotel%20List~point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&amp;lvl=16&amp;cp=36.114902~-115.176669 | Affiche une liste nommée «Liste d’hôtels» et deux punaises correspondant aux hôtels Caesars Palace et Bellagio à Las Vegas, avec un niveau de zoom de 16. |
 
- 
+ 
 
 ## <a name="display-directions-and-traffic"></a>Afficher un itinéraire et le trafic
 
@@ -251,10 +249,10 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 </ul>
 <p>Dans Windows10, les styles vue aérienne et affichage3D sont identiques.</p>
 <div class="alert">
-**Remarque**  Si vous omettez le paramètre **sty**, vous obtenez le même résultat qu’avec la commande sty=r.
+**Remarque**l’omission du paramètre **sty** génère les mêmes résultats que sty = r.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -289,10 +287,10 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>ss=1</p></td>
 <td align="left"><p>Spécifie l’affichage des images au niveau de la rue quand <code>ss=1</code>. Si vous omettez le paramètre <b>ss</b>, vous obtenez le même résultat qu’avec la commande <code>ss=0</code>. Utilisez ce paramètre conjointement avec le paramètre <b>cp</b> pour spécifier l’emplacement de la vue au niveau de la rue.</p>
 <div class="alert">
-**Remarque**  Les images au niveau de la rue ne sont pas disponibles dans toutes les régions.
+**Remarque**au niveau rue ne sont pas disponibles dans toutes les régions.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -303,10 +301,10 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>trfc=1</p></td>
 <td align="left"><p>Spécifie si les informations sur le trafic sont incluses sur la carte. Si vous omettez le paramètre trfc, vous obtenez le même résultat qu’avec la commande <code>trfc=0</code>.</p>
 <div class="alert">
-**Remarque**  Les données sur le trafic ne sont pas disponibles dans toutes les régions.
+**Remarque**données sur le trafic ne sont pas disponibles dans toutes les régions.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
@@ -332,10 +330,10 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>Aucune ligne d’itinéraire n’est dessinée lorsque l’itinéraire fourni est incomplet.</p>
 <p>Utilisez ces paramètres conjointement avec le paramètre **mode** servant à spécifier le mode de transport (en voiture, en transport public ou à pied). Si le paramètre **mode** n’est pas spécifié, un itinéraire est fourni sur la base du mode de transport préféré de l’utilisateur.</p>
 <div class="alert">
-**Remarque**  Il est possible d’utiliser un titre pour un emplacement si celui-ci est spécifié par la valeur de paramètre **pos**. Le titre s’affichera à la place de la latitude et de la longitude.
+**Remarque**possible d’utiliser un titre pour un emplacement si celui-ci est spécifié par la valeur du paramètre **pos** . Le titre s’affichera à la place de la latitude et de la longitude.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -377,7 +375,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 </tbody>
 </table>
 
-  
+  
 <span id="ms-drive-to-param-reference"/>
 
 ## <a name="ms-drive-to-parameter-reference"></a>Référence de paramètre ms-drive-to:
@@ -387,7 +385,7 @@ L’URI permettant de lancer une demande d’itinéraire détaillé en voiture n
 
 > **Remarque**  Dans ce schéma d’URI, vous ne spécifiez pas le point de départ. Le point de départ est toujours supposé être la localisation actuelle. Si vous devez spécifier un point de départ différent de l’emplacement actuel, voir [Afficher un itinéraire et le trafic](#display-directions-and-traffic).
 
- 
+ 
 
 | Paramètre | Définition | Exemple | Détails |
 |------------|-----------|---------|---------|
@@ -395,7 +393,7 @@ L’URI permettant de lancer une demande d’itinéraire détaillé en voiture n
 | **destination.longitude** | Longitude de destination | Exemple: destination.longitude=-122.141964733601 | Longitude de la destination. Les valeurs de longitude valables sont comprises entre -180 et +180 (ces deux valeurs étant incluses). |
 | **destination.name** | Nom de la destination | Exemple: destination.name=Redmond, WA | Nom de la destination. Vous n’avez pas besoin d’encoder la valeur **destination.name**. |
 
- 
+ 
 <span id="ms-walk-to-param-reference"/>
 
 ## <a name="ms-walk-to-parameter-reference"></a>Référence de paramètre ms-walk-to:
@@ -404,7 +402,7 @@ L’URI permettant de lancer une demande d’itinéraire détaillé en voiture n
 L’URI permettant de lancer une demande d’itinéraire détaillé à pied n’a pas besoin d’encodage et présente le format suivant.
 
 > **Remarque**  Dans ce schéma d’URI, vous ne spécifiez pas le point de départ. Le point de départ est toujours supposé être la localisation actuelle. Si vous devez spécifier un point de départ différent de l’emplacement actuel, voir [Afficher un itinéraire et le trafic](#display-directions-and-traffic).
- 
+ 
 
 | Paramètre | Définition | Exemple | Détails |
 |-----------|------------|---------|----------|
@@ -414,7 +412,7 @@ L’URI permettant de lancer une demande d’itinéraire détaillé à pied n’
 
 ## <a name="ms-settings-parameter-reference"></a>Référence de paramètre ms-settings:
 
-La syntaxe des paramètres propres à l’application Cartes pour le schéma d’URI **ms-settings:** est définie ci-après. **maps-downloadmaps** est spécifié avec l’URI **ms-settings:** sous la forme **ms-settings:maps-downloadmaps?** pour indiquer la page de paramètres de cartes hors connexion. 
+La syntaxe des paramètres propres à l’application Cartes pour le schéma d’URI **ms-settings:** est définie ci-après. **maps-downloadmaps** est spécifié avec l’URI **ms-settings:** sous la forme **ms-settings:maps-downloadmaps?** pour indiquer la page de paramètres de cartes hors connexion. 
 
 | Paramètre | Définition | Exemple | Détails |
 |-----------|------------|---------|----------|

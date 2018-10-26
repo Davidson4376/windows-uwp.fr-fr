@@ -6,19 +6,17 @@ description: Le test de la version bêta vous permet d’améliorer votre applic
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 6f5a4e7f2961143f44acb533f045783fb4e4b7c1
-ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.localizationpriority: medium
+ms.openlocfilehash: 7d1e60270b43a8c14067df70ff3e8489f4af2887
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2017
-ms.locfileid: "692911"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544745"
 ---
 # <a name="beta-testing"></a>Bêta-test
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Le *bêta-test* vous donne la possibilité d’améliorer votre application en fonction des commentaires d’utilisateurs ne faisant pas partie de votre équipe de développement qui essaient la version non publiée de votre application sur leur propre appareil.
@@ -36,7 +34,7 @@ Grâce au test bêta, vous pouvez effectuer les actions suivantes :
 -   tester votre application sur différents appareils ;
 -   identifier les problèmes de performances et d’autres bogues que vous n’auriez pas nécessairement détectés ;
 -   obtenir des informations sur l’utilisation réelle de votre application, qui peuvent vous aider à optimiser l’expérience utilisateur ;
--   recevoir des commentaires qui n’affecteront pas les évaluations publiques dans le Windows Store.
+-   Recevoir des commentaires sans affecter les évaluations publiques dans le Microsoft Store.
 
 ## <a name="when-to-beta-test"></a>Période d’exécution du test bêta
 
@@ -48,9 +46,9 @@ Dans le tableau de bord unifié du Centre de développement Windows, vous pouvez
 
 Pour savoir comment soumettre votre application au Windows Store pour le bêta-test, voir [Tests bêta et distribution ciblée](https://msdn.microsoft.com/library/windows/apps/Mt185377).
 
- 
+ 
 
- 
+ 
 
 
 

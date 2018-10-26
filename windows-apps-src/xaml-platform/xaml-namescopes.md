@@ -6,16 +6,14 @@ ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd7a7de4c8986bb53acd4fe18c6255086e366ca8
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 8fcbc1566d2b2b5ffc6889a57dd7656a3466d2a9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673606"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548083"
 ---
 # <a name="xaml-namescopes"></a>Namescopes XAML
 
@@ -34,7 +32,7 @@ Vous pouvez également utiliser la méthode utilitaire [**FindName**](https://ms
 
 Ce qui se passe techniquement, c’est que le code XAML lui-même subit une passe du compilateur de balisage en même temps que la classe partielle qu’il définit pour le code-behind et lui-même sont compilés ensemble. Chaque élément objet avec un attribut **Name** ou [x:Name](x-name-attribute.md) défini dans le balisage génère un champ interne portant un nom qui correspond au nom XAML. Ce champ est initialement vide. Ensuite, la classe génère une méthode **InitializeComponent** qui est appelée uniquement à l’issue du chargement de tout le code XAML. Au sein de la logique **InitializeComponent**, chaque champ interne est alors renseigné à l’aide de la valeur de retour [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) de la chaîne de nom équivalente. Vous pouvez observer cette infrastructure à titre personnel en examinant les fichiers «.g» (générés) créés pour chaque page XAML dans le sous-dossier /obj d’un projet d’application Windows Runtime à l’issue de la compilation. Vous pouvez également considérer les champs et la méthode **InitializeComponent** comme des membres de vos assemblys obtenus en y réfléchissant ou en examinant le contenu linguistique de leur interface.
 
-**Remarque**  Plus précisément, pour les applications utilisant les extensions de composant Visual C++ (C++/CX), aucun champ de sauvegarde d’une référence **x:Name** n’est créé pour l’élément racine d’un fichier XAML. Si vous devez référencer l’objet racine à partir d’un fichier code-behind C++/CX, utilisez d’autres API ou une traversée d’arborescence. Par exemple, vous pouvez appeler [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) pour un élément enfant nommé connu avant d’appeler [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739).
+**Remarque**spécifiquement pour les extensions de composant Visual c++ (C++ / CX) les applications, le champ de sauvegarde d’une référence de **x: Name** n’est pas créé pour l’élément racine d’un fichier XAML. Si vous devez référencer l’objet racine à partir d’un fichier code-behind C++/CX, utilisez d’autres API ou une traversée d’arborescence. Par exemple, vous pouvez appeler [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) pour un élément enfant nommé connu avant d’appeler [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739).
 
 ## <a name="creating-objects-at-run-time-with-xamlreaderload"></a>Création d’objets au moment de l’exécution avec XamlReader.Load
 
@@ -89,5 +87,5 @@ En raison des namescopes XAML distincts, la recherche d’éléments nommés au 
 * [Démarrage rapide: modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 * [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)
 * [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)
- 
+ 
 

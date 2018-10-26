@@ -1,23 +1,22 @@
 ---
-author: mcleblanc
+author: stevewhims
 title: Prise en main de l’application Animation
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: Dans ce projet, nous allons déplacer un rectangle, lui appliquer un effet de fondu, puis l’afficher de nouveau.
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: a45de584c4374afefe0fdca198eb7234351ac42d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 4822a436225bea92fdf1e981ad33378996adefe4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "229507"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550877"
 ---
 # <a name="getting-started-animation"></a>Prise en main: Animation
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ## <a name="adding-animations"></a>Ajout d’animations
 
@@ -129,7 +128,7 @@ Si vous ouvrez le fichier MainPage.xaml, dans la vue **XAML**, vous verrez le co
 
 Vous pouvez modifier ce code XAML manuellement, ou retourner à Blend pour continuer à travailler dessus. Blend permet de créer aisément des interfaces utilisateur intéressantes, et la possibilité de les animer à l’aide d’un outil graphique peut accélérer considérablement le temps de développement. Pour plus d’informations sur les animations, voir [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350).
 
-**Remarque**  Pour plus d’informations sur les animations pour les applications du WindowsStore en JavaScript et HTML, consultez l’article [Animation de votre interface utilisateur (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
+**Remarque**pour plus d’informations sur les animations pour <span class="legacy-term">les applications UWP en JavaScript et HTML</span>, consultez [animation de votre interface utilisateur (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
 
 ### <a name="next-step"></a>Étape suivante
 

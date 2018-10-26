@@ -6,23 +6,22 @@ ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, jeux, graphiques, diagnostics, outils, directx
-ms.openlocfilehash: 076020d88889a9cc8b417befa2dd54b41d688e5e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: aa1c14d15a966f23b86753cf8e5e62e067d10310
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228828"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545226"
 ---
 # <a name="graphics-diagnostics-tools"></a>Outils Graphics Diagnostics
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Dans Windows10, les outils de diagnostic de graphiques sont désormais disponibles au sein même de Windows sous la forme d’une fonctionnalité facultative. Pour utiliser les fonctionnalités de diagnostic de graphiques fournies dans le runtime et dans Visual Studio afin de développer des applications ou des jeux DirectX, installez la fonctionnalité facultative Outils graphiques:
+Avec Windows 10, les outils de diagnostic de graphiques sont désormais disponibles dans Windows en tant que fonctionnalité facultative. Pour utiliser les fonctionnalités de diagnostic de graphiques fournies dans le runtime et dans Visual Studio afin de développer des applications ou des jeux DirectX, installez la fonctionnalité facultative Outils graphiques:
 
-1.  Accédez à **Paramètres**, sélectionnez **Système**, sélectionnez **Applications et fonctionnalités**, puis cliquez sur **Gérer les fonctionnalités facultatives**.
+1.  Accédez à **paramètres**, sélectionnez **les applications**, puis cliquez sur **Gérer les fonctionnalités facultatives**.
 2.  Cliquez sur **Ajouter une fonctionnalité**.   
 3.  Dans la liste **Fonctionnalités facultatives**, sélectionnez **Outils graphiques**, puis cliquez sur **Installer**.
 
@@ -37,9 +36,9 @@ Les fonctionnalités de diagnostic de graphiques incluent la possibilité de cr�
 
 [Vue d’ensemble de Graphics Diagnostics dans VisualStudio](http://go.microsoft.com/fwlink/p/?LinkID=526382)
 
- 
+ 
 
- 
+ 
 
 
 

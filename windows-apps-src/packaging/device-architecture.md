@@ -5,15 +5,14 @@ description: En savoir plus sur les architectures de processeur que vous devez u
 ms.author: lahugh
 ms.date: 7/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, création de packages, architecture, configuration de package
-ms.openlocfilehash: 70188734e7fc26f66b68d0c31921071c47e8b7a8
-ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.localizationpriority: medium
+ms.openlocfilehash: 3e265df32a8c4168cddced905e7b0712e4601264
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2017
-ms.locfileid: "884054"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548707"
 ---
 # <a name="app-package-architectures"></a>Architectures de package d'application
 
@@ -27,11 +26,11 @@ Il est **vivement** recommandé de générer votre package d’application afin 
 ## <a name="windows-10-devices-and-architectures"></a>Appareils et architectures Windows10
 
 > [!div class="mx-tableFixed"]
-| ArchitectureUWP | Bureau (x86)      | Bureau (x64)      | Bureau (ARM)      | Appareils mobiles             | HoloLens           | Xbox               | IoT standard (dépendant du périphérique) | 
-|------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|-----------------------------|
-| x86              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :x:                | :heavy_check_mark:          |
-| x64              | :x:                | :heavy_check_mark: | :x:                | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark:          |
-| ARM              | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :heavy_check_mark:          |
+| ArchitectureUWP | Bureau (x86)      | Bureau (x64)      | Bureau (ARM)      | Appareils mobiles             | HoloLens           | Xbox               | IoT standard (dépendant du périphérique) | Surface Hub        |
+|------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|-----------------------------|--------------------|
+| x86              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :x:                | :heavy_check_mark:          | :heavy_check_mark: |
+| x64              | :x:                | :heavy_check_mark: | :x:                | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark:          | :heavy_check_mark: |
+| ARM              | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :heavy_check_mark:          | :x:                |
  
 
 Parlons de ces architectures plus en détail. 

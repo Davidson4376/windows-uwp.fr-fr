@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 292adb2f06022fbb8fc063c49442cd69ccf64534
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 245581e4eb2a8526b242feadb5877590283e24f9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044138"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549926"
 ---
 # <a name="texture2d-and-texture2darray-subresource-tiling"></a>Restitution des sous-ressources Texture2D et Texture2DArray sous forme de tuiles
 
@@ -38,7 +36,7 @@ Le tableau suivant montre comment des sous-ressources [**Texture2D**](https://ms
 | BC1,4                       | 512x256                       |
 | BC2,3,5,6,7                 | 256x256                       |
 
- 
+ 
 
 Les bits de format non pris en charge avec les ressources de diffusion en continu sont les formats de 96bpp, les formats vidéo, DXGI\_FORMAT\_R1\_UNORM, DXGI\_FORMAT\_R8G8\_B8G8\_UNORM et DXGI\_FORMAT\_R8R8\_G8B8\_UNORM.
 
@@ -55,7 +53,7 @@ Le tableau suivant montre comment des sous-ressources [**Texture2D**](https://ms
 | 8                           | 4x2                           |
 | 16                          | 4x4                           |
 
- 
+ 
 
 Seul un nombre d’échantillonnage compris entre 1 et 4 est requis (et autorisé) et peut être pris en charge avec les ressources de diffusion en continu. Les ressources de diffusion en continu ne prennent actuellement pas en charge les nombres d’échantillonnage de 2, 8 et 16, même si elles sont affichées.
 
@@ -68,11 +66,11 @@ Les contraintes sur le nombre d’échantillons et les formats pris en charge so
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques associées
 
 
-[Restitution de la surface d’une ressource de diffusion en continu sous forme de vignettes](how-a-streaming-resource-s-area-is-tiled.md)
+[Restitution de la surface d’une ressource de diffusion en continu sous forme de mosaïque](how-a-streaming-resource-s-area-is-tiled.md)
 
- 
+ 
 
- 
+ 
 
 
 

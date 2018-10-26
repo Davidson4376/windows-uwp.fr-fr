@@ -6,16 +6,14 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a66faebf8447253cc158ea8aa2312eb61474bc08
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: d77049cbaa289fe8621e8cf91883952e6edda9b2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675256"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550693"
 ---
 # <a name="move-and-draw-commands-syntax"></a>Syntaxe des commandes de déplacement et de dessin
 
@@ -83,7 +81,7 @@ Spécifie le point de départ d’une nouvelle figure.
 
 Un **M** majuscule indique que *startPoint* est une coordonnée absolue ; un **m** minuscule indique que *startPoint* est décalé par rapport au point précédent ou (0,0) s’il n’y avait pas de point précédent.
 
-**Remarque**  Vous pouvez spécifier plusieurs points après la commande de déplacement. Une ligne est tracée jusqu’à ces points comme si vous aviez spécifié une commande de ligne. Toutefois, ce style n’est pas recommandé ; utilisez plutôt une commande de ligne dédiée.
+**Remarque**, il est légitime pour spécifier plusieurs points après la commande de déplacement. Une ligne est tracée jusqu’à ces points comme si vous aviez spécifié une commande de ligne. Toutefois, ce style n’est pas recommandé ; utilisez plutôt une commande de ligne dédiée.
 
 **Commandes de dessin**
 
@@ -141,7 +139,7 @@ Crée une courbe de Bézier cubique entre le point actuel et le point de termina
 |------|-------------|
 | *controlPoint1* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Premier point de contrôle de la courbe qui détermine la tangente de début de la courbe. |
 | *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Second point de contrôle de la courbe qui détermine la tangente de fin de la courbe. |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point vers lequel la courbe est tracée. | 
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point vers lequel la courbe est tracée. | 
 
 **Commande de courbe de Bézier quadratique**
 
@@ -197,7 +195,7 @@ Crée un arc elliptique entre le point actuel et le point de terminaison spécif
 | *isLargeArcFlag* | Affectez la valeur1 si l’angle de l’arc doit être de 180degrés ou plus; sinon, affectez la valeur0. |
 | *sweepDirectionFlag* | Affectez la valeur1 si l’arc est dessiné dans la direction de l’angle positif; sinon, affectez la valeur0. |
 | *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Point vers lequel l’arc est tracé.|
- 
+ 
 **Bouton de fermeture**
 
 Termine la figure actuelle et crée une ligne qui relie le point actuel au point de début de la figure. Cette commande crée un angle entre le dernier segment et le premier segment de la figure.
@@ -231,7 +229,7 @@ Au lieu d’utiliser des nombres décimaux ou entiers, vous pouvez utiliser la n
 
 ## <a name="design-tools-that-produce-move-and-draw-commands"></a>Outils de conception qui produisent des commandes de déplacement et de dessin
 
-L’outil **Stylet** et d’autres outils de dessin dans Blend pour MicrosoftVisualStudio2015 produisent généralement un objet [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) avec des commandes de déplacement et de dessin.
+À l’aide de l’outil de **stylet** et d’autres outils de dessin dans Blend pour Microsoft Visual Studio2015 sera généralement de produire un objet de [**chemin d’accès**](/uwp/api/Windows.UI.Xaml.Shapes.Path) , avec déplacement et de commandes de dessin.
 
 Il est possible que vous constatiez la présence de données de commandes de déplacement et de dessin dans certaines parties de contrôle définies dans les modèles par défaut XAML Windows Runtime de contrôles. Par exemple, certains contrôles utilisent un [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) dans lequel les données sont définies en tant que commandes de déplacement et de dessin.
 

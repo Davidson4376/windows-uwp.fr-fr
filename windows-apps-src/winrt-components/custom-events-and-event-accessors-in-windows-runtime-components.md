@@ -6,19 +6,18 @@ ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 8b759684d07c1fa8265ed958ac9c736aa12a488c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 99e215f382bbfe409ac72d021540a471294634ca
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230141"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549671"
 ---
 # <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a>Événements et accesseurs d’événement personnalisés dans les composants Windows Runtime
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 La prise en charge de .NET Framework pour les composants Windows Runtime facilite la déclaration de composants d’événements, car les différences entre le modèle d’événement de la plateforme Windows universelle (UWP) et le modèle d’événement .NET Framework sont masquées. Toutefois, lorsque vous déclarez des accesseurs d’événement personnalisés dans un composant Windows Runtime, vous devez suivre le modèle utilisé dans UWP.
 
@@ -34,9 +33,9 @@ Heureusement, les compilateurs Visual Basic et C# simplifient ce processus: lors
 
 Le code suivant pour l’événement NumberChanged illustre le modèle de base pour les événements UWP. Dans cet exemple, le constructeur de l’objet d’argument d’événement, NumberChangedEventArgs, prend un seul paramètre entier représentant la valeur numérique modifiée.
 
-> **Remarque** Le même modèle est utilisé par les compilateurs pour les événements ordinaires que vous déclarez dans un composant Windows Runtime.
+> **Remarque**le même modèle que les compilateurs pour les événements ordinaires que vous déclarez dans un composant Windows Runtime est utilisé.
 
- 
+ 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
 > private EventRegistrationTokenTable<EventHandler<NumberChangedEventArgs>>
@@ -102,7 +101,7 @@ Le code suivant pour l’événement NumberChanged illustre le modèle de base p
 
 La méthode statique (partagée en Visual Basic) GetOrCreateEventRegistrationTokenTable crée tardivement l’instance d’événement de l’objet EventRegistrationTokenTable&lt;T&gt;. Transmettez le champ de niveau classe qui contiendra l’instance de table de jeton à cette méthode. Si le champ est vide, la méthode crée la table, stocke une référence vers la table dans le champ et retourne une référence à la table. Si le champ contient déjà une référence de table de jeton, la méthode retourne simplement cette référence.
 
-> **Important** Pour garantir la sécurité des threads, le champ qui contient l’instance EventRegistrationTokenTable&lt;T&gt; de l’événement doit être un champ de niveau classe. S’il s’agit d’un champ de niveau classe, la méthode GetOrCreateEventRegistrationTokenTable garantit que lorsque plusieurs threads tentent de créer la table de jeton, ils obtiennent tous la même instance de la table. Pour un événement donné, tous les appels à la méthode GetOrCreateEventRegistrationTokenTable doivent utiliser le même champ de niveau classe.
+> **Important**pour garantir la sécurité des threads, le champ qui contient l’instance de l’événement eventregistrationtokentable&lt;T&gt; doit être un champ de niveau classe. S’il s’agit d’un champ de niveau classe, la méthode GetOrCreateEventRegistrationTokenTable garantit que lorsque plusieurs threads tentent de créer la table de jeton, ils obtiennent tous la même instance de la table. Pour un événement donné, tous les appels à la méthode GetOrCreateEventRegistrationTokenTable doivent utiliser le même champ de niveau classe.
 
 Le fait d’appeler la méthode GetOrCreateEventRegistrationTokenTable dans l’accesseur remove et dans la méthode [RaiseEvent](https://msdn.microsoft.com/library/fwd3bwed.aspx) (méthode OnRaiseEvent en C#) garantit qu’aucune exception ne se produit si ces méthodes sont appelées avant que les délégués de gestionnaire d’événements n’aient été ajoutés.
 
@@ -111,11 +110,11 @@ Les autres membres de la classe EventRegistrationTokenTable&lt;T&gt; utilisés d
 -   La méthode [AddEventHandler](https://msdn.microsoft.com/library/hh138458.aspx) génère un jeton pour le délégué de gestionnaire d’événements, stocke le délégué dans la table, l’ajoute à la liste d’appel, puis retourne le jeton.
 -   La surcharge de méthode [RemoveEventHandler(EventRegistrationToken)](https://msdn.microsoft.com/library/hh138425.aspx) supprime le délégué de la table et de la liste d’appel.
 
-    >**Remarque** Les méthodes AddEventHandler et RemoveEventHandler(EventRegistrationToken) verrouillent la table afin de garantir la sécurité des threads.
+    >**Remarque**les méthodes AddEventHandler et RemoveEventHandler (eventregistrationtoken) verrouillent la table afin de garantir la sécurité des threads.
 
 -   La propriété [InvocationList](https://msdn.microsoft.com/library/hh138465.aspx) retourne un délégué qui inclut tous les gestionnaires d’événements actuellement inscrits pour gérer l’événement. Utilisez ce délégué pour déclencher l’événement ou utilisez les méthodes de la classe Delegate pour appeler les gestionnaires individuellement.
 
-    >**Remarque** Nous vous recommandons de suivre le modèle indiqué dans l’exemple fourni précédemment dans cet article et de copier le délégué dans une variable temporaire avant de l’appeler. Cela permet d’éviter une condition de concurrence dans laquelle le thread supprime le dernier gestionnaire, réduisant ainsi le délégué à la valeur null juste avant qu’un autre thread tente d’appeler le délégué. Les délégués étant immuables, la copie reste valide.
+    >**Remarque**nous vous recommandons de suivez le modèle indiqué dans l’exemple fourni précédemment dans cet article et copiez le délégué dans une variable temporaire avant de l’appeler. Cela permet d’éviter une condition de concurrence dans laquelle le thread supprime le dernier gestionnaire, réduisant ainsi le délégué à la valeur null juste avant qu’un autre thread tente d’appeler le délégué. Les délégués étant immuables, la copie reste valide.
 
 Placez votre propre code dans les accesseurs si nécessaire. Si la sécurité des threads pose problème, vous devez fournir votre propre verrouillage pour votre code.
 
@@ -127,6 +126,6 @@ Utilisateurs de Visual Basic : dans .NET Framework, un événement est simplemen
 
 * [Événements (Visual Basic)](https://msdn.microsoft.com/library/ms172877.aspx)
 * [Événements (Guide de programmation C#)](https://msdn.microsoft.com/library/awbftdfh.aspx)
-* [Vue d’ensemble de .NET pour les applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [.NET pour la vue d’ensemble des applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [.NET pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [Procédure pas à pas : création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

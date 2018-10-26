@@ -5,15 +5,15 @@ description: Décrit l’utilisation du logiciel gratuit Fiddler pour voir le tr
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 9c133c77-fe9d-4b81-b4b3-462936333aa3
-ms.openlocfilehash: bbf916145107b465ddd2fe7e4805e6139f4597d3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 9b0c91c2e7fa6e3076e53b0d3ae2e8d3713c81c5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230220"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549249"
 ---
 # <a name="how-to-use-fiddler-with-xbox-one-when-developing-for-uwp"></a>Utilisation de Fiddler avec XboxOne lors du développement pour UWP
 

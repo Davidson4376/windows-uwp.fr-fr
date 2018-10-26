@@ -6,16 +6,14 @@ description: Pour offrir une expérience riche à vos utilisateurs, vous serez p
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8227de880fd6e467bb015be9affa764d405c4546
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 5ca78338b501b8c24549b1348c051a02ea62a501
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1018122"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549093"
 ---
 # <a name="devices-sensors-and-power"></a>Appareils, capteurs et alimentation
 
@@ -32,11 +30,11 @@ Pour offrir une expérience riche à vos utilisateurs, vous serez peut-être ame
 | [Activer l’accès en mode utilisateur sur WindowsIoT](enable-usermode-access.md) | Ce didacticiel décrit comment activer l’accès en mode utilisateur à GPIO, I2C, SPI et UART sur Windows10IoTStandard. |
 | [Énumérer les appareils](enumerate-devices.md) | L’espace de noms d’énumération vous permet de rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau. |
 | [Jumeler des appareils](pair-devices.md) | Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms [<strong>Windows.Devices.Enumeration</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) prend en charge troisméthodes différentes de jumelage des appareils. |
-| [Point de service](point-of-service.md) | Cette section décrit comment interagir avec un point de périphériques de service, tels que des analyseurs de code-barres, imprimantes, bacs de trésorerie, etc.. | 
+| [Point de service](point-of-service.md) | Cette section décrit comment interagir avec le point de périphériques de service, tels que des scanneurs de code-barres, les imprimantes de reçus, les caisses enregistreuses, etc.. | 
 | [Capteurs](sensors.md) | Les capteurs permettent à votre application de connaître la relation entre un appareil et le monde physique qui l’entoure. Ils peuvent indiquer à votre application la direction, l’orientation et le mouvement de l’appareil. |
 | [Bluetooth](bluetooth.md) | Cette section contient des articles sur l’intégration du Bluetooth aux applications de la plateforme Windows universelle (UWP), notamment sur l’utilisation des API RFCOMM, GATT et des publications Bluetooth Low Energy (LE). | 
 | [Impression et numérisation](printing-and-scanning.md) | Cette section décrit comment imprimer et numériser à partir de votre application Windows universelle. | 
 | [Impression3D](3d-printing.md) | Cette section explique comment utiliser la fonctionnalité d’impression 3D dans votre application Windows universelle. |
-| [Créer une application de carte à puce NFC](host-card-emulation.md) | Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation de carte NFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage fort d’applications de paiement sécurisé avec les opérateurs de réseau mobile. Cette configuration éliminait de facto le recours aux solutions de paiement proposées par d’autres négociants ou développeurs ne présentant aucun couplage avec les opérateurs de réseau mobile. Dans Windows 10 Mobile, nous avons introduit une nouvelle technologie d’émulation de carte, appelée HCE (Host Card Emulation, émulation de carte hôte). Grâce à la technologie HCE, votre application peut directement interagir avec un lecteur de cartes NFC. Cette rubrique illustre le fonctionnement de la technologie HCE sur les appareils Windows 10 Mobile et vous explique comment développer une application HCE permettant à vos clients d’accéder à vos services sur leur téléphone, non par le biais d’une carte physique, sans aucune collaboration avec un opérateur de réseau mobile. |
+| [Créer une application de carte à puce NFC](host-card-emulation.md) | Auparavant, Windows Phone 8.1 prenait en charge les applications d’émulation de carte NFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage fort d’applications de paiement sécurisé avec les opérateurs de réseau mobile. Cette configuration éliminait de facto le recours aux solutions de paiement proposées par d’autres négociants ou développeurs ne présentant aucun couplage avec les opérateurs de réseau mobile. Dans Windows 10 Mobile, nous avons introduit une nouvelle technologie d’émulation de carte appelée, émulation de carte hôte (HCE). Grâce à la technologie HCE, votre application peut directement interagir avec un lecteur de cartes NFC. Cette rubrique illustre le fonctionnement de l’émulation de carte hôte (HCE) sur les appareils Windows 10 Mobile et comment vous pouvez développer une application HCE afin que vos clients peuvent accéder à vos services par le biais de leur téléphone au lieu d’une carte physique sans aucune collaboration avec un opérateur de réseau mobile. |
 | [Obtenir des informations sur la batterie](get-battery-info.md) | Découvrez comment obtenir des informations détaillées sur la batterie à l’aide des API de l’espace de noms [<strong>Windows.Devices.Power</strong>](https://msdn.microsoft.com/library/windows/apps/Dn895017). |
 

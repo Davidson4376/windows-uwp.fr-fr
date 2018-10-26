@@ -6,18 +6,17 @@ title: Traiter des fichiers multimédias en arrière-plan
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 8d3166b40120799818598300a049a4148a40d2cc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 866fedf35aa6f1f585825195b18cdd1fed4bad11
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228923"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548370"
 ---
 # <a name="process-media-files-in-the-background"></a>Traiter des fichiers multimédias en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous montre comment utiliser [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) et une tâche en arrière-plan pour traiter des fichiers multimédias en arrière-plan.
@@ -127,9 +126,13 @@ Enregistrez la tâche en arrière-plan en appelant [**Register**](https://msdn.m
 
 [!code-cs[RegisterBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
 
-Lancez la tâche en arrière-plan en appelant la méthode [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071) de l’objet **MediaProcessingTrigger**. L’objet [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007) renvoyé par cette méthode vous permet de savoir si la tâche en arrière-plan a été démarrée. Si ce n’est pas le cas, il vous permet de savoir pourquoi la tâche en arrière-plan n’a pas été lancée.
+Une application standard s’inscrire leur tâche en arrière-plan lorsque l’application est lancée initialement, comme dans l’événement **OnNavigatedTo** .
+
+Lancez la tâche en arrière-plan en appelant la méthode [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071) de l’objet **MediaProcessingTrigger**. L’objet [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007) renvoyé par cette méthode vous permet de savoir si la tâche en arrière-plan a été démarrée. Si ce n’est pas le cas, il vous permet de savoir pourquoi la tâche en arrière-plan n’a pas été lancée. 
 
 [!code-cs[LaunchBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetLaunchBackgroundTask)]
+
+Une application standard lancera la tâche en arrière-plan en réponse à une interaction utilisateur, comme dans l’événement **Click** d’un contrôle de l’interface utilisateur.
 
 Le gestionnaire d’événements **OnProgress** est appelé lorsque la tâche en arrière-plan met à jour la progression de l’opération. Vous pouvez utiliser cette opportunité pour mettre à jour votre interface utilisateur avec les informations de progression.
 
@@ -140,9 +143,9 @@ Le gestionnaire d’événements **OnCompleted** est appelé lorsque l’exécut
 [!code-cs[OnCompleted](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnCompleted)]
 
 
- 
+ 
 
- 
+ 
 
 
 

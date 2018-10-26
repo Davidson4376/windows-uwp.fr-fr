@@ -6,19 +6,18 @@ ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, jeux, opengl, direct3d, pipeline nuanceur
-ms.openlocfilehash: 20d02d9b9724c0cfd8120d4d38fa476b9efa3bb3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: f8e3671b5d3490cf565db34ec891c203ee1f7c7a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230405"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547120"
 ---
 # <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>Comparer le pipeline nuanceur d’OpenGLES2.0 à celui de Direct3D
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -54,7 +53,7 @@ Dans Direct3D, les ressources de nuanceur ne sont pas créées avant leur compil
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | glCreateShader | Appelez [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) et [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) après avoir chargé l’objet nuanceur compilé dans un tampon, et transmettez-leur le tampon. |
 
- 
+ 
 
 ## <a name="compiling-a-shader"></a>Compilation d’un nuanceur
 
@@ -66,7 +65,7 @@ Les nuanceurs Direct3D doivent être précompilés en fichiers d’objet nuanceu
 | glCompileShader                        | Non applicable. Compilez les nuanceurs en fichiers .cso dans Visual Studio et incluez-les dans votre package.                                                                                     |
 | Utilisation de glGetShaderiv pour vérifier le statut de la compilation | Non applicable. Affichez le fichier de compilation dans le compilateur FX (FXC) de Visual Studio pour vérifier les éventuelles erreurs de compilation. Si la compilation est réussie, un fichier CSO est créé. |
 
- 
+ 
 
 ## <a name="loading-a-shader"></a>Chargement d’un nuanceur
 
@@ -77,7 +76,7 @@ Comme indiqué dans la section Création d’un nuanceur, Direct3D 11 crée le n
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ShaderSource  | Appelez [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) et [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) une fois que l’objet nuanceur compilé est correctement chargé. |
 
- 
+ 
 
 ## <a name="setting-up-the-pipeline"></a>Configuration du pipeline
 
@@ -91,7 +90,7 @@ OpenGL ES 2.0 inclut l’objet « programme de nuanceur », qui contient plusieu
 | glUseProgram    | N/A. Direct3D 11 n’utilise pas l’abstraction de l’objet programme de nuanceur.                          |
 | glGetProgramiv  | Utilisez la référence à [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) que vous avez créée. |
 
- 
+ 
 
 Créez une instance de [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) et [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/dn280493) avec la méthode [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) statique.
 
@@ -108,7 +107,7 @@ D3D11CreateDevice(
   creationFlags, // Set set debug and Direct2D compatibility flags.
   featureLevels, // List of feature levels this app can support.
   ARRAYSIZE(featureLevels),
-  D3D11_SDK_VERSION, // Always set this to D3D11_SDK_VERSION for Windows Store apps.
+  D3D11_SDK_VERSION, // Always set this to D3D11_SDK_VERSION for UWP apps.
   &device, // Returns the Direct3D device created.
   &m_featureLevel, // Returns feature level of device created.
   &m_d3dContext // Returns the device's immediate context.
@@ -136,7 +135,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722), [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
 
- 
+ 
 
 ## <a name="configuring-the-vertex-shaders"></a>Configuration des nuanceurs de vertex
 
@@ -149,7 +148,7 @@ La configuration d’un nuanceur de vertex dans Direct3D 11 est effectuée aprè
 | glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::VSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476489)                       |
 | glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::VSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446793). |
 
- 
+ 
 
 ## <a name="configuring-the-pixel-shaders"></a>Configuration des nuanceurs de pixels
 
@@ -162,7 +161,7 @@ La configuration d’un nuanceur de pixels dans Direct3D 11 est effectuée aprè
 | glGetShaderiv, glGetShaderSource | [**ID3D11DeviceContext1::PSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476468)                       |
 | glGetUniformfv, glGetUniformiv   | [**ID3D11DeviceContext1::PSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404645). |
 
- 
+ 
 
 ## <a name="generating-the-final-results"></a>Génération des résultats finaux
 
@@ -174,7 +173,7 @@ Une fois le pipeline terminé, vous dessinez les résultats des étapes du nuanc
 | glDrawElements | [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407), [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (ou autres méthodes Draw\* sur [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/ff476385)). |
 | eglSwapBuffers | [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797)                                                                                                                                                                              |
 
- 
+ 
 
 ## <a name="porting-glsl-to-hlsl"></a>Portage GLSL vers HLSL
 
@@ -186,7 +185,7 @@ GLSL et HLSL ne sont pas très différents, au-delà de la prise en charge des t
 | HLSL Direct3D 11          | ~4.30.                                                                                                                                                                                                                    | SM 5.0                |
 | GLSL ES pour OpenGL ES 2.0 | 1.40. Les anciennes implémentations de GLSL ES pour OpenGL ES 2.0 peuvent utiliser les versions 1.10 à 1.30. Vérifiez votre code d’origine avec glGetString(GL\_SHADING\_LANGUAGE\_VERSION) ou glGetString(SHADING\_LANGUAGE\_VERSION) pour le déterminer. | ~SM 2.0               |
 
- 
+ 
 
 Pour plus d’informations sur les différences de langages entre les deuxnuanceurs, de même que sur les mappages de la syntaxe courante, voir [Informations de référence sur le passage de GLSL à HLSL](glsl-to-hlsl-reference.md).
 
@@ -209,7 +208,7 @@ Voici quelques mappages d’intrinsèques de nuanceur courants d’OpenGL ES 2.0
 | gl\_FragColor       | COLOR(n) pour des données de couleur RVBA fournies à un nuanceur. Notez qu’elles sont traitées de la même façon que les données de coordonnées. La sémantique vous aide simplement à identifier qu’il s’agit de données de couleur. |
 | gl\_FragData\[n\]   | SV\_Target\[n\] pour écrire depuis un nuanceur de pixels dans une texture cible ou un autre tampon de pixels.                                                                               |
 
- 
+ 
 
 La méthode de codage des sémantiques n’est pas la même que celle des intrinsèques dans OpenGL ES 2.0. Dans OpenGL, vous pouvez accéder directement à la plupart des intrinsèques sans configuration, ni déclaration. Dans Direct3D, vous devez déclarer un champ dans une mémoire tampon constante spécifique pour utiliser une sémantique en particulier, ou la déclarer en tant que valeur de retour d’une méthode **main()** de nuanceur.
 
@@ -246,9 +245,9 @@ Dans ce cas, SV\_TARGET est l’emplacement de la cible de rendu dans laquelle l
 
 Pour plus d’informations sur l’utilisation de la sémantique avec Direct3D, voir [Sémantique HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509647).
 
- 
+ 
 
- 
+ 
 
 
 

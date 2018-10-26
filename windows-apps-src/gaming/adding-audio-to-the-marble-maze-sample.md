@@ -6,16 +6,14 @@ ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
 ms.author: elcowle
 ms.date: 10/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows10, uwp, audio, jeux, exemple
 ms.localizationpriority: medium
-ms.openlocfilehash: 4534675395f415ccd742dff646bc6c498aa7faa6
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 89612e3fbc4ef2ccb855f7709820f9445d0fd77c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700905"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546859"
 ---
 # <a name="adding-audio-to-the-marble-maze-sample"></a>Ajout de son à l’exemple Marble Maze
 
@@ -352,7 +350,7 @@ CoTaskMemFree(waveFormat);
 > [!IMPORTANT]
 > La méthode [MFCreateWaveFormatExFromMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms702177) utilise **CoTaskMemAlloc** pour allouer l’objet [WAVEFORMATEX](https://msdn.microsoft.com/library/windows/hardware/ff538799). Par conséquent, veillez à appeler **CoTaskMemFree** quand vous avez terminé d’utiliser cet objet.
 
- 
+ 
 
 La méthode **MediaStreamer::Initialize** se termine par le calcul de la longueur du flux, **m\_maxStreamLengthInBytes**, en octets. Pour ce faire, elle appelle la méthode [IMFSourceReader::GetPresentationAttribute](https://msdn.microsoft.com/library/windows/desktop/dd374662) pour obtenir la durée du flux audio en unités de 100nanosecondes, convertit la durée en sections, puis multiplie par le taux de transfert de données moyen en octets par seconde. Marble Maze utilise ensuite cette valeur pour allouer la mémoire tampon qui contient chaque son du jeu.
 
@@ -402,7 +400,7 @@ Le tableau suivant montre la relation entre chacune de ces valeurs, le fichier q
 | MenuChangeEvent   | MenuChange.wav | Lu quand l’utilisateur change d’élément de menu. |
 | MenuSelectedEvent | MenuSelect.wav | Lu quand l’utilisateur sélectionne un élément de menu.           |
 
- 
+ 
 
 L’exemple suivant montre comment la méthode **Audio::CreateResources** crée la voix source pour la musique de fond. La structure [XAUDIO2\_SEND\_DESCRIPTOR](https://msdn.microsoft.com/library/windows/desktop/ee419244) définit la voix de destination cible à partir d’une autre voix et spécifie si un filtre doit être utilisé. Marble Maze appelle la méthode **Audio::SetSoundEffectFilter** pour utiliser les filtres afin de modifier le son de la bille quand elle roule. La structure [XAUDIO2\_VOICE\_SENDS](https://msdn.microsoft.com/library/windows/desktop/ee419246) définit l’ensemble des voix pour recevoir les données à partir d’une seule voix de sortie. Marble Maze envoie les données de la voix source à la voix mastérisée (pour la partie inchangée d’un son en cours de lecture) et aux deux voix prémixées qui implémentent la partie réverbérante d’un son en cours de lecture.
 

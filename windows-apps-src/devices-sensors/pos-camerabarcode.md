@@ -5,22 +5,20 @@ description: Cet article répertorie les fonctionnalités de scanneur de codes-b
 ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: dff05e8909c2afd2bac055eead87f4b66892109b
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: c647846aaaf8f7a5cef96e267ad979dc68ee004a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833137"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549533"
 ---
 # <a name="camera-barcode-scanner"></a>Scanneur de code-barres à caméra
 Un scanneur de codes-barres à caméra est créé dynamiquement à mesure que Windows associe les caméras connectées à votre ordinateur avec un logiciel de décodage.  Chaque paire caméra-décodeur est un scanneur de code-barres entièrement fonctionnel.   
 
 ## <a name="in-this-section"></a>Dans cette section
-|Article |Description |
+|Rubrique |Description |
 |------|------------|
 | [Configuration système](pos-camerabarcode-system-requirements.md)  | Liste des éditions de Windows qui prennent en charge le scanneur de codes-barres à caméra, ainsi que les exigences relatives à la caméra pour lire correctement les codes-barres. |
 | [Prise en main](pos-camerabarcode-get-started.md)              | Présentation pas à pas du scanneur de codes-barres à caméra |

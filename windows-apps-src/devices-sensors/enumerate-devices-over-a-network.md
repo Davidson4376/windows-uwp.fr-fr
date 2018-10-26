@@ -6,16 +6,14 @@ description: Outre la détection d’appareils connectés localement, vous pouve
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fa2e206bdfde0d1399086af2a2424718ceba6ac8
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 00f8d4314d67828fa30007d3b8af4c4e1d06c154
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958904"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547933"
 ---
 # <a name="enumerate-devices-over-a-network"></a>Énumérer les appareils sur un réseau
 
@@ -51,7 +49,7 @@ Lorsque vous créez votre propre sélecteur, il est fortement recommandé de lim
 | Bluetooth                                    | **{e0cbf06c-cd8b-4647-bb8a-263b43f0f974}** |
 | Bluetooth LE                                 | **{bb7bb05e-5972-42b5-94fc-76eaa7084d49}** |
 
- 
+ 
 
 ## <a name="aqs-examples"></a>Exemples de requêtes AQS
 
@@ -82,6 +80,6 @@ Cette requête AQS interroge les objets **AssociationEndpointContainer** lorsque
 System.Devices.AepContainer.ProtocolIds:~~"{0e261de4-12f0-46e6-91ba-428607ccef64}"
 ```
 
- 
+ 
 
- 
+ 

@@ -8,17 +8,15 @@ title: Effets vidéo personnalisés
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a1f53bb1165561865124a960940fab3f4325061
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 08d861355a235c9217f51ce6f925224a27a562ef
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843319"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544755"
 ---
 # <a name="custom-video-effects"></a>Effets vidéo personnalisés
 
@@ -99,7 +97,7 @@ Le système vérifie la propriété [**SupportedEncodingProperties**](https://ms
 > [!NOTE] 
 > Si vous renvoyez une liste vide d’objets [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) à partir de **SupportedEncodingProperties**, le système utilise par défaut le codage ARGB32.
 
- 
+ 
 
 ### <a name="supportedmemorytypes-property"></a>Propriété SupportedMemoryTypes
 
@@ -111,7 +109,7 @@ Le système vérifie que la propriété [**SupportedMemoryTypes**](https://msdn.
 > [!NOTE]
 > Si vous spécifiez [**MediaMemoryTypes.GpuAndCpu**](https://msdn.microsoft.com/library/windows/apps/dn764822), le système utilise la mémoire du GPU ou du système, selon laquelle est la plus performante pour le pipeline. Quand vous utilisez cette valeur, vous devez vérifier la méthode [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) pour voir si le [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) ou le [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) transmis dans la méthode contient des données, puis traiter la trame en fonction.
 
- 
+ 
 
 ### <a name="timeindependent-property"></a>Propriété TimeIndependent
 
@@ -154,7 +152,7 @@ Ajoutez le code suivant à l’intérieur de l’espace de noms de l’effet pou
 > 2.  Sélectionnez l’onglet **Générer**.
 > 3.  Cochez la case **Autoriser du code unsafe**.
 
- 
+ 
 
 Vous pouvez maintenant ajouter l’implémentation de la méthode **ProcessFrame**. Tout d’abord, cette méthode obtient un objet [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) à partir des bitmaps logiciels en entrée et en sortie. Notez que la trame en sortie est ouverte pour l’écriture, et que la trame en entrée l’est pour la lecture. Ensuite, un [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671) est obtenu pour chaque tampon en appelant [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046). Ensuite, le tampon de données réel est obtenu en transtypant les objets **IMemoryBufferReference** en tant qu’interface d’interopérabilité COM définie ci-dessus, **IMemoryByteAccess**, puis en appelant **GetBuffer**.
 

@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b882c70701d2ea2f8abef14a7d3319616696ea4
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 672d7b2ddc913ea3a966fbd0a095367521a27d7c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044728"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550191"
 ---
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>Textures opaques et alpha 1bit
 
@@ -70,7 +68,7 @@ Voici la disposition de mémoire pour le blocà 8octets(64bits):
 | 2            | Bitmap Word\_0 |
 | 3            | Bitmap Word\_1 |
 
- 
+ 
 
 Color\_0 et Color\_1, les couleurs des2extrêmes, sont disposées comme suit:
 
@@ -80,7 +78,7 @@ Color\_0 et Color\_1, les couleurs des2extrêmes, sont disposées comme suit:
 | 10:5        | Composant de couleur vert |
 | 15:11       | Composant de couleur rouge   |
 
- 
+ 
 
 \*bit de poids faible
 
@@ -97,7 +95,7 @@ Bitmap Word\_0 est disposé comme suit:
 | 13:12         | Texel\[1\]\[2\] |
 | 15:14 (MSB\*) | Texel\[1\]\[3\] |
 
- 
+ 
 
 \*bit de poids fort (MSB)
 
@@ -114,7 +112,7 @@ Bitmap Word\_1 est disposé comme suit:
 | 13:12       | Texel\[3\]\[2\] |
 | 15:14 (MSB) | Texel\[3\]\[3\] |
 
- 
+ 
 
 ## <a name="span-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanexample-of-opaque-color-encoding"></a><span id="Example_of_Opaque_Color_Encoding"></span><span id="example_of_opaque_color_encoding"></span><span id="EXAMPLE_OF_OPAQUE_COLOR_ENCODING"></span>Exemple de codage de couleur opaque
 
@@ -134,9 +132,9 @@ L’image bitmap obtenu ressemble au schéma suivant.
 
 Cela ressemble à la série de couleurs illustrée suivante.
 
-**Remarque**   Dans une image, le pixel(0, 0) apparaît sur le coin supérieur gauche.
+**Remarque**  dans une image, les pixels (0,0) s’affiche dans le coin supérieur gauche.
 
- 
+ 
 
 ![illustration d’un dégradé codé opaque](images/redsquares.png)
 
@@ -169,9 +167,9 @@ L’image bitmap obtenu ressemble au schéma suivant.
 
 [Ressources de texture compressées](compressed-texture-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

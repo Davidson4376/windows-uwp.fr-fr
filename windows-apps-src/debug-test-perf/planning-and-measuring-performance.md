@@ -6,19 +6,17 @@ description: Les utilisateurs attendent de leurs applications qu’elles soient 
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: d25620c0fc86f76b8c0d4de6e606250186b9ce37
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: e62e724cceb458ba922143e61058dffa8d16a0b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894789"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547881"
 ---
 # <a name="planning-for-performance"></a>Planification des performances
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie. Techniquement, la performance est une exigence non fonctionnelle mais le fait de considérer les performances comme une fonctionnalité vous aidera à répondre aux attentes de vos utilisateurs. La spécification des objectifs et la mesure sont des facteurs essentiels. Déterminez quels sont les scénarios pour lesquels les performances sont essentielles et définissez ce que vous entendez par bonnes performances. Effectuez ensuite des mesures précoces et régulières tout au long du cycle de vie de votre projet pour être sûr d’atteindre vos objectifs.
@@ -44,7 +42,7 @@ Pensez à la durée acceptable (*classes d’interaction*) nécessaire pour que 
 | Continu              | Ne semble plus répondre      | 500 millisecondes | 5 secondes        | Télécharger un fichier d’Internet                                            |
 | Captif                 | Long ; l’utilisateur peut décider de quitter    | 500 millisecondes | 10 secondes       | Installer plusieurs applications à partir du Store                                         |
 
- 
+ 
 
 Vous pouvez désormais attribuer des classes d’interaction aux scénarios de performances de votre application. Vous pouvez attribuer la référence dans le temps de l’application, une partie de l’expérience utilisateur et une classe d’interaction à chaque scénario. Vous trouverez ci-dessous des suggestions pour un exemple d’application de cuisine et restauration.
 
@@ -175,7 +173,7 @@ Utilisez les techniques et les outils suivants pour tester les performances de l
     -   Exécutez l’application plusieurs fois pour mieux éliminer les variables de test aléatoires et garantir des mesures cohérentes.
 -   Effectuez des tests en condition de faible alimentation électrique. Il se peut que l’appareil de vos utilisateurs ne bénéficie pas d’une alimentation aussi puissante que votre ordinateur de développement. Windows a été conçu pour fonctionner de manière optimale avec des appareils à faible consommation, tels que des appareils mobiles. Vous devez vous assurer que les applications qui s’exécutent sur la plateforme fonctionnent correctement sur ces périphériques. Pour bien définir vos objectifs, gardez à l’esprit qu’un appareil à faible consommation d’énergie est environ 4fois plus lent qu’un ordinateur de bureau.
 -   Utilisez plusieurs outils, tels que Microsoft Visual Studio et Windows Performance Analyzer pour mesurer les performances de l’application. Visual Studio est conçu pour fournir des analyses sur l’application, par exemple les liaisons de code source. Windows Performance Analyzer est conçu pour fournir des analyses sur le système, par exemple des informations sur le système, des informations sur les événements de manipulation tactile, des informations sur les entrées/sorties disque et le coût de l’unité centrale graphique. Ces deux outils permettent de capturer et d’exporter les résultats, et peuvent rouvrir des suivis post-mortem et partagés.
--   Avant de soumettre votre application sur le Store pour certification, incorporez dans vos plans de test les tests liés aux performances décrits dans la section «Tests de performances» des [tests du Kit de certification des applications Windows](windows-app-certification-kit-tests.md) et dans la section «Performances et stabilité» des [cas de test des applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/Dn275879).
+-   Avant de soumettre votre application au Windows Store pour la certification, veillez à incorporer dans vos plans de test les tests liés aux performances, comme décrit dans la section «Tests de performances» de [tests du Kit de Certification des applications Windows](windows-app-certification-kit-tests.md) et dans le «performances et section de stabilité» des [cas de test d’application UWP](https://msdn.microsoft.com/library/windows/apps/Dn275879).
 
 Pour en savoir plus, consultez ces ressources et outils de profilage.
 

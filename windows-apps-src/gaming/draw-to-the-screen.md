@@ -6,19 +6,18 @@ ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, directx, graphismes
-ms.openlocfilehash: 1fe28d17aa8c943de9a2bcf6c2230237e0c931d0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 0050b854b6c8c02cd6eda5e4903fe07ee25d521d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228799"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544980"
 ---
 # <a name="draw-to-the-screen"></a>Dessiner à l’écran
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -218,9 +217,9 @@ Cet exemple ne s’attarde pas sur la grande complexité de la configuration des
 * [Porter le GLSL](port-the-glsl.md)
 * [Dessiner à l’écran](draw-to-the-screen.md)
 
- 
+ 
 
- 
+ 
 
 
 

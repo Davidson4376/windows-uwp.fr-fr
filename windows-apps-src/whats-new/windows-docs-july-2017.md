@@ -6,15 +6,13 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.author: quradic
 ms.date: 07/05/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e439c0b1c20f03c9519d29a24979e5008f3de94e
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: Auto
+ms.openlocfilehash: 62afbef1cc1f47bbc88c45a166572deca28d47a4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691838"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546585"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en juillet2017
 
@@ -110,7 +108,7 @@ L’article [Traiter des images multimédias avec MediaFrameReader](../audio-vid
 
 ### <a name="scoped-search"></a>Étendue de recherche
 
-Une étendue «UWP» a été ajoutée à la [documentation conceptuelle UWP](../get-started/universal-application-platform-guide.md) et aux [informations de référence sur les API](https://docs.microsoft.com/en-us/uwp/api/) sur docs.microsoft.com. Sauf si cette étendue est désactivée, les recherches effectuées dans ces domaines retourneront uniquement des documents UWP.
+Une étendue «UWP» a été ajoutée à la [documentation conceptuelle UWP](../get-started/universal-application-platform-guide.md) et aux [Informations de référence sur les API](https://docs.microsoft.com/en-us/uwp/api/) sur docs.microsoft.com. Sauf si cette étendue est désactivée, les recherches effectuées dans ces domaines retourneront uniquement des documents UWP.
 
 ![Étendue de recherche](images/scoped-search.png)
 

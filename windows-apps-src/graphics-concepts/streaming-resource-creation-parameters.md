@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f2a17f69ae0353bb7682a1dbfa48d5909f48d4aa
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: Auto
+ms.openlocfilehash: 0129b44b6f1c6c8b18555e3e0e0b350a695cabe1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652988"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548929"
 ---
 # <a name="streaming-resource-creation-parameters"></a>Paramètres de création de ressources de diffusion en continu
 
@@ -26,22 +24,22 @@ Il existe certaines contraintes quant au type de ressources Direct3D que vous po
 <span id="Supported-Resource-Type"></span><span id="supported-resource-type"></span><span id="SUPPORTED-RESOURCE-TYPE"></span>**Type de ressource pris en charge**  
 Texture2D\ [Array\] (y compris TextureCube\[Array\], qui est une variante de Texture2D\[Array\]) ou d'une mémoire tampon.
 
-**NON pris en charge: **Texture1D\ [Array\].
+**Non pris en charge:** Texture1D\ [Array\].
 
 <span id="Supported-Resource-Usage"></span><span id="supported-resource-usage"></span><span id="SUPPORTED-RESOURCE-USAGE"></span>**Utilisation des ressources prises en charge**  
 Utilisation par défaut.
 
-**NON pris en charge: **dynamique, intermédiaire ou non modifiable.
+**Non pris en charge:** Dynamique, intermédiaire ou non modifiable.
 
 <span id="Supported-Resource-Misc-Flags"></span><span id="supported-resource-misc-flags"></span><span id="SUPPORTED-RESOURCE-MISC-FLAGS"></span>**Indicateurs de diverses ressources prises en charge**  
 Sous forme de vignettes; autrement dit, diffusion en continu (par définition), cube de texture, dessiner des arguments indirects, la mémoire tampon autorise les vues brutes, mémoire tampon structurée, limitation de ressource ou générer des mips.
 
-**NON pris en charge: **partagé, mutex à clé partagée, compatible avec GDI, descripteur NT partagé, contenu restreint, limiter les ressources partagées, limiter le pilote des ressources partagées, protégés ou pool de vignettes.
+**Non pris en charge:** partagé, mutex à clé partagée, compatible avec GDI, descripteur NT partagé, contenu restreint, limiter les ressources partagées, limiter le pilote des ressources partagées, protégés ou pool de vignettes.
 
 <span id="Supported-Bind-Flags"></span><span id="supported-bind-flags"></span><span id="SUPPORTED-BIND-FLAGS"></span>**Indicateurs de liaison pris en charge**  
 Liaison en tant que ressource de nuanceur, cible de rendu, gabarit de profondeur ou accès sans ordre.
 
-**NON pris en charge: **liaison en tant que mémoire tampon constante, mémoire tampon de vertex (la liaison en tant que tampon sous forme de vignettes SRV/UAV/RTV est prise en charge), mémoire tampon d'index, sortie de flux, décodeur ou encodeur vidéo.
+**Non pris en charge:** Liaison en tant que mémoire tampon constante, mémoire tampon de vertex (la liaison une mémoire tampon sous forme de vignettes SRV/UAV/RTV est prise en charge), index de mémoire tampon, sortie de flux, décodeur ou encodeur vidéo.
 
 <span id="Supported-Formats"></span><span id="supported-formats"></span><span id="SUPPORTED-FORMATS"></span>**Formats pris en charge**  
 Tous les formats disponibles pour la configuration indiquée, qu'elle soit sous forme de vignettes ou non, à quelques exceptions près.
@@ -76,16 +74,16 @@ Le contenu initial de la mémoire du pool de vignettes n’est pas défini.
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques connexes
 
 
 [Création de ressources de diffusion en continu](creating-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

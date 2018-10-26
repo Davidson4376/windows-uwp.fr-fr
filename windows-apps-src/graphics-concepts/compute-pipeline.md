@@ -6,16 +6,14 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ee55a932857611e19dc24170d5b61c9c26b51c13
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 91c95019c327f39a58a7397a66f9d4bbc88f843d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652718"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548687"
 ---
 # <a name="compute-pipeline"></a>Pipeline de calcul
 
@@ -63,6 +61,6 @@ Le pipeline de calculDirect3D est conçu pour traiter les calculs pouvant être 
 
 [Guide d’apprentissage des graphismes Direct3D](index.md)
 
- 
+ 
 
- 
+ 

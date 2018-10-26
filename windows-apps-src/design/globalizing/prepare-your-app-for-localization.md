@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 11/07/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: c951d8aacef1a327740ca09f19bbc33caa3695df
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 48244889dd927f41d0998214cf1120377c4bb251
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1395578"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543521"
 ---
 # <a name="make-your-app-localizable"></a>Rendre votre application localisable
 
@@ -54,9 +52,9 @@ De plus, une chaîne comme «text» ou «fax» peut être utilisée en tant que 
 
 En bref, factorisez vos chaînes en morceaux fonctionnant dans tous les contextes. Dans certaines cas, une chaîne devra constituer une phrase entière.
 
-Prenons pour exemple la chaîne suivante: «Le {0} n'a pas pu être synchronisé».
+Considérez la chaîne suivante: «le {0} pas pu être synchronisé.»
 
-Divers mots pourraient remplacer {0}: «rendez-vous», «fichier» ou «document». Si cet exemple ne pose aucun problème en anglais, il n’en va pas de même dans tous ces cas pour sa traduction en allemand, par exemple. Remarquez que dans les phrases allemandes suivantes, certains mots dans la chaîne de modèle («Der», «Die», «Das») doivent correspondre au mot paramétré:
+Divers mots pourraient remplacer {0}, par exemple «rendez-vous», «tâche» ou «document». Si cet exemple ne pose aucun problème en anglais, il n’en va pas de même dans tous ces cas pour sa traduction en allemand, par exemple. Remarquez que dans les phrases allemandes suivantes, certains mots dans la chaîne de modèle («Der», «Die», «Das») doivent correspondre au mot paramétré:
 
 | Anglais                                    | Allemand                                           |
 |:------------------------------------------ |:------------------------------------------------ |
@@ -64,7 +62,7 @@ Divers mots pourraient remplacer {0}: «rendez-vous», «fichier» ou «document
 | The task could not be synchronized.        | Die Aufgabe konnte nicht synchronisiert werden.  |
 | The document could not be synchronized.    | Das Dokument konnte nicht synchronisiert werden. |
 
-Autre exemple: la phrase «Me rappeler dans {0} minute(s).» Si «minute(s)» fonctionne en français, cela n’est pas forcément le cas avec d’autres langues. Par exemple, le polonais utilise «minuta», «minuty» ou «minut» selon le contexte.
+Un autre exemple, la phrase «me rappeler dans {0} minute (s).» Si «minute(s)» fonctionne en français, cela n’est pas forcément le cas avec d’autres langues. Par exemple, le polonais utilise «minuta», «minuty» ou «minut» selon le contexte.
 
 Pour résoudre ce problème, localisez la phrase entière, plutôt qu’un mot individuel. Cela peut paraître comme une charge de travail supplémentaire et une solution dépourvue d’élégance, mais il s’agit de la solution optimale pour les raisons suivantes :
 
@@ -100,7 +98,7 @@ Ne supposez pas que toutes les langues expriment les paramètres dans le même o
     string.Format("Every {0} {1}", monthName, dayNumber); // For example, "Every April 1".
 ```
 
-La chaîne de format de cet exemple fonctionne pour l'anglais (États-Unis). Mais elle n'est pas appropriée pour l'allemand (Allemagne) dans la mesure où le jour et le mois sont affichés dans l'ordre inverse. Garantissez que le traducteur connaisse l'intention de chacun des paramètres afin d'être en mesure d'inverser l'ordre des éléments de format dans la chaîne de format (par exemple, «{1} {0}») tel qu'approprié pour la langue cible.
+La chaîne de format de cet exemple fonctionne pour l'anglais (États-Unis). Mais elle n'est pas appropriée pour l'allemand (Allemagne) dans la mesure où le jour et le mois sont affichés dans l'ordre inverse. Assurez-vous que le traducteur connaisse l’intention de chacun des paramètres afin qu’ils peuvent inverser l’ordre des éléments dans la chaîne de format format (par exemple, «{1} {0}») en fonction de la langue cible.
 
 ## <a name="dont-over-localize"></a>Ne sur-localisez pas.
 
