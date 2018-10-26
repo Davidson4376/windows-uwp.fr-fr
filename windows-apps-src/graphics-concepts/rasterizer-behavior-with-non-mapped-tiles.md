@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 218b53872fc8fd99a961dceefd2bfbd091c52511
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: f56e8051c8a66cf579a7c3dbcddc738b3a10bcaf
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043668"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562419"
 ---
 # <a name="span-iddirect3dconceptsrasterizerbehaviorwithnon-mappedtilesspanrasterizer-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.rasterizer_behavior_with_non-mapped_tiles"></span>Comportement du rastériseur avec les vignettes non mappées
 
@@ -48,9 +46,9 @@ Les lectures des vues de cible de rendu renvoient 0 dans les vignettes manquante
 
 [Accès du pipeline aux ressources de diffusion en continu](pipeline-access-to-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

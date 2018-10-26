@@ -6,16 +6,14 @@ description: La création d’un sélecteur d’appareil permet de limiter les a
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c80f604e9b8dc31eec1fe684f073bceb2337d91f
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 036ea8b7d9797112dca9b6594e9bc1e33e923588
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "959164"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563145"
 ---
 # <a name="build-a-device-selector"></a>Créer un sélecteur d’appareil
 
@@ -40,9 +38,9 @@ Lorsque vous utilisez les API [**Windows.Devices.Enumeration**](https://msdn.mic
 
 Les API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) utilisent la syntaxe AQS canonique, mais ne prennent pas en charge tous les opérateurs. Pour obtenir la liste des propriétés disponibles lors de la création de la chaîne de filtre, voir [Propriétés d’informations sur l’appareil](device-information-properties.md).
 
-**Attention**  Les propriétés personnalisées définies à l’aide du format `{GUID} PID` ne peuvent pas être utilisées lors de la construction de la chaîne de filtre AQS. Cela vient du fait que le type de propriété est dérivé du nom de propriété bien connu.
+**Attention**propriétés personnalisées définies à l’aide de la `{GUID} PID` format ne peuvent pas être utilisé lors de la construction de la chaîne de filtre AQS. Cela vient du fait que le type de propriété est dérivé du nom de propriété bien connu.
 
- 
+ 
 
 Le tableau suivant répertorie les opérateurs AQS et les types de paramètres qu’ils prennent en charge.
 
@@ -64,9 +62,9 @@ Le tableau suivant répertorie les opérateurs AQS et les types de paramètres q
 | **COP\_APPLICATION\_SPECIFIC** | Non pris en charge                                                               |
 
 
-> **Conseil**  Vous pouvez spécifier **NULL** pour **COP\_EQUAL** ou **COP\_NOTEQUAL**. Cela se traduit par une propriété sans valeur ou par le fait que la valeur n’existe pas. Dans AQS, vous spécifiez **NULL** à l’aide de crochets vides \[\].
+> **Conseil**vous pouvez spécifier **NULL** pour **COP\_EQUAL** ou **COP\_NOTEQUAL**. Cela se traduit par une propriété sans valeur ou par le fait que la valeur n’existe pas. Dans AQS, vous spécifiez **NULL** à l’aide de crochets vides \[\].
 
-> **Important**  Lorsque vous utilisez les opérateurs **COP\_VALUE\_CONTAINS** et **COP\_VALUE\_NOTCONTAINS**, ceux-ci se comportent différemment avec les chaînes et les tableaux de chaînes. Dans le cas d’une chaîne, le système effectue une recherche sans respect de la casse pour voir si l’appareil contient la chaîne indiquée comme sous-chaîne. Dans le cas d’un tableau de chaînes, aucune recherche n’est effectuée dans les sous-chaînes. Avec le tableau de chaînes, une recherche est effectuée pour voir s’il contient la chaîne spécifiée complète. Il n’est pas possible d’effectuer une recherche dans un tableau de chaînes pour voir si les éléments qui le composent contiennent une sous-chaîne.
+> **Important**lorsque vous utilisez les opérateurs **COP\_VALUE\_CONTAINS** et **COP\_VALUE\_NOTCONTAINS** , ceux-ci se comportent différemment avec les chaînes et les tableaux de chaînes. Dans le cas d’une chaîne, le système effectue une recherche sans respect de la casse pour voir si l’appareil contient la chaîne indiquée comme sous-chaîne. Dans le cas d’un tableau de chaînes, aucune recherche n’est effectuée dans les sous-chaînes. Avec le tableau de chaînes, une recherche est effectuée pour voir s’il contient la chaîne spécifiée complète. Il n’est pas possible d’effectuer une recherche dans un tableau de chaînes pour voir si les éléments qui le composent contiennent une sous-chaîne.
 
 Si vous ne pouvez pas créer de chaîne de filtre AQS unique qui parcourt vos résultats de manière appropriée, vous pouvez filtrer les résultats après les avoir reçus. Toutefois, si vous choisissez de procéder ainsi, nous recommandons de limiter les résultats issus de la chaîne de filtre AQS initiale autant que possible lorsque vous la fournissez aux API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459). Cela permet d’améliorer les performances de votre application.
 
@@ -111,6 +109,6 @@ Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https:/
 System.Devices.IpAddress:=[]
 ```
 
- 
+ 
 
- 
+ 

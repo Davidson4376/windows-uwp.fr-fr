@@ -6,19 +6,17 @@ description: Créez des applications de plateforme Windows universelle (UWP) qui
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: f9e045c381fc6c51a769be31403114ad15cf06bd
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 4cbaa56f9c25c0e4ea1f10c79b4f7d1100748532
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894689"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562021"
 ---
 # <a name="optimize-suspendresume"></a>Optimiser l’interruption/la reprise
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Créez des applications de plateforme Windows universelle (UWP) qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt.
 
@@ -90,9 +88,9 @@ La plupart des applications n’ont pas besoin de gérer l’événement [**Resu
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Recommandations pour la suspension et la reprise d’une application](https://msdn.microsoft.com/library/windows/apps/Hh465088)
- 
+ 
 
- 
+ 
 
 
 

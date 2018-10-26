@@ -6,16 +6,14 @@ ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c89793dd92a458c47a33aac4f7d4c728088cf1dc
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: Auto
+ms.openlocfilehash: 5bb9d241569afdbbc9df95fa11cd2261e78c077a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674356"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562725"
 ---
 # <a name="relativesource-markup-extension"></a>Extension de balisage {RelativeSource}
 
@@ -43,7 +41,7 @@ Fournit un moyen de spécifier la source d’une liaison en termes de relation r
 | Terme | Description |
 |------|-------------|
 | {RelativeSource Self} | Produit une valeur [<strong>Mode</strong>](https://msdn.microsoft.com/library/windows/apps/br209915) de <strong>Self</strong>. L’élément cible doit être utilisé en tant que source pour cette liaison. Cela s’avère utile pour lier une seule propriété d’un élément à une autre propriété du même élément. |
-| {RelativeSource TemplatedParent} | Produit un élément [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391) qui est appliqué en tant que source de cette liaison. Cela s’avère utile pour appliquer des informations d’exécution aux liaisons au niveau du modèle. | 
+| {RelativeSource TemplatedParent} | Produit un élément [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391) qui est appliqué en tant que source de cette liaison. Cela s’avère utile pour appliquer des informations d’exécution aux liaisons au niveau du modèle. | 
 
 ## <a name="remarks"></a>Remarques
 
@@ -64,7 +62,7 @@ Voici un exemple: Ce [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 
 
 Une autre utilisation de `RelativeSource={RelativeSource Self}` sert à définir le [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) d’un objet sur lui-même.  Vous pourrez, par exemple, vois cette technique dans certains exemples de Kit de développement logiciel (SDK), où la classe [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) est étendue avec une propriété personnalisée qui fournit déjà un modèle d’affichage prêt à l’emploi pour sa propre liaison de données, tel que: `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-**Remarque** L’utilisation XAML de l’élément **RelativeSource** indique uniquement l’utilisation pour laquelle il est prévu : l’affectation d’une valeur à [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) en XAML dans le cadre d’une expression de liaison. En théorie, d’autres utilisations sont possibles s’il s’agit de définir une propriété dont la valeur est [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913).
+**Remarque**l’utilisation XAML le pour **RelativeSource** indique uniquement l’utilisation pour laquelle il est prévu: définition d’une valeur pour [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) en XAML dans le cadre d’une expression de liaison. En théorie, d’autres utilisations sont possibles s’il s’agit de définir une propriété dont la valeur est [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913).
 
 ## <a name="related-topics"></a>Rubriques connexes
 

@@ -5,16 +5,14 @@ description: Cet article répertorie les exigences d'utilisation d'un scanneur d
 ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: f0dcbe28107bb8c6918e4e0ac63698f1f9692005
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: Auto
+ms.openlocfilehash: d63dc1af00716b8e60532341826a698f97ec9d32
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833135"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563904"
 ---
 # <a name="camera-barcode-scanner-system-requirements"></a>Configuration système requise du scanneur de codes-barres à caméra
 À partir de Windows10, version1803, vous pouvez lire des codes-barres via un objectif de caméra standard à partir d’une application Windows universelle.

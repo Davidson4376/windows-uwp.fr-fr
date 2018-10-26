@@ -6,16 +6,14 @@ title: Créer, planifier et gérer des coupures de médias
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b8d25047435ece1c55a982e69be45fa0e6efb74
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 0feb7f6771254bf500e4b64fd0e632daad9817e4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843662"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560022"
 ---
 # <a name="create-schedule-and-manage-media-breaks"></a>Créer, planifier et gérer des coupures de médias
 
@@ -88,10 +86,6 @@ L’événement [**BreaksSeekedOver**](https://msdn.microsoft.com/library/window
 
 [!code-cs[BreakSeekedOver](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSeekedOver)]
 
-## <a name="get-information-about-the-current-media-break"></a>Obtenir des informations sur la coupure multimédia active
-Comme indiqué précédemment dans cet article, la propriété [**CurrentItemIndex**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.CurrentItemIndex) peut être utilisée afin d’identifier l’élément multimédia d’une coupure de média qui est en cours de lecture. Vous voudrez peut-être vérifier régulièrement l’élément en cours de lecture afin de mettre à jour votre interface utilisateur. Dans un premier temps, veillez à vérifier si la propriété [**CurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.CurrentBreak) est définie sur null. SI la propriété est définie sur null, aucune coupure de média n’est en cours de lecture.
-
-[!code-cs[GetCurrentBreakItemIndex](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetGetCurrentBreakItemIndex)]
 
 ## <a name="access-the-current-playback-session"></a>Accéder à la session de lecture active
 L’objet [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) utilise la classe **MediaPlayer** pour fournir des données et des événements associés au contenu multimédia en cours de lecture. L’objet [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) présente également un élément **MediaPlaybackSession** auquel vous accédez pour récupérer les données et les événements spécifiquement associés au contenu de la coupure de média en cours de lecture. Parmi les informations pouvant être obtenues de la session de lecture, vous trouverez l’état de lecture actif (en lecture ou en pause), ainsi que la position de lecture au sein du contenu. Vous pouvez utiliser les propriétés [**NaturalVideoWidth**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoWidth) et [**NaturalVideoHeight**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoHeight), ainsi que [**NaturalVideoSizeChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoSizeChanged) pour ajuster votre interface utilisateur vidéo si le contenu de la coupure de média présente des proportions différentes de celles de votre contenu principal. Vous pouvez également recevoir des événements tels que [**BufferingStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingStarted), [**BufferingEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingEnded) et [**DownloadProgressChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.DownloadProgressChanged), qui peuvent fournir des données précieuses de télémétrie relatives aux performances de votre application.
@@ -107,9 +101,9 @@ Dans l’exemple suivant, un gestionnaire est enregistré pour l’**événement
 * [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md)
 * [Contrôle manuel des contrôles de transport de média système](system-media-transport-controls.md)
 
- 
+ 
 
- 
+ 
 
 
 

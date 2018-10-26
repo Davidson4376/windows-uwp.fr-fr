@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: abff26c7f2e874d4a5e8e964fe716fcf2f1592cb
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: be88f06cd5893f2f67697a54754826440bdf7d18
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045092"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563864"
 ---
 # <a name="bc6h-format"></a>Format BC6H
 
@@ -34,15 +32,15 @@ Le format BC6H est spécifié par les valeurs d’énumération DXGI\_FORMAT sui
 -   **DXGI\_FORMAT\_BC6H\_UF16**. Ce format BC6H n’utilise pas de bit de signe dans les valeurs de canal de couleur à virgule flottante de 16bits.
 -   **DXGI\_FORMAT\_BC6H\_SF16**. Ce format BC6H utilise un bit de signe dans les valeurs de canal de couleur à virgule flottante de 16bits.
 
-**Remarque**   Le format de canal de couleur à virgule flottante de 16bits est souvent appelé «format à virgule flottante demi-précision». Ce format présente la disposition de bits suivante:
+**Remarque**  l’à virgule flottante pour les canaux de couleur de 16 bits est souvent désigné comme format à virgule flottante «moitié». Ce format présente la disposition de bits suivante:
 |                       |                                                 |
 |-----------------------|-------------------------------------------------|
 | UF16 (flottant non signé) | 5bits exposants + 11bits mantisse              |
 | SF16 (flottant signé)   | 1bit de signe + 5bits exposants + 10bits mantisse |
 
- 
+ 
 
- 
+ 
 
 Le format BC6H peut être utilisé pour les ressources de texture [Texture2D](https://msdn.microsoft.com/library/windows/desktop/bb205277) (y compris les tableaux), Texture3D ou TextureCube (y compris les tableaux). De même, ce format s’applique à toutes les surfaces de carte MIP associées à ces ressources.
 
@@ -114,7 +112,7 @@ Le tableau suivant contient le nombre et les valeurs de bits pour chacun des 14f
 | 13   | 63bits           | 0bits    | 60bits (12.8, 12.8, 12.8)       | 5bits (01011) |
 | 14   | 63bits           | 0bits    | 60bits (16.4, 16.4, 16.4)       | 5bits (01111) |
 
- 
+ 
 
 Chaque format présenté dans ce tableau peut être identifié de manière unique par les bits de mode. Les dix premiers modes sont utilisés pour les vignettes à deux zones, et le champ de bits de mode peut contenir deux ou cinq bits. Ces blocs comportent également des champs pour les points de terminaison de couleur compressés (72 ou 75bits), la partition (5bits) et les index de partition (46bits).
 
@@ -160,7 +158,7 @@ Les noms de champs dans le tableau ci-dessus sont définis comme suit:
 | by    | endpt\[1\].A\[2\] |
 | bz    | endpt\[1\].B\[2\] |
 
- 
+ 
 
 Endpt\[i\], où i est égal à 0 ou à 1, se réfère respectivement au 0e ou 1e ensemble de points de terminaison.
 ## <a name="span-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspansign-extension-for-endpoint-values"></a><span id="Sign-extension-for-endpoint-values"></span><span id="sign-extension-for-endpoint-values"></span><span id="SIGN-EXTENSION-FOR-ENDPOINT-VALUES"></span>Extension de signe pour les valeurs de point de terminaison
@@ -329,9 +327,9 @@ unsigned short finish_unquantize(int comp)
 
 [Compression de blocs de texture](texture-block-compression.md)
 
- 
+ 
 
- 
+ 
 
 
 

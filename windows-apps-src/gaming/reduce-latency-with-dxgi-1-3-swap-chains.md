@@ -6,19 +6,18 @@ ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, latence, dxgi, chaînes d’échange
-ms.openlocfilehash: 9f2babdac40e3baf27bec9b2e214e9350d1f2539
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 51a1dd6d7f1c39d82201d3b9741276a54e4c06a8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228742"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563771"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>Réduire la latence avec des chaînes d’échange DXGI1.3
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Utilisez DXGI1.3 pour réduire la latence d’image effective en attendant que la chaîne d’échange indique le moment approprié pour débuter le rendu d’une nouvelle image. Normalement, les jeux doivent offrir la latence la plus faible possible entre le moment où l’entrée du joueur est reçue et le moment où le jeu répond à cette entrée en mettant à jour l’affichage. Cette rubrique décrit une technique disponible à partir de Direct3D 11.2, qui vous permet de réduire la latence d’image effective dans votre jeu.
 
@@ -38,9 +37,9 @@ Spécifiez l’indicateur [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **Remarque**  Contrairement à certains indicateurs, cet indicateur ne peut pas être ajouté ou retiré avec [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). DXGI renvoie un code d’erreur si cet indicateur n’est pas le même qu’au moment de la création de la chaîne d’échange.
+> **Remarque**  Contrairement à certains indicateurs, cet indicateur ne peut pas être ajouté ou supprimé à l’aide de [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). DXGI renvoie un code d’erreur si cet indicateur n’est pas le même qu’au moment de la création de la chaîne d’échange.
 
- 
+ 
 
 ```cpp
 // If the swap chain already exists, resize it.
@@ -159,9 +158,9 @@ Pour plus d’informations sur la programmation multithread dans Windows, voir l
 * [Synchronisation](https://msdn.microsoft.com/library/windows/desktop/ms686353)
 * [Utilisation d’objets Event (Windows)](https://msdn.microsoft.com/library/windows/desktop/ms686915)
 
- 
+ 
 
- 
+ 
 
 
 

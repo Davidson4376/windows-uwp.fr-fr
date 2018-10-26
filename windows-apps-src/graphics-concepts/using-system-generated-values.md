@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a99cb28818cd8fc3fd9057b3df72a678c2d1aca
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9f187495568892f5b489f6e109669811f4c45ab1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044888"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561525"
 ---
 # <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>Utilisation de valeurs générées par le système
 
@@ -68,7 +66,7 @@ Les tableaux suivants indiquent les valeurs générées par le système pour l�
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
 | **InstanceID** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
 
- 
+ 
 
 L'instance de bande de triangles U a 3primitives de triangle, avec les valeurs générées par le système suivantes:
 
@@ -77,7 +75,7 @@ L'instance de bande de triangles U a 3primitives de triangle, avec les valeurs g
 | **PrimitiveID** | 0   | 1   | 2   |
 | **InstanceID**  | 0   | 0   | 0   |
 
- 
+ 
 
 Les tableaux suivants indiquent les valeurs générées par le système pour l’instance V.
 
@@ -86,7 +84,7 @@ Les tableaux suivants indiquent les valeurs générées par le système pour l�
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
 | **InstanceID** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
 
- 
+ 
 
 L'instance de bande de triangles V a 3primitives de triangle, avec les valeurs générées par le système suivantes:
 
@@ -95,7 +93,7 @@ L'instance de bande de triangles V a 3primitives de triangle, avec les valeurs g
 | **PrimitiveID** | 0   | 1   | 2   |
 | **InstanceID**  | 1   | 1   | 1   |
 
- 
+ 
 
 L'[étape d’assembleur d’entrée (IA)](input-assembler-stage--ia-.md) génère les ID (vertex, primitive et instance). Notez également que chaque instance est attribuée à un ID d’instance unique. Les données se terminent par la bande-couper, qui sépare chaque instance de la bande de triangles.
 
@@ -104,9 +102,9 @@ L'[étape d’assembleur d’entrée (IA)](input-assembler-stage--ia-.md) génè
 
 [Étape de l’assembleur d’entrée (IA)](input-assembler-stage--ia-.md)
 
- 
+ 
 
- 
+ 
 
 
 

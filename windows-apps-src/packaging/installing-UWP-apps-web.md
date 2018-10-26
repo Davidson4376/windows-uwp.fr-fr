@@ -5,16 +5,14 @@ description: Dans cette section, nous allons examiner les étapes à suivre pour
 ms.author: lahugh
 ms.date: 11/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, programme d’installation d’application, appinstaller, charger une version test, ensemble connexe, packages facultatifs
 ms.localizationpriority: medium
-ms.openlocfilehash: d0368743e3afa6e9cdb5e5ac95672430416fc824
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 98a761bf04b56d13745f2505b8d0806fc4fdf3e1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1434784"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560984"
 ---
 # <a name="installing-uwp-apps-from-a-web-page"></a>Installer des applicationsUWP à partir d’une page web
 
@@ -31,8 +29,11 @@ L’installation d’application directe est uniquement disponible dans Windows1
 Dans ce mécanisme, le Programme d’installation d’application inscrit un schéma d’activation de protocole auprès du système d’exploitation. Lorsque l’utilisateur clique sur un lien web, le navigateur vérifie auprès du système d’exploitation les applications qui sont inscrites pour ce lien web. Si le schéma correspond au schéma d’activation de protocole spécifié par le Programme d’installation d’application, alors ce dernier est appelé. Il est important de noter que ce mécanisme est indépendant du navigateur. Cela est utile, par exemple, pour les administrateurs de site qui n’ont pas besoin de prendre en compte les différences entre les navigateurs web lors de l’intégration dans une page web. 
 
 ### <a name="requirements-for-protocol-activation-scheme"></a>Conditions requises pour le schéma d’activation de protocole
-   - Les serveurs web qui prennent en charge les requêtes de plages d'octets (HTTP/1.1)
-   - Les packages de l’application doivent être hébergés sur des serveurs qui prennent en charge le protocole HTTP/1.1   
+
+1. Les serveurs Web doivent avoir la prise en charge des requêtes de plages d’octets (HTTP/1.1)
+    - Les serveurs qui prennent en charge le protocole HTTP/1.1 doivent avoir la prise en charge pour les requêtes de plages d’octets 
+2. Serveurs Web devez connaître sur les types contenus du package d’application Windows 10
+    - Voici comment déclarer les nouveaux types de contenu en tant que partie du [fichier de configuration web](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
 
 ### <a name="how-to-enable-this-on-a-webpage"></a>Comment activer ce mécanisme sur une page web 
 Les développeurs d’application qui souhaitent héberger des packages de l’application sur leurs sites Web doivent suivre cette étape:

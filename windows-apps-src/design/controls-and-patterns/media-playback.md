@@ -9,16 +9,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d680ddfb1dd121d2b9763c1d8af646db6de4797
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 113acbe1f4e9bb3814b2f9b61beb79488995d3e3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1494036"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563343"
 ---
 # <a name="media-player"></a>Lecteur multimédia
 
@@ -101,9 +99,9 @@ La disposition des contrôles sur deux lignes (voir ci-dessous) est recommandée
 ### <a name="set-the-media-source"></a>Définir la source du média
 Pour lire des fichiers sur le réseau ou des fichiers incorporés dans l’application, définissez la propriété [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) sur un [MediaSource](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) avec le chemin du fichier.
 
-**Conseil** Pour ouvrir des fichiers à partir d’Internet, vous devez déclarer la fonctionnalité **Internet (Client)** dans le manifeste de votre application (fichierPackage.appxmanifest). Pour plus d’informations sur la déclaration des fonctionnalités, voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/library/windows/apps/mt270968).
+**Conseil**pour ouvrir des fichiers à partir d’internet, vous devez déclarer la fonctionnalité **Internet (Client)** dans le manifeste de votre application (Package.appxmanifest). Pour plus d’informations sur la déclaration des fonctionnalités, voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/library/windows/apps/mt270968).
 
- 
+ 
 
 Ce code tente de définir la propriété [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) de [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) défini en XAML sur le chemin d’un fichier entré dans un [TextBox](https://msdn.microsoft.com/library/windows/apps/br209683).
 
@@ -397,7 +395,7 @@ Les contrôles par défaut ont été optimisés pour la lecture multimédia, tou
 
 - [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - Affichez tous les contrôles XAML dans un format interactif.
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 - [Informations de base relatives à la conception des commandes pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn958433)
 - [Informations de base relatives à la conception de contenu pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn958434)

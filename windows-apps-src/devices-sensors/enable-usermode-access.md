@@ -5,17 +5,15 @@ description: Ce didacticiel explique comment activer l’accès en mode utilisat
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: acpi
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: b6a8877d2991f953853339ac8fea3efad6d735c6
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.openlocfilehash: 09957c19414f586a49a1a2cb9186aa027dc1de07
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/24/2018
-ms.locfileid: "1618424"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560568"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>Activer l’accès en mode utilisateur à GPIO, I2C et SPI
 
@@ -740,7 +738,7 @@ Si la sortie indique que rhproxy a démarré, c’est qu’il a été chargé et
 
 Maintenant que rhproxy est en cours d’exécution, des interfaces d’appareils sont normalement créées et sont accessibles en mode utilisateur. Nous allons utiliser plusieurs outils de ligne de commande pour énumérer les appareils et voir ceux qui sont présents.
 
-Clonez le référentiel [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) et créez les exemples `GpioTestTool`, `I2cTestTool`, `SpiTestTool` et `Mincomm`. Copiez les outils sur votre appareil en cours de test et utilisez les commandes suivantes pour énumérer les appareils.
+Cloner le [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) référentiel et build le `GpioTestTool`, `I2cTestTool`, `SpiTestTool`, et `Mincomm` exemples. Copiez les outils sur votre appareil en cours de test et utilisez les commandes suivantes pour énumérer les appareils.
 ```
 I2cTestTool.exe -list
 SpiTestTool.exe -list
@@ -847,7 +845,7 @@ Cliquez sur Exécuter la sélection. Vous pouvez accéder à une documentation s
 
 ### <a name="appendix-a---raspberry-pi-asl-listing"></a>AnnexeA - Liste d’ASL RaspberryPi
 
-Brochage d’en-tête: https://developer.microsoft.com/windows/iot/samples/PinMappingsRPi2
+Brochage d’en-tête:https://developer.microsoft.com/windows/iot/samples/PinMappingsRPi2
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1009,7 +1007,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ### <a name="appendix-b---minnowboardmax-asl-listing"></a>AnnexeB - Liste d’ASL MinnowBoardMax
 
-Brochage d’en-tête: https://developer.microsoft.com/windows/iot/samples/PinMappingsMBM
+Brochage d’en-tête:https://developer.microsoft.com/windows/iot/samples/PinMappingsMBM
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)

@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f1014ed205c5cf0eda2c9b71c8406a98394b1463
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: d4121bd402b048ee6102ed3be30b94a66e274273
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652898"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562197"
 ---
 # <a name="texture-blending"></a>Fusion de textures
 
@@ -34,9 +32,9 @@ Direct3D prend en charge les fusions de textures multiples sur une seule passe p
 
 Comme indiqué dans le diagramme précédent, les étapes de texture fusionnent deux arguments à l’aide d’un opérateur spécifié. Les opérations courantes incluent généralement une modulation simple ou l’ajout de couleurs ou de composants alpha aux arguments. Cependant, plus d’une vingtaine d’opérations sont prises en charge. Les arguments d’une étape peuvent être associés à une texture, la couleur itérée ou alpha (itérée pendant l’ombrage Gouraud), une couleur arbitraire et alpha ou le résultat de l’étape de texture précédente.
 
-**Remarque**   Direct3D distingue la fusion de couleur de la fusion alpha. Les applications définissent des opérations de fusion et des arguments de couleur et alpha de façon individuelle et les résultats de ces configurations sont indépendants les uns des autres.
+**Remarque**  Direct3D distingue la fusion à partir de la fusion alpha couleur. Les applications définissent des opérations de fusion et des arguments de couleur et alpha de façon individuelle et les résultats de ces configurations sont indépendants les uns des autres.
 
- 
+ 
 
 La combinaison d’arguments et d’opérations utilisés par plusieurs étapes de fusion définissent un langage de fusion simple basé sur le flux. Les résultats d’une étape passent à l’étape suivante, et ainsi de suite. Le concept de transmission des résultats d’une étape à une autre pour éventuellement être rastérisé sur un polygone est souvent appelé la cascade de fusion de textures. Le diagramme suivant montre comment chaque étape de texture constitue une cascade de fusion de textures.
 
@@ -58,7 +56,7 @@ Si le nombre d’étapes utilisées par votre application varie selon différent
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -74,16 +72,16 @@ Si le nombre d’étapes utilisées par votre application varie selon différent
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Rubriques associées
 
 
 [Textures](textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 406960820edaf3e8b14e93a6d9dfe9d723a216d6
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 3444c71b4e4c610be0b7d92ac6d761340c5dd5c2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488960"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564145"
 ---
 #  <a name="define-the-uwp-app-framework"></a>Définir l’infrastructure d’application UWP
 
@@ -388,7 +386,7 @@ void GameMain::Run()
 
 Quand l’utilisateur met finalement fin à la session de jeu, nous devons nettoyer. C’est ici que la méthode **Uninitialize** intervient.
 
-Dans Windows10, la fermeture de la fenêtre de l’application ne met pas fin au processus de l’application, mais écrit en revanche l’état du singleton de l’application en mémoire. Si quelque chose de spécial doit se produire lorsque le système doit récupérer cette mémoire, notamment un nettoyage spécifique des ressources, placez le code de ce nettoyage dans cette méthode.
+Dans Windows 10, la fermeture de la fenêtre d’application ne met pas fin du processus de l’application, mais écrit en revanche l’état du singleton de l’application en mémoire. Si quelque chose de spécial doit se produire lorsque le système doit récupérer cette mémoire, notamment un nettoyage spécifique des ressources, placez le code de ce nettoyage dans cette méthode.
 
 ### <a name="app-uninitialize"></a>App:: Uninitialize
 

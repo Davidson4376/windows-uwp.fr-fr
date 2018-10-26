@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 11/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 485d16cb9c40769c123719f8f55e81d804f220a3
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 04a0288d0b28c12eb68cf56225747224e8df9777
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393988"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563455"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>Utiliser des modèles de format des dates et heures
 
@@ -29,7 +27,7 @@ La classe [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatt
 
 Mais lorsque vous souhaitez contrôler davantage l'ordre et le format des composants de l'objet [**DateTime**](/uwp/api/windows.foundation.datetime?branch=live) à afficher, vous pouvez transmettre un modèle de format à l'argument *formatTemplate* du constructeur. Les modèles de format utilisent une syntaxe spéciale qui vous permet d'obtenir les composants individuels d'un objet **DateTime** &mdash;par exemple, simplement le nom du mois ou la valeur de l'année&mdash;afin de pouvoir les disposer dans le format personnalisé de votre choix. En outre, il est possible de localiser le modèle pour l’adapter à d’autres langues et régions.
 
-**Remarque**  il s’agit uniquement d’une vue d’ensemble des modèles de format. Pour consulter une description plus complète des modèles et types de formats, voir la section «Remarques» de la classe [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live).
+**Remarque**il s’agit uniquement d’une vue d’ensemble des modèles de format. Pour consulter une description plus complète des modèles et types de formats, voir la section «Remarques» de la classe [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live).
 
 ## <a name="the-difference-between-format-templates-and-format-patterns"></a>Différence entre les modèles de format et les motifs de format
 
@@ -63,7 +61,7 @@ Dans l'exemple ci-dessus, nous avons saisi une chaîne de format indifférente �
 var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{month.full} {day.integer}");
 ```
 
-Le formateur ci-dessus renvoie des valeurs propres à la culture pour les composants individuels indiqués entre crochets {}. Néanmoins, l'ordre des composants d'un motif de format est invariable. Vous obtenez exactement ce que vous demandez, ce qui pourrait convenir ou non d’un point de vue culturel: Ce formateur est valide pour l'anglais (États-Unis), mais pas pour le français (France), ni pour le japonais.
+Le formateur ci-dessus renvoie des valeurs spécifiques à la culture pour les composants individuels à l’intérieur des crochets {}. Néanmoins, l'ordre des composants d'un motif de format est invariable. Vous obtenez exactement ce que vous demandez, ce qui pourrait convenir ou non d’un point de vue culturel: Ce formateur est valide pour l'anglais (États-Unis), mais pas pour le français (France), ni pour le japonais.
 
 ``` syntax
 En-US: January 1
@@ -117,7 +115,7 @@ var time = timeFormatter.Format(dateToFormat);
 string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
 ```
 
-`CustomDateTimeFormatString` est un identificateur de ressource faisant référence à une ressource localisable dans un fichier Ressources (.resw). Pour l'anglais (États-Unis) en tant que langue par défaut, cet élément serait défini à une valeur de «{0} | {1}» et un commentaire indiquerait que «{0}» est la date et que «{1}» est l'heure. De cette manière, les traducteurs sont en mesure d'ajuster les éléments de format selon les besoins. Ils peuvent par exemple changer l’ordre des éléments, si une langue ou une région spécifique utilise plus naturellement l’heure avant la date. Ils peuvent également remplacer le caractère «|» par tout autre caractère de séparation.
+`CustomDateTimeFormatString` est un identificateur de ressource faisant référence à une ressource localisable dans un fichier Ressources (.resw). Pour une langue par défaut de l’anglais (États-Unis), il serait défini à une valeur de «{0} | {1}«et un commentaire indiquerait que»{0}» correspond à la date et de «{1}«est le temps. De cette manière, les traducteurs sont en mesure d'ajuster les éléments de format selon les besoins. Ils peuvent par exemple changer l’ordre des éléments, si une langue ou une région spécifique utilise plus naturellement l’heure avant la date. Ils peuvent également remplacer le caractère «|» par tout autre caractère de séparation.
 
 Il existe une autre manière d'implémenter cet exemple: il suffit d'interroger les deuxformateurs concernant leurs motifs de format, de les concaténer ensemble, puis de construire un troisième formateur à partir du motif de format résultant.
 

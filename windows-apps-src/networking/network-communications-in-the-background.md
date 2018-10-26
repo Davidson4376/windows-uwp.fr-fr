@@ -4,31 +4,31 @@ description: Afin de poursuivre la communication réseau en dehors de l'arrière
 title: Communications réseau en arrière-plan
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
 ms.author: stwhi
-ms.date: 3/23/2018
+ms.date: 06/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 442e2f37ab5c7c83f06ecb444e6ae79f9c2a74dd
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 34fad804bb36ad1b4ce92a56772c33318e10faa8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691178"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561188"
 ---
 # <a name="network-communications-in-the-background"></a>Communications réseau en arrière-plan
-Afin de poursuivre la communication réseau en dehors de l'arrière-plan, une application doit utiliser les tâches d'arrière-plan et le broker de socket ou les déclencheurs de chaîne de contrôle. Les applications qui utilisent des sockets pour les connexions à long terme peuvent déléguer la propriété d’un socket à un broker de socket système lorsqu’elles quittent le premier plan. Le broker active ensuite l’application lorsque le trafic atteint le socket, puis retransfère la propriété à l’application, et l’application traite alors le trafic entrant.
+Pour poursuivre la communication réseau alors qu’elle n’est pas au premier plan, votre application peut utiliser des tâches en arrière-plan et l’autre de ces deux options.
+- Broker de socket. Si votre application utilise des sockets pour les connexions à long terme, lorsqu’il quitte le premier plan, elle peut déléguer la propriété d’un socket à un broker de socket système. Le broker puis: active votre application lorsque le trafic atteint le socket; transfère la propriété à votre application; et votre application traite alors le trafic entrant.
+- Déclencheurs de canal de contrôle. 
 
 ## <a name="performing-network-operations-in-background-tasks"></a>Exécution d’opérations réseau dans les tâches en arrière-plan
 - Utilisez un [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) pour activer la tâche en arrière-plan lorsqu’un paquet est reçu et que vous devez effectuer une tâche de courte durée. Après l’exécution de la tâche, la tâche en arrière-plan doit s’arrêter pour économiser l’énergie.
-Utilisez un [ControlChannelTrigger](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) pour activer la tâche en arrière-plan lorsqu’un paquet est reçu et que vous devez effectuer une tâche de longue durée.
+- Utilisez un [ControlChannelTrigger](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) pour activer la tâche en arrière-plan lorsqu’un paquet est reçu et que vous devez effectuer une tâche de longue durée.
 
-**Conditions et indicateurs liés au réseau**
+**Conditions liées au réseau et indicateurs**
 
 - Ajoutez la condition **InternetAvailable** à votre tâche en arrière-plan [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour retarder le déclenchement de la tâche en arrière-plan jusqu'à ce que la pile réseau s’exécute. Cette condition économise l’énergie car la tâche en arrière-plan ne s’exécute pas avant que le réseau soit fonctionnel. Cette condition ne fournit pas d’activation en temps réel.
 
-Quel que soit le déclencheur que vous utilisez, définissez [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) sur votre tâche en arrière-plan pour vous assurer que le réseau reste opérationnel pendant que cette tâche s’exécute. Cela indique à l’infrastructure de tâches en arrière-plan qu’elle doit maintenir le réseau actif pendant l’exécution de la tâche, même si le périphérique est passé en mode de veille connectée. Si votre tâche en arrière-plan n’utilise pas la condition **IsNetworkRequested**, elle ne sera pas en mesure d’accéder au réseau en mode de veille connectée (par exemple, si l’écran du téléphone est éteint).
+Quel que soit le déclencheur que vous utilisez, définissez [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) sur votre tâche en arrière-plan pour vous assurer que le réseau reste opérationnel pendant que cette tâche s’exécute. Cela indique à l’infrastructure de tâches en arrière-plan qu’elle doit maintenir le réseau actif pendant l’exécution de la tâche, même si le périphérique est passé en mode de veille connectée. Si votre tâche en arrière-plan n’utilise pas **IsNetworkRequested**, alors votre tâche en arrière-plan ne sera pas en mesure d’accéder au réseau en mode de veille connectée (par exemple, lorsque l’écran du téléphone est éteint).
 
 ## <a name="socket-broker-and-the-socketactivitytrigger"></a>Broker de socket et SocketActivityTrigger
 Si votre application utilise des connexions [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), ou [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906), il est préférable d’utiliser [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) et le broker de socket pour être averti lorsque du trafic atteint votre application alors qu’elle n’est plus au premier plan.
@@ -157,9 +157,9 @@ Pour voir un exemple complet de l’utilisation du [**SocketActivityTrigger**](h
 Vous remarquerez probablement que l’exemple appelle **TransferOwnership** dès la création d’un nouveau socket ou l’acquisition d’un socket existant, au lieu d’utiliser pour cela le gestionnaire d’événements **OnSuspending**, comme décrit dans cette rubrique. L’exemple se concentre en effet sur l’illustration de l’utilisation du [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) et n’utilise donc le socket pour aucune autre activité pendant son exécution. Votre application sera probablement plus complexe et devra utiliser **OnSuspending** pour déterminer à quel moment appeler **TransferOwnership**.
 
 ## <a name="control-channel-triggers"></a>Déclencheurs de canal de contrôle
-Assurez-vous tout d’abord que vous utilisez les déclencheurs de canal de contrôle (CCT) de manière appropriée. Si vous utilisez des connexions [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) ou [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906), nous vous recommandons d’utiliser [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). Vous pouvez utiliser les CCT pour **StreamSocket**, mais ils consomment plus de ressources et peuvent ne pas fonctionner en mode Veille connectée.
+Assurez-vous tout d’abord que vous utilisez les déclencheurs de canal de contrôle (CCT) de manière appropriée. Si vous utilisez des connexions [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) , [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)ou [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), puis nous vous recommandons d’utiliser [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). Vous pouvez utiliser les CCT pour **StreamSocket**, mais ils consomment plus de ressources et peuvent ne pas fonctionner en mode Veille connectée.
 
-Si vous utilisez des WebSockets [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) ou **Windows.Web.Http.HttpClient**, vous devez opter pour [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+Si vous utilisez des WebSockets, [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)ou [**Windows.Web.Http.HttpClient**](/uwp/api/windows.web.http.httpclient), vous devez utiliser [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
 ## <a name="controlchanneltrigger-with-websockets"></a>ControlChannelTrigger avec WebSockets
 Certaines considérations spéciales s’appliquent lors de l’utilisation de [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) ou [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) avec [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Certaines meilleures pratiques et certains modèles d’utilisation spécifiques au transport doivent être respectés lors de l’utilisation d’un **MessageWebSocket** ou **StreamWebSocket** avec **ControlChannelTrigger**. De plus, ces considérations affectent la manière dont les demandes de réception de paquets sur le **StreamWebSocket** sont gérées. Les demandes de réception de paquets sur le **MessageWebSocket** ne sont pas affectées.
@@ -432,8 +432,8 @@ Pour plus d’informations sur l’utilisation de [**MessageWebSocket**](https:/
 ## <a name="controlchanneltrigger-with-httpclient"></a>ControlChannelTrigger avec HttpClient
 Certaines considérations spéciales s’appliquent lors de l’utilisation de [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) avec [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Certaines meilleures pratiques et certains modèles d’utilisation spécifiques au transport doivent être respectés lors de l’utilisation d’un [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) avec **ControlChannelTrigger**. De plus, ces considérations affectent la manière dont les demandes de réception de paquets sur le [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) sont gérées.
 
-**Remarque**  [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) utilisant SSL n’est pas pris en charge actuellement à l’aide de la fonctionnalité de déclencheur réseau et de [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
- 
+**Remarque** [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) utilisant SSL n'est pas actuellement pris en charge à l’aide de la fonctionnalité de déclencheur réseau et [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+ 
 Les meilleures pratiques et modèles d’utilisation suivants doivent être respectés lors de l’utilisation de [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) avec [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) :
 
 -   Il est possible que l’application doive définir différents en-têtes et propriétés sur l’objet [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) ou [HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638) dans l’espace de noms [System.Net.Http](http://go.microsoft.com/fwlink/p/?linkid=227894) avant d’envoyer la demande à l’URI spécifique.

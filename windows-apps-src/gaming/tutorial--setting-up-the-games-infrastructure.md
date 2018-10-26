@@ -6,16 +6,14 @@ ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, configuration, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b1a993f16d2d9403f16c1f4cc15805b0c5f36a9
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 9100e80e0b4ac436ae872698e94fe29e5c8cab46
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488913"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559625"
 ---
 # <a name="set-up-the-game-project"></a>Configurer le projet de jeu
 
@@ -37,7 +35,7 @@ Si vous débutez dans le développement de la plateforme Windows universelle (UW
 
 ### <a name="use-directx-template-to-create-a-project"></a>Utiliser un modèle DirectX pour créer un projet
 
-Un modèle Visual Studio est une collection de paramètres et de fichiers de code qui ciblent un type spécifique d’application selon la technologie et le langage préférés. Dans Microsoft Visual Studio 2017, vous trouverez de nombreux modèles qui peuvent considérablement simplifier le développement d’applications graphiques et de jeux. Si vous n’utilisez pas de modèle, vous devez développer vous-même une grande partie de l’infrastructure d’affichage et du rendu graphique de base, ce qui peut représenter une corvée pour un développeur de jeux débutant.
+Un modèle Visual Studio est une collection de paramètres et de fichiers de code qui ciblent un type spécifique d’application selon la technologie et le langage préférés. Dans Microsoft Visual Studio2017, vous trouverez de nombreux modèles qui peuvent considérablement simplifier le développement d’applications graphiques et de jeux. Si vous n’utilisez pas de modèle, vous devez développer vous-même une grande partie de l’infrastructure d’affichage et du rendu graphique de base, ce qui peut représenter une corvée pour un développeur de jeux débutant.
 
 Le modèle utilisé pour ce didacticiel est intitulé **Application DirectX11 (Windows universel)**. 
 
@@ -155,7 +153,7 @@ Il reste quelques fichiers que nous n’avons pas encore examinés. Ces fichiers
 | SamplePixelShader.hlsl       | Content                | Contient le code de langage HLSL (High-Level Shader Language) pour un nuanceur de pixels très simple.                                            |
 | SampleVertexShader.hlsl      | Content                | Contient le code de langage HLSL (High-Level Shader Language) pour un nuanceur de sommets très simple.                                           |
 | ShaderStructures.h           | Content                | Contient les structures de nuanceur qui peuvent être utilisées pour envoyer des matrices MVP et les données par sommet au nuanceur de sommets.  |
-| pch.h/.cpp                   | Main                   | Contient tous les fichiers Include système Windows pour les API utilisées par une application Direct3D, notamment les API DirectX11.| 
+| pch.h/.cpp                   | Main                   | Contient tous les fichiers Include système Windows pour les API utilisées par une application Direct3D, notamment les API DirectX11.| 
 
 ### <a name="next-steps"></a>Étapes suivantes
 
@@ -163,9 +161,9 @@ Il reste quelques fichiers que nous n’avons pas encore examinés. Ces fichiers
 
 La section suivante est [Définition de l’infrastructure UWP du jeu](tutorial--building-the-games-uwp-app-framework.md). Nous allons examiner comment ce jeu utilise et étend un grand nombre des concepts et composants fournis par le modèle.
 
- 
+ 
 
- 
+ 
 
 
 

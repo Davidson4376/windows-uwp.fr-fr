@@ -6,21 +6,20 @@ description: Vous pouvez effectuer un affichage maître/détails (également app
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 9f297cdb3fdc90ab7c024bce3aa93db69465c5d3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 60d283f41c495f9612311e4b9b9da3df1a44d498
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228638"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564023"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>Lier des données hiérarchiques et créer un affichage maître/détails
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-> **Remarque**  Consultez également l’[exemple Maître/détails](http://go.microsoft.com/fwlink/p/?linkid=619991).
+> **Remarque**consultez également l' [exemple maître/détails](http://go.microsoft.com/fwlink/p/?linkid=619991).
 
 Vous pouvez effectuer un affichage maître/détails (également appelé affichage liste/détails) de données hiérarchiques sur plusieurs niveaux en liant les contrôles d’éléments aux instances [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) qui sont liées dans une chaîne. Dans cette rubrique, nous utilisons l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) lorsque cela est possible et l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), plus souple (mais moins performante), si nécessaire.
 
@@ -225,7 +224,7 @@ Enfin, remplacez le contenu du fichier MainPage.xaml avec le balisage suivant, q
 
 Notez qu’en effectuant une liaison directe à la classe [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), vous signifiez que vous souhaitez créer une liaison à l’élément actuel dans les liaisons où le chemin est introuvable au sein même de la collection. Il est inutile de spécifier la propriété **CurrentItem** en tant que chemin de la liaison, bien que vous puissiez le faire s’il existe la moindre ambiguïté. Par exemple, la classe [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) de l’affichage de l’équipe a sa propriété [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) liée à la classe `Teams`**CollectionViewSource**. Cependant, les contrôles de la classe [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) sont liés aux propriétés de la classe `Team`, car la classe **CollectionViewSource** fournit automatiquement l’équipe actuellement sélectionnée à partir de la liste des équipes dès que nécessaire.
 
- 
+ 
 
- 
+ 
 

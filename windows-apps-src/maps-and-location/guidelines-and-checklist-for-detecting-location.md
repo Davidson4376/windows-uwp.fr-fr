@@ -6,16 +6,14 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, emplacement, carte, géolocalisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 903a7b308c78e4ab9826ea4c46c642cb3361b462
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: d0101124febc52da379d2e829e86bdbba7583851
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514296"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561714"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>Recommandations pour les applications prenant en charge l’emplacement
 

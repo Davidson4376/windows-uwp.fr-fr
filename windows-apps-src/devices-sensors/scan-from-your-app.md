@@ -6,19 +6,17 @@ description: Découvrez ici comment numériser du contenu à partir de votre app
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: c1db020b242c43808d356076641e375cb1581ed3
-ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.localizationpriority: medium
+ms.openlocfilehash: f9128056cbb3b9218d164b243948d9dd16af0786
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2017
-ms.locfileid: "696160"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563214"
 ---
 # <a name="scan-from-your-app"></a>Numériser à partir de votre application
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -28,7 +26,7 @@ ms.locfileid: "696160"
 
 Découvrez ici comment numériser du contenu à partir de votre application à l’aide d’un scanneur à plat, à chargeur ou configuré automatiquement.
 
-**Important** Les API [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) font partie de la [famille d’appareils](https://msdn.microsoft.com/library/windows/apps/Dn894631) bureautiques. Les applications peuvent utiliser ces API uniquement sur la version bureau de Windows10.
+**Important**les API [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) font partie de la [famille d’appareils](https://msdn.microsoft.com/library/windows/apps/Dn894631)de bureau. Les applications peuvent utiliser ces API uniquement sur la version bureau de Windows 10.
 
 Pour numériser à partir de votre application, vous devez d’abord répertorier les scanneurs disponibles en déclarant un nouvel objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) et en récupérant le type [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381). Seuls les scanneurs installés localement avec des pilotes WIA sont répertoriés et disponibles pour votre application.
 
@@ -102,8 +100,8 @@ Pour chaque type d’énumération [**ImageScannerScanSource**](https://msdn.mic
 
 Pour une numérisation avec les paramètres par défaut, votre application s’appuie sur l’espace de noms [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) pour sélectionner un scanneur et effectuer la numérisation à partir de cette source. Aucun paramètre de numérisation n’est modifié. Les scanneurs possibles sont les scanneurs configurés automatiquement, à plat ou à chargeur. En règle générale, ce type de numérisation fonctionne correctement, même si la numération est effectuée à partir d’une source incorrecte, par exemple un dispositif à plat au lieu d’un chargeur.
 
-**Remarque** Si l’utilisateur place le document à numériser dans le chargeur, le scanneur effectue la numérisation à partir du dispositif à plat. S’il essaie de numériser à partir d’un chargeur vide, la numérisation ne génère aucun fichier numérisé.
- 
+**Remarque**si l’utilisateur place le document à numériser dans le chargeur, le scanneur effectue la numérisation à partir de scanneur à plat à la place. S’il essaie de numériser à partir d’un chargeur vide, la numérisation ne génère aucun fichier numérisé.
+ 
 ```csharp
     var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default,
         folder).AsTask(cancellationToken.Token, progress);
@@ -113,7 +111,7 @@ Pour une numérisation avec les paramètres par défaut, votre application s’a
 
 Votre application peut utiliser la [numérisation configurée automatiquement](https://msdn.microsoft.com/library/windows/hardware/Ff539393) du périphérique pour bénéficier des paramètres de numérisation les plus performants. Grâce à cette option, le périphérique peut lui-même déterminer les meilleurs paramètres de numérisation, comme le mode couleur et la résolution de la numérisation, en fonction du contenu numérisé. L’appareil sélectionne les paramètres de numérisation au moment de l’exécution pour chaque nouveau travail de numérisation.
 
-**Remarque** Comme tous les scanneurs ne prennent pas en charge cette fonctionnalité, l’application doit vérifier si le scanneur est compatible avec ce paramétrage avant de lancer l’opération.
+**Remarque**pas tous les scanneurs prennent en charge cette fonctionnalité, l’application doit vérifier si le scanneur prend en charge cette fonctionnalité avant d’utiliser ce paramètre.
 
 Dans cet exemple, l’application vérifie si le scanneur prend en charge la configuration automatique, puis effectue la numérisation. Pour spécifier un scanneur à plat ou à chargeur, remplacez simplement **AutoConfigured** par **Flatbed** ou **Feeder**.
 

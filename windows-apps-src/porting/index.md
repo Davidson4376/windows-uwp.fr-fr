@@ -1,26 +1,24 @@
 ---
 author: stevewhims
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
-description: Cette section décrit comment effectuer le portage de votre application vers la plateforme Windows universelle (UWP) qui permet de créer un package d’application Windows 10 unique installable sur tous les types d’appareils. Votre application tirera ainsi profit d’un nouveau matériel formidable, de remarquables opportunités de monétisation, d’un ensemble d’API modernes, de contrôles d’interface utilisateur adaptatifs et de multiples modalités d’entrée, incluant la souris, le clavier, les fonctions tactiles et vocales.
-title: Portage d’applications sur Windows 10
+description: Cette section décrit comment porter votre application existante vers la plateforme de Windows universelle (UWP) dans lequel vous pouvez créer un package d’application Windows 10 unique que vos clients peuvent installer sur tous les types d’appareils. Votre application tirera ainsi profit d’un nouveau matériel formidable, de remarquables opportunités de monétisation, d’un ensemble d’API modernes, de contrôles d’interface utilisateur adaptatifs et de multiples modalités d’entrée, incluant la souris, le clavier, ainsi que les fonctionnalités tactiles et vocales.
+title: Portage d’applications vers Windows 10
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8057bd4efcf1d7bfdc704f6217915fac6a019386
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: bb5c6ae373e4e35e640223fe08a5a49f2e7a5dd3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815574"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560167"
 ---
-# <a name="porting-apps-to-windows-10"></a>Portage d’applications sur Windows 10
+# <a name="porting-apps-to-windows10"></a>Portage d’applications vers Windows 10
 
 
-Cette section décrit comment effectuer le portage de votre application vers la plateforme Windows universelle (UWP) qui permet de créer un package d’application Windows 10 unique installable sur tous les types d’appareils. Votre application tirera ainsi profit d’un nouveau matériel formidable, de remarquables opportunités de monétisation, d’un ensemble d’API modernes, de contrôles d’interface utilisateur adaptatifs et de multiples modalités d’entrée, incluant la souris, le clavier, ainsi que les fonctionnalités tactiles et vocales.
+Cette section décrit comment porter votre application existante vers la plateforme de Windows universelle (UWP) dans lequel vous pouvez créer un package d’application Windows 10 unique que vos clients peuvent installer sur tous les types d’appareils. Votre application tirera ainsi profit d’un nouveau matériel formidable, de remarquables opportunités de monétisation, d’un ensemble d’API modernes, de contrôles d’interface utilisateur adaptatifs et de multiples modalités d’entrée, incluant la souris, le clavier, ainsi que les fonctionnalités tactiles et vocales.
 
 Windows Runtime (WinRT) est la technologie qui vous permet de générer des applications pour la plateforme Windows universelle (UWP). Pour plus d’informations sur WinRT et les applications pour UWP, voir [Qu’est-ce qu’une application pour la plateforme Windows Universelle (UWP) ?](https://msdn.microsoft.com/library/windows/apps/dn726767).
 

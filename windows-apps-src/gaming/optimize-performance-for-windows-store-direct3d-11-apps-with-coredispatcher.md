@@ -6,19 +6,18 @@ ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, directx, latence d’entrée
-ms.openlocfilehash: cf83b02a6388f71f94641e7c24e011a540790fa0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: a2e92dc10dbcdc3a511c1b1a1271ae759cc03c60
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228918"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564628"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>Optimiser la latence d’entrée pour les jeux UWP DirectX
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 La latence d’entrée peut avoir un impact important sur un jeu. Son optimisation peut rendre un jeu plus fluide. De plus, une optimisation appropriée des événements d’entrée peut améliorer l’autonomie de la batterie. Apprenez à choisir les options de traitement appropriées de l’événement d’entrée CoreDispatcher pour vous assurer que votre jeu gère les entrées de façon aussi fluide que possible.
 
@@ -236,7 +235,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-Le modèle **DirectX 11 et application XAML (Windows universel)** dans Microsoft VisualStudio2015 sépare la boucle de jeu en plusieurs threads de manière similaire. Il utilise l’objet [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) pour démarrer un thread dédié à la gestion des entrées et crée également un thread de rendu indépendant du thread d’interface utilisateur XAML. Pour plus de détails sur ces modèles, voir [Créer un projet de jeu de plateforme Windows universelle et DirectX à partir d’un modèle](user-interface.md).
+Le modèle **DirectX 11 et application XAML (Windows universel)** dans Microsoft Visual Studio2015 sépare la boucle de jeu en plusieurs threads de manière similaire. Il utilise l’objet [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) pour démarrer un thread dédié à la gestion des entrées et crée également un thread de rendu indépendant du thread d’interface utilisateur XAML. Pour plus de détails sur ces modèles, voir [Créer un projet de jeu de plateforme Windows universelle et DirectX à partir d’un modèle](user-interface.md).
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>Autres façons de réduire la latence d’entrée
 
@@ -257,9 +256,9 @@ Figure 2
 
 Ces schémas nous montrent que les jeux peuvent réduire la latence d’entrée de deuximages complètes s’ils sont capables d’afficher et de présenter chaque image dans la limite des 16,7ms définie par le taux de rafraîchissement de l’écran. L’exemple de jeu de puzzle utilise les chaînes d’échange d’attente et contrôle la limite de la file d’attente actuelle en appelant:` m_deviceResources->SetMaximumFrameLatency(1);`
 
- 
+ 
 
- 
+ 
 
 
 

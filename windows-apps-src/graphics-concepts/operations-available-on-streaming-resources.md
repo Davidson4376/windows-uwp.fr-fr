@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ee9f6b3744b038d9f4ae0f5b490cbd763eda08ee
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 1289b01e7ffb780c7e3faa52585eb5f002cf519c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043128"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563412"
 ---
 # <a name="operations-available-on-streaming-resources"></a>Opérations disponibles sur les ressources de diffusion en continu
 
@@ -35,9 +33,9 @@ Les contrôles de vignettes sont disponibles sur les contextes immédiats ou dif
 
 [Création de ressources de diffusion en continu](creating-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

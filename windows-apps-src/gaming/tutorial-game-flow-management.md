@@ -6,16 +6,14 @@ ms.assetid: 6c33bf09-b46a-4bb5-8a59-ca83ce257eb3
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 57763c25d1fe9bd4f1e55aa9083e755f7f257029
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: Auto
+ms.openlocfilehash: 610b794c0ded6791e93c14d8960366132afd973b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655118"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560436"
 ---
 # <a name="game-flow-management"></a>Gestion du flux de jeu
 
@@ -293,7 +291,7 @@ Voici les gestionnaires d’événements utilisés dans cet exemple et les évé
 <td align="left">OnDpiChanged</td>
 <td align="left">Gère <a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged"><strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a>. La résolution PPP de l’affichage a été modifiée et le jeu règle ses ressources en conséquence.
 <div class="alert">
-<strong>Remarque</strong>  Les coordonnées de [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) sont exprimées en DIP (Device Independent Pixel) pour [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987). Par conséquent, vous devez indiquer à Direct2D la modification des PPP afin d’afficher correctement les primitives ou composants2D.
+<strong>Remarque</strong>[<strong>CoreWindow</strong>] (https://msdn.microsoft.com/library/windows/desktop/hh404559) coordonnées sont exprimées en DIP (Device Independent Pixel) pour [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987). Par conséquent, vous devez indiquer à Direct2D la modification des PPP afin d’afficher correctement les primitives ou composants2D.
 </div>
 <div>
 </div></td>

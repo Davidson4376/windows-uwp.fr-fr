@@ -5,17 +5,15 @@ description: Cette section contient des articles expliquant comment intégrer de
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
-ms.openlocfilehash: 1be2aad5a6a0fe76caefa4710ebf946e418cf151
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 38f850cfb811260758377d5404e01c8e540e7ec2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "300439"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560210"
 ---
 # <a name="bluetooth-le-advertisements"></a>Annonces publicitaires BluetoothLE
 

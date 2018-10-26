@@ -1,27 +1,25 @@
 ---
 author: mtoepke
 title: Guides en matière de portage de jeu
-description: Fournit des guides relatifs au portage de vos jeux existants vers Direct3D11, la plateforme Windows universelle (UWP) et Windows10.
+description: Fournit des guides pour le portage de vos jeux existants vers Direct3D 11, plateforme Windows universelle (UWP) et Windows 10.
 ms.assetid: 1dff815b-d3bd-557e-52c1-58e40f4dd6b1
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, jeux, portage, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f4f2a1f9f92cbde8ee36d0c69b831b8feed1455
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 47892bac1a19018201187cbc901e4b680480268b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652118"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561307"
 ---
 # <a name="game-porting-guides"></a>Guides en matière de portage de jeu
 
 
 
-Fournit des guides relatifs au portage de vos jeux existants vers Direct3D11, la plateforme Windows universelle (UWP) et Windows10.
+Fournit des guides pour le portage de vos jeux existants vers Direct3D 11, plateforme Windows universelle (UWP) et Windows 10.
 
 <table>
 <colgroup>
@@ -30,7 +28,7 @@ Fournit des guides relatifs au portage de vos jeux existants vers Direct3D11, la
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -46,14 +44,14 @@ Fournit des guides relatifs au portage de vos jeux existants vers Direct3D11, la
 </tbody>
 </table>
 
- 
+ 
 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

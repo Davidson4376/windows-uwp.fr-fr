@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 01/23/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 39e002247cabb6389ddf23860499ebf1f166b03a
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 55272df2c4ddec411e9e17a67d0a8128a8334db3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5474404"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562047"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>Utiliser le kit de ressources MultilingualAppToolkit4.0
 

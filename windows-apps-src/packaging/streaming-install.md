@@ -6,23 +6,21 @@ description: Le mode d’installation en continu des applications de la platefor
 ms.author: lahugh
 ms.date: 04/05/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: installer des application uwp diffusion en continu Windows 10, uwp, installer, de diffusion en continu
+keywords: installation d’une application uwp de diffusion en continu Windows 10, uwp, l’installation, en continu
 ms.localizationpriority: medium
-ms.openlocfilehash: 087226cad4bcf7ea0294d8878564c345d6cfb9d0
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: e4915d2fb4d1133cd190d766d38c79934d9f3956
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "305072"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563495"
 ---
 # <a name="uwp-app-streaming-install"></a>Installation en continu d’une application UWP
 Le mode d’installation en continu des applications de la plateforme Windows universelle (UWP) vous permet de spécifier les parties de votre application que vous souhaitez voir téléchargées en premier par le MicrosoftStore. Lorsque les fichiers essentiels de l’application sont téléchargés en priorité, l’utilisateur peut lancer l’application et interagir avec elle pendant que le reste du téléchargement s’achève en arrière-plan. 
 
-Pour utiliser UWP application diffusion en continu installer, vous devrez diviser des fichiers de votre application en sections. Pour ce faire, vous allez créer un mappage de groupe de contenu, qui est un fichier XML qui est fourni avec votre application, vous permettant de définir la priorité téléchargement et l’ordre. Consultez la rubrique liée ci-dessous pour plus d’informations.
+Pour utiliser l’installation de diffusion en continu de l’application UWP vous aurez besoin pour répartir les fichiers de votre application en sections. Pour ce faire, vous allez créer un mappage de groupe de contenu, qui est un fichier XML qui est fourni avec votre application, vous permettant de définir la priorité téléchargement et l’ordre. Consultez la rubrique figurent ci-dessous pour plus d’informations.
 
-Pour des instructions complètes sur l’ajout de UWP application diffusion en continu installer à votre application UWP, consultez cette [série de blogs](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/).
+Pour obtenir un guide complet sur l’ajout de diffusion en continu installation des applications UWP à votre application UWP, regardez cette [série de blog](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/).
 
 | Rubrique | Description | 
 |-------|-------------|

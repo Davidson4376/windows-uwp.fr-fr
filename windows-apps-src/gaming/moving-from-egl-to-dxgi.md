@@ -6,19 +6,18 @@ ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, egl, dxgi, direct3d
-ms.openlocfilehash: 7d7e4058eccd39911bd84d3967ef07b93b6ee89d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 64f237fd26a2ed7328e2c2264da17d3a5d7ba588
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "230592"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561287"
 ---
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>Comparer le codeEGL avec DXGI et Direct3D
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -31,9 +30,9 @@ L’interface graphique DirectX (DXGI) et certaines API Direct3D jouent le même
 
 À l’instar d’EGL, DXGI et Direct3D fournissent diverses méthodes qui vous permettent de configurer des ressources graphiques, d’obtenir un contexte de rendu pour le dessin des nuanceurs et d’afficher les résultats dans une fenêtre. Toutefois, DXGI et Direct3D comportent quelques options supplémentaires qui nécessitent une configuration particulière dans le cadre du portage à partir d’EGL.
 
-> **Remarque**   Cette rubrique s’appuie sur la spécification ouverte de Khronos Group pour EGL 1.4. Pour plus d’informations, voir le document PDF [Khronos Native Platform Graphics Interface (EGL Version 1.4 - April 6, 2011)](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Les variantes de syntaxe propres à d’autres plateformes et langages de développement ne sont pas traitées dans cette rubrique.
+> **Remarque**  ce guide repose sur la spécification ouverte de Khronos Group pour EGL 1.4 disponibles ici: [\[PDF\ Khronos Native Platform Graphics Interface (EGL Version 1.4 - April 6, 2011)]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Les variantes de syntaxe propres à d’autres plateformes et langages de développement ne sont pas traitées dans cette rubrique.
 
- 
+ 
 
 ## <a name="how-does-dxgi-and-direct3d-compare"></a>Comparaison avec DXGI et Direct3D
 
@@ -50,7 +49,7 @@ Comme EGL, DXGI et Direct3D fournissent des API pour les opérations suivantes :
 -   Affichage sur des cibles de rendu spécifiques (telles que les textures).
 -   Actualisation de la surface d’affichage de la fenêtre afin de présenter les résultats du rendu avec les ressources graphiques.
 
-Pour connaître le processus général de configuration du pipeline graphique dans Direct3D, reportez-vous au modèle d’application DirectX 11 (Windows universelle), disponible dans Microsoft Visual Studio 2015. La classe de rendu de base fournie dans ce modèle peut servir de référence pour créer l’infrastructure graphique Direct3D 11 et y configurer les principales ressources nécessaires. Elle offre également une prise en charge de certaines fonctionnalités des applications de plateforme Windows universelle (UWP), telles que la rotation de l’écran.
+Pour voir le processus général de configuration du pipeline graphique Direct3D, consultez le modèle application DirectX 11 (Windows universel) dans Microsoft Visual Studio2015. La classe de rendu de base fournie dans ce modèle peut servir de référence pour créer l’infrastructure graphique Direct3D 11 et y configurer les principales ressources nécessaires. Elle offre également une prise en charge de certaines fonctionnalités des applications de plateforme Windows universelle (UWP), telles que la rotation de l’écran.
 
 EGL comprend très peu d’API en comparaison de Direct3D 11. La navigation entre les différentes API de Direct3D 11 peut se révéler compliquée si vous n’êtes pas familiarisé avec les noms et le langage technique propres à cette plateforme. Nous vous proposons ici une vue d’ensemble pour vous aider à démarrer.
 
@@ -63,7 +62,7 @@ En premier lieu, sachez identifier à quel élément d’interface Direct3D corr
 | **EGLContext**  | Dans Direct3D, utilisez l’interface [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) pour définir et envoyer des commandes au pipeline graphique.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | **EGLConfig**   | Dans Direct3D 11, utilisez les méthodes de l’interface [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) pour créer et configurer les ressources graphiques, telles que les mémoires tampons, les textures, les gabarits et les nuanceurs.                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
- 
+ 
 
 Voici maintenant la procédure générale pour créer un affichage graphique simple, des ressources et un contexte dans DXGI et Direct3D pour une application UWP.
 
@@ -75,9 +74,9 @@ Voici maintenant la procédure générale pour créer un affichage graphique sim
 6.  Après l’exécution du pipeline et le dessin d’une trame dans la mémoire tampon d’arrière-plan, présentez la chaîne à l’écran avec la méthode [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797).
 
 Pour plus d’informations sur ce processus, consultez [Prise en main de DirectX Graphics](https://msdn.microsoft.com/library/windows/desktop/hh309467). La suite du présent article couvre la plupart des étapes que vous aurez généralement à effectuer pour configurer et gérer un pipeline graphique de base.
-> **Remarque**   Les applications de bureau Windows se servent de différentes API pour obtenir une chaîne de permutation Direct3D [**telle que D3D11Device::CreateDeviceAndSwapChain)**](https://msdn.microsoft.com/library/windows/desktop/ff476083) et elles n’utilisent pas l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225).
+> **Remarque**  applications de bureau Windows ont différentes API pour obtenir une chaîne de permutation Direct3D, telles que [**D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083)et n’utilisez pas un objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) .
 
- 
+ 
 
 ## <a name="obtaining-a-window-for-display"></a>Obtention d’une fenêtre d’affichage
 
@@ -164,7 +163,7 @@ void SimpleDirect3DApp::SetWindow(CoreWindow^ window)
   swapChainDesc.SampleDesc.Quality = 0;
   swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
   swapChainDesc.BufferCount = 2; // Use double-buffering to minimize latency.
-  swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL; // All Windows Store apps must use this SwapEffect.
+  swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL; // All UWP apps must use this SwapEffect.
   swapChainDesc.Flags = 0;
 
   // ...
@@ -281,7 +280,7 @@ D3D11CreateDevice(
   creationFlags, // Set set debug and Direct2D compatibility flags.
   featureLevels, // List of feature levels this app can support.
   ARRAYSIZE(featureLevels),
-  D3D11_SDK_VERSION, // Always set this to D3D11_SDK_VERSION for Windows Store apps.
+  D3D11_SDK_VERSION, // Always set this to D3D11_SDK_VERSION for UWP apps.
   &device, // Returns the Direct3D device created.
   &m_featureLevel, // Returns feature level of device created.
   &d3dContext // Returns the device immediate context.
@@ -395,7 +394,7 @@ Dans une application UWP, vous pouvez fermer le CoreWindow avec [**CoreWindow::C
 | eglDestroySurface                | Non applicable. Les ressources graphiques sont supprimées lorsque la plateforme ferme le CoreWindow dans l’application UWP.                                                                                                                                                                                                                                                                                                                                                                                                 |
 | eglGetCurrentDisplay             | Appelez [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) pour obtenir une référence à la fenêtre principale actuelle de l’application.                                                                                                                                                                                                                                                                                                                                                         |
 | eglGetCurrentSurface             | Il s’agit de l’objet [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) actuel, dont l’étendue est généralement définie sur l’objet de votre convertisseur.                                                                                                                                                                                                                                                                                                                                                         |
-| eglGetError                      | Les erreurs sont obtenues sous forme de valeurs HRESULT, qui sont renvoyées par la plupart des méthodes sur les interfaces DirectX. Si la méthode ne renvoie aucune valeur HRESULT, appelez [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360). Pour convertir une erreur système en valeur HRESULT, utilisez la macro [**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746).                                                                                                                                                                                                  |
+| eglGetError                      | Les erreurs sont obtenues sous forme de valeurs HRESULT, qui sont renvoyées par la plupart des méthodes sur les interfaces DirectX. Si la méthode ne renvoie aucune valeur HRESULT, appelez [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360). Pour convertir une erreur système en anHRESULTvalue, utilisez la[**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746)macro.                                                                                                                                                                                                  |
 | eglInitialize                    | Appelez [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) pour obtenir une référence à la fenêtre principale actuelle de l’application.                                                                                                                                                                                                                                                                                                                                                         |
 | eglMakeCurrent                   | Définissez la cible de rendu à utiliser pour dessiner sur le contexte actuel avec [**ID3D11DeviceContext1::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464).                                                                                                                                                                                                                                                                                                                                  |
 | eglQueryContext                  | Non applicable Toutefois, à partir d’une instance [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575), vous pouvez obtenir des cibles de rendu ainsi que certaines données de configuration. Pour obtenir une liste des méthodes disponibles, cliquez sur le lien.                                                                                                                                                                                                                                                                                           |
@@ -410,11 +409,11 @@ Dans une application UWP, vous pouvez fermer le CoreWindow avec [**CoreWindow::C
 | eglWaitGL                        | Pour les surfaces partagées, utilisez IDXGIKeyedMutex. Pour obtenir des informations générales sur le multithreading du GPU, voir la rubrique [Multithreading](https://msdn.microsoft.com/library/windows/desktop/ff476891).                                                                                                                                                                                                                                                                                                                                    |
 | eglWaitNative                    | Pour les surfaces partagées, utilisez IDXGIKeyedMutex. Pour obtenir des informations générales sur le multithreading du GPU, voir la rubrique [Multithreading](https://msdn.microsoft.com/library/windows/desktop/ff476891).                                                                                                                                                                                                                                                                                                                                    |
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

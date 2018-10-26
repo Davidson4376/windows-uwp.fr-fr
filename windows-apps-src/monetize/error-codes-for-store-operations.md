@@ -5,16 +5,14 @@ title: Codes d’erreur pour les opérations du Store
 ms.author: mhopkins
 ms.date: 08/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, achats dans l’application, FAI, extensions, les codes d’erreur
 ms.localizationpriority: medium
-ms.openlocfilehash: bc2d3a4562be403172520f8377afb16c782a49c0
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 1a4eff890da48bd60405cadee2d7ecb92bb1b2fa
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512944"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561833"
 ---
 # <a name="error-codes-for-store-operations"></a>Codes d’erreur pour les opérations du Store
 

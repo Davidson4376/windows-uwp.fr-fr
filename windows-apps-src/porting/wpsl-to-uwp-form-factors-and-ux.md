@@ -1,27 +1,26 @@
 ---
-author: mcleblanc
-description: Les applications Windows présentent le même aspect, que ce soit sur PC, sur appareil mobile ou sur tout autre type d’appareil. Les modèles d’interaction, d’entrée et d’interface utilisateur sont similaires ; un utilisateur passant d’un type d’appareil à un autre ne pourra que se féliciter de ces similitudes.
-title: Portage d’une application Silverlight pour Windows Phone vers UWP pour différents facteurs de forme et expériences utilisateur
+author: stevewhims
+description: Les applications Windows présentent le même aspect, que ce soit sur PC, sur appareil mobile ou sur tout autre type d’appareil. Les modèles d’interaction, d’entrée et d’interface utilisateur sont similaires; un utilisateur passant d’un type d’appareil à un autre ne pourra que se féliciter de ces similitudes.
+title: Portage WindowsPhone Silverlight vers UWP pour différents facteurs de forme et expériences utilisateur
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
-ms.openlocfilehash: 23afad0c6499950d13d9771a5f0286403a5fe886
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 809cf2691a2bc7b7c72d4ba031fa4c6b45335dde
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "229971"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559776"
 ---
-#  <a name="porting-windows-phone-silverlight-to-uwp-for-form-factor-and-ux"></a>Portage d’une application Silverlight pour Windows Phone vers UWP pour différents facteurs de forme et expériences utilisateur
+#  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>Portage WindowsPhone Silverlight vers UWP pour différents facteurs de forme et expériences utilisateur
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Rubrique précédente : [Portage des couches métier et des couches de données](wpsl-to-uwp-business-and-data.md).
 
-Les applications Windows présentent le même aspect, que ce soit sur PC, sur appareil mobile ou sur tout autre type d’appareil. Les modèles d’interaction, d’entrée et d’interface utilisateur sont similaires ; un utilisateur passant d’un type d’appareil à un autre ne pourra que se féliciter de ces similitudes. Toutefois, le rendu d’une application de plateforme Windows universelle (UWP) par Windows 10 présente certaines différences (taille physique, orientation par défaut, facteur de résolution en pixels effectifs, etc.) d’un appareil à l’autre. Heureusement, le système gère à votre place une grande partie des tâches les plus difficiles à l’aide de concepts novateurs tels que les pixels effectifs.
+Les applications Windows présentent le même aspect, que ce soit sur PC, sur appareil mobile ou sur tout autre type d’appareil. Les modèles d’interaction, d’entrée et d’interface utilisateur sont similaires; un utilisateur passant d’un type d’appareil à un autre ne pourra que se féliciter de ces similitudes. Différences entre les appareils tels que la taille physique, orientation par défaut et facteur de résolution de pixels effectifs en une application de plateforme Windows universelle (UWP) est restitué par Windows 10. Heureusement, le système gère à votre place une grande partie des tâches les plus difficiles à l’aide de concepts novateurs tels que les pixels effectifs.
 
 ## <a name="different-form-factors-and-user-experience"></a>Des facteurs de forme différents pour une expérience utilisateur variée
 
@@ -33,7 +32,7 @@ En un mot comme en cent, la réponse à cette question est subjective. En fait, 
 
 Objectivement, la taille d’un écran est mesurée en pouces et en pixels physiques (bruts). La connaissance de ces deux métriques vous permet de déterminer le nombre de pixels inclus dans un pouce. La valeur obtenue porte le nom de densité en pixels (DPI, Dots Per Inch). On parle également de PPP, ou pixels par pouce. L’inverse de la densité en pixels est la taille physique des pixels, sous la forme d’une fraction d’un pouce. La densité en pixels est également appelée *résolution*, même si ce terme est souvent utilisé pour indiquer le nombre de pixels.
 
-Lorsque la distance d’affichage augmente, toutes ces métriques objectives *semblent* correspondre à des valeurs plus petites et sont résolues sous la forme d’une *taille réelle* de l’écran, associée à la *résolution effective* de ce dernier. En général, l’appareil que vous placez le plus près de vos yeux est votre téléphone, suivi de votre tablette, puis de l’écran de votre PC. Enfin, les appareils plus éloignés sont les [Surface Hub](http://www.microsoft.com/microsoft-surface-hub) et les écrans de télévision. Pour compenser cette distance, les appareils ont tendance à être de plus en plus grands en fonction de la distance d’affichage. Lorsque vous définissez les tailles des éléments de votre interface utilisateur, vous les exprimez en unités appelées pixels effectifs (epx). Et Windows 10 prendra en compte la valeur PPP et la distance d’affichage type d’un appareil pour calculer la taille optimale des éléments de votre interface utilisateur en pixels physiques afin d’optimiser l’expérience de visualisation. Voir [Pixels d’affichage/effectifs, distance d’affichage et facteurs d’échelle](wpsl-to-uwp-porting-xaml-and-ui.md).
+Lorsque la distance d’affichage augmente, toutes ces métriques objectives *semblent* correspondre à des valeurs plus petites et sont résolues sous la forme d’une *taille réelle* de l’écran, associée à la *résolution effective* de ce dernier. En général, l’appareil que vous placez le plus près de vos yeux est votre téléphone, suivi de votre tablette, puis de l’écran de votre PC. Enfin, les appareils plus éloignés sont les [Surface Hub](http://www.microsoft.com/microsoft-surface-hub) et les écrans de télévision. Pour compenser cette distance, les appareils ont tendance à être de plus en plus grands en fonction de la distance d’affichage. Lorsque vous définissez les tailles des éléments de votre interface utilisateur, vous les exprimez en unités appelées pixels effectifs (epx). Et Windows 10 prendra en compte la résolution et la distance de visualisation standard à partir d’un appareil, pour calculer la taille optimale de vos éléments d’interface utilisateur en pixels physiques afin d’optimiser l’expérience de visualisation. Voir [Pixels d’affichage/effectifs, distance d’affichage et facteurs d’échelle](wpsl-to-uwp-porting-xaml-and-ui.md).
 
 Même dans ce cas, nous vous recommandons de tester votre application avec différents appareils afin que vous puissiez vérifier chaque expérience par vous-même.
 
@@ -53,13 +52,13 @@ La version mobile de l’application propose uniquement une orientation en mode 
 
 Si vous exécutez un zoom optique sur l’application afin que le contenu s’affiche comme sur un appareil mobile (en plus gros caractères), vous ne tirez pas parti des avantages proposés par l’appareil, ni de l’espace supplémentaire qu’il offre. Par ailleurs, cela ne sert pas les intérêts de l’utilisateur. Nous devons penser à afficher davantage de contenu, plutôt que le même contenu en plus gros caractères. Même sur une phablette, nous pourrions afficher davantage de lignes de contenu. Ainsi, nous pourrions exploiter l’espace supplémentaire afin d’afficher d’autres contenus (comme des publicités), ou nous pourrions remplacer la zone de liste par une vue de liste, qui pourrait placer les éléments dans plusieurs colonnes (si possible) afin de valoriser l’espace. Voir [Recommandations en matière de contrôles d’affichages de liste et d’affichages de grille](https://msdn.microsoft.com/library/windows/apps/mt186889).
 
-En plus de nouveaux contrôles (tels que l’affichage Liste et l’affichage Grille), la plupart des types de disposition établis à partir de Silverlight pour Windows Phone comportent des équivalents dans la plateforme Windows universelle (UWP). Exemples : [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) et [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635). Le portage de la majorité des fonctions de l’interface utilisateur qui utilisent ces types doit être clair. Toutefois, recherchez toujours d’autres méthodes pour tirer parti des fonctions de disposition dynamiques de ces panneaux de disposition, afin de proposer le redimensionnement et la redisposition automatiques sur les appareils de tailles différentes.
+En plus de nouveaux contrôles tels que l’affichage de liste et affichage grille, la plupart des types de disposition établis à partir de WindowsPhone Silverlight comportent des équivalents dans la plateforme Windows universelle (UWP). Exemples : [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) et [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635). Le portage de la majorité des fonctions de l’interface utilisateur qui utilisent ces types doit être clair. Toutefois, recherchez toujours d’autres méthodes pour tirer parti des fonctions de disposition dynamiques de ces panneaux de disposition, afin de proposer le redimensionnement et la redisposition automatiques sur les appareils de tailles différentes.
 
-Outre la disposition dynamique intégrée aux contrôles système et aux panneaux de disposition, nous pouvons utiliser une nouvelle fonctionnalité de Windows 10 appelée [Gestionnaire d’état visuel adaptatif](wpsl-to-uwp-porting-xaml-and-ui.md).
+Outre la disposition dynamique intégrée aux contrôles système et les panneaux de disposition, nous pouvons utiliser une nouvelle fonctionnalité de Windows 10 appelée [Gestionnaire d’état visuel ADAPTATIF](wpsl-to-uwp-porting-xaml-and-ui.md).
 
 ## <a name="input-modalities"></a>Modalités d’entrée
 
-L’interface Silverlight pour Windows Phone est prévue pour les interactions tactiles. L’interface de votre application portée doit évidemment proposer des interactions tactiles ; toutefois, vous avez la possibilité de proposer d’autres modalités d’entrée, comme des interactions par le biais d’un clavier et d’une souris. Dans UWP, les entrées effectuées à l’aide d’une souris, d’un stylet et de fonctions tactiles sont regroupées en une seule catégorie : les *entrées de pointeur*. Pour en savoir plus, voir [Gérer les entrées du pointeur](https://msdn.microsoft.com/library/windows/apps/mt404610) et [Interactions avec le clavier](https://msdn.microsoft.com/library/windows/apps/mt185607).
+Une interface WindowsPhone Silverlight est tactiles spécifiques. L’interface de votre application portée doit évidemment proposer des interactions tactiles ; toutefois, vous avez la possibilité de proposer d’autres modalités d’entrée, comme des interactions par le biais d’un clavier et d’une souris. Dans UWP, les entrées effectuées à l’aide d’une souris, d’un stylet et de fonctions tactiles sont regroupées en une seule catégorie : les *entrées de pointeur*. Pour en savoir plus, voir [Gérer les entrées du pointeur](https://msdn.microsoft.com/library/windows/apps/mt404610) et [Interactions avec le clavier](https://msdn.microsoft.com/library/windows/apps/mt185607).
 
 ## <a name="maximizing-markup-and-code-re-use"></a>Valorisation de la réutilisation du code et du balisage
 

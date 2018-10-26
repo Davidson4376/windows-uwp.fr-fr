@@ -8,19 +8,17 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e5dcf7652469179b038a2835f4751a285eea9ee9
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 09b75eccdfcdd1d046618b92565fa3453a8b300e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1493686"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561014"
 ---
 # <a name="rich-edit-box"></a>Zone d’édition enrichie
 
@@ -224,7 +222,7 @@ Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utilis
 
 - [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - Affichez tous les contrôles XAML dans un format interactif.
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 - [Contrôles de texte](text-controls.md)
 - [Recommandations en matière de vérification orthographique](text-controls.md)

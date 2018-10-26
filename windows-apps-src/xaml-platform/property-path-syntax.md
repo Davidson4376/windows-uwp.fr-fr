@@ -6,16 +6,14 @@ ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2939150e1ca15dfc910d92ea669e794026ef8685
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: a94782165027c2194f677dfdbb9f2dec11541080
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674676"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560243"
 ---
 # <a name="property-path-syntax"></a>Syntaxe de Property-path
 
@@ -58,7 +56,7 @@ Un chemin de propriété pour la liaison de données peut inclure des référenc
 
 Prenons par exemple un objet métier qui contient une liste de «Teams» (liste ordonnée). Chacune des équipes (teams) a un dictionnaire de «Players» où chaque joueur est indexé par le nom de famille. Voici un exemple de chemin de propriété pour un joueur spécifique de la deuxième équipe: «Teams\[1\].Players\[Smith\]». (Vous utilisez1 pour indiquer le deuxième élément de «Teams», car la liste est indexée à partir de zéro.)
 
-**Remarque** La prise en charge de l’indexation pour les sources de données C++ est limitée ; voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Remarque**prise en charge de l’indexation pour les sources de données C++ est limitée. Regardez la [liaison de données en profondeur](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 ### <a name="attached-properties"></a>Propriétés jointes
 
@@ -96,7 +94,7 @@ Par exemple, pour indiquer que vous voulez animer la première couleur d’inter
 
 Il ne s’agit pas d’un scénario répandu. Toutefois, il est possible d’animer une propriété jointe, du moment que cette dernière possède une valeur de propriété qui correspond à un type d’animation. Comme le nom permettant d’identifier une propriété jointe comprend déjà un point, vous devez mettre entre parenthèses le nom de la propriété jointe afin que le point ne soit pas considéré comme une étape de propriété d’objet. Par exemple, pour spécifier l’animation de la propriété jointe [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) d’un objet, utilisez le chemin de propriété « (Grid.Row) ».
 
-**Remarque** Pour cet exemple, la valeur de [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) correspond au type de propriété **Int32**. Par conséquent, vous ne pouvez pas l’animer avec une animation **Double**. À la place, définissez un [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) qui a des composants [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132), où [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) a la valeur d’un entier tel que « 0 » ou « 1 ».
+**Remarque**pour cet exemple, la valeur de [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) est un type de propriété **Int32** . Par conséquent, vous ne pouvez pas l’animer avec une animation **Double**. À la place, définissez un [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) qui a des composants [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132), où [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) a la valeur d’un entier tel que « 0 » ou « 1 ».
 
 ## <a name="rules-for-the-properties-in-an-animation-targeting-property-path"></a>Règles des propriétés dans un chemin de propriété de ciblage d’animation
 

@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f8a38eeca0516082a64f5b4d2778f74436bbdb7
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 2081e8c09a6f6fd75f460af3f339902bcb80bac6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044738"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559753"
 ---
 # <a name="face-and-vertex-normal-vectors"></a>Vecteurs normaux de face et de vertex
 
@@ -94,9 +92,9 @@ Une autre solution consiste à opter pour un ombrage constant lors du rendu d’
 
 [Systèmes de coordonnées et géométrie](coordinate-systems-and-geometry.md)
 
- 
+ 
 
- 
+ 
 
 
 

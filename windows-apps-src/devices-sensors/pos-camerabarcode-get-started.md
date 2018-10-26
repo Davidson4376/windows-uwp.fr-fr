@@ -5,16 +5,14 @@ description: Apprendre à utiliser le scanneur de codes-barres à caméra
 ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: 861233de6967a6199bae5d81c1a3938bf8645246
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 12aabff66fc116f510dced78aa56f3df5f84c850
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976031"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559992"
 ---
 # <a name="getting-started-with-a-camera-barcode-scanner"></a>Prise en main du scanneur de code-barres à caméra
 ## <a name="step-1-add-capability-declarations-to-your-app-manifest"></a>Étape1: Ajouter des déclarations de fonctionnalités à votre manifeste d’application
@@ -88,3 +86,14 @@ Un aperçu caméra est nécessaire pour que l’utilisateur pointe avec succès 
 
 > [!TIP]
 > Voir [Héberger l'aperçu](pos-camerabarcode-hosting-preview.md) pour héberger l’aperçu du scanneur de codes-barres à caméra dans votre application.
+
+## <a name="step-8-initiate-scan"></a>Étape 8: Analyse de début 
+Vous pouvez lancer le processus de lecture en appelant [**StartSoftwareTriggerAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.startsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StartSoftwareTriggerAsync).  
+En fonction de la valeur de [**IsDisabledOnDataReceived**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived), le scanneur peut lire un seul code-barres puis s'arrêter, ou lire en continu jusqu'à ce que vous appeliez [**StopSoftwareTriggerAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.stopsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StopSoftwareTriggerAsync).
+
+Définissez la valeur souhaitée de [**IsDisabledOnDataReceived**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) pour contrôler le comportement du scanneur à chaque décodage de code-barres.
+
+| Valeur | Description |
+| ----- | ----------- |
+| Vrai   | Lire un seul code-barres puis s'arrêter |
+| Faux  | Lire des codes-barres en continu sans interruption |

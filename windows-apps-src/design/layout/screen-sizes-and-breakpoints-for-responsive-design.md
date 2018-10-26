@@ -5,20 +5,18 @@ description: Au lieu d’optimiser votre interface utilisateur pour les nombreux
 ms.author: mijacobs
 ms.date: 08/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c61b4076ed2529fddfcec53264c95c8290297a0
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: af172b67a3981b61f4f86078710d87f760f9be3b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843029"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563323"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>Tailles d’écran et points d’arrêt
 
-Les applications UWP peuvent s’exécuter sur n’importe quel appareil exécutant Windows10, y compris les téléphones, tablettes, ordinateurs de bureau, téléviseurs et plus encore. Avec un nombre considérable d’appareils ciblés et de tailles d’écran dans l’écosystème Windows10, plutôt que d’optimiser votre interface utilisateur pour chaque appareil, nous vous recommandons de concevoir une application pour plusieurs largeurs principales (également appelées «points d’arrêt»). 
+Les applications UWP peuvent s’exécuter sur n’importe quel appareil exécutant Windows10, y compris les téléphones, tablettes, ordinateurs de bureau, téléviseurs et plus encore. Avec un nombre considérable d’appareils cibles et de tailles d’écran dans l’écosystème Windows 10, au lieu d’optimiser votre interface utilisateur pour chaque appareil, nous vous recommandons de concevoir une application pour plusieurs largeurs principales (également appelées «points d’arrêt»): 
 - Petite (inférieure à 640pixels)
 - Moyenne (641px à 1007px)
 - Grande (supérieure ou égale à 1008px)
@@ -103,6 +101,6 @@ Les applications UWP mettent automatiquement à l’échelle votre interface uti
 - Placez le [volet de navigation](../controls-and-patterns/navigationview.md) en mode ancré pour qu’il soit toujours affiché.
 
 >[!TIP] 
-> Avec [**Continuum pour téléphones**](http://go.microsoft.com/fwlink/p/?LinkID=699431), les utilisateurs peuvent connecter des appareils mobiles Windows10 compatibles à un moniteur, une souris et un clavier pour les utiliser comme des ordinateurs portables. N’oubliez pas cette nouvelle fonctionnalité lorsque vous concevez des points d’arrêt spécifiques: un téléphone mobile ne reste pas toujours dans la classe de taille.
+> Avec [**Continuum pour téléphones**](http://go.microsoft.com/fwlink/p/?LinkID=699431), les utilisateurs peuvent connecter des appareils mobiles Windows 10 compatibles à un moniteur, souris et clavier pour rendre leurs téléphones fonctionnent comme des ordinateurs portables. N’oubliez pas cette nouvelle fonctionnalité lorsque vous concevez des points d’arrêt spécifiques: un téléphone mobile ne reste pas toujours dans la classe de taille.
 
 

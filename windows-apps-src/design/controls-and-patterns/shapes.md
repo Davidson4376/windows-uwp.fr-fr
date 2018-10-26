@@ -6,16 +6,14 @@ description: Découvrez comment dessiner des formes, telles que des ellipses, de
 ms.author: jimwalk
 ms.date: 11/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 44b89f90abc0930c8f57e14cd112a3c7834bace1
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 984653ad20fc40035528ab7e32b904e64d6ff8c5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675206"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561965"
 ---
 # <a name="draw-shapes"></a>Dessiner des formes
 
@@ -106,7 +104,7 @@ Rendu de la forme [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle):
 
 ![Rendu du rectangle](images/shapes-rectangle.jpg)
 
-**Conseil**  Dans certains scénarios de définition de l’interface utilisateur, l’utilisation d’un objet [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) peut se révéler mieux adaptée que celle d’un objet [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). Si vous envisagez de créer une forme rectangulaire autour d’un autre contenu, il peut être préférable d’utiliser l’objet **Border**, car il peut posséder du contenu enfant et sa taille s’adaptera automatiquement autour de ce contenu, plutôt que d’utiliser les dimensions fixes pour la hauteur et la largeur, à l’image de l’objet **Rectangle**. En outre, un objet **Border** peut posséder des coins arrondis si vous définissez la propriété [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius).
+**Conseil**il existe certains scénarios de définitions d’interface utilisateur où au lieu d’utiliser un [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), une [**bordure**](https://msdn.microsoft.com/library/windows/apps/BR209250) peut être plus appropriée. Si vous envisagez de créer une forme rectangulaire autour d’un autre contenu, il peut être préférable d’utiliser l’objet **Border**, car il peut posséder du contenu enfant et sa taille s’adaptera automatiquement autour de ce contenu, plutôt que d’utiliser les dimensions fixes pour la hauteur et la largeur, à l’image de l’objet **Rectangle**. En outre, un objet **Border** peut posséder des coins arrondis si vous définissez la propriété [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius).
 
 D’un autre côté, une classe [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) s’avère probablement un meilleur choix pour une composition de contrôle. Une forme **Rectangle** est présente dans de nombreux modèles de contrôle car elle est utilisée en tant que partie «FocusVisual» pour les contrôles pouvant être actifs. Dès lors que le contrôle est dans un état visuel «Actif», ce rectangle est rendu visible; dans les autres états, il est masqué.
 
@@ -145,7 +143,7 @@ Rendu de la forme [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon):
 
 ![Rendu du polygone](images/shapes-polygon.jpg)
 
-**Conseil**  Une valeur [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) est souvent utilisée comme type en XAML pour les situations autres que la déclaration des sommets des formes. Par exemple, un objet **Point** fait partie des données d’événement pour les événements tactiles, si bien que vous pouvez déterminer exactement l’endroit auquel s’est produit une action tactile dans un espace de coordonnées. Pour plus d’informations sur **Point** et sur la façon de l’utiliser en XAML ou dans du code, voir la rubrique de référence d’API pour [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870).
+**Conseil**une valeur de [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) est souvent utilisée en tant que type en XAML pour les situations autres que la déclaration des sommets des formes. Par exemple, un objet **Point** fait partie des données d’événement pour les événements tactiles, si bien que vous pouvez déterminer exactement l’endroit auquel s’est produit une action tactile dans un espace de coordonnées. Pour plus d’informations sur **Point** et sur la façon de l’utiliser en XAML ou dans du code, voir la rubrique de référence d’API pour [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870).
 
 ## <a name="line"></a>Ligne
 
@@ -173,7 +171,7 @@ layoutRoot.Children.Add(line1);
 
 Les formes [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) sont semblables aux formes [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) en ce que leur limite est définie par un ensemble de points, à la différence que le dernier point d’une forme **Polyline** n’est pas relié au premier.
 
-**Remarque**   Vous pouvez paramétrer explicitement des points de départ et de fin identiques dans la propriété [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) définie pour l’objet [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline), mais dans ce cas, l’utilisation d’un objet [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) est probablement plus appropriée.
+**Remarque**  vous pourriez avoir explicitement un point de départ identiques et point de terminaison dans les [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) défini pour la [**polyligne**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline), mais dans ce cas vous probablement aurait pouvez utiliser un [**Polygone**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) à la place.
 
 Si vous spécifiez une propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) d’un objet [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline), la propriété **Fill** peint l’espace intérieur de la forme, même si les points de départ et de fin de la propriété [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) définie pour l’objet **Polyline** ne se recoupent pas. Si vous ne spécifiez pas de propriété **Fill**, l’objet **Polyline** est similaire à celui qui serait restitué si vous indiquiez plusieurs éléments [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) avec intersection des points de départ et de fin de lignes consécutives.
 

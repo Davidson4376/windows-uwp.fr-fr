@@ -6,19 +6,18 @@ ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, jeux, visual studio, outils, directx
-ms.openlocfilehash: 5f5c1ef45dd476565d302ef10f8d47ab2b819993
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: eec406fd317abbd0034ba573cc0e791f9e32ba98
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.locfileid: "228767"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563679"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>Outils Visual Studio pour la programmation de jeux
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **Récapitulatif**
 
@@ -48,9 +47,9 @@ Créez des [fichiers de personnalisations de la build](#build-customizations-for
 
 Pour plus d’informations, voir [Utilisation de textures et d’images](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx).
 
-> **Remarque** L’Éditeur d’images n’a pas vocation à remplacer une application d’édition d’images complète, mais il convient à de nombreux scénarios d’affichage et de modification simples.
+> **Remarque**l’éditeur d’images n’a pas vocation à remplacer une application d’édition d’images complète, mais il convient à de nombreux simple affichage et de modification des scénarios.
 
- 
+ 
 
 ## <a name="model-editor"></a>Éditeur de modèles
 
@@ -67,9 +66,9 @@ Voici la capture d’écran d’un modèle dans l’éditeur auquel un éclairag
 
 Pour plus d’informations, voir [Utilisation de modèles en 3D](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx).
 
-> **Remarque** L’Éditeur de modèles n’a pas vocation à remplacer une application d’édition de modèles complète, mais il convient à de nombreux scénarios d’affichage et de modification simples.
+> **Remarque**l’éditeur de modèles n’a pas vocation à remplacer une application d’édition de modèles complète, mais il convient à de nombreux simple affichage et de modification des scénarios.
 
- 
+ 
 
 ## <a name="shader-designer"></a>Concepteur de nuanceurs
 
@@ -119,7 +118,7 @@ Pour plus d’informations, voir [Utilisation de nuanceurs](https://msdn.microso
 
 Vous pouvez ajouter des personnalisations de la build à votre projet afin que Visual Studio convertisse les ressources en formats utilisables. Après cela, vous pouvez charger les ressources dans votre application et les utiliser en créant et remplissant des ressources DirectX comme vous le feriez dans toute autre application DirectX.
 
-Pour ajouter une personnalisation de la build, cliquez avec le bouton droit sur le projet dans l’**Explorateur de solutions** et sélectionnez **Personnalisations de la build...**. Vous pouvez ajouter les types ci-après de personnalisations de la build à votre projet.
+Pour ajouter une personnalisation de build, vous avec le bouton droit sur le projet dans l' **Explorateur de solutions** et sélectionnez des **Personnalisations de la Build …**. Vous pouvez ajouter les types suivants de personnalisations de la build à votre projet.
 
 -   Le pipeline de contenu d’image prend les fichiers image en tant qu’entrée et génère des fichiers DirectDraw Surface (.dds).
 -   Le pipeline de contenu de maillage prend les fichiers de maillage (notamment .fbx) et génère des fichiers de maillage .cmo.
@@ -144,13 +143,12 @@ Visual Studio fournit des outils de débogage propres aux graphiques. Utilisez c
 
 Pour plus d’informations, voir [Débogage de graphiques DirectX](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
 
-> **Remarque** Cet article s’adresse aux développeurs Windows10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

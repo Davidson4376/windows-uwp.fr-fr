@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f59675c3feaab47ee79eaf160c5592876b7564a2
-ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
-ms.translationtype: HT
+ms.openlocfilehash: 9babc1f96b83123cef4bf103f4d13696697cc897
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "1862098"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562011"
 ---
 # <a name="interaction-primer"></a>Notions fondamentales sur les interactions
 
@@ -68,7 +66,7 @@ Avec un format appelant à une action de rotation (ou un mouvement), Surface Dia
 
 ## <a name="cortana"></a>Cortana
 
-Dans Windows10, l’extensibilité de **Cortana** vous permet de gérer les commandes vocales d’un utilisateur et de lancer votre application pour effectuer une opération unique.
+Dans Windows 10, l’extensibilité **de Cortana** vous permet de gérer les commandes vocales d’un utilisateur et de lancer votre application pour effectuer une action unique.
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
@@ -91,7 +89,7 @@ L’intégration des fonctionnalités de base de votre application et la fournit
 ### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233)
- 
+ 
 
 ## <a name="speech"></a>Fonctions vocales
 
@@ -140,13 +138,13 @@ La dictée est généralement utilisée lorsqu’une application n’a pas besoi
 ### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121)
- 
+ 
 
 ## <a name="pen"></a>Stylet
 
 Un stylet peut servir de dispositif de pointage précis au niveau des pixels, tel que la souris. Il constitue également l’appareil d’entrée manuscrite numérique optimal.
 
-**Remarque**  Il existe deuxtypes de stylet: actif et passif.
+**Remarque**il existe deux types de stylet: actif et passif.
   -   Les stylets passifs ne contiennent pas d’éléments électroniques et peuvent émuler efficacement des entrées tactiles au doigt. Ils requièrent un écran de base reconnaissant les entrées en fonction de la pression de contact. Dans la mesure où les utilisateurs posent souvent leur main lorsqu’ils écrivent sur la surface d’entrée, les données d’entrée peuvent être altérées en raison d’une mauvaise élimination des interférences de la paume.
   -   Les stylets actifs contiennent des éléments électroniques et peuvent fonctionner avec des écrans d’appareil complexes. Ils peuvent ainsi fournir des données d’entrée beaucoup plus étendues (pointage ou données de proximité, par exemple) au système et à votre application. L’élimination des interférences de la paume est beaucoup plus robuste.
 
@@ -173,7 +171,7 @@ Il est recommandé de fournir des commandes d’interface utilisateur spécifiqu
 ### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations en matière de conception pour le stylet](https://msdn.microsoft.com/library/windows/apps/dn456352)
- 
+ 
 
 ## <a name="touch"></a>Interface tactile
 
@@ -208,7 +206,7 @@ En règle générale, une interface tactile répond aux critères suivants :
 ### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations en matière de conception pour l’interface tactile](https://msdn.microsoft.com/library/windows/apps/hh465370)
- 
+ 
 
 ## <a name="touchpad"></a>Pavé tactile
 
@@ -232,13 +230,13 @@ Il est recommandé de fournir des commandes d’interface utilisateur spécifiqu
 ### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations en matière de conception pour le pavé tactile](https://msdn.microsoft.com/library/windows/apps/dn456353)
- 
+ 
 
 ## <a name="keyboard"></a>Clavier
 
 Le clavier, principal périphérique d’entrée de texte, est indispensable pour les personnes souffrant de certains handicaps et les utilisateurs qui le considèrent simplement comme un mode d’interaction plus rapide et plus efficace avec une application.
 
-Avec [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431), une nouvelle expérience pour les appareils mobiles Windows10 compatibles, les utilisateurs peuvent connecter leurs téléphones à une souris et un clavier pour les utiliser comme un ordinateur portable.
+Avec [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431), une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à une souris et clavier leurs téléphones pour utiliser comme un ordinateur portable.
 
 ### <a name="device-support"></a>Prise en charge des appareils
 
@@ -260,7 +258,7 @@ Le clavier visuel est un clavier logiciel visuel que vous pouvez utiliser à la 
 
 Le clavier tactile est un clavier logiciel visuel permettant d’entrer du texte à l’aide de la fonction tactile. Le clavier tactile ne se substitue pas au clavier visuel car il n’est utilisé que pour la saisie de texte (il n’émule pas le clavier matériel) et apparaît seulement quand un champ textuel ou un autre contrôle textuel modifiable reçoit le focus. Le clavier tactile ne gère pas les commandes système ou de l’application.
 
-**Remarque**  Le clavier visuel a priorité sur le clavier tactile, lequel n’est pas visible si le clavier visuel est présent.
+**Remarque**le clavier visuel est prioritaire sur le clavier tactile, lequel n’est pas visible si le clavier visuel est présent.
 
 En règle générale, un clavier répond aux critères suivants:
 
@@ -272,7 +270,7 @@ En règle générale, un clavier répond aux critères suivants:
 ### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations en matière de conception pour le clavier](https://msdn.microsoft.com/library/windows/apps/hh972345)
- 
+ 
 
 ## <a name="mouse"></a>Souris
 
@@ -299,7 +297,7 @@ Il est recommandé de fournir des commandes d’interface utilisateur spécifiqu
 ### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations en matière de conception pour la souris](https://msdn.microsoft.com/library/windows/apps/dn456351)
- 
+ 
 
 ## <a name="gesture"></a>Mouvement
 
@@ -370,6 +368,6 @@ Tout comme les personnes ont recours à une combinaison de voix et de mouvement 
 
 
 
- 
+ 
 
- 
+ 

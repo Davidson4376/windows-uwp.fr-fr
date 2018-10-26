@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 27db679e653873be4aac3ed9298d7d0e59e99d2b
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 31725c6cb9a966f02f8d1f8d62ca980e72c95326
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654398"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561037"
 ---
 # <a name="guidelines-for-panning"></a>Recommandations en matière de mouvement panoramique
 
@@ -36,9 +34,9 @@ Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au
 
 -   Affichez les indicateurs de mouvement panoramique et des barres de défilement pour offrir des repères d’emplacement et de taille. Masquez-les si vous fournissez une fonction de navigation personnalisée.
 
-    **Remarque** Contrairement aux barres de défilement standard, les indicateurs de mouvement panoramique ont un caractère purement informatif. Ils ne sont pas exposés aux périphériques d’entrée et ne peuvent pas être manipulés de quelque manière que ce soit.
+    **Remarque**contrairement de défilement standard barres, indicateurs de mouvement panoramique ont un caractère purement informatif. Ils ne sont pas exposés aux périphériques d’entrée et ne peuvent pas être manipulés de quelque manière que ce soit.
 
-     
+     
 
 **Mouvement panoramique sur un seul axe (dépassement unidimensionnel)**
 
@@ -80,7 +78,7 @@ Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au
 
 ## <a name="additional-usage-guidance"></a>Indications d’utilisation supplémentaires
 
-Le mouvement panoramique tactile, par un mouvement de glissement ou de balayage avec un ou plusieurs doigts, ressemble à un défilement à l’aide de la souris. L’interaction de type panoramique ressemble plus à la rotation de la roulette de la souris ou au glissement de la case de défilement qu’à un clic sur la barre de défilement. À moins qu’une distinction ne soit établie dans une API ou nécessaire pour une interface utilisateur propre à un appareil Windows, nous utilisons le mouvement panoramique pour faire référence aux deux interactions.
+Le mouvement panoramique tactile, par un mouvement de glissement ou de balayage avec un ou plusieurs doigts, ressemble à un défilement à l’aide de la souris. L’interaction de type panoramique ressemble plus à la rotation de la roulette de la souris ou au glissement de la case de défilement qu’à un clic sur la barre de défilement. Sauf si une distinction est établie dans une API ou requis par certaines WindowsUI propre à l’appareil, nous appelons simplement les deux interactions avec le mouvement panoramique.
 
 > <div id="main">
 > <strong>Windows10 Fall Creators Update - Changement de comportement</strong>
@@ -103,7 +101,7 @@ Le glissement implique un déplacement lent des doigts dans la direction du mouv
 
 **Types de défilements panoramiques**
 
-Windows 8 prend en charge trois types de défilements panoramiques :
+Package Windows8 prend en charge trois types de défilements panoramiques:
 
 -   Un seul axe : le mouvement panoramique est pris en charge dans une seule direction (horizontale ou verticale).
 -   Rails : le mouvement panoramique est pris en charge dans toutes les directions. En revanche, dès lors que l’utilisateur croise un seuil de distance dans une direction spécifique, le défilement est limité à cet axe.
@@ -120,9 +118,9 @@ Il existe deuxmodes d’affichage du mouvement panoramique qui dépendent du pé
 -   Des indicateurs de mouvement panoramique pour l’interaction tactile.
 -   Des barres de défilement pour d’autres périphériques d’entrée comme la souris, le pavé tactile, le clavier et le stylet.
 
-**Remarque** Les indicateurs de mouvement panoramique sont uniquement visibles quand le contact est effectué dans la région de défilement. De même, la barre de défilement est seulement visible quand le curseur de la souris, le curseur du stylo/stylet ou le focus du clavier se trouve dans la région de défilement.
+**Remarque**indicateurs de mouvement panoramique ne sont visibles que lorsque le contact est effectué dans la région. De même, la barre de défilement est seulement visible quand le curseur de la souris, le curseur du stylo/stylet ou le focus du clavier se trouve dans la région de défilement.
 
- 
+ 
 
 **Indicateurs de mouvement panoramique** Les indicateurs de mouvement panoramique sont semblables à la case de défilement d’une barre de défilement. Ils indiquent la proportion de contenu affichée par rapport à l’intégralité de la zone de mouvement panoramique et la position relative du contenu affiché dans cette zone.
 
@@ -149,7 +147,7 @@ Le schéma suivant montre comment l’action qui consiste à effectuer un mouvem
 | ![image d’une zone de mouvement panoramique.](images/ux-panning-snap1.png) | ![image d’une zone de mouvement panoramique en cours de défilement vers la gauche.](images/ux-panning-snap2.png) | ![image d’une zone de mouvement panoramique qui a arrêté le défilement à un point d’ancrage logique.](images/ux-panning-snap3.png) |
 | Balayez pour faire défiler.                                                  | Relâchez le contact.                                                                     | La région de mouvement panoramique prend fin au point d’ancrage, et non à l’endroit où le contact a été relâché.                                |
 
- 
+ 
 
 **Rails** Le contenu peut être plus large et plus grand que les dimensions et la résolution d’un périphérique d’affichage. C’est pourquoi le mouvement panoramique en deuxdimensions (horizontale et verticale) est souvent nécessaire. Des rails améliorent l’expérience utilisateur dans ces cas précis en mettant l’accent sur le mouvement panoramique le long de l’axe de mouvement (vertical ou horizontal).
 
@@ -195,9 +193,9 @@ Ces recommandations s’avèrent utiles pour des applications telles que les alb
 * [Entrée : exemple de mouvements Windows 8](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [Entrée : exemple de manipulations et de mouvements (C++)](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [Exemple d’entrée tactile DirectX](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

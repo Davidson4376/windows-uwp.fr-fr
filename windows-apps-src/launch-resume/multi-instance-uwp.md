@@ -6,15 +6,13 @@ keywords: applications UWP à instances multiples
 ms.author: twhitney
 ms.date: 09/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dd4e0ced4de2419858424a88f5fa5ce66f5b4286
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 8729ec5219159884ae0e99d8cc6eaa8dbe900d90
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5513631"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563538"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>Créer une application Windows universelle à instances multiples
 

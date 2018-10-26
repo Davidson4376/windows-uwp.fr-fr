@@ -1,27 +1,25 @@
 ---
 author: QuinnRadich
-Description: Windows 10 build 10240 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform.
-title: Nouveautés de Windows10, build 10240 - Juillet 2015
+Description: Windows 10 build 10240 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform.
+title: Nouveautés de Windows 10, build 10240 - juillet 2015
 keywords: nouveautés, nouveauté, mise à jour, mises à jour, fonctionnalités, nouveau, Windows10, 1507, 10240
 ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
-ms.openlocfilehash: c5d3a9cf8a3281e7cd1f7efa460f13f8a17b10bb
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: c38fe989bd854d44bb7dc3c0cba36a4ae145854c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1397138"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564234"
 ---
-# <a name="whats-new-in-windows-10-for-developers-build-10240"></a>Nouveautés pour les développeurs dans Windows10, build10240
+# <a name="whats-new-in-windows10-for-developers-build-10240"></a>Nouveautés pour les développeurs dans Windows 10, build 10240
 
 Windows10, build10240 et le SDK mis à jour offrent les outils, fonctionnalités et expériences pour créer de remarquables applications sur la plateforme Windows universelle. Après avoir [installé les outils et le Kit de développement logiciel](http://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10, vous êtes prêt à [créer une nouvelle application Windows universelle](../get-started/create-uwp-apps.md) ou à découvrir comment utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
-Voici un aperçu, fonction par fonction, des nouveautés qui vous attendent dans Windows10, build10240 (également appelé Windows10, version1507).
+Voici un aperçu fonction par fonction Nouveautés pour vous dans Windows 10, build 10240 (également appelé Windows 10 version 1507).
 
 ## <a name="adaptive-layouts"></a>Dispositions adaptatives
 

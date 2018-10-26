@@ -6,16 +6,14 @@ title: Codecs pris en charge
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 50d520437f9be9d2e2bc6fe8243c3d34b17ef2d9
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 57a604b1b3996019bcf6e39bc88c9a59a74cb51c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "303679"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562834"
 ---
 # <a name="supported-codecs"></a>Codecs pris en charge
 
@@ -30,7 +28,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 > [!NOTE] 
 > Lorsque la prise en charge AMR-NB est indiquée, le codec n’est pas pris en charge sur les références serveur.
 
- 
+ 
 
 ### <a name="desktop"></a>Bureau
 
@@ -341,7 +339,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="mobile"></a>Mobile
 
@@ -652,7 +650,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-core-x86"></a>IoT Core (x86)
 
@@ -963,7 +961,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-core-arm"></a>IoT Core (ARM)
 
@@ -1274,7 +1272,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="xbox"></a>Xbox
 
@@ -1585,7 +1583,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="video-codec--format-support"></a>Prise en charge des codecs et formats vidéo
 
@@ -1595,7 +1593,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 > Lorsque la prise en charge H.265 est indiquée, elle n’est pas forcément assurée par tous les appareils de la famille d’appareils.
 > Lorsque la prise en charge MPEG-2/MPEG-1 est indiquée, elle est uniquement assurée avec l’installation de l’application Windows universelle de DVD Microsoft en option.
 
- 
+ 
 
 ### <a name="desktop"></a>Bureau
 
@@ -1814,7 +1812,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="mobile"></a>Mobile
 
@@ -2033,7 +2031,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-core-x86"></a>IoT Core (x86)
 
@@ -2252,7 +2250,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-arm"></a>IoT (ARM)
 
@@ -2471,7 +2469,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="xbox"></a>Xbox
 
@@ -2690,7 +2688,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 </tbody>
 </table>
 
-## <a name="image-codec--format-support"></a>Prise en charge des codecs et formats d’image 
+## <a name="image-codec--format-support"></a>Prise en charge des codecs et formats d’image 
 
 <table>
 <colgroup>

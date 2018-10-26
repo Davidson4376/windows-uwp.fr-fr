@@ -6,16 +6,14 @@ title: Obtenir des offres ciblées
 ms.author: mhopkins
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp, services du MicrosoftStore, API des offres ciblées du Store, obtenir des offres ciblées
 ms.localizationpriority: medium
-ms.openlocfilehash: 1032831492443460bd63671012a09edfceca2690
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: e6a0e9237c7c803a64ec20df0c501773f690f5e9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5516596"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564043"
 ---
 # <a name="get-targeted-offers"></a>Obtenir des offres ciblées
 

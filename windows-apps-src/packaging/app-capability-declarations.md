@@ -6,16 +6,14 @@ description: Pour pouvoir accéder à certaines API, ressources (images ou musiq
 ms.author: misatran
 ms.date: 09/20/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d6cce2a38624339016acbad51693de1ade50678
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 1c17c802e77d13e6e980ed5046c19bfc106d5cff
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514312"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563270"
 ---
 # <a name="app-capability-declarations"></a>Déclarations des fonctionnalités d’application
 

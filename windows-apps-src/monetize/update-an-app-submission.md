@@ -6,16 +6,14 @@ title: Mettre à jour une soumission d’application
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, API de soumission au Microsoft Store, soumission d’applications, mise à jour
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f6797c288f3ee85daba9f90f81a3d1d8aa15562
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 3bf6ed961f4f84cbc2bbef4a4fe79625dcadc326
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5519953"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559786"
 ---
 # <a name="update-an-app-submission"></a>Mettre à jour une soumission d’application
 

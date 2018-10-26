@@ -5,16 +5,14 @@ description: En incluant votre application ou jeu.NET ouWin32 dans un packageApp
 ms.author: ptorr
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, mrt, pri. ressources, jeux, centennial, desktop app converter, interface utilisateur multilingue, assembly satellite
 ms.localizationpriority: medium
-ms.openlocfilehash: 098ec71f2f3e487b76f9992c297ad7cba9ac5538
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 927e0c5438ea11b751fba40cb76210d0bce112d4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396478"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562070"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>Utiliser le système de gestion des ressources Windows10 dans une application ou un jeu hérité
 
@@ -49,12 +47,12 @@ Dans de nombreux cas, vous pouvez continuer d'utiliser vos formats de localisati
 <tr>
 <td>Créer des packs de ressources</td>
 <td>Étape finale pour réduire les tailles de téléchargement et d'installation</td>
-<td>Bas</td>
+<td>Petite</td>
 </tr>
 <tr>
 <td>Migration vers les API et les formats de ressources MRT</td>
 <td>Tailles de fichiers beaucoup plus petites (selon la technologie de ressource existante)</td>
-<td>Élevé</td>
+<td>Grande</td>
 </tr>
 </table>
 
@@ -307,7 +305,7 @@ Maintenant que le fichier PRI est généré, vous pouvez créer et signer le pac
  * `/f` définit le mappage de fichier à utiliser (créé à l’étape précédente) 
  * `/p` définit le nom du package de sortie
  * `/o` définit sur Remplacer le fichier de sortie s’il existe.
-0. Une fois le package créé, il doit être signé. Le moyen le plus simple d'obtenir un certificat de signature est de créer un projet Windows universel vide dans Visual Studio et de copier le fichier `.pfx` créé. Toutefois, vous pouvez également en créer un manuellement à l’aide des utilitaires `MakeCert` et `Pvk2Pfx`, comme décrit dans [la section **Comment créer un certificat de signature de package d’application** sur MSDN] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx). 
+0. Une fois le package créé, il doit être signé. Le moyen le plus simple d’obtenir un certificat de signature est en créant un projet Windows universel vide dans Visual Studio et copie le `.pfx` fichier qu’il crée, mais vous pouvez en créer un manuellement à l’aide de la `MakeCert` et `Pvk2Pfx` utilitaires comme décrit dans [la **comment créer un package d’application certificat de signature** sur MSDN] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx). 
  * **Important:** si vous créez manuellement un certificat de signature, assurez-vous que vous placez les fichiers dans un répertoire autre que votre projet source ou package source; sinon, celui-ci risquera d'être inclus dans le package, y compris la clé privée!
 0. Pour signer le package, utilisez la commande suivante. Notez que le `Publisher` spécifié dans l'élément `Identity` du `AppxManifest.xml` doit correspondre au `Subject` du certificat (il ne s’agit **pas** de l'élément `<PublisherDisplayName>`, qui est le nom complet localisé à afficher aux utilisateurs). Comme toujours, remplacez les noms de fichiers `contoso_demo...` par les noms correspondants à votre projet, et (**très important**) vérifiez que le fichier `.pfx` ne se trouve pas dans le répertoire actif (sinon, il sera créé et inclus dans votre package, y compris la clé de signature privée!):
 

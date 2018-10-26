@@ -6,15 +6,13 @@ keywords: XAML, UWP, Prise en main
 ms.author: karler
 ms.date: 08/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: aea8cfde83e6e3c5446503291f6a7c6235b3cbf4
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 8000d9105481bc177eb2fc64646aec009fd80d36
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817367"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562531"
 ---
 # <a name="create-data-bindings"></a>Créer des liaisons de données
 
@@ -36,7 +34,7 @@ L’application PhotoLab comporte deux pages principales:
 **MainPage.xaml:** présente un affichage de galerie de photos, ainsi que des informations sur chaque fichier d’image.
 ![MainPage](../design/basics/images/xaml-basics/mainpage.png)
 
-**DetailPage.xaml:** affiche une seule photo une fois qu’elle a été sélectionnée. Un menu d’édition volant permet de modifier la photo, de la renommer et de l’enregistrer.
+**DetailPage.xaml:** affiche une seule photo une fois qu'elle a été sélectionnée. Un menu d'édition volant permet de modifier la photo, de la renommer et de l'enregistrer.
 ![DetailPage](../design/basics/images/xaml-basics/detailpage.png)
 
 ## <a name="part-1-replace-the-placeholders"></a>Partie1: remplacer les espaces réservés
