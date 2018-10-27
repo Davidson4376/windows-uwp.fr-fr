@@ -12,11 +12,11 @@ dev_langs:
 - csharp
 - cppwinrt
 ms.openlocfilehash: 9d990c206892872711626fb98f386f7b28f43543
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5638824"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5701919"
 ---
 # <a name="data-binding-in-depth"></a>Présentation détaillée de la liaison de données
 
