@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, création de packages, architecture, configuration de package
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e265df32a8c4168cddced905e7b0712e4601264
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5548707"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5685047"
 ---
 # <a name="app-package-architectures"></a>Architectures de package d'application
 

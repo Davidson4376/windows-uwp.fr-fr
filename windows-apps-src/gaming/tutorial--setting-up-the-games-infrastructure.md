@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, configuration, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 9100e80e0b4ac436ae872698e94fe29e5c8cab46
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5638302"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5688559"
 ---
 # <a name="set-up-the-game-project"></a>Configurer le projet de jeu
 

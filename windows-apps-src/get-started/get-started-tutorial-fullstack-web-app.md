@@ -6,14 +6,13 @@ keywords: application web hébergée, HWA, API REST, application avec page uniqu
 ms.author: libbymc
 ms.date: 05/10/2017
 ms.topic: article
-ms.prod: Microsoft Edge, Azure, Visual Studio Code
 ms.localizationpriority: medium
-ms.openlocfilehash: bdaa710b1c6c776f44a570b03befd477e4e4f1ec
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 140f28949bea6b4f67730bd7f6afaed4bcfb9935
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5542559"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5685799"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Créer une application Web avec page unique avec une API REST principale
 
