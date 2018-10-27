@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, API de soumission au MicrosoftStore, soumission d’extension, état
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a656d06c2be720e4231ccf4ee0e5626466b5fd8
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5547225"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5689512"
 ---
 # <a name="get-the-status-of-an-add-on-submission"></a>Obtenir l’état d’une soumission de module complémentaire
 

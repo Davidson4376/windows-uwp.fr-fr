@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows10, uwp, win32, bureau, notifications toast, pont du bureau, options pour l’envoi de notifications toast, serveur com, activateur com, com, com faux, aucune com, sans com, envoyer toast
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ee44d990ef29fa8281a14c8ad03b6c6ff16a4cf
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5569034"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5694412"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>Notifications toast à partir d'applications de bureau
 

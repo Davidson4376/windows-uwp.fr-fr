@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, services de MicrosoftStore, API d'analyse du MicrosoftStore, analyse Xbox Live, réussites
 ms.localizationpriority: medium
 ms.openlocfilehash: a589ee480ee025f2940de93efaf7e453af488690
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5593777"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5690397"
 ---
 # <a name="get-xbox-live-achievements-data"></a>Obtenir des données de réussite Xbox Live
 

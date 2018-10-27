@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b0dcb3e49bb35902a17f829c0222c570265be8b5
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5553859"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5692601"
 ---
 # <a name="optimize-your-xaml-layout"></a>Optimiser votre disposition XAML
 

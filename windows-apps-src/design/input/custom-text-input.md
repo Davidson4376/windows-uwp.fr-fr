@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 14a2811f59b8de33db51b255aee8892abf553198
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5621758"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5689734"
 ---
 # <a name="custom-text-input"></a>Saisie de texte personnalisé
 

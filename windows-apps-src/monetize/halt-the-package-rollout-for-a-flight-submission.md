@@ -9,11 +9,11 @@ keywords: windows10, uwp, API de soumission au MicrosoftStore, lancement du pack
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 ms.localizationpriority: medium
 ms.openlocfilehash: a10b6f75d944a4a0f2935568928ce3b0782a479a
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5542329"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5689352"
 ---
 # <a name="halt-the-rollout-for-a-flight"></a>Arrêter le lancement d’une version d’évaluation
 

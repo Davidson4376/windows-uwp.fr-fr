@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ca78338b501b8c24549b1348c051a02ea62a501
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5642563"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5691846"
 ---
 # <a name="devices-sensors-and-power"></a>Appareils, capteurs et alimentation
 

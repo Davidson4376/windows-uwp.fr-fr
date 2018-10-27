@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, API de promotions du MicrosoftStore, campagnes de publicité
 ms.localizationpriority: medium
 ms.openlocfilehash: 2212a3663e79f4fb068af631cfad7715b5a039ae
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5639595"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5690963"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>Gérer des campagnes publicitaires à l’aide des services du Windows Store
 

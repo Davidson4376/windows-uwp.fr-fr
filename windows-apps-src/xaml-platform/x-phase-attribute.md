@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 17ee99553b5713acb1917ccb697abb2387d00da2
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5549196"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5692351"
 ---
 # <a name="xphase-attribute"></a>Attribut x:Phase
 

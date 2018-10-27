@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, tactile, contrôles, directx, entrée
 ms.localizationpriority: medium
 ms.openlocfilehash: 53c4a91f3ef20c11783796c3ca362f74b3f39adb
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5553011"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5689075"
 ---
 # <a name="touch-controls-for-games"></a>Contrôles tactiles pour les jeux
 

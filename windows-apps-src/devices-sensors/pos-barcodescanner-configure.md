@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: 07198b382be911f30016f2106949d2dea751afa5
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5597329"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5688683"
 ---
 # <a name="configure-a-barcode-scanner"></a>Configurer un scanneur de code-barres
 

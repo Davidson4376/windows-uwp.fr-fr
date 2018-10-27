@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, échantillonnage multiple, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b967ae1709849bbe5bc944b00d9e30f22052aeb
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5617881"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5694392"
 ---
 # <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Échantillonnage multiple des applications de plateforme Windows universelle (UWP)
 

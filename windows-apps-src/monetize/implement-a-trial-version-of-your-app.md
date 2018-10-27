@@ -9,11 +9,11 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b078f0573d94e80b590f473f7c9a9b0395115ee
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5559842"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5693221"
 ---
 # <a name="implement-a-trial-version-of-your-app"></a>Implémenter une version d’évaluation de votre application
 
