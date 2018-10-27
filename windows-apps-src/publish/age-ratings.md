@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, évaluation de l’âge, classification des jeux, iarc, évaluation, questionnaire, organisme de classification, contrôle d'accès au contenu
 ms.localizationpriority: medium
 ms.openlocfilehash: 53692f7d3f5ae9d4a5e6bdcc1d5909467987d264
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5666565"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5709991"
 ---
 # <a name="age-ratings"></a>Évaluations de l’âge
 

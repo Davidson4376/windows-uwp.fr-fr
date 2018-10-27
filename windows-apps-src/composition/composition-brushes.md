@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1122ae00f9b84980a7793deef08a30a16711b4be
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5568016"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710325"
 ---
 # <a name="composition-brushes"></a>Pinceaux de composition
 Tous les éléments visibles à l’écran à partir d’une application UWP sont visible dans la mesure où il a été peint par un pinceau. Pinceaux activer vous permettent de peindre des objets d’interface (UI) utilisateur avec le contenu allant de couleurs simples et unies à des images ou des dessins chaîne d’effets complexes. Cette rubrique présente les concepts de peinture avec CompositionBrush.

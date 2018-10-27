@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp, notifications toast, toasts interactifs, toasts adaptatifs, contenu des toasts, charge utile des toasts
 ms.localizationpriority: medium
 ms.openlocfilehash: 791b1dcede799de4ecf8480d994a5c0f1ddb58af
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5642421"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5706415"
 ---
 # <a name="toast-content"></a>Contenu des toasts
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, soumission d’extension, supprimer, produit in-app, PIA
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c5d9e905f6b3d8acffc53e943d946f6ac7c3c68
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5640814"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5707752"
 ---
 # <a name="delete-an-add-on-submission"></a>Supprime une soumission d’extension
 

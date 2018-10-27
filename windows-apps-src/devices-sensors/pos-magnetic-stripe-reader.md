@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, point de service, PDV, lecteur de bande magnétique
 ms.localizationpriority: medium
 ms.openlocfilehash: 11653c10310726c79de9deef17a570207045ec4a
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5542816"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708116"
 ---
 # <a name="magnetic-stripe-reader"></a>Lecteur de bande magnétique
 

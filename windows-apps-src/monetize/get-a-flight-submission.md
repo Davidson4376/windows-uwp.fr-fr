@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au MicrosoftStore, soumission de version d’évaluation
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a1c1e60a722fbba6f2a5c13e75078a11932b84e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5557310"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5709502"
 ---
 # <a name="get-a-package-flight-submission"></a>Obtenir une soumission de version d’évaluation de package
 

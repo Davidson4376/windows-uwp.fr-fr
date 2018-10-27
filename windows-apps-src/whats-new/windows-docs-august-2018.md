@@ -8,11 +8,11 @@ ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 76de6c5c1e8925dd8b166a8d99c39116bf66141d
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5554949"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710067"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en août 2018
 

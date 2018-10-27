@@ -8,12 +8,12 @@ ms.date: 09/20/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c17c802e77d13e6e980ed5046c19bfc106d5cff
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 451a8041e0a81d43d91692e92046c32d458e0982
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5563270"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710612"
 ---
 # <a name="app-capability-declarations"></a>Déclarations des fonctionnalités d’application
 
@@ -211,6 +211,8 @@ Le tableau suivant répertorie les fonctionnalités restreintes. Vous pouvez dem
 | **Élévation** | La fonctionnalité **allowElevation** restreint permet aux applications qui sont créées par les partenaires Microsoft et les entreprises à conserver la fonctionnalité de bureau existante nécessitant une élévation automatique lors du lancement ou pendant la durée de vie d’une application.<br/><br/>Nous déconseillons de déclarer cette fonctionnalité dans les applications soumises au Store. Pour la plupart des développeurs, l'utilisation de cette fonctionnalité ne sera pas approuvée. Il ne sera approuvé pour les applications cœur de métier déployées par les entreprises à son magasin privé via le Microsoft Store pour entreprises.  |
 | **Informations d’identification de périphérique d’équipe Windows** | La fonctionnalité **teamEditionDeviceCredentials** restreint permet aux applications d’accéder aux API qui requièrent des informations d’identification de compte appareil sur un appareil Surface Hub exécutant Windows 10, version 1703 ou ultérieure.<br/><br/>Nous déconseillons de déclarer cette fonctionnalité dans les applications soumises au Store. Pour la plupart des développeurs, l'utilisation de cette fonctionnalité ne sera pas approuvée. |
 | **Affichage de l’Application équipe Windows** | La fonctionnalité **teamEditionView** restreint permet aux applications d’accéder aux API pour l’hébergement d’un affichage d’application sur un appareil Surface Hub exécutant Windows 10, version 1703 ou ultérieure.<br/><br/>Nous déconseillons de déclarer cette fonctionnalité dans les applications soumises au Store. Pour la plupart des développeurs, l'utilisation de cette fonctionnalité ne sera pas approuvée. |
+| **Extension de traitement de caméra** | La fonctionnalité **cameraProcessingExtension** restreint aux applications de traiter les images capturées à partir de l’appareil photo sans contrôle de la caméra direct.<br /><br />Cette fonctionnalité est nécessaire pour appeler des API dans l’espace de noms [Windows.Devices.PointOfService.Provider](/uwp/api/windows.devices.pointofservice.provider) .<br /><br />Toute personne peut demander l’accès à cette fonctionnalité pour la soumission au WindowsStore. |
+| **Gestion de l’utilisation des données*** | La fonctionnalité **networkDataUsageManagement** restreint aux applications de collecter des informations sur l’utilisation de données réseau.<br /><br />Cette fonctionnalité est nécessaire pour appeler [GetAttributedNetworkUsageAsync](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync).<br /><br />Toute personne peut demander l’accès à cette fonctionnalité pour la soumission au WindowsStore. |
 
 ## <a name="custom-capabilities"></a>Fonctions personnalisées
 

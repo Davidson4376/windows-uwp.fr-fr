@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: db2cf1c732669a2ae45b8a5eb427e8864446c800
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5617576"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710289"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>Choisir le type de canal de notification Push adapté
 

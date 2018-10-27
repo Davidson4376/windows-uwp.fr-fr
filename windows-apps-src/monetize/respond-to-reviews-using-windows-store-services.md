@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, API d'avis du MicrosoftStore, répondre aux avis
 ms.localizationpriority: medium
 ms.openlocfilehash: 2398dad84f43a624bd8e833f2032d8857a90f36e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5557814"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5706623"
 ---
 # <a name="respond-to-reviews-using-store-services"></a>Répondre aux avis à l’aide des services du Windows Store
 

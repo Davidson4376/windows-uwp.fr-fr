@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, mise à l’échelle de chaînes d’échange, superpositions, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d159a78412bea528c1a12428288daebe31d1fe1
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5560502"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5705388"
 ---
 # <a name="swap-chain-scaling-and-overlays"></a>Mise à l’échelle et superpositions de chaînes d’échange
 

@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 31725c6cb9a966f02f8d1f8d62ca980e72c95326
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5561037"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5707607"
 ---
 # <a name="guidelines-for-panning"></a>Recommandations en matière de mouvement panoramique
 

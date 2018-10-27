@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 31279de84b8f00e4489a7aae962caa231bb16dc1
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5543224"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5706233"
 ---
 # <a name="improve-garbage-collection-performance"></a>Améliorer les performances du nettoyage de la mémoire (garbage collection)
 

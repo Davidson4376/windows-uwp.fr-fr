@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, infrastructure de rendu, conversion, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 044a0dc7bf264a82b849623a53d00268d7b30fd9
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5611203"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710247"
 ---
 # <a name="convert-the-rendering-framework"></a>Convertir l’infrastructure de rendu
 

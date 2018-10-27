@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 24c8787efd108acb2353f6705dbb65a34d358ef2
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5597391"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5707534"
 ---
 # <a name="mappings-are-into-a-tile-pool"></a>Mappages dans un pool de vignettes
 

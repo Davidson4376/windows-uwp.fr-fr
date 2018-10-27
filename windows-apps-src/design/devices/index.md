@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f5e6c96c67052f1933bf4fb69988ae1eae27ee0
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5640365"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5707108"
 ---
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>Notions fondamentales sur les appareils pour les applications de plateforme Windows universelle (UWP)
 

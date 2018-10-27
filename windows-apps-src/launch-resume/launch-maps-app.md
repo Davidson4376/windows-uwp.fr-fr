@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fd7377294e0d460720f6a16e71981ab0924ac9a
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5640095"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5709522"
 ---
 # <a name="launch-the-windows-maps-app"></a>Lancer l’application Cartes Windows
 

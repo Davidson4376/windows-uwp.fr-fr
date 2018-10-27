@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: dbed55af1a9fa3df14f0a7e3e7c6d1f599b40fd3
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5560782"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5709114"
 ---
 # <a name="pointofservice-device-capability"></a>Fonctionnalité d'appareil PointOfService
 Vous demandez l’accès aux API PointOfService en déclarant la fonctionnalité dans votre manifeste de package d’application. Vous pouvez déclarer la plupart des fonctionnalités à l’aide du concepteur de manifeste, dans MicrosoftVisual Studio, ou vous pouvez les ajouter manuellement.  
