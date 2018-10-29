@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dfe7495e08bfcecac839b0ae15d2d65b00311298
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5700734"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5749496"
 ---
 # <a name="web-view"></a>Affichage web
  

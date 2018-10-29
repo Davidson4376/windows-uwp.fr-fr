@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 485dc6f93cb0fd83601b3202ef9965e625b2a0b4
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5684233"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5750140"
 ---
 # <a name="getting-started-with-uwp-for-ios-developers"></a>Prise en main de la plateforme Windows universelle (UWP) pour les développeurs iOS
 

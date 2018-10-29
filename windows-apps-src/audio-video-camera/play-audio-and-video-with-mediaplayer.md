@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b83be1dee4e23fa6974e39fbfb0f9ce26529274
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5697874"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5749398"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Lire du contenu audio et vidéo avec MediaPlayer
 

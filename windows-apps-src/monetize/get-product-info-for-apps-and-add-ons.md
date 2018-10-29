@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, achats dans l’application, extensions, Windows.Services.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: e8f82bc3045d56f93e8d42ea183e2ac2bc788380
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5706914"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5749885"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>Obtenir les informations produit des applications et des extensions
 

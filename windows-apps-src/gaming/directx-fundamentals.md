@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeu, directx, charge, rastériser, maillage, bitmap, 2D, 3D
 ms.localizationpriority: medium
 ms.openlocfilehash: 7947f1e0684bc76c95fe8099f5ef123f2a32566e
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5705177"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5748897"
 ---
 # <a name="fundamentals-of-directx-programming"></a>Notions fondamentales sur la programmation DirectX
 

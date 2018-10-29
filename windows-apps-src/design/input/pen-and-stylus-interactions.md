@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d04ea3506fc909b115ba9aab397ded9e4464479
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5698160"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5750321"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>Interactions avec le stylet et WindowsInk dans les applications UWP
 
