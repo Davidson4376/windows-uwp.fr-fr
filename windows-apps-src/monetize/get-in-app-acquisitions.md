@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, services du MicrosoftStore, API d’analyse du MicrosoftStore, acquisitions d’extension
 ms.localizationpriority: medium
 ms.openlocfilehash: c1fb44457b8589c9e1525de9c8dca2801c0c47bf
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5698127"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5741091"
 ---
 # <a name="get-add-on-acquisitions"></a>Obtenir des acquisitions d’extensions
 
