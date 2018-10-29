@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b79bfa9ecdf76d2d59e3c0991240d88599dbe6dd
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5699608"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5747781"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>Ouvrir des fichiers et dossiers à l’aide d’un sélecteur
 

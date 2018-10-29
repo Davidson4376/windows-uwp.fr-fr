@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 345e6f82ddf97c2595dad0029ca432f075a6190b
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5702915"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5769215"
 ---
 # <a name="bluetooth-gatt-client"></a>Bluetooth GATT Client
 
@@ -29,7 +29,7 @@ Cet article montre l’utilisation de l’API de Client attribut générique (GA
 - Lire et écrire dans une caractéristique
 - S’abonner pour les notifications lors de la caractéristique valeur est modifiée
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Présentation
 Les développeurs peuvent utiliser les API dans l’espace de noms [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) pour accéder aux périphériques Bluetooth LE. Les appareils Bluetooth LE exposent leurs fonctionnalités par le biais d’une collection de :
 
 -   Services

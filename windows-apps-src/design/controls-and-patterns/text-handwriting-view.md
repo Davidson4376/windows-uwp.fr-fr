@@ -13,11 +13,11 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 889683d83f1e592e2ce94f3fce63ca0b2c8bbdcb
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5711296"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5742009"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>Saisie de texte avec l’affichage de l’écriture manuscrite
 
@@ -25,7 +25,7 @@ ms.locfileid: "5711296"
 
 Personnaliser l’affichage de l’écriture manuscrite intégrée de l’encre à l’entrée de texte est pris en charge par les contrôles de texte UWP tels que le [contrôle TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)et autres contrôles qui fournissent une expérience d’entrée de texte similaire (comme [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)).
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Présentation
 
 Zones de saisie de texte XAML présentent prise en charge intégrée du stylet à l’aide de [Windows Ink](../input/pen-and-stylus-interactions.md). Lorsqu’un utilisateur appuie sur une zone de saisie de texte à l’aide d’un stylet Windows, la zone de texte se transforme en une surface de l’écriture manuscrite, au lieu d’ouvrir un panneau de saisie distinct.
 

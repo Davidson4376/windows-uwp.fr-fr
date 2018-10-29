@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b39f68d6f5f00f8e33a080b77614b9ba11627989
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5703990"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5743251"
 ---
 # <a name="mvvm-and-language-performance-tips"></a>Conseils relatifs aux performances du langage de programmation et du modèle MVVM
 

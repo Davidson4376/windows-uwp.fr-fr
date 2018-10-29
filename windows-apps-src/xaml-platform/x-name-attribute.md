@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 43b4b7e6ba9e251a5907154125eff08e8d92a713
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5699469"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5741039"
 ---
 # <a name="xname-attribute"></a>Attribut x:Name
 

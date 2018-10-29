@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d1e60270b43a8c14067df70ff3e8489f4af2887
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5711406"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5745598"
 ---
 # <a name="beta-testing"></a>Bêta-test
 

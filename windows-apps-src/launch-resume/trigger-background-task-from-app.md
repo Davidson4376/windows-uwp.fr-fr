@@ -8,11 +8,11 @@ ms.topic: article
 keywords: déclencheur de tâche en arrière-plan, tâche en arrière-plan
 ms.localizationpriority: medium
 ms.openlocfilehash: 6846cfe77272a78eff7ddc05c9a7e48dddd21fc2
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5695446"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5758934"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>Déclencher une tâche en arrière-plan à partir de votre application
 
@@ -147,7 +147,7 @@ Pour plus d’informations sur les contraintes de ressource appliquées aux tâc
 
 Une tâche en arrière-plan s’exécutent uniquement à l’aide d’un **ApplicationTrigger** si vous avez appelé [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) tout d’abord.
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriquesconnexes
 
 * [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Exemple de code de tâche en arrière-plan](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)

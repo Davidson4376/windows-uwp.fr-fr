@@ -13,11 +13,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 5f11afbafc424a4ed7f2c973f0417c792ab7da65
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5689681"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5742159"
 ---
 # <a name="use-a-maintenance-trigger"></a>Utiliser un déclencheur de maintenance
 
@@ -117,7 +117,7 @@ Pour vous assurer que votre application Windows universelle continue de s’exé
 > [!NOTE]
 > Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Une erreur est retournée si l’un des paramètres d’inscription n’est pas valide. Vérifiez que votre application gère de manière fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="related-topics"></a>Rubriquesconnexes
 
 * [Créez et inscrivez une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
 * [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)

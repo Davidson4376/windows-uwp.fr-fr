@@ -9,11 +9,11 @@ keywords: windows10, uwp, exécution étendue, mode réduit, ExtendedExecutionSe
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ms.localizationpriority: medium
 ms.openlocfilehash: 30e05259306a222a3cb18268aeb58a8380f6d4d2
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5685230"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5743905"
 ---
 # <a name="postpone-app-suspension-with-extended-execution"></a>Reporter la suspension d’une application avec l’exécution étendue
 

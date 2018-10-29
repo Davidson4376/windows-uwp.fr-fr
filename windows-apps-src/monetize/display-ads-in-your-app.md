@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, publicités, publicité, bannière, contrôle de publicité, spot
 ms.localizationpriority: medium
 ms.openlocfilehash: 738c643f3c83a4f88f5c52c7337c467366ac8fe5
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5710921"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5745329"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Afficher des publicités dans votre application avec le SDK MicrosoftAdvertising
 

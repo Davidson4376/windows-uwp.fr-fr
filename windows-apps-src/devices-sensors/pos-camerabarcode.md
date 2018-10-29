@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, point de vente, pdv
 ms.localizationpriority: medium
 ms.openlocfilehash: c647846aaaf8f7a5cef96e267ad979dc68ee004a
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5702514"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5747480"
 ---
 # <a name="camera-barcode-scanner"></a>Scanneur de code-barres à caméra
 Un scanneur de codes-barres à caméra est créé dynamiquement à mesure que Windows associe les caméras connectées à votre ordinateur avec un logiciel de décodage.  Chaque paire caméra-décodeur est un scanneur de code-barres entièrement fonctionnel.   

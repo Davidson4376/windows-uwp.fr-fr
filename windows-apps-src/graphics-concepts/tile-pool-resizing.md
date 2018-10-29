@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e676b28750375a353bb41ce8e14ec1d4c3371c4c
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5692896"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5748525"
 ---
 # <a name="tile-pool-resizing"></a>Redimensionnement d’un pool de tuiles
 

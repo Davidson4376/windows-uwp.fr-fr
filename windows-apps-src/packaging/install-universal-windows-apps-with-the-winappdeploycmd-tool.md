@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 13468ce3b74992c026d94223b5e67aea99d79991
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5690758"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5759017"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>Installer des applications avec l’outil WinAppDeployCmd.exe
 

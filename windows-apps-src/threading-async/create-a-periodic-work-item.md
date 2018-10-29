@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows10, uwp, élément de travail périodique, threads, minuteurs
 ms.localizationpriority: medium
 ms.openlocfilehash: 4afa137b01738c42f8e15c95ef09ec921d1e44ae
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5702587"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5747111"
 ---
 # <a name="create-a-periodic-work-item"></a>Créer un élément de travail périodique
 

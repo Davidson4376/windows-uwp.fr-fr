@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 913faf70531509a604cde52bb71886c128edae46
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5691040"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5742861"
 ---
 # <a name="camera-independent-flashlight"></a>Lampe torche indépendante de la caméra
 
@@ -75,7 +75,7 @@ Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [*
 
 [!code-cs[DisposeLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetDisposeLamp)]
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="related-topics"></a>Rubriquesconnexes
 - [Lecture de contenu multimédia](media-playback.md)
 
  

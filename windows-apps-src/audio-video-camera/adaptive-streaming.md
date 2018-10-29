@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ef8e3ab4abd9ee9159dc7d5aa757f55e00817a51
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5707949"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5743128"
 ---
 # <a name="adaptive-streaming"></a>Streaming adaptatif
 

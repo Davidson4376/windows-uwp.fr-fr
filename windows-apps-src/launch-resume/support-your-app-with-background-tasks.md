@@ -9,11 +9,11 @@ ms.topic: article
 keywords: tâche en arrière-plan Windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: a72d13689b278c1048cab6b1fcb4fd788658602c
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5683507"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5742299"
 ---
 # <a name="support-your-app-with-background-tasks"></a>Prendre en charge votre application avec des tâches en arrière-plan
 
@@ -171,7 +171,7 @@ Les tâches en arrière-plan peuvent signaler leur progression, leur annulation 
 
 Vérifiez votre inscription de tâche en arrière-plan pendant le lancement de l’application. Assurez-vous que les tâches en arrière-plan dissociées de votre application sont présents dans BackgroundTaskBuilder.AllTasks. Réinscrivez ceux qui n’est pas présents. Annulez l’enregistrement de toutes les tâches qui ne sont plus nécessaires. Cela garantit que toutes les inscriptions de tâches en arrière-plan sont à jour chaque fois que l’application est lancée.
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriquesconnexes
 
 **Recommandations conceptuelles pour le multitâche sous Windows 10**
 

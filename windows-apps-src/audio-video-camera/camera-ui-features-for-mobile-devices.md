@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 062ca589b2a63db1f56ada4e2df4f99bc7f8b0fb
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5706844"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5743221"
 ---
 #<a name="camera-ui-features-for-mobile-devices"></a>Fonctionnalités d’interface utilisateur de caméra pour les appareils mobiles
 
@@ -57,7 +57,7 @@ Lorsque votre application s’arrête ou que l’utilisateur quitte la page de c
 
 [!code-cs[UnregisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriquesconnexes
 
 * [Appareil photo](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)

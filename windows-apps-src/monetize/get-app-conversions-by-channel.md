@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, conversions des apps, canal
 ms.localizationpriority: medium
 ms.openlocfilehash: 60e166b70c6a2aacf20673b30461002f3aa61305
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5695943"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5741262"
 ---
 # <a name="get-app-conversions-by-channel"></a>Obtenir les conversions d’applications par canal
 

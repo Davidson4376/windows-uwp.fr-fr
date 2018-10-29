@@ -11,11 +11,11 @@ keywords: windows10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
 ms.openlocfilehash: ed358f88470dfe1ba1c48cd3daf1ed54135ed987
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5700989"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5743088"
 ---
 # <a name="inking-controls"></a>Contrôles pour l’entrée manuscrite
 

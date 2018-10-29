@@ -3,16 +3,16 @@ author: stevewhims
 description: Réponses aux questions que vous êtes susceptibles de vous poser sur la création et l’utilisation d’API Windows Runtime avec C++/WinRT.
 title: Forum aux questions sur C++/WinRT
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 10/26/2018
 ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, questions, fréquentes, FAQ, forum aux questions
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a2ea3dddc592379199017408652cab0a2a68fbb
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.openlocfilehash: 612eb6ced57fb2a8ca5d855ef9c156b0b9ae4440
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5696474"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5742522"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Forum aux questions sur C++/WinRT
 Réponses aux questions que vous êtes susceptible d’avoir sur la création et l’utilisation de Windows Runtime APIs avec [C++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -51,7 +51,7 @@ Si le symbole non résolu est une fonction libre de Windows Runtime, tels que [R
 #pragma comment(lib, "windowsapp")
 ```
 
-Nous ne recommandons pas résoudre toutes les erreurs de l’éditeur de liens que vous pouvez en liant **WindowsApp.lib**. Mais, si vous n’avez pas besoin votre application afin de passer les tests du [Kit de Certification des applications Windows](../debug-test-perf/windows-app-certification-kit.md) utilisés par Visual Studio et du Microsoft Store pour valider les soumissions (ce qui signifie qu’il ne sont pas par conséquent être possible pour votre application soit correctement ingérés par le Microsoft Store), puis vous pouvez l’associer à la place une autre bibliothèque de liaison statique. Par exemple, si votre erreur d’éditeur de liens fait référence à **CoIncrementMTAUsage** (ou **WINRT_CoIncrementMTAUsage**), puis vous pouvez résoudre qui en liant Ole32.lib cas d’absolue nécessité (par exemple, si votre version de **WindowsApp.lib** ne Exportez la fonction).
+Il est important que vous corrigez toutes les erreurs de l’éditeur de liens que vous pouvez en liant **WindowsApp.lib** au lieu d’une bibliothèque de liaison statique alternative, sinon, votre application ne les tests [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) utilisés par Visual Studio et le Microsoft Store pour valider les soumissions (ce qui signifie qu’il ne sont pas par conséquent être possible pour votre application d’être correctement ingérés par le Microsoft Store).
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>Dois-je implémenter [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) et, si tel est le cas, comment?
 Si vous disposez d’une classe runtime qui libère les ressources dans son destructeur, et que cette classe runtime est conçue pour être utilisée depuis l’extérieur de son unité de compilation d’implémentation (c’est un composant Windows Runtime destiné à une utilisation générale par les applications clientes Windows Runtime), nous vous recommandons d’implémenter également **IClosable** pour prendre en charge l’utilisation de votre classe runtime par les langues qui ne possèdent pas de finalisation déterministe. Assurez-vous que vos ressources sont libérées si le destructeur, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.Close) ou les deux sont appelés. **IClosable::Close** peut être appelé un nombre de fois arbitraire.

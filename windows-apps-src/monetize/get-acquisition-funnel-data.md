@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, services du MicrosoftStore, API d'analyse du MicrosoftStore, acquisitions, synthèse
 ms.localizationpriority: medium
 ms.openlocfilehash: 20c07425542c207c2289c6b512102e10f64bab66
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5707184"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5740392"
 ---
 # <a name="get-app-acquisition-funnel-data"></a>Obtenir les données relatives à l'entonnoir d'acquisition d'applications
 
