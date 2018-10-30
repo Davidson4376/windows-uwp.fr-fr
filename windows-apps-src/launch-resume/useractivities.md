@@ -8,11 +8,11 @@ ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 37b7ed35edecb95deb4b3ba568227f4cd8e32d9a
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5706286"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5757351"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>Poursuivre l’activité utilisateur, même sur différents appareils
 
@@ -167,7 +167,7 @@ Vous pouvez utiliser l'API [UserActivity](https://docs.microsoft.com/uwp/api/win
 
 * [Espace de noms UserActivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriquesconnexes
 
 * [Activités de l’utilisateur (documentation du projet «Rome»)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Cartes adaptatives](https://docs.microsoft.com/adaptive-cards/)

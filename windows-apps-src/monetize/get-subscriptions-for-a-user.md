@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, API d’achat du MicrosoftStore, abonnements
 ms.localizationpriority: medium
 ms.openlocfilehash: b8fe6262ca6ef52ca94ade2c56b18f5e71951f07
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5682841"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5757361"
 ---
 # <a name="get-subscriptions-for-a-user"></a>Recueillir les abonnements d’un utilisateur
 
