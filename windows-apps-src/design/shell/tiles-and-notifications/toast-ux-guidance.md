@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, uwp, notification, collection, groupe, expérience utilisateur, expérience utilisateur des instructions, recommandations, action, toast, centre de notifications, noninterruptive, notifications efficaces, les notifications non intrusives, exploitables, gérer, organiser
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ee3431681f3d9fba5c50759e822d78c09826957
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5699330"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5767920"
 ---
 # <a name="toast-notification-ux-guidance"></a>Conseils d’expérience utilisateur de Notification toast
 Les notifications sont requises de la vie moderne; ils aident les utilisateurs à être plus productifs et commencé avec les applications et sites Web, mais aussi rester en cours avec les mises à jour. Toutefois, les notifications peuvent activer rapidement à partir d’utile à overbearing et intrusif s’ils ne sont pas conçus de manière centrée sur l’utilisateur. Vos notifications sont un clic droit direction opposée en cours est désactivée et il est peu probable une fois qu’ils sont désactivés, ils ne seront activés à nouveau.  Par conséquent, assurez-vous que vos notifications sont de l’espace d’écran de l’utilisateur et l’heure, afin que vous pouvez conserver ce canal d’engagement ouvert.

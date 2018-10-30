@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e6a7e7a29d766cc226b3e4afd4376a6c5c9ec42a
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5708536"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5766113"
 ---
 # <a name="creating-windows-runtime-components-in-ccx"></a>Création de composants Windows Runtime en C++/CX
 > [!NOTE]
@@ -558,5 +558,5 @@ Si votre code JavaScript ne semble pas reconnaître les propriétés ou méthode
 
 Si vous supprimez C++ / CX Windows Runtime projet du composant à partir d’une solution, vous devez supprimer manuellement la référence de projet à partir du projet JavaScript. Sinon, il ne sera plus possible d’effectuer d’opérations de débogage ou de génération. Si nécessaire, ajoutez ensuite une référence d’assembly à la DLL.
 
-## <a name="related-topics"></a>Rubriques connexes
+## <a name="related-topics"></a>Rubriquesconnexes
 * [Procédure pas à pas: création d’un composant WindowsRuntime de base en C++/CX et appel de ce composant à partir de JavaScript ou C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)

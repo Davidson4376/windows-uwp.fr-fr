@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, jeux, son
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d1c95fe883cf2517855a3b6f1c4dfc6c9b6dd9a
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5698341"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5768298"
 ---
 # <a name="add-sound"></a>Ajouter du son
 
@@ -34,7 +34,7 @@ Dans l’exemple de jeu, les comportements et objets audio sont définis dans tr
 * __ [MediaReader.h](#mediareaderh)/.cpp__: définit les méthodes permettant de lire des fichiers .wav audio à partir du stockage local.
 * __ [SoundEffect.h](#soundeffecth)/.cpp__: définit un objet pour la lecture audio dans le jeu.
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Présentation
 
 Il existe trois parties principales dans l’obtention de configurer pour la lecture audio dans votre jeu.
 
