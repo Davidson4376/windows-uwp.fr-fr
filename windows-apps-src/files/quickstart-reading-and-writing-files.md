@@ -14,11 +14,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 9bc19460fe1b9b9c6b637606a737e1157d98feef
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5691986"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5754677"
 ---
 # <a name="create-write-and-read-a-file"></a>Créer, écrire et lire un fichier
 

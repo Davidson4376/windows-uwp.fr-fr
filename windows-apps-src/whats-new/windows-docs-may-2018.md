@@ -8,11 +8,11 @@ ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 74fc017453472b515e597b73ee8bb582376f6b12
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5699353"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5754159"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en mai 2018
 
@@ -101,7 +101,7 @@ La fonctionnalité jeux est disponible dans les versions d’évaluation Windows
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
-### <a name="get-started"></a>Prendre en main
+### <a name="get-started"></a>Commencer
 
 Nous avons aux retraités rajeunit notre Get démarré contenu avec les nouvelles pistes d’apprentissage. Ces nouvelles rubriques objectif est d’offrir aux nouveaux développeurs Windows 10 avec les informations sur les tâches courantes ils souhaitent accomplir. Ils ne sont pas des didacticiels et ne fournissent pas une procédure pas à pas à main, mais signalez à la place où existe documentation existante et comment l’utiliser. Consultez l’article revisitée [commencer à coder](../get-started/create-uwp-apps.md) page, ou à découvrir chaque piste d’apprentissage individuels:
 

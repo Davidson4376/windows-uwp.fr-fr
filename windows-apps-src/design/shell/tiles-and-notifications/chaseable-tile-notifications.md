@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows10, uwp, vignettes pouvant être suivies, vignettes dynamiques, notifications par vignette pouvant être suivies
 ms.localizationpriority: medium
 ms.openlocfilehash: 8126755dfb6f5f0e117d10daef85a83e8a171f1f
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5703349"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5752239"
 ---
 # <a name="chaseable-tile-notifications"></a>Notifications par vignette pouvant être suivies
 

@@ -3,16 +3,16 @@ author: stevewhims
 description: Cette rubrique présente les manières dont vous pouvez à la fois créer et utiliser des objets asynchrones Windows Runtime avec C++/WinRT.
 title: Opérations concurrentes et asynchrones avec C++/WinRT
 ms.author: stwhi
-ms.date: 10/21/2018
+ms.date: 10/27/2018
 ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, concurrence, asynchrone, async
 ms.localizationpriority: medium
-ms.openlocfilehash: b1a45ba0bd362c07c27516ef18c11c326d747b1f
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.openlocfilehash: d7807b71f1c775493e525284e61c093081eb2c2b
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5702223"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5754842"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Opérations concurrentes et asynchrones avec C++/WinRT
 
@@ -460,7 +460,57 @@ Puis, au lieu de recherchez les trois fonctions **await_xxx** qui correspondent 
 
 ## <a name="canceling-an-asychronous-operation-and-cancellation-callbacks"></a>L’annulation d’une opération asynchrone et rappels d’annulation
 
-Fonctionnalités de Windows Runtime pour la programmation asynchrone vous permettent d’annuler une opération ou une action asynchrone en cours d’exécution. Nous allons commencer par un exemple simple.
+Fonctionnalités de Windows Runtime pour la programmation asynchrone vous permettent d’annuler une opération ou une action asynchrone en cours d’exécution. Voici un exemple qui appelle [**StorageFolder::GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) pour récupérer une grande collection de fichiers, et il stocke l’objet d’opération asynchrone qui en résulte dans un membre de données. L’utilisateur a la possibilité d’annuler l’opération.
+
+```cppwinrt
+// MainPage.xaml
+...
+<Button x:Name="workButton" Click="OnWork">Work</Button>
+<Button x:Name="cancelButton" Click="OnCancel">Cancel</Button>
+...
+
+// MainPage.h
+...
+#include <winrt/Windows.Storage.Search.h>
+...
+struct MainPage : MainPageT<MainPage>
+{
+    MainPage()
+    {
+        InitializeComponent();
+    }
+
+    IAsyncAction OnWork(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+    {
+        workButton().Content(winrt::box_value(L"Working..."));
+
+        // Enable the Pictures Library capability in the app manifest file.
+        StorageFolder picturesLibrary{ KnownFolders::PicturesLibrary() };
+
+        m_async = picturesLibrary.GetFilesAsync(CommonFileQuery::OrderByDate, 0, 1000);
+
+        IVectorView<StorageFile> filesInFolder{ co_await m_async };
+
+        workButton().Content(box_value(L"Done!"));
+
+        // Process the files in some way.
+    }
+
+    void OnCancel(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+    {
+        if (m_async.Status() != AsyncStatus::Completed)
+        {
+            m_async.Cancel();
+            workButton().Content(winrt::box_value(L"Canceled"));
+        }
+    }
+
+private:
+    IAsyncOperation<::IVectorView<StorageFile>> m_async;
+};
+```
+
+Pour le côté de l’implémentation de l’annulation, nous allons commencer par un exemple simple.
 
 ```cppwinrt
 // pch.h

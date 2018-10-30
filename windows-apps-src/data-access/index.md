@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp, données, base de données relationnelle, tables, sqlite
 ms.localizationpriority: medium
 ms.openlocfilehash: beca20d358430ecd82cd1bc57459a6f6af36be77
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5693439"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5753490"
 ---
 # <a name="data-access"></a>Accès aux données
 
@@ -24,6 +24,6 @@ Vous pouvez stocker des données sur l’appareil de l’utilisateur à l’aide
 | [Utiliser une base de donnéesSQLite dans une applicationUWP](sqlite-databases.md) | Vous montre comment utiliser SQLite pour stocker et récupérer des données dans une base de données légère sur l’appareil des utilisateurs. SQLite est un moteur de base de données intégré, sans serveur. |
 | [Utiliser une base de données SQL server dans une application UWP](sql-server-databases.md) | Vous montre comment se connecter directement à une base de données SQL Server, puis stocker et récupérer des données à l’aide de classes dans l’espace de noms [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) . Aucune couche de service n'est requise. |
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriquesconnexes
 
 * [Exemple de base de données de commandes clients](https://github.com/Microsoft/Windows-appsample-customers-orders-database)

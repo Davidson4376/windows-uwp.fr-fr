@@ -14,11 +14,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 13aa22906e9c5ba64237b2c69025143060ff85a9
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5687991"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5752675"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>Énumérer et interroger des fichiers et dossiers
 

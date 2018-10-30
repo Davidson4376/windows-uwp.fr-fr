@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f711ebc8d0d2e8dda87355a7894c9d311c6bbc2
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5699651"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5755373"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 

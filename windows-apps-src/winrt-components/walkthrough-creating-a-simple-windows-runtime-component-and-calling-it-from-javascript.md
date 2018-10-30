@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 49b9fe0833151155b11b7d7b796e395bb6a2ca7f
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5703146"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5752009"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>Procédure pas à pas: création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript
 

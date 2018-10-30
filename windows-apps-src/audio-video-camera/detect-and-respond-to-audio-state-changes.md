@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 53ac8dff5895522c24c1645e4db95c90d575df95
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5711316"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5753520"
 ---
 # <a name="detect-and-respond-to-audio-state-changes"></a>Détecter les changements d’état audio et y répondre
 À partir de Windows10, version1803, votre application peut détecter quand le système baisse ou désactive le niveau audio d’un flux audio utilisé par votre application. Vous pouvez recevoir des notifications pour les flux de capture et de rendu, pour un périphérique audio et une catégorie audio spécifiques, ou pour un objet [**MediaPlayer**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) que votre application utilise pour la lecture multimédia. Par exemple, le système peut baisser, ou «atténuer», le niveau de lecture audio lorsqu’une alarme sonne. Le système désactive votre application lorsqu’elle passe à l’arrière-plan si la fonctionnalité *backgroundMediaPlayback* n’a pas été déclarée dans le manifeste de l’application. 

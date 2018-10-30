@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 91a7d69d945b2ba2452d5bc477b6c17bf1dc6845
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5697772"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5755793"
 ---
 # <a name="variable-photo-sequence"></a>Séquence de photos variables
 
@@ -93,7 +93,7 @@ Lorsque vous avez terminé la capture de séquences de photos variables ou que v
 
 [!code-cs[CleanUpVPS](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVPS)]
 
-## <a name="related-topics"></a>Rubriques associées
+## <a name="related-topics"></a>Rubriquesconnexes
 
 * [Appareil photo](camera.md)
 * [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)

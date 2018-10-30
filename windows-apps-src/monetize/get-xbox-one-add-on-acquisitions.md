@@ -1,20 +1,20 @@
 ---
 author: Xansky
 description: Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir les données d’acquisition agrégées d’extensions.
-title: Obtenir des acquisitions Xbox One
+title: Obtenir des acquisitions d’extensions XboxOne
 ms.author: mhopkins
 ms.date: 10/18/2018
 ms.topic: article
 keywords: Windows 10, uwp, services du Windows Store, analytique du Microsoft Store API, Xbox One acquisitions de modules complémentaires
 ms.localizationpriority: medium
 ms.openlocfilehash: e703c0c07e981ebf21ad3388ad178eabdd5c068d
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5702799"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5755667"
 ---
-# <a name="get-xbox-one-add-on-acquisitions"></a>Obtenir des acquisitions Xbox One
+# <a name="get-xbox-one-add-on-acquisitions"></a>Obtenir des acquisitions d’extensions XboxOne
 
 Utilisez cette méthode dans le Microsoft Store analytique API pour obtenir des données d’acquisition agrégées d’extensions au format JSON pour une console Xbox One jeu intégré via le portail de développement Xbox (XDP) et disponible dans le tableau de bord XDP Analytique l’espace partenaires.
 

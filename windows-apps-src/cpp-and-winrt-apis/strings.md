@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows10, uwp, standard, c++, cpp, winrt, projection, chaîne
 ms.localizationpriority: medium
 ms.openlocfilehash: 72032c3c522a8434d266842a83c443889e8efc19
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5699598"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5755482"
 ---
 # <a name="string-handling-in-cwinrt"></a>Gestion des chaînes en C++/WinRT
 
