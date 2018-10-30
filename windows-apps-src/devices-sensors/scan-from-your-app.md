@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f9128056cbb3b9218d164b243948d9dd16af0786
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5701442"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5763562"
 ---
 # <a name="scan-from-your-app"></a>Numériser à partir de votre application
 
