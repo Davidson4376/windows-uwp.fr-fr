@@ -3,20 +3,20 @@ author: jnHs
 Description: Drive customer engagement and satisfaction by using features like notifications, targeted offers, responding to reviews and feedback, and more.
 title: Impliquer vos clients
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1612f4d2f2a68c1367980cf5a064ac8712b9073b
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: f9f266538c42b83da9135079f51a3f935f459020
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5756019"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829158"
 ---
 # <a name="engage-with-your-customers"></a>Impliquer vos clients
 
-Stimulez l’implication et la satisfaction de vos clients en utilisant des fonctionnalités telles que les notifications, les offres ciblées, les réponses aux avis et commentaires, et bien davantage.
+[L’espace partenaires](https://partner.microsoft.com/dashboard) inclut des fonctionnalités pour vous aider à satisfaction de vos clients et stimuler l’intérêt client. Découvrez comment utiliser les notifications, les offres ciblées, répondre aux avis et commentaires et bien plus encore.
 
 -   [Créer des groupes de clients](create-customer-groups.md)
 -   [Répondre aux avis des clients](respond-to-customer-reviews.md)

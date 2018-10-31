@@ -1,23 +1,23 @@
 ---
 author: jnHs
-Description: The Feedback report in the Windows Dev Center dashboard lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
+Description: The Feedback report in Partner Center lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
 title: Rapport sur les commentaires
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 ms.author: wdg-dev-content
-ms.date: 11/3/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eb8958adaeb78a068ae2baad30b7bc9fa96561a2
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: ab5e5f3fe533568079869c4fbd62530504544bf7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5744051"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828975"
 ---
 # <a name="feedback-report"></a>Rapport sur les commentaires
 
-Le **rapport sur les commentaires** du tableau de bord du Centre de développement Windows vous permet de voir les problèmes, les suggestions et les votes pour soumis par vos clients Windows10 par le biais du Hub de commentaires. Vous pouvez afficher ces données dans votre tableau de bord ou exporter les données à consulter hors connexion.
+Le **rapport sur les commentaires** dans l’espace partenaires vous permet de voir les problèmes, suggestions et votes que vos clients Windows 10 ont soumis par le biais du Hub de commentaires. Vous pouvez afficher ces données dans l’espace partenaires ou exporter les données à consulter hors connexion.
 
 > [!NOTE]
 > Vous pouvez également [répondre aux commentaires](respond-to-customer-feedback.md) directement à partir de ce rapport pour faire savoir aux clients que vous êtes à leur écoute.
@@ -26,7 +26,7 @@ Inciter vos clients à faire des commentaires sur votre application est un excel
 
 Vous pouvez utiliser l’API de commentaires dans le [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) pour permettre aux clients de [lancer directement le Hub de commentaires à partir de votre application](../monetize/launch-feedback-hub-from-your-app.md). N’oubliez pas que tout client ayant téléchargé votre application sur un appareil Windows10 prenant en charge le Hub de commentaires a la possibilité de laisser des commentaires à son sujet à l’aide de cette application. Pour cette raison, vous pouvez voir les commentaires des clients dans ce rapport même si vous n’avez pas spécifiquement demandé de commentaires depuis au sein de votre application.
 
-Les commentaires peuvent également se révéler utiles si vous utilisez la [distribution de version d’évaluation de package](package-flights.md), dans la mesure où le rapport sur les commentaires vous indique le package spécifique que chaque client a installé sur son appareil au moment où il a laissé son commentaire.
+Commentaires peuvent également être utile lorsque vous utilisez la [version d’évaluation de package](package-flights.md), étant donné que le rapport sur les **commentaires** vous indique le package spécifique que chaque client a installé sur son appareil lorsqu’il a laissé le commentaire.
 
 > [!TIP]
 > Pour un aperçu de l’avis, des évaluations et commentaires des utilisateurs sur l’ensemble de vos applications au cours des 30 derniers jours, développez **engager** dans le menu de navigation de gauche, puis sélectionnez **avis et commentaires.** 

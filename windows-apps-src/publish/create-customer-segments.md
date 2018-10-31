@@ -3,21 +3,21 @@ author: JnHs
 Description: Learn how to create customer segments so you can target a subset of your customer base for promotional or engagement purposes.
 title: Créer des segments de clients
 ms.author: wdg-dev-content
-ms.date: 07/26/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, segment, segments, groupe ciblé, clients
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium
-ms.openlocfilehash: d6de398dd69bb71f2bc895877ac2d734efbec3ad
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: b53c3c3480a986e77ad44f95831b1be5ce016808
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745309"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828715"
 ---
 # <a name="create-customer-segments"></a>Créer des segments de clients
 
-Parfois, vous avez besoin de cibler un sous-ensemble de votre clientèle à des fins de promotion et d’engagement. Vous pouvez accomplir cela dans le Centre de développement Windows en créant un type de [groupe de clients](create-customer-groups.md) appelé *segment* qui inclut les clients Windows10 correspondant aux critères démographiques ou de revenus de votre choix.
+Parfois, vous avez besoin de cibler un sous-ensemble de votre clientèle à des fins de promotion et d’engagement. Vous pouvez accomplir cela dans [L’espace partenaires](https://partner.microsoft.com/dashboard) en créant un type de [groupe de clients](create-customer-groups.md) appelé un *segment* qui inclut les clients Windows 10 qui remplissent les données démographiques ou revenus que vous choisissez.
 
 Par exemple, vous pouvez créer un segment incluant uniquement les clients âgés de 50ans ou plus, ou incluant les clients ayant dépensé plus de 10$ dans le Microsoft Store. Vous pouvez également combiner ces critères et créer un segment qui inclut tous les clients de plus de 50ans qui ont dépensé plus de 10$ dans le Windows Store. 
 
@@ -35,7 +35,7 @@ Nous fournissons quelques modèles de segment pour démarrer, mais vous pouvez d
 
 ## <a name="to-create-a-customer-segment"></a>Pour créer un segment de clients
 
-1.  Dans le tableau de bord du Centre de développement Windows, développez **Engager** dans le menu de navigation de gauche, puis sélectionnez **Groupes de clients**.
+1.  Dans [L’espace partenaires](https://partner.microsoft.com/dashboard), développez **engager** dans le menu de navigation de gauche, puis sélectionnez **les groupes de clients**.
 2.  Sur la page **Groupes de clients**, effectuez l’une des opérations suivantes:
  - Dans la section **Mes groupes de clients**, sélectionnez **Créer un groupe** pour définir un segment à partir de zéro. Sur la page suivante, sélectionnez la case d’option **Segment**.
  - Dans la section **Modèles de segment**, sélectionnez **Copier** en regard de l’un des segments prédéfinis (que vous pouvez utiliser en l’état ou modifier selon vos besoins).
